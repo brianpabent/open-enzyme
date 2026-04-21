@@ -1,12 +1,19 @@
 #!/usr/bin/env bash
-# wiki-watch.sh — continuous file watcher that triggers wiki-update.sh
+# wiki-watch.sh — watch docs/ for human edits and auto-run the wiki sync.
 #
-# Watches docs/ for .md file changes and auto-runs the wiki sync.
-# Requires: fswatch (brew install fswatch)
+# Filters out changes that came from git (pull, checkout, reset, stash pop,
+# merge, rebase, cherry-pick). Anything already in git history is assumed to
+# have been synced by whoever committed it.
+#
+# Serializes concurrent syncs with flock so rapid-fire edits queue up instead
+# of racing each other over git and the wiki/ tree.
 #
 # Usage:
-#   ./scripts/wiki-watch.sh           # watch docs/, auto-commit
+#   ./scripts/wiki-watch.sh            # foreground (Ctrl+C to stop)
 #   ./scripts/wiki-watch.sh --no-commit
+#
+# Typical deployment: installed as a launchd agent via install-watcher.sh so
+# it runs at login.
 
 set -euo pipefail
 
@@ -16,43 +23,74 @@ cd "$REPO_ROOT"
 NO_COMMIT_FLAG=""
 [[ "${1:-}" == "--no-commit" ]] && NO_COMMIT_FLAG="--no-commit"
 
+LOCK_FILE="/tmp/open-enzyme-wiki-sync.lock"
+
+log() {
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"
+}
+
 if ! command -v fswatch &>/dev/null; then
-  echo "Error: fswatch not found. Install with: brew install fswatch"
+  log "error: fswatch not found. install with: brew install fswatch"
   exit 1
 fi
 
 if ! command -v claude &>/dev/null; then
-  echo "Error: claude CLI not found. Install Claude Code first."
+  log "error: claude CLI not found in PATH."
   exit 1
 fi
 
-echo "Watching docs/ for changes. Press Ctrl+C to stop."
-echo ""
+log "watching docs/ — human edits trigger wiki sync; git-driven changes are skipped"
+log "  repo:    $REPO_ROOT"
+log "  lock:    $LOCK_FILE"
+[[ -n "$NO_COMMIT_FLAG" ]] && log "  mode:    --no-commit"
 
-# Track recent updates to avoid double-firing on rapid saves
+# Debounce state
 LAST_PATH=""
 LAST_TIME=0
 
 fswatch -r -e ".*" -i "\.md$" "$REPO_ROOT/docs/" | while IFS= read -r CHANGED_PATH; do
-  # Debounce: ignore if same file within 5 seconds
-  NOW=$(date +%s)
-  if [[ "$CHANGED_PATH" == "$LAST_PATH" && $((NOW - LAST_TIME)) -lt 5 ]]; then
+  # Deletion or other non-file event → skip
+  if [[ ! -f "$CHANGED_PATH" ]]; then
     continue
   fi
-  LAST_PATH="$CHANGED_PATH"
-  LAST_TIME=$NOW
 
-  # Get path relative to repo root
   REL_PATH="${CHANGED_PATH#"$REPO_ROOT/"}"
 
-  echo "[$(date '+%H:%M:%S')] Change detected: $REL_PATH"
-  echo "  Starting wiki sync..."
-
-  # Run sync (foreground so output is visible; Ctrl+C will interrupt it)
-  if "$REPO_ROOT/scripts/wiki-update.sh" "$REL_PATH" $NO_COMMIT_FLAG; then
-    echo "  Wiki sync complete."
-  else
-    echo "  Wiki sync failed (exit $?). Check output above."
+  # Debounce: same file within 5s → skip (editors often fire multiple events per save)
+  NOW=$(date +%s)
+  if [[ "$REL_PATH" == "$LAST_PATH" && $((NOW - LAST_TIME)) -lt 5 ]]; then
+    continue
   fi
-  echo ""
+  LAST_PATH="$REL_PATH"
+  LAST_TIME=$NOW
+
+  # Skip if a git operation is in progress — we don't want to sync mid-conflict
+  if [[ -f "$REPO_ROOT/.git/MERGE_HEAD" ]] \
+     || [[ -f "$REPO_ROOT/.git/REBASE_HEAD" ]] \
+     || [[ -d "$REPO_ROOT/.git/rebase-merge" ]] \
+     || [[ -d "$REPO_ROOT/.git/rebase-apply" ]] \
+     || [[ -f "$REPO_ROOT/.git/CHERRY_PICK_HEAD" ]]; then
+    log "skip: $REL_PATH (git merge/rebase/cherry-pick in progress)"
+    continue
+  fi
+
+  # Skip if the file matches HEAD. That means the change came from git itself
+  # (pull, checkout, reset, stash pop) — not a human edit. Already-in-git
+  # content is assumed to have been synced by whoever committed it.
+  if git -C "$REPO_ROOT" diff --quiet HEAD -- "$REL_PATH" 2>/dev/null; then
+    log "skip: $REL_PATH (matches HEAD — git operation, not a human edit)"
+    continue
+  fi
+
+  log "sync: $REL_PATH"
+
+  # Serialize via flock. Blocking acquire → if another sync is running, wait.
+  (
+    flock 9
+    if "$REPO_ROOT/scripts/wiki-update.sh" "$REL_PATH" $NO_COMMIT_FLAG; then
+      log "sync done: $REL_PATH"
+    else
+      log "sync FAILED for $REL_PATH (exit $?)"
+    fi
+  ) 9>"$LOCK_FILE"
 done
