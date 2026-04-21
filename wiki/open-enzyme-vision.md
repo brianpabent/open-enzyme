@@ -129,27 +129,25 @@ CTO who built Ceros from zero to $50M ARR. No science degree — thinks like an 
 
 **Answers:** How do we make this reproducible, documentable, and accessible to non-scientists? How do we build this as a platform, not a one-off experiment?
 
-Currently the sole team member. The project needs collaborators with deep expertise in gut biology, immune safety, and translational science. The following scientists are being recruited as potential collaborators — each maps to a critical question the project needs answered.
+Currently the sole team member. The project is actively recruiting collaborators with deep expertise in gut biology, immune safety, and translational science — each mapping to a critical question the project needs answered.
 
-### Rheinallt Jones, PhD — Gut Microbiome / In Vivo Validation *(potential collaborator)*
+### Gut Microbiome / In Vivo Validation *(seeking collaborator)*
 
-Associate Professor, Emory Pediatric GI. Runs the Emory Gnotobiotic Animal Core. Deep expertise in gut microbiome dynamics and germ-free animal models.
+Expertise needed: gut microbiome dynamics, gnotobiotic (germ-free) animal models, in vivo validation of engineered microbes.
 
 **Would answer:** Will an engineered strain survive and function in the gut? How does it interact with existing microbiota? What do the gnotobiotic validation experiments look like?
 
-### Lauren Collier-Hyams, PhD — NF-κB / Pharma Translation *(potential collaborator)*
+### Pharma Translation / Regulatory *(seeking collaborator)*
 
-Emory-trained (NF-κB / intestinal epithelial signaling under Andrew Neish). Now in pharma at Grifols/Medexus. Bridges academic research and pharmaceutical development.
+Expertise needed: inflammatory signaling (NF-κB, intestinal epithelial biology), pharmaceutical development, regulatory pathways for live biotherapeutic products.
 
 **Would answer:** What are the inflammatory signaling implications? How does this map to pharma-grade safety and efficacy standards? Where does citizen science end and clinical development begin?
 
-### Valerie Jones née Sloane, PhD — Innate Immune Safety *(potential collaborator)*
+### Innate Immune Safety *(seeking collaborator)*
 
-Emory-trained (TLR5 / innate immune responses in gut epithelium under Andrew Neish). Expertise in how the gut immune system responds to microbial signals.
+Expertise needed: innate immune responses in gut epithelium, TLR signaling, pathogen-associated molecular pattern (PAMP) analysis, epitope risk assessment.
 
-**Would answer:** Will engineered strains trigger adverse immune responses? How do we ensure the host organism's modifications don't create unexpected immunogenic epitopes or pathogen-associated molecular patterns?
-
-> **Note on lineage:** Rheinallt, Lauren, and Valerie all trained in Andrew Neish's Epithelial Pathobiology Unit at Emory. This gives them a shared scientific vocabulary and a deep, overlapping understanding of gut epithelial biology, microbial-host interactions, and inflammatory signaling — exactly the domain this project operates in. Recruiting them is an active project goal.
+**Would answer:** Will engineered strains trigger adverse immune responses? How do we ensure the host organism's modifications don't create unexpected immunogenic epitopes or aberrant PAMP signaling?
 
 ---
 
@@ -218,7 +216,7 @@ Peptides for tissue repair: BPC-157 (angiogenesis, tendon/joint repair), TB-500/
 
 ### Optimize the Terrain
 
-Gut health optimization: targeted probiotics, SIBO treatment (addressing Lynn's digestive enzyme insufficiency), gut barrier support. A healthy gut is the deployment environment for everything above.
+Gut health optimization: targeted probiotics, SIBO treatment (addressing co-occurring digestive enzyme insufficiency in a close family member, which motivates the EPI track), gut barrier support. A healthy gut is the deployment environment for everything above.
 
 This multi-vector approach reflects an engineering mindset: don't bet on a single point of intervention. Build redundancy into the system. If the uricase strain takes months to optimize, the NLRP3 stack provides relief now. If inflammasome suppression is partial, tissue repair peptides address what gets through.
 
@@ -246,7 +244,7 @@ This multi-vector approach reflects an engineering mindset: don't bet on a singl
 
 - **Not claiming to cure anything.** This is a research and self-experimentation platform. We produce enzymes. We measure their activity. We track biomarkers. We share data. The biology is well-established; the integration into a home-producible format is what's novel.
 
-- **Not reckless.** Every strain uses GRAS organisms. Every method is drawn from published, peer-reviewed protocols. The potential collaborators include three PhDs with deep gut biology expertise, and recruiting them is an active priority. We are careful precisely because we are serious.
+- **Not reckless.** Every strain uses GRAS organisms. Every method is drawn from published, peer-reviewed protocols. Recruiting PhD-level collaborators in gut biology, immune safety, and translational science is an active priority. We are careful precisely because we are serious.
 
 ---
 
@@ -258,7 +256,7 @@ The following research documents form the evidence base and technical foundation
    Comprehensive survey of gout pathophysiology, current treatments, and emerging therapeutic approaches including uricase gene therapy and gut-based strategies.
 
 2. **[The Enzyme Deficit Connection — Gout, Digestion & the Koji Frontier](enzyme-deficit-deep-dive.md)**  
-   Mapped the link between Brian's uricase deficit and Lynn's digestive enzyme insufficiency. Identified koji as a dual-purpose therapeutic platform and crystallized the Open Enzyme concept.
+   Mapped the link between Brian's uricase deficit and a co-occurring digestive enzyme insufficiency in a family member. Identified koji as a dual-purpose therapeutic platform and crystallized the Open Enzyme concept.
 
 3. **[Engineering S. cerevisiae for Oral Uricase Delivery — A Research Proposal](engineered-yeast-uricase-proposal.md)**  
    Detailed technical proposal for the uricase yeast strain: gene construct design, expression strategy, transformation protocol, and in vitro/in vivo validation plan.
