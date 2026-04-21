@@ -1,0 +1,210 @@
+---
+title: NLRP3 Inflammasome
+aliases:
+  - NLRP3
+  - NOD-like receptor protein 3
+  - inflammasome
+  - IL-1β pathway
+  - ASC speck
+related:
+  - uricase
+  - gout
+  - bpc-157
+  - blood-barrier
+sources:
+  - nlrp3-exploit-map.md
+  - gout-deep-dive.md
+  - peptide-gout-addendum.md
+---
+
+# NLRP3 Inflammasome
+
+## Overview
+
+The NLRP3 inflammasome is a multi-protein intracellular complex that acts as a master trigger for the acute inflammatory response in gout. It is composed of three core proteins: NLRP3 (the sensor), ASC (the adaptor), and pro-caspase-1 (the executioner). When activated, it cleaves pro-IL-1β into active interleukin-1β (IL-1β), a potent pro-inflammatory cytokine that drives the explosive pain and swelling of a gout flare. (Source: gout-deep-dive.md, nlrp3-exploit-map.md)
+
+The inflammasome is not unique to gout—it evolved to respond to pathogenic danger signals. However, monosodium urate (MSU) crystals, which deposit in joints during hyperuricemia, directly trigger NLRP3 assembly through lysosomal rupture, potassium efflux, and reactive oxygen species (ROS) generation. In gout, the innate immune system mistakes metabolic crystals for microbial threats, producing an outsized inflammatory cascade. (Source: gout-deep-dive.md)
+
+## The NLRP3 Activation Cascade: Six Chokepoints
+
+The NLRP3 inflammasome pathway operates as a sequential cascade with six distinct vulnerability points (chokepoints), each representing a potential therapeutic target. Understanding the cascade structure reveals that gout can be attacked at multiple nodes simultaneously, rather than through a single intervention.
+
+### Chokepoint 1: NF-κB Priming
+
+**The Step:** Toll-like receptor (TLR) signaling (typically from damage-associated molecular patterns or LPS from gram-negative bacteria in the gut) triggers NF-κB activation. NF-κB translocates to the nucleus and drives transcription of pro-inflammatory genes: NLRP3 itself, pro-IL-1β, pro-IL-18, and ASC. This is the "priming" step—building the components of the inflammasome.
+
+**Why It Matters:** Without sufficient NLRP3 and pro-IL-1β protein, downstream activation cannot occur at meaningful levels. Preventing priming reduces the inflammasome's capacity to respond. (Source: nlrp3-exploit-map.md)
+
+**Exploits:**
+
+- **KPV peptide** (Lys-Pro-Val): The C-terminal tripeptide of alpha-melanocyte-stimulating hormone (α-MSH). Stabilizes IκB-α, preventing NF-κB nuclear translocation. Research shows α-MSH and its derivative (CKPV)₂ specifically reverse the inflammatory effect of urate crystal formation. (Source: nlrp3-exploit-map.md)
+
+- **Sulforaphane**: Activates the Keap1-Nrf2 pathway, the master regulator of antioxidant defense. Nrf2 competes with NF-κB for the transcriptional co-activator CBP/p300, suppressing NF-κB-driven transcription of NLRP3 and pro-IL-1β. Maximum bioavailability achieved by chewing raw broccoli sprouts (which co-localize glucoraphanin and the enzyme myrosinase) or using freeze-dried sprout capsules. (Source: nlrp3-exploit-map.md)
+
+- **Curcumin**: A validated NF-κB inhibitor. Native curcumin has ~1% bioavailability, but formulations like Theracurmin (27x improvement) or NovaSOL micellar curcumin (~185x improvement) achieve therapeutic plasma levels. Alternative: combine standard curcumin with piperine (black pepper), which inhibits hepatic glucuronidation and increases absorption ~2,000%. (Source: nlrp3-exploit-map.md)
+
+- **Berberine**: Suppresses NF-κB and TLR4 signaling, reduces NLRP3 mRNA expression, and remodels the gut microbiota to reduce LPS (lipopolysaccharide) that primes NLRP3 in the first place. Also effective against SIBO (small intestinal bacterial overgrowth), addressing the shared microbial-inflammatory nexus. Dose: 500 mg twice daily with meals. (Source: nlrp3-exploit-map.md)
+
+- **BPC-157**: Beyond its tissue-healing effects, BPC-157 modulates the nitric oxide (NO) system, which influences macrophage activation states and reduces the priming capacity of immune cells. (Source: nlrp3-exploit-map.md, peptide-gout-addendum.md)
+
+- **TB-500 (Thymosin β4)**: Suppresses NF-κB p65 nuclear translocation and dampens JNK/p38 MAPK signaling in macrophages. Hits both Chokepoint 1 (priming) and Chokepoint 2 (activation). (Source: nlrp3-exploit-map.md)
+
+- **Omega-3 fatty acids (EPA/DHA)**: Precursors to specialized pro-resolving mediators (SPMs) — resolvins (RvE1, RvD1/D2), protectins (PD1), and maresins (MaR1). SPMs suppress neutrophil recruitment and promote macrophage phenotype switching from M1 (inflammatory) to M2 (resolving). Dose: 3–4g EPA+DHA daily. (Source: nlrp3-exploit-map.md)
+
+- **Resveratrol**: Activates SIRT1, which deacetylates p65 (NF-κB subunit), reducing its transcriptional activity. Use micronized trans-resveratrol, liposomal forms, or pair with pterostilbene (4x better bioavailability and same SIRT1 activation). (Source: nlrp3-exploit-map.md)
+
+- **Andrographolide** (from Andrographis paniculata): Covalently modifies the p50 subunit of NF-κB via Michael addition, preventing DNA binding. One of the most potent natural NF-κB inhibitors. (Source: nlrp3-exploit-map.md)
+
+- **Parthenolide** (from feverfew): Inhibits IKKβ (the kinase that degrades IκB) and directly modifies NF-κB p65. Dual mechanism. DMAPT (dimethylamino-parthenolide) is a more soluble derivative used in research. (Source: nlrp3-exploit-map.md)
+
+- **Quercetin**: Inhibits NF-κB and also blocks xanthine oxidase (uric acid production). Phytosome form (Quercefit) provides 20x better bioavailability. Dose: 500–1000 mg daily. (Source: nlrp3-exploit-map.md)
+
+- **EGCG** (green tea catechin): Inhibits IKK activity, suppresses NF-κB. Dose: 400–800 mg daily or 3–5 cups green tea daily. Matcha provides the highest concentration. (Source: nlrp3-exploit-map.md)
+
+- **Boswellia (AKBA)**: Acetyl-11-keto-β-boswellic acid directly inhibits IKKβ and 5-LOX. Dose: 300–500 mg standardized extract daily. (Source: nlrp3-exploit-map.md)
+
+- **Vitamin D**: Vitamin D receptor (VDR) activation suppresses NF-κB. Target 50–70 ng/mL serum levels; 5,000–10,000 IU daily with K2. (Source: nlrp3-exploit-map.md)
+
+### Chokepoint 2: NLRP3 Activation and ASC Assembly
+
+**The Step:** MSU crystal phagocytosis triggers potassium efflux from cells and mitochondrial reactive oxygen species (ROS) generation. These are the primary "Signal 2" inputs that cause NLRP3 to oligomerize and recruit ASC. The exact mechanism of signal transduction is still being elucidated, but K⁺ efflux and mtROS are the most validated triggers. Once activated, NLRP3 serves as a nucleation platform for ASC to polymerize into fibrillar aggregates (specks).
+
+**Why It Matters:** This is where the inflammasome actually assembles. Blocking assembly prevents caspase-1 activation, regardless of how much pro-IL-1β was primed in Chokepoint 1. (Source: nlrp3-exploit-map.md)
+
+**Exploits:**
+
+- **Beta-hydroxybutyrate (BHB)**: The ketone body produced during fasting or ketogenic diet. BHB prevents potassium efflux, reduces ASC speck formation, and directly inhibits NLRP3 assembly. Notably, BHB is NOT dependent on AMPK, autophagy, or ROS reduction—it is a direct inhibitory effect on NLRP3 oligomerization. In rodent models, a ketogenic diet significantly reduced gout flare severity. Critical insight: traditional concern that ketosis raises uric acid is true short-term (ketones compete with urate for renal excretion), but with uricase handling uric acid clearance, ketosis becomes pure inflammasome suppression. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)
+
+- **Oridonin**: An ent-kaurane diterpenoid from the Chinese herb Rabdosia rubescens. Covalently modifies cysteine 279 in the NACHT domain of NLRP3 via Michael addition—the same binding site as the pharmaceutical MCC950. Active at 0.5–2 µM. Published in Nature Communications: oridonin exhibits dose-dependent inhibition of caspase-1 cleavage and IL-1β secretion and is NLRP3-specific (does not affect NLRC4 or AIM2). Additionally activates Nrf2 and suppresses NF-κB independently—hitting Chokepoints 1 and 2. (Source: nlrp3-exploit-map.md)
+
+- **NAC (N-Acetyl Cysteine)**: Replenishes glutathione, the master intracellular antioxidant. Reduces mtROS, thus reducing the Signal 2 trigger for NLRP3 assembly. Dose: 600–1200 mg daily. Widely available, inexpensive, well-tolerated. The limitation: does not specifically target mitochondria. (Source: nlrp3-exploit-map.md)
+
+- **MitoQ (Mitoquinone)**: A coenzyme Q10 derivative conjugated to a triphenylphosphonium cation that targets specifically to mitochondrial membranes, accumulating 100–1000x higher than untargeted antioxidants. Directly scavenges mtROS. Dose: 10–20 mg daily. Available as MitoQ brand supplement. (Source: nlrp3-exploit-map.md)
+
+- **Spermidine**: Essential for rapamycin-induced autophagy and directly suppresses NLRP3 activation. Found in aged cheese, mushrooms, soy, wheat germ. Supplement dose: 1–6 mg daily. A 2024 study showed spermidine mediates rapamycin's autophagy effects. Also reduces mtROS. (Source: nlrp3-exploit-map.md)
+
+- **Trehalose**: A disaccharide that activates autophagy via TFEB (independent of mTOR), suppresses NLRP3 accumulation. Dose: 5–10g daily in water or as a sugar substitute. Found in mushrooms, honey, shrimp. (Source: nlrp3-exploit-map.md)
+
+- **Tranilast**: An anti-allergic drug approved in Japan and South Korea since 1982. Directly binds the NACHT domain of NLRP3 and blocks oligomerization through the same binding site as MCC950, but via a different binding mode. Published in EMBO Molecular Medicine: tranilast showed "remarkable preventive or therapeutic effects" in mouse models of gouty arthritis, CAPS (cryopyrin-associated periodic syndromes), and type 2 diabetes. Safety profile: up to 600 mg daily clinically used for months with good tolerability. Not FDA-approved in the US but accessible internationally. (Source: nlrp3-exploit-map.md)
+
+- **Autophagy inducers:**
+  - **Intermittent fasting (16:8 minimum)**: Activates AMPK, inhibits mTOR, induces autophagy, and generates BHB. Two-for-one mechanism. (Source: nlrp3-exploit-map.md)
+  - **Rapamycin**: Gold standard mTOR inhibitor, induces autophagy via spermidine pathway. Dose: 2–5 mg weekly. Requires prescription but accessible through longevity-focused physicians. (Source: nlrp3-exploit-map.md)
+
+### Chokepoint 3: ASC Speck Assembly and Caspase-1 Recruitment
+
+**The Step:** ASC (apoptosis-associated speck-like protein containing a CARD) oligomerizes into large fibrillar aggregates (specks) at the site of activated NLRP3. These specks serve as the physical platform for recruiting and activating pro-caspase-1. The speck formation is dependent on PYD domain interactions between ASC monomers and requires microtubule-mediated intracellular transport (ASC is normally localized to mitochondria, but must be transported to NLRP3 at the ER).
+
+**Why It Matters:** Preventing speck assembly prevents recruitment and oligomerization of pro-caspase-1, blocking the conversion to active caspase-1 that executes IL-1β cleavage. (Source: nlrp3-exploit-map.md)
+
+**Exploits:**
+
+- **Colchicine**: Depolymerizes microtubules, preventing microtubule-mediated transport of ASC from mitochondria to ER-localized NLRP3. Without transport, specks cannot form. Additionally, colchicine impairs neutrophil chemotaxis, phagocytosis of MSU crystals, and secretion of inflammatory mediators—multi-hit disruption of the inflammasome platform. The oldest and most validated NLRP3 pathway disruptor for gout. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)
+
+- **Spermidine** (again): Enhances autophagy, which clears damaged mitochondria before they can export ASC and recruit it to specks. (Source: nlrp3-exploit-map.md)
+
+- **BHB** (again): Beyond preventing K⁺ efflux and NLRP3 oligomerization, BHB reduces ASC oligomerization and speck formation directly. Multi-chokepoint weapon. (Source: nlrp3-exploit-map.md)
+
+### Chokepoint 4: Caspase-1 Activation and Substrate Cleavage
+
+**The Step:** The assembled ASC speck recruits and activates pro-caspase-1 through proximity and conformational changes. Active caspase-1 then cleaves pro-IL-1β into the mature, secreted form of IL-1β, and also cleaves gasdermin D (which we address in Chokepoint 6). This is the executioner step.
+
+**Why It Matters:** Active caspase-1 is the irreversible commitment to IL-1β secretion and pyroptotic cell death. Blocking this step directly prevents mature IL-1β production. (Source: nlrp3-exploit-map.md)
+
+**Exploits:**
+
+- **VX-765 (Belnacasan)**: A prodrug that converts to VRT-043198, a potent, selective, reversible caspase-1 inhibitor. Blocks cleavage of pro-IL-1β, pro-IL-18, and gasdermin D simultaneously. Well-tolerated in human Phase 2a trials (though developed for epilepsy, not gout). Available from research chemical suppliers. (Source: nlrp3-exploit-map.md)
+
+- **Procyanidin B2** (from grape seed extract): Reduces MSU crystal-induced caspase-1 cleavage and IL-1β secretion in macrophages by blocking cathepsin B (released from ruptured lysosomes, which is required for caspase-1 activation). Dose: 200–400 mg grape seed extract daily. (Source: nlrp3-exploit-map.md)
+
+- **EGCG** (again, hitting multiple chokepoints): Suppresses caspase-1 activity in macrophages. Also blocks NF-κB (CP1) and IL-1β signaling (CP5). Dose: 400–800 mg daily or 3–5 cups matcha/green tea. (Source: nlrp3-exploit-map.md)
+
+- **Berberine** (again, multi-chokepoint): Dose-dependently reduces caspase-1 mRNA expression and protein levels. (Source: nlrp3-exploit-map.md)
+
+### Chokepoint 5: IL-1β and IL-18 Secretion and Signaling
+
+**The Step:** Cleaved IL-1β is secreted from macrophages and binds to IL-1 receptor type 1 (IL-1R1) on neutrophils, endothelial cells, and other target cells. IL-1β drives vasodilation, neutrophil recruitment, pain signaling, and systemic inflammation. IL-18 (also cleaved by caspase-1) contributes to IFN-γ production and further immune amplification. This is where the inflammasome's output becomes systemically manifested as the acute gout flare.
+
+**Why It Matters:** Even if inflammasome activation is incomplete, blocking IL-1β signaling at the receptor level stops the cascade from progressing to the clinical symptoms of a gout attack. (Source: nlrp3-exploit-map.md)
+
+**Exploits:**
+
+- **Anakinra (Kineret)**: Recombinant IL-1 receptor antagonist (IL-1Ra). Competitive antagonist at IL-1R1 that blocks both IL-1β and IL-1α from binding. Single injection can abort a flare within hours. FDA-approved for RA and CAPS, used off-label for gout. Limitation: 100 mg daily subcutaneous injection, short half-life (~4–6 hours), expensive without insurance. Demonstrates that blocking IL-1 signaling is sufficient to stop a gout flare. (Source: nlrp3-exploit-map.md)
+
+- **Omega-3 SPMs** (again): EPA → Resolvin E1 (RvE1), DHA → Resolvin D1/D2 (RvD1/D2), Protectin D1 (PD1), Maresin 1 (MaR1). These specialized pro-resolving mediators actively command neutrophils to stop infiltrating and promote macrophage phenotype switching from M1→M2. Not just suppression but active resolution signaling. Dose: 3–4g EPA+DHA daily, or pre-formed SPM supplement (SPM Active by Metagenics: 2 softgels daily standardized to 17-HDHA and 18-HEPE). (Source: nlrp3-exploit-map.md)
+
+- **Exercise**: Acute exercise transiently increases IL-1Ra (the body's endogenous IL-1 antagonist). Regular moderate exercise maintains elevated baseline IL-1Ra. Important caveat: avoid exercise during an active flare; benefit occurs between flares through chronic training. (Source: nlrp3-exploit-map.md)
+
+- **EGCG** (again): Suppresses IL-1β secretion from macrophages and reduces IL-1β-induced downstream signaling in target cells (chondrocytes, synoviocytes). (Source: nlrp3-exploit-map.md)
+
+### Chokepoint 6: Gasdermin D Pore Formation and Pyroptotic Amplification
+
+**The Step:** Caspase-1 also cleaves gasdermin D (GSDMD), generating an N-terminal fragment that oligomerizes into large membrane pores. These pores mediate pyroptotic cell death (lytic, inflammatory cell death) of the macrophage, releasing all its intracellular contents—including IL-1β, damage signals, and alarm molecules—into the tissue. This amplifies inflammation explosively.
+
+**Why It Matters:** GSDMD pores are the final exit route for IL-1β and the trigger for the cellular-level inflammatory amplification that converts a localized inflammasome activation into a full-blown tissue flare. Blocking this step prevents pyroptotic amplification and may be the most direct way to limit flare severity. (Source: nlrp3-exploit-map.md)
+
+**Exploits:**
+
+- **Disulfiram (Antabuse)**: FDA-approved since the 1950s for alcohol use disorder. Discovered in 2020 (Nature Immunology) to specifically block gasdermin D pore formation at nanomolar concentrations. Covalently modifies Cys191 on GSDMD, preventing the N-terminal fragment from oligomerizing into membrane pores. Elegant mechanism: disulfiram allows pro-IL-1β cleavage (doesn't block caspase-1) but prevents pore formation. Consequence: IL-1β stays sequestered inside the cell rather than being released. No pores = no pyroptosis = no inflammatory amplification from cell death. Safety profile: FDA-approved with 70+ years of clinical data. Cost: ~$30/month. (Source: nlrp3-exploit-map.md)
+
+- **Dimethyl Fumarate (DMF, Tecfidera)**: FDA-approved for multiple sclerosis. Discovered to succinate gasdermin D at Cys191, forming S-(2-succinyl)-cysteine. Blocks caspase-1-GSDMD interaction entirely, preventing cleavage, oligomerization, pore formation, and pyroptosis. Clinical evidence: MS patients taking DMF show reduced blood levels of both IL-1β and GSDMD-N (the cleaved pore-forming fragment). Also activates Nrf2 (hitting Chokepoint 1 simultaneously). Access: prescription for MS; off-label use requires creative conversation with prescriber. More expensive than disulfiram. (Source: nlrp3-exploit-map.md)
+
+## Multi-Chokepoint Compounds
+
+The most efficient exploits hit three or more chokepoints:
+
+- **BHB (Beta-hydroxybutyrate)**: Blocks priming (CP1), prevents K⁺ efflux (CP2), reduces ASC oligomerization (CP3). Single metabolite produced by the body during fasting. Arguably the single most efficient exploit in the entire cascade. (Source: nlrp3-exploit-map.md)
+
+- **Berberine**: Suppresses NF-κB/TLR4 (CP1), reduces NLRP3/ASC/caspase-1 mRNA (CP1+CP4), remodels gut microbiota to reduce LPS priming (CP1). Dual benefit for Lynn's SIBO. Swiss Army knife compound. (Source: nlrp3-exploit-map.md)
+
+- **Oridonin**: Covalent NLRP3 inhibitor (CP2), NF-κB suppressor (CP1), Nrf2 activator (CP1+CP2). Natural compound mimicking pharmaceutical-grade NLRP3 inhibitor. (Source: nlrp3-exploit-map.md)
+
+- **DMF (Dimethyl Fumarate)**: Nrf2 activator (CP1+CP2) AND gasdermin D succinator (CP6). Bridges first and last chokepoints. (Source: nlrp3-exploit-map.md)
+
+- **EGCG**: NF-κB inhibitor (CP1), caspase-1 suppressor (CP4), IL-1β blocker (CP5). Three downstream chokepoints from drinking tea. (Source: nlrp3-exploit-map.md)
+
+## Pharmaceutical NLRP3 Inhibitors
+
+### Approved or In Clinical Development
+
+- **Canakinumab (Ilaris)**: IL-1β monoclonal antibody. FDA-approved for gout and periodic fever syndromes. Very effective but expensive (~$300,000/year). Systemic immunosuppression risk.
+
+- **Anakinra (Kineret)**: IL-1 receptor antagonist. FDA-approved for RA and CAPS. Off-label for refractory gout. Less expensive than canakinumab but requires daily injection.
+
+- **Dapansutrile (OLT1177)**: Oral NLRP3 inhibitor. Phase 2a trial for gout showed "marked target joint pain reduction in all dose groups" with swelling reduction by day 3. Good safety profile (no hepatotoxicity like MCC950). Currently in Phase 2/3 trials. This may eventually be the pharmaceutical solution. (Source: nlrp3-exploit-map.md)
+
+- **MCC950 (CRID3)**: The first specific NLRP3 inhibitor. Binds the Walker B motif in the NACHT domain, blocking ATP hydrolysis required for oligomerization. Clinical development terminated due to hepatotoxicity in Phase 1 RA trial, but it defined the druggable target and validated the mechanism.
+
+## Engineered Koji Opportunity
+
+A. oryzae can theoretically be engineered to produce caspase-1 inhibitors or anti-inflammatory compounds during fermentation. While caspase-1 inhibitors are typically peptidomimetics (not easily biosynthesized), koji could be engineered to overproduce compounds like procyanidin precursors or EGCG-like polyphenols that indirectly suppress caspase-1 and NLRP3. The GRAS status of koji makes this feasible as a food-based therapeutic intervention. (Source: nlrp3-exploit-map.md)
+
+## The SIBO–Gout–Lynn Connection
+
+NLRP3 inflammasome activation is central to both gout and SIBO-driven intestinal inflammation. The same compounds that suppress gout suppress gut inflammation:
+
+- **Berberine**: SIBO eradication (comparable to rifaximin) + NLRP3 suppression + NF-κB inhibition + gut microbiota remodeling. Same drug, both conditions through the same mechanism.
+
+- **KPV peptide**: Originally studied for IBD/colitis. PepT1-mediated intestinal uptake delivers KPV directly to the gut. Reduces intestinal inflammation via NF-κB suppression in gut epithelium AND systemic inflammation driving gout.
+
+- **Omega-3 SPMs**: Resolve intestinal inflammation AND joint inflammation through the same mediators.
+
+- **BHB/fasting**: Suppresses NLRP3 in gut macrophages AND joint macrophages.
+
+- **Spermidine + Trehalose**: Enhance autophagy, protecting gut barrier integrity and preventing macrophage NLRP3 activation in joints.
+
+This overlap suggests a unified therapeutic strategy addressing both conditions simultaneously through shared NLRP3 modulation. (Source: nlrp3-exploit-map.md)
+
+## Key Insights
+
+**The Crystal Dissolution Danger Window:** When urate-lowering therapy (including [[uricase|koji-uricase]]) begins dissolving existing MSU crystal deposits, crystals temporarily become smaller with more surface area. Crystal shedding from tophi can trigger acute flares. The NLRP3 stack is essential during this phase—it prevents dissolution-triggered flares while the uricase handles the underlying uric acid problem. Both strategies must run simultaneously. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)
+
+**Disulfiram is Underrated:** An FDA-approved drug with 70 years of safety data, costing ~$30/month, that blocks the final step of IL-1β release and prevents pyroptotic amplification. Few rheumatologists discuss it because it was discovered by immunologists studying sepsis—a market inefficiency in medical knowledge. (Source: nlrp3-exploit-map.md)
+
+**Ketosis Paradox Resolved:** The conventional wisdom that ketosis is bad for gout (ketones compete with urate for renal excretion) misses that BHB simultaneously and potently suppresses NLRP3 inflammasome activation. With [[uricase|koji-uricase]] handling uric acid clearance, ketosis becomes purely beneficial—all inflammasome suppression, no uric acid penalty. (Source: nlrp3-exploit-map.md)
+
+## References
+
+- Source: nlrp3-exploit-map.md — Systematic black hat pen-testing of NLRP3 inflammasome pathway with six chokepoints and dozens of exploits
+- Source: gout-deep-dive.md — Comprehensive gout pathophysiology including NLRP3 inflammasome overview and crystal-driven activation
+- Source: peptide-gout-addendum.md — Deep dive into peptide mechanisms including BPC-157 and TB-500 NLRP3 interactions

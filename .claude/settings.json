@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport sys, json, os\ntry:\n    data = json.load(sys.stdin)\n    inp = data.get('tool_input', {})\n    path = inp.get('file_path', '')\n    if path.startswith('docs/') and path.endswith('.md'):\n        name = os.path.basename(path)\n        print(f'\\n  Wiki sync needed for {name}')\n        print(f'  Run: ./scripts/wiki-update.sh {path}')\nexcept Exception:\n    pass\n\""
+          }
+        ]
+      }
+    ]
+  }
+}

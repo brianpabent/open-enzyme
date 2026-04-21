@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering S. cerevisiae for Oral Uricase Delivery — A Research Proposal</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --bg-code: #1c2128;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --text-heading: #e6edf3;
+    --accent: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-yellow: #d29922;
+    --accent-red: #f85149;
+    --accent-purple: #bc8cff;
+    --link: #58a6ff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Noto Sans, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.72;
+    font-size: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 6rem;
+  }
+
+  /* Navigation */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+    margin: -2rem -1.5rem 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    z-index: 100;
+    font-size: 0.82rem;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-right: 1.2rem;
+    transition: color 0.15s;
+  }
+
+  nav a:hover { color: var(--accent); }
+
+  /* Header */
+  .doc-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .doc-header h1 {
+    color: var(--text-heading);
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .doc-header .subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  .doc-header .meta {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+
+  .doc-header .meta strong {
+    color: var(--text);
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 3.5rem;
+  }
+
+  h2 {
+    color: var(--text-heading);
+    font-size: 1.45rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    color: var(--text-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  h4 {
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Evidence levels */
+  .evidence-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    margin-left: 0.3rem;
+    vertical-align: middle;
+  }
+
+  .evidence-established {
+    background: rgba(63, 185, 80, 0.15);
+    color: var(--accent-green);
+    border: 1px solid rgba(63, 185, 80, 0.3);
+  }
+
+  .evidence-supported {
+    background: rgba(88, 166, 255, 0.12);
+    color: var(--accent);
+    border: 1px solid rgba(88, 166, 255, 0.3);
+  }
+
+  .evidence-extrapolation {
+    background: rgba(210, 153, 34, 0.15);
+    color: var(--accent-yellow);
+    border: 1px solid rgba(210, 153, 34, 0.3);
+  }
+
+  .evidence-open {
+    background: rgba(188, 140, 255, 0.12);
+    color: var(--accent-purple);
+    border: 1px solid rgba(188, 140, 255, 0.3);
+  }
+
+  /* Callout boxes */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--bg-card);
+    padding: 1rem 1.2rem;
+    margin: 1.4rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+
+  .callout.key-finding {
+    border-left-color: var(--accent-green);
+  }
+
+  .callout.caution {
+    border-left-color: var(--accent-yellow);
+  }
+
+  .callout.limitation {
+    border-left-color: var(--accent-red);
+  }
+
+  .callout.question {
+    border-left-color: var(--accent-purple);
+  }
+
+  .callout .callout-label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+  }
+
+  .callout.key-finding .callout-label { color: var(--accent-green); }
+  .callout.caution .callout-label { color: var(--accent-yellow); }
+  .callout.limitation .callout-label { color: var(--accent-red); }
+  .callout.question .callout-label { color: var(--accent-purple); }
+
+  /* Experiment boxes */
+  .experiment-box {
+    background: rgba(88, 166, 255, 0.06);
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0 1.4rem;
+    font-size: 0.92rem;
+  }
+
+  .experiment-box .exp-header {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .experiment-box p {
+    margin-bottom: 0.6rem;
+  }
+
+  .experiment-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .exp-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .exp-meta span strong {
+    color: var(--text);
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0;
+    font-size: 0.92rem;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+  }
+
+  th {
+    background: var(--bg-card);
+    color: var(--text-heading);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  /* Code blocks */
+  code {
+    background: var(--bg-code);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.88em;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  /* Sup for references */
+  sup a {
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* References section */
+  .references {
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  .references ol {
+    padding-left: 1.8rem;
+  }
+
+  .references li {
+    margin-bottom: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  .references li strong {
+    color: var(--text);
+  }
+
+  /* Rating bars */
+  .feasibility-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    font-size: 0.88rem;
+  }
+
+  .bar-track {
+    flex: 1;
+    max-width: 150px;
+    height: 6px;
+    background: var(--bg-code);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+
+  .bar-fill.high { background: var(--accent-green); }
+  .bar-fill.medium { background: var(--accent-yellow); }
+  .bar-fill.low { background: var(--accent-red); }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+    font-size: 0.82rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; color: #1a1a1a; }
+    nav { display: none; }
+    .callout { border-left-width: 3px; }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem; font-size: 15px; }
+    .doc-header h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    .exp-meta { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#basis">1. Scientific Basis</a>
+  <a href="#why-yeast">2. Why Yeast</a>
+  <a href="#construct">3. Gene Construct</a>
+  <a href="#delivery">4. Delivery Formats</a>
+  <a href="#dosing">5. Dosing</a>
+  <a href="#questions">6. Open Questions</a>
+  <a href="#validation">7. Validation Path</a>
+  <a href="#koji">8. Koji Track</a>
+  <a href="#risks">9. Risks</a>
+  <a href="#proposal">10. The Ask</a>
+  <a href="#references">References</a>
+</nav>
+
+<!-- ============================================ -->
+<!-- HEADER -->
+<!-- ============================================ -->
+
+<header class="doc-header">
+  <h1>Engineering <em>Saccharomyces cerevisiae</em> for Oral Uricase Delivery</h1>
+  <div class="subtitle">A Research Proposal for Proof-of-Concept Collaboration</div>
+  <div class="meta">
+    <strong>Author:</strong> Brian Abent<br>
+    <strong>Date:</strong> April 2026<br>
+    <strong>Status:</strong> Proposal for expert review — requesting guidance, not endorsement<br>
+    <strong>Circulated to:</strong> Rheinallt Jones (Emory Pediatric GI / Gnotobiotic Animal Core), Lauren Collier-Hyams (Pharma, NF-κB/intestinal signaling), Valerie Jones (TLR5/innate immunity)
+  </div>
+
+  <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-muted);">This proposal is part of the <a href="open-enzyme-vision.html" style="color:#3fb950; text-decoration:none; font-weight:600;">Open Enzyme</a> project — an open-source therapeutic enzyme platform. The yeast track is the fastest path to a working uricase producer.</p>
+
+  <div class="legend" style="margin-top:1.5rem;">
+    <span style="color:var(--text-muted); font-weight:600; margin-right:0.3rem;">Evidence levels used throughout:</span>
+    <span class="legend-item"><span class="evidence-tag evidence-established">Established</span> Peer-reviewed, replicated</span>
+    <span class="legend-item"><span class="evidence-tag evidence-supported">Supported</span> Published data, limited studies</span>
+    <span class="legend-item"><span class="evidence-tag evidence-extrapolation">Extrapolation</span> Reasonable inference from related work</span>
+    <span class="legend-item"><span class="evidence-tag evidence-open">Open</span> Needs experimental data</span>
+  </div>
+</header>
+
+<!-- ============================================ -->
+<!-- 1. SCIENTIFIC BASIS -->
+<!-- ============================================ -->
+
+<section id="basis">
+<h2>1. The Scientific Basis</h2>
+
+<h3>Human Uricase Loss <span class="evidence-tag evidence-established">Established</span></h3>
+
+<p>Humans, along with all great apes, lack a functional uricase (urate oxidase) enzyme. The gene that once encoded it — <em>UOX</em> — is a pseudogene, inactivated by two nonsense mutations at codons 33 and 187 and an aberrant splice site.<sup><a href="#ref1">[1]</a></sup> This didn't happen once: uricase was lost independently in at least two primate lineages (great apes and lesser apes), and also in birds and some reptiles. The multiple independent losses suggest that elevated uric acid may have conferred a selective advantage — likely related to its role as an antioxidant, a fructose metabolism accelerator aiding fat accumulation, or both.<sup><a href="#ref2">[2]</a></sup> A 2023 Cell paper identified a widely distributed gene cluster that partially compensates for this loss in hominids, confirming the evolutionary pressure around urate handling.<sup><a href="#ref3">[3]</a></sup></p>
+
+<p>The practical consequence: humans maintain serum uric acid levels of 3.5–7.2 mg/dL, whereas most mammals with functional uricase run below 2 mg/dL. When serum urate exceeds ~6.8 mg/dL (the monosodium urate saturation point), crystals can form in joints, tendons, and kidneys — the pathology of gout.</p>
+
+<h3>Uric Acid Homeostasis <span class="evidence-tag evidence-established">Established</span></h3>
+
+<p>Uric acid is the end product of purine metabolism in humans, generated primarily by the enzyme xanthine oxidase in the liver and intestinal mucosa. Two-thirds of daily urate elimination occurs via renal excretion; approximately one-third is eliminated through the intestine, primarily mediated by the ABCG2 transporter expressed on the apical membrane of intestinal epithelial cells.<sup><a href="#ref4">[4]</a></sup><sup><a href="#ref5">[5]</a></sup> Dysfunction of ABCG2 is now recognized as a significant cause of hyperuricemia — patients with ABCG2 loss-of-function variants have reduced intestinal excretion and compensatory overload on the kidneys.<sup><a href="#ref6">[6]</a></sup></p>
+
+<p>This intestinal excretion pathway is the mechanistic foundation for the entire approach proposed here.</p>
+
+<h3>The Gut-Lumen Degradation Thesis <span class="evidence-tag evidence-supported">Supported</span></h3>
+
+<p>The thesis is straightforward: if you place active uricase enzyme in the intestinal lumen, it will degrade uric acid present there (both from intestinal secretion via ABCG2 and from dietary purines). This degradation creates a concentration gradient — a "sink" — that pulls additional uric acid from the serum across the intestinal epithelium. The urate is converted to allantoin, a highly soluble, freely excreted, non-toxic compound.</p>
+
+<p>This is not speculative. Two independent lines of evidence validate the core mechanism:</p>
+
+<h4>ALLN-346: Engineered Oral Uricase (Allena Pharmaceuticals)</h4>
+
+<p>ALLN-346 is an engineered variant of <em>Candida utilis</em> uricase, modified using protein engineering (ProteinGPS) to have 20-fold increased stability against pancreatic proteases (half-life of 85.3 min vs. 4.3 min for wild-type <em>C. utilis</em> enzyme in 80 ng/μL pancreatin) while maintaining specific activity comparable to the wild-type enzyme.<sup><a href="#ref7">[7]</a></sup></p>
+
+<p>In urate oxidase-deficient knockout mice, oral ALLN-346 treatment over 7- and 19-day studies normalized urine uric acid excretion and significantly reduced hyperuricemia.<sup><a href="#ref7">[7]</a></sup> In the Phase 2a Study 201 in humans (patients with gout and CKD), statistically significant reductions in serum uric acid (sUA) were observed from days 5–7 (p&lt;0.01 on days 5 and 6; p&lt;0.05 on day 7), with a striking correlation between sUA reduction and residual kidney function (r=0.95, p=0.003).<sup><a href="#ref8">[8]</a></sup></p>
+
+<div class="callout caution">
+  <div class="callout-label">Honest caveat</div>
+  The Phase 2a Study 202, which enrolled a broader cohort, showed mean sUA reductions of only 0–5% from baseline on days 7 and 14 — not statistically significant vs. placebo.<sup><a href="#ref9">[9]</a></sup> Allena subsequently provided a "clinical and corporate update" (often a euphemism), and the company eventually wound down. The approach works in mice and showed signal in CKD patients with residual renal function, but the human dose-response relationship for oral uricase in the gut is not yet fully established. This is important context.
+</div>
+
+<h4>PULSE Probiotic: Engineered <em>E. coli</em> Nissle 1917</h4>
+
+<p>Published in <em>Cell Reports Medicine</em> in 2025, PULSE (<strong>P</strong>robiotic-based <strong>U</strong>A <strong>L</strong>evel <strong>S</strong>ensing and Adjustment <strong>E</strong>ngineered) is an <em>E. coli</em> Nissle 1917 strain engineered with a uric acid-responsive biosensor (based on the transcriptional repressor HucR) that dynamically regulates urate oxidase expression in the gut lumen.<sup><a href="#ref10">[10]</a></sup> The key advance: this is a "smart" probiotic that expresses uricase only when uric acid levels are elevated.</p>
+
+<p>In hyperuricemic mice and rats, oral administration of PULSE reduced persistent hyperuricemia, improved overall survival, and alleviated renal damage.<sup><a href="#ref10">[10]</a></sup> The system expressed urate oxidase in three different configurations to test which architecture performed best in vivo.</p>
+
+<h4>Engineered <em>S. boulardii</em> (ACS Synthetic Biology, 2025)</h4>
+
+<p>Perhaps most directly relevant to this proposal: a team systematically engineered <em>Saccharomyces boulardii</em> (a probiotic variant of <em>S. cerevisiae</em>) for uric acid degradation. They identified a uricase from <em>Vibrio vulnificus</em> that showed high activity in yeast, improved the expression and stability of the urate transporter UapA by constructing a chimera for uric acid import, and combinatorially assembled constitutive promoters to optimize the pathway. Their best-performing construct achieved uric acid-degrading activity of <strong>365.32 ± 20.54 μmol/h/OD</strong>.<sup><a href="#ref11">[11]</a></sup></p>
+
+<div class="callout key-finding">
+  <div class="callout-label">Key finding</div>
+  Three independent groups — using three different organisms (<em>C. utilis</em> enzyme alone, engineered <em>E. coli</em>, engineered <em>S. boulardii</em>) — have demonstrated that degrading uric acid in the gut lumen can reduce systemic urate levels. The mechanism is validated. The engineering details are what need optimization.
+</div>
+
+</section>
+
+<!-- ============================================ -->
+<!-- 2. WHY S. CEREVISIAE -->
+<!-- ============================================ -->
+
+<section id="why-yeast">
+<h2>2. Why <em>Saccharomyces cerevisiae</em></h2>
+
+<h3>GRAS Status and Genetic Tractability <span class="evidence-tag evidence-established">Established</span></h3>
+
+<p><em>S. cerevisiae</em> holds "Generally Recognized as Safe" (GRAS) status from the FDA. It is the most genetically tractable eukaryotic organism on the planet, with decades of tool development for heterologous protein expression. There are well-established expression platforms, extensive libraries of characterized promoters, and multiple selectable marker systems.</p>
+
+<h3>Expression Systems</h3>
+
+<p>The yeast protein expression toolkit includes inducible promoters (GAL1, GAL7, GAL10 — induced by galactose, repressed by glucose), constitutive promoters (TEF1, PGK1, GPD/TDH3 — always on, no induction required), and tunable systems. For a food-product application where you want the enzyme present during normal growth and fermentation, constitutive promoters are more practical — you don't want to have to add galactose to trigger expression.</p>
+
+<p>Two main vector strategies exist. High-copy episomal plasmids (2μ-based) give 20–50 copies per cell and high expression levels, but they can be unstable without selective pressure — cells that lose the plasmid grow faster and outcompete engineered cells. Integrative approaches (inserting the gene directly into a chromosome) are more stable but typically yield lower expression per cell unless you integrate multiple copies or use strong promoters. For a food product that needs to be stable over fermentation without antibiotic selection, <strong>chromosomal integration is the more realistic path</strong>.</p>
+
+<h3>The Rasburicase Precedent <span class="evidence-tag evidence-established">Established</span></h3>
+
+<div class="callout key-finding">
+  <div class="callout-label">Critical prior art</div>
+  Rasburicase (Elitek/Fasturtec), the FDA-approved recombinant uricase used intravenously for tumor lysis syndrome, is <em>Aspergillus flavus</em> uricase expressed in a genetically modified <em>Saccharomyces cerevisiae</em> strain. It was approved by the EMA in 2001 and the FDA in 2002.<sup><a href="#ref12">[12]</a></sup> This means the exact gene-host combination we are discussing has been commercially manufactured at pharmaceutical scale for over two decades. The proof that <em>S. cerevisiae</em> can express active, correctly folded <em>A. flavus</em> uricase is not theoretical — it is an approved pharmaceutical product.
+</div>
+
+<p>The original academic work demonstrated that <em>S. cerevisiae</em> transformants accumulated active, soluble <em>A. flavus</em> uricase (Uox) to levels exceeding <strong>13% of total cellular protein</strong> using a hybrid GAL7/ADH2 promoter, with good proportionality between gene copy number (1–10 copies) and expression level.<sup><a href="#ref13">[13]</a></sup></p>
+
+<h3>Secretion vs. Intracellular Expression <span class="evidence-tag evidence-extrapolation">Extrapolation</span></h3>
+
+<p>The rasburicase manufacturing process uses intracellular expression — cells are grown, harvested, and lysed to purify the enzyme. For a food-product application, this raises a design question: should the uricase be secreted into the surrounding liquid, or kept intracellular and released upon cell lysis or autolysis?</p>
+
+<p>Secretion (using signal peptides like the α-mating factor prepro sequence) would put active enzyme directly into the beverage or food matrix. However, yeast secretion of large tetrameric proteins (~135 kDa assembled) is often inefficient. Intracellular expression followed by natural autolysis (which occurs during beer conditioning and in nutritional yeast production) may be more practical, though it introduces questions about enzyme activity after autolysis.</p>
+
+<div class="experiment-box">
+  <div class="exp-header">How to resolve: Secretion vs. intracellular expression</div>
+  <p>Clone the <em>A. flavus</em> uaZ gene into two constructs: (1) with the α-factor signal peptide for secretion, and (2) without, for intracellular accumulation. Transform both into the same yeast strain. After 48h of growth in liquid culture, assay uricase activity in (a) the supernatant and (b) the cell pellet lysate for each construct. Compare total enzyme output, specific activity, and fraction secreted.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$500–1,000 (gene synthesis + basic reagents)</span>
+    <span><strong>Time:</strong> 2–3 weeks (including transformation and assays)</span>
+    <span><strong>Who:</strong> Any molecular biology lab with yeast experience</span>
+  </div>
+</div>
+
+</section>
+
+<!-- ============================================ -->
+<!-- 3. GENE CONSTRUCT DESIGN -->
+<!-- ============================================ -->
+
+<section id="construct">
+<h2>3. Gene Construct Design</h2>
+
+<h3>Source Gene Selection</h3>
+
+<p>Several uricase genes have been expressed recombinantly. Here is an honest comparison:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Expression in Yeast</th>
+      <th>Specific Activity</th>
+      <th>Key Properties</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><em>Aspergillus flavus</em> (uaZ)</strong></td>
+      <td>Proven at &gt;13% total protein in <em>S. cerevisiae</em><sup><a href="#ref13">[13]</a></sup></td>
+      <td>~11–14 IU/mg (recombinant)<sup><a href="#ref14">[14]</a></sup></td>
+      <td>pH optimum 8.5–9.5; thermally labile above 40°C; 135 kDa homotetramer (301 aa/subunit)</td>
+      <td>Rasburicase source. Best characterized for this host. Default choice.</td>
+    </tr>
+    <tr>
+      <td><strong><em>Candida utilis</em></strong></td>
+      <td>Expressed in <em>E. coli</em>, <em>Hansenula polymorpha</em><sup><a href="#ref15">[15]</a></sup></td>
+      <td>25.8–38.4 IU/mg<sup><a href="#ref16">[16]</a></sup></td>
+      <td>Higher specific activity; basis for ALLN-346 engineering</td>
+      <td>Higher activity but less validated in <em>S. cerevisiae</em> specifically. ALLN-346's protease-resistant mutant is proprietary.</td>
+    </tr>
+    <tr>
+      <td><strong><em>Vibrio vulnificus</em></strong></td>
+      <td>Tested in <em>S. cerevisiae</em> and <em>S. boulardii</em><sup><a href="#ref11">[11]</a></sup></td>
+      <td>Not directly comparable (measured as μmol/h/OD in whole cells)</td>
+      <td>Selected specifically for high activity in yeast cellular context</td>
+      <td>Newest entrant. Chosen by the 2025 ACS Synth Bio group specifically for yeast expression.</td>
+    </tr>
+    <tr>
+      <td><strong><em>Bacillus fastidiosus</em></strong></td>
+      <td>Primarily in <em>E. coli</em></td>
+      <td>Literature values vary</td>
+      <td>Native 145 kDa heterotetramer</td>
+      <td>Less commonly used for recombinant work. Unusual subunit heterogeneity.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Recommendation:</strong> Start with <em>A. flavus</em> uaZ. It has the deepest validation in <em>S. cerevisiae</em>, is the basis for an approved pharmaceutical product, and there is extensive published characterization data. The <em>V. vulnificus</em> uricase is an interesting second candidate given the 2025 <em>S. boulardii</em> results, but it adds risk by being less characterized. In parallel, testing the <em>C. utilis</em> gene in <em>S. cerevisiae</em> would be informative — its higher specific activity could be advantageous if it expresses well.</p>
+
+<div class="experiment-box">
+  <div class="exp-header">How to resolve: Which uricase gene performs best in S. cerevisiae</div>
+  <p>Order codon-optimized synthetic genes for all three candidates (<em>A. flavus</em>, <em>C. utilis</em>, <em>V. vulnificus</em>), each in the same expression cassette (e.g., pTEF1 promoter, CYC1 terminator, integrated at the same locus). Transform into the same <em>S. cerevisiae</em> background. Compare: (a) expression level by Western blot/total protein, (b) specific uricase activity in cell lysate, (c) enzyme stability at 37°C over 24h. Three genes × two replicates = six transformations.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$2,000–3,000 (gene synthesis is ~$0.10/bp × ~900 bp × 3 genes + reagents)</span>
+    <span><strong>Time:</strong> 4–6 weeks</span>
+    <span><strong>Who:</strong> Any synbio or yeast genetics lab</span>
+  </div>
+</div>
+
+<h3>Codon Optimization <span class="evidence-tag evidence-established">Established</span></h3>
+
+<p>Codon optimization for <em>S. cerevisiae</em> is routine. The <em>A. flavus</em> uaZ gene has already been successfully expressed without codon optimization (as demonstrated by rasburicase production), but optimization of rare codons and removal of cryptic splice sites or polyA signals could improve yield, especially with constitutive promoters. Commercial gene synthesis services (Twist, IDT, GenScript) include codon optimization in their standard workflow.</p>
+
+<h3>Promoter Selection</h3>
+
+<p>For a food-product application, the enzyme should be expressed constitutively during normal aerobic growth and fermentation. The recommended promoters:</p>
+
+<p><strong>pTEF1</strong> (translation elongation factor 1α) — strongest constitutive promoter in <em>S. cerevisiae</em>, active across carbon sources, well-characterized. This is the default choice for maximal constitutive expression.</p>
+
+<p><strong>pPGK1</strong> (phosphoglycerate kinase) — strong constitutive, slightly lower than TEF1 in most conditions, very well characterized.</p>
+
+<p><strong>pGPD/pTDH3</strong> (glyceraldehyde-3-phosphate dehydrogenase) — another strong constitutive option, comparable to TEF1.</p>
+
+<p>The hybrid GAL7/ADH2 promoter used in the original rasburicase work is inducible (derepressed when glucose is depleted) — effective for bioreactor production but less suitable for a food fermentation where you want enzyme throughout the process.</p>
+
+<h3>Selectable Markers and Integration</h3>
+
+<p>For lab-stage work, standard auxotrophic markers (URA3, LEU2, HIS3) or dominant markers (kanMX, conferring G418 resistance) are all appropriate. For a food product, the final construct should ideally be marker-free or use only food-safe markers. CRISPR/Cas9-based integration can achieve markerless insertion, which is important for eventual regulatory considerations.</p>
+
+<p>The 2025 <em>S. boulardii</em> work identified specific high-expression chromosomal integration loci in that strain,<sup><a href="#ref11">[11]</a></sup> which would be directly applicable since <em>S. boulardii</em> is genomically a <em>S. cerevisiae</em> variant.</p>
+
+</section>
+
+<!-- ============================================ -->
+<!-- 4. DELIVERY FORMATS -->
+<!-- ============================================ -->
+
+<section id="delivery">
+<h2>4. Delivery Formats — Honest Assessment</h2>
+
+<p>Not all formats are created equal. For each, I've tried to be honest about whether therapeutically meaningful uricase delivery is realistic.</p>
+
+<h3>a. Beer</h3>
+
+<div class="callout caution">
+  <div class="callout-label">The elephant in the room</div>
+  Alcohol raises uric acid through at least three independent mechanisms: (1) ethanol metabolism accelerates ATP degradation and purine turnover, increasing uric acid production; (2) the lactate produced during ethanol metabolism competes with uric acid for renal tubular secretion via organic anion transporters, reducing excretion; (3) beer specifically contains high purine content from yeast and grain (~8–14 mg purines per 100 mL).<sup><a href="#ref17">[17]</a></sup><sup><a href="#ref18">[18]</a></sup> You are fighting the delivery vehicle.
+</div>
+
+<p>"Therapeutic beer" is not a credible framing. "Less bad beer" is more accurate, and even that requires the uricase to survive fermentation, conditioning, and the gastric transit that follows consumption. A more honest question: could a low-alcohol or non-alcoholic beer fermented with engineered yeast deliver meaningful uricase while minimizing the alcohol-driven uric acid increase?</p>
+
+<p>Low-alcohol (&lt;0.5% ABV) beer removes most of the ethanol-driven harm but retains the purine issue from grain. The uricase present could theoretically degrade purines in the beer itself during fermentation, which would be a secondary benefit — lower-purine beer by enzymatic degradation during production.</p>
+
+<div class="feasibility-bar"><span>Therapeutic credibility:</span> <span class="bar-track"><span class="bar-fill low" style="width:20%"></span></span> <span style="color:var(--accent-red)">Low</span> (full-strength beer)</div>
+<div class="feasibility-bar"><span>Therapeutic credibility:</span> <span class="bar-track"><span class="bar-fill medium" style="width:45%"></span></span> <span style="color:var(--accent-yellow)">Moderate</span> (NA beer, if enzyme survives)</div>
+
+<div class="experiment-box">
+  <div class="exp-header">How to resolve: Does uricase survive beer fermentation?</div>
+  <p>Brew a 1-gallon test batch with the engineered yeast. At each stage — active fermentation (day 3), end of primary (day 7), after conditioning/cold crash (day 14), and after bottling (day 21) — draw samples and run a uricase activity assay (standard spectrophotometric assay at 293 nm, measuring uric acid consumption). Compare to a control with purified uricase added to sterile, finished beer at the same stages to distinguish enzyme production from enzyme survival.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$200–400 (homebrew supplies + uric acid assay reagents)</span>
+    <span><strong>Time:</strong> 3–4 weeks</span>
+    <span><strong>Who:</strong> Anyone with homebrewing equipment and a spectrophotometer</span>
+  </div>
+</div>
+
+<h3>b. Non-Alcoholic Yeast-Fermented Beverages</h3>
+
+<p>Kvass, water kefir, tepache, and kombucha-style beverages fermented with <em>S. cerevisiae</em> rather than (or in addition to) bacterial cultures. These remove the alcohol confound while retaining the live-yeast delivery vector. Short fermentation times (24–48h for kvass) mean less opportunity for enzyme degradation.</p>
+
+<p>This is a significantly more credible therapeutic format. The yeast is alive and expressing during the fermentation, the beverage is consumed with active cells and potentially secreted enzyme, and there's no alcohol working against you.</p>
+
+<div class="feasibility-bar"><span>Therapeutic credibility:</span> <span class="bar-track"><span class="bar-fill medium" style="width:60%"></span></span> <span style="color:var(--accent-yellow)">Moderate-High</span> (contingent on dosing; see §5)</div>
+
+<h3>c. Nutritional Yeast / Dried Yeast Powder</h3>
+
+<p>Grow the engineered yeast in bulk, harvest, and process into a dried product (powder, flakes, or capsules). This is the format with the most control over dosing — you can standardize the product to a specific uricase activity per gram.</p>
+
+<p>The critical question is enzyme stability after drying. Conventional nutritional yeast production involves heating to kill the yeast (typically 50–60°C for pasteurization), followed by drum drying or spray drying at higher temperatures. <em>A. flavus</em> uricase loses significant activity above 40°C — free enzyme loses almost all activity at 40–45°C.<sup><a href="#ref14">[14]</a></sup> This is a problem.</p>
+
+<p>However: lyophilization (freeze-drying) preserves enzyme activity far better than heat-based drying, and encapsulation in trehalose or other lyoprotectants is standard practice for enzyme stabilization. A lyophilized yeast powder, packaged in capsules, could plausibly retain uricase activity. This needs to be tested.</p>
+
+<div class="feasibility-bar"><span>Therapeutic credibility:</span> <span class="bar-track"><span class="bar-fill medium" style="width:55%"></span></span> <span style="color:var(--accent-yellow)">Moderate</span> (depends entirely on drying method)</div>
+
+<div class="experiment-box">
+  <div class="exp-header">How to resolve: Does uricase survive drying?</div>
+  <p>Take a concentrated pellet of engineered yeast. Split into four aliquots: (1) fresh lysate (positive control), (2) freeze-dried/lyophilized pellet, (3) heat-killed at 55°C then dried, (4) spray-dried at 120°C inlet temp. Rehydrate each, lyse, and assay uricase activity. Report as % activity retained vs. fresh lysate.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$300–800 (lyophilizer access is the main cost; often available in university core facilities)</span>
+    <span><strong>Time:</strong> 1–2 weeks</span>
+    <span><strong>Who:</strong> Any biochemistry lab with a lyophilizer</span>
+  </div>
+</div>
+
+<h3>d. Live Yeast Probiotic (<em>S. boulardii</em> Chassis)</h3>
+
+<p><em>S. boulardii</em> (CNCM I-745) is an established probiotic yeast, already marketed for GI conditions (Florastor). It is genomically a variant of <em>S. cerevisiae</em>, meaning the same genetic tools largely apply. The 2025 ACS Synthetic Biology paper demonstrated successful integration and expression of a uric acid degradation pathway in <em>S. boulardii</em>.<sup><a href="#ref11">[11]</a></sup></p>
+
+<p>The colonization question is critical. Published data show that <em>S. boulardii</em> achieves steady-state concentrations in the human colon within 3 days of regular dosing and is cleared 2–5 days after discontinuation.<sup><a href="#ref19">[19]</a></sup> In mice with conventional microbiota, gut residence time is only 1–2 days.<sup><a href="#ref20">[20]</a></sup> This means <strong><em>S. boulardii</em> does not colonize — it transits</strong>. You'd need daily dosing to maintain gut levels. This isn't necessarily a dealbreaker (you take allopurinol daily too), but it does mean this is a daily supplement, not a one-time inoculation.</p>
+
+<div class="feasibility-bar"><span>Therapeutic credibility:</span> <span class="bar-track"><span class="bar-fill high" style="width:70%"></span></span> <span style="color:var(--accent-green)">High</span> (most directly validated approach)</div>
+
+<div class="experiment-box">
+  <div class="exp-header">How to resolve: Continuous production in the gut</div>
+  <p>This is precisely the kind of question Rheinallt's gnotobiotic facility could answer. Colonize germ-free mice with engineered <em>S. boulardii</em> expressing uricase. Measure: (a) fecal yeast counts daily, (b) fecal and cecal uricase activity, (c) serum uric acid (requires Uox-knockout mice or potassium oxonate-treated mice for a hyperuricemic model). Compare to conventional mice gavaged daily. This gives both colonization kinetics and functional uricase delivery data.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$5,000–15,000 (gnotobiotic mouse work is expensive)</span>
+    <span><strong>Time:</strong> 8–12 weeks</span>
+    <span><strong>Who:</strong> Rheinallt Jones, Emory Gnotobiotic Animal Core</span>
+  </div>
+</div>
+
+<h3>e. Yeast Lysate (Concentrated Enzyme Liquid)</h3>
+
+<p>Grow engineered yeast in a bioreactor, lyse the cells mechanically or enzymatically, filter, and concentrate the uricase-containing supernatant. This is closest to a traditional enzyme supplement — essentially a crude or semi-purified uricase preparation in a food-grade liquid.</p>
+
+<p>Advantages: maximal control over enzyme concentration, can be standardized by activity assay, could be flavored or formulated as a shot/tonic. Disadvantages: more processing steps, requires some manufacturing infrastructure, shorter shelf life unless lyophilized.</p>
+
+<div class="feasibility-bar"><span>Therapeutic credibility:</span> <span class="bar-track"><span class="bar-fill high" style="width:65%"></span></span> <span style="color:var(--accent-green)">Moderate-High</span> (proven concept, processing questions)</div>
+
+<h3>f. Amazake / Koji Hybrid (Dual-Organism Fermentation)</h3>
+
+<p>Use both engineered <em>A. oryzae</em> (koji) and engineered <em>S. cerevisiae</em> in a sequential fermentation: koji produces amylases + uricase during the saccharification stage, then yeast continues uricase production during the alcoholic (or non-alcoholic) fermentation. Two organisms, potentially two different uricase genes, producing enzyme across both fermentation stages.</p>
+
+<p>This is the most complex format but also the most interesting for a food product — amazake is a traditional Japanese fermented rice beverage with existing consumer acceptance. See §8 for more on the koji track.</p>
+
+<div class="feasibility-bar"><span>Therapeutic credibility:</span> <span class="bar-track"><span class="bar-fill medium" style="width:50%"></span></span> <span style="color:var(--accent-yellow)">Moderate</span> (interesting but adds complexity)</div>
+
+</section>
+
+<!-- ============================================ -->
+<!-- 5. THE DOSING QUESTION -->
+<!-- ============================================ -->
+
+<section id="dosing">
+<h2>5. The Dosing Question</h2>
+
+<h3>What Activity Level Is Needed? <span class="evidence-tag evidence-open">Open</span></h3>
+
+<p>This is the central feasibility question. Let me lay out the reasoning quantitatively, while being transparent about the assumptions.</p>
+
+<p><strong>The uric acid budget:</strong> A typical adult produces ~600–900 mg of uric acid per day. Roughly 200–300 mg is eliminated via the intestine. For a gout patient with serum urate of ~9 mg/dL (a common level on no therapy), reducing this to below 6 mg/dL (the therapeutic target) requires eliminating roughly 200–400 mg of additional uric acid per day — the amount that would otherwise accumulate.</p>
+
+<p><strong>Rasburicase dosing (IV, for reference):</strong> The approved dose is 0.15–0.2 mg/kg/day, which for a 90 kg adult is ~13.5–18 mg of pure enzyme per day, administered intravenously. This is dramatically effective — it typically reduces serum urate to near-zero within 4 hours. But IV delivery puts the enzyme directly into the bloodstream with access to all circulating urate; oral delivery must work only through the gut lumen, which is a fundamentally different (and less efficient) route.</p>
+
+<p><strong>ALLN-346 dosing (oral):</strong> The Phase 2a studies used oral doses that were orders of magnitude higher than the IV rasburicase dose, reflecting the inefficiency of the gut-lumen route and the need for protease resistance. Exact per-dose numbers from the human trials are not fully public, but the mouse studies used doses ranging from approximately 3–30 mg of engineered enzyme per day, scaled to body weight.<sup><a href="#ref7">[7]</a></sup></p>
+
+<h3>How Much Yeast Is That?</h3>
+
+<p>Let's work the math with <em>A. flavus</em> uricase expressed in <em>S. cerevisiae</em>:</p>
+
+<p>From the published data, uricase accumulated to &gt;13% of total cellular protein in optimized <em>S. cerevisiae</em> transformants.<sup><a href="#ref13">[13]</a></sup> A typical yeast cell contains approximately 6 pg of total protein. At 13% uricase, that's ~0.78 pg of uricase per cell. Yeast cell density in a standard culture is ~10<sup>8</sup> cells/mL at saturation.</p>
+
+<p>For a rough calculation: 10<sup>8</sup> cells/mL × 0.78 pg/cell = ~78 μg uricase/mL of dense culture, or about 78 mg/L.</p>
+
+<p>If we need ~20–50 mg of active uricase per dose (extrapolating between the IV and oral ranges, acknowledging this is a rough estimate), that's 250–640 mL of saturated culture — roughly a pint to a quart of dense yeast suspension.</p>
+
+<div class="callout caution">
+  <div class="callout-label">Reality check</div>
+  A pint of saturated yeast culture is not a palatable serving. But a concentrated yeast paste or dried powder changes the math dramatically. If you concentrate 10× by centrifugation, you're at 25–64 mL (~1–2.5 tablespoons of thick yeast slurry). Freeze-dried to a powder, assuming 5× further concentration and reasonable enzyme survival, you could be looking at ~5–15 grams of powder — a large capsule or a small scoop. This is in the range of a plausible supplement dose, but just barely, and it depends on assumptions that haven't been validated.
+</div>
+
+<p>The <em>S. boulardii</em> group's reported activity of 365 μmol/h/OD<sup><a href="#ref11">[11]</a></sup> suggests their optimized pathway may be more efficient than the simple expression-level calculation above, since they also incorporated a uric acid transporter to actively import substrate. This active import could significantly improve the effective activity per cell in a gut environment where substrate concentration varies.</p>
+
+<div class="experiment-box">
+  <div class="exp-header">How to resolve: Is the dose achievable?</div>
+  <p><strong>Bench experiment:</strong> Transform <em>S. cerevisiae</em> with the uricase construct. Grow to saturation in 1L of standard media. Harvest, lyse, and measure total uricase activity (IU). Calculate: how many IU per gram of wet cell pellet, per gram of dried cells, and per gram of lyophilized cells. Compare to the estimated therapeutic need (~200–400 mg uric acid degradation per day, which at a specific activity of ~12 IU/mg for <em>A. flavus</em> uricase and a molecular weight of 168 Da for uric acid, requires roughly 100–200 IU of enzyme activity, assuming favorable kinetics in the gut).</p>
+  <p><strong>Self-experiment (after bench validation):</strong> Using a home uric acid meter (~$50, Benecheck or similar), establish a baseline serum urate over 5 days (morning fasting measurements). Then consume the yeast product daily for 7 days at the calculated dose. Measure daily. Plot the curve. This is n=1 and not science, but it tells you whether you're in the right ballpark before investing in proper studies.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$150 (uric acid meter + strips) + yeast production costs</span>
+    <span><strong>Time:</strong> 2 weeks for bench; 2 weeks for self-experiment</span>
+    <span><strong>Who:</strong> Brian (self-experiment); any lab (bench work)</span>
+  </div>
+</div>
+
+</section>
+
+<!-- ============================================ -->
+<!-- 6. OPEN SCIENTIFIC QUESTIONS -->
+<!-- ============================================ -->
+
+<section id="questions">
+<h2>6. Open Scientific Questions</h2>
+
+<p>These are framed as questions for specific experts, but each one includes a path to an answer.</p>
+
+<h3>For Rheinallt (Gut Microbiome / Gnotobiotic Models)</h3>
+
+<div class="callout question">
+  <div class="callout-label">Q1: Colonization vs. transit for engineered S. boulardii</div>
+  <p>Published data show <em>S. boulardii</em> clears from humans within 2–5 days of stopping dosing. In your gnotobiotic mouse experience, what colonization density and residence time would you predict for an engineered <em>S. boulardii</em> strain? Is daily gavage the realistic model, or are there strategies (biofilm formation, mucoadhesive modifications) that could extend residence?</p>
+</div>
+
+<div class="experiment-box">
+  <div class="exp-header">Experiment to resolve Q1</div>
+  <p>Colonize gnotobiotic mice with engineered <em>S. boulardii</em>. Track fecal CFU daily for 30 days with continuous dosing, then stop dosing and continue tracking for 14 days. Compare with and without competing bacterial flora (gnotobiotic → gnotobiotic + defined bacterial community). Simultaneously measure cecal and fecal uricase activity to confirm the yeast is producing enzyme in vivo.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$8,000–15,000</span>
+    <span><strong>Time:</strong> 10–14 weeks</span>
+    <span><strong>Facility:</strong> Emory Gnotobiotic Animal Core</span>
+  </div>
+</div>
+
+<div class="callout question">
+  <div class="callout-label">Q2: Would your gnotobiotic facility be appropriate for proof-of-concept?</div>
+  <p>The ideal experiment: Uox-knockout or oxonate-treated mice colonized with engineered <em>S. boulardii</em>, measuring serum urate over time. Is this feasible in the gnotobiotic core? What's the timeline and approximate cost for a small-scale study (e.g., 3 groups × 8 mice)?</p>
+</div>
+
+<h3>For Valerie (TLR5 / Innate Immunity)</h3>
+
+<div class="callout question">
+  <div class="callout-label">Q3: Innate immune responses to engineered yeast in the gut</div>
+  <p>Would an engineered <em>S. cerevisiae</em> or <em>S. boulardii</em> strain expressing a foreign protein (fungal uricase) trigger TLR-mediated innate immune responses in the intestinal epithelium? <em>S. cerevisiae</em> cell wall components (β-glucan, mannan, chitin) are recognized by Dectin-1, Dectin-2, and TLR2. Is the immune response to probiotic yeast well characterized enough to predict tolerability of daily dosing?</p>
+</div>
+
+<div class="experiment-box">
+  <div class="exp-header">Experiment to resolve Q3</div>
+  <p>Expose Caco-2 or HT-29 intestinal epithelial cell monolayers to: (a) wild-type <em>S. boulardii</em>, (b) engineered <em>S. boulardii</em> expressing uricase, (c) purified uricase alone, (d) LPS positive control. Measure cytokine panel (IL-8, TNF-α, IL-1β, IL-10) at 4h and 24h by ELISA. Monitor transepithelial electrical resistance (TEER) for barrier integrity. If the engineered strain shows significantly different immune activation than wild-type, that's a flag.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$2,000–4,000</span>
+    <span><strong>Time:</strong> 3–4 weeks (cell culture + assays)</span>
+    <span><strong>Who:</strong> Valerie or any lab with intestinal epithelial cell models</span>
+  </div>
+</div>
+
+<h3>For Lauren (Pharma / Translational / NF-κB Signaling)</h3>
+
+<div class="callout question">
+  <div class="callout-label">Q4: Regulatory path for a GMO yeast food product</div>
+  <p>What's the realistic regulatory pathway for a food or supplement containing a GMO yeast that produces a therapeutic enzyme? Is this a food (GRAS self-determination?), a dietary supplement (DSHEA framework — but engineered organisms complicate this), or does it require a Biologics License Application? The FDA has been evolving its framework for "live biotherapeutic products" (LBPs) — does that apply here, and does it matter whether the product contains live vs. killed yeast?</p>
+</div>
+
+<div class="experiment-box">
+  <div class="exp-header">Path to resolve Q4</div>
+  <p>This isn't a bench experiment — it's a regulatory mapping exercise. Steps: (1) Review FDA's 2016 "Early Clinical Trials with Live Biotherapeutic Products" guidance and the 2024 updates. (2) Search for precedents: has any GMO yeast been approved as a food ingredient or supplement? (GTC Nutrition's GanedenBC<sup>30</sup> <em>Bacillus</em> is the closest precedent in probiotics.) (3) Have a pre-IND meeting or a pre-submission meeting with FDA's Office of Food Additive Safety or CBER, depending on how the product is positioned. Lauren's pharma regulatory network would be invaluable for identifying the right FDA contact.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> $0–5,000 (depending on whether you engage a regulatory consultant)</span>
+    <span><strong>Time:</strong> 4–8 weeks for the research; 3–6 months if seeking a formal FDA meeting</span>
+    <span><strong>Who:</strong> Lauren (guidance), regulatory consultant (optional)</span>
+  </div>
+</div>
+
+<div class="callout question">
+  <div class="callout-label">Q5: Immunogenicity of oral uricase — a different immune context?</div>
+  <p>Rasburicase (IV uricase) induces anti-drug antibodies in ~60% of patients, limiting re-dosing.<sup><a href="#ref12">[12]</a></sup> But IV delivery presents the antigen to the systemic immune system, while oral delivery primarily encounters the mucosal immune system, which is generally tolerogenic. Is there evidence that oral exposure to a foreign protein would induce tolerance rather than antibody formation? The oral tolerance literature from allergen immunotherapy is relevant here. Lauren, with your NF-κB and intestinal signaling background — does the gut immune context fundamentally change the immunogenicity risk?</p>
+</div>
+
+<div class="experiment-box">
+  <div class="exp-header">Experiment to resolve Q5</div>
+  <p>In mice, gavage with uricase daily for 28 days. Collect serum at days 0, 14, and 28. Run ELISA for anti-uricase IgG and IgE. Compare to a group that receives the same total dose of uricase by subcutaneous injection (positive control for systemic immunization). Measure fecal IgA as a mucosal immune readout. If oral exposure produces minimal IgG compared to the injected group, that supports the oral tolerance hypothesis.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$3,000–6,000 (mice, enzyme, ELISAs)</span>
+    <span><strong>Time:</strong> 6–8 weeks</span>
+    <span><strong>Who:</strong> Any immunology lab; could be combined with Rheinallt's gnotobiotic study</span>
+  </div>
+</div>
+
+<h3>For Everyone: The pH Challenge</h3>
+
+<div class="callout question">
+  <div class="callout-label">Q6: Does uricase survive the GI gauntlet?</div>
+  <p><em>A. flavus</em> uricase has a pH optimum of 8.5–9.5 and retains stability across pH 6–10.<sup><a href="#ref14">[14]</a></sup> Gastric acid drops the pH to 1.5–3.5 with pepsin as an aggressive protease. The small intestine is pH 6–7.5 with pancreatic proteases (trypsin, chymotrypsin, elastase). ALLN-346 specifically engineered for 20× protease resistance for this reason. An unmodified <em>A. flavus</em> uricase may not survive gastric transit.</p>
+  <p>However: uricase encapsulated within intact yeast cells may be partially protected. Yeast cell walls are resistant to gastric acid (β-glucan and chitin are not digested by human enzymes), and this is actually a known strategy for oral vaccine delivery. The question is whether enough enzyme remains active when the cells eventually lyse in the intestine.</p>
+</div>
+
+<div class="experiment-box">
+  <div class="exp-header">Experiment to resolve Q6</div>
+  <p><strong>In vitro GI simulation:</strong> Prepare three samples: (a) purified free uricase, (b) engineered yeast cells (intact), (c) yeast lysate. Subject each to a standard simulated GI transit protocol: (1) Simulated gastric fluid (SGF: pH 2.0, 3.2 mg/mL pepsin, 37°C) for 2 hours. (2) Neutralize to pH 6.8, add simulated intestinal fluid (SIF: pancreatin, bile salts) for 4 hours at 37°C. Assay uricase activity at each stage. This is a standard protocol — USP methods exist.</p>
+  <p>If intact yeast cells protect the enzyme better than free enzyme, that supports the "live yeast" and "whole-cell" delivery formats over lysate or purified enzyme. If nothing survives, you need either enteric capsules or the ALLN-346-style protease engineering approach.</p>
+  <div class="exp-meta">
+    <span><strong>Cost:</strong> ~$500–1,000</span>
+    <span><strong>Time:</strong> 2–3 days of bench work</span>
+    <span><strong>Who:</strong> Any biochemistry or pharmacology lab</span>
+  </div>
+</div>
+
+</section>
+
+<!-- ============================================ -->
+<!-- 7. VALIDATION PATH -->
+<!-- ============================================ -->
+
+<section id="validation">
+<h2>7. A Proposed Validation Path</h2>
+
+<p>Here is a staged approach, designed so that each phase answers a go/no-go question before investing in the next.</p>
+
+<h3>Phase 0: Construct and Confirm (Bench Work)</h3>
+
+<table>
+  <tr><th style="width:20%">Task</th><th>Details</th><th style="width:12%">Est. Cost</th><th style="width:12%">Timeline</th></tr>
+  <tr>
+    <td>Gene synthesis</td>
+    <td>Codon-optimized <em>A. flavus</em> uaZ gene + flanking promoter/terminator sequences for <em>S. cerevisiae</em>. Order from Twist or IDT.</td>
+    <td>$200–400</td>
+    <td>2 weeks</td>
+  </tr>
+  <tr>
+    <td>Construct assembly</td>
+    <td>Clone into an expression vector (2μ plasmid for initial testing; integrative cassette for stable strain). Standard restriction/ligation or Gibson assembly.</td>
+    <td>$200–500</td>
+    <td>1–2 weeks</td>
+  </tr>
+  <tr>
+    <td>Yeast transformation</td>
+    <td>Transform into lab <em>S. cerevisiae</em> (e.g., BY4741) and/or <em>S. boulardii</em>. Confirm by colony PCR.</td>
+    <td>$100–300</td>
+    <td>1 week</td>
+  </tr>
+  <tr>
+    <td>Activity assay</td>
+    <td>Lyse transformant cells; measure uricase activity by spectrophotometric assay (uric acid absorbance at 293 nm). Confirm active enzyme is being produced.</td>
+    <td>$100–200</td>
+    <td>1 week</td>
+  </tr>
+</table>
+
+<p><strong>Phase 0 total:</strong> ~$600–1,400 | 4–6 weeks | <strong>Go/no-go:</strong> Is active uricase detected in the cell lysate? If yes, proceed.</p>
+
+<h3>Phase 1: Stability Characterization</h3>
+
+<table>
+  <tr><th style="width:20%">Task</th><th>Details</th><th style="width:12%">Est. Cost</th><th style="width:12%">Timeline</th></tr>
+  <tr>
+    <td>pH stability profile</td>
+    <td>Incubate enzyme (free and in intact cells) at pH 2.0, 4.0, 6.0, 6.8, 7.4, 8.5 for 0, 30, 60, 120 min. Assay residual activity.</td>
+    <td>$300–500</td>
+    <td>1 week</td>
+  </tr>
+  <tr>
+    <td>Temperature stability</td>
+    <td>Activity retention at 4°C, 25°C, 37°C, 55°C, 70°C over 24h.</td>
+    <td>$200–400</td>
+    <td>1 week</td>
+  </tr>
+  <tr>
+    <td>GI simulation</td>
+    <td>SGF/SIF protocol (described in §6, Q6 experiment). Test free enzyme, intact cells, and lysate.</td>
+    <td>$500–1,000</td>
+    <td>1 week</td>
+  </tr>
+  <tr>
+    <td>Protease resistance</td>
+    <td>Incubate with pepsin (gastric) and pancreatin (intestinal) individually. Measure half-life. Compare to ALLN-346 published values as a benchmark (WT <em>C. utilis</em> t½ = 4.3 min; engineered = 85 min).</td>
+    <td>$300–500</td>
+    <td>1 week</td>
+  </tr>
+</table>
+
+<p><strong>Phase 1 total:</strong> ~$1,300–2,400 | 3–4 weeks | <strong>Go/no-go:</strong> Does the enzyme (in at least one format) retain meaningful activity after simulated GI transit? What delivery format provides the best protection?</p>
+
+<h3>Phase 2: In Vitro Gut Models</h3>
+
+<table>
+  <tr><th style="width:20%">Task</th><th>Details</th><th style="width:12%">Est. Cost</th><th style="width:12%">Timeline</th></tr>
+  <tr>
+    <td>Uric acid degradation in simulated gut fluid</td>
+    <td>Add yeast cells (or lysate) to SIF containing physiological concentrations of uric acid (~5 mg/dL). Measure uric acid depletion over 6h.</td>
+    <td>$300–500</td>
+    <td>1 week</td>
+  </tr>
+  <tr>
+    <td>Intestinal epithelial cell compatibility</td>
+    <td>Caco-2 monolayer assay: co-incubate with engineered yeast. Measure TEER (barrier integrity), cytokine panel (IL-8, TNF-α, IL-1β), LDH release (cytotoxicity).</td>
+    <td>$2,000–4,000</td>
+    <td>3–4 weeks</td>
+  </tr>
+</table>
+
+<p><strong>Phase 2 total:</strong> ~$2,300–4,500 | 4–5 weeks | <strong>Go/no-go:</strong> Does the yeast degrade uric acid under intestinal conditions at a therapeutically interesting rate? Any safety red flags from the epithelial cell model?</p>
+
+<h3>Phase 3: In Vivo Proof-of-Concept (Gnotobiotic Mouse Model)</h3>
+
+<table>
+  <tr><th style="width:20%">Task</th><th>Details</th><th style="width:12%">Est. Cost</th><th style="width:12%">Timeline</th></tr>
+  <tr>
+    <td>Hyperuricemic mouse model</td>
+    <td>Use potassium oxonate-treated mice (standard model — oxonate inhibits residual murine uricase) OR Uox-knockout mice if available. Confirm hyperuricemia.</td>
+    <td>$2,000–5,000</td>
+    <td>2–4 weeks</td>
+  </tr>
+  <tr>
+    <td>Gavage with engineered yeast</td>
+    <td>3 groups (8 mice each): (A) vehicle control, (B) wild-type <em>S. boulardii</em>, (C) engineered <em>S. boulardii</em> expressing uricase. Daily gavage for 14 days.</td>
+    <td>$5,000–10,000</td>
+    <td>4–6 weeks</td>
+  </tr>
+  <tr>
+    <td>Endpoints</td>
+    <td>Serum uric acid (weekly), fecal uricase activity (daily), fecal yeast counts (daily), kidney histology (terminal), serum creatinine, anti-uricase antibodies.</td>
+    <td>Included above</td>
+    <td>Included above</td>
+  </tr>
+</table>
+
+<p><strong>Phase 3 total:</strong> ~$7,000–15,000 | 8–12 weeks | <strong>Go/no-go:</strong> Does oral engineered <em>S. boulardii</em> reduce serum uric acid in hyperuricemic mice? By how much? This is the definitive proof-of-concept.</p>
+
+<div class="callout key-finding">
+  <div class="callout-label">Total estimated cost: Phases 0–3</div>
+  <p><strong>$11,200–23,300</strong> | approximately 20–27 weeks</p>
+  <p>This is deliberately a minimal viable experiment path. It answers the fundamental question — can engineered yeast deliver therapeutically relevant uricase activity in a living animal — without requiring industrial-scale investment. Phases 0–1 could be done by a single graduate student or postdoc with yeast and biochemistry experience. Phase 2 requires an intestinal cell biology lab. Phase 3 requires Rheinallt's gnotobiotic facility.</p>
+</div>
+
+</section>
+
+<!-- ============================================ -->
+<!-- 8. KOJI PARALLEL TRACK -->
+<!-- ============================================ -->
+
+<section id="koji">
+<h2>8. The Parallel Track: Koji (<em>A. oryzae</em>)</h2>
+
+<p><em>Aspergillus oryzae</em> (koji) is the other organism under consideration. These two tracks are complementary, not competing:</p>
+
+<table>
+  <thead>
+    <tr><th>Dimension</th><th><em>S. cerevisiae</em> / <em>S. boulardii</em></th><th><em>A. oryzae</em> (Koji)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Genetic tools</td>
+      <td>Best-in-class eukaryotic toolkit</td>
+      <td>Good but less mature; CRISPR tools improving rapidly</td>
+    </tr>
+    <tr>
+      <td>GRAS status</td>
+      <td>Yes (long fermentation history)</td>
+      <td>Yes (thousands of years in East Asian cuisine)</td>
+    </tr>
+    <tr>
+      <td>Uricase precedent</td>
+      <td>Rasburicase is <em>A. flavus</em> uricase in <em>S. cerevisiae</em></td>
+      <td><em>A. flavus</em> is a close relative; <em>A. oryzae</em> itself has uricase genes</td>
+    </tr>
+    <tr>
+      <td>Delivery formats</td>
+      <td>Beverages, probiotic capsules, nutritional yeast, lysate</td>
+      <td>Koji rice, miso, amazake, soy sauce mash</td>
+    </tr>
+    <tr>
+      <td>Dual-purpose potential</td>
+      <td>Limited to uricase</td>
+      <td>Strong: digestive enzymes (amylases, proteases, lipases) + uricase in one organism</td>
+    </tr>
+    <tr>
+      <td>Consumer context</td>
+      <td>Beer, kombucha, supplements — familiar Western formats</td>
+      <td>Fermented foods — growing but still niche in the West</td>
+    </tr>
+    <tr>
+      <td>Probiotic potential</td>
+      <td><em>S. boulardii</em> is an established probiotic</td>
+      <td>Not a probiotic; works through enzyme delivery in food</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The koji track is especially interesting for Brian and Lynn together — Lynn benefits from the digestive enzyme production, Brian benefits from the uricase. A dual-enzyme koji that produces both enhanced protease/lipase and uricase would be a genuinely useful food product for their household regardless of whether it reaches therapeutic uricase levels.</p>
+
+<p>The yeast track has more delivery format flexibility and, critically, the <em>S. boulardii</em> probiotic option — the only format where the organism can produce enzyme continuously in the gut rather than just delivering a bolus of enzyme with a meal.</p>
+
+<p><strong>Both are worth pursuing in Phase 0.</strong> The gene synthesis and initial expression testing costs are modest for either organism.</p>
+
+<div style="background:rgba(63,185,80,0.08); border-left:3px solid #3fb950; padding:16px 20px; border-radius:6px; margin-top:20px;">
+  <p style="color:#3fb950; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Key Insight: Wild-Type Koji Is Already Lynn's Solution</p>
+  <p style="color:var(--text); font-size:15px; margin-bottom:8px;">An important realization from the <a href="enzyme-deficit-deep-dive.html" style="color:#58a6ff;">enzyme deficit research</a>: Lynn doesn't need engineered koji for her digestive enzymes. The supplement industry's "fungal-derived enzymes" <em>are</em> industrial <em>A. oryzae</em> fermentation. Wild-type koji grown at home on rice already produces the lipase, protease, and amylase she needs — no genetic engineering required.</p>
+  <p style="color:var(--text); font-size:15px;">This clarifies the lanes: <strong>yeast is the fastest path to uricase for Brian</strong>, wild-type koji handles Lynn's needs today, and engineered koji (uricase + digestive enzymes) is the stretch-goal platform play. See the full koji engineering protocol: <a href="engineered-koji-protocol.html" style="color:#58a6ff;">Engineered Koji Protocol</a>.</p>
+</div>
+
+</section>
+
+<!-- ============================================ -->
+<!-- 9. RISKS AND HONEST LIMITATIONS -->
+<!-- ============================================ -->
+
+<section id="risks">
+<h2>9. Risks and Honest Limitations</h2>
+
+<h3>Enzyme Survival in the GI Tract <span class="evidence-tag evidence-open">Open</span></h3>
+
+<p>Unmodified <em>A. flavus</em> uricase may not survive gastric transit in active form. The pH optimum is 8.5–9.5; activity is maintained at pH 6–10 but behavior below pH 6 is poorly characterized for the recombinant form.<sup><a href="#ref14">[14]</a></sup> ALLN-346 was specifically engineered for 20× protease resistance — that engineering was not trivial, and the resulting enzyme is proprietary. Without similar engineering or a protective delivery format (enteric capsule, intact yeast cells), significant activity loss during gastric transit is likely.</p>
+
+<div class="experiment-box">
+  <div class="exp-header">How to bound this risk</div>
+  <p>The SGF/SIF experiment (Phase 1, ~$500) answers this directly. If intact yeast cells provide meaningful protection (β-glucan cell walls resist gastric acid), then whole-cell formats are viable. If not, the options are: (1) enteric-coated capsules that bypass the stomach, (2) protein engineering for protease resistance (a significant R&D investment), or (3) accept that only a fraction of the enzyme will survive and compensate with higher doses.</p>
+</div>
+
+<h3>Dosing May Not Be Therapeutically Meaningful <span class="evidence-tag evidence-open">Open</span></h3>
+
+<p>The back-of-envelope calculations in §5 suggest the dose is in a plausible range, but "plausible" is not "proven." ALLN-346's mixed human results (significant in CKD patients in Study 201; not significant in the broader Study 202 cohort) suggest that even with an optimized, protease-resistant enzyme, the dose-response relationship for oral uricase is not straightforward. A food-grade, non-engineered-for-protease-resistance enzyme in yeast may not reach therapeutically meaningful activity levels.</p>
+
+<div class="experiment-box">
+  <div class="exp-header">How to bound this risk</div>
+  <p>Phase 0 activity assays will give a concrete number for IU per gram of yeast biomass. Combined with the Phase 1 GI survival data, you can calculate: "X grams of this product, consumed with Y% enzyme survival, delivers Z IU to the intestine per day." Compare Z to the activity levels that showed efficacy in the mouse models. If Z is within an order of magnitude, proceed to Phase 3. If Z is 100× too low, the format needs rethinking.</p>
+</div>
+
+<h3>GMO Regulatory Considerations</h3>
+
+<p>Any food product containing a genetically modified organism faces regulatory hurdles that vary by jurisdiction. In the US, the pathway depends on how the product is positioned (food ingredient vs. dietary supplement vs. drug). In the EU, GMO regulations are more restrictive but undergoing reform. For an initial proof-of-concept and personal use, this isn't a barrier; for commercialization, it requires careful regulatory strategy (see Q4 in §6).</p>
+
+<h3>Immunogenicity <span class="evidence-tag evidence-extrapolation">Extrapolation</span></h3>
+
+<p>Rasburicase induces anti-drug antibodies (ADAs) in approximately 60% of patients receiving IV administration.<sup><a href="#ref12">[12]</a></sup> These antibodies can neutralize the enzyme and cause hypersensitivity reactions, limiting rasburicase to short-course therapy. However, IV and oral delivery present antigens to fundamentally different immune compartments. The oral mucosal immune system is designed for tolerance — we ingest foreign proteins (plant, animal, bacterial) constantly without mounting systemic immune responses. The oral tolerance literature from allergen immunotherapy supports the hypothesis that repeated oral exposure to uricase would be more likely to induce tolerance than sensitization. But this has not been tested for uricase specifically.</p>
+
+<div class="experiment-box">
+  <div class="exp-header">How to bound this risk</div>
+  <p>The mouse immunogenicity experiment described under Q5 in §6 (~$3,000–6,000) directly addresses this. It can be combined with the Phase 3 efficacy study at minimal additional cost by simply adding antibody ELISA endpoints to the planned blood draws.</p>
+</div>
+
+<h3>The Fundamental Limitation</h3>
+
+<div class="callout limitation">
+  <div class="callout-label">What we don't know</div>
+  <p>This approach — engineering food-grade <em>S. cerevisiae</em> or <em>S. boulardii</em> to produce uricase for oral consumption as a gout therapy — has not been tested in humans in this format. Period. The 2025 <em>S. boulardii</em> work demonstrated the engineering is feasible and achieved high activity levels, but published only in vitro data. The PULSE probiotic showed efficacy in rodents. ALLN-346 showed signal in one human cohort but not another. We are in the territory of well-motivated hypothesis, supported by convergent evidence from multiple groups, but unproven in the specific format proposed here.</p>
+  <p>That is precisely why this is a proposal for a proof-of-concept experiment, not a product launch.</p>
+</div>
+
+</section>
+
+<!-- ============================================ -->
+<!-- 10. THE ASK -->
+<!-- ============================================ -->
+
+<section id="proposal">
+<h2>10. What We're Actually Proposing</h2>
+
+<p>This is a proposal for a small-scale proof-of-concept collaboration. Not a startup. Not a product launch. Not a clinical trial.</p>
+
+<p>The core question is: <strong>Can engineered <em>S. cerevisiae</em> (or <em>S. boulardii</em>) produce therapeutically relevant levels of active uricase in a food-compatible format that survives GI transit?</strong></p>
+
+<p>Everything else — delivery format optimization, dosing studies, regulatory strategy, commercialization — depends on the answer to that question.</p>
+
+<h3>What I'm Asking Of Each Of You</h3>
+
+<p><strong>Rheinallt:</strong> Your expertise in gut microbiology and your gnotobiotic facility are the keys to a credible in vivo proof-of-concept. I'm asking whether a small mouse study (Phase 3 in the validation path) is feasible in your core, and whether you'd be interested in collaborating on design and execution. I'm also asking you to poke holes in the gut-lumen degradation thesis from a microbiome perspective — what am I missing about how this would interact with the resident gut flora?</p>
+
+<p><strong>Lauren:</strong> Your translational and pharma experience is invaluable for two things: (1) the regulatory question — what is this product, legally speaking, and what's the path? (2) the immunogenicity question — with your NF-κB and intestinal signaling expertise, is oral tolerance a reasonable expectation, or am I being naively optimistic? And more generally, is there anything in here that a pharma reviewer would immediately flag as a non-starter?</p>
+
+<p><strong>Valerie:</strong> Your TLR and innate immunity expertise speaks directly to the safety question. If someone consumes engineered yeast daily, is the innate immune response to yeast cell wall components (β-glucan, mannan) a concern at the doses we're discussing? <em>S. boulardii</em> is already taken daily as a probiotic by millions of people, but expressing a novel protein changes the picture. What would you want to see in the immune profiling data to be comfortable?</p>
+
+<h3>What I Bring</h3>
+
+<p>I know enough molecular biology to be dangerous and enough brewing science to be useful. I can do the Phase 0 bench work (gene synthesis, transformation, activity assays) with minimal hand-holding. I can brew the test batches. I can design and run the SGF/SIF simulations. I have a home uric acid meter for n=1 self-experiments. I'm willing to fund Phases 0–2 out of pocket (~$4,000–8,000). Phase 3 (the mouse study) is where I need both expertise and potentially institutional support.</p>
+
+<p>I'm presenting this as someone who has done his homework, is honest about what he doesn't know, and wants guidance from people who know more than he does. The worst outcome is that you tell me this won't work and why — and that's actually a valuable outcome, because it saves me from chasing something futile.</p>
+
+<p>The best outcome is that you see something here worth pursuing, and we design a real experiment together.</p>
+
+</section>
+
+<!-- ============================================ -->
+<!-- REFERENCES -->
+<!-- ============================================ -->
+
+<section id="references" class="references">
+<h2>References</h2>
+
+<ol>
+  <li id="ref1"><strong>Wu, X. et al.</strong> (2002). Loss of Urate Oxidase Activity in Hominoids and its Evolutionary Implications. <em>Molecular Biology and Evolution</em>, 19(5), 640–653. <a href="https://academic.oup.com/mbe/article/19/5/640/1067768">doi:10.1093/oxfordjournals.molbev.a004123</a></li>
+
+  <li id="ref2"><strong>Kratzer, J.T. et al.</strong> (2014). Evolutionary history and metabolic insights of ancient mammalian uricases. <em>Proceedings of the National Academy of Sciences</em>, 111(10), 3763–3768. <a href="https://www.pnas.org/doi/10.1073/pnas.1320393111">doi:10.1073/pnas.1320393111</a></li>
+
+  <li id="ref3"><strong>Keenan, J.P. et al.</strong> (2023). A widely distributed gene cluster compensates for uricase loss in hominids. <em>Cell</em>, 186(16), 3400–3413. <a href="https://www.sciencedirect.com/science/article/pii/S0092867423006876">doi:10.1016/j.cell.2023.06.010</a></li>
+
+  <li id="ref4"><strong>Matsuo, H. et al.</strong> (2014). ABCG2 dysfunction increases serum uric acid by decreased intestinal urate excretion. <em>Nucleosides, Nucleotides and Nucleic Acids</em>, 33(4-6), 275–281. <a href="https://pubmed.ncbi.nlm.nih.gov/24940679/">PMID: 24940679</a></li>
+
+  <li id="ref5"><strong>Hosomi, A. et al.</strong> (2012). Extra-Renal Elimination of Uric Acid via Intestinal Efflux Transporter BCRP/ABCG2. <em>PLOS ONE</em>, 7(2), e30456. <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0030456">doi:10.1371/journal.pone.0030456</a></li>
+
+  <li id="ref6"><strong>Ichida, K. et al.</strong> (2012). Decreased extra-renal urate excretion is a common cause of hyperuricemia. <em>Nature Communications</em>, 3, 764. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8268734/">Related review: PMC8268734</a></li>
+
+  <li id="ref7"><strong>Hershfield, M.S. et al.</strong> (2020). Oral Treatment With an Engineered Uricase, ALLN-346, Reduces Hyperuricemia and Uricosuria in Urate Oxidase-Deficient Mice. <em>Frontiers in Medicine</em>, 7, 569215. <a href="https://pubmed.ncbi.nlm.nih.gov/33330529/">PMID: 33330529</a></li>
+
+  <li id="ref8"><strong>Allena Pharmaceuticals.</strong> (2022). Clinical and Corporate Update — Phase 2a Study 201 results. <a href="https://ir.allenapharma.com/news-releases/news-release-details/allena-pharmaceuticals-provides-clinical-and-corporate-update">Press release, January 4, 2022</a></li>
+
+  <li id="ref9"><strong>Allena Pharmaceuticals.</strong> (2022). Phase 2a Study 202 enrollment completion and update. <a href="https://www.globenewswire.com/news-release/2022/07/19/2481757/0/en/Allena-Pharmaceuticals-Announces-Completion-of-Enrollment-of-Cohorts-A-and-B-of-ALLN-346-Phase-2a-Study-202-in-Patients-with-Gout-and-Stages-2-and-3-Chronic-Kidney-Disease.html">Press release, July 19, 2022</a></li>
+
+  <li id="ref10"><strong>Designer probiotic-based living drugs for uric acid homeostasis control in hyperuricemic mice and rats.</strong> (2025). <em>Cell Reports Medicine</em>, S2666-3791(25)00452-5. <a href="https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(25)00452-5">doi:10.1016/j.xcrm.2025.102052</a></li>
+
+  <li id="ref11"><strong>Systematic Engineering for Efficient Uric Acid-Degrading Activity in Probiotic Yeast <em>Saccharomyces boulardii</em>.</strong> (2025). <em>ACS Synthetic Biology</em>, 14(6), 2030–2043. <a href="https://pubs.acs.org/doi/10.1021/acssynbio.4c00831">doi:10.1021/acssynbio.4c00831</a></li>
+
+  <li id="ref12"><strong>Rasburicase.</strong> FDA Prescribing Information (Elitek). <a href="https://products.sanofi.us/elitek/elitek.pdf">Sanofi product label</a>. Approved 2002. Note: ~60% ADA rate limits repeat dosing.</li>
+
+  <li id="ref13"><strong>Leplatois, P. et al.</strong> (1992). High-level production of a peroxisomal enzyme: <em>Aspergillus flavus</em> uricase accumulates intracellularly and is active in <em>Saccharomyces cerevisiae</em>. <em>Gene</em>, 122(1), 139–145. <a href="https://www.sciencedirect.com/science/article/abs/pii/037811199290041M">doi:10.1016/0378-1119(92)90041-M</a></li>
+
+  <li id="ref14"><strong>Fazel, R. et al.</strong> (2017). Recombinant production of <em>Aspergillus flavus</em> uricase and investigation of its thermal stability in the presence of raffinose and lactose. <em>3 Biotech</em>, 7(3), 201. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5493577/">PMC5493577</a>. Also: <strong>Bayol, A. et al.</strong> (2002). Modification of a reactive cysteine explains differences between rasburicase and natural <em>A. flavus</em> uricase. <a href="https://pubmed.ncbi.nlm.nih.gov/12149119/">PMID: 12149119</a></li>
+
+  <li id="ref15"><strong>Bim, M.A. & Franco, T.T.</strong> (2008). Uricase production by a recombinant <em>Hansenula polymorpha</em> strain harboring <em>Candida utilis</em> uricase gene. <em>Applied Microbiology and Biotechnology</em>, 79(3), 545–553. <a href="https://link.springer.com/article/10.1007/s00253-008-1472-8">doi:10.1007/s00253-008-1472-8</a></li>
+
+  <li id="ref16"><strong>Juan, E.C. et al.</strong> (2011). High-yield expression, purification, characterization, and structure determination of tag-free <em>Candida utilis</em> uricase. <em>Applied Microbiology and Biotechnology</em>, 92(1), 79–87. <a href="https://link.springer.com/article/10.1007/s00253-011-3244-0">doi:10.1007/s00253-011-3244-0</a></li>
+
+  <li id="ref17"><strong>Gibson, T. et al.</strong> (1984). Beer drinking and its effect on uric acid. <em>Rheumatology</em>, 23(3), 203–209. <a href="https://academic.oup.com/rheumatology/article-abstract/23/3/203/1781057">doi:10.1093/rheumatology/23.3.203</a></li>
+
+  <li id="ref18"><strong>Faller, J. & Fox, I.H.</strong> (1982). Ethanol-induced hyperuricemia: evidence for increased urate production by activation of adenine nucleotide turnover. <em>New England Journal of Medicine</em>, 307(26), 1598–1602. Also: <strong>Yamamoto, T. et al.</strong> (2005). Effect of ethanol on metabolism of purine bases. <em>Clinica Chimica Acta</em>, 356(1-2), 35–57. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0009898105000732">doi:10.1016/j.cccn.2005.01.024</a></li>
+
+  <li id="ref19"><strong>McFarland, L.V.</strong> (2010). Systematic review and meta-analysis of <em>Saccharomyces boulardii</em> in adult patients. <em>World Journal of Gastroenterology</em>, 16(18), 2202–2222. Also: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7344949/">PMC7344949 — <em>S. boulardii</em>: What Makes It Tick as Successful Probiotic?</a></li>
+
+  <li id="ref20"><strong>Braat, H. et al.</strong> (2024). Targeted delivery of the probiotic <em>Saccharomyces boulardii</em> to the extracellular matrix enhances gut residence time and recovery in murine colitis. <em>Nature Communications</em>, 15, 4157. <a href="https://www.nature.com/articles/s41467-024-48128-0">doi:10.1038/s41467-024-48128-0</a></li>
+</ol>
+
+</section>
+
+<footer style="margin-top:4rem; padding-top:2rem; border-top:1px solid var(--border); font-size:0.82rem; color:var(--text-muted); text-align:center;">
+  <p>Prepared April 2026. This document represents a good-faith research synthesis by a non-scientist. Corrections, challenges, and "you're wrong about X" are all welcome — that's the point.</p>
+</footer>
+
+<!-- ═══════════ OPEN ENZYME RESEARCH LIBRARY ═══════════ -->
+<div style="margin-top:48px; padding:32px; background:#161b22; border:1px solid #30363d; border-radius:8px;">
+  <h3 style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#8b949e; margin-bottom:12px;">Open Enzyme Research Library</h3>
+  <p style="font-size:14px; color:#8b949e; margin-bottom:20px;">This document is part of the <a href="open-enzyme-vision.html" style="color:#3fb950; text-decoration:none; font-weight:600;">Open Enzyme</a> project — an open-source therapeutic enzyme platform.</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:8px;">
+    <a href="open-enzyme-vision.html" style="display:block; padding:10px 14px; background:#21262d; border:1px solid #30363d; border-radius:6px; color:#3fb950; text-decoration:none; font-size:13px; font-weight:500;">Open Enzyme Vision &amp; Roadmap</a>
+    <a href="gout-deep-dive-research.html" style="display:block; padding:10px 14px; background:#21262d; border:1px solid #30363d; border-radius:6px; color:#58a6ff; text-decoration:none; font-size:13px; font-weight:500;">Gout Deep Dive Research</a>
+    <a href="enzyme-deficit-deep-dive.html" style="display:block; padding:10px 14px; background:#21262d; border:1px solid #30363d; border-radius:6px; color:#58a6ff; text-decoration:none; font-size:13px; font-weight:500;">Enzyme Deficit Deep Dive</a>
+    <a href="nlrp3-exploit-map.html" style="display:block; padding:10px 14px; background:#21262d; border:1px solid #30363d; border-radius:6px; color:#58a6ff; text-decoration:none; font-size:13px; font-weight:500;">NLRP3 Inflammasome Exploit Map</a>
+    <a href="peptide-gout-addendum.html" style="display:block; padding:10px 14px; background:#21262d; border:1px solid #30363d; border-radius:6px; color:#58a6ff; text-decoration:none; font-size:13px; font-weight:500;">Peptides &amp; Gout Addendum</a>
+    <a href="blood-barrier-exploits.html" style="display:block; padding:10px 14px; background:#21262d; border:1px solid #30363d; border-radius:6px; color:#58a6ff; text-decoration:none; font-size:13px; font-weight:500;">Blood-Barrier Exploits</a>
+    <a href="engineered-koji-protocol.html" style="display:block; padding:10px 14px; background:#21262d; border:1px solid #30363d; border-radius:6px; color:#58a6ff; text-decoration:none; font-size:13px; font-weight:500;">Engineered Koji Protocol</a>
+    <a href="engineered-yeast-uricase-proposal.html" style="display:block; padding:10px 14px; background:#21262d; border:1px solid #30363d; border-radius:6px; color:#58a6ff; text-decoration:none; font-size:13px; font-weight:500; opacity:0.5;">Engineered Yeast Uricase Proposal (this doc)</a>
+  </div>
+</div>
+
+</body>
+</html>

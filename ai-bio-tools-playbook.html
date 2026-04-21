@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Enzyme — Bio AI Tools Playbook</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0d1117;
+    --bg-surface: #161b22;
+    --bg-surface2: #1c2128;
+    --bg-card: #21262d;
+    --border: #30363d;
+    --border-bright: #484f58;
+    --text: #e6edf3;
+    --text-secondary: #8b949e;
+    --text-muted: #6e7681;
+    --blue: #58a6ff;
+    --green: #3fb950;
+    --purple: #bc8cff;
+    --orange: #d29922;
+    --red: #f85149;
+    --teal: #39d2c0;
+    --pink: #f778ba;
+    --gradient-hero: linear-gradient(135deg, #0d1117 0%, #0f1d3d 30%, #1a1040 60%, #0d1117 100%);
+    --gradient-brand: linear-gradient(135deg, #3fb950 0%, #39d2c0 40%, #58a6ff 100%);
+    --gradient-accent: linear-gradient(135deg, #58a6ff, #bc8cff, #f778ba);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAVIGATION ── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(13,17,23,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 24px;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav .brand {
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+    padding-right: 16px;
+    margin-right: 8px;
+    border-right: 1px solid var(--border);
+  }
+  .nav a.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .nav a.nav-link:hover { color: var(--text); background: var(--bg-surface); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--gradient-hero);
+    padding: 140px 32px 80px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(88,166,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue);
+    border: 1px solid rgba(88,166,255,0.3);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    background: rgba(88,166,255,0.08);
+  }
+  .hero h1 {
+    font-size: 3.2em;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .tagline {
+    font-size: 1.3em;
+    font-weight: 300;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 12px;
+    line-height: 1.6;
+  }
+  .hero .meta {
+    font-size: 0.82em;
+    color: var(--text-muted);
+    margin-top: 32px;
+  }
+  .hero .meta span { margin: 0 8px; }
+
+  /* ── MAIN CONTAINER ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 24px 120px;
+  }
+
+  /* ── SECTIONS ── */
+  .section { margin-bottom: 64px; }
+  .section-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 8px;
+    display: block;
+  }
+  h2 {
+    font-size: 1.9em;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--text);
+    margin: 32px 0 12px;
+  }
+  h4 {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--text);
+    margin: 24px 0 8px;
+  }
+  p {
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+  }
+  p strong { color: var(--text); font-weight: 600; }
+
+  /* ── STAT CARDS ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .stat-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+  .stat-card .number {
+    font-size: 2em;
+    font-weight: 800;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-card .label {
+    font-size: 0.82em;
+    color: var(--text-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--bg-surface);
+    border-left: 3px solid var(--green);
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .callout.blue { border-left-color: var(--blue); }
+  .callout.purple { border-left-color: var(--purple); }
+  .callout.orange { border-left-color: var(--orange); }
+  .callout.red { border-left-color: var(--red); }
+  .callout p { margin-bottom: 0; }
+  .callout p + p { margin-top: 12px; }
+
+  /* ── TOOL CARDS ── */
+  .tool-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin: 20px 0;
+  }
+  .tool-card .tool-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .tool-card .tool-icon {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+  }
+  .tool-card .tool-name {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .tool-card .tool-org {
+    font-size: 0.82em;
+    color: var(--text-muted);
+  }
+  .tool-card .tool-desc {
+    font-size: 0.92em;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .tool-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .tool-meta-item {
+    background: var(--bg-surface2);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .tool-meta-item .meta-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .tool-meta-item .meta-value {
+    font-size: 0.88em;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ── CODE / PROMPT BLOCKS ── */
+  .prompt-block {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+  }
+  .prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-surface2);
+  }
+  .prompt-title {
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .copy-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .copy-btn:hover { color: var(--text); border-color: var(--border-bright); }
+  .prompt-body {
+    padding: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88em;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* ── CONCEPT CARDS ── */
+  .concept-grid {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .concept-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .concept-card .concept-name {
+    font-weight: 700;
+    font-size: 0.95em;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .concept-card .concept-desc {
+    font-size: 0.88em;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .concept-card .concept-relevance {
+    margin-top: 10px;
+    font-size: 0.82em;
+    color: var(--teal);
+    line-height: 1.5;
+  }
+
+  /* ── WORKFLOW DIAGRAM ── */
+  .workflow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 32px 0;
+    overflow-x: auto;
+    padding: 8px 0;
+  }
+  .workflow-step {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    min-width: 140px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .workflow-step .step-num {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+  .workflow-step .step-label {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .workflow-step .step-desc {
+    font-size: 0.75em;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .workflow-arrow {
+    color: var(--text-muted);
+    font-size: 20px;
+    padding: 0 8px;
+    flex-shrink: 0;
+  }
+
+  /* ── EVIDENCE ITEMS ── */
+  .evidence-grid { display: grid; gap: 16px; margin: 24px 0; }
+  .evidence-item {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .evidence-item .ev-icon {
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .evidence-item .ev-body { flex: 1; }
+  .evidence-item .ev-title {
+    font-weight: 700;
+    font-size: 0.95em;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .evidence-item .ev-desc {
+    font-size: 0.88em;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── COMPARISON TABLE ── */
+  .comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .comparison-table th {
+    background: var(--bg-surface2);
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .comparison-table td {
+    padding: 14px 16px;
+    font-size: 0.88em;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .comparison-table td strong { color: var(--text); }
+
+  /* ── PROMPT CONTEXT BOX ── */
+  .prompt-context {
+    background: var(--bg-surface2);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .prompt-context .ctx-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .prompt-context p {
+    font-size: 0.88em;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .prompt-context p:last-child { margin-bottom: 0; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.2em; }
+    .hero { padding: 120px 20px 60px; }
+    .container { padding: 40px 16px 80px; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+    .tool-meta { grid-template-columns: 1fr; }
+    .workflow { flex-direction: column; }
+    .workflow-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="brand">Open Enzyme</span>
+    <a href="#tools" class="nav-link">Bio AI Tools</a>
+    <a href="#concepts" class="nav-link">How It Works</a>
+    <a href="#prompts" class="nav-link">Prompts</a>
+    <a href="#workflow" class="nav-link">Workflow</a>
+    <a href="#implications" class="nav-link">What It Means</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-badge">Research Doc #9 &mdash; April 2026</div>
+  <h1>Bio AI Tools Playbook</h1>
+  <p class="tagline">GPT-Rosalind, Amazon Bio Discovery, and Anthropic's Coefficient Bio acquisition &mdash; what they are, how they work, and exactly how to use them to accelerate Open Enzyme.</p>
+  <div class="meta">
+    <span>Open Enzyme Project</span>
+    <span>&bull;</span>
+    <span>Brian Abent</span>
+    <span>&bull;</span>
+    <span>April 21, 2026</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 1: THE TOOLS                          -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="section" id="tools">
+    <span class="section-number">Part 01</span>
+    <h2>The Bio AI Tools Landscape</h2>
+
+    <p>Three major AI biology announcements landed in a two-week window in April 2026. This is not coincidence &mdash; it's the convergence of transformer architectures, massive protein/genomic datasets, and the realization by every major AI lab that biology is the highest-value frontier. Here's what each tool is and what it means for you.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="number">3</div>
+        <div class="label">Major bio AI launches<br>in 14 days</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">40+</div>
+        <div class="label">AI biology models<br>on Bio Discovery</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">~300K</div>
+        <div class="label">Drug candidates<br>generated by Rosalind at MSK</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">$400M</div>
+        <div class="label">Anthropic paid for<br>Coefficient Bio</div>
+      </div>
+    </div>
+
+    <!-- GPT-Rosalind -->
+    <h3 id="rosalind">GPT-Rosalind (OpenAI)</h3>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-icon" style="background: rgba(88,166,255,0.15); color: var(--blue);">R</div>
+        <div>
+          <div class="tool-name">GPT-Rosalind</div>
+          <div class="tool-org">OpenAI &bull; Launched April 17, 2026</div>
+        </div>
+      </div>
+      <div class="tool-desc">
+        <p>Named after Rosalind Franklin, this is OpenAI's first <strong>domain-specific reasoning model</strong> &mdash; a frontier-class model that was <strong>trained directly on biological data</strong> including proteins, genes, chemical reactions, molecular pathways, and disease biology. It doesn't just answer biology questions better than GPT-5.4; it <em>reasons differently</em> because its training incorporated the structure of biological knowledge at a fundamental level.</p>
+        <p>Think of it this way: regular GPT-5.4 has read every biology paper and can discuss biology. Rosalind was trained to <strong>think in biological primitives</strong> &mdash; amino acid sequences, gene regulatory networks, metabolic pathways, protein-protein interactions &mdash; the way you think in code architecture. It reasons <strong>across biological layers simultaneously</strong>: from DNA sequence to protein structure to metabolic function to phenotypic outcome.</p>
+      </div>
+      <div class="tool-meta">
+        <div class="tool-meta-item">
+          <div class="meta-label">What It Can Do</div>
+          <p class="meta-value">Protein structure prediction, codon optimization, gene expression analysis, molecular interaction prediction, drug candidate generation, sequence-to-function interpretation, experimental planning, multi-step literature review with database cross-referencing</p>
+        </div>
+        <div class="tool-meta-item">
+          <div class="meta-label">Trained On</div>
+          <p class="meta-value">50 of the most common biological workflows, with native access to major public biological databases (PDB, UniProt, NCBI, KEGG, ChEMBL, etc.)</p>
+        </div>
+        <div class="tool-meta-item">
+          <div class="meta-label">Access Model</div>
+          <p class="meta-value"><strong>Trusted Access Program</strong> &mdash; limited to qualified US enterprise customers. Requires: legitimate research with clear public benefit, governance and misuse-prevention controls, approved users in secure environments. Currently a research preview.</p>
+        </div>
+        <div class="tool-meta-item">
+          <div class="meta-label">Pricing</div>
+          <p class="meta-value"><strong>Free during research preview</strong> &mdash; no token deduction against existing API credits. Available in ChatGPT, Codex, and the API for approved customers. Broader pricing TBD.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout blue">
+      <p><strong>Key detail for Open Enzyme:</strong> OpenAI also shipped a <strong>free Codex plugin</strong> the same day that connects to 50+ biology databases and works with the GPT-5.4 model everyone already has access to. This means even without Rosalind access, you can use GPT-5.4 + the Codex Life Sciences plugin for most of the prompts in this document. The plugin adds database connectivity; Rosalind adds deeper biological reasoning.</p>
+    </div>
+
+    <h4>MSK Case Study: What "Reasoning About Biology" Looks Like</h4>
+    <p>Memorial Sloan Kettering Cancer Center used GPT-Rosalind to generate <strong>nearly 300,000 novel antibody molecules</strong> for pediatric cancer, then used the model's ranking capabilities to narrow that to the <strong>top ~100,000 candidates</strong> sent to Twist Bioscience for physical synthesis and testing. The process that traditionally takes up to a year was completed in weeks. This is the same pattern Open Enzyme will use: AI-generated candidates &rarr; ranked by predicted performance &rarr; synthesized and tested.</p>
+
+    <h4>How to Get Access</h4>
+    <p>The Trusted Access Program requires organizations to demonstrate legitimate research with clear public benefit. Launch partners include Amgen, Moderna, Thermo Fisher Scientific, the Allen Institute, Oracle Health and Life Sciences, NVIDIA, Benchling, and UCSF School of Pharmacy. For Open Enzyme, the <strong>open source + therapeutic enzyme + citizen science</strong> angle is a genuinely compelling public-benefit argument. Apply at <strong>openai.com</strong> &mdash; the research preview is free, so the barrier is qualification, not cost.</p>
+
+    <div class="callout orange">
+      <p><strong>Immediate action:</strong> Even without Rosalind access, the free Codex Life Sciences plugin gives you database-connected biology reasoning today. Install it and start running the prompts in Part 3 with GPT-5.4. When Rosalind access comes through, re-run them for deeper biological reasoning and compare the results.</p>
+    </div>
+
+    <!-- Amazon Bio Discovery -->
+    <h3 id="biodiscovery">Amazon Bio Discovery (AWS)</h3>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-icon" style="background: rgba(209,153,34,0.15); color: var(--orange);">B</div>
+        <div>
+          <div class="tool-name">Amazon Bio Discovery</div>
+          <div class="tool-org">AWS &bull; Launched April 14, 2026</div>
+        </div>
+      </div>
+      <div class="tool-desc">
+        <p>Amazon Bio Discovery is fundamentally different from Rosalind. Where Rosalind is a <strong>single reasoning model</strong> that you prompt in natural language, Bio Discovery is a <strong>platform of 40+ specialized AI models</strong> wrapped in an agentic interface. You describe your research goal, and an AI agent selects the right models, chains them together, optimizes inputs, evaluates outputs, and can even route candidates to physical lab partners for synthesis and testing.</p>
+        <p>Think of it as the <strong>AWS for biology</strong>: a managed service where each model is a specialist (one predicts binding affinity, another assesses developability, another generates sequences) and the agent orchestrates them into a coherent pipeline. You bring the question; the platform assembles the workflow.</p>
+      </div>
+      <div class="tool-meta">
+        <div class="tool-meta-item">
+          <div class="meta-label">Models Included</div>
+          <p class="meta-value">40+ specialized models from partners including Apheris, Boltz, with Biohub and Profluent coming. Covers protein language models, molecular generation, binding affinity prediction, developability assessment, genomics analysis. Users can also upload proprietary models.</p>
+        </div>
+        <div class="tool-meta-item">
+          <div class="meta-label">Agent Interface</div>
+          <p class="meta-value">AI agent helps select models for research goals, optimizes inputs, evaluates candidates, and routes results back for iteration. No-code interface for scientists &mdash; describe what you want, the agent assembles the pipeline.</p>
+        </div>
+        <div class="tool-meta-item">
+          <div class="meta-label">Lab-in-the-Loop</div>
+          <p class="meta-value">Integrated lab partners: Twist Bioscience, Ginkgo Bioworks (A-Alpha Bio coming soon). Send candidates directly for physical synthesis and testing; results route back for AI model refinement. Transparent pricing and turnaround times.</p>
+        </div>
+        <div class="tool-meta-item">
+          <div class="meta-label">Pricing</div>
+          <p class="meta-value"><strong>Pro plan: $486/month</strong> (early access rate) includes 15 Experiment Units. Additional experiments at $32.40/EU. Free trial of 5 experiments to start. Consumption depends on candidates, sequence length, and model selection.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Open Enzyme relevance:</strong> Bio Discovery's strength is the lab-in-the-loop pipeline. Once you've designed your uricase variant or optimized your codon sequence using Rosalind or Bio Discovery's models, you can route directly to Twist for gene synthesis and Ginkgo for organism engineering &mdash; all from one platform. The $486/month price point is within reach for a project spending $1,200 total on its first experimental round. But the free trial of 5 experiments may be enough to validate your first construct design.</p>
+    </div>
+
+    <h4>Rosalind vs. Bio Discovery: When to Use Which</h4>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Dimension</th>
+        <th>GPT-Rosalind</th>
+        <th>Amazon Bio Discovery</th>
+      </tr>
+      <tr>
+        <td><strong>Architecture</strong></td>
+        <td>Single frontier reasoning model</td>
+        <td>Platform of 40+ specialized models with agent orchestration</td>
+      </tr>
+      <tr>
+        <td><strong>Interface</strong></td>
+        <td>Natural language prompts (ChatGPT, API, Codex)</td>
+        <td>No-code agent interface + model catalog</td>
+      </tr>
+      <tr>
+        <td><strong>Best For</strong></td>
+        <td>Open-ended reasoning, literature synthesis, experimental design, "what if" exploration, cross-domain biological reasoning</td>
+        <td>Structured workflows, model benchmarking, candidate screening, lab integration</td>
+      </tr>
+      <tr>
+        <td><strong>Lab Connection</strong></td>
+        <td>None (outputs are text/analysis)</td>
+        <td>Direct integration with Twist, Ginkgo, A-Alpha Bio</td>
+      </tr>
+      <tr>
+        <td><strong>Pricing</strong></td>
+        <td>Free during research preview</td>
+        <td>$486/mo or free trial (5 experiments)</td>
+      </tr>
+      <tr>
+        <td><strong>Open Enzyme Play</strong></td>
+        <td>Use for design decisions, variant selection, mutation suggestions, risk assessment, literature validation</td>
+        <td>Use for candidate screening, gene synthesis ordering, and when you need multiple models benchmarked against each other</td>
+      </tr>
+    </table>
+
+    <!-- Anthropic / Coefficient Bio -->
+    <h3 id="coefficient">Anthropic / Coefficient Bio</h3>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-icon" style="background: rgba(188,140,255,0.15); color: var(--purple);">C</div>
+        <div>
+          <div class="tool-name">Coefficient Bio &rarr; Anthropic</div>
+          <div class="tool-org">Acquired April 3, 2026 &bull; ~$400M (stock deal)</div>
+        </div>
+      </div>
+      <div class="tool-desc">
+        <p>Coefficient Bio was a stealth biotech AI startup founded in 2025 with around 10 people &mdash; but very specific people. CEO <strong>Aris Theologis</strong>, CTO <strong>Nathan Frey</strong> (formerly principal scientist at Biogen), and co-founder <strong>Joyce Hong</strong> (5 years as a principal at Roivant Sciences). This is a team that brings deep computational biology expertise, particularly in <strong>protein design and biomolecule modeling</strong>.</p>
+        <p>Anthropic paid $400M in stock &mdash; roughly $40M per person &mdash; because this team brings the domain-specific knowledge to build <strong>specialized life sciences agents</strong> inside Claude. The Coefficient team is joining Anthropic's health and life science division.</p>
+      </div>
+      <div class="tool-meta">
+        <div class="tool-meta-item">
+          <div class="meta-label">Anthropic's Bio Timeline</div>
+          <p class="meta-value"><strong>Oct 2025:</strong> Claude for Life Sciences launched &mdash; connectors to Benchling, PubMed, BioRender, Synapse.org<br><strong>Jan 2026:</strong> Claude for Healthcare &mdash; HIPAA-ready, ICD-10, CMS database integration<br><strong>Apr 2026:</strong> Coefficient Bio acquired &mdash; protein design and biomolecule modeling expertise incoming</p>
+        </div>
+        <div class="tool-meta-item">
+          <div class="meta-label">What This Means for Claude</div>
+          <p class="meta-value">Expect Claude to gain specialized biological reasoning capabilities &mdash; particularly around protein design, drug discovery, and clinical trial planning. The Coefficient team's Biogen/Roivant experience means Claude's bio capabilities will be grounded in real pharma workflows, not just academic benchmarks.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout purple">
+      <p><strong>Timeline speculation:</strong> Based on the pattern (Life Sciences in Oct, Healthcare in Jan, Coefficient acquired in Apr), expect Claude-native biological reasoning features by <strong>Q3-Q4 2026</strong>. This could mean protein structure tools built directly into Claude, similar to how Rosalind works but integrated into the Claude ecosystem you're already using for the Open Enzyme project. For now, Claude with the Life Sciences connectors (Benchling, PubMed) is your best Anthropic-side tool.</p>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 2: HOW BIO AI WORKS                   -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="section" id="concepts">
+    <span class="section-number">Part 02</span>
+    <h2>How Bio AI Models Work</h2>
+
+    <p>You don't need a bioinformatics degree to use these tools, but understanding the core concepts will help you write better prompts, evaluate outputs critically, and know when the model is giving you gold vs. hallucinating. Here are the six key concepts, explained for an engineer.</p>
+
+    <div class="concept-grid">
+      <div class="concept-card">
+        <div class="concept-name">Protein Language Models</div>
+        <div class="concept-desc">
+          <strong>The insight:</strong> An amino acid sequence (like MKWVTFISLLFLFSSAYS...) is structurally analogous to a sentence in natural language. Each "word" (amino acid) has meaning in context, and the order determines the 3D structure and function &mdash; just like word order determines meaning in a sentence.<br><br>
+          <strong>How it works:</strong> Models like ESM-2 and AlphaFold were trained on hundreds of millions of protein sequences the same way GPT was trained on text. They learn the "grammar" of proteins: which amino acids tend to appear together, how local sequences predict global folds, and how mutations at one position ripple through the structure. When you give Rosalind a protein sequence, it's "reading" it the way GPT reads English &mdash; predicting structure, function, stability, and interactions from the sequence alone.<br><br>
+          <strong>Why this matters for you:</strong> You can ask "what will this uricase variant look like structurally?" and get a useful answer without running a physical crystallography experiment.
+        </div>
+        <div class="concept-relevance">Open Enzyme use: Comparing uricase variants, predicting fold stability, identifying vulnerable residues</div>
+      </div>
+
+      <div class="concept-card">
+        <div class="concept-name">Codon Optimization</div>
+        <div class="concept-desc">
+          <strong>The insight:</strong> DNA encodes proteins through three-letter "codons," and the genetic code is degenerate &mdash; most amino acids can be encoded by 2-6 different codons. The protein is the same regardless of which synonym you pick, but the <em>expression level</em> varies dramatically depending on the host organism.<br><br>
+          <strong>How it works:</strong> Every organism has a "codon usage bias" &mdash; it has more tRNAs for some codons than others. If you try to express a gene from <em>Aspergillus flavus</em> in <em>S. cerevisiae</em> using the original codons, yeast's translation machinery will stall on codons that are rare in yeast. Codon optimization rewrites the DNA sequence to use yeast-preferred codons while encoding the exact same protein. AI models go further: they consider not just codon frequency but mRNA secondary structure, GC content, ribosome pausing, and interactions between consecutive codons.<br><br>
+          <strong>Why this matters for you:</strong> The difference between a well-optimized and poorly-optimized sequence can be 10-100x in expression level. This is the difference between a yeast strain that produces therapeutic amounts of uricase and one that produces undetectable amounts.
+        </div>
+        <div class="concept-relevance">Open Enzyme use: Optimizing uaZ (A. flavus uricase gene) for S. cerevisiae, optimizing the same for A. oryzae</div>
+      </div>
+
+      <div class="concept-card">
+        <div class="concept-name">Protein Stability Prediction</div>
+        <div class="concept-desc">
+          <strong>The insight:</strong> A protein that folds correctly in a test tube at pH 7 and 37&deg;C may unfold completely in the stomach at pH 2. Stability prediction models estimate the thermodynamic stability of a protein under different conditions &mdash; temperature, pH, ionic strength, presence of denaturants.<br><br>
+          <strong>How it works:</strong> Models compute the free energy of folding (&Delta;G) and predict how it changes under different conditions. They identify regions of the protein that are most susceptible to unfolding and can predict the effect of point mutations on stability. Some models (like RoseTTAFold, FoldX) can predict stability changes from single amino acid substitutions in seconds.<br><br>
+          <strong>Why this matters for you:</strong> Oral delivery means your uricase must survive pH 2 in the stomach, pepsin attack, then function at pH 6-7 in the small intestine. Stability prediction tells you which residues are the weak links and which mutations could fix them <em>before you order a single gene synthesis</em>.
+        </div>
+        <div class="concept-relevance">Open Enzyme use: Predicting GI tract survival, identifying acid-labile residues, designing stability mutations</div>
+      </div>
+
+      <div class="concept-card">
+        <div class="concept-name">Molecular Docking / Interaction Prediction</div>
+        <div class="concept-desc">
+          <strong>The insight:</strong> Proteins don't exist in isolation. They interact with substrates (uric acid, for uricase), with other proteins (digestive proteases that might cleave them), and with small molecules (potential NLRP3 inhibitors). Docking simulates how two molecules fit together physically.<br><br>
+          <strong>How it works:</strong> Given two molecular structures, docking algorithms explore millions of possible orientations to find the lowest-energy binding pose. AI-enhanced docking (like DiffDock) uses learned priors to dramatically speed up the search. The output is a predicted binding affinity (&Delta;G<sub>binding</sub>) and a 3D pose showing exactly how the molecules interact.<br><br>
+          <strong>Why this matters for you:</strong> You can ask "will pepsin cleave my engineered uricase?" by docking pepsin against your variant and looking for accessible cleavage sites. You can also screen food-derived compounds against the NLRP3 NACHT domain to find gout-relevant inflammasome inhibitors.
+        </div>
+        <div class="concept-relevance">Open Enzyme use: Protease susceptibility analysis, NLRP3 inhibitor screening, uric acid binding assessment</div>
+      </div>
+
+      <div class="concept-card">
+        <div class="concept-name">In Silico Directed Evolution</div>
+        <div class="concept-desc">
+          <strong>The insight:</strong> Traditional directed evolution is a lab process: mutate a gene randomly, screen thousands of variants for improved function, repeat. It works, but it's slow and expensive. In silico directed evolution uses AI to predict which mutations will improve a property <em>without physical screening</em>.<br><br>
+          <strong>How it works:</strong> The model takes your starting protein, a target property (e.g., "acid stability" or "catalytic rate"), and generates a ranked list of mutations predicted to improve that property while maintaining others. Advanced approaches (like those in Rosalind) consider epistatic effects &mdash; how mutations interact with each other &mdash; to suggest combinatorial variants that a random screen would never find.<br><br>
+          <strong>Why this matters for you:</strong> Instead of ordering and testing 1,000 random uricase mutants ($$$), you order the top 5-10 AI-predicted variants (~$1,200 in gene synthesis) and test those. If the AI's predictions are even partially accurate, you've compressed years of directed evolution into one synthesis round.
+        </div>
+        <div class="concept-relevance">Open Enzyme use: Engineering acid-stable uricase, improving catalytic efficiency, multi-objective optimization</div>
+      </div>
+
+      <div class="concept-card">
+        <div class="concept-name">Gene Expression Prediction</div>
+        <div class="concept-desc">
+          <strong>The insight:</strong> Getting a gene into an organism is step one. Getting it to produce useful amounts of protein is a separate engineering challenge. Expression level depends on promoter strength, signal peptide choice, codon optimization, mRNA stability, and dozens of other factors.<br><br>
+          <strong>How it works:</strong> Models predict expression levels by analyzing the full expression cassette: promoter sequence, 5' UTR, signal peptide, coding sequence, terminator. They've been trained on thousands of experimentally measured expression levels across different host organisms. Some models can predict not just "how much" but "where" &mdash; will the protein be secreted or stay intracellular?<br><br>
+          <strong>Why this matters for you:</strong> Choosing TEF1 vs. GPD vs. GAL1 as your promoter in S. cerevisiae will determine whether your yeast makes 1 mg/L or 100 mg/L of uricase. These models let you test cassette designs computationally before committing to a plasmid build.
+        </div>
+        <div class="concept-relevance">Open Enzyme use: Promoter selection, signal peptide optimization, expression cassette design for both yeast and koji</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 3: SPECIFIC PROMPTS                   -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="section" id="prompts">
+    <span class="section-number">Part 03</span>
+    <h2>Specific Prompts for Open Enzyme</h2>
+
+    <p>These prompts are designed for GPT-Rosalind but will also work with GPT-5.4 + the Codex Life Sciences plugin (with less sophisticated biological reasoning). Each prompt includes context on what you're asking, why it matters, what to expect back, and how to evaluate the quality of the response.</p>
+
+    <div class="callout">
+      <p><strong>Pro tip:</strong> Always open with a system-level context block that tells the model about the Open Enzyme project. This grounds every subsequent prompt. Use the "Project Context" prompt below as a preamble to any session.</p>
+    </div>
+
+    <!-- Project Context Preamble -->
+    <h3>Project Context Preamble</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Use This First</div>
+      <p>Paste this at the start of every Rosalind / GPT-5.4 session to ground the model in your project's constraints and goals.</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Project Context Preamble</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">I'm working on Open Enzyme, an open source project engineering food-safe organisms to produce therapeutic enzymes for home use.
+
+Key constraints:
+- Host organisms: Saccharomyces cerevisiae (brewer's yeast) and Aspergillus oryzae (koji mold) — both GRAS
+- Primary target: uricase (urate oxidase) for gout — humans lack this enzyme
+- Secondary target: digestive enzyme optimization from A. oryzae (lipase, protease, amylase)
+- Tertiary target: NLRP3 inflammasome inhibitors producible by engineered organisms
+- Delivery: oral, as food/fermented product — must survive GI transit
+- Safety: everything must remain food-safe, no antibiotic resistance markers in final strains
+- Budget: ~$1,200 for first experimental round (gene synthesis + basic molecular biology)
+- Team: 3 PhDs (gut microbiome, NF-κB signaling, innate immunity) + 1 engineer (me)
+
+This is citizen science with real scientific rigor. I need answers that are specific, actionable, and grounded in current literature. Flag uncertainty honestly.</div>
+    </div>
+
+    <!-- Prompt 1: Uricase Variant Selection -->
+    <h3>1. Uricase Variant Selection</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Why This Matters</div>
+      <p>Not all uricases are equal. The enzyme from different organisms varies dramatically in acid stability, protease resistance, specific activity, and immunogenicity. Picking the right starting variant is the single highest-leverage decision in the project &mdash; it determines whether the enzyme survives the GI tract, how much you need to produce, and whether it causes immune reactions.</p>
+      <p><strong>What to expect back:</strong> A comparative table with quantitative data where available. The model should cite specific papers for each claim. If it gives you specific activity numbers, verify them against the cited sources.</p>
+      <p><strong>How to evaluate:</strong> Check that it cites real enzymes with real UniProt/PDB accession numbers. Look for specific activity values in the literature. Be skeptical of claims about "oral delivery" performance unless backed by in vivo data.</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: Uricase Variant Comparison</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">Compare the following uricase (urate oxidase) variants for oral therapeutic use in the context of the Open Enzyme project:
+
+1. Aspergillus flavus uricase (rasburicase parent)
+2. Candida utilis uricase
+3. Bacillus fastidiosus uricase
+4. Arthrobacter globiformis uricase
+5. Soybean (Glycine max) uricase
+6. Any other variants you'd recommend I consider
+
+For each, analyze:
+
+a) GI STABILITY: Predicted stability at pH 2.0 (stomach, 1-2 hours), pH 6.0-7.0 (small intestine), pH 7.0-8.0 (colon). Which residues are acid-labile? Does the enzyme have disulfide bonds that contribute to acid stability?
+
+b) PROTEASE RESISTANCE: Susceptibility to pepsin (stomach), trypsin and chymotrypsin (small intestine). Are there exposed cleavage sites? How does the quaternary structure (tetrameric vs. monomeric) affect protease accessibility?
+
+c) EXPRESSION IN S. CEREVISIAE: Known expression levels if available. Predicted expression difficulty based on protein size, glycosylation requirements, folding complexity, and disulfide bond requirements.
+
+d) SPECIFIC ACTIVITY: Km and kcat for uric acid. Turnover number. How much enzyme would be needed to degrade a clinically meaningful amount of uric acid (targeting ~200 mg UA/day from gut lumen)?
+
+e) IMMUNOGENICITY: In the context of oral delivery (gut lumen, not systemic), what are the immunogenic risks? Does the enzyme share epitopes with human proteins? Is there precedent for oral tolerance?
+
+f) ENGINEERING POTENTIAL: How amenable is each variant to stability/activity improvements through rational design or directed evolution?
+
+Provide your recommendation ranked by suitability for oral delivery from engineered S. cerevisiae, with a clear rationale.</div>
+    </div>
+
+    <!-- Prompt 2: Codon Optimization -->
+    <h3>2. Codon Optimization for S. cerevisiae</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Why This Matters</div>
+      <p>Once you've selected your uricase variant, the wild-type gene sequence from the source organism will be poorly expressed in yeast. Codon optimization is not optional &mdash; it's the difference between the project working and not working. AI-optimized sequences consider factors that commercial tools like IDT's Codon Optimization Tool often miss: mRNA secondary structure, ribosome pausing, and codon context effects.</p>
+      <p><strong>What to expect back:</strong> A full optimized DNA sequence, analysis of the changes, predicted CAI (Codon Adaptation Index), and comparison to what a naive optimization would produce.</p>
+      <p><strong>How to evaluate:</strong> Cross-reference the output against the S. cerevisiae codon usage table. Check that the protein sequence is unchanged. Run the optimized sequence through a secondary tool (GenScript, IDT) for comparison.</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: Codon Optimization</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">I need to optimize the uaZ gene (Aspergillus flavus urate oxidase, UniProt P78609) for expression in Saccharomyces cerevisiae.
+
+Please provide:
+
+1. OPTIMIZED SEQUENCE: Full codon-optimized DNA sequence for S. cerevisiae expression. Consider:
+   - S. cerevisiae codon usage bias (CAI optimization)
+   - Elimination of rare codons (frequency <10% in yeast)
+   - mRNA secondary structure minimization (especially in the 5' region)
+   - GC content optimization (target 35-45% for yeast)
+   - Avoidance of cryptic splice sites, poly-A signals, and internal ribosome entry sites
+   - Codon context effects (codon pair bias)
+   - Avoidance of repetitive sequences that complicate synthesis
+
+2. ANALYSIS:
+   - Codon Adaptation Index (CAI) before and after optimization
+   - Rare codon frequency before and after
+   - GC content before and after
+   - Predicted mRNA minimum free energy (5' UTR region)
+   - Any codons you chose NOT to optimize and why (e.g., for deliberate translational pausing at domain boundaries)
+
+3. RESTRICTION SITES: Flag any restriction sites present in the optimized sequence that might interfere with cloning (especially BamHI, EcoRI, XhoI, NotI, SalI — common yeast expression vector sites)
+
+4. COMPARISON: How does this compare to what a basic CAI-maximization algorithm (like IDT's tool) would produce? What additional optimizations did you make?
+
+Output the sequence in FASTA format with annotations.</div>
+    </div>
+
+    <!-- Prompt 3: GI Survival Prediction -->
+    <h3>3. GI Tract Survival Prediction</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Why This Matters</div>
+      <p>The entire Open Enzyme thesis depends on uricase surviving the GI tract long enough to degrade uric acid in the gut lumen. This is the highest-risk assumption in the project. Understanding exactly which residues are vulnerable &mdash; and what mutations might fix them &mdash; lets you design a better enzyme before spending money on synthesis.</p>
+      <p><strong>What to expect back:</strong> A transit-stage-by-transit-stage analysis with specific residue numbers. The model should identify cleavage sites by position, predict stability curves, and suggest protective strategies.</p>
+      <p><strong>How to evaluate:</strong> Cross-reference predicted cleavage sites against known pepsin/trypsin specificity rules. Check cited stability data against published thermal/pH denaturation studies for uricases.</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: GI Survival Analysis</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">Analyze the GI tract survival profile of [SELECTED URICASE VARIANT] for oral delivery as a food-grade therapeutic.
+
+Model the transit through each GI compartment:
+
+STOMACH (pH 1.5-3.0, 30-120 min exposure):
+- Predict acid-induced unfolding: which domains unfold first? At what pH?
+- Map pepsin cleavage sites on the 3D structure — which are surface-exposed?
+- Estimate remaining activity after 30 min at pH 2.0, 60 min at pH 2.0, 120 min at pH 2.0
+- Consider: does the yeast cell matrix provide any protection if the enzyme is intracellular?
+
+DUODENUM (pH 5.5-6.5, 15-30 min):
+- Recovery from acid denaturation: is the unfolding reversible?
+- Trypsin and chymotrypsin cleavage site analysis
+- Bile salt interactions — do they help or hurt enzyme stability?
+
+JEJUNUM/ILEUM (pH 6.5-7.5, 2-4 hours):
+- This is the primary activity window for gut-lumen UA degradation
+- Predicted specific activity at pH 6.5-7.5
+- Substrate availability: what uric acid concentration is expected from ABCG2 secretion into the gut lumen?
+- Remaining active enzyme fraction after stomach transit
+
+COLON (pH 5.5-7.0, 12-36 hours):
+- Microbiome protease exposure
+- Is there residual activity? Is this therapeutically useful?
+
+OVERALL ASSESSMENT:
+- What % of ingested enzyme reaches the small intestine in active form?
+- What daily dose (in mg enzyme) would be needed to degrade 200 mg uric acid?
+- What are the top 3 residues/regions to engineer for improved GI survival?
+- Would enteric coating, encapsulation, or expression as inclusion bodies help?</div>
+    </div>
+
+    <!-- Prompt 4: Protein Engineering -->
+    <h3>4. Protein Engineering for Oral Delivery</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Why This Matters</div>
+      <p>This is where AI bio tools earn their keep. Instead of ordering hundreds of random mutants, you ask the model to reason about which specific mutations would improve acid stability and protease resistance while maintaining catalytic activity &mdash; a multi-objective optimization that would take a wet lab years of directed evolution.</p>
+      <p><strong>What to expect back:</strong> Specific mutation suggestions with predicted &Delta;&Delta;G values and rationale. The best responses will suggest combinatorial variants and flag potential pitfalls (e.g., mutations that improve stability but kill activity).</p>
+      <p><strong>How to evaluate:</strong> Check that suggested mutations are physically plausible (right amino acid type, correct residue numbering). Look up whether any of the suggested mutations have been tested experimentally. Be especially skeptical of predicted fold-improvement numbers.</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: Protein Engineering</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">Design a protein engineering strategy for [SELECTED URICASE VARIANT] optimized for oral delivery from S. cerevisiae. I need mutations that simultaneously improve:
+
+1. ACID STABILITY (primary objective):
+   - Improve stability at pH 2.0-3.0 (stomach survival)
+   - Strategies: add salt bridges, improve hydrophobic core packing, introduce disulfide bonds at surface-exposed positions
+   - Predict ΔΔG for each suggested mutation
+   - Do NOT sacrifice stability at pH 6.5-7.5 (this is where it needs to work)
+
+2. PROTEASE RESISTANCE (secondary objective):
+   - Modify or bury surface-exposed pepsin cleavage sites (Phe/Tyr/Trp/Leu at P1)
+   - Modify trypsin sites (Lys/Arg at P1) that are surface-accessible
+   - Consider proline substitutions near cleavage sites (prolines inhibit protease access)
+   - Do NOT introduce mutations in the active site or substrate binding channel
+
+3. CATALYTIC EFFICIENCY (maintain or improve):
+   - kcat/Km must remain at least 80% of wild-type
+   - Consider mutations that improve substrate access or product release
+   - Flag any suggested stability mutations that are within 8Å of the active site
+
+4. FOOD SAFETY (hard constraint):
+   - No gain of toxic function — no new binding sites for human proteins
+   - No introduction of known allergen epitopes
+   - Protein must remain safe for oral consumption as a food additive
+
+Provide your suggestions as:
+a) Individual mutations ranked by predicted impact, with rationale for each
+b) A recommended combinatorial variant (top 3-5 mutations combined)
+c) A "safe bet" minimal variant (1-2 highest-confidence mutations only)
+d) Predicted overall improvement in GI survival for each variant tier
+e) Any mutations you considered and rejected, with explanation</div>
+    </div>
+
+    <!-- Prompt 5: Promoter/Signal Peptide -->
+    <h3>5. Expression Cassette Design</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Why This Matters</div>
+      <p>The expression cassette &mdash; promoter, signal peptide, coding sequence, terminator &mdash; determines how much protein your yeast produces and where it ends up. A strong constitutive promoter means continuous production; an inducible promoter lets you control timing. Signal peptide choice determines whether uricase is secreted (accessible to gut-lumen uric acid) or stays intracellular (protected but needs cell lysis).</p>
+      <p><strong>What to expect back:</strong> A ranked comparison of promoter and signal peptide options with predicted expression levels. The model should reason about the tradeoff between secretion (better substrate access) and intracellular expression (better protection).</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: Expression Cassette</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">Design the optimal expression cassette for producing [SELECTED URICASE VARIANT] in Saccharomyces cerevisiae for oral therapeutic use.
+
+PROMOTER SELECTION — Compare and recommend:
+- TEF1p (constitutive, strong)
+- PGK1p (constitutive, strong)
+- GPDp/TDH3p (constitutive, very strong)
+- GAL1p (galactose-inducible, very strong but requires galactose)
+- ADH1p (constitutive, moderate)
+- CYC1p (constitutive, weak — useful for titrating expression)
+
+For each: predicted relative expression level, advantages/disadvantages for a food-grade product grown at home, metabolic burden on the cell, genetic stability over many generations (important for a strain the user maintains).
+
+SIGNAL PEPTIDE — Evaluate the secretion vs. intracellular tradeoff:
+Secretion candidates:
+- α-factor prepro (MFα1) — most common yeast secretion signal
+- Ost1 signal peptide
+- SUC2 (invertase) signal peptide
+- PHO5 signal peptide
+
+For each: predicted secretion efficiency for a 33 kDa tetrameric protein, risk of misfolding during secretion, glycosylation concerns (N-linked glycosylation in the secretory pathway may alter enzyme activity)
+
+Intracellular option:
+- No signal peptide — enzyme stays in cytoplasm
+- What is the expected intracellular yield?
+- Does the user need to lyse cells to release the enzyme, or will natural cell death during digestion be sufficient?
+
+TERMINATOR:
+- CYC1t vs. ADH1t — any meaningful difference for this application?
+
+FULL CASSETTE:
+Provide your recommended full cassette design as a genetic diagram:
+[Promoter] — [Signal peptide (if any)] — [Codon-optimized uricase CDS] — [Terminator]
+
+With predicted expression level in mg/L and reasoning for each choice.</div>
+    </div>
+
+    <!-- Prompt 6: Koji Gene Construct -->
+    <h3>6. Koji (A. oryzae) Construct Design</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Why This Matters</div>
+      <p>The koji track runs in parallel with the yeast track. A. oryzae (koji mold) is the original fermentation organism for miso, sake, and soy sauce &mdash; it's GRAS by centuries of tradition. It also naturally produces high levels of digestive enzymes, making it the ideal chassis for Lynn's digestive enzyme therapy and potentially a second uricase production platform.</p>
+      <p><strong>What to expect back:</strong> A. oryzae-specific construct design addressing the unique biology of filamentous fungi vs. yeast. Different codon bias, different promoter systems, different secretion machinery.</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: Koji Construct Design</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">Design a gene construct for expressing [SELECTED URICASE VARIANT] in Aspergillus oryzae (koji mold) for oral therapeutic use as a fermented food product.
+
+PROMOTER COMPARISON:
+- amyB promoter (α-amylase, starch-inducible, very strong in A. oryzae)
+- glaA promoter (glucoamylase, strong, starch-inducible)
+- TEF1 promoter (A. oryzae version, constitutive)
+- Compare: expression levels, induction requirements, stability, suitability for home fermentation on rice/grain substrates
+
+CODON OPTIMIZATION:
+- How does A. oryzae codon usage differ from S. cerevisiae?
+- Generate a codon-optimized uricase sequence specifically for A. oryzae
+- Key differences from the yeast-optimized version
+
+SECRETION:
+- glaA signal peptide (native glucoamylase signal) for secretion
+- amyB signal peptide
+- Predicted secretion efficiency for uricase in the A. oryzae secretory pathway
+- Glycosylation considerations (A. oryzae tends to hyperglycosylate — will this affect uricase activity?)
+
+PREDICTED YIELD:
+- Expected mg/g of fermented substrate (rice koji)
+- How does this compare to the yeast platform?
+- Which platform (yeast vs. koji) do you predict will produce more active uricase per gram of food consumed?
+
+DUAL-USE POTENTIAL:
+- Can we co-express uricase alongside the native digestive enzymes (amylase, protease, lipase)?
+- Will uricase expression reduce native enzyme production?
+- Optimal construct design for maintaining both functions</div>
+    </div>
+
+    <!-- Prompt 7: NLRP3 Inhibitor -->
+    <h3>7. NLRP3 Inhibitor Discovery</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Why This Matters</div>
+      <p>Gout flares are driven by the NLRP3 inflammasome responding to MSU crystals. Even if you degrade uric acid perfectly, suppressing NLRP3-driven inflammation is the other half of the therapeutic equation. If you can find food-derived NLRP3 inhibitors that could be produced by engineered yeast or koji, you've got a multi-mechanism oral therapy.</p>
+      <p><strong>What to expect back:</strong> A screen of food-safe compounds with predicted binding affinities. Be skeptical of binding affinity predictions &mdash; they're notoriously unreliable without experimental validation. Focus on compounds where there's already experimental evidence of NLRP3 inhibition.</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: NLRP3 Inhibitor Screen</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">Screen for food-derived or naturally occurring compounds that inhibit the NLRP3 inflammasome, with a focus on compounds that could be produced by engineered S. cerevisiae or A. oryzae.
+
+KNOWN NLRP3 INHIBITORS (benchmarks):
+- MCC950 (CRID3) — IC50 ~7.5 nM, binds NACHT domain, gold standard
+- Oridonin — covalent modifier of NLRP3 Cys279
+- Tranilast — binds NACHT domain, approved drug in Japan
+- OLT1177 (dapansutrile) — clinical trial for gout flares
+
+FOOD-DERIVED CANDIDATES TO EVALUATE:
+Screen across these categories:
+- Polyphenols (resveratrol, quercetin, EGCG, curcumin, sulforaphane)
+- Terpenoids (β-caryophyllene, limonene, ursolic acid)
+- Fatty acids (omega-3 DHA/EPA metabolites, short-chain fatty acids)
+- Amino acid derivatives (taurine, carnosine)
+- Fungal metabolites native to A. oryzae or S. cerevisiae
+- Any other food-safe compounds with NLRP3 evidence
+
+For each promising candidate:
+a) Mechanism of NLRP3 inhibition (direct binding? upstream signaling? post-translational?)
+b) Predicted binding affinity to NLRP3 NACHT domain (if direct binder)
+c) Evidence level (in vitro only? animal models? human trials?)
+d) Could it be biosynthesized by engineered yeast or koji? What pathway genes would be needed?
+e) Effective dose vs. achievable production levels — is it realistic?
+
+RANK the top 5 candidates by: strength of NLRP3 evidence × feasibility of microbial production × food safety
+
+Also flag: Are there any NLRP3 inhibitors that A. oryzae already produces naturally?</div>
+    </div>
+
+    <!-- Prompt 8: Digestive Enzyme Optimization -->
+    <h3>8. Digestive Enzyme Optimization (Lynn's Track)</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Why This Matters</div>
+      <p>Lynn's digestive enzyme insufficiency is the second therapeutic target. A. oryzae naturally produces amylase, protease, and lipase &mdash; the question is which strain and which fermentation conditions maximize the enzyme profile she needs. This is more about optimizing what nature already provides than engineering new capabilities.</p>
+      <p><strong>What to expect back:</strong> Strain comparisons with specific enzyme activity data, plus fermentation optimization parameters. Much of this data exists in the sake/miso fermentation literature.</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: Digestive Enzyme Optimization</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">Optimize Aspergillus oryzae strain selection and fermentation conditions for maximum production of digestive enzymes relevant to exocrine pancreatic insufficiency (EPI).
+
+TARGET ENZYME PROFILE (in order of importance for EPI):
+1. Lipase — the most critical deficiency in EPI; fat malabsorption causes most symptoms
+2. Protease — protein digestion, includes acid-stable and alkaline proteases
+3. Amylase — starch digestion, less critical but part of the standard enzyme replacement
+
+STRAIN COMPARISON — Evaluate these A. oryzae strains:
+- RIB40 (reference genome strain)
+- ATCC 11866 (commonly used industrial strain)
+- Starter cultures available from fermentation suppliers (GEM Cultures, Cultures for Health)
+- Any other strains known for exceptional enzyme production
+
+For each strain, provide (with citations where possible):
+a) Lipase activity (U/g koji)
+b) Acid protease activity (U/g koji)
+c) Alkaline protease activity (U/g koji)
+d) Amylase activity (U/g koji)
+e) Availability for home fermenters
+
+FERMENTATION OPTIMIZATION:
+- Substrate: rice vs. barley vs. soybean — which maximizes lipase?
+- Temperature: optimal range for each enzyme class
+- Moisture content: effect on enzyme profile
+- Fermentation time: activity curves (12h, 24h, 36h, 48h)
+- pH management: does substrate pH affect enzyme secretion profile?
+
+DOSE EQUIVALENCE:
+- Standard prescription enzyme replacement (Creon): 25,000 USP units lipase per meal
+- How many grams of optimized koji would provide equivalent lipase activity?
+- Is this a realistic serving size? (Must be palatable as a food condiment)
+
+STRAIN IMPROVEMENT (if needed):
+- If wild-type strains don't produce enough lipase, what A. oryzae genes could be overexpressed?
+- Could we use CRISPR to upregulate lipase production in an otherwise wild-type background?</div>
+    </div>
+
+    <!-- Prompt 9: Cross-Checking Research -->
+    <h3>9. Cross-Checking Our Research</h3>
+
+    <div class="prompt-context">
+      <div class="ctx-label">Why This Matters</div>
+      <p>The most valuable thing a reasoning model can do is honestly stress-test your assumptions. These prompts ask Rosalind to identify the weakest links in the Open Enzyme thesis &mdash; the places where the project is most likely to fail or where the science doesn't hold up.</p>
+      <p><strong>What to expect back:</strong> Honest assessments with specific failure modes. The best responses will distinguish between "technically challenging but feasible" and "fundamentally flawed." Be especially attentive to failure modes you haven't considered.</p>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: Thesis Validation</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">Critically evaluate the Open Enzyme project thesis. I want honest assessment, not encouragement.
+
+CORE THESIS: Engineering GRAS organisms (S. cerevisiae, A. oryzae) to produce uricase for oral delivery as a food product can meaningfully reduce serum uric acid in gout patients through gut-lumen degradation of uric acid secreted via the ABCG2 transporter.
+
+Evaluate each link in the chain:
+
+1. GUT-LUMEN UA DEGRADATION:
+   - Is there sufficient evidence that reducing gut-lumen uric acid affects serum levels?
+   - What does the ALLN-346 Phase 2a data actually show? How strong is it?
+   - What does the PULSE probiotic study (Cell Reports Medicine, Oct 2025) demonstrate?
+   - Is ABCG2 secretion of UA into the gut quantitatively significant enough?
+
+2. ORAL ENZYME SURVIVAL:
+   - What % of orally delivered recombinant enzyme actually reaches the small intestine intact?
+   - Are we overestimating the protection provided by food matrix/yeast cell wall?
+   - What are the real-world numbers from oral enzyme replacement therapy (e.g., pancreatic enzymes)?
+
+3. EXPRESSION FEASIBILITY:
+   - Is S. cerevisiae a realistic host for producing A. flavus uricase at therapeutic levels?
+   - What expression levels have actually been achieved for similar heterologous enzymes in yeast?
+   - The ACS Syn Bio 2025 paper claims 365 μmol/h/OD in S. boulardii — is this reproducible?
+
+4. SAFETY:
+   - What are the actual risks of consuming recombinant uricase regularly?
+   - Could engineered organisms colonize the gut? Is that a feature or a bug?
+   - Horizontal gene transfer risks — real or theoretical?
+
+5. REGULATORY:
+   - Can this actually be distributed as a food product?
+   - Where does "engineered yeast you grow at home" fall in the FDA/GRAS framework?
+   - What precedent exists?
+
+Rate the overall project feasibility on a scale of 1-10 with explicit assumptions for each score point.</div>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: Risk Assessment</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">What are the top 10 risks most likely to kill the Open Enzyme project, ranked by (probability × impact)?
+
+For each risk:
+- Specific failure mode (not vague — exactly what goes wrong)
+- Probability estimate (with reasoning)
+- Impact if it happens (project delay vs. project death)
+- Mitigation strategy available now
+- Key experiment or data point that would de-risk it
+
+Also: What am I NOT thinking about? What failure mode would a pharma R&D team immediately flag that a citizen science project might miss?</div>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-title">Prompt: Feasibility Rating</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      </div>
+      <div class="prompt-body">Rate the feasibility of engineering S. cerevisiae to express A. flavus uricase at therapeutic levels for oral delivery.
+
+Break this into sub-problems and rate each 1-10:
+
+a) Gene synthesis and cloning — can we get the construct built? ($?)
+b) Expression level — will yeast produce enough active enzyme? (mg/L?)
+c) Protein folding — will the enzyme fold correctly in yeast? (tetrameric assembly?)
+d) Enzyme activity — will it degrade UA at the required rate? (kcat/Km?)
+e) GI survival — will enough enzyme survive to the small intestine? (% surviving?)
+f) Therapeutic effect — will gut-lumen UA degradation lower serum UA? (mmol/L change?)
+g) Strain stability — will the engineered strain maintain expression over generations?
+h) Home production — can a non-scientist grow this reliably? (as easy as sourdough?)
+i) Taste/palatability — will people actually eat this? (flavor impact?)
+j) Safety — is regular consumption of engineered yeast safe long-term?
+
+For the lowest-scoring items: what would it take to move each up by 2 points?</div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 4: WORKFLOW INTEGRATION                -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="section" id="workflow">
+    <span class="section-number">Part 04</span>
+    <h2>Workflow Integration</h2>
+
+    <p>The AI bio tools aren't a one-shot oracle &mdash; they're a continuous feedback loop integrated into your development process. Here's how to wire them into the Open Enzyme workflow.</p>
+
+    <h3>The AI-Accelerated Development Loop</h3>
+
+    <div class="workflow">
+      <div class="workflow-step">
+        <div class="step-num">Step 1</div>
+        <div class="step-label">Design</div>
+        <div class="step-desc">Rosalind / Bio Discovery</div>
+      </div>
+      <div class="workflow-arrow">&rarr;</div>
+      <div class="workflow-step">
+        <div class="step-num">Step 2</div>
+        <div class="step-label">Validate</div>
+        <div class="step-desc">Cross-check predictions</div>
+      </div>
+      <div class="workflow-arrow">&rarr;</div>
+      <div class="workflow-step">
+        <div class="step-num">Step 3</div>
+        <div class="step-label">Synthesize</div>
+        <div class="step-desc">Order gene synthesis</div>
+      </div>
+      <div class="workflow-arrow">&rarr;</div>
+      <div class="workflow-step">
+        <div class="step-num">Step 4</div>
+        <div class="step-label">Build</div>
+        <div class="step-desc">Transform &amp; express</div>
+      </div>
+      <div class="workflow-arrow">&rarr;</div>
+      <div class="workflow-step">
+        <div class="step-num">Step 5</div>
+        <div class="step-label">Test</div>
+        <div class="step-desc">Measure activity</div>
+      </div>
+      <div class="workflow-arrow">&rarr;</div>
+      <div class="workflow-step">
+        <div class="step-num">Step 6</div>
+        <div class="step-label">Feed Back</div>
+        <div class="step-desc">Results &rarr; AI &rarr; iterate</div>
+      </div>
+    </div>
+
+    <h3>Phase 1: In Silico Design (Weeks 1-2)</h3>
+
+    <div class="evidence-grid">
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(88,166,255,0.15); color: var(--blue);">1</div>
+        <div class="ev-body">
+          <div class="ev-title">Variant Selection &amp; Engineering</div>
+          <div class="ev-desc">Run the uricase variant comparison prompt (Prompt 1). Use the result to select your starting variant. Then run the protein engineering prompt (Prompt 4) to design improved variants. Run GI survival prediction (Prompt 3) on both wild-type and engineered variants. You should end this step with 2-3 candidate sequences: wild-type, minimal mutations, and full engineered variant.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(63,185,80,0.15); color: var(--green);">2</div>
+        <div class="ev-body">
+          <div class="ev-title">Codon Optimization &amp; Cassette Design</div>
+          <div class="ev-desc">Run codon optimization (Prompt 2) for each candidate variant. Run expression cassette design (Prompt 5) to select promoter, signal peptide, and terminator. Output: complete DNA sequences ready for gene synthesis ordering. If using the koji track in parallel, run Prompt 6 for A. oryzae versions.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(188,140,255,0.15); color: var(--purple);">3</div>
+        <div class="ev-body">
+          <div class="ev-title">Cross-Validation</div>
+          <div class="ev-desc">Run the thesis validation prompt (Prompt 9) to stress-test your design before spending money. Run the same sequences through Amazon Bio Discovery (if using) to get a second opinion from different models. Compare outputs across tools &mdash; agreement increases confidence, disagreement highlights risks to investigate.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Phase 2: Synthesis &amp; Build (Weeks 3-6)</h3>
+
+    <div class="evidence-grid">
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(209,153,34,0.15); color: var(--orange);">4</div>
+        <div class="ev-body">
+          <div class="ev-title">Gene Synthesis Order</div>
+          <div class="ev-desc">Order codon-optimized gene synthesis from Twist Bioscience or IDT (if using Bio Discovery, this can be routed directly). Order 2-3 variants: the AI's top pick, the safe-bet minimal variant, and the wild-type as a control. Typical cost: $0.07-0.09/bp, so a 900bp uricase gene costs ~$70-80 per variant.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(57,210,192,0.15); color: var(--teal);">5</div>
+        <div class="ev-body">
+          <div class="ev-title">Transform &amp; Express</div>
+          <div class="ev-desc">Clone into yeast expression vector, transform S. cerevisiae, select transformants. While waiting for colonies, use AI to predict expression levels and plan your activity assay. The yeast uricase protocol from the engineered-yeast-uricase-proposal.html document provides the detailed bench protocol.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Phase 3: Test &amp; Iterate (Weeks 6-10)</h3>
+
+    <div class="evidence-grid">
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(248,81,73,0.15); color: var(--red);">6</div>
+        <div class="ev-body">
+          <div class="ev-title">Measure &amp; Feed Back</div>
+          <div class="ev-desc">Measure uricase activity (UA degradation assay at A293nm). Compare actual expression levels to Rosalind's predictions. <strong>This is the critical feedback step:</strong> take your actual results and feed them back to Rosalind/Bio Discovery. "My wild-type variant expressed at X mg/L, the engineered variant at Y mg/L, acid stability improved by Z%. Based on these results, what should my next round of mutations focus on?" The AI learns from your data to make better predictions for round 2.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>The $1,200 vs. $400M comparison:</strong> This is the exact same design-build-test-learn loop that pharma companies run, except they spend $400M on high-throughput screening that tests millions of random variants. You're spending $1,200 on AI-guided design that tests 3-5 computationally optimized variants. If the AI predictions are even 30% accurate, your per-discovery cost is 100,000x lower. This is not a metaphor &mdash; this is literally what MSK just did with Rosalind for antibodies.</p>
+    </div>
+
+    <h3>Tool Selection Guide</h3>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Task</th>
+        <th>Best Tool</th>
+        <th>Fallback</th>
+      </tr>
+      <tr>
+        <td><strong>Open-ended biological reasoning</strong><br>(variant selection, risk assessment, experimental design)</td>
+        <td>GPT-Rosalind</td>
+        <td>GPT-5.4 + Codex Life Sciences plugin</td>
+      </tr>
+      <tr>
+        <td><strong>Structured candidate screening</strong><br>(ranking variants, benchmarking properties)</td>
+        <td>Amazon Bio Discovery</td>
+        <td>Rosalind with structured prompts</td>
+      </tr>
+      <tr>
+        <td><strong>Gene synthesis &amp; lab routing</strong><br>(ordering DNA, sending to wet lab)</td>
+        <td>Amazon Bio Discovery (Twist/Ginkgo integration)</td>
+        <td>Direct order from Twist/IDT</td>
+      </tr>
+      <tr>
+        <td><strong>Literature synthesis</strong><br>(finding papers, validating claims, cross-referencing)</td>
+        <td>Rosalind (database-connected)</td>
+        <td>Claude + PubMed connector</td>
+      </tr>
+      <tr>
+        <td><strong>Project planning &amp; coordination</strong><br>(experimental protocols, team communication)</td>
+        <td>Claude (your existing workflow)</td>
+        <td>GPT-5.4</td>
+      </tr>
+      <tr>
+        <td><strong>Protein structure analysis</strong><br>(stability prediction, docking, mutation effects)</td>
+        <td>Bio Discovery (specialized models) or Rosalind</td>
+        <td>AlphaFold + FoldX (open source, run locally)</td>
+      </tr>
+    </table>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 5: WHAT THIS MEANS                    -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="section" id="implications">
+    <span class="section-number">Part 05</span>
+    <h2>What This Means for Open Enzyme</h2>
+
+    <p>Step back and look at the timing. Open Enzyme was conceived in April 2026. GPT-Rosalind launched April 17. Amazon Bio Discovery launched April 14. Anthropic acquired Coefficient Bio on April 3. Three major AI biology platforms arrived in the same two-week window that the project started.</p>
+
+    <p>This is not a coincidence you can take advantage of. <strong>This is the reason the project is possible at all.</strong></p>
+
+    <h3>The Capability Shift</h3>
+
+    <div class="evidence-grid">
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(63,185,80,0.15); color: var(--green);">1</div>
+        <div class="ev-body">
+          <div class="ev-title">Democratized Access to Pharma-Grade AI</div>
+          <div class="ev-desc">Memorial Sloan Kettering used Rosalind to generate 300,000 drug candidates. The same model is available to you during the free research preview. The same Twist Bioscience that synthesizes MSK's antibodies synthesizes your uricase gene. The tools are the same. The access is the same. The only difference is scope &mdash; and for a single-enzyme project, that works in your favor.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(88,166,255,0.15); color: var(--blue);">2</div>
+        <div class="ev-body">
+          <div class="ev-title">The AI-Guided Experiment Changes the Economics</div>
+          <div class="ev-desc">Traditional pharma screens millions of random variants because they can't predict which ones will work. AI-guided design lets you order 3-5 variants because the model has already done the equivalent of millions of in silico screens. Your $1,200 gene synthesis budget buys the same number of experiments &mdash; but each experiment is computationally optimized rather than random. The expected value per dollar spent is fundamentally different.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(188,140,255,0.15); color: var(--purple);">3</div>
+        <div class="ev-body">
+          <div class="ev-title">Open Source + AI Biology = Genuinely New</div>
+          <div class="ev-desc">The combination of open source ethos, AI-assisted biology, and citizen science has no real precedent. Open source software democratized code. AI biology is democratizing drug discovery. Open Enzyme sits at the intersection &mdash; an open source therapeutic enzyme library designed with the same AI tools that pharma uses, but distributed as a public good rather than a $300K/year prescription.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(209,153,34,0.15); color: var(--orange);">4</div>
+        <div class="ev-body">
+          <div class="ev-title">The Window Is Now</div>
+          <div class="ev-desc">Rosalind is free during research preview. Bio Discovery has a free trial. Claude's life sciences capabilities are expanding rapidly. The competitive landscape among AI providers means they're all racing to offer biology capabilities &mdash; and racing to give researchers free or cheap access during the land-grab phase. This won't last forever. The time to establish the project, run the first experiments, and build the dataset is now, while the tools are free and the providers are hungry for use cases.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>The bottom line:</strong> Two weeks ago, building an AI-designed therapeutic enzyme at home was a thought experiment. Today, you have a frontier biological reasoning model (Rosalind), a platform of 40+ specialized bio AI models with lab integration (Bio Discovery), an AI company investing $400M in biological reasoning (Anthropic/Coefficient), a team of three PhDs who understand the gut biology, and a $1,200 budget that buys 3-5 computationally optimized gene constructs. The tools exist. The science is sound. The access is open. Execute.</p>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- APPENDIX: Quick Reference                   -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="section" id="appendix">
+    <span class="section-number">Appendix</span>
+    <h2>Quick Reference</h2>
+
+    <h3>Access Links</h3>
+    <table class="comparison-table">
+      <tr>
+        <th>Tool</th>
+        <th>URL</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td><strong>GPT-Rosalind</strong></td>
+        <td>openai.com &mdash; Apply for Trusted Access Program</td>
+        <td>Research preview (free), US enterprise only</td>
+      </tr>
+      <tr>
+        <td><strong>Codex Life Sciences Plugin</strong></td>
+        <td>Available in Codex (GitHub)</td>
+        <td>Free, available now to all GPT-5.4 users</td>
+      </tr>
+      <tr>
+        <td><strong>Amazon Bio Discovery</strong></td>
+        <td>aws.amazon.com/biodiscovery</td>
+        <td>Early access, $486/mo or free trial (5 experiments)</td>
+      </tr>
+      <tr>
+        <td><strong>Claude for Life Sciences</strong></td>
+        <td>anthropic.com</td>
+        <td>Available now (Benchling, PubMed connectors)</td>
+      </tr>
+    </table>
+
+    <h3>Prompt Execution Order</h3>
+    <div class="evidence-grid">
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(63,185,80,0.15); color: var(--green);">0</div>
+        <div class="ev-body">
+          <div class="ev-title">Project Context Preamble</div>
+          <div class="ev-desc">Paste at the start of every session. Sets the project constraints.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(88,166,255,0.15); color: var(--blue);">1</div>
+        <div class="ev-body">
+          <div class="ev-title">Uricase Variant Selection</div>
+          <div class="ev-desc">Pick your starting enzyme. Everything else depends on this choice.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(188,140,255,0.15); color: var(--purple);">2</div>
+        <div class="ev-body">
+          <div class="ev-title">GI Survival Prediction</div>
+          <div class="ev-desc">Understand the survival challenge before trying to fix it.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(209,153,34,0.15); color: var(--orange);">3</div>
+        <div class="ev-body">
+          <div class="ev-title">Protein Engineering</div>
+          <div class="ev-desc">Design mutations to address GI survival weaknesses.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(57,210,192,0.15); color: var(--teal);">4</div>
+        <div class="ev-body">
+          <div class="ev-title">Codon Optimization + Expression Cassette</div>
+          <div class="ev-desc">Convert your protein design into orderable DNA sequences.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(247,120,186,0.15); color: var(--pink);">5</div>
+        <div class="ev-body">
+          <div class="ev-title">Cross-Check &amp; Validate</div>
+          <div class="ev-desc">Stress-test assumptions before spending money on synthesis.</div>
+        </div>
+      </div>
+      <div class="evidence-item">
+        <div class="ev-icon" style="background: rgba(248,81,73,0.15); color: var(--red);">6</div>
+        <div class="ev-body">
+          <div class="ev-title">Parallel Tracks: Koji (6), NLRP3 (7), Digestive Enzymes (8)</div>
+          <div class="ev-desc">Run these concurrently with the yeast primary track.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Key Databases (Connected via Codex Plugin)</h3>
+    <table class="comparison-table">
+      <tr>
+        <th>Database</th>
+        <th>What It Contains</th>
+        <th>Open Enzyme Use</th>
+      </tr>
+      <tr>
+        <td><strong>UniProt</strong></td>
+        <td>Protein sequences, annotations, function</td>
+        <td>Uricase variant sequences, known mutations</td>
+      </tr>
+      <tr>
+        <td><strong>PDB</strong></td>
+        <td>3D protein structures</td>
+        <td>Crystal structures for docking, stability analysis</td>
+      </tr>
+      <tr>
+        <td><strong>NCBI/GenBank</strong></td>
+        <td>Gene sequences, genome data</td>
+        <td>Gene sequences for codon optimization input</td>
+      </tr>
+      <tr>
+        <td><strong>KEGG</strong></td>
+        <td>Metabolic pathways, enzyme reactions</td>
+        <td>Uric acid degradation pathway, biosynthesis routes</td>
+      </tr>
+      <tr>
+        <td><strong>ChEMBL</strong></td>
+        <td>Bioactive compounds, binding data</td>
+        <td>NLRP3 inhibitor data, known binding affinities</td>
+      </tr>
+      <tr>
+        <td><strong>PubMed</strong></td>
+        <td>Biomedical literature</td>
+        <td>Everything &mdash; validation of every claim</td>
+      </tr>
+    </table>
+
+  </section>
+
+</div>
+
+<script>
+function copyPrompt(btn) {
+  const block = btn.closest('.prompt-block');
+  const text = block.querySelector('.prompt-body').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
