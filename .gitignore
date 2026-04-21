@@ -1,5 +1,7 @@
 .DS_Store
 **/.DS_Store
+.obsidian/
+regenerate-html.py
 *.pyc
 __pycache__/
 .env
