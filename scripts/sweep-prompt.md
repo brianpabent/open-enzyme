@@ -105,7 +105,7 @@ Body, in this order:
 
 ### Drift guard — skip the synthesis if nothing new
 
-If after reading the corpus you find no genuinely new connections — e.g., the trigger was a small typo fix, or the synthesis would just restate what's already in a prior `SYNTHESIS-*.md` — **do not write a synthesis file**. Record this in PASS 3 as `Pass 2 synthesis: none — nothing new worth synthesizing`. Low-signal synthesis docs pollute the corpus and amplify drift on future sweeps.
+If after reading the corpus you find no genuinely new connections — e.g., the trigger was a small typo fix, or the synthesis would just restate what's already in a prior `SYNTHESIS-*.md` — **do not write a synthesis file**. Record this in PASS 4 as `Pass 2 synthesis: none — nothing new worth synthesizing` and skip PASS 3 as well. Low-signal synthesis docs pollute the corpus and amplify drift on future sweeps.
 
 ### Tone
 
@@ -113,7 +113,49 @@ The smartest colleague who just read everything. Bold proposals, clearly labeled
 
 ---
 
-## PASS 3 — Log
+## PASS 3 — Synthesis propagation (backpropagation)
+
+If Pass 2 produced a synthesis file, propagate its **supported findings and contradictions** back into the living docs and wiki. This is what makes the docs evolve: connections found by synthesis become part of the primary research record, not just a separate report.
+
+**Skip this pass entirely if Pass 2 was skipped** (drift guard triggered — nothing new).
+
+### What to propagate
+
+- **Supported connections** (Pass 2 tagged them `Supported` — backed by multiple sources in the corpus). Embed the insight into each doc it connects.
+- **Contradictions Found.** For every contradiction Pass 2 surfaced, add a `> ⚠️ CONTRADICTION:` inline marker at the relevant location in each affected doc. Do not attempt to resolve silently.
+
+### What NOT to propagate
+
+- **Speculative** connections stay in the synthesis file. They are proposals for Brian to evaluate, not findings to embed. If one later hardens into `Supported` in a future synthesis, that future sweep's Pass 3 will propagate it.
+- **Proposed Experiments, Open Questions, Priority Actions** stay synthesis-only. Those are recommendations, not claims.
+
+### Provenance — preserve the chain
+
+When you embed a synthesized finding into a doc, use dual-source attribution so the evidence chain stays transparent:
+
+```
+(source: <original-source-doc-A>, <original-source-doc-B> — via SYNTHESIS-<date>)
+```
+
+The synthesis file is the *discovery* mechanism; the original docs remain the *evidence*. Never cite the synthesis alone as the source — the reader must be able to trace any claim to a primary doc (or to `reference/`) in one step.
+
+### Update the same structures as Pass 1
+
+- Inline edits to `docs/*.md` with dual-source provenance.
+- `## Revision history` entries in each affected doc, formatted:
+  ```
+  - **<YYYY-MM-DD>** — <finding summary> (trigger: <original-trigger-filename>, via SYNTHESIS-<date>)
+  ```
+- `wiki/*.md` updates with the same dual-source provenance.
+- `wiki/INDEX.md` and `wiki/GRAPH.md` if the synthesis revealed concepts/relationships worth adding to the map.
+
+### Conservatism rule
+
+If a `Supported` connection would require substantially rewriting a doc's core argument rather than adding or updating a specific claim, flag it for Brian via a `> ⚠️ NEEDS REVIEW:` inline marker instead of rewriting. Major architectural changes to a doc are human decisions.
+
+---
+
+## PASS 4 — Log
 
 Append to `ai-analysis/SWEEP-LOG.md` (create it with an H1 heading if it doesn't exist):
 
@@ -123,11 +165,12 @@ Append to `ai-analysis/SWEEP-LOG.md` (create it with an H1 heading if it doesn't
 **Trigger:** <trigger filename>
 **Pass 1 updates:** <comma-separated list of modified files, or "none">
 **Pass 2 synthesis:** <one-line summary of top finding, or "none — nothing new worth synthesizing">
+**Pass 3 backpropagation:** <comma-separated list of docs/wiki files modified by synthesis propagation, or "skipped" if Pass 2 was skipped>
 ```
 
 ---
 
-## PASS 4 — Commit
+## PASS 5 — Commit
 
 Read the TRIGGER block's `commit=` directive.
 
@@ -153,5 +196,5 @@ If you modified `wiki/GRAPH.md`, run `python3 scripts/lint-mermaid.py wiki/GRAPH
 - **Evidence levels required** on every new or revised claim: `Clinical Trial`, `Animal Model`, `In Vitro`, or `Mechanistic Extrapolation`.
 - **Inline provenance** on new content: `(source: <filename>)`.
 - **Bidirectional `[[wiki-links]]`.**
-- **Conservative on Pass 1, bold on Pass 2.**
+- **Conservative on Pass 1, bold on Pass 2, conservative again on Pass 3** (only `Supported` findings backpropagate; speculation stays in the synthesis file).
 - **Never write to:** `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*`.
