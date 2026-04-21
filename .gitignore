@@ -11,3 +11,4 @@ node_modules/
 scripts/wiki-watch.log
 .idea/
 .vscode/
+site/
