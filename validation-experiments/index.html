@@ -1,0 +1,3442 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/validation-experiments/">
+      
+      
+        <link rel="prev" href="../supplements-stack/">
+      
+      
+        <link rel="next" href="../bio-ai-tools/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Validation Experiments - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#validation-experiments" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Validation Experiments
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../open-enzyme-vision/" class="md-tabs__link">
+          
+  
+  
+  Vision & Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gout-pathophysiology/" class="md-tabs__link">
+          
+  
+  
+  Gout & Uricase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nlrp3-inflammasome/" class="md-tabs__link">
+          
+  
+  
+  NLRP3 & Inflammation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../digestive-enzymes/" class="md-tabs__link">
+          
+  
+  
+  Koji & Digestive Enzymes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../saccharomyces-cerevisiae/" class="md-tabs__link">
+          
+  
+  
+  Organisms & Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gut-lumen-sink/" class="md-tabs__link">
+          
+  
+  
+  Delivery & Barrier
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bpc-157/" class="md-tabs__link">
+          
+  
+  
+  Compounds & Peptides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../sibo/" class="md-tabs__link">
+          
+  
+  
+  Other Conditions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bio-ai-tools/" class="md-tabs__link">
+          
+  
+  
+  Tools & Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-in-vitro-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: In Vitro Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: In Vitro Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-uricase-gene-performance-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Uricase Gene Performance Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-secretion-vs-intracellular-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Secretion vs. Intracellular Expression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-uricase-survival-in-beer-fermentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Uricase Survival in Beer Fermentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-uricase-stability-after-drying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Uricase Stability After Drying
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-koji-uricase-expression-and-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Koji Uricase Expression and Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-koji-enzyme-stability-at-digestive-ph-and-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Koji Enzyme Stability at Digestive pH and Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-nlrp3-inflammasome-pathway-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 NLRP3 Inflammasome Pathway Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-animal-model-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Animal Model Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Animal Model Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-hyperuricemic-rat-model-engineered-yeast-efficacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Hyperuricemic Rat Model: Engineered Yeast Efficacy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Engineered Koji Efficacy in Digestive Enzyme-Deficient Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 NLRP3 Inflammasome Inhibition in MSU Crystal Arthritis Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-pulse-probiotic-validation-in-hyperuricemic-mice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 PULSE Probiotic Validation in Hyperuricemic Mice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-human-self-experimentation-and-biomarker-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Human Self-Experimentation and Biomarker Tracking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Human Self-Experimentation and Biomarker Tracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-brian-engineered-yeast-uricase-serum-uric-acid-flare-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Brian: Engineered Yeast Uricase — Serum Uric Acid &amp; Flare Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-brian-nlrp3-inflammasome-suppression-stack-biomarker-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Brian: NLRP3 Inflammasome Suppression Stack — Biomarker Panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-lynn-wild-type-koji-digestive-enzyme-supplementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Lynn: Wild-Type Koji Digestive Enzyme Supplementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-joint-trial-engineered-koji-both-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Joint Trial: Engineered Koji (Both Users)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Biomarker Tracking: Long-term Flare Prevention (Brian, 6-month extension)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-experiment-dependencies-and-sequencing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Experiment Dependencies and Sequencing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes on Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-in-vitro-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: In Vitro Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: In Vitro Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-uricase-gene-performance-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Uricase Gene Performance Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-secretion-vs-intracellular-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Secretion vs. Intracellular Expression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-uricase-survival-in-beer-fermentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Uricase Survival in Beer Fermentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-uricase-stability-after-drying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Uricase Stability After Drying
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-koji-uricase-expression-and-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Koji Uricase Expression and Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-koji-enzyme-stability-at-digestive-ph-and-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Koji Enzyme Stability at Digestive pH and Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-nlrp3-inflammasome-pathway-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 NLRP3 Inflammasome Pathway Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-animal-model-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Animal Model Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Animal Model Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-hyperuricemic-rat-model-engineered-yeast-efficacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Hyperuricemic Rat Model: Engineered Yeast Efficacy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Engineered Koji Efficacy in Digestive Enzyme-Deficient Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 NLRP3 Inflammasome Inhibition in MSU Crystal Arthritis Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-pulse-probiotic-validation-in-hyperuricemic-mice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 PULSE Probiotic Validation in Hyperuricemic Mice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-human-self-experimentation-and-biomarker-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Human Self-Experimentation and Biomarker Tracking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Human Self-Experimentation and Biomarker Tracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-brian-engineered-yeast-uricase-serum-uric-acid-flare-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Brian: Engineered Yeast Uricase — Serum Uric Acid &amp; Flare Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-brian-nlrp3-inflammasome-suppression-stack-biomarker-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Brian: NLRP3 Inflammasome Suppression Stack — Biomarker Panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-lynn-wild-type-koji-digestive-enzyme-supplementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Lynn: Wild-Type Koji Digestive Enzyme Supplementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-joint-trial-engineered-koji-both-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Joint Trial: Engineered Koji (Both Users)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Biomarker Tracking: Long-term Flare Prevention (Brian, 6-month extension)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-experiment-dependencies-and-sequencing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Experiment Dependencies and Sequencing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes on Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="validation-experiments">Validation Experiments<a class="headerlink" href="#validation-experiments" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>A comprehensive map of all proposed experiments for the Open Enzyme project, organized by phase and documented across all research documents. Each experiment includes its purpose, proposing source, estimated timeline/cost, and dependencies.</p>
+<hr />
+<h2 id="phase-1-in-vitro-validation">Phase 1: In Vitro Validation<a class="headerlink" href="#phase-1-in-vitro-validation" title="Permanent link">&para;</a></h2>
+<h3 id="11-uricase-gene-performance-comparison">1.1 Uricase Gene Performance Comparison<a class="headerlink" href="#11-uricase-gene-performance-comparison" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Which uricase gene (Aspergillus flavus, Candida utilis, or Vibrio vulnificus) performs best in S. cerevisiae?</p>
+<p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§3)</p>
+<p><strong>Protocol:</strong>
+- Order codon-optimized synthetic genes for all three candidates (<em>A. flavus</em>, <em>C. utilis</em>, <em>V. vulnificus</em>)
+- Each in the same expression cassette (pTEF1 promoter, CYC1 terminator)
+- Integrate at the same chromosomal locus in S. cerevisiae
+- Compare: (a) expression level by Western blot, (b) specific uricase activity in cell lysate, &copy; enzyme stability at 37°C over 24h</p>
+<p><strong>Estimated cost:</strong> $2,000–3,000 (gene synthesis ~$0.10/bp × ~900 bp × 3 genes + reagents)</p>
+<p><strong>Estimated timeline:</strong> 4–6 weeks</p>
+<p><strong>Dependencies:</strong> None</p>
+<p><strong>Success criteria:</strong> Identify highest-performing gene with &gt;50 μmol/h/OD activity</p>
+<hr />
+<h3 id="12-secretion-vs-intracellular-expression">1.2 Secretion vs. Intracellular Expression<a class="headerlink" href="#12-secretion-vs-intracellular-expression" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Should uricase be secreted into the medium or retained intracellularly?</p>
+<p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§3)</p>
+<p><strong>Protocol:</strong>
+- Clone A. flavus uaZ into two constructs: (1) with α-factor signal peptide for secretion, (2) without for intracellular accumulation
+- Transform both into same yeast strain
+- At 48h growth in liquid culture, draw samples and run uricase activity assay:
+  - Supernatant (for secreted enzyme)
+  - Cell pellet lysate (for intracellular enzyme)
+- Compare total enzyme output, specific activity, and fraction secreted</p>
+<p><strong>Estimated cost:</strong> $500–1,000</p>
+<p><strong>Estimated timeline:</strong> 2–3 weeks</p>
+<p><strong>Dependencies:</strong> None (can be done in parallel with 1.1)</p>
+<p><strong>Success criteria:</strong> Identify format with highest bioavailable uricase in food product context</p>
+<hr />
+<h3 id="13-uricase-survival-in-beer-fermentation">1.3 Uricase Survival in Beer Fermentation<a class="headerlink" href="#13-uricase-survival-in-beer-fermentation" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Does uricase remain enzymatically active through beer fermentation?</p>
+<p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§4)</p>
+<p><strong>Protocol:</strong>
+- Brew 1-gallon test batch with engineered yeast
+- At each stage—active fermentation (day 3), end of primary (day 7), after conditioning (day 14), after bottling (day 21)—draw samples
+- Run uricase activity assay (spectrophotometric at 293 nm, measuring uric acid consumption)
+- Control: purified uricase added to finished beer at same stages (distinguishes production from survival)</p>
+<p><strong>Estimated cost:</strong> $200–400 (homebrew supplies + uric acid assay reagents)</p>
+<p><strong>Estimated timeline:</strong> 3–4 weeks</p>
+<p><strong>Dependencies:</strong> Requires engineered yeast strain from Phase 1 optimization</p>
+<p><strong>Success criteria:</strong> Retain &gt;30% activity through bottling (lower indicates degradation during fermentation)</p>
+<hr />
+<h3 id="14-uricase-stability-after-drying">1.4 Uricase Stability After Drying<a class="headerlink" href="#14-uricase-stability-after-drying" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Can uricase survive lyophilization or heat drying for a shelf-stable product?</p>
+<p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§4)</p>
+<p><strong>Protocol:</strong>
+- Take concentrated pellet of engineered yeast, split into four aliquots:
+  1. Fresh lysate (positive control)
+  2. Freeze-dried/lyophilized pellet
+  3. Heat-killed at 55°C then dried
+  4. Spray-dried at 120°C inlet temperature
+- Rehydrate each, lyse, and assay uricase activity
+- Report as % activity retained vs. fresh lysate</p>
+<p><strong>Estimated cost:</strong> $300–800 (lyophilizer access via core facility)</p>
+<p><strong>Estimated timeline:</strong> 1–2 weeks</p>
+<p><strong>Dependencies:</strong> Requires engineered yeast strain from Phase 1 optimization</p>
+<p><strong>Success criteria:</strong> &gt;40% activity retained via lyophilization for capsule formulation viability</p>
+<hr />
+<h3 id="15-koji-uricase-expression-and-activity">1.5 Koji Uricase Expression and Activity<a class="headerlink" href="#15-koji-uricase-expression-and-activity" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Can A. flavus uricase gene express functionally in A. oryzae?</p>
+<p><strong>Proposed in:</strong> engineered-koji-protocol.md (§3, §5)</p>
+<p><strong>Protocol:</strong>
+- Clone uaZ into engineered A. oryzae with PamyB promoter + SPamyB secretion signal + uaZ CDS + TtrpC terminator
+- Grow on steamed rice (traditional koji conditions: 30°C, 48–72h)
+- Harvest koji, prepare extract, assay uricase activity
+- Compare: (a) expression level by Western blot, (b) specific uricase activity, &copy; total enzyme yield per gram rice</p>
+<p><strong>Estimated cost:</strong> $1,500–2,500 (gene synthesis, transformation, reagents)</p>
+<p><strong>Estimated timeline:</strong> 4–6 weeks</p>
+<p><strong>Dependencies:</strong> None</p>
+<p><strong>Success criteria:</strong> &gt;20 μmol/h/OD activity; enzyme properly secreted into rice substrate</p>
+<hr />
+<h3 id="16-koji-enzyme-stability-at-digestive-ph-and-temperature">1.6 Koji Enzyme Stability at Digestive pH and Temperature<a class="headerlink" href="#16-koji-enzyme-stability-at-digestive-ph-and-temperature" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Does koji-produced uricase survive gastric and duodenal conditions?</p>
+<p><strong>Proposed in:</strong> engineered-koji-protocol.md (§6)</p>
+<p><strong>Protocol:</strong>
+- Prepare koji extract with active uricase
+- Expose to simulated gastric juice (pH 2.0, 37°C, pepsin) for 30 min
+- Then simulated intestinal juice (pH 8.0, 37°C, pancreatin) for 120 min
+- Assay uricase activity at each stage
+- Compare to control uricase (Aspergillus nidulans uricase or rasburicase)</p>
+<p><strong>Estimated cost:</strong> $300–600 (digestive enzyme prep, assay reagents)</p>
+<p><strong>Estimated timeline:</strong> 1–2 weeks</p>
+<p><strong>Dependencies:</strong> Requires koji strain from 1.5</p>
+<p><strong>Success criteria:</strong> Retain &gt;20% activity after duodenal transit (similar to ALLN-346 engineering target)</p>
+<hr />
+<h3 id="17-nlrp3-inflammasome-pathway-validation">1.7 NLRP3 Inflammasome Pathway Validation<a class="headerlink" href="#17-nlrp3-inflammasome-pathway-validation" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Do proposed compounds in the [[supplements-stack]] actually inhibit NLRP3 at stated chokepoints?</p>
+<p><strong>Proposed in:</strong> nlrp3-exploit-map.md, gout-deep-dive.md</p>
+<p><strong>Protocol:</strong>
+- Use macrophage cell line (THP-1 or primary mouse macrophages)
+- Prime with LPS (Signal 1: NF-κB priming)
+- Expose to MSU crystals (NLRP3 trigger)
+- Treat with individual compounds (BHB, oridonin, sulforaphane, KPV, etc.)
+- Measure endpoint: IL-1β secretion (ELISA), caspase-1 activity, ASC specks (fluorescence)
+- Compare dose-response and mechanistic target (which chokepoint affected)</p>
+<p><strong>Estimated cost:</strong> $3,000–5,000 (cell culture, cytokines, assay kits)</p>
+<p><strong>Estimated timeline:</strong> 6–8 weeks</p>
+<p><strong>Dependencies:</strong> None</p>
+<p><strong>Success criteria:</strong> Confirm &gt;50% IL-1β reduction at stated compound doses; validate chokepoint targets</p>
+<hr />
+<h2 id="phase-2-animal-model-validation">Phase 2: Animal Model Validation<a class="headerlink" href="#phase-2-animal-model-validation" title="Permanent link">&para;</a></h2>
+<h3 id="21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii">2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii<a class="headerlink" href="#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Can engineered probiotic yeast survive and function in the mouse gut? What dosing is needed?</p>
+<p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§4.d)</p>
+<p><strong>Protocol:</strong>
+- Colonize germ-free mice with engineered S. boulardii expressing uricase
+- Measure:
+  - Fecal yeast counts daily for 14 days (CFU/g)
+  - Fecal and cecal uricase activity assay
+  - Serum uric acid in Uox-knockout mice (or potassium oxonate-hyperuricemic model)
+- Compare: engineered strain vs. wild-type S. boulardii vs. untreated controls</p>
+<p><strong>Estimated cost:</strong> $5,000–15,000 (gnotobiotic mouse facility time, staff, housing, assays)</p>
+<p><strong>Estimated timeline:</strong> 8–12 weeks</p>
+<p><strong>Dependencies:</strong> 
+- Requires optimized S. boulardii uricase strain from Phase 1
+- Requires access to a gnotobiotic facility — ideally Rheinallt Jones's Emory Gnotobiotic Animal Core, if he joins as a collaborator</p>
+<p><strong>Success criteria:</strong> 
+- Maintain &gt;10⁶ CFU/mL fecal yeast counts through day 7
+- Achieve measurable cecal uricase activity
+- Reduce serum uric acid by ≥20% vs. controls</p>
+<hr />
+<h3 id="22-hyperuricemic-rat-model-engineered-yeast-efficacy">2.2 Hyperuricemic Rat Model: Engineered Yeast Efficacy<a class="headerlink" href="#22-hyperuricemic-rat-model-engineered-yeast-efficacy" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Does oral administration of engineered yeast reduce systemic uric acid in a whole-organism model?</p>
+<p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§5)</p>
+<p><strong>Protocol:</strong>
+- Induce hyperuricemia in Sprague-Dawley rats using oxonic acid + allopurinol (standard model)
+- Administer engineered yeast strain (lyophilized powder in capsules) daily for 14 days at varying doses
+- Measure:
+  - Serum uric acid (HPLC or uricase-catalase assay)
+  - Urinary uric acid excretion (24h collection)
+  - Fecal uric acid (as proxy for gut lumen degradation)
+  - Kidney function markers (BUN, creatinine)
+- Compare: treated vs. vehicle control vs. allopurinol positive control</p>
+<p><strong>Estimated cost:</strong> $8,000–12,000 (animal costs, housing, blood assays, LC-MS analysis)</p>
+<p><strong>Estimated timeline:</strong> 6–8 weeks</p>
+<p><strong>Dependencies:</strong> Requires Phase 1 optimization of yeast strain</p>
+<p><strong>Success criteria:</strong> 
+- Achieve serum uric acid reduction of ≥30% vs. vehicle
+- Increase fecal uric acid by ≥50% vs. vehicle
+- Non-inferior to allopurinol in serum uric acid reduction</p>
+<hr />
+<h3 id="23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model">2.3 Engineered Koji Efficacy in Digestive Enzyme-Deficient Model<a class="headerlink" href="#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Does engineered koji effectively supplement digestive enzymes in vivo?</p>
+<p><strong>Proposed in:</strong> engineered-koji-protocol.md</p>
+<p><strong>Protocol:</strong>
+- Use pancreatic lipase knockout mice (or pancreatectomized mice as EPI model)
+- Administer koji fermented on rice (whole food) as supplement (10% dietary w/w) for 14 days
+- Measure:
+  - Fat absorption (coefficient of fecal fat; &lt;7g/day = normal)
+  - Protein digestion (fecal nitrogen)
+  - Starch digestion (breath hydrogen test)
+  - Intestinal inflammation markers (fecal calprotectin)
+- Compare: engineered koji vs. wild-type koji vs. no supplement vs. commercial enzyme supplement (Creon)</p>
+<p><strong>Estimated cost:</strong> $6,000–10,000 (genetically modified mice, housing, specialized assays)</p>
+<p><strong>Estimated timeline:</strong> 8–10 weeks</p>
+<p><strong>Dependencies:</strong> Requires koji strain from Phase 1</p>
+<p><strong>Success criteria:</strong> 
+- Normalize fat absorption to &gt;92% (vs. &lt;50% in untreated EPI)
+- Non-inferior to commercial enzyme supplement</p>
+<hr />
+<h3 id="24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model">2.4 NLRP3 Inflammasome Inhibition in MSU Crystal Arthritis Model<a class="headerlink" href="#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Do proposed NLRP3 inhibitor compounds reduce gout flare severity in vivo?</p>
+<p><strong>Proposed in:</strong> nlrp3-exploit-map.md, gout-deep-dive.md</p>
+<p><strong>Protocol:</strong>
+- Induce acute gout in C57BL/6 mice by intra-articular MSU crystal injection into knee
+- Treat with compounds or combinations:
+  - Individual compounds (BHB via ketogenic diet, oridonin oral gavage, sulforaphane)
+  - Multi-compound stack (BHB + oridonin + sulforaphane)
+  - Positive control: colchicine
+  - Negative control: vehicle
+- Measure:
+  - Joint swelling (calipers measurement, MRI)
+  - Pain behavior (weight bearing on affected limb, mechanical hyperalgesia)
+  - Inflammatory cytokines in joint lavage (IL-1β, TNF-α, IL-6 by multiplex assay)
+  - Histology: neutrophil infiltration, synovial inflammation score
+- Timeline: measure at 4h, 24h, 48h, 72h post-injection</p>
+<p><strong>Estimated cost:</strong> $10,000–15,000 (transgenic mice, surgical arthritis induction, imaging, cytokine assays)</p>
+<p><strong>Estimated timeline:</strong> 10–12 weeks (including 2-week ketogenic diet adaptation)</p>
+<p><strong>Dependencies:</strong> Requires Phase 1 validation of NLRP3 pathway</p>
+<p><strong>Success criteria:</strong>
+- Reduce peak joint swelling by ≥40% vs. vehicle
+- Reduce joint IL-1β by ≥50% vs. vehicle
+- Reduce neutrophil infiltration by ≥30% vs. vehicle</p>
+<hr />
+<h3 id="25-pulse-probiotic-validation-in-hyperuricemic-mice">2.5 PULSE Probiotic Validation in Hyperuricemic Mice<a class="headerlink" href="#25-pulse-probiotic-validation-in-hyperuricemic-mice" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Can PULSE system (urate-responsive engineered E. coli) maintain uric acid homeostasis?</p>
+<p><strong>Proposed in:</strong> gout-deep-dive.md (Section 8)</p>
+<p><strong>Protocol:</strong>
+- Colonize Uox-knockout mice with PULSE engineered E. coli Nissle 1917
+- Administer at varying doses and dosing frequencies (daily vs. every 3 days)
+- Measure:
+  - Fecal E. coli counts and uric acid-responsive biosensor activity (reporter assay)
+  - Serum uric acid over 28 days (weekly measurements)
+  - Response to acute uric acid challenge (potassium oxonate injection)
+  - Off-target metabolite accumulation (allantoin, oxaluric acid)
+- Compare: PULSE vs. wild-type E. coli Nissle vs. untreated controls</p>
+<p><strong>Estimated cost:</strong> $5,000–8,000 (transgenic mice, E. coli handling, weekly blood draws, biomarker assays)</p>
+<p><strong>Estimated timeline:</strong> 8 weeks</p>
+<p><strong>Dependencies:</strong> Requires PULSE strain (Source: Cell Reports Medicine 2025 reference)</p>
+<p><strong>Success criteria:</strong>
+- Maintain serum uric acid within 2.0–4.0 mg/dL range (homeostatic)
+- Self-regulate in response to acute uric acid load
+- Clear allantoin without accumulation</p>
+<hr />
+<h2 id="phase-3-human-self-experimentation-and-biomarker-tracking">Phase 3: Human Self-Experimentation and Biomarker Tracking<a class="headerlink" href="#phase-3-human-self-experimentation-and-biomarker-tracking" title="Permanent link">&para;</a></h2>
+<h3 id="31-brian-engineered-yeast-uricase-serum-uric-acid-flare-tracking">3.1 Brian: Engineered Yeast Uricase — Serum Uric Acid &amp; Flare Tracking<a class="headerlink" href="#31-brian-engineered-yeast-uricase-serum-uric-acid-flare-tracking" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Does daily oral engineered yeast reduce serum uric acid and gout flare frequency in the primary user?</p>
+<p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§5), open-enzyme-vision.md (§8)</p>
+<p><strong>Protocol:</strong>
+- Brian (primary user with gout) takes engineered yeast supplement daily
+- Baseline: 4 weeks pre-intervention (establish flare frequency, serum urate baseline)
+- Intervention: 12 weeks daily supplementation with engineered yeast (dose TBD from animal studies)
+- Biomarkers measured weekly:
+  - Serum uric acid (HPLC or uricase-catalase assay)
+  - Inflammatory markers (CRP, IL-6 if available)
+  - Gout flare frequency and severity (patient-reported, validated scale)
+  - Tissue urate (tophi size if present, via ultrasound)
+- Control: 4-week washout period after intervention</p>
+<p><strong>Estimated cost:</strong> $200–400 (blood assays, home kit supplies)</p>
+<p><strong>Estimated timeline:</strong> 20 weeks (4 baseline + 12 intervention + 4 washout)</p>
+<p><strong>Dependencies:</strong> 
+- Requires Phase 1 &amp; 2 validation
+- Requires medical oversight (likely rheumatologist or primary care)</p>
+<p><strong>Success criteria:</strong>
+- Reduce serum uric acid by ≥15% vs. baseline
+- Reduce flare frequency by ≥50% vs. baseline period
+- No adverse events</p>
+<hr />
+<h3 id="32-brian-nlrp3-inflammasome-suppression-stack-biomarker-panel">3.2 Brian: NLRP3 Inflammasome Suppression Stack — Biomarker Panel<a class="headerlink" href="#32-brian-nlrp3-inflammasome-suppression-stack-biomarker-panel" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Does the multi-compound NLRP3 stack reduce inflammatory markers and flare severity?</p>
+<p><strong>Proposed in:</strong> nlrp3-exploit-map.md, open-enzyme-vision.md (§9)</p>
+<p><strong>Protocol:</strong>
+- Brian takes NLRP3 suppression stack (BHB/exogenous ketones + KPV nasal spray + BPC-157 nasal spray + sulforaphane + oridonin + omega-3 + NAC, dosed per [[supplements-stack]])
+- Baseline: 4 weeks pre-intervention
+- Intervention: 12 weeks daily stack
+- Biomarkers measured weekly:
+  - Serum IL-1β (high-sensitivity ELISA)
+  - Serum CRP, calprotectin, and fibrinogen
+  - Blood ketone bodies (BHB) if using exogenous ketones
+  - Joint pain (VAS scale, validated)
+  - Gout flare frequency
+- Control: 4-week washout post-intervention</p>
+<p><strong>Estimated cost:</strong> $300–600 (supplement costs) + $400–800 (blood assays)</p>
+<p><strong>Estimated timeline:</strong> 20 weeks</p>
+<p><strong>Dependencies:</strong>
+- Requires Phase 1 NLRP3 pathway validation
+- Can run in parallel with 3.1 (same subject, complementary endpoints)
+- Requires medical oversight</p>
+<p><strong>Success criteria:</strong>
+- Reduce IL-1β by ≥30% vs. baseline
+- Reduce CRP by ≥25% vs. baseline
+- Reduce flare frequency by ≥40% vs. baseline</p>
+<hr />
+<h3 id="33-lynn-wild-type-koji-digestive-enzyme-supplementation">3.3 Lynn: Wild-Type Koji Digestive Enzyme Supplementation<a class="headerlink" href="#33-lynn-wild-type-koji-digestive-enzyme-supplementation" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Does traditional koji effectively supplement digestive enzymes in EPI/SIBO?</p>
+<p><strong>Proposed in:</strong> engineered-koji-protocol.md, open-enzyme-vision.md (§4)</p>
+<p><strong>Protocol:</strong>
+- Lynn (EPI/SIBO patient) takes traditional koji fermented on rice daily
+- Baseline: 2 weeks pre-intervention (establish GI symptom baseline, stool frequency/consistency)
+- Intervention: 8 weeks daily koji consumption (10–20g dried koji powder or equivalent rice koji)
+- Biomarkers measured weekly:
+  - GI symptom score (abdominal pain, bloating, diarrhea on validated scale)
+  - Stool frequency, consistency (Bristol Scale)
+  - Fat absorption assessment (72h fecal fat collection or non-invasive fat absorption test)
+  - Inflammatory markers: fecal calprotectin, serum CRP
+  - Microbiome composition (stool 16S rRNA at baseline, week 4, week 8 if budget allows)
+- Crossover: 2-week washout, then repeat with engineered koji (once available from Phase 1)</p>
+<p><strong>Estimated cost:</strong> $200–400 (koji ingredients, fecal tests) + $400–600 (optional microbiome analysis)</p>
+<p><strong>Estimated timeline:</strong> 12 weeks</p>
+<p><strong>Dependencies:</strong>
+- Requires wild-type koji protocol
+- Once Phase 1 complete, can compare vs. engineered koji</p>
+<p><strong>Success criteria:</strong>
+- Reduce abdominal pain/bloating score by ≥50% vs. baseline
+- Normalize stool frequency to 1–2× daily
+- Reduce fecal calprotectin by ≥30% (if elevated at baseline)</p>
+<hr />
+<h3 id="34-joint-trial-engineered-koji-both-users">3.4 Joint Trial: Engineered Koji (Both Users)<a class="headerlink" href="#34-joint-trial-engineered-koji-both-users" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Does engineered koji providing both digestive enzymes and uricase work as a dual-purpose therapeutic food?</p>
+<p><strong>Proposed in:</strong> engineered-koji-protocol.md, open-enzyme-vision.md (§4, dual-enzyme vision)</p>
+<p><strong>Protocol:</strong>
+- Both Brian and Lynn take engineered koji daily for 12 weeks
+- Brian measures:
+  - Serum uric acid, gout flare frequency (as in 3.1)
+  - GI tolerance (stool frequency, abdominal symptoms)
+- Lynn measures:
+  - GI symptom score, stool characteristics (as in 3.3)
+  - Serum uric acid (as secondary endpoint; she may have mild hyperuricemia)
+  - Inflammatory markers
+- Both:
+  - Palatability/adherence assessment
+  - Adverse event monitoring
+  - Serum inflammatory panel (CRP, IL-6)</p>
+<p><strong>Estimated cost:</strong> $300–500 (koji production, bioassays)</p>
+<p><strong>Estimated timeline:</strong> 14 weeks (2 week prep + 12 week trial)</p>
+<p><strong>Dependencies:</strong> 
+- Requires Phase 1 completion of engineered koji with both enzyme activities validated
+- Requires both 3.1 and 3.3 baseline data for comparison</p>
+<p><strong>Success criteria:</strong>
+- Brian: ≥15% reduction serum uric acid, ≥50% reduction flare frequency
+- Lynn: ≥50% improvement GI symptoms, normalized stool, ≥30% reduction fecal calprotectin
+- Both: tolerate koji at therapeutic doses with &gt;80% adherence
+- No safety signals in 12-week course</p>
+<hr />
+<h3 id="35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension">3.5 Biomarker Tracking: Long-term Flare Prevention (Brian, 6-month extension)<a class="headerlink" href="#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension" title="Permanent link">&para;</a></h3>
+<p><strong>What it tests:</strong> Does uricase supplementation provide sustained reduction in gout flares?</p>
+<p><strong>Proposed in:</strong> open-enzyme-vision.md (§8)</p>
+<p><strong>Protocol:</strong>
+- After Phase 3.1 completes successfully, continue engineered yeast supplementation for additional 6 months
+- Measure monthly:
+  - Serum uric acid
+  - Gout flare frequency and severity
+  - Tophi size (if present, ultrasound at months 1, 3, 6)
+  - Joint function/mobility scores
+  - Adherence and side effect monitoring</p>
+<p><strong>Estimated cost:</strong> $400–600 (monthly blood assays, ultrasound imaging)</p>
+<p><strong>Estimated timeline:</strong> 6 months</p>
+<p><strong>Dependencies:</strong> Requires successful completion and validation of Phase 3.1</p>
+<p><strong>Success criteria:</strong>
+- Sustain serum uric acid reduction over 6-month period
+- Maintain ≥40% reduction in flare frequency from baseline
+- No tophi growth; ideally small reduction in tophi size
+- Continued &gt;80% adherence</p>
+<hr />
+<h2 id="cross-experiment-dependencies-and-sequencing">Cross-Experiment Dependencies and Sequencing<a class="headerlink" href="#cross-experiment-dependencies-and-sequencing" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Phase 1 (In Vitro)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├─ 1.1: Gene performance [weeks 1-6] ─────┬─→ 1.2, 1.3, 1.5, 1.6
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├─ 1.2: Secretion vs. intracellular ──────┤
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├─ 1.3: Beer survival ──────────────┬─────→ 2.2 (yeast efficacy)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├─ 1.4: Drying stability ───────────┤ ────→ 3.1 (yeast formulation)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├─ 1.5: Koji expression ────────────┬─────→ 1.6, 1.7 (koji validation)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├─ 1.6: Koji digestive stability ───┤────→ 2.3 (EPI model)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├─ 1.7: NLRP3 pathway validation ───┤────→ 2.4 (MSU arthritis model)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├─→ Phase 2 (Animal Models)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    ├─ 2.1: Gnotobiotic S. boulardii [weeks 12-20] ──┬─→ 3.1
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    ├─ 2.2: Hyperuricemic rat model [weeks 10-16] ───┤─→ 3.1
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    ├─ 2.3: EPI koji model [weeks 12-18] ───────────┬─→ 3.3
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    ├─ 2.4: MSU arthritis model [weeks 14-22] ──────┬─→ 3.2
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    └─ 2.5: PULSE E. coli probiotic [weeks 12-18] ──┤
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    ├─→ Phase 3 (Human Self-Experimentation)
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        ├─ 3.1: Yeast uricase (Brian) [weeks 24-44] ──┬─→ 3.5
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        ├─ 3.2: NLRP3 stack (Brian) [weeks 24-44] ────┼─→ parallel with 3.1
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        ├─ 3.3: Koji enzymes (Lynn) [weeks 20-32] ────┤─→ 3.4
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        ├─ 3.4: Engineered koji (both) [weeks 36-50] ─┤
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        └─ 3.5: Long-term flare prevention [weeks 45-71]
+</code></pre></div>
+<hr />
+<h2 id="success-metrics-summary">Success Metrics Summary<a class="headerlink" href="#success-metrics-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Experiment</th>
+<th>Primary Endpoint</th>
+<th>Target Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Gene performance</td>
+<td>Uricase specific activity</td>
+<td>&gt;50 μmol/h/OD</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Secretion</td>
+<td>Bioavailable enzyme fraction</td>
+<td>&gt;30% extracellular</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Beer survival</td>
+<td>Enzyme activity retention</td>
+<td>&gt;30% post-fermentation</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Drying</td>
+<td>Lyophilization stability</td>
+<td>&gt;40% activity retained</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Koji expression</td>
+<td>Secreted uricase activity</td>
+<td>&gt;20 μmol/h/OD</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Koji digestive pH</td>
+<td>Duodenal survival</td>
+<td>&gt;20% activity post-transit</td>
+</tr>
+<tr>
+<td>1</td>
+<td>NLRP3 pathway</td>
+<td>IL-1β reduction</td>
+<td>&gt;50% at stated doses</td>
+</tr>
+<tr>
+<td>2</td>
+<td>S. boulardii colonization</td>
+<td>Fecal yeast counts</td>
+<td>&gt;10⁶ CFU/mL by day 3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Yeast efficacy (rat)</td>
+<td>Serum uric acid reduction</td>
+<td>≥30% vs. vehicle</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Koji EPI model</td>
+<td>Fat absorption</td>
+<td>&gt;92% (vs. &lt;50% baseline)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MSU arthritis</td>
+<td>Joint swelling reduction</td>
+<td>≥40% vs. vehicle</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PULSE homeostasis</td>
+<td>Uric acid range maintained</td>
+<td>2.0–4.0 mg/dL</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Yeast uricase (Brian)</td>
+<td>Flare frequency reduction</td>
+<td>≥50% vs. baseline</td>
+</tr>
+<tr>
+<td>3</td>
+<td>NLRP3 stack (Brian)</td>
+<td>IL-1β reduction</td>
+<td>≥30% vs. baseline</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Koji enzymes (Lynn)</td>
+<td>GI symptom improvement</td>
+<td>≥50% vs. baseline</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Engineered koji (both)</td>
+<td>Tolerability + efficacy</td>
+<td>&gt;80% adherence + dual benefit</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Long-term prevention</td>
+<td>Sustained flare reduction</td>
+<td>≥40% reduction sustained 6mo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="notes-on-open-questions">Notes on Open Questions<a class="headerlink" href="#notes-on-open-questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>GLUT9 and urate transport bottleneck:</strong> Could engineered koji produce high fructokinase inhibitors to address the fructose-gout link? (Source: gout-deep-dive.md, Section 9)</li>
+<li><strong>Delivery route optimization:</strong> Is intestinal lumen degradation sufficient, or would systemic absorption of recombinant uricase be superior? (Source: blood-barrier-exploits.md)</li>
+<li><strong>Microbiome stability:</strong> Will engineered probiotics persist without colonization, or is daily dosing required long-term? (Source: gout-deep-dive.md, Section 8)</li>
+<li><strong>Gene therapy as alternative:</strong> Should we pursue CRISPR-based uricase gene therapy in parallel? (Source: gout-deep-dive.md, Section 6)</li>
+</ul>
+<hr />
+<p><em>Document maintained as part of the [[open-source-platform]] initiative. All experiments are designed for replication and community contribution.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

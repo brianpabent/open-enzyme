@@ -1,0 +1,4035 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/bio-ai-tools/">
+      
+      
+        <link rel="prev" href="../validation-experiments/">
+      
+      
+        <link rel="next" href="../ai-bio-tools-playbook/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Bio AI Tools - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bio-ai-tools" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bio AI Tools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../open-enzyme-vision/" class="md-tabs__link">
+          
+  
+  
+  Vision & Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gout-pathophysiology/" class="md-tabs__link">
+          
+  
+  
+  Gout & Uricase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nlrp3-inflammasome/" class="md-tabs__link">
+          
+  
+  
+  NLRP3 & Inflammation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../digestive-enzymes/" class="md-tabs__link">
+          
+  
+  
+  Koji & Digestive Enzymes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../saccharomyces-cerevisiae/" class="md-tabs__link">
+          
+  
+  
+  Organisms & Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gut-lumen-sink/" class="md-tabs__link">
+          
+  
+  
+  Delivery & Barrier
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bpc-157/" class="md-tabs__link">
+          
+  
+  
+  Compounds & Peptides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sibo/" class="md-tabs__link">
+          
+  
+  
+  Other Conditions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Tools & Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source-protein-ai-tools-available-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Source Protein AI Tools (Available Now)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Open Source Protein AI Tools (Available Now)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure Prediction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protein-language-models-variant-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protein Language Models &amp; Variant Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protein-design-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protein Design &amp; Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stability-variant-effect-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stability &amp; Variant Effect Prediction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#molecular-docking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Molecular Docking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codon-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codon Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpt-rosalind-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT-Rosalind (OpenAI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GPT-Rosalind (OpenAI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-prompts-for-open-enzyme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Prompts for Open Enzyme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Prompts for Open Enzyme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-1-codon-optimization-for-target-organism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 1: Codon Optimization for Target Organism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-2-promoter-and-regulatory-element-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 2: Promoter and Regulatory Element Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-3-literature-mining-for-enzyme-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 3: Literature Mining for Enzyme Variants
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-4-transformation-strategy-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 4: Transformation Strategy Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-5-enzyme-activity-prediction-and-assay-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 5: Enzyme Activity Prediction and Assay Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-6-fermentation-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 6: Fermentation Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-example-rosalind-analyzing-uricase-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Example: Rosalind Analyzing Uricase Expression
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amazon-bio-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amazon Bio Discovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Amazon Bio Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-model_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-use-for-open-enzyme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Use for Open Enzyme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Use for Open Enzyme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-1-predict-s-cerevisiae-growth-with-integrated-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: Predict S. cerevisiae Growth with Integrated Uricase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-2-pathway-engineering-for-dual-koji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: Pathway Engineering for Dual Koji
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-3-probiotic-persistence-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Probiotic Persistence Modeling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-amazon-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Amazon Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coefficient-bio-anthropic-acquisition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coefficient Bio (Anthropic Acquisition)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coefficient Bio (Anthropic Acquisition)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-model_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-use-for-open-enzyme_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Use for Open Enzyme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Use for Open Enzyme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-1-literature-synthesis-on-nlrp3-inhibitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: Literature Synthesis on NLRP3 Inhibitors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-2-protocol-generation-for-koji-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: Protocol Generation for Koji Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-3-strain-safety-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Strain Safety Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-4-personalized-supplementation-stack-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 4: Personalized Supplementation Stack Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-using-all-three-tools-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration: Using All Three Tools Together
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration: Using All Three Tools Together">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow-example-design-engineered-koji-from-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Example: Design Engineered Koji from Scratch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cautions-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cautions &amp; Limitations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cautions &amp; Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpt-rosalind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT-Rosalind
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-bio-discovery_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amazon Bio Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claudecoefficient-bio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude/Coefficient Bio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source-protein-ai-tools-available-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Source Protein AI Tools (Available Now)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Open Source Protein AI Tools (Available Now)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure Prediction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protein-language-models-variant-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protein Language Models &amp; Variant Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protein-design-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protein Design &amp; Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stability-variant-effect-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stability &amp; Variant Effect Prediction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#molecular-docking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Molecular Docking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codon-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codon Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpt-rosalind-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT-Rosalind (OpenAI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GPT-Rosalind (OpenAI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-prompts-for-open-enzyme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Prompts for Open Enzyme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Prompts for Open Enzyme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-1-codon-optimization-for-target-organism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 1: Codon Optimization for Target Organism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-2-promoter-and-regulatory-element-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 2: Promoter and Regulatory Element Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-3-literature-mining-for-enzyme-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 3: Literature Mining for Enzyme Variants
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-4-transformation-strategy-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 4: Transformation Strategy Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-5-enzyme-activity-prediction-and-assay-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 5: Enzyme Activity Prediction and Assay Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-6-fermentation-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 6: Fermentation Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-example-rosalind-analyzing-uricase-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Example: Rosalind Analyzing Uricase Expression
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amazon-bio-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amazon Bio Discovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Amazon Bio Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-model_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-use-for-open-enzyme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Use for Open Enzyme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Use for Open Enzyme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-1-predict-s-cerevisiae-growth-with-integrated-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: Predict S. cerevisiae Growth with Integrated Uricase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-2-pathway-engineering-for-dual-koji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: Pathway Engineering for Dual Koji
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-3-probiotic-persistence-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Probiotic Persistence Modeling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-amazon-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Amazon Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coefficient-bio-anthropic-acquisition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coefficient Bio (Anthropic Acquisition)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coefficient Bio (Anthropic Acquisition)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-model_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-use-for-open-enzyme_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Use for Open Enzyme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Use for Open Enzyme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-1-literature-synthesis-on-nlrp3-inhibitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: Literature Synthesis on NLRP3 Inhibitors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-2-protocol-generation-for-koji-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: Protocol Generation for Koji Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-3-strain-safety-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Strain Safety Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-4-personalized-supplementation-stack-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 4: Personalized Supplementation Stack Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-using-all-three-tools-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration: Using All Three Tools Together
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration: Using All Three Tools Together">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow-example-design-engineered-koji-from-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Example: Design Engineered Koji from Scratch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cautions-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cautions &amp; Limitations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cautions &amp; Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpt-rosalind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT-Rosalind
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-bio-discovery_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amazon Bio Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claudecoefficient-bio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude/Coefficient Bio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="bio-ai-tools">Bio AI Tools<a class="headerlink" href="#bio-ai-tools" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Three major commercial AI biology tools launched in April 2026 that can accelerate Open Enzyme: <strong>GPT-Rosalind</strong> (OpenAI), <strong>Amazon Bio Discovery</strong>, and <strong>Anthropic's Coefficient Bio acquisition</strong>. However, Rosalind requires institutional access and Bio Discovery costs $486/month. A robust ecosystem of <strong>open source protein AI tools</strong> — including ESM-2, AlphaFold/ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, and others — is freely available and covers most of the computational biology workflow. These open source tools are the project's primary computational toolkit. This document covers all three tiers: commercial, open source, and free web tools.</p>
+<hr />
+<h2 id="open-source-protein-ai-tools-available-now">Open Source Protein AI Tools (Available Now)<a class="headerlink" href="#open-source-protein-ai-tools-available-now" title="Permanent link">&para;</a></h2>
+<p>These tools are freely available and cover the core computational biology workflow for Open Enzyme. Many are the same models that power commercial platforms like Bio Discovery under the hood.</p>
+<h3 id="structure-prediction">Structure Prediction<a class="headerlink" href="#structure-prediction" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ColabFold (AlphaFold 2)</strong> — Gold standard for protein structure prediction. Free on Google Colab. Use for generating uricase variant structures. (<a href="https://github.com/sokrypton/ColabFold">GitHub</a>)</li>
+<li><strong>ESMFold</strong> — ~60× faster than AlphaFold, trades small accuracy loss for speed. Use for rapid screening of dozens of variants. (<a href="https://huggingface.co/facebook/esmfold_v1">Hugging Face</a>)</li>
+<li><strong>Boltz-2</strong> — First open source model approaching AlphaFold 3 for complexes (protein-ligand, protein-protein). MIT license. Predicts binding affinities 1000× faster than physics-based FEP. Use for uricase-uric acid binding, tetramer assembly, NLRP3 inhibitor docking. (<a href="https://github.com/jwohlwend/boltz">GitHub</a>)</li>
+<li><strong>Protenix-v1</strong> — Open source structure predictor that outperforms AlphaFold 3. Alternative to Boltz-2. (<a href="https://github.com/bytedance/protenix">GitHub</a>)</li>
+</ul>
+<h3 id="protein-language-models-variant-scoring">Protein Language Models &amp; Variant Scoring<a class="headerlink" href="#protein-language-models-variant-scoring" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ESM-2 (Meta)</strong> — Workhorse protein language model (650M params). Score every possible mutation by evolutionary plausibility. Zero-shot fitness prediction. Foundation for downstream tools. (<a href="https://github.com/facebookresearch/esm">GitHub</a>)</li>
+<li><strong>ESM-C</strong> — Drop-in ESM-2 replacement, better performance at lower compute. Free academic API tier. (<a href="https://www.evolutionaryscale.ai/">EvolutionaryScale</a>)</li>
+<li><strong>ESM-3-open</strong> — Next-gen multimodal model (sequence + structure + function). Generated a novel GFP with 58% identity to known — equivalent to ~500M years of evolution. Non-commercial license. (<a href="https://github.com/evolutionaryscale/esm">GitHub</a>)</li>
+</ul>
+<h3 id="protein-design-engineering">Protein Design &amp; Engineering<a class="headerlink" href="#protein-design-engineering" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RFdiffusion2 (Baker Lab)</strong> — De novo enzyme design from active site geometry alone. Designed enzymes with catalytic efficiency up to 53,000 M⁻¹s⁻¹. BSD license. Phase 2 tool for designing acid-stable uricase scaffolds. (<a href="https://github.com/RosettaCommons/RFdiffusion2">GitHub</a>)</li>
+<li><strong>ProteinMPNN (Baker Lab)</strong> — Designs amino acid sequences that fold into target structures. MIT license. Essential companion to RFdiffusion2. (<a href="https://github.com/dauparas/ProteinMPNN">GitHub</a>)</li>
+</ul>
+<h3 id="stability-variant-effect-prediction">Stability &amp; Variant Effect Prediction<a class="headerlink" href="#stability-variant-effect-prediction" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>SPURS</strong> — State-of-the-art ΔΔG prediction for mutations. Directly answers "will this mutation make the enzyme more or less stable?" (<a href="https://github.com/mj-hwang/SPURS">GitHub</a>)</li>
+<li><strong>RaSP</strong> — Rapid saturation mutagenesis stability scans (&lt;1 second per residue). Map the complete stability landscape of uricase. (<a href="https://github.com/KULL-Centre/papers">GitHub</a>)</li>
+<li><strong>DDGemb</strong> — Predicts combined effect of multiple simultaneous mutations (epistasis). Critical for evaluating combinatorial variants. (<a href="https://github.com/PeppeL-G/DDGemb">GitHub</a>)</li>
+<li><strong>FoldX</strong> — Physics-based stability calculations including pH dependence. Free for academics. Industry standard for 15+ years. (<a href="https://foldxsuite.crg.eu/">foldxsuite.crg.eu</a>)</li>
+</ul>
+<h3 id="molecular-docking">Molecular Docking<a class="headerlink" href="#molecular-docking" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>DiffDock</strong> — AI-powered docking using diffusion models. 38% success rate vs. 23% for traditional tools. MIT license. Use for uric acid binding validation and NLRP3 inhibitor screening. (<a href="https://github.com/gcorso/DiffDock">GitHub</a>)</li>
+</ul>
+<h3 id="codon-optimization">Codon Optimization<a class="headerlink" href="#codon-optimization" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>CodonTransformer</strong> — Deep learning codon optimizer trained on 1M+ DNA-protein pairs from 164 organisms, including S. cerevisiae and A. oryzae. (<a href="https://github.com/Adibvafa/CodonTransformer">GitHub</a>)</li>
+<li><strong>GenSmart, IDT, VectorBuilder</strong> — Free web-based codon optimization tools. Cross-validate against CodonTransformer.</li>
+</ul>
+<h3 id="practical-setup">Practical Setup<a class="headerlink" href="#practical-setup" title="Permanent link">&para;</a></h3>
+<p><strong>Free tier (Google Colab):</strong> ColabFold + ESM-2 + CodonTransformer + SPURS/RaSP = covers variant selection, codon optimization, and stability screening at zero cost.</p>
+<p><strong>Colab Pro ($10/month):</strong> Adds Boltz-2, RFdiffusion2, DiffDock for complex prediction, de novo design, and docking.</p>
+<p>See <a href="../docs/ai-bio-tools-playbook.md">ai-bio-tools-playbook.md</a> §Part 01b for full details, hardware requirements, and mapping to project prompts.</p>
+<hr />
+<h2 id="gpt-rosalind-openai">GPT-Rosalind (OpenAI)<a class="headerlink" href="#gpt-rosalind-openai" title="Permanent link">&para;</a></h2>
+<h3 id="what-it-is">What It Is<a class="headerlink" href="#what-it-is" title="Permanent link">&para;</a></h3>
+<p><strong>Named after Rosalind Franklin</strong>, GPT-Rosalind is OpenAI's first domain-specific reasoning model—trained directly on biological data including proteins, genes, chemical reactions, molecular pathways, and disease biology. It doesn't just answer biology questions better than GPT-5.4; it reasons differently because its training incorporated the structure of biological knowledge at a fundamental level.</p>
+<p>Think of it: regular GPT-5.4 has read every biology paper. Rosalind was trained to <strong>think in biological primitives</strong> — amino acid sequences, gene regulatory networks, metabolic pathways, protein-protein interactions — the way you think in code architecture.</p>
+<p>(Source: ai-bio-tools-playbook.md, §1)</p>
+<h3 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Protein structure prediction</strong> (complementary to AlphaFold, reasoning about structure-function)</li>
+<li><strong>Codon optimization</strong> (custom to specific organisms)</li>
+<li><strong>Gene expression analysis</strong> (analyzing promoter strength, RBS, terminator compatibility)</li>
+<li><strong>Molecular interaction prediction</strong> (protein-protein, RNA-protein, ligand-protein)</li>
+<li><strong>Drug candidate generation</strong> (structure-based compound design)</li>
+<li><strong>Sequence-to-function interpretation</strong> (what does this mutation do?)</li>
+<li><strong>Experimental planning</strong> (design optimal assay workflows)</li>
+<li><strong>Multi-step literature review</strong> with database cross-referencing (pulls from PDB, UniProt, NCBI, KEGG, ChEMBL)</li>
+</ul>
+<p>(Source: ai-bio-tools-playbook.md, §1)</p>
+<h3 id="training-data">Training Data<a class="headerlink" href="#training-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>50 of the most common biological workflows</li>
+<li>Native access to: PDB, UniProt, NCBI, KEGG, ChEMBL, and other major public databases</li>
+<li>Protein folding trajectories</li>
+<li>Gene regulatory networks</li>
+<li>Metabolic pathway maps</li>
+<li>Disease biology literature</li>
+</ul>
+<h3 id="access-model">Access Model<a class="headerlink" href="#access-model" title="Permanent link">&para;</a></h3>
+<p><strong>Trusted Access Program</strong> — limited to qualified US enterprise customers. Requires:
+- Legitimate research with clear public benefit
+- Governance and misuse-prevention controls
+- Approved users in secure environments
+- Currently a research preview (pricing TBD)</p>
+<p><strong>Free alternative:</strong> OpenAI shipped a <strong>free Codex plugin</strong> the same day connecting to 50+ biology databases. Works with GPT-5.4 (which most people already have access to). Codex adds database connectivity; Rosalind adds deeper biological reasoning. (Source: ai-bio-tools-playbook.md, §1)</p>
+<h3 id="specific-prompts-for-open-enzyme">Specific Prompts for Open Enzyme<a class="headerlink" href="#specific-prompts-for-open-enzyme" title="Permanent link">&para;</a></h3>
+<h4 id="prompt-1-codon-optimization-for-target-organism">Prompt 1: Codon Optimization for Target Organism<a class="headerlink" href="#prompt-1-codon-optimization-for-target-organism" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>You are a synthetic biology expert. I need to optimize the A. flavus uricase gene 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>(GenBank X61766.1, 906 bp coding sequence) for expression in Saccharomyces cerevisiae.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Task:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>1. Analyze the native A. flavus codon usage against S. cerevisiae codon preferences
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>2. Identify rare codons and potential issues (cryptic polyA sites, splice sites, secondary structures that interfere with expression)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>3. Generate a codon-optimized version minimizing changes while maximizing expression efficiency
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>4. Maintain the protein sequence exactly (no amino acid changes)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>5. Provide before/after codon usage comparison
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Output format:
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>- Native sequence (1st 50 bp shown, then &quot;...&quot;)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>- Optimized sequence (1st 50 bp shown)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>- Codon usage table comparison (native vs. S. cerevisiae optimal)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>- Identified problem regions and fixes
+</code></pre></div>
+<p><strong>Expected output:</strong> Detailed codon optimization with rationale. Can then submit to gene synthesis service (Twist, IDT, GenScript) with minor tweaks.</p>
+<hr />
+<h4 id="prompt-2-promoter-and-regulatory-element-design">Prompt 2: Promoter and Regulatory Element Design<a class="headerlink" href="#prompt-2-promoter-and-regulatory-element-design" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Design an expression cassette for A. flavus uricase in S. cerevisiae.
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Requirements:
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- Constitutive expression (always on, no glucose repression)
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- Strong but not maximum (avoid metabolic stress; target ~5-10% of total protein)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>- Suitable for food fermentation (no inducible systems that require chemicals)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>- Include secretion signal for extracellular expression (optional second variant)
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Cassette components needed:
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>1. Promoter recommendation (strength ranking vs. alternatives)
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>2. 5&#39; UTR / RBS equivalent for yeast
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>3. Signal peptide options if secretion desired
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>4. Terminator selection
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>5. Selectable marker (mention both lab and food-production versions)
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>Output:
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>- Two cassette diagrams (intracellular vs. secreted)
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>- Justification for each component choice
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>- Expected expression levels based on known benchmarks
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>- Known failure modes (what could go wrong?)
+</code></pre></div>
+<p><strong>Expected output:</strong> Practical design immediately usable for cloning; literature-backed recommendations.</p>
+<hr />
+<h4 id="prompt-3-literature-mining-for-enzyme-variants">Prompt 3: Literature Mining for Enzyme Variants<a class="headerlink" href="#prompt-3-literature-mining-for-enzyme-variants" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>I need alternative uricase genes that could express well in Saccharomyces cerevisiae.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Known options:
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>- A. flavus uricase (rasburicase source; &gt;20 years clinical use)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>- C. utilis uricase (higher specific activity; less characterized in yeast)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>- V. vulnificus uricase (published 2025 in S. boulardii; may work in S. cerevisiae)
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Task:
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>1. Search literature (last 5 years) for uricase expression in heterologous systems
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>2. Identify any other organisms producing uricase that might express well in yeast
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>3. Compare specific activities (μmol/h/mg protein or equivalent)
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>4. Rank by likelihood of success in S. cerevisiae based on:
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>   - Protein size and quaternary structure
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>   - Cofactor requirements (if any)
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>   - Expression levels achieved in similar hosts
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>5. Highlight advantages/disadvantages of each
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>Output table:
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>- Gene source | Specific activity | Expression track record | Advantages | Disadvantages | Confidence rank
+</code></pre></div>
+<p><strong>Expected output:</strong> Comparative analysis with citations. Informs gene selection for Phase 1 validation.</p>
+<hr />
+<h4 id="prompt-4-transformation-strategy-optimization">Prompt 4: Transformation Strategy Optimization<a class="headerlink" href="#prompt-4-transformation-strategy-optimization" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>I&#39;m transforming S. cerevisiae with a new uricase expression construct.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Goal: High transformation efficiency (&gt;100 transformants per μg DNA) with stable integrants.
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Current plan: Use chromosomal integration at a neutral locus, not episomal plasmid.
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Questions:
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>1. Which loci in S. cerevisiae genome are &quot;neutral&quot; for high transgene expression?
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>   (Literature shows some loci give 100x higher expression than others)
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>2. What transformation method is best for chromosomal integration?
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>   - Lithium acetate (simple, ~90% efficiency with competent cells)
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>   - Electroporation (faster, more DNA control)
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>   - Agrobacterium tumefaciens (for A. oryzae, also works for some yeasts)
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>3. Selectable markers: recommend lab (G418, hygromycin) vs. food-safe (auxotrophic complementation, prototrophic)?
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>4. How many integrants should I screen, and what&#39;s the expected range of expression?
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>5. Any known problems with multi-copy integration at my target locus?
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>Output:
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>- Locus recommendation with expression expectations
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>- Transformation method + protocol summary
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>- Marker recommendation + rationale
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>- Quality control checkpoints (how to verify integration, verify expression)
+</code></pre></div>
+<p><strong>Expected output:</strong> Strategic guidance that saves weeks of trial-and-error.</p>
+<hr />
+<h4 id="prompt-5-enzyme-activity-prediction-and-assay-design">Prompt 5: Enzyme Activity Prediction and Assay Design<a class="headerlink" href="#prompt-5-enzyme-activity-prediction-and-assay-design" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>I&#39;ve successfully expressed A. flavus uricase in S. cerevisiae. Now I need to assay activity.
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Enzyme: Urate oxidase (uricase)
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>- Native MW: ~135 kDa (homotetrameric)
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>- pH optimum: 8.5-9.5
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>- Cofactors: None (unusual for oxidase; no metal or heme)
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>- Substrate: Uric acid
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>- Product: Allantoin (also produces CO2 and H2O2)
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Questions:
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>1. What&#39;s the best assay method for high-throughput screening?
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>   - Spectrophotometric (measure uric acid decrease at 293 nm)
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>   - HPLC (separate uric acid, allantoin, intermediates)
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>   - Other?
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>2. Expected specific activity in our construct? (Benchmark from literature)
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>3. Assay protocol:
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>   - Buffer pH (8.5-9.5 optimal; physiological pH 7.4 for comparison)
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>   - Temperature (37°C for relevant, but stability at different temps?)
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>   - Time course (how long until plateau?)
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>   - Controls (positive: purified uricase; negative: non-transformed yeast)
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>4. Calculation: specific activity formula (μmol substrate consumed / min / mg protein)
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>5. What&#39;s the minimum activity level needed for therapeutic relevance?
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>Output:
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>- Recommended assay protocol (step-by-step)
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>- Expected values vs. benchmarks
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>- Troubleshooting guide (low activity? high variability?)
+</code></pre></div>
+<p><strong>Expected output:</strong> Ready-to-execute assay protocol with success metrics.</p>
+<hr />
+<h4 id="prompt-6-fermentation-optimization">Prompt 6: Fermentation Optimization<a class="headerlink" href="#prompt-6-fermentation-optimization" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>I have engineered S. cerevisiae expressing uricase. Now I need to ferment it for product.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Application: Daily oral supplement (lyophilized yeast powder)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Fermentation parameters to optimize:
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>1. Temperature: Standard S. cerevisiae fermentation is 25-30°C. Does uricase stability change this?
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>2. Aeration: Aerobic (faster growth, higher biomass) vs. anaerobic (traditional brewing)?
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>3. Media: YPD (yeast peptone dextrose standard) vs. minimal media?
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>4. Duration: Typical is 24-48h. Enzyme production profile?
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>5. Cell density at harvest: How high can we grow without stress?
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>6. Post-fermentation: Do we need special handling (pH adjustment, clarification)?
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>7. Drying method for shelf stability:
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>   - Heat drying (risk: denatures uricase)
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>   - Lyophilization (better; enzyme stability testing needed)
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>   - Spray drying (industrial scale)
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>8. Shelf life: What&#39;s expected stability at room temperature vs. refrigerated?
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>Output:
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>- Optimized fermentation protocol
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>- Enzyme stability profile over growth curve
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>- Recommended harvest point (maximum enzyme + viable biomass)
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>- Drying method recommendation with stability data
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>- Cost estimates (media, equipment, labor for scale-up)
+</code></pre></div>
+<p><strong>Expected output:</strong> Fermentation SOP ready for manufacturing.</p>
+<hr />
+<h3 id="output-example-rosalind-analyzing-uricase-expression">Output Example: Rosalind Analyzing Uricase Expression<a class="headerlink" href="#output-example-rosalind-analyzing-uricase-expression" title="Permanent link">&para;</a></h3>
+<p>When given the above prompts, Rosalind might produce something like:</p>
+<blockquote>
+<p><strong>Codon Optimization Analysis:</strong></p>
+<p>Your A. flavus uaZ sequence uses 23 codons rare in S. cerevisiae (&gt;1% frequency). Key problems:
+- Position 145-150 (rare CGA, CGA, CGA for Arg): introduces secondary structure blocking ribosome
+- Position 280 (CTT for Leu): rare even though Leu codons are usually okay
+- Positions 450-460: contains "AATAAA" (cryptic polyA signal that S. cerevisiae RNA polymerase recognizes)</p>
+<p>Optimized version (sample):
+- Replace CGA (3% in S. cerevisiae) → CGC (50% frequency): increases expression ~2-fold at this motif
+- Replace CTT (8%) → CTC (40%): small gain (~1.1x)
+- Remove AATAAA context via silent codon change: prevents premature termination</p>
+<p><strong>Predicted improvement:</strong> 1.5-2.5× higher expression in S. cerevisiae with optimized codon usage alone.</p>
+<p><strong>Recommended promoter:</strong> pTEF1 (constitutive, ranked #1 for S. cerevisiae among 40+ options)
+- Strength: ~2500 FPKM in RNAseq studies (nearly maximal)
+- RBS context: AGGA (Kozak-like) upstream of start codon recommended
+- Integration site: HO locus (neutral, stably expressed, ~1-3 copy integration natural)</p>
+</blockquote>
+<hr />
+<h2 id="amazon-bio-discovery">Amazon Bio Discovery<a class="headerlink" href="#amazon-bio-discovery" title="Permanent link">&para;</a></h2>
+<h3 id="what-it-is_1">What It Is<a class="headerlink" href="#what-it-is_1" title="Permanent link">&para;</a></h3>
+<p>Amazon's platform for high-throughput biological model screening and molecular design. ~40 pre-trained models covering:
+- Protein function prediction
+- Gene expression forecasting
+- Metabolic pathway modeling
+- Drug-enzyme interaction
+- Strain fitness prediction</p>
+<h3 id="capabilities_1">Capabilities<a class="headerlink" href="#capabilities_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Strain optimization:</strong> Predict effects of genetic modifications before building them</li>
+<li><strong>Pathway engineering:</strong> Model multi-step enzymatic cascades</li>
+<li><strong>Fitness prediction:</strong> Will my engineered strain survive in fermentation?</li>
+<li><strong>Substrate specificity:</strong> Will enzyme recognize the substrate I want?</li>
+<li><strong>Expression level forecasting:</strong> What promoter+RBS combination gives highest yield?</li>
+</ul>
+<h3 id="access-model_1">Access Model<a class="headerlink" href="#access-model_1" title="Permanent link">&para;</a></h3>
+<p>Web-based platform; AWS account required. Free tier available for academic users.</p>
+<h3 id="specific-use-for-open-enzyme">Specific Use for Open Enzyme<a class="headerlink" href="#specific-use-for-open-enzyme" title="Permanent link">&para;</a></h3>
+<h4 id="use-case-1-predict-s-cerevisiae-growth-with-integrated-uricase">Use Case 1: Predict S. cerevisiae Growth with Integrated Uricase<a class="headerlink" href="#use-case-1-predict-s-cerevisiae-growth-with-integrated-uricase" title="Permanent link">&para;</a></h4>
+<p><strong>Input:</strong>
+- S. cerevisiae reference genome
+- Proposed uricase gene insertion at HO locus
+- pTEF1 promoter driving expression</p>
+<p><strong>Model:</strong> Strain fitness prediction</p>
+<p><strong>Output:</strong> 
+- Predicted growth rate under fermentation conditions
+- Metabolic burden estimate (% of total protein expression)
+- Risk of metabolic stress (if too high)</p>
+<p>This tells you: Will my engineered strain still grow robustly, or did I overexpress and slow growth?</p>
+<hr />
+<h4 id="use-case-2-pathway-engineering-for-dual-koji">Use Case 2: Pathway Engineering for Dual Koji<a class="headerlink" href="#use-case-2-pathway-engineering-for-dual-koji" title="Permanent link">&para;</a></h4>
+<p><strong>Input:</strong>
+- A. oryzae native genome with lipase, protease, amylase genes
+- Added A. flavus uricase gene
+- Multi-gene expression modeling</p>
+<p><strong>Model:</strong> Metabolic pathway + expression competition</p>
+<p><strong>Output:</strong>
+- Resource allocation: how much ATP/ribosomes go to each enzyme?
+- Risk of imbalanced expression (uricase high, lipase crashes)
+- Optimal RBS + promoter combinations for balanced expression
+- Predicted total enzyme levels (per g rice)</p>
+<p>This is crucial for [[engineered-koji-protocol]] design—too much uricase suppresses native enzymes.</p>
+<hr />
+<h4 id="use-case-3-probiotic-persistence-modeling">Use Case 3: Probiotic Persistence Modeling<a class="headerlink" href="#use-case-3-probiotic-persistence-modeling" title="Permanent link">&para;</a></h4>
+<p><strong>Input:</strong>
+- S. boulardii fitness in mixed microbiota (simulated competition with other gut bacteria)
+- Metabolic preferences (S. boulardii uses glucose; compete with E. coli for this resource)
+- Fermentation conditions (pH, nutrient availability)</p>
+<p><strong>Model:</strong> Multi-organism ecosystem dynamics</p>
+<p><strong>Output:</strong>
+- Predicted S. boulardii survival curves with/without engineered uricase
+- Competitive advantage/disadvantage vs. wild-type
+- Conditions that favor persistence (lower pH? higher lactate?)</p>
+<hr />
+<h3 id="example-amazon-query">Example Amazon Query<a class="headerlink" href="#example-amazon-query" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Model Name: StrainFitness
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Input:
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>- Organism: S. cerevisiae
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>- Integration: uricase (A. flavus uaZ) at HO locus
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>- Promoter: pTEF1 (constitutive, strong)
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>- Expression level target: 10% total protein
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Question: Will my engineered strain grow acceptably in fermentation?
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>Output (expected):
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>- Growth rate: 0.42 h⁻¹ (wild-type ~0.45 h⁻¹; 7% reduction = tolerable)
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>- Doubling time: 98 min (vs. 92 min wild-type)
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>- Metabolic burden: 10% protein production is sustainable
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>- Recommendation: pTEF1 is appropriate; don&#39;t go to higher-expressing promoters
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>- Risk flags: None; proceed to build construct
+</code></pre></div>
+<hr />
+<h2 id="coefficient-bio-anthropic-acquisition">Coefficient Bio (Anthropic Acquisition)<a class="headerlink" href="#coefficient-bio-anthropic-acquisition" title="Permanent link">&para;</a></h2>
+<h3 id="what-it-is_2">What It Is<a class="headerlink" href="#what-it-is_2" title="Permanent link">&para;</a></h3>
+<p>Anthropic acquired Coefficient Bio in 2024 ($400M investment) to integrate biological reasoning into its AI models. The goal: Anthropic's models can now reason about protein sequences, molecular dynamics, and biological systems end-to-end.</p>
+<h3 id="capabilities_2">Capabilities<a class="headerlink" href="#capabilities_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Protein engineering:</strong> Claude can reason about amino acid changes and predict consequences</li>
+<li><strong>Literature synthesis:</strong> Pull biology papers, cross-reference databases, generate hypotheses</li>
+<li><strong>Experimental design:</strong> Plan complex multi-step molecular biology experiments</li>
+<li><strong>Safety assessment:</strong> Evaluate engineered organisms for off-target effects</li>
+<li><strong>Technical writing:</strong> Generate SOPs, experimental protocols, safety documents</li>
+</ul>
+<h3 id="access-model_2">Access Model<a class="headerlink" href="#access-model_2" title="Permanent link">&para;</a></h3>
+<p>Integrated into Claude API (available now for enterprise customers; roadmap for general access Q3 2026)</p>
+<h3 id="specific-use-for-open-enzyme_1">Specific Use for Open Enzyme<a class="headerlink" href="#specific-use-for-open-enzyme_1" title="Permanent link">&para;</a></h3>
+<h4 id="use-case-1-literature-synthesis-on-nlrp3-inhibitors">Use Case 1: Literature Synthesis on NLRP3 Inhibitors<a class="headerlink" href="#use-case-1-literature-synthesis-on-nlrp3-inhibitors" title="Permanent link">&para;</a></h4>
+<p><strong>Prompt to Claude:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Synthesize a comprehensive map of every natural compound and approved drug that 
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>inhibits the NLRP3 inflammasome. For each, provide:
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>1. Mechanism (which chokepoint in the NLRP3 pathway?)
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>2. Dose range for humans
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>3. Published efficacy data (if available)
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>4. Safety profile
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>5. Accessibility (OTC vs. prescription vs. research chemical)
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>Focus on compounds relevant to gout. Cross-reference:
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>- PubMed (NLRP3 + compound name)
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>- ChEMBL (molecular structure, activity data)
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>- Clinical trial registries (Firsekibart, Dapansutrile, others)
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>Output: Structured table with ranking by evidence strength
+</code></pre></div>
+<p><strong>Expected output:</strong> The [[nlrp3-inflammasome]] wiki page content—comprehensive, literature-backed, practically organized.</p>
+<hr />
+<h4 id="use-case-2-protocol-generation-for-koji-engineering">Use Case 2: Protocol Generation for Koji Engineering<a class="headerlink" href="#use-case-2-protocol-generation-for-koji-engineering" title="Permanent link">&para;</a></h4>
+<p><strong>Prompt to Claude:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Generate a complete, step-by-step protocol for:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>1. Cloning the A. flavus uaZ uricase gene into an A. oryzae expression vector
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>2. Transformation of A. oryzae protoplasts
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>3. Screening and selection of high-expressing transformants
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>4. Fermentation on rice substrate
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>5. Dosing optimization for therapeutic use
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>Requirements:
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>- Suitable for a community biolab (not requiring BSL-2 containment)
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>- All reagents and equipment available from standard suppliers
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>- Costed out (total materials, labor, timeline)
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>- Safety checkpoints at each stage
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>- Troubleshooting guide for common failures
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>Output: Publication-quality protocol document (SOP format)
+</code></pre></div>
+<p><strong>Expected output:</strong> [[engineered-koji-protocol]]-level detail, immediately executable.</p>
+<hr />
+<h4 id="use-case-3-strain-safety-assessment">Use Case 3: Strain Safety Assessment<a class="headerlink" href="#use-case-3-strain-safety-assessment" title="Permanent link">&para;</a></h4>
+<p><strong>Prompt to Claude:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>I&#39;m proposing to engineer S. cerevisiae with:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>- A. flavus uricase gene (same as in rasburicase drug)
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>- Chromosomal integration (one copy)
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>- No antibiotic resistance markers (urea auxotrophy for selection)
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Task: Comprehensively assess safety for human consumption as fermented food product.
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>Evaluate:
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>1. Protein (uricase) safety: FDA approval history, off-target activity, toxicity
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>2. Host organism (S. cerevisiae) safety: GRAS status, no pathogenic potential
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>3. Genetic construct safety: No oncogenic sequences, no hidden regulatory elements
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>4. Manufacturing safety: Fermentation contamination risks, shelf stability
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>5. Consumer use safety: Oral delivery, gut microbiota interactions, allergenic potential
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>6. Regulatory pathway: What would FDA require for &quot;food product&quot; vs. &quot;drug&quot;?
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>Output: Safety assessment document (white paper format) with:
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>- Risk summary
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>- Mitigation strategies
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>- Regulatory recommendations
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>- Unknowns (what still needs research?)
+</code></pre></div>
+<p><strong>Expected output:</strong> Rigorous risk analysis that directly informs Phase 3 study design and potential regulatory strategy.</p>
+<hr />
+<h4 id="use-case-4-personalized-supplementation-stack-design">Use Case 4: Personalized Supplementation Stack Design<a class="headerlink" href="#use-case-4-personalized-supplementation-stack-design" title="Permanent link">&para;</a></h4>
+<p><strong>Prompt to Claude:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Generate a personalized anti-gout supplement stack for a 55-year-old male with:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>- Serum uric acid: 8.2 mg/dL
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>- Recent gout flare (ankle, resolved but recurrent)
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>- No significant comorbidities (kidney function normal)
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>- Cannot tolerate allopurinol (rash)
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>- Interested in NLRP3 inflammasome targeting (not just uric acid lowering)
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Task:
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>1. Design a multi-compound stack targeting multiple NLRP3 chokepoints
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>2. Each compound should have published human or animal evidence
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>3. Address drug-supplement interactions
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>4. Provide dosing, timing, sourcing
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>5. Cost breakdown
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>6. Monitoring biomarkers (to assess efficacy)
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>7. Timeline (when to escalate if not working)
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>Output: Personalized protocol document (similar to [[supplements-stack]] but individualized)
+</code></pre></div>
+<p><strong>Expected output:</strong> [[supplements-stack]]-level detail but customized to one person's needs.</p>
+<hr />
+<h2 id="integration-using-all-three-tools-together">Integration: Using All Three Tools Together<a class="headerlink" href="#integration-using-all-three-tools-together" title="Permanent link">&para;</a></h2>
+<h3 id="workflow-example-design-engineered-koji-from-scratch">Workflow Example: Design Engineered Koji from Scratch<a class="headerlink" href="#workflow-example-design-engineered-koji-from-scratch" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1: Literature Mining (Claude/Coefficient)</strong>
+- Comprehensive search on A. oryzae genetic engineering capabilities
+- Find all published cases of multi-gene expression in koji
+- Identify best transformation methods and expression systems</p>
+<p><strong>Step 2: Gene Selection (GPT-Rosalind)</strong>
+- Compare uricase genes: A. flavus vs. others
+- Codon optimize for A. oryzae
+- Design optimal expression cassette (promoter, RBS, terminator)</p>
+<p><strong>Step 3: Fitness Prediction (Amazon Bio Discovery)</strong>
+- Model what happens when we add uricase to koji's native enzyme portfolio
+- Predict growth rates, enzyme yields, metabolic balance
+- Identify potential bottlenecks</p>
+<p><strong>Step 4: Protocol Generation (Claude/Coefficient)</strong>
+- Write complete transformation and fermentation protocol
+- Generate SOPs, safety assessments, troubleshooting guides
+- Design validation experiments</p>
+<p><strong>Step 5: Safety &amp; Regulatory (Claude/Coefficient)</strong>
+- Comprehensive safety assessment
+- Identify regulatory pathway (food vs. drug)
+- Draft pre-clinical study plan</p>
+<p><strong>Total timeline:</strong> 2–4 weeks of design work (instead of months)</p>
+<hr />
+<h2 id="cautions-limitations">Cautions &amp; Limitations<a class="headerlink" href="#cautions-limitations" title="Permanent link">&para;</a></h2>
+<h3 id="gpt-rosalind">GPT-Rosalind<a class="headerlink" href="#gpt-rosalind" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Training cutoff:</strong> April 2026; newer papers not yet included</li>
+<li><strong>Overfitting risk:</strong> Trained on common workflows; unusual cases may not be handled well</li>
+<li><strong>Verification required:</strong> Always check Rosalind's literature citations; hallucinations possible</li>
+<li><strong>Limited access:</strong> Only US enterprise customers (as of April 2026)</li>
+</ul>
+<h3 id="amazon-bio-discovery_1">Amazon Bio Discovery<a class="headerlink" href="#amazon-bio-discovery_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Model quality varies:</strong> Some models are validated, others are beta</li>
+<li><strong>Garbage in, garbage out:</strong> Predictions depend on accurate input (genome sequences, parameters)</li>
+<li><strong>No real-time biology:</strong> Models trained on static data; can't predict emergent properties</li>
+</ul>
+<h3 id="claudecoefficient-bio">Claude/Coefficient Bio<a class="headerlink" href="#claudecoefficient-bio" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>New capability:</strong> As of April 2026, still in limited release</li>
+<li><strong>Domain-specific reasoning:</strong> Excellent for design and synthesis; less good for predicting unexpected biological outcomes</li>
+<li><strong>Not a substitute for wet lab:</strong> All recommendations must be validated experimentally</li>
+</ul>
+<hr />
+<h2 id="practical-recommendation">Practical Recommendation<a class="headerlink" href="#practical-recommendation" title="Permanent link">&para;</a></h2>
+<p><strong>For Open Enzyme project, in priority order:</strong></p>
+<ol>
+<li>
+<p><strong>Open source tools first</strong> — ColabFold, ESM-2, SPURS/RaSP, CodonTransformer, DiffDock. Free, available now, quantitative outputs. These cover structure prediction, variant scoring, stability prediction, codon optimization, and docking — the core computational workflow.</p>
+</li>
+<li>
+<p><strong>Use Claude for reasoning and synthesis</strong> — literature mining, protocol generation, experimental design, safety assessment, cross-domain reasoning. Claude is the connective tissue that interprets open source tool outputs and makes design decisions.</p>
+</li>
+<li>
+<p><strong>Try GPT-Rosalind if you get access</strong> — deeper biological reasoning for complex design questions. Apply via the Trusted Access Program; the open source + therapeutic enzyme + citizen science angle is a strong public-benefit argument.</p>
+</li>
+<li>
+<p><strong>Use Amazon Bio Discovery strategically</strong> — the free trial (5 experiments) is worth using for lab-in-the-loop integration (routing to Twist/Ginkgo). The $486/month ongoing cost is harder to justify when open source covers most model capabilities.</p>
+</li>
+</ol>
+<p><strong>Monthly cost estimate:</strong>
+- Open source tools (Google Colab free tier): $0
+- Google Colab Pro (if needed for GPU): $10/month
+- Claude: $20 (subscription)
+- GPT-Rosalind (if access granted): $0 (research preview)
+- Amazon Bio Discovery: $0 (free trial) or $486/month (probably not needed)</p>
+<p><strong>Total:</strong> $20-30/month covers the full computational stack.</p>
+<hr />
+<p><em>These tools accelerate the design phase dramatically. But they do not replace experimental validation. Every prediction must be tested. [[validation-experiments]] remains the truth source.</em></p>
+<p>(Source: ai-bio-tools-playbook.md)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

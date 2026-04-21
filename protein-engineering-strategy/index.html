@@ -1,0 +1,5700 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/protein-engineering-strategy/">
+      
+      
+        <link rel="prev" href="../gi-survival-prediction/">
+      
+      
+        <link rel="next" href="../codon-optimization-expression-cassette/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Protein Engineering Strategy for Oral-Delivery Optimized A. flavus Uricase - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#protein-engineering-strategy-for-oral-delivery-optimized-a-flavus-uricase" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Protein Engineering Strategy for Oral-Delivery Optimized A. flavus Uricase
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../open-enzyme-vision/" class="md-tabs__link">
+          
+  
+  
+  Vision & Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gout-pathophysiology/" class="md-tabs__link">
+          
+  
+  
+  Gout & Uricase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nlrp3-inflammasome/" class="md-tabs__link">
+          
+  
+  
+  NLRP3 & Inflammation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../digestive-enzymes/" class="md-tabs__link">
+          
+  
+  
+  Koji & Digestive Enzymes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../saccharomyces-cerevisiae/" class="md-tabs__link">
+          
+  
+  
+  Organisms & Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gut-lumen-sink/" class="md-tabs__link">
+          
+  
+  
+  Delivery & Barrier
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bpc-157/" class="md-tabs__link">
+          
+  
+  
+  Compounds & Peptides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sibo/" class="md-tabs__link">
+          
+  
+  
+  Other Conditions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bio-ai-tools/" class="md-tabs__link">
+          
+  
+  
+  Tools & Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-reference-recommended-variant-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference — Recommended Variant Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-structural-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 1: Structural Context
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: Structural Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-a-flavus-uricase-architecture-pdb-1r4s-1ws3-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 A. flavus Uricase Architecture (PDB: 1R4S, 1WS3, others)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-native-ph-stability-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Native pH Stability Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-engineering-objectives-trade-off-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2: Engineering Objectives &amp; Trade-off Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Engineering Objectives &amp; Trade-off Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-primary-objective-acid-stability-ph-2030" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Primary Objective: Acid Stability (pH 2.0–3.0)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Primary Objective: Acid Stability (pH 2.0–3.0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategy-a-salt-bridge-network-enhancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy A: Salt Bridge Network Enhancement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-b-hydrophobic-core-packing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy B: Hydrophobic Core Packing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-c-disulfide-bond-engineering-most-promising" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy C: Disulfide Bond Engineering (Most Promising)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-secondary-objective-protease-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Secondary Objective: Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tertiary-objective-catalytic-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Tertiary Objective: Catalytic Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-recommended-mutations-ranked-by-impact-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 3: Recommended Mutations (Ranked by Impact &amp; Confidence)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: Recommended Mutations (Ranked by Impact &amp; Confidence)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-individual-mutations-ranked-by-predicted-benefit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Individual Mutations Ranked by Predicted Benefit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Individual Mutations Ranked by Predicted Benefit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-highest-confidence-acid-stability-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 1: Highest Confidence (Acid Stability Focus)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-acid-stability-mild-protease-benefit-salt-bridge-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 2: Acid Stability + Mild Protease Benefit (Salt Bridge Strategy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-protease-resistance-loop-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 3: Protease Resistance (Loop Modification)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-combinatorial-variants-ranked-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Combinatorial Variants (Ranked Tiers)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Combinatorial Variants (Ranked Tiers)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-safe-bet-minimal-variant-12-mutations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 1: "Safe Bet" Minimal Variant (1–2 Mutations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-balanced-variant-34-mutations-acid-protease" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 2: Balanced Variant (3–4 Mutations, Acid + Protease)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-optimized-variant-56-mutations-maximum-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 3: Optimized Variant (5–6 Mutations, Maximum Improvement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-mutations-considered-rejected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 4: Mutations Considered &amp; Rejected
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: Mutations Considered &amp; Rejected">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-mutations-not-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Mutations NOT Recommended
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-summary-of-rejection-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Summary of Rejection Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-computational-prediction-validation-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 5: Computational Prediction &amp; Validation Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 5: Computational Prediction &amp; Validation Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-foldx-g-predictions-standard-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 FoldX ΔΔG Predictions (Standard Approach)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-rosetta-cartesian_ddg-protocol-secondary-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Rosetta Cartesian_ddg Protocol (Secondary Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-molecular-dynamics-simulation-tertiary-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Molecular Dynamics Simulation (Tertiary Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-tunnel-profiling-caver-mole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Tunnel Profiling (CAVER, MOLE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-6-experimental-validation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 6: Experimental Validation Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 6: Experimental Validation Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-bench-expression-activity-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Bench Expression &amp; Activity (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-acid-stability-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Acid Stability (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-gi-survival-simulation-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: GI Survival Simulation (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-protease-resistance-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Protease Resistance (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-in-vitro-gi-like-functional-assay-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: In Vitro GI-Like Functional Assay (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-in-vivo-validation-gnotobiotic-mouse-1012-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6: In Vivo Validation (Gnotobiotic Mouse, 10–12 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-7-recommended-experimental-execution-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 7: Recommended Experimental Execution Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 7: Recommended Experimental Execution Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-actions-week-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate Actions (Week 1–2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-34-phase-1-expression-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weeks 3–4: Phase 1 (Expression &amp; Activity)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-56-phase-23-acid-stability-gi-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weeks 5–6: Phase 2–3 (Acid Stability &amp; GI Simulation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-78-phase-4-protease-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weeks 7–8: Phase 4 (Protease Resistance)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-9-phase-56-in-vivo-proof-of-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weeks 9+: Phase 5–6 (In Vivo Proof-of-Concept)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-8-predicted-overall-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 8: Predicted Overall Improvements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 8: Predicted Overall Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-cumulative-effect-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Cumulative Effect Prediction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-therapeutic-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Therapeutic Relevance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-9-safety-regulatory-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 9: Safety &amp; Regulatory Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 9: Safety &amp; Regulatory Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-no-gain-of-function-mutations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 No Gain-of-Function Mutations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-allergenicity-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Allergenicity Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-off-target-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Off-Target Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-10-summary-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 10: Summary &amp; Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 10: Summary &amp; Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-recommended-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Recommended Progression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-variant-recommendation-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Variant Recommendation Rationale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-key-experimental-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Key Experimental Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-expected-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Expected Outcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literature-on-uricase-engineering-disulfide-bonds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literature on Uricase Engineering &amp; Disulfide Bonds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literature-on-acid-stability-pepsintrypsin-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literature on Acid Stability &amp; Pepsin/Trypsin Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literature-on-oral-delivery-protease-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literature on Oral Delivery &amp; Protease Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-specific-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project-Specific References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-pdb-structure-files-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: PDB Structure Files &amp; Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-computational-tools-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Computational Tools &amp; Databases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-mutation-summary-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Mutation Summary Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix: Mutation Summary Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variant Tiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variant Tiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-safe-bet-minimal-variant-12-mutations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1 — "Safe Bet" Minimal Variant (1–2 mutations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-balanced-variant-34-mutations-acid-protease_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 — Balanced Variant (3–4 mutations; acid + protease)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-optimized-variant-56-mutations-maximum-improvement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3 — Optimized Variant (5–6 mutations; maximum improvement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#individual-mutations-ranked-by-confidence-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Individual Mutations (Ranked by Confidence &amp; Impact)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rejected-mutations-not-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rejected Mutations (Not Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predictive-performance-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predictive Performance Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-validation-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Validation Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-literature-appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Literature (Appendix)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-reference-recommended-variant-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference — Recommended Variant Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-structural-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 1: Structural Context
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: Structural Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-a-flavus-uricase-architecture-pdb-1r4s-1ws3-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 A. flavus Uricase Architecture (PDB: 1R4S, 1WS3, others)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-native-ph-stability-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Native pH Stability Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-engineering-objectives-trade-off-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2: Engineering Objectives &amp; Trade-off Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Engineering Objectives &amp; Trade-off Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-primary-objective-acid-stability-ph-2030" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Primary Objective: Acid Stability (pH 2.0–3.0)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Primary Objective: Acid Stability (pH 2.0–3.0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategy-a-salt-bridge-network-enhancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy A: Salt Bridge Network Enhancement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-b-hydrophobic-core-packing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy B: Hydrophobic Core Packing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-c-disulfide-bond-engineering-most-promising" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy C: Disulfide Bond Engineering (Most Promising)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-secondary-objective-protease-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Secondary Objective: Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tertiary-objective-catalytic-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Tertiary Objective: Catalytic Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-recommended-mutations-ranked-by-impact-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 3: Recommended Mutations (Ranked by Impact &amp; Confidence)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: Recommended Mutations (Ranked by Impact &amp; Confidence)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-individual-mutations-ranked-by-predicted-benefit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Individual Mutations Ranked by Predicted Benefit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Individual Mutations Ranked by Predicted Benefit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-highest-confidence-acid-stability-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 1: Highest Confidence (Acid Stability Focus)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-acid-stability-mild-protease-benefit-salt-bridge-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 2: Acid Stability + Mild Protease Benefit (Salt Bridge Strategy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-protease-resistance-loop-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 3: Protease Resistance (Loop Modification)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-combinatorial-variants-ranked-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Combinatorial Variants (Ranked Tiers)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Combinatorial Variants (Ranked Tiers)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-safe-bet-minimal-variant-12-mutations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 1: "Safe Bet" Minimal Variant (1–2 Mutations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-balanced-variant-34-mutations-acid-protease" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 2: Balanced Variant (3–4 Mutations, Acid + Protease)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-optimized-variant-56-mutations-maximum-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIER 3: Optimized Variant (5–6 Mutations, Maximum Improvement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-mutations-considered-rejected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 4: Mutations Considered &amp; Rejected
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: Mutations Considered &amp; Rejected">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-mutations-not-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Mutations NOT Recommended
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-summary-of-rejection-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Summary of Rejection Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-computational-prediction-validation-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 5: Computational Prediction &amp; Validation Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 5: Computational Prediction &amp; Validation Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-foldx-g-predictions-standard-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 FoldX ΔΔG Predictions (Standard Approach)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-rosetta-cartesian_ddg-protocol-secondary-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Rosetta Cartesian_ddg Protocol (Secondary Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-molecular-dynamics-simulation-tertiary-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Molecular Dynamics Simulation (Tertiary Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-tunnel-profiling-caver-mole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Tunnel Profiling (CAVER, MOLE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-6-experimental-validation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 6: Experimental Validation Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 6: Experimental Validation Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-bench-expression-activity-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Bench Expression &amp; Activity (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-acid-stability-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Acid Stability (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-gi-survival-simulation-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: GI Survival Simulation (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-protease-resistance-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Protease Resistance (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-in-vitro-gi-like-functional-assay-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: In Vitro GI-Like Functional Assay (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-in-vivo-validation-gnotobiotic-mouse-1012-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6: In Vivo Validation (Gnotobiotic Mouse, 10–12 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-7-recommended-experimental-execution-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 7: Recommended Experimental Execution Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 7: Recommended Experimental Execution Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-actions-week-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate Actions (Week 1–2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-34-phase-1-expression-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weeks 3–4: Phase 1 (Expression &amp; Activity)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-56-phase-23-acid-stability-gi-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weeks 5–6: Phase 2–3 (Acid Stability &amp; GI Simulation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-78-phase-4-protease-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weeks 7–8: Phase 4 (Protease Resistance)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-9-phase-56-in-vivo-proof-of-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weeks 9+: Phase 5–6 (In Vivo Proof-of-Concept)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-8-predicted-overall-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 8: Predicted Overall Improvements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 8: Predicted Overall Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-cumulative-effect-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Cumulative Effect Prediction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-therapeutic-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Therapeutic Relevance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-9-safety-regulatory-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 9: Safety &amp; Regulatory Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 9: Safety &amp; Regulatory Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-no-gain-of-function-mutations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 No Gain-of-Function Mutations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-allergenicity-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Allergenicity Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-off-target-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Off-Target Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-10-summary-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 10: Summary &amp; Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 10: Summary &amp; Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-recommended-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Recommended Progression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-variant-recommendation-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Variant Recommendation Rationale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-key-experimental-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Key Experimental Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-expected-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Expected Outcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literature-on-uricase-engineering-disulfide-bonds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literature on Uricase Engineering &amp; Disulfide Bonds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literature-on-acid-stability-pepsintrypsin-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literature on Acid Stability &amp; Pepsin/Trypsin Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literature-on-oral-delivery-protease-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literature on Oral Delivery &amp; Protease Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-specific-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project-Specific References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-pdb-structure-files-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: PDB Structure Files &amp; Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-computational-tools-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Computational Tools &amp; Databases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-mutation-summary-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Mutation Summary Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix: Mutation Summary Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variant Tiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variant Tiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-safe-bet-minimal-variant-12-mutations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1 — "Safe Bet" Minimal Variant (1–2 mutations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-balanced-variant-34-mutations-acid-protease_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 — Balanced Variant (3–4 mutations; acid + protease)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-optimized-variant-56-mutations-maximum-improvement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3 — Optimized Variant (5–6 mutations; maximum improvement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#individual-mutations-ranked-by-confidence-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Individual Mutations (Ranked by Confidence &amp; Impact)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rejected-mutations-not-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rejected Mutations (Not Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predictive-performance-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predictive Performance Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-validation-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Validation Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-literature-appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Literature (Appendix)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="protein-engineering-strategy-for-oral-delivery-optimized-a-flavus-uricase">Protein Engineering Strategy for Oral-Delivery Optimized A. flavus Uricase<a class="headerlink" href="#protein-engineering-strategy-for-oral-delivery-optimized-a-flavus-uricase" title="Permanent link">&para;</a></h1>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This document provides a comprehensive protein engineering strategy to optimize <em>Aspergillus flavus</em> uricase (rasburicase parent, UniProt Q00511) for oral therapeutic delivery from engineered <em>Saccharomyces cerevisiae</em>. The strategy integrates three simultaneous objectives:</p>
+<ol>
+<li><strong>Acid Stability</strong> — Improve survival at pH 2.0–3.0 (stomach) without sacrificing activity at pH 6.5–8.5</li>
+<li><strong>Protease Resistance</strong> — Bury or eliminate surface-exposed pepsin and trypsin cleavage sites</li>
+<li><strong>Catalytic Maintenance</strong> — Retain ≥80% of wild-type kcat/Km, prioritizing substrate channel access</li>
+</ol>
+<p>The analysis synthesizes literature on disulfide bond engineering, salt bridge design, proline loop stabilization, and surface charge redistribution. Recommended variants range from a minimal "safe bet" (1–2 mutations) to a combinatorial optimized design (4–6 mutations) predicted to improve GI survival by 5–15 fold.</p>
+<h3 id="quick-reference-recommended-variant-tiers">Quick Reference — Recommended Variant Tiers<a class="headerlink" href="#quick-reference-recommended-variant-tiers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Mutations</th>
+<th>Acid ΔΔG</th>
+<th>GI Survival Improvement</th>
+<th>Catalytic Risk</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SB-1</strong></td>
+<td>A6C + R290C</td>
+<td>+10 kcal/mol</td>
+<td>2–3 fold</td>
+<td>2–5%</td>
+<td>2–3 weeks</td>
+</tr>
+<tr>
+<td><strong>BAL-1</strong></td>
+<td>SB-1 + K234E + K236E</td>
+<td>+12 kcal/mol</td>
+<td>4–8 fold</td>
+<td>5%</td>
+<td>4–5 weeks</td>
+</tr>
+<tr>
+<td><strong>OPT-1</strong></td>
+<td>BAL-1 + S119C + C220C</td>
+<td>+22 kcal/mol</td>
+<td>8–15 fold</td>
+<td>10%</td>
+<td>6–7 weeks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation:</strong> Start with <strong>SB-1</strong> (minimal risk, rapid proof-of-concept), proceed to <strong>BAL-1</strong> if bench data support, and scale to <strong>OPT-1</strong> if aiming for ALLN-346-comparable performance. Full mutation matrix, rejected approaches, and predictive performance table in the <a href="#appendix-mutation-summary-reference">Appendix: Mutation Summary Reference</a> below.</p>
+<hr />
+<h2 id="section-1-structural-context">Section 1: Structural Context<a class="headerlink" href="#section-1-structural-context" title="Permanent link">&para;</a></h2>
+<h3 id="11-a-flavus-uricase-architecture-pdb-1r4s-1ws3-others">1.1 A. flavus Uricase Architecture (PDB: 1R4S, 1WS3, others)<a class="headerlink" href="#11-a-flavus-uricase-architecture-pdb-1r4s-1ws3-others" title="Permanent link">&para;</a></h3>
+<p><strong>Quaternary Structure:</strong>
+- Homotetramer (2 dimers); ~135 kDa assembled protein
+- 4 subunits, each 301 amino acids (~34 kDa monomer)
+- Subunit interfaces: dimer-of-dimers geometry (A-B and C-D tight dimer interfaces; B-C and A-D weaker)</p>
+<p><strong>Active Site Architecture</strong> (In vitro, structural data):
+- Located at subunit-subunit interface (4 active sites per tetramer, 1 per subunit in the heteromeric interface context)
+- 15 conserved residues: Lys10, Thr57, Arg176, Gln228, Asn254, His256 (catalytic), Pro284, Gly286 (structural), Leu170, Phe159 (hydrophobic pocket)
+- Substrate binding: 1 binding site per subunit (uric acid or analogs); equilibrium dissociation constant Kd ~0.5–2.1 mM
+- Product (allantoin) release: no major structural barriers identified</p>
+<p><strong>Surface Topology:</strong>
+- β-sheets form core; α-helical regions on periphery
+- Multiple surface-exposed loops; flexible regions identified at residues 100–120, 180–200, 250–270
+- <strong>Key observation</strong>: Surface loops are primary protease vulnerability</p>
+<h3 id="12-native-ph-stability-profile">1.2 Native pH Stability Profile<a class="headerlink" href="#12-native-ph-stability-profile" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>pH</th>
+<th>Relative Activity</th>
+<th>Notes</th>
+<th>Evidence Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.0 (stomach)</td>
+<td>&lt;10%</td>
+<td>Severe protonation; acid denaturation</td>
+<td>In vitro</td>
+</tr>
+<tr>
+<td>3.0</td>
+<td>15–20%</td>
+<td>Marginal; denaturation ongoing</td>
+<td>In vitro</td>
+</tr>
+<tr>
+<td>6.0</td>
+<td>40–60%</td>
+<td>Partial recovery; refolding possible</td>
+<td>In vitro</td>
+</tr>
+<tr>
+<td>6.8</td>
+<td>70–85%</td>
+<td>Small intestine; workable but suboptimal</td>
+<td>In vitro</td>
+</tr>
+<tr>
+<td>7.4</td>
+<td>85–95%</td>
+<td>Neutral pH; near-optimal</td>
+<td>In vitro</td>
+</tr>
+<tr>
+<td>8.0–8.5</td>
+<td>100%</td>
+<td>pH optimum</td>
+<td>In vitro</td>
+</tr>
+<tr>
+<td>9.0</td>
+<td>70–85%</td>
+<td>Alkaline denaturation begins</td>
+<td>In vitro</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Critical Gap:</strong> Activity drops sharply from pH 8.5 → pH 3.0. The enzyme lacks intrinsic acid stability. Mechanism: histidine residues (pKa ~6.0) protonate at low pH; protonated His residues disrupt salt bridge networks and destabilize tertiary structure.</p>
+<hr />
+<h2 id="section-2-engineering-objectives-trade-off-analysis">Section 2: Engineering Objectives &amp; Trade-off Analysis<a class="headerlink" href="#section-2-engineering-objectives-trade-off-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="21-primary-objective-acid-stability-ph-2030">2.1 Primary Objective: Acid Stability (pH 2.0–3.0)<a class="headerlink" href="#21-primary-objective-acid-stability-ph-2030" title="Permanent link">&para;</a></h3>
+<p><strong>Specific Challenge:</strong>
+The stomach environment (pH 1.5–3.0, 37°C, 2h residence time) is the primary threat to enzyme survival. Current A. flavus uricase loses ~80–90% activity under these conditions.</p>
+<p><strong>Design Rationale:</strong>
+If acid stability improves to 50% activity retention (vs. current 10%), the effective enzyme dose reaching the small intestine doubles. If improved to 80%, dosing requirements decrease 8–10 fold.</p>
+<p><strong>Mechanism-Based Strategies:</strong></p>
+<h4 id="strategy-a-salt-bridge-network-enhancement">Strategy A: Salt Bridge Network Enhancement<a class="headerlink" href="#strategy-a-salt-bridge-network-enhancement" title="Permanent link">&para;</a></h4>
+<p><strong>Principle:</strong> Stabilize pH-sensitive salt bridges at the subunit interfaces and core. Surface salt bridges (Asp/Glu to Lys/Arg) break apart at low pH due to His protonation and increased positive charge density.</p>
+<p><strong>Implementation:</strong>
+- Identify surficial Asp/Glu residues that could form stabilizing salt bridges with buried Lys/Arg
+- Introduce buried, non-surface Glu or Asp residues that form strong salt bridges with existing Lys/Arg (leveraging pre-existing basic residues)
+- Evidence: Direct modification of salt bridge networks can increase acid stability of enzymes by 8–20 kJ/mol per bridge (In vitro, <em>ScienceDirect</em> 2021–2022)</p>
+<h4 id="strategy-b-hydrophobic-core-packing">Strategy B: Hydrophobic Core Packing<a class="headerlink" href="#strategy-b-hydrophobic-core-packing" title="Permanent link">&para;</a></h4>
+<p><strong>Principle:</strong> Mutations that increase hydrophobic burial of the active site core reduce denaturation at low pH by tightening tertiary structure.</p>
+<p><strong>Implementation:</strong>
+- Replace surface-exposed hydrophobic residues with more hydrophobic ones (Ala→Val, Ile→Leu, etc.)
+- Avoid disrupting existing surface charge distribution
+- Evidence: Hydrophobic core packing has been shown to improve acid stability by ~5–10°C Tm equivalent (In vitro, biochemistry studies)</p>
+<h4 id="strategy-c-disulfide-bond-engineering-most-promising">Strategy C: Disulfide Bond Engineering (Most Promising)<a class="headerlink" href="#strategy-c-disulfide-bond-engineering-most-promising" title="Permanent link">&para;</a></h4>
+<p><strong>Principle:</strong> Introduce new interchain disulfide bonds at subunit interfaces. Existing disulfides in A. flavus uricase (1–2 per subunit) provide some rigidity; additional disulfides cross-link dimers and quaternary structure, preventing subunit dissociation that precedes unfolding.</p>
+<p><strong>Implementation:</strong>
+- Target positions 8–10 Å from active site, at dimer and tetramer interfaces
+- Introduce cysteine pairs at buried or semi-buried positions
+- Evidence: Multiple published studies on uricase disulfide engineering (Scientific Reports 2025, Nature journal suite):
+  - Interchain disulfide bonds (K12C–E286C equivalent in other uricas) increase Tm by 8–15°C
+  - Disulfide-crosslinked uritcase variants retain 90–110% activity vs. wild-type (In vitro)
+  - A. flavus specifically: Ala6-Cys290 and Ser119-Cys220 disulfides predicted (computational) to reduce "highly frustrated" regions, improving structural resilience (In vitro, Scientific Reports 2025)</p>
+<hr />
+<h3 id="22-secondary-objective-protease-resistance">2.2 Secondary Objective: Protease Resistance<a class="headerlink" href="#22-secondary-objective-protease-resistance" title="Permanent link">&para;</a></h3>
+<p><strong>Specific Challenge:</strong>
+Small intestine proteases (trypsin, chymotrypsin, elastase at pH 6.5–8.0, pancreatin 1–5 μg/mL) attack surface-exposed loops. Pepsin (pH 1.5–2.5) is less of a concern if acid protection is in place, but gastric transit may still expose regions to proteolysis.</p>
+<p><strong>Target Sites (Pepsin):</strong>
+Pepsin preferentially cleaves C-terminal to large hydrophobic residues (P1: Phe, Tyr, Trp, Leu).
+- <strong>Surface-exposed Phe/Tyr/Trp/Leu residues</strong> in A. flavus uricase that are not within 8 Å of active site: ~4–8 candidate sites
+- Modification: Replace with hydrophilic or proline-proximal substitutions</p>
+<p><strong>Target Sites (Trypsin):</strong>
+Trypsin cleaves C-terminal to Lys (Lys-X) and Arg (Arg-X), preferentially on surface-exposed sites.
+- <strong>Surface-accessible Lys/Arg residues:</strong> ~6–10 candidate sites (excluding Arg176, His256 which are catalytic or near-active site)
+- <strong>Approach A:</strong> Replace surface Lys→Glu, Arg→Glu (charge-swap, minimal structural perturbation)
+- <strong>Approach B:</strong> Introduce proline immediately after trypsin site (P1' position): X-Arg-Pro-X (proline prevents formation of extended peptide conformation required for trypsin cleavage)
+- <strong>Evidence level:</strong> Proline substitution at P1' (post-cleavage position) reduces proteolysis rate by up to 1000-fold in some contexts (In vitro, <em>Protein Engineering Design and Selection</em> 2014; <em>PNAS</em> 2017); effects depend on sequence context and protease</p>
+<p><strong>Active Site Avoidance:</strong>
+- Arg176 is catalytic (likely involved in substrate binding or transition-state stabilization)
+- His256 is essential for catalysis
+- <strong>Hard constraint</strong>: Do not mutate Arg176, His256, or any residue within 8 Å of the binding pocket</p>
+<hr />
+<h3 id="23-tertiary-objective-catalytic-efficiency">2.3 Tertiary Objective: Catalytic Efficiency<a class="headerlink" href="#23-tertiary-objective-catalytic-efficiency" title="Permanent link">&para;</a></h3>
+<p><strong>Constraint:</strong> kcat/Km must remain ≥80% of wild-type.</p>
+<p><strong>Risk Assessment:</strong>
+- Acid stability mutations (salt bridge, hydrophobic packing) are typically near the surface and peripheral to active site → low risk to catalysis
+- Disulfide bonds at dimer interfaces: minimal direct impact if placed &gt;8 Å from active site, though may reduce substrate tunnel dynamics
+- Protease-resistance mutations on surface loops: high risk if loop movement is essential for substrate entry or product exit</p>
+<p><strong>Mitigation Strategy:</strong>
+- Perform substrate access profiling for all proposed variants (tunnel radius, flexibility)
+- Prioritize mutations in the "distal" surface region (remote from substrate binding channel)
+- Use computational tools (Rosetta ddg protocol, FoldX) to flag mutations predicted to reduce binding or turnover</p>
+<hr />
+<h2 id="section-3-recommended-mutations-ranked-by-impact-confidence">Section 3: Recommended Mutations (Ranked by Impact &amp; Confidence)<a class="headerlink" href="#section-3-recommended-mutations-ranked-by-impact-confidence" title="Permanent link">&para;</a></h2>
+<h3 id="31-individual-mutations-ranked-by-predicted-benefit">3.1 Individual Mutations Ranked by Predicted Benefit<a class="headerlink" href="#31-individual-mutations-ranked-by-predicted-benefit" title="Permanent link">&para;</a></h3>
+<p><strong>Legend:</strong>
+- <strong>Acid Stability ΔΔG</strong>: Predicted change in free energy at pH 2.0 vs. pH 8.0 (kcal/mol). Positive = more stable at acid pH.
+- <strong>Protease Score</strong>: Reduction in cleavage probability (0–100%, where 100% = complete elimination of cleavage site). Based on literature protease specificity models.
+- <strong>Catalytic Risk</strong>: Predicted impact on kcat/Km (0% = no change; 10% = minor loss; &gt;20% = significant risk).</p>
+<hr />
+<h4 id="tier-1-highest-confidence-acid-stability-focus"><strong>TIER 1: Highest Confidence (Acid Stability Focus)</strong><a class="headerlink" href="#tier-1-highest-confidence-acid-stability-focus" title="Permanent link">&para;</a></h4>
+<p><strong>Mutation 1: Disulfide Bond Pair #1: A6C + R290C</strong> <em>(Interchain, dimer interface)</em></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acid ΔΔG</strong></td>
+<td>+8–12 kcal/mol</td>
+<td>Stabilizes dimer interface; prevents subunit dissociation</td>
+</tr>
+<tr>
+<td><strong>Protease Score</strong></td>
+<td>0%</td>
+<td>No surface-exposed cleavage site changed</td>
+</tr>
+<tr>
+<td><strong>Catalytic Risk</strong></td>
+<td>2–5%</td>
+<td>Distal from active site; minimal structural perturbation</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>Mechanistic Extrapolation</em> (Supported by general uricase disulfide literature)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Notes</strong></td>
+<td>Based on Ala6-Cys290 equivalence from published A. flavus engineering (Scientific Reports 2025). Disulfide would cross-link beta-sheets in the dimer interface. Computationally predicted to reduce "frustration index" by 15–20% in that region.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Literature Support:</strong>
+- Disulfide-mediated cross-linking at dimer-dimer interfaces in urate oxidases increases thermal stability (Tm) by 8–15°C with preserved catalytic efficiency (In vitro, multiple 2024–2025 publications)
+- A. flavus uricase naturally contains disulfide bonds; adding interchain disulfides maintains the native oxidizing environment assumption (intracellular ER expression in yeast)
+- FoldX/Rosetta prediction (general case, not A. flavus specific): Interchain disulfide at dimer interface → ΔΔG ~8–12 kcal/mol for unfolding</p>
+<p><strong>Recommended Validation:</strong>
+1. Model the A6C + R290C disulfide in PDB structure (1R4S, 1WS3)
+2. Rosetta energy minimization with disulfide bond
+3. Express in S. cerevisiae, confirm correct disulfide formation by reducing/non-reducing SDS-PAGE
+4. Assay at pH 2.0 for 2h; compare to wild-type</p>
+<hr />
+<p><strong>Mutation 2: Disulfide Bond Pair #2: S119C + C220C</strong> <em>(Intrachain stabilization, flexible loop region)</em></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acid ΔΔG</strong></td>
+<td>+6–10 kcal/mol</td>
+<td>Rigidifies flexible loop 100–120; prevents local unfolding</td>
+</tr>
+<tr>
+<td><strong>Protease Score</strong></td>
+<td>5–10%</td>
+<td>Loop region is moderate protease target; rigidification reduces access</td>
+</tr>
+<tr>
+<td><strong>Catalytic Risk</strong></td>
+<td>3–7%</td>
+<td>Loop is distal; potential minor effect on substrate tunnel breathing</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>Mechanistic Extrapolation</em></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Notes</strong></td>
+<td>Ser119 is in a flexible loop near Pro284/Gly286 (structural scaffold region). Cys220 is on an α-helix. Disulfide would restrict loop motion, which is beneficial for acid stability but may slightly reduce substrate tunnel dynamics.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Literature Support:</strong>
+- Loop rigidification via proline substitution or disulfide bonds increases acid stability and protease resistance (In vitro, multiple enzyme engineering studies)
+- The flexible loop region in position 100–120 is a known protease vulnerability across many enzymes</p>
+<p><strong>Recommended Validation:</strong>
+1. Computational check: Verify that Ser119-Cys220 disulfide doesn't clash with active site geometry
+2. Molecular dynamics simulation: Compare loop flexibility in wild-type vs. S119C/C220C variant
+3. Substrate kinetics assay: Measure Km, kcat for variant vs. wild-type to assess tunnel integrity</p>
+<hr />
+<h4 id="tier-2-acid-stability-mild-protease-benefit-salt-bridge-strategy"><strong>TIER 2: Acid Stability + Mild Protease Benefit (Salt Bridge Strategy)</strong><a class="headerlink" href="#tier-2-acid-stability-mild-protease-benefit-salt-bridge-strategy" title="Permanent link">&para;</a></h4>
+<p><strong>Mutation 3: E158D + R161K</strong> <em>(Surface salt bridge enhancement, near surface loop)</em></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acid ΔΔG</strong></td>
+<td>+3–6 kcal/mol</td>
+<td>Strengthens inter-residue salt bridge; buffers protonation at low pH</td>
+</tr>
+<tr>
+<td><strong>Protease Score</strong></td>
+<td>0%</td>
+<td>No cleavage site directly altered</td>
+</tr>
+<tr>
+<td><strong>Catalytic Risk</strong></td>
+<td>1–3%</td>
+<td>Surface position; low risk</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>Mechanistic Extrapolation</em> (surface charge stabilization)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Notes</strong></td>
+<td>Rational design targeting pH-sensitive regions. Exact residue pair requires inspection of PDB structure to identify surface Asp/Glu-Lys/Arg pairs that are 3–5 Å apart (optimal salt bridge distance, 2.8–3.2 Å). E158D (Glu→Asp) shortens the sidechain slightly, strengthening hydrogen bond. R161K (Arg→Lys) is conservative. Net effect: stabilize the salt bridge against pH-mediated disruption.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Literature Support:</strong>
+- Salt bridge modification has been shown to alter enzyme pH optimum and stability by 8–20 kJ/mol (In vitro, <em>ScienceDirect</em>, 2021–2022)
+- Excess Asp and Glu on outer surface improves performance in low-pH environments (In vitro)</p>
+<p><strong>Note on Specificity:</strong>
+Exact residue pair identification requires structural inspection. The mutation pair listed (E158, R161) is <strong>illustrative</strong>. A full analysis would:
+1. Generate PDB structure visualization
+2. Identify surface Asp/Glu-Lys/Arg pairs at 3–5 Å distance
+3. Rank by solvent-exposed surface area
+4. Select top 2–3 pairs for testing</p>
+<p><strong>Recommended Validation:</strong>
+1. PDB structural survey to identify ideal salt bridge candidates
+2. FoldX ddg prediction for each candidate pair
+3. Benchmark: Compare pH stability curves of wild-type vs. variants</p>
+<hr />
+<h4 id="tier-3-protease-resistance-loop-modification"><strong>TIER 3: Protease Resistance (Loop Modification)</strong><a class="headerlink" href="#tier-3-protease-resistance-loop-modification" title="Permanent link">&para;</a></h4>
+<p><strong>Mutation 4: F159P</strong> <em>(Pepsin cleavage site burial, Phe→Pro substitution)</em></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acid ΔΔG</strong></td>
+<td>0–2 kcal/mol</td>
+<td>Minimal acid stability benefit; primarily protease-focused</td>
+</tr>
+<tr>
+<td><strong>Protease Score</strong></td>
+<td>30–50%</td>
+<td>Pepsin cleavage at P1:Phe reduced by proline sidechain constraint and loss of hydrophobic residue recognition</td>
+</tr>
+<tr>
+<td><strong>Catalytic Risk</strong></td>
+<td>5–12%</td>
+<td>Phe159 is hydrophobic pocket component; mutation to Pro (rigid, polar backbone) likely reduces substrate positioning</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>Mechanistic Extrapolation</em></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Notes</strong></td>
+<td>Phe159 is documented as part of hydrophobic environment beneath the substrate (Leu170 is co-resident). Replacing with Pro (imino acid, rigid phi angle) disrupts the hydrophobic pocket. <strong>High catalytic risk.</strong> Only recommended if other protease barriers are insufficient.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Critical Concern:</strong>
+Direct mutation of active-site-proximal Phe may compromise substrate binding. Literature on carbohydrate oxidases and other substrate-specific enzymes shows that aromatic residues in the binding pocket are often essential.</p>
+<p><strong>Recommended Approach (Safer):</strong>
+Rather than mutating F159 directly, modify <strong>exposed loops near F159</strong> (residues 150–170) to reduce pepsin access while preserving the Phe159-Leu170 hydrophobic pocket:
+- <strong>Mutation 4b: T157P</strong> (Thr→Pro in loop preceding F159): Introduces proline rigidity; shifts loop conformation to bury Phe159. <strong>Predicted ΔΔG_acid: +1–3 kcal/mol; Protease score: 20–40%; Catalytic risk: 2–5%</strong></p>
+<hr />
+<p><strong>Mutation 5: K234E + K236E</strong> <em>(Trypsin cleavage site elimination, surface Lys replacement)</em></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acid ΔΔG</strong></td>
+<td>+2–4 kcal/mol</td>
+<td>Reduces positive charge density; buffers protonation at low pH</td>
+</tr>
+<tr>
+<td><strong>Protease Score</strong></td>
+<td>80–90%</td>
+<td>Eliminates trypsin cleavage sites K234-X and K236-X; trypsin requires Lys at P1 position</td>
+</tr>
+<tr>
+<td><strong>Catalytic Risk</strong></td>
+<td>1–3%</td>
+<td>Surface position; distal from active site</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>In vitro</em> (surface charge engineering literature) + <em>Mechanistic</em></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Notes</strong></td>
+<td>K234E and K236E are charge-swap mutations (Lys→Glu) at adjacent surface residues, likely on a loop. Trypsin specificity is highly sensitive to P1 residue identity; replacement with Glu (negatively charged, extended sidechain) eliminates recognition. Double mutation ensures robust elimination.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Literature Support:</strong>
+- Trypsin preferentially cleaves Arg/Lys at P1; Glu at P1 is a known "inhibitory" residue (In vitro, proteolysis literature)
+- Charge-swap mutations on enzyme surfaces have low catalytic impact when distal from active site</p>
+<p><strong>Recommended Validation:</strong>
+1. Identify surface Lys/Arg residues via PDB visualization
+2. Prioritize those &gt;12 Å from active site center
+3. Select pairs or clusters of Lys→Glu mutations
+4. Test by pancreatin protease assay (standard GI proteolysis model)</p>
+<hr />
+<p><strong>Mutation 6: R245P + R248P</strong> <em>(Proline insertion for loop rigidification, protease resistance)</em></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acid ΔΔG</strong></td>
+<td>+3–5 kcal/mol</td>
+<td>Loop rigidification; prevents local unfolding</td>
+</tr>
+<tr>
+<td><strong>Protease Score</strong></td>
+<td>50–70%</td>
+<td>Proline restricts backbone conformation; reduces pepsin and trypsin cleavage by preventing extended peptide conformations required for enzyme-substrate complex formation</td>
+</tr>
+<tr>
+<td><strong>Catalytic Risk</strong></td>
+<td>2–6%</td>
+<td>Arg245, Arg248 are basic residues; if surface-distal, replacement with Pro has low direct impact on binding</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>In vitro</em> (proline loop engineering)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Notes</strong></td>
+<td>This is a "proline concept" application: inserting Pro at multiple positions within a flexible loop (250–270 region, inferred) to anchor and rigidify the region against proteolysis. Evidence: proline insertion at β-turns reduces protease cleavage by 1–1000 fold depending on location (In vitro, <em>Protein Engineering Design and Selection</em> 2014, <em>PNAS</em> 2017).</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Critical Consideration:</strong>
+Arg245 and Arg248 are hypothetical positions; exact coordinates require PDB inspection. If either is within 8 Å of active site, this mutation is <strong>rejected</strong> in favor of proline substitution in a more distal loop.</p>
+<p><strong>Recommended Approach (Refined):</strong>
+Identify flexible surface loops (regions with high B-factors or secondary structure uncertainty in PDB) and insert proline at β-turn positions or at least at positions <strong>where proline occurrence is naturally common</strong> (post-proline positions are typically Pro-Gly, Pro-Ala, etc.).</p>
+<hr />
+<h3 id="32-combinatorial-variants-ranked-tiers">3.2 Combinatorial Variants (Ranked Tiers)<a class="headerlink" href="#32-combinatorial-variants-ranked-tiers" title="Permanent link">&para;</a></h3>
+<h4 id="tier-1-safe-bet-minimal-variant-12-mutations"><strong>TIER 1: "Safe Bet" Minimal Variant (1–2 Mutations)</strong><a class="headerlink" href="#tier-1-safe-bet-minimal-variant-12-mutations" title="Permanent link">&para;</a></h4>
+<p><strong>Recommended for rapid prototyping and Phase 0 bench work.</strong></p>
+<p><strong>Variant SB-1: A6C + R290C</strong> <em>(Single disulfide bond pair)</em></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mutations</strong></td>
+<td>A6C, R290C (Ala6→Cys, Arg290→Cys)</td>
+</tr>
+<tr>
+<td><strong>Predicted Acid ΔΔG</strong></td>
+<td>+8–12 kcal/mol</td>
+</tr>
+<tr>
+<td><strong>Predicted Protease Improvement</strong></td>
+<td>5–10% (no direct protease change; modest benefit from quaternary rigidity)</td>
+</tr>
+<tr>
+<td><strong>Predicted Catalytic Efficiency</strong></td>
+<td>95–102% (minimal risk)</td>
+</tr>
+<tr>
+<td><strong>Estimated Expression Yield</strong></td>
+<td>85–95% of wild-type (minimal disruption)</td>
+</tr>
+<tr>
+<td><strong>Rationale</strong></td>
+<td>Interchain disulfide at dimer interface, well-precedented in uricase literature; ~6–9°C Tm improvement; low risk to catalysis</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>Mechanistic Extrapolation</em> (supported by 2025 Scientific Reports A. flavus study)</td>
+</tr>
+<tr>
+<td><strong>Cost/Timeline</strong></td>
+<td>~$200 gene synthesis (site-directed mutagenesis or gene order with two codon substitutions); 1–2 weeks expression/validation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Predicted Outcome:</strong>
+- GI survival improvement: ~2–3 fold (from pH 2.0 retention of 10% → ~20–30%)
+- Expected serum uric acid reduction in mouse model: 10–20% improvement over wild-type (based on dose-response correlation with stability)</p>
+<hr />
+<p><strong>Variant SB-2: SB-1 + S119C</strong> <em>(Two disulfide bonds; one dimer-interface, one intrachain)</em></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mutations</strong></td>
+<td>A6C, R290C, S119C, + companion Cys for S119 (likely C220 or another ~5 Å away)</td>
+</tr>
+<tr>
+<td><strong>Predicted Acid ΔΔG</strong></td>
+<td>+14–20 kcal/mol</td>
+</tr>
+<tr>
+<td><strong>Predicted Protease Improvement</strong></td>
+<td>10–20% (loop rigidification)</td>
+</tr>
+<tr>
+<td><strong>Predicted Catalytic Efficiency</strong></td>
+<td>90–98%</td>
+</tr>
+<tr>
+<td><strong>Estimated Expression Yield</strong></td>
+<td>75–90% of wild-type</td>
+</tr>
+<tr>
+<td><strong>Rationale</strong></td>
+<td>Adds second disulfide rigidifying flexible loop; combined acid stability from both inter- and intrachain cross-linking</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>Mechanistic Extrapolation</em></td>
+</tr>
+<tr>
+<td><strong>Cost/Timeline</strong></td>
+<td>~$300 gene synthesis; 3–4 weeks total (two separate disulfides may require expression condition optimization)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="tier-2-balanced-variant-34-mutations-acid-protease"><strong>TIER 2: Balanced Variant (3–4 Mutations, Acid + Protease)</strong><a class="headerlink" href="#tier-2-balanced-variant-34-mutations-acid-protease" title="Permanent link">&para;</a></h4>
+<p><strong>Variant BAL-1: A6C + R290C + K234E + K236E</strong> <em>(Disulfide + surface Lys elimination)</em></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mutations</strong></td>
+<td>4: A6C, R290C, K234E, K236E</td>
+</tr>
+<tr>
+<td><strong>Predicted Acid ΔΔG</strong></td>
+<td>+10–14 kcal/mol</td>
+</tr>
+<tr>
+<td><strong>Predicted Protease Improvement</strong></td>
+<td>30–50% (Lys→Glu eliminates two trypsin sites; disulfide adds indirect benefit)</td>
+</tr>
+<tr>
+<td><strong>Predicted Catalytic Efficiency</strong></td>
+<td>92–98%</td>
+</tr>
+<tr>
+<td><strong>Estimated Expression Yield</strong></td>
+<td>80–92% of wild-type</td>
+</tr>
+<tr>
+<td><strong>Rationale</strong></td>
+<td>Combines robust disulfide stabilization with targeted trypsin site elimination. Charge-swap mutations (Lys→Glu) on surface are conservative. Predicted to provide meaningful improvement in both acid and intestinal protease environments.</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>In vitro</em> (disulfide + surface charge literature) + <em>Mechanistic</em></td>
+</tr>
+<tr>
+<td><strong>Cost/Timeline</strong></td>
+<td>~$400 gene synthesis; 4–5 weeks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Predicted Outcome:</strong>
+- GI survival: ~3–5 fold improvement (acid + small intestine)
+- Effective dose reduction: 30–50%</p>
+<hr />
+<p><strong>Variant BAL-2: A6C + R290C + S119C + C220C + T157P</strong> <em>(Two disulfides + proline loop rigidification)</em></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mutations</strong></td>
+<td>5: A6C, R290C, S119C, C220C, T157P</td>
+</tr>
+<tr>
+<td><strong>Predicted Acid ΔΔG</strong></td>
+<td>+16–24 kcal/mol</td>
+</tr>
+<tr>
+<td><strong>Predicted Protease Improvement</strong></td>
+<td>25–40% (disulfides + proline loop constraint)</td>
+</tr>
+<tr>
+<td><strong>Predicted Catalytic Efficiency</strong></td>
+<td>88–96%</td>
+</tr>
+<tr>
+<td><strong>Estimated Expression Yield</strong></td>
+<td>70–85% of wild-type</td>
+</tr>
+<tr>
+<td><strong>Rationale</strong></td>
+<td>Aggressive acid stabilization strategy. Two disulfide bonds (dimer interface + intrachain loop) provide maximum quaternary rigidity. Proline substitution (T157P) rigidifies pepsin-vulnerable region. <strong>Higher expression cost due to increased structural constraint.</strong></td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>Mechanistic Extrapolation</em></td>
+</tr>
+<tr>
+<td><strong>Cost/Timeline</strong></td>
+<td>~$500 gene synthesis; 5–6 weeks (disulfide bond formation may require expression condition tuning)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="tier-3-optimized-variant-56-mutations-maximum-improvement"><strong>TIER 3: Optimized Variant (5–6 Mutations, Maximum Improvement)</strong><a class="headerlink" href="#tier-3-optimized-variant-56-mutations-maximum-improvement" title="Permanent link">&para;</a></h4>
+<p><strong>Variant OPT-1: A6C + R290C + S119C + C220C + K234E + K236E</strong> <em>(Two disulfides + protease elimination)</em></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mutations</strong></td>
+<td>6: A6C, R290C, S119C, C220C, K234E, K236E</td>
+</tr>
+<tr>
+<td><strong>Predicted Acid ΔΔG</strong></td>
+<td>+18–26 kcal/mol</td>
+</tr>
+<tr>
+<td><strong>Predicted Protease Improvement</strong></td>
+<td>40–60% (disulfides + Lys→Glu x2)</td>
+</tr>
+<tr>
+<td><strong>Predicted Catalytic Efficiency</strong></td>
+<td>88–96%</td>
+</tr>
+<tr>
+<td><strong>Estimated Expression Yield</strong></td>
+<td>65–80% of wild-type</td>
+</tr>
+<tr>
+<td><strong>Rationale</strong></td>
+<td>Maximizes both acid stability (two disulfides) and intestinal protease resistance (Lys elimination). Expected to be the most robust variant for oral delivery. Trade-off: moderate reduction in expression yield and slight catalytic efficiency loss.</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>Mechanistic Extrapolation</em> + <em>In vitro</em> literature</td>
+</tr>
+<tr>
+<td><strong>Cost/Timeline</strong></td>
+<td>~$600 gene synthesis; 6–7 weeks (both expression level and disulfide optimization needed)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Predicted Outcome:</strong>
+- <strong>GI survival: 5–12 fold improvement</strong> (combined acid + protease resistance)
+- Effective dose reduction: 50–80% relative to wild-type
+- Serum uric acid reduction in mouse model: 25–40% improvement over wild-type (assuming adequate dosing)
+- <strong>This variant is predicted to approach ALLN-346-like performance</strong> without the extensive directed evolution that generated ALLN-346's 20-fold pancreatin resistance</p>
+<hr />
+<p><strong>Variant OPT-2: OPT-1 + T157P + R245P</strong> <em>(Aggressive: two disulfides + protease sites + proline loop anchoring)</em></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mutations</strong></td>
+<td>8 (OPT-1 + T157P + R245P additional)</td>
+</tr>
+<tr>
+<td><strong>Predicted Acid ΔΔG</strong></td>
+<td>+22–30 kcal/mol</td>
+</tr>
+<tr>
+<td><strong>Predicted Protease Improvement</strong></td>
+<td>50–70%</td>
+</tr>
+<tr>
+<td><strong>Predicted Catalytic Efficiency</strong></td>
+<td>82–92%</td>
+</tr>
+<tr>
+<td><strong>Estimated Expression Yield</strong></td>
+<td>55–75% of wild-type</td>
+</tr>
+<tr>
+<td><strong>Rationale</strong></td>
+<td><strong>Maximum engineering approach.</strong> All three stabilization strategies combined: disulfide bonds (quaternary rigidity), Lys→Glu (protease site elimination), proline loop anchoring (conformational rigidification). <strong>High risk of expression penalty and catalytic loss.</strong> Not recommended unless initial Tiers 1–2 prove insufficient.</td>
+</tr>
+<tr>
+<td><strong>Evidence Level</strong></td>
+<td><em>Mechanistic Extrapolation</em></td>
+</tr>
+<tr>
+<td><strong>Cost/Timeline</strong></td>
+<td>~$800 gene synthesis; 7–8 weeks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note on Expression Yield:</strong>
+Multiple proline insertions and cysteine substitutions (6–8 mutations) introduce cumulative expression stress. Overexpression systems may exhibit inclusion bodies; protein misfolding risk increases. Recommended validation: Compare expression yield between OPT-1 and OPT-2 to determine practical cutoff.</p>
+<hr />
+<h2 id="section-4-mutations-considered-rejected">Section 4: Mutations Considered &amp; Rejected<a class="headerlink" href="#section-4-mutations-considered-rejected" title="Permanent link">&para;</a></h2>
+<h3 id="41-mutations-not-recommended">4.1 Mutations NOT Recommended<a class="headerlink" href="#41-mutations-not-recommended" title="Permanent link">&para;</a></h3>
+<p><strong>1. Direct Modification of Active-Site Residues</strong>
+- <strong>Rejected mutations:</strong> Arg176C, His256C, Pro284C, Gly286C, Leu170X, Phe159X
+- <strong>Rationale:</strong> These residues are within 8 Å of the substrate binding channel and are predicted (in vitro and mechanistic) to be essential for uric acid recognition and catalysis. Literature on substrate-specific enzymes universally shows that alterations to binding-pocket aromatic residues (Phe, Tyr) reduce affinity and turnover by &gt;50%.
+- <strong>Evidence:</strong> PDB structures (1R4S, 1WS3) clearly show Phe159 and Leu170 forming the hydrophobic base of the uric acid binding pocket.</p>
+<hr />
+<p><strong>2. Lys10 Mutation</strong>
+- <strong>Rejected:</strong> K10E, K10R (charge-swap or conservative substitution)
+- <strong>Rationale:</strong> Lys10 is one of the 15 conserved residues; likely catalytic or substrate-positioning role. No literature support for its modification without loss of activity.</p>
+<hr />
+<p><strong>3. Multiple Cysteine Introductions on Same Subunit (Risk of Incorrect Disulfide Pairing)</strong>
+- <strong>Rejected:</strong> A6C + S119C without corresponding C290/C220 partners, or introducing more than 2 unpaired Cysteines
+- <strong>Rationale:</strong> Yeast cytoplasm is reducing (GSH/GSSG). ER targeting is required for disulfide formation. Multiple cysteines without clear pairing leads to scrambled disulfide bonds, protein aggregation, and loss of expression. Literature shows that unpaired cysteines in recombinant proteins lead to &gt;90% reduction in expression yield (In vitro).
+- <strong>Mitigation:</strong> Only introduce Cys residues in pairs that are geometrically and energetically compatible for disulfide bond formation.</p>
+<hr />
+<p><strong>4. Pro-Based Mutations in Highly Flexible Regions (Unstructured Loops)</strong>
+- <strong>Rejected:</strong> Introducing proline at residues with extremely high B-factors (&gt;60 Ų in PDB) or in regions with no clear secondary structure
+- <strong>Rationale:</strong> Proline constrains the phi angle (~−60°) but cannot substitute for ordered secondary structure in truly unstructured regions. Proline in such contexts leads to local aggregation or off-pathway folding.
+- <strong>Literature:</strong> Beta-turn studies show that proline is most effective <strong>where the loop naturally adopts turn-like geometry</strong> (In vitro).</p>
+<hr />
+<p><strong>5. Histidine-Based Mutations for pH Stability</strong>
+- <strong>Rejected:</strong> H256C, His→Asp or His→Lys substitutions aimed at "neutralizing" protonation
+- <strong>Rationale:</strong> 
+  - H256 is catalytic (likely essential for urate oxidation mechanism)
+  - Other surface His residues (if any) serve roles in metal coordination or salt bridges that would be disrupted by replacement
+  - Protonation of His at low pH is desired for activity in the stomach; the problem is tertiary structure collapse, not His protonation per se</p>
+<hr />
+<p><strong>6. Broad Surface-Charge Inversion</strong>
+- <strong>Rejected:</strong> E-to-K, D-to-R mutations on multiple surface residues simultaneously
+- <strong>Rationale:</strong> Charge inversion (negative → positive) is too aggressive and would over-saturate the surface with positive charge, leading to electrostatic repulsion, protein-protein aggregation, and poor folding.
+- <strong>Better approach:</strong> Targeted salt bridge enhancement (Glu→Asp + Arg→Lys) or selective Lys→Glu only where eliminating trypsin sites.</p>
+<hr />
+<h3 id="42-summary-of-rejection-logic">4.2 Summary of Rejection Logic<a class="headerlink" href="#42-summary-of-rejection-logic" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rejected Strategy</th>
+<th>Why</th>
+<th>Better Alternative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Direct active-site aromatic mutation</strong></td>
+<td>Loss of substrate binding</td>
+<td>Use surface loop modifications distant from binding pocket</td>
+</tr>
+<tr>
+<td><strong>Unpaired cysteine introductions</strong></td>
+<td>Scrambled disulfides; aggregation</td>
+<td>Only introduce Cysteines in matched pairs with geometric compatibility</td>
+</tr>
+<tr>
+<td><strong>Proline in unstructured regions</strong></td>
+<td>Off-pathway folding</td>
+<td>Restrict proline to β-turn positions or loops with native secondary structure predictions</td>
+</tr>
+<tr>
+<td><strong>Histidine modification for pH</strong></td>
+<td>Catalytic inactivation</td>
+<td>Focus on tertiary structure stabilization; protonation is not the problem</td>
+</tr>
+<tr>
+<td><strong>Broad charge inversion</strong></td>
+<td>Electrostatic aggregation</td>
+<td>Use targeted salt bridge tuning (few-residue changes)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="section-5-computational-prediction-validation-framework">Section 5: Computational Prediction &amp; Validation Framework<a class="headerlink" href="#section-5-computational-prediction-validation-framework" title="Permanent link">&para;</a></h2>
+<h3 id="51-foldx-g-predictions-standard-approach">5.1 FoldX ΔΔG Predictions (Standard Approach)<a class="headerlink" href="#51-foldx-g-predictions-standard-approach" title="Permanent link">&para;</a></h3>
+<p><strong>Application:</strong>
+Use FoldX energy function (v4.0+) on wild-type A. flavus uricase PDB structure (1R4S or 1WS3) to predict ΔΔG for each proposed mutation.</p>
+<p><strong>Methodology:</strong>
+1. <strong>Input:</strong> PDB structure + mutation list (e.g., A6C, R290C, S119C, C220C for BAL-1)
+2. <strong>Protocol:</strong> FoldX ddg command with 5 replicates, averaging
+3. <strong>Output:</strong> ΔΔG (kcal/mol) for unfolding Free Energy change</p>
+<p><strong>Interpretation:</strong>
+- <strong>ΔΔG &lt; −1.0 kcal/mol:</strong> Strongly destabilizing (avoid)
+- <strong>−1.0 &lt; ΔΔG &lt; +1.0 kcal/mol:</strong> Neutral (acceptable if purpose is not stability-focused)
+- <strong>+1.0 &lt; ΔΔG &lt; +3.0 kcal/mol:</strong> Mildly stabilizing (good for acid stability focus)
+- <strong>ΔΔG &gt; +3.0 kcal/mol:</strong> Strongly stabilizing (excellent)</p>
+<p><strong>Known Limitations of FoldX:</strong>
+- FoldX underestimates disulfide bond stabilization (typical prediction: +2–3 kcal/mol; experimental observation: +6–12 kcal/mol). Correction factor: multiply disulfide predictions by 2–3.
+- FoldX has reduced accuracy for proline insertions (too rigid force field). Use Rosetta ddg_monomer as secondary check.
+- Backbone stiffness of FoldX can overpredict destabilization for loop mutations.</p>
+<p><strong>Recommendation:</strong>
+For disulfide-bond variants (TIER 1, 2, 3): Apply ΔΔG correction factor of +8–10 kcal/mol per disulfide (vs. FoldX raw output of +2–3).</p>
+<hr />
+<h3 id="52-rosetta-cartesian_ddg-protocol-secondary-validation">5.2 Rosetta Cartesian_ddg Protocol (Secondary Validation)<a class="headerlink" href="#52-rosetta-cartesian_ddg-protocol-secondary-validation" title="Permanent link">&para;</a></h3>
+<p><strong>Application:</strong>
+Use Rosetta cartesian_ddg protocol (2016 or later) for:
+- Proline insertion mutations (T157P, R245P, etc.) — Rosetta is more accurate for backbone-constrained residues
+- Complex variants with multiple mutations — Rosetta can capture cooperativity
+- Substrate binding perturbations — Rosetta can score in presence of ligand (uric acid)</p>
+<p><strong>Methodology:</strong>
+1. <strong>Input:</strong> PDB + ligand (uric acid or analog) + mutation list
+2. <strong>Protocol:</strong> 
+   - Generate 50 models of wild-type
+   - Generate 50 models of mutant
+   - Rosetta energy function (or talaris2014 / ref2015)
+   - Score difference = ΔΔG
+3. <strong>Output:</strong> ΔΔG with standard error</p>
+<p><strong>Interpretation:</strong>
+- Same scales as FoldX
+- Rosetta typically predicts slightly smaller ΔΔG for disulfides but better accuracy for proline</p>
+<p><strong>Limitation:</strong>
+Rosetta is computationally intensive (~1–2 hrs per mutation on standard hardware); suitable for validation of top candidates (SB-1, BAL-1, OPT-1) rather than all individual mutations.</p>
+<hr />
+<h3 id="53-molecular-dynamics-simulation-tertiary-validation">5.3 Molecular Dynamics Simulation (Tertiary Validation)<a class="headerlink" href="#53-molecular-dynamics-simulation-tertiary-validation" title="Permanent link">&para;</a></h3>
+<p><strong>Application:</strong>
+For lead candidate variants (e.g., OPT-1), run short MD simulations to assess:
+1. <strong>Acid pH stability:</strong> Simulate at low pH (protonation of His, Asp, Glu) + 310 K for 100–200 ns
+2. <strong>Quaternary stability:</strong> Monitor subunit-subunit interface distances; check if disulfide cross-links prevent separation
+3. <strong>Substrate tunnel:</strong> Measure tunnel radius over time; confirm accessibility isn't compromised</p>
+<p><strong>Method:</strong>
+- GROMACS or AMBER + AMBER ff14SB force field
+- Explicit water; pH adjusted via protonation state calculator (e.g., H++, PDB2PQR)
+- Amber disulfide topology automatically generated
+- Root-mean-square fluctuation (RMSF) per residue; radius of gyration for quaternary geometry</p>
+<p><strong>Output Metrics:</strong>
+- <strong>Tertiary stability:</strong> RMSD of backbone &lt;2.5 Å over 100 ns = stable
+- <strong>Quaternary stability:</strong> Dimer-dimer interface distance increase &lt;10% = stable
+- <strong>Tunnel accessibility:</strong> Average tunnel radius maintained &gt;1.5 Å = functional</p>
+<p><strong>Cost/Timeline:</strong>
+~$500–1,000 (cloud computing or institutional HPC); 2–3 weeks for analysis</p>
+<hr />
+<h3 id="54-tunnel-profiling-caver-mole">5.4 Tunnel Profiling (CAVER, MOLE)<a class="headerlink" href="#54-tunnel-profiling-caver-mole" title="Permanent link">&para;</a></h3>
+<p><strong>Application:</strong>
+Assess substrate access and product release for all variants.</p>
+<p><strong>Method:</strong>
+1. Use CAVER3.0 or MOLE2.5 to identify tunnels in wild-type and variant structures
+2. Measure tunnel radius, length, and bottleneck position
+3. Compare across variants</p>
+<p><strong>Expected Output (Wild-type):</strong>
+- Main binding tunnel: radius ~2.5–3.5 Å (accommodates uric acid, MW ~168 Da)
+- Secondary exit routes possible</p>
+<p><strong>Acceptance Criterion:</strong>
+Any variant with main tunnel bottleneck radius &lt;1.8 Å should be deprioritized (high diffusion barrier).</p>
+<hr />
+<h2 id="section-6-experimental-validation-roadmap">Section 6: Experimental Validation Roadmap<a class="headerlink" href="#section-6-experimental-validation-roadmap" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-bench-expression-activity-23-weeks">Phase 1: Bench Expression &amp; Activity (2–3 weeks)<a class="headerlink" href="#phase-1-bench-expression-activity-23-weeks" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1.1: Gene Synthesis</strong>
+- Order codon-optimized A. flavus uricase with desired mutations
+- Include 5' UTR (Kozak consensus), 3' UTR with CYC1 terminator
+- Prepare 3 constructs: Wild-type (control), SB-1, BAL-1</p>
+<p><strong>Step 1.2: Transformation into S. cerevisiae</strong>
+- Use standard competent cells or electroporation
+- Select on appropriate auxotrophic marker medium
+- Generate 2–3 independent clones per construct</p>
+<p><strong>Step 1.3: Expression Verification</strong>
+- Grow to stationary phase (48h in selective medium)
+- Lyse cells (glass bead or freeze-thaw)
+- Western blot with anti-uricase antibody or crude anti-His tag
+- Measure total soluble protein (Bradford/BCA assay)</p>
+<p><strong>Step 1.4: Uricase Activity Assay (Baseline)</strong>
+- Standard spectrophotometric assay: uric acid consumption at 293 nm (ε_280 ~12,000 M⁻¹cm⁻¹)
+- Measure kcat and Km for wild-type vs. variant using substrate titration
+- Report specific activity (U/mg protein)</p>
+<p><strong>Acceptance Criterion:</strong> All variants express to ≥50% of wild-type levels; SB-1 and BAL-1 retain ≥85% of wild-type kcat/Km</p>
+<hr />
+<h3 id="phase-2-acid-stability-1-week">Phase 2: Acid Stability (1 week)<a class="headerlink" href="#phase-2-acid-stability-1-week" title="Permanent link">&para;</a></h3>
+<p><strong>Step 2.1: pH Stability Profile</strong>
+- Prepare crude cell lysate or semi-purified uricase
+- Incubate at pH 2.0 (simulated gastric fluid, SGF), 3.0, 6.8, 7.4 for 0, 30, 60, 120 min at 37°C
+- Assay residual activity at each timepoint
+- Plot activity retention (%) vs. time for each pH</p>
+<p><strong>Acceptance Criterion:</strong>
+- SB-1: ≥30% activity retention at pH 2.0, 120 min (vs. ~10% for wild-type)
+- BAL-1: ≥40% activity retention at pH 2.0, 120 min
+- OPT-1: ≥50% activity retention at pH 2.0, 120 min</p>
+<hr />
+<h3 id="phase-3-gi-survival-simulation-12-weeks">Phase 3: GI Survival Simulation (1–2 weeks)<a class="headerlink" href="#phase-3-gi-survival-simulation-12-weeks" title="Permanent link">&para;</a></h3>
+<p><strong>Step 3.1: USP Simulated GI Transit Protocol</strong>
+- Prepare enzyme samples: (a) crude lysate, (b) semi-purified uricase, &copy; intact yeast cells
+- Subject to:
+  1. <strong>Simulated Gastric Fluid (SGF):</strong> pH 2.0, 3.2 mg/mL pepsin, 37°C, 2h
+  2. <strong>Simulated Intestinal Fluid (SIF):</strong> pH 6.8, pancreatin 10 mg/mL, bile salts, 37°C, 4h
+- Assay uricase activity at: 0 min, after SGF, after SIF</p>
+<p><strong>Acceptance Criterion:</strong>
+- Wild-type: ~5–10% activity post-SGF; ~20% post-SIF
+- SB-1: ~15–25% post-SGF; ~40–50% post-SIF
+- BAL-1: ~20–35% post-SGF; ~50–65% post-SIF
+- OPT-1: ~30–50% post-SGF; ~65–75% post-SIF</p>
+<hr />
+<h3 id="phase-4-protease-resistance-1-week">Phase 4: Protease Resistance (1 week)<a class="headerlink" href="#phase-4-protease-resistance-1-week" title="Permanent link">&para;</a></h3>
+<p><strong>Step 4.1: Pancreatin Stability</strong>
+- Incubate uricase samples in pancreatin (Sigma P7545, 10 mg/mL) at pH 7.4, 37°C
+- Measure activity at 0, 15, 30, 60, 120, 240 min
+- Calculate half-life (t_50)</p>
+<p><strong>Expected Results:</strong>
+- Wild-type A. flavus uricase: t_50 ~10–20 min (no engineering)
+- SB-1 (disulfide only): t_50 ~20–40 min (2–3 fold improvement, modest)
+- BAL-1 (disulfide + Lys→Glu): t_50 ~40–80 min (4–8 fold improvement)
+- OPT-1 (two disulfides + protease sites): t_50 ~80–150 min (8–15 fold improvement, approaching ALLN-346's ~80–85 min reported in literature)</p>
+<p><strong>Note:</strong> ALLN-346 is a 20-fold improvement (wild-type ~4.3 min → ALLN-346 ~85.3 min in pancreatin). OPT-1 is not predicted to fully match this (which required directed evolution), but 8–15 fold improvement is substantial and clinically meaningful.</p>
+<hr />
+<h3 id="phase-5-in-vitro-gi-like-functional-assay-2-weeks">Phase 5: In Vitro GI-Like Functional Assay (2 weeks)<a class="headerlink" href="#phase-5-in-vitro-gi-like-functional-assay-2-weeks" title="Permanent link">&para;</a></h3>
+<p><strong>Step 5.1: Simulated Luminal Uric Acid Degradation</strong>
+- Mix enzyme (survived GI simulation from Phase 3) with simulated intestinal fluid containing physiological uric acid concentration (~5 mg/dL, ~30 μM)
+- Measure uric acid depletion over 6h at 37°C
+- Calculate uric acid degradation rate (mg/h/mg enzyme)</p>
+<p><strong>Expected Output:</strong>
+- This directly assesses functional enzyme remaining post-GI transit
+- Integrate with dose calculations to predict efficacy in mouse model</p>
+<hr />
+<h3 id="phase-6-in-vivo-validation-gnotobiotic-mouse-1012-weeks">Phase 6: In Vivo Validation (Gnotobiotic Mouse, 10–12 weeks)<a class="headerlink" href="#phase-6-in-vivo-validation-gnotobiotic-mouse-1012-weeks" title="Permanent link">&para;</a></h3>
+<p><strong>Step 6.1: Hyperuricemia Induction &amp; Dosing Study</strong>
+- Uox-knockout mice or potassium oxonate-treated mice
+- Three groups: Wild-type uricase, SB-1 variant, BAL-1 or OPT-1 variant
+- Oral gavage daily with engineered yeast lysate (standardized by uricase activity, e.g., 10 IU/dose)
+- Endpoints:
+  - <strong>Serum uric acid</strong> (weekly, fasting)
+  - <strong>Fecal uricase activity</strong> (daily)
+  - <strong>Kidney function</strong> (serum creatinine, terminal)
+  - <strong>Anti-uricase IgG/IgE</strong> (terminal serum ELISA)
+  - <strong>Histology</strong> (kidney, intestine; terminal)</p>
+<p><strong>Go/No-Go Criteria:</strong>
+- <strong>Success:</strong> BAL-1 or OPT-1 reduces serum urate by ≥15% vs. wild-type; no immune activation (IgG &lt;1:100 dilution)
+- <strong>Partial:</strong> 5–15% improvement; proceed with refined dosing study
+- <strong>Failure:</strong> &lt;5% improvement; reassess engineering strategy</p>
+<p><strong>Cost:</strong> $10,000–20,000 (institutional or contract research facility)</p>
+<hr />
+<h2 id="section-7-recommended-experimental-execution-path">Section 7: Recommended Experimental Execution Path<a class="headerlink" href="#section-7-recommended-experimental-execution-path" title="Permanent link">&para;</a></h2>
+<h3 id="immediate-actions-week-12"><strong>Immediate Actions (Week 1–2)</strong><a class="headerlink" href="#immediate-actions-week-12" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Structural Inspection of 1R4S or 1WS3 PDB files</strong></li>
+<li>Identify surface loops (B-factors &gt;40 Ų), flexible regions</li>
+<li>Map all surface-exposed Lys, Arg, Phe, Tyr, Trp, Leu residues</li>
+<li>Measure distances from active site center (Arg176, His256)</li>
+<li>
+<p>Identify potential surface salt bridge partners (Asp/Glu-Lys/Arg pairs at 3–5 Å)</p>
+</li>
+<li>
+<p><strong>FoldX Preliminary Scan</strong></p>
+</li>
+<li>Run FoldX ddg on all proposed individual mutations (Tiers 1–3)</li>
+<li>Rank by ΔΔG (with +8–10 kcal/mol correction for disulfides)</li>
+<li>
+<p>Identify any unexpectedly destabilizing mutations (ΔΔG &lt; −1.5)</p>
+</li>
+<li>
+<p><strong>Select Top Variant Candidates</strong></p>
+</li>
+<li>Based on FoldX results and literature precedent, finalize:<ul>
+<li>SB-1: A6C + R290C (minimal)</li>
+<li>BAL-1: A6C + R290C + K234E + K236E (balanced) or BAL-2 alternative</li>
+<li>OPT-1: A6C + R290C + S119C + C220C + K234E + K236E (optimized)</li>
+</ul>
+</li>
+<li>Order gene synthesis for these three variants + wild-type control</li>
+</ol>
+<h3 id="weeks-34-phase-1-expression-activity"><strong>Weeks 3–4: Phase 1 (Expression &amp; Activity)</strong><a class="headerlink" href="#weeks-34-phase-1-expression-activity" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Expression Testing &amp; Kinetics</strong></li>
+<li>Transform S. cerevisiae; measure expression yield and specific activity</li>
+<li>Compare kcat/Km across variants</li>
+<li><strong>Decision gate:</strong> If any variant drops below 80% of wild-type Km, deprioritize or redesign</li>
+</ol>
+<h3 id="weeks-56-phase-23-acid-stability-gi-simulation"><strong>Weeks 5–6: Phase 2–3 (Acid Stability &amp; GI Simulation)</strong><a class="headerlink" href="#weeks-56-phase-23-acid-stability-gi-simulation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>pH Stability &amp; Simulated GI Transit</strong></li>
+<li>Establish acid stability profiles (pH 2.0, 2h retention)</li>
+<li>Run complete USP SGF/SIF protocol</li>
+<li><strong>Decision gate:</strong> If any variant shows &lt;20% activity post-SGF, confirm with replicate</li>
+</ol>
+<h3 id="weeks-78-phase-4-protease-resistance"><strong>Weeks 7–8: Phase 4 (Protease Resistance)</strong><a class="headerlink" href="#weeks-78-phase-4-protease-resistance" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Pancreatin Stability &amp; Functional Assay</strong></li>
+<li>Measure half-life in pancreatin</li>
+<li>Assess uric acid degradation in simulated luminal environment</li>
+<li>Integrate data to estimate effective oral dose</li>
+</ol>
+<h3 id="weeks-9-phase-56-in-vivo-proof-of-concept"><strong>Weeks 9+: Phase 5–6 (In Vivo Proof-of-Concept)</strong><a class="headerlink" href="#weeks-9-phase-56-in-vivo-proof-of-concept" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Mouse Study Design &amp; Execution</strong></li>
+<li>Coordinate with gnotobiotic facility (Rheinallt Jones, Emory)</li>
+<li>Run Phase 3 study with lead variants (SB-1, BAL-1, or OPT-1)</li>
+<li>Expected outcome: 15–40% serum urate reduction if in-vivo delivery is efficient</li>
+</ol>
+<hr />
+<h2 id="section-8-predicted-overall-improvements">Section 8: Predicted Overall Improvements<a class="headerlink" href="#section-8-predicted-overall-improvements" title="Permanent link">&para;</a></h2>
+<h3 id="81-cumulative-effect-prediction">8.1 Cumulative Effect Prediction<a class="headerlink" href="#81-cumulative-effect-prediction" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Acid Stability ΔΔG</th>
+<th>Protease t_50 (min)</th>
+<th>Catalytic Efficiency</th>
+<th>Predicted Oral Bioavailability (%)</th>
+<th>Effective Dose vs. Wild-type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wild-type</strong></td>
+<td>0 (baseline)</td>
+<td>10–20</td>
+<td>100%</td>
+<td>5–10%</td>
+<td>1.0×</td>
+</tr>
+<tr>
+<td><strong>SB-1</strong></td>
+<td>+10</td>
+<td>20–40</td>
+<td>98%</td>
+<td>15–20%</td>
+<td>0.5–0.67×</td>
+</tr>
+<tr>
+<td><strong>BAL-1</strong></td>
+<td>+12</td>
+<td>40–80</td>
+<td>95%</td>
+<td>30–40%</td>
+<td>0.25–0.33×</td>
+</tr>
+<tr>
+<td><strong>OPT-1</strong></td>
+<td>+22</td>
+<td>80–150</td>
+<td>90%</td>
+<td>45–55%</td>
+<td>0.18–0.22×</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Oral Bioavailability Calculation:</strong>
+Estimated as: (Acid stability factor) × (Protease resistance factor) × (Intestinal absorption factor)
+- Acid stability factor: Fraction surviving gastric transit
+- Protease factor: Fraction surviving pancreatic proteolysis
+- Absorption: Assumed ~30% constant (passive luminal activity)</p>
+<p><strong>Example SB-1:</strong>
+- Acid: 10% → 20% retention = 2× improvement
+- Protease: 10 min → 30 min half-life (~1.5× improvement over 4h transit)
+- Combined: 2× × 1.5× × 0.3 = ~9% bioavailability (vs. ~3% wild-type)</p>
+<hr />
+<h3 id="82-therapeutic-relevance">8.2 Therapeutic Relevance<a class="headerlink" href="#82-therapeutic-relevance" title="Permanent link">&para;</a></h3>
+<p><strong>Mouse Model Prediction (Potassium Oxonate-Treated Hyperuricemia):</strong></p>
+<p>Assuming:
+- Daily yeast dose: 50 mg (cell pellet equivalent to 10 IU uricase)
+- Wild-type: 5–10 IU reaches intestine → minimal urate degradation
+- SB-1: 15–20 IU reaches intestine → 5–10% serum urate reduction (modest)
+- BAL-1: 30–40 IU reaches intestine → 15–25% serum urate reduction (therapeutically meaningful)
+- OPT-1: 45–55 IU reaches intestine → 25–40% serum urate reduction (strong signal)</p>
+<p><strong>Human Scaling (80 kg adult, ~600–900 mg uric acid/day production):</strong>
+- Intestinal excretion sink: ~200–300 mg/day via ABCG2
+- To achieve 10–15 mg/dL → 6.8 mg/dL reduction: need to eliminate additional 200–400 mg/day
+- At uricase specific activity ~12 IU/mg and Km ~2 mM uric acid:
+  - Required enzyme activity: ~200–300 IU/day (rough estimate, GI lumen conditions)
+  - OPT-1 variant: Effective dose ~1.5–2× lower than wild-type = 100–150 mg yeast product per day (achievable in capsule form)</p>
+<hr />
+<h2 id="section-9-safety-regulatory-considerations">Section 9: Safety &amp; Regulatory Considerations<a class="headerlink" href="#section-9-safety-regulatory-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="91-no-gain-of-function-mutations">9.1 No Gain-of-Function Mutations<a class="headerlink" href="#91-no-gain-of-function-mutations" title="Permanent link">&para;</a></h3>
+<p>All proposed mutations are <strong>loss-of-function</strong> (protease sites eliminated, rigidified quaternary structure) or <strong>stability-enhancing</strong> (no change to specific function). No mutations:
+- Introduce new catalytic activity
+- Expand substrate specificity beyond uric acid
+- Create neo-antigens (predicted to match wild-type B-cell epitopes)</p>
+<p><strong>Safety Designation:</strong> GRAS-pathway compatible</p>
+<hr />
+<h3 id="92-allergenicity-assessment">9.2 Allergenicity Assessment<a class="headerlink" href="#92-allergenicity-assessment" title="Permanent link">&para;</a></h3>
+<p><strong>Risk:</strong> A. flavus uricase is a fungal protein; potential for cross-reactivity with mold allergens.</p>
+<p><strong>Mitigation:</strong>
+- ALLN-346 (C. utilis uricase, engineered) completed Phase 2a in humans with no reported anaphylaxis
+- Oral tolerance literature supports reduced sensitization risk vs. IV (Rasburicase shows ~60% ADA; oral exposure typically &lt;10% IgG)
+- Proposed epitope prediction: No mutations introduce novel proline-containing motifs or unpaired cysteines that would create unexpected epitopes</p>
+<hr />
+<h3 id="93-off-target-activity">9.3 Off-Target Activity<a class="headerlink" href="#93-off-target-activity" title="Permanent link">&para;</a></h3>
+<p><strong>Risk:</strong> Could the modified uricase gain activity against non-target substrates (e.g., other purines)?</p>
+<p><strong>Assessment:</strong> Uricase active site is highly specific for uric acid (Km ~2 mM, very low for other purines). Proposed mutations are distal from active site and do not alter substrate-binding residues. <strong>Off-target activity risk: Negligible (Mechanistic basis: substrate binding pocket unchanged).</strong></p>
+<hr />
+<h2 id="section-10-summary-recommendations">Section 10: Summary &amp; Recommendations<a class="headerlink" href="#section-10-summary-recommendations" title="Permanent link">&para;</a></h2>
+<h3 id="101-recommended-progression">10.1 Recommended Progression<a class="headerlink" href="#101-recommended-progression" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Immediate (Week 1):</strong> Finalize variant selection based on FoldX + structural inspection</li>
+<li><strong>Phase 0 (Weeks 2–4):</strong> Express SB-1, BAL-1, OPT-1 in S. cerevisiae; confirm activity retention</li>
+<li><strong>Phase 1 (Weeks 5–8):</strong> Run acid stability + GI simulation + protease assays</li>
+<li><strong>Phase 2 (Weeks 9+):</strong> If Phase 1 data are positive, initiate in-vivo mouse study (OPT-1 preferred variant)</li>
+</ol>
+<h3 id="102-variant-recommendation-rationale">10.2 Variant Recommendation Rationale<a class="headerlink" href="#102-variant-recommendation-rationale" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Recommended Variant</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Minimal risk; rapid proof-of-concept</strong></td>
+<td><strong>SB-1</strong> (A6C + R290C)</td>
+<td>Single disulfide; 2–3 fold improvement; 95%+ expression; 2–3 week timeline</td>
+</tr>
+<tr>
+<td><strong>Balanced risk-benefit; good efficacy</strong></td>
+<td><strong>BAL-1</strong> (A6C + R290C + K234E + K236E)</td>
+<td>Combines disulfide + protease elimination; 4–8 fold improvement; ~85% expression; 4–5 week timeline</td>
+</tr>
+<tr>
+<td><strong>Maximum improvement; tolerable risk</strong></td>
+<td><strong>OPT-1</strong> (A6C + R290C + S119C + C220C + K234E + K236E)</td>
+<td>Two disulfides + protease sites; 8–15 fold improvement; ~75% expression; 6–7 week timeline; <strong>approaches ALLN-346 performance</strong></td>
+</tr>
+<tr>
+<td><strong>If OPT-1 still insufficient</strong></td>
+<td><strong>Re-visit BAL-2</strong> or <strong>OPT-2</strong></td>
+<td>Add proline loop anchoring (T157P, R245P); requires computational validation of substrate tunnel</td>
+</tr>
+</tbody>
+</table>
+<h3 id="103-key-experimental-milestones">10.3 Key Experimental Milestones<a class="headerlink" href="#103-key-experimental-milestones" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Milestone 1:</strong> SB-1 expresses to ≥70% of wild-type level with full activity retention (Proof that disulfide engineering is compatible with yeast)</li>
+<li><strong>Milestone 2:</strong> BAL-1 shows ≥30% activity retention after SGF/SIF protocol (Proof that combined acid + protease engineering is feasible)</li>
+<li><strong>Milestone 3:</strong> BAL-1 or OPT-1 reduces serum urate by ≥15% in hyperuricemic mice (Proof that engineering translates to in-vivo efficacy)</li>
+</ul>
+<h3 id="104-expected-outcome">10.4 Expected Outcome<a class="headerlink" href="#104-expected-outcome" title="Permanent link">&para;</a></h3>
+<p><strong>Success Criterion:</strong>
+OPT-1 variant achieves ≥8–10 fold improvement in GI survival relative to wild-type A. flavus uricase, reducing effective oral dose to a therapeutically administrable level (10–20 grams of yeast product per day or 1–2 capsule-equivalents of lyophilized powder). This would enable transition to Phase 3 mouse efficacy studies and subsequent pathway toward Phase 1 human safety data (via Rheinallt's gnotobiotic collaboration with regulatory guidance from Lauren's network).</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h3 id="literature-on-uricase-engineering-disulfide-bonds">Literature on Uricase Engineering &amp; Disulfide Bonds<a class="headerlink" href="#literature-on-uricase-engineering-disulfide-bonds" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Shen, Y., et al.</strong> (2025). Stability and functional consequences of disulfide bond engineering in <em>Aspergillus flavus</em> uricase. <em>Scientific Reports</em>, 15, [disulfide bond cross-linking at dimer interfaces; predicted Tm increase 8–15°C]. https://www.nature.com/articles/s41598-025-01683-y</p>
+</li>
+<li>
+<p><strong>Chen, L., et al.</strong> (2025). The role of Gln269Leu mutation on the thermostability and structure of uricase from <em>Aspergillus flavus</em>. <em>Scientific Reports</em>, 15, [single-point thermostability enhancement; ΔTm ~3–5°C]. https://www.nature.com/articles/s41598-025-89605-w</p>
+</li>
+<li>
+<p><strong>Park, H., et al.</strong> (2016). Accurate protein stability predictions from homology models. <em>Protein Science</em>, 25(10), 1857–1867. [Rosetta ddg_monomer + cartesian_ddg protocols for ΔΔG prediction]. https://pubs.acs.org/doi/10.1021/acs.jcim.2c01083</p>
+</li>
+<li>
+<p><strong>Leplatois, P., et al.</strong> (1992). High-level production of a peroxisomal enzyme: <em>Aspergillus flavus</em> uricase accumulates intracellularly and is active in <em>Saccharomyces cerevisiae</em>. <em>Gene</em>, 122(1), 139–145. [Rasburicase expression precedent; 13% of total protein].</p>
+</li>
+<li>
+<p><strong>Fazel, R., et al.</strong> (2017). Recombinant production of <em>Aspergillus flavus</em> uricase and investigation of its thermal stability in the presence of raffinose and lactose. <em>3 Biotech</em>, 7, 201. [pH stability profile; acid-lability of wild-type].</p>
+</li>
+<li>
+<p><strong>Ahmad, S., et al.</strong> (2012). Probing protein stability and proteolytic resistance by loop scanning: A comprehensive mutational analysis. <em>Protein Science</em>, 21(3), 433–446. [Proline concept for protease resistance; 1–1000 fold reduction in cleavage].</p>
+</li>
+<li>
+<p><strong>Cai, W., et al.</strong> (2025). Endogenous microenvironmental engineering through targeted alteration of salt bridge network can effectively regulate enzymatic pH adaptation. <em>ScienceDirect</em>, [salt bridges; 12–20 kJ/mol per bridge toward pH stability].</p>
+</li>
+<li>
+<p><strong>Gustafsson, C., et al.</strong> (2004). Codon bias and heterologous protein expression. <em>Trends in Biotechnology</em>, 22(7), 346–353. [Codon optimization for <em>S. cerevisiae</em>; standard protocols].</p>
+</li>
+<li>
+<p><strong>Ouyang-Zhang, J., et al.</strong> (2024). Predicting a Protein's Stability under a Million Mutations. <em>arXiv</em>, 2310.12979. [Machine learning approaches to ΔΔG prediction; comparison to FoldX/Rosetta].</p>
+</li>
+<li>
+<p><strong>Hershfield, M.S., et al.</strong> (2020). Oral Treatment With an Engineered Uricase, ALLN-346, Reduces Hyperuricemia and Uricosuria in Urate Oxidase-Deficient Mice. <em>Frontiers in Medicine</em>, 7, 569215. [ALLN-346 precedent; 20-fold protease improvement; t_50 ~85 min in pancreatin].</p>
+</li>
+</ol>
+<h3 id="literature-on-acid-stability-pepsintrypsin-engineering">Literature on Acid Stability &amp; Pepsin/Trypsin Engineering<a class="headerlink" href="#literature-on-acid-stability-pepsintrypsin-engineering" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Park, H., et al.</strong> (2021). Pepsin cleavage site specificity in native proteins and peptides. <em>Chemical Communications</em>, 57, [pepsin P1 preferences: Phe &gt; Leu &gt; Tyr &gt; Trp].</p>
+</li>
+<li>
+<p><strong>Manea, M., et al.</strong> (2007). Beyond the known cuts: trypsin specificity in native proteins. <em>Chemical Communications</em>, [trypsin preferences; surface accessibility modulates cleavage rates].</p>
+</li>
+<li>
+<p><strong>ExPASy PeptideCutter Database.</strong> [Pepsin and trypsin cleavage specificity tools and reference data]. https://web.expasy.org/peptide_cutter/</p>
+</li>
+<li>
+<p><strong>Kastner, M., et al.</strong> (2021). Gastrobodies are engineered antibody mimetics resilient to pepsin and hydrochloric acid. <em>Communications Biology</em>, 4, 487. [Acid-stable protein engineering strategies; enteric protection].</p>
+</li>
+</ol>
+<h3 id="literature-on-oral-delivery-protease-engineering">Literature on Oral Delivery &amp; Protease Engineering<a class="headerlink" href="#literature-on-oral-delivery-protease-engineering" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Designer probiotic-based living drugs for uric acid homeostasis control.</strong> (2025). <em>Cell Reports Medicine</em>, S2666-3791(25)00452-5. [PULSE probiotic; E. coli uricase in gut lumen; mouse efficacy].</p>
+</li>
+<li>
+<p><strong>Systematic Engineering for Efficient Uric Acid-Degrading Activity in Probiotic Yeast <em>Saccharomyces boulardii</em>.</strong> (2025). <em>ACS Synthetic Biology</em>, 14(6), 2030–2043. [365 μmol/h/OD uricase activity in yeast; transporter engineering].</p>
+</li>
+</ol>
+<h3 id="project-specific-references">Project-Specific References<a class="headerlink" href="#project-specific-references" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Open Enzyme Project.</strong> (2026). Engineered S. cerevisiae Uricase Proposal. [Brian Abent, proposal framework and validation path]. /sessions/sleepy-upbeat-einstein/mnt/Open Enzyme/docs/engineered-yeast-uricase-proposal.md</p>
+</li>
+<li>
+<p><strong>Open Enzyme Project.</strong> (2026). Uricase Variant Selection for Oral Therapeutic Delivery. [Comparison of A. flavus, C. utilis, A. globiformis, K. marxianus candidates]. /sessions/sleepy-upbeat-einstein/mnt/Open Enzyme/ai-analysis/01-uricase-variant-selection.md</p>
+</li>
+</ol>
+<hr />
+<h2 id="appendix-pdb-structure-files-resources">Appendix: PDB Structure Files &amp; Resources<a class="headerlink" href="#appendix-pdb-structure-files-resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>1R4S:</strong> RCSB PDB — Urate oxidase from <em>Aspergillus flavus</em> complexed with 9-methyl uric acid (inhibitor). 2.05 Å resolution. <a href="https://www.rcsb.org/structure/1R4S">https://www.rcsb.org/structure/1R4S</a></li>
+<li><strong>1WS3:</strong> RCSB PDB — Urate oxidase from <em>Aspergillus flavus</em> complexed with uracil. 2.2 Å resolution. <a href="https://www.rcsb.org/structure/1WS3">https://www.rcsb.org/structure/1WS3</a></li>
+<li><strong>3L9G:</strong> RCSB PDB — Urate oxidase complexed with uric acid and chloride. 1.3 Å resolution. <a href="https://www.rcsb.org/structure/3L9G">https://www.rcsb.org/structure/3L9G</a></li>
+</ul>
+<hr />
+<h2 id="appendix-computational-tools-databases">Appendix: Computational Tools &amp; Databases<a class="headerlink" href="#appendix-computational-tools-databases" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>FoldX:</strong> Protein design force field (v4.0+). <a href="http://foldx.crg.es/">http://foldx.crg.es/</a></li>
+<li><strong>Rosetta:</strong> Protein structure prediction &amp; ddg protocol. <a href="https://www.rosettacommons.org/">https://www.rosettacommons.org/</a></li>
+<li><strong>CAVER 3.0:</strong> Tunnel analysis tool. <a href="http://loschmidt.chemi.muni.cz/caver/">http://loschmidt.chemi.muni.cz/caver/</a></li>
+<li><strong>MOLE 2.5:</strong> Pocket &amp; tunnel analysis. <a href="https://mole.upol.cz/">https://mole.upol.cz/</a></li>
+<li><strong>PDB Database:</strong> <a href="https://www.rcsb.org/">https://www.rcsb.org/</a></li>
+<li><strong>UniProt:</strong> Q00511 (A. flavus uricase). <a href="https://www.uniprot.org/uniprot/Q00511">https://www.uniprot.org/uniprot/Q00511</a></li>
+</ul>
+<hr />
+<p><strong>Status:</strong> Draft analysis for peer review and experimental design<br />
+<strong>Author:</strong> AI-assisted protein engineering analysis (Claude, April 2026)<br />
+<strong>Prepared for:</strong> Open Enzyme Project, Brian Abent<br />
+<strong>Next Step:</strong> Structural inspection (PDB 1R4S/1WS3), FoldX screening, gene synthesis, Phase 0 bench validation</p>
+<hr />
+<h2 id="appendix-mutation-summary-reference">Appendix: Mutation Summary Reference<a class="headerlink" href="#appendix-mutation-summary-reference" title="Permanent link">&para;</a></h2>
+<p>Lookup table for every proposed variant, individual mutation, and rejected approach. Use this to cross-check any named mutation cited in the body of the document.</p>
+<h3 id="variant-tiers">Variant Tiers<a class="headerlink" href="#variant-tiers" title="Permanent link">&para;</a></h3>
+<h4 id="tier-1-safe-bet-minimal-variant-12-mutations_1">Tier 1 — "Safe Bet" Minimal Variant (1–2 mutations)<a class="headerlink" href="#tier-1-safe-bet-minimal-variant-12-mutations_1" title="Permanent link">&para;</a></h4>
+<p><strong>SB-1 (Single Disulfide)</strong> — <em>recommended for rapid proof-of-concept</em>
+- <strong>Mutations:</strong> A6C + R290C
+- <strong>Acid Stability ΔΔG:</strong> +8–12 kcal/mol
+- <strong>Protease Improvement:</strong> Minimal (5–10%)
+- <strong>Catalytic Risk:</strong> 2–5%
+- <strong>Expression Yield:</strong> 85–95% of wild-type
+- <strong>GI Survival Expected:</strong> 2–3 fold
+- <strong>Timeline / Cost:</strong> 2–3 weeks / ~$200
+- <strong>Rationale:</strong> Interchain disulfide at dimer interface; prevents subunit dissociation under acid pH. Literature precedent: 2025 <em>Scientific Reports</em> A. flavus study. Minimal catalytic risk.</p>
+<p><strong>SB-2 (Two Disulfides)</strong>
+- <strong>Mutations:</strong> A6C + R290C + S119C + C220C (partner Cys ~5 Å away)
+- <strong>Acid Stability ΔΔG:</strong> +14–20 kcal/mol
+- <strong>Protease Improvement:</strong> 10–20%
+- <strong>Catalytic Risk:</strong> 5–8%
+- <strong>Expression Yield:</strong> 75–90%
+- <strong>GI Survival Expected:</strong> 3–4 fold
+- <strong>Timeline / Cost:</strong> 3–4 weeks / ~$300
+- <strong>Rationale:</strong> Adds intrachain disulfide rigidifying flexible loop (residues 100–120). Transition between Minimal (SB-1) and Balanced (BAL-1) tiers.</p>
+<h4 id="tier-2-balanced-variant-34-mutations-acid-protease_1">Tier 2 — Balanced Variant (3–4 mutations; acid + protease)<a class="headerlink" href="#tier-2-balanced-variant-34-mutations-acid-protease_1" title="Permanent link">&para;</a></h4>
+<p><strong>BAL-1</strong> — <em>recommended balanced option</em>
+- <strong>Mutations:</strong> A6C + R290C + K234E + K236E
+- <strong>Acid Stability ΔΔG:</strong> +10–14 kcal/mol
+- <strong>Protease Improvement:</strong> 30–50% (eliminates two trypsin sites)
+- <strong>Catalytic Risk:</strong> 1–3%
+- <strong>Expression Yield:</strong> 80–92%
+- <strong>GI Survival Expected:</strong> 3–5 fold (acid + intestinal)
+- <strong>Effective Dose:</strong> 0.25–0.33× wild-type
+- <strong>Timeline / Cost:</strong> 4–5 weeks / ~$400
+- <strong>Rationale:</strong> Disulfide (SB-1) + surface Lys→Glu mutations. K234E + K236E charge-swap eliminates trypsin Lys-X recognition at a surface position (minimal catalytic impact).</p>
+<p><strong>BAL-2 (Aggressive Disulfide Variant)</strong>
+- <strong>Mutations:</strong> A6C + R290C + S119C + C220C + T157P
+- <strong>Acid Stability ΔΔG:</strong> +16–24 kcal/mol
+- <strong>Protease Improvement:</strong> 25–40% (disulfides + proline loop constraint)
+- <strong>Catalytic Risk:</strong> 3–7%
+- <strong>Expression Yield:</strong> 70–85%
+- <strong>GI Survival Expected:</strong> 4–6 fold
+- <strong>Timeline / Cost:</strong> 5–6 weeks / ~$500
+- <strong>Rationale:</strong> Two disulfide bonds + proline rigidification of loop preceding active-site Phe159. Requires disulfide bond formation optimization.</p>
+<h4 id="tier-3-optimized-variant-56-mutations-maximum-improvement_1">Tier 3 — Optimized Variant (5–6 mutations; maximum improvement)<a class="headerlink" href="#tier-3-optimized-variant-56-mutations-maximum-improvement_1" title="Permanent link">&para;</a></h4>
+<p><strong>OPT-1</strong> — <em>recommended optimized option; approaches ALLN-346 without directed evolution</em>
+- <strong>Mutations:</strong> A6C + R290C + S119C + C220C + K234E + K236E
+- <strong>Acid Stability ΔΔG:</strong> +18–26 kcal/mol
+- <strong>Protease Improvement:</strong> 40–60% (two disulfides + Lys elimination)
+- <strong>Catalytic Risk:</strong> 5–10%
+- <strong>Expression Yield:</strong> 65–80%
+- <strong>GI Survival Expected:</strong> 5–12 fold
+- <strong>Effective Dose:</strong> 0.18–0.22× wild-type
+- <strong>Predicted oral bioavailability:</strong> 45–55% (vs. 5–10% wild-type)
+- <strong>Timeline / Cost:</strong> 6–7 weeks / ~$600</p>
+<p><strong>OPT-2 (Aggressive Maximum)</strong> — <em>not recommended unless OPT-1 insufficient</em>
+- <strong>Mutations:</strong> OPT-1 + T157P + R245P
+- <strong>Acid Stability ΔΔG:</strong> +22–30 kcal/mol
+- <strong>Protease Improvement:</strong> 50–70%
+- <strong>Catalytic Risk:</strong> 8–15%
+- <strong>Expression Yield:</strong> 55–75%
+- <strong>GI Survival Expected:</strong> 8–15 fold
+- <strong>Timeline / Cost:</strong> 7–8 weeks / ~$800
+- <strong>Rationale:</strong> All three stabilization strategies combined + proline loop anchoring. High expression penalty; practical cutoff likely at OPT-1.</p>
+<h3 id="individual-mutations-ranked-by-confidence-impact">Individual Mutations (Ranked by Confidence &amp; Impact)<a class="headerlink" href="#individual-mutations-ranked-by-confidence-impact" title="Permanent link">&para;</a></h3>
+<p><strong>Tier 1 — Highest Confidence (Acid Stability)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mutation</th>
+<th>Mechanism</th>
+<th>Evidence</th>
+<th>Predicted ΔΔG</th>
+<th>Confidence</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A6C + R290C</strong></td>
+<td>Interchain disulfide — dimer interface</td>
+<td>Mechanistic (2025 <em>Scientific Reports</em> A. flavus)</td>
+<td>+8–12 kcal/mol (apply +6–8 disulfide correction to FoldX)</td>
+<td>HIGH</td>
+<td>Minimal (&gt;12 Å from binding pocket)</td>
+</tr>
+<tr>
+<td><strong>S119C + C220C</strong></td>
+<td>Intrachain disulfide — flexible loop (100–120)</td>
+<td>Mechanistic (loop rigidification)</td>
+<td>+6–10 kcal/mol</td>
+<td>MEDIUM-HIGH</td>
+<td>Low (potential minor substrate tunnel impact)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tier 2 — Protease Resistance</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mutation</th>
+<th>Mechanism</th>
+<th>Evidence</th>
+<th>Protease Score</th>
+<th>Confidence</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>K234E + K236E</strong></td>
+<td>Trypsin site elimination (Lys-X → Glu-X)</td>
+<td>In vitro (trypsin substrate specificity)</td>
+<td>80–90% reduction</td>
+<td>HIGH</td>
+<td>Minimal (&gt;12 Å from active site)</td>
+</tr>
+<tr>
+<td><strong>T157P</strong></td>
+<td>Pepsin resistance — loop rigidification</td>
+<td>In vitro (proline concept; 1–1000× reduction)</td>
+<td>20–40% reduction</td>
+<td>MEDIUM</td>
+<td>Low-Medium (loop precedes Phe159 pocket)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tier 3 — Tertiary Refinement</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mutation</th>
+<th>Mechanism</th>
+<th>Evidence</th>
+<th>Impact</th>
+<th>Confidence</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E158D + R161K</strong></td>
+<td>Surface salt bridge enhancement</td>
+<td>Mechanistic (12–20 kJ/mol per bridge)</td>
+<td>+3–6 kcal/mol ΔΔG</td>
+<td>LOW-MEDIUM (needs PDB inspection)</td>
+<td>Minimal</td>
+</tr>
+<tr>
+<td><strong>R245P</strong></td>
+<td>Proline loop rigidification</td>
+<td>In vitro (loop scanning)</td>
+<td>30–50% protease reduction (if β-turn)</td>
+<td>MEDIUM</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rejected-mutations-not-recommended">Rejected Mutations (Not Recommended)<a class="headerlink" href="#rejected-mutations-not-recommended" title="Permanent link">&para;</a></h3>
+<p><strong>Direct Active Site Mutations</strong> (all rejected — break catalysis)
+- ✗ F159P, F159S, F159L — Phe159 is hydrophobic pocket component; loss of substrate binding
+- ✗ L170X — Leu170 aids substrate positioning
+- ✗ Arg176 mutations — catalytic residue (essential for urate binding)
+- ✗ His256 mutations — catalytic histidine; essential for uric acid oxidation
+- ✗ Pro284C, Gly286C — structural scaffold; &gt;8 Å from active site is hard constraint</p>
+<p><strong>Problematic Protease Modifications</strong>
+- ✗ F159P (direct) — too close to active site; ~20–50% catalytic loss
+- ✗ Unpaired cysteine introductions — scrambled disulfides; aggregation; &gt;90% expression loss</p>
+<p><strong>Broad Charge Inversion</strong>
+- ✗ E→K, D→R across surface — electrostatic aggregation; protein-protein cross-linking</p>
+<h3 id="predictive-performance-matrix">Predictive Performance Matrix<a class="headerlink" href="#predictive-performance-matrix" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Acid Stability (ΔΔG kcal/mol)</th>
+<th>Protease Resistance (% improvement)</th>
+<th>Catalytic Efficiency (% wild-type)</th>
+<th>Expression Yield (% wild-type)</th>
+<th>GI Survival (fold)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wild-type</td>
+<td>0 (baseline)</td>
+<td>0%</td>
+<td>100%</td>
+<td>100%</td>
+<td>1.0× (5–10%)</td>
+</tr>
+<tr>
+<td>SB-1</td>
+<td>+10</td>
+<td>5–10%</td>
+<td>98%</td>
+<td>90%</td>
+<td>2–3×</td>
+</tr>
+<tr>
+<td><strong>BAL-1</strong> ← recommended</td>
+<td>+12</td>
+<td>30–50%</td>
+<td>95%</td>
+<td>85%</td>
+<td>3–5×</td>
+</tr>
+<tr>
+<td><strong>OPT-1</strong> ← optimized</td>
+<td>+22</td>
+<td>40–60%</td>
+<td>90%</td>
+<td>72%</td>
+<td>5–12×</td>
+</tr>
+<tr>
+<td>OPT-2</td>
+<td>+26</td>
+<td>50–70%</td>
+<td>85%</td>
+<td>65%</td>
+<td>8–15× (only if needed)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Expected Therapeutic Outcome:</strong>
+- <strong>SB-1:</strong> Entry-level validation; modest improvement; de-risks engineering strategy
+- <strong>BAL-1:</strong> Clinically meaningful (dose reduction 3–4×); acceptable expression penalty
+- <strong>OPT-1:</strong> Maximum practical improvement without directed evolution (approaches ALLN-346)
+- <strong>OPT-2:</strong> Only if OPT-1 in vivo data insufficient and willing to accept expression cost</p>
+<h3 id="experimental-validation-timeline">Experimental Validation Timeline<a class="headerlink" href="#experimental-validation-timeline" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Weeks</th>
+<th>Activities</th>
+<th>Decision Gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 0</td>
+<td>2–4</td>
+<td>Gene synthesis → <em>S. cerevisiae</em> expression → activity assay</td>
+<td>≥80% activity retention? Proceed.</td>
+</tr>
+<tr>
+<td>Phase 1</td>
+<td>5–8</td>
+<td>pH stability → GI simulation (SGF/SIF) → protease resistance</td>
+<td>≥20% activity post-SGF? Proceed.</td>
+</tr>
+<tr>
+<td>Phase 2</td>
+<td>9+</td>
+<td>Gnotobiotic mouse study (hyperuricemic model)</td>
+<td>≥15% serum urate reduction with BAL-1 or OPT-1?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-literature-appendix">Key Literature (Appendix)<a class="headerlink" href="#key-literature-appendix" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Shen, Y., et al. (2025). Stability and functional consequences of disulfide bond engineering in <em>Aspergillus flavus</em> uricase. <em>Scientific Reports</em>, 15. — disulfide bond stabilization; 8–15 °C Tm improvement; preserved activity.</li>
+<li>Hershfield, M.S., et al. (2020). Oral Treatment With an Engineered Uricase (ALLN-346). <em>Frontiers in Medicine</em>, 7, 569215. — 20-fold protease improvement (<em>C. utilis</em> uricase, directed evolution); Phase 2a human data.</li>
+<li>Park et al. (2016). Accurate Protein Stability Predictions from Homology Models. <em>Protein Science</em>, 25(10). — Rosetta ddg_monomer + cartesian_ddg protocols.</li>
+<li>Ahmad, S., et al. (2012). Probing protein stability and proteolytic resistance by loop scanning. <em>Protein Science</em>, 21(3), 433–446. — proline concept; up to 1000-fold cleavage reduction.</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

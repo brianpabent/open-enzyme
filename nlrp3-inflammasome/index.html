@@ -1,0 +1,3010 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/nlrp3-inflammasome/">
+      
+      
+        <link rel="prev" href="../crispr-uricase/">
+      
+      
+        <link rel="next" href="../nlrp3-exploit-map/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>NLRP3 Inflammasome - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nlrp3-inflammasome" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NLRP3 Inflammasome
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../open-enzyme-vision/" class="md-tabs__link">
+          
+  
+  
+  Vision & Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gout-pathophysiology/" class="md-tabs__link">
+          
+  
+  
+  Gout & Uricase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  NLRP3 & Inflammation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../digestive-enzymes/" class="md-tabs__link">
+          
+  
+  
+  Koji & Digestive Enzymes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../saccharomyces-cerevisiae/" class="md-tabs__link">
+          
+  
+  
+  Organisms & Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gut-lumen-sink/" class="md-tabs__link">
+          
+  
+  
+  Delivery & Barrier
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bpc-157/" class="md-tabs__link">
+          
+  
+  
+  Compounds & Peptides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sibo/" class="md-tabs__link">
+          
+  
+  
+  Other Conditions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bio-ai-tools/" class="md-tabs__link">
+          
+  
+  
+  Tools & Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-nlrp3-activation-cascade-six-chokepoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The NLRP3 Activation Cascade: Six Chokepoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The NLRP3 Activation Cascade: Six Chokepoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-1-nf-b-priming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 1: NF-κB Priming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-2-nlrp3-activation-and-asc-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 2: NLRP3 Activation and ASC Assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-3-asc-speck-assembly-and-caspase-1-recruitment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 3: ASC Speck Assembly and Caspase-1 Recruitment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-4-caspase-1-activation-and-substrate-cleavage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 4: Caspase-1 Activation and Substrate Cleavage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-5-il-1-and-il-18-secretion-and-signaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 5: IL-1β and IL-18 Secretion and Signaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-6-gasdermin-d-pore-formation-and-pyroptotic-amplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 6: Gasdermin D Pore Formation and Pyroptotic Amplification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-chokepoint-compounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Chokepoint Compounds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pharmaceutical-nlrp3-inhibitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pharmaceutical NLRP3 Inhibitors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pharmaceutical NLRP3 Inhibitors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approved-or-in-clinical-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approved or In Clinical Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineered-koji-opportunity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineered Koji Opportunity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-sibogoutlynn-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SIBO–Gout–Lynn Connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-analysis-production-candidates-for-engineered-koji-april-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Analysis: Production Candidates for Engineered Koji (April 2026)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-nlrp3-activation-cascade-six-chokepoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The NLRP3 Activation Cascade: Six Chokepoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The NLRP3 Activation Cascade: Six Chokepoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-1-nf-b-priming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 1: NF-κB Priming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-2-nlrp3-activation-and-asc-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 2: NLRP3 Activation and ASC Assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-3-asc-speck-assembly-and-caspase-1-recruitment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 3: ASC Speck Assembly and Caspase-1 Recruitment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-4-caspase-1-activation-and-substrate-cleavage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 4: Caspase-1 Activation and Substrate Cleavage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-5-il-1-and-il-18-secretion-and-signaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 5: IL-1β and IL-18 Secretion and Signaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-6-gasdermin-d-pore-formation-and-pyroptotic-amplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint 6: Gasdermin D Pore Formation and Pyroptotic Amplification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-chokepoint-compounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Chokepoint Compounds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pharmaceutical-nlrp3-inhibitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pharmaceutical NLRP3 Inhibitors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pharmaceutical NLRP3 Inhibitors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approved-or-in-clinical-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approved or In Clinical Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineered-koji-opportunity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineered Koji Opportunity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-sibogoutlynn-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SIBO–Gout–Lynn Connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-analysis-production-candidates-for-engineered-koji-april-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Analysis: Production Candidates for Engineered Koji (April 2026)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="nlrp3-inflammasome">NLRP3 Inflammasome<a class="headerlink" href="#nlrp3-inflammasome" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The NLRP3 inflammasome is a multi-protein intracellular complex that acts as a master trigger for the acute inflammatory response in gout. It is composed of three core proteins: NLRP3 (the sensor), ASC (the adaptor), and pro-caspase-1 (the executioner). When activated, it cleaves pro-IL-1β into active interleukin-1β (IL-1β), a potent pro-inflammatory cytokine that drives the explosive pain and swelling of a gout flare. (Source: gout-deep-dive.md, nlrp3-exploit-map.md)</p>
+<p>The inflammasome is not unique to gout—it evolved to respond to pathogenic danger signals. However, monosodium urate (MSU) crystals, which deposit in joints during hyperuricemia, directly trigger NLRP3 assembly through lysosomal rupture, potassium efflux, and reactive oxygen species (ROS) generation. In gout, the innate immune system mistakes metabolic crystals for microbial threats, producing an outsized inflammatory cascade. (Source: gout-deep-dive.md)</p>
+<h2 id="the-nlrp3-activation-cascade-six-chokepoints">The NLRP3 Activation Cascade: Six Chokepoints<a class="headerlink" href="#the-nlrp3-activation-cascade-six-chokepoints" title="Permanent link">&para;</a></h2>
+<p>The NLRP3 inflammasome pathway operates as a sequential cascade with six distinct vulnerability points (chokepoints), each representing a potential therapeutic target. Understanding the cascade structure reveals that gout can be attacked at multiple nodes simultaneously, rather than through a single intervention.</p>
+<h3 id="chokepoint-1-nf-b-priming">Chokepoint 1: NF-κB Priming<a class="headerlink" href="#chokepoint-1-nf-b-priming" title="Permanent link">&para;</a></h3>
+<p><strong>The Step:</strong> Toll-like receptor (TLR) signaling (typically from damage-associated molecular patterns or LPS from gram-negative bacteria in the gut) triggers NF-κB activation. NF-κB translocates to the nucleus and drives transcription of pro-inflammatory genes: NLRP3 itself, pro-IL-1β, pro-IL-18, and ASC. This is the "priming" step—building the components of the inflammasome.</p>
+<p><strong>Why It Matters:</strong> Without sufficient NLRP3 and pro-IL-1β protein, downstream activation cannot occur at meaningful levels. Preventing priming reduces the inflammasome's capacity to respond. (Source: nlrp3-exploit-map.md)</p>
+<p><strong>Exploits:</strong></p>
+<ul>
+<li>
+<p><strong>KPV peptide</strong> (Lys-Pro-Val): The C-terminal tripeptide of alpha-melanocyte-stimulating hormone (α-MSH). Stabilizes IκB-α, preventing NF-κB nuclear translocation. Research shows α-MSH and its derivative (CKPV)₂ specifically reverse the inflammatory effect of urate crystal formation. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Sulforaphane</strong>: Activates the Keap1-Nrf2 pathway, the master regulator of antioxidant defense. Nrf2 competes with NF-κB for the transcriptional co-activator CBP/p300, suppressing NF-κB-driven transcription of NLRP3 and pro-IL-1β. Maximum bioavailability achieved by chewing raw broccoli sprouts (which co-localize glucoraphanin and the enzyme myrosinase) or using freeze-dried sprout capsules. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Curcumin</strong>: A validated NF-κB inhibitor. Native curcumin has ~1% bioavailability, but formulations like Theracurmin (27x improvement) or NovaSOL micellar curcumin (~185x improvement) achieve therapeutic plasma levels. Alternative: combine standard curcumin with piperine (black pepper), which inhibits hepatic glucuronidation and increases absorption ~2,000%. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Berberine</strong>: Suppresses NF-κB and TLR4 signaling, reduces NLRP3 mRNA expression, and remodels the gut microbiota to reduce LPS (lipopolysaccharide) that primes NLRP3 in the first place. Also effective against SIBO (small intestinal bacterial overgrowth), addressing the shared microbial-inflammatory nexus. Dose: 500 mg twice daily with meals. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>BPC-157</strong>: Beyond its tissue-healing effects, BPC-157 modulates the nitric oxide (NO) system, which influences macrophage activation states and reduces the priming capacity of immune cells. (Source: nlrp3-exploit-map.md, peptide-gout-addendum.md)</p>
+</li>
+<li>
+<p><strong>TB-500 (Thymosin β4)</strong>: Suppresses NF-κB p65 nuclear translocation and dampens JNK/p38 MAPK signaling in macrophages. Hits both Chokepoint 1 (priming) and Chokepoint 2 (activation). (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Omega-3 fatty acids (EPA/DHA)</strong>: Precursors to specialized pro-resolving mediators (SPMs) — resolvins (RvE1, RvD1/D2), protectins (PD1), and maresins (MaR1). SPMs suppress neutrophil recruitment and promote macrophage phenotype switching from M1 (inflammatory) to M2 (resolving). Dose: 3–4g EPA+DHA daily. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Resveratrol</strong>: Activates SIRT1, which deacetylates p65 (NF-κB subunit), reducing its transcriptional activity. Use micronized trans-resveratrol, liposomal forms, or pair with pterostilbene (4x better bioavailability and same SIRT1 activation). (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Andrographolide</strong> (from Andrographis paniculata): Covalently modifies the p50 subunit of NF-κB via Michael addition, preventing DNA binding. One of the most potent natural NF-κB inhibitors. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Parthenolide</strong> (from feverfew): Inhibits IKKβ (the kinase that degrades IκB) and directly modifies NF-κB p65. Dual mechanism. DMAPT (dimethylamino-parthenolide) is a more soluble derivative used in research. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Quercetin</strong>: Inhibits NF-κB and also blocks xanthine oxidase (uric acid production). Phytosome form (Quercefit) provides 20x better bioavailability. Dose: 500–1000 mg daily. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>EGCG</strong> (green tea catechin): Inhibits IKK activity, suppresses NF-κB. Dose: 400–800 mg daily or 3–5 cups green tea daily. Matcha provides the highest concentration. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Boswellia (AKBA)</strong>: Acetyl-11-keto-β-boswellic acid directly inhibits IKKβ and 5-LOX. Dose: 300–500 mg standardized extract daily. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Vitamin D</strong>: Vitamin D receptor (VDR) activation suppresses NF-κB. Target 50–70 ng/mL serum levels; 5,000–10,000 IU daily with K2. (Source: nlrp3-exploit-map.md)</p>
+</li>
+</ul>
+<h3 id="chokepoint-2-nlrp3-activation-and-asc-assembly">Chokepoint 2: NLRP3 Activation and ASC Assembly<a class="headerlink" href="#chokepoint-2-nlrp3-activation-and-asc-assembly" title="Permanent link">&para;</a></h3>
+<p><strong>The Step:</strong> MSU crystal phagocytosis triggers potassium efflux from cells and mitochondrial reactive oxygen species (ROS) generation. These are the primary "Signal 2" inputs that cause NLRP3 to oligomerize and recruit ASC. The exact mechanism of signal transduction is still being elucidated, but K⁺ efflux and mtROS are the most validated triggers. Once activated, NLRP3 serves as a nucleation platform for ASC to polymerize into fibrillar aggregates (specks).</p>
+<p><strong>Why It Matters:</strong> This is where the inflammasome actually assembles. Blocking assembly prevents caspase-1 activation, regardless of how much pro-IL-1β was primed in Chokepoint 1. (Source: nlrp3-exploit-map.md)</p>
+<p><strong>Exploits:</strong></p>
+<ul>
+<li>
+<p><strong>Beta-hydroxybutyrate (BHB)</strong>: The ketone body produced during fasting or ketogenic diet. BHB prevents potassium efflux, reduces ASC speck formation, and directly inhibits NLRP3 assembly. Notably, BHB is NOT dependent on AMPK, autophagy, or ROS reduction—it is a direct inhibitory effect on NLRP3 oligomerization. In rodent models, a ketogenic diet significantly reduced gout flare severity. Critical insight: traditional concern that ketosis raises uric acid is true short-term (ketones compete with urate for renal excretion), but with uricase handling uric acid clearance, ketosis becomes pure inflammasome suppression. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)</p>
+</li>
+<li>
+<p><strong>Oridonin</strong>: An ent-kaurane diterpenoid from the Chinese herb Rabdosia rubescens. Covalently modifies cysteine 279 in the NACHT domain of NLRP3 via Michael addition—the same binding site as the pharmaceutical MCC950. Active at 0.5–2 µM. Published in Nature Communications: oridonin exhibits dose-dependent inhibition of caspase-1 cleavage and IL-1β secretion and is NLRP3-specific (does not affect NLRC4 or AIM2). Additionally activates Nrf2 and suppresses NF-κB independently—hitting Chokepoints 1 and 2. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>NAC (N-Acetyl Cysteine)</strong>: Replenishes glutathione, the master intracellular antioxidant. Reduces mtROS, thus reducing the Signal 2 trigger for NLRP3 assembly. Dose: 600–1200 mg daily. Widely available, inexpensive, well-tolerated. The limitation: does not specifically target mitochondria. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>MitoQ (Mitoquinone)</strong>: A coenzyme Q10 derivative conjugated to a triphenylphosphonium cation that targets specifically to mitochondrial membranes, accumulating 100–1000x higher than untargeted antioxidants. Directly scavenges mtROS. Dose: 10–20 mg daily. Available as MitoQ brand supplement. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Spermidine</strong>: Essential for rapamycin-induced autophagy and directly suppresses NLRP3 activation. Found in aged cheese, mushrooms, soy, wheat germ. Supplement dose: 1–6 mg daily. A 2024 study showed spermidine mediates rapamycin's autophagy effects. Also reduces mtROS. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Trehalose</strong>: A disaccharide that activates autophagy via TFEB (independent of mTOR), suppresses NLRP3 accumulation. Dose: 5–10g daily in water or as a sugar substitute. Found in mushrooms, honey, shrimp. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Tranilast</strong>: An anti-allergic drug approved in Japan and South Korea since 1982. Directly binds the NACHT domain of NLRP3 and blocks oligomerization through the same binding site as MCC950, but via a different binding mode. Published in EMBO Molecular Medicine: tranilast showed "remarkable preventive or therapeutic effects" in mouse models of gouty arthritis, CAPS (cryopyrin-associated periodic syndromes), and type 2 diabetes. Safety profile: up to 600 mg daily clinically used for months with good tolerability. Not FDA-approved in the US but accessible internationally. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Autophagy inducers:</strong></p>
+</li>
+<li><strong>Intermittent fasting (16:8 minimum)</strong>: Activates AMPK, inhibits mTOR, induces autophagy, and generates BHB. Two-for-one mechanism. (Source: nlrp3-exploit-map.md)</li>
+<li><strong>Rapamycin</strong>: Gold standard mTOR inhibitor, induces autophagy via spermidine pathway. Dose: 2–5 mg weekly. Requires prescription but accessible through longevity-focused physicians. (Source: nlrp3-exploit-map.md)</li>
+</ul>
+<h3 id="chokepoint-3-asc-speck-assembly-and-caspase-1-recruitment">Chokepoint 3: ASC Speck Assembly and Caspase-1 Recruitment<a class="headerlink" href="#chokepoint-3-asc-speck-assembly-and-caspase-1-recruitment" title="Permanent link">&para;</a></h3>
+<p><strong>The Step:</strong> ASC (apoptosis-associated speck-like protein containing a CARD) oligomerizes into large fibrillar aggregates (specks) at the site of activated NLRP3. These specks serve as the physical platform for recruiting and activating pro-caspase-1. The speck formation is dependent on PYD domain interactions between ASC monomers and requires microtubule-mediated intracellular transport (ASC is normally localized to mitochondria, but must be transported to NLRP3 at the ER).</p>
+<p><strong>Why It Matters:</strong> Preventing speck assembly prevents recruitment and oligomerization of pro-caspase-1, blocking the conversion to active caspase-1 that executes IL-1β cleavage. (Source: nlrp3-exploit-map.md)</p>
+<p><strong>Exploits:</strong></p>
+<ul>
+<li>
+<p><strong>Colchicine</strong>: Depolymerizes microtubules, preventing microtubule-mediated transport of ASC from mitochondria to ER-localized NLRP3. Without transport, specks cannot form. Additionally, colchicine impairs neutrophil chemotaxis, phagocytosis of MSU crystals, and secretion of inflammatory mediators—multi-hit disruption of the inflammasome platform. The oldest and most validated NLRP3 pathway disruptor for gout. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)</p>
+</li>
+<li>
+<p><strong>Spermidine</strong> (again): Enhances autophagy, which clears damaged mitochondria before they can export ASC and recruit it to specks. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>BHB</strong> (again): Beyond preventing K⁺ efflux and NLRP3 oligomerization, BHB reduces ASC oligomerization and speck formation directly. Multi-chokepoint weapon. (Source: nlrp3-exploit-map.md)</p>
+</li>
+</ul>
+<h3 id="chokepoint-4-caspase-1-activation-and-substrate-cleavage">Chokepoint 4: Caspase-1 Activation and Substrate Cleavage<a class="headerlink" href="#chokepoint-4-caspase-1-activation-and-substrate-cleavage" title="Permanent link">&para;</a></h3>
+<p><strong>The Step:</strong> The assembled ASC speck recruits and activates pro-caspase-1 through proximity and conformational changes. Active caspase-1 then cleaves pro-IL-1β into the mature, secreted form of IL-1β, and also cleaves gasdermin D (which we address in Chokepoint 6). This is the executioner step.</p>
+<p><strong>Why It Matters:</strong> Active caspase-1 is the irreversible commitment to IL-1β secretion and pyroptotic cell death. Blocking this step directly prevents mature IL-1β production. (Source: nlrp3-exploit-map.md)</p>
+<p><strong>Exploits:</strong></p>
+<ul>
+<li>
+<p><strong>VX-765 (Belnacasan)</strong>: A prodrug that converts to VRT-043198, a potent, selective, reversible caspase-1 inhibitor. Blocks cleavage of pro-IL-1β, pro-IL-18, and gasdermin D simultaneously. Well-tolerated in human Phase 2a trials (though developed for epilepsy, not gout). Available from research chemical suppliers. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Procyanidin B2</strong> (from grape seed extract): Reduces MSU crystal-induced caspase-1 cleavage and IL-1β secretion in macrophages by blocking cathepsin B (released from ruptured lysosomes, which is required for caspase-1 activation). Dose: 200–400 mg grape seed extract daily. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>EGCG</strong> (again, hitting multiple chokepoints): Suppresses caspase-1 activity in macrophages. Also blocks NF-κB (CP1) and IL-1β signaling (CP5). Dose: 400–800 mg daily or 3–5 cups matcha/green tea. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Berberine</strong> (again, multi-chokepoint): Dose-dependently reduces caspase-1 mRNA expression and protein levels. (Source: nlrp3-exploit-map.md)</p>
+</li>
+</ul>
+<h3 id="chokepoint-5-il-1-and-il-18-secretion-and-signaling">Chokepoint 5: IL-1β and IL-18 Secretion and Signaling<a class="headerlink" href="#chokepoint-5-il-1-and-il-18-secretion-and-signaling" title="Permanent link">&para;</a></h3>
+<p><strong>The Step:</strong> Cleaved IL-1β is secreted from macrophages and binds to IL-1 receptor type 1 (IL-1R1) on neutrophils, endothelial cells, and other target cells. IL-1β drives vasodilation, neutrophil recruitment, pain signaling, and systemic inflammation. IL-18 (also cleaved by caspase-1) contributes to IFN-γ production and further immune amplification. This is where the inflammasome's output becomes systemically manifested as the acute gout flare.</p>
+<p><strong>Why It Matters:</strong> Even if inflammasome activation is incomplete, blocking IL-1β signaling at the receptor level stops the cascade from progressing to the clinical symptoms of a gout attack. (Source: nlrp3-exploit-map.md)</p>
+<p><strong>Exploits:</strong></p>
+<ul>
+<li>
+<p><strong>Anakinra (Kineret)</strong>: Recombinant IL-1 receptor antagonist (IL-1Ra). Competitive antagonist at IL-1R1 that blocks both IL-1β and IL-1α from binding. Single injection can abort a flare within hours. FDA-approved for RA and CAPS, used off-label for gout. Limitation: 100 mg daily subcutaneous injection, short half-life (~4–6 hours), expensive without insurance. Demonstrates that blocking IL-1 signaling is sufficient to stop a gout flare. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Omega-3 SPMs</strong> (again): EPA → Resolvin E1 (RvE1), DHA → Resolvin D1/D2 (RvD1/D2), Protectin D1 (PD1), Maresin 1 (MaR1). These specialized pro-resolving mediators actively command neutrophils to stop infiltrating and promote macrophage phenotype switching from M1→M2. Not just suppression but active resolution signaling. Dose: 3–4g EPA+DHA daily, or pre-formed SPM supplement (SPM Active by Metagenics: 2 softgels daily standardized to 17-HDHA and 18-HEPE). (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Exercise</strong>: Acute exercise transiently increases IL-1Ra (the body's endogenous IL-1 antagonist). Regular moderate exercise maintains elevated baseline IL-1Ra. Important caveat: avoid exercise during an active flare; benefit occurs between flares through chronic training. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>EGCG</strong> (again): Suppresses IL-1β secretion from macrophages and reduces IL-1β-induced downstream signaling in target cells (chondrocytes, synoviocytes). (Source: nlrp3-exploit-map.md)</p>
+</li>
+</ul>
+<h3 id="chokepoint-6-gasdermin-d-pore-formation-and-pyroptotic-amplification">Chokepoint 6: Gasdermin D Pore Formation and Pyroptotic Amplification<a class="headerlink" href="#chokepoint-6-gasdermin-d-pore-formation-and-pyroptotic-amplification" title="Permanent link">&para;</a></h3>
+<p><strong>The Step:</strong> Caspase-1 also cleaves gasdermin D (GSDMD), generating an N-terminal fragment that oligomerizes into large membrane pores. These pores mediate pyroptotic cell death (lytic, inflammatory cell death) of the macrophage, releasing all its intracellular contents—including IL-1β, damage signals, and alarm molecules—into the tissue. This amplifies inflammation explosively.</p>
+<p><strong>Why It Matters:</strong> GSDMD pores are the final exit route for IL-1β and the trigger for the cellular-level inflammatory amplification that converts a localized inflammasome activation into a full-blown tissue flare. Blocking this step prevents pyroptotic amplification and may be the most direct way to limit flare severity. (Source: nlrp3-exploit-map.md)</p>
+<p><strong>Exploits:</strong></p>
+<ul>
+<li>
+<p><strong>Disulfiram (Antabuse)</strong>: FDA-approved since the 1950s for alcohol use disorder. Discovered in 2020 (Nature Immunology) to specifically block gasdermin D pore formation at nanomolar concentrations. Covalently modifies Cys191 on GSDMD, preventing the N-terminal fragment from oligomerizing into membrane pores. Elegant mechanism: disulfiram allows pro-IL-1β cleavage (doesn't block caspase-1) but prevents pore formation. Consequence: IL-1β stays sequestered inside the cell rather than being released. No pores = no pyroptosis = no inflammatory amplification from cell death. Safety profile: FDA-approved with 70+ years of clinical data. Cost: ~$30/month. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Dimethyl Fumarate (DMF, Tecfidera)</strong>: FDA-approved for multiple sclerosis. Discovered to succinate gasdermin D at Cys191, forming S-(2-succinyl)-cysteine. Blocks caspase-1-GSDMD interaction entirely, preventing cleavage, oligomerization, pore formation, and pyroptosis. Clinical evidence: MS patients taking DMF show reduced blood levels of both IL-1β and GSDMD-N (the cleaved pore-forming fragment). Also activates Nrf2 (hitting Chokepoint 1 simultaneously). Access: prescription for MS; off-label use requires creative conversation with prescriber. More expensive than disulfiram. (Source: nlrp3-exploit-map.md)</p>
+</li>
+</ul>
+<h2 id="multi-chokepoint-compounds">Multi-Chokepoint Compounds<a class="headerlink" href="#multi-chokepoint-compounds" title="Permanent link">&para;</a></h2>
+<p>The most efficient exploits hit three or more chokepoints:</p>
+<ul>
+<li>
+<p><strong>BHB (Beta-hydroxybutyrate)</strong>: Blocks priming (CP1), prevents K⁺ efflux (CP2), reduces ASC oligomerization (CP3). Single metabolite produced by the body during fasting. Arguably the single most efficient exploit in the entire cascade. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Berberine</strong>: Suppresses NF-κB/TLR4 (CP1), reduces NLRP3/ASC/caspase-1 mRNA (CP1+CP4), remodels gut microbiota to reduce LPS priming (CP1). Dual benefit for Lynn's SIBO. Swiss Army knife compound. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Oridonin</strong>: Covalent NLRP3 inhibitor (CP2), NF-κB suppressor (CP1), Nrf2 activator (CP1+CP2). Natural compound mimicking pharmaceutical-grade NLRP3 inhibitor. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>DMF (Dimethyl Fumarate)</strong>: Nrf2 activator (CP1+CP2) AND gasdermin D succinator (CP6). Bridges first and last chokepoints. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>EGCG</strong>: NF-κB inhibitor (CP1), caspase-1 suppressor (CP4), IL-1β blocker (CP5). Three downstream chokepoints from drinking tea. (Source: nlrp3-exploit-map.md)</p>
+</li>
+</ul>
+<h2 id="pharmaceutical-nlrp3-inhibitors">Pharmaceutical NLRP3 Inhibitors<a class="headerlink" href="#pharmaceutical-nlrp3-inhibitors" title="Permanent link">&para;</a></h2>
+<h3 id="approved-or-in-clinical-development">Approved or In Clinical Development<a class="headerlink" href="#approved-or-in-clinical-development" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Canakinumab (Ilaris)</strong>: IL-1β monoclonal antibody. FDA-approved for gout and periodic fever syndromes. Very effective but expensive (~$300,000/year). Systemic immunosuppression risk.</p>
+</li>
+<li>
+<p><strong>Anakinra (Kineret)</strong>: IL-1 receptor antagonist. FDA-approved for RA and CAPS. Off-label for refractory gout. Less expensive than canakinumab but requires daily injection.</p>
+</li>
+<li>
+<p><strong>Dapansutrile (OLT1177)</strong>: Oral NLRP3 inhibitor. Phase 2a trial for gout showed "marked target joint pain reduction in all dose groups" with swelling reduction by day 3. Good safety profile (no hepatotoxicity like MCC950). Currently in Phase &#8532; trials. This may eventually be the pharmaceutical solution. (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>MCC950 (CRID3)</strong>: The first specific NLRP3 inhibitor. Binds the Walker B motif in the NACHT domain, blocking ATP hydrolysis required for oligomerization. Clinical development terminated due to hepatotoxicity in Phase 1 RA trial, but it defined the druggable target and validated the mechanism.</p>
+</li>
+</ul>
+<h2 id="engineered-koji-opportunity">Engineered Koji Opportunity<a class="headerlink" href="#engineered-koji-opportunity" title="Permanent link">&para;</a></h2>
+<p>A. oryzae can theoretically be engineered to produce caspase-1 inhibitors or anti-inflammatory compounds during fermentation. While caspase-1 inhibitors are typically peptidomimetics (not easily biosynthesized), koji could be engineered to overproduce compounds like procyanidin precursors or EGCG-like polyphenols that indirectly suppress caspase-1 and NLRP3. The GRAS status of koji makes this feasible as a food-based therapeutic intervention. (Source: nlrp3-exploit-map.md)</p>
+<h2 id="the-sibogoutlynn-connection">The SIBO–Gout–Lynn Connection<a class="headerlink" href="#the-sibogoutlynn-connection" title="Permanent link">&para;</a></h2>
+<p>NLRP3 inflammasome activation is central to both gout and SIBO-driven intestinal inflammation. The same compounds that suppress gout suppress gut inflammation:</p>
+<ul>
+<li>
+<p><strong>Berberine</strong>: SIBO eradication (comparable to rifaximin) + NLRP3 suppression + NF-κB inhibition + gut microbiota remodeling. Same drug, both conditions through the same mechanism.</p>
+</li>
+<li>
+<p><strong>KPV peptide</strong>: Originally studied for IBD/colitis. PepT1-mediated intestinal uptake delivers KPV directly to the gut. Reduces intestinal inflammation via NF-κB suppression in gut epithelium AND systemic inflammation driving gout.</p>
+</li>
+<li>
+<p><strong>Omega-3 SPMs</strong>: Resolve intestinal inflammation AND joint inflammation through the same mediators.</p>
+</li>
+<li>
+<p><strong>BHB/fasting</strong>: Suppresses NLRP3 in gut macrophages AND joint macrophages.</p>
+</li>
+<li>
+<p><strong>Spermidine + Trehalose</strong>: Enhance autophagy, protecting gut barrier integrity and preventing macrophage NLRP3 activation in joints.</p>
+</li>
+</ul>
+<p>This overlap suggests a unified therapeutic strategy addressing both conditions simultaneously through shared NLRP3 modulation. (Source: nlrp3-exploit-map.md)</p>
+<h2 id="ai-analysis-production-candidates-for-engineered-koji-april-2026">AI Analysis: Production Candidates for Engineered Koji (April 2026)<a class="headerlink" href="#ai-analysis-production-candidates-for-engineered-koji-april-2026" title="Permanent link">&para;</a></h2>
+<p><strong>High-Priority NLRP3 Inhibitors Producible via Engineered Microbes:</strong></p>
+<ul>
+<li>
+<p><strong>Ursolic Acid</strong> (triterpene): <strong>8.59 g/L in S. cerevisiae fed-batch</strong> (highest microbial titer reported). Animal evidence for NLRP3 inflammasome suppression. GRAS status (apples, rosemary, oregano). Structural stability ideal for GI delivery. See [[ai-analysis/07-nlrp3-inhibitor-screen|07 — NLRP3 Inhibitor Screen]] for full production details.</p>
+</li>
+<li>
+<p><strong>Quercetin</strong> (polyphenol): <strong>930 mg/L in engineered S. cerevisiae</strong>. Gout-specific animal data (MSU-induced edema reduction, IL-1β suppression). Dual mechanism: NLRP3 + xanthine oxidase inhibition. Bioavailability limitation (aglycone form) addressable via engineered glycosylation. IC50 ~11 μM vs. MCC950 (7.5 nM); potency gap noted.</p>
+</li>
+<li>
+<p><strong>Carnosine</strong> (dipeptide): <strong>Unique hyperuricemia evidence</strong> — direct serum uric acid reduction + NLRP3 suppression in rat models. Multi-target (URAT1, GLUT9, ROS, p-p65). Production complexity moderate (~100–500 mg/L estimated); β-alanine synthesis limiting. Only candidate with published gout flare prevention data.</p>
+</li>
+<li>
+<p><strong>Native Koji Production — Kojic Acid</strong>: <em>A. oryzae</em> naturally produces 3–5 g/L in solid-state fermentation. NLRP3 mechanism unknown; flagged for screening against inflammasome activation. Food-safe (cosmetics use), no engineering required. Candidate for discovery high-throughput screen.</p>
+</li>
+</ul>
+<p>See [[ai-analysis/07-nlrp3-inhibitor-screen|07 — NLRP3 Inhibitor Screen]] for potency rankings, bioavailability analysis, and production feasibility.</p>
+<hr />
+<h2 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h2>
+<p><strong>The Crystal Dissolution Danger Window:</strong> When urate-lowering therapy (including [[uricase|koji-uricase]]) begins dissolving existing MSU crystal deposits, crystals temporarily become smaller with more surface area. Crystal shedding from tophi can trigger acute flares. The NLRP3 stack is essential during this phase—it prevents dissolution-triggered flares while the uricase handles the underlying uric acid problem. Both strategies must run simultaneously. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)</p>
+<p><strong>Disulfiram is Underrated:</strong> An FDA-approved drug with 70 years of safety data, costing ~$30/month, that blocks the final step of IL-1β release and prevents pyroptotic amplification. Few rheumatologists discuss it because it was discovered by immunologists studying sepsis—a market inefficiency in medical knowledge. (Source: nlrp3-exploit-map.md)</p>
+<p><strong>Ketosis Paradox Resolved:</strong> The conventional wisdom that ketosis is bad for gout (ketones compete with urate for renal excretion) misses that BHB simultaneously and potently suppresses NLRP3 inflammasome activation. With [[uricase|koji-uricase]] handling uric acid clearance, ketosis becomes purely beneficial—all inflammasome suppression, no uric acid penalty. (Source: nlrp3-exploit-map.md)</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Source: nlrp3-exploit-map.md — Systematic black hat pen-testing of NLRP3 inflammasome pathway with six chokepoints and dozens of exploits</li>
+<li>Source: gout-deep-dive.md — Comprehensive gout pathophysiology including NLRP3 inflammasome overview and crystal-driven activation</li>
+<li>Source: peptide-gout-addendum.md — Deep dive into peptide mechanisms including BPC-157 and TB-500 NLRP3 interactions</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4467 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/uricase-variant-selection/">
+      
+      
+        <link rel="prev" href="../uricase/">
+      
+      
+        <link rel="next" href="../gi-survival-prediction/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Uricase Variant Selection for Oral Therapeutic Delivery - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#uricase-variant-selection-for-oral-therapeutic-delivery" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Uricase Variant Selection for Oral Therapeutic Delivery
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../open-enzyme-vision/" class="md-tabs__link">
+          
+  
+  
+  Vision & Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gout-pathophysiology/" class="md-tabs__link">
+          
+  
+  
+  Gout & Uricase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nlrp3-inflammasome/" class="md-tabs__link">
+          
+  
+  
+  NLRP3 & Inflammation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../digestive-enzymes/" class="md-tabs__link">
+          
+  
+  
+  Koji & Digestive Enzymes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../saccharomyces-cerevisiae/" class="md-tabs__link">
+          
+  
+  
+  Organisms & Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gut-lumen-sink/" class="md-tabs__link">
+          
+  
+  
+  Delivery & Barrier
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bpc-157/" class="md-tabs__link">
+          
+  
+  
+  Compounds & Peptides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sibo/" class="md-tabs__link">
+          
+  
+  
+  Other Conditions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bio-ai-tools/" class="md-tabs__link">
+          
+  
+  
+  Tools & Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variant-comparison-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variant Comparison Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-variant-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Variant Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Variant Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-aspergillus-flavus-uricase-rasburicase-parent-uniprot-q00511-primary-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Aspergillus flavus Uricase (Rasburicase parent, UniProt Q00511) — PRIMARY CANDIDATE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Aspergillus flavus Uricase (Rasburicase parent, UniProt Q00511) — PRIMARY CANDIDATE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity-oral-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity (Oral Context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-candida-utilis-uricase-secondary-candidate-engineering-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Candida utilis Uricase — SECONDARY CANDIDATE (Engineering Model)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Candida utilis Uricase — SECONDARY CANDIDATE (Engineering Model)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity-oral-context_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity (Oral Context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-bacillus-fastidiosus-uricase-lower-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Bacillus fastidiosus Uricase — LOWER PRIORITY
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Bacillus fastidiosus Uricase — LOWER PRIORITY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-arthrobacter-globiformis-uricase-aguricase-high-potential-secondary-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Arthrobacter globiformis Uricase (AgUricase) — HIGH-POTENTIAL SECONDARY CANDIDATE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Arthrobacter globiformis Uricase (AgUricase) — HIGH-POTENTIAL SECONDARY CANDIDATE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity-oral-context_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity (Oral Context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-kluyveromyces-marxianus-uricase-emerging-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Kluyveromyces marxianus Uricase — EMERGING CANDIDATE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Kluyveromyces marxianus Uricase — EMERGING CANDIDATE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-glycine-max-soybean-uricase-not-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Glycine max (Soybean) Uricase — NOT RECOMMENDED
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Glycine max (Soybean) Uricase — NOT RECOMMENDED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rationale-for-exclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rationale for Exclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ranking-and-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ranking and Recommendation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ranking and Recommendation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overall-ranking-oral-delivery-via-s-cerevisiae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Ranking (Oral Delivery via S. cerevisiae)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Recommendation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Final Recommendation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-candidate-aspergillus-flavus-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Candidate: Aspergillus flavus Uricase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-candidate-arthrobacter-globiformis-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Candidate: Arthrobacter globiformis Uricase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-uncertainties-and-knowledge-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Uncertainties and Knowledge Gaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Uncertainties and Knowledge Gaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-priority-unknowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Priority Unknowns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-priority-unknowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-Priority Unknowns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-priority-unknowns-solvable-but-not-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Low-Priority Unknowns (Solvable but not blocking)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-roadmap-18-months-a-flavus-primary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering Roadmap (18 Months, A. flavus Primary)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineering Roadmap (18 Months, A. flavus Primary)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-characterization-months-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Characterization (Months 1–3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-strain-development-months-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Strain Development (Months 4–9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-formulation-engineering-months-712" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Formulation Engineering (Months 7–12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-protein-engineering-months-615" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Protein Engineering (Months 6–15)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-preclinical-models-months-1218" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Preclinical Models (Months 12–18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#milestone-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Milestone Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-literature-evidence-level-tagged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Literature (Evidence-Level Tagged)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variant-comparison-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variant Comparison Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-variant-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Variant Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Variant Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-aspergillus-flavus-uricase-rasburicase-parent-uniprot-q00511-primary-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Aspergillus flavus Uricase (Rasburicase parent, UniProt Q00511) — PRIMARY CANDIDATE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Aspergillus flavus Uricase (Rasburicase parent, UniProt Q00511) — PRIMARY CANDIDATE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity-oral-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity (Oral Context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-candida-utilis-uricase-secondary-candidate-engineering-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Candida utilis Uricase — SECONDARY CANDIDATE (Engineering Model)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Candida utilis Uricase — SECONDARY CANDIDATE (Engineering Model)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity-oral-context_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity (Oral Context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-bacillus-fastidiosus-uricase-lower-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Bacillus fastidiosus Uricase — LOWER PRIORITY
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Bacillus fastidiosus Uricase — LOWER PRIORITY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-arthrobacter-globiformis-uricase-aguricase-high-potential-secondary-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Arthrobacter globiformis Uricase (AgUricase) — HIGH-POTENTIAL SECONDARY CANDIDATE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Arthrobacter globiformis Uricase (AgUricase) — HIGH-POTENTIAL SECONDARY CANDIDATE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity-oral-context_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity (Oral Context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-kluyveromyces-marxianus-uricase-emerging-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Kluyveromyces marxianus Uricase — EMERGING CANDIDATE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Kluyveromyces marxianus Uricase — EMERGING CANDIDATE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gi-stability_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) GI Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-protease-resistance_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Protease Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-expression-in-s-cerevisiae_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Expression in S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-specific-activity_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Specific Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-immunogenicity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Immunogenicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-engineering-potential_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Engineering Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-glycine-max-soybean-uricase-not-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Glycine max (Soybean) Uricase — NOT RECOMMENDED
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Glycine max (Soybean) Uricase — NOT RECOMMENDED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rationale-for-exclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rationale for Exclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ranking-and-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ranking and Recommendation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ranking and Recommendation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overall-ranking-oral-delivery-via-s-cerevisiae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Ranking (Oral Delivery via S. cerevisiae)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Recommendation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Final Recommendation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-candidate-aspergillus-flavus-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Candidate: Aspergillus flavus Uricase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-candidate-arthrobacter-globiformis-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Candidate: Arthrobacter globiformis Uricase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-uncertainties-and-knowledge-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Uncertainties and Knowledge Gaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Uncertainties and Knowledge Gaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-priority-unknowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Priority Unknowns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-priority-unknowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-Priority Unknowns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-priority-unknowns-solvable-but-not-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Low-Priority Unknowns (Solvable but not blocking)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-roadmap-18-months-a-flavus-primary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering Roadmap (18 Months, A. flavus Primary)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineering Roadmap (18 Months, A. flavus Primary)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-characterization-months-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Characterization (Months 1–3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-strain-development-months-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Strain Development (Months 4–9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-formulation-engineering-months-712" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Formulation Engineering (Months 7–12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-protein-engineering-months-615" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Protein Engineering (Months 6–15)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-preclinical-models-months-1218" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Preclinical Models (Months 12–18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#milestone-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Milestone Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-literature-evidence-level-tagged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Literature (Evidence-Level Tagged)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="uricase-variant-selection-for-oral-therapeutic-delivery">Uricase Variant Selection for Oral Therapeutic Delivery<a class="headerlink" href="#uricase-variant-selection-for-oral-therapeutic-delivery" title="Permanent link">&para;</a></h1>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This document compares six uricase (urate oxidase) variants for development as an oral therapeutic for gout via engineered <em>Saccharomyces cerevisiae</em>. The primary selection criteria are: GI stability (pH 2–8, protease resistance), expression yield in S. cerevisiae, specific activity (Km and kcat), immunogenicity risk in oral context, and engineering amenability.</p>
+<p><strong>Recommendation: Aspergillus flavus uricase (rasburicase parent, UniProt Q00511) as primary candidate, with Arthrobacter globiformis as a high-potential secondary option.</strong></p>
+<p>Rationale: A. flavus has demonstrated FDA-approved S. cerevisiae expression, extensive stability engineering precedent, and published disulfide bond improvements. A. globiformis offers superior thermostability and neutral pH activity but requires novel expression system optimization.</p>
+<hr />
+<h2 id="variant-comparison-overview">Variant Comparison Overview<a class="headerlink" href="#variant-comparison-overview" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Native Host</th>
+<th>MW (kDa)</th>
+<th>Quaternary</th>
+<th>pH Optimum</th>
+<th>GI Stability</th>
+<th>Expression in S. cer.</th>
+<th>Protease Resistance</th>
+<th>Immunogenicity</th>
+<th>Engineering Potential</th>
+<th><strong>Rank</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. flavus</strong></td>
+<td>Ascomycete fungus</td>
+<td>34 (monomer), 135 (tetramer)</td>
+<td>Tetramer</td>
+<td>8.0–8.5</td>
+<td>Moderate (acid-labile)</td>
+<td><strong>Proven (FDA approval)</strong></td>
+<td>Poor (basic residues)</td>
+<td>Moderate (fungal, not human)</td>
+<td><strong>Excellent</strong> (disulfide, mutations)</td>
+<td><strong>#1</strong></td>
+</tr>
+<tr>
+<td><strong>C. utilis</strong></td>
+<td>Yeast</td>
+<td>34</td>
+<td>Tetramer</td>
+<td>8.5–9.5</td>
+<td>Poor (alkaline optimum)</td>
+<td>E. coli ~40% of soluble protein; limited in yeast</td>
+<td>Moderate</td>
+<td>High (known ALLN-346 target for engineering)</td>
+<td>Good (ALLN-346 precedent)</td>
+<td><strong>#2</strong></td>
+</tr>
+<tr>
+<td><strong>B. fastidiosus</strong></td>
+<td>Bacterium</td>
+<td>36–39 (heterogeneous subunits), 145–150 (tetramer)</td>
+<td>Tetramer (heterogeneous)</td>
+<td>9.0–10.5</td>
+<td>Very poor (alkaline optimum)</td>
+<td>No data</td>
+<td>Moderate</td>
+<td>Unknown</td>
+<td>Moderate</td>
+<td><strong>#5</strong></td>
+</tr>
+<tr>
+<td><strong>A. globiformis</strong></td>
+<td>Bacterium</td>
+<td>34</td>
+<td>Tetramer</td>
+<td>7.0–7.5 (neutral)</td>
+<td>Good (neutral optimum)</td>
+<td>E. coli 20× endogenous; no data in S. cer.</td>
+<td><strong>Good (reported superior)</strong></td>
+<td>Low (engineerable epitopes)</td>
+<td><strong>Excellent</strong> (thermostability engineering)</td>
+<td><strong>#2†</strong></td>
+</tr>
+<tr>
+<td><strong>G. max (Soybean)</strong></td>
+<td>Plant</td>
+<td>32</td>
+<td>Monomer → dimer/tetramer</td>
+<td>9.5</td>
+<td>Very poor (plant pH optimum)</td>
+<td>No precedent</td>
+<td>Unknown</td>
+<td>Very high (plant origin)</td>
+<td>Unknown</td>
+<td><strong>#6</strong></td>
+</tr>
+<tr>
+<td><strong>K. marxianus</strong></td>
+<td>Yeast (thermotolerant)</td>
+<td>33–34</td>
+<td>Tetramer</td>
+<td>~8.0 (inferred)</td>
+<td>Good (neutral-alkaline)</td>
+<td>E. coli: 79.75% activity at 40°C for 90h</td>
+<td>Moderate</td>
+<td>Low (yeast, GRAS-pathway)</td>
+<td><strong>Excellent</strong> (natural thermostability)</td>
+<td><strong>#3</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>†A. globiformis ranked #2 overall but would be #2 for immediate deployment (after A. flavus) due to proven S. cerevisiae manufacturing.</strong></p>
+<hr />
+<h2 id="detailed-variant-analysis">Detailed Variant Analysis<a class="headerlink" href="#detailed-variant-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="1-aspergillus-flavus-uricase-rasburicase-parent-uniprot-q00511-primary-candidate">1. <strong>Aspergillus flavus Uricase (Rasburicase parent, UniProt Q00511)</strong> — PRIMARY CANDIDATE<a class="headerlink" href="#1-aspergillus-flavus-uricase-rasburicase-parent-uniprot-q00511-primary-candidate" title="Permanent link">&para;</a></h3>
+<h4 id="a-gi-stability">a) GI Stability<a class="headerlink" href="#a-gi-stability" title="Permanent link">&para;</a></h4>
+<p><strong>Acid Stability (pH 2):</strong>
+- <strong>Status</strong>: Acid-labile; poor stability at pH 2.0 (gastric pH).
+- <strong>Evidence level</strong>: <em>In vitro</em> characterization.
+- <strong>Mechanism</strong>: Contains ionizable histidine residues (catalytic His257) and free cysteines that are protonated and susceptible to hydrolysis at low pH. The enzyme's pH optimum is 8.0–8.5; activity drops sharply below pH 6.0.
+- <strong>Barrier implications</strong>: Direct gastric exposure would degrade ~60–80% of enzyme before reaching small intestine. <strong>Requires acid-protection strategy</strong> (enteric coating, pH-buffered microsphere, or direct inoculation past stomach).</p>
+<p><strong>Small Intestine Stability (pH 6–7):</strong>
+- Partially recovered at pH 6–7; ~50% of gastric-damaged enzyme may refold.
+- Optimal activity pH 8.0–8.5; still suboptimal in upper small intestine.
+- By lower ileum/colon (pH 7–8), activity improves significantly.</p>
+<p><strong>Colon Stability (pH 7–8):</strong>
+- Good stability and activity at pH 7–8.
+- Tetramer quaternary structure provides protease shielding.</p>
+<p><strong>Disulfide Bond Data</strong>: Contains endogenous disulfide bonds (likely 1–2 per subunit based on A. flavus structure). Recent engineering work has <strong>introduced interchain disulfide bonds</strong> to increase acid and thermal stability without loss of catalytic efficiency (In vitro, Scientific Reports 2025).</p>
+<p><strong>Summary</strong>: Acid protection required; excellent stability once pH barrier crossed.</p>
+<h4 id="b-protease-resistance">b) Protease Resistance<a class="headerlink" href="#b-protease-resistance" title="Permanent link">&para;</a></h4>
+<p><strong>Pepsin (pH 1.5–2.5)</strong>:
+- A. flavus uricase is <strong>not resistant</strong> to pepsin at low pH; however, pepsin is active only at pH &lt; 2.5.
+- With acid protection, pepsin exposure is minimized or eliminated.</p>
+<p><strong>Trypsin (pH 7–8, small intestine)</strong>:
+- <strong>Moderate resistance</strong> due to tetrameric structure and limited surface-exposed basic cleavage sites.
+- Trypsin preferentially cleaves C-terminal to Lys and Arg. A. flavus uricase structure shows relatively buried basic residues.
+- <strong>Protected by quaternary structure</strong>: Dimer-of-dimers shielding inner surface. Published data indicate that A. flavus uricase shows better trypsin resistance than free monomers but is still susceptible compared to engineered variants (In vitro, Applied Microbiology and Biotechnology, 2021–2025 studies).</p>
+<p><strong>Chymotrypsin (pH 8, small intestine)</strong>:
+- Cleaves C-terminal to hydrophobic residues (Phe, Trp, Tyr).
+- Moderate resistance expected; data sparse.</p>
+<p><strong>Summary</strong>: Moderate protease resistance; tetramer provides some shielding but exposed loops remain vulnerable. Engineering interventions (surface loop modification, interchain cross-linking) can improve resistance.</p>
+<h4 id="c-expression-in-s-cerevisiae">c) Expression in S. cerevisiae<a class="headerlink" href="#c-expression-in-s-cerevisiae" title="Permanent link">&para;</a></h4>
+<p><strong>Proven Precedent</strong>:
+- <strong>FDA-approved rasburicase (Elitek) is expressed in S. cerevisiae</strong> (Clinical Trial approval, FDA 2002).
+- Expression levels: <strong>Specific activity 24–46 U/mg</strong> depending on strain and codon optimization (In vitro data from Pichia and S. cerevisiae backgrounds).
+- Yield: ~60–63% recovery of recombinant protein in optimized S. cerevisiae strains (In vitro, Chinese researchers 2023–2024).</p>
+<p><strong>Challenges</strong>:
+- Contains disulfide bonds; requires oxidizing cytoplasm or ER secretion (S. cerevisiae can achieve this via signal peptide targeting to ER).
+- Fungal expression system may exhibit lower yields than bacterial (E. coli) systems but is proven manufactureable at pharmaceutical scale.</p>
+<p><strong>Codon Optimization Potential</strong>: A. flavus codons are moderately compatible with S. cerevisiae (both Saccharomycetes); optimization is routine and well-documented.</p>
+<p><strong>Summary</strong>: Expression is proven and scalable; moderate yields; disulfide bond formation feasible.</p>
+<h4 id="d-specific-activity">d) Specific Activity<a class="headerlink" href="#d-specific-activity" title="Permanent link">&para;</a></h4>
+<p><strong>Kinetic Parameters</strong>:
+- <strong>Km (uric acid)</strong>: ~0.5–2.1 mM (varies by source and assay conditions).
+- <strong>kcat</strong>: ~30–50 s⁻¹ (reported in literature; exact value context-dependent).
+- <strong>Specific activity</strong>: 24–46 U/mg (In vitro, depending on expression strain and purification method).</p>
+<p><strong>Daily Enzyme Load Calculation</strong> (for 200 mg uric acid/day):
+- 1 Unit = 1 µmol uric acid oxidized per minute at 25°C, pH 8.5.
+- 200 mg UA = ~1190 µmol UA.
+- If enzyme operates at half-maximal velocity for 12–16 hours of intestinal transit (colon residence time ~24h, active degradation ~12–16h), ~100 U enzyme activity may suffice (rough estimate; see Key Uncertainties).
+- <strong>Enzyme mass needed</strong>: ~2.5–5 mg (assuming specific activity 20–40 U/mg and accounting for pH suboptimality in upper GI).
+- <strong>Dosing format</strong>: 1–10 billion CFU of engineered S. cerevisiae (cell concentration determines enzyme output per dose).</p>
+<h4 id="e-immunogenicity-oral-context">e) Immunogenicity (Oral Context)<a class="headerlink" href="#e-immunogenicity-oral-context" title="Permanent link">&para;</a></h4>
+<p><strong>Fungal Origin</strong>:
+- A. flavus is a common environmental mold; oral exposure is routine in humans.
+- Fungal proteins are generally tolerated orally (bread, beer, kombucha, etc. contain Saccharomyces and Aspergillus species).</p>
+<p><strong>Sequence Homology</strong>:
+- A. flavus uricase has <strong>no sequence homology to human uricase</strong> (humans lack functional uricase; it is a pseudogene).
+- However, no published shared epitopes with human microbiota or intestinal flora have been reported.
+- The enzyme is recognized as foreign by adaptive immune system, but oral tolerance mechanisms in gut mucosa may limit systemic IgA/IgG responses.</p>
+<p><strong>Oral vs. Systemic Delivery</strong>:
+- Oral delivery (luminal, not absorbed) drastically reduces immunogenicity compared to IV pegloticase.
+- <strong>ALLN-346 precedent (Clinical Trial, Phase 1, 2020)</strong>: C. utilis uricase, orally delivered, showed no systemic absorption and no immunogenic response in 24 healthy volunteers at doses up to 36 capsules (3,240 U/dose) (Frontiers in Medicine, 2020).
+- A. flavus uricase in oral form likely has similar or better tolerance (better expressed, fewer required for activity).</p>
+<p><strong>Summary</strong>: Low immunogenicity risk in oral luminal context; systemic absorption is minimal or absent.</p>
+<h4 id="f-engineering-potential">f) Engineering Potential<a class="headerlink" href="#f-engineering-potential" title="Permanent link">&para;</a></h4>
+<p><strong>Proven Precedent</strong>:
+- <strong>Disulfide bond engineering</strong>: Recent work (Scientific Reports, 2025) demonstrated introduction of interchain disulfide bonds (e.g., Ala6–Cys290, Ser119–Cys220) that increase structural stability and reduce conformational fluctuations without loss of activity.
+- <strong>Mutation engineering</strong>: Gln269Leu (Q269L) increases half-life at 40°C from 49.85 min to 85.55 min (In vitro, 2025 data).
+- <strong>PASylation</strong>: Cross-linked polyethylene glycol (PAS100) can increase kcat/Km 3.87-fold (In vitro, ACS Omega, 2022).</p>
+<p><strong>Targeting for Improvement</strong>:
+1. <strong>Acid stability</strong>: Stabilize His257 and other catalytic residues; introduce acid-resistant disulfides.
+2. <strong>Protease resistance</strong>: Bury exposed basic residues; engineer loop regions; inter-chain cross-linking.
+3. <strong>Specific activity</strong>: Small modifications to binding pocket (less explored for A. flavus; more data exists for engineered variants).</p>
+<p><strong>Structural Data</strong>:
+- PDB structures available (though specific A. flavus uricase structures are limited; related fungal uricases are well-characterized).</p>
+<p><strong>Summary</strong>: Excellent engineering potential; proven disulfide bond and mutation improvements; extensive literature precedent.</p>
+<hr />
+<h3 id="2-candida-utilis-uricase-secondary-candidate-engineering-model">2. <strong>Candida utilis Uricase</strong> — SECONDARY CANDIDATE (Engineering Model)<a class="headerlink" href="#2-candida-utilis-uricase-secondary-candidate-engineering-model" title="Permanent link">&para;</a></h3>
+<h4 id="a-gi-stability_1">a) GI Stability<a class="headerlink" href="#a-gi-stability_1" title="Permanent link">&para;</a></h4>
+<p><strong>Acid Stability (pH 2)</strong>:
+- <strong>Status</strong>: Very poor. pH optimum is 8.5–9.5; uricase is completely inactive at pH 2.
+- <strong>Evidence level</strong>: <em>In vitro</em> biochemical data.
+- <strong>Mechanism</strong>: Similar to A. flavus but pH optimum is shifted alkaline, indicating even greater acid sensitivity.</p>
+<p><strong>Small Intestine (pH 6–7) and Colon (pH 7–8)</strong>:
+- Activity remains suboptimal below pH 8.0.
+- Even in colon (pH 7–8), activity may be 30–50% of maximum.</p>
+<p><strong>Summary</strong>: Poor GI stability; requires aggressive acid protection and pH buffering.</p>
+<h4 id="b-protease-resistance_1">b) Protease Resistance<a class="headerlink" href="#b-protease-resistance_1" title="Permanent link">&para;</a></h4>
+<p><strong>Pepsin</strong>: Not resistant (extreme pH deactivates enzyme before pepsin exposure in practice).</p>
+<p><strong>Trypsin and Chymotrypsin</strong>:
+- <strong>Moderate resistance</strong>; tetramer structure provides some shielding (similar to A. flavus).
+- One study showed alkaline enzymosome encapsulation improved trypsin resistance significantly (In vitro, 2012).</p>
+<p><strong>Summary</strong>: Moderate baseline; can be improved by encapsulation or surface engineering.</p>
+<h4 id="c-expression-in-s-cerevisiae_1">c) Expression in S. cerevisiae<a class="headerlink" href="#c-expression-in-s-cerevisiae_1" title="Permanent link">&para;</a></h4>
+<p><strong>Status</strong>: No direct data on expression in S. cerevisiae.
+- <strong>In E. coli</strong>: Achieves ~40% of total soluble protein (high yield) (In vitro, Applied Microbiology and Biotechnology, 2011).
+- <strong>Fungal expression</strong>: Not documented; likely feasible but unoptimized.</p>
+<p><strong>Implication</strong>: Would require de novo optimization; adds development time vs. A. flavus.</p>
+<h4 id="d-specific-activity_1">d) Specific Activity<a class="headerlink" href="#d-specific-activity_1" title="Permanent link">&para;</a></h4>
+<p><strong>Kinetic Parameters</strong>:
+- <strong>Specific activity</strong>: 38.4 IU/mg (In vitro, E. coli expression, 2011).
+- <strong>Km, kcat</strong>: Not consistently reported in accessible literature.</p>
+<p><strong>Daily Enzyme Load</strong>:
+- Similar to A. flavus (~2–5 mg active enzyme per day); specific activity is comparable.</p>
+<h4 id="e-immunogenicity-oral-context_1">e) Immunogenicity (Oral Context)<a class="headerlink" href="#e-immunogenicity-oral-context_1" title="Permanent link">&para;</a></h4>
+<p><strong>Advantages</strong>:
+- <strong>Yeast origin</strong>: Humans routinely consume Candida and other Candida-related organisms (yogurt, wine, beer).
+- <strong>Low immunogenicity precedent</strong>: ALLN-346 is engineered C. utilis uricase with <strong>no systemic absorption and no adverse immune responses</strong> in Phase 1 trial (Clinical Trial, 24 healthy volunteers, 2020).</p>
+<p><strong>Challenge</strong>:
+- <strong>ALLN-346 was engineered for proteolytic stability</strong> using proprietary ProteinGPS (machine learning guided molecular evolution).
+- Wild-type C. utilis uricase has poor protease resistance and acid stability; engineering is required to achieve clinical efficacy.</p>
+<p><strong>Summary</strong>: Excellent immunogenicity profile; proven clinical precedent with ALLN-346; requires engineering for GI stability.</p>
+<h4 id="f-engineering-potential_1">f) Engineering Potential<a class="headerlink" href="#f-engineering-potential_1" title="Permanent link">&para;</a></h4>
+<p><strong>Proven Precedent</strong>:
+- <strong>ALLN-346 engineering</strong>: Candida utilis uricase was successfully engineered for GI protease resistance while maintaining specific activity (proprietary ProteinGPS, Allena Pharmaceuticals).
+- This demonstrates that C. utilis uricase is highly engineerable.</p>
+<p><strong>Limitations</strong>:
+- Proprietary mutations are not publicly disclosed.
+- Would need independent engineering effort or licensing.</p>
+<p><strong>Summary</strong>: Excellent potential; proven by ALLN-346 but requires proprietary or independent engineering.</p>
+<hr />
+<h3 id="3-bacillus-fastidiosus-uricase-lower-priority">3. <strong>Bacillus fastidiosus Uricase</strong> — LOWER PRIORITY<a class="headerlink" href="#3-bacillus-fastidiosus-uricase-lower-priority" title="Permanent link">&para;</a></h3>
+<h4 id="a-gi-stability_2">a) GI Stability<a class="headerlink" href="#a-gi-stability_2" title="Permanent link">&para;</a></h4>
+<p><strong>Acid Stability (pH 2)</strong>:
+- <strong>Status</strong>: Very poor. pH optimum is 9.0–10.5 (the highest among variants).
+- <strong>Evidence level</strong>: <em>In vitro</em> characterization.</p>
+<p><strong>Small Intestine (pH 6–7)</strong>:
+- Suboptimal; activity marginal.</p>
+<p><strong>Colon (pH 7–8)</strong>:
+- Still suboptimal; expected &lt;50% of maximal activity.</p>
+<p><strong>Summary</strong>: Poorest acid stability among candidates; alkaline pH preference is incompatible with GI luminal environment.</p>
+<h4 id="b-protease-resistance_2">b) Protease Resistance<a class="headerlink" href="#b-protease-resistance_2" title="Permanent link">&para;</a></h4>
+<p><strong>Status</strong>: Moderate resistance expected (tetramer, similar to others).
+- Heterogeneous subunit structure (Mr 36,000 and 39,000, 1:1 ratio) may reduce tetramer stability vs. homotetramers.
+- No specific protease resistance data published.</p>
+<p><strong>Summary</strong>: Baseline moderate resistance; structural heterogeneity is a minor disadvantage.</p>
+<h4 id="c-expression-in-s-cerevisiae_2">c) Expression in S. cerevisiae<a class="headerlink" href="#c-expression-in-s-cerevisiae_2" title="Permanent link">&para;</a></h4>
+<p><strong>Status</strong>: No documented expression in S. cerevisiae.
+- Bacillus species are GRAS organisms but are Gram-positive bacteria (different secretion, folding machinery vs. eukaryotes).
+- Expression in E. coli is feasible but heterologous expression in yeast would require significant optimization.</p>
+<p><strong>Summary</strong>: No precedent; development risk is higher.</p>
+<h4 id="d-specific-activity_2">d) Specific Activity<a class="headerlink" href="#d-specific-activity_2" title="Permanent link">&para;</a></h4>
+<p><strong>Kinetic Parameters</strong>:
+- <strong>Km (uric acid)</strong>: 204 ± 14 µM (very low; good substrate affinity) (In vitro, 1978 data).
+- <strong>Vmax</strong>: Not clearly reported in modern units.
+- <strong>Specific activity</strong>: Unknown.</p>
+<p><strong>Interpretation</strong>:
+- Very low Km suggests high substrate affinity; this is favorable.
+- However, sparse modern kinetic data limits confidence.</p>
+<p><strong>Summary</strong>: Potentially favorable kinetics but poorly documented.</p>
+<h4 id="e-immunogenicity">e) Immunogenicity<a class="headerlink" href="#e-immunogenicity" title="Permanent link">&para;</a></h4>
+<p><strong>Status</strong>: Unknown.
+- Bacterial origin; no published immunogenicity data in oral context.
+- No precedent for oral delivery; potential for mucosal immune activation.</p>
+<p><strong>Summary</strong>: Uncharacterized risk.</p>
+<h4 id="f-engineering-potential_2">f) Engineering Potential<a class="headerlink" href="#f-engineering-potential_2" title="Permanent link">&para;</a></h4>
+<p><strong>Status</strong>: Limited precedent.
+- No published engineering for stability or immunogenicity reduction.
+- Bacillus species have GRAS status, so engineering constraints are minimal.</p>
+<p><strong>Summary</strong>: Moderate potential; underdeveloped literature.</p>
+<hr />
+<h3 id="4-arthrobacter-globiformis-uricase-aguricase-high-potential-secondary-candidate">4. <strong>Arthrobacter globiformis Uricase (AgUricase)</strong> — HIGH-POTENTIAL SECONDARY CANDIDATE<a class="headerlink" href="#4-arthrobacter-globiformis-uricase-aguricase-high-potential-secondary-candidate" title="Permanent link">&para;</a></h3>
+<h4 id="a-gi-stability_3">a) GI Stability<a class="headerlink" href="#a-gi-stability_3" title="Permanent link">&para;</a></h4>
+<p><strong>Acid Stability (pH 2)</strong>:
+- <strong>Status</strong>: <strong>Poor</strong> (like A. flavus); pH optimum is 7.0–7.5, not 2.0.
+- <strong>Evidence level</strong>: <em>In vitro</em> biochemical characterization.</p>
+<p><strong>Small Intestine (pH 6–7)</strong>:
+- <strong>Good</strong>: pH optimum at 7.0–7.5 means activity is <strong>maximal in small intestine</strong> (better than A. flavus or C. utilis).
+- Expected activity ~80–100% of maximum at pH 6.5–7.5.</p>
+<p><strong>Colon (pH 7–8)</strong>:
+- Excellent activity; pH optimum range extends into colon.</p>
+<p><strong>Summary</strong>: <strong>Neutral pH optimum is a major advantage</strong> for small intestinal activity; acid protection still required for gastric phase but benefit is gained immediately in duodenum.</p>
+<h4 id="b-protease-resistance_3">b) Protease Resistance<a class="headerlink" href="#b-protease-resistance_3" title="Permanent link">&para;</a></h4>
+<p><strong>Trypsin and Chymotrypsin</strong>:
+- <strong>Superior resistance</strong> compared to other variants (In vitro; reported in recent 2025 studies).
+- <strong>Mechanism</strong>: Buried basic residues; compact quaternary structure.
+- <strong>Disulfide cross-linking</strong>: Engineered intersubunit disulfide bonds (K12C–E286C, S296C–S296C) markedly increase resistance to proteolysis (In vitro, Structure-based design, 2019).</p>
+<p><strong>Summary</strong>: <strong>Excellent protease resistance</strong>, especially when engineered; superior to A. flavus and C. utilis.</p>
+<h4 id="c-expression-in-s-cerevisiae_3">c) Expression in S. cerevisiae<a class="headerlink" href="#c-expression-in-s-cerevisiae_3" title="Permanent link">&para;</a></h4>
+<p><strong>Status</strong>: No published data for S. cerevisiae.
+- <strong>In E. coli</strong>: <strong>20-fold higher expression than endogenous Arthrobacter level</strong> (very high yield) (In vitro, 2004 data).
+- AgUricase is a homotetrameric enzyme (four 34 kDa subunits) with high solubility; expression should be feasible in S. cerevisiae but requires optimization.</p>
+<p><strong>Challenge</strong>: No precedent; would require empirical optimization but bacterial origin suggests good compatibility with eukaryotic expression (unlike A. flavus/C. utilis which are already eukaryotic).</p>
+<p><strong>Prediction</strong>: Likely expressible in S. cerevisiae with moderate optimization; kinetics similar to A. flavus due to comparable protein size and structure.</p>
+<p><strong>Summary</strong>: High expression yields in E. coli suggest good manufacturability; S. cerevisiae optimization is required but low-risk.</p>
+<h4 id="d-specific-activity_3">d) Specific Activity<a class="headerlink" href="#d-specific-activity_3" title="Permanent link">&para;</a></h4>
+<p><strong>Kinetic Parameters</strong>:
+- Limited published kinetic data for AgUricase.
+- Catalytic efficiency and specific activity comparable to A. flavus (both ~34 kDa monomers, similar tetrameric structure).</p>
+<p><strong>Inference</strong>: ~20–40 U/mg specific activity expected (pending experimental characterization).</p>
+<p><strong>Summary</strong>: Estimated comparable to A. flavus; direct measurement required.</p>
+<h4 id="e-immunogenicity-oral-context_2">e) Immunogenicity (Oral Context)<a class="headerlink" href="#e-immunogenicity-oral-context_2" title="Permanent link">&para;</a></h4>
+<p><strong>Advantages</strong>:
+- Bacterial origin; no direct homology to human or mammalian proteins.
+- <strong>Engineerable epitopes</strong>: Research specifically targeted epitope reduction in AgUricase (Structure-based design, 2019 and 2025).
+- Oral delivery context minimizes systemic exposure.</p>
+<p><strong>Challenge</strong>:
+- Bacterial proteins may trigger stronger mucosal innate immune responses (pattern recognition receptors) compared to fungal proteins.
+- No clinical precedent for oral AgUricase delivery.</p>
+<p><strong>Summary</strong>: Moderate immunogenicity risk; likely lower than IV pegloticase but higher than fungal variants. Epitope engineering is feasible.</p>
+<h4 id="f-engineering-potential_3">f) Engineering Potential<a class="headerlink" href="#f-engineering-potential_3" title="Permanent link">&para;</a></h4>
+<p><strong>Proven Precedent</strong>:
+- <strong>Thermostability engineering</strong>: Extensive work on introducing intersubunit disulfide bonds (K12C–E286C, S296C–S296C) increased melting temperature and proteolytic stability significantly (In vitro, Structure-based design, 2019).
+- <strong>Mutation engineering</strong>: Targeted mutagenesis (e.g., T67A, K157A, E162G) can fine-tune activity and stability (In vitro, 2019–2025).
+- <strong>Epitope reduction</strong>: Structure-guided design for immunogenicity reduction has been explored (In vitro, 2019).</p>
+<p><strong>PDB Structures Available</strong>:
+- Crystal structures of AgUricase and substrate complex available (RCSB PDB 2YZB, 2YZE).
+- Enables rational structure-based engineering.</p>
+<p><strong>Summary</strong>: <strong>Excellent engineering potential</strong>; most extensively engineered uricase variant in recent literature; proven improvements in thermostability and proteolytic resistance.</p>
+<hr />
+<h3 id="5-kluyveromyces-marxianus-uricase-emerging-candidate">5. <strong>Kluyveromyces marxianus Uricase</strong> — EMERGING CANDIDATE<a class="headerlink" href="#5-kluyveromyces-marxianus-uricase-emerging-candidate" title="Permanent link">&para;</a></h3>
+<h4 id="a-gi-stability_4">a) GI Stability<a class="headerlink" href="#a-gi-stability_4" title="Permanent link">&para;</a></h4>
+<p><strong>Acid Stability (pH 2)</strong>:
+- <strong>Status</strong>: Poor (similar to other variants).
+- pH optimum not explicitly stated but likely ~8.0 based on yeast enzyme properties.</p>
+<p><strong>Small Intestine and Colon</strong>:
+- <strong>Thermostable</strong>: Retained <strong>79.75% activity after incubation at 40°C for 90 hours</strong> (In vitro, 2019).
+- This suggests exceptional thermal stability; acid stability data absent but inferred to be moderate to good.</p>
+<p><strong>Summary</strong>: Exceptional thermostability (unexpected advantage for enzyme shelf-life and transit stability); acid stability data lacking.</p>
+<h4 id="b-protease-resistance_4">b) Protease Resistance<a class="headerlink" href="#b-protease-resistance_4" title="Permanent link">&para;</a></h4>
+<p><strong>Status</strong>: Not explicitly reported.
+- Thermostability suggests robust protein structure; inferred moderate-to-good protease resistance.</p>
+<p><strong>Summary</strong>: Likely good based on thermal data; direct protease assays needed.</p>
+<h4 id="c-expression-in-s-cerevisiae_4">c) Expression in S. cerevisiae<a class="headerlink" href="#c-expression-in-s-cerevisiae_4" title="Permanent link">&para;</a></h4>
+<p><strong>Status</strong>: No published data for S. cerevisiae.
+- <strong>In E. coli</strong>: Successfully expressed with high yield and purified via pH-induced intein self-cleavage (In vitro, 2019).
+- K. marxianus is a thermotolerant yeast; expression in S. cerevisiae should be straightforward (both yeast species; high sequence similarity likely).</p>
+<p><strong>Prediction</strong>: Very likely to express well in S. cerevisiae (homologous yeast species); minimal optimization expected.</p>
+<p><strong>Summary</strong>: Excellent predicted compatibility; no precedent but low development risk.</p>
+<h4 id="d-specific-activity_4">d) Specific Activity<a class="headerlink" href="#d-specific-activity_4" title="Permanent link">&para;</a></h4>
+<p><strong>Kinetic Parameters</strong>:
+- <strong>Km</strong>: 67.60 µM (good substrate affinity) (In vitro, 2019).
+- <strong>Vmax</strong>: 56.35 µmol/(min·mg) or kcat 32.74 s⁻¹.
+- <strong>Specific activity</strong>: Inferred ~30–40 U/mg (comparable to A. flavus).</p>
+<p><strong>Summary</strong>: Kinetics similar to A. flavus; good substrate affinity.</p>
+<h4 id="e-immunogenicity_1">e) Immunogenicity<a class="headerlink" href="#e-immunogenicity_1" title="Permanent link">&para;</a></h4>
+<p><strong>Advantages</strong>:
+- <strong>Yeast origin</strong>: GRAS-pathway organism; humans regularly consume K. marxianus and related fermented foods.
+- Low immunogenicity precedent (like Candida).</p>
+<p><strong>Summary</strong>: Low immunogenicity risk.</p>
+<h4 id="f-engineering-potential_4">f) Engineering Potential<a class="headerlink" href="#f-engineering-potential_4" title="Permanent link">&para;</a></h4>
+<p><strong>Status</strong>: Limited published work.
+- Thermostability already exceptional; further engineering less pressing than for other variants.
+- Potential targets: fine-tuning activity, reducing any immunogenic epitopes, improving acid stability.</p>
+<p><strong>Summary</strong>: Moderate engineering potential; less developed than A. globiformis or C. utilis.</p>
+<hr />
+<h3 id="6-glycine-max-soybean-uricase-not-recommended">6. <strong>Glycine max (Soybean) Uricase</strong> — NOT RECOMMENDED<a class="headerlink" href="#6-glycine-max-soybean-uricase-not-recommended" title="Permanent link">&para;</a></h3>
+<h4 id="rationale-for-exclusion">Rationale for Exclusion<a class="headerlink" href="#rationale-for-exclusion" title="Permanent link">&para;</a></h4>
+<p><strong>pH Optimum</strong>:
+- pH optimum 9.5 (highest among all variants); completely incompatible with GI luminal pH (2–8).</p>
+<p><strong>Immunogenicity</strong>:
+- Plant origin; plant allergens are well-documented (pollen, seed proteins).
+- Soybean is a common food allergen; oral tolerance cannot be assumed.</p>
+<p><strong>Expression</strong>:
+- Tetrameric holoenzyme assembly in S. cerevisiae is untested.
+- Plant peroxisomal targeting signals would need modification for S. cerevisiae.</p>
+<p><strong>Expression in S. cerevisiae</strong>:
+- No published precedent for expressing plant uricase in yeast.</p>
+<p><strong>Conclusion</strong>: Not viable for this application. Retained in table for completeness.</p>
+<hr />
+<h2 id="ranking-and-recommendation">Ranking and Recommendation<a class="headerlink" href="#ranking-and-recommendation" title="Permanent link">&para;</a></h2>
+<h3 id="overall-ranking-oral-delivery-via-s-cerevisiae">Overall Ranking (Oral Delivery via S. cerevisiae)<a class="headerlink" href="#overall-ranking-oral-delivery-via-s-cerevisiae" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Variant</th>
+<th>Score</th>
+<th>Primary Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>#1</strong></td>
+<td><strong>Aspergillus flavus</strong></td>
+<td>8.5/10</td>
+<td><strong>Proven FDA S. cerevisiae expression; extensive stability engineering; moderate GI limitations but solvable.</strong></td>
+</tr>
+<tr>
+<td><strong>#2</strong></td>
+<td><strong>Arthrobacter globiformis</strong></td>
+<td>7.8/10</td>
+<td>Neutral pH optimum (superior small intestinal activity); excellent protease resistance when engineered; high E. coli expression suggests good yeast compatibility; no S. cerevisiae precedent.</td>
+</tr>
+<tr>
+<td><strong>#3</strong></td>
+<td><strong>Kluyveromyces marxianus</strong></td>
+<td>7.0/10</td>
+<td>Exceptional thermostability; yeast-to-yeast expression likely straightforward; limited engineering literature; acid stability uncharacterized.</td>
+</tr>
+<tr>
+<td><strong>#4</strong></td>
+<td><strong>Candida utilis</strong></td>
+<td>6.5/10</td>
+<td>ALLN-346 precedent proves C. utilis uricase can be engineered for GI stability; excellent immunogenicity; requires proprietary or independent engineering; no S. cerevisiae expression data.</td>
+</tr>
+<tr>
+<td><strong>#5</strong></td>
+<td><strong>Bacillus fastidiosus</strong></td>
+<td>4.0/10</td>
+<td>Extremely alkaline pH optimum incompatible with GI environment; sparse modern kinetic data; no expression precedent in S. cerevisiae; engineering potential unproven.</td>
+</tr>
+<tr>
+<td><strong>#6</strong></td>
+<td><strong>Glycine max</strong></td>
+<td>1.0/10</td>
+<td>Not viable; plant allergen; pH optimum 9.5; no expression precedent.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="final-recommendation">Final Recommendation<a class="headerlink" href="#final-recommendation" title="Permanent link">&para;</a></h2>
+<h3 id="primary-candidate-aspergillus-flavus-uricase">Primary Candidate: <strong>Aspergillus flavus Uricase</strong><a class="headerlink" href="#primary-candidate-aspergillus-flavus-uricase" title="Permanent link">&para;</a></h3>
+<p><strong>Strategy:</strong>
+1. <strong>Source</strong>: Use A. flavus uricase sequence (UniProt Q00511) or FDA-approved rasburicase cDNA.
+2. <strong>GI Protection</strong>: Implement enteric-coated capsules or pH-buffered microspheres to protect enzyme through gastric transit.
+3. <strong>Strain</strong>: Develop high-expressing S. cerevisiae strain with optimized codon usage and promoter for A. flavus uricase.
+4. <strong>Engineering</strong>: Introduce disulfide bond mutations (e.g., Ala6–Cys290, Ser119–Cys220) to increase stability. Optionally add protease-resistant loop modifications.
+5. <strong>Target Expression</strong>: Achieve 30–50 U/mg specific activity (comparable to published results); target 10–100 billion CFU per dose.</p>
+<p><strong>Advantages</strong>:
+- Proven FDA manufacturing in S. cerevisiae.
+- Extensive published engineering improvements.
+- Moderate specific activity; achievable in colon.
+- Fungal origin = lower immunogenicity.</p>
+<p><strong>Challenges</strong>:
+- Acid stability requires delivery optimization.
+- Moderate protease resistance (improvable).</p>
+<p><strong>Development Timeline</strong>: 12–18 months for strain optimization, GI stability validation, and preclinical testing (assuming standard microbiology resources).</p>
+<hr />
+<h3 id="secondary-candidate-arthrobacter-globiformis-uricase">Secondary Candidate: <strong>Arthrobacter globiformis Uricase</strong><a class="headerlink" href="#secondary-candidate-arthrobacter-globiformis-uricase" title="Permanent link">&para;</a></h3>
+<p><strong>Strategy</strong>:
+1. <strong>Rationale</strong>: Reserve as backup if A. flavus optimization stalls or if neutral pH optimum proves advantageous.
+2. <strong>Expression</strong>: Develop S. cerevisiae expression vector; likely requires ~6–12 months of optimization (no precedent but low-risk based on E. coli data).
+3. <strong>Engineering</strong>: Introduce K12C–E286C and S296C–S296C intersubunit disulfide bonds for thermostability and protease resistance.
+4. <strong>Immunogenicity</strong>: Conduct epitope mapping; apply structure-guided epitope reduction if mucosal immune response is observed in animal models.</p>
+<p><strong>Advantages</strong>:
+- Neutral pH optimum = superior activity in small intestine.
+- Superior protease resistance (proven and engineered).
+- Excellent structural data for rational design.
+- High expression in E. coli suggests good manufacturability.</p>
+<p><strong>Challenges</strong>:
+- No S. cerevisiae expression precedent.
+- Bacterial origin = potential higher mucosal immunogenicity (unproven).
+- Still requires acid protection for gastric phase.</p>
+<p><strong>Development Timeline</strong>: 18–24 months (longer due to expression optimization).</p>
+<hr />
+<h2 id="key-uncertainties-and-knowledge-gaps">Key Uncertainties and Knowledge Gaps<a class="headerlink" href="#key-uncertainties-and-knowledge-gaps" title="Permanent link">&para;</a></h2>
+<h3 id="high-priority-unknowns">High-Priority Unknowns<a class="headerlink" href="#high-priority-unknowns" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Acid Stability Kinetics for All Variants</strong>:</li>
+<li><strong>Status</strong>: No quantitative pH titration curves (activity vs. pH 2.0–8.0) exist for any variant in accessible literature.</li>
+<li><strong>Why it matters</strong>: Determines protective encapsulation design; critical for dosing.</li>
+<li>
+<p><strong>Next step</strong>: Measure A. flavus uricase activity across pH 2–8 at 37°C; model inactivation kinetics.</p>
+</li>
+<li>
+<p><strong>Protease Resistance (Quantitative)</strong>:</p>
+</li>
+<li><strong>Status</strong>: No systematic comparison of trypsin/chymotrypsin cleavage rates across variants.</li>
+<li><strong>Why it matters</strong>: Determines residence time in upper GI; affects dosing frequency.</li>
+<li>
+<p><strong>Next step</strong>: Perform time-course trypsin digestion assay; identify cleavage sites via mass spec.</p>
+</li>
+<li>
+<p><strong>Daily Enzyme Load for 200 mg UA Degradation</strong>:</p>
+</li>
+<li><strong>Status</strong>: Rough estimate only (~100 U enzyme); no model of GI transit, pH gradient, residence time kinetics.</li>
+<li><strong>Why it matters</strong>: Determines CFU dose and formulation volume.</li>
+<li>
+<p><strong>Next step</strong>: Develop mathematical model integrating Michaelis–Menten kinetics, pH-dependent activity, intestinal transit time, and UA load from dietary + endogenous sources.</p>
+</li>
+<li>
+<p><strong>Immunogenicity of A. flavus Uricase in Oral Form</strong>:</p>
+</li>
+<li><strong>Status</strong>: No human trial data for A. flavus uricase. ALLN-346 (C. utilis) showed no systemic response, but fungal vs. bacterial differences are unknown.</li>
+<li><strong>Why it matters</strong>: Determines safety and efficacy durability (tolerance vs. sensitization).</li>
+<li>
+<p><strong>Next step</strong>: Conduct murine oral tolerance model; assess fecal IgA, mesenteric lymph IgG; dose escalation.</p>
+</li>
+<li>
+<p><strong>S. cerevisiae Expression Level (A. flavus target)</strong>:</p>
+</li>
+<li><strong>Status</strong>: FDA rasburicase achieves 24–46 U/mg; unclear if modern codon optimization and promoter engineering can exceed this in S. cerevisiae.</li>
+<li><strong>Why it matters</strong>: Determines cell density and fermentation volume.</li>
+<li>
+<p><strong>Next step</strong>: Test 3–5 optimized S. cerevisiae constructs; achieve target of ≥40 U/mg.</p>
+</li>
+<li>
+<p><strong>Synergy Between Acid-Protection Formulation and Enzyme Stability</strong>:</p>
+</li>
+<li><strong>Status</strong>: Unknown. Encapsulation may expose enzyme to unusual pH, solvent, or osmotic stress; potential for denaturation inside capsule.</li>
+<li><strong>Why it matters</strong>: Encapsulated enzyme may lose activity before release.</li>
+<li><strong>Next step</strong>: Test A. flavus uricase stability inside pH-buffered microspheres over 6–12 hours at 37°C in simulated gastric and intestinal fluids.</li>
+</ol>
+<h3 id="medium-priority-unknowns">Medium-Priority Unknowns<a class="headerlink" href="#medium-priority-unknowns" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Arthrobacter globiformis Expression in S. cerevisiae</strong>:</li>
+<li>No data; requires empirical testing.</li>
+<li>
+<p>Likely feasible but codon optimization and expression level remain unknown.</p>
+</li>
+<li>
+<p><strong>Quaternary Structure Stability of A. globiformis in GI</strong>:</p>
+</li>
+<li><strong>Status</strong>: Tetramer dissociation under pH stress not quantified.</li>
+<li>
+<p>If tetramer dissociates in stomach, protease resistance drops sharply.</p>
+</li>
+<li>
+<p><strong>Off-Target Activity of Uricase</strong>:</p>
+</li>
+<li><strong>Status</strong>: Uricase is generally specific for uric acid; xanthine inhibition exists but activity on other substrates is rare.</li>
+<li><strong>Why it matters</strong>: Dysbiosis risk via unexpected enzyme activity on microbiota metabolites.</li>
+<li>
+<p><strong>Next step</strong>: Substrate specificity screen against microbial and human metabolites.</p>
+</li>
+<li>
+<p><strong>Oral Tolerance Mechanism</strong>:</p>
+<ul>
+<li><strong>Status</strong>: Unknown whether repeated oral A. flavus uricase exposure induces Foxp3+ Treg differentiation (true tolerance) or simply anergy.</li>
+<li><strong>Why it matters</strong>: Determines long-term safety and possibility of delayed hypersensitivity (e.g., if systemic exposure occurs during infection).</li>
+</ul>
+</li>
+</ol>
+<h3 id="low-priority-unknowns-solvable-but-not-blocking">Low-Priority Unknowns (Solvable but not blocking)<a class="headerlink" href="#low-priority-unknowns-solvable-but-not-blocking" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Exact Km and kcat for All Variants in Physiological pH</strong>:</p>
+<ul>
+<li>Literature values are at pH 8–8.5; pH 7–7.5 values are sparse.</li>
+</ul>
+</li>
+<li>
+<p><strong>Binding Pocket Structure (Soybean Uricase)</strong>:</p>
+<ul>
+<li>Not relevant given recommendation against soybean variant, but structure might inform A. flavus engineering.</li>
+</ul>
+</li>
+<li>
+<p><strong>Evolutionary Immunogenicity Prediction</strong>:</p>
+<ul>
+<li>Phylogenetic distance between variant and human uricase (pseudogene) does not predict immunogenicity; structural homology and epitope motifs matter more.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="engineering-roadmap-18-months-a-flavus-primary">Engineering Roadmap (18 Months, A. flavus Primary)<a class="headerlink" href="#engineering-roadmap-18-months-a-flavus-primary" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-characterization-months-13">Phase 1: Characterization (Months 1–3)<a class="headerlink" href="#phase-1-characterization-months-13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Measure A. flavus uricase activity vs. pH 2.0–8.0 at 37°C; fit inactivation kinetics model.</li>
+<li>[ ] Conduct trypsin/chymotrypsin digest time-course; identify cleavage sites.</li>
+<li>[ ] Sequence-align A. flavus with A. globiformis and other variants; map likely protease-resistant regions.</li>
+</ul>
+<h3 id="phase-2-strain-development-months-49">Phase 2: Strain Development (Months 4–9)<a class="headerlink" href="#phase-2-strain-development-months-49" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Clone A. flavus uricase gene (UniProt Q00511 sequence) into S. cerevisiae with 3–5 optimized promoters (GAL1, CUP1, ADH1, TDH3, PGK1).</li>
+<li>[ ] Test expression levels; target ≥40 U/mg specific activity.</li>
+<li>[ ] Select best strain; scale to 1L fermentation.</li>
+</ul>
+<h3 id="phase-3-formulation-engineering-months-712">Phase 3: Formulation Engineering (Months 7–12)<a class="headerlink" href="#phase-3-formulation-engineering-months-712" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Design acid-protective formulation: enteric capsule, pH-buffered microsphere, or mucin-binding polymer.</li>
+<li>[ ] Test A. flavus uricase stability in formulation (simulated gastric and intestinal fluids, 37°C, 6–12h).</li>
+<li>[ ] Optimize release pH and kinetics.</li>
+</ul>
+<h3 id="phase-4-protein-engineering-months-615">Phase 4: Protein Engineering (Months 6–15)<a class="headerlink" href="#phase-4-protein-engineering-months-615" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Introduce disulfide bond mutations (Ala6–Cys290, Ser119–Cys220, additional sites).</li>
+<li>[ ] Express variants in optimized S. cerevisiae; measure thermal stability (Tm), acid stability, and specific activity.</li>
+<li>[ ] Select best variant; confirm tetramer stability and activity.</li>
+</ul>
+<h3 id="phase-5-preclinical-models-months-1218">Phase 5: Preclinical Models (Months 12–18)<a class="headerlink" href="#phase-5-preclinical-models-months-1218" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Test engineered strain + formulation in murine gout model (monosodium urate crystal injection, quantify inflammatory markers, uric acid levels).</li>
+<li>[ ] Assess mucosal immunity: fecal IgA, mesenteric lymph IgG, Foxp3+ Treg frequency.</li>
+<li>[ ] Dose escalation tolerance study.</li>
+</ul>
+<h3 id="milestone-targets">Milestone Targets<a class="headerlink" href="#milestone-targets" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Month 3</strong>: pH inactivation kinetics and protease susceptibility maps.</li>
+<li><strong>Month 9</strong>: S. cerevisiae strain expressing 40+ U/mg A. flavus uricase.</li>
+<li><strong>Month 12</strong>: Acid-protective formulation stable for ≥12h in simulated GI.</li>
+<li><strong>Month 15</strong>: Engineered A. flavus (disulfide bonds) showing 1.5–2× improved thermal and acid stability vs. wild-type.</li>
+<li><strong>Month 18</strong>: Efficacy and safety data from murine model; ready for IND-enabling studies.</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p><strong>Aspergillus flavus uricase, engineered for acid and protease stability and formulated for enteric protection, is the recommended primary candidate for oral uricase therapy in gout.</strong></p>
+<p>Its FDA-proven S. cerevisiae manufacturability, extensive published engineering precedent, and moderate specific activity make it the lowest-risk path to clinical development. Acid stability and protease resistance are solvable engineering problems with clear precedent.</p>
+<p><strong>Arthrobacter globiformis uricase is a high-potential backup candidate</strong>, offering superior neutral pH optimum and protease resistance. However, lack of S. cerevisiae expression precedent makes it a 18–24 month secondary pathway.</p>
+<p>Both candidates require rigorous characterization of GI stability kinetics, formulation optimization, and preclinical efficacy/immunogenicity testing before advancement to animal models or IND applications.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h3 id="primary-literature-evidence-level-tagged">Primary Literature (Evidence-Level Tagged)<a class="headerlink" href="#primary-literature-evidence-level-tagged" title="Permanent link">&para;</a></h3>
+<p><strong>In Vitro Biochemistry &amp; Engineering:</strong>
+1. Stability and functional consequences of disulfide bond engineering in Aspergillus flavus uricase. <em>Scientific Reports</em> 15, e00277 (2025). [In Vitro]
+2. The role of Gln269Leu mutation on the thermostability and structure of uricase from Aspergillus flavus. <em>Scientific Reports</em> (2025). [In Vitro]
+3. High-yield expression, purification, characterization, and structure determination of tag-free Candida utilis uricase. <em>Applied Microbiology and Biotechnology</em> 89, 1413–1422 (2011). [In Vitro]
+4. Efficient purification of a recombinant tag-free thermostable Kluyveromyces marxianus uricase by pH-induced self-cleavage of intein. <em>Applied Microbiology and Biotechnology</em> 111, 8463–8475 (2019). [In Vitro]
+5. Structure-based design of a hyperthermostable AgUricase for hyperuricemia and gout therapy. <em>Acta Pharmacologica Sinica</em> 40, 1234–1245 (2019). [In Vitro]
+6. Uricolysis by Arthrobacter globiformis uricase: structural basis for its catalytic activity and thermostability. <em>Acta Pharmacologica Sinica</em> 46, e1624 (2025). [In Vitro]
+7. Molecular cloning and expression of uricase gene from Arthrobacter globiformis in Escherichia coli. <em>Journal of Molecular Catalysis B: Enzymatic</em> 32, 277–286 (2004). [In Vitro]
+8. Characterization of uricase from Bacillus fastidiosus. <em>Journal of Biological Chemistry</em> 253, 11537–11546 (1978). [In Vitro]
+9. PASylated Urate Oxidase Enzyme: Enhancing Biocatalytic Activity and Physicochemical Properties. <em>ACS Omega</em> 7, 39405–39416 (2022). [In Vitro]
+10. Recombinant production of Aspergillus flavus uricase and investigation of its thermal stability. <em>3 Biotech</em> 7, 117 (2017). [In Vitro]</p>
+<p><strong>Clinical &amp; Preclinical Studies:</strong>
+11. Oral Treatment With an Engineered Uricase, ALLN-346, Reduces Hyperuricemia and Uricosuria in Urate Oxidase-Deficient Mice. <em>Frontiers in Medicine</em> 7, 569215 (2020). [Animal Model]
+12. Allena Pharmaceuticals Announces Initial Data from Phase 1 Trial of ALLN-346. Press release (2020). [Clinical Trial]
+13. Rasburicase (Elitek): A Novel Agent for Tumor Lysis Syndrome. <em>Journal of the American Medical Association</em> 291, 1146–1152 (2004). [Clinical Trial]
+14. CRISPR-Cas9-mediated reactivation of the uricase pseudogene in human cells prevents acute hyperuricemia. <em>Molecular Therapy - Nucleic Acids</em> 24, 516–527 (2021). [In Vitro]
+15. Pegloticase immunogenicity: the relationship between efficacy and antibody development in patients treated for refractory chronic gout. <em>Arthritis Research &amp; Therapy</em> 16, 405 (2014). [Clinical Trial]
+16. Oral Delivery of Nanoparticles Carrying Ancestral Uricase Enzyme Protects against Hyperuricemia in Knockout Mice. <em>Biomacromolecules</em> 23, 4321–4331 (2022). [Animal Model]</p>
+<p><strong>Regulatory &amp; Precedent:</strong>
+17. FDA Approves Elitek (rasburicase) for Management of Plasma Uric Acid Levels. FDA approval letter (July 12, 2002). [Clinical Trial]
+18. Evolutionary history and metabolic insights of ancient mammalian uricases. <em>PNAS</em> 111, 3763–3768 (2014). [Mechanistic Extrapolation]
+19. A Therapeutic Uricase with Reduced Immunogenicity Risk. <em>Molecular Therapy</em> 25, 1–12 (2017). [In Vitro]
+20. Statistical media optimization for the production of clinical uricase from Bacillus subtilis strain SP6. <em>Preparative Biochemistry &amp; Biotechnology</em> 49, 887–895 (2019). [In Vitro]</p>
+<hr />
+<p><strong>Document Status</strong>: Draft for PhD-level scientific review.<br />
+<strong>Next Step</strong>: Stakeholder review; recommend advancement of Phase 1 characterization experiments.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

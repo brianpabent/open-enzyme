@@ -1,0 +1,4178 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/enzyme-deficit-deep-dive/">
+      
+      
+        <link rel="prev" href="../digestive-enzymes/">
+      
+      
+        <link rel="next" href="../engineered-koji-protocol/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>The Enzyme Deficit Connection - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-enzyme-deficit-connection" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Enzyme Deficit Connection
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../open-enzyme-vision/" class="md-tabs__link">
+          
+  
+  
+  Vision & Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gout-pathophysiology/" class="md-tabs__link">
+          
+  
+  
+  Gout & Uricase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nlrp3-inflammasome/" class="md-tabs__link">
+          
+  
+  
+  NLRP3 & Inflammation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../digestive-enzymes/" class="md-tabs__link">
+          
+  
+  
+  Koji & Digestive Enzymes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../saccharomyces-cerevisiae/" class="md-tabs__link">
+          
+  
+  
+  Organisms & Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gut-lumen-sink/" class="md-tabs__link">
+          
+  
+  
+  Delivery & Barrier
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bpc-157/" class="md-tabs__link">
+          
+  
+  
+  Compounds & Peptides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sibo/" class="md-tabs__link">
+          
+  
+  
+  Other Conditions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bio-ai-tools/" class="md-tabs__link">
+          
+  
+  
+  Tools & Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-the-shared-pattern-youre-both-missing-enzymes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 1: The Shared Pattern: You're Both Missing Enzymes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: The Shared Pattern: You&#39;re Both Missing Enzymes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brian-gout-vs-lynn-digestive-insufficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brian — Gout vs. Lynn — Digestive Insufficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-why-we-lost-uricase-an-evolutionary-gamble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2: Why We Lost Uricase: An Evolutionary Gamble
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Why We Lost Uricase: An Evolutionary Gamble">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-uric-acid-advantage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Uric Acid Advantage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-digestive-enzyme-insufficiency-the-acquired-deficit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 3: Digestive Enzyme Insufficiency: The Acquired Deficit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: Digestive Enzyme Insufficiency: The Acquired Deficit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-digestive-enzymes-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Digestive Enzymes Come From
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-system-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the System Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-manifests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Manifests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-the-supplement-approach-fungal-enzymes-to-the-rescue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 4: The Supplement Approach: Fungal Enzymes to the Rescue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: The Supplement Approach: Fungal Enzymes to the Rescue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-aspergillus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Aspergillus?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-in-a-product-like-boulderbio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's in a Product Like BoulderBio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-they-work-and-their-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How They Work — and Their Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-the-koji-connection-your-supplement-comes-from-miso-mold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 5: The Koji Connection: Your Supplement Comes from Miso Mold
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 5: The Koji Connection: Your Supplement Comes from Miso Mold">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#koji-biology-101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Koji Biology 101
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-koji-cultivation-enzyme-density-vs-flavor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Home Koji Cultivation: Enzyme Density vs. Flavor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shio-koji-and-amazake-as-enzyme-delivery-vehicles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shio Koji and Amazake as Enzyme Delivery Vehicles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-concentration-challenge-miso-vs-capsule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Concentration Challenge: Miso vs. Capsule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-6-can-you-ferment-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 6: Can You Ferment Uricase?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 6: Can You Ferment Uricase?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-aspergillus-flavus-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Aspergillus flavus Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-uricase-producing-organisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Uricase-Producing Organisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-delivery-problem-gut-vs-blood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Delivery Problem: Gut vs. Blood
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-gut-excretion-loophole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gut Excretion Loophole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alln-346-proof-this-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALLN-346: Proof This Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-7-the-blood-barrier-can-the-gut-absorb-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 7: The Blood Barrier: Can the Gut Absorb Uricase?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 7: The Blood Barrier: Can the Gut Absorb Uricase?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-gut-blocks-intact-proteins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Gut Blocks Intact Proteins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategies-being-developed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategies Being Developed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snac-permeation-enhancers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SNAC Permeation Enhancers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nanoparticle-encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nanoparticle Encapsulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcrn-receptor-hijacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FcRn Receptor Hijacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oral-insulin-as-a-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oral Insulin as a Parallel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-8-therapeutic-frontiers-for-both" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 8: Therapeutic Frontiers for Both
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 8: Therapeutic Frontiers for Both">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crispr-and-gene-therapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRISPR and Gene Therapy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineered-probiotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineered Probiotics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pharmacological-chaperones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pharmacological Chaperones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microbiome-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microbiome Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-9-the-convergence-where-the-threads-intersect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 9: The Convergence: Where the Threads Intersect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 9: The Convergence: Where the Threads Intersect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#same-genus-different-enzymes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Genus, Different Enzymes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-delivery-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Delivery Target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-engineering-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Engineering Platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fermentation-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fermentation Intersection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-emerged-two-parallel-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Emerged: Two Parallel Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-10-practical-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 10: Practical Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 10: Practical Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-brian-gout-uricase-deficit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Brian (Gout / Uricase Deficit)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Brian (Gout / Uricase Deficit)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#now-available-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Now — Available Today
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soon-25-year-horizon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soon — 2–5 Year Horizon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-515-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future — 5–15+ Years
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-lynn-digestive-enzyme-insufficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Lynn (Digestive Enzyme Insufficiency)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Lynn (Digestive Enzyme Insufficiency)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#now-available-today_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Now — Available Today
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soon-25-year-horizon_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soon — 2–5 Year Horizon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-515-years_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future — 5–15+ Years
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-both-of-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Both of You
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Both of You">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#now-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Now — Together
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-enzyme-research-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Enzyme Research Library
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-the-shared-pattern-youre-both-missing-enzymes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 1: The Shared Pattern: You're Both Missing Enzymes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: The Shared Pattern: You&#39;re Both Missing Enzymes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brian-gout-vs-lynn-digestive-insufficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brian — Gout vs. Lynn — Digestive Insufficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-why-we-lost-uricase-an-evolutionary-gamble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2: Why We Lost Uricase: An Evolutionary Gamble
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Why We Lost Uricase: An Evolutionary Gamble">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-uric-acid-advantage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Uric Acid Advantage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-digestive-enzyme-insufficiency-the-acquired-deficit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 3: Digestive Enzyme Insufficiency: The Acquired Deficit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: Digestive Enzyme Insufficiency: The Acquired Deficit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-digestive-enzymes-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Digestive Enzymes Come From
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-system-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the System Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-manifests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Manifests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-the-supplement-approach-fungal-enzymes-to-the-rescue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 4: The Supplement Approach: Fungal Enzymes to the Rescue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: The Supplement Approach: Fungal Enzymes to the Rescue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-aspergillus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Aspergillus?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-in-a-product-like-boulderbio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's in a Product Like BoulderBio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-they-work-and-their-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How They Work — and Their Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-the-koji-connection-your-supplement-comes-from-miso-mold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 5: The Koji Connection: Your Supplement Comes from Miso Mold
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 5: The Koji Connection: Your Supplement Comes from Miso Mold">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#koji-biology-101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Koji Biology 101
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-koji-cultivation-enzyme-density-vs-flavor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Home Koji Cultivation: Enzyme Density vs. Flavor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shio-koji-and-amazake-as-enzyme-delivery-vehicles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shio Koji and Amazake as Enzyme Delivery Vehicles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-concentration-challenge-miso-vs-capsule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Concentration Challenge: Miso vs. Capsule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-6-can-you-ferment-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 6: Can You Ferment Uricase?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 6: Can You Ferment Uricase?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-aspergillus-flavus-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Aspergillus flavus Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-uricase-producing-organisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Uricase-Producing Organisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-delivery-problem-gut-vs-blood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Delivery Problem: Gut vs. Blood
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-gut-excretion-loophole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gut Excretion Loophole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alln-346-proof-this-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALLN-346: Proof This Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-7-the-blood-barrier-can-the-gut-absorb-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 7: The Blood Barrier: Can the Gut Absorb Uricase?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 7: The Blood Barrier: Can the Gut Absorb Uricase?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-gut-blocks-intact-proteins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Gut Blocks Intact Proteins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategies-being-developed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategies Being Developed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snac-permeation-enhancers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SNAC Permeation Enhancers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nanoparticle-encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nanoparticle Encapsulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcrn-receptor-hijacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FcRn Receptor Hijacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oral-insulin-as-a-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oral Insulin as a Parallel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-8-therapeutic-frontiers-for-both" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 8: Therapeutic Frontiers for Both
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 8: Therapeutic Frontiers for Both">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crispr-and-gene-therapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRISPR and Gene Therapy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineered-probiotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineered Probiotics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pharmacological-chaperones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pharmacological Chaperones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microbiome-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microbiome Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-9-the-convergence-where-the-threads-intersect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 9: The Convergence: Where the Threads Intersect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 9: The Convergence: Where the Threads Intersect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#same-genus-different-enzymes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Genus, Different Enzymes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-delivery-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Delivery Target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-engineering-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Engineering Platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fermentation-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fermentation Intersection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-emerged-two-parallel-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Emerged: Two Parallel Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-10-practical-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 10: Practical Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 10: Practical Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-brian-gout-uricase-deficit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Brian (Gout / Uricase Deficit)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Brian (Gout / Uricase Deficit)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#now-available-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Now — Available Today
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soon-25-year-horizon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soon — 2–5 Year Horizon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-515-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future — 5–15+ Years
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-lynn-digestive-enzyme-insufficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Lynn (Digestive Enzyme Insufficiency)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Lynn (Digestive Enzyme Insufficiency)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#now-available-today_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Now — Available Today
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soon-25-year-horizon_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soon — 2–5 Year Horizon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-515-years_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future — 5–15+ Years
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-both-of-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Both of You
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Both of You">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#now-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Now — Together
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-enzyme-research-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Enzyme Research Library
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-enzyme-deficit-connection">The Enzyme Deficit Connection<a class="headerlink" href="#the-enzyme-deficit-connection" title="Permanent link">&para;</a></h1>
+<p>Gout, digestion, koji mold, and the surprisingly shared biology of two conditions you'd never think to put in the same sentence.</p>
+<p>A research deep-dive for Brian &amp; Lynn · April 2026</p>
+<hr />
+<h2 id="section-1-the-shared-pattern-youre-both-missing-enzymes">Section 1: The Shared Pattern: You're Both Missing Enzymes<a class="headerlink" href="#section-1-the-shared-pattern-youre-both-missing-enzymes" title="Permanent link">&para;</a></h2>
+<p>Here's the thing most people never put together: gout and digestive enzyme insufficiency are fundamentally the same category of problem. They're both enzyme deficits. One is ancient and genetic; the other is acquired and progressive. But at their core, both conditions come down to a missing catalyst — a protein that should be converting substance A into substance B, and isn't.</p>
+<h3 id="brian-gout-vs-lynn-digestive-insufficiency">Brian — Gout vs. Lynn — Digestive Insufficiency<a class="headerlink" href="#brian-gout-vs-lynn-digestive-insufficiency" title="Permanent link">&para;</a></h3>
+<p><strong>Brian — Gout</strong>
+- Missing enzyme: <code>Uricase</code> (urate oxidase)
+- Should convert: uric acid → allantoin (soluble, easily excreted)
+- Result: uric acid accumulates, crystallizes in joints
+- Root cause: gene was permanently inactivated ~15 million years ago in all great apes</p>
+<p><strong>Lynn — Digestive Insufficiency</strong>
+- Missing enzymes: <code>Protease</code>, <code>Lipase</code>, <code>Amylase</code>, and others
+- Should convert: proteins, fats, starches → amino acids, fatty acids, sugars
+- Result: incomplete digestion, bloating, malabsorption
+- Root cause: acquired — aging, inflammation, gut damage, or pancreatic underperformance</p>
+<p>The beautiful irony is that both conditions have the same first-line intervention strategy: <strong>replace the missing enzyme from an external source</strong>. Lynn takes capsules full of fungal-derived enzymes. The pharmaceutical industry is trying to get Brian oral uricase. Same logic, wildly different execution challenges — and we'll get into exactly why.</p>
+<blockquote>
+<p><strong>Key Insight:</strong> Every enzyme deficit follows the same playbook: the body can't make enough of protein X, so you either (a) supply X from outside, (b) reduce the substrate that X was supposed to process, or &copy; fix the gene/organ that should be producing X. The differences are all in the details.</p>
+</blockquote>
+<p>What makes this comparison genuinely interesting — beyond the "huh, neat" factor — is that it opens up cross-pollination. The techniques being developed to get uricase past the gut wall? They could eventually deliver digestive enzymes more effectively too. The fungal fermentation that produces Lynn's supplement enzymes? The same genus of mold (<em>Aspergillus</em>) also produces uricase. And the bleeding-edge work in engineered probiotics could, in theory, address both conditions from inside the gut.</p>
+<p>Let's trace both threads and see where they tangle.</p>
+<hr />
+<h2 id="section-2-why-we-lost-uricase-an-evolutionary-gamble">Section 2: Why We Lost Uricase: An Evolutionary Gamble<a class="headerlink" href="#section-2-why-we-lost-uricase-an-evolutionary-gamble" title="Permanent link">&para;</a></h2>
+<p>In almost every other mammal on Earth, the metabolic pathway for purines ends cleanly. Purines (from DNA turnover, from the steak you ate) get broken down into uric acid, and then an enzyme called <code>uricase</code> converts uric acid into allantoin — a harmless, highly soluble molecule that your kidneys flush out without complaint.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Purines → Hypoxanthine → [xanthine oxidase] → Uric Acid → [uricase] → Allantoin ✗
+</code></pre></div>
+<p>Humans, chimpanzees, gorillas, orangutans, and gibbons all have a broken uricase gene. Not "reduced expression" — the gene is there, but it's been wrecked by multiple stop-codon mutations accumulated over millions of years. It's a pseudogene now, a fossil in our DNA. The pathway dead-ends at uric acid.</p>
+<h3 id="the-timeline">The Timeline<a class="headerlink" href="#the-timeline" title="Permanent link">&para;</a></h3>
+<p>The inactivation wasn't a single event. Molecular clock analysis suggests the uricase gene started accumulating disabling mutations around 15–20 million years ago, during the Miocene epoch. This was a period of dramatic climate change — tropical forests in Africa and Asia were shrinking, fruit was becoming scarcer and more seasonal, and our ape ancestors were under intense dietary pressure.</p>
+<p>The fact that the mutation spread and fixed in the population (meaning every single descendant carries it) tells us something important: losing uricase wasn't a neutral accident. It was selected for. Individuals with higher uric acid levels had a survival advantage significant enough to outcompete those with working uricase.</p>
+<h3 id="the-uric-acid-advantage">The Uric Acid Advantage<a class="headerlink" href="#the-uric-acid-advantage" title="Permanent link">&para;</a></h3>
+<p>So what does elevated uric acid actually do for you? Several things, and they were all critical during a period of nutritional scarcity:</p>
+<p><strong>Antioxidant powerhouse.</strong> Uric acid is one of the most potent antioxidants in human blood plasma. When our ancestors lost the ability to synthesize vitamin C (another broken gene — we're double-deficit primates), uric acid stepped into the gap. It scavenges free radicals, protects blood vessels, and may have extended lifespan in early apes. Some researchers call it "the vitamin C replacement hypothesis," and the timing of both gene losses is suspiciously close.</p>
+<p><strong>Blood pressure maintenance.</strong> Uric acid promotes sodium retention and has mild vasoconstrictive effects. In a world of salt scarcity and low-sodium diets, this helped maintain blood pressure. A foraging ape that can keep its blood pressure up during periods of fasting or low-salt intake survives; one that can't passes out while climbing.</p>
+<p><strong>Fructose metabolism and fat storage.</strong> This is the most compelling recent theory. Uric acid amplifies the fat-storage response to fructose. When a Miocene ape found ripe fruit (the main caloric windfall available), elevated uric acid helped convert that fructose into fat more efficiently. More fat storage from rare fruit = better survival through lean seasons. Richard Johnson's research group has built a compelling case that the uricase loss was essentially a "thrifty gene" adaptation — one that's now catastrophically mismatched with modern diets.</p>
+<blockquote>
+<p><strong>The Tradeoff:</strong> The same mutation that helped your ancestors survive fruit scarcity in Miocene forests now means your body runs with 3–7 mg/dL of uric acid at all times (vs. ~0.5 mg/dL in most mammals). Add a modern diet high in purines, fructose, and alcohol, and you easily push past the crystallization threshold (~6.8 mg/dL at body temperature). The crystals that form are needle-shaped monosodium urate, and when they deposit in joints, your immune system attacks them with the same ferocity it'd bring to a bacterial infection.</p>
+</blockquote>
+<p>Here's the dark humor: we lost uricase because it helped us survive famine. Now we have gout because there is no famine. Evolution doesn't do refunds.</p>
+<p>Other mammals that independently lost uricase show the same pattern. Dalmatian dogs have a uric acid transport mutation (not uricase loss, but a similar result) and get urate stones. Some bird species and reptiles excrete uric acid as their primary nitrogen waste — but their kidneys evolved specifically for this, with urate-handling tubules that human kidneys simply don't have.</p>
+<hr />
+<h2 id="section-3-digestive-enzyme-insufficiency-the-acquired-deficit">Section 3: Digestive Enzyme Insufficiency: The Acquired Deficit<a class="headerlink" href="#section-3-digestive-enzyme-insufficiency-the-acquired-deficit" title="Permanent link">&para;</a></h2>
+<p>While Brian's enzyme deficit is etched into his species' DNA, Lynn's is a story of systems under strain. The human digestive system produces an astonishing array of enzymes — from salivary amylase in your mouth to the full battery of pancreatic enzymes dumped into your small intestine, to the brush-border enzymes embedded in the intestinal lining itself. When any part of this cascade underperforms, you feel it.</p>
+<h3 id="where-digestive-enzymes-come-from">Where Digestive Enzymes Come From<a class="headerlink" href="#where-digestive-enzymes-come-from" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Key Enzymes</th>
+<th>What They Break Down</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Salivary glands</td>
+<td><code>Amylase</code>, lingual lipase</td>
+<td>Starches, some fats</td>
+</tr>
+<tr>
+<td>Stomach</td>
+<td><code>Pepsin</code> (from pepsinogen + HCl)</td>
+<td>Proteins (initial cleavage)</td>
+</tr>
+<tr>
+<td>Pancreas</td>
+<td><code>Trypsin</code>, chymotrypsin, elastase, <code>Lipase</code>, pancreatic amylase, nucleases</td>
+<td>Proteins, fats, starches, nucleic acids</td>
+</tr>
+<tr>
+<td>Brush border (intestinal wall)</td>
+<td><code>Lactase</code>, sucrase, maltase, peptidases, <code>DPP-IV</code></td>
+<td>Disaccharides, small peptides (incl. gluten fragments)</td>
+</tr>
+<tr>
+<td>Bile (liver/gallbladder)</td>
+<td>Not enzymes per se — bile salts emulsify fats</td>
+<td>Enables lipase access to fat droplets</td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-the-system-fails">Why the System Fails<a class="headerlink" href="#why-the-system-fails" title="Permanent link">&para;</a></h3>
+<p><strong>Aging.</strong> Pancreatic enzyme output declines with age — not dramatically in healthy people, but measurably. Stomach acid production also drops (hypochlorhydria), which impairs pepsin activation and downstream signaling for pancreatic secretion. After 50, many people are running their digestive cascade at 60–70% capacity without realizing it.</p>
+<p><strong>Exocrine Pancreatic Insufficiency (EPI).</strong> The most severe form. The pancreas literally can't produce enough enzymes, usually due to chronic pancreatitis, cystic fibrosis, pancreatic surgery, or long-term heavy alcohol use. This is the clinical diagnosis that gets you prescription enzyme replacement (Creon, Zenpep). EPI is underdiagnosed — fecal elastase testing catches it, but most GI docs don't order it for vague bloating complaints.</p>
+<p><strong>Gut inflammation.</strong> Crohn's disease, ulcerative colitis, and even chronic low-grade inflammation from food sensitivities can damage the brush-border enzymes. These are physically embedded in the intestinal villi — if the villi are inflamed or blunted, you lose enzyme surface area.</p>
+<p><strong>Celiac disease.</strong> Autoimmune destruction of the intestinal villi. Devastating to brush-border enzymes, particularly lactase (which is why most celiacs are also lactose intolerant until their gut heals). Also impairs DPP-IV, the brush-border enzyme that breaks down the proline-rich peptides in gluten — creating a vicious cycle.</p>
+<p><strong>SIBO (Small Intestinal Bacterial Overgrowth).</strong> Bacteria in the small intestine that shouldn't be there compete for nutrients and produce inflammatory byproducts that damage the mucosal lining. SIBO is a common driver of enzyme insufficiency that often gets overlooked in favor of simpler explanations. <em>Update: SIBO is now the leading candidate diagnosis for Lynn's digestive symptoms</em> — it explains the bloating, the pattern of food intolerances, and why broad-spectrum enzyme supplementation helps (it compensates for the brush-border damage) without fully resolving the underlying issue. A breath test can confirm this, and treatment with rifaximin typically produces significant improvement. SIBO also drives NLRP3-mediated gut inflammation — the same pathway involved in Brian's gout flares (see <a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a>).</p>
+<p><strong>Gallbladder removal.</strong> No gallbladder means no concentrated bile release timed to meals. Bile still drips continuously from the liver, but without the gallbladder's "bolus dump," fat digestion suffers. Lipase without bile is like a carpenter without a saw — the enzyme is there, but its substrate isn't properly prepared.</p>
+<h3 id="how-it-manifests">How It Manifests<a class="headerlink" href="#how-it-manifests" title="Permanent link">&para;</a></h3>
+<p>The symptoms are maddeningly nonspecific: bloating after meals, gas, feeling overly full, occasional loose stools (especially fatty-looking ones — steatorrhea if it's severe), fatigue after eating, and gradual micronutrient deficiencies that show up as hair thinning, brittle nails, or low energy. Because these symptoms overlap with a dozen other conditions, many people spend years cycling through elimination diets and FODMAP protocols before anyone suggests their enzyme output might simply be insufficient.</p>
+<blockquote>
+<p><strong>The Parallel:</strong> Notice the structural similarity to gout: a metabolic step isn't completing, substrate accumulates (undigested food instead of uric acid), and downstream systems suffer (malabsorption instead of crystal deposition). The timescales are different — gout builds over years to acute attacks, enzyme insufficiency is a daily grind — but the logic is identical.</p>
+</blockquote>
+<hr />
+<h2 id="section-4-the-supplement-approach-fungal-enzymes-to-the-rescue">Section 4: The Supplement Approach: Fungal Enzymes to the Rescue<a class="headerlink" href="#section-4-the-supplement-approach-fungal-enzymes-to-the-rescue" title="Permanent link">&para;</a></h2>
+<p>This is where biology gets elegant. If your body can't make enough of an enzyme, you can swallow enzymes derived from fungi — specifically from <em>Aspergillus</em> species — and they'll work alongside your own diminished output in the gut lumen.</p>
+<h3 id="why-aspergillus">Why Aspergillus?<a class="headerlink" href="#why-aspergillus" title="Permanent link">&para;</a></h3>
+<p>The supplement industry didn't pick <em>Aspergillus</em> randomly. These molds are champion enzyme producers — it's their ecological strategy. In the wild, <em>Aspergillus</em> species colonize dead plant matter and secrete huge quantities of enzymes to externally digest their surroundings, then absorb the resulting small molecules. They're essentially doing what your pancreas does, but outside their bodies.</p>
+<p>The key species used commercially:</p>
+<table>
+<thead>
+<tr>
+<th>Species</th>
+<th>Primary Enzymes Harvested</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Aspergillus oryzae</em></td>
+<td>Amylase, protease (acid-stable), lipase</td>
+<td>GRAS status ("Generally Recognized as Safe"). The koji mold. 1000+ years of food use.</td>
+</tr>
+<tr>
+<td><em>Aspergillus niger</em></td>
+<td>Lactase, cellulase, pectinase, glucoamylase, lipase</td>
+<td>GRAS. Used in citric acid production since the 1920s. Workhorse of industrial enzymology.</td>
+</tr>
+<tr>
+<td><em>Aspergillus melleus</em></td>
+<td>Protease (alkaline-stable)</td>
+<td>Less common but used for specific protease formulations.</td>
+</tr>
+<tr>
+<td><em>Trichoderma reesei</em></td>
+<td>Cellulase, hemicellulase</td>
+<td>Not <em>Aspergillus</em> but often blended in. Champion cellulose degrader.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whats-in-a-product-like-boulderbio">What's in a Product Like BoulderBio<a class="headerlink" href="#whats-in-a-product-like-boulderbio" title="Permanent link">&para;</a></h3>
+<p>A well-formulated digestive enzyme supplement typically includes a blend designed to cover every major food category. A product like BoulderBio would contain some combination of:</p>
+<p><code>Protease</code> (multiple types) — for protein digestion. Often includes acid-stable, neutral, and alkaline proteases to work across the full pH range of the GI tract (stomach pH ~1.5–3, duodenum pH ~6–7). This is an advantage over prescription pancreatic enzymes (like Creon), which are porcine-derived and only work in the alkaline range.</p>
+<p><code>Lipase</code> — for fat digestion. Fungal lipase is more acid-stable than porcine pancreatic lipase, meaning it starts working earlier in the stomach.</p>
+<p><code>Amylase</code> — for starches. Works in concert with your salivary and pancreatic amylase.</p>
+<p><code>Cellulase</code> — humans don't produce this at all. It breaks down plant cell walls (cellulose), making the nutrients inside plant cells more accessible. This is why cooked vegetables are easier to digest than raw — cooking ruptures cell walls. Cellulase lets you extract more nutrition from raw produce.</p>
+<p><code>Lactase</code> — breaks down lactose. This is the same enzyme that 65% of the world's adult population produces insufficient amounts of.</p>
+<p><code>DPP-IV</code> (dipeptidyl peptidase IV) — specifically targets proline-rich peptides, including gluten fragments. Not a celiac treatment, but can reduce incidental gluten exposure symptoms.</p>
+<p>Other possible inclusions: invertase (sucrose), maltase (maltose), phytase (phytic acid in grains/seeds), alpha-galactosidase (the Beano enzyme, for gas-causing oligosaccharides in beans), glucoamylase (complex starches), and bromelain or papain (plant-derived proteases from pineapple and papaya).</p>
+<h3 id="how-they-work-and-their-limits">How They Work — and Their Limits<a class="headerlink" href="#how-they-work-and-their-limits" title="Permanent link">&para;</a></h3>
+<p>You take the capsule with food. The enzymes mix with your meal in the stomach and small intestine and start doing exactly what your own enzymes do: cleaving chemical bonds. They're not absorbed into your blood — they work right there in the gut lumen, in direct contact with the food.</p>
+<p>This is the critical advantage for digestive enzyme supplementation: <strong>the delivery problem is trivially easy</strong>. The enzyme just needs to reach the gut lumen, and that's where you already put it when you swallow a capsule. No need to cross membranes, no need to survive the bloodstream, no need for targeted delivery. Swallow → work → done.</p>
+<blockquote>
+<p><strong>Limitations:</strong> Enzyme supplements aren't magic. They can't fix the underlying cause of insufficiency. They don't address gut inflammation, SIBO, or biliary problems. The enzymes themselves get digested eventually, so timing with meals matters. Dosing is imprecise — there's no standard "units" system across brands that makes comparison easy (FCC units, USP units, HUT, SAP, and LU are all different measurement systems for different enzyme activities). And if the real issue is low stomach acid or bile salt deficiency, adding more enzymes won't solve the root problem.</p>
+</blockquote>
+<p>But for genuine enzyme insufficiency — where the right enzymes simply aren't present in adequate quantities — supplementation works, and it works reliably. This is one of those rare cases where "just add the missing thing" is actually the right answer.</p>
+<hr />
+<h2 id="section-5-the-koji-connection-your-supplement-comes-from-miso-mold">Section 5: The Koji Connection: Your Supplement Comes from Miso Mold<a class="headerlink" href="#section-5-the-koji-connection-your-supplement-comes-from-miso-mold" title="Permanent link">&para;</a></h2>
+<p>Here's the insight that ties the room together: the <em>Aspergillus oryzae</em> that produces the enzymes in Lynn's supplement capsule is the exact same organism — not a relative, not a cousin, <em>the same species</em> — that has been used in East Asian cuisine for over a thousand years to make miso, soy sauce, sake, and amazake. It's called <strong>koji</strong> (麹).</p>
+<h3 id="koji-biology-101">Koji Biology 101<a class="headerlink" href="#koji-biology-101" title="Permanent link">&para;</a></h3>
+<p><em>Aspergillus oryzae</em> is a filamentous mold that thrives at 28–35°C in humid conditions. Its natural ecology is as a grain decomposer — it lands on a substrate (rice, barley, soybeans), sends out branching hyphae, and floods the environment with extracellular enzymes. Its genome encodes an extraordinary number of secreted hydrolytic enzymes — far more than related species — which is likely the result of centuries of human selection pressure. The Japanese have been cultivating and selecting koji strains since at least the 8<sup>th</sup> century.</p>
+<p>When you grow koji on steamed rice, within 36–48 hours the rice grains become coated in white, then yellowish-green, fuzzy mycelium. During this growth phase, the mold is producing massive quantities of:</p>
+<table>
+<thead>
+<tr>
+<th>Enzyme</th>
+<th>What It Does</th>
+<th>Food Application</th>
+<th>Digestive Parallel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>α-Amylase</code></td>
+<td>Breaks starch → maltose/glucose</td>
+<td>Sake brewing (rice saccharification), amazake sweetness</td>
+<td>Same as pancreatic/salivary amylase</td>
+</tr>
+<tr>
+<td><code>Glucoamylase</code></td>
+<td>Finishes starch → glucose conversion</td>
+<td>Complete sugar extraction in fermentation</td>
+<td>Supplements include this for complex starch digestion</td>
+</tr>
+<tr>
+<td><code>Acid protease</code></td>
+<td>Cleaves proteins at low pH</td>
+<td>Soy sauce flavor development, miso umami</td>
+<td>Active in stomach pH range — better than pancreatic protease here</td>
+</tr>
+<tr>
+<td><code>Neutral/Alkaline protease</code></td>
+<td>Cleaves proteins at mid-high pH</td>
+<td>Miso paste maturation</td>
+<td>Works in small intestine pH range</td>
+</tr>
+<tr>
+<td><code>Lipase</code></td>
+<td>Breaks fats → fatty acids + glycerol</td>
+<td>Flavor development in soy fermentation</td>
+<td>Directly parallels pancreatic lipase</td>
+</tr>
+<tr>
+<td><code>Cellulase</code></td>
+<td>Breaks plant cell walls</td>
+<td>Softens grain/bean structure</td>
+<td>Not produced by humans at all — pure supplement territory</td>
+</tr>
+</tbody>
+</table>
+<p>The thing is, the supplement industry grows <em>A. oryzae</em> in bioreactors on wheat bran or rice bran, harvests the enzyme-rich broth, purifies and concentrates it, freeze-dries it, and packs it into capsules. They're doing <em>industrial koji fermentation</em> — they just don't call it that.</p>
+<h3 id="home-koji-cultivation-enzyme-density-vs-flavor">Home Koji Cultivation: Enzyme Density vs. Flavor<a class="headerlink" href="#home-koji-cultivation-enzyme-density-vs-flavor" title="Permanent link">&para;</a></h3>
+<p>Standard koji-making in the miso/sake tradition optimizes for flavor development — you want enough enzyme activity to convert starches and proteins during fermentation, but the goal is the final product's taste. If you were instead optimizing for maximum enzyme density (a "medicinal koji" concept), you'd make different choices:</p>
+<p><strong>Substrate.</strong> Wheat bran and rice bran have higher enzyme yields than whole rice, because the bran provides protein and minerals that fuel enzyme production. The supplement industry knows this — they ferment on bran, not polished rice. For home cultivation, you could use a mix of steamed rice and wheat bran (60/40) to boost output.</p>
+<p><strong>Temperature.</strong> Standard koji is grown at 28–32°C. Enzyme production (especially protease) peaks at slightly higher temperatures, around 33–37°C, though the mold becomes stressed and sporulates earlier. There's a window where pushing temperature gets you more enzyme at the cost of a shorter growth cycle.</p>
+<p><strong>Humidity.</strong> 80–90% relative humidity during the growth phase. Enzyme secretion is triggered by the mold's need to access nutrients in its environment — drier conditions can actually increase enzyme output per gram of substrate, as the mold works harder to extract moisture and nutrition. But too dry kills it.</p>
+<p><strong>Growth duration.</strong> Flavor koji is typically harvested at 42–48 hours. Enzyme activity actually peaks around 48–72 hours for some enzymes (protease in particular), so a longer grow time increases enzyme content — but also increases sporulation and potentially off-flavors.</p>
+<p><strong>Strain selection.</strong> This matters enormously. <em>A. oryzae</em> strains sold for sake (like Akita Konno #1) are selected for high amylase. Strains for soy sauce (like Aspergillus sojae) are high-protease. Supplement companies use proprietary high-enzyme-producing strains that have been further selected or mutagenized for maximum enzyme secretion. You can buy different koji starters (tane-koji) from suppliers like Higuchi Matsunosuke or GEM Cultures, but the enzyme profiles vary significantly.</p>
+<h3 id="shio-koji-and-amazake-as-enzyme-delivery-vehicles">Shio Koji and Amazake as Enzyme Delivery Vehicles<a class="headerlink" href="#shio-koji-and-amazake-as-enzyme-delivery-vehicles" title="Permanent link">&para;</a></h3>
+<p><strong>Shio koji</strong> (塩麹) — rice koji blended with salt and water, fermented 7–14 days at room temperature. The salt (typically 12–13% by weight) halts the mold's growth but doesn't destroy the enzymes. The result is a living enzyme slurry that actively breaks down proteins and starches. When you marinate chicken in shio koji, you're watching proteases tenderize the meat in real time. As a digestive aid, a spoonful of shio koji with meals would deliver active protease and amylase directly to your food. The catch: the salt content makes large-dose consumption impractical.</p>
+<p><strong>Amazake</strong> (甘酒) — rice koji mixed with cooked rice and incubated at 55–60°C for 8–12 hours. This temperature is optimized for <code>amylase</code> activity (not mold growth — the mold is dead or dormant at 55°C, but its enzymes are thermostable enough to keep working). The result is a naturally sweet porridge where the starch has been converted to simple sugars. As an enzyme delivery vehicle, amazake is interesting because the amylase in it is still active if it hasn't been heat-pasteurized. Fresh amazake consumed with a starchy meal would contribute amylase activity directly. Protease content is lower since the incubation temperature isn't optimal for those enzymes.</p>
+<blockquote>
+<p><strong>The "Medicinal Koji" Concept:</strong> Imagine a koji preparation grown specifically to maximize enzyme diversity and concentration: fermented on bran, grown to peak enzyme timing, then freeze-dried or gently dehydrated (staying below 45°C to preserve activity) and ground to powder. You'd essentially be making artisanal digestive enzyme capsules. The Japanese fermentation tradition actually has something adjacent to this — <em>moyashi</em> (tane-koji starters) and concentrated koji extracts have been used in traditional medicine. The modern supplement industry simply scaled this up with bioreactors and standardized enzyme activity assays.</p>
+</blockquote>
+<h3 id="the-concentration-challenge-miso-vs-capsule">The Concentration Challenge: Miso vs. Capsule<a class="headerlink" href="#the-concentration-challenge-miso-vs-capsule" title="Permanent link">&para;</a></h3>
+<p>Here's where the practical math gets tricky. A digestive enzyme capsule might contain, say, 20,000 HUT of protease activity in 500mg of powder. To get equivalent protease activity from fresh koji rice, you'd need to eat... a lot of koji. Fresh koji typically has enzyme activity in the range of 500–2,000 units per gram (depending on the assay and strain), so you might need 10–40 grams of koji to match one capsule. That's doable — it's maybe two tablespoons — but the enzyme is mixed into a starchy matrix, and it starts acting on the koji rice itself.</p>
+<p>Miso is a different story. During miso's months-long fermentation, the enzymes are working continuously — they're consumed in the process of digesting the soybeans and rice. Mature miso has vastly less free enzyme activity than fresh koji, because the enzymes have already done their job. Eating miso for its enzyme content is like hiring a contractor after the house is already built.</p>
+<p>The sweet spot for enzyme delivery from fermented foods is probably <strong>fresh koji or very young fermentations</strong> — shio koji at 1–2 weeks, amazake before pasteurization, or fresh koji powder. Once fermentation has run its course, you're getting the products of enzymatic action (amino acids, simple sugars, flavor compounds) but not much active enzyme.</p>
+<hr />
+<h2 id="section-6-can-you-ferment-uricase">Section 6: Can You Ferment Uricase?<a class="headerlink" href="#section-6-can-you-ferment-uricase" title="Permanent link">&para;</a></h2>
+<p>Okay, so here's where Brian's brain inevitably goes: if <em>Aspergillus oryzae</em> produces digestive enzymes, and <em>Aspergillus</em> species produce uricase, can you just... grow uricase-producing koji and eat it?</p>
+<p>The answer is genuinely interesting: <em>sort of, but the biology gets complicated fast</em>.</p>
+<h3 id="the-aspergillus-flavus-problem">The Aspergillus flavus Problem<a class="headerlink" href="#the-aspergillus-flavus-problem" title="Permanent link">&para;</a></h3>
+<p>The most well-studied fungal uricase comes from <em>Aspergillus flavus</em>. This is the organism that rasburicase (brand name: Elitek/Fasturtec) was originally derived from — rasburicase is a recombinant version of <em>A. flavus</em> uricase, produced in a modified <em>Saccharomyces cerevisiae</em> (yeast) expression system.</p>
+<p>The problem: <em>A. flavus</em> produces <strong>aflatoxins</strong>. These are among the most potent naturally occurring carcinogens known — aflatoxin B1 can cause liver cancer at microgram exposure levels. <em>A. flavus</em> is the mold you don't want on your peanuts, your corn, or in any food fermentation. Growing <em>A. flavus</em> as a food product is not a thing anyone should do. Period.</p>
+<p>This is in sharp contrast to <em>A. oryzae</em>, which — despite being genetically very close to <em>A. flavus</em> (they may have been the same species before human domestication diverged them) — has lost the ability to produce aflatoxins. The aflatoxin gene cluster in <em>A. oryzae</em> is present but nonfunctional. This is what makes koji safe and <em>A. flavus</em> dangerous. Evolution via artificial selection: the Japanese spent centuries choosing the mold that didn't poison them.</p>
+<p>Unfortunately, the "didn't poison them" selection also didn't include "produces uricase" as a selection criterion. <em>A. oryzae</em> does not produce significant amounts of uricase.</p>
+<h3 id="other-uricase-producing-organisms">Other Uricase-Producing Organisms<a class="headerlink" href="#other-uricase-producing-organisms" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Organism</th>
+<th>Uricase?</th>
+<th>Food-Safe?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Aspergillus flavus</em></td>
+<td>Yes (high activity)</td>
+<td>No — aflatoxins</td>
+<td>Source of rasburicase sequence</td>
+</tr>
+<tr>
+<td><em>Candida utilis</em></td>
+<td>Yes</td>
+<td>GRAS yeast</td>
+<td>Used in food industry. Uricase activity demonstrated but low yield.</td>
+</tr>
+<tr>
+<td><em>Bacillus subtilis</em></td>
+<td>Some strains</td>
+<td>GRAS (natto bacterium)</td>
+<td>Better known for nattokinase. Uricase production varies by strain.</td>
+</tr>
+<tr>
+<td><em>Lactobacillus</em> spp.</td>
+<td>Some strains degrade urate</td>
+<td>GRAS (probiotic)</td>
+<td>Mechanism may not be classical uricase. Active research area.</td>
+</tr>
+<tr>
+<td><em>Saccharomyces cerevisiae</em></td>
+<td>Naturally no; recombinant yes</td>
+<td>GRAS (baker's yeast)</td>
+<td>This is how rasburicase is commercially produced — recombinant expression.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-delivery-problem-gut-vs-blood">The Delivery Problem: Gut vs. Blood<a class="headerlink" href="#the-delivery-problem-gut-vs-blood" title="Permanent link">&para;</a></h3>
+<p>Even if you could grow a food-safe uricase-producing organism and eat it, you'd hit the fundamental challenge that separates Brian's situation from Lynn's:</p>
+<p><strong>Lynn's Enzymes: Easy Mode</strong>
+- Target: food in the gut lumen
+- Delivery: swallow capsule → enzyme meets food → done
+- No barriers to cross. The gut lumen is technically "outside" the body.</p>
+<p><strong>Brian's Uricase: Hard Mode</strong>
+- Target: uric acid in the bloodstream
+- Delivery: enzyme needs to get from gut → across intestinal wall → into blood → to where urate is
+- The gut wall is an immune barrier. It blocks intact proteins.</p>
+<h3 id="the-gut-excretion-loophole">The Gut Excretion Loophole<a class="headerlink" href="#the-gut-excretion-loophole" title="Permanent link">&para;</a></h3>
+<p>But here's where it gets interesting again. About <strong>one-third</strong> of the body's uric acid excretion happens not through the kidneys, but through the intestines. Uric acid is actively transported from the blood into the gut lumen by transporter proteins (primarily ABCG2/BCRP) in the intestinal epithelium. Once in the gut, it's normally broken down by gut bacteria or excreted in feces.</p>
+<p>This means there's uric acid sitting in your intestines right now. If you could put uricase in the gut lumen — the same space where Lynn's digestive enzymes work — it could intercept that intestinal uric acid and convert it to allantoin before it gets reabsorbed.</p>
+<p>You wouldn't be treating the &#8532; that goes through the kidneys. But eliminating the intestinal &#8531; more efficiently would lower the total body pool, reducing serum levels over time. It's the same principle as dialysis — you don't need to fix the whole system, just tip the balance toward net excretion.</p>
+<h3 id="alln-346-proof-this-works">ALLN-346: Proof This Works<a class="headerlink" href="#alln-346-proof-this-works" title="Permanent link">&para;</a></h3>
+<p>A company called Allena Pharmaceuticals (later acquired) developed exactly this concept. <strong>ALLN-346</strong> was an engineered oral uricase designed to survive the gut and degrade intestinal uric acid without entering the bloodstream. It was a modified <em>A. flavus</em>-derived uricase with enhanced acid stability and resistance to pepsin digestion.</p>
+<p>In their Phase 2a trial (published results, ~2020–2021), ALLN-346 demonstrated:</p>
+<ul>
+<li>Significant increase in uric acid degradation in the gut (measured by reduced uric acid in stool — yes, they measured that)</li>
+<li>Trend toward reduced serum uric acid levels, though the trial was small</li>
+<li>The gut excretion fraction could be significantly enhanced by the oral enzyme</li>
+<li>Good safety profile — the enzyme stayed in the gut and didn't trigger systemic immune responses</li>
+</ul>
+<p>The program was ultimately discontinued for business reasons (Allena's pipeline economics didn't work out, and they pivoted before eventually shutting down), not because the science failed. The mechanism was validated: <strong>oral uricase acting in the gut lumen can reduce serum uric acid</strong>.</p>
+<blockquote>
+<p><strong>Brian's Takeaway:</strong> The gut excretion pathway means oral uricase isn't as futile as it might sound. You don't need to get the enzyme into the blood to lower blood levels — you just need to intercept the uric acid that the body is already dumping into the gut. The intestine is both the delivery site and the treatment site. Same conceptual simplicity as Lynn's digestive enzymes, just acting on a different substrate.</p>
+</blockquote>
+<hr />
+<h2 id="section-7-the-blood-barrier-can-the-gut-absorb-uricase">Section 7: The Blood Barrier: Can the Gut Absorb Uricase?<a class="headerlink" href="#section-7-the-blood-barrier-can-the-gut-absorb-uricase" title="Permanent link">&para;</a></h2>
+<p>The gut excretion approach is clever, but the obvious next question is: could we go further? Could we get uricase to actually cross the intestinal wall and enter the bloodstream, where it could directly attack the other &#8532; of uric acid excretion?</p>
+<p>This is one of the hardest problems in drug delivery, and it's worth understanding why.</p>
+<h3 id="why-the-gut-blocks-intact-proteins">Why the Gut Blocks Intact Proteins<a class="headerlink" href="#why-the-gut-blocks-intact-proteins" title="Permanent link">&para;</a></h3>
+<p>Your intestinal lining is an immune firewall. Its job is to absorb <em>nutrients</em> (amino acids, sugars, fatty acids — small molecules) while blocking <em>everything else</em> — bacteria, viruses, parasites, and intact foreign proteins. It does this through several layers of defense:</p>
+<p><strong>The mucus layer.</strong> A thick gel of mucin glycoproteins that physically traps large molecules and bacteria before they reach the epithelial cells.</p>
+<p><strong>Tight junctions.</strong> The epithelial cells are welded together by protein complexes (claudins, occludins) that seal the gaps between cells. This "paracellular route" is locked down — only water and very small ions pass through.</p>
+<p><strong>Proteolytic destruction.</strong> Any protein that reaches the intestinal surface encounters brush-border peptidases and intracellular proteases that chop it into fragments. This is literally what digestion is — the destruction of intact proteins into absorbable amino acids.</p>
+<p><strong>Immune surveillance.</strong> The gut-associated lymphoid tissue (GALT) is the largest immune organ in the body. Foreign intact proteins that do sneak through are flagged by dendritic cells and can trigger immune responses — this is how food allergies develop.</p>
+<p>Uricase is a large protein (~135 kDa as a tetramer). Getting it across this barrier intact and functional is like trying to smuggle a grand piano through airport security. The system is specifically designed to prevent exactly this.</p>
+<h3 id="strategies-being-developed">Strategies Being Developed<a class="headerlink" href="#strategies-being-developed" title="Permanent link">&para;</a></h3>
+<p>Despite the difficulty, there's enormous financial incentive to crack oral protein delivery — insulin alone is a $50B+ market that's mostly injectable. Here are the main approaches, and how they'd theoretically apply to uricase:</p>
+<h3 id="snac-permeation-enhancers">SNAC Permeation Enhancers<a class="headerlink" href="#snac-permeation-enhancers" title="Permanent link">&para;</a></h3>
+<p>The only FDA-approved oral protein drug is <strong>Rybelsus</strong> (oral semaglutide), approved in 2019. It works using a permeation enhancer called SNAC (sodium N-[8-(2-hydroxybenzoyl)amino]caprylate). SNAC does several things: it locally and transiently raises stomach pH (protecting the peptide from acid), it promotes transcellular absorption (helping the drug cross through epithelial cells rather than between them), and it may temporarily loosen tight junctions.</p>
+<p>The results are... modest. Oral semaglutide has roughly 0.4–1% bioavailability. That means 99% of what you swallow never reaches the blood. Novo Nordisk makes up for this by putting a large excess in each tablet (14mg oral delivers roughly the same effect as 0.5–1mg injected). For semaglutide, a small peptide (MW ~4,114 Da), this works commercially. For uricase (MW ~135,000 Da, 33× larger), the absorption fraction would likely be even lower — possibly too low to be therapeutic at any practical oral dose.</p>
+<h3 id="nanoparticle-encapsulation">Nanoparticle Encapsulation<a class="headerlink" href="#nanoparticle-encapsulation" title="Permanent link">&para;</a></h3>
+<p>Wrap the enzyme in a protective shell that survives stomach acid, releases in the small intestine, and promotes uptake by epithelial cells. The main approaches:</p>
+<p><strong>Chitosan nanoparticles.</strong> Chitosan (derived from crustacean shells) is positively charged and mucoadhesive — it sticks to the negatively charged mucus layer and can transiently open tight junctions. Chitosan-encapsulated proteins show improved oral bioavailability in animal studies, though human translation has been challenging.</p>
+<p><strong>Lipid nanoparticles (LNPs).</strong> The same technology behind mRNA COVID vaccines. Lipid shells protect the protein cargo and can fuse with cell membranes. Oral LNPs are in active development — the key challenge is surviving the bile-salt-rich environment of the small intestine, which tends to dissolve lipid particles before they reach the epithelium.</p>
+<p><strong>PLGA nanoparticles.</strong> Poly(lactic-co-glycolic acid) particles are biodegradable, FDA-approved for other uses, and can protect protein cargo through the stomach. Peyer's patches (immune sampling sites in the small intestine) actively take up particles in the 200-500nm range, which could be a route for nanoparticle absorption — though this also triggers immune responses, which is the opposite of what you want for a therapeutic enzyme.</p>
+<h3 id="fcrn-receptor-hijacking">FcRn Receptor Hijacking<a class="headerlink" href="#fcrn-receptor-hijacking" title="Permanent link">&para;</a></h3>
+<p>This is one of the more elegant approaches. The neonatal Fc receptor (FcRn) is a protein expressed on intestinal epithelial cells that naturally transports IgG antibodies across the gut wall — this is how maternal antibodies in breast milk reach the infant's bloodstream. In adults, FcRn still functions, mediating IgG recycling and transcytosis.</p>
+<p>If you fuse uricase to the Fc domain of an IgG antibody (creating an "Fc-uricase fusion protein"), the Fc portion binds FcRn on the intestinal surface, the whole complex gets shuttled across the epithelial cell via transcytosis, and it's released into the bloodstream on the other side. The enzyme arrives intact and functional.</p>
+<p>This approach works in animal models. Several biotech companies are developing Fc fusion proteins for oral delivery of various biologics. The challenges are manufacturing cost (these are complex recombinant proteins), ensuring the enzyme remains active after the fusion, and managing immunogenicity — your immune system may still recognize the uricase portion as foreign and mount an antibody response over time (this is already a problem with IV rasburicase).</p>
+<h3 id="oral-insulin-as-a-parallel">Oral Insulin as a Parallel<a class="headerlink" href="#oral-insulin-as-a-parallel" title="Permanent link">&para;</a></h3>
+<p>The oral insulin research program is the longest-running effort to crack this problem — scientists have been trying since the 1930s. After 90+ years, we have exactly one marketed oral peptide drug (semaglutide), and oral insulin still isn't commercially available despite dozens of clinical trials. The technologies generated along the way (SNAC, nanoparticles, enteric coatings, protease inhibitor co-formulations) are all applicable to oral uricase — but the decades-long struggle illustrates just how hard this barrier is to cross.</p>
+<p>Oramed Pharmaceuticals reached Phase 3 with their oral insulin candidate (ORMD-0801) using a protease inhibitor + absorption enhancer approach. Results were underwhelming compared to injectable insulin. The bioavailability problem persists.</p>
+<blockquote>
+<p><strong>The Key Contrast:</strong> This section crystallizes the fundamental difference between Brian's and Lynn's situations. Lynn's enzymes work <em>in</em> the gut lumen — the easiest possible delivery target. You literally just swallow them. Brian's uricase ideally needs to reach the <em>blood</em> — protected on the other side of one of the most sophisticated biological barriers in the body. The gut excretion approach (Section 6) is the workaround: meet the uric acid where it comes to you, in the gut lumen, rather than trying to bring the enzyme to where the uric acid lives.</p>
+</blockquote>
+<hr />
+<h2 id="section-8-therapeutic-frontiers-for-both">Section 8: Therapeutic Frontiers for Both<a class="headerlink" href="#section-8-therapeutic-frontiers-for-both" title="Permanent link">&para;</a></h2>
+<p>Beyond today's supplements and drugs, there's a wave of genuinely futuristic approaches in development that could transform both gout and digestive enzyme insufficiency. These range from "probably available within 5 years" to "cool science, check back in 2040."</p>
+<h3 id="crispr-and-gene-therapy">CRISPR and Gene Therapy<a class="headerlink" href="#crispr-and-gene-therapy" title="Permanent link">&para;</a></h3>
+<p><strong>For gout — uricase reactivation.</strong> The human uricase pseudogene is still there, sitting on chromosome 1. It's been inactivated by multiple point mutations (stop codons and frameshifts accumulated over 15 million years). In theory, CRISPR-Cas9 or base editing could repair these mutations and reactivate the gene — giving human liver cells a working uricase gene for the first time in millions of years.</p>
+<p>A research group at the University of California demonstrated in 2019 that they could use base editing to correct the stop codon mutations in the human uricase pseudogene in cell culture, restoring uricase expression. The cells actually produced functional uricase protein. This is proof-of-concept that reactivation is possible.</p>
+<p>The challenges are delivery (getting the CRISPR machinery into enough liver cells to matter), off-target effects (editing the wrong genomic sites), durability (how long do the edits last?), and the evolutionary question — if high uric acid provides antioxidant benefits, what happens when you restore uricase and drop uric acid to mammalian-normal levels of 0.5 mg/dL? You might trade gout for increased oxidative stress. The therapeutic target would probably be partial reactivation — enough to prevent crystallization, not so much that you lose the antioxidant buffer.</p>
+<p><strong>For digestion — enzyme production boosting.</strong> If pancreatic enzyme production declines with age or disease, gene therapy targeting pancreatic acinar cells could upregulate expression of lipase, amylase, and protease genes. This is farther from clinical reality than the gout application because pancreatic gene therapy is extremely difficult (the pancreas is hard to target, easy to inflame, and fibrotic in the patients who need it most).</p>
+<h3 id="engineered-probiotics">Engineered Probiotics<a class="headerlink" href="#engineered-probiotics" title="Permanent link">&para;</a></h3>
+<p>This is where the most near-term excitement is.</p>
+<p><strong>PULSE Biosciences — engineered gut bacteria for gout.</strong> Several research groups are developing genetically engineered bacteria (typically <em>E. coli</em> Nissle 1917 or <em>Lactobacillus</em> strains) that express uricase and are designed to colonize the gut. The idea: a living factory in your intestine that continuously degrades the uric acid excreted into the gut lumen. No pills, no timing — the bacteria just live there and do their job, like a permanent version of ALLN-346.</p>
+<p>The Synlogic approach (synthetic biotic platform) engineered <em>E. coli</em> Nissle to express uric acid transporter proteins alongside uricase, creating bacteria that actively import uric acid from the gut lumen and destroy it intracellularly. In animal models, these bacteria significantly reduced serum uric acid. The challenge is regulatory — the FDA is still developing frameworks for live engineered bacteria as drugs — and practical: will the engineered bacteria survive and function long-term in the chaotic environment of the human gut?</p>
+<p><strong>For digestion — enzyme-secreting probiotics.</strong> Engineered <em>Lactobacillus</em> strains that secrete lipase or protease directly into the gut lumen. This would be a sustained-release alternative to enzyme capsules — instead of dosing with meals, you'd have a continuous low-level enzyme supplement from your own microbiome. Several academic groups have demonstrated proof of concept, but no products are in clinical trials yet.</p>
+<h3 id="pharmacological-chaperones">Pharmacological Chaperones<a class="headerlink" href="#pharmacological-chaperones" title="Permanent link">&para;</a></h3>
+<p>A chaperone is a small molecule that binds to a protein and stabilizes its correct 3D shape. For enzyme deficiencies caused not by total absence but by misfolding (the enzyme is produced but doesn't fold correctly and gets degraded), chaperones can rescue function.</p>
+<p>This approach is already approved for Fabry disease (migalastat/Galafold) and is in development for several other enzyme deficiencies. For digestive enzyme insufficiency, if the root cause is misfolding of pancreatic enzymes (rare, but possible in some genetic conditions), chaperones could help. For gout, this isn't applicable — the gene is dead, not misfolded.</p>
+<h3 id="microbiome-engineering">Microbiome Engineering<a class="headerlink" href="#microbiome-engineering" title="Permanent link">&para;</a></h3>
+<p>Beyond single-organism probiotics, there's the broader concept of reshaping the gut microbiome ecosystem to favor uric acid degradation or enhanced enzymatic digestion.</p>
+<p>Certain natural gut bacteria (particularly some <em>Lactobacillus</em> and <em>Pseudomonas</em> species) can degrade uric acid. Gout patients often have altered gut microbiomes with reduced populations of these urate-degrading species. Fecal microbiome analysis shows that gout is associated with enrichment of <em>Bacteroides</em> and depletion of <em>Faecalibacterium</em> and certain butyrate-producing species.</p>
+<p>Targeted microbiome interventions — specific probiotic combinations, prebiotic fiber to feed urate-degrading bacteria, or even fecal microbiota transplant from low-uric-acid donors — are being explored. The science is early but the logic is sound: if your gut bacteria naturally process uric acid, supporting those populations should lower serum levels.</p>
+<p>For digestion, the microbiome connection is even more direct. Gut bacteria produce their own enzymes (this is how fiber gets fermented — bacteria have the cellulases and hemicellulases we lack). A microbiome optimized for diverse enzyme production supplements your own enzyme output. Fermented foods, diverse fiber intake, and probiotic supplementation all move the needle here, though the effects are more modest than direct enzyme replacement.</p>
+<hr />
+<h2 id="section-9-the-convergence-where-the-threads-intersect">Section 9: The Convergence: Where the Threads Intersect<a class="headerlink" href="#section-9-the-convergence-where-the-threads-intersect" title="Permanent link">&para;</a></h2>
+<p>Step back and look at the full picture, and you start to see these two enzyme deficit stories aren't just analogous — they share tools, organisms, delivery platforms, and research trajectories.</p>
+<h3 id="same-genus-different-enzymes">Same Genus, Different Enzymes<a class="headerlink" href="#same-genus-different-enzymes" title="Permanent link">&para;</a></h3>
+<p><em>Aspergillus</em> produces both the digestive enzymes in Lynn's supplements and the uricase that Brian's body needs. The same fungal biology — prolific extracellular enzyme secretion — serves both purposes. The difference is which species and which enzyme you harvest. If someone could engineer <em>A. oryzae</em> (the safe koji mold) to express the uricase gene from <em>A. flavus</em>, you'd have a food-safe organism producing gout-relevant uricase. This is not science fiction — it's standard molecular biology. The gene has been cloned and expressed in yeast already (that's rasburicase). Expressing it in <em>A. oryzae</em> would be a straightforward cloning project for any competent molecular biology lab.</p>
+<h3 id="same-delivery-target">Same Delivery Target<a class="headerlink" href="#same-delivery-target" title="Permanent link">&para;</a></h3>
+<p>The gut excretion pathway for uric acid means that both Brian's and Lynn's interventions can work in the same anatomical space — the gut lumen. Lynn's enzymes digest food there. Brian's (hypothetical oral) uricase degrades uric acid there. Same delivery, same swallow-and-forget simplicity, same "technically outside the body" pharmacology.</p>
+<h3 id="same-engineering-platform">Same Engineering Platform<a class="headerlink" href="#same-engineering-platform" title="Permanent link">&para;</a></h3>
+<p>Engineered probiotics could serve both conditions simultaneously. Imagine a single engineered bacterium that expresses uricase AND digestive lipase — a dual-purpose probiotic for the enzyme-deficit household. This is not far-fetched; synthetic biology routinely constructs multi-gene expression cassettes in bacteria. A "household probiotic" tailored to the specific enzyme gaps of its users is an entirely plausible near-future product.</p>
+<h3 id="the-fermentation-intersection">The Fermentation Intersection<a class="headerlink" href="#the-fermentation-intersection" title="Permanent link">&para;</a></h3>
+<p>Brian's insight about koji connects to a broader truth: fermentation is humanity's oldest biotechnology, and the enzyme production that makes fermentation work is the exact same capability that modern medicine is trying to harness in capsules and engineered organisms. When a koji maker grows <em>A. oryzae</em> on rice, they're running a bioreactor. When a supplement company grows <em>A. oryzae</em> on wheat bran in a 10,000-liter fermenter, they're running a bigger bioreactor. When a biotech engineers <em>E. coli</em> to express uricase in your gut, they're making your intestine the bioreactor.</p>
+<p>The thread from miso → supplement capsule → engineered probiotic → gene therapy is a single continuum of enzyme delivery technology, spanning 1,300 years of innovation.</p>
+<blockquote>
+<p><strong>The Deeper Pattern:</strong> Both Brian and Lynn sit at different points on the same spectrum of "enzyme biology that evolution didn't quite get right." Lynn's situation is the body producing <em>not enough</em> of enzymes it knows how to make. Brian's is the body producing <em>none</em> of an enzyme it forgot how to make. The interventions scale accordingly — supplement what's low, or introduce what's absent. But the underlying science, the organisms involved, and the delivery technologies are converging rapidly.</p>
+</blockquote>
+<h3 id="what-emerged-two-parallel-tracks">What Emerged: Two Parallel Tracks<a class="headerlink" href="#what-emerged-two-parallel-tracks" title="Permanent link">&para;</a></h3>
+<p>This research document directly led to two detailed protocols for engineered-organism solutions:</p>
+<p><strong>For Brian — the yeast approach</strong> (see <a href="../engineered-yeast-uricase-proposal/">Engineered Yeast Uricase Proposal</a>): <em>Saccharomyces cerevisiae</em> has the strongest validation for uricase production. Rasburicase is already produced this way commercially. The 2025 ACS Synthetic Biology paper on engineered <em>S. boulardii</em> achieved impressive uric acid-degrading activity. This is the strongest path for Brian's uricase specifically — yeast has decades of tool development and a clear regulatory precedent.</p>
+<p><strong>For Lynn — wild-type koji is already the solution</strong> (see <a href="../engineered-koji-protocol/">Engineered Koji Protocol</a>): Here's the insight that emerged later: <em>A. oryzae</em> (koji) doesn't <em>need</em> engineering to help Lynn. It already produces the exact digestive enzymes she's buying in supplement form — proteases, lipases, amylases. The supplement industry IS industrial koji fermentation, just rebranded. Growing koji at home and consuming it as shio koji or fresh amazake is already enzyme supplementation. The engineering is only needed for the uricase addition (Brian's part).</p>
+<blockquote>
+<p><strong>The Convergence Point:</strong> The dual-purpose vision: an engineered koji strain that produces both enhanced digestive enzymes (for Lynn) and uricase (for Brian) — a single organism serving both enzyme deficits. The <a href="../engineered-koji-protocol/">Engineered Koji Protocol</a> details this as a stretch goal. Meanwhile, the yeast track moves forward independently as the more validated path for uricase. Both approaches are now part of the <a href="../open-enzyme-vision/">Open Enzyme</a> platform vision.</p>
+</blockquote>
+<hr />
+<h2 id="section-10-practical-recommendations">Section 10: Practical Recommendations<a class="headerlink" href="#section-10-practical-recommendations" title="Permanent link">&para;</a></h2>
+<p>Here's where the research meets the kitchen table. What can Brian and Lynn actually do with all of this — now, soon, and eventually?</p>
+<h3 id="for-brian-gout-uricase-deficit">For Brian (Gout / Uricase Deficit)<a class="headerlink" href="#for-brian-gout-uricase-deficit" title="Permanent link">&para;</a></h3>
+<h4 id="now-available-today">Now — Available Today<a class="headerlink" href="#now-available-today" title="Permanent link">&para;</a></h4>
+<p><strong>Conventional management stays the foundation.</strong> Allopurinol or febuxostat (xanthine oxidase inhibitors) reduce uric acid production at the source. These remain the most effective and practical intervention. Don't stop them in pursuit of fermented-food experiments.</p>
+<p><strong>Tart cherry extract.</strong> Modest evidence for reducing gout flare frequency. Anthocyanins have anti-inflammatory properties and may mildly promote uric acid excretion. Low-risk, worth adding.</p>
+<p><strong>Microbiome support.</strong> Diverse fiber intake, fermented foods (kimchi, sauerkraut, yogurt, miso), and possibly a broad-spectrum probiotic. The goal is to support gut bacteria that naturally degrade uric acid. Direct evidence for gout reduction is limited but the mechanism is sound and the downside risk is zero.</p>
+<p><strong>Vitamin C supplementation.</strong> 500mg/day has been shown in clinical trials to modestly reduce serum uric acid (by ~0.5 mg/dL). This connects back to the evolutionary story — ascorbic acid and uric acid are both antioxidants, and supporting one may compensate for excess of the other.</p>
+<p><strong>Dietary uric acid management.</strong> You know this already, but: limit high-purine foods (organ meats, sardines, anchovies), moderate alcohol (especially beer — high in purines and fructose), reduce fructose intake (the Johnson research shows fructose drives uric acid production via a specific metabolic pathway involving ATP depletion).</p>
+<h4 id="soon-25-year-horizon">Soon — 2–5 Year Horizon<a class="headerlink" href="#soon-25-year-horizon" title="Permanent link">&para;</a></h4>
+<p><strong>Oral uricase products.</strong> ALLN-346 proved the concept. Other companies are developing similar intestinal uricase formulations. Watch for clinical trials in this space — they may recruit gout patients who have inadequate response to xanthine oxidase inhibitors.</p>
+<p><strong>Targeted microbiome interventions.</strong> Probiotic formulations specifically designed for uric acid reduction, based on the growing understanding of which gut bacteria degrade urate. Several companies are working on this.</p>
+<p><strong>SEL-212 and pegloticase improvements.</strong> For severe gout: pegloticase (IV uricase) with immunomodulation to prevent anti-drug antibodies. SEL-212 combines pegylated uricase with rapamycin-loaded nanoparticles to tolerize the immune system. Phase 3 results have been promising.</p>
+<h4 id="future-515-years">Future — 5–15+ Years<a class="headerlink" href="#future-515-years" title="Permanent link">&para;</a></h4>
+<p><strong>Gene therapy / CRISPR uricase reactivation.</strong> The 2019 proof-of-concept for repairing the human uricase pseudogene was exciting, but clinical application requires solving liver-targeted gene therapy at scale. This is genuinely on the horizon — AAV-based gene therapies for other liver enzyme deficiencies are already FDA-approved (e.g., Hemgenix for hemophilia B).</p>
+<p><strong>Engineered probiotic colonization.</strong> Permanent gut residents that degrade uric acid continuously. The regulatory path is being blazed by Synlogic and others for different conditions.</p>
+<h3 id="for-lynn-digestive-enzyme-insufficiency">For Lynn (Digestive Enzyme Insufficiency)<a class="headerlink" href="#for-lynn-digestive-enzyme-insufficiency" title="Permanent link">&para;</a></h3>
+<h4 id="now-available-today_1">Now — Available Today<a class="headerlink" href="#now-available-today_1" title="Permanent link">&para;</a></h4>
+<p><strong>Continue quality enzyme supplementation.</strong> Products like BoulderBio that provide a broad spectrum of fungal-derived enzymes are the right approach. Take with meals, every meal, consistently. If symptoms persist, consider whether the formula has adequate lipase (fat digestion is often the biggest gap).</p>
+<p><strong>Consider root cause investigation.</strong> If she hasn't already: fecal elastase test (to screen for EPI), celiac panel, SIBO breath test. These rule out or identify treatable underlying conditions that enzyme supplementation alone won't fix.</p>
+<p><strong>Shio koji and amazake as supplemental enzyme sources.</strong> Brian's insight has practical merit. Fresh, unpasteurized shio koji added to meals provides active proteases and amylases from <em>A. oryzae</em>. It won't replace capsules (concentration is lower), but it contributes incremental enzyme activity while also adding umami flavor. Think of it as a "food-as-supplement" layer on top of capsule supplementation. Fresh amazake (not the pasteurized shelf-stable stuff) contributes amylase. Both are easy to make at home.</p>
+<p><strong>Apple cider vinegar or betaine HCl.</strong> If low stomach acid is contributing (common as we age), these can support gastric pH. Proper stomach acid is the trigger for downstream pancreatic enzyme release — it's a cascade, and the first domino matters.</p>
+<p><strong>Bile support.</strong> If fat digestion is specifically problematic (greasy stools, discomfort after fatty meals), ox bile supplements can compensate for low bile output. This is especially relevant if the gallbladder has been removed.</p>
+<h4 id="soon-25-year-horizon_1">Soon — 2–5 Year Horizon<a class="headerlink" href="#soon-25-year-horizon_1" title="Permanent link">&para;</a></h4>
+<p><strong>Precision enzyme formulations.</strong> Companies are developing diagnostic tests (stool enzyme panels, breath tests) that can identify exactly which enzymes are deficient and formulate personalized blends. This moves beyond the "shotgun approach" of broad-spectrum supplements to targeted replacement.</p>
+<p><strong>Enteric-coated, pH-targeted delivery.</strong> Current supplements release in the stomach, which is fine for acid-stable fungal enzymes but wastes some activity. Next-gen formulations with staged release (some in stomach, more in duodenum) could improve efficacy.</p>
+<p><strong>Microbiome-based enzyme supplementation.</strong> Probiotic formulations designed to colonize the gut and produce digestive enzymes in situ. Early research, but the concept is sound — your gut bacteria already produce many enzymes. Engineered strains could fill specific gaps.</p>
+<h4 id="future-515-years_1">Future — 5–15+ Years<a class="headerlink" href="#future-515-years_1" title="Permanent link">&para;</a></h4>
+<p><strong>Stem cell therapy for pancreatic function.</strong> Restoring exocrine pancreatic function by regenerating acinar cells. Currently in early research for pancreatic insufficiency secondary to chronic pancreatitis or surgery.</p>
+<p><strong>Smart pills with enzyme payload.</strong> Ingestible devices that sense pH and food composition, then release the right enzyme mix in the right location. Proteus Digital Health and others explored ingestible sensors; combining sensing with enzyme delivery is a logical next step.</p>
+<h3 id="for-both-of-you">For Both of You<a class="headerlink" href="#for-both-of-you" title="Permanent link">&para;</a></h3>
+<h4 id="now-together">Now — Together<a class="headerlink" href="#now-together" title="Permanent link">&para;</a></h4>
+<p><strong>Start a koji project.</strong> Seriously. Growing koji at home is surprisingly accessible (all you need is rice, koji starter spores, and a warm humid environment — a cooler with a heating pad works). Make shio koji for cooking (enzyme-rich marinade + digestive aid for Lynn), and amazake as a sweet drink (amylase boost). It connects you both to the biology in a tangible, delicious way. Plus, you'll be doing exactly what the supplement industry does — just at kitchen scale.</p>
+<p><strong>Track and share data.</strong> Brian's uric acid levels (routine blood tests) and Lynn's digestive symptoms could both benefit from systematic tracking. Fermented food intake, supplement timing, dietary changes — correlating these with symptoms helps identify what moves the needle. Even a simple shared spreadsheet beats guessing.</p>
+<blockquote>
+<p><strong>The Bottom Line:</strong> You're both managing enzyme deficits with surprisingly similar strategies — external enzyme replacement, dietary management, and microbiome support. The organisms and technologies that produce Lynn's supplements are genetically adjacent to the ones that could someday cure Brian's gout. And the koji sitting on your kitchen counter is the living ancestor of both the supplement capsule and the future engineered probiotic. Biology is more connected than it looks from the inside.</p>
+<p>Standard disclaimer: none of this is medical advice. Brian's gout management should be guided by his rheumatologist, and Lynn should work with a GI specialist if symptoms are persistent. This document is research synthesis from a smart friend who fell down a very deep enzyme rabbit hole — take it as a starting point for informed conversations with your doctors, not as a treatment protocol.</p>
+</blockquote>
+<hr />
+<h2 id="open-enzyme-research-library">Open Enzyme Research Library<a class="headerlink" href="#open-enzyme-research-library" title="Permanent link">&para;</a></h2>
+<p>This document is part of the <a href="../open-enzyme-vision/">Open Enzyme</a> project — an open-source therapeutic enzyme platform.</p>
+<ul>
+<li><a href="../open-enzyme-vision/">Founding Vision</a></li>
+<li><a href="../gout-deep-dive/">Gout: A Deep Dive</a></li>
+<li><a href="../peptide-gout-addendum/">Peptides &amp; Gout Addendum</a></li>
+<li><a href="./">The Enzyme Deficit Connection</a></li>
+<li><a href="../blood-barrier-exploits/">Pen-Testing the Gut-Blood Barrier</a></li>
+<li><a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a></li>
+<li><a href="../engineered-koji-protocol/">Engineered Koji Protocol</a></li>
+<li><a href="../engineered-yeast-uricase-proposal/">Engineered Yeast Uricase Proposal</a></li>
+</ul>
+<hr />
+<p>Research compiled April 2026 · For Brian &amp; Lynn · Not medical advice.</p>
+<p>Sources drawn from peer-reviewed literature, clinical trial databases, and the accumulated knowledge of humanity's 1,300-year relationship with <em>Aspergillus oryzae</em>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

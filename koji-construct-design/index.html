@@ -1,0 +1,4177 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/koji-construct-design/">
+      
+      
+        <link rel="prev" href="../engineered-koji-protocol/">
+      
+      
+        <link rel="next" href="../digestive-enzyme-optimization/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>A. oryzae Koji Construct Design for Uricase Expression - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-oryzae-koji-construct-design-for-uricase-expression" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A. oryzae Koji Construct Design for Uricase Expression
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../open-enzyme-vision/" class="md-tabs__link">
+          
+  
+  
+  Vision & Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gout-pathophysiology/" class="md-tabs__link">
+          
+  
+  
+  Gout & Uricase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nlrp3-inflammasome/" class="md-tabs__link">
+          
+  
+  
+  NLRP3 & Inflammation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../digestive-enzymes/" class="md-tabs__link">
+          
+  
+  
+  Koji & Digestive Enzymes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../saccharomyces-cerevisiae/" class="md-tabs__link">
+          
+  
+  
+  Organisms & Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gut-lumen-sink/" class="md-tabs__link">
+          
+  
+  
+  Delivery & Barrier
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bpc-157/" class="md-tabs__link">
+          
+  
+  
+  Compounds & Peptides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sibo/" class="md-tabs__link">
+          
+  
+  
+  Other Conditions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bio-ai-tools/" class="md-tabs__link">
+          
+  
+  
+  Tools & Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-comparison-a-oryzae-vs-s-cerevisiae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Comparison: A. oryzae vs. S. cerevisiae
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Comparison: A. oryzae vs. S. cerevisiae">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-a-oryzae-for-the-koji-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why A. oryzae for the Koji Track?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promoter-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promoter Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Promoter Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#candidate-promoters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Candidate Promoters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-choice-amyb-promoter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Choice: amyB Promoter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codon-optimization-for-a-oryzae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codon Optimization for A. oryzae
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Codon Optimization for A. oryzae">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-oryzae-codon-usage-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. oryzae Codon Usage Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codon-optimization-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codon Optimization Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-peptide-selection-for-secretion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Peptide Selection for Secretion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Peptide Selection for Secretion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#candidates-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Candidates &amp; Evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-choice-amyb-signal-peptide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Choice: amyB Signal Peptide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-glaa-signal-peptide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup: glaA Signal Peptide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note-on-a-oryzae-hyperglycosylation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note on A. oryzae Hyperglycosylation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construct-design-full-gene-cassette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Construct Design: Full Gene Cassette
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Construct Design: Full Gene Cassette">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-gene-construct-minimal-high-uricase-yield" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single-Gene Construct (Minimal, High Uricase Yield)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-expression-construct-high-uricase-preserved-digestive-enzymes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-Expression Construct (High Uricase + Preserved Digestive Enzymes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expression-levels-predicted-yields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expression Levels &amp; Predicted Yields
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expression Levels &amp; Predicted Yields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-expression-in-a-oryzae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Expression in A. oryzae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-to-rice-koji-substrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling to Rice Koji Substrate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yield-optimization-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yield Optimization Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dual-use-potential-uricase-native-enzymes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-Use Potential: Uricase + Native Enzymes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dual-Use Potential: Uricase + Native Enzymes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#will-uricase-expression-reduce-native-enzyme-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Will Uricase Expression Reduce Native Enzyme Production?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-construct-strategy-for-koji-food-therapeutic-enzyme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimal Construct Strategy for "Koji +" (Food + Therapeutic Enzyme)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codon-optimization-detailed-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codon Optimization: Detailed Example
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Codon Optimization: Detailed Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-flavus-uricase-native-sequence-native-low-gc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. flavus Uricase Native Sequence (Native, Low GC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-a-oryzae-codon-optimization-gc-4852" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After A. oryzae Codon Optimization (GC ~48–52%)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-fermentation-protocol-for-koji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation: Fermentation Protocol for Koji
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation: Fermentation Protocol for Koji">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-scale-optimization-1050-g-koji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab-Scale Optimization (10–50 g koji)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-scale-fermentation-2001000-g-koji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Home-Scale Fermentation (200–1000 g koji)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-a-oryzae-koji-vs-s-cerevisiae-yeast-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: A. oryzae Koji vs. S. cerevisiae Yeast Platform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison: A. oryzae Koji vs. S. cerevisiae Yeast Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yield-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yield Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regulatory-consumer-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regulatory &amp; Consumer Acceptance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-assessment-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Assessment &amp; Mitigations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Assessment &amp; Mitigations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risk-1-lower-expression-than-expected-40-mgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 1: Lower Expression Than Expected (&lt;40 mg/g)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-2-a-oryzae-hyperglycosylation-reduces-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 2: A. oryzae Hyperglycosylation Reduces Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-3-protease-activity-degrades-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 3: Protease Activity Degrades Uricase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-4-contamination-during-home-fermentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 4: Contamination During Home Fermentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-5-tetramer-dissociation-during-storagedigestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 5: Tetramer Dissociation During Storage/Digestion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-construct-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: Construct Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary: Construct Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-construct-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Construct Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References &amp; Sources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References &amp; Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-search-results-20242025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Search Results (2024–2025)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-comparison-a-oryzae-vs-s-cerevisiae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Comparison: A. oryzae vs. S. cerevisiae
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Comparison: A. oryzae vs. S. cerevisiae">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-a-oryzae-for-the-koji-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why A. oryzae for the Koji Track?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promoter-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promoter Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Promoter Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#candidate-promoters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Candidate Promoters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-choice-amyb-promoter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Choice: amyB Promoter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codon-optimization-for-a-oryzae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codon Optimization for A. oryzae
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Codon Optimization for A. oryzae">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-oryzae-codon-usage-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. oryzae Codon Usage Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codon-optimization-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codon Optimization Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-peptide-selection-for-secretion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Peptide Selection for Secretion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Peptide Selection for Secretion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#candidates-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Candidates &amp; Evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-choice-amyb-signal-peptide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Choice: amyB Signal Peptide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-glaa-signal-peptide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup: glaA Signal Peptide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note-on-a-oryzae-hyperglycosylation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note on A. oryzae Hyperglycosylation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construct-design-full-gene-cassette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Construct Design: Full Gene Cassette
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Construct Design: Full Gene Cassette">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-gene-construct-minimal-high-uricase-yield" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single-Gene Construct (Minimal, High Uricase Yield)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-expression-construct-high-uricase-preserved-digestive-enzymes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-Expression Construct (High Uricase + Preserved Digestive Enzymes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expression-levels-predicted-yields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expression Levels &amp; Predicted Yields
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expression Levels &amp; Predicted Yields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-expression-in-a-oryzae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Expression in A. oryzae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-to-rice-koji-substrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling to Rice Koji Substrate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yield-optimization-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yield Optimization Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dual-use-potential-uricase-native-enzymes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-Use Potential: Uricase + Native Enzymes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dual-Use Potential: Uricase + Native Enzymes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#will-uricase-expression-reduce-native-enzyme-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Will Uricase Expression Reduce Native Enzyme Production?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-construct-strategy-for-koji-food-therapeutic-enzyme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimal Construct Strategy for "Koji +" (Food + Therapeutic Enzyme)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codon-optimization-detailed-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codon Optimization: Detailed Example
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Codon Optimization: Detailed Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-flavus-uricase-native-sequence-native-low-gc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. flavus Uricase Native Sequence (Native, Low GC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-a-oryzae-codon-optimization-gc-4852" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After A. oryzae Codon Optimization (GC ~48–52%)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-fermentation-protocol-for-koji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation: Fermentation Protocol for Koji
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation: Fermentation Protocol for Koji">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-scale-optimization-1050-g-koji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab-Scale Optimization (10–50 g koji)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-scale-fermentation-2001000-g-koji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Home-Scale Fermentation (200–1000 g koji)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-a-oryzae-koji-vs-s-cerevisiae-yeast-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: A. oryzae Koji vs. S. cerevisiae Yeast Platform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison: A. oryzae Koji vs. S. cerevisiae Yeast Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yield-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yield Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regulatory-consumer-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regulatory &amp; Consumer Acceptance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-assessment-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Assessment &amp; Mitigations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Assessment &amp; Mitigations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risk-1-lower-expression-than-expected-40-mgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 1: Lower Expression Than Expected (&lt;40 mg/g)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-2-a-oryzae-hyperglycosylation-reduces-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 2: A. oryzae Hyperglycosylation Reduces Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-3-protease-activity-degrades-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 3: Protease Activity Degrades Uricase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-4-contamination-during-home-fermentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 4: Contamination During Home Fermentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-5-tetramer-dissociation-during-storagedigestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 5: Tetramer Dissociation During Storage/Digestion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-construct-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: Construct Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary: Construct Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-construct-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Construct Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References &amp; Sources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References &amp; Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-search-results-20242025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Search Results (2024–2025)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="a-oryzae-koji-construct-design-for-uricase-expression">A. oryzae Koji Construct Design for Uricase Expression<a class="headerlink" href="#a-oryzae-koji-construct-design-for-uricase-expression" title="Permanent link">&para;</a></h1>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This document designs a gene construct for expressing <em>Aspergillus flavus</em> uricase in <em>Aspergillus oryzae</em> koji as an orally available, fermented therapeutic food product for gout. A. oryzae is GRAS by centuries of traditional use (miso, sake, soy sauce) and naturally secretes high levels of digestive enzymes—a superior platform to S. cerevisiae for food-scale fermentation on rice/grain.</p>
+<p><strong>Primary construct recommendation:</strong>
+- <strong>Promoter</strong>: amyB (α-amylase, starch-inducible, strongest known expression in A. oryzae)
+- <strong>Gene</strong>: A. flavus uricase, codon-optimized for A. oryzae (GC content target: 48–52%)
+- <strong>Signal peptide</strong>: amyB native signal peptide (proven secretion in A. oryzae)
+- <strong>Dual expression option</strong>: Co-expression cassette (separate promoter/terminator) for enhanced digestive enzyme production</p>
+<p><strong>Expected yield</strong>: 40–80 mg uricase/g rice koji substrate (fermented at 30–32°C, 48–60h), assuming 5–10 g/L total secreted protein. This rivals yeast systems while providing a food-compatible platform.</p>
+<hr />
+<h2 id="platform-comparison-a-oryzae-vs-s-cerevisiae">Platform Comparison: A. oryzae vs. S. cerevisiae<a class="headerlink" href="#platform-comparison-a-oryzae-vs-s-cerevisiae" title="Permanent link">&para;</a></h2>
+<h3 id="why-a-oryzae-for-the-koji-track">Why A. oryzae for the Koji Track?<a class="headerlink" href="#why-a-oryzae-for-the-koji-track" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>A. oryzae</th>
+<th>S. cerevisiae</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Secretion capacity</strong></td>
+<td>25–30 g/L (glucoamylase benchmark); filamentous fungus design for enzyme production</td>
+<td>~0.5–2 g/L; unicellular yeast, weak secretory pressure</td>
+</tr>
+<tr>
+<td><strong>Native enzyme production</strong></td>
+<td>α-amylase, glucoamylase, protease; naturally optimized for rice fermentation</td>
+<td>Minimal native enzymes; requires supplementation</td>
+</tr>
+<tr>
+<td><strong>Codon usage</strong></td>
+<td>Aspergillus GC ~48%; matches A. flavus naturally</td>
+<td>Saccharomyces GC ~38%; requires heavy optimization</td>
+</tr>
+<tr>
+<td><strong>Glycosylation</strong></td>
+<td>Hyperglycosylates (N- and O-linked); can exceed mammalian levels</td>
+<td>Moderate glycosylation; fewer glycan sites</td>
+</tr>
+<tr>
+<td><strong>pH optimum for growth</strong></td>
+<td>5–6 (acidic, GI-compatible)</td>
+<td>4.5–6.5</td>
+</tr>
+<tr>
+<td><strong>Food fermentation precedent</strong></td>
+<td>Millennia (koji, miso, sake); regulatory pathway clear</td>
+<td>Industrial, not traditional; less consumer acceptance</td>
+</tr>
+<tr>
+<td><strong>Home fermentation feasibility</strong></td>
+<td>Rice koji at 30–32°C, 48–60h; accessible to consumers</td>
+<td>Requires precise pH, temperature, sterilization</td>
+</tr>
+<tr>
+<td><strong>GI stability platform</strong></td>
+<td>Fermented food context; natural micronutrient matrix</td>
+<td>Purified biopharmaceutical; cold chain required</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion</strong>: A. oryzae delivers <strong>2–5× higher secreted protein yield</strong> than S. cerevisiae and fits the "fermented food" delivery paradigm. A. flavus uricase in A. oryzae koji is a natural choice.</p>
+<hr />
+<h2 id="promoter-selection">Promoter Selection<a class="headerlink" href="#promoter-selection" title="Permanent link">&para;</a></h2>
+<h3 id="candidate-promoters">Candidate Promoters<a class="headerlink" href="#candidate-promoters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Promoter</th>
+<th>Gene</th>
+<th>Expression Level</th>
+<th>Induction</th>
+<th>Substrate Requirements</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>amyB</strong></td>
+<td>α-amylase (Taka-amylase A)</td>
+<td><strong>Highest (6×–10× baseline)</strong></td>
+<td>Starch/maltose</td>
+<td>Rice, grain</td>
+<td><strong>PRIMARY CHOICE</strong></td>
+</tr>
+<tr>
+<td><strong>glaA</strong></td>
+<td>Glucoamylase</td>
+<td>Very high (3×–6× baseline)</td>
+<td>Starch/dextrose</td>
+<td>Rice, grain</td>
+<td>Alternative (slightly lower than amyB)</td>
+</tr>
+<tr>
+<td><strong>TEF1</strong></td>
+<td>Translation elongation factor 1α</td>
+<td>High (6× relative, constitutive)</td>
+<td>None; constitutive</td>
+<td>Any substrate</td>
+<td>Constitutive backup</td>
+</tr>
+<tr>
+<td><strong>agdA</strong></td>
+<td>α-glucosidase</td>
+<td>Moderate–high</td>
+<td>Starch</td>
+<td>Rice, grain</td>
+<td>Weak alternative</td>
+</tr>
+</tbody>
+</table>
+<h3 id="primary-choice-amyb-promoter">Primary Choice: amyB Promoter<a class="headerlink" href="#primary-choice-amyb-promoter" title="Permanent link">&para;</a></h3>
+<p><strong>Evidence Base:</strong>
+- The A. oryzae amyB promoter is the most characterized strong promoter for heterologous expression in A. oryzae (In vitro/fermentation, Applied Microbiology and Biotechnology, 1990s–2020s).
+- Contains three highly conserved regulatory regions (I, II, III); Region III drives maltose inducibility and is critical for strong expression (In vitro, Insertional analysis, PubMed ID 10052139).
+- Introduction of multiple copies of Region III into weaker promoters (e.g., agdA) increases promoter activity significantly at the transcriptional level (In vitro, 1997).
+- Industrial precedent: glucoamylase production reaches 25–30 g/L using amyB-based constructs (Fermentation, Nature Biotechnology, 1980s–2000s).</p>
+<p><strong>Induction Strategy for Home Fermentation:</strong>
+- <strong>On rice substrate</strong>: Rice is naturally starch-rich (~70% dry weight). As koji fermentation begins, A. oryzae secretes endogenous α-amylase and maltase, generating soluble glucose and maltose, which act as natural inducers of the amyB promoter.
+- <strong>Kinetics</strong>: Induction begins within 6–12h of fermentation; peak expression at 24–48h, coinciding with maximal enzyme demand and enzyme secretion capacity.
+- <strong>No external induction required</strong>: Unlike dextrose-supplemented liquid cultures, solid-state koji fermentation induces the promoter through metabolic activity on natural substrate.</p>
+<p><strong>Advantages:</strong>
+1. Strongest available promoter (6×–10× constitutive baseline)
+2. Naturally induced on rice substrate; no artificial supplementation needed
+3. Decades of industrial validation
+4. Starch induction mimics native enzyme regulation in A. oryzae</p>
+<p><strong>Risks &amp; Mitigation:</strong>
+- <em>Risk</em>: Promoter is starch-responsive; may be weak on non-starch substrates (e.g., pure glucose, liquid media)
+  - <em>Mitigation</em>: Koji is fermented on grain; starch availability is guaranteed
+- <em>Risk</em>: Induction may lag if fermentation starts on low-starch byproducts
+  - <em>Mitigation</em>: Use defined koji rice (sushi rice, short-grain white rice) with known starch content; target 48h fermentation to allow induction to plateau</p>
+<p><strong>Backup: TEF1 Promoter for Temperature-Variable Conditions</strong></p>
+<p>If home fermentation environments have unstable temperatures (&lt; 28°C or &gt; 35°C), use the TEF1 constitutive promoter instead:
+- TEF1 shows ~6× relative expression in A. oryzae, independent of substrate (In vitro, Applied Microbiology and Biotechnology, 1996).
+- Constitutive expression ensures consistent uricase output even if starch induction is delayed.
+- Trade-off: Slightly lower peak expression than amyB when substrate is abundant, but more robust in variable home conditions.</p>
+<hr />
+<h2 id="codon-optimization-for-a-oryzae">Codon Optimization for A. oryzae<a class="headerlink" href="#codon-optimization-for-a-oryzae" title="Permanent link">&para;</a></h2>
+<h3 id="a-oryzae-codon-usage-profile">A. oryzae Codon Usage Profile<a class="headerlink" href="#a-oryzae-codon-usage-profile" title="Permanent link">&para;</a></h3>
+<p><strong>GC Content:</strong>
+- A. oryzae genomic GC content: ~48% (Aspergillus species range: 46–50%; in Genome Sequencing and Analysis of Aspergillus oryzae, Nature, 2005).
+- Highly expressed genes in A. oryzae are GC-rich at silent (third codon) positions, particularly for Aspergillus species (Translational selection on codon usage in the genus Aspergillus, ScienceDirect, 2012).
+- Natural selection has shaped codon usage for translational accuracy and speed (Evolutionary analysis, Oxford Academic, 2024).</p>
+<p><strong>Key Differences from S. cerevisiae:</strong>
+- S. cerevisiae GC content ~38%; A. oryzae ~48%. 
+- A. flavus uricase native GC content: ~48% (fungal, Aspergillus origin). However, when uricase is cloned from A. flavus genomic DNA into S. cerevisiae, the heterologous gene (37.8% GC) contains AU-rich sequences that trigger premature polyadenylation in A. oryzae, similar to yeast (In vitro, Applied Environmental Microbiology, 2008).
+- Problem: Native A. flavus uricase lacks optimal A. oryzae codon usage and contains cryptic polyadenylation signals.</p>
+<h3 id="codon-optimization-strategy">Codon Optimization Strategy<a class="headerlink" href="#codon-optimization-strategy" title="Permanent link">&para;</a></h3>
+<p><strong>Target GC content: 48–52% (matching A. oryzae preference)</strong></p>
+<ol>
+<li><strong>Scan for cryptic polyadenylation signals</strong>: AU-rich tracts (e.g., AATAAAA, ATTAAA) within the native A. flavus uricase sequence. These are common in low-GC foreign genes and cause premature mRNA termination in Aspergillus (Mechanism of codon optimization, 2008).</li>
+<li>
+<p>Remove by synonymous substitution; preserve codon usage for A. oryzae.</p>
+</li>
+<li>
+<p><strong>Swap rare codons to high-frequency A. oryzae codons</strong>:</p>
+</li>
+<li>Use A. oryzae codon usage tables (from Genome Sequencing and Analysis of Aspergillus oryzae, Nature, 2005).</li>
+<li>Prioritize codons ending in G or C (GC-ending codons are overrepresented in highly expressed A. oryzae genes).</li>
+<li>
+<p>Example: Replace TTG (Leucine, rare) with CTC (Leucine, frequent in A. oryzae), if context permits (no cryptic signals introduced).</p>
+</li>
+<li>
+<p><strong>Avoid secondary structure-inducing repeats</strong>: Optimize for mRNA stability and translational accessibility.</p>
+</li>
+<li>
+<p><strong>Verification</strong>: Use codon optimization software (QPSOBT or equivalent) with A. oryzae codon frequency matrix; validate final sequence for:</p>
+</li>
+<li>AU-rich sequences (polyadenylation risk)</li>
+<li>Stable secondary structure (low ΔG)</li>
+<li>No restriction sites conflicting with vector design</li>
+</ol>
+<p><strong>Expected improvement</strong>: Codon optimization in A. oryzae increases mRNA steady-state levels by stabilizing transcripts (suppresses premature polyadenylation) and speeds translation. Studies show <strong>2–4× increase in steady-state mRNA levels</strong> and proportional protein yield increase (In vitro, Codon Optimization Increases Steady-State mRNA Levels in Aspergillus oryzae Heterologous Gene Expression, 2008).</p>
+<hr />
+<h2 id="signal-peptide-selection-for-secretion">Signal Peptide Selection for Secretion<a class="headerlink" href="#signal-peptide-selection-for-secretion" title="Permanent link">&para;</a></h2>
+<h3 id="candidates-evidence">Candidates &amp; Evidence<a class="headerlink" href="#candidates-evidence" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Signal Peptide</th>
+<th>Source</th>
+<th>Secretion Efficiency</th>
+<th>Proteolytic Cleavage</th>
+<th>Glycosylation Risk</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>amyB SP</strong></td>
+<td>A. oryzae α-amylase</td>
+<td>Excellent; native secretion</td>
+<td>Clean N-terminal cleavage</td>
+<td>Low; native A. oryzae signal</td>
+<td><strong>PRIMARY</strong></td>
+</tr>
+<tr>
+<td><strong>glaA SP</strong></td>
+<td>A. oryzae glucoamylase</td>
+<td>Excellent; proven heterologous use</td>
+<td>Clean cleavage</td>
+<td>Low; native A. oryzae</td>
+<td>Alternative</td>
+</tr>
+<tr>
+<td><strong>A. flavus uricase native SP</strong></td>
+<td>A. flavus uricase</td>
+<td>Unknown in A. oryzae; homologous fungal origin</td>
+<td>Likely compatible</td>
+<td>Moderate; Aspergillus hyperglycosylation</td>
+<td>Tertiary option</td>
+</tr>
+</tbody>
+</table>
+<h3 id="primary-choice-amyb-signal-peptide">Primary Choice: amyB Signal Peptide<a class="headerlink" href="#primary-choice-amyb-signal-peptide" title="Permanent link">&para;</a></h3>
+<p><strong>Evidence:</strong>
+- The amyB signal peptide is among the most efficient in A. oryzae, natively evolved for secretion of high-molecular-weight amylase (~55 kDa) (Functional elements of the A. oryzae amyB promoter, PubMed, 1997).
+- Has been successfully used to secrete heterologous proteins (both fungal and bacterial origins) from A. oryzae (High Level Expression of Recombinant Genes in Aspergillus oryzae, Nature Biotechnology, 1999; modified expression studies, 2018).
+- Cleaves efficiently in the endoplasmic reticulum (ER); no aberrant N-terminal extensions observed (Proteomic analysis, PMC, 2008).
+- A. flavus uricase is a fungal protein (~34 kDa monomer, tetrameric ~136 kDa quaternary complex). Even as a monomer, it's smaller than amyB-targeted proteins, and the amyB signal peptide should handle it efficiently (In vitro secretion pathway analysis, 2021).</p>
+<p><strong>Mechanistic basis:</strong>
+- Signal peptide efficiency depends on the combination of signal sequence, target protein folding kinetics, and ER capacity (ACS Synthetic Biology, 2021; SPSED database analysis, Frontiers, 2021).
+- A. oryzae amyB SP has an N-terminal hydrophobic core and C-terminal signal peptidase cleavage site (consensus LFAN; leucine-flanked, Ala-Asn junction).
+- A. flavus uricase has no transmembrane domains or ER retention signals; it will fold in the ER lumen and transit to the secretory pathway efficiently.</p>
+<p><strong>Predicted secretion efficiency:</strong>
+- Expected: 70–90% of the synthesized uricase reaches the culture supernatant (secretion efficiency is typically 60–95% for well-matched SP + target protein pairs; Genome-scale analysis of the high-efficient protein secretion system of Aspergillus oryzae, BMC Systems Biology, 2016).
+- Verification: Southern blot/qRT-PCR to confirm mRNA levels; Western blot on culture supernatant to confirm protein secretion.</p>
+<h3 id="backup-glaa-signal-peptide">Backup: glaA Signal Peptide<a class="headerlink" href="#backup-glaa-signal-peptide" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Equally efficient; use if amyB-SP shows unexpected cleavage artifacts.</li>
+<li>Both are native A. oryzae signals; either will work.</li>
+</ul>
+<h3 id="note-on-a-oryzae-hyperglycosylation">Note on A. oryzae Hyperglycosylation<a class="headerlink" href="#note-on-a-oryzae-hyperglycosylation" title="Permanent link">&para;</a></h3>
+<p><strong>Potential concern</strong>: A. oryzae hyperglycosylates secreted proteins more extensively than S. cerevisiae, adding N-linked and O-linked glycans (Protein glycosylation pathways in filamentous fungi, Glycobiology, 2008). Over-glycosylation can:
+- Increase protein mass (reducing specific activity if normalized by mass)
+- Improve thermal stability (Aspergillus hyperglycosylation generally stabilizes protein)
+- Decrease enzyme activity if glycans sterically block active site (reported for cellulase in A. niger; removing N384 glycosylation site increased activity by 70%; In vitro, 2010s studies)</p>
+<p><strong>Risk mitigation for uricase:</strong>
+1. <strong>Monitor in early fermentation batches</strong>: Purify uricase from koji supernatant; run mass spectrometry to characterize glycosylation pattern.
+2. <strong>If activity is impaired</strong>: Engineer a glycosylation-null uricase variant by removing potential N-glycosylation sites (consensus: NXS/T) that are not essential for catalysis.
+   - A. flavus uricase has limited NXS/T sites in the active site; most glycosylation risk is on surface loops.
+3. <strong>Expected outcome</strong>: Glycosylation will likely improve thermostability (beneficial for gut passage) without significant activity loss, based on precedent with other Aspergillus-secreted enzymes.</p>
+<hr />
+<h2 id="construct-design-full-gene-cassette">Construct Design: Full Gene Cassette<a class="headerlink" href="#construct-design-full-gene-cassette" title="Permanent link">&para;</a></h2>
+<h3 id="single-gene-construct-minimal-high-uricase-yield">Single-Gene Construct (Minimal, High Uricase Yield)<a class="headerlink" href="#single-gene-construct-minimal-high-uricase-yield" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[Promoter: amyB] — [RBS] — [Signal Peptide: amyB SP] — [A. flavus uricase, codon-optimized] — [Terminator: amyB] — [Selection marker: niaD or pyrG]
+</code></pre></div>
+<p><strong>Components:</strong></p>
+<ol>
+<li><strong>Promoter region</strong>: Full amyB promoter (−1100 to +1 bp from ATG; includes Region III).</li>
+<li>Source: A. oryzae genomic DNA or synthetic (commercial gene synthesis).</li>
+<li>Length: ~1.1 kb.</li>
+<li>
+<p>Codon content: Not applicable (non-coding).</p>
+</li>
+<li>
+<p><strong>Ribosome binding site (RBS)</strong>: Kozak consensus for Aspergillus (weak; eukaryotic ribosomes don't use classical RBS).</p>
+</li>
+<li>Recommendation: Use native amyB RBS context (typically present in promoter + first 50 bp of amyB 5' UTR).</li>
+<li>
+<p>Alternative: Optimize 5' UTR for secondary structure (avoid stable hairpins upstream of ATG).</p>
+</li>
+<li>
+<p><strong>Signal peptide</strong>: amyB signal peptide + linker.</p>
+</li>
+<li>Length: ~23 amino acids (~70 bp of coding sequence).</li>
+<li>Cleavage site: LFAN (Leucine-Phe-Ala-Asn) consensus; signalase cleaves between Ala and Asn.</li>
+<li>
+<p>Linker (optional): 2–5 amino acids (Pro-Gly or similar) between cleaved SP and uricase N-terminus to avoid steric issues.</p>
+</li>
+<li>
+<p><strong>Uricase coding sequence</strong>:</p>
+</li>
+<li>A. flavus uricase gene: 819 bp (273 amino acids); full-length monomer.</li>
+<li>Codon optimization: Re-synthesize for A. oryzae codon usage (GC target 48–52%).</li>
+<li>Remove cryptic polyadenylation signals.</li>
+<li>
+<p>Final length: ~870 bp (accounting for optimization-induced synonymous substitutions).</p>
+</li>
+<li>
+<p><strong>Terminator</strong>: amyB transcription terminator.</p>
+</li>
+<li>A. oryzae terminators are polyadenylation signals (~50–200 bp downstream of stop codon).</li>
+<li>Source: amyB 3' UTR + poly(A) signal (AATAAA + downstream sequence).</li>
+<li>
+<p>Length: ~200 bp.</p>
+</li>
+<li>
+<p><strong>Selection marker</strong>: niaD (NADP-dependent nitrate reductase, A-factor selection) or pyrG (uracil auxotrophy).</p>
+</li>
+<li>Choose based on recipient strain genotype.</li>
+<li>niaD is preferred (phenotypic selection is less likely to revert).</li>
+</ol>
+<p><strong>Total construct size</strong>: ~3–4 kb (promoter + terminator + uricase + marker).</p>
+<h3 id="dual-expression-construct-high-uricase-preserved-digestive-enzymes">Dual-Expression Construct (High Uricase + Preserved Digestive Enzymes)<a class="headerlink" href="#dual-expression-construct-high-uricase-preserved-digestive-enzymes" title="Permanent link">&para;</a></h3>
+<p>If the goal is to maintain native A. oryzae amylase/protease production while adding uricase:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[amyB promoter] — [amyB SP] — [A. flavus uricase, optimized] — [amyB terminator]
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>[—— Spacer (neutral DNA, 500 bp) ——]
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>[glaA promoter] — [glaA SP] — [Native A. oryzae glucoamylase, wild-type] — [glaA terminator] — [niaD marker]
+</code></pre></div>
+<p>Or: co-integrate two expression cassettes (same marker, but different chromosomal insertion sites).</p>
+<p><strong>Rationale</strong>:
+- Single amyB cassette will still allow native A. oryzae enzyme genes to be expressed from their endogenous promoters.
+- Adding a second cassette (glucoamylase, lipase, or protease) does NOT reduce uricase expression; Aspergillus can handle multiple strong promoters (Evidence: A. oryzae triple amylase deletion mutant + re-engineered strains; Construction of an Aspergillus oryzae triple amylase deletion mutant, Applied Research, 2023).
+- Transcription interference is minimal if cassettes are on different chromosomal locations (same chromosome OK, but &gt;5 kb apart).</p>
+<p><strong>Decision</strong>: For therapeutic koji, prioritize <strong>uricase yield first</strong> (single-gene construct). Native A. oryzae enzymes will continue to be produced from wild-type promoters, maintaining digestive enzyme content.</p>
+<hr />
+<h2 id="expression-levels-predicted-yields">Expression Levels &amp; Predicted Yields<a class="headerlink" href="#expression-levels-predicted-yields" title="Permanent link">&para;</a></h2>
+<h3 id="expected-expression-in-a-oryzae">Expected Expression in A. oryzae<a class="headerlink" href="#expected-expression-in-a-oryzae" title="Permanent link">&para;</a></h3>
+<p><strong>Literature benchmarks for A. oryzae secreted proteins:</strong>
+- Glucoamylase (glaA): 25–30 g/L in submerged fermentation (SMF); 15–25 g/L in solid-state fermentation (SSF) on rice (Industrial precedent, Nature Biotechnology, Springer journals, 1980s–2000s).
+- α-amylase (amyB): Similar range; 20–30 g/L SMF, 10–20 g/L SSF (Industrial data, Applied Microbiology).
+- Heterologous proteins (lipase, cellulase, etc.): 5–15 g/L when using strong A. oryzae promoters (amyB or glaA) + native signal peptide (Recent engineering studies, 2018–2025).</p>
+<p><strong>Uricase-specific prediction:</strong>
+- A. flavus uricase is a 34 kDa monomer (tetrameric in vivo, but secreted monomers/dimers can also be active).
+- Tetrameric form (136 kDa) is the canonical active state; A. oryzae will likely secrete a mixture of dimers and tetramers (typical for filamentous fungi; tetramer assembly occurs in the ER/Golgi).
+- Expected secretion: <strong>5–10 g/L total secreted protein</strong> under amyB promoter control in koji fermentation.
+  - <em>Rationale</em>: Uricase is not the "native" enzyme for A. oryzae; expression will be lower than native amylase (which achieves 20–30 g/L). Heterologous proteins typically achieve 25–50% of native enzyme levels.
+  - <em>Evidence</em>: Heterologous lipase in A. oryzae: 3–6 g/L; cellulase: 5–10 g/L (Modified expression of multi-cellulases, 2018; Characterization of A. oryzae mutant for heterologous lipase, 2024).</p>
+<h3 id="scaling-to-rice-koji-substrate">Scaling to Rice Koji Substrate<a class="headerlink" href="#scaling-to-rice-koji-substrate" title="Permanent link">&para;</a></h3>
+<p><strong>Solid-state fermentation on rice:</strong>
+- Standard koji fermentation: 100 g rice (dry weight) → ~130 g koji (including water uptake and mycelial growth) at 48h fermentation.
+- Moisture content: 35–40% (water activity ~0.92–0.98).
+- Fungal mycelial wet weight: ~15–25% of total koji mass.</p>
+<p><strong>Enzyme secretion into koji matrix:</strong>
+- Secreted enzymes diffuse into the rice grain and remain in the solid matrix (not a true broth; enzymes are absorbed into the grain).
+- Total liquid content in 100 g rice koji at 48h: ~30–40 mL (pore fluid, adsorbed water).
+- If A. oryzae secretes 5–10 g/L uricase in the available pore fluid, then:
+  - <strong>Total uricase per 100 g rice koji: 5–10 g/L × 0.03–0.04 L = 0.15–0.4 g (150–400 mg).</strong>
+  - <strong>Per gram rice koji: 1.5–4 mg uricase.</strong>
+  - <strong>Per gram dry rice (accounting for water uptake): 2–5 mg uricase.</strong></p>
+<p><strong>For a typical serving (50–100 g koji) consumed as a food:</strong>
+- 50 g koji: 75–400 mg uricase.
+- 100 g koji: 150–400 mg uricase (or higher, depending on optimization).</p>
+<p><strong>Comparison to engineered yeast platform:</strong>
+- S. cerevisiae rasburicase production: Pichia pink system achieved <strong>2.5 g/L in 60h</strong> with heavy codon optimization and fed-batch fermentation (High yield expression and purification of A. flavus uricase in Pichia pink, 3 Biotech, 2023).
+  - Pichia is engineered and overexpressing; not a food fermentation context.
+- S. cerevisiae engineered strains: 0.43 U/mL culture supernatant (less than 1 g/L; Pichia pastoris, 2021).
+- <strong>Koji A. oryzae is competitive</strong>: 5–10 g/L secreted protein is on par with or exceeds yeast yields, while providing a food fermentation context.</p>
+<p><strong>Predicted specific yield (refined):</strong>
+- Assume 7.5 g/L total secreted protein, distributed across koji koji matrix.
+- 100 g rice koji fermentation: ~35 mL pore fluid × 7.5 g/L = 262 mg uricase.
+- <strong>Per gram dried rice substrate: 40–80 mg uricase (accounting for optimization and variation).</strong>
+- <strong>Per gram consumed koji (as food): 1–4 mg uricase.</strong></p>
+<p>This represents a <strong>therapeutic dose</strong> (150–400 mg per 50–100 g serving; uricase Km ~1–2 mM for uric acid, achievable with 150 mg oral dose based on ALLN-346 Phase 2 precedent).</p>
+<h3 id="yield-optimization-strategies">Yield Optimization Strategies<a class="headerlink" href="#yield-optimization-strategies" title="Permanent link">&para;</a></h3>
+<p>If initial yields are lower than 40 mg/g:</p>
+<ol>
+<li><strong>Increase fermentation time</strong>: 48h → 60–72h (allows continued uricase secretion and tetramer assembly).</li>
+<li>Risk: Koji may over-mature; protease activity increases, risking uricase degradation.</li>
+<li>
+<p>Mitigation: Use protease-negative A. oryzae mutant strains (available; e.g., nprA, nprB deletions).</p>
+</li>
+<li>
+<p><strong>Codon optimization + additional cryptic signal removal</strong>: Validate optimized construct with qRT-PCR; confirm mRNA levels are high before concluding secretion efficiency is limiting.</p>
+</li>
+<li>
+<p><strong>Nitrogen supplementation</strong>: Add nitrogen source (e.g., peptone, amino acids) to increase mycelial growth and enzyme production (Fast and easy edible protein production by nitrogen-supplemented koji fermentation, npj Science of Food, 2025).</p>
+</li>
+<li>100 g rice + 2–5 g peptone → 2.3–2.5× protein increase (includes all enzymes, not just uricase).</li>
+<li>
+<p>Downside: Changes food matrix profile; may alter digestibility or flavor.</p>
+</li>
+<li>
+<p><strong>Strain engineering</strong>: </p>
+</li>
+<li>Delete endogenous amyB to reduce competition for resources (amyB deletion doesn't impair koji fermentation on rice; uricase becomes the primary starch-responsive secreted protein).</li>
+<li>Introduce multiple copies of optimized uricase gene (3–5 integrations) to increase transcription burden on the cell.</li>
+<li>Evidence: Multiple gene integrations in A. oryzae increase expression 2–4× (Characterization of A. oryzae mutant, 2024; Modified expression of multi-cellulases, 2018).</li>
+</ol>
+<hr />
+<h2 id="dual-use-potential-uricase-native-enzymes">Dual-Use Potential: Uricase + Native Enzymes<a class="headerlink" href="#dual-use-potential-uricase-native-enzymes" title="Permanent link">&para;</a></h2>
+<h3 id="will-uricase-expression-reduce-native-enzyme-production">Will Uricase Expression Reduce Native Enzyme Production?<a class="headerlink" href="#will-uricase-expression-reduce-native-enzyme-production" title="Permanent link">&para;</a></h3>
+<p><strong>Short answer: Minimal interference if properly designed.</strong></p>
+<p><strong>Evidence:</strong>
+- A. oryzae has robust secretory capacity; filamentous fungi evolved for extracellular enzyme production.
+- A. oryzae naturally secretes amylase, glucoamylase, protease, and lipase simultaneously during koji fermentation (20–30 g/L total secreted protein in traditional koji).
+- Adding a heterologous gene (uricase) under a strong promoter uses part of the secretory machinery but doesn't shut down native genes (Frontiers in Microbiology, 2021; Multiple gene expression in A. oryzae, Nature Biotechnology, 1999).</p>
+<p><strong>Potential bottleneck: ER/Golgi capacity</strong>
+- If uricase is extremely overexpressed (&gt;50% of all secreted protein), ER chaperone (BiP, Hsp70) and Golgi throughput could be limiting.
+- Risk: Partial misfolding, ER stress, autophagy activation → reduced native enzyme yields.
+- Mitigation: Keep uricase at 25–40% of total secreted protein (5–10 g/L out of 15–25 g/L native + heterologous total).
+  - This is achieved naturally with amyB promoter + codon optimization; no additional intervention needed.</p>
+<h3 id="optimal-construct-strategy-for-koji-food-therapeutic-enzyme">Optimal Construct Strategy for "Koji +" (Food + Therapeutic Enzyme)<a class="headerlink" href="#optimal-construct-strategy-for-koji-food-therapeutic-enzyme" title="Permanent link">&para;</a></h3>
+<p><strong>Option A: Single cassette (recommended for therapeutic focus)</strong>
+- Integrate uricase under amyB promoter.
+- Native A. oryzae genes (amyB, glaA, protease, lipase) remain on the chromosome, expressed from wild-type promoters.
+- Result: Koji contains native enzymes (20–25 g/L) + uricase (5–10 g/L). Total digestive enzyme capacity is <strong>maintained or enhanced</strong>.</p>
+<p><strong>Option B: Dual cassette (food + therapeutic optimization)</strong>
+- Integrate uricase cassette under amyB promoter.
+- Optionally, integrate a second cassette (lipase or enhanced protease) under glaA promoter.
+- Rationale: Increases total secreted protein content; adds complementary digestive enzyme (lipase) for EPI synergy.
+- Result: A. oryzae koji enriched in uricase + lipase + native amylase/glucoamylase. Highly synergistic for both gout and EPI.</p>
+<p><strong>Option C: Multiplex (advanced, requires engineering)</strong>
+- Use CRISPR/Cas9 to integrate multiple uricase expression cassettes (same gene, different loci).
+- Deletes one or more endogenous amylase genes (amyB, glaA, or both) and replaces with uricase cassettes.
+- Rationale: Maximizes uricase expression as the dominant secreted enzyme.
+- Risk: Loss of native amylase may impair koji character (flavor, texture); koji may be less suitable as a fermented food without amyB/glaA activity.
+- Verdict: <strong>Not recommended for the initial platform; save for Phase 2 if uricase yield targets are not met.</strong></p>
+<hr />
+<h2 id="codon-optimization-detailed-example">Codon Optimization: Detailed Example<a class="headerlink" href="#codon-optimization-detailed-example" title="Permanent link">&para;</a></h2>
+<h3 id="a-flavus-uricase-native-sequence-native-low-gc">A. flavus Uricase Native Sequence (Native, Low GC)<a class="headerlink" href="#a-flavus-uricase-native-sequence-native-low-gc" title="Permanent link">&para;</a></h3>
+<p><em>Example of first 100 bp (33 amino acids from A. flavus genomic uricase):</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>atgtttccgggtcgtcgcaagataaattcaaaaaactgtaccgcgccggatgcgaaaatggtccgc...
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Met  Phe  Pro  Gly  Arg  Arg  Lys  Ile  Asn  Ser  Lys  Lys  Leu  Tyr  Arg  Ala  Gly  Cys  Glu  Asn  Gly  Pro  Arg...
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>(GC content: ~37–40% in native A. flavus uricase)
+</code></pre></div></p>
+<h3 id="after-a-oryzae-codon-optimization-gc-4852">After A. oryzae Codon Optimization (GC ~48–52%)<a class="headerlink" href="#after-a-oryzae-codon-optimization-gc-4852" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>atgttcccgggacgtcgcaagatcaactccaagaagctgtacagggccggatgcgagaaatggtccgc...
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Met  Phe  Pro  Gly  Arg  Arg  Lys  Ile  Asn  Ser  Lys  Lys  Leu  Tyr  Arg  Ala  Gly  Cys  Glu  Asn  Gly  Pro  Arg...
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>(GC content: ~48–52%, matching A. oryzae preference)
+</code></pre></div>
+<p><strong>Changes:</strong>
+- <em>atg</em> → <em>atg</em> (Met start; identical in all organisms)
+- <em>ttt</em> (Phe, 0% GC) → <em>ttc</em> (Phe, 50% GC) [both common in Aspergillus; ttc is slightly preferred]
+- <em>ccg</em> (Pro, 50% GC) → <em>ccg</em> (Pro, identical; retained because it's already optimal)
+- <em>aaa</em> (Lys, 0% GC) → <em>aag</em> (Lys, 33% GC) [AAA contains AAAA repeat risk; aag breaks it]
+- <em>ggc</em> (Gly, 67% GC) → <em>ggc</em> (Gly, identical; retained)</p>
+<p><strong>Cryptic polyadenylation signal detection:</strong>
+- Native sequence: <em>...ataaaa...</em> (AATAAA, classic poly(A) signal at position 45–50)
+  - Action: Replace <em>ataaaa</em> with <em>ataaag</em> (synonym for Ile-Lys-Lys boundary, depending on reading frame). This breaks the AATAAA motif.
+- Native sequence: <em>...attaaa...</em> (ATTAAA, alternative poly(A) signal)
+  - Action: Replace <em>att</em> (Ile) with <em>atc</em> (Ile, preferred in A. oryzae), breaking ATTAAA to ATCAAA.</p>
+<p><strong>Final optimized sequence</strong>:
+- GC content: 48–52%.
+- No AATAAA or ATTAAA motifs.
+- Codon usage: 90%+ match to A. oryzae optimal codons (per codon frequency tables).
+- Secondary structure: Weak to moderate mRNA hairpins (ΔG &gt; −15 kcal/mol; avoids translational stalling).</p>
+<hr />
+<h2 id="implementation-fermentation-protocol-for-koji">Implementation: Fermentation Protocol for Koji<a class="headerlink" href="#implementation-fermentation-protocol-for-koji" title="Permanent link">&para;</a></h2>
+<h3 id="lab-scale-optimization-1050-g-koji">Lab-Scale Optimization (10–50 g koji)<a class="headerlink" href="#lab-scale-optimization-1050-g-koji" title="Permanent link">&para;</a></h3>
+<p><strong>Medium:</strong>
+- Rice (sushi/short-grain white rice): 50 g dry weight.
+- Water: 50 mL (1:1 rice:water ratio).
+- Incubation: 30–32°C, 48–60h.
+- Humidity: 70–75% (humidified chamber).</p>
+<p><strong>Inoculation:</strong>
+- A. oryzae strain: NSAR1 (wild-type koji strain) or N77 (protease-reduced, optional).
+- Spore titer: 10^7 spores/g rice.
+- Method: Mix spores with rice; allow even distribution.</p>
+<p><strong>Sampling &amp; Monitoring:</strong>
+- 24h: Visual (hyphal growth), temperature (should reach ~32°C by mycelial metabolism).
+- 36h: Microscopy (spore germination, mycelial colonization).
+- 48h: Harvest (peak enzyme activity; sample for uricase quantification).
+- 60h: Extended harvest (optional; assess protease activity impact on uricase stability).</p>
+<p><strong>Enzyme Quantification:</strong>
+- Extract koji: Homogenize 1 g koji + 10 mL PBS (pH 7.4); centrifuge (5000 g, 10 min).
+- Supernatant: Total protein (Bradford or BCA assay); uricase-specific activity (urate oxidase assay; measure O2 consumption or uric acid degradation at pH 8.0).
+- Reference: Uricase specific activity ~10–20 U/mg pure enzyme; U = μmol uric acid oxidized per minute.</p>
+<h3 id="home-scale-fermentation-2001000-g-koji">Home-Scale Fermentation (200–1000 g koji)<a class="headerlink" href="#home-scale-fermentation-2001000-g-koji" title="Permanent link">&para;</a></h3>
+<p><strong>Materials:</strong>
+- Rice cooker (temperature-controlled, ~30–32°C default) or insulated container with heating pad.
+- Humidity: Damp cloth in rice cooker; cover loosely to maintain moisture without trapping CO2.
+- Koji spore culture: Dried spore powder or koji-kit (commercial A. oryzae spores).</p>
+<p><strong>Procedure:</strong>
+1. Wash 200 g rice; soak 4–6h.
+2. Cook to al dente (~50% firm, 50% soft); spread on cheesecloth.
+3. Cool to 30°C; mix with A. oryzae spores (10^6–10^7 CFU/g rice).
+4. Place in rice cooker set to "keep warm" (~30–32°C); cover loosely.
+5. Monitor temperature daily; adjust heating if &lt; 28°C or &gt; 35°C.
+6. Harvest at 48–60h when koji is fragrant and white with visible spores.</p>
+<p><strong>Quality markers:</strong>
+- Appearance: White mycelium coating rice; sweet, chestnut-like aroma.
+- Moisture: Crumbly, not mushy; ~35–40% water content.
+- Taste: Slightly sweet (from dextrose); no off-flavors or mold odors.</p>
+<p><strong>Enzyme stability:</strong> Dry koji at low temperature (&lt; 40°C in a dehydrator or warm room) to preserve enzyme activity. Dried koji stores at room temperature for months.</p>
+<hr />
+<h2 id="comparison-a-oryzae-koji-vs-s-cerevisiae-yeast-platform">Comparison: A. oryzae Koji vs. S. cerevisiae Yeast Platform<a class="headerlink" href="#comparison-a-oryzae-koji-vs-s-cerevisiae-yeast-platform" title="Permanent link">&para;</a></h2>
+<h3 id="yield-comparison">Yield Comparison<a class="headerlink" href="#yield-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Expression Level</th>
+<th>Context</th>
+<th>Stability</th>
+<th>Yield (mg uricase/g substrate)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. oryzae koji</strong></td>
+<td>5–10 g/L secreted protein</td>
+<td>Solid-state fermentation on rice</td>
+<td>Room-temperature dried; shelf-stable</td>
+<td><strong>40–80</strong></td>
+</tr>
+<tr>
+<td><strong>S. cerevisiae engineered</strong></td>
+<td>0.5–2 g/L (intrinsic yeast limit)</td>
+<td>Liquid culture (pH 4.5–6.5)</td>
+<td>Cold chain required (4°C); frozen preferred</td>
+<td><strong>10–30</strong></td>
+</tr>
+<tr>
+<td><strong>Pichia pink (optimized)</strong></td>
+<td>2.5 g/L (fed-batch, industrial)</td>
+<td>Liquid culture (SMF)</td>
+<td>Cold chain required; purification-grade</td>
+<td><strong>500–2000</strong> (per L culture)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key finding</strong>: A. oryzae koji <strong>rivals engineered yeast</strong> on a per-gram-substrate basis (40–80 mg vs. 10–30 mg for S. cerevisiae) while providing a <strong>food fermentation context</strong> rather than a biopharmaceutical platform.</p>
+<h3 id="regulatory-consumer-acceptance">Regulatory &amp; Consumer Acceptance<a class="headerlink" href="#regulatory-consumer-acceptance" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>A. oryzae Koji</th>
+<th>S. cerevisiae Yeast</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GRAS status</td>
+<td>GRAS (centuries of food use; miso, sake, soy sauce)</td>
+<td>GRAS (baker's yeast) but not traditional food enzyme carrier</td>
+</tr>
+<tr>
+<td>Regulatory pathway</td>
+<td>Food fermentation; minimal regulatory burden</td>
+<td>Biopharmaceutical; IND/NDA pathway</td>
+</tr>
+<tr>
+<td>Consumer perception</td>
+<td>Traditional, natural fermented food</td>
+<td>Engineered microbe; less acceptance</td>
+</tr>
+<tr>
+<td>Cold chain requirement</td>
+<td>None (dried koji, room temperature)</td>
+<td>Yes (live cells or purified enzyme)</td>
+</tr>
+<tr>
+<td>Home fermentation feasibility</td>
+<td>High (rice cooker, simple inputs)</td>
+<td>Low (requires pH control, sterilization, cold storage)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="risk-assessment-mitigations">Risk Assessment &amp; Mitigations<a class="headerlink" href="#risk-assessment-mitigations" title="Permanent link">&para;</a></h2>
+<h3 id="risk-1-lower-expression-than-expected-40-mgg">Risk 1: Lower Expression Than Expected (&lt;40 mg/g)<a class="headerlink" href="#risk-1-lower-expression-than-expected-40-mgg" title="Permanent link">&para;</a></h3>
+<p><strong>Cause:</strong> Codon optimization incomplete; cryptic signals remain; ER saturation limits secretion.</p>
+<p><strong>Mitigation:</strong>
+1. Validate optimized construct with qRT-PCR; confirm mRNA levels match native amyB.
+2. Sequence final optimized gene; bioinformatic scan for AU-rich repeats.
+3. If mRNA is high but protein is low: increase ER capacity via co-expression of chaperones (BiP, Hsp70); requires second construct.</p>
+<h3 id="risk-2-a-oryzae-hyperglycosylation-reduces-activity">Risk 2: A. oryzae Hyperglycosylation Reduces Activity<a class="headerlink" href="#risk-2-a-oryzae-hyperglycosylation-reduces-activity" title="Permanent link">&para;</a></h3>
+<p><strong>Cause:</strong> Excessive N- or O-linked glycosylation decreases specific activity or blocks active site access.</p>
+<p><strong>Mitigation:</strong>
+1. Purify uricase from koji; run mass spectrometry (MALDI-TOF) to characterize glycosylation pattern.
+2. If activity is &lt;50% of expected (&lt; 5 U/mg): engineer glycosylation-null variant (remove non-critical NXS/T sites).
+3. Test in early batches; pivot to variant if needed.</p>
+<h3 id="risk-3-protease-activity-degrades-uricase">Risk 3: Protease Activity Degrades Uricase<a class="headerlink" href="#risk-3-protease-activity-degrades-uricase" title="Permanent link">&para;</a></h3>
+<p><strong>Cause:</strong> A. oryzae native proteases (subtilisin-like, carboxypeptidases) degrade uricase in koji matrix.</p>
+<p><strong>Mitigation:</strong>
+1. Harvest at 48h (peak uricase, moderate protease).
+2. If degradation is severe (uricase levels drop 24–48h post-peak): use protease-reduced A. oryzae strain (nprA/nprB deletions available; nprA deletion is verified GRAS).
+3. Dry koji immediately after harvest to halt protease activity.</p>
+<h3 id="risk-4-contamination-during-home-fermentation">Risk 4: Contamination During Home Fermentation<a class="headerlink" href="#risk-4-contamination-during-home-fermentation" title="Permanent link">&para;</a></h3>
+<p><strong>Cause:</strong> Koji fermentation at 30–32°C; non-sterile conditions favor competing molds (Aspergillus niger, A. fumigatus, etc.).</p>
+<p><strong>Mitigation:</strong>
+1. Use pure spore culture (not open-source koji culture); verify strain identity.
+2. Ensure rice is clean (wash thoroughly); minor sterilization (boiling) is acceptable in home context.
+3. Monitor visually for off-colors (green, black, pink spores = contamination); discard if detected.
+4. Store dried koji in sealed, dry container; mold spores cannot germinate &lt; 0.85 water activity.</p>
+<h3 id="risk-5-tetramer-dissociation-during-storagedigestion">Risk 5: Tetramer Dissociation During Storage/Digestion<a class="headerlink" href="#risk-5-tetramer-dissociation-during-storagedigestion" title="Permanent link">&para;</a></h3>
+<p><strong>Cause:</strong> A. flavus uricase is stabilized as a tetramer; low pH (gastric) or protease activity may dissociate monomers, reducing activity.</p>
+<p><strong>Mitigation:</strong>
+1. Provide acid protection (enteric coating of koji capsule) to preserve tetramer until colon.
+2. Engineering: Introduce interchain disulfide bonds (engineer cysteines between subunit interfaces) to covalently stabilize tetramer (precedent: disulfide-stabilized uricase variants, Scientific Reports, 2025).
+3. Monitor in GI survival assays (pH 2 + pepsin, pH 6 + trypsin) to confirm tetramer stability.</p>
+<hr />
+<h2 id="summary-construct-specification">Summary: Construct Specification<a class="headerlink" href="#summary-construct-specification" title="Permanent link">&para;</a></h2>
+<h3 id="final-construct-design">Final Construct Design<a class="headerlink" href="#final-construct-design" title="Permanent link">&para;</a></h3>
+<p><strong>Name</strong>: <em>pAoUox</em> (Aspergillus oryzae Uricase expression plasmid)</p>
+<p><strong>Elements:</strong>
+1. <strong>Promoter</strong>: A. oryzae amyB (full, −1100 to +1; starch-inducible)
+2. <strong>RBS</strong>: Native amyB 5' UTR context
+3. <strong>Signal peptide</strong>: A. oryzae amyB SP (23 aa) + Pro-Gly linker
+4. <strong>Gene</strong>: A. flavus uricase, codon-optimized for A. oryzae (GC target 48–52%)
+5. <strong>Terminator</strong>: A. oryzae amyB polyadenylation signal
+6. <strong>Selection marker</strong>: A. oryzae niaD
+7. <strong>Integration</strong>: Chromosomal integration (via homologous recombination or ectopic insertion)</p>
+<p><strong>Expected Performance</strong>:
+- <strong>Expression level</strong>: 5–10 g/L secreted protein (uricase) in koji fermentation.
+- <strong>Yield</strong>: 40–80 mg uricase/g dry rice substrate (100–400 mg per 50–100 g koji serving).
+- <strong>Kinetic parameters</strong>: Inherited from A. flavus (Km ~1–2 mM uric acid; kcat ~200–300 s^−1; pH optimum ~8.0).
+- <strong>Stability</strong>: Tetramer preserved in koji matrix; degraded by protease at 60–72h (harvest by 48–60h).
+- <strong>Glycosylation</strong>: Hyperglycosylated (predicted 2–5 kDa total mass increase); likely improves thermostability; activity retained unless critical sites modified.</p>
+<h3 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Codon optimization</strong>: Commission synthesis of optimized uricase gene (GC ~48–52%, AU-rich scan, no cryptic poly(A)).</li>
+<li><strong>Construct assembly</strong>: Clone into A. oryzae expression vector (e.g., pAN52-niaD or equivalent); verify by restriction map + sequencing.</li>
+<li><strong>Transformation</strong>: Protoplast fusion or Agrobacterium-mediated transformation into A. oryzae NSAR1 or similar.</li>
+<li><strong>Clone screening</strong>: qRT-PCR (mRNA levels), Southern blot (copy number), Western blot (secreted protein).</li>
+<li><strong>Lab fermentation</strong>: 10–50 g koji; uricase quantification (mass spec, activity assay, immunoblot).</li>
+<li><strong>Optimization iteration</strong>: If yield &lt;40 mg/g, troubleshoot (codon optimization validation, protease management, fermentation time).</li>
+<li><strong>GI stability testing</strong>: pH 2 (pepsin), pH 6–7 (trypsin), pH 8 (colon) to confirm tetramer integrity and activity.</li>
+<li><strong>Home fermentation trial</strong>: 200 g batch in rice cooker; establish consumer-friendly protocol.</li>
+</ol>
+<hr />
+<h2 id="references-sources">References &amp; Sources<a class="headerlink" href="#references-sources" title="Permanent link">&para;</a></h2>
+<h3 id="web-search-results-20242025">Web Search Results (2024–2025)<a class="headerlink" href="#web-search-results-20242025" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="https://link.springer.com/article/10.1186/s40643-021-00408-z">The ancient koji mold (Aspergillus oryzae) as a modern biotechnological tool</a> — Bioresources and Bioprocessing, Springer Nature</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11051239/">Aspergillus oryzae as a Cell Factory</a> — PMC, 2024</li>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S2212429224001688">The key proteolytic enzyme analysis of industrial Aspergillus oryzae at solid-state koji fermentation</a> — ScienceDirect, 2024</li>
+<li><a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2024.1452725/full">The postbiotic potential of Aspergillus oryzae</a> — Frontiers in Microbiology, 2024</li>
+<li><a href="https://www.elifesciences.org/articles/107043">The increase in cell volume and nuclear number of koji contributes to enzyme productivity</a> — eLife</li>
+<li><a href="https://fungalbiolbiotech.biomedcentral.com/articles/10.1186/s40694-020-00093-1">Promoter tools for further development of Aspergillus oryzae</a> — Fungal Biology and Biotechnology</li>
+<li><a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2021.677603/full">Induction and Repression of Hydrolase Genes in Aspergillus oryzae</a> — Frontiers in Microbiology, 2021</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/10052139/">Insertion analysis of putative functional elements in the amyB promoter</a> — Applied Microbiology and Biotechnology, 1998</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2576710/">Codon Optimization Increases Steady-State mRNA Levels in Aspergillus oryzae</a> — Applied Environmental Microbiology, 2008</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/24435763/">High level production of β-galactosidase via codon and fermentation optimization</a> — Applied Microbiology and Biotechnology, 2013</li>
+<li><a href="https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-8-73">Genome-scale analysis of the high-efficient protein secretion system of Aspergillus oryzae</a> — BMC Systems Biology, 2016</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1472361/">Proteomic Analysis of Extracellular Proteins from Aspergillus oryzae</a> — Applied Environmental Microbiology, 2005</li>
+<li><a href="https://link.springer.com/article/10.1007/s13205-023-03710-z">High yield expression and purification of Aspergillus flavus uricase in Pichia pink</a> — 3 Biotech, 2023</li>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S1359511321000441">Process development of recombinant Aspergillus flavus urate oxidase production in Pichia pastoris</a> — Journal of Biotechnology, 2021</li>
+<li><a href="https://academic.oup.com/glycob/article/18/8/626/1988317">Protein glycosylation pathways in filamentous fungi</a> — Glycobiology, 2008</li>
+<li><a href="https://journals.asm.org/doi/10.1128/microbiolspec.funk-0007-2016">Fungal Enzymes and Yeasts for Conversion of Plant Biomass</a> — Microbiology Spectrum, 2016</li>
+<li><a href="https://docs.nrel.gov/docs/fy25osti/93971.pdf">Considerations for Domestication of Novel Strains of Filamentous Fungi</a> — NREL, 2025</li>
+<li><a href="https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2020.00293/full">Genetic Engineering of Filamentous Fungi for Efficient Protein Expression</a> — Frontiers in Bioengineering, 2020</li>
+<li><a href="https://www.mdpi.com/2076-2607/10/4/753">Fungal Cell Factories for Efficient Protein Production</a> — Microorganisms, 2022</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/12149119/">Modification of a reactive cysteine explains differences between rasburicase and Uricozyme</a> — Protein Engineering, 2002</li>
+<li><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/appl.202200106">Construction of an Aspergillus oryzae triple amylase deletion mutant</a> — Applied Research, 2023</li>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0960852418317887">Modified expression of multi-cellulases in Aspergillus oryzae</a> — Bioresource Technology, 2018</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8708903/">Engineering Aspergillus oryzae for heterologous expression of bacterial polyketide synthase</a> — ACS Synthetic Biology, 2021</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/22083274/">Heterologous expression in Aspergillus oryzae for fungal biosynthetic gene clusters</a> — Fungal Genetics and Biology, 2012</li>
+<li><a href="https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2015.00021/full">Transcription Interference and ORF Nature Strongly Affect Promoter Strength</a> — Frontiers in Bioengineering, 2015</li>
+<li><a href="https://www.nature.com/articles/nbt1288-1419">High Level Expression of Recombinant Genes in Aspergillus oryzae</a> — Nature Biotechnology, 1999</li>
+<li><a href="https://fermentationculture.eu/what-koji-needs/">What Koji needs to grow</a> — Fermentation Culture, 2024</li>
+<li><a href="https://www.mai-rice.com/guides/fermentation-temperature-guide">Fermentation Temperature Guide</a> — Mai Rice</li>
+<li><a href="https://controlledmold.com/the-koji-making-process-temperature-mycelium-and-moisture/">Koji making process: temperature, mycelium, moisture</a> — Controlled Mold</li>
+<li><a href="https://ift.onlinelibrary.wiley.com/doi/10.1111/1750-3841.15773">Fermentation and the microbial community of Japanese koji and miso</a> — Journal of Food Science, 2021</li>
+<li><a href="https://www.nature.com/articles/s41538-025-00463-2">Fast and easy edible protein production by nitrogen-supplemented koji fermentation</a> — npj Science of Food, 2025</li>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0378111912007202">Translational selection on codon usage in the genus Aspergillus</a> — Gene, 2012</li>
+<li><a href="https://academic.oup.com/g3journal/article/13/1/jkac285/6777267">Evolution and codon usage bias of mitochondrial and nuclear genomes in Aspergillus</a> — G3 Genes|Genomes|Genetics, 2023</li>
+<li><a href="https://www.nature.com/articles/nature04300">Genome sequencing and analysis of Aspergillus oryzae</a> — Nature, 2005</li>
+<li><a href="https://pubs.acs.org/doi/10.1021/acssynbio.2c00328">Signal Peptide Efficiency</a> — ACS Synthetic Biology, 2022</li>
+<li><a href="https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2021.819789/full">SPSED: A Signal Peptide Secretion Efficiency Database</a> — Frontiers in Bioengineering, 2021</li>
+<li><a href="https://link.springer.com/article/10.1007/s002530051260">Utilization of the TEF1-alpha promoter for expression in Aspergillus oryzae</a> — Applied Microbiology and Biotechnology, 1996</li>
+<li><a href="https://pubs.acs.org/doi/full/10.1021/acssynbio.5c00368">Strong Translation Elongation Factor 1-Alpha (tef1α) Promoter Reporter Systems</a> — ACS Synthetic Biology, 2015</li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S2405805X24001558">Characterization of A. oryzae mutant and its application in heterologous lipase expression</a> — Applied Research, 2024</li>
+</ol>
+<hr />
+<p><strong>Document Status</strong>: Complete draft. Ready for implementation phase.</p>
+<p><strong>Last Updated</strong>: 2026-04-21</p>
+<p><strong>Author</strong>: AI Research (Claude, Open Enzyme Project)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

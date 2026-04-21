@@ -1,0 +1,4270 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/gout-deep-dive/">
+      
+      
+        <link rel="prev" href="../gout-pathophysiology/">
+      
+      
+        <link rel="next" href="../uricase/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Gout Deep Dive - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gout-a-deep-dive" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gout Deep Dive
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../open-enzyme-vision/" class="md-tabs__link">
+          
+  
+  
+  Vision & Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gout-pathophysiology/" class="md-tabs__link">
+          
+  
+  
+  Gout & Uricase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nlrp3-inflammasome/" class="md-tabs__link">
+          
+  
+  
+  NLRP3 & Inflammation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../digestive-enzymes/" class="md-tabs__link">
+          
+  
+  
+  Koji & Digestive Enzymes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../saccharomyces-cerevisiae/" class="md-tabs__link">
+          
+  
+  
+  Organisms & Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gut-lumen-sink/" class="md-tabs__link">
+          
+  
+  
+  Delivery & Barrier
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bpc-157/" class="md-tabs__link">
+          
+  
+  
+  Compounds & Peptides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sibo/" class="md-tabs__link">
+          
+  
+  
+  Other Conditions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bio-ai-tools/" class="md-tabs__link">
+          
+  
+  
+  Tools & Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-biology-of-gout-why-it-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Biology of Gout — Why It Happens
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Biology of Gout — Why It Happens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-purine-metabolism-uric-acid-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Purine Metabolism → Uric Acid Production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-renal-handling-the-excretion-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Renal Handling — The Excretion Bottleneck
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-crystallization-when-chemistry-becomes-pathology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Crystallization — When Chemistry Becomes Pathology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-the-inflammatory-cascade-nlrp3-and-the-flare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: The Inflammatory Cascade — NLRP3 and the Flare
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-treatment-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Treatment Landscape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Treatment Landscape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acute-flare-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acute Flare Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urate-lowering-therapy-ult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Urate-Lowering Therapy (ULT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-theres-no-cure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why There's No Cure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-clinical-pipeline-whats-coming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Clinical Pipeline — What's Coming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genomics-and-gwas-who-gets-gout-and-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Genomics and GWAS — Who Gets Gout and Why
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Genomics and GWAS — Who Gets Gout and Why">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-big-three-transporter-genes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Big Three Transporter Genes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beyond-transporters-surprising-gwas-hits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beyond Transporters: Surprising GWAS Hits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-and-computational-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI and Computational Approaches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI and Computational Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alphafold-and-protein-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AlphaFold and Protein Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-driven-drug-discovery-for-gout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI-Driven Drug Discovery for Gout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crispr-and-gene-therapy-restoring-what-evolution-took-away" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRISPR and Gene Therapy — Restoring What Evolution Took Away
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CRISPR and Gene Therapy — Restoring What Evolution Took Away">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-georgia-state-breakthrough-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Georgia State Breakthrough (2025)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#earlier-work-pseudogene-reactivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Earlier Work: Pseudogene Reactivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-to-clinical-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path to Clinical Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-evolutionary-paradox-why-we-lost-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Evolutionary Paradox — Why We Lost Uricase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Evolutionary Paradox — Why We Lost Uricase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fructose-fat-storage-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fructose-Fat Storage Hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-antioxidant-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Antioxidant Hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-blood-pressure-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Blood Pressure Hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters-for-treatment-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters for Treatment Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gut-microbiome-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gut Microbiome Angle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Gut Microbiome Angle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purine-degrading-bacteria-pdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purine-Degrading Bacteria (PDB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-strains-with-demonstrated-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Strains with Demonstrated Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineered-probiotics-living-drugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineered Probiotics: Living Drugs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fructose-the-hidden-accelerant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fructose: The Hidden Accelerant
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fructose: The Hidden Accelerant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-metabolic-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Metabolic Mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-glut9-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The GLUT9 Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clinical-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clinical Implications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#targeting-inflammation-instead-of-uric-acid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Targeting Inflammation Instead of Uric Acid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Targeting Inflammation Instead of Uric Acid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nlrp3-inflammasome-inhibitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NLRP3 Inflammasome Inhibitors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#il-1-blockade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IL-1β Blockade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autophagy-and-resolution-biology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autophagy and Resolution Biology
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nanotechnology-and-targeted-crystal-dissolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nanotechnology and Targeted Crystal Dissolution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nanotechnology and Targeted Crystal Dissolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dual-action-nanocarriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-Action Nanocarriers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biomimetic-nanoparticles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Biomimetic Nanoparticles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetically-switchable-nanoparticles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnetically Switchable Nanoparticles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-uric-acid-paradox-why-lowering-it-isnt-free" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Uric Acid Paradox — Why Lowering It Isn't Free
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Uric Acid Paradox — Why Lowering It Isn&#39;t Free">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neuroprotective-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neuroprotective Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-oxidant-antioxidant-duality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Oxidant-Antioxidant Duality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implications-for-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implications for Treatment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unconventional-angles-and-cross-disciplinary-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unconventional Angles and Cross-Disciplinary Connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actionable-summary-where-to-put-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actionable Summary — Where to Put Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actionable Summary — Where to Put Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-confidence-bets-25-year-horizon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Confidence Bets (2–5 Year Horizon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-term-frontier-bets-510-year-horizon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-Term Frontier Bets (5–10 Year Horizon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speculative-but-high-impact-10-year-horizon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speculative but High-Impact (10+ Year Horizon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-can-do-right-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Can Do Right Now
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peptides-bpc-157-kpv-and-the-biohacking-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peptides — BPC-157, KPV, and the Biohacking Angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineered-organisms-koji-yeast-and-living-factories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineered Organisms — Koji, Yeast, and Living Factories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineered Organisms — Koji, Yeast, and Living Factories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-yeast-track-engineered-s-cerevisiae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Yeast Track: Engineered S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-koji-track-engineered-a-oryzae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Koji Track: Engineered A. oryzae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-insight-you-might-not-need-to-cross-the-barrier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Key Insight: You Might Not Need to Cross the Barrier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-nlrp3-chokepoint-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The NLRP3 Chokepoint Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-enzyme-research-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Enzyme Research Library
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-biology-of-gout-why-it-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Biology of Gout — Why It Happens
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Biology of Gout — Why It Happens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-purine-metabolism-uric-acid-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Purine Metabolism → Uric Acid Production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-renal-handling-the-excretion-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Renal Handling — The Excretion Bottleneck
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-crystallization-when-chemistry-becomes-pathology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Crystallization — When Chemistry Becomes Pathology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-the-inflammatory-cascade-nlrp3-and-the-flare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: The Inflammatory Cascade — NLRP3 and the Flare
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-treatment-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Treatment Landscape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Treatment Landscape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acute-flare-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acute Flare Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urate-lowering-therapy-ult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Urate-Lowering Therapy (ULT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-theres-no-cure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why There's No Cure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-clinical-pipeline-whats-coming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Clinical Pipeline — What's Coming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genomics-and-gwas-who-gets-gout-and-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Genomics and GWAS — Who Gets Gout and Why
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Genomics and GWAS — Who Gets Gout and Why">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-big-three-transporter-genes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Big Three Transporter Genes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beyond-transporters-surprising-gwas-hits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beyond Transporters: Surprising GWAS Hits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-and-computational-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI and Computational Approaches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI and Computational Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alphafold-and-protein-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AlphaFold and Protein Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-driven-drug-discovery-for-gout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI-Driven Drug Discovery for Gout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crispr-and-gene-therapy-restoring-what-evolution-took-away" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRISPR and Gene Therapy — Restoring What Evolution Took Away
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CRISPR and Gene Therapy — Restoring What Evolution Took Away">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-georgia-state-breakthrough-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Georgia State Breakthrough (2025)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#earlier-work-pseudogene-reactivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Earlier Work: Pseudogene Reactivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-to-clinical-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path to Clinical Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-evolutionary-paradox-why-we-lost-uricase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Evolutionary Paradox — Why We Lost Uricase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Evolutionary Paradox — Why We Lost Uricase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fructose-fat-storage-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fructose-Fat Storage Hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-antioxidant-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Antioxidant Hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-blood-pressure-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Blood Pressure Hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters-for-treatment-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters for Treatment Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gut-microbiome-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gut Microbiome Angle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Gut Microbiome Angle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purine-degrading-bacteria-pdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purine-Degrading Bacteria (PDB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-strains-with-demonstrated-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Strains with Demonstrated Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineered-probiotics-living-drugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineered Probiotics: Living Drugs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fructose-the-hidden-accelerant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fructose: The Hidden Accelerant
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fructose: The Hidden Accelerant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-metabolic-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Metabolic Mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-glut9-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The GLUT9 Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clinical-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clinical Implications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#targeting-inflammation-instead-of-uric-acid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Targeting Inflammation Instead of Uric Acid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Targeting Inflammation Instead of Uric Acid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nlrp3-inflammasome-inhibitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NLRP3 Inflammasome Inhibitors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#il-1-blockade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IL-1β Blockade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autophagy-and-resolution-biology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autophagy and Resolution Biology
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nanotechnology-and-targeted-crystal-dissolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nanotechnology and Targeted Crystal Dissolution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nanotechnology and Targeted Crystal Dissolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dual-action-nanocarriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-Action Nanocarriers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biomimetic-nanoparticles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Biomimetic Nanoparticles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetically-switchable-nanoparticles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnetically Switchable Nanoparticles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-uric-acid-paradox-why-lowering-it-isnt-free" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Uric Acid Paradox — Why Lowering It Isn't Free
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Uric Acid Paradox — Why Lowering It Isn&#39;t Free">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neuroprotective-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neuroprotective Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-oxidant-antioxidant-duality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Oxidant-Antioxidant Duality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implications-for-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implications for Treatment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unconventional-angles-and-cross-disciplinary-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unconventional Angles and Cross-Disciplinary Connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actionable-summary-where-to-put-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actionable Summary — Where to Put Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actionable Summary — Where to Put Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-confidence-bets-25-year-horizon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Confidence Bets (2–5 Year Horizon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-term-frontier-bets-510-year-horizon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-Term Frontier Bets (5–10 Year Horizon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speculative-but-high-impact-10-year-horizon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speculative but High-Impact (10+ Year Horizon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-can-do-right-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Can Do Right Now
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peptides-bpc-157-kpv-and-the-biohacking-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peptides — BPC-157, KPV, and the Biohacking Angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineered-organisms-koji-yeast-and-living-factories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineered Organisms — Koji, Yeast, and Living Factories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineered Organisms — Koji, Yeast, and Living Factories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-yeast-track-engineered-s-cerevisiae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Yeast Track: Engineered S. cerevisiae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-koji-track-engineered-a-oryzae" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Koji Track: Engineered A. oryzae
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-insight-you-might-not-need-to-cross-the-barrier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Key Insight: You Might Not Need to Cross the Barrier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-nlrp3-chokepoint-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The NLRP3 Chokepoint Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-enzyme-research-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Enzyme Research Library
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<hr />
+<p>title: Gout: A Deep Dive — State of the Art, Frontier Research, and Unconventional Angles
+date: April 2026
+tags: [gout, uric acid, purine metabolism, NLRP3 inflammasome, uricase, gene therapy, microbiome, fructose]
+status: published</p>
+<hr />
+<h1 id="gout-a-deep-dive">Gout: A Deep Dive<a class="headerlink" href="#gout-a-deep-dive" title="Permanent link">&para;</a></h1>
+<p>State of the art, frontier research, AI-driven discovery, evolutionary biology, and unconventional treatment angles — connecting dots across disciplines.</p>
+<p><strong>Compiled April 2026</strong> · Research current through early 2026</p>
+<p>Part of the <a href="../open-enzyme-vision/">Open Enzyme</a> project — where this research led.</p>
+<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#the-biology-of-gout--why-it-happens">The Biology of Gout — Why It Happens</a></li>
+<li><a href="#current-treatment-landscape">Current Treatment Landscape — What Exists and Why There's No Cure</a></li>
+<li><a href="#the-clinical-pipeline--whats-coming">The Clinical Pipeline — What's Coming</a></li>
+<li><a href="#genomics-and-gwas--who-gets-gout-and-why">Genomics and GWAS — Who Gets Gout and Why</a></li>
+<li><a href="#ai-and-computational-approaches">AI and Computational Approaches</a></li>
+<li><a href="#crispr-and-gene-therapy--restoring-uricase">CRISPR and Gene Therapy — Restoring Uricase</a></li>
+<li><a href="#the-evolutionary-paradox--why-we-lost-uricase">The Evolutionary Paradox — Why We Lost Uricase</a></li>
+<li><a href="#the-gut-microbiome-angle">The Gut Microbiome Angle</a></li>
+<li><a href="#fructose-the-hidden-accelerant">Fructose: The Hidden Accelerant</a></li>
+<li><a href="#targeting-inflammation-instead-of-uric-acid">Targeting Inflammation Instead of Uric Acid</a></li>
+<li><a href="#nanotechnology-and-targeted-crystal-dissolution">Nanotechnology and Targeted Crystal Dissolution</a></li>
+<li><a href="#the-uric-acid-paradox--why-lowering-it-isnt-free">The Uric Acid Paradox — Why Lowering It Isn't Free</a></li>
+<li><a href="#unconventional-angles-and-cross-disciplinary-connections">Unconventional Angles and Cross-Disciplinary Connections</a></li>
+<li><a href="#actionable-summary--where-to-put-resources">Actionable Summary — Where to Put Resources</a></li>
+<li><a href="#peptides--bpc-157-kpv-and-the-biohacking-angle">Peptides — BPC-157, KPV, and the Biohacking Angle</a></li>
+<li><a href="#engineered-organisms--koji-yeast-and-living-factories">Engineered Organisms — Koji, Yeast, and Living Factories</a></li>
+<li><a href="#the-nlrp3-chokepoint-framework">The NLRP3 Chokepoint Framework</a></li>
+</ol>
+<hr />
+<h2 id="the-biology-of-gout-why-it-happens">The Biology of Gout — Why It Happens<a class="headerlink" href="#the-biology-of-gout-why-it-happens" title="Permanent link">&para;</a></h2>
+<p>Gout is the clinical endpoint of a multi-step biochemical cascade. Understanding each step matters because each step is a potential therapeutic target. Here's the chain:</p>
+<h3 id="step-1-purine-metabolism-uric-acid-production">Step 1: Purine Metabolism → Uric Acid Production<a class="headerlink" href="#step-1-purine-metabolism-uric-acid-production" title="Permanent link">&para;</a></h3>
+<p>Every cell in your body contains DNA and RNA built from purine bases (adenine and guanine). When cells turn over, or when you eat purine-rich foods (organ meats, shellfish, beer), those purines are metabolized. The final step is catalyzed by the enzyme <strong>xanthine oxidase (XO)</strong>, which converts hypoxanthine → xanthine → uric acid. This is where drugs like allopurinol and febuxostat intervene — they inhibit XO to reduce uric acid production at the source.</p>
+<pre class="mermaid"><code>graph TD
+    A["Purines (from DNA/RNA/food)"] --&gt;|adenosine deaminase, nucleotidases| B["Hypoxanthine"]
+    B --&gt;|Xanthine Oxidase (XO)| C["Xanthine"]
+    C --&gt;|Xanthine Oxidase (XO)| D["Uric Acid"]
+    D --&gt;|Uricase| E["Allantoin (soluble, easily excreted)"]
+    F["⚠️ MISSING in humans — pseudogene"] -.-&gt; D
+    G["allopurinol/febuxostat block here"] -.-&gt; B</code></pre>
+<p>The critical point: in most mammals, uric acid isn't the end of the line. An enzyme called <strong>uricase</strong> (urate oxidase) converts uric acid into allantoin, which is far more soluble and easily excreted by the kidneys. Humans, great apes, and some other primates lost the functional uricase gene roughly 15–20 million years ago. We are stuck at the uric acid step. This is the root cause of gout.</p>
+<h3 id="step-2-renal-handling-the-excretion-bottleneck">Step 2: Renal Handling — The Excretion Bottleneck<a class="headerlink" href="#step-2-renal-handling-the-excretion-bottleneck" title="Permanent link">&para;</a></h3>
+<p>About 70% of daily uric acid elimination happens through the kidneys. The proximal tubule of the kidney engages in a complex dance of filtration, reabsorption, and secretion involving multiple transporter proteins. The key players:</p>
+<table>
+<thead>
+<tr>
+<th>Transporter</th>
+<th>Gene</th>
+<th>Role</th>
+<th>Drug Target Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>URAT1</strong></td>
+<td>SLC22A12</td>
+<td>Reabsorbs uric acid from tubular lumen back into blood. The primary villain — reabsorbs ~90% of filtered urate.</td>
+<td>Major target. Probenecid, lesinurad, pozdeutinurad, dotinurad all inhibit URAT1.</td>
+</tr>
+<tr>
+<td><strong>GLUT9</strong></td>
+<td>SLC2A9</td>
+<td>Basolateral exit transporter; moves uric acid from tubular cells into blood. Also handles fructose.</td>
+<td>Genetic variants have enormous effect on urate levels. Under-explored as drug target.</td>
+</tr>
+<tr>
+<td><strong>ABCG2</strong></td>
+<td>ABCG2</td>
+<td>Secretes uric acid into both gut lumen and renal tubule. Loss-of-function variants are the #1 genetic risk for gout.</td>
+<td>Enhancing ABCG2 activity is a potential novel approach — nobody's doing it yet.</td>
+</tr>
+<tr>
+<td><strong>OAT1/OAT3</strong></td>
+<td>SLC22A6/8</td>
+<td>Basolateral uptake of urate from blood into tubular cells for secretion.</td>
+<td>Modulated by some existing uricosurics.</td>
+</tr>
+<tr>
+<td><strong>NPT1/NPT4</strong></td>
+<td>SLC17A&#8531;</td>
+<td>Apical secretion of urate into tubular lumen.</td>
+<td>Emerging targets.</td>
+</tr>
+</tbody>
+</table>
+<p>Gout is, at its core, a <em>kidney transporter problem</em>. Most gout patients (~90%) are "under-excretors" — their kidneys reabsorb too much uric acid. Only ~10% are true "over-producers." This distinction matters enormously for treatment strategy.</p>
+<h3 id="step-3-crystallization-when-chemistry-becomes-pathology">Step 3: Crystallization — When Chemistry Becomes Pathology<a class="headerlink" href="#step-3-crystallization-when-chemistry-becomes-pathology" title="Permanent link">&para;</a></h3>
+<p>When serum urate exceeds ~6.8 mg/dL (its saturation point at physiological pH and temperature), monosodium urate (MSU) crystals can form and deposit in joints, tendons, and surrounding tissues. But here's the thing: crystallization isn't immediate or inevitable. Many people have hyperuricemia for years — even decades — without a single gout attack. Local factors like temperature (cooler joints like the big toe crystallize first), pH, mechanical stress, and the presence of nucleation sites all influence when and where crystals form.</p>
+<h3 id="step-4-the-inflammatory-cascade-nlrp3-and-the-flare">Step 4: The Inflammatory Cascade — NLRP3 and the Flare<a class="headerlink" href="#step-4-the-inflammatory-cascade-nlrp3-and-the-flare" title="Permanent link">&para;</a></h3>
+<p>MSU crystals are the match. The NLRP3 inflammasome is the gasoline. When tissue-resident macrophages encounter MSU crystals, the crystals are phagocytosed (engulfed). Inside the cell, crystals damage the lysosomal membrane, causing potassium efflux and reactive oxygen species generation. This triggers assembly of the <strong>NLRP3 inflammasome</strong> — a massive intracellular protein complex consisting of the NLRP3 sensor protein, the adaptor ASC, and pro-caspase-1.</p>
+<p>Once assembled, caspase-1 activates, which cleaves pro-IL-1β into active <strong>IL-1β</strong> — the master cytokine of the gout flare. IL-1β triggers neutrophil recruitment, vasodilation, pain signaling, and the full inflammatory storm. It also activates NF-κB signaling, creating a positive feedback loop.</p>
+<p>This is why gout flares are so explosively painful — the NLRP3 inflammasome is one of the most potent inflammatory amplifiers in the innate immune system. It evolved to respond to danger signals from pathogens. MSU crystals hijack that system.</p>
+<blockquote>
+<p><strong>Key Insight:</strong> There are fundamentally two ways to "solve" gout: (1) prevent uric acid from ever reaching crystallization levels, or (2) prevent the immune system from recognizing MSU crystals as a threat. Current medicine focuses almost entirely on #1. Approach #2 — inflammasome modulation — is just now entering clinical trials and could be transformative for patients who can't tolerate or don't respond to urate-lowering therapy.</p>
+</blockquote>
+<hr />
+<h2 id="current-treatment-landscape">Current Treatment Landscape<a class="headerlink" href="#current-treatment-landscape" title="Permanent link">&para;</a></h2>
+<h3 id="acute-flare-management">Acute Flare Management<a class="headerlink" href="#acute-flare-management" title="Permanent link">&para;</a></h3>
+<p><strong>Colchicine</strong> remains first-line for acute flares and prophylaxis when starting urate-lowering therapy (ULT). It works by inhibiting microtubule polymerization in neutrophils, reducing their ability to migrate to and function at inflamed sites. It also suppresses NLRP3 inflammasome activation. The problem: narrow therapeutic window, GI side effects, and it doesn't work well once a flare is established.</p>
+<p><strong>NSAIDs</strong> (indomethacin, naproxen) and <strong>corticosteroids</strong> are alternatives, but carry their own baggage — GI bleeding risk, cardiovascular risk (NSAIDs), glucose dysregulation and immune suppression (steroids). <strong>Prednisone</strong> (typically a short taper: 30–40mg tapering over 7–10 days) is commonly prescribed for acute flares, especially when colchicine isn't started early enough or when NSAIDs are contraindicated. It's fast-acting and effective, but repeated use comes with cumulative steroid side effects — bone density loss, metabolic disruption, and rebound flare risk on discontinuation.</p>
+<p><strong>IL-1 inhibitors</strong> (anakinra, canakinumab) are used off-label for refractory acute gout, directly blocking the IL-1β signal. Effective, but expensive and immunosuppressive.</p>
+<h3 id="urate-lowering-therapy-ult">Urate-Lowering Therapy (ULT)<a class="headerlink" href="#urate-lowering-therapy-ult" title="Permanent link">&para;</a></h3>
+<p><strong>Allopurinol</strong> (XO inhibitor, approved 1966) is the workhorse. Cheap, effective for many, but requires dose titration, has a rare but potentially fatal hypersensitivity reaction (allopurinol hypersensitivity syndrome, associated with HLA-B*5801), and many patients don't reach target urate levels.</p>
+<p><strong>Febuxostat</strong> (XO inhibitor, approved 2009) is more potent than allopurinol and doesn't require renal dose adjustment, but the CARES trial raised cardiovascular mortality concerns (somewhat controversial — the trial had high dropout rates and the signal may not be causal).</p>
+<p><strong>Probenecid</strong> (uricosuric, inhibits URAT1) increases renal uric acid excretion. Requires adequate kidney function, increases kidney stone risk, and has fallen out of favor.</p>
+<p><strong>Lesinurad</strong> (selective URAT1 inhibitor) was approved in 2015 but voluntarily withdrawn from the US market in 2019 due to commercial reasons. It required co-administration with a XO inhibitor.</p>
+<p><strong>Pegloticase</strong> (pegylated recombinant uricase, IV infusion) is the nuclear option for severe, refractory, tophaceous gout. It enzymatically converts uric acid to allantoin — essentially replacing the missing uricase. Devastatingly effective: tophi dissolve, urate levels plummet. But ~40–50% of patients develop anti-drug antibodies that neutralize the enzyme and cause infusion reactions, leading to treatment failure. This immunogenicity problem has been the central challenge.</p>
+<h3 id="why-theres-no-cure">Why There's No Cure<a class="headerlink" href="#why-theres-no-cure" title="Permanent link">&para;</a></h3>
+<p>The honest answer: gout is a <em>chronic metabolic deficiency</em>. Humans lack a gene. You can manage the downstream consequences — reduce production (XO inhibitors), increase excretion (uricosurics), treat inflammation (colchicine/NSAIDs/IL-1 blockers), or temporarily replace the missing enzyme (pegloticase) — but none of these address the root genetic deficit. Stop treatment, and uric acid climbs right back up.</p>
+<p>A true cure would mean one of: (a) restoring uricase expression in human cells, (b) permanently altering kidney transporter function to excrete more urate, or &copy; somehow making the immune system permanently tolerant of MSU crystals. As we'll see, researchers are now pursuing all three.</p>
+<hr />
+<h2 id="the-clinical-pipeline-whats-coming">The Clinical Pipeline — What's Coming<a class="headerlink" href="#the-clinical-pipeline-whats-coming" title="Permanent link">&para;</a></h2>
+<p>The gout pipeline is more active now than it's been in decades. Here's what's in late-stage development or recently approved as of early 2026:</p>
+<table>
+<thead>
+<tr>
+<th>Drug</th>
+<th>Mechanism</th>
+<th>Phase</th>
+<th>Status / Key Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pozdeutinurad (AR882)</strong><br>Arthrosi → acquired by Sobi for $1.5B</td>
+<td>Next-gen selective URAT1 inhibitor (uricosuric)</td>
+<td>Phase 3</td>
+<td>Both pivotal trials (REDUCE 1 &amp; REDUCE 2) fully enrolled with 750+ patients each. Data expected Q2–Q4 2026. NDA planned. Potentially best-in-class URAT1 inhibitor. Sobi's $1.5B acquisition signals high confidence.</td>
+</tr>
+<tr>
+<td><strong>SEL-212 (Pegadricase + ImmTOR)</strong><br>Sobi (formerly Selecta Biosciences)</td>
+<td>Pegylated uricase + rapamycin nanoparticles to prevent immunogenicity</td>
+<td>Phase 3</td>
+<td>DISSOLVE I &amp; II completed. High-dose response rates: 56% (DISSOLVE I), 46% (DISSOLVE II). Superior to pegloticase in COMPARE head-to-head. ImmTOR nanoparticles suppress anti-drug antibody formation — solves pegloticase's biggest problem. Monthly dosing vs. biweekly for pegloticase.</td>
+</tr>
+<tr>
+<td><strong>Firsekibart (Genakumab)</strong></td>
+<td>Anti-IL-1β monoclonal antibody</td>
+<td>Phase 3</td>
+<td>Phase 3 in acute gout: reduced new flare risk by <strong>90% at 12 weeks</strong>, 87% at 24 weeks. Phase 2 head-to-head: outperformed colchicine for flare prophylaxis. Particularly important for patients who can't tolerate NSAIDs/colchicine (renal impairment, drug interactions).</td>
+</tr>
+<tr>
+<td><strong>Dapansutrile (OLT1177)</strong><br>Olatec Therapeutics</td>
+<td>Oral selective NLRP3 inflammasome inhibitor</td>
+<td>Phase &#8532;</td>
+<td>First-in-class oral NLRP3 inhibitor. Phase 2a showed marked pain reduction in acute gout flares. Phase &#8532; enrolling ~300 patients, data expected 2025–2026. Also in trials for Parkinson's, melanoma, and diabetes. Potential launch as early as 2026.</td>
+</tr>
+<tr>
+<td><strong>Dotinurad (URECE)</strong><br>Fuji Yakuhin / Eisai</td>
+<td>Selective URAT1 inhibitor</td>
+<td>Approved (Asia)</td>
+<td>Approved in Japan (2020), recently launched in China, Thailand, Philippines (2025). Highly selective for URAT1 with minimal OAT interaction, reducing kidney stone risk vs. older uricosurics.</td>
+</tr>
+<tr>
+<td><strong>ABP-671 (Lingdolinurad)</strong><br>Atom Therapeutics</td>
+<td>URAT1 inhibitor</td>
+<td>Phase 2b/3</td>
+<td>Global Phase 2b/3 trial hit primary efficacy endpoint — dose-dependent serum uric acid reduction with acceptable safety. Phase 3 likely.</td>
+</tr>
+<tr>
+<td><strong>Epaminurad (URC102)</strong></td>
+<td>URAT1 inhibitor</td>
+<td>Phase 3</td>
+<td>Recruiting, head-to-head vs. febuxostat.</td>
+</tr>
+<tr>
+<td><strong>SHR4640</strong></td>
+<td>URAT1 inhibitor</td>
+<td>Phase 3</td>
+<td>Recruiting, head-to-head vs. allopurinol.</td>
+</tr>
+<tr>
+<td><strong>HNW005</strong></td>
+<td>Dual NLRP3 + URAT1 inhibitor</td>
+<td>Preclinical</td>
+<td>A single molecule that inhibits both NLRP3 inflammasome activation AND URAT1-mediated urate reabsorption. IL-1β IC50 = 1.7 μM, URAT1 inhibition = 75.3%. First dual-target approach — hits both the inflammation and the uric acid in one compound.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Insight:</strong> The most significant paradigm shift in this pipeline is the move toward <strong>dual-mechanism approaches</strong>: drugs or combinations that target both the metabolic side (uric acid levels) and the inflammatory side (NLRP3/IL-1β) simultaneously. HNW005's dual NLRP3+URAT1 inhibition in a single molecule is early but conceptually elegant — it addresses both causes of gout symptoms in one pill.</p>
+</blockquote>
+<hr />
+<h2 id="genomics-and-gwas-who-gets-gout-and-why">Genomics and GWAS — Who Gets Gout and Why<a class="headerlink" href="#genomics-and-gwas-who-gets-gout-and-why" title="Permanent link">&para;</a></h2>
+<p>Genome-wide association studies have dramatically expanded our understanding of gout susceptibility. A recent meta-analysis involving over <strong>one million participants</strong> identified <strong>351 loci</strong> associated with serum urate levels, 17 of which were previously unreported. A 2025 UK Biobank study (N=150,542) identified 13 loci associated with gout, including four novel loci, with notable sex-specific differences (16 loci in males, only 2 in females).</p>
+<h3 id="the-big-three-transporter-genes">The Big Three Transporter Genes<a class="headerlink" href="#the-big-three-transporter-genes" title="Permanent link">&para;</a></h3>
+<p>Three genes dominate the genetic architecture of hyperuricemia and gout, all encoding urate transporters in the kidney:</p>
+<p><strong>ABCG2</strong> (chromosome 4): The single strongest genetic association with gout. The common Q141K variant (rs2231142, found in ~10% of European and ~30% of East Asian populations) reduces ABCG2 transport function by ~50%. This means less uric acid is secreted into both the gut and kidney tubule. The 2025 UK Biobank GWAS found the most significant gout association at rs2199936 in ABCG2 (p = 1.75 × 10⁻⁹⁷).</p>
+<p><strong>SLC2A9 / GLUT9</strong> (chromosome 4): The second-strongest association (rs58656183, p = 5.52 × 10⁻⁹⁰). GLUT9 is a fascinating dual-function transporter — it moves both urate and fructose. Genetic variants here have the largest per-allele effect on serum urate of any known locus. This gene is also the link between fructose metabolism and gout (more on this in Section 9).</p>
+<p><strong>SLC22A12 / URAT1</strong> (chromosome 11): Encodes the primary reabsorption transporter. Loss-of-function variants actually <em>protect</em> against gout (and cause renal hypouricemia). Gain-of-function or regulatory variants that increase URAT1 expression increase gout risk.</p>
+<h3 id="beyond-transporters-surprising-gwas-hits">Beyond Transporters: Surprising GWAS Hits<a class="headerlink" href="#beyond-transporters-surprising-gwas-hits" title="Permanent link">&para;</a></h3>
+<p>Several GWAS loci point to biology beyond kidney transport. Loci near genes involved in glycolysis, insulin signaling, and lipid metabolism suggest that gout risk is intertwined with broader metabolic syndrome pathways. Some hits implicate inflammatory and immune-regulatory genes, reinforcing the idea that susceptibility to gout isn't just about urate levels — it's also about how your immune system responds to crystals.</p>
+<blockquote>
+<p><strong>Fundable Opportunity:</strong> <strong>Polygenic risk scores for gout are under-developed.</strong> With 351 identified loci, it's now possible to build a predictive model that identifies individuals at extreme risk long before their first flare. A well-constructed polygenic risk score — validated in diverse populations — could guide early intervention, personalized therapy selection, and identify patients who would benefit from ABCG2-enhancing therapies. Nobody appears to be commercializing this.</p>
+<p><strong>Untapped Target:</strong> <strong>ABCG2 enhancement.</strong> Nearly all gout drugs work by inhibiting something (XO, URAT1, NLRP3). But what about <em>enhancing</em> ABCG2 function? If the most common genetic risk factor is reduced ABCG2 activity, then a small molecule or gene therapy that boosts ABCG2 expression or corrects the Q141K folding defect could be transformative. Some research shows the Q141K variant causes ABCG2 to be retained in the ER and degraded — a pharmacological chaperone that rescues this trafficking defect could restore function. This approach has precedent in other diseases (e.g., CFTR correctors for cystic fibrosis).</p>
+</blockquote>
+<hr />
+<h2 id="ai-and-computational-approaches">AI and Computational Approaches<a class="headerlink" href="#ai-and-computational-approaches" title="Permanent link">&para;</a></h2>
+<h3 id="alphafold-and-protein-structure">AlphaFold and Protein Structure<a class="headerlink" href="#alphafold-and-protein-structure" title="Permanent link">&para;</a></h3>
+<p>The NLRP3 inflammasome has been one of the more challenging structural biology targets. It's a megadalton-scale complex that undergoes dramatic conformational changes during activation. Cryo-EM structures of inactive NLRP3 bound to inhibitors (like MCC950) have been solved, and recent work has leveraged <strong>AlphaFold and RoseTTAFold</strong> for structure prediction of the NLRP3 NACHT domain — the druggable core where most small-molecule inhibitors bind.</p>
+<p>A 2022 assessment found that while AI-predicted NLRP3 structures are valuable for understanding general architecture, their utility for small-molecule drug design is mixed. The predicted structures lack the resolution needed for precise binding-pocket geometry — molecular dynamics simulations are needed as a refinement step. However, combining AlphaFold structures with MD simulations has shown promise as a starting point for virtual screening campaigns.</p>
+<p>For urate transporters, the story is better. URAT1 and GLUT9 structures can now be predicted with reasonable confidence, enabling in-silico screening for novel inhibitors (URAT1) or, more interestingly, activators/stabilizers (ABCG2). AlphaFold's ability to predict transporter conformations — inward-facing vs. outward-facing states — is particularly relevant for designing drugs that lock transporters in the desired state.</p>
+<h3 id="ai-driven-drug-discovery-for-gout">AI-Driven Drug Discovery for Gout<a class="headerlink" href="#ai-driven-drug-discovery-for-gout" title="Permanent link">&para;</a></h3>
+<p>There isn't a publicly announced major AI drug discovery campaign specifically for gout from companies like Insilico Medicine, Recursion, or Isomorphic Labs. Gout remains somewhat under the radar for the big AI pharma platforms — they tend to focus on oncology, neurodegeneration, and fibrosis where the commercial opportunity is perceived as larger.</p>
+<p>However, there are indirect applications. Researchers in China have used <strong>computational dual-target pharmacophore models</strong> to design molecules that simultaneously inhibit NLRP3 and lower uric acid. The HNW005 compound mentioned above was identified through a scaffold-hopping approach using structural modification of tranilast — this kind of medicinal chemistry optimization is exactly where AI tools excel.</p>
+<p>Natural product screening has also benefited: a 2025 Nature Communications paper described the discovery of multi-target anti-gout agents from <em>Eurycoma longifolia</em> (tongkat ali) through phenotypic screening and structural optimization — a pipeline that AI-driven platforms could dramatically accelerate.</p>
+<blockquote>
+<p><strong>Where AI Could Move the Needle</strong></p>
+<p><strong>1. Multi-target compound design.</strong> Gout involves at least four druggable targets (XO, URAT1, NLRP3, IL-1β). AI generative chemistry platforms (like those from Insilico or Isomorphic Labs) could design molecules that hit 2–3 of these simultaneously — an approach that's nearly impossible with traditional medicinal chemistry.</p>
+<p><strong>2. ABCG2 pharmacological chaperones.</strong> AlphaFold can predict the misfolded Q141K ABCG2 structure. AI screening could identify small molecules that correct the folding defect — analogous to how Vertex discovered CFTR modulators for cystic fibrosis.</p>
+<p><strong>3. Microbiome engineering.</strong> AI-driven metabolic modeling could predict which engineered probiotic modifications would maximize purine degradation in the gut while maintaining strain fitness and safety.</p>
+<p><strong>4. Polygenic risk prediction.</strong> ML models trained on the 351 identified urate-associated loci plus clinical features could stratify patients for early intervention.</p>
+</blockquote>
+<hr />
+<h2 id="crispr-and-gene-therapy-restoring-what-evolution-took-away">CRISPR and Gene Therapy — Restoring What Evolution Took Away<a class="headerlink" href="#crispr-and-gene-therapy-restoring-what-evolution-took-away" title="Permanent link">&para;</a></h2>
+<p>This is arguably the most exciting frontier in gout research, and it points toward something that could reasonably be called a <em>cure</em>.</p>
+<h3 id="the-georgia-state-breakthrough-2025">The Georgia State Breakthrough (2025)<a class="headerlink" href="#the-georgia-state-breakthrough-2025" title="Permanent link">&para;</a></h3>
+<p>In a study published in <em>Scientific Reports</em> in July 2025, researchers Eric Gaucher and Lais de Lima Balico at Georgia State University used <strong>CRISPR-Cas9 to insert a reconstructed ancestral uricase gene into human liver cells</strong>. This wasn't just reactivating the broken pseudogene — they synthesized an optimized version of the ancient enzyme based on ancestral sequence reconstruction (inferring the protein sequence that our primate ancestors had before the gene was inactivated ~15–20 million years ago).</p>
+<p>The results:</p>
+<p><strong>In 2D liver cell culture:</strong> Uric acid levels dropped sharply. The cells expressing reconstructed uricase also did <em>not</em> accumulate fat when exposed to fructose — directly confirming the hypothesis that uricase loss is linked to fructose-driven lipogenesis.</p>
+<p><strong>In 3D liver spheroids</strong> (mini-organs that better simulate real liver tissue): The uricase gene lowered uric acid, and critically, the enzyme localized to <strong>peroxisomes</strong> — the correct subcellular compartment where uricase naturally operates in other mammals. This suggests the reconstructed enzyme integrates properly into cellular machinery.</p>
+<h3 id="earlier-work-pseudogene-reactivation">Earlier Work: Pseudogene Reactivation<a class="headerlink" href="#earlier-work-pseudogene-reactivation" title="Permanent link">&para;</a></h3>
+<p>A 2021 study (also using CRISPR-Cas9) took a different approach — instead of inserting a new gene, they attempted to <em>reactivate</em> the existing human uricase pseudogene by correcting the inactivating mutations. This also successfully restored uricase activity in cell culture and prevented acute hyperuricemia in cell models.</p>
+<h3 id="path-to-clinical-translation">Path to Clinical Translation<a class="headerlink" href="#path-to-clinical-translation" title="Permanent link">&para;</a></h3>
+<p>Both approaches face the same translational challenges that all liver-directed gene therapies face. The delivery options being considered:</p>
+<p><strong>Lipid nanoparticles (LNPs)</strong> — the same technology used in mRNA COVID vaccines. Could deliver CRISPR components or mRNA encoding uricase to hepatocytes. Advantage: non-integrating, repeat-dosable. Disadvantage: transient expression means it's a treatment, not a permanent cure.</p>
+<p><strong>Adeno-associated virus (AAV)</strong> — the standard gene therapy vector. Provides long-lasting (potentially permanent) expression from a single dose. Disadvantage: immunogenicity, liver toxicity risk at high doses (several AAV gene therapies have caused liver failure), and pre-existing immunity in some patients.</p>
+<p><strong>Ex vivo cell therapy</strong> — take the patient's liver cells, edit them, expand them, return them. Technically challenging and expensive, but maximizes safety.</p>
+<p><strong>Base editing or prime editing</strong> — newer, more precise CRISPR variants that could correct the pseudogene mutations without double-strand breaks, reducing off-target risks.</p>
+<blockquote>
+<p><strong>The Cure Pathway</strong></p>
+<p>A one-time liver-directed gene therapy that permanently restores uricase expression would convert a human metabolic profile into something closer to other mammals. Uric acid would be enzymatically converted to highly soluble allantoin. Serum urate levels would drop below crystallization threshold. Existing tophi would slowly dissolve. No daily pills, no infusion reactions, no immunogenicity.</p>
+<p><strong>The technical pieces are falling into place.</strong> The ancestral uricase gene is reconstructed and validated. CRISPR delivery to the liver is being proven by dozens of other gene therapy programs (NTLA-2001 for ATTR amyloidosis, VERVE-101 for PCSK9). The Gaucher lab's work shows the enzyme localizes correctly in human liver cells.</p>
+<p><strong>What's missing:</strong> animal studies (next planned step), a pharma or biotech partner willing to fund clinical development, and regulatory pathway clarity. For a motivated funder, this is a well-defined, high-impact opportunity. The Georgia State team is actively seeking partnerships.</p>
+</blockquote>
+<hr />
+<h2 id="the-evolutionary-paradox-why-we-lost-uricase">The Evolutionary Paradox — Why We Lost Uricase<a class="headerlink" href="#the-evolutionary-paradox-why-we-lost-uricase" title="Permanent link">&para;</a></h2>
+<p>The inactivation of uricase didn't happen once — it occurred independently in at least two primate lineages (great apes and lesser apes/gibbons), suggesting it was <em>selected for</em>, not just random drift. Several hypotheses explain why:</p>
+<h3 id="the-fructose-fat-storage-hypothesis">The Fructose-Fat Storage Hypothesis<a class="headerlink" href="#the-fructose-fat-storage-hypothesis" title="Permanent link">&para;</a></h3>
+<p>The most compelling and well-supported theory, championed by researcher Richard Johnson, argues that losing uricase helped our Miocene-era ancestors survive a climate catastrophe. Around 15–20 million years ago, the warm, fruit-rich tropical forests of Europe and Asia were being replaced by temperate forests with seasonal fruit availability. Primates that could efficiently convert fructose into fat stores had a survival advantage during lean seasons.</p>
+<p>Here's the mechanism: uric acid activates fructokinase and inhibits AMP-activated protein kinase (AMPK), promoting de novo lipogenesis from fructose. With uricase active, uric acid is quickly cleared and this fat-storage signal is weak. Without uricase, uric acid accumulates after fructose consumption, amplifying the fat-storage response. The Gaucher lab's 2025 CRISPR experiments directly confirmed this — liver cells <em>with</em> restored uricase did not accumulate fat when exposed to fructose, while unedited cells did.</p>
+<h3 id="the-antioxidant-hypothesis">The Antioxidant Hypothesis<a class="headerlink" href="#the-antioxidant-hypothesis" title="Permanent link">&para;</a></h3>
+<p>Uric acid accounts for roughly <strong>50–60% of the antioxidant capacity</strong> of human blood plasma. In the extracellular environment, it's a powerful scavenger of peroxynitrite, hydroxyl radicals, and singlet oxygen. The hypothesis: higher uric acid levels provided neuroprotection, supporting the evolution of larger, longer-lived brains. Humans and great apes have the highest serum urate levels and the largest brains (relative to body size) among primates.</p>
+<h3 id="the-blood-pressure-hypothesis">The Blood Pressure Hypothesis<a class="headerlink" href="#the-blood-pressure-hypothesis" title="Permanent link">&para;</a></h3>
+<p>Uric acid promotes sodium retention and stimulates the renin-angiotensin system, both of which raise blood pressure. In ancestral environments with very low dietary sodium, this may have been necessary to maintain adequate blood pressure. In the modern salt-rich diet, this ancient adaptation now contributes to hypertension.</p>
+<h3 id="why-this-matters-for-treatment-strategy">Why This Matters for Treatment Strategy<a class="headerlink" href="#why-this-matters-for-treatment-strategy" title="Permanent link">&para;</a></h3>
+<p>The evolutionary context tells us something important: uric acid isn't just waste. It was co-opted for at least three beneficial functions. This means that therapies aimed at dramatically lowering uric acid — especially systemic therapies — may have unintended consequences. The optimal strategy may not be "eliminate uric acid" but rather "keep it below crystallization threshold while preserving its beneficial antioxidant role" — a narrower target than most current approaches aim for.</p>
+<hr />
+<h2 id="the-gut-microbiome-angle">The Gut Microbiome Angle<a class="headerlink" href="#the-gut-microbiome-angle" title="Permanent link">&para;</a></h2>
+<p>About one-third of daily uric acid elimination happens through the gut, not the kidneys. This has been under-appreciated for decades, but recent research has blown the door open.</p>
+<h3 id="purine-degrading-bacteria-pdb">Purine-Degrading Bacteria (PDB)<a class="headerlink" href="#purine-degrading-bacteria-pdb" title="Permanent link">&para;</a></h3>
+<p>A landmark finding: researchers identified a class of gut bacteria — predominantly from the <strong>Bacillota</strong> (formerly Firmicutes) phylum — that actively degrade purines and uric acid in the gut. These "purine-degrading bacteria" (PDB) carry a conserved gene cluster that converts urate into lactate or anti-inflammatory short-chain fatty acids (SCFAs). The effect is substantial — much larger than previously assumed.</p>
+<p>In gout patients and hyperuricemic individuals, the gut microbiome is consistently dysbiotic: there's a <strong>reduction in obligate anaerobic SCFA-producing bacteria and an increase in facultative anaerobes</strong>. This suggests a vicious cycle — gout may both cause and be worsened by gut dysbiosis.</p>
+<h3 id="specific-strains-with-demonstrated-effects">Specific Strains with Demonstrated Effects<a class="headerlink" href="#specific-strains-with-demonstrated-effects" title="Permanent link">&para;</a></h3>
+<p><strong>Lactiplantibacillus plantarum X7022</strong> has been shown to degrade xanthine, guanine, and adenine via the purine assimilation pathway, inhibit xanthine oxidase activity, reduce serum uric acid, restore gut microbial balance, and increase SCFA levels. It works through multiple mechanisms simultaneously.</p>
+<p><strong>Ligilactobacillus salivarius CECT 30632</strong> was tested in a randomized pilot trial in hyperuricemic patients. Oral administration reduced gout episodes, though the trial was small.</p>
+<h3 id="engineered-probiotics-living-drugs">Engineered Probiotics: Living Drugs<a class="headerlink" href="#engineered-probiotics-living-drugs" title="Permanent link">&para;</a></h3>
+<p>This is where it gets really interesting. Two cutting-edge approaches are in development:</p>
+<p><strong>PULSE System</strong> (published 2025 in <em>Cell Reports Medicine</em>): Researchers engineered <em>E. coli</em> Nissle 1917 (a probiotic-grade strain) with a uric acid-responsive biosensor. The system uses a transcriptional repressor that detects uric acid levels and dynamically regulates expression of urate oxidase. When serum uric acid rises, the bacteria automatically produce more uricase. When it normalizes, production decreases. It's a self-regulating living drug for uric acid homeostasis. Demonstrated efficacy in hyperuricemic mice and rats.</p>
+<p><strong>YES301</strong> (published 2024): Engineered <em>E. coli</em> Nissle 1917 overexpressing the xanthine transporter protein XanQ, achieving 8.6× increased xanthine uptake and 4.0× increased hypoxanthine transport. In hyperuricemic mice, it showed efficacy comparable to allopurinol with fewer adverse effects.</p>
+<blockquote>
+<p><strong>Key Insight</strong></p>
+<p>Engineered probiotics for gout represent a fundamentally different therapeutic paradigm: instead of giving patients a drug that requires daily compliance and has systemic side effects, you colonize their gut with bacteria that continuously metabolize purines before they're absorbed. The PULSE system's auto-regulatory feature is particularly elegant — it only activates when needed, mimicking how a normal homeostatic system works.</p>
+<p><strong>The gap:</strong> Human clinical data is still minimal. The pilot trial with L. salivarius was promising but tiny. The engineered systems (PULSE, YES301) are pre-clinical. Someone needs to fund the translational work — IND-enabling studies, GMP manufacturing for live biotherapeutics, and Phase 1 safety trials.</p>
+</blockquote>
+<hr />
+<h2 id="fructose-the-hidden-accelerant">Fructose: The Hidden Accelerant<a class="headerlink" href="#fructose-the-hidden-accelerant" title="Permanent link">&para;</a></h2>
+<p>The fructose-gout connection is one of the most clinically actionable findings in recent gout research, yet it remains under-communicated to patients.</p>
+<h3 id="the-metabolic-mechanism">The Metabolic Mechanism<a class="headerlink" href="#the-metabolic-mechanism" title="Permanent link">&para;</a></h3>
+<p>Unlike glucose, fructose is metabolized primarily in the liver by a dedicated pathway that uniquely generates uric acid:</p>
+<pre class="mermaid"><code>graph TD
+    A[Fructose] --&gt;|Fructokinase - no feedback| B[Fructose-1-P + ADP]
+    B --&gt;|Rapid ATP depletion| C[AMP accumulates]
+    C --&gt;|AMP deaminase| D[IMP]
+    D --&gt;|Inosine, Hypoxanthine, Xanthine| E[Xanthine]
+    E --&gt;|Xanthine Oxidase| F[Uric Acid]</code></pre>
+<p>The key insight: fructokinase has <strong>no negative feedback</strong>. Unlike hexokinase (which phosphorylates glucose), fructokinase doesn't slow down when ATP is low or when downstream products accumulate. This means a large fructose load causes <em>unregulated</em> ATP consumption, rapid AMP accumulation, and a surge of uric acid production. It also means fructose increases <em>de novo</em> purine synthesis — creating new purines from scratch, not just degrading existing ones.</p>
+<h3 id="the-glut9-connection">The GLUT9 Connection<a class="headerlink" href="#the-glut9-connection" title="Permanent link">&para;</a></h3>
+<p>Remember SLC2A9/GLUT9, the second-strongest GWAS hit for urate levels? GLUT9 transports both urate and fructose. This creates a direct molecular link: the same transporter that handles uric acid excretion in the kidney also handles fructose transport in the liver and gut. Genetic variants that affect GLUT9 function alter both fructose metabolism and uric acid handling simultaneously.</p>
+<h3 id="clinical-implications">Clinical Implications<a class="headerlink" href="#clinical-implications" title="Permanent link">&para;</a></h3>
+<p>Fructose consumption has increased dramatically in Western diets — from ~15g/day in the early 1900s to ~55–75g/day today, driven primarily by high-fructose corn syrup in processed foods and sugar-sweetened beverages. This aligns almost perfectly with the rising prevalence of gout. Additionally, fructose also reduces renal uric acid excretion, hitting both the production and excretion sides.</p>
+<blockquote>
+<p><strong>Practical Implication</strong></p>
+<p>For a gout patient, eliminating sugar-sweetened beverages and foods with high-fructose corn syrup may be as impactful as any single medication change. The mechanism is now well-understood at the molecular level. This isn't dietary hand-waving — it's a direct biochemical pathway from fructose to uric acid with no regulatory braking system. A fructokinase (KHK) inhibitor could theoretically block this pathway without affecting glucose metabolism.</p>
+</blockquote>
+<hr />
+<h2 id="targeting-inflammation-instead-of-uric-acid">Targeting Inflammation Instead of Uric Acid<a class="headerlink" href="#targeting-inflammation-instead-of-uric-acid" title="Permanent link">&para;</a></h2>
+<p>What if you didn't lower uric acid at all, but instead made the immune system stop reacting to the crystals? This is the logic behind NLRP3 inflammasome inhibition and IL-1β blockade.</p>
+<h3 id="nlrp3-inflammasome-inhibitors">NLRP3 Inflammasome Inhibitors<a class="headerlink" href="#nlrp3-inflammasome-inhibitors" title="Permanent link">&para;</a></h3>
+<p><strong>Dapansutrile</strong> is the first oral selective NLRP3 inhibitor to reach Phase &#8532; for gout. It directly prevents NLRP3 inflammasome assembly, blocking the entire downstream cascade (caspase-1 activation, IL-1β release, neutrophil recruitment). In Phase 2a, oral dapansutrile reduced target joint pain in acute gout flares, with the effect most pronounced at higher doses (1000–2000mg). A Phase &#8532; trial (~300 patients) is expected to report soon.</p>
+<p><strong>MCC950 and derivatives:</strong> MCC950 was the first potent, selective NLRP3 inhibitor discovered and has been the basis for a generation of follow-on compounds. It binds the NACHT domain and prevents the conformational change needed for inflammasome activation. Several optimized derivatives with improved solubility and pharmacokinetics are in preclinical development.</p>
+<p>No FDA-approved NLRP3 inhibitor exists yet for any indication. Gout may be the disease where this class breaks through, because the crystal-NLRP3 mechanism is so direct and well-characterized.</p>
+<h3 id="il-1-blockade">IL-1β Blockade<a class="headerlink" href="#il-1-blockade" title="Permanent link">&para;</a></h3>
+<p><strong>Firsekibart</strong>'s Phase 3 results are remarkable: a single subcutaneous injection reduced new gout flare risk by 90% over 12 weeks. This is clinically transformative for patients with renal impairment (who can't take NSAIDs safely), those on anticoagulants (who shouldn't take NSAIDs), or patients with multiple comorbidities who've run out of options.</p>
+<p>The existing approved IL-1 blockers (anakinra, canakinumab) are used off-label for gout but weren't developed for it. Firsekibart is the first IL-1β antibody designed and tested specifically as a gout therapy.</p>
+<h3 id="autophagy-and-resolution-biology">Autophagy and Resolution Biology<a class="headerlink" href="#autophagy-and-resolution-biology" title="Permanent link">&para;</a></h3>
+<p>A fascinating emerging area: the body actually has mechanisms for <em>resolving</em> gout flares and clearing MSU crystals, centered on macrophage phenotype switching and autophagy. During flare resolution, monocytes differentiate into macrophages that produce TGF-β1 (anti-inflammatory), engulf neutrophil extracellular traps (NETs) through a process called efferocytosis, and can "safely dispose" of MSU crystals without triggering inflammation.</p>
+<p>Autophagy — the cell's self-cleaning system — plays a dual role. MSU crystals simultaneously activate the NLRP3 inflammasome and upregulate autophagy. When autophagy dominates, it suppresses IL-1β production and promotes resolution. When inflammasome activation dominates, you get a flare. Pharmacologically tipping this balance toward autophagy (using mTOR inhibitors, autophagy enhancers) is being explored as a therapeutic strategy — and note that the ImmTOR nanoparticles in SEL-212 contain rapamycin, an mTOR inhibitor that promotes autophagy.</p>
+<blockquote>
+<p><strong>Cross-Disciplinary Connection</strong></p>
+<p>The same NLRP3-autophagy axis is central to Alzheimer's disease (amyloid-β crystals), atherosclerosis (cholesterol crystals), and type 2 diabetes (IAPP amyloid). Research in any of these fields could directly translate to gout therapeutics. The NLRP3 inflammasome doesn't care what kind of crystal activates it — the downstream pathway is the same. A breakthrough NLRP3 inhibitor for Alzheimer's would immediately be applicable to gout.</p>
+</blockquote>
+<hr />
+<h2 id="nanotechnology-and-targeted-crystal-dissolution">Nanotechnology and Targeted Crystal Dissolution<a class="headerlink" href="#nanotechnology-and-targeted-crystal-dissolution" title="Permanent link">&para;</a></h2>
+<p>Nanotechnology is opening approaches that would be impossible with conventional drug delivery. Several platforms published in 2024–2025 are worth tracking:</p>
+<h3 id="dual-action-nanocarriers">Dual-Action Nanocarriers<a class="headerlink" href="#dual-action-nanocarriers" title="Permanent link">&para;</a></h3>
+<p>Nanoparticles co-loaded with urate oxidase (to enzymatically dissolve crystals) and anti-inflammatory agents (like aceclofenac) provide simultaneous crystal degradation and inflammation suppression at the joint site. By concentrating both activities at the target, systemic exposure and side effects are minimized.</p>
+<h3 id="biomimetic-nanoparticles">Biomimetic Nanoparticles<a class="headerlink" href="#biomimetic-nanoparticles" title="Permanent link">&para;</a></h3>
+<p>A particularly clever design: <strong>neutrophil-like cell membrane-coated nanoparticles loaded with urate oxidase on a Prussian blue core</strong>. The neutrophil membrane coating provides natural targeting to inflamed joints (following the same chemokine gradients that recruit real neutrophils). The urate oxidase degrades MSU crystals. The Prussian blue core scavenges hydrogen peroxide (a byproduct of uricase activity that would otherwise cause oxidative damage). Mild photothermal activation provides controllable catalytic enhancement.</p>
+<h3 id="magnetically-switchable-nanoparticles">Magnetically Switchable Nanoparticles<a class="headerlink" href="#magnetically-switchable-nanoparticles" title="Permanent link">&para;</a></h3>
+<p>A nanohybrid system with a Fe₃O₄ nanoring core and urate oxidase shell whose activity can be switched on and off using an alternating magnetic field. The magnetic field generates local heat that enhances uricase catalytic activity. This gives physicians on-demand, externally controllable crystal dissolution — you could literally point a magnetic device at an affected joint and activate the treatment.</p>
+<blockquote>
+<p><strong>Reality Check</strong></p>
+<p>These nanotech approaches are all preclinical and face significant translational hurdles: manufacturing scale-up, regulatory pathways for complex nanomedicines, long-term biocompatibility, and cost. But they represent the direction of travel — toward precision, localized, controllable therapeutics rather than systemic drugs. For tophaceous gout especially (where large crystal deposits need to be dissolved), targeted nanotechnology could eventually replace systemic pegloticase infusions.</p>
+</blockquote>
+<hr />
+<h2 id="the-uric-acid-paradox-why-lowering-it-isnt-free">The Uric Acid Paradox — Why Lowering It Isn't Free<a class="headerlink" href="#the-uric-acid-paradox-why-lowering-it-isnt-free" title="Permanent link">&para;</a></h2>
+<p>Here's the uncomfortable truth that most gout literature glosses over: uric acid is one of the most important antioxidants in human blood. Accounting for up to <strong>55% of extracellular free radical scavenging capacity</strong>, it's not just metabolic waste — it's a critical part of our antioxidant defense system.</p>
+<h3 id="neuroprotective-effects">Neuroprotective Effects<a class="headerlink" href="#neuroprotective-effects" title="Permanent link">&para;</a></h3>
+<p>Multiple large epidemiological studies have found that <strong>higher serum uric acid levels are associated with lower risk of Parkinson's disease</strong> and slower disease progression. The association is strong and consistent across populations. Higher uric acid has also been linked to reduced risk of multiple sclerosis and possibly Alzheimer's disease. The proposed mechanism: uric acid scavenges peroxynitrite in the CNS, protecting dopaminergic neurons from oxidative damage.</p>
+<p>However — and this is important — the clinical picture is complicated. A recent neuroprotection trial that raised uric acid in Parkinson's patients using inosine failed to show benefit. A similar trial in relapsing-remitting MS (inosine 3g/day) also showed no neuroprotective effect. This doesn't necessarily disprove the hypothesis — it may mean that exogenously raising uric acid doesn't replicate the protective effect of constitutively high levels — but it should temper enthusiasm.</p>
+<h3 id="the-oxidant-antioxidant-duality">The Oxidant-Antioxidant Duality<a class="headerlink" href="#the-oxidant-antioxidant-duality" title="Permanent link">&para;</a></h3>
+<p>Uric acid's behavior depends on context. In the extracellular space (blood plasma), it's antioxidant. Inside cells (intracellular), it can be pro-oxidant — generating reactive oxygen species and activating NF-κB. This dual nature means the same molecule can be protective (in the blood) and harmful (when crystallized in joints or internalized by cells).</p>
+<h3 id="implications-for-treatment">Implications for Treatment<a class="headerlink" href="#implications-for-treatment" title="Permanent link">&para;</a></h3>
+<p>The current therapeutic target for gout is serum urate below 6 mg/dL (below 5 mg/dL for tophaceous gout). But most normal adults walk around at 3.5–7 mg/dL. Driving urate down to very low levels (as pegloticase or future uricase gene therapy could do) might increase susceptibility to oxidative neurodegeneration. The ideal therapy might be one that keeps urate in a "Goldilocks zone" — below crystallization threshold but above levels where antioxidant protection is lost.</p>
+<blockquote>
+<p><strong>Key Insight</strong></p>
+<p>This is why the PULSE engineered probiotic system is conceptually superior to a constitutive gene therapy that permanently expresses high levels of uricase. The PULSE system's self-regulating uric acid sensor could maintain homeostasis — lowering uric acid when it's too high, but not driving it to zero. A constitutively active liver-expressed uricase would have no such brake. The ideal gene therapy approach might incorporate a similar feedback mechanism — a urate-responsive promoter that only drives uricase expression when serum urate exceeds a threshold.</p>
+</blockquote>
+<hr />
+<h2 id="unconventional-angles-and-cross-disciplinary-connections">Unconventional Angles and Cross-Disciplinary Connections<a class="headerlink" href="#unconventional-angles-and-cross-disciplinary-connections" title="Permanent link">&para;</a></h2>
+<p>This section connects research happening in adjacent fields that could — with the right bridge-building — transform gout treatment.</p>
+<blockquote>
+<p><strong>Connection 1: Cystic Fibrosis Drug Design → ABCG2 Rescue for Gout</strong></p>
+<p>The ABCG2 Q141K variant (the #1 genetic risk factor for gout) causes the transporter protein to misfold and get degraded before reaching the cell surface. This is mechanistically identical to the CFTR ΔF508 defect in cystic fibrosis — a transporter that misfolds and gets retained in the ER. Vertex Pharmaceuticals built a $50B company by designing small-molecule "correctors" (lumacaftor, tezacaftor, elexacaftor) that rescue CFTR trafficking. <strong>The same pharmacological chaperone approach could be applied to ABCG2 Q141K.</strong> The structural biology tools, the screening platforms, and the regulatory precedent all exist. Nobody in the gout field appears to be pursuing this.</p>
+<p><strong>Connection 2: mRNA Vaccine Technology → Periodic Uricase Delivery</strong></p>
+<p>LNP-mRNA technology (perfected for COVID vaccines) could deliver mRNA encoding uricase to the liver. Unlike gene therapy, this wouldn't permanently edit the genome — it would provide transient (weeks-long) uricase expression that could be re-dosed as needed. Moderna and BioNTech are building platforms for repeated mRNA dosing. A quarterly mRNA injection encoding an optimized, non-immunogenic uricase could be a near-term practical therapy that doesn't require the regulatory hurdles of permanent genome editing. The key advantage over pegloticase: the uricase protein would be produced intracellularly by the patient's own hepatocytes, potentially reducing immunogenicity.</p>
+<p><strong>Connection 3: Metabolic Syndrome Research → Fructokinase (KHK) Inhibitors</strong></p>
+<p>Several pharmaceutical companies (Pfizer, Johnson &amp; Johnson) have developed ketohexokinase (KHK) inhibitors for non-alcoholic fatty liver disease (NAFLD/NASH). KHK catalyzes the first step of fructose metabolism — the very step that initiates the ATP-depletion cascade leading to uric acid. A KHK inhibitor would <em>simultaneously</em> reduce fructose-driven uric acid production, prevent fructose-driven lipogenesis, and protect against metabolic syndrome. The gout application is an obvious line extension that these companies may not be prioritizing. Pfizer's PF-06835919 (a KHK inhibitor) reduced serum uric acid by up to 20% in clinical trials for NAFLD.</p>
+<p><strong>Connection 4: CAR-T / Immune Tolerance Engineering → Crystal Tolerance</strong></p>
+<p>The field of immune tolerance engineering (driven by autoimmune disease and transplant research) is developing ways to teach the immune system to ignore specific antigens. If you could engineer tolerance to MSU crystals — making macrophages and neutrophils simply ignore them — you would eliminate gout flares without touching uric acid levels. The ImmTOR nanoparticles in SEL-212 already demonstrate this principle (tolerizing to the pegloticase protein). Researchers working on antigen-specific tolerance for Type 1 diabetes and multiple sclerosis could apply similar approaches to MSU crystal tolerance.</p>
+<p><strong>Connection 5: Synthetic Biology → Self-Regulating Gut Factories</strong></p>
+<p>The PULSE engineered probiotic is just the beginning. Synthetic biology labs are building increasingly sophisticated genetic circuits in bacteria — multi-input logic gates, memory systems, kill switches, inter-strain communication. A next-generation gout probiotic could: sense serum uric acid via a gut-blood biomarker proxy, produce uricase (for purine degradation) AND anti-inflammatory SCFAs (for immune modulation) simultaneously, include a kill switch for safety, and communicate with other engineered strains to coordinate activity. The synthetic biology tools for this exist today — what's missing is the gout-specific application engineering.</p>
+<p><strong>Connection 6: Kidney Organoid Research → Understanding Transporter Biology</strong></p>
+<p>Kidney organoids derived from iPSCs are becoming increasingly sophisticated, with functional proximal tubule segments expressing URAT1, GLUT9, and ABCG2. These could serve as personalized drug testing platforms — take a gout patient's cells, grow kidney organoids, and screen drugs against their specific genetic transporter profile. This is precision nephrology applied to gout.</p>
+<p><strong>Connection 7: Crystal Dissolution Chemistry → Targeted Chelation</strong></p>
+<p>MSU crystals have specific surface chemistry. Researchers in materials science and biomineralization (fields that usually study bone, kidney stones, or dental enamel) are developing molecules that selectively bind to crystal surfaces and accelerate dissolution. A small molecule that binds MSU crystal surfaces and increases their solubility — without affecting uric acid in solution — would be an entirely new mechanism of action. This approach is being explored for kidney stone dissolution (calcium oxalate crystals) and could be directly adapted for MSU.</p>
+</blockquote>
+<hr />
+<h2 id="actionable-summary-where-to-put-resources">Actionable Summary — Where to Put Resources<a class="headerlink" href="#actionable-summary-where-to-put-resources" title="Permanent link">&para;</a></h2>
+<h3 id="high-confidence-bets-25-year-horizon">High-Confidence Bets (2–5 Year Horizon)<a class="headerlink" href="#high-confidence-bets-25-year-horizon" title="Permanent link">&para;</a></h3>
+<p><strong>Pozdeutinurad approval and adoption.</strong> Phase 3 data in 2026, likely NDA filing shortly after. This will be the first major new uricosuric in the US market in years and should become standard of care for the ~90% of gout patients who are under-excretors. Sobi's $1.5B acquisition validates the commercial thesis.</p>
+<p><strong>SEL-212 for refractory gout.</strong> The ImmTOR tolerization technology solves pegloticase's immunogenicity problem. Phase 3 data is positive. This should reach market for severe/tophaceous gout and dramatically improve outcomes for the hardest-to-treat patients.</p>
+<p><strong>Firsekibart or dapansutrile for acute flares.</strong> Both represent genuine new mechanisms (IL-1β blockade and NLRP3 inhibition respectively). At least one should reach market for patients who can't tolerate current flare treatments.</p>
+<h3 id="medium-term-frontier-bets-510-year-horizon">Medium-Term Frontier Bets (5–10 Year Horizon)<a class="headerlink" href="#medium-term-frontier-bets-510-year-horizon" title="Permanent link">&para;</a></h3>
+<p><strong>CRISPR uricase gene therapy.</strong> The Georgia State results are compelling. If animal studies confirm safety and efficacy, this could enter clinical trials within 5 years. A well-resourced funder could accelerate this by partnering with the Gaucher lab and a gene therapy delivery company (e.g., Intellia, Beam Therapeutics). The most impactful single investment on this list — it's the closest thing to a cure.</p>
+<p><strong>Engineered probiotics.</strong> The PULSE system is elegant and publishable, but needs substantial translational funding to reach IND stage. Partnership with a live biotherapeutics company (Synlogic's platform is relevant, though Synlogic itself has struggled commercially) could move this forward. The regulatory pathway for live biotherapeutic products is still maturing, which adds timeline risk.</p>
+<p><strong>ABCG2 pharmacological chaperones.</strong> Nobody is pursuing this for gout, but the CF precedent makes it one of the highest-potential untapped targets. Requires a medicinal chemistry campaign using the ABCG2 Q141K structure as a starting point. Could be accelerated by AI-driven drug design platforms.</p>
+<h3 id="speculative-but-high-impact-10-year-horizon">Speculative but High-Impact (10+ Year Horizon)<a class="headerlink" href="#speculative-but-high-impact-10-year-horizon" title="Permanent link">&para;</a></h3>
+<p><strong>mRNA-encoded uricase (periodic dosing).</strong> Leverages existing LNP-mRNA platform technology. Advantages over gene therapy: non-permanent, redosable, potentially less immunogenic. Requires optimization of codon-optimized uricase sequence and LNP hepatocyte targeting. Could be a "bridge therapy" while gene therapy approaches mature.</p>
+<p><strong>Crystal-tolerant immune programming.</strong> Teach the immune system to ignore MSU crystals. Would decouple gout from hyperuricemia entirely. Builds on tolerance engineering from autoimmune and transplant fields. Furthest from clinical translation but conceptually the most radical solution.</p>
+<p><strong>Polygenic risk scores + early intervention.</strong> With 351 identified loci, the genetic architecture is rich enough for predictive modeling. Identify high-risk individuals in their 20s, intervene with lifestyle modification (fructose avoidance) and low-dose ULT before any joint damage occurs. Requires prospective validation studies.</p>
+<h3 id="what-you-can-do-right-now">What You Can Do Right Now<a class="headerlink" href="#what-you-can-do-right-now" title="Permanent link">&para;</a></h3>
+<p><strong>For personal management:</strong> Aggressively reduce fructose intake (especially sugar-sweetened beverages and processed foods with HFCS). The biochemistry is clear and unambiguous — fructose drives uric acid production through an unregulated pathway. Get HLA-B*5801 tested before starting allopurinol (especially if you have East Asian or African American ancestry — the hypersensitivity allele frequency is much higher in these populations). Ask your rheumatologist about combination therapy (XO inhibitor + uricosuric) if monotherapy isn't reaching target. Consider the gut microbiome angle — fermented foods and dietary fiber that promote SCFA-producing bacteria may have a modest but real effect on gut urate elimination.</p>
+<p><strong>For funding/investment:</strong> The CRISPR uricase gene therapy at Georgia State is the most asymmetric opportunity — a relatively small investment could fund the animal studies that would make this attractive to a gene therapy biotech. The ABCG2 pharmacological chaperone concept is an "idea looking for a champion" that could be catalyzed by a focused research grant. The engineered probiotics space needs a bridge between academic labs and commercial development.</p>
+<hr />
+<h2 id="peptides-bpc-157-kpv-and-the-biohacking-angle">Peptides — BPC-157, KPV, and the Biohacking Angle<a class="headerlink" href="#peptides-bpc-157-kpv-and-the-biohacking-angle" title="Permanent link">&para;</a></h2>
+<p>Research peptides gaining traction in the biohacking world have genuine — if unproven — relevance to gout's inflammatory cascade. A deep dive into the mechanisms is covered in the <a href="../peptide-gout-addendum/">Peptides &amp; Gout Addendum</a>, but the key findings:</p>
+<p><strong>KPV</strong> (Lys-Pro-Val), a tripeptide fragment of alpha-MSH, is the strongest mechanistic candidate. It directly inhibits both NF-κB (the NLRP3 priming signal) and NLRP3 inflammasome assembly — the exact two-step process driving gout flares. It also has gut anti-inflammatory properties relevant to intestinal uric acid excretion. See the <a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a> where KPV maps to Chokepoint 1 (NF-κB priming).</p>
+<p><strong>BPC-157</strong> (Body Protection Compound-157) modulates the nitric oxide system, suppresses iNOS, and has well-documented gut-healing properties. Its primary gout relevance is indirect — by repairing gut barrier integrity it could support the ~&#8531; of uric acid excretion that happens through intestinal uricolysis. No gout-specific studies exist.</p>
+<p><strong>TB-500</strong> (Thymosin Beta-4) blocks NF-κB nuclear translocation and accelerates tissue repair. Best suited for recovery from chronic gout damage rather than acute flare prevention.</p>
+<blockquote>
+<p><strong>Evidence Level</strong></p>
+<p>Zero peptides on this list have been tested in a human clinical trial for gout. All claims are based on animal models and mechanistic extrapolation from shared inflammatory pathways. The pharmaceutical industry validates the targets — dapansutrile (NLRP3 inhibitor) and firsekibart (anti-IL-1β) are in Phase 3 for gout — but the peptides themselves remain unproven for this indication.</p>
+</blockquote>
+<hr />
+<h2 id="engineered-organisms-koji-yeast-and-living-factories">Engineered Organisms — Koji, Yeast, and Living Factories<a class="headerlink" href="#engineered-organisms-koji-yeast-and-living-factories" title="Permanent link">&para;</a></h2>
+<p>The research in this document eventually led to a practical question: could we engineer food-safe organisms to produce the missing uricase enzyme and deliver it orally? Two parallel tracks emerged, both now documented in detail:</p>
+<h3 id="the-yeast-track-engineered-s-cerevisiae">The Yeast Track: Engineered <em>S. cerevisiae</em><a class="headerlink" href="#the-yeast-track-engineered-s-cerevisiae" title="Permanent link">&para;</a></h3>
+<p>Baker's yeast (<em>S. cerevisiae</em>) already produces rasburicase commercially — the FDA-approved IV uricase used for tumor lysis syndrome. The <a href="../engineered-yeast-uricase-proposal/">Engineered Yeast Uricase Proposal</a> details a research plan to adapt this into an oral format: engineered yeast that produces uricase in the gut lumen, degrading the ~&#8531; of uric acid excreted through the intestines. Three independent groups (ALLN-346, PULSE, and a 2025 ACS Synthetic Biology paper on <em>S. boulardii</em>) have validated the core mechanism. This is the strongest path for Brian's uricase specifically.</p>
+<h3 id="the-koji-track-engineered-a-oryzae">The Koji Track: Engineered <em>A. oryzae</em><a class="headerlink" href="#the-koji-track-engineered-a-oryzae" title="Permanent link">&para;</a></h3>
+<p>The <a href="../engineered-koji-protocol/">Engineered Koji Protocol</a> documents the complementary approach: engineering the koji mold (<em>A. oryzae</em>) to produce uricase alongside its native digestive enzymes. Wild-type koji already produces the proteases, lipases, and amylases in Lynn's digestive enzyme supplements — it's her solution without any engineering. The stretch goal is a dual-purpose strain producing both digestive enzymes and uricase.</p>
+<h3 id="the-key-insight-you-might-not-need-to-cross-the-barrier">The Key Insight: You Might Not Need to Cross the Barrier<a class="headerlink" href="#the-key-insight-you-might-not-need-to-cross-the-barrier" title="Permanent link">&para;</a></h3>
+<p>Early in this research, we assumed oral uricase would need to cross the gut-blood barrier to work (see <a href="../blood-barrier-exploits/">Pen-Testing the Gut-Blood Barrier</a> for the full analysis). The critical discovery: the gut-lumen "sink" approach (ALLN-346, PULSE) works by degrading uric acid <em>in the intestines</em> — no systemic absorption required. This dramatically simplifies the delivery problem.</p>
+<blockquote>
+<p><strong>Key Insight</strong></p>
+<p>These engineered-organism approaches represent a root-cause solution rather than symptom management. Instead of inhibiting uric acid production (allopurinol) or forcing excretion (uricosurics) or suppressing the inflammatory response (colchicine/NSAIDs), they restore the missing enzymatic step — converting uric acid to allantoin, exactly as uricase would in other mammals. This vision is now formalized in the <a href="../open-enzyme-vision/">Open Enzyme platform</a>.</p>
+</blockquote>
+<hr />
+<h2 id="the-nlrp3-chokepoint-framework">The NLRP3 Chokepoint Framework<a class="headerlink" href="#the-nlrp3-chokepoint-framework" title="Permanent link">&para;</a></h2>
+<p>Section 4 of this document introduced the NLRP3 inflammasome as the driver of gout flares. Subsequent research mapped the full cascade into <strong>six discrete chokepoints</strong> — each a potential intervention target. The complete analysis is in the <a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a>, but here's the framework:</p>
+<p><strong>Chokepoint 1:</strong> NF-κB priming (blocked by KPV, oridonin, sulforaphane, BHB)
+<strong>Chokepoint 2:</strong> NLRP3 conformational activation (blocked by dapansutrile, MCC950, BHB)
+<strong>Chokepoint 3:</strong> ASC speck formation (blocked by colchicine, parthenolide)
+<strong>Chokepoint 4:</strong> Caspase-1 activation (blocked by disulfiram, VX-765, BHB)
+<strong>Chokepoint 5:</strong> IL-1β release and signaling (blocked by anakinra, canakinumab, firsekibart)
+<strong>Chokepoint 6:</strong> Neutrophil amplification (blocked by colchicine, resolvins)</p>
+<blockquote>
+<p><strong>Key Insight</strong></p>
+<p><strong>Beta-hydroxybutyrate (BHB)</strong> — the ketone body produced during fasting or ketosis — hits three of the six chokepoints (1, 2, and 4). This may be more impactful than any single peptide. It's endogenous, well-studied, and levels can be raised through intermittent fasting, ketogenic diet, or exogenous ketone supplements. See the <a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a> for the full analysis.</p>
+</blockquote>
+<hr />
+<h2 id="open-enzyme-research-library">Open Enzyme Research Library<a class="headerlink" href="#open-enzyme-research-library" title="Permanent link">&para;</a></h2>
+<p>This document is part of the <a href="../open-enzyme-vision/">Open Enzyme</a> project — an open-source therapeutic enzyme platform.</p>
+<ul>
+<li><a href="../open-enzyme-vision/">Founding Vision</a></li>
+<li><a href="./">Gout: A Deep Dive</a></li>
+<li><a href="../peptide-gout-addendum/">Peptides &amp; Gout Addendum</a></li>
+<li><a href="../enzyme-deficit-deep-dive/">The Enzyme Deficit Connection</a></li>
+<li><a href="../blood-barrier-exploits/">Pen-Testing the Gut-Blood Barrier</a></li>
+<li><a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a></li>
+<li><a href="../engineered-koji-protocol/">Engineered Koji Protocol</a></li>
+<li><a href="../engineered-yeast-uricase-proposal/">Engineered Yeast Uricase Proposal</a></li>
+</ul>
+<hr />
+<p>Compiled from primary research literature, clinical trial registries, and press releases current through April 2026.</p>
+<p>Key sources: Nature Scientific Reports, Cell Reports Medicine, PNAS, NEJM, Arthritis &amp; Rheumatology, Frontiers in Microbiology, Rheumatology (Oxford), UK Biobank, ClinicalTrials.gov, ACR Convergence 2025, and company press releases from Sobi/Arthrosi, Olatec, Selecta/Sobi, and Atom Therapeutics.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

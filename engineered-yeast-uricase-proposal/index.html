@@ -1,0 +1,4011 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/engineered-yeast-uricase-proposal/">
+      
+      
+        <link rel="prev" href="../codon-optimization-expression-cassette/">
+      
+      
+        <link rel="next" href="../crispr-uricase/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Engineering S. cerevisiae for Oral Uricase Delivery — A Research Proposal - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-the-scientific-basis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Engineering S. cerevisiae for Oral Uricase Delivery — A Research Proposal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../open-enzyme-vision/" class="md-tabs__link">
+          
+  
+  
+  Vision & Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gout-pathophysiology/" class="md-tabs__link">
+          
+  
+  
+  Gout & Uricase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nlrp3-inflammasome/" class="md-tabs__link">
+          
+  
+  
+  NLRP3 & Inflammation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../digestive-enzymes/" class="md-tabs__link">
+          
+  
+  
+  Koji & Digestive Enzymes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../saccharomyces-cerevisiae/" class="md-tabs__link">
+          
+  
+  
+  Organisms & Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gut-lumen-sink/" class="md-tabs__link">
+          
+  
+  
+  Delivery & Barrier
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bpc-157/" class="md-tabs__link">
+          
+  
+  
+  Compounds & Peptides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sibo/" class="md-tabs__link">
+          
+  
+  
+  Other Conditions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bio-ai-tools/" class="md-tabs__link">
+          
+  
+  
+  Tools & Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-scientific-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Scientific Basis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. The Scientific Basis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alln-346-engineered-oral-uricase-allena-pharmaceuticals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALLN-346: Engineered Oral Uricase (Allena Pharmaceuticals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expression-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expression Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gene-construct-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gene Construct Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gene Construct Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-gene-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Gene Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promoter-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promoter Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selectable-markers-and-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selectable Markers and Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-delivery-formats-honest-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Delivery Formats — Honest Assessment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Delivery Formats — Honest Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-beer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Beer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-non-alcoholic-yeast-fermented-beverages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Non-Alcoholic Yeast-Fermented Beverages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-nutritional-yeast-dried-yeast-powder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Nutritional Yeast / Dried Yeast Powder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-yeast-lysate-concentrated-enzyme-liquid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e. Yeast Lysate (Concentrated Enzyme Liquid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-amazake-koji-hybrid-dual-organism-fermentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f. Amazake / Koji Hybrid (Dual-Organism Fermentation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-dosing-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. The Dosing Question
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. The Dosing Question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-much-yeast-is-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Much Yeast Is That?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-open-scientific-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Open Scientific Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Open Scientific Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-rheinallt-gut-microbiome-gnotobiotic-models-potential-collaborator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Rheinallt (Gut Microbiome / Gnotobiotic Models) (potential collaborator)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-valerie-tlr5-innate-immunity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Valerie (TLR5 / Innate Immunity)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-lauren-pharma-translational-nf-b-signaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Lauren (Pharma / Translational / NF-κB Signaling)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-everyone-the-ph-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Everyone: The pH Challenge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-a-proposed-validation-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. A Proposed Validation Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. A Proposed Validation Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-0-construct-and-confirm-bench-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0: Construct and Confirm (Bench Work)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-analysis-updates-april-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Analysis Updates — April 2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Analysis Updates — April 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-selection-a-flavus-remains-primary-with-characterized-alternates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variant Selection: A. flavus Remains Primary, with Characterized Alternates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gi-survival-3642-baseline-modest-yeast-cell-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GI Survival: 36–42% Baseline, Modest Yeast Cell Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protein-engineering-three-disulfide-stabilized-variant-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protein Engineering: Three Disulfide-Stabilized Variant Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expression-cassette-tdh3-promoter-intracellular-expression-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expression Cassette: TDH3 Promoter, Intracellular Expression Recommended
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-feasibility-rating-5810-critical-de-risking-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Validation: Feasibility Rating 5.8/10, Critical De-Risking Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revision-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revision &amp; Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-enzyme-research-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Enzyme Research Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-scientific-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Scientific Basis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. The Scientific Basis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alln-346-engineered-oral-uricase-allena-pharmaceuticals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALLN-346: Engineered Oral Uricase (Allena Pharmaceuticals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expression-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expression Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gene-construct-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gene Construct Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gene Construct Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-gene-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Gene Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promoter-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promoter Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selectable-markers-and-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selectable Markers and Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-delivery-formats-honest-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Delivery Formats — Honest Assessment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Delivery Formats — Honest Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-beer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Beer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-non-alcoholic-yeast-fermented-beverages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Non-Alcoholic Yeast-Fermented Beverages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-nutritional-yeast-dried-yeast-powder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Nutritional Yeast / Dried Yeast Powder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-yeast-lysate-concentrated-enzyme-liquid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e. Yeast Lysate (Concentrated Enzyme Liquid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-amazake-koji-hybrid-dual-organism-fermentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f. Amazake / Koji Hybrid (Dual-Organism Fermentation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-dosing-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. The Dosing Question
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. The Dosing Question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-much-yeast-is-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Much Yeast Is That?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-open-scientific-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Open Scientific Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Open Scientific Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-rheinallt-gut-microbiome-gnotobiotic-models-potential-collaborator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Rheinallt (Gut Microbiome / Gnotobiotic Models) (potential collaborator)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-valerie-tlr5-innate-immunity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Valerie (TLR5 / Innate Immunity)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-lauren-pharma-translational-nf-b-signaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Lauren (Pharma / Translational / NF-κB Signaling)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-everyone-the-ph-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Everyone: The pH Challenge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-a-proposed-validation-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. A Proposed Validation Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. A Proposed Validation Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-0-construct-and-confirm-bench-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0: Construct and Confirm (Bench Work)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-analysis-updates-april-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Analysis Updates — April 2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Analysis Updates — April 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variant-selection-a-flavus-remains-primary-with-characterized-alternates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variant Selection: A. flavus Remains Primary, with Characterized Alternates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gi-survival-3642-baseline-modest-yeast-cell-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GI Survival: 36–42% Baseline, Modest Yeast Cell Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protein-engineering-three-disulfide-stabilized-variant-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protein Engineering: Three Disulfide-Stabilized Variant Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expression-cassette-tdh3-promoter-intracellular-expression-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expression Cassette: TDH3 Promoter, Intracellular Expression Recommended
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-feasibility-rating-5810-critical-de-risking-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Validation: Feasibility Rating 5.8/10, Critical De-Risking Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revision-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revision &amp; Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-enzyme-research-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Enzyme Research Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Engineered Yeast Uricase Proposal</h1>
+
+<p><a href="#basis">1. Scientific Basis</a>
+<a href="#why-yeast">2. Why Yeast</a>
+<a href="#construct">3. Gene Construct</a>
+<a href="#delivery">4. Delivery Formats</a>
+<a href="#dosing">5. Dosing</a>
+<a href="#questions">6. Open Questions</a>
+<a href="#validation">7. Validation Path</a>
+<a href="#koji">8. Koji Track</a>
+<a href="#risks">9. Risks</a>
+<a href="#proposal">10. The Ask</a>
+<a href="#references">References</a>
+Engineering <em>Saccharomyces cerevisiae</em> for Oral Uricase Delivery
+A Research Proposal for Proof-of-Concept Collaboration
+<strong>Author:</strong> Brian Abent
+<strong>Date:</strong> April 2026
+<strong>Status:</strong> Proposal for expert review — requesting guidance, not endorsement
+<strong>Circulated to (potential collaborators):</strong> Rheinallt Jones (Emory Pediatric GI / Gnotobiotic Animal Core), Lauren Collier-Hyams (Pharma, NF-κB/intestinal signaling), Valerie Jones (TLR5/innate immunity)
+This proposal is part of the <a href="../open-enzyme-vision/">Open Enzyme</a> project — an open-source therapeutic enzyme platform. The yeast track is the fastest path to a working uricase producer.
+Evidence levels used throughout:
+Established Peer-reviewed, replicated
+Supported Published data, limited studies
+Extrapolation Reasonable inference from related work
+Open Needs experimental data</p>
+<h2 id="1-the-scientific-basis">1. The Scientific Basis<a class="headerlink" href="#1-the-scientific-basis" title="Permanent link">&para;</a></h2>
+<p>Human Uricase Loss Established
+Humans, along with all great apes, lack a functional uricase (urate oxidase) enzyme. The gene that once encoded it — <em>UOX</em> — is a pseudogene, inactivated by two nonsense mutations at codons 33 and 187 and an aberrant splice site.<a href="#ref1">[1]</a> This didn't happen once: uricase was lost independently in at least two primate lineages (great apes and lesser apes), and also in birds and some reptiles. The multiple independent losses suggest that elevated uric acid may have conferred a selective advantage — likely related to its role as an antioxidant, a fructose metabolism accelerator aiding fat accumulation, or both.<a href="#ref2">[2]</a> A 2023 Cell paper identified a widely distributed gene cluster that partially compensates for this loss in hominids, confirming the evolutionary pressure around urate handling.<a href="#ref3">[3]</a>
+The practical consequence: humans maintain serum uric acid levels of 3.5–7.2 mg/dL, whereas most mammals with functional uricase run below 2 mg/dL. When serum urate exceeds ~6.8 mg/dL (the monosodium urate saturation point), crystals can form in joints, tendons, and kidneys — the pathology of gout.
+Uric Acid Homeostasis Established
+Uric acid is the end product of purine metabolism in humans, generated primarily by the enzyme xanthine oxidase in the liver and intestinal mucosa. Two-thirds of daily urate elimination occurs via renal excretion; approximately one-third is eliminated through the intestine, primarily mediated by the ABCG2 transporter expressed on the apical membrane of intestinal epithelial cells.<a href="#ref4">[4]</a><a href="#ref5">[5]</a> Dysfunction of ABCG2 is now recognized as a significant cause of hyperuricemia — patients with ABCG2 loss-of-function variants have reduced intestinal excretion and compensatory overload on the kidneys.<a href="#ref6">[6]</a>
+This intestinal excretion pathway is the mechanistic foundation for the entire approach proposed here.
+The Gut-Lumen Degradation Thesis Supported
+The thesis is straightforward: if you place active uricase enzyme in the intestinal lumen, it will degrade uric acid present there (both from intestinal secretion via ABCG2 and from dietary purines). This degradation creates a concentration gradient — a "sink" — that pulls additional uric acid from the serum across the intestinal epithelium. The urate is converted to allantoin, a highly soluble, freely excreted, non-toxic compound.
+This is not speculative. Two independent lines of evidence validate the core mechanism:</p>
+<h4 id="alln-346-engineered-oral-uricase-allena-pharmaceuticals">ALLN-346: Engineered Oral Uricase (Allena Pharmaceuticals)<a class="headerlink" href="#alln-346-engineered-oral-uricase-allena-pharmaceuticals" title="Permanent link">&para;</a></h4>
+<p>ALLN-346 is an engineered variant of <em>Candida utilis</em> uricase, modified using protein engineering (ProteinGPS) to have 20-fold increased stability against pancreatic proteases (half-life of 85.3 min vs. 4.3 min for wild-type <em>C. utilis</em> enzyme in 80 ng/μL pancreatin) while maintaining specific activity comparable to the wild-type enzyme.<a href="#ref7">[7]</a>
+In urate oxidase-deficient knockout mice, oral ALLN-346 treatment over 7- and 19-day studies normalized urine uric acid excretion and significantly reduced hyperuricemia.<a href="#ref7">[7]</a> In the Phase 2a Study 201 in humans (patients with gout and CKD), statistically significant reductions in serum uric acid (sUA) were observed from days 5–7 (p<a href="#ref8">[8]</a></p>
+<blockquote>
+<p><strong>Honest caveat</strong></p>
+<p>The Phase 2a Study 202, which enrolled a broader cohort, showed mean sUA reductions of only 0–5% from baseline on days 7 and 14 — not statistically significant vs. placebo.<a href="#ref9">[9]</a> Allena subsequently provided a "clinical and corporate update" (often a euphemism), and the company eventually wound down. The approach works in mice and showed signal in CKD patients with residual renal function, but the human dose-response relationship for oral uricase in the gut is not yet fully established. This is important context.
+PULSE Probiotic: Engineered <em>E. coli</em> Nissle 1917
+Published in <em>Cell Reports Medicine</em> in 2025, PULSE (<strong>P</strong>robiotic-based <strong>U</strong>A <strong>L</strong>evel <strong>S</strong>ensing and Adjustment <strong>E</strong>ngineered) is an <em>E. coli</em> Nissle 1917 strain engineered with a uric acid-responsive biosensor (based on the transcriptional repressor HucR) that dynamically regulates urate oxidase expression in the gut lumen.<a href="#ref10">[10]</a> The key advance: this is a "smart" probiotic that expresses uricase only when uric acid levels are elevated.
+In hyperuricemic mice and rats, oral administration of PULSE reduced persistent hyperuricemia, improved overall survival, and alleviated renal damage.<a href="#ref10">[10]</a> The system expressed urate oxidase in three different configurations to test which architecture performed best in vivo.
+Engineered <em>S. boulardii</em> (ACS Synthetic Biology, 2025)
+Perhaps most directly relevant to this proposal: a team systematically engineered <em>Saccharomyces boulardii</em> (a probiotic variant of <em>S. cerevisiae</em>) for uric acid degradation. They identified a uricase from <em>Vibrio vulnificus</em> that showed high activity in yeast, improved the expression and stability of the urate transporter UapA by constructing a chimera for uric acid import, and combinatorially assembled constitutive promoters to optimize the pathway. Their best-performing construct achieved uric acid-degrading activity of <strong>365.32 ± 20.54 μmol/h/OD</strong>.<a href="#ref11">[11]</a>
+<strong>Key finding</strong></p>
+<p>Three independent groups — using three different organisms (<em>C. utilis</em> enzyme alone, engineered <em>E. coli</em>, engineered <em>S. boulardii</em>) — have demonstrated that degrading uric acid in the gut lumen can reduce systemic urate levels. The mechanism is validated. The engineering details are what need optimization.
+2. Why <em>Saccharomyces cerevisiae</em>
+GRAS Status and Genetic Tractability Established
+<em>S. cerevisiae</em> holds "Generally Recognized as Safe" (GRAS) status from the FDA. It is the most genetically tractable eukaryotic organism on the planet, with decades of tool development for heterologous protein expression. There are well-established expression platforms, extensive libraries of characterized promoters, and multiple selectable marker systems.</p>
+</blockquote>
+<h3 id="expression-systems">Expression Systems<a class="headerlink" href="#expression-systems" title="Permanent link">&para;</a></h3>
+<p>The yeast protein expression toolkit includes inducible promoters (GAL1, GAL7, GAL10 — induced by galactose, repressed by glucose), constitutive promoters (TEF1, PGK1, GPD/TDH3 — always on, no induction required), and tunable systems. For a food-product application where you want the enzyme present during normal growth and fermentation, constitutive promoters are more practical — you don't want to have to add galactose to trigger expression.
+Two main vector strategies exist. High-copy episomal plasmids (2μ-based) give 20–50 copies per cell and high expression levels, but they can be unstable without selective pressure — cells that lose the plasmid grow faster and outcompete engineered cells. Integrative approaches (inserting the gene directly into a chromosome) are more stable but typically yield lower expression per cell unless you integrate multiple copies or use strong promoters. For a food product that needs to be stable over fermentation without antibiotic selection, <strong>chromosomal integration is the more realistic path</strong>.
+The Rasburicase Precedent Established</p>
+<blockquote>
+<p><strong>Critical prior art</strong></p>
+<p>Rasburicase (Elitek/Fasturtec), the FDA-approved recombinant uricase used intravenously for tumor lysis syndrome, is <em>Aspergillus flavus</em> uricase expressed in a genetically modified <em>Saccharomyces cerevisiae</em> strain. It was approved by the EMA in 2001 and the FDA in 2002.<a href="#ref12">[12]</a> This means the exact gene-host combination we are discussing has been commercially manufactured at pharmaceutical scale for over two decades. The proof that <em>S. cerevisiae</em> can express active, correctly folded <em>A. flavus</em> uricase is not theoretical — it is an approved pharmaceutical product.
+The original academic work demonstrated that <em>S. cerevisiae</em> transformants accumulated active, soluble <em>A. flavus</em> uricase (Uox) to levels exceeding <strong>13% of total cellular protein</strong> using a hybrid GAL7/ADH2 promoter, with good proportionality between gene copy number (1–10 copies) and expression level.<a href="#ref13">[13]</a>
+Secretion vs. Intracellular Expression Extrapolation
+The rasburicase manufacturing process uses intracellular expression — cells are grown, harvested, and lysed to purify the enzyme. For a food-product application, this raises a design question: should the uricase be secreted into the surrounding liquid, or kept intracellular and released upon cell lysis or autolysis?
+Secretion (using signal peptides like the α-mating factor prepro sequence) would put active enzyme directly into the beverage or food matrix. However, yeast secretion of large tetrameric proteins (~135 kDa assembled) is often inefficient. Intracellular expression followed by natural autolysis (which occurs during beer conditioning and in nutritional yeast production) may be more practical, though it introduces questions about enzyme activity after autolysis.
+<strong>How to resolve: Secretion vs. intracellular expression</strong></p>
+<p>Clone the <em>A. flavus</em> uaZ gene into two constructs: (1) with the α-factor signal peptide for secretion, and (2) without, for intracellular accumulation. Transform both into the same yeast strain. After 48h of growth in liquid culture, assay uricase activity in (a) the supernatant and (b) the cell pellet lysate for each construct. Compare total enzyme output, specific activity, and fraction secreted.
+<strong>Cost:</strong> ~$500–1,000 (gene synthesis + basic reagents)
+<strong>Time:</strong> 2–3 weeks (including transformation and assays)
+<strong>Who:</strong> Any molecular biology lab with yeast experience</p>
+</blockquote>
+<h2 id="3-gene-construct-design">3. Gene Construct Design<a class="headerlink" href="#3-gene-construct-design" title="Permanent link">&para;</a></h2>
+<h3 id="source-gene-selection">Source Gene Selection<a class="headerlink" href="#source-gene-selection" title="Permanent link">&para;</a></h3>
+<p>Several uricase genes have been expressed recombinantly. Here is an honest comparison:
+| Source | Expression in Yeast | Specific Activity | Key Properties | Notes |
+| --- | --- | --- | --- | --- |
+| pH optimum 8.5–9.5; thermally labile above 40°C; 135 kDa homotetramer (301 aa/subunit) | Rasburicase source. Best characterized for this host. Default choice. |
+| Higher specific activity; basis for ALLN-346 engineering |
+| Not directly comparable (measured as μmol/h/OD in whole cells) | Selected specifically for high activity in yeast cellular context | Newest entrant. Chosen by the 2025 ACS Synth Bio group specifically for yeast expression. |
+| Literature values vary | Native 145 kDa heterotetramer | Less commonly used for recombinant work. Unusual subunit heterogeneity. |
+<strong>Recommendation:</strong> Start with <em>A. flavus</em> uaZ. It has the deepest validation in <em>S. cerevisiae</em>, is the basis for an approved pharmaceutical product, and there is extensive published characterization data. The <em>V. vulnificus</em> uricase is an interesting second candidate given the 2025 <em>S. boulardii</em> results, but it adds risk by being less characterized. In parallel, testing the <em>C. utilis</em> gene in <em>S. cerevisiae</em> would be informative — its higher specific activity could be advantageous if it expresses well.</p>
+<blockquote>
+<p><strong>How to resolve: Which uricase gene performs best in S. cerevisiae</strong></p>
+<p>Order codon-optimized synthetic genes for all three candidates (<em>A. flavus</em>, <em>C. utilis</em>, <em>V. vulnificus</em>), each in the same expression cassette (e.g., pTEF1 promoter, CYC1 terminator, integrated at the same locus). Transform into the same <em>S. cerevisiae</em> background. Compare: (a) expression level by Western blot/total protein, (b) specific uricase activity in cell lysate, &copy; enzyme stability at 37°C over 24h. Three genes × two replicates = six transformations.
+<strong>Cost:</strong> ~$2,000–3,000 (gene synthesis is ~$0.10/bp × ~900 bp × 3 genes + reagents)
+<strong>Time:</strong> 4–6 weeks
+<strong>Who:</strong> Any synbio or yeast genetics lab
+Codon Optimization Established
+Codon optimization for <em>S. cerevisiae</em> is routine. The <em>A. flavus</em> uaZ gene has already been successfully expressed without codon optimization (as demonstrated by rasburicase production), but optimization of rare codons and removal of cryptic splice sites or polyA signals could improve yield, especially with constitutive promoters. Commercial gene synthesis services (Twist, IDT, GenScript) include codon optimization in their standard workflow.</p>
+</blockquote>
+<h3 id="promoter-selection">Promoter Selection<a class="headerlink" href="#promoter-selection" title="Permanent link">&para;</a></h3>
+<p>For a food-product application, the enzyme should be expressed constitutively during normal aerobic growth and fermentation. The recommended promoters:
+<strong>pTEF1</strong> (translation elongation factor 1α) — strongest constitutive promoter in <em>S. cerevisiae</em>, active across carbon sources, well-characterized. This is the default choice for maximal constitutive expression.
+<strong>pPGK1</strong> (phosphoglycerate kinase) — strong constitutive, slightly lower than TEF1 in most conditions, very well characterized.
+<strong>pGPD/pTDH3</strong> (glyceraldehyde-3-phosphate dehydrogenase) — another strong constitutive option, comparable to TEF1.
+The hybrid GAL7/ADH2 promoter used in the original rasburicase work is inducible (derepressed when glucose is depleted) — effective for bioreactor production but less suitable for a food fermentation where you want enzyme throughout the process.</p>
+<h3 id="selectable-markers-and-integration">Selectable Markers and Integration<a class="headerlink" href="#selectable-markers-and-integration" title="Permanent link">&para;</a></h3>
+<p>For lab-stage work, standard auxotrophic markers (URA3, LEU2, HIS3) or dominant markers (kanMX, conferring G418 resistance) are all appropriate. For a food product, the final construct should ideally be marker-free or use only food-safe markers. CRISPR/Cas9-based integration can achieve markerless insertion, which is important for eventual regulatory considerations.
+The 2025 <em>S. boulardii</em> work identified specific high-expression chromosomal integration loci in that strain,<a href="#ref11">[11]</a> which would be directly applicable since <em>S. boulardii</em> is genomically a <em>S. cerevisiae</em> variant.</p>
+<h2 id="4-delivery-formats-honest-assessment">4. Delivery Formats — Honest Assessment<a class="headerlink" href="#4-delivery-formats-honest-assessment" title="Permanent link">&para;</a></h2>
+<p>Not all formats are created equal. For each, I've tried to be honest about whether therapeutically meaningful uricase delivery is realistic.</p>
+<h3 id="a-beer">a. Beer<a class="headerlink" href="#a-beer" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>The elephant in the room</strong></p>
+<p>Alcohol raises uric acid through at least three independent mechanisms: (1) ethanol metabolism accelerates ATP degradation and purine turnover, increasing uric acid production; (2) the lactate produced during ethanol metabolism competes with uric acid for renal tubular secretion via organic anion transporters, reducing excretion; (3) beer specifically contains high purine content from yeast and grain (~8–14 mg purines per 100 mL).<a href="#ref17">[17]</a><a href="#ref18">[18]</a> You are fighting the delivery vehicle.
+"Therapeutic beer" is not a credible framing. "Less bad beer" is more accurate, and even that requires the uricase to survive fermentation, conditioning, and the gastric transit that follows consumption. A more honest question: could a low-alcohol or non-alcoholic beer fermented with engineered yeast deliver meaningful uricase while minimizing the alcohol-driven uric acid increase?
+Low-alcohol (Therapeutic credibility:  Low (full-strength beer)
+Therapeutic credibility:  Moderate (NA beer, if enzyme survives)
+<strong>How to resolve: Does uricase survive beer fermentation?</strong></p>
+<p>Brew a 1-gallon test batch with the engineered yeast. At each stage — active fermentation (day 3), end of primary (day 7), after conditioning/cold crash (day 14), and after bottling (day 21) — draw samples and run a uricase activity assay (standard spectrophotometric assay at 293 nm, measuring uric acid consumption). Compare to a control with purified uricase added to sterile, finished beer at the same stages to distinguish enzyme production from enzyme survival.
+<strong>Cost:</strong> ~$200–400 (homebrew supplies + uric acid assay reagents)
+<strong>Time:</strong> 3–4 weeks
+<strong>Who:</strong> Anyone with homebrewing equipment and a spectrophotometer</p>
+</blockquote>
+<h3 id="b-non-alcoholic-yeast-fermented-beverages">b. Non-Alcoholic Yeast-Fermented Beverages<a class="headerlink" href="#b-non-alcoholic-yeast-fermented-beverages" title="Permanent link">&para;</a></h3>
+<p>Kvass, water kefir, tepache, and kombucha-style beverages fermented with <em>S. cerevisiae</em> rather than (or in addition to) bacterial cultures. These remove the alcohol confound while retaining the live-yeast delivery vector. Short fermentation times (24–48h for kvass) mean less opportunity for enzyme degradation.
+This is a significantly more credible therapeutic format. The yeast is alive and expressing during the fermentation, the beverage is consumed with active cells and potentially secreted enzyme, and there's no alcohol working against you.
+Therapeutic credibility:  Moderate-High (contingent on dosing; see §5)</p>
+<h3 id="c-nutritional-yeast-dried-yeast-powder">c. Nutritional Yeast / Dried Yeast Powder<a class="headerlink" href="#c-nutritional-yeast-dried-yeast-powder" title="Permanent link">&para;</a></h3>
+<p>Grow the engineered yeast in bulk, harvest, and process into a dried product (powder, flakes, or capsules). This is the format with the most control over dosing — you can standardize the product to a specific uricase activity per gram.
+The critical question is enzyme stability after drying. Conventional nutritional yeast production involves heating to kill the yeast (typically 50–60°C for pasteurization), followed by drum drying or spray drying at higher temperatures. <em>A. flavus</em> uricase loses significant activity above 40°C — free enzyme loses almost all activity at 40–45°C.<a href="#ref14">[14]</a> This is a problem.
+However: lyophilization (freeze-drying) preserves enzyme activity far better than heat-based drying, and encapsulation in trehalose or other lyoprotectants is standard practice for enzyme stabilization. A lyophilized yeast powder, packaged in capsules, could plausibly retain uricase activity. This needs to be tested.
+Therapeutic credibility:  Moderate (depends entirely on drying method)</p>
+<blockquote>
+<p><strong>How to resolve: Does uricase survive drying?</strong></p>
+<p>Take a concentrated pellet of engineered yeast. Split into four aliquots: (1) fresh lysate (positive control), (2) freeze-dried/lyophilized pellet, (3) heat-killed at 55°C then dried, (4) spray-dried at 120°C inlet temp. Rehydrate each, lyse, and assay uricase activity. Report as % activity retained vs. fresh lysate.
+<strong>Cost:</strong> ~$300–800 (lyophilizer access is the main cost; often available in university core facilities)
+<strong>Time:</strong> 1–2 weeks
+<strong>Who:</strong> Any biochemistry lab with a lyophilizer
+d. Live Yeast Probiotic (<em>S. boulardii</em> Chassis)
+<em>S. boulardii</em> (CNCM I-745) is an established probiotic yeast, already marketed for GI conditions (Florastor). It is genomically a variant of <em>S. cerevisiae</em>, meaning the same genetic tools largely apply. The 2025 ACS Synthetic Biology paper demonstrated successful integration and expression of a uric acid degradation pathway in <em>S. boulardii</em>.<a href="#ref11">[11]</a>
+The colonization question is critical. Published data show that <em>S. boulardii</em> achieves steady-state concentrations in the human colon within 3 days of regular dosing and is cleared 2–5 days after discontinuation.<a href="#ref19">[19]</a> In mice with conventional microbiota, gut residence time is only 1–2 days.<a href="#ref20">[20]</a> This means <strong><em>S. boulardii</em> does not colonize — it transits</strong>. You'd need daily dosing to maintain gut levels. This isn't necessarily a dealbreaker (you take allopurinol daily too), but it does mean this is a daily supplement, not a one-time inoculation.
+Therapeutic credibility:  High (most directly validated approach)
+<strong>How to resolve: Continuous production in the gut</strong></p>
+<p>This is precisely the kind of question that could be answered at Rheinallt's gnotobiotic facility, if he joins as a collaborator. Colonize germ-free mice with engineered <em>S. boulardii</em> expressing uricase. Measure: (a) fecal yeast counts daily, (b) fecal and cecal uricase activity, &copy; serum uric acid (requires Uox-knockout mice or potassium oxonate-treated mice for a hyperuricemic model). Compare to conventional mice gavaged daily. This gives both colonization kinetics and functional uricase delivery data.
+<strong>Cost:</strong> ~$5,000–15,000 (gnotobiotic mouse work is expensive)
+<strong>Time:</strong> 8–12 weeks
+<strong>Who:</strong> Rheinallt Jones, Emory Gnotobiotic Animal Core <em>(potential collaborator — not yet confirmed)</em></p>
+</blockquote>
+<h3 id="e-yeast-lysate-concentrated-enzyme-liquid">e. Yeast Lysate (Concentrated Enzyme Liquid)<a class="headerlink" href="#e-yeast-lysate-concentrated-enzyme-liquid" title="Permanent link">&para;</a></h3>
+<p>Grow engineered yeast in a bioreactor, lyse the cells mechanically or enzymatically, filter, and concentrate the uricase-containing supernatant. This is closest to a traditional enzyme supplement — essentially a crude or semi-purified uricase preparation in a food-grade liquid.
+Advantages: maximal control over enzyme concentration, can be standardized by activity assay, could be flavored or formulated as a shot/tonic. Disadvantages: more processing steps, requires some manufacturing infrastructure, shorter shelf life unless lyophilized.
+Therapeutic credibility:  Moderate-High (proven concept, processing questions)</p>
+<h3 id="f-amazake-koji-hybrid-dual-organism-fermentation">f. Amazake / Koji Hybrid (Dual-Organism Fermentation)<a class="headerlink" href="#f-amazake-koji-hybrid-dual-organism-fermentation" title="Permanent link">&para;</a></h3>
+<p>Use both engineered <em>A. oryzae</em> (koji) and engineered <em>S. cerevisiae</em> in a sequential fermentation: koji produces amylases + uricase during the saccharification stage, then yeast continues uricase production during the alcoholic (or non-alcoholic) fermentation. Two organisms, potentially two different uricase genes, producing enzyme across both fermentation stages.
+This is the most complex format but also the most interesting for a food product — amazake is a traditional Japanese fermented rice beverage with existing consumer acceptance. See §8 for more on the koji track.
+Therapeutic credibility:  Moderate (interesting but adds complexity)</p>
+<h2 id="5-the-dosing-question">5. The Dosing Question<a class="headerlink" href="#5-the-dosing-question" title="Permanent link">&para;</a></h2>
+<p>What Activity Level Is Needed? Open
+This is the central feasibility question. Let me lay out the reasoning quantitatively, while being transparent about the assumptions.
+<strong>The uric acid budget:</strong> A typical adult produces ~600–900 mg of uric acid per day. Roughly 200–300 mg is eliminated via the intestine. For a gout patient with serum urate of ~9 mg/dL (a common level on no therapy), reducing this to below 6 mg/dL (the therapeutic target) requires eliminating roughly 200–400 mg of additional uric acid per day — the amount that would otherwise accumulate.
+<strong>Rasburicase dosing (IV, for reference):</strong> The approved dose is 0.15–0.2 mg/kg/day, which for a 90 kg adult is ~13.5–18 mg of pure enzyme per day, administered intravenously. This is dramatically effective — it typically reduces serum urate to near-zero within 4 hours. But IV delivery puts the enzyme directly into the bloodstream with access to all circulating urate; oral delivery must work only through the gut lumen, which is a fundamentally different (and less efficient) route.
+<strong>ALLN-346 dosing (oral):</strong> The Phase 2a studies used oral doses that were orders of magnitude higher than the IV rasburicase dose, reflecting the inefficiency of the gut-lumen route and the need for protease resistance. Exact per-dose numbers from the human trials are not fully public, but the mouse studies used doses ranging from approximately 3–30 mg of engineered enzyme per day, scaled to body weight.<a href="#ref7">[7]</a></p>
+<h3 id="how-much-yeast-is-that">How Much Yeast Is That?<a class="headerlink" href="#how-much-yeast-is-that" title="Permanent link">&para;</a></h3>
+<p>Let's work the math with <em>A. flavus</em> uricase expressed in <em>S. cerevisiae</em>:
+From the published data, uricase accumulated to &gt;13% of total cellular protein in optimized <em>S. cerevisiae</em> transformants.<a href="#ref13">[13]</a> A typical yeast cell contains approximately 6 pg of total protein. At 13% uricase, that's ~0.78 pg of uricase per cell. Yeast cell density in a standard culture is ~108 cells/mL at saturation.
+For a rough calculation: 108 cells/mL × 0.78 pg/cell = ~78 μg uricase/mL of dense culture, or about 78 mg/L.
+If we need ~20–50 mg of active uricase per dose (extrapolating between the IV and oral ranges, acknowledging this is a rough estimate), that's 250–640 mL of saturated culture — roughly a pint to a quart of dense yeast suspension.</p>
+<blockquote>
+<p><strong>Reality check</strong></p>
+<p>A pint of saturated yeast culture is not a palatable serving. But a concentrated yeast paste or dried powder changes the math dramatically. If you concentrate 10× by centrifugation, you're at 25–64 mL (~1–2.5 tablespoons of thick yeast slurry). Freeze-dried to a powder, assuming 5× further concentration and reasonable enzyme survival, you could be looking at ~5–15 grams of powder — a large capsule or a small scoop. This is in the range of a plausible supplement dose, but just barely, and it depends on assumptions that haven't been validated.
+The <em>S. boulardii</em> group's reported activity of 365 μmol/h/OD<a href="#ref11">[11]</a> suggests their optimized pathway may be more efficient than the simple expression-level calculation above, since they also incorporated a uric acid transporter to actively import substrate. This active import could significantly improve the effective activity per cell in a gut environment where substrate concentration varies.
+<strong>How to resolve: Is the dose achievable?</strong></p>
+<p><strong>Bench experiment:</strong> Transform <em>S. cerevisiae</em> with the uricase construct. Grow to saturation in 1L of standard media. Harvest, lyse, and measure total uricase activity (IU). Calculate: how many IU per gram of wet cell pellet, per gram of dried cells, and per gram of lyophilized cells. Compare to the estimated therapeutic need (~200–400 mg uric acid degradation per day, which at a specific activity of ~12 IU/mg for <em>A. flavus</em> uricase and a molecular weight of 168 Da for uric acid, requires roughly 100–200 IU of enzyme activity, assuming favorable kinetics in the gut).
+<strong>Self-experiment (after bench validation):</strong> Using a home uric acid meter (~$50, Benecheck or similar), establish a baseline serum urate over 5 days (morning fasting measurements). Then consume the yeast product daily for 7 days at the calculated dose. Measure daily. Plot the curve. This is n=1 and not science, but it tells you whether you're in the right ballpark before investing in proper studies.
+<strong>Cost:</strong> ~$150 (uric acid meter + strips) + yeast production costs
+<strong>Time:</strong> 2 weeks for bench; 2 weeks for self-experiment
+<strong>Who:</strong> Brian (self-experiment); any lab (bench work)</p>
+</blockquote>
+<h2 id="6-open-scientific-questions">6. Open Scientific Questions<a class="headerlink" href="#6-open-scientific-questions" title="Permanent link">&para;</a></h2>
+<p>These are framed as questions for specific experts, but each one includes a path to an answer.</p>
+<h3 id="for-rheinallt-gut-microbiome-gnotobiotic-models-potential-collaborator">For Rheinallt (Gut Microbiome / Gnotobiotic Models) <em>(potential collaborator)</em><a class="headerlink" href="#for-rheinallt-gut-microbiome-gnotobiotic-models-potential-collaborator" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Q1: Colonization vs. transit for engineered S. boulardii</strong></p>
+<p>Published data show <em>S. boulardii</em> clears from humans within 2–5 days of stopping dosing. In your gnotobiotic mouse experience, what colonization density and residence time would you predict for an engineered <em>S. boulardii</em> strain? Is daily gavage the realistic model, or are there strategies (biofilm formation, mucoadhesive modifications) that could extend residence?
+<strong>Experiment to resolve Q1</strong></p>
+<p>Colonize gnotobiotic mice with engineered <em>S. boulardii</em>. Track fecal CFU daily for 30 days with continuous dosing, then stop dosing and continue tracking for 14 days. Compare with and without competing bacterial flora (gnotobiotic → gnotobiotic + defined bacterial community). Simultaneously measure cecal and fecal uricase activity to confirm the yeast is producing enzyme in vivo.
+<strong>Cost:</strong> ~$8,000–15,000
+<strong>Time:</strong> 10–14 weeks
+<strong>Facility:</strong> Emory Gnotobiotic Animal Core
+<strong>Q2: Would your gnotobiotic facility be appropriate for proof-of-concept?</strong></p>
+<p>The ideal experiment: Uox-knockout or oxonate-treated mice colonized with engineered <em>S. boulardii</em>, measuring serum urate over time. Is this feasible in the gnotobiotic core? What's the timeline and approximate cost for a small-scale study (e.g., 3 groups × 8 mice)?</p>
+</blockquote>
+<h3 id="for-valerie-tlr5-innate-immunity">For Valerie (TLR5 / Innate Immunity)<a class="headerlink" href="#for-valerie-tlr5-innate-immunity" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Q3: Innate immune responses to engineered yeast in the gut</strong></p>
+<p>Would an engineered <em>S. cerevisiae</em> or <em>S. boulardii</em> strain expressing a foreign protein (fungal uricase) trigger TLR-mediated innate immune responses in the intestinal epithelium? <em>S. cerevisiae</em> cell wall components (β-glucan, mannan, chitin) are recognized by Dectin-1, Dectin-2, and TLR2. Is the immune response to probiotic yeast well characterized enough to predict tolerability of daily dosing?
+<strong>Experiment to resolve Q3</strong></p>
+<p>Expose Caco-2 or HT-29 intestinal epithelial cell monolayers to: (a) wild-type <em>S. boulardii</em>, (b) engineered <em>S. boulardii</em> expressing uricase, &copy; purified uricase alone, (d) LPS positive control. Measure cytokine panel (IL-8, TNF-α, IL-1β, IL-10) at 4h and 24h by ELISA. Monitor transepithelial electrical resistance (TEER) for barrier integrity. If the engineered strain shows significantly different immune activation than wild-type, that's a flag.
+<strong>Cost:</strong> ~$2,000–4,000
+<strong>Time:</strong> 3–4 weeks (cell culture + assays)
+<strong>Who:</strong> Valerie or any lab with intestinal epithelial cell models</p>
+</blockquote>
+<h3 id="for-lauren-pharma-translational-nf-b-signaling">For Lauren (Pharma / Translational / NF-κB Signaling)<a class="headerlink" href="#for-lauren-pharma-translational-nf-b-signaling" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Q4: Regulatory path for a GMO yeast food product</strong></p>
+<p>What's the realistic regulatory pathway for a food or supplement containing a GMO yeast that produces a therapeutic enzyme? Is this a food (GRAS self-determination?), a dietary supplement (DSHEA framework — but engineered organisms complicate this), or does it require a Biologics License Application? The FDA has been evolving its framework for "live biotherapeutic products" (LBPs) — does that apply here, and does it matter whether the product contains live vs. killed yeast?
+<strong>Path to resolve Q4</strong></p>
+<p>This isn't a bench experiment — it's a regulatory mapping exercise. Steps: (1) Review FDA's 2016 "Early Clinical Trials with Live Biotherapeutic Products" guidance and the 2024 updates. (2) Search for precedents: has any GMO yeast been approved as a food ingredient or supplement? (GTC Nutrition's GanedenBC30 <em>Bacillus</em> is the closest precedent in probiotics.) (3) Have a pre-IND meeting or a pre-submission meeting with FDA's Office of Food Additive Safety or CBER, depending on how the product is positioned. Lauren's pharma regulatory network would be invaluable for identifying the right FDA contact.
+<strong>Cost:</strong> $0–5,000 (depending on whether you engage a regulatory consultant)
+<strong>Time:</strong> 4–8 weeks for the research; 3–6 months if seeking a formal FDA meeting
+<strong>Who:</strong> Lauren (guidance), regulatory consultant (optional)
+<strong>Q5: Immunogenicity of oral uricase — a different immune context?</strong></p>
+<p>Rasburicase (IV uricase) induces anti-drug antibodies in ~60% of patients, limiting re-dosing.<a href="#ref12">[12]</a> But IV delivery presents the antigen to the systemic immune system, while oral delivery primarily encounters the mucosal immune system, which is generally tolerogenic. Is there evidence that oral exposure to a foreign protein would induce tolerance rather than antibody formation? The oral tolerance literature from allergen immunotherapy is relevant here. Lauren, with your NF-κB and intestinal signaling background — does the gut immune context fundamentally change the immunogenicity risk?
+<strong>Experiment to resolve Q5</strong></p>
+<p>In mice, gavage with uricase daily for 28 days. Collect serum at days 0, 14, and 28. Run ELISA for anti-uricase IgG and IgE. Compare to a group that receives the same total dose of uricase by subcutaneous injection (positive control for systemic immunization). Measure fecal IgA as a mucosal immune readout. If oral exposure produces minimal IgG compared to the injected group, that supports the oral tolerance hypothesis.
+<strong>Cost:</strong> ~$3,000–6,000 (mice, enzyme, ELISAs)
+<strong>Time:</strong> 6–8 weeks
+<strong>Who:</strong> Any immunology lab; could be combined with a gnotobiotic study if Rheinallt collaborates</p>
+</blockquote>
+<h3 id="for-everyone-the-ph-challenge">For Everyone: The pH Challenge<a class="headerlink" href="#for-everyone-the-ph-challenge" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Q6: Does uricase survive the GI gauntlet?</strong></p>
+<p><em>A. flavus</em> uricase has a pH optimum of 8.5–9.5 and retains stability across pH 6–10.<a href="#ref14">[14]</a> Gastric acid drops the pH to 1.5–3.5 with pepsin as an aggressive protease. The small intestine is pH 6–7.5 with pancreatic proteases (trypsin, chymotrypsin, elastase). ALLN-346 specifically engineered for 20× protease resistance for this reason. An unmodified <em>A. flavus</em> uricase may not survive gastric transit.
+However: uricase encapsulated within intact yeast cells may be partially protected. Yeast cell walls are resistant to gastric acid (β-glucan and chitin are not digested by human enzymes), and this is actually a known strategy for oral vaccine delivery. The question is whether enough enzyme remains active when the cells eventually lyse in the intestine.
+<strong>Experiment to resolve Q6</strong></p>
+<p><strong>In vitro GI simulation:</strong> Prepare three samples: (a) purified free uricase, (b) engineered yeast cells (intact), &copy; yeast lysate. Subject each to a standard simulated GI transit protocol: (1) Simulated gastric fluid (SGF: pH 2.0, 3.2 mg/mL pepsin, 37°C) for 2 hours. (2) Neutralize to pH 6.8, add simulated intestinal fluid (SIF: pancreatin, bile salts) for 4 hours at 37°C. Assay uricase activity at each stage. This is a standard protocol — USP methods exist.
+If intact yeast cells protect the enzyme better than free enzyme, that supports the "live yeast" and "whole-cell" delivery formats over lysate or purified enzyme. If nothing survives, you need either enteric capsules or the ALLN-346-style protease engineering approach.
+<strong>Cost:</strong> ~$500–1,000
+<strong>Time:</strong> 2–3 days of bench work
+<strong>Who:</strong> Any biochemistry or pharmacology lab</p>
+</blockquote>
+<h2 id="7-a-proposed-validation-path">7. A Proposed Validation Path<a class="headerlink" href="#7-a-proposed-validation-path" title="Permanent link">&para;</a></h2>
+<p>Here is a staged approach, designed so that each phase answers a go/no-go question before investing in the next.</p>
+<h3 id="phase-0-construct-and-confirm-bench-work">Phase 0: Construct and Confirm (Bench Work)<a class="headerlink" href="#phase-0-construct-and-confirm-bench-work" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Details</th>
+<th>Est. Cost</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gene synthesis</td>
+<td>$200–400</td>
+<td>2 weeks</td>
+<td></td>
+</tr>
+<tr>
+<td>Construct assembly</td>
+<td>Clone into an expression vector (2μ plasmid for initial testing; integrative cassette for stable strain). Standard restriction/ligation or Gibson assembly.</td>
+<td>$200–500</td>
+<td>1–2 weeks</td>
+</tr>
+<tr>
+<td>Yeast transformation</td>
+<td>$100–300</td>
+<td>1 week</td>
+<td></td>
+</tr>
+<tr>
+<td>Activity assay</td>
+<td>Lyse transformant cells; measure uricase activity by spectrophotometric assay (uric acid absorbance at 293 nm). Confirm active enzyme is being produced.</td>
+<td>$100–200</td>
+<td>1 week</td>
+</tr>
+<tr>
+<td><strong>Phase 0 total:</strong> ~$600–1,400</td>
+<td>4–6 weeks</td>
+<td><strong>Go/no-go:</strong> Is active uricase detected in the cell lysate? If yes, proceed.</td>
+<td></td>
+</tr>
+<tr>
+<td>### Phase 1: Stability Characterization</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Task</td>
+<td>Details</td>
+<td>Est. Cost</td>
+<td>Timeline</td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>pH stability profile</td>
+<td>Incubate enzyme (free and in intact cells) at pH 2.0, 4.0, 6.0, 6.8, 7.4, 8.5 for 0, 30, 60, 120 min. Assay residual activity.</td>
+<td>$300–500</td>
+<td>1 week</td>
+</tr>
+<tr>
+<td>Temperature stability</td>
+<td>Activity retention at 4°C, 25°C, 37°C, 55°C, 70°C over 24h.</td>
+<td>$200–400</td>
+<td>1 week</td>
+</tr>
+<tr>
+<td>GI simulation</td>
+<td>SGF/SIF protocol (described in §6, Q6 experiment). Test free enzyme, intact cells, and lysate.</td>
+<td>$500–1,000</td>
+<td>1 week</td>
+</tr>
+<tr>
+<td>Protease resistance</td>
+<td>$300–500</td>
+<td>1 week</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Phase 1 total:</strong> ~$1,300–2,400</td>
+<td>3–4 weeks</td>
+<td><strong>Go/no-go:</strong> Does the enzyme (in at least one format) retain meaningful activity after simulated GI transit? What delivery format provides the best protection?</td>
+<td></td>
+</tr>
+<tr>
+<td>### Phase 2: In Vitro Gut Models</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Task</td>
+<td>Details</td>
+<td>Est. Cost</td>
+<td>Timeline</td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Uric acid degradation in simulated gut fluid</td>
+<td>Add yeast cells (or lysate) to SIF containing physiological concentrations of uric acid (~5 mg/dL). Measure uric acid depletion over 6h.</td>
+<td>$300–500</td>
+<td>1 week</td>
+</tr>
+<tr>
+<td>Intestinal epithelial cell compatibility</td>
+<td>Caco-2 monolayer assay: co-incubate with engineered yeast. Measure TEER (barrier integrity), cytokine panel (IL-8, TNF-α, IL-1β), LDH release (cytotoxicity).</td>
+<td>$2,000–4,000</td>
+<td>3–4 weeks</td>
+</tr>
+<tr>
+<td><strong>Phase 2 total:</strong> ~$2,300–4,500</td>
+<td>4–5 weeks</td>
+<td><strong>Go/no-go:</strong> Does the yeast degrade uric acid under intestinal conditions at a therapeutically interesting rate? Any safety red flags from the epithelial cell model?</td>
+<td></td>
+</tr>
+<tr>
+<td>### Phase 3: In Vivo Proof-of-Concept (Gnotobiotic Mouse Model)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Task</td>
+<td>Details</td>
+<td>Est. Cost</td>
+<td>Timeline</td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Hyperuricemic mouse model</td>
+<td>Use potassium oxonate-treated mice (standard model — oxonate inhibits residual murine uricase) OR Uox-knockout mice if available. Confirm hyperuricemia.</td>
+<td>$2,000–5,000</td>
+<td>2–4 weeks</td>
+</tr>
+<tr>
+<td>Gavage with engineered yeast</td>
+<td>$5,000–10,000</td>
+<td>4–6 weeks</td>
+<td></td>
+</tr>
+<tr>
+<td>Endpoints</td>
+<td>Serum uric acid (weekly), fecal uricase activity (daily), fecal yeast counts (daily), kidney histology (terminal), serum creatinine, anti-uricase antibodies.</td>
+<td>Included above</td>
+<td>Included above</td>
+</tr>
+<tr>
+<td><strong>Phase 3 total:</strong> ~$7,000–15,000</td>
+<td>8–12 weeks</td>
+<td><strong>Go/no-go:</strong> Does oral engineered <em>S. boulardii</em> reduce serum uric acid in hyperuricemic mice? By how much? This is the definitive proof-of-concept.</td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; <strong>Total estimated cost: Phases 0–3</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; <strong>$11,200–23,300</strong></td>
+<td>approximately 20–27 weeks</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; This is deliberately a minimal viable experiment path. It answers the fundamental question — can engineered yeast deliver therapeutically relevant uricase activity in a living animal — without requiring industrial-scale investment. Phases 0–1 could be done by a single graduate student or postdoc with yeast and biochemistry experience. Phase 2 requires an intestinal cell biology lab. Phase 3 requires a gnotobiotic facility (Rheinallt's Emory core would be ideal, if he joins the project).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8. The Parallel Track: Koji (<em>A. oryzae</em>)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>Aspergillus oryzae</em> (koji) is the other organism under consideration. These two tracks are complementary, not competing:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Dimension</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>---</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Genetic tools</td>
+<td>Best-in-class eukaryotic toolkit</td>
+<td>Good but less mature; CRISPR tools improving rapidly</td>
+<td></td>
+</tr>
+<tr>
+<td>GRAS status</td>
+<td>Yes (long fermentation history)</td>
+<td>Yes (thousands of years in East Asian cuisine)</td>
+<td></td>
+</tr>
+<tr>
+<td>Uricase precedent</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Delivery formats</td>
+<td>Beverages, probiotic capsules, nutritional yeast, lysate</td>
+<td>Koji rice, miso, amazake, soy sauce mash</td>
+<td></td>
+</tr>
+<tr>
+<td>Dual-purpose potential</td>
+<td>Limited to uricase</td>
+<td>Strong: digestive enzymes (amylases, proteases, lipases) + uricase in one organism</td>
+<td></td>
+</tr>
+<tr>
+<td>Consumer context</td>
+<td>Beer, kombucha, supplements — familiar Western formats</td>
+<td>Fermented foods — growing but still niche in the West</td>
+<td></td>
+</tr>
+<tr>
+<td>Probiotic potential</td>
+<td>Not a probiotic; works through enzyme delivery in food</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The koji track is especially interesting for Brian and Lynn together — Lynn benefits from the digestive enzyme production, Brian benefits from the uricase. A dual-enzyme koji that produces both enhanced protease/lipase and uricase would be a genuinely useful food product for their household regardless of whether it reaches therapeutic uricase levels.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The yeast track has more delivery format flexibility and, critically, the <em>S. boulardii</em> probiotic option — the only format where the organism can produce enzyme continuously in the gut rather than just delivering a bolus of enzyme with a meal.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Both are worth pursuing in Phase 0.</strong> The gene synthesis and initial expression testing costs are modest for either organism.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Key Insight: Wild-Type Koji Is Already Lynn's Solution</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>An important realization from the <a href="../enzyme-deficit-deep-dive/">enzyme deficit research</a>: Lynn doesn't need engineered koji for her digestive enzymes. The supplement industry's "fungal-derived enzymes" <em>are</em> industrial <em>A. oryzae</em> fermentation. Wild-type koji grown at home on rice already produces the lipase, protease, and amylase she needs — no genetic engineering required.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>This clarifies the lanes: <strong>yeast is the fastest path to uricase for Brian</strong>, wild-type koji handles Lynn's needs today, and engineered koji (uricase + digestive enzymes) is the stretch-goal platform play. See the full koji engineering protocol: <a href="../engineered-koji-protocol/">Engineered Koji Protocol</a>.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>## 9. Risks and Honest Limitations</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Enzyme Survival in the GI Tract Open</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Unmodified <em>A. flavus</em> uricase may not survive gastric transit in active form. The pH optimum is 8.5–9.5; activity is maintained at pH 6–10 but behavior below pH 6 is poorly characterized for the recombinant form.<a href="#ref14">[14]</a> ALLN-346 was specifically engineered for 20× protease resistance — that engineering was not trivial, and the resulting enzyme is proprietary. Without similar engineering or a protective delivery format (enteric capsule, intact yeast cells), significant activity loss during gastric transit is likely.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; <strong>How to bound this risk</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; The SGF/SIF experiment (Phase 1, ~$500) answers this directly. If intact yeast cells provide meaningful protection (β-glucan cell walls resist gastric acid), then whole-cell formats are viable. If not, the options are: (1) enteric-coated capsules that bypass the stomach, (2) protein engineering for protease resistance (a significant R&amp;D investment), or (3) accept that only a fraction of the enzyme will survive and compensate with higher doses.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Dosing May Not Be Therapeutically Meaningful Open</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The back-of-envelope calculations in §5 suggest the dose is in a plausible range, but "plausible" is not "proven." ALLN-346's mixed human results (significant in CKD patients in Study 201; not significant in the broader Study 202 cohort) suggest that even with an optimized, protease-resistant enzyme, the dose-response relationship for oral uricase is not straightforward. A food-grade, non-engineered-for-protease-resistance enzyme in yeast may not reach therapeutically meaningful activity levels.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; <strong>How to bound this risk</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; Phase 0 activity assays will give a concrete number for IU per gram of yeast biomass. Combined with the Phase 1 GI survival data, you can calculate: "X grams of this product, consumed with Y% enzyme survival, delivers Z IU to the intestine per day." Compare Z to the activity levels that showed efficacy in the mouse models. If Z is within an order of magnitude, proceed to Phase 3. If Z is 100× too low, the format needs rethinking.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### GMO Regulatory Considerations</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Any food product containing a genetically modified organism faces regulatory hurdles that vary by jurisdiction. In the US, the pathway depends on how the product is positioned (food ingredient vs. dietary supplement vs. drug). In the EU, GMO regulations are more restrictive but undergoing reform. For an initial proof-of-concept and personal use, this isn't a barrier; for commercialization, it requires careful regulatory strategy (see Q4 in §6).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Immunogenicity Extrapolation</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rasburicase induces anti-drug antibodies (ADAs) in approximately 60% of patients receiving IV administration.<a href="#ref12">[12]</a> These antibodies can neutralize the enzyme and cause hypersensitivity reactions, limiting rasburicase to short-course therapy. However, IV and oral delivery present antigens to fundamentally different immune compartments. The oral mucosal immune system is designed for tolerance — we ingest foreign proteins (plant, animal, bacterial) constantly without mounting systemic immune responses. The oral tolerance literature from allergen immunotherapy supports the hypothesis that repeated oral exposure to uricase would be more likely to induce tolerance than sensitization. But this has not been tested for uricase specifically.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; <strong>How to bound this risk</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; The mouse immunogenicity experiment described under Q5 in §6 (~$3,000–6,000) directly addresses this. It can be combined with the Phase 3 efficacy study at minimal additional cost by simply adding antibody ELISA endpoints to the planned blood draws.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### The Fundamental Limitation</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; <strong>What we don't know</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; This approach — engineering food-grade <em>S. cerevisiae</em> or <em>S. boulardii</em> to produce uricase for oral consumption as a gout therapy — has not been tested in humans in this format. Period. The 2025 <em>S. boulardii</em> work demonstrated the engineering is feasible and achieved high activity levels, but published only in vitro data. The PULSE probiotic showed efficacy in rodents. ALLN-346 showed signal in one human cohort but not another. We are in the territory of well-motivated hypothesis, supported by convergent evidence from multiple groups, but unproven in the specific format proposed here.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>That is precisely why this is a proposal for a proof-of-concept experiment, not a product launch.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>## 10. What We're Actually Proposing</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>This is a proposal for a small-scale proof-of-concept collaboration. Not a startup. Not a product launch. Not a clinical trial.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The core question is: <strong>Can engineered <em>S. cerevisiae</em> (or <em>S. boulardii</em>) produce therapeutically relevant levels of active uricase in a food-compatible format that survives GI transit?</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Everything else — delivery format optimization, dosing studies, regulatory strategy, commercialization — depends on the answer to that question.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### What I'm Asking Of Each Of You</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Rheinallt:</strong> Your expertise in gut microbiology and your gnotobiotic facility are the keys to a credible in vivo proof-of-concept. I'm asking whether a small mouse study (Phase 3 in the validation path) is feasible in your core, and whether you'd be interested in collaborating on design and execution. I'm also asking you to poke holes in the gut-lumen degradation thesis from a microbiome perspective — what am I missing about how this would interact with the resident gut flora?</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Lauren:</strong> Your translational and pharma experience is invaluable for two things: (1) the regulatory question — what is this product, legally speaking, and what's the path? (2) the immunogenicity question — with your NF-κB and intestinal signaling expertise, is oral tolerance a reasonable expectation, or am I being naively optimistic? And more generally, is there anything in here that a pharma reviewer would immediately flag as a non-starter?</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Valerie:</strong> Your TLR and innate immunity expertise speaks directly to the safety question. If someone consumes engineered yeast daily, is the innate immune response to yeast cell wall components (β-glucan, mannan) a concern at the doses we're discussing? <em>S. boulardii</em> is already taken daily as a probiotic by millions of people, but expressing a novel protein changes the picture. What would you want to see in the immune profiling data to be comfortable?</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### What I Bring</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>I know enough molecular biology to be dangerous and enough brewing science to be useful. I can do the Phase 0 bench work (gene synthesis, transformation, activity assays) with minimal hand-holding. I can brew the test batches. I can design and run the SGF/SIF simulations. I have a home uric acid meter for n=1 self-experiments. I'm willing to fund Phases 0–2 out of pocket (~$4,000–8,000). Phase 3 (the mouse study) is where I need both expertise and potentially institutional support.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>I'm presenting this as someone who has done his homework, is honest about what he doesn't know, and wants guidance from people who know more than he does. The worst outcome is that you tell me this won't work and why — and that's actually a valuable outcome, because it saves me from chasing something futile.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The best outcome is that you see something here worth pursuing, and we design a real experiment together.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ai-analysis-updates-april-2026">AI Analysis Updates — April 2026<a class="headerlink" href="#ai-analysis-updates-april-2026" title="Permanent link">&para;</a></h2>
+<p>A comprehensive computational analysis of uricase variants, GI survival, protein engineering, and expression optimization has refined the yeast engineering proposal with quantitative feasibility metrics. This section summarizes key findings from that analysis (see ai-analysis/ directory for full technical details).</p>
+<h3 id="variant-selection-a-flavus-remains-primary-with-characterized-alternates">Variant Selection: A. flavus Remains Primary, with Characterized Alternates<a class="headerlink" href="#variant-selection-a-flavus-remains-primary-with-characterized-alternates" title="Permanent link">&para;</a></h3>
+<p>The analysis confirmed <em>Aspergillus flavus</em> uricase as the primary candidate for S. cerevisiae expression, consistent with the rasburicase precedent. Two secondary candidates emerged:</p>
+<ul>
+<li><strong>A. globiformis uricase</strong>: pH optimum 7.0–7.5 (vs. A. flavus 8.5–9.5), providing superior activity in the small intestine microenvironment without requiring gastric protection. <em>(In Vitro)</em></li>
+<li><strong>K. marxianus uricase</strong>: Exceptional thermostability (retained activity at 55–60°C), potentially valuable for fermentation conditions and dried product formats. <em>(In Vitro)</em></li>
+</ul>
+<p><em>Mechanistic Extrapolation</em>: The A. globiformis variant may reduce the GI survival problem by matching the intestinal pH niche directly, partially offsetting the lack of protease engineering in the unmodified enzyme.</p>
+<h3 id="gi-survival-3642-baseline-modest-yeast-cell-protection">GI Survival: 36–42% Baseline, Modest Yeast Cell Protection<a class="headerlink" href="#gi-survival-3642-baseline-modest-yeast-cell-protection" title="Permanent link">&para;</a></h3>
+<p>Simulated GI transit modeling estimated baseline survival at <strong>36–42%</strong> of ingested free enzyme reaching the small intestine in active form. The major barrier is gastric acid and pepsin; small intestinal proteases cause secondary degradation.</p>
+<p><strong>Yeast cell protection:</strong> Intact S. cerevisiae cells expressing intracellular uricase provide <strong>10–15% additional protection</strong> over free enzyme, owing to β-glucan and chitin cell wall resistance to gastric acid. This modest boost is meaningful but does not solve the GI survival problem alone.</p>
+<p><strong>Daily dosing</strong>: Calculated therapeutic requirement = <strong>500–800 mg of active enzyme per day</strong> (converting from serum uric acid reduction targets in published animal models). This translates to approximately <strong>5–10 g of dry cell mass</strong> per dose, assuming 13% enzyme accumulation by cellular protein. <em>(Mechanistic Extrapolation)</em></p>
+<h3 id="protein-engineering-three-disulfide-stabilized-variant-tiers">Protein Engineering: Three Disulfide-Stabilized Variant Tiers<a class="headerlink" href="#protein-engineering-three-disulfide-stabilized-variant-tiers" title="Permanent link">&para;</a></h3>
+<p>Protein-engineering analysis identified three engineering tiers, based on computational disulfide bond design and validation against the 2025 Scientific Reports CRISPR uricase work:</p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Mutations</th>
+<th>Predicted Improvement</th>
+<th>Feasibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SB-1</strong></td>
+<td>A6C + R290C</td>
+<td>2–3× GI stability</td>
+<td>Conservative; low risk</td>
+</tr>
+<tr>
+<td><strong>BAL-1</strong></td>
+<td>SB-1 + K234E + K236E</td>
+<td>3–5× GI stability</td>
+<td>Balanced; moderate risk</td>
+</tr>
+<tr>
+<td><strong>OPT-1</strong></td>
+<td>BAL-1 + S119C + C220C</td>
+<td>5–12× GI stability</td>
+<td>Optimized; higher risk</td>
+</tr>
+</tbody>
+</table>
+<p>These predictions derive from rational disulfide cross-linking and electrostatic stabilization principles. <em>(In Vitro, mechanistic basis; animal validation needed)</em></p>
+<p>The tiered approach allows phase-gate progression: validate SB-1 in gnotobiotic mice before committing to BAL-1 or OPT-1 expression.</p>
+<h3 id="expression-cassette-tdh3-promoter-intracellular-expression-recommended">Expression Cassette: TDH3 Promoter, Intracellular Expression Recommended<a class="headerlink" href="#expression-cassette-tdh3-promoter-intracellular-expression-recommended" title="Permanent link">&para;</a></h3>
+<p>Computational model of S. cerevisiae expression systems recommends:</p>
+<ul>
+<li><strong>Promoter</strong>: TDH3 (pGPD) — constitutive, very strong, predicted <strong>800–1,200 mg/L</strong> in liquid culture. <em>(In Vitro precedent from ACS Synth Bio 2025)</em></li>
+<li><strong>Localization</strong>: Intracellular expression (no signal peptide) — avoids yeast glycosylation (which can disrupt tetrameric assembly), leverages cell wall protection during GI transit, simplifies downstream processing.</li>
+<li><strong>Terminator</strong>: ADH1 (strong, standard).</li>
+<li><strong>Integration</strong>: CEN plasmid with URA3 marker for lab-stage work; chromosomal integration (CRISPR-based) for scaled production.</li>
+</ul>
+<p><em>Rationale (Mechanistic Extrapolation)</em>: Secretion of a 135 kDa tetramer is inefficient in yeast. Intracellular accumulation followed by natural autolysis in the fermentation broth or in the gut offers the best balance of expression yield and GI delivery.</p>
+<h3 id="cross-validation-feasibility-rating-5810-critical-de-risking-path">Cross-Validation: Feasibility Rating 5.8/10, Critical De-Risking Path<a class="headerlink" href="#cross-validation-feasibility-rating-5810-critical-de-risking-path" title="Permanent link">&para;</a></h3>
+<p>An integrated feasibility assessment across all constraints (enzyme activity, GI survival, dosing, regulatory) yields a composite rating of <strong>5.8 / 10.0</strong> — higher than naive estimates but highlighting significant unknowns.</p>
+<p><strong>Critical constraints (lowest confidence):</strong>
+- GI survival post-engineering: <strong>4.0 / 10</strong> (protease resistance unvalidated in unmodified A. flavus; depends on variant selection and delivery format)
+- Therapeutic efficacy in humans: <strong>5.0 / 10</strong> (rodent data supportive; human dose-response for oral uricase still uncertain per ALLN-346 Phase 2a divergence)</p>
+<p><strong>De-risking budget and timeline:</strong>
+Estimated cost to achieve high-confidence proof-of-concept (Phases 0–3 with variant comparison): <strong>~$300,000</strong> over <strong>12–18 months</strong>. This includes:
+- Phases 0–2 (bench + in vitro): ~$5,000–8,000, 4–6 months
+- Phase 3 (gnotobiotic mouse validation with top 2 variants): ~$20,000–35,000, 8–12 weeks
+- Extended validation (human volunteer dosing, manufacturing scale): ~$250,000+, 6+ months</p>
+<p><em>(Mechanistic Extrapolation based on comparative cost models for probiotic and enzyme-delivery studies)</em></p>
+<p><strong>Next gate decision</strong>: Upon completion of Phase 1 GI survival testing, the predicted improvement from the variant tiers should drive variant selection for Phase 3. If SB-1 achieves &gt;3× baseline survival in SGF/SIF assay, proceed to single-variant Phase 3. If survival remains &lt;2×, prioritize engineering (BAL-1) or reconsider delivery format (enteric capsule).</p>
+<h3 id="revision-sources">Revision &amp; Sources<a class="headerlink" href="#revision-sources" title="Permanent link">&para;</a></h3>
+<p>This section synthesizes computational and structural analysis conducted in April 2026. All claims carry the stated evidence level (In Vitro, Animal Model, Clinical Trial, or Mechanistic Extrapolation) and are anchored to published precedent (ACS Synthetic Biology 2025, Scientific Reports 2025, historical rasburicase literature) where available.</p>
+<p>For detailed calculations, variant structural models, and GI transit simulation parameters, see ai-analysis/01–05 technical reports.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Wu, X. et al.</strong> (2002). Loss of Urate Oxidase Activity in Hominoids and its Evolutionary Implications. <em>Molecular Biology and Evolution</em>, 19(5), 640–653. <a href="https://academic.oup.com/mbe/article/19/5/640/1067768">doi:10.1093/oxfordjournals.molbev.a004123</a></li>
+<li><strong>Kratzer, J.T. et al.</strong> (2014). Evolutionary history and metabolic insights of ancient mammalian uricases. <em>Proceedings of the National Academy of Sciences</em>, 111(10), 3763–3768. <a href="https://www.pnas.org/doi/10.1073/pnas.1320393111">doi:10.1073/pnas.1320393111</a></li>
+<li><strong>Keenan, J.P. et al.</strong> (2023). A widely distributed gene cluster compensates for uricase loss in hominids. <em>Cell</em>, 186(16), 3400–3413. <a href="https://www.sciencedirect.com/science/article/pii/S0092867423006876">doi:10.1016/j.cell.2023.06.010</a></li>
+<li><strong>Matsuo, H. et al.</strong> (2014). ABCG2 dysfunction increases serum uric acid by decreased intestinal urate excretion. <em>Nucleosides, Nucleotides and Nucleic Acids</em>, 33(4-6), 275–281. <a href="https://pubmed.ncbi.nlm.nih.gov/24940679/">PMID: 24940679</a></li>
+<li><strong>Hosomi, A. et al.</strong> (2012). Extra-Renal Elimination of Uric Acid via Intestinal Efflux Transporter BCRP/ABCG2. <em>PLOS ONE</em>, 7(2), e30456. <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0030456">doi:10.1371/journal.pone.0030456</a></li>
+<li><strong>Ichida, K. et al.</strong> (2012). Decreased extra-renal urate excretion is a common cause of hyperuricemia. <em>Nature Communications</em>, 3, 764. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8268734/">Related review: PMC8268734</a></li>
+<li><strong>Hershfield, M.S. et al.</strong> (2020). Oral Treatment With an Engineered Uricase, ALLN-346, Reduces Hyperuricemia and Uricosuria in Urate Oxidase-Deficient Mice. <em>Frontiers in Medicine</em>, 7, 569215. <a href="https://pubmed.ncbi.nlm.nih.gov/33330529/">PMID: 33330529</a></li>
+<li><strong>Allena Pharmaceuticals.</strong> (2022). Clinical and Corporate Update — Phase 2a Study 201 results. <a href="https://ir.allenapharma.com/news-releases/news-release-details/allena-pharmaceuticals-provides-clinical-and-corporate-update">Press release, January 4, 2022</a></li>
+<li><strong>Allena Pharmaceuticals.</strong> (2022). Phase 2a Study 202 enrollment completion and update. <a href="https://www.globenewswire.com/news-release/2022/07/19/2481757/0/en/Allena-Pharmaceuticals-Announces-Completion-of-Enrollment-of-Cohorts-A-and-B-of-ALLN-346-Phase-2a-Study-202-in-Patients-with-Gout-and-Stages-2-and-3-Chronic-Kidney-Disease.html">Press release, July 19, 2022</a></li>
+<li><strong>Designer probiotic-based living drugs for uric acid homeostasis control in hyperuricemic mice and rats.</strong> (2025). <em>Cell Reports Medicine</em>, S2666-3791(25)00452-5. <a href="https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(25)00452-5">doi:10.1016/j.xcrm.2025.102052</a></li>
+<li><strong>Systematic Engineering for Efficient Uric Acid-Degrading Activity in Probiotic Yeast <em>Saccharomyces boulardii</em>.</strong> (2025). <em>ACS Synthetic Biology</em>, 14(6), 2030–2043. <a href="https://pubs.acs.org/doi/10.1021/acssynbio.4c00831">doi:10.1021/acssynbio.4c00831</a></li>
+<li><strong>Rasburicase.</strong> FDA Prescribing Information (Elitek). <a href="https://products.sanofi.us/elitek/elitek.pdf">Sanofi product label</a>. Approved 2002. Note: ~60% ADA rate limits repeat dosing.</li>
+<li><strong>Leplatois, P. et al.</strong> (1992). High-level production of a peroxisomal enzyme: <em>Aspergillus flavus</em> uricase accumulates intracellularly and is active in <em>Saccharomyces cerevisiae</em>. <em>Gene</em>, 122(1), 139–145. <a href="https://www.sciencedirect.com/science/article/abs/pii/037811199290041M">doi:10.1016/0378-1119(92)90041-M</a></li>
+<li><strong>Fazel, R. et al.</strong> (2017). Recombinant production of <em>Aspergillus flavus</em> uricase and investigation of its thermal stability in the presence of raffinose and lactose. <em>3 Biotech</em>, 7(3), 201. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5493577/">PMC5493577</a>. Also: <strong>Bayol, A. et al.</strong> (2002). Modification of a reactive cysteine explains differences between rasburicase and natural <em>A. flavus</em> uricase. <a href="https://pubmed.ncbi.nlm.nih.gov/12149119/">PMID: 12149119</a></li>
+<li><strong>Bim, M.A. &amp; Franco, T.T.</strong> (2008). Uricase production by a recombinant <em>Hansenula polymorpha</em> strain harboring <em>Candida utilis</em> uricase gene. <em>Applied Microbiology and Biotechnology</em>, 79(3), 545–553. <a href="https://link.springer.com/article/10.1007/s00253-008-1472-8">doi:10.1007/s00253-008-1472-8</a></li>
+<li><strong>Juan, E.C. et al.</strong> (2011). High-yield expression, purification, characterization, and structure determination of tag-free <em>Candida utilis</em> uricase. <em>Applied Microbiology and Biotechnology</em>, 92(1), 79–87. <a href="https://link.springer.com/article/10.1007/s00253-011-3244-0">doi:10.1007/s00253-011-3244-0</a></li>
+<li><strong>Gibson, T. et al.</strong> (1984). Beer drinking and its effect on uric acid. <em>Rheumatology</em>, 23(3), 203–209. <a href="https://academic.oup.com/rheumatology/article-abstract/23/3/203/1781057">doi:10.1093/rheumatology/23.3.203</a></li>
+<li><strong>Faller, J. &amp; Fox, I.H.</strong> (1982). Ethanol-induced hyperuricemia: evidence for increased urate production by activation of adenine nucleotide turnover. <em>New England Journal of Medicine</em>, 307(26), 1598–1602. Also: <strong>Yamamoto, T. et al.</strong> (2005). Effect of ethanol on metabolism of purine bases. <em>Clinica Chimica Acta</em>, 356(1-2), 35–57. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0009898105000732">doi:10.1016/j.cccn.2005.01.024</a></li>
+<li><strong>McFarland, L.V.</strong> (2010). Systematic review and meta-analysis of <em>Saccharomyces boulardii</em> in adult patients. <em>World Journal of Gastroenterology</em>, 16(18), 2202–2222. Also: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7344949/">PMC7344949 — <em>S. boulardii</em>: What Makes It Tick as Successful Probiotic?</a></li>
+<li><strong>Braat, H. et al.</strong> (2024). Targeted delivery of the probiotic <em>Saccharomyces boulardii</em> to the extracellular matrix enhances gut residence time and recovery in murine colitis. <em>Nature Communications</em>, 15, 4157. <a href="https://www.nature.com/articles/s41467-024-48128-0">doi:10.1038/s41467-024-48128-0</a>
+Prepared April 2026. This document represents a good-faith research synthesis by a non-scientist. Corrections, challenges, and "you're wrong about X" are all welcome — that's the point.</li>
+</ul>
+<h3 id="open-enzyme-research-library">Open Enzyme Research Library<a class="headerlink" href="#open-enzyme-research-library" title="Permanent link">&para;</a></h3>
+<p>This document is part of the <a href="../open-enzyme-vision/">Open Enzyme</a> project — an open-source therapeutic enzyme platform.
+<a href="../open-enzyme-vision/">Open Enzyme Vision &amp; Roadmap</a>
+<a href="../gout-deep-dive/">Gout Deep Dive Research</a>
+<a href="../enzyme-deficit-deep-dive/">Enzyme Deficit Deep Dive</a>
+<a href="../nlrp3-exploit-map/">NLRP3 Inflammasome Exploit Map</a>
+<a href="../peptide-gout-addendum/">Peptides &amp; Gout Addendum</a>
+<a href="../blood-barrier-exploits/">Blood-Barrier Exploits</a>
+<a href="../engineered-koji-protocol/">Engineered Koji Protocol</a>
+<a href="./">Engineered Yeast Uricase Proposal (this doc)</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
