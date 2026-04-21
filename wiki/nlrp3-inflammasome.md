@@ -195,6 +195,22 @@ NLRP3 inflammasome activation is central to both gout and SIBO-driven intestinal
 
 This overlap suggests a unified therapeutic strategy addressing both conditions simultaneously through shared NLRP3 modulation. (Source: nlrp3-exploit-map.md)
 
+## AI Analysis: Production Candidates for Engineered Koji (April 2026)
+
+**High-Priority NLRP3 Inhibitors Producible via Engineered Microbes:**
+
+- **Ursolic Acid** (triterpene): **8.59 g/L in S. cerevisiae fed-batch** (highest microbial titer reported). Animal evidence for NLRP3 inflammasome suppression. GRAS status (apples, rosemary, oregano). Structural stability ideal for GI delivery. See [[ai-analysis/07-nlrp3-inhibitor-screen|07 — NLRP3 Inhibitor Screen]] for full production details.
+
+- **Quercetin** (polyphenol): **930 mg/L in engineered S. cerevisiae**. Gout-specific animal data (MSU-induced edema reduction, IL-1β suppression). Dual mechanism: NLRP3 + xanthine oxidase inhibition. Bioavailability limitation (aglycone form) addressable via engineered glycosylation. IC50 ~11 μM vs. MCC950 (7.5 nM); potency gap noted.
+
+- **Carnosine** (dipeptide): **Unique hyperuricemia evidence** — direct serum uric acid reduction + NLRP3 suppression in rat models. Multi-target (URAT1, GLUT9, ROS, p-p65). Production complexity moderate (~100–500 mg/L estimated); β-alanine synthesis limiting. Only candidate with published gout flare prevention data.
+
+- **Native Koji Production — Kojic Acid**: *A. oryzae* naturally produces 3–5 g/L in solid-state fermentation. NLRP3 mechanism unknown; flagged for screening against inflammasome activation. Food-safe (cosmetics use), no engineering required. Candidate for discovery high-throughput screen.
+
+See [[ai-analysis/07-nlrp3-inhibitor-screen|07 — NLRP3 Inhibitor Screen]] for potency rankings, bioavailability analysis, and production feasibility.
+
+---
+
 ## Key Insights
 
 **The Crystal Dissolution Danger Window:** When urate-lowering therapy (including [[uricase|koji-uricase]]) begins dissolving existing MSU crystal deposits, crystals temporarily become smaller with more surface area. Crystal shedding from tophi can trigger acute flares. The NLRP3 stack is essential during this phase—it prevents dissolution-triggered flares while the uricase handles the underlying uric acid problem. Both strategies must run simultaneously. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)

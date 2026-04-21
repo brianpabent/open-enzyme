@@ -316,6 +316,26 @@ With modern CRISPR tools and *A. oryzae*'s robust synthetic biology toolkit, fut
 
 A single fermented food attacking gout from both the uric acid and inflammatory angles. This is the superorganism vision—engineering food as a multi-targeted therapeutic platform. (Source: nlrp3-exploit-map.md)
 
+## AI Analysis Findings (April 2026)
+
+**Koji Construct Design Finalized:**
+- **Promoter:** amyB (α-amylase, starch-inducible, 6–10× baseline) — auto-activates on rice substrate without external induction
+- **Expected Uricase Yield:** 40–80 mg uricase per gram of fermented koji (assuming 5–10 g/L total secreted protein on rice substrate)
+- **Dual-enzyme platform confirmed:** Native digestive enzymes (lipase, protease, amylase) produced in parallel with engineered uricase
+
+**Strain Recommendation: RIB40**
+- Complete genomic sequence enables CRISPR/Cas9 refinement
+- 65 endopeptidase + 69 exopeptidase genes support efficient protein degradation
+- Lipase activity: 1,813–2,280 U/g koji (rice bran substrate optimal)
+- Dosing equivalence: 10–15 g optimized koji ≈ single Creon dose (25,000 USP lipase units)
+
+**Codon Optimization for A. oryzae:**
+- Native GC content: 48% (A. flavus ~48%; near-perfect match)
+- A. flavus uricase requires minimal codon optimization (unlike S. cerevisiae)
+- Target GC 48–52% (aligned with A. oryzae preferences)
+
+See [[ai-analysis/06-koji-construct-design|06 — Koji Construct Design]] and [[ai-analysis/08-digestive-enzyme-optimization|08 — Digestive Enzyme Optimization]] for complete fermentation protocols, strain comparisons, and dosing calculations.
+
 ## References
 
 - Source: engineered-koji-protocol.md — Complete protocol for A. oryzae transformation, fermentation, and dosing

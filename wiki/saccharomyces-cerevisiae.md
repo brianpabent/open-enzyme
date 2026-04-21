@@ -180,7 +180,7 @@ Grow engineered yeast in bulk, harvest, and process into a dried product (powder
 
 **Therapeutic credibility:** High (most directly validated approach in the literature)
 
-**Colonization Resolution Path:** Rheinallt's gnotobiotic facility could directly answer residence time and functional delivery questions. Colonize germ-free mice with engineered *S. boulardii* expressing uricase. Measure: (a) fecal yeast counts daily, (b) fecal and cecal uricase activity, (c) serum uric acid (requires Uox-knockout mice or potassium oxonate-treated mice for hyperuricemia model). Compare to conventional mice with daily gavage. This yields both colonization kinetics and functional uricase delivery data. Cost: ~$5,000–15,000 (gnotobiotic mouse work is expensive). Time: 8–12 weeks. (Source: engineered-yeast-uricase-proposal.md)
+**Colonization Resolution Path:** A gnotobiotic facility (such as Rheinallt's Emory core, if he joins as a collaborator) could directly answer residence time and functional delivery questions. Colonize germ-free mice with engineered *S. boulardii* expressing uricase. Measure: (a) fecal yeast counts daily, (b) fecal and cecal uricase activity, (c) serum uric acid (requires Uox-knockout mice or potassium oxonate-treated mice for hyperuricemia model). Compare to conventional mice with daily gavage. This yields both colonization kinetics and functional uricase delivery data. Cost: ~$5,000–15,000 (gnotobiotic mouse work is expensive). Time: 8–12 weeks. (Source: engineered-yeast-uricase-proposal.md)
 
 ### d. Beer (LOW CREDIBILITY - FIGHT THE VEHICLE)
 
@@ -320,6 +320,17 @@ The regulatory path depends on:
 - Patent strategy (if any)
 
 This is a Lauren conversation—the FDA's guidance is evolving, and the path may already exist in the LBP framework. (Source: engineered-yeast-uricase-proposal.md)
+
+## AI Analysis Findings (April 2026)
+
+**Expression Cassette Design Optimized:**
+- Primary promoter: **TDH3p (constitutive)** — strongest expression across glucose media without external inducers
+- Expression location: **Intracellular** — more efficient than secretion for tetrameric uricase (135 kDa)
+- Terminator: **ADH1t** (alcohol dehydrogenase terminator)
+- **Predicted yield: 800–1200 mg/L** culture-supernatant equivalent after cell lysis and concentration
+- **Codon optimization parameters:** CAI ≥0.85, GC 38–42%, no cryptic restriction sites, minimal secondary structure near start codon (ΔG > −5 kcal/mol)
+
+See [[ai-analysis/04-codon-optimization-expression-cassette|04 — Codon Optimization & Expression Cassette]] for detailed cassette design, rare codon elimination, and vector selection.
 
 ## References
 

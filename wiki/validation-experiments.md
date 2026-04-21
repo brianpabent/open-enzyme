@@ -199,7 +199,7 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 **Dependencies:** 
 - Requires optimized S. boulardii uricase strain from Phase 1
-- Requires access to Rheinallt Jones, Emory Gnotobiotic Animal Core
+- Requires access to a gnotobiotic facility — ideally Rheinallt Jones's Emory Gnotobiotic Animal Core, if he joins as a collaborator
 
 **Success criteria:** 
 - Maintain >10⁶ CFU/mL fecal yeast counts through day 7

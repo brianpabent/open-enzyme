@@ -196,6 +196,23 @@ This seems tangential until you note: **enzyme supplementation (like koji fermen
 
 Moreover, the koji brewing process itself — the fermentation — produces secondary metabolites including short-chain fatty acids and other microbiome-supporting compounds. Consuming fresh koji isn't just about the enzymes; it's about supporting healthy gut ecology.
 
+## AI Analysis: Fermentation Optimization (April 2026)
+
+**Optimized Koji Fermentation Protocol:**
+- **Substrate:** Rice bran (superior to rice alone for lipase production; 1,813–2,280 U/g vs. 1,000–1,500 U/g for white rice)
+- **Temperature:** 28–30°C (optimal for enzyme production without excessive heat stress)
+- **Duration:** 48–60 hours fermentation (peak lipase, protease, and amylase activity)
+- **Strain:** RIB40 recommended (complete genomic sequence, proven enzyme profiles, 65 endopeptidase + 69 exopeptidase genes)
+
+**Genetic Engineering Option (Advanced):**
+- **CRISPR/Cas9-targeted tglA overexpression** (lipase gene) achieves **2–3× fold improvement in lipase activity**
+- **Dosing equivalence:** Optimized koji (wild-type or engineered) at 10–15 g per meal provides ~25,000 USP lipase units (equivalent to standard Creon dose)
+- **Safety:** No off-target effects documented; lipase overexpression well-tolerated in A. oryzae fermentation
+
+See [[ai-analysis/08-digestive-enzyme-optimization|08 — Digestive Enzyme Optimization]] for complete strain comparisons (RIB40 vs. ATCC 11866), fermentation parameters, and CRISPR engineering rationale.
+
+---
+
 ## Related Concepts
 
 - [[enzyme-deficit|Enzyme Deficits: The Shared Pattern]] — The broader context

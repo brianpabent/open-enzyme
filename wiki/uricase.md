@@ -174,6 +174,24 @@ Uricase (oral, engineered, or as probiotic) addresses the root cause of gout by 
 
 The success of uricase as an oral therapeutic enzyme opens pathways for other missing or insufficient enzymes in humans, as part of the broader [[open-enzyme-vision|Open Enzyme platform]]. (Source: open-enzyme-vision.md)
 
+## AI Analysis Findings (April 2026)
+
+**Variant Comparison Completed:**
+- *Aspergillus flavus* confirmed as primary candidate (FDA approval via rasburicase; proven S. cerevisiae expression; extensive stability engineering precedent)
+- *Arthrobacter globiformis* ranked secondary (superior thermostability, neutral pH activity; requires novel expression system optimization)
+- Four additional variants evaluated; see [[ai-analysis/01-uricase-variant-selection|01 — Uricase Variant Selection]] for detailed ranking
+
+**GI Survival Profile:**
+- Baseline survival: 15–25% of ingested enzyme reaches small intestine in active form
+- Acid protection required (enteric coating or disulfide bond engineering) improves survival to 40–50%
+- Active window: duodenum/jejunum (pH 5.5–7.5), 45–120 min transit
+- See [[ai-analysis/02-gi-survival-prediction|02 — GI Survival Prediction]] for complete transit modeling
+
+**Engineering Mutations Designed:**
+- Three mutation tiers identified: SB-1 (stability baseline), BAL-1 (balanced engineering), OPT-1 (comprehensive optimization)
+- Disulfide bond engineering validated for acid/thermal stability without activity loss
+- See [[ai-analysis/03-protein-engineering-strategy|03 — Protein Engineering Strategy]] for mutation details and expression yields
+
 ## References
 
 - Wu, X. et al. (2002). "Loss of Urate Oxidase Activity in Hominoids and its Evolutionary Implications." *Molecular Biology and Evolution*, 19(5), 640–653.

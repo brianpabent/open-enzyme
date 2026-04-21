@@ -17,7 +17,7 @@ sources:
 
 # Open Enzyme Team
 
-The Open Enzyme project is led by a small, highly specialized team where each member addresses a critical question the project needs answered. No one is here by accident — each brings a distinct expertise that maps directly to the biological, engineering, and translational challenges of enzyme-based therapeutics.
+The Open Enzyme project is currently a solo effort by Brian Abent. Three Emory-trained PhDs are being actively recruited as potential collaborators — each would address a critical question the project needs answered. Their expertise maps directly to the biological, engineering, and translational challenges of enzyme-based therapeutics. None have committed to the project yet; recruiting them is an active goal.
 
 ## Brian Abent — Platform & Engineering
 
@@ -47,18 +47,18 @@ Brian has gout — a uricase deficiency — and got tired of waiting for the sys
 
 ---
 
-## Rheinallt Jones, PhD — Gut Microbiome & In Vivo Validation
+## Rheinallt Jones, PhD — Gut Microbiome & In Vivo Validation *(potential collaborator)*
 
-**Role:** Gut Microbiome Expert, In Vivo Model Development  
+**Role (if recruited):** Gut Microbiome Expert, In Vivo Model Development  
 **Current position:** Associate Professor, Emory Pediatric Gastroenterology  
 **Specialty:** Gnotobiotic animal models, microbiome dynamics, gut immune interactions  
 **Training:** Emory Epithelial Pathobiology Unit (Andrew Neish lab)
 
-### Why He's Here
+### Why We Need Him
 
 Rheinallt's expertise in gnotobiotic models (germ-free animals with defined microbial communities) is essential for answering the most critical biological question: **will an engineered strain survive and function in the real human gut?** The gut is a chaotic ecosystem, and predicting how an engineered microbe will behave there is nearly impossible without proper animal models.
 
-### Critical Questions He Answers
+### Critical Questions He Would Answer
 
 - Will an engineered uricase-producing organism establish a stable colonization in the murine or human gut?
 - How does it interact with existing microbiota (competition, synergy, displacement)?
@@ -68,7 +68,7 @@ Rheinallt's expertise in gnotobiotic models (germ-free animals with defined micr
 
 **(Source: open-enzyme-vision.md)** — "**Rheinallt Jones, PhD — Gut Microbiome / In Vivo Validation**... Associate Professor, Emory Pediatric GI. Runs the Emory Gnotobiotic Animal Core. Deep expertise in gut microbiome dynamics and germ-free animal models."
 
-### The Gnotobiotic Core
+### The Gnotobiotic Core (access contingent on collaboration)
 
 Emory's Gnotobiotic Animal Core (which Rheinallt oversees) provides:
 - Germ-free mice and other animals
@@ -78,7 +78,7 @@ Emory's Gnotobiotic Animal Core (which Rheinallt oversees) provides:
 
 This facility is where early-stage engineered microbe validation would happen — essential bridging work between cell culture and human application.
 
-### Contribution to Open Enzyme
+### Potential Contribution to Open Enzyme
 
 - In vivo validation protocols for engineered strains
 - Microbiome dynamics and integration expertise
@@ -87,20 +87,20 @@ This facility is where early-stage engineered microbe validation would happen �
 
 ---
 
-## Lauren Collier-Hyams, PhD — NF-κB & Pharma Translation
+## Lauren Collier-Hyams, PhD — NF-κB & Pharma Translation *(potential collaborator)*
 
-**Role:** Translational Bridge, Inflammatory Signaling  
+**Role (if recruited):** Translational Bridge, Inflammatory Signaling  
 **Current position:** Grifols/Medexus (pharmaceutical development)  
 **Specialty:** NF-κB signaling, intestinal epithelial cell biology, pharmaceutical development strategy  
 **Training:** Emory Epithelial Pathobiology Unit (Andrew Neish lab)
 
-### Why She's Here
+### Why We Need Her
 
 Lauren represents the critical bridge between academic research and pharmaceutical-grade standards. She understands both the bench science (NF-κB signaling in gut epithelial cells) and the pharma-development pathway (What do regulators expect? Where does citizen science end and clinical development begin? What safety and efficacy standards are minimally necessary?).
 
 The Open Enzyme project aims to build something accessible, but it operates in a space where FDA, clinical trial design, and safety standards are not irrelevant — they're just approached differently than traditional pharma.
 
-### Critical Questions She Answers
+### Critical Questions She Would Answer
 
 - What are the inflammatory signaling implications of expressing uricase in the gut?
 - Could the engineered organism trigger unexpected NF-κB activation or immune responses?
@@ -110,7 +110,7 @@ The Open Enzyme project aims to build something accessible, but it operates in a
 
 **(Source: open-enzyme-vision.md)** — "**Lauren Collier-Hyams, PhD — NF-κB / Pharma Translation**... Emory-trained (NF-κB / intestinal epithelial signaling under Andrew Neish). Now in pharma at Grifols/Medexus. Bridges academic research and pharmaceutical development."
 
-### Contribution to Open Enzyme
+### Potential Contribution to Open Enzyme
 
 - NF-κB and inflammatory signaling assessment of engineered strains
 - Safety and efficacy standards framework
@@ -119,19 +119,19 @@ The Open Enzyme project aims to build something accessible, but it operates in a
 
 ---
 
-## Valerie Jones (née Sloane), PhD — Innate Immune Safety
+## Valerie Jones (née Sloane), PhD — Innate Immune Safety *(potential collaborator)*
 
-**Role:** Immunosafety Specialist  
+**Role (if recruited):** Immunosafety Specialist  
 **Specialty:** TLR5 signaling, innate immune responses in gut epithelium, bacterial-host interactions  
 **Training:** Emory Epithelial Pathobiology Unit (Andrew Neish lab)
 
-### Why She's Here
+### Why We Need Her
 
 Valerie's expertise in how the gut immune system recognizes and responds to bacterial signals is essential for a critical safety question: **will the engineered organism trigger unexpected immune responses?**
 
 Every bacterium has pathogen-associated molecular patterns (PAMPs) — patterns like flagellin, LPS, peptidoglycans — that the innate immune system recognizes via toll-like receptors (TLRs). Even GRAS organisms can trigger these signals. Valerie ensures that the engineered strains don't create new, unexpected immunogenic epitopes or aberrant PAMP signaling.
 
-### Critical Questions She Answers
+### Critical Questions She Would Answer
 
 - Will an engineered *E. coli* Nissle or *S. cerevisiae* expressing uricase trigger TLR5 or other innate immune responses?
 - Could genetic modifications create new epitopes recognized as pathogenic?
@@ -141,7 +141,7 @@ Every bacterium has pathogen-associated molecular patterns (PAMPs) — patterns 
 
 **(Source: open-enzyme-vision.md)** — "**Valerie Jones née Sloane, PhD — Innate Immune Safety**... Emory-trained (TLR5 / innate immune responses in gut epithelium under Andrew Neish). Expertise in how the gut immune system responds to microbial signals."
 
-### Contribution to Open Enzyme
+### Potential Contribution to Open Enzyme
 
 - Immunological safety assessment of engineered strains
 - PAMP and epitope analysis
@@ -152,20 +152,20 @@ Every bacterium has pathogen-associated molecular patterns (PAMPs) — patterns 
 
 ## The Emory Connection: Epithelial Pathobiology Unit
 
-All three PhDs (Rheinallt, Lauren, and Valerie) trained in **Andrew Neish's Epithelial Pathobiology Unit at Emory University**. This creates a powerful alignment:
+All three potential collaborators trained in **Andrew Neish's Epithelial Pathobiology Unit at Emory University**. If recruited, this would create a powerful alignment:
 
 - **Shared vocabulary:** They all speak the language of epithelial biology, microbial-host interactions, and gut inflammation
-- **Complementary expertise:** Rheinallt owns the microbiome dynamics; Lauren owns the translational pathway; Valerie owns the immune safety
-- **Existing infrastructure:** Access to the Gnotobiotic Animal Core, Emory's disease research facilities, and pharma-development relationships
+- **Complementary expertise:** Rheinallt covers microbiome dynamics; Lauren covers the translational pathway; Valerie covers immune safety
+- **Existing infrastructure:** Potential access to the Gnotobiotic Animal Core, Emory's disease research facilities, and pharma-development relationships
 - **Proven collaboration:** They've worked together in Andrew Neish's lab, understanding each other's approaches and standards
 
 **(Source: open-enzyme-vision.md)** — "**Note on lineage:** Rheinallt, Lauren, and Valerie all trained in Andrew Neish's Epithelial Pathobiology Unit at Emory. This gives the team a shared scientific vocabulary and a deep, overlapping understanding of gut epithelial biology, microbial-host interactions, and inflammatory signaling — exactly the domain this project operates in."
 
 ---
 
-## How the Team Maps to Project Needs
+## How the Team Would Map to Project Needs
 
-| Project Question | Team Member | Expertise |
+| Project Question | Person | Expertise |
 |------------------|-------------|-----------|
 | How do we make this reproducible? | **Brian** | Engineering, documentation, platform design |
 | Will it work in the real gut? | **Rheinallt** | Gnotobiotic models, microbiome dynamics |
@@ -176,63 +176,63 @@ All three PhDs (Rheinallt, Lauren, and Valerie) trained in **Andrew Neish's Epit
 
 ---
 
-## Division of Labor
+## Proposed Division of Labor (if recruited)
 
-### Brian
+### Brian (current — sole team member)
 - **Day-to-day:** Platform architecture, documentation, protocol development, koji fermentation experiments
 - **Interface:** Primary point of contact for project vision, open-source strategy
 - **Decisions:** Platform scope, accessibility standards, what counts as "complete"
 
-### Rheinallt
-- **Day-to-day:** Designing gnotobiotic studies, microbiome sequencing analysis, in vivo validation planning
+### Rheinallt (potential collaborator)
+- **Would own:** Designing gnotobiotic studies, microbiome sequencing analysis, in vivo validation planning
 - **Interface:** Germ-free animal core operations, microbiome analysis protocols
 - **Decisions:** What animal models to use, what microbiota questions need answering, go/no-go for in vivo studies
 
-### Lauren
-- **Day-to-day:** Reviewing safety and efficacy frameworks, mapping regulatory requirements, providing pharma-development consultation
+### Lauren (potential collaborator)
+- **Would own:** Reviewing safety and efficacy frameworks, mapping regulatory requirements, providing pharma-development consultation
 - **Interface:** FDA precedents, clinical development pathways, safety-efficacy trade-offs
 - **Decisions:** What safety data is necessary for clinical translation, when to involve regulators, go/no-go for human trials
 
-### Valerie
-- **Day-to-day:** Immunological risk assessment, PAMP analysis, immune-marker protocol design
+### Valerie (potential collaborator)
+- **Would own:** Immunological risk assessment, PAMP analysis, immune-marker protocol design
 - **Interface:** TLR signaling literature, epitope prediction, immune activation pathways
 - **Decisions:** Acceptability of immune response levels, safety margins for genetic modifications, go/no-go for immune safety
 
 ---
 
-## The Strength of This Team
+## Why This Team Would Work
 
 **Non-overlapping expertise with strategic overlap:**
 - Brian: Systems thinker, not a biologist — forces clarity and accessibility
-- Rheinallt: Microbiome specialist — owns the "will it survive in vivo?" question
-- Lauren: Translational expert — answers "what does clinical development look like?"
-- Valerie: Immune safety specialist — ensures we're not creating immunological problems
+- Rheinallt: Microbiome specialist — would own the "will it survive in vivo?" question
+- Lauren: Translational expert — would answer "what does clinical development look like?"
+- Valerie: Immune safety specialist — would ensure we're not creating immunological problems
 
 **Shared language + complementary skills:**
-All three PhDs come from Andrew Neish's lab, meaning they understand each other's experimental standards, can communicate efficiently, and have pre-existing trust.
+All three potential collaborators come from Andrew Neish's lab, meaning they understand each other's experimental standards, can communicate efficiently, and have pre-existing trust.
 
-**Access to infrastructure:**
-The Emory connection provides:
+**Potential access to infrastructure:**
+The Emory connection could provide:
 - Gnotobiotic Animal Core (Rheinallt)
 - Pharma-industry relationships (Lauren)
 - Gut-biology expertise network (all three)
 
 **Clear decision-making:**
-Each person owns a critical domain (safety, efficacy, microbiome, translation), making decisions transparent and preventing scope creep.
+Each person would own a critical domain (safety, efficacy, microbiome, translation), making decisions transparent and preventing scope creep.
 
 ---
 
 ## Related Concepts
 
-- [[open-enzyme-vision|Open Enzyme: Founding Vision]] — The project these individuals are building
+- [[open-enzyme-vision|Open Enzyme: Founding Vision]] — The project Brian is building
 - [[brian-abent|Brian Abent's Background]] — Personal context
 - [[emory-collaboration|Emory's Epithelial Pathobiology Unit]] — The institutional home
 
 ## Key Insight
 
-**The strength of this team is not overlapping expertise but complementary expertise married to a shared scientific language.** Brian brings the engineering clarity that prevents research from becoming self-referential. The three PhDs bring domain mastery in the specific biological questions that matter (microbiome, safety, translation) and the institutional infrastructure to move from concept to validation to potential clinical application.
+**The strength of this potential team is not overlapping expertise but complementary expertise married to a shared scientific language.** Brian brings the engineering clarity that prevents research from becoming self-referential. The three potential collaborators would bring domain mastery in the specific biological questions that matter (microbiome, safety, translation) and institutional infrastructure to move from concept to validation to potential clinical application.
 
-No one on this team is a generalist. Each owns a critical question. Together, they can answer the question: "Can an engineered food-safe organism produce therapeutic enzymes safely, effectively, and in a manner accessible to patients?"
+No one in this group is a generalist. Each would own a critical question. Together, they could answer the question: "Can an engineered food-safe organism produce therapeutic enzymes safely, effectively, and in a manner accessible to patients?" Recruiting them is one of the project's highest priorities.
 
 ---
 

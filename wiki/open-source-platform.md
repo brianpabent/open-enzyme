@@ -314,7 +314,7 @@ Targets gut-lumen uric acid via ABCG2 intestinal secretion pathway.
 
 ## Funding/Contributors
 - Design: Brian Abent (Open Enzyme)
-- Validation: Rheinallt Jones (Emory Gnotobiotic Core), Lauren Collier-Hyams (pharma expertise)
+- Validation (potential collaborators, not yet confirmed): Rheinallt Jones (Emory Gnotobiotic Core), Lauren Collier-Hyams (pharma expertise)
 - Community reproducers: [Your lab name here]
 
 ## Next Steps

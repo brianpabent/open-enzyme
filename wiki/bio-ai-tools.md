@@ -1,7 +1,7 @@
 ---
 title: Bio AI Tools
-aliases: [AI-tools, AI-bio, GPT-Rosalind, Amazon-Bio-Discovery, Anthropic-Coefficient, computational-biology]
-related: [engineered-yeast-uricase, engineered-koji-protocol, validation-experiments]
+aliases: [AI-tools, AI-bio, GPT-Rosalind, Amazon-Bio-Discovery, Anthropic-Coefficient, computational-biology, protein-language-models, open-source-bio-AI]
+related: [engineered-yeast-uricase, engineered-koji-protocol, validation-experiments, uricase, nlrp3-inflammasome]
 sources: [ai-bio-tools-playbook.md]
 ---
 
@@ -9,7 +9,55 @@ sources: [ai-bio-tools-playbook.md]
 
 ## Overview
 
-Three major AI biology tools launched in April 2026 that can accelerate Open Enzyme: **GPT-Rosalind** (OpenAI), **Amazon Bio Discovery**, and **Anthropic's Coefficient Bio acquisition**. This document covers what each tool does, how to use it for the project, and specific prompts for enzyme engineering.
+Three major commercial AI biology tools launched in April 2026 that can accelerate Open Enzyme: **GPT-Rosalind** (OpenAI), **Amazon Bio Discovery**, and **Anthropic's Coefficient Bio acquisition**. However, Rosalind requires institutional access and Bio Discovery costs $486/month. A robust ecosystem of **open source protein AI tools** — including ESM-2, AlphaFold/ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, and others — is freely available and covers most of the computational biology workflow. These open source tools are the project's primary computational toolkit. This document covers all three tiers: commercial, open source, and free web tools.
+
+---
+
+## Open Source Protein AI Tools (Available Now)
+
+These tools are freely available and cover the core computational biology workflow for Open Enzyme. Many are the same models that power commercial platforms like Bio Discovery under the hood.
+
+### Structure Prediction
+
+- **ColabFold (AlphaFold 2)** — Gold standard for protein structure prediction. Free on Google Colab. Use for generating uricase variant structures. ([GitHub](https://github.com/sokrypton/ColabFold))
+- **ESMFold** — ~60× faster than AlphaFold, trades small accuracy loss for speed. Use for rapid screening of dozens of variants. ([Hugging Face](https://huggingface.co/facebook/esmfold_v1))
+- **Boltz-2** — First open source model approaching AlphaFold 3 for complexes (protein-ligand, protein-protein). MIT license. Predicts binding affinities 1000× faster than physics-based FEP. Use for uricase-uric acid binding, tetramer assembly, NLRP3 inhibitor docking. ([GitHub](https://github.com/jwohlwend/boltz))
+- **Protenix-v1** — Open source structure predictor that outperforms AlphaFold 3. Alternative to Boltz-2. ([GitHub](https://github.com/bytedance/protenix))
+
+### Protein Language Models & Variant Scoring
+
+- **ESM-2 (Meta)** — Workhorse protein language model (650M params). Score every possible mutation by evolutionary plausibility. Zero-shot fitness prediction. Foundation for downstream tools. ([GitHub](https://github.com/facebookresearch/esm))
+- **ESM-C** — Drop-in ESM-2 replacement, better performance at lower compute. Free academic API tier. ([EvolutionaryScale](https://www.evolutionaryscale.ai/))
+- **ESM-3-open** — Next-gen multimodal model (sequence + structure + function). Generated a novel GFP with 58% identity to known — equivalent to ~500M years of evolution. Non-commercial license. ([GitHub](https://github.com/evolutionaryscale/esm))
+
+### Protein Design & Engineering
+
+- **RFdiffusion2 (Baker Lab)** — De novo enzyme design from active site geometry alone. Designed enzymes with catalytic efficiency up to 53,000 M⁻¹s⁻¹. BSD license. Phase 2 tool for designing acid-stable uricase scaffolds. ([GitHub](https://github.com/RosettaCommons/RFdiffusion2))
+- **ProteinMPNN (Baker Lab)** — Designs amino acid sequences that fold into target structures. MIT license. Essential companion to RFdiffusion2. ([GitHub](https://github.com/dauparas/ProteinMPNN))
+
+### Stability & Variant Effect Prediction
+
+- **SPURS** — State-of-the-art ΔΔG prediction for mutations. Directly answers "will this mutation make the enzyme more or less stable?" ([GitHub](https://github.com/mj-hwang/SPURS))
+- **RaSP** — Rapid saturation mutagenesis stability scans (<1 second per residue). Map the complete stability landscape of uricase. ([GitHub](https://github.com/KULL-Centre/papers))
+- **DDGemb** — Predicts combined effect of multiple simultaneous mutations (epistasis). Critical for evaluating combinatorial variants. ([GitHub](https://github.com/PeppeL-G/DDGemb))
+- **FoldX** — Physics-based stability calculations including pH dependence. Free for academics. Industry standard for 15+ years. ([foldxsuite.crg.eu](https://foldxsuite.crg.eu/))
+
+### Molecular Docking
+
+- **DiffDock** — AI-powered docking using diffusion models. 38% success rate vs. 23% for traditional tools. MIT license. Use for uric acid binding validation and NLRP3 inhibitor screening. ([GitHub](https://github.com/gcorso/DiffDock))
+
+### Codon Optimization
+
+- **CodonTransformer** — Deep learning codon optimizer trained on 1M+ DNA-protein pairs from 164 organisms, including S. cerevisiae and A. oryzae. ([GitHub](https://github.com/Adibvafa/CodonTransformer))
+- **GenSmart, IDT, VectorBuilder** — Free web-based codon optimization tools. Cross-validate against CodonTransformer.
+
+### Practical Setup
+
+**Free tier (Google Colab):** ColabFold + ESM-2 + CodonTransformer + SPURS/RaSP = covers variant selection, codon optimization, and stability screening at zero cost.
+
+**Colab Pro ($10/month):** Adds Boltz-2, RFdiffusion2, DiffDock for complex prediction, de novo design, and docking.
+
+See [ai-bio-tools-playbook.md](../docs/ai-bio-tools-playbook.md) §Part 01b for full details, hardware requirements, and mapping to project prompts.
 
 ---
 
@@ -553,18 +601,22 @@ Output: Personalized protocol document (similar to [[supplements-stack]] but ind
 
 **For Open Enzyme project, in priority order:**
 
-1. **Use Claude (Coefficient) first** — for literature synthesis, protocol generation, safety assessment, experiment design (most accessible, free or cheap, high quality)
+1. **Open source tools first** — ColabFold, ESM-2, SPURS/RaSP, CodonTransformer, DiffDock. Free, available now, quantitative outputs. These cover structure prediction, variant scoring, stability prediction, codon optimization, and docking — the core computational workflow.
 
-2. **Try GPT-Rosalind next** — if you can get access; excellent for codon optimization, expression cassette design, enzyme-specific queries (research preview, may require application)
+2. **Use Claude for reasoning and synthesis** — literature mining, protocol generation, experimental design, safety assessment, cross-domain reasoning. Claude is the connective tissue that interprets open source tool outputs and makes design decisions.
 
-3. **Use Amazon Bio Discovery** — for strain fitness predictions and multi-gene expression modeling (strategic use, avoids wasted lab work)
+3. **Try GPT-Rosalind if you get access** — deeper biological reasoning for complex design questions. Apply via the Trusted Access Program; the open source + therapeutic enzyme + citizen science angle is a strong public-benefit argument.
+
+4. **Use Amazon Bio Discovery strategically** — the free trial (5 experiments) is worth using for lab-in-the-loop integration (routing to Twist/Ginkgo). The $486/month ongoing cost is harder to justify when open source covers most model capabilities.
 
 **Monthly cost estimate:**
-- Claude API (moderate use): $20–50
-- GPT-Rosalind (if access granted): $0–100/month (TBD pricing)
-- Amazon Bio Discovery (academic tier): Free
+- Open source tools (Google Colab free tier): $0
+- Google Colab Pro (if needed for GPU): $10/month
+- Claude: $20 (subscription)
+- GPT-Rosalind (if access granted): $0 (research preview)
+- Amazon Bio Discovery: $0 (free trial) or $486/month (probably not needed)
 
-**Total:** Negligible compared to actual wet-lab costs.
+**Total:** $20-30/month covers the full computational stack.
 
 ---
 
