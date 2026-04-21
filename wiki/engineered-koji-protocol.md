@@ -106,7 +106,7 @@ Promoter, signal peptide, CDS, terminator, selectable marker. Every component is
 
 ### Cassette Architecture
 
-```
+```text
 5' ──┤ PamyB ├──┤ SPamyB ├──┤ uaZ CDS (codon-opt, ΔPTS1) ├──┤ TtrpC ├── 3'
 
 ┌─────────────────────────────────────────────────────────────────────────┐
@@ -292,7 +292,7 @@ Growing the engineered strain using traditional koji methods—upgraded for maxi
 
 ### Traditional Koji Process (Adapted for Uricase Co-Production)
 
-```
+```text
 DAY 0   Wash & soak polished rice (4–12 hours)
    │
    ▼
@@ -427,7 +427,7 @@ This is the biological principle that makes the whole approach viable: the intes
 
 The **ABCG2 transporter** (also called BCRP, breast cancer resistance protein) is a urate transporter expressed on the apical membrane of intestinal epithelial cells. It actively pumps urate from the blood side into the gut lumen. ABCG2 is responsible for approximately one-third of total urate excretion in humans. Genetic variants in ABCG2 (e.g., Q141K, rs2231142) are among the strongest known risk factors for gout—because reduced ABCG2 function means less intestinal urate excretion.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                        GUT LUMEN                                │
 │                                                                 │

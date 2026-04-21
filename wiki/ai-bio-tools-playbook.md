@@ -477,7 +477,7 @@ These prompts are designed for GPT-Rosalind but will also work with GPT-5.4 + th
 
 > **Use This First** — Paste this at the start of every Rosalind / GPT-5.4 session to ground the model in your project's constraints and goals.
 
-```
+```text
 I'm working on Open Enzyme, an open source project engineering food-safe organisms to produce therapeutic enzymes for home use.
 
 Key constraints:
@@ -503,7 +503,7 @@ This is citizen science with real scientific rigor. I need answers that are spec
 >
 > **How to evaluate:** Check that it cites real enzymes with real UniProt/PDB accession numbers. Look for specific activity values in the literature. Be skeptical of claims about "oral delivery" performance unless backed by in vivo data.
 
-```
+```text
 Compare the following uricase (urate oxidase) variants for oral therapeutic use in the context of the Open Enzyme project:
 
 1. Aspergillus flavus uricase (rasburicase parent)
@@ -540,7 +540,7 @@ Provide your recommendation ranked by suitability for oral delivery from enginee
 >
 > **How to evaluate:** Cross-reference the output against the *S. cerevisiae* codon usage table. Check that the protein sequence is unchanged. Run the optimized sequence through a secondary tool (GenScript, IDT) for comparison.
 
-```
+```text
 I need to optimize the uaZ gene (Aspergillus flavus urate oxidase, UniProt P78609) for expression in Saccharomyces cerevisiae.
 
 Please provide:
@@ -573,7 +573,7 @@ Please provide:
 >
 > **How to evaluate:** Cross-reference predicted cleavage sites against known pepsin/trypsin specificity rules. Check cited stability data against published thermal/pH denaturation studies for uricases.
 
-```
+```text
 Analyze the GI tract survival profile of [SELECTED URICASE VARIANT] for oral delivery as a food-grade therapeutic.
 
 Model the transit through each GI compartment:
@@ -616,7 +616,7 @@ OVERALL ASSESSMENT:
 >
 > **How to evaluate:** Check that suggested mutations are physically plausible (right amino acid type, correct residue numbering). Look up whether any of the suggested mutations have been tested experimentally. Be especially skeptical of predicted fold-improvement numbers.
 
-```
+```text
 Design a protein engineering strategy for [SELECTED URICASE VARIANT] optimized for oral delivery from S. cerevisiae. I need mutations that simultaneously improve:
 
 1. ACID STABILITY (primary objective):
@@ -657,7 +657,7 @@ e) Any mutations you considered and rejected, with explanation
 >
 > **What to expect back:** A ranked comparison of promoter and signal peptide options with predicted expression levels. The model should reason about the tradeoff between secretion (better substrate access) and intracellular expression (better protection).
 
-```
+```text
 Design the optimal expression cassette for producing [SELECTED URICASE VARIANT] in Saccharomyces cerevisiae for oral therapeutic use.
 
 PROMOTER SELECTION — Compare and recommend:
@@ -702,7 +702,7 @@ With predicted expression level in mg/L and reasoning for each choice.
 >
 > **What to expect back:** *A. oryzae*-specific construct design addressing the unique biology of filamentous fungi vs. yeast. Different codon bias, different promoter systems, different secretion machinery.
 
-```
+```text
 Design a gene construct for expressing [SELECTED URICASE VARIANT] in Aspergillus oryzae (koji mold) for oral therapeutic use as a fermented food product.
 
 PROMOTER COMPARISON:
@@ -741,7 +741,7 @@ DUAL-USE POTENTIAL:
 >
 > **What to expect back:** A screen of food-safe compounds with predicted binding affinities. Be skeptical of binding affinity predictions — they're notoriously unreliable without experimental validation. Focus on compounds where there's already experimental evidence of NLRP3 inhibition.
 
-```
+```text
 Screen for food-derived or naturally occurring compounds that inhibit the NLRP3 inflammasome, with a focus on compounds that could be produced by engineered S. cerevisiae or A. oryzae.
 
 KNOWN NLRP3 INHIBITORS (benchmarks):
@@ -779,7 +779,7 @@ Also flag: Are there any NLRP3 inhibitors that A. oryzae already produces natura
 >
 > **What to expect back:** Strain comparisons with specific enzyme activity data, plus fermentation optimization parameters. Much of this data exists in the sake/miso fermentation literature.
 
-```
+```text
 Optimize Aspergillus oryzae strain selection and fermentation conditions for maximum production of digestive enzymes relevant to exocrine pancreatic insufficiency (EPI).
 
 TARGET ENZYME PROFILE (in order of importance for EPI):
@@ -827,7 +827,7 @@ STRAIN IMPROVEMENT (if needed):
 
 **Prompt: Thesis Validation**
 
-```
+```text
 Critically evaluate the Open Enzyme project thesis. I want honest assessment, not encouragement.
 
 CORE THESIS: Engineering GRAS organisms (S. cerevisiae, A. oryzae) to produce uricase for oral delivery as a food product can meaningfully reduce serum uric acid in gout patients through gut-lumen degradation of uric acid secreted via the ABCG2 transporter.
@@ -865,7 +865,7 @@ Rate the overall project feasibility on a scale of 1-10 with explicit assumption
 
 **Prompt: Risk Assessment**
 
-```
+```text
 What are the top 10 risks most likely to kill the Open Enzyme project, ranked by (probability × impact)?
 
 For each risk:
@@ -880,7 +880,7 @@ Also: What am I NOT thinking about? What failure mode would a pharma R&D team im
 
 **Prompt: Feasibility Rating**
 
-```
+```text
 Rate the feasibility of engineering S. cerevisiae to express A. flavus uricase at therapeutic levels for oral delivery.
 
 Break this into sub-problems and rate each 1-10:

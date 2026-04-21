@@ -173,7 +173,7 @@ These are the same enzymes in commercial pancreatic enzyme supplements like Creo
 
 The standard expression cassette for uricase in koji:
 
-```
+```text
 5' ──┤ PamyB ├──┤ SPamyB ├──┤ uaZ CDS (Δ PTS1, codon-opt) ├──┤ TtrpC ├── 3'
 ```
 

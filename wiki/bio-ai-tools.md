@@ -107,7 +107,7 @@ Think of it: regular GPT-5.4 has read every biology paper. Rosalind was trained 
 
 #### Prompt 1: Codon Optimization for Target Organism
 
-```
+```text
 You are a synthetic biology expert. I need to optimize the A. flavus uricase gene 
 (GenBank X61766.1, 906 bp coding sequence) for expression in Saccharomyces cerevisiae.
 
@@ -131,7 +131,7 @@ Output format:
 
 #### Prompt 2: Promoter and Regulatory Element Design
 
-```
+```text
 Design an expression cassette for A. flavus uricase in S. cerevisiae.
 
 Requirements:
@@ -160,7 +160,7 @@ Output:
 
 #### Prompt 3: Literature Mining for Enzyme Variants
 
-```
+```text
 I need alternative uricase genes that could express well in Saccharomyces cerevisiae.
 
 Known options:
@@ -188,7 +188,7 @@ Output table:
 
 #### Prompt 4: Transformation Strategy Optimization
 
-```
+```text
 I'm transforming S. cerevisiae with a new uricase expression construct.
 
 Goal: High transformation efficiency (>100 transformants per μg DNA) with stable integrants.
@@ -219,7 +219,7 @@ Output:
 
 #### Prompt 5: Enzyme Activity Prediction and Assay Design
 
-```
+```text
 I've successfully expressed A. flavus uricase in S. cerevisiae. Now I need to assay activity.
 
 Enzyme: Urate oxidase (uricase)
@@ -255,7 +255,7 @@ Output:
 
 #### Prompt 6: Fermentation Optimization
 
-```
+```text
 I have engineered S. cerevisiae expressing uricase. Now I need to ferment it for product.
 
 Application: Daily oral supplement (lyophilized yeast powder)
@@ -390,7 +390,7 @@ This is crucial for [[engineered-koji-protocol]] design—too much uricase suppr
 
 ### Example Amazon Query
 
-```
+```text
 Model Name: StrainFitness
 
 Input:
@@ -435,7 +435,7 @@ Integrated into Claude API (available now for enterprise customers; roadmap for 
 
 **Prompt to Claude:**
 
-```
+```text
 Synthesize a comprehensive map of every natural compound and approved drug that 
 inhibits the NLRP3 inflammasome. For each, provide:
 1. Mechanism (which chokepoint in the NLRP3 pathway?)
@@ -460,7 +460,7 @@ Output: Structured table with ranking by evidence strength
 
 **Prompt to Claude:**
 
-```
+```text
 Generate a complete, step-by-step protocol for:
 1. Cloning the A. flavus uaZ uricase gene into an A. oryzae expression vector
 2. Transformation of A. oryzae protoplasts
@@ -486,7 +486,7 @@ Output: Publication-quality protocol document (SOP format)
 
 **Prompt to Claude:**
 
-```
+```text
 I'm proposing to engineer S. cerevisiae with:
 - A. flavus uricase gene (same as in rasburicase drug)
 - Chromosomal integration (one copy)
@@ -517,7 +517,7 @@ Output: Safety assessment document (white paper format) with:
 
 **Prompt to Claude:**
 
-```
+```text
 Generate a personalized anti-gout supplement stack for a 55-year-old male with:
 - Serum uric acid: 8.2 mg/dL
 - Recent gout flare (ankle, resolved but recurrent)

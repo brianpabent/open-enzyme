@@ -199,7 +199,7 @@ graph TB
 - Prevents SIBO; supports barrier homeostasis
 
 ### 5. **Combinatorial Stack** (Full Gout Resolution)
-```
+```text
 Engineered Uricase (S. cerevisiae)
     ↓
 Gut-Lumen Sink (enzymatic uric acid ↓)

@@ -54,7 +54,7 @@ Let's trace both threads and see where they tangle.
 
 In almost every other mammal on Earth, the metabolic pathway for purines ends cleanly. Purines (from DNA turnover, from the steak you ate) get broken down into uric acid, and then an enzyme called `uricase` converts uric acid into allantoin — a harmless, highly soluble molecule that your kidneys flush out without complaint.
 
-```
+```text
 Purines → Hypoxanthine → [xanthine oxidase] → Uric Acid → [uricase] → Allantoin ✗
 ```
 

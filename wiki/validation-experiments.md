@@ -495,7 +495,7 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ## Cross-Experiment Dependencies and Sequencing
 
-```
+```text
 Phase 1 (In Vitro)
 ├─ 1.1: Gene performance [weeks 1-6] ─────┬─→ 1.2, 1.3, 1.5, 1.6
 ├─ 1.2: Secretion vs. intracellular ──────┤

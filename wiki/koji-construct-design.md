@@ -174,7 +174,7 @@ If home fermentation environments have unstable temperatures (< 28°C or > 35°C
 
 ### Single-Gene Construct (Minimal, High Uricase Yield)
 
-```
+```text
 [Promoter: amyB] — [RBS] — [Signal Peptide: amyB SP] — [A. flavus uricase, codon-optimized] — [Terminator: amyB] — [Selection marker: niaD or pyrG]
 ```
 
@@ -215,7 +215,7 @@ If home fermentation environments have unstable temperatures (< 28°C or > 35°C
 
 If the goal is to maintain native A. oryzae amylase/protease production while adding uricase:
 
-```
+```text
 [amyB promoter] — [amyB SP] — [A. flavus uricase, optimized] — [amyB terminator]
 [—— Spacer (neutral DNA, 500 bp) ——]
 [glaA promoter] — [glaA SP] — [Native A. oryzae glucoamylase, wild-type] — [glaA terminator] — [niaD marker]
@@ -346,7 +346,7 @@ If initial yields are lower than 40 mg/g:
 ### A. flavus Uricase Native Sequence (Native, Low GC)
 
 *Example of first 100 bp (33 amino acids from A. flavus genomic uricase):*
-```
+```text
 atgtttccgggtcgtcgcaagataaattcaaaaaactgtaccgcgccggatgcgaaaatggtccgc...
 Met  Phe  Pro  Gly  Arg  Arg  Lys  Ile  Asn  Ser  Lys  Lys  Leu  Tyr  Arg  Ala  Gly  Cys  Glu  Asn  Gly  Pro  Arg...
 (GC content: ~37–40% in native A. flavus uricase)
@@ -354,7 +354,7 @@ Met  Phe  Pro  Gly  Arg  Arg  Lys  Ile  Asn  Ser  Lys  Lys  Leu  Tyr  Arg  Ala  
 
 ### After A. oryzae Codon Optimization (GC ~48–52%)
 
-```
+```text
 atgttcccgggacgtcgcaagatcaactccaagaagctgtacagggccggatgcgagaaatggtccgc...
 Met  Phe  Pro  Gly  Arg  Arg  Lys  Ile  Asn  Ser  Lys  Lys  Leu  Tyr  Arg  Ala  Gly  Cys  Glu  Asn  Gly  Pro  Arg...
 (GC content: ~48–52%, matching A. oryzae preference)

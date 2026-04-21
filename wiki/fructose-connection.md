@@ -17,7 +17,7 @@ Fructose is the hidden accelerant of gout. Unlike glucose, fructose metabolism b
 
 ### Step 1: Unregulated Phosphorylation
 
-```
+```text
 Fructose
    ↓
 Fructokinase (KHK) — uses ATP, no negative feedback
@@ -37,7 +37,7 @@ Unlike glucose metabolism (which uses hexokinase and has tight feedback inhibiti
 
 ### Step 2: ATP Depletion → AMP Accumulation
 
-```
+```text
 ATP → ADP → AMP (accumulates due to phosphate depletion)
 
 Normal situation:
@@ -57,7 +57,7 @@ When intracellular AMP levels rise, the enzyme **AMP deaminase (AMPD)** activate
 
 ### Step 3: Purine Cascade to Uric Acid
 
-```
+```text
 IMP (inosine monophosphate) — accumulated from AMP deamination
    ↓
 Inosine (dephosphorylation)
@@ -78,7 +78,7 @@ This cascade generates **new purines from scratch**, not just degrading existing
 ## The Key Insight: No Regulatory Braking System
 
 **Glucose:**
-```
+```text
 Glucose
    ↓
 Hexokinase (regulated, has negative feedback from glucose-6-phosphate)
@@ -87,7 +87,7 @@ Controlled entry into glycolysis
 ```
 
 **Fructose:**
-```
+```text
 Fructose
    ↓
 Fructokinase (unregulated, no feedback inhibition)
@@ -134,7 +134,7 @@ Around 15–20 million years ago, the warm, fruit-rich tropical forests of Europ
 
 Here's the mechanism:
 
-```
+```text
 Uric acid (elevated after fructose) activates fructokinase
                                 ↓
                     Promotes de novo lipogenesis from fructose

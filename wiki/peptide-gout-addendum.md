@@ -444,7 +444,7 @@ One practical question: how do you use these when a flare hits?
 
 If you went all-in (which is aggressive and entirely your call):
 
-```
+```text
 Morning (daily):
   BPC-157 nasal spray — systemic anti-inflammatory (your current routine)
   BPC-157 oral — gut barrier support / intestinal uric acid excretion

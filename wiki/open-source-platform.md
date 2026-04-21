@@ -84,7 +84,7 @@ This is citizen science, self-experimentation, and open knowledge sharing. We do
 
 Each strain in the library follows this documentation format:
 
-```
+```text
 strains/
 ├── uricase-yeast/
 │   ├── README.md (overview, purpose, key claims)
@@ -145,7 +145,7 @@ A parallel data directory logs:
 - Safety observations
 - Manufacturing notes (scalability, shelf life, contamination patterns)
 
-```
+```text
 validation_data/
 ├── uricase-yeast/
 │   ├── activity_assays/ (institution, date, method, results)

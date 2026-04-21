@@ -77,14 +77,14 @@ These rare codons are associated with tRNAs expressed at low levels during norma
 3. **Three-nucleotide GCN periodicity in initial codons:** S. cerevisiae high-expression genes exhibit a repeating GCN pattern in the ramp (codons 2–15), which aids ribosomal footprinting without severe structure formation (In Vitro: GCN Periodicity in Yeast, PMC4005662).
 
 **Example optimization:** If the A. flavus uricase start region is:
-```
+```text
 5′-ATG GCC GGC GCC GGC...
     Met Ala Gly Ala Gly...
 ```
 **Rare codons (GCC, GGC) with high GC density → potential structure formation.**
 
 Optimized for S. cerevisiae with ramp structure consideration:
-```
+```text
 5′-ATG GCT GGT GCC GGA...  (replacing 2nd & 3rd codons with A/T-rich alternatives)
     Met Ala Gly Ala Gly...
 ΔG ≈ −2 kcal/mol (weakly stable)
@@ -392,7 +392,7 @@ Optimized for S. cerevisiae with ramp structure consideration:
 #### 2.3.1 Secretion Strategy: α-Factor Prepro Signal
 
 **Construct:**
-```
+```text
 Promoter → [α-Factor Prepro (85 aa)] → [Uricase (330 aa)] → Terminator
 Total: ~1245 bp coding
 ```
@@ -432,7 +432,7 @@ Total: ~1245 bp coding
 #### 2.3.2 Intracellular Expression (No Signal Peptide)
 
 **Construct:**
-```
+```text
 Promoter → [Uricase (330 aa)] → Terminator
 Total: ~990 bp coding
 ```
@@ -521,7 +521,7 @@ Total: ~990 bp coding
 
 #### Recommended Cassette (Primary: Cytoplasmic Uricase, High Expression)
 
-```
+```text
 5′─ [Promoter: TDH3p (400–500 bp)] ─ [RBS: GCGAATAAA or native ATG] ─ 
     [Codon-Optimized uaZ (990 bp)] ─ [Terminator: ADH1t or CPS1t (300–400 bp)] ─3′
 
@@ -574,7 +574,7 @@ Steady-state mRNA copies: 5–20 per cell
 
 #### Final Recommended Cassette (Detailed Schematic)
 
-```
+```text
 EXPRESSION CASSETTE: uaZ/uricase (S. cerevisiae, Cytoplasmic, Constitutive)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -636,7 +636,7 @@ OPTIMIZATIONS & NOTES:
 #### Option A: Inducible (GAL1p-based) for Biphasic Fermentation
 
 **Construct:**
-```
+```text
 5′─ [GAL1p: 800 bp] ─ [ATG] ─ [uaZ: 990 bp] ─ [ADH1t: 350 bp] ─3′
 ```
 
@@ -664,7 +664,7 @@ OPTIMIZATIONS & NOTES:
 #### Option B: Lower-Cost Constitutive (ADH1p + CPS1t) for Cost-Conscious Optimization
 
 **Construct:**
-```
+```text
 5′─ [ADH1p: 400 bp] ─ [ATG] ─ [uaZ: 990 bp] ─ [CPS1t: 350 bp] ─3′
 ```
 
@@ -785,7 +785,7 @@ OPTIMIZATIONS & NOTES:
 ### Step 2: Request Codon Optimization from IDT or Twist
 
 **Order specifications:**
-```
+```text
 Gene: A. flavus uaZ (UniProt P78609)
 Length: ~990 bp
 Host organism: Saccharomyces cerevisiae
@@ -812,7 +812,7 @@ Delivery format: FASTA sequence
 ### Step 4: Plasmid Design
 
 **Assemble expression cassette:**
-```
+```text
 Plasmid: pSC-uaZ (example name)
 Size: ~6.5 kb
 

@@ -17,7 +17,7 @@ Gout is the clinical endpoint of a multi-step biochemical cascade. Understanding
 
 ### The Degradation Pathway
 
-```
+```text
 Purines (from DNA/RNA turnover or dietary intake)
     ↓ (adenosine deaminase, nucleotidases)
 Hypoxanthine
@@ -109,7 +109,7 @@ These are "danger signals" recognized by the immune system.
 
 ### The NLRP3 Inflammasome Assembly
 
-```
+```text
 MSU Crystal Phagocytosis
     ↓
 Lysosomal damage → K⁺ efflux + ROS generation
@@ -304,7 +304,7 @@ Gout is not isolated; it's embedded in broader metabolic dysfunction:
 
 ## Summary Diagram
 
-```
+```text
 PURINE INTAKE → Purine Metabolism (XO) → URIC ACID
                                             ↓
                                     SERUM URIC ACID

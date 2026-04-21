@@ -1,10 +1,10 @@
 ---
-title: References
+title: Citations
 date: 2026-04-21
-tags: [references, bibliography, papers]
+tags: [citations, references, bibliography, papers]
 ---
 
-# References
+# Citations
 
 Core papers cited across the Open Enzyme research library. Full text and abstracts are stored in `reference/papers/` in the project repository.
 
