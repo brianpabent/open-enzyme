@@ -14,7 +14,7 @@ Two kinds of content: **living** (the daemon reads AND writes) and **canonical**
 - `wiki/synthesis.md` — cross-doc connections, contradictions, proposed experiments. This is the **action queue**: the daemon prepends new findings here after Pass 2; Brian prunes by deleting bullets he's acted on. Never delete or modify existing sections in this file — only prepend.
 - `wiki/GRAPH.md` — Mermaid concept graph. Updated as concepts and relationships change.
 - `index.md` (repo root) — the dashboard. Updated when new pages are created or when the platform thesis / cheapest-experiments section changes meaningfully.
-- `ai-analysis/*.md` — eight April 2026 analyses (01–08) being curated file-by-file into `wiki/`. Still watched; edits here trigger sweeps. Also: `ai-analysis/SWEEP-LOG.md` (daemon's own log — see Pass 3).
+- `logs/sweep-log.md` — daemon's own log (see Pass 3).
 
 ### Canonical — read-only
 
@@ -22,7 +22,7 @@ Two kinds of content: **living** (the daemon reads AND writes) and **canonical**
 - `*.html` at the repo root — published formatted versions. **Do not modify.**
 - `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*` — do not modify.
 
-The only files the daemon writes: `wiki/*.md`, `wiki/synthesis.md`, `wiki/GRAPH.md`, `index.md`, `ai-analysis/SWEEP-LOG.md`.
+The only files the daemon writes: `wiki/*.md`, `wiki/synthesis.md`, `wiki/GRAPH.md`, `index.md`, `logs/sweep-log.md`.
 
 ---
 
@@ -32,7 +32,7 @@ Embed findings from the trigger file into every affected wiki page.
 
 1. **Read the trigger file.** Extract key findings, new claims, new concepts, and the evidence level behind each.
 
-2. **Build an impact list.** Grep across `wiki/` and `ai-analysis/` for the concept names, compounds, organisms, and mechanisms mentioned in the trigger file. List every affected page before editing.
+2. **Build an impact list.** Grep across `wiki/` for the concept names, compounds, organisms, and mechanisms mentioned in the trigger file. List every affected page before editing.
 
 3. **Update each affected `wiki/*.md` page:**
    - Update existing claims inline when the trigger file contradicts or significantly augments them. Rewrite the sentence, don't just append a contradiction note to the paragraph.
@@ -60,7 +60,7 @@ Embed findings from the trigger file into every affected wiki page.
 
 With knowledge freshly propagated, read across the full corpus and look for connections nobody has stated yet.
 
-**Read broadly:** all of `wiki/` (including the current `wiki/synthesis.md` — this is how insights compound across sessions), all of `ai-analysis/`, and anything in `reference/` if present.
+**Read broadly:** all of `wiki/` (including the current `wiki/synthesis.md` — this is how insights compound across sessions), and anything in `reference/` if present.
 
 Ask: **"What new ideas, connections, or hypotheses emerge from the combination that aren't in any single document?"**
 
@@ -105,7 +105,7 @@ The smartest colleague who just read everything. Bold proposals, clearly labeled
 
 ## PASS 3 — Log
 
-Append to `ai-analysis/SWEEP-LOG.md` (create it with an H1 heading if it doesn't exist):
+Append to `logs/sweep-log.md` (create it with an H1 heading if it doesn't exist):
 
 ```markdown
 ## Sweep: <YYYY-MM-DD HH:MM>

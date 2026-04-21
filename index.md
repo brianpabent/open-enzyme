@@ -89,18 +89,23 @@ These are the long-form research documents that the shorter concept pages above 
 - **[Synthesis (current)](wiki/synthesis.md)** — Cross-doc connections, contradictions, and proposed experiments. The sweep daemon prepends new findings here after each save. **This is the action queue — read it, then prune what you've acted on.**
 - **[Concept Graph](wiki/GRAPH.md)** — Mermaid diagram of all concept relationships (produces / inhibits / activates / requires / synergizes / degrades)
 
-### AI Analysis (April 2026)
+### Engineering & Design (deep dives)
 
-Eight interdisciplinary analyses of engineered microbe strains. Source material for the current synthesis.
+Detailed technical analyses for the uricase and koji engineering tracks.
 
-- **[01 — Uricase Variant Selection](ai-analysis/01-uricase-variant-selection.md)** — Six uricase variants evaluated; *A. flavus* primary, *A. globiformis* secondary. Rasburicase FDA precedent. GI stability engineering roadmap.
-- **[02 — GI Survival Prediction](ai-analysis/02-gi-survival-prediction.md)** — *A. flavus* uricase transit model: 15–25% baseline survival, 40–50% with enteric coating + disulfide engineering.
-- **[03 — Protein Engineering Strategy](ai-analysis/03-protein-engineering-strategy.md)** — Three mutation tiers (SB-1, BAL-1, OPT-1) targeting acid stability, protease resistance, yield.
-- **[04 — Codon Optimization & Expression Cassette](ai-analysis/04-codon-optimization-expression-cassette.md)** — *S. cerevisiae* cassette: TDH3p constitutive, intracellular uricase, ADH1 terminator. Predicted yield 800–1200 mg/L.
-- **[05 — Cross-Validation (Thesis Stress Test)](ai-analysis/05-cross-validation.md)** — Risk matrix; NLRP3 suppression confirmed; variant redundancy tested; ALLN-346 clinical bridge.
-- **[06 — Koji Construct Design](ai-analysis/06-koji-construct-design.md)** — *A. oryzae* uricase via amyB promoter (starch-inducible, 6–10× baseline). Expected 40–80 mg/g koji.
-- **[07 — NLRP3 Inhibitor Screen](ai-analysis/07-nlrp3-inhibitor-screen.md)** — Top candidates: ursolic acid (8.59 g/L yeast), quercetin (930 mg/L), carnosine. Kojic acid native production flagged (3–5 g/L).
-- **[08 — Digestive Enzyme Optimization](ai-analysis/08-digestive-enzyme-optimization.md)** — RIB40 strain; lipase 1813–2280 U/g koji; rice bran substrate optimal; CRISPR tglA target. 10–15 g koji ≈ Creon equivalence.
+**Uricase / *S. cerevisiae* track:**
+- **[Uricase Variant Selection](wiki/uricase-variant-selection.md)** — Six variants evaluated; *A. flavus* primary, *A. globiformis* secondary. Rasburicase FDA precedent. Engineering roadmap.
+- **[GI Survival Prediction](wiki/gi-survival-prediction.md)** — Transit model: 15–25% baseline survival → 40–50% with enteric coating + disulfide engineering.
+- **[Protein Engineering Strategy](wiki/protein-engineering-strategy.md)** — Three mutation tiers (SB-1 / BAL-1 / OPT-1) for acid stability, protease resistance, and catalytic retention. Includes full mutation lookup table.
+- **[Codon Optimization & Expression Cassette](wiki/codon-optimization-expression-cassette.md)** — *S. cerevisiae* cassette: TDH3p constitutive promoter, intracellular uricase, ADH1 terminator. Predicted yield 800–1,200 mg/L.
+
+**Koji / *A. oryzae* track:**
+- **[Koji Construct Design](wiki/koji-construct-design.md)** — *A. oryzae* uricase via amyB promoter (starch-inducible, 6–10× baseline). Expected 40–80 mg/g koji.
+- **[Digestive Enzyme Optimization](wiki/digestive-enzyme-optimization.md)** — RIB40 strain; lipase 1,813–2,280 U/g koji; rice bran optimal substrate; CRISPR tglA target. 10–15 g koji ≈ Creon equivalence.
+- **[NLRP3 Inhibitor Screen](wiki/nlrp3-inhibitor-screen.md)** — Top candidates: ursolic acid (8.59 g/L yeast), quercetin (930 mg/L), carnosine. Kojic acid native production (3–5 g/L) flagged as free bonus.
+
+**Cross-platform:**
+- **[Cross-Validation (Thesis Stress Test)](wiki/cross-validation.md)** — Risk matrix across all tracks; NLRP3 suppression confirmed; variant redundancy tested; ALLN-346 clinical bridge.
 
 ---
 
@@ -119,7 +124,7 @@ Eight interdisciplinary analyses of engineered microbe strains. Source material 
 ## Reference & Conventions
 
 - **`wiki/`** — Living research documents. Updated as new findings land. Written in markdown with standard links (`[text](./path.md)`) so they render on GitHub.
-- **`ai-analysis/`** — Source material for the current synthesis. Being curated file-by-file.
+- **`logs/`** — Sweep daemon log (`logs/sweep-log.md`). One entry per triggered sweep.
 - **`reference/`** — Canonical read-only material (published papers, external reports, vendor data). The sweep daemon reads but never writes here.
 - **Evidence levels** on every claim: `Clinical Trial`, `Animal Model`, `In Vitro`, or `Mechanistic Extrapolation`.
 - **Inline provenance** on new content: `(source: <filename>)`.

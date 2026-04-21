@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # wiki-update.sh — run a two-pass doc sweep for a changed file.
 #
-# Pass 1 propagates the change into affected docs/wiki pages.
-# Pass 2 synthesizes new connections across the whole corpus and writes
-# ai-analysis/SYNTHESIS-[date].md. The daemon commits once at the end.
+# Pass 1 propagates the change into affected wiki pages.
+# Pass 2 prepends new cross-doc connections to wiki/synthesis.md.
+# Pass 3 logs to logs/sweep-log.md. Pass 4 optionally commits.
 #
 # The actual sweep logic lives in scripts/sweep-prompt.md. This script just
 # concatenates that prompt with trigger metadata and hands it to claude.
 #
 # Usage:
-#   ./scripts/wiki-update.sh docs/some-doc.md
-#   ./scripts/wiki-update.sh ai-analysis/SYNTHESIS-2026-04-21.md
-#   ./scripts/wiki-update.sh docs/some-doc.md --no-commit
+#   ./scripts/wiki-update.sh wiki/some-page.md
+#   ./scripts/wiki-update.sh wiki/synthesis.md
+#   ./scripts/wiki-update.sh wiki/some-page.md --no-commit
 #
 # Requires: claude CLI (Claude Code) in PATH
 
@@ -35,7 +35,7 @@ done
 
 if [[ -z "$DOC" ]]; then
   echo "Usage: $0 <path> [--no-commit]" >&2
-  echo "  e.g. $0 docs/new-compound.md" >&2
+  echo "  e.g. $0 wiki/new-compound.md" >&2
   exit 1
 fi
 
@@ -48,11 +48,11 @@ if [[ ! -f "$DOC" ]]; then
   exit 1
 fi
 
-# Only accept files under the knowledge-base roots
+# Only accept files under the knowledge-base root
 case "$DOC" in
-  wiki/*|ai-analysis/*) ;;
+  wiki/*) ;;
   *)
-    echo "error: path must be under wiki/ or ai-analysis/ — got: $DOC" >&2
+    echo "error: path must be under wiki/ — got: $DOC" >&2
     exit 1
     ;;
 esac

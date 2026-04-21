@@ -33,8 +33,8 @@ Prefer standard markdown links (`[text](./path.md)`) over `[[wiki-links]]` in an
 ### index.md (repo root) — Dashboard
 Top of file: current platform thesis, synthesis queue pointer, cheapest-next-experiments table. Bottom: concept index + primary-research doc list + AI-analysis links. This is the "what should I look at?" landing page.
 
-### ai-analysis/ — Being curated
-Eight April 2026 interdisciplinary analyses (01–08) + `SWEEP-LOG.md` (daemon's log). Being merged into `wiki/` file-by-file. Still watched by the sweep daemon.
+### logs/ — Sweep log
+`logs/sweep-log.md` — one entry per daemon-triggered sweep (date, trigger file, Pass 1 updates, Pass 2 synthesis summary). Append-only; the daemon writes it, Brian reads it.
 
 ### reference/ — Canonical (read-only)
 Published papers, external reports, vendor data, machine-generated output (under `reference/generated/`). Never modified by the daemon or by AI edits. Cite as provenance.
@@ -151,7 +151,7 @@ These are frequently cited or mechanistically central. Use as touchstones:
 
 ## Workflow for Updates
 
-Most of this runs automatically via the sweep daemon — when you save a file under `wiki/` or `ai-analysis/`, `scripts/wiki-watch.sh` triggers `scripts/sweep-prompt.md` which propagates findings, synthesizes new connections, logs, and commits. The steps below are what the daemon does, and what you'd do manually if running a sweep yourself.
+Most of this runs automatically via the sweep daemon — when you save a file under `wiki/`, `scripts/wiki-watch.sh` triggers `scripts/sweep-prompt.md` which propagates findings, synthesizes new connections, logs, and commits. The steps below are what the daemon does, and what you'd do manually if running a sweep yourself.
 
 ### When new data emerges:
 
