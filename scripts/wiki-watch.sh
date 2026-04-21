@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-# wiki-watch.sh — watch docs/ for human edits and auto-run the wiki sync.
+# wiki-watch.sh — watch docs/ and ai-analysis/ for human edits and trigger
+# the two-pass doc sweep (wiki-update.sh → sweep-prompt.md).
+#
+# Watches both directories because hand-edits to a synthesis doc in
+# ai-analysis/ should propagate just like edits to primary research in docs/.
+# wiki/ is intentionally NOT watched — it's derived content; letting wiki
+# edits trigger sweeps would create cycles.
 #
 # Filters out changes that came from git (pull, checkout, reset, stash pop,
 # merge, rebase, cherry-pick). Anything already in git history is assumed to
@@ -39,7 +45,7 @@ if ! command -v claude &>/dev/null; then
   exit 1
 fi
 
-log "watching docs/ — human edits trigger wiki sync; git-driven changes are skipped"
+log "watching docs/ and ai-analysis/ — human edits trigger two-pass sweep; git-driven changes are skipped"
 log "  repo:    $REPO_ROOT"
 log "  lock:    $LOCK_FILE"
 [[ -n "$NO_COMMIT_FLAG" ]] && log "  mode:    --no-commit"
@@ -48,7 +54,17 @@ log "  lock:    $LOCK_FILE"
 LAST_PATH=""
 LAST_TIME=0
 
-fswatch -r -e ".*" -i "\.md$" "$REPO_ROOT/docs/" | while IFS= read -r CHANGED_PATH; do
+# Only spin up fswatch on directories that exist (ai-analysis/ may not be present yet)
+WATCH_DIRS=()
+[[ -d "$REPO_ROOT/docs" ]]         && WATCH_DIRS+=("$REPO_ROOT/docs")
+[[ -d "$REPO_ROOT/ai-analysis" ]]  && WATCH_DIRS+=("$REPO_ROOT/ai-analysis")
+
+if [[ ${#WATCH_DIRS[@]} -eq 0 ]]; then
+  log "error: neither docs/ nor ai-analysis/ exists under $REPO_ROOT"
+  exit 1
+fi
+
+fswatch -r -e ".*" -i "\.md$" "${WATCH_DIRS[@]}" | while IFS= read -r CHANGED_PATH; do
   # Deletion or other non-file event → skip
   if [[ ! -f "$CHANGED_PATH" ]]; then
     continue
