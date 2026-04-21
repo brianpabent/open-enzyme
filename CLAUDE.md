@@ -13,7 +13,7 @@ Guidelines for any Claude or AI system working on this project. This document en
 - **Digestive enzymes** (lipase, protease, amylase) — Exocrine pancreatic insufficiency (EPI)
 - **Koji** (A. oryzae) — Natural multi-enzyme producer; genetic engineering for enzyme enhancement
 
-**Team:** 3 Emory PhDs + 1 engineer (CTO background). Audience = PhD-level scientists. No overselling.
+**Team:** Currently just Brian (CTO background). Three Emory PhDs (Rheinallt Jones, Lauren Collier-Hyams, Valerie Jones) are potential collaborators but have full-time jobs — recruiting them is an active project goal. Audience = PhD-level scientists. No overselling.
 
 **Phase:** Research & Design (Phase 0)
 
@@ -21,57 +21,58 @@ Guidelines for any Claude or AI system working on this project. This document en
 
 ## Document Structure
 
-### docs/ — Primary Research Library
-Markdown research documents. **This is the source of truth.** All wiki pages and external materials are synthesized from docs/.
+### wiki/ — Research Library (living)
+All research — long-form primary research docs and shorter synthesized concept pages — lives here side by side. Source of truth. The sweep daemon updates these as new findings land.
 
-- `open-enzyme-vision.md` — North Star: problem statement, insight, platform vision
-- `enzyme-deficit-deep-dive.md` — Epidemiology and clinical burden
-- `gout-deep-dive.md` — Uric acid metabolism, NLRP3, current therapies
-- `engineered-yeast-uricase-proposal.md` — S. cerevisiae uricase engineering
-- `engineered-koji-protocol.md` — A. oryzae multi-enzyme fermentation
-- `nlrp3-exploit-map.md` — NLRP3 inhibition strategies (oridonin, disulfiram, peptides)
-- `blood-barrier-exploits.md` — Intestinal barrier biology and optimization
-- `ai-bio-tools-playbook.md` — Computational strain design and optimization
-- `peptide-gout-addendum.md` — BPC-157, KPV, immunomodulatory peptides
+- `wiki/synthesis.md` — Cross-doc connections, contradictions, proposed experiments. **Action queue.** Daemon prepends new findings after Pass 2; Brian prunes manually.
+- `wiki/GRAPH.md` — Mermaid diagram of all concept relationships.
+- `wiki/[concept].md` — Individual wiki pages. Long-form research (e.g. `gout-deep-dive.md`, `engineered-koji-protocol.md`) and shorter concept pages (`uricase.md`, `nlrp3-inflammasome.md`) are both here. Organize by topic, not by length.
 
-### wiki/ — Synthesized Concept Pages
-Karpathy-style LLM wiki. Each page integrates across multiple docs/ for rapid navigation. Organized by domain.
+Prefer standard markdown links (`[text](./path.md)`) over `[[wiki-links]]` in any file expected to be shared externally — GitHub only renders the standard form.
 
-- **wiki/INDEX.md** — Master concept index (required reading)
-- **wiki/GRAPH.md** — Mermaid diagram of all concept relationships
-- `wiki/[concept].md` — Individual concept pages (uricase, NLRP3, organisms, peptides, inhibitors, etc.)
+### index.md (repo root) — Dashboard
+Top of file: current platform thesis, synthesis queue pointer, cheapest-next-experiments table. Bottom: concept index + primary-research doc list + AI-analysis links. This is the "what should I look at?" landing page.
+
+### ai-analysis/ — Being curated
+Eight April 2026 interdisciplinary analyses (01–08) + `SWEEP-LOG.md` (daemon's log). Being merged into `wiki/` file-by-file. Still watched by the sweep daemon.
+
+### reference/ — Canonical (read-only)
+Published papers, external reports, vendor data, machine-generated output (under `reference/generated/`). Never modified by the daemon or by AI edits. Cite as provenance.
 
 ### *.html — Published Formatted Versions
-Original pretty-printed versions of docs/. **Do not modify.** These are the "published" public face. The markdown is the working knowledge base.
+Original pretty-printed versions of the primary research docs. **Do not modify.** These are the published public face. The markdown is the working knowledge base.
+
+### Git is the revision history
+No inline revision-history sections in documents. Use `git log -p <file>` to see what changed and when. Commit often; commit messages carry the narrative.
 
 ---
 
 ## Core Rules
 
 ### 1. Doc Sweep Rule
-When new information emerges (new research, evidence, design decision), re-evaluate **ALL docs and wiki pages that reference the affected concepts**.
+When new information emerges (new research, evidence, design decision), re-evaluate **ALL wiki pages that reference the affected concepts**. The sweep daemon (`scripts/wiki-watch.sh` + `scripts/sweep-prompt.md`) does this automatically on save — see those files for the full protocol.
 
 Example: If a new NLRP3 inhibitor is discovered, update:
-- docs/nlrp3-exploit-map.md
-- wiki/nlrp3-inflammasome.md
+- wiki/nlrp3-exploit-map.md (primary research)
+- wiki/nlrp3-inflammasome.md (concept page)
 - wiki/GRAPH.md (if mechanism adds new nodes/edges)
-- wiki/INDEX.md (if adding new concept page)
+- index.md (if adding new concept page, or if it shifts the platform thesis)
 
 ### 2. Adding New Research
 
 **Workflow:**
-1. Create new doc in docs/ with `.md` extension
-2. Include frontmatter: `title`, `date`, `tags`, `related`, `sources`
+1. Create new wiki page in `wiki/` with `.md` extension
+2. Include frontmatter: `title`, `date`, `tags` (and `related`, `sources` if you have them)
 3. Write with evidence levels (see Rule 4 below)
-4. Update all relevant wiki pages and [wiki/INDEX.md](wiki/INDEX.md)
-5. Update [wiki/GRAPH.md](wiki/GRAPH.md) if adding new nodes or relationships
-6. Ensure [[wiki-links]] in all documents
+4. Update all relevant wiki pages and `index.md`
+5. Update `wiki/GRAPH.md` if adding new nodes or relationships
+6. Prefer standard markdown links (`[text](./path.md)`); `[[wiki-links]]` also work in Obsidian but don't render on GitHub
 
-**Example:** If adding a doc on "Off-Target Enzyme Activity":
-- Create docs/off-target-assessment.md
-- Link it in [wiki/nlrp3-inflammasome.md](wiki/nlrp3-inflammasome.md) under "Related"
-- Update [wiki/INDEX.md](wiki/INDEX.md) with new concept (new section if needed)
-- Update [wiki/GRAPH.md](wiki/GRAPH.md) to show off-target effects as downstream of enzyme engineering
+**Example:** If adding a page on "Off-Target Enzyme Activity":
+- Create `wiki/off-target-assessment.md`
+- Link it from `wiki/nlrp3-inflammasome.md` under "Related"
+- Update `index.md` with the new concept (new section if needed)
+- Update `wiki/GRAPH.md` to show off-target effects as downstream of enzyme engineering
 
 ### 3. Writing Style
 
@@ -111,27 +112,25 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 ### 5. Cross-References & Links
 
 **In wiki pages:**
-- Use [[wiki-links]] to related concepts: `[[uricase]]`, `[[nlrp3-inflammasome]]`
-- Link to source docs in footer: `See [gout-deep-dive.md](../docs/gout-deep-dive.md)`
+- Prefer standard markdown links: `[uricase](./uricase.md)`, `[NLRP3 inflammasome](./nlrp3-inflammasome.md)`. These render on GitHub.
+- Obsidian-style `[[wiki-links]]` also work in Obsidian but don't render on GitHub. Use sparingly, and only in files you don't expect to share externally.
+- Include YAML frontmatter with `title`, `date`, `tags` (and `related`, `sources` when applicable).
+- Link to `index.md` for the dashboard, `wiki/synthesis.md` for the action queue.
 
-**In docs/ pages:**
-- Include YAML frontmatter with `related:` list and `sources:` list
-- Link to wiki pages in text where relevant: "For more on NLRP3, see [[nlrp3-inflammasome]]"
-
-**In wiki/INDEX.md:**
-- Keep master list of all concepts with one-line descriptions
-- Link to each concept page and its description
+**In index.md:**
+- Keep the dashboard (platform thesis, synthesis queue, cheapest experiments) at the top.
+- Keep the concept/research index below, with one-line descriptions.
 
 **In wiki/GRAPH.md:**
-- Update Mermaid diagram whenever concepts or relationships change
-- Ensure all nodes appear in at least one subgraph
-- Label edges with relationship type (e.g., "produces", "inhibits", "activates")
+- Update Mermaid diagram whenever concepts or relationships change.
+- Ensure all nodes appear in at least one subgraph.
+- Label edges with relationship type (e.g., "produces", "inhibits", "activates").
 
 ### 6. The HTML Files Are Published Versions
 
 - **Do not edit *.html files.** They are the formatted public versions.
-- The markdown (docs/) is the working knowledge base.
-- If edits are needed, edit docs/\*.md first, then republish HTML via external tool.
+- The markdown (`wiki/`) is the working knowledge base.
+- If edits are needed, edit `wiki/*.md` first, then republish HTML via external tool.
 
 ---
 
@@ -152,30 +151,25 @@ These are frequently cited or mechanistically central. Use as touchstones:
 
 ## Workflow for Updates
 
+Most of this runs automatically via the sweep daemon — when you save a file under `wiki/` or `ai-analysis/`, `scripts/wiki-watch.sh` triggers `scripts/sweep-prompt.md` which propagates findings, synthesizes new connections, logs, and commits. The steps below are what the daemon does, and what you'd do manually if running a sweep yourself.
+
 ### When new data emerges:
 
 1. **Determine scope:** Which concepts or mechanisms does this affect?
-   - Example: "New data on BHB + NLRP3" → affects docs/nlrp3-exploit-map.md, wiki/bhb-ketones.md, wiki/GRAPH.md
+   - Example: "New data on BHB + NLRP3" → affects `wiki/nlrp3-exploit-map.md`, `wiki/bhb-ketones.md`, `wiki/GRAPH.md`
 
-2. **Update docs/ first:**
-   - Add new doc or edit existing doc with new information and evidence level
+2. **Update the relevant wiki page(s):**
+   - Add new content or revise existing claims inline with evidence level and inline provenance (`(source: <filename>)`)
    - Update YAML frontmatter if adding cross-references
 
-3. **Update wiki pages:**
-   - Edit affected concept pages in wiki/
-   - Add [[wiki-links]] to related concepts
+3. **Update `index.md`** if a new page was created or the platform thesis shifted.
 
-4. **Update wiki/INDEX.md:**
-   - Add new concept pages if created
-   - Reorganize categories if needed
-
-5. **Update wiki/GRAPH.md:**
+4. **Update `wiki/GRAPH.md`:**
    - Add/modify nodes and edges in Mermaid diagram
    - Ensure relationships are labeled
 
-6. **Verify consistency:**
-   - Check all [[wiki-links]] are bidirectional
-   - Ensure no orphaned concepts in docs/ or wiki/
+5. **Verify consistency:**
+   - Check cross-references resolve
    - Verify evidence levels are tagged throughout
 
 ---
@@ -184,33 +178,32 @@ These are frequently cited or mechanistically central. Use as touchstones:
 
 ### Task: Add a new intervention (e.g., a small-molecule NLRP3 inhibitor)
 
-1. Create `docs/[compound]-mechanism.md` with structure:
+1. Create `wiki/[compound].md` with:
    - Mechanism of action
-   - Evidence (in vitro → animal → clinical)
+   - Evidence (in vitro → animal → clinical) with evidence-level tags
    - Dosing, safety, GI tolerability
-   - Synergies with uricase/barrier repair
+   - Synergies with uricase / barrier repair
 
-2. Create or edit `wiki/[compound].md` with one-sentence hook
-
-3. Update:
-   - wiki/INDEX.md (add to "Small-Molecule Agents" section)
-   - wiki/nlrp3-inflammasome.md (add to related concepts)
-   - wiki/GRAPH.md (add node + edges to NLRP3 and relevant pathways)
+2. Update:
+   - `index.md` (add to the appropriate section)
+   - `wiki/nlrp3-inflammasome.md` (add to related concepts)
+   - `wiki/nlrp3-exploit-map.md` if it fits the exploit map
+   - `wiki/GRAPH.md` (add node + edges to NLRP3 and relevant pathways)
 
 ### Task: Revise a mechanism based on new data
 
-1. Edit the relevant doc(s) in docs/
+1. Edit the relevant wiki page(s)
 2. Update evidence level tags and citations
 3. Re-read all wiki pages that reference this mechanism
 4. Update wiki pages with new understanding
-5. Check wiki/GRAPH.md for any edge changes
+5. Check `wiki/GRAPH.md` for any edge changes
 
-### Task: Ensure a new doc is discoverable
+### Task: Ensure a new page is discoverable
 
-1. Add to wiki/INDEX.md with one-line description
-2. Add [[wiki-links]] in related concept pages
-3. Link the doc in wiki/GRAPH.md (if a new concept)
-4. Include YAML frontmatter in the doc with `related:` and `sources:`
+1. Add to `index.md` with one-line description
+2. Link from related wiki pages using standard markdown links
+3. Add to `wiki/GRAPH.md` if it introduces a new concept or relationship
+4. Include YAML frontmatter with `title`, `date`, `tags` (and `related`, `sources` when applicable)
 
 ---
 
@@ -227,9 +220,9 @@ These are frequently cited or mechanistically central. Use as touchstones:
 ## Questions to Ask When Evaluating New Information
 
 1. **What's the evidence level?** (Clinical, animal, in vitro, mechanistic)
-2. **Does this affect multiple docs/wiki pages?** (Trigger doc sweep rule)
+2. **Does this affect multiple wiki pages?** (Trigger doc sweep rule)
 3. **Are there new concepts?** (Trigger new wiki page creation)
-4. **Are there new relationships?** (Update wiki/GRAPH.md)
+4. **Are there new relationships?** (Update `wiki/GRAPH.md`)
 5. **Are assumptions/limitations stated clearly?** (Maintain rigor)
 6. **Is it PhD-audience appropriate?** (No marketing, honest about unknowns)
 
@@ -237,11 +230,14 @@ These are frequently cited or mechanistically central. Use as touchstones:
 
 ## Version Control & Maintenance
 
-- **Primary source of truth:** docs/
-- **Derived materials:** wiki/ (synthesized from docs/)
-- **Published format:** *.html (do not edit directly)
-- **Metadata:** YAML frontmatter in all .md files
-- **Cross-references:** Use [[wiki-links]] and relative URLs consistently
+- **Source of truth:** `wiki/`
+- **Dashboard:** `index.md` (repo root)
+- **Action queue:** `wiki/synthesis.md`
+- **Canonical material (read-only):** `reference/`
+- **Published format:** `*.html` (do not edit directly)
+- **Metadata:** YAML frontmatter in all `.md` files
+- **Cross-references:** Prefer standard markdown links; Obsidian `[[wiki-links]]` work in Obsidian but not on GitHub
+- **Revision history:** Git. No inline changelogs in documents.
 
 ---
 

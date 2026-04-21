@@ -33,13 +33,13 @@ The key player is the **NLRP3 inflammasome**, a molecular alarm system inside yo
 
 ```mermaid
 graph LR
-    A["MSU Crystals<br/>deposited in joint"] --> B["Phagocytosed by<br/>Macrophages"]
-    B --> C["Lysosomal rupture<br/>K⁺ efflux + ROS"]
-    C --> D["NLRP3 Inflammasome<br/>assembly"]
-    D --> E["Caspase-1 cleaves<br/>pro-IL-1β"]
-    E --> F["Active IL-1β"]
-    F --> G["Massive neutrophil<br/>recruitment"]
-    G --> H["Pain, swelling,<br/>redness, heat"]
+    A[MSU Crystals] --> B[Macrophage phagocytosis]
+    B --> C[Lysosomal rupture]
+    C --> D[NLRP3 assembly]
+    D --> E[Caspase-1 activation]
+    E --> F[Active IL-1β]
+    F --> G[Neutrophil recruitment]
+    G --> H[Pain and swelling]
     
     style A fill:#e6f3ff
     style D fill:#fff4e6
@@ -81,7 +81,7 @@ graph LR
     D --> E["↑ protective NO"]
     
     A --> F["↓ iNOS expression"]
-    F --> G["↓ inflammatory NO<br/>and peroxynitrite"]
+    F --> G["↓ inflammatory NO + peroxynitrite"]
     
     style D fill:#90EE90
     style G fill:#FFB6C6
@@ -102,7 +102,7 @@ It also upregulates growth hormone receptor expression, activates the FAK-paxill
 BPC-157 reduces pro-inflammatory cytokines (TNF-α, IL-6, IL-1β) in various animal models of inflammation and injury. Multiple studies show reduced inflammatory cell infiltration, lower myeloperoxidase (MPO) activity (a marker of neutrophil involvement — exactly what drives gout pain), and reduced oxidative stress markers.
 
 > **Key Insight:** The NLRP3 Question
-> 
+>
 > Here's where we need to be honest. There is no published study that directly tests BPC-157's effect on NLRP3 inflammasome activation, either generally or in the context of MSU crystal-induced inflammation specifically. The anti-inflammatory effects are well-documented in animal models, and they *indirectly* suggest NLRP3 involvement (because reducing IL-1β and neutrophil recruitment are downstream of NLRP3), but nobody has put BPC-157 in a dish with macrophages and MSU crystals and measured inflammasome assembly. That study hasn't been done.
 >
 > What we can say: BPC-157 reduces the same cytokines (IL-1β, TNF-α) that NLRP3 activation produces. It reduces oxidative stress (ROS are a key NLRP3 trigger). And it suppresses iNOS, whose products can activate NLRP3. So the mechanistic argument is reasonable — but it's an inference, not a proven pathway.
@@ -157,11 +157,11 @@ This isn't abstract biochemistry. When tissue is damaged, cells need to migrate 
 
 ```mermaid
 graph LR
-    A["TB-500:<br/>G-actin sequestration"] --> B["Cell migration<br/>+ NF-κB inhibition"]
-    B --> C["Tissue repair<br/>+ Anti-inflammatory"]
+    A[TB-500: G-actin sequestration] --> B[Cell migration + NF-κB inhibition]
+    B --> C[Tissue repair + anti-inflammatory]
     
-    D["BPC-157:<br/>eNOS/VEGFR-2"] --> E["Angiogenesis<br/>+ NO modulation"]
-    E --> F["Vascular repair<br/>+ Anti-inflammatory"]
+    D[BPC-157: eNOS/VEGFR-2] --> E[Angiogenesis + NO modulation]
+    E --> F[Vascular repair + anti-inflammatory]
     
     style A fill:#b3e5fc
     style C fill:#c8e6c9
@@ -231,15 +231,15 @@ KPV has been shown to directly inhibit NLRP3 inflammasome activation in immune c
 graph LR
     A["KPV"] --> B["Signal 1 Block"]
     B --> C["↓ NF-κB"]
-    C --> D["↓ pro-IL-1β transcription<br/>+ ↓ NLRP3 protein"]
+    C --> D["↓ pro-IL-1β + ↓ NLRP3 protein"]
     
     A --> E["Signal 2 Block"]
-    E --> F["↓ NLRP3 inflammasome<br/>assembly"]
+    E --> F["↓ NLRP3 assembly"]
     F --> G["↓ Caspase-1 activation"]
     
-    D --> H["Net Effect:<br/>Less IL-1β produced<br/>+ Less IL-1β activated"]
+    D --> H["Net: less IL-1β produced and activated"]
     G --> H
-    H --> I["Reduced inflammatory<br/>flare intensity"]
+    H --> I["Reduced flare intensity"]
     
     style H fill:#fff9c4
     style I fill:#c8e6c9
@@ -295,11 +295,11 @@ graph TB
     A --> B4["↑ Collagen + ↑ Elastin"]
     A --> B5["↑ Antioxidant genes"]
     
-    B1 --> C1["Pro-inflammatory<br/>cytokine suppression"]
-    B2 --> C2["Growth factor and<br/>tissue repair signaling"]
-    B3 --> C3["Reduced matrix<br/>metalloproteinase-driven<br/>cartilage destruction"]
+    B1 --> C1["Cytokine suppression"]
+    B2 --> C2["Tissue repair signaling"]
+    B3 --> C3["Reduced MMP-driven cartilage destruction"]
     B4 --> C4["ECM rebuilding"]
-    B5 --> C5["Reduced oxidative stress<br/>NLRP3 trigger"]
+    B5 --> C5["Reduced oxidative stress / NLRP3 trigger"]
     
     style A fill:#e1bee7
     style C1 fill:#ffcccc

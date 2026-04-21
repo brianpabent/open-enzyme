@@ -50,9 +50,9 @@ fi
 
 # Only accept files under the knowledge-base roots
 case "$DOC" in
-  docs/*|wiki/*|ai-analysis/*) ;;
+  wiki/*|ai-analysis/*) ;;
   *)
-    echo "error: path must be under docs/, wiki/, or ai-analysis/ — got: $DOC" >&2
+    echo "error: path must be under wiki/ or ai-analysis/ — got: $DOC" >&2
     exit 1
     ;;
 esac

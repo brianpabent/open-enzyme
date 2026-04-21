@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-# wiki-watch.sh — watch docs/ and ai-analysis/ for human edits and trigger
+# wiki-watch.sh — watch wiki/ and ai-analysis/ for human edits and trigger
 # the two-pass doc sweep (wiki-update.sh → sweep-prompt.md).
 #
-# Watches both directories because hand-edits to a synthesis doc in
-# ai-analysis/ should propagate just like edits to primary research in docs/.
-# wiki/ is intentionally NOT watched — it's derived content; letting wiki
-# edits trigger sweeps would create cycles.
+# wiki/ is the primary research layer now (docs/ was merged into wiki/ in the
+# April 2026 restructure). ai-analysis/ still contains the 01–08 analyses being
+# curated file-by-file into wiki/, and is watched so hand-edits there propagate.
+#
+# Cycles are prevented two ways: (1) the daemon commits at the end of each
+# sweep, so self-writes during Pass 1 match HEAD by the time queued fswatch
+# events fire; (2) the git-diff-HEAD filter below skips any path that already
+# matches HEAD.
 #
 # Filters out changes that came from git (pull, checkout, reset, stash pop,
 # merge, rebase, cherry-pick). Anything already in git history is assumed to
@@ -45,7 +49,7 @@ if ! command -v claude &>/dev/null; then
   exit 1
 fi
 
-log "watching docs/ and ai-analysis/ — human edits trigger two-pass sweep; git-driven changes are skipped"
+log "watching wiki/ and ai-analysis/ — human edits trigger two-pass sweep; git-driven changes are skipped"
 log "  repo:    $REPO_ROOT"
 log "  lock:    $LOCK_FILE"
 [[ -n "$NO_COMMIT_FLAG" ]] && log "  mode:    --no-commit"
@@ -54,13 +58,13 @@ log "  lock:    $LOCK_FILE"
 LAST_PATH=""
 LAST_TIME=0
 
-# Only spin up fswatch on directories that exist (ai-analysis/ may not be present yet)
+# Only spin up fswatch on directories that exist
 WATCH_DIRS=()
-[[ -d "$REPO_ROOT/docs" ]]         && WATCH_DIRS+=("$REPO_ROOT/docs")
+[[ -d "$REPO_ROOT/wiki" ]]         && WATCH_DIRS+=("$REPO_ROOT/wiki")
 [[ -d "$REPO_ROOT/ai-analysis" ]]  && WATCH_DIRS+=("$REPO_ROOT/ai-analysis")
 
 if [[ ${#WATCH_DIRS[@]} -eq 0 ]]; then
-  log "error: neither docs/ nor ai-analysis/ exists under $REPO_ROOT"
+  log "error: neither wiki/ nor ai-analysis/ exists under $REPO_ROOT"
   exit 1
 fi
 

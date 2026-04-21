@@ -295,11 +295,11 @@ Unlike glucose, fructose is metabolized primarily in the liver by a dedicated pa
 
 ```mermaid
 graph TD
-    A["Fructose"] -->|Fructokinase (KHK)<br/>uses ATP, no negative feedback| B["Fructose-1-phosphate + ADP"]
-    B -->|Rapid ATP depletion<br/>intracellular phosphate drops| C["AMP accumulates<br/>(ATP → ADP → AMP)"]
-    C -->|AMP deaminase (AMPD)<br/>activated by low phosphate| D["IMP (inosine monophosphate)"]
-    D -->|"Inosine → Hypoxanthine → Xanthine"| E["↓"]
-    E -->|Xanthine Oxidase| F["Uric Acid"]
+    A[Fructose] -->|Fructokinase - no feedback| B[Fructose-1-P + ADP]
+    B -->|Rapid ATP depletion| C[AMP accumulates]
+    C -->|AMP deaminase| D[IMP]
+    D -->|Inosine, Hypoxanthine, Xanthine| E[Xanthine]
+    E -->|Xanthine Oxidase| F[Uric Acid]
 ```
 
 The key insight: fructokinase has **no negative feedback**. Unlike hexokinase (which phosphorylates glucose), fructokinase doesn't slow down when ATP is low or when downstream products accumulate. This means a large fructose load causes *unregulated* ATP consumption, rapid AMP accumulation, and a surge of uric acid production. It also means fructose increases *de novo* purine synthesis — creating new purines from scratch, not just degrading existing ones.

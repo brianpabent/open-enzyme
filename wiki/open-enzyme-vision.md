@@ -123,33 +123,33 @@ Both organisms have decades of established transformation protocols. *S. cerevis
 
 ## 6. The Team
 
-Each person on this team maps to a critical question the project needs answered. No one is here by accident.
-
-### Brian Abent — Platform / Engineering
+### Brian Abent — Platform / Engineering (Founder)
 
 CTO who built Ceros from zero to $50M ARR. No science degree — thinks like an engineer. Currently building Alma.casa (AI real estate) and raising a seed round. Started Open Enzyme because he has gout and got tired of waiting for the system to solve it.
 
 **Answers:** How do we make this reproducible, documentable, and accessible to non-scientists? How do we build this as a platform, not a one-off experiment?
 
-### Rheinallt Jones, PhD — Gut Microbiome / In Vivo Validation
+Currently the sole team member. The project needs collaborators with deep expertise in gut biology, immune safety, and translational science. The following scientists are being recruited as potential collaborators — each maps to a critical question the project needs answered.
+
+### Rheinallt Jones, PhD — Gut Microbiome / In Vivo Validation *(potential collaborator)*
 
 Associate Professor, Emory Pediatric GI. Runs the Emory Gnotobiotic Animal Core. Deep expertise in gut microbiome dynamics and germ-free animal models.
 
-**Answers:** Will an engineered strain survive and function in the gut? How does it interact with existing microbiota? What do the gnotobiotic validation experiments look like?
+**Would answer:** Will an engineered strain survive and function in the gut? How does it interact with existing microbiota? What do the gnotobiotic validation experiments look like?
 
-### Lauren Collier-Hyams, PhD — NF-κB / Pharma Translation
+### Lauren Collier-Hyams, PhD — NF-κB / Pharma Translation *(potential collaborator)*
 
 Emory-trained (NF-κB / intestinal epithelial signaling under Andrew Neish). Now in pharma at Grifols/Medexus. Bridges academic research and pharmaceutical development.
 
-**Answers:** What are the inflammatory signaling implications? How does this map to pharma-grade safety and efficacy standards? Where does citizen science end and clinical development begin?
+**Would answer:** What are the inflammatory signaling implications? How does this map to pharma-grade safety and efficacy standards? Where does citizen science end and clinical development begin?
 
-### Valerie Jones née Sloane, PhD — Innate Immune Safety
+### Valerie Jones née Sloane, PhD — Innate Immune Safety *(potential collaborator)*
 
 Emory-trained (TLR5 / innate immune responses in gut epithelium under Andrew Neish). Expertise in how the gut immune system responds to microbial signals.
 
-**Answers:** Will engineered strains trigger adverse immune responses? How do we ensure the host organism's modifications don't create unexpected immunogenic epitopes or pathogen-associated molecular patterns?
+**Would answer:** Will engineered strains trigger adverse immune responses? How do we ensure the host organism's modifications don't create unexpected immunogenic epitopes or pathogen-associated molecular patterns?
 
-> **Note on lineage:** Rheinallt, Lauren, and Valerie all trained in Andrew Neish's Epithelial Pathobiology Unit at Emory. This gives the team a shared scientific vocabulary and a deep, overlapping understanding of gut epithelial biology, microbial-host interactions, and inflammatory signaling — exactly the domain this project operates in.
+> **Note on lineage:** Rheinallt, Lauren, and Valerie all trained in Andrew Neish's Epithelial Pathobiology Unit at Emory. This gives them a shared scientific vocabulary and a deep, overlapping understanding of gut epithelial biology, microbial-host interactions, and inflammatory signaling — exactly the domain this project operates in. Recruiting them is an active project goal.
 
 ---
 
@@ -159,15 +159,27 @@ The end-to-end flow from identifying a deficit to producing a functional, food-g
 
 ```mermaid
 graph TD
-    A["1. Identify the enzyme deficit<br/>Define target, substrate, location, outcome"] --> B["2. Source the gene<br/>NCBI/UniProt sequence, codon-optimized DNA<br/>Cost: ~$80-200"]
-    B --> C["3. Build the expression cassette<br/>Promoter + gene + terminator + marker<br/>Gibson, Golden Gate, or HR"]
-    C --> D["4. Transform into food-safe host<br/>Lithium acetate/PEG for yeast<br/>Protoplast-PEG or Agrobacterium for koji"]
-    D --> E["5. Screen for activity<br/>Plate transformants, assay<br/>Select highest-expressing clones"]
-    E --> F["6. Optimize fermentation<br/>Temperature, media, time, aeration<br/>Koji on rice: 36-48h at 30°C"]
-    F --> G["7. Determine therapeutic format<br/>Koji on rice, dried powder,<br/>fermented beverage, or encapsulated"]
-    G --> H["8. Validate dosing<br/>In vitro assays, benchmark<br/>Self-experimentation with biomarker tracking"]
-    H --> I["9. Document everything, publish as open source<br/>GitHub-ready: construct map, SOP,<br/>activity data, dosing, safety notes"]
+    A["Identify enzyme deficit"] --> B["Source the gene"]
+    B --> C["Build expression cassette"]
+    C --> D["Transform into food-safe host"]
+    D --> E["Screen for activity"]
+    E --> F["Optimize fermentation"]
+    F --> G["Determine therapeutic format"]
+    G --> H["Validate dosing"]
+    H --> I["Document and publish open source"]
 ```
+
+| Step | Action | Details |
+|------|--------|---------|
+| 1 | **Identify enzyme deficit** | Define target, substrate, location, outcome |
+| 2 | **Source the gene** | NCBI/UniProt sequence, codon-optimized DNA (~$80–200) |
+| 3 | **Build expression cassette** | Promoter + gene + terminator + marker (Gibson, Golden Gate, or HR) |
+| 4 | **Transform into food-safe host** | Lithium acetate/PEG for yeast; protoplast-PEG or Agrobacterium for koji |
+| 5 | **Screen for activity** | Plate transformants, assay, select highest-expressing clones |
+| 6 | **Optimize fermentation** | Temperature, media, time, aeration; koji on rice 36–48 h at 30 °C |
+| 7 | **Determine therapeutic format** | Koji on rice, dried powder, fermented beverage, or encapsulated |
+| 8 | **Validate dosing** | In vitro assays, benchmark, self-experimentation with biomarker tracking |
+| 9 | **Document and publish** | GitHub-ready: construct map, SOP, activity data, dosing, safety notes |
 
 ---
 
@@ -234,7 +246,7 @@ This multi-vector approach reflects an engineering mindset: don't bet on a singl
 
 - **Not claiming to cure anything.** This is a research and self-experimentation platform. We produce enzymes. We measure their activity. We track biomarkers. We share data. The biology is well-established; the integration into a home-producible format is what's novel.
 
-- **Not reckless.** Every strain uses GRAS organisms. Every method is drawn from published, peer-reviewed protocols. The team includes three PhDs with deep gut biology expertise. We are careful precisely because we are serious.
+- **Not reckless.** Every strain uses GRAS organisms. Every method is drawn from published, peer-reviewed protocols. The potential collaborators include three PhDs with deep gut biology expertise, and recruiting them is an active priority. We are careful precisely because we are serious.
 
 ---
 
