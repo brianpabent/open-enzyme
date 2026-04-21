@@ -194,6 +194,6 @@ The success of uricase as an oral therapeutic enzyme opens pathways for other mi
 
 ## References
 
-- Wu, X. et al. (2002). "Loss of Urate Oxidase Activity in Hominoids and its Evolutionary Implications." *Molecular Biology and Evolution*, 19(5), 640–653.
+- Oda, M. et al. (2002). "Loss of Urate Oxidase Activity in Hominoids and its Evolutionary Implications." *Molecular Biology and Evolution*, 19(5), 640–653.
 - Kratzer, J.T. et al. (2014). "Evolutionary history and metabolic insights of ancient mammalian uricases." *Proceedings of the National Academy of Sciences*, 111(10), 3763–3768.
 - Gaucher et al. (2025). "CRISPR-based restoration of ancestral uricase in human liver cells." *Scientific Reports*.

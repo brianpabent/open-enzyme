@@ -384,7 +384,7 @@ This section synthesizes computational and structural analysis conducted in Apri
 For detailed calculations, variant structural models, and GI transit simulation parameters, see ai-analysis/01–05 technical reports.
 
 ## References
-- **Wu, X. et al.** (2002). Loss of Urate Oxidase Activity in Hominoids and its Evolutionary Implications. *Molecular Biology and Evolution*, 19(5), 640–653. [doi:10.1093/oxfordjournals.molbev.a004123](https://academic.oup.com/mbe/article/19/5/640/1067768)
+- **Oda, M. et al.** (2002). Loss of Urate Oxidase Activity in Hominoids and its Evolutionary Implications. *Molecular Biology and Evolution*, 19(5), 640–653. [doi:10.1093/oxfordjournals.molbev.a004123](https://academic.oup.com/mbe/article/19/5/640/1067768)
 - **Kratzer, J.T. et al.** (2014). Evolutionary history and metabolic insights of ancient mammalian uricases. *Proceedings of the National Academy of Sciences*, 111(10), 3763–3768. [doi:10.1073/pnas.1320393111](https://www.pnas.org/doi/10.1073/pnas.1320393111)
 - **Keenan, J.P. et al.** (2023). A widely distributed gene cluster compensates for uricase loss in hominids. *Cell*, 186(16), 3400–3413. [doi:10.1016/j.cell.2023.06.010](https://www.sciencedirect.com/science/article/pii/S0092867423006876)
 - **Matsuo, H. et al.** (2014). ABCG2 dysfunction increases serum uric acid by decreased intestinal urate excretion. *Nucleosides, Nucleotides and Nucleic Acids*, 33(4-6), 275–281. [PMID: 24940679](https://pubmed.ncbi.nlm.nih.gov/24940679/)
