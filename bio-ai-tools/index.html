@@ -2591,6 +2591,111 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#anthropic-bio-research-plugin-productized-coefficient-bio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anthropic Bio Research Plugin (Productized Coefficient Bio)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anthropic Bio Research Plugin (Productized Coefficient Bio)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-in-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation in Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-six-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Six Skills
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ten-mcp-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ten MCP Servers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-mapping-where-the-plugin-fits-in-the-current-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Mapping: Where the Plugin Fits in the Current Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-replaces-vs-what-stays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Replaces vs. What Stays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-differs-from-openais-codex-life-sciences-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Differs from OpenAI's Codex Life Sciences Plugin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#integration-using-all-three-tools-together" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3228,12 +3333,193 @@
 </code></pre></div>
 <p><strong>Expected output:</strong> [[supplements-stack]]-level detail but customized to one person's needs.</p>
 <hr />
+<h2 id="anthropic-bio-research-plugin-productized-coefficient-bio">Anthropic Bio Research Plugin (Productized Coefficient Bio)<a class="headerlink" href="#anthropic-bio-research-plugin-productized-coefficient-bio" title="Permanent link">&para;</a></h2>
+<h3 id="what-it-is_3">What It Is<a class="headerlink" href="#what-it-is_3" title="Permanent link">&para;</a></h3>
+<p>Launched by Anthropic (Oct 2025 "Claude for Life Sciences" announcement; 10x Genomics partnership Jan 2026), the <strong>Bio Research plugin</strong> is the shipped, installable productization of the Coefficient Bio acquisition. It bundles six task-specific skills with ten remote MCP servers that connect Claude directly to authoritative life-sciences databases — PubMed, bioRxiv, ChEMBL, Open Targets, ClinicalTrials.gov, Synapse.org, Wiley Scholar Gateway, BioRender, Owkin, and 10x Genomics Cloud.</p>
+<p><strong>Critical for this project:</strong> the plugin installs in <strong>both</strong> claude.ai (web) and Claude Code (CLI). Same plugin, same skills, same MCP servers. No bouncing between environments — the Open Enzyme workflow stays in the terminal where the wiki lives.</p>
+<p>(Sources: <a href="https://claude.com/plugins/bio-research">claude.com/plugins/bio-research</a>; <a href="https://www.anthropic.com/news/claude-for-life-sciences">anthropic.com/news/claude-for-life-sciences</a>; <a href="https://github.com/anthropics/life-sciences">github.com/anthropics/life-sciences</a>)</p>
+<h3 id="installation-in-claude-code">Installation in Claude Code<a class="headerlink" href="#installation-in-claude-code" title="Permanent link">&para;</a></h3>
+<p>One-time install (from inside any Claude Code session in this repo):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>/plugin install bio-research@claude-plugins-official
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>/reload-plugins
+</code></pre></div>
+<p>After <code>/reload-plugins</code>, the six skills become available as slash commands and the ten MCP servers auto-attach. Auth tokens (10x Genomics Cloud, Wiley) are requested on first use of those specific servers; the literature servers (PubMed, bioRxiv, ClinicalTrials.gov) work out of the box.</p>
+<h3 id="the-six-skills">The Six Skills<a class="headerlink" href="#the-six-skills" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Purpose</th>
+<th>Open Enzyme use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/start</code></td>
+<td>Orientation; lists available tools and suggests entry points</td>
+<td>Run once to see the plugin's surface area</td>
+</tr>
+<tr>
+<td><code>/scientific-problem-selection</code></td>
+<td>Framework to scope and rank research problems</td>
+<td>Prune <code>wiki/synthesis.md</code> action queue; rank the cheapest-next-experiments table in <code>index.md</code></td>
+</tr>
+<tr>
+<td><code>/nextflow-development</code></td>
+<td>Run nf-core bioinformatics pipelines on local or public GEO/SRA data</td>
+<td>Future: when engineered-strain transcriptomics or gut-microbiome 16S/metagenomic data arrives</td>
+</tr>
+<tr>
+<td><code>/scvi-tools</code></td>
+<td>Deep-learning single-cell omics (batch correction, cell-type annotation, integration)</td>
+<td>Future: macrophage NLRP3 response phenotyping; gut immune cell atlases</td>
+</tr>
+<tr>
+<td><code>/single-cell-rna-qc</code></td>
+<td>Automated scRNA-seq quality control</td>
+<td>Future: same phase as <code>/scvi-tools</code></td>
+</tr>
+<tr>
+<td><code>/instrument-data-to-allotrope</code></td>
+<td>Convert raw output from 40+ lab instrument types to Allotrope Simple Model (ASM)</td>
+<td>Future: once wet-lab data starts flowing, standardize plate-reader / HPLC / flow-cytometer output</td>
+</tr>
+</tbody>
+</table>
+<p>Phase 0 (Research &amp; Design) primarily uses <code>/start</code> and <code>/scientific-problem-selection</code> plus the MCP servers. The three single-cell / Nextflow / Allotrope skills become load-bearing the moment wet-lab data arrives.</p>
+<h3 id="the-ten-mcp-servers">The Ten MCP Servers<a class="headerlink" href="#the-ten-mcp-servers" title="Permanent link">&para;</a></h3>
+<p>These run as HTTP-transport remote servers hosted by Anthropic; the plugin wraps them. Each is available as a tool Claude can call autonomously during any conversation in this repo.</p>
+<table>
+<thead>
+<tr>
+<th>MCP Server</th>
+<th>Immediate relevance to Open Enzyme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PubMed</strong></td>
+<td>Direct biomedical literature search. Replaces web scraping for the sweep daemon's Pass 1. High impact — the cannabinoids deep dive we just did would have been 2–3× faster with native PubMed.</td>
+</tr>
+<tr>
+<td><strong>bioRxiv</strong></td>
+<td>Preprint search. Newer uricase / koji / NLRP3 engineering work often shows here before peer review.</td>
+</tr>
+<tr>
+<td><strong>ClinicalTrials.gov</strong></td>
+<td>Structured trial data. Track ALLN-346 (oral uricase), Dapansutrile (OLT1177, NLRP3 gout), Firsekibart (anti-IL-1β), PULSE probiotic.</td>
+</tr>
+<tr>
+<td><strong>ChEMBL</strong></td>
+<td>Chemical compound database with bioactivity data. Look up NLRP3 inhibitors, xanthine oxidase inhibitors, CB2 agonists with affinity/IC50 data in one place instead of parsing papers.</td>
+</tr>
+<tr>
+<td><strong>Open Targets</strong></td>
+<td>Drug target database (target–disease associations with evidence). Validates the target rationale for gout / EPI / SIBO.</td>
+</tr>
+<tr>
+<td><strong>Wiley Scholar Gateway</strong></td>
+<td>Journal access (many of our cited papers sit behind Wiley).</td>
+</tr>
+<tr>
+<td><strong>Synapse.org</strong></td>
+<td>Collaborative research data management. Relevant if Rheinallt / Lauren / Valerie join and we need a shared data platform.</td>
+</tr>
+<tr>
+<td><strong>BioRender</strong></td>
+<td>Scientific figure generation. Useful for publishing the NLRP3 exploit map, pathway diagrams.</td>
+</tr>
+<tr>
+<td><strong>Owkin</strong></td>
+<td>Collaborative research (oncology-leaning). Low priority for this project.</td>
+</tr>
+<tr>
+<td><strong>10x Genomics Cloud</strong></td>
+<td>Single-cell &amp; spatial genomics data. Requires 10x API token; activates only if we add single-cell experiments.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="workflow-mapping-where-the-plugin-fits-in-the-current-process">Workflow Mapping: Where the Plugin Fits in the Current Process<a class="headerlink" href="#workflow-mapping-where-the-plugin-fits-in-the-current-process" title="Permanent link">&para;</a></h3>
+<p><strong>1. Doc Sweep Daemon</strong> (<code>scripts/wiki-watch.sh</code> → <code>scripts/sweep-prompt.md</code>)</p>
+<p>Pass 1 of the sweep (propagate findings across wiki pages) currently uses Claude's general literature awareness. With the plugin installed, the sweep prompt can explicitly call PubMed + bioRxiv + ClinicalTrials.gov MCP servers to ground claims in current primary literature — raising the evidence floor without changing the file-watching infrastructure.</p>
+<p><em>Action:</em> Once the plugin is installed, update <code>scripts/sweep-prompt.md</code> to instruct the daemon to prefer PubMed/bioRxiv MCP over WebFetch for biomedical claims.</p>
+<p><strong>2. Action Queue Pruning</strong> (<code>wiki/synthesis.md</code>)</p>
+<p>The synthesis queue is prose + bullets. <code>/scientific-problem-selection</code> is purpose-built to convert an unranked list of candidate investigations into a scored, scoped ranking. Run it against the current synthesis queue to produce a ranked action list without ad-hoc prioritization.</p>
+<p><strong>3. Compound / Target Research</strong> (cannabinoids-terpenes.md, nlrp3-inhibitor-screen.md, etc.)</p>
+<p>Future compound deep dives can query ChEMBL for canonical bioactivity data (IC50, Ki, Kd) and Open Targets for target–disease evidence before touching web searches. This reduces citation-hunting for the "benchmark compounds" sections we keep building out.</p>
+<p><strong>4. Clinical Pipeline Tracking</strong> (uricase, NLRP3 drugs)</p>
+<p><code>index.md</code>'s <code>Clinical Precedent</code> references (ALLN-346, Rasburicase, PULSE, Dapansutrile) are currently checked manually. A quarterly ClinicalTrials.gov MCP pull keeps these rows current.</p>
+<p><strong>5. Literature Front-Door for New Pages</strong></p>
+<p>New wiki pages (like the cannabinoids page we just graduated) start with a literature scan. With the plugin, that scan is PubMed MCP + bioRxiv MCP in one structured call rather than a WebSearch chain.</p>
+<h3 id="what-this-replaces-vs-what-stays">What This Replaces vs. What Stays<a class="headerlink" href="#what-this-replaces-vs-what-stays" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Before plugin</th>
+<th>After plugin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biomedical literature search</td>
+<td>WebSearch + WebFetch (fragile, scraping)</td>
+<td>PubMed / bioRxiv MCP (structured)</td>
+</tr>
+<tr>
+<td>Compound bioactivity lookup</td>
+<td>Read individual papers</td>
+<td>ChEMBL MCP</td>
+</tr>
+<tr>
+<td>Target–disease evidence</td>
+<td>Wiki page synthesis</td>
+<td>Open Targets MCP</td>
+</tr>
+<tr>
+<td>Clinical trial status</td>
+<td>Manual ClinicalTrials.gov browsing</td>
+<td>ClinicalTrials.gov MCP</td>
+</tr>
+<tr>
+<td>Problem ranking / experiment prioritization</td>
+<td>Ad-hoc in <code>synthesis.md</code></td>
+<td><code>/scientific-problem-selection</code></td>
+</tr>
+<tr>
+<td>Protein structure / docking / design</td>
+<td>ColabFold, Boltz-2, RFdiffusion2, DiffDock</td>
+<td><strong>Unchanged</strong> — the plugin is research/literature-oriented; core computational biology stays with the open-source stack</td>
+</tr>
+<tr>
+<td>Codon optimization</td>
+<td>CodonTransformer</td>
+<td><strong>Unchanged</strong></td>
+</tr>
+<tr>
+<td>Stability prediction</td>
+<td>SPURS, RaSP, DDGemb, FoldX</td>
+<td><strong>Unchanged</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The plugin augments the <strong>research and reasoning</strong> layer. The computational biology layer (structure, design, stability, docking) stays open-source; the plugin doesn't replace it.</p>
+<h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>MCP servers are Anthropic-hosted and opaque</strong> — you can't swap in a different PubMed backend or override auth. For 99% of use cases this doesn't matter, but it means the sweep daemon's literature sourcing is only as current as Anthropic keeps the servers.</li>
+<li><strong>Skills are bundled, not hand-editable</strong> — unlike a <code>.claude/skills/</code> directory, these live inside the plugin package. Customization means forking the plugin or adding complementary skills alongside.</li>
+<li><strong>No offline mode</strong> — remote HTTP MCP servers require network. The sweep daemon still runs locally, but skill calls that hit the plugin need connectivity.</li>
+</ul>
+<h3 id="how-it-differs-from-openais-codex-life-sciences-plugin">How It Differs from OpenAI's Codex Life Sciences Plugin<a class="headerlink" href="#how-it-differs-from-openais-codex-life-sciences-plugin" title="Permanent link">&para;</a></h3>
+<p>Covered in <a href="../ai-bio-tools-playbook/">ai-bio-tools-playbook.md</a> §Codex. Both connect Claude / GPT to life-science databases. The Bio Research plugin is tighter (10 curated servers + 6 vetted skills) where Codex is broader (50+ databases, looser scaffolding). For Open Enzyme, which runs inside Claude Code, the Bio Research plugin wins on environment fit — it stays in the terminal with the wiki.</p>
+<hr />
 <h2 id="integration-using-all-three-tools-together">Integration: Using All Three Tools Together<a class="headerlink" href="#integration-using-all-three-tools-together" title="Permanent link">&para;</a></h2>
 <h3 id="workflow-example-design-engineered-koji-from-scratch">Workflow Example: Design Engineered Koji from Scratch<a class="headerlink" href="#workflow-example-design-engineered-koji-from-scratch" title="Permanent link">&para;</a></h3>
-<p><strong>Step 1: Literature Mining (Claude/Coefficient)</strong>
+<p><strong>Step 1: Literature Mining (Bio Research plugin → PubMed + bioRxiv MCP)</strong>
 - Comprehensive search on A. oryzae genetic engineering capabilities
 - Find all published cases of multi-gene expression in koji
-- Identify best transformation methods and expression systems</p>
+- Identify best transformation methods and expression systems
+- Cross-reference with ClinicalTrials.gov for any enzyme-replacement gout trials</p>
 <p><strong>Step 2: Gene Selection (GPT-Rosalind)</strong>
 - Compare uricase genes: A. flavus vs. others
 - Codon optimize for A. oryzae
@@ -3277,10 +3563,13 @@
 <p><strong>For Open Enzyme project, in priority order:</strong></p>
 <ol>
 <li>
-<p><strong>Open source tools first</strong> — ColabFold, ESM-2, SPURS/RaSP, CodonTransformer, DiffDock. Free, available now, quantitative outputs. These cover structure prediction, variant scoring, stability prediction, codon optimization, and docking — the core computational workflow.</p>
+<p><strong>Install the Anthropic Bio Research plugin in Claude Code</strong> — <code>/plugin install bio-research@claude-plugins-official</code> then <code>/reload-plugins</code>. This is the single highest-leverage change: literature, trials, and compound databases move from web-scraping to structured MCP calls without leaving the terminal. Immediate wins on sweep daemon quality and new-page literature scans.</p>
 </li>
 <li>
-<p><strong>Use Claude for reasoning and synthesis</strong> — literature mining, protocol generation, experimental design, safety assessment, cross-domain reasoning. Claude is the connective tissue that interprets open source tool outputs and makes design decisions.</p>
+<p><strong>Open source tools for computational biology</strong> — ColabFold, ESM-2, SPURS/RaSP, CodonTransformer, DiffDock. Free, available now, quantitative outputs. These cover structure prediction, variant scoring, stability prediction, codon optimization, and docking. The plugin doesn't replace them; it complements them.</p>
+</li>
+<li>
+<p><strong>Use Claude (with the plugin) for reasoning and synthesis</strong> — literature mining (now via PubMed/bioRxiv MCP), protocol generation, experimental design, safety assessment. Claude is the connective tissue that interprets open source tool outputs and makes design decisions.</p>
 </li>
 <li>
 <p><strong>Try GPT-Rosalind if you get access</strong> — deeper biological reasoning for complex design questions. Apply via the Trusted Access Program; the open source + therapeutic enzyme + citizen science angle is a strong public-benefit argument.</p>
