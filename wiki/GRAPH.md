@@ -78,6 +78,13 @@ graph TB
         J4["Gasdermin D Block"]
     end
 
+    subgraph Cannabinoids["CANNABINOIDS / TERPENES"]
+        M1["CBD"]
+        M2["Beta-Caryophyllene"]
+        M3["CBG"]
+        M4["THCV"]
+    end
+
     subgraph Metabolic["METABOLIC MODULATION"]
         K1["Beta-Hydroxybutyrate"]
         K2["Ketogenic State"]
@@ -161,6 +168,15 @@ graph TB
     B4 --> B5
     B5 --> A3
     
+    %% Cannabinoid/terpene relationships
+    M1 -->|"P2X7/NF-kB"| C2
+    M2 -->|"CB2/TLR4/NLRP3 — MSU gout model"| C2
+    M2 -->|"CB2 agonism — neutrophil block"| C1
+    M3 -->|"NF-kB/MAPK — CIA arthritis"| C2
+    M3 -->|"CBG colitis data"| B3
+    M4 -->|"CB2 agonism (Ki 7.5 nM)"| C2
+    M1 -->|"barrier support"| H1
+
     %% Styling
     style Core fill:#ffe6e6
     style Problem fill:#fff0e6
@@ -173,6 +189,7 @@ graph TB
     style Peptides fill:#e6f9ff
     style Inhibitors fill:#fff9e6
     style Metabolic fill:#e6ffe6
+    style Cannabinoids fill:#e6f0e6
     style Clinical fill:#f0e6ff
 ```
 

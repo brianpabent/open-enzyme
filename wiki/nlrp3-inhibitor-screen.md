@@ -324,7 +324,8 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 **Evidence Level:**
 - **In vitro:** β-caryophyllene suppresses NLRP3 expression and inflammasome assembly in neuroinflammation models
 - **Animal (hemiparkinsonism):** β-caryophyllene reduced neuroinflammation and protected dopaminergic neurons via NLRP3 inflammasome inhibition
-- **Gout-specific:** NO evidence
+- **Animal (MSU-induced gouty arthritis in rats):** 100, 200, 400 mg/kg reduced ankle swelling, serum IL-1β/IL-6/TNF-α, and synovial NLRP3/caspase-1/ASC/TLR4/NF-κB expression. Computational docking shows NLRP3 binding (CDOCKER energy 31.92 kcal/mol). Direct gout model evidence — this entry needs re-ranking (see [cannabinoids-terpenes.md](cannabinoids-terpenes.md)). *Front Pharmacol* 2021;12:651305. PMID: 33967792.
+- **Gout-specific:** YES (MSU crystal model, animal)
 
 **Production Feasibility:**
 - **S. cerevisiae:** β-Caryophyllene is a volatile sesquiterpene; engineered yeast can produce sesquiterpenes via mevalonate + sesquiterpene synthase (STS) heterologous expression
@@ -347,7 +348,7 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 - No gout-specific evidence
 - Sesquiterpene synthase expression in yeast is less mature than monoterpene (limonene) or triterpene (ursolic acid) pathways
 
-**Ranking Rationale:** Tier 4; feasible but low titers and volatility issues make this impractical vs. polyphenols and triterpenes.
+**Ranking Rationale:** Tier 4 for *microbial production* (low titers, volatility). **Re-ranked to Tier 2–3 for supplement stack** given direct MSU gout animal model data (2021). For supplementation from black pepper/clove extracts, beta-caryophyllene is the only terpene or cannabinoid with published gout-model evidence. See [cannabinoids-terpenes.md](cannabinoids-terpenes.md) for full analysis.
 
 ---
 
