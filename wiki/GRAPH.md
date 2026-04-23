@@ -93,9 +93,13 @@ graph TB
     end
 
     subgraph Clinical["CLINICAL PRECEDENT"]
-        L1["ALLN-346"]
+        L1["ALLN-346 (terminated 2022)"]
         L2["Rasburicase"]
         L3["PULSE Probiotic"]
+        L4["PRX-115 Phase 2 (2025)"]
+        L5["SSS11 Phase 1 (C. utilis uricase)"]
+        L6["Canakinumab FDA 2023 (gout)"]
+        L7["TNFSF14 / LIGHT — emerging target"]
     end
 
     %% Core relationships
@@ -159,9 +163,13 @@ graph TB
     K2 --> J2
 
     %% Clinical precedent links
-    L1 --> G1
+    L1 -.->|"validated mechanism, program ended"| G1
     L2 --> F1
     L3 --> B4
+    L4 -->|"systemic IV, treatment-naive gout"| F1
+    L5 -->|"C. utilis uricase, IV"| F1
+    L6 -->|"approved IL-1b mAb"| C4
+    L7 -->|"flare biomarker, distinct from NLRP3/IL-1b"| C5
 
     %% Barrier damage prevention
     B3 --> B5

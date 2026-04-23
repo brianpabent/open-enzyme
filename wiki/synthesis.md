@@ -8,6 +8,117 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
 
 # Synthesis Pass 2: New Connections Across April 2026 Analyses
 
+## New this sweep — 2026-04-23 (gout-clinical-pipeline)
+**Trigger:** `wiki/gout-clinical-pipeline.md`
+
+### New Connections
+
+1. **Two active clinical programs now use *Candida utilis* uricase — but the wiki still treats *A. flavus* as the default.** *Supported.*
+   - *Documents connected:* `gout-clinical-pipeline.md` (SSS11 = pegylated *C. utilis* uricase Phase 1, NCT06629376; ALLN-346 = engineered *C. utilis* uricase, terminated 2022), `uricase-variant-selection.md` (treats *A. flavus* as primary, *C. utilis* as a "second candidate"), `engineered-yeast-uricase-proposal.md` (*C. utilis* listed as one of three candidate genes; specific activity higher than *A. flavus*).
+   - *Why it matters:* The strongest argument for *A. flavus* as the default has been "rasburicase precedent" — i.e., one approved IV product. But the *active* clinical pipeline (the only programs with new patient enrollment in 2025) is overwhelmingly *C. utilis*: SSS11 (Shanghai, Phase 1, recruiting) and the now-terminated ALLN-346 both chose *C. utilis* despite *A. flavus* being available. Two independent industry teams selected *C. utilis*. That's an industry-revealed-preference signal that the wiki's "*A. flavus* is the default" rule may be lagging. The ACS Synth Bio 2025 *S. boulardii* paper that Open Enzyme cites also avoided *A. flavus* — they chose *V. vulnificus* uricase. Three out of three recent industry/academic uricase programs chose something *other* than *A. flavus*.
+   - *Suggested action:* Add a new section to `uricase-variant-selection.md` titled "Industry-Revealed Preference (2024–2026)" listing all clinical-stage uricase programs and the parent enzyme each chose. If 3/3 recent programs picked non-*A. flavus* enzymes, the wiki's primary-candidate ranking warrants explicit re-justification rather than an inherited assumption from rasburicase.
+
+2. **ALLN-346 termination + Allena's wind-down may have made the engineered-protease-resistance mutations public-domain.** *Speculative.*
+   - *Documents connected:* `engineered-yeast-uricase-proposal.md` (notes ALLN-346 was engineered with ProteinGPS for "20-fold increased stability against pancreatic proteases — half-life 85.3 min vs 4.3 min in pancreatin"), `gout-clinical-pipeline.md` (Allena has no active programs after Sep 2022; the ALLN-346 asset appears commercially dead), `protein-engineering-strategy.md` (current OPT-1/BAL-1/SB-1 mutations are derived independently for *A. flavus*).
+   - *Why it matters:* If Allena's patents on the ALLN-346 mutations have lapsed, expired, or were never filed in jurisdictions Brian operates in, the specific *C. utilis* uricase mutations that gave 20× protease resistance could be incorporated directly into an Open Enzyme strain — saving the cost and risk of re-deriving equivalent mutations from scratch. The mutations were validated in mice and Phase 1/2a humans, which is a level of validation Open Enzyme cannot afford to reproduce. This is a one-hour patent-search question with potentially enormous downstream leverage.
+   - *Suggested action:* 1–2 hour patent landscape search. Look up all Allena Pharmaceuticals patents (USPTO assignee search) and the ALLN-346 / ProteinGPS related applications. Assess: (a) which mutations are disclosed in published applications, (b) which patents are still active vs. lapsed/abandoned, (c) what claim scope might block reuse. If the engineering is in published patents and the patents are abandoned or due to expire soon, this is a free borrow of millions of dollars of pharmaceutical R&D.
+
+3. **Canakinumab's August 2023 approval + dapansutrile's stagnation = pharma's *gout* bet is now CP5 (IL-1β blockade), not CP2 (NLRP3 assembly).** *Supported.*
+   - *Documents connected:* `gout-clinical-pipeline.md` (canakinumab FDA-approved Aug 2023; dapansutrile no Phase 2b/3 in gout; NLRP3 class drifted to OA/obesity/Parkinson's), `nlrp3-exploit-map.md` (six chokepoints; current stack emphasis is CP1+CP2 via oridonin/BHB/KPV), `nlrp3-inhibitor-screen.md` (production candidates ranked at CP1+CP2 with no CP5 candidates).
+   - *Why it matters:* Until now the implicit Open Enzyme assumption has been that pharma is succeeding at NLRP3-assembly inhibition (CP2) — dapansutrile would launch, validating the chokepoint, and the food-derived stack (oridonin, BHB, KPV) would be a "supplement-grade analog." The actual 2026 data shows pharma is *not* succeeding at CP2 for gout (dapansutrile stalled, MCC950 dead, no other oral NLRP3 inhibitor in gout-indicated trials). Pharma's only gout win at the inflammasome cascade since 2010 is **canakinumab at CP5** — IL-1β monoclonal blockade. This is a meaningful divergence: if the food-derived stack mirrors the failing pharma chokepoint while the winning chokepoint goes uncovered, the stack may need rebalancing toward CP5-equivalent compounds.
+   - *Suggested action:* (a) Audit `nlrp3-inhibitor-screen.md` for CP5 (IL-1β receptor antagonism) coverage — currently zero candidates. (b) Add a research item to `validation-experiments.md`: "Identify food-derived or fermentable IL-1Ra-equivalent compounds." Candidates to start with: lactoferrin (known IL-1β suppressor), specific resolvins (active IL-1β receptor antagonism via BLT1/ChemR23), KPV (already in stack — re-examine its CP5 contribution beyond CP1). (c) Reconsider whether oridonin should still be the "default NLRP3 covalent inhibitor" given that pharma's covalent NLRP3 inhibitor (MCC950 family) failed clinically while pharma's IL-1β blocker (canakinumab) succeeded.
+
+4. **TNFSF14 / LIGHT is the highest fold-change gout-flare biomarker after IL-6, and is in zero Open Enzyme wiki pages.** *Supported.*
+   - *Documents connected:* `gout-clinical-pipeline.md` (Ea et al., *Ann Rheum Dis* 2024, PMID 38373842 — Olink 92-protein panel; TNFSF14 second-highest fold change in flare; ex vivo blockade reduces LPS+MSU cytokine response; SNPs in TNFSF14 affect myeloid cytokines), `nlrp3-exploit-map.md` (six chokepoints, NF-κB-centric; TNFSF14/LIGHT nowhere mentioned), `supplements-stack.md` (no compound is rationalized via TNFSF14 modulation).
+   - *Why it matters:* TNFSF14 is part of the TNF superfamily but signals through HVEM and LTβR — not the canonical NLRP3 or IL-1β axes. If it is genuinely a high-fold-change flare biomarker with functional ex vivo evidence (cytokine reduction on blockade), it's either upstream of NF-κB priming (a new CP0?) or operates in parallel through a chokepoint the wiki has not mapped. The wiki's NLRP3-centric framing may be missing a rate-limiting step that's relevant in gout flares specifically (vs. CAPS or arthritis or other NLRP3-related diseases that the chokepoint map is borrowed from).
+   - *Suggested action:* (a) 2–4 hour PubMed sweep using `mcp__plugin_pubmed_PubMed__search_articles` for "TNFSF14 NLRP3", "TNFSF14 inflammasome", "LIGHT receptor IL-1β", "TNFSF14 HVEM macrophage gout". Goal: map TNFSF14 onto or beside the existing six-chokepoint model. (b) Cross-reference each supplement-stack compound (sulforaphane, KPV, berberine, oridonin, BHB, quercetin, EGCG) against TNFSF14 modulation in published literature. Anything that downregulates TNFSF14 picks up a free justification. (c) If TNFSF14 is a genuinely independent gout chokepoint, add a new wiki page `wiki/tnfsf14-gout-target.md` and update `nlrp3-exploit-map.md` with a "Parallel Cascade: TNFSF14/LIGHT" section.
+
+5. **The disappearance of ALLN-346 changes the project pitch fundamentally — from "open-source version of an active pharma program" to "the only gut-lumen-uricase program in the world."** *Supported.*
+   - *Documents connected:* `gout-clinical-pipeline.md` (no active gut-lumen uricase clinical program; PRX-115/SSS11/Krystexxa+MTX all systemic IV), `open-enzyme-vision.md` (positioning), `engineered-yeast-uricase-proposal.md` (collaboration ask framed around bridging from validated mechanism), `index.md` (cheapest-experiments + status).
+   - *Why it matters:* The most common implicit pushback Brian probably faced when pitching Open Enzyme to potential collaborators (Rheinallt, Lauren, Valerie) was "well, ALLN-346 is doing this in pharma — what's the marginal value of citizen science?" That objection is structurally gone. The new pitch is sharper: "ALLN-346 proved the mechanism works in mice and signaled efficacy in CKD patients. Allena ran out of runway before pivotal data. No pharma is currently funding the gut-lumen-uricase mechanism. The only way this gets tested in humans now is citizen-science self-experimentation." This is a *better* fundraising/recruitment story, not a worse one. But the proposal documents still read as if ALLN-346 is an active commercial program — they need to be reframed.
+   - *Suggested action:* Add a "Competitive Landscape (2026-04-23)" section to `open-enzyme-vision.md` (which I have not read but is the platform pitch document) that explicitly states: (a) ALLN-346 dead, (b) PRX-115 / SSS11 / Krystexxa+MTX all systemic IV, (c) gut-lumen uricase has no commercial champion, (d) this is a moat, not a gap. Update the collaborator-recruitment framing in `engineered-yeast-uricase-proposal.md` §10 to reflect that the project is now uniquely positioned, not analogously positioned.
+
+### Contradictions Found
+
+- **Mild contradiction in dapansutrile framing:** `gout-deep-dive.md` previously said "Phase 2/3 enrolling ~300 patients, data expected 2025–2026" and `gout-pathophysiology.md` said "Launch expected 2026" — both inherited from older data. The trigger file establishes that no Phase 2b/3 in gout is registered as of April 2026; the Phase 2/3 trial referenced in earlier wiki text appears to have been never-registered or quietly cancelled. *Resolved in this sweep* (Pass 1 updates corrected both pages).
+
+- **Contradiction in the "Cheapest next experiments" list (`index.md`):** The current top experiment is "Quercetin + ursolic acid + carnosine combo on MSU-stimulated macrophages" — all CP1/CP2 compounds. Given Connection 3 above (pharma's gout success is at CP5, not CP2), the cheapest-experiments list may be optimizing the wrong chokepoint. *Not resolved* — flagged for Brian. The contradiction is between "follow-pharma-success" reasoning (which would push toward CP5/IL-1β-equivalent compounds) and "complementary-chokepoint" reasoning (which says food-derived stack should attack chokepoints pharma can't or won't address). Both are defensible. Brian should choose explicitly.
+
+### Proposed Experiments (ranked by insight / cost)
+
+1. **Patent landscape search on ALLN-346 / Allena Pharmaceuticals.** $0, 1–2 hours. Expected outcome: identification of public-domain or soon-expiring mutations giving 20× protease resistance to *C. utilis* uricase. If found, this is a free $XM of pre-validated protein engineering. Highest expected-value hour available.
+2. **TNFSF14 / LIGHT literature audit + map onto chokepoint model.** $0, 2–4 hours via PubMed MCP. Expected outcome: either (a) TNFSF14 is a 7th chokepoint missing from the wiki (high-impact discovery), or (b) it folds into existing CP1, in which case the existing stack already covers it (low-impact but reassuring).
+3. **CP5-coverage audit of supplement-stack and inhibitor screen.** $0, 4 hours desk work. Expected outcome: list of food-derived IL-1Ra-equivalent compounds (lactoferrin, specific SPMs, KPV CP5 contribution, others). Decides whether the stack needs rebalancing toward the chokepoint pharma actually validated for gout.
+4. **C. utilis vs A. flavus side-by-side expression test in S. cerevisiae.** Already proposed in `engineered-yeast-uricase-proposal.md` §3. *Re-prioritize* given the industry-revealed-preference signal in Connection 1 — the comparison is no longer academic, it's the central variant choice.
+
+### Open Questions
+
+- **What was Allena's total spend on ALLN-346 before termination?** If < $30M, the citizen-science gap to pharma economics is much smaller than assumed and Open Enzyme can plausibly reproduce the validation work. If > $100M, it suggests the dose-response problem is genuinely hard and supplement-grade self-experimentation may be inadequate. This shapes whether Open Enzyme should aim at "delivery a working strain" (low total cost) or "fund a small clinical study" (high total cost).
+- **Why did the NLRP3 inhibitor class drift out of gout?** Was it a *commercial* decision (gout market crowded with allopurinol / soon AR882 / soon canakinumab) or a *scientific* one (couldn't show efficacy beyond Phase 2a, hepatotoxicity risk per MCC950 echoes)? Different answers imply different things about whether food-derived CP2 inhibition is a viable adjunct.
+- **Is *Candida utilis* uricase substantially more amenable to oral delivery than *A. flavus*?** Three programs picking *C. utilis* over *A. flavus* could reflect: (a) higher specific activity, (b) better protease resistance baseline, (c) fewer anti-drug-antibody concerns, (d) IP/freedom-to-operate considerations. Each implies a different Open Enzyme strategy.
+- **Does the canakinumab approval (Aug 2023) create demand for a cheaper IL-1β blocker that could be reached via food-grade engineering?** Canakinumab at $300K/year is the price ceiling. Anything food-grade at any meaningful CP5 coverage automatically clears the cost bar — the question is whether food-grade compounds can produce clinically meaningful IL-1β suppression at all.
+
+### Priority Actions (top 3)
+
+1. **ALLN-346 patent landscape search** (1–2 hours, $0). Highest-leverage hour available right now. Could deliver a free 20× protease-resistance mutation set already validated in humans.
+2. **Reframe `open-enzyme-vision.md` and `engineered-yeast-uricase-proposal.md` §10 around the "only gut-lumen uricase program in the world" positioning.** ~1 hour. The collaborator pitch needs to reflect the post-2022 landscape, not the pre-2022 one.
+3. **CP5 / IL-1β-blockade-equivalent audit of supplement stack and inhibitor screen.** 4 hours desk work. Decides whether Open Enzyme is mirroring pharma's *failing* gout chokepoint instead of its *winning* one.
+
+---
+
+## New this sweep — 2026-04-23
+**Trigger:** `wiki/cannabinoids-terpenes.md`
+
+### New Connections
+
+1. **Beta-caryophyllene + BHB is the evidence-strongest non-pharma gout NLRP3 combo — arguably more than oridonin + BHB.** *Supported.*
+   - *Documents connected:* `cannabinoids-terpenes.md` (MSU rat gout model, 100–400 mg/kg, *Front Pharmacol* 2021 PMID 33967792), `bhb-ketones.md` (rat ketogenic-diet gout model, Nature Medicine BHB→NLRP3), `oridonin.md` (NLRP3 Cys279 covalent — but explicitly "Gout-specific studies: ✗ None published").
+   - *Why it matters:* The current wiki positions oridonin + BHB as the two-pronged NLRP3 stack (oridonin = Cys279 covalent, BHB = K⁺ efflux). But oridonin has zero gout-model evidence. Beta-caryophyllene does have MSU-crystal rat data hitting both CP1 (TLR4/MyD88/NF-κB) and CP2 (NLRP3/caspase-1/ASC) via CB2 agonism — and BHB blocks K⁺ efflux. The mechanisms are fully orthogonal (CB2 receptor vs. K⁺ ion flux). Caryophyllene + BHB has the same "three-chokepoint coverage via two molecules" logic as oridonin + BHB, but with better gout-specific evidence on the non-BHB component.
+   - *Suggested action:* Add a direct head-to-head experiment to `validation-experiments.md`: beta-caryophyllene vs. oridonin (each paired with BHB) in a single MSU rat gout model. Endpoints: joint swelling, synovial NLRP3/caspase-1, serum IL-1β. Estimated cost ~$4,000, 6–8 weeks. Decides which covalent-or-receptor partner sits next to BHB in the recommended stack.
+
+2. **The inhibitor screen's Tier-4 classification missed published gout data — how many other Tier-4 compounds have been similarly miscategorized?** *Supported.*
+   - *Documents connected:* `nlrp3-inhibitor-screen.md` (originally rated beta-caryophyllene Tier 4 "no gout evidence"; flagged for re-rank after 2021 MSU paper surfaced), `cannabinoids-terpenes.md` (the paper that surfaced it).
+   - *Why it matters:* The screen's Tier-4 bucket includes β-caryophyllene, limonene, alpha-pinene, sulforaphane, omega-3 metabolites, and EGCG/curcumin variants. The screen's evidence check appears to have been keyword-gated on "MSU" or "gout" — if a 2021 paper on β-caryophyllene was missed, analogous papers on limonene, alpha-pinene, or similar sesquiterpenes/monoterpenes could be missed too. This is a systematic discovery bias, not a one-off.
+   - *Suggested action:* Run a targeted literature audit of each Tier-4 compound: "(compound name) + MSU + gout + animal model" across PubMed, bioRxiv, and ChEMBL-indexed papers (use `mcp__plugin_pubmed_PubMed__search_articles` + `mcp__plugin_biorxiv_bioRxiv__search_preprints` — cheap, 1 day). Promote anything with direct MSU data. This is a $0 correction pass that could surface 1–3 more re-rankings.
+
+3. **Quercetin is already a "free" PK amplifier for any CBD/cannabinoid added later to the stack.** *Speculative.*
+   - *Documents connected:* `cannabinoids-terpenes.md` (quercetin CYP3A4 IC50 = 1.97 μM; CBD metabolized by CYP2C19 + CYP3A4; co-administration expected to increase CBD exposure), `supplements-stack.md` (quercetin phytosome 500–1000 mg/day is already in the NOW list).
+   - *Why it matters:* If CBD or THCV ever enters the stack, the current quercetin dose produces a grapefruit-like CYP3A4 inhibition that would raise cannabinoid plasma AUC without any cannabinoid dose change. CBD's oral bioavailability is the limiting factor (~6% fasting, 20–30% fed); a quercetin-mediated boost could be meaningful. This isn't a reason to add CBD (beta-caryophyllene has better gout evidence), but it's a reason to *dose CBD lower than expected* if added, and to *not treat quercetin + CBD as independent stack entries.*
+   - *Suggested action:* If CBD is ever considered for the stack, note the interaction explicitly in `supplements-stack.md` under "Safety & Interactions". No experiment needed yet.
+
+4. **CBG's colitis + NLRP3 CIA data makes it the only cannabinoid with a coherent EPI story — orthogonal to engineered koji enzymes.** *Speculative.*
+   - *Documents connected:* `cannabinoids-terpenes.md` (CBG reduces colonic IL-1β, MPO, iNOS in murine DNBS and DSS colitis; CIA rat NLRP3/caspase-1/GSDMD reduction, *Front Pharmacol* 2025), `digestive-enzymes.md` (koji enzymes replace missing lipase/protease/amylase — does not address gut inflammation driving secondary EPI symptoms).
+   - *Why it matters:* The EPI track currently pairs engineered koji (enzymatic replacement) with nothing that directly addresses gut-lining inflammation. If secondary inflammation worsens the symptom burden beyond the enzymatic deficit itself, CBG is the only cannabinoid with gut-inflammation animal model data. Beta-caryophyllene is better for systemic gout flares; CBG is better for gut-specific inflammation. Different compounds, different tracks.
+   - *Suggested action:* Consider adding a short section to `digestive-enzymes.md` on adjunct anti-inflammatories (CBG, KPV via PepT1 gut absorption, omega-3 SPMs). Not a new experiment — a synthesis note for the EPI track.
+
+### Contradictions Found
+
+None. The trigger file's own "corrections" (CB2 does NOT suppress NETosis; CBD gut-lumen retention hypothesis is refuted) are internally resolved and don't conflict with other wiki pages (grepped `wiki/` — no other page claims CB2→NETosis suppression or CBD luminal retention).
+
+### Proposed Experiments (ranked by insight / cost)
+
+1. **Tier-4 literature audit via MCP servers.** Zero cost, ~4 hours. Expected outcome: 0–3 more re-rankings in the inhibitor screen. (See Connection 2.)
+2. **Beta-caryophyllene dose-response in MSU THP-1 macrophage assay.** $1,000–1,500, 3 weeks. Expected outcome: IC50 vs. quercetin (~11 μM) / oridonin (5.18 μM human cell per ChEMBL). Decides whether BCP earns Tier 1-2 ranking in the inhibitor screen. *Already listed in `cannabinoids-terpenes.md` §8.*
+3. **Beta-caryophyllene + BHB head-to-head vs. oridonin + BHB in MSU rat gout model.** $4,000, 8 weeks. Expected outcome: which partner (covalent Cys279 or CB2 agonist) delivers more flare suppression combined with BHB. Decides the recommended stack configuration. *New proposal.*
+4. **Dose-translation check for oral beta-caryophyllene.** Literature review (~2 hours) + PK modeling: the 2021 MSU rat study used 100–400 mg/kg orally. BSA-scaled to a 70 kg human, that is ~16–65 mg/kg/day = 1.1–4.5 g/day. Typical BCP supplements deliver 50–200 mg/day — potentially 20–50× below the efficacious dose. If true, the supplement-stack entry for beta-caryophyllene may be dose-inadequate. *New concern, resolvable with desk work before any wet-lab experiment.*
+
+### Open Questions
+
+- **Does oral BCP at 50–200 mg/day (the supplement range) actually reproduce the 100–400 mg/kg rat effect?** If PK scaling suggests no, the supplement-stack entry needs a caveat or a dose bump. This is a deal-breaker-level question for the stack claim.
+- **Would THCV's 20× higher CB2 affinity (Ki 7.5 nM vs. BCP 155 nM) translate to better MSU gout efficacy?** Untested. THCV has regulatory friction (cannabis-derived), so the question is academic unless BCP underperforms in the proposed MSU macrophage assay.
+- **Do any *other* Tier-4 compounds have missed gout-model data?** See Connection 2.
+- **Is there an engineered microbial route to beta-caryophyllene that scales past 10–50 mg/L?** Current titers are two orders of magnitude below the likely therapeutic dose. If BCP becomes a bedrock stack component, the "engineered koji produces BCP" pathway gets more interesting — but only if titers improve.
+
+### Priority Actions (top 3)
+
+1. **Dose-translation check on beta-caryophyllene** (desk work, ~2 hours). Before promoting BCP to a stack bedrock, verify the supplement dose range hits the efficacious rat dose when BSA-scaled. Low cost, potentially invalidating — do first.
+2. **Tier-4 literature audit** (MCP queries, ~4 hours). If the inhibitor screen missed the BCP MSU paper, it likely missed others. Cheap, systematic, and closes the discovery gap exposed by this sweep.
+3. **Head-to-head BCP+BHB vs. oridonin+BHB design in `validation-experiments.md`** (planning, 1 hour). Doesn't commit to running the experiment, but gets the design on the queue so it can be prioritized against the other proposed gout experiments.
+
+---
+
+# Synthesis Pass 2: New Connections Across April 2026 Analyses
+
 **A creative brainstorm connecting dots across 8 rigorous technical analyses**
 
 This document identifies **NEW SYNERGIES, CONTRADICTIONS, AND EXPERIMENTS** that emerge only when reading across the entire knowledge base simultaneously. This is a hypothesis-generation document for Brian to validate, challenge, or reject.

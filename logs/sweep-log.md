@@ -35,3 +35,17 @@ Records of when findings from ai-analysis/ were propagated to docs/ and wiki/.
 1. `wiki/GRAPH.md` needs new Mermaid nodes for ursolic acid, carnosine, kojic acid, and the SB-1/BAL-1/OPT-1 variants
 2. Validation experiments page (`wiki/validation-experiments.md`) should incorporate the de-risking experiments from cross-validation (05)
 3. Bio-AI tools wiki page (`wiki/bio-ai-tools.md`) should reference the ai-analysis outputs as examples of completed analysis
+
+---
+
+## Sweep: 2026-04-23 14:17
+
+**Trigger:** wiki/cannabinoids-terpenes.md
+**Pass 1 updates:** wiki/nlrp3-inflammasome.md, wiki/supplements-stack.md, wiki/oridonin.md, wiki/bhb-ketones.md
+**Pass 2 synthesis:** Beta-caryophyllene + BHB may be the evidence-strongest non-pharma gout NLRP3 pairing — direct MSU animal model data that oridonin + BHB lacks; also flagged a systematic Tier-4 audit gap in the inhibitor screen.
+
+## Sweep: 2026-04-23 18:27
+
+**Trigger:** wiki/gout-clinical-pipeline.md
+**Pass 1 updates:** wiki/uricase.md, wiki/nlrp3-inflammasome.md, wiki/nlrp3-exploit-map.md, wiki/gout-deep-dive.md, wiki/gout-pathophysiology.md, wiki/GRAPH.md
+**Pass 2 synthesis:** Three of the last three industry/academic uricase programs (ALLN-346, SSS11, ACS Synth Bio S. boulardii) chose enzymes other than A. flavus — the wiki's "A. flavus default" inherited from rasburicase may be lagging revealed preference; ALLN-346's termination may have made the 20× protease-resistance mutations public-domain (1-hour patent search could yield free pharma-validated engineering); pharma's gout success is now at CP5 (canakinumab approved Aug 2023) while CP2 stagnates (dapansutrile no Phase 2b/3 in gout) — supplement stack's CP1+CP2 emphasis may be mirroring pharma's *failing* chokepoint.

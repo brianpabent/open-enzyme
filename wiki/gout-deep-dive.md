@@ -93,7 +93,7 @@ This is why gout flares are so explosively painful — the NLRP3 inflammasome is
 
 **NSAIDs** (indomethacin, naproxen) and **corticosteroids** are alternatives, but carry their own baggage — GI bleeding risk, cardiovascular risk (NSAIDs), glucose dysregulation and immune suppression (steroids). **Prednisone** (typically a short taper: 30–40mg tapering over 7–10 days) is commonly prescribed for acute flares, especially when colchicine isn't started early enough or when NSAIDs are contraindicated. It's fast-acting and effective, but repeated use comes with cumulative steroid side effects — bone density loss, metabolic disruption, and rebound flare risk on discontinuation.
 
-**IL-1 inhibitors** (anakinra, canakinumab) are used off-label for refractory acute gout, directly blocking the IL-1β signal. Effective, but expensive and immunosuppressive.
+**IL-1 inhibitors** were used off-label for refractory acute gout for years; **canakinumab (Ilaris) received formal FDA approval for gout in August 2023** — the first biologic ever indicated for gout in the US, 12 years after its 2011 rejection (Clinical Trial; *J Inflamm Res* 2026, PMID: 41867470. source: gout-clinical-pipeline.md). Anakinra remains off-label. Both are effective but expensive and immunosuppressive.
 
 ### Urate-Lowering Therapy (ULT)
 
@@ -124,7 +124,11 @@ The gout pipeline is more active now than it's been in decades. Here's what's in
 | **Pozdeutinurad (AR882)**<br>Arthrosi → acquired by Sobi for $1.5B | Next-gen selective URAT1 inhibitor (uricosuric) | Phase 3 | Both pivotal trials (REDUCE 1 & REDUCE 2) fully enrolled with 750+ patients each. Data expected Q2–Q4 2026. NDA planned. Potentially best-in-class URAT1 inhibitor. Sobi's $1.5B acquisition signals high confidence. |
 | **SEL-212 (Pegadricase + ImmTOR)**<br>Sobi (formerly Selecta Biosciences) | Pegylated uricase + rapamycin nanoparticles to prevent immunogenicity | Phase 3 | DISSOLVE I & II completed. High-dose response rates: 56% (DISSOLVE I), 46% (DISSOLVE II). Superior to pegloticase in COMPARE head-to-head. ImmTOR nanoparticles suppress anti-drug antibody formation — solves pegloticase's biggest problem. Monthly dosing vs. biweekly for pegloticase. |
 | **Firsekibart (Genakumab)** | Anti-IL-1β monoclonal antibody | Phase 3 | Phase 3 in acute gout: reduced new flare risk by **90% at 12 weeks**, 87% at 24 weeks. Phase 2 head-to-head: outperformed colchicine for flare prophylaxis. Particularly important for patients who can't tolerate NSAIDs/colchicine (renal impairment, drug interactions). |
-| **Dapansutrile (OLT1177)**<br>Olatec Therapeutics | Oral selective NLRP3 inflammasome inhibitor | Phase 2/3 | First-in-class oral NLRP3 inhibitor. Phase 2a showed marked pain reduction in acute gout flares. Phase 2/3 enrolling ~300 patients, data expected 2025–2026. Also in trials for Parkinson's, melanoma, and diabetes. Potential launch as early as 2026. |
+| **Dapansutrile (OLT1177)**<br>Olatec Therapeutics | Oral selective NLRP3 inflammasome inhibitor | Phase 2a (no later trial in gout) | Phase 2a published 2020 (*Lancet Rheumatol*, PMID: 33005902): 52–68% pain reduction at day 3 across four dose levels (N=34). **No Phase 2b or 3 in gout registered as of April 2026** — Olatec's later development moved to heart failure (Phase 1b completed 2019) and COVID-19 (Phase 2 terminated 2022). Gout development appears stalled. (source: gout-clinical-pipeline.md) |
+| **PRX-115**<br>Protalix | Pegylated recombinant uricase ± methotrexate, IV | Phase 2 (RELEASE) | NCT07280156 started 2025-12-22, N=150, primary completion Dec 2027. Same systemic-uricase + immunomodulator strategy as Krystexxa+MTX and SEL-212. Targets treatment-naive (not just refractory) gout. **The most credible new uricase competitor.** (source: gout-clinical-pipeline.md) |
+| **SSS11**<br>Shenyang Sunshine | Pegylated *Candida utilis* uricase, IV | Phase 1 | NCT06629376, N=60, single-center (Shanghai). First clinical use of *C. utilis* uricase. (source: gout-clinical-pipeline.md) |
+| **Canakinumab (Ilaris)**<br>Novartis | Anti-IL-1β monoclonal antibody | **FDA approved Aug 2023 for gout** | First biologic formally indicated for gout in the US; 12 years after initial 2011 rejection. (source: gout-clinical-pipeline.md) |
+| **ALLN-346**<br>Allena Pharmaceuticals | Engineered oral *C. utilis* uricase (gut-lumen) | **Discontinued** | Phase 2a CKD trial (NCT04987294) **terminated September 2022** with 19/200 patients enrolled. Allena has registered no further gout trials. (source: gout-clinical-pipeline.md) |
 | **Dotinurad (URECE)**<br>Fuji Yakuhin / Eisai | Selective URAT1 inhibitor | Approved (Asia) | Approved in Japan (2020), recently launched in China, Thailand, Philippines (2025). Highly selective for URAT1 with minimal OAT interaction, reducing kidney stone risk vs. older uricosurics. |
 | **ABP-671 (Lingdolinurad)**<br>Atom Therapeutics | URAT1 inhibitor | Phase 2b/3 | Global Phase 2b/3 trial hit primary efficacy endpoint — dose-dependent serum uric acid reduction with acceptable safety. Phase 3 likely. |
 | **Epaminurad (URC102)** | URAT1 inhibitor | Phase 3 | Recruiting, head-to-head vs. febuxostat. |
@@ -324,7 +328,7 @@ What if you didn't lower uric acid at all, but instead made the immune system st
 
 ### NLRP3 Inflammasome Inhibitors
 
-**Dapansutrile** is the first oral selective NLRP3 inhibitor to reach Phase 2/3 for gout. It directly prevents NLRP3 inflammasome assembly, blocking the entire downstream cascade (caspase-1 activation, IL-1β release, neutrophil recruitment). In Phase 2a, oral dapansutrile reduced target joint pain in acute gout flares, with the effect most pronounced at higher doses (1000–2000mg). A Phase 2/3 trial (~300 patients) is expected to report soon.
+**Dapansutrile** is the first oral selective NLRP3 inhibitor to publish a Phase 2a in gout. It directly prevents NLRP3 inflammasome assembly, blocking the entire downstream cascade (caspase-1 activation, IL-1β release, neutrophil recruitment). In the 2020 Phase 2a (N=34, *Lancet Rheumatol*, PMID: 33005902), oral dapansutrile reduced target joint pain 52–68% at day 3 across four dose levels. **However, as of April 2026 no Phase 2b or 3 in gout is registered on ClinicalTrials.gov** — Olatec's subsequent active programs moved to heart failure (Phase 1b completed 2019) and COVID-19 (Phase 2 terminated 2022). The "first oral NLRP3 inhibitor for gout" pivotal readout has not arrived. (source: gout-clinical-pipeline.md)
 
 **MCC950 and derivatives:** MCC950 was the first potent, selective NLRP3 inhibitor discovered and has been the basis for a generation of follow-on compounds. It binds the NACHT domain and prevents the conformational change needed for inflammasome activation. Several optimized derivatives with improved solubility and pharmacokinetics are in preclinical development.
 
@@ -436,7 +440,7 @@ This section connects research happening in adjacent fields that could — with 
 
 **SEL-212 for refractory gout.** The ImmTOR tolerization technology solves pegloticase's immunogenicity problem. Phase 3 data is positive. This should reach market for severe/tophaceous gout and dramatically improve outcomes for the hardest-to-treat patients.
 
-**Firsekibart or dapansutrile for acute flares.** Both represent genuine new mechanisms (IL-1β blockade and NLRP3 inhibition respectively). At least one should reach market for patients who can't tolerate current flare treatments.
+**Canakinumab now formally approved (Aug 2023) for gout; firsekibart/genakumab also Phase 3 complete.** IL-1β blockade is now an *approved* gout indication in the US — not just off-label. Dapansutrile, by contrast, has **no Phase 2b/3 in gout registered as of April 2026** despite the 2020 Phase 2a signal — the oral NLRP3 inhibitor route to a pivotal gout readout is currently dormant. (source: gout-clinical-pipeline.md)
 
 ### Medium-Term Frontier Bets (5–10 Year Horizon)
 

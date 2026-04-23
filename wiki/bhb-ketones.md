@@ -45,6 +45,8 @@ BHB prevents **potassium efflux** — a critical trigger for NLRP3 assembly. Whe
 
 BHB also **reduces ASC speck formation**, preventing the physical assembly of the inflammasome platform.
 
+**Overlap note:** CBD, CBC, and THCV also suppress K⁺ efflux via P2X7 receptor block (CBD reduces nigericin-induced K⁺ efflux ~13% at 10 μM in THP-1 monocytes; In Vitro, Liu et al., *J Nat Prod* 2020). P2X7 sits upstream of K⁺ efflux and is canonically the signal-2 trigger. Stacking a P2X7-blocking cannabinoid on top of BHB hits the same chokepoint from a slightly different angle — likely diminishing returns rather than additive. For additive CP2 coverage, a mechanistically distinct inhibitor (oridonin at Cys279, beta-caryophyllene via CB2/NLRP3 direct docking) is a better layering choice than another K⁺-efflux blocker. See [Cannabinoids & Terpenes](./cannabinoids-terpenes.md). (source: cannabinoids-terpenes.md)
+
 ### Chokepoint 4: Caspase-1 Suppression
 
 BHB reduces caspase-1 activation downstream of inflammasome assembly, providing a third layer of suppression.
@@ -116,6 +118,7 @@ Exogenous BHB does not provide the full metabolic benefits of fasting (autophagy
 | **BHB (supplement)** | 1, 2, 4 | No | ~$30–50/month | <30 min |
 | **KPV peptide** | 1, 2 | No | Unknown (research) | Sub-Q immediate |
 | **Oridonin** | 1, 2 | No | ~$20–40/month | 1–2 hours |
+| **Beta-caryophyllene** | 1, 2 | No | ~$15–30/month | Hours (oral) |
 | **Colchicine** | 3 | No | ~$10–20/month | Varies |
 
 **Key insight:** BHB hits MORE chokepoints than any single peptide, and it's endogenously producible at zero cost via fasting.

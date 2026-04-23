@@ -136,6 +136,8 @@ Oridonin + [[bhb-ketones|BHB]] represent a two-pronged NLRP3 inhibition strategy
 - BHB: K⁺ efflux blockade + ASC oligomerization prevention
 - Combined: redundant suppression of multiple inflammasome activation pathways
 
+Oridonin + beta-caryophyllene is a third mechanistically distinct combination worth testing. Oridonin acts covalently at NLRP3 Cys279 (NACHT domain); beta-caryophyllene acts via CB2 agonism upstream (TLR4/MyD88/NF-κB suppression in MSU-stimulated synovium, animal model). No direct combination studies are published, but the mechanisms are non-overlapping, and a combination may allow dose reduction of oridonin — reducing any off-target covalent reactivity risk from chronic dosing. See [Cannabinoids & Terpenes](./cannabinoids-terpenes.md#experiments-that-would-move-the-needle) for the proposed MSU-model combination experiment. (source: cannabinoids-terpenes.md)
+
 ## Related Concepts
 
 - [[nlrp3-inflammasome|NLRP3 Inflammasome]] — The target pathway

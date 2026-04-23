@@ -65,6 +65,10 @@ The NLRP3 inflammasome pathway operates as a sequential cascade with six distinc
 
 - **Vitamin D**: Vitamin D receptor (VDR) activation suppresses NF-κB. Target 50–70 ng/mL serum levels; 5,000–10,000 IU daily with K2. (Source: nlrp3-exploit-map.md)
 
+- **Beta-caryophyllene** (CB2 agonist, food additive in black pepper/clove): In MSU-induced gouty arthritis in rats (100–400 mg/kg oral, animal model), dose-dependently reduced synovial TLR4, MyD88, p65 (NF-κB) expression — hitting CP1 alongside its CP2 NLRP3 suppression. This is the only cannabinoid or terpene with direct MSU gout-model evidence. (*Front Pharmacol* 2021;12:651305, PMID: 33967792). See [Cannabinoids & Terpenes](./cannabinoids-terpenes.md). (source: cannabinoids-terpenes.md)
+
+- **CBG (Cannabigerol)**: NF-κB/MAPK pathway inhibition in RAW 264.7 macrophages (In Vitro, *J Microbiol Biotechnol* 2025). In colitis animal models (DNBS and DSS), reduced colonic IL-1β, MPO, iNOS — part of the effect is CB2-independent. Not gout-tested; strongest case is for gut inflammation, not systemic flare suppression. (source: cannabinoids-terpenes.md)
+
 ### Chokepoint 2: NLRP3 Activation and ASC Assembly
 
 **The Step:** MSU crystal phagocytosis triggers potassium efflux from cells and mitochondrial reactive oxygen species (ROS) generation. These are the primary "Signal 2" inputs that cause NLRP3 to oligomerize and recruit ASC. The exact mechanism of signal transduction is still being elucidated, but K⁺ efflux and mtROS are the most validated triggers. Once activated, NLRP3 serves as a nucleation platform for ASC to polymerize into fibrillar aggregates (specks).
@@ -90,6 +94,10 @@ The NLRP3 inflammasome pathway operates as a sequential cascade with six distinc
 - **Autophagy inducers:**
   - **Intermittent fasting (16:8 minimum)**: Activates AMPK, inhibits mTOR, induces autophagy, and generates BHB. Two-for-one mechanism. (Source: nlrp3-exploit-map.md)
   - **Rapamycin**: Gold standard mTOR inhibitor, induces autophagy via spermidine pathway. Dose: 2–5 mg weekly. Requires prescription but accessible through longevity-focused physicians. (Source: nlrp3-exploit-map.md)
+
+- **CBD, CBC, THCV** (P2X7 receptor block, upstream of K⁺ efflux): CBD (10 μM) reduces nigericin-induced K⁺ efflux ~13% in THP-1 monocytes and binds P2X7 at GLU172/VAL173 (In Vitro, Liu et al., *J Nat Prod* 2020, PMID: 32374168). CBC and THCV act via the same PANX1/P2X7 axis (*Molecules* 2023;28(18):6487). Mechanism partially overlaps with BHB's K⁺-efflux block — layering both at CP2 may have diminishing returns. None are gout-tested; extrapolation only. (source: cannabinoids-terpenes.md)
+
+- **Beta-caryophyllene** (CB2 agonist): In the same MSU rat gout model as CP1, suppressed synovial NLRP3, caspase-1, and ASC expression (Animal Model, *Front Pharmacol* 2021). CDOCKER interaction energy 31.92 kcal/mol against NLRP3 (computational; no cell-free IC50 reported). CB2 Ki = 155 nM; functional EC50 ~38 nM. THCV has higher CB2 affinity (Ki = 7.5 nM) but no gout-model data. (source: cannabinoids-terpenes.md)
 
 ### Chokepoint 3: ASC Speck Assembly and Caspase-1 Recruitment
 
@@ -167,13 +175,25 @@ The most efficient exploits hit three or more chokepoints:
 
 ### Approved or In Clinical Development
 
-- **Canakinumab (Ilaris)**: IL-1β monoclonal antibody. FDA-approved for gout and periodic fever syndromes. Very effective but expensive (~$300,000/year). Systemic immunosuppression risk.
+- **Canakinumab (Ilaris)**: IL-1β monoclonal antibody. **FDA approved for gout in August 2023** — the first biologic ever formally indicated for gout in the US, 12 years after its initial 2011 rejection. Originally approved for CAPS/JIA. Very effective but expensive (~$300,000/year). Systemic immunosuppression risk. (Clinical Trial; *J Inflamm Res* 2026;19, PMID: 41867470. source: gout-clinical-pipeline.md)
+
+- **Genakumab (Firsekibart)**: Chinese canakinumab competitor (GeneScience). Phase 3 NCT05983445 (313 patients) completed April 2024. Same anti-IL-1β mechanism. (Clinical Trial; source: gout-clinical-pipeline.md)
 
 - **Anakinra (Kineret)**: IL-1 receptor antagonist. FDA-approved for RA and CAPS. Off-label for refractory gout. Less expensive than canakinumab but requires daily injection.
 
-- **Dapansutrile (OLT1177)**: Oral NLRP3 inhibitor. Phase 2a trial for gout showed "marked target joint pain reduction in all dose groups" with swelling reduction by day 3. Good safety profile (no hepatotoxicity like MCC950). Currently in Phase 2/3 trials. This may eventually be the pharmaceutical solution. (Source: nlrp3-exploit-map.md)
+- **Rilonacept (Arcalyst)**: IL-1 trap. **Rejected by FDA for gout in 2012** despite a 1,315-patient Phase 3 (NCT00856206) demonstrating efficacy. Not currently in active gout development. (Clinical Trial; source: gout-clinical-pipeline.md)
+
+- **Dapansutrile (OLT1177)**: Oral NLRP3 inhibitor. Phase 2a in gout (N=34, *Lancet Rheumatol* 2020, PMID: 33005902) showed 52–68% target joint pain reduction at day 3 across four dose levels. **However, no Phase 2b or Phase 3 trial in gout is registered on ClinicalTrials.gov as of April 2026.** Olatec's subsequent active programs moved to heart failure (Phase 1b NCT03534297, completed 2019) and COVID-19 (Phase 2 NCT04540120, terminated 2022). Dapansutrile in gout appears stalled, not advancing. (Clinical Trial; source: gout-clinical-pipeline.md)
 
 - **MCC950 (CRID3)**: The first specific NLRP3 inhibitor. Binds the Walker B motif in the NACHT domain, blocking ATP hydrolysis required for oligomerization. Clinical development terminated due to hepatotoxicity in Phase 1 RA trial, but it defined the druggable target and validated the mechanism.
+
+### NLRP3 Pipeline Has Drifted Out of Gout
+
+The broader NLRP3 inhibitor pipeline has moved to other indications where the biology has wider therapeutic appeal: DFV890 (Novartis, knee osteoarthritis Phase 2 completed Dec 2024), NT-0796 (NodThera, obesity + semaglutide Phase 2a active), VTX3232 (Zomagen, Parkinson's Phase 2a completed April 2025), VENT-02 (Ventus, Parkinson's Phase 1b **terminated Oct 2025**), Inzomelid (Inflazome/Roche, CAPS Phase 1 completed), ZYIL1 (Zydus, Phase 1 completed). **No NLRP3-specific compound is in active gout-indicated trials as of April 2026.** This is a strategic data point for Open Enzyme's "food-derived NLRP3 adjunct" positioning — the prescription pipeline isn't delivering for gout. (source: gout-clinical-pipeline.md)
+
+### Emerging Target: TNFSF14 (LIGHT)
+
+A 2024 *Annals of the Rheumatic Diseases* study (Ea et al., DOI: 10.1136/ard-2023-225305, PMID: 38373842) used the Olink 92-protein inflammation panel on gout flare vs. intercritical vs. treat-to-target patients. **TNFSF14 (TNF superfamily 14, also called LIGHT) was the highest fold-change biomarker during flare after IL-6.** Ex vivo TNFSF14 blockade reduced LPS + MSU-induced cytokine response, and SNPs in TNFSF14 affected myeloid cytokine production. This is a candidate gout target distinct from NLRP3 and IL-1β — currently in no clinical program, worth tracking. (Clinical Trial + In Vitro; source: gout-clinical-pipeline.md)
 
 ## Engineered Koji Opportunity
 

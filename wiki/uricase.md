@@ -72,13 +72,28 @@ Approximately 60% of patients receiving repeated rasburicase doses develop anti-
 
 **ALLN-346** was an engineered oral uricase developed by Allena Pharmaceuticals. It is an engineered variant of *Candida utilis* uricase, modified using protein engineering to have 20-fold increased stability against pancreatic proteases (half-life of 85.3 min vs. 4.3 min for wild-type *C. utilis* enzyme in 80 ng/μL pancreatin) while maintaining specific activity. (Source: engineered-yeast-uricase-proposal.md)
 
-### Clinical Evidence
+### Program Status (2026-04-23)
+
+**The ALLN-346 program is no longer active.** The Phase 2a CKD trial NCT04987294 — the pivotal study planned across 17 US sites — was **terminated September 2022 with only 19 patients enrolled** against a planned cohort of >200. The three earlier Phase 1/2 studies (NCT04236219 SAD, NCT05168683 enteric coating scintigraphy, NCT04987242 inpatient hyperuricemia) had completed by March 2022. Allena Pharmaceuticals has registered no further gout trials on ClinicalTrials.gov after September 2022. (Animal Model + Clinical Trial; source: gout-clinical-pipeline.md)
+
+The mechanism (gut-lumen uricase exploiting ABCG2 secretion) remains scientifically sound; the *commercial* proof-of-concept for oral uricase in gout has not been delivered. Open Enzyme can no longer be framed as "a citizen-science version of a validated clinical program" — it is the citizen-science version of a promising mechanism that pharma did not carry to a pivotal readout. See [gout-clinical-pipeline.md](gout-clinical-pipeline.md) for the full competitive snapshot.
+
+### Clinical Evidence (Historical)
 
 **In vivo:** In urate oxidase-deficient knockout mice, oral ALLN-346 treatment over 7- and 19-day studies normalized urine uric acid excretion and significantly reduced hyperuricemia. (Source: engineered-yeast-uricase-proposal.md)
 
 **Human Phase 2a (Study 201):** Statistically significant reductions in serum uric acid (sUA) were observed from days 5–7 in patients with gout and chronic kidney disease (CKD). (Source: engineered-yeast-uricase-proposal.md)
 
-**Human Phase 2a (Study 202):** The broader cohort showed mean sUA reductions of only 0–5% from baseline on days 7 and 14—not statistically significant vs. placebo. The program was subsequently discontinued, though not for safety or efficacy reasons, but rather due to Allena Pharmaceuticals' commercial and funding situation. (Source: engineered-yeast-uricase-proposal.md)
+**Human Phase 2a (Study 202):** The broader cohort showed mean sUA reductions of only 0–5% from baseline on days 7 and 14—not statistically significant vs. placebo. The Phase 2a CKD trial (Study 201's successor at scale, NCT04987294) was then terminated September 2022. (Source: engineered-yeast-uricase-proposal.md, gout-clinical-pipeline.md)
+
+## Active Clinical Uricase Competitors (2026 Snapshot)
+
+Two systemic IV uricase programs are currently in clinical development, both pursuing the systemic-uricase + immunomodulator strategy that Krystexxa+MTX (Amgen) established:
+
+- **PRX-115 (Protalix) — Phase 2 RELEASE trial NCT07280156** (Clinical Trial). Pegylated recombinant uricase ± methotrexate, IV, 24 weeks; N=150, started 2025-12-22, primary completion Dec 2027. Targets treatment-naive gout (not just refractory); excludes eGFR ≤ 40. (source: gout-clinical-pipeline.md)
+- **SSS11 (Shenyang Sunshine) — Phase 1 NCT06629376** (Clinical Trial). Pegylated *Candida utilis* uricase, IV, N=60, single-center (Huashan Hospital, Shanghai). First clinical use of *C. utilis*-derived uricase. (source: gout-clinical-pipeline.md)
+
+**All current clinical uricase programs are systemic IV.** No active program (clinical or pharmacological) targets the gut-lumen-uricase angle that Open Enzyme pursues. This positioning is uncompeted in any registered trial as of April 2026. (source: gout-clinical-pipeline.md)
 
 ## The Gut-Lumen Insight
 

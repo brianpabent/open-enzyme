@@ -215,11 +215,17 @@ The gout pipeline is more active now than it's been in decades:
 | **Pozdeutinurad (AR882)** | Next-gen selective URAT1 inhibitor | Phase 3 | REDUCE 1 & 2 pivotal trials fully enrolled. NDA planned 2026. |
 | **SEL-212** | Pegylated uricase + rapamycin nanoparticles (prevents immunogenicity) | Phase 3 | DISSOLVE I & II completed. 46–56% response rates. Superior to pegloticase. |
 | **Firsekibart (Genakumab)** | Anti-IL-1β monoclonal antibody | Phase 3 | Reduced new flare risk by 90% at 12 weeks, 87% at 24 weeks. |
-| **Dapansutrile (OLT1177)** | Oral selective NLRP3 inflammasome inhibitor | Phase 2/3 | First-in-class oral NLRP3 inhibitor. Marked pain reduction in acute gout. Launch expected 2026. |
+| **Dapansutrile (OLT1177)** | Oral selective NLRP3 inflammasome inhibitor | Phase 2a only | 2020 Phase 2a (N=34): 52–68% pain reduction. **No Phase 2b/3 in gout registered as of April 2026 — gout development appears stalled.** (source: gout-clinical-pipeline.md) |
 | **Dotinurad (URECE)** | Selective URAT1 inhibitor | Approved (Asia) | Approved in Japan, China, Thailand, Philippines. |
 | **HNW005** | Dual NLRP3 + URAT1 inhibitor | Preclinical | Single molecule hitting both inflammation and uric acid. IL-1β IC50 = 1.7 μM. |
+| **Canakinumab (Ilaris)** | Anti-IL-1β monoclonal antibody | **FDA approved Aug 2023 for gout** | First biologic formally indicated for gout in the US. (source: gout-clinical-pipeline.md) |
+| **PRX-115 (RELEASE)** | Pegylated recombinant uricase ± methotrexate, IV | Phase 2 (recruiting) | Protalix; NCT07280156 started Dec 2025, N=150. **The new systemic-uricase competitor.** (source: gout-clinical-pipeline.md) |
+| **SSS11** | Pegylated *Candida utilis* uricase, IV | Phase 1 | Shenyang Sunshine; NCT06629376. First clinical *C. utilis* uricase. (source: gout-clinical-pipeline.md) |
+| **ALLN-346** | Engineered oral *C. utilis* uricase (gut-lumen) | **Discontinued** | Phase 2a CKD trial NCT04987294 terminated September 2022 (19/200 enrolled). (source: gout-clinical-pipeline.md) |
 
 **Key insight:** The paradigm shift is toward **dual-mechanism approaches**—targeting both uric acid levels AND inflammation simultaneously. (Source: gout-deep-dive.md, §3)
+
+**Pipeline reality check (2026-04-23):** The most consequential 2022–2025 changes for Open Enzyme's positioning: (1) ALLN-346 (gut-lumen uricase) was terminated September 2022 — the gut-lumen-uricase clinical precedent has gone dormant; (2) dapansutrile gout development has not progressed past Phase 2a despite the 2020 signal; (3) canakinumab finally got FDA approval for gout (August 2023); (4) PRX-115 (Protalix Phase 2 RELEASE, started Dec 2025) is the new systemic-uricase contender. **No active program in any phase targets the gut-lumen-uricase angle Open Enzyme pursues.** See [gout-clinical-pipeline.md](gout-clinical-pipeline.md) for the full snapshot. (source: gout-clinical-pipeline.md)
 
 ---
 
