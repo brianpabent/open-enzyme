@@ -61,7 +61,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Supplements Stack](wiki/supplements-stack.md)** — Practical NOW/SOON/FUTURE recommendations with dosing and evidence levels
 - **[Cannabinoids & Terpenes](wiki/cannabinoids-terpenes.md)** — CBD, CBG, CBC, THCV, beta-caryophyllene, myrcene: NLRP3 mechanisms, gout evidence, EPI applications; beta-caryophyllene has direct MSU gout animal model data
 - **[Validation Experiments](wiki/validation-experiments.md)** — All proposed experiments consolidated: in vitro, animal, and human self-experimentation phases
-- **[Bio-AI Tools](wiki/bio-ai-tools.md)** — Open source protein AI (ESM-2, ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, SPURS, DiffDock, CodonTransformer) + commercial tools (GPT-Rosalind, Amazon Bio Discovery, Coefficient Bio) + **Anthropic life-sciences marketplace** (17 à la carte plugins — PubMed, bioRxiv, ChEMBL, Open Targets, ClinicalTrials.gov MCP servers + scientific-problem-selection skill as Phase 0 core); project-specific prompts and workflow
+- **[Bio-AI Tools](wiki/bio-ai-tools.md)** — Open source protein AI (ESM-2, ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, SPURS, DiffDock, CodonTransformer) + commercial tools (GPT-Rosalind, Amazon Bio Discovery, Coefficient Bio) + **Anthropic life-sciences marketplace** (17 à la carte plugins — PubMed, bioRxiv, ChEMBL, Open Targets, ClinicalTrials.gov MCP servers as Phase 0 core); project-specific prompts and workflow
 
 ## Team
 

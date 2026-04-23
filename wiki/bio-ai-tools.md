@@ -559,7 +559,7 @@ Anthropic's ["Bio Research" experience on claude.ai](https://claude.com/plugins/
 /plugin marketplace add anthropics/life-sciences
 ```
 
-**Step 2 — install the Phase 0 core (recommended starting set):**
+**Step 2 — install the Phase 0 core (5 MCP servers):**
 
 ```text
 /plugin install pubmed@life-sciences
@@ -567,8 +567,9 @@ Anthropic's ["Bio Research" experience on claude.ai](https://claude.com/plugins/
 /plugin install clinical-trials@life-sciences
 /plugin install chembl@life-sciences
 /plugin install open-targets@life-sciences
-/plugin install scientific-problem-selection@life-sciences
 ```
+
+> **Note on skills:** The claude.ai bundle exposes `/scientific-problem-selection` and other skills (`/start`, etc.), but these are **not exposed as installable plugins** in the Claude Code marketplace — the repo has directories for them, but `marketplace.json` only lists the MCP servers and a subset of skills. If you need problem-scoping help, ask Claude directly against `wiki/synthesis.md` — no skill required.
 
 **Step 3 — reload and verify:**
 
@@ -587,7 +588,6 @@ After reload, the MCP servers auto-attach as callable tools in every session in 
 | **clinical-trials** | MCP | **Install now.** ClinicalTrials.gov access. Track ALLN-346, Dapansutrile (OLT1177), Firsekibart, PULSE probiotic, Rilonacept. |
 | **chembl** | MCP | **Install now.** Compound bioactivity database (IC50/Ki/Kd). Look up NLRP3 inhibitors, xanthine oxidase inhibitors, CB2 agonists in one query instead of parsing papers. |
 | **open-targets** | MCP | **Install now.** Target–disease evidence platform. Validates target rationale for gout / EPI / SIBO. |
-| **scientific-problem-selection** | Skill | **Install now.** Framework to scope and rank research problems. Run against `wiki/synthesis.md` and the cheapest-next-experiments table in `index.md`. |
 | **biorender** | MCP | Optional. Scientific illustration generation. Useful when publishing figures; not Phase 0 critical. |
 | **synapse** | MCP | Optional. Sage Bionetworks collaborative data management. Install if/when Rheinallt / Lauren / Valerie join and we need a shared data platform. |
 | **wiley-scholar-gateway** | MCP | Optional. Wiley journal access. Useful when a cited paper is paywalled. |
@@ -713,7 +713,7 @@ Covered in [ai-bio-tools-playbook.md](./ai-bio-tools-playbook.md) §Codex. Both 
 
 **For Open Enzyme project, in priority order:**
 
-1. **Install the Phase 0 core from Anthropic's life-sciences marketplace in Claude Code** — `/plugin marketplace add anthropics/life-sciences`, then install `pubmed`, `biorxiv`, `clinical-trials`, `chembl`, `open-targets`, and `scientific-problem-selection` (each as `/plugin install <name>@life-sciences`), then `/reload-plugins`. This is the single highest-leverage change: literature, trials, and compound databases move from web-scraping to structured MCP calls without leaving the terminal. Immediate wins on sweep daemon quality and new-page literature scans. Defer the wet-lab skills (`nextflow-development`, `scvi-tools`, `single-cell-rna-qc`, `instrument-data-to-allotrope`) until wet-lab data arrives.
+1. **Install the Phase 0 core from Anthropic's life-sciences marketplace in Claude Code** — `/plugin marketplace add anthropics/life-sciences`, then install `pubmed`, `biorxiv`, `clinical-trials`, `chembl`, and `open-targets` (each as `/plugin install <name>@life-sciences`), then `/reload-plugins`. This is the single highest-leverage change: literature, trials, and compound databases move from web-scraping to structured MCP calls without leaving the terminal. Immediate wins on sweep daemon quality and new-page literature scans. Defer the wet-lab skills (`nextflow-development`, `scvi-tools`, `single-cell-rna-qc`, `instrument-data-to-allotrope`) until wet-lab data arrives.
 
 2. **Open source tools for computational biology** — ColabFold, ESM-2, SPURS/RaSP, CodonTransformer, DiffDock. Free, available now, quantitative outputs. These cover structure prediction, variant scoring, stability prediction, codon optimization, and docking. The plugin doesn't replace them; it complements them.
 
