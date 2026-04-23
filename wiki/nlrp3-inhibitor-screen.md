@@ -599,6 +599,58 @@ Integration into engineered **S. cerevisiae + A. oryzae** dual-organism systems 
 
 ---
 
+## Appendix: ChEMBL IC50 Cross-Check (2026-04-23)
+
+This section cross-references the IC50 values cited throughout this screen against the EMBL-EBI ChEMBL v34 curated bioactivity database (queried via the Anthropic life-sciences MCP). Purpose: separate "direct NLRP3 inhibition" claims (measurable in a binding/inhibition assay) from "NLRP3 pathway modulation" claims (inferred from downstream IL-1β readouts, NF-κB suppression, ROS scavenging, or mechanistic review).
+
+**NLRP3 target ID:** CHEMBL1741208 (*NACHT, LRR and PYD domains-containing protein 3*, Homo sapiens, UniProt Q96P20).
+
+### What ChEMBL confirms with direct human NLRP3 bioactivity
+
+| Compound | ChEMBL ID | Human NLRP3 IC50 (direct) | Source (journal/year) |
+|---|---|---|---|
+| **Dapansutrile (OLT1177)** | CHEMBL3989943 | **1,000 nM (1.0 μM)** — human MDM cells, LPS+nigericin, pChEMBL=6.00 | *Eur J Med Chem* 2023 |
+| **Oridonin** | CHEMBL1164920 | **5,180 nM (5.18 μM)** — human THP-1, LPS/ATP, pChEMBL=5.29 | *Eur J Med Chem* 2023 |
+
+That's it. Those are the only two compounds in the inhibitor screen with a curated, cited IC50 against human NLRP3 in ChEMBL.
+
+**Dapansutrile species gap (big surprise):** ChEMBL shows dapansutrile at **1 nM (pChEMBL=9.00)** in *mouse* J774A.1 cells (*Eur J Med Chem* 2020 and *Bioorg Med Chem Lett* 2021) — a 1,000× potency gap versus human cells. The wiki's reference to dapansutrile potency should note this interspecies difference: mouse preclinical assays make it look MCC950-class; human cell data puts it at the μM range. This reframes the 2020 Phase 2a clinical efficacy (52–84% pain reduction at 100–2000 mg/day) as consistent with human-cell μM potency at high oral doses, not sub-nM potency.
+
+**Oridonin: our wiki's "0.5–2 μM" claim is not supported by ChEMBL's curated human NLRP3 assay.** The only ChEMBL entry is 5.18 μM in human THP-1 (2023). The 0.5–2 μM figure likely comes from cell-free or mouse-derived assays in the original Nature Communications 2018 paper (covalent Cys279 binding kinetics); it may not translate to cellular human IC50. Update the wiki framing accordingly.
+
+### What ChEMBL does NOT support with direct human NLRP3 data
+
+Zero bioactivities found against CHEMBL1741208 (human NLRP3) for:
+
+- **Quercetin** (CHEMBL50) — 2,930 total bioactivities across other targets, zero against human NLRP3. The "IC50 ~11 μM" cited here is from functional IL-1β readouts in review literature, not a curated direct NLRP3 inhibition assay. Quercetin's most potent ChEMBL activity is against **5-lipoxygenase (5-LOX): IC50 = 300 nM** (*J Med Chem* 1991) — a leukotriene-pathway target not currently represented in the NLRP3 Exploit Map. Worth adding to the wiki.
+- **Ursolic acid** (CHEMBL169) — zero direct human NLRP3 entries
+- **Tranilast** (CHEMBL415324) — zero direct human NLRP3 entries (despite the 2017 EMBO Mol Med paper claiming direct NACHT domain binding)
+- **Beta-caryophyllene** (CHEMBL445740) — zero direct human NLRP3 entries (the 2021 Front Pharmacol MSU gout paper used docking + downstream markers, not a direct NLRP3 inhibition IC50)
+
+**This is not a contradiction of the inhibitor screen's rankings.** Functional IL-1β suppression in MSU-stimulated macrophages IS clinically relevant — it's what Open Enzyme actually cares about. But it IS a rigor upgrade to how we frame mechanisms: most "NLRP3 inhibitors" in the screen are more accurately **NLRP3 pathway modulators** that act upstream (NF-κB priming block, ROS reduction, K+ efflux prevention) or at unknown direct binding sites that haven't been characterized in the medicinal chemistry literature.
+
+### Implications
+
+1. **Two-tier labeling going forward:** Distinguish "direct NLRP3 inhibitor (binding/inhibition IC50 measured)" from "NLRP3 pathway modulator (functional IL-1β reduction, mechanism inferred)." Only **dapansutrile, oridonin, MCC950, and tranilast** (per separate literature) have standing as direct NLRP3 inhibitors.
+
+2. **Quercetin 5-LOX angle is a missed opportunity.** 5-LOX produces leukotrienes (LTB4) that drive neutrophil chemotaxis in gout flares. Quercetin's IC50 = 300 nM on 5-LOX is stronger than anything else in its pharmacology profile, and LTB4 is a known amplifier of MSU-driven inflammation. Worth adding as a quercetin-specific mechanism in the exploit map — complements the NF-κB story.
+
+3. **Dapansutrile's mouse-vs-human species gap (1000×) matters for translational claims.** Several NLRP3 compounds show strong mouse activity that doesn't translate to human cells. This supports Open Enzyme's emphasis on human-cell (THP-1) validation assays over rodent models for NLRP3 screening.
+
+4. **MCC950 not retrievable by common synonyms (MCC950, CRID3, CP-456773) in ChEMBL's name search.** The IC50 value cited in this screen (7.5 nM) comes from Coll et al. 2015 *J Biol Chem* and is widely cited but not directly verified by the MCP cross-check here. Known target: NACHT domain Walker B motif; benchmark status unchanged, just note the ChEMBL lookup remains open.
+
+### How to refresh
+
+```text
+target_search(gene_symbol="NLRP3", organism="Homo sapiens")   # get CHEMBL1741208
+compound_search(name="<compound>")                             # get molecule_chembl_id
+get_bioactivity(molecule_chembl_id=<ID>, target_chembl_id="CHEMBL1741208", activity_type="IC50")
+```
+
+Refresh cadence: annually, or whenever a new direct NLRP3 inhibitor clinical program publishes pivotal data.
+
+---
+
 ## Sources
 
 ### Polyphenol NLRP3 Inhibition
