@@ -32,10 +32,41 @@ cd "$REPO_ROOT"
 NO_COMMIT_FLAG=""
 [[ "${1:-}" == "--no-commit" ]] && NO_COMMIT_FLAG="--no-commit"
 
-LOCK_FILE="/tmp/open-enzyme-wiki-sync.lock"
+LOCK_DIR="/tmp/open-enzyme-wiki-sync.lock.d"
 
 log() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"
+}
+
+# Portable mutex using mkdir (atomic on POSIX). macOS doesn't ship flock.
+# Waits up to $2 seconds (default 300) for the lock, retrying every 0.2s.
+acquire_lock() {
+  local dir="$1"
+  local timeout="${2:-300}"
+  local elapsed=0
+  while ! mkdir "$dir" 2>/dev/null; do
+    # Stale lock recovery: if holder PID no longer exists, remove the lock.
+    if [[ -f "$dir/pid" ]]; then
+      local holder
+      holder="$(cat "$dir/pid" 2>/dev/null || true)"
+      if [[ -n "$holder" ]] && ! kill -0 "$holder" 2>/dev/null; then
+        log "removing stale lock (holder PID $holder no longer running)"
+        rm -rf "$dir"
+        continue
+      fi
+    fi
+    sleep 0.2
+    elapsed=$((elapsed + 1))
+    if (( elapsed > timeout * 5 )); then
+      log "lock acquisition timed out after ${timeout}s"
+      return 1
+    fi
+  done
+  echo "$$" > "$dir/pid"
+}
+
+release_lock() {
+  rm -rf "$1"
 }
 
 if ! command -v fswatch &>/dev/null; then
@@ -50,7 +81,7 @@ fi
 
 log "watching wiki/ — human edits trigger two-pass sweep; git-driven changes are skipped"
 log "  repo:    $REPO_ROOT"
-log "  lock:    $LOCK_FILE"
+log "  lock:    $LOCK_DIR"
 [[ -n "$NO_COMMIT_FLAG" ]] && log "  mode:    --no-commit"
 
 # Debounce state
@@ -102,13 +133,18 @@ fswatch -r -e ".*" -i "\.md$" "${WATCH_DIRS[@]}" | while IFS= read -r CHANGED_PA
 
   log "sync: $REL_PATH"
 
-  # Serialize via flock. Blocking acquire → if another sync is running, wait.
-  (
-    flock 9
-    if "$REPO_ROOT/scripts/wiki-update.sh" "$REL_PATH" $NO_COMMIT_FLAG; then
-      log "sync done: $REL_PATH"
-    else
-      log "sync FAILED for $REL_PATH (exit $?)"
-    fi
-  ) 9>"$LOCK_FILE"
+  # Serialize via mkdir-based mutex (portable; macOS has no flock by default).
+  # Blocking acquire with stale-lock recovery — if another sync is running, wait.
+  if ! acquire_lock "$LOCK_DIR"; then
+    log "sync SKIPPED for $REL_PATH (could not acquire lock)"
+    continue
+  fi
+  trap 'release_lock "$LOCK_DIR"' EXIT INT TERM
+  if "$REPO_ROOT/scripts/wiki-update.sh" "$REL_PATH" $NO_COMMIT_FLAG; then
+    log "sync done: $REL_PATH"
+  else
+    log "sync FAILED for $REL_PATH (exit $?)"
+  fi
+  release_lock "$LOCK_DIR"
+  trap - EXIT INT TERM
 done
