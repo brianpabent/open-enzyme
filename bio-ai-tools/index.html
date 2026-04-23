@@ -3331,14 +3331,16 @@
 <p><strong>Step 1 — register the marketplace (one-time):</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>/plugin marketplace add anthropics/life-sciences
 </code></pre></div>
-<p><strong>Step 2 — install the Phase 0 core (recommended starting set):</strong></p>
+<p><strong>Step 2 — install the Phase 0 core (5 MCP servers):</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/plugin install pubmed@life-sciences
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>/plugin install biorxiv@life-sciences
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>/plugin install clinical-trials@life-sciences
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>/plugin install chembl@life-sciences
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>/plugin install open-targets@life-sciences
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>/plugin install scientific-problem-selection@life-sciences
 </code></pre></div>
+<blockquote>
+<p><strong>Note on skills:</strong> The claude.ai bundle exposes <code>/scientific-problem-selection</code> and other skills (<code>/start</code>, etc.), but these are <strong>not exposed as installable plugins</strong> in the Claude Code marketplace — the repo has directories for them, but <code>marketplace.json</code> only lists the MCP servers and a subset of skills. If you need problem-scoping help, ask Claude directly against <code>wiki/synthesis.md</code> — no skill required.</p>
+</blockquote>
 <p><strong>Step 3 — reload and verify:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/reload-plugins
 </code></pre></div>
@@ -3377,11 +3379,6 @@
 <td><strong>open-targets</strong></td>
 <td>MCP</td>
 <td><strong>Install now.</strong> Target–disease evidence platform. Validates target rationale for gout / EPI / SIBO.</td>
-</tr>
-<tr>
-<td><strong>scientific-problem-selection</strong></td>
-<td>Skill</td>
-<td><strong>Install now.</strong> Framework to scope and rank research problems. Run against <code>wiki/synthesis.md</code> and the cheapest-next-experiments table in <code>index.md</code>.</td>
 </tr>
 <tr>
 <td><strong>biorender</strong></td>
@@ -3569,7 +3566,7 @@
 <p><strong>For Open Enzyme project, in priority order:</strong></p>
 <ol>
 <li>
-<p><strong>Install the Phase 0 core from Anthropic's life-sciences marketplace in Claude Code</strong> — <code>/plugin marketplace add anthropics/life-sciences</code>, then install <code>pubmed</code>, <code>biorxiv</code>, <code>clinical-trials</code>, <code>chembl</code>, <code>open-targets</code>, and <code>scientific-problem-selection</code> (each as <code>/plugin install &lt;name&gt;@life-sciences</code>), then <code>/reload-plugins</code>. This is the single highest-leverage change: literature, trials, and compound databases move from web-scraping to structured MCP calls without leaving the terminal. Immediate wins on sweep daemon quality and new-page literature scans. Defer the wet-lab skills (<code>nextflow-development</code>, <code>scvi-tools</code>, <code>single-cell-rna-qc</code>, <code>instrument-data-to-allotrope</code>) until wet-lab data arrives.</p>
+<p><strong>Install the Phase 0 core from Anthropic's life-sciences marketplace in Claude Code</strong> — <code>/plugin marketplace add anthropics/life-sciences</code>, then install <code>pubmed</code>, <code>biorxiv</code>, <code>clinical-trials</code>, <code>chembl</code>, and <code>open-targets</code> (each as <code>/plugin install &lt;name&gt;@life-sciences</code>), then <code>/reload-plugins</code>. This is the single highest-leverage change: literature, trials, and compound databases move from web-scraping to structured MCP calls without leaving the terminal. Immediate wins on sweep daemon quality and new-page literature scans. Defer the wet-lab skills (<code>nextflow-development</code>, <code>scvi-tools</code>, <code>single-cell-rna-qc</code>, <code>instrument-data-to-allotrope</code>) until wet-lab data arrives.</p>
 </li>
 <li>
 <p><strong>Open source tools for computational biology</strong> — ColabFold, ESM-2, SPURS/RaSP, CodonTransformer, DiffDock. Free, available now, quantitative outputs. These cover structure prediction, variant scoring, stability prediction, codon optimization, and docking. The plugin doesn't replace them; it complements them.</p>
