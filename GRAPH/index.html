@@ -1570,6 +1570,8 @@
       
         
       
+        
+      
     
     
     
@@ -1742,6 +1744,34 @@
     
   
     Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cannabinoids-terpenes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cannabinoids & Terpenes
   
 
     
@@ -2403,6 +2433,13 @@
         J4["Gasdermin D Block"]
     end
 
+    subgraph Cannabinoids["CANNABINOIDS / TERPENES"]
+        M1["CBD"]
+        M2["Beta-Caryophyllene"]
+        M3["CBG"]
+        M4["THCV"]
+    end
+
     subgraph Metabolic["METABOLIC MODULATION"]
         K1["Beta-Hydroxybutyrate"]
         K2["Ketogenic State"]
@@ -2486,6 +2523,15 @@
     B4 --&gt; B5
     B5 --&gt; A3
 
+    %% Cannabinoid/terpene relationships
+    M1 --&gt;|"P2X7/NF-kB"| C2
+    M2 --&gt;|"CB2/TLR4/NLRP3 — MSU gout model"| C2
+    M2 --&gt;|"CB2 agonism — neutrophil block"| C1
+    M3 --&gt;|"NF-kB/MAPK — CIA arthritis"| C2
+    M3 --&gt;|"CBG colitis data"| B3
+    M4 --&gt;|"CB2 agonism (Ki 7.5 nM)"| C2
+    M1 --&gt;|"barrier support"| H1
+
     %% Styling
     style Core fill:#ffe6e6
     style Problem fill:#fff0e6
@@ -2498,6 +2544,7 @@
     style Peptides fill:#e6f9ff
     style Inhibitors fill:#fff9e6
     style Metabolic fill:#e6ffe6
+    style Cannabinoids fill:#e6f0e6
     style Clinical fill:#f0e6ff</code></pre>
 <h2 id="key-pathway-descriptions">Key Pathway Descriptions<a class="headerlink" href="#key-pathway-descriptions" title="Permanent link">&para;</a></h2>
 <h3 id="1-pathology-immune-activation-loop">1. <strong>Pathology → Immune Activation Loop</strong><a class="headerlink" href="#1-pathology-immune-activation-loop" title="Permanent link">&para;</a></h3>
