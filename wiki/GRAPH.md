@@ -78,6 +78,13 @@ graph TB
         J4["Gasdermin D Block"]
     end
 
+    subgraph Parallel_Path["PARALLEL FLARE PATHWAYS"]
+        N1["5-LOX"]
+        N2["LTB4"]
+        N3["Neutrophil Chemotaxis"]
+        N4["Quercetin — 5-LOX IC50 300 nM"]
+    end
+
     subgraph Cannabinoids["CANNABINOIDS / TERPENES"]
         M1["CBD"]
         M2["Beta-Caryophyllene"]
@@ -176,6 +183,13 @@ graph TB
     B4 --> B5
     B5 --> A3
     
+    %% 5-LOX / LTB4 parallel neutrophil chemotaxis path (from nlrp3-inhibitor-screen.md ChEMBL cross-check)
+    C1 -->|"MSU also drives 5-LOX"| N1
+    N1 -->|"produces"| N2
+    N2 -->|"recruits neutrophils"| N3
+    N3 --> C5
+    N4 -->|"inhibits at 300 nM"| N1
+
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2
     M2 -->|"CB2/TLR4/NLRP3 — MSU gout model"| C2
@@ -199,6 +213,7 @@ graph TB
     style Metabolic fill:#e6ffe6
     style Cannabinoids fill:#e6f0e6
     style Clinical fill:#f0e6ff
+    style Parallel_Path fill:#fff0f5
 ```
 
 ## Key Pathway Descriptions

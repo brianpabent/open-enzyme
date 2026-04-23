@@ -101,6 +101,8 @@ According to PubMed, Dapansutrile (OLT1177) Phase 2a proof-of-concept in gout wa
 - 25/34 patients had treatment-emergent AEs (mostly metabolism and GI); 2 SAEs (one flare worsening, one coronary stenosis unrelated)
 - **Conclusion:** "Dapansutrile is a specific NLRP3 inflammasome inhibitor with a satisfactory safety profile and efficacy in the reduction of target joint pain."
 
+**Potency reframing (ChEMBL v34 cross-check, 2026-04-23):** Dapansutrile's curated cellular IC50 is **1.0 nM in mouse J774A.1 cells but 1.0 μM (1,000 nM) in human MDM cells — a 1,000× species gap** (*Eur J Med Chem* 2020/2023; *Bioorg Med Chem Lett* 2021). The 100–2,000 mg/day Phase 2a oral doses are consistent with human-cell μM potency at high systemic exposure, not with sub-nanomolar MCC950-class potency. This does not diminish the Phase 2a efficacy — the clinical result stands — but it reframes how the compound class should be described to potential collaborators: dapansutrile is an oral, μM-class human NLRP3 inhibitor with a very wide mouse-vs-human potency cliff, not a sub-nanomolar miracle drug. It also validates Open Enzyme's preference for human-cell (THP-1) validation assays over rodent cellular screens. (In Vitro; source: nlrp3-inhibitor-screen.md)
+
 **What happened next:**
 - No Phase 2b or Phase 3 in gout on ClinicalTrials.gov (as of 2026-04-23)
 - Olatec pivoted to heart failure (Phase 1b NCT03534297, completed 2019) and COVID-19 (Phase 2 NCT04540120, terminated 2022)

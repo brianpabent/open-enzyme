@@ -323,10 +323,10 @@ The poor systemic bioavailability (~6% fasting) does NOT support a "stays in gut
 
 | Compound | NLRP3 Mechanism | Evidence Level | Gout-Specific? | Estimated Potency vs. Quercetin (IC50 ~11 μM) |
 |----------|----------------|----------------|----------------|----------------------------------------------|
-| MCC950 | Direct NLRP3 ATP pocket | Clinical (Phase 2a) | Indirect | ~1,500× more potent |
-| Oridonin | Covalent Cys279 | Preclinical | No | Irreversible (not IC50 comparable) |
-| Quercetin | ASC / upstream | Animal model (MSU) | Yes | Benchmark |
-| **Beta-caryophyllene** | CB2/TLR4/NLRP3/NF-κB | **Animal model (MSU gout)** | **Yes** | Unknown — no IC50 |
+| MCC950 | Direct NLRP3 ATP pocket | Clinical (Phase 2a) | Indirect | Cell-free 7.5 nM (Coll 2015); not retrievable in ChEMBL by synonyms (2026-04-23) |
+| Oridonin | Covalent Cys279 | Preclinical; **curated human THP-1 IC50 = 5.18 μM** in ChEMBL v34 (*Eur J Med Chem* 2023) | No (no gout model) | Cellular IC50 5.18 μM in human cells; 0.5–2 μM in cell-free/mouse kinetic assays |
+| Quercetin | ASC / upstream; **zero curated direct human NLRP3 in ChEMBL**; quercetin's most potent ChEMBL activity is **5-LOX (IC50 = 300 nM, *J Med Chem* 1991)** → LTB4 → neutrophil chemotaxis | Animal model (MSU) | Yes | Benchmark functional (~11 μM); 36× more potent on 5-LOX |
+| **Beta-caryophyllene** | CB2/TLR4/NLRP3/NF-κB | **Animal model (MSU gout)**; **zero curated direct human NLRP3 bioactivities in ChEMBL** (functional/downstream markers only) | **Yes (functional)** | Unknown — no direct NLRP3 IC50; CB2 Ki 155 nM |
 | CBD | P2X7/NF-κB (upstream, indirect) | In vitro (human monocytes) | No | Active 0.1–10 μM; no formal IC50 |
 | CBG | NF-κB/MAPK (indirect) | Animal model (CIA arthritis) | No | Unknown |
 | THCV | P2X7/NF-κB | In vitro | No | Unknown |
@@ -351,7 +351,7 @@ The poor systemic bioavailability (~6% fasting) does NOT support a "stays in gut
 
 ## 8. Experiments That Would Move the Needle
 
-1. **Beta-caryophyllene dose-response in MSU macrophage assay:** The in vivo gout data exists, but an in vitro IC50 for NLRP3 inhibition in MSU-stimulated THP-1 cells would allow direct quantitative comparison to quercetin (IC50 ~11 μM) and oridonin. Complexity: Low. Cost: $1,000–1,500. Decides: whether beta-caryophyllene belongs in Tier 1 or Tier 2 of the inhibitor screen.
+1. **Beta-caryophyllene dose-response in MSU macrophage assay:** The in vivo gout data exists, but an in vitro IC50 for NLRP3 inhibition in MSU-stimulated THP-1 cells would allow direct quantitative comparison to quercetin (functional ~11 μM; 300 nM on 5-LOX) and oridonin (curated human THP-1 IC50 = 5.18 μM, ChEMBL v34). Because beta-caryophyllene has **zero curated direct human NLRP3 bioactivities in ChEMBL** as of 2026-04-23, this experiment would also generate the first-ever direct-inhibition IC50 (versus a functional IL-1β readout) for the compound. Complexity: Low. Cost: $1,000–1,500. Decides: whether beta-caryophyllene belongs in Tier 1 or Tier 2 of the inhibitor screen. (source: nlrp3-inhibitor-screen.md)
 
 2. **THCV vs. beta-caryophyllene head-to-head in CB2 functional assay:** THCV's CB2 Ki (7.5 nM) vs. beta-caryophyllene (155 nM) suggests THCV might be more potent. Does higher CB2 affinity translate to better NLRP3 suppression in macrophages? Testable in a BRET or NF-κB reporter assay. Complexity: Low. Cost: $1,500–2,000.
 

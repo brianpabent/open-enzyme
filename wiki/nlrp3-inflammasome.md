@@ -57,7 +57,7 @@ The NLRP3 inflammasome pathway operates as a sequential cascade with six distinc
 
 - **Parthenolide** (from feverfew): Inhibits IKKβ (the kinase that degrades IκB) and directly modifies NF-κB p65. Dual mechanism. DMAPT (dimethylamino-parthenolide) is a more soluble derivative used in research. (Source: nlrp3-exploit-map.md)
 
-- **Quercetin**: Inhibits NF-κB and also blocks xanthine oxidase (uric acid production). Phytosome form (Quercefit) provides 20x better bioavailability. Dose: 500–1000 mg daily. (Source: nlrp3-exploit-map.md)
+- **Quercetin**: Inhibits NF-κB and also blocks xanthine oxidase (uric acid production). Phytosome form (Quercefit) provides 20x better bioavailability. Dose: 500–1000 mg daily. **Novel mechanism surfaced by the 2026-04-23 ChEMBL cross-check:** Quercetin's most potent curated ChEMBL bioactivity is against **5-lipoxygenase (5-LOX): IC50 = 300 nM** (*J Med Chem* 1991) — the enzyme that produces LTB4, a neutrophil chemoattractant that drives the neutrophil infiltration phase of MSU-triggered gout flares. Quercetin also has zero direct curated human NLRP3 bioactivities in ChEMBL; its NLRP3-inhibitor label is more accurately "NLRP3 pathway modulator" via NF-κB priming block. (In Vitro; source: nlrp3-inhibitor-screen.md; Source: nlrp3-exploit-map.md)
 
 - **EGCG** (green tea catechin): Inhibits IKK activity, suppresses NF-κB. Dose: 400–800 mg daily or 3–5 cups green tea daily. Matcha provides the highest concentration. (Source: nlrp3-exploit-map.md)
 
@@ -79,7 +79,7 @@ The NLRP3 inflammasome pathway operates as a sequential cascade with six distinc
 
 - **Beta-hydroxybutyrate (BHB)**: The ketone body produced during fasting or ketogenic diet. BHB prevents potassium efflux, reduces ASC speck formation, and directly inhibits NLRP3 assembly. Notably, BHB is NOT dependent on AMPK, autophagy, or ROS reduction—it is a direct inhibitory effect on NLRP3 oligomerization. In rodent models, a ketogenic diet significantly reduced gout flare severity. Critical insight: traditional concern that ketosis raises uric acid is true short-term (ketones compete with urate for renal excretion), but with uricase handling uric acid clearance, ketosis becomes pure inflammasome suppression. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)
 
-- **Oridonin**: An ent-kaurane diterpenoid from the Chinese herb Rabdosia rubescens. Covalently modifies cysteine 279 in the NACHT domain of NLRP3 via Michael addition—the same binding site as the pharmaceutical MCC950. Active at 0.5–2 µM. Published in Nature Communications: oridonin exhibits dose-dependent inhibition of caspase-1 cleavage and IL-1β secretion and is NLRP3-specific (does not affect NLRC4 or AIM2). Additionally activates Nrf2 and suppresses NF-κB independently—hitting Chokepoints 1 and 2. (Source: nlrp3-exploit-map.md)
+- **Oridonin**: An ent-kaurane diterpenoid from the Chinese herb Rabdosia rubescens. Covalently modifies cysteine 279 in the NACHT domain of NLRP3 via Michael addition—the same binding site as the pharmaceutical MCC950. Cell-free / mouse covalent-binding kinetics at 0.5–2 µM; curated **human THP-1 cellular IC50 = 5.18 μM** (ChEMBL v34, *Eur J Med Chem* 2023). Published in Nature Communications (2018): oridonin exhibits dose-dependent inhibition of caspase-1 cleavage and IL-1β secretion and is NLRP3-specific (does not affect NLRC4 or AIM2). Additionally activates Nrf2 and suppresses NF-κB independently—hitting Chokepoints 1 and 2. (Source: nlrp3-exploit-map.md; In Vitro ChEMBL cross-check 2026-04-23, source: nlrp3-inhibitor-screen.md)
 
 - **NAC (N-Acetyl Cysteine)**: Replenishes glutathione, the master intracellular antioxidant. Reduces mtROS, thus reducing the Signal 2 trigger for NLRP3 assembly. Dose: 600–1200 mg daily. Widely available, inexpensive, well-tolerated. The limitation: does not specifically target mitochondria. (Source: nlrp3-exploit-map.md)
 
@@ -183,9 +183,22 @@ The most efficient exploits hit three or more chokepoints:
 
 - **Rilonacept (Arcalyst)**: IL-1 trap. **Rejected by FDA for gout in 2012** despite a 1,315-patient Phase 3 (NCT00856206) demonstrating efficacy. Not currently in active gout development. (Clinical Trial; source: gout-clinical-pipeline.md)
 
-- **Dapansutrile (OLT1177)**: Oral NLRP3 inhibitor. Phase 2a in gout (N=34, *Lancet Rheumatol* 2020, PMID: 33005902) showed 52–68% target joint pain reduction at day 3 across four dose levels. **However, no Phase 2b or Phase 3 trial in gout is registered on ClinicalTrials.gov as of April 2026.** Olatec's subsequent active programs moved to heart failure (Phase 1b NCT03534297, completed 2019) and COVID-19 (Phase 2 NCT04540120, terminated 2022). Dapansutrile in gout appears stalled, not advancing. (Clinical Trial; source: gout-clinical-pipeline.md)
+- **Dapansutrile (OLT1177)**: Oral NLRP3 inhibitor. Phase 2a in gout (N=34, *Lancet Rheumatol* 2020, PMID: 33005902) showed 52–68% target joint pain reduction at day 3 across four dose levels. **However, no Phase 2b or Phase 3 trial in gout is registered on ClinicalTrials.gov as of April 2026.** Olatec's subsequent active programs moved to heart failure (Phase 1b NCT03534297, completed 2019) and COVID-19 (Phase 2 NCT04540120, terminated 2022). Dapansutrile in gout appears stalled, not advancing. (Clinical Trial; source: gout-clinical-pipeline.md) **Species-gap caveat (ChEMBL v34, 2026-04-23):** Dapansutrile's curated cellular IC50 is **1.0 nM in mouse J774A.1 cells but 1.0 μM in human MDM cells — a 1,000× species gap** (*Eur J Med Chem* 2020/2023, *Bioorg Med Chem Lett* 2021). The Phase 2a efficacy at 100–2,000 mg/day is consistent with human-cell μM potency at high oral doses, not with the sub-nanomolar mouse-cell potency. This reframes translational expectations for the entire oral-NLRP3-inhibitor class. (In Vitro; source: nlrp3-inhibitor-screen.md)
 
-- **MCC950 (CRID3)**: The first specific NLRP3 inhibitor. Binds the Walker B motif in the NACHT domain, blocking ATP hydrolysis required for oligomerization. Clinical development terminated due to hepatotoxicity in Phase 1 RA trial, but it defined the druggable target and validated the mechanism.
+- **MCC950 (CRID3)**: The first specific NLRP3 inhibitor. Binds the Walker B motif in the NACHT domain, blocking ATP hydrolysis required for oligomerization. Clinical development terminated due to hepatotoxicity in Phase 1 RA trial, but it defined the druggable target and validated the mechanism. **ChEMBL cross-check (2026-04-23):** MCC950 / CRID3 / CP-456773 are not retrievable by common synonyms in ChEMBL v34's name search; the cited 7.5 nM IC50 (Coll et al. 2015 *J Biol Chem*, cell-free Walker B) has not been independently re-indexed by the MCP cross-check. Benchmark status unchanged, but the IC50 is not verified via ChEMBL. (source: nlrp3-inhibitor-screen.md)
+
+### Two-Tier Labeling: Direct Inhibitors vs. Pathway Modulators (2026-04-23)
+
+The 2026-04-23 ChEMBL v34 cross-check (see [nlrp3-inhibitor-screen.md](nlrp3-inhibitor-screen.md) appendix) surfaced a labeling rigor issue. Only two compounds in the wiki's broader NLRP3 discussion have a curated direct human NLRP3 IC50 in ChEMBL:
+
+- **Dapansutrile:** 1.0 μM (human MDM, *Eur J Med Chem* 2023) — but 1 nM in mouse J774A.1 (1,000× species gap)
+- **Oridonin:** 5.18 μM (human THP-1, *Eur J Med Chem* 2023)
+
+MCC950 and tranilast have published direct NLRP3 assays in the primary literature but are not retrievable via ChEMBL's curated target-bound bioactivity table for human NLRP3 (CHEMBL1741208) by common synonyms.
+
+**Compounds with zero curated direct human NLRP3 entries in ChEMBL:** quercetin, ursolic acid, tranilast, beta-caryophyllene. Their "NLRP3 inhibitor" status rests on functional IL-1β readouts in macrophage assays or upstream pathway effects (NF-κB priming, ROS, K⁺ efflux) — not direct NLRP3 binding/inhibition measurements.
+
+**Going-forward convention:** Distinguish "direct NLRP3 inhibitor" (binding/inhibition IC50 measured against NLRP3 protein) from "NLRP3 pathway modulator" (functional IL-1β reduction, mechanism inferred). Both are clinically relevant — Open Enzyme ultimately cares about IL-1β output, not NLRP3 biochemistry per se — but the distinction sharpens how claims are written. (In Vitro; source: nlrp3-inhibitor-screen.md)
 
 ### NLRP3 Pipeline Has Drifted Out of Gout
 

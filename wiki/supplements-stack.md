@@ -125,11 +125,11 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 ### Oridonin (Rabdosia rubescens Extract)
 
-**Category:** Natural Compound / NLRP3 Inhibitor
+**Category:** Natural Compound / NLRP3 Inhibitor (direct, curated in ChEMBL)
 
 **Mechanism:** Covalently binds Cys279 in NLRP3 NACHT domain (Michael addition); blocks NLRP3-NEK7 interaction (CP2). Also activates Nrf2 and suppresses NF-κB (CP1/CP2).
 
-**Evidence level:** Established (Nature Communications 2018; dose-dependent IL-1β reduction at 0.5–2 µM)
+**Evidence level:** Established — Nature Communications 2018 (cell-free / mouse covalent-binding kinetics at 0.5–2 µM); **curated human THP-1 cellular IC50 = 5.18 μM** per ChEMBL v34 (*Eur J Med Chem* 2023, 2026-04-23 MCP cross-check). The two figures measure different things — 0.5–2 μM is covalent-binding potency in cell-free / mouse assays; 5.18 μM is human cellular IC50. Oridonin is one of only two compounds in the full wiki stack with a curated direct human NLRP3 bioactivity in ChEMBL (the other is dapansutrile at 1.0 μM human MDM). (In Vitro; source: nlrp3-inhibitor-screen.md)
 
 **Dosing:** 50–100 mg/day
 
@@ -213,15 +213,18 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 **Mechanism:** 
 - NF-κB inhibition (CP1)
 - Xanthine oxidase inhibition (direct uric acid production reduction)
+- **5-lipoxygenase (5-LOX) inhibition, IC50 = 300 nM** — blocks leukotriene B4 (LTB4) production, suppressing the neutrophil chemotaxis that amplifies MSU-driven gout flares. This is quercetin's single most potent curated ChEMBL bioactivity (*J Med Chem* 1991, ChEMBL v34, 2026-04-23). More potent than its NF-κB/NLRP3-pathway IC50 (~11 μM functional) by ~36×. (In Vitro; source: nlrp3-inhibitor-screen.md)
 - Mast cell stabilization
 
-**Evidence level:** Established
+**Evidence level:** Established (CP1 + xanthine oxidase); In Vitro 300 nM 5-LOX IC50 per ChEMBL
+
+**Labeling note:** Quercetin has **zero curated direct human NLRP3 bioactivities in ChEMBL** — it is more accurately an "NLRP3 pathway modulator" (NF-κB priming block) than a direct NLRP3 binder. The gout-relevant case rests on three orthogonal mechanisms: NF-κB priming block, xanthine oxidase inhibition, and 5-LOX/LTB4 block. (source: nlrp3-inhibitor-screen.md)
 
 **Dosing:** 500–1,000 mg/day
 
 **Form:** Phytosome (Quercefit) has ~20× better absorption than standard quercetin
 
-**Practical note:** Dual mechanism: hits both CP1 and uric acid production. Synergizes with sulforaphane (both Nrf2 activators). (Source: nlrp3-exploit-map.md)
+**Practical note:** Triple mechanism: hits CP1 (priming), uric acid production (xanthine oxidase), AND neutrophil chemotaxis (5-LOX/LTB4). The 5-LOX leg is parallel to boswellic acids (AKBA) at the same target. Synergizes with sulforaphane (both Nrf2 activators). (Source: nlrp3-exploit-map.md)
 
 **Cost:** $15–25/month
 
