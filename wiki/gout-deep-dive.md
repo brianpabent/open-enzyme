@@ -484,7 +484,7 @@ The research in this document eventually led to a practical question: could we e
 
 ### The Yeast Track: Engineered *S. cerevisiae*
 
-Baker's yeast (*S. cerevisiae*) already produces rasburicase commercially — the FDA-approved IV uricase used for tumor lysis syndrome. The [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md) details a research plan to adapt this into an oral format: engineered yeast that produces uricase in the gut lumen, degrading the ~1/3 of uric acid excreted through the intestines. Three independent groups (ALLN-346, PULSE, and a 2025 ACS Synthetic Biology paper on *S. boulardii*) have validated the core mechanism. This is the strongest path for Brian's uricase specifically.
+Baker's yeast (*S. cerevisiae*) already produces rasburicase commercially — the FDA-approved IV uricase used for tumor lysis syndrome. The [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md) details a research plan to adapt this into an oral format: engineered yeast that produces uricase in the gut lumen, degrading the ~1/3 of uric acid excreted through the intestines. The core mechanism is supported by preclinical and early-clinical work from three independent systems (ALLN-346, PULSE probiotic, and a 2025 *ACS Synthetic Biology* paper on engineered *S. boulardii*). **Update (2026-04-23):** ALLN-346's Phase 2a CKD trial was terminated September 2022 — the scientific rationale remains intact, but no pharma champion is actively pursuing gut-lumen uricase in a clinical program. See [gout-clinical-pipeline.md](gout-clinical-pipeline.md) for the current competitive landscape (PRX-115 and SSS11 are both systemic IV, not gut-lumen).
 
 ### The Koji Track: Engineered *A. oryzae*
 

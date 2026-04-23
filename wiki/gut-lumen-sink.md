@@ -68,6 +68,8 @@ By placing uricase in the intestinal lumen:
 
 ### 1. ALLN-346 (Allena Pharmaceuticals)
 
+> **Pipeline status update (2026-04-23):** The ALLN-346 Phase 2a CKD trial (NCT04987294) was **terminated September 2022** with only 19 patients enrolled against a 17-site protocol. Allena Pharmaceuticals has no active gout trials. The **scientific rationale below remains valid**, but ALLN-346 is no longer a live clinical precedent. See [gout-clinical-pipeline.md](gout-clinical-pipeline.md) for the current snapshot and commercial context.
+
 **What it is:** An engineered variant of *Candida utilis* uricase, modified for 20-fold increased stability against pancreatic proteases (half-life: 85.3 min vs. 4.3 min for wild-type in pancreatin).
 
 **Mechanism:** Non-living enzyme delivered orally; relies entirely on lumen-based degradation of secreted urate.
