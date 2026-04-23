@@ -2548,11 +2548,13 @@
 <p>Oridonin's mechanism is a <strong>Michael addition</strong> — a nucleophilic attack by the thiol group of Cys279 on the α,β-unsaturated carbonyl in oridonin's molecular structure. This is the same type of covalent modification used by other natural NLRP3 inhibitors and by some pharmaceutical compounds.</p>
 <h2 id="potency-specificity">Potency &amp; Specificity<a class="headerlink" href="#potency-specificity" title="Permanent link">&para;</a></h2>
 <h3 id="active-concentration">Active Concentration<a class="headerlink" href="#active-concentration" title="Permanent link">&para;</a></h3>
-<p>Oridonin exhibits dose-dependent inhibition of NLRP3 at <strong>0.5–2 µM</strong> concentrations:
+<p>Oridonin exhibits dose-dependent inhibition of NLRP3 in cell culture:
 - Caspase-1 cleavage: reduced dose-dependently
 - IL-1β secretion: suppressed
 - Pyroptotic cell death: prevented</p>
-<p>These concentrations are physiologically achievable with oral supplementation.</p>
+<p><strong>Curated human NLRP3 IC50 (ChEMBL v34, queried 2026-04-23):</strong> 5,180 nM (5.18 μM) in human THP-1 macrophages under LPS/ATP stimulation (<em>Eur J Med Chem</em> 2023, ChEMBL ID CHEMBL1164920, pChEMBL = 5.29). This is the only direct human NLRP3 bioactivity for oridonin in the ChEMBL database — which is stricter than review-literature citations because it requires a curated binding/inhibition assay, not a downstream IL-1β readout. (In Vitro; source: nlrp3-inhibitor-screen.md)</p>
+<p><strong>Legacy citation (0.5–2 μM):</strong> The commonly repeated "0.5–2 μM" figure — including earlier versions of this page — derives from the 2018 <em>Nature Communications</em> paper (Cys279 covalent binding kinetics), which reported cell-free and mouse-derived assays. It does not translate 1:1 to the curated human-cell IC50 above. Treat the two numbers as complementary: 0.5–2 μM for covalent-binding-kinetic potency (cell-free/mouse), 5.18 μM for human cellular IC50. (source: nlrp3-inhibitor-screen.md)</p>
+<p>These concentrations are physiologically achievable with oral supplementation, but the potency gap versus pharmaceutical benchmarks is larger than older wiki framing implied — dapansutrile (also 1 μM human cellular IC50) is in the same order of magnitude as oridonin in human cells, not orders of magnitude more potent. MCC950's 7.5 nM figure is from the original Coll et al. 2015 <em>J Biol Chem</em> paper (cell-free NACHT Walker B) and is not directly comparable to cellular IC50 without a head-to-head assay.</p>
 <h3 id="nlrp3-specific">NLRP3-Specific<a class="headerlink" href="#nlrp3-specific" title="Permanent link">&para;</a></h3>
 <p>Critically, oridonin <strong>does not affect other inflammasome types</strong> — specifically NLRC4 or AIM2 inflammasomes, which operate through different mechanisms. This selectivity is important for safety; non-selective inflammasome inhibition could impair other critical immune responses.</p>
 <p><strong>(Source: nlrp3-exploit-map.md)</strong> — "Published in Nature Communications (2018): oridonin exhibits dose-dependent inhibition of caspase-1 cleavage, IL-1β secretion, and pyroptotic cell death at concentrations of 0.5–2 µM. It's NLRP3-specific — doesn't affect NLRC4 or AIM2 inflammasomes."</p>
@@ -2573,7 +2575,7 @@
 <li><strong>Human clinical trials:</strong> ✗ None</li>
 </ul>
 <p>The mechanism is well-established in cell culture and animal models, but clinical translation to gout has not occurred.</p>
-<p><strong>(Source: nlrp3-exploit-map.md)</strong> — "Published in Nature Communications (2018): oridonin exhibits dose-dependent inhibition of caspase-1 cleavage, IL-1β secretion, and pyroptotic cell death at concentrations of 0.5–2 µM."</p>
+<p><strong>(Source: nlrp3-exploit-map.md)</strong> — "Published in Nature Communications (2018): oridonin exhibits dose-dependent inhibition of caspase-1 cleavage, IL-1β secretion, and pyroptotic cell death at concentrations of 0.5–2 µM." (As noted above, this figure is from the original covalent-binding kinetic assays and does not equal the curated human THP-1 cellular IC50 of 5.18 μM — <em>Eur J Med Chem</em> 2023, ChEMBL entry.)</p>
 <h2 id="traditional-medicine-provenance">Traditional Medicine Provenance<a class="headerlink" href="#traditional-medicine-provenance" title="Permanent link">&para;</a></h2>
 <h3 id="rabdosia-rubescens-usage">Rabdosia rubescens Usage<a class="headerlink" href="#rabdosia-rubescens-usage" title="Permanent link">&para;</a></h3>
 <p><em>Rabdosia rubescens</em> (also called <em>Isodon rubescens</em>) is a plant used in traditional Chinese medicine for inflammatory conditions, clearing heat, and removing toxins. The plant has been used for centuries in Asian herbal medicine, though oridonin specifically was only isolated and characterized in modern times.</p>
@@ -2591,9 +2593,9 @@
 <th>Compound</th>
 <th>Target</th>
 <th>Mechanism</th>
+<th>Curated human NLRP3 IC50 (ChEMBL v34)</th>
 <th>Status</th>
 <th>Cost</th>
-<th>Duration</th>
 <th>Safety</th>
 </tr>
 </thead>
@@ -2602,41 +2604,43 @@
 <td><strong>Oridonin</strong></td>
 <td>NLRP3 Cys279</td>
 <td>Covalent (natural)</td>
+<td><strong>5.18 μM</strong> (THP-1, <em>Eur J Med Chem</em> 2023)</td>
 <td>Available now</td>
 <td>~$20–40/month</td>
-<td>✓ Irreversible</td>
 <td>Good (traditional use)</td>
 </tr>
 <tr>
 <td><strong>MCC950</strong></td>
 <td>NLRP3 Walker B</td>
 <td>Non-covalent (pharma)</td>
-<td>Preclinical</td>
+<td>7.5 nM (cell-free, Coll 2015 — not in ChEMBL by common synonyms)</td>
+<td>Discontinued (Phase 1 hepatotoxicity)</td>
 <td>NA</td>
-<td>~30 min</td>
-<td>Hepatotoxic (Phase 1)</td>
+<td>Hepatotoxic</td>
 </tr>
 <tr>
 <td><strong>Dapansutrile</strong></td>
 <td>NLRP3 (general)</td>
 <td>Direct inhibitor</td>
-<td>Phase 3 (gout)</td>
+<td><strong>1.0 μM human MDM</strong> / 1.0 nM mouse J774A.1 (<strong>1000× species gap</strong>)</td>
+<td>Phase 2a in gout published 2020; <strong>no Phase 2b/3 registered as of 2026-04</strong></td>
 <td>Unknown</td>
-<td>Hours</td>
-<td>Good (Phase 2 data)</td>
+<td>Good (Phase 2 safety)</td>
 </tr>
 <tr>
 <td><strong>Tranilast</strong></td>
 <td>NLRP3 NACHT</td>
 <td>Non-covalent (pharma)</td>
+<td>Zero direct human NLRP3 bioactivities in ChEMBL (2017 EMBO Mol Med NACHT-binding claim rests on non-ChEMBL assays)</td>
 <td>Approved (Japan/Korea)</td>
 <td>~$30–50/month</td>
-<td>Hours</td>
 <td>Good (decades of use)</td>
 </tr>
 </tbody>
 </table>
+<p>(IC50 values above reflect ChEMBL v34 curated cross-check, 2026-04-23. source: nlrp3-inhibitor-screen.md)</p>
 <p><strong>Key observation:</strong> Oridonin is a covalent NLRP3 inhibitor like MCC950, but unlike MCC950 it has not shown hepatotoxicity. It's available immediately, costs far less than clinical-stage drugs, and has the advantage of traditional use history (though this is not the same as modern clinical trial validation).</p>
+<p><strong>Revised potency framing (2026-04-23):</strong> When comparing cellular IC50 in human cells rather than cell-free NACHT-binding kinetics, oridonin (5.18 μM) and dapansutrile (1.0 μM) are within ~5× of each other. Dapansutrile's mouse cellular IC50 of 1 nM is 1,000× more potent than its own human cellular IC50 — a major species gap that reframes how we should interpret rodent NLRP3-inhibitor preclinical data generally. Oridonin's gap between cell-free covalent-binding kinetics (~0.5–2 μM) and human cellular IC50 (5.18 μM) is small by comparison. (source: nlrp3-inhibitor-screen.md)</p>
 <h2 id="derivative-development">Derivative Development<a class="headerlink" href="#derivative-development" title="Permanent link">&para;</a></h2>
 <p>Recent research (2025) has focused on <strong>synthetic analogs of oridonin</strong> that achieve even higher NLRP3 potency while maintaining the safety profile:</p>
 <p><strong>(Source: nlrp3-exploit-map.md)</strong> — "recent 2025 research on oridonin analogs shows you can engineer even more potent derivatives."</p>
