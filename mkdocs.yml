@@ -66,6 +66,7 @@ nav:
     - Gout Pathophysiology: gout-pathophysiology.md
     - Gout Deep Dive: gout-deep-dive.md
     - Gout Clinical Pipeline: gout-clinical-pipeline.md
+    - Complement / C5a (CP0): complement-c5a-gout.md
     - Uricase: uricase.md
     - Uricase Variant Selection: uricase-variant-selection.md
     - GI Survival Prediction: gi-survival-prediction.md
@@ -78,11 +79,14 @@ nav:
     - NLRP3 Inflammasome: nlrp3-inflammasome.md
     - NLRP3 Exploit Map: nlrp3-exploit-map.md
     - NLRP3 Inhibitor Screen: nlrp3-inhibitor-screen.md
+    - TNFSF14 / LIGHT (CP1a): tnfsf14-gout-target.md
+    - SPM Resolution Pathway (CP5b): spm-resolution-pathway.md
 
   - Koji & Digestive Enzymes:
     - Digestive Enzymes & EPI: digestive-enzymes.md
     - Enzyme Deficit Deep Dive: enzyme-deficit-deep-dive.md
     - Engineered Koji Protocol: engineered-koji-protocol.md
+    - Koji Endgame Strain: koji-endgame-strain.md
     - Koji Construct Design: koji-construct-design.md
     - Digestive Enzyme Optimization: digestive-enzyme-optimization.md
 
@@ -103,15 +107,22 @@ nav:
     - Oridonin: oridonin.md
     - Disulfiram: disulfiram.md
     - Cannabinoids & Terpenes: cannabinoids-terpenes.md
+    - EGCG: egcg.md
+    - Zileuton: zileuton.md
+    - Carnosine: carnosine.md
+    - Lactoferrin: lactoferrin.md
     - Peptide Gout Addendum: peptide-gout-addendum.md
 
-  - Other Conditions:
+  - Self-Experiment & Validation:
     - SIBO: sibo.md
     - Supplements Stack: supplements-stack.md
+    - Self-Experiment Protocol: self-experiment-protocol.md
     - Validation Experiments: validation-experiments.md
 
   - Tools & Reference:
     - AI Bio Tools: bio-ai-tools.md
     - AI Bio Tools Playbook: ai-bio-tools-playbook.md
+    - ChEMBL Cross-Check: chembl-cross-check.md
+    - Open Questions Index: open-questions.md
     - Concept Graph: GRAPH.md
     - Citations: references.md
