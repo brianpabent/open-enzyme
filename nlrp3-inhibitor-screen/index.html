@@ -1153,6 +1153,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3a-lactoferrin-bovine-rblf-porcine-rplf-new-tier-1-cp5-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3a. Lactoferrin (bovine rbLf / porcine rpLF) — NEW Tier 1 CP5 Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1270,8 +1281,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#10-sulforaphane-1-isothiocyanato-4-methylsulfinylbutane-promoted-2026-04-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Sulforaphane (1-isothiocyanato-4-(methylsulfinyl)butane) — PROMOTED 2026-04-23
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-finding-keyword-gating-failure-in-prior-tier-4-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meta-Finding: Keyword-Gating Failure in Prior Tier-4 Classification
+      
+    </span>
+  </a>
   
 </li>
         
@@ -2870,6 +2903,9 @@
 - <strong>Oridonin</strong> — Covalent Cys279 binder (plant diterpenoid, not easily synthesized)
 - <strong>Tranilast</strong> — Non-selective mast cell stabilizer
 - <strong>OLT1177 (dapansutrile)</strong> — Phase 2a gout trial success, direct NLRP3 ATPase inhibitor</p>
+<blockquote>
+<p><strong>Species-gap caveat (methodological standard, 2026-04-23)</strong>: Rodent cellular IC50 values for NLRP3 inhibitors routinely diverge from human cellular IC50 by up to 3 orders of magnitude. Example: dapansutrile IC50 = 1 nM in mouse J774A.1 cells vs. 1,000 nM (1 μM) in human MDM cells under LPS+nigericin stimulation (ChEMBL v34). Every rodent-derived IC50 in this document should be read with that translation uncertainty in mind. When evaluating new compounds, prefer human-cell (THP-1, PBMC, human MDM) data over rodent cellular assays. (source: chembl-cross-check.md)</p>
+</blockquote>
 <hr />
 <h2 id="candidate-compounds-evaluated">Candidate Compounds Evaluated<a class="headerlink" href="#candidate-compounds-evaluated" title="Permanent link">&para;</a></h2>
 <h3 id="tier-1-strong-nlrp3-evidence-established-microbial-production">Tier 1: Strong NLRP3 Evidence + Established Microbial Production<a class="headerlink" href="#tier-1-strong-nlrp3-evidence-established-microbial-production" title="Permanent link">&para;</a></h3>
@@ -2959,6 +2995,32 @@
 - <strong>Biosynthetic pathway complexity:</strong> Requires 2–3 heterologous enzymes; lower titers than quercetin or ursolic acid expected</p>
 <p><strong>Ranking Rationale:</strong> Tier 1 candidate for <strong>synergy</strong> with other NLRP3 inhibitors, not as standalone agent. Excellent bioavailability and safety make it ideal for co-production with polyphenols. Evidence strong in sepsis and cardiac contexts but not gout-specific.</p>
 <hr />
+<h4 id="3a-lactoferrin-bovine-rblf-porcine-rplf-new-tier-1-cp5-entry">3a. <strong>Lactoferrin (bovine rbLf / porcine rpLF) — NEW Tier 1 CP5 Entry</strong><a class="headerlink" href="#3a-lactoferrin-bovine-rblf-porcine-rplf-new-tier-1-cp5-entry" title="Permanent link">&para;</a></h4>
+<p><strong>NLRP3 Mechanism:</strong> (In vitro &amp; animal; CP5 — IL-1β / IL-18 output suppression)
+- Glycoprotein (~80 kDa) that suppresses the NLRP3 / caspase-1 / GSDMD axis → reduces IL-1β and IL-18 output
+- Multi-tissue anti-inflammatory evidence (renal, intestinal, macrophage)
+- Talactoferrin (recombinant human lactoferrin, ChEMBL2108651) reached Phase 3 oncology — establishes oral bioavailability + safety at multi-g/day doses</p>
+<p><strong>Evidence Level:</strong>
+- <strong>Animal (murine nephrotoxicity, PMID 37926296):</strong> 300 mg/kg/day lactoferrin suppressed renal NLRP3 / caspase-1 / GSDMD and reduced IL-1β/IL-18. Back-translates to ~3 g/day human — achievable at demonstrated fermentation scale. (Animal Model.)
+- <strong>Animal (radiation enteritis):</strong> protective against GI-barrier inflammation; GSDMD-axis mechanism.
+- <strong>In vitro:</strong> macrophages + IEC-6 intestinal epithelial cells — NLRP3/caspase-1/GSDMD axis suppression confirmed.
+- <strong>Clinical (Phase 3):</strong> Talactoferrin (ChEMBL2108651) — oral bioavailability + safety established at multi-g/day doses.
+- <strong>Gout-specific:</strong> Not yet directly tested in MSU model; CP5 mechanism (IL-1β/IL-18 output block) is the gout-relevant target class.</p>
+<p><strong>Production Feasibility:</strong>
+- <strong><em>Pichia pastoris</em> (KM71-H, AOX1 promoter):</strong> <strong>3.5 g/L bovine rbLf</strong> (Iglesias-Figueroa 2016, <em>Int J Mol Sci</em>, PMID 27294912) — highest demonstrated titer
+- <strong>Porcine rpLF:</strong> 2.8 g/L (Yen 2024, PMID 38339093)
+- <strong><em>A. oryzae</em> (koji):</strong> Not yet attempted — potential future module for the Open Enzyme koji platform, would fit the GRAS food-organism vision
+- <strong>Native source:</strong> Bovine colostrum (commercial lactoferrin capsules available at ~100–300 mg/day)</p>
+<p><strong>Food Safety:</strong>
+- GRAS: Bovine lactoferrin (colostrum, milk); decades of dietary use as infant formula additive
+- Dose precedent: 100–300 mg/day oral in commercial capsules; up to gram-scale in Phase 3 talactoferrin trials</p>
+<p><strong>Strategic Position:</strong>
+- <strong>The only CP5 candidate that is fermentable at scale, food-grade, and has direct NLRP3/IL-1β evidence.</strong>
+- Fills the Open Enzyme CP5 gap that canakinumab currently occupies at ~$300K/year.
+- Orthogonal mechanism to polyphenol NLRP3 pathway modulators (CP1) and direct NLRP3 binders (CP2).
+- <em>P. pastoris</em> 3.5 g/L titer exceeds all polyphenol candidates; engineering path is well-characterized.</p>
+<p><strong>Ranking Rationale:</strong> <strong>Tier 1 CP5 entry</strong> based on demonstrated 3.5 g/L fermentation, Phase 3 clinical precedent (talactoferrin), direct NLRP3/caspase-1/GSDMD-axis evidence at CP5, and GRAS food-grade status. Gap: direct MSU-gout validation not yet in the literature — recommend as a priority experimental screen.</p>
+<hr />
 <h3 id="tier-2-moderate-nlrp3-evidence-feasible-microbial-production">Tier 2: Moderate NLRP3 Evidence + Feasible Microbial Production<a class="headerlink" href="#tier-2-moderate-nlrp3-evidence-feasible-microbial-production" title="Permanent link">&para;</a></h3>
 <h4 id="4-resveratrol-354-trihydroxystilbene">4. <strong>Resveratrol (3,5,4'-trihydroxystilbene)</strong><a class="headerlink" href="#4-resveratrol-354-trihydroxystilbene" title="Permanent link">&para;</a></h4>
 <p><strong>NLRP3 Mechanism:</strong> (In vitro &amp; animal)
@@ -3021,14 +3083,17 @@
 <hr />
 <h3 id="tier-3-polyphenols-with-strong-nlrp3-evidence-but-variable-production-feasibility">Tier 3: Polyphenols with Strong NLRP3 Evidence but Variable Production Feasibility<a class="headerlink" href="#tier-3-polyphenols-with-strong-nlrp3-evidence-but-variable-production-feasibility" title="Permanent link">&para;</a></h3>
 <h4 id="6-egcg-epigallocatechin-3-gallate">6. <strong>EGCG (Epigallocatechin-3-gallate)</strong><a class="headerlink" href="#6-egcg-epigallocatechin-3-gallate" title="Permanent link">&para;</a></h4>
-<p><strong>NLRP3 Mechanism:</strong> (In vitro &amp; animal)
-- Green tea catechin; suppresses ROS-driven NLRP3 activation
-- Direct binding to NLRP3 and/or TLR4; blocks TLR4/NF-κB/MAPK/NLRP3 cascade
-- ROS reduction via polyphenolic antioxidant activity; suppresses potassium efflux priming</p>
+<p><strong>NLRP3 Mechanism:</strong> (In vitro &amp; animal; <strong>widest-spectrum natural compound in the stack — 4 of 7 chokepoints</strong>)
+- <strong>CP1 (NF-κB priming):</strong> IKK inhibition → blocks NF-κB transcriptional priming of NLRP3 / pro-IL-1β
+- <strong>CP1a (TNFSF14 / LIGHT direct suppression):</strong> Hosokawa 2010 (PMID 20461739) — <strong>the only stack compound with direct TNFSF14 data</strong>. Gout-relevant since TNFSF14 is an emerging gout-specific priming amplifier (see <a href="../tnfsf14-gout-target/">tnfsf14-gout-target.md</a>).
+- <strong>CP4 (caspase-1 suppression):</strong> indirect via 20S proteasome inhibition, <strong>IC50 = 86 nM</strong> (ChEMBL). Sub-100 nM proteasome potency is a <strong>hepatotoxicity dose-ceiling flag</strong> at high-dose intense-use protocols.
+- <strong>CP5a (IL-1β receptor-downstream suppression):</strong> reduces IL-1β-induced signaling in target cells (chondrocytes, synoviocytes)
+- Green tea catechin; also suppresses ROS-driven NLRP3 activation and K⁺-efflux priming as adjunct mechanisms
+- <strong>Summary framing:</strong> EGCG is the widest-spectrum natural compound in the current Open Enzyme stack, hitting four of seven chokepoints (CP1, CP1a, CP4, CP5a). Its 20S proteasome sub-100 nM activity is a hepatotoxicity flag at high dose — safety dose-ceiling for intense use protocols.</p>
 <p><strong>Evidence Level:</strong>
 - <strong>In vitro:</strong> EGCG (10–50 μM) attenuated α-hemolysin-induced NLRP3 inflammasome and reduced caspase-1, IL-1β, IL-18; direct binding to Hla (Kd = 1.71 × 10⁻⁴ M)
 - <strong>Animal (T2D, bacterial infection models):</strong> EGCG improved glucose tolerance and prevented NLRP3-inflammasome-dependent inflammation in high-fat-diet mice; reduced bacterial lipopolysaccharide-induced NLRP3 activation
-- <strong>Gout-specific:</strong> No published evidence; inference from metabolic inflammation models</p>
+- <strong>Gout-specific (re-audit 2026-04-23, PROMOTED):</strong> <strong>Direct MSU mouse gout evidence</strong> — Lee 2019 <em>Molecules</em> (PMID 31174271): EGCG blocked MSU-induced caspase-1(p10) and IL-1β in primary mouse macrophages; oral EGCG alleviated MSU-injected mouse foot inflammation via NLRP3 suppression; mechanism = mtDNA synthesis block + ROS reduction. <strong>Hyperuricemic mouse serum-UA lowering</strong> — Yu 2024 <em>Food Funct</em> (PMID 38757391). The prior "no gout-specific evidence" framing was keyword-gated and missed these. (Animal Model; source: nlrp3-inhibitor-screen.md 2026-04-23 re-audit)</p>
 <p><strong>Production Feasibility:</strong>
 - <strong>S. cerevisiae:</strong> EGCG synthesis requires 8–10 heterologous plant genes (PAL, C4H, 4CL, CHS, CHI, F3H, F3'H, FLS, plus GT for galloylation)
 - <strong>Estimated titers:</strong> 10–50 mg/L (lower than kaempferol or quercetin due to galloylation complexity)
@@ -3046,7 +3111,7 @@
 - Pathway complexity (8–10 heterologous genes + galloylation)
 - No gout-specific evidence
 - Bioavailability limited (~20–30%); undergoes extensive gut metabolism</p>
-<p><strong>Ranking Rationale:</strong> Tier 3; strong NLRP3 mechanism but lower production titers and higher engineering complexity vs. quercetin.</p>
+<p><strong>Ranking Rationale:</strong> <strong>Promoted to Tier 2</strong> (from Tier 3) following 2026-04-23 literature re-audit: direct MSU mouse gout evidence (Lee 2019 PMID 31174271) and hyperuricemic mouse serum-UA lowering (Yu 2024 PMID 38757391) contradict the prior "no gout-specific evidence" framing. Engineered-production complexity (8–10 gene pathway, 10–50 mg/L titers) remains the limiting factor for a Tier 1 ranking, not evidence. Supplement-tier use (400–800 mg/day green tea extract) is a shorter path than engineered yeast production.</p>
 <hr />
 <h4 id="7-curcumin-17-bis4-hydroxy-3-methoxyphenylhpta-16-diene-35-dione">7. <strong>Curcumin (1,7-bis(4-hydroxy-3-methoxyphenyl)hpta-1,6-diene-3,5-dione)</strong><a class="headerlink" href="#7-curcumin-17-bis4-hydroxy-3-methoxyphenylhpta-16-diene-35-dione" title="Permanent link">&para;</a></h4>
 <p><strong>NLRP3 Mechanism:</strong> (In vitro &amp; animal, gout-specific)
@@ -3117,7 +3182,7 @@
 <p><strong>Evidence Level:</strong>
 - <strong>In vitro:</strong> Linalool (related monoterpene) suppresses TLR4, NF-κB, NLRP3, ASC, caspase-1 expression
 - <strong>Animal:</strong> Limonene and linalool reduce inflammation via NRF2 pathway in various models
-- <strong>Gout-specific:</strong> NO evidence</p>
+- <strong>Gout-specific (re-audit 2026-04-23, PROMOTED):</strong> <strong>Direct rat PO+MSU dual model</strong> — Venkatesan 2025 <em>Nutrients</em> (PMID 41515190): 50 mg/kg limonene reduced paw thickness, serum UA, IL-1β/TNF/IL-6, improved antioxidant status; authors invoke NLRP3-IL-1β suppression as the mechanistic frame. (Animal Model; source: nlrp3-inhibitor-screen.md 2026-04-23 re-audit)</p>
 <p><strong>Production Feasibility:</strong>
 - <strong>S. cerevisiae:</strong> Limonene is a volatile monoterpene; engineered yeast via mevalonate + limonene synthase heterologous expression
 - <strong>Status:</strong> Published but titers are very low (~5–20 mg/L); volatility is major issue
@@ -3134,7 +3199,46 @@
 - No oral bioavailability (requires vaporization)
 - No gout evidence
 - Not suitable for oral urate-lowering formulation</p>
-<p><strong>Ranking Rationale:</strong> Tier 4; impractical due to volatility and very low titers. Not recommended for engineered microbe production.</p>
+<p><strong>Ranking Rationale:</strong> <strong>Supplement use promoted to Tier 3</strong> (direct rat PO+MSU gout model per Venkatesan 2025 PMID 41515190). <strong>Engineered-production path stays Tier 4</strong> due to volatility (&lt;20 mg/L fermentation titers, poor oral bioavailability without inhalation/vaporization). Two separate tiers for two separate strategies: buy the d-limonene capsule; do not engineer the yeast.</p>
+<hr />
+<h4 id="10-sulforaphane-1-isothiocyanato-4-methylsulfinylbutane-promoted-2026-04-23">10. <strong>Sulforaphane (1-isothiocyanato-4-(methylsulfinyl)butane)</strong> — PROMOTED 2026-04-23<a class="headerlink" href="#10-sulforaphane-1-isothiocyanato-4-methylsulfinylbutane-promoted-2026-04-23" title="Permanent link">&para;</a></h4>
+<p><strong>NLRP3 Mechanism:</strong> (In vitro &amp; animal, hyperuricemia)
+- Isothiocyanate; potent Nrf2 activator via Keap1-Cys151 covalent modification
+- Sub-μM Nrf2 activation: <strong>EC50 = 580 nM</strong> (<em>J Med Chem</em> 2019) — crosses into the potency range of synthetic NLRP3 modulators
+- Nrf2 cross-talk with NF-κB: Nrf2 competes with NF-κB for CBP/p300 transcriptional co-activator, suppressing NLRP3 and pro-IL-1β transcription
+- PYCARD (ASC) promoter methylation effects inferred from broader Nrf2 epigenetic program</p>
+<p><strong>Evidence Level:</strong>
+- <strong>In vitro:</strong> Sub-μM Nrf2 activation (EC50 580 nM, <em>J Med Chem</em> 2019)
+- <strong>Animal (hyperuricemia, re-audit 2026-04-23, PROMOTED):</strong> Wang 2022 <em>J Adv Res</em> (PMID 36371056): hyperuricemic rat model — sulforaphane decreased urate synthesis + increased renal urate excretion + Nrf2-mediated epigenetic modification of urate-handling genes. Dual mechanism (synthesis block + excretion enhancement) bridges the uric-acid and inflammation axes. (Animal Model; source: nlrp3-inhibitor-screen.md 2026-04-23 re-audit)
+- <strong>Gout-specific (direct MSU):</strong> Not yet published; Wang 2022 hyperuricemia data is the closest validation.</p>
+<p><strong>Production Feasibility:</strong>
+- <strong>S. cerevisiae / A. oryzae:</strong> No published engineered microbial production. Requires glucosinolate (glucoraphanin) pathway (6+ heterologous plant genes from <em>Brassica</em>) + myrosinase activation
+- <strong>Food-industry path:</strong> Freeze-dried broccoli sprouts with active myrosinase (10–20 mg sulforaphane/serving) — shorter than engineered production
+- <strong>Engineering complexity:</strong> HIGH (pathway never reconstructed in yeast); Tier 4 for engineered production</p>
+<p><strong>Food Safety:</strong>
+- GRAS: Broccoli sprouts, mustard, watercress
+- Clinical trials: up to 150 μmol/day oral sulforaphane well-tolerated</p>
+<p><strong>Advantages:</strong>
+- <strong>Sub-μM Nrf2 potency</strong> (580 nM EC50) — rare among food-derived compounds
+- <strong>Hyperuricemic rat validation</strong> (Wang 2022) bridges urate + inflammation
+- Food-industry supply chain already exists (broccoli sprout capsules)
+- Mechanistically additive with quercetin (different target class)</p>
+<p><strong>Limitations:</strong>
+- No engineered microbial production path
+- Gout-specific MSU model not yet tested (hyperuricemia extrapolation only)
+- Isothiocyanate reactivity: off-target thiol covalent modification at high doses</p>
+<p><strong>Ranking Rationale:</strong> <strong>Promoted to Tier 2–3 for supplement use</strong> (hyperuricemic rat model + sub-μM Nrf2 EC50 contradict the prior "weak NLRP3 evidence" framing). <strong>Engineered-production path stays Tier 4</strong> — glucosinolate pathway has never been reconstructed in yeast and the food-industry broccoli-sprout route is shorter. Prior exclusion table entry was keyword-gated on "NLRP3" in abstracts and missed the 2022 hyperuricemia data.</p>
+<hr />
+<h3 id="meta-finding-keyword-gating-failure-in-prior-tier-4-classification">Meta-Finding: Keyword-Gating Failure in Prior Tier-4 Classification<a class="headerlink" href="#meta-finding-keyword-gating-failure-in-prior-tier-4-classification" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Methodological correction (2026-04-23 re-audit):</strong> The original Tier-4 classifications for EGCG, limonene, and sulforaphane were keyword-gated on the literal strings "MSU" / "gout" in PubMed abstracts, which missed direct MSU-gout animal models (EGCG, limonene) and hyperuricemia rat models (sulforaphane) that frame the inflammation via "uric acid" or "hyperuricemia" without using the word "gout."</p>
+<p><strong>New methodological standard (per <code>scripts/sweep-prompt.md</code> update):</strong> Pass 2 sweeps should explicitly check:
+1. MSU-crystal animal models (any species, foot/paw/peritonitis/joint)
+2. Hyperuricemia animal models (uric-acid lowering in rats/mice)
+3. Human-cell NLRP3 assays (THP-1, PBMC, MDM) separate from mouse-cell data
+4. Nrf2 / NF-κB pathway activity at sub-μM potency (not just direct NLRP3)</p>
+<p>for every compound, not just those with "gout" in the title. Applied retroactively: EGCG → Tier 2; limonene → Tier 3 supplement / Tier 4 production; sulforaphane → Tier 2–3 supplement / Tier 4 production.</p>
+</blockquote>
 <hr />
 <h3 id="native-a-oryzae-metabolites-screening-for-inherent-nlrp3-activity">Native A. oryzae Metabolites: Screening for Inherent NLRP3 Activity<a class="headerlink" href="#native-a-oryzae-metabolites-screening-for-inherent-nlrp3-activity" title="Permanent link">&para;</a></h3>
 <p><strong>Koji (<em>Aspergillus oryzae</em>) produces multiple bioactive metabolites:</strong></p>
@@ -3406,24 +3510,24 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>EGCG</strong></td>
-<td>Production titers 10–50 mg/L (vs. 800 mg/L resveratrol); complex 8–10 gene pathway; no gout evidence</td>
+<td><strong>EGCG</strong> (engineered-production only)</td>
+<td>Production titers 10–50 mg/L, complex 8–10 gene pathway. <strong>Note (2026-04-23):</strong> EGCG itself is <strong>promoted to Tier 2 for supplement use</strong> — direct MSU mouse gout evidence (Lee 2019 PMID 31174271) contradicts the prior "no gout evidence" rationale. Engineered path remains excluded on titer + pathway complexity grounds.</td>
 </tr>
 <tr>
 <td><strong>Curcumin</strong></td>
 <td>Severe bioavailability crisis (~5% oral absorption); requires nanoparticle/liposome formulation; high engineering cost for modest benefit</td>
 </tr>
 <tr>
-<td><strong>β-Caryophyllene</strong></td>
-<td>Very low titers (~10–50 mg/L); volatility issues; oral bioavailability poor; no gout evidence</td>
+<td><strong>β-Caryophyllene</strong> (engineered-production only)</td>
+<td>Very low titers (~10–50 mg/L); volatility issues; oral bioavailability poor. Supplement tier 2–3 given MSU gout rat model (Front Pharmacol 2021, PMID 33967792) — see entry.</td>
 </tr>
 <tr>
-<td><strong>Limonene</strong></td>
-<td>Extremely low titers (&lt;20 mg/L); volatile; no oral bioavailability; impractical for engineered production</td>
+<td><strong>Limonene</strong> (engineered-production only)</td>
+<td>Extremely low titers (&lt;20 mg/L); volatile; no oral bioavailability without inhalation. <strong>Supplement path promoted to Tier 3</strong> (Venkatesan 2025 PMID 41515190).</td>
 </tr>
 <tr>
-<td><strong>Sulforaphane</strong></td>
-<td>Isothiocyanate; complex synthesis (requires glucosinolate pathway); no published S. cerevisiae production; weak NLRP3 evidence</td>
+<td><strong>Sulforaphane</strong> (engineered-production only)</td>
+<td>Isothiocyanate; glucosinolate pathway never reconstructed in yeast. <strong>Supplement path promoted to Tier 2–3</strong> (Wang 2022 hyperuricemic rat PMID 36371056; Nrf2 EC50 580 nM).</td>
 </tr>
 <tr>
 <td><strong>Omega-3 metabolites (resolvins, lipoxins, DHA)</strong></td>
@@ -3462,16 +3566,22 @@
 4. <strong>Temporal dosing:</strong> Administer 1–2 hours before uricase dosing to prime NLRP3 suppression; sustain IL-1β reduction for uric acid clearance</p>
 <hr />
 <h2 id="summary-table-candidates-ranked-by-multi-factor-score">Summary Table: Candidates Ranked by Multi-Factor Score<a class="headerlink" href="#summary-table-candidates-ranked-by-multi-factor-score" title="Permanent link">&para;</a></h2>
+<p><strong>Two-column IC50 discipline (updated 2026-04-23):</strong> The prior single-column "NLRP3 evidence" conflated two fundamentally different measurements. Cleanly separated below:</p>
+<ul>
+<li><strong>Direct NLRP3 IC50 (ChEMBL, human-cell)</strong> — curated binding/inhibition against human NLRP3 (CHEMBL1741208) in THP-1 / MDM / PBMC. The rigorous "does this compound inhibit NLRP3" column.</li>
+<li><strong>Functional IL-1β IC50 (MSU-stimulated)</strong> — IL-1β reduction in macrophage assays, pathway-modulator readouts. The "does this compound suppress the gout-relevant output" column.</li>
+</ul>
+<p>The two measure different things and should not be cross-compared. Cell-free / mouse-cell figures are footnoted, not mixed into the human-cell column.</p>
 <table>
 <thead>
 <tr>
 <th>Rank</th>
 <th>Compound</th>
-<th>NLRP3 Evidence</th>
+<th>Direct NLRP3 IC50 (human-cell, ChEMBL)</th>
+<th>Functional IL-1β IC50 (MSU)</th>
 <th>Production (mg/L)</th>
 <th>Gout-Specific</th>
 <th>Bioavailability</th>
-<th>Overall Score</th>
 <th>Status</th>
 </tr>
 </thead>
@@ -3479,86 +3589,138 @@
 <tr>
 <td>1</td>
 <td><strong>Ursolic Acid</strong></td>
-<td>8/10</td>
+<td>— (no curated entry)</td>
+<td>~μM range (estimated)</td>
 <td>8590</td>
 <td>NO (OA infer)</td>
 <td>6/10</td>
-<td>39/50</td>
 <td>PRIMARY</td>
 </tr>
 <tr>
 <td>2</td>
 <td><strong>Quercetin</strong></td>
-<td>8/10</td>
+<td>— (no curated entry; most potent activity is <strong>5-LOX 300 nM</strong>)</td>
+<td>~11 μM (MSU macrophages)</td>
 <td>20</td>
-<td>YES (MSU)</td>
+<td>YES (MSU rat)</td>
 <td>5/10</td>
-<td>41/50</td>
 <td>PRIMARY</td>
 </tr>
 <tr>
 <td>3</td>
 <td><strong>Carnosine</strong></td>
-<td>9/10</td>
+<td>— (no curated entry)</td>
+<td>μM range (LPS/HUA models)</td>
 <td>150*</td>
-<td>YES (HUA)</td>
+<td>YES (HUA rat)</td>
 <td>10/10</td>
-<td>45/50</td>
 <td>SECONDARY</td>
+</tr>
+<tr>
+<td>3a</td>
+<td><strong>Lactoferrin</strong></td>
+<td>— (no direct NLRP3 IC50; CP5 downstream)</td>
+<td>~μg/mL range (NLRP3/caspase-1/GSDMD axis)</td>
+<td>3500 (P. pastoris)</td>
+<td>NO (CP5 class)</td>
+<td>8/10</td>
+<td>TIER 1 CP5</td>
 </tr>
 <tr>
 <td>4</td>
 <td><strong>Taurine</strong></td>
-<td>8/10</td>
+<td>— (upstream K⁺ efflux, not direct)</td>
+<td>μM–mM range</td>
 <td>HIGH*</td>
 <td>NO</td>
 <td>10/10</td>
-<td>39/50</td>
 <td>TERTIARY</td>
 </tr>
 <tr>
 <td>5</td>
 <td><strong>Resveratrol</strong></td>
-<td>7/10</td>
+<td>— (no curated entry)</td>
+<td>0.1–25 μM</td>
 <td>800</td>
 <td>NO</td>
 <td>4/10</td>
-<td>34/50</td>
 <td>BACKUP</td>
 </tr>
 <tr>
 <td>—</td>
-<td>EGCG</td>
-<td>7/10</td>
+<td><strong>EGCG</strong></td>
+<td>— (no curated entry)</td>
+<td>10–50 μM</td>
 <td>30</td>
-<td>NO</td>
+<td>YES (MSU mouse, Lee 2019)</td>
 <td>5/10</td>
-<td>31/50</td>
-<td>NOT RECOMMENDED</td>
+<td>SUPPLEMENT T2</td>
 </tr>
 <tr>
 <td>—</td>
-<td>Curcumin</td>
-<td>8/10</td>
+<td><strong>Curcumin</strong></td>
+<td><strong>24.2 μM</strong> (human THP-1, ChEMBL)</td>
+<td>10–50 μM</td>
 <td>100</td>
 <td>YES (MSU)</td>
 <td>1/10</td>
-<td>24/50</td>
-<td>NOT RECOMMENDED (bioavailability)</td>
+<td>NOT RECOMMENDED (bioavail)</td>
 </tr>
 <tr>
 <td>—</td>
-<td>β-Caryophyllene</td>
-<td>7/10</td>
+<td><strong>β-Caryophyllene</strong></td>
+<td>— (docking only, no IC50)</td>
+<td>μM range</td>
 <td>20</td>
-<td>NO</td>
+<td>YES (MSU rat)</td>
 <td>2/10</td>
-<td>18/50</td>
-<td>NOT RECOMMENDED</td>
+<td>SUPPLEMENT T2-3</td>
+</tr>
+<tr>
+<td>—</td>
+<td><strong>Sulforaphane</strong></td>
+<td>— (no direct; Nrf2 EC50 <strong>580 nM</strong>)</td>
+<td>μM range</td>
+<td>— (no yeast path)</td>
+<td>YES (HUA rat, Wang 2022)</td>
+<td>6/10</td>
+<td>SUPPLEMENT T2-3</td>
+</tr>
+<tr>
+<td>—</td>
+<td><strong>Limonene</strong></td>
+<td>— (no curated entry)</td>
+<td>μM range</td>
+<td>20</td>
+<td>YES (MSU rat, Venkatesan 2025)</td>
+<td>2/10</td>
+<td>SUPPLEMENT T3</td>
+</tr>
+<tr>
+<td>Benchmark</td>
+<td><strong>Dapansutrile</strong></td>
+<td><strong>1,000 nM</strong> (human MDM) ¹</td>
+<td>—</td>
+<td>synthetic</td>
+<td>Phase 2a (PMID 33005902)</td>
+<td>oral</td>
+<td>PHARMA</td>
+</tr>
+<tr>
+<td>Benchmark</td>
+<td><strong>Oridonin</strong></td>
+<td><strong>5,180 nM</strong> (human THP-1) ²</td>
+<td>—</td>
+<td>extract</td>
+<td>YES (MSU mouse, cell-free)</td>
+<td>low</td>
+<td>SUPPLEMENT</td>
 </tr>
 </tbody>
 </table>
-<p>*Estimated; not published</p>
+<p><em>Estimated; not published
+¹ ChEMBL CHEMBL3989943, </em>Eur J Med Chem<em> 2023. Mouse J774A.1 IC50 = 1 nM — </em><em>1,000× species gap</em><em>, footnoted only.
+² ChEMBL CHEMBL1164920, </em>Eur J Med Chem* 2023. Cell-free covalent-binding kinetics of 0.5–2 μM (Nature Commun 2018) is a different measurement class and should not be cross-compared.</p>
 <hr />
 <h2 id="recommendations-for-next-steps">Recommendations for Next Steps<a class="headerlink" href="#recommendations-for-next-steps" title="Permanent link">&para;</a></h2>
 <h3 id="phase-1-validation-34-weeks"><strong>Phase 1: Validation (3–4 weeks)</strong><a class="headerlink" href="#phase-1-validation-34-weeks" title="Permanent link">&para;</a></h3>

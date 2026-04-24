@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/self-experiment-protocol/">
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/carnosine/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>Self-Experiment Protocol — Brian's Personal Monitoring Plan - Open Enzyme</title>
+        <title>Carnosine - Open Enzyme</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#self-experiment-protocol" class="md-skip">
+        <a href="#carnosine" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Self-Experiment Protocol — Brian's Personal Monitoring Plan
+              Carnosine
             
           </span>
         </div>
@@ -2212,226 +2212,68 @@
   
 
 
-<h1 id="self-experiment-protocol">Self-Experiment Protocol<a class="headerlink" href="#self-experiment-protocol" title="Permanent link">&para;</a></h1>
-<p><strong>Purpose.</strong> Open Enzyme is not pursuing regulatory approval. The purpose of this document is to lay out a minimum-viable monitoring plan for Brian's self-experimentation with engineered koji and the supplement stack — so that (a) the risks are known in advance, (b) the data is collected prospectively rather than reconstructed after the fact, &copy; there are explicit halt criteria, and (d) the n-of-1 data is structured well enough to inform future collaborators (Rheinallt, Lauren, Valerie) if they decide to run anything more rigorous.</p>
-<p><strong>Evidence level for this page.</strong> The monitoring plan itself is Mechanistic Extrapolation — it assumes standard clinical safety monitoring principles applied to a novel intervention. The red-flag criteria are derived from known failure modes of related compounds (EGCG hepatotoxicity; immunomodulators → infection risk; chronic yeast dosing → dysbiosis), not from direct Open Enzyme data (which does not yet exist).</p>
-<hr />
-<h2 id="1-scope">1. Scope<a class="headerlink" href="#1-scope" title="Permanent link">&para;</a></h2>
-<p>This protocol covers <strong>oral self-administration</strong> of:</p>
+<h1 id="carnosine">Carnosine<a class="headerlink" href="#carnosine" title="Permanent link">&para;</a></h1>
+<p>β-alanyl-L-histidine. A naturally occurring dipeptide with the distinction — among compounds in the April 2026 NLRP3 inhibitor screen — of being the only candidate with published dual-phenotype gout-relevant rat evidence: both serum uric acid reduction and NLRP3 inflammasome suppression in the same animal model (source: nlrp3-inhibitor-screen.md).</p>
+<h2 id="what-it-is">What it is<a class="headerlink" href="#what-it-is" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Engineered koji (when available) — uricase ± NLRP3 modulators</li>
-<li>Supplement stack components (currently: quercetin, ursolic acid, carnosine, BHB, KPV, EGCG, sulforaphane, curcumin, oridonin, β-caryophyllene, others per <code>wiki/supplements-stack.md</code>)</li>
-<li>Any new compound added during the self-experiment window</li>
+<li><strong>Chemistry:</strong> Dipeptide of β-alanine and L-histidine. Non-proteinogenic — β-alanine is a non-standard amino acid, so carnosine is not synthesized on ribosomes but by a dedicated ATP-grasp ligase (carnosine synthase).</li>
+<li><strong>Endogenous distribution:</strong> Highest concentrations in skeletal muscle (type II fibers), heart, and brain. Synthesized in vivo from dietary β-alanine + L-histidine by carnosine synthase (ATPGD1/CARNS1).</li>
+<li><strong>Dietary sources:</strong> Red meat (beef, lamb), poultry, fish. Vegetarians have meaningfully lower muscle carnosine stores.</li>
+<li><strong>Pharmacokinetics:</strong> Orally administered carnosine is absorbed intact across the intestinal epithelium via PepT1, then partially hydrolyzed in serum by carnosinase (CN1) to β-alanine + histidine. Tissue re-synthesis from the freed amino acids regenerates a fraction of the systemic pool.</li>
 </ul>
-<p>It does <strong>not</strong> cover:</p>
+<h2 id="mechanisms-in-gout">Mechanisms in gout<a class="headerlink" href="#mechanisms-in-gout" title="Permanent link">&para;</a></h2>
+<p>Carnosine's relevance to gout spans two distinct axes — urate handling and inflammasome suppression — which is unusual; most candidate compounds hit one or the other.</p>
 <ul>
-<li>Injectable or IV products (not in scope for Open Enzyme)</li>
-<li>Off-label prescription drug modifications (separate conversation with Brian's physician)</li>
-<li>Diet/lifestyle changes unless they are part of a specific protocol arm</li>
+<li><strong>NLRP3 direct inhibition.</strong> Suppresses NLRP3 inflammasome activation in LPS-primed macrophages and in renal tubular cells. Reduces ASC speck formation, caspase-1 activation, and mature IL-1β release. (In Vitro; source: nlrp3-inhibitor-screen.md)</li>
+<li><strong>ROS scavenging.</strong> Classical activity — carnosine chelates transition metals, quenches singlet oxygen and hydroxyl radicals, and scavenges reactive carbonyl species (methylglyoxal, 4-HNE). ROS reduction sits upstream of NLRP3 priming. (In Vitro)</li>
+<li><strong>NF-κB axis suppression.</strong> Reduces p-p65 phosphorylation and nuclear translocation in inflamed tissues; downstream effect is reduced pro-IL-1β and NLRP3 transcription. (In Vitro and Animal Model)</li>
+<li><strong>JNK pathway suppression.</strong> Reduces p-JNK in hyperuricemia rat renal tissue. (Animal Model; source: nlrp3-inhibitor-screen.md)</li>
+<li><strong>Renal urate transporter modulation.</strong> In hyperuricemia rat models, carnosine downregulated URAT1 (SLC22A12, reabsorption) and GLUT9 (SLC2A9, reabsorption) in renal proximal tubule, increasing urate excretion. This is a physiology-level effect, not just an anti-inflammatory one. (Animal Model; source: nlrp3-inhibitor-screen.md)</li>
+<li><strong>HDAC and SIRT1 interaction.</strong> Carnosine shows evidence of HDAC inhibitory activity and SIRT1 modulation in in-vitro systems, which overlaps with BHB/β-hydroxybutyrate's proposed anti-inflammatory mechanism. (In Vitro; Mechanistic Extrapolation for translation to gout.)</li>
 </ul>
-<hr />
-<h2 id="2-timepoints">2. Timepoints<a class="headerlink" href="#2-timepoints" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Timepoint</th>
-<th>Draw</th>
-<th>Self-report</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T0 (baseline)</td>
-<td>Blood panel + stool 16S</td>
-<td>Symptom diary start</td>
-<td>Before first dose; establishes personal baseline</td>
-</tr>
-<tr>
-<td>T1 (week 4)</td>
-<td>Blood panel</td>
-<td>Diary (daily)</td>
-<td>Early signal window for hepatotox / CRP shift</td>
-</tr>
-<tr>
-<td>T2 (week 8)</td>
-<td>Blood panel</td>
-<td>Diary (daily)</td>
-<td>Mid-window; likely inflection for efficacy signals</td>
-</tr>
-<tr>
-<td>T3 (week 12)</td>
-<td>Blood panel + stool 16S</td>
-<td>Diary (daily)</td>
-<td>Primary endpoint window; microbiota re-sample</td>
-</tr>
-<tr>
-<td>Ad hoc</td>
-<td>Any time</td>
-<td>Any time</td>
-<td>If red-flag criterion triggers, halt and re-evaluate</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Why this cadence.</strong> 12 weeks is the minimum window for (a) microbiota community-level shifts to become detectable (~6-8 weeks for stable shifts), (b) chronic-dosing hepatotoxicity from EGCG/curcumin to manifest if it is going to, &copy; meaningful changes in serum urate and flare frequency to aggregate. Monthly blood draws are cheap (~$80/panel at Quest) and catch acute problems before 12 weeks.</p>
-<hr />
-<h2 id="3-blood-panel-every-4-weeks">3. Blood panel (every 4 weeks)<a class="headerlink" href="#3-blood-panel-every-4-weeks" title="Permanent link">&para;</a></h2>
-<p>Standard add-on to an annual physical; can be ordered through Quest / Labcorp or via direct-to-consumer services. Approximate total cost: <strong>~$80-120 per draw</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CBC with differential</strong></td>
-<td>Catches infection, anemia, WBC shifts (monitor for immunosuppression from NLRP3 blockade — canakinumab's known side effect class)</td>
-</tr>
-<tr>
-<td><strong>CMP (comprehensive metabolic panel)</strong></td>
-<td>Liver enzymes (ALT, AST, ALP, bilirubin), kidney function (creatinine, BUN, eGFR), electrolytes. EGCG can cause hepatotoxicity at high dose; curcumin at very high dose; any koji contaminant (aflatoxin) would hit liver first.</td>
-</tr>
-<tr>
-<td><strong>Uric acid</strong></td>
-<td>Primary efficacy endpoint. Target: &lt;6 mg/dL (or personal symptom-threshold if different).</td>
-</tr>
-<tr>
-<td><strong>hs-CRP</strong></td>
-<td>Systemic inflammation. Expected to drop if the NLRP3 pathway modulators are working. Doubling from baseline is a red flag.</td>
-</tr>
-<tr>
-<td><strong>LDH</strong> (optional, first + last draw)</td>
-<td>Cell turnover; flag if anything is lysing</td>
-</tr>
-<tr>
-<td><strong>HbA1c</strong> (baseline + T3 only)</td>
-<td>Some stack compounds (berberine, EGCG) affect glucose metabolism; useful baseline context</td>
-</tr>
-</tbody>
-</table>
-<h3 id="optional-add-ons-cp0-complement-and-cp6a-5-loxleukotrienes">Optional add-ons: CP0 (complement) and CP6a (5-LOX/leukotrienes)<a class="headerlink" href="#optional-add-ons-cp0-complement-and-cp6a-5-loxleukotrienes" title="Permanent link">&para;</a></h3>
-<p>The core panel (above) covers general safety and efficacy. The following optional add-ons cover the two chokepoints added in the v1.2 exploit-map restructure (CP0 complement, CP6a leukotrienes). They're specialty-lab or send-out tests — useful for tracking mechanism-specific response but not required for safety monitoring.</p>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Complement C3, C4, CH50</strong> (optional, baseline + T3)</td>
-<td>CP0 biomarkers. Low C3/C4 suggests active complement consumption — if uricase lowers MSU load, complement activation should reduce. CH50 measures total complement activity.</td>
-</tr>
-<tr>
-<td><strong>Soluble C5a</strong> (optional, baseline + T1 flare if one occurs)</td>
-<td>Direct CP0 readout. Elevated during active gout flare; should decline as uricase clears MSU crystals. Not offered at most commercial labs — may require a send-out (Quest, Labcorp) or specialty lab.</td>
-</tr>
-<tr>
-<td><strong>Urinary LTB4 (or LTE4)</strong> (optional, baseline + T3)</td>
-<td>CP6a biomarker. Leukotriene E4 is the stable urinary metabolite of the 5-LOX pathway and is widely used in asthma monitoring. Elevated in active neutrophil inflammation. Specialty lab — ARUP offers urine LTE4.</td>
-</tr>
-<tr>
-<td><strong>ESR</strong></td>
-<td>Nonspecific inflammation marker; complements CRP, captures different kinetics. Every-4-week cadence.</td>
-</tr>
-</tbody>
-</table>
-<p>See <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> for the CP0 mechanism detail, and the CP6a section of <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> for the 5-LOX/LTB4 branch that these tests monitor.</p>
-<hr />
-<h2 id="4-stool-16s-baseline-week-12-only">4. Stool 16S (baseline + week 12 only)<a class="headerlink" href="#4-stool-16s-baseline-week-12-only" title="Permanent link">&para;</a></h2>
-<p>A single paired baseline/endpoint microbiota sequencing is sufficient to detect whether chronic koji dosing has caused a dysbiotic shift. Quarterly re-sampling is overkill for personal use; the signal takes weeks to stabilize.</p>
+<h2 id="gout-specific-evidence">Gout-specific evidence<a class="headerlink" href="#gout-specific-evidence" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Service</strong>: Direct-to-consumer options like BiomeSight, Tiny Health, Flore, or uBiome-successors; approximate cost ~$100-200 per sample.</li>
-<li><strong>Primary metrics</strong>: alpha diversity (Shannon, Simpson) — flag &gt;20% drop from baseline; beta diversity (UniFrac) — note magnitude of community shift; taxa abundance at phylum level — flag dramatic Firmicutes/Bacteroidetes ratio inversion, or loss of Faecalibacterium prausnitzii / Akkermansia muciniphila (both gout-protective commensals).</li>
-<li><strong>Secondary metrics</strong> (if service provides): SCFA-producer abundance, LPS-producer abundance, uricase-gene carriage if detectable.</li>
-<li><strong>Caveat</strong>: 16S resolution bottoms out at genus level for most taxa; it will not detect strain-level engineered-koji persistence. If strain persistence is a specific question, consider qPCR for the engineered cassette's selection marker on spiked stool.</li>
+<li><strong>Hyperuricemia rat model: dual phenotype.</strong> Carnosine administration reduced serum uric acid AND suppressed NLRP3/caspase-1/p-p65/p-JNK in the same animals, with concurrent URAT1/GLUT9 downregulation. This is the unusual combination — most NLRP3 inhibitors do not also lower serum uric acid, and most uricosurics do not suppress NLRP3. (Animal Model; source: nlrp3-inhibitor-screen.md)</li>
+<li><strong>Diabetic nephropathy model (STZ-induced mice).</strong> Carnosine reduced renal NLRP3, ASC, pro-IL-1β, mature IL-1β, and IL-18; protected against kidney injury. Relevant to gout because renal NLRP3 activation is implicated in urate-associated kidney damage. (Animal Model; source: nlrp3-inhibitor-screen.md)</li>
+<li><strong>Human gout RCT data: absent.</strong> No published randomized controlled trial in gout or hyperuricemia patients to date. Whether the rat-model dose-response translates to human serum urate lowering is an open question. (Open question.)</li>
+<li><strong>Human supplement data (adjacent indications).</strong> Carnosine/β-alanine supplementation RCTs exist for exercise performance, aging, and diabetes complications — broadly safe at 500–2000 mg/day oral, but not designed to answer the gout question.</li>
 </ul>
-<hr />
-<h2 id="5-symptom-diary-daily-5-fields">5. Symptom diary (daily, 5 fields)<a class="headerlink" href="#5-symptom-diary-daily-5-fields" title="Permanent link">&para;</a></h2>
-<p>Goal: capture the signals that show up between blood draws, in a format that is quick to enter (&lt;60 seconds/day) and easy to aggregate.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Scale</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Stool form</strong></td>
-<td>Bristol 1-7</td>
-<td>Watch for sustained 6-7 (diarrhea) or 1-2 (constipation)</td>
-</tr>
-<tr>
-<td><strong>Bloating / GI discomfort</strong></td>
-<td>0-3 (none / mild / moderate / severe)</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Flare intensity</strong></td>
-<td>0-10 (0 = no joint pain, 10 = unable to walk)</td>
-<td>Include affected joint and whether a new location</td>
-</tr>
-<tr>
-<td><strong>Energy / fatigue</strong></td>
-<td>0-10 (0 = severe fatigue, 10 = unusually energetic)</td>
-<td>Gut inflammation and systemic inflammation both manifest as fatigue</td>
-</tr>
-<tr>
-<td><strong>Novel signal</strong></td>
-<td>Free text (blank if nothing)</td>
-<td>Rash, fever, headache, sleep, mood — anything not covered above</td>
-</tr>
-</tbody>
-</table>
-<p>Storage: simple spreadsheet, text file, or journaling app. Timestamped entries, one row per day. Export to CSV at endpoint for analysis.</p>
-<hr />
-<h2 id="6-red-flag-halt-criteria">6. Red-flag halt criteria<a class="headerlink" href="#6-red-flag-halt-criteria" title="Permanent link">&para;</a></h2>
-<p>If <strong>any</strong> of the following occur, halt the intervention immediately, document the trigger, and re-evaluate before resuming:</p>
-<ol>
-<li><strong>New GI bleeding</strong> (blood in stool, melena, hematemesis) — halt + seek care same-day</li>
-<li><strong>Persistent diarrhea &gt;72 hours</strong> — halt + evaluate for <em>C. difficile</em> / dysbiosis</li>
-<li><strong>hs-CRP doubles from baseline</strong> on a scheduled draw — halt + re-draw at 1 week to confirm</li>
-<li><strong>Liver enzymes (ALT or AST) &gt;2× upper limit of normal</strong> — halt + re-draw at 2 weeks; evaluate which compound is most likely culprit (EGCG &gt; curcumin &gt; others)</li>
-<li><strong>Unexplained weight loss &gt;5 lb over 4 weeks</strong> — halt + evaluate</li>
-<li><strong>New fever without identified infection</strong> — halt + seek care</li>
-<li><strong>New joint involvement that does not resolve with standard gout management within 7 days</strong> — halt + re-evaluate whether intervention is working <em>or</em> whether it's unmasking a new pattern</li>
-<li><strong>Eosinophilia or new hypersensitivity signal</strong> (rash, urticaria, angioedema) — halt immediately; consider allergic response to koji or a stack component</li>
-<li><strong>Kidney function decline</strong> (eGFR drop &gt;15% from baseline or creatinine rise) — halt + evaluate (uricase + high-dose NLRP3 blockers both plausibly stress kidneys)</li>
-</ol>
-<p>"Halt" means: stop all investigational Open Enzyme compounds (koji, any added supplement not previously in long-term use). It does <strong>not</strong> mean stop medically-prescribed therapy (allopurinol, colchicine) unless the trigger specifically implicates those.</p>
-<hr />
-<h2 id="7-logging-and-version-control">7. Logging and version control<a class="headerlink" href="#7-logging-and-version-control" title="Permanent link">&para;</a></h2>
-<p><strong>Raw data storage convention: <code>labs/</code> directory in the repo root, gitignored.</strong></p>
-<p>The <code>labs/</code> directory at <code>/labs/</code> (relative to the repo root) is listed in <code>.gitignore</code> and will never be committed. Raw blood-panel PDFs, stool-report JSON, imaging files, and any other PHI-bearing artifact live there on the local disk only. The directory is created locally — it does not exist in the public repo.</p>
-<p>Suggested substructure:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>labs/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── brian/
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── 2026-04-24-baseline/        # blood panel PDF, stool 16S report
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── 2026-05-22-week4/
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── README.md                    # running index, personal notes
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── lynn/                            # separate subtree; data is Lynn&#39;s
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── README.md
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>└── shared/                          # joint references (e.g., family history)
-</code></pre></div>
-<p><strong>Consent note on Lynn's data</strong>: Lynn's labs are Lynn's data. Storing them under <code>labs/lynn/</code> presumes her explicit consent to include them in the project's working directory. Even locally-gitignored storage is a form of inclusion; ask and record agreement (a dated note in <code>labs/lynn/README.md</code> is sufficient) before adding anything.</p>
-<p><strong>Summary log (public, committed)</strong>: a stripped, de-identified summary can be added to <code>logs/self-experiment-log.md</code> (append-only). Fields: date, intervention (what's being taken), observation, any protocol deviation. This log is for pattern-recognition and is safe to commit because it contains no raw PHI. Never reference specific lab values; use qualitative framing ("CRP trending up" rather than "CRP = 4.2"). If you want numeric trending, keep that inside <code>labs/brian/README.md</code> locally.</p>
-<p><strong>When a stack compound is added or removed</strong>: note it in the log with a 1-line rationale. This is the counterpart to commit messages for the body.</p>
-<p><strong>If collaborators eventually need access to raw data</strong>: graduate from Option 1 (local-only) to Option 2 (private parallel repo <code>open-enzyme-private</code> on GitHub, invite-only). See the labs-handling brainstorm (synthesis.md or commit history) for the trade-off analysis — a 10-minute upgrade, not a re-plan.</p>
-<hr />
-<h2 id="8-what-this-protocol-does-not-do">8. What this protocol does NOT do<a class="headerlink" href="#8-what-this-protocol-does-not-do" title="Permanent link">&para;</a></h2>
+<h2 id="bioavailability">Bioavailability<a class="headerlink" href="#bioavailability" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Establish efficacy against a control.</strong> This is n-of-1, uncontrolled, unblinded. Any efficacy signal is suggestive at best. It is good enough to motivate a future controlled trial by a collaborator; it is not good enough to generalize.</li>
-<li><strong>Replace medical supervision.</strong> Brian's primary care + rheumatologist should know what he's doing. The blood panels should land in their system, not just his. Red-flag criteria are escalation-to-care triggers, not self-directed.</li>
-<li><strong>Cover regulatory territory.</strong> Open Enzyme is a research project; this is personal self-experimentation. Do not distribute engineered strains to others under this protocol — that requires a different framework (see <code>wiki/open-source-platform.md</code> on strain-sharing).</li>
+<li><strong>Oral absorption: good.</strong> Intact carnosine is absorbed by PepT1 in the small intestine. This is a meaningful advantage over quercetin (poorly absorbed, extensive phase-II metabolism) and ursolic acid (poor aqueous solubility, low oral bioavailability) — both are ranked alongside carnosine in the NLRP3 inhibitor screen but are bioavailability-limited.</li>
+<li><strong>Serum carnosinase (CN1) is the main loss pathway.</strong> CN1 cleaves carnosine to β-alanine + histidine in serum within minutes to hours. The freed amino acids retain partial activity (β-alanine feeds muscle carnosine resynthesis; histidine is a metal chelator and ROS scavenger), so degradation is not a total loss, but the parent dipeptide's direct NLRP3 activity is short-lived in circulation.</li>
+<li><strong>Zinc-carnosine (polaprezinc) as an alternative.</strong> The zinc-carnosine complex is stable in the GI tract and provides local carnosine activity at the gut mucosa with slower systemic release. Approved in Japan for gastric ulcer. Useful alternative formulation when the target site is the gut itself (e.g., gut-barrier healing, local anti-inflammatory effect) rather than systemic. (Clinical Trial for GI indication.)</li>
+<li><strong>Engineered-food delivery (koji) bypasses first-pass degradation for the gut-resident fraction.</strong> If carnosine is delivered inside koji biomass that reaches the lower GI tract, local effects (gut-barrier NLRP3 suppression, renal-axis feedback via systemic absorption) are both achievable with a single product.</li>
 </ul>
-<hr />
-<h2 id="9-review-and-update">9. Review and update<a class="headerlink" href="#9-review-and-update" title="Permanent link">&para;</a></h2>
-<p>Review this document: (a) before starting a new intervention arm, (b) after any red-flag halt, &copy; at least annually, (d) whenever new stack compounds or engineered strains are added to the self-experiment. Changes tracked in git, not inline.</p>
+<h2 id="engineered-production">Engineered production<a class="headerlink" href="#engineered-production" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Yeast baseline: ~150 mg/L (unsourced estimate — flagged).</strong> The NLRP3 inhibitor screen (source: nlrp3-inhibitor-screen.md) lists carnosine engineered-production feasibility at an estimated 100–500 mg/L in <em>S. cerevisiae</em>, "based on analogous dipeptide engineering" — <strong>no primary source cited, and no peer-reviewed yeast carnosine titer has been located to confirm the ~150 mg/L working number</strong>. Treat as provisional until a published titer is cross-checked.</li>
+<li><strong>Heterologous pathway.</strong> Single-gene module: <em>Lactobacillus</em> carnosine synthase (CarnS, ATP-grasp family enzyme, ~460 aa, ~1.4 kb coding sequence). Substrate: β-alanine + L-histidine + ATP → carnosine + ADP + Pi.</li>
+<li><strong>Yeast bottleneck: β-alanine supply.</strong> <em>S. cerevisiae</em> does not natively accumulate β-alanine at high levels; published carnosine-in-yeast work typically co-expresses aspartate decarboxylase (<em>panD</em>, bacterial) to supply β-alanine from aspartate.</li>
+<li><strong>Koji co-expression proposal.</strong> See <a href="../engineered-koji-protocol/">engineered-koji-protocol.md § 15 Carnosine Co-Expression Module</a>. Rationale: koji's higher secretion + biosynthesis capacity may lift titer to 500–1000 mg/L; koji is already the multi-enzyme chassis producing native kojic acid, ergothioneine, and ferulic acid; carnosine extends that native anti-inflammatory chorus with the only compound in the stack that has hyperuricemia rat evidence. (Mechanistic extrapolation — no published carnosine-in-koji data exists.)</li>
+</ul>
+<h2 id="dose">Dose<a class="headerlink" href="#dose" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>L-carnosine (oral supplement):</strong> 500–1000 mg/day typical; clinical trials use up to 2 g/day. Safe profile at these doses.</li>
+<li><strong>Zinc-carnosine (polaprezinc):</strong> 75 mg BID (150 mg/day total) for GI-focused use. Approved in Japan for gastric ulcer.</li>
+<li><strong>Dietary equivalent:</strong> ~50–150 mg/day from a typical omnivorous diet, mostly from red meat and poultry — well below supplement dose range.</li>
+<li><strong>Engineered-koji dose math.</strong> 10–15 g dry koji/day at 100 mg carnosine/g dry mass = 1–1.5 g carnosine daily, approaching the upper end of the supplement dose range. Contingent on achieving the 500–1000 mg/L koji fermentation titer (open — see engineered-koji-protocol.md § 15).</li>
+</ul>
+<h2 id="open-questions">Open questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Human gout RCT evidence is absent.</strong> The hyperuricemia rat model dual-phenotype data is promising but not human-validated. Whether dose-response translates to human serum uric acid lowering or to MSU-flare reduction is unknown.</li>
+<li><strong>Engineered yeast titer needs primary-source confirmation.</strong> The ~150 mg/L baseline is carried from internal analysis (source: nlrp3-inhibitor-screen.md) without a cited peer-reviewed titer. Verify before anchoring dose math on it.</li>
+<li><strong>Koji co-expression feasibility.</strong> No published carnosine-in-koji data. The 500–1000 mg/L target in the engineered-koji-protocol is mechanistic extrapolation from koji's general secretion capacity and needs the validation experiment (engineered-koji-protocol.md § 15) to confirm.</li>
+<li><strong>Carnosinase half-life limits.</strong> Serum CN1 cleaves carnosine rapidly; whether this caps peak systemic exposure below the effective NLRP3-suppression concentration in humans is unresolved. Carnosinase inhibitors and carnosinase-resistant analogs (e.g., D-carnosine, N-acetyl-carnosine) are explored in adjacent indications but not yet in gout.</li>
+<li><strong>Combination vs. uricase.</strong> Carnosine's URAT1/GLUT9 renal effect is mechanistically complementary to uricase (luminal urate degradation). Whether co-delivery is additive, synergistic, or flat is an open question — proposed experiment: carnosine + uricase co-dosing in hyperuricemia rat model, compared to uricase alone (source: nlrp3-inhibitor-screen.md).</li>
+</ul>
+<h2 id="cross-references">Cross-references<a class="headerlink" href="#cross-references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../engineered-koji-protocol/">engineered-koji-protocol.md § 15 Carnosine Co-Expression Module</a> — co-engineering proposal, validation experiment, decision point.</li>
+<li><a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> — April 2026 screen ranking carnosine Tier 2 secondary-synergy candidate; rationale and evidence summary.</li>
+<li><a href="../supplements-stack/">supplements-stack.md</a> — carnosine as a standalone supplement entry (separate doc track).</li>
+<li><a href="../gout-deep-dive/">gout-deep-dive.md</a> — overall gout mechanism context (hyperuricemia, NLRP3, MSU flare).</li>
+</ul>
 
 
 

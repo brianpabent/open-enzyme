@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/self-experiment-protocol/">
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/zileuton/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>Self-Experiment Protocol — Brian's Personal Monitoring Plan - Open Enzyme</title>
+        <title>Zileuton (Zyflo / Zyflo CR) - Open Enzyme</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#self-experiment-protocol" class="md-skip">
+        <a href="#zileuton-zyflo-zyflo-cr" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Self-Experiment Protocol — Brian's Personal Monitoring Plan
+              Zileuton (Zyflo / Zyflo CR)
             
           </span>
         </div>
@@ -2212,226 +2212,103 @@
   
 
 
-<h1 id="self-experiment-protocol">Self-Experiment Protocol<a class="headerlink" href="#self-experiment-protocol" title="Permanent link">&para;</a></h1>
-<p><strong>Purpose.</strong> Open Enzyme is not pursuing regulatory approval. The purpose of this document is to lay out a minimum-viable monitoring plan for Brian's self-experimentation with engineered koji and the supplement stack — so that (a) the risks are known in advance, (b) the data is collected prospectively rather than reconstructed after the fact, &copy; there are explicit halt criteria, and (d) the n-of-1 data is structured well enough to inform future collaborators (Rheinallt, Lauren, Valerie) if they decide to run anything more rigorous.</p>
-<p><strong>Evidence level for this page.</strong> The monitoring plan itself is Mechanistic Extrapolation — it assumes standard clinical safety monitoring principles applied to a novel intervention. The red-flag criteria are derived from known failure modes of related compounds (EGCG hepatotoxicity; immunomodulators → infection risk; chronic yeast dosing → dysbiosis), not from direct Open Enzyme data (which does not yet exist).</p>
+<h1 id="zileuton-zyflo-zyflo-cr">Zileuton (Zyflo / Zyflo CR)<a class="headerlink" href="#zileuton-zyflo-zyflo-cr" title="Permanent link">&para;</a></h1>
+<p>Zileuton is an oral 5-lipoxygenase (5-LOX) inhibitor. FDA-approved for asthma in 1996 and still the only approved direct 5-LOX drug in the US. It is <strong>never been tested in gout</strong> and sits squarely on top of the CP6a chokepoint in the v1.2 <a href="../nlrp3-exploit-map/">NLRP3 exploit map</a> — the 5-LOX → LTB4 → neutrophil-chemotaxis amplification loop that drives the tissue-destructive phase of a gout flare. This dossier treats zileuton as a <strong>testable hypothesis</strong>, not an efficacy claim.</p>
+<p>See <a href="../supplements-stack/">supplements-stack.md</a> for the over-the-counter CP6a entries (quercetin, AKBA, EPA) that already sit on this mechanism. Zileuton is the pharma-grade version of the same pathway reach.</p>
 <hr />
-<h2 id="1-scope">1. Scope<a class="headerlink" href="#1-scope" title="Permanent link">&para;</a></h2>
-<p>This protocol covers <strong>oral self-administration</strong> of:</p>
+<h2 id="what-it-is">What it is<a class="headerlink" href="#what-it-is" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Engineered koji (when available) — uricase ± NLRP3 modulators</li>
-<li>Supplement stack components (currently: quercetin, ursolic acid, carnosine, BHB, KPV, EGCG, sulforaphane, curcumin, oridonin, β-caryophyllene, others per <code>wiki/supplements-stack.md</code>)</li>
-<li>Any new compound added during the self-experiment window</li>
-</ul>
-<p>It does <strong>not</strong> cover:</p>
-<ul>
-<li>Injectable or IV products (not in scope for Open Enzyme)</li>
-<li>Off-label prescription drug modifications (separate conversation with Brian's physician)</li>
-<li>Diet/lifestyle changes unless they are part of a specific protocol arm</li>
+<li><strong>Chemistry:</strong> N-hydroxy-N-(1-benzo[b]thien-2-ylethyl)urea. Orally bioavailable small molecule, MW 236.29.</li>
+<li><strong>Mechanism class:</strong> Direct, reversible, iron-chelating 5-LOX inhibitor. Binds the non-heme iron at the active site of the 5-LOX enzyme and prevents arachidonic acid → 5-HPETE → LTA4 conversion. Unlike montelukast (a leukotriene-receptor antagonist acting downstream at CysLT1), zileuton blocks upstream leukotriene synthesis — both the LTB4 branch (neutrophil chemotaxis) and the cysteinyl-leukotriene branch (LTC4/D4/E4, bronchoconstriction).</li>
+<li><strong>Approval:</strong> FDA-approved 1996 for prophylaxis and chronic treatment of asthma in patients ≥12 years. Zyflo (immediate-release, 600 mg QID) and Zyflo CR (controlled-release, 1,200 mg BID) are bioequivalent for AUC.</li>
+<li><strong>Sponsor history:</strong> Abbott → Critical Therapeutics → Cornerstone Therapeutics → Chiesi. Now available generic.</li>
+<li><strong>Cost:</strong> ~$50/month generic as of 2026-04-24 (varies; the brand Zyflo CR remains expensive).</li>
+<li><strong>Access:</strong> Prescription required; written most often by pulmonologists for asthma. No current rheumatology indication.</li>
 </ul>
 <hr />
-<h2 id="2-timepoints">2. Timepoints<a class="headerlink" href="#2-timepoints" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Timepoint</th>
-<th>Draw</th>
-<th>Self-report</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T0 (baseline)</td>
-<td>Blood panel + stool 16S</td>
-<td>Symptom diary start</td>
-<td>Before first dose; establishes personal baseline</td>
-</tr>
-<tr>
-<td>T1 (week 4)</td>
-<td>Blood panel</td>
-<td>Diary (daily)</td>
-<td>Early signal window for hepatotox / CRP shift</td>
-</tr>
-<tr>
-<td>T2 (week 8)</td>
-<td>Blood panel</td>
-<td>Diary (daily)</td>
-<td>Mid-window; likely inflection for efficacy signals</td>
-</tr>
-<tr>
-<td>T3 (week 12)</td>
-<td>Blood panel + stool 16S</td>
-<td>Diary (daily)</td>
-<td>Primary endpoint window; microbiota re-sample</td>
-</tr>
-<tr>
-<td>Ad hoc</td>
-<td>Any time</td>
-<td>Any time</td>
-<td>If red-flag criterion triggers, halt and re-evaluate</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Why this cadence.</strong> 12 weeks is the minimum window for (a) microbiota community-level shifts to become detectable (~6-8 weeks for stable shifts), (b) chronic-dosing hepatotoxicity from EGCG/curcumin to manifest if it is going to, &copy; meaningful changes in serum urate and flare frequency to aggregate. Monthly blood draws are cheap (~$80/panel at Quest) and catch acute problems before 12 weeks.</p>
-<hr />
-<h2 id="3-blood-panel-every-4-weeks">3. Blood panel (every 4 weeks)<a class="headerlink" href="#3-blood-panel-every-4-weeks" title="Permanent link">&para;</a></h2>
-<p>Standard add-on to an annual physical; can be ordered through Quest / Labcorp or via direct-to-consumer services. Approximate total cost: <strong>~$80-120 per draw</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CBC with differential</strong></td>
-<td>Catches infection, anemia, WBC shifts (monitor for immunosuppression from NLRP3 blockade — canakinumab's known side effect class)</td>
-</tr>
-<tr>
-<td><strong>CMP (comprehensive metabolic panel)</strong></td>
-<td>Liver enzymes (ALT, AST, ALP, bilirubin), kidney function (creatinine, BUN, eGFR), electrolytes. EGCG can cause hepatotoxicity at high dose; curcumin at very high dose; any koji contaminant (aflatoxin) would hit liver first.</td>
-</tr>
-<tr>
-<td><strong>Uric acid</strong></td>
-<td>Primary efficacy endpoint. Target: &lt;6 mg/dL (or personal symptom-threshold if different).</td>
-</tr>
-<tr>
-<td><strong>hs-CRP</strong></td>
-<td>Systemic inflammation. Expected to drop if the NLRP3 pathway modulators are working. Doubling from baseline is a red flag.</td>
-</tr>
-<tr>
-<td><strong>LDH</strong> (optional, first + last draw)</td>
-<td>Cell turnover; flag if anything is lysing</td>
-</tr>
-<tr>
-<td><strong>HbA1c</strong> (baseline + T3 only)</td>
-<td>Some stack compounds (berberine, EGCG) affect glucose metabolism; useful baseline context</td>
-</tr>
-</tbody>
-</table>
-<h3 id="optional-add-ons-cp0-complement-and-cp6a-5-loxleukotrienes">Optional add-ons: CP0 (complement) and CP6a (5-LOX/leukotrienes)<a class="headerlink" href="#optional-add-ons-cp0-complement-and-cp6a-5-loxleukotrienes" title="Permanent link">&para;</a></h3>
-<p>The core panel (above) covers general safety and efficacy. The following optional add-ons cover the two chokepoints added in the v1.2 exploit-map restructure (CP0 complement, CP6a leukotrienes). They're specialty-lab or send-out tests — useful for tracking mechanism-specific response but not required for safety monitoring.</p>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Complement C3, C4, CH50</strong> (optional, baseline + T3)</td>
-<td>CP0 biomarkers. Low C3/C4 suggests active complement consumption — if uricase lowers MSU load, complement activation should reduce. CH50 measures total complement activity.</td>
-</tr>
-<tr>
-<td><strong>Soluble C5a</strong> (optional, baseline + T1 flare if one occurs)</td>
-<td>Direct CP0 readout. Elevated during active gout flare; should decline as uricase clears MSU crystals. Not offered at most commercial labs — may require a send-out (Quest, Labcorp) or specialty lab.</td>
-</tr>
-<tr>
-<td><strong>Urinary LTB4 (or LTE4)</strong> (optional, baseline + T3)</td>
-<td>CP6a biomarker. Leukotriene E4 is the stable urinary metabolite of the 5-LOX pathway and is widely used in asthma monitoring. Elevated in active neutrophil inflammation. Specialty lab — ARUP offers urine LTE4.</td>
-</tr>
-<tr>
-<td><strong>ESR</strong></td>
-<td>Nonspecific inflammation marker; complements CRP, captures different kinetics. Every-4-week cadence.</td>
-</tr>
-</tbody>
-</table>
-<p>See <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> for the CP0 mechanism detail, and the CP6a section of <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> for the 5-LOX/LTB4 branch that these tests monitor.</p>
-<hr />
-<h2 id="4-stool-16s-baseline-week-12-only">4. Stool 16S (baseline + week 12 only)<a class="headerlink" href="#4-stool-16s-baseline-week-12-only" title="Permanent link">&para;</a></h2>
-<p>A single paired baseline/endpoint microbiota sequencing is sufficient to detect whether chronic koji dosing has caused a dysbiotic shift. Quarterly re-sampling is overkill for personal use; the signal takes weeks to stabilize.</p>
-<ul>
-<li><strong>Service</strong>: Direct-to-consumer options like BiomeSight, Tiny Health, Flore, or uBiome-successors; approximate cost ~$100-200 per sample.</li>
-<li><strong>Primary metrics</strong>: alpha diversity (Shannon, Simpson) — flag &gt;20% drop from baseline; beta diversity (UniFrac) — note magnitude of community shift; taxa abundance at phylum level — flag dramatic Firmicutes/Bacteroidetes ratio inversion, or loss of Faecalibacterium prausnitzii / Akkermansia muciniphila (both gout-protective commensals).</li>
-<li><strong>Secondary metrics</strong> (if service provides): SCFA-producer abundance, LPS-producer abundance, uricase-gene carriage if detectable.</li>
-<li><strong>Caveat</strong>: 16S resolution bottoms out at genus level for most taxa; it will not detect strain-level engineered-koji persistence. If strain persistence is a specific question, consider qPCR for the engineered cassette's selection marker on spiked stool.</li>
-</ul>
-<hr />
-<h2 id="5-symptom-diary-daily-5-fields">5. Symptom diary (daily, 5 fields)<a class="headerlink" href="#5-symptom-diary-daily-5-fields" title="Permanent link">&para;</a></h2>
-<p>Goal: capture the signals that show up between blood draws, in a format that is quick to enter (&lt;60 seconds/day) and easy to aggregate.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Scale</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Stool form</strong></td>
-<td>Bristol 1-7</td>
-<td>Watch for sustained 6-7 (diarrhea) or 1-2 (constipation)</td>
-</tr>
-<tr>
-<td><strong>Bloating / GI discomfort</strong></td>
-<td>0-3 (none / mild / moderate / severe)</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Flare intensity</strong></td>
-<td>0-10 (0 = no joint pain, 10 = unable to walk)</td>
-<td>Include affected joint and whether a new location</td>
-</tr>
-<tr>
-<td><strong>Energy / fatigue</strong></td>
-<td>0-10 (0 = severe fatigue, 10 = unusually energetic)</td>
-<td>Gut inflammation and systemic inflammation both manifest as fatigue</td>
-</tr>
-<tr>
-<td><strong>Novel signal</strong></td>
-<td>Free text (blank if nothing)</td>
-<td>Rash, fever, headache, sleep, mood — anything not covered above</td>
-</tr>
-</tbody>
-</table>
-<p>Storage: simple spreadsheet, text file, or journaling app. Timestamped entries, one row per day. Export to CSV at endpoint for analysis.</p>
-<hr />
-<h2 id="6-red-flag-halt-criteria">6. Red-flag halt criteria<a class="headerlink" href="#6-red-flag-halt-criteria" title="Permanent link">&para;</a></h2>
-<p>If <strong>any</strong> of the following occur, halt the intervention immediately, document the trigger, and re-evaluate before resuming:</p>
+<h2 id="mechanism-in-gout-cp6a-our-theory">Mechanism in gout (CP6a) — our theory<a class="headerlink" href="#mechanism-in-gout-cp6a-our-theory" title="Permanent link">&para;</a></h2>
+<p>This section frames the case as a testable hypothesis, not an efficacy claim. No gout clinical trial of zileuton exists (ClinicalTrials.gov search 2026-04-24 returns zero results).</p>
 <ol>
-<li><strong>New GI bleeding</strong> (blood in stool, melena, hematemesis) — halt + seek care same-day</li>
-<li><strong>Persistent diarrhea &gt;72 hours</strong> — halt + evaluate for <em>C. difficile</em> / dysbiosis</li>
-<li><strong>hs-CRP doubles from baseline</strong> on a scheduled draw — halt + re-draw at 1 week to confirm</li>
-<li><strong>Liver enzymes (ALT or AST) &gt;2× upper limit of normal</strong> — halt + re-draw at 2 weeks; evaluate which compound is most likely culprit (EGCG &gt; curcumin &gt; others)</li>
-<li><strong>Unexplained weight loss &gt;5 lb over 4 weeks</strong> — halt + evaluate</li>
-<li><strong>New fever without identified infection</strong> — halt + seek care</li>
-<li><strong>New joint involvement that does not resolve with standard gout management within 7 days</strong> — halt + re-evaluate whether intervention is working <em>or</em> whether it's unmasking a new pattern</li>
-<li><strong>Eosinophilia or new hypersensitivity signal</strong> (rash, urticaria, angioedema) — halt immediately; consider allergic response to koji or a stack component</li>
-<li><strong>Kidney function decline</strong> (eGFR drop &gt;15% from baseline or creatinine rise) — halt + evaluate (uricase + high-dose NLRP3 blockers both plausibly stress kidneys)</li>
+<li><strong>MSU crystal deposition activates macrophages and recruits neutrophils</strong>, which synthesize eicosanoids from arachidonic acid via 5-LOX. Synovial fluid from gout patients contains elevated LTB4 during flares (Rae &amp; Smith 1981, PMID 6259703 — In Vitro / ex vivo human).</li>
+<li><strong>The primary 5-LOX product relevant to gout is leukotriene B4 (LTB4)</strong> — a potent neutrophil chemoattractant. In some early chemotaxis assays LTB4 was reported as ~100× more active than C5a for neutrophil migration (Ford-Hutchinson <em>Crit Rev Immunol</em> 1990 — In Vitro). The quantitative ratio is assay-dependent, but LTB4's status as a dominant neutrophil chemoattractant in tissue-level inflammation is well established.</li>
+<li><strong>LTB4 pulls additional neutrophils into the joint,</strong> amplifying the flare. The neutrophil infiltration phase — not the initial macrophage activation — is what produces the clinical pain, swelling, and erosive tissue damage that define a gout attack.</li>
+<li><strong>Zileuton blocks 5-LOX directly</strong>, reducing LTB4 (and cysteinyl-leukotriene) production, and should therefore attenuate the neutrophil-amplification loop. This is on-mechanism in asthma; the translation to gout is mechanistically reasonable but has not been clinically tested.</li>
+<li><strong>This is CP6a</strong> — a first-class chokepoint in the v1.2 map. See <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md § CP6a</a>. Blocking CP6a is orthogonal to CP0 (complement C5a priming), CP1 (NF-κB priming), CP2 (NLRP3 assembly), CP5a (IL-1β receptor blockade), and CP6b (GSDMD pore formation).</li>
+<li><strong>Mechanistic parallel to quercetin.</strong> Quercetin's most potent curated ChEMBL bioactivity is 5-LOX IC50 = 300 nM (<em>J Med Chem</em> 1991; ChEMBL v34). Zileuton is the pharma-grade version of the same mechanism the stack already tries to reach via quercetin — higher potency, verified oral bioavailability, and dose precedent in humans at 1,200 mg BID for years of continuous dosing.</li>
 </ol>
-<p>"Halt" means: stop all investigational Open Enzyme compounds (koji, any added supplement not previously in long-term use). It does <strong>not</strong> mean stop medically-prescribed therapy (allopurinol, colchicine) unless the trigger specifically implicates those.</p>
+<p><strong>Evidence level summary:</strong>
+- 5-LOX → LTB4 → neutrophil chemotaxis in gout: In Vitro + ex vivo human (Rae &amp; Smith 1981; Ford-Hutchinson 1990).
+- Zileuton blocks 5-LOX at therapeutic oral doses: Clinical Trial (asthma registration, PMID 8239225, PMID 8969089).
+- Zileuton reduces gout flare frequency or severity: <strong>No evidence of any level.</strong> Hypothesis only.</p>
 <hr />
-<h2 id="7-logging-and-version-control">7. Logging and version control<a class="headerlink" href="#7-logging-and-version-control" title="Permanent link">&para;</a></h2>
-<p><strong>Raw data storage convention: <code>labs/</code> directory in the repo root, gitignored.</strong></p>
-<p>The <code>labs/</code> directory at <code>/labs/</code> (relative to the repo root) is listed in <code>.gitignore</code> and will never be committed. Raw blood-panel PDFs, stool-report JSON, imaging files, and any other PHI-bearing artifact live there on the local disk only. The directory is created locally — it does not exist in the public repo.</p>
-<p>Suggested substructure:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>labs/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── brian/
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── 2026-04-24-baseline/        # blood panel PDF, stool 16S report
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── 2026-05-22-week4/
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── README.md                    # running index, personal notes
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── lynn/                            # separate subtree; data is Lynn&#39;s
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── README.md
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>└── shared/                          # joint references (e.g., family history)
-</code></pre></div>
-<p><strong>Consent note on Lynn's data</strong>: Lynn's labs are Lynn's data. Storing them under <code>labs/lynn/</code> presumes her explicit consent to include them in the project's working directory. Even locally-gitignored storage is a form of inclusion; ask and record agreement (a dated note in <code>labs/lynn/README.md</code> is sufficient) before adding anything.</p>
-<p><strong>Summary log (public, committed)</strong>: a stripped, de-identified summary can be added to <code>logs/self-experiment-log.md</code> (append-only). Fields: date, intervention (what's being taken), observation, any protocol deviation. This log is for pattern-recognition and is safe to commit because it contains no raw PHI. Never reference specific lab values; use qualitative framing ("CRP trending up" rather than "CRP = 4.2"). If you want numeric trending, keep that inside <code>labs/brian/README.md</code> locally.</p>
-<p><strong>When a stack compound is added or removed</strong>: note it in the log with a 1-line rationale. This is the counterpart to commit messages for the body.</p>
-<p><strong>If collaborators eventually need access to raw data</strong>: graduate from Option 1 (local-only) to Option 2 (private parallel repo <code>open-enzyme-private</code> on GitHub, invite-only). See the labs-handling brainstorm (synthesis.md or commit history) for the trade-off analysis — a 10-minute upgrade, not a re-plan.</p>
-<hr />
-<h2 id="8-what-this-protocol-does-not-do">8. What this protocol does NOT do<a class="headerlink" href="#8-what-this-protocol-does-not-do" title="Permanent link">&para;</a></h2>
+<h2 id="what-would-we-want-to-see-expected-outcomes">What would we want to see (expected outcomes)<a class="headerlink" href="#what-would-we-want-to-see-expected-outcomes" title="Permanent link">&para;</a></h2>
+<p>Framed as hypothesis-testing, n-of-1 style, on top of a stable allopurinol baseline. Pre-register endpoints before starting.</p>
 <ul>
-<li><strong>Establish efficacy against a control.</strong> This is n-of-1, uncontrolled, unblinded. Any efficacy signal is suggestive at best. It is good enough to motivate a future controlled trial by a collaborator; it is not good enough to generalize.</li>
-<li><strong>Replace medical supervision.</strong> Brian's primary care + rheumatologist should know what he's doing. The blood panels should land in their system, not just his. Red-flag criteria are escalation-to-care triggers, not self-directed.</li>
-<li><strong>Cover regulatory territory.</strong> Open Enzyme is a research project; this is personal self-experimentation. Do not distribute engineered strains to others under this protocol — that requires a different framework (see <code>wiki/open-source-platform.md</code> on strain-sharing).</li>
+<li><strong>Reduced flare frequency</strong> on allopurinol + zileuton versus allopurinol alone. Primary endpoint: flares/year. This is the cleanest test of whether the neutrophil-amplification loop is rate-limiting in a given patient's gout.</li>
+<li><strong>Shorter flare duration</strong> when flares do occur. Neutrophil influx is a major determinant of how long a flare persists; cutting the chemotactic signal should compress the tail.</li>
+<li><strong>Lower peak pain scores</strong> during flares — less neutrophil recruitment should mean less tissue damage and less inflammatory mass.</li>
+<li><strong>Urinary LTB4 / LTE4 should drop substantially</strong> on zileuton. This is the on-target pharmacodynamic readout, well-established in asthma dose-ranging studies, and it functions as a check that the drug is reaching tissue and engaging 5-LOX. If LTE4 does not drop, the patient is either a non-absorber or non-compliant — investigate before interpreting efficacy.</li>
+<li><strong>No change in serum uric acid.</strong> Zileuton does not touch CP0 (complement), CP2 (NLRP3 assembly), or upstream purine metabolism. It is <strong>not</strong> a urate-lowering therapy. Keeping allopurinol in the regimen is essential if UA is above target.</li>
+<li><strong>Secondary: hs-CRP</strong> may decline if sustained 5-LOX block meaningfully reduces chronic low-grade inflammation between flares. Not a primary endpoint — the 5-LOX → hs-CRP link is indirect.</li>
+</ul>
+<p><strong>Null outcome to rule out:</strong> urinary LTE4 drops cleanly on drug (target is engaged) but flare frequency is unchanged. That would imply CP6a is not rate-limiting in this specific patient — complement-C5a priming (CP0) or NLRP3 assembly (CP2) may be the dominant bottleneck instead. A clean null result at CP6a is informative: it points the stack toward CP0/CP2 rather than amplification blockade.</p>
+<hr />
+<h2 id="side-effects-honest-compare-vs-alternatives">Side effects — honest compare vs. alternatives<a class="headerlink" href="#side-effects-honest-compare-vs-alternatives" title="Permanent link">&para;</a></h2>
+<p>All of the below are currently used or plausibly used in gout management. Nothing here is an endorsement of any specific regimen.</p>
+<ul>
+<li><strong>Zileuton:</strong> Hepatotoxicity is the main concern — boxed warning. ALT/AST elevation in roughly 1–3% of trial subjects, mostly reversible on discontinuation (Carter <em>Drug Saf</em> 1995). Nausea and headache are common but usually mild. <strong>Requires baseline + monthly LFTs for the first 3 months, then quarterly.</strong> Pregnancy category C. Contraindicated in active liver disease. Many CYP1A2 drug interactions — notably theophylline and warfarin (dose-adjust).</li>
+<li><strong>Colchicine:</strong> Diarrhea is dose-limiting; GI upset common. Rare myopathy. Well-established for acute flares and prophylaxis. Cheap. Narrow therapeutic index; cumulative toxicity at high doses. CYP3A4 / P-glycoprotein interactions (statins, macrolides) — several reported deaths from co-administration with clarithromycin in renal insufficiency.</li>
+<li><strong>Allopurinol:</strong> Hypersensitivity is rare but severe (SJS/TEN, notably in HLA-B<em>58:01 carriers — test before starting in Asian ancestry patients). Rash. Hepatotoxicity exists but is less common than zileuton's. Renal dose adjustment needed. Gold standard for UA lowering; does </em><em>not</em>* address inflammation.</li>
+<li><strong>Canakinumab (Ilaris):</strong> Injection-site reactions. Infection risk — bacterial pneumonia ~5% of exposed patients in some cohorts. ~$300K/year US list price. Directly neutralizes IL-1β (CP5a). Used off-label for gout until FDA-approved August 2023. Reserved for refractory or contraindicated-to-colchicine cases.</li>
+<li><strong>NSAIDs (indomethacin, naproxen):</strong> GI ulcers and bleeding. Renal toxicity. Cardiovascular risk (all non-aspirin NSAIDs carry some signal; indomethacin worse than naproxen). First-line for acute flares in patients without contraindications; not appropriate for chronic prevention.</li>
+<li><strong>Disulfiram (CP6b):</strong> Ethanol intolerance — the disulfiram-ethanol reaction is a major practical issue for any patient who drinks. Hepatotoxicity exists but is less common than zileuton's. ~$30/month. Mechanism (GSDMD pore block) is <strong>orthogonal to zileuton's</strong> (5-LOX block), and the two could in principle be combined for dual CP6 coverage. See <a href="../disulfiram/">disulfiram.md</a>.</li>
+</ul>
+<p><strong>Takeaway on comparative safety:</strong> zileuton is not the safest option in this list, but it is the only option that hits CP6a directly at pharma-grade potency. Its hepatotoxicity signal is real and needs active monitoring — it's also the reason it has remained niche even in asthma practice since montelukast took over the leukotriene-modifier market. The monitoring is known and cheap (monthly LFT × 3 months); the risk is manageable but not zero.</p>
+<hr />
+<h2 id="where-it-fits-in-the-stack">Where it fits in the stack<a class="headerlink" href="#where-it-fits-in-the-stack" title="Permanent link">&para;</a></h2>
+<p>Zileuton is a <strong>pharma-grade adjunct</strong> to the CP6a chokepoint, not a replacement for any other chokepoint. The working mental model:</p>
+<ul>
+<li><strong>Upstream priming (CP0, CP1):</strong> allopurinol (XO block, upstream UA), plus optional adjuncts — EGCG, quercetin, sulforaphane for NF-κB / Nrf2. See <a href="../supplements-stack/">supplements-stack.md</a>.</li>
+<li><strong>Assembly (CP2):</strong> BHB, oridonin, dapansutrile (if accessible).</li>
+<li><strong>Signal 1 scavenging (CP3, CP4):</strong> colchicine (approved, CP3 ASC-speck / microtubule).</li>
+<li><strong>Downstream (CP5a receptor, CP5b resolution):</strong> anakinra / canakinumab / rilonacept (receptor), EPA → RvE1 / MaR1 for active resolution, lactoferrin as fermentable adjunct.</li>
+<li><strong>Amplification + Exit (CP6):</strong> <strong>Zileuton (CP6a)</strong> + <strong>disulfiram (CP6b)</strong> together give dual-branch coverage of the neutrophil-amplification-and-pyroptotic-exit chokepoint. Quercetin and AKBA are the supplement-tier options at CP6a.</li>
+</ul>
+<p><strong>Ideal combination</strong> if the goal is maximum chokepoint coverage with the minimum number of moving parts:</p>
+<blockquote>
+<p>allopurinol (UA lowering) + engineered koji (gut-lumen urate degradation + multi-chokepoint NLRP3 modulation) + zileuton (CP6a LTB4 block) ± disulfiram (CP6b GSDMD block, if ethanol-free lifestyle is acceptable)</p>
+</blockquote>
+<p>The koji intervention is still in Phase 0 — research and design. Zileuton is available today by prescription.</p>
+<hr />
+<h2 id="availability-access">Availability + access<a class="headerlink" href="#availability-access" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Generic, prescription required.</strong> No OTC path. US only — some countries never approved zileuton.</li>
+<li><strong>Who writes the script:</strong> pulmonology writes it routinely for asthma. Rheumatology and primary care are unlikely to think of it for gout — the CP6a mechanism rationale has to be explicitly pitched. A forward-thinking internist is more likely to engage than a gout-specialist rheumatologist; gout rheumatology is heavily anchored on urate-lowering + colchicine + IL-1 biologics, and 5-LOX is not part of the standard framework.</li>
+<li><strong>Monitoring logistics:</strong> baseline ALT/AST, then monthly × 3 months, then quarterly. Cheap lab — same panel most patients get anyway. Requires discipline, not expertise.</li>
+<li><strong>Cost:</strong> ~$50/month generic as of 2026-04-24. Brand Zyflo CR is substantially more expensive; insurance coverage variable (it's an asthma drug, not a gout drug — off-label billing may be required).</li>
 </ul>
 <hr />
-<h2 id="9-review-and-update">9. Review and update<a class="headerlink" href="#9-review-and-update" title="Permanent link">&para;</a></h2>
-<p>Review this document: (a) before starting a new intervention arm, (b) after any red-flag halt, &copy; at least annually, (d) whenever new stack compounds or engineered strains are added to the self-experiment. Changes tracked in git, not inline.</p>
+<h2 id="open-questions">Open questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Has zileuton ever been tested in gout clinically?</strong> ClinicalTrials.gov search 2026-04-24: <strong>zero gout trials.</strong> PubMed search (2026-04-24): no gout-specific efficacy publications. This is a complete pipeline gap, not a "buried negative result" problem.</li>
+<li><strong>Does it abort acute flares or only reduce frequency?</strong> 5-LOX block is continuous — the drug has a short half-life (~2.5 hours for immediate-release, longer for CR) but its effect on leukotriene synthesis is ongoing while circulating. Unlike colchicine, zileuton probably cannot "rescue" an in-progress flare the way microtubule disruption can; the amplification loop has already delivered most of its neutrophils by the time pain peaks. Best use case is chronic prophylaxis, not acute rescue.</li>
+<li><strong>Are there published case reports of asthma patients with incidental gout who responded to zileuton?</strong> This is a natural population to survey — any pulmonology clinic with a zileuton-prescribing practice has a few dozen patients who also have gout. Retrospective chart review of flare frequency before/after zileuton start is cheap and could generate signal. No such study has been published as of 2026-04-24.</li>
+<li><strong>Does 5-LOX block synergize with NLRP3 block, or show a ceiling effect?</strong> CP2 (NLRP3 assembly) and CP6a (LTB4 amplification) are mechanistically different. The prediction is additive, but a plateau is plausible if one branch is already rate-limiting. A quercetin + BHB combination in a MSU-mouse model would be the cheapest first test of the synergy question.</li>
+<li><strong>Is urinary LTE4 a reliable biomarker to titrate zileuton dose in gout?</strong> In asthma, urinary LTE4 is the standard PD readout for leukotriene-modifier drugs. Its use in gout patients has not been validated — baseline LTE4 and response curves may differ. Worth including as a secondary endpoint in any n-of-1 protocol.</li>
+</ol>
+<hr />
+<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a> — CP6a is defined here, v1.2.</li>
+<li><a href="../gout-clinical-pipeline/">Gout Clinical Pipeline</a> — zileuton is flagged as a latent CP6a repurposing candidate.</li>
+<li><a href="../chembl-cross-check/">ChEMBL Cross-Check</a> — quercetin 5-LOX = 300 nM, the finding that first surfaced CP6a as a first-class branch.</li>
+<li><a href="../supplements-stack/">Supplements Stack</a> — quercetin, AKBA, EPA are the OTC CP6a entries.</li>
+<li><a href="../disulfiram/">Disulfiram</a> — companion pharma drug at CP6b (GSDMD).</li>
+<li><a href="../cross-validation/">Cross-Validation</a> — methodology for integrating in vitro and clinical evidence.</li>
+<li><a href="../self-experiment-protocol/">Self-Experiment Protocol</a> — safety framework and endpoint design for n-of-1 evaluations.</li>
+</ul>
+<hr />
+<p><em>Last updated: April 2026. This is a research hypothesis dossier, not medical advice. Zileuton has not been tested in gout; the CP6a mechanism case is real but unvalidated clinically.</em></p>
 
 
 

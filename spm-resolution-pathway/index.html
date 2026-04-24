@@ -2213,152 +2213,694 @@
 
 
 <h1 id="spm-resolution-pathway-alxfpr2-agonism-as-a-gout-target">SPM Resolution Pathway — ALX/FPR2 Agonism as a Gout Target<a class="headerlink" href="#spm-resolution-pathway-alxfpr2-agonism-as-a-gout-target" title="Permanent link">&para;</a></h1>
-<p><strong>Chokepoint 5b</strong> in the <a href="../nlrp3-exploit-map/">NLRP3 exploit map</a>. CP5a handles receptor blockade (anakinra, canakinumab, rilonacept — the "off switch" for IL-1 signaling); CP5b is <strong>active resolution via ALX/FPR2</strong> — fundamentally different in kind, not just degree.</p>
+<p><strong>Chokepoint 5b</strong> in the <a href="../nlrp3-exploit-map/">NLRP3 exploit map</a>. CP5a handles receptor blockade (anakinra, canakinumab, rilonacept — the "off switch" for IL-1 signaling); CP5b is <strong>active resolution via ALX/FPR2</strong> and related GPCRs — fundamentally different in kind, not just degree. Most anti-inflammatory drugs <em>suppress</em>; SPMs <em>command resolution</em>.</p>
+<p><strong>Scope:</strong> mechanism primer (what resolution actually is, biosynthesis), individual SPM families (structures, receptors, effector profiles), receptor biology (ALX/FPR2, GPR32, GPR18, ChemR23/CMKLR1, LGR6, GPR37), functional effects on leukocytes, gout-specific evidence (direct MSU models), the complement → aggNET → resolution loop, kinetics of resolution, therapeutic landscape (precursors, direct SPMs, aspirin-triggered series, pharma pipeline), engineered-production feasibility, clinical biomarkers, and open research questions.</p>
 <hr />
-<h2 id="1-specialized-pro-resolving-mediators-spms-overview">1. Specialized Pro-Resolving Mediators (SPMs) — Overview<a class="headerlink" href="#1-specialized-pro-resolving-mediators-spms-overview" title="Permanent link">&para;</a></h2>
-<p>SPMs are enzymatically-derived lipid mediators that <strong>actively command the resolution of inflammation</strong> — they are not passive anti-inflammatories. Key families:</p>
+<h2 id="1-overview-resolution-as-active-signaling-not-passive-subsidence">1. Overview — Resolution as Active Signaling, Not Passive Subsidence<a class="headerlink" href="#1-overview-resolution-as-active-signaling-not-passive-subsidence" title="Permanent link">&para;</a></h2>
+<h3 id="11-the-classical-view-and-why-it-was-wrong">1.1 The classical view and why it was wrong<a class="headerlink" href="#11-the-classical-view-and-why-it-was-wrong" title="Permanent link">&para;</a></h3>
+<p>The textbook view of acute inflammation through ~1995 was that inflammation "runs down" — once the provoking stimulus is cleared, signaling fuel (cytokines, leukocytes, lipid mediators) depletes and homeostasis is restored by default. Resolution was framed as the <em>absence</em> of ongoing inflammation rather than a positively-executed program.</p>
+<p>The reframe, initiated by Charles Serhan's group at Brigham and Women's Hospital beginning with the 1999 lipoxin papers, is this: resolution is an <strong>active, biosynthetic, receptor-mediated program</strong> driven by a distinct class of lipid mediators — <strong>specialized pro-resolving mediators (SPMs)</strong> — that switch on in the resolution phase of inflammation, engage their own receptors, and command neutrophils to stop infiltrating and macrophages to start clearing debris and switch to the M2 phenotype. (Evidence level: In Vitro + Animal Model — decades of Serhan-lab and subsequent work, reviewed in <a href="https://doi.org/10.1038/nature13479">Serhan <em>Nature</em> 2014 510:92-101</a>.)</p>
+<h3 id="12-the-cox-2-enzymatic-paradox-where-the-whole-field-started">1.2 The COX-2 enzymatic paradox — where the whole field started<a class="headerlink" href="#12-the-cox-2-enzymatic-paradox-where-the-whole-field-started" title="Permanent link">&para;</a></h3>
+<p>Aspirin was known to acetylate COX-2 and block prostaglandin synthesis. But aspirin-treated COX-2 was not simply "inactivated" — it kept producing lipid products, just <em>different</em> ones: 15R-hydroxyeicosatetraenoate from arachidonate, leading to 15-epi-lipoxin A4 ("aspirin-triggered lipoxin"). This was the foundational observation: a drug considered purely inhibitory was, at the enzyme level, <strong>repurposing</strong> the enzyme to produce a pro-resolution mediator instead of a pro-inflammatory one. The Serhan lab's systematic follow-up identified resolvins (2002), protectins (2004), and maresins (2009) as endogenous human mediators made through analogous biosynthetic rerouting from EPA and DHA. (Evidence level: In Vitro, biochemistry.)</p>
+<h3 id="13-why-this-matters-for-gout">1.3 Why this matters for gout<a class="headerlink" href="#13-why-this-matters-for-gout" title="Permanent link">&para;</a></h3>
+<p>Gout flares are famously self-limiting — a typical flare peaks in 24-48 h and resolves spontaneously in 7-14 days even without treatment. The classical view would attribute this to crystal-load depletion (clearance + phagocytosis) and cytokine decay. The SPM view reframes it: <strong>the flare resolves because resolution actively switches on</strong>, and when it does not (or switches on insufficiently) the flare becomes chronic — tophaceous gout, chronic gouty arthritis. This predicts a therapeutic class that is orthogonal to suppression: drugs that <em>accelerate or enforce</em> resolution rather than blocking upstream cascade steps. At CP5b this class is the SPMs and SPM-mimetic receptor agonists.</p>
+<hr />
+<h2 id="2-biosynthesis-how-spms-are-made">2. Biosynthesis — How SPMs Are Made<a class="headerlink" href="#2-biosynthesis-how-spms-are-made" title="Permanent link">&para;</a></h2>
+<p>SPMs are enzymatic products of polyunsaturated fatty acids (PUFAs) released from membrane phospholipids by cPLA2α and iPLA2. The precursor pool and enzyme set determine the product class.</p>
+<h3 id="21-substrates">2.1 Substrates<a class="headerlink" href="#21-substrates" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Family</th>
-<th>Precursor</th>
-<th>Key Mediators</th>
-<th>Primary Receptors</th>
+<th>Substrate</th>
+<th>Carbon:double bonds</th>
+<th>Dietary source</th>
+<th>Downstream SPM class</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Resolvins E-series</td>
-<td>EPA</td>
-<td>RvE1, RvE2, RvE3</td>
-<td>ChemR23/CMKLR1, BLT1 (antagonist)</td>
+<td><strong>Arachidonic acid (AA)</strong></td>
+<td>20:4 ω-6</td>
+<td>Meat, eggs, vegetable oils (inflammatory bulk)</td>
+<td>Lipoxins (LXA4, LXB4); also pro-inflammatory LTB4, PGE2 — shared pool</td>
 </tr>
 <tr>
-<td>Resolvins D-series</td>
+<td><strong>EPA (eicosapentaenoic acid)</strong></td>
+<td>20:5 ω-3</td>
+<td>Fatty fish, algae oil, krill</td>
+<td>E-series resolvins (RvE1, RvE2, RvE3)</td>
+</tr>
+<tr>
+<td><strong>DHA (docosahexaenoic acid)</strong></td>
+<td>22:6 ω-3</td>
+<td>Fatty fish, algae oil</td>
+<td>D-series resolvins (RvD1-D5), Protectins (PD1/NPD1, PDX), Maresins (MaR1, MaR2)</td>
+</tr>
+<tr>
+<td><strong>n-3 DPA (docosapentaenoic)</strong></td>
+<td>22:5 ω-3</td>
+<td>Fish, intermediate metabolite</td>
+<td>RvD_n-3DPA, MaR_n-3DPA, PD_n-3DPA series (parallel family)</td>
+</tr>
+</tbody>
+</table>
+<p>Key tension: AA and EPA compete for the same 5-LOX / COX / CYP enzymes. Dietary ω-3 loading shifts substrate occupancy <em>away from</em> AA-derived pro-inflammatory products (LTB4, PGE2) and <em>toward</em> EPA-derived resolution products (RvE1) — a substrate-competition mechanism independent of the pathway switch. This is the CP6a ↔ CP5b bridge: omega-3 acts twice, once by diverting 5-LOX away from LTB4 (CP6a — see <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md §CP6a</a>), and once by supplying SPM substrate (CP5b here).</p>
+<h3 id="22-enzymes-and-intermediates">2.2 Enzymes and intermediates<a class="headerlink" href="#22-enzymes-and-intermediates" title="Permanent link">&para;</a></h3>
+<p>The SPM biosynthetic map (simplified — actual tissue biology has more branching and cell-type-specific handoffs):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>EPA (20:5) ──5-LOX/CYP450──▶ 18-HEPE ──5-LOX──▶ 5S,12R,18R-trihydroxy-EPA = RvE1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                                    └──15-LOX──▶ RvE2, RvE3
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>DHA (22:6) ──15-LOX──▶ 17S-HpDHA ──5-LOX──▶ RvD1, RvD2, RvD3, RvD4, RvD5
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                    └─(aspirin-COX-2)──▶ 17R-HpDHA ──▶ 17R-RvD (AT-RvD) series
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                    ──12-LOX──▶ 14-HpDHA ──▶ MaR1 (7,14-diHDHA), MaR2
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                    ──epoxide hydrolase──▶ PD1/NPD1, PDX (protectins)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>AA (20:4) ──15-LOX/5-LOX──▶ LXA4, LXB4 (lipoxins)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ──(aspirin-COX-2)──▶ 15R-HETE ──5-LOX──▶ 15-epi-LXA4 (aspirin-triggered lipoxin)
+</code></pre></div>
+<p>Key enzymes and rate-limiting steps:</p>
+<ul>
+<li><strong>5-lipoxygenase (5-LOX, gene ALOX5):</strong> Catalyzes 5-H(p)ETE from AA and 5-HpEPE from EPA. Also catalyzes trans-cell handoff to neighboring 15-LOX-expressing cells (endothelium, epithelium) in the classic "transcellular biosynthesis" mechanism for lipoxins and E-series resolvins.</li>
+<li><strong>12-lipoxygenase (12-LOX, gene ALOX12):</strong> Platelet-type; catalyzes 14-HpDHA from DHA — the maresin precursor. Macrophages upregulate a functional 12-LOX-like activity during the resolution phase.</li>
+<li><strong>15-lipoxygenase (15-LOX, gene ALOX15):</strong> Reticulocyte/eosinophil/macrophage-expressed; catalyzes 17-HpDHA from DHA (D-resolvin/protectin precursor) and 15-HpETE from AA (lipoxin precursor). ALOX15 expression is induced by IL-4/IL-13 on M2-polarized macrophages — a built-in positive feedback that reinforces the resolution program once it switches on.</li>
+<li><strong>CYP450 (especially CYP1A1, CYP2C/J isoforms):</strong> Aspirin-acetylated COX-2 and various CYP450s generate 18R-HEPE from EPA (→ RvE1) and 17R-HpDHA from DHA (→ 17R-RvD series). These are the "R-epimer" or "aspirin-triggered" SPMs.</li>
+<li><strong>COX-2 (PTGS2):</strong> Normally produces pro-inflammatory prostaglandins; <strong>when acetylated by aspirin</strong>, its catalytic pocket is modified to produce 15R-HETE instead of PGH2. This is the enzymatic basis for aspirin-triggered lipoxin / resolvin production.</li>
+<li><strong>Soluble epoxide hydrolase and other hydrolases:</strong> Open epoxide intermediates (e.g., 17,18-epoxy-EPA, 13,14-epoxy-DHA) to form the dihydroxy and trihydroxy products that are the stable SPMs.</li>
+</ul>
+<h3 id="23-intermediates-as-biomarkers">2.3 Intermediates as biomarkers<a class="headerlink" href="#23-intermediates-as-biomarkers" title="Permanent link">&para;</a></h3>
+<p>The stable mono- and di-hydroxy intermediates (17-HDHA, 18-HEPE, 14-HDHA) are the forms quantified in LC-MS/MS lipidomic panels and in commercial SPM precursor supplements. They are measurable at pg/mL levels in human plasma and shift reliably with fish-oil loading (Evidence level: In Vitro / Clinical — multiple supplementation trials, e.g., the "fish oil supplementation SPM plasma levels" literature). The fully-formed trihydroxy SPMs (RvD1, RvD2, MaR1) are lower-abundance, less stable, and more technically challenging to quantify.</p>
+<h3 id="24-biosynthetic-choreography-across-cells">2.4 Biosynthetic choreography across cells<a class="headerlink" href="#24-biosynthetic-choreography-across-cells" title="Permanent link">&para;</a></h3>
+<p>A characteristic feature of SPM biosynthesis is <strong>transcellular biosynthesis</strong> — intermediates produced in one cell (e.g., 15-HpETE from endothelial 15-LOX) are transferred to a neighboring cell (e.g., 5-LOX in neutrophils) to complete the synthesis. This couples SPM production to tissue context (presence of the right cell partners) and is one reason why pharmacologic reconstitution with exogenous SPMs is not a perfect substitute for endogenous production — the signal is already spatially pre-positioned at the site of inflammation.</p>
+<p>(Evidence level: In Vitro — characterized primarily in Serhan-lab lipidomic studies; textbook biochemistry.)</p>
+<hr />
+<h2 id="3-individual-spm-families">3. Individual SPM Families<a class="headerlink" href="#3-individual-spm-families" title="Permanent link">&para;</a></h2>
+<h3 id="31-e-series-resolvins-epa-derived">3.1 E-series resolvins (EPA-derived)<a class="headerlink" href="#31-e-series-resolvins-epa-derived" title="Permanent link">&para;</a></h3>
+<p><strong>Members:</strong> RvE1 (5S,12R,18R-trihydroxy-EPA), RvE2 (5S,18-dihydroxy-EPA), RvE3 (17R,18R-dihydroxy-EPA).</p>
+<p><strong>Primary receptors:</strong> <strong>ChemR23 (CMKLR1)</strong> — agonist; <strong>BLT1</strong> — partial antagonist (RvE1 displaces LTB4 from BLT1, effectively pushing the neutrophil away from the chemotactic gradient).</p>
+<p><strong>Cell types:</strong> Neutrophils (BLT1 expression), monocytes/macrophages (CMKLR1), dendritic cells.</p>
+<p><strong>Effector profile:</strong>
+- Stops neutrophil chemotaxis and transmigration (BLT1 antagonism + CMKLR1 agonism)
+- Promotes macrophage phagocytosis of apoptotic neutrophils (efferocytosis)
+- Reduces IL-12 from dendritic cells — dampens adaptive inflammatory amplification</p>
+<p><strong>Half-life:</strong> Short (minutes to low hours in tissue; inactivated by ω-oxidation and dehydrogenation).</p>
+<p><strong>Structure sketch:</strong> Conjugated triene in the middle of a 20-carbon chain with three hydroxyls at 5, 12, 18; S,R,R stereochemistry for RvE1 (the natural isomer).</p>
+<p>(Evidence level: In Vitro + Animal Model — multiple Serhan-lab and follow-up papers.)</p>
+<h3 id="32-d-series-resolvins-dha-derived">3.2 D-series resolvins (DHA-derived)<a class="headerlink" href="#32-d-series-resolvins-dha-derived" title="Permanent link">&para;</a></h3>
+<p><strong>Members:</strong> RvD1 (7S,8R,17S-trihydroxy-DHA), RvD2 (7S,16R,17S-trihydroxy-DHA), RvD3 (4S,11R,17S-trihydroxy-DHA), RvD4 (4S,5R,17S-trihydroxy-DHA), RvD5 (7S,17S-dihydroxy-DHA).</p>
+<p><strong>Primary receptors:</strong>
+- <strong>RvD1 →</strong> ALX/FPR2 (high affinity) and GPR32 (DRV1)
+- <strong>RvD2 →</strong> GPR18 (DRV2) — confirmed with selective GPR18 antagonist reversal (<a href="https://doi.org/10.1002/JLB.3HI0517-206RR">Lopategi 2018 DOI</a>, PMID 29601102)
+- <strong>RvD3/D5 →</strong> GPR32 (lower affinity)
+- <strong>RvD4 →</strong> receptor less well-characterized; candidate GPR32</p>
+<p><strong>Aspirin-triggered epimers:</strong> 17R-RvD (AT-RvD1, AT-RvD3) with 17R rather than 17S stereochemistry. Generated via aspirin-acetylated COX-2 → 17R-HpDHA → 17R-RvD. Equally potent or moderately more potent at the same receptors, with different PK (somewhat longer plasma half-life because the R-epimer is a poorer substrate for the endogenous inactivating dehydrogenase 15-PGDH).</p>
+<p><strong>Cell types:</strong> Monocytes, macrophages (high expression of ALX/FPR2, GPR32, GPR18), neutrophils (ALX/FPR2), T cells (low), nociceptor sensory neurons (a key finding of <a href="https://doi.org/10.1111/bph.15897">Zaninelli 2022</a>, PMID 35716378).</p>
+<p><strong>Effector profile:</strong>
+- RvD1: blocks neutrophil chemotaxis; switches macrophages M1 → M2; reduces IL-1β, TNF, IL-6; in gouty arthritis, reduces CGRP release from nociceptors (Zaninelli 2022)
+- RvD2: blocks ASC oligomerization and NLRP3 inflammasome assembly in BMDMs (Lopategi 2018, via GPR18); reduces IL-1β; promotes M2 markers (CD206, arginase-1) in peritoneal macrophages
+- RvD3/D5: primarily efferocytosis-promoting and cytokine-dampening</p>
+<p><strong>Half-life:</strong> Short (minutes to low hours), unless R-epimer (marginally longer).</p>
+<p><strong>Structure sketch:</strong> 22-carbon backbone with conjugated triene/tetraene system and two to three hydroxyls; characteristic S,R,S trihydroxy pattern for RvD1.</p>
+<p>(Evidence level: In Vitro + Animal Model — Lopategi 2018 is the direct RvD2 → GPR18 → NLRP3 blockade paper.)</p>
+<h3 id="33-protectins-dha-derived">3.3 Protectins (DHA-derived)<a class="headerlink" href="#33-protectins-dha-derived" title="Permanent link">&para;</a></h3>
+<p><strong>Members:</strong> PD1/NPD1 (10R,17S-dihydroxy-DHA — "neuroprotectin D1" in neural tissue), PDX (10S,17S-dihydroxy-DHA — stereoisomer, separate biology).</p>
+<p><strong>Primary receptor:</strong> <strong>GPR37</strong> has emerged as a functional PD1/NPD1 receptor on macrophages and neurons (<a href="https://doi.org/10.1016/j.neuron.2017.04.022">DOI 10.1016/j.neuron.2017.04.022</a> and subsequent work; PMID 40287118 is a recent GPR37 review). The receptor identification is more recent and less fully characterized than for RvD1/RvD2.</p>
+<p><strong>Cell types:</strong> Neurons (high), microglia, macrophages, epithelial cells.</p>
+<p><strong>Effector profile:</strong>
+- Blocks neutrophil transmigration
+- Strongly neuroprotective — reduces inflammatory pain, protects neurons from excitotoxic and ischemic damage (the NPD1 literature)
+- Reduces IL-1β and COX-2 in activated macrophages (Caron 2019 in equine synoviocytes — see §6.4)</p>
+<p><strong>Half-life:</strong> Short; less stable than resolvins.</p>
+<p><strong>Structure:</strong> 22-carbon with conjugated triene and two hydroxyls; the E/Z geometry around the triene distinguishes PD1 from PDX.</p>
+<p>(Evidence level: In Vitro — receptor-ligand biology still being refined.)</p>
+<h3 id="34-maresins-dha-derived">3.4 Maresins (DHA-derived)<a class="headerlink" href="#34-maresins-dha-derived" title="Permanent link">&para;</a></h3>
+<p><strong>Members:</strong> MaR1 (7R,14S-dihydroxy-DHA), MaR2 (13R,14S-dihydroxy-DHA).</p>
+<p><strong>Primary receptors:</strong> <strong>LGR6</strong> (canonical MaR1 receptor), plus CMKLR1 at low affinity. Recent papers (<a href="https://doi.org/10.1016/j.immuni.2020.04.013">DOI 10.1016/j.immuni.2020.04.013</a> and follow-up, e.g., PMIDs 40516692, 40139646, 38718314) extend and refine LGR6 + MaR1 biology.</p>
+<p><strong>Cell types:</strong> Macrophages (high LGR6 on resolution-phase macrophages), platelets (12-LOX biosynthetic machinery), osteoblasts, cardiomyocytes (emerging tissue roles).</p>
+<p><strong>Effector profile:</strong>
+- Potently promotes macrophage efferocytosis
+- Drives M1 → M2 macrophage switch
+- Promotes tissue regeneration (the "M" in "maresin" = <strong>M</strong>acrophage-derived mediator of inflammation <strong>res</strong>olution)
+- In gout specifically: <strong>upregulates Prdx5 → AMPK/Nrf2 signaling → NLRP3 suppression</strong> (<a href="https://doi.org/10.1186/s10020-023-00756-w">Jiang 2023 DOI</a>, PMID 37996809). This is distinct from the RvD1 → ALX/FPR2 axis — MaR1 works via an intracellular antioxidant / metabolic-homeostasis arm.</p>
+<p><strong>Half-life:</strong> Short.</p>
+<p><strong>Structure:</strong> 22-carbon with conjugated triene and two hydroxyls (7R,14S for MaR1); the R,S stereochemistry and the 7,14 positional arrangement are defining.</p>
+<p>(Evidence level: In Vitro + Animal Model — Jiang 2023 is the direct MSU gout validation.)</p>
+<h3 id="35-lipoxins-aa-derived">3.5 Lipoxins (AA-derived)<a class="headerlink" href="#35-lipoxins-aa-derived" title="Permanent link">&para;</a></h3>
+<p><strong>Members:</strong> LXA4 (5S,6R,15S-trihydroxy-EET), LXB4 (5S,14R,15S-trihydroxy-EET). Aspirin-triggered 15-epi-LXA4 (<strong>AT-LXA4</strong>, 15R-epimer) is the aspirin-specific product of acetylated COX-2 + 5-LOX.</p>
+<p><strong>Primary receptor:</strong> <strong>ALX/FPR2</strong> (a.k.a. lipoxin A4 receptor / formyl peptide receptor 2). LXA4 is the prototypic ALX/FPR2 ligand. LXB4 has a distinct, poorly-characterized receptor profile.</p>
+<p><strong>Cell types:</strong> Broadly expressed — neutrophils (high), monocytes/macrophages, T cells, epithelial cells, vascular smooth muscle.</p>
+<p><strong>Effector profile:</strong>
+- Blocks neutrophil chemotaxis and adhesion
+- Inhibits pro-inflammatory cytokine production
+- Promotes non-phlogistic efferocytosis (macrophages clear dead neutrophils without further inflammation)
+- Suppresses ROS generation
+- Modulates T cell and NK cell responses</p>
+<p><strong>Half-life:</strong> Very short (LXA4 is a poor substrate for 15-PGDH inactivation compared to some resolvins; AT-15-epi-LXA4 is more stable — another reason aspirin-triggered lipoxin is pharmacologically more useful than native LXA4).</p>
+<p><strong>Structure:</strong> 20-carbon conjugated tetraene with three hydroxyls.</p>
+<p>(Evidence level: In Vitro + Animal Model — the earliest-characterized SPM family, Serhan and Samuelsson 1984 onward.)</p>
+<h3 id="36-comparison-table">3.6 Comparison table<a class="headerlink" href="#36-comparison-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Substrate</th>
+<th>Key members</th>
+<th>Primary receptor(s)</th>
+<th>Defining effector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E-resolvins</td>
+<td>EPA</td>
+<td>RvE1, RvE2, RvE3</td>
+<td>CMKLR1/ChemR23 + BLT1 (antagonist)</td>
+<td>Neutrophil chemotaxis stop</td>
+</tr>
+<tr>
+<td>D-resolvins</td>
 <td>DHA</td>
-<td>RvD1, RvD2, RvD3, RvD4, RvD5</td>
-<td>ALX/FPR2 (RvD1), GPR32 (RvD1), GPR18 (RvD2)</td>
+<td>RvD1-D5</td>
+<td>ALX/FPR2, GPR32, GPR18</td>
+<td>Macrophage M2 switch; NLRP3 block</td>
 </tr>
 <tr>
 <td>Protectins</td>
 <td>DHA</td>
 <td>PD1/NPD1, PDX</td>
-<td>GPR37 (partial)</td>
+<td>GPR37 (emerging)</td>
+<td>Neuroprotection; cytokine suppression</td>
 </tr>
 <tr>
 <td>Maresins</td>
 <td>DHA</td>
 <td>MaR1, MaR2</td>
-<td>LGR6, CMKLR1</td>
+<td>LGR6</td>
+<td>Efferocytosis; tissue regeneration; Prdx5/AMPK</td>
 </tr>
 <tr>
 <td>Lipoxins</td>
 <td>AA</td>
-<td>LXA4, LXB4</td>
+<td>LXA4, LXB4, AT-15-epi-LXA4</td>
 <td>ALX/FPR2 (LXA4)</td>
+<td>Non-phlogistic efferocytosis; broad</td>
 </tr>
 <tr>
-<td>Aspirin-triggered</td>
-<td>AA→COX-2 (acetylated)</td>
-<td>15-epi-LXA4, 17R-RvD series</td>
-<td>Same receptors, epimeric agonists</td>
+<td>Aspirin-triggered D-resolvins</td>
+<td>DHA + aspirin-COX-2</td>
+<td>17R-RvD series</td>
+<td>Same receptors as native RvD</td>
+<td>Longer PK (resistant to 15-PGDH)</td>
+</tr>
+<tr>
+<td>Aspirin-triggered lipoxin</td>
+<td>AA + aspirin-COX-2</td>
+<td>15-epi-LXA4</td>
+<td>ALX/FPR2</td>
+<td>Longer PK; equipotent</td>
+</tr>
+<tr>
+<td>n-3 DPA series</td>
+<td>DPA</td>
+<td>RvD_n-3DPA, MaR_n-3DPA</td>
+<td>Presumed shared with DHA series</td>
+<td>Parallel family; less well-characterized</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Functional signatures of SPM signaling:</strong>
-- Stop neutrophil infiltration (chemotaxis arrest).
-- Promote macrophage efferocytosis (phagocytic clearance of apoptotic neutrophils).
-- Switch macrophages from M1 (inflammatory) to M2 (resolving) phenotype.
-- Reduce pro-inflammatory cytokine output without blocking host defense.</p>
-<p>This is <strong>active resolution</strong> — a "stand down" command — distinct from "suppression," which merely dampens the cascade.</p>
 <hr />
-<h2 id="2-gout-specific-evidence-direct-msu-models">2. Gout-Specific Evidence (Direct MSU Models)<a class="headerlink" href="#2-gout-specific-evidence-direct-msu-models" title="Permanent link">&para;</a></h2>
+<h2 id="4-receptor-biology">4. Receptor Biology<a class="headerlink" href="#4-receptor-biology" title="Permanent link">&para;</a></h2>
+<h3 id="41-alxfpr2-the-canonical-pro-resolving-receptor">4.1 ALX/FPR2 — the canonical pro-resolving receptor<a class="headerlink" href="#41-alxfpr2-the-canonical-pro-resolving-receptor" title="Permanent link">&para;</a></h3>
+<p><strong>Gene:</strong> FPR2 (HGNC:3827, chromosome 19q13.4). <strong>Protein:</strong> 351 aa, 7-TM class A GPCR. <strong>ChEMBL target:</strong> <a href="https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4550">CHEMBL4550</a> (the canonical FPR2/ALX entry).</p>
+<p><strong>Endogenous ligands — a context-dependent menu:</strong>
+- <strong>Pro-resolving lipids:</strong> LXA4, AT-15-epi-LXA4, RvD1
+- <strong>Pro-resolving proteins:</strong> Annexin A1 (AnxA1) — another major endogenous ALX/FPR2 agonist
+- <strong>Pro-inflammatory peptides:</strong> Serum amyloid A (SAA), urokinase-type plasminogen activator receptor (uPAR) peptide, amyloid-β peptide, mitochondrial-derived formyl peptides
+- <strong>Implication:</strong> The same receptor binds pro-resolving and pro-inflammatory ligands. Which signaling branch dominates depends on <strong>biased agonism</strong> and <strong>cellular context</strong> (which G-proteins and β-arrestins are available, which co-receptors are on the surface, cell activation state). This is why saying "ALX/FPR2 is a pro-resolving receptor" is an oversimplification — it is more accurately "a receptor whose pro-resolving vs. pro-inflammatory output is under ligand-selective and context-selective control."</p>
+<p><strong>G-protein coupling:</strong> Primarily Gαi (inhibits cAMP), with varying β-arrestin recruitment depending on ligand. Lipid-mediator agonism (LXA4, RvD1) tends to favor β-arrestin pathways associated with resolution; SAA-type agonism triggers more Gαi-dominated pro-inflammatory calcium flux and chemotaxis.</p>
+<p><strong>Expression:</strong> Neutrophils (high), monocytes/macrophages (high), dendritic cells, eosinophils, Th17 and Treg cells (induced), NK cells, epithelial cells (gut, lung, skin), vascular smooth muscle, platelets (low).</p>
+<p><strong>Downstream of pro-resolving agonism:</strong>
+- cAMP inhibition → PKA suppression (competes with pro-inflammatory PKA-dependent signaling)
+- β-arrestin-biased PI3K-γ suppression in neutrophils → chemotaxis arrest
+- Nrf2 activation in macrophages → antioxidant program
+- Efferocytosis receptor upregulation (MerTK, CD36, CD206)
+- Suppression of NF-κB nuclear translocation downstream of pro-inflammatory stimuli</p>
+<p>(Evidence level: In Vitro — extensively characterized; the context-dependence is a known complication of FPR2 pharmacology that has dogged drug development.)</p>
+<h3 id="42-gpr32-the-drv1-receptor">4.2 GPR32 — the DRV1 receptor<a class="headerlink" href="#42-gpr32-the-drv1-receptor" title="Permanent link">&para;</a></h3>
+<p><strong>Gene:</strong> GPR32. <strong>Protein:</strong> 365 aa, 7-TM class A GPCR. Human-specific; <strong>no rodent ortholog</strong> — GPR32 is a pseudogene in mouse and rat. This is one of the more significant species-gap issues in SPM pharmacology: murine RvD1 / RvD3 / RvD5 biology cannot act via GPR32 because the receptor does not exist in mouse; whatever function is observed in murine studies must act through ALX/FPR2 or another receptor. When translating rodent studies to human, GPR32 signaling is a gain in humans.</p>
+<p><strong>Ligands:</strong> RvD1, RvD3, RvD5; some evidence for RvD2 cross-binding.</p>
+<p><strong>Signaling:</strong> Gαi-coupled, β-arrestin recruitment. Downstream effects overlap with ALX/FPR2 (suppresses neutrophil chemotaxis, promotes efferocytosis).</p>
+<p><strong>Expression:</strong> Monocytes/macrophages, some T cell subsets, adipose tissue. Not widely characterized beyond leukocytes.</p>
+<p>(Evidence level: In Vitro — limited structural biology; known only in human systems because of the rodent ortholog absence.)</p>
+<h3 id="43-gpr18-the-drv2-rvd2-receptor">4.3 GPR18 — the DRV2 (RvD2) receptor<a class="headerlink" href="#43-gpr18-the-drv2-rvd2-receptor" title="Permanent link">&para;</a></h3>
+<p><strong>Gene:</strong> GPR18. <strong>Protein:</strong> 331 aa, 7-TM. Also a known N-arachidonoylglycine receptor in some literature — another example of ligand promiscuity at SPM receptors.</p>
+<p><strong>Ligands:</strong> RvD2 (primary); N-arachidonoyl glycine (NAGly); partial MaR1 agonism reported in some systems.</p>
+<p><strong>Signaling:</strong> Gαi-coupled. In the Lopategi 2018 study (<a href="https://doi.org/10.1002/JLB.3HI0517-206RR">DOI</a>, PMID 29601102), a selective GPR18 antagonist <strong>abrogated</strong> RvD2's anti-NLRP3 effects in BMDMs, establishing GPR18 as the RvD2 receptor for NLRP3 inflammasome suppression.</p>
+<p><strong>Expression:</strong> Macrophages, some lymphocyte subsets, endothelium.</p>
+<h3 id="44-chemr23-cmklr1-the-rve1-receptor">4.4 ChemR23 / CMKLR1 — the RvE1 receptor<a class="headerlink" href="#44-chemr23-cmklr1-the-rve1-receptor" title="Permanent link">&para;</a></h3>
+<p><strong>Gene:</strong> CMKLR1 (Chemokine-Like Receptor 1). <strong>Protein:</strong> 373 aa, 7-TM. <strong>ChEMBL target:</strong> <a href="https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL5072">CHEMBL5072</a>.</p>
+<p><strong>Ligands:</strong> RvE1 (primary), chemerin-derived peptides (competing ligand class — chemerin is pro-inflammatory, adding to the context-dependent dual agonism pattern seen at ALX/FPR2).</p>
+<p><strong>Signaling:</strong> Gαi-coupled. RvE1 activates Gαi while chemerin activation at the same receptor has distinct signaling bias — another biased-agonism system.</p>
+<p><strong>Expression:</strong> Macrophages, dendritic cells, NK cells, some neurons, adipocytes.</p>
+<h3 id="45-lgr6-the-mar1-receptor">4.5 LGR6 — the MaR1 receptor<a class="headerlink" href="#45-lgr6-the-mar1-receptor" title="Permanent link">&para;</a></h3>
+<p><strong>Gene:</strong> LGR6 (Leucine-rich repeat-containing G-protein coupled receptor 6). <strong>Protein:</strong> 967 aa (long extracellular domain). Originally a Wnt-pathway co-receptor; MaR1 agonism is distinct.</p>
+<p><strong>Ligands:</strong> MaR1 (primary lipid ligand); R-spondins (protein ligands — separate biology, Wnt signaling).</p>
+<p><strong>Signaling:</strong> Gαs/Gαi; cAMP modulation.</p>
+<p><strong>Expression:</strong> Macrophages (resolution-phase), skin stem cells, osteoblasts.</p>
+<p>(Evidence level: In Vitro — LGR6 + MaR1 biology is a more recent addition; 2020 onward literature.)</p>
+<h3 id="46-gpr37-the-emerging-protectin-receptor">4.6 GPR37 — the emerging protectin receptor<a class="headerlink" href="#46-gpr37-the-emerging-protectin-receptor" title="Permanent link">&para;</a></h3>
+<p><strong>Gene:</strong> GPR37. <strong>Protein:</strong> 613 aa, 7-TM. Endogenous ligands include head activator peptide, prosaptide, <strong>and PD1/NPD1</strong> (emerging as a lipid ligand).</p>
+<p><strong>Signaling:</strong> Gαi-coupled; engages β-arrestin.</p>
+<p><strong>Expression:</strong> Central nervous system neurons (high), macrophages, oligodendrocytes.</p>
+<p>(Evidence level: In Vitro — receptor-ligand relationship for protectins established ~2018-2020; several confirmatory papers 2020-2025.)</p>
+<h3 id="47-comparative-receptor-table">4.7 Comparative receptor table<a class="headerlink" href="#47-comparative-receptor-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Receptor</th>
+<th>Gene</th>
+<th>Primary SPM ligand(s)</th>
+<th>Non-SPM ligands</th>
+<th>Cell types</th>
+<th>Species caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALX/FPR2</td>
+<td>FPR2</td>
+<td>LXA4, AT-15-epi-LXA4, RvD1</td>
+<td>AnxA1, SAA, uPAR peptide, Aβ</td>
+<td>Broad leukocyte + epithelium</td>
+<td>Rodent ortholog exists</td>
+</tr>
+<tr>
+<td>GPR32 (DRV1)</td>
+<td>GPR32</td>
+<td>RvD1, RvD3, RvD5</td>
+<td>—</td>
+<td>Leukocytes</td>
+<td><strong>Human-only; pseudogene in rodents</strong></td>
+</tr>
+<tr>
+<td>GPR18 (DRV2)</td>
+<td>GPR18</td>
+<td>RvD2</td>
+<td>NAGly</td>
+<td>Macrophages</td>
+<td>Rodent ortholog exists</td>
+</tr>
+<tr>
+<td>CMKLR1 (ChemR23)</td>
+<td>CMKLR1</td>
+<td>RvE1</td>
+<td>Chemerin</td>
+<td>Macrophages, DCs</td>
+<td>Rodent ortholog exists</td>
+</tr>
+<tr>
+<td>LGR6</td>
+<td>LGR6</td>
+<td>MaR1</td>
+<td>R-spondins (Wnt)</td>
+<td>Macrophages, stem cells</td>
+<td>Rodent ortholog exists</td>
+</tr>
+<tr>
+<td>GPR37</td>
+<td>GPR37</td>
+<td>PD1/NPD1</td>
+<td>Head activator, prosaptide</td>
+<td>Neurons, macrophages</td>
+<td>Rodent ortholog exists</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-functional-effects-of-spms-what-they-actually-do">5. Functional Effects of SPMs — What They Actually Do<a class="headerlink" href="#5-functional-effects-of-spms-what-they-actually-do" title="Permanent link">&para;</a></h2>
+<p>SPMs operate across the full arc of an inflammatory episode. The canonical "hallmarks of resolution" are:</p>
+<h3 id="51-stop-neutrophil-infiltration">5.1 Stop neutrophil infiltration<a class="headerlink" href="#51-stop-neutrophil-infiltration" title="Permanent link">&para;</a></h3>
+<p>SPMs block three of the steps neutrophils need to reach tissue:
+- <strong>Rolling/tethering:</strong> Reduce P-selectin/L-selectin avidity on neutrophil and endothelium
+- <strong>Adhesion:</strong> Suppress LFA-1 / Mac-1 (CD11b) upregulation
+- <strong>Transmigration:</strong> Block PECAM-1-mediated diapedesis and chemokine responsiveness</p>
+<p>The CP6a link: RvE1 antagonizes BLT1 so neutrophils cannot respond to LTB4 gradients, effectively neutralizing the dominant neutrophil-amplification chemoattractant. This is a direct pro-resolving ↔ CP6a cross-talk at the receptor level.</p>
+<h3 id="52-trigger-neutrophil-apoptosis-and-efferocytosis">5.2 Trigger neutrophil apoptosis and efferocytosis<a class="headerlink" href="#52-trigger-neutrophil-apoptosis-and-efferocytosis" title="Permanent link">&para;</a></h3>
+<p>SPMs accelerate neutrophil apoptosis (via Mcl-1 suppression in some assays) and simultaneously upregulate macrophage efferocytosis machinery (MerTK, CD36, GAS6/Protein S). The result: dead neutrophils are cleared by macrophages <strong>without</strong> secondary pro-inflammatory cytokine release ("non-phlogistic efferocytosis"). This is the switch between a productive resolution and a chronic-inflammation-promoting secondary necrosis.</p>
+<h3 id="53-macrophage-m1-m2-phenotype-switch">5.3 Macrophage M1 → M2 phenotype switch<a class="headerlink" href="#53-macrophage-m1-m2-phenotype-switch" title="Permanent link">&para;</a></h3>
+<p>SPMs (especially RvD2 via GPR18, MaR1 via LGR6, and PD1/NPD1 via GPR37) drive macrophage reprogramming:
+- Down: iNOS, TNFα, IL-6, IL-1β, IL-12
+- Up: CD206 (mannose receptor), arginase-1, IL-10, TGF-β, MerTK (efferocytosis), Prdx5 (antioxidant)</p>
+<p>The M1 → M2 switch is itself self-reinforcing through IL-4/IL-13 → ALOX15 induction → more SPM biosynthesis from the same macrophages. This is the positive feedback loop that locks in resolution once it starts.</p>
+<h3 id="54-edema-resolution-and-tissue-repair">5.4 Edema resolution and tissue repair<a class="headerlink" href="#54-edema-resolution-and-tissue-repair" title="Permanent link">&para;</a></h3>
+<p>SPMs promote lymphatic drainage (clearing edema), endothelial barrier restoration, angiogenesis in the repair phase, and epithelial/fibroblast regeneration. This is the "rebuild" phase, distinct from the "stand down" phase.</p>
+<h3 id="55-specific-anti-nlrp3-mechanisms">5.5 Specific anti-NLRP3 mechanisms<a class="headerlink" href="#55-specific-anti-nlrp3-mechanisms" title="Permanent link">&para;</a></h3>
+<p>The most important CP5b mechanism for gout:</p>
+<ul>
+<li>
+<p><strong>RvD2 → GPR18 → block ASC oligomerization</strong> in bone-marrow-derived macrophages (BMDMs) challenged with LPS + ATP or LPS + palmitate (<a href="https://doi.org/10.1002/JLB.3HI0517-206RR">Lopategi 2018</a>, PMID 29601102). RvD2 reduced pro-IL-1β expression and mature IL-1β secretion, and in thioglycolate-elicited peritoneal macrophages RvD2 reduced ASC oligomerization, inflammasome assembly, and caspase-1 activity. In vivo in self-resolving zymosan A peritonitis, RvD2 reduced IL-1β in exudates, suppressed osteopontin and MCP-1, and induced M2 markers (CD206, arginase-1). <strong>Effects were abrogated by a selective GPR18 antagonist</strong> — establishing GPR18 as the receptor.</p>
+</li>
+<li>
+<p><strong>MaR1 → Prdx5 upregulation → AMPK/Nrf2</strong> → NLRP3 suppression in BMDMs and in vivo MSU peritonitis/arthritis models (<a href="https://doi.org/10.1186/s10020-023-00756-w">Jiang 2023</a>, PMID 37996809). Distinct mechanism from the RvD2 → ASC block.</p>
+</li>
+<li>
+<p><strong>RvD1 → disrupt nociceptor-macrophage communication</strong> → reduce CGRP-dependent macrophage activation and MSU phagocytosis, reduce ASC speck formation and IL-1β (<a href="https://doi.org/10.1111/bph.15897">Zaninelli 2022</a>, PMID 35716378). Adds a <strong>neuroimmune</strong> axis to the CP5b story — SPMs don't just act on immune cells, they dampen the sensory neuron drive that primes the inflammation.</p>
+</li>
+</ul>
+<p>(Evidence level: Animal Model + In Vitro — all three papers are direct, gout-specific validations at CP5b.)</p>
+<h3 id="56-preserved-host-defense-a-critical-distinction">5.6 Preserved host defense — a critical distinction<a class="headerlink" href="#56-preserved-host-defense-a-critical-distinction" title="Permanent link">&para;</a></h3>
+<p>Unlike immunosuppression, SPM signaling does <strong>not</strong> impair anti-microbial defense. In sepsis and bacterial infection models, SPMs accelerate bacterial clearance while resolving inflammation — the opposite of glucocorticoid or canakinumab-style suppression, which can impair host response. This is a defining feature of the pro-resolving class: resolution ≠ immunosuppression.</p>
+<hr />
+<h2 id="6-gout-specific-evidence-direct-msu-models">6. Gout-Specific Evidence (Direct MSU Models)<a class="headerlink" href="#6-gout-specific-evidence-direct-msu-models" title="Permanent link">&para;</a></h2>
 <p>This is the most important evidence tier for the exploit map — <strong>direct MSU-triggered gout animal data</strong>, not extrapolation from other inflammatory models.</p>
-<h3 id="rvd1-zaninelli-2022-pmid-35716378">RvD1 — Zaninelli 2022 (PMID 35716378)<a class="headerlink" href="#rvd1-zaninelli-2022-pmid-35716378" title="Permanent link">&para;</a></h3>
-<p>Zaninelli TH, Fattori V, Saraiva-Santos T, et al. <em>Br J Pharmacol</em> 2022;179(22):4994-5016. (Animal Model.)</p>
-<p><strong>Model:</strong> MSU-induced gouty arthritis in mice (intra-articular MSU injection + mechanical hyperalgesia assay).</p>
-<p><strong>Findings:</strong> Intrathecal and intraperitoneal RvD1 administration reduced:
-- Mechanical hyperalgesia (primary pain readout)
-- Joint IL-1β production
-- Leukocyte recruitment (neutrophils, macrophages)
-- NF-κB phosphorylation
-- ASC speck formation (CP3 in the exploit map)
-- CGRP expression (nociceptor-macrophage axis)</p>
-<p><strong>Key insight:</strong> RvD1 acts via a <strong>nociceptor-macrophage resolution axis</strong>, connecting peripheral sensory neurons to the inflammasome cascade. This is one of the few direct demonstrations that an ALX/FPR2 agonist suppresses MSU-triggered gout at the in vivo level.</p>
-<h3 id="mar1-jiang-2023-pmid-37996809">MaR1 — Jiang 2023 (PMID 37996809)<a class="headerlink" href="#mar1-jiang-2023-pmid-37996809" title="Permanent link">&para;</a></h3>
-<p>Jiang X, Gao M, Chen Y, et al. <em>Mol Med</em> 2023;29(1):161. (Animal Model.)</p>
-<p><strong>Model:</strong> MSU peritonitis in mice.</p>
-<p><strong>Mechanism:</strong> MaR1 acts via Prdx5 upregulation → AMPK/Nrf2 pathway activation → downstream NLRP3 suppression. Importantly, this is a distinct upstream mechanism from RvD1's ALX/FPR2 axis — two different SPMs with two different receptor/signaling paths, both converging on resolution of MSU-induced inflammation.</p>
-<h3 id="zaninelli-2023-review-pmid-37651647">Zaninelli 2023 Review (PMID 37651647)<a class="headerlink" href="#zaninelli-2023-review-pmid-37651647" title="Permanent link">&para;</a></h3>
-<p>Zaninelli TH, Fattori V, Verri WA Jr. <em>Expert Opin Ther Targets</em> 2023;27(8):751-766.</p>
-<p>The review <strong>names ALX/FPR2 agonism as a priority therapeutic target for gout</strong>. This is the citation that elevates CP5b from "we think this is interesting" to "this is a named target in a current gout-review article by a group working on MSU models."</p>
+<h3 id="61-rvd1-zaninelli-2022-pmid-35716378">6.1 RvD1 — Zaninelli 2022 (PMID 35716378)<a class="headerlink" href="#61-rvd1-zaninelli-2022-pmid-35716378" title="Permanent link">&para;</a></h3>
+<p>According to PubMed, Zaninelli TH, Fattori V, Saraiva-Santos T, et al. <a href="https://doi.org/10.1111/bph.15897">"RvD1 disrupts nociceptor neuron and macrophage activation and neuroimmune communication, reducing pain and inflammation in gouty arthritis in mice."</a> <em>Br J Pharmacol</em> 2022;179(18):4500-4515. PMID 35716378. (Animal Model.)</p>
+<p><strong>Model:</strong> Male mice, intra-articular MSU (knee) induces gouty arthritis; mechanical hyperalgesia measured by electronic von Frey aesthesiometer. RvD1 administered intrathecally (CNS-targeted, to study sensory-neuron role) or intraperitoneally (systemic).</p>
+<p><strong>Findings — dose- and time-dependent reductions in:</strong>
+- <strong>Mechanical hyperalgesia</strong> (primary pain readout)
+- <strong>Joint leukocyte recruitment</strong> (knee joint wash counts + immunofluorescence)
+- <strong>Joint IL-1β production</strong> (ELISA)
+- <strong>NF-κB phosphorylation</strong> (immunofluorescence)
+- <strong>ASC oligomerization / speck formation</strong> (immunofluorescence — CP3 in the exploit map)
+- <strong>CGRP expression and release</strong> from peptidergic sensory neurons (EIA + immunofluorescence)
+- <strong>Macrophage MSU phagocytosis</strong> (confocal microscopy) — mechanistic: CGRP stimulated MSU phagocytosis + IL-1β by macrophages; RvD1 blocked both the CGRP release upstream and the macrophage response downstream</p>
+<p><strong>Key insight — the nociceptor-macrophage-CGRP axis:</strong> Zaninelli 2022 uncovered a previously-uncharacterized neuroimmune loop in gouty arthritis — peptidergic sensory neurons release CGRP, which stimulates macrophages to phagocytose MSU more aggressively and produce more IL-1β. RvD1 disrupts this loop both at the neuron (reducing CGRP release) and at the macrophage (blocking CGRP-dependent IL-1β). This is one of the first examples of an SPM directly targeting the neuron-immune cross-talk in a crystalopathy and suggests that SPM pharmacology in gout is <strong>not just an anti-inflammatory effect but an anti-pain effect</strong> — clinically meaningful given how refractory gout pain is.</p>
+<h3 id="62-mar1-jiang-2023-pmid-37996809">6.2 MaR1 — Jiang 2023 (PMID 37996809)<a class="headerlink" href="#62-mar1-jiang-2023-pmid-37996809" title="Permanent link">&para;</a></h3>
+<p>According to PubMed, Jiang H, Song D, Zhou X, et al. <a href="https://doi.org/10.1186/s10020-023-00756-w">"Maresin1 ameliorates MSU crystal-induced inflammation by upregulating Prdx5 expression."</a> <em>Mol Med</em> 2023;29(1):158. PMID 37996809. (Animal Model + In Vitro.)</p>
+<p><strong>Models:</strong>
+- In vitro: BMDMs pretreated with MaR1, stimulated with palmitic (C16:0) + stearic (C18:0) fatty acids + MSU crystals (FA + MSUc model)
+- In vivo: MSUc-induced peritonitis and arthritis in mice; MaR1 treatment or Prdx5 deficiency (genetic) arms</p>
+<p><strong>Mechanism:</strong>
+1. FA + MSUc decreased Prdx5 (peroxiredoxin 5) mRNA and protein
+2. MaR1 reversed the Prdx5 decrease
+3. MaR1 acted via the <strong>Keap1-Nrf2 signaling axis</strong> to upregulate Prdx5 transcription
+4. Prdx5 then activated <strong>AMPK</strong> → improved TXNIP/TRX homeostasis → alleviated mitochondrial fragmentation → reduced NLRP3 activation
+5. Prdx5 also inhibited CPT1A → reduced fatty acid oxidation (FAO) and urea-cycle dysfunction that drive the sterile inflammatory response</p>
+<p><strong>Key insight:</strong> MaR1 operates <strong>upstream</strong> of NLRP3 via an antioxidant/metabolic pathway (Keap1-Nrf2-Prdx5-AMPK), distinct from RvD1's neuroimmune axis and RvD2's direct ASC-oligomerization block. The three SPMs converge on NLRP3 via three different upstream routes — architecturally redundant, which is favorable for clinical robustness.</p>
+<h3 id="63-lopategi-2018-rvd2-and-asc-oligomerization-broader-mechanism-gout-relevant">6.3 Lopategi 2018 — RvD2 and ASC oligomerization (broader mechanism, gout-relevant)<a class="headerlink" href="#63-lopategi-2018-rvd2-and-asc-oligomerization-broader-mechanism-gout-relevant" title="Permanent link">&para;</a></h3>
+<p>According to PubMed, Lopategi A, Flores-Costa R, Rius B, et al. <a href="https://doi.org/10.1002/JLB.3HI0517-206RR">"Frontline Science: Specialized proresolving lipid mediators inhibit the priming and activation of the macrophage NLRP3 inflammasome."</a> <em>J Leukoc Biol</em> 2018;105(1):25-36. PMID 29601102. (In Vitro + Animal Model.)</p>
+<p><strong>Findings:</strong>
+- RvD2 suppressed pro-IL-1β and mature IL-1β in BMDMs with LPS + ATP (classical NLRP3 model) and LPS + palmitate (lipotoxic model)
+- In peritoneal macrophages, RvD2 <strong>reduced ASC oligomerization, inflammasome assembly, and caspase-1 activity</strong>
+- In vivo zymosan A peritonitis: RvD2 reduced IL-1β in exudates, suppressed osteopontin and MCP-1, induced M2 markers (CD206, arginase-1)
+- A <strong>selective GPR18 antagonist abrogated</strong> RvD2 effects — establishing the receptor</p>
+<p><strong>Gout relevance:</strong> Though not an MSU-specific model, this is the mechanistic core of RvD2's NLRP3-blocking activity and establishes the <strong>GPR18 → ASC oligomerization block</strong> pathway that plausibly generalizes to MSU-induced NLRP3 activation. Combined with Jiang 2023 (MSU-specific MaR1 effect) and Zaninelli 2022 (MSU-specific RvD1 effect), this paper anchors the mechanistic branch of CP5b.</p>
+<h3 id="64-caron-2019-spm-effects-in-il-1-stimulated-equine-synoviocytes-pmid-30836143">6.4 Caron 2019 — SPM effects in IL-1β-stimulated equine synoviocytes (PMID 30836143)<a class="headerlink" href="#64-caron-2019-spm-effects-in-il-1-stimulated-equine-synoviocytes-pmid-30836143" title="Permanent link">&para;</a></h3>
+<p>According to PubMed, Caron JP, Gandy JC, Brown JL, Sordillo LM. <a href="https://doi.org/10.1016/j.prostaglandins.2019.02.007">"Omega-3 fatty acids and docosahexaenoic acid oxymetabolites modulate the inflammatory response of equine recombinant interleukin1β-stimulated equine synoviocytes."</a> <em>Prostaglandins Other Lipid Mediat</em> 2019;142:1-8. PMID 30836143. (In Vitro.)</p>
+<p><strong>Findings:</strong>
+- Equine synoviocytes pretreated with EPA or DHA + reIL-1β showed reduced ADAMTS4, MMP-1, MMP-13, IL-1β, IL-6, COX-2 expression
+- <strong>The docosanoids RvD1, RvD2, MaR1, and PDX — alone and in combination — abrogated ADAMTS4, MMP-1, MMP-13, and IL-6 expression</strong> in IL-1β-stimulated synoviocytes
+- <strong>RvD1, RvD2, and MaR1 suppressed COX-2 expression</strong></p>
+<p><strong>Gout relevance:</strong> This is not a crystal-arthritis model but it demonstrates that D-resolvins, maresin, and protectin suppress the exact cytokine and matrix-degrading-enzyme profile (IL-1β, IL-6, COX-2, MMPs) that characterizes the gout synovium. The equine model is physiologically closer to the human joint than murine peritonitis. Combined with the murine MSU data (§6.1, §6.2), the synoviocyte evidence strengthens the mechanistic case that CP5b SPMs would work at the gouty joint.</p>
+<h3 id="65-zaninelli-2023-review-pmid-37651647">6.5 Zaninelli 2023 Review (PMID 37651647)<a class="headerlink" href="#65-zaninelli-2023-review-pmid-37651647" title="Permanent link">&para;</a></h3>
+<p>According to PubMed, Zaninelli TH, Martelossi-Cebinelli G, Saraiva-Santos T, et al. <a href="https://doi.org/10.1080/14728222.2023.2247559">"New drug targets for the treatment of gout arthritis: what's new?"</a> <em>Expert Opin Ther Targets</em> 2023;27(8):679-703. PMID 37651647. (Review.)</p>
+<p>This review from the same group as Zaninelli 2022 <strong>explicitly names ALX/FPR2 agonism as one of four priorities for gout drug development</strong>, alongside (1) repurposing of existing therapies, (2) multitarget natural products, and (3) targeting the neuroinflammatory component of GA. The review notes that only ~4.4% of registered clinical trials for gout target natural products or "current hot targets" — a massive gap between the preclinical literature (which is rich in SPM validation) and clinical development (which is almost nothing).</p>
+<h3 id="66-flag-no-human-gout-trials-with-spms">6.6 Flag — no human gout trials with SPMs<a class="headerlink" href="#66-flag-no-human-gout-trials-with-spms" title="Permanent link">&para;</a></h3>
+<p>As of 2026-04-24, <strong>no clinical trial of any SPM or ALX/FPR2 agonist in gout has been registered or reported</strong>. This is a clean literature gap, not a search artifact. The preclinical evidence is strong (Zaninelli 2022, Jiang 2023, Lopategi 2018, Caron 2019); the clinical evidence is absent. An investigator-initiated Phase &frac12; of oral fish-oil-derived SPMs or aspirin-triggered resolvins in recurrent-flare gout would be the shortest path to human validation.</p>
 <hr />
-<h2 id="3-complementresolution-link-aggnets">3. Complement–Resolution Link (aggNETs)<a class="headerlink" href="#3-complementresolution-link-aggnets" title="Permanent link">&para;</a></h2>
-<p><strong>Schauer et al. 2014</strong> (<em>Nat Med</em> 2014;20(5):511-7, PMID 24784231) showed that <strong>aggregated neutrophil extracellular traps (aggNETs) resolve gout</strong> by sequestering cytokines and chemokines, effectively deactivating the inflammatory signal-soup at the tissue level. aggNETs are the "resolution form" of NETs — neutrophils die by NETosis, but their traps aggregate and trap the very mediators that recruited them, rather than spreading damage.</p>
-<p><strong>Why this matters for CP5b:</strong>
-- aggNET formation depends on adequate resolution signaling.
-- SPM deficit → NETs spread rather than aggregate → prolonged flare + tissue damage.
-- <strong>Tophi are chronic aggNETs</strong> — the aggregated resolution attempt that never completed. Tophi are, in this model, failed resolution.
-- CP5b (SPM signaling) is therefore mechanistically upstream of both acute flare resolution <strong>and</strong> chronic tophi formation.</p>
-<p>This also connects to <a href="../complement-c5a-gout/">CP0 (complement)</a>: C5a drives neutrophil recruitment; SPMs command them to stand down and aggNET rather than continue NETosing. The CP0 → CP5b axis is the "escalation → resolution" loop.</p>
-<hr />
-<h2 id="4-therapeutic-landscape-at-cp5b">4. Therapeutic Landscape at CP5b<a class="headerlink" href="#4-therapeutic-landscape-at-cp5b" title="Permanent link">&para;</a></h2>
-<h3 id="direct-spms">Direct SPMs<a class="headerlink" href="#direct-spms" title="Permanent link">&para;</a></h3>
+<h2 id="7-complement-resolution-link-aggnets-as-the-physical-substrate-of-gout-resolution">7. Complement-Resolution Link — aggNETs as the Physical Substrate of Gout Resolution<a class="headerlink" href="#7-complement-resolution-link-aggnets-as-the-physical-substrate-of-gout-resolution" title="Permanent link">&para;</a></h2>
+<h3 id="71-schauer-2014-the-foundational-observation">7.1 Schauer 2014 — the foundational observation<a class="headerlink" href="#71-schauer-2014-the-foundational-observation" title="Permanent link">&para;</a></h3>
+<p>According to PubMed, Schauer C, Janko C, Munoz LE, et al. <a href="https://doi.org/10.1038/nm.3547">"Aggregated neutrophil extracellular traps limit inflammation by degrading cytokines and chemokines."</a> <em>Nat Med</em> 2014;20(5):511-7. PMID 24784231. (In Vitro + Animal Model + Clinical histopathology.)</p>
+<p><strong>Findings:</strong>
+- Neutrophils recruited to MSU inflammation undergo oxidative burst and form NETs
+- At <strong>high neutrophil density</strong>, NETs <strong>aggregate</strong> (aggNETs) and their associated serine proteases (neutrophil elastase, cathepsin G) <strong>degrade cytokines and chemokines</strong> in the extracellular space
+- <strong>Tophi share morphological and biochemical characteristics with aggNETs</strong> — tophi are, on this view, chronic aggregated-NET structures representing a resolution attempt that never completed
+- <strong>NETosis-deficient mice</strong> develop exacerbated and chronic neutrophilic inflammation; adoptive transfer of pre-formed aggNETs reduces the disease</p>
+<h3 id="72-why-this-matters-for-cp5b">7.2 Why this matters for CP5b<a class="headerlink" href="#72-why-this-matters-for-cp5b" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>SPM Active (Metagenics)</strong> — pre-formed resolvin mix, standardized to 17-HDHA and 18-HEPE (SPM precursors plus low levels of downstream mediators). Typical dose: 2 softgels/day. Bypasses the precursor-conversion bottleneck. Supplement-grade, expensive.</li>
-<li><strong>Research-grade individual SPMs</strong> (RvD1, MaR1, RvE1) are available from Cayman Chemical and similar vendors for preclinical work; not clinically deployable.</li>
+<li>aggNET formation depends on adequate local SPM signaling to <strong>switch</strong> neutrophil death from spreading NETs (which drive tissue damage) to aggregating NETs (which absorb and degrade the inflammatory soup)</li>
+<li>SPM deficit → NETs spread rather than aggregate → prolonged flare, chronic tissue damage, possibly failed tophus formation (paradoxically, tophi are the "successful" chronic aggNET resolution endpoint; failed aggregation may produce even worse disease)</li>
+<li><strong>Tophi are frozen resolution attempts.</strong> In this model, they are the body's chronic attempt to sequester a stimulus it cannot clear (crystals) within an aggNET-like structure</li>
+<li>CP5b (SPM signaling) is therefore mechanistically upstream of both <strong>acute flare resolution</strong> and <strong>chronic tophus formation</strong> — two faces of the same process</li>
 </ul>
-<h3 id="precursors-substrate-loading">Precursors (substrate loading)<a class="headerlink" href="#precursors-substrate-loading" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>EPA/DHA omega-3</strong> — 3–4 g/day combined. Substrate conversion efficiency to SPMs is ~5–10%, so precursor dosing does raise SPM levels but inefficiently. Still, this is the most accessible intervention and has decades of safety data. (Already in the base stack.)</li>
-<li><strong>EPA-dominant formulations</strong> favor the E-series (RvE1 via 5-LOX / CYP450 pathway) which also competes with LTB4 production (see <a href="../nlrp3-exploit-map/">CP6a</a> — EPA shifts 5-LOX product output from pro-inflammatory LTB4 toward pro-resolving RvE1).</li>
-<li><strong>DHA-dominant formulations</strong> favor D-series (RvD1, RvD2) and Protectins.</li>
-</ul>
-<h3 id="aspirin-triggered-resolvins">Aspirin-triggered resolvins<a class="headerlink" href="#aspirin-triggered-resolvins" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Low-dose aspirin (81 mg/day)</strong> acetylates COX-2, shifting its product profile toward epimeric SPMs: <strong>15-epi-LXA4</strong> and <strong>17R-RvD</strong> series. These are equally potent (or more so) at resolution receptors compared to their native counterparts.</li>
-<li>This is a mechanism that repositions "baby aspirin" as a pro-resolving agent, not just an anti-platelet drug. Aspirin already has a role in gout (questionable efficacy, but some patients use it); this provides a mechanistic rationale at CP5b.</li>
-</ul>
-<h3 id="indirect-resolution-agonists">Indirect resolution agonists<a class="headerlink" href="#indirect-resolution-agonists" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Lactoferrin</strong> — fermentable at 3.5 g/L in <em>Pichia pastoris</em> (PMID 37926296). Promotes resolution through multiple pathways (anti-microbial, iron sequestration, macrophage modulation). Partial overlap with SPM signaling. Round 1 CP5 audit flagged this as a fermentable platform candidate.</li>
-<li><strong>Vagus nerve activation</strong> (cholinergic anti-inflammatory reflex) — increases SPM production via α7nAChR signaling. Non-pharmacologic; cold exposure, deep breathing, and HRV training have modest supporting evidence.</li>
-</ul>
-<h3 id="pharma-development-receptor-level">Pharma development (receptor-level)<a class="headerlink" href="#pharma-development-receptor-level" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>BMS-986235</strong> — small-molecule ALX/FPR2 agonist in clinical development for heart failure (Bristol-Myers Squibb). Not gout. But validates the target class pharmacologically.</li>
-<li><strong>No ALX/FPR2 agonist has been tested in gout clinical trials as of 2026-04.</strong></li>
-</ul>
-<hr />
-<h2 id="5-open-enzyme-production-angle">5. Open Enzyme Production Angle<a class="headerlink" href="#5-open-enzyme-production-angle" title="Permanent link">&para;</a></h2>
-<p>Can engineered yeast/koji produce SPMs directly? Technically possible but non-trivial:</p>
-<p><strong>Pathway requirements:</strong>
-- Substrate: EPA or DHA — these are long-chain PUFAs. Yeast can be engineered to produce PUFAs (precedent: <em>Yarrowia lipolytica</em> EPA production, commercial). <em>A. oryzae</em> and <em>S. cerevisiae</em> are not natively PUFA producers but have engineering precedent.
-- Enzymes: 15-LOX (or 12-LOX for MaR1) + epoxide hydrolase + reductase + specific CYP450s. Mammalian enzymes; heterologous expression is feasible but unstudied.
-- Product stability: SPMs are labile — oxidation-prone, short half-life. Co-formulation with antioxidants required.</p>
-<p><strong>Assessment:</strong>
-- <strong>Short-term (years 1–2):</strong> EPA/DHA co-formulation with uricase koji is the practical move. No engineering required; leverages existing supply chain. This is CP5b coverage at the substrate-loading level.
-- <strong>Medium-term (years 3–5):</strong> Evaluate lactoferrin co-expression in <em>P. pastoris</em> or <em>S. boulardii</em> (GRAS, gut-active) for partial CP5b overlap without needing the full SPM pathway.
-- <strong>Long-term (years 5+):</strong> A dedicated engineered SPM-producing strain is a distinct project — not a module of the uricase koji. Probably better pursued as a separate strain (e.g., engineered <em>Y. lipolytica</em> producing 17R-HDHA precursor), formulated alongside the uricase koji.</p>
-<p>This is not a reason to deprioritize CP5b — it's an honest accounting of which access points are available now (EPA/DHA loading, aspirin-triggered resolvins, SPM Active supplement, lactoferrin feasibility) vs. engineered from scratch (direct SPM biosynthesis).</p>
-<hr />
-<h2 id="6-open-questions">6. Open Questions<a class="headerlink" href="#6-open-questions" title="Permanent link">&para;</a></h2>
+<h3 id="73-the-cp0-cp6a-cp5b-loop">7.3 The CP0 → CP6a → CP5b loop<a class="headerlink" href="#73-the-cp0-cp6a-cp5b-loop" title="Permanent link">&para;</a></h3>
+<p>Cross-link with <a href="../complement-c5a-gout/">complement-c5a-gout.md</a>:</p>
 <ol>
-<li><strong>Why do gout patients' SPM levels remain low during flare?</strong> Is there a specific SPM-biosynthesis deficit in chronic gout patients (dietary precursor shortage? 15-LOX expression defect?), or is the problem simply that demand outpaces production during an acute flare?</li>
-<li><strong>ALX/FPR2 polymorphisms in gout.</strong> Are there genetic variants of FPR2 associated with gout flare severity or tophi formation rates? An association study is warranted.</li>
-<li><strong>Direct SPM bioassay feasibility.</strong> SPM measurement is analytically challenging (LC-MS/MS required; pg/mL levels). Is it practical to include SPM panels in gout patient biomarker stacks? Probably only in research settings for now.</li>
-<li><strong>CP5b + CP0 pairing.</strong> Does aggNET-mediated sequestration of C5a (Cumpelik 2016, <a href="../complement-c5a-gout/">complement-c5a-gout.md</a>) feed back to CP0 as well? The resolution loop may close on itself — SPMs → aggNETs → C5a sequestration → reduced CP0 priming → reduced downstream cascade. Mechanistic elegance suggests yes; direct evidence is thin.</li>
-<li><strong>Lactoferrin gout trial.</strong> No dedicated gout trial of oral lactoferrin exists. Given its fermentable production (3.5 g/L P. pastoris) and partial resolution-adjacent mechanism, this is a tractable first experiment.</li>
+<li><strong>CP0:</strong> MSU activates complement → C5a generated → neutrophil recruitment</li>
+<li><strong>CP6a:</strong> Neutrophils arrive, amplify via LTB4 / 5-LOX</li>
+<li><strong>CP5b:</strong> Adequate SPM signaling → neutrophils aggNET → cytokines/chemokines sequestered → C5a locally degraded (anaphylatoxins are peptides, susceptible to neutrophil serine proteases)</li>
+<li><strong>Loop closure:</strong> aggNET-mediated C5a degradation reduces further CP0 priming → self-limiting flare</li>
+<li><strong>Failure mode:</strong> Insufficient SPM → NETs spread → no aggregation → C5a persists → flare continues → chronic phase → tophus formation as backup resolution attempt</li>
+</ol>
+<p>This is a mechanistically elegant closed loop. It also predicts that <strong>CP0 blockade (avacopan) and CP5b enhancement (SPMs) are complementary, not redundant</strong> — avacopan blocks the incoming signal, SPMs accelerate the outgoing resolution. A combination should be additive.</p>
+<h3 id="74-the-spm-aggnet-context-switch">7.4 The SPM / aggNET context switch<a class="headerlink" href="#74-the-spm-aggnet-context-switch" title="Permanent link">&para;</a></h3>
+<p>One unresolved question: what determines whether NETs spread (tissue damage) vs. aggregate (resolution)? The Schauer 2014 data points to neutrophil density as a major determinant, but SPM signaling is almost certainly another. In vitro, SPMs promote aggregation in cell-density-dependent assays, but the molecular switch is not fully characterized. This is an open mechanistic question (§13 #6).</p>
+<hr />
+<h2 id="8-kinetics-of-resolution">8. Kinetics of Resolution<a class="headerlink" href="#8-kinetics-of-resolution" title="Permanent link">&para;</a></h2>
+<p>Resolution is not instantaneous. It has its own timescale and measurable kinetic parameters.</p>
+<h3 id="81-timescales">8.1 Timescales<a class="headerlink" href="#81-timescales" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Self-limited acute inflammation:</strong> Resolution begins within hours of the stimulus peak and completes over 24-72 hours (dermal sterile inflammation, self-resolving peritonitis). With adequate SPM signaling, neutrophil counts peak at 4-8 h and decline to baseline by 24-48 h in murine zymosan peritonitis.</li>
+<li><strong>Gout flare:</strong> Typical human gout flare resolves in 7-14 days untreated, faster with NSAID/colchicine/steroid. This is an order of magnitude slower than dermal sterile inflammation — reflecting both the persistent crystal stimulus and possibly sub-optimal SPM signaling at the joint.</li>
+<li><strong>Failed resolution — chronic inflammation:</strong> Tophaceous gout, rheumatoid synovitis, atherosclerosis, chronic liver disease. Weeks to years. The inflammatory infiltrate persists because the resolution program fails to switch on at sufficient magnitude.</li>
+</ul>
+<h3 id="82-resolution-index-metrics">8.2 Resolution-index metrics<a class="headerlink" href="#82-resolution-index-metrics" title="Permanent link">&para;</a></h3>
+<p>A quantitative framework for resolution kinetics (Bannenberg/Serhan et al., multiple methodological papers):</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Definition</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ψmax</strong> (PMN max)</td>
+<td>Peak neutrophil count in the exudate</td>
+<td>Magnitude of the inflammatory response</td>
+</tr>
+<tr>
+<td><strong>Tmax</strong></td>
+<td>Time to peak PMN count</td>
+<td>Speed of recruitment</td>
+</tr>
+<tr>
+<td><strong>T50</strong></td>
+<td>Time for PMN count to decline to 50% of Ψmax</td>
+<td><strong>Resolution speed — the key SPM-sensitive parameter</strong></td>
+</tr>
+<tr>
+<td><strong>Ri</strong> (resolution interval)</td>
+<td>Tmax to T50 — the "resolution window"</td>
+<td>Direct measurement of how fast resolution is</td>
+</tr>
+<tr>
+<td><strong>LB_max</strong></td>
+<td>Leukocyte burden, integrated over time</td>
+<td>Total inflammatory impact</td>
+</tr>
+</tbody>
+</table>
+<p>Shortening T50 (faster decline of the PMN infiltrate) is the classic SPM pharmacodynamic signal in animal models. RvE1, RvD1, RvD2, MaR1, PD1 all shorten T50 in murine peritonitis and dermatitis models at nanomolar-to-low-microgram doses.</p>
+<h3 id="83-application-to-gout">8.3 Application to gout<a class="headerlink" href="#83-application-to-gout" title="Permanent link">&para;</a></h3>
+<p>Gout flares don't readily permit Ψmax/T50 measurement in humans (invasive joint aspiration at multiple timepoints is not ethically feasible outside a dedicated trial). Surrogate clinical endpoints are:
+- <strong>Time to 50% pain reduction</strong> (typically 24-48 h on NSAID; unknown on SPM)
+- <strong>Time to normalization of joint swelling</strong>
+- <strong>Duration of flare</strong> (patient-reported days of disability)
+- <strong>Flare recurrence rate</strong> over 6-12 months</p>
+<p>An SPM clinical trial in gout could pre-register "time to 50% pain reduction" as the resolution-proxy endpoint, analogous to Ri in animal models.</p>
+<p>(Evidence level: Mechanistic Extrapolation — the Ψ/T50 framework is well-validated in animal models; its human gout translation is untested.)</p>
+<hr />
+<h2 id="9-absence-of-resolution-as-exploit-philosophical-framing">9. "Absence of Resolution as Exploit" — Philosophical Framing<a class="headerlink" href="#9-absence-of-resolution-as-exploit-philosophical-framing" title="Permanent link">&para;</a></h2>
+<p>Most anti-inflammatory drugs work by <strong>suppression</strong>:
+- NSAIDs block COX-1/COX-2 → less PGE2, less pain signaling
+- Corticosteroids activate the glucocorticoid receptor → broad transcriptional suppression of inflammatory genes (also of resolution genes — steroids paradoxically can <em>impair</em> resolution)
+- Canakinumab/anakinra/rilonacept block IL-1β signaling → no downstream inflammatory amplification (CP5a)
+- TNF inhibitors block TNFα → reduce cytokine storm</p>
+<p>SPMs and SPM-inducers operate through a <strong>different mechanism class</strong>: they <em>promote</em> the active resolution program rather than <em>blocking</em> the inflammation. Key consequences:</p>
+<ol>
+<li><strong>Combination is additive, not redundant.</strong> Allopurinol (crystal elimination upstream) + canakinumab (IL-1β suppression, CP5a) + SPM (resolution at CP5b) operate at three independent layers and should stack cleanly.</li>
+<li><strong>Preserved host defense.</strong> SPM-promoted resolution does not impair anti-microbial response (see §5.6). Unlike IL-1β blockade, which carries a real infection risk, SPMs appear neutral or mildly protective in sepsis models.</li>
+<li><strong>Tissue repair.</strong> SPMs actively promote tissue regeneration (§5.4). Suppression-only drugs do not — they simply reduce ongoing damage. In chronic tophaceous joints, this distinction could be disease-modifying.</li>
+<li><strong>Different side-effect profile.</strong> No evidence SPMs cause immunosuppression, GI ulceration (unlike NSAIDs), osteoporosis (unlike steroids), or weight gain (unlike steroids). The "dirty" side-effect profile of fish oil is GI (fishy reflux, mild diarrhea at high doses) and, at very high doses, minor increases in bleeding time.</li>
+<li><strong>Pharmacologic class-distinct from what most of the stack covers.</strong> The Open Enzyme stack is predominantly suppression-class (EGCG, curcumin, quercetin, sulforaphane — all NF-κB / ROS suppressors). Adding SPMs (via omega-3 loading or direct SPM supplements) is the stack's resolution arm.</li>
+</ol>
+<p>The framing: <strong>"You can't fight your way out of gout by suppression alone. You have to switch on resolution."</strong></p>
+<hr />
+<h2 id="10-dose-delivery-supplementation">10. Dose, Delivery, Supplementation<a class="headerlink" href="#10-dose-delivery-supplementation" title="Permanent link">&para;</a></h2>
+<h3 id="101-omega-3-precursor-loading">10.1 Omega-3 precursor loading<a class="headerlink" href="#101-omega-3-precursor-loading" title="Permanent link">&para;</a></h3>
+<p><strong>Typical dose for anti-inflammatory / pro-resolution effect:</strong> 3-4 g/day combined EPA + DHA. Below ~2 g/day, effects are marginal; above ~4 g/day, diminishing returns and increased GI/bleeding risk.</p>
+<p><strong>Conversion efficiency to SPMs:</strong> Estimated 5-10% of precursor pool is enzymatically converted to SPMs at rest. Higher during active inflammation (when 5-LOX/15-LOX/12-LOX are upregulated). Bioavailability depends on formulation (triglyceride &gt; ethyl ester &gt; phospholipid in some studies; re-esterified triglyceride preferred for absorption).</p>
+<p><strong>DHA-emphasis for gout — the key nuance (per round 2 synthesis commit 1d720b2):</strong>
+The direct MSU-gout animal evidence at CP5b is <strong>DHA-derived, not EPA-derived</strong>:
+- RvD1 (DHA → ALX/FPR2) — Zaninelli 2022 PMID 35716378
+- MaR1 (DHA → LGR6) — Jiang 2023 PMID 37996809
+- RvD2 (DHA → GPR18) — Lopategi 2018 PMID 29601102 (not MSU but the mechanistic core)
+- PDX / PD1 (DHA → GPR37) — Caron 2019 PMID 30836143 (equine synoviocytes)</p>
+<p>Separately, DHA correlates with lower circulating TNFSF14 in a Mendelian-randomization study (see <a href="../tnfsf14-gout-target/">tnfsf14-gout-target.md</a>, Huang 2024 PMID 38235898), tying DHA to the CP1a (LIGHT amplifier) arm.</p>
+<p>EPA is not inactive — EPA → RvE1 operates at CP5b (CMKLR1) and EPA substrate competition reduces LTB4 at CP6a. But for <strong>gout-specific</strong> use, the weight of direct MSU evidence is DHA. <strong>Prefer DHA-emphasis or high-DHA formulations</strong> (algae oil is often 2-3× higher DHA than EPA; most fish oils are EPA-dominant because they target cardiovascular endpoints).</p>
+<p>Practical dosing: 2-3 g DHA + 1-2 g EPA/day is a reasonable gout-targeted SPM precursor load. With food to improve absorption and reduce GI side effects.</p>
+<h3 id="102-aspirin-triggered-spm">10.2 Aspirin-triggered SPM<a class="headerlink" href="#102-aspirin-triggered-spm" title="Permanent link">&para;</a></h3>
+<p><strong>Mechanism:</strong> Low-dose aspirin (81 mg/day) acetylates COX-2 (irreversibly; 10-50% of circulating COX-2 is acetylated at steady state on 81 mg daily), shifting its product profile toward <strong>15-epi-LXA4</strong> (from AA) and <strong>17R-RvD series</strong> (from DHA via CYP450 + aspirin-COX-2 tandem). These R-epimers are equipotent or more potent at ALX/FPR2 / GPR32 / GPR18 and have <strong>longer plasma half-lives</strong> because 15-PGDH (the dehydrogenase that inactivates native S-epimer SPMs) processes R-epimers less efficiently.</p>
+<p><strong>Practical upshot:</strong> Adding low-dose aspirin to a DHA-loaded regimen <strong>qualitatively shifts the SPM output</strong> toward longer-lived R-epimer forms. This repositions "baby aspirin" from an anti-platelet drug into a <strong>pro-resolution synergist</strong>. The gout literature on aspirin is equivocal (some patients report benefit, mainstream guidelines have not endorsed); this provides a mechanistic rationale at CP5b, distinct from the anti-platelet mechanism.</p>
+<p><strong>Caveats:</strong>
+- Aspirin and urate handling: aspirin at very low dose (&lt;325 mg/day) paradoxically <em>increases</em> serum urate by inhibiting URAT1-mediated renal excretion; at high dose (&gt;3 g/day) it is uricosuric. For gout, the 81 mg dose is in the urate-raising zone, a real if small concern
+- Bleeding risk: 81 mg aspirin + fish oil at 3-4 g/day marginally increases bleeding time; not clinically significant for most patients but worth checking if any surgical plan is imminent
+- Aspirin sensitivity / NSAID-induced respiratory disease: absolute contraindication</p>
+<p>The combined "aspirin + fish oil" stack for SPM production is used in some functional-medicine practices; rigorous clinical evidence for gout specifically is absent.</p>
+<h3 id="103-direct-spm-supplements">10.3 Direct SPM supplements<a class="headerlink" href="#103-direct-spm-supplements" title="Permanent link">&para;</a></h3>
+<p><strong>SPM Active (Metagenics)</strong> and similar products (Specialized Pro-Resolving Mediators, SPM Supreme, etc.):
+- Standardized to 17-HDHA, 18-HEPE, 14-HDHA — the <strong>stable hydroxy intermediates</strong> upstream of the fully-formed trihydroxy resolvins/maresins/protectins
+- Typical dose: 2 softgels/day, providing a few hundred micrograms of mixed SPM precursors
+- Cost: $80-120/month — expensive for a supplement, cheap relative to pharma SPM-mimetics
+- Bypasses the precursor-conversion bottleneck (if the limiting step is substrate availability)
+- Doesn't bypass the tissue-level biosynthetic machinery (still requires 5-LOX/15-LOX/CYP to convert intermediates to active SPMs)
+- Clinical evidence is modest — mostly single-arm trials in chronic pain / post-surgical recovery showing reduced CRP and improved pain scores
+- <strong>No gout-specific data</strong></p>
+<p><strong>Research-grade SPMs</strong> (Cayman Chemical and similar vendors for RvD1, MaR1, RvE1) are available for preclinical work only; not clinically deployable (unstable, pg-mg quantities, no pharmacology-quality formulation).</p>
+<h3 id="104-lactoferrin-as-an-indirect-spm-resolution-modulator">10.4 Lactoferrin as an indirect SPM / resolution modulator<a class="headerlink" href="#104-lactoferrin-as-an-indirect-spm-resolution-modulator" title="Permanent link">&para;</a></h3>
+<p>Lactoferrin promotes resolution through multiple overlapping mechanisms — iron sequestration, antimicrobial activity, macrophage modulation toward M2, and possible partial FPR2 engagement. A dedicated page is in preparation — see <a href="../lactoferrin/">lactoferrin.md</a> for the full dossier (engineering feasibility in <em>A. oryzae</em> at &gt;2 g/L submerged culture per Ward 1995 PMID 9634791, recombinant human form data, and fermentation pathway). The overlap with SPM signaling is partial; lactoferrin is not a canonical SPM but it operates in the same functional space.</p>
+<h3 id="105-pharma-development-alxfpr2-agonism">10.5 Pharma development — ALX/FPR2 agonism<a class="headerlink" href="#105-pharma-development-alxfpr2-agonism" title="Permanent link">&para;</a></h3>
+<p><strong>BMS-986235 (Bristol-Myers Squibb):</strong> Small-molecule ALX/FPR2 agonist in clinical development for heart failure. Validates ALX/FPR2 as a pharmacologically tractable target but is not being developed for gout. ClinicalTrials.gov records confirm Phase 2 heart failure indication as of late 2024.</p>
+<p><strong>Compound 43 / ACT-389949 (Actelion):</strong> Small-molecule FPR2 agonist, Phase 1 tested in healthy volunteers; demonstrated target engagement (LPS challenge studies) but development status unclear post-Idorsia acquisition.</p>
+<p><strong>No ALX/FPR2 agonist has been tested in gout clinical trials as of 2026-04.</strong> A gout-repurposing trial of BMS-986235 or a similar compound would be the most direct pharma path to CP5b validation.</p>
+<p>(Evidence level: Clinical Trial for BMS-986235 in heart failure; Mechanistic Extrapolation for gout.)</p>
+<hr />
+<h2 id="11-engineered-production-whats-feasible">11. Engineered Production — What's Feasible<a class="headerlink" href="#11-engineered-production-whats-feasible" title="Permanent link">&para;</a></h2>
+<h3 id="111-direct-spm-biosynthesis-in-yeastkoji">11.1 Direct SPM biosynthesis in yeast/koji<a class="headerlink" href="#111-direct-spm-biosynthesis-in-yeastkoji" title="Permanent link">&para;</a></h3>
+<p><strong>The hard engineering problem:</strong> SPMs are enzymatic products of long-chain polyunsaturated fatty acids (EPA, DHA, AA, n-3 DPA), which are not native to S. cerevisiae or A. oryzae in significant quantities. A fully-engineered SPM-producing yeast would need:</p>
+<ol>
+<li><strong>Substrate engineering</strong> — heterologous ω-3 desaturase pathway (elongase + Δ15 desaturase + Δ17 desaturase or equivalent) to produce EPA/DHA from native fatty acid precursors. Precedent exists: <em>Yarrowia lipolytica</em> has been engineered to produce EPA at commercial scale (~15% of dry cell weight as EPA) for aquaculture feed. The engineering is real but complex (6-10 heterologous enzymes, careful flux balancing to avoid lipid accumulation that stalls cell growth).</li>
+<li><strong>SPM biosynthetic enzymes</strong> — heterologous mammalian 5-LOX, 12-LOX, 15-LOX, specific CYP450s (CYP1A1, CYP2C/J), and epoxide hydrolase. Mammalian LOX enzymes have been expressed in yeast for biochemistry; SPM-specific tandem pathways less characterized.</li>
+<li><strong>Product stability</strong> — SPMs are labile (oxidation-prone, short-half-life lipids). Co-formulation with antioxidants would be required. Extraction yields from yeast biomass are untested.</li>
+<li><strong>GRAS compatibility</strong> — A. oryzae and S. cerevisiae are GRAS; Yarrowia is not yet GRAS for food use in the US (it is for some feed applications).</li>
+</ol>
+<h3 id="112-realistic-near-term-path-precursor-co-formulation">11.2 Realistic near-term path: precursor co-formulation<a class="headerlink" href="#112-realistic-near-term-path-precursor-co-formulation" title="Permanent link">&para;</a></h3>
+<p><strong>Short-term (years 1-2):</strong> EPA/DHA omega-3 co-formulation with uricase koji. No engineering required; leverages existing global omega-3 supply chain. This is <strong>CP5b coverage at the substrate-loading level</strong> — not direct SPM production but substrate provision at adequate titer to drive endogenous SPM biosynthesis.</p>
+<p>Formulation logic: One daily dose of engineered koji uricase (crystal-eliminator, CP upstream) + one daily dose of DHA-emphasis omega-3 (SPM precursor for CP5b) + optional low-dose aspirin (aspirin-triggered SPM enhancement). Zero engineering burden on the SPM side; all the engineering complexity is on the uricase koji.</p>
+<h3 id="113-medium-term-lactoferrin-co-expression-in-koji-resolution-adjacent">11.3 Medium-term: lactoferrin co-expression in koji (resolution-adjacent)<a class="headerlink" href="#113-medium-term-lactoferrin-co-expression-in-koji-resolution-adjacent" title="Permanent link">&para;</a></h3>
+<p>Lactoferrin in <em>A. oryzae</em> or <em>A. awamori</em> is a demonstrated-in-literature target (Ward 1992 PMID 1368268, Ward 1995 PMID 9634791, Sun 1999 PMID 10089347). Co-expressing lactoferrin alongside uricase in a single engineered koji strain would cover both upstream crystal elimination (uricase) and resolution-adjacent macrophage modulation (lactoferrin), without requiring SPM-direct biosynthesis. <strong>See <a href="../lactoferrin/">lactoferrin.md</a> for the dedicated feasibility dossier.</strong></p>
+<p>This is a more tractable near-term target than direct SPM biosynthesis in yeast, and it fills a complementary resolution niche (protein-based, macrophage-targeting) that SPMs (lipid-based, multi-receptor) do not fully cover.</p>
+<h3 id="114-long-term-dedicated-spm-producing-strain">11.4 Long-term: dedicated SPM-producing strain<a class="headerlink" href="#114-long-term-dedicated-spm-producing-strain" title="Permanent link">&para;</a></h3>
+<p>A dedicated engineered SPM-producing strain is a <strong>distinct project</strong> from the uricase koji — probably better pursued as a separate chassis (e.g., engineered <em>Y. lipolytica</em> with a heterologous 15-LOX / 12-LOX / CYP1A1 pathway producing 17-HDHA / 14-HDHA / 18-HEPE precursors), formulated alongside the uricase koji. This is years 5+ research, not Phase 0.</p>
+<h3 id="115-assessment-honest-accounting">11.5 Assessment — honest accounting<a class="headerlink" href="#115-assessment-honest-accounting" title="Permanent link">&para;</a></h3>
+<p>The engineered-koji platform covers CP5b <strong>indirectly</strong> (via lactoferrin if that co-expression clears feasibility, via downstream resolution signaling) but <strong>not directly</strong> (no native or near-native SPM production in GRAS yeast/koji). The practical CP5b stack for the Open Enzyme platform is:</p>
+<ol>
+<li><strong>Substrate-loaded omega-3</strong> (DHA-emphasis, 2-3 g DHA + 1-2 g EPA/day) — commercial, unengineered</li>
+<li><strong>Engineered koji uricase + lactoferrin</strong> (if co-expression feasibility clears) — platform-native, indirect CP5b via lactoferrin</li>
+<li><strong>Aspirin-triggered shift</strong> (low-dose aspirin, optional) — off-the-shelf, repositions SPM output toward longer-lived R-epimers</li>
+<li><strong>Direct SPM supplements</strong> (SPM Active or similar) — commercial supplement-grade</li>
+<li><strong>Future: engineered SPM-producing yeast</strong> (years 5+) — research-stage</li>
+</ol>
+<p>This is an honest assessment. The platform has substrate loading, indirect resolution-modulator (lactoferrin), and commercial access to direct SPMs, but does <strong>not</strong> produce SPMs at enzyme-engineered scale. That's a tractable future project, not a current deliverable.</p>
+<hr />
+<h2 id="12-clinical-biomarkers-and-self-experiment-relevance">12. Clinical Biomarkers and Self-Experiment Relevance<a class="headerlink" href="#12-clinical-biomarkers-and-self-experiment-relevance" title="Permanent link">&para;</a></h2>
+<h3 id="121-serum-plasma-spm-measurement">12.1 Serum / plasma SPM measurement<a class="headerlink" href="#121-serum-plasma-spm-measurement" title="Permanent link">&para;</a></h3>
+<p><strong>Method:</strong> LC-MS/MS lipidomics. A typical panel quantifies RvD1, RvD2, RvD5, RvE1, MaR1, PD1, LXA4 (and occasionally AT-15-epi-LXA4 and 17R-RvD) at pg/mL levels in 100-500 μL plasma.</p>
+<p><strong>Technical challenges:</strong>
+- Pre-analytic: plasma must be collected with antioxidants (e.g., BHT) to prevent ex vivo oxidation; rapid freezing at -80°C; avoidance of freeze-thaw cycles
+- Analytic: requires a specialty lipidomics lab (typically academic core facilities or Metabolon/Core Metabolomics-style vendors)
+- Cost: ~$300-700 per panel (research pricing; not reimbursable)
+- Reference ranges: not well-established for gout; existing data come from healthy volunteers and chronic inflammatory disease cohorts</p>
+<p><strong>Practical utility in gout:</strong> Mostly research-setting. SPM panels during flare vs. inter-flare vs. on fish-oil loading would inform a specific patient's resolution signaling, but there's insufficient comparative data to act on a result clinically yet.</p>
+<h3 id="122-urinary-lte4-already-in-self-experiment-3">12.2 Urinary LTE4 (already in self-experiment §3)<a class="headerlink" href="#122-urinary-lte4-already-in-self-experiment-3" title="Permanent link">&para;</a></h3>
+<p>Urinary LTE4 is a CP6a (5-LOX pathway) readout — indicates leukotriene production. <strong>Inverse relationship with SPMs is expected</strong>: high LTE4 + low SPMs indicates a pro-inflammatory 5-LOX/15-LOX ratio shifted toward LTB4/LTE4 (inflammation) vs. RvE1/lipoxin (resolution). Per <a href="../self-experiment-protocol/">self-experiment-protocol.md §3</a>, urinary LTE4 is already in the planned assay panel. Pairing with an SPM plasma panel would let you compute a simple "resolution ratio" (e.g., RvE1/LTE4 or sum-SPM/LTE4) as a CP6a ↔ CP5b axis biomarker.</p>
+<h3 id="123-surrogate-clinical-endpoints">12.3 Surrogate clinical endpoints<a class="headerlink" href="#123-surrogate-clinical-endpoints" title="Permanent link">&para;</a></h3>
+<p>For self-experiment or a future trial:
+- <strong>Time to 50% pain reduction</strong> from flare onset — resolution speed proxy
+- <strong>Duration of flare</strong> (hours/days)
+- <strong>Recurrence rate</strong> over 6-12 months
+- <strong>Inter-flare pain baseline</strong> (chronic low-grade pain/stiffness indexed)
+- <strong>hsCRP decline kinetics</strong> from flare peak to baseline</p>
+<h3 id="124-omega-3-index">12.4 Omega-3 index<a class="headerlink" href="#124-omega-3-index" title="Permanent link">&para;</a></h3>
+<p>The omega-3 index (% EPA + DHA in erythrocyte membranes) is a more stable measure of dietary/supplement omega-3 intake than plasma fatty acid panels. Target &gt;8% for cardiovascular benefit; for SPM production, rising the index from ~4-5% (typical Western diet) to ~8-10% correlates with detectable increases in plasma SPMs. Commercial tests (OmegaQuant) at ~$50-100. This is a cheap, practical biomarker for "am I loading enough omega-3 substrate" before considering direct SPM panels.</p>
+<hr />
+<h2 id="13-open-research-questions">13. Open Research Questions<a class="headerlink" href="#13-open-research-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Why do gout patients' SPM levels remain low during flare?</strong> Is there a specific SPM-biosynthesis deficit in chronic gout patients (dietary precursor shortage? 15-LOX/12-LOX expression defect? age-related decline in ALOX15?), or is the problem simply that demand outpaces production during acute flares? A lipidomic study of flare-phase vs. inter-flare plasma SPMs in the same patient (N=20-30, paired) would resolve this.</li>
+<li><strong>ALX/FPR2 polymorphisms in gout.</strong> Are there genetic variants of FPR2 associated with gout flare severity, tophi formation rates, or SPM response? An association study using existing gout biobank DNA is feasible.</li>
+<li><strong>GPR18 variants and gout.</strong> GPR18 is the RvD2 receptor (Lopategi 2018). Variants that alter RvD2 binding or signaling could predict resolution failure. No gout-specific GPR18 association study exists.</li>
+<li><strong>SPM ratios in gout — which family dominates resolution?</strong> Are gout-patient flares resolved primarily by D-resolvins, maresins, protectins, or a combination? A ratio-based biomarker could guide targeted supplementation (e.g., DHA-emphasis for D-resolvin-dominant resolvers vs. EPA emphasis for E-resolvin-dominant).</li>
+<li><strong>Gout-specific ALX/FPR2 agonist (BMS-986235 or similar) trial.</strong> No trial exists. An investigator-initiated Phase 2 in refractory gout is the shortest path to human validation.</li>
+<li><strong>The aggNET-vs-spreading NET molecular switch.</strong> What determines whether NETs aggregate (resolution) vs. spread (damage) beyond neutrophil density? Is SPM signaling the dominant modulator? Mechanistic dissection in human neutrophil cultures ± SPMs.</li>
+<li><strong>Low-dose aspirin in gout — trial-worthy?</strong> The aspirin-triggered SPM mechanism provides a specific rationale for low-dose aspirin as a pro-resolution adjunct in recurrent-flare gout, distinct from its anti-platelet role. A cross-over trial (N=30-50, aspirin 81 mg vs. placebo on a fish-oil background) measuring flare frequency would be low-cost.</li>
+<li><strong>SPM Active supplement in gout.</strong> No clinical trial has tested any commercial SPM supplement in gout. A single-arm pilot (N=20, SPM Active 2 softgels/day × 90 days, flare frequency + urinary LTE4 + omega-3 index + flare-phase plasma SPMs) would generate the first human gout-SPM data.</li>
+<li><strong>DHA-vs-EPA dosing in gout.</strong> The preclinical evidence favors DHA for gout (RvD1, MaR1 both DHA-derived). A head-to-head DHA-dominant vs. EPA-dominant vs. balanced fish-oil trial in recurrent-flare gout would clarify the optimal formulation. Marginal cost; high informational value.</li>
+<li><strong>Resolution index (T50) measurement in human gout.</strong> Can the animal-model Ψmax/T50 framework be adapted to clinical gout monitoring? Serial ultrasound joint imaging + synovial fluid sampling across a flare is invasive but feasible in a dedicated research setting. Would provide the first human resolution-kinetic measurement in a crystalopathy.</li>
+<li><strong>Lactoferrin + SPM combination.</strong> If engineered koji lactoferrin clears feasibility (see <a href="../lactoferrin/">lactoferrin.md</a>), the combination of koji lactoferrin + DHA-emphasis omega-3 would cover CP5b via two independent mechanisms (lactoferrin M2 macrophage polarization + SPM direct receptor agonism). A preclinical MSU-model combination study would test for additivity.</li>
+<li><strong>Engineered SPM biosynthesis in yeast — feasibility scoping.</strong> Which yeast chassis (Y. lipolytica for substrate, S. cerevisiae for enzyme library, A. oryzae for GRAS/koji platform) is the best fit for direct SPM production? A design-phase literature review and retrosynthetic analysis would frame the long-term research arm.</li>
 </ol>
 <hr />
-<h2 id="7-sources">7. Sources<a class="headerlink" href="#7-sources" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Zaninelli TH, Fattori V, Saraiva-Santos T, et al. "RvD1 disrupts nociceptor neuron activation and maintenance of acute and chronic inflammatory pain and hyperalgesia in gouty arthritis." <em>Br J Pharmacol</em> 2022;179(22):4994-5016. DOI: 10.1111/bph.15897. PMID: 35716378.</li>
-<li>Jiang X, Gao M, Chen Y, et al. "Maresin1 ameliorates MSU-induced gouty arthritis via peroxiredoxin 5 and AMPK/Nrf2 pathway." <em>Mol Med</em> 2023;29(1):161. DOI: 10.1186/s10020-023-00756-w. PMID: 37996809.</li>
-<li>Zaninelli TH, Fattori V, Verri WA Jr. "Harnessing lipid mediators and immune cells to treat gouty arthritis." <em>Expert Opin Ther Targets</em> 2023;27(8):751-766. DOI: 10.1080/14728222.2023.2247559. PMID: 37651647.</li>
-<li>Schauer C, Janko C, Munoz LE, et al. "Aggregated neutrophil extracellular traps limit inflammation by degrading cytokines and chemokines." <em>Nat Med</em> 2014;20(5):511-7. DOI: 10.1038/nm.3547. PMID: 24784231.</li>
-<li>Serhan CN. "Pro-resolving lipid mediators are leads for resolution physiology." <em>Nature</em> 2014;510(7503):92-101. (Foundational SPM biology review.)</li>
-</ul>
+<h2 id="14-sources-annotated-bibliography">14. Sources (Annotated Bibliography)<a class="headerlink" href="#14-sources-annotated-bibliography" title="Permanent link">&para;</a></h2>
+<h3 id="direct-msu-gout-spm-evidence-the-cp5b-canon">Direct MSU gout SPM evidence (the CP5b canon)<a class="headerlink" href="#direct-msu-gout-spm-evidence-the-cp5b-canon" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Zaninelli TH, Fattori V, Saraiva-Santos T, Badaro-Garcia S, Staurengo-Ferrari L, Andrade KC, Artero NA, Ferraz CR, Bertozzi MM, Rasquel-Oliveira F, Manchope MF, Amaral FA, Teixeira MM, Borghi SM, Rogers MS, Casagrande R, Verri WA Jr. "RvD1 disrupts nociceptor neuron and macrophage activation and neuroimmune communication, reducing pain and inflammation in gouty arthritis in mice." <em>Br J Pharmacol</em> 2022;179(18):4500-4515. <a href="https://doi.org/10.1111/bph.15897">DOI: 10.1111/bph.15897</a>. PMID: 35716378. <strong>Direct MSU gout RvD1 effect via ALX/FPR2; neuroimmune nociceptor-macrophage-CGRP axis.</strong></p>
+</li>
+<li>
+<p>Jiang H, Song D, Zhou X, Chen F, Yu Q, Ren L, Dai Q, Zeng M. "Maresin1 ameliorates MSU crystal-induced inflammation by upregulating Prdx5 expression." <em>Mol Med</em> 2023;29(1):158. <a href="https://doi.org/10.1186/s10020-023-00756-w">DOI: 10.1186/s10020-023-00756-w</a>. PMID: 37996809. <strong>Direct MSU gout MaR1 effect via Prdx5 → AMPK/Nrf2 upstream of NLRP3.</strong></p>
+</li>
+<li>
+<p>Lopategi A, Flores-Costa R, Rius B, López-Vicario C, Alcaraz-Quiles J, Titos E, Clària J. "Frontline Science: Specialized proresolving lipid mediators inhibit the priming and activation of the macrophage NLRP3 inflammasome." <em>J Leukoc Biol</em> 2018;105(1):25-36. <a href="https://doi.org/10.1002/JLB.3HI0517-206RR">DOI: 10.1002/JLB.3HI0517-206RR</a>. PMID: 29601102. <strong>RvD2 → GPR18 → ASC oligomerization block in BMDMs; establishes GPR18 as the RvD2 receptor for NLRP3 suppression.</strong></p>
+</li>
+<li>
+<p>Caron JP, Gandy JC, Brown JL, Sordillo LM. "Omega-3 fatty acids and docosahexaenoic acid oxymetabolites modulate the inflammatory response of equine recombinant interleukin1β-stimulated equine synoviocytes." <em>Prostaglandins Other Lipid Mediat</em> 2019;142:1-8. <a href="https://doi.org/10.1016/j.prostaglandins.2019.02.007">DOI: 10.1016/j.prostaglandins.2019.02.007</a>. PMID: 30836143. <strong>RvD1, RvD2, MaR1, PDX suppress IL-1β-induced ADAMTS4, MMPs, IL-6, COX-2 in equine synoviocytes — joint-relevant target validation.</strong></p>
+</li>
+<li>
+<p>Zaninelli TH, Martelossi-Cebinelli G, Saraiva-Santos T, Borghi SM, Fattori V, Casagrande R, Verri WA Jr. "New drug targets for the treatment of gout arthritis: what's new?" <em>Expert Opin Ther Targets</em> 2023;27(8):679-703. <a href="https://doi.org/10.1080/14728222.2023.2247559">DOI: 10.1080/14728222.2023.2247559</a>. PMID: 37651647. <strong>Review explicitly naming ALX/FPR2 agonism as a gout therapeutic priority.</strong></p>
+</li>
+</ol>
+<h3 id="complement-resolution-link">Complement-resolution link<a class="headerlink" href="#complement-resolution-link" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Schauer C, Janko C, Munoz LE, Zhao Y, Kienhöfer D, Frey B, Lell M, Manger B, Rech J, Naschberger E, Holmdahl R, Krenn V, Harrer T, Jeremic I, Bilyy R, Schett G, Hoffmann M, Herrmann M. "Aggregated neutrophil extracellular traps limit inflammation by degrading cytokines and chemokines." <em>Nat Med</em> 2014;20(5):511-7. <a href="https://doi.org/10.1038/nm.3547">DOI: 10.1038/nm.3547</a>. PMID: 24784231. <strong>aggNETs degrade cytokines/chemokines; tophi are chronic aggNET structures; foundational for the resolution-complement loop.</strong></li>
+</ol>
+<h3 id="foundational-spm-biology">Foundational SPM biology<a class="headerlink" href="#foundational-spm-biology" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Serhan CN. "Pro-resolving lipid mediators are leads for resolution physiology." <em>Nature</em> 2014;510(7503):92-101. <a href="https://doi.org/10.1038/nature13479">DOI: 10.1038/nature13479</a>. PMID: 24899309. <strong>Foundational SPM biology review by the field's originator.</strong></p>
+</li>
+<li>
+<p>Serhan CN, Levy BD. "Resolvins in inflammation: emergence of the pro-resolving superfamily of mediators." <em>J Clin Invest</em> 2018;128(7):2657-2669. <a href="https://doi.org/10.1172/JCI97943">DOI: 10.1172/JCI97943</a>. <strong>Modern SPM superfamily overview.</strong></p>
+</li>
+</ol>
+<h3 id="receptor-structure-function">Receptor structure / function<a class="headerlink" href="#receptor-structure-function" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Krishnamoorthy N, Abdulnour RE, Walker KH, Engstrom BD, Levy BD. "Specialized Proresolving Mediators in Innate and Adaptive Immune Responses in Airway Diseases." <em>Physiol Rev</em> 2018;98(3):1335-1370. <a href="https://doi.org/10.1152/physrev.00026.2017">DOI: 10.1152/physrev.00026.2017</a>. <strong>Receptor and cell-type comprehensive review.</strong></p>
+</li>
+<li>
+<p>Chiang N, Serhan CN. "Structural elucidation and physiologic functions of specialized pro-resolving mediators and their receptors." <em>Mol Aspects Med</em> 2017;58:114-129. <a href="https://doi.org/10.1016/j.mam.2017.03.005">DOI: 10.1016/j.mam.2017.03.005</a>. <strong>Receptor identification and signaling biology.</strong></p>
+</li>
+</ol>
+<h3 id="engineering-and-production">Engineering and production<a class="headerlink" href="#engineering-and-production" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Xue Z, Sharpe PL, Hong SP, Yadav NS, Xie D, Short DR, Damude HG, Rupert RA, Seip JE, Wang J, Pollak DW, Bostick MW, Bosak MD, Macool DJ, Hollerbach DH, Zhang H, Arcilla DM, Bledsoe SA, Croker K, McCord EF, Tyreus BD, Jackson EN, Zhu Q. "Production of omega-3 eicosapentaenoic acid by metabolic engineering of Yarrowia lipolytica." <em>Nat Biotechnol</em> 2013;31(8):734-40. <a href="https://doi.org/10.1038/nbt.2622">DOI: 10.1038/nbt.2622</a>. <strong>Yarrowia EPA production precedent — the existing industrial chassis for heterologous ω-3 biosynthesis.</strong></li>
+</ol>
+<h3 id="gout-context">Gout context<a class="headerlink" href="#gout-context" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Cumpelik A, Ankli B, Zecher D, Schifferli JA. "Neutrophil microvesicles resolve gout by inhibiting C5a-mediated priming of the inflammasome." <em>Ann Rheum Dis</em> 2016;75(6):1236-45. <a href="https://doi.org/10.1136/annrheumdis-2015-207338">DOI: 10.1136/annrheumdis-2015-207338</a>. PMID: 26245757. <strong>C5a as dominant priming signal; cross-link to <a href="../complement-c5a-gout/">complement-c5a-gout.md</a>.</strong></li>
+</ol>
+<h3 id="lactoferrin-resolution-adjacent-engineering-target">Lactoferrin (resolution-adjacent, engineering target)<a class="headerlink" href="#lactoferrin-resolution-adjacent-engineering-target" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Ward PP, Lo JY, Duke M, May GS, Headon DR, Conneely OM. "Production of biologically active recombinant human lactoferrin in Aspergillus oryzae." <em>Nat Biotechnol</em> 1992;10(7):784-789. <a href="https://doi.org/10.1038/nbt0792-784">DOI: 10.1038/nbt0792-784</a>. PMID: 1368268. <strong>First mammalian glycoprotein in Aspergillus; 25 mg/L; α-amylase promoter + A. niger glucoamylase 3' region.</strong></p>
+</li>
+<li>
+<p>Ward PP, Piddington CS, Cunningham GA, Chang N, Young RT, Conneely OM. "A system for production of commercial quantities of human lactoferrin: a broad spectrum natural antibiotic." <em>Nat Biotechnol</em> 1995;13(5):498-503. <a href="https://doi.org/10.1038/nbt0595-498">DOI: 10.1038/nbt0595-498</a>. PMID: 9634791. <strong>&gt;2 g/L in <em>A. awamori</em> as glucoamylase fusion + KEX-2 processed; classical strain improvement; retained iron binding, enterocyte-receptor binding, antimicrobial activity.</strong></p>
+</li>
+<li>
+<p>Sun XL, Baker HM, Shewry SC, Jameson GB, Baker EN. "Structure of recombinant human lactoferrin expressed in Aspergillus awamori." <em>Acta Crystallogr D Biol Crystallogr</em> 1999;55(Pt 2):403-407. PMID: 10089347. <strong>Confirmed native fold of Aspergillus-produced hLF.</strong></p>
+</li>
+</ol>
+<h3 id="additional-mesh-anchors-for-connectivity-not-exhaustively-annotated">Additional MeSH anchors (for connectivity, not exhaustively annotated)<a class="headerlink" href="#additional-mesh-anchors-for-connectivity-not-exhaustively-annotated" title="Permanent link">&para;</a></h3>
+<ol>
+<li>MaR1 / LGR6 biology: additional 2020-2025 papers including PMIDs 40516692, 40139646, 38718314 (LGR6 receptor validation and follow-on).</li>
+<li>GPR37 / protectin biology: PMID 40287118 and related 2020-2025 GPR37 ligand-identification literature.</li>
+<li>GPR18 / RvD2 macrophage biology: PMIDs 40759181, 39490925, 39320982, 38608525, 38498346 (ongoing receptor-function studies).</li>
+<li>Huang et al. 2024 (PMID 38235898) — Mendelian randomization linking DHA to lower circulating TNFSF14; cross-link at <a href="../tnfsf14-gout-target/">tnfsf14-gout-target.md</a>.</li>
+<li>Fish oil → plasma SPM dose-response in humans: PMIDs 38778807, 38003333, 37488250 (recent randomized and observational data).</li>
+</ol>
+<h3 id="regulatory-pharma-development">Regulatory / pharma development<a class="headerlink" href="#regulatory-pharma-development" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>BMS-986235 (Bristol-Myers Squibb) — small-molecule ALX/FPR2 agonist; Phase 2 in heart failure; ClinicalTrials.gov records 2022-2024. Validates ALX/FPR2 as a pharmacologically-tractable target.</p>
+</li>
+<li>
+<p>SPM Active (Metagenics) — commercial SPM precursor supplement, standardized to 17-HDHA, 18-HEPE, 14-HDHA. Supplement-grade; no FDA drug approval; modest clinical evidence in chronic pain and post-surgical recovery; no gout-specific data.</p>
+</li>
+</ol>
+<hr />
+<p><em>This page is part of the Open Enzyme research library. Phase 0 — Research and Design. No claims in this document constitute medical advice. All therapeutic discussion is research-stage. Citation attribution per PubMed terms of use — all DOIs included inline.</em></p>
 
 
 

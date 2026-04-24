@@ -2053,6 +2053,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#experiment-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment Queue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#phase-1-in-vitro-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2131,10 +2142,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#17-nlrp3-inflammasome-pathway-validation" class="md-nav__link">
+  <a href="#17-nlrp3-inflammasome-pathway-validation-thp-1-msu-macrophage-assay" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.7 NLRP3 Inflammasome Pathway Validation
+        1.7 NLRP3 Inflammasome Pathway Validation (THP-1 MSU Macrophage Assay)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8 EGCG Dose-Escalation on MSU-Stimulated THP-1: TNFSF14-Induced IL-6 Readout (CP1a)
       
     </span>
   </a>
@@ -2279,6 +2301,50 @@
     <span class="md-ellipsis">
       
         3.5 Biomarker Tracking: Long-term Flare Prevention (Brian, 6-month extension)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-brian-urinary-ltb4-assay-validating-quercetins-5-lox-cp6a-mechanism-in-vivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Brian: Urinary LTB4 Assay — Validating Quercetin's 5-LOX (CP6a) Mechanism In Vivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-brian-serum-c5a-baseline-week-12-validating-cp0-complement-priming-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Brian: Serum C5a Baseline + Week 12 — Validating CP0 Complement Priming Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-brian-dha-vs-epa-split-omega-3-crossover-resolving-the-gout-specific-spm-precursor-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8 Brian: DHA vs. EPA Split Omega-3 Crossover — Resolving the Gout-Specific SPM Precursor Question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#39-brian-zileuton-off-label-trial-pharma-grade-cp6a-inhibition-in-flare-prevention-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.9 Brian: Zileuton Off-Label Trial — Pharma-Grade CP6a Inhibition in Flare-Prevention Protocol
       
     </span>
   </a>
@@ -2549,10 +2615,235 @@
 
 <h1 id="validation-experiments">Validation Experiments<a class="headerlink" href="#validation-experiments" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>A comprehensive map of all proposed experiments for the Open Enzyme project, organized by phase and documented across all research documents. Each experiment includes its purpose, proposing source, estimated timeline/cost, and dependencies.</p>
+<p>Single-source consolidated experiment library for the Open Enzyme project. The navigable queue/dashboard lives immediately below this overview; full protocols (purpose, protocol, cost, timeline, dependencies, success criteria) follow in the phase sections.</p>
+<p>As of 2026-04-24 this is the authoritative experiments file — earlier ambiguity about a separate <code>experiments.md</code> has been resolved, and all content lives here. The sweep daemon and human editors update this page in place.</p>
+<hr />
+<h2 id="experiment-queue">Experiment Queue<a class="headerlink" href="#experiment-queue" title="Permanent link">&para;</a></h2>
+<p>Dashboard view of all 22 experiments in the library. Sorted by phase then ID. Detail lives in the phase sections below — click the ID to jump.</p>
+<p><strong>Status legend:</strong>
+- <strong>Proposed</strong> — no work done yet; in the design/queue stage.
+- <strong>In Progress</strong> — active work underway (wet-lab, self-experiment, or analysis).
+- <strong>Done</strong> — completed with results captured in the protocol section or a referenced wiki page.
+- <strong>Abandoned</strong> — deprioritized or replaced; reason noted inline.</p>
+<p>As of 2026-04-24, all experiments are <strong>Proposed</strong> (Phase 0 — no wet-lab work has been executed yet; self-experiments have not started).</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Category</th>
+<th>Cost</th>
+<th>Weeks</th>
+<th>Status</th>
+<th>Wiki refs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#11-uricase-gene-performance-comparison">§1.1</a></td>
+<td>Uricase gene performance comparison</td>
+<td>In Vitro</td>
+<td>$2,000–3,000</td>
+<td>4–6</td>
+<td>Proposed</td>
+<td><a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../uricase-variant-selection/">uricase-variant-selection</a>, <a href="../uricase/">uricase</a>, <a href="../codon-optimization-expression-cassette/">codon-optimization-expression-cassette</a></td>
+</tr>
+<tr>
+<td><a href="#12-secretion-vs-intracellular-expression">§1.2</a></td>
+<td>Secretion vs. intracellular expression</td>
+<td>In Vitro</td>
+<td>$500–1,000</td>
+<td>2–3</td>
+<td>Proposed</td>
+<td><a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../saccharomyces-cerevisiae/">saccharomyces-cerevisiae</a>, <a href="../gi-survival-prediction/">gi-survival-prediction</a></td>
+</tr>
+<tr>
+<td><a href="#13-uricase-survival-in-beer-fermentation">§1.3</a></td>
+<td>Uricase survival in beer fermentation</td>
+<td>In Vitro</td>
+<td>$200–400</td>
+<td>3–4</td>
+<td>Proposed</td>
+<td><a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../saccharomyces-cerevisiae/">saccharomyces-cerevisiae</a></td>
+</tr>
+<tr>
+<td><a href="#14-uricase-stability-after-drying">§1.4</a></td>
+<td>Uricase stability after drying</td>
+<td>In Vitro</td>
+<td>$300–800</td>
+<td>1–2</td>
+<td>Proposed</td>
+<td><a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../gi-survival-prediction/">gi-survival-prediction</a></td>
+</tr>
+<tr>
+<td><a href="#15-koji-uricase-expression-and-activity">§1.5</a></td>
+<td>Koji uricase expression and activity</td>
+<td>In Vitro</td>
+<td>$1,500–2,500</td>
+<td>4–6</td>
+<td>Proposed</td>
+<td><a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../aspergillus-oryzae/">aspergillus-oryzae</a>, <a href="../koji-construct-design/">koji-construct-design</a>, <a href="../uricase/">uricase</a></td>
+</tr>
+<tr>
+<td><a href="#16-koji-enzyme-stability-at-digestive-ph-and-temperature">§1.6</a></td>
+<td>Koji enzyme stability at digestive pH/temperature</td>
+<td>In Vitro</td>
+<td>$300–600</td>
+<td>1–2</td>
+<td>Proposed</td>
+<td><a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../gi-survival-prediction/">gi-survival-prediction</a>, <a href="../digestive-enzymes/">digestive-enzymes</a></td>
+</tr>
+<tr>
+<td><a href="#17-nlrp3-inflammasome-pathway-validation-thp-1-msu-macrophage-assay">§1.7</a></td>
+<td>NLRP3 pathway validation (THP-1 MSU macrophage)</td>
+<td>In Vitro</td>
+<td>$5,000–8,000</td>
+<td>8–10</td>
+<td>Proposed</td>
+<td><a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen</a>, <a href="../supplements-stack/">supplements-stack</a>, <a href="../egcg/">egcg</a></td>
+</tr>
+<tr>
+<td><a href="#18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a">§1.8</a></td>
+<td>EGCG dose-escalation CP1a readout</td>
+<td>In Vitro</td>
+<td>$500–800</td>
+<td>3–4</td>
+<td>Proposed</td>
+<td><a href="../egcg/">egcg</a>, <a href="../tnfsf14-gout-target/">tnfsf14-gout-target</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a></td>
+</tr>
+<tr>
+<td><a href="#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii">§2.1</a></td>
+<td>Gnotobiotic mouse colonization (S. boulardii)</td>
+<td>Animal</td>
+<td>$5,000–15,000</td>
+<td>8–12</td>
+<td>Proposed</td>
+<td><a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../gut-lumen-sink/">gut-lumen-sink</a>, <a href="../team/">team</a></td>
+</tr>
+<tr>
+<td><a href="#22-hyperuricemic-rat-model-engineered-yeast-efficacy">§2.2</a></td>
+<td>Hyperuricemic rat model (yeast efficacy)</td>
+<td>Animal</td>
+<td>$8,000–12,000</td>
+<td>6–8</td>
+<td>Proposed</td>
+<td><a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../gout-deep-dive/">gout-deep-dive</a>, <a href="../uricase/">uricase</a></td>
+</tr>
+<tr>
+<td><a href="#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model">§2.3</a></td>
+<td>Engineered koji EPI model</td>
+<td>Animal</td>
+<td>$6,000–10,000</td>
+<td>8–10</td>
+<td>Proposed</td>
+<td><a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../digestive-enzymes/">digestive-enzymes</a>, <a href="../enzyme-deficit-deep-dive/">enzyme-deficit-deep-dive</a></td>
+</tr>
+<tr>
+<td><a href="#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model">§2.4</a></td>
+<td>NLRP3 inhibition in MSU arthritis model</td>
+<td>Animal</td>
+<td>$10,000–15,000</td>
+<td>10–12</td>
+<td>Proposed</td>
+<td><a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../nlrp3-inflammasome/">nlrp3-inflammasome</a>, <a href="../gout-deep-dive/">gout-deep-dive</a>, <a href="../supplements-stack/">supplements-stack</a></td>
+</tr>
+<tr>
+<td><a href="#25-pulse-probiotic-validation-in-hyperuricemic-mice">§2.5</a></td>
+<td>PULSE probiotic validation (hyperuricemic mice)</td>
+<td>Animal</td>
+<td>$5,000–8,000</td>
+<td>8</td>
+<td>Proposed</td>
+<td><a href="../gout-deep-dive/">gout-deep-dive</a>, <a href="../gout-clinical-pipeline/">gout-clinical-pipeline</a>, <a href="../gut-lumen-sink/">gut-lumen-sink</a></td>
+</tr>
+<tr>
+<td><a href="#31-brian-engineered-yeast-uricase--serum-uric-acid--flare-tracking">§3.1</a></td>
+<td>Brian: engineered yeast uricase tracking</td>
+<td>Human</td>
+<td>$200–400</td>
+<td>20</td>
+<td>Proposed</td>
+<td><a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a>, <a href="../open-enzyme-vision/">open-enzyme-vision</a></td>
+</tr>
+<tr>
+<td><a href="#32-brian-nlrp3-inflammasome-suppression-stack--biomarker-panel">§3.2</a></td>
+<td>Brian: NLRP3 suppression stack biomarker panel</td>
+<td>Human</td>
+<td>$700–1,400</td>
+<td>20</td>
+<td>Proposed</td>
+<td><a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../supplements-stack/">supplements-stack</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a>, <a href="../open-enzyme-vision/">open-enzyme-vision</a></td>
+</tr>
+<tr>
+<td><a href="#33-lynn-wild-type-koji-digestive-enzyme-supplementation">§3.3</a></td>
+<td>Lynn: wild-type koji digestive enzyme trial</td>
+<td>Human</td>
+<td>$600–1,000</td>
+<td>12</td>
+<td>Proposed</td>
+<td><a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../digestive-enzymes/">digestive-enzymes</a>, <a href="../sibo/">sibo</a>, <a href="../open-enzyme-vision/">open-enzyme-vision</a></td>
+</tr>
+<tr>
+<td><a href="#34-joint-trial-engineered-koji-both-users">§3.4</a></td>
+<td>Joint trial: engineered koji (both users)</td>
+<td>Human</td>
+<td>$300–500</td>
+<td>14</td>
+<td>Proposed</td>
+<td><a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../open-enzyme-vision/">open-enzyme-vision</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a></td>
+</tr>
+<tr>
+<td><a href="#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension">§3.5</a></td>
+<td>Long-term flare prevention (Brian, 6-mo extension)</td>
+<td>Human</td>
+<td>$400–600</td>
+<td>26</td>
+<td>Proposed</td>
+<td><a href="../open-enzyme-vision/">open-enzyme-vision</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a>, <a href="../gout-deep-dive/">gout-deep-dive</a></td>
+</tr>
+<tr>
+<td><a href="#36-brian-urinary-ltb4-assay--validating-quercetins-5-lox-cp6a-mechanism-in-vivo">§3.6</a></td>
+<td>Brian: urinary LTB4 (quercetin CP6a in vivo)</td>
+<td>Human</td>
+<td>$150–300</td>
+<td>12</td>
+<td>Proposed</td>
+<td><a href="../self-experiment-protocol/">self-experiment-protocol</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen</a>, <a href="../synthesis/">synthesis</a></td>
+</tr>
+<tr>
+<td><a href="#37-brian-serum-c5a-baseline--week-12--validating-cp0-complement-priming-status">§3.7</a></td>
+<td>Brian: serum C5a baseline + week 12 (CP0)</td>
+<td>Human</td>
+<td>$300–400</td>
+<td>12</td>
+<td>Proposed</td>
+<td><a href="../complement-c5a-gout/">complement-c5a-gout</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a></td>
+</tr>
+<tr>
+<td><a href="#38-brian-dha-vs-epa-split-omega-3-crossover--resolving-the-gout-specific-spm-precursor-question">§3.8</a></td>
+<td>Brian: DHA vs. EPA omega-3 crossover</td>
+<td>Human</td>
+<td>$550–700</td>
+<td>9</td>
+<td>Proposed</td>
+<td><a href="../spm-resolution-pathway/">spm-resolution-pathway</a>, <a href="../supplements-stack/">supplements-stack</a>, <a href="../tnfsf14-gout-target/">tnfsf14-gout-target</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a></td>
+</tr>
+<tr>
+<td><a href="#39-brian-zileuton-off-label-trial--pharma-grade-cp6a-inhibition-in-flare-prevention-protocol">§3.9</a></td>
+<td>Brian: zileuton off-label CP6a trial</td>
+<td>Human</td>
+<td>~$500</td>
+<td>16</td>
+<td>Proposed</td>
+<td><a href="../zileuton/">zileuton</a>, <a href="../gout-clinical-pipeline/">gout-clinical-pipeline</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a></td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="phase-1-in-vitro-validation">Phase 1: In Vitro Validation<a class="headerlink" href="#phase-1-in-vitro-validation" title="Permanent link">&para;</a></h2>
 <h3 id="11-uricase-gene-performance-comparison">1.1 Uricase Gene Performance Comparison<a class="headerlink" href="#11-uricase-gene-performance-comparison" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $2,000–3,000 | <strong>Weeks</strong>: 4–6 | <strong>Phase</strong>: 1</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../uricase-variant-selection/">uricase-variant-selection</a>, <a href="../uricase/">uricase</a>, <a href="../codon-optimization-expression-cassette/">codon-optimization-expression-cassette</a></p>
 <p><strong>What it tests:</strong> Which uricase gene (Aspergillus flavus, Candida utilis, or Vibrio vulnificus) performs best in S. cerevisiae?</p>
 <p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§3)</p>
 <p><strong>Protocol:</strong>
@@ -2566,6 +2857,8 @@
 <p><strong>Success criteria:</strong> Identify highest-performing gene with &gt;50 μmol/h/OD activity</p>
 <hr />
 <h3 id="12-secretion-vs-intracellular-expression">1.2 Secretion vs. Intracellular Expression<a class="headerlink" href="#12-secretion-vs-intracellular-expression" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $500–1,000 | <strong>Weeks</strong>: 2–3 | <strong>Phase</strong>: 1</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../saccharomyces-cerevisiae/">saccharomyces-cerevisiae</a>, <a href="../gi-survival-prediction/">gi-survival-prediction</a></p>
 <p><strong>What it tests:</strong> Should uricase be secreted into the medium or retained intracellularly?</p>
 <p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§3)</p>
 <p><strong>Protocol:</strong>
@@ -2581,6 +2874,8 @@
 <p><strong>Success criteria:</strong> Identify format with highest bioavailable uricase in food product context</p>
 <hr />
 <h3 id="13-uricase-survival-in-beer-fermentation">1.3 Uricase Survival in Beer Fermentation<a class="headerlink" href="#13-uricase-survival-in-beer-fermentation" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $200–400 | <strong>Weeks</strong>: 3–4 | <strong>Phase</strong>: 1</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../saccharomyces-cerevisiae/">saccharomyces-cerevisiae</a></p>
 <p><strong>What it tests:</strong> Does uricase remain enzymatically active through beer fermentation?</p>
 <p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§4)</p>
 <p><strong>Protocol:</strong>
@@ -2594,6 +2889,8 @@
 <p><strong>Success criteria:</strong> Retain &gt;30% activity through bottling (lower indicates degradation during fermentation)</p>
 <hr />
 <h3 id="14-uricase-stability-after-drying">1.4 Uricase Stability After Drying<a class="headerlink" href="#14-uricase-stability-after-drying" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $300–800 | <strong>Weeks</strong>: 1–2 | <strong>Phase</strong>: 1</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../gi-survival-prediction/">gi-survival-prediction</a></p>
 <p><strong>What it tests:</strong> Can uricase survive lyophilization or heat drying for a shelf-stable product?</p>
 <p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§4)</p>
 <p><strong>Protocol:</strong>
@@ -2610,6 +2907,8 @@
 <p><strong>Success criteria:</strong> &gt;40% activity retained via lyophilization for capsule formulation viability</p>
 <hr />
 <h3 id="15-koji-uricase-expression-and-activity">1.5 Koji Uricase Expression and Activity<a class="headerlink" href="#15-koji-uricase-expression-and-activity" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $1,500–2,500 | <strong>Weeks</strong>: 4–6 | <strong>Phase</strong>: 1</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../aspergillus-oryzae/">aspergillus-oryzae</a>, <a href="../koji-construct-design/">koji-construct-design</a>, <a href="../uricase/">uricase</a></p>
 <p><strong>What it tests:</strong> Can A. flavus uricase gene express functionally in A. oryzae?</p>
 <p><strong>Proposed in:</strong> engineered-koji-protocol.md (§3, §5)</p>
 <p><strong>Protocol:</strong>
@@ -2623,6 +2922,8 @@
 <p><strong>Success criteria:</strong> &gt;20 μmol/h/OD activity; enzyme properly secreted into rice substrate</p>
 <hr />
 <h3 id="16-koji-enzyme-stability-at-digestive-ph-and-temperature">1.6 Koji Enzyme Stability at Digestive pH and Temperature<a class="headerlink" href="#16-koji-enzyme-stability-at-digestive-ph-and-temperature" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $300–600 | <strong>Weeks</strong>: 1–2 | <strong>Phase</strong>: 1</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../gi-survival-prediction/">gi-survival-prediction</a>, <a href="../digestive-enzymes/">digestive-enzymes</a></p>
 <p><strong>What it tests:</strong> Does koji-produced uricase survive gastric and duodenal conditions?</p>
 <p><strong>Proposed in:</strong> engineered-koji-protocol.md (§6)</p>
 <p><strong>Protocol:</strong>
@@ -2636,23 +2937,62 @@
 <p><strong>Dependencies:</strong> Requires koji strain from 1.5</p>
 <p><strong>Success criteria:</strong> Retain &gt;20% activity after duodenal transit (similar to ALLN-346 engineering target)</p>
 <hr />
-<h3 id="17-nlrp3-inflammasome-pathway-validation">1.7 NLRP3 Inflammasome Pathway Validation<a class="headerlink" href="#17-nlrp3-inflammasome-pathway-validation" title="Permanent link">&para;</a></h3>
+<h3 id="17-nlrp3-inflammasome-pathway-validation-thp-1-msu-macrophage-assay">1.7 NLRP3 Inflammasome Pathway Validation (THP-1 MSU Macrophage Assay)<a class="headerlink" href="#17-nlrp3-inflammasome-pathway-validation-thp-1-msu-macrophage-assay" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $5,000–8,000 | <strong>Weeks</strong>: 8–10 | <strong>Phase</strong>: 1</p>
+<p><strong>Affected wiki</strong>: <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen</a>, <a href="../supplements-stack/">supplements-stack</a>, <a href="../egcg/">egcg</a></p>
 <p><strong>What it tests:</strong> Do proposed compounds in the [[supplements-stack]] actually inhibit NLRP3 at stated chokepoints?</p>
 <p><strong>Proposed in:</strong> nlrp3-exploit-map.md, gout-deep-dive.md</p>
 <p><strong>Protocol:</strong>
-- Use macrophage cell line (THP-1 or primary mouse macrophages)
+- Use macrophage cell line (<strong>THP-1 differentiated with PMA</strong> preferred over primary mouse macrophages — the species-gap caveat in <a href="../supplements-stack/">supplements-stack.md</a> makes human cells mandatory for translation)
 - Prime with LPS (Signal 1: NF-κB priming)
 - Expose to MSU crystals (NLRP3 trigger)
-- Treat with individual compounds (BHB, oridonin, sulforaphane, KPV, etc.)
-- Measure endpoint: IL-1β secretion (ELISA), caspase-1 activity, ASC specks (fluorescence)
+- Treat with individual compounds and read out in parallel
+- Measure endpoints: IL-1β secretion (ELISA), caspase-1 activity, ASC specks (fluorescence), <strong>IκBα retention (Western — mechanistic readout for proteasome-pathway inhibitors)</strong>
 - Compare dose-response and mechanistic target (which chokepoint affected)</p>
-<p><strong>Estimated cost:</strong> $3,000–5,000 (cell culture, cytokines, assay kits)</p>
-<p><strong>Estimated timeline:</strong> 6–8 weeks</p>
+<p><strong>Priority compounds (ordered by information value of the specific mechanistic claim being tested):</strong></p>
+<ul>
+<li><strong>EGCG — highest-priority single-compound assay.</strong> The mechanistic claim in <a href="../egcg/">egcg.md</a> (proteasome inhibition → IκBα stabilization → unified CP1 + CP1a + CP4 + CP5a coverage) is specific and testable. Readouts: IL-1β ELISA + <strong>Western for IκBα retention</strong> + TNFSF14-induced IL-6 in HGF co-culture (tests CP1a). If the proteasome mechanism is correct, EGCG should show a steeper dose-response than quercetin or ursolic acid at equimolar concentrations, and IκBα retention should track the proteasome IC50 (86 nM cellular) rather than the reported IKK IC50 (≥10 μM). Phytosome-formulated EGCG recommended alongside free EGCG to test the bioavailability-gated translation question. This brings a falsifiable mechanistic claim to a format that can actually falsify it.</li>
+<li><strong>Oridonin</strong> — direct NLRP3 NACHT Cys279 covalent binder; 5.18 μM human THP-1 IC50 per ChEMBL. Tests whether the curated human IC50 replicates in our hands.</li>
+<li><strong>BHB</strong> — tests direct NLRP3 K⁺-efflux-block mechanism; straightforward positive-control-class compound.</li>
+<li><strong>Sulforaphane</strong> — Nrf2 activator; tests whether the Nrf2/NF-κB crosstalk mechanism translates to MSU-triggered cells at achievable sub-μM doses.</li>
+<li><strong>Quercetin</strong> — now primarily a CP6a (5-LOX) compound; tests whether the weaker NF-κB/NLRP3 claim holds at μM concentrations.</li>
+<li><strong>Carnosine + Lactoferrin</strong> — unique mechanism classes (dual UA/NLRP3 and CP5 GSDMD-axis respectively); tests whether the rat/murine evidence translates to human THP-1.</li>
+</ul>
+<p><strong>Estimated cost:</strong> $5,000–8,000 (cell culture, cytokines, assay kits, Western reagents, compound panel)</p>
+<p><strong>Estimated timeline:</strong> 8–10 weeks (larger compound panel than original scope)</p>
 <p><strong>Dependencies:</strong> None</p>
-<p><strong>Success criteria:</strong> Confirm &gt;50% IL-1β reduction at stated compound doses; validate chokepoint targets</p>
+<p><strong>Success criteria:</strong> 
+- Confirm &gt;50% IL-1β reduction at stated compound doses; validate chokepoint targets
+- <strong>EGCG-specific:</strong> dose-response for IκBα retention tracks the 86 nM proteasome IC50 (falsifies or confirms the proteasome-pathway reframe); dose-response is steeper than quercetin at equimolar (confirms mechanistic difference between direct-proteasome and NF-κB-pathway-modulator compounds)</p>
+<hr />
+<h3 id="18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a">1.8 EGCG Dose-Escalation on MSU-Stimulated THP-1: TNFSF14-Induced IL-6 Readout (CP1a)<a class="headerlink" href="#18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $500–800 | <strong>Weeks</strong>: 3–4 | <strong>Phase</strong>: 1</p>
+<p><strong>Affected wiki</strong>: <a href="../egcg/">egcg</a>, <a href="../tnfsf14-gout-target/">tnfsf14-gout-target</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a></p>
+<p><strong>What it tests:</strong> Does EGCG suppress TNFSF14-induced IL-6 in a gout-relevant cell model at sub-μM concentrations — the specific CP1a readout that would validate EGCG's multi-chokepoint coverage story?</p>
+<p><strong>Proposed in:</strong> <code>wiki/synthesis.md</code> 2026-04-24 Pass 2 Proposed Experiments #3; complements Experiment 1.7 (NLRP3 pathway validation) with a TNFSF14-specific readout.</p>
+<p><strong>Protocol:</strong>
+- THP-1 monocytes differentiated to macrophages with PMA (25 ng/mL, 24h, then rest 24h)
+- Prime with LPS (10 ng/mL, 4h — Signal 1)
+- Expose to MSU crystals (100 μg/mL, 6h — Signal 2)
+- Add recombinant TNFSF14/LIGHT (100 ng/mL, 16h) to stimulate the CP1a axis specifically
+- Treat with EGCG dose-escalation: 10 nM, 30 nM, 100 nM, 300 nM, 1 μM, 3 μM, 10 μM (spans the 86 nM proteasome IC50)
+- Positive control: bortezomib (proteasome inhibitor, orthogonal mechanism)
+- Negative control: DMSO vehicle
+- Primary readout: IL-6 in supernatant (ELISA)
+- Secondary readouts: IL-1β (ELISA), IκBα retention (Western blot), HVEM receptor surface expression (flow cytometry)</p>
+<p><strong>Estimated cost:</strong> $500-800 (THP-1 cells, PMA, LPS, MSU, recombinant TNFSF14, EGCG, ELISA kits for IL-6 and IL-1β, Western reagents)</p>
+<p><strong>Estimated timeline:</strong> 3-4 weeks (cell differentiation, assay, readouts)</p>
+<p><strong>Dependencies:</strong> None (can run in parallel with 1.7, or as a focused follow-up)</p>
+<p><strong>Success criteria:</strong>
+- IL-6 suppression ≥50% at EGCG ≤1 μM (confirms CP1a activity at achievable concentrations)
+- Dose-response for IκBα retention tracks the 86 nM proteasome IC50 (falsifies or confirms the proteasome-pathway reframe of EGCG's mechanism)
+- HVEM downregulation at EGCG ≤1 μM (replicates Hosokawa 2010 HGF finding in a macrophage lineage)</p>
+<p><strong>Cross-references:</strong> <code>wiki/egcg.md</code> (mechanistic reframe), <code>wiki/tnfsf14-gout-target.md</code> (CP1a chokepoint), <code>wiki/nlrp3-exploit-map.md</code> (CP1a entry)</p>
 <hr />
 <h2 id="phase-2-animal-model-validation">Phase 2: Animal Model Validation<a class="headerlink" href="#phase-2-animal-model-validation" title="Permanent link">&para;</a></h2>
 <h3 id="21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii">2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii<a class="headerlink" href="#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $5,000–15,000 | <strong>Weeks</strong>: 8–12 | <strong>Phase</strong>: 2</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../gut-lumen-sink/">gut-lumen-sink</a>, <a href="../team/">team</a></p>
 <p><strong>What it tests:</strong> Can engineered probiotic yeast survive and function in the mouse gut? What dosing is needed?</p>
 <p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§4.d)</p>
 <p><strong>Protocol:</strong>
@@ -2673,6 +3013,8 @@
 - Reduce serum uric acid by ≥20% vs. controls</p>
 <hr />
 <h3 id="22-hyperuricemic-rat-model-engineered-yeast-efficacy">2.2 Hyperuricemic Rat Model: Engineered Yeast Efficacy<a class="headerlink" href="#22-hyperuricemic-rat-model-engineered-yeast-efficacy" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $8,000–12,000 | <strong>Weeks</strong>: 6–8 | <strong>Phase</strong>: 2</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../gout-deep-dive/">gout-deep-dive</a>, <a href="../uricase/">uricase</a></p>
 <p><strong>What it tests:</strong> Does oral administration of engineered yeast reduce systemic uric acid in a whole-organism model?</p>
 <p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§5)</p>
 <p><strong>Protocol:</strong>
@@ -2693,6 +3035,8 @@
 - Non-inferior to allopurinol in serum uric acid reduction</p>
 <hr />
 <h3 id="23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model">2.3 Engineered Koji Efficacy in Digestive Enzyme-Deficient Model<a class="headerlink" href="#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $6,000–10,000 | <strong>Weeks</strong>: 8–10 | <strong>Phase</strong>: 2</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../digestive-enzymes/">digestive-enzymes</a>, <a href="../enzyme-deficit-deep-dive/">enzyme-deficit-deep-dive</a></p>
 <p><strong>What it tests:</strong> Does engineered koji effectively supplement digestive enzymes in vivo?</p>
 <p><strong>Proposed in:</strong> engineered-koji-protocol.md</p>
 <p><strong>Protocol:</strong>
@@ -2712,6 +3056,8 @@
 - Non-inferior to commercial enzyme supplement</p>
 <hr />
 <h3 id="24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model">2.4 NLRP3 Inflammasome Inhibition in MSU Crystal Arthritis Model<a class="headerlink" href="#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $10,000–15,000 | <strong>Weeks</strong>: 10–12 | <strong>Phase</strong>: 2</p>
+<p><strong>Affected wiki</strong>: <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../nlrp3-inflammasome/">nlrp3-inflammasome</a>, <a href="../gout-deep-dive/">gout-deep-dive</a>, <a href="../supplements-stack/">supplements-stack</a></p>
 <p><strong>What it tests:</strong> Do proposed NLRP3 inhibitor compounds reduce gout flare severity in vivo?</p>
 <p><strong>Proposed in:</strong> nlrp3-exploit-map.md, gout-deep-dive.md</p>
 <p><strong>Protocol:</strong>
@@ -2736,6 +3082,8 @@
 - Reduce neutrophil infiltration by ≥30% vs. vehicle</p>
 <hr />
 <h3 id="25-pulse-probiotic-validation-in-hyperuricemic-mice">2.5 PULSE Probiotic Validation in Hyperuricemic Mice<a class="headerlink" href="#25-pulse-probiotic-validation-in-hyperuricemic-mice" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $5,000–8,000 | <strong>Weeks</strong>: 8 | <strong>Phase</strong>: 2</p>
+<p><strong>Affected wiki</strong>: <a href="../gout-deep-dive/">gout-deep-dive</a>, <a href="../gout-clinical-pipeline/">gout-clinical-pipeline</a>, <a href="../gut-lumen-sink/">gut-lumen-sink</a></p>
 <p><strong>What it tests:</strong> Can PULSE system (urate-responsive engineered E. coli) maintain uric acid homeostasis?</p>
 <p><strong>Proposed in:</strong> gout-deep-dive.md (Section 8)</p>
 <p><strong>Protocol:</strong>
@@ -2757,6 +3105,8 @@
 <hr />
 <h2 id="phase-3-human-self-experimentation-and-biomarker-tracking">Phase 3: Human Self-Experimentation and Biomarker Tracking<a class="headerlink" href="#phase-3-human-self-experimentation-and-biomarker-tracking" title="Permanent link">&para;</a></h2>
 <h3 id="31-brian-engineered-yeast-uricase-serum-uric-acid-flare-tracking">3.1 Brian: Engineered Yeast Uricase — Serum Uric Acid &amp; Flare Tracking<a class="headerlink" href="#31-brian-engineered-yeast-uricase-serum-uric-acid-flare-tracking" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $200–400 | <strong>Weeks</strong>: 20 | <strong>Phase</strong>: 3</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a>, <a href="../open-enzyme-vision/">open-enzyme-vision</a></p>
 <p><strong>What it tests:</strong> Does daily oral engineered yeast reduce serum uric acid and gout flare frequency in the primary user?</p>
 <p><strong>Proposed in:</strong> engineered-yeast-uricase-proposal.md (§5), open-enzyme-vision.md (§8)</p>
 <p><strong>Protocol:</strong>
@@ -2780,6 +3130,8 @@
 - No adverse events</p>
 <hr />
 <h3 id="32-brian-nlrp3-inflammasome-suppression-stack-biomarker-panel">3.2 Brian: NLRP3 Inflammasome Suppression Stack — Biomarker Panel<a class="headerlink" href="#32-brian-nlrp3-inflammasome-suppression-stack-biomarker-panel" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $700–1,400 | <strong>Weeks</strong>: 20 | <strong>Phase</strong>: 3</p>
+<p><strong>Affected wiki</strong>: <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../supplements-stack/">supplements-stack</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a>, <a href="../open-enzyme-vision/">open-enzyme-vision</a></p>
 <p><strong>What it tests:</strong> Does the multi-compound NLRP3 stack reduce inflammatory markers and flare severity?</p>
 <p><strong>Proposed in:</strong> nlrp3-exploit-map.md, open-enzyme-vision.md (§9)</p>
 <p><strong>Protocol:</strong>
@@ -2805,6 +3157,8 @@
 - Reduce flare frequency by ≥40% vs. baseline</p>
 <hr />
 <h3 id="33-lynn-wild-type-koji-digestive-enzyme-supplementation">3.3 Lynn: Wild-Type Koji Digestive Enzyme Supplementation<a class="headerlink" href="#33-lynn-wild-type-koji-digestive-enzyme-supplementation" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $600–1,000 | <strong>Weeks</strong>: 12 | <strong>Phase</strong>: 3</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../digestive-enzymes/">digestive-enzymes</a>, <a href="../sibo/">sibo</a>, <a href="../open-enzyme-vision/">open-enzyme-vision</a></p>
 <p><strong>What it tests:</strong> Does traditional koji effectively supplement digestive enzymes in EPI/SIBO?</p>
 <p><strong>Proposed in:</strong> engineered-koji-protocol.md, open-enzyme-vision.md (§4)</p>
 <p><strong>Protocol:</strong>
@@ -2829,6 +3183,8 @@
 - Reduce fecal calprotectin by ≥30% (if elevated at baseline)</p>
 <hr />
 <h3 id="34-joint-trial-engineered-koji-both-users">3.4 Joint Trial: Engineered Koji (Both Users)<a class="headerlink" href="#34-joint-trial-engineered-koji-both-users" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $300–500 | <strong>Weeks</strong>: 14 | <strong>Phase</strong>: 3</p>
+<p><strong>Affected wiki</strong>: <a href="../engineered-koji-protocol/">engineered-koji-protocol</a>, <a href="../open-enzyme-vision/">open-enzyme-vision</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a></p>
 <p><strong>What it tests:</strong> Does engineered koji providing both digestive enzymes and uricase work as a dual-purpose therapeutic food?</p>
 <p><strong>Proposed in:</strong> engineered-koji-protocol.md, open-enzyme-vision.md (§4, dual-enzyme vision)</p>
 <p><strong>Protocol:</strong>
@@ -2856,6 +3212,8 @@
 - No safety signals in 12-week course</p>
 <hr />
 <h3 id="35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension">3.5 Biomarker Tracking: Long-term Flare Prevention (Brian, 6-month extension)<a class="headerlink" href="#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $400–600 | <strong>Weeks</strong>: 26 | <strong>Phase</strong>: 3</p>
+<p><strong>Affected wiki</strong>: <a href="../open-enzyme-vision/">open-enzyme-vision</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a>, <a href="../gout-deep-dive/">gout-deep-dive</a></p>
 <p><strong>What it tests:</strong> Does uricase supplementation provide sustained reduction in gout flares?</p>
 <p><strong>Proposed in:</strong> open-enzyme-vision.md (§8)</p>
 <p><strong>Protocol:</strong>
@@ -2874,6 +3232,106 @@
 - Maintain ≥40% reduction in flare frequency from baseline
 - No tophi growth; ideally small reduction in tophi size
 - Continued &gt;80% adherence</p>
+<hr />
+<h3 id="36-brian-urinary-ltb4-assay-validating-quercetins-5-lox-cp6a-mechanism-in-vivo">3.6 Brian: Urinary LTB4 Assay — Validating Quercetin's 5-LOX (CP6a) Mechanism In Vivo<a class="headerlink" href="#36-brian-urinary-ltb4-assay-validating-quercetins-5-lox-cp6a-mechanism-in-vivo" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $150–300 | <strong>Weeks</strong>: 12 | <strong>Phase</strong>: 3</p>
+<p><strong>Affected wiki</strong>: <a href="../self-experiment-protocol/">self-experiment-protocol</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen</a>, <a href="../synthesis/">synthesis</a></p>
+<p><strong>What it tests:</strong> Does the current supplement stack suppress 5-LOX/LTB4 activity in vivo in Brian specifically? This directly validates quercetin's CP6a mechanism (5-LOX IC50 = 300 nM from ChEMBL, now the stack's most potent curated 5-LOX activity) as the operative mechanism — rather than its weaker NF-κB/NLRP3 effects that currently dominate the stack rationale.</p>
+<p><strong>Proposed in:</strong> <code>wiki/synthesis.md</code> 2026-04-24 Pass 2 Proposed Experiment #1 and New Connection #3. Brian's 2026-04-24 annotation: "do it. also, i have recent extensive labs that i can add to the project."</p>
+<p><strong>Protocol:</strong>
+- Add urinary LTB4 assay to existing self-experiment timepoints in <a href="../self-experiment-protocol/">self-experiment-protocol.md</a>: <strong>baseline, week 4, week 12</strong> (three measurements total).
+- Collect first-morning urine (~20 mL), freeze at -80°C until shipment (standard for eicosanoid stability).
+- Ship to a commercial lab offering LTB4 ELISA or LC-MS/MS (e.g., Cayman Chemical assay kit format via CLIA lab, or direct Mayo Clinic / ARUP specialty testing).
+- No additional study visit required — piggybacks on the existing self-experiment draw schedule.
+- Compare with hs-CRP and urate trajectories at the same timepoints to separate "stack is working" (hs-CRP drop) from "stack is working via CP6a" (urinary LTB4 drop).</p>
+<p><strong>Estimated cost:</strong> $50-100 per assay × 3 timepoints = <strong>$150-300 total</strong></p>
+<p><strong>Estimated timeline:</strong> No additional study time — piggybacks on the existing 12-week self-experiment. Results available ~2 weeks after each draw.</p>
+<p><strong>Dependencies:</strong> Existing self-experiment infrastructure (<code>wiki/self-experiment-protocol.md</code>). No new study visits or logistics beyond adding a urine collection to existing draws.</p>
+<p><strong>Success criteria:</strong>
+- Measurable baseline urinary LTB4 (confirms the assay is sensitive at Brian's baseline state)
+- ≥30% reduction at week 4 or week 12 relative to baseline → suggests CP6a engagement in vivo
+- No change in LTB4 despite hs-CRP improvement → suggests stack effect is via other chokepoints (NF-κB, NLRP3 assembly), not 5-LOX</p>
+<p><strong>Cross-references:</strong> <code>wiki/self-experiment-protocol.md</code> (baseline/week 4/week 12 timepoints), <code>wiki/nlrp3-exploit-map.md</code> (CP6a), <code>wiki/nlrp3-inhibitor-screen.md</code> (quercetin 5-LOX IC50 = 300 nM)</p>
+<hr />
+<h3 id="37-brian-serum-c5a-baseline-week-12-validating-cp0-complement-priming-status">3.7 Brian: Serum C5a Baseline + Week 12 — Validating CP0 Complement Priming Status<a class="headerlink" href="#37-brian-serum-c5a-baseline-week-12-validating-cp0-complement-priming-status" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $300–400 | <strong>Weeks</strong>: 12 | <strong>Phase</strong>: 3</p>
+<p><strong>Affected wiki</strong>: <a href="../complement-c5a-gout/">complement-c5a-gout</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a></p>
+<p><strong>What it tests:</strong> Documents complement priming status (C5a, the dominant NLRP3 priming signal per Cumpelik 2016 PMID 26245757 + Khameneh 2017 PMID 28167912) before and after the 12-week supplement stack. The stack currently covers CP1-CP5a but not CP0 — this experiment tests whether it modulates complement at all, and establishes a baseline for future CP0-targeted interventions (e.g., avacopan, flavonoid C5aR1 antagonists per <code>wiki/complement-c5a-gout.md</code>).</p>
+<p><strong>Proposed in:</strong> <code>wiki/synthesis.md</code> 2026-04-24 Pass 2 Proposed Experiment #2 and New Connection #3.</p>
+<p><strong>Protocol:</strong>
+- Add serum C5a to the baseline and week 12 blood panels in <code>wiki/self-experiment-protocol.md</code>.
+- Alternative marker: <strong>sC5b-9</strong> (soluble terminal complement complex) — often more stable in serum than free C5a and available on standard commercial panels.
+- LabCorp (Complement C5a by enzyme immunoassay, test code 142046) or Quest (sC5b-9 panel) both offer this as a routine specialty test with physician order.
+- No new study visit — piggybacks on the already-planned week 0 and week 12 draws.
+- Cross-reference with CBC, urate, hs-CRP at the same timepoints.</p>
+<p><strong>Estimated cost:</strong> $150-200 per C5a or sC5b-9 test × 2 timepoints = <strong>$300-400 total</strong></p>
+<p><strong>Estimated timeline:</strong> No additional study time. Results available ~1 week after draw.</p>
+<p><strong>Dependencies:</strong> Existing self-experiment infrastructure; rheumatologist or primary-care order for the specialty test.</p>
+<p><strong>Success criteria:</strong>
+- Measurable baseline C5a (confirms assay sensitivity; establishes whether Brian is a "high-complement-priming" or "low-complement-priming" gout patient — relevant for stack design)
+- <strong>Predicted: minimal change at week 12</strong>, since the stack doesn't cover CP0. This is a negative-control-type experiment: if C5a drops significantly, that tells us something unexpected is happening and CP0 is engaged. If C5a doesn't change, that validates the wiki's claim that CP0 is an uncovered chokepoint needing dedicated interventions.
+- Either result informs next-phase stack design.</p>
+<p><strong>Cross-references:</strong> <code>wiki/self-experiment-protocol.md</code> (week 0 and week 12 panels), <code>wiki/complement-c5a-gout.md</code> (CP0 chokepoint), <code>wiki/nlrp3-exploit-map.md</code> (CP0 entry)</p>
+<hr />
+<h3 id="38-brian-dha-vs-epa-split-omega-3-crossover-resolving-the-gout-specific-spm-precursor-question">3.8 Brian: DHA vs. EPA Split Omega-3 Crossover — Resolving the Gout-Specific SPM Precursor Question<a class="headerlink" href="#38-brian-dha-vs-epa-split-omega-3-crossover-resolving-the-gout-specific-spm-precursor-question" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $550–700 | <strong>Weeks</strong>: 9 | <strong>Phase</strong>: 3</p>
+<p><strong>Affected wiki</strong>: <a href="../spm-resolution-pathway/">spm-resolution-pathway</a>, <a href="../supplements-stack/">supplements-stack</a>, <a href="../tnfsf14-gout-target/">tnfsf14-gout-target</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a></p>
+<p><strong>What it tests:</strong> Is DHA or EPA the optimal omega-3 precursor for gout flare prevention in Brian's specific case? The 2026-04-24 synthesis pass identified a contradiction between the cardiovascular literature (EPA-dominant) and the gout-specific SPM evidence (DHA-derived RvD1 and MaR1 both show direct MSU animal-model efficacy; DHA also inversely associates with circulating TNFSF14/LIGHT per Mendelian randomization). The <code>supplements-stack.md</code> currently recommends 2:1 or 3:1 EPA:DHA for gout, which may be a cardiovascular-biased extrapolation.</p>
+<p><strong>Proposed in:</strong> <code>wiki/synthesis.md</code> 2026-04-24 Pass 2 Proposed Experiment #4 and New Connection #2 ("DHA should be preferentially dosed over EPA for gout").</p>
+<p><strong>Protocol:</strong>
+- <strong>Phase A (4 weeks): High-EPA protocol.</strong> 3 g EPA + 0.5 g DHA daily (≈6:1 ratio — commercial high-EPA omega-3 formulations like Nordic Naturals ProEPA or Minami Platinum-Plus EPA).
+- <strong>Washout (1 week):</strong> No omega-3 supplementation. Continue rest of base stack.
+- <strong>Phase B (4 weeks): High-DHA protocol.</strong> 3 g DHA + 0.5 g EPA daily (≈6:1 ratio DHA-dominant — e.g., Nordic Naturals ProDHA or Life Extension Mega EPA/DHA adjusted by dropping EPA capsules).
+- Biomarkers measured at baseline, end of Phase A, end of washout, end of Phase B:
+  - <strong>Urinary LTB4</strong> (from 3.6 above; tests whether DHA or EPA better suppresses 5-LOX/LTB4 output)
+  - <strong>hs-CRP</strong> (generic inflammation marker)
+  - <strong>Serum SPM panel (RvD1, RvE1, MaR1 metabolites if a CLIA lab offers this — otherwise spot-measure via Cayman Chemical research kit through a lab contact)</strong>
+  - <strong>Gout flare count and severity (daily log)</strong>
+- Washout rationale: 7-day omega-3 washout is short relative to RBC phospholipid half-life (~8 weeks) but sufficient to allow downstream SPM levels to decay. Accept the limitation — n=1 study, not a clinical trial.</p>
+<p><strong>Estimated cost:</strong> $200 (supplement differentials across 9 weeks) + $300 (SPM panel) + $50-100 × 2-3 additional LTB4 assays = <strong>$550-700 total</strong> on top of 3.6</p>
+<p><strong>Estimated timeline:</strong> 9 weeks (4 + 1 + 4), concurrent with the existing self-experiment or as a post-experiment extension.</p>
+<p><strong>Dependencies:</strong>
+- Experiment 3.6 (urinary LTB4 assay infrastructure)
+- Availability of a lab offering SPM metabolite measurement (Mayo Clinic has an eicosanoid panel; research-grade SPM kits from Cayman require a CLIA lab partnership)
+- Brian's flare calendar (existing self-tracking)</p>
+<p><strong>Success criteria:</strong>
+- <strong>Clear directional effect:</strong> one phase (either EPA or DHA) produces lower urinary LTB4, higher serum RvD1 or RvE1, and fewer flares than the other.
+- <strong>Ambiguous result</strong> (both phases similar): the ratio doesn't matter clinically for Brian; revert to a balanced 1:1 or the cheaper formulation.
+- <strong>Directional toward DHA:</strong> revises <code>supplements-stack.md</code> and confirms the 2026-04-24 synthesis recommendation.
+- <strong>Directional toward EPA:</strong> the current stack recommendation was right; synthesis flagged a literature signal that doesn't translate for Brian.</p>
+<p><strong>Cross-references:</strong> <code>wiki/spm-resolution-pathway.md</code> (RvD1/MaR1 DHA-derived), <code>wiki/supplements-stack.md</code> (omega-3 entry, currently EPA-leaning), <code>wiki/self-experiment-protocol.md</code> (integration with the existing protocol), <code>wiki/tnfsf14-gout-target.md</code> (DHA-TNFSF14 Mendelian randomization link), <code>wiki/nlrp3-exploit-map.md</code> (CP5b SPM entry)</p>
+<hr />
+<h3 id="39-brian-zileuton-off-label-trial-pharma-grade-cp6a-inhibition-in-flare-prevention-protocol">3.9 Brian: Zileuton Off-Label Trial — Pharma-Grade CP6a Inhibition in Flare-Prevention Protocol<a class="headerlink" href="#39-brian-zileuton-off-label-trial-pharma-grade-cp6a-inhibition-in-flare-prevention-protocol" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: ~$500 | <strong>Weeks</strong>: 16 | <strong>Phase</strong>: 3</p>
+<p><strong>Affected wiki</strong>: <a href="../zileuton/">zileuton</a>, <a href="../gout-clinical-pipeline/">gout-clinical-pipeline</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a>, <a href="../self-experiment-protocol/">self-experiment-protocol</a></p>
+<p><strong>What it tests:</strong> Does the FDA-approved 5-LOX inhibitor <strong>zileuton</strong> (Zyflo / Zyflo CR, asthma indication) abort or prevent gout flares in Brian's specific case? This is the pharma-grade equivalent of quercetin's CP6a mechanism — cleaner readout, stronger effect size expected. Cross-references the <code>wiki/zileuton.md</code> dossier (in progress per synthesis queue).</p>
+<p><strong>Proposed in:</strong> <code>wiki/synthesis.md</code> 2026-04-24 Pass 2 Proposed Experiment #5 and New Connection #5 ("Zileuton is the closest pharma-grade CP6a analog to quercetin, and has never been tested in gout"). Brian's 2026-04-24 annotation: "yes add it to the clinical pipeline and also let's do a wiki page about it."</p>
+<p><strong>Protocol:</strong>
+- <strong>Phase 1: Physician conversation.</strong> Request off-label prescription from rheumatologist or primary-care physician with the CP6a mechanistic rationale. Key talking points:
+  - Zileuton (Zyflo CR) is FDA-approved for asthma, dosed 1200 mg BID, generic available, ~$50/month.
+  - 5-LOX is mechanistically upstream of neutrophil chemotaxis in gout (LTB4 is a potent neutrophil chemoattractant; colchicine blocks microtubule-dependent chemotaxis downstream).
+  - No published gout efficacy trials; this is a genuine off-label novelty.
+  - Safety profile: liver enzyme elevation is the primary monitoring concern (~2% patients); monthly LFTs for the first 3 months standard.
+  - Duration: 12 weeks, consistent with the existing self-experiment window.
+- <strong>Phase 2: Baseline documentation.</strong> Brian's colchicine-era flare frequency (available from existing medication history). 4-week pre-zileuton observation window if feasible.
+- <strong>Phase 3: Zileuton 1200 mg BID × 12 weeks.</strong> Continue base supplement stack (including quercetin — zileuton does not contraindicate quercetin and any additive effect is informative).
+- Biomarkers:
+  - <strong>Urinary LTB4</strong> at baseline and week 12 (from 3.6 — direct pharmacodynamic confirmation)
+  - <strong>Gout flare count and severity</strong> (primary endpoint; daily log)
+  - <strong>LFTs</strong> (AST, ALT) at baseline, week 2, week 4, week 8, week 12 (safety)
+  - <strong>hs-CRP</strong> at baseline and week 12</p>
+<p><strong>Estimated cost:</strong> $150-200/month × 3 months = <strong>$450-600</strong> (prescription) + existing LFT coverage via insurance + $0 additional lab cost (piggybacks on 3.6 and insurance-covered LFTs). <strong>Net additional: ~$500.</strong></p>
+<p><strong>Estimated timeline:</strong> 12 weeks active treatment + 4-week follow-up for post-treatment flare rate. Single additional physician conversation to set up.</p>
+<p><strong>Dependencies:</strong>
+- Rheumatologist or primary-care physician willing to prescribe off-label. The mechanistic rationale + clean safety profile + low cost should clear this bar.
+- Completion of <code>wiki/zileuton.md</code> dossier (in progress; synthesis queue item) for Brian to share with the prescribing physician.
+- Experiment 3.6 (urinary LTB4 as pharmacodynamic confirmation)</p>
+<p><strong>Success criteria:</strong>
+- <strong>Urinary LTB4 ≥50% reduction at week 12</strong> (confirms pharmacodynamic engagement — zileuton's on-target effect)
+- <strong>Flare frequency reduced ≥50% vs. colchicine-era baseline</strong> (clinical efficacy signal)
+- <strong>LFTs remain within normal range throughout</strong> (safety)
+- <strong>Negative result (no flare reduction despite LTB4 drop)</strong> is also informative: suggests LTB4/neutrophil-chemotaxis is not rate-limiting for Brian's flare biology, and colchicine's mechanism (microtubule → chemotaxis) is doing more work than expected.</p>
+<p><strong>Cross-references:</strong> <code>wiki/zileuton.md</code> (to be created), <code>wiki/gout-clinical-pipeline.md</code> (mechanistic gap entry), <code>wiki/nlrp3-exploit-map.md</code> (CP6a), <code>wiki/self-experiment-protocol.md</code> (integration with existing protocol)</p>
 <hr />
 <h2 id="cross-experiment-dependencies-and-sequencing">Cross-Experiment Dependencies and Sequencing<a class="headerlink" href="#cross-experiment-dependencies-and-sequencing" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Phase 1 (In Vitro)
@@ -3012,6 +3470,36 @@
 <td>Long-term prevention</td>
 <td>Sustained flare reduction</td>
 <td>≥40% reduction sustained 6mo</td>
+</tr>
+<tr>
+<td>1</td>
+<td>EGCG CP1a (1.8)</td>
+<td>IL-6 suppression at ≤1 μM EGCG</td>
+<td>≥50%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Urinary LTB4 (3.6)</td>
+<td>Stack effect on 5-LOX in vivo</td>
+<td>≥30% reduction vs. baseline</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Serum C5a (3.7)</td>
+<td>CP0 priming documentation</td>
+<td>Measurable baseline; informative either direction</td>
+</tr>
+<tr>
+<td>3</td>
+<td>DHA vs. EPA (3.8)</td>
+<td>Directional omega-3 preference</td>
+<td>Clear winner or confirmed null</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Zileuton off-label (3.9)</td>
+<td>LTB4 reduction + flare reduction</td>
+<td>≥50% LTB4 drop, ≥50% flare reduction</td>
 </tr>
 </tbody>
 </table>

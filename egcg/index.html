@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/self-experiment-protocol/">
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/egcg/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>Self-Experiment Protocol — Brian's Personal Monitoring Plan - Open Enzyme</title>
+        <title>EGCG (Epigallocatechin Gallate) - Open Enzyme</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#self-experiment-protocol" class="md-skip">
+        <a href="#egcg-epigallocatechin-gallate" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Self-Experiment Protocol — Brian's Personal Monitoring Plan
+              EGCG (Epigallocatechin Gallate)
             
           </span>
         </div>
@@ -2212,226 +2212,123 @@
   
 
 
-<h1 id="self-experiment-protocol">Self-Experiment Protocol<a class="headerlink" href="#self-experiment-protocol" title="Permanent link">&para;</a></h1>
-<p><strong>Purpose.</strong> Open Enzyme is not pursuing regulatory approval. The purpose of this document is to lay out a minimum-viable monitoring plan for Brian's self-experimentation with engineered koji and the supplement stack — so that (a) the risks are known in advance, (b) the data is collected prospectively rather than reconstructed after the fact, &copy; there are explicit halt criteria, and (d) the n-of-1 data is structured well enough to inform future collaborators (Rheinallt, Lauren, Valerie) if they decide to run anything more rigorous.</p>
-<p><strong>Evidence level for this page.</strong> The monitoring plan itself is Mechanistic Extrapolation — it assumes standard clinical safety monitoring principles applied to a novel intervention. The red-flag criteria are derived from known failure modes of related compounds (EGCG hepatotoxicity; immunomodulators → infection risk; chronic yeast dosing → dysbiosis), not from direct Open Enzyme data (which does not yet exist).</p>
+<h1 id="egcg-epigallocatechin-gallate">EGCG (Epigallocatechin Gallate)<a class="headerlink" href="#egcg-epigallocatechin-gallate" title="Permanent link">&para;</a></h1>
+<p>EGCG = (−)-epigallocatechin-3-gallate (ChEMBL ID CHEMBL297453). This dossier unifies four separately-catalogued chokepoint effects through a single upstream mechanism — <strong>20S proteasome inhibition → IκBα stabilization → NF-κB blockade</strong> — that was not visible in the wiki until the 2026-04-24 ChEMBL cross-check surfaced the sub-100 nM human proteasome IC50 (source: <a href="../chembl-cross-check/">chembl-cross-check.md</a>).</p>
+<p>See also the stack-level entry in <a href="../supplements-stack/">supplements-stack.md</a> and the chokepoint map in <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a>.</p>
 <hr />
-<h2 id="1-scope">1. Scope<a class="headerlink" href="#1-scope" title="Permanent link">&para;</a></h2>
-<p>This protocol covers <strong>oral self-administration</strong> of:</p>
+<h2 id="what-it-is">What it is<a class="headerlink" href="#what-it-is" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Engineered koji (when available) — uricase ± NLRP3 modulators</li>
-<li>Supplement stack components (currently: quercetin, ursolic acid, carnosine, BHB, KPV, EGCG, sulforaphane, curcumin, oridonin, β-caryophyllene, others per <code>wiki/supplements-stack.md</code>)</li>
-<li>Any new compound added during the self-experiment window</li>
-</ul>
-<p>It does <strong>not</strong> cover:</p>
-<ul>
-<li>Injectable or IV products (not in scope for Open Enzyme)</li>
-<li>Off-label prescription drug modifications (separate conversation with Brian's physician)</li>
-<li>Diet/lifestyle changes unless they are part of a specific protocol arm</li>
+<li><strong>Chemistry:</strong> Flavan-3-ol (catechin) with a gallate ester at the C3 position. Three phenolic rings, eight free hydroxyl groups — the highest hydroxyl density of any major dietary polyphenol. The gallate group is what drives proteasome chymotrypsin-site binding; non-gallated catechins (EC, EGC) are 10–100× weaker at the same target.</li>
+<li><strong>Source:</strong> The dominant flavan-3-ol in <em>Camellia sinensis</em> (green tea); ~50–60% of total green tea catechins by mass. Matcha and white tea concentrate EGCG further; fully oxidized teas (black, pu'er) convert much of the EGCG into theaflavins and thearubigins.</li>
+<li><strong>Not producible in engineered yeast or koji at practical titers</strong> — see <a href="#engineered-production-angle">Engineered-production angle</a> below. EGCG is a dietary / supplement compound, not an Open Enzyme production target.</li>
 </ul>
 <hr />
-<h2 id="2-timepoints">2. Timepoints<a class="headerlink" href="#2-timepoints" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Timepoint</th>
-<th>Draw</th>
-<th>Self-report</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T0 (baseline)</td>
-<td>Blood panel + stool 16S</td>
-<td>Symptom diary start</td>
-<td>Before first dose; establishes personal baseline</td>
-</tr>
-<tr>
-<td>T1 (week 4)</td>
-<td>Blood panel</td>
-<td>Diary (daily)</td>
-<td>Early signal window for hepatotox / CRP shift</td>
-</tr>
-<tr>
-<td>T2 (week 8)</td>
-<td>Blood panel</td>
-<td>Diary (daily)</td>
-<td>Mid-window; likely inflection for efficacy signals</td>
-</tr>
-<tr>
-<td>T3 (week 12)</td>
-<td>Blood panel + stool 16S</td>
-<td>Diary (daily)</td>
-<td>Primary endpoint window; microbiota re-sample</td>
-</tr>
-<tr>
-<td>Ad hoc</td>
-<td>Any time</td>
-<td>Any time</td>
-<td>If red-flag criterion triggers, halt and re-evaluate</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Why this cadence.</strong> 12 weeks is the minimum window for (a) microbiota community-level shifts to become detectable (~6-8 weeks for stable shifts), (b) chronic-dosing hepatotoxicity from EGCG/curcumin to manifest if it is going to, &copy; meaningful changes in serum urate and flare frequency to aggregate. Monthly blood draws are cheap (~$80/panel at Quest) and catch acute problems before 12 weeks.</p>
-<hr />
-<h2 id="3-blood-panel-every-4-weeks">3. Blood panel (every 4 weeks)<a class="headerlink" href="#3-blood-panel-every-4-weeks" title="Permanent link">&para;</a></h2>
-<p>Standard add-on to an annual physical; can be ordered through Quest / Labcorp or via direct-to-consumer services. Approximate total cost: <strong>~$80-120 per draw</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CBC with differential</strong></td>
-<td>Catches infection, anemia, WBC shifts (monitor for immunosuppression from NLRP3 blockade — canakinumab's known side effect class)</td>
-</tr>
-<tr>
-<td><strong>CMP (comprehensive metabolic panel)</strong></td>
-<td>Liver enzymes (ALT, AST, ALP, bilirubin), kidney function (creatinine, BUN, eGFR), electrolytes. EGCG can cause hepatotoxicity at high dose; curcumin at very high dose; any koji contaminant (aflatoxin) would hit liver first.</td>
-</tr>
-<tr>
-<td><strong>Uric acid</strong></td>
-<td>Primary efficacy endpoint. Target: &lt;6 mg/dL (or personal symptom-threshold if different).</td>
-</tr>
-<tr>
-<td><strong>hs-CRP</strong></td>
-<td>Systemic inflammation. Expected to drop if the NLRP3 pathway modulators are working. Doubling from baseline is a red flag.</td>
-</tr>
-<tr>
-<td><strong>LDH</strong> (optional, first + last draw)</td>
-<td>Cell turnover; flag if anything is lysing</td>
-</tr>
-<tr>
-<td><strong>HbA1c</strong> (baseline + T3 only)</td>
-<td>Some stack compounds (berberine, EGCG) affect glucose metabolism; useful baseline context</td>
-</tr>
-</tbody>
-</table>
-<h3 id="optional-add-ons-cp0-complement-and-cp6a-5-loxleukotrienes">Optional add-ons: CP0 (complement) and CP6a (5-LOX/leukotrienes)<a class="headerlink" href="#optional-add-ons-cp0-complement-and-cp6a-5-loxleukotrienes" title="Permanent link">&para;</a></h3>
-<p>The core panel (above) covers general safety and efficacy. The following optional add-ons cover the two chokepoints added in the v1.2 exploit-map restructure (CP0 complement, CP6a leukotrienes). They're specialty-lab or send-out tests — useful for tracking mechanism-specific response but not required for safety monitoring.</p>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Complement C3, C4, CH50</strong> (optional, baseline + T3)</td>
-<td>CP0 biomarkers. Low C3/C4 suggests active complement consumption — if uricase lowers MSU load, complement activation should reduce. CH50 measures total complement activity.</td>
-</tr>
-<tr>
-<td><strong>Soluble C5a</strong> (optional, baseline + T1 flare if one occurs)</td>
-<td>Direct CP0 readout. Elevated during active gout flare; should decline as uricase clears MSU crystals. Not offered at most commercial labs — may require a send-out (Quest, Labcorp) or specialty lab.</td>
-</tr>
-<tr>
-<td><strong>Urinary LTB4 (or LTE4)</strong> (optional, baseline + T3)</td>
-<td>CP6a biomarker. Leukotriene E4 is the stable urinary metabolite of the 5-LOX pathway and is widely used in asthma monitoring. Elevated in active neutrophil inflammation. Specialty lab — ARUP offers urine LTE4.</td>
-</tr>
-<tr>
-<td><strong>ESR</strong></td>
-<td>Nonspecific inflammation marker; complements CRP, captures different kinetics. Every-4-week cadence.</td>
-</tr>
-</tbody>
-</table>
-<p>See <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> for the CP0 mechanism detail, and the CP6a section of <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> for the 5-LOX/LTB4 branch that these tests monitor.</p>
-<hr />
-<h2 id="4-stool-16s-baseline-week-12-only">4. Stool 16S (baseline + week 12 only)<a class="headerlink" href="#4-stool-16s-baseline-week-12-only" title="Permanent link">&para;</a></h2>
-<p>A single paired baseline/endpoint microbiota sequencing is sufficient to detect whether chronic koji dosing has caused a dysbiotic shift. Quarterly re-sampling is overkill for personal use; the signal takes weeks to stabilize.</p>
-<ul>
-<li><strong>Service</strong>: Direct-to-consumer options like BiomeSight, Tiny Health, Flore, or uBiome-successors; approximate cost ~$100-200 per sample.</li>
-<li><strong>Primary metrics</strong>: alpha diversity (Shannon, Simpson) — flag &gt;20% drop from baseline; beta diversity (UniFrac) — note magnitude of community shift; taxa abundance at phylum level — flag dramatic Firmicutes/Bacteroidetes ratio inversion, or loss of Faecalibacterium prausnitzii / Akkermansia muciniphila (both gout-protective commensals).</li>
-<li><strong>Secondary metrics</strong> (if service provides): SCFA-producer abundance, LPS-producer abundance, uricase-gene carriage if detectable.</li>
-<li><strong>Caveat</strong>: 16S resolution bottoms out at genus level for most taxa; it will not detect strain-level engineered-koji persistence. If strain persistence is a specific question, consider qPCR for the engineered cassette's selection marker on spiked stool.</li>
-</ul>
-<hr />
-<h2 id="5-symptom-diary-daily-5-fields">5. Symptom diary (daily, 5 fields)<a class="headerlink" href="#5-symptom-diary-daily-5-fields" title="Permanent link">&para;</a></h2>
-<p>Goal: capture the signals that show up between blood draws, in a format that is quick to enter (&lt;60 seconds/day) and easy to aggregate.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Scale</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Stool form</strong></td>
-<td>Bristol 1-7</td>
-<td>Watch for sustained 6-7 (diarrhea) or 1-2 (constipation)</td>
-</tr>
-<tr>
-<td><strong>Bloating / GI discomfort</strong></td>
-<td>0-3 (none / mild / moderate / severe)</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Flare intensity</strong></td>
-<td>0-10 (0 = no joint pain, 10 = unable to walk)</td>
-<td>Include affected joint and whether a new location</td>
-</tr>
-<tr>
-<td><strong>Energy / fatigue</strong></td>
-<td>0-10 (0 = severe fatigue, 10 = unusually energetic)</td>
-<td>Gut inflammation and systemic inflammation both manifest as fatigue</td>
-</tr>
-<tr>
-<td><strong>Novel signal</strong></td>
-<td>Free text (blank if nothing)</td>
-<td>Rash, fever, headache, sleep, mood — anything not covered above</td>
-</tr>
-</tbody>
-</table>
-<p>Storage: simple spreadsheet, text file, or journaling app. Timestamped entries, one row per day. Export to CSV at endpoint for analysis.</p>
-<hr />
-<h2 id="6-red-flag-halt-criteria">6. Red-flag halt criteria<a class="headerlink" href="#6-red-flag-halt-criteria" title="Permanent link">&para;</a></h2>
-<p>If <strong>any</strong> of the following occur, halt the intervention immediately, document the trigger, and re-evaluate before resuming:</p>
+<h2 id="unifying-mechanism-proteasome-ib-nf-b">Unifying mechanism: proteasome → IκBα → NF-κB<a class="headerlink" href="#unifying-mechanism-proteasome-ib-nf-b" title="Permanent link">&para;</a></h2>
+<p>The four chokepoint effects the wiki currently attributes to EGCG (CP1 NF-κB priming block, CP1a TNFSF14 suppression, CP4 caspase-1 suppression, CP5a IL-1β-receptor-downstream block) are not four separate mechanisms. They are downstream consequences of a single upstream block at the <strong>20S proteasome chymotrypsin-like site</strong>.</p>
+<p><strong>Step by step:</strong></p>
 <ol>
-<li><strong>New GI bleeding</strong> (blood in stool, melena, hematemesis) — halt + seek care same-day</li>
-<li><strong>Persistent diarrhea &gt;72 hours</strong> — halt + evaluate for <em>C. difficile</em> / dysbiosis</li>
-<li><strong>hs-CRP doubles from baseline</strong> on a scheduled draw — halt + re-draw at 1 week to confirm</li>
-<li><strong>Liver enzymes (ALT or AST) &gt;2× upper limit of normal</strong> — halt + re-draw at 2 weeks; evaluate which compound is most likely culprit (EGCG &gt; curcumin &gt; others)</li>
-<li><strong>Unexplained weight loss &gt;5 lb over 4 weeks</strong> — halt + evaluate</li>
-<li><strong>New fever without identified infection</strong> — halt + seek care</li>
-<li><strong>New joint involvement that does not resolve with standard gout management within 7 days</strong> — halt + re-evaluate whether intervention is working <em>or</em> whether it's unmasking a new pattern</li>
-<li><strong>Eosinophilia or new hypersensitivity signal</strong> (rash, urticaria, angioedema) — halt immediately; consider allergic response to koji or a stack component</li>
-<li><strong>Kidney function decline</strong> (eGFR drop &gt;15% from baseline or creatinine rise) — halt + evaluate (uricase + high-dose NLRP3 blockers both plausibly stress kidneys)</li>
+<li><strong>EGCG inhibits the 20S proteasome chymotrypsin-like activity at IC50 = 86 nM</strong> in human cells (In Vitro; <em>Bioorg Med Chem</em> 2010, confirmed <em>Eur J Med Chem</em> 2019, ChEMBL assay CHEMBL4433382, pChEMBL 7.07; source: <a href="../chembl-cross-check/">chembl-cross-check.md</a>). This is EGCG's single most potent human target in the curated ChEMBL v34 database outside the <em>Plasmodium</em> anti-malarial activity (ENR Ki = 8 nM, not human-relevant).</li>
+<li><strong>The 26S proteasome (which contains the 20S core) is the sole enzymatic route for IκBα degradation.</strong> Canonical NF-κB activation requires IKK to phosphorylate IκBα at Ser32/Ser36 → SCF^βTrCP ubiquitin ligase polyubiquitinates phospho-IκBα → 26S proteasome degrades IκBα → NF-κB heterodimers (p50/p65) are released into the cytoplasm.</li>
+<li><strong>With the proteasome chymotrypsin site inhibited, polyubiquitinated IκBα accumulates instead of being degraded.</strong> Accumulated IκBα continues to sequester NF-κB in the cytoplasm regardless of how much upstream IKK activity is present.</li>
+<li><strong>No nuclear NF-κB → no transcription of pro-IL-1β, NLRP3, TNFSF14, COX2, or the other NF-κB-dependent priming genes.</strong> This is CP1 blockade at a layer upstream of where the wiki previously located it.</li>
+<li><strong>The previously-cited "IKK inhibition" framing is mechanistically downstream or redundant.</strong> IKK's only output in this pathway is to phosphorylate IκBα to tag it for proteasomal destruction. If the proteasome cannot destroy IκBα, IKK activity is decoupled from NF-κB release. The IKK-inhibition literature for EGCG (most of which is functional, not direct-binding) is better read as <strong>the cellular consequence of proteasome inhibition</strong>, not as an independent mechanism. (Mechanistic Extrapolation; see <a href="#open-questions">Open questions</a> for what an IKK vs. proteasome dose-response experiment would look like.)</li>
 </ol>
-<p>"Halt" means: stop all investigational Open Enzyme compounds (koji, any added supplement not previously in long-term use). It does <strong>not</strong> mean stop medically-prescribed therapy (allopurinol, colchicine) unless the trigger specifically implicates those.</p>
+<p><strong>Why this reframe matters:</strong> A compound that hits four chokepoints through pleiotropy is hard to validate and hard to dose. A compound that hits four chokepoints through one coherent upstream mechanism is falsifiable — the dose-response curves at CP1, CP1a, CP4, and CP5a should all track the proteasome IC50, and a Western for IκBα stabilization is a direct mechanistic readout. See <a href="../validation-experiments/">validation-experiments.md §1.7</a> for the priority THP-1 MSU macrophage assay that tests this.</p>
 <hr />
-<h2 id="7-logging-and-version-control">7. Logging and version control<a class="headerlink" href="#7-logging-and-version-control" title="Permanent link">&para;</a></h2>
-<p><strong>Raw data storage convention: <code>labs/</code> directory in the repo root, gitignored.</strong></p>
-<p>The <code>labs/</code> directory at <code>/labs/</code> (relative to the repo root) is listed in <code>.gitignore</code> and will never be committed. Raw blood-panel PDFs, stool-report JSON, imaging files, and any other PHI-bearing artifact live there on the local disk only. The directory is created locally — it does not exist in the public repo.</p>
-<p>Suggested substructure:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>labs/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── brian/
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── 2026-04-24-baseline/        # blood panel PDF, stool 16S report
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── 2026-05-22-week4/
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── README.md                    # running index, personal notes
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── lynn/                            # separate subtree; data is Lynn&#39;s
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── README.md
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>└── shared/                          # joint references (e.g., family history)
-</code></pre></div>
-<p><strong>Consent note on Lynn's data</strong>: Lynn's labs are Lynn's data. Storing them under <code>labs/lynn/</code> presumes her explicit consent to include them in the project's working directory. Even locally-gitignored storage is a form of inclusion; ask and record agreement (a dated note in <code>labs/lynn/README.md</code> is sufficient) before adding anything.</p>
-<p><strong>Summary log (public, committed)</strong>: a stripped, de-identified summary can be added to <code>logs/self-experiment-log.md</code> (append-only). Fields: date, intervention (what's being taken), observation, any protocol deviation. This log is for pattern-recognition and is safe to commit because it contains no raw PHI. Never reference specific lab values; use qualitative framing ("CRP trending up" rather than "CRP = 4.2"). If you want numeric trending, keep that inside <code>labs/brian/README.md</code> locally.</p>
-<p><strong>When a stack compound is added or removed</strong>: note it in the log with a 1-line rationale. This is the counterpart to commit messages for the body.</p>
-<p><strong>If collaborators eventually need access to raw data</strong>: graduate from Option 1 (local-only) to Option 2 (private parallel repo <code>open-enzyme-private</code> on GitHub, invite-only). See the labs-handling brainstorm (synthesis.md or commit history) for the trade-off analysis — a 10-minute upgrade, not a re-plan.</p>
+<h2 id="chokepoint-coverage-4-of-7">Chokepoint coverage (4 of 7)<a class="headerlink" href="#chokepoint-coverage-4-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Chokepoint</th>
+<th>Mechanism (unified through proteasome axis)</th>
+<th>Evidence</th>
+<th>Primary source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CP1</strong> (NF-κB priming)</td>
+<td>20S proteasome IC50 = 86 nM → IκBα stabilization → NF-κB cytoplasmic retention → no pro-IL-1β / NLRP3 transcription</td>
+<td>In Vitro (human proteasome, curated ChEMBL)</td>
+<td>ChEMBL CHEMBL297453; <em>Bioorg Med Chem</em> 2010; <em>Eur J Med Chem</em> 2019</td>
+</tr>
+<tr>
+<td><strong>CP1a</strong> (TNFSF14 amplifier)</td>
+<td>Suppresses TNFSF14-induced IL-6 in human gingival fibroblasts; <strong>downregulates HVEM</strong> (TNFSF14 receptor) on target cells. This is a direct receptor-level effect beyond the NF-κB-blockade story. The only compound in the Open Enzyme stack with curated direct TNFSF14 data.</td>
+<td>In Vitro (human HGF)</td>
+<td>Hosokawa 2010 (PMID 20461739); see <a href="../tnfsf14-gout-target/">tnfsf14-gout-target.md</a></td>
+</tr>
+<tr>
+<td><strong>CP4</strong> (caspase-1)</td>
+<td>Pro-caspase-1 transcription is NF-κB-dependent → proteasome block prevents caspase-1 induction. Separately: EGCG reduces ROS (glutathione-sparing + direct radical scavenging) which lowers the caspase-1 activation trigger.</td>
+<td>In Vitro (mouse macrophages) + Animal Model</td>
+<td>Lee 2019 <em>Molecules</em> (PMID 31174271)</td>
+</tr>
+<tr>
+<td><strong>CP5a</strong> (IL-1β receptor-downstream)</td>
+<td>Reduces IL-1β-induced NF-κB signaling in chondrocytes and synoviocytes — same proteasome/IκBα axis, now on the receiving cell side of the IL-1β cytokine signal</td>
+<td>In Vitro</td>
+<td>multiple (see <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Not covered:</strong> CP0 (complement C5a), CP2 (NLRP3 assembly — no direct NACHT-domain binding in ChEMBL), CP3 (ASC speck), CP5b (SPM resolution pathway), CP6a (5-LOX / LTB4), CP6b (GSDMD pore). EGCG's spectrum is wide but located entirely on the priming / transcription side and its immediate receptor-level consequences.</p>
+<p>The four-chokepoint coverage is now mechanistically unified, not a pleiotropic list. This is rare in the Open Enzyme stack: most compounds either hit a single chokepoint with high specificity (dapansutrile at CP2, disulfiram at CP6b) or hit multiple chokepoints through genuinely distinct mechanisms (quercetin at CP1 + CP6a + XO).</p>
 <hr />
-<h2 id="8-what-this-protocol-does-not-do">8. What this protocol does NOT do<a class="headerlink" href="#8-what-this-protocol-does-not-do" title="Permanent link">&para;</a></h2>
+<h2 id="gout-specific-evidence">Gout-specific evidence<a class="headerlink" href="#gout-specific-evidence" title="Permanent link">&para;</a></h2>
+<p>Direct gout / hyperuricemia evidence, in descending order of translation strength:</p>
 <ul>
-<li><strong>Establish efficacy against a control.</strong> This is n-of-1, uncontrolled, unblinded. Any efficacy signal is suggestive at best. It is good enough to motivate a future controlled trial by a collaborator; it is not good enough to generalize.</li>
-<li><strong>Replace medical supervision.</strong> Brian's primary care + rheumatologist should know what he's doing. The blood panels should land in their system, not just his. Red-flag criteria are escalation-to-care triggers, not self-directed.</li>
-<li><strong>Cover regulatory territory.</strong> Open Enzyme is a research project; this is personal self-experimentation. Do not distribute engineered strains to others under this protocol — that requires a different framework (see <code>wiki/open-source-platform.md</code> on strain-sharing).</li>
+<li><strong>Lee et al. 2019 <em>Molecules</em> (PMID 31174271).</strong> Primary mouse macrophages + MSU-injected mouse foot model. EGCG blocked MSU-induced caspase-1(p10) cleavage and IL-1β secretion in macrophages; oral EGCG reduced foot swelling in the MSU model; mechanism invoked was mtDNA synthesis block + ROS reduction, feeding into NLRP3 suppression. (<strong>Animal Model + In Vitro</strong>; source: <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>)</li>
+<li><strong>Yu et al. 2024 <em>Food Funct</em> (PMID 38757391).</strong> PO (potassium oxonate)-induced hyperuricemic mouse model. EGCG lowered serum uric acid via gut microbiota modulation and urate transporter (URAT1, GLUT9, ABCG2) modulation — the same transporter axis carnosine targets. (<strong>Animal Model</strong>; source: <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>)</li>
+<li><strong>Chen &amp; Xu 2018 <em>Eur Rev Med Pharmacol Sci</em> (PMID 30468495).</strong> Rat renal fibroblasts exposed to UA injury. EGCG protected cells via the miR-9 / NF-κB / JAK-STAT axis — consistent with the proteasome/NF-κB mechanism above, but at the kidney tissue level where UA-driven fibrosis is the relevant endpoint. (<strong>In Vitro</strong>)</li>
 </ul>
+<p>No human RCT data specifically in gout. Human trials exist for hypertension, insulin resistance, and weight management at 400–800 mg EGCG/day doses (reviewed by EFSA 2018); none have gout or serum UA as primary endpoints.</p>
 <hr />
-<h2 id="9-review-and-update">9. Review and update<a class="headerlink" href="#9-review-and-update" title="Permanent link">&para;</a></h2>
-<p>Review this document: (a) before starting a new intervention arm, (b) after any red-flag halt, &copy; at least annually, (d) whenever new stack compounds or engineered strains are added to the self-experiment. Changes tracked in git, not inline.</p>
+<h2 id="dose-and-bioavailability">Dose and bioavailability<a class="headerlink" href="#dose-and-bioavailability" title="Permanent link">&para;</a></h2>
+<p><strong>Free EGCG in green tea:</strong>
+- Brewed green tea: ~50–100 mg EGCG per 200 mL cup (varies 3–5× with brew time, water temperature, leaf grade, and whether the tea is sencha vs. gyokuro vs. matcha).
+- Matcha (powdered whole-leaf): ~100–150 mg EGCG per 2 g serving (the highest natural dietary concentration, because the whole leaf is consumed).
+- Black tea, oolong, pu'er: substantially lower EGCG (5–30 mg/cup) because oxidation converts catechins into theaflavins and thearubigins.</p>
+<p><strong>Supplements:</strong>
+- Standardized green tea extract (typically 40–50% EGCG): 400–800 mg EGCG/day used in most clinical trials (EFSA 2018 safety cap recommendation: 800 mg/day).
+- Decaffeinated EGCG extracts remove the confounding caffeine load.</p>
+<p><strong>Bioavailability:</strong>
+- Free EGCG oral bioavailability is poor: <strong>~0.1–0.3%</strong> plasma AUC relative to ingested dose, with extensive glucuronidation, methylation, and biliary excretion.
+- <strong>Phospholipid-complex formulations (Greenselect Phytosome, etc.)</strong> improve bioavailability to ~5–10% — a 30–50× gain, and the only practical way to reach plasma concentrations near the 86 nM proteasome IC50.
+- <strong>Fasted dosing</strong> raises free-EGCG Cmax substantially — which is also what raises hepatotoxicity risk. Food intake blunts Cmax. The safety and efficacy windows trade against each other here; see <a href="#safety--hepatotoxicity-ceiling">safety</a> below.
+- EGCG is a substrate for catechol-O-methyltransferase (COMT) — COMT-inhibitor combinations (quercetin as a mild COMT inhibitor, for instance) can raise free-EGCG exposure, with the same safety caveat.</p>
+<p><strong>Practical protocol for the Open Enzyme stack (cross-ref <a href="../supplements-stack/">supplements-stack.md</a>):</strong> 400–600 mg EGCG/day from a standardized extract, taken <strong>with food</strong>, split between morning and early afternoon. Stay below 800 mg/day sustained. Phytosome formulations are preferred for bioavailability at lower total mg; matcha (2–3 servings/day) is a reasonable dietary alternative.</p>
+<hr />
+<h2 id="safety-hepatotoxicity-ceiling">Safety — hepatotoxicity ceiling<a class="headerlink" href="#safety-hepatotoxicity-ceiling" title="Permanent link">&para;</a></h2>
+<p>The same 86 nM 20S proteasome activity that makes EGCG interesting at CP1 also makes it a <strong>hepatotoxicity liability at high doses</strong>. The clinical literature on proteasome inhibitors is consistent on this point:</p>
+<ul>
+<li><strong>Bortezomib and carfilzomib</strong> (clinical proteasome inhibitors, multiple myeloma) have documented hepatotoxicity profiles at their therapeutic plasma levels (single-digit nM to low hundred nM for 20S chymotrypsin inhibition). Liver function abnormalities are a monitored adverse event in both drug labels. (Mechanistic Extrapolation to EGCG.)</li>
+<li><strong>EGCG case reports:</strong> High-dose green tea extract (especially fasted, &gt;800 mg/day sustained) has caused multiple published hepatotoxicity cases, some progressing to acute liver failure. Meta-analysis of RCT safety data supports a dose-dependent ALT/AST elevation signal above 800 mg/day.</li>
+<li><strong>EFSA Scientific Opinion (2018)</strong> formally recommended a <strong>800 mg EGCG/day safety ceiling for food supplements</strong> based on this hepatotoxicity signal, and noted that fasted dosing raises the risk materially.</li>
+</ul>
+<p><strong>Practical safety protocol:</strong>
+1. Stay at or below <strong>600 mg EGCG/day</strong> for sustained use in the stack (buffer below the EFSA 800 mg ceiling).
+2. <strong>Take with food</strong> — this lowers free-EGCG Cmax and reduces hepatotoxicity risk, even though it also lowers the proteasome-level plasma concentration. The safety / efficacy trade here favors food-concurrent dosing for chronic supplementation.
+3. <strong>Avoid combining with alcohol or other hepatotoxic agents</strong> (acetaminophen at hepatotoxic doses, amiodarone, isoniazid, methotrexate). The mechanism of EGCG hepatotoxicity is still debated (proteasome-driven vs. redox-driven — see <a href="#open-questions">Open questions</a>), so additive liver stress from any angle is a concern.
+4. <strong>Monitor ALT/AST annually</strong> if sustaining doses ≥400 mg/day for &gt;6 months. Stop and investigate if ALT &gt;3× ULN.
+5. <strong>Avoid the compound entirely</strong> if there is any baseline liver disease (viral hepatitis, NAFLD with elevated enzymes, autoimmune hepatitis).</p>
+<p>This safety ceiling is not a reason to exclude EGCG from the stack — it is a reason to cap the dose and monitor. Within the 400–600 mg/day window with food, the safety record is long (green tea consumption in East Asia predates written records) and the CP1/CP1a/CP4/CP5a coverage is uniquely wide for a food-grade compound.</p>
+<hr />
+<h2 id="engineered-production-angle">Engineered-production angle<a class="headerlink" href="#engineered-production-angle" title="Permanent link">&para;</a></h2>
+<p>EGCG is a plant secondary metabolite requiring 8–10 heterologous enzyme steps (PAL → C4H → 4CL → CHS → CHI → F3H → F3'H → FLS → gallate conjugation via UGT) to reconstitute in <em>S. cerevisiae</em>. Published engineered-yeast titers for EGCG specifically are in the <strong>10–50 mg/L range</strong> (source: <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>), well below the economic threshold for an Open Enzyme production module.</p>
+<p><strong>Current Open Enzyme position on EGCG:</strong> Dietary / supplement, not a production target. Green tea is already an engineered agricultural product (centuries of cultivar selection + processing refinement) that outperforms any plausible microbial production route. The practical engineering problem for EGCG is <strong>bioavailability enhancement</strong>, not biosynthesis — phospholipid complexes (Greenselect Phytosome), lipid-nanoparticle encapsulation, and COMT-inhibitor co-formulation are the relevant levers. These are formulation-chemistry problems, not strain-engineering problems, and sit outside Open Enzyme's core platform thesis.</p>
+<p>If a future Open Enzyme module wants to work on flavan-3-ol delivery (e.g., koji-fermented matcha with improved catechin bioavailability through the fermentation matrix), that is a plausible secondary avenue — but it would be a formulation project, not a biosynthesis project.</p>
+<hr />
+<h2 id="open-questions">Open questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Is the 86 nM proteasome IC50 reached at physiological green-tea doses?</strong> At 0.1–0.3% oral bioavailability, even 800 mg EGCG oral → plasma free-EGCG in the low nM range, well below the 86 nM IC50 in cells. Phytosome formulations (5–10% bioavailability) can plausibly reach the IC50; unformulated green tea probably cannot. This is the central translation question for the CP1 story. An ex vivo assay (incubate human PBMCs with serum drawn 1–4 h post-EGCG dose; Western for IκBα retention) would resolve it directly.</li>
+<li><strong>Proteasome vs. IKK dose-response.</strong> If the reframe above is correct, the dose-response for IκBα stabilization (Western) and for IKK activity (IKK kinase assay, phospho-IκBα readout) should diverge — IκBα stabilization tracks proteasome IC50 (86 nM), IKK activity should require much higher EGCG (the literature suggests IKK IC50 is ≥10 μM for EGCG, not sub-μM). A dose titration with both readouts in the same experiment falsifies or confirms the reframe.</li>
+<li><strong>Hepatotoxicity mechanism.</strong> Is EGCG-induced liver injury driven by proteasome inhibition (analogous to bortezomib), by redox chemistry (pro-oxidant at high doses via auto-oxidation of the gallate ring), by mitochondrial membrane effects, or by an idiosyncratic immune mechanism? The existing literature is divided. The practical dose cap (600 mg/day, with food) is conservative enough to cover all four hypotheses, but mechanistic clarity would inform future formulation choices — a proteasome-driven mechanism might be worsened by phytosome bioavailability boosters, whereas a redox-driven mechanism might be mitigated by them.</li>
+<li><strong>Does EGCG suppress TNFSF14 at the HVEM-receptor level specifically, or only through general NF-κB blockade?</strong> Hosokawa 2010 reported <strong>HVEM downregulation</strong>, which if real is a receptor-specific effect not reducible to proteasome inhibition (HVEM transcription is not obviously NF-κB-dominant in HGF cells). Replicating this in human macrophages (THP-1 or PBMC-derived MDM) with a TNFSF14-stimulated IL-6 / IL-1β readout would determine whether CP1a is a separate EGCG mechanism or a consequence of general CP1 blockade.</li>
+<li><strong>Can DHA + EGCG achieve combined TNFSF14 suppression?</strong> DHA lowers circulating TNFSF14 (Huang 2024 Mendelian randomization; source: <a href="../tnfsf14-gout-target/">tnfsf14-gout-target.md</a>); EGCG suppresses TNFSF14 signal transduction at the receiving cell. These are orthogonal layers of the same amplifier. A combination trial would have clear synergy logic and both compounds are already in the stack.</li>
+</ol>
+<hr />
+<p><em>This dossier is the canonical EGCG page. The stack-level entry in <a href="../supplements-stack/">supplements-stack.md</a> keeps the short dosing summary; the chokepoint row in <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> keeps the mechanism pointer; anything deeper — mechanistic reframe, primary-source evidence, safety rationale, engineering position — lives here.</em></p>
 
 
 
