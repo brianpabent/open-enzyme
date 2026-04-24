@@ -28,7 +28,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 - **[Gout Pathophysiology](wiki/gout-pathophysiology.md)** — Complete gout cascade: purine metabolism → uric acid → crystallization → NLRP3 → flare; current treatments; clinical pipeline; genomics (351 GWAS loci)
 - **[Uricase (Urate Oxidase)](wiki/uricase.md)** — The missing enzyme: evolutionary loss ~15Mya, A. flavus uaZ gene, rasburicase, engineering for gut-lumen degradation
-- **[NLRP3 Inflammasome](wiki/nlrp3-inflammasome.md)** — All 6 chokepoints mapped; MSU crystal activation; priming/activation two-signal model; pharmaceutical targets (dapansutrile, firsekibart)
+- **[NLRP3 Inflammasome](wiki/nlrp3-inflammasome.md)** — All 7 chokepoints mapped (v1.2: CP0 complement priming, CP1a TNFSF14/LIGHT, CP5b active resolution, CP6a 5-LOX/LTB4); MSU crystal activation; pharmaceutical targets (dapansutrile, firsekibart)
 - **[Digestive Enzymes & EPI](wiki/digestive-enzymes.md)** — Lipase, protease, amylase deficits; wild-type koji as immediate solution; commercial supplements (Creon, Zenpep)
 - **[SIBO](wiki/sibo.md)** — Lynn's condition; brush-border enzyme damage; NLRP3 involvement; KPV relevance
 - **[Fructose Connection](wiki/fructose-connection.md)** — Hidden gout accelerant: fructokinase (no negative feedback), ATP depletion cascade, GLUT9 dual transporter, KHK inhibitors
@@ -52,7 +52,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 - **[BPC-157](wiki/bpc-157.md)** — 15-amino-acid gastric peptide; NO system modulation; gut healing; gout relevance via gut-UA axis
 - **[KPV Tripeptide](wiki/kpv-peptide.md)** — α-MSH fragment; dual NF-κB + NLRP3 inhibition; gut anti-inflammatory; strongest mechanistic case for gout
-- **[BHB / Ketones](wiki/bhb-ketones.md)** — Hits 3 of 6 NLRP3 chokepoints; endogenous via fasting/keto; may be more impactful than any single peptide
+- **[BHB / Ketones](wiki/bhb-ketones.md)** — Hits 3 of 7 NLRP3 chokepoints (CP1, CP2, CP3); endogenous via fasting/keto; may be more impactful than any single peptide
 - **[Oridonin](wiki/oridonin.md)** — Natural NLRP3 inhibitor; covalent NACHT domain Cys279 binding; traditional medicine origin
 - **[Disulfiram](wiki/disulfiram.md)** — Gasdermin D blocker (Antabuse); repurposed drug; Chokepoint 5 in NLRP3 map
 
@@ -60,6 +60,11 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 - **[Gout Clinical Pipeline](wiki/gout-clinical-pipeline.md)** — Current ClinicalTrials.gov + PubMed snapshot (2026-04-23): ALLN-346 program terminated 2022, dapansutrile gout development stalled, canakinumab FDA-approved for gout Aug 2023, PRX-115 is the new systemic-uricase competitor. Refreshable quarterly via MCP.
 - **[Supplements Stack](wiki/supplements-stack.md)** — Practical NOW/SOON/FUTURE recommendations with dosing and evidence levels
+- **[Complement C5a in Gout](wiki/complement-c5a-gout.md)** — CP0: MSU directly activates complement; C5a dominant NLRP3 priming signal; avacopan repurposing candidate; stack gap
+- **[TNFSF14 / LIGHT in Gout](wiki/tnfsf14-gout-target.md)** — CP1a: Second-highest gout-flare biomarker; LIGHT amplifies NF-κB; EGCG and DHA as natural moderators; CERC-002 mAb precedent
+- **[SPM Resolution Pathway](wiki/spm-resolution-pathway.md)** — CP5b: RvD1/MaR1 direct MSU gout animal model evidence; ALX/FPR2 agonism; aspirin-triggered resolvins
+- **[Self-Experiment Protocol](wiki/self-experiment-protocol.md)** — Brian's minimum-viable monitoring plan: blood panels (CBC/CMP/UA/hs-CRP/LDH/HbA1c), 16S stool, daily diary, red-flag halt criteria
+- **[ChEMBL Cross-Check](wiki/chembl-cross-check.md)** — Standing rigor tool: quarterly ChEMBL v34 cross-reference of stack compounds; curcumin 24.2 μM NLRP3, berberine→TDO, resveratrol→DPP-4, EGCG→proteasome 86 nM
 - **[Cannabinoids & Terpenes](wiki/cannabinoids-terpenes.md)** — CBD, CBG, CBC, THCV, beta-caryophyllene, myrcene: NLRP3 mechanisms, gout evidence, EPI applications; beta-caryophyllene has direct MSU gout animal model data
 - **[Validation Experiments](wiki/validation-experiments.md)** — All proposed experiments consolidated: in vitro, animal, and human self-experimentation phases
 - **[Bio-AI Tools](wiki/bio-ai-tools.md)** — Open source protein AI (ESM-2, ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, SPURS, DiffDock, CodonTransformer) + commercial tools (GPT-Rosalind, Amazon Bio Discovery, Coefficient Bio) + **Anthropic life-sciences marketplace** (17 à la carte plugins — PubMed, bioRxiv, ChEMBL, Open Targets, ClinicalTrials.gov MCP servers as Phase 0 core); project-specific prompts and workflow

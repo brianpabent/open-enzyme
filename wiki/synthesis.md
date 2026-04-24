@@ -8,6 +8,68 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
 
 # Synthesis Pass 2: New Connections Across April 2026 Analyses
 
+## New this sweep — 2026-04-24
+**Trigger:** `wiki/GRAPH.md`, `wiki/chembl-cross-check.md`, `wiki/complement-c5a-gout.md`, `wiki/nlrp3-exploit-map.md`, `wiki/self-experiment-protocol.md`, `wiki/spm-resolution-pathway.md`, `wiki/tnfsf14-gout-target.md`
+
+### New Connections
+
+1. **EGCG is the widest-spectrum natural NLRP3 pathway modulator in the stack — its mechanism coheres through proteasome inhibition.** *Supported.*
+   - *Documents connected:* `chembl-cross-check.md` (EGCG inhibits human 20S proteasome at 86 nM — its strongest curated ChEMBL bioactivity); `tnfsf14-gout-target.md` (EGCG/green tea polyphenols suppress TNFSF14-induced IL-6 and downregulate HVEM receptor expression — CP1a activity); `nlrp3-exploit-map.md` (EGCG hits CP1, CP4, CP5a); `nlrp3-inflammasome.md`.
+   - *Why it matters:* The proteasome/IκB mechanism may unify EGCG's multi-chokepoint activity: proteasome inhibition at 86 nM prevents IκBα degradation, which is required to release NF-κB for nuclear translocation (CP1). This is mechanistically upstream of the IKK effect previously attributed to EGCG. Combined with TNFSF14 suppression (CP1a), caspase-1 suppression (CP4), and IL-1β block (CP5a), EGCG covers four of seven chokepoints through a coherent pathway. No other natural compound in the stack comes close. The proteasome IC50 of 86 nM is also substantially sub-micromolar — achievable at green tea doses.
+   - *Suggested action:* (a) Create a dedicated `wiki/egcg.md` page that maps the proteasome→IκB→NF-κB→NLRP3 axis explicitly. (b) Reframe EGCG in `supplements-stack.md` from "IKK inhibitor" to "proteasome/IκBα stabilizer" with multi-chokepoint coverage. (c) In `validation-experiments.md`, add EGCG as a priority compound for the THP-1 MSU macrophage assay — it has the best mechanistic case for producing measurable CP1a (TNFSF14-IL-6 suppression) in a gout-specific readout. **Speculative**.
+
+2. **DHA should be preferentially dosed over EPA for gout — the current "high-EPA ratio preferred" recommendation in `supplements-stack.md` is contradicted by three omega-3/gout-specific mechanisms.** *Supported.*
+   - *Documents connected:* `spm-resolution-pathway.md` (RvD1 — derived from DHA — reduces MSU joint IL-1β and ASC speck formation in murine gout; MaR1 — also DHA-derived — acts via Prdx5→AMPK/Nrf2; both Animal Model); `tnfsf14-gout-target.md` (DHA shows inverse genetic association with circulating TNFSF14/LIGHT, implicating DHA in CP1a suppression); `nlrp3-inflammasome.md` (Omega-3 listed as CP1+CP5 modulator without distinguishing EPA vs DHA).
+   - *Why it matters:* RvE1 (EPA-derived) is listed in the wiki but has no direct MSU gout model evidence. RvD1 and MaR1 (both DHA-derived) have direct MSU gout animal model evidence. DHA additionally modulates TNFSF14/LIGHT genetically. EPA dominates on cardiovascular literature; DHA dominates on gout-specific SPM and CP1a evidence. The current recommendation ("2:1 or 3:1 EPA:DHA is more effective for gout") appears to import cardiovascular EPAevidence without gout-specific basis. This is a meaningful prescriptive error — someone following the stack may be taking the less-relevant omega-3 form.
+   - *Suggested action:* (a) Revise `supplements-stack.md` omega-3 entry to recommend DHA-heavy formulations (1:2 or 1:3 EPA:DHA) specifically for gout, with a note that the cardiovascular literature favors EPA but the gout-SPM literature favors DHA. (b) In `spm-resolution-pathway.md`, add a practical section on DHA vs. EPA for gout. **Priority correction — not speculative.**
+
+3. **The self-experiment protocol is missing CP0 and CP5b biomarkers; adding urinary LTB4 and serum C5a would validate two of the three newly discovered upstream chokepoints.** *Supported.*
+   - *Documents connected:* `self-experiment-protocol.md` (blood panel: CBC, CMP, uric acid, hs-CRP, LDH, HbA1c — no complement or LTB4 markers); `complement-c5a-gout.md` (C5a is dominant NLRP3 priming signal; elevated during gout flare); `nlrp3-exploit-map.md` (CP0 complement priming now a first-class chokepoint; CP6a 5-LOX/LTB4 now first-class chokepoint).
+   - *Why it matters:* hs-CRP is a downstream output marker — it tells you inflammation happened, not which chokepoint fired. Urinary LTB4 directly assays CP6a activity; serum C5a or sC5b-9 directly assays CP0 status. Both are available as commercial lab panels ($50–200 each). If the self-experiment doesn't include these, it cannot distinguish between a quercetin effect (5-LOX block → LTB4 reduction) and a BHB effect (NLRP3 assembly block) from hs-CRP alone. The n=1 experiment would be underpowered for mechanism even if it shows benefit.
+   - *Suggested action:* (a) Add urinary LTB4 to the baseline, week 4, and week 12 timepoints in `self-experiment-protocol.md`. (b) Add serum C5a (or sC5b-9 as surrogate) to the week 0 and week 12 blood panels. These are cheap incremental additions to already-planned draws. **Cheap, actionable, highly recommended.**
+
+4. **Lactoferrin (fermentable at 3.5 g/L in P. pastoris) creates a plausible path to a resolution-armed koji platform — adding CP5b (ALX/FPR2 agonism) to the engineered organism stack.** *Speculative.*
+   - *Documents connected:* `spm-resolution-pathway.md` (lactoferrin as indirect ALX/FPR2 modulator; fermentable at 3.5 g/L in P. pastoris; listed as Year 5+ target); `engineered-koji-protocol.md` (A. oryzae secretion machinery; amyB promoter; multi-protein secretion precedent); `nlrp3-exploit-map.md` (CP5b active resolution as first-class chokepoint).
+   - *Why it matters:* The Open Enzyme platform currently has no resolution leg — it suppresses inflammation but doesn't actively promote resolution. Lactoferrin would add a CP5b arm. P. pastoris achieves 3.5 g/L, which is high. A. oryzae's secretion system is analogous (both are filamentous secretors, though koji is solid-state and P. pastoris is submerged). The engineering problem is: can amyB-driven expression of lactoferrin in A. oryzae during solid-state rice fermentation achieve physiologically relevant titers? This is researchable via the ACS Synth Bio literature. *Suggested action:* Literature search: has lactoferrin been expressed in any Aspergillus species? If yes, titer/system details. Flag as Year 3 engineering target (not Year 5+), given A. oryzae's proven secretion versatility. **Speculative — needs feasibility check.**
+
+5. **Zileuton (FDA-approved, 5-LOX inhibitor, asthma indication) is the closest pharma-grade CP6a analog to quercetin, and has never been tested in gout despite a mechanistically compelling case.** *Supported.*
+   - *Documents connected:* `nlrp3-exploit-map.md` (CP6a now a first-class chokepoint: 5-LOX/LTB4/neutrophil chemotaxis); `chembl-cross-check.md` (quercetin 5-LOX IC50 = 300 nM, the stack's most potent natural 5-LOX inhibitor); `gout-clinical-pipeline.md` (no 5-LOX-targeted drugs in current gout pipeline).
+   - *Why it matters:* Colchicine's mechanism in gout is primarily neutrophil disruption (microtubule depolymerization → impaired chemotaxis). Zileuton's mechanism would be upstream of chemotaxis — blocking LTB4 synthesis before it calls neutrophils in. They are non-overlapping mechanisms for the same downstream endpoint (neutrophil infiltration reduction). Zileuton is generic, oral, ~$50/month, with a well-established safety profile. A gout efficacy trial could be run as a relatively cheap investigator-initiated study. The absence of this trial is a notable gap in the rheumatology pipeline given that 5-LOX is as mechanistically central to gout as COX-2 is to inflammatory pain. *Suggested action:* Flag zileuton as a prioritized off-label repurposing candidate to discuss with a rheumatologist alongside disulfiram. Add to `gout-clinical-pipeline.md` under "Mechanistic gaps in current pipeline." **Supported — actionable.**
+
+### Contradictions Found
+
+1. **EPA-heavy vs. DHA-heavy omega-3 recommendation**: `supplements-stack.md` recommends "high-EPA ratio (2:1 or 3:1 EPA:DHA) is more effective for gout." The direct MSU gout animal model evidence for SPMs is entirely DHA-derived (RvD1, MaR1). The TNFSF14/LIGHT inverse association is DHA-specific. *Proposed resolution: revise recommendation to DHA-heavy for gout; retain EPA note for cardiovascular co-benefit. Not ambiguous — DHA dominates gout-specific evidence.*
+
+2. **"CP6 = GSDMD pore formation" (old) vs. CP6a (5-LOX/LTB4) + CP6b (GSDMD) split (new)**: The `disulfiram.md` page and the root `index.md` still reference GSDMD as "Chokepoint 5" or "Chokepoint 6" without the new a/b sub-numbering. This is a naming inconsistency across documents. *Proposed resolution: update disulfiram.md and any cached CP6 references in the next pass. Low priority.*
+
+### Proposed Experiments
+
+Ranked by expected insight / cost (cheapest first):
+
+1. **Add urinary LTB4 assay to self-experiment** (~$50–100/test via commercial lab; add to existing draws). Directly validates quercetin's CP6a (5-LOX) mechanism in vivo. No additional study visit required.
+2. **Add serum C5a to self-experiment baseline + week 12** (~$150–200 via LabCorp/Quest panel). Documents CP0 complement priming status. Tests whether current stack modulates complement axis at all.
+3. **EGCG dose-escalation on MSU-stimulated THP-1 cells, measuring TNFSF14-induced IL-6** (~$500–800 in vitro). Validates CP1a activity for EGCG in a gout-relevant cell model; complements existing CP1/CP4 evidence.
+4. **DHA vs. EPA split omega-3 crossover (n=1, self-experiment extension)**: 4 weeks high-EPA → washout → 4 weeks high-DHA; measure urinary LTB4, hs-CRP, serum RvD1 metabolites (~$200 supplements + $300 assays). Definitively answers EPA vs. DHA question for gout.
+5. **Zileuton off-label trial in Brian's flare-prevention protocol**: Request prescription from rheumatologist with the CP6a mechanistic rationale; track flare frequency vs. colchicine baseline. Zero additional lab cost — just one physician conversation.
+
+### Open Questions
+
+1. Is complement activation (C5a) necessary or sufficient for MSU-triggered NLRP3 priming in clinical gout flares, or is TLR4/LPS still dominant in real patients? (The Cumpelik/Khameneh evidence is animal model + in vitro; human C5a-priming dominance remains to be confirmed in vivo.)
+2. What is the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1), and does this differ from the cardiovascular-optimized ratio?
+3. Can lactoferrin be expressed in A. oryzae at therapeutically relevant titers in solid-state rice fermentation? P. pastoris 3.5 g/L in submerged culture ≠ koji solid-state.
+4. Is TNFSF14/LIGHT elevation a universal feature of gout flares or a patient subtype? Would a TNFSF14 biomarker identify responders to EGCG or CERC-002 better than generic hs-CRP?
+5. Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data? (An asthma patient who also has gout would be the natural population to check.)
+
+### Priority Actions
+
+1. **Revise omega-3 formulation recommendation** in `supplements-stack.md` to DHA-heavy for gout-specific SPM rationale. (Immediate edit; based on RvD1/MaR1 gout animal model evidence.)
+2. **Add urinary LTB4 + serum C5a** to the self-experiment protocol in `self-experiment-protocol.md` — cheap additions to planned draws, add CP0 and CP6a biomarker coverage.
+3. **Create `wiki/egcg.md`** to map the proteasome→IκB→NF-κB→NLRP3 + TNFSF14 multi-chokepoint story coherently. Currently EGCG's breadth is understated across four pages.
+4. **Add zileuton to rheumatologist discussion agenda** alongside disulfiram — CP6a rationale is mechanistically sound and the drug is generic/accessible.
+5. **Feasibility check on lactoferrin in A. oryzae** — if any literature exists for Aspergillus lactoferrin secretion, upgrade it from Year 5+ to a near-term engineering target.
+
+---
+
 ## New this sweep — 2026-04-23 (nlrp3-inhibitor-screen ChEMBL appendix)
 **Trigger:** `wiki/nlrp3-inhibitor-screen.md`
 

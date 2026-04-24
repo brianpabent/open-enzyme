@@ -11,10 +11,17 @@ related:
   - gout
   - bpc-157
   - blood-barrier
+  - complement-c5a-gout
+  - spm-resolution-pathway
+  - tnfsf14-gout-target
 sources:
   - nlrp3-exploit-map.md
   - gout-deep-dive.md
   - peptide-gout-addendum.md
+  - complement-c5a-gout.md
+  - spm-resolution-pathway.md
+  - tnfsf14-gout-target.md
+  - chembl-cross-check.md
 ---
 
 # NLRP3 Inflammasome
@@ -25,15 +32,31 @@ The NLRP3 inflammasome is a multi-protein intracellular complex that acts as a m
 
 The inflammasome is not unique to gout—it evolved to respond to pathogenic danger signals. However, monosodium urate (MSU) crystals, which deposit in joints during hyperuricemia, directly trigger NLRP3 assembly through lysosomal rupture, potassium efflux, and reactive oxygen species (ROS) generation. In gout, the innate immune system mistakes metabolic crystals for microbial threats, producing an outsized inflammatory cascade. (Source: gout-deep-dive.md)
 
-## The NLRP3 Activation Cascade: Six Chokepoints
+## The NLRP3 Activation Cascade: Seven Chokepoints (with Sub-Branches)
 
-The NLRP3 inflammasome pathway operates as a sequential cascade with six distinct vulnerability points (chokepoints), each representing a potential therapeutic target. Understanding the cascade structure reveals that gout can be attacked at multiple nodes simultaneously, rather than through a single intervention.
+The NLRP3 inflammasome pathway operates as a sequential cascade with seven primary vulnerability points (chokepoints), several of which have mechanistically distinct sub-branches. Each represents a potential therapeutic target. Understanding the cascade structure reveals that gout can be attacked at multiple nodes simultaneously, rather than through a single intervention.
 
-### Chokepoint 1: NF-κB Priming
+The v1.2 restructure (April 2026) adds CP0 (complement priming — C5a-dominant, upstream of NF-κB), sub-branches CP1a (TNFSF14/LIGHT priming amplifier) and CP1b (C5a→ROS), and promotes 5-LOX/LTB4 neutrophil chemotaxis to a first-class CP6a chokepoint (formerly an annotation under CP6). Active resolution via ALX/FPR2 SPMs becomes CP5b alongside the existing CP5a receptor blockade. (source: nlrp3-exploit-map.md)
+
+### Chokepoint 0: Complement Priming (C5a-Dominant)
+
+**The Step:** Before NLRP3 assembles, monosodium urate crystals can directly activate the complement system via classical and alternative pathways. Complement activation cleaves C5, generating the anaphylatoxin **C5a**, which binds **C5aR1** on macrophages. C5a→C5aR1 signaling generates reactive oxygen species (ROS) that serve as the dominant priming signal for NLRP3 in gout — upstream of and partially independent of the LPS/TLR4→NF-κB axis (Cumpelik et al. 2016; Khameneh et al. 2017, *J Allergy Clin Immunol*). (Animal Model; source: complement-c5a-gout.md)
+
+**Why It Matters:** Complement priming is upstream of all other chokepoints. Even maximal NF-κB suppression leaves CP0 open if C5a continues priming NLRP3 via ROS. The Open Enzyme stack currently has zero fermentable C5a/C5aR1 modulator — an acknowledged platform gap. (source: complement-c5a-gout.md)
+
+**Exploits:**
+
+- **Avacopan (Tavneos)**: FDA-approved oral C5aR1 antagonist indicated for ANCA-associated vasculitis (2021). Direct repurposing candidate for gout. Suppresses complement-driven NLRP3 priming at the receptor level. Clinical safety established; no gout-specific trial published as of April 2026. (Clinical Trial, ANCA vasculitis; Mechanistic Extrapolation for gout; source: complement-c5a-gout.md)
+
+- **Platform gap:** No fermentable C5aR1 modulator currently in the Open Enzyme stack. Whether dietary flavonoids have meaningful C5aR1 affinity is an open question. Microbial C5aR1 antagonist peptides are a speculative long-term engineering target. (source: complement-c5a-gout.md)
+
+See [Complement C5a in Gout](./complement-c5a-gout.md) for the full analysis.
+
+### Chokepoint 1 (CP1a / CP1b): NF-κB Priming
 
 **The Step:** Toll-like receptor (TLR) signaling (typically from damage-associated molecular patterns or LPS from gram-negative bacteria in the gut) triggers NF-κB activation. NF-κB translocates to the nucleus and drives transcription of pro-inflammatory genes: NLRP3 itself, pro-IL-1β, pro-IL-18, and ASC. This is the "priming" step—building the components of the inflammasome.
 
-**Why It Matters:** Without sufficient NLRP3 and pro-IL-1β protein, downstream activation cannot occur at meaningful levels. Preventing priming reduces the inflammasome's capacity to respond. (Source: nlrp3-exploit-map.md)
+**Why It Matters:** Without sufficient NLRP3 and pro-IL-1β protein, downstream activation cannot occur at meaningful levels. Preventing priming reduces the inflammasome's capacity to respond. CP1a refers to TNFSF14/LIGHT amplification of NF-κB priming (see below); CP1b refers to C5a→ROS priming (overlapping with CP0). (Source: nlrp3-exploit-map.md)
 
 **Exploits:**
 
@@ -41,9 +64,9 @@ The NLRP3 inflammasome pathway operates as a sequential cascade with six distinc
 
 - **Sulforaphane**: Activates the Keap1-Nrf2 pathway, the master regulator of antioxidant defense. Nrf2 competes with NF-κB for the transcriptional co-activator CBP/p300, suppressing NF-κB-driven transcription of NLRP3 and pro-IL-1β. Maximum bioavailability achieved by chewing raw broccoli sprouts (which co-localize glucoraphanin and the enzyme myrosinase) or using freeze-dried sprout capsules. (Source: nlrp3-exploit-map.md)
 
-- **Curcumin**: A validated NF-κB inhibitor. Native curcumin has ~1% bioavailability, but formulations like Theracurmin (27x improvement) or NovaSOL micellar curcumin (~185x improvement) achieve therapeutic plasma levels. Alternative: combine standard curcumin with piperine (black pepper), which inhibits hepatic glucuronidation and increases absorption ~2,000%. (Source: nlrp3-exploit-map.md)
+- **Curcumin**: A validated NF-κB inhibitor. Native curcumin has ~1% bioavailability, but formulations like Theracurmin (27x improvement) or NovaSOL micellar curcumin (~185x improvement) achieve therapeutic plasma levels. Alternative: combine standard curcumin with piperine (black pepper), which inhibits hepatic glucuronidation and increases absorption ~2,000%. **ChEMBL v34 cross-check (2026-04-24):** Curcumin has a curated direct human NLRP3 IC50 of **24.2 μM** (ChEMBL; source: chembl-cross-check.md) — placing it in the same order of magnitude as oridonin (5.18 μM) but substantially higher than pharmaceutical benchmarks. Its NF-κB block is probably the primary gout-relevant mechanism at achievable tissue concentrations. (In Vitro; source: nlrp3-exploit-map.md, chembl-cross-check.md)
 
-- **Berberine**: Suppresses NF-κB and TLR4 signaling, reduces NLRP3 mRNA expression, and remodels the gut microbiota to reduce LPS (lipopolysaccharide) that primes NLRP3 in the first place. Also effective against SIBO (small intestinal bacterial overgrowth), addressing the shared microbial-inflammatory nexus. Dose: 500 mg twice daily with meals. (Source: nlrp3-exploit-map.md)
+- **Berberine**: Suppresses NF-κB and TLR4 signaling, reduces NLRP3 mRNA expression, and remodels the gut microbiota to reduce LPS (lipopolysaccharide) that primes NLRP3 in the first place. Also effective against SIBO (small intestinal bacterial overgrowth), addressing the shared microbial-inflammatory nexus. Dose: 500 mg twice daily with meals. **ChEMBL v34 cross-check (2026-04-24):** Berberine's most potent curated ChEMBL bioactivity is against **tryptophan 2,3-dioxygenase (TDO): IC50 = 30 nM** — not NLRP3 directly. Its NLRP3-related activity is via NF-κB/TLR4 pathway modulation, consistent with its classification as an "NLRP3 pathway modulator" rather than a direct NLRP3 binder. (In Vitro; source: nlrp3-exploit-map.md, chembl-cross-check.md)
 
 - **BPC-157**: Beyond its tissue-healing effects, BPC-157 modulates the nitric oxide (NO) system, which influences macrophage activation states and reduces the priming capacity of immune cells. (Source: nlrp3-exploit-map.md, peptide-gout-addendum.md)
 
@@ -51,7 +74,7 @@ The NLRP3 inflammasome pathway operates as a sequential cascade with six distinc
 
 - **Omega-3 fatty acids (EPA/DHA)**: Precursors to specialized pro-resolving mediators (SPMs) — resolvins (RvE1, RvD1/D2), protectins (PD1), and maresins (MaR1). SPMs suppress neutrophil recruitment and promote macrophage phenotype switching from M1 (inflammatory) to M2 (resolving). Dose: 3–4g EPA+DHA daily. (Source: nlrp3-exploit-map.md)
 
-- **Resveratrol**: Activates SIRT1, which deacetylates p65 (NF-κB subunit), reducing its transcriptional activity. Use micronized trans-resveratrol, liposomal forms, or pair with pterostilbene (4x better bioavailability and same SIRT1 activation). (Source: nlrp3-exploit-map.md)
+- **Resveratrol**: Activates SIRT1, which deacetylates p65 (NF-κB subunit), reducing its transcriptional activity. Use micronized trans-resveratrol, liposomal forms, or pair with pterostilbene (4x better bioavailability and same SIRT1 activation). **ChEMBL v34 cross-check (2026-04-24):** Resveratrol's strongest curated ChEMBL bioactivity is **DPP-4 inhibition at 0.6 nM** — not SIRT1 or NF-κB. Its classification here as a CP1 modulator rests on the SIRT1→p65 mechanism, which is mechanistically plausible but does not have a curated direct ChEMBL bioactivity against NLRP3 or NF-κB components. NLRP3 pathway modulator, not direct NLRP3 binder. (In Vitro; source: nlrp3-exploit-map.md, chembl-cross-check.md)
 
 - **Andrographolide** (from Andrographis paniculata): Covalently modifies the p50 subunit of NF-κB via Michael addition, preventing DNA binding. One of the most potent natural NF-κB inhibitors. (Source: nlrp3-exploit-map.md)
 
@@ -59,13 +82,15 @@ The NLRP3 inflammasome pathway operates as a sequential cascade with six distinc
 
 - **Quercetin**: Inhibits NF-κB and also blocks xanthine oxidase (uric acid production). Phytosome form (Quercefit) provides 20x better bioavailability. Dose: 500–1000 mg daily. **Novel mechanism surfaced by the 2026-04-23 ChEMBL cross-check:** Quercetin's most potent curated ChEMBL bioactivity is against **5-lipoxygenase (5-LOX): IC50 = 300 nM** (*J Med Chem* 1991) — the enzyme that produces LTB4, a neutrophil chemoattractant that drives the neutrophil infiltration phase of MSU-triggered gout flares. Quercetin also has zero direct curated human NLRP3 bioactivities in ChEMBL; its NLRP3-inhibitor label is more accurately "NLRP3 pathway modulator" via NF-κB priming block. (In Vitro; source: nlrp3-inhibitor-screen.md; Source: nlrp3-exploit-map.md)
 
-- **EGCG** (green tea catechin): Inhibits IKK activity, suppresses NF-κB. Dose: 400–800 mg daily or 3–5 cups green tea daily. Matcha provides the highest concentration. (Source: nlrp3-exploit-map.md)
+- **EGCG** (green tea catechin): Inhibits IKK activity, suppresses NF-κB. Dose: 400–800 mg daily or 3–5 cups green tea daily. Matcha provides the highest concentration. **TNFSF14 suppression (CP1a cross-link, 2026-04-24):** EGCG/green tea polyphenols suppress TNFSF14-induced IL-6 and downregulate HVEM receptor expression on target cells (source: tnfsf14-gout-target.md) — making EGCG one of the few natural compounds with documented activity at the TNFSF14/LIGHT priming amplifier (CP1a). **ChEMBL v34 cross-check:** EGCG inhibits human 20S proteasome at 86 nM (curated) — mechanistically upstream of NF-κB; the IKK/NF-κB effect is functional but not directly curated in ChEMBL as its top target. (In Vitro; source: nlrp3-exploit-map.md, tnfsf14-gout-target.md, chembl-cross-check.md)
 
 - **Boswellia (AKBA)**: Acetyl-11-keto-β-boswellic acid directly inhibits IKKβ and 5-LOX. Dose: 300–500 mg standardized extract daily. (Source: nlrp3-exploit-map.md)
 
 - **Vitamin D**: Vitamin D receptor (VDR) activation suppresses NF-κB. Target 50–70 ng/mL serum levels; 5,000–10,000 IU daily with K2. (Source: nlrp3-exploit-map.md)
 
 - **Beta-caryophyllene** (CB2 agonist, food additive in black pepper/clove): In MSU-induced gouty arthritis in rats (100–400 mg/kg oral, animal model), dose-dependently reduced synovial TLR4, MyD88, p65 (NF-κB) expression — hitting CP1 alongside its CP2 NLRP3 suppression. This is the only cannabinoid or terpene with direct MSU gout-model evidence. (*Front Pharmacol* 2021;12:651305, PMID: 33967792). See [Cannabinoids & Terpenes](./cannabinoids-terpenes.md). (source: cannabinoids-terpenes.md)
+
+- **TNFSF14/LIGHT blockade (CP1a sub-branch):** TNFSF14 (also called LIGHT, a TNF-superfamily cytokine) is the **second-highest fold-change gout-flare biomarker after IL-6** (Ea et al. 2024, *Ann Rheum Dis*, DOI: 10.1136/ard-2023-225305). LIGHT signals via HVEM and LTβR receptors on fibroblast-like synoviocytes, monocytes, and myeloid cells, driving NF-κB and AP-1 activation — amplifying CP1 priming parallel to LPS/TLR4. Ex vivo TNFSF14 blockade reduced LPS+MSU cytokine production. Safety caveat: LIGHT has dual pro-inflammatory and resolution roles — LIGHT-null mice have worse colitis, suggesting episodic rather than chronic blockade is safer. Natural compounds with TNFSF14 activity: EGCG/green tea polyphenols suppress TNFSF14-induced IL-6 (In Vitro); DHA shows inverse genetic association with circulating LIGHT. CERC-002 (anti-LIGHT mAb) showed positive Phase 2 data in COVID ARDS — potential repurposing candidate for gout. (Clinical Trial + In Vitro; source: tnfsf14-gout-target.md) See [TNFSF14 Gout Target](./tnfsf14-gout-target.md) for the full analysis.
 
 - **CBG (Cannabigerol)**: NF-κB/MAPK pathway inhibition in RAW 264.7 macrophages (In Vitro, *J Microbiol Biotechnol* 2025). In colitis animal models (DNBS and DSS), reduced colonic IL-1β, MPO, iNOS — part of the effect is CB2-independent. Not gout-tested; strongest case is for gut inflammation, not systemic flare suppression. (source: cannabinoids-terpenes.md)
 
@@ -145,7 +170,39 @@ The NLRP3 inflammasome pathway operates as a sequential cascade with six distinc
 
 - **EGCG** (again): Suppresses IL-1β secretion from macrophages and reduces IL-1β-induced downstream signaling in target cells (chondrocytes, synoviocytes). (Source: nlrp3-exploit-map.md)
 
-### Chokepoint 6: Gasdermin D Pore Formation and Pyroptotic Amplification
+### Chokepoint 5b: Active Resolution via ALX/FPR2 (Specialized Pro-Resolving Mediators)
+
+**The Step:** Parallel to blocking IL-1β signaling (CP5a), the resolution phase of gout inflammation depends on specialized pro-resolving mediators (SPMs) — resolvins, protectins, maresins, and lipoxins — signaling through the ALX/FPR2 receptor on neutrophils and macrophages. Direct MSU gout evidence: **RvD1** reduced mechanical hyperalgesia, joint IL-1β, leukocyte recruitment, and ASC speck formation in a murine gout model (Zaninelli et al. 2022; Animal Model); **MaR1** suppressed gout inflammation via Prdx5 → AMPK/Nrf2 (Jiang et al. 2023; Animal Model). A 2023 expert review (Zaninelli) names ALX/FPR2 agonism as a priority gout therapeutic target. Complement-resolution link: aggregated neutrophil extracellular traps (aggNETs) drive gout resolution; tophi are essentially chronic unresolved aggNETs. (source: spm-resolution-pathway.md)
+
+**Why It Matters:** CP5b is mechanistically distinct from CP5a (IL-1 receptor blockade). SPMs actively command neutrophil withdrawal and promote macrophage efferocytosis — shortening flare duration rather than only dampening peak intensity. Resolution is an active process, not mere cytokine suppression. (source: spm-resolution-pathway.md)
+
+**Exploits:**
+
+- **Omega-3 EPA/DHA precursors** (CP5b access via SPM biosynthesis): DHA → RvD1/D2, Protectin D1, MaR1; EPA → RvE1. The most accessible CP5b strategy is high-dose precursor loading. Dose: 3–4g EPA+DHA daily (high-EPA ratio preferred). The SPM-specific gout evidence above is at the animal model level; precursor supplementation provides both CP1 (priming suppression) and CP5b (active resolution) benefit. (Animal Model; source: spm-resolution-pathway.md, nlrp3-exploit-map.md)
+
+- **Pre-formed SPM supplement** (SPM Active, Metagenics): Standardized to 17-HDHA and 18-HEPE; 2 softgels daily. Bypasses rate-limiting EPA→DHA→SPM conversion steps. (Mechanistic Extrapolation; source: spm-resolution-pathway.md)
+
+- **Aspirin-triggered resolvins** (low-dose aspirin): Low-dose aspirin acetylates COX-2, shifting it to produce 15-epi-lipoxin A4 (aspirin-triggered LXA4) and 17R-resolvin D series — the aspirin-triggered resolvin pathway distinct from aspirin's anti-inflammatory COX-1 effect at higher dose. Note: aspirin at anti-inflammatory doses may impair some prostanoid-derived SPM precursors; the dose-activity relationship is complex. (Mechanistic Extrapolation; source: spm-resolution-pathway.md)
+
+- **Lactoferrin** (indirect ALX/FPR2 modulator; long-term platform target): Fermentable at 3.5 g/L in *P. pastoris*; a candidate for future koji expression. Indirect SPM agonism mechanism. Year 5+ engineering target. (In Vitro; source: spm-resolution-pathway.md)
+
+See [SPM Resolution Pathway](./spm-resolution-pathway.md) for the full analysis.
+
+### Chokepoint 6a: Neutrophil Amplification via 5-LOX/LTB4
+
+**The Step:** Once the initial inflammatory signal fires, MSU-primed mast cells and macrophages produce leukotriene B4 (LTB4) via the **5-lipoxygenase (5-LOX)** pathway. LTB4 is a potent neutrophil chemoattractant — it amplifies neutrophil recruitment to the inflamed joint, establishing the self-sustaining inflammatory loop that characterizes a full gout flare. Blocking LTB4 production or its receptor (BLT1) interrupts this amplification before it peaks. (Animal Model; source: nlrp3-exploit-map.md)
+
+**Why It Matters:** Neutrophil infiltration is the proximate cause of gout flare pain and swelling. The NLRP3 inflammasome assembly in macrophages is only the trigger; it is the recruited neutrophil wave that sustains the flare. Blocking 5-LOX/LTB4 (CP6a) addresses the amplification loop directly, complementary to but distinct from GSDMD pore blockade (CP6b). (source: nlrp3-exploit-map.md)
+
+**Exploits:**
+
+- **Quercetin** (most potent curated 5-LOX inhibitor in the stack): IC50 = 300 nM against 5-lipoxygenase (*J Med Chem* 1991; ChEMBL v34, 2026-04-23) — 36× more potent than its functional NLRP3-pathway activity. Dose: 500–1,000 mg/day phytosome form. Blocks LTB4 production, suppressing the neutrophil chemotaxis amplification loop at CP6a. (In Vitro; source: nlrp3-inhibitor-screen.md, chembl-cross-check.md)
+
+- **Boswellia (AKBA, acetyl-11-keto-β-boswellic acid)**: Directly inhibits both 5-LOX and IKKβ (CP1). Dual CP1/CP6a mechanism. Dose: 300–500 mg standardized extract daily. (In Vitro; source: nlrp3-exploit-map.md)
+
+- **Zileuton** (pharmaceutical 5-LOX inhibitor, off-label): FDA-approved for asthma. Directly inhibits 5-LOX, blocking LTB4 synthesis. No gout-specific trials, but mechanistic case is strong given the LTB4/neutrophil axis in gout. (Clinical Trial for asthma; Mechanistic Extrapolation for gout; source: nlrp3-exploit-map.md)
+
+### Chokepoint 6b: Gasdermin D Pore Formation and Pyroptotic Amplification
 
 **The Step:** Caspase-1 also cleaves gasdermin D (GSDMD), generating an N-terminal fragment that oligomerizes into large membrane pores. These pores mediate pyroptotic cell death (lytic, inflammatory cell death) of the macrophage, releasing all its intracellular contents—including IL-1β, damage signals, and alarm molecules—into the tissue. This amplifies inflammation explosively.
 
@@ -204,9 +261,9 @@ MCC950 and tranilast have published direct NLRP3 assays in the primary literatur
 
 The broader NLRP3 inhibitor pipeline has moved to other indications where the biology has wider therapeutic appeal: DFV890 (Novartis, knee osteoarthritis Phase 2 completed Dec 2024), NT-0796 (NodThera, obesity + semaglutide Phase 2a active), VTX3232 (Zomagen, Parkinson's Phase 2a completed April 2025), VENT-02 (Ventus, Parkinson's Phase 1b **terminated Oct 2025**), Inzomelid (Inflazome/Roche, CAPS Phase 1 completed), ZYIL1 (Zydus, Phase 1 completed). **No NLRP3-specific compound is in active gout-indicated trials as of April 2026.** This is a strategic data point for Open Enzyme's "food-derived NLRP3 adjunct" positioning — the prescription pipeline isn't delivering for gout. (source: gout-clinical-pipeline.md)
 
-### Emerging Target: TNFSF14 (LIGHT)
+### Emerging Target: TNFSF14 (LIGHT) — CP1a Priming Amplifier
 
-A 2024 *Annals of the Rheumatic Diseases* study (Ea et al., DOI: 10.1136/ard-2023-225305, PMID: 38373842) used the Olink 92-protein inflammation panel on gout flare vs. intercritical vs. treat-to-target patients. **TNFSF14 (TNF superfamily 14, also called LIGHT) was the highest fold-change biomarker during flare after IL-6.** Ex vivo TNFSF14 blockade reduced LPS + MSU-induced cytokine response, and SNPs in TNFSF14 affected myeloid cytokine production. This is a candidate gout target distinct from NLRP3 and IL-1β — currently in no clinical program, worth tracking. (Clinical Trial + In Vitro; source: gout-clinical-pipeline.md)
+A 2024 *Annals of the Rheumatic Diseases* study (Ea et al., DOI: 10.1136/ard-2023-225305, PMID: 38373842) used the Olink 92-protein inflammation panel on gout flare vs. intercritical vs. treat-to-target patients. **TNFSF14 (TNF superfamily 14, also called LIGHT) was the second-highest fold-change gout-flare biomarker after IL-6.** LIGHT signals via HVEM and LTβR receptors on fibroblast-like synoviocytes, B cells, monocytes, and myeloid cells, activating NF-κB and AP-1 — a priming amplifier parallel to LPS/TLR4 (classified as CP1a in the exploit map v1.2). Ex vivo TNFSF14 blockade reduced LPS+MSU cytokine production; SNPs in TNFSF14 modulate myeloid cytokine output. CERC-002 (anti-LIGHT mAb) showed positive Phase 2 data in COVID ARDS — potential repurposing candidate. Safety caveat: LIGHT has dual roles (LIGHT-null mice have worse colitis) — episodic or LTβR-selective blockade is safer than total suppression. Natural compounds: EGCG suppresses TNFSF14-induced IL-6 and downregulates HVEM receptor expression (In Vitro); DHA shows inverse genetic association with circulating LIGHT. (Clinical Trial + In Vitro; source: gout-clinical-pipeline.md, tnfsf14-gout-target.md) See [TNFSF14 Gout Target](./tnfsf14-gout-target.md) for the dedicated analysis.
 
 ## Engineered Koji Opportunity
 
@@ -254,6 +311,10 @@ See [[ai-analysis/07-nlrp3-inhibitor-screen|07 — NLRP3 Inhibitor Screen]] for 
 
 ## References
 
-- Source: nlrp3-exploit-map.md — Systematic black hat pen-testing of NLRP3 inflammasome pathway with six chokepoints and dozens of exploits
+- Source: nlrp3-exploit-map.md — Systematic black hat pen-testing of NLRP3 inflammasome pathway; v1.2 restructure (April 2026) adds CP0, CP1a/1b, CP5a/5b, CP6a/6b — seven primary chokepoints
 - Source: gout-deep-dive.md — Comprehensive gout pathophysiology including NLRP3 inflammasome overview and crystal-driven activation
 - Source: peptide-gout-addendum.md — Deep dive into peptide mechanisms including BPC-157 and TB-500 NLRP3 interactions
+- Source: complement-c5a-gout.md — Complement C5a as dominant NLRP3 priming signal (CP0); avacopan repurposing candidate
+- Source: spm-resolution-pathway.md — Active resolution via ALX/FPR2 SPMs (CP5b); RvD1 and MaR1 gout animal model evidence
+- Source: tnfsf14-gout-target.md — TNFSF14/LIGHT as second-highest gout-flare biomarker (CP1a); EGCG and DHA natural activity; CERC-002 clinical precedent
+- Source: chembl-cross-check.md — ChEMBL v34 curated cross-check of stack compounds; curcumin 24.2 μM NLRP3 IC50, berberine TDO top target, resveratrol DPP-4 top target, EGCG proteasome 86 nM

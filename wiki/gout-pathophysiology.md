@@ -1,8 +1,8 @@
 ---
 title: Gout Pathophysiology
 aliases: [gout-cascade, purine-metabolism, uric-acid-handling, inflammasome, urate-transporters, clinical-treatments]
-related: [nlrp3-inflammasome, fructose-connection, validation-experiments, supplements-stack]
-sources: [gout-deep-dive.md, nlrp3-exploit-map.md]
+related: [nlrp3-inflammasome, fructose-connection, validation-experiments, supplements-stack, complement-c5a-gout, spm-resolution-pathway, tnfsf14-gout-target]
+sources: [gout-deep-dive.md, nlrp3-exploit-map.md, complement-c5a-gout.md, tnfsf14-gout-target.md, spm-resolution-pathway.md]
 ---
 
 # Gout Pathophysiology
@@ -106,6 +106,10 @@ MSU crystals are the match. The **NLRP3 inflammasome** is the gasoline. When tis
 2. **Reactive oxygen species (ROS) generation** (oxidative stress)
 
 These are "danger signals" recognized by the immune system.
+
+**Complement priming (CP0 — upstream of NF-κB):** MSU crystals also directly activate the complement system via classical and alternative pathways before intracellular signaling. Complement activation cleaves C5 → **C5a**, which binds C5aR1 on macrophages and generates ROS — the dominant priming signal for NLRP3 in gout (Cumpelik et al. 2016; Khameneh et al. 2017). This complement axis operates in parallel to TLR4/NF-κB priming and is not addressed by most NF-κB inhibitors. (Animal Model; source: complement-c5a-gout.md)
+
+**TNFSF14/LIGHT (CP1a — priming amplifier):** TNFSF14 (LIGHT) is produced at the inflamed joint and is the second-highest fold-change gout-flare biomarker after IL-6 (Ea et al. 2024, *Ann Rheum Dis*). LIGHT signals via HVEM/LTβR → NF-κB, amplifying priming in parallel to LPS/TLR4. (Clinical Trial + In Vitro; source: tnfsf14-gout-target.md)
 
 ### The NLRP3 Inflammasome Assembly
 
@@ -335,8 +339,12 @@ INTERVENTION POINTS:
 - URAT1 inhibitors: Reduce renal reabsorption (Pozdeutinurad, Lesinurad)
 - ABCG2 enhancement: Boost gut secretion (Unexplored)
 - Uricase: Degrade uric acid (Pegloticase, SEL-212, Engineered organisms)
-- NLRP3 inhibitors: Block inflammasome (Dapansutrile, Oridonin, BHB)
-- IL-1 blockers: Block cytokine (Firsekibart, Anakinra, Canakinumab)
+- C5a/C5aR1 blockade: Block complement priming (Avacopan — repurposing candidate; CP0)
+- TNFSF14/LIGHT blockade: Suppress priming amplifier (CERC-002, EGCG; CP1a)
+- NLRP3 inhibitors: Block inflammasome (Dapansutrile, Oridonin, BHB; CP2–CP4)
+- 5-LOX/LTB4 inhibitors: Block neutrophil amplification (Quercetin 300 nM, AKBA, Zileuton; CP6a)
+- IL-1 blockers: Block cytokine (Firsekibart, Anakinra, Canakinumab; CP5a)
+- SPMs/ALX/FPR2 agonists: Active resolution (Omega-3-derived RvD1/MaR1; CP5b)
 - Colchicine: Block neutrophil migration, inflammasome assembly
 ```
 

@@ -150,8 +150,9 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 **Mechanism:** 
 - EPA → Resolvin E1 (RvE1)
 - DHA → Resolvin D1/D2 (RvD1/D2), Protectin D1 (PD1), Maresin 1 (MaR1)
-- These specialized pro-resolving mediators suppress neutrophil recruitment (massive effect in gout flares), promote M1→M2 macrophage switching, enhance efferocytosis
-- Hits CP1 (priming suppression) and CP5 (IL-1β downstream effects)
+- These specialized pro-resolving mediators (SPMs) suppress neutrophil recruitment (massive effect in gout flares), promote M1→M2 macrophage switching, and enhance efferocytosis
+- Hits CP1 (priming suppression) and CP5a/CP5b (IL-1β downstream effects + active resolution via ALX/FPR2)
+- **Direct MSU gout evidence (2026-04-24):** RvD1 reduced mechanical hyperalgesia, joint IL-1β, leukocyte recruitment, and ASC speck formation in murine gout (Zaninelli 2022; Animal Model); MaR1 suppressed gout inflammation via Prdx5 → AMPK/Nrf2 (Jiang 2023; Animal Model). This makes omega-3-derived SPMs among the most gout-specific compounds in the stack at CP5b. See [SPM Resolution Pathway](./spm-resolution-pathway.md). (source: spm-resolution-pathway.md)
 
 **Evidence level:** Established
 
@@ -445,14 +446,14 @@ These become available as Open Enzyme [[engineered-yeast-uricase]] and [[enginee
 | KPV peptide | Supported | CP1 | NF-κB stabilization | $100–200 |
 | BPC-157 | Established | CP1 (tissue repair) | Cytoprotection, NO modulation | Existing |
 | Sulforaphane | Established | CP1, CP2 | Nrf2/NF-κB crosstalk | $5–30 |
-| Oridonin | Established | CP1, CP2 | NLRP3 covalent inhibitor | $30–60 |
-| Omega-3 (high-EPA) | Established | CP1, CP5 | SPM precursors | $30–50 |
+| Oridonin | Established | CP1, CP2 | NLRP3 covalent inhibitor (5.18 μM human IC50) | $30–60 |
+| Omega-3 (high-EPA) | Animal Model (gout SPMs) | CP1, CP5a, CP5b | SPM precursors; RvD1/MaR1 direct gout evidence | $30–50 |
 | Cherry extract | Supported | CP1 (XO inhibition) | Anthocyanins | $20–30 |
 | NAC | Established | CP2 | Glutathione replenishment | $10–15 |
-| Quercetin (Phytosome) | Established | CP1 (XO inhibition) | NF-κB + direct inhibition | $15–25 |
+| Quercetin (Phytosome) | Established | CP1, CP6a (5-LOX 300 nM) | NF-κB + XO + LTB4/5-LOX block | $15–25 |
 | Beta-caryophyllene | Animal Model (MSU gout) | CP1, CP2 | CB2 agonism / TLR4 / NLRP3 | $15–30 |
 | Vitamin D3 + K2 | Established | CP1 | VDR activation | $10–15 |
-| Disulfiram | Established | CP6 | GSDMD pore blockade | ~$30 |
+| Disulfiram | Established | CP6b | GSDMD pore blockade | ~$30 |
 | Tranilast | Established | CP2 | NACHT domain binding | $50–100 |
 | Fermented foods | Established | CP2, CP3 | Spermidine/trehalose | $5–10 |
 | **Engineered Yeast** | *Validated Ph2* | Upstream (uric acid) | Direct degradation | *TBD 2026* |

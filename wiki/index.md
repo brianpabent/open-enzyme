@@ -38,6 +38,18 @@ One engineered *Aspergillus oryzae* koji strain expressing uricase + NLRP3 inhib
 
 ---
 
+## New This Week (2026-04-24)
+
+Three new concept pages added covering upstream NLRP3 chokepoints now mapped in v1.2 of the exploit map:
+
+- **[Complement C5a in Gout](complement-c5a-gout.md)** — CP0: MSU directly activates complement; C5a is the dominant NLRP3 priming signal upstream of NF-κB; avacopan as repurposing candidate; stack gap documented
+- **[TNFSF14 / LIGHT in Gout](tnfsf14-gout-target.md)** — CP1a: Second-highest gout-flare biomarker after IL-6; LIGHT amplifies NF-κB priming; EGCG and DHA as natural moderators; CERC-002 clinical precedent
+- **[SPM Resolution Pathway](spm-resolution-pathway.md)** — CP5b: RvD1 and MaR1 with direct MSU gout animal model evidence; ALX/FPR2 agonism as priority target; aspirin-triggered resolvins; lactoferrin as long-term fermentable candidate
+
+Also new: **[Self-Experiment Protocol](self-experiment-protocol.md)** — Brian's minimum-viable monitoring plan (blood panels, 16S microbiome sampling, symptom diary, red-flag halt criteria).
+
+---
+
 ## Where to Start
 
 **New to the project?**
