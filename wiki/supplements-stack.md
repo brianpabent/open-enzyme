@@ -219,11 +219,13 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 **Category:** Flavonoid / Polyphenol
 
-**Mechanism (4 of 7 chokepoints — widest-spectrum natural compound in the stack):**
-- **CP1 (NF-κB priming):** IKK inhibition → blocks NF-κB transcriptional priming of NLRP3 / pro-IL-1β
+> **See [wiki/egcg.md](./egcg.md) for the full dossier** — proteasome → IκBα → NF-κB unifying mechanism, safety-ceiling rationale, gout-specific evidence summary, and open mechanistic questions. This entry keeps only the short stack-level summary.
+
+**Mechanism (4 of 7 chokepoints, unified through the proteasome → IκBα → NF-κB axis):**
+- **CP1 (NF-κB priming):** **20S proteasome inhibition → IκBα stabilization → NF-κB blockade** (IC50 = 86 nM human proteasome, ChEMBL v34, *Bioorg Med Chem* 2010 / *Eur J Med Chem* 2019). Prior "IKK inhibition" framing is downstream of / redundant with this — IKK's sole output in this pathway is to mark IκBα for proteasomal destruction, which EGCG blocks one step later.
 - **CP1a (TNFSF14 / LIGHT direct suppression):** Hosokawa 2010 (PMID 20461739) — **the only stack compound with direct TNFSF14 data**. Gout-relevant since TNFSF14 is an emerging gout-specific priming amplifier (see [tnfsf14-gout-target.md](./tnfsf14-gout-target.md)). (In Vitro; source: nlrp3-inhibitor-screen.md)
-- **CP4 (caspase-1 suppression):** indirect via 20S proteasome inhibition, **IC50 = 86 nM** (ChEMBL). **Sub-100 nM proteasome potency is a hepatotoxicity dose-ceiling flag** for intense-use protocols.
-- **CP5a (IL-1β receptor-downstream suppression):** reduces IL-1β-induced signaling in target cells (chondrocytes, synoviocytes)
+- **CP4 (caspase-1 suppression):** pro-caspase-1 transcription is NF-κB-dependent → same proteasome/IκBα axis blocks its induction. ROS reduction is a secondary contributor. **Sub-100 nM proteasome potency is a hepatotoxicity dose-ceiling flag** for intense-use protocols.
+- **CP5a (IL-1β receptor-downstream suppression):** same proteasome/IκBα axis on receiving cells (chondrocytes, synoviocytes) blocks IL-1β-induced NF-κB signaling.
 
 **Evidence level (PROMOTED to Tier 2 supplement use, 2026-04-23 re-audit):** Direct MSU mouse gout evidence — Lee 2019 *Molecules* (PMID 31174271): EGCG blocked MSU-induced caspase-1(p10) and IL-1β in primary mouse macrophages; oral EGCG alleviated MSU-injected mouse foot inflammation via NLRP3 suppression; mechanism = mtDNA synthesis block + ROS reduction. Plus hyperuricemic mouse serum-UA lowering (Yu 2024, *Food Funct*, PMID 38757391). The prior "no gout evidence" framing missed these. (Animal Model; source: nlrp3-inhibitor-screen.md)
 

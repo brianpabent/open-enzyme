@@ -153,27 +153,38 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ---
 
-### 1.7 NLRP3 Inflammasome Pathway Validation
+### 1.7 NLRP3 Inflammasome Pathway Validation (THP-1 MSU Macrophage Assay)
 
 **What it tests:** Do proposed compounds in the [[supplements-stack]] actually inhibit NLRP3 at stated chokepoints?
 
 **Proposed in:** nlrp3-exploit-map.md, gout-deep-dive.md
 
 **Protocol:**
-- Use macrophage cell line (THP-1 or primary mouse macrophages)
+- Use macrophage cell line (**THP-1 differentiated with PMA** preferred over primary mouse macrophages — the species-gap caveat in [supplements-stack.md](./supplements-stack.md) makes human cells mandatory for translation)
 - Prime with LPS (Signal 1: NF-κB priming)
 - Expose to MSU crystals (NLRP3 trigger)
-- Treat with individual compounds (BHB, oridonin, sulforaphane, KPV, etc.)
-- Measure endpoint: IL-1β secretion (ELISA), caspase-1 activity, ASC specks (fluorescence)
+- Treat with individual compounds and read out in parallel
+- Measure endpoints: IL-1β secretion (ELISA), caspase-1 activity, ASC specks (fluorescence), **IκBα retention (Western — mechanistic readout for proteasome-pathway inhibitors)**
 - Compare dose-response and mechanistic target (which chokepoint affected)
 
-**Estimated cost:** $3,000–5,000 (cell culture, cytokines, assay kits)
+**Priority compounds (ordered by information value of the specific mechanistic claim being tested):**
 
-**Estimated timeline:** 6–8 weeks
+- **EGCG — highest-priority single-compound assay.** The mechanistic claim in [egcg.md](./egcg.md) (proteasome inhibition → IκBα stabilization → unified CP1 + CP1a + CP4 + CP5a coverage) is specific and testable. Readouts: IL-1β ELISA + **Western for IκBα retention** + TNFSF14-induced IL-6 in HGF co-culture (tests CP1a). If the proteasome mechanism is correct, EGCG should show a steeper dose-response than quercetin or ursolic acid at equimolar concentrations, and IκBα retention should track the proteasome IC50 (86 nM cellular) rather than the reported IKK IC50 (≥10 μM). Phytosome-formulated EGCG recommended alongside free EGCG to test the bioavailability-gated translation question. This brings a falsifiable mechanistic claim to a format that can actually falsify it.
+- **Oridonin** — direct NLRP3 NACHT Cys279 covalent binder; 5.18 μM human THP-1 IC50 per ChEMBL. Tests whether the curated human IC50 replicates in our hands.
+- **BHB** — tests direct NLRP3 K⁺-efflux-block mechanism; straightforward positive-control-class compound.
+- **Sulforaphane** — Nrf2 activator; tests whether the Nrf2/NF-κB crosstalk mechanism translates to MSU-triggered cells at achievable sub-μM doses.
+- **Quercetin** — now primarily a CP6a (5-LOX) compound; tests whether the weaker NF-κB/NLRP3 claim holds at μM concentrations.
+- **Carnosine + Lactoferrin** — unique mechanism classes (dual UA/NLRP3 and CP5 GSDMD-axis respectively); tests whether the rat/murine evidence translates to human THP-1.
+
+**Estimated cost:** $5,000–8,000 (cell culture, cytokines, assay kits, Western reagents, compound panel)
+
+**Estimated timeline:** 8–10 weeks (larger compound panel than original scope)
 
 **Dependencies:** None
 
-**Success criteria:** Confirm >50% IL-1β reduction at stated compound doses; validate chokepoint targets
+**Success criteria:** 
+- Confirm >50% IL-1β reduction at stated compound doses; validate chokepoint targets
+- **EGCG-specific:** dose-response for IκBα retention tracks the 86 nM proteasome IC50 (falsifies or confirms the proteasome-pathway reframe); dose-response is steeper than quercetin at equimolar (confirms mechanistic difference between direct-proteasome and NF-κB-pathway-modulator compounds)
 
 ---
 
