@@ -29,6 +29,9 @@ sources:
   - "Zaninelli TH, Fattori V, Verri WA Jr. Expert Opin Ther Targets 2023;27(8):751-766 (PMID: 37651647)"
   - "Schauer C, Janko C, Munoz LE, et al. Nat Med 2014;20(5):511-7 (PMID: 24784231)"
   - "Serhan CN. Nature 2014;510(7503):92-101 (SPM review)"
+  - "Ward PP, Lo JY, Duke M, et al. 'Production of biologically active recombinant human lactoferrin in Aspergillus oryzae.' Nat Biotechnol 1992;10(7):784-789 (PMID: 1368268)"
+  - "Ward PP, Piddington CS, Cunningham GA, et al. 'A system for production of commercial quantities of human lactoferrin: a broad spectrum natural antibiotic.' Nat Biotechnol 1995;13(5):498-503 (PMID: 9634791)"
+  - "Sun XL, Baker HM, Shewry SC, Jameson GB, Baker EN. 'Structure of recombinant human lactoferrin expressed in Aspergillus awamori.' Acta Crystallogr D Biol Crystallogr 1999;55(Pt 2):403-407 (PMID: 10089347)"
 status: published
 ---
 
@@ -131,7 +134,7 @@ This also connects to [CP0 (complement)](./complement-c5a-gout.md): C5a drives n
 
 ### Indirect resolution agonists
 
-- **Lactoferrin** — fermentable at 3.5 g/L in *Pichia pastoris* (PMID 37926296). Promotes resolution through multiple pathways (anti-microbial, iron sequestration, macrophage modulation). Partial overlap with SPM signaling. Round 1 CP5 audit flagged this as a fermentable platform candidate.
+- **Lactoferrin** — fermentable at 3.5 g/L in *Pichia pastoris* (PMID 37926296), AND **already demonstrated in *Aspergillus* at >2 g/L** (Ward et al. 1995, *Nat Biotechnol* 13:498-503, PMID 9634791 — recombinant human lactoferrin in *A. awamori* as a glucoamylase-fusion polypeptide, KEX-2 processed, submerged culture; and Ward et al. 1992, *Nat Biotechnol* 10:784-789, PMID 1368268 — first mammalian glycoprotein expression in *A. oryzae* at 25 mg/L under *A. oryzae* α-amylase promoter + *A. niger* glucoamylase 3' region; structure of the A. awamori recombinant published by Sun et al. 1999, *Acta Crystallogr D Biol Crystallogr* 55:403-407, PMID 10089347). Recombinant product retained iron binding, enterocyte-receptor binding, and antimicrobial activity. Promotes resolution through multiple pathways (anti-microbial, iron sequestration, macrophage modulation). Partial overlap with SPM signaling. **Evidence level: Confirmed in *Aspergillus* (submerged culture) — feasibility extrapolation to solid-state rice koji remains Open.**
 - **Vagus nerve activation** (cholinergic anti-inflammatory reflex) — increases SPM production via α7nAChR signaling. Non-pharmacologic; cold exposure, deep breathing, and HRV training have modest supporting evidence.
 
 ### Pharma development (receptor-level)
@@ -152,10 +155,11 @@ Can engineered yeast/koji produce SPMs directly? Technically possible but non-tr
 
 **Assessment:**
 - **Short-term (years 1–2):** EPA/DHA co-formulation with uricase koji is the practical move. No engineering required; leverages existing supply chain. This is CP5b coverage at the substrate-loading level.
-- **Medium-term (years 3–5):** Evaluate lactoferrin co-expression in *P. pastoris* or *S. boulardii* (GRAS, gut-active) for partial CP5b overlap without needing the full SPM pathway.
+- **Near-term (years 2–3) — upgraded from Year 5+ target on 2026-04-24 literature check:** **Lactoferrin co-expression in koji is a genuinely tractable near-term target.** Recombinant human lactoferrin has been expressed heterologously in *Aspergillus* twice in the peer-reviewed literature: *A. oryzae* at 25 mg/L under the α-amylase promoter (Ward 1992, PMID 1368268 — the first mammalian glycoprotein ever secreted from the Aspergillus system) and *A. awamori* at **>2 g/L via glucoamylase fusion + KEX-2 processing** after classical strain improvement (Ward 1995, PMID 9634791). Both used submerged culture, not solid-state rice. The mechanistic path from submerged Aspergillus to solid-state koji is plausible — same chassis family, same amyB-style promoter architecture, native hypersecretory physiology — but **not yet demonstrated in the literature**. This is the specific unknown that elevates this from "speculative" to "tractable with a defined feasibility experiment." See [engineered-koji-protocol.md](./engineered-koji-protocol.md) for the proposed lactoferrin co-expression module.
+- **Medium-term (years 3–5):** If koji lactoferrin clears the solid-state feasibility gate, evaluate titer optimization via glucoamylase fusion (the Ward 1995 architecture that carried A. awamori from 25 mg/L to >2 g/L) adapted for *A. oryzae*. Parallel-track *P. pastoris* (3.5 g/L submerged) remains a fallback host if koji titers are insufficient.
 - **Long-term (years 5+):** A dedicated engineered SPM-producing strain is a distinct project — not a module of the uricase koji. Probably better pursued as a separate strain (e.g., engineered *Y. lipolytica* producing 17R-HDHA precursor), formulated alongside the uricase koji.
 
-This is not a reason to deprioritize CP5b — it's an honest accounting of which access points are available now (EPA/DHA loading, aspirin-triggered resolvins, SPM Active supplement, lactoferrin feasibility) vs. engineered from scratch (direct SPM biosynthesis).
+This is not a reason to deprioritize CP5b — it's an honest accounting of which access points are available now (EPA/DHA loading, aspirin-triggered resolvins, SPM Active supplement, lactoferrin **now a demonstrated-in-Aspergillus target**) vs. engineered from scratch (direct SPM biosynthesis).
 
 ---
 
@@ -165,7 +169,8 @@ This is not a reason to deprioritize CP5b — it's an honest accounting of which
 2. **ALX/FPR2 polymorphisms in gout.** Are there genetic variants of FPR2 associated with gout flare severity or tophi formation rates? An association study is warranted.
 3. **Direct SPM bioassay feasibility.** SPM measurement is analytically challenging (LC-MS/MS required; pg/mL levels). Is it practical to include SPM panels in gout patient biomarker stacks? Probably only in research settings for now.
 4. **CP5b + CP0 pairing.** Does aggNET-mediated sequestration of C5a (Cumpelik 2016, [complement-c5a-gout.md](./complement-c5a-gout.md)) feed back to CP0 as well? The resolution loop may close on itself — SPMs → aggNETs → C5a sequestration → reduced CP0 priming → reduced downstream cascade. Mechanistic elegance suggests yes; direct evidence is thin.
-5. **Lactoferrin gout trial.** No dedicated gout trial of oral lactoferrin exists. Given its fermentable production (3.5 g/L P. pastoris) and partial resolution-adjacent mechanism, this is a tractable first experiment.
+5. **Lactoferrin gout trial.** No dedicated gout trial of oral lactoferrin exists. Given its fermentable production (3.5 g/L *P. pastoris*; >2 g/L *A. awamori* per Ward 1995 PMID 9634791) and partial resolution-adjacent mechanism, this is a tractable first experiment.
+6. **Lactoferrin in solid-state koji rice fermentation.** Submerged-culture *Aspergillus* lactoferrin is demonstrated at >2 g/L (PMID 9634791). Solid-state rice fermentation (traditional koji) has different mass-transfer, redox, and proteolysis dynamics than submerged fermentation. The extrapolation from Ward 1995's submerged *A. awamori* system to koji on rice is mechanistically plausible (same fungal chassis family, same amyB-style promoter architecture) but untested in the literature. Feasibility experiment: transform *A. oryzae* with the Ward glucoamylase-fusion cassette, ferment on rice, measure lactoferrin titer + retained iron binding.
 
 ---
 
@@ -176,3 +181,7 @@ This is not a reason to deprioritize CP5b — it's an honest accounting of which
 - Zaninelli TH, Fattori V, Verri WA Jr. "Harnessing lipid mediators and immune cells to treat gouty arthritis." *Expert Opin Ther Targets* 2023;27(8):751-766. DOI: 10.1080/14728222.2023.2247559. PMID: 37651647.
 - Schauer C, Janko C, Munoz LE, et al. "Aggregated neutrophil extracellular traps limit inflammation by degrading cytokines and chemokines." *Nat Med* 2014;20(5):511-7. DOI: 10.1038/nm.3547. PMID: 24784231.
 - Serhan CN. "Pro-resolving lipid mediators are leads for resolution physiology." *Nature* 2014;510(7503):92-101. (Foundational SPM biology review.)
+- Ward PP, Lo JY, Duke M, May GS, Headon DR, Conneely OM. "Production of biologically active recombinant human lactoferrin in Aspergillus oryzae." *Nat Biotechnol* 1992;10(7):784-789. DOI: 10.1038/nbt0792-784. PMID: 1368268. (First mammalian glycoprotein in Aspergillus; 25 mg/L; α-amylase promoter + A. niger glucoamylase 3' region.)
+- Ward PP, Piddington CS, Cunningham GA, Chang N, Young RT, Conneely OM. "A system for production of commercial quantities of human lactoferrin: a broad spectrum natural antibiotic." *Nat Biotechnol* 1995;13(5):498-503. DOI: 10.1038/nbt0595-498. PMID: 9634791. (>2 g/L in *A. awamori* as glucoamylase fusion + KEX-2 processed; classical strain improvement; retained iron binding, enterocyte-receptor binding, antimicrobial activity.)
+- Sun XL, Baker HM, Shewry SC, Jameson GB, Baker EN. "Structure of recombinant human lactoferrin expressed in Aspergillus awamori." *Acta Crystallogr D Biol Crystallogr* 1999;55(Pt 2):403-407. PMID: 10089347. (Confirmed native fold of Aspergillus-produced hLF.)
+- US Patent 5,571,697 (Conneely et al., 1996). "Expression of processed recombinant lactoferrin and lactoferrin polypeptide fragments from a fusion product in Aspergillus." (Patent covering the glucoamylase-fusion + KEX-2 architecture; now expired.)

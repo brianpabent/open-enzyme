@@ -861,6 +861,84 @@ A proposal to co-engineer carnosine (β-alanyl-L-histidine) biosynthesis into th
 
 (source: nlrp3-inhibitor-screen.md, carnosine.md)
 
+## 16 Lactoferrin Co-Expression Module — CP5b Resolution Arm
+
+A proposal to co-engineer recombinant human (or bovine) lactoferrin into the Open Enzyme koji platform as a secondary cassette. Lactoferrin adds **CP5b (active resolution via ALX/FPR2)** coverage to a platform that is currently dominated by CP1-CP5a suppression mechanisms. This is the only stack-adjacent candidate that adds a resolution leg rather than another inflammation-suppression leg.
+
+### Rationale — Why This Is Year 2-3, Not Year 5+
+
+**This module was upgraded from "Year 5+ speculative" to "Year 2-3 near-term tractable" on 2026-04-24 after a PubMed + web literature check revealed that recombinant human lactoferrin has already been expressed in *Aspergillus* twice in the peer-reviewed literature:**
+
+- **Ward PP, Lo JY, Duke M, et al. *Nat Biotechnol* 1992;10(7):784-789 (PMID 1368268).** First mammalian glycoprotein ever expressed in the *Aspergillus* system. Used the *A. oryzae* α-amylase promoter + *A. niger* glucoamylase 3' flanking region. Titer: 25 mg/L, submerged culture. Recombinant hLF retained iron binding, human enterocyte receptor binding, and antimicrobial activity.
+- **Ward PP, Piddington CS, Cunningham GA, et al. *Nat Biotechnol* 1995;13(5):498-503 (PMID 9634791).** Moved to *A. awamori* and combined heterologous expression with classical strain improvement. **Titer exceeded 2 g/L** as a glucoamylase-fusion polypeptide that was secreted and endogenously processed to mature hLF by KEX-2 peptidase. This is commercial-scale submerged-culture titer. US Patent 5,571,697 (expired).
+- **Sun XL, Baker HM, Shewry SC, et al. *Acta Crystallogr D Biol Crystallogr* 1999;55:403-407 (PMID 10089347).** X-ray crystal structure of *A. awamori*-produced hLF confirmed native fold.
+
+The submerged-culture path is de-risked. **The open question is whether the Ward 1995 glucoamylase-fusion architecture transfers to solid-state rice fermentation** — the traditional koji format that distinguishes this platform from a generic industrial Aspergillus bioreactor.
+
+### Design Sketch (First-Pass)
+
+| Parameter | Choice | Rationale |
+| --- | --- | --- |
+| Cassette | Secondary, separate integration locus from uricase and carnosine cassettes | Avoid promoter competition between three therapeutic cassettes |
+| Promoter | **PamyB** (starch-inducible) — matches Ward 1992 | Couples lactoferrin synthesis to rice fermentation stage; directly parallels the published precedent |
+| Architecture | **Glucoamylase-lactoferrin fusion + KEX-2 processing site** (Ward 1995 architecture) | Titer boost of ~80× vs. direct lactoferrin secretion (25 mg/L → >2 g/L) in submerged culture. Assumes *A. oryzae* has KEX-2 activity — needs confirmation, but *A. oryzae* has a well-characterized Kex2-family processing peptidase (PMID 16085708 and subsequent). |
+| Gene | Human lactoferrin (LTF) OR bovine lactoferrin (more affordable synthesis, food-grade history) | Human variant has the published Aspergillus precedent. Bovine variant has GRAS history via infant formula and dairy supplementation — may be regulatorily easier as a food-grade koji additive. |
+| Coding sequence | Codon-optimized for *A. oryzae* | Standard platform practice (see Section "Codon Optimization" for uricase) |
+| Signal peptide | Native glucoamylase signal (fused architecture) | Matches Ward 1995 |
+| Selection marker | Separate auxotrophic marker from uricase + carnosine cassettes | Sequential transformation pattern (see Section 15) |
+
+### Expected Titer
+
+- **Submerged-culture precedent:** >2 g/L in *A. awamori* (PMID 9634791).
+- **Solid-state koji target:** **Open.** First-pass prediction: 500 mg/L – 2 g/L pore fluid equivalent, based on koji's general secretion capacity (25-30 g/L total protein on rice) and assuming modest yield loss from the mass-transfer differences between submerged and solid-state fermentation. **This is a testable prediction — not a carried assumption.**
+- **Dose math:** 10-15 g dry koji/day × 200 mg lactoferrin/g dry mass = **2-3 g lactoferrin daily**, which matches the clinical supplement dose range for oral lactoferrin (200-400 mg/day to 1-2 g/day depending on indication). Achievable at 1 g/L koji pore fluid.
+
+### Risks & Open Questions
+
+| Risk | Severity | Mitigation |
+| --- | --- | --- |
+| *A. oryzae* KEX-2 may not process the glucoamylase-hLF fusion identically to *A. awamori* | Medium | Confirm *A. oryzae* kexB expression and specificity. Backup: if processing is incomplete, use a different fusion partner (e.g., *A. oryzae* TAKA-amylase) or add an explicit Lys-Arg dipeptide cleavage site. |
+| Solid-state fermentation degrades lactoferrin via rice-matrix proteases (fungal or endogenous rice) | Medium | Measure lactoferrin stability in koji extract across fermentation time course. If proteolysis is the bottleneck, knock out major *A. oryzae* proteases (Δalp, Δnpr genes — standard industrial strain optimization) |
+| Solid-state mass-transfer limits titer below submerged benchmark | Likely (first-pass design expects some penalty) | This is the feasibility question itself. If <100 mg/L in koji, fall back to submerged *A. oryzae* as a secondary production format, or co-license the *P. pastoris* 3.5 g/L system for lactoferrin-only modules |
+| Lactoferrin gout-specific efficacy in humans is uncharacterized | Unknown | Not a fermentation risk — a separate clinical question. Flagged in [spm-resolution-pathway.md](./spm-resolution-pathway.md) open questions. |
+| Base koji phenotype impaired by a third secretion-burdened cassette | Medium-High | Validation experiment explicitly measures uricase + carnosine + lactoferrin titers together in the triple-construct strain, vs. each in isolation. If compound burden drops total output, consider split-strain formulation (lactoferrin-only koji co-formulated with uricase koji) |
+
+### Proposed Validation Experiment
+
+**Phase A — Solid-state feasibility (the missing data point):**
+- Transform *A. oryzae* RIB40 (or NSAR1 auxotroph) with single-copy `[PamyB–glucoamylase–KEX2site–hLF–TamyB]` cassette, cloning Ward 1995's architecture.
+- Ferment 100 mL on polished rice at 30°C, 48-60 h, 35% moisture (standard koji conditions).
+- Quantify lactoferrin titer by ELISA + SDS-PAGE / Western (anti-hLF antibody).
+- **Accept**: ≥500 mg/L pore fluid equivalent → promote to Phase B.
+- **Revisit**: 100-500 mg/L → optimize promoter, fusion architecture, protease knockouts before promoting.
+- **Reject**: <100 mg/L after reasonable optimization → fall back to submerged A. oryzae or P. pastoris as alternative hosts.
+
+**Phase B — Activity retention:**
+- Confirm iron binding by UV-Vis at 465 nm (apo-vs-holo lactoferrin characteristic absorbance).
+- Confirm antimicrobial activity vs. *E. coli* or *S. aureus* (standard disk-diffusion or MIC assay).
+- Confirm gut stability in simulated gastric fluid (pH 2, pepsin, 30 min) + simulated intestinal fluid (pH 7, pancreatin, 2 h). Native lactoferrin is known to be partially acid-resistant; the fermentation-produced form should match.
+
+**Phase C — Triple-cassette strain (if Phase A and B pass):**
+- Combine lactoferrin cassette with uricase cassette and (if Section 15 validated) carnosine cassette into a single production strain.
+- Measure all three titers simultaneously + base koji phenotype (growth rate, kojic acid).
+
+**Cost & timeline.** Phase A: ~$2,000-3,000 (gene synthesis, hLF ELISA kit, antibody, fermentation consumables), 4-6 weeks. Phase B: ~$500, 1-2 weeks. Phase C: ~$3,000-4,000, 6-8 weeks.
+
+### Decision Point
+
+- **Promote to combined strain** if Phase A ≥500 mg/L AND Phase B confirms retained iron binding + antimicrobial activity + duodenal stability.
+- **Iterate on architecture** if titer 100-500 mg/L: try A. niger amyloglucosidase signal, try bovine lactoferrin (simpler glycosylation), try *A. oryzae* protease-knockout host strain.
+- **Fall back to separate production** if solid-state titer is irrecoverably low: produce lactoferrin via submerged *A. oryzae* or *P. pastoris*, co-formulate with the uricase koji as a finished product. This loses the "single-strain living pharmacy" elegance but preserves CP5b coverage in the product.
+
+### Cross-References
+
+- [spm-resolution-pathway.md](./spm-resolution-pathway.md) — CP5b resolution biology, lactoferrin as indirect ALX/FPR2 modulator, full literature upgrade note (Section 5).
+- [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) — CP5b chokepoint position; lactoferrin as first food-grade candidate.
+- [open-enzyme-vision.md](./open-enzyme-vision.md) — platform thesis; lactoferrin added the resolution leg the platform was missing.
+- [validation-experiments.md](./validation-experiments.md) — Phase A feasibility experiment entry.
+
+(sources: Ward 1992 PMID 1368268, Ward 1995 PMID 9634791, Sun 1999 PMID 10089347, spm-resolution-pathway.md, synthesis.md 2026-04-24 Pass 2 Connection 4)
+
 ---
 
 ## References & Key Resources

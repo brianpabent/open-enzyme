@@ -133,9 +133,13 @@ According to PubMed, Dapansutrile (OLT1177) Phase 2a proof-of-concept in gout wa
 
 **Implication for Open Enzyme:** the NLRP3 multi-target stack (oridonin + BHB + KPV + disulfiram) is not being pre-empted by a pharma success in gout. Dapansutrile's dormancy actually supports the project's "food-derived NLRP3 adjunct" positioning — the prescription pipeline isn't delivering.
 
-### Zileuton — Latent CP6a Repurposing Candidate (Pharma Blind Spot)
+### Mechanistic gaps in current pipeline
 
-> **Zileuton (Zyflo / Zyflo CR) — latent CP6a repurposing candidate.** FDA-approved oral 5-LOX inhibitor for asthma (1996; Critical Therapeutics then Cornerstone Therapeutics, now generic). The only approved direct 5-LOX drug in the US. **Never tested in gout** despite direct mechanism match at CP6a (5-LOX → LTB4 → neutrophil chemotaxis, the amplification loop that drives the neutrophil infiltration phase of a flare). Dose precedent: 1,200 mg BID (controlled-release). Safety: hepatotoxicity boxed warning — requires LFT monitoring. Zileuton's gout potential has been overlooked because gout → NLRP3 (CP2) attracted the pharma R&D attention; the 5-LOX neutrophil-amplification branch (CP6a) is unrepresented in gout trial registries. ClinicalTrials.gov search (2026-04-24) returns zero gout trials for zileuton. (Clinical Trial; source: Pass 2 synthesis 2026-04-24 via wiki/nlrp3-exploit-map.md)
+> **Zileuton — the unexamined CP6a repurposing candidate.** FDA-approved oral 5-LOX inhibitor for asthma (1996, generic). Direct mechanism match for CP6a (5-LOX → LTB4 → neutrophil chemotaxis — the neutrophil-amplification loop that drives gout flare pain and tissue damage). **Never tested in gout** — zero ClinicalTrials.gov entries as of 2026-04-24. The absence is notable given that (a) 5-LOX is as mechanistically central to gout-flare biology as COX-2 is to inflammatory pain, and (b) quercetin — a supplement with 5-LOX IC50 = 300 nM in ChEMBL — is already in the stack on this rationale. Zileuton is the pharma-grade version of a mechanism we're already trying to reach via supplements.
+>
+> Cost: generic ~$50/month. Accessibility: prescription only; rheumatology or primary-care. Safety: hepatotoxicity boxed warning, monthly LFTs for first 3 months; many CYP1A2 interactions.
+>
+> See [wiki/zileuton.md](./zileuton.md) for the full dossier including theory of mechanism, expected outcomes, comparative side-effect profile, and open questions.
 
 ---
 

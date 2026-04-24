@@ -188,6 +188,38 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ---
 
+### 1.8 EGCG Dose-Escalation on MSU-Stimulated THP-1: TNFSF14-Induced IL-6 Readout (CP1a)
+
+**What it tests:** Does EGCG suppress TNFSF14-induced IL-6 in a gout-relevant cell model at sub-μM concentrations — the specific CP1a readout that would validate EGCG's multi-chokepoint coverage story?
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Proposed Experiments #3; complements Experiment 1.7 (NLRP3 pathway validation) with a TNFSF14-specific readout.
+
+**Protocol:**
+- THP-1 monocytes differentiated to macrophages with PMA (25 ng/mL, 24h, then rest 24h)
+- Prime with LPS (10 ng/mL, 4h — Signal 1)
+- Expose to MSU crystals (100 μg/mL, 6h — Signal 2)
+- Add recombinant TNFSF14/LIGHT (100 ng/mL, 16h) to stimulate the CP1a axis specifically
+- Treat with EGCG dose-escalation: 10 nM, 30 nM, 100 nM, 300 nM, 1 μM, 3 μM, 10 μM (spans the 86 nM proteasome IC50)
+- Positive control: bortezomib (proteasome inhibitor, orthogonal mechanism)
+- Negative control: DMSO vehicle
+- Primary readout: IL-6 in supernatant (ELISA)
+- Secondary readouts: IL-1β (ELISA), IκBα retention (Western blot), HVEM receptor surface expression (flow cytometry)
+
+**Estimated cost:** $500-800 (THP-1 cells, PMA, LPS, MSU, recombinant TNFSF14, EGCG, ELISA kits for IL-6 and IL-1β, Western reagents)
+
+**Estimated timeline:** 3-4 weeks (cell differentiation, assay, readouts)
+
+**Dependencies:** None (can run in parallel with 1.7, or as a focused follow-up)
+
+**Success criteria:**
+- IL-6 suppression ≥50% at EGCG ≤1 μM (confirms CP1a activity at achievable concentrations)
+- Dose-response for IκBα retention tracks the 86 nM proteasome IC50 (falsifies or confirms the proteasome-pathway reframe of EGCG's mechanism)
+- HVEM downregulation at EGCG ≤1 μM (replicates Hosokawa 2010 HGF finding in a macrophage lineage)
+
+**Cross-references:** `wiki/egcg.md` (mechanistic reframe), `wiki/tnfsf14-gout-target.md` (CP1a chokepoint), `wiki/nlrp3-exploit-map.md` (CP1a entry)
+
+---
+
 ## Phase 2: Animal Model Validation
 
 ### 2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii
@@ -504,6 +536,138 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ---
 
+### 3.6 Brian: Urinary LTB4 Assay — Validating Quercetin's 5-LOX (CP6a) Mechanism In Vivo
+
+**What it tests:** Does the current supplement stack suppress 5-LOX/LTB4 activity in vivo in Brian specifically? This directly validates quercetin's CP6a mechanism (5-LOX IC50 = 300 nM from ChEMBL, now the stack's most potent curated 5-LOX activity) as the operative mechanism — rather than its weaker NF-κB/NLRP3 effects that currently dominate the stack rationale.
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Proposed Experiment #1 and New Connection #3. Brian's 2026-04-24 annotation: "do it. also, i have recent extensive labs that i can add to the project."
+
+**Protocol:**
+- Add urinary LTB4 assay to existing self-experiment timepoints in [self-experiment-protocol.md](./self-experiment-protocol.md): **baseline, week 4, week 12** (three measurements total).
+- Collect first-morning urine (~20 mL), freeze at -80°C until shipment (standard for eicosanoid stability).
+- Ship to a commercial lab offering LTB4 ELISA or LC-MS/MS (e.g., Cayman Chemical assay kit format via CLIA lab, or direct Mayo Clinic / ARUP specialty testing).
+- No additional study visit required — piggybacks on the existing self-experiment draw schedule.
+- Compare with hs-CRP and urate trajectories at the same timepoints to separate "stack is working" (hs-CRP drop) from "stack is working via CP6a" (urinary LTB4 drop).
+
+**Estimated cost:** $50-100 per assay × 3 timepoints = **$150-300 total**
+
+**Estimated timeline:** No additional study time — piggybacks on the existing 12-week self-experiment. Results available ~2 weeks after each draw.
+
+**Dependencies:** Existing self-experiment infrastructure (`wiki/self-experiment-protocol.md`). No new study visits or logistics beyond adding a urine collection to existing draws.
+
+**Success criteria:**
+- Measurable baseline urinary LTB4 (confirms the assay is sensitive at Brian's baseline state)
+- ≥30% reduction at week 4 or week 12 relative to baseline → suggests CP6a engagement in vivo
+- No change in LTB4 despite hs-CRP improvement → suggests stack effect is via other chokepoints (NF-κB, NLRP3 assembly), not 5-LOX
+
+**Cross-references:** `wiki/self-experiment-protocol.md` (baseline/week 4/week 12 timepoints), `wiki/nlrp3-exploit-map.md` (CP6a), `wiki/nlrp3-inhibitor-screen.md` (quercetin 5-LOX IC50 = 300 nM)
+
+---
+
+### 3.7 Brian: Serum C5a Baseline + Week 12 — Validating CP0 Complement Priming Status
+
+**What it tests:** Documents complement priming status (C5a, the dominant NLRP3 priming signal per Cumpelik 2016 PMID 26245757 + Khameneh 2017 PMID 28167912) before and after the 12-week supplement stack. The stack currently covers CP1-CP5a but not CP0 — this experiment tests whether it modulates complement at all, and establishes a baseline for future CP0-targeted interventions (e.g., avacopan, flavonoid C5aR1 antagonists per `wiki/complement-c5a-gout.md`).
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Proposed Experiment #2 and New Connection #3.
+
+**Protocol:**
+- Add serum C5a to the baseline and week 12 blood panels in `wiki/self-experiment-protocol.md`.
+- Alternative marker: **sC5b-9** (soluble terminal complement complex) — often more stable in serum than free C5a and available on standard commercial panels.
+- LabCorp (Complement C5a by enzyme immunoassay, test code 142046) or Quest (sC5b-9 panel) both offer this as a routine specialty test with physician order.
+- No new study visit — piggybacks on the already-planned week 0 and week 12 draws.
+- Cross-reference with CBC, urate, hs-CRP at the same timepoints.
+
+**Estimated cost:** $150-200 per C5a or sC5b-9 test × 2 timepoints = **$300-400 total**
+
+**Estimated timeline:** No additional study time. Results available ~1 week after draw.
+
+**Dependencies:** Existing self-experiment infrastructure; rheumatologist or primary-care order for the specialty test.
+
+**Success criteria:**
+- Measurable baseline C5a (confirms assay sensitivity; establishes whether Brian is a "high-complement-priming" or "low-complement-priming" gout patient — relevant for stack design)
+- **Predicted: minimal change at week 12**, since the stack doesn't cover CP0. This is a negative-control-type experiment: if C5a drops significantly, that tells us something unexpected is happening and CP0 is engaged. If C5a doesn't change, that validates the wiki's claim that CP0 is an uncovered chokepoint needing dedicated interventions.
+- Either result informs next-phase stack design.
+
+**Cross-references:** `wiki/self-experiment-protocol.md` (week 0 and week 12 panels), `wiki/complement-c5a-gout.md` (CP0 chokepoint), `wiki/nlrp3-exploit-map.md` (CP0 entry)
+
+---
+
+### 3.8 Brian: DHA vs. EPA Split Omega-3 Crossover — Resolving the Gout-Specific SPM Precursor Question
+
+**What it tests:** Is DHA or EPA the optimal omega-3 precursor for gout flare prevention in Brian's specific case? The 2026-04-24 synthesis pass identified a contradiction between the cardiovascular literature (EPA-dominant) and the gout-specific SPM evidence (DHA-derived RvD1 and MaR1 both show direct MSU animal-model efficacy; DHA also inversely associates with circulating TNFSF14/LIGHT per Mendelian randomization). The `supplements-stack.md` currently recommends 2:1 or 3:1 EPA:DHA for gout, which may be a cardiovascular-biased extrapolation.
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Proposed Experiment #4 and New Connection #2 ("DHA should be preferentially dosed over EPA for gout").
+
+**Protocol:**
+- **Phase A (4 weeks): High-EPA protocol.** 3 g EPA + 0.5 g DHA daily (≈6:1 ratio — commercial high-EPA omega-3 formulations like Nordic Naturals ProEPA or Minami Platinum-Plus EPA).
+- **Washout (1 week):** No omega-3 supplementation. Continue rest of base stack.
+- **Phase B (4 weeks): High-DHA protocol.** 3 g DHA + 0.5 g EPA daily (≈6:1 ratio DHA-dominant — e.g., Nordic Naturals ProDHA or Life Extension Mega EPA/DHA adjusted by dropping EPA capsules).
+- Biomarkers measured at baseline, end of Phase A, end of washout, end of Phase B:
+  - **Urinary LTB4** (from 3.6 above; tests whether DHA or EPA better suppresses 5-LOX/LTB4 output)
+  - **hs-CRP** (generic inflammation marker)
+  - **Serum SPM panel (RvD1, RvE1, MaR1 metabolites if a CLIA lab offers this — otherwise spot-measure via Cayman Chemical research kit through a lab contact)**
+  - **Gout flare count and severity (daily log)**
+- Washout rationale: 7-day omega-3 washout is short relative to RBC phospholipid half-life (~8 weeks) but sufficient to allow downstream SPM levels to decay. Accept the limitation — n=1 study, not a clinical trial.
+
+**Estimated cost:** $200 (supplement differentials across 9 weeks) + $300 (SPM panel) + $50-100 × 2-3 additional LTB4 assays = **$550-700 total** on top of 3.6
+
+**Estimated timeline:** 9 weeks (4 + 1 + 4), concurrent with the existing self-experiment or as a post-experiment extension.
+
+**Dependencies:**
+- Experiment 3.6 (urinary LTB4 assay infrastructure)
+- Availability of a lab offering SPM metabolite measurement (Mayo Clinic has an eicosanoid panel; research-grade SPM kits from Cayman require a CLIA lab partnership)
+- Brian's flare calendar (existing self-tracking)
+
+**Success criteria:**
+- **Clear directional effect:** one phase (either EPA or DHA) produces lower urinary LTB4, higher serum RvD1 or RvE1, and fewer flares than the other.
+- **Ambiguous result** (both phases similar): the ratio doesn't matter clinically for Brian; revert to a balanced 1:1 or the cheaper formulation.
+- **Directional toward DHA:** revises `supplements-stack.md` and confirms the 2026-04-24 synthesis recommendation.
+- **Directional toward EPA:** the current stack recommendation was right; synthesis flagged a literature signal that doesn't translate for Brian.
+
+**Cross-references:** `wiki/spm-resolution-pathway.md` (RvD1/MaR1 DHA-derived), `wiki/supplements-stack.md` (omega-3 entry, currently EPA-leaning), `wiki/self-experiment-protocol.md` (integration with the existing protocol), `wiki/tnfsf14-gout-target.md` (DHA-TNFSF14 Mendelian randomization link), `wiki/nlrp3-exploit-map.md` (CP5b SPM entry)
+
+---
+
+### 3.9 Brian: Zileuton Off-Label Trial — Pharma-Grade CP6a Inhibition in Flare-Prevention Protocol
+
+**What it tests:** Does the FDA-approved 5-LOX inhibitor **zileuton** (Zyflo / Zyflo CR, asthma indication) abort or prevent gout flares in Brian's specific case? This is the pharma-grade equivalent of quercetin's CP6a mechanism — cleaner readout, stronger effect size expected. Cross-references the `wiki/zileuton.md` dossier (in progress per synthesis queue).
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Proposed Experiment #5 and New Connection #5 ("Zileuton is the closest pharma-grade CP6a analog to quercetin, and has never been tested in gout"). Brian's 2026-04-24 annotation: "yes add it to the clinical pipeline and also let's do a wiki page about it."
+
+**Protocol:**
+- **Phase 1: Physician conversation.** Request off-label prescription from rheumatologist or primary-care physician with the CP6a mechanistic rationale. Key talking points:
+  - Zileuton (Zyflo CR) is FDA-approved for asthma, dosed 1200 mg BID, generic available, ~$50/month.
+  - 5-LOX is mechanistically upstream of neutrophil chemotaxis in gout (LTB4 is a potent neutrophil chemoattractant; colchicine blocks microtubule-dependent chemotaxis downstream).
+  - No published gout efficacy trials; this is a genuine off-label novelty.
+  - Safety profile: liver enzyme elevation is the primary monitoring concern (~2% patients); monthly LFTs for the first 3 months standard.
+  - Duration: 12 weeks, consistent with the existing self-experiment window.
+- **Phase 2: Baseline documentation.** Brian's colchicine-era flare frequency (available from existing medication history). 4-week pre-zileuton observation window if feasible.
+- **Phase 3: Zileuton 1200 mg BID × 12 weeks.** Continue base supplement stack (including quercetin — zileuton does not contraindicate quercetin and any additive effect is informative).
+- Biomarkers:
+  - **Urinary LTB4** at baseline and week 12 (from 3.6 — direct pharmacodynamic confirmation)
+  - **Gout flare count and severity** (primary endpoint; daily log)
+  - **LFTs** (AST, ALT) at baseline, week 2, week 4, week 8, week 12 (safety)
+  - **hs-CRP** at baseline and week 12
+
+**Estimated cost:** $150-200/month × 3 months = **$450-600** (prescription) + existing LFT coverage via insurance + $0 additional lab cost (piggybacks on 3.6 and insurance-covered LFTs). **Net additional: ~$500.**
+
+**Estimated timeline:** 12 weeks active treatment + 4-week follow-up for post-treatment flare rate. Single additional physician conversation to set up.
+
+**Dependencies:**
+- Rheumatologist or primary-care physician willing to prescribe off-label. The mechanistic rationale + clean safety profile + low cost should clear this bar.
+- Completion of `wiki/zileuton.md` dossier (in progress; synthesis queue item) for Brian to share with the prescribing physician.
+- Experiment 3.6 (urinary LTB4 as pharmacodynamic confirmation)
+
+**Success criteria:**
+- **Urinary LTB4 ≥50% reduction at week 12** (confirms pharmacodynamic engagement — zileuton's on-target effect)
+- **Flare frequency reduced ≥50% vs. colchicine-era baseline** (clinical efficacy signal)
+- **LFTs remain within normal range throughout** (safety)
+- **Negative result (no flare reduction despite LTB4 drop)** is also informative: suggests LTB4/neutrophil-chemotaxis is not rate-limiting for Brian's flare biology, and colchicine's mechanism (microtubule → chemotaxis) is doing more work than expected.
+
+**Cross-references:** `wiki/zileuton.md` (to be created), `wiki/gout-clinical-pipeline.md` (mechanistic gap entry), `wiki/nlrp3-exploit-map.md` (CP6a), `wiki/self-experiment-protocol.md` (integration with existing protocol)
+
+---
+
 ## Cross-Experiment Dependencies and Sequencing
 
 ```text
@@ -554,6 +718,11 @@ Phase 1 (In Vitro)
 | 3 | Koji enzymes (Lynn) | GI symptom improvement | ≥50% vs. baseline |
 | 3 | Engineered koji (both) | Tolerability + efficacy | >80% adherence + dual benefit |
 | 3 | Long-term prevention | Sustained flare reduction | ≥40% reduction sustained 6mo |
+| 1 | EGCG CP1a (1.8) | IL-6 suppression at ≤1 μM EGCG | ≥50% |
+| 3 | Urinary LTB4 (3.6) | Stack effect on 5-LOX in vivo | ≥30% reduction vs. baseline |
+| 3 | Serum C5a (3.7) | CP0 priming documentation | Measurable baseline; informative either direction |
+| 3 | DHA vs. EPA (3.8) | Directional omega-3 preference | Clear winner or confirmed null |
+| 3 | Zileuton off-label (3.9) | LTB4 reduction + flare reduction | ≥50% LTB4 drop, ≥50% flare reduction |
 
 ---
 

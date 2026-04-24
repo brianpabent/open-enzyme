@@ -9,7 +9,8 @@ related:
   - gout
   - approved-drugs
   - gasdermin-d
-  - chokepoint-6
+  - chokepoint-6b
+  - zileuton
 sources:
   - nlrp3-exploit-map.md
 ---
@@ -20,7 +21,9 @@ sources:
 
 This represents one of the most accessible, underrated, and economically efficient gout interventions available today.
 
-## The GSDMD Target: Chokepoint 6
+> **Complementary pharma at CP6**: zileuton (5-LOX inhibitor, CP6a) and disulfiram (GSDMD inhibitor, CP6b) hit different branches of the same chokepoint. See [wiki/zileuton.md](./zileuton.md) for the CP6a pharma-grade option.
+
+## The GSDMD Target: Chokepoint 6b (Pyroptotic Exit)
 
 In the NLRP3 inflammasome cascade, gasdermin D (GSDMD) is the "exit route" — the final executor that forms membrane pores and releases IL-1β into the extracellular space. Once IL-1β is outside the cell, it triggers the full inflammatory storm: neutrophil recruitment, pain, swelling, and the full gout flare symptomatology.
 
@@ -109,8 +112,9 @@ Disulfiram requires a prescription. Access strategies:
 
 | Drug | Chokepoint | Class | Status | Cost | Safety Data |
 |------|-----------|-------|--------|------|-------------|
-| **Disulfiram** | 6 (GSDMD) | Approved (Rx) | Widely available | ~$30/month | 70+ years |
-| **DMF** | 6 (GSDMD) | Approved (MS) | Requires MS diagnosis | High | 15+ years (MS) |
+| **Disulfiram** | 6b (GSDMD pore) | Approved (Rx) | Widely available | ~$30/month | 70+ years |
+| **Zileuton** | 6a (5-LOX/LTB4) | Approved (Rx, asthma) | Available; off-label in gout | ~$50/month generic | 30+ years (asthma) |
+| **DMF** | 6b (GSDMD) | Approved (MS) | Requires MS diagnosis | High | 15+ years (MS) |
 | **Dapansutrile** | 2 (NLRP3) | Phase 3 clinical | Investigational | Unknown | <5 years |
 | **Oridonin** | 1, 2 | Natural/research | Preclinical | ~$30/month | Unknown human data |
 | **Colchicine** | 3 (ASC/microtubule) | Approved (Rx) | Standard of care | ~$20/month | 50+ years |
