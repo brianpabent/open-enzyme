@@ -66,6 +66,19 @@ Standard add-on to an annual physical; can be ordered through Quest / Labcorp or
 | **LDH** (optional, first + last draw) | Cell turnover; flag if anything is lysing |
 | **HbA1c** (baseline + T3 only) | Some stack compounds (berberine, EGCG) affect glucose metabolism; useful baseline context |
 
+### Optional add-ons: CP0 (complement) and CP6a (5-LOX/leukotrienes)
+
+The core panel (above) covers general safety and efficacy. The following optional add-ons cover the two chokepoints added in the v1.2 exploit-map restructure (CP0 complement, CP6a leukotrienes). They're specialty-lab or send-out tests — useful for tracking mechanism-specific response but not required for safety monitoring.
+
+| Test | Why |
+|---|---|
+| **Complement C3, C4, CH50** (optional, baseline + T3) | CP0 biomarkers. Low C3/C4 suggests active complement consumption — if uricase lowers MSU load, complement activation should reduce. CH50 measures total complement activity. |
+| **Soluble C5a** (optional, baseline + T1 flare if one occurs) | Direct CP0 readout. Elevated during active gout flare; should decline as uricase clears MSU crystals. Not offered at most commercial labs — may require a send-out (Quest, Labcorp) or specialty lab. |
+| **Urinary LTB4 (or LTE4)** (optional, baseline + T3) | CP6a biomarker. Leukotriene E4 is the stable urinary metabolite of the 5-LOX pathway and is widely used in asthma monitoring. Elevated in active neutrophil inflammation. Specialty lab — ARUP offers urine LTE4. |
+| **ESR** | Nonspecific inflammation marker; complements CRP, captures different kinetics. Every-4-week cadence. |
+
+See [complement-c5a-gout.md](./complement-c5a-gout.md) for the CP0 mechanism detail, and the CP6a section of [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) for the 5-LOX/LTB4 branch that these tests monitor.
+
 ---
 
 ## 4. Stool 16S (baseline + week 12 only)

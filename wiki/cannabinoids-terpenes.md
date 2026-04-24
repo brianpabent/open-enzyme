@@ -39,6 +39,8 @@ Cannabis produces two broad classes of bioactive compounds relevant to Open Enzy
 
 **Bottom line up front:** Beta-caryophyllene is the standout compound — it has direct MSU (gout) animal model data that the inhibitor screen missed. CBD has functional NLRP3 data but no gout-specific model testing, and its mechanism is upstream (P2X7) rather than direct NLRP3 binding. CBG and THCV have newer data worth tracking. Myrcene has analgesic data in arthritis but no NLRP3 assays.
 
+> **Species-gap caveat (methodological standard, 2026-04-23)**: Rodent cellular IC50 values for NLRP3 inhibitors routinely diverge from human cellular IC50 by up to 3 orders of magnitude. Example: dapansutrile IC50 = 1 nM in mouse J774A.1 cells vs. 1,000 nM (1 μM) in human MDM cells under LPS+nigericin stimulation (ChEMBL v34, 2026-04-23). Every rodent-derived IC50 in this document should be read with that translation uncertainty in mind — mouse efficacy is still the best preclinical gout predictor we have, but dose translation requires a species-bridging measurement (e.g., a human THP-1 IC50) before making dosing claims. (source: chembl-cross-check.md)
+
 ---
 
 ## 1. Cannabinoids and NLRP3 Inflammasome Modulation

@@ -19,6 +19,8 @@ sources:
 
 **Oridonin** is an ent-kaurane diterpenoid compound isolated from *Rabdosia rubescens*, a plant used in traditional Chinese medicine. It is a **specific, covalent NLRP3 inflammasome inhibitor** that targets the exact same binding site used by the pharmaceutical NLRP3 inhibitor MCC950, achieving comparable potency through a natural product scaffold.
 
+> **Species-gap caveat (methodological standard, 2026-04-23)**: Rodent cellular IC50 values for NLRP3 inhibitors routinely diverge from human cellular IC50 by up to 3 orders of magnitude. Example: dapansutrile IC50 = 1 nM in mouse J774A.1 cells vs. 1,000 nM (1 μM) in human MDM cells under LPS+nigericin stimulation (ChEMBL v34, 2026-04-23). Every rodent-derived IC50 in this document should be read with that translation uncertainty in mind — mouse efficacy is still the best preclinical gout predictor we have, but dose translation requires a species-bridging measurement (e.g., a human THP-1 IC50) before making dosing claims. (source: chembl-cross-check.md)
+
 ## Mechanism: Covalent NLRP3 Inhibition at NACHT Domain Cys279
 
 ### The Binding Target

@@ -21,6 +21,8 @@ sources:
 
 **BHB** is a ketone body produced by the liver during periods of fasting or nutritional ketosis (low-carbohydrate, high-fat diet). It is arguably **the single most efficient multi-target intervention in the NLRP3 inflammasome pathway** — hitting three of six chokepoints simultaneously through a direct, non-metabolic signaling mechanism.
 
+> **Species-gap caveat (methodological standard, 2026-04-23)**: Rodent cellular IC50 values for NLRP3 inhibitors routinely diverge from human cellular IC50 by up to 3 orders of magnitude. Example: dapansutrile IC50 = 1 nM in mouse J774A.1 cells vs. 1,000 nM (1 μM) in human MDM cells under LPS+nigericin stimulation (ChEMBL v34, 2026-04-23). Every rodent-derived IC50 in this document should be read with that translation uncertainty in mind — mouse efficacy is still the best preclinical gout predictor we have, but dose translation requires a species-bridging measurement (e.g., a human THP-1 IC50) before making dosing claims. (source: chembl-cross-check.md)
+
 ## Unique Mechanism: Direct NLRP3 Inhibition
 
 Unlike compounds that work through upstream inflammatory pathways, BHB directly modulates NLRP3 assembly itself. This is remarkable because BHB's anti-inflammatory effect is **NOT dependent on:**

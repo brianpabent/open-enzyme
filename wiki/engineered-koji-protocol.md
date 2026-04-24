@@ -780,6 +780,89 @@ This project sits at the intersection of synthetic biology, fermentation science
 
 ---
 
+## 15 Carnosine Co-Expression Module
+
+A proposal to co-engineer carnosine (β-alanyl-L-histidine) biosynthesis into the Open Enzyme koji platform as a secondary cassette alongside uricase. This promotes koji from a single-enzyme delivery vehicle into a genuine multi-target therapeutic food.
+
+### Rationale
+
+- **Only stack compound with dual-phenotype gout evidence.** Carnosine is the sole compound in the April 2026 NLRP3 inhibitor screen with published hyperuricemia rat data showing both serum uric acid reduction **and** NLRP3 inflammasome suppression in the same animal model (Animal Model; source: nlrp3-inhibitor-screen.md). Mechanism: ROS scavenging, p-p65 (NF-κB) suppression, p-JNK inhibition, URAT1/GLUT9 transporter modulation, downstream NLRP3/caspase-1 suppression.
+- **Excellent oral bioavailability.** Unlike quercetin and ursolic acid (both bioavailability-limited), carnosine is rapidly absorbed intact via intestinal peptide transporters (PepT1). This matters for a food-delivered product where any first-pass losses compound with dietary-matrix effects.
+- **Multi-enzyme chassis fit.** Koji already produces native anti-inflammatory metabolites — kojic acid (NF-κB suppression, 3–5 g/L), ergothioneine (~20 mg/g dry mass; mitochondrial ROS scavenger), ferulic acid (substrate-dependent). Adding engineered carnosine extends the native chorus rather than replacing it, and it's the only module with direct hyperuricemia rat evidence on top of NLRP3 suppression.
+- **Single-gene module.** *Lactobacillus* carnosine synthase (CarnS) is an ATP-grasp family enzyme, ~460 aa, ~1.4 kb coding sequence — a minimal insertion compared to multi-gene secondary-metabolite pathways.
+
+### Design Sketch
+
+| Parameter | Choice | Rationale |
+| --- | --- | --- |
+| Cassette | Secondary, separate integration locus from the uricase cassette | Avoid copy-number competition and promoter cross-talk between the two therapeutic cassettes |
+| Integration locus | Documented neutral locus (e.g., via CRISPR/Cas9 knock-in at a characterized safe-harbor site; see Section 03 and koji-construct-design.md) — **open**: specific neutral locus (pyrG backfill site, wA, or other characterized safe-harbor) not yet fixed for this platform. Flagged for follow-up before synthesis order. | Single-copy, predictable expression; no disruption of native enzyme secretion machinery |
+| Promoter (baseline) | **PTEF1** (constitutive) | Always-on carnosine production; simpler first pass. Want carnosine accumulating throughout fermentation, not only at starch-peak induction. |
+| Promoter (alternative) | **PamyB** (starch-inducible) | Couples carnosine synthesis to rice fermentation stage; may help with β-alanine competition during peak growth. Retain as a fallback if TEF1-driven expression disrupts growth. |
+| Gene | *Lactobacillus* carnosine synthase (CarnS, ATP-grasp family) | Most-characterized heterologous carnosine synthase; single subunit (no partner protein). |
+| Coding sequence | Codon-optimized for *A. oryzae* (~48% GC target; remove cryptic polyadenylation AATAAA/ATTAAA in 3' UTR; 2–4× mRNA gain expected — see Section "Codon Optimization") | Matches the uricase CDS optimization protocol already established for this platform. |
+| Biochemistry | β-alanine + L-histidine + ATP → carnosine + ADP + Pi | Two amino acid substrates + ATP cofactor. Standard ATP-grasp mechanism. |
+| Selection marker | Separate auxotrophic marker from uricase cassette (e.g., if uricase uses *pyrG* backfill, carnosine cassette uses *niaD* or *adeA*) | Allows sequential transformation in *A. oryzae* NSAR1 (niaD−, sC−, ΔargB, adeA−) without marker collision |
+
+### Substrate Supply
+
+- **β-alanine pool in A. oryzae is not characterized** — may be limiting. Fungal β-alanine is typically produced via aspartate decarboxylation or polyamine catabolism; unclear whether native flux is sufficient to saturate CarnS.
+  - **Backup plan:** Co-express aspartate decarboxylase (*panD*, bacterial — e.g., from *Corynebacterium glutamicum* or *E. coli*) to convert aspartate → β-alanine + CO₂. Adds a second small ORF (~140 aa) to the cassette. Precedent: engineered β-alanine supply in yeast and *E. coli* for pantothenate and carnosine pathways (in vitro, published metabolic engineering literature).
+- **L-histidine pool is probably adequate.** Amino acid biosynthesis is core *A. oryzae* metabolism and histidine is plentiful during rice fermentation. Not expected to be limiting. (Mechanistic extrapolation.)
+- **ATP supply** is not a concern under fermentation conditions — *A. oryzae* is a robust aerobic organism on starch-rich medium.
+
+### Expected Titer
+
+- **Yeast baseline: ~150 mg/L** in engineered *S. cerevisiae* (unsourced estimate carried from the NLRP3 inhibitor screen ranking table (source: nlrp3-inhibitor-screen.md); the underlying range cited in that doc is 100–500 mg/L "based on analogous dipeptide engineering" — **flagged as open for primary-source lookup**; no peer-reviewed carnosine titer for engineered yeast has been verified for this protocol).
+- **Koji target: 500–1000 mg/L**, based on koji's higher secretion and biosynthesis capacity vs. yeast for similar small-molecule pathways. (Mechanistic extrapolation — not directly supported by published carnosine-in-koji data, which does not exist.)
+- **Dose math:** 10–15 g dry koji/day × 100 mg carnosine/g dry mass = **1–1.5 g carnosine daily**, which lands inside the 500–1000 mg/day oral supplement dose range (see carnosine.md). Targets the clinical supplement dose, not a sub-supplement trace.
+
+### Risks & Open Questions
+
+| Risk | Severity | Mitigation |
+| --- | --- | --- |
+| *Lactobacillus* CarnS may not fold correctly in *A. oryzae* cytoplasm | Medium | Precedent is thin — most heterologous carnosine synthase expression has been in *E. coli* or *S. cerevisiae*. Backup: try a eukaryotic or archaeal ATP-grasp homolog if bacterial CarnS misfolds. |
+| β-alanine pool limiting | Medium | Co-express *panD* (aspartate decarboxylase). Monitor β-alanine pool by targeted metabolomics before and after CarnS induction. |
+| Native *A. oryzae* carnosinase degrades product back to β-alanine + histidine | Unknown — genome annotation for fungal carnosinase homologs is incomplete | If detected (carnosine decay during/after fermentation), CRISPR-knock out the responsible peptidase, OR engineer a carnosinase-resistant analog (e.g., N-acetyl-carnosine, D-carnosine) |
+| Carnosine survival through fermentation workup (lyophilization, heat, grinding) | Low-Medium | Human oral carnosine is stable across typical food-processing temperatures; specific fermentation-stability data for koji workup is not in hand. Measure carnosine pre/post-workup in the validation experiment. |
+| Base koji phenotype impaired (uricase titer drops, growth slows, kojic acid suppressed) | Medium | Mitigated by separate integration locus + separate promoter. Validation experiment explicitly measures base phenotype alongside carnosine titer. Fallback: switch PTEF1 → PamyB (induced only at starch-peak) to reduce baseline metabolic burden. |
+
+### Proposed Validation Experiment
+
+**Design.** Transform *A. oryzae* RIB40 (or NSAR1 for auxotrophic selection) with a single-copy `[PTEF1–CarnS–TamyB]` cassette integrated at a characterized neutral locus (specific locus TBD; see koji-construct-design.md and Section 03 of this protocol for the current standard choices). Ferment 100 mL on polished rice at 30°C, 48–60 h at 35% moisture. If a β-alanine bottleneck is suspected after the first pass, add a second construct with `[PTEF1–panD–TamyB]` and re-test.
+
+**Primary readout.**
+- Carnosine titer by LC-MS (OPA/FMOC derivatization, quantify against a carnosine standard curve; β-alanine and histidine pools measured in the same run)
+- Accept: ≥500 mg/L in pore fluid
+- Reject: <100 mg/L (de-prioritize koji track; see decision point)
+
+**Secondary readouts.**
+- Uricase titer (spectrophotometric urate-degradation assay at 293 nm, matches Section 05 Step 3)
+- Growth rate vs. parental strain (radial extension on PDA at 30°C)
+- Kojic acid baseline (HPLC, matches the native-metabolite baseline sub-experiment in Section 01b)
+- β-alanine and histidine pool sizes (LC-MS, to confirm or rule out substrate limitation)
+- Carnosine stability through standard workup (measure carnosine before and after lyophilization + grinding)
+
+**Cost & timeline.** $1,500–$2,500 for gene synthesis (CarnS codon-optimized, ~1.4 kb; plus optional *panD*), HPLC carnosine standards, β-alanine/histidine standards, and fermentation consumables. 4–6 weeks end-to-end.
+
+### Decision Point
+
+- **Promote to combined strain** if carnosine ≥500 mg/L AND uricase titer unchanged AND growth rate within 10% of parental. Move carnosine cassette into the production uricase-expressing strain.
+- **Add β-alanine supply module** if carnosine 100–500 mg/L AND β-alanine pool appears limiting (low intracellular β-alanine measured alongside intermediate titers). Re-test with *panD* co-expression.
+- **De-prioritize koji track for carnosine** if <100 mg/L after *panD* co-expression. Fall back to *S. cerevisiae* as the carnosine production host (where the ~150 mg/L baseline was cited — pending primary-source confirmation). Keep koji focused on uricase + native anti-inflammatory metabolites (kojic acid, ergothioneine, ferulic acid).
+- **Re-engineer the cassette** if base koji phenotype is impaired. Options: swap PTEF1 → PamyB (inducible, lower metabolic burden baseline), try an alternative neutral locus, or reduce cassette copy number.
+
+### Cross-References
+
+- [carnosine.md](./carnosine.md) — mechanism, gout-specific evidence, bioavailability, dosing, and open questions.
+- [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) — April 2026 screen ranking carnosine Tier 2 secondary-synergy candidate; sole compound with hyperuricemia rat dual-phenotype evidence.
+- [koji-construct-design.md](./koji-construct-design.md) — promoter, signal peptide, and codon-optimization conventions.
+- [supplements-stack.md](./supplements-stack.md) — carnosine as a standalone supplement entry (separate doc track).
+
+(source: nlrp3-inhibitor-screen.md, carnosine.md)
+
+---
+
 ## References & Key Resources
 
 ### Gene & Protein

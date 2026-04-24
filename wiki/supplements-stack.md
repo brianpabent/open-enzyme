@@ -13,6 +13,8 @@ A practical, daily multi-compound stack targeting the NLRP3 inflammasome cascade
 
 This stack is not a replacement for medical care. Work with a physician while using any of these compounds, especially those with drug interactions.
 
+> **Species-gap caveat (methodological standard, 2026-04-23)**: Rodent cellular IC50 values for NLRP3 inhibitors routinely diverge from human cellular IC50 by up to 3 orders of magnitude. Example: dapansutrile IC50 = 1 nM in mouse J774A.1 cells vs. 1,000 nM (1 μM) in human MDM cells under LPS+nigericin stimulation (ChEMBL v34). Every rodent-derived IC50 in this document should be read with that translation uncertainty in mind. When evaluating new compounds, prefer human-cell (THP-1, PBMC, human MDM) data over rodent cellular assays. (source: chembl-cross-check.md)
+
 ---
 
 ## Section 1: NOW (Available Today)
@@ -102,9 +104,9 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 **Category:** Phytonutrient
 
-**Mechanism:** Activates Keap1-Nrf2 pathway → master regulator of cellular antioxidant defense; cross-talk with NF-κB (CP1/CP2)
+**Mechanism:** Activates Keap1-Nrf2 pathway → master regulator of cellular antioxidant defense; cross-talk with NF-κB (CP1/CP2). **Sub-μM Nrf2 activation: EC50 = 580 nM** (*J Med Chem* 2019, ChEMBL) — rare potency for a food-derived compound.
 
-**Evidence level:** Established
+**Evidence level:** Established (Nrf2 activation) + **Animal Model hyperuricemia (2026-04-23 re-audit, PROMOTED from Tier 4)** — Wang 2022 *J Adv Res* (PMID 36371056): sulforaphane decreased urate synthesis + increased renal urate excretion + Nrf2-mediated epigenetic modification in hyperuricemic rats. This bridges the uric-acid and inflammation axes in a single compound. The prior "no gout-specific evidence" framing was keyword-gated on "gout" in abstracts and missed the hyperuricemia rat model. (source: nlrp3-inhibitor-screen.md 2026-04-23 re-audit)
 
 **Dosing Options:**
 - **Raw broccoli sprouts:** 100–150g/day (contains glucoraphanin + myrosinase)
@@ -157,9 +159,15 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 **Evidence level:** Established
 
 **Dosing:** 3–4g EPA+DHA daily
-- Should be high-EPA ratio (2:1 or 3:1 EPA:DHA is more effective for gout than balanced ratios)
 
-**Form:** Fish oil, algae oil, or krill oil
+> **DHA-specific update (2026-04-24 Pass 2 synthesis):** The direct MSU-gout animal evidence driving this entry's CP5b ranking is **DHA-derived, not EPA-derived**:
+> - RvD1 (DHA-derived) — murine MSU gout (Zaninelli 2022, PMID 35716378)
+> - MaR1 (DHA-derived) — MSU peritonitis (Jiang 2023, PMID 37996809)
+> - DHA separately correlates with lower circulating TNFSF14 (Huang 2024, PMID 38235898, Mendelian randomization — see [tnfsf14-gout-target.md](./tnfsf14-gout-target.md))
+>
+> **For gout-specific use, prefer DHA-emphasis formulations or high-DHA fish oils.** EPA is not inactive (EPA → RvE1 at CP5b; EPA substrate competition reduces LTB4 at CP6a), but the specific pro-resolving and TNFSF14-suppressing signals that matter most for gout are DHA-derived. Prior "2:1 or 3:1 EPA:DHA" guidance was generalized from non-gout contexts and does not match the gout-specific data.
+
+**Form:** Fish oil (DHA-emphasis preferred for gout), algae oil (often DHA-only), or krill oil
 
 **Practical note:** Most consumer fish oil is heavily oxidized (damages efficacy). Use pharmaceutical-grade options:
 - Nordic Naturals Pro Series (molecularly distilled)
@@ -207,17 +215,103 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 ---
 
+### EGCG (Green Tea Catechin) — Widest-Spectrum Natural Compound
+
+**Category:** Flavonoid / Polyphenol
+
+**Mechanism (4 of 7 chokepoints — widest-spectrum natural compound in the stack):**
+- **CP1 (NF-κB priming):** IKK inhibition → blocks NF-κB transcriptional priming of NLRP3 / pro-IL-1β
+- **CP1a (TNFSF14 / LIGHT direct suppression):** Hosokawa 2010 (PMID 20461739) — **the only stack compound with direct TNFSF14 data**. Gout-relevant since TNFSF14 is an emerging gout-specific priming amplifier (see [tnfsf14-gout-target.md](./tnfsf14-gout-target.md)). (In Vitro; source: nlrp3-inhibitor-screen.md)
+- **CP4 (caspase-1 suppression):** indirect via 20S proteasome inhibition, **IC50 = 86 nM** (ChEMBL). **Sub-100 nM proteasome potency is a hepatotoxicity dose-ceiling flag** for intense-use protocols.
+- **CP5a (IL-1β receptor-downstream suppression):** reduces IL-1β-induced signaling in target cells (chondrocytes, synoviocytes)
+
+**Evidence level (PROMOTED to Tier 2 supplement use, 2026-04-23 re-audit):** Direct MSU mouse gout evidence — Lee 2019 *Molecules* (PMID 31174271): EGCG blocked MSU-induced caspase-1(p10) and IL-1β in primary mouse macrophages; oral EGCG alleviated MSU-injected mouse foot inflammation via NLRP3 suppression; mechanism = mtDNA synthesis block + ROS reduction. Plus hyperuricemic mouse serum-UA lowering (Yu 2024, *Food Funct*, PMID 38757391). The prior "no gout evidence" framing missed these. (Animal Model; source: nlrp3-inhibitor-screen.md)
+
+**Dosing:** 400–800 mg EGCG/day (standardized green tea extract) OR 3–5 cups matcha/day
+
+**Form:** Standardized green tea extract (typically 50% EGCG) OR matcha powder (highest natural concentration)
+
+> **Hepatotoxicity dose ceiling:** The 86 nM 20S proteasome IC50 is a safety flag at high-dose intense use. Stay at or below 800 mg EGCG/day; avoid combining high-dose EGCG with alcohol or other hepatotoxic agents; consider periodic ALT/AST monitoring at sustained high doses.
+
+**Summary framing:** EGCG is the widest-spectrum natural compound in the current Open Enzyme stack, hitting four of seven chokepoints. Its 20S proteasome sub-100 nM activity is a hepatotoxicity flag at high dose — safety dose-ceiling for intense use protocols.
+
+**Cost:** $15–25/month (standardized extract); $30–50/month (high-grade matcha)
+
+---
+
+### Limonene (d-Limonene, Citrus Peel Oil) — PROMOTED Tier 3 Supplement
+
+**Category:** Monoterpene / Food Additive (GRAS)
+
+**Mechanism:** Nrf2 activator + TLR4 suppression (upstream NLRP3 priming block); also suppresses NF-κB, NLRP3, ASC, caspase-1 expression via NRF2-dependent pathway.
+
+**Evidence level (PROMOTED to Tier 3 supplement, 2026-04-23 re-audit):** Direct rat PO+MSU dual gout model — Venkatesan 2025 *Nutrients* (PMID 41515190): 50 mg/kg limonene reduced paw thickness, serum UA, IL-1β/TNF/IL-6, and improved antioxidant status; authors invoke NLRP3-IL-1β suppression as the mechanistic frame. (Animal Model; source: nlrp3-inhibitor-screen.md)
+
+**Dosing:** 500–1,000 mg d-limonene/day (standardized capsules). Supplement capsule is the practical path — engineered microbial production is infeasible (<20 mg/L titers + volatility).
+
+**Form:** d-limonene softgel capsules (commonly sold for GERD / digestive support)
+
+**Practical note:** Safe food-additive compound; do not expect oral bioavailability from inhalation/vapor forms — for NLRP3/gout use, take oral capsules.
+
+**Cost:** $15–25/month
+
+---
+
+### Lactoferrin (Bovine) — NEW CP5 Entry
+
+**Category:** Glycoprotein / Food-Grade Supplement
+
+**Mechanism (CP5 — the one CP5-active entry in the stack that isn't a $300K/year biologic):**
+- NLRP3 / caspase-1 / GSDMD axis suppression → reduces IL-1β and IL-18 output
+- Orthogonal to polyphenol CP1 mechanisms and direct NLRP3 binders (CP2)
+- Talactoferrin (recombinant human lactoferrin, ChEMBL2108651) reached Phase 3 oncology at multi-g/day oral doses — safety and oral bioavailability established
+
+**Evidence level:** Animal (murine nephrotoxicity, PMID 37926296 — 300 mg/kg/day back-translates to ~3 g/day human); In Vitro (macrophages + IEC-6 intestinal epithelial cells); Clinical Phase 3 (talactoferrin oncology). Direct MSU-gout validation not yet published — CP5 mechanism is the gout-relevant class; priority experimental screen. (Animal Model + Clinical Trial; source: nlrp3-inhibitor-screen.md)
+
+**Dosing:**
+- Commercial oral bovine lactoferrin: 100–300 mg/day (typical capsule)
+- Murine protective dose (300 mg/kg/day) back-translates to ~3 g/day human — achievable at engineered *P. pastoris* fermentation scale (3.5 g/L demonstrated, PMID 27294912)
+
+**Form:** Bovine colostrum-derived capsules (commercial supplement); future: engineered *P. pastoris* or koji (*A. oryzae*) recombinant production
+
+**Strategic position:** The only CP5 candidate in the stack that is fermentable at scale, food-grade, and has direct NLRP3/IL-1β evidence. Fills the Open Enzyme CP5 gap that canakinumab currently occupies at ~$300K/year. Koji expression not yet tried — potential future module for the Open Enzyme platform.
+
+**Cost:** $30–60/month (bovine oral capsules, 300 mg/day)
+
+---
+
+### Carnosine (L-Carnosine, β-Alanyl-L-Histidine) — Dual UA + NLRP3
+
+**Category:** Dipeptide / Endogenous Muscle Metabolite
+
+**Mechanism (unique dual phenotype: serum UA reduction + NLRP3 suppression in same compound):**
+- ROS scavenging, p-p65 (NF-κB) suppression, p-JNK dampening
+- Direct NLRP3, caspase-1 suppression (downstream of ROS / NF-κB block)
+- URAT1 and GLUT9 transporter modulation → enhanced renal urate excretion
+
+**Evidence level:** Animal Model (hyperuricemia rat) — carnosine reduces serum uric acid AND suppresses NLRP3 inflammasome activation simultaneously; the only compound in the stack with this documented dual phenotype. (Amino Acids 2024; see [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) for full citation trail.)
+
+**Dosing:** 500–1,000 mg/day oral L-carnosine (split doses preferred; dipeptide transporter-mediated absorption)
+
+**Form:** L-carnosine capsules (widely available); avoid carnosine analogs (anserine, balenine) unless specified
+
+**Strategic position:** Unique dual-phenotype (UA + NLRP3) that other stack compounds don't match. ~150 mg/L estimated titer in engineered yeast — moderate engineering complexity, lower titer than polyphenols, but the only compound that compresses both problems (hyperuricemia + inflammasome) into a single molecule. Co-engineering with uricase in koji is the long-term platform play.
+
+**Cost:** $20–35/month (oral L-carnosine, 500–1,000 mg/day)
+
+---
+
 ### Quercetin (Phytosome Form Preferred)
 
 **Category:** Flavonoid
 
-**Mechanism:** 
-- NF-κB inhibition (CP1)
-- Xanthine oxidase inhibition (direct uric acid production reduction)
-- **5-lipoxygenase (5-LOX) inhibition, IC50 = 300 nM** — blocks leukotriene B4 (LTB4) production, suppressing the neutrophil chemotaxis that amplifies MSU-driven gout flares. This is quercetin's single most potent curated ChEMBL bioactivity (*J Med Chem* 1991, ChEMBL v34, 2026-04-23). More potent than its NF-κB/NLRP3-pathway IC50 (~11 μM functional) by ~36×. (In Vitro; source: nlrp3-inhibitor-screen.md)
+**Mechanism (reordered 2026-04-24 by dominant curated activity):**
+- **PRIMARY — 5-lipoxygenase (5-LOX) inhibition, IC50 = 300 nM (CP6a)** — blocks leukotriene B4 (LTB4) production, suppressing the neutrophil chemotaxis that amplifies MSU-driven gout flares. This is quercetin's single most potent curated ChEMBL bioactivity (*J Med Chem* 1991, ChEMBL v34, 2026-04-23). More potent than its NF-κB/NLRP3-pathway IC50 (~11 μM functional) by ~36×. Quercetin is now framed primarily as a CP6a compound on the exploit map. (In Vitro; source: nlrp3-inhibitor-screen.md)
+- **SECONDARY — NF-κB inhibition (CP1)** — NLRP3 pathway modulator via NF-κB priming block (not direct NLRP3 binding; zero curated human NLRP3 IC50 in ChEMBL)
+- **TERTIARY — Xanthine oxidase inhibition** — direct uric acid production reduction (metabolic / upstream of MSU crystal formation)
 - Mast cell stabilization
 
-**Evidence level:** Established (CP1 + xanthine oxidase); In Vitro 300 nM 5-LOX IC50 per ChEMBL
+**Evidence level:** In Vitro 300 nM 5-LOX IC50 per ChEMBL; Established (NF-κB + xanthine oxidase)
 
 **Labeling note:** Quercetin has **zero curated direct human NLRP3 bioactivities in ChEMBL** — it is more accurately an "NLRP3 pathway modulator" (NF-κB priming block) than a direct NLRP3 binder. The gout-relevant case rests on three orthogonal mechanisms: NF-κB priming block, xanthine oxidase inhibition, and 5-LOX/LTB4 block. (source: nlrp3-inhibitor-screen.md)
 
@@ -450,7 +544,11 @@ These become available as Open Enzyme [[engineered-yeast-uricase]] and [[enginee
 | Omega-3 (high-EPA) | Animal Model (gout SPMs) | CP1, CP5a, CP5b | SPM precursors; RvD1/MaR1 direct gout evidence | $30–50 |
 | Cherry extract | Supported | CP1 (XO inhibition) | Anthocyanins | $20–30 |
 | NAC | Established | CP2 | Glutathione replenishment | $10–15 |
-| Quercetin (Phytosome) | Established | CP1, CP6a (5-LOX 300 nM) | NF-κB + XO + LTB4/5-LOX block | $15–25 |
+| Quercetin (Phytosome) | Established | **CP6a (5-LOX 300 nM, primary)**, CP1, XO | 5-LOX/LTB4 block + NF-κB + XO | $15–25 |
+| **EGCG** (green tea) | Animal Model (MSU mouse, Lee 2019) | CP1, CP1a (TNFSF14), CP4, CP5a | Widest-spectrum natural compound; 4 of 7 chokepoints; hepatotox dose-ceiling (86 nM proteasome) | $15–25 |
+| **Limonene** (d-limonene) | Animal Model (MSU rat, Venkatesan 2025) | CP1, CP2 | Nrf2 + TLR4 suppression | $15–25 |
+| **Lactoferrin** (bovine) | Animal + Clinical Ph3 (talactoferrin) | CP5 | NLRP3/caspase-1/GSDMD axis; fills canakinumab gap | $30–60 |
+| **Carnosine** (L-carnosine) | Animal Model (HUA rat) | CP1, CP2, +urate | Dual UA + NLRP3 (unique in stack) | $20–35 |
 | Beta-caryophyllene | Animal Model (MSU gout) | CP1, CP2 | CB2 agonism / TLR4 / NLRP3 | $15–30 |
 | Vitamin D3 + K2 | Established | CP1 | VDR activation | $10–15 |
 | Disulfiram | Established | CP6b | GSDMD pore blockade | ~$30 |
