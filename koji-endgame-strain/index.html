@@ -1,0 +1,2672 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/koji-endgame-strain/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>The Koji Endgame Strain — One Strain, Five Chokepoints, Four Molecules - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-koji-endgame-strain" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Koji Endgame Strain — One Strain, Five Chokepoints, Four Molecules
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-clinical-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Clinical Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cannabinoids-terpenes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cannabinoids & Terpenes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Conditions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-koji-endgame-strain">The Koji Endgame Strain<a class="headerlink" href="#the-koji-endgame-strain" title="Permanent link">&para;</a></h1>
+<p><strong>One engineered <em>A. oryzae</em> koji strain, layering two heterologous expression cassettes (uricase + lactoferrin) on top of two native host metabolites (kojic acid + ergothioneine), covers five NLRP3-pathway chokepoints — three of them contributed by molecules the host already produces for free.</strong> This page formalizes the coverage matrix, identifies the single gating feasibility test (Ward 1995 glucoamylase-KEX2 dual-cassette architecture), and positions the endgame relative to the simpler starting strains in <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a>. This is not the Phase 0 starting point — that's uricase-only koji. This is where the platform converges once single-cassette engineering is validated.</p>
+<p>The thesis is mathematically specific. Most multi-target anti-inflammatory "platforms" are additions of separately-produced compounds into a shared supplement regimen; the convergence is at the consumer's pill bottle. The koji endgame strain is the opposite: convergence is at the organism. One fermentation, one food-grade chassis, one therapeutic format delivers coverage at five distinct mechanistic nodes in the NLRP3 cascade plus upstream trigger elimination. The strategic claim is not that this strain is a full gout-inflammation stack by itself — it emphatically is not, and §5 enumerates what it does <em>not</em> cover — but that it is the densest single-organism payload that Open Enzyme can plausibly engineer with published <em>Aspergillus</em> precedent at every step.</p>
+<hr />
+<h2 id="1-coverage-matrix-the-centerpiece">1. Coverage Matrix — The Centerpiece<a class="headerlink" href="#1-coverage-matrix-the-centerpiece" title="Permanent link">&para;</a></h2>
+<p>The coverage claim resolves to one table. Rows are NLRP3 chokepoints per the <a href="../nlrp3-exploit-map/">v1.2 exploit map</a>; columns are the four molecules delivered by the endgame strain; each cell records the strength of the coverage (<strong>Supported</strong> / <strong>Reasonable</strong> / <strong>Speculative</strong> / <strong>—</strong>). "Evidence level" is the single strongest tier of evidence across the per-molecule links.</p>
+<table>
+<thead>
+<tr>
+<th>Chokepoint</th>
+<th>Uricase (engineered)</th>
+<th>Lactoferrin (engineered)</th>
+<th>Kojic acid (native)</th>
+<th>Ergothioneine (native)</th>
+<th>Covered?</th>
+<th>Evidence</th>
+<th>Primary citation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CP0</strong> — complement C5a priming</td>
+<td>Trigger-elimination upstream*</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Partial (upstream)</td>
+<td>Clinical (rasburicase) + Animal (MSU-complement cascade)</td>
+<td>Russell 1982 PMID 6749358; Khameneh 2017 PMID 28167912</td>
+</tr>
+<tr>
+<td><strong>CP1a</strong> — NF-κB priming (LPS/TLR4 arm)</td>
+<td>—</td>
+<td><strong>Supported</strong> (lipid A + sCD14 binding)</td>
+<td><strong>Reasonable</strong> (NF-κB suppression in vitro)</td>
+<td>Reasonable (Nrf2-NF-κB crosstalk)</td>
+<td>Yes</td>
+<td>In Vitro</td>
+<td>Appelmelk 1994 PMID 8188389; Baveye 2000 PMID 11083760</td>
+</tr>
+<tr>
+<td><strong>CP1b</strong> — C5a → ROS non-transcriptional priming</td>
+<td>—</td>
+<td><strong>Reasonable</strong> (Fe sequestration → ↓Fenton ROS)</td>
+<td>—</td>
+<td><strong>Supported</strong> (thiol antioxidant, mitochondrial ROS scavenger)</td>
+<td>Yes</td>
+<td>Animal + In Vitro</td>
+<td>Habib 2023 PMID 37926296; Cheah 2012 ergothioneine review</td>
+</tr>
+<tr>
+<td><strong>CP2</strong> — K⁺ efflux / NLRP3 assembly</td>
+<td>—</td>
+<td>Reasonable (upstream via mitophagy-cleared damaged mitochondria)</td>
+<td>—</td>
+<td>Speculative (ROS scavenging upstream of assembly)</td>
+<td>Partial (indirect)</td>
+<td>In Vitro + Animal</td>
+<td>Shan 2026 PMID 41524100</td>
+</tr>
+<tr>
+<td><strong>CP3</strong> — ASC speck assembly</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><strong>No</strong> — pairs with colchicine / spermidine supplementation</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>CP4</strong> — caspase-1 activation</td>
+<td>—</td>
+<td><strong>Supported</strong> (suppressed caspase-1 cleavage in vivo)</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Animal</td>
+<td>Habib 2023 PMID 37926296; Zhao 2020 PMID 33163347</td>
+</tr>
+<tr>
+<td><strong>CP5a</strong> — IL-1β receptor blockade</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><strong>No</strong> — pharma-only chokepoint (anakinra, canakinumab)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>CP5b</strong> — ALX/FPR2 active resolution</td>
+<td>—</td>
+<td>Speculative (M1→M2 polarization, indirect)</td>
+<td>—</td>
+<td>—</td>
+<td>Weak (indirect)</td>
+<td>Animal</td>
+<td>Fu 2025 PMID 40589746</td>
+</tr>
+<tr>
+<td><strong>CP6a</strong> — 5-LOX / LTB4 amplification</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><strong>No</strong> — pairs with quercetin + AKBA or zileuton</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>CP6b</strong> — GSDMD pyroptotic pore</td>
+<td>—</td>
+<td><strong>Supported</strong> (direct GSDMD suppression via mitophagy)</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Animal + In Vitro</td>
+<td>Shan 2026 PMID 41524100</td>
+</tr>
+</tbody>
+</table>
+<p><em>* CP0 via trigger elimination: uricase degrades MSU precursor in the gut lumen so that systemic urate (and therefore joint-surface MSU crystallization) is reduced. The mechanism is upstream of complement rather than antagonistic to it. See §2.1 for the semantic distinction and why we score it "Partial (upstream)" rather than "Supported."</em></p>
+<p><strong>How to read the table.</strong> A row scores "Yes" in the "Covered?" column if at least one of the four molecules has Supported or Reasonable evidence at that chokepoint. CP3, CP5a, and CP6a are honest blanks — the endgame strain doesn't reach them, which is why §5 catalogs them explicitly. CP0 is marked Partial because uricase's contribution is mechanistically distinct: it removes the upstream trigger rather than blocking the complement step per se. If systemic urate is driven below ~5 mg/dL and joint-surface MSU clears (the validated rasburicase / pegloticase phenotype — see <a href="../uricase/">uricase.md</a>), then the CP0 priming signal is proportionately reduced by a mechanism that is not C5aR1 antagonism; avacopan remains the direct-antagonism candidate and is not displaced by the endgame strain (see <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> §11).</p>
+<p><strong>Five chokepoints covered, three contributed by free native metabolites.</strong> Lactoferrin carries CP1a + CP4 + CP6b (the three Supported rows). Kojic acid and ergothioneine — both produced by wild-type <em>A. oryzae</em> during standard koji fermentation, with no engineering load — contribute Reasonable-tier support at CP1a + CP1b. Uricase handles upstream trigger elimination (CP0-adjacent). That's three engineered-product chokepoints + one upstream + two free-bonus chokepoints from metabolites the organism already makes, all delivered from a single fermentation.</p>
+<p><strong>What the matrix does not say.</strong> It does not rank the endgame strain against the full Open Enzyme supplement stack (which reaches CP3, CP5a, CP5b, and CP6a through separate compounds — see <a href="../supplements-stack/">supplements-stack.md</a>). It does not claim each cell has equal mechanistic weight (CP4 pyroptosis suppression via lactoferrin is a denser mechanism than CP5b macrophage polarization). And it does not displace pharma adjuncts — avacopan for CP0 proper, canakinumab for CP5a, zileuton for CP6a — which remain on the table even in the endgame-strain world.</p>
+<hr />
+<h2 id="2-the-four-molecules-technical-detail">2. The Four Molecules — Technical Detail<a class="headerlink" href="#2-the-four-molecules-technical-detail" title="Permanent link">&para;</a></h2>
+<h3 id="21-engineered-uricase-trigger-elimination-arm-cp0-upstream">2.1 Engineered Uricase — Trigger-Elimination Arm (CP0-Upstream)<a class="headerlink" href="#21-engineered-uricase-trigger-elimination-arm-cp0-upstream" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose.</strong> Degrade uric acid to allantoin in the gut lumen. The ABCG2 transporter actively secretes ~&#8531; of total systemic uric acid into the intestinal lumen, creating a substrate pool that a gut-resident enzyme can access without systemic absorption (see <a href="../gut-lumen-sink/">gut-lumen-sink.md</a> and <a href="../uricase/">uricase.md</a>). If luminal uricase activity is sufficient, systemic urate drops, crystallization in joints halts, and the MSU crystal priming signal that drives CP0 is removed from the system.</p>
+<p><strong>Source gene.</strong> Per <a href="../uricase-variant-selection/">uricase-variant-selection.md</a>, the primary candidate is <em>A. flavus uaZ</em> (UniProt Q00511; GenBank X61766.1) — the rasburicase parent, with FDA-approved <em>S. cerevisiae</em> expression precedent since 2001. <em>A. flavus</em> and <em>A. oryzae</em> share &gt;99.5% genome identity in coding regions with near-identical codon usage, so the <em>uaZ</em> gene is effectively host-native; codon optimization is a small refinement rather than a structural rewrite. A secondary candidate is <em>Candida utilis</em> uricase carrying the ALLN-346 mutation set (I180V, V190G, Y165F, E51K, Q244K, I132R, A87G per US10815461B2, now expired/public) — three of three recent oral/gut-lumen uricase programs (ALLN-346, SSS11, <em>S. boulardii</em> ACS Synth Bio 2025) chose <em>C. utilis</em> or <em>V. vulnificus</em> over <em>A. flavus</em>, so the industry-revealed preference for non-<em>A. flavus</em> backbones in the oral format deserves consideration. For the endgame strain's first pass we default to <em>A. flavus</em> because host compatibility is the strongest single argument and because the <em>A. oryzae</em> glycosylation apparatus is pre-adapted to fungal-origin proteins.</p>
+<p><strong>Mechanism of CP0-adjacent coverage.</strong> The CP0 chokepoint per the <a href="../nlrp3-exploit-map/">NLRP3 exploit map v1.2</a> is the MSU → complement → C5a → ROS → NLRP3 priming cascade described by Russell 1982 PMID 6749358 and Khameneh 2017 PMID 28167912. Avacopan (Tavneos) blocks it by antagonizing C5aR1 on phagocytes. Uricase reaches the same endpoint through a different logic: if the MSU crystal itself is reduced in joint tissue by driving luminal urate degradation, the MSU-surface C3bBb convertase has fewer crystals to assemble on, less C5a is generated, and CP0 priming is proportionately quieted. This is functionally CP0 coverage at the cascade level but is not C5aR1 antagonism and is <strong>not a substitute for avacopan</strong> in cases where systemic urate is already normalized but flares persist (which would suggest CP0 has a non-MSU complement-activation source — see <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> §12). We score it "Partial (upstream)" for exactly this reason.</p>
+<p><strong>Expected titer.</strong> Per <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> AI-analysis projections, <em>A. flavus</em> uricase under PamyB in <em>A. oryzae</em> targets 40–80 mg per gram dry koji, which at 10–15 g/day koji matches ALLN-346 clinical dosing (~150–400 mg active uricase/meal). Evidence level: mechanistic extrapolation from PamyB glucoamylase industrial yields (20–30 g/L submerged) + rasburicase yield literature in <em>S. cerevisiae</em>; needs wet-lab confirmation via Experiment 1.5 in <a href="../validation-experiments/">validation-experiments.md</a>.</p>
+<h3 id="22-engineered-lactoferrin-three-chokepoint-coverage-cp1a-cp4-cp6b">2.2 Engineered Lactoferrin — Three-Chokepoint Coverage (CP1a + CP4 + CP6b)<a class="headerlink" href="#22-engineered-lactoferrin-three-chokepoint-coverage-cp1a-cp4-cp6b" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose.</strong> Deliver a single ~80 kDa iron-binding glycoprotein with a pleiotropic receptor profile that spans three mechanistically distinct NLRP3-cascade chokepoints. Full treatment in <a href="../lactoferrin/">lactoferrin.md</a>; this section is the coverage-focused summary.</p>
+<p><strong>CP1a (LPS/CD14 priming block).</strong> Baveye et al. 2000 (<a href="https://doi.org/10.1128/IAI.68.12.6519-6525.2000"><em>Infect Immun</em> 68:6519-25</a>, PMID 11083760) demonstrated that human lactoferrin binds soluble CD14 with Kd ≈ 16 nM and suppresses LPS-induced E-selectin/ICAM-1 expression on HUVECs. Separately, Appelmelk 1994 (<a href="https://doi.org/10.1128/iai.62.6.2628-2632.1994"><em>Infect Immun</em> 62:2628-32</a>, PMID 8188389) established direct lipid A binding (affinity ~2 × 10⁹ M⁻¹), meaning lactoferrin can intercept LPS at the most pro-inflammatory moiety of the molecule. In gout patients with metabolic-syndrome / leaky-gut phenotype — where chronic low-grade endotoxemia drives TLR4-dependent NF-κB priming — this is a direct CP1a coverage. Evidence level: <strong>In Vitro (Supported)</strong>.</p>
+<p><strong>CP4 (caspase-1 activation).</strong> Habib et al. 2023 (<a href="https://doi.org/10.1016/j.lfs.2023.122245"><em>Life Sci</em> 335:122245</a>, PMID 37926296) showed bovine lactoferrin at 300 mg/kg/day in a carfilzomib nephrotoxicity mouse model suppressed NLRP3, caspase-1, IL-1β, and IL-18 in renal and pulmonary tissue, <em>and</em> lowered serum uric acid — the dual phenotype that makes lactoferrin unusually gout-adjacent. Separately, Zhao et al. 2020 (<a href="https://doi.org/10.1016/j.apsb.2020.07.019"><em>Acta Pharm Sin B</em> 10:1966-76</a>, PMID 33163347) demonstrated that Lf-modified liposomes targeting LRP1 on DSS-colitis macrophages suppressed NLRP3 + caspase-1 activation and IL-1β secretion. Evidence level: <strong>Animal Model (Supported)</strong>.</p>
+<p><strong>CP6b (GSDMD pyroptotic pore).</strong> Shan et al. 2026 (<a href="https://doi.org/10.1039/d5fo04989j"><em>Food Funct</em> 17:1045-60</a>, PMID 41524100) is the 2026 mechanism paper that moves lactoferrin from "nice CP5b addition" to "structural CP6b piece of the koji thesis." In a radiation-induced intestinal injury model (10 Gy in C57BL/6 mice + 4 Gy X-ray in IEC-6 cells), lactoferrin pretreatment inhibited NLRP3/caspase-1/GSDMD pyroptosis and activated PINK1/Parkin + FUNDC1/BNIP3/NIX mitophagy. Pharmacological mitophagy inhibition (3-MA, Mdivi-1) abolished the protection — the mitophagy-induction arm is mechanistically <em>required</em>, not incidental. GSDMD pore formation is CP6b in the <a href="../nlrp3-exploit-map/">v1.2 exploit map</a>; the only other engineered-product coverage at CP6b in the Open Enzyme platform is disulfiram (pharma, not fermentable), so lactoferrin is the unique fermentable CP6b option. Evidence level: <strong>Animal + In Vitro (Supported)</strong>.</p>
+<p><strong>Partial CP5b (resolution/macrophage polarization).</strong> Fu et al. 2025 (<a href="https://doi.org/10.3389/fimmu.2025.1576069"><em>Front Immunol</em> 16:1576069</a>, PMID 40589746) is a combination-formulation study (cordycepin + lactoferrin + <em>Sargassum</em> polysaccharide) showing M1→M2 macrophage polarization in an RSV-infected mouse lung model; alveolar macrophage depletion abolished the effect. Individual contribution of lactoferrin is not isolated, so CP5b is scored "Speculative" and is the weakest of the four lactoferrin chokepoint claims. The full resolution-arm story is in <a href="../spm-resolution-pathway/">spm-resolution-pathway.md</a>; lactoferrin is a resolution-adjacent modulator, not a direct ALX/FPR2 agonist.</p>
+<p><strong>Source gene and architectural rationale.</strong> Human lactoferrin (LTF, UniProt P02788, 703 aa mature) is the primary candidate by Ward 1992/1995 precedent; bovine lactoferrin (UniProt P24627, 689 aa mature, ~69% identity with hLf) is a secondary candidate with simpler glycosylation and GRAS status for infant formula. The Ward 1995 glucoamylase-KEX2 fusion architecture (detailed in §3) is what allowed the titer to jump from 25 mg/L (Ward 1992 amyB direct secretion) to &gt;2 g/L (Ward 1995 fusion + strain improvement). Evidence level: <strong>Clinical (talactoferrin Phase 3 safety) + In Vitro (native fold confirmed by Sun 1999 PMID 10089347 at 2.2 Å)</strong>.</p>
+<h3 id="23-native-kojic-acid-cp1a-bonus-free">2.3 Native Kojic Acid — CP1a Bonus (Free)<a class="headerlink" href="#23-native-kojic-acid-cp1a-bonus-free" title="Permanent link">&para;</a></h3>
+<p><strong>Titer.</strong> Wild-type <em>A. oryzae</em> produces kojic acid at <strong>3–5 g/L</strong> during standard rice koji fermentation (<a href="../aspergillus-oryzae/">aspergillus-oryzae.md</a>; <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §01b). No engineering required. Titer exceeds the production target for most engineered NLRP3-inhibitor candidate compounds, which positions <em>A. oryzae</em> as a uniquely endowed host: it ships a candidate anti-inflammatory metabolite at therapeutically relevant concentration as a baseline.</p>
+<p><strong>Mechanism at CP1a.</strong> Kojic acid has documented NF-κB suppression activity in multiple inflammatory cell types (In Vitro; multiple references via <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>). Direct NLRP3 inflammasome activity is unpublished and is an open question. The coverage claim here is upstream NF-κB priming — CP1a adjacent to but distinct from the lactoferrin LPS/CD14 mechanism. Evidence level: <strong>In Vitro (Reasonable)</strong>.</p>
+<p><strong>Platform implication.</strong> Any engineered koji strain — including the endgame strain — ships with kojic acid by default unless the engineering perturbs native metabolism (open question; see §9). The WT-vs-engineered metabolite titer comparison proposed in <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §01b is the way to resolve this empirically.</p>
+<h3 id="24-native-ergothioneine-cp1b-bonus-free">2.4 Native Ergothioneine — CP1b Bonus (Free)<a class="headerlink" href="#24-native-ergothioneine-cp1b-bonus-free" title="Permanent link">&para;</a></h3>
+<p><strong>Titer.</strong> Wild-type <em>A. oryzae</em> produces ergothioneine at ~20 mg/g dry mycelial mass (<a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §01b; <a href="../aspergillus-oryzae/">aspergillus-oryzae.md</a>). Like kojic acid, no engineering required.</p>
+<p><strong>Mechanism at CP1b.</strong> Ergothioneine is a sulfur-containing betaine amino-acid analog that functions as a mitochondria-targeted thiol antioxidant. The canonical transporter SLC22A4 (OCTN1) concentrates it in tissues with high oxidative load. Mechanistically it scavenges hydroxyl radicals, hypochlorous acid, and peroxynitrite, and it induces Nrf2-mediated antioxidant gene expression. In the CP1b context — non-transcriptional C5a → ROS priming of NLRP3 (<a href="../complement-c5a-gout/">complement-c5a-gout.md</a> §3.2; Khameneh 2017 PMID 28167912) — ergothioneine reduces the hydroxyl-radical/ROS signal that provides Signal 1 to the inflammasome. Evidence level: <strong>In Vitro + Mechanistic Extrapolation (Reasonable at CP1b, Supported at generic ROS scavenging)</strong>.</p>
+<p><strong>Caveat.</strong> The CP1b coverage via ergothioneine is distributed and upstream rather than target-specific — it's the ROS-scavenging antioxidant contribution, not a direct inflammasome binder. This is consistent with how the <a href="../nlrp3-exploit-map/">exploit map v1.2</a> handles other generic ROS mitigators (NAC, MitoQ).</p>
+<hr />
+<h2 id="3-the-gating-feasibility-test-ward-1995-architecture-layering">3. The Gating Feasibility Test — Ward 1995 Architecture Layering<a class="headerlink" href="#3-the-gating-feasibility-test-ward-1995-architecture-layering" title="Permanent link">&para;</a></h2>
+<p>This section answers the single question that decides whether the endgame strain is engineerable in its one-strain form. If it is, Year 2–3 koji development converges on this strain. If it isn't, the platform falls back to the two-strain co-ferment path (§4.1).</p>
+<h3 id="31-what-ward-1995-showed">3.1 What Ward 1995 Showed<a class="headerlink" href="#31-what-ward-1995-showed" title="Permanent link">&para;</a></h3>
+<p><strong>Ward et al. 1995</strong> (<a href="https://doi.org/10.1038/nbt0595-498"><em>Biotechnology (N Y)</em> 13:498-503</a>, PMID 9634791) demonstrated recombinant human lactoferrin production in <em>Aspergillus awamori</em> at a titer exceeding <strong>2 g/L</strong> in submerged culture. The architecture had four key elements:</p>
+<ol>
+<li><strong>Glucoamylase as secretion carrier.</strong> The hLf coding sequence was fused C-terminally to the <em>A. awamori</em> glucoamylase gene. Glucoamylase is one of the most abundant natively-secreted <em>Aspergillus</em> proteins; using it as an N-terminal carrier leverages the host's most optimized secretion pathway.</li>
+<li><strong>KEX-2 processing site.</strong> Between the glucoamylase and mature hLf sequences, a Lys-Arg dipeptide recognition motif allows the endogenous Kex2-family endoprotease to cleave the fusion in the late secretory pathway, releasing mature hLf with a correct N-terminus.</li>
+<li><strong>Classical strain improvement.</strong> Multiple rounds of UV/chemical mutagenesis and selection on top of the cassette. This is the non-genetic-engineering contribution to the ~80× titer jump from Ward 1992 (25 mg/L direct secretion) to Ward 1995 (&gt;2 g/L fusion + strain improvement).</li>
+<li><strong>Submerged fermentation format.</strong> Continuously-mixed liquid culture with controlled O₂, pH, and feed — the standard industrial <em>Aspergillus</em> bioreactor setup.</li>
+</ol>
+<p><strong>Ward et al. 1992</strong> (<a href="https://doi.org/10.1038/nbt0792-784"><em>Biotechnology (N Y)</em> 10:784-9</a>, PMID 1368268) is the prior proof-of-concept: hLf under the <em>A. oryzae</em> α-amylase (amyB) promoter with <em>A. niger</em> glucoamylase 3′ flanking region, titer 25 mg/L submerged. First mammalian glycoprotein ever expressed in the <em>Aspergillus</em> system. The 1992 paper established that the <em>A. oryzae</em> secretory apparatus can produce a complex disulfide-containing mammalian glycoprotein correctly folded and N-terminally processed — the floor of feasibility that the 1995 paper then ~80× improved on.</p>
+<p><strong>Sun et al. 1999</strong> (<a href="https://doi.org/10.1107/s0907444998011226"><em>Acta Crystallogr D Biol Crystallogr</em> 55:403-7</a>, PMID 10089347) closed the loop structurally: 2.2 Å X-ray crystal structure of <em>A. awamori</em>-produced recombinant hLf, RMSD 0.3 Å from native milk hLf on main-chain atoms, iron-release kinetics matching native. The protein <em>is</em> lactoferrin; this isn't a structural mimic with partial function.</p>
+<p>Together the three papers give a complete single-protein expression pipeline for recombinant lactoferrin in the <em>Aspergillus</em> chassis family: peer-reviewed, patent-precedented (US 5,571,697, Conneely 1996, <strong>now expired</strong>), structurally certified.</p>
+<h3 id="32-the-feasibility-question">3.2 The Feasibility Question<a class="headerlink" href="#32-the-feasibility-question" title="Permanent link">&para;</a></h3>
+<p><strong>Can the Ward 1995 glucoamylase-KEX2 architecture be layered with a second expression cassette (uricase) in the same <em>A. oryzae</em> genetic background without silencing either?</strong></p>
+<p>This is a multi-heterologous-protein question, and it is mechanistically different from the single-protein question Ward 1995 answered. The published literature is thin on this specific combination, but adjacent evidence exists:</p>
+<ul>
+<li><strong>Li Q et al. 2024</strong> (<a href="https://doi.org/10.1016/j.synbio.2024.12.003"><em>Synth Syst Biotechnol</em> 10:365-372</a>, PMID 39830075) demonstrated multi-copy heterologous protein expression in <em>A. oryzae</em> by integrating a heterologous lipase cassette at multiple α-amylase gene loci. The multi-locus strain (C19#1-ABC, three α-amylase sites) achieved 3.3× higher lipase activity than the single-locus strain. This establishes that <em>A. oryzae</em> tolerates cassette copies at multiple starch-inducible loci without silencing — an important precedent for the dual-cassette question, though it's the same protein at multiple loci rather than two different proteins.</li>
+<li><strong>Wang S et al. 2023</strong> (<a href="https://doi.org/10.1021/acs.jafc.3c04138"><em>J Agric Food Chem</em> 71:15194-203</a>, PMID 37807677) used CRISPR/Cas9 in <em>A. niger</em> (close relative of <em>A. oryzae</em>) to integrate a heterologous alkaline serine protease at three distinct gene loci, achieving 2.1× expression uplift over single-copy. Protein yield 10.8 mg/mL in a 5 L fed-batch fermenter.</li>
+</ul>
+<p>Both papers handle the <em>same protein</em> at multiple loci rather than two <em>different</em> proteins at separate loci, so neither directly answers the dual-cassette question. But both indicate that <em>A. oryzae</em>/<em>A. niger</em> handle multi-locus integration cleanly — silencing of one integration site by another is not the expected failure mode, at least for starch-inducible amyB architecture.</p>
+<h3 id="33-what-would-need-to-be-tested">3.3 What Would Need to Be Tested<a class="headerlink" href="#33-what-would-need-to-be-tested" title="Permanent link">&para;</a></h3>
+<p>A first-pass dual-cassette strain needs to resolve the following specific questions:</p>
+<ol>
+<li><strong>Integration sites.</strong> Two distinct chromosomal loci for the uricase cassette and the lactoferrin cassette. Candidates include (a) amyB native locus (one cassette) + a second α-amylase paralog (<em>A. oryzae</em> has three — amyA, amyB, amyC — per Li 2024), (b) a defined neutral locus (e.g., niaD, Δku70-disrupted) paired with amyB, &copy; dual α-amylase paralog integration. The design question is whether to colocalize both cassettes at α-amylase loci (both starch-inducible, tightly coupled to the rice substrate) or separate them by promoter type (amyB for one, TEF1 or gpdA for the other) to avoid promoter competition.</li>
+<li><strong>Copy-number stability.</strong> Multi-copy integrations can rearrange during sporulation/propagation. The strain needs to maintain both cassettes through industrial-scale propagation (~10⁹-fold expansion from master seed stock to production run). This is a standard production-engineering question, resolvable by PCR and qPCR copy-number assays across serial passages.</li>
+<li><strong>Shared secretion machinery.</strong> <em>A. oryzae</em> has a finite secretion capacity (total secreted protein ~25–30 g/L industrial submerged). Two heterologous secreted proteins at gram-scale titers compete for ribosomes, ER folding capacity (BiP/PDI), and secretory vesicle traffic. The question is whether adding a ~2 g/L lactoferrin load on top of a ~1 g/L uricase load yields additive, sub-additive, or collapsed total output. In practice, "burden" in multi-gene <em>A. oryzae</em> strains is typically sub-additive but not catastrophic (the Li 2024 and Wang 2023 multi-copy data show the system handles ~2–3× single-cassette burden cleanly).</li>
+<li><strong>KEX-2 cleavage specificity and capacity.</strong> The Ward 1995 architecture depends on endogenous KEX-2-family endoprotease cleaving the glucoamylase-KEX2site-hLf fusion cleanly. If the uricase cassette is <em>not</em> a fusion (direct secretion with its own signal peptide), KEX-2 capacity is non-competing. If uricase is <em>also</em> a glucoamylase-KEX2 fusion — or if both cassettes rely on the same endogenous processing peptidase for any reason — then KEX-2 capacity becomes a shared resource and the dual-cassette strain could saturate it. Published <em>A. oryzae</em> KEX-2 capacity studies are thin; this is an empirical unknown.</li>
+<li><strong>Iron availability in solid-state rice matrix.</strong> Lactoferrin requires Fe³⁺ coordination for proper folding (or at least the apo-holo equilibrium is folding-affected). Rice grain has low free iron; rice bran has more but of variable bioavailability. Ward 1995 was submerged culture with defined iron supplementation; solid-state rice koji has not been demonstrated to support commercial-titer lactoferrin production. A supplementation experiment (FeCl₃ or iron citrate added to rice at 10–100 ppm) is likely part of the first-pass design.</li>
+<li><strong>Glycosylation consistency across formats.</strong> Fungal N-glycosylation in solid-state vs. submerged can differ for the same strain. Native milk hLf has complex sialylated/fucosylated N-glycans; <em>Aspergillus</em> hLf has simpler fungal-style mannose-rich glycans (Almond 2012 PMID 23012214 — the resulting recombinant hLf is actually ~40× less immunogenic and ~200× less allergenic in BALB/c mice, so the glycosylation difference is potentially a <em>feature</em> for chronic oral dosing). Whether solid-state koji lactoferrin glycosylation is within the Ward 1995 submerged envelope is empirically open.</li>
+</ol>
+<h3 id="34-protocol-sketch-for-the-gating-experiment">3.4 Protocol Sketch for the Gating Experiment<a class="headerlink" href="#34-protocol-sketch-for-the-gating-experiment" title="Permanent link">&para;</a></h3>
+<p><strong>Construct design.</strong> Two expression cassettes on a single shuttle vector (or two compatible vectors co-transformed):</p>
+<ul>
+<li><strong>Cassette A — lactoferrin.</strong> <code>[PamyB — glucoamylase — KEX2site (Lys-Arg) — hLf (codon-optimized for *A. oryzae*) — TamyB]</code>. Matches Ward 1995 architecture. Selection marker: pyrG complementation (food-grade, no antibiotic).</li>
+<li><strong>Cassette B — uricase.</strong> <code>[PTEF1 — amyB signal peptide — *A. flavus uaZ* (codon-optimized) — TgpdA]</code>. Distinct promoter (TEF1, constitutive) to avoid direct competition with the starch-inducible PamyB of Cassette A. Selection marker: niaD or amdS (distinct from Cassette A marker for sequential selection).</li>
+</ul>
+<p><em>(A symmetric alternative is to put both under PamyB at distinct paralogous loci per Li 2024, which couples both cassettes to rice starch induction. The asymmetric design above is safer for the first-pass feasibility test because it separates the two transcriptional programs.)</em></p>
+<p><strong>Host strain.</strong> <em>A. oryzae</em> RIB40 (genome-sequenced reference; the strain underneath the Huang 2024 platform paper in <a href="../aspergillus-oryzae/">aspergillus-oryzae.md</a>) or NSAR1 (pyrG-deficient auxotrophic derivative, ideal for food-grade pyrG-complementation selection).</p>
+<p><strong>Transformation.</strong> PEG/CaCl₂ protoplast transformation per standard protocol (<a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §04). Sequential: transform Cassette A first, select on pyrG-minus media, confirm integration by PCR; then transform Cassette B into the validated hLf-expressing clone, select on niaD or amdS. This separates the two engineering events and lets us validate lactoferrin expression alone before layering uricase on.</p>
+<p><strong>Fermentation.</strong> Solid-state rice koji, 48–60 h at 30°C, 35% moisture. Parallel submerged-culture control (100 mL shake flask, 28°C) to isolate the solid-state-vs-submerged variable from the dual-cassette variable.</p>
+<p><strong>Readouts.</strong>
+- Uricase activity (spectrophotometric UA-disappearance assay, per <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §05).
+- Lactoferrin titer (anti-hLf ELISA + Western blot).
+- Iron-binding capacity of recombinant Lf (UV-Vis at 465 nm for apo-vs-holo; optional CD spectroscopy for fold confirmation).
+- Cell viability and fermentation phenotype (mycelial density, sporulation, kojic acid titer, ergothioneine titer — is the native metabolite program preserved?).
+- qPCR for cassette copy numbers (stability check).
+- SDS-PAGE to look for truncated / incompletely-processed lactoferrin species (KEX-2 capacity bottleneck would manifest as a fusion-size band).</p>
+<p><strong>Cost.</strong> $3,000–5,000 covering gene synthesis (two codon-optimized cassettes ~$600–1000), cloning and transformation reagents ($500–1,000), fermentation consumables ($200–400), ELISA + Western antibodies ($800–1,200), assay kits and miscellaneous ($500–800), CRO or academic lab time if outsourced ($1,000–2,000 per batch).</p>
+<p><strong>Timeline.</strong> 8–12 weeks: 2–3 weeks gene synthesis + construct assembly, 2–3 weeks sequential transformation + clonal screening, 1–2 weeks fermentation (×2 formats, parallel), 2–3 weeks assay suite + write-up.</p>
+<p><strong>Dependencies.</strong> <em>A. oryzae</em> genetic-engineering lab access. Candidates:
+- Lauren Collier-Hyams at Emory (see <a href="../team/">team.md</a>) if the conversation converts her from "potential collaborator" to active. Her NF-κB / pharma translation background is a natural fit.
+- A commercial CRO specializing in filamentous-fungus engineering (e.g., Lonza, Novozymes contract services, Dyadic International) — more expensive but faster turnaround.
+- Community biolab with protoplast-transformation capability (Genspace NY has done <em>A. oryzae</em> work; BioCurious Sunnyvale has not publicly).</p>
+<p><strong>Success criteria.</strong>
+- <strong>Accept</strong> (go to full endgame strain development, §7): lactoferrin titer ≥500 mg/L koji pore fluid equivalent, uricase activity ≥50 μmol/h/OD (retained from single-cassette baseline), native kojic acid and ergothioneine titers within 30% of wild-type. Proceed to the Phase B and Phase C protocols in <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §16.
+- <strong>Iterate</strong> (adjust architecture, re-test): lactoferrin 100–500 mg/L or uricase activity down &gt;30%. Try protease-knockout host strain (Δalp, Δnpr), alternative integration sites, or iron supplementation.
+- <strong>Reject</strong> (fall back to §4): lactoferrin &lt;100 mg/L after two rounds of optimization, OR native metabolite program collapse (kojic acid down &gt;50%). The two-strain co-ferment path (§4.1) preserves the coverage matrix at the cost of single-strain elegance.</p>
+<hr />
+<h2 id="4-fallback-paths-if-ward-1995-layering-fails">4. Fallback Paths If Ward 1995 Layering Fails<a class="headerlink" href="#4-fallback-paths-if-ward-1995-layering-fails" title="Permanent link">&para;</a></h2>
+<p>No feasibility test is meaningful without a pre-defined fallback ladder. The endgame coverage matrix is achievable even if single-strain dual-cassette engineering fails — the fallbacks preserve the five-chokepoint coverage at the cost of increasing product complexity.</p>
+<h3 id="41-two-separate-strains-co-fermented">4.1 Two Separate Strains, Co-Fermented<a class="headerlink" href="#41-two-separate-strains-co-fermented" title="Permanent link">&para;</a></h3>
+<p><strong>Design.</strong> Engineer uricase in one <em>A. oryzae</em> strain, lactoferrin in a second strain, ferment each separately, blend the dried koji products at consumption. Both strains inherit the native kojic acid + ergothioneine baseline independently (may differ slightly between strains — empirical question).</p>
+<p><strong>Pros.</strong> Simpler genetic engineering (one cassette per strain matches the validated Ward 1995 single-protein experience). Cassette burden is intra-strain, not inter-strain. Either product can be optimized independently without risk of perturbing the other.</p>
+<p><strong>Cons.</strong> Two production lines rather than one. Two fermentation SOPs. Two dosing calculations. The "single-strain living pharmacy" elegance is lost, but the therapeutic payload is unchanged.</p>
+<p><strong>Confidence.</strong> High — this is a conservative extension of the Ward 1995 single-protein precedent.</p>
+<h3 id="42-serial-integration-uricase-first-then-lactoferrin">4.2 Serial Integration (Uricase First, Then Lactoferrin)<a class="headerlink" href="#42-serial-integration-uricase-first-then-lactoferrin" title="Permanent link">&para;</a></h3>
+<p><strong>Design.</strong> Engineer uricase in <em>A. oryzae</em> as a validated single-cassette strain (the Phase 0 / Year 1 target per <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §02-14). Confirm stable high-titer expression, fermentation behavior, and native metabolite preservation. <em>Then</em> integrate the lactoferrin cassette into the validated uricase strain as the second step. This is formally the same as §3.4 sequential transformation but framed as sequential <em>de-risking</em> — the uricase strain can ship as a standalone product while the lactoferrin engineering proceeds.</p>
+<p><strong>Pros.</strong> The uricase-only strain is a shippable intermediate — Year 1 deliverable even if the dual-cassette Year 2–3 target slips. Lactoferrin integration can be retried multiple times against a stable host baseline.</p>
+<p><strong>Cons.</strong> Second cassette integration faces the same "does this work?" question as §3; serial framing doesn't change the underlying biology.</p>
+<p><strong>Confidence.</strong> High for the uricase-only intermediate; moderate for the serial-integration step (same risk as §3.2).</p>
+<h3 id="43-different-expression-architecture">4.3 Different Expression Architecture<a class="headerlink" href="#43-different-expression-architecture" title="Permanent link">&para;</a></h3>
+<p>If glucoamylase-KEX2 doesn't permit dual-cassette expression, alternatives include:</p>
+<ul>
+<li><strong>Inducible promoters with non-overlapping induction conditions.</strong> amyB (starch-induced) for lactoferrin + PalcA (ethanol-induced) or PniaD (nitrate-induced) for uricase, with staged fermentation — starch feed for lactoferrin production phase, then ethanol/nitrate shift for uricase production phase. Loses the single-fermentation elegance but might preserve the single-strain format.</li>
+<li><strong>Alternate host chassis.</strong> <em>Trichoderma reesei</em> (secretion capacity 100 g/L reported industrial) or <em>Aspergillus niger</em> (Wang 2023 PMID 37807677 dual-locus expression precedent). Loses the koji-food-culture specificity but gains a more secretion-optimized host.</li>
+<li><strong>Plant + fungus split production.</strong> Lactoferrin produced in transgenic rice (published at gram-scale per Conesa 2010 PMID 20624450) alongside uricase-koji fermented on the same grain. The rice is the substrate for both — rice-expressed lactoferrin is released during fermentation, fungal uricase is produced on top. This is architecturally novel and has its own risks (transgenic rice regulatory classification, GMO labeling) but preserves the "single food product" concept.</li>
+</ul>
+<p><strong>Confidence.</strong> Medium for inducible-promoter staging; high for host-swap (proven chassis, loses food narrative); low for rice-plus-fungus split (novel regulatory territory).</p>
+<h3 id="44-sequential-fermentation-with-co-formulation">4.4 Sequential Fermentation with Co-Formulation<a class="headerlink" href="#44-sequential-fermentation-with-co-formulation" title="Permanent link">&para;</a></h3>
+<p><strong>Design.</strong> Ferment uricase-koji and lactoferrin-koji in separate runs (same or different strain — could even be lactoferrin in <em>P. pastoris</em> per Iglesias-Figueroa 2016 PMID 27294912 or Yen 2024 PMID 38339093), dry and co-formulate as a blended product. Biochemically simplest fallback.</p>
+<p><strong>Pros.</strong> Zero cross-strain engineering risk. Each product optimizes to its own host's strengths. Lactoferrin can be sourced at 3.5 g/L from <em>P. pastoris</em> (glucose-inducible, Yen 2024) if solid-state koji titer is inadequate.</p>
+<p><strong>Cons.</strong> Two host organisms, two production formats, two regulatory dossiers for some markets. Loses the "grown-on-rice, eaten-on-rice, koji all the way down" narrative coherence.</p>
+<p><strong>Confidence.</strong> Very high — this is production-engineering with no open scientific questions.</p>
+<hr />
+<h2 id="5-what-the-endgame-strain-is-not">5. What the Endgame Strain Is NOT<a class="headerlink" href="#5-what-the-endgame-strain-is-not" title="Permanent link">&para;</a></h2>
+<p>Honest accounting of the chokepoints the endgame strain does not reach. These are the gaps that pair with supplements and pharma adjuncts rather than being closed by the strain itself.</p>
+<ul>
+<li><strong>Not a CP0 closer.</strong> CP0 proper is complement priming (MSU → C3/C5 convertase → C5a → C5aR1 → ROS → NLRP3 Signal 1). Uricase removes the upstream MSU trigger, which <em>indirectly</em> quiets CP0 output, but does not block C5a or antagonize C5aR1. If systemic urate is normalized and flares persist (the phenotype that would indicate non-MSU complement activation — e.g., sepsis, PNH-like disorder, tophaceous residuals), CP0 coverage requires avacopan or a C5/C5aR1 antagonist (<a href="../complement-c5a-gout/">complement-c5a-gout.md</a> §11).</li>
+<li><strong>Not a CP2 direct blocker.</strong> The K⁺ efflux / NLRP3 activation step at CP2 is blocked by BHB (dietary ketogenic or supplemented), oridonin (covalent Cys279 NLRP3 binder), or taurine (K⁺ efflux upstream). Lactoferrin contributes indirectly via mitophagy-cleared damaged mitochondria reducing mtROS upstream of CP2, but no molecule in the endgame strain binds NLRP3, NEK7, or the P2X7 pore directly. Pairs with <a href="../bhb-ketones/">BHB</a> + <a href="../oridonin/">oridonin</a> from the supplement stack.</li>
+<li><strong>Not a CP3 blocker.</strong> ASC speck assembly is the downstream consequence of CP2 activation. Colchicine (microtubule disruption), spermidine (autophagy-linked speck clearance), and HCQ all operate here. No strain molecule reaches ASC.</li>
+<li><strong>Not a CP5a receptor blocker.</strong> CP5a is IL-1β receptor antagonism (anakinra peptide, canakinumab anti-IL-1β mAb, rilonacept fusion trap). These are pharma biologics. No food-grade organism produces them.</li>
+<li><strong>Not a CP6a 5-LOX blocker.</strong> The 5-LOX / LTB4 neutrophil-amplification axis is blocked by quercetin (300 nM 5-LOX IC50, catalytic site), AKBA (~2.7 μM, allosteric), or zileuton (FDA pharma, 20 nM catalytic). These are separate compounds in the supplement stack or pharma repurposing (<a href="../zileuton/">zileuton.md</a>) — not produceable by the strain.</li>
+<li><strong>Not a systemic enzyme replacement.</strong> Uricase in the endgame strain is gut-lumen-active (per the <a href="../gut-lumen-sink/">gut-lumen-sink</a> thesis — ABCG2 secretes ~&#8531; of UA into the gut, creating a substrate pool for luminal enzyme). It is <em>not</em> IV systemic enzyme replacement like rasburicase (Elitek) or pegloticase (Krystexxa). Refractory-gout patients with systemic urate loads that don't respond to luminal degradation may still need parenteral therapy.</li>
+</ul>
+<p><strong>Pairs with.</strong> The supplement stack (<a href="../supplements-stack/">supplements-stack.md</a>) for CP2/CP3/CP5b/CP6a natural coverage, and pharma adjuncts (avacopan CP0, canakinumab CP5a, zileuton CP6a) for chokepoints where fermentable options don't exist. The endgame strain is the koji chassis, not the whole stack.</p>
+<hr />
+<h2 id="6-strategic-positioning-vs-phase-0-starting-strain">6. Strategic Positioning vs. Phase 0 Starting Strain<a class="headerlink" href="#6-strategic-positioning-vs-phase-0-starting-strain" title="Permanent link">&para;</a></h2>
+<p>This section calibrates risk framing. The endgame strain and the starting strain are not the same engineering ambition; conflating them creates unrealistic timelines and muddies the Year 1 / Year 2–3 boundary.</p>
+<h3 id="61-starting-strain-phase-0-year-1">6.1 Starting Strain (Phase 0, Year 1)<a class="headerlink" href="#61-starting-strain-phase-0-year-1" title="Permanent link">&para;</a></h3>
+<p><strong>Description.</strong> Single-cassette <em>A. oryzae</em> expressing <em>A. flavus</em> uricase (<em>uaZ</em>) under PamyB. No lactoferrin. Full protocol in <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §02-14.</p>
+<p><strong>Risk profile.</strong> Proven-path engineering. Rasburicase precedent (same gene, different host) since 2001. <em>A. flavus</em> and <em>A. oryzae</em> are &gt;99.5% identical in coding regions. PamyB is the dominant native promoter for heterologous expression in this chassis. Native kojic acid + ergothioneine ship automatically.</p>
+<p><strong>Expected titer.</strong> 40–80 mg uricase per gram dry koji (<a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §06, AI-analysis section), matching ALLN-346 clinical dosing at 10–15 g/day.</p>
+<p><strong>Year 1 deliverable.</strong> A validated uricase-expressing <em>A. oryzae</em> strain with published transformation + fermentation SOP, ready for self-experiment testing (per <a href="../validation-experiments/">validation-experiments.md</a> §3.1) and eventual collaborator / CRO production. This is the shippable intermediate whether or not the endgame strain succeeds.</p>
+<h3 id="62-endgame-strain-year-23">6.2 Endgame Strain (Year 2–3)<a class="headerlink" href="#62-endgame-strain-year-23" title="Permanent link">&para;</a></h3>
+<p><strong>Description.</strong> Dual-cassette <em>A. oryzae</em> expressing both uricase and lactoferrin, on top of native kojic acid and ergothioneine. This page.</p>
+<p><strong>Risk profile.</strong> Novel dual-cassette territory. Ward 1995 proved <em>single</em> high-titer lactoferrin in <em>A. awamori</em> submerged; nobody has published <em>dual uricase + lactoferrin</em> in any <em>Aspergillus</em> host in any fermentation format. The §3 gating experiment is the decision point.</p>
+<p><strong>Expected titer.</strong> Target 2–3 g lactoferrin/day at 10–15 g dry koji × 200 mg/g — matching talactoferrin oral Phase 3 dosing (Ramalingam 2013 PMID 24050956). Uricase titer target same as §6.1. Both contingent on dual-cassette burden not collapsing either output.</p>
+<p><strong>Year 2–3 deliverable.</strong> Assuming the Ward 1995 feasibility test passes, the endgame strain becomes the single Open Enzyme product for gout — one organism, five chokepoints, four molecules, a single fermentation.</p>
+<h3 id="63-risk-framing-do-not-conflate">6.3 Risk Framing — Do Not Conflate<a class="headerlink" href="#63-risk-framing-do-not-conflate" title="Permanent link">&para;</a></h3>
+<p>The starting strain is a Year 1 engineering target with decades of precedent. The endgame strain is a Year 2–3 engineering target with a single gating feasibility question. Treating them as the same timeline is a scoping error. Treating them as the same risk level is a calibration error.</p>
+<p>The discipline this page enforces: <strong>the endgame strain is not "more ambition layered on the starting strain." It is a structurally distinct engineering project contingent on a specific feasibility test that has not yet been run.</strong> If the test passes, the endgame strain converges to a shippable single product. If the test fails, the fallback ladder in §4 preserves the coverage matrix across multiple products.</p>
+<hr />
+<h2 id="7-cost-and-timeline-estimates">7. Cost and Timeline Estimates<a class="headerlink" href="#7-cost-and-timeline-estimates" title="Permanent link">&para;</a></h2>
+<p>Rolled up from §3.4, §4, and <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §16.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Cost</th>
+<th>Timeline</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ward 1995 layering feasibility (§3.4)</td>
+<td>$3,000–5,000</td>
+<td>8–12 weeks</td>
+<td>Decide: one-strain endgame viable (go to full dev) or fallback path (go to §4)</td>
+</tr>
+<tr>
+<td>Single-cassette uricase strain (Year 1 starting strain, <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a>)</td>
+<td>$2,000–3,000</td>
+<td>4–6 weeks</td>
+<td>Shippable uricase-koji product</td>
+</tr>
+<tr>
+<td>Full endgame strain development (assuming §3 passes)</td>
+<td>$15,000–30,000</td>
+<td>6–9 months</td>
+<td>Validated dual-cassette strain, fermentation SOP, batch-to-batch reproducibility</td>
+</tr>
+<tr>
+<td>Fallback Path §4.1 (two-strain co-ferment) if §3 fails</td>
+<td>$10,000–15,000 additional</td>
+<td>4–6 months additional</td>
+<td>Two-strain blended product matching coverage matrix</td>
+</tr>
+<tr>
+<td>Fallback Path §4.4 (sequential fermentation co-formulation)</td>
+<td>$8,000–12,000 additional</td>
+<td>3–4 months additional</td>
+<td>Blended powder product</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total platform cost to endgame-strain-equivalent coverage.</strong>
+- Best case (§3 passes + Year 1 uricase strain in parallel): <strong>~$20,000–35,000 over ~12–15 months</strong>.
+- Worst case (§3 fails + §4.1 fallback): <strong>~$25,000–40,000 over ~18–24 months</strong>.</p>
+<p>Both are small relative to the CAC for a single gout patient in the IV-biologic market (Krystexxa cost to first infusion easily $25,000+). The cost-to-feasibility ratio here is unusual in biotech: $3–5k gates a platform decision that would otherwise cost $50k+ to force.</p>
+<hr />
+<h2 id="8-what-this-unlocks-for-the-self-experiment-and-collaborator-pitch">8. What This Unlocks for the Self-Experiment and Collaborator Pitch<a class="headerlink" href="#8-what-this-unlocks-for-the-self-experiment-and-collaborator-pitch" title="Permanent link">&para;</a></h2>
+<h3 id="81-self-experiment-implications">8.1 Self-Experiment Implications<a class="headerlink" href="#81-self-experiment-implications" title="Permanent link">&para;</a></h3>
+<p>The self-experiment biomarker panel (<a href="../self-experiment-protocol/">self-experiment-protocol.md</a>) currently reads out serum UA, hs-CRP, C5a (CP0), urinary LTE4 (CP6a), and flare frequency. In the Year 1 starting-strain world, Brian's n=1 tests uricase-only koji against the same panel — UA and flare-frequency are the primary endpoints, with the other biomarkers as the stack backdrop.</p>
+<p>In the endgame-strain world (Year 2–3 if §3 passes), the n=1 tests the full four-molecule strain against the same panel. This reads out more chokepoints simultaneously:</p>
+<ul>
+<li>UA + flare frequency: uricase + upstream CP0-trigger-elimination arm.</li>
+<li>hs-CRP: overall cascade damping, with lactoferrin at CP1a/CP4/CP6b contributing most of the expected effect.</li>
+<li>C5a: diagnostic for whether the CP0 coverage gap (non-MSU complement sources) is operative or whether trigger-elimination is sufficient.</li>
+<li>Urinary LTE4: diagnostic for CP6a — <em>not</em> covered by the strain, so if LTE4 stays elevated despite the full endgame strain, that's confirmatory evidence the stack needs quercetin/AKBA or zileuton to close CP6a.</li>
+</ul>
+<p>The 6-month extension protocol (<a href="../validation-experiments/">validation-experiments.md</a> §3.5) is the natural slot for an endgame-strain self-test. Worth earmarking as a target now so the biomarker panel and timing align once the strain is available.</p>
+<h3 id="82-collaborator-pitch">8.2 Collaborator Pitch<a class="headerlink" href="#82-collaborator-pitch" title="Permanent link">&para;</a></h3>
+<p>The endgame strain is the concrete platform vision for the three Emory PhDs (Rheinallt Jones, Lauren Collier-Hyams, Valerie Jones) being recruited per <a href="../team/">team.md</a>. Instead of "help us build an open-source enzyme library" (broad, unscoped), the pitch becomes:</p>
+<blockquote>
+<p>One engineered <em>A. oryzae</em> koji strain that covers five NLRP3-pathway chokepoints from four molecules. Two heterologous expression cassettes (uricase + lactoferrin) layered on two native metabolites (kojic acid + ergothioneine). Peer-reviewed Aspergillus precedent for each piece (Ward 1995 hLf &gt;2 g/L <em>A. awamori</em>; rasburicase precedent 2001 for uricase in <em>S. cerevisiae</em>; Wang 2023 for multi-locus <em>A. niger</em>; Li 2024 for multi-copy <em>A. oryzae</em> α-amylase sites). The single feasibility test that gates the whole thing is a dual-cassette layering experiment costing $3–5k and taking 8–12 weeks.</p>
+</blockquote>
+<p>That pitch converts the project from "open-ended biotech research" into "one specific, scoped, published-precedent-grounded engineering target with a clear yes/no feasibility question." Each PhD finds a natural entry:</p>
+<ul>
+<li><strong>Lauren (NF-κB + pharma translation)</strong> — the NLRP3 cascade mapping and CP1a/CP4/CP6b mechanistic case for lactoferrin is in her technical domain. She can critique the coverage matrix, identify missing receptors/pathways, and potentially run the cell-based validation (THP-1 + MSU crystal + endgame-strain extract).</li>
+<li><strong>Rheinallt (gut microbiome)</strong> — the koji matrix + oral delivery + gut-lumen uricase + gut-resident bacterial modulation by lactoferrin is a direct fit. Whether the endgame strain's constituents interact with the gut microbiome (lactoferrin is bacteriostatic; could this alter SCFA production or colonization resistance?) is exactly his question.</li>
+<li><strong>Valerie (innate immune safety)</strong> — the multi-heterologous protein + native metabolite payload needs an explicit PAMP/epitope safety audit. Fungal-glycosylated lactoferrin is less allergenic than native (Almond 2012), but is the dual-cassette strain safe at chronic 10–15 g/day oral dose for years? That's her audit to run.</li>
+</ul>
+<p>The endgame strain is a <em>shared canvas</em> — three PhDs can each pull at the thread most relevant to their expertise without the scope collapsing.</p>
+<hr />
+<h2 id="9-open-questions">9. Open Questions<a class="headerlink" href="#9-open-questions" title="Permanent link">&para;</a></h2>
+<p>In priority order for the endgame-strain research agenda:</p>
+<ol>
+<li><strong>Can the Ward 1995 glucoamylase-KEX2 architecture be verified for dual uricase + lactoferrin expression in <em>A. oryzae</em>?</strong> The §3 feasibility test. Gates everything else. 8–12 weeks, $3–5k.</li>
+<li><strong>Does solid-state rice koji support lactoferrin iron-binding fold stability?</strong> Ward 1995 was submerged culture with defined iron supplementation. Rice grain has low free iron; solid-state fermentation has different mass transfer. The iron-binding readout (UV-Vis at 465 nm) in the §3.4 protocol answers this.</li>
+<li><strong>Does the endgame strain's native metabolite chorus shift when the lactoferrin cassette is added?</strong> Kojic acid titer and ergothioneine titer might drop under the secretion load. The parallel WT-vs-engineered metabolite comparison in <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §01b would read out this shift.</li>
+<li><strong>Are there <em>A. oryzae</em> proteases that degrade lactoferrin during fermentation?</strong> <em>A. oryzae</em> secretes a suite of proteases (alkaline serine, acid-stable, metallo) as part of its starch-degrading lifestyle. Lactoferrin is moderately protease-resistant (pepsin generates active lactoferricin rather than fully degrading the protein), but extended solid-state fermentation on rice with high protease load is empirically open. A Δalp / Δnpr host strain is the standard industrial fix if this becomes rate-limiting.</li>
+<li><strong>What is the minimum lactoferrin titer for self-experimentation relevance?</strong> Talactoferrin Phase 3 oncology dosing was 3 g/day (1.5 g BID). Supplement-grade bLf is typically 200–600 mg/day. If the endgame strain hits 200 mg hLf per gram dry koji, 10–15 g/day koji delivers 2–3 g — matching Phase 3 dose. If it hits only 50 mg/g, the dose is 500–750 mg/day — still in the supplement-grade range. There's a broad acceptable envelope.</li>
+<li><strong>Does lactoferrin iron-loading state (apo vs. holo) matter for CP4/CP6b mechanism?</strong> Most published gout-adjacent Lf work is on native bLf which is partially iron-saturated (10–20%); Shan 2026 PMID 41524100 did not specify apo-vs-holo. The mitophagy-induction arm is probably form-independent, but the iron-sequestration arm (CP1b via reduced Fenton ROS) requires apo-Lf. Recombinant fungal Lf glycosylation differs from native — could shift iron-binding kinetics or apo-vs-holo equilibrium. Empirical question worth a dedicated assay.</li>
+<li><strong>Is there a path to adding CP6a coverage (5-LOX) via a third heterologous pathway, or does CP6a pair with quercetin / AKBA supplementation indefinitely?</strong> <em>A. oryzae</em> does not natively produce quercetin or AKBA; engineering a terpenoid-biosynthesis pathway (for AKBA) or flavonoid pathway (for quercetin) would be a major additional engineering lift. Most plausible near-term answer: supplement-pair, don't engineer. But worth flagging as a Year 3+ research direction.</li>
+<li><strong>What is the shelf life of the dual-cassette strain under standard koji drying + packaging?</strong> Ward 1995 characterization was wet-culture samples; food-grade koji products are typically air-dried to ~10% moisture for shelf stability. Lactoferrin is thermally labile above ~60°C; air-drying at 40°C is standard koji practice and should preserve activity, but explicit pre-and-post-drying activity assays are needed.</li>
+<li><strong>Does the endgame strain offer regulatory advantage (or hazard) relative to the two-strain fallback?</strong> GRAS-pathway argument: single-strain engineered koji with two heterologous genes is still <em>A. oryzae</em>-based, and the koji-food history is intact. Two strains blended is also <em>A. oryzae</em>-based. But regulatory filings for "engineered microbial strain containing human-gene-derived lactoferrin" might differ between FDA's GRAS, NDI, and biologic pathways. This needs explicit regulatory-pathway analysis — likely a Valerie conversation combined with an FDA regulatory consultant.</li>
+<li><strong>Is the "CP0 via trigger elimination" semantic claim defensible, or is it a marketing flourish?</strong> The coverage matrix marks CP0 as "Partial (upstream)" — uricase doesn't block C5a signaling but removes the crystal trigger that drives most of the CP0 activation in gout. Whether reviewers accept this as CP0 coverage vs. "a different kind of intervention, not CP0 at all" is a framing question that will recur in any public-facing communication. The honest statement is the one in §2.1 and §5: "upstream trigger elimination, functionally CP0 coverage at the cascade level, not C5aR1 antagonism."</li>
+</ol>
+<hr />
+<h2 id="10-sources">10. Sources<a class="headerlink" href="#10-sources" title="Permanent link">&para;</a></h2>
+<p>Core Aspergillus engineering precedent:</p>
+<ul>
+<li>Ward PP, Lo JY, Duke M, May GS, Headon DR, Conneely OM. "Production of biologically active recombinant human lactoferrin in Aspergillus oryzae." <em>Biotechnology (N Y)</em> 1992;10(7):784-789. <a href="https://doi.org/10.1038/nbt0792-784">DOI</a>. PMID: 1368268.</li>
+<li>Ward PP, Piddington CS, Cunningham GA, Zhou X, Wyatt RD, Conneely OM. "A system for production of commercial quantities of human lactoferrin: a broad spectrum natural antibiotic." <em>Biotechnology (N Y)</em> 1995;13(5):498-503. <a href="https://doi.org/10.1038/nbt0595-498">DOI</a>. PMID: 9634791.</li>
+<li>Sun XL, Baker HM, Shewry SC, Jameson GB, Baker EN. "Structure of recombinant human lactoferrin expressed in Aspergillus awamori." <em>Acta Crystallogr D Biol Crystallogr</em> 1999;55(Pt 2):403-407. <a href="https://doi.org/10.1107/s0907444998011226">DOI</a>. PMID: 10089347.</li>
+<li>Li Q, Zhang C, Li J, Du G, Li Z, Zhou J, Zhang G. "Characterization of Aspergillus oryzae mutant and its application in heterologous lipase expression." <em>Synth Syst Biotechnol</em> 2024;10(2):365-372. <a href="https://doi.org/10.1016/j.synbio.2024.12.003">DOI</a>. PMID: 39830075. (Multi-copy α-amylase-locus integration in <em>A. oryzae</em> at 3.3× uplift; establishes multi-locus tolerance.)</li>
+<li>Wang S, Xue Y, Zhang P, Yan Q, Li Y, Jiang Z. "CRISPR/Cas9 System-Mediated Multi-copy Expression of an Alkaline Serine Protease in <em>Aspergillus niger</em> for the Production of XOD-Inhibitory Peptides." <em>J Agric Food Chem</em> 2023;71(41):15194-15203. <a href="https://doi.org/10.1021/acs.jafc.3c04138">DOI</a>. PMID: 37807677. (Three-locus CRISPR integration in <em>A. niger</em>, 2.1× uplift.)</li>
+</ul>
+<p>Lactoferrin gout-adjacent mechanisms:</p>
+<ul>
+<li>Shan W, Wei W, Zhang Y, et al. "Lactoferrin protects against radiation-induced intestinal injury by regulating pyroptosis and mitophagy." <em>Food Funct</em> 2026;17(2):1045-1060. <a href="https://doi.org/10.1039/d5fo04989j">DOI</a>. PMID: 41524100. (CP6b GSDMD suppression via mitophagy — Supported evidence for the endgame's CP6b claim.)</li>
+<li>Habib CN, Ali AE, Anber NH, George MY. "Lactoferrin ameliorates carfilzomib-induced renal and pulmonary deficits: Insights to the inflammasome NLRP3/NF-κB and PI3K/Akt/GSK-3β/MAPK axes." <em>Life Sci</em> 2023;335:122245. <a href="https://doi.org/10.1016/j.lfs.2023.122245">DOI</a>. PMID: 37926296. (CP4 caspase-1 + serum UA dual phenotype.)</li>
+<li>Baveye S, Elass E, Fernig DG, Blanquart C, Mazurier J, Legrand D. "Human lactoferrin interacts with soluble CD14 and inhibits expression of endothelial adhesion molecules, E-selectin and ICAM-1, induced by the CD14-lipopolysaccharide complex." <em>Infect Immun</em> 2000;68(12):6519-6525. <a href="https://doi.org/10.1128/IAI.68.12.6519-6525.2000">DOI</a>. PMID: 11083760. (CP1a sCD14 binding.)</li>
+<li>Appelmelk BJ, An YQ, Geerts M, et al. "Lactoferrin is a lipid A-binding protein." <em>Infect Immun</em> 1994;62(6):2628-2632. <a href="https://doi.org/10.1128/iai.62.6.2628-2632.1994">DOI</a>. PMID: 8188389. (CP1a lipid A binding.)</li>
+<li>Zhao Y, Yang Y, Zhang J, et al. "Lactoferrin-mediated macrophage targeting delivery and patchouli alcohol-based therapeutic strategy for inflammatory bowel diseases." <em>Acta Pharm Sin B</em> 2020;10(10):1966-1976. <a href="https://doi.org/10.1016/j.apsb.2020.07.019">DOI</a>. PMID: 33163347. (LRP1-targeted macrophage NLRP3 suppression.)</li>
+</ul>
+<p>Complement / CP0 / gout mechanism:</p>
+<ul>
+<li>Russell IJ, Mansen C, Kolb LM, Kolb WP. "Activation of the fifth component of complement (C5) induced by monosodium urate crystals: C5 convertase assembly on the crystal surface." <em>Clin Immunol Immunopathol</em> 1982;24(2):239-250. <a href="https://doi.org/10.1016/0090-1229(82)90235-5">DOI</a>. PMID: 6749358.</li>
+<li>Khameneh HJ, Ho AWS, Laudisi F, et al. "C5a regulates IL-1β production and leukocyte recruitment in a murine model of monosodium urate crystal-induced peritonitis." <em>Front Pharmacol</em> 2017;8:10. <a href="https://doi.org/10.3389/fphar.2017.00010">DOI</a>. PMID: 28167912.</li>
+</ul>
+<p>Uricase gene choice and precedent:</p>
+<ul>
+<li>Legoux R, Delpech B, Dumont X, et al. "Cloning and expression in Escherichia coli of the gene encoding Aspergillus flavus urate oxidase." <em>J Biol Chem</em> 1992;267(12):8565-8570. PMID: 1339455.</li>
+<li>ChEMBL v34 — Talactoferrin alfa CHEMBL2108651 (max_phase=3); Bovine lactoferrin CHEMBL5095320 (max_phase=3); A. flavus uricase / rasburicase CHEMBL1201574.</li>
+<li>US Patent 5,571,697 (Conneely et al., 1996) — expired. "Expression of processed recombinant lactoferrin and lactoferrin polypeptide fragments from a fusion product in Aspergillus."</li>
+<li>US Patent 10,815,461 B2 (Allena ALLN-346, 2020) — public. ProteinGPS-engineered <em>C. utilis</em> uricase mutation set.</li>
+</ul>
+<p>Related Open Enzyme pages providing upstream context:</p>
+<ul>
+<li><a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> — the Phase 0 starting strain and the §16 lactoferrin co-expression module this page formalizes.</li>
+<li><a href="../lactoferrin/">lactoferrin.md</a> — the full 562-line lactoferrin dossier.</li>
+<li><a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> — the v1.2 7-chokepoint framework this coverage matrix maps onto.</li>
+<li><a href="../complement-c5a-gout/">complement-c5a-gout.md</a> — CP0 deep dive; explains why trigger elimination is partial coverage rather than full CP0 coverage.</li>
+<li><a href="../uricase-variant-selection/">uricase-variant-selection.md</a> — the <em>A. flavus</em> vs. <em>C. utilis</em> source-gene analysis.</li>
+<li><a href="../aspergillus-oryzae/">aspergillus-oryzae.md</a> — native kojic acid + ergothioneine titer data.</li>
+<li><a href="../validation-experiments/">validation-experiments.md</a> — the consolidated experiment queue including the §3 feasibility test as Experiment 1.9.</li>
+<li><a href="../open-enzyme-vision/">open-enzyme-vision.md</a> — platform thesis; endgame strain is the Year 2–3 target.</li>
+</ul>
+<hr />
+<p><em>Page owner: Brian Abent. Last structural review: 2026-04-24 (initial draft). Next review trigger: Ward 1995 feasibility test execution or any new </em>Aspergillus<em> multi-heterologous-protein paper.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "toc.integrate", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
