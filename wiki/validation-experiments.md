@@ -17,7 +17,7 @@ As of 2026-04-24 this is the authoritative experiments file — earlier ambiguit
 
 ## Experiment Queue
 
-Dashboard view of all 22 experiments in the library. Sorted by phase then ID. Detail lives in the phase sections below — click the ID to jump.
+Dashboard view of all 23 experiments in the library. Sorted by phase then ID. Detail lives in the phase sections below — click the ID to jump.
 
 **Status legend:**
 - **Proposed** — no work done yet; in the design/queue stage.
@@ -37,6 +37,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§1.6](#16-koji-enzyme-stability-at-digestive-ph-and-temperature) | Koji enzyme stability at digestive pH/temperature | In Vitro | $300–600 | 1–2 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md), [digestive-enzymes](./digestive-enzymes.md) |
 | [§1.7](#17-nlrp3-inflammasome-pathway-validation-thp-1-msu-macrophage-assay) | NLRP3 pathway validation (THP-1 MSU macrophage) | In Vitro | $5,000–8,000 | 8–10 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [egcg](./egcg.md) |
 | [§1.8](#18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a) | EGCG dose-escalation CP1a readout | In Vitro | $500–800 | 3–4 | Proposed | [egcg](./egcg.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
+| [§1.9](#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate) | Ward 1995 dual-cassette feasibility (koji endgame gate) | In Vitro | $3,000–5,000 | 8–12 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [lactoferrin](./lactoferrin.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md) |
 | [§2.1](#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii) | Gnotobiotic mouse colonization (S. boulardii) | Animal | $5,000–15,000 | 8–12 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./team.md) |
 | [§2.2](#22-hyperuricemic-rat-model-engineered-yeast-efficacy) | Hyperuricemic rat model (yeast efficacy) | Animal | $8,000–12,000 | 6–8 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gout-deep-dive](./gout-deep-dive.md), [uricase](./uricase.md) |
 | [§2.3](#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model) | Engineered koji EPI model | Animal | $6,000–10,000 | 8–10 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md) |
@@ -290,6 +291,46 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 - HVEM downregulation at EGCG ≤1 μM (replicates Hosokawa 2010 HGF finding in a macrophage lineage)
 
 **Cross-references:** `wiki/egcg.md` (mechanistic reframe), `wiki/tnfsf14-gout-target.md` (CP1a chokepoint), `wiki/nlrp3-exploit-map.md` (CP1a entry)
+
+---
+
+### 1.9 Ward 1995 Dual-Cassette Feasibility Test (Koji Endgame Strain Gate)
+
+**Status**: Proposed | **Cost**: $3,000–5,000 | **Weeks**: 8–12 | **Phase**: 1
+
+**Affected wiki**: [koji-endgame-strain](./koji-endgame-strain.md), [lactoferrin](./lactoferrin.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [uricase-variant-selection](./uricase-variant-selection.md)
+
+**What it tests:** Can the Ward 1995 *A. awamori* glucoamylase-KEX2 lactoferrin architecture (>2 g/L submerged, PMID 9634791) be layered with a second expression cassette for *A. flavus* uricase (*uaZ*) in the same *A. oryzae* genetic background on solid-state rice koji — without silencing either cassette or collapsing the native kojic-acid / ergothioneine metabolite program? This is the single feasibility gate for the endgame strain thesis (one *A. oryzae* strain, 5 NLRP3-pathway chokepoints, 4 molecules — see [koji-endgame-strain.md](./koji-endgame-strain.md)).
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Connection 1 + Proposed Experiment 1; formalized in [koji-endgame-strain.md](./koji-endgame-strain.md) §3. This is the gating experiment that decides whether the endgame strain is engineerable in its one-strain form (go to full development) or needs the two-strain fallback ([koji-endgame-strain.md](./koji-endgame-strain.md) §4.1).
+
+**Protocol:**
+- **Construct design.**
+  - Cassette A (lactoferrin): `[PamyB — glucoamylase — KEX2site (Lys-Arg) — hLf codon-optimized for *A. oryzae* — TamyB]`. Matches Ward 1995 architecture. Selection marker: pyrG complementation.
+  - Cassette B (uricase): `[PTEF1 — amyB signal peptide — *A. flavus uaZ* codon-optimized — TgpdA]`. Distinct promoter (constitutive TEF1) to separate transcriptional program from Cassette A. Selection marker: niaD or amdS.
+- **Host strain.** *A. oryzae* RIB40 or NSAR1 (pyrG-deficient auxotroph).
+- **Transformation.** PEG/CaCl₂ protoplast, sequential: Cassette A first → select on pyrG-minus → confirm hLf expression by Western → transform Cassette B into validated hLf clone → select on niaD/amdS.
+- **Fermentation.** Solid-state rice koji, 48–60 h at 30°C, 35% moisture. Parallel submerged-culture control (100 mL shake flask, 28°C) to isolate solid-state variable.
+- **Readouts.**
+  - Uricase activity: spectrophotometric UA-disappearance assay (per [engineered-koji-protocol.md](./engineered-koji-protocol.md) §05).
+  - Lactoferrin titer: anti-hLf ELISA + Western blot.
+  - Iron-binding capacity of Lf: UV-Vis at 465 nm (apo-vs-holo); optional CD spectroscopy for fold confirmation.
+  - Native metabolite profile: kojic acid titer (HPLC) + ergothioneine titer (LC-MS) — is WT baseline preserved within 30%?
+  - qPCR for both cassette copy numbers (stability check).
+  - SDS-PAGE to detect any incompletely-processed glucoamylase-hLf fusion (KEX-2 saturation signal).
+
+**Estimated cost:** $3,000–5,000 — gene synthesis for two codon-optimized cassettes (~$600–1,000), cloning and transformation reagents ($500–1,000), fermentation consumables ($200–400), ELISA + Western antibodies ($800–1,200), metabolite assay reagents ($500–800), CRO or academic lab time if outsourced ($1,000–2,000 per batch).
+
+**Estimated timeline:** 8–12 weeks — 2–3 weeks gene synthesis + construct assembly, 2–3 weeks sequential transformation + clonal screening, 1–2 weeks parallel fermentation (solid-state + submerged), 2–3 weeks full assay suite + write-up.
+
+**Dependencies:** *A. oryzae* genetic-engineering lab access. Candidate pathways: (a) Lauren Collier-Hyams at Emory (see [team.md](./team.md)) if the recruiting conversation converts her to active collaboration; (b) commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic) — faster but more expensive; (c) community biolab with protoplast-transformation capability (Genspace NY has precedent on *A. oryzae*).
+
+**Success criteria:**
+- **Accept** (go to full endgame strain development per [koji-endgame-strain.md](./koji-endgame-strain.md) §7): lactoferrin titer ≥500 mg/L koji pore-fluid equivalent, uricase activity ≥50 μmol/h/OD retained from single-cassette baseline, native kojic acid + ergothioneine titers within 30% of WT.
+- **Iterate** (adjust architecture, re-test): lactoferrin 100–500 mg/L OR uricase activity down >30%. Try protease-knockout host strain (Δalp, Δnpr), alternative integration sites, iron supplementation (10–100 ppm FeCl₃), or alternative signal peptides.
+- **Reject** (fall back to two-strain co-ferment per [koji-endgame-strain.md](./koji-endgame-strain.md) §4.1): lactoferrin <100 mg/L after two rounds of optimization, OR native metabolite program collapse (kojic acid down >50% vs. WT). The two-strain fallback preserves the coverage matrix at the cost of single-strain elegance.
+
+**Cross-references:** [koji-endgame-strain.md](./koji-endgame-strain.md) §3 (full protocol rationale + adjacent literature: Li 2024 PMID 39830075 multi-copy in *A. oryzae*, Wang 2023 PMID 37807677 multi-locus in *A. niger*), [engineered-koji-protocol.md](./engineered-koji-protocol.md) §16 (starting single-cassette lactoferrin module that this experiment ladders on top of), [lactoferrin.md](./lactoferrin.md) §7 (Open Enzyme feasibility bet), [synthesis.md](./synthesis.md) 2026-04-24 Connection 1.
 
 ---
 

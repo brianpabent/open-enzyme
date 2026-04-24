@@ -37,6 +37,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 - **[Saccharomyces cerevisiae](wiki/saccharomyces-cerevisiae.md)** — GRAS yeast; rasburicase expression precedent; S. boulardii; expression systems (TEF1p, GPDp); delivery formats
 - **[Aspergillus oryzae](wiki/aspergillus-oryzae.md)** — Koji mold; native enzyme production; transformation methods; dual-purpose strain vision; fermentation on rice
+- **[Koji Endgame Strain](wiki/koji-endgame-strain.md)** — platform thesis: one engineered *A. oryzae* strain, 5 chokepoints from 4 molecules (uricase + lactoferrin engineered; kojic acid + ergothioneine native); Ward 1995 dual-cassette architecture as gating feasibility test
 - **[Open Source Platform](wiki/open-source-platform.md)** — GitHub strain library vision; software analogy; no patents; community validation; forkable strains
 
 ## Delivery & Barrier Biology

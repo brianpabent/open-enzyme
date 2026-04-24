@@ -33,6 +33,9 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: write
+    # Self-skip on our own refresh commits. Same reasoning as wiki-sweep.yml:
+    # workflow-specific marker (not [skip ci]) so deploy-docs isn't blocked.
+    if: "!contains(github.event.head_commit.message, '[skip-chembl-refresh]')"
 
     steps:
       - name: Checkout

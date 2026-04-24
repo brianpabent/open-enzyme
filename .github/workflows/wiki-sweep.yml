@@ -34,6 +34,11 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: write
+    # Self-skip on our own sweep commits (or any commit author explicitly
+    # asks to skip). We DON'T use [skip ci] for this — that's nuclear, it
+    # blocks every workflow including deploy-docs and the site goes stale.
+    # A sweep-specific marker lets the docs deploy continue running.
+    if: "!contains(github.event.head_commit.message, '[skip-wiki-sweep]')"
 
     steps:
       - name: Checkout

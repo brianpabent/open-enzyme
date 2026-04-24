@@ -863,6 +863,8 @@ A proposal to co-engineer carnosine (β-alanyl-L-histidine) biosynthesis into th
 
 ## 16 Lactoferrin Co-Expression Module — CP5b Resolution Arm
 
+> **See also**: [wiki/koji-endgame-strain.md](./koji-endgame-strain.md) — formalizes the coverage matrix (5 chokepoints × 4 molecules: engineered uricase + engineered lactoferrin + native kojic acid + native ergothioneine) and the Ward 1995 dual-cassette feasibility gate that this module ladders up to. The protocol below is the starting single-cassette lactoferrin step; the endgame page is the integration target for the full dual-cassette strain.
+
 A proposal to co-engineer recombinant human (or bovine) lactoferrin into the Open Enzyme koji platform as a secondary cassette. Lactoferrin adds **CP5b (active resolution via ALX/FPR2)** coverage to a platform that is currently dominated by CP1-CP5a suppression mechanisms. This is the only stack-adjacent candidate that adds a resolution leg rather than another inflammation-suppression leg.
 
 ### Rationale — Why This Is Year 2-3, Not Year 5+

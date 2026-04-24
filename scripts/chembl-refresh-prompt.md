@@ -121,10 +121,10 @@ Read the TRIGGER block's `commit=` directive.
 - **`commit=yes`** — stage every file you modified or created and commit with this message format:
 
   ```
-  chembl-refresh: quarterly sweep <YYYY-MM-DD> — <N> compounds, <M> discrepancies [skip ci]
+  chembl-refresh: quarterly sweep <YYYY-MM-DD> — <N> compounds, <M> discrepancies [skip-chembl-refresh] [skip-wiki-sweep]
   ```
 
-  Where `<N>` is the total number of compounds queried (baseline + new) and `<M>` is the count of meaningful discrepancies from Pass 4 ("0" if none). The `[skip ci]` marker is required — it prevents the refresh commit from re-triggering any `on: push` workflow (specifically `.github/workflows/wiki-sweep.yml`). Without it, a refresh that touches `wiki/chembl-cross-check.md` would immediately kick off a full wiki sweep.
+  Where `<N>` is the total number of compounds queried (baseline + new) and `<M>` is the count of meaningful discrepancies from Pass 4 ("0" if none). **Both markers are required**: `[skip-chembl-refresh]` prevents this workflow from re-triggering itself; `[skip-wiki-sweep]` prevents `wiki-sweep.yml` from firing on the `wiki/chembl-cross-check.md` change (which would be redundant since the refresh already synthesized into synthesis.md). **Do NOT use `[skip ci]`** — that's nuclear; it blocks every workflow including `deploy-docs.yml`, and the published site would go stale after every quarterly refresh. The workflow-specific markers are surgical.
 
   If nothing was modified across any pass, **do not create an empty commit.** Exit cleanly and let the "Push refresh output" step no-op.
 

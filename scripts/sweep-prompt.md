@@ -126,9 +126,9 @@ Read the TRIGGER block's `commit=` directive.
 
 - **`commit=yes`** — stage every file you modified or created, plus the trigger file(s) if any were untracked, and commit with this message format:
   ```
-  sweep: <trigger-basename(s)> → <N> files updated [skip ci]
+  sweep: <trigger-basename(s)> → <N> files updated [skip-wiki-sweep]
   ```
-  When multiple trigger files are present, use a comma-separated list (truncate to the 3 most meaningful basenames if the list is long; add `+N more`). The `[skip ci]` marker is required — it prevents the sweep commit from re-triggering the `.github/workflows/wiki-sweep.yml` workflow (silent infinite loop otherwise). If nothing was modified across any pass, do not create an empty commit.
+  When multiple trigger files are present, use a comma-separated list (truncate to the 3 most meaningful basenames if the list is long; add `+N more`). The `[skip-wiki-sweep]` marker is required — it prevents the sweep commit from re-triggering the `.github/workflows/wiki-sweep.yml` workflow (silent infinite loop otherwise). **Do NOT use `[skip ci]`** — that's nuclear; it blocks every workflow including `deploy-docs.yml` and the published site goes stale. The `[skip-wiki-sweep]` marker is workflow-specific — only the wiki-sweep job skips; deploy-docs and anything else continue running. If nothing was modified across any pass, do not create an empty commit.
 
 - **`commit=no`** — leave all changes unstaged. Brian will review and commit manually.
 

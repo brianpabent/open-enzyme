@@ -87,6 +87,8 @@ Some heterologous compounds may express better in *S. cerevisiae* than *A. oryza
 
 These are empirical questions, not ideological ones. We build in koji first and fall back to yeast when the data says to.
 
+The Year 2-3 target is the **koji endgame strain** (see [wiki/koji-endgame-strain.md](./koji-endgame-strain.md)) — one engineered *A. oryzae* strain layering engineered uricase + engineered lactoferrin onto native kojic acid + native ergothioneine, covering five NLRP3-pathway chokepoints (CP0-adjacent trigger elimination, CP1a, CP1b, CP4, CP6b; three of the five contributed by molecules the host already makes for free). The Ward 1995 *A. awamori* glucoamylase-KEX2 dual-cassette architecture is the gating feasibility test ($3-5k, 8-12 weeks) — if it transfers to *A. oryzae* solid-state, the platform converges on a single strain; if not, the fallback is two strains co-fermented with the same therapeutic coverage.
+
 ---
 
 ## 4. First Targets
