@@ -9,6 +9,7 @@ related:
   - gout-deep-dive.md
   - cross-validation.md
   - validation-experiments.md
+  - androgen-urate-axis.md
 sources:
   - "n-of-1 trial methodology (see e.g. Kravitz & Duan, Ann Intern Med 2014)"
   - "Open Enzyme synthesis 2026-04-23 (microbiota safety discussion)"

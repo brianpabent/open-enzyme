@@ -32,6 +32,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Digestive Enzymes & EPI](wiki/digestive-enzymes.md)** — Lipase, protease, amylase deficits; wild-type koji as immediate solution; commercial supplements (Creon, Zenpep)
 - **[SIBO](wiki/sibo.md)** — Lynn's condition; brush-border enzyme damage; NLRP3 involvement; KPV relevance
 - **[Fructose Connection](wiki/fructose-connection.md)** — Hidden gout accelerant: fructokinase (no negative feedback), ATP depletion cascade, GLUT9 dual transporter, KHK inhibitors
+- **[Androgen-Urate Axis](wiki/androgen-urate-axis.md)** — Sex-hormone layer on urate handling: testosterone ↑URAT1 / ↓ABCG2; estrogen opposite; SHBG and the bound/free picture; TRT/SERM/AAS/AI effects; post-menopausal convergence
 
 ## Engineered Organisms & Platforms
 

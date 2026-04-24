@@ -1,7 +1,7 @@
 ---
 title: Supplements Stack
 aliases: [stack, multi-intervention, NLRP3 protocol, inflammasome suppression]
-related: [nlrp3-inflammasome, gout-pathophysiology, validation-experiments]
+related: [nlrp3-inflammasome, gout-pathophysiology, validation-experiments, androgen-urate-axis]
 sources: [nlrp3-exploit-map.md, gout-deep-dive.md, peptide-gout-addendum.md]
 ---
 

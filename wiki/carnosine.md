@@ -7,6 +7,7 @@ related:
   - nlrp3-inhibitor-screen.md
   - engineered-koji-protocol.md
   - gout-deep-dive.md
+  - androgen-urate-axis.md
 sources:
   - nlrp3-inhibitor-screen.md
 ---
@@ -30,7 +31,7 @@ Carnosine's relevance to gout spans two distinct axes — urate handling and inf
 - **ROS scavenging.** Classical activity — carnosine chelates transition metals, quenches singlet oxygen and hydroxyl radicals, and scavenges reactive carbonyl species (methylglyoxal, 4-HNE). ROS reduction sits upstream of NLRP3 priming. (In Vitro)
 - **NF-κB axis suppression.** Reduces p-p65 phosphorylation and nuclear translocation in inflamed tissues; downstream effect is reduced pro-IL-1β and NLRP3 transcription. (In Vitro and Animal Model)
 - **JNK pathway suppression.** Reduces p-JNK in hyperuricemia rat renal tissue. (Animal Model; source: nlrp3-inhibitor-screen.md)
-- **Renal urate transporter modulation.** In hyperuricemia rat models, carnosine downregulated URAT1 (SLC22A12, reabsorption) and GLUT9 (SLC2A9, reabsorption) in renal proximal tubule, increasing urate excretion. This is a physiology-level effect, not just an anti-inflammatory one. (Animal Model; source: nlrp3-inhibitor-screen.md)
+- **Renal urate transporter modulation.** In hyperuricemia rat models, carnosine downregulated URAT1 (SLC22A12, reabsorption) and GLUT9 (SLC2A9, reabsorption) in renal proximal tubule, increasing urate excretion. This is a physiology-level effect, not just an anti-inflammatory one. (Animal Model; source: nlrp3-inhibitor-screen.md) The URAT1-downregulating effect is mechanistically opposite to the androgen-driven URAT1 upregulation described in [androgen-urate-axis.md](./androgen-urate-axis.md) — making carnosine particularly well-matched to androgen-driven hyperuricemia (TRT/SERM/AAS patients).
 - **HDAC and SIRT1 interaction.** Carnosine shows evidence of HDAC inhibitory activity and SIRT1 modulation in in-vitro systems, which overlaps with BHB/β-hydroxybutyrate's proposed anti-inflammatory mechanism. (In Vitro; Mechanistic Extrapolation for translation to gout.)
 
 ## Gout-specific evidence

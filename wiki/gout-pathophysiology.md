@@ -237,7 +237,7 @@ The gout pipeline is more active now than it's been in decades:
 
 ### The Big Numbers
 
-A meta-analysis of over **one million participants** identified **351 loci** associated with serum urate levels, with 17 previously unreported. A 2025 UK Biobank study (N=150,542) identified 13 loci associated with gout diagnosis, with notable sex-specific differences (16 loci in males, only 2 in females).
+A meta-analysis of over **one million participants** identified **351 loci** associated with serum urate levels, with 17 previously unreported. A 2025 UK Biobank study (N=150,542) identified 13 loci associated with gout diagnosis, with notable sex-specific differences (16 loci in males, only 2 in females). The sex-specific GWAS signal is consistent with the **androgen-urate axis** (see [androgen-urate-axis.md](./androgen-urate-axis.md)) — sex hormones modulate URAT1/ABCG2 expression, gating which transporter polymorphisms actually manifest as hyperuricemia.
 
 ### The Three Transporter Genes
 

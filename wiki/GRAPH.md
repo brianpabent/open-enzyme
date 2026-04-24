@@ -140,6 +140,17 @@ graph TB
         L7["TNFSF14 / LIGHT — emerging target"]
     end
 
+    subgraph Androgens["ANDROGEN-URATE AXIS (NEW)"]
+        S1["Testosterone (endogenous or exogenous)"]
+        S2["Estradiol"]
+        S3["SHBG (liver-produced, binds T)"]
+        S4["URAT1 (apical reabsorption)"]
+        S5["ABCG2 (apical secretion, kidney + gut)"]
+        S6["Insulin sensitivity"]
+        S7["Clomid / SERMs"]
+        S8["Aromatase Inhibitors"]
+    end
+
     %% Core relationships
     A1 --> B1
     A4 --> B1
@@ -265,6 +276,21 @@ graph TB
     class P1,P2,P3,P4,P5,P6 cp5bStyle
     class R1,R2,R3,R4 multiCPStyle
 
+    %% Androgen-urate axis (2026-04-24)
+    %% Sex hormones gate the transporter biology that sits upstream of hyperuricemia
+    S1 -->|"upregulates"| S4
+    S1 -->|"suppresses"| S5
+    S2 -->|"downregulates"| S4
+    S2 -->|"boosts secretion via OAT1/3"| S5
+    S4 -->|"↑reabsorption → hyperuricemia"| B1
+    S5 -.->|"↓secretion → hyperuricemia (including gut-lumen sink ceiling)"| G1
+    S3 -->|"binds T → lowers Free T for given Total T"| S1
+    S6 -->|"suppresses SHBG synthesis; high sensitivity = ↑SHBG"| S3
+    S7 -->|"↑endogenous T, modestly ↑SHBG, ↑E2"| S1
+    S7 -->|"peripheral ER agonism"| S2
+    S8 -->|"blocks T→E2 aromatization (↑T, ↓E2)"| S1
+    S8 -.->|"loss of estrogen's urate-excretion boost"| S2
+
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2
     M2 -->|"CB2/TLR4/NLRP3 — MSU gout model"| C2
@@ -293,6 +319,7 @@ graph TB
     style Resolution fill:#e0efff
     style TNFSF14_arm fill:#fff5cc
     style MultiCP fill:#f0ffe0
+    style Androgens fill:#e8d8f0
 ```
 
 ## Key Pathway Descriptions

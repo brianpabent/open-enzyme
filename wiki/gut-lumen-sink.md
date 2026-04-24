@@ -11,6 +11,7 @@ related:
   - saccharomyces-cerevisiae
   - aspergillus-oryzae
   - open-enzyme-vision
+  - androgen-urate-axis
 sources:
   - engineered-yeast-uricase-proposal.md
   - blood-barrier-exploits.md
@@ -23,6 +24,8 @@ sources:
 ## Overview
 
 The gut-lumen sink strategy represents a paradigm shift in oral [[uricase|uricase]] delivery. Rather than attempting the difficult task of transporting a 135 kDa enzyme protein across the intestinal epithelium into systemic circulation, this approach places active uricase *in the intestinal lumen itself*—where it degrades uric acid that has been actively secreted from the bloodstream via ABCG2 transporters. This creates a concentration "sink" that pulls additional uric acid from serum across the intestinal epithelium without requiring systemic enzyme absorption. The strategy is validated by multiple independent lines of evidence and represents the most biologically elegant and practically feasible approach to oral uricase delivery. (Source: engineered-yeast-uricase-proposal.md, blood-barrier-exploits.md, open-enzyme-vision.md)
+
+> **Patient-stratification note:** ABCG2 is androgen-suppressed — men on TRT, SERMs (e.g., clomid), or AAS run with pharmacologically down-regulated intestinal urate secretion at baseline, reducing the ceiling of the gut-lumen sink. This means the engineered-uricase product may require higher effective doses in androgen-dominant patients to achieve the same serum-UA reduction as normotestosteronemic reference patients. See [androgen-urate-axis.md](./androgen-urate-axis.md) for the mechanism and clinical implications.
 
 ## The ABCG2 Intestinal Uric Acid Secretion Pathway
 
