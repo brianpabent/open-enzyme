@@ -78,11 +78,35 @@ graph TB
         J4["Gasdermin D Block"]
     end
 
-    subgraph Parallel_Path["PARALLEL FLARE PATHWAYS"]
+    subgraph Parallel_Path["PARALLEL FLARE PATHWAYS (CP6a)"]
         N1["5-LOX"]
         N2["LTB4"]
         N3["Neutrophil Chemotaxis"]
         N4["Quercetin — 5-LOX IC50 300 nM"]
+        N5["AKBA (Boswellia) — allosteric 5-LOX ~2.7 μM"]
+        N6["EPA substrate competition → RvE1"]
+    end
+
+    subgraph Complement["COMPLEMENT PRIMING (CP0 — NEW)"]
+        O1["Complement C5a"]
+        O2["C5aR1"]
+        O3["ROS Burst (non-transcriptional priming)"]
+        O4["Avacopan (C5aR1 antagonist, FDA ANCA)"]
+        O5["S100A8/A9 DAMP (2025 flare driver)"]
+    end
+
+    subgraph Resolution["ACTIVE RESOLUTION (CP5b — NEW)"]
+        P1["ALX/FPR2 Resolution Receptor"]
+        P2["RvD1 / RvD2"]
+        P3["MaR1 (Maresin)"]
+        P4["Neutrophil Infiltration (resolved)"]
+        P5["aggNET (resolution form)"]
+        P6["Lactoferrin (fermentable, partial overlap)"]
+    end
+
+    subgraph TNFSF14_arm["CP1a AMPLIFIER"]
+        Q1["TNFSF14 / LIGHT"]
+        Q2["NF-κB Priming"]
     end
 
     subgraph Cannabinoids["CANNABINOIDS / TERPENES"]
@@ -184,11 +208,44 @@ graph TB
     B5 --> A3
     
     %% 5-LOX / LTB4 parallel neutrophil chemotaxis path (from nlrp3-inhibitor-screen.md ChEMBL cross-check)
+    %% Now formally CP6a in v1.2 exploit map
     C1 -->|"MSU also drives 5-LOX"| N1
     N1 -->|"produces"| N2
     N2 -->|"recruits neutrophils"| N3
     N3 --> C5
     N4 -->|"inhibits at 300 nM"| N1
+    N5 -->|"allosteric ~2.7 μM"| N1
+    N6 -->|"substrate redirect → RvE1 (→ CP5b)"| N1
+
+    %% CP0 — Complement C5a priming (v1.2 restructure, 2026-04-24)
+    %% MSU directly activates complement → C5a → ROS → NLRP3 priming (Cumpelik 2016, Khameneh 2017)
+    C1 -->|"MSU activates complement"| O1
+    O1 -->|"binds"| O2
+    O2 -->|"triggers ROS burst"| O3
+    O3 -->|"primes NLRP3 (non-transcriptional)"| C2
+    O4 -.->|"inhibits (pharma adjunct)"| O2
+    O5 -->|"DAMP amplifies NF-κB priming"| Q2
+
+    %% CP1a — TNFSF14 (LIGHT) amplifier (Round 1 work)
+    Q1 -->|"amplifies via HVEM"| Q2
+    Q2 -->|"transcriptional priming"| C2
+
+    %% CP5b — ALX/FPR2 active resolution (v1.2 restructure, 2026-04-24)
+    %% RvD1/MaR1 in MSU gout models (Zaninelli 2022 PMID 35716378, Jiang 2023 PMID 37996809)
+    P2 -->|"activates"| P1
+    P3 -->|"activates (AMPK/Nrf2 arm)"| P1
+    P1 -->|"resolves"| P4
+    P4 -.->|"resolves"| N3
+    C4 -->|"GSDMD pore-driven NET release"| P5
+    P5 -->|"sequesters cytokines → resolution"| P4
+    P6 -->|"partial resolution overlap"| P1
+
+    %% Style the v1.2 additions distinctly
+    linkStyle default stroke-width:1px
+    classDef cp0Style fill:#ffccee,stroke:#cc0066,stroke-width:2px
+    classDef cp5bStyle fill:#cce6ff,stroke:#0066cc,stroke-width:2px
+    class O1,O2,O3,O4,O5 cp0Style
+    class P1,P2,P3,P4,P5,P6 cp5bStyle
 
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2
@@ -214,6 +271,9 @@ graph TB
     style Cannabinoids fill:#e6f0e6
     style Clinical fill:#f0e6ff
     style Parallel_Path fill:#fff0f5
+    style Complement fill:#ffe0ee
+    style Resolution fill:#e0efff
+    style TNFSF14_arm fill:#fff5cc
 ```
 
 ## Key Pathway Descriptions
