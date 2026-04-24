@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/chembl-cross-check/">
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/linter-design/">
       
       
-        <link rel="prev" href="../ai-bio-tools-playbook/">
+        <link rel="prev" href="../chembl-cross-check/">
       
       
-        <link rel="next" href="../linter-design/">
+        <link rel="next" href="../hypotheses/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>ChEMBL Cross-Check: Stack Compounds vs Curated Bioactivity - Open Enzyme</title>
+        <title>Linter Design — Document Lint + Falsification Lint (Two-Linter Architecture) - Open Enzyme</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chembl-cross-check-stack-compounds-vs-curated-bioactivity" class="md-skip">
+        <a href="#linter-design-two-linter-architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ChEMBL Cross-Check: Stack Compounds vs Curated Bioactivity
+              Linter Design — Document Lint + Falsification Lint (Two-Linter Architecture)
             
           </span>
         </div>
@@ -2493,6 +2493,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../chembl-cross-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChEMBL Cross-Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2512,204 +2540,25 @@
   <span class="md-ellipsis">
     
   
-    ChEMBL Cross-Check
+    Linter Design (Falsification + Document Lint)
   
 
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--design"></span>
+  
+
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ChEMBL Cross-Check
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Purpose
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#master-cross-check-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Master Cross-Check Table
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#expanded-findings-compounds-with-propagation-worthy-discrepancies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expanded Findings: Compounds with Propagation-Worthy Discrepancies
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Expanded Findings: Compounds with Propagation-Worthy Discrepancies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#resveratrol-dpp-4-inhibition-sub-nm-curated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resveratrol → DPP-4 inhibition (sub-nM, curated)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#berberine-tryptophan-23-dioxygenase-tdo-sub-100-nm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Berberine → Tryptophan 2,3-dioxygenase (TDO, sub-100 nM)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#egcg-20s-proteasome-ic50-86-nm-human" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        EGCG → 20S proteasome (IC50 86 nM, human)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#curcumin-human-nlrp3-ic50-242-m-curated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Curcumin → human NLRP3 IC50 = 24.2 μM (curated)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quercetin-5-lox-300-nm-already-documented-in-2026-04-23-sweep" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quercetin → 5-LOX (300 nM, already documented in 2026-04-23 sweep)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compounds-not-indexed-in-chembl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Compounds Not Indexed in ChEMBL
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implications-for-the-platform-thesis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implications for the Platform Thesis
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#appendix-refresh-recipe" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Appendix: Refresh Recipe
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sources
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../linter-design/" class="md-nav__link">
         
   
   
@@ -2732,6 +2581,314 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro-the-core-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intro — The Core Insight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-two-linters-not-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §1 — Two Linters, Not One
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="§1 — Two Linters, Not One">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#document-lint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Lint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falsification-lint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Falsification Lint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#they-are-complementary-not-redundant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        They Are Complementary, Not Redundant
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §2 — Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-document-lint-rule-catalog-v0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §3 — Document Lint Rule Catalog (v0)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-falsification-card-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §4 — Falsification Card Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="§4 — Falsification Card Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontmatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontmatter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Body Sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-failure-mode-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §5 — Failure-Mode Ontology
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="§5 — Failure-Mode Ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v0-ontology-extended-from-the-brief" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0 Ontology — Extended from the Brief
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#independence-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Independence Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-survival-score-calibration-retraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §6 — Survival Score, Calibration, Retraction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="§6 — Survival Score, Calibration, Retraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#survival-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Survival Score
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-commit-hashing-addressed-by-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Commit Hashing — Addressed by Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-n1-confounded-run-honesty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §7 — n=1 / Confounded-Run Honesty
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-what-document-lint-wont-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §8 — What Document Lint Won't Check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-what-falsification-lint-wont-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §9 — What Falsification Lint Won't Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-phase-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §10 — Phase Boundary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §11 — Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2892,313 +3049,326 @@
   
 
 
-<h1 id="chembl-cross-check-stack-compounds-vs-curated-bioactivity">ChEMBL Cross-Check: Stack Compounds vs Curated Bioactivity<a class="headerlink" href="#chembl-cross-check-stack-compounds-vs-curated-bioactivity" title="Permanent link">&para;</a></h1>
-<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>This is a <strong>standing rigor page</strong> that cross-references every NLRP3/gout-relevant compound discussed in the Open Enzyme wiki against the EMBL-EBI ChEMBL v34 curated bioactivity database. The goal: separate "direct inhibitor of target X" claims (supported by a curated binding/inhibition IC50 in a named assay) from "pathway modulator" claims (functional downstream readouts, mechanism inferred from review literature).</p>
-<p>Quercetin's 5-LOX finding — surfaced during the 2026-04-23 sweep of <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> — is the template: a compound the wiki frames primarily as an NLRP3 pathway inhibitor actually has its single most potent curated activity on a different enzyme (5-LOX, IC50 300 nM), and that target is relevant to gout biology (leukotriene B4 drives neutrophil chemotaxis in MSU flares). Whenever a similar gap shows up, it goes here first, then propagates to the primary concept page on a follow-up sweep.</p>
-<p><strong>NLRP3 target ID (reference):</strong> CHEMBL1741208 (<em>NACHT, LRR and PYD domains-containing protein 3</em>, Homo sapiens, UniProt Q96P20).</p>
-<p><strong>Refresh cadence:</strong> Quarterly, or whenever a new direct NLRP3 inhibitor clinical program publishes pivotal data. Next refresh target: 2026-07-24.</p>
-<p><strong>How to refresh:</strong> See the three-line recipe in the <a href="#appendix-refresh-recipe">Appendix</a> at the bottom of this page.</p>
+<h1 id="linter-design-two-linter-architecture">Linter Design — Two-Linter Architecture<a class="headerlink" href="#linter-design-two-linter-architecture" title="Permanent link">&para;</a></h1>
+<h2 id="intro-the-core-insight">Intro — The Core Insight<a class="headerlink" href="#intro-the-core-insight" title="Permanent link">&para;</a></h2>
+<p>Generation and rigor are different modes of thought. Fusing them into a single pipeline strangles both: generation becomes cautious, rigor becomes dilute, and the entire apparatus becomes the 500-rule ESLint nobody actually runs. The trap most ML-bio platforms fall into is exactly this fusion — a "scientific discipline" layer bolted upstream of ideation, which filters out the non-obvious four-hop speculative connections that are the point of generation in the first place.</p>
+<p>The framing from the original brief is load-bearing:</p>
+<blockquote>
+<p><em>Generator stays free. Linter catches what we'd regret later.</em></p>
+</blockquote>
+<p>The refinement landed in the 2026-04-24 conversation: <strong>this is actually two linters, not one.</strong> One runs always, non-blocking, on every document change, and checks that documents are well-formed <em>as documents</em>. The other runs on demand, per committed hypothesis, and generates a Falsification Card probing whether the hypothesis is well-formed <em>as a scientific claim</em>. They share a philosophical stance (opt-in rigor, severity levels, honesty about confounding) but have different triggers, scopes, rule sets, and output surfaces.</p>
+<p>Splitting into two gives each one a single job and prevents the instinct to merge everything into one super-pass. This page is the design document for both.</p>
 <hr />
-<h2 id="master-cross-check-table">Master Cross-Check Table<a class="headerlink" href="#master-cross-check-table" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Compound</th>
-<th>ChEMBL ID</th>
-<th>Most potent curated target + IC50/Ki</th>
-<th>Wiki's current framing</th>
-<th>Discrepancy?</th>
-<th>Last refreshed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><strong>Quercetin</strong></td>
-<td>CHEMBL50</td>
-<td><strong>5-lipoxygenase: IC50 = 300 nM</strong> (<em>J Med Chem</em> 1991)</td>
-<td>NLRP3 pathway modulator (IL-1β in MSU model)</td>
-<td><strong>YES</strong> — 5-LOX is stronger and gout-relevant (LTB4 neutrophil chemotaxis); not surfaced in exploit map</td>
-<td>2026-04-23</td>
-</tr>
-<tr>
-<td>2</td>
-<td><strong>Oridonin</strong></td>
-<td>CHEMBL1164920</td>
-<td>Human NLRP3: <strong>IC50 = 5.18 μM</strong> (THP-1, <em>Eur J Med Chem</em> 2023)</td>
-<td>"0.5–2 μM" covalent Cys279 binder</td>
-<td><strong>YES</strong> — curated human cellular IC50 is 5.18 μM; the 0.5–2 μM number comes from cell-free / mouse-derived assays</td>
-<td>2026-04-23</td>
-</tr>
-<tr>
-<td>3</td>
-<td><strong>Dapansutrile (OLT1177)</strong></td>
-<td>CHEMBL3989943</td>
-<td>Human NLRP3: <strong>IC50 = 1.0 μM</strong> human MDM; <strong>IC50 = 1 nM mouse J774A.1</strong></td>
-<td>Direct NLRP3 ATPase inhibitor, Phase 2a gout success</td>
-<td><strong>YES</strong> — 1000× mouse-vs-human potency gap; clinical efficacy is consistent with human μM potency, not sub-nM</td>
-<td>2026-04-23</td>
-</tr>
-<tr>
-<td>4</td>
-<td><strong>β-Caryophyllene</strong></td>
-<td>CHEMBL445740</td>
-<td>No direct human NLRP3 in ChEMBL; CB2 agonist Ki ~155 nM from external literature</td>
-<td>CB2 agonist + NLRP3/caspase-1/TLR4 suppressor (MSU gout, rat)</td>
-<td>Partial — "direct NLRP3 binding" claim from 2021 docking paper not confirmed by ChEMBL curation; CB2 agonism is well-established</td>
-<td>2026-04-23</td>
-</tr>
-<tr>
-<td>5</td>
-<td><strong>BHB (beta-hydroxybutyrate)</strong></td>
-<td>CHEMBL1162496</td>
-<td><strong>No curated bioactivity with pChEMBL ≥ 6</strong> against any target</td>
-<td>"Direct NLRP3 signaling molecule; hits CP1/CP2/CP3"</td>
-<td><strong>Soft</strong> — BHB's "direct NLRP3 binding" is from Youm et al. 2015 <em>Nat Med</em>, not represented in ChEMBL; also no off-target red flags — it is genuinely a signaling metabolite, not a high-affinity ligand</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>6</td>
-<td><strong>KPV (tripeptide)</strong></td>
-<td><strong>Not indexed</strong></td>
-<td>— (peptide below ChEMBL small-molecule threshold; no salt/synonym match)</td>
-<td>Direct NLRP3 assembly inhibitor + NF-κB stabilizer via PepT1 uptake</td>
-<td>N/A — peptides of this size are poorly covered by ChEMBL; absence is not a discrepancy, but wiki should note "not small-molecule-curated"</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>7</td>
-<td><strong>Carnosine</strong></td>
-<td>CHEMBL242948</td>
-<td>ROR-γ potency 2.24 μM (qHTS, inconclusive); SH-SY5Y neuroprotection EC50 3 μM</td>
-<td>NLRP3/NF-κB/p-JNK suppressor; URAT1/GLUT9 downregulator (hyperuricemia rat)</td>
-<td><strong>Soft</strong> — no curated high-potency activity anywhere; the direct hyperuricemia evidence (Zhang et al. 2024) is functional, not represented</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>8</td>
-<td><strong>Ursolic acid</strong></td>
-<td>CHEMBL169</td>
-<td><strong>No curated activity with pChEMBL ≥ 6</strong>; zero direct human NLRP3 entries</td>
-<td>NLRP3/NF-κB suppressor (triterpene), OA + Kawasaki animal models</td>
-<td><strong>Soft</strong> — wiki framing comes entirely from functional IL-1β readouts; ursolic acid has 0 ChEMBL-curated high-affinity targets despite being a Tier-1 candidate</td>
-<td>2026-04-23</td>
-</tr>
-<tr>
-<td>9</td>
-<td><strong>Taurine</strong></td>
-<td>CHEMBL239243</td>
-<td>BLM helicase (qHTS, <em>inconclusive</em>) potency 12.6 nM; taurine transporter EC50 10 μM (substrate)</td>
-<td>NLRP3 K⁺-efflux-block upstream (sepsis, cardiac animal models)</td>
-<td><strong>Soft</strong> — no curated direct NLRP3 or pathway-target; BLM hit is qHTS noise flagged "inconclusive"; TauT substrate is physiological, not a drug activity</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>10</td>
-<td><strong>EGCG</strong></td>
-<td>CHEMBL297453</td>
-<td><strong>Plasmodium falciparum enoyl-ACP reductase: Ki = 8 nM</strong> (<em>J Med Chem</em> 2007); human 20S proteasome chymotrypsin IC50 86 nM; DNMT inhibition Ki 28 nM</td>
-<td>TLR4/NF-κB/NLRP3 cascade blocker; ROS reduction</td>
-<td><strong>YES</strong> — strongest curated target is an anti-malarial enzyme; <strong>20S proteasome inhibition (IC50 86 nM) is a human off-target not surfaced</strong> in NLRP3 screen and matters for safety at high oral doses</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>11</td>
-<td><strong>Sulforaphane</strong></td>
-<td>CHEMBL48802</td>
-<td><strong>iNOS IC50 = 400 nM</strong> (mouse RAW, <em>J Med Chem</em> 2015); <strong>Nrf2/Keap1 EC50 = 580 nM</strong> (human U2OS, <em>J Med Chem</em> 2019)</td>
-<td>Nrf2 activator → NLRP3 priming block; xanthine oxidase + 5-LOX</td>
-<td>No discrepancy — curated potency lines up with wiki's Nrf2/iNOS framing; the XO and 5-LOX claims in supplements-stack.md are functional, not ChEMBL-curated, but are consistent</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>12</td>
-<td><strong>Berberine</strong></td>
-<td>CHEMBL295124</td>
-<td><strong>Tryptophan 2,3-dioxygenase: IC50 = 30 nM</strong> (<em>Eur J Med Chem</em> 2024); CYP1B1 Ki 44 nM; AChE IC50 100 nM</td>
-<td>AMPK activator / gut metabolism / SIBO modulator / NLRP3</td>
-<td><strong>YES</strong> — top curated activity is TDO (kynurenine pathway), then CYP1B1 (estrogen metab) and AChE — none reflected in current wiki; TDO especially relevant because kynurenine modulates T-cell/NLRP3 crosstalk</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>13</td>
-<td><strong>Resveratrol</strong></td>
-<td>CHEMBL165</td>
-<td><strong>Dipeptidyl peptidase-4: IC50 = 0.6 nM</strong> (human, <em>Eur J Med Chem</em> 2018, pChEMBL 9.22)</td>
-<td>SIRT1 activator / mitochondrial homeostasis / weak NLRP3</td>
-<td><strong>YES</strong> (large) — DPP-4 at sub-nM is resveratrol's single strongest curated activity; DPP-4 is a validated anti-diabetic target (gliptins) and the wiki frames resveratrol purely through SIRT1; this is a new mechanism worth surfacing</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>14</td>
-<td><strong>Curcumin</strong></td>
-<td>CHEMBL140</td>
-<td><strong>Amyloid-β precursor protein: Ki = 0.208 nM</strong> (<em>J Med Chem</em> 2006); <strong>NLRP3 human THP-1 IC50 = 24.2 μM</strong> (<em>J Nat Prod</em> 2020, pChEMBL 4.62)</td>
-<td>Direct NLRP3 pathway inhibitor (MSU gout animal model)</td>
-<td><strong>YES</strong> — curcumin IS curated against human NLRP3 (24.2 μM), making it the 3<sup>rd</sup> compound in this screen with direct human NLRP3 data (after dapansutrile, oridonin). But its most potent curated activity is amyloid-β binding, and the NLRP3 IC50 (24.2 μM) is 5× weaker than even the oridonin human-cell IC50 (5.18 μM)</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>15</td>
-<td><strong>Ergothioneine</strong></td>
-<td><strong>Not indexed</strong></td>
-<td>— (name search and SMILES similarity both return zero)</td>
-<td>Potent antioxidant / ROS scavenger / indirect NLRP3 suppression</td>
-<td>N/A — ergothioneine's absence from ChEMBL is consistent with its unusual sulfur-containing betaine structure; the wiki's "indirect via ROS" framing is appropriate</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>16</td>
-<td><strong>Ferulic acid</strong></td>
-<td>CHEMBL32749</td>
-<td>Amyloid fibril binding Ki = 0.77 nM (<em>Bioorg Med Chem Lett</em> 2007, [¹²⁵I]TZDM displacement — imaging ligand); carbonic anhydrases Ki 2–10 μM</td>
-<td>Autophagy induction + caspase-1 blocker (NLRP3 pathway)</td>
-<td><strong>Soft</strong> — the 0.77 nM amyloid binding is an imaging-probe displacement Ki, not functional inhibition; wiki framing is fine, but ferulic acid's curated potency profile is weak in absolute terms</td>
-<td>2026-04-24</td>
-</tr>
-<tr>
-<td>17</td>
-<td><strong>Kojic acid</strong></td>
-<td>CHEMBL287556</td>
-<td>Tyrosinase IC50 7–10 μM (mushroom + human)</td>
-<td>Antioxidant + melanin synthesis inhibitor (cosmetic); NLRP3 untested</td>
-<td>No discrepancy — curated tyrosinase data match wiki's cosmetic/melanin framing; NLRP3 silence in wiki is honest</td>
-<td>2026-04-24</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Legend:</strong>
-- <strong>YES</strong> — wiki materially mis-states or omits a target that ChEMBL curation supports at a comparable or better potency than the wiki's current framing; propagate to the primary concept page.
-- <strong>Soft</strong> — no strong curated signal one way or the other; the wiki's functional/animal-model framing is defensible, but worth noting that ChEMBL does not have direct binding/inhibition data to back it up.
-- <strong>No discrepancy</strong> — wiki framing and ChEMBL data converge on the same target class and potency range.
-- <strong>N/A / Not indexed</strong> — compound is not in ChEMBL (peptides, unusual structures); absence is not evidence of weakness, just outside the database's scope.</p>
-<hr />
-<h2 id="expanded-findings-compounds-with-propagation-worthy-discrepancies">Expanded Findings: Compounds with Propagation-Worthy Discrepancies<a class="headerlink" href="#expanded-findings-compounds-with-propagation-worthy-discrepancies" title="Permanent link">&para;</a></h2>
-<h3 id="resveratrol-dpp-4-inhibition-sub-nm-curated">Resveratrol → DPP-4 inhibition (sub-nM, curated)<a class="headerlink" href="#resveratrol-dpp-4-inhibition-sub-nm-curated" title="Permanent link">&para;</a></h3>
-<p><strong>Evidence Level:</strong> In Vitro (curated ChEMBL entry)</p>
-<p><strong>Finding:</strong> Resveratrol (CHEMBL165) has a curated human DPP-4 IC50 of <strong>0.6 nM</strong> (pChEMBL 9.22, <em>Eur J Med Chem</em> 2018). This is the single strongest curated activity in resveratrol's entire ChEMBL bioactivity profile — stronger than any of its reported SIRT1, Nrf2, or quinone reductase activities, and stronger than the approved gliptin class of DPP-4 inhibitors (sitagliptin IC50 ~19 nM).</p>
-<p><strong>Current wiki framing:</strong> <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> frames resveratrol as a "stilbenoid polyphenol; non-covalent NLRP3 binding; primary mechanisms: mitochondrial integrity preservation, SIRT1-dependent autophagy." No mention of DPP-4.</p>
-<p><strong>Suggested reframing:</strong> Add a mechanism note to <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> Tier 2 entry: "Resveratrol's single most potent ChEMBL-curated human activity is DPP-4 inhibition (IC50 = 0.6 nM, pChEMBL 9.22, <em>Eur J Med Chem</em> 2018) — a validated type-2 diabetes target. This does not directly improve the gout case, but flags resveratrol as mechanistically more similar to the gliptin class than to SIRT1 activators at physiologically achievable concentrations. If resveratrol is co-administered, DPP-4 inhibition may contribute to glucose homeostasis effects independent of SIRT1." Also worth a note in <a href="../gout-deep-dive/">gout-deep-dive.md</a> given the gout-T2D comorbidity cluster.</p>
-<p><strong>Caveat:</strong> The 2018 DPP-4 paper is a single curated entry; replication in independent labs would strengthen the claim. But the datum itself (human enzyme, purified protein, standard Gly-Pro-AMC substrate, pChEMBL 9.22) is high-confidence.</p>
-<hr />
-<h3 id="berberine-tryptophan-23-dioxygenase-tdo-sub-100-nm">Berberine → Tryptophan 2,3-dioxygenase (TDO, sub-100 nM)<a class="headerlink" href="#berberine-tryptophan-23-dioxygenase-tdo-sub-100-nm" title="Permanent link">&para;</a></h3>
-<p><strong>Evidence Level:</strong> In Vitro (curated ChEMBL entry)</p>
-<p><strong>Finding:</strong> Berberine (CHEMBL295124) has a curated TDO IC50 of <strong>30 nM</strong> (<em>Eur J Med Chem</em> 2024, pChEMBL 7.52), and a curated CYP1B1 Ki of 44 nM (<em>Eur J Med Chem</em> 2017), and AChE IC50 of 100 nM (<em>Bioorg Med Chem</em> 2015). All three are sub-100 nM against human targets, all three are medicinal-chem quality data.</p>
-<p><strong>Current wiki framing:</strong> Berberine appears in <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a>, <a href="../nlrp3-inflammasome/">nlrp3-inflammasome.md</a>, <a href="../sibo/">sibo.md</a>, <a href="../gut-lumen-sink/">gut-lumen-sink.md</a>, <a href="../digestive-enzymes/">digestive-enzymes.md</a> — almost always framed as "AMPK activator / gut antimicrobial / dysbiosis modulator / NLRP3 suppressor." TDO, CYP1B1, and AChE are not mentioned.</p>
-<p><strong>Suggested reframing:</strong> TDO is the most interesting because tryptophan → kynurenine metabolism sits at the T-cell / NLRP3 / inflammation crossroads, and TDO inhibition has been explored as an adjunctive immuno-oncology and anti-inflammatory strategy. Add a mechanism note to <a href="../nlrp3-inflammasome/">nlrp3-inflammasome.md</a> under berberine: "ChEMBL-curated TDO IC50 = 30 nM (<em>Eur J Med Chem</em> 2024) places berberine's strongest validated target at the kynurenine-pathway entry point, not AMPK. This is consistent with berberine's broader anti-inflammatory phenotype and may partially explain its NLRP3-downstream effects (kynurenine metabolites modulate aryl hydrocarbon receptor signaling, which crosstalks with NF-κB priming)." The CYP1B1 inhibition is a drug-drug-interaction flag worth noting in <a href="../supplements-stack/">supplements-stack.md</a>.</p>
-<hr />
-<h3 id="egcg-20s-proteasome-ic50-86-nm-human">EGCG → 20S proteasome (IC50 86 nM, human)<a class="headerlink" href="#egcg-20s-proteasome-ic50-86-nm-human" title="Permanent link">&para;</a></h3>
-<p><strong>Evidence Level:</strong> In Vitro (curated ChEMBL entry, replicated across two papers)</p>
-<p><strong>Finding:</strong> EGCG (CHEMBL297453) has a curated human 20S proteasome chymotrypsin-like activity IC50 of <strong>86 nM</strong> (<em>Bioorg Med Chem</em> 2010, confirmed in <em>Eur J Med Chem</em> 2019, both pChEMBL 7.07). It also has sub-30 nM activity against <em>Plasmodium falciparum</em> enoyl-ACP reductase (Ki = 8 nM, <em>J Med Chem</em> 2007) and DNMT1 (Ki = 28 nM), but the human proteasome hit is the most translationally relevant.</p>
-<p><strong>Current wiki framing:</strong> EGCG in <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> is framed as a "green tea catechin; suppresses ROS-driven NLRP3 activation; direct binding to NLRP3 and/or TLR4." No mention of proteasome.</p>
-<p><strong>Suggested reframing:</strong> 20S proteasome inhibition is a double-edged datapoint. On one hand, proteasome inhibitors (bortezomib, carfilzomib) are cancer drugs with significant cardiotoxicity and neuropathy profiles at clinical doses. On the other hand, EGCG's proteasome hit is ~100× weaker than bortezomib's, and dietary EGCG exposure is orders of magnitude below therapeutic proteasome-inhibitor plasma levels. Still: add a safety note to <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> and <a href="../supplements-stack/">supplements-stack.md</a> that high-dose EGCG (&gt;800 mg/day) is a known hepatotoxicity risk (EMA 2018), and the sub-100-nM proteasome activity is a plausible contributing mechanism that should be factored into dose-ceiling recommendations.</p>
-<hr />
-<h3 id="curcumin-human-nlrp3-ic50-242-m-curated">Curcumin → human NLRP3 IC50 = 24.2 μM (curated)<a class="headerlink" href="#curcumin-human-nlrp3-ic50-242-m-curated" title="Permanent link">&para;</a></h3>
-<p><strong>Evidence Level:</strong> In Vitro (curated ChEMBL entry — rare for a natural product)</p>
-<p><strong>Finding:</strong> Curcumin (CHEMBL140) has a <strong>curated direct human NLRP3 IC50 of 24.2 μM</strong> in LPS-primed PMA-differentiated THP-1 cells with nigericin challenge (<em>J Nat Prod</em> 2020, pChEMBL 4.62). This makes curcumin the <strong>third compound</strong> in the entire Open Enzyme stack with a ChEMBL-curated direct human NLRP3 number, after dapansutrile (1.0 μM) and oridonin (5.18 μM). Its strongest curated activity overall is amyloid-β Ki = 0.208 nM (<em>J Med Chem</em> 2006), which is a well-known off-target and the basis for curcumin's Alzheimer's-research positioning.</p>
-<p><strong>Current wiki framing:</strong> <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> Tier 3 entry cites "In vitro: Curcumin (10–50 μM) blocked MSU-induced NLRP3 inflammasome assembly and IL-1β secretion." This is consistent with the curated 24.2 μM IC50.</p>
-<p><strong>Suggested reframing:</strong> Minor — update the Tier-3 entry to cite the specific curated human NLRP3 IC50 (24.2 μM, THP-1, pChEMBL 4.62, <em>J Nat Prod</em> 2020) and rank curcumin's NLRP3 potency relative to dapansutrile and oridonin: curcumin is <strong>24× weaker than dapansutrile</strong> and <strong>5× weaker than oridonin</strong> in the same human cellular assay format. Combined with curcumin's ~5% oral bioavailability, the functional gout-arthritis animal data probably reflects very high local GI/portal exposure more than systemic NLRP3 block.</p>
-<hr />
-<h3 id="quercetin-5-lox-300-nm-already-documented-in-2026-04-23-sweep">Quercetin → 5-LOX (300 nM, already documented in 2026-04-23 sweep)<a class="headerlink" href="#quercetin-5-lox-300-nm-already-documented-in-2026-04-23-sweep" title="Permanent link">&para;</a></h3>
-<p>Already propagated in <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> appendix. Listed here for continuity and as the reference template for the other expanded sections above.</p>
-<hr />
-<h2 id="compounds-not-indexed-in-chembl">Compounds Not Indexed in ChEMBL<a class="headerlink" href="#compounds-not-indexed-in-chembl" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Compound</th>
-<th>Reason</th>
-<th>Implication</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>KPV (Lys-Pro-Val)</strong></td>
-<td>Tripeptide below ChEMBL's small-molecule curation focus; no salt/synonym match</td>
-<td>Absence does not indicate weakness — the <a href="../peptide-gout-addendum/">peptide-gout-addendum.md</a> framing (direct NLRP3 + NF-κB, PepT1-transported) is from peptide-pharmacology literature not in ChEMBL's scope. Note in wiki: "KPV is not small-molecule-curated; mechanistic claims rest on α-MSH fragment pharmacology papers."</td>
-</tr>
-<tr>
-<td><strong>Ergothioneine</strong></td>
-<td>Name search and SMILES similarity both return zero hits</td>
-<td>Ergothioneine is a sulfur-containing trimethylammonium betaine; its unusual structure and physiological (rather than drug-like) pharmacology likely explain the absence. The wiki's "indirect ROS scavenger" framing in <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> is honest and appropriate.</td>
-</tr>
-<tr>
-<td><strong>β-Caryophyllene</strong></td>
-<td>Present as CHEMBL445740 but zero direct human NLRP3 entries</td>
-<td>See <a href="../nlrp3-inhibitor-screen/#appendix-chembl-ic50-cross-check-2026-04-23">2026-04-23 sweep</a>. CB2 agonism is well-established; the "direct NLRP3 binding" claim from 2021 docking is not ChEMBL-curated.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>These absences are the single most important meta-observation from this cross-check:</strong> a large fraction of the Open Enzyme stack is not represented in ChEMBL with direct binding/inhibition data, because the database is curated for medicinal-chemistry lead compounds, not nutraceuticals, peptides, or endogenous metabolites. This is neither surprising nor damning — but it does mean that <strong>the evidence base for most stack compounds is functional (cell/animal IL-1β readouts, downstream markers), not biochemical (Kd/IC50 on purified protein)</strong>. Any claim of "direct NLRP3 inhibitor" for a stack compound should be treated with the same two-tier labeling introduced in the 2026-04-23 sweep:</p>
-<ol>
-<li><strong>Direct NLRP3 inhibitor (binding/inhibition IC50 curated):</strong> dapansutrile, oridonin, curcumin, MCC950 (per external literature), tranilast (per external literature).</li>
-<li><strong>NLRP3 pathway modulator (functional IL-1β reduction):</strong> everything else in the stack.</li>
-</ol>
-<hr />
-<h2 id="implications-for-the-platform-thesis">Implications for the Platform Thesis<a class="headerlink" href="#implications-for-the-platform-thesis" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>"Koji-yeast hybrid" engineering logic is unchanged.</strong> Ursolic acid and quercetin remain the top microbial-production candidates; this ChEMBL cross-check doesn't invalidate production feasibility or functional efficacy. It does clarify that the mechanism claims are pathway-level, not direct-binding.</p>
-</li>
-<li>
-<p><strong>Resveratrol's DPP-4 activity opens a gout-diabetes comorbidity angle.</strong> Gout and T2D cluster strongly (shared hyperuricemia, insulin resistance, NLRP3-driven inflammation). If resveratrol is included in a formulation, the DPP-4 contribution should be explicit, and drug-drug interactions with clinical DPP-4 inhibitors flagged.</p>
-</li>
-<li>
-<p><strong>Berberine's TDO + CYP1B1 profile is a drug-interaction flag.</strong> SIBO patients on berberine alongside NLRP3-modulating or CYP-metabolized drugs (many common) should have the CYP1B1 hit noted. Kynurenine-pathway modulation is also worth flagging in any future biomarker panel.</p>
-</li>
-<li>
-<p><strong>EGCG dose-ceiling should factor in proteasome activity.</strong> Existing hepatotoxicity concerns at high-dose green tea extract (EMA 2018, 800 mg/day threshold) are consistent with sub-100 nM human 20S proteasome inhibition. Any supplementation protocol should stay well below that threshold.</p>
-</li>
-<li>
-<p><strong>BHB, ursolic acid, carnosine, taurine, ferulic acid all come up "soft"</strong> — no ChEMBL-curated high-affinity target. This is <em>not</em> a negative finding; it reflects the database's small-molecule medicinal-chemistry focus. But it does reinforce that these compounds' inclusion in the stack rests entirely on <strong>functional IL-1β / hyperuricemia / animal-model data</strong>, not on biochemical target engagement. The wiki already states this correctly in most places.</p>
-</li>
-</ol>
-<hr />
-<h2 id="appendix-refresh-recipe">Appendix: Refresh Recipe<a class="headerlink" href="#appendix-refresh-recipe" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># 1. Get the NLRP3 target ID (stable)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>target_search(gene_symbol=&quot;NLRP3&quot;, organism=&quot;Homo sapiens&quot;)   # → CHEMBL1741208
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a># 2. Per compound: find ChEMBL ID
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>compound_search(name=&quot;&lt;compound&gt;&quot;)                             # → molecule_chembl_id
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># 3. Per compound: direct NLRP3 check
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>get_bioactivity(molecule_chembl_id=&lt;ID&gt;,
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                target_chembl_id=&quot;CHEMBL1741208&quot;,
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                activity_type=&quot;IC50&quot;)
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a># 4. Per compound: top off-target scan (what is this compound actually most potent against?)
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>get_bioactivity(molecule_chembl_id=&lt;ID&gt;, min_pchembl=6, limit=10)
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a># 5. If target of interest is known:
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>get_bioactivity(molecule_chembl_id=&lt;ID&gt;, target_chembl_id=&lt;target&gt;)
-</code></pre></div>
-<p><strong>Interpretation rules:</strong>
-- pChEMBL ≥ 7 (100 nM or better) against a human target with assay_type="B" = treat as a real biochemical target.
-- pChEMBL 5–7 with "Inconclusive" activity_comment or "qHTS" in assay description = PubChem HTS noise; discount.
-- Zero bioactivities against NLRP3 (CHEMBL1741208) = "NLRP3 pathway modulator" not "NLRP3 inhibitor" — apply the two-tier labeling.
-- Zero curated bioactivities anywhere above pChEMBL 6 = compound is primarily supported by functional/animal data; state this explicitly in wiki framing.</p>
-<p><strong>Refresh cadence:</strong> Quarterly. Next refresh: <strong>2026-07-24</strong>.</p>
-<hr />
-<h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
+<h2 id="1-two-linters-not-one">§1 — Two Linters, Not One<a class="headerlink" href="#1-two-linters-not-one" title="Permanent link">&para;</a></h2>
+<h3 id="document-lint">Document Lint<a class="headerlink" href="#document-lint" title="Permanent link">&para;</a></h3>
 <ul>
-<li>EMBL-EBI ChEMBL v34 database, accessed via Anthropic life-sciences MCP plugin, 2026-04-24.</li>
-<li>Resveratrol DPP-4: <em>Eur J Med Chem</em> 2018 (CHEMBL4229387 assay; pChEMBL 9.22).</li>
-<li>Berberine TDO: <em>Eur J Med Chem</em> 2024 (CHEMBL5617618 assay; pChEMBL 7.52).</li>
-<li>Berberine CYP1B1: <em>Eur J Med Chem</em> 2017 (CHEMBL4035349 assay; pChEMBL 7.36).</li>
-<li>EGCG 20S proteasome: <em>Bioorg Med Chem</em> 2010 and <em>Eur J Med Chem</em> 2019 (CHEMBL4433382 assay; pChEMBL 7.07).</li>
-<li>EGCG <em>P. falciparum</em> ENR: <em>J Med Chem</em> 2007 (CHEMBL910789 assay; pChEMBL 8.10).</li>
-<li>Curcumin human NLRP3: <em>J Nat Prod</em> 2020 (CHEMBL4702878 assay; pChEMBL 4.62).</li>
-<li>Curcumin amyloid-β: <em>J Med Chem</em> 2006 (CHEMBL907197 assay; pChEMBL 9.68).</li>
-<li>Sulforaphane iNOS: <em>J Med Chem</em> 2015 (CHEMBL3579718 assay; pChEMBL 6.40).</li>
-<li>Sulforaphane Nrf2/Keap1: <em>J Med Chem</em> 2019 and <em>Eur J Med Chem</em> 2020 (pChEMBL 6.06–6.24).</li>
-<li>Kojic acid tyrosinase: <em>Bioorg Med Chem Lett</em> 2008–2014 (multiple curated entries; pChEMBL 5.00–5.13).</li>
-<li>Ferulic acid amyloid fibril imaging: <em>Bioorg Med Chem Lett</em> 2007 (CHEMBL888360; pChEMBL 9.11, imaging probe displacement).</li>
-<li>Quercetin 5-LOX: <em>J Med Chem</em> 1991 (see <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a> 2026-04-23 appendix).</li>
-<li>Oridonin human NLRP3 THP-1: <em>Eur J Med Chem</em> 2023 (see same appendix).</li>
-<li>Dapansutrile human/mouse NLRP3: <em>Eur J Med Chem</em> 2023 and <em>Bioorg Med Chem Lett</em> 2021 (same appendix).</li>
+<li><strong>Trigger.</strong> Always-on; runs per file change, per commit, or per PR.</li>
+<li><strong>Scope.</strong> Every <code>wiki/*.md</code> file, plus <code>index.md</code>, <code>mkdocs.yml</code>, top-level README.</li>
+<li><strong>Job.</strong> Check that documents are <em>correct as documents</em>. Evidence-level tags are present. Inline provenance is cited. Cross-refs resolve. CP labels conform to the v1.2 exploit map (no orphan "CP5" without the a/b sub-branch). Rodent IC50 citations carry a species-gap caveat. New pages appear in <code>mkdocs.yml</code> nav. YAML frontmatter is complete. No inline revision-history sections.</li>
+<li><strong>Output surface.</strong> Non-blocking reports / PR annotations. Never breaks a build. Findings are advisory — the author decides what to address.</li>
+<li><strong>Rule types.</strong> Mix of regex-level (cheap, deterministic, free) and Claude-semantic (token-priced, fuzzy). v0 starts with regex; semantic rules layer in as needed.</li>
 </ul>
+<h3 id="falsification-lint">Falsification Lint<a class="headerlink" href="#falsification-lint" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Trigger.</strong> On-demand, user-invoked. The user has committed to a hypothesis — written it down in <code>wiki/hypotheses/H0N-*.md</code> — and explicitly asks the linter to scrutinize it.</li>
+<li><strong>Scope.</strong> One hypothesis artifact at a time. Reads the committed hypothesis file plus the wiki pages it cross-references.</li>
+<li><strong>Job.</strong> Generate a Falsification Card: assumption stack + killshot menu + pre-committed thresholds + failure-mode tags. Surface the <em>cheapest upstream killshot that would collapse the branch</em> — the hero interaction per the brief.</li>
+<li><strong>Output surface.</strong> The Falsification Card itself (rendered into the hypothesis file, or into a companion artifact). Advisory — does not gate hypothesis creation. Does not determine "truth," only surfaces tests that would update belief.</li>
+<li><strong>Scoring.</strong> Ranks killshots by approximately <code>(kill_probability × information_weight) / (cost × time_penalty)</code>. Tracks survival score over time with decay and retraction.</li>
+</ul>
+<h3 id="they-are-complementary-not-redundant">They Are Complementary, Not Redundant<a class="headerlink" href="#they-are-complementary-not-redundant" title="Permanent link">&para;</a></h3>
+<p>Document Lint keeps the surface clean: every wiki page is a well-formed research artifact, evidence levels tagged, cross-refs resolve, nav is coherent. Its rules are <em>broad</em> (many rules, light checks) and <em>cheap</em> (mostly regex).</p>
+<p>Falsification Lint digs deep on one specific claim: assumption stack, killshot menu, failure-mode independence, pre-committed thresholds, survival tally. Its rules are <em>narrow</em> (one hypothesis at a time) and <em>expensive</em> (semantic reasoning, user-invoked).</p>
+<p>Neither linter pre-filters ideation. Pass 2 sweep synthesis stays promiscuous. New wiki page creation stays promiscuous. Brian's riffs stay promiscuous. The linters run where they pay — clean documents always, hypothesis scrutiny on demand — and nowhere else.</p>
+<hr />
+<h2 id="2-design-principles">§2 — Design Principles<a class="headerlink" href="#2-design-principles" title="Permanent link">&para;</a></h2>
+<p>Directly from the brief, adapted to the Open Enzyme context:</p>
+<ol>
+<li>
+<p><strong>Generator stays promiscuous.</strong> Pass 2 sweep synthesis (the second daemon pass that prepends new dot-connections to <code>wiki/synthesis.md</code>), new wiki page creation, Brian's 3 a.m. speculation riffs — untouched by either linter. The generator's failure mode is <em>not generating</em>; a lint that discourages dot-connecting is a lint that kills the product.</p>
+</li>
+<li>
+<p><strong>Rigor is opt-in.</strong> Document Lint findings are non-blocking reports/annotations. Falsification Lint is user-invoked per hypothesis. Neither gates a commit, blocks a build, or pre-filters upstream. The user decides when rigor is worth the cost.</p>
+</li>
+<li>
+<p><strong>Severity levels matter.</strong> Hard / soft / style. Without severity, everything becomes an equal-priority warning and the lint loses signal. Severity maps onto the evidence-level tags already in use across the wiki (Clinical &gt; Animal &gt; In Vitro &gt; Mechanistic Extrapolation): a <em>hard</em> failure is a claim tagged at a higher evidence level than the cited source supports; a <em>soft</em> warning is missing or ambiguous provenance; a <em>style</em> note is formatting preference.</p>
+</li>
+<li>
+<p><strong>Honesty about confounding is a feature, not a failure.</strong> Especially for n=1 self-experiments where Brian is stacking koji + supplements + clomid + diet changes simultaneously by necessity. The linter logs concurrent interventions, flags that attribution is weak, and proposes single-variable follow-ups once the combined stack shows signal. Pretending a messy real-world experiment is clean is the worse outcome; tracking the mess honestly is the better one. See §7.</p>
+</li>
+<li>
+<p><strong>The hero moment is the redirect.</strong> The product's killer demo is when Falsification Lint says <em>don't run the expensive assay — here's a cheap upstream killshot that could collapse the whole branch</em>. User runs the cheap test. Branch dies. Expensive assay never happens. Every other feature of the linter justifies this moment. For H01 (see <code>hypotheses/H01-ward-dual-cassette.md</code>), that cheap upstream killshot is the literature/patent landscape deep-dive — $0 cost, 1 week, kill probability 0.3 on a root assumption — which is why it scores highest in the menu despite being the least "experimental" option.</p>
+</li>
+</ol>
+<hr />
+<h2 id="3-document-lint-rule-catalog-v0">§3 — Document Lint Rule Catalog (v0)<a class="headerlink" href="#3-document-lint-rule-catalog-v0" title="Permanent link">&para;</a></h2>
+<p>Rules are tagged with severity (hard / soft / style) and detection method (regex vs. Claude-semantic). Regex rules are free and deterministic; Claude-semantic rules cost tokens and are fuzzy. v0 starts with the regex set; semantic rules layer in incrementally.</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Severity</th>
+<th>Detection</th>
+<th>Fix hint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>evidence-tag-required</code></td>
+<td>hard</td>
+<td>regex (claim-pattern grep + nearby-tag check); Claude for ambiguity</td>
+<td>Every substantive claim carries one of: Clinical / Animal Model / In Vitro / Mechanistic Extrapolation. If a claim has a citation but no tag, flag.</td>
+</tr>
+<tr>
+<td><code>inline-provenance</code></td>
+<td>soft</td>
+<td>regex (<code>(source: &lt;name&gt;)</code> or PMID format)</td>
+<td>New claims should cite provenance inline. Accept <code>(source: filename.md)</code>, <code>PMID: nnnnnnnn</code>, <code>[DOI](...)</code>.</td>
+</tr>
+<tr>
+<td><code>cross-ref-resolves</code></td>
+<td>hard</td>
+<td>regex + filesystem existence check</td>
+<td><code>[text](./path.md)</code> targets must exist. Dangling refs flagged with the target path.</td>
+</tr>
+<tr>
+<td><code>mkdocs-nav-coverage</code></td>
+<td>hard</td>
+<td>regex (scan <code>mkdocs.yml</code> nav + <code>wiki/*.md</code> filesystem)</td>
+<td>Every <code>wiki/*.md</code> must appear in <code>mkdocs.yml</code> nav, or in an explicit <code>nav-excluded.txt</code> allowlist.</td>
+</tr>
+<tr>
+<td><code>chokepoint-label-v1.2</code></td>
+<td>soft</td>
+<td>regex</td>
+<td>References to "CP5" without <code>a</code>/<code>b</code>, or "Chokepoint 6" without <code>a</code>/<code>b</code>, are ambiguous post-v1.2 exploit map. Flag for disambiguation.</td>
+</tr>
+<tr>
+<td><code>species-gap-caveat</code></td>
+<td>soft</td>
+<td>Claude-semantic</td>
+<td>Rodent IC50 citations (<code>mouse</code>, <code>rat</code>, <code>murine</code>, <code>rodent</code> near <code>IC50</code>, <code>EC50</code>, <code>Ki</code>) require nearby species-gap caveat or link to <code>chembl-cross-check.md</code>. Examples: dapansutrile 1000× mouse→human ratio; BCP rat 100–400 mg/kg → human 50–200 mg/day 20–50× under-dose.</td>
+</tr>
+<tr>
+<td><code>no-inline-revision-history</code></td>
+<td>hard</td>
+<td>regex</td>
+<td>Forbidden section headers: <code>## Changelog</code>, <code>## Revision History</code>, <code>## Change Log</code>, <code>## History</code>. Git is the revision history per project convention.</td>
+</tr>
+<tr>
+<td><code>frontmatter-complete</code></td>
+<td>hard</td>
+<td>regex (YAML block parse)</td>
+<td>Required keys: <code>title</code>, <code>date</code>, <code>tags</code>. Strongly recommended: <code>related</code>, <code>sources</code>, <code>status</code>.</td>
+</tr>
+<tr>
+<td><code>standard-markdown-links</code></td>
+<td>style</td>
+<td>regex</td>
+<td>Prefer <code>[text](./path.md)</code> over <code>[[wiki-links]]</code> for GitHub rendering. <code>[[wiki-links]]</code> are Obsidian-only.</td>
+</tr>
+<tr>
+<td><code>claim-calibration</code></td>
+<td>soft</td>
+<td>Claude-semantic</td>
+<td>(Optional, v0.5+.) Does the claim's linguistic strength match the cited evidence level? "Lactoferrin <em>crushes</em> NLRP3" cited to in vitro is a mismatch; "<em>may suppress</em> NLRP3 (in vitro)" is calibrated. Flag strength-mismatches for author review.</td>
+</tr>
+<tr>
+<td><code>orphan-page</code></td>
+<td>soft</td>
+<td>regex + filesystem</td>
+<td>A wiki page not referenced by any other wiki page, <code>index.md</code>, or <code>mkdocs.yml</code> is probably discoverability-broken.</td>
+</tr>
+<tr>
+<td><code>duplicate-frontmatter-date</code></td>
+<td>style</td>
+<td>regex</td>
+<td><code>date:</code> frontmatter values that match another page's exactly might indicate copy-paste errors. Low-priority sanity check.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>v0 scope decision.</strong> Implement the regex-level rules first: <code>evidence-tag-required</code> (regex heuristic only, not semantic), <code>cross-ref-resolves</code>, <code>mkdocs-nav-coverage</code>, <code>no-inline-revision-history</code>, <code>frontmatter-complete</code>, <code>standard-markdown-links</code>. These are free, deterministic, and cover ~80% of the consistency wins. Claude-semantic rules (<code>species-gap-caveat</code>, <code>claim-calibration</code>) layer in once the regex set is stable and we have calibration on token cost.</p>
+<p><strong>Existing infrastructure.</strong> <code>chembl-cross-check.md</code> is effectively an already-deployed linter for one dimension (rodent-IC50 cross-check against ChEMBL human-target data). It's user-invoked, quarterly. Document Lint formalizes this pattern: existing tools stay, new lint rules slot in alongside.</p>
+<hr />
+<h2 id="4-falsification-card-schema">§4 — Falsification Card Schema<a class="headerlink" href="#4-falsification-card-schema" title="Permanent link">&para;</a></h2>
+<p>Each hypothesis lives at <code>wiki/hypotheses/H0N-slug.md</code> and conforms to this schema.</p>
+<h3 id="frontmatter">Frontmatter<a class="headerlink" href="#frontmatter" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nn">---</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H0N</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;one-line claim&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">committed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YYYY-MM-DD</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Alive | Killed | Pending | Retracted</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">survival_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">N</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nn">---</span>
+</code></pre></div>
+<ul>
+<li><code>id</code> — zero-padded two-digit (H01, H02, …, H99). Three digits when needed.</li>
+<li><code>title</code> — single sentence, mechanistic, precise. This is the public one-liner.</li>
+<li><code>committed</code> — the date the hypothesis was first written to the file. Subsequent edits log in git.</li>
+<li><code>status</code> — one of:</li>
+<li><strong>Pending</strong> — committed, not yet tested.</li>
+<li><strong>Alive</strong> — at least one killshot executed, claim survived.</li>
+<li><strong>Killed</strong> — at least one killshot executed, claim falsified per its pre-committed threshold.</li>
+<li><strong>Retracted</strong> — a killshot result was later invalidated (bad control, wrong substrate batch, assay artifact); status reverts based on remaining valid killshots.</li>
+<li><code>survival_count</code> — running tally of valid (non-retracted) killshots survived.</li>
+</ul>
+<h3 id="body-sections">Body Sections<a class="headerlink" href="#body-sections" title="Permanent link">&para;</a></h3>
+<p><strong>Claim.</strong> One sentence. Mechanistic. Precise. No hedge words unless they carry information. The claim is load-bearing for every downstream section.</p>
+<p><strong>Assumption stack.</strong> Three to seven priors the claim rests on. Each tagged with severity:
+- <strong>load-bearing</strong> — if wrong, the claim collapses.
+- <strong>supporting</strong> — if wrong, the claim is weaker but recoverable.
+- <strong>stylistic</strong> — if wrong, the claim is unaffected; included for completeness.</p>
+<p>Each assumption carries a brief justification (1–3 sentences) and ideally a citation or pointer to the wiki page where it's defended in depth.</p>
+<p><strong>Killshot menu.</strong> Table with columns:
+- <code>#</code> — killshot identifier (1, 2, 3, …).
+- <code>killshot</code> — the observation or test that would falsify the claim (or a specific assumption).
+- <code>cost</code> — dollars or compute budget.
+- <code>weeks</code> — time to run.
+- <code>kill_pr</code> — estimated kill probability, 0–1. User-entered; calibrated over time per §6.
+- <code>info_weight</code> — how much of the hypothesis tree collapses if this kills. Root assumption = 1.0; leaf = 0.1.
+- <code>failure_modes</code> — tags from the §5 ontology.
+- <code>score</code> — computed as <code>(kill_pr × info_weight) / (cost × time_penalty)</code>. Sorted descending.</p>
+<p>The scoring math is intentionally un-baroque. The goal is <em>ordering better than intuition</em>, not Bayesian purity. v0 uses a simple multiplicative form; refinements layer in later.</p>
+<p><strong>Failure-mode ontology reference.</strong> Link to §5 of this page. Each killshot is tagged with 1–3 failure modes it probes.</p>
+<p><strong>Pre-committed thresholds.</strong> Declared <em>before execution</em>. What counts as <strong>Alive</strong> vs. <strong>Killed</strong> vs. <strong>Pending</strong> (intermediate). Quantitative where possible: "killed if X &lt; threshold"; "survived if Y &gt; threshold"; "pending if X–Y intermediate, plan follow-up."</p>
+<p><strong>Kill switches.</strong> Safety/sanity stops. Example: abort if aflatoxin detected above regulatory limit during koji engineering; abort if n=1 self-experiment triggers a red-flag halt criterion per <code>self-experiment-protocol.md</code>.</p>
+<p><strong>Log.</strong> Table recording actual executions: date, killshot run, outcome, notes. Append-only.</p>
+<p><strong>Survival score.</strong> Current value. Computed per §6: <code>Σ(weight × time_decay)</code> over valid survivals. Recorded as a number plus qualitative tag.</p>
+<p><strong>Retraction history.</strong> If any killshot result was later invalidated, document it here. This is what distinguishes a hypothesis that survived four fresh independent attacks from one that survived four redundant attacks that were later found to share a confound.</p>
+<hr />
+<h2 id="5-failure-mode-ontology">§5 — Failure-Mode Ontology<a class="headerlink" href="#5-failure-mode-ontology" title="Permanent link">&para;</a></h2>
+<p>Independence between killshots is defined as <em>non-overlapping failure modes</em>, not non-overlapping methods. Two tests that share a failure mode (e.g., both assume the same training distribution) are not independent even if the methods look different. The ontology is the vocabulary for that independence check.</p>
+<h3 id="v0-ontology-extended-from-the-brief">v0 Ontology — Extended from the Brief<a class="headerlink" href="#v0-ontology-extended-from-the-brief" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Species-gap translation.</strong> Mouse/rat data extrapolated to human. Rodent IC50, dosing, receptor affinity, metabolic fate. Examples from this wiki: dapansutrile 1000× mouse→human efficacy ratio (NLRP3 inhibitor screen); GPR32 is a pseudogene in rodents but a functional resolution receptor in humans (SPM pathway); BCP rat 100–400 mg/kg → human 50–200 mg/day under-dose by ~20–50× (cannabinoids/terpenes).</p>
+</li>
+<li>
+<p><strong>Chokepoint collapse.</strong> Targeting CP2 when the actual bottleneck is CP0. The upstream trigger dominates and downstream interventions are low-leverage. Example: blocking NLRP3 assembly (CP2) matters less if C5a priming (CP0) is still driving the cascade; uricase trigger-elimination is a CP0-adjacent move that resolves the collapse (koji-endgame-strain.md §2.1).</p>
+</li>
+<li>
+<p><strong>Assay specificity.</strong> NLRP3 vs. NLRC4 vs. AIM2 readout confusion. A compound flagged as "NLRP3 inhibitor" based on IL-1β reduction might be hitting NLRC4 or AIM2 or an upstream shared component. Assay specificity failures manifest as false-positives in mechanism.</p>
+</li>
+<li>
+<p><strong>Substrate availability / compartment mismatch.</strong> Uricase needs luminal uric acid to act on; luminal UA depends on ABCG2; ABCG2 is androgen-suppressed in men with high T. A mechanism that works in principle fails when the substrate isn't actually present in the compartment where the enzyme lives. (See <code>gut-lumen-sink.md</code>, <code>androgen-urate-axis.md</code>.)</p>
+</li>
+<li>
+<p><strong>Expression / localization mismatch.</strong> Protein produced but not secreted. Secreted but not folded correctly. Folded but mis-glycosylated. The gene is there, the transcript is there, the polypeptide is there, but the functional protein in the right compartment isn't. The §3.3 concerns for Ward 1995 dual-cassette (KEX-2 capacity, shared secretion machinery, solid-state glycosylation) live here.</p>
+</li>
+<li>
+<p><strong>Kinetics / concentration mismatch.</strong> In vitro IC50 is achievable in a test tube but not at any pharmacologically feasible in vivo concentration. Oral bioavailability gates it; tissue partitioning gates it; metabolic clearance gates it. The IC50 number is right but the story around it is wrong.</p>
+</li>
+<li>
+<p><strong>Dose-translation scaling.</strong> Body-surface-area / mg-per-kg extrapolation from rodent to human gives a dose that's not actually what was tested. A rat 100 mg/kg × human BSA-scale ≠ human 100 mg/kg. BCP is the canonical example (see §5.1 of ontology — species-gap overlaps here but the scaling math is separable).</p>
+</li>
+<li>
+<p><strong>Compound purity / formulation.</strong> Curcumin bioavailability pre-nanocarrier. Quercetin aglycone vs. glycoside. Resveratrol trans vs. cis. "Curcumin doesn't work" conclusions often reflect formulation failures, not molecular failures.</p>
+</li>
+<li>
+<p><strong>Published-literature-gap / training-distribution.</strong> The claim rests on a published precedent that doesn't actually cover the specific case. Ward 1995 is <em>A. awamori</em> single-protein — layering a second cassette in <em>A. oryzae</em> on rice koji is outside the training distribution. Killshot: literature/patent landscape deep-dive before wet-lab work. This mode is usually the cheapest upstream killshot and the highest-leverage one.</p>
+</li>
+</ol>
+<h3 id="extensibility">Extensibility<a class="headerlink" href="#extensibility" title="Permanent link">&para;</a></h3>
+<p>The ontology is a living list. New modes land when a novel failure pattern shows up in practice. Editing this list is a sweep-triggering event (update <code>linter-design.md</code>, update any hypothesis cards that should now be tagged with the new mode). The v0 rule: don't invent modes prematurely; let failure patterns demand the vocabulary.</p>
+<h3 id="independence-calculation">Independence Calculation<a class="headerlink" href="#independence-calculation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>independence(K1, K2) ≈ 1 − |fail_modes(K1) ∩ fail_modes(K2)| / |fail_modes(K1) ∪ fail_modes(K2)|
+</code></pre></div>
+<p>Jaccard distance on failure-mode sets. Two killshots that share all failure modes are dependent (independence = 0). Two killshots that share none are fully independent (independence = 1). The survival-score weight §6 uses this to avoid double-counting when the same failure-mode vector has been probed twice.</p>
+<hr />
+<h2 id="6-survival-score-calibration-retraction">§6 — Survival Score, Calibration, Retraction<a class="headerlink" href="#6-survival-score-calibration-retraction" title="Permanent link">&para;</a></h2>
+<p>Adapted from the brief; concise treatment here.</p>
+<h3 id="survival-score">Survival Score<a class="headerlink" href="#survival-score" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Survival_Score = Σ (weight_i × time_decay_i)   over valid (non-retracted) killshots survived
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>weight_i = info_weight_i × independence_i
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>time_decay_i = exp(-λ × (t_now − t_i))   with λ tuned so a 2-year-old survival halves
+</code></pre></div>
+<p>Three properties the formula enforces:</p>
+<ol>
+<li><strong>Accumulation.</strong> Surviving more attacks adds weight. A hypothesis that has survived five independent killshots scores higher than one that survived one.</li>
+<li><strong>Decay.</strong> Old survivals weaken. Models get stale, data gets stale, assumptions drift. A killshot run in 2022 with 2022 assumptions is not equivalent to one run today.</li>
+<li><strong>Retraction.</strong> A killshot result later invalidated is removed from the sum. The retraction is logged; the hypothesis status is recomputed.</li>
+</ol>
+<p>Distinguishes: four fresh independent attacks survived vs. four redundant attacks two years ago.</p>
+<h3 id="calibration">Calibration<a class="headerlink" href="#calibration" title="Permanent link">&para;</a></h3>
+<p>User-entered <code>kill_pr</code> values are scored over time. For each executed killshot: record predicted <code>kill_pr</code> and actual outcome (killed / survived). Bucket predictions, compute calibration curve (predicted vs. actual kill rate per bucket).</p>
+<p>Visible, not hidden. Trains the user into a better forecaster. Corrects systematic over- or under-confidence. For the n=1 Brian-only regime, the curve is noisy (few data points), but the <em>direction</em> of bias becomes visible quickly. Team-scale calibration is Phase 2+.</p>
+<h3 id="retraction">Retraction<a class="headerlink" href="#retraction" title="Permanent link">&para;</a></h3>
+<p>Post-execution invalidation paths:
+- Bad control (killshot's negative control was contaminated).
+- Wrong substrate batch (enzyme was degraded before the assay ran).
+- Assay artifact (readout was a false signal from buffer, plastic, autofluorescence).
+- Model bug (in silico killshot used wrong parameter set).</p>
+<p>Retraction is a visible log entry, not a silent edit. Git-native — the retraction commit carries the rationale.</p>
+<h3 id="pre-commit-hashing-addressed-by-git">Pre-Commit Hashing — Addressed by Git<a class="headerlink" href="#pre-commit-hashing-addressed-by-git" title="Permanent link">&para;</a></h3>
+<p>The brief calls for hashing the <code>{claim, killshot_menu, thresholds}</code> at commit time to prevent silent post-hoc editing. For markdown-backed hypotheses in git, <strong>the git SHA of the commit that first wrote <code>wiki/hypotheses/H0N-*.md</code> is the hash.</strong> Any edit creates a new commit with a visible diff. A separate hash layer would be redundant.</p>
+<p>Convention: the hypothesis file's first commit establishes the pre-committed state. Subsequent commits log edits with commit messages like <code>H01: adjust threshold for lactoferrin titer (rationale: Ward 1995 was mg/L submerged, rice koji is pore-fluid equivalent)</code>. The git log is the audit trail.</p>
+<hr />
+<h2 id="7-n1-confounded-run-honesty">§7 — n=1 / Confounded-Run Honesty<a class="headerlink" href="#7-n1-confounded-run-honesty" title="Permanent link">&para;</a></h2>
+<p>Real experiments — especially personal-health n=1 where the subject is Brian — stack interventions by necessity. Brian adds koji, supplements, clomid titration, diet changes, training changes, all on overlapping timelines. Pretending any single intervention can be cleanly attributed is a lie; the honest framing is: <em>multiple interventions ran concurrently, attribution is weak, here's what we'll do about it</em>.</p>
+<p>Falsification Lint supports this explicitly:</p>
+<ol>
+<li>
+<p><strong>Log all concurrent interventions.</strong> Each hypothesis's execution log records <em>everything active at the time</em>, not just the variable being tested. Date ranges, dose ranges, and any deviations from baseline. This is a liability if read as "proof" and an asset if read as "context for signal interpretation."</p>
+</li>
+<li>
+<p><strong>Flag attribution weakness.</strong> If signal appears in a n=1 run where three interventions overlapped, the Falsification Card flags attribution as weak and declines to call the hypothesis Alive or Killed. Status stays Pending; the signal is logged as "interesting" but not dispositive.</p>
+</li>
+<li>
+<p><strong>Propose single-variable follow-ups.</strong> Once the combined stack shows signal, propose a subtractive A/B: remove one intervention for 2–4 weeks, observe whether the signal persists. If yes, that intervention wasn't load-bearing; if no, it was. This is the n=1 equivalent of a dropout experiment.</p>
+</li>
+</ol>
+<p>Cross-reference: <code>self-experiment-protocol.md</code> §7 (Logging and version control — the operational mechanics for intervention logging) and §6 (Red-flag halt criteria — the kill switches for n=1). The protocol already anticipates intervention stacking; Falsification Lint is the scientific-rigor counterpart to the protocol's operational rigor.</p>
+<hr />
+<h2 id="8-what-document-lint-wont-check">§8 — What Document Lint Won't Check<a class="headerlink" href="#8-what-document-lint-wont-check" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Creative generation quality.</strong> Pass 2 synthesis is a generation task. It produces new dot-connections, which are often speculative-by-design. Lint does not grade them.</li>
+<li><strong>Taste / prose quality.</strong> "Is this well-written?" is not a lint rule. Voice, rhythm, clarity at the sentence level are author judgment.</li>
+<li><strong>Whether a hypothesis is "good."</strong> That's Falsification Lint's domain, and even there the output is advisory. "Good" is not a lint category.</li>
+<li><strong>Anything that discourages document production.</strong> If a lint rule makes authors write less, the rule is wrong. The bias is always toward <em>more documents, lint catches later</em>, not <em>fewer documents, lint catches upfront</em>.</li>
+</ul>
+<hr />
+<h2 id="9-what-falsification-lint-wont-do">§9 — What Falsification Lint Won't Do<a class="headerlink" href="#9-what-falsification-lint-wont-do" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Gate hypothesis generation.</strong> A user can write as many half-formed hypotheses as they want. Falsification Lint runs only on committed ones, only on request.</li>
+<li><strong>Block commits.</strong> Writing a bad hypothesis file doesn't fail CI. The linter annotates; it doesn't reject.</li>
+<li><strong>Determine "truth."</strong> It surfaces tests that would update belief. It does not certify correctness. A hypothesis with survival_count = 10 is well-attacked, not proven.</li>
+<li><strong>Replace peer review.</strong> External expert review is a separate process. Falsification Lint is one author's tool for scrutinizing their own claims; it is not a substitute for a collaborator reading the wiki.</li>
+</ul>
+<hr />
+<h2 id="10-phase-boundary">§10 — Phase Boundary<a class="headerlink" href="#10-phase-boundary" title="Permanent link">&para;</a></h2>
+<p><strong>Current scope (v0, this commit).</strong> Design docs + <code>wiki/hypotheses/</code> directory scaffold + H01 seed (Ward 1995 dual-cassette feasibility gate). No CI automation, no linter script, no GitHub Actions workflow. Everything here is a <em>specification</em> for the infrastructure, plus one worked example.</p>
+<p><strong>Next phase (future).</strong> Implement the regex-level Document Lint rules as a GitHub Actions workflow that runs on PR and posts annotations as PR comments. Build Falsification Lint as a <code>claude</code> CLI invocation that reads the committed hypothesis file + the wiki pages it cross-references + this design doc, and emits/updates the Falsification Card. Neither blocks merge. Both are advisory.</p>
+<p><strong>Phase boundary discipline.</strong> The specification has to be clear enough that implementation is a translation job, not a re-design. This page plus <code>hypotheses/README.md</code> plus <code>hypotheses/H01-ward-dual-cassette.md</code> together should be a complete spec. If implementation later reveals gaps, update this page and commit — git preserves the design history.</p>
+<hr />
+<h2 id="11-open-questions">§11 — Open Questions<a class="headerlink" href="#11-open-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Where does Falsification Lint UX live?</strong> <em>Answer:</em> the <code>wiki/hypotheses/</code> directory <em>is</em> the artifact. Invocation is a <code>claude</code> agent call reading the hypothesis file + context. No new UI surface. The rendered Falsification Card can be appended to the hypothesis file or kept as a side-car; either works.</p>
+</li>
+<li>
+<p><strong>Pre-commit hashing — needed, or is git SHA sufficient?</strong> <em>Answer:</em> git SHA of the hypothesis file's first commit + commit-message discipline is sufficient for markdown-backed hypotheses. A separate hash layer would be redundant. Noted explicitly in §6.</p>
+</li>
+<li>
+<p><strong>Calibration: single-researcher vs. team?</strong> <em>Answer:</em> n=1 for now (Brian only). Calibration curve is still useful but noisy — few data points, wide CIs. The direction of systematic bias becomes visible quickly; the magnitude is less reliable. Team-scale calibration waits on team-scale activity; it's a Phase 2+ feature. Document this limitation in the rendered curve.</p>
+</li>
+<li>
+<p><strong>Claude-semantic rules vs. regex rules — token-cost ceiling for v0?</strong> <em>Open.</em> Regex rules are free; semantic rules cost per PR / per sweep. A reasonable v0 budget: 100–500 input tokens and 50–200 output tokens per semantic rule, per document, per sweep pass. At current Open Enzyme sweep volume (a few sweeps per day), this is ~$0.05–0.50/day. Acceptable. If it becomes a cost bottleneck, sampling (run semantic rules only on changed files, or only on promoted hypotheses) is the first knob.</p>
+</li>
+<li>
+<p><strong>Integration with existing infrastructure.</strong> <em>Partially resolved.</em> <code>chembl-cross-check.md</code> is an existing user-invoked quarterly linter for one dimension (rodent-IC50 cross-check). Sweep-prompt Pass 1 does some lint-like work during propagation (enforces cross-refs, updates CP labels). Document Lint formalizes and extends these patterns without replacing them.</p>
+</li>
+<li>
+<p><strong>Who is Falsification Lint <em>for</em> in the current regime?</strong> <em>Answer:</em> Brian. When Brian commits to a hypothesis — when money, time, or collaborator attention is about to be spent — Falsification Lint is the scrutinize-yourself tool. If three PhD collaborators join, the calibration-curve question (§11.3) reopens; for now the answer is "single-researcher instrument."</p>
+</li>
+<li>
+<p><strong>Interaction between the two linters.</strong> Document Lint catches formatting / provenance / coverage at the document level. Falsification Lint catches assumption / killshot / threshold at the hypothesis level. In practice, the hypothesis file itself is a document and will also be run through Document Lint: the YAML frontmatter, the cross-refs, the evidence tags in assumption justifications. The linters cascade cleanly — Document Lint first (cheap, always), Falsification Lint second (expensive, on demand).</p>
+</li>
+<li>
+<p><strong>Retraction log visibility.</strong> Should retractions be visible on the main hypothesis page or moved to a separate <code>retractions/</code> directory? <em>Tentative answer:</em> in-line in the hypothesis file. The retraction is <em>part of the epistemic history of the claim</em> and belongs where the claim lives. A separate directory would hide it; visibility is the point.</p>
+</li>
+</ol>
+<hr />
+<p><em>Design emerged from Brian's ChatGPT-generated brief (<code>falsification-lint-brief.md</code>, personal download 2026-04-24) + Claude refinement conversation 2026-04-24, preserved in git history.</em></p>
 
 
 
