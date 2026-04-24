@@ -122,12 +122,14 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           TRIGGER_FILES: ${{ steps.trigger.outputs.changed }}
           DIFF_BASE: ${{ steps.trigger.outputs.diff_base }}
-          # Opus 4.7 with 1M context for PhD-level sweep rigor. Sonnet works
-          # mechanically but Pass 2 synthesis (cross-document reasoning,
-          # contradiction detection, evidence-level discrimination) is
-          # disproportionately Opus's strength. Cost delta is ~$10/sweep,
-          # runtime ~2-3x longer — fine for background CI.
-          ANTHROPIC_MODEL: claude-opus-4-7[1m]
+          # Model: Sonnet 4.6 is the current default. Opus 4.7 would give
+          # better Pass 2 synthesis rigor but the org's API tier rate-limits
+          # Opus at 30K input TPM, which sweeps that read multiple wiki files
+          # routinely exceed. Switch to `claude-opus-4-7[1m]` once a tier
+          # upgrade is in place. Local ad-hoc sweeps via scripts/wiki-update.sh
+          # use session-based limits and can still use Opus for deep-rigor
+          # one-offs.
+          ANTHROPIC_MODEL: claude-sonnet-4-6
         run: |
           set -euo pipefail
 

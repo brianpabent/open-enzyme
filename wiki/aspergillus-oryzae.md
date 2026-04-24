@@ -51,6 +51,18 @@ Koji produces acid-stable serine proteases, carboxypeptidases, and endopeptidase
 ### Amylase (Alpha-Amylase and Glucoamylase)
 Koji's primary product during rice fermentation. Breaks down starch (the primary macronutrient in rice) into glucose and maltose. This is why koji is essential to sake production—it converts rice starch into fermentable sugars. Amylase levels reach 15–25% of total soluble protein in koji grown on rice. (Source: enzyme-deficit-deep-dive.md, engineered-koji-protocol.md)
 
+### Native Secondary Metabolites: Kojic Acid, Ergothioneine, Ferulic Acid
+
+Beyond digestive enzymes, wild-type *A. oryzae* natively produces a suite of bioactive secondary metabolites during standard koji fermentation — without any genetic engineering. These are relevant to the gout/NLRP3 angle of the [[open-enzyme-vision|Open Enzyme platform]], not just the digestive enzyme track.
+
+**Kojic acid** — *A. oryzae* natively produces kojic acid at **3–5 g/L** during standard rice koji fermentation. Kojic acid has documented **NF-κB suppression activity in multiple inflammatory cell types (In Vitro)**; direct NLRP3 inflammasome activity is unpublished and is flagged as an open question in [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md). Notably, 3–5 g/L native production exceeds the fermentation titers of most engineered NLRP3-inhibitor candidate compounds, which positions *A. oryzae* as a **uniquely endowed host**: it already produces a candidate NLRP3-adjacent compound at therapeutically relevant concentrations as a baseline metabolite. (Source: nlrp3-inhibitor-screen.md, engineered-koji-protocol.md)
+
+**Ergothioneine** — ~20 mg/g dry mycelial mass. Antioxidant; Nrf2 inducer; mitochondrial-targeted ROS scavenger (In Vitro). (Source: engineered-koji-protocol.md)
+
+**Ferulic acid** — Present at substrate-dependent titers during rice/bran fermentation; ROS scavenger with GI-tract anti-inflammatory activity (In Vitro). (Source: engineered-koji-protocol.md)
+
+**Platform implication:** Any engineered koji strain (e.g., uricase-expressing) will by default also ship with this secondary-metabolite chorus. The engineering target sits on top of a pre-existing pharmacological baseline. Whether engineering perturbs that baseline is an open experimental question — see the proposed WT-vs-engineered metabolite titer comparison in [engineered-koji-protocol.md](./engineered-koji-protocol.md#01b-natural-metabolite-bonus--baseline-fermentation-byproducts).
+
 ## Genetic Tractability
 
 ### Transformation Methods

@@ -33,6 +33,45 @@ Rationale: A. flavus has demonstrated FDA-approved S. cerevisiae expression, ext
 
 ---
 
+## Industry-Revealed Preference (2024–2026)
+
+*(Clinical Trial evidence, where cited to specific programs; source: [gout-clinical-pipeline.md](./gout-clinical-pipeline.md))*
+
+The ranking above prioritizes *A. flavus* on the strength of the rasburicase precedent, published characterization depth, and 20+ years of manufacturing experience. Independent of that analysis, it is worth asking what parent enzyme the *active* clinical pipeline has been picking in the last 24 months. The answer is not *A. flavus*.
+
+**Active non-IV / oral-lumen uricase programs (2024–2026):**
+
+| Program | Parent enzyme | Host / format | Status | Reference |
+|---------|---------------|---------------|--------|-----------|
+| **SSS11** | *Candida utilis* uricase (pegylated) | Systemic PEG-protein | Phase 1, recruiting (NCT06629376, Shanghai) | *(Clinical Trial)* |
+| **ALLN-346** | *C. utilis* uricase, ProteinGPS-engineered | Oral, gut-lumen | Terminated 2022 (Allena bankruptcy, not efficacy failure); mutations publicly disclosed in US10815461B2 — see [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md) | *(Clinical Trial / patent)* |
+| **ACS Synth Bio 2025 *S. boulardii*** | *Vibrio vulnificus* uricase (365 μmol/h/OD specific activity) | Oral, engineered probiotic yeast | Preclinical (published 2025) | *(In Vitro)* |
+| **PRX-115** | PEG-uricase (Shanghai Pharma) | Systemic IV | Phase 1 | *(Clinical Trial)* |
+| **Rasburicase / Krystexxa** | *A. flavus* / chimeric mammalian | Systemic IV (legacy) | Approved (2002 / 2010) | *(Clinical Trial)* |
+
+**Observation:** Of the three recent non-IV / oral-lumen uricase programs, **three of three chose something other than *A. flavus*** — SSS11 and ALLN-346 picked *C. utilis*; the ACS Synth Bio *S. boulardii* team picked *V. vulnificus*. *A. flavus* remains entrenched in IV systemic programs (rasburicase, Krystexxa) but has not been selected for any recent oral / gut-lumen effort in the public literature.
+
+### Should our default follow?
+
+Not automatically. *A. flavus* retains real advantages that industry selection pressure doesn't erase:
+
+- Rasburicase precedent specifically in *S. cerevisiae* (not *C. utilis*, not *V. vulnificus*). For any rasburicase-derivative workflow, *A. flavus* inherits decades of host compatibility.
+- Deepest published biochemical characterization (Km, Vmax, pH profile, disulfide engineering literature).
+- 20+ years of pharmaceutical-scale manufacturing experience.
+
+But the signal is real and cannot be ignored. The *C. utilis* backbone specifically carries **publicly disclosed directed-evolution improvements** (US10815461B2 — the ALLN-346 mutations I180V, V190G, Y165F, E51K, Q244K, I132R, A87G, and the R2_Vxx composites). For the oral / gut-lumen track, this disclosed prior art converts *C. utilis* from "less-characterized alternative" into "less-characterized alternative with millions of dollars of ProteinGPS-guided protease-resistance engineering already published."
+
+### Revised recommendation (tracks, not a single default)
+
+- **Rasburicase-derivative / *S. cerevisiae* intracellular track**: Keep *A. flavus* as **primary**. Host compatibility, characterization depth, and IV precedent all favor it, and there is no new data displacing the #1 ranking for this track.
+- **Oral / gut-lumen / probiotic-yeast track**: Elevate *C. utilis* to **co-primary alongside *A. flavus***. Rationale: (a) industry-revealed preference in 3-of-3 recent oral programs, (b) publicly disclosed ALLN-346 mutations available to adopt, (c) ALLN-346 Phase 2a Study 201 established at minimum a signal in human CKD gout patients.
+
+See [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md) for the disclosed *C. utilis* mutations from US10815461B2 and the associated freedom-to-operate analysis. See [gout-clinical-pipeline.md](./gout-clinical-pipeline.md) for the full active-pipeline table this section draws from.
+
+This section is an addition, not a retraction, of the #1 *A. flavus* ranking. The ranking stands for the *S. cerevisiae* intracellular track. For the oral track, the choice should be made empirically by head-to-head expression comparison rather than by inheriting the rasburicase default.
+
+---
+
 ## Detailed Variant Analysis
 
 ### 1. **Aspergillus flavus Uricase (Rasburicase parent, UniProt Q00511)** — PRIMARY CANDIDATE

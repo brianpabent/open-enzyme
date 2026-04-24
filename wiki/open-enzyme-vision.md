@@ -64,6 +64,29 @@ If you think about this as software, the architecture snaps into focus:
 
 No patents. No prescriptions. No gatekeeping. Fork it, modify it, contribute back. This is **enzyme production as open source infrastructure.**
 
+### Platform Choice — Koji-First, Yeast Retained for Specific Modules
+
+Open Enzyme supports two GRAS hosts, but the platform is now **koji-first** for the therapeutic stack, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized or more likely to succeed.
+
+**Why koji-first (A. oryzae as primary host):**
+
+- **Secretion capacity.** Native koji secretes 25–30 g/L into growth media (industrial fermentation); *S. cerevisiae* typically reaches 0.5–2 g/L for heterologous secreted proteins. An order-of-magnitude advantage for any secreted enzyme.
+- **Multi-enzyme baseline.** Wild-type koji already produces lipase, protease, and amylase at therapeutically relevant levels, plus natural kojic acid, ergothioneine, and ferulic acid — pathway-modulator-adjacent compounds on day zero, before any engineering.
+- **Home-fermentation feasibility.** Koji grows on steamed rice at 30 °C in 36–48 hours. Equipment: rice cooker, incubator, cheesecloth. No bioreactor required.
+- **Food precedent.** 1,000+ years of human consumption in East Asian cuisine. FDA GRAS status. Safety case is trivial compared to any novel organism.
+- **Dose scalability.** ~10–15 g of engineered koji is in the therapeutic ballpark for Creon-equivalent digestive enzyme dosing — a lower mass burden than gram-scale yeast consumption for comparable activity.
+
+**Why yeast is retained (S. cerevisiae for specific modules with open expression questions):**
+
+Some heterologous compounds may express better in *S. cerevisiae* than *A. oryzae* — particularly tetrameric proteins (the rasburicase precedent: *A. flavus* uricase expressed in *S. cerevisiae* reportedly reaches 13% of total cellular protein). The yeast track preserves flexibility for compounds where koji expression fails or yields are inadequate. Specific decision points we have not yet resolved:
+
+- **Ursolic acid** — 8.59 g/L record in engineered *S. cerevisiae*; untested in koji.
+- **Carnosine** — biosynthesis requires heterologous carnosine synthase; host choice open.
+- **Lactoferrin** — 3.5 g/L record in *P. pastoris*; koji expression untested.
+- **Uricase itself** — rasburicase proves the *S. cerevisiae* path works; the koji path needs to be developed.
+
+These are empirical questions, not ideological ones. We build in koji first and fall back to yeast when the data says to.
+
 ---
 
 ## 4. First Targets
@@ -208,7 +231,9 @@ Engineered yeast or koji producing uricase. Degrades uric acid in the gut lumen 
 
 ### Defuse the Bomb
 
-NLRP3 inflammasome suppression stack: beta-hydroxybutyrate (BHB), oridonin, sulforaphane, KPV peptide. Each compound targets a different step in the NLRP3 activation pathway — priming, assembly, or IL-1β release.
+NLRP3 inflammasome suppression stack: beta-hydroxybutyrate (BHB), oridonin, sulforaphane, KPV peptide, quercetin, ursolic acid, β-caryophyllene, carnosine, taurine, lactoferrin, SPMs. Each compound targets a different step in the NLRP3 activation pathway — priming, K⁺ efflux, assembly, IL-1β release, resolution, or neutrophil amplification.
+
+**Platform positioning — pathway modulator, not direct-inhibitor knockoff.** Open Enzyme is a **food-derived, multi-target NLRP3 pathway modulator** platform — not an attempt to produce a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). The distinction matters: pharma has tested direct inhibitors in gout and the class has largely stalled (MCC950 hepatotoxicity halt, dapansutrile no Phase 2b/3 post-2a). The only curated direct-human-NLRP3 IC50 values in ChEMBL are dapansutrile (1 μM), oridonin (5.18 μM), and curcumin (24.2 μM). Pharma's only post-2010 gout win at the inflammasome cascade is canakinumab at CP5a (IL-1β receptor blockade, FDA-approved Aug 2023). The Open Enzyme stack is overwhelmingly pathway modulators — hitting upstream priming (CP1a/CP1b), K⁺ efflux (CP2), active resolution (CP5b), and neutrophil amplification (CP6a) — chokepoints that pharma has not rigorously tested in gout. Multi-target pathway modulators hitting redundant nodes can plausibly produce meaningful IL-1β suppression through cumulative effect, even if no single compound matches pharma-grade potency at a single target. This is a more honest and more defensible positioning than "supplement-grade version of MCC950." (source: [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md), [gout-clinical-pipeline.md](./gout-clinical-pipeline.md))
 
 ### Heal the Damage
 
@@ -248,7 +273,29 @@ This multi-vector approach reflects an engineering mindset: don't bet on a singl
 
 ---
 
-## 12. Existing Research Library
+## 12. Related Work & Complementary Projects
+
+Open Enzyme operates in an active research neighborhood. The following are programs and tools that complement or parallel this work — **not competitors**. Open Enzyme is open source; we benefit from every validated data point these groups publish. Where there is overlap (e.g., *C. utilis* uricase work), we learn from their engineering. Where there is divergence (e.g., systemic IV vs. gut-lumen enzymatic), we cover chokepoints they don't reach, and vice versa.
+
+- **ALLN-346 (Allena, terminated 2022)** — engineered *C. utilis* uricase for oral gut-lumen delivery. Validated the mechanism in mice and signaled efficacy in CKD patients (Phase 2a Study 201). Engineering data publicly disclosed in US10815461B2. Allena's bankruptcy left the program orphaned; Open Enzyme can learn from both their success and their economic failure. See [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md) for the mutation set and how it informs our construct design.
+
+- **SSS11 (Shanghai, Phase 1 recruiting — NCT06629376)** — pegylated *C. utilis* uricase, systemic IV route. Parallel track, not competitive: Open Enzyme targets gut-lumen enzymatic degradation; SSS11 targets systemic urate clearance.
+
+- **PRX-115 (Shanghai Pharma, Phase 1)** — PEG-uricase, systemic IV. Similar non-overlap with gut-lumen strategy.
+
+- **Krystexxa + methotrexate (FDA-approved)** — pegloticase + immunosuppression to reduce anti-drug-antibody response. Systemic, refractory-gout indication. Standard of care for a small patient subset; not a platform comparison.
+
+- **Engineered S. boulardii (ACS Synthetic Biology, 2025)** — probiotic expression of *V. vulnificus* uricase reaching 365 μmol/h/OD. Academic group, non-commercial. Methodologically closest to Open Enzyme; worth following and engaging.
+
+- **Canakinumab (Ilaris, FDA-approved for gout Aug 2023)** — anti-IL-1β mAb, CP5a. ~$300K/year. Complementary, not competitive — Open Enzyme targets upstream chokepoints (CP0–CP2, CP5b, CP6a); canakinumab is the reference for CP5a coverage. Any food-grade approach is automatically cost-differentiated.
+
+- **Avacopan (Tavneos, FDA-approved 2021 for ANCA vasculitis)** — oral C5aR1 antagonist. Mechanism-aligned with Open Enzyme's CP0 gap (see [complement-c5a-gout.md](./complement-c5a-gout.md)). Untested in gout but plausibly repurposable.
+
+- **CERC-002 (Avalo Therapeutics)** — anti-LIGHT mAb, Phase 2 positive in COVID-19 ARDS. Mechanism-aligned with CP1a (TNFSF14). Not in gout development. See [tnfsf14-gout-target.md](./tnfsf14-gout-target.md).
+
+---
+
+## 13. Existing Research Library
 
 The following research documents form the evidence base and technical foundation for the Open Enzyme project. Each was produced as a deep-dive into a specific aspect of the problem:
 

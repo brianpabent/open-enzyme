@@ -443,7 +443,7 @@ Rate each sub-problem on 1–10 scale, with "what would move it up 2 points?"
 
 ---
 
-### e) GI Survival (Yeast Cells + Enzyme Activity) (4/10)
+### e) GI Survival (Yeast Cells + Enzyme Activity) (4/10 wild-type → 7–8/10 engineered + formulated)
 
 **Current state:**
 - Probiotic *S. boulardii* survives GI transit at ~10–20% efficiency in humans.
@@ -457,6 +457,25 @@ Rate each sub-problem on 1–10 scale, with "what would move it up 2 points?"
 
 **What moves it to 6/10:**
 - Conduct in vitro GI simulation (TNO-simulated gastric fluid model) with engineered yeast. Measure cell viability, uricase activity post-stomach, post-small intestine, post-colon. (4 weeks, $10K). Move to 8/10 if validated in n=10 human study (8 weeks, $50K).
+
+#### GI Survival — Reframed Feasibility Cascade
+
+*(Mechanistic Extrapolation; sources: [protein-engineering-strategy.md](./protein-engineering-strategy.md), [gi-survival-prediction.md](./gi-survival-prediction.md), [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md))*
+
+The "4/10" rating above conflates three separable variables: (1) wild-type enzyme survival, (2) protein-engineering potential, and (3) formulation (enteric coating). Separated, the picture is meaningfully different:
+
+| Configuration | Rating | Expected active enzyme reaching small intestine | Verdict |
+|---------------|--------|-------------------------------------------------|---------|
+| WT uricase, no formulation | **4/10** | ~15–25% | **BLOCKER** |
+| + Disulfide engineering (SB-1 variant) | **5–6/10** | 5–15× stability improvement over WT *(In Vitro, computational + Sci. Rep. 2025 precedent)* | **MANAGEABLE** |
+| + Enteric coating (pH-dependent release, PERT-standard) | **7–8/10** | Gastric phase bypassed | **GOOD** |
+| **Combined engineered + enteric-coated cascade** | **7–8/10** | Cascade likely exceeds ALLN-346 Phase 2a clinical threshold (~1–2 mg/dL sUA reduction) *(Clinical Trial benchmark from Study 201)* | **Engineering problem, not a blocker** |
+
+This reframes GI survival from "critical blocker" to "engineering problem with known solutions." The 12–16 week de-risking path (Analysis 03 protein engineering + Analysis 02 GI simulation; see linked analyses) resolves the blocker into the manageable range.
+
+**Implication for the overall composite:** with engineering + formulation interventions included, platform feasibility is **6.5–7/10** rather than the 5.8/10 computed from the wild-type / un-formulated configuration. The 5.8/10 figure remains correct for the "do nothing" baseline; it is not correct as a description of the engineered, formulated product path.
+
+The preserved 4/10 rationale for the un-engineered, un-formulated baseline is unchanged — this section is a separation of variables, not a contradiction. A single composite number obscures the fact that the largest contributor to the low score is addressable by standard-of-practice interventions (disulfide engineering, enteric coating) rather than by unresolvable biology.
 
 ---
 

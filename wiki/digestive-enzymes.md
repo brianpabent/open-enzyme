@@ -152,6 +152,20 @@ Different manufacturers use different measurement systems (HUT, SAP, FCC, LU uni
 
 Enzymes must be taken with meals to be effective. Delayed dosing or taking enzymes without food significantly reduces efficacy.
 
+## Adjunct Anti-Inflammatories for Gut Inflammation in EPI
+
+Primary EPI therapy is enzymatic replacement — pancrelipase (Creon, Zenpep) or fungal/koji-derived enzyme blends. That is the first-line intervention and the core of this document. But in a subset of patients, **secondary gut-lining inflammation** worsens symptom burden (bloating, abdominal pain, malabsorption) **beyond the purely enzymatic deficit**. Where inflammation is the symptom driver — e.g., in EPI secondary to IBD, chronic pancreatitis with downstream gut inflammation, or [[sibo|SIBO]]-associated brush-border damage — adjunct anti-inflammatories may be worth considering alongside enzyme replacement. These are **adjuncts only**, not replacements for enzymatic therapy.
+
+| Compound | Mechanism | Evidence | Format |
+| --- | --- | --- | --- |
+| **CBG** (cannabigerol) | Reduced colonic IL-1β, MPO, iNOS in DNBS and DSS colitis models; NLRP3/caspase-1/GSDMD reduction in CIA rat model (*Front Pharmacol* 2025) | Animal Model (colitis-specific; only cannabinoid with direct gut-inflammation animal data) | Oral; human dose uncertain |
+| **KPV peptide** (Lys-Pro-Val) | α-MSH-derived tripeptide; absorbed via PepT1 in gut epithelium; colitis efficacy in rodent models | Animal Model | Oral/sublingual; reaches gut directly |
+| **Omega-3 SPMs** (RvD1, MaR1) | Specialized pro-resolving mediators; direct resolution signaling in gut tissue | Animal Model; human pharmacokinetic data for parent omega-3s | Precursor dosing via fish oil |
+
+**CBG in particular** is notable because it is the only cannabinoid with gut-inflammation-specific animal evidence — reductions in colonic IL-1β, MPO (neutrophil infiltration marker), and iNOS in both DNBS and DSS murine colitis models, plus NLRP3/caspase-1/GSDMD reduction in a CIA rat model (Animal Model, *Front Pharmacol* 2025). Direct human efficacy data for gut inflammation is not yet published, and human dosing is uncertain. See [[cannabinoids-terpenes|cannabinoids-terpenes.md]] for the full CBG profile, pharmacokinetics, and cross-references to the NLRP3 literature.
+
+**Caveat:** The EPI track is enzymatic replacement first. These adjuncts are relevant only where inflammatory drive is suspected to be a material contributor to symptom burden — not as default add-ons for every EPI patient. (Source: cannabinoids-terpenes.md)
+
 ## The Koji Alternative: Wild-Type Ready Now
 
 Here is where the [[open-enzyme-vision|Open Enzyme]] project offers an immediate practical solution: **wild-type koji (A. oryzae) already produces the exact digestive enzymes Lynn needs.**

@@ -44,6 +44,37 @@ In urate oxidase-deficient knockout mice, oral ALLN-346 treatment over 7- and 19
 > **Honest caveat**
 >
 > The Phase 2a Study 202, which enrolled a broader cohort, showed mean sUA reductions of only 0–5% from baseline on days 7 and 14 — not statistically significant vs. placebo.[[9]](#ref9) Allena subsequently provided a "clinical and corporate update" (often a euphemism), and the company eventually wound down. The approach works in mice and showed signal in CKD patients with residual renal function, but the human dose-response relationship for oral uricase in the gut is not yet fully established. This is important context.
+
+#### Publicly Disclosed Engineering (Patent Landscape)
+
+*(Mechanistic Extrapolation / regulatory-legal analysis; source: patent landscape memo, April 2026)*
+
+Allena's ALLN-346 engineering is not locked in a proprietary trade-secret vault — it is publicly disclosed in patent form. The family roots in US provisional **62/529,726** (filed 7 July 2017) and matures in:
+
+- **US10815461B2** — "Recombinant uricase enzyme." Granted 27 October 2020; assignee of record **Allena Pharmaceuticals Inc.**; nominal expiry 2038 absent maintenance-fee lapse. *(Clinical/regulatory precedent — patent grant, USPTO)*
+- **US 2020/0071681 A1** — published application cited as the sequence source by the Frontiers 2020 ALLN-346 paper (PMID 33330529).
+- **US 2020/0308534 A1** — divisional/continuation; current status unclear (USPTO PAIR lookup needed).
+- **PCT / EP / CN / JP / AU / CA / IL** counterparts — marked "Ceased" per Google Patents; likely abandoned post-Allena's 2022 bankruptcy.
+
+**Specific mutations disclosed** (on the *C. utilis* uricase backbone, from claims and worked examples):
+
+- Primary hot positions appearing in both claims and examples: **I180V, I180A, Y165F, V190G, V190A, E51K, Q244K, I132R, I132N, V97I, E92N, A87G, D142E, G44A, G128P, A236N, K208A, N213A, S140T, Y253Q**.
+- Additional positions in specification / Tables 1–2: A84S, T47E, S95P, K103T, D134E, Y136R, I196L, T224D, P285S, V296A.
+- Combinatorial ProteinGPS variants: **R2_V17, R2_V4, R2_V39, R2_V47, R2_V79** (multi-substitution composites).
+- Highest-value individual substitutions for Open Enzyme's purposes: **I180V, V190G, Y165F, E51K, Q244K, I132R, A87G**.
+
+**FTO (freedom-to-operate) summary:**
+
+- **Outside the US**: EP / CN / JP / AU / CA / IL applications are marked "Ceased." These geographies appear to be effectively public domain for research and commercial use — per-country formal verification still needed before any manufacturing commitment.
+- **Inside the US**: US10815461B2 remains active on paper; nominal expiry 2038. Academic research use sits under the narrow *Madey v. Duke* experimental-use exemption. Commercial manufacture or sale of a product practicing the disclosed mutations would infringe until expiry or lapse.
+- **Critical unknown — maintenance-fee status**: The first large USPTO maintenance fee on US10815461B2 was due around October 2024 (3.5-year window). If Allena's liquidating estate failed to pay — which is entirely plausible given the September 2022 employee termination, June 2023 liquidation plan, and the March 2023 Glyscend Inc. asset purchase covering only the GI/diabetes data rights (not the uricase IP) — the patent may already be **lapsed**. No identified successor owner to the uricase IP appears in the public record.
+
+> **Single highest-leverage $0 task**
+>
+> Pull the USPTO maintenance-fee / legal-event database for US10815461B2 (free; ~30 minutes). If the 3.5-year fee was not paid, the US patent is lapsed and the entire disclosed engineering set — including the seven highest-value mutations above — is unencumbered in the US as well. This is the cheapest single action available to Open Enzyme.
+
+This subsection is about **leveraging publicly disclosed prior art**, not competing with a (defunct) company. The ALLN-346 mutations represent millions of dollars of ProteinGPS-guided directed-evolution work, now disclosed to anyone willing to read the patent.
+
 PULSE Probiotic: Engineered *E. coli* Nissle 1917
 Published in *Cell Reports Medicine* in 2025, PULSE (**P**robiotic-based **U**A **L**evel **S**ensing and Adjustment **E**ngineered) is an *E. coli* Nissle 1917 strain engineered with a uric acid-responsive biosensor (based on the transcriptional repressor HucR) that dynamically regulates urate oxidase expression in the gut lumen.[[10]](#ref10) The key advance: this is a "smart" probiotic that expresses uricase only when uric acid levels are elevated.
 In hyperuricemic mice and rats, oral administration of PULSE reduced persistent hyperuricemia, improved overall survival, and alleviated renal damage.[[10]](#ref10) The system expressed urate oxidase in three different configurations to test which architecture performed best in vivo.
@@ -78,7 +109,7 @@ Several uricase genes have been expressed recombinantly. Here is an honest compa
 | Source | Expression in Yeast | Specific Activity | Key Properties | Notes |
 | --- | --- | --- | --- | --- |
 | pH optimum 8.5–9.5; thermally labile above 40°C; 135 kDa homotetramer (301 aa/subunit) | Rasburicase source. Best characterized for this host. Default choice. |
-| Higher specific activity; basis for ALLN-346 engineering |
+| Higher specific activity; basis for ALLN-346 engineering. **ALLN-346 mutations disclosed in US10815461B2** — highest-value substitutions for protease-resistance engineering: I180V, V190G, Y165F, E51K, Q244K, I132R, A87G. See Section 1 "Publicly Disclosed Engineering" subsection. |
 | Not directly comparable (measured as μmol/h/OD in whole cells) | Selected specifically for high activity in yeast cellular context | Newest entrant. Chosen by the 2025 ACS Synth Bio group specifically for yeast expression. |
 | Literature values vary | Native 145 kDa heterotetramer | Less commonly used for recombinant work. Unusual subunit heterogeneity. |
 **Recommendation:** Start with *A. flavus* uaZ. It has the deepest validation in *S. cerevisiae*, is the basis for an approved pharmaceutical product, and there is extensive published characterization data. The *V. vulnificus* uricase is an interesting second candidate given the 2025 *S. boulardii* results, but it adds risk by being less characterized. In parallel, testing the *C. utilis* gene in *S. cerevisiae* would be informative — its higher specific activity could be advantageous if it expresses well.
@@ -404,6 +435,8 @@ For detailed calculations, variant structural models, and GI transit simulation 
 - **Faller, J. & Fox, I.H.** (1982). Ethanol-induced hyperuricemia: evidence for increased urate production by activation of adenine nucleotide turnover. *New England Journal of Medicine*, 307(26), 1598–1602. Also: **Yamamoto, T. et al.** (2005). Effect of ethanol on metabolism of purine bases. *Clinica Chimica Acta*, 356(1-2), 35–57. [doi:10.1016/j.cccn.2005.01.024](https://www.sciencedirect.com/science/article/abs/pii/S0009898105000732)
 - **McFarland, L.V.** (2010). Systematic review and meta-analysis of *Saccharomyces boulardii* in adult patients. *World Journal of Gastroenterology*, 16(18), 2202–2222. Also: [PMC7344949 — *S. boulardii*: What Makes It Tick as Successful Probiotic?](https://pmc.ncbi.nlm.nih.gov/articles/PMC7344949/)
 - **Braat, H. et al.** (2024). Targeted delivery of the probiotic *Saccharomyces boulardii* to the extracellular matrix enhances gut residence time and recovery in murine colitis. *Nature Communications*, 15, 4157. [doi:10.1038/s41467-024-48128-0](https://www.nature.com/articles/s41467-024-48128-0)
+- **Allena Pharmaceuticals Inc.** (2020). US Patent 10,815,461 B2: "Recombinant uricase enzyme." Granted 27 Oct 2020. Priority US provisional 62/529,726 (7 July 2017). [patents.google.com/patent/US10815461B2](https://patents.google.com/patent/US10815461B2/en)
+- **Allena Pharmaceuticals Inc.** (2020). US Patent Application 2020/0071681 A1: "Recombinant uricase enzyme" (published application; sequence source cited by Frontiers 2020 ALLN-346 paper). [patents.google.com/patent/US20200071681A1](https://patents.google.com/patent/US20200071681A1/en)
 Prepared April 2026. This document represents a good-faith research synthesis by a non-scientist. Corrections, challenges, and "you're wrong about X" are all welcome — that's the point.
 ### Open Enzyme Research Library
 This document is part of the [Open Enzyme](open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
