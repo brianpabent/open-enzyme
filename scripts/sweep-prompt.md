@@ -49,8 +49,10 @@ Embed findings from the trigger file into every affected wiki page.
 4. **Create new wiki pages** if the trigger file introduces concepts not yet in the wiki:
    - Match the format of existing wiki pages: YAML frontmatter with `title`, `date`, `tags`; short intro; H2 sections.
    - `(source: <trigger-filename>)` on every new claim.
+   - **Add the new page to `mkdocs.yml` nav.** The root `mkdocs.yml` has an explicit `nav:` section that enumerates every page shown in the published site sidebar. Pages not listed there are orphaned — they exist and are searchable but don't appear in navigation, so readers can't find them unless they're directly linked from prose or already know the URL. Add an entry under the most appropriate existing section (Vision & Strategy / Gout & Uricase / NLRP3 & Inflammation / Koji & Digestive Enzymes / Organisms & Engineering / Delivery & Barrier / Compounds & Peptides / Self-Experiment & Validation / Tools & Reference). If the taxonomy of sections needs to shift to accommodate a new page type (e.g., an entire new category), flag it in the Pass 3 log rather than unilaterally restructuring — section renames have downstream effects on readers' mental models.
+   - Format: `    - <Display Title>: <filename>.md` (4-space indent, matches existing entries). The display title should be human-readable, not the slugified filename.
 
-5. **Update `index.md`** (repo root) if a new wiki page was created or if a meaningful status shift happened (platform thesis, cheapest-experiment list). Conservative — don't rewrite the dashboard for small changes.
+5. **Update `index.md`** (repo root) if a new wiki page was created or if a meaningful status shift happened (platform thesis, cheapest-experiment list). Conservative — don't rewrite the dashboard for small changes. Note: `index.md` is the in-repo dashboard (content-oriented); `mkdocs.yml` nav is the published-site sidebar (navigation-oriented). Both need updating when a new page lands — they serve different readers.
 
 6. **Update `wiki/GRAPH.md`** — add Mermaid nodes and edges for any new concepts and relationships. Label edges with type (produces, inhibits, activates, requires, synergizes, degrades, etc.). **No HTML tags in Mermaid node labels** (breaks Obsidian rendering).
 
