@@ -9,13 +9,58 @@ sources: [engineered-yeast-uricase-proposal.md, engineered-koji-protocol.md, ope
 
 ## Overview
 
-A comprehensive map of all proposed experiments for the Open Enzyme project, organized by phase and documented across all research documents. Each experiment includes its purpose, proposing source, estimated timeline/cost, and dependencies.
+Single-source consolidated experiment library for the Open Enzyme project. The navigable queue/dashboard lives immediately below this overview; full protocols (purpose, protocol, cost, timeline, dependencies, success criteria) follow in the phase sections.
+
+As of 2026-04-24 this is the authoritative experiments file — earlier ambiguity about a separate `experiments.md` has been resolved, and all content lives here. The sweep daemon and human editors update this page in place.
+
+---
+
+## Experiment Queue
+
+Dashboard view of all 22 experiments in the library. Sorted by phase then ID. Detail lives in the phase sections below — click the ID to jump.
+
+**Status legend:**
+- **Proposed** — no work done yet; in the design/queue stage.
+- **In Progress** — active work underway (wet-lab, self-experiment, or analysis).
+- **Done** — completed with results captured in the protocol section or a referenced wiki page.
+- **Abandoned** — deprioritized or replaced; reason noted inline.
+
+As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work has been executed yet; self-experiments have not started).
+
+| ID | Title | Category | Cost | Weeks | Status | Wiki refs |
+|----|-------|----------|------|-------|--------|-----------|
+| [§1.1](#11-uricase-gene-performance-comparison) | Uricase gene performance comparison | In Vitro | $2,000–3,000 | 4–6 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [uricase-variant-selection](./uricase-variant-selection.md), [uricase](./uricase.md), [codon-optimization-expression-cassette](./codon-optimization-expression-cassette.md) |
+| [§1.2](#12-secretion-vs-intracellular-expression) | Secretion vs. intracellular expression | In Vitro | $500–1,000 | 2–3 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [saccharomyces-cerevisiae](./saccharomyces-cerevisiae.md), [gi-survival-prediction](./gi-survival-prediction.md) |
+| [§1.3](#13-uricase-survival-in-beer-fermentation) | Uricase survival in beer fermentation | In Vitro | $200–400 | 3–4 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [saccharomyces-cerevisiae](./saccharomyces-cerevisiae.md) |
+| [§1.4](#14-uricase-stability-after-drying) | Uricase stability after drying | In Vitro | $300–800 | 1–2 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gi-survival-prediction](./gi-survival-prediction.md) |
+| [§1.5](#15-koji-uricase-expression-and-activity) | Koji uricase expression and activity | In Vitro | $1,500–2,500 | 4–6 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [koji-construct-design](./koji-construct-design.md), [uricase](./uricase.md) |
+| [§1.6](#16-koji-enzyme-stability-at-digestive-ph-and-temperature) | Koji enzyme stability at digestive pH/temperature | In Vitro | $300–600 | 1–2 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md), [digestive-enzymes](./digestive-enzymes.md) |
+| [§1.7](#17-nlrp3-inflammasome-pathway-validation-thp-1-msu-macrophage-assay) | NLRP3 pathway validation (THP-1 MSU macrophage) | In Vitro | $5,000–8,000 | 8–10 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [egcg](./egcg.md) |
+| [§1.8](#18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a) | EGCG dose-escalation CP1a readout | In Vitro | $500–800 | 3–4 | Proposed | [egcg](./egcg.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
+| [§2.1](#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii) | Gnotobiotic mouse colonization (S. boulardii) | Animal | $5,000–15,000 | 8–12 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./team.md) |
+| [§2.2](#22-hyperuricemic-rat-model-engineered-yeast-efficacy) | Hyperuricemic rat model (yeast efficacy) | Animal | $8,000–12,000 | 6–8 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gout-deep-dive](./gout-deep-dive.md), [uricase](./uricase.md) |
+| [§2.3](#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model) | Engineered koji EPI model | Animal | $6,000–10,000 | 8–10 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md) |
+| [§2.4](#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model) | NLRP3 inhibition in MSU arthritis model | Animal | $10,000–15,000 | 10–12 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [gout-deep-dive](./gout-deep-dive.md), [supplements-stack](./supplements-stack.md) |
+| [§2.5](#25-pulse-probiotic-validation-in-hyperuricemic-mice) | PULSE probiotic validation (hyperuricemic mice) | Animal | $5,000–8,000 | 8 | Proposed | [gout-deep-dive](./gout-deep-dive.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [gut-lumen-sink](./gut-lumen-sink.md) |
+| [§3.1](#31-brian-engineered-yeast-uricase--serum-uric-acid--flare-tracking) | Brian: engineered yeast uricase tracking | Human | $200–400 | 20 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md) |
+| [§3.2](#32-brian-nlrp3-inflammasome-suppression-stack--biomarker-panel) | Brian: NLRP3 suppression stack biomarker panel | Human | $700–1,400 | 20 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md) |
+| [§3.3](#33-lynn-wild-type-koji-digestive-enzyme-supplementation) | Lynn: wild-type koji digestive enzyme trial | Human | $600–1,000 | 12 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md) |
+| [§3.4](#34-joint-trial-engineered-koji-both-users) | Joint trial: engineered koji (both users) | Human | $300–500 | 14 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md) |
+| [§3.5](#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension) | Long-term flare prevention (Brian, 6-mo extension) | Human | $400–600 | 26 | Proposed | [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md), [gout-deep-dive](./gout-deep-dive.md) |
+| [§3.6](#36-brian-urinary-ltb4-assay--validating-quercetins-5-lox-cp6a-mechanism-in-vivo) | Brian: urinary LTB4 (quercetin CP6a in vivo) | Human | $150–300 | 12 | Proposed | [self-experiment-protocol](./self-experiment-protocol.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [synthesis](./synthesis.md) |
+| [§3.7](#37-brian-serum-c5a-baseline--week-12--validating-cp0-complement-priming-status) | Brian: serum C5a baseline + week 12 (CP0) | Human | $300–400 | 12 | Proposed | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md) |
+| [§3.8](#38-brian-dha-vs-epa-split-omega-3-crossover--resolving-the-gout-specific-spm-precursor-question) | Brian: DHA vs. EPA omega-3 crossover | Human | $550–700 | 9 | Proposed | [spm-resolution-pathway](./spm-resolution-pathway.md), [supplements-stack](./supplements-stack.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [self-experiment-protocol](./self-experiment-protocol.md) |
+| [§3.9](#39-brian-zileuton-off-label-trial--pharma-grade-cp6a-inhibition-in-flare-prevention-protocol) | Brian: zileuton off-label CP6a trial | Human | ~$500 | 16 | Proposed | [zileuton](./zileuton.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 
 ---
 
 ## Phase 1: In Vitro Validation
 
 ### 1.1 Uricase Gene Performance Comparison
+
+**Status**: Proposed | **Cost**: $2,000–3,000 | **Weeks**: 4–6 | **Phase**: 1
+
+**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [uricase-variant-selection](./uricase-variant-selection.md), [uricase](./uricase.md), [codon-optimization-expression-cassette](./codon-optimization-expression-cassette.md)
 
 **What it tests:** Which uricase gene (Aspergillus flavus, Candida utilis, or Vibrio vulnificus) performs best in S. cerevisiae?
 
@@ -38,6 +83,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 1.2 Secretion vs. Intracellular Expression
+
+**Status**: Proposed | **Cost**: $500–1,000 | **Weeks**: 2–3 | **Phase**: 1
+
+**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [saccharomyces-cerevisiae](./saccharomyces-cerevisiae.md), [gi-survival-prediction](./gi-survival-prediction.md)
 
 **What it tests:** Should uricase be secreted into the medium or retained intracellularly?
 
@@ -63,6 +112,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 1.3 Uricase Survival in Beer Fermentation
 
+**Status**: Proposed | **Cost**: $200–400 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [saccharomyces-cerevisiae](./saccharomyces-cerevisiae.md)
+
 **What it tests:** Does uricase remain enzymatically active through beer fermentation?
 
 **Proposed in:** engineered-yeast-uricase-proposal.md (§4)
@@ -84,6 +137,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 1.4 Uricase Stability After Drying
+
+**Status**: Proposed | **Cost**: $300–800 | **Weeks**: 1–2 | **Phase**: 1
+
+**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gi-survival-prediction](./gi-survival-prediction.md)
 
 **What it tests:** Can uricase survive lyophilization or heat drying for a shelf-stable product?
 
@@ -110,6 +167,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 1.5 Koji Uricase Expression and Activity
 
+**Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 4–6 | **Phase**: 1
+
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [koji-construct-design](./koji-construct-design.md), [uricase](./uricase.md)
+
 **What it tests:** Can A. flavus uricase gene express functionally in A. oryzae?
 
 **Proposed in:** engineered-koji-protocol.md (§3, §5)
@@ -131,6 +192,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 1.6 Koji Enzyme Stability at Digestive pH and Temperature
+
+**Status**: Proposed | **Cost**: $300–600 | **Weeks**: 1–2 | **Phase**: 1
+
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md), [digestive-enzymes](./digestive-enzymes.md)
 
 **What it tests:** Does koji-produced uricase survive gastric and duodenal conditions?
 
@@ -154,6 +219,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 1.7 NLRP3 Inflammasome Pathway Validation (THP-1 MSU Macrophage Assay)
+
+**Status**: Proposed | **Cost**: $5,000–8,000 | **Weeks**: 8–10 | **Phase**: 1
+
+**Affected wiki**: [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [egcg](./egcg.md)
 
 **What it tests:** Do proposed compounds in the [[supplements-stack]] actually inhibit NLRP3 at stated chokepoints?
 
@@ -190,6 +259,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 1.8 EGCG Dose-Escalation on MSU-Stimulated THP-1: TNFSF14-Induced IL-6 Readout (CP1a)
 
+**Status**: Proposed | **Cost**: $500–800 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [egcg](./egcg.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md)
+
 **What it tests:** Does EGCG suppress TNFSF14-induced IL-6 in a gout-relevant cell model at sub-μM concentrations — the specific CP1a readout that would validate EGCG's multi-chokepoint coverage story?
 
 **Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Proposed Experiments #3; complements Experiment 1.7 (NLRP3 pathway validation) with a TNFSF14-specific readout.
@@ -224,6 +297,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii
 
+**Status**: Proposed | **Cost**: $5,000–15,000 | **Weeks**: 8–12 | **Phase**: 2
+
+**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./team.md)
+
 **What it tests:** Can engineered probiotic yeast survive and function in the mouse gut? What dosing is needed?
 
 **Proposed in:** engineered-yeast-uricase-proposal.md (§4.d)
@@ -252,6 +329,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 2.2 Hyperuricemic Rat Model: Engineered Yeast Efficacy
+
+**Status**: Proposed | **Cost**: $8,000–12,000 | **Weeks**: 6–8 | **Phase**: 2
+
+**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gout-deep-dive](./gout-deep-dive.md), [uricase](./uricase.md)
 
 **What it tests:** Does oral administration of engineered yeast reduce systemic uric acid in a whole-organism model?
 
@@ -282,6 +363,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 2.3 Engineered Koji Efficacy in Digestive Enzyme-Deficient Model
 
+**Status**: Proposed | **Cost**: $6,000–10,000 | **Weeks**: 8–10 | **Phase**: 2
+
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md)
+
 **What it tests:** Does engineered koji effectively supplement digestive enzymes in vivo?
 
 **Proposed in:** engineered-koji-protocol.md
@@ -309,6 +394,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 2.4 NLRP3 Inflammasome Inhibition in MSU Crystal Arthritis Model
+
+**Status**: Proposed | **Cost**: $10,000–15,000 | **Weeks**: 10–12 | **Phase**: 2
+
+**Affected wiki**: [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [gout-deep-dive](./gout-deep-dive.md), [supplements-stack](./supplements-stack.md)
 
 **What it tests:** Do proposed NLRP3 inhibitor compounds reduce gout flare severity in vivo?
 
@@ -343,6 +432,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 2.5 PULSE Probiotic Validation in Hyperuricemic Mice
 
+**Status**: Proposed | **Cost**: $5,000–8,000 | **Weeks**: 8 | **Phase**: 2
+
+**Affected wiki**: [gout-deep-dive](./gout-deep-dive.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [gut-lumen-sink](./gut-lumen-sink.md)
+
 **What it tests:** Can PULSE system (urate-responsive engineered E. coli) maintain uric acid homeostasis?
 
 **Proposed in:** gout-deep-dive.md (Section 8)
@@ -373,6 +466,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ## Phase 3: Human Self-Experimentation and Biomarker Tracking
 
 ### 3.1 Brian: Engineered Yeast Uricase — Serum Uric Acid & Flare Tracking
+
+**Status**: Proposed | **Cost**: $200–400 | **Weeks**: 20 | **Phase**: 3
+
+**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md)
 
 **What it tests:** Does daily oral engineered yeast reduce serum uric acid and gout flare frequency in the primary user?
 
@@ -405,6 +502,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 3.2 Brian: NLRP3 Inflammasome Suppression Stack — Biomarker Panel
+
+**Status**: Proposed | **Cost**: $700–1,400 | **Weeks**: 20 | **Phase**: 3
+
+**Affected wiki**: [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md)
 
 **What it tests:** Does the multi-compound NLRP3 stack reduce inflammatory markers and flare severity?
 
@@ -440,6 +541,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 3.3 Lynn: Wild-Type Koji Digestive Enzyme Supplementation
 
+**Status**: Proposed | **Cost**: $600–1,000 | **Weeks**: 12 | **Phase**: 3
+
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md)
+
 **What it tests:** Does traditional koji effectively supplement digestive enzymes in EPI/SIBO?
 
 **Proposed in:** engineered-koji-protocol.md, open-enzyme-vision.md (§4)
@@ -472,6 +577,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 3.4 Joint Trial: Engineered Koji (Both Users)
+
+**Status**: Proposed | **Cost**: $300–500 | **Weeks**: 14 | **Phase**: 3
+
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md)
 
 **What it tests:** Does engineered koji providing both digestive enzymes and uricase work as a dual-purpose therapeutic food?
 
@@ -509,6 +618,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 3.5 Biomarker Tracking: Long-term Flare Prevention (Brian, 6-month extension)
 
+**Status**: Proposed | **Cost**: $400–600 | **Weeks**: 26 | **Phase**: 3
+
+**Affected wiki**: [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md), [gout-deep-dive](./gout-deep-dive.md)
+
 **What it tests:** Does uricase supplementation provide sustained reduction in gout flares?
 
 **Proposed in:** open-enzyme-vision.md (§8)
@@ -538,6 +651,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 3.6 Brian: Urinary LTB4 Assay — Validating Quercetin's 5-LOX (CP6a) Mechanism In Vivo
 
+**Status**: Proposed | **Cost**: $150–300 | **Weeks**: 12 | **Phase**: 3
+
+**Affected wiki**: [self-experiment-protocol](./self-experiment-protocol.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [synthesis](./synthesis.md)
+
 **What it tests:** Does the current supplement stack suppress 5-LOX/LTB4 activity in vivo in Brian specifically? This directly validates quercetin's CP6a mechanism (5-LOX IC50 = 300 nM from ChEMBL, now the stack's most potent curated 5-LOX activity) as the operative mechanism — rather than its weaker NF-κB/NLRP3 effects that currently dominate the stack rationale.
 
 **Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Proposed Experiment #1 and New Connection #3. Brian's 2026-04-24 annotation: "do it. also, i have recent extensive labs that i can add to the project."
@@ -566,6 +683,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 
 ### 3.7 Brian: Serum C5a Baseline + Week 12 — Validating CP0 Complement Priming Status
 
+**Status**: Proposed | **Cost**: $300–400 | **Weeks**: 12 | **Phase**: 3
+
+**Affected wiki**: [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md)
+
 **What it tests:** Documents complement priming status (C5a, the dominant NLRP3 priming signal per Cumpelik 2016 PMID 26245757 + Khameneh 2017 PMID 28167912) before and after the 12-week supplement stack. The stack currently covers CP1-CP5a but not CP0 — this experiment tests whether it modulates complement at all, and establishes a baseline for future CP0-targeted interventions (e.g., avacopan, flavonoid C5aR1 antagonists per `wiki/complement-c5a-gout.md`).
 
 **Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Proposed Experiment #2 and New Connection #3.
@@ -593,6 +714,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 3.8 Brian: DHA vs. EPA Split Omega-3 Crossover — Resolving the Gout-Specific SPM Precursor Question
+
+**Status**: Proposed | **Cost**: $550–700 | **Weeks**: 9 | **Phase**: 3
+
+**Affected wiki**: [spm-resolution-pathway](./spm-resolution-pathway.md), [supplements-stack](./supplements-stack.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [self-experiment-protocol](./self-experiment-protocol.md)
 
 **What it tests:** Is DHA or EPA the optimal omega-3 precursor for gout flare prevention in Brian's specific case? The 2026-04-24 synthesis pass identified a contradiction between the cardiovascular literature (EPA-dominant) and the gout-specific SPM evidence (DHA-derived RvD1 and MaR1 both show direct MSU animal-model efficacy; DHA also inversely associates with circulating TNFSF14/LIGHT per Mendelian randomization). The `supplements-stack.md` currently recommends 2:1 or 3:1 EPA:DHA for gout, which may be a cardiovascular-biased extrapolation.
 
@@ -629,6 +754,10 @@ A comprehensive map of all proposed experiments for the Open Enzyme project, org
 ---
 
 ### 3.9 Brian: Zileuton Off-Label Trial — Pharma-Grade CP6a Inhibition in Flare-Prevention Protocol
+
+**Status**: Proposed | **Cost**: ~$500 | **Weeks**: 16 | **Phase**: 3
+
+**Affected wiki**: [zileuton](./zileuton.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md)
 
 **What it tests:** Does the FDA-approved 5-LOX inhibitor **zileuton** (Zyflo / Zyflo CR, asthma indication) abort or prevent gout flares in Brian's specific case? This is the pharma-grade equivalent of quercetin's CP6a mechanism — cleaner readout, stronger effect size expected. Cross-references the `wiki/zileuton.md` dossier (in progress per synthesis queue).
 
