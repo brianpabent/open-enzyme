@@ -131,20 +131,24 @@ jobs:
           TIMESTAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           TRIGGER_LIST=$(echo "$TRIGGER_FILES" | awk 'NF {printf "  - %s\n", $0}')
 
-          # Concatenate sweep-prompt.md with a TRIGGER block. The prompt reads
-          # the block to know which files changed and whether to commit.
-          PROMPT="$(cat scripts/sweep-prompt.md)
-
----
-
-TRIGGER: Files changed since last sweep ($DIFF_BASE) at $TIMESTAMP:
-$TRIGGER_LIST
-commit=yes
-ci=github-actions"
+          # Build the combined prompt in a temp file. Avoids the failure mode
+          # where a multiline string embedded in a YAML literal block with
+          # column-0 separator lines (like '---') terminates the block early.
+          PROMPT_FILE="$(mktemp)"
+          {
+            cat scripts/sweep-prompt.md
+            echo ""
+            echo "---"
+            echo ""
+            echo "TRIGGER: Files changed since last sweep (${DIFF_BASE}) at ${TIMESTAMP}:"
+            echo "${TRIGGER_LIST}"
+            echo "commit=yes"
+            echo "ci=github-actions"
+          } > "$PROMPT_FILE"
 
           # --dangerously-skip-permissions lets the CLI use Edit/Write/Bash
           # without interactive approval. Required for CI.
-          claude --dangerously-skip-permissions -p "$PROMPT"
+          claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")"
 
       - name: Push sweep output
         if: steps.trigger.outputs.has_changes == 'true'
