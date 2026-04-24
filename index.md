@@ -75,6 +75,8 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Cannabinoids & Terpenes](wiki/cannabinoids-terpenes.md)** — CBD, CBG, CBC, THCV, beta-caryophyllene, myrcene: NLRP3 mechanisms, gout evidence, EPI applications; beta-caryophyllene has direct MSU gout animal model data
 - **[Validation Experiments](wiki/validation-experiments.md)** — All proposed experiments consolidated: in vitro, animal, and human self-experimentation phases
 - **[Bio-AI Tools](wiki/bio-ai-tools.md)** — Open source protein AI (ESM-2, ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, SPURS, DiffDock, CodonTransformer) + commercial tools (GPT-Rosalind, Amazon Bio Discovery, Coefficient Bio) + **Anthropic life-sciences marketplace** (17 à la carte plugins — PubMed, bioRxiv, ChEMBL, Open Targets, ClinicalTrials.gov MCP servers as Phase 0 core); project-specific prompts and workflow
+- **[Linter Design (Falsification + Document Lint)](wiki/linter-design.md)** — Design doc for the two-linter architecture: Document Lint (always-on, non-blocking, regex + semantic rules over the wiki) and Falsification Lint (on-demand, per-hypothesis Card generation with killshot menus, failure-mode ontology, survival scoring). Implementation out of scope for this phase.
+- **[Hypotheses Index](wiki/hypotheses/README.md)** — Committed scientific claims in Falsification Card form. Seed entry: H01 Ward dual-cassette feasibility (koji endgame gate).
 
 ## Team
 

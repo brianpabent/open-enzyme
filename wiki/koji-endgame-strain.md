@@ -125,6 +125,8 @@ The coverage claim resolves to one table. Rows are NLRP3 chokepoints per the [v1
 
 ## 3. The Gating Feasibility Test — Ward 1995 Architecture Layering
 
+> **Formalized as hypothesis H01**: see [wiki/hypotheses/H01-ward-dual-cassette.md](./hypotheses/H01-ward-dual-cassette.md) for the Falsification Card, including the killshot menu ranked by information weight per dollar. The literature / patent landscape deep-dive (killshot 1 in that card — $0, 1 week, kill_pr 0.3 against a root assumption) is the recommended cheapest-first move before any wet-lab spend. See [linter-design.md](./linter-design.md) for the Falsification Card schema rationale.
+
 This section answers the single question that decides whether the endgame strain is engineerable in its one-strain form. If it is, Year 2–3 koji development converges on this strain. If it isn't, the platform falls back to the two-strain co-ferment path (§4.1).
 
 ### 3.1 What Ward 1995 Showed

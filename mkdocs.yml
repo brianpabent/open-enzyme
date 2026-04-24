@@ -124,6 +124,9 @@ nav:
     - AI Bio Tools: bio-ai-tools.md
     - AI Bio Tools Playbook: ai-bio-tools-playbook.md
     - ChEMBL Cross-Check: chembl-cross-check.md
+    - Linter Design (Falsification + Document Lint): linter-design.md
+    - Hypotheses Index: hypotheses/README.md
+    - H01 — Ward Dual-Cassette: hypotheses/H01-ward-dual-cassette.md
     - Open Questions Index: open-questions.md
     - Concept Graph: GRAPH.md
     - Citations: references.md
