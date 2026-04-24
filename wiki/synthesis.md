@@ -75,12 +75,6 @@ Ranked by expected insight / cost (cheapest first):
 
 ### New Connections
 
-1. **Quercetin should be reframed as a 5-LOX inhibitor with NLRP3/NF-κB side activity — not an NLRP3 inhibitor with 5-LOX side activity.** *Supported.*
-   - *Documents connected:* `nlrp3-inhibitor-screen.md` (ChEMBL v34 appendix: quercetin's most potent curated bioactivity is **5-LOX IC50 = 300 nM**, *J Med Chem* 1991; functional NLRP3 pathway IC50 ~11 μM; zero direct human NLRP3 bioactivities in ChEMBL), `nlrp3-exploit-map.md` (lists quercetin under CP1 for NF-κB inhibition and as a xanthine oxidase blocker), `supplements-stack.md` (quercetin entry frames mechanism as NF-κB + XO inhibition), `gout-deep-dive.md` (no 5-LOX discussion at all), `bhb-ketones.md` / `oridonin.md` (neither discuss LTB4 or neutrophil chemotaxis as a parallel gout pathway).
-   - *Why it matters:* Quercetin's 5-LOX activity is **36× more potent** than its cited NLRP3-pathway activity. 5-LOX produces LTB4, which is a well-established neutrophil chemoattractant in gout flares — the neutrophil infiltration phase is what turns a silent MSU deposit into a painful flare. The wiki's Chokepoint map has six nodes (NF-κB priming, NLRP3 activation, ASC, caspase-1, IL-1β/IL-18, GSDMD) but no explicit node for the LTB4/neutrophil amplification loop, which is a distinct cascade that runs in parallel. If quercetin's dominant mechanism is actually LTB4 block, the exploit map has a blind spot — and quercetin has been understating its own contribution.
-   - *Suggested action:* (a) Add an explicit "Chokepoint 2.5" or "Parallel Path: 5-LOX / LTB4 / Neutrophil Chemotaxis" section to `nlrp3-exploit-map.md`. Populate with quercetin, boswellic acid (AKBA), and zileuton (Rx 5-LOX inhibitor). (b) Revisit `supplements-stack.md` to reorder quercetin's listed mechanisms — 5-LOX should lead, not trail. (c) Check `ai-bio-tools-playbook.md` or `bio-ai-tools.md` for whether the ChEMBL plugin was used against other stack compounds — this finding suggests the cross-check is high-value enough to run systematically.
-   - **brian** -  let's add this new choke point 2.5 but let's also take a step back in light of this information and say, "Did we miss any other explot vectors?"
-
 2. **Dapansutrile's 1,000× mouse-vs-human species gap casts suspicion on every mouse-model-derived NLRP3 potency claim in the wiki.** *Supported.*
    - *Documents connected:* `nlrp3-inhibitor-screen.md` (appendix: dapansutrile 1 nM mouse J774A.1 vs. 1 μM human MDM; *Eur J Med Chem* 2020/2023, *Bioorg Med Chem Lett* 2021), `nlrp3-exploit-map.md` (many NLRP3 inhibitor claims drawn from murine studies: oridonin Nat Commun 2018, BHB rodent ketogenic-diet gout model, ursolic acid Kawasaki mouse, β-caryophyllene MSU rat, carnosine hyperuricemia rat), `bhb-ketones.md`, `oridonin.md`, `cannabinoids-terpenes.md`.
    - *Why it matters:* Dapansutrile is the most-studied compound in the NLRP3 therapeutic pipeline and the first with a Phase 2a gout readout. If a 1,000× species gap exists between its mouse cellular IC50 and human cellular IC50 in the same assay format — and the sponsor still ran clinical trials at rational doses — then the mouse data was not, on its own, predictive of the required human dose. The extrapolation required an assumption (cellular penetration, binding kinetics, metabolism) that failed by 1,000×. Every other NLRP3 compound whose wiki entry cites murine evidence (all of them) inherits some version of this risk. This doesn't invalidate the mouse evidence — mouse efficacy in MSU models is still the best preclinical predictor of gout efficacy — but it changes how dose-translation claims should be written.
@@ -134,12 +128,6 @@ Ranked by expected insight / cost (cheapest first):
 1. **ChEMBL cross-check sweep on remaining stack compounds** (4 hours, $0, highest-leverage work). If 2–5 more reframings surface, this is the single most valuable rigor pass available for the whole knowledge base.
 2. **brian** do it
 
-3. **Add "Chokepoint 2.5 / Parallel Path: 5-LOX → LTB4 → Neutrophil Chemotaxis" section to `nlrp3-exploit-map.md`** (1 hour). Corrects the chokepoint framework's blind spot and gives quercetin's 300 nM activity a proper structural home.
-4. **brian** do it
-
-5. **Reframe `open-enzyme-vision.md` platform positioning as "food-derived multi-target NLRP3 pathway modulator" rather than "direct NLRP3 inhibitor analog"** (1 hour). This aligns the public story with the actual evidence base and matches pharma's own gout-track record (CP5 canakinumab won; CP2 direct inhibitors stalled).
-6. **brian** do it
-
 ---
 
 ## New this sweep — 2026-04-23 (gout-clinical-pipeline)
@@ -147,36 +135,11 @@ Ranked by expected insight / cost (cheapest first):
 
 ### New Connections
 
-1. **Two active clinical programs now use *Candida utilis* uricase — but the wiki still treats *A. flavus* as the default.** *Supported.*
-   - *Documents connected:* `gout-clinical-pipeline.md` (SSS11 = pegylated *C. utilis* uricase Phase 1, NCT06629376; ALLN-346 = engineered *C. utilis* uricase, terminated 2022), `uricase-variant-selection.md` (treats *A. flavus* as primary, *C. utilis* as a "second candidate"), `engineered-yeast-uricase-proposal.md` (*C. utilis* listed as one of three candidate genes; specific activity higher than *A. flavus*).
-   - *Why it matters:* The strongest argument for *A. flavus* as the default has been "rasburicase precedent" — i.e., one approved IV product. But the *active* clinical pipeline (the only programs with new patient enrollment in 2025) is overwhelmingly *C. utilis*: SSS11 (Shanghai, Phase 1, recruiting) and the now-terminated ALLN-346 both chose *C. utilis* despite *A. flavus* being available. Two independent industry teams selected *C. utilis*. That's an industry-revealed-preference signal that the wiki's "*A. flavus* is the default" rule may be lagging. The ACS Synth Bio 2025 *S. boulardii* paper that Open Enzyme cites also avoided *A. flavus* — they chose *V. vulnificus* uricase. Three out of three recent industry/academic uricase programs chose something *other* than *A. flavus*.
-   - *Suggested action:* Add a new section to `uricase-variant-selection.md` titled "Industry-Revealed Preference (2024–2026)" listing all clinical-stage uricase programs and the parent enzyme each chose. If 3/3 recent programs picked non-*A. flavus* enzymes, the wiki's primary-candidate ranking warrants explicit re-justification rather than an inherited assumption from rasburicase.
-   - **brian** do it
-
-2. **ALLN-346 termination + Allena's wind-down may have made the engineered-protease-resistance mutations public-domain.** *Speculative.*
-   - *Documents connected:* `engineered-yeast-uricase-proposal.md` (notes ALLN-346 was engineered with ProteinGPS for "20-fold increased stability against pancreatic proteases — half-life 85.3 min vs 4.3 min in pancreatin"), `gout-clinical-pipeline.md` (Allena has no active programs after Sep 2022; the ALLN-346 asset appears commercially dead), `protein-engineering-strategy.md` (current OPT-1/BAL-1/SB-1 mutations are derived independently for *A. flavus*).
-   - *Why it matters:* If Allena's patents on the ALLN-346 mutations have lapsed, expired, or were never filed in jurisdictions Brian operates in, the specific *C. utilis* uricase mutations that gave 20× protease resistance could be incorporated directly into an Open Enzyme strain — saving the cost and risk of re-deriving equivalent mutations from scratch. The mutations were validated in mice and Phase 1/2a humans, which is a level of validation Open Enzyme cannot afford to reproduce. This is a one-hour patent-search question with potentially enormous downstream leverage.
-   - *Suggested action:* 1–2 hour patent landscape search. Look up all Allena Pharmaceuticals patents (USPTO assignee search) and the ALLN-346 / ProteinGPS related applications. Assess: (a) which mutations are disclosed in published applications, (b) which patents are still active vs. lapsed/abandoned, (c) what claim scope might block reuse. If the engineering is in published patents and the patents are abandoned or due to expire soon, this is a free borrow of millions of dollars of pharmaceutical R&D.
-   - **brian** do it!
-
 3. **Canakinumab's August 2023 approval + dapansutrile's stagnation = pharma's *gout* bet is now CP5 (IL-1β blockade), not CP2 (NLRP3 assembly).** *Supported.*
    - *Documents connected:* `gout-clinical-pipeline.md` (canakinumab FDA-approved Aug 2023; dapansutrile no Phase 2b/3 in gout; NLRP3 class drifted to OA/obesity/Parkinson's), `nlrp3-exploit-map.md` (six chokepoints; current stack emphasis is CP1+CP2 via oridonin/BHB/KPV), `nlrp3-inhibitor-screen.md` (production candidates ranked at CP1+CP2 with no CP5 candidates).
    - *Why it matters:* Until now the implicit Open Enzyme assumption has been that pharma is succeeding at NLRP3-assembly inhibition (CP2) — dapansutrile would launch, validating the chokepoint, and the food-derived stack (oridonin, BHB, KPV) would be a "supplement-grade analog." The actual 2026 data shows pharma is *not* succeeding at CP2 for gout (dapansutrile stalled, MCC950 dead, no other oral NLRP3 inhibitor in gout-indicated trials). Pharma's only gout win at the inflammasome cascade since 2010 is **canakinumab at CP5** — IL-1β monoclonal blockade. This is a meaningful divergence: if the food-derived stack mirrors the failing pharma chokepoint while the winning chokepoint goes uncovered, the stack may need rebalancing toward CP5-equivalent compounds.
    - *Suggested action:* (a) Audit `nlrp3-inhibitor-screen.md` for CP5 (IL-1β receptor antagonism) coverage — currently zero candidates. (b) Add a research item to `validation-experiments.md`: "Identify food-derived or fermentable IL-1Ra-equivalent compounds." Candidates to start with: lactoferrin (known IL-1β suppressor), specific resolvins (active IL-1β receptor antagonism via BLT1/ChemR23), KPV (already in stack — re-examine its CP5 contribution beyond CP1). (c) Reconsider whether oridonin should still be the "default NLRP3 covalent inhibitor" given that pharma's covalent NLRP3 inhibitor (MCC950 family) failed clinically while pharma's IL-1β blocker (canakinumab) succeeded.
    - **brian** do it
-
-4. **TNFSF14 / LIGHT is the highest fold-change gout-flare biomarker after IL-6, and is in zero Open Enzyme wiki pages.** *Supported.*
-   - *Documents connected:* `gout-clinical-pipeline.md` (Ea et al., *Ann Rheum Dis* 2024, PMID 38373842 — Olink 92-protein panel; TNFSF14 second-highest fold change in flare; ex vivo blockade reduces LPS+MSU cytokine response; SNPs in TNFSF14 affect myeloid cytokines), `nlrp3-exploit-map.md` (six chokepoints, NF-κB-centric; TNFSF14/LIGHT nowhere mentioned), `supplements-stack.md` (no compound is rationalized via TNFSF14 modulation).
-   - *Why it matters:* TNFSF14 is part of the TNF superfamily but signals through HVEM and LTβR — not the canonical NLRP3 or IL-1β axes. If it is genuinely a high-fold-change flare biomarker with functional ex vivo evidence (cytokine reduction on blockade), it's either upstream of NF-κB priming (a new CP0?) or operates in parallel through a chokepoint the wiki has not mapped. The wiki's NLRP3-centric framing may be missing a rate-limiting step that's relevant in gout flares specifically (vs. CAPS or arthritis or other NLRP3-related diseases that the chokepoint map is borrowed from).
-   - *Suggested action:* (a) 2–4 hour PubMed sweep using `mcp__plugin_pubmed_PubMed__search_articles` for "TNFSF14 NLRP3", "TNFSF14 inflammasome", "LIGHT receptor IL-1β", "TNFSF14 HVEM macrophage gout". Goal: map TNFSF14 onto or beside the existing six-chokepoint model. (b) Cross-reference each supplement-stack compound (sulforaphane, KPV, berberine, oridonin, BHB, quercetin, EGCG) against TNFSF14 modulation in published literature. Anything that downregulates TNFSF14 picks up a free justification. (c) If TNFSF14 is a genuinely independent gout chokepoint, add a new wiki page `wiki/tnfsf14-gout-target.md` and update `nlrp3-exploit-map.md` with a "Parallel Cascade: TNFSF14/LIGHT" section.
-   - **brian** do it. worth a DEEP dive.
-
-5. **The disappearance of ALLN-346 changes the project pitch fundamentally — from "open-source version of an active pharma program" to "the only gut-lumen-uricase program in the world."** *Supported.*
-   - *Documents connected:* `gout-clinical-pipeline.md` (no active gut-lumen uricase clinical program; PRX-115/SSS11/Krystexxa+MTX all systemic IV), `open-enzyme-vision.md` (positioning), `engineered-yeast-uricase-proposal.md` (collaboration ask framed around bridging from validated mechanism), `index.md` (cheapest-experiments + status).
-   - *Why it matters:* The most common implicit pushback Brian probably faced when pitching Open Enzyme to potential collaborators (Rheinallt, Lauren, Valerie) was "well, ALLN-346 is doing this in pharma — what's the marginal value of citizen science?" That objection is structurally gone. The new pitch is sharper: "ALLN-346 proved the mechanism works in mice and signaled efficacy in CKD patients. Allena ran out of runway before pivotal data. No pharma is currently funding the gut-lumen-uricase mechanism. The only way this gets tested in humans now is citizen-science self-experimentation." This is a *better* fundraising/recruitment story, not a worse one. But the proposal documents still read as if ALLN-346 is an active commercial program — they need to be reframed.
-   - *Suggested action:* Add a "Competitive Landscape (2026-04-23)" section to `open-enzyme-vision.md` (which I have not read but is the platform pitch document) that explicitly states: (a) ALLN-346 dead, (b) PRX-115 / SSS11 / Krystexxa+MTX all systemic IV, (c) gut-lumen uricase has no commercial champion, (d) this is a moat, not a gap. Update the collaborator-recruitment framing in `engineered-yeast-uricase-proposal.md` §10 to reflect that the project is now uniquely positioned, not analogously positioned.
-   - **brian**  I'm not trying to create moats. I'm trying to fix my foot. we're open source. rather than a competitive landscape, which is more like if I was pitching a startup, perhaps we could have a section which is reframed as complementary research / interesting projects
-
 
 ### Proposed Experiments (ranked by insight / cost)
 **brian** add all to the exeriments page
@@ -214,12 +177,6 @@ Ranked by expected insight / cost (cheapest first):
    - *Suggested action:* Run a targeted literature audit of each Tier-4 compound: "(compound name) + MSU + gout + animal model" across PubMed, bioRxiv, and ChEMBL-indexed papers (use `mcp__plugin_pubmed_PubMed__search_articles` + `mcp__plugin_biorxiv_bioRxiv__search_preprints` — cheap, 1 day). Promote anything with direct MSU data. This is a $0 correction pass that could surface 1–3 more re-rankings.
    - **brian** do it
 
-
-2. **CBG's colitis + NLRP3 CIA data makes it the only cannabinoid with a coherent EPI story — orthogonal to engineered koji enzymes.** *Speculative.*
-   - *Documents connected:* `cannabinoids-terpenes.md` (CBG reduces colonic IL-1β, MPO, iNOS in murine DNBS and DSS colitis; CIA rat NLRP3/caspase-1/GSDMD reduction, *Front Pharmacol* 2025), `digestive-enzymes.md` (koji enzymes replace missing lipase/protease/amylase — does not address gut inflammation driving secondary EPI symptoms).
-   - *Why it matters:* The EPI track currently pairs engineered koji (enzymatic replacement) with nothing that directly addresses gut-lining inflammation. If secondary inflammation worsens the symptom burden beyond the enzymatic deficit itself, CBG is the only cannabinoid with gut-inflammation animal model data. Beta-caryophyllene is better for systemic gout flares; CBG is better for gut-specific inflammation. Different compounds, different tracks.
-   - *Suggested action:* Consider adding a short section to `digestive-enzymes.md` on adjunct anti-inflammatories (CBG, KPV via PepT1 gut absorption, omega-3 SPMs). Not a new experiment — a synthesis note for the EPI track.
-   - **brian** do it
 
 ### Proposed Experiments (ranked by insight / cost)
 **brian** add to experiments list
@@ -336,112 +293,6 @@ But Analysis 08 (Koji optimization) makes no mention of carnosine. Analysis 06 (
 **Risk:** Carnosine biosynthesis pathway in A. oryzae is unproven; requires heterologous expression. BUT if koji already produces some amino acids naturally, the enzymatic machinery is partially in place.
 **brian** do it and be sure the appropriate docs are updated with carnosine
 
----
-
-## Connection 4: Koji's Built-In NLRP3 Inhibitor (Kojic Acid) — Already Free
-
-**The Insight:**
-Analysis 08 notes that **A. oryzae naturally produces kojic acid at 3–5 g/L** during koji fermentation. This is not an engineered addition; it's automatic.
-
-Analysis 07 notes that **kojic acid has NLRP3 activity** (not explicitly scored, but appears in mechanistic discussions of Aspergillus-derived compounds).
-
-**Yet nobody has asked: Do patients fermenting koji get NLRP3 benefit for free?**
-
-**Documents Connected:**
-- 08 (Digestive enzyme optimization): "Natural baseline: Koji already produces ergothioneine (20 mg/g) and ferulic acid [+ kojic acid implicitly during fermentation]"
-- 07 (NLRP3 screen): Kojic acid mentioned in context of Aspergillus-derived metabolites, inferred NLRP3 activity
-- 06 (Koji construct): No mention of leveraging kojic acid production
-
-**Why It Matters:**
-- If kojic acid production is inherent to koji fermentation, then **every batch of engineered koji automatically contains an NLRP3 inhibitor** without additional engineering
-- No cost. No genetic modification overhead. No food regulatory risk (kojic acid is already in traditional koji)
-- Synergy: Uricase (enzyme) + Kojic acid (small molecule) + Natural ergothioneine + Ferulic acid = multi-mechanism anti-gout koji "for free"
-
-**Suggested Action:**
-1. **Measure kojic acid, ergothioneine, and ferulic acid titer in wild-type A. oryzae RIB40 koji** (standard fermentation, 48–60 h at 30°C on rice)
-2. Confirm that engineering the uricase gene does NOT suppress natural metabolite production (unlikely, but confirm)
-3. In the final product labeling/description, note: "Natural NLRP3-suppressing metabolites: 100 mg kojic acid, 50 mg ergothioneine per serving"
-4. **Expected outcome:** Koji is revealed as a naturally multi-component therapeutic platform, not a single-enzyme product
-**brian** add to experiments and update docs with this finding
-
-
----
-
-## Connection 5: The GI Survival vs. Feasibility Rating Disconnect
-
-**The Tension:**
-- Analysis 02 (GI survival prediction) estimates **36–42% baseline survival** of A. flavus uricase reaching the small intestine with intact activity
-- Analysis 05 (Cross-validation) rates **GI survival at 4/10 feasibility** (the critical blocker rating)
-- **But are these consistent?** If 40% survival is achievable, shouldn't that pull the feasibility rating up to 5–6/10?
-
-**Documents Connected:**
-- 02: "~15–25% of ingested uricase reaches small intestine in active form" [then later] "With engineering: 40–50%"
-- 05: "GI survival (4/10) — Critical blocker. TNO in vitro GI simulator ($10K, 4 weeks) de-risks this"
-- 03 (Protein engineering): Disulfide bond engineering could improve survival 5–15 fold
-
-**Why It Matters:**
-The **4/10 rating conflates three separate variables:**
-1. Wild-type A. flavus uricase survival: ~15–25% (bad)
-2. Engineering potential: Disulfide bonds, protease-site mutations could improve 5–15×
-3. Formulation (enteric coating): Could push to 40–50% survival
-
-**The tension:** If you COMBINE engineering + formulation, you're at 40–50% survival, which is:
-- Clinically meaningful (exceeds ALLN-346 Phase 2a target of ~1–2 mg/dL serum UA reduction)
-- Feasible within 12–16 weeks of work
-- NOT a "blocker" — it's an engineering problem with known solutions
-
-**Honest Reassessment:**
-Analysis 05's 4/10 is **pessimistic for wild-type**, but **optimistic-capable with engineering**. The feasibility cascade should read:
-- WT uricase: 4/10 GI survival (BLOCKER)
-- +Disulfide engineering: 6–7/10 GI survival (MANAGEABLE)
-- +Enteric coating: 7–8/10 GI survival (GOOD)
-- **Overall Platform Feasibility (with both interventions): 6.5–7/10, NOT 4/10**
-
-**Suggested Action:**
-1. **Reframe Analysis 05 scope:** Separate "what is the survival of WT enzyme?" (4/10) from "what is the survival of engineered enzyme + formulation?" (7–8/10)
-2. **Prioritize the 3 protein variants from Analysis 03:** SB-1 (disulfide only), BAL-1 (disulfide + protease), OPT-1 (max engineering). Run GI simulation assays on all three in parallel.
-3. **De-risking timeline changes:** If you test all three variants simultaneously (vs. sequentially), the blocker resolves to "manageable" in 8–12 weeks, not 16–20 weeks.
-
-**Expected outcome:** Feasibility rating jumps from 5.8/10 (current) to 6.5–7/10 once engineering + formulation combination is fully characterized.
-**brian** do it
-
----
-
-## Connection 6: Platform Consolidation Question — Do You Really Need Both Yeast AND Koji?
-
-**The Insight:**
-The analyses treat S. cerevisiae and A. oryzae as parallel tracks. But when combined:
-- **S. cerevisiae uricase:** Intracellular accumulation, ~40–60 U/mg activity, requires codon optimization + constitutive promoter (Analysis 04)
-- **A. oryzae koji:** Secreted enzyme, ~5–10 g/L total secreted protein capacity, natural digestive enzymes as bonus (Analysis 06)
-
-**But the cost/complexity calculus suggests ONE platform should dominate.**
-
-**Documents Connected:**
-- 04: S. cerevisiae expression cassette optimized for TDH3p + CAI 0.85
-- 06: A. oryzae optimized for amyB promoter + starch induction
-- 01: Uricase variant selection agnostic to host; A. flavus gene works in both
-- 08: A. oryzae already produces lipase, protease, amylase (Lynn's EPI track)
-
-**Why It Matters:**
-**Koji consolidation hypothesis:**
-- A. oryzae is THE natural host for enzyme production (higher yields, hypersecretion, fermented food precedent)
-- S. cerevisiae makes sense only if you're optimizing for beverage (beer, kvass, wine yeast)
-- For a "food therapeutic," koji is superior on:
-  - Secretion capacity (25–30 g/L vs. 0.5–2 g/L yeast)
-  - Food precedent (koji for 1,000+ years)
-  - Multi-enzyme benefit (already produces digestive enzymes)
-  - Home fermentation feasibility (rice koji is easier than yeast culture maintenance)
-
-**The Contradiction to Resolve:**
-Is the yeast track necessary, or is it a legacy artifact of "both tracks seemed viable"? Analysis 05 rates "Home production feasibility" at 2/10 for yeast (rises to 6/10 with "community lab pivot"). Koji scores higher for home fermentation (rice cooker, standard spores available from GEM Cultures).
-
-**Suggested Action:**
-1. **Make a platform choice explicit:** Koji-first vs. Yeast-first strategy
-   - **Koji-first:** Engineer uricase + NLRP3 inhibitors (ursolic, carnosine) into single koji strain; aim for 48–60h home fermentation
-   - **Yeast-first:** Engineer S. cerevisiae for maximal uricase + optional intracellular ursolic acid; market as specialized yeast supplement or non-alcoholic beverage
-2. **Allocate resources accordingly:** Don't split engineering effort 50–50 if one platform dominates downstream
-3. **Expected outcome:** Simplified project scope, clearer go/no-go decision point, better resource allocation
-**brian**  I agree that the platform choice is Koji first. That being said I think we have some open questions around whether or not certain expressions are going to be more successful in Yeast versus Koji.  we should update our docs appropriately 
 ---
 
 ## Connection 7: The Rice Bran Interaction Nobody Tested
