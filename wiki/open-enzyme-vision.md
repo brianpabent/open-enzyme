@@ -64,6 +64,8 @@ If you think about this as software, the architecture snaps into focus:
 
 No patents. No prescriptions. No gatekeeping. Fork it, modify it, contribute back. This is **enzyme production as open source infrastructure.**
 
+One consequence worth naming: because the wiki source is public markdown at a stable URL, **it also functions as an open substrate for AI-assisted peer review.** Any collaborator can point their own AI — Claude, GPT, Codex, whatever — at this repository, run a rigor check, and contribute findings back via PR or synthesis entry. Traditional peer review is ~10 hours × 2–3 reviewers × weeks of back-and-forth. AI-assisted review on a shared substrate is ~20 minutes × unbounded reviewers × async. Disagreements between different AIs, grounded in the same inspectable evidence, become productive signals — pointing humans at the exact places where manual digging pays off, rather than hiding in private inference. Evidence-level tags, the ChEMBL cross-check, and the [Falsification Lint design](./linter-design.md) are the rigor discipline that makes this substrate trustworthy enough for that pattern to work.
+
 ### Platform Choice — Koji-First, Yeast Retained for Specific Modules
 
 Open Enzyme supports two GRAS hosts, but the platform is now **koji-first** for the therapeutic stack, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized or more likely to succeed.
