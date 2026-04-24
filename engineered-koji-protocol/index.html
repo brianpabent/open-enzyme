@@ -1273,6 +1273,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#01b-natural-metabolite-bonus-baseline-fermentation-byproducts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01b Natural Metabolite Bonus — Baseline Fermentation Byproducts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#02-the-gene" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1627,6 +1638,28 @@
     <span class="md-ellipsis">
       
         Scaling: Petri Dish to Home Fermentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretion-strategy-acid-protection-trade-off-open-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secretion Strategy: Acid Protection Trade-off (Open Question)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rice-bran-substrate-gi-survival-open-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rice Bran Substrate × GI Survival (Open Question)
       
     </span>
   </a>
@@ -3368,6 +3401,45 @@ Brian Abent</p>
 <p><strong>Why This Isn't Crazy</strong></p>
 </blockquote>
 <p>The koji industry already relies on carefully maintained <em>A. oryzae</em> strains. Japanese sake brewers have been propagating specific strains for centuries. CRISPR-edited <em>A. oryzae</em> is routine in academic and industrial labs. The transformation protocols are published, the promoters are characterized, and the gene we need is already cloned and sequenced. This isn't theoretical—every individual component has been demonstrated. The novel contribution is combining them for direct therapeutic application.</p>
+<h2 id="01b-natural-metabolite-bonus-baseline-fermentation-byproducts">01b Natural Metabolite Bonus — Baseline Fermentation Byproducts<a class="headerlink" href="#01b-natural-metabolite-bonus-baseline-fermentation-byproducts" title="Permanent link">&para;</a></h2>
+<p>Before any genetic engineering, every batch of standard <em>A. oryzae</em> koji automatically ships with a chorus of bioactive secondary metabolites. The uricase-centric framing under-represents what the platform already delivers for free. These are not engineered additions — they are native products of wild-type koji fermentation on rice.</p>
+<table>
+<thead>
+<tr>
+<th>Metabolite</th>
+<th>Native Titer (WT koji)</th>
+<th>Mechanism</th>
+<th>Evidence Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kojic acid</strong></td>
+<td>3–5 g/L during standard rice fermentation</td>
+<td>NF-κB suppression in inflammatory cell types; direct NLRP3 activity unpublished (open question)</td>
+<td>In Vitro (NF-κB); Mechanistic Extrapolation (NLRP3)</td>
+</tr>
+<tr>
+<td><strong>Ergothioneine</strong></td>
+<td>~20 mg/g dry mass</td>
+<td>Antioxidant; Nrf2 inducer; mitochondrial-targeted ROS scavenging</td>
+<td>In Vitro</td>
+</tr>
+<tr>
+<td><strong>Ferulic acid</strong></td>
+<td>Present during rice/bran fermentation (titer substrate-dependent)</td>
+<td>ROS scavenger; GI-tract anti-inflammatory adjunct</td>
+<td>In Vitro</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Implication:</strong> Engineered koji is not a single-enzyme product. Every batch automatically contains NF-κB-suppressing and antioxidant metabolites without additional engineering overhead. The uricase is the headline; kojic acid + ergothioneine + ferulic acid are the chorus. For gout in particular, this matters: kojic acid's 3–5 g/L native production exceeds the fermentation yields of most engineered NLRP3-inhibitor candidates, and its NF-κB activity (In Vitro) targets an inflammatory axis directly downstream of MSU-crystal recognition. (source: nlrp3-inhibitor-screen.md)</p>
+<p><strong>Proposed sub-experiment — Native metabolite baseline ± engineering:</strong>
+- Ferment wild-type <em>A. oryzae</em> RIB40 under standard conditions (48–60 h rice fermentation at 30°C). Quantify kojic acid, ergothioneine, and ferulic acid titers by HPLC.
+- Repeat with engineered uricase-expressing strain under identical conditions.
+- Confirm that uricase integration at the target locus does not suppress native metabolite production.
+- <strong>Cost:</strong> &lt;$500. <strong>Timeline:</strong> 2–3 weeks. <strong>Decides:</strong> whether engineering carries a secondary-metabolite penalty, or whether the bonus chorus is preserved at baseline.</p>
+<p>(source: nlrp3-inhibitor-screen.md, aspergillus-oryzae.md)</p>
 <h2 id="02-the-gene">02 The Gene<a class="headerlink" href="#02-the-gene" title="Permanent link">&para;</a></h2>
 <p>The A. flavus uricase gene: cloned in 1992, crystal structure solved, basis for rasburicase. Well-characterized and ready to deploy.</p>
 <h3 id="gene-identity-accession">Gene Identity &amp; Accession<a class="headerlink" href="#gene-identity-accession" title="Permanent link">&para;</a></h3>
@@ -3799,6 +3871,43 @@ Brian Abent</p>
 <p><strong>Lab scale (validation):</strong> Petri dishes or small glass containers with 50–100g rice. Incubate in a home fermentation chamber (e.g., cooler with a seedling heat mat and hygrometer).</p>
 <p><strong>Home scale (production):</strong> Traditional cedar koji trays (koji-buta), ~500g–2kg rice per batch. Or use half-sheet pans covered with damp cloth in a proofing box, fermentation chamber, or oven with just the light on + a pan of water. Many home koji makers use a modified cooler with a temperature controller.</p>
 <p><strong>Frequency:</strong> One batch per week gives a continuous fresh supply. Fresh koji can be used immediately, processed into shio koji (shelf-stable for months), or dried and powdered.</p>
+<h3 id="secretion-strategy-acid-protection-trade-off-open-question">Secretion Strategy: Acid Protection Trade-off (Open Question)<a class="headerlink" href="#secretion-strategy-acid-protection-trade-off-open-question" title="Permanent link">&para;</a></h3>
+<p>The default secretion design (PamyB + SPamyB → extracellular uricase) is motivated by <em>A. oryzae</em>'s well-known high secretion capacity (25–30 g/L total protein under industrial conditions). The framing is: "secreted = more bioavailable enzyme in the food matrix." But this framing under-weights a gastric-transit problem.</p>
+<p><strong>The trade-off in full:</strong></p>
+<ul>
+<li><strong>Secreted (Koji-S, default):</strong> Uricase accumulates free in the koji pore fluid / food matrix. Immediately active on contact with dietary urate, but faces gastric pH 1.5–3.5 plus pepsin during transit with <strong>zero cell-wall protection</strong>. <em>A. flavus</em> uricase is sensitive above 40°C and to low pH; survival of a free-enzyme bolus through the stomach is an open question (Mechanistic Extrapolation).</li>
+<li><strong>Intracellular (Koji-I, alternative):</strong> Remove the signal peptide; uricase accumulates inside the koji mycelium. Consumption delivers enzyme encapsulated within fungal cell mass, which should provide <strong>acid shielding analogous to the 10–15% GI-survival advantage reported for intracellular <em>S. cerevisiae</em></strong> (source: gi-survival-prediction.md). Enzyme is released upon mycelial lysis by intestinal digestion, downstream of the gastric compartment.</li>
+</ul>
+<p><strong>Resolution paths:</strong></p>
+<ul>
+<li><strong>Koji-S + formulation:</strong> Secreted uricase recovered from koji supernatant, lyophilized, then enteric-coated or encapsulated. Formulation-heavy but preserves the expression advantage of PamyB + SPamyB.</li>
+<li><strong>Koji-I (no signal peptide):</strong> Drop the SPamyB signal peptide from the expression cassette. Express uricase intracellularly in the mycelium. Sacrifices some secretion-driven expression magnitude but gains free acid protection from cell mass, matching the yeast intracellular strategy.</li>
+</ul>
+<p><strong>Proposed experiment — run both in parallel:</strong></p>
+<ul>
+<li>Construct Koji-S (PamyB + SPamyB + uaZ) and Koji-I (PamyB + uaZ, no SPamyB) in the same host background.</li>
+<li>Ferment both under identical conditions (standard rice koji, 48 h, 30°C).</li>
+<li>Simulated GI survival: resuspend equal biomass in SGF (pH 2, pepsin, 2 h, 37°C) → SIF (pH 7, trypsin, 2 h, 37°C). Measure residual uricase activity at each stage.</li>
+<li>Compare <strong>total active enzyme delivered to the simulated small intestine</strong> between strategies.</li>
+<li><strong>Decides:</strong> whether secretion's expression advantage outweighs the acid-survival penalty, or whether intracellular accumulation is the superior oral-delivery strategy.</li>
+</ul>
+<p>Evidence level: <strong>Mechanistic Extrapolation</strong> for the trade-off argument; the SGF → SIF experiment is the decider. This is an open question that directly affects the primary OPT-1 engineered uricase protocol, not a secondary consideration. (source: gi-survival-prediction.md, engineered-koji-protocol.md)</p>
+<h3 id="rice-bran-substrate-gi-survival-open-question">Rice Bran Substrate × GI Survival (Open Question)<a class="headerlink" href="#rice-bran-substrate-gi-survival-open-question" title="Permanent link">&para;</a></h3>
+<p>Analysis 08 established rice bran as the superior substrate for enzyme production: <strong>2,280 U/g lipase on rice bran vs. 1,800 U/g on plain rice</strong> (source: digestive-enzyme-optimization.md, wiki/digestive-enzymes.md). The yield argument for rice bran is settled. The downstream question is not: no analysis has yet tested whether rice bran metabolites — phytic acid, phenolics (ferulic acid, p-coumaric acid), and fiber — affect uricase stability or GI survival once the koji is consumed. The effect could be <strong>stabilizing</strong> (phenolics as co-antioxidants protecting the enzyme), <strong>destabilizing</strong> (phytic acid chelating metal cofactors of digestive proteases and shifting the gastric proteolytic environment), or <strong>neutral</strong>.</p>
+<p><strong>Open question:</strong> Does rice bran substrate composition stabilize, destabilize, or leave neutral the uricase enzyme in simulated GI fluids, relative to plain rice or rice bran + soybean?</p>
+<p><strong>Proposed experiment — substrate × survival matrix:</strong></p>
+<ul>
+<li>Ferment WT <em>A. oryzae</em> RIB40 on three substrates in parallel:</li>
+<li>(a) plain white rice</li>
+<li>(b) rice bran + soybean (optimized per Analysis 08)</li>
+<li>&copy; rice bran alone</li>
+<li>Harvest at 48 h, lyophilize, grind to uniform particle size.</li>
+<li>Primary readout: resuspend in SGF (pH 2, pepsin, 2 h, 37°C) → SIF (pH 7, trypsin, 2 h, 37°C). Measure uricase activity at the end of each stage and compare across substrates.</li>
+<li>Secondary readout: HPLC quantification of kojic acid, ergothioneine, and ferulic acid retention across substrates (cross-reference to the natural-metabolite baseline experiment in Section 01b).</li>
+<li><strong>Cost:</strong> ~$800. <strong>Timeline:</strong> 3 weeks. <strong>Risk:</strong> low (standard koji fermentation, well-established protocols).</li>
+<li><strong>Decides:</strong> whether rice bran is (i) a free optimization variable — stabilizing or neutral, in which case proceed with Analysis 08's recommendation; (ii) a cost — destabilizing, in which case a different substrate is required; or (iii) neutral, in which case proceed on enzyme-yield grounds alone.</li>
+</ul>
+<p>Evidence level: <strong>Mechanistic Extrapolation</strong> for the possibility that bran phenolics stabilize the enzyme; <strong>In Vitro</strong> for the substrate yield data feeding this question. (source: digestive-enzyme-optimization.md)</p>
 <h2 id="07-therapeutic-formats">07 Therapeutic Formats<a class="headerlink" href="#07-therapeutic-formats" title="Permanent link">&para;</a></h2>
 <p>How to consume engineered koji for maximum enzyme delivery. Not all preparations are equal.</p>
 <table>
