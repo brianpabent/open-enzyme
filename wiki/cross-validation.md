@@ -231,6 +231,22 @@ Oral *S. cerevisiae* or *S. boulardii* at high doses (>10^9 CFU/day) can transie
 
 **Verdict:** Low-to-moderate risk. Manageable with safety monitoring.
 
+**Chronic daily koji dosing is a selective-pressure experiment on gut flora.** *(Mechanistic Extrapolation; source: self-experiment-protocol.md + PULSE 2025)* The full Open Enzyme stack — engineered koji providing daily uricase + a supplement-grade NLRP3 inhibitor load (oridonin / BCP / AKBA) — is not a one-shot probiotic exposure; it is a daily, indefinite perturbation to the gut ecosystem. Three possible outcomes:
+
+- **Neutral.** The engineered koji transits without selecting for any particular commensal and the NLRP3 inhibitor load doesn't shift bacterial composition. This is the baseline expectation and is consistent with native-koji food-safety data.
+- **Negative (dysbiosis).** Chronic enzyme load or NLRP3 inhibition indirectly favors a bloom of a less-desirable genus — the classic concern with any long-duration probiotic-adjacent exposure.
+- **Positive (enrichment).** Daily luminal uric acid degradation could enrich uricolytic commensals (organisms that already metabolize uric acid and its downstream products — allantoin, urea), creating a "microbiome-assisted" uricase effect that persists longer than the engineered strain's transit time.
+
+Which of these three dominates is an **empirical question, not a settled one**, and it requires monitoring.
+
+**First-order safety signal — 16S in the self-experiment protocol.** The self-experiment protocol already specifies stool 16S rRNA sequencing at baseline and at T3 (see [self-experiment-protocol.md](./self-experiment-protocol.md)). This is the first opportunity to distinguish neutral vs. negative vs. positive at n=1. It is not sufficient for a population-level claim, but it is a credible trigger for "stop or continue" in the self-experiment, and the stool samples can be banked for deeper analysis (shotgun metagenomics, metabolomics) later.
+
+**Precedent — PULSE does not cause detectable dysbiosis in rodents.** *(Animal Model; source: [*Cell Reports Medicine* 2025, PULSE E. coli Nissle 1917 uricase](./engineered-yeast-uricase-proposal.md))* The PULSE probiotic (engineered *E. coli* Nissle 1917 expressing uricase under a HucR biosensor) reduced hyperuricemia in rodents without detectable microbiota disruption. This is supportive — it shows that uricase-expressing engineered probiotics have been tested for dysbiosis once, in a rodent model, and the signal was benign. It is **not conclusive** for long-term chronic human use, and it is a different chassis (bacterial Nissle vs. fungal koji), so the evidence is parallel, not direct.
+
+**Open question — does native *A. oryzae* persist in the human gut?** *(Open; source: literature gap)* Koji has thousand-year food-safety precedent as fermented food (miso, soy sauce, sake) but quantitative persistence/transit data in the human gut are sparse. Most of the food-safety literature treats koji as a food ingredient, not a living organism being tracked post-ingestion. It is currently unclear whether daily koji consumption produces transient (1–3 day clearance, analogous to *S. boulardii*) or partial-colonization (weeks to months, analogous to some *Bifidobacterium* strains) residence. The distinction matters for dose frequency and for interpreting the 16S signal — a transient organism and a partial colonizer produce very different microbiome trajectories.
+
+**Verdict update.** This is an **evaluated risk that requires monitoring, not a solved problem.** The 16S protocol is a real first-order signal; the PULSE rodent data is supportive but parallel; the koji persistence question is genuinely open. "Low risk" is defensible; "zero risk" is not.
+
 ---
 
 #### Horizontal Gene Transfer (HGT)

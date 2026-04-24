@@ -200,6 +200,35 @@ The *S. boulardii* group's reported activity of 365 μmol/h/OD[[11]](#ref11) sug
 **Cost:** ~$150 (uric acid meter + strips) + yeast production costs
 **Time:** 2 weeks for bench; 2 weeks for self-experiment
 **Who:** Brian (self-experiment); any lab (bench work)
+
+### Dose Scalability Cross-Check — Yeast vs. Koji as a Daily Food Product *(Mechanistic Extrapolation; source: [wiki/synthesis.md](./synthesis.md) 2026-04-23)*
+
+The "How Much Yeast Is That?" calculation above worked from enzyme activity per mL of dense culture. A simpler (and more unforgiving) check is to ask how much biomass a patient would need to consume per day to deliver a clinical-scale enzyme dose. This cross-check treats the yeast product as a daily food, not as a lab preparation.
+
+**Target dose.** The ALLN-346 Phase 2a studies titrated oral uricase into the **500–800 mg enzyme/day** range; rasburicase's IV dose of 13.5–18 mg is not comparable because the gut-lumen route is fundamentally less efficient. Assume 500 mg of active enzyme/day as a conservative daily target.
+
+**Yeast mass required.** Using the established precedent that *A. flavus* uricase accumulates to ~13% of total cellular protein in optimized *S. cerevisiae* transformants[[13]](#ref13) (Established), and that total protein is roughly 40–50% of yeast dry weight (standard yeast composition, Established):
+
+- 500 mg enzyme ÷ 13% of total protein ≈ **3.8 g total protein/day**
+- 3.8 g protein ÷ ~45% of dry weight ≈ **~8.5 g dry yeast/day** (if enzyme remains at the 13% peak and total protein is ~45% of dry mass)
+- At ~75% water content (typical wet yeast paste), that's **~30–40 g fresh yeast/day**
+
+The synthesis queue entry ran the same calculation with slightly different intermediate assumptions (using ~10% enzyme/dry weight directly) and landed at ~17 g dry yeast / ~170 g fresh yeast per day. Either way, the honest interpretation is:
+
+- **Best case (rasburicase-level expression sustained in a food-grade strain, lyophilized):** ~10 g dry yeast powder/day. Plausible as capsules or a scoop into a drink.
+- **Realistic case (expression in live-food fermentation conditions without selection pressure, wet biomass):** 30–170 g fresh yeast/day. That is well outside what anyone will consume as a food product daily, indefinitely.
+
+**Koji comparison.** Engineered koji (*A. oryzae*) is fermented on solid rice/grain substrate and is normally consumed by mass of dry substrate, not by cell count. Published koji enzyme titers for heterologous proteins fall in the **40–80 mg enzyme/g dry koji substrate** range (see [engineered-koji-protocol.md](./engineered-koji-protocol.md); Supported):
+
+- 500 mg enzyme target ÷ 40–80 mg/g ≈ **6.25–12.5 g dry koji/day**
+- At 10–15 g dry koji/day, the dose envelope is **400–1,200 mg enzyme/day** — comfortably covering the 500–800 mg range.
+
+10–15 g of dry koji as a daily food is realistic — it's in the same mass range as a Creon pancreatic enzyme dose, and orders of magnitude smaller than the yeast mass required for the same enzyme output.
+
+**Interpretation.** Yeast intracellular expression is scientifically sound — the rasburicase precedent (Established) confirms the gene-host combination works at pharmaceutical scale. The problem is *format*, not biology. At clinical enzyme doses, the yeast mass required to act as a daily food product is implausible for anything short of a highly concentrated, lyophilized, and encapsulated preparation — which starts to look more like a pharmaceutical than a fermented food. Koji, by contrast, delivers the same enzyme mass from a portion that resembles a normal food serving.
+
+**Bottom line.** Yeast intracellular expression is scientifically sound but mass-impractical as a daily food product. Koji is dose-advantaged on scaling grounds and probably the right primary platform for oral delivery. This is consistent with the koji-first framing already adopted in [open-enzyme-vision.md](./open-enzyme-vision.md) §3, and the yeast track is best understood as: (a) a rapid bench platform for construct validation, (b) a path to a concentrated powder/capsule product for the subset of patients who can't tolerate koji, or (c) the *S. boulardii* probiotic route where the dose is set by colonization, not by food mass.
+
 ## 6. Open Scientific Questions
 These are framed as questions for specific experts, but each one includes a path to an answer.
 ### For Rheinallt (Gut Microbiome / Gnotobiotic Models) *(potential collaborator)*

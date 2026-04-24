@@ -414,6 +414,51 @@ The goal is not venture funding or IPO. The goal is accessibility.
 
 ---
 
+## Open Questions — Reliability of Community Fermentation
+
+The "grown at home like sourdough starter" framing is central to the platform's accessibility thesis, but home fermentation introduces a set of reliability problems that pharma-grade production avoids by brute force (controlled bioreactors, GMP SOPs, antibiotic selection, cold chain). These problems are **tractable**, not disqualifying — but they need explicit mitigation paths, not hand-waving.
+
+### 1. Strain Stability Across Generations *(Mechanistic Extrapolation)*
+
+A food-grade strain by design carries no antibiotic resistance marker, which is correct for GRAS compliance but removes the selection pressure that keeps the engineered construct in the population. Across multiple propagation generations — users backslopping from batch to batch like a sourdough starter — cells that have lost or silenced the construct can outcompete producers (heterologous expression imposes a growth cost; non-producers grow faster). This is a well-characterized problem in industrial fermentation and is the reason commercial strains are propagated from frozen master cell banks, not serially passaged.
+
+**Mitigation:** chromosomal integration rather than plasmid-based expression (integrated copies are far more stable than 2μ plasmids without selection — see [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md) §2). Genetic redundancy (multiple integrated copies) further delays loss. For koji, integration into a well-characterized locus is standard practice.
+
+### 2. Reproducibility Across Users *(Mechanistic Extrapolation)*
+
+A hundred home fermenters in a hundred kitchens with different rice brands, different humidity, different ambient temperatures, and different incubation practices will not produce consistent enzyme titers. Even professional koji producers see batch-to-batch variation; amateur variation will be much larger. The risk isn't catastrophic failure — it's *silent underdosing*, where a batch produces 20% of the expected enzyme titer and the user never knows.
+
+**Mitigation:** a "first-batch QC protocol" that users can run at home or at a community biolab — a simple uric-acid-degradation assay on a small sample of the fermented product (uric acid absorbs at 293 nm; a $50 spectrophotometer or even a smartphone-camera-based colorimetric assay is sufficient for go/no-go). Coupled with the feedback loop in §4 below, this turns batch variation into a visible, correctable problem rather than a silent one.
+
+### 3. Contamination *(Mechanistic Extrapolation)*
+
+Home environments are not sterile. Wild-type *A. oryzae* spores are ubiquitous in any kitchen that has ever used miso or soy sauce; wild *Saccharomyces* are ubiquitous period. Co-fermentation between the engineered strain and a wild-type contaminant will, over multiple generations, drift toward the faster-growing contaminant (which is almost always the wild-type — see strain-stability point above). Single-batch contamination is not a therapy-failure event; multi-generation drift is.
+
+**Mitigation:** explicit "never backslop past generation N" guidance (N likely 3–5, to be determined empirically), with users returning to a frozen/lyophilized master stock for each new starter culture. This breaks the contamination-drift chain at the cost of requiring a kept master stock.
+
+### 4. Regulatory Status of Engineered Spore Distribution *(Open)*
+
+Distributing lyophilized spores of an engineered food-grade organism to end users may count as GM organism release under multiple regulatory frameworks (FDA for food additives; USDA for agricultural organisms; state-level GM labeling laws; EPA TSCA for "microbial commercial activities"). The GRAS status of the *host* organism does not automatically extend to an engineered derivative distributed at scale. This is distinct from (and more restrictive than) purchasing wild-type koji spore online, which is currently legal and uncontroversial.
+
+This is flagged as **Open** — not settled — and requires a legal review *before* any broad community distribution. A narrower path (distributing the *construct sequence* as open-source DNA, with the transformation step performed by each user or their community biolab) is legally cleaner but raises the barrier to entry. The trade-off is real and should not be papered over.
+
+### Proposed Strain Stability Kit
+
+To operationalize the mitigations above, a "Strain Stability Kit" is the natural artifact:
+
+- **Frozen / lyophilized spore stock** — 2+ year viability under ambient-mail shipping conditions. Users return to this stock for each new starter, limiting generation depth.
+- **Positive control** — wild-type koji spores, to verify the user's fermentation technique in parallel with the engineered strain.
+- **Negative control** — blank sterile rice substrate, to check for environmental contamination.
+- **QC protocol** — simple spectrophotometric or colorimetric uric-acid-degradation assay, runnable at batch #1, batch #5, batch #10. Titer values uploaded to a community GitHub repo alongside conditions (humidity, temperature, rice cultivar, day of first visible growth).
+
+### Community Feedback Loop
+
+A GitHub repository (per strain, under the Open Enzyme organization) for fermentation logs — user-uploaded titers, conditions, and outcomes. Over hundreds of batches, patterns emerge: which rice cultivars consistently underperform, which ambient temperatures tank titers, how titer correlates with generation number. This turns community reproducers into a distributed QA system. It also provides the evidence base for revising the "never backslop past generation N" guidance as empirical data replaces extrapolation.
+
+**None of these mitigations are fully validated as of Phase 0.** They are engineering sketches, not SOPs. The first real test will come during Phase 2 community replication, and the protocols above will be revised (probably substantially) based on what the first dozen community batches actually look like.
+
+---
+
 *This platform is a living system. As [[validation-experiments]] advance and community contributions grow, this document will evolve. The core principle remains: open source, GRAS organisms, community validation, no patents.*
 
 *Fork freely. Replicate fearlessly. Share everything.*

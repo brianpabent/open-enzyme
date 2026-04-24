@@ -88,6 +88,16 @@ The Phase 2a CKD trial — which was the pivotal study — was terminated on its
 - [engineered-yeast-uricase-proposal.md](engineered-yeast-uricase-proposal.md) — reframe the commercial context
 - `index.md` — "Key Science References" table (the ALLN-346 row is current truth, but should note terminated status)
 
+### Combination Positioning — Uricase Adjunct to Allopurinol *(Mechanistic Extrapolation; source: ALLN-346 Study 201 enrollment criteria, above)*
+
+**Mechanistic complementarity.** Allopurinol / febuxostat inhibit xanthine oxidase (upstream urate synthesis, reduces UA production by ~60%). Engineered koji / uricase degrades UA already in the gut lumen (downstream clearance, removes urate already formed). The two do not compete — they attack different points in the urate cycle. ALLN-346's Phase 2a enrolled patients already on stable allopurinol (Study 201 in gout+CKD), explicitly positioning the enzyme as adjunct to existing therapy rather than replacement.
+
+**Why this matters for Open Enzyme.** (1) Regulatory: adjunct positioning is lighter than monotherapy replacement — the enzyme is an add-on to a validated first-line, not a standalone claim. (2) Clinical: 30–40% of allopurinol-treated gout patients have imperfect UA control (above the 6 mg/dL target despite titrated allopurinol); adjunct uricase specifically addresses that residual population. (3) Self-experiment: combining engineered koji with an existing allopurinol regimen (if Brian is on one) is mechanistically additive and the safer first trial — you're adding a gut-lumen sink to an already-suppressed production rate, not removing a working drug.
+
+**Open question.** Does adjunct koji allow lower allopurinol doses while maintaining target UA? A dose-sparing design is future work; first-order evidence is that adjunct reduces UA further, not that it replaces existing therapy. For HLA-B*58:01 carriers (at risk for allopurinol hypersensitivity), a successful dose-sparing result would be clinically meaningful — but proving it requires a controlled titration study that is well beyond Phase 0 scope.
+
+See also [uricase.md](uricase.md) and [engineered-koji-protocol.md](engineered-koji-protocol.md).
+
 ---
 
 ## 3. The NLRP3 Inflammasome Gout Program: Dapansutrile Stalled, Pipeline Moved Elsewhere
