@@ -1,0 +1,108 @@
+name: ChEMBL Quarterly Refresh
+
+# Re-queries ChEMBL for every compound tracked in wiki/chembl-cross-check.md,
+# diffs against the recorded baseline, and surfaces new bioactivities or
+# discrepancies. ChEMBL updates roughly quarterly — see
+# scripts/chembl-refresh-prompt.md for the full refresh protocol.
+#
+# Secrets required:
+#   ANTHROPIC_API_KEY — Anthropic API key used by the claude CLI
+#
+# Permissions: contents: write (so the refresh commit can be pushed back to main)
+
+on:
+  schedule:
+    # 12:00 UTC on the 1st of Jan, Apr, Jul, Oct — roughly quarterly, aligned
+    # with ChEMBL's typical release cadence.
+    - cron: '0 12 1 1,4,7,10 *'
+  workflow_dispatch:
+    inputs:
+      note:
+        description: 'Optional note (e.g. "triggered by new ChEMBL v35 release")'
+        required: false
+        type: string
+
+# Never run two refreshes at once — they'd fight over git state.
+concurrency:
+  group: chembl-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run ChEMBL refresh
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Model: Sonnet 4.6 is the current default (matches wiki-sweep.yml).
+          # Opus 4.7 would give better diff-reasoning rigor but the org's API
+          # tier rate-limits Opus at 30K input TPM, which multi-compound
+          # refreshes would routinely exceed. Switch to `claude-opus-4-7[1m]`
+          # once a tier upgrade is in place.
+          ANTHROPIC_MODEL: claude-sonnet-4-6
+          REFRESH_NOTE: ${{ inputs.note }}
+          TRIGGER_EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          TIMESTAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+          # Build the combined prompt in a temp file. Avoids the failure mode
+          # where a multiline string embedded in a YAML literal block with
+          # column-0 separator lines (like '---') terminates the block early.
+          PROMPT_FILE="$(mktemp)"
+          {
+            cat scripts/chembl-refresh-prompt.md
+            echo ""
+            echo "---"
+            echo ""
+            echo "TRIGGER: Quarterly ChEMBL refresh at ${TIMESTAMP}"
+            echo "event=${TRIGGER_EVENT}"
+            if [[ -n "${REFRESH_NOTE:-}" ]]; then
+              echo "note=${REFRESH_NOTE}"
+            fi
+            echo "commit=yes"
+            echo "ci=github-actions-chembl-quarterly"
+          } > "$PROMPT_FILE"
+
+          # --dangerously-skip-permissions lets the CLI use Edit/Write/Bash
+          # without interactive approval. Required for CI.
+          claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")"
+
+      - name: Push refresh output
+        run: |
+          set -euo pipefail
+          # Pass 6 of chembl-refresh-prompt.md already ran `git commit` locally
+          # in the runner. Push any new commits back to main.
+          if git log origin/main..HEAD --oneline | grep -q .; then
+            git push
+          else
+            echo "Refresh produced no new commits to push"
+          fi
