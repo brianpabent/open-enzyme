@@ -97,8 +97,8 @@ graph TB
 
     subgraph Resolution["ACTIVE RESOLUTION (CP5b — NEW)"]
         P1["ALX/FPR2 Resolution Receptor"]
-        P2["RvD1 / RvD2"]
-        P3["MaR1 (Maresin)"]
+        P2["RvD1 / RvD2 (DHA-derived)"]
+        P3["MaR1 (Maresin, DHA-derived)"]
         P4["Neutrophil Infiltration (resolved)"]
         P5["aggNET (resolution form)"]
         P6["Lactoferrin (fermentable, partial overlap)"]
@@ -107,6 +107,13 @@ graph TB
     subgraph TNFSF14_arm["CP1a AMPLIFIER"]
         Q1["TNFSF14 / LIGHT"]
         Q2["NF-κB Priming"]
+    end
+
+    subgraph MultiCP["MULTI-CHOKEPOINT PROTEINS / COMPOUNDS"]
+        R1["Lactoferrin — CP1a + CP4/CP6b (GSDMD mitophagy) + CP5b"]
+        R2["EGCG — 20S proteasome 86 nM → CP1a + CP4 + CP5"]
+        R3["Zileuton — FDA 5-LOX inhibitor (CP6a), never tested in gout"]
+        R4["Koji Uricase — upstream crystal elimination (removes trigger)"]
     end
 
     subgraph Cannabinoids["CANNABINOIDS / TERPENES"]
@@ -240,12 +247,23 @@ graph TB
     P5 -->|"sequesters cytokines → resolution"| P4
     P6 -->|"partial resolution overlap"| P1
 
+    %% Multi-chokepoint proteins/compounds (v1.2 synthesis platform endgame)
+    R1 -->|"LPS/CD14 + NF-κB suppression"| Q2
+    R1 -->|"GSDMD direct suppression via mitophagy (Shan 2026 PMID 41524100)"| C4
+    R1 -->|"partial SPM resolution overlap"| P1
+    R2 -->|"proteasome block stabilizes IκBα → NF-κB"| Q2
+    R2 -->|"suppresses caspase-1"| C4
+    R3 -->|"FDA-approved 5-LOX inhibitor, gout-untested"| N1
+    R4 -->|"removes upstream MSU crystal trigger"| C1
+
     %% Style the v1.2 additions distinctly
     linkStyle default stroke-width:1px
     classDef cp0Style fill:#ffccee,stroke:#cc0066,stroke-width:2px
     classDef cp5bStyle fill:#cce6ff,stroke:#0066cc,stroke-width:2px
+    classDef multiCPStyle fill:#e6ffcc,stroke:#66aa00,stroke-width:2px
     class O1,O2,O3,O4,O5 cp0Style
     class P1,P2,P3,P4,P5,P6 cp5bStyle
+    class R1,R2,R3,R4 multiCPStyle
 
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2
@@ -274,6 +292,7 @@ graph TB
     style Complement fill:#ffe0ee
     style Resolution fill:#e0efff
     style TNFSF14_arm fill:#fff5cc
+    style MultiCP fill:#f0ffe0
 ```
 
 ## Key Pathway Descriptions

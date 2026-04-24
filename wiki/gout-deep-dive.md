@@ -506,18 +506,21 @@ Early in this research, we assumed oral uricase would need to cross the gut-bloo
 
 ## The NLRP3 Chokepoint Framework
 
-Section 4 of this document introduced the NLRP3 inflammasome as the driver of gout flares. Subsequent research mapped the full cascade into **six discrete chokepoints** — each a potential intervention target. The complete analysis is in the [NLRP3 Exploit Map](nlrp3-exploit-map.md), but here's the framework:
+Section 4 of this document introduced the NLRP3 inflammasome as the driver of gout flares. Subsequent research mapped the full cascade into **seven discrete chokepoints with labeled sub-branches** (v1.2 restructure, 2026-04-24) — each a potential intervention target. The complete analysis is in the [NLRP3 Exploit Map](nlrp3-exploit-map.md), but here's the framework:
 
-**Chokepoint 1:** NF-κB priming (blocked by KPV, oridonin, sulforaphane, BHB)
-**Chokepoint 2:** NLRP3 conformational activation (blocked by dapansutrile, MCC950, BHB)
+**Chokepoint 0 (NEW):** Crystal-triggered priming via complement C5a (blocked by avacopan — FDA C5aR1 antagonist; honest stack gap — no fermentable option) (source: complement-c5a-gout.md)
+**Chokepoint 1:** NF-κB priming — split into **CP1a** (NF-κB transcriptional, including TNFSF14/LIGHT amplifier; blocked by KPV, oridonin, sulforaphane, BHB, EGCG) and **CP1b** (non-transcriptional C5a→ROS priming)
+**Chokepoint 2:** NLRP3 conformational activation, P2X7/P2X2-mediated K⁺ efflux (blocked by dapansutrile, MCC950, BHB, colchicine via P2X7)
 **Chokepoint 3:** ASC speck formation (blocked by colchicine, parthenolide)
-**Chokepoint 4:** Caspase-1 activation (blocked by disulfiram, VX-765, BHB)
-**Chokepoint 5:** IL-1β release and signaling (blocked by anakinra, canakinumab, firsekibart)
-**Chokepoint 6:** Neutrophil amplification (blocked by colchicine, resolvins)
+**Chokepoint 4:** Caspase-1 activation (blocked by disulfiram *via GSDMD — now CP6b*, VX-765, BHB)
+**Chokepoint 5:** IL-1β / IL-18 output — split into **CP5a** (receptor blockade: anakinra, canakinumab *FDA-approved for gout Aug 2023*, rilonacept) and **CP5b** (active resolution via ALX/FPR2: RvD1, RvD2, MaR1 — direct MSU gout animal data, Zaninelli 2022 PMID 35716378; Jiang 2023 PMID 37996809; lactoferrin as fermentable adjunct) (source: spm-resolution-pathway.md)
+**Chokepoint 6:** Neutrophil amplification + pyroptotic exit — split into **CP6a** (5-LOX → LTB4 → neutrophil chemotaxis: quercetin 300 nM IC50, AKBA ~2.7 μM cellular, zileuton FDA-approved 5-LOX inhibitor never tested in gout, EPA substrate competition) and **CP6b** (GSDMD pore formation: disulfiram, DMF, NSA — blocks pyroptotic IL-1β release) (source: zileuton.md, nlrp3-exploit-map.md)
 
 > **Key Insight**
 >
-> **Beta-hydroxybutyrate (BHB)** — the ketone body produced during fasting or ketosis — hits three of the six chokepoints (1, 2, and 4). This may be more impactful than any single peptide. It's endogenous, well-studied, and levels can be raised through intermittent fasting, ketogenic diet, or exogenous ketone supplements. See the [NLRP3 Exploit Map](nlrp3-exploit-map.md) for the full analysis.
+> **Beta-hydroxybutyrate (BHB)** — the ketone body produced during fasting or ketosis — hits three chokepoints (CP1, CP2, CP3). Still multi-chokepoint, but the v1.2 expansion reveals that **lactoferrin** (a single, fermentable 80 kDa protein) now covers CP1a (LPS/CD14 + NF-κB suppression), CP4/CP6b (direct GSDMD suppression via mitophagy, Shan 2026 PMID 41524100), and partial CP5b (resolution). Single-protein four-chokepoint coverage via one engineerable A. oryzae target. See the [NLRP3 Exploit Map](nlrp3-exploit-map.md) and [lactoferrin.md](lactoferrin.md) for the full analysis.
+>
+> **Species-gap caveat (2026-04-23):** Rodent cellular IC50 values for NLRP3 inhibitors can diverge from human cellular IC50 by up to 3 orders of magnitude (dapansutrile: 1 nM mouse vs. 1 μM human, same assay format). Every rodent-derived NLRP3 potency claim in the chokepoint framework should be read with that translation uncertainty in mind. (source: chembl-cross-check.md)
 
 ---
 

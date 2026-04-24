@@ -54,7 +54,10 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[KPV Tripeptide](wiki/kpv-peptide.md)** — α-MSH fragment; dual NF-κB + NLRP3 inhibition; gut anti-inflammatory; strongest mechanistic case for gout
 - **[BHB / Ketones](wiki/bhb-ketones.md)** — Hits 3 of 7 NLRP3 chokepoints (CP1, CP2, CP3); endogenous via fasting/keto; may be more impactful than any single peptide
 - **[Oridonin](wiki/oridonin.md)** — Natural NLRP3 inhibitor; covalent NACHT domain Cys279 binding; traditional medicine origin
-- **[Disulfiram](wiki/disulfiram.md)** — Gasdermin D blocker (Antabuse); repurposed drug; Chokepoint 5 in NLRP3 map
+- **[Disulfiram](wiki/disulfiram.md)** — Gasdermin D blocker (Antabuse); repurposed drug; CP6b in v1.2 NLRP3 map
+- **[EGCG](wiki/egcg.md)** — Green tea catechin; 20S proteasome 86 nM (ChEMBL); unifies CP1a (IκBα) + CP4 (caspase-1) + CP5 (IL-1β) via single mechanism
+- **[Lactoferrin](wiki/lactoferrin.md)** — Single protein, four-chokepoint coverage (CP1a/CP4/CP6b/CP5b); fermentable in *A. oryzae* (Ward 1992 25 mg/L → Ward 1995 >2 g/L *A. awamori*); Year 2-3 engineering target
+- **[Zileuton](wiki/zileuton.md)** — FDA-approved 5-LOX inhibitor (asthma); perfect CP6a mechanism match; zero ClinicalTrials.gov gout entries — latent repurposing candidate
 
 ## Strategy & Practice
 
@@ -63,7 +66,9 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Complement C5a in Gout](wiki/complement-c5a-gout.md)** — CP0: MSU directly activates complement; C5a dominant NLRP3 priming signal; avacopan repurposing candidate; stack gap
 - **[TNFSF14 / LIGHT in Gout](wiki/tnfsf14-gout-target.md)** — CP1a: Second-highest gout-flare biomarker; LIGHT amplifies NF-κB; EGCG and DHA as natural moderators; CERC-002 mAb precedent
 - **[SPM Resolution Pathway](wiki/spm-resolution-pathway.md)** — CP5b: RvD1/MaR1 direct MSU gout animal model evidence; ALX/FPR2 agonism; aspirin-triggered resolvins
-- **[Self-Experiment Protocol](wiki/self-experiment-protocol.md)** — Brian's minimum-viable monitoring plan: blood panels (CBC/CMP/UA/hs-CRP/LDH/HbA1c), 16S stool, daily diary, red-flag halt criteria
+- **[Self-Experiment Protocol](wiki/self-experiment-protocol.md)** — Brian's minimum-viable monitoring plan: blood panels (CBC/CMP/UA/hs-CRP/LDH/HbA1c), 16S stool, daily diary, red-flag halt criteria; specialty biomarkers (C3/C4/CH50/C5a CP0; urinary LTE4 CP6a)
+- **[Open Questions](wiki/open-questions.md)** — Cross-wiki index of unresolved questions organized by chokepoint/mechanism — living action queue for research prioritization
+- **[Carnosine](wiki/carnosine.md)** — Dual-phenotype (hyperuricemia + NLRP3) in rats; unique in the stack for addressing both UA and inflammation in a single compound
 - **[ChEMBL Cross-Check](wiki/chembl-cross-check.md)** — Standing rigor tool: quarterly ChEMBL v34 cross-reference of stack compounds; curcumin 24.2 μM NLRP3, berberine→TDO, resveratrol→DPP-4, EGCG→proteasome 86 nM
 - **[Cannabinoids & Terpenes](wiki/cannabinoids-terpenes.md)** — CBD, CBG, CBC, THCV, beta-caryophyllene, myrcene: NLRP3 mechanisms, gout evidence, EPI applications; beta-caryophyllene has direct MSU gout animal model data
 - **[Validation Experiments](wiki/validation-experiments.md)** — All proposed experiments consolidated: in vitro, animal, and human self-experimentation phases
