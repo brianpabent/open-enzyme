@@ -12,3 +12,7 @@ scripts/wiki-watch.log
 .idea/
 .vscode/
 site/
+
+# Personal self-experiment data — PHI, stays on local disk only.
+# See wiki/self-experiment-protocol.md §7 for the convention.
+/labs/

@@ -128,9 +128,30 @@ If **any** of the following occur, halt the intervention immediately, document t
 
 ## 7. Logging and version control
 
-- **Raw data**: kept in a private, dated directory outside this public repo. Don't commit blood-panel PDFs or stool-report JSON into the wiki.
-- **Summary log**: a stripped, de-identified summary can be added to `logs/self-experiment-log.md` (append-only). Fields: date, intervention (what's being taken), observation, any protocol deviation. This log is for Brian's own pattern-recognition, not for external eyes.
-- **When a stack compound is added or removed**: note it in the log with a 1-line rationale. This is the counterpart to commit messages for the body.
+**Raw data storage convention: `labs/` directory in the repo root, gitignored.**
+
+The `labs/` directory at `/labs/` (relative to the repo root) is listed in `.gitignore` and will never be committed. Raw blood-panel PDFs, stool-report JSON, imaging files, and any other PHI-bearing artifact live there on the local disk only. The directory is created locally — it does not exist in the public repo.
+
+Suggested substructure:
+
+```
+labs/
+├── brian/
+│   ├── 2026-04-24-baseline/        # blood panel PDF, stool 16S report
+│   ├── 2026-05-22-week4/
+│   └── README.md                    # running index, personal notes
+├── lynn/                            # separate subtree; data is Lynn's
+│   └── README.md
+└── shared/                          # joint references (e.g., family history)
+```
+
+**Consent note on Lynn's data**: Lynn's labs are Lynn's data. Storing them under `labs/lynn/` presumes her explicit consent to include them in the project's working directory. Even locally-gitignored storage is a form of inclusion; ask and record agreement (a dated note in `labs/lynn/README.md` is sufficient) before adding anything.
+
+**Summary log (public, committed)**: a stripped, de-identified summary can be added to `logs/self-experiment-log.md` (append-only). Fields: date, intervention (what's being taken), observation, any protocol deviation. This log is for pattern-recognition and is safe to commit because it contains no raw PHI. Never reference specific lab values; use qualitative framing ("CRP trending up" rather than "CRP = 4.2"). If you want numeric trending, keep that inside `labs/brian/README.md` locally.
+
+**When a stack compound is added or removed**: note it in the log with a 1-line rationale. This is the counterpart to commit messages for the body.
+
+**If collaborators eventually need access to raw data**: graduate from Option 1 (local-only) to Option 2 (private parallel repo `open-enzyme-private` on GitHub, invite-only). See the labs-handling brainstorm (synthesis.md or commit history) for the trade-off analysis — a 10-minute upgrade, not a re-plan.
 
 ---
 
