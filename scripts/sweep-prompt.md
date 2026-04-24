@@ -1,4 +1,6 @@
-You are the Open Enzyme doc sweep daemon. A file was just saved. Your job is to run a two-pass sweep: propagate the change across the knowledge base, then synthesize new connections. A TRIGGER block at the end of this prompt names the changed file and whether to commit.
+You are the Open Enzyme doc sweep daemon. One or more wiki files changed (a local save or a pushed batch). Your job is to run a two-pass sweep: propagate the changes across the knowledge base, then synthesize new connections. A TRIGGER block at the end of this prompt names the changed file(s) and whether to commit.
+
+The TRIGGER block may contain **one or many** changed files. Treat all of them as a single batch: run Pass 1 per file (propagating each), but run **one** Pass 2 synthesis across the combined set so cross-file connections surface. The `ci=` field, if present, indicates the invocation environment (e.g., `ci=github-actions` when the push-triggered workflow runs).
 
 **Read `CLAUDE.md` first** for evidence-level standards, cross-referencing rules, and the Doc Sweep Rule.
 
@@ -30,9 +32,9 @@ The only files the daemon writes: `wiki/*.md`, `wiki/synthesis.md`, `wiki/GRAPH.
 
 Embed findings from the trigger file into every affected wiki page.
 
-1. **Read the trigger file.** Extract key findings, new claims, new concepts, and the evidence level behind each.
+1. **Read the trigger file(s).** Extract key findings, new claims, new concepts, and the evidence level behind each. When multiple trigger files are present, do this for each.
 
-2. **Build an impact list.** Grep across `wiki/` for the concept names, compounds, organisms, and mechanisms mentioned in the trigger file. List every affected page before editing.
+2. **Build an impact list.** Grep across `wiki/` for the concept names, compounds, organisms, and mechanisms mentioned in the trigger file(s). List every affected page before editing. If two trigger files touch overlapping concepts, propagate their combined findings together — don't double-edit.
 
 3. **Update each affected `wiki/*.md` page:**
    - Update existing claims inline when the trigger file contradicts or significantly augments them. Rewrite the sentence, don't just append a contradiction note to the paragraph.
@@ -110,7 +112,8 @@ Append to `logs/sweep-log.md` (create it with an H1 heading if it doesn't exist)
 ```markdown
 ## Sweep: <YYYY-MM-DD HH:MM>
 
-**Trigger:** <trigger filename>
+**Trigger:** <trigger filename(s) — comma-separated if multiple>
+**Diff base:** <value from the TRIGGER block's `since last sweep (<hash>)` field — the SHA of the previous sweep commit, or `HEAD~1` for first-ever run. Omit this line if the invocation was a local watcher save with no diff base.>
 **Pass 1 updates:** <comma-separated list of modified files, or "none">
 **Pass 2 synthesis:** <one-line summary of top finding, or "none — nothing new worth synthesizing">
 ```
@@ -121,11 +124,11 @@ Append to `logs/sweep-log.md` (create it with an H1 heading if it doesn't exist)
 
 Read the TRIGGER block's `commit=` directive.
 
-- **`commit=yes`** — stage every file you modified or created, plus the trigger file if it was untracked, and commit with this message format:
+- **`commit=yes`** — stage every file you modified or created, plus the trigger file(s) if any were untracked, and commit with this message format:
   ```
-  sweep: <trigger-basename> → <N> files updated
+  sweep: <trigger-basename(s)> → <N> files updated [skip ci]
   ```
-  If nothing was modified across any pass, do not create an empty commit.
+  When multiple trigger files are present, use a comma-separated list (truncate to the 3 most meaningful basenames if the list is long; add `+N more`). The `[skip ci]` marker is required — it prevents the sweep commit from re-triggering the `.github/workflows/wiki-sweep.yml` workflow (silent infinite loop otherwise). If nothing was modified across any pass, do not create an empty commit.
 
 - **`commit=no`** — leave all changes unstaged. Brian will review and commit manually.
 

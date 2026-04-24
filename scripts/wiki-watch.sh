@@ -32,6 +32,14 @@ cd "$REPO_ROOT"
 NO_COMMIT_FLAG=""
 [[ "${1:-}" == "--no-commit" ]] && NO_COMMIT_FLAG="--no-commit"
 
+# Paths excluded from triggering sweeps. synthesis.md is the sweep output
+# target (Pass 2 prepends to it) AND the human riff/action-queue doc — it's a
+# sink, not a source. If it triggered, every human annotation on the queue
+# would recurse the daemon back into itself.
+EXCLUDE_PATHS=(
+  "wiki/synthesis.md"
+)
+
 LOCK_DIR="/tmp/open-enzyme-wiki-sync.lock.d"
 
 log() {
@@ -113,6 +121,17 @@ fswatch -r -e ".*" -i "\.md$" "${WATCH_DIRS[@]}" | while IFS= read -r CHANGED_PA
   LAST_PATH="$REL_PATH"
   LAST_TIME=$NOW
 
+  # Skip explicit excludes (synthesis.md etc — see EXCLUDE_PATHS above)
+  SKIP=0
+  for excluded in "${EXCLUDE_PATHS[@]}"; do
+    if [[ "$REL_PATH" == "$excluded" ]]; then
+      log "skip: $REL_PATH (excluded from sweep triggers)"
+      SKIP=1
+      break
+    fi
+  done
+  (( SKIP )) && continue
+
   # Skip if a git operation is in progress — we don't want to sync mid-conflict
   if [[ -f "$REPO_ROOT/.git/MERGE_HEAD" ]] \
      || [[ -f "$REPO_ROOT/.git/REBASE_HEAD" ]] \
@@ -126,9 +145,17 @@ fswatch -r -e ".*" -i "\.md$" "${WATCH_DIRS[@]}" | while IFS= read -r CHANGED_PA
   # Skip if the file matches HEAD. That means the change came from git itself
   # (pull, checkout, reset, stash pop) — not a human edit. Already-in-git
   # content is assumed to have been synced by whoever committed it.
-  if git -C "$REPO_ROOT" diff --quiet HEAD -- "$REL_PATH" 2>/dev/null; then
-    log "skip: $REL_PATH (matches HEAD — git operation, not a human edit)"
-    continue
+  #
+  # Guard: `git diff --quiet HEAD -- <path>` silently returns 0 for *untracked*
+  # files (git has no record to compare against), which would falsely skip
+  # brand-new wiki pages on their first save. Explicitly check tracked status
+  # before applying the diff check — untracked files are always treated as new
+  # human creations that should fire the sweep.
+  if git -C "$REPO_ROOT" ls-files --error-unmatch -- "$REL_PATH" >/dev/null 2>&1; then
+    if git -C "$REPO_ROOT" diff --quiet HEAD -- "$REL_PATH" 2>/dev/null; then
+      log "skip: $REL_PATH (matches HEAD — git operation, not a human edit)"
+      continue
+    fi
   fi
 
   log "sync: $REL_PATH"
