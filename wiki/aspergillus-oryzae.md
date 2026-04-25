@@ -227,6 +227,8 @@ Rough estimate: 50–100 mg of uricase per liter of koji culture, or ~5–10 mg 
 
 ## Delivery Formats for Therapeutic Koji
 
+For a complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), see [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform for EPI applications. (source: koji-home-fermentation.md)
+
 ### Fresh Koji on Rice
 - Consumed immediately after 36–48 hour fermentation
 - Highest enzyme activity (fresh)
@@ -234,12 +236,12 @@ Rough estimate: 50–100 mg of uricase per liter of koji culture, or ~5–10 mg 
 - Shelf-stable for days at room temperature; refrigerate for longer storage
 
 ### Shio Koji (Salted Koji)
-- Mix fresh koji + salt (ratio ~1:10) + water
-- Ferment 7–14 days at room temperature
-- Develops complex flavor, becomes paste-like
-- Shelf-stable for months at room temperature
-- Can be consumed spoonfuls at a time or added to foods
-- Traditional Japanese preservation format
+- Mix fresh koji rice + salt (~30% by weight of koji) + water (~125% by weight of koji) (source: koji-home-fermentation.md)
+- Ferment 7–14 days at room temperature, stirring daily; blend smooth when rice grains have softened
+- Develops complex umami flavor, becomes paste-like
+- Shelf-stable 6+ months refrigerated
+- Can be consumed spoonfuls at a time or used as a marinade (5–10% by weight on protein, 30 min to 24 h)
+- Traditional Japanese preservation format; **highest-leverage application for EPI** because proteases pre-digest protein in the marinade phase before food reaches the eater (Mechanistic Extrapolation; source: koji-home-fermentation.md)
 
 ### Dried Koji Powder
 - Enzyme stability after drying is critical
@@ -250,10 +252,11 @@ Rough estimate: 50–100 mg of uricase per liter of koji culture, or ~5–10 mg 
 - Shelf-stable for months refrigerated or frozen
 
 ### Fermented Beverage (Amazake-Style)
-- Blend fresh koji with water, gently heat to 65°C to inactivate enzymes
-- Sweet rice drink, naturally sweet from starch breakdown
-- Koji with uricase provides enzyme in drinkable format
-- Consumed as beverage 1–2x daily
+- Blend fresh koji with water, hold at **55–60°C for 8–10 hours** (yogurt maker, slow cooker on warm, sous vide, or thermos) — α-amylase converts rice starch to maltose and glucose (source: koji-home-fermentation.md)
+- Heat briefly to 80°C to deactivate enzymes before refrigerating (otherwise wild yeast takes over)
+- Sweet rice drink, naturally sweet from starch breakdown; refrigerated shelf life ~10 days
+- Koji with uricase provides enzyme in drinkable format; note that 55–60°C is near uricase denaturation temperature — some uricase activity loss expected; digestive enzymes (amylase, protease) are more heat-stable (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+- Consumed as beverage 100–200 mL warm before meals as digestive aid
 - Shelf-stable if refrigerated
 
 (Source: engineered-koji-protocol.md, engineered-yeast-uricase-proposal.md)
@@ -286,6 +289,20 @@ H₂O₂ (hydrogen peroxide) is generated as a byproduct. In cells, catalase imm
 - Prevent contamination with non-GRAS molds by using pure cultures and maintaining clean fermentation conditions
 - Monitor for off-odors or discoloration (signs of contamination)
 - Discard any koji that shows green, black, or unusual coloration
+
+## Yellow vs. White vs. Black Koji for Home Use
+
+For EPI / digestive-enzyme home use, the choice of koji strain matters. (source: koji-home-fermentation.md)
+
+| Strain | Species | Strengths | Best for |
+|---|---|---|---|
+| **Yellow koji** | *Aspergillus oryzae* | Highest amylase + standard protease; sweetest amazake; most documentation | **Default choice for digestive-enzyme home use.** Sake, sweet miso, amazake, shio-koji. |
+| **White koji** | *A. luchuensis* var. *kawachii* | High citric acid (anti-contamination in warm climates); good amylase | Shochu, awamori, sour-leaning miso. Tangier shio-koji. |
+| **Black koji** | *A. luchuensis* var. *awamori* | Highest citric acid; robust in hot/humid conditions | Awamori (Okinawan distillate); rare in DIY use |
+
+**Recommendation for EPI / home-PERT-alternative use case:** Yellow koji (*A. oryzae*) is the better-fit default — highest amylase and standard protease, sweetest amazake, most documentation. White koji is functional but tangier and has slightly lower diastatic power. If white koji is on hand, use it first to learn the process, then switch to yellow when restocking. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+
+**Key limitation for fat malabsorption EPI:** Lipase activity of *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains — likely the limiting digestive-enzyme axis for fat malabsorption phenotype EPI. This is an open question requiring quantitative comparison vs. commercial PERT (Creon, Zenpep). (source: koji-home-fermentation.md)
 
 ## Multi-Organism Strategy in Open Enzyme
 

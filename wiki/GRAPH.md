@@ -49,6 +49,9 @@ graph TB
         F4["Amylase Gene"]
         F5["Fermentation Protocol"]
         F6["Dosing Strategy"]
+        F7["Shio-Koji Marinade"]
+        F8["Amazake Drink"]
+        F9["Wild-Type Baseline"]
     end
 
     subgraph Mechanism["THERAPEUTIC MECHANISM"]
@@ -181,6 +184,17 @@ graph TB
     
     E1 --> E3
     E2 --> E3
+
+    %% Wild-type baseline / home fermentation delivery formats
+    %% (source: koji-home-fermentation.md)
+    F9 -->|"wild-type koji produces"| F2
+    F9 -->|"wild-type koji produces"| F3
+    F9 -->|"wild-type koji produces"| F4
+    F9 -->|"processed into"| F7
+    F9 -->|"processed into"| F8
+    F7 -->|"pre-digests protein in marinade"| A3
+    F8 -->|"amylase-active digestive aid"| A3
+    E2 -->|"engineered strain must outperform"| F9
 
     %% Mechanism pathway
     E1 --> G1

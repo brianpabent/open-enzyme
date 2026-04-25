@@ -588,6 +588,7 @@ A fully optimized CRISPR/Cas9 system exists for *A. oryzae*:
 ### Home Fermentation Resources
 - [GEM Cultures](http://gemcultures.com/) — Commercial koji spore supplier; strain selection guidance
 - [Fermentation Culture EU](https://fermentationculture.eu/) — European koji starter cultures and documentation
+- [Koji Home Fermentation](./koji-home-fermentation.md) — Wild-type small-batch protocol (koji-kin → koji rice → shio-koji / amazake); practical baseline for EPI n=1 trials; yellow vs. white vs. black koji comparison; lipase limitation discussion (source: koji-home-fermentation.md)
 
 ### Regulatory & Safety
 - [Canada.ca: Final Screening Assessment ATCC 11866](https://www.canada.ca/en/environment-climate-change/services/evaluating-existing-substances/final-screening-assessmentaspergillus-oryzae-atcc-11866.html) — Safety profile and regulatory precedent
@@ -601,6 +602,7 @@ A fully optimized CRISPR/Cas9 system exists for *A. oryzae*:
 - [[enzyme-deficit-deep-dive.md]] — EPI epidemiology and clinical burden context
 - [[ai-bio-tools-playbook.md]] — Computational strain design and optimization frameworks
 - [[NLRP3-exploit-map.md]] — Inflammasome inhibition (synergistic to enzyme therapy for gout/EPI overlap)
+- [koji-home-fermentation.md](./koji-home-fermentation.md) — Wild-type baseline protocol; the pre-engineering anchor that the engineered strain must outperform; practical EPI trial starting point (source: koji-home-fermentation.md)
 
 ---
 

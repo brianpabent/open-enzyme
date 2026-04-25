@@ -13,6 +13,7 @@ related:
   - uricase.md
   - engineered-yeast-uricase-proposal.md
   - engineered-koji-protocol.md
+  - koji-home-fermentation.md
   - uricase-variant-selection.md
   - protein-engineering-strategy.md
   - gi-survival-prediction.md
@@ -70,6 +71,14 @@ Questions about uricase variant selection, GI survival, protease resistance, yea
 - **Refolding kinetics of acid-unfolded uricase are unknown.** The enzyme's tetramer dissociates at low pH; whether it refolds after duodenal pH normalization determines real-world efficacy beyond simple in vitro survival measurements. See [gi-survival-prediction.md §§refolding](./gi-survival-prediction.md).
 - **Does rice bran substrate improve or degrade uricase GI survival?** Rice bran contains phytic acid, phenolics, and fiber — could stabilize the tetramer (polyphenol-tetramer binding) or destabilize it (altered transit time). See [engineered-koji-protocol.md](./engineered-koji-protocol.md), [synthesis.md Connection 7](./synthesis.md).
 - **Secretion vs. intracellular expression in yeast — which gives better effective dose?** Intracellular accumulation gives cell-wall acid protection (~10-15% survival advantage) but limits total enzyme output. Secreted is efficient but acid-vulnerable. See [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md), [synthesis.md Contradiction 2](./synthesis.md).
+
+### Wild-type koji baseline and EPI applications
+
+- **What is the quantitative enzyme activity of shio-koji (units/g) vs. commercial PERT (Creon, Zenpep units per pill)?** Lab-measurable via amylase/protease assays of finished shio-koji, but not yet done. This is the key comparison that determines whether wild-type koji is a meaningful PERT-reducer or merely a condiment. See [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
+- **Is shio-koji-marinated protein a meaningful PERT-reducer in mild-to-moderate EPI?** N=1 / household trials with PERT-dose-per-meal tracking would generate informative observational data. No formal evidence exists. See [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
+- **What is the gastric survival of shio-koji-derived enzymes?** Hypothesis: poor without enteric coating; useful only for pre-digestion in marinade phase, not in-gut activity post-ingestion. Testable via simulated gastric fluid (SGF pH 2, pepsin, 2h). See [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
+- **Is lipase the limiting digestive-enzyme axis for fat malabsorption EPI when using wild-type *A. oryzae* shio-koji?** Lipase activity of *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains. Quantitative comparison needed. See [koji-home-fermentation.md](./koji-home-fermentation.md), [aspergillus-oryzae.md](./aspergillus-oryzae.md). (source: koji-home-fermentation.md)
+- **Are there any human studies of koji-fermented diets in EPI specifically?** None identified. Would be high-value evidence. See [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
 
 ### Yeast vs. koji platform choice
 

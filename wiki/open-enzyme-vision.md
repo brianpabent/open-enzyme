@@ -105,6 +105,8 @@ The Year 2-3 target is the **koji endgame strain** (see [wiki/koji-endgame-strai
 
 Wild-type *Aspergillus oryzae* (koji). No genetic engineering needed. Traditional koji grown on steamed rice already produces lipase, protease, and amylase at therapeutically relevant levels. This is the simplest possible entry point — a food that has been consumed for over a millennium, produced with equipment available in any kitchen, providing the same enzymes that patients with exocrine pancreatic insufficiency currently buy as pharmaceutical supplements.
 
+For the practical small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), see [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform, and it provides the starting point for n=1 / household EPI trials. Key limitation: lipase activity of wild-type *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains — likely the limiting axis for fat malabsorption phenotype EPI. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+
 **Evidence:** Koji enzyme profiles are extensively characterized in food science literature • Commercial enzyme supplements (Creon, Zenpep) use fungal-derived enzymes from the same family • A. oryzae holds FDA GRAS status with decades of safety data
 
 ### Expanding the Library (Future Targets)

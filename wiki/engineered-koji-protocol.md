@@ -723,6 +723,8 @@ This doesn't diminish koji—it **clarifies the lanes**. Yeast is the faster pat
 
 Here's an insight that emerged from the [enzyme deficit deep dive](enzyme-deficit-deep-dive.md): Lynn may not need engineered koji at all. The supplement industry's "fungal-derived digestive enzymes" **are** industrial *A. oryzae* fermentation—that's what BoulderBio and every similar product contains. Wild-type koji, grown at home on rice using traditional methods, already produces the lipase, protease, and amylase Lynn needs. No genetic engineering required.
 
+For the practical small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), see [Koji Home Fermentation](koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform, and it provides the starting point for n=1 / household EPI trials. Key open questions it surfaces: (1) Is shio-koji-marinated protein a meaningful PERT-reducer in mild-to-moderate EPI? (2) What is the practical enzyme-activity ceiling of wild-type koji-fermented foods vs. commercial PERT? (3) What is the palatability + adherence ceiling? (source: koji-home-fermentation.md)
+
 This repositions the project into **two clear tracks**:
 
 - **Track A (Lynn, today):** Wild-type *A. oryzae* koji as a DIY digestive enzyme source. Replace pills with fermented rice. This works *now*.

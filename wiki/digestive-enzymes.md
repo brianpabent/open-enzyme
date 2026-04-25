@@ -170,6 +170,8 @@ Primary EPI therapy is enzymatic replacement — pancrelipase (Creon, Zenpep) or
 
 Here is where the [[open-enzyme-vision|Open Enzyme]] project offers an immediate practical solution: **wild-type koji (A. oryzae) already produces the exact digestive enzymes Lynn needs.**
 
+For a complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), see [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform, and it provides the practical starting point for n=1 / household EPI trials. (source: koji-home-fermentation.md)
+
 ### Why Koji Works
 
 Traditional koji, fermented on steamed rice for 36–48 hours at 30°C, produces:
@@ -182,19 +184,25 @@ These are the same enzymes in commercial supplements — just produced at home r
 
 **(Source: open-enzyme-vision.md)** — "Wild-type *Aspergillus oryzae* (koji). No genetic engineering needed. Traditional koji grown on steamed rice already produces lipase, protease, and amylase at therapeutically relevant levels. This is the simplest possible entry point — a food that has been consumed for over a millennium, produced with equipment available in any kitchen, providing the same enzymes that patients with exocrine pancreatic insufficiency currently buy as pharmaceutical supplements."
 
+**Key limitation for fat malabsorption EPI:** Lipase activity of wild-type *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains — likely the limiting digestive-enzyme axis for fat malabsorption phenotype EPI. Quantitative comparison of shio-koji lipase activity (units/g) vs. commercial PERT (Creon, Zenpep) units per pill has not yet been done. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+
 ### Therapeutic Formats
 
 **Fresh koji:** Highest enzyme activity, but short shelf life (2–3 days refrigerated)
 
-**Shio koji** (salt koji): Rice koji blended with salt and water, fermented 7–14 days. The salt preserves the enzymes (though at lower activity than fresh) while creating a stable condiment. Can be used as a marinade or added to meals for enzyme activity.
+**Shio koji** (salt koji): Rice koji blended with salt (~30% by weight of koji) and water (~125% by weight of koji), fermented 7–14 days at room temperature, stirring daily. The salt preserves the enzymes while creating a stable condiment. Blend smooth when rice grains have softened. Shelf life 6+ months refrigerated. **Highest-leverage application for EPI** — proteases pre-digest protein in the marinade phase (5–10% by weight on protein, 30 min to 24 h), reducing pancreatic protease demand at the table. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
 
 **(Source: enzyme-deficit-deep-dive.md)** — "Shio koji (塩麹) — rice koji blended with salt and water, fermented 7–14 days at room temperature. The salt (typically 12–13% by weight) halts the mold's growth but doesn't destroy the enzymes... When you marinate chicken in shio koji, you're watching proteases tenderize the meat in real time."
 
-**Amazake** (sweet sake): Rice koji mixed with cooked rice and incubated at 55–60°C for 8–12 hours. The temperature is optimal for amylase (starch→sugar conversion) but too high for other enzymes. A naturally sweet drink with active amylase.
+**Amazake** (sweet sake): Rice koji mixed with cooked rice and water at 60°C, incubated at **55–60°C for 8–10 hours** (yogurt maker, slow cooker on warm, sous vide, or thermos). The temperature is optimal for amylase (starch→sugar conversion) but too high for other enzymes. Heat briefly to 80°C to deactivate enzymes before refrigerating. Refrigerated shelf life ~10 days. (source: koji-home-fermentation.md)
 
 **(Source: enzyme-deficit-deep-dive.md)** — "As an enzyme delivery vehicle, amazake is interesting because the amylase in it is still active if it hasn't been heat-pasteurized. Fresh amazake consumed with a starchy meal would contribute amylase activity directly."
 
 **Dried koji powder:** Koji dried at low temperature (<45°C) and ground to powder. Can be encapsulated or mixed into food. Preserves enzyme activity for months.
+
+### Gastric Survival Caveat
+
+Shio-koji-derived enzymes face the same gastric acid challenge as any oral enzyme: poor survival without enteric coating. The practical value of shio-koji for EPI is primarily in the **pre-digestion in the marinade phase** (protein arriving at the small intestine is already partially hydrolyzed), not in-gut activity post-ingestion. This is a meaningful distinction from prescription PERT (enteric-coated, designed for in-gut activity). (Mechanistic Extrapolation; source: koji-home-fermentation.md)
 
 ## Practical Recommendation: Lynn's Path Forward
 

@@ -45,7 +45,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§2.5](#25-pulse-probiotic-validation-in-hyperuricemic-mice) | PULSE probiotic validation (hyperuricemic mice) | Animal | $5,000–8,000 | 8 | Proposed | [gout-deep-dive](./gout-deep-dive.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§3.1](#31-brian-engineered-yeast-uricase--serum-uric-acid--flare-tracking) | Brian: engineered yeast uricase tracking | Human | $200–400 | 20 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md) |
 | [§3.2](#32-brian-nlrp3-inflammasome-suppression-stack--biomarker-panel) | Brian: NLRP3 suppression stack biomarker panel | Human | $700–1,400 | 20 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md) |
-| [§3.3](#33-lynn-wild-type-koji-digestive-enzyme-supplementation) | Lynn: wild-type koji digestive enzyme trial | Human | $600–1,000 | 12 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md) |
+| [§3.3](#33-lynn-wild-type-koji-digestive-enzyme-supplementation) | Lynn: wild-type koji digestive enzyme trial | Human | $600–1,000 | 12 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md), [koji-home-fermentation](./koji-home-fermentation.md) |
 | [§3.4](#34-joint-trial-engineered-koji-both-users) | Joint trial: engineered koji (both users) | Human | $300–500 | 14 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 | [§3.5](#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension) | Long-term flare prevention (Brian, 6-mo extension) | Human | $400–600 | 26 | Proposed | [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md), [gout-deep-dive](./gout-deep-dive.md) |
 | [§3.6](#36-brian-urinary-ltb4-assay--validating-quercetins-5-lox-cp6a-mechanism-in-vivo) | Brian: urinary LTB4 (quercetin CP6a in vivo) | Human | $150–300 | 12 | Proposed | [self-experiment-protocol](./self-experiment-protocol.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [synthesis](./synthesis.md) |
@@ -584,14 +584,14 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 **Status**: Proposed | **Cost**: $600–1,000 | **Weeks**: 12 | **Phase**: 3
 
-**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md)
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md), [koji-home-fermentation](./koji-home-fermentation.md)
 
 **What it tests:** Does traditional koji effectively supplement digestive enzymes in EPI/SIBO?
 
-**Proposed in:** engineered-koji-protocol.md, open-enzyme-vision.md (§4)
+**Proposed in:** engineered-koji-protocol.md, open-enzyme-vision.md (§4); practical protocol in [koji-home-fermentation.md](./koji-home-fermentation.md) (koji-kin → koji rice → shio-koji / amazake). (source: koji-home-fermentation.md)
 
 **Protocol:**
-- Lynn (EPI/SIBO patient) takes traditional koji fermented on rice daily
+- Lynn (EPI/SIBO patient) takes traditional koji fermented on rice daily; shio-koji marinade is the highest-leverage format for EPI (pre-digests protein in marinade phase before food reaches the eater; see [koji-home-fermentation.md §Stage 2A](./koji-home-fermentation.md)) (Mechanistic Extrapolation; source: koji-home-fermentation.md)
 - Baseline: 2 weeks pre-intervention (establish GI symptom baseline, stool frequency/consistency)
 - Intervention: 8 weeks daily koji consumption (10–20g dried koji powder or equivalent rice koji)
 - Biomarkers measured weekly:
