@@ -201,7 +201,19 @@ def main():
         print(f"Unexpected response: {json.dumps(resp, indent=2)[:2000]}", file=sys.stderr)
         sys.exit(1)
 
-    content = resp["choices"][0]["message"]["content"]
+    choice = resp["choices"][0]
+    content = choice.get("message", {}).get("content")
+    finish_reason = choice.get("finish_reason", "?")
+    if not content:
+        print(
+            f"OpenRouter returned empty content (finish_reason={finish_reason!r}). "
+            f"Full choice: {json.dumps(choice, indent=2)[:1500]}",
+            file=sys.stderr,
+        )
+        # Common causes: provider streamed an error, content filter, truncation
+        # before any tokens. Exit non-zero so the workflow marks Pass 2 failed
+        # and Pass 3 is correctly skipped — better than writing garbage.
+        sys.exit(1)
     usage = resp.get("usage", {})
     in_tok = usage.get("prompt_tokens", 0)
     out_tok = usage.get("completion_tokens", 0)
