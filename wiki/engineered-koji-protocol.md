@@ -396,6 +396,26 @@ The default secretion design (PamyB + SPamyB → extracellular uricase) is motiv
 
 Evidence level: **Mechanistic Extrapolation** for the trade-off argument; the SGF → SIF experiment is the decider. This is an open question that directly affects the primary OPT-1 engineered uricase protocol, not a secondary consideration. (source: gi-survival-prediction.md, engineered-koji-protocol.md)
 
+### Wild-Type OTC Benchmark and n=1 PERT-Timing Findings (April 2026)
+
+The primary commercial benchmark for the engineered platform is the wild-type *A. oryzae* OTC product class (e.g., BoulderBio at 40,000 FIP lipase per capsule), not Creon. **FIP vs. USP unit distinction:** 40,000 FIP ≈ 9,000–10,000 USP (In Vitro). The 1,813–2,280 U/g lipase yields from Analysis 08 translate to **~50,000–60,000 FIP per dried gram** — meaning 1 g engineered koji could match BoulderBio's 2-cap dose. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
+
+**n=1 PERT-timing self-experiment (ongoing 2026-04-19 → present; ~30 meals tracked):**
+- 1 cap at first bite (label-default): insufficient for any meal >15 g fat; persistent steatorrhea and cramping.
+- **2 caps at first bite**: markedly improved; 2026-04-25 breakfast produced "first decoupling of liquid-stool-from-pain in 25-year baseline." (Clinical n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md)
+- **1+1 split** (1 cap at first bite + 1 at ~10 min): successful for >25 g fat meals. Suggests enzyme exposure across a longer absorption window matters.
+- Pre-emptive enzyme during long cooking sessions: cooking-and-tasting = small-meal eating; enzyme at start of cook prevented pre-dinner symptom buildup.
+
+**Working dose framework (n=1, uncontrolled):** <5 g fat → no enzyme; 15–25 g fat → 2 caps at first bite; >25 g fat or extended eating → 1+1 split; long cook-and-taste → 1 cap at start. (source: digestive-enzyme-optimization.md)
+
+**Confound flagged:** Lying flat <90 min post-meal is a strong contributor to overnight episodes; must be controlled separately from enzyme-dose effects. (source: digestive-enzyme-optimization.md)
+
+**Formulation implication:** Split-dose performance suggests the engineered platform should consider sustained-release formulation, or explicit instructions for split dosing on high-fat meals. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
+
+**Tolerability:** No adverse reactions across 30+ meals; no allergic response despite Hashimoto's autoimmune status. Argues that downstream allergenicity testing of engineered variants on the same chassis is reasonable. (Clinical n=1; source: digestive-enzyme-optimization.md)
+
+---
+
 ### Rice Bran Substrate × GI Survival (Open Question)
 
 Analysis 08 established rice bran as the superior substrate for enzyme production: **2,280 U/g lipase on rice bran vs. 1,800 U/g on plain rice** (source: digestive-enzyme-optimization.md, wiki/digestive-enzymes.md). The yield argument for rice bran is settled. The downstream question is not: no analysis has yet tested whether rice bran metabolites — phytic acid, phenolics (ferulic acid, p-coumaric acid), and fiber — affect uricase stability or GI survival once the koji is consumed. The effect could be **stabilizing** (phenolics as co-antioxidants protecting the enzyme), **destabilizing** (phytic acid chelating metal cofactors of digestive proteases and shifting the gastric proteolytic environment), or **neutral**.

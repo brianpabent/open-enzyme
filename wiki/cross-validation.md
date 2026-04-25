@@ -231,6 +231,8 @@ Oral *S. cerevisiae* or *S. boulardii* at high doses (>10^9 CFU/day) can transie
 
 **Verdict:** Low-to-moderate risk. Manageable with safety monitoring.
 
+**n=1 PERT-timing tolerability datum (April 2026):** Wild-type *A. oryzae*-derived enzymes (BoulderBio, 40,000 FIP lipase per capsule) were well-tolerated across 30+ meals in a single subject with Hashimoto's autoimmune status — no adverse reactions, no allergic response. This is a supportive (not conclusive) safety signal for the *A. oryzae* chassis. The 2-cap protocol produced "first decoupling of liquid-stool-from-pain in 25-year baseline" on 2026-04-25. **Evidence level: Clinical n=1, single subject, unblinded, uncontrolled.** (source: digestive-enzyme-optimization.md)
+
 **Chronic daily koji dosing is a selective-pressure experiment on gut flora.** *(Mechanistic Extrapolation; source: self-experiment-protocol.md + PULSE 2025)* The full Open Enzyme stack — engineered koji providing daily uricase + a supplement-grade NLRP3 inhibitor load (oridonin / BCP / AKBA) — is not a one-shot probiotic exposure; it is a daily, indefinite perturbation to the gut ecosystem. Three possible outcomes:
 
 - **Neutral.** The engineered koji transits without selecting for any particular commensal and the NLRP3 inhibitor load doesn't shift bacterial composition. This is the baseline expectation and is consistent with native-koji food-safety data.

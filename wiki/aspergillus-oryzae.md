@@ -387,6 +387,17 @@ A single fermented food attacking gout from both the uric acid and inflammatory 
 - Lipase activity: 1,813–2,280 U/g koji (rice bran substrate optimal)
 - Dosing equivalence: 10–15 g optimized koji ≈ single Creon dose (25,000 USP lipase units)
 
+**Wild-Type OTC Benchmark and Unit Conversion (updated April 2026):**
+- The primary commercial benchmark for the engineered platform is the wild-type *A. oryzae* OTC product class (e.g., BoulderBio at 40,000 FIP lipase per capsule), not Creon. This is the closest commercial analogue to what an engineered koji product would look like in finished form. (source: digestive-enzyme-optimization.md)
+- **FIP vs. USP unit distinction:** 40,000 FIP ≈ 9,000–10,000 USP at standard activity assays (In Vitro). A 40,000 FIP cap delivers roughly 1/3 of a 25,000 USP Creon meal-dose. (source: digestive-enzyme-optimization.md)
+- **pH stability advantage:** *A. oryzae* lipase is active across pH 4–10, broader than porcine pancreatic lipase; survives gastric transit better without enteric coating. (In Vitro; source: digestive-enzyme-optimization.md)
+- **Engineered koji lipase yield in FIP terms:** 1,813–2,280 U/g koji translates to **~50,000–60,000 FIP per dried gram** at typical assay conditions — meaning 1 g engineered koji could match BoulderBio's 2-cap dose. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
+
+**n=1 Tolerability Datum (April 2026):**
+- Wild-type *A. oryzae*-derived enzymes (BoulderBio) were well-tolerated across 30+ meals in a single subject with Hashimoto's autoimmune status — no adverse reactions, no allergic response. (Clinical n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md)
+- "First decoupling of liquid-stool-from-pain in 25-year baseline" observed on 2-cap protocol at 2026-04-25 breakfast (~15–20 g fat). This is a meaningful efficacy signal for the platform's mechanism of action even before any engineering. (Clinical n=1; source: digestive-enzyme-optimization.md)
+- **Split-dose finding:** 1+1 split (1 cap at first bite + 1 at ~10 min) was successful for very fatty meals (>25 g fat), suggesting dose magnitude AND duration matter. The engineered platform should consider sustained-release formulation or split-dose instructions. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
+
 **Codon Optimization for A. oryzae:**
 - Native GC content: 48% (A. flavus ~48%; near-perfect match)
 - A. flavus uricase requires minimal codon optimization (unlike S. cerevisiae)

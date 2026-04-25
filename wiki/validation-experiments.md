@@ -582,13 +582,24 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 ### 3.3 Lynn: Wild-Type Koji Digestive Enzyme Supplementation
 
-**Status**: Proposed | **Cost**: $600–1,000 | **Weeks**: 12 | **Phase**: 3
+**Status**: In Progress (PERT-timing phase active 2026-04-19 → present) | **Cost**: $600–1,000 | **Weeks**: 12 | **Phase**: 3
 
-**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md), [koji-home-fermentation](./koji-home-fermentation.md)
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md), [koji-home-fermentation](./koji-home-fermentation.md), [digestive-enzyme-optimization](./digestive-enzyme-optimization.md)
 
 **What it tests:** Does traditional koji effectively supplement digestive enzymes in EPI/SIBO?
 
 **Proposed in:** engineered-koji-protocol.md, open-enzyme-vision.md (§4); practical protocol in [koji-home-fermentation.md](./koji-home-fermentation.md) (koji-kin → koji rice → shio-koji / amazake). (source: koji-home-fermentation.md)
+
+**Interim findings — PERT-timing sub-experiment (2026-04-19 → present, ~30 meals tracked):**
+A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FIP lipase per capsule) dose and timing has been running in parallel. **Evidence level: Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only.** (source: digestive-enzyme-optimization.md)
+- 1 cap at first bite (label-default): insufficient for any meal >15 g fat.
+- **2 caps at first bite**: markedly improved; 2026-04-25 breakfast produced "first decoupling of liquid-stool-from-pain in 25-year baseline" — a meaningful efficacy signal for the platform's mechanism of action even before any engineering.
+- **1+1 split** (1 cap at first bite + 1 at ~10 min): successful for >25 g fat meals.
+- Pre-emptive enzyme during long cooking sessions: cooking-and-tasting = small-meal eating; enzyme at start of cook prevented pre-dinner symptom buildup.
+- **Working dose framework (n=1):** <5 g fat → no enzyme; 15–25 g fat → 2 caps at first bite; >25 g fat or extended eating → 1+1 split; long cook-and-taste → 1 cap at start.
+- **Confound flagged:** Lying flat <90 min post-meal is a strong contributor to overnight episodes; must be controlled separately from enzyme-dose effects.
+- **Tolerability:** No adverse reactions across 30+ meals; no allergic response despite Hashimoto's autoimmune status.
+- **Implication for protocol:** The formal koji trial should use 2-cap-equivalent dosing (not label-default 1 cap) as the comparator, and should track fat content per meal as a covariate. Split-dose arm should be included for high-fat meals.
 
 **Protocol:**
 - Lynn (EPI/SIBO patient) takes traditional koji fermented on rice daily; shio-koji marinade is the highest-leverage format for EPI (pre-digests protein in marinade phase before food reaches the eater; see [koji-home-fermentation.md §Stage 2A](./koji-home-fermentation.md)) (Mechanistic Extrapolation; source: koji-home-fermentation.md)

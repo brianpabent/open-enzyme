@@ -169,3 +169,24 @@ The public Open Enzyme repo's `.gitignore` should exclude whatever directory you
 ## 9. Review and update
 
 Review this document and your active experiment designs: (a) before starting a new intervention arm, (b) after any halt, (c) annually, (d) whenever your understanding of the relevant biology changes. Changes go through git, not inline edits.
+
+---
+
+## 10. Example: PERT-Timing Sub-Experiment (EPI Track, April 2026)
+
+An example of this protocol applied to the EPI track. A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FIP lipase per capsule) dose and timing was run across ~30 meals (2026-04-19 → present). Key design elements:
+
+- **Hypothesis:** Label-default 1-cap dosing is insufficient for meals >15 g fat; 2-cap or split-dose protocol will improve symptom outcomes.
+- **Intervention variants:** A (1 cap at first bite), B (2 caps at first bite), C (1+1 split), D (pre-emptive during cooking).
+- **Metrics:** Post-meal stool consistency (Bristol Scale), pain (0–10 Likert), floaters/steatorrhea (binary), fat content per meal (estimated g).
+- **Single-variable rule:** Enzyme dose/timing varied; diet, other supplements held constant within each variant window.
+- **Confound flagged:** Lying flat <90 min post-meal identified as a strong contributor to overnight episodes — must be controlled separately from enzyme-dose effects.
+
+**Interim findings (n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md):**
+- Variant B (2 caps at first bite) produced "first decoupling of liquid-stool-from-pain in 25-year baseline" on 2026-04-25 breakfast (~15–20 g fat).
+- Variant C (1+1 split) successful for >25 g fat meals.
+- No adverse reactions across 30+ meals; no allergic response despite Hashimoto's autoimmune status.
+
+**Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only. Generates hypotheses for formal testing; does not establish efficacy. Paired stool-fat (steatocrit) measurement before and after a controlled trial would be the next-rigor step.
+
+Full daily log in the household private repo (`abent-family-health/lynn/experiments/2026-04-25_pert-timing.md`). Only de-identified pattern findings are reproduced here, per the PHI policy in §7 above.

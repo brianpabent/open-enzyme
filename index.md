@@ -16,6 +16,7 @@ Open source library of engineered, food-grade microbial strains producing therap
 
 | # | Experiment | Cost | Weeks | Decides |
 |---|---|---|---|---|
+| 0 | **PERT-timing self-experiment (IN PROGRESS)** — BoulderBio dose/timing n=1 | ~$0 | ongoing | Dose framework for engineered platform; split-dose vs. sustained-release formulation |
 | 1 | Rice bran vs plain rice substrate → uricase GI survival | $800 | 3 | Free substrate optimization, no engineering |
 | 2 | Quercetin + ursolic acid + carnosine combo on MSU-stimulated macrophages | $1,500 | 4 | Whether to engineer one NLRP3 inhibitor or three |
 | 3 | WT / SB-1 / OPT-1 engineered uricase variants in koji → GI simulation | $2,000 | 8 | Platform choice (koji vs yeast) |
@@ -117,7 +118,7 @@ Detailed technical analyses for the uricase and koji engineering tracks.
 
 **Koji / *A. oryzae* track:**
 - **[Koji Construct Design](wiki/koji-construct-design.md)** — *A. oryzae* uricase via amyB promoter (starch-inducible, 6–10× baseline). Expected 40–80 mg/g koji.
-- **[Digestive Enzyme Optimization](wiki/digestive-enzyme-optimization.md)** — RIB40 strain; lipase 1,813–2,280 U/g koji; rice bran optimal substrate; CRISPR tglA target. 10–15 g koji ≈ Creon equivalence.
+- **[Digestive Enzyme Optimization](wiki/digestive-enzyme-optimization.md)** — RIB40 strain; lipase 1,813–2,280 U/g koji (~50,000–60,000 FIP/g); rice bran optimal substrate; CRISPR tglA target. 10–15 g koji ≈ Creon equivalence. **New (Apr 2026):** Wild-type OTC benchmark = BoulderBio 40,000 FIP/cap (≈9–10k USP); n=1 PERT-timing self-experiment active — 2-cap protocol produced first decoupling of liquid-stool-from-pain in 25-year baseline; split-dose (1+1) successful for >25 g fat meals. (Clinical n=1, uncontrolled; source: digestive-enzyme-optimization.md)
 - **[Koji Home Fermentation](wiki/koji-home-fermentation.md)** — Wild-type small-batch protocol (koji-kin → koji rice → shio-koji / amazake). Pre-engineering baseline that the engineered strain must outperform; n=1 / household trial bed for the EPI co-target.
 - **[NLRP3 Inhibitor Screen](wiki/nlrp3-inhibitor-screen.md)** — Top candidates: ursolic acid (8.59 g/L yeast), quercetin (930 mg/L), carnosine. Kojic acid native production (3–5 g/L) flagged as free bonus.
 

@@ -54,6 +54,8 @@ graph TB
         F9["Wild-Type Baseline"]
         F10["Koji-Kin spore inoculum"]
         F11["Koji Rice colonized substrate"]
+        F12["OTC PERT Benchmark (BoulderBio 40k FIP)"]
+        F13["PERT Dose-Timing Framework (n=1)"]
     end
 
     subgraph Mechanism["THERAPEUTIC MECHANISM"]
@@ -200,6 +202,11 @@ graph TB
     %% Koji-kin two-stage process (source: koji-home-fermentation.md)
     F10 -->|"inoculates steamed rice to produce"| F11
     F11 -->|"is the working enzyme substrate"| F9
+    %% OTC PERT benchmark and dose-timing framework (source: digestive-enzyme-optimization.md)
+    F12 -->|"40k FIP = ~9-10k USP (In Vitro)"| F2
+    F12 -->|"n=1 dose-timing informs"| F13
+    F13 -->|"2-cap or split-dose required for"| A3
+    E2 -->|"1g engineered koji targets"| F12
 
     %% Mechanism pathway
     E1 --> G1
