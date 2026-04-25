@@ -8,7 +8,6 @@ __pycache__/
 .env.*
 node_modules/
 *.log
-scripts/wiki-watch.log
 .idea/
 .vscode/
 site/
