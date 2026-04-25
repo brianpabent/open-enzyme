@@ -362,6 +362,47 @@ A. oryzae produces multiple protease classes with distinct pH optima:
 
 **Conclusion:** **Home fermentation of optimized koji is feasible for EPI patient dosing**, though serving sizes are larger than Creon capsules. Compliance and palatability (food form vs. medication) are key practical considerations.
 
+### 5.4 Wild-type commercial PERT benchmark and n=1 dosing findings
+
+**The platform's primary commercial benchmark is not Creon — it's the existing wild-type *A. oryzae* OTC product class** (e.g., BoulderBio digestive enzymes at 40,000 FIP lipase per capsule, *A. oryzae*-derived). This is the product an EPI patient typically buys before progressing to prescription Creon, and it is the closest commercial analogue to what an engineered koji product would look like in finished form.
+
+**Why the wild-type OTC benchmark matters:**
+
+1. **Same organism, same enzyme class.** *A. oryzae* lipase is what BoulderBio sells and what the engineered platform produces. The engineered version has to outperform a $30 OTC bottle to justify itself.
+2. **Different unit (FIP, not USP).** FIP units (Fédération Internationale Pharmaceutique) are the standard for plant/microbial-derived lipase; USP units (used for porcine-derived Creon) are not directly interchangeable. **40,000 FIP ≈ 9,000–10,000 USP** at standard activity assays *(In Vitro)*. So a 40,000 FIP cap delivers roughly 1/3 of a 25,000 USP Creon meal-dose.
+3. **Activity profile differs.** Microbial *A. oryzae* lipase has broader pH stability (active 4–10) than porcine pancreatic lipase, which is why it survives gastric transit better without enteric coating. The engineered version inherits this advantage.
+
+**n=1 PERT-timing findings (household self-experiment, ongoing 2026-04-19 → present):**
+
+The project's EPI persona (Lynn — see [open-enzyme-vision.md](./open-enzyme-vision.md)) is running a structured self-experiment on BoulderBio dose and timing. Early findings (3 weeks of daily logs, ~30 meals tracked):
+
+| Variant | Protocol | Outcome |
+|---|---|---|
+| A | 1 cap at first bite (label-default) | Persistent post-meal sticky stools, occasional steatorrhea, post-fat-meal cramping. **Insufficient for any meal >15 g fat.** |
+| B | **2 caps at first bite** | Markedly improved comfort. Saturday 2026-04-25 breakfast (~15–20 g fat) produced loose-stool-with-floaters but **no pain — first decoupling of liquid-stool-from-pain in 25-year baseline.** |
+| C | **1+1 split** (1 at first bite + 1 at ~10 min) | Successful for very fatty meals (>25 g fat). Hypothesis: enzyme exposure across longer absorption window. |
+| D | Pre-emptive enzyme during long cooking sessions (taste-while-cooking) | Cooking-and-tasting effectively = small-meal eating. Enzyme at start of significant cook prevented pre-dinner symptom buildup. |
+
+**Working dose framework:**
+
+- **<5 g fat (snacks, cappuccino, boiled eggs)**: no enzyme needed
+- **15–25 g fat (typical meal)**: 2 caps at first bite
+- **>25 g fat or extended eating window**: 1+1 split
+- **Long cook-and-taste sessions**: 1 cap at start of cooking
+
+**Confound flagged:** lying flat <90 min post-meal is a strong contributor to overnight episodes; needs to be controlled separately from enzyme-dose effects.
+
+**Implications for the engineered platform:**
+
+1. **The 40,000 FIP benchmark is not enough at 1 cap/meal** for the project's EPI persona. Engineered *A. oryzae* needs to deliver substantially more lipase per dose, OR the dosing convention for OTC products needs to update from "1 cap/meal" to "2 caps/meal" at this strength. The 1,813–2,280 U/g lipase yields cited in §5.2 above translate to **~50,000–60,000 FIP per dried gram** at typical assay conditions — meaning a 1 g engineered koji dose could theoretically match BoulderBio's 2-cap dose.
+2. **Split-dose performance suggests dose magnitude AND duration matter.** The engineered platform should consider sustained-release formulation, or instructions for split dosing on high-fat meals.
+3. **The "first decoupling of liquid-stool-from-pain in 25 years" datum on 2-cap protocol is a meaningful efficacy signal** for the platform's mechanism of action even before any engineering. Wild-type *A. oryzae* enzyme + adequate dose + correct timing can move a 25-year-stable symptom for at least one patient.
+4. **A. oryzae-derived enzymes are well-tolerated.** No adverse reactions reported in this n=1 across 30+ meals; no allergic response despite Hashimoto's autoimmune status. This argues that downstream allergenicity testing of engineered variants on the same chassis is reasonable.
+
+**Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. **Suggestive only.** Generates hypotheses for formal testing; does not establish efficacy. Paired stool-fat (steatocrit) measurement before and after a controlled trial would be the next-rigor step.
+
+(See `abent-family-health/lynn/experiments/2026-04-25_pert-timing.md` in the household private repo for the full daily log; only the de-identified pattern findings are reproduced here.)
+
 ---
 
 ## 6. GENETIC ENGINEERING: LIPASE UPREGULATION VIA CRISPR/Cas9
