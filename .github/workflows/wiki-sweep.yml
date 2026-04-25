@@ -23,8 +23,14 @@ name: Wiki Sweep (Hybrid)
 # retrigger the whole pipeline.
 #
 # Secrets required:
-#   ANTHROPIC_API_KEY  — Claude API for Pass 1 and Pass 3
-#   OPENROUTER_API_KEY — OpenRouter for Pass 2 (V4-Pro)
+#   ANTHROPIC_API_KEY  — Claude API for Pass 3 (small input — no rate-limit risk)
+#   OPENROUTER_API_KEY — OpenRouter for Pass 1 (Sonnet) and Pass 2 (V4-Pro)
+#
+# Why Pass 1 routes through OpenRouter rather than Anthropic-direct:
+# Pass 1 reads/edits multiple wiki files, which blows past the 30K
+# input-tokens-per-minute cap on the Anthropic-direct API tier. OpenRouter
+# is its own rate-limit pool and has handled 1.85M cumulative input
+# tokens in our eval runs without throttling.
 
 on:
   push:
@@ -73,13 +79,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install Claude CLI
-        run: npm install -g @anthropic-ai/claude-code
-
       - name: Compute trigger files
         id: trigger
         run: |
@@ -119,34 +118,23 @@ jobs:
           echo "Trigger files:"
           echo "$CHANGED" | sed 's/^/  /'
 
-      - name: Run Claude propagation
+      - name: Run Pass 1 propagation (Sonnet via OpenRouter)
         if: steps.trigger.outputs.has_changes == 'true'
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_MODEL:   claude-sonnet-4-6
-          TRIGGER_FILES:     ${{ steps.trigger.outputs.changed }}
-          DIFF_BASE:         ${{ steps.trigger.outputs.diff_base }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          TRIGGER_FILES:      ${{ steps.trigger.outputs.changed }}
+          DIFF_BASE:          ${{ steps.trigger.outputs.diff_base }}
         run: |
           set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          TIMESTAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          TRIGGER_LIST=$(echo "$TRIGGER_FILES" | awk 'NF {printf "  - %s\n", $0}')
-
-          PROMPT_FILE="$(mktemp)"
-          {
-            cat scripts/sweep-prompt-1-propagate.md
-            echo ""
-            echo "---"
-            echo ""
-            echo "TRIGGER: Files changed since last sweep (${DIFF_BASE}) at ${TIMESTAMP}:"
-            echo "${TRIGGER_LIST}"
-            echo "commit=yes"
-            echo "ci=github-actions-sweep-1-propagate"
-          } > "$PROMPT_FILE"
-
-          claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")"
+          python3 scripts/sweep-1-propagate.py \
+            --commit-sha "${{ github.sha }}" \
+            --trigger-files "$TRIGGER_FILES" \
+            --diff-base "$DIFF_BASE" \
+            --model anthropic/claude-sonnet-4-6 \
+            --max-iterations 40
 
       - name: Push propagation
         if: steps.trigger.outputs.has_changes == 'true'
