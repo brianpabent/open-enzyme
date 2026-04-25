@@ -8,6 +8,48 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
 
 # Synthesis Pass 2: New Connections Across April 2026 Analyses
 
+## V4 peer-review pass — 2026-04-25
+**Reviewer:** DeepSeek V4-Pro via OpenRouter ($0.21, 467,964 input + 4,005 output tokens)
+**Substrate:** Claude Opus 4.7 sweep at commit `4a40f74` (2026-04-24)
+**Full log:** [`logs/v4-peer-review-2026-04-25.md`](../logs/v4-peer-review-2026-04-25.md)
+**Harness:** [`scripts/v4-peer-review.py`](../scripts/v4-peer-review.py)
+
+First concrete instance of the multi-agent peer-review pattern named in `open-enzyme-vision.md` §3. V4-Pro produced an independent Pass 2 synthesis on the same corpus Claude swept yesterday, plus a differential analysis. V4 confirmed 4 of Claude's 7 connections, partially-confirmed 2, legitimately pushed back on 2 (citH3/cfDNA biomarkers as impractical for n=1; lactoferrin+EGCG super-additivity as premature before feasibility). Items below are the V4-surfaced findings Claude missed — actionable additions to the queue.
+
+### V4-only new connections (not in 2026-04-24 sweep)
+
+1. **Androgen-urate axis as a *therapeutic ceiling*, not just a stratification variable.** *Supported.*
+   - *Documents Connected:* `androgen-urate-axis.md`, `gut-lumen-sink.md`, `cross-validation.md`, `engineered-koji-protocol.md`.
+   - *Why It Matters:* Androgens suppress ABCG2 — the transporter the engineered uricase leverages for the gut-lumen sink. Male patients on TRT or with high endogenous T have a fundamentally **capped maximum effect** from uricase, regardless of dose. This is meaningfully different from the "dose-sizing consideration" framing in the 2026-04-24 sweep. It's a structural constraint on platform feasibility for the primary demographic.
+   - *Suggested Action:* (a) Add experiment to `validation-experiments.md`: in vitro ABCG2-transport assay with uricase under androgen-treated vs. untreated conditions. (b) Re-evaluate the gut-lumen sink ceiling in `cross-validation.md` to account for sex-specific transporter biology. (c) Flag in `koji-endgame-strain.md` coverage matrix as a structural ceiling, not just a dose variable.
+
+2. **Fructose Challenge Test as an acute uricase efficacy readout for the self-experiment.** *Supported.*
+   - *Documents Connected:* `fructose-connection.md` (KHK pathway, ATP depletion), `self-experiment-protocol.md` (timepoints + biomarkers).
+   - *Why It Matters:* The unregulated KHK pathway means a 50g fructose bolus generates a predictable, measurable serum UA spike within 60–120 minutes. Provides a cheap (~$50 in fingerstick UA strips), high-signal n-of-1 challenge to validate engineered uricase activity in real-time — without waiting weeks for baseline UA drift to manifest. Before-and-after koji therapy: standardized fructose load, serial UA at 0/30/60/90/120 min. A blunted post-fructose UA spike directly validates uricase action in the gut. Acute mechanistic readout vs. the chronic baseline-UA tracking already planned.
+   - *Suggested Action:* Add "Fructose Challenge Test" protocol to `self-experiment-protocol.md` as a secondary endpoint. Pair with the chronic timepoints already in §2.
+
+3. **Carnosine as specific counter-agent to androgen-driven URAT1 upregulation.** *Supported.*
+   - *Documents Connected:* `carnosine.md`, `androgen-urate-axis.md`, `engineered-koji-protocol.md §15` (carnosine co-expression module).
+   - *Why It Matters:* Carnosine's URAT1/GLUT9 modulation directly counteracts the androgen-driven transporter dysfunction Connection 1 identifies. This isn't generic "carnosine is multi-target" framing — it's **specifically tailored to the male gout demographic** that's the platform's target population. Co-expressing uricase and carnosine in koji becomes a single product that attacks hyperuricemia from two angles (degradation + restored excretion) plus inflammasome suppression — and the second angle directly addresses the androgen ceiling.
+   - *Suggested Action:* Elevate the carnosine co-expression validation experiment in `engineered-koji-protocol.md §15` to Phase 1 priority alongside H01 (Ward dual-cassette feasibility). The carnosine module specifically addresses the structural constraint surfaced in Connection 1.
+
+### V4 contradictions worth resolving
+
+- **Yeast biomass dosing math** — `engineered-yeast-uricase-proposal.md §5` reads as 10g dry yeast/day plausible; `cross-validation.md` rates this 2/10 with 170g fresh yeast as the practical blocker. Same scenario, different conclusions. Resolve: yeast §5 wording overstates biomass feasibility for a food product; the koji track's 10–15g dry koji/day is the actual practical answer.
+- **SPM vs. NLRP3-suppression framing in `open-enzyme-vision.md` §9** — vision conflates "active resolution" (CP5b SPMs) with the general "suppression" stack (CP1–CP4). `spm-resolution-pathway.md` distinguishes them correctly. Vision should follow.
+- **ALLN-346 status across pages** — `gut-lumen-sink.md` cites ALLN-346 as live precedent; `gout-clinical-pipeline.md` correctly documents termination + mixed Phase 2a signals. Reader inconsistency. Unify: *mechanism* is scientifically validated; *clinical translation* is unfinished.
+
+### V4 also caught (worth noting but not new tasks)
+
+- **Open CP3 gap in koji-endgame-strain coverage matrix.** Endgame strain covers CP1, CP4, CP6b plus upstream UA. ASC speck (CP3) has no fermentable coverage; permanent pharmaceutical adjunct (colchicine) or supplement (spermidine) requirement. Should be acknowledged in `koji-endgame-strain.md` to avoid over-selling standalone capability.
+- **Epistemic homogenization warning** (V4 Connection 7 in the full log). V4 explicitly warned against replacing multi-model peer review with a single cheap V4 pipeline: *"if a single model becomes the sole source of synthesis, the project's knowledge graph could converge on that model's blind spots and biases."* Worth citing as the rationale for keeping multi-model reviews even if V4 becomes routine.
+
+### Pattern observation
+
+Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimated ($0.91), because OpenRouter pricing on `deepseek/deepseek-v4-pro` is below DeepSeek's direct API. Treat as the new cost basis: ~$0.20/peer-review-pass means this can run on every meaningful sweep cycle without budget concern. Multi-model peer review is operationally cheap. The next architectural step (not done in this commit): wire V4 peer-review into a sibling CI workflow that runs alongside `wiki-sweep.yml` and posts findings as a PR comment or `synthesis-v4.md` peer-review file. Hybrid (Claude Pass 1 + V4 Pass 2) remains an option once we have more empirical evidence on quality.
+
+---
+
 ## New this sweep — 2026-04-24 (local session, 25-file v1.2 batch)
 **Trigger:** `wiki/nlrp3-exploit-map.md` (v1.2 restructure) + 24 co-triggered files — `complement-c5a-gout.md` (new + deep dive), `spm-resolution-pathway.md` (new + deep dive), `lactoferrin.md` (new deep dive), `egcg.md` (new), `zileuton.md` (new), `carnosine.md` (new), `self-experiment-protocol.md` (new), `open-questions.md` (new), plus propagation in `aspergillus-oryzae.md`, `bhb-ketones.md`, `cannabinoids-terpenes.md`, `cross-validation.md`, `digestive-enzymes.md`, `disulfiram.md`, `engineered-koji-protocol.md`, `engineered-yeast-uricase-proposal.md`, `gout-clinical-pipeline.md`, `nlrp3-inhibitor-screen.md`, `open-enzyme-vision.md`, `open-source-platform.md`, `oridonin.md`, `supplements-stack.md`, `uricase-variant-selection.md`, `validation-experiments.md`.
 
