@@ -1,25 +1,32 @@
 #!/usr/bin/env python3
 """
-v4-synthesize.py — Pass 2 of the hybrid sweep architecture.
+synthesize.py — Pass 2 of the hybrid sweep architecture.
 
-Reads the full wiki corpus, calls a synthesis-capable model via OpenRouter,
-saves output to logs/v4-synthesis-<date>-<sha>.md. Designed to be invoked by
-.github/workflows/wiki-sweep.yml after Pass 1 (Claude propagation) completes.
+Reads the full wiki corpus, calls a synthesis-capable model via OpenRouter
+(default: DeepSeek V4-Pro), saves output to logs/v4-synthesis-<date>-<sha>.md.
+Designed to be invoked by .github/workflows/wiki-sweep.yml after Pass 1
+(Claude propagation) completes.
 
-Differs from scripts/v4-peer-review.py: that script does *peer review* against
+The "v4-synthesis-" log filename prefix is a fixed convention regardless of
+the model used; the actual model is recorded in the log file's YAML frontmatter
+under `reviewer_model:`. This means future logs are still discoverable by the
+established naming pattern even when the default model changes.
+
+Differs from scripts/peer-review.py: that script does *peer review* against
 an existing Claude synthesis. This script does *fresh synthesis* with no
-comparison baseline — Pass 3 (Claude review) is what produces the differential.
+comparison baseline — Pass 3 (Claude review via scripts/synthesis-merge.py) is
+what produces the differential.
 
 Reads OPENROUTER_API_KEY from env first, falls back to .env (for local runs).
 Reads scripts/sweep-prompt-2-synthesize.md for the model brief.
 
 Usage in CI:
-    python3 scripts/v4-synthesize.py \\
+    python3 scripts/synthesize.py \\
         --commit-sha <full-sha> \\
         --trigger-files "wiki/file1.md,wiki/file2.md"
 
 Usage locally:
-    OPENROUTER_API_KEY=... python3 scripts/v4-synthesize.py --commit-sha HEAD
+    OPENROUTER_API_KEY=... python3 scripts/synthesize.py --commit-sha HEAD
 
 The output filename is logs/v4-synthesis-<YYYY-MM-DD>-<sha7>.md and is printed
 to stdout on success — the GitHub Actions step parses that to know which file

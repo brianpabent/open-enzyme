@@ -34,6 +34,8 @@ Cross-document connections that emerge only when you read multiple files togethe
 
 ## Output format
 
+**Critical**: end every numbered item (each Connection, Contradiction, Experiment, Open Question, Priority Action) with a `{{PEER-REVIEW}}` marker on its own line. Pass 3 (Claude review) substitutes each marker with a review blockquote via deterministic merge — your content is preserved verbatim.
+
 ```markdown
 # Synthesis — <YYYY-MM-DD>
 **Substrate:** Open Enzyme wiki at commit `<sha>`
@@ -43,31 +45,49 @@ Cross-document connections that emerge only when you read multiple files togethe
 
 ## New Connections
 
-(numbered. Each item has these sub-fields:)
-
 1. **<one-sentence claim>.** *Supported* OR *Speculative*.
-   - *Documents Connected:* `file-a.md`, `file-b.md`, `file-c.md` (with section refs where useful)
+   - *Documents Connected:* `file-a.md`, `file-b.md`, `file-c.md`
    - *Why It Matters:* (3-6 sentences explaining the leverage)
-   - *Suggested Action:* (concrete next step — experiment / wiki edit / sub-agent dispatch)
+   - *Suggested Action:* (concrete next step)
 
-2. ...
+   {{PEER-REVIEW}}
+
+2. **<claim>.** ...
+   - ...
+
+   {{PEER-REVIEW}}
 
 ## Contradictions Found
 
-(if any. With proposed resolution if obvious; flagged for human if ambiguous.)
+1. **<contradiction>.** Locations: ... Analysis: ...
+
+   {{PEER-REVIEW}}
 
 ## Proposed Experiments (ranked by insight per cost)
 
-(Each: protocol sketch, cost estimate, time estimate, decides-what.)
+1. **<experiment>.** Cost: $X. Time: Yw. Decides: ...
+
+   {{PEER-REVIEW}}
 
 ## Open Questions
 
-(Numbered. Things nobody is asking that someone should.)
+1. **<question>?** (context)
 
-## Priority Actions (top 3-5)
+   {{PEER-REVIEW}}
 
-(Concrete things to do next. Each tied to a Connection / Contradiction / Experiment above.)
+## Priority Actions
+
+1. **<action>** (1-2 lines on what + why)
+
+   {{PEER-REVIEW}}
 ```
+
+### Marker discipline
+
+- One `{{PEER-REVIEW}}` per numbered item. Not at section headers, not at sub-bullets.
+- Place on its own line, separated from the item content above by a blank line.
+- The marker text is exactly `{{PEER-REVIEW}}` (case-sensitive, double curly braces, no spaces inside).
+- If you produce a "no new synthesis" no-op output (drift guard), you do not need any markers — the no-op block has nothing to review.
 
 ---
 

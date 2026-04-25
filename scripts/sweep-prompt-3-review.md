@@ -1,150 +1,117 @@
-You are running **Pass 3** of the Open Enzyme sweep — peer review. The synthesizer model (V4-Pro by default, but the architecture is model-agnostic) just produced a synthesis at `logs/v4-synthesis-<date>-<sha>.md`. Your job: read it, critique it inline, and prepend the annotated version to `wiki/synthesis.md`.
+You are running **Pass 3** of the Open Enzyme sweep — peer review. The synthesizer model (V4-Pro by default, but the architecture is model-agnostic) just produced a synthesis at `logs/v4-synthesis-<date>-<sha>.md` with `{{PEER-REVIEW}}` markers placed at the end of each numbered item.
+
+**Your role: produce review blockquotes only.** A Python merge script (`scripts/synthesis-merge.py`) does the actual substitution into `wiki/synthesis.md` — that step is deterministic and you don't touch DeepSeek V4-Pro's content. This narrow role exists because preserving DeepSeek V4-Pro's exact wording matters for the multi-agent peer-review pattern, and templating-with-substitution is more robust than asking you to merge two documents in one call.
 
 **Read `CLAUDE.md` first** for evidence-level standards and voice.
-
-**Pass 3 only.** Review V4's synthesis output. Do NOT modify any other wiki page. Do NOT add net-new findings that V4 didn't surface (if you spot one, flag it in a `> **Claude review — Defer:**` block under the most relevant V4 item). Do NOT log to `logs/sweep-log.md`.
 
 ---
 
 ## Inputs
 
-- The TRIGGER block names the V4 synthesis log file: `logs/v4-synthesis-<date>-<sha>.md`. Read it.
-- You may also read any `wiki/*.md` page V4 cited, to verify claims against primary sources.
-- You may read prior `wiki/synthesis.md` entries (top of file) to ensure your review doesn't restate what's already known.
+- The TRIGGER block names the DeepSeek V4-Pro synthesis log file and a marker count (`marker_count: N`).
+- You may read any `wiki/*.md` page DeepSeek V4-Pro cited, to verify claims against primary sources.
+- You may read prior `wiki/synthesis.md` entries (top of file) for context.
 
 ---
 
 ## Output
 
-Prepend a single section to `wiki/synthesis.md`, immediately after the YAML frontmatter and the `# Synthesis Pass 2: ...` H1 title. **Do NOT modify or delete any existing content** in synthesis.md — strictly prepend.
+Output **exactly N review blockquotes**, in the order DeepSeek V4-Pro's items appear in the log. Separate each blockquote with a literal `<<<NEXT>>>` line (on its own line, no extra characters).
 
-The section is V4's synthesis content with **Claude review blockquotes inline per item**. Each numbered Connection, each Contradiction, each Experiment, each Open Question, each Priority Action gets a blockquote review block underneath it.
+**Do NOT** produce any other text — no preamble, no closing notes, no merged document, no commentary. The merge script counts blockquotes by counting `<<<NEXT>>>` separators and bails if the count doesn't match marker_count.
 
-### Output format
+### Format of each blockquote
 
-```markdown
-## Sweep — <YYYY-MM-DD> (V4 synthesis + Claude review)
-
-**Synthesis log:** [logs/v4-synthesis-<date>-<sha>.md](../logs/v4-synthesis-<date>-<sha>.md)
-**Substrate:** Open Enzyme wiki at commit `<sha>`
-**Trigger files:** <comma-separated>
-**Synthesizer:** <model from log frontmatter>
-**Reviewer:** Claude Sonnet/Opus 4.x
-
----
-
-### New Connections
-
-1. **<V4's claim>.** *<V4's Supported/Speculative tag>.*
-   - *Documents Connected:* <V4 content, verbatim>
-   - *Why It Matters:* <V4 content, verbatim>
-   - *Suggested Action:* <V4 content, verbatim>
-
-   > **Claude review — <verdict>.** <reasoning, 2-5 sentences, with citations or push-back>
-
-2. ...
-
-### Contradictions Found
-
-(V4 content + review blockquote per item)
-
-### Proposed Experiments (ranked by insight per cost)
-
-(V4 content + review blockquote per item)
-
-### Open Questions
-
-(V4 content + review blockquote per item)
-
-### Priority Actions
-
-(V4 content + review blockquote per item)
+```
+> **Claude review — <verdict>.** <reasoning, 1-5 sentences, with citations or push-back>
 ```
 
-If V4's synthesis was a "no new synthesis" no-op, prepend a short notice instead:
+Each blockquote opens with `> **Claude review — <verdict>.**` (literal, with the bold markdown). Then your reasoning. Use markdown bullets within the blockquote if the review is multi-point; just prefix lines with `> -` or wrap them.
 
-```markdown
-## Sweep — <YYYY-MM-DD> (no new synthesis)
+### Verdict vocabulary
 
-**Synthesis log:** [logs/v4-synthesis-<date>-<sha>.md](../logs/v4-synthesis-<date>-<sha>.md)
-**Status:** Synthesizer produced no new connections worth promoting. <one-sentence rationale from V4>. No review needed.
-```
+Each blockquote opens with one of these verdicts in bold:
 
----
-
-## Verdict vocabulary
-
-Each Claude review blockquote opens with one of these verdicts in bold:
-
-- **Confirmed.** V4's claim survives scrutiny. May add stronger evidence or sharpen the framing.
-- **Confirmed, prioritize.** Agree, AND this should be elevated (e.g., Open Question → Priority Action).
+- **Confirmed.** Survives scrutiny. May add stronger evidence or sharpen the framing.
+- **Confirmed, prioritize.** Agree, AND should be elevated (e.g., Open Question → Priority Action).
 - **Partial.** Agree on X, push back on Y. Specify both.
 - **Push back.** Disagree on a substantive point. Cite contradicting evidence.
 - **Rejected.** Claim doesn't survive scrutiny. Cite why.
 - **Augment.** Agree + here's a useful addition or sharpening.
-- **Defer.** Interesting but can't evaluate without specific reference Claude doesn't have access to. Or: V4 didn't surface this and it's worth a future sweep — flag here for the queue.
+- **Defer.** Interesting but can't evaluate without specific reference, or worth a future sweep.
 
-Each verdict implies an action (or non-action):
+### Tone
 
-- `Confirmed, prioritize` signals to the human reader the item should rank higher in the queue
-- `Push back` signals it should drop or be re-examined before action
-- `Rejected` signals removal from the action queue
-- `Defer` signals "human follow-up needed" — Brian should look at this manually
+PhD audience. Specific. Cite primary sources where you push back.
+
+A weak review:
+```
+> **Claude review — Confirmed.** Looks good.
+<<<NEXT>>>
+```
+
+A strong review:
+```
+> **Claude review — Confirmed.** Mechanism well-established (Habuchi 2003 PMID 14613816, Takiue 2011 PMID 21262960 — primate renal physiology). The claim that this caps maximum effect of luminal uricase follows from the gut-lumen-sink ABCG2 dependence in `wiki/gut-lumen-sink.md`. One refinement: DeepSeek V4-Pro says "regardless of dose" — strictly the dose-response curve flattens (sigmoid ceiling) rather than absolute cap. Conclusion holds practically.
+<<<NEXT>>>
+```
+
+A strong push-back:
+```
+> **Claude review — Push back.** DeepSeek V4-Pro cites `lactoferrin.md` for the CP1b iron→ROS mechanism, but `wiki/lactoferrin.md` §3.2 explicitly flags that as Mechanistic Extrapolation, not Supported. The wiki's CP1b is specifically C5a→ROS (per `wiki/nlrp3-exploit-map.md` line 102), not iron→ROS. DeepSeek V4-Pro conflated two different ROS-priming mechanisms.
+<<<NEXT>>>
+```
 
 ---
 
 ## Strict scope
 
-**Critique only. Do NOT:**
+**Output ONLY the review blockquotes separated by `<<<NEXT>>>`. Do NOT:**
 
-- Add net-new Connections / Contradictions / Experiments / Open Questions that V4 didn't surface (those come from the next sweep cycle, where Claude does Pass 1 and V4 does Pass 2 again)
-- Edit V4's content or rephrase V4's claims (V4's words are immutable in the merged output — your role is annotation)
-- Modify earlier `wiki/synthesis.md` entries
-- Write to any wiki page other than `synthesis.md`
-- Modify `index.md`, `wiki/GRAPH.md`, `mkdocs.yml`
+- Produce any text outside the blockquotes (no preamble, no closing remarks, no headers)
+- Reproduce DeepSeek V4-Pro's content
+- Edit DeepSeek V4-Pro's content
+- Modify any file directly (the merge script writes to `wiki/synthesis.md`)
+- Add net-new findings (use a `Defer` blockquote on the closest existing item if needed)
 
 **You MAY:**
 
-- Read `wiki/*.md` files V4 cited, to verify
-- Read `logs/sweep-log.md` and prior synthesis entries for context
-- Read `wiki/chembl-cross-check.md` to verify any IC50/bioactivity claim V4 made
-- Read `wiki/hypotheses/*.md` if V4 referenced a committed hypothesis
+- Read `wiki/*.md` files DeepSeek V4-Pro cited, to verify
+- Read prior synthesis entries for context
+- Read `wiki/chembl-cross-check.md` to verify any IC50/bioactivity claim
+- Read `wiki/hypotheses/*.md` if DeepSeek V4-Pro referenced a committed hypothesis
 
 ---
 
-## Tone
+## Marker count discipline
 
-PhD audience. Specific. Cite primary sources where you push back. State your reasoning, don't just label.
+The TRIGGER block tells you `marker_count: N`. Output exactly **N** blockquotes separated by **N-1** `<<<NEXT>>>` lines (one between each pair).
 
-A weak review:
-> **Claude review — Confirmed.** Looks good.
+Mathematical: 5 blockquotes have 4 `<<<NEXT>>>` separators between them.
 
-A strong review:
-> **Claude review — Confirmed.** Mechanism well-established (Habuchi 2003 PMID 14613816, Takiue 2011 PMID 21262960 — both primate renal physiology). The claim that this caps maximum effect of luminal uricase follows from the gut-lumen-sink ABCG2 dependence in `wiki/gut-lumen-sink.md`. One refinement: V4 says "regardless of dose" — strictly, you can compensate at very high enzyme doses, but the dose-response curve flattens (sigmoid ceiling). Practically, the conclusion holds.
-
-A strong push-back:
-> **Claude review — Push back.** V4 cites `lactoferrin.md` for the CP1b iron→ROS mechanism, but `wiki/lactoferrin.md` §3.2 explicitly flags that as Mechanistic Extrapolation, not Supported. The wiki's CP1b is specifically C5a→ROS (per `wiki/nlrp3-exploit-map.md` line 102), not iron→ROS. V4 conflated two different ROS-priming mechanisms. The connection is plausible but mis-labeled.
-
----
-
-## Commit
-
-When the prepend is complete, commit `wiki/synthesis.md` with this message format:
+If DeepSeek V4-Pro's log has zero markers (drift-guard no-op output), output a single line:
 
 ```
-sweep-3-review: Claude review of <model> synthesis → wiki/synthesis.md [skip-wiki-sweep]
+NO_MARKERS
 ```
 
-The `[skip-wiki-sweep]` marker is required. **Do NOT use `[skip ci]`** — that blocks deploy-docs.
-
-If V4 produced a no-op (no new synthesis), still prepend the short notice and commit. The audit trail matters even when the substantive content is null.
+The merge script reads `NO_MARKERS` and skips substitution, prepending a "no new synthesis" notice to `wiki/synthesis.md` instead.
 
 ---
 
-## Global constraints
+## Process
 
-- **Never write to:** any wiki page other than `synthesis.md`. No exceptions.
-- **Evidence-level tags** on every claim you assert in your reviews.
-- **No marketing language.** PhD audience.
-- **Cite primary sources** for push-back verdicts. Don't push back on vibes.
-- **Strict-scope discipline.** If you find yourself wanting to add a new Connection that V4 missed, write it as a `Defer` note inside the closest existing item — don't add a top-level new entry.
+1. Read the DeepSeek V4-Pro synthesis log (path in TRIGGER block).
+2. Count `{{PEER-REVIEW}}` markers — verify it matches `marker_count` from the TRIGGER. If mismatch, output `MARKER_COUNT_MISMATCH` and exit (the merge script handles the failure).
+3. For each marker (in order), read the DeepSeek V4-Pro item above it and verify-or-critique. Spot-check claims by reading cited wiki pages where useful.
+4. Generate review blockquotes, separated by `<<<NEXT>>>`.
+5. Output them. That's it. The merge script handles the rest.
+
+---
+
+## What you do NOT do
+
+- Do not commit anything. The merge script commits `wiki/synthesis.md` after substitution.
+- Do not write any file. Output goes to stdout for the merge script to capture.
+- Do not produce a merged document. The merge script does that mechanically.
+- Do not preserve DeepSeek V4-Pro's content in your output. DeepSeek V4-Pro's content is in the log file; the merge script keeps it. Your job is to add the missing review pieces, not the whole document.

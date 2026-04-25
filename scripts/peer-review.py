@@ -1,32 +1,35 @@
 #!/usr/bin/env python3
 """
-v4-peer-review.py — ad-hoc peer-review pass on the Open Enzyme wiki.
+peer-review.py — ad-hoc peer-review pass on the Open Enzyme wiki.
 
-Local CLI tool (NOT the CI synthesis path — that's scripts/v4-synthesize.py).
+Local CLI tool (NOT the CI synthesis path — that's scripts/synthesize.py).
 Use this when you want a one-off second-opinion pass against an existing
-Claude synthesis: the model reads the full wiki INCLUDING synthesis.md (so
-it sees what Claude wrote), produces its own synthesis, and adds a
-differential-analysis section.
+Claude synthesis: the model (default: DeepSeek V4-Pro) reads the full wiki
+INCLUDING synthesis.md (so it sees what Claude wrote), produces its own
+synthesis, and adds a differential-analysis section.
 
-The CI sweep workflow uses scripts/v4-synthesize.py + Pass 3 Claude review
-for the production pattern. This script is for human-triggered peer-review
+The CI sweep workflow uses scripts/synthesize.py + Pass 3 Claude review for
+the production pattern. This script is for human-triggered peer-review
 investigations between sweeps, or for benchmarking new long-context models
 against the same corpus.
 
 Reads OPENROUTER_API_KEY from env first, falls back to .env. Saves output
-to logs/v4-peer-review-<date>.md. Reports token usage and cost.
+to logs/v4-peer-review-<date>.md (file naming convention is fixed regardless
+of the model used; the actual model is recorded in the log's frontmatter).
+Reports token usage and cost.
 
 Run from the repo root:
-    python3 scripts/v4-peer-review.py
-    python3 scripts/v4-peer-review.py --model anthropic/claude-3.5-sonnet
-    python3 scripts/v4-peer-review.py --model google/gemini-2.5-pro
+    python3 scripts/peer-review.py
+    python3 scripts/peer-review.py --model anthropic/claude-3.5-sonnet
+    python3 scripts/peer-review.py --model google/gemini-2.5-pro
 
 # TODO(model-flexibility): when new long-context models land — Gemini Deep
 # Research, Claude Opus with 1M, GPT-5 Pro, Llama 4 long-context, etc. —
-# benchmark each against V4-Pro on the same corpus + prompt. The architecture
-# is intentionally model-agnostic; only the OpenRouter slug changes. A useful
-# follow-up: a scripts/benchmark-models.py that runs the same prompt against
-# multiple models and compares outputs side-by-side. Out of scope for v0.
+# benchmark each against DeepSeek V4-Pro on the same corpus + prompt. The
+# architecture is intentionally model-agnostic; only the OpenRouter slug
+# changes. A useful follow-up: a scripts/benchmark-models.py that runs the
+# same prompt against multiple models and compares outputs side-by-side.
+# Out of scope for v0.
 """
 
 import os

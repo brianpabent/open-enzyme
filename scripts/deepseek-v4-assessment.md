@@ -1,21 +1,21 @@
 ---
-title: "DeepSeek V4 Assessment: What It Means for Open Enzyme"
+title: "DeepSeek V4-Pro Assessment: What It Means for Open Enzyme"
 date: 2026-04-25
 tags: ["AI", "infrastructure", "doc-sweep", "protein-engineering", "cost-analysis", "DeepSeek"]
 related: ["ai-bio-tools-playbook.md", "synthesis.md", "protein-engineering-strategy.md"]
-sources: ["DeepSeek V4 technical paper (HuggingFace)", "DeepSeek API docs", "VentureBeat V4 review", "WCCFTech V4 long-context analysis", "NxCode benchmark comparison"]
+sources: ["DeepSeek V4-Pro technical paper (HuggingFace)", "DeepSeek API docs", "VentureBeat DeepSeek V4-Pro review", "WCCFTech DeepSeek V4-Pro long-context analysis", "NxCode benchmark comparison"]
 status: draft
 ---
 
-# DeepSeek V4 Assessment: What It Means for Open Enzyme
+# DeepSeek V4-Pro Assessment: What It Means for Open Enzyme
 
 **April 25, 2026**
 
-> **2026-04-25 update — validated**: A test peer-review pass was run via OpenRouter. Actual cost was **$0.21** for a 467,964-input + 4,005-output token full-corpus pass (60 wiki files minus three peripherals to fit under OpenRouter's 512K-token cap on V4-Pro). That's roughly **4× cheaper than this document estimated** — the assessment quoted DeepSeek's direct API pricing, but OpenRouter prices V4-Pro at $0.435/$0.87 per Mtok input/output (vs $1.74/$3.48 below). See `scripts/v4-peer-review.py` for the test harness and `logs/v4-peer-review-2026-04-25.md` for output. The 1M context advertised by the model itself is capped at 512K on the OpenRouter endpoint — a platform-side policy, not a model limitation. Hybrid CI architecture (Claude for Pass 1 propagation, V4 for Pass 2 synthesis) is feasible at the validated cost but not yet implemented.
+> **2026-04-25 update — validated**: A test peer-review pass was run via OpenRouter. Actual cost was **$0.21** for a 467,964-input + 4,005-output token full-corpus pass (60 wiki files minus three peripherals to fit under OpenRouter's 512K-token cap on V4-Pro). That's roughly **4× cheaper than this document estimated** — the assessment quoted DeepSeek's direct API pricing, but OpenRouter prices V4-Pro at $0.435/$0.87 per Mtok input/output (vs $1.74/$3.48 below). See `scripts/peer-review.py` for the test harness and `logs/v4-peer-review-2026-04-25.md` for output. The 1M context advertised by the model itself is capped at 512K on the OpenRouter endpoint — a platform-side policy, not a model limitation. Hybrid CI architecture (Claude for Pass 1 propagation, DeepSeek V4-Pro for Pass 2 synthesis) is feasible at the validated cost but not yet implemented.
 
 > **Location note**: this file lives in `scripts/` rather than `wiki/` because it documents AI-tooling decisions (which LLM to invoke for which workflow), not biology research. The principle: `wiki/` is the substrate AI agents read for biology peer review; documents about *which AI* shouldn't pollute that substrate.
 
-DeepSeek V4 dropped April 24. Two models: V4-Pro (1.6T params, 49B activated) and V4-Flash (284B params, 13B activated). Both have 1M token context windows, open weights under MIT license, and pricing that undercuts Claude and GPT by 6-7x. This document evaluates what V4 actually changes for this project, with a specific focus on the automated doc sweep workflow.
+DeepSeek V4-Pro dropped April 24. Two models: V4-Pro (1.6T params, 49B activated) and V4-Flash (284B params, 13B activated). Both have 1M token context windows, open weights under MIT license, and pricing that undercuts Claude and GPT by 6-7x. This document evaluates what DeepSeek V4-Pro actually changes for this project, with a specific focus on the automated doc sweep workflow.
 
 ---
 
@@ -35,11 +35,11 @@ Token estimates use the ~4 chars/token ratio typical of English technical prose.
 
 ### What fits in context
 
-**V4's 1M context window can hold the entire Open Enzyme wiki (~490K tokens) with room to spare for the reference library, the sweep prompt, and a substantial output.** That is roughly 2x the current corpus size, leaving headroom for the project to grow.
+**DeepSeek V4-Pro's 1M context window can hold the entire Open Enzyme wiki (~490K tokens) with room to spare for the reference library, the sweep prompt, and a substantial output.** That is roughly 2x the current corpus size, leaving headroom for the project to grow.
 
 For comparison, Claude Sonnet 4.5 and Opus 4.6 offer 200K context windows. The current sweep workflow cannot load the full wiki into a single call. It relies on the daemon building an impact list per trigger file and selectively reading affected pages, which works for propagation (Pass 1) but limits synthesis (Pass 2) to whatever subset the daemon decides is relevant. The model never sees the full picture at once, so it can only find connections between documents it was told to read.
 
-**With V4, Pass 2 could load all 59 wiki files plus all reference docs plus the sweep prompt in a single context.** No impact-list filtering, no missed connections because a seemingly unrelated doc was excluded. The model sees everything, every time.
+**With DeepSeek V4-Pro, Pass 2 could load all 59 wiki files plus all reference docs plus the sweep prompt in a single context.** No impact-list filtering, no missed connections because a seemingly unrelated doc was excluded. The model sees everything, every time.
 
 ### But: quality degrades at long context
 
@@ -47,13 +47,13 @@ This is the catch. DeepSeek's own MRCR 8-needle benchmark shows stable retrieval
 
 For the doc sweep, this matters in a specific way. Pass 1 (propagation) is mechanical: find where concept X is mentioned, update those paragraphs. Retrieval accuracy matters here. Pass 2 (synthesis) is creative: read everything and notice patterns. This is more forgiving of imperfect retrieval because the model is generating hypotheses, not answering factual queries about specific sentences.
 
-**Practical recommendation:** Use V4 for Pass 2 (synthesis across the full corpus) where the 1M window is transformative and the task is tolerant of fuzzy retrieval. Keep Claude Opus or Sonnet for Pass 1 (propagation) where precision matters more than breadth. This is a hybrid approach: each model does what it is best at.
+**Practical recommendation:** Use DeepSeek V4-Pro for Pass 2 (synthesis across the full corpus) where the 1M window is transformative and the task is tolerant of fuzzy retrieval. Keep Claude Opus or Sonnet for Pass 1 (propagation) where precision matters more than breadth. This is a hybrid approach: each model does what it is best at.
 
 ---
 
 ## 2. Cost Per Sweep
 
-This is where V4 changes the calculus dramatically.
+This is where DeepSeek V4-Pro changes the calculus dramatically.
 
 ### V4-Pro pricing (the sweep candidate)
 
@@ -89,7 +89,7 @@ If you wired V4-Pro into the GitHub Actions sweep (the `ci=github-actions` path 
 
 ---
 
-## 3. Science Benchmarks: Is V4 Good Enough for This Work?
+## 3. Science Benchmarks: Is DeepSeek V4-Pro Good Enough for This Work?
 
 ### GPQA Diamond (graduate-level science reasoning)
 
@@ -99,7 +99,7 @@ If you wired V4-Pro into the GitHub Actions sweep (the `ci=github-actions` path 
 | GPT-5.5 | 93.6% |
 | DeepSeek V4-Pro-Max | 90.1% |
 
-V4 trails the frontier closed models by 3-4 points on hard science questions. DeepSeek's own technical report acknowledges a "3 to 6 month gap" with frontier closed-source systems on knowledge and reasoning tasks.
+DeepSeek V4-Pro trails the frontier closed models by 3-4 points on hard science questions. DeepSeek's own technical report acknowledges a "3 to 6 month gap" with frontier closed-source systems on knowledge and reasoning tasks.
 
 ### What this means for Open Enzyme
 
@@ -107,7 +107,7 @@ The doc sweep workflow asks the model to do two things: (a) accurately propagate
 
 For (a), the 4-point GPQA gap matters. When the model is updating a claim about NLRP3 inflammasome chokepoints or correcting an evidence level from "in vitro" to "animal model," precision is non-negotiable. A model that is 4% less reliable on hard science means more errors per sweep that Brian has to catch and correct. The cost savings evaporate if you are spending time fixing hallucinated mechanisms.
 
-For (b), the gap matters less. Synthesis is generative: "what if lactoferrin's GSDMD suppression via the Shan 2026 mitophagy axis means it covers CP6b, not just CP1a?" This kind of cross-referencing is about creative pattern-matching, not factual recall. V4's reasoning is likely adequate here, especially with the full corpus in context providing all the raw material.
+For (b), the gap matters less. Synthesis is generative: "what if lactoferrin's GSDMD suppression via the Shan 2026 mitophagy axis means it covers CP6b, not just CP1a?" This kind of cross-referencing is about creative pattern-matching, not factual recall. DeepSeek V4-Pro's reasoning is likely adequate here, especially with the full corpus in context providing all the raw material.
 
 **Bottom line:** V4-Flash is strong enough for synthesis passes where you are mining for connections. It is probably not the model you want for precision propagation of biochemical claims. V4-Pro closes some of that gap but not all of it.
 
@@ -117,30 +117,30 @@ For (b), the gap matters less. Synthesis is generative: "what if lactoferrin's G
 
 Open Enzyme's protein engineering track (the uricase mutation tiers for GI stability, the koji construct design) requires models to reason about protein structure, predict stability effects of mutations, and design experimental validation. This is specialized work.
 
-### What V4 can do
+### What DeepSeek V4-Pro can do
 
-V4 is a general-purpose language model. It has read the protein engineering literature and can discuss disulfide bond engineering, salt bridge design, surface charge redistribution, and codon optimization competently. It can reason about the mutation tiers in `protein-engineering-strategy.md` and suggest additional candidates.
+DeepSeek V4-Pro is a general-purpose language model. It has read the protein engineering literature and can discuss disulfide bond engineering, salt bridge design, surface charge redistribution, and codon optimization competently. It can reason about the mutation tiers in `protein-engineering-strategy.md` and suggest additional candidates.
 
-### What V4 cannot do
+### What DeepSeek V4-Pro cannot do
 
-V4 does not have a protein structure model. It cannot run molecular dynamics simulations, predict ddG values for mutations, dock substrates, or fold sequences. It is not AlphaFold, Rosetta, or ESMFold. The `ai-bio-tools-playbook.md` already covers the right tools for this: GPT-Rosalind (if access is granted), Amazon Bio Discovery (40+ specialized bio models), and dedicated protein structure tools like AlphaFold3 and ProteinMPNN.
+DeepSeek V4-Pro does not have a protein structure model. It cannot run molecular dynamics simulations, predict ddG values for mutations, dock substrates, or fold sequences. It is not AlphaFold, Rosetta, or ESMFold. The `ai-bio-tools-playbook.md` already covers the right tools for this: GPT-Rosalind (if access is granted), Amazon Bio Discovery (40+ specialized bio models), and dedicated protein structure tools like AlphaFold3 and ProteinMPNN.
 
-### Where V4 adds value for protein engineering
+### Where DeepSeek V4-Pro adds value for protein engineering
 
-V4's value is in the reasoning layer above the structure prediction tools. It can:
+DeepSeek V4-Pro's value is in the reasoning layer above the structure prediction tools. It can:
 
 - Read the output of AlphaFold or FoldX runs and interpret them in the context of the uricase variant tiers (SB-1, BAL-1, OPT-1)
 - Cross-reference mutation effects with published literature on homologous enzymes
 - Draft experimental protocols for variant testing
 - Synthesize results across multiple computational and experimental runs
 
-This is the same kind of work Claude and GPT do today. V4 would be a cost-effective alternative for the bulk reasoning, especially for repetitive tasks like analyzing a batch of variant predictions, but it would not replace the specialized bio-AI tools.
+This is the same kind of work Claude and GPT do today. DeepSeek V4-Pro would be a cost-effective alternative for the bulk reasoning, especially for repetitive tasks like analyzing a batch of variant predictions, but it would not replace the specialized bio-AI tools.
 
 ---
 
 ## 5. Open Weights: Does Self-Hosting Matter?
 
-V4 is MIT-licensed on Hugging Face. Both Pro and Flash weights are available for download, fine-tuning, and commercial deployment.
+DeepSeek V4-Pro is MIT-licensed on Hugging Face. Both Pro and Flash weights are available for download, fine-tuning, and commercial deployment.
 
 ### Hardware requirements
 
@@ -205,15 +205,15 @@ This is a Phase 1-2 consideration, not Phase 0. The project needs to be further 
 
 ---
 
-## 8. What V4 Does Not Change
+## 8. What DeepSeek V4-Pro Does Not Change
 
-A few things stay the same regardless of V4:
+A few things stay the same regardless of DeepSeek V4-Pro:
 
-- **GPT-Rosalind and Amazon Bio Discovery are still the right tools for protein structure work.** V4 is a language model, not a structure prediction system. The `ai-bio-tools-playbook.md` recommendations stand.
+- **GPT-Rosalind and Amazon Bio Discovery are still the right tools for protein structure work.** DeepSeek V4-Pro is a language model, not a structure prediction system. The `ai-bio-tools-playbook.md` recommendations stand.
 
 - **Claude is still the better model for high-stakes scientific reasoning.** When you need a model to correctly identify that quercetin and zileuton bind the same catalytic iron site on 5-LOX and are therefore redundant (not additive) at CP6a, you want the model with the highest GPQA score. The 4-point gap on science benchmarks is real and shows up in exactly these kinds of mechanistic subtleties.
 
-- **The sweep architecture still needs a human in the loop.** V4 makes sweeps cheaper and broader, but Brian still reads `synthesis.md` and prunes. No model, regardless of context window or reasoning quality, replaces the judgment call of whether a proposed connection is worth pursuing.
+- **The sweep architecture still needs a human in the loop.** DeepSeek V4-Pro makes sweeps cheaper and broader, but Brian still reads `synthesis.md` and prunes. No model, regardless of context window or reasoning quality, replaces the judgment call of whether a proposed connection is worth pursuing.
 
 - **Data security posture is unchanged for API use.** DeepSeek's API terms and data handling policies should be reviewed before sending the full research corpus through their endpoints. Open Enzyme is an open-source project, so this is lower-stakes than it would be for proprietary research, but it is worth a read of their privacy policy. Self-hosting eliminates this concern entirely if it ever becomes relevant.
 
@@ -221,7 +221,7 @@ A few things stay the same regardless of V4:
 
 ## Summary
 
-V4's value to Open Enzyme is concentrated in one specific capability: running full-corpus synthesis passes at a fraction of current cost with the entire knowledge base in context. The 1M context window means every wiki page can be loaded simultaneously for the first time. V4-Pro pricing ($0.91/sweep, dropping to ~$0.12 with cache hits) means you can sweep on every push instead of batching judiciously. The quality gap on science reasoning (4 points below Claude on GPQA) means V4-Pro is better suited for creative synthesis than for precision propagation, which suggests a hybrid architecture where each model handles its strength.
+DeepSeek V4-Pro's value to Open Enzyme is concentrated in one specific capability: running full-corpus synthesis passes at a fraction of current cost with the entire knowledge base in context. The 1M context window means every wiki page can be loaded simultaneously for the first time. V4-Pro pricing ($0.91/sweep, dropping to ~$0.12 with cache hits) means you can sweep on every push instead of batching judiciously. The quality gap on science reasoning (4 points below Claude on GPQA) means V4-Pro is better suited for creative synthesis than for precision propagation, which suggests a hybrid architecture where each model handles its strength.
 
 The open weights are a future option for fine-tuning, not an immediate action item. The protein engineering value is in the reasoning layer (interpreting results, cross-referencing literature), not in replacing specialized structure prediction tools.
 
