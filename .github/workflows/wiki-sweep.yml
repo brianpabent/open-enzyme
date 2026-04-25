@@ -26,7 +26,7 @@ name: Wiki Sweep (Hybrid)
 #
 # Secrets required:
 #   OPENROUTER_API_KEY — used by all three passes:
-#                          Pass 1 (Sonnet), Pass 2 (Gemini 2.5 Pro), Pass 3 (Sonnet)
+#                          Pass 1 (Sonnet 4.6), Pass 2 (Gemini 2.5 Pro), Pass 3 (Opus 4.7)
 #
 # Why every pass routes through OpenRouter rather than Anthropic-direct:
 # all three passes send enough cumulative input to blow past the 30K
@@ -265,7 +265,7 @@ jobs:
       - name: Run Pass 3 review (Sonnet via OpenRouter)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          REVIEWER_MODEL:    anthropic/claude-sonnet-4-6
+          REVIEWER_MODEL:    anthropic/claude-opus-4-7
           SYNTHESIS_LOG:     ${{ needs.synthesize.outputs.synthesis_log }}
           TRIGGER_FILES:     ${{ needs.propagate.outputs.trigger_files }}
           DIFF_BASE:         ${{ needs.propagate.outputs.diff_base }}
