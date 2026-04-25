@@ -455,6 +455,67 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v4-peer-review-pass-2026-04-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V4 peer-review pass — 2026-04-25
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="V4 peer-review pass — 2026-04-25">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v4-only-new-connections-not-in-2026-04-24-sweep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V4-only new connections (not in 2026-04-24 sweep)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v4-contradictions-worth-resolving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V4 contradictions worth resolving
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v4-also-caught-worth-noting-but-not-new-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V4 also caught (worth noting but not new tasks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern observation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-this-sweep-2026-04-24-local-session-25-file-v12-batch" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2988,6 +3049,49 @@
 
 
 <h1 id="synthesis-pass-2-new-connections-across-april-2026-analyses">Synthesis Pass 2: New Connections Across April 2026 Analyses<a class="headerlink" href="#synthesis-pass-2-new-connections-across-april-2026-analyses" title="Permanent link">&para;</a></h1>
+<h2 id="v4-peer-review-pass-2026-04-25">V4 peer-review pass — 2026-04-25<a class="headerlink" href="#v4-peer-review-pass-2026-04-25" title="Permanent link">&para;</a></h2>
+<p><strong>Reviewer:</strong> DeepSeek V4-Pro via OpenRouter ($0.21, 467,964 input + 4,005 output tokens)
+<strong>Substrate:</strong> Claude Opus 4.7 sweep at commit <code>4a40f74</code> (2026-04-24)
+<strong>Full log:</strong> <a href="../logs/v4-peer-review-2026-04-25.md"><code>logs/v4-peer-review-2026-04-25.md</code></a>
+<strong>Harness:</strong> <a href="../scripts/v4-peer-review.py"><code>scripts/v4-peer-review.py</code></a></p>
+<p>First concrete instance of the multi-agent peer-review pattern named in <code>open-enzyme-vision.md</code> §3. V4-Pro produced an independent Pass 2 synthesis on the same corpus Claude swept yesterday, plus a differential analysis. V4 confirmed 4 of Claude's 7 connections, partially-confirmed 2, legitimately pushed back on 2 (citH3/cfDNA biomarkers as impractical for n=1; lactoferrin+EGCG super-additivity as premature before feasibility). Items below are the V4-surfaced findings Claude missed — actionable additions to the queue.</p>
+<h3 id="v4-only-new-connections-not-in-2026-04-24-sweep">V4-only new connections (not in 2026-04-24 sweep)<a class="headerlink" href="#v4-only-new-connections-not-in-2026-04-24-sweep" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Androgen-urate axis as a <em>therapeutic ceiling</em>, not just a stratification variable.</strong> <em>Supported.</em></li>
+<li><em>Documents Connected:</em> <code>androgen-urate-axis.md</code>, <code>gut-lumen-sink.md</code>, <code>cross-validation.md</code>, <code>engineered-koji-protocol.md</code>.</li>
+<li><em>Why It Matters:</em> Androgens suppress ABCG2 — the transporter the engineered uricase leverages for the gut-lumen sink. Male patients on TRT or with high endogenous T have a fundamentally <strong>capped maximum effect</strong> from uricase, regardless of dose. This is meaningfully different from the "dose-sizing consideration" framing in the 2026-04-24 sweep. It's a structural constraint on platform feasibility for the primary demographic.</li>
+<li>
+<p><em>Suggested Action:</em> (a) Add experiment to <code>validation-experiments.md</code>: in vitro ABCG2-transport assay with uricase under androgen-treated vs. untreated conditions. (b) Re-evaluate the gut-lumen sink ceiling in <code>cross-validation.md</code> to account for sex-specific transporter biology. &copy; Flag in <code>koji-endgame-strain.md</code> coverage matrix as a structural ceiling, not just a dose variable.</p>
+</li>
+<li>
+<p><strong>Fructose Challenge Test as an acute uricase efficacy readout for the self-experiment.</strong> <em>Supported.</em></p>
+</li>
+<li><em>Documents Connected:</em> <code>fructose-connection.md</code> (KHK pathway, ATP depletion), <code>self-experiment-protocol.md</code> (timepoints + biomarkers).</li>
+<li><em>Why It Matters:</em> The unregulated KHK pathway means a 50g fructose bolus generates a predictable, measurable serum UA spike within 60–120 minutes. Provides a cheap (~$50 in fingerstick UA strips), high-signal n-of-1 challenge to validate engineered uricase activity in real-time — without waiting weeks for baseline UA drift to manifest. Before-and-after koji therapy: standardized fructose load, serial UA at 0/30/60/90/120 min. A blunted post-fructose UA spike directly validates uricase action in the gut. Acute mechanistic readout vs. the chronic baseline-UA tracking already planned.</li>
+<li>
+<p><em>Suggested Action:</em> Add "Fructose Challenge Test" protocol to <code>self-experiment-protocol.md</code> as a secondary endpoint. Pair with the chronic timepoints already in §2.</p>
+</li>
+<li>
+<p><strong>Carnosine as specific counter-agent to androgen-driven URAT1 upregulation.</strong> <em>Supported.</em></p>
+</li>
+<li><em>Documents Connected:</em> <code>carnosine.md</code>, <code>androgen-urate-axis.md</code>, <code>engineered-koji-protocol.md §15</code> (carnosine co-expression module).</li>
+<li><em>Why It Matters:</em> Carnosine's URAT1/GLUT9 modulation directly counteracts the androgen-driven transporter dysfunction Connection 1 identifies. This isn't generic "carnosine is multi-target" framing — it's <strong>specifically tailored to the male gout demographic</strong> that's the platform's target population. Co-expressing uricase and carnosine in koji becomes a single product that attacks hyperuricemia from two angles (degradation + restored excretion) plus inflammasome suppression — and the second angle directly addresses the androgen ceiling.</li>
+<li><em>Suggested Action:</em> Elevate the carnosine co-expression validation experiment in <code>engineered-koji-protocol.md §15</code> to Phase 1 priority alongside H01 (Ward dual-cassette feasibility). The carnosine module specifically addresses the structural constraint surfaced in Connection 1.</li>
+</ol>
+<h3 id="v4-contradictions-worth-resolving">V4 contradictions worth resolving<a class="headerlink" href="#v4-contradictions-worth-resolving" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Yeast biomass dosing math</strong> — <code>engineered-yeast-uricase-proposal.md §5</code> reads as 10g dry yeast/day plausible; <code>cross-validation.md</code> rates this 2/10 with 170g fresh yeast as the practical blocker. Same scenario, different conclusions. Resolve: yeast §5 wording overstates biomass feasibility for a food product; the koji track's 10–15g dry koji/day is the actual practical answer.</li>
+<li><strong>SPM vs. NLRP3-suppression framing in <code>open-enzyme-vision.md</code> §9</strong> — vision conflates "active resolution" (CP5b SPMs) with the general "suppression" stack (CP1–CP4). <code>spm-resolution-pathway.md</code> distinguishes them correctly. Vision should follow.</li>
+<li><strong>ALLN-346 status across pages</strong> — <code>gut-lumen-sink.md</code> cites ALLN-346 as live precedent; <code>gout-clinical-pipeline.md</code> correctly documents termination + mixed Phase 2a signals. Reader inconsistency. Unify: <em>mechanism</em> is scientifically validated; <em>clinical translation</em> is unfinished.</li>
+</ul>
+<h3 id="v4-also-caught-worth-noting-but-not-new-tasks">V4 also caught (worth noting but not new tasks)<a class="headerlink" href="#v4-also-caught-worth-noting-but-not-new-tasks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Open CP3 gap in koji-endgame-strain coverage matrix.</strong> Endgame strain covers CP1, CP4, CP6b plus upstream UA. ASC speck (CP3) has no fermentable coverage; permanent pharmaceutical adjunct (colchicine) or supplement (spermidine) requirement. Should be acknowledged in <code>koji-endgame-strain.md</code> to avoid over-selling standalone capability.</li>
+<li><strong>Epistemic homogenization warning</strong> (V4 Connection 7 in the full log). V4 explicitly warned against replacing multi-model peer review with a single cheap V4 pipeline: <em>"if a single model becomes the sole source of synthesis, the project's knowledge graph could converge on that model's blind spots and biases."</em> Worth citing as the rationale for keeping multi-model reviews even if V4 becomes routine.</li>
+</ul>
+<h3 id="pattern-observation">Pattern observation<a class="headerlink" href="#pattern-observation" title="Permanent link">&para;</a></h3>
+<p>Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimated ($0.91), because OpenRouter pricing on <code>deepseek/deepseek-v4-pro</code> is below DeepSeek's direct API. Treat as the new cost basis: ~$0.20/peer-review-pass means this can run on every meaningful sweep cycle without budget concern. Multi-model peer review is operationally cheap. The next architectural step (not done in this commit): wire V4 peer-review into a sibling CI workflow that runs alongside <code>wiki-sweep.yml</code> and posts findings as a PR comment or <code>synthesis-v4.md</code> peer-review file. Hybrid (Claude Pass 1 + V4 Pass 2) remains an option once we have more empirical evidence on quality.</p>
+<hr />
 <h2 id="new-this-sweep-2026-04-24-local-session-25-file-v12-batch">New this sweep — 2026-04-24 (local session, 25-file v1.2 batch)<a class="headerlink" href="#new-this-sweep-2026-04-24-local-session-25-file-v12-batch" title="Permanent link">&para;</a></h2>
 <p><strong>Trigger:</strong> <code>wiki/nlrp3-exploit-map.md</code> (v1.2 restructure) + 24 co-triggered files — <code>complement-c5a-gout.md</code> (new + deep dive), <code>spm-resolution-pathway.md</code> (new + deep dive), <code>lactoferrin.md</code> (new deep dive), <code>egcg.md</code> (new), <code>zileuton.md</code> (new), <code>carnosine.md</code> (new), <code>self-experiment-protocol.md</code> (new), <code>open-questions.md</code> (new), plus propagation in <code>aspergillus-oryzae.md</code>, <code>bhb-ketones.md</code>, <code>cannabinoids-terpenes.md</code>, <code>cross-validation.md</code>, <code>digestive-enzymes.md</code>, <code>disulfiram.md</code>, <code>engineered-koji-protocol.md</code>, <code>engineered-yeast-uricase-proposal.md</code>, <code>gout-clinical-pipeline.md</code>, <code>nlrp3-inhibitor-screen.md</code>, <code>open-enzyme-vision.md</code>, <code>open-source-platform.md</code>, <code>oridonin.md</code>, <code>supplements-stack.md</code>, <code>uricase-variant-selection.md</code>, <code>validation-experiments.md</code>.</p>
 <p><strong>Diff base:</strong> commit 65060e0 · <strong>Invocation:</strong> interactive sub-agent (Tier-4 pending; CI run would rate-limit). Pass 1 was largely hand-propagated in session — this synthesis focuses on the connections that only become visible after the full batch lands together.</p>
