@@ -25,14 +25,13 @@ name: Wiki Sweep (Hybrid)
 # retrigger the whole pipeline.
 #
 # Secrets required:
-#   ANTHROPIC_API_KEY  — Claude API for Pass 3 (small input — no rate-limit risk)
-#   OPENROUTER_API_KEY — OpenRouter for Pass 1 (Sonnet) and Pass 2 (Gemini 2.5 Pro)
+#   OPENROUTER_API_KEY — used by all three passes:
+#                          Pass 1 (Sonnet), Pass 2 (Gemini 2.5 Pro), Pass 3 (Sonnet)
 #
-# Why Pass 1 routes through OpenRouter rather than Anthropic-direct:
-# Pass 1 reads/edits multiple wiki files, which blows past the 30K
+# Why every pass routes through OpenRouter rather than Anthropic-direct:
+# all three passes send enough cumulative input to blow past the 30K
 # input-tokens-per-minute cap on the Anthropic-direct API tier. OpenRouter
-# is its own rate-limit pool and has handled 1.85M cumulative input
-# tokens in our eval runs without throttling.
+# is its own rate-limit pool.
 
 on:
   push:
@@ -252,13 +251,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install Claude CLI
-        run: npm install -g @anthropic-ai/claude-code
-
       - name: Count markers in Pass 2 synthesis
         id: count
         env:
@@ -270,10 +262,10 @@ jobs:
           echo "Found $MARKER_COUNT {{PEER-REVIEW}} markers in Pass 2 synthesis"
           echo "marker_count=$MARKER_COUNT" >> "$GITHUB_OUTPUT"
 
-      - name: Run Claude review (output reviews only — merge script handles substitution)
+      - name: Run Pass 3 review (Sonnet via OpenRouter)
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_MODEL:   claude-sonnet-4-6
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          REVIEWER_MODEL:    anthropic/claude-sonnet-4-6
           SYNTHESIS_LOG:     ${{ needs.synthesize.outputs.synthesis_log }}
           TRIGGER_FILES:     ${{ needs.propagate.outputs.trigger_files }}
           DIFF_BASE:         ${{ needs.propagate.outputs.diff_base }}
@@ -283,30 +275,19 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          TIMESTAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          TRIGGER_LIST=$(echo "$TRIGGER_FILES" | awk 'NF {printf "  - %s\n", $0}')
-
-          PROMPT_FILE="$(mktemp)"
-          {
-            cat scripts/sweep-prompt-3-review.md
-            echo ""
-            echo "---"
-            echo ""
-            echo "TRIGGER: Pass 3 review of synthesis log at ${TIMESTAMP}:"
-            echo "  synthesis_log:    ${SYNTHESIS_LOG}"
-            echo "  marker_count:     ${MARKER_COUNT}"
-            echo "  diff_base:        ${DIFF_BASE}"
-            echo "  commit_sha:       ${{ github.sha }}"
-            echo "  trigger files:"
-            echo "${TRIGGER_LIST}"
-            echo "ci=github-actions-sweep-3-review"
-          } > "$PROMPT_FILE"
-
-          # Capture Claude's stdout to a reviews file. Claude's prompt instructs
-          # it to output ONLY review blockquotes separated by <<<NEXT>>> — the
-          # merge script parses that and substitutes into the Pass 2 synthesis.
+          # Capture the reviewer's stdout to a reviews file. The Pass 3 prompt
+          # instructs it to output ONLY review blockquotes separated by
+          # <<<NEXT>>> — the merge script parses that and substitutes into
+          # the Pass 2 synthesis.
           REVIEWS_FILE="$(mktemp --suffix=.txt)"
-          claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")" > "$REVIEWS_FILE"
+          python3 scripts/sweep-3-review.py \
+            --synthesis-log "$SYNTHESIS_LOG" \
+            --commit-sha "${{ github.sha }}" \
+            --diff-base "$DIFF_BASE" \
+            --trigger-files "$TRIGGER_FILES" \
+            --marker-count "$MARKER_COUNT" \
+            --model "$REVIEWER_MODEL" \
+            > "$REVIEWS_FILE"
 
           # Run the deterministic merge — Pass 2 content preserved verbatim
           python3 scripts/synthesis-merge.py \
@@ -316,7 +297,7 @@ jobs:
             --diff-base "$DIFF_BASE" \
             --trigger-files "$(echo "$TRIGGER_FILES" | tr '\n' ',' | sed 's/,$//')" \
             --synthesizer "google/gemini-2.5-pro" \
-            --reviewer "anthropic/${ANTHROPIC_MODEL}"
+            --reviewer "$REVIEWER_MODEL"
 
           # Commit the synthesis.md prepend
           if git diff --quiet wiki/synthesis.md; then
