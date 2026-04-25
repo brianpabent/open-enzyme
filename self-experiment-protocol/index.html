@@ -27,7 +27,7 @@
     
     
       
-        <title>Self-Experiment Protocol — Brian's Personal Monitoring Plan - Open Enzyme</title>
+        <title>Self-Experiment Protocol - Open Enzyme</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Self-Experiment Protocol — Brian's Personal Monitoring Plan
+              Self-Experiment Protocol
             
           </span>
         </div>
@@ -2383,10 +2383,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-timepoints" class="md-nav__link">
+  <a href="#2-designing-the-experiment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Timepoints
+        2. Designing the experiment
       
     </span>
   </a>
@@ -2394,38 +2394,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-blood-panel-every-4-weeks" class="md-nav__link">
+  <a href="#3-cadence-pick-by-mechanism" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Blood panel (every 4 weeks)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Blood panel (every 4 weeks)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#optional-add-ons-cp0-complement-and-cp6a-5-loxleukotrienes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Optional add-ons: CP0 (complement) and CP6a (5-LOX/leukotrienes)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-stool-16s-baseline-week-12-only" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Stool 16S (baseline + week 12 only)
+        3. Cadence — pick by mechanism
       
     </span>
   </a>
@@ -2433,10 +2405,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-symptom-diary-daily-5-fields" class="md-nav__link">
+  <a href="#4-metrics-pick-by-what-the-intervention-affects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Symptom diary (daily, 5 fields)
+        4. Metrics — pick by what the intervention affects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-symptom-diary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Symptom diary
       
     </span>
   </a>
@@ -2901,225 +2884,197 @@
 
 
 <h1 id="self-experiment-protocol">Self-Experiment Protocol<a class="headerlink" href="#self-experiment-protocol" title="Permanent link">&para;</a></h1>
-<p><strong>Purpose.</strong> Open Enzyme is not pursuing regulatory approval. The purpose of this document is to lay out a minimum-viable monitoring plan for Brian's self-experimentation with engineered koji and the supplement stack — so that (a) the risks are known in advance, (b) the data is collected prospectively rather than reconstructed after the fact, &copy; there are explicit halt criteria, and (d) the n-of-1 data is structured well enough to inform future collaborators (Rheinallt, Lauren, Valerie) if they decide to run anything more rigorous.</p>
-<p><strong>Evidence level for this page.</strong> The monitoring plan itself is Mechanistic Extrapolation — it assumes standard clinical safety monitoring principles applied to a novel intervention. The red-flag criteria are derived from known failure modes of related compounds (EGCG hepatotoxicity; immunomodulators → infection risk; chronic yeast dosing → dysbiosis), not from direct Open Enzyme data (which does not yet exist).</p>
+<p>A generic monitoring framework for n=1 self-experiments — applicable to any intervention an Open Enzyme user chooses to track on themselves: oral compounds, peptides, prescription dose changes, engineered organisms, injectable agents, dietary changes, sleep / training interventions, anything.</p>
+<p>The protocol's job is to make sure (a) risks are surfaced before exposure, (b) data is collected prospectively rather than reconstructed afterward, &copy; halt conditions are pre-defined, and (d) results are structured well enough to be useful to anyone — including a clinician you eventually share them with.</p>
+<p>This page is the framework. Specific experiments (gout, EPI, autoimmune, sleep, performance) substitute their own metrics, timelines, and red-flag criteria into the structure below.</p>
+<p><strong>Evidence level for this page.</strong> The framework is Mechanistic Extrapolation — it applies standard clinical-monitoring principles to the n=1 setting. It does not establish efficacy of any intervention.</p>
 <hr />
 <h2 id="1-scope">1. Scope<a class="headerlink" href="#1-scope" title="Permanent link">&para;</a></h2>
-<p>This protocol covers <strong>oral self-administration</strong> of:</p>
+<p>This protocol covers <strong>any single-variable intervention</strong> the experimenter chooses to track:</p>
 <ul>
-<li>Engineered koji (when available) — uricase ± NLRP3 modulators</li>
-<li>Supplement stack components (currently: quercetin, ursolic acid, carnosine, BHB, KPV, EGCG, sulforaphane, curcumin, oridonin, β-caryophyllene, others per <code>wiki/supplements-stack.md</code>)</li>
-<li>Any new compound added during the self-experiment window</li>
+<li>Oral supplements / nutraceuticals</li>
+<li>Peptides (oral, intranasal, sublingual, injected, transdermal)</li>
+<li>Prescription medications and dose changes (with prescriber's knowledge)</li>
+<li>Engineered organisms</li>
+<li>Diet / lifestyle changes if framed as an experiment</li>
 </ul>
-<p>It does <strong>not</strong> cover:</p>
+<p>It is intended for personal self-experimentation. It is <strong>not</strong> a clinical trial protocol and does not establish efficacy against a control. It is a framework for collecting your own data well.</p>
+<hr />
+<h2 id="2-designing-the-experiment">2. Designing the experiment<a class="headerlink" href="#2-designing-the-experiment" title="Permanent link">&para;</a></h2>
+<p>Before starting any new intervention, define and write down:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Question to answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hypothesis</strong></td>
+<td>What change is expected? Why? Mechanism of action?</td>
+</tr>
+<tr>
+<td><strong>Intervention</strong></td>
+<td>Specific dose / form / timing / route</td>
+</tr>
+<tr>
+<td><strong>Metrics</strong></td>
+<td>Which markers / symptoms / outcomes change if the hypothesis is right?</td>
+</tr>
+<tr>
+<td><strong>Cadence</strong></td>
+<td>How often to retest, based on the intervention's pharmacokinetics and the marker's biology</td>
+</tr>
+<tr>
+<td><strong>Timeline</strong></td>
+<td>Total experiment window — from start to primary endpoint</td>
+</tr>
+<tr>
+<td><strong>Halt criteria</strong></td>
+<td>What outcomes mean stop</td>
+</tr>
+<tr>
+<td><strong>Single-variable rule</strong></td>
+<td>What other things you commit to <em>not</em> change during the window</td>
+</tr>
+</tbody>
+</table>
+<p>Write these down before starting. A retrospective hypothesis is hindsight, not data. Single-variable change is what makes the result interpretable.</p>
+<hr />
+<h2 id="3-cadence-pick-by-mechanism">3. Cadence — pick by mechanism<a class="headerlink" href="#3-cadence-pick-by-mechanism" title="Permanent link">&para;</a></h2>
+<p>Different interventions need different retest cadences. Picking the wrong window produces noise, not signal — premature retests miss the effect; late retests miss safety problems.</p>
+<table>
+<thead>
+<tr>
+<th>Mechanism class</th>
+<th>Typical retest window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drug at steady-state (most prescriptions, T-modulators, hormones)</td>
+<td>4–6 weeks after dose change (to reach new equilibrium)</td>
+</tr>
+<tr>
+<td>Vitamin / mineral correction with stored forms (D3, iron, B12)</td>
+<td>8–12 weeks</td>
+</tr>
+<tr>
+<td>Antibody-mediated effect (autoimmune-targeting interventions)</td>
+<td>3–6 months</td>
+</tr>
+<tr>
+<td>Microbiota-mediated (probiotics, dietary fibre interventions)</td>
+<td>6–8 weeks (community shifts stabilize)</td>
+</tr>
+<tr>
+<td>Acute / pharmacodynamic (caffeine, single-dose peptides)</td>
+<td>hours to days</td>
+</tr>
+<tr>
+<td>Tissue-level adaptation (training, structured exercise)</td>
+<td>weeks to months depending on outcome</td>
+</tr>
+<tr>
+<td>Cancer-prevention / risk-modifying (long-latency outcomes)</td>
+<td>annual or longer; surrogate markers monthly</td>
+</tr>
+</tbody>
+</table>
+<p>Match the half-life of the intervention and the kinetics of the affected marker. Don't average them — pick whichever is longer.</p>
+<hr />
+<h2 id="4-metrics-pick-by-what-the-intervention-affects">4. Metrics — pick by what the intervention affects<a class="headerlink" href="#4-metrics-pick-by-what-the-intervention-affects" title="Permanent link">&para;</a></h2>
+<p>Standard elements common to most experiments:</p>
 <ul>
-<li>Injectable or IV products (not in scope for Open Enzyme)</li>
-<li>Off-label prescription drug modifications (separate conversation with Brian's physician)</li>
-<li>Diet/lifestyle changes unless they are part of a specific protocol arm</li>
+<li><strong>Primary efficacy marker</strong> — the thing the hypothesis says should change</li>
+<li><strong>Safety markers</strong> — organ-function and systemic markers relevant to the intervention's known risk profile</li>
+<li><strong>Symptom diary</strong> — daily entries with domain-relevant fields, designed to take &lt;60 seconds/day to enter</li>
+<li><strong>Compliance / adherence log</strong> — did you take the intervention as planned, and when?</li>
 </ul>
+<p>Common safety baseline for blood-panel-based experiments:
+- <strong>CBC with differential</strong> — catches infection, anemia, WBC shifts (especially relevant for any immunomodulator)
+- <strong>CMP</strong> — liver enzymes, kidney function, electrolytes (catches the most common organ-toxicity signals)
+- <strong>hs-CRP</strong> — systemic inflammation; useful even when not the primary endpoint</p>
+<p>Beyond that, the panel is intervention-specific:
+- T-axis intervention → Total T, Free T, Estradiol, <strong>SHBG</strong>, Hematocrit, lipids
+- Thyroid intervention → TSH, Free T4, Free T3, antibodies if autoimmune
+- Microbiota intervention → stool sequencing (16S minimum) baseline + endpoint
+- Glucose/metabolic intervention → fasting glucose, fasting insulin, A1C, lipids
+- Specialty markers (complement, leukotrienes, etc.) → as the mechanism dictates</p>
+<p>For symptom-only experiments without labs, structured daily tracking + a clear primary outcome is enough.</p>
 <hr />
-<h2 id="2-timepoints">2. Timepoints<a class="headerlink" href="#2-timepoints" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Timepoint</th>
-<th>Draw</th>
-<th>Self-report</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T0 (baseline)</td>
-<td>Blood panel + stool 16S</td>
-<td>Symptom diary start</td>
-<td>Before first dose; establishes personal baseline</td>
-</tr>
-<tr>
-<td>T1 (week 4)</td>
-<td>Blood panel</td>
-<td>Diary (daily)</td>
-<td>Early signal window for hepatotox / CRP shift</td>
-</tr>
-<tr>
-<td>T2 (week 8)</td>
-<td>Blood panel</td>
-<td>Diary (daily)</td>
-<td>Mid-window; likely inflection for efficacy signals</td>
-</tr>
-<tr>
-<td>T3 (week 12)</td>
-<td>Blood panel + stool 16S</td>
-<td>Diary (daily)</td>
-<td>Primary endpoint window; microbiota re-sample</td>
-</tr>
-<tr>
-<td>Ad hoc</td>
-<td>Any time</td>
-<td>Any time</td>
-<td>If red-flag criterion triggers, halt and re-evaluate</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Why this cadence.</strong> 12 weeks is the minimum window for (a) microbiota community-level shifts to become detectable (~6-8 weeks for stable shifts), (b) chronic-dosing hepatotoxicity from EGCG/curcumin to manifest if it is going to, &copy; meaningful changes in serum urate and flare frequency to aggregate. Monthly blood draws are cheap (~$80/panel at Quest) and catch acute problems before 12 weeks.</p>
-<hr />
-<h2 id="3-blood-panel-every-4-weeks">3. Blood panel (every 4 weeks)<a class="headerlink" href="#3-blood-panel-every-4-weeks" title="Permanent link">&para;</a></h2>
-<p>Standard add-on to an annual physical; can be ordered through Quest / Labcorp or via direct-to-consumer services. Approximate total cost: <strong>~$80-120 per draw</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CBC with differential</strong></td>
-<td>Catches infection, anemia, WBC shifts (monitor for immunosuppression from NLRP3 blockade — canakinumab's known side effect class)</td>
-</tr>
-<tr>
-<td><strong>CMP (comprehensive metabolic panel)</strong></td>
-<td>Liver enzymes (ALT, AST, ALP, bilirubin), kidney function (creatinine, BUN, eGFR), electrolytes. EGCG can cause hepatotoxicity at high dose; curcumin at very high dose; any koji contaminant (aflatoxin) would hit liver first.</td>
-</tr>
-<tr>
-<td><strong>Uric acid</strong></td>
-<td>Primary efficacy endpoint. Target: &lt;6 mg/dL (or personal symptom-threshold if different).</td>
-</tr>
-<tr>
-<td><strong>hs-CRP</strong></td>
-<td>Systemic inflammation. Expected to drop if the NLRP3 pathway modulators are working. Doubling from baseline is a red flag.</td>
-</tr>
-<tr>
-<td><strong>LDH</strong> (optional, first + last draw)</td>
-<td>Cell turnover; flag if anything is lysing</td>
-</tr>
-<tr>
-<td><strong>HbA1c</strong> (baseline + T3 only)</td>
-<td>Some stack compounds (berberine, EGCG) affect glucose metabolism; useful baseline context</td>
-</tr>
-</tbody>
-</table>
-<h3 id="optional-add-ons-cp0-complement-and-cp6a-5-loxleukotrienes">Optional add-ons: CP0 (complement) and CP6a (5-LOX/leukotrienes)<a class="headerlink" href="#optional-add-ons-cp0-complement-and-cp6a-5-loxleukotrienes" title="Permanent link">&para;</a></h3>
-<p>The core panel (above) covers general safety and efficacy. The following optional add-ons cover the two chokepoints added in the v1.2 exploit-map restructure (CP0 complement, CP6a leukotrienes). They're specialty-lab or send-out tests — useful for tracking mechanism-specific response but not required for safety monitoring.</p>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Complement C3, C4, CH50</strong> (optional, baseline + T3)</td>
-<td>CP0 biomarkers. Low C3/C4 suggests active complement consumption — if uricase lowers MSU load, complement activation should reduce. CH50 measures total complement activity.</td>
-</tr>
-<tr>
-<td><strong>Soluble C5a</strong> (optional, baseline + T1 flare if one occurs)</td>
-<td>Direct CP0 readout. Elevated during active gout flare; should decline as uricase clears MSU crystals. Not offered at most commercial labs — may require a send-out (Quest, Labcorp) or specialty lab.</td>
-</tr>
-<tr>
-<td><strong>Urinary LTB4 (or LTE4)</strong> (optional, baseline + T3)</td>
-<td>CP6a biomarker. Leukotriene E4 is the stable urinary metabolite of the 5-LOX pathway and is widely used in asthma monitoring. Elevated in active neutrophil inflammation. Specialty lab — ARUP offers urine LTE4.</td>
-</tr>
-<tr>
-<td><strong>ESR</strong></td>
-<td>Nonspecific inflammation marker; complements CRP, captures different kinetics. Every-4-week cadence.</td>
-</tr>
-</tbody>
-</table>
-<p>See <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> for the CP0 mechanism detail, and the CP6a section of <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> for the 5-LOX/LTB4 branch that these tests monitor.</p>
-<hr />
-<h2 id="4-stool-16s-baseline-week-12-only">4. Stool 16S (baseline + week 12 only)<a class="headerlink" href="#4-stool-16s-baseline-week-12-only" title="Permanent link">&para;</a></h2>
-<p>A single paired baseline/endpoint microbiota sequencing is sufficient to detect whether chronic koji dosing has caused a dysbiotic shift. Quarterly re-sampling is overkill for personal use; the signal takes weeks to stabilize.</p>
+<h2 id="5-symptom-diary">5. Symptom diary<a class="headerlink" href="#5-symptom-diary" title="Permanent link">&para;</a></h2>
+<p>Daily, low-friction entries. Pick fields relevant to what you're testing. Common scales:</p>
 <ul>
-<li><strong>Service</strong>: Direct-to-consumer options like BiomeSight, Tiny Health, Flore, or uBiome-successors; approximate cost ~$100-200 per sample.</li>
-<li><strong>Primary metrics</strong>: alpha diversity (Shannon, Simpson) — flag &gt;20% drop from baseline; beta diversity (UniFrac) — note magnitude of community shift; taxa abundance at phylum level — flag dramatic Firmicutes/Bacteroidetes ratio inversion, or loss of Faecalibacterium prausnitzii / Akkermansia muciniphila (both gout-protective commensals).</li>
-<li><strong>Secondary metrics</strong> (if service provides): SCFA-producer abundance, LPS-producer abundance, uricase-gene carriage if detectable.</li>
-<li><strong>Caveat</strong>: 16S resolution bottoms out at genus level for most taxa; it will not detect strain-level engineered-koji persistence. If strain persistence is a specific question, consider qPCR for the engineered cassette's selection marker on spiked stool.</li>
+<li><strong>Likert (0–10)</strong> for severity/intensity (pain, fatigue, energy, cognitive clarity, sleep quality)</li>
+<li><strong>Bristol Stool Scale (1–7)</strong> for GI consistency</li>
+<li><strong>Likert (0–3)</strong> for binary-with-gradient signals (bloating: none / mild / moderate / severe)</li>
+<li><strong>Free-text "novel signal" field</strong> for anything not covered (always include this)</li>
+<li><strong>Timestamp + one row per day</strong> — even a "nothing today" entry documents adherence</li>
 </ul>
-<hr />
-<h2 id="5-symptom-diary-daily-5-fields">5. Symptom diary (daily, 5 fields)<a class="headerlink" href="#5-symptom-diary-daily-5-fields" title="Permanent link">&para;</a></h2>
-<p>Goal: capture the signals that show up between blood draws, in a format that is quick to enter (&lt;60 seconds/day) and easy to aggregate.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Scale</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Stool form</strong></td>
-<td>Bristol 1-7</td>
-<td>Watch for sustained 6-7 (diarrhea) or 1-2 (constipation)</td>
-</tr>
-<tr>
-<td><strong>Bloating / GI discomfort</strong></td>
-<td>0-3 (none / mild / moderate / severe)</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Flare intensity</strong></td>
-<td>0-10 (0 = no joint pain, 10 = unable to walk)</td>
-<td>Include affected joint and whether a new location</td>
-</tr>
-<tr>
-<td><strong>Energy / fatigue</strong></td>
-<td>0-10 (0 = severe fatigue, 10 = unusually energetic)</td>
-<td>Gut inflammation and systemic inflammation both manifest as fatigue</td>
-</tr>
-<tr>
-<td><strong>Novel signal</strong></td>
-<td>Free text (blank if nothing)</td>
-<td>Rash, fever, headache, sleep, mood — anything not covered above</td>
-</tr>
-</tbody>
-</table>
-<p>Storage: simple spreadsheet, text file, or journaling app. Timestamped entries, one row per day. Export to CSV at endpoint for analysis.</p>
+<p>Storage: spreadsheet, plain text file, journaling app, daily log markdown — whatever you'll actually use consistently. The best diary is the one you'll fill out. Export to a structured format at endpoint for analysis.</p>
 <hr />
 <h2 id="6-red-flag-halt-criteria">6. Red-flag halt criteria<a class="headerlink" href="#6-red-flag-halt-criteria" title="Permanent link">&para;</a></h2>
-<p>If <strong>any</strong> of the following occur, halt the intervention immediately, document the trigger, and re-evaluate before resuming:</p>
+<p>These are <strong>universal</strong> halt criteria — apply regardless of what intervention is being tested:</p>
 <ol>
 <li><strong>New GI bleeding</strong> (blood in stool, melena, hematemesis) — halt + seek care same-day</li>
-<li><strong>Persistent diarrhea &gt;72 hours</strong> — halt + evaluate for <em>C. difficile</em> / dysbiosis</li>
-<li><strong>hs-CRP doubles from baseline</strong> on a scheduled draw — halt + re-draw at 1 week to confirm</li>
-<li><strong>Liver enzymes (ALT or AST) &gt;2× upper limit of normal</strong> — halt + re-draw at 2 weeks; evaluate which compound is most likely culprit (EGCG &gt; curcumin &gt; others)</li>
+<li><strong>Acute liver injury</strong> (ALT or AST &gt;2× upper limit of normal on a draw) — halt + re-draw at 2 weeks</li>
+<li><strong>Kidney function decline</strong> (eGFR drop &gt;15% from baseline, or creatinine rise) — halt + evaluate</li>
+<li><strong>New allergic / hypersensitivity signal</strong> (rash, urticaria, angioedema, anaphylaxis) — halt immediately; seek care if airway involved</li>
 <li><strong>Unexplained weight loss &gt;5 lb over 4 weeks</strong> — halt + evaluate</li>
 <li><strong>New fever without identified infection</strong> — halt + seek care</li>
-<li><strong>New joint involvement that does not resolve with standard gout management within 7 days</strong> — halt + re-evaluate whether intervention is working <em>or</em> whether it's unmasking a new pattern</li>
-<li><strong>Eosinophilia or new hypersensitivity signal</strong> (rash, urticaria, angioedema) — halt immediately; consider allergic response to koji or a stack component</li>
-<li><strong>Kidney function decline</strong> (eGFR drop &gt;15% from baseline or creatinine rise) — halt + evaluate (uricase + high-dose NLRP3 blockers both plausibly stress kidneys)</li>
+<li><strong>CRP doubling from baseline</strong> on a scheduled draw — halt + re-draw at 1 week to confirm</li>
+<li><strong>Persistent diarrhea &gt;72 hours</strong> — halt + evaluate for dysbiosis or infection</li>
+<li><strong>Any new severe symptom not present at baseline</strong> — halt + evaluate</li>
 </ol>
-<p>"Halt" means: stop all investigational Open Enzyme compounds (koji, any added supplement not previously in long-term use). It does <strong>not</strong> mean stop medically-prescribed therapy (allopurinol, colchicine) unless the trigger specifically implicates those.</p>
+<p>In addition to universal criteria, <strong>define experiment-specific halt criteria at design time</strong>. Examples:
+- NLRP3-modulating interventions → unmasked infections (canakinumab side-effect class)
+- T-modulating interventions → hematocrit &gt;50%, mood / aggression, lipid degradation
+- Anticoagulant changes → bruising, bleeding gums, blood pressure
+- Microbiota interventions → dysbiotic shift on 16S
+- Thyroid interventions → palpitations, anxiety, sleep disruption (T3 over-replacement signature)</p>
+<p>"Halt" means stop the investigational intervention. It does <strong>not</strong> mean stop medically-prescribed therapy unless the trigger specifically implicates that therapy. When in doubt, contact your prescriber.</p>
 <hr />
 <h2 id="7-logging-and-version-control">7. Logging and version control<a class="headerlink" href="#7-logging-and-version-control" title="Permanent link">&para;</a></h2>
-<p><strong>Raw data storage convention: <code>labs/</code> directory in the repo root, gitignored.</strong></p>
-<p>The <code>labs/</code> directory at <code>/labs/</code> (relative to the repo root) is listed in <code>.gitignore</code> and will never be committed. Raw blood-panel PDFs, stool-report JSON, imaging files, and any other PHI-bearing artifact live there on the local disk only. The directory is created locally — it does not exist in the public repo.</p>
-<p>Suggested substructure:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>labs/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── brian/
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── 2026-04-24-baseline/        # blood panel PDF, stool 16S report
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── 2026-05-22-week4/
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── README.md                    # running index, personal notes
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── lynn/                            # separate subtree; data is Lynn&#39;s
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── README.md
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>└── shared/                          # joint references (e.g., family history)
-</code></pre></div>
-<p><strong>Consent note on Lynn's data</strong>: Lynn's labs are Lynn's data. Storing them under <code>labs/lynn/</code> presumes her explicit consent to include them in the project's working directory. Even locally-gitignored storage is a form of inclusion; ask and record agreement (a dated note in <code>labs/lynn/README.md</code> is sufficient) before adding anything.</p>
-<p><strong>Summary log (public, committed)</strong>: a stripped, de-identified summary can be added to <code>logs/self-experiment-log.md</code> (append-only). Fields: date, intervention (what's being taken), observation, any protocol deviation. This log is for pattern-recognition and is safe to commit because it contains no raw PHI. Never reference specific lab values; use qualitative framing ("CRP trending up" rather than "CRP = 4.2"). If you want numeric trending, keep that inside <code>labs/brian/README.md</code> locally.</p>
-<p><strong>When a stack compound is added or removed</strong>: note it in the log with a 1-line rationale. This is the counterpart to commit messages for the body.</p>
-<p><strong>If collaborators eventually need access to raw data</strong>: graduate from Option 1 (local-only) to Option 2 (private parallel repo <code>open-enzyme-private</code> on GitHub, invite-only). See the labs-handling brainstorm (synthesis.md or commit history) for the trade-off analysis — a 10-minute upgrade, not a re-plan.</p>
+<p><strong>Principle: personal n=1 data does not live in the public Open Enzyme repository.</strong></p>
+<p>Lab results, daily logs, self-experiment plans, and stack tracking are PHI-bearing. Keep them in a <strong>separate private location</strong> of your choice. Common patterns:</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>When it fits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Private GitHub repository</td>
+<td>Multi-machine sync, collaborator access, version history, off-site backup</td>
+</tr>
+<tr>
+<td>Local folder, not in git</td>
+<td>Simplest; single-user; manual backup</td>
+</tr>
+<tr>
+<td>Encrypted volume + cloud backup</td>
+<td>Higher privacy posture</td>
+</tr>
+</tbody>
+</table>
+<p>The public Open Enzyme repo's <code>.gitignore</code> should exclude whatever directory your private storage lives in if you nest it inside the working tree. The choice of folder name, internal layout, and tooling is yours.</p>
+<p><strong>Consent on partner / family data</strong>: if your storage includes someone else's data (e.g., a spouse's labs), that data is theirs. Document their agreement before adding anything — a dated note in the relevant location is the lowest-friction way.</p>
+<p><strong>Summary log (public, committed)</strong>: a stripped, de-identified summary can be added to <code>logs/self-experiment-log.md</code> in the public repo (append-only). Fields: date, intervention, observation, any protocol deviation. Safe to commit because it contains no raw PHI. Never reference specific lab values; use qualitative framing ("CRP trending up" rather than "CRP = 4.2"). Numeric trending stays in your private storage.</p>
+<p><strong>When a stack compound is added or removed</strong>: note it with a dated rationale in your private location. The public-log version (if any) can be a stripped one-liner.</p>
 <hr />
 <h2 id="8-what-this-protocol-does-not-do">8. What this protocol does NOT do<a class="headerlink" href="#8-what-this-protocol-does-not-do" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Establish efficacy against a control.</strong> This is n-of-1, uncontrolled, unblinded. Any efficacy signal is suggestive at best. It is good enough to motivate a future controlled trial by a collaborator; it is not good enough to generalize.</li>
-<li><strong>Replace medical supervision.</strong> Brian's primary care + rheumatologist should know what he's doing. The blood panels should land in their system, not just his. Red-flag criteria are escalation-to-care triggers, not self-directed.</li>
-<li><strong>Cover regulatory territory.</strong> Open Enzyme is a research project; this is personal self-experimentation. Do not distribute engineered strains to others under this protocol — that requires a different framework (see <code>wiki/open-source-platform.md</code> on strain-sharing).</li>
+<li><strong>Establish efficacy against a control.</strong> n=1 is uncontrolled, unblinded. Efficacy signals are suggestive, not generalizable. They can motivate a future controlled trial; they cannot replace one.</li>
+<li><strong>Replace medical supervision.</strong> Your primary care provider and any specialists should know what you're doing. Halt criteria are escalation-to-care triggers, not self-directed-recovery instructions.</li>
+<li><strong>Cover regulatory territory.</strong> This is personal self-experimentation, not a clinical trial. Do not distribute engineered strains, compounded products, or off-label prescriptions to others under this protocol.</li>
 </ul>
 <hr />
 <h2 id="9-review-and-update">9. Review and update<a class="headerlink" href="#9-review-and-update" title="Permanent link">&para;</a></h2>
-<p>Review this document: (a) before starting a new intervention arm, (b) after any red-flag halt, &copy; at least annually, (d) whenever new stack compounds or engineered strains are added to the self-experiment. Changes tracked in git, not inline.</p>
+<p>Review this document and your active experiment designs: (a) before starting a new intervention arm, (b) after any halt, &copy; annually, (d) whenever your understanding of the relevant biology changes. Changes go through git, not inline edits.</p>
 
 
 
