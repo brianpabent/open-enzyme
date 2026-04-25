@@ -1,14 +1,30 @@
-name: Wiki Sweep
+name: Wiki Sweep (Hybrid)
 
-# Runs the two-pass Open Enzyme doc sweep on push. Replaces the local fswatch
-# launchd daemon (scripts/wiki-watch.sh) — see scripts/sweep-prompt.md for the
-# full sweep protocol. One sweep per push, consuming all wiki/*.md changes at
-# once, so cross-file synthesis is coherent.
+# Three-stage hybrid sweep architecture:
+#
+#   Pass 1 — Claude propagation (small input, precision)
+#       Reads trigger files, propagates findings across affected wiki pages,
+#       commits surgical edits. Sweep-prompt-1-propagate.md.
+#
+#   Pass 2 — V4 synthesis (large input, full corpus)
+#       Reads ALL of wiki/, finds cross-document connections, outputs raw
+#       synthesis to logs/v4-synthesis-<date>-<sha>.md. The 1M context window
+#       lets V4 see the whole knowledge base in one call. Sweep-prompt-2-
+#       synthesize.md.
+#
+#   Pass 3 — Claude review (small input, critique)
+#       Reads V4's raw synthesis log, writes interleaved review (V4 content +
+#       Claude verdict blockquote per item) prepended to wiki/synthesis.md.
+#       Verdict vocabulary: Confirmed / Confirmed-prioritize / Partial /
+#       Push-back / Rejected / Augment / Defer. Sweep-prompt-3-review.md.
+#
+# Each job has [skip-wiki-sweep] in its commit message + the workflow's job-
+# level `if:` checks for that marker, so internal commits don't recursively
+# retrigger the whole pipeline.
 #
 # Secrets required:
-#   ANTHROPIC_API_KEY — Anthropic API key used by the claude CLI
-#
-# Permissions: contents: write (so the sweep commit can be pushed back to main)
+#   ANTHROPIC_API_KEY  — Claude API for Pass 1 and Pass 3
+#   OPENROUTER_API_KEY — OpenRouter for Pass 2 (V4-Pro)
 
 on:
   push:
@@ -19,7 +35,7 @@ on:
   workflow_dispatch:
     inputs:
       trigger_paths:
-        description: 'Wiki file path(s) to sweep (space-separated). Blank = diff against HEAD~1.'
+        description: 'Wiki file path(s) to sweep (space-separated). Blank = diff against last sweep commit.'
         required: false
         type: string
 
@@ -29,35 +45,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  sweep:
+  # ============================================================================
+  # PASS 1 — Claude propagation
+  # ============================================================================
+  propagate:
+    name: "Pass 1 — Claude propagation"
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
       contents: write
-    # Self-skip on our own sweep commits (or any commit author explicitly
-    # asks to skip). We DON'T use [skip ci] for this — that's nuclear, it
-    # blocks every workflow including deploy-docs and the site goes stale.
-    # A sweep-specific marker lets the docs deploy continue running.
     if: "!contains(github.event.head_commit.message, '[skip-wiki-sweep]')"
+    outputs:
+      trigger_files: ${{ steps.trigger.outputs.changed }}
+      diff_base:     ${{ steps.trigger.outputs.diff_base }}
+      sha:           ${{ steps.trigger.outputs.sha }}
+      had_changes:   ${{ steps.trigger.outputs.has_changes }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # Full history — needed so `git log --grep='^sweep'` can locate the
-          # last sweep commit and diff since then (catching files missed by any
-          # prior push where the workflow didn't run).
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
 
@@ -68,21 +84,7 @@ jobs:
         id: trigger
         run: |
           set -euo pipefail
-
-          # Diff strategy: find the most recent sweep commit and diff since it.
-          # This catches any wiki changes that landed between sweeps — e.g., if
-          # a previous push's workflow run failed, was skipped, or the action
-          # was disabled, those files still get picked up by the next run. No
-          # separate state file; the sweep commit itself is the high-water mark.
-          #
-          # Commit message prefix convention (see scripts/sweep-prompt.md Pass 4):
-          #   "sweep: <basenames> → <N> files updated [skip ci]"
-          #   "sweep #N: ..."  (historical format)
-          #   "sweeps: ..."    (historical format)
-          # Any of these match ^sweep.
-
           if [[ "${{ github.event_name }}" == "workflow_dispatch" && -n "${{ inputs.trigger_paths }}" ]]; then
-            # Manual override with explicit paths — skip diff logic.
             echo "Manual dispatch with explicit trigger paths"
             CHANGED=$(echo "${{ inputs.trigger_paths }}" | tr ' ' '\n' | grep -v '^$' || true)
             DIFF_BASE="manual"
@@ -91,87 +93,199 @@ jobs:
             if [[ -n "$LAST_SWEEP" ]]; then
               DIFF_BASE="$LAST_SWEEP"
               echo "Last sweep commit: $LAST_SWEEP"
-              echo "  $(git log -1 --format='%s' "$LAST_SWEEP")"
             else
-              # No prior sweep in history — fall back to this push's range.
               DIFF_BASE="HEAD~1"
               echo "No prior sweep commit found; diffing HEAD~1..HEAD"
             fi
-
             CHANGED=$(git diff --name-only "$DIFF_BASE" HEAD 2>/dev/null \
               | grep -E '^wiki/.*\.md$' \
-              | grep -v '^wiki/synthesis\.md$' \
-              || true)
+              | grep -v '^wiki/synthesis\.md$' || true)
           fi
 
           if [[ -z "${CHANGED// /}" ]]; then
-            echo "No wiki changes to sweep (diff base: $DIFF_BASE)"
+            echo "No wiki changes to sweep"
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          echo "has_changes=true" >> "$GITHUB_OUTPUT"
-          echo "diff_base=$DIFF_BASE" >> "$GITHUB_OUTPUT"
+          echo "has_changes=true"            >> "$GITHUB_OUTPUT"
+          echo "diff_base=$DIFF_BASE"        >> "$GITHUB_OUTPUT"
+          echo "sha=${{ github.sha }}"       >> "$GITHUB_OUTPUT"
           {
             echo "changed<<TRIGGER_EOF"
             echo "$CHANGED"
             echo "TRIGGER_EOF"
           } >> "$GITHUB_OUTPUT"
-
-          echo "Trigger files for this sweep (since $DIFF_BASE):"
+          echo "Trigger files:"
           echo "$CHANGED" | sed 's/^/  /'
 
-      - name: Run sweep
+      - name: Run Claude propagation
         if: steps.trigger.outputs.has_changes == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TRIGGER_FILES: ${{ steps.trigger.outputs.changed }}
-          DIFF_BASE: ${{ steps.trigger.outputs.diff_base }}
-          # Model: Sonnet 4.6 is the current default. Opus 4.7 would give
-          # better Pass 2 synthesis rigor but the org's API tier rate-limits
-          # Opus at 30K input TPM, which sweeps that read multiple wiki files
-          # routinely exceed. Switch to `claude-opus-4-7[1m]` once a tier
-          # upgrade is in place. Local ad-hoc sweeps via scripts/wiki-update.sh
-          # use session-based limits and can still use Opus for deep-rigor
-          # one-offs.
-          ANTHROPIC_MODEL: claude-sonnet-4-6
+          ANTHROPIC_MODEL:   claude-sonnet-4-6
+          TRIGGER_FILES:     ${{ steps.trigger.outputs.changed }}
+          DIFF_BASE:         ${{ steps.trigger.outputs.diff_base }}
         run: |
           set -euo pipefail
-
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           TIMESTAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           TRIGGER_LIST=$(echo "$TRIGGER_FILES" | awk 'NF {printf "  - %s\n", $0}')
 
-          # Build the combined prompt in a temp file. Avoids the failure mode
-          # where a multiline string embedded in a YAML literal block with
-          # column-0 separator lines (like '---') terminates the block early.
           PROMPT_FILE="$(mktemp)"
           {
-            cat scripts/sweep-prompt.md
+            cat scripts/sweep-prompt-1-propagate.md
             echo ""
             echo "---"
             echo ""
             echo "TRIGGER: Files changed since last sweep (${DIFF_BASE}) at ${TIMESTAMP}:"
             echo "${TRIGGER_LIST}"
             echo "commit=yes"
-            echo "ci=github-actions"
+            echo "ci=github-actions-sweep-1-propagate"
           } > "$PROMPT_FILE"
 
-          # --dangerously-skip-permissions lets the CLI use Edit/Write/Bash
-          # without interactive approval. Required for CI.
-          # Model is set via ANTHROPIC_MODEL env var (Opus 4.7 1M-context).
           claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")"
 
-      - name: Push sweep output
+      - name: Push propagation
         if: steps.trigger.outputs.has_changes == 'true'
         run: |
           set -euo pipefail
-          # Pass 4 of the sweep-prompt already ran `git commit` locally in the
-          # runner. Push any new commits back to main.
           if git log origin/main..HEAD --oneline | grep -q .; then
             git push
           else
-            echo "Sweep produced no new commits to push"
+            echo "Pass 1 produced no commit"
+          fi
+
+  # ============================================================================
+  # PASS 2 — V4 synthesis (full corpus)
+  # ============================================================================
+  synthesize:
+    name: "Pass 2 — V4 synthesis"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: propagate
+    permissions:
+      contents: write
+    if: needs.propagate.outputs.had_changes == 'true'
+    outputs:
+      synthesis_log: ${{ steps.run.outputs.synthesis_log }}
+      had_synthesis: ${{ steps.run.outputs.had_synthesis }}
+
+    steps:
+      - name: Checkout (post-Pass-1 state)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run V4 synthesis
+        id: run
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Compose the trigger files string for the synthesis script
+          TRIGGER_LIST=$(echo "${{ needs.propagate.outputs.trigger_files }}" | tr '\n' ',' | sed 's/,$//')
+
+          SYNTHESIS_LOG=$(python3 scripts/v4-synthesize.py \
+            --commit-sha "${{ github.sha }}" \
+            --trigger-files "$TRIGGER_LIST" \
+            --diff-base "${{ needs.propagate.outputs.diff_base }}")
+
+          if [[ -z "$SYNTHESIS_LOG" || ! -f "$SYNTHESIS_LOG" ]]; then
+            echo "V4 synthesis produced no output file"
+            echo "had_synthesis=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "synthesis_log=$SYNTHESIS_LOG" >> "$GITHUB_OUTPUT"
+          echo "had_synthesis=true"           >> "$GITHUB_OUTPUT"
+
+          git add "$SYNTHESIS_LOG"
+          git commit -m "sweep-2-synthesize: V4 raw synthesis → $SYNTHESIS_LOG [skip-wiki-sweep]"
+          git push
+
+  # ============================================================================
+  # PASS 3 — Claude review (interleaved into wiki/synthesis.md)
+  # ============================================================================
+  review:
+    name: "Pass 3 — Claude review"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: [propagate, synthesize]
+    permissions:
+      contents: write
+    if: needs.synthesize.outputs.had_synthesis == 'true'
+
+    steps:
+      - name: Checkout (post-Pass-2 state)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run Claude review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL:   claude-sonnet-4-6
+          SYNTHESIS_LOG:     ${{ needs.synthesize.outputs.synthesis_log }}
+          TRIGGER_FILES:     ${{ needs.propagate.outputs.trigger_files }}
+          DIFF_BASE:         ${{ needs.propagate.outputs.diff_base }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          TIMESTAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          TRIGGER_LIST=$(echo "$TRIGGER_FILES" | awk 'NF {printf "  - %s\n", $0}')
+
+          PROMPT_FILE="$(mktemp)"
+          {
+            cat scripts/sweep-prompt-3-review.md
+            echo ""
+            echo "---"
+            echo ""
+            echo "TRIGGER: Pass 3 review of synthesis log at ${TIMESTAMP}:"
+            echo "  synthesis_log: ${SYNTHESIS_LOG}"
+            echo "  diff_base:     ${DIFF_BASE}"
+            echo "  commit_sha:    ${{ github.sha }}"
+            echo "  trigger files:"
+            echo "${TRIGGER_LIST}"
+            echo "commit=yes"
+            echo "ci=github-actions-sweep-3-review"
+          } > "$PROMPT_FILE"
+
+          claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")"
+
+      - name: Push review
+        run: |
+          set -euo pipefail
+          if git log origin/main..HEAD --oneline | grep -q .; then
+            git push
+          else
+            echo "Pass 3 produced no commit"
           fi

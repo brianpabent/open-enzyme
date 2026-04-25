@@ -1,16 +1,32 @@
 #!/usr/bin/env python3
 """
-v4-peer-review.py — one-off DeepSeek V4-Pro peer-review pass on the Open Enzyme wiki.
+v4-peer-review.py — ad-hoc peer-review pass on the Open Enzyme wiki.
 
-Demonstrates the multi-agent peer-review pattern: V4 reads the same corpus Claude
-just swept (commit 4a40f74), produces its own Pass 2 synthesis, and adds a
-differential-analysis section comparing what V4 surfaces vs. what Claude found.
+Local CLI tool (NOT the CI synthesis path — that's scripts/v4-synthesize.py).
+Use this when you want a one-off second-opinion pass against an existing
+Claude synthesis: the model reads the full wiki INCLUDING synthesis.md (so
+it sees what Claude wrote), produces its own synthesis, and adds a
+differential-analysis section.
 
-Reads OPENROUTER_API_KEY from .env. Saves output to logs/v4-peer-review-<date>.md.
-Reports token usage and cost.
+The CI sweep workflow uses scripts/v4-synthesize.py + Pass 3 Claude review
+for the production pattern. This script is for human-triggered peer-review
+investigations between sweeps, or for benchmarking new long-context models
+against the same corpus.
+
+Reads OPENROUTER_API_KEY from env first, falls back to .env. Saves output
+to logs/v4-peer-review-<date>.md. Reports token usage and cost.
 
 Run from the repo root:
     python3 scripts/v4-peer-review.py
+    python3 scripts/v4-peer-review.py --model anthropic/claude-3.5-sonnet
+    python3 scripts/v4-peer-review.py --model google/gemini-2.5-pro
+
+# TODO(model-flexibility): when new long-context models land — Gemini Deep
+# Research, Claude Opus with 1M, GPT-5 Pro, Llama 4 long-context, etc. —
+# benchmark each against V4-Pro on the same corpus + prompt. The architecture
+# is intentionally model-agnostic; only the OpenRouter slug changes. A useful
+# follow-up: a scripts/benchmark-models.py that runs the same prompt against
+# multiple models and compares outputs side-by-side. Out of scope for v0.
 """
 
 import os
@@ -18,21 +34,48 @@ import sys
 import json
 import glob
 import datetime
+import argparse
 import subprocess
 import tempfile
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(REPO_ROOT)
 
-# --- Read API key from .env (no logging the value) -----------------------------
-API_KEY = None
-with open(".env") as f:
-    for line in f:
-        if line.startswith("OPENROUTER_API_KEY="):
-            API_KEY = line.split("=", 1)[1].strip()
-            break
+# Default model. Override with --model.
+DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
+
+# OpenRouter pricing per Mtok (input, output) — used for cost reporting.
+# Update when new model slugs are added or pricing changes. If a model
+# isn't in this map, cost reporting falls back to "unknown".
+PRICING_USD_PER_MTOK = {
+    "deepseek/deepseek-v4-pro":   (0.435, 0.87),
+    "deepseek/deepseek-v4-flash": (0.14, 0.28),
+    "anthropic/claude-3.5-sonnet": (3.00, 15.00),
+    "anthropic/claude-3-opus":    (15.00, 75.00),
+    "google/gemini-2.5-pro":      (1.25, 5.00),
+    "openai/gpt-5":               (2.50, 10.00),
+}
+
+# --- Argparse -------------------------------------------------------------------
+parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+parser.add_argument("--model", default=DEFAULT_MODEL,
+                    help=f"OpenRouter model slug (default: {DEFAULT_MODEL})")
+parser.add_argument("--max-tokens", type=int, default=6000,
+                    help="Output token budget (default 6K)")
+args = parser.parse_args()
+
+# --- Read API key from env first, fall back to .env (no logging the value) -----
+API_KEY = os.environ.get("OPENROUTER_API_KEY")
 if not API_KEY:
-    sys.exit("OPENROUTER_API_KEY not found in .env")
+    env_path = os.path.join(REPO_ROOT, ".env")
+    if os.path.exists(env_path):
+        with open(env_path) as f:
+            for line in f:
+                if line.startswith("OPENROUTER_API_KEY="):
+                    API_KEY = line.split("=", 1)[1].strip()
+                    break
+if not API_KEY:
+    sys.exit("OPENROUTER_API_KEY not in env or .env")
 
 # --- Build the corpus ----------------------------------------------------------
 # All wiki/*.md including synthesis.md (V4 needs to see Claude's existing
@@ -77,7 +120,7 @@ Output format: the same Pass 2 structure as Claude used.
 ```
 ## V4 peer-review pass — 2026-04-25
 
-**Reviewer**: DeepSeek V4-Pro (via OpenRouter)
+**Reviewer**: {args.model} (via OpenRouter)
 **Substrate**: Open Enzyme wiki at commit 4a40f74
 
 ### New Connections
@@ -122,14 +165,13 @@ if prompt_token_estimate > 900_000:
     sys.exit(f"Prompt estimate {prompt_token_estimate:,} tokens — too close to 1M ceiling. Trim corpus.")
 
 # --- Call OpenRouter via curl (avoids Python's macOS SSL cert quirk) -----------
-print("\nCalling deepseek/deepseek-v4-pro via OpenRouter ...")
+print(f"\nCalling {args.model} via OpenRouter ...")
 
 request_body = {
-    "model": "deepseek/deepseek-v4-pro",
+    "model": args.model,
     "messages": [{"role": "user", "content": prompt}],
-    # 6K is plenty for synthesis output (Claude's pass-2 was ~3K). Smaller
-    # output budget = more headroom for input under OpenRouter's 512K cap.
-    "max_tokens": 6_000,
+    # Smaller output budget = more headroom for input under OpenRouter's 512K cap.
+    "max_tokens": args.max_tokens,
     "temperature": 0.7,
 }
 
@@ -180,9 +222,13 @@ usage = body.get("usage", {})
 prompt_tokens = usage.get("prompt_tokens", 0)
 completion_tokens = usage.get("completion_tokens", 0)
 
-# OpenRouter pricing (2026-04-25): input $0.435/Mtok, output $0.87/Mtok
-input_cost = prompt_tokens * 0.435 / 1_000_000
-output_cost = completion_tokens * 0.87 / 1_000_000
+# Look up pricing for the chosen model. Falls back to V4-Pro pricing if
+# unknown — adjust PRICING_USD_PER_MTOK at top of file when adding models.
+in_per_mtok, out_per_mtok = PRICING_USD_PER_MTOK.get(
+    args.model, PRICING_USD_PER_MTOK[DEFAULT_MODEL]
+)
+input_cost = prompt_tokens * in_per_mtok / 1_000_000
+output_cost = completion_tokens * out_per_mtok / 1_000_000
 total_cost = input_cost + output_cost
 
 print(f"\nResponse received.")
@@ -196,9 +242,9 @@ output_path = f"logs/v4-peer-review-{date_str}.md"
 os.makedirs("logs", exist_ok=True)
 
 header = f"""---
-title: "V4-Pro peer-review pass — {date_str}"
+title: "Peer-review pass ({args.model}) — {date_str}"
 date: {date_str}
-reviewer: DeepSeek V4-Pro (via OpenRouter)
+reviewer: {args.model} (via OpenRouter)
 substrate_commit: 4a40f74
 substrate_label: "Claude Opus 4.7 local-session sweep, 2026-04-24"
 input_tokens: {prompt_tokens}
@@ -206,10 +252,10 @@ output_tokens: {completion_tokens}
 cost_usd: {total_cost:.4f}
 ---
 
-# V4-Pro peer-review pass — {date_str}
+# Peer-review pass — {args.model} — {date_str}
 
 This is the first concrete instance of the multi-agent peer-review pattern named in
-[`open-enzyme-vision.md`](../wiki/open-enzyme-vision.md) §3. DeepSeek V4-Pro was given
+[`open-enzyme-vision.md`](../wiki/open-enzyme-vision.md) §3. {args.model} was given
 the same wiki corpus Claude swept yesterday (commit `4a40f74`) and asked to produce an
 independent Pass 2 synthesis plus a differential analysis. Output below is verbatim
 model output, unedited.
