@@ -133,7 +133,7 @@ If you produced a no-synthesis output (drift guard triggered), still commit the 
 
 ## Constraints
 
-- **Never write to:** any `wiki/*.md` file (including `synthesis.md`), `index.md`, `wiki/GRAPH.md`, `mkdocs.yml`, `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `labs/*`.
+- **Never write to:** any `wiki/*.md` file (including `synthesis.md`), `index.md`, `wiki/GRAPH.md`, `mkdocs.yml`, `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `abent-family-health/*`.
 - **Only output:** `logs/v4-synthesis-<date>-<sha>.md`.
 - **Evidence-level tags** on every claim.
 - **Inline provenance** — PMID or `(source: <wiki-filename>)`.
