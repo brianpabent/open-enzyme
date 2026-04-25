@@ -52,6 +52,8 @@ graph TB
         F7["Shio-Koji Marinade"]
         F8["Amazake Drink"]
         F9["Wild-Type Baseline"]
+        F10["Koji-Kin spore inoculum"]
+        F11["Koji Rice colonized substrate"]
     end
 
     subgraph Mechanism["THERAPEUTIC MECHANISM"]
@@ -195,6 +197,9 @@ graph TB
     F7 -->|"pre-digests protein in marinade"| A3
     F8 -->|"amylase-active digestive aid"| A3
     E2 -->|"engineered strain must outperform"| F9
+    %% Koji-kin two-stage process (source: koji-home-fermentation.md)
+    F10 -->|"inoculates steamed rice to produce"| F11
+    F11 -->|"is the working enzyme substrate"| F9
 
     %% Mechanism pathway
     E1 --> G1

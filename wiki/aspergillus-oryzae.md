@@ -18,6 +18,7 @@ sources:
   - open-enzyme-vision.md
   - blood-barrier-exploits.md
   - gout-deep-dive.md
+  - koji-home-fermentation.md
 ---
 
 # Aspergillus oryzae (Koji Mold)
@@ -142,7 +143,18 @@ For a food-grade therapeutic organism, pyrG is strongly preferred. (Source: engi
 
 ## Fermentation: Growing Koji on Rice
 
-Traditional koji fermentation is ancient and reproducible. The biological parameters are well-characterized:
+Traditional koji fermentation is ancient and reproducible. The biological parameters are well-characterized.
+
+### Koji-kin vs. Koji Rice — The Critical Distinction
+
+A common source of confusion in home fermentation: **koji-kin** and **koji rice** are different things. (source: koji-home-fermentation.md)
+
+| Term | What it is | What it looks like | Use |
+|---|---|---|---|
+| **Koji-kin** (種麹, *tane-koji*) | Dried *Aspergillus* spore inoculum on a small carrier (typically rice flour) | Pink/purple foil packet, fine pinkish-tan powder | **Starting material.** A pinch inoculates ~1 kg of cooked rice. |
+| **Koji rice** (麹, *kōji*) | Cooked rice that has been inoculated with koji-kin and fully colonized by mycelium over 42–48 h | Whole rice grains covered in white fuzzy mycelium, sweet/floral smell | **Working enzyme substrate.** This is what's called for in shio-koji / amazake / miso recipes. |
+
+You only buy koji-kin once per ~15 kg of rice you plan to inoculate. The two-stage process is: (1) koji-kin + steamed rice → koji rice (42–48 h at 32–40°C); (2) koji rice → finished product (shio-koji, amazake, miso). (source: koji-home-fermentation.md)
 
 ### Standard Protocol
 
@@ -160,12 +172,29 @@ Traditional koji fermentation is ancient and reproducible. The biological parame
 - Cover lightly to maintain humidity while allowing air circulation
 - Temperature control via incubator, oven with pilot light, or room heater
 
+**Turning schedule (手入れ):** Koji rice requires mixing at intervals to distribute heat and moisture. (source: koji-home-fermentation.md)
+- **~15–20 h after inoculation (1st turning):** Rice should be warm to the touch, faint sweet smell. Break up clumps, mix gently, re-wrap. Target temp: 37–39°C.
+- **~24 h (2nd turning):** White mycelium visible. Mix again. Target: 38–40°C.
+- **~36 h (3rd turning):** Mycelium dense and white, sweet/floral smell ("chestnut" / "popcorn" notes). Target: 37–40°C.
+
 **Endpoint:**
 - Koji is ready when the rice grains are bound together by white mycelium (fungal threads)
 - A pleasant fruity/sweet aroma develops (from enzymatic activity)
 - Grains appear coated with white growth but individual grains still visible (not mushy)
+- Should NOT smell of ammonia, alcohol, or be greenish (= contamination, discard)
 
 **Yield:** From ~500g steamed rice, you'll produce ~600–700g of koji (wet weight). The enzyme concentration is ready for immediate use. (Source: engineered-koji-protocol.md)
+
+### Troubleshooting
+
+| Problem | Likely cause | Fix |
+|---|---|---|
+| No mycelium growth | Temperature too low; rice too wet/dry; expired koji-kin | Check thermometer; rice should be al dente; replace starter |
+| Green/black/pink patches (not white) | Contamination (Penicillium, bacteria) | Discard. Improve sanitation, lower temp |
+| Ammonia smell | Over-fermented (>50 h, too warm) | Discard or use immediately for shio-koji (salt will mask it) |
+| Yeasty/alcohol smell | Wild yeast competition; rice too wet | Discard; reduce moisture next batch |
+
+(source: koji-home-fermentation.md)
 
 ### Enzymatic Activity Output
 

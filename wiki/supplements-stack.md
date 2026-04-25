@@ -434,6 +434,8 @@ Compounds and approaches that are viable near-term but require medical discussio
 
 **Practical note:** Fermentation naturally produces these compounds. Eating traditional fermented foods (miso, soy sauce, kimchi, kombucha) provides dual benefits: living probiotics + NLRP3-suppressing metabolites. (Source: nlrp3-exploit-map.md)
 
+**Koji fermentation note:** Home-made shio-koji and amazake (from wild-type *A. oryzae*) are practical fermented-food additions that also deliver digestive enzymes (amylase, protease, lipase). For the complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), see [Koji Home Fermentation](./koji-home-fermentation.md). Yellow koji (*A. oryzae*) is the recommended strain for digestive-enzyme home use. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+
 **Cost:** Negligible to modest ($5–10/week for specialty fermented products)
 
 ---

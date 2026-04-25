@@ -172,6 +172,8 @@ Here is where the [[open-enzyme-vision|Open Enzyme]] project offers an immediate
 
 For a complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), see [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform, and it provides the practical starting point for n=1 / household EPI trials. (source: koji-home-fermentation.md)
 
+> **Key terminology note:** Koji-kin (種麹, *tane-koji*) is the dried spore inoculum — the starting material. Koji rice (麹, *kōji*) is the cooked rice fully colonized by mycelium after 42–48 h — the working enzyme substrate used in shio-koji, amazake, and miso recipes. These are distinct; most online recipes assume you know which one you have. (source: koji-home-fermentation.md)
+
 ### Why Koji Works
 
 Traditional koji, fermented on steamed rice for 36–48 hours at 30°C, produces:

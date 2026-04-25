@@ -169,6 +169,8 @@ A 135 kDa protein (uricase tetramer) must survive this gauntlet to reach systemi
 
 **Daily dosing:** May be less critical if koji matrix provides sustained enzyme release
 
+**Practical home protocol:** For the complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), including the koji-kin vs. koji rice distinction, turning schedule, troubleshooting, and yellow vs. white vs. black koji comparison, see [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform for EPI applications. (source: koji-home-fermentation.md)
+
 (Source: open-enzyme-vision.md, engineered-koji-protocol.md)
 
 ### E. coli Nissle (PULSE)
