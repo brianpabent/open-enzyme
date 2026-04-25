@@ -65,6 +65,8 @@ Before any genetic engineering, every batch of standard *A. oryzae* koji automat
 
 (source: nlrp3-inhibitor-screen.md, aspergillus-oryzae.md)
 
+**Wild-type baseline practice:** Before engineering, the wild-type fermentation craft itself is a useful project anchor — it produces foods (shio-koji, amazake, miso) with measurable digestive enzyme activity and is the home-scale reference the engineered strain must outperform. See [Koji Home Fermentation](koji-home-fermentation.md) for the small-batch protocol (koji-kin → koji rice → finished foods) and the EPI-relevance discussion.
+
 ## 02 The Gene
 
 The A. flavus uricase gene: cloned in 1992, crystal structure solved, basis for rasburicase. Well-characterized and ready to deploy.

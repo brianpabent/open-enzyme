@@ -118,6 +118,7 @@ Detailed technical analyses for the uricase and koji engineering tracks.
 **Koji / *A. oryzae* track:**
 - **[Koji Construct Design](wiki/koji-construct-design.md)** — *A. oryzae* uricase via amyB promoter (starch-inducible, 6–10× baseline). Expected 40–80 mg/g koji.
 - **[Digestive Enzyme Optimization](wiki/digestive-enzyme-optimization.md)** — RIB40 strain; lipase 1,813–2,280 U/g koji; rice bran optimal substrate; CRISPR tglA target. 10–15 g koji ≈ Creon equivalence.
+- **[Koji Home Fermentation](wiki/koji-home-fermentation.md)** — Wild-type small-batch protocol (koji-kin → koji rice → shio-koji / amazake). Pre-engineering baseline that the engineered strain must outperform; n=1 / household trial bed for the EPI co-target.
 - **[NLRP3 Inhibitor Screen](wiki/nlrp3-inhibitor-screen.md)** — Top candidates: ursolic acid (8.59 g/L yeast), quercetin (930 mg/L), carnosine. Kojic acid native production (3–5 g/L) flagged as free bonus.
 
 **Cross-platform:**
