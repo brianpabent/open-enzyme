@@ -45,20 +45,35 @@ import tempfile
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(REPO_ROOT)
 
-# OpenRouter caps deepseek/deepseek-v4-pro at 512K input tokens (platform
-# policy, even though the model itself supports 1M). Excluding three low-
-# synthesis-value files keeps us under that ceiling.
+# Files excluded from the corpus regardless of model — Mermaid diagrams,
+# bibliographies, and tooling references add input cost without contributing
+# to biology synthesis.
 EXCLUDE = {
     "wiki/GRAPH.md",                  # Mermaid diagram — hard for non-vision models
     "wiki/references.md",             # bibliography
     "wiki/ai-bio-tools-playbook.md",  # tooling reference, not biology
 }
 
-# Default model. Override with --model.
-# TODO(model-flexibility): when new long-context models land (Gemini Deep
-# Research, Claude Opus with 1M, GPT-5 Pro, etc.), add them as --model
-# options and benchmark against V4-Pro on the same corpus + prompt.
-DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
+# Default Pass 2 synthesizer. Switched from deepseek/deepseek-v4-pro on
+# 2026-04-25: V4-Pro through OpenRouter exhibited two distinct unreliable
+# failure modes (sustained 429 throttling on Together / SiliconFlow, plus
+# null-content responses with finish_reason=null). Gemini 2.5 Pro produced
+# the same three top-tier connections V4-Pro found on 2026-04-24 (androgen
+# ceiling, fructose challenge, carnosine counter-agent) when run on the
+# same wiki corpus, plus extra contradiction-resolution and pushback work,
+# at ~3.3x the unit cost (~$0.65/sweep vs. ~$0.20).
+DEFAULT_MODEL = "google/gemini-2.5-pro"
+
+# OpenRouter pricing per Mtok (input, output) — used for cost reporting.
+# Update when adding model options.
+PRICING_USD_PER_MTOK = {
+    "google/gemini-2.5-pro":      (1.25, 5.00),
+    "google/gemini-2.5-flash":    (0.30, 2.50),
+    "deepseek/deepseek-v4-pro":   (0.435, 0.87),
+    "deepseek/deepseek-v4-flash": (0.14, 0.28),
+    "anthropic/claude-opus-4-7":  (15.00, 75.00),
+    "openai/gpt-5":               (2.50, 10.00),
+}
 
 
 def read_api_key():
@@ -136,9 +151,10 @@ def main():
     print(f"Corpus: {len(included_paths)} files, ~{prompt_token_estimate:,} tokens (est.)",
           file=sys.stderr)
 
-    # Sanity check
-    if prompt_token_estimate > 480_000:
-        print(f"WARNING: estimate {prompt_token_estimate:,} tokens — close to 512K cap. May need EXCLUDE expansion.",
+    # Sanity check — Gemini 2.5 Pro caps at 2M input tokens (huge headroom);
+    # for other models check OpenRouter's per-model context limit.
+    if prompt_token_estimate > 1_800_000:
+        print(f"WARNING: estimate {prompt_token_estimate:,} tokens — close to Gemini 2.5 Pro's 2M cap. May need EXCLUDE expansion.",
               file=sys.stderr)
 
     # Build request body
@@ -218,10 +234,13 @@ def main():
     in_tok = usage.get("prompt_tokens", 0)
     out_tok = usage.get("completion_tokens", 0)
 
-    # OpenRouter pricing for deepseek-v4-pro: $0.435/Mtok in, $0.87/Mtok out
-    cost_in = in_tok * 0.435 / 1_000_000
-    cost_out = out_tok * 0.87 / 1_000_000
-    cost_total = cost_in + cost_out
+    in_per, out_per = PRICING_USD_PER_MTOK.get(args.model, (None, None))
+    if in_per is None:
+        cost_in = cost_out = cost_total = 0.0
+    else:
+        cost_in = in_tok * in_per / 1_000_000
+        cost_out = out_tok * out_per / 1_000_000
+        cost_total = cost_in + cost_out
 
     print(f"Tokens: in={in_tok:,} out={out_tok:,}  cost=${cost_total:.4f}",
           file=sys.stderr)

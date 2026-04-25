@@ -241,7 +241,9 @@ print(f"  Cost:          ${total_cost:.4f}  (in: ${input_cost:.4f}, out: ${outpu
 
 # --- Save output ---------------------------------------------------------------
 date_str = datetime.date.today().isoformat()
-output_path = f"logs/v4-peer-review-{date_str}.md"
+# Model-tagged filename so head-to-head runs on the same date don't overwrite.
+model_tag = args.model.split("/")[-1].replace("-pro", "").replace("-", "")
+output_path = f"logs/v4-peer-review-{date_str}-{model_tag}.md"
 os.makedirs("logs", exist_ok=True)
 
 header = f"""---

@@ -6,15 +6,17 @@ name: Wiki Sweep (Hybrid)
 #       Reads trigger files, propagates findings across affected wiki pages,
 #       commits surgical edits. Sweep-prompt-1-propagate.md.
 #
-#   Pass 2 — DeepSeek V4-Pro synthesis (large input, full corpus)
+#   Pass 2 — Gemini 2.5 Pro synthesis (large input, full corpus)
 #       Reads ALL of wiki/, finds cross-document connections, outputs raw
-#       synthesis to logs/v4-synthesis-<date>-<sha>.md. The 1M context window
-#       lets DeepSeek V4-Pro see the whole knowledge base in one call. Sweep-prompt-2-
-#       synthesize.md.
+#       synthesis to logs/v4-synthesis-<date>-<sha>.md. The 2M context window
+#       lets Gemini 2.5 Pro see the whole knowledge base in one call.
+#       (Switched from DeepSeek V4-Pro on 2026-04-25 — reliability;
+#       Gemini surfaced the same top findings on the same corpus.)
+#       Sweep-prompt-2-synthesize.md.
 #
 #   Pass 3 — Claude review (small input, critique)
-#       Reads DeepSeek V4-Pro's raw synthesis log, writes interleaved review (DeepSeek V4-Pro content +
-#       Claude verdict blockquote per item) prepended to wiki/synthesis.md.
+#       Reads the Pass 2 synthesis log, writes interleaved review (synthesizer
+#       content + Claude verdict blockquote per item) prepended to wiki/synthesis.md.
 #       Verdict vocabulary: Confirmed / Confirmed-prioritize / Partial /
 #       Push-back / Rejected / Augment / Defer. Sweep-prompt-3-review.md.
 #
@@ -24,7 +26,7 @@ name: Wiki Sweep (Hybrid)
 #
 # Secrets required:
 #   ANTHROPIC_API_KEY  — Claude API for Pass 3 (small input — no rate-limit risk)
-#   OPENROUTER_API_KEY — OpenRouter for Pass 1 (Sonnet) and Pass 2 (V4-Pro)
+#   OPENROUTER_API_KEY — OpenRouter for Pass 1 (Sonnet) and Pass 2 (Gemini 2.5 Pro)
 #
 # Why Pass 1 routes through OpenRouter rather than Anthropic-direct:
 # Pass 1 reads/edits multiple wiki files, which blows past the 30K
@@ -168,10 +170,10 @@ jobs:
           fi
 
   # ============================================================================
-  # PASS 2 — DeepSeek V4-Pro synthesis (full corpus)
+  # PASS 2 — Gemini 2.5 Pro synthesis (full corpus)
   # ============================================================================
   synthesize:
-    name: "Pass 2 — DeepSeek V4-Pro synthesis"
+    name: "Pass 2 — Gemini 2.5 Pro synthesis"
     runs-on: ubuntu-latest
     timeout-minutes: 30
     needs: propagate
@@ -195,7 +197,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run DeepSeek V4-Pro synthesis
+      - name: Run Gemini 2.5 Pro synthesis
         id: run
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -213,7 +215,7 @@ jobs:
             --diff-base "${{ needs.propagate.outputs.diff_base }}")
 
           if [[ -z "$SYNTHESIS_LOG" || ! -f "$SYNTHESIS_LOG" ]]; then
-            echo "DeepSeek V4-Pro synthesis produced no output file"
+            echo "Pass 2 synthesis produced no output file"
             echo "had_synthesis=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -222,7 +224,7 @@ jobs:
           echo "had_synthesis=true"           >> "$GITHUB_OUTPUT"
 
           git add "$SYNTHESIS_LOG"
-          git commit -m "sweep-2-synthesize: DeepSeek V4-Pro raw synthesis → $SYNTHESIS_LOG [skip-wiki-sweep]"
+          git commit -m "sweep-2-synthesize: Gemini 2.5 Pro raw synthesis → $SYNTHESIS_LOG [skip-wiki-sweep]"
           git push
 
   # ============================================================================
@@ -257,7 +259,7 @@ jobs:
       - name: Install Claude CLI
         run: npm install -g @anthropic-ai/claude-code
 
-      - name: Count markers in DeepSeek V4-Pro synthesis
+      - name: Count markers in Pass 2 synthesis
         id: count
         env:
           SYNTHESIS_LOG: ${{ needs.synthesize.outputs.synthesis_log }}
@@ -265,7 +267,7 @@ jobs:
           set -euo pipefail
           MARKER_COUNT=$(grep -c '{{PEER-REVIEW}}' "$SYNTHESIS_LOG" || true)
           MARKER_COUNT=${MARKER_COUNT:-0}
-          echo "Found $MARKER_COUNT {{PEER-REVIEW}} markers in DeepSeek V4-Pro synthesis"
+          echo "Found $MARKER_COUNT {{PEER-REVIEW}} markers in Pass 2 synthesis"
           echo "marker_count=$MARKER_COUNT" >> "$GITHUB_OUTPUT"
 
       - name: Run Claude review (output reviews only — merge script handles substitution)
@@ -302,18 +304,18 @@ jobs:
 
           # Capture Claude's stdout to a reviews file. Claude's prompt instructs
           # it to output ONLY review blockquotes separated by <<<NEXT>>> — the
-          # merge script parses that and substitutes into DeepSeek V4-Pro's synthesis.
+          # merge script parses that and substitutes into the Pass 2 synthesis.
           REVIEWS_FILE="$(mktemp --suffix=.txt)"
           claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")" > "$REVIEWS_FILE"
 
-          # Run the deterministic merge — DeepSeek V4-Pro content preserved verbatim
+          # Run the deterministic merge — Pass 2 content preserved verbatim
           python3 scripts/synthesis-merge.py \
             --synthesis-log "$SYNTHESIS_LOG" \
             --reviews-file "$REVIEWS_FILE" \
             --commit-sha "${{ github.sha }}" \
             --diff-base "$DIFF_BASE" \
             --trigger-files "$(echo "$TRIGGER_FILES" | tr '\n' ',' | sed 's/,$//')" \
-            --synthesizer "deepseek/deepseek-v4-pro" \
+            --synthesizer "google/gemini-2.5-pro" \
             --reviewer "anthropic/${ANTHROPIC_MODEL}"
 
           # Commit the synthesis.md prepend
@@ -322,7 +324,7 @@ jobs:
             exit 0
           fi
           git add wiki/synthesis.md
-          git commit -m "sweep-3-review: Claude review of DeepSeek V4-Pro synthesis → wiki/synthesis.md [skip-wiki-sweep]"
+          git commit -m "sweep-3-review: Claude review of Gemini 2.5 Pro synthesis → wiki/synthesis.md [skip-wiki-sweep]"
 
       - name: Push review
         run: |
