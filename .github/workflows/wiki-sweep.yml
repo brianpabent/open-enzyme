@@ -118,8 +118,29 @@ jobs:
           echo "Trigger files:"
           echo "$CHANGED" | sed 's/^/  /'
 
+          # Skip-Pass-1 check: if every trigger file was already propagated
+          # in the most recent sweep-1-propagate commit (i.e. no edits to
+          # any of them since), skip the redundant Sonnet run. Pass 2 still
+          # runs against the current state.
+          LAST_PASS_1=$(git log --format='%H' --grep='^sweep-1-propagate' -n 1 || true)
+          SKIP_PASS_1="false"
+          if [[ -n "$LAST_PASS_1" ]]; then
+            STALE=""
+            while IFS= read -r f; do
+              [[ -z "$f" ]] && continue
+              if git log --format='%H' "$LAST_PASS_1"..HEAD -- "$f" | grep -q .; then
+                STALE="$STALE $f"
+              fi
+            done <<< "$CHANGED"
+            if [[ -z "${STALE// /}" ]]; then
+              SKIP_PASS_1="true"
+              echo "All trigger files already propagated in $LAST_PASS_1 — skipping Pass 1"
+            fi
+          fi
+          echo "skip_pass_1=$SKIP_PASS_1" >> "$GITHUB_OUTPUT"
+
       - name: Run Pass 1 propagation (Sonnet via OpenRouter)
-        if: steps.trigger.outputs.has_changes == 'true'
+        if: steps.trigger.outputs.has_changes == 'true' && steps.trigger.outputs.skip_pass_1 != 'true'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           TRIGGER_FILES:      ${{ steps.trigger.outputs.changed }}
