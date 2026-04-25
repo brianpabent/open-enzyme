@@ -153,20 +153,35 @@ def main():
         json.dump(body, tf)
         body_path = tf.name
 
+    # Retry on transient upstream rate limits — V4-Pro routes through
+    # Together / SiliconFlow / DeepInfra and these provider-side throttles
+    # come and go. Backoff: 10s, 30s, 60s, 120s.
+    import time as _time
+    max_retries = 5
+    result = None
     try:
-        result = subprocess.run(
-            [
-                "curl", "-sS", "--fail-with-body",
-                "https://openrouter.ai/api/v1/chat/completions",
-                "-H", f"Authorization: Bearer {api_key}",
-                "-H", "Content-Type: application/json",
-                "-H", "HTTP-Referer: https://github.com/brianpabent/open-enzyme",
-                "-H", "X-Title: Open Enzyme synthesis sweep",
-                "-d", f"@{body_path}",
-                "--max-time", "600",
-            ],
-            capture_output=True, text=True, timeout=620,
-        )
+        for attempt in range(max_retries):
+            result = subprocess.run(
+                [
+                    "curl", "-sS", "--fail-with-body",
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    "-H", f"Authorization: Bearer {api_key}",
+                    "-H", "Content-Type: application/json",
+                    "-H", "HTTP-Referer: https://github.com/brianpabent/open-enzyme",
+                    "-H", "X-Title: Open Enzyme synthesis sweep",
+                    "-d", f"@{body_path}",
+                    "--max-time", "600",
+                ],
+                capture_output=True, text=True, timeout=620,
+            )
+            if result.returncode == 0:
+                break
+            transient = any(s in result.stdout for s in ("429", "rate-limit", "temporarily", "502", "503"))
+            if not transient or attempt == max_retries - 1:
+                break
+            backoff = [10, 30, 60, 120][attempt] if attempt < 4 else 120
+            print(f"  [retry {attempt+1}/{max_retries-1}] transient error, sleeping {backoff}s ...", file=sys.stderr, flush=True)
+            _time.sleep(backoff)
     finally:
         os.unlink(body_path)
 
