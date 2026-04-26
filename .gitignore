@@ -12,6 +12,7 @@ node_modules/
 .vscode/
 site/
 
-# Personal self-experiment data lives in separate private sibling repos
-# under the abent/ parent directory (not nested in this repo).
-# See ../abent-family-health/CLAUDE.md for the convention.
+# Personal self-experiment data (PHI: lab values, daily logs, stack tracking)
+# does not live in this public repo. Keep it in a separate private location of
+# your choice — see wiki/self-experiment-protocol.md §7 for patterns. If you
+# nest it inside this working tree, add the directory name here.

@@ -183,10 +183,10 @@ An example of this protocol applied to the EPI track. A structured self-experime
 - **Confound flagged:** Lying flat <90 min post-meal identified as a strong contributor to overnight episodes — must be controlled separately from enzyme-dose effects.
 
 **Interim findings (n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md):**
-- Variant B (2 caps at first bite) produced "first decoupling of liquid-stool-from-pain in 25-year baseline" on 2026-04-25 breakfast (~15–20 g fat).
+- Variant B (2 caps at first bite) decoupled liquid-stool from pain on 2026-04-25 breakfast (~15–20 g fat) — a clear shift from a long-stable baseline.
 - Variant C (1+1 split) successful for >25 g fat meals.
-- No adverse reactions across 30+ meals; no allergic response despite Hashimoto's autoimmune status.
+- No adverse reactions across 30+ meals; no allergic response.
 
 **Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only. Generates hypotheses for formal testing; does not establish efficacy. Paired stool-fat (steatocrit) measurement before and after a controlled trial would be the next-rigor step.
 
-Full daily log in the household private repo (`abent-family-health/lynn/experiments/2026-04-25_pert-timing.md`). Only de-identified pattern findings are reproduced here, per the PHI policy in §7 above.
+Full daily log lives in the experimenter's private storage (e.g., `<your-private-repo>/<subject>/experiments/<date>_<topic>.md`). Only de-identified pattern findings are reproduced here, per the PHI policy in §7 above.

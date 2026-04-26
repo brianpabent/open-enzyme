@@ -394,8 +394,8 @@ A single fermented food attacking gout from both the uric acid and inflammatory 
 - **Engineered koji lipase yield in FIP terms:** 1,813–2,280 U/g koji translates to **~50,000–60,000 FIP per dried gram** at typical assay conditions — meaning 1 g engineered koji could match BoulderBio's 2-cap dose. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
 
 **n=1 Tolerability Datum (April 2026):**
-- Wild-type *A. oryzae*-derived enzymes (BoulderBio) were well-tolerated across 30+ meals in a single subject with Hashimoto's autoimmune status — no adverse reactions, no allergic response. (Clinical n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md)
-- "First decoupling of liquid-stool-from-pain in 25-year baseline" observed on 2-cap protocol at 2026-04-25 breakfast (~15–20 g fat). This is a meaningful efficacy signal for the platform's mechanism of action even before any engineering. (Clinical n=1; source: digestive-enzyme-optimization.md)
+- Wild-type *A. oryzae*-derived enzymes (BoulderBio) were well-tolerated across 30+ meals in a single subject — no adverse reactions, no allergic response. (Clinical n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md)
+- A clear decoupling of liquid-stool from pain — against a long-stable baseline — was observed on the 2-cap protocol at 2026-04-25 breakfast (~15–20 g fat). This is a meaningful efficacy signal for the platform's mechanism of action even before any engineering. (Clinical n=1; source: digestive-enzyme-optimization.md)
 - **Split-dose finding:** 1+1 split (1 cap at first bite + 1 at ~10 min) was successful for very fatty meals (>25 g fat), suggesting dose magnitude AND duration matter. The engineered platform should consider sustained-release formulation or split-dose instructions. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
 
 **Codon Optimization for A. oryzae:**

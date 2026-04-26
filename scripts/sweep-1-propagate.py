@@ -56,7 +56,6 @@ READ_ONLY_GLOBS = [
     ".claude/**",
     ".obsidian/**",
     ".git/**",
-    "abent-family-health/**",
 ]
 
 # OpenRouter pricing per Mtok (input, output) — for cost reporting.
@@ -426,7 +425,7 @@ def main():
           "changes after you call done(). Do NOT attempt git operations.\n\n"
           "Read-only paths (the harness will reject writes to these): "
           "wiki/synthesis.md, reference/, *.html, CLAUDE.md, README.md, "
-          "scripts/, .claude/, .obsidian/, .git/, abent-family-health/.\n\n"
+          "scripts/, .claude/, .obsidian/, .git/.\n\n"
           "Pass 1 scope: propagate the trigger findings to affected wiki "
           "pages with surgical edits. Do NOT synthesize, do NOT propose "
           "experiments, do NOT touch wiki/synthesis.md (that is Pass 2's "

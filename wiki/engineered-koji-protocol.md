@@ -402,7 +402,7 @@ The primary commercial benchmark for the engineered platform is the wild-type *A
 
 **n=1 PERT-timing self-experiment (ongoing 2026-04-19 → present; ~30 meals tracked):**
 - 1 cap at first bite (label-default): insufficient for any meal >15 g fat; persistent steatorrhea and cramping.
-- **2 caps at first bite**: markedly improved; 2026-04-25 breakfast produced "first decoupling of liquid-stool-from-pain in 25-year baseline." (Clinical n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md)
+- **2 caps at first bite**: markedly improved; 2026-04-25 breakfast produced a clear decoupling of liquid-stool from pain against a long-stable baseline. (Clinical n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md)
 - **1+1 split** (1 cap at first bite + 1 at ~10 min): successful for >25 g fat meals. Suggests enzyme exposure across a longer absorption window matters.
 - Pre-emptive enzyme during long cooking sessions: cooking-and-tasting = small-meal eating; enzyme at start of cook prevented pre-dinner symptom buildup.
 
@@ -412,7 +412,7 @@ The primary commercial benchmark for the engineered platform is the wild-type *A
 
 **Formulation implication:** Split-dose performance suggests the engineered platform should consider sustained-release formulation, or explicit instructions for split dosing on high-fat meals. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
 
-**Tolerability:** No adverse reactions across 30+ meals; no allergic response despite Hashimoto's autoimmune status. Argues that downstream allergenicity testing of engineered variants on the same chassis is reasonable. (Clinical n=1; source: digestive-enzyme-optimization.md)
+**Tolerability:** No adverse reactions across 30+ meals; no allergic response. Argues that downstream allergenicity testing of engineered variants on the same chassis is reasonable. (Clinical n=1; source: digestive-enzyme-optimization.md)
 
 ---
 

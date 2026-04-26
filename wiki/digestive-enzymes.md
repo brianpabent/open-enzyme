@@ -250,7 +250,7 @@ A structured self-experiment on BoulderBio dose and timing across ~30 meals (3 w
 | Variant | Protocol | Outcome |
 |---|---|---|
 | A | 1 cap at first bite (label-default) | Persistent post-meal sticky stools, occasional steatorrhea, post-fat-meal cramping. Insufficient for any meal >15 g fat. |
-| B | **2 caps at first bite** | Markedly improved comfort. 2026-04-25 breakfast (~15–20 g fat) produced loose-stool-with-floaters but **no pain — first decoupling of liquid-stool-from-pain in 25-year baseline.** |
+| B | **2 caps at first bite** | Markedly improved comfort. 2026-04-25 breakfast (~15–20 g fat) produced loose-stool-with-floaters but **no pain — a clear decoupling of liquid-stool from pain against a long-stable baseline.** |
 | C | **1+1 split** (1 at first bite + 1 at ~10 min) | Successful for very fatty meals (>25 g fat). Hypothesis: enzyme exposure across longer absorption window. |
 | D | Pre-emptive enzyme during long cooking sessions | Cooking-and-tasting effectively = small-meal eating. Enzyme at start of significant cook prevented pre-dinner symptom buildup. |
 
@@ -266,8 +266,8 @@ A structured self-experiment on BoulderBio dose and timing across ~30 meals (3 w
 
 1. **The 40,000 FIP benchmark is insufficient at 1 cap/meal** for the project's EPI persona. The 1,813–2,280 U/g lipase yields cited above translate to **~50,000–60,000 FIP per dried gram** at typical assay conditions — meaning a 1 g engineered koji dose could theoretically match BoulderBio's 2-cap dose. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
 2. **Split-dose performance suggests dose magnitude AND duration matter.** The engineered platform should consider sustained-release formulation, or instructions for split dosing on high-fat meals. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
-3. **The "first decoupling of liquid-stool-from-pain in 25 years" datum** is a meaningful efficacy signal for the platform's mechanism of action even before any engineering. Wild-type *A. oryzae* enzyme + adequate dose + correct timing can move a 25-year-stable symptom for at least one patient. (Clinical n=1; source: digestive-enzyme-optimization.md)
-4. **A. oryzae-derived enzymes are well-tolerated.** No adverse reactions across 30+ meals; no allergic response despite Hashimoto's autoimmune status. This argues that downstream allergenicity testing of engineered variants on the same chassis is reasonable. (Clinical n=1; source: digestive-enzyme-optimization.md)
+3. **The decoupling-of-liquid-stool-from-pain datum** on the 2-cap protocol — against a long-stable baseline — is a meaningful efficacy signal for the platform's mechanism of action even before any engineering. Wild-type *A. oryzae* enzyme + adequate dose + correct timing can move a long-stable symptom for at least one patient. (Clinical n=1; source: digestive-enzyme-optimization.md)
+4. **A. oryzae-derived enzymes are well-tolerated.** No adverse reactions across 30+ meals; no allergic response. This argues that downstream allergenicity testing of engineered variants on the same chassis is reasonable. (Clinical n=1; source: digestive-enzyme-optimization.md)
 
 ---
 

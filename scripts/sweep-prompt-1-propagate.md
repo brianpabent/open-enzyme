@@ -17,7 +17,7 @@ You are running **Pass 1** of the Open Enzyme sweep — propagation only. The TR
 ## Read-only
 
 - `wiki/synthesis.md` — Pass 3 (Claude review) writes to it. Hands off.
-- `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*`, `abent-family-health/*` — never modify.
+- `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*` — never modify.
 
 ---
 
@@ -84,4 +84,4 @@ If nothing was modified across propagation, do NOT create an empty commit. Exit 
 - **Inline provenance** on new content: `(source: <filename>)`.
 - **No inline revision history.** Git is the history.
 - **Pass 1 is conservative.** Don't synthesize, don't propose experiments, don't write to synthesis.md, don't draw cross-corpus conclusions. Synthesis is DeepSeek V4-Pro's job in the next pass.
-- **Never write to:** `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*`, `abent-family-health/*`.
+- **Never write to:** `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*`.

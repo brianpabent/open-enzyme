@@ -379,7 +379,7 @@ The project's EPI persona (Lynn — see [open-enzyme-vision.md](./open-enzyme-vi
 | Variant | Protocol | Outcome |
 |---|---|---|
 | A | 1 cap at first bite (label-default) | Persistent post-meal sticky stools, occasional steatorrhea, post-fat-meal cramping. **Insufficient for any meal >15 g fat.** |
-| B | **2 caps at first bite** | Markedly improved comfort. Saturday 2026-04-25 breakfast (~15–20 g fat) produced loose-stool-with-floaters but **no pain — first decoupling of liquid-stool-from-pain in 25-year baseline.** |
+| B | **2 caps at first bite** | Markedly improved comfort. Saturday 2026-04-25 breakfast (~15–20 g fat) produced loose-stool-with-floaters but **no pain — a clear decoupling of liquid-stool from pain against a long-stable baseline.** |
 | C | **1+1 split** (1 at first bite + 1 at ~10 min) | Successful for very fatty meals (>25 g fat). Hypothesis: enzyme exposure across longer absorption window. |
 | D | Pre-emptive enzyme during long cooking sessions (taste-while-cooking) | Cooking-and-tasting effectively = small-meal eating. Enzyme at start of significant cook prevented pre-dinner symptom buildup. |
 
@@ -396,12 +396,12 @@ The project's EPI persona (Lynn — see [open-enzyme-vision.md](./open-enzyme-vi
 
 1. **The 40,000 FIP benchmark is not enough at 1 cap/meal** for the project's EPI persona. Engineered *A. oryzae* needs to deliver substantially more lipase per dose, OR the dosing convention for OTC products needs to update from "1 cap/meal" to "2 caps/meal" at this strength. The 1,813–2,280 U/g lipase yields cited in §5.2 above translate to **~50,000–60,000 FIP per dried gram** at typical assay conditions — meaning a 1 g engineered koji dose could theoretically match BoulderBio's 2-cap dose.
 2. **Split-dose performance suggests dose magnitude AND duration matter.** The engineered platform should consider sustained-release formulation, or instructions for split dosing on high-fat meals.
-3. **The "first decoupling of liquid-stool-from-pain in 25 years" datum on 2-cap protocol is a meaningful efficacy signal** for the platform's mechanism of action even before any engineering. Wild-type *A. oryzae* enzyme + adequate dose + correct timing can move a 25-year-stable symptom for at least one patient.
-4. **A. oryzae-derived enzymes are well-tolerated.** No adverse reactions reported in this n=1 across 30+ meals; no allergic response despite Hashimoto's autoimmune status. This argues that downstream allergenicity testing of engineered variants on the same chassis is reasonable.
+3. **The decoupling of liquid-stool from pain on the 2-cap protocol — against a long-stable baseline — is a meaningful efficacy signal** for the platform's mechanism of action even before any engineering. Wild-type *A. oryzae* enzyme + adequate dose + correct timing can move a long-stable symptom for at least one patient.
+4. **A. oryzae-derived enzymes are well-tolerated.** No adverse reactions reported in this n=1 across 30+ meals; no allergic response. This argues that downstream allergenicity testing of engineered variants on the same chassis is reasonable.
 
 **Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. **Suggestive only.** Generates hypotheses for formal testing; does not establish efficacy. Paired stool-fat (steatocrit) measurement before and after a controlled trial would be the next-rigor step.
 
-(See `abent-family-health/lynn/experiments/2026-04-25_pert-timing.md` in the household private repo for the full daily log; only the de-identified pattern findings are reproduced here.)
+(The full daily log lives in the experimenter's private storage — see [self-experiment-protocol.md §7](./self-experiment-protocol.md) for the PHI-handling pattern. Only de-identified pattern findings are reproduced here.)
 
 ---
 
