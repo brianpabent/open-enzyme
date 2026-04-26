@@ -158,6 +158,14 @@ graph TB
         S8["Aromatase Inhibitors"]
     end
 
+    subgraph ABCG2Mod["ABCG2 MODULATORS (NEW)"]
+        AM1["Butyrate / SCFA from fermentable fiber"]
+        AM2["Sulforaphane (Nrf2)"]
+        AM3["TNFα / chronic inflammation"]
+        AM4["Q141K polymorphism (gout-causing variant)"]
+        AM5["Curcumin / Quercetin / EGCG (functional inhibitors)"]
+    end
+
     %% Core relationships
     A1 --> B1
     A4 --> B1
@@ -314,6 +322,15 @@ graph TB
     S6 -->|"suppresses SHBG synthesis; high sensitivity = ↑SHBG"| S3
     S7 -->|"↑endogenous T, modestly ↑SHBG, ↑E2"| S1
     S7 -->|"peripheral ER agonism"| S2
+
+    %% ABCG2 modulators (2026-04-26)
+    %% Pharmacological levers on the gut urate sink — separate from sex-hormone axis
+    AM1 -->|"PPARγ activation → induction"| S5
+    AM1 -->|"HDAC inhibition → trafficking rescue"| AM4
+    AM2 -->|"Nrf2 activation → induction"| S5
+    AM3 -->|"NF-κB → suppression"| S5
+    AM4 -->|"folding/trafficking defect → reduced apical expression"| S5
+    AM5 -->|"functional inhibition (acute, dose-dependent)"| S5
     S8 -->|"blocks T→E2 aromatization (↑T, ↓E2)"| S1
     S8 -.->|"loss of estrogen's urate-excretion boost"| S2
 

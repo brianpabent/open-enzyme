@@ -45,6 +45,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 ## Delivery & Barrier Biology
 
 - **[Gut-Lumen Sink](wiki/gut-lumen-sink.md)** — ABCG2 pathway; ~1/3 of UA excretion; the insight that systemic absorption isn't needed; ALLN-346, PULSE probiotic
+- **[ABCG2 Modulators](wiki/abcg2-modulators.md)** — Pharmacological levers on the gut urate sink: PPARγ-mediated induction via butyrate (DASH RCT shows 0.25–0.73 mg/dL UA reduction); HDAC-inhibitor rescue of the Q141K polymorphism (the #1 gout-causing ABCG2 variant); the supplement-stack contradiction (curcumin/quercetin/EGCG as functional inhibitors); CKD failure caveat
 - **[Blood Barrier](wiki/blood-barrier.md)** — Every delivery route evaluated; why systemic delivery is hard; why gut-lumen wins
 
 ## Gene Therapy
