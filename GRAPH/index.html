@@ -1616,6 +1616,8 @@
       
         
       
+        
+      
     
     
     
@@ -1676,6 +1678,34 @@
     
   
     Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abcg2-modulators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ABCG2 Modulators
   
 
     
@@ -3062,6 +3092,14 @@
         S8["Aromatase Inhibitors"]
     end
 
+    subgraph ABCG2Mod["ABCG2 MODULATORS (NEW)"]
+        AM1["Butyrate / SCFA from fermentable fiber"]
+        AM2["Sulforaphane (Nrf2)"]
+        AM3["TNFα / chronic inflammation"]
+        AM4["Q141K polymorphism (gout-causing variant)"]
+        AM5["Curcumin / Quercetin / EGCG (functional inhibitors)"]
+    end
+
     %% Core relationships
     A1 --&gt; B1
     A4 --&gt; B1
@@ -3218,6 +3256,15 @@
     S6 --&gt;|"suppresses SHBG synthesis; high sensitivity = ↑SHBG"| S3
     S7 --&gt;|"↑endogenous T, modestly ↑SHBG, ↑E2"| S1
     S7 --&gt;|"peripheral ER agonism"| S2
+
+    %% ABCG2 modulators (2026-04-26)
+    %% Pharmacological levers on the gut urate sink — separate from sex-hormone axis
+    AM1 --&gt;|"PPARγ activation → induction"| S5
+    AM1 --&gt;|"HDAC inhibition → trafficking rescue"| AM4
+    AM2 --&gt;|"Nrf2 activation → induction"| S5
+    AM3 --&gt;|"NF-κB → suppression"| S5
+    AM4 --&gt;|"folding/trafficking defect → reduced apical expression"| S5
+    AM5 --&gt;|"functional inhibition (acute, dose-dependent)"| S5
     S8 --&gt;|"blocks T→E2 aromatization (↑T, ↓E2)"| S1
     S8 -.-&gt;|"loss of estrogen's urate-excretion boost"| S2
 
