@@ -8,6 +8,86 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
 
 # Synthesis Pass 2: New Connections Across April 2026 Analyses
 
+## Sweep — 2026-04-26 (DeepSeek V4-Pro synthesis + Claude review)
+
+**Synthesis log:** [`logs/v4-synthesis-2026-04-26-1237ff0.md`](../logs/v4-synthesis-2026-04-26-1237ff0.md)
+**Substrate:** Open Enzyme wiki at commit `1237ff0`
+**Diff base:** `ad8426a03f5758237fdc1fea14872d89b3c5f9cc`
+**Trigger files:** wiki/GRAPH.md,wiki/abcg2-modulators.md,wiki/androgen-urate-axis.md,wiki/gut-lumen-sink.md
+**Synthesizer:** google/gemini-2.5-pro
+**Reviewer:** anthropic/claude-opus-4-7
+**Reviews merged:** 10
+
+---
+```markdown
+# Synthesis — 2026-04-26
+**Substrate:** Open Enzyme wiki at commit `1237ff0`
+**Trigger files:** wiki/GRAPH.md,wiki/abcg2-modulators.md,wiki/androgen-urate-axis.md,wiki/gut-lumen-sink.md
+**Diff base:** ad8426a03f5758237fdc1fea14872d89b3c5f9cc
+**Reviewer:** google/gemini-2.5-pro
+
+## New Connections
+
+1.  **Androgen and inflammatory suppression of ABCG2 are additive, creating a "worst-case" phenotype for the gut-lumen sink that necessitates a multi-pronged induction strategy.** *Speculative.*
+    -   *Documents Connected:* `abcg2-modulators.md`, `androgen-urate-axis.md`, `gut-lumen-sink.md`.
+    -   *Why It Matters:* Androgens (via AR) and inflammation (via TNFα) are identified as two independent pathways that transcriptionally suppress the ABCG2 urate transporter. For a patient with both high androgens (e.g., on TRT) and chronic inflammation (e.g., IBD, Hashimoto's), these two suppressive forces likely compound, severely capping the maximum efficacy of the gut-lumen sink strategy. This reframes the problem from a simple dose-response to a structural ceiling that requires a dedicated "gate-opening" stack (butyrate via fiber, sulforaphane, indole-3-carbinol) to restore substrate flow for the uricase enzyme.
+    -   *Suggested Action:* Propose an animal model experiment (co-treatment with DHT + TNFα) to validate the additive suppression. Update `androgen-urate-axis.md` to discuss this risk interaction.
+
+    > **Claude review — Confirmed.** The additivity claim is mechanistically sound: `abcg2-modulators.md` §3 (Ferrer-Picón 2020, PMID 31211831) independently establishes TNFα suppression as a parallel axis to androgen suppression (§1), and the two operate through distinct transcription factors (NF-κB vs. AR). One sharpening: the Pass 2 synthesizer says "additive" but the wiki §3 notes TNFα-suppressed IBD organoids were *not* intrinsically less responsive to butyrate — implying the PPARγ induction lever still works on top, so the worst-case phenotype may be rescuable, not a hard ceiling. The DHT+TNFα co-treatment experiment is the right design and already listed as open question #5 in `abcg2-modulators.md`.
+
+2.  **The *A. oryzae* platform may have a built-in, unexploited synergy for the gut-lumen sink via native Nrf2-activating metabolites.** *Speculative.*
+    -   *Documents Connected:* `abcg2-modulators.md`, `aspergillus-oryzae.md`, `engineered-koji-protocol.md`.
+    -   *Why It Matters:* `abcg2-modulators.md` identifies Nrf2 activation (e.g., by sulforaphane) as a transcriptional inducer of ABCG2. `aspergillus-oryzae.md` notes that wild-type koji natively produces the antioxidant ergothioneine, which is a known Nrf2 inducer in vitro. This suggests the engineered koji platform may be co-delivering an ABCG2 inducer (ergothioneine) alongside the uricase that depends on ABCG2 for its substrate. This "free" synergistic effect has not been discussed and would make the koji platform more robust than a pure-enzyme or yeast-based approach.
+    -   *Suggested Action:* Propose an in-vitro experiment to test if ergothioneine, at concentrations found in koji, induces ABCG2 expression in Caco-2 cells. If positive, this synergy should be highlighted in `engineered-koji-protocol.md`.
+
+    > **Claude review — Partial.** Agree this is a novel, worth-testing connection — ergothioneine's Nrf2 activity is reported (Cheah & Halliwell literature) and Nrf2 induces ABCG2 per `abcg2-modulators.md` §2. Push back on framing: `aspergillus-oryzae.md` is cited but not in the trigger-file set provided, and I can't verify the "ergothioneine in wild-type koji" claim from the inputs I have — this should be tagged Defer/verify rather than advanced as a connection. Also, wild-type koji ergothioneine concentrations are likely far below the supraphysiological doses used in in-vitro Nrf2 assays; the dose-response realism of the "free synergy" claim needs grounding before it shapes `engineered-koji-protocol.md`.
+
+3.  **High-SHBG-driven "low Free T" in insulin-sensitive men creates a paradoxical conflict between hormonal optimization and gout management.** *Supported.*
+    -   *Documents Connected:* `androgen-urate-axis.md`, `fructose-connection.md`, `gout-pathophysiology.md`.
+    -   *Why It Matters:* `androgen-urate-axis.md` notes that high insulin sensitivity can lead to high SHBG, lowering Free T, and suggests a non-drug lever is to modestly increase dietary carbohydrate to raise insulin and lower SHBG. However, `fructose-connection.md` establishes that fructose (a component of many carbohydrate sources) drives uric acid production via the unregulated KHK pathway. An insulin-sensitive gout patient is thus caught in a bind: increasing carbs to optimize hormones directly worsens the metabolic driver of their gout.
+    -   *Suggested Action:* This conflict should be explicitly documented in `androgen-urate-axis.md`. The recommendation for this patient profile should be to avoid the "increase carbs" strategy and instead use pharmacological interventions (e.g., a SERM to raise T) while managing the urate side effects with the Open Enzyme platform.
+
+    > **Claude review — Confirmed.** The conflict is real and well-sourced from `androgen-urate-axis.md` §"The insulin-SHBG-androgen loop" combined with established fructose-KHK biology. Worth sharpening: the loop applies specifically to *fructose-containing* carbs (sucrose, HFCS, fruit juice), not to glucose-dominant starches (rice, potatoes), which raise insulin and lower SHBG without triggering KHK-driven urate production. The recommendation should therefore be "prefer glucose-dominant starches over fructose sources" rather than jumping straight to pharmacological intervention — a non-drug resolution to the paradox that the Pass 2 synthesizer overlooked.
+
+## Contradictions Found
+
+1.  **The net effect of EGCG on the gut-lumen sink is contradictory across the wiki, with in vitro inhibition data clashing with in vivo induction data.** Locations: `abcg2-modulators.md` §8 vs. Yu et al. 2024 (PMID 38757391) cited therein. Analysis: `abcg2-modulators.md` correctly identifies that EGCG is a functional BCRP/ABCG2 inhibitor in vitro, which would harm the gut-sink thesis. However, it also cites a 2024 animal model where EGCG had a net-favorable effect on gut transporter expression. The wiki flags this as unresolved, but this contradiction is critical for the `supplements-stack.md` recommendations and needs to be elevated to a priority experiment. The current stack may be inadvertently working against the primary uricase platform.
+
+    > **Claude review — Partial.** Agree the EGCG in vitro vs. in vivo contradiction is real and flagged in `abcg2-modulators.md` §8 and open question #4. Push back on "critical": the wiki already lists this as open question #4 with a clear resolution path, and EGCG is a minor supplement-stack component — not the highest-leverage unresolved question. The more consequential contradiction in the trigger files is the dual-mode (functional inhibition vs. transcriptional induction) behavior of *curcumin and quercetin* at supplement doses, which are more commonly co-administered with gout-relevant stacks than EGCG.
+
+## Proposed Experiments (ranked by insight per cost)
+
+1.  **Pharmacogenomic fiber trial: Q141K genotype stratifies response to fermentable fiber.** Cost: $150k. Time: 6m. Decides: Whether the butyrate "double-hit" hypothesis (PPARγ induction + HDI-mediated trafficking rescue) is valid in humans. This is the highest-leverage experiment proposed in `abcg2-modulators.md` because it would provide the first human evidence for a personalized dietary intervention based on ABCG2 genetics, a core goal of the platform. Protocol: RCT (n~120, baseline UA ≥7), stratified by Q141K genotype, 12-week high-fermentable-fiber intervention (e.g., inulin). Primary endpoint: change in serum UA.
+
+    > **Claude review — Confirmed, prioritize.** This is genuinely the highest-leverage proposed experiment — it tests both the PPARγ induction axis *and* the HDI trafficking rescue mechanism (Basseville 2012, PMID 22472121) simultaneously in the demographic where ABCG2 biology matters most (Q141K carriers are ~30–50% of gout patients per `abcg2-modulators.md` §6). The $150k/6mo budget is realistic for n~120 with 12-week endpoint. One design refinement: include a homozygous Q141K arm if feasible — the predicted effect size should be largest there, giving the cleanest signal-to-noise despite smaller n.
+
+2.  **Additive ABCG2 suppression by androgens and inflammation.** Cost: $5k. Time: 8w. Decides: If the two main suppressive axes for the gut-lumen sink are additive. Protocol: Caco-2 cells or mouse model treated with DHT, TNFα, or both. Measure ABCG2 mRNA and protein expression. This validates the "worst-case" phenotype and the need for a "gate-opening" stack.
+
+    > **Claude review — Confirmed.** Cheap, fast, mechanistically well-posed. Caco-2 is the right model (used in both Xie 2020 and Solbakk 2025 per `abcg2-modulators.md`). One addition: include a butyrate co-treatment arm to test whether PPARγ induction rescues TNFα/DHT-suppressed ABCG2 — this directly tests the "gate-opening stack" claim from Connection #1 without materially increasing cost.
+
+3.  **In vitro validation of EGCG's net effect on ABCG2-mediated urate transport.** Cost: $3k. Time: 4w. Decides: Whether EGCG should be removed from or dose-adjusted in the `supplements-stack.md` for users of the uricase platform. Protocol: Use Caco-2 transwell assay to measure apical-to-basolateral urate transport. Test effects of acute EGCG exposure (functional inhibition) vs. chronic exposure (potential transcriptional changes) on transport rates.
+
+    > **Claude review — Confirmed.** Good value at $3k/4w. The transwell design correctly distinguishes acute (functional inhibition) from chronic (transcriptional) effects, which is exactly the dual-mode problem flagged in `abcg2-modulators.md` §"Two distinct modulation modes". Suggest including urate (not just model BCRP substrates like Hoechst or mitoxantrone) as the transport substrate to directly ground the assay in the platform's endpoint.
+
+## Open Questions
+
+1.  **Are there gut-selective PPARγ modulators (SPPARMs) that could induce intestinal ABCG2 without systemic side effects?** `abcg2-modulators.md` identifies PPARγ as a key induction pathway for ABCG2 via butyrate, and notes that systemic PPARγ agonists (fenofibrate, pioglitazone) have undesirable side effects. The drug development field of SPPARMs focuses on tissue-selective effects. A desk review of SPPARM candidates for gut-specific activity could identify novel, potent tools to open the ABCG2 gate.
+
+    > **Claude review — Confirmed.** Legitimate open question, and SPPARMs are an active pharma area. Worth noting: the wiki `abcg2-modulators.md` open question #2 already asks this; the Pass 2 synthesizer correctly surfaces it rather than claiming novelty. A desk review is cheap and can start from the INT131 / balaglitazone / honokiol literature — these are published partial PPARγ agonists with differential tissue profiles.
+
+2.  **What is the quantitative impact of NFIB variants (e.g., rs28379954) on intestinal urate handling?** `abcg2-modulators.md` introduces NFIB as a novel transcriptional repressor of ABCG2, validated in Caco-2 cells. The clinical relevance for urate is unestablished. A retrospective GWAS analysis correlating NFIB variants with serum UA levels, or a human study measuring fecal urate excretion stratified by NFIB genotype, could quantify this effect.
+
+    > **Claude review — Defer.** NFIB's urate relevance is genuinely unestablished per `abcg2-modulators.md` §3 (Solbakk 2025 shows in vitro suppression but clinical UA correlation is untested). A GWAS re-analysis is cheap but depends on existing cohort access; without a specific collaboration path this reads as aspirational. Lower priority than the Q141K × fiber experiment which tests a mechanism with existing in vitro validation.
+
+## Priority Actions
+
+1.  **Audit `supplements-stack.md` for ABCG2 functional inhibitors and add explicit warnings.** `abcg2-modulators.md` identifies curcumin, quercetin, EGCG, and genistein as potent inhibitors. This creates a direct conflict with the gut-lumen sink strategy. The supplement stack page needs a dedicated "ABCG2 Interaction" field for each compound, with a clear note advising caution for individuals relying on the uricase platform, especially those with pre-existing ABCG2 suppression (androgen-dominant, Q141K carriers).
+
+    > **Claude review — Confirmed, prioritize.** This is the correct immediate action — no new experiments needed, just a documentation audit against existing `abcg2-modulators.md` §8 content. The four compounds (curcumin, quercetin, EGCG, genistein) are explicitly listed with pharmacological tier data. One sharpening: the warning should differentiate *supplement-grade* doses (problematic) from *dietary* exposure (unlikely to reach inhibitory gut concentrations) per the §8 "Practical inference" paragraph — a blanket warning risks reader over-correction away from culinary turmeric/tea/onions which are not the concern.
+```
+
+---
+
 ## Sweep — 2026-04-25 (DeepSeek V4-Pro synthesis + Claude review)
 
 **Synthesis log:** [`logs/v4-synthesis-2026-04-25-622d2e2.md`](../logs/v4-synthesis-2026-04-25-622d2e2.md)
