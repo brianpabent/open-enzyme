@@ -12,6 +12,6 @@ node_modules/
 .vscode/
 site/
 
-# Personal self-experiment data lives in a separate private repo nested here.
-# See abent-family-health/CLAUDE.md for conventions.
-/abent-family-health/
+# Personal self-experiment data lives in separate private sibling repos
+# under the abent/ parent directory (not nested in this repo).
+# See ../abent-family-health/CLAUDE.md for the convention.
