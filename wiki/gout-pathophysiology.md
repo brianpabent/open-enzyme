@@ -1,8 +1,8 @@
 ---
 title: Gout Pathophysiology
 aliases: [gout-cascade, purine-metabolism, uric-acid-handling, inflammasome, urate-transporters, clinical-treatments]
-related: [nlrp3-inflammasome, fructose-connection, validation-experiments, supplements-stack, complement-c5a-gout, spm-resolution-pathway, tnfsf14-gout-target]
-sources: [gout-deep-dive.md, nlrp3-exploit-map.md, complement-c5a-gout.md, tnfsf14-gout-target.md, spm-resolution-pathway.md]
+related: [nlrp3-inflammasome, fructose-connection, validation-experiments, supplements-stack, complement-c5a-gout, spm-resolution-pathway, tnfsf14-gout-target, androgen-urate-axis, abcg2-modulators]
+sources: [gout-deep-dive.md, nlrp3-exploit-map.md, complement-c5a-gout.md, tnfsf14-gout-target.md, spm-resolution-pathway.md, androgen-urate-axis.md, abcg2-modulators.md]
 ---
 
 # Gout Pathophysiology
@@ -57,7 +57,7 @@ Approximately **70% of daily uric acid elimination happens through the kidneys**
 |---|---|---|---|
 | **URAT1** | SLC22A12 | Reabsorbs uric acid from tubular lumen back into blood. The primary villain — reabsorbs ~90% of filtered urate. | Major drug target (allopurinol, lesinurad, pozdeutinurad, dotinurad) |
 | **GLUT9** | SLC2A9 | Basolateral exit transporter; moves uric acid from tubular cells into blood. Also handles fructose (the fructose-gout link). | Strongest GWAS hit for gout; under-explored as drug target |
-| **ABCG2** | ABCG2 | Secretes uric acid into both gut lumen AND renal tubule. Loss-of-function variants are #1 genetic risk for gout. | Enhancing ABCG2 activity is unexplored (most drugs inhibit, not enhance) |
+| **ABCG2** | ABCG2 | Secretes uric acid into both gut lumen AND renal tubule. Loss-of-function variants are #1 genetic risk for gout. | Enhancing ABCG2 activity is unexplored (most drugs inhibit, not enhance). Pharmacological levers now mapped — see [abcg2-modulators.md](./abcg2-modulators.md): butyrate (PPARγ induction, Animal Model + Clinical Trial), sulforaphane (Nrf2 induction), TNFα suppression (functional ABCG2 restoration in IBD organoids, In Vitro + clinical biopsy), Q141K trafficking rescue via HDAC inhibitors (In Vitro). Androgens (T, DHT) suppress ABCG2 transcriptionally — see [androgen-urate-axis.md](./androgen-urate-axis.md). |
 | **OAT1/OAT3** | SLC22A6/8 | Basolateral uptake of urate from blood into tubular cells for secretion. | Modulated by some existing uricosurics |
 | **NPT1/NPT4** | SLC17A1/3 | Apical secretion of urate into tubular lumen. | Emerging targets |
 
@@ -337,7 +337,7 @@ PURINE INTAKE → Purine Metabolism (XO) → URIC ACID
 INTERVENTION POINTS:
 - XO inhibitors: Block uric acid production (Allopurinol, Febuxostat)
 - URAT1 inhibitors: Reduce renal reabsorption (Pozdeutinurad, Lesinurad)
-- ABCG2 enhancement: Boost gut secretion (Unexplored)
+- ABCG2 enhancement: Boost gut secretion via butyrate/PPARγ (fermentable fiber, DASH RCT 0.25–0.73 mg/dL UA reduction, Clinical Trial), sulforaphane/Nrf2, Q141K rescue via HDAC inhibitors (In Vitro) — see [abcg2-modulators.md](./abcg2-modulators.md)
 - Uricase: Degrade uric acid (Pegloticase, SEL-212, Engineered organisms)
 - C5a/C5aR1 blockade: Block complement priming (Avacopan — repurposing candidate; CP0)
 - TNFSF14/LIGHT blockade: Suppress priming amplifier (CERC-002, EGCG; CP1a)

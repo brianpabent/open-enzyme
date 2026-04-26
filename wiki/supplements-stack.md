@@ -104,7 +104,7 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 **Category:** Phytonutrient
 
-**Mechanism:** Activates Keap1-Nrf2 pathway → master regulator of cellular antioxidant defense; cross-talk with NF-κB (CP1/CP2). **Sub-μM Nrf2 activation: EC50 = 580 nM** (*J Med Chem* 2019, ChEMBL) — rare potency for a food-derived compound.
+**Mechanism:** Activates Keap1-Nrf2 pathway → master regulator of cellular antioxidant defense; cross-talk with NF-κB (CP1/CP2). **Sub-μM Nrf2 activation: EC50 = 580 nM** (*J Med Chem* 2019, ChEMBL) — rare potency for a food-derived compound. **ABCG2 induction bonus:** Sulforaphane activates Nrf2 in enterocytes → upregulates intestinal ABCG2 expression, increasing gut urate secretion capacity (In Vitro + Animal Model; source: abcg2-modulators.md). This makes sulforaphane the only stack compound that simultaneously suppresses NLRP3 priming (CP1/CP2) AND enhances the gut-lumen sink substrate supply.
 
 **Evidence level:** Established (Nrf2 activation) + **Animal Model hyperuricemia (2026-04-23 re-audit, PROMOTED from Tier 4)** — Wang 2022 *J Adv Res* (PMID 36371056): sulforaphane decreased urate synthesis + increased renal urate excretion + Nrf2-mediated epigenetic modification in hyperuricemic rats. This bridges the uric-acid and inflammation axes in a single compound. The prior "no gout-specific evidence" framing was keyword-gated on "gout" in abstracts and missed the hyperuricemia rat model. (source: nlrp3-inhibitor-screen.md 2026-04-23 re-audit)
 
@@ -237,6 +237,8 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 **Summary framing:** EGCG is the widest-spectrum natural compound in the current Open Enzyme stack, hitting four of seven chokepoints. Its 20S proteasome sub-100 nM activity is a hepatotoxicity flag at high dose — safety dose-ceiling for intense use protocols.
 
+> ⚠️ **ABCG2 functional inhibitor warning (source: abcg2-modulators.md):** EGCG is a documented functional ABCG2/BCRP inhibitor in pharmacology assays. Yu et al. 2024 (*Food Funct*, PMID 38757391) showed a net-favorable effect on ABCG2/URAT1/GLUT9 expression at the tissue level in a hyperuricemic mouse model — direction opposite to the in vitro inhibition story. Net clinical effect on the gut urate sink is unresolved. Until resolved, treat high-dose EGCG (>400 mg/day) as a potential ABCG2 inhibitor in the gut-lumen context, particularly in androgen-dominant or Q141K-positive patients. (Mixed: In Vitro inhibition vs. Animal Model in vivo; source: abcg2-modulators.md)
+
 **Cost:** $15–25/month (standardized extract); $30–50/month (high-grade matcha)
 
 ---
@@ -312,6 +314,8 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 - **SECONDARY — NF-κB inhibition (CP1)** — NLRP3 pathway modulator via NF-κB priming block (not direct NLRP3 binding; zero curated human NLRP3 IC50 in ChEMBL)
 - **TERTIARY — Xanthine oxidase inhibition** — direct uric acid production reduction (metabolic / upstream of MSU crystal formation)
 - Mast cell stabilization
+
+> ⚠️ **ABCG2 functional inhibitor warning (source: abcg2-modulators.md):** Quercetin is a competitive substrate/inhibitor of ABCG2 at low μM gut-lumen concentrations — the same range achieved at supplement doses (500–1,000 mg/day). This means quercetin may acutely suppress intestinal urate secretion, pharmacologically antagonizing the gut-lumen-sink thesis. The net effect is dose-dependent and context-dependent: chronic low-dose dietary quercetin may show transcriptional upregulation of ABCG2 in some animal studies, but supplement-grade acute dosing is the concern. **For male gout patients on TRT, SERMs, or with Q141K polymorphism — where ABCG2 is already suppressed — high-dose quercetin supplementation may compound the deficit.** (In Vitro; source: abcg2-modulators.md)
 
 **Evidence level:** In Vitro 300 nM 5-LOX IC50 per ChEMBL; Established (NF-κB + xanthine oxidase)
 
@@ -435,6 +439,8 @@ Compounds and approaches that are viable near-term but require medical discussio
 **Practical note:** Fermentation naturally produces these compounds. Eating traditional fermented foods (miso, soy sauce, kimchi, kombucha) provides dual benefits: living probiotics + NLRP3-suppressing metabolites. (Source: nlrp3-exploit-map.md)
 
 **Koji fermentation note:** Home-made shio-koji and amazake (from wild-type *A. oryzae*) are practical fermented-food additions that also deliver digestive enzymes (amylase, protease, lipase). For the complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), see [Koji Home Fermentation](./koji-home-fermentation.md). Yellow koji (*A. oryzae*) is the recommended strain for digestive-enzyme home use. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+
+**ABCG2 induction via fermentable fiber (source: abcg2-modulators.md):** Fermentable fiber (resistant starch, inulin, GOS, beta-glucan) → colonic SCFA production → butyrate → PPARγ activation in enterocytes → ABCG2 transcriptional induction. Li et al. 2023 (*Biomedicine & Pharmacotherapy*, PMID 36948133) demonstrated that sodium butyrate in a hyperuricemic mouse model decreased serum UA AND restored intestinal ABCG2 expression. (Animal Model; source: abcg2-modulators.md) For Q141K-positive gout patients (~30–50% of the gout population), butyrate also rescues the Q141K variant's trafficking defect via HDAC inhibition — a separate, additive mechanism. DASH diet clinical data: 0.25 mg/dL mean UA reduction (0.73 mg/dL in patients with baseline UA ≥8 mg/dL) attributable to the fiber/ABCG2 axis (Juraschek et al. 2021, *Arthritis & Rheumatology*, PMID 33615722; Clinical Trial). Aim ≥25–30 g fermentable fiber/day for meaningful ABCG2 induction.
 
 **Cost:** Negligible to modest ($5–10/week for specialty fermented products)
 

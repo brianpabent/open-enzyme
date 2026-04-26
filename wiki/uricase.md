@@ -7,6 +7,8 @@ aliases:
 related:
   - nlrp3-inflammasome
   - gut-lumen-sink
+  - abcg2-modulators
+  - androgen-urate-axis
   - saccharomyces-cerevisiae
   - aspergillus-oryzae
   - blood-barrier
@@ -98,6 +100,8 @@ Two systemic IV uricase programs are currently in clinical development, both pur
 ## The Gut-Lumen Insight
 
 A critical breakthrough in uricase strategy: the enzyme does not require systemic absorption to be effective. Approximately **one-third of daily uric acid elimination occurs through the intestines**, primarily mediated by the ABCG2 transporter expressed on the apical membrane of intestinal epithelial cells. By placing uricase in the intestinal lumen, it creates a "concentration sink" that pulls additional uric acid from the blood across the epithelium. (Source: engineered-yeast-uricase-proposal.md, blood-barrier-exploits.md)
+
+> **Patient-stratification note (source: androgen-urate-axis.md, abcg2-modulators.md):** ABCG2 is androgen-suppressed — men on TRT, SERMs (e.g., clomid), or AAS run with pharmacologically down-regulated intestinal urate secretion at baseline, reducing the ceiling of the gut-lumen sink. The engineered-uricase product may require higher effective doses in androgen-dominant patients to achieve the same serum-UA reduction as normotestosteronemic reference patients. (Animal Model + Mechanistic Extrapolation; source: androgen-urate-axis.md) Countervailing lever: fermentable fiber → butyrate → PPARγ → ABCG2 induction can partially offset androgen suppression; Q141K-positive patients additionally benefit from butyrate's HDAC-inhibitor-mediated trafficking rescue of the variant. See [abcg2-modulators.md](./abcg2-modulators.md) for the full regulatory landscape and [androgen-urate-axis.md](./androgen-urate-axis.md) for the sex-hormone mechanism.
 
 This gut-lumen approach was validated by:
 
