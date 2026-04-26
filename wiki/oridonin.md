@@ -125,6 +125,35 @@ Recent research (2025) has focused on **synthetic analogs of oridonin** that ach
 
 These next-generation compounds could combine oridonin's natural product scaffold with enhanced pharmaceutical properties.
 
+## Contraindications, Drug Interactions, and Dose-Dependent Risk
+
+> **Standardized safety profile (source: supplements-stack.md, 2026-04-26):** The following section consolidates contraindications, drug interactions, and dose-dependent risk from the supplements catalog.
+
+**Contraindications:**
+- Pregnancy (insufficient data; covalent-binding mechanism warrants caution)
+- Pediatric use (insufficient data)
+- Active hepatic disease (some Rabdosia preparations have hepatotoxicity case reports at high TCM-formula doses)
+- Combination with other covalent-mechanism drugs without spacing (theoretical concern)
+
+**Drug interactions:**
+- **CYP3A4 substrates:** preliminary in vitro data suggests modest CYP3A4 inhibition by oridonin — relevant for tacrolimus, cyclosporine, simvastatin, some calcium channel blockers, and direct oral anticoagulants.
+- **Omeprazole, PPIs:** mechanistic-extrapolation concern only; no clinical data.
+- **Covalent-mechanism drugs (clopidogrel, prasugrel, aspirin at antiplatelet dose):** theoretical compounding of covalent off-target effects; no clinical signal.
+
+**Dose-dependent risk profile:**
+- 50–100 mg/day purified oridonin: tolerated in published TCM and supplement dosing; main risk is sourcing-quality and standardization.
+- 200–500 mg/day high-dose extracts: case reports of transient ALT elevation; not common but flagged.
+- Sourcing variability: Rabdosia rubescens whole-extract preparations contain other diterpenoids with unclear safety profiles. Purified oridonin from research chemical suppliers is more characterizable.
+
+**Stack interactions:**
+- **Synergy with sulforaphane, quercetin (Nrf2 axis):** all three are Nrf2 activators; cumulative effect with diminishing returns.
+- **Mechanistic complementarity with BCP, BHB, dapansutrile (CP2):** oridonin (Cys279 covalent), BCP (CB2/TLR4), BHB (K+ efflux), dapansutrile (NACHT) all suppress NLRP3 assembly through distinct molecular touch-points — orthogonal additivity expected.
+- **No documented ABCG2 interaction.**
+
+(source: supplements-stack.md)
+
+---
+
 ## Practical Implementation
 
 ### Sourcing

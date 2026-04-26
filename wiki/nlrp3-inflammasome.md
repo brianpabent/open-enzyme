@@ -94,6 +94,8 @@ See [Complement C5a in Gout](./complement-c5a-gout.md) for the full analysis.
 
 - **CBG (Cannabigerol)**: NF-κB/MAPK pathway inhibition in RAW 264.7 macrophages (In Vitro, *J Microbiol Biotechnol* 2025). In colitis animal models (DNBS and DSS), reduced colonic IL-1β, MPO, iNOS — part of the effect is CB2-independent. Not gout-tested; strongest case is for gut inflammation, not systemic flare suppression. (source: cannabinoids-terpenes.md)
 
+- **Limonene (d-limonene, Tier 3 supplement, PROMOTED 2026-04-26):** Nrf2 activator + TLR4 suppression (upstream NLRP3 priming block). Direct rat PO+MSU dual gout model — Venkatesan 2025 *Nutrients* (PMID 41515190): 50 mg/kg limonene reduced paw thickness, serum UA, IL-1β/TNF/IL-6, and improved antioxidant status; authors invoke NLRP3-IL-1β suppression as the mechanistic frame. GRAS food additive. Practical form: d-limonene softgel capsules 500–1,000 mg/day. (Animal Model; source: supplements-stack.md, cannabinoids-terpenes.md)
+
 ### Chokepoint 2: NLRP3 Activation and ASC Assembly
 
 **The Step:** MSU crystal phagocytosis triggers potassium efflux from cells and mitochondrial reactive oxygen species (ROS) generation. These are the primary "Signal 2" inputs that cause NLRP3 to oligomerize and recruit ASC. The exact mechanism of signal transduction is still being elucidated, but K⁺ efflux and mtROS are the most validated triggers. Once activated, NLRP3 serves as a nucleation platform for ASC to polymerize into fibrillar aggregates (specks).

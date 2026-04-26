@@ -103,6 +103,37 @@ The [[sibo|Small Intestinal Bacterial Overgrowth]] connection is particularly re
 
 **(Source: peptide-gout-addendum.md)** — "KPV's gut anti-inflammatory properties are especially relevant beyond gout. The same NLRP3 inflammasome pathway that drives gout flares is a central driver of intestinal inflammation — including the chronic low-grade inflammation associated with SIBO."
 
+## Contraindications, Drug Interactions, and Dose-Dependent Risk
+
+> **Standardized safety profile (source: supplements-stack.md, 2026-04-26):** The following section consolidates contraindications, drug interactions, and dose-dependent risk from the supplements catalog.
+
+**Dosing range:** 200–500 mcg/day intranasal (nasal mucosa, high PepT1 expression). Combine timing with BPC-157 spray for convenience.
+
+**Contraindications:**
+- Active or recent melanoma (theoretical, based on α-MSH/MC1R signaling — not clinically demonstrated at intranasal doses listed)
+- Pregnancy (insufficient data)
+- Pediatric use (insufficient data)
+- Sourcing-quality unknowns: research peptide suppliers vary widely in purity and endotoxin load
+
+**Drug interactions:**
+- **Immunosuppressants (tacrolimus, cyclosporine, biologics):** unstudied; mechanism overlap with NF-κB pathway.
+- **Topical/intranasal corticosteroids:** mechanism overlap; no clear pharmacological conflict but redundant signaling.
+- No documented small-molecule drug interactions; peptide is rapidly hydrolyzed.
+
+**Dose-dependent risk profile:**
+- 200–500 mcg/day intranasal: well-tolerated in published research; main risk is sourcing quality.
+- Systemic dosing (subcutaneous, off-label) at multi-mg levels: melanocyte effects (skin darkening) become detectable. Stay intranasal at the doses listed.
+- Sourcing: research peptide suppliers without third-party HPLC/MS/endotoxin verification carry product-quality risk that scales with dose and frequency.
+
+**Stack interactions:**
+- **Synergy with BPC-157 (non-overlapping pathways):** both small peptides, complementary mechanisms — KPV at NF-κB priming (CP1), BPC-157 at cytoprotection / NO modulation.
+- **Mild redundancy with sulforaphane, EGCG, quercetin:** all converge on NF-κB / NLRP3 priming axes; cumulative benefit unclear vs. single-agent.
+- **No ABCG2 interaction.** Peptide does not engage transporter axis.
+
+(source: supplements-stack.md)
+
+---
+
 ## Practical Considerations
 
 ### Dosing & Timing

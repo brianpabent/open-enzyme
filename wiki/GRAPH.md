@@ -128,6 +128,7 @@ graph TB
         M2["Beta-Caryophyllene"]
         M3["CBG"]
         M4["THCV"]
+        M5["Limonene — Nrf2 + TLR4 — MSU rat gout 2025"]
     end
 
     subgraph Metabolic["METABOLIC MODULATION"]
@@ -342,6 +343,8 @@ graph TB
     M3 -->|"CBG colitis data"| B3
     M4 -->|"CB2 agonism (Ki 7.5 nM)"| C2
     M1 -->|"barrier support"| H1
+    M5 -->|"Nrf2 + TLR4 suppression — MSU rat 50 mg/kg"| C2
+    M5 -->|"NF-kB priming block"| C1
 
     %% Styling
     style Core fill:#ffe6e6

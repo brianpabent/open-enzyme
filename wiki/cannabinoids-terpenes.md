@@ -192,13 +192,40 @@ The stub speculated that CB2 agonism would reduce NET (neutrophil extracellular 
 
 **Strategic reassessment:** Given the direct MSU gout model data, beta-caryophyllene should be promoted from Tier 4 in the inhibitor screen to Tier 2-3 for gout relevance. It hits CP1 (NF-κB via TLR4/MyD88) and CP2 (NLRP3 assembly), has gout-specific animal evidence, GRAS status, and is readily available. The production challenge remains, but for supplementation (not microbial production), it's a serious candidate.
 
-### Limonene
+> **Dose-translation caveat (flagged 2026-04-26, source: supplements-stack.md):** The 2021 MSU rat gout efficacy was demonstrated at 100–400 mg/kg oral. BSA-scaled to a 70 kg human, that is ~1.1–4.5 g/day — **20–50× above the typical supplement dose of 50–200 mg/day**. Whether 50–200 mg/day reproduces the synovial NLRP3/TLR4/NF-κB suppression seen in rats is unverified. Treat this entry as "plausible mechanism, dose adequacy unconfirmed" until a PK/PD translation check or human bioavailability study resolves the gap. The orthogonal CB2 mechanism still makes BCP a reasonable low-risk addition; just do not assume the rat dose-response translates to supplement-range doses. (source: supplements-stack.md)
 
-- Monoterpene; NF-kB and NLRP3 suppression via NRF2 induction (in vitro)
-- No gout-specific data
-- Engineered yeast production: very low titers (~5–20 mg/L); volatility is the critical barrier
-- No evidence for oral bioavailability (volatile monoterpene absorbed primarily via inhalation)
-- **Verdict:** Not practical for oral supplementation or microbial production targeting. NRF2 induction for NLRP3 suppression is better achieved by sulforaphane or oridonin.
+### Limonene — PROMOTED to Tier 3 Supplement (2026-04-26)
+
+> **Status update (source: supplements-stack.md, 2026-04-26):** Limonene has been promoted from "not practical" to a Tier 3 supplement candidate based on direct rat MSU gout model data published in 2025.
+
+**Mechanism:** Nrf2 activator + TLR4 suppression (upstream NLRP3 priming block); suppresses NF-κB, NLRP3, ASC, caspase-1 expression via NRF2-dependent pathway. Hits CP1 (NF-κB/TLR4) and CP2 (NLRP3 assembly).
+
+**Gout-specific evidence (PROMOTED, 2026-04-26):** Direct rat PO+MSU dual gout model — Venkatesan 2025 *Nutrients* (PMID 41515190): 50 mg/kg limonene reduced paw thickness, serum UA, IL-1β/TNF/IL-6, and improved antioxidant status; authors invoke NLRP3-IL-1β suppression as the mechanistic frame. (Animal Model; source: supplements-stack.md)
+
+**Practical form:** d-limonene softgel capsules (commonly sold for GERD / digestive support). Supplement capsule is the practical path — engineered microbial production remains infeasible (<20 mg/L titers + volatility).
+
+**Dosing range:** 500–1,000 mg d-limonene/day (standardized capsules).
+
+**Contraindications:** None absolute. Citrus allergy (rare; d-limonene is the dominant terpene in citrus peel). GERD patients: d-limonene is marketed for GERD support but can transiently worsen reflux in a subset (paradoxical LES relaxation). Pregnancy: insufficient supplement-dose data; food-level intake fine.
+
+**Drug interactions:**
+- **CYP3A4 substrates (statins, calcium channel blockers, immunosuppressants):** d-limonene weakly induces CYP3A4 at chronic doses; clinical significance is small at the gout-relevant range.
+- **Acid-suppression drugs (PPIs, H2 blockers):** mechanistic overlap with GERD use; not a pharmacological conflict.
+
+**Dose-dependent risk profile:**
+- 500–1,000 mg/day: well-tolerated. GRAS food-additive compound at much higher cumulative dietary exposure (orange peel, citrus oils in foods).
+- >2 g/day chronic: case reports of mild hepatic enzyme elevation (rare; idiosyncratic).
+- Inhalation/vaporized forms have very different PK and are not appropriate for NLRP3/gout endpoint use.
+
+**Stack interactions (within the catalog):**
+- **Synergy with sulforaphane, oridonin (Nrf2 axis):** cumulative Nrf2 induction with diminishing returns.
+- **No ABCG2 interaction documented.**
+
+**Cost:** $15–25/month
+
+**Engineered production:** Very low titers (~5–20 mg/L); volatility is the critical barrier. Supplement capsule is the practical path; microbial production is not a near-term target.
+
+**Prior verdict revised:** The prior "Not practical for oral supplementation" framing was based on the absence of gout-specific data and poor inhalation pharmacokinetics. The Venkatesan 2025 MSU rat model data changes the evidence base for oral supplementation specifically. Microbial production remains impractical; oral d-limonene capsules are a viable Tier 3 supplement addition. (source: supplements-stack.md)
 
 ### Myrcene
 

@@ -108,6 +108,36 @@ Disulfiram requires a prescription. Access strategies:
 - **Copper chelation:** Disulfiram binds copper; patients on copper-dependent enzyme therapies (e.g., [[gotu-kola|GHK-Cu peptide]]) may experience reduced efficacy
 - **Drug interactions:** Check for interactions with anticoagulants and other medications
 
+### Expanded Contraindications and Drug Interactions (source: supplements-stack.md, 2026-04-26)
+
+**Contraindications:**
+- **Any alcohol use** (acute disulfiram-ethanol reaction: flushing, tachycardia, hypotension, severe nausea — can be fatal at high alcohol doses). This includes some mouthwashes, OTC cold preparations, kombucha, and fermented foods with residual ethanol.
+- Active hepatic disease (LFTs >3× upper limit of normal)
+- Severe coronary artery disease (cardiovascular collapse risk on ethanol exposure)
+- Severe psychosis (case reports of psychotic exacerbation)
+- Pregnancy
+- Concurrent metronidazole or other disulfiram-like agents
+
+**Drug interactions:**
+- **Metronidazole, tinidazole, cefoperazone, griseofulvin, certain MAOIs, isoniazid:** disulfiram-like reactions amplified.
+- **Warfarin:** disulfiram inhibits warfarin metabolism → increased anticoagulation; INR monitoring required.
+- **Phenytoin:** disulfiram inhibits phenytoin metabolism → toxicity risk.
+- **Theophylline, caffeine (high-dose):** disulfiram inhibits clearance; toxicity risk.
+- **Benzodiazepines metabolized by CYP3A4 (alprazolam, midazolam):** disulfiram inhibits clearance; sedation risk.
+- **Acetaminophen at high doses:** competing hepatic stress (additive hepatotoxicity).
+- **Many ethanol-containing medications (some elixirs, sublingual sprays, IV preparations):** trigger reaction.
+
+**Dose-dependent risk profile:**
+- 250 mg/day (standard): well-tolerated in alcohol-abstinent patients. Hepatotoxicity (idiosyncratic) is the main rare serious side effect; baseline + periodic LFTs recommended.
+- 500 mg/day (historical dose, less common now): more side effects (drowsiness, peripheral neuropathy, hepatic stress) without proportional efficacy gain.
+- Disulfiram-ethanol reaction severity scales with both disulfiram dose and ethanol exposure.
+
+**Stack-level safety note — fermented foods:**
+- **Kombucha and koji-fermented foods** may contain residual ethanol that could trigger reaction in disulfiram-sensitive patients. Practical limit: dietary intake of well-fermented foods at typical portion sizes is generally below the threshold but is patient-specific. Disulfiram users should avoid kombucha entirely and treat any koji-derived fermented foods as a per-batch ethanol-content question.
+- **Hepatotoxicity stacking concern with EGCG, high-dose curcumin, acetaminophen:** all four contribute to hepatic stress; layering is a relative contraindication.
+
+(source: supplements-stack.md)
+
 ## Comparison: Disulfiram vs. Other Inflammasome Inhibitors
 
 | Drug | Chokepoint | Class | Status | Cost | Safety Data |

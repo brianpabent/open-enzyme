@@ -131,6 +131,36 @@ BHB's strength is immediate NLRP3 suppression during the crystal-dissolution pha
 
 **(Source: nlrp3-exploit-map.md)** — "The crystal dissolution danger window: When uric acid-lowering therapy (including koji-uricase) starts dissolving existing MSU crystal deposits, the crystals temporarily become smaller with more surface area, and crystal shedding from tophi can trigger acute flares. This is why the NLRP3 stack isn't just a bridge — it's essential during the crystal dissolution phase."
 
+## Contraindications, Drug Interactions, and Dose-Dependent Risk
+
+> **Standardized safety profile (source: supplements-stack.md, 2026-04-26):** The following section consolidates contraindications, drug interactions, and dose-dependent risk from the supplements catalog.
+
+**Contraindications:**
+- Active gout flare (transient UA rise from ketosis; see dose-dependent risk below)
+- T1DM without close glucose monitoring (ketoacidosis risk distinct from physiological ketosis)
+- Pregnancy (insufficient data on exogenous ketone safety)
+- Severe hepatic disease (impaired ketone metabolism)
+- Carnitine-deficiency syndromes if using MCT-based induction
+
+**Drug interactions:**
+- **SGLT2 inhibitors (canagliflozin, empagliflozin, dapagliflozin):** additive ketosis; euglycemic diabetic ketoacidosis risk in T2DM patients on these drugs.
+- **Insulin / insulin secretagogues:** dietary ketosis lowers glucose requirements; dose adjustment needed to avoid hypoglycemia.
+- **Acetazolamide / topiramate / zonisamide:** carbonic anhydrase inhibitors compound metabolic acidosis risk on ketogenic regimens.
+
+**Dose-dependent risk profile:**
+- 5–20g/day exogenous BHB: well-tolerated; GI upset is the main side effect (most common with ketone salts; mineral load matters).
+- >30g/day or aggressive nutritional ketosis: transient serum UA rise of 5–10% (ketone bodies and urate compete for renal MCT/URAT1 reabsorption). This is the gout-relevant dose ceiling. Sustained nutritional ketosis can also produce mild hyperuricemia for the same reason.
+- MCT >2 tbsp at one sitting: GI distress is the practical limiter.
+
+**Stack interactions:**
+- **Antagonism with intermittent fasting during active flares:** both ketogenic states transiently raise serum UA via competition for renal urate excretion; layering fasting on top of exogenous ketones during a flare amplifies the spike.
+- **Synergy with NAC, omega-3:** BHB-driven NLRP3 inhibition (CP1–CP3) is mechanistically additive with NAC's glutathione/ROS axis (CP2) and omega-3 SPM-driven resolution (CP5).
+- **No ABCG2 interaction documented.** Neutral on the gut-lumen-sink axis.
+
+(source: supplements-stack.md)
+
+---
+
 ## Practical Implementation
 
 ### Fasting Protocol for Gout
