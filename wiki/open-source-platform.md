@@ -11,6 +11,8 @@ sources: [open-enzyme-vision.md]
 
 An open source library of food-grade, engineered microbial strains — each producing a therapeutic enzyme, each growable at home, each freely available to anyone. The GitHub model applied to therapeutic enzyme engineering.
 
+The library is one of two parallel outputs of the Open Enzyme project. The other is a **discovery engine** — a chokepoint-based methodology for mapping every vector that causes, treats, or mitigates a given disease, applied first to gout. The discovery engine produces a structured cascade map plus a repurposing surface (FDA-approved drugs that hit relevant chokepoints but were never clinically tested for the target disease). The strain library is one synthesis from the discovery engine; the engineered-koji platform converged from the gout vector mapping. (source: open-enzyme-vision.md, §1–2)
+
 ---
 
 ## The Software Analogy
@@ -29,6 +31,24 @@ The architecture snaps into focus when you think of it as software infrastructur
 | Release | Validated strain with full documentation |
 
 (Source: open-enzyme-vision.md, §3)
+
+---
+
+## Platform Architecture — Koji-First, Yeast Retained for Specific Modules
+
+Open Enzyme supports two GRAS hosts, but the platform is **koji-first** for the therapeutic stack, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized or more likely to succeed. (source: open-enzyme-vision.md, §4)
+
+**Why koji-first (*A. oryzae* as primary host):**
+- Secretion capacity: native koji secretes 25–30 g/L into growth media (industrial fermentation); *S. cerevisiae* typically reaches 0.5–2 g/L for heterologous secreted proteins — an order-of-magnitude advantage for any secreted enzyme. (Mechanistic Extrapolation)
+- Multi-enzyme baseline: wild-type koji already produces lipase, protease, and amylase at therapeutically relevant levels, plus natural kojic acid, ergothioneine, and ferulic acid — pathway-modulator-adjacent compounds on day zero, before any engineering.
+- Home-fermentation feasibility: koji grows on steamed rice at 30°C in 36–48 hours with no bioreactor required.
+- Food precedent: 1,000+ years of human consumption in East Asian cuisine; FDA GRAS status.
+- Dose scalability: ~10–15 g of engineered koji is in the therapeutic ballpark for Creon-equivalent digestive enzyme dosing.
+
+**Why yeast is retained (*S. cerevisiae* for specific modules):**
+Some heterologous compounds may express better in *S. cerevisiae* than *A. oryzae* — particularly tetrameric proteins (the rasburicase precedent: *A. flavus* uricase expressed in *S. cerevisiae* reportedly reaches 13% of total cellular protein). Specific open decision points include ursolic acid (8.59 g/L record in engineered *S. cerevisiae*; untested in koji), carnosine (biosynthesis requires heterologous carnosine synthase; host choice open), and uricase itself (rasburicase proves the *S. cerevisiae* path works; the koji path needs to be developed). These are empirical questions, not ideological ones. (source: open-enzyme-vision.md, §4)
+
+**Platform positioning:** Open Enzyme is a **food-derived, multi-target NLRP3 pathway modulator** platform — not an attempt to produce a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). The stack is overwhelmingly pathway modulators — hitting upstream priming (CP1a/CP1b), K⁺ efflux (CP2), active resolution (CP5b), and neutrophil amplification (CP6a) — chokepoints that pharma has not rigorously tested in gout. Multi-target pathway modulators hitting redundant nodes can plausibly produce meaningful IL-1β suppression through cumulative effect, even if no single compound matches pharma-grade potency at a single target. (source: open-enzyme-vision.md, §10; nlrp3-inhibitor-screen.md; nlrp3-exploit-map.md)
 
 ---
 
@@ -71,6 +91,10 @@ Replication is not optional — it's the core quality mechanism. Encourage indep
 The distributed nature of the platform means each person working with a strain is both a user and a QA engineer.
 
 (Source: open-enzyme-vision.md, §10)
+
+### 5. Open Substrate for AI-Assisted Peer Review
+
+Because the wiki source is public markdown at a stable URL, it also functions as an open substrate for AI-assisted peer review. Any collaborator can point their own AI — Claude, GPT, Codex, or any other — at this repository, run a rigor check, and contribute findings back via PR or synthesis entry. Traditional peer review is ~10 hours × 2–3 reviewers × weeks of back-and-forth. AI-assisted review on a shared substrate is ~20 minutes × unbounded reviewers × async. Disagreements between different AIs, grounded in the same inspectable evidence, become productive signals — pointing humans at the exact places where manual digging pays off, rather than hiding in private inference. Evidence-level tags, the ChEMBL cross-check, and the [Falsification Lint design](./linter-design.md) are the rigor discipline that makes this substrate trustworthy enough for that pattern to work. (source: open-enzyme-vision.md, §4)
 
 ### 5. Not Medical Advice
 

@@ -333,7 +333,16 @@ For EPI / digestive-enzyme home use, the choice of koji strain matters. (source:
 
 **Key limitation for fat malabsorption EPI:** Lipase activity of *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains — likely the limiting digestive-enzyme axis for fat malabsorption phenotype EPI. This is an open question requiring quantitative comparison vs. commercial PERT (Creon, Zenpep). (source: koji-home-fermentation.md)
 
-## Multi-Organism Strategy in Open Enzyme
+## Multi-Organism Strategy in Open Enzyme — Koji-First Platform
+
+The Open Enzyme platform is **koji-first**: *A. oryzae* is the primary host for the therapeutic stack, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized or more likely to succeed. This is an empirical, not ideological, positioning — we build in koji first and fall back to yeast when the data says to. (source: open-enzyme-vision.md, §4)
+
+**Koji-first rationale (quantitative):**
+- Secretion capacity: native koji secretes 25–30 g/L into growth media (industrial fermentation); *S. cerevisiae* typically reaches 0.5–2 g/L for heterologous secreted proteins — an order-of-magnitude advantage for any secreted enzyme. (Mechanistic Extrapolation)
+- Multi-enzyme baseline: wild-type koji already produces lipase, protease, and amylase at therapeutically relevant levels, plus natural kojic acid, ergothioneine, and ferulic acid — pathway-modulator-adjacent compounds on day zero, before any engineering.
+- Dose scalability: ~10–15 g of engineered koji is in the therapeutic ballpark for Creon-equivalent digestive enzyme dosing — a lower mass burden than gram-scale yeast consumption for comparable activity.
+
+**Year 2-3 target:** The **koji endgame strain** (see [wiki/koji-endgame-strain.md](./koji-endgame-strain.md)) — one engineered *A. oryzae* strain layering engineered uricase + engineered lactoferrin onto native kojic acid + native ergothioneine, covering five NLRP3-pathway chokepoints. The Ward 1995 *A. awamori* glucoamylase-KEX2 dual-cassette architecture is the gating feasibility test ($3–5k, 8–12 weeks). (source: open-enzyme-vision.md, §4)
 
 [[aspergillus-oryzae|Koji]] is the first platform target in the [[open-enzyme-vision|Open Enzyme]] project because:
 

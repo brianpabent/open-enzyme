@@ -22,9 +22,13 @@ The standard fix (allopurinol) reduces production. We're engineering a complemen
 
 One engineered *Aspergillus oryzae* koji strain expressing uricase + NLRP3 inhibitors, fermented on rice bran, positioned as an adjunct to allopurinol — not a monotherapy replacement.
 
-**Why koji?** *A. oryzae* is GRAS, natively secretes enzymes at high titer, survives GI transit in solid-substrate form, and already co-produces NLRP3-suppressing compounds (kojic acid, 3–5 g/L natively) as a byproduct of fermentation.
+**Why koji?** *A. oryzae* is GRAS, natively secretes enzymes at high titer, survives GI transit in solid-substrate form, and already co-produces NLRP3-suppressing compounds (kojic acid, 3–5 g/L natively) as a byproduct of fermentation. The platform is **koji-first**: *A. oryzae* is the primary host, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized. (source: open-enzyme-vision.md, §4)
 
 **Why gut-lumen?** ~1/3 of uric acid is secreted into the gut via ABCG2. Degrading it there doesn't require systemic absorption — the enzyme never needs to cross the intestinal wall. ALLN-346 (Allena Pharmaceuticals) proved this concept clinically.
+
+**Two parallel outputs:** The strain library is one synthesis from a broader **discovery engine** — a chokepoint-based methodology for mapping every vector that causes, treats, or mitigates a given disease. The discovery engine also produces a repurposing surface: FDA-approved drugs that hit relevant chokepoints but were never clinically tested for the target disease (e.g., zileuton at CP6a, disulfiram at CP6b, avacopan at CP0). (source: open-enzyme-vision.md, §2)
+
+**Platform positioning:** Open Enzyme is a **food-derived, multi-target NLRP3 pathway modulator** platform — not an attempt to produce a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). (source: open-enzyme-vision.md, §10)
 
 ---
 

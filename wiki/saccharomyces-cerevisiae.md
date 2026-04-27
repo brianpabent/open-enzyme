@@ -257,6 +257,23 @@ The 2025 *S. boulardii* group's reported 365 μmol/h/OD suggests more efficient 
 
 **Self-Experiment (After Bench Validation):** Using a home uric acid meter (~$50, Benecheck or similar), establish baseline serum urate over 5 days (morning fasting). Consume yeast product daily for 7 days at calculated dose. Measure daily. Plot. This is n=1 and not science, but reveals if you're in the right ballpark. Cost: ~$150; Time: 2 weeks. (Source: engineered-yeast-uricase-proposal.md)
 
+## Platform Positioning — Koji-First, Yeast Retained for Specific Modules
+
+The Open Enzyme platform is **koji-first** (*A. oryzae* as primary host) for the therapeutic stack, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized or more likely to succeed. This is an empirical, not ideological, distinction. (source: open-enzyme-vision.md, §4)
+
+**When yeast is the right choice:**
+- Tetrameric proteins where the rasburicase precedent (13% of total cellular protein in *S. cerevisiae*) is directly applicable
+- Ursolic acid (8.59 g/L record in engineered *S. cerevisiae*; untested in koji)
+- Carnosine (biosynthesis requires heterologous carnosine synthase; host choice open)
+- Uricase itself — the *S. cerevisiae* path is proven (rasburicase); the koji path needs to be developed
+
+**When koji is preferred:**
+- Secreted enzymes where koji's 25–30 g/L secretion capacity (vs. 0.5–2 g/L for *S. cerevisiae*) is decisive
+- Multi-enzyme products where native lipase/protease/amylase production is needed alongside engineered targets
+- Home-fermentation formats where solid-state rice fermentation is simpler than liquid culture
+
+(source: open-enzyme-vision.md, §4)
+
 ## Comparison to Aspergillus oryzae
 
 | Feature | S. cerevisiae | A. oryzae (Koji) |
@@ -268,9 +285,9 @@ The 2025 *S. boulardii* group's reported 365 μmol/h/OD suggests more efficient 
 | **Dual-purpose platform** | No (only uricase, requires optimization) | Yes (uricase + native digestive enzymes) |
 | **Expression level precedent** | 13% of total protein (rasburicase) | Comparable expected from strong promoters |
 | **Therapeutic credibility** | Very high (rasburicase precedent) | Very high (GRAS, ancient safety history) |
-| **Strategic role** | Fast path to oral uricase proof-of-concept | First target (solves two enzyme deficits) |
+| **Strategic role** | Retained for specific modules (tetrameric proteins, ursolic acid, carnosine) | **Primary platform** (koji-first) |
 
-For the [[open-enzyme-vision|Open Enzyme platform]], *S. cerevisiae* excels as a rapid development organism for the uricase module specifically. [[aspergillus-oryzae|A. oryzae]] is strategically preferred as the **first platform** because of the dual-enzyme advantage (uricase + native digestive enzymes) and simpler home fermentation. *S. cerevisiae* remains valuable as an alternative delivery system or for high-volume commercial scale-up. (Source: engineered-yeast-uricase-proposal.md, open-enzyme-vision.md)
+For the [Open Enzyme platform](./open-enzyme-vision.md), *A. oryzae* is the **primary host** (koji-first) because of the dual-enzyme advantage (uricase + native digestive enzymes), secretion capacity advantage (~10×), and simpler home fermentation. *S. cerevisiae* is retained for specific modules where the yeast expression path is better characterized or where koji expression fails or yields are inadequate. (source: open-enzyme-vision.md, §4; engineered-yeast-uricase-proposal.md)
 
 ## Immunogenicity Considerations
 

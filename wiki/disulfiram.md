@@ -21,6 +21,8 @@ sources:
 
 This represents one of the most accessible, underrated, and economically efficient gout interventions available today.
 
+**Repurposing surface origin:** Disulfiram is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are zileuton (CP6a 5-LOX, FDA-approved for asthma) and avacopan (CP0 C5aR1, FDA-approved for ANCA vasculitis). See [open-enzyme-vision.md §2.2](./open-enzyme-vision.md) for the full repurposing surface framing. (source: open-enzyme-vision.md)
+
 > **Complementary pharma at CP6**: zileuton (5-LOX inhibitor, CP6a) and disulfiram (GSDMD inhibitor, CP6b) hit different branches of the same chokepoint. See [wiki/zileuton.md](./zileuton.md) for the CP6a pharma-grade option.
 
 ## The GSDMD Target: Chokepoint 6b (Pyroptotic Exit)

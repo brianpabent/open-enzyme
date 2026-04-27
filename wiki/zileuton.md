@@ -25,6 +25,8 @@ sources:
 
 Zileuton is an oral 5-lipoxygenase (5-LOX) inhibitor. FDA-approved for asthma in 1996 and still the only approved direct 5-LOX drug in the US. It is **never been tested in gout** and sits squarely on top of the CP6a chokepoint in the v1.2 [NLRP3 exploit map](./nlrp3-exploit-map.md) — the 5-LOX → LTB4 → neutrophil-chemotaxis amplification loop that drives the tissue-destructive phase of a gout flare. This dossier treats zileuton as a **testable hypothesis**, not an efficacy claim.
 
+**Repurposing surface origin:** Zileuton is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are disulfiram (CP6b GSDMD, FDA-approved for alcohol use disorder) and avacopan (CP0 C5aR1, FDA-approved for ANCA vasculitis). See [open-enzyme-vision.md §2.2](./open-enzyme-vision.md) for the full repurposing surface framing. (source: open-enzyme-vision.md)
+
 See [supplements-stack.md](./supplements-stack.md) for the over-the-counter CP6a entries (quercetin, AKBA, EPA) that already sit on this mechanism. Zileuton is the pharma-grade version of the same pathway reach.
 
 ---

@@ -149,6 +149,15 @@ graph TB
         L7["TNFSF14 / LIGHT — emerging target"]
     end
 
+    subgraph DiscoveryEngine["DISCOVERY ENGINE (methodology)"]
+        DE1["Chokepoint Cascade Map"]
+        DE2["Repurposing Surface"]
+        DE3["Zileuton — CP6a 5-LOX (FDA asthma)"]
+        DE4["Disulfiram — CP6b GSDMD (FDA alcohol)"]
+        DE5["Avacopan — CP0 C5aR1 (FDA ANCA)"]
+        DE6["Strain Library (synthesis output)"]
+    end
+
     subgraph Androgens["ANDROGEN-URATE AXIS (NEW)"]
         S1["Testosterone (endogenous or exogenous)"]
         S2["Estradiol"]
@@ -340,6 +349,16 @@ graph TB
     S8 -->|"blocks T→E2 aromatization (↑T, ↓E2)"| S1
     S8 -.->|"loss of estrogen's urate-excretion boost"| S2
 
+    %% Discovery engine → repurposing surface (source: open-enzyme-vision.md §2)
+    DE1 -->|"produces"| DE2
+    DE2 -->|"surfaces"| DE3
+    DE2 -->|"surfaces"| DE4
+    DE2 -->|"surfaces"| DE5
+    DE1 -->|"synthesizes"| DE6
+    DE3 -->|"CP6a 5-LOX inhibitor"| N1
+    DE4 -->|"CP6b GSDMD inhibitor"| C4
+    DE5 -.->|"CP0 C5aR1 antagonist (pharma adjunct)"| O2
+
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2
     M2 -->|"CB2/TLR4/NLRP3 — MSU gout model"| C2
@@ -371,6 +390,7 @@ graph TB
     style TNFSF14_arm fill:#fff5cc
     style MultiCP fill:#f0ffe0
     style Androgens fill:#e8d8f0
+    style DiscoveryEngine fill:#fff8e6
 ```
 
 ## Key Pathway Descriptions
