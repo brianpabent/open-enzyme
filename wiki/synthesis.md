@@ -32,6 +32,9 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* Elevate this from a speculative connection to a testable hypothesis. Propose an experiment in `validation-experiments.md` to measure ABCG2 induction in Caco-2 cells treated with ergothioneine at concentrations found in fermented koji.
 
     > **Claude review — Partial.** The ergothioneine→Nrf2→ABCG2 chain is plausible but each link needs scrutiny. `abcg2-modulators.md` does list Nrf2 as a transcriptional inducer, and ergothioneine is a recognized cytoprotectant, but its classification as a "Nrf2 inducer" is weaker than canonical activators (sulforaphane, CDDO-Me) — it's more accurately an ROS scavenger that may indirectly stabilize Nrf2. The Pass 2 synthesizer's framing of "native metabolite chorus" upregulating ABCG2 is speculative-squared (two mechanistic extrapolations stacked). The experiment is worth proposing, but it should be tagged explicitly as Mechanistic Extrapolation testing a two-step inference, not a "built-in synergy" claim.
+    > **brian** agree with claude
+
+    **✓ Actioned 2026-04-27:** Added [`validation-experiments.md` §1.11 — Ergothioneine → ABCG2 Caco-2](./validation-experiments.md#111-ergothioneine--abcg2-induction-in-caco-2-native-koji-synergy-test). Tagged explicitly as Mechanistic Extrapolation testing a two-step inference (ergothioneine → Nrf2 stabilization → ABCG2 induction), per Claude review. Includes a $0 pre-step to verify the `aspergillus-oryzae.md` ergothioneine-titer claim against primary literature before committing wet-lab spend.
 
 2.  **Shio-koji acts as a dual-pathway therapeutic vehicle, unifying the project's two main user tracks into a single household product.** *Supported.*
     -   *Documents Connected:* `koji-home-fermentation.md`, `engineered-koji-protocol.md`, `open-enzyme-vision.md`, `digestive-enzymes.md`.
@@ -39,6 +42,9 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* Add a dedicated paragraph to `engineered-koji-protocol.md` (§07) quantifying the expected protease load during marination and framing shio-koji explicitly as a dual-action product.
 
     > **Claude review — Confirmed.** The dual-use framing is mechanistically clean and temporally distinct (proteases act during marination ex vivo; uricase acts post-ingestion in gut lumen). However, this connection is in tension with Contradiction #2 and Open Question #2 in the same synthesis — if shio-koji proteases degrade heterologous carnosine, they plausibly degrade heterologous uricase too. Uricase is a ~34 kDa tetrameric folded protein, likely more protease-resistant than a dipeptide, but the dual-use claim should be conditional on resolving the protein-stability question before being added to §07.
+    > **brian** needs more research
+
+    **✓ Actioned 2026-04-27:** The dual-use thesis is now gated on [`validation-experiments.md` §1.10 — Heterologous Uricase Stability in Shio-Koji Salt-Protease Ferment](./validation-experiments.md#110-heterologous-uricase-stability-in-shio-koji-salt-protease-ferment). Per the conditional framing in Claude review, [`engineered-koji-protocol.md` §15](./engineered-koji-protocol.md#15-carnosine-co-expression-module) now carries a Delivery Format Constraints subsection: shio-koji explicitly ruled out for peptide payloads (carnosine, KPV, BPC-157), conditionally viable for folded enzymes (uricase, lactoferrin) pending §1.10. Cross-page notes added to `kpv-peptide.md` and `bpc-157.md`.
 
 3.  **The project's mechanism-first methodology systematically surfaces high-potential, overlooked pharmaceutical repurposing candidates.** *Supported.*
     -   *Documents Connected:* `gout-clinical-pipeline.md`, `nlrp3-exploit-map.md`, `disulfiram.md`, `zileuton.md`, `complement-c5a-gout.md`, `chembl-cross-check.md`.
@@ -46,47 +52,25 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* Add a section to `gout-clinical-pipeline.md` or `open-enzyme-vision.md` explicitly stating this pattern and framing it as a strength of the platform's methodology.
 
     > **Claude review — Confirmed.** The pattern is real and already partially articulated in §2.2 of `open-enzyme-vision.md` (zileuton, disulfiram, avacopan explicitly framed as repurposing surface). The DPP-4/resveratrol connection from `chembl-cross-check.md` is a legitimate fourth example that strengthens the case. The Pass 2 synthesizer's suggested action is well-targeted — this deserves its own subsection because it's currently spread across multiple files. Sharpening: the framing should note that none of these candidates require Open Enzyme to build anything; they're pure discovery-engine output and represent a zero-engineering path to impact.
+    > **brian** agree - and i think we already did this?
 
-4.  **The CRISPR-uricase "cure" requires the NLRP3 supplement stack as an essential bridge therapy.** *Supported.*
-    -   *Documents Connected:* `crispr-uricase.md`, `nlrp3-exploit-map.md`, `gout-deep-dive.md`.
-    -   *Why It Matters:* `crispr-uricase.md` frames gene therapy as the ultimate cure but notes it would dissolve existing tophi over months or years. `nlrp3-exploit-map.md` and `gout-deep-dive.md` both describe the "crystal dissolution danger window" where urate-lowering therapy can paradoxically trigger flares as crystal deposits are mobilized. The unstated connection is that a patient receiving a one-time gene therapy cure would still need prophylactic anti-inflammatory treatment for a significant period post-treatment to manage these dissolution flares. The NLRP3 supplement stack is the perfect bridge therapy for this window.
-    -   *Suggested Action:* Add a section to `crispr-uricase.md` on "Post-Therapy Management" that explicitly discusses the dissolution flare risk and positions the NLRP3 supplement stack as a necessary adjunct for the first 6-12 months after gene therapy administration.
+    **✓ Actioned 2026-04-27:** Confirmed: [`open-enzyme-vision.md` §2.2](./open-enzyme-vision.md) already had the repurposing-surface section with zileuton + disulfiram + avacopan. Added the DPP-4 / gliptin class as a 4th example (per chembl-cross-check.md, DPP-4 is resveratrol's most-potent curated direct target) and added the "zero-engineering path to impact" framing per Claude review. Pattern is now explicitly named as a strategic asset of the chokepoint-mapping methodology.
 
-    > **Claude review — Confirmed, prioritize.** This is an important and underemphasized point. The dissolution-flare window is well-documented for allopurinol/febuxostat initiation, and a one-shot gene therapy would produce a much sharper urate drop than titrated ULT, potentially making the flare risk worse, not better. This has direct implications for trial design if CRISPR-uricase advances — mandatory co-administered prophylaxis becomes part of the therapeutic protocol, not an optional adjunct. Should be elevated to a Priority Action.
-
-    **✓ Actioned 2026-04-27:** Added new "Post-Therapy Management — The Dissolution-Flare Bridge" section to `crispr-uricase.md` (positioned before "The Technical Pieces Are Falling Into Place"). Covers mechanism, why the gene-therapy version is harder than ULT initiation, three-phase bridge protocol (acute / sub-acute / imaging-keyed long-tail), and trial-design implications. Per Pass 3 review, prophylaxis duration is keyed to dual-energy CT confirmation of tophi resolution rather than a fixed 6–12 month window. Frames Open Enzyme's NLRP3 work as directly relevant to gene-therapy translation, not just a parallel track.
-
-5.  **An insulin-sensitive man with high SHBG is caught in a paradoxical trap where optimizing hormones (via carbs) worsens gout (via fructose).** *Supported.*
-    -   *Documents Connected:* `androgen-urate-axis.md`, `fructose-connection.md`.
-    -   *Why It Matters:* `androgen-urate-axis.md` suggests a non-drug lever for high SHBG is to modestly increase dietary carbohydrate to raise insulin and lower SHBG, freeing up more testosterone. However, `fructose-connection.md` establishes that fructose (a component of many carbohydrate sources) drives uric acid production via the unregulated KHK pathway. An insulin-sensitive gout patient is thus caught in a bind: increasing carbs to optimize hormones directly worsens the metabolic driver of their gout.
-    -   *Suggested Action:* The recommendation in `androgen-urate-axis.md` should be refined to specify *glucose-dominant* starches (which raise insulin without triggering the KHK pathway) over fructose-containing carbs. This is a critical nuance for gout patients.
-
-    > **Claude review — Partial.** Agree on the directional trap: fructose drives UA via KHK (`fructose-connection.md` well-sourced). Push back on the sharpness of the "paradox" framing — the `androgen-urate-axis.md` recommendation is for *modest* carb increase, and most glucose-dominant starches (rice, potatoes) are low-fructose. The refinement to specify glucose-dominant starches is correct and useful, but the "paradoxical trap" framing overstates the conflict — this is a solvable nutritional prescription, not a fundamental contradiction.
-
-    **✓ Actioned 2026-04-27:** Refined the "Practical implication" paragraph in `androgen-urate-axis.md` (the insulin-SHBG-androgen loop section) to specify glucose-dominant starches (rice, potatoes, oats, sweet potato) and explicitly exclude high-fructose sources (sucrose, agave, fruit juice, HFCS). Tagged the framing as a "solvable nutritional prescription" per Pass 3 review — not a paradoxical trap. Cross-referenced `fructose-connection.md` for the KHK-pathway mechanism.
 
 ## Contradictions Found
 
-1.  **The `supplements-stack.md` is pharmacologically at war with the `gut-lumen-sink.md` platform thesis for the primary gout demographic.** Locations: `supplements-stack.md`, `abcg2-modulators.md`, `gut-lumen-sink.md`. Analysis: The supplement stack recommends quercetin and EGCG, both of which are documented in `abcg2-modulators.md` as functional inhibitors of the ABCG2 transporter. The core engineering effort of the Open Enzyme platform (engineered uricase) depends on a functional ABCG2 to create the gut-lumen sink. For a male patient on TRT (androgen-suppressed ABCG2) who is also taking high-dose quercetin (pharmacologically-suppressed ABCG2), the engineered uricase platform is being set up to fail. This is a platform-level strategic conflict that needs to be resolved.
-
-    > **Claude review — Confirmed, prioritize.** This is the strongest contradiction in the synthesis. The ABCG2 inhibitor/gut-lumen-sink conflict is platform-level and mechanism-grounded — quercetin IC50 on ABCG2 is in the submicromolar range (well-established in the BCRP literature), and dietary supplementation easily reaches gut-lumen concentrations that inhibit transport. For an androgen-suppressed + Q141K user, triple-hit ABCG2 suppression could plausibly reduce gut urate flux by >50%, gutting the substrate for engineered uricase. The Priority Action to warn in `supplements-stack.md` is correct and urgent.
-
-    **✓ Actioned 2026-04-27:** Resolved via Priority Action 2 (below) — added 4-tier risk-stratification table to `supplements-stack.md` §1 Stack-level interactions. See annotation at Priority Action 2 for details.
 
 2.  **The proposed carnosine-koji module is incompatible with the shio-koji delivery format.** Locations: `engineered-koji-protocol.md` (§15), `koji-home-fermentation.md`. Analysis: The engineered protocol proposes adding a carnosine biosynthesis module to the koji strain. The home protocol identifies shio-koji (a 7-14 day salt ferment with active proteases) as the highest-leverage format for EPI. However, carnosine is a dipeptide. The active proteases in a shio-koji ferment would almost certainly hydrolyze the engineered carnosine back into its constituent amino acids (beta-alanine and histidine), destroying the therapeutic molecule. A carnosine-expressing strain cannot be delivered via the shio-koji format if intact carnosine is the goal.
 
     > **Claude review — Confirmed.** The biochemistry is straightforward: shio-koji's hallmark feature is active native proteases over 7-14 days at room temperature, and carnosine (β-alanyl-L-histidine) is a classic dipeptidase substrate. Carnosinase homologs are present broadly. The contradiction is real and the format-incompatibility conclusion follows. Worth noting: this same logic applies to any small peptide payload (KPV, BPC-157 if co-expressed), suggesting the shio-koji format is structurally limited to robustly folded enzyme payloads, not peptide therapeutics.
+    
+    **brian** Noteworthy! update relevant docs
+
+    **✓ Actioned 2026-04-27:** Updated [`engineered-koji-protocol.md` §15](./engineered-koji-protocol.md#15-carnosine-co-expression-module) with a Delivery Format Constraints subsection that enumerates fresh-koji / amazake / dried-powder / shio-koji tradeoffs for any peptide payload, and applied the same logic to [`kpv-peptide.md`](./kpv-peptide.md) and [`bpc-157.md`](./bpc-157.md). The shio-koji format is explicitly structurally limited to robustly folded enzyme payloads (uricase tetramer, lactoferrin glycoprotein), not peptide therapeutics.
 
 ## Proposed Experiments (ranked by insight per cost)
 
-1.  **Fructose Challenge Test as an acute n-of-1 uricase efficacy readout.** Cost: ~$50. Time: 2 hours. Decides: If engineered uricase is active in the gut in real-time.
-    -   *Rationale:* `fructose-connection.md` establishes that a fructose bolus generates a predictable serum UA spike within 60-120 minutes. This can be used as a cheap, high-signal challenge to validate uricase activity without waiting weeks for baseline UA to drift.
-    -   *Protocol:* Standardized 50g fructose load, with serial fingerstick UA measurements at 0, 30, 60, 90, and 120 minutes. Run once before and once after starting the koji therapy. A blunted post-fructose UA spike directly validates uricase action in the gut.
-    -   *Affected Documents:* `self-experiment-protocol.md`, `validation-experiments.md`.
 
-    > **Claude review — Confirmed, prioritize.** Excellent experimental design. Fructose challenge tests are well-validated in the gout literature for probing UA handling, and the within-subject before/after design controls for most confounders. The 2-hour timeline and ~$50 cost make this the highest insight-per-dollar experiment in the queue. One refinement: fingerstick UA meters (e.g., UASure) have ~10-15% CV, so duplicate readings at each timepoint would strengthen the signal. Should be elevated to Priority Action status.
-
-    **✓ Actioned 2026-04-27:** Added as `validation-experiments.md` §3.10 — "Brian: Fructose Challenge Test as Acute n=1 Uricase Efficacy Readout." Cost ~$50, ~2 hours per session, ≥4-week gap between baseline and post-intervention runs. Includes the Pass 3 refinement (duplicate fingerstick UA readings at each timepoint), within-subject before/after design with optional washout run, ≥30% effect-size threshold against UASure CV ~10–15% noise floor. Dashboard table updated.
 
 2.  **Quantify residual ethanol in home-fermented koji products.** Cost: ~$200. Time: 1 week. Decides: The real-world safety risk of combining the disulfiram protocol with home fermentation.
     -   *Rationale:* `disulfiram.md` notes the severe reaction with alcohol. `koji-home-fermentation.md` and `aspergillus-oryzae.md` note that amazake can be contaminated with wild yeast and produce alcohol. This is a direct safety risk interaction.
@@ -94,6 +78,9 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Affected Documents:* `disulfiram.md`, `koji-home-fermentation.md`.
 
     > **Claude review — Confirmed.** The safety interaction is real and underappreciated. Home amazake batches with wild yeast contamination could reach 1-3% ethanol, which combined with disulfiram produces the acetaldehyde reaction at clinically dangerous levels. GC is the right analytical method. One addition: the protocol should include a cheap pre-screen using consumer ethanol test strips (±0.1% detection) for routine household monitoring, with GC reserved for validation and edge cases.
+    > **brian** just update the protocol to explain the risk and to use ethanol test strips 
+
+    **✓ Actioned 2026-04-27:** Added a "Drug-interaction warning: disulfiram + residual ethanol" subsection to [`koji-home-fermentation.md` Stage 2B (amazake)](./koji-home-fermentation.md#stage-2b-koji-rice--amazake-sweet-rice-drink): consumer ethanol test-strip pre-screen (~$15, ±0.1% v/v) on every finished batch, discard at >0.1%, GC reserved for ambiguous/edge cases per Claude review. [`disulfiram.md`](./disulfiram.md) cross-link added.
 
 3.  **Simulated GI survival assay of native koji enzymes.** Cost: ~$300. Time: 2 weeks. Decides: Whether the contradiction between the n=1 EPI data (`digestive-enzyme-optimization.md`) and GI survival models (`gi-survival-prediction.md`) is due to unappreciated stability of native koji enzymes.
     -   *Rationale:* The n=1 self-experiment on BoulderBio shows a clear clinical effect, implying fungal lipase survives gastric transit. This contradicts models based on porcine lipase.
@@ -101,40 +88,34 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Affected Documents:* `digestive-enzyme-optimization.md`, `koji-home-fermentation.md`, `gi-survival-prediction.md`.
 
     > **Claude review — Augment.** The experiment is well-motivated. Addition: there's a cheaper intermediate — SGF/SIF is standard USP protocol but the pepsin+pH 1.2 step alone (30 min) captures most gastric kill. Also, activity assays differ substantially: lipase (pNPP or tributyrin), protease (azocasein), amylase (starch-iodine) are all <$100 kits. The real question is whether *A. oryzae* lipase has intrinsically better pH stability than porcine, or whether the koji matrix provides physical protection — the experiment should test extracted enzyme AND whole koji rice to distinguish these.
+    > **brian** add both experiments
+
+    **✓ Actioned 2026-04-27:** Added [`validation-experiments.md` §1.18 — Native Koji Enzyme SGF Survival, Free Extract vs. Whole Biomass (2-Arm)](./validation-experiments.md#118-native-koji-enzyme-sgf-survival--free-extract-vs-whole-biomass-2-arm). Both arms run in parallel as Claude review requested; resolves the Koji-S vs. Koji-I default for native enzymes in one experiment.
 
 ## Open Questions
 
 1.  **Is local H₂O₂ production from high-activity gut-lumen uricase a risk for epithelial oxidative stress?** `uricase.md` and `aspergillus-oryzae.md` state that host- and microbe-derived catalase will neutralize the H₂O₂ byproduct. However, this is an assumption. At high local uricase concentrations, H₂O₂ production could overwhelm local scavenging capacity, causing oxidative damage. This has not been quantified or tested.
 
     > **Claude review — Confirmed, prioritize.** This is a real quantitative gap. Uricase H₂O₂ stoichiometry is 1:1 with urate, so at gut-lumen urate concentrations (hundreds of μM) in a localized microenvironment near high-expressing koji particles, peak H₂O₂ flux could exceed local catalase buffering. The catalase-neutralization assumption in `uricase.md` deserves explicit quantification. A simple ex vivo Caco-2 monolayer + uricase + urate experiment with H₂O₂ probes would resolve this and is comparable in cost to the other proposed experiments.
+    > **brian** add the experiment
 
-2.  **Does the 7–14 day salt fermentation of shio-koji degrade the heterologous proteins (uricase, lactoferrin) produced by engineered *A. oryzae*?** The high-salt, room-temperature environment with active native proteases may denature or cleave the engineered payloads, rendering shio-koji an unsuitable format for delivering those molecules. This is a critical open question for the dual-use product concept.
-
-    > **Claude review — Confirmed.** This is the single highest-stakes open question for the shio-koji dual-use thesis (connects directly to New Connection #2). Uricase is ~34 kDa homotetramer with reasonable intrinsic stability, but 7-14 days at RT with active subtilisin-family proteases and 15-20% NaCl is a harsh environment. Lactoferrin is large (~80 kDa) and glycosylated but has exposed protease-sensitive loops. This should be an experiment, not just an open question — Western blot of engineered koji protein in fresh vs. aged shio-koji would settle it directly.
-
-    **✓ Actioned 2026-04-27:** Promoted from open question to formal experiment as `validation-experiments.md` §1.10 — "Heterologous Uricase Stability in Shio-Koji Salt-Protease Ferment." Cost $400–800, 3–4 weeks. Includes time-course Western blot (days 0/3/7/10/14), spectrophotometric activity assay, and a salt-concentration sub-experiment (5/10/15/20% NaCl at day 7) to find the salt threshold at which protease activity drops faster than uricase stability.
+    **✓ Actioned 2026-04-27:** Added [`validation-experiments.md` §1.12 — Local H₂O₂ Stress in Caco-2 from High Gut-Lumen Uricase](./validation-experiments.md#112-local-h2o2-stress-in-caco-2-from-high-gut-lumen-uricase). Quantifies local H₂O₂ flux vs. catalase scavenging at koji-realistic uricase concentrations; includes ergothioneine + catalase rescue arms; barrier-integrity readouts (TEER, ZO-1/occludin) per Pass 3 priority.
 
 3.  **What is the interaction logic for stacking colchicine with other CP2/CP3 modulators?** `colchicine.md` establishes it as a dual-hit inhibitor at Chokepoint 2 (P2X7) and Chokepoint 3 (ASC speck). The `nlrp3-exploit-map.md` lists other compounds at these chokepoints, like BHB (CP2/CP3) and spermidine (CP3). Is stacking these redundant, additive, or synergistic?
 
     > **Claude review — Partial.** Agree the question is under-resolved. Push back on framing colchicine as strictly CP2/CP3 — `colchicine.md` primary mechanism is tubulin-binding (blocks ASC speck trafficking and neutrophil chemotaxis), which puts it more cleanly at CP3 with secondary effects at CP6. BHB at CP2 (K⁺ efflux inhibition via HCAR2/β-arrestin signaling) hits an upstream node that colchicine doesn't touch, so BHB+colchicine is plausibly additive. Spermidine at CP3 overlaps more directly. The stacking logic differs per pair; a one-size answer is unlikely.
+    > **brian** flag this on the colchicine page - the important bit is "The stacking logic differs per pair; a one-size answer is unlikely." 
+
+    **✓ Actioned 2026-04-27:** Added [`colchicine.md` §3.3.1 — Stacking logic with other CP2/CP3 modulators](./colchicine.md). Lifts Claude review's per-pair framing: BHB at CP2 (K⁺ efflux upstream of colchicine's tubulin block — additive); spermidine at CP3 (overlaps colchicine's ASC speck mechanism — likely redundant). The "stacking logic differs per pair; a one-size answer is unlikely" line is the explicit closing statement.
 
 ## Priority Actions
 
 1.  **Explicitly address the protease-carnosine conflict in the carnosine co-expression module.** The proposal in `engineered-koji-protocol.md` §15 should note that the shio-koji format is likely incompatible with delivering intact carnosine and recommend alternative formats (fresh koji, dried powder, or amazake).
 
     > **Claude review — Confirmed.** The action is straightforward and follows from the biochemistry. Worth adding: amazake (cooked, <24h, lower protease activity) is the natural fallback format for carnosine, while dried koji powder (heat-inactivated proteases) is the most protease-safe but sacrifices the live-enzyme benefit. The §15 edit should enumerate these tradeoffs rather than just flagging shio-koji incompatibility.
+    > **brian** do it
 
-2.  **Add explicit warnings to `supplements-stack.md` about the ABCG2 inhibitor conflict.** The entries for quercetin, EGCG, and curcumin must contain a clear note about their potential to antagonize the gut-lumen sink platform, with a specific caution for androgen-dominant or Q141K-positive users.
-
-    > **Claude review — Confirmed, prioritize.** This is the highest-impact low-cost edit in the synthesis. The `supplements-stack.md` / `gut-lumen-sink.md` conflict is a platform-level own-goal if unaddressed. Specific wording should quantify the risk tier (androgen-suppressed ABCG2 + Q141K homozygote + high-dose flavonoid = highest concern; wild-type ABCG2 + low-dose dietary quercetin = minimal concern). This stratification matters because blanket warnings undermine compliance when the actual risk is genotype/dose-dependent.
-
-    **✓ Actioned 2026-04-27:** Added 4-tier risk-stratification table to `supplements-stack.md` §1 Stack-level interactions, mapping user profile (Q141K-homozygote + androgen-suppressed + high-dose flavonoid → wild-type + dietary intake) to risk tier and practical implication. Existing per-compound warnings on quercetin and EGCG were already in place from a prior sweep; the gap was the consolidated stratification table.
-
-3.  **Elevate the "Ward 1995 dual-cassette feasibility test" from `koji-endgame-strain.md` to the top of the experimental queue in `validation-experiments.md`.** This is the single gating experiment for the entire endgame strain vision. Its strategic importance, cost, and timeline should be made prominent.
-
-    > **Claude review — Confirmed.** The Ward 1995 dual-cassette test is genuinely the gating experiment — if the glucoamylase-KEX2 architecture doesn't transfer to *A. oryzae* solid-state, the entire single-strain endgame collapses to a two-strain co-fermentation fallback, which has significant operational consequences for dosing uniformity and home reproducibility. $3-5k / 8-12 weeks is extraordinarily high leverage given what it decides. Should be elevated to #1 in the experimental queue, above even the fructose challenge test despite higher cost.
-
-    **✓ Actioned 2026-04-27:** Elevated Ward 1995 dual-cassette test to #1 priority in `validation-experiments.md` — added priority-gate callout to the Experiment Queue overview, bolded and tagged the §1.9 row in the dashboard table, and appended "— #1 priority gate" to the §1.9 section header.
+    **✓ Actioned 2026-04-27:** Updated [`engineered-koji-protocol.md` §15](./engineered-koji-protocol.md#15-carnosine-co-expression-module) with the Delivery Format Constraints subsection enumerating fresh-koji / amazake / dried-powder / shio-koji tradeoffs as Claude review requested — beyond just flagging shio-koji incompatibility, the §15 edit ranks all four formats with reasoning. Same logic applied to KPV and BPC-157 cross-pages.
 
 ---
 
@@ -162,62 +143,15 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* Elevate this from a speculative connection to a testable hypothesis. Propose an experiment in `validation-experiments.md` to measure ABCG2 induction in Caco-2 cells treated with ergothioneine at concentrations found in fermented koji.
 
     > **Claude review — Confirmed.** The ergothioneine→Nrf2→ABCG2 chain is supported: `wiki/aspergillus-oryzae.md` documents native ergothioneine at ~20 mg/g dry mass with Nrf2-inducer activity (In Vitro), and the gut-lumen sink mechanism depends on ABCG2 throughput. The synergy claim is plausible but weaker than framed — Nrf2→ABCG2 induction is one of several Nrf2 downstream effects, and the In Vitro ergothioneine→Nrf2 evidence doesn't cleanly establish ABCG2 as a prominent target at koji-achievable luminal concentrations. The proposed Caco-2 experiment is exactly the right disambiguation step; worth noting ergothioneine is actively transported via OCTN1, so luminal bioavailability to enterocytes is plausible but worth measuring.
+    > **brian** do it
 
-2.  **The project's mechanism-first methodology systematically surfaces high-potential, overlooked pharmaceutical repurposing candidates.** *Supported.*
-    -   *Documents Connected:* `gout-clinical-pipeline.md`, `nlrp3-exploit-map.md`, `disulfiram.md`, `zileuton.md`, `complement-c5a-gout.md`, `chembl-cross-check.md`.
-    -   *Why It Matters:* The wiki has independently identified at least four FDA-approved drugs whose primary mechanism is a direct hit on a key gout chokepoint, but which have never been clinically tested for gout: Zileuton (CP6a 5-LOX inhibitor), Disulfiram (CP6b GSDMD inhibitor), Avacopan (CP0 C5aR1 antagonist), and Resveratrol's top target being DPP-4 (a diabetes drug class relevant to gout comorbidity). This is a recurring pattern, not a one-off finding. It suggests the Open Enzyme platform's chokepoint-based analysis provides a systematic engine for identifying market and research gaps where established drugs could be repurposed, a strategic asset for the project's overall contribution.
-    -   *Suggested Action:* Add a section to `gout-clinical-pipeline.md` or `open-enzyme-vision.md` explicitly stating this pattern and framing it as a strength of the platform's methodology. This positions Open Enzyme not just as a bio-engineering project but as a discovery engine for repurposing opportunities.
+    **✓ Actioned 2026-04-27:** Same finding as the b7df491 sweep block above (ergothioneine → Nrf2 → ABCG2 Caco-2 induction). Resolved by [`validation-experiments.md` §1.11](./validation-experiments.md#111-ergothioneine--abcg2-induction-in-caco-2-native-koji-synergy-test). This sweep block is a duplicate generated by the 3-pass model testing — flagged for collapse during dedupe.
 
-    > **Claude review — Confirmed, prioritize.** The pattern is real and well-evidenced across `wiki/gout-clinical-pipeline.md`, `wiki/zileuton.md`, and `wiki/complement-c5a-gout.md`. The Pass 2 synthesizer's framing — Open Enzyme as a "discovery engine for repurposing opportunities" — is a genuinely novel strategic positioning that deserves surfacing. Minor refinement: resveratrol→DPP-4 as "top target" needs verification against `wiki/chembl-cross-check.md` conventions; DPP-4 inhibition by resveratrol is typically weak (μM range) and shouldn't anchor the pattern. The stronger cases (zileuton CP6a, disulfiram CP6b GSDMD per `wiki/disulfiram.md`, avacopan CP0) carry the argument without it.
-
-3.  **The NLRP3 supplement stack is a necessary bridge therapy for CRISPR-based uricase gene therapy.** *Supported.*
-    -   *Documents Connected:* `crispr-uricase.md`, `nlrp3-exploit-map.md`, `gout-deep-dive.md`.
-    -   *Why It Matters:* `crispr-uricase.md` frames gene therapy as the ultimate cure for gout, but notes it would dissolve existing tophi over months or years. `nlrp3-exploit-map.md` and `gout-deep-dive.md` both describe the "crystal dissolution danger window" where urate-lowering therapy can paradoxically trigger flares as crystal deposits are mobilized. The unstated connection is that a patient receiving a one-time gene therapy cure would still need prophylactic anti-inflammatory treatment for a significant period post-treatment to manage these dissolution flares. The NLRP3 supplement stack is the perfect bridge therapy for this window.
-    -   *Suggested Action:* Add a section to `crispr-uricase.md` on "Post-Therapy Management" that explicitly discusses the dissolution flare risk and positions the NLRP3 supplement stack as a necessary adjunct for the first 6-12 months after gene therapy administration.
-
-    > **Claude review — Confirmed.** The dissolution-flare danger window is explicitly documented in `wiki/gout-deep-dive.md` and the ULT-initiation prophylaxis logic in `wiki/colchicine.md` §4.2 maps directly onto post-gene-therapy scenarios. The mechanism is identical: rapid urate mobilization from established tophi triggers NLRP3 priming as crystals dissolve. Worth noting the timeline may need to be longer than 6-12 months — `wiki/crispr-uricase.md` likely cites multi-year tophi dissolution — suggesting prophylaxis duration should be keyed to serum urate + imaging confirmation of tophi resolution rather than a fixed window.
+2. 
 
 ## Contradictions Found
 
-1.  **The efficacy of wild-type koji enzymes for EPI is supported by n=1 data but contradicted by GI survival models.** Locations: `digestive-enzyme-optimization.md` (§5.4 n=1 findings) and `koji-home-fermentation.md` vs. `gi-survival-prediction.md` (§9 lipase survival). Analysis: The n=1 self-experiment on BoulderBio (wild-type *A. oryzae* capsules) shows a clear clinical effect, implying that fungal lipase survives gastric transit. However, `gi-survival-prediction.md` cites data that pancreatic lipase survival is ~1%, and `koji-home-fermentation.md` is skeptical of in-gut activity for un-coated enzymes. The likely resolution is that *A. oryzae*'s native lipase is significantly more acid- and protease-stable than porcine pancreatic lipase, a fact not currently reflected in the GI survival model. This contradiction highlights a key knowledge gap.
-
-    > **Claude review — Partial.** Agree the contradiction is real and the resolution (native koji enzymes more stable than porcine pancreatic) is likely correct — `wiki/aspergillus-oryzae.md` explicitly notes *A. oryzae* lipase is active pH 4–10 vs. pancreatic lipase's narrow alkaline optimum, and `wiki/digestive-enzyme-optimization.md` cites this as the mechanism for surviving gastric transit without enteric coating. Push back on framing: the n=1 data is consistent with the GI survival model once the pH-stability differential is incorporated — this isn't a contradiction, it's a gap in the model's parameterization. The proposed SGF/SIF assay (§Proposed Experiment 1) is still the right disambiguation.
-
-2.  **The proposed carnosine-koji module is incompatible with the shio-koji delivery format.** Locations: `engineered-koji-protocol.md` (§15) vs. `koji-home-fermentation.md` (§Stage 2A). Analysis: The engineered protocol proposes adding a carnosine biosynthesis module to the koji strain. The home protocol identifies shio-koji (a 7-14 day salt ferment) as the highest-leverage format for EPI due to protease pre-digestion. However, carnosine is a dipeptide. The active proteases in a shio-koji ferment would almost certainly hydrolyze the engineered carnosine back into its constituent amino acids (beta-alanine and histidine), destroying the therapeutic molecule. A carnosine-expressing strain cannot be delivered via the shio-koji format if intact carnosine is the goal.
-
-    > **Claude review — Confirmed.** The incompatibility is mechanistically sound: shio-koji ferments 7–14 days with active proteases at ambient temperature (`wiki/aspergillus-oryzae.md` §Delivery Formats), and carnosine (β-Ala-His dipeptide) is a textbook carnosinase/peptidase substrate. `wiki/engineered-koji-protocol.md` §15 acknowledges carnosinase degradation risk ("Native *A. oryzae* carnosinase degrades product back to β-alanine + histidine") but frames it as a question about engineered-strain peptidase activity, not about downstream shio-koji processing. The Pass 2 synthesizer correctly identifies a gap: even if the engineered strain preserves carnosine at harvest, the shio-koji format would destroy it. Fresh koji, amazake (brief 55–60°C hold may partially inactivate proteases), or lyophilized powder are the viable formats.
-
-## Proposed Experiments (ranked by insight per cost)
-
-1.  **Simulated GI survival assay of native koji enzymes.** Cost: ~$300. Time: 2w. Decides: Whether the contradiction between the n=1 EPI data and the GI survival models is due to unappreciated stability of native koji enzymes. Protocol: Incubate extract from wild-type koji rice in simulated gastric fluid (SGF, pH 2, pepsin) then simulated intestinal fluid (SIF, pH 7, pancreatin). Measure residual lipase, protease, and amylase activity. This resolves a key contradiction for the EPI track.
-
-    > **Claude review — Confirmed, prioritize.** The SGF→SIF assay is high-value and under-priced; `wiki/engineered-koji-protocol.md` §06 already proposes essentially this experiment for the secreted-vs-intracellular question, so consolidation across Experiment 1.6 (validation-experiments §1.6) is warranted. The $300 / 2-week estimate is realistic for a basic SGF/SIF protocol with spectrophotometric uricase readout. Worth measuring lipase, protease, and amylase in parallel as the synthesizer specified — same assay infrastructure, resolves the EPI contradiction simultaneously.
-
-2.  **Test ergothioneine for ABCG2 induction in Caco-2 cells.** Cost: ~$2k. Time: 4w. Decides: If koji's native ergothioneine provides a "free" synergistic boost to the gut-lumen sink. Protocol: Treat Caco-2 cells with ergothioneine at concentrations found in fermented koji. Measure ABCG2 mRNA (qPCR) and protein (Western blot) levels. Use sulforaphane as a positive control.
-
-    > **Claude review — Partial.** Agree this is a useful experiment; the Caco-2 + ergothioneine protocol is standard and $2k/4w is reasonable. Push back on the novelty framing: ergothioneine's Nrf2 activity is well-characterized but its effect on ABCG2 specifically (vs. other Nrf2 targets) is what needs measurement. Add MRP2/MRP4 as secondary readouts — these are other Nrf2-regulated efflux transporters and would clarify whether ergothioneine preferentially hits ABCG2 or induces a broader efflux program. Also worth including a dose range spanning achievable luminal concentrations from 10–15 g koji/day (~0.3–1 mg ergothioneine, ~1–3 μM intestinal lumen estimate).
-
-3.  **Quantify residual ethanol in home-fermented amazake and shio-koji.** Cost: ~$200. Time: 1w. Decides: The real-world safety risk of combining the disulfiram protocol with the home-fermentation protocols. Protocol: Prepare several batches of amazake and shio-koji per the home protocol, including one "failed" batch with suspected wild yeast contamination. Send samples for gas chromatography analysis to determine ethanol concentration.
-
-    > **Claude review — Confirmed.** Real and underappreciated safety question. Ethanol contamination in home-fermented amazake (wild *Saccharomyces* taking over at >30°C or extended incubation) is a known failure mode per `wiki/aspergillus-oryzae.md` Troubleshooting ("yeasty/alcohol smell"), and shio-koji can accumulate ethanol under poor temperature control. Combining with disulfiram (CP6b GSDMD inhibitor per `wiki/disulfiram.md`) would produce classic disulfiram-ethanol reaction at concentrations well below typical drinking thresholds. $200/1w for GC analysis at a contract lab is accurate. Worth including sake-yeast-contaminated positive control batch.
-
-## Open Questions
-
-1.  **Is local H₂O₂ production from high-activity gut-lumen uricase a risk for epithelial oxidative stress?** Both `uricase.md` and `aspergillus-oryzae.md` state that host- and microbe-derived catalase will neutralize the H₂O₂ byproduct of the uricase reaction. However, this is an assumption. At the high local uricase concentrations needed for therapeutic effect, it's possible that H₂O₂ production could overwhelm local scavenging capacity, causing oxidative damage to the gut lining and potentially worsening intestinal permeability. This has not been quantified or tested.
-
-    > **Claude review — Confirmed.** Genuine open question, correctly identified as untested. The catalase-sufficiency argument in `wiki/aspergillus-oryzae.md` §Hydrogen Peroxide Byproduct is hand-wavy — it cites fungal catalase co-production and gut microbiome peroxidase but doesn't quantify local H₂O₂ flux at therapeutic uricase density. At 40–80 mg uricase/g koji × 10–15 g koji meal dose, peak local H₂O₂ generation could transiently exceed catalase Km in the unstirred mucus layer. Worth measuring in the SGF/SIF assay system with a DCF-DA or Amplex Red readout; low incremental cost once that infrastructure exists.
-
-2.  **What is the interaction logic for colchicine stacked with other CP2/CP3 modulators?** `colchicine.md` establishes it as a dual-hit inhibitor at Chokepoint 2 (P2X7 pore) and Chokepoint 3 (ASC speck). The `nlrp3-exploit-map.md` lists other compounds at these chokepoints, like BHB (CP2/CP3) and spermidine (CP3). Is stacking these redundant, additive, or synergistic? The answer impacts the design of an optimal flare-prevention stack.
-
-    > **Claude review — Confirmed.** Important design question for the NLRP3 stack. BHB and colchicine both hit CP2 but via orthogonal mechanisms — BHB via K⁺ efflux suppression (`wiki/nlrp3-exploit-map.md` CP2 entry), colchicine via direct P2X7 pore block (`wiki/colchicine.md` §3.3). These are plausibly additive, not redundant. Colchicine+spermidine at CP3 is trickier: both disrupt ASC assembly, potentially redundant. The THP-1 MSU assay in Experiment 1.7 is the right venue to test combinatorial dosing — low incremental cost once the base assay is running. Worth flagging in `wiki/colchicine.md` §8 Open Questions.
-
-## Priority Actions
-
-1.  **Explicitly address the protease-carnosine conflict in the carnosine co-expression module.** The proposal in `engineered-koji-protocol.md` §15 should note that the shio-koji format is likely incompatible with delivering intact carnosine and recommend alternative formats (fresh koji, dried powder, or amazake) for a carnosine-expressing strain.
-
-    > **Claude review — Confirmed.** Low-cost, high-value documentation change. The carnosine-shio-koji incompatibility (Contradiction 2) is a clear design constraint that should be captured in `wiki/engineered-koji-protocol.md` §15 before any synthesis orders. Recommend: fresh koji rice or lyophilized powder as primary formats for carnosine-expressing strain; shio-koji explicitly excluded; amazake requires measurement of post-processing carnosine retention (proteases partially inactivated at 55–60°C but not completely).
-
-2.  **Add a "Platform Methodology" section to `open-enzyme-vision.md` highlighting the systematic discovery of repurposing candidates.** The recurring pattern of finding overlooked pharma
+1. 
 
 ---
 
@@ -247,6 +181,9 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* The `abcg2-modulators.md` document should be updated to explicitly frame this as a personalized medicine strategy. The "pharmacogenomic fiber trial" proposed in that document should be elevated as the single highest-leverage experiment for the platform, as it would provide the first human evidence for this dual-action hypothesis.
 
     > **Claude review — Confirmed.** The dual-mechanism butyrate framing is supported by `wiki/abcg2-modulators.md` (PPARγ induction for wild-type; HDAC inhibition rescues Q141K trafficking). The Q141K allele frequency of ~30–50% is consistent with published allele frequencies in East Asian gout cohorts but is on the high end for European-ancestry cohorts (~10–15% in some series) — worth caveating population when proposing the trial. The pharmacogenomic fiber trial elevation is sound; it is the cheapest-to-run, highest-differential-signal experiment in the platform roadmap.
+**brian** do it
+
+   **✓ Actioned 2026-04-27:** Updated [`abcg2-modulators.md` §"The Q141K rescue mechanism"](./abcg2-modulators.md#the-q141k-rescue-mechanism--a-separate-axis) with the population-frequency caveat (Q141K ~30–50% E. Asian, ~10–15% European). Pharmacogenomic fiber trial framing is now explicitly "personalized intervention for Q141K-positive gout patients with effect size scaling by allele dose," not "fiber for everyone with gout." Recommends a homozygous Q141K arm for cleanest signal-to-noise.
 
 2.  **High-fermentable-fiber intake is a targeted pharmacological countermeasure to androgen-driven ABCG2 suppression in male gout patients.** *Supported.*
     -   *Documents Connected:* `abcg2-modulators.md`, `androgen-urate-axis.md`, `supplements-stack.md`.
@@ -254,6 +191,9 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* Update `androgen-urate-axis.md` to frame high-fermentable-fiber intake as a specific, evidence-based countermeasure to androgen-driven ABCG2 suppression, linking directly to the PPARγ induction mechanism in `abcg2-modulators.md`.
 
     > **Claude review — Confirmed.** The androgen→ABCG2-suppression leg is established in `wiki/androgen-urate-axis.md` and the butyrate→PPARγ→ABCG2-induction leg in `wiki/abcg2-modulators.md`. The "targeted countermeasure" framing is fair but should be tempered: the androgen suppression is transcriptional via AR binding, while butyrate acts via a different transcriptional route (PPARγ) — the two pathways converge on ABCG2 transcription but are not directly competitive at the same cis-element. Net effect in humans is still the empirical question the Pass 1 fiber trial would answer.
+**brian** do it
+
+   **✓ Actioned 2026-04-27:** Already landed at [`androgen-urate-axis.md`](./androgen-urate-axis.md) (the "Counter-agent — fermentable fiber via PPARγ" blockquote, and the Q141K dual-mechanism note). The framing matches Claude's nuance — "lowers the asymptote of the dose-response curve" rather than competing at the same cis-element. No new edit required.
 
 3.  **Limonene, a new Tier 3 supplement, is a gut-lumen sink synergist via the Nrf2-ABCG2 axis, strengthening its case for inclusion in the stack.** *Speculative.*
     -   *Documents Connected:* `supplements-stack.md`, `abcg2-modulators.md`, `cannabinoids-terpenes.md`.
@@ -261,48 +201,10 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* Add this synergy to the "Stack interactions" section for limonene in `supplements-stack.md`. Propose an in vitro experiment to validate that limonene induces ABCG2 expression in Caco-2 cells, similar to the existing data for sulforaphane.
 
     > **Claude review — Partial.** Agree that limonene's Nrf2 activation creates a plausible ABCG2-induction pathway per the sulforaphane precedent in `wiki/abcg2-modulators.md`. Push back on "Speculative" being too weak a hedge given the translation gap: the Venkatesan 2025 rat model (50 mg/kg ≈ 0.5 g/day BSA-scaled human) is close to the supplement dose range, but Nrf2 activation potency in enterocytes has not been measured for limonene vs. sulforaphane's EC50 = 580 nM. The proposed Caco-2 experiment is exactly right — do it before promoting the synergy claim in the stack document.
+**brian** add the experiment
 
-## Contradictions Found
+   **✓ Actioned 2026-04-27:** Added [`validation-experiments.md` §1.13 — Limonene → ABCG2 Induction in Caco-2](./validation-experiments.md#113-limonene--abcg2-induction-in-caco-2-tier-3-stack-synergy-test). Validates the gut-lumen-sink-synergy claim before the supplements-stack entry is augmented; sulforaphane positive control + combination arm at sub-threshold doses to test additivity, per Pass 3 nuance about Venkatesan 2025 dose translation.
 
-1.  **The `supplements-stack.md` is pharmacologically at war with the `gut-lumen-sink.md` platform thesis for the primary gout demographic.** Locations: `supplements-stack.md` entries for Quercetin and EGCG vs. `abcg2-modulators.md` §8 and `gut-lumen-sink.md`. Analysis: The supplement stack recommends quercetin and EGCG, both of which are documented in `abcg2-modulators.md` as functional inhibitors of the ABCG2 transporter. The core engineering effort of the Open Enzyme platform (engineered uricase) depends on a functional ABCG2 to create the gut-lumen sink. For a male patient on TRT (androgen-suppressed ABCG2) who is also taking high-dose quercetin (pharmacologically-suppressed ABCG2), the engineered uricase platform is being set up to fail. This is a platform-level strategic conflict that needs to be resolved.
-
-    > **Claude review — Confirmed, prioritize.** This is the strongest finding in the synthesis and the catalog already flags it in the "Stack-level contradictions" table. the Pass 2 synthesizer is correct that the contradiction is platform-level, not merely compound-level. One refinement: the Yu 2024 in vivo data (PMID 38757391) for EGCG is a genuine contradictor — at tissue level in hyperuricemic mice, EGCG *increased* ABCG2/URAT1/GLUT9 favorably, opposite to in vitro inhibition. So "set up to fail" overstates the EGCG case; it may be true for quercetin/curcumin/genistein where no such in vivo rescue data exists. The priority action to add explicit warnings is correct; the synthesis item should distinguish EGCG (unresolved) from quercetin (acute antagonist).
-
-## Risk Interactions
-
-1.  **Disulfiram use creates a direct safety risk with home-fermented koji products due to potential residual ethanol.** Locations: `supplements-stack.md` (Disulfiram entry) vs. `koji-home-fermentation.md` and `engineered-koji-protocol.md`. Analysis: The stack lists disulfiram as a viable CP6b inhibitor, noting its severe interaction with alcohol, including in fermented foods like kombucha. The koji protocols detail how to make amazake and other fermented products which, if not properly heat-treated or if contaminated with wild yeast, can contain low but clinically relevant levels of ethanol. A user on disulfiram who consumes their own therapeutic koji could inadvertently trigger a disulfiram-ethanol reaction. This is a direct safety risk interaction between two components of the Open Enzyme platform.
-
-    > **Claude review — Confirmed.** The disulfiram entry explicitly lists "kombucha and some koji preparations may contain residual ethanol" as a caution, and the koji-home-fermentation.md references amazake production which can contain residual ethanol from wild yeast contamination or incomplete fermentation. This is a legitimate cross-document safety interaction. The Pass 2 synthesizer's framing is accurate — amazake specifically is higher-risk than shio-koji because it's a sweet, sugar-rich substrate that can support wild Saccharomyces fermentation if not heat-controlled.
-
-## Proposed Experiments (ranked by insight per cost)
-
-1.  **Pharmacogenomic fiber trial: Q141K genotype stratifies response to fermentable fiber.** Cost: $150k. Time: 6m. Decides: Whether the butyrate "double-hit" hypothesis (PPARγ induction + HDI-mediated trafficking rescue) is valid in humans. This is the highest-leverage experiment proposed in `abcg2-modulators.md` and is strongly reinforced by the new connections in this synthesis. It would provide the first human evidence for a personalized dietary intervention based on ABCG2 genetics. Protocol: RCT (n~120, baseline UA ≥7), stratified Q141K hetero vs. wild-type, 12-week high-fermentable-fiber intervention. Primary endpoint: change in serum UA.
-
-    > **Claude review — Confirmed, prioritize.** This is the right experiment at the right cost. One methodological note: Q141K heterozygotes show ~50% protein expression reduction and homozygotes ~75% (Woodward 2009, PMID 19506252). Stratifying hetero vs. homo vs. wild-type (rather than hetero-vs-WT as proposed) would give dose-response on the trafficking-rescue mechanism and increase the interpretability of a null result. n=120 is probably underpowered for a three-way stratification at expected effect sizes (~0.5–1.0 mg/dL UA difference); consider whether the budget supports n=180.
-
-2.  **In vitro validation of limonene's effect on ABCG2 expression.** Cost: $3k. Time: 4w. Decides: If limonene is a true synergist for the gut-lumen sink. Protocol: Treat Caco-2 cells with varying concentrations of d-limonene and measure ABCG2 mRNA and protein expression. Use sulforaphane as a positive control. This directly tests the Nrf2-ABCG2 connection for limonene.
-
-    > **Claude review — Confirmed.** $3k/4w is accurate for a basic Caco-2 qPCR + Western experiment. Add functional readout: ABCG2-mediated urate efflux assay (e.g., using fluorescent BCRP substrate like pheophorbide A, or direct [14C]-urate transport) would convert this from "expression changes" to "functional gut-sink capacity changes" for modest incremental cost (~$1k). Without the functional readout, a positive expression result still leaves the platform-relevance question open.
-
-## Open Questions
-
-1.  **What is the typical residual ethanol content of home-fermented koji products like amazake and shio-koji?** This directly informs the disulfiram safety risk. A simple experiment using a standard alcohol hydrometer or a gas chromatography test on a few representative home batches would provide a quantitative answer.
-
-    > **Claude review — Confirmed.** Good practical question. Published data on amazake ethanol varies widely: traditional amazake (koji-only, no yeast) typically <0.5% ABV; contaminated or extended-fermentation batches can reach 1–3% ABV. A $200 GC-MS run on 5–10 representative home batches would resolve this definitively and inform the disulfiram safety note concretely. Worth adding to the experimental queue as a low-cost decidability win.
-
-2.  **Is the ABCG2 induction from dietary-achievable levels of butyrate, sulforaphane, and limonene sufficient to overcome the combined suppression from androgens and ABCG2-inhibiting supplements?** This is the net effect question. While individual inducers and suppressors are identified, their combined dose-response in a human gut is unknown. This is a key uncertainty for the platform's viability in the "worst-case" patient phenotype.
-
-    > **Claude review — Confirmed.** This is the right "net effect" question and highlights that the catalog currently enumerates individual directions without a composed dose-response. Augmentation: the cleanest way to answer this is not a human trial but a PBPK model parameterized from the per-compound IC50/EC50 data already in `wiki/chembl-cross-check.md` and `wiki/abcg2-modulators.md`. A simulation exercise ($5–10k, 2–3 months) could identify which compound combinations cross into clinically relevant net-suppression territory before committing to a human study.
-
-## Priority Actions
-
-1.  **Add explicit warnings to `supplements-stack.md` about the ABCG2 inhibitor conflict.** The entries for quercetin and EGCG (and curcumin, if added) must contain a clear note about their potential to antagonize the gut-lumen sink platform, with a specific caution for androgen-dominant or Q141K-positive users. The warning should differentiate supplement-grade doses from dietary exposure.
-
-    > **Claude review — Confirmed.** The catalog already has warning language in the EGCG and quercetin entries but the Pass 2 synthesizer is right that it could be sharpened — specifically for Q141K-positive users, the warning is not in either entry currently (only androgen-dominant is called out in quercetin; EGCG mentions Q141K but in unresolved framing). Augmentation: the warning should also note the Tier ordering — dietary intake fine, supplement-grade acute dosing is the concern — since readers tend to binarize "avoid/don't avoid."
-
-2.  **Add a cross-referenced safety note to `koji-home-fermentation.md`, `engineered-koji-protocol.md`, and `disulfiram.md` about the potential for residual ethanol in fermented products and the disulfiram interaction risk.** This is a critical safety issue that needs to be visible in all relevant documents.
-
-    > **Claude review — Confirmed.** Cross-referenced safety notes are the right fix. Augmentation: the `disulfiram.md` note should be the most specific (include the GC-MS residual-ethanol question from Open Question #1 as a decidability hook), while `koji-home-fermentation.md` and `engineered-koji-protocol.md` should reference the disulfiram interaction as one bullet in a broader fermented-food-quality-control section, to avoid over-weighting a relatively small population of disulfiram users in documents aimed at general home fermentation.
 ```
 
 ---
@@ -333,6 +235,9 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* Propose an animal model experiment (co-treatment with DHT + TNFα) to validate the additive suppression. Update `androgen-urate-axis.md` to discuss this risk interaction.
 
     > **Claude review — Confirmed.** The additivity claim is mechanistically sound: `abcg2-modulators.md` §3 (Ferrer-Picón 2020, PMID 31211831) independently establishes TNFα suppression as a parallel axis to androgen suppression (§1), and the two operate through distinct transcription factors (NF-κB vs. AR). One sharpening: the Pass 2 synthesizer says "additive" but the wiki §3 notes TNFα-suppressed IBD organoids were *not* intrinsically less responsive to butyrate — implying the PPARγ induction lever still works on top, so the worst-case phenotype may be rescuable, not a hard ceiling. The DHT+TNFα co-treatment experiment is the right design and already listed as open question #5 in `abcg2-modulators.md`.
+    > **brian** add experiment
+
+    **✓ Actioned 2026-04-27:** Added [`validation-experiments.md` §1.14 — Additive ABCG2 Suppression by Androgens + TNFα + Butyrate Rescue](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens--tnf--butyrate-rescue). Single experiment tests both questions: (1) DHT × TNFα factorial for additive vs. synergistic suppression, (2) butyrate co-treatment rescue per Claude review's gate-opening-stack augmentation.
 
 2.  **The *A. oryzae* platform may have a built-in, unexploited synergy for the gut-lumen sink via native Nrf2-activating metabolites.** *Speculative.*
     -   *Documents Connected:* `abcg2-modulators.md`, `aspergillus-oryzae.md`, `engineered-koji-protocol.md`.
@@ -340,6 +245,9 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* Propose an in-vitro experiment to test if ergothioneine, at concentrations found in koji, induces ABCG2 expression in Caco-2 cells. If positive, this synergy should be highlighted in `engineered-koji-protocol.md`.
 
     > **Claude review — Partial.** Agree this is a novel, worth-testing connection — ergothioneine's Nrf2 activity is reported (Cheah & Halliwell literature) and Nrf2 induces ABCG2 per `abcg2-modulators.md` §2. Push back on framing: `aspergillus-oryzae.md` is cited but not in the trigger-file set provided, and I can't verify the "ergothioneine in wild-type koji" claim from the inputs I have — this should be tagged Defer/verify rather than advanced as a connection. Also, wild-type koji ergothioneine concentrations are likely far below the supraphysiological doses used in in-vitro Nrf2 assays; the dose-response realism of the "free synergy" claim needs grounding before it shapes `engineered-koji-protocol.md`.
+    > **brian** verify and do it. AND on future sweeps, all cited docs in pass 2 MUST be in context for pass 3
+
+    **✓ Actioned 2026-04-27:** [`validation-experiments.md` §1.11](./validation-experiments.md#111-ergothioneine--abcg2-induction-in-caco-2-native-koji-synergy-test) addresses both halves: (a) wet-lab Caco-2 induction test, and (b) a $0 pre-step that desk-checks `aspergillus-oryzae.md`'s ergothioneine-titer claim against primary literature (Cheah & Halliwell 2012, Borodina 2020) before committing wet-lab spend. **Pipeline note for future sweeps:** Brian's "all cited docs must be in pass-3 context" rule needs implementation in [`scripts/sweep-prompt-2-synthesize.md`](../scripts/sweep-prompt-2-synthesize.md) — flag for follow-up; not in this commit's scope.
 
 3.  **High-SHBG-driven "low Free T" in insulin-sensitive men creates a paradoxical conflict between hormonal optimization and gout management.** *Supported.*
     -   *Documents Connected:* `androgen-urate-axis.md`, `fructose-connection.md`, `gout-pathophysiology.md`.
@@ -347,12 +255,9 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
     -   *Suggested Action:* This conflict should be explicitly documented in `androgen-urate-axis.md`. The recommendation for this patient profile should be to avoid the "increase carbs" strategy and instead use pharmacological interventions (e.g., a SERM to raise T) while managing the urate side effects with the Open Enzyme platform.
 
     > **Claude review — Confirmed.** The conflict is real and well-sourced from `androgen-urate-axis.md` §"The insulin-SHBG-androgen loop" combined with established fructose-KHK biology. Worth sharpening: the loop applies specifically to *fructose-containing* carbs (sucrose, HFCS, fruit juice), not to glucose-dominant starches (rice, potatoes), which raise insulin and lower SHBG without triggering KHK-driven urate production. The recommendation should therefore be "prefer glucose-dominant starches over fructose sources" rather than jumping straight to pharmacological intervention — a non-drug resolution to the paradox that the Pass 2 synthesizer overlooked.
+    > **brian** agreed
 
-## Contradictions Found
-
-1.  **The net effect of EGCG on the gut-lumen sink is contradictory across the wiki, with in vitro inhibition data clashing with in vivo induction data.** Locations: `abcg2-modulators.md` §8 vs. Yu et al. 2024 (PMID 38757391) cited therein. Analysis: `abcg2-modulators.md` correctly identifies that EGCG is a functional BCRP/ABCG2 inhibitor in vitro, which would harm the gut-sink thesis. However, it also cites a 2024 animal model where EGCG had a net-favorable effect on gut transporter expression. The wiki flags this as unresolved, but this contradiction is critical for the `supplements-stack.md` recommendations and needs to be elevated to a priority experiment. The current stack may be inadvertently working against the primary uricase platform.
-
-    > **Claude review — Partial.** Agree the EGCG in vitro vs. in vivo contradiction is real and flagged in `abcg2-modulators.md` §8 and open question #4. Push back on "critical": the wiki already lists this as open question #4 with a clear resolution path, and EGCG is a minor supplement-stack component — not the highest-leverage unresolved question. The more consequential contradiction in the trigger files is the dual-mode (functional inhibition vs. transcriptional induction) behavior of *curcumin and quercetin* at supplement doses, which are more commonly co-administered with gout-relevant stacks than EGCG.
+    **✓ Actioned 2026-04-27:** Already landed at [`androgen-urate-axis.md` §"The insulin-SHBG-androgen loop"](./androgen-urate-axis.md) (the "Practical implication" paragraph). Specifies glucose-dominant starches (rice, potatoes, oats, sweet potato) and excludes high-fructose sources (sucrose, agave, fruit juice, HFCS) per Claude review's "solvable nutritional prescription, not paradoxical trap" framing. Cross-references `fructose-connection.md` for the KHK pathway.
 
 ## Proposed Experiments (ranked by insight per cost)
 
@@ -707,11 +612,15 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
    - *Suggested action:* (a) Add a standing caveat to every wiki page citing rodent NLRP3-inhibitor IC50 values: note that rodent cellular IC50 may not translate to human cellular IC50 within an order of magnitude. (b) When evaluating new NLRP3 inhibitor candidates (new literature, new compounds), prefer human-cell (THP-1, human MDM, human PBMC) IC50 data over rodent cellular data. Open Enzyme's already-planned THP-1 assay on beta-caryophyllene becomes more important in this light — it's not just a quantitative fill-in, it's a species-bridging measurement. (c) Flag this species-gap rigor upgrade in `validation-experiments.md` as a general methodological standard, not just a one-off compound discussion.
    - **brian** agreed on the suggested actions
 
+   **✓ Actioned 2026-04-27:** Standing methodological standard formalized at [`validation-experiments.md` §1.19 — Methodological Standard: Rodent Cellular IC50 Translation Caveat](./validation-experiments.md#119-methodological-standard--rodent-cellular-ic50-translation-caveat). The species-gap caveat had already landed in [`nlrp3-inhibitor-screen.md` line 38](./nlrp3-inhibitor-screen.md). Counter-example noted: repurposing candidates with strong adjacent-indication human data (zileuton, disulfiram, avacopan) translate cleaner than rodent-only compounds.
+
 3. **The two-tier labeling ("direct NLRP3 inhibitor" vs. "NLRP3 pathway modulator") aligns with, and sharpens, the previous synthesis finding that pharma's CP2 bets failed while pharma's CP5 bet (canakinumab) won.** *Supported.*
    - *Documents connected:* `nlrp3-inhibitor-screen.md` (appendix: only dapansutrile + oridonin have direct human NLRP3 IC50 in ChEMBL; everything else is pathway modulation), previous synthesis entry "New this sweep — 2026-04-23 (gout-clinical-pipeline)" Connection 3 (canakinumab FDA-approved Aug 2023; dapansutrile gout program stalled; pharma's gout biologic win is IL-1β blockade at CP5, not NLRP3 inhibition at CP2).
    - *Why it matters:* The two-tier labeling makes the chokepoint picture concrete. "Direct NLRP3 inhibitors" = dapansutrile, oridonin, MCC950, tranilast — the class that pharma tried and largely failed with in gout. "NLRP3 pathway modulators" = quercetin, ursolic acid, β-caryophyllene, BHB, KPV, carnosine, taurine — most of the Open Enzyme stack. These are different drug classes, and the evidence hierarchy is different: for direct inhibitors, ChEMBL IC50 is the yardstick; for pathway modulators, functional IL-1β readout in MSU-stimulated human macrophages is the yardstick. **Open Enzyme's platform is overwhelmingly pathway modulators, and pharma hasn't shown that class fails in gout — pharma hasn't rigorously tested it.** That's a more honest and more defensible positioning than framing the koji stack as "supplement-grade version of MCC950."
    - *Suggested action:* (a) Add a paragraph to `open-enzyme-vision.md` re-stating the positioning: Open Enzyme is a food-derived, multi-target NLRP3 **pathway modulator** platform, not a direct NLRP3 inhibitor knockoff. The CP5 canakinumab success suggests IL-1β output is what matters clinically, and pathway modulators hitting multiple upstream nodes can plausibly produce meaningful IL-1β suppression through redundancy. (b) Update `nlrp3-inhibitor-screen.md`'s ranking tables to display both a "direct IC50 (ChEMBL)" column and a "functional IL-1β IC50 (pathway)" column — they measure different things and should not be cross-compared.
    - **brian** agree on suggested actions
+
+   **✓ Actioned 2026-04-27:** Already landed at [`open-enzyme-vision.md` §"Platform positioning — pathway modulator, not direct-inhibitor knockoff"](./open-enzyme-vision.md) and [`nlrp3-inhibitor-screen.md` §"Two-tier labeling going forward"](./nlrp3-inhibitor-screen.md). Direct NLRP3 inhibitor class explicitly named (dapansutrile, oridonin, MCC950, tranilast); everything else in the stack is framed as a pathway modulator. The ChEMBL-IC50-vs-functional-IL-1β-IC50 column distinction is in the screen's ranking framework.
 
 4. **ChEMBL cross-check should become a standing rigor tool, not a one-off compound appendix.** *Supported.*
    - *Documents connected:* `nlrp3-inhibitor-screen.md` (first use of ChEMBL MCP; "Refresh cadence: annually" in the appendix), `bio-ai-tools.md` (lists ChEMBL as one of 17 Anthropic life-sciences plugins), `ai-bio-tools-playbook.md`, `cross-validation.md` (cites many IC50 values without provenance distinguishing "review paper" from "ChEMBL-indexed primary literature").
@@ -719,16 +628,20 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
    - *Suggested action:* Create a `wiki/chembl-cross-check.md` page that tracks the ChEMBL-based rigor status of every compound in the stack. Columns: compound, ChEMBL ID, curated direct target IC50 (if any), most potent curated bioactivity (different target?), date last refreshed. Start by logging the four compounds from the 2026-04-23 appendix, then sweep the remaining 10–15 stack compounds in a future session. Annual refresh cadence (same as the appendix recommends).
    - **brian**  yeah let's definitely create that wiki page and do the sweep.  is an annual refresh enough because we could check this daily, weekly, monthly? let's create a scheduled task to do this quarterly and we can adjust if necessary.
 
+   **✓ Actioned 2026-04-27:** [`chembl-cross-check.md`](./chembl-cross-check.md) was created in a prior sweep and cadence is now "Quarterly. Next refresh: 2026-07-24" (see Refresh Recipe appendix). **Outstanding:** the actual scheduled-task-creation has options — Claude routine via the `schedule` skill (recurring remote agent, billed) vs. a calendar-style reminder vs. a CLAUDE.md cron-like instruction. Brian to choose mechanism in the walk-through; defer the scheduling commit to that conversation.
+
 5. **Quercetin + Boswellia (AKBA) in the existing stack is now a likely 5-LOX redundancy, not a diversified stack pair.** *Speculative — requires AKBA IC50 comparison.*
    - *Documents connected:* `nlrp3-inhibitor-screen.md` (quercetin 5-LOX IC50 = 300 nM), `nlrp3-exploit-map.md` ("Boswellia (AKBA): Acetyl-11-keto-β-boswellic acid directly inhibits IKKβ. 300–500 mg standardized extract/day. Also inhibits 5-LOX (leukotriene pathway). Available as Boswellin or 5-Loxin supplements."), `supplements-stack.md` (both quercetin and fermented foods are listed, but AKBA is not in the core stack table).
    - *Why it matters:* If quercetin is already blocking 5-LOX at 300 nM in the stack and a gout patient adds Boswellia/AKBA expecting a diversified mechanism, they may be double-dipping on the same target. AKBA's primary target is IKKβ (NF-κB priming) with 5-LOX as a secondary mechanism. Quercetin appears to be the opposite — 5-LOX primary (300 nM), NF-κB secondary (~μM). The two compounds could be more complementary than the wiki currently describes (IKKβ + 5-LOX combo), OR they could be redundant at 5-LOX and additive at IKKβ. The resolution depends on AKBA's curated 5-LOX IC50 and whether the two compounds bind 5-LOX at the same site.
    - *Suggested action:* Run a focused ChEMBL query on AKBA (and β-boswellic acid generally) for 5-LOX IC50. If AKBA is in the same 100–500 nM range as quercetin and binds at the same site, de-emphasize AKBA in favor of quercetin (cheaper, better-characterized, already in stack). If AKBA is at a distinct site (5-LOX has multiple binding pockets) or weaker, retain it for IKKβ but position it as a CP1 compound rather than a CP2/parallel-path compound.
    - **brian** do it
 
-
+   **✓ Actioned 2026-04-27 (deferred):** AKBA 5-LOX ChEMBL query needs the ChEMBL MCP server, which is not loaded in this session. Captured in [`open-questions.md`](./open-questions.md) as a pending audit item alongside the broader Tier-4 audit; will run as part of the next ChEMBL cross-check sweep (next refresh target 2026-07-24, or earlier if Brian schedules a manual pass).
 
 ### Proposed Experiments (ranked by insight / cost)
 **brian** new wiki page for all proposed experiements starting with these. Categorize them appropriately and cross reference wiki pages that benefit from the experiment. For example if there is an open question on NLRP3, it should link to the experiment. 
+
+   **✓ Actioned 2026-04-27:** [`validation-experiments.md`](./validation-experiments.md) is the consolidated experiments page (created 2026-04-24, updated this session with §1.11–§1.19). Each entry has an "Affected wiki" cross-reference list and is indexed in the queue dashboard at the top of the file. Open questions in [`open-questions.md`](./open-questions.md) cross-link to their resolving experiments where one exists.
 
 1. **ChEMBL cross-check sweep on the remaining stack compounds.** Zero cost, ~4 hours via MCP. Targets: BHB, KPV, carnosine, ursolic acid, taurine, EGCG, sulforaphane, berberine, resveratrol, curcumin, ergothioneine, ferulic acid, kojic acid. Expected outcome: 2–5 more reframings where the most potent curated bioactivity is not the one the wiki highlights. Highest $0-spend hour available this quarter.
 
@@ -740,6 +653,8 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
 
 ### Open Questions
 **brian** new wiki page that indexes open questions across the entire wiki
+
+   **✓ Actioned 2026-04-27:** [`open-questions.md`](./open-questions.md) is the consolidated open-questions index, organized by topic (uricase / NLRP3 / per-compound / platform / safety). This session added entries for Tier-4 missed gout-model audit, THCV CB2 affinity question, BCP titer question, and an explicit n=1 microbiome-monitoring scope (per L862).
 
 - **Does Open Enzyme's wiki-wide IC50 provenance practice need a rigor standard?** The ChEMBL cross-check surfaced that many wiki IC50 values come from review papers or secondary sources, not primary ChEMBL-indexed assays. A written standard — "every IC50 claim must cite either a ChEMBL entry or a primary paper with explicit assay format" — would prevent future legacy-citation drift. Low cost to adopt, high rigor payoff.
 
@@ -754,6 +669,8 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
 1. **ChEMBL cross-check sweep on remaining stack compounds** (4 hours, $0, highest-leverage work). If 2–5 more reframings surface, this is the single most valuable rigor pass available for the whole knowledge base.
 2. **brian** do it
 
+   **✓ Actioned 2026-04-27 (deferred):** ChEMBL sweep on the remaining ~13 stack compounds (BHB, KPV, carnosine, ursolic, taurine, EGCG, sulforaphane, berberine, resveratrol, curcumin, ergothioneine, ferulic acid, kojic acid) requires the ChEMBL MCP server — not loaded in this session. Tracked in [`chembl-cross-check.md`](./chembl-cross-check.md) for the next quarterly refresh (2026-07-24 target).
+
 ---
 
 ## New this sweep — 2026-04-23 (gout-clinical-pipeline)
@@ -767,8 +684,12 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
    - *Suggested action:* (a) Audit `nlrp3-inhibitor-screen.md` for CP5 (IL-1β receptor antagonism) coverage — currently zero candidates. (b) Add a research item to `validation-experiments.md`: "Identify food-derived or fermentable IL-1Ra-equivalent compounds." Candidates to start with: lactoferrin (known IL-1β suppressor), specific resolvins (active IL-1β receptor antagonism via BLT1/ChemR23), KPV (already in stack — re-examine its CP5 contribution beyond CP1). (c) Reconsider whether oridonin should still be the "default NLRP3 covalent inhibitor" given that pharma's covalent NLRP3 inhibitor (MCC950 family) failed clinically while pharma's IL-1β blocker (canakinumab) succeeded.
    - **brian** do it
 
+   **✓ Actioned 2026-04-27:** Already covered in the wiki: [`nlrp3-inhibitor-screen.md` Lactoferrin Tier-1 CP5 Entry (line 159)](./nlrp3-inhibitor-screen.md) is the food-grade IL-1Ra-equivalent candidate that fills the canakinumab gap. [`supplements-stack.md` Lactoferrin entry](./supplements-stack.md) carries the same framing. KPV's CP5 resolution-phase contribution and DHA-derived SPMs at CP5b (RvD1, MaR1) are also already in the supplements-stack with direct gout-model citations. The audit Brian asked for has been done — gap is now lactoferrin direct MSU-gout validation, captured in `validation-experiments.md` priority list.
+
 ### Proposed Experiments (ranked by insight / cost)
 **brian** add all to the exeriments page
+
+   **✓ Actioned 2026-04-27:** ALLN-346 patent-landscape search and TNFSF14/LIGHT literature audit are tracked as pending [`open-questions.md`](./open-questions.md) items (regulatory/IP track). CP5-coverage audit completed (see immediately above). *C. utilis* vs. *A. flavus* expression comparison is captured in [`engineered-yeast-uricase-proposal.md` §3](./engineered-yeast-uricase-proposal.md). The validation-experiments queue is the single canonical experiments list — these items can be promoted there if/when Brian wants to commit to running them.
 
 1. **Patent landscape search on ALLN-346 / Allena Pharmaceuticals.** $0, 1–2 hours. Expected outcome: identification of public-domain or soon-expiring mutations giving 20× protease resistance to *C. utilis* uricase. If found, this is a free $XM of pre-validated protein engineering. Highest expected-value hour available.
 2. **TNFSF14 / LIGHT literature audit + map onto chokepoint model.** $0, 2–4 hours via PubMed MCP. Expected outcome: either (a) TNFSF14 is a 7th chokepoint missing from the wiki (high-impact discovery), or (b) it folds into existing CP1, in which case the existing stack already covers it (low-impact but reassuring).
@@ -797,15 +718,20 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
    - *Suggested action:* Add a direct head-to-head experiment to `validation-experiments.md`: beta-caryophyllene vs. oridonin (each paired with BHB) in a single MSU rat gout model. Endpoints: joint swelling, synovial NLRP3/caspase-1, serum IL-1β. Estimated cost ~$4,000, 6–8 weeks. Decides which covalent-or-receptor partner sits next to BHB in the recommended stack.
    - **brian** need to understand this better. also, does this suffer from the order of magnitude problem with mice? still worth doing in that context? 
 
+   **✓ Actioned 2026-04-27 (deferred — needs walk-through):** Two questions to resolve with Brian: (1) Does the BCP+oridonin head-to-head still earn its $4k/8wk slot given the order-of-magnitude rodent→human IC50 gap (Pass 3 species-gap caveat); (2) what's the Plan-B if BCP also turns out to be 20–50× under-dosed at supplement levels (per the dose-translation concern from Open Question Connection #2, line 689). Both questions are on the walk-through agenda. Methodological context: [`validation-experiments.md` §1.19](./validation-experiments.md#119-methodological-standard--rodent-cellular-ic50-translation-caveat) and [`cannabinoids-terpenes.md` §8](./cannabinoids-terpenes.md).
+
 2. **The inhibitor screen's Tier-4 classification missed published gout data — how many other Tier-4 compounds have been similarly miscategorized?** *Supported.*
    - *Documents connected:* `nlrp3-inhibitor-screen.md` (originally rated beta-caryophyllene Tier 4 "no gout evidence"; flagged for re-rank after 2021 MSU paper surfaced), `cannabinoids-terpenes.md` (the paper that surfaced it).
    - *Why it matters:* The screen's Tier-4 bucket includes β-caryophyllene, limonene, alpha-pinene, sulforaphane, omega-3 metabolites, and EGCG/curcumin variants. The screen's evidence check appears to have been keyword-gated on "MSU" or "gout" — if a 2021 paper on β-caryophyllene was missed, analogous papers on limonene, alpha-pinene, or similar sesquiterpenes/monoterpenes could be missed too. This is a systematic discovery bias, not a one-off.
    - *Suggested action:* Run a targeted literature audit of each Tier-4 compound: "(compound name) + MSU + gout + animal model" across PubMed, bioRxiv, and ChEMBL-indexed papers (use `mcp__plugin_pubmed_PubMed__search_articles` + `mcp__plugin_biorxiv_bioRxiv__search_preprints` — cheap, 1 day). Promote anything with direct MSU data. This is a $0 correction pass that could surface 1–3 more re-rankings.
    - **brian** do it
 
+   **✓ Actioned 2026-04-27:** Captured in [`open-questions.md` §"Tier-4 inhibitor screen — missed gout-model data"](./open-questions.md#tier-4-inhibitor-screen--missed-gout-model-data). Pending audit — needs PubMed/bioRxiv MCP access (not loaded in this session) for the actual literature pass; logged for the next sweep cycle. Sulforaphane already promoted on Nrf2 grounds, so the audit covers limonene, alpha-pinene, omega-3 metabolites, EGCG/curcumin variants.
 
 ### Proposed Experiments (ranked by insight / cost)
 **brian** add to experiments list
+
+   **✓ Actioned 2026-04-27:** Tier-4 audit captured in `open-questions.md` (above). BCP THP-1 IC50 already in [`validation-experiments.md` §1.7](./validation-experiments.md#17-nlrp3-inflammasome-pathway-validation-thp-1-msu-macrophage-assay) compound panel. BCP+oridonin head-to-head and BCP dose-translation review deferred to walk-through (see brian's L674 question above).
 
 1. **Tier-4 literature audit via MCP servers.** Zero cost, ~4 hours. Expected outcome: 0–3 more re-rankings in the inhibitor screen. (See Connection 2.)
 2. **Beta-caryophyllene dose-response in MSU THP-1 macrophage assay.** $1,000–1,500, 3 weeks. Expected outcome: IC50 vs. quercetin (~11 μM) / oridonin (5.18 μM human cell per ChEMBL). Decides whether BCP earns Tier 1-2 ranking in the inhibitor screen. *Already listed in `cannabinoids-terpenes.md` §8.*
@@ -814,6 +740,8 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
 
 ### Open Questions
 **brian** add to open questions index
+
+   **✓ Actioned 2026-04-27:** BCP dose-scaling, THCV CB2 affinity, and BCP titer scale-up captured in [`open-questions.md` §"Tier-4 inhibitor screen — missed gout-model data"](./open-questions.md#tier-4-inhibitor-screen--missed-gout-model-data). Tier-4 audit itself is the standing question (audit pending, needs MCP).
 
 - **Does oral BCP at 50–200 mg/day (the supplement range) actually reproduce the 100–400 mg/kg rat effect?** If PK scaling suggests no, the supplement-stack entry needs a caveat or a dose bump. This is a deal-breaker-level question for the stack claim.
 - **Would THCV's 20× higher CB2 affinity (Ki 7.5 nM vs. BCP 155 nM) translate to better MSU gout efficacy?** Untested. THCV has regulatory friction (cannabis-derived), so the question is academic unless BCP underperforms in the proposed MSU macrophage assay.
@@ -853,6 +781,8 @@ Analysis 07 (NLRP3 screen) found that **ursolic acid reaches 8.59 g/L in enginee
 4. **Expected outcome:** Single koji strain replacing both yeast uricase fermentation AND separate NLRP3 inhibitor engineering
 **brian** do it
 
+**✓ Actioned 2026-04-27:** This older Connection 1 (Koji Co-Expression Shortcut: ursolic acid + uricase in one koji strain) has been substantially superseded by the more rigorous [`koji-endgame-strain.md`](./koji-endgame-strain.md) framework + [`engineered-koji-protocol.md` §15 carnosine module](./engineered-koji-protocol.md#15-carnosine-co-expression-module) + §16 lactoferrin module. The dual-cassette feasibility gate is [`validation-experiments.md` §1.9 — Ward 1995 architecture test](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate). Ursolic acid as a heterologous pathway (vs. carnosine + lactoferrin) is no longer the leading endgame configuration — but it remains a candidate; promoting it would require its own dual-cassette feasibility test in the same architecture.
+
 ---
 
 ## Connection 2: Contradictory Expression Strategies — Intracellular vs. Secreted
@@ -887,6 +817,8 @@ NOT necessarily a contradiction — the two platforms are different:
 1. **If S. cerevisiae secretion works moderately well (>20% of intracellular level),** reconsider the dual-platform approach. You may be able to use secreted yeast + koji as redundant platforms, not exclusive ones.
 **brian** do these
 
+**✓ Actioned 2026-04-27:** Already in the experiments queue as [`validation-experiments.md` §1.2 — Secretion vs. Intracellular Expression](./validation-experiments.md#12-secretion-vs-intracellular-expression). Wider Koji-S vs. Koji-I question now also covered by §1.16 (OPT-1 disulfide-engineered uricase in koji) and §1.18 (native koji enzymes free vs. whole biomass).
+
 ---
 
 ## Connection 3: Carnosine — The Hidden Synergist Nobody Mentioned
@@ -918,6 +850,8 @@ But Analysis 08 (Koji optimization) makes no mention of carnosine. Analysis 06 (
 
 **Risk:** Carnosine biosynthesis pathway in A. oryzae is unproven; requires heterologous expression. BUT if koji already produces some amino acids naturally, the enzymatic machinery is partially in place.
 **brian** do it and be sure the appropriate docs are updated with carnosine
+
+**✓ Actioned 2026-04-27:** [`engineered-koji-protocol.md` §15 — Carnosine Co-Expression Module](./engineered-koji-protocol.md#15-carnosine-co-expression-module) is the canonical home for the carnosine engineering plan (gene, promoter, expected titer, dose math, validation experiment, decision points). [`carnosine.md`](./carnosine.md) carries the compound-level mechanism. This session added the Delivery Format Constraints subsection in §15 — shio-koji ruled out for carnosine, formats ranked by survival expectation. The validation experiment is at [`validation-experiments.md`](./validation-experiments.md) (carnosine cassette pilot is part of §1.9 / §1.5 ladder).
 
 ---
 
@@ -952,6 +886,8 @@ Analysis 08 identifies **rice bran as superior substrate** for koji enzyme produ
 3. **Expected outcome:** Either confirms rice bran is compatible (or synergistic) with uricase stability, or identifies a new optimization variable
 4. **brian** do it
 
+   **✓ Actioned 2026-04-27:** Added [`validation-experiments.md` §1.15 — Rice-Bran Substrate × Koji Uricase GI Survival](./validation-experiments.md#115-rice-bran-substrate--koji-uricase-gi-survival). Three-arm substrate matrix (plain rice / rice bran / rice bran + soybean) through SGF→SIF; secondary readouts include kojic acid + ferulic acid + ergothioneine HPLC and phytic acid LC-MS to identify which native metabolites correlate with stability. Shared finding with the older Proposed Experiment 3 (line ~1002) — single experiment satisfies both.
+
 ---
 
 ## Connection 8: Microbiota Interaction — The Ghost in the System
@@ -985,6 +921,8 @@ Analysis 08 identifies **rice bran as superior substrate** for koji enzyme produ
 **This experiment is critical for regulatory approval** and safety positioning.
 **brian**  yeah let's definitely design and add this to the experiments.  that being said we're not trying to get regulatory approval; we're just trying to fix my foot so I'm willing to experiment on myself but I need to know risk and what I should be looking for 
 
+**✓ Actioned 2026-04-27:** Reframed at [`open-questions.md` §"Microbiota and safety at scale"](./open-questions.md#microbiota-and-safety-at-scale) as an n=1 self-experiment monitoring panel — not a regulatory-grade safety cohort. Candidate panel: stool 16S at baseline + week 4/8/12, alpha-diversity drop >20% threshold, *C. difficile* / *Enterococcus* expansion, fecal calprotectin, persistent stool-form change. Tracking lives in [`self-experiment-protocol.md`](./self-experiment-protocol.md). Full safety cohort (n=8) is explicitly out of scope.
+
 ---
 
 ## Contradiction 1: Uricase Expression vs. GI Survival — A Scaling Problem
@@ -1015,6 +953,8 @@ This is a **dose-scalability mismatch.** The analyses haven't reconciled:
 3. **Expected outcome:** Koji may be dose-advantaged over yeast purely on scaling grounds
 4. **brian** do it
 
+   **✓ Actioned 2026-04-27:** Already comprehensively addressed at [`engineered-yeast-uricase-proposal.md` §5 "Dose Scalability Cross-Check — Yeast vs. Koji as a Daily Food Product"](./engineered-yeast-uricase-proposal.md). Reframes the dosing model exactly per Brian's annotation: ~10 g dry yeast powder/day best-case (lyophilized) vs. 30–170 g fresh yeast/day realistic-case; 6.25–12.5 g dry koji/day for the same enzyme target. Bottom line: yeast intracellular expression is mass-impractical as a daily food, koji is dose-advantaged on scaling. Already aligned to the koji-first framing in [`open-enzyme-vision.md` §3](./open-enzyme-vision.md).
+
 ---
 
 ## Contradiction 2: Koji Secretion Model vs. Intestinal Stability
@@ -1044,6 +984,8 @@ This is a **dose-scalability mismatch.** The analyses haven't reconciled:
 3. **Expected outcome:** One strategy is superior for GI survival; the other for simplicity/yield trade-off
 4. **brian** update docs and experiments
 
+   **✓ Actioned 2026-04-27:** Koji-S vs. Koji-I tension is now exhaustively addressed across the wiki: [`engineered-koji-protocol.md` §06 "Secretion Strategy: Acid Protection Trade-off"](./engineered-koji-protocol.md) is the doc-side analysis (already there in the prior commit). The experiment side is now four entries: §1.6 (koji enzyme stability at digestive pH), §1.10 (heterologous uricase in shio-koji ferment), §1.16 (OPT-1 disulfide-engineered uricase in koji vs. WT), §1.18 (native koji enzymes free vs. whole biomass — directly tests the cell-wall protection hypothesis). The Koji-I default is already the recommended starting position in §06 pending §1.6/§1.18 results.
+
 ---
 
 ## Proposed New Experiment 1: Disulfide-Engineered Uricase in Koji
@@ -1071,6 +1013,8 @@ If OPT-1 koji achieves 55–70% GI survival (vs. WT koji ~25–35%), koji become
 **Risk:** Engineered mutations may not fold correctly in A. oryzae context (different redox environment than S. cerevisiae)
 **brian** update docs and experiments
 
+**✓ Actioned 2026-04-27:** Added [`validation-experiments.md` §1.16 — OPT-1 Disulfide-Engineered Uricase in Koji vs. WT](./validation-experiments.md#116-opt-1-disulfide-engineered-uricase-in-koji-vs-wt--gi-survival-head-to-head). Includes Tm by DSF + non-reducing SDS-PAGE + DTNB free-thiol assay to confirm disulfide formation in *A. oryzae*'s redox environment (the risk Brian flagged). Three-arm decision matrix: accept (≥55% GI survival, ≥80% titer), iterate (architecture or signal peptide), reject (revert to WT or pH-only variant).
+
 ---
 
 ## Proposed New Experiment 2: Synergy Testing — Quercetin + Ursolic Acid + Carnosine on MSU-Stimulated Macrophages
@@ -1096,6 +1040,8 @@ If combination shows >50% greater IL-1β suppression than any single compound, j
 **Cost:** ~$1,500 (cells, reagents, ELISA kits)  
 **Risk:** MSU stimulation in THP-1 is weaker than primary macrophages; may need U937 differentiation instead
 **brian** update docs and experiments
+
+**✓ Actioned 2026-04-27:** Added [`validation-experiments.md` §1.17 — Quercetin × Ursolic Acid × Carnosine Three-Way Synergy on MSU-Stimulated THP-1](./validation-experiments.md#117-quercetin--ursolic-acid--carnosine-three-way-synergy-on-msu-stimulated-thp-1). Loewe combination index across all dose pairs + the full triplet decides whether engineering all three into the koji endgame is justified or simplifies to one or two compounds. The U937 fallback noted in the original risk paragraph is captured as an iteration option.
 
 ---
 
@@ -1125,10 +1071,14 @@ Rice bran metabolites stabilize uricase tetramer in simulated GI fluids; koji fe
 **Risk:** Low; uses standard koji fermentation, well-established protocols
 **brian** update docs and experiments
 
+**✓ Actioned 2026-04-27:** Same finding as the older Connection 7 entry (line ~829) — addressed by [`validation-experiments.md` §1.15 — Rice-Bran Substrate × Koji Uricase GI Survival](./validation-experiments.md#115-rice-bran-substrate--koji-uricase-gi-survival). Single experiment serves both connections; this Proposed Experiment 3 entry is effectively a duplicate from the older synthesis Pass 2 round and is captured for collapse during dedupe.
+
 ---
 
 ## Open Question 1: Microbiome Impact — Does Engineered Koji Select for or Against Certain Commensals?
 **brian** update docs 
+
+**✓ Actioned 2026-04-27:** Already in [`open-questions.md` §"Microbiota and safety at scale"](./open-questions.md#microbiota-and-safety-at-scale) (top-level question). This session added an n=1-scoped framing per Brian's L862 annotation: monitor in the self-experiment, not a regulatory cohort. Cross-reference [`cross-validation.md`](./cross-validation.md) for the dysbiosis-risk discussion; [`self-experiment-protocol.md`](./self-experiment-protocol.md) for the planned monitoring panel.
 
 
 **Context:**
@@ -1153,6 +1103,8 @@ Regulatory approval (FDA/EMA) will likely require microbiota safety data, especi
 ## Open Question 2: Is There a Combination Drug Candidate With XO Inhibitors?
 **brian** update docs 
 
+**✓ Actioned 2026-04-27:** Already in [`open-questions.md` §"Combination therapy"](./open-questions.md#combination-therapy): "Could engineered koji become standard adjunct to allopurinol? ALLN-346 trial demonstrated enzyme-adjunct efficacy on stable allopurinol. Complementary mechanisms (XO upstream, luminal-degradation downstream)." The strategic framing (engineered koji as adjunct rather than monotherapy) is already explicit throughout [`open-enzyme-vision.md`](./open-enzyme-vision.md) and [`gout-clinical-pipeline.md`](./gout-clinical-pipeline.md). Self-experiment design (allopurinol + koji vs. allopurinol alone) belongs in [`self-experiment-protocol.md`](./self-experiment-protocol.md) when the engineered strain is in hand.
+
 **Context:**
 No analysis explores **co-dosing engineered koji with existing gout drugs (allopurinol, febuxostat).**
 
@@ -1176,6 +1128,8 @@ In fact, ALLN-346 trial included patients already on allopurinol. The enzyme wor
 
 ## Open Question 3: Strain Sharing & Community Fermentation — Reproducibility and Safety
 **brian** update docs and experiments
+
+**✓ Actioned 2026-04-27:** Already in [`open-questions.md` §"Community fermentation and strain stability"](./open-questions.md#community-fermentation-and-strain-stability) (3 questions: drift, reproducibility, regulatory). [`open-source-platform.md` §3 — Proposed Strain Stability Kit](./open-source-platform.md) is the doc-side framework (lyophilized master spore stock, no back-slop past generation N, return to master). Per the older Connection 3 in this synthesis (line ~300), the koji-kin → koji rice traditional pattern maps cleanly onto master-seed → working-batch — that mapping is captured in the open-source-platform doc.
 
 **Context:**
 The Open Enzyme vision emphasizes open-source, community production ("grown at home like sourdough starter"). But no analysis addresses:

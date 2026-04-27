@@ -17,7 +17,7 @@ As of 2026-04-24 this is the authoritative experiments file — earlier ambiguit
 
 ## Experiment Queue
 
-Dashboard view of all 23 experiments in the library. Sorted by phase then ID. Detail lives in the phase sections below — click the ID to jump.
+Dashboard view of all 32 experiments in the library. Sorted by phase then ID. Detail lives in the phase sections below — click the ID to jump.
 
 **Status legend:**
 - **Proposed** — no work done yet; in the design/queue stage.
@@ -41,6 +41,15 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§1.8](#18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a) | EGCG dose-escalation CP1a readout | In Vitro | $500–800 | 3–4 | Proposed | [egcg](./egcg.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
 | [§1.9](#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) | **Ward 1995 dual-cassette feasibility (koji endgame gate)** — **#1 priority** | In Vitro | $3,000–5,000 | 8–12 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [lactoferrin](./lactoferrin.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md) |
 | [§1.10](#110-heterologous-uricase-stability-in-shio-koji-salt-protease-ferment) | Heterologous uricase stability in shio-koji ferment (gates dual-use thesis) | In Vitro | $400–800 | 3–4 | Proposed | [koji-home-fermentation](./koji-home-fermentation.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [synthesis](./synthesis.md) |
+| [§1.11](#111-ergothioneine--abcg2-induction-in-caco-2-native-koji-synergy-test) | Ergothioneine → ABCG2 Caco-2 (native koji synergy) | In Vitro | $1,000–1,500 | 3–4 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gut-lumen-sink](./gut-lumen-sink.md) |
+| [§1.12](#112-local-h2o2-stress-in-caco-2-from-high-gut-lumen-uricase) | Local H₂O₂ epithelial stress from gut-lumen uricase | In Vitro | $800–1,200 | 2–3 | Proposed | [uricase](./uricase.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [gut-lumen-sink](./gut-lumen-sink.md) |
+| [§1.13](#113-limonene--abcg2-induction-in-caco-2-tier-3-stack-synergy-test) | Limonene → ABCG2 Caco-2 (Tier-3 stack synergy) | In Vitro | $800–1,200 | 3–4 | Proposed | [supplements-stack](./supplements-stack.md), [abcg2-modulators](./abcg2-modulators.md), [cannabinoids-terpenes](./cannabinoids-terpenes.md) |
+| [§1.14](#114-additive-abcg2-suppression-by-androgens--tnf--butyrate-rescue) | DHT + TNFα additive ABCG2 suppression + butyrate rescue | In Vitro | $1,500–2,500 | 4–6 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [androgen-urate-axis](./androgen-urate-axis.md), [gut-lumen-sink](./gut-lumen-sink.md) |
+| [§1.15](#115-rice-bran-substrate--koji-uricase-gi-survival) | Rice-bran substrate × koji uricase GI survival | In Vitro | $800–1,200 | 3 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [gi-survival-prediction](./gi-survival-prediction.md) |
+| [§1.16](#116-opt-1-disulfide-engineered-uricase-in-koji-vs-wt--gi-survival-head-to-head) | OPT-1 disulfide uricase in koji vs. WT (GI survival) | In Vitro | $1,800–2,500 | 6–8 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [uricase-variant-selection](./uricase-variant-selection.md), [protein-engineering-strategy](./protein-engineering-strategy.md) |
+| [§1.17](#117-quercetin--ursolic-acid--carnosine-three-way-synergy-on-msu-stimulated-thp-1) | Quercetin × ursolic × carnosine 3-way synergy (THP-1 MSU) | In Vitro | $1,500–2,000 | 3–4 | Proposed | [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [carnosine](./carnosine.md) |
+| [§1.18](#118-native-koji-enzyme-sgf-survival--free-extract-vs-whole-biomass-2-arm) | Native koji enzyme SGF (free extract vs. whole biomass) | In Vitro | $300–500 | 2 | Proposed | [koji-home-fermentation](./koji-home-fermentation.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md) |
+| [§1.19](#119-methodological-standard--rodent-cellular-ic50-translation-caveat) | Methodology — rodent cellular IC50 translation caveat | Standing | $0 | ongoing | Standing | [chembl-cross-check](./chembl-cross-check.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md) |
 | [§2.1](#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii) | Gnotobiotic mouse colonization (S. boulardii) | Animal | $5,000–15,000 | 8–12 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./team.md) |
 | [§2.2](#22-hyperuricemic-rat-model-engineered-yeast-efficacy) | Hyperuricemic rat model (yeast efficacy) | Animal | $8,000–12,000 | 6–8 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gout-deep-dive](./gout-deep-dive.md), [uricase](./uricase.md) |
 | [§2.3](#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model) | Engineered koji EPI model | Animal | $6,000–10,000 | 8–10 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md) |
@@ -370,6 +379,324 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 - **Reject shio-koji as a delivery format for uricase** (fall back to fresh koji, amazake, or lyophilized powder per synthesis 2026-04-27 Connection #2 review): <30% retention. Same logic extends to any peptide payload (carnosine, KPV, BPC-157).
 
 **Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Open Question #2 + Connection #2; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §15 (the dual-use proposal this experiment gates); [koji-home-fermentation.md](./koji-home-fermentation.md) (shio-koji standard protocol); [aspergillus-oryzae.md](./aspergillus-oryzae.md) (native protease characterization).
+
+---
+
+### 1.11 Ergothioneine → ABCG2 Induction in Caco-2 (Native Koji Synergy Test)
+
+**Status**: Proposed | **Cost**: $1,000–1,500 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [abcg2-modulators](./abcg2-modulators.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gut-lumen-sink](./gut-lumen-sink.md)
+
+**What it tests:** Does ergothioneine — natively produced by *A. oryzae* at ~20 mg/g dry mass — induce ABCG2 expression in human enterocyte-lineage cells at concentrations achievable from koji-derived dietary intake? **Tag: Mechanistic Extrapolation testing a two-step inference (ergothioneine → Nrf2 stabilization → ABCG2 induction).** Ergothioneine's "Nrf2 inducer" classification is weaker than canonical activators (sulforaphane, CDDO-Me) — it is more accurately a ROS scavenger that may indirectly stabilize Nrf2. This experiment disambiguates whether the engineered-koji platform has a "free" ABCG2-induction synergy via its native metabolite chorus, or whether the connection is too distant to matter at koji-achievable luminal doses. **Verify substrate claim before running:** confirm `aspergillus-oryzae.md` ergothioneine titer (~20 mg/g dry mass) against primary literature; the L223 sweep flagged that pass-2 cited this without a verified primary source.
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-27 sweeps (Connection #1, multiple sweep blocks: ergothioneine→Nrf2→ABCG2 chain).
+
+**Protocol:**
+- **Cells:** Caco-2 (ATCC HTB-37), differentiated 21 days on transwell inserts to recapitulate apical/basolateral polarity.
+- **Treatment arms (n=4 wells per arm):**
+  - Vehicle control
+  - Ergothioneine at 1, 10, 100 μM (apical) — brackets the koji-luminal-bioavailability range (OCTN1 transport is the rate-limiter)
+  - Sulforaphane at 1 μM (positive control — established Nrf2 → ABCG2 inducer per Xie 2020)
+  - Combination: ergothioneine 100 μM + sulforaphane 0.1 μM (sub-threshold sulforaphane to test additivity)
+- **Time-course:** 6, 24, 48 h.
+- **Readouts:**
+  - ABCG2 mRNA (qPCR, normalized to GAPDH)
+  - ABCG2 protein (Western, apical-membrane fraction)
+  - Functional efflux (Hoechst 33342 accumulation assay; or urate-direct transport in bidirectional transwell if budget allows — strongly preferred per the L243-area review note that prior assays should ground in urate not just BCRP probe substrates)
+  - Nrf2 nuclear translocation (immunofluorescence, 6 h timepoint)
+- **Substrate-claim verification (parallel, $0):** desk-check `aspergillus-oryzae.md` against primary literature (Cheah & Halliwell 2012, Borodina 2020) before committing wet-lab spend.
+
+**Estimated cost:** $1,000–1,500 — Caco-2 culture + transwell inserts ($300), ergothioneine + sulforaphane standards ($150), qPCR primers + reagents ($200), Western antibodies for ABCG2 + Nrf2 ($300), Hoechst probe + plate reader time ($100), urate-transport reagents ($150) if pursuing the bidirectional transwell.
+
+**Estimated timeline:** 3–4 weeks.
+
+**Dependencies:** None — Caco-2 is a standard cell line. Could pair with §1.13 (limonene) to amortize fixed costs.
+
+**Success criteria:**
+- **Confirms synergy claim:** ABCG2 mRNA and protein induction at koji-achievable ergothioneine concentrations (10–100 μM apical), with functional efflux upregulation. Promotes the "free synergy" claim from speculative to supported in [`engineered-koji-protocol.md`](./engineered-koji-protocol.md) and [`aspergillus-oryzae.md`](./aspergillus-oryzae.md).
+- **Falsifies / scopes down:** No detectable ABCG2 induction at koji-achievable doses. Removes the synergy claim from the platform thesis; positive sulforaphane control remains the canonical ABCG2 inducer route.
+
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Connection #1 (multiple sweep blocks); [abcg2-modulators.md](./abcg2-modulators.md) §2 (Nrf2 transcriptional axis); [aspergillus-oryzae.md](./aspergillus-oryzae.md) (native ergothioneine claim — verify before spending).
+
+---
+
+### 1.12 Local H₂O₂ Stress in Caco-2 from High Gut-Lumen Uricase
+
+**Status**: Proposed | **Cost**: $800–1,200 | **Weeks**: 2–3 | **Phase**: 1
+
+**Affected wiki**: [uricase](./uricase.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [gut-lumen-sink](./gut-lumen-sink.md), [engineered-koji-protocol](./engineered-koji-protocol.md)
+
+**What it tests:** Does high local uricase activity in proximity to enterocytes generate H₂O₂ flux that exceeds local catalase scavenging capacity, causing oxidative stress / barrier compromise? Uricase generates H₂O₂ stoichiometrically 1:1 with urate consumption. Gut-lumen urate concentrations reach hundreds of μM; near a koji particle expressing uricase, peak local H₂O₂ flux could locally overwhelm host- and microbe-derived catalase. The catalase-neutralization assumption in [`uricase.md`](./uricase.md) and [`aspergillus-oryzae.md`](./aspergillus-oryzae.md) is currently un-quantified.
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-27 Open Question #1 (ergothioneine sweep).
+
+**Protocol:**
+- **Cells:** Caco-2 transwell monolayer, 21-day differentiated.
+- **Treatment arms (n=4):**
+  - Vehicle (apical buffer + 500 μM urate, no enzyme)
+  - Uricase apical only (rasburicase or *A. flavus* recombinant uricase) at 0.1, 1, 10 U/mL
+  - Uricase + catalase apical (1000 U/mL catalase) — tests whether exogenous catalase rescues
+  - Uricase + ergothioneine 100 μM apical — tests whether co-delivered native koji metabolite mitigates
+- **Readouts:**
+  - Apical H₂O₂ time-course (Amplex Red probe, fluorescent plate reader, every 5 min × 60 min).
+  - TEER (trans-epithelial electrical resistance) — barrier-integrity readout, baseline + 1, 4, 24 h.
+  - LDH release (apical and basolateral) — cytotoxicity proxy.
+  - Tight-junction protein localization (ZO-1, occludin) by IF after 24 h.
+- **Optional:** add an *A. oryzae* whole-koji-extract arm (delivers uricase + native catalase + ergothioneine simultaneously) to test whether the native chorus is naturally self-buffering.
+
+**Estimated cost:** $800–1,200 — Caco-2 + transwell ($300), Amplex Red kit ($200), rasburicase (research grade, $100), catalase ($50), TEER electrodes (already standard), IF antibodies ($200), reagents ($150).
+
+**Estimated timeline:** 2–3 weeks.
+
+**Dependencies:** Caco-2 cell access. Could co-run with §1.11 (ergothioneine arm transfers directly).
+
+**Success criteria:**
+- **No barrier compromise** at any uricase dose tested in the koji-realistic dose range: removes the open question from the platform-risk register.
+- **Barrier compromise at high doses** (TEER drop >25%, LDH increase, ZO-1/occludin disruption): triggers a redesign of the engineered-strain expression cassette toward a regulated/dose-capped uricase output, OR mandates ergothioneine co-delivery as a safety feature, OR informs an enteric-coated dose-limiting formulation strategy.
+
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Open Question #1; [uricase.md](./uricase.md) (catalase-neutralization assumption); [aspergillus-oryzae.md](./aspergillus-oryzae.md) (native catalase + ergothioneine).
+
+---
+
+### 1.13 Limonene → ABCG2 Induction in Caco-2 (Tier 3 Stack Synergy Test)
+
+**Status**: Proposed | **Cost**: $800–1,200 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [supplements-stack](./supplements-stack.md), [abcg2-modulators](./abcg2-modulators.md), [cannabinoids-terpenes](./cannabinoids-terpenes.md)
+
+**What it tests:** Does limonene induce ABCG2 expression in Caco-2 enterocytes at supplement-relevant doses? Limonene was promoted to Tier 3 in `supplements-stack.md` based on the Venkatesan 2025 MSU rat model (50 mg/kg ≈ 0.5 g/day BSA-scaled human dose, close to typical supplement range), citing Nrf2 activation as a key mechanism. `abcg2-modulators.md` independently identifies Nrf2 as an ABCG2 transcriptional inducer (sulforaphane precedent, EC50 = 580 nM). This experiment tests whether limonene's putative Nrf2 activation translates to ABCG2 induction — gating whether the supplements-stack entry should be augmented with a "gut-lumen sink synergy" claim.
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-26 Connection #3.
+
+**Protocol:**
+- **Cells:** Caco-2 transwell, 21-day differentiated.
+- **Treatment arms (n=4):**
+  - Vehicle
+  - Limonene at 1, 10, 50, 100 μM (DMSO-solubilized; correct for DMSO at <0.1%)
+  - Sulforaphane 1 μM (positive control)
+  - Limonene + sulforaphane combination at sub-threshold doses
+- **Time-course:** 24, 48 h.
+- **Readouts:** ABCG2 mRNA (qPCR), ABCG2 protein (Western, apical-membrane fraction), functional efflux (Hoechst 33342 or urate-direct in bidirectional transwell).
+
+**Estimated cost:** $800–1,200 — Caco-2 + transwell ($300), limonene + sulforaphane standards ($100), qPCR ($200), Western antibodies ($300), efflux probe ($100), reagents ($150).
+
+**Estimated timeline:** 3–4 weeks (parallelizable with §1.11).
+
+**Dependencies:** Caco-2 access; pairs cleanly with §1.11.
+
+**Success criteria:**
+- **Confirms synergy claim:** ABCG2 induction at supplement-achievable limonene doses. Updates [`supplements-stack.md`](./supplements-stack.md) limonene entry to include the gut-lumen-sink synergy and promotes the compound from Nrf2-activator-only to Nrf2 + ABCG2-inducer.
+- **Falsifies:** No ABCG2 induction at any tested dose. Removes the synergy claim; limonene remains a Tier 3 NLRP3 modulator without the ABCG2 angle.
+
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-26 Connection #3; [supplements-stack.md](./supplements-stack.md) limonene entry; [abcg2-modulators.md](./abcg2-modulators.md) §2.
+
+---
+
+### 1.14 Additive ABCG2 Suppression by Androgens + TNFα + Butyrate Rescue
+
+**Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 4–6 | **Phase**: 1
+
+**Affected wiki**: [abcg2-modulators](./abcg2-modulators.md), [androgen-urate-axis](./androgen-urate-axis.md), [gut-lumen-sink](./gut-lumen-sink.md), [supplements-stack](./supplements-stack.md)
+
+**What it tests:** Two questions in one experiment. (1) Are androgen (DHT) and inflammatory (TNFα) suppression of ABCG2 **additive**, producing a "worst-case" phenotype for the gut-lumen sink in patients with both elevated androgens and chronic inflammation? (2) Does butyrate co-treatment **rescue** the suppressed phenotype via PPARγ induction, restoring substrate flow for the engineered uricase?
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-27 Connection #1 + Proposed Experiment #2 (DHT + TNFα additive ABCG2 suppression). Per the Pass 3 review augmentation: include butyrate co-treatment to test the "gate-opening stack" claim in the same experiment without materially increasing cost.
+
+**Protocol:**
+- **Cells:** Caco-2 transwell (used in both Xie 2020 and Solbakk 2025 per `abcg2-modulators.md`), 21-day differentiated.
+- **Treatment arms (3 × 3 + butyrate, n=4 per arm):**
+  - DHT: 0, 10, 100 nM
+  - TNFα: 0, 5, 20 ng/mL
+  - All 9 combinations (DHT × TNFα factorial)
+  - **Butyrate rescue arm:** repeat the highest-suppression combination (DHT 100 nM + TNFα 20 ng/mL) ± butyrate 1 mM apical
+- **Time-course:** 48 h.
+- **Readouts:** ABCG2 mRNA (qPCR), ABCG2 protein (Western, apical-membrane fraction), functional urate efflux (transwell, basolateral-to-apical urate flux), AR activation (CYP3A4 mRNA as positive control), NF-κB activation (IκBα Western).
+
+**Estimated cost:** $1,500–2,500 — Caco-2 + transwell ($400), DHT + TNFα + butyrate standards ($200), urate analytics ($300), qPCR + Western antibodies ($600), assay reagents ($300), labor ($200).
+
+**Estimated timeline:** 4–6 weeks.
+
+**Dependencies:** Caco-2 access. Stand-alone or paired with §1.11/§1.13 in the same Caco-2 batch run.
+
+**Success criteria:**
+- **Additive suppression confirmed AND butyrate rescue confirmed:** elevates the "dense-downstream + gate-opening stack" framing to supported. Strengthens the personalized-medicine case for fiber/butyrate in [`abcg2-modulators.md`](./abcg2-modulators.md). Informs the male-on-TRT subgroup of the self-experiment protocol.
+- **Suppression sub-additive (synergistic-suppression rather than additive)** or **butyrate fails to rescue:** triggers a redesign of the gut-lumen-sink dosing model — uricase output capacity must compensate for unrescuable ABCG2 capping in the worst-case phenotype.
+
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Connection #1 + Proposed Experiment #2; [abcg2-modulators.md](./abcg2-modulators.md) §3 (TNFα suppression — Ferrer-Picón 2020 PMID 31211831); [androgen-urate-axis.md](./androgen-urate-axis.md) (AR-mediated ABCG2 suppression).
+
+---
+
+### 1.15 Rice-Bran Substrate × Koji Uricase GI Survival
+
+**Status**: Proposed | **Cost**: $800–1,200 | **Weeks**: 3 | **Phase**: 1
+
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [koji-construct-design](./koji-construct-design.md), [gi-survival-prediction](./gi-survival-prediction.md)
+
+**What it tests:** Does substrate composition (white rice vs. rice bran vs. rice bran + soybean) affect GI survival of koji-produced uricase via food-matrix protection — phytic acid, polyphenols, fiber binding to the tetramer, or transit-time effects? `digestive-enzyme-optimization.md` identifies rice bran as the optimal substrate for native enzyme yield (2,280 U/g lipase vs. ~1,800 U/g on plain rice), but no current experiment tests whether substrate effects propagate to GI survival of heterologous payloads.
+
+**Proposed in:** `wiki/synthesis.md` Pass 2 Connection #7 (rice bran interaction) + Proposed Experiment #3 (rice bran composition impact on uricase GI survival). L829, L1002.
+
+**Protocol:**
+- **Strain:** Wild-type *A. oryzae* RIB40 (no genetic modification — isolates the substrate variable from construct effects). Optional second arm with engineered uricase strain from §1.5 if available.
+- **Substrate matrix:**
+  - Plain white rice (baseline)
+  - Rice bran alone
+  - Rice bran + 10% soybean (full optimization per `digestive-enzyme-optimization.md`)
+- **Fermentation:** 48 h at 30°C, 35% moisture.
+- **Process:** Lyophilize, grind to powder.
+- **GI simulation:** Resuspend in SGF (pH 2, pepsin, 2 h, 37°C) → SIF (pH 7, trypsin, 2 h, 37°C). Sample at 0, post-SGF, post-SIF.
+- **Readouts:**
+  - Uricase activity at each stage (293 nm UV-Vis or rasburicase-style assay)
+  - HPLC quantification of kojic acid, ferulic acid, ergothioneine in each koji type (secondary — does substrate change native metabolite production?)
+  - LC-MS for phytic acid + polyphenol residuals (does rice bran's phytic acid bind divalent cations and affect tetramer stability?)
+
+**Estimated cost:** $800–1,200 — koji ingredients ($50), assay reagents ($300), HPLC time ($200), LC-MS time ($300), labor ($150).
+
+**Estimated timeline:** 3 weeks.
+
+**Dependencies:** Standard fermentation lab + HPLC/LC-MS access.
+
+**Success criteria:**
+- **Rice bran improves survival ≥10% over plain rice:** substrate optimization is a "free" stability lever; lock in rice bran + soybean as the production substrate.
+- **No effect or destabilization:** plain rice or other non-bran substrate becomes the production default; rules out bran as a stability variable.
+- **Ferulic acid / phytic acid correlation:** if survival tracks specific native metabolites, the variable is identifiable and tunable in future engineered constructs.
+
+**Cross-references:** [synthesis.md](./synthesis.md) Pass 2 Connection #7 + Proposed Experiment #3; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §08 (substrate optimization); [gi-survival-prediction.md](./gi-survival-prediction.md) (food-matrix model).
+
+---
+
+### 1.16 OPT-1 Disulfide-Engineered Uricase in Koji vs. WT — GI Survival Head-to-Head
+
+**Status**: Proposed | **Cost**: $1,800–2,500 | **Weeks**: 6–8 | **Phase**: 1
+
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [uricase-variant-selection](./uricase-variant-selection.md), [protein-engineering-strategy](./protein-engineering-strategy.md), [gi-survival-prediction](./gi-survival-prediction.md)
+
+**What it tests:** Does the OPT-1 engineered uricase variant (A6C + R290C + S119C + C220C + K234E + K236E — disulfide-bond-stabilized) achieve higher GI survival when expressed in *A. oryzae* koji compared to wild-type *A. flavus* uricase in the same construct? OPT-1 was designed in [`uricase-variant-selection.md`](./uricase-variant-selection.md) and validated in *S. cerevisiae* context; the *A. oryzae* redox environment differs and disulfide formation may not transfer cleanly. If OPT-1 koji achieves ~55–70% GI survival vs. ~25–35% for WT, koji becomes the preferred platform and obviates parallel yeast fermentation for stability gains.
+
+**Proposed in:** `wiki/synthesis.md` Pass 2 Proposed Experiment #1 (Disulfide-engineered uricase in koji). L948.
+
+**Protocol:**
+- **Constructs:**
+  - WT control: `[PamyB — SP — A. flavus uaZ codon-optimized — TamyB]`
+  - OPT-1: same construct with the 6-mutation cassette (A6C + R290C + S119C + C220C + K234E + K236E)
+- **Strain background:** *A. oryzae* NSAR1.
+- **Fermentation:** Solid-state rice bran (per §1.15 result, or default white rice) 48–60 h.
+- **Readouts:**
+  - Titer (HPLC + Western on lyophilized koji)
+  - Thermal stability (Tm by DSF — confirms disulfide formation)
+  - Disulfide bond formation: non-reducing SDS-PAGE + DTNB free-thiol assay
+  - GI survival via SGF → SIF (per §1.6 / §1.10 protocol)
+- **Comparators:** Purified engineered yeast OPT-1 from `engineered-yeast-uricase-proposal.md`; rasburicase positive control.
+
+**Estimated cost:** $1,800–2,500 — OPT-1 gene synthesis ($600), yeast OPT-1 control purification or vendor ($300), DSF + thermal stability ($200), gel electrophoresis + Western ($300), SGF/SIF reagents ($150), labor ($300).
+
+**Estimated timeline:** 6–8 weeks.
+
+**Dependencies:** Engineered koji strain transformation capacity; *A. oryzae* construction tooling. Could fold into the §1.9 Ward 1995 dual-cassette program if shared infrastructure is available.
+
+**Success criteria:**
+- **OPT-1 koji ≥55% GI survival** AND ≥80% titer vs. WT: koji becomes preferred platform; eliminates need for parallel yeast OPT-1 production. Locks in OPT-1 as the default uricase variant for engineered koji.
+- **Disulfide formation fails (non-reducing gel shows monomer at expected MW):** *A. oryzae* redox environment incompatible with OPT-1's six engineered cysteines. Either revert to WT or design a pH-stability-only variant.
+- **Activity preserved but GI survival not improved:** suggests survival is gated by gastric pH not protease, and disulfides don't help enough — pivot to enteric-coated formulation rather than further protein engineering.
+
+**Cross-references:** [synthesis.md](./synthesis.md) Pass 2 Proposed Experiment #1; [uricase-variant-selection.md](./uricase-variant-selection.md) (OPT-1 design rationale); [protein-engineering-strategy.md](./protein-engineering-strategy.md); [engineered-koji-protocol.md](./engineered-koji-protocol.md) §02–§05 (uricase construct).
+
+---
+
+### 1.17 Quercetin × Ursolic Acid × Carnosine Three-Way Synergy on MSU-Stimulated THP-1
+
+**Status**: Proposed | **Cost**: $1,500–2,000 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [carnosine](./carnosine.md), [engineered-koji-protocol](./engineered-koji-protocol.md)
+
+**What it tests:** Does combining the three Tier-1 NLRP3 modulators (quercetin, ursolic acid, carnosine) produce greater than additive IL-1β suppression in MSU-stimulated human macrophages? If super-additive, the engineered-koji platform should target all three (uricase + carnosine + secondary metabolite cassette for ursolic acid/quercetin precursors). If only one or two compounds carry the signal, simplifies the construct design.
+
+**Proposed in:** `wiki/synthesis.md` Pass 2 Proposed Experiment #2 (synergy testing — three Tier-1 NLRP3 inhibitors). L974.
+
+**Protocol:**
+- **Cells:** THP-1 PMA-differentiated to M1 phenotype (24 h LPS prime).
+- **Stimulus:** MSU crystals (100 μg/mL, 4 h post-prime).
+- **Treatment matrix:**
+  - Quercetin alone: 5, 10, 20 μM
+  - Ursolic acid alone: 2.5, 5, 10 μM
+  - Carnosine alone: 1, 2, 5 mM
+  - **3-way combinations** at IC50 of each compound (single, all pairs, full triplet)
+- **Readouts:**
+  - IL-1β (apical + basolateral if transwell) — primary readout, ELISA
+  - Caspase-1 activity (luminescence-based assay)
+  - ASC speck formation (immunofluorescence; manual or automated count)
+  - **Loewe combination index** computed for all combinations (CI <0.7 super-additive, 0.7–1.3 additive, >1.3 antagonistic)
+
+**Estimated cost:** $1,500–2,000 — THP-1 + reagents ($300), IL-1β ELISA ($400), caspase-1 luminescence ($200), MSU crystals + LPS ($100), compounds standards ($100), labor ($400).
+
+**Estimated timeline:** 3–4 weeks.
+
+**Dependencies:** THP-1 cell culture capacity. Independent or pairs with §1.7 (broader NLRP3 pathway validation).
+
+**Success criteria:**
+- **3-way super-additive (CI <0.7):** justifies engineering all three into the koji endgame strain. Strengthens the multi-target food-grade pathway-modulator thesis.
+- **2-way super-additive only:** simplifies construct design — drop the redundant compound from the engineering list.
+- **No synergy beyond additive:** revert to single-compound prioritization; carnosine is the strongest standalone candidate per evidence tier.
+
+**Cross-references:** [synthesis.md](./synthesis.md) Pass 2 Proposed Experiment #2; [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) (Tier-1 candidates); [carnosine.md](./carnosine.md) (URAT1/GLUT9 angle).
+
+---
+
+### 1.18 Native Koji Enzyme SGF Survival — Free Extract vs. Whole Biomass (2-Arm)
+
+**Status**: Proposed | **Cost**: $300–500 | **Weeks**: 2 | **Phase**: 1
+
+**Affected wiki**: [koji-home-fermentation](./koji-home-fermentation.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md), [digestive-enzyme-optimization](./digestive-enzyme-optimization.md)
+
+**What it tests:** A 2-arm sharpening of §1.6: does cell-wall encapsulation in intact mycelium provide food-matrix protection that free enzyme extract lacks? Resolves the Koji-S vs. Koji-I default question for **native** koji enzymes (lipase, protease, amylase) in one experiment rather than two. Per the L81 Pass 3 review augmentation, both arms must be run in parallel.
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-27 Proposed Experiment #3 (Simulated GI survival assay of native koji enzymes — 2-arm augmentation). L81.
+
+**Protocol:**
+- **Material:** Wild-type *A. oryzae* fermented on rice (or rice bran per §1.15 result), 48 h.
+- **Two parallel arms:**
+  - **Arm A — Free extract:** Buffer-extract koji enzymes (sodium phosphate, 4°C, 30 min). Clarify by centrifugation. Measure activity in supernatant.
+  - **Arm B — Whole biomass:** Lyophilize whole koji, grind to powder. Resuspend at equivalent enzyme load to Arm A.
+- **GI simulation:** Both arms through SGF (pH 2, pepsin, 2 h) → SIF (pH 7, pancreatin, 2 h).
+- **Readouts at each stage:**
+  - Lipase: pNPP hydrolysis or tributyrin titration
+  - Protease: azocasein assay
+  - Amylase: starch-iodine or DNS reducing-sugar
+- **Positive control:** Pancrelipase (Creon) at equivalent enzyme load.
+
+**Estimated cost:** $300–500 — pNPP, azocasein, starch ($100), Creon control ($30), SGF/SIF reagents ($50), labor ($150).
+
+**Estimated timeline:** 2 weeks.
+
+**Dependencies:** Standard wet-lab. Pairs cleanly with §1.6 (extends it to the 2-arm design) — could replace §1.6 outright if budget is tight.
+
+**Success criteria:**
+- **Whole biomass survival ≥30% AND free extract survival <10%:** cell-wall encapsulation is the protective mechanism; **Koji-I (intracellular) is the default** for engineered constructs. Updates [`engineered-koji-protocol.md`](./engineered-koji-protocol.md) §06.
+- **Both arms survive ≥30%:** extract-vs-biomass distinction doesn't matter for native enzymes; substrate or food-matrix is the driver. Decouples the construct decision.
+- **Both arms <10%:** native enzyme delivery via koji is inherently limited to pre-ingestion (marinade) effects; engineered delivery requires enteric coating regardless of intracellular vs. secreted strategy.
+
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Proposed Experiment #3; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §06 (Koji-S vs. Koji-I trade-off); [digestive-enzyme-optimization.md](./digestive-enzyme-optimization.md) §4 (native enzyme activity).
+
+---
+
+### 1.19 Methodological Standard — Rodent Cellular IC50 Translation Caveat
+
+**Status**: Standing | **Cost**: $0 | **Weeks**: ongoing | **Phase**: 1 (methodology)
+
+**Affected wiki**: [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [chembl-cross-check](./chembl-cross-check.md), [supplements-stack](./supplements-stack.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), all per-compound pages citing rodent IC50 values.
+
+**Standard (not an experiment — methodology):** Rodent cellular IC50 values for NLRP3 inhibitors and other inflammasome-pathway compounds may diverge from human cellular IC50 by up to 3 orders of magnitude. Anchoring example: **dapansutrile IC50 = 1 nM in mouse J774A.1 vs. 1,000 nM (1 μM) in human MDM** under LPS+nigericin stimulation (ChEMBL v34). Apply across the wiki:
+
+1. **Tag every rodent-derived IC50 citation** with the species and assay format. Do not present rodent IC50 as if it were a clinical-grade potency claim.
+2. **Prefer human-cell data** (THP-1, U937, primary human MDM, PBMC) over rodent cellular data when evaluating new compound candidates.
+3. **For mouse-only compounds (β-caryophyllene, BHB rodent ketogenic-diet gout model, ursolic acid Kawasaki mouse, carnosine hyperuricemia rat),** propose human-cell follow-up assays before promoting from animal to clinical evidence tier.
+4. **For compounds with no curated human IC50,** plan species-bridging experiments (THP-1 MSU IC50 head-to-head with rodent benchmark) as part of the validation queue rather than relying on rodent extrapolation.
+5. **Counter-example to flag:** repurposing candidates with strong adjacent-indication human data (zileuton, disulfiram, avacopan) may translate **cleaner** than a compound with strong rodent gout data — species-gap failures stack, while existing human safety + PK data skip the failure mode.
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-23 Connection #2 (dapansutrile species-gap). L584.
+
+**Cross-references:** [chembl-cross-check.md](./chembl-cross-check.md) (curated ChEMBL evidence per compound), [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) §"Species-gap caveat" line 38, every per-compound wiki page citing rodent data.
 
 ---
 

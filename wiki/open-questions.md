@@ -163,6 +163,12 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 - **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout = natural population to query. *(2026-04-24 Pass 2 — new addition.)* See [synthesis.md 2026-04-24 Open Questions](./synthesis.md), [validation-experiments.md §3.9](./validation-experiments.md).
 - **What's the theory of action beyond 5-LOX?** Any secondary effects (redox, cytokine-modulation, neutrophil-direct) that could be advantageous or detrimental in gout context? Dossier in progress.
 
+### Tier-4 inhibitor screen — missed gout-model data
+
+- **Do any other Tier-4 compounds (limonene, alpha-pinene, sulforaphane, omega-3 metabolites, EGCG/curcumin variants) have published MSU/gout animal-model data that the keyword-gated original screen missed?** β-Caryophyllene was originally Tier 4 "no gout evidence" but a 2021 MSU rat paper surfaced and forced the re-rank. The discovery bias is systematic, not a one-off. A targeted PubMed + bioRxiv + ChEMBL audit ("compound + MSU + gout + animal") on each Tier-4 compound is a $0 / 4-hour correction pass that could surface 1–3 more re-rankings. Sulforaphane already promoted on Nrf2 grounds. *(2026-04-23 sweep — pending audit.)* See [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md), [synthesis.md 2026-04-23 cannabinoids-terpenes Connection #2](./synthesis.md).
+- **Would THCV's 20× higher CB2 affinity (Ki 7.5 nM vs. BCP 155 nM) translate to better MSU gout efficacy if dose-bridged?** Untested. THCV has cannabis-derived regulatory friction so this is academic unless BCP underperforms in a planned MSU macrophage assay. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md), [synthesis.md 2026-04-23 cannabinoids-terpenes Open Questions](./synthesis.md).
+- **Is there an engineered microbial route to β-caryophyllene that scales past 10–50 mg/L?** Current titers are two orders of magnitude below the likely therapeutic dose (rat 100–400 mg/kg ≈ 1.1–4.5 g/day BSA-scaled). Titer improvement is required before "engineered koji produces BCP" enters the platform thesis. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md), [synthesis.md 2026-04-23 cannabinoids-terpenes Open Questions](./synthesis.md).
+
 ### Beta-caryophyllene
 
 - **Does oral BCP at 50-200 mg/day (supplement range) reproduce the 100-400 mg/kg rat MSU effect?** PK scaling suggests possible 20-50× dose gap. Resolvable with desk work before wet-lab. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md), [synthesis.md 2026-04-23 cannabinoids Open Questions](./synthesis.md).
@@ -204,6 +210,7 @@ Questions about the koji-first vs. yeast-first choice, community fermentation re
 
 - **Does daily high-enzyme + NLRP3-inhibitor load select for specific commensals or cause dysbiosis?** Repeated-dose koji is effectively a selection-pressure experiment on gut flora. See [cross-validation.md](./cross-validation.md), [synthesis.md Connection 8](./synthesis.md), [synthesis.md Open Question 1](./synthesis.md).
 - **Do any commensals express uricase natively?** If yes, does engineered uricase suppress or enhance them? See [synthesis.md Connection 8](./synthesis.md).
+- **For Brian's n=1 self-experiment specifically — what microbiome red flags would matter?** Scope clarification (2026-04-27): the platform is not chasing regulatory approval; the question is what to monitor in Brian's self-experiment to detect dysbiosis early enough to course-correct. Candidate panel: stool 16S at baseline + week 4/8/12, watch for alpha-diversity drop >20%, *C. difficile* / *Enterococcus* expansion, fecal calprotectin elevation, persistent stool-form change. A full safety cohort (n=8) is out of scope for a self-experiment; the n=1 monitoring panel is the right resolution. Tracked separately in [`self-experiment-protocol.md`](./self-experiment-protocol.md). See [synthesis.md Connection 8](./synthesis.md).
 
 ### Combination therapy
 
