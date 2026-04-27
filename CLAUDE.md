@@ -24,7 +24,7 @@ Guidelines for any Claude or AI system working on this project. This document en
 ### wiki/ — Research Library (living)
 All research — long-form primary research docs and shorter synthesized concept pages — lives here side by side. Source of truth. The sweep daemon updates these as new findings land.
 
-- `wiki/synthesis.md` — Cross-doc connections, contradictions, proposed experiments. **Action queue.** Daemon prepends new findings after Pass 2; Brian prunes manually.
+- `wiki/synthesis.md` — Cross-doc connections, contradictions, proposed experiments. **Action queue.** Daemon prepends new findings after Pass 2; AI annotates actioned items inline as the work lands (`**✓ Actioned <date>:**` directly under the relevant Claude review block, briefly describing what landed in which file); Brian prunes manually in his review pass.
 - `wiki/GRAPH.md` — Mermaid diagram of all concept relationships.
 - `wiki/[concept].md` — Individual wiki pages. Long-form research (e.g. `gout-deep-dive.md`, `engineered-koji-protocol.md`) and shorter concept pages (`uricase.md`, `nlrp3-inflammasome.md`) are both here. Organize by topic, not by length.
 
