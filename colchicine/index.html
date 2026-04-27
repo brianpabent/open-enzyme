@@ -2189,6 +2189,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#331-stacking-logic-with-other-cp2cp3-modulators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1 Stacking logic with other CP2/CP3 modulators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#34-other-immunomodulatory-effects" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3183,6 +3194,14 @@
 <h3 id="33-nlrp3-inflammasome-cp2-p2x7-pore-inhibition">3.3 NLRP3 inflammasome — CP2 (P2X7 pore inhibition)<a class="headerlink" href="#33-nlrp3-inflammasome-cp2-p2x7-pore-inhibition" title="Permanent link">&para;</a></h3>
 <p><a href="https://pubmed.ncbi.nlm.nih.gov/26228647/">Leung et al. 2015</a> refined the gout-specific picture: colchicine <strong>directly inhibits the P2X7 ATP-gated ion channel pore</strong>, independent of its tubulin effect. P2X7 activation is the canonical K⁺ efflux trigger for NLRP3 conformational activation. By blocking the pore, colchicine reduces K⁺ efflux upstream of NLRP3 activation. <em>[In Vitro / Mechanistic]</em></p>
 <p>This positions colchicine at <strong>CP2</strong> as well — it is a <strong>dual-hit on the NLRP3 axis</strong>, not a single-mechanism drug. The dual-hit framing matters because it explains why colchicine works at low doses where other CP3-only or CP2-only inhibitors might not: simultaneous disruption at two upstream chokepoints.</p>
+<h3 id="331-stacking-logic-with-other-cp2cp3-modulators">3.3.1 Stacking logic with other CP2/CP3 modulators<a class="headerlink" href="#331-stacking-logic-with-other-cp2cp3-modulators" title="Permanent link">&para;</a></h3>
+<p>Colchicine sits at CP2 (P2X7) and CP3 (ASC speck), but the practical question for stack design is which other compounds <em>add</em> to it vs. <em>overlap</em> with it. Re-reading <a href="../nlrp3-exploit-map/"><code>nlrp3-exploit-map.md</code></a> against §3.1–3.3 above:</p>
+<ul>
+<li>Colchicine's <strong>primary</strong> mechanism is tubulin-binding (microtubule disruption), which blocks ASC speck trafficking and neutrophil chemotaxis. That puts it more cleanly at <strong>CP3 with secondary effects at CP6</strong> (chemotaxis-driven neutrophil amplification) than at CP2.</li>
+<li><strong>BHB at CP2</strong> acts via K⁺ efflux inhibition (HCAR2 / β-arrestin signaling) — an upstream node that colchicine doesn't touch. BHB + colchicine is plausibly <strong>additive</strong>.</li>
+<li><strong>Spermidine at CP3</strong> overlaps colchicine's mechanism more directly (both interfere with ASC oligomerization / speck assembly), so the stack is more likely <strong>redundant</strong> than synergistic.</li>
+</ul>
+<p><strong>The stacking logic differs per pair; a one-size answer is unlikely.</strong> Anyone layering colchicine with other CP2/CP3 modulators should ask, per pair, whether the second compound hits an <em>upstream</em> node (additive) or the same node (redundant). See <a href="../nlrp3-exploit-map/"><code>nlrp3-exploit-map.md</code></a> for the chokepoint topology.</p>
 <h3 id="34-other-immunomodulatory-effects">3.4 Other immunomodulatory effects<a class="headerlink" href="#34-other-immunomodulatory-effects" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Neutrophil chemotaxis</strong>: microtubule-dependent migration to inflamed joints is impaired. Crystal-loaded neutrophils still arrive but fewer of them.</li>

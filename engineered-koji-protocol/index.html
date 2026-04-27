@@ -2415,6 +2415,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#delivery-format-constraints-carnosine-and-other-peptide-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery Format Constraints — Carnosine and Other Peptide Payloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cross-references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5290,6 +5301,47 @@ Brian Abent</p>
 <li><strong>De-prioritize koji track for carnosine</strong> if &lt;100 mg/L after <em>panD</em> co-expression. Fall back to <em>S. cerevisiae</em> as the carnosine production host (where the ~150 mg/L baseline was cited — pending primary-source confirmation). Keep koji focused on uricase + native anti-inflammatory metabolites (kojic acid, ergothioneine, ferulic acid).</li>
 <li><strong>Re-engineer the cassette</strong> if base koji phenotype is impaired. Options: swap PTEF1 → PamyB (inducible, lower metabolic burden baseline), try an alternative neutral locus, or reduce cassette copy number.</li>
 </ul>
+<h3 id="delivery-format-constraints-carnosine-and-other-peptide-payloads">Delivery Format Constraints — Carnosine and Other Peptide Payloads<a class="headerlink" href="#delivery-format-constraints-carnosine-and-other-peptide-payloads" title="Permanent link">&para;</a></h3>
+<p>A carnosine-expressing strain <strong>cannot be delivered intact via the shio-koji format</strong>. Carnosine (β-alanyl-L-histidine) is a classic dipeptidase substrate, and shio-koji's defining feature is 7–14 days of active native proteases at room temperature, including a Kex2-family peptidase active in the same pH/temperature window. The dipeptide will be hydrolyzed back to β-alanine + L-histidine, destroying the therapeutic molecule. Format ranking, by carnosine-survival expectation:</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Carnosine survival</th>
+<th>Reason</th>
+<th>Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dried koji powder</strong> (heat-inactivated)</td>
+<td>Highest</td>
+<td>Heat denatures native proteases; carnosine is thermally stable across typical food-processing temperatures</td>
+<td>Default carrier for any peptide payload; loses live-enzyme benefit but maximises payload integrity</td>
+</tr>
+<tr>
+<td><strong>Amazake</strong> (cooked, &lt;24 h, finished at 80°C)</td>
+<td>High</td>
+<td>Brief enzyme exposure, then heat inactivation; native proteases halted before significant peptide degradation</td>
+<td>When live-enzyme amylase activity is desirable in the finished product</td>
+</tr>
+<tr>
+<td><strong>Fresh koji</strong> (refrigerated, days, no salt)</td>
+<td>Medium</td>
+<td>Proteases active but exposure window is short; cold storage further slows hydrolysis</td>
+<td>Short shelf-life applications (small-batch home use)</td>
+</tr>
+<tr>
+<td><strong>Shio-koji</strong> (7–14 day salt ferment)</td>
+<td><strong>Effectively zero</strong></td>
+<td>Sustained protease exposure at active pH/temperature; salt does not protect peptide bonds</td>
+<td><strong>Avoid</strong> for carnosine and any other peptide payload</td>
+</tr>
+</tbody>
+</table>
+<p><strong>This logic generalizes beyond carnosine.</strong> The same format constraint applies to every small-peptide payload the platform might add — KPV (Lys-Pro-Val tripeptide), BPC-157 (gastric pentadecapeptide), any future therapeutic peptide. The shio-koji format is structurally limited to <strong>robustly folded enzyme payloads</strong> (uricase tetramer, lactoferrin glycoprotein) where conformational stability and disulfide bonding provide protease resistance — not exposed peptide bonds.</p>
+<p>For the multi-format endgame strain (<a href="../koji-endgame-strain/">koji-endgame-strain.md</a>), this implies a split delivery model: shio-koji as the live-enzyme vehicle for uricase + lactoferrin (pending the Open Question 1 stability check from the 2026-04-25 sweep), and dried powder or amazake as the peptide-payload vehicle. A single fermented mass cannot simultaneously be a 7–14 day shio-koji ferment <strong>and</strong> a carnosine-preserving format.</p>
+<p><strong>Cross-page implication.</strong> Update <a href="../koji-home-fermentation/"><code>koji-home-fermentation.md</code></a>, <a href="../kpv-peptide/"><code>kpv-peptide.md</code></a>, and <a href="../bpc-157/"><code>bpc-157.md</code></a> to reference this format-constraint table when discussing engineered-koji delivery; same logic, different molecule.</p>
 <h3 id="cross-references">Cross-References<a class="headerlink" href="#cross-references" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="../carnosine/">carnosine.md</a> — mechanism, gout-specific evidence, bioavailability, dosing, and open questions.</li>

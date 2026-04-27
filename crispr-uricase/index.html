@@ -1234,6 +1234,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#post-therapy-management-the-dissolution-flare-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Therapy Management — The Dissolution-Flare Bridge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-Therapy Management — The Dissolution-Flare Bridge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-dissolution-flare-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The dissolution-flare mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-gene-therapy-version-is-harder-than-ult-initiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the gene-therapy version is harder than ULT initiation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bridge-protocol-proposed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bridge protocol — proposed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trial-design-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial-design implications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implication-for-the-open-enzyme-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implication for the Open Enzyme platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-technical-pieces-are-falling-into-place" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3387,6 +3459,59 @@
 </ol>
 <p><strong>The patient gets:</strong> Normal uric acid metabolism, for the first time in human evolutionary history.</p>
 <p>(Source: gout-deep-dive.md, §6)</p>
+<hr />
+<h2 id="post-therapy-management-the-dissolution-flare-bridge">Post-Therapy Management — The Dissolution-Flare Bridge<a class="headerlink" href="#post-therapy-management-the-dissolution-flare-bridge" title="Permanent link">&para;</a></h2>
+<p>A one-shot CRISPR-uricase cure does not eliminate the urate-mobilization problem. Patients with established gout carry months-to-years of accumulated tophaceous urate that begins dissolving as soon as serum UA drops. The same "dissolution-flare danger window" that haunts allopurinol/febuxostat initiation applies — except gene therapy produces a much sharper UA drop than titrated ULT, potentially making the flare risk <em>worse</em>, not better. <em>[Mechanistic Extrapolation, anchored on well-documented ULT-initiation flare data]</em></p>
+<p><strong>This is not an optional adjunct. NLRP3-pathway prophylaxis is part of the therapeutic protocol.</strong></p>
+<h3 id="the-dissolution-flare-mechanism">The dissolution-flare mechanism<a class="headerlink" href="#the-dissolution-flare-mechanism" title="Permanent link">&para;</a></h3>
+<p>Existing tophi (subcutaneous, articular, renal interstitial) are crystalline urate deposits in equilibrium with serum. Lower the serum UA below the deposit's saturation point and the deposits begin redissolving. The dissolution releases:</p>
+<ul>
+<li>Free urate back into circulation (transient — the now-functional uricase degrades it)</li>
+<li><strong>MSU microcrystals into surrounding tissue</strong> as the deposits fragment</li>
+<li>Microcrystals trigger NLRP3 inflammasome activation in resident macrophages</li>
+<li>Result: paradoxical flare, <em>during</em> successful UA reduction</li>
+</ul>
+<p>The mechanism is identical to what <a href="../gout-deep-dive/"><code>gout-deep-dive.md</code></a> describes for allopurinol initiation. Standard-of-care during the first 3–6 months of ULT is concurrent anti-inflammatory prophylaxis (low-dose colchicine 0.5–0.6 mg/day, low-dose NSAID, or prednisone 5–10 mg/day) per ACR 2020. <em>[Clinical Trial — guideline]</em></p>
+<h3 id="why-the-gene-therapy-version-is-harder-than-ult-initiation">Why the gene-therapy version is harder than ULT initiation<a class="headerlink" href="#why-the-gene-therapy-version-is-harder-than-ult-initiation" title="Permanent link">&para;</a></h3>
+<p>ULT titration produces a gradual UA drop over weeks. Gene therapy produces a step-function: pre-treatment serum UA → near-zero (or wild-type-mammal allantoin levels) within days of stable transgene expression. Dissolution rate is proportional to (deposit saturation − serum UA), so the gene-therapy delta makes dissolution faster and microcrystal release more concentrated. Clinical trial flare rates during ULT initiation already run ~25–40% in the first 3 months without prophylaxis; the post-CRISPR equivalent without a comparable bridge protocol could plausibly exceed 50%. <em>[Mechanistic Extrapolation]</em></p>
+<h3 id="bridge-protocol-proposed">Bridge protocol — proposed<a class="headerlink" href="#bridge-protocol-proposed" title="Permanent link">&para;</a></h3>
+<p>Mandatory co-administered prophylaxis as part of the post-therapy regimen:</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Duration</th>
+<th>Prophylaxis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acute (peak dissolution)</td>
+<td>Months 0–3</td>
+<td>Colchicine 0.6 mg/day OR low-dose prednisone 5–10 mg/day, per patient tolerance and drug-interaction profile (see <a href="../colchicine/"><code>colchicine.md</code></a> §5.2 for the interaction surface)</td>
+</tr>
+<tr>
+<td>Sub-acute</td>
+<td>Months 3–12+</td>
+<td>Continued NLRP3-pathway suppression at lower intensity. Engineered koji or NLRP3 supplement stack acceptable; the gut-lumen-sink concerns in <a href="../supplements-stack/"><code>supplements-stack.md</code></a> §1 are less relevant post-CRISPR (systemic uricase replaces the gut-lumen-sink dependency)</td>
+</tr>
+<tr>
+<td>Long-tail</td>
+<td>Imaging-keyed</td>
+<td><strong>Duration keyed to dual-energy CT (DECT) confirmation of tophi resolution, not a fixed calendar window.</strong> Per Pass 3 review of synthesis 2026-04-27: tophi dissolution can run multi-year for patients with extensive baseline burden; prophylaxis should follow the imaging, not the calendar.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="trial-design-implications">Trial-design implications<a class="headerlink" href="#trial-design-implications" title="Permanent link">&para;</a></h3>
+<p>Any future Phase &frac12; CRISPR-uricase trial protocol must include:</p>
+<ol>
+<li><strong>Mandatory co-administered prophylaxis</strong> — not "may consider," part of the active intervention.</li>
+<li><strong>DECT imaging at baseline and longitudinal follow-up</strong> to track tophi dissolution.</li>
+<li><strong>Flare endpoints alongside UA endpoints</strong> as primary outcomes, not just secondary safety signals.</li>
+<li><strong>Stratification by tophus burden at baseline</strong> — patients with extensive tophaceous gout may need 18–24+ months of prophylaxis vs. 3–6 months for those without visible deposits.</li>
+</ol>
+<h3 id="implication-for-the-open-enzyme-platform">Implication for the <a href="../open-enzyme-vision/">Open Enzyme</a> platform<a class="headerlink" href="#implication-for-the-open-enzyme-platform" title="Permanent link">&para;</a></h3>
+<p>This positions the project's NLRP3 supplement-stack and engineered-koji work as <strong>directly relevant to gene-therapy translation</strong>, not just as a parallel track. Even if CRISPR-uricase advances to clinical use, the NLRP3 prophylaxis arm has a defined role in the post-therapy bridge — extending the platform's relevance into a regulatory pathway it doesn't directly enter.</p>
 <hr />
 <h2 id="the-technical-pieces-are-falling-into-place">The Technical Pieces Are Falling Into Place<a class="headerlink" href="#the-technical-pieces-are-falling-into-place" title="Permanent link">&para;</a></h2>
 <table>
