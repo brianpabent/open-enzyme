@@ -7,7 +7,12 @@ status: published
 
 # Open Enzyme: Founding Vision
 
-An open source library of food-grade, engineered microbial strains — each producing a therapeutic enzyme, each growable at home, each freely available to anyone.
+Two parallel outputs of one project:
+
+- **A discovery engine** — a chokepoint-based methodology for mapping every vector that causes, treats, or mitigates a given disease, applied first to gout. Produces a structured cascade map plus a repurposing surface (FDA-approved drugs that hit relevant chokepoints but were never clinically tested for the target disease).
+- **An open-source library of food-grade, engineered microbial strains** — each producing a therapeutic enzyme, each growable at home, each freely available to anyone. The library is one synthesis from the discovery engine; the engineered-koji platform converged from the gout vector mapping.
+
+The library is the more visible artifact. The discovery engine is the more transferable contribution. Both deserve to be named.
 
 **By:** Brian Abent  
 **Date:** April 2026  
@@ -32,7 +37,53 @@ These aren't problems of understanding. The enzymes are well-characterized. The 
 
 ---
 
-## 2. The Insight
+## 2. The Discovery Methodology
+
+The project began not as a koji proposal but as a question: *what are all the vectors that cause, treat, or mitigate gout?* Applied systematically — across causation upstream of urate, urate flow itself, deposition, immune recognition, NLRP3 priming and activation, downstream amplification, and resolution — the question produced two artifacts that the rest of this document depends on.
+
+### 2.1 The chokepoint structure
+
+Gout pathophysiology resolves into a sequence of named chokepoints, each with characterized inputs and downstream consequences. The current map ([`nlrp3-exploit-map.md`](nlrp3-exploit-map.md)) names eleven:
+
+| Chokepoint | Layer |
+|---|---|
+| CP0 | Crystal-triggered priming via complement C5a |
+| CP1a | NF-κB transcriptional priming (TNFSF14/LIGHT amplifier) |
+| CP1b | Non-transcriptional C5a → ROS priming |
+| CP2 | P2X7-mediated K⁺ efflux |
+| CP3 | ASC speck assembly |
+| CP4 | Caspase-1 activation |
+| CP5a | IL-1β / IL-18 receptor blockade |
+| CP5b | Active resolution via ALX/FPR2 (RvD1, RvD2, MaR1, lactoferrin) |
+| CP6a | 5-LOX → LTB4 → neutrophil chemotaxis |
+| CP6b | GSDMD pore formation, pyroptotic IL-1β release |
+| Upstream | Urate flow — production (xanthine oxidase), transport (URAT1, ABCG2), deposition (MSU) |
+
+Every intervention — pharmaceutical, supplement, food, microbial, behavioral — maps onto one or more of these chokepoints.
+
+### 2.2 The repurposing surface
+
+Mapping FDA-approved drugs onto the chokepoints surfaces compounds that hit a gout chokepoint but were never clinically tested for gout. Three concrete examples currently in the wiki:
+
+- **Zileuton** (CP6a 5-LOX inhibitor) — FDA-approved for asthma since 1996. Documented at [`zileuton.md`](zileuton.md).
+- **Disulfiram** (CP6b GSDMD inhibitor) — FDA-approved for alcohol use disorder since 1951. Documented at [`disulfiram.md`](disulfiram.md).
+- **Avacopan** (CP0 C5aR1 antagonist) — FDA-approved for ANCA-associated vasculitis in 2021. Documented at [`complement-c5a-gout.md`](complement-c5a-gout.md).
+
+Each has decades (or in the avacopan case, recent regulatory) of human safety data. Each is mechanistically aligned to a gout chokepoint. None has been clinically tested in gout. The methodology surfaces them as repurposing candidates; the project doesn't have to engineer them. The discovery output is independent of and parallel to the strain library.
+
+### 2.3 Where koji emerged from this
+
+The engineered-koji platform thesis (next section) is **one synthesis** from these two artifacts — the vector that simultaneously hits CP1a (kojic acid → NF-κB), supports CP3 disruption (ergothioneine → Nrf2 → likely ABCG2 induction, currently a testable hypothesis), supplies CP6a substrate competition (ferulic acid), and sits in a GRAS food chassis. It is not the only synthesis the artifacts produce; the repurposing trio above is another. The peptide gout addendum (KPV, BPC-157, TB-500) is a third. Each is a distinct downstream output of the chokepoint mapping.
+
+### 2.4 How the methodology emerged
+
+This wasn't pre-planned. It emerged from the AI-assisted research workflow: each conversation with Claude that proposed a new mechanism or compound triggered the question "where does this hit in the cascade?" Over weeks, the chokepoint structure consolidated as a stable scaffold. The propagate → synthesize → critique sweep daemon institutionalized the discipline — every new finding gets evaluated against the existing chokepoint structure, and every chokepoint with new evidence gets re-evaluated against existing findings. The structure is the product of the workflow.
+
+The methodology generalizes. The same question structure — *what are all the vectors that cause, treat, or mitigate this disease?* — applied to any disease with a known molecular pathway produces an analogous chokepoint scaffold. EPI (the project's second target) was approached the same way: vectors for digestion, GRAS chassis with native enzymes, koji as the natural multi-enzyme synthesis. Future targets in the library would extend the same scaffold rather than re-derive a new one for each disease.
+
+---
+
+## 3. The Insight
 
 The organisms we need are already in our kitchens. *Aspergillus oryzae* (koji mold) has been used in East Asian food production for over a thousand years. *Saccharomyces cerevisiae* (brewer's yeast) has been baking bread and fermenting beer for millennia. Both hold GRAS (Generally Recognized As Safe) status from the FDA. Both are among the most genetically tractable organisms on Earth, with decades of established transformation protocols and industrial-scale use.
 
@@ -42,7 +93,7 @@ Genetic engineering of *S. cerevisiae* is undergraduate coursework. Transformati
 
 ---
 
-## 3. The Platform Vision
+## 4. The Platform Vision
 
 Open Enzyme is an open source library of engineered microbial strains. Each strain addresses a specific enzyme deficit. Each is built in a food-safe (GRAS) host organism. Each comes with everything needed to reproduce it: the gene construct, transformation protocol, fermentation instructions, dosing math, and safety data.
 
@@ -93,7 +144,7 @@ The Year 2-3 target is the **koji endgame strain** (see [wiki/koji-endgame-strai
 
 ---
 
-## 4. First Targets
+## 5. First Targets
 
 ### Uricase — Gout (Active Development)
 
@@ -122,7 +173,7 @@ Each represents a well-characterized enzyme deficit with a known gene and a feas
 
 ---
 
-## 5. The Science That Makes This Real
+## 6. The Science That Makes This Real
 
 Every claim in this document traces to established, published science. This isn't speculative biology — it's an integration play, assembling known, validated components into a new configuration. Here is the evidence base:
 
@@ -152,7 +203,7 @@ Both organisms have decades of established transformation protocols. *S. cerevis
 
 ---
 
-## 6. The Team
+## 7. The Team
 
 ### Brian Abent — Platform / Engineering (Founder)
 
@@ -182,7 +233,7 @@ Expertise needed: innate immune responses in gut epithelium, TLR signaling, path
 
 ---
 
-## 7. How It Works
+## 8. How It Works
 
 The end-to-end flow from identifying a deficit to producing a functional, food-grade therapeutic enzyme:
 
@@ -212,7 +263,7 @@ graph TD
 
 ---
 
-## 8. Cost Reality
+## 9. Cost Reality
 
 A single IV dose of rasburicase costs approximately $5,000–8,000 at US hospital pricing. The total project cost to engineer a new strain from scratch:
 
@@ -229,7 +280,7 @@ A single IV dose of rasburicase costs approximately $5,000–8,000 at US hospita
 
 ---
 
-## 9. The Multi-Attack Strategy
+## 10. The Multi-Attack Strategy
 
 For the founding use case (Brian's gout), the project isn't just "make uricase." Gout is a cascade: uric acid accumulates, crystallizes in joints, triggers the NLRP3 inflammasome, which drives the acute inflammatory attack. A comprehensive strategy addresses multiple points in the cascade simultaneously:
 
@@ -257,7 +308,7 @@ This multi-vector approach reflects an engineering mindset: don't bet on a singl
 
 ---
 
-## 10. Principles
+## 11. Principles
 
 - **Open source everything.** No patents on strains, constructs, or protocols. The point is accessibility. If this works, it should be available to every gout patient, every person with EPI, every family managing PKU — not locked behind intellectual property walls.
 
@@ -271,7 +322,7 @@ This multi-vector approach reflects an engineering mindset: don't bet on a singl
 
 ---
 
-## 11. What This Is Not
+## 12. What This Is Not
 
 - **Not a company** (at least not yet). This is a passion project born from personal necessity, built in the open. If it grows into something larger, it will be because the science worked and the community demanded it — not because of a business plan.
 
@@ -283,7 +334,7 @@ This multi-vector approach reflects an engineering mindset: don't bet on a singl
 
 ---
 
-## 12. Related Work & Complementary Projects
+## 13. Related Work & Complementary Projects
 
 Open Enzyme operates in an active research neighborhood. The following are programs and tools that complement or parallel this work — **not competitors**. Open Enzyme is open source; we benefit from every validated data point these groups publish. Where there is overlap (e.g., *C. utilis* uricase work), we learn from their engineering. Where there is divergence (e.g., systemic IV vs. gut-lumen enzymatic), we cover chokepoints they don't reach, and vice versa.
 
@@ -305,7 +356,7 @@ Open Enzyme operates in an active research neighborhood. The following are progr
 
 ---
 
-## 13. Existing Research Library
+## 14. Existing Research Library
 
 The following research documents form the evidence base and technical foundation for the Open Enzyme project. Each was produced as a deep-dive into a specific aspect of the problem:
 
