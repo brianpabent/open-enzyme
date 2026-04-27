@@ -59,6 +59,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[BHB / Ketones](wiki/bhb-ketones.md)** — Hits 3 of 7 NLRP3 chokepoints (CP1, CP2, CP3); endogenous via fasting/keto; may be more impactful than any single peptide
 - **[Oridonin](wiki/oridonin.md)** — Natural NLRP3 inhibitor; covalent NACHT domain Cys279 binding; traditional medicine origin
 - **[Disulfiram](wiki/disulfiram.md)** — Gasdermin D blocker (Antabuse); repurposed drug; CP6b in v1.2 NLRP3 map
+- **[Colchicine](wiki/colchicine.md)** — Tropolone alkaloid; dual-hit NLRP3 disruptor: CP3 (ASC speck via microtubule depolymerization) + CP2 (P2X7 pore block); AGREE trial low-dose regimen; COLCOT/LoDoCo2 cardiovascular repositioning; Lodoco FDA 2023; narrow therapeutic index; CYP3A4/P-gp interaction surface
 - **[EGCG](wiki/egcg.md)** — Green tea catechin; 20S proteasome 86 nM (ChEMBL); unifies CP1a (IκBα) + CP4 (caspase-1) + CP5 (IL-1β) via single mechanism
 - **[Lactoferrin](wiki/lactoferrin.md)** — Single protein, four-chokepoint coverage (CP1a/CP4/CP6b/CP5b); fermentable in *A. oryzae* (Ward 1992 25 mg/L → Ward 1995 >2 g/L *A. awamori*); Year 2-3 engineering target
 - **[Zileuton](wiki/zileuton.md)** — FDA-approved 5-LOX inhibitor (asthma); perfect CP6a mechanism match; zero ClinicalTrials.gov gout entries — latent repurposing candidate

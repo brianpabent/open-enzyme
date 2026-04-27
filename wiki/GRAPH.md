@@ -83,6 +83,7 @@ graph TB
         J2["Disulfiram"]
         J3["ASC Block"]
         J4["Gasdermin D Block"]
+        J5["Colchicine — CP2 P2X7 + CP3 ASC speck"]
     end
 
     subgraph Parallel_Path["PARALLEL FLARE PATHWAYS (CP6a)"]
@@ -238,6 +239,10 @@ graph TB
     J1 --> C2
     J2 --> J4
     J2 --> C2
+    %% Colchicine: dual-hit CP2 (P2X7 pore block) + CP3 (microtubule-mediated ASC transport block)
+    %% (source: colchicine.md; Leung 2015 PMID 26228647; Misawa 2013 PMID 23502856)
+    J5 -->|"P2X7 pore block (CP2)"| C2
+    J5 -->|"microtubule depolymerization blocks ASC transport (CP3)"| C3
     
     %% Metabolic modulation
     K1 --> K2

@@ -51,7 +51,7 @@ Source: ClinicalTrials.gov via the Anthropic life-sciences MCP; regulatory statu
 | Canakinumab (Ilaris) | IL-1β (mAb) | **FDA approved August 2023 for gout** — first biologic indication | Novartis; previously approved for CAPS/JIA. *J Inflamm Res* 2026 (PMID: 41867470). |
 | Anakinra (Kineret) | IL-1 receptor antagonist | Off-label for gout | 2018 Sobi trial (NCT03002974) showed non-inferiority to triamcinolone |
 | Rilonacept (Arcalyst) | IL-1 trap | Rejected 2012 for gout | Recent Regeneron Phase 3 (NCT00856206) in 1,315 patients — demonstrated efficacy but FDA declined |
-| Colchicine | β-tubulin (ASC speck block) | Generic | Narrow therapeutic window; CP3 of NLRP3 pathway |
+| Colchicine | β-tubulin (CP3 ASC speck block) + P2X7 pore (CP2) | Generic | Narrow therapeutic index (~3–5×); CYP3A4/P-gp interaction surface; AGREE trial low-dose regimen; COLCOT/LoDoCo2 CV repositioning; Lodoco FDA 2023. See [colchicine.md](./colchicine.md). |
 | NSAIDs | COX-1/2 | Generic | Symptomatic only |
 
 **Implication for Open Enzyme:** Pegloticase + methotrexate (Amgen/Horizon Krystexxa+MTX) and canakinumab are the "biologics" standard-of-care for refractory/hard-to-treat gout. Both are expensive and IV/SC. The oral, food-derived positioning (engineered koji as adjunct to allopurinol) avoids direct competition with these.
