@@ -134,6 +134,18 @@ When the desired sweetness is reached, **heat briefly to 80°C to deactivate enz
 
 **Evidence level:** Traditional / folk practice with Japanese clinical literature on amazake's effects on gut microbiota and metabolic markers (multiple papers; modest effect sizes). Not a substitute for prescribed PERT in clinically diagnosed EPI.
 
+### Drug-interaction warning: disulfiram + residual ethanol
+
+A "failed" amazake or shio-koji batch — wild-yeast contamination, missed 80°C inactivation, extended hold at sweet-stage temperature — can ferment past glucose into ethanol (1–3% in worst cases). For anyone taking [disulfiram](./disulfiram.md) (Antabuse), even sub-percent ethanol is enough to trigger the acetaldehyde reaction (flushing, tachycardia, hypotension, severe nausea).
+
+**Routine precaution if disulfiram is in the stack:**
+
+1. **Pre-screen every batch with consumer ethanol test strips** (~$15 for a strip pack; detection ±0.1% v/v). Test the finished amazake or shio-koji liquid before consuming.
+2. **Discard any batch reading >0.1%.** Do not "cook off" — disulfiram users should not rely on volatilization for safety.
+3. **Validation/edge cases:** send suspect batches to a lab for gas chromatography ($30–80 per sample) only when test strips are ambiguous or the reaction profile (flushing on what should be a clean batch) suggests sub-strip ethanol.
+
+This is the same risk surface as kombucha for disulfiram users — see [disulfiram.md](./disulfiram.md) for the full interaction table.
+
 ---
 
 ## Stage 2C: Koji rice → miso (long-term aging)

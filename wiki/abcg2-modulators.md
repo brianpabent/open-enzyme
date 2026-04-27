@@ -197,6 +197,8 @@ This is mechanistically a stronger lever in Q141K carriers than wild-type carrie
 
 A pharmacogenomic-stratified RCT of fermentable fiber (or sodium butyrate enteric capsules) on serum UA, stratified by Q141K genotype, would either confirm or falsify this prediction. Cost-effective experiment for the platform's "differential responder" question.
 
+**Population-frequency caveat for trial design.** Q141K allele frequency varies substantially by ancestry — published GWAS report ~30–50% in East Asian gout cohorts but only ~10–15% in European-ancestry cohorts (some series lower). The "30–50% of gout patients" figure is correct for an East-Asian-majority cohort but overstates the carrier fraction in a European-American sample. A pharmacogenomic fiber trial should pre-specify population and powering — and, given that Q141K homozygotes are predicted to show the largest effect size, including a homozygous arm (where feasible) gives the cleanest signal-to-noise even at modest n. This framing is not "fiber for everyone with gout" — it's **dual-action butyrate as a personalized intervention for Q141K-positive gout patients, with effect size scaling by allele dose**.
+
 ---
 
 ## Tissue selectivity matters

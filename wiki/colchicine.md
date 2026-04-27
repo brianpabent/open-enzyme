@@ -91,6 +91,16 @@ This positions colchicine at **CP3** in the [NLRP3 exploit map](nlrp3-exploit-ma
 
 This positions colchicine at **CP2** as well — it is a **dual-hit on the NLRP3 axis**, not a single-mechanism drug. The dual-hit framing matters because it explains why colchicine works at low doses where other CP3-only or CP2-only inhibitors might not: simultaneous disruption at two upstream chokepoints.
 
+### 3.3.1 Stacking logic with other CP2/CP3 modulators
+
+Colchicine sits at CP2 (P2X7) and CP3 (ASC speck), but the practical question for stack design is which other compounds *add* to it vs. *overlap* with it. Re-reading [`nlrp3-exploit-map.md`](nlrp3-exploit-map.md) against §3.1–3.3 above:
+
+- Colchicine's **primary** mechanism is tubulin-binding (microtubule disruption), which blocks ASC speck trafficking and neutrophil chemotaxis. That puts it more cleanly at **CP3 with secondary effects at CP6** (chemotaxis-driven neutrophil amplification) than at CP2.
+- **BHB at CP2** acts via K⁺ efflux inhibition (HCAR2 / β-arrestin signaling) — an upstream node that colchicine doesn't touch. BHB + colchicine is plausibly **additive**.
+- **Spermidine at CP3** overlaps colchicine's mechanism more directly (both interfere with ASC oligomerization / speck assembly), so the stack is more likely **redundant** than synergistic.
+
+**The stacking logic differs per pair; a one-size answer is unlikely.** Anyone layering colchicine with other CP2/CP3 modulators should ask, per pair, whether the second compound hits an *upstream* node (additive) or the same node (redundant). See [`nlrp3-exploit-map.md`](nlrp3-exploit-map.md) for the chokepoint topology.
+
 ### 3.4 Other immunomodulatory effects
 
 - **Neutrophil chemotaxis**: microtubule-dependent migration to inflamed joints is impaired. Crystal-loaded neutrophils still arrive but fewer of them.

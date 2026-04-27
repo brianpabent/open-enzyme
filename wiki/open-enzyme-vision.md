@@ -63,13 +63,16 @@ Every intervention — pharmaceutical, supplement, food, microbial, behavioral �
 
 ### 2.2 The repurposing surface
 
-Mapping FDA-approved drugs onto the chokepoints surfaces compounds that hit a gout chokepoint but were never clinically tested for gout. Three concrete examples currently in the wiki:
+Mapping FDA-approved drugs onto the chokepoints surfaces compounds that hit a gout chokepoint but were never clinically tested for gout. Concrete examples currently in the wiki:
 
 - **Zileuton** (CP6a 5-LOX inhibitor) — FDA-approved for asthma since 1996. Documented at [`zileuton.md`](zileuton.md).
 - **Disulfiram** (CP6b GSDMD inhibitor) — FDA-approved for alcohol use disorder since 1951. Documented at [`disulfiram.md`](disulfiram.md).
 - **Avacopan** (CP0 C5aR1 antagonist) — FDA-approved for ANCA-associated vasculitis in 2021. Documented at [`complement-c5a-gout.md`](complement-c5a-gout.md).
+- **DPP-4 inhibitor class** (gliptins — sitagliptin, linagliptin, etc., FDA-approved for type 2 diabetes since 2006) — the ChEMBL cross-check on resveratrol surfaced DPP-4 as resveratrol's most-potent curated direct target ([`chembl-cross-check.md`](chembl-cross-check.md)). DPP-4 is mechanistically relevant to gout via incretin/insulin-axis effects on urate handling and the metabolic-syndrome–gout comorbidity surface. Approved DPP-4 inhibitors are off-target candidates for the same axis; never trialled in gout.
 
-Each has decades (or in the avacopan case, recent regulatory) of human safety data. Each is mechanistically aligned to a gout chokepoint. None has been clinically tested in gout. The methodology surfaces them as repurposing candidates; the project doesn't have to engineer them. The discovery output is independent of and parallel to the strain library.
+Each has decades (or in the avacopan case, recent regulatory) of human safety data. Each is mechanistically aligned to a gout chokepoint. None has been clinically tested in gout. **None of these candidates require Open Enzyme to build anything** — they are pure discovery-engine output and represent a zero-engineering path to impact, parallel to and independent of the strain library. The methodology surfaces them; the project's contribution is the systematic mapping that identifies them as candidates.
+
+This recurring pattern (FDA-approved drug, mechanism-matched to a gout chokepoint, never clinically tested in gout) is itself a signal that the chokepoint-based discovery methodology has identifiable surface area beyond strain engineering — a strategic asset of the platform's overall contribution.
 
 ### 2.3 Where koji emerged from this
 

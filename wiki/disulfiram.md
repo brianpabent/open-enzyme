@@ -136,6 +136,7 @@ Disulfiram requires a prescription. Access strategies:
 
 **Stack-level safety note — fermented foods:**
 - **Kombucha and koji-fermented foods** may contain residual ethanol that could trigger reaction in disulfiram-sensitive patients. Practical limit: dietary intake of well-fermented foods at typical portion sizes is generally below the threshold but is patient-specific. Disulfiram users should avoid kombucha entirely and treat any koji-derived fermented foods as a per-batch ethanol-content question.
+- **Home-fermented amazake / shio-koji:** wild-yeast contamination of a "failed" batch can push residual ethanol to 1–3% v/v. Disulfiram users running the [koji home-fermentation protocol](./koji-home-fermentation.md) should pre-screen every finished batch with consumer ethanol test strips (~$15, ±0.1% v/v) before consumption and discard any batch reading >0.1%. Do not rely on cook-off / volatilization — see the "Drug-interaction warning" subsection in koji-home-fermentation.md for the routine precaution.
 - **Hepatotoxicity stacking concern with EGCG, high-dose curcumin, acetaminophen:** all four contribute to hepatic stress; layering is a relative contraindication.
 
 (source: supplements-stack.md)
