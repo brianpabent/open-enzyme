@@ -55,6 +55,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§3.7](#37-brian-serum-c5a-baseline--week-12--validating-cp0-complement-priming-status) | Brian: serum C5a baseline + week 12 (CP0) | Human | $300–400 | 12 | Proposed | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 | [§3.8](#38-brian-dha-vs-epa-split-omega-3-crossover--resolving-the-gout-specific-spm-precursor-question) | Brian: DHA vs. EPA omega-3 crossover | Human | $550–700 | 9 | Proposed | [spm-resolution-pathway](./spm-resolution-pathway.md), [supplements-stack](./supplements-stack.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 | [§3.9](#39-brian-zileuton-off-label-trial--pharma-grade-cp6a-inhibition-in-flare-prevention-protocol) | Brian: zileuton off-label CP6a trial | Human | ~$500 | 16 | Proposed | [zileuton](./zileuton.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md) |
+| [§3.10](#310-brian-fructose-challenge-test-as-acute-n1-uricase-efficacy-readout) | Brian: fructose challenge test (acute n=1 uricase readout) | Human | ~$50 | 0.1 + 4 wk gap | Proposed | [fructose-connection](./fructose-connection.md), [self-experiment-protocol](./self-experiment-protocol.md), [synthesis](./synthesis.md) |
 
 ---
 
@@ -884,6 +885,46 @@ A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FI
 - **Negative result (no flare reduction despite LTB4 drop)** is also informative: suggests LTB4/neutrophil-chemotaxis is not rate-limiting for Brian's flare biology, and colchicine's mechanism (microtubule → chemotaxis) is doing more work than expected.
 
 **Cross-references:** `wiki/zileuton.md` (to be created), `wiki/gout-clinical-pipeline.md` (mechanistic gap entry), `wiki/nlrp3-exploit-map.md` (CP6a), `wiki/self-experiment-protocol.md` (integration with existing protocol)
+
+---
+
+### 3.10 Brian: Fructose Challenge Test as Acute n=1 Uricase Efficacy Readout
+
+**Status**: Proposed | **Cost**: ~$50 | **Weeks**: 0.1 per run (single 2-hour session); ~4 wk gap between baseline and post-intervention | **Phase**: 3
+
+**Affected wiki**: [fructose-connection](./fructose-connection.md), [self-experiment-protocol](./self-experiment-protocol.md), [synthesis](./synthesis.md), [open-enzyme-vision](./open-enzyme-vision.md)
+
+**What it tests:** Whether engineered uricase is active in the gut in real-time, using a fructose bolus as a predictable acute UA challenge. Per [fructose-connection.md](./fructose-connection.md), oral fructose loads generate a serum UA spike within 60–120 min via the unregulated KHK pathway. A blunted post-fructose UA spike after starting koji therapy directly validates uricase action in the gut — without waiting weeks for baseline UA to drift on chronic monitoring.
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-27 Proposed Experiment #1 (sweep on commit `b7df491`). Pass 3 review: highest insight-per-dollar experiment in the queue, elevated to Priority Action status. Within-subject before/after design controls for most confounders (genetics, kidney function, baseline diet) — the only systematic variable changing between runs is the koji intervention.
+
+**Protocol:**
+- **Subject:** Brian (n=1).
+- **Pre-load conditions:** 8-hour fasted; baseline UA established (UASure home meter or equivalent, **duplicate readings at each timepoint** per Pass 3 review to manage UASure CV ~10–15%).
+- **Challenge:** 50 g fructose load (oral) — standardized matrix (water-dissolved); record exact dose and dissolution medium.
+- **Sampling:** Fingerstick UA at t = 0, 30, 60, 90, 120 minutes. Duplicate at each timepoint. Record peak UA delta from baseline.
+- **Run #1 (baseline):** Before any engineered-koji intervention. Establishes Brian's individual fructose-induced UA spike profile under current stack.
+- **Run #2 (post-intervention):** After ≥4 weeks of stable koji therapy (engineered when available; wild-type baseline as interim per the multi-vendor metabolite campaign). Same protocol exactly.
+- **Optional Run #3 (washout):** Off-koji washout after the post-intervention run to confirm reversibility (rules out baseline drift or concurrent variable shifts).
+
+**Estimated cost:** ~$50 — UASure meter ~$25, strips ~$15 for the panel (10 readings × 2 runs = 20 strips minimum), fructose ~$5, miscellaneous.
+
+**Estimated timeline:** 2 hours per session; ~4 weeks elapsed between baseline and post-intervention runs (matches stable plateau on a new koji regimen).
+
+**Dependencies:** No specialized lab access. Self-administered. Slots cleanly into the operational backlog tracked separately on the personal-health side.
+
+**Success criteria:**
+- **Validates engineered uricase activity:** post-intervention UA spike at t = 60–90 min is ≥30% reduced vs. baseline run, with the koji intervention as the only changed variable. Effect size scales with how much of the fructose-derived urate is degraded by gut-lumen uricase before systemic absorption.
+- **Null result:** spike unchanged. Possible interpretations: insufficient uricase expression / activity, fructose absorbs faster than uricase can degrade the resulting urate, or the koji format isn't delivering active enzyme to the lumen. Triages next experimental questions (e.g., §1.10 stability, §1.6 enzyme survival).
+- **Adverse:** spike worsens — suggests run-to-run variance dominated by other factors. Add additional baseline runs to characterize variance before re-interpreting.
+
+**Caveats and confounds:**
+- UASure CV ~10–15% — duplicate readings + ≥30% effect-size threshold helps separate signal from noise.
+- Brian's clomid taper is in flight (UA mobilization risk during T transition). Schedule the runs to either bracket or sit firmly inside one phase of that taper to avoid confounding.
+- Hydration status confounds UA: standardize water intake (e.g., 500 mL on waking, no other fluids during the 2-hour window).
+- Recent flares within 4 weeks change baseline UA dynamics — defer until 4+ weeks post-flare.
+
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Proposed Experiment #1; [fructose-connection.md](./fructose-connection.md); [self-experiment-protocol.md](./self-experiment-protocol.md).
 
 ---
 

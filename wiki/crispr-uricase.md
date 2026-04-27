@@ -222,6 +222,52 @@ A one-time liver-directed gene therapy that permanently restores uricase express
 
 ---
 
+## Post-Therapy Management — The Dissolution-Flare Bridge
+
+A one-shot CRISPR-uricase cure does not eliminate the urate-mobilization problem. Patients with established gout carry months-to-years of accumulated tophaceous urate that begins dissolving as soon as serum UA drops. The same "dissolution-flare danger window" that haunts allopurinol/febuxostat initiation applies — except gene therapy produces a much sharper UA drop than titrated ULT, potentially making the flare risk *worse*, not better. *[Mechanistic Extrapolation, anchored on well-documented ULT-initiation flare data]*
+
+**This is not an optional adjunct. NLRP3-pathway prophylaxis is part of the therapeutic protocol.**
+
+### The dissolution-flare mechanism
+
+Existing tophi (subcutaneous, articular, renal interstitial) are crystalline urate deposits in equilibrium with serum. Lower the serum UA below the deposit's saturation point and the deposits begin redissolving. The dissolution releases:
+
+- Free urate back into circulation (transient — the now-functional uricase degrades it)
+- **MSU microcrystals into surrounding tissue** as the deposits fragment
+- Microcrystals trigger NLRP3 inflammasome activation in resident macrophages
+- Result: paradoxical flare, *during* successful UA reduction
+
+The mechanism is identical to what [`gout-deep-dive.md`](./gout-deep-dive.md) describes for allopurinol initiation. Standard-of-care during the first 3–6 months of ULT is concurrent anti-inflammatory prophylaxis (low-dose colchicine 0.5–0.6 mg/day, low-dose NSAID, or prednisone 5–10 mg/day) per ACR 2020. *[Clinical Trial — guideline]*
+
+### Why the gene-therapy version is harder than ULT initiation
+
+ULT titration produces a gradual UA drop over weeks. Gene therapy produces a step-function: pre-treatment serum UA → near-zero (or wild-type-mammal allantoin levels) within days of stable transgene expression. Dissolution rate is proportional to (deposit saturation − serum UA), so the gene-therapy delta makes dissolution faster and microcrystal release more concentrated. Clinical trial flare rates during ULT initiation already run ~25–40% in the first 3 months without prophylaxis; the post-CRISPR equivalent without a comparable bridge protocol could plausibly exceed 50%. *[Mechanistic Extrapolation]*
+
+### Bridge protocol — proposed
+
+Mandatory co-administered prophylaxis as part of the post-therapy regimen:
+
+| Phase | Duration | Prophylaxis |
+|---|---|---|
+| Acute (peak dissolution) | Months 0–3 | Colchicine 0.6 mg/day OR low-dose prednisone 5–10 mg/day, per patient tolerance and drug-interaction profile (see [`colchicine.md`](./colchicine.md) §5.2 for the interaction surface) |
+| Sub-acute | Months 3–12+ | Continued NLRP3-pathway suppression at lower intensity. Engineered koji or NLRP3 supplement stack acceptable; the gut-lumen-sink concerns in [`supplements-stack.md`](./supplements-stack.md) §1 are less relevant post-CRISPR (systemic uricase replaces the gut-lumen-sink dependency) |
+| Long-tail | Imaging-keyed | **Duration keyed to dual-energy CT (DECT) confirmation of tophi resolution, not a fixed calendar window.** Per Pass 3 review of synthesis 2026-04-27: tophi dissolution can run multi-year for patients with extensive baseline burden; prophylaxis should follow the imaging, not the calendar. |
+
+### Trial-design implications
+
+Any future Phase 1/2 CRISPR-uricase trial protocol must include:
+
+1. **Mandatory co-administered prophylaxis** — not "may consider," part of the active intervention.
+2. **DECT imaging at baseline and longitudinal follow-up** to track tophi dissolution.
+3. **Flare endpoints alongside UA endpoints** as primary outcomes, not just secondary safety signals.
+4. **Stratification by tophus burden at baseline** — patients with extensive tophaceous gout may need 18–24+ months of prophylaxis vs. 3–6 months for those without visible deposits.
+
+### Implication for the [Open Enzyme](./open-enzyme-vision.md) platform
+
+This positions the project's NLRP3 supplement-stack and engineered-koji work as **directly relevant to gene-therapy translation**, not just as a parallel track. Even if CRISPR-uricase advances to clinical use, the NLRP3 prophylaxis arm has a defined role in the post-therapy bridge — extending the platform's relevance into a regulatory pathway it doesn't directly enter.
+
+---
+
 ## The Technical Pieces Are Falling Into Place
 
 | Component | Status | Evidence |
