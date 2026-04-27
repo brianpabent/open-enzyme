@@ -27,6 +27,8 @@ Dashboard view of all 23 experiments in the library. Sorted by phase then ID. De
 
 As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work has been executed yet; self-experiments have not started).
 
+> **#1 priority gate (elevated 2026-04-27 per synthesis Pass 3 review):** [§1.9 Ward 1995 dual-cassette feasibility test](#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) is the single gating experiment for the koji-endgame-strain thesis. If it fails, the single-strain endgame collapses to a two-strain co-fermentation fallback — significant operational consequences for dosing uniformity and home reproducibility. $3–5K / 8–12 weeks but extraordinarily high leverage given what it decides; should run before further investment in the single-strain architecture.
+
 | ID | Title | Category | Cost | Weeks | Status | Wiki refs |
 |----|-------|----------|------|-------|--------|-----------|
 | [§1.1](#11-uricase-gene-performance-comparison) | Uricase gene performance comparison | In Vitro | $2,000–3,000 | 4–6 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [uricase-variant-selection](./uricase-variant-selection.md), [uricase](./uricase.md), [codon-optimization-expression-cassette](./codon-optimization-expression-cassette.md) |
@@ -37,7 +39,8 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§1.6](#16-koji-enzyme-stability-at-digestive-ph-and-temperature) | Koji enzyme stability at digestive pH/temperature | In Vitro | $300–600 | 1–2 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md), [digestive-enzymes](./digestive-enzymes.md) |
 | [§1.7](#17-nlrp3-inflammasome-pathway-validation-thp-1-msu-macrophage-assay) | NLRP3 pathway validation (THP-1 MSU macrophage) | In Vitro | $5,000–8,000 | 8–10 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [egcg](./egcg.md) |
 | [§1.8](#18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a) | EGCG dose-escalation CP1a readout | In Vitro | $500–800 | 3–4 | Proposed | [egcg](./egcg.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
-| [§1.9](#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate) | Ward 1995 dual-cassette feasibility (koji endgame gate) | In Vitro | $3,000–5,000 | 8–12 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [lactoferrin](./lactoferrin.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md) |
+| [§1.9](#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) | **Ward 1995 dual-cassette feasibility (koji endgame gate)** — **#1 priority** | In Vitro | $3,000–5,000 | 8–12 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [lactoferrin](./lactoferrin.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md) |
+| [§1.10](#110-heterologous-uricase-stability-in-shio-koji-salt-protease-ferment) | Heterologous uricase stability in shio-koji ferment (gates dual-use thesis) | In Vitro | $400–800 | 3–4 | Proposed | [koji-home-fermentation](./koji-home-fermentation.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [synthesis](./synthesis.md) |
 | [§2.1](#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii) | Gnotobiotic mouse colonization (S. boulardii) | Animal | $5,000–15,000 | 8–12 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./team.md) |
 | [§2.2](#22-hyperuricemic-rat-model-engineered-yeast-efficacy) | Hyperuricemic rat model (yeast efficacy) | Animal | $8,000–12,000 | 6–8 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gout-deep-dive](./gout-deep-dive.md), [uricase](./uricase.md) |
 | [§2.3](#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model) | Engineered koji EPI model | Animal | $6,000–10,000 | 8–10 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md) |
@@ -294,7 +297,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 ---
 
-### 1.9 Ward 1995 Dual-Cassette Feasibility Test (Koji Endgame Strain Gate)
+### 1.9 Ward 1995 Dual-Cassette Feasibility Test (Koji Endgame Strain Gate) — #1 priority gate
 
 **Status**: Proposed | **Cost**: $3,000–5,000 | **Weeks**: 8–12 | **Phase**: 1
 
@@ -331,6 +334,41 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 - **Reject** (fall back to two-strain co-ferment per [koji-endgame-strain.md](./koji-endgame-strain.md) §4.1): lactoferrin <100 mg/L after two rounds of optimization, OR native metabolite program collapse (kojic acid down >50% vs. WT). The two-strain fallback preserves the coverage matrix at the cost of single-strain elegance.
 
 **Cross-references:** [koji-endgame-strain.md](./koji-endgame-strain.md) §3 (full protocol rationale + adjacent literature: Li 2024 PMID 39830075 multi-copy in *A. oryzae*, Wang 2023 PMID 37807677 multi-locus in *A. niger*), [engineered-koji-protocol.md](./engineered-koji-protocol.md) §16 (starting single-cassette lactoferrin module that this experiment ladders on top of), [lactoferrin.md](./lactoferrin.md) §7 (Open Enzyme feasibility bet), [synthesis.md](./synthesis.md) 2026-04-24 Connection 1.
+
+---
+
+### 1.10 Heterologous Uricase Stability in Shio-Koji Salt-Protease Ferment
+
+**Status**: Proposed | **Cost**: $400–800 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [koji-home-fermentation](./koji-home-fermentation.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [synthesis](./synthesis.md)
+
+**What it tests:** Does the 7–14 day shio-koji salt-protease ferment degrade engineered uricase produced by *A. oryzae*? Shio-koji's hallmark feature is active native subtilisin-family proteases at room temperature in 15–20% NaCl — this likely degrades any heterologous peptide payload (carnosine, KPV, BPC-157 — Connection #2 in synthesis 2026-04-27) and may plausibly degrade folded enzymes like uricase too, despite uricase being a ~34 kDa tetrameric folded protein with reasonable intrinsic stability. Resolves the "single highest-stakes open question for the shio-koji dual-use thesis" per Pass 3 review.
+
+**Proposed in:** `wiki/synthesis.md` 2026-04-27 Open Question #2 (sweep on commit `b7df491`). Gates the dual-use product concept that unifies the two project arms (Lynn's EPI track + Brian's gout track) into a single household condiment ([engineered-koji-protocol.md](./engineered-koji-protocol.md) §15).
+
+**Protocol:**
+- **Construct:** Use [engineered-koji-protocol.md](./engineered-koji-protocol.md) §6 single-cassette uricase strain. If engineered strain not yet available, run pilot with WT *A. oryzae* spiked with rasburicase as positive control at physiologically-relevant concentration.
+- **Ferment matrix:** Prepare shio-koji per [koji-home-fermentation.md](./koji-home-fermentation.md) standard protocol (15–20% NaCl, room temp 22–25°C). Run in parallel with two control matrices: (a) freshly harvested koji (no salt ferment), (b) amazake-style brief warm hold (55–60°C × 6h followed by RT storage) — heat hold partially inactivates proteases.
+- **Time-course sampling:** Aliquot at days 0, 3, 7, 10, 14. Freeze at −80 °C immediately after collection.
+- **Readouts:**
+  - Uricase activity: spectrophotometric UA-disappearance assay at 293 nm per [engineered-koji-protocol.md](./engineered-koji-protocol.md) §05 (quantitative).
+  - SDS-PAGE + anti-uricase Western blot: detects intact monomer (~34 kDa) vs. degradation products. Distinguishes "lost activity due to denaturation" from "lost activity due to proteolytic cleavage."
+  - Optional CD spectroscopy on extracted uricase: confirms tetramer fold preservation, useful if activity drops without obvious cleavage on Western.
+- **Salt-concentration sub-experiment:** Single-timepoint (day 7) panel at 5%, 10%, 15%, 20% NaCl. Determines the salt threshold at which protease activity drops faster than uricase stability — informs whether a low-salt shio-koji variant could preserve the dual-use format.
+
+**Estimated cost:** $400–800 — uricase activity assay reagents ($100–200), SDS-PAGE / Western antibodies and reagents ($200–400), shio-koji ingredients ($20–50), CD spectroscopy if outsourced ($100–200).
+
+**Estimated timeline:** 3–4 weeks — parallel with the active fermentation. Day-by-day sampling continues over the 14-day window; assay batches at days 0/3/7/10/14 are ~2 days each.
+
+**Dependencies:** No specialized lab access required beyond Western blot capability. Doable in a community biolab (Genspace NY, Counter Culture Labs Oakland) or as a small parallel run during the §1.9 Ward 1995 cassette work. Self-contained.
+
+**Success criteria:**
+- **Accept dual-use thesis** (engineer for shio-koji delivery is viable): >70% uricase activity retained at day 14 vs. day 0; intact monomer band on Western; no major degradation products.
+- **Iterate** (try lower-salt or shorter-ferment formats): 30–70% retention. Document the salt-time tradeoff and propose a modified format (e.g., shio-koji variant at 10% NaCl × 7 days).
+- **Reject shio-koji as a delivery format for uricase** (fall back to fresh koji, amazake, or lyophilized powder per synthesis 2026-04-27 Connection #2 review): <30% retention. Same logic extends to any peptide payload (carnosine, KPV, BPC-157).
+
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Open Question #2 + Connection #2; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §15 (the dual-use proposal this experiment gates); [koji-home-fermentation.md](./koji-home-fermentation.md) (shio-koji standard protocol); [aspergillus-oryzae.md](./aspergillus-oryzae.md) (native protease characterization).
 
 ---
 

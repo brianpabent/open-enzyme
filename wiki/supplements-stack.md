@@ -973,6 +973,17 @@ Detailed mechanism, primary citations, and tissue-selectivity discussion in [`ab
 
 > **Note:** Curcumin is not currently a separate entry in this catalog — it's flagged here because it is the prototypical functional ABCG2 inhibitor in this class, and is frequently stacked alongside the catalog compounds in real gout-supplement use. If curcumin is added in the future, it carries the same stack-contradiction flag as quercetin.
 
+**Risk-tier stratification** (added 2026-04-27 per synthesis Pass 3 review — "blanket warnings undermine compliance when the actual risk is genotype/dose-dependent"):
+
+| User profile | ABCG2 status | Risk tier | Practical implication |
+|---|---|---|---|
+| Q141K homozygote + androgen-suppressed (TRT / SERM / AAS) + high-dose flavonoid (>500 mg quercetin OR >600 mg EGCG OR >500 mg curcumin) | Triple-hit suppressed | **Highest concern** | Gut sink may be functionally closed during dose window. Pause inhibitor flavonoids until ABCG2-axis status is established; favor inducers (sulforaphane, fermentable fiber → butyrate per [abcg2-modulators.md](./abcg2-modulators.md) §6). |
+| Q141K heterozygote OR androgen-dominant (high-T, no SERM) + supplement-grade flavonoid | One axis suppressed + acute pharmacological inhibition | **High concern** | Meaningful gut-sink narrowing during the dose window. Time inhibitor flavonoids away from urate spikes (post-fructose meals, peri-flare). Acceptable with UA monitoring. |
+| Wild-type ABCG2 + supplement-grade flavonoid | Pharmacological inhibition only | **Moderate concern** | Net effect is dose- and chronicity-dependent. Watch UA trajectory after introduction; discontinue or down-titrate if UA rises. |
+| Any genotype + dietary-level flavonoid (onions, tea, turmeric, fermented soy at normal food portions) | Sub-Ki gut concentrations | **Minimal concern** | No restriction. Food-level intake is unlikely to be clinically significant for the gut sink. |
+
+Stratification matters because a blanket "avoid quercetin" message undermines compliance for the largest cohort (wild-type genotype, dietary intake) where the risk is essentially zero. The clinically meaningful signal concentrates in androgen-suppressed Q141K-positive readers at supplement-grade doses.
+
 **Practical inference for high-T or Q141K-positive readers:** avoid high-dose curcumin and quercetin acutely when the gut sink matters most (post-meal urate spikes, fructose challenges, peri-flare). Dietary-level intake (turmeric in food, onions, tea, fermented soy at normal portions) is unlikely to be clinically problematic; supplement-grade doses are the concern.
 
 **Counter-balancing inducers in the catalog (Tier 1 ABCG2 inducers per [abcg2-modulators.md](./abcg2-modulators.md)):**
