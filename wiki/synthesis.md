@@ -532,7 +532,7 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
    - *Suggested action:* Run a focused ChEMBL query on AKBA (and β-boswellic acid generally) for 5-LOX IC50. If AKBA is in the same 100–500 nM range as quercetin and binds at the same site, de-emphasize AKBA in favor of quercetin (cheaper, better-characterized, already in stack). If AKBA is at a distinct site (5-LOX has multiple binding pockets) or weaker, retain it for IKKβ but position it as a CP1 compound rather than a CP2/parallel-path compound.
    - **brian** do it
 
-   **✓ Actioned 2026-04-27 (deferred):** AKBA 5-LOX ChEMBL query needs the ChEMBL MCP server, which is not loaded in this session. Captured in [`open-questions.md`](./open-questions.md) as a pending audit item alongside the broader Tier-4 audit; will run as part of the next ChEMBL cross-check sweep (next refresh target 2026-07-24, or earlier if Brian schedules a manual pass).
+   **✓ Actioned 2026-04-27:** Picked up automatically by `.github/workflows/chembl-refresh.yml` Pass 2, which scans the wiki for compounds not yet in the cross-check baseline and queries ChEMBL for them. AKBA / boswellic acids are referenced in [`supplements-stack.md`](./supplements-stack.md) and [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md), so the next quarterly run (2026-07-01) will surface AKBA's curated 5-LOX bioactivity automatically. For an off-cycle answer, `workflow_dispatch` with note "AKBA 5-LOX comparison query" runs it now.
 
 ### Proposed Experiments (ranked by insight / cost)
 **brian** new wiki page for all proposed experiements starting with these. Categorize them appropriately and cross reference wiki pages that benefit from the experiment. For example if there is an open question on NLRP3, it should link to the experiment. 
@@ -565,7 +565,7 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
 1. **ChEMBL cross-check sweep on remaining stack compounds** (4 hours, $0, highest-leverage work). If 2–5 more reframings surface, this is the single most valuable rigor pass available for the whole knowledge base.
 2. **brian** do it
 
-   **✓ Actioned 2026-04-27 (deferred):** ChEMBL sweep on the remaining ~13 stack compounds (BHB, KPV, carnosine, ursolic, taurine, EGCG, sulforaphane, berberine, resveratrol, curcumin, ergothioneine, ferulic acid, kojic acid) requires the ChEMBL MCP server — not loaded in this session. Tracked in [`chembl-cross-check.md`](./chembl-cross-check.md) for the next quarterly refresh (2026-07-24 target).
+   **✓ Actioned 2026-04-27:** This is the work that `.github/workflows/chembl-refresh.yml` does on every quarterly run — re-query ChEMBL for every compound in [`chembl-cross-check.md`](./chembl-cross-check.md) plus auto-discover any new stack compounds since the last refresh, diff against baseline, and surface discrepancies. Cron `0 12 1 1,4,7,10 *`, dispatched via `scripts/chembl-refresh-prompt.md`. Next run: 2026-07-01. Off-cycle dispatch via `workflow_dispatch` if needed.
 
 ---
 
@@ -622,7 +622,7 @@ Cost: $0.21 for the peer-review pass — 4× cheaper than the assessment estimat
    - *Suggested action:* Run a targeted literature audit of each Tier-4 compound: "(compound name) + MSU + gout + animal model" across PubMed, bioRxiv, and ChEMBL-indexed papers (use `mcp__plugin_pubmed_PubMed__search_articles` + `mcp__plugin_biorxiv_bioRxiv__search_preprints` — cheap, 1 day). Promote anything with direct MSU data. This is a $0 correction pass that could surface 1–3 more re-rankings.
    - **brian** do it
 
-   **✓ Actioned 2026-04-27:** Captured in [`open-questions.md` §"Tier-4 inhibitor screen — missed gout-model data"](./open-questions.md#tier-4-inhibitor-screen--missed-gout-model-data). Pending audit — needs PubMed/bioRxiv MCP access (not loaded in this session) for the actual literature pass; logged for the next sweep cycle. Sulforaphane already promoted on Nrf2 grounds, so the audit covers limonene, alpha-pinene, omega-3 metabolites, EGCG/curcumin variants.
+   **✓ Actioned 2026-04-27:** Mostly already done. [`nlrp3-inhibitor-screen.md` §"Meta-Finding: Keyword-Gating Failure in Prior Tier-4 Classification"](./nlrp3-inhibitor-screen.md) (2026-04-23 re-audit) already promoted EGCG → Tier 2 (Lee 2019, Yu 2024), limonene → Tier 3 supplement (Venkatesan 2025), sulforaphane → Tier 2-3 supplement (hyperuricemia rat + sub-μM Nrf2 EC50), and BCP → Tier 2-3 (2021 MSU rat). The methodological correction — re-query without keyword-gating on "MSU" / "gout" — is captured as a standing standard in the same §. Remaining Tier-4 compounds (alpha-pinene, myrcene, omega-3 metabolites) are desk-checkable; tracked in [`open-questions.md` §"Tier-4 inhibitor screen — missed gout-model data"](./open-questions.md#tier-4-inhibitor-screen--missed-gout-model-data) but most of the audit value has already been extracted.
 
 ### Proposed Experiments (ranked by insight / cost)
 **brian** add to experiments list
