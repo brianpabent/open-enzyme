@@ -10,6 +10,122 @@ sources: ["All 8 April 2026 AI analyses", "Primary research library (docs/)", "W
 
 ## Sweep — 2026-04-27 (DeepSeek V4-Pro synthesis + Claude review)
 
+**Synthesis log:** [`logs/v4-synthesis-2026-04-27-b7df491.md`](../logs/v4-synthesis-2026-04-27-b7df491.md)
+**Substrate:** Open Enzyme wiki at commit `b7df491`
+**Diff base:** `b986d4a3da41173f801a0ca6a7c3f2319f132a99`
+**Trigger files:** wiki/open-enzyme-vision.md
+**Synthesizer:** google/gemini-2.5-pro
+**Reviewer:** anthropic/claude-opus-4-7
+**Reviews merged:** 16
+
+---
+**Substrate:** Open Enzyme wiki at commit `b7df491`
+**Trigger files:** wiki/open-enzyme-vision.md
+**Diff base:** b986d4a3da41173f801a0ca6a7c3f2319f132a99
+**Reviewer:** google/gemini-2.5-pro
+
+## New Connections
+
+1.  **The koji platform has an unstated, built-in synergy for the gut-lumen sink via native Nrf2-activating metabolites.** *Speculative.*
+    -   *Documents Connected:* `aspergillus-oryzae.md`, `abcg2-modulators.md`, `engineered-koji-protocol.md`, `gut-lumen-sink.md`.
+    -   *Why It Matters:* The `gut-lumen-sink.md` thesis relies on the ABCG2 transporter to supply uric acid to the engineered uricase. `abcg2-modulators.md` identifies Nrf2 activation as a key transcriptional inducer of ABCG2. Separately, `aspergillus-oryzae.md` notes that wild-type koji natively produces ergothioneine, a known Nrf2 inducer. The unstated connection is that the koji chassis may be naturally upregulating the very transporter its engineered uricase payload depends on for substrate. This "free" synergy would make the koji platform more robust and effective than a yeast-based or purified-enzyme approach that lacks this native metabolite chorus.
+    -   *Suggested Action:* Elevate this from a speculative connection to a testable hypothesis. Propose an experiment in `validation-experiments.md` to measure ABCG2 induction in Caco-2 cells treated with ergothioneine at concentrations found in fermented koji.
+
+    > **Claude review — Partial.** The ergothioneine→Nrf2→ABCG2 chain is plausible but each link needs scrutiny. `abcg2-modulators.md` does list Nrf2 as a transcriptional inducer, and ergothioneine is a recognized cytoprotectant, but its classification as a "Nrf2 inducer" is weaker than canonical activators (sulforaphane, CDDO-Me) — it's more accurately an ROS scavenger that may indirectly stabilize Nrf2. The Pass 2 synthesizer's framing of "native metabolite chorus" upregulating ABCG2 is speculative-squared (two mechanistic extrapolations stacked). The experiment is worth proposing, but it should be tagged explicitly as Mechanistic Extrapolation testing a two-step inference, not a "built-in synergy" claim.
+
+2.  **Shio-koji acts as a dual-pathway therapeutic vehicle, unifying the project's two main user tracks into a single household product.** *Supported.*
+    -   *Documents Connected:* `koji-home-fermentation.md`, `engineered-koji-protocol.md`, `open-enzyme-vision.md`, `digestive-enzymes.md`.
+    -   *Why It Matters:* `koji-home-fermentation.md` correctly identifies shio-koji as the highest-leverage format for Exocrine Pancreatic Insufficiency (EPI) because its native proteases pre-digest protein during marination. If the engineered endgame strain (expressing uricase and other molecules) is used to make this shio-koji, the same condiment simultaneously provides pre-ingestion digestive support for one user (Lynn's track) and post-ingestion gut-lumen uricase delivery for another (Brian's track). This unifies the two main project arms into a single household product with two independent, temporally separated mechanisms of action.
+    -   *Suggested Action:* Add a dedicated paragraph to `engineered-koji-protocol.md` (§07) quantifying the expected protease load during marination and framing shio-koji explicitly as a dual-action product.
+
+    > **Claude review — Confirmed.** The dual-use framing is mechanistically clean and temporally distinct (proteases act during marination ex vivo; uricase acts post-ingestion in gut lumen). However, this connection is in tension with Contradiction #2 and Open Question #2 in the same synthesis — if shio-koji proteases degrade heterologous carnosine, they plausibly degrade heterologous uricase too. Uricase is a ~34 kDa tetrameric folded protein, likely more protease-resistant than a dipeptide, but the dual-use claim should be conditional on resolving the protein-stability question before being added to §07.
+
+3.  **The project's mechanism-first methodology systematically surfaces high-potential, overlooked pharmaceutical repurposing candidates.** *Supported.*
+    -   *Documents Connected:* `gout-clinical-pipeline.md`, `nlrp3-exploit-map.md`, `disulfiram.md`, `zileuton.md`, `complement-c5a-gout.md`, `chembl-cross-check.md`.
+    -   *Why It Matters:* The wiki has independently identified at least four FDA-approved drugs whose primary mechanism is a direct hit on a key gout chokepoint, but which have never been clinically tested for gout: Zileuton (CP6a 5-LOX inhibitor), Disulfiram (CP6b GSDMD inhibitor), Avacopan (CP0 C5aR1 antagonist), and Resveratrol's top target being DPP-4 (a diabetes drug class relevant to gout comorbidity). This recurring pattern suggests the Open Enzyme platform's chokepoint-based analysis provides a systematic engine for identifying market and research gaps where established drugs could be repurposed, a strategic asset for the project's overall contribution.
+    -   *Suggested Action:* Add a section to `gout-clinical-pipeline.md` or `open-enzyme-vision.md` explicitly stating this pattern and framing it as a strength of the platform's methodology.
+
+    > **Claude review — Confirmed.** The pattern is real and already partially articulated in §2.2 of `open-enzyme-vision.md` (zileuton, disulfiram, avacopan explicitly framed as repurposing surface). The DPP-4/resveratrol connection from `chembl-cross-check.md` is a legitimate fourth example that strengthens the case. The Pass 2 synthesizer's suggested action is well-targeted — this deserves its own subsection because it's currently spread across multiple files. Sharpening: the framing should note that none of these candidates require Open Enzyme to build anything; they're pure discovery-engine output and represent a zero-engineering path to impact.
+
+4.  **The CRISPR-uricase "cure" requires the NLRP3 supplement stack as an essential bridge therapy.** *Supported.*
+    -   *Documents Connected:* `crispr-uricase.md`, `nlrp3-exploit-map.md`, `gout-deep-dive.md`.
+    -   *Why It Matters:* `crispr-uricase.md` frames gene therapy as the ultimate cure but notes it would dissolve existing tophi over months or years. `nlrp3-exploit-map.md` and `gout-deep-dive.md` both describe the "crystal dissolution danger window" where urate-lowering therapy can paradoxically trigger flares as crystal deposits are mobilized. The unstated connection is that a patient receiving a one-time gene therapy cure would still need prophylactic anti-inflammatory treatment for a significant period post-treatment to manage these dissolution flares. The NLRP3 supplement stack is the perfect bridge therapy for this window.
+    -   *Suggested Action:* Add a section to `crispr-uricase.md` on "Post-Therapy Management" that explicitly discusses the dissolution flare risk and positions the NLRP3 supplement stack as a necessary adjunct for the first 6-12 months after gene therapy administration.
+
+    > **Claude review — Confirmed, prioritize.** This is an important and underemphasized point. The dissolution-flare window is well-documented for allopurinol/febuxostat initiation, and a one-shot gene therapy would produce a much sharper urate drop than titrated ULT, potentially making the flare risk worse, not better. This has direct implications for trial design if CRISPR-uricase advances — mandatory co-administered prophylaxis becomes part of the therapeutic protocol, not an optional adjunct. Should be elevated to a Priority Action.
+
+5.  **An insulin-sensitive man with high SHBG is caught in a paradoxical trap where optimizing hormones (via carbs) worsens gout (via fructose).** *Supported.*
+    -   *Documents Connected:* `androgen-urate-axis.md`, `fructose-connection.md`.
+    -   *Why It Matters:* `androgen-urate-axis.md` suggests a non-drug lever for high SHBG is to modestly increase dietary carbohydrate to raise insulin and lower SHBG, freeing up more testosterone. However, `fructose-connection.md` establishes that fructose (a component of many carbohydrate sources) drives uric acid production via the unregulated KHK pathway. An insulin-sensitive gout patient is thus caught in a bind: increasing carbs to optimize hormones directly worsens the metabolic driver of their gout.
+    -   *Suggested Action:* The recommendation in `androgen-urate-axis.md` should be refined to specify *glucose-dominant* starches (which raise insulin without triggering the KHK pathway) over fructose-containing carbs. This is a critical nuance for gout patients.
+
+    > **Claude review — Partial.** Agree on the directional trap: fructose drives UA via KHK (`fructose-connection.md` well-sourced). Push back on the sharpness of the "paradox" framing — the `androgen-urate-axis.md` recommendation is for *modest* carb increase, and most glucose-dominant starches (rice, potatoes) are low-fructose. The refinement to specify glucose-dominant starches is correct and useful, but the "paradoxical trap" framing overstates the conflict — this is a solvable nutritional prescription, not a fundamental contradiction.
+
+## Contradictions Found
+
+1.  **The `supplements-stack.md` is pharmacologically at war with the `gut-lumen-sink.md` platform thesis for the primary gout demographic.** Locations: `supplements-stack.md`, `abcg2-modulators.md`, `gut-lumen-sink.md`. Analysis: The supplement stack recommends quercetin and EGCG, both of which are documented in `abcg2-modulators.md` as functional inhibitors of the ABCG2 transporter. The core engineering effort of the Open Enzyme platform (engineered uricase) depends on a functional ABCG2 to create the gut-lumen sink. For a male patient on TRT (androgen-suppressed ABCG2) who is also taking high-dose quercetin (pharmacologically-suppressed ABCG2), the engineered uricase platform is being set up to fail. This is a platform-level strategic conflict that needs to be resolved.
+
+    > **Claude review — Confirmed, prioritize.** This is the strongest contradiction in the synthesis. The ABCG2 inhibitor/gut-lumen-sink conflict is platform-level and mechanism-grounded — quercetin IC50 on ABCG2 is in the submicromolar range (well-established in the BCRP literature), and dietary supplementation easily reaches gut-lumen concentrations that inhibit transport. For an androgen-suppressed + Q141K user, triple-hit ABCG2 suppression could plausibly reduce gut urate flux by >50%, gutting the substrate for engineered uricase. The Priority Action to warn in `supplements-stack.md` is correct and urgent.
+
+2.  **The proposed carnosine-koji module is incompatible with the shio-koji delivery format.** Locations: `engineered-koji-protocol.md` (§15), `koji-home-fermentation.md`. Analysis: The engineered protocol proposes adding a carnosine biosynthesis module to the koji strain. The home protocol identifies shio-koji (a 7-14 day salt ferment with active proteases) as the highest-leverage format for EPI. However, carnosine is a dipeptide. The active proteases in a shio-koji ferment would almost certainly hydrolyze the engineered carnosine back into its constituent amino acids (beta-alanine and histidine), destroying the therapeutic molecule. A carnosine-expressing strain cannot be delivered via the shio-koji format if intact carnosine is the goal.
+
+    > **Claude review — Confirmed.** The biochemistry is straightforward: shio-koji's hallmark feature is active native proteases over 7-14 days at room temperature, and carnosine (β-alanyl-L-histidine) is a classic dipeptidase substrate. Carnosinase homologs are present broadly. The contradiction is real and the format-incompatibility conclusion follows. Worth noting: this same logic applies to any small peptide payload (KPV, BPC-157 if co-expressed), suggesting the shio-koji format is structurally limited to robustly folded enzyme payloads, not peptide therapeutics.
+
+## Proposed Experiments (ranked by insight per cost)
+
+1.  **Fructose Challenge Test as an acute n-of-1 uricase efficacy readout.** Cost: ~$50. Time: 2 hours. Decides: If engineered uricase is active in the gut in real-time.
+    -   *Rationale:* `fructose-connection.md` establishes that a fructose bolus generates a predictable serum UA spike within 60-120 minutes. This can be used as a cheap, high-signal challenge to validate uricase activity without waiting weeks for baseline UA to drift.
+    -   *Protocol:* Standardized 50g fructose load, with serial fingerstick UA measurements at 0, 30, 60, 90, and 120 minutes. Run once before and once after starting the koji therapy. A blunted post-fructose UA spike directly validates uricase action in the gut.
+    -   *Affected Documents:* `self-experiment-protocol.md`, `validation-experiments.md`.
+
+    > **Claude review — Confirmed, prioritize.** Excellent experimental design. Fructose challenge tests are well-validated in the gout literature for probing UA handling, and the within-subject before/after design controls for most confounders. The 2-hour timeline and ~$50 cost make this the highest insight-per-dollar experiment in the queue. One refinement: fingerstick UA meters (e.g., UASure) have ~10-15% CV, so duplicate readings at each timepoint would strengthen the signal. Should be elevated to Priority Action status.
+
+2.  **Quantify residual ethanol in home-fermented koji products.** Cost: ~$200. Time: 1 week. Decides: The real-world safety risk of combining the disulfiram protocol with home fermentation.
+    -   *Rationale:* `disulfiram.md` notes the severe reaction with alcohol. `koji-home-fermentation.md` and `aspergillus-oryzae.md` note that amazake can be contaminated with wild yeast and produce alcohol. This is a direct safety risk interaction.
+    -   *Protocol:* Prepare several batches of amazake and shio-koji per the home protocol, including one "failed" batch with suspected wild yeast contamination. Send samples for gas chromatography analysis to determine ethanol concentration.
+    -   *Affected Documents:* `disulfiram.md`, `koji-home-fermentation.md`.
+
+    > **Claude review — Confirmed.** The safety interaction is real and underappreciated. Home amazake batches with wild yeast contamination could reach 1-3% ethanol, which combined with disulfiram produces the acetaldehyde reaction at clinically dangerous levels. GC is the right analytical method. One addition: the protocol should include a cheap pre-screen using consumer ethanol test strips (±0.1% detection) for routine household monitoring, with GC reserved for validation and edge cases.
+
+3.  **Simulated GI survival assay of native koji enzymes.** Cost: ~$300. Time: 2 weeks. Decides: Whether the contradiction between the n=1 EPI data (`digestive-enzyme-optimization.md`) and GI survival models (`gi-survival-prediction.md`) is due to unappreciated stability of native koji enzymes.
+    -   *Rationale:* The n=1 self-experiment on BoulderBio shows a clear clinical effect, implying fungal lipase survives gastric transit. This contradicts models based on porcine lipase.
+    -   *Protocol:* Incubate extract from wild-type koji rice in simulated gastric fluid (SGF) then simulated intestinal fluid (SIF). Measure residual lipase, protease, and amylase activity.
+    -   *Affected Documents:* `digestive-enzyme-optimization.md`, `koji-home-fermentation.md`, `gi-survival-prediction.md`.
+
+    > **Claude review — Augment.** The experiment is well-motivated. Addition: there's a cheaper intermediate — SGF/SIF is standard USP protocol but the pepsin+pH 1.2 step alone (30 min) captures most gastric kill. Also, activity assays differ substantially: lipase (pNPP or tributyrin), protease (azocasein), amylase (starch-iodine) are all <$100 kits. The real question is whether *A. oryzae* lipase has intrinsically better pH stability than porcine, or whether the koji matrix provides physical protection — the experiment should test extracted enzyme AND whole koji rice to distinguish these.
+
+## Open Questions
+
+1.  **Is local H₂O₂ production from high-activity gut-lumen uricase a risk for epithelial oxidative stress?** `uricase.md` and `aspergillus-oryzae.md` state that host- and microbe-derived catalase will neutralize the H₂O₂ byproduct. However, this is an assumption. At high local uricase concentrations, H₂O₂ production could overwhelm local scavenging capacity, causing oxidative damage. This has not been quantified or tested.
+
+    > **Claude review — Confirmed, prioritize.** This is a real quantitative gap. Uricase H₂O₂ stoichiometry is 1:1 with urate, so at gut-lumen urate concentrations (hundreds of μM) in a localized microenvironment near high-expressing koji particles, peak H₂O₂ flux could exceed local catalase buffering. The catalase-neutralization assumption in `uricase.md` deserves explicit quantification. A simple ex vivo Caco-2 monolayer + uricase + urate experiment with H₂O₂ probes would resolve this and is comparable in cost to the other proposed experiments.
+
+2.  **Does the 7–14 day salt fermentation of shio-koji degrade the heterologous proteins (uricase, lactoferrin) produced by engineered *A. oryzae*?** The high-salt, room-temperature environment with active native proteases may denature or cleave the engineered payloads, rendering shio-koji an unsuitable format for delivering those molecules. This is a critical open question for the dual-use product concept.
+
+    > **Claude review — Confirmed.** This is the single highest-stakes open question for the shio-koji dual-use thesis (connects directly to New Connection #2). Uricase is ~34 kDa homotetramer with reasonable intrinsic stability, but 7-14 days at RT with active subtilisin-family proteases and 15-20% NaCl is a harsh environment. Lactoferrin is large (~80 kDa) and glycosylated but has exposed protease-sensitive loops. This should be an experiment, not just an open question — Western blot of engineered koji protein in fresh vs. aged shio-koji would settle it directly.
+
+3.  **What is the interaction logic for stacking colchicine with other CP2/CP3 modulators?** `colchicine.md` establishes it as a dual-hit inhibitor at Chokepoint 2 (P2X7) and Chokepoint 3 (ASC speck). The `nlrp3-exploit-map.md` lists other compounds at these chokepoints, like BHB (CP2/CP3) and spermidine (CP3). Is stacking these redundant, additive, or synergistic?
+
+    > **Claude review — Partial.** Agree the question is under-resolved. Push back on framing colchicine as strictly CP2/CP3 — `colchicine.md` primary mechanism is tubulin-binding (blocks ASC speck trafficking and neutrophil chemotaxis), which puts it more cleanly at CP3 with secondary effects at CP6. BHB at CP2 (K⁺ efflux inhibition via HCAR2/β-arrestin signaling) hits an upstream node that colchicine doesn't touch, so BHB+colchicine is plausibly additive. Spermidine at CP3 overlaps more directly. The stacking logic differs per pair; a one-size answer is unlikely.
+
+## Priority Actions
+
+1.  **Explicitly address the protease-carnosine conflict in the carnosine co-expression module.** The proposal in `engineered-koji-protocol.md` §15 should note that the shio-koji format is likely incompatible with delivering intact carnosine and recommend alternative formats (fresh koji, dried powder, or amazake).
+
+    > **Claude review — Confirmed.** The action is straightforward and follows from the biochemistry. Worth adding: amazake (cooked, <24h, lower protease activity) is the natural fallback format for carnosine, while dried koji powder (heat-inactivated proteases) is the most protease-safe but sacrifices the live-enzyme benefit. The §15 edit should enumerate these tradeoffs rather than just flagging shio-koji incompatibility.
+
+2.  **Add explicit warnings to `supplements-stack.md` about the ABCG2 inhibitor conflict.** The entries for quercetin, EGCG, and curcumin must contain a clear note about their potential to antagonize the gut-lumen sink platform, with a specific caution for androgen-dominant or Q141K-positive users.
+
+    > **Claude review — Confirmed, prioritize.** This is the highest-impact low-cost edit in the synthesis. The `supplements-stack.md` / `gut-lumen-sink.md` conflict is a platform-level own-goal if unaddressed. Specific wording should quantify the risk tier (androgen-suppressed ABCG2 + Q141K homozygote + high-dose flavonoid = highest concern; wild-type ABCG2 + low-dose dietary quercetin = minimal concern). This stratification matters because blanket warnings undermine compliance when the actual risk is genotype/dose-dependent.
+
+3.  **Elevate the "Ward 1995 dual-cassette feasibility test" from `koji-endgame-strain.md` to the top of the experimental queue in `validation-experiments.md`.** This is the single gating experiment for the entire endgame strain vision. Its strategic importance, cost, and timeline should be made prominent.
+
+    > **Claude review — Confirmed.** The Ward 1995 dual-cassette test is genuinely the gating experiment — if the glucoamylase-KEX2 architecture doesn't transfer to *A. oryzae* solid-state, the entire single-strain endgame collapses to a two-strain co-fermentation fallback, which has significant operational consequences for dosing uniformity and home reproducibility. $3-5k / 8-12 weeks is extraordinarily high leverage given what it decides. Should be elevated to #1 in the experimental queue, above even the fructose challenge test despite higher cost.
+
+---
+
+## Sweep — 2026-04-27 (DeepSeek V4-Pro synthesis + Claude review)
+
 **Synthesis log:** [`logs/v4-synthesis-2026-04-27-c602f32.md`](../logs/v4-synthesis-2026-04-27-c602f32.md)
 **Substrate:** Open Enzyme wiki at commit `c602f32`
 **Diff base:** `45f23eb8480af3bfda32dbf4ca2f2dd8fcc05f16`
