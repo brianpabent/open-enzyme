@@ -162,11 +162,28 @@ jobs:
         if: steps.trigger.outputs.has_changes == 'true'
         run: |
           set -euo pipefail
-          if git log origin/main..HEAD --oneline | grep -q .; then
-            git push
-          else
+          if ! git log origin/main..HEAD --oneline | grep -q .; then
             echo "Pass 1 produced no commit"
+            exit 0
           fi
+          # Rebase before push to handle concurrent commits to main during
+          # the long Pass 1 run. Without this, a parallel push from Brian or
+          # another workflow run causes [rejected] and we lose Pass 1 output.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git log HEAD..origin/main --oneline | grep -q .; then
+              echo "Rebasing onto origin/main (attempt $attempt) ..."
+              git rebase --autostash origin/main || { git rebase --abort || true; exit 1; }
+            fi
+            if git push; then
+              echo "Pass 1 push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Push rejected on attempt $attempt; retrying after fetch..."
+            sleep $((attempt * 5))
+          done
+          echo "Pass 1 push failed after 3 rebase-and-retry attempts"
+          exit 1
 
   # ============================================================================
   # PASS 2 — Gemini 2.5 Pro synthesis (full corpus)
@@ -224,7 +241,40 @@ jobs:
 
           git add "$SYNTHESIS_LOG"
           git commit -m "sweep-2-synthesize: Gemini 2.5 Pro raw synthesis → $SYNTHESIS_LOG [skip-wiki-sweep]"
-          git push
+          # Rebase-and-retry push. Pass 2 is long-running ($0.65/run, 2-9
+          # minutes) so concurrent commits to main are common. Without this,
+          # Pass 2's synthesis output gets generated, committed locally, then
+          # lost to [rejected] when push fires (observed run 25051936845,
+          # 2026-04-28). The synthesis log is recoverable from the runner's
+          # local commit but only if we rebase + retry rather than exit.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git log HEAD..origin/main --oneline | grep -q .; then
+              echo "Rebasing Pass 2 onto origin/main (attempt $attempt) ..."
+              git rebase --autostash origin/main || { git rebase --abort || true; exit 1; }
+            fi
+            if git push; then
+              echo "Pass 2 push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Pass 2 push rejected on attempt $attempt; retrying after fetch..."
+            sleep $((attempt * 5))
+          done
+          # If we get here, push failed 3× — surface the synthesis log as an
+          # artifact so it's not lost to the runner teardown.
+          echo "Pass 2 push failed after 3 rebase-and-retry attempts; surfacing $SYNTHESIS_LOG as artifact"
+          mkdir -p /tmp/sweep-failed
+          cp "$SYNTHESIS_LOG" /tmp/sweep-failed/ || true
+          exit 1
+
+      - name: Upload failed-push synthesis log (recovery artifact)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failed-pass-2-synthesis
+          path: /tmp/sweep-failed/
+          if-no-files-found: ignore
+          retention-days: 30
 
   # ============================================================================
   # PASS 3 — Claude review (interleaved into wiki/synthesis.md)
@@ -310,8 +360,23 @@ jobs:
       - name: Push review
         run: |
           set -euo pipefail
-          if git log origin/main..HEAD --oneline | grep -q .; then
-            git push
-          else
+          if ! git log origin/main..HEAD --oneline | grep -q .; then
             echo "Pass 3 produced no commit"
+            exit 0
           fi
+          # Same rebase-and-retry pattern as Pass 1 / Pass 2.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git log HEAD..origin/main --oneline | grep -q .; then
+              echo "Rebasing Pass 3 onto origin/main (attempt $attempt) ..."
+              git rebase --autostash origin/main || { git rebase --abort || true; exit 1; }
+            fi
+            if git push; then
+              echo "Pass 3 push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Pass 3 push rejected on attempt $attempt; retrying after fetch..."
+            sleep $((attempt * 5))
+          done
+          echo "Pass 3 push failed after 3 rebase-and-retry attempts"
+          exit 1

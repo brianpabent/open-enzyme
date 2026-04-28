@@ -109,7 +109,20 @@ def call_openrouter(api_key, model, messages, max_tokens=8000, max_retries=4):
                     return json.loads(r.stdout)
                 except json.JSONDecodeError:
                     sys.exit(f"Non-JSON response: {r.stdout[:1500]}")
-            transient = any(s in r.stdout for s in ("429", "rate-limit", "temporarily", "502", "503"))
+            # Transient detection across BOTH stdout and stderr. See
+            # sweep-1-propagate.py for the rationale (curl --fail-with-body
+            # writes HTTP status to stderr; checking only stdout missed real
+            # 503s in run 25049501442, 2026-04-28).
+            combined = (r.stdout or "") + "\n" + (r.stderr or "")
+            transient = (
+                r.returncode == 22
+                or any(s in combined for s in (
+                    "429", "rate-limit", "rate limit", "temporarily",
+                    "502", "503", "504",
+                    "Connection reset", "Connection refused",
+                    "timed out", "timeout",
+                ))
+            )
             if not transient or attempt == max_retries - 1:
                 print(f"OpenRouter call failed (exit {r.returncode}): {r.stderr.strip()}", file=sys.stderr)
                 print(f"stdout: {r.stdout[:1500]}", file=sys.stderr)

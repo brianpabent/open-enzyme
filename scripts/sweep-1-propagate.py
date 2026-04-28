@@ -251,7 +251,25 @@ def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
                     return json.loads(r.stdout)
                 except json.JSONDecodeError:
                     sys.exit(f"Non-JSON OpenRouter response: {r.stdout[:1500]}")
-            transient = any(s in r.stdout for s in ("429", "rate-limit", "temporarily", "502", "503"))
+            # Transient detection: check BOTH stdout and stderr. Curl with
+            # --fail-with-body returns exit 22 on HTTP errors and writes the
+            # status code to stderr (e.g. "curl: (22) The requested URL
+            # returned error: 503"); the response body in stdout may be HTML
+            # or empty. Run 25049501442 (2026-04-28) failed because the prior
+            # check only looked at stdout. Also treat curl exit 22 (HTTP
+            # error) as transient by default — most non-transient HTTP
+            # errors here are 4xx auth/quota issues that don't recover with
+            # retry, but the cost of retrying once is low.
+            combined = (r.stdout or "") + "\n" + (r.stderr or "")
+            transient = (
+                r.returncode == 22  # HTTP error per --fail-with-body
+                or any(s in combined for s in (
+                    "429", "rate-limit", "rate limit", "temporarily",
+                    "502", "503", "504",
+                    "Connection reset", "Connection refused",
+                    "timed out", "timeout",
+                ))
+            )
             if not transient or attempt == max_retries - 1:
                 print(f"OpenRouter call failed (exit {r.returncode}): {r.stderr.strip()}", file=sys.stderr)
                 print(f"stdout: {r.stdout[:1500]}", file=sys.stderr)

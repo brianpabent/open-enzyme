@@ -192,7 +192,20 @@ def main():
             )
             if result.returncode == 0:
                 break
-            transient = any(s in result.stdout for s in ("429", "rate-limit", "temporarily", "502", "503"))
+            # Transient detection across BOTH stdout and stderr. See
+            # sweep-1-propagate.py for the rationale (curl --fail-with-body
+            # writes HTTP status to stderr, response body to stdout; checking
+            # only stdout missed real 503s in run 25049501442).
+            combined = (result.stdout or "") + "\n" + (result.stderr or "")
+            transient = (
+                result.returncode == 22
+                or any(s in combined for s in (
+                    "429", "rate-limit", "rate limit", "temporarily",
+                    "502", "503", "504",
+                    "Connection reset", "Connection refused",
+                    "timed out", "timeout",
+                ))
+            )
             if not transient or attempt == max_retries - 1:
                 break
             backoff = [10, 30, 60, 120][attempt] if attempt < 4 else 120
