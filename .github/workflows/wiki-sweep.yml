@@ -63,10 +63,11 @@ jobs:
       contents: write
     if: "!contains(github.event.head_commit.message, '[skip-wiki-sweep]')"
     outputs:
-      trigger_files: ${{ steps.trigger.outputs.changed }}
-      diff_base:     ${{ steps.trigger.outputs.diff_base }}
-      sha:           ${{ steps.trigger.outputs.sha }}
-      had_changes:   ${{ steps.trigger.outputs.has_changes }}
+      trigger_files:    ${{ steps.trigger.outputs.changed }}
+      propagated_files: ${{ steps.run_pass_1.outputs.propagated_files }}
+      diff_base:        ${{ steps.trigger.outputs.diff_base }}
+      sha:              ${{ steps.trigger.outputs.sha }}
+      had_changes:      ${{ steps.trigger.outputs.has_changes }}
 
     steps:
       - name: Checkout
@@ -141,6 +142,7 @@ jobs:
           echo "skip_pass_1=$SKIP_PASS_1" >> "$GITHUB_OUTPUT"
 
       - name: Run Pass 1 propagation (Sonnet via OpenRouter)
+        id: run_pass_1
         if: steps.trigger.outputs.has_changes == 'true' && steps.trigger.outputs.skip_pass_1 != 'true'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -151,6 +153,10 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Pass 1 writes propagated_files to $GITHUB_OUTPUT directly
+          # (see sweep-1-propagate.py). That output is then promoted to
+          # the job's `propagated_files` output via the step `id` and the
+          # job-level `outputs:` block above.
           python3 scripts/sweep-1-propagate.py \
             --commit-sha "${{ github.sha }}" \
             --trigger-files "$TRIGGER_FILES" \
@@ -199,6 +205,7 @@ jobs:
     outputs:
       synthesis_log: ${{ steps.run.outputs.synthesis_log }}
       had_synthesis: ${{ steps.run.outputs.had_synthesis }}
+      cited_files:   ${{ steps.run.outputs.cited_files }}
 
     steps:
       - name: Checkout (post-Pass-1 state)
@@ -224,10 +231,15 @@ jobs:
 
           # Compose the trigger files string for the synthesis script
           TRIGGER_LIST=$(echo "${{ needs.propagate.outputs.trigger_files }}" | tr '\n' ',' | sed 's/,$//')
+          # propagated_files is what Pass 1 wrote to during propagation
+          # (downstream pages that aren't in the original trigger set).
+          # Pass 2's synthesizer prompt weights attention on these.
+          PROPAGATED_LIST=$(echo "${{ needs.propagate.outputs.propagated_files }}" | tr '\n' ',' | sed 's/,$//')
 
           SYNTHESIS_LOG=$(python3 scripts/synthesize.py \
             --commit-sha "${{ github.sha }}" \
             --trigger-files "$TRIGGER_LIST" \
+            --propagated-files "$PROPAGATED_LIST" \
             --diff-base "${{ needs.propagate.outputs.diff_base }}")
 
           if [[ -z "$SYNTHESIS_LOG" || ! -f "$SYNTHESIS_LOG" ]]; then
@@ -312,12 +324,13 @@ jobs:
           echo "Found $MARKER_COUNT {{PEER-REVIEW}} markers in Pass 2 synthesis"
           echo "marker_count=$MARKER_COUNT" >> "$GITHUB_OUTPUT"
 
-      - name: Run Pass 3 review (Sonnet via OpenRouter)
+      - name: Run Pass 3 review (Opus via OpenRouter)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           REVIEWER_MODEL:    anthropic/claude-opus-4-7
           SYNTHESIS_LOG:     ${{ needs.synthesize.outputs.synthesis_log }}
           TRIGGER_FILES:     ${{ needs.propagate.outputs.trigger_files }}
+          CITED_FILES:       ${{ needs.synthesize.outputs.cited_files }}
           DIFF_BASE:         ${{ needs.propagate.outputs.diff_base }}
           MARKER_COUNT:      ${{ steps.count.outputs.marker_count }}
         run: |
@@ -329,12 +342,18 @@ jobs:
           # instructs it to output ONLY review blockquotes separated by
           # <<<NEXT>>> — the merge script parses that and substitutes into
           # the Pass 2 synthesis.
+          # cited_files is the list of wiki/*.md files Pass 2 referenced;
+          # the Pass 3 driver inlines BOTH trigger and cited files so the
+          # reviewer can verify claims without filesystem tool access.
+          # The reviewer also has on-demand Read tool access for files
+          # neither set covers (see scripts/sweep-3-review.py).
           REVIEWS_FILE="$(mktemp --suffix=.txt)"
           python3 scripts/sweep-3-review.py \
             --synthesis-log "$SYNTHESIS_LOG" \
             --commit-sha "${{ github.sha }}" \
             --diff-base "$DIFF_BASE" \
             --trigger-files "$TRIGGER_FILES" \
+            --cited-files "$CITED_FILES" \
             --marker-count "$MARKER_COUNT" \
             --model "$REVIEWER_MODEL" \
             > "$REVIEWS_FILE"

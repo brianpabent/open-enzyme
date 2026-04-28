@@ -352,7 +352,15 @@ def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=
 
 
 def stage_and_commit(trigger_files, diff_base, model, summary, dry_run):
-    """Stage non-readonly changes, build a commit message, commit. Returns True if a commit was made."""
+    """Stage non-readonly changes, build a commit message, commit.
+
+    Returns:
+        (committed: bool, changed_paths: list[str])
+        — `changed_paths` is every path Pass 1 modified or created, regardless
+        of whether the commit went through. Pass 2 needs this list to know
+        which downstream files Pass 1 propagated to (i.e. the files where new
+        connections may now live, distinct from the original trigger files).
+    """
     # Get all changed paths (modified, added, untracked)
     r1 = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, check=True)
     changed = []
@@ -370,7 +378,7 @@ def stage_and_commit(trigger_files, diff_base, model, summary, dry_run):
 
     if not changed:
         print("Pass 1 produced no changes — no commit", file=sys.stderr)
-        return False
+        return False, []
 
     print(f"Staging {len(changed)} paths:", file=sys.stderr)
     for p in changed:
@@ -378,7 +386,7 @@ def stage_and_commit(trigger_files, diff_base, model, summary, dry_run):
 
     if dry_run:
         print("(dry-run: skipping git add/commit)", file=sys.stderr)
-        return False
+        return False, changed
 
     subprocess.run(["git", "add", "--"] + changed, check=True)
 
@@ -401,7 +409,7 @@ def stage_and_commit(trigger_files, diff_base, model, summary, dry_run):
     msg = "\n".join(body_lines)
 
     subprocess.run(["git", "commit", "-m", msg], check=True)
-    return True
+    return True, changed
 
 
 def main():
@@ -483,11 +491,38 @@ def main():
           file=sys.stderr)
 
     summary = loop["done_summary"] or loop["last_text"] or ""
-    committed = stage_and_commit(trigger_files, args.diff_base, args.model, summary, args.dry_run)
+    committed, changed_paths = stage_and_commit(
+        trigger_files, args.diff_base, args.model, summary, args.dry_run,
+    )
     if committed:
         print("Pass 1 commit created", file=sys.stderr)
     else:
         print("Pass 1 made no commit", file=sys.stderr)
+
+    # Write the propagated_files list to GITHUB_OUTPUT so Pass 2 can
+    # reference it. propagated_files = files Pass 1 modified that weren't
+    # already in the trigger set. Pass 2's synthesizer needs to weight
+    # attention on these because that's where new connections live after
+    # propagation. Trigger files are the *cause* of the sweep; propagated
+    # files are where the *new content* now lives.
+    trigger_set = {os.path.normpath(t) for t in trigger_files}
+    propagated_files = sorted({
+        os.path.normpath(p) for p in changed_paths
+        if p.startswith("wiki/") and p.endswith(".md")
+        and os.path.normpath(p) not in trigger_set
+        and os.path.normpath(p) != "wiki/synthesis.md"
+    })
+
+    print(f"\nPropagated to {len(propagated_files)} files (excluding trigger set):", file=sys.stderr)
+    for p in propagated_files:
+        print(f"  {p}", file=sys.stderr)
+
+    gha_output = os.environ.get("GITHUB_OUTPUT")
+    if gha_output:
+        with open(gha_output, "a") as f:
+            f.write("propagated_files<<PROPAGATED_EOF\n")
+            f.write("\n".join(propagated_files))
+            f.write("\nPROPAGATED_EOF\n")
 
 
 if __name__ == "__main__":

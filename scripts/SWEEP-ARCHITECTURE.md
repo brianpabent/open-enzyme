@@ -48,6 +48,55 @@ Both errors are easy to make and the cost is delayed. The fix is not "remember h
 
 ---
 
+## Inter-pass artifact handoff (added 2026-04-28)
+
+A second class of failure surfaced after the initial five-component build: not workflow-runtime errors, but *information-loss between passes*. Two specific symptoms:
+
+1. **Pass 2 missed connections that lived in propagated files.** Pass 1 propagates findings into downstream wiki pages (e.g. it added source attributions to `bpc-157.md`, `kpv-peptide.md`, `disulfiram.md` during the 2026-04-27 cycle). Pass 2 received only the *original* trigger file list. Even though Pass 2 reads the full corpus, its synthesizer's *attention* was biased toward triggers — connections that emerged because of Pass 1's propagation were under-weighted.
+
+2. **Pass 3 said "I can't confirm because I don't have the trigger file."** Pre-2026-04-28, Pass 3 was a *one-shot non-agentic call*: a single OpenRouter request with the synthesis log + inlined trigger files, no tool access. When Pass 2 cited a non-trigger file (which it does constantly — `lactoferrin.md`, `abcg2-modulators.md`, etc.), Pass 3 had no way to verify. The reviewer correctly admitted it; that's not a bug in the model, it's a design gap.
+
+Three coordinated fixes — all under the same principle: **every pass must declare what it produced for the next pass to consume**.
+
+### `propagated_files` (Pass 1 → Pass 2)
+
+Pass 1's Python driver now diffs its own commit and writes the list of *propagated files* (wiki pages it modified, excluding the original trigger set and `wiki/synthesis.md`) to `$GITHUB_OUTPUT`. The workflow promotes that to the `propagate` job's outputs, and Pass 2 receives both `trigger_files` (cause) and `propagated_files` (where new content now lives) as separate inputs.
+
+The Pass 2 prompt's TRIGGER block names both lists explicitly with semantic labels and instructs the synthesizer: *"new cross-document connections are most likely to emerge from the union of the two sets — weight your attention there."*
+
+### `cited_files` manifest (Pass 2 → Pass 3)
+
+Pass 2's prompt now requires the synthesizer to emit a `Sources cited:` manifest at the bottom of its synthesis log, listing every `wiki/*.md` it referenced in any finding. Pass 2's Python driver parses that manifest (with a regex fallback that scans the entire synthesis for `wiki/<name>.md` patterns) and writes `cited_files` to `$GITHUB_OUTPUT`. The workflow promotes that to the `synthesize` job's outputs.
+
+### Pass 3 agentic upgrade (warm cache + read-only tools)
+
+Pass 3's driver was rewritten as a bounded agentic loop:
+
+1. **Warm cache** — at startup, inline both `trigger_files` and `cited_files` into the reviewer's initial prompt with `=== <path> (trigger|cited) ===` separators. This covers the most likely sources without any tool round-trip.
+2. **Read-only tools** — `read_file`, `list_files`, `grep`. The reviewer can investigate any file the cache missed. No edit, no write — Pass 3 is critique, not propagation.
+3. **Iteration cap** — `MAX_TOOL_ITERATIONS=8`. On the last iteration the driver sets `tool_choice: "none"` to force final output. A model that returns content with no tool calls signals completion.
+4. **Strict output scope preserved** — the merge script (`scripts/synthesis-merge.py`) still counts `<<<NEXT>>>` separators and bails on mismatch, so any preamble or commentary outside the blockquotes fails fast.
+
+The cost trade-off: Pass 3 may now run multiple OpenRouter calls instead of one. In practice it tends to call 0–2 tools (most reviews don't need fetches beyond the warm cache), so the typical cost increase is small. The previous failure mode — review verdicts that admitted lack of access — was strictly worse than the bounded extra cost of letting the reviewer fetch on demand.
+
+### Sequencing summary
+
+```
+Pass 1 inputs:  trigger_files (from push)
+Pass 1 outputs: trigger_files + propagated_files
+
+Pass 2 inputs:  trigger_files + propagated_files
+Pass 2 outputs: synthesis_log + cited_files (parsed from manifest + regex fallback)
+
+Pass 3 inputs:  synthesis_log + trigger_files + cited_files (all inlined as warm cache)
+Pass 3 tools:   read_file, list_files, grep (read-only, bounded iterations)
+Pass 3 outputs: review blockquotes (strict scope: only `<<<NEXT>>>`-separated blocks)
+```
+
+This handoff design is also why Pass 1 commits-and-pushes before Pass 2 starts: the *filesystem* state has to reflect Pass 1's work for Pass 2's full-corpus read to be valid, AND Pass 2's checkout is fresh (not a runner-cache reuse).
+
+---
+
 ## Architecture (5 components)
 
 ### 1. Workflow hardening

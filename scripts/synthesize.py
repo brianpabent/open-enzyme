@@ -109,6 +109,11 @@ def main():
                         help="Full commit SHA (typically $GITHUB_SHA in CI)")
     parser.add_argument("--trigger-files", default="",
                         help="Comma-separated list of trigger files for the TRIGGER block")
+    parser.add_argument("--propagated-files", default="",
+                        help=("Comma- or newline-separated list of files Pass 1 modified "
+                              "during propagation (excluding original triggers). Pass 2's "
+                              "synthesizer should weight attention on these — they're where "
+                              "new content lives after Pass 1's propagation pass."))
     parser.add_argument("--diff-base", default="",
                         help="SHA of the last sweep commit (for the TRIGGER block)")
     parser.add_argument("--model", default=DEFAULT_MODEL,
@@ -132,17 +137,45 @@ def main():
 
     output_path = f"logs/v4-synthesis-{date_str}-{sha_short}.md"
 
+    # Normalize the propagated_files input — Pass 1 emits one path per line
+    # via $GITHUB_OUTPUT heredoc; the workflow may pass it through as
+    # newline-separated or comma-separated depending on how the env-var
+    # interpolation works. Accept both.
+    propagated_raw = (args.propagated_files or "").replace(",", "\n")
+    propagated_list = [p.strip() for p in propagated_raw.splitlines() if p.strip()]
+    propagated_str = ", ".join(propagated_list) if propagated_list else "(none — Pass 1 only edited trigger files in place)"
+
     trigger_block = (
         "\n\n---\n\n"
         f"TRIGGER: Sweep at {timestamp}, commit {args.commit_sha}.\n"
         f"  date_str: {date_str}\n"
         f"  sha_short: {sha_short}\n"
         f"  diff_base: {args.diff_base or 'unknown'}\n"
-        f"  trigger files: {args.trigger_files or '(none specified)'}\n"
+        f"  trigger files (changed since last sweep): {args.trigger_files or '(none specified)'}\n"
+        f"  propagated files (Pass 1 wrote new content here): {propagated_str}\n"
         f"  output_path: {output_path}\n"
         f"  reviewer_model: {args.model}\n"
         f"commit=yes\n"
         f"ci=github-actions-sweep-2-synthesize\n"
+        f"\n"
+        f"NOTE: trigger_files are the *cause* of this sweep (recent edits).\n"
+        f"propagated_files are where new content now lives after Pass 1's\n"
+        f"propagation. New cross-document connections are most likely to\n"
+        f"emerge from the union of the two sets — weight your attention\n"
+        f"there.\n"
+        f"\n"
+        f"OUTPUT REQUIREMENT: at the end of your synthesis log, include a\n"
+        f"manifest of every wiki/*.md file you cited in any finding,\n"
+        f"contradiction, experiment, or open question. Format:\n"
+        f"\n"
+        f"    Sources cited:\n"
+        f"    - wiki/<path>.md\n"
+        f"    - wiki/<path>.md\n"
+        f"    ...\n"
+        f"\n"
+        f"Pass 3 (the reviewer) is non-agentic and inlines these files\n"
+        f"into its prompt — without the manifest, Pass 3 cannot verify\n"
+        f"your claims.\n"
     )
 
     full_prompt = prompt_template + trigger_block + "\n\n=== CORPUS ===\n" + corpus
@@ -277,6 +310,54 @@ def main():
 
     with open(output_path, "w") as f:
         f.write(header + content + "\n")
+
+    # Extract cited_files for Pass 3. Two strategies, in order:
+    #
+    # 1. Look for an explicit `Sources cited:` block at the end of the
+    #    synthesis (the prompt asks the model to emit one). Parse the
+    #    bullet list under that heading.
+    # 2. Fallback: regex-scan the entire synthesis for `wiki/<name>.md`
+    #    mentions and dedupe. Catches everything cited even if the model
+    #    forgot the manifest.
+    #
+    # Pass 3 is non-agentic — its driver inlines the full text of every
+    # path in cited_files into the reviewer's prompt. Without this list,
+    # Pass 3 has no way to verify claims about non-trigger files (this
+    # is the "I can't confirm because I don't have the trigger file"
+    # failure mode Brian observed in the 2026-04-27 / 2026-04-28 cycle).
+    import re as _re
+    cited_set = set()
+
+    # Strategy 1: explicit manifest
+    manifest_match = _re.search(
+        r"^[#\s]*Sources cited:\s*$(.*?)(?=^#|\Z)",
+        content, _re.MULTILINE | _re.DOTALL,
+    )
+    if manifest_match:
+        for m in _re.finditer(r"wiki/[A-Za-z0-9_\-./]+\.md", manifest_match.group(1)):
+            cited_set.add(m.group(0))
+
+    # Strategy 2: scan everything as a fallback (always run, in case the
+    # manifest missed any). De-duplicates against the explicit list.
+    for m in _re.finditer(r"wiki/[A-Za-z0-9_\-./]+\.md", content):
+        path = m.group(0)
+        # Don't include synthesis.md itself — it's the target, not a source
+        if path == "wiki/synthesis.md":
+            continue
+        cited_set.add(path)
+
+    cited_files = sorted(cited_set)
+    print(f"Pass 2 cited {len(cited_files)} wiki files (will be inlined for Pass 3):",
+          file=sys.stderr)
+    for p in cited_files:
+        print(f"  {p}", file=sys.stderr)
+
+    gha_output = os.environ.get("GITHUB_OUTPUT")
+    if gha_output:
+        with open(gha_output, "a") as f:
+            f.write("cited_files<<CITED_EOF\n")
+            f.write("\n".join(cited_files))
+            f.write("\nCITED_EOF\n")
 
     # Pass-3 reviewer reads stdout to find the path
     print(output_path)

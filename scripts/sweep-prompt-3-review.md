@@ -9,8 +9,11 @@ You are running **Pass 3** of the Open Enzyme sweep — peer review. The synthes
 ## Inputs
 
 - The TRIGGER block names the Pass 2 synthesis log file and a marker count (`marker_count: N`).
-- You may read any `wiki/*.md` page the Pass 2 synthesizer cited, to verify claims against primary sources.
-- You may read prior `wiki/synthesis.md` entries (top of file) for context.
+- The prompt inlines the synthesis log + an evidence cache of trigger files (the recent edits that caused this sweep) and cited files (every wiki page the Pass 2 synthesizer referenced). The cache is the most likely set of sources you'll want — read it inline, no tool round-trip needed.
+- You have **read-only research tools** for anything the cache misses: `read_file`, `list_files`, `grep`. Use them when a claim references a file outside the cache, or when you want to spot-check a specific section. Tool-iteration cap is in the TRIGGER block (`max_tool_iterations: N`); on the last allowed iteration the model is forced to produce final output.
+- You may also read prior `wiki/synthesis.md` entries (top of file) for context.
+
+When done researching, return your final review blockquotes — that signals completion (no more tool calls). The driver then writes those blockquotes to the merge step, which substitutes them into `wiki/synthesis.md`.
 
 ---
 
@@ -76,10 +79,13 @@ A strong push-back:
 
 **You MAY:**
 
-- Read `wiki/*.md` files the Pass 2 synthesizer cited, to verify
-- Read prior synthesis entries for context
-- Read `wiki/chembl-cross-check.md` to verify any IC50/bioactivity claim
-- Read `wiki/hypotheses/*.md` if the Pass 2 synthesizer referenced a committed hypothesis
+- Read any inlined evidence file (trigger or cited) directly — no tool call needed.
+- Use `read_file`, `list_files`, or `grep` (read-only) to verify claims against any wiki content not in the inlined cache. Examples:
+  - `grep` for a mechanism string across `wiki/*.md` to find where it's grounded
+  - `read_file` `wiki/<page>.md` when the synthesis cites a non-trigger non-cited page
+  - `list_files` `wiki/hypotheses/*.md` when checking against committed hypothesis cards
+- Always check `wiki/chembl-cross-check.md` for any IC50 / bioactivity claim — that file is the canonical curated source.
+- Read prior `wiki/synthesis.md` entries (top of file) for context.
 
 ---
 
