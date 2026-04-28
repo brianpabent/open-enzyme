@@ -2844,6 +2844,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#co-engineered-substrate-supply-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Co-engineered substrate-supply mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3335,6 +3346,22 @@
 <li><strong>Do the OPT-1 disulfide-engineered mutations (A6C + R290C + S119C + C220C + K234E + K236E) fold correctly in <em>A. oryzae</em>'s redox environment?</strong> Mutations designed for <em>S. cerevisiae</em> expression; <em>A. oryzae</em> cytoplasmic redox is different. See <a href="../synthesis/">synthesis.md Proposed Experiment 1</a>, <a href="../protein-engineering-strategy/">protein-engineering-strategy.md</a>.</li>
 <li><strong>What is the minimal viable protease-resistant mutation set</strong> that preserves activity while surviving 30-60 min duodenal transit? ALLN-346 achieved ~20× protease resistance; mechanism is covered by a now-expired patent. Literature audit needed. See <a href="../synthesis/">synthesis.md 2026-04-23 gout-clinical-pipeline experiments</a>.</li>
 </ul>
+<h3 id="co-engineered-substrate-supply-mechanisms">Co-engineered substrate-supply mechanisms<a class="headerlink" href="#co-engineered-substrate-supply-mechanisms" title="Permanent link">&para;</a></h3>
+<p>Strategic question across the engineering pipeline: should the chassis produce both substrate-degradation (uricase) AND substrate-supply enhancement (ABCG2 induction or relief of ABCG2 suppression) in a single product? <strong>Genotype-agnostic by design</strong> — the <a href="../abcg2-modulators/">Q141K rescue mechanism in abcg2-modulators.md §6</a> is one of the things this approach handles gracefully, but the engineering target is "boost intestinal urate secretion across populations," not "fix a specific variant." <em>(2026-04-28 — Brian)</em></p>
+<p>Three candidate routes surfaced so far, each with a different chassis-level implication:</p>
+<ul>
+<li>
+<p><strong>Butyrate co-production or co-formulation with a butyrogenic strain.</strong> Colonic butyrate hits both wild-type ABCG2 (PPARγ induction; Xie 2020 PMID 32555444) AND the Q141K variant (HDAC-mediated trafficking rescue; Basseville 2012 PMID 22472121) — dual-mechanism substrate-supply enhancement. A koji co-formulated with <em>Faecalibacterium prausnitzii</em> or similar butyrate producer, or engineered to overproduce butyrate from a heterologous pathway, would deliver supply enhancement alongside uricase degradation. <strong>Mechanistic Extrapolation; engineering feasibility unassessed.</strong> See <a href="../abcg2-modulators/">abcg2-modulators.md §Engineering implications #2</a>.</p>
+</li>
+<li>
+<p><strong>Glucoraphanin co-production (Nrf2 → ABCG2 induction).</strong> Already flagged at <a href="../abcg2-modulators/">abcg2-modulators.md §Engineering implications #1</a>. Sulforaphane precursor produced in the chassis, converted to active sulforaphane by gut myrosinase from cruciferous-resident bacteria. <strong>Mechanistic Extrapolation; <em>A. oryzae</em> glucoraphanin biosynthetic pathway feasibility not yet assessed</strong> — multi-enzyme plant pathway, fungal-host expression unknown.</p>
+</li>
+<li>
+<p><strong>Lactoferrin co-expression (relief of TNFα-driven ABCG2 suppression).</strong> Already in flight as <a href="../engineered-koji-protocol/">engineered-koji-protocol.md §16</a> for its primary CP1a/CP5b roles. Beyond those: sustained lactoferrin secretion in the lumen would suppress local TNFα → relieve the parallel ABCG2 suppression mechanism (Ferrer-Picón 2020, PMID 31211831). <strong>The lactoferrin module may be doing more for the gut-sink than its current positioning suggests</strong> — secondary effect not yet quantified.</p>
+</li>
+</ul>
+<p>Decision-gate framing: a chassis that produces uricase + supply-enhancer is <strong>two products in one</strong> — substrate supply increased AND substrate degradation increased, with potential super-additive serum-UA effect. Engineering effort approximately doubles vs. uricase-alone; clinical effect plausibly more than doubles. <strong>The right time to decide is when uricase-alone Phase 1 efficacy data is in</strong> — compare predicted uricase + supply-enhancer effect size to the marginal engineering cost. Until then, the question is "is this a first-class platform target, or a downstream optimization?"</p>
+<p>See <a href="../abcg2-modulators/">abcg2-modulators.md</a>, <a href="../gut-lumen-sink/">gut-lumen-sink.md</a>, <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a>.</p>
 <hr />
 <h2 id="nlrp3-gout-biology">NLRP3 / Gout Biology<a class="headerlink" href="#nlrp3-gout-biology" title="Permanent link">&para;</a></h2>
 <p>Questions about chokepoint biology, priming mechanisms, species-gap caveats, and biomarker interpretation.</p>
