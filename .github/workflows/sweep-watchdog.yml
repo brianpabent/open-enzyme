@@ -1,0 +1,196 @@
+name: Sweep Watchdog
+
+# Component #5 of the sweep automation architecture (see
+# scripts/SWEEP-ARCHITECTURE.md §5). Daily safety net: if the registry's
+# last_successful_sweep is more than 24h behind HEAD AND there are
+# pending wiki paths, fire wiki-sweep.yml against the pending list. If
+# the last 3 runs all failed, post a GitHub issue rather than re-firing
+# (escalate, don't loop).
+#
+# Bounded cost: at most one workflow_dispatch per day. Standalone
+# concurrency group so it doesn't fight with the main sweep workflow.
+#
+# Secrets required:
+#   GITHUB_TOKEN (provided automatically) — to fire workflow_dispatch
+#                                            and post issues.
+
+on:
+  schedule:
+    # 13:07 UTC daily — 9:07am ET, after Brian's typical morning review
+    # window, before the daemon-driven sweeps usually fire on his commits.
+    # Off-the-hour to avoid the GitHub Actions :00 stampede.
+    - cron: '7 13 * * *'
+  workflow_dispatch:
+    inputs:
+      threshold_hours:
+        description: 'How long since last successful sweep before firing (default 24)'
+        required: false
+        default: '24'
+        type: string
+
+concurrency:
+  group: sweep-watchdog
+  cancel-in-progress: false
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: write       # to fire wiki-sweep workflow_dispatch
+      contents: read       # to read sweep-state.json
+      issues: write        # to post failure-escalation issues
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Read registry + compute pending
+        id: state
+        run: |
+          set -euo pipefail
+          if [[ ! -f logs/sweep-state.json ]]; then
+            echo "Registry missing — nothing to do. Run sweep-state.py init manually."
+            echo "should_fire=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Last successful sweep timestamp
+          LAST_TS=$(python3 -c "
+          import json, sys
+          d = json.load(open('logs/sweep-state.json'))
+          last = d.get('last_successful_sweep') or {}
+          print(last.get('timestamp', ''))
+          ")
+          echo "last_successful_sweep timestamp: $LAST_TS"
+
+          if [[ -z "$LAST_TS" ]]; then
+            echo "No last_successful_sweep recorded — nothing to do."
+            echo "should_fire=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Threshold (default 24h, or workflow_dispatch input)
+          THRESHOLD_H="${{ inputs.threshold_hours }}"
+          THRESHOLD_H="${THRESHOLD_H:-24}"
+          NOW_S=$(date -u +%s)
+          LAST_S=$(date -d "$LAST_TS" -u +%s 2>/dev/null || echo "$NOW_S")
+          AGE_H=$(( (NOW_S - LAST_S) / 3600 ))
+          echo "Sweep age: ${AGE_H}h (threshold: ${THRESHOLD_H}h)"
+          echo "age_hours=$AGE_H" >> "$GITHUB_OUTPUT"
+
+          # Pending paths
+          PENDING=$(python3 scripts/sweep-state.py pending-paths)
+          PENDING_COUNT=$(echo "$PENDING" | grep -c . || echo 0)
+          echo "Pending paths: $PENDING_COUNT"
+          echo "pending_count=$PENDING_COUNT" >> "$GITHUB_OUTPUT"
+
+          if [[ -z "$PENDING" ]]; then
+            echo "Inbox zero — no pending paths."
+            echo "should_fire=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if (( AGE_H < THRESHOLD_H )); then
+            echo "Sweep age below threshold — daemon is working as expected."
+            echo "should_fire=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Fire criteria met. Format paths for trigger_paths input.
+          TRIGGER_PATHS=$(echo "$PENDING" | tr '\n' ' ' | sed 's/ $//')
+          {
+            echo "should_fire=true"
+            echo "trigger_paths<<TRIGGER_EOF"
+            echo "$TRIGGER_PATHS"
+            echo "TRIGGER_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check recent run history (3-failure brake)
+        id: brake
+        if: steps.state.outputs.should_fire == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # Pull last 5 wiki-sweep runs; count consecutive failures from
+          # the most recent backwards
+          RUNS=$(gh run list --workflow=wiki-sweep.yml --limit 5 \
+                 --json conclusion --jq '.[].conclusion' \
+                 || echo "")
+          CONSECUTIVE_FAILS=0
+          while IFS= read -r conclusion; do
+            [[ -z "$conclusion" ]] && continue
+            if [[ "$conclusion" == "failure" ]]; then
+              CONSECUTIVE_FAILS=$((CONSECUTIVE_FAILS + 1))
+            else
+              break
+            fi
+          done <<< "$RUNS"
+          echo "Consecutive recent failures: $CONSECUTIVE_FAILS"
+
+          if (( CONSECUTIVE_FAILS >= 3 )); then
+            echo "Brake engaged — 3+ consecutive failures. Escalating instead of firing."
+            echo "engage_brake=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "engage_brake=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fire wiki-sweep workflow_dispatch
+        if: steps.state.outputs.should_fire == 'true' && steps.brake.outputs.engage_brake != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          PATHS="${{ steps.state.outputs.trigger_paths }}"
+          echo "Firing wiki-sweep against ${{ steps.state.outputs.pending_count }} paths (sweep age ${{ steps.state.outputs.age_hours }}h)..."
+          gh workflow run wiki-sweep.yml -f trigger_paths="$PATHS"
+          echo "✓ Watchdog fired wiki-sweep.yml"
+
+      - name: Escalate via GitHub issue (3-failure brake)
+        if: steps.brake.outputs.engage_brake == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          TITLE="Sweep watchdog: 3+ consecutive wiki-sweep failures"
+          BODY=$(cat <<'EOF'
+          The sweep watchdog detected 3+ consecutive failed wiki-sweep runs
+          and is engaging the brake — instead of firing another `workflow_dispatch`,
+          this issue surfaces the failure for human review.
+
+          State at time of escalation:
+          - Pending paths: ${{ steps.state.outputs.pending_count }}
+          - Sweep age: ${{ steps.state.outputs.age_hours }}h
+
+          Suggested investigation:
+          1. `gh run list --workflow=wiki-sweep.yml --limit 5`
+          2. `gh run view <last-failed-run-id> --log-failed`
+          3. Check OpenRouter API status (most failures are transient 5xx).
+          4. Check for recent changes to scripts/synthesize.py /
+             scripts/sweep-1-propagate.py / scripts/sweep-3-review.py.
+
+          The watchdog will continue to skip-and-escalate daily until either
+          (a) a successful wiki-sweep run (any cause) breaks the failure streak,
+          or (b) someone closes this issue with `[skip-sweep-brake]` in a
+          comment to manually clear the streak counter.
+
+          See `scripts/SWEEP-ARCHITECTURE.md` §5 for the watchdog's design.
+          EOF
+          )
+          # Avoid duplicate issues: search for an open issue with the same title
+          EXISTING=$(gh issue list --state open --search "$TITLE" \
+                     --json number --jq '.[0].number' || echo "")
+          if [[ -n "$EXISTING" ]]; then
+            echo "Issue #$EXISTING already open; appending comment instead."
+            gh issue comment "$EXISTING" --body "Watchdog re-escalated $(date -u): age=${{ steps.state.outputs.age_hours }}h, pending=${{ steps.state.outputs.pending_count }}."
+          else
+            gh issue create --title "$TITLE" --body "$BODY" --label "sweep-automation"
+          fi
