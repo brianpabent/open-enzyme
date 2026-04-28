@@ -28,6 +28,11 @@ You are running **Pass 1** of the Open Enzyme sweep — propagation only. The TR
 2. **Build an impact list.** Grep across `wiki/` for the concept names, compounds, organisms, and mechanisms in the trigger file(s). List every affected page before editing.
 
 3. **Update each affected `wiki/*.md` page:**
+   - **Dedup before inserting.** Before adding any new heading, subsection, or standalone paragraph, check whether semantically equivalent content already exists in the target page. Heuristics for "semantically equivalent": same heading text (case-insensitive), same opening sentence, or content that paraphrases the same claim with the same cross-references. If you find an existing equivalent:
+     - **If it's missing the source attribution** that this propagation pass would add → modify in place: append `(source: <trigger-filename>)` to the existing content. Do not insert a parallel copy.
+     - **If it already has source attribution and the trigger adds genuinely new information** → merge the new information into the existing subsection. Do not insert a parallel copy.
+     - **If it already has source attribution and the trigger adds nothing new** → skip this insertion entirely. The propagation is already done.
+     - **Only insert a fresh subsection when no equivalent exists.** Recurrent propagation across multiple sweeps is the most common cause of duplication; the dedup check is the guard.
    - Inline rewrite of contradicted claims; don't append "see also" footnotes
    - Tag every new or revised claim with evidence level: `(Clinical Trial)`, `(Animal Model)`, `(In Vitro)`, `(Mechanistic Extrapolation)`
    - Inline provenance: `(source: <trigger-filename>)`

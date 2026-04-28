@@ -101,10 +101,6 @@ However, the pharmaceutical industry's validation of the target is notable: dapa
 
 If KPV is ever co-expressed in an engineered koji strain (Phase 2+ multi-payload track), the **shio-koji format is structurally unsuitable** — KPV is a tripeptide and shio-koji's 7–14 day active-protease environment will hydrolyze exposed peptide bonds. Use dried koji powder (heat-inactivated proteases) or amazake (cooked, brief enzyme exposure) as the carrier instead. See the format-constraint table in [`engineered-koji-protocol.md` §15](./engineered-koji-protocol.md#15-carnosine-co-expression-module) for the full ranking and the underlying biochemistry; the same logic that rules out shio-koji for carnosine rules it out for KPV. (source: engineered-koji-protocol.md)
 
-### Engineered-koji delivery: format constraint
-
-If KPV is ever co-expressed in an engineered koji strain (Phase 2+ multi-payload track), the **shio-koji format is structurally unsuitable** — KPV is a tripeptide and shio-koji's 7–14 day active-protease environment will hydrolyze exposed peptide bonds. Use dried koji powder (heat-inactivated proteases) or amazake (cooked, brief enzyme exposure) as the carrier instead. See the format-constraint table in [`engineered-koji-protocol.md` §15](./engineered-koji-protocol.md#15-carnosine-co-expression-module) for the full ranking and the underlying biochemistry; the same logic that rules out shio-koji for carnosine rules it out for KPV.
-
 ## Connection to SIBO and Lynn
 
 The [[sibo|Small Intestinal Bacterial Overgrowth]] connection is particularly relevant: SIBO drives the same NLRP3 inflammasome pathway that drives gout. KPV's gut anti-inflammatory properties could theoretically benefit both Brian's gout (through NLRP3 suppression and urate excretion support) and Lynn's digestive insufficiency (through reduction of SIBO-related inflammation).
