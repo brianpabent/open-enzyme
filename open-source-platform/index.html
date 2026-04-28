@@ -615,13 +615,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5. Open Substrate for AI-Assisted Peer Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-model-synthesis-as-guard-against-epistemic-homogenization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-model synthesis as guard against epistemic homogenization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-not-medical-advice" class="md-nav__link">
+  <a href="#6-not-medical-advice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Not Medical Advice
+        6. Not Medical Advice
       
     </span>
   </a>
@@ -974,6 +991,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Proposed Strain Stability Kit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cultural-mapping-tane-koji-as-master-koji-rice-as-working-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cultural mapping: tane-koji as master, koji rice as working batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2794,6 +2828,8 @@
       
         
       
+        
+      
     
     
     
@@ -2943,6 +2979,41 @@
     
   </span>
   
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modality-chokepoint-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modality × Target Matrix
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -3415,7 +3486,9 @@ Some heterologous compounds may express better in <em>S. cerevisiae</em> than <e
 <p>(Source: open-enzyme-vision.md, §10)</p>
 <h3 id="5-open-substrate-for-ai-assisted-peer-review">5. Open Substrate for AI-Assisted Peer Review<a class="headerlink" href="#5-open-substrate-for-ai-assisted-peer-review" title="Permanent link">&para;</a></h3>
 <p>Because the wiki source is public markdown at a stable URL, it also functions as an open substrate for AI-assisted peer review. Any collaborator can point their own AI — Claude, GPT, Codex, or any other — at this repository, run a rigor check, and contribute findings back via PR or synthesis entry. Traditional peer review is ~10 hours × 2–3 reviewers × weeks of back-and-forth. AI-assisted review on a shared substrate is ~20 minutes × unbounded reviewers × async. Disagreements between different AIs, grounded in the same inspectable evidence, become productive signals — pointing humans at the exact places where manual digging pays off, rather than hiding in private inference. Evidence-level tags, the ChEMBL cross-check, and the <a href="../linter-design/">Falsification Lint design</a> are the rigor discipline that makes this substrate trustworthy enough for that pattern to work. (source: open-enzyme-vision.md, §4)</p>
-<h3 id="5-not-medical-advice">5. Not Medical Advice<a class="headerlink" href="#5-not-medical-advice" title="Permanent link">&para;</a></h3>
+<h4 id="multi-model-synthesis-as-guard-against-epistemic-homogenization">Multi-model synthesis as guard against epistemic homogenization<a class="headerlink" href="#multi-model-synthesis-as-guard-against-epistemic-homogenization" title="Permanent link">&para;</a></h4>
+<p>A knowledge graph maintained by a single synthesizer converges, over time, on that synthesizer's blind spots and biases — the corpus starts to encode one model's prior rather than the underlying biology. This concern was surfaced by the system itself: in the <a href="../logs/v4-peer-review-2026-04-25-deepseek.md">2026-04-25 DeepSeek V4-Pro peer-review pass</a> (Connection 7), a DeepSeek model reviewing the Claude-Opus output flagged that running cheap full-corpus sweeps on a single model would erode exactly the diversity that makes the corpus trustworthy. That a model from a different vendor caught a methodological risk Claude had not surfaced unprompted is the demonstration of why heterogeneity earns its keep. The sweep workflow described in <a href="../.github/workflows/wiki-sweep.yml"><code>.github/workflows/wiki-sweep.yml</code></a> is therefore deliberately cross-vendor: Sonnet 4.6 propagates findings across cross-referenced pages, Gemini 2.5 Pro emits full-corpus synthesis, Opus 4.7 critiques the synthesis with fixed-verdict tags, and DeepSeek V4-Pro runs an independent peer-review pass on the Claude output — four models, three vendors (Anthropic, Google, DeepSeek), all routed through OpenRouter. Heterogeneity is the principle, not the implementation: future workflow changes should preserve cross-vendor coverage. Collapsing the pipeline to a single vendor — even a cheaper or faster one — is a regression against this principle, not an optimization.</p>
+<h3 id="6-not-medical-advice">6. Not Medical Advice<a class="headerlink" href="#6-not-medical-advice" title="Permanent link">&para;</a></h3>
 <p>This is citizen science, self-experimentation, and open knowledge sharing. We document what we build, what we observe, and what the published literature supports. We do not prescribe, diagnose, or claim to cure.</p>
 <p>(Source: open-enzyme-vision.md, §10)</p>
 <hr />
@@ -3719,6 +3792,10 @@ Some heterologous compounds may express better in <em>S. cerevisiae</em> than <e
 <li><strong>Negative control</strong> — blank sterile rice substrate, to check for environmental contamination.</li>
 <li><strong>QC protocol</strong> — simple spectrophotometric or colorimetric uric-acid-degradation assay, runnable at batch #1, batch #5, batch #10. Titer values uploaded to a community GitHub repo alongside conditions (humidity, temperature, rice cultivar, day of first visible growth).</li>
 </ul>
+<h4 id="cultural-mapping-tane-koji-as-master-koji-rice-as-working-batch">Cultural mapping: tane-koji as master, koji rice as working batch<a class="headerlink" href="#cultural-mapping-tane-koji-as-master-koji-rice-as-working-batch" title="Permanent link">&para;</a></h4>
+<p>The master-stock / working-stock model framed above in generic biotech terms is structurally identical to the master/working distinction the koji tradition has used for centuries. In the home protocol documented in <a href="../koji-home-fermentation/">koji-home-fermentation.md</a>, <strong>tane-koji</strong> (種麹, also called koji-kin — dried <em>Aspergillus</em> spore inoculum sold in pink foil packets, where a pinch inoculates ~1 kg of cooked rice) is the master, and the <strong>koji rice</strong> colonized over 42–48 h from that inoculum is the single working batch used downstream for shio-koji, amazake, or miso. The Hishiroku ratio — 20 g of tane-koji per 15 kg of rice — means a single packet of master inoculum supplies many independent working batches, with users returning to the packet rather than backslopping from a previous koji rice.</p>
+<p>That "buy tane-koji once per ~15 kg of rice" rule <strong>is</strong> the limited-generation propagation rule. Each new working batch starts from the master spore stock; no working batch becomes the seed for the next. The home protocol enforces this by convention rather than by SOP — koji rice has a short fridge life and visibly degrades, so users naturally restart from the packet — but the structure is the same one industrial fermentation enforces with frozen master cell banks.</p>
+<p>For the engineered-strain platform, adopting this terminology makes the safety rationale of §3 legible to non-scientist community members without translation. "Lyophilized engineered spore stock" maps to tane-koji; "the colonized substrate you actually use to make food" maps to koji rice; "never backslop past generation N" maps to the existing convention of returning to the packet for each new starter. The mitigation isn't an imposed pharma constraint dressed in food language — it's the pattern the tradition already uses, with the master stock now carrying a defined construct instead of a wild-type spore population.</p>
 <h3 id="community-feedback-loop">Community Feedback Loop<a class="headerlink" href="#community-feedback-loop" title="Permanent link">&para;</a></h3>
 <p>A GitHub repository (per strain, under the Open Enzyme organization) for fermentation logs — user-uploaded titers, conditions, and outcomes. Over hundreds of batches, patterns emerge: which rice cultivars consistently underperform, which ambient temperatures tank titers, how titer correlates with generation number. This turns community reproducers into a distributed QA system. It also provides the evidence base for revising the "never backslop past generation N" guidance as empirical data replaces extrapolation.</p>
 <p><strong>None of these mitigations are fully validated as of Phase 0.</strong> They are engineering sketches, not SOPs. The first real test will come during Phase 2 community replication, and the protocols above will be revised (probably substantially) based on what the first dozen community batches actually look like.</p>

@@ -2271,6 +2271,8 @@
       
         
       
+        
+      
     
     
     
@@ -2480,6 +2482,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Metrics — pick by what the intervention affects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chokepoint-biomarker-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chokepoint-biomarker map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2577,6 +2596,41 @@
     
   </span>
   
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modality-chokepoint-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modality × Target Matrix
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -3081,6 +3135,58 @@
 - Glucose/metabolic intervention → fasting glucose, fasting insulin, A1C, lipids
 - Specialty markers (complement, leukotrienes, etc.) → as the mechanism dictates</p>
 <p>For symptom-only experiments without labs, structured daily tracking + a clear primary outcome is enough.</p>
+<h3 id="chokepoint-biomarker-map">Chokepoint-biomarker map<a class="headerlink" href="#chokepoint-biomarker-map" title="Permanent link">&para;</a></h3>
+<p>For NLRP3-targeted experiments specifically (the gout / autoimmune-flare track), a four-biomarker specialty panel — serum C5a, urinary LTE4, plasma SPMs (RvD1, MaR1), hs-CRP — maps onto distinct chokepoints in the <a href="../nlrp3-exploit-map/">NLRP3 exploit map v1.2</a>. The point of this map is operational, not descriptive: the panel converts a binary "inflammation present / absent" readout into "which mechanism is currently active," and the decision rules below convert that into "which compound to add next if the stack underperforms." Evidence level is <strong>Mechanistic Extrapolation</strong> grounded in In Vitro and Animal Model evidence from the cited pages — not Clinical Trial. Specific cutoffs vary by lab; defer numeric thresholds to the ordering physician and the lab's reference range. The contingent NET panel (rule 5 below) is the only entry on this map that costs additional money per flare — keep it contingent.</p>
+<table>
+<thead>
+<tr>
+<th>Biomarker</th>
+<th>Reads out chokepoint</th>
+<th>What "elevated" means</th>
+<th>What "normal/low" means</th>
+<th>Suggested next action if at variance with stack expectation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serum C5a (+ desArg)</td>
+<td><strong>CP0</strong> — complement priming (MSU → C1/CRP → C5 convertase → C5a)</td>
+<td>Active complement-driven priming; the upstream non-transcriptional "Signal 1" the stack does not currently cover (see <a href="../complement-c5a-gout/">complement-c5a-gout.md §11</a>)</td>
+<td>Complement priming is not the rate-limiter for this flare phenotype</td>
+<td>Persistently elevated C5a + clinical flares despite stack → discuss <a href="../complement-c5a-gout/">avacopan</a> (FDA-approved C5aR1 antagonist) with prescriber. Pre-analytics matter: cold-chain EDTA, spun within 30 min, –80 °C — warm transit generates spurious C5a in vitro</td>
+</tr>
+<tr>
+<td>Urinary LTE4</td>
+<td><strong>CP6a</strong> — 5-LOX / LTB4 neutrophil amplification (on-target PD readout for 5-LOX engagement)</td>
+<td>Active leukotriene amplification arm; neutrophil chemotaxis loop is open (see <a href="../zileuton/">zileuton.md</a>)</td>
+<td>5-LOX flux is low — quercetin / AKBA / EPA substrate competition is engaging target, or this patient's gout is not CP6a-dominant</td>
+<td>LTE4 fails to drop on quercetin/AKBA/zileuton → "non-absorber, not non-responder" — PK / bioavailability problem, not target-engagement problem; check formulation (Phytosome quercetin, Boswellin AKBA) before escalating dose. Clean LTE4 drop + unchanged flare frequency → CP6a is not rate-limiting; redirect attention to CP0 or CP2</td>
+</tr>
+<tr>
+<td>Plasma SPMs (RvD1, MaR1) by LC-MS/MS</td>
+<td><strong>CP5b</strong> — active resolution via ALX/FPR2 (see <a href="../spm-resolution-pathway/">spm-resolution-pathway.md §12</a>)</td>
+<td>Resolution program is engaged; omega-3 substrate is being converted to bioactive D-resolvins / maresins</td>
+<td>Resolution-incompetent — substrate-limited (low omega-3 index) or pathway-limited (15-LOX / aspirin-acetylated COX-2 not generating intermediates)</td>
+<td>Low SPMs + post-flare hs-CRP not returning to baseline → CP5b deficit; reframe omega-3 toward DHA emphasis per <a href="../supplements-stack/">supplements-stack.md</a> and check omega-3 index (target &gt;8%); consider RvE1/LTE4 ratio (CP6a↔CP5b axis, <a href="../spm-resolution-pathway/">spm-resolution-pathway.md §12</a>) rather than absolute SPM number</td>
+</tr>
+<tr>
+<td>hs-CRP</td>
+<td><strong>Systemic inflammation endpoint</strong> — no specific chokepoint; the integrated downstream readout</td>
+<td>Active systemic inflammation; non-specific to mechanism. Also an upstream stratifier for CP0 (CRP is the dominant classical-pathway initiator on MSU surfaces, <a href="../complement-c5a-gout/">complement-c5a-gout.md §11.3</a>)</td>
+<td>Systemic inflammation suppressed regardless of which chokepoint is doing the work</td>
+<td>hs-CRP elevated + all three mechanism-specific markers normal → look outside the NLRP3 axis (occult infection, metabolic, training load); CRP doubling from baseline is already a §6 universal halt criterion</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Red-flag decision rules.</strong> Each rule is a pattern across the four-biomarker panel that points to a specific next compound to discuss with the prescribing physician. None of these are clinical thresholds — they are interpretive heuristics for an n=1 PD readout.</p>
+<ul>
+<li><strong>C5a elevated + LTE4 normal + hs-CRP elevated</strong> → CP0 is the rate-limiting bottleneck; the stack's downstream (CP1/CP2/CP6a) coverage is fine but priming is unchecked → consider <a href="../complement-c5a-gout/">avacopan</a> discussion with the prescribing physician.</li>
+<li><strong>LTE4 fails to drop despite quercetin / AKBA / zileuton at adequate dose</strong> → "non-absorber, not non-responder" — PK / bioavailability problem, not target-engagement problem; check formulation and absorption (Phytosome quercetin, fed-state dosing) before concluding the drug doesn't work in this patient.</li>
+<li><strong>Plasma SPMs low + hs-CRP elevated post-flare (&gt;2 weeks)</strong> → CP5b resolution-incompetent; reframe omega-3 toward DHA emphasis per <a href="../supplements-stack/">supplements-stack.md</a> and verify omega-3 index &gt;8% before adding pharma at CP5a (anakinra / canakinumab / rilonacept).</li>
+<li><strong>C5a normal + LTE4 normal + SPMs normal + hs-CRP elevated</strong> → the inflammation signal is not coming from the NLRP3 axis this panel covers; investigate non-NLRP3 sources (occult infection, training load, metabolic) before adjusting the stack.</li>
+<li><strong>If a flare occurs AND the standard panel returns ambiguous on the resolution axis</strong> (specifically: plasma SPMs borderline + urinary LTE4 borderline + hs-CRP elevated, with no clear bottleneck pattern from the four rules above) → add a citH3 + cfDNA + MPO-DNA complex panel at the next post-flare draw (~$200–400 specialty lab). Reads out the free-vs-aggregated NET ratio — distinguishes a resolution-competent flare (cytokines being sequestered into aggNETs) from a resolution-stuck flare (free NETs amplifying inflammation), per the aggNET vs. free-NET framing in <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md v1.2</a> (Schauer 2014, PMID 24784231; In Vitro + Animal Model for the framing, Mechanistic Extrapolation for the resolution-competence interpretation) and the upstream SPM driver of aggNET formation in <a href="../spm-resolution-pathway/">spm-resolution-pathway.md §5</a>. Don't run routinely; the existing SPM panel covers the resolution axis indirectly under most circumstances — citH3/cfDNA is the <em>consequence</em> readout where SPMs are the <em>signal</em>, and the marginal information rarely justifies the cost. (V4-Pro 2026-04-25 peer-review flagged routine NET panels as "impractical for n=1"; this contingent rule keeps the option available without burning $200–400/flare on routine cases.)</li>
+</ul>
+<p><strong>Cross-references:</strong> <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> (canonical chokepoint definitions, v1.2; aggNET vs. free-NET framing), <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> (CP0 biomarker handling and avacopan), <a href="../spm-resolution-pathway/">spm-resolution-pathway.md</a> (CP5b SPM panel methodology, RvE1/LTE4 ratio, §5 SPM-driven NET resolution), <a href="../zileuton/">zileuton.md</a> (urinary LTE4 as 5-LOX PD readout).</p>
 <hr />
 <h2 id="5-symptom-diary">5. Symptom diary<a class="headerlink" href="#5-symptom-diary" title="Permanent link">&para;</a></h2>
 <p>Daily, low-friction entries. Pick fields relevant to what you're testing. Common scales:</p>

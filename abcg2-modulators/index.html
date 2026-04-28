@@ -2606,6 +2606,8 @@
       
         
       
+        
+      
     
     
     
@@ -2755,6 +2757,41 @@
     
   </span>
   
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modality-chokepoint-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modality × Target Matrix
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -3304,7 +3341,9 @@
 </ol>
 <p>This is mechanistically a stronger lever in Q141K carriers than wild-type carriers. Predicted but untested: <strong>Q141K + fiber → larger UA reduction than wild-type + fiber.</strong></p>
 <p>A pharmacogenomic-stratified RCT of fermentable fiber (or sodium butyrate enteric capsules) on serum UA, stratified by Q141K genotype, would either confirm or falsify this prediction. Cost-effective experiment for the platform's "differential responder" question.</p>
+<p><strong>Genotype-source framing — clinical, not consumer.</strong> The trial must generate its own genotype data at enrollment via a CLIA-certified clinical PCR assay for rs2231142 (Quest, LabCorp, or equivalent single-SNP genotyping; ~$40–80 per patient at clinical-lab pricing). Consumer-grade genotype exports (23andMe, Ancestry, etc.) are explicitly excluded as the data source — not as a personal-preference call but for trial-design rigor: reproducibility, documented assay performance, sample-chain-of-custody, and CLIA-grade QA are all preconditions for a publishable pharmacogenomic stratification. The trial framing is therefore agnostic at recruitment (no presumed prior genotype knowledge); patients are screened, genotyped on-site, and assigned to arms by the trial's own assay.</p>
 <p><strong>Population-frequency caveat for trial design.</strong> Q141K allele frequency varies substantially by ancestry — published GWAS report ~30–50% in East Asian gout cohorts but only ~10–15% in European-ancestry cohorts (some series lower). The "30–50% of gout patients" figure is correct for an East-Asian-majority cohort but overstates the carrier fraction in a European-American sample. A pharmacogenomic fiber trial should pre-specify population and powering — and, given that Q141K homozygotes are predicted to show the largest effect size, including a homozygous arm (where feasible) gives the cleanest signal-to-noise even at modest n. This framing is not "fiber for everyone with gout" — it's <strong>dual-action butyrate as a personalized intervention for Q141K-positive gout patients, with effect size scaling by allele dose</strong>.</p>
+<p>The clinical-genotyping cost is also self-justifying against the alternative non-stratified design. In a European-ancestry cohort with carrier frequency ~10–15%, a non-stratified RCT looking for the same Q141K-conditional effect size would need roughly 3× the n to power the differential response (the Q141K-positive subset's signal is diluted by the wild-type majority). At ~$40–80/patient, on-site genotyping that lets the trial run with ~120 enriched patients instead of ~360 unstratified is a clear win — and is anyway required to identify Q141K homozygotes (~5–25% of carriers depending on population) for the homozygous arm. See <a href="../androgen-urate-axis/"><code>androgen-urate-axis.md</code></a> for the male-demographic ceiling that interacts with this stratification, and <a href="../supplements-stack/"><code>supplements-stack.md</code></a> for ABCG2-inhibitor counter-indications that should be exclusion criteria at enrollment.</p>
 <hr />
 <h2 id="tissue-selectivity-matters">Tissue selectivity matters<a class="headerlink" href="#tissue-selectivity-matters" title="Permanent link">&para;</a></h2>
 <p>ABCG2 is expressed at multiple barrier sites with different physiological roles:</p>
@@ -3436,7 +3475,7 @@
 <h2 id="open-research-questions">Open research questions<a class="headerlink" href="#open-research-questions" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><strong>Q141K × fiber differential response.</strong> Predicted but untested: Q141K-positive gout patients should show larger UA reduction with fermentable fiber than wild-type-positive patients, because butyrate hits both PPARγ-induction and HDI-rescue. A pharmacogenomic-stratified RCT (n ~120, baseline UA ≥7 mg/dL, stratified Q141K hetero/wild-type, 12-week inulin or equivalent) would resolve this. Estimated cost: $150K, 6 months. High platform-relevance.</p>
+<p><strong>Q141K × fiber differential response.</strong> Predicted but untested: Q141K-positive gout patients should show larger UA reduction with fermentable fiber than wild-type-positive patients, because butyrate hits both PPARγ-induction and HDI-rescue. A pharmacogenomic-stratified RCT (n ~120, baseline UA ≥7 mg/dL, stratified Q141K hetero/wild-type by on-site CLIA-grade rs2231142 PCR genotyping at enrollment — see §6 for genotype-source rationale, 12-week inulin or equivalent) would resolve this. Estimated cost: $150K, 6 months. High platform-relevance.</p>
 </li>
 <li>
 <p><strong>Tissue-selective PPARγ agonists.</strong> Pharmacology question: are there PPARγ agonists with gut-enrichment selectivity (sparing adipose, liver, BBB)? Selective PPARγ modulators (SPPARMs) are an active drug-development area; some have differential tissue activity. Worth a desk review.</p>
