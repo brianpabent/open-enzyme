@@ -1,8 +1,17 @@
 ---
 title: CRISPR Uricase
 aliases: [gene-therapy, CRISPR-therapy, uricase-gene-therapy, ancestral-reconstruction, pseudogene-reactivation]
-related: [gout-pathophysiology, validation-experiments, engineered-yeast-uricase, engineered-koji-protocol]
-sources: [gout-deep-dive.md]
+related:
+  - gout-pathophysiology.md
+  - validation-experiments.md
+  - engineered-yeast-uricase-proposal.md
+  - engineered-koji-protocol.md
+  - colchicine.md
+  - nlrp3-exploit-map.md
+  - supplements-stack.md
+sources:
+  - gout-deep-dive.md
+  - colchicine.md
 ---
 
 # CRISPR Uricase: Gene Therapy for Gout

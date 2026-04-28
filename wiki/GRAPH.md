@@ -84,6 +84,7 @@ graph TB
         J3["ASC Block"]
         J4["Gasdermin D Block"]
         J5["Colchicine — CP2 P2X7 + CP3 ASC speck"]
+        J6["Colchicine — ULT-initiation prophylaxis + CV repositioning (Lodoco FDA 2023)"]
     end
 
     subgraph Parallel_Path["PARALLEL FLARE PATHWAYS (CP6a)"]
@@ -156,6 +157,7 @@ graph TB
         DE4["Disulfiram — CP6b GSDMD (FDA alcohol)"]
         DE5["Avacopan — CP0 C5aR1 (FDA ANCA)"]
         DE6["Strain Library (synthesis output)"]
+        DE7["Modality × Target Matrix — exploration surface"]
     end
 
     subgraph Androgens["ANDROGEN-URATE AXIS (NEW)"]
@@ -252,6 +254,10 @@ graph TB
     %% (source: colchicine.md; Leung 2015 PMID 26228647; Misawa 2013 PMID 23502856)
     J5 -->|"P2X7 pore block (CP2)"| C2
     J5 -->|"microtubule depolymerization blocks ASC transport (CP3)"| C3
+    %% Colchicine cardiovascular repositioning (COLCOT/LoDoCo2 → Lodoco FDA 2023)
+    %% and ULT-initiation prophylaxis role (source: colchicine.md)
+    J6 -->|"ULT-initiation prophylaxis prevents dissolution flares"| C5
+    J6 -->|"CV repositioning — NLRP3 suppression reduces plaque instability"| C2
     
     %% Metabolic modulation
     K1 --> K2
@@ -358,6 +364,9 @@ graph TB
     DE3 -->|"CP6a 5-LOX inhibitor"| N1
     DE4 -->|"CP6b GSDMD inhibitor"| C4
     DE5 -.->|"CP0 C5aR1 antagonist (pharma adjunct)"| O2
+    %% Modality × Target Matrix (source: modality-chokepoint-matrix.md)
+    DE7 -->|"orthogonal exploration of"| DE1
+    DE7 -->|"surfaces novel modalities for"| DE2
 
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2

@@ -9,6 +9,7 @@ related:
   - carnosine.md
   - supplements-stack.md
   - self-experiment-protocol.md
+  - abcg2-modulators.md
 sources:
   - gout-deep-dive.md
   - gout-pathophysiology.md

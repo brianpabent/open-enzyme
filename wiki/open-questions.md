@@ -34,6 +34,10 @@ related:
   - cross-validation.md
   - open-enzyme-vision.md
   - open-source-platform.md
+  - modality-chokepoint-matrix.md
+  - abcg2-modulators.md
+  - androgen-urate-axis.md
+  - colchicine.md
 sources:
   - "Aggregated from `Open Questions` sections across the Open Enzyme wiki"
   - "Synthesis Pass 2 findings across 2026-04-23, 2026-04-24"
@@ -121,6 +125,8 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 
 ### Chokepoint biology
 
+- **Does engineered-koji prophylaxis reduce flare frequency on ULT initiation?** This is the clinical question that justifies the platform's "adjunct" positioning. Colchicine is the current standard for ULT-initiation prophylaxis (ACR 2020: 0.5–0.6 mg/day × 3–6 months). A food-based CP1a-targeted koji adjunct could plausibly reduce the frequency of colchicine-rescue or prednisone-rescue events during the dissolution-flare window. Flare-rate endpoint, measurable in any ULT-initiation cohort with adequate follow-up. (Mechanistic Extrapolation; source: colchicine.md §8)
+- **CP1a + CP2/CP3 synergy in vitro.** Is there a measurable synergy between kojic acid (CP1a) and colchicine (CP2/CP3) in suppressing MSU-induced IL-1β release in primary monocytes? A bead-MSU stimulation assay with combinatorial dosing would answer this. (Mechanistic Extrapolation; source: colchicine.md §8)
 - **CP5b — why do gout patients' SPM levels remain low during flare?** Dietary precursor shortage, 15-LOX expression defect, or demand outpacing production? See [spm-resolution-pathway.md §6 Q1](./spm-resolution-pathway.md).
 - **ALX/FPR2 polymorphisms in gout.** Are there FPR2 genetic variants associated with flare severity or tophi formation? See [spm-resolution-pathway.md §6 Q2](./spm-resolution-pathway.md).
 - **Direct SPM bioassay feasibility.** SPM measurement requires LC-MS/MS at pg/mL. Practical for clinical biomarker stacks, or research-only? See [spm-resolution-pathway.md §6 Q3](./spm-resolution-pathway.md).
@@ -210,6 +216,17 @@ Questions about the koji-first vs. yeast-first choice, community fermentation re
 - **Is Open Enzyme's wiki-wide IC50 provenance practice rigorous enough?** Many IC50 values come from review papers, not primary ChEMBL-indexed assays. A written standard would prevent legacy-citation drift. See [synthesis.md 2026-04-23 Open Questions](./synthesis.md).
 - **Does MCC950 / CRID3 / CP-456773 absence from ChEMBL name search reflect a curation gap or a synonym issue?** Worth a direct structure-based query. See [synthesis.md 2026-04-23 Open Questions](./synthesis.md).
 - **Is there a "ChEMBL blind spot" for natural products?** ChEMBL's curation bias favors medicinal chemistry literature; natural products with strong functional but weak binding data (BCP, BHB, many terpenes) may be systematically underrepresented. See [synthesis.md 2026-04-23 Open Questions](./synthesis.md).
+
+### Novel modalities (from modality-chokepoint-matrix.md)
+
+The [Modality × Target Matrix](./modality-chokepoint-matrix.md) (2026-04-28) surfaces ten high-leverage exploration vectors not currently in the OE wiki. The highest-priority open questions per the matrix:
+
+- **siRNA against URAT1 mRNA via kidney-tropic conjugate.** Sequence-specific renal-reabsorption knockdown; cleaner off-target profile than benzbromarone-class uricosurics. Adjacent to inclisiran-style GalNAc conjugate precedent. Zero clinical programs for gout. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
+- **Engineered Faecalibacterium prausnitzii for local butyrate at the gut crypt.** Hits both wild-type ABCG2 (PPARγ) and Q141K (HDAC trafficking rescue) per [abcg2-modulators.md](./abcg2-modulators.md). Durable colonization avoids the "eat koji daily" adherence problem. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
+- **Myeloid-tropic LNP delivering NLRP3-silencing mRNA/siRNA to vessel-wall macrophages.** Brian-pattern Lp-PLA2 persistence is the n=1 case study. Acuitas/Moderna myeloid LNPs exist for oncology; gout repurposing is novel. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
+- **Pharmacological chaperone for ABCG2 Q141K folding rescue.** CFTR-corrector class precedent (~$10B annual market for ΔF508 correction). Same ATP-binding cassette superfamily. Academic mechanism literature exists (Basseville 2012 PMID 22472121); no clinical programs. (In Vitro; source: modality-chokepoint-matrix.md, abcg2-modulators.md)
+- **mRNA-IL-1RA pulse therapy for acute flare termination.** Transient expression matches flare window. Zero programs; mechanistically defensible; competes with canakinumab on cost. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
+- **Wearable sweat-based or microneedle continuous UA monitoring.** Changes intervention-titration kinetics. UCSD/Stanford research-stage. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
 
 ### Community fermentation and strain stability
 

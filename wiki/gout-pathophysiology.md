@@ -155,6 +155,7 @@ IL-1β is a master cytokine—one molecule has cascading effects across the enti
 - Reduces neutrophil chemotaxis and phagocytosis of MSU crystals
 - Low-dose regimen (1.2 mg + 0.6 mg at 1 h) validated by AGREE trial (Terkeltaub 2010 PMID 20131255); replaced older "dose-to-GI-failure" approach (Clinical Trial)
 - Cardiovascular repositioning: COLCOT (23% CV event reduction) and LoDoCo2 (31% reduction) led to FDA approval of Lodoco 0.5 mg for atherosclerotic CVD, June 2023 (Clinical Trial)
+- **ULT-initiation prophylaxis:** ACR 2020 guideline recommends concurrent colchicine 0.5–0.6 mg once or twice daily for 3–6 months when starting allopurinol/febuxostat, to prevent mobilization flares as tophaceous urate dissolves. Duration keyed to stable serum UA <6.0 mg/dL with no flares for ≥3 months. Same dissolution-flare bridge applies to CRISPR-uricase gene therapy — see [crispr-uricase.md](./crispr-uricase.md) for the post-therapy prophylaxis protocol. (Clinical Trial — guideline; source: colchicine.md)
 - Problem: Narrow therapeutic index (~3–5×); CYP3A4/P-gp interaction surface (macrolides, azoles, calcineurin inhibitors); renal/hepatic dose adjustment required
 
 **NSAIDs** (indomethacin, naproxen)
