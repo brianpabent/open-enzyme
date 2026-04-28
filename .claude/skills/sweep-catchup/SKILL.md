@@ -24,27 +24,31 @@ This is the **minimal version**. Once `logs/sweep-state.json` exists (component 
 
 ## What to do
 
-### Step 1 — Determine the base commit (the cursor)
+### Step 1 — Get the pending paths from the registry
 
-The base commit is the most recent commit where Pass 3 (sweep-3-review) successfully completed. Find it via:
-
-```bash
-git log --grep='^sweep-3-review:' -n 1 --format='%H %s' main
-```
-
-That returns the SHA + subject of the last successful Pass 3 commit. Use that SHA as the base.
-
-**Fallback** if no `sweep-3-review:` commit is found (e.g., fresh repo): use the most recent file in `logs/` matching `v4-synthesis-*.md`, parse the SHA from the filename pattern `v4-synthesis-<date>-<sha>.md`, and use that.
-
-If neither exists, ask Brian for an explicit base commit.
-
-### Step 2 — Compute pending paths
+The canonical cursor is `logs/sweep-state.json`'s `last_successful_sweep.commit`. Read it via the helper:
 
 ```bash
-git diff --name-only <base> HEAD -- 'wiki/*.md' | grep -v 'wiki/synthesis\.md' | sort -u
+python3 scripts/sweep-state.py pending-paths
 ```
 
-This is the list of `wiki/*.md` files that have been modified since the last successful Pass 3 but exclude `wiki/synthesis.md` (which the workflow's `paths:` filter explicitly excludes — it's Pass 3's output target, not a trigger).
+That command (a) reads the registry, (b) computes `git diff --name-only <last_successful_sweep.commit> HEAD -- 'wiki/*.md'`, (c) excludes `wiki/synthesis.md`, (d) prints one path per line, sorted and deduplicated.
+
+If the registry is missing (`logs/sweep-state.json` doesn't exist), bootstrap it once:
+
+```bash
+python3 scripts/sweep-state.py init
+```
+
+That backfills from the latest existing `logs/v4-synthesis-*.md` log and the most recent `^sweep-3-review:` commit on main.
+
+### Step 2 — (Validation; no separate compute step)
+
+The list comes back already validated and sorted from Step 1. If the user passed `--base <SHA>` as an override, use this fallback path instead:
+
+```bash
+git diff --name-only <override-base> HEAD -- 'wiki/*.md' | grep -v 'wiki/synthesis\.md' | sort -u
+```
 
 ### Step 3 — Validate the list
 
@@ -99,6 +103,6 @@ The skill accepts free-text args from the user:
 - Don't fall back to `git log --grep='^sweep'` (the workflow's brittle default). The whole point of this skill is to bypass that regex.
 - Don't update the registry yet — `logs/sweep-state.json` doesn't exist. After component #2 ships, update both this skill and the workflow to read/write it.
 
-## After the registry exists
+## Implementation note
 
-Refactor: replace Step 1 + Step 2 (base detection + path computation) with a single read of `logs/sweep-state.json` → `pending_paths`. Steps 3–6 are unchanged. The `--base` and `--paths` overrides remain useful for debugging.
+The skill reads from the registry (`logs/sweep-state.json`) via `scripts/sweep-state.py pending-paths`. This bypasses the workflow's brittle `git log --grep='^sweep'` regex and is robust to hand-edited commits with `sweep-N-...` prefixes. The registry is updated only on Pass 3 success (atomically, in the same commit as the synthesis.md prepend), so a partial sweep cycle never moves the cursor forward.

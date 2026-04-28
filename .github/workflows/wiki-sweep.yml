@@ -354,7 +354,22 @@ jobs:
             echo "Pass 3 made no changes to synthesis.md"
             exit 0
           fi
-          git add wiki/synthesis.md
+
+          # Update the sweep-state registry (component #2 of the sweep
+          # automation architecture, scripts/SWEEP-ARCHITECTURE.md). The
+          # registry is the canonical cursor — `last_successful_sweep` is
+          # updated only on Pass 3 success, atomically committed alongside
+          # the synthesis.md prepend in this same commit. This replaces the
+          # brittle `git log --grep='^sweep'` regex that the workflow's
+          # diff-base detection used to rely on.
+          python3 scripts/sweep-state.py update-success \
+            --commit "${{ github.sha }}" \
+            --synthesis-log "$SYNTHESIS_LOG" \
+            --trigger-files "$(echo "$TRIGGER_FILES" | tr '\n' ',' | sed 's/,$//')" \
+            --run-id "${{ github.run_id }}" \
+            --trigger "${{ github.event_name }}"
+
+          git add wiki/synthesis.md logs/sweep-state.json
           git commit -m "sweep-3-review: Claude review of Gemini 2.5 Pro synthesis → wiki/synthesis.md [skip-wiki-sweep]"
 
       - name: Push review

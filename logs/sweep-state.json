@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "last_successful_sweep": {
+    "commit": "dda0202622c367a08616eefc4d399976465ef4f8",
+    "timestamp": "2026-04-28T13:45:01Z",
+    "synthesis_log": "logs/v4-synthesis-2026-04-28-3943bfc.md",
+    "review_commit": "dda0202622c367a08616eefc4d399976465ef4f8",
+    "trigger_files": [],
+    "run_id": null,
+    "_backfilled": true,
+    "_backfilled_at": "2026-04-28T13:46:09Z"
+  },
+  "recent_runs": []
+}
