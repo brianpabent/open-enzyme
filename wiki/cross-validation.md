@@ -80,6 +80,10 @@ Engineered *E. coli* Nissle 1917 with a uric acid-responsive biosensor expressin
 **Feasibility Rating: 6/10**  
 *Rationale:* Mechanism is validated in preclinical. Clinical signal exists but is marginal and inconsistent. Requires de-risking in human proof-of-concept studies.
 
+#### Structural Ceiling on the Gut-Lumen Sink in the Primary Demographic
+
+The gut-lumen sink can only degrade urate that ABCG2 actually delivers into the lumen — which means transporter capacity, not enzyme dose, sets the ceiling on platform efficacy. Androgens (testosterone, DHT) transcriptionally suppress ABCG2 in both intestine and kidney (Animal Model + Mechanistic Extrapolation; see [androgen-urate-axis.md](./androgen-urate-axis.md)). For the primary demographic — male gout patients (~90% of the population), a meaningful fraction on TRT, SERMs, or AAS — this *lowers the asymptote* of the dose-response curve for any luminal uricase. It does not eliminate the response (the gate is throttled, not closed), but adding more enzyme on the uricase side cannot rescue substrate that never reaches the lumen. The tractable lever is on the transporter side: butyrate (from fermentable fiber → colonic SCFA → PPARγ-driven ABCG2 induction) and Nrf2-axis inducers (sulforaphane, indole-3-carbinol) lift the ceiling back up — see [abcg2-modulators.md](./abcg2-modulators.md) for the full rescue stack and primary citations. Operationally: if a TRT patient runs the protocol and serum UA does not drop as expected, the response is not "dose more enzyme" — it is "open the gate stack" and re-test. This shapes Phase 2b stratification (androgen status, fiber intake, ABCG2 genotype) and is a *structural* constraint on the platform's primary cohort, not a tunable dose variable.
+
 ---
 
 ### Claim 2: Oral Enzyme Survival (GI Transit Intact to Small Intestine)

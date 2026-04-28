@@ -669,7 +669,7 @@ This is an honest assessment. The platform has substrate loading, indirect resol
 
 ### 12.2 Urinary LTE4 (already in self-experiment §3)
 
-Urinary LTE4 is a CP6a (5-LOX pathway) readout — indicates leukotriene production. **Inverse relationship with SPMs is expected**: high LTE4 + low SPMs indicates a pro-inflammatory 5-LOX/15-LOX ratio shifted toward LTB4/LTE4 (inflammation) vs. RvE1/lipoxin (resolution). Per [self-experiment-protocol.md §3](./self-experiment-protocol.md), urinary LTE4 is already in the planned assay panel. Pairing with an SPM plasma panel would let you compute a simple "resolution ratio" (e.g., RvE1/LTE4 or sum-SPM/LTE4) as a CP6a ↔ CP5b axis biomarker.
+Urinary LTE4 is a CP6a (5-LOX pathway) readout — indicates leukotriene production. **Inverse relationship with SPMs is expected**: high LTE4 + low SPMs indicates a pro-inflammatory 5-LOX/15-LOX ratio shifted toward LTB4/LTE4 (inflammation) vs. RvE1/lipoxin (resolution). Per [self-experiment-protocol.md §"Chokepoint-biomarker map"](./self-experiment-protocol.md#chokepoint-biomarker-map), urinary LTE4 is already in the planned assay panel. Pairing with an SPM plasma panel would let you compute a simple "resolution ratio" (e.g., RvE1/LTE4 or sum-SPM/LTE4) as a CP6a ↔ CP5b axis biomarker.
 
 ### 12.3 Surrogate clinical endpoints
 

@@ -96,7 +96,11 @@ The distributed nature of the platform means each person working with a strain i
 
 Because the wiki source is public markdown at a stable URL, it also functions as an open substrate for AI-assisted peer review. Any collaborator can point their own AI — Claude, GPT, Codex, or any other — at this repository, run a rigor check, and contribute findings back via PR or synthesis entry. Traditional peer review is ~10 hours × 2–3 reviewers × weeks of back-and-forth. AI-assisted review on a shared substrate is ~20 minutes × unbounded reviewers × async. Disagreements between different AIs, grounded in the same inspectable evidence, become productive signals — pointing humans at the exact places where manual digging pays off, rather than hiding in private inference. Evidence-level tags, the ChEMBL cross-check, and the [Falsification Lint design](./linter-design.md) are the rigor discipline that makes this substrate trustworthy enough for that pattern to work. (source: open-enzyme-vision.md, §4)
 
-### 5. Not Medical Advice
+#### Multi-model synthesis as guard against epistemic homogenization
+
+A knowledge graph maintained by a single synthesizer converges, over time, on that synthesizer's blind spots and biases — the corpus starts to encode one model's prior rather than the underlying biology. This concern was surfaced by the system itself: in the [2026-04-25 DeepSeek V4-Pro peer-review pass](../logs/v4-peer-review-2026-04-25-deepseek.md) (Connection 7), a DeepSeek model reviewing the Claude-Opus output flagged that running cheap full-corpus sweeps on a single model would erode exactly the diversity that makes the corpus trustworthy. That a model from a different vendor caught a methodological risk Claude had not surfaced unprompted is the demonstration of why heterogeneity earns its keep. The sweep workflow described in [`.github/workflows/wiki-sweep.yml`](../.github/workflows/wiki-sweep.yml) is therefore deliberately cross-vendor: Sonnet 4.6 propagates findings across cross-referenced pages, Gemini 2.5 Pro emits full-corpus synthesis, Opus 4.7 critiques the synthesis with fixed-verdict tags, and DeepSeek V4-Pro runs an independent peer-review pass on the Claude output — four models, three vendors (Anthropic, Google, DeepSeek), all routed through OpenRouter. Heterogeneity is the principle, not the implementation: future workflow changes should preserve cross-vendor coverage. Collapsing the pipeline to a single vendor — even a cheaper or faster one — is a regression against this principle, not an optimization.
+
+### 6. Not Medical Advice
 
 This is citizen science, self-experimentation, and open knowledge sharing. We document what we build, what we observe, and what the published literature supports. We do not prescribe, diagnose, or claim to cure.
 
@@ -474,6 +478,14 @@ To operationalize the mitigations above, a "Strain Stability Kit" is the natural
 - **Positive control** — wild-type koji spores, to verify the user's fermentation technique in parallel with the engineered strain.
 - **Negative control** — blank sterile rice substrate, to check for environmental contamination.
 - **QC protocol** — simple spectrophotometric or colorimetric uric-acid-degradation assay, runnable at batch #1, batch #5, batch #10. Titer values uploaded to a community GitHub repo alongside conditions (humidity, temperature, rice cultivar, day of first visible growth).
+
+#### Cultural mapping: tane-koji as master, koji rice as working batch
+
+The master-stock / working-stock model framed above in generic biotech terms is structurally identical to the master/working distinction the koji tradition has used for centuries. In the home protocol documented in [koji-home-fermentation.md](./koji-home-fermentation.md), **tane-koji** (種麹, also called koji-kin — dried *Aspergillus* spore inoculum sold in pink foil packets, where a pinch inoculates ~1 kg of cooked rice) is the master, and the **koji rice** colonized over 42–48 h from that inoculum is the single working batch used downstream for shio-koji, amazake, or miso. The Hishiroku ratio — 20 g of tane-koji per 15 kg of rice — means a single packet of master inoculum supplies many independent working batches, with users returning to the packet rather than backslopping from a previous koji rice.
+
+That "buy tane-koji once per ~15 kg of rice" rule **is** the limited-generation propagation rule. Each new working batch starts from the master spore stock; no working batch becomes the seed for the next. The home protocol enforces this by convention rather than by SOP — koji rice has a short fridge life and visibly degrades, so users naturally restart from the packet — but the structure is the same one industrial fermentation enforces with frozen master cell banks.
+
+For the engineered-strain platform, adopting this terminology makes the safety rationale of §3 legible to non-scientist community members without translation. "Lyophilized engineered spore stock" maps to tane-koji; "the colonized substrate you actually use to make food" maps to koji rice; "never backslop past generation N" maps to the existing convention of returning to the packet for each new starter. The mitigation isn't an imposed pharma constraint dressed in food language — it's the pattern the tradition already uses, with the master stock now carrying a defined construct instead of a wild-type spore population.
 
 ### Community Feedback Loop
 

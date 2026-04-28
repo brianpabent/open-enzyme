@@ -180,6 +180,8 @@ Key questions that home wild-type fermentation can illuminate:
 
 The engineered-strain platform's value proposition gets sharpened by understanding wild-type performance: **how much enzyme activity per gram of food at the eater's gastric pH can wild-type already deliver, and where does engineering need to add value (specific activity, pH stability, lipase boost, gastric survival)?**
 
+A pedagogical note for the engineered-strain rollout: the engineered-strain platform's distribution model — a frozen / lyophilized master spore stock that users return to for each new starter, with no backslopping past a small generation count — maps directly onto the tane-koji → koji rice pattern documented above. The "buy tane-koji once per ~15 kg of rice" rule already is the limited-generation propagation rule that industrial fermentation enforces with frozen master cell banks. See [open-source-platform.md §"Cultural mapping: tane-koji as master, koji rice as working batch"](./open-source-platform.md#cultural-mapping-tane-koji-as-master-koji-rice-as-working-batch) for how the platform's Strain Stability Kit lines up against this convention.
+
 ---
 
 ## Open questions

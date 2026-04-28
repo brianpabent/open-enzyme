@@ -556,7 +556,7 @@ Implication: the Khameneh 2017 murine validation of C5aR antagonism is mechanist
 
 ### 9.1 The honest gap
 
-The Open Enzyme stack — engineered koji/yeast producing uricase, kojic acid, taurine, carnosine, quercetin, ursolic acid, lactoferrin, and candidate NLRP3 modulators — **has no direct CP0 coverage**. No compound in the stack is a characterized C5a/C5aR1/C3aR inhibitor. This is not a hedge; it is a structural feature of the platform:
+The Open Enzyme stack — engineered koji/yeast producing uricase, kojic acid, taurine, carnosine, quercetin, ursolic acid, lactoferrin, and candidate NLRP3 modulators — **has no direct CP0 coverage**. No compound in the stack is a characterized C5a/C5aR1/C3aR inhibitor. The natural-product chemical space at C5aR1 was scanned computationally on 2026-04-27 ([validation-experiments §1.21](./validation-experiments.md#121-natural-product-c5ar1-antagonist-screening--computational-pass-closes-the-cp0-fermentable-coverage-question)) — zero wet-lab-validated natural-product antagonists; the door on fermentable CP0 coverage is closed pending one of the re-open conditions in §1.21. This is not a hedge; it is a structural feature of the platform:
 
 - C5aR1's allosteric site is a synthetic-chemistry creation (avacopan, NDT-9513727). Natural products have not been efficiently screened there.
 - C5aR1's orthosteric site is a peptide pocket; the only effective antagonists are synthetic constrained peptides (PMX-53).
@@ -613,7 +613,7 @@ Expected outcome: most will be negative or weak (low-μM at best). If any shows 
 
 ### 10.1 ChEMBL survey of C5aR1 (CHEMBL2373)
 
-ChEMBL v34 has 506 bioactivities on human C5aR1 (CHEMBL2373). The potent-compound tail (pChEMBL ≥ 7) is dominated by **synthetic peptides** (cyclic hexapeptides in the PMX-53 / PMX-205 / C5a C-terminal mimic series, 1995-2006 BMCL/JMC papers) and **avacopan-class allosteric small molecules**. There are **no natural products** in the top C5aR1 antagonist rank list. Sub-μM natural product antagonists of human C5aR1 are effectively unreported in the curated database (ChEMBL v34, 2026-04-24).
+ChEMBL contains thousands of bioactivity records on human C5aR1 (CHEMBL2373) — the unfiltered activity API returned ~4,873 total records as of 2026-04-28 ([direct query](https://www.ebi.ac.uk/chembl/api/data/activity.json?target_chembl_id=CHEMBL2373&limit=1)), refreshed under the [§1.21 computational scan](./validation-experiments.md#121-natural-product-c5ar1-antagonist-screening--computational-pass-closes-the-cp0-fermentable-coverage-question). The exact count is filter-dependent — distinct-compound counts, pChEMBL cutoffs, and target-relationship filters all yield substantially smaller numbers, so an earlier 506 figure cited here was likely a filtered subset rather than total records. The qualitative claim that follows holds independent of the exact number. The potent-compound tail (pChEMBL ≥ 6) is dominated by **synthetic peptides** (cyclic hexapeptides in the PMX-53 / PMX-205 / C5a C-terminal mimic series, 1995-2006 BMCL/JMC papers) and **avacopan-class allosteric small molecules**. There are **no natural products** flagged `natural_product=1` in the top C5aR1 antagonist rank list. Sub-μM natural product antagonists of human C5aR1 are effectively unreported in the curated database — confirmed on a fresh April 2026 query plus NPASS / LOTUS / Open Targets cross-checks (see §1.21 result section).
 
 ### 10.2 Flavonoids and complement — the weak, broad literature
 

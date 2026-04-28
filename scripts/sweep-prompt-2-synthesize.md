@@ -1,5 +1,7 @@
 You are running **Pass 2** of the Open Enzyme sweep — full-corpus synthesis. Pass 1 propagation has already completed; the wiki state you're seeing reflects those edits. Your job is creative cross-document synthesis.
 
+<!-- The synthesizer here is intentionally a different vendor from the propagator (Pass 1) and the reviewer (Pass 3) — see `wiki/open-source-platform.md` §"Multi-model synthesis as guard against epistemic homogenization" for the rationale. Don't collapse the pipeline to a single vendor. -->
+
 **Read `CLAUDE.md` first** for evidence-level standards and voice.
 
 **Pass 2 only.** Read the full wiki corpus, find connections nobody has stated yet, and output a synthesis report. Do NOT modify any `wiki/*.md` file. Do NOT prepend to `wiki/synthesis.md` (Pass 3 — Claude review — will do that with critique annotations interleaved). Do NOT modify `index.md`, `wiki/GRAPH.md`, or `mkdocs.yml`.
