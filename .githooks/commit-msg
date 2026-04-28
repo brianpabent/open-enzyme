@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+#
+# .githooks/commit-msg — enforce commit-message conventions for the
+# wiki-sweep automation. See scripts/SWEEP-ARCHITECTURE.md component #3.
+#
+# Two rules, both motivated by 2026-04-27/28 failures:
+#
+#   Rule 1: refuse [skip-wiki-sweep] on commits touching wiki/*.md UNLESS
+#           the message also starts with sweep-1-propagate:,
+#           sweep-2-synthesize:, or sweep-3-review:. The marker is reserved
+#           for daemon-generated commits — applying it to a hand-edited
+#           wiki commit silently hides the change from the sweep daemon.
+#
+#   Rule 2: refuse sweep-N-... prefix on the first line UNLESS the commit
+#           author is github-actions[bot]. Hand-authored commits with the
+#           sweep prefix poison the workflow's diff-base detection
+#           (`git log --grep='^sweep'`) and hide subsequent commits from
+#           future sweeps.
+#
+# Failure mode: exit 1 with a clear stderr message. Pass with no output.
+# Run `scripts/install-hooks.sh` once after cloning to activate.
+#
+
+set -euo pipefail
+
+MSG_FILE="${1:-.git/COMMIT_EDITMSG}"
+FIRST_LINE=$(head -n 1 "$MSG_FILE")
+FULL_MSG=$(cat "$MSG_FILE")
+
+if grep -q '\[skip-wiki-sweep\]' <<< "$FULL_MSG"; then
+  HAS_SKIP=1
+else
+  HAS_SKIP=0
+fi
+
+if [[ "$FIRST_LINE" =~ ^sweep-[123]-(propagate|synthesize|review): ]]; then
+  HAS_SWEEP_PREFIX=1
+else
+  HAS_SWEEP_PREFIX=0
+fi
+
+# Files staged for this commit
+STAGED=$(git diff --cached --name-only || true)
+if echo "$STAGED" | grep -E '^wiki/.*\.md$' | grep -v '^wiki/synthesis\.md$' >/dev/null; then
+  TOUCHES_WIKI=1
+else
+  TOUCHES_WIKI=0
+fi
+
+AUTHOR_NAME=$(git config user.name || echo "")
+if [[ "$AUTHOR_NAME" == "github-actions[bot]" ]]; then
+  IS_BOT=1
+else
+  IS_BOT=0
+fi
+
+# Rule 1: [skip-wiki-sweep] on wiki commits requires a sweep-N- prefix.
+if (( HAS_SKIP == 1 )) && (( TOUCHES_WIKI == 1 )) && (( HAS_SWEEP_PREFIX == 0 )); then
+  cat >&2 <<'EOF'
+
+✗ commit-msg hook (sweep automation)
+
+This commit touches wiki/*.md and uses [skip-wiki-sweep], but the message
+does NOT start with sweep-1-propagate:, sweep-2-synthesize:, or
+sweep-3-review:. The [skip-wiki-sweep] marker is reserved for
+daemon-generated commits — hand-applied to a wiki commit, it silently
+suppresses the entire sweep workflow on this content (root cause of the
+2026-04-27 walkthrough's 25-file blind spot).
+
+Fix:
+  • Remove [skip-wiki-sweep] from the commit message — let the daemon
+    sweep this content like normal, OR
+  • If this is legitimate cleanup of daemon output (rare), prefix the
+    message with the matching sweep-N-... pattern.
+
+See: scripts/SWEEP-ARCHITECTURE.md §"Hooks for enforcement"
+EOF
+  exit 1
+fi
+
+# Rule 2: sweep-N- prefix is reserved for the daemon.
+if (( HAS_SWEEP_PREFIX == 1 )) && (( IS_BOT == 0 )); then
+  cat >&2 <<EOF
+
+✗ commit-msg hook (sweep automation)
+
+This commit message starts with the sweep-N-... prefix:
+
+    $FIRST_LINE
+
+But the commit author is "$AUTHOR_NAME", not "github-actions[bot]". The
+sweep-N-... prefix is reserved for daemon commits — using it on a
+hand-edit poisons the workflow's diff-base detection (the legacy
+\`git log --grep='^sweep'\` regex), which hides subsequent commits from
+future sweeps.
+
+Fix: rename the commit prefix. Examples:
+  • scripts: <subject>            — for changes to scripts/
+  • workflow: <subject>            — for changes to .github/workflows/
+  • docs: <subject>                — for documentation
+  • chore: <subject>               — for tooling cleanup
+  • <area>: <subject>              — anything else descriptive
+
+See: scripts/SWEEP-ARCHITECTURE.md §"Hooks for enforcement"
+EOF
+  exit 1
+fi
+
+exit 0

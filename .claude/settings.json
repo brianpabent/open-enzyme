@@ -1,0 +1,22 @@
+{
+  "enabledPlugins": {
+    "pubmed@life-sciences": true,
+    "biorxiv@life-sciences": true,
+    "clinical-trials@life-sciences": true,
+    "open-targets@life-sciences": true,
+    "chembl@life-sciences": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/validate-commit-msg.py"
+          }
+        ]
+      }
+    ]
+  }
+}
