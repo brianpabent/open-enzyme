@@ -1495,6 +1495,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1658,6 +1662,69 @@
     <span class="md-status md-status--scope-page"></span>
   
 
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcm-modern-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCM × Modern Rigor (Discovery Engine)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ward-1995-lab-access-global.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ward 1995 Lab Access — Global Landscape
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -2632,6 +2699,8 @@
       
         
       
+        
+      
     
     
     
@@ -2932,6 +3001,41 @@
     
   
     H03 — siRNA / URAT1 Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H04-tcm-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H04 — TCM × Modern Rigor Methodology Lens
   
 
     
@@ -3600,6 +3704,10 @@
         DE6["Strain Library (synthesis output)"]
         DE7["Modality × Target Matrix — exploration surface"]
         DE8["Paperclip GXL — 11M full-text papers + 150M abstracts MCP"]
+        DE9["TCM × Modern Rigor — empirical-prior re-mining lens"]
+        DE10["Si Miao San / Si Miao Wan — 4-herb gout formula (ChiCTR RCTs)"]
+        DE11["Smilax glabra (Tu Fu Ling) — primary TCM gout herb"]
+        DE12["Global Lab Access — Maruyama Tokyo / Jiangnan / DTU parallel paths"]
     end
 
     subgraph Androgens["ANDROGEN-URATE AXIS (NEW)"]
@@ -3634,6 +3742,19 @@
         KE10["NSlD-dP10 protease-deletion host — default for Lf cassette (Huynh 2020)"]
         KE11["NSAR1 5-marker platform — 5 integration slots (Oikawa 2020)"]
         KE12["comp-010 cassette compatibility — LOW overall risk; KEX2 pos 579 moderate; uricase SKL PTS1 verify"]
+    end
+
+    subgraph Chaperones["ER CHAPERONE SUBSYSTEMS (NEW)"]
+        CH1["BiP/Kar2 — generic HSP70 ER chaperone"]
+        CH2["PDI/ERO1 — disulfide bond formation"]
+        CH3["Calnexin/Calreticulin — N-glycoprotein QC"]
+        CH4["HacA UPR — transcriptional capacity expansion"]
+        CH5["Chaperone-orthogonal stacking framework — predict synergy from non-overlapping load classes"]
+        CH6["Pairwise expression matrix — falsifiable test of framework"]
+        CH7["Wakai 2019 3-cellulase 40× synergy — direct A. oryzae evidence (light-class stacking)"]
+        CH8["Huynh 2020 39.7 mg/L mAb ceiling — 2 PDI-heavy cassettes, NSlD-dP10 required"]
+        CH9["Zhou 2016 — constitutive HacA in koji REDUCES amylase via RESS feedback"]
+        CH10["Cross-class helper combinations (Pichia, 6.5-8.7×) — highest-leverage capacity expansion"]
     end
 
     %% Core relationships
@@ -3846,6 +3967,29 @@
     KE12 --&gt;|"KEX2 pos 579 moderate risk — monitor SDS-PAGE"| KE3
     KE12 --&gt;|"uricase SKL PTS1 — verify secretion in 1.9"| KE2
 
+    %% Chaperone-orthogonal stacking framework (2026-05-05)
+    %% (source: chaperone-orthogonal-stacking.md)
+    %% Cassette → chaperone load mapping
+    KE2 --&gt;|"BiP-transit only (0 disulfides, 0 N-glycans)"| CH1
+    KE3 --&gt;|"PDI-heavy (17 disulfides)"| CH2
+    KE3 --&gt;|"calnexin-moderate (3 N-glycans)"| CH3
+    KE3 --&gt;|"BiP-heavy (691 aa single chain)"| CH1
+    KE4 --&gt;|"bypasses secretion entirely (cytosolic)"| CH5
+    %% Framework retroactively explains endgame strain design
+    CH5 --&gt;|"predicts ≥0.85 synergy for 4-molecule endgame strain"| KE1
+    CH5 --&gt;|"informs which 5th cassette to add (fill underused load classes)"| KE2
+    CH5 -.-&gt;|"falsifiable test"| CH6
+    %% Supporting evidence
+    CH7 -.-&gt;|"validates light-substrate super-additivity"| CH5
+    CH8 -.-&gt;|"validates PDI-heavy ceiling"| CH5
+    %% Capacity expansion levers
+    KE10 --&gt;|"raises secretion floor for PDI-heavy substrates"| CH2
+    CH4 --&gt;|"upregulates BiP, PDI, ERAD"| CH1
+    CH4 --&gt;|"upregulates BiP, PDI, ERAD"| CH2
+    CH4 --&gt;|"upregulates BiP, PDI, ERAD"| CH3
+    CH9 --&gt;|"rules out naive HacA-CA in koji (RESS feedback suppresses native amylase)"| CH4
+    CH10 --&gt;|"highest-leverage untested lever in koji (Pichia precedent)"| CH5
+
     %% Discovery engine → repurposing surface (source: open-enzyme-vision.md §2)
     DE1 --&gt;|"produces"| DE2
     DE2 --&gt;|"surfaces"| DE3
@@ -3861,6 +4005,16 @@
     %% Paperclip literature MCP (source: paperclip-deep-dive.md)
     DE8 --&gt;|"full-text search augments"| DE1
     DE8 --&gt;|"literature delta surfaces"| DE2
+    %% TCM × Modern Rigor lens (source: tcm-modern-rigor-intersection.md)
+    DE9 --&gt;|"applies chokepoint mapping to"| DE1
+    DE9 --&gt;|"ChEMBL cross-checks"| DE2
+    DE9 --&gt;|"surfaces formula-decomposed"| DE10
+    DE9 --&gt;|"surfaces single-compound"| DE11
+    DE10 --&gt;|"XO inhibition + NLRP3 (Animal Model)"| C2
+    DE11 --&gt;|"XO inhibition + URAT1 modulation"| B1
+    %% Global lab access (source: ward-1995-lab-access-global.md)
+    DE12 --&gt;|"provides NSlD-dP10 chassis for"| KE10
+    DE12 --&gt;|"parallel path via C19 chassis"| KE1
 
     %% Cannabinoid/terpene relationships
     M1 --&gt;|"P2X7/NF-kB"| C2
@@ -3894,7 +4048,8 @@
     style MultiCP fill:#f0ffe0
     style Androgens fill:#e8d8f0
     style DiscoveryEngine fill:#fff8e6
-    style KojiEndgame fill:#e6fff0</code></pre>
+    style KojiEndgame fill:#e6fff0
+    style Chaperones fill:#e6f0ff</code></pre>
 <h2 id="key-pathway-descriptions">Key Pathway Descriptions<a class="headerlink" href="#key-pathway-descriptions" title="Permanent link">&para;</a></h2>
 <h3 id="1-pathology-immune-activation-loop">1. <strong>Pathology → Immune Activation Loop</strong><a class="headerlink" href="#1-pathology-immune-activation-loop" title="Permanent link">&para;</a></h3>
 <ul>

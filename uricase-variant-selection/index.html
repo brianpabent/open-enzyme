@@ -889,6 +889,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cassette-compatibility-comp-011-update-2026-05-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cassette Compatibility — comp-011 Update (2026-05-05)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2304,6 +2315,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2467,6 +2482,69 @@
     <span class="md-status md-status--scope-page"></span>
   
 
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcm-modern-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCM × Modern Rigor (Discovery Engine)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ward-1995-lab-access-global.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ward 1995 Lab Access — Global Landscape
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -3439,6 +3517,8 @@
       
         
       
+        
+      
     
     
     
@@ -3739,6 +3819,41 @@
     
   
     H03 — siRNA / URAT1 Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H04-tcm-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H04 — TCM × Modern Rigor Methodology Lens
   
 
     
@@ -4263,6 +4378,20 @@
 </ul>
 <p>See <a href="../engineered-yeast-uricase-proposal/">engineered-yeast-uricase-proposal.md</a> for the disclosed <em>C. utilis</em> mutations from US10815461B2 and the associated freedom-to-operate analysis. See <a href="../gout-clinical-pipeline/">gout-clinical-pipeline.md</a> for the full active-pipeline table this section draws from.</p>
 <p>This section is an addition, not a retraction, of the #1 <em>A. flavus</em> ranking. The ranking stands for the <em>S. cerevisiae</em> intracellular track. For the oral track, the choice should be made empirically by head-to-head expression comparison rather than by inheriting the rasburicase default.</p>
+<h3 id="cassette-compatibility-comp-011-update-2026-05-05">Cassette Compatibility — comp-011 Update (2026-05-05)<a class="headerlink" href="#cassette-compatibility-comp-011-update-2026-05-05" title="Permanent link">&para;</a></h3>
+<p><a href="../experiments/comp-011-c-utilis-uricase-cassette-compatibility/">comp-011</a> ran the same seven-analysis cassette-design pipeline as <a href="../experiments/comp-010-cassette-compatibility/">comp-010</a> (<em>A. flavus</em>) on the <em>C. utilis</em> (P78609) + lactoferrin (P02788) pair in the Ward 1995 / <em>A. oryzae</em> architecture. Results: <strong>MODERATE cassette-design risk</strong> (vs. comp-010 <em>A. flavus</em> = LOW). The MODERATE verdict is design-driven, not a fundamental incompatibility — three manageable differences vs. <em>A. flavus</em>:</p>
+<ol>
+<li>
+<p><strong>Codon burden: HEAVY</strong> — <em>C. utilis</em> is AT-biased (GC~42%) in a GC-biased host (<em>A. oryzae</em> ~54%); CAI proxy 0.65 vs. 1.51 for <em>A. flavus</em>. Full gene synthesis with <em>A. oryzae</em> codon optimization is mandatory for <em>C. utilis</em> (same requirement as lactoferrin). <em>A. flavus</em> required minimal optimization due to shared GC preference.</p>
+</li>
+<li>
+<p><strong>4 free cysteines</strong> (positions 39, 168, 250, 293; 0 disulfide bonds annotated) vs. 0 cysteines in <em>A. flavus</em>. Free thiols in the oxidizing <em>A. oryzae</em> ER lumen during secretion transit can form aberrant intermolecular disulfides, risking aggregation. Mitigation: non-reducing SDS-PAGE QC on secreted fractions; Cys→Ser mutagenesis of surface-exposed positions if aggregation is detected.</p>
+</li>
+<li>
+<p><strong>2 internal KR sites</strong> (positions 130 and 138, both HIGH by KEX2 P1' scoring) vs. 1 in <em>A. flavus</em> (position 128 HIGH). Non-load-bearing in the direct-secretion cassette design — KEX2 does not encounter the payload. If <em>C. utilis</em> uricase is ever moved to a glucoamylase-KEX2 fusion, double KR→KQ mutation at positions 130 and 138 is required.</p>
+</li>
+</ol>
+<p><strong>Platform recommendation implied by comp-010 + comp-011:</strong> Order both <em>A. flavus</em> (Q00511, codon-optimized) and <em>C. utilis</em> (P78609, codon-optimized + ALLN-346 mutations from US10815461B2) as direct-secretion cassettes for §1.9 solid-state koji. Running them in parallel resolves the variant selection decision empirically at $0 additional fermentation cost. See <a href="../c-utilis-uricase-cassette-compatibility-computational/">c-utilis-uricase-cassette-compatibility-computational.md</a> for the full interpretive analysis. <em>(Mechanistic Extrapolation — in silico only; 2026-05-05)</em></p>
 <hr />
 <h2 id="detailed-variant-analysis">Detailed Variant Analysis<a class="headerlink" href="#detailed-variant-analysis" title="Permanent link">&para;</a></h2>
 <h3 id="1-aspergillus-flavus-uricase-rasburicase-parent-uniprot-q00511-primary-candidate">1. <strong>Aspergillus flavus Uricase (Rasburicase parent, UniProt Q00511)</strong> — PRIMARY CANDIDATE<a class="headerlink" href="#1-aspergillus-flavus-uricase-rasburicase-parent-uniprot-q00511-primary-candidate" title="Permanent link">&para;</a></h3>
