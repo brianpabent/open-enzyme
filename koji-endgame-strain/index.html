@@ -3033,6 +3033,8 @@
       
         
       
+        
+      
     
     
     
@@ -3528,6 +3530,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../open-questions/" class="md-nav__link">
         
   
@@ -3832,10 +3869,11 @@
 <ol>
 <li><strong>Integration sites.</strong> Two distinct chromosomal loci for the uricase cassette and the lactoferrin cassette. Candidates include (a) amyB native locus (one cassette) + a second α-amylase paralog (<em>A. oryzae</em> has three — amyA, amyB, amyC — per Li 2024), (b) a defined neutral locus (e.g., niaD, Δku70-disrupted) paired with amyB, &copy; dual α-amylase paralog integration. The design question is whether to colocalize both cassettes at α-amylase loci (both starch-inducible, tightly coupled to the rice substrate) or separate them by promoter type (amyB for one, TEF1 or gpdA for the other) to avoid promoter competition.</li>
 <li><strong>Copy-number stability.</strong> Multi-copy integrations can rearrange during sporulation/propagation. The strain needs to maintain both cassettes through industrial-scale propagation (~10⁹-fold expansion from master seed stock to production run). This is a standard production-engineering question, resolvable by PCR and qPCR copy-number assays across serial passages.</li>
-<li><strong>Shared secretion machinery.</strong> <em>A. oryzae</em> has a finite secretion capacity (total secreted protein ~25–30 g/L industrial submerged). Two heterologous secreted proteins at gram-scale titers compete for ribosomes, ER folding capacity (BiP/PDI), and secretory vesicle traffic. The question is whether adding a ~2 g/L lactoferrin load on top of a ~1 g/L uricase load yields additive, sub-additive, or collapsed total output. In practice, "burden" in multi-gene <em>A. oryzae</em> strains is typically sub-additive but not catastrophic (the Li 2024 and Wang 2023 multi-copy data show the system handles ~2–3× single-cassette burden cleanly).</li>
-<li><strong>KEX-2 cleavage specificity and capacity.</strong> The Ward 1995 architecture depends on endogenous KEX-2-family endoprotease cleaving the glucoamylase-KEX2site-hLf fusion cleanly. If the uricase cassette is <em>not</em> a fusion (direct secretion with its own signal peptide), KEX-2 capacity is non-competing. If uricase is <em>also</em> a glucoamylase-KEX2 fusion — or if both cassettes rely on the same endogenous processing peptidase for any reason — then KEX-2 capacity becomes a shared resource and the dual-cassette strain could saturate it. Published <em>A. oryzae</em> KEX-2 capacity studies are thin; this is an empirical unknown.</li>
+<li><strong>Shared secretion machinery.</strong> <em>A. oryzae</em> has a finite secretion capacity (total secreted protein ~25–30 g/L industrial submerged). Two heterologous secreted proteins at gram-scale titers compete for ribosomes, ER folding capacity (BiP/PDI), and secretory vesicle traffic. The question is whether adding a ~2 g/L lactoferrin load on top of a ~1 g/L uricase load yields additive, sub-additive, or collapsed total output. In practice, "burden" in multi-gene <em>A. oryzae</em> strains is typically sub-additive but not catastrophic (the Li 2024 and Wang 2023 multi-copy data show the system handles ~2–3× single-cassette burden cleanly). <strong>comp-010 (2026-05-05) quantified the combined ER burden as 1.06× the Huynh 2020 adalimumab baseline (17 disulfides total, all on Lf; uricase contributes zero disulfide load), within the demonstrated capacity of the NSlD-ΔP10 host.</strong> (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)</li>
+<li><strong>KEX-2 cleavage specificity and capacity.</strong> The Ward 1995 architecture depends on endogenous KEX-2-family endoprotease cleaving the glucoamylase-KEX2site-hLf fusion cleanly. If the uricase cassette is <em>not</em> a fusion (direct secretion with its own signal peptide), KEX-2 capacity is non-competing. If uricase is <em>also</em> a glucoamylase-KEX2 fusion — or if both cassettes rely on the same endogenous processing peptidase for any reason — then KEX-2 capacity becomes a shared resource and the dual-cassette strain could saturate it. Published <em>A. oryzae</em> KEX-2 capacity studies are thin; this is an empirical unknown. <strong>comp-010 (2026-05-05) identified one moderate-risk internal KEX2 site in lactoferrin at mature position 579 (K579-R580-K581, P1'=K — cleavage reduced ~2–3× below baseline rate); the site at position 38 (P1'=D) is non-functional. Uricase has one high-risk internal KR site at residue 128 (P1'=N) but this is irrelevant for the direct-secretion cassette design — it would only matter if uricase were moved to a glucoamylase-KEX2 fusion architecture.</strong> (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)</li>
 <li><strong>Iron availability in solid-state rice matrix.</strong> Lactoferrin requires Fe³⁺ coordination for proper folding (or at least the apo-holo equilibrium is folding-affected). Rice grain has low free iron; rice bran has more but of variable bioavailability. Ward 1995 was submerged culture with defined iron supplementation; solid-state rice koji has not been demonstrated to support commercial-titer lactoferrin production. A supplementation experiment (FeCl₃ or iron citrate added to rice at 10–100 ppm) is likely part of the first-pass design.</li>
-<li><strong>Glycosylation consistency across formats.</strong> Fungal N-glycosylation in solid-state vs. submerged can differ for the same strain. Native milk hLf has complex sialylated/fucosylated N-glycans; <em>Aspergillus</em> hLf has simpler fungal-style mannose-rich glycans (Almond 2012 PMID 23012214 — the resulting recombinant hLf is actually ~40× less immunogenic and ~200× less allergenic in BALB/c mice, so the glycosylation difference is potentially a <em>feature</em> for chronic oral dosing). Whether solid-state koji lactoferrin glycosylation is within the Ward 1995 submerged envelope is empirically open.</li>
+<li><strong>Glycosylation consistency across formats.</strong> Fungal N-glycosylation in solid-state vs. submerged can differ for the same strain. Native milk hLf has complex sialylated/fucosylated N-glycans; <em>Aspergillus</em> hLf has simpler fungal-style mannose-rich glycans (Almond 2012 PMID 23012214 — the resulting recombinant hLf is actually ~40× less immunogenic and ~200× less allergenic in BALB/c mice, so the glycosylation difference is potentially a <em>feature</em> for chronic oral dosing). Whether solid-state koji lactoferrin glycosylation is within the Ward 1995 submerged envelope is empirically open. <strong>comp-010 confirmed all three predicted N-glycosylation sites in lactoferrin (N137, N478, N623) match UniProt annotation and the Sun 1999 crystal structure; uricase has one predicted NFS site at position 191 that is likely unoccupied (fungal intracellular enzyme, no glycosylation documented).</strong> (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)</li>
+<li><strong>Uricase secretion routing — C-terminal SKL PTS1 signal.</strong> <em>A. flavus</em> uricase (<em>uaZ</em>) ends in ...SKL, a canonical PTS1 peroxisomal targeting signal in fungi. In the §3.4 design, uricase is expressed with the amyB signal peptide, which should route it into the ER secretory pathway and override PTS1 routing. However, this must be verified empirically. <strong>comp-010 (2026-05-05) flagged this as a MODERATE routing risk: verify by anti-uricase ELISA on secreted fraction vs. cell lysate in §1.9. If peroxisomal misrouting is confirmed, append a short C-terminal 3×Ala linker to mask the PTS1 signal.</strong> (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)</li>
 </ol>
 <h3 id="34-protocol-sketch-for-the-gating-experiment">3.4 Protocol Sketch for the Gating Experiment<a class="headerlink" href="#34-protocol-sketch-for-the-gating-experiment" title="Permanent link">&para;</a></h3>
 <p><strong>Construct design.</strong> Two expression cassettes on a single shuttle vector (or two compatible vectors co-transformed):</p>
@@ -3856,7 +3894,8 @@
 - Iron-binding capacity of recombinant Lf (UV-Vis at 465 nm for apo-vs-holo; optional CD spectroscopy for fold confirmation).
 - Cell viability and fermentation phenotype (mycelial density, sporulation, kojic acid titer, ergothioneine titer — is the native metabolite program preserved?).
 - qPCR for cassette copy numbers (stability check).
-- SDS-PAGE to look for truncated / incompletely-processed lactoferrin species (KEX-2 capacity bottleneck would manifest as a fusion-size band).</p>
+- SDS-PAGE to look for truncated / incompletely-processed lactoferrin species (KEX-2 capacity bottleneck would manifest as a fusion-size band). <strong>Per comp-010 (2026-05-05): specifically monitor for a ~67 kDa truncated Lf band indicating cleavage at the moderate-risk KEX2 site at mature position 579 (K579-R580-K581, P1'=K). If seen, mutate K597→Q (full-sequence position) in the codon-optimized gene design.</strong> (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)
+- <strong>Uricase secretion verification (comp-010 design note):</strong> Anti-uricase ELISA on culture supernatant vs. cell lysate to confirm uricase is in the secreted fraction. The <em>A. flavus uaZ</em> C-terminal SKL resembles a PTS1 peroxisomal targeting signal; the amyB signal peptide should override it, but verify empirically. If uricase is primarily intracellular, append a C-terminal 3×Ala linker to mask the PTS1 signal. (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)</p>
 <p><strong>Cost.</strong> $3,000–5,000 covering gene synthesis (two codon-optimized cassettes ~$600–1000), cloning and transformation reagents ($500–1,000), fermentation consumables ($200–400), ELISA + Western antibodies ($800–1,200), assay kits and miscellaneous ($500–800), CRO or academic lab time if outsourced ($1,000–2,000 per batch).</p>
 <p><strong>Timeline.</strong> 8–12 weeks: 2–3 weeks gene synthesis + construct assembly, 2–3 weeks sequential transformation + clonal screening, 1–2 weeks fermentation (×2 formats, parallel), 2–3 weeks assay suite + write-up.</p>
 <p><strong>Dependencies.</strong> <em>A. oryzae</em> genetic-engineering lab access. Candidates:
@@ -4003,7 +4042,7 @@
 <h2 id="9-open-questions">9. Open Questions<a class="headerlink" href="#9-open-questions" title="Permanent link">&para;</a></h2>
 <p>In priority order for the endgame-strain research agenda:</p>
 <ol>
-<li><strong>Can the Ward 1995 glucoamylase-KEX2 architecture be verified for dual uricase + lactoferrin expression in <em>A. oryzae</em>?</strong> The §3 feasibility test. Gates everything else. 8–12 weeks, $3–5k.</li>
+<li><strong>Can the Ward 1995 glucoamylase-KEX2 architecture be verified for dual uricase + lactoferrin expression in <em>A. oryzae</em>?</strong> The §3 feasibility test. Gates everything else. 8–12 weeks, $3–5k. <strong>comp-010 (2026-05-05) confirmed no blocking sequence-level cassette-design issues for the proposed asymmetric architecture (direct-secretion uricase + glucoamylase-KEX2 lactoferrin); the §1.9 design can proceed as specified. Two actionable design notes remain: (1) monitor Lf KEX2 site at mature pos 579 by SDS-PAGE; (2) verify uricase secretion vs. C-terminal SKL PTS1 motif.</strong> (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)</li>
 <li><strong>Does solid-state rice koji support lactoferrin iron-binding fold stability?</strong> Ward 1995 was submerged culture with defined iron supplementation. Rice grain has low free iron; solid-state fermentation has different mass transfer. The iron-binding readout (UV-Vis at 465 nm) in the §3.4 protocol answers this.</li>
 <li><strong>Does the endgame strain's native metabolite chorus shift when the lactoferrin cassette is added?</strong> Kojic acid titer and ergothioneine titer might drop under the secretion load. The parallel WT-vs-engineered metabolite comparison in <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §01b would read out this shift.</li>
 <li><strong>Are there <em>A. oryzae</em> proteases that degrade lactoferrin during fermentation?</strong> <em>A. oryzae</em> secretes a suite of proteases (alkaline serine, acid-stable, metallo) as part of its starch-degrading lifestyle. Lactoferrin is moderately protease-resistant (pepsin generates active lactoferricin rather than fully degrading the protein), but extended solid-state fermentation on rice with high protease load is empirically open. A Δalp / Δnpr host strain is the standard industrial fix if this becomes rate-limiting.</li>

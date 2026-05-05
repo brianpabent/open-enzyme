@@ -3354,6 +3354,8 @@
       
         
       
+        
+      
     
     
     
@@ -3849,6 +3851,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../open-questions/" class="md-nav__link">
         
   
@@ -4263,6 +4300,8 @@
 <li><strong>Gene choice:</strong> Human Lf preferred for the published precedent; bovine Lf is a secondary target (food-grade infant-formula regulatory history may be easier). Validation experiment will compare both.</li>
 <li><strong>Selection marker:</strong> Separate auxotrophy from uricase and carnosine cassettes (sequential transformation).</li>
 <li><strong>Host:</strong> <em>A. oryzae</em> RIB40 or auxotrophic NSAR1 derivative. <strong>Updated recommendation (post-H01 Killshot #1, 2026-05-05):</strong> Protease-deletion is now the default host choice for the lactoferrin cassette, not a fallback. Huynh et al. 2020 (PMC7257131) demonstrated that wild-type RIB40 was inadequate for functional antibody production — only the ten-protease-deletion strain (NSlD-ΔP10: ΔtppA ΔpepE ΔnptB ΔdppIV ΔdppV ΔalpA ΔpepA ΔAopepAa ΔAopepAd ΔcpI) reached the 39.7 mg/L titer. For the Lf side of the H01 dual cassette to clear the 500 mg/L threshold, starting from a comparable protease-knockout chassis is the safer default. RIB40 should be reserved for the uricase-only Year 1 starting strain where titer requirements are lower and the protease load matters less. The NSAR1 5-marker platform (Oikawa 2020, PMC7725655) provides 5 simultaneous integration slots — the lactoferrin cassette uses one, leaving four free for downstream additions. (In Vitro; source: H01-ward-dual-cassette.md)</li>
+<li><strong>KEX2 internal site (comp-010, 2026-05-05):</strong> Sequence-level analysis identified two internal K-R dipeptides in mature lactoferrin: position 38 (P1'=D — cleavage abolished, non-functional) and position 579 (P1'=K — cleavage reduced ~2–3× below baseline, moderate risk). Monitor by SDS-PAGE in §1.9 for a ~67 kDa truncated band. If truncation is visible, mutate K597→Q (full-sequence position) in the codon-optimized gene design. This is a pre-experiment design note, not a blocking issue. (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)</li>
+<li><strong>Disulfide load (comp-010, 2026-05-05):</strong> Lactoferrin carries 17 disulfide bonds (1.06× the Huynh 2020 adalimumab baseline of 16 disulfides). Uricase contributes zero disulfide load (fungal intracellular enzyme, all three cysteines are free thiols). Combined ER PDI/ERO1 burden is therefore entirely attributable to lactoferrin and is within the demonstrated capacity of the NSlD-ΔP10 host. The 12.6× titer gap vs. Huynh 2020 (39.7 mg/L adalimumab) is not the correct benchmark for Lf titer — Ward 1995 &gt;2 g/L Lf is the appropriate reference. (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)</li>
 </ul>
 <h3 id="73-risks-ranked">7.3 Risks (Ranked)<a class="headerlink" href="#73-risks-ranked" title="Permanent link">&para;</a></h3>
 <table>

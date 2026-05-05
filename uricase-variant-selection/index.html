@@ -3437,6 +3437,8 @@
       
         
       
+        
+      
     
     
     
@@ -3932,6 +3934,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../open-questions/" class="md-nav__link">
         
   
@@ -4266,6 +4303,7 @@
 - Fungal expression system may exhibit lower yields than bacterial (E. coli) systems but is proven manufactureable at pharmaceutical scale.</p>
 <p><strong>Codon Optimization Potential</strong>: A. flavus codons are moderately compatible with S. cerevisiae (both Saccharomycetes); optimization is routine and well-documented.</p>
 <p><strong>Summary</strong>: Expression is proven and scalable; moderate yields; disulfide bond formation feasible.</p>
+<p><strong>Secretion routing note (comp-010, 2026-05-05):</strong> <em>A. flavus</em> uricase (<em>uaZ</em>, UniProt Q00511) ends in ...SKL — a canonical PTS1 peroxisomal targeting signal in fungi. In an <em>A. oryzae</em> expression context with an N-terminal amyB signal peptide (the §1.9 design), the ER secretory pathway should override PTS1 routing. However, this must be verified empirically: run anti-uricase ELISA on secreted fraction vs. cell lysate. If peroxisomal misrouting is confirmed (uricase in cell lysate only, absent from culture supernatant), append a short C-terminal 3×Ala linker to mask the PTS1 signal. This finding is specific to the <em>A. oryzae</em> expression context; it does not affect <em>S. cerevisiae</em> expression (rasburicase track) where the PTS1 signal is not recognized in the same way. (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)</p>
 <h4 id="d-specific-activity">d) Specific Activity<a class="headerlink" href="#d-specific-activity" title="Permanent link">&para;</a></h4>
 <p><strong>Kinetic Parameters</strong>:
 - <strong>Km (uric acid)</strong>: ~0.5–2.1 mM (varies by source and assay conditions).

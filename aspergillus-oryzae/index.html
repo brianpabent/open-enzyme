@@ -3120,6 +3120,8 @@
       
         
       
+        
+      
     
     
     
@@ -3615,6 +3617,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../open-questions/" class="md-nav__link">
         
   
@@ -4062,6 +4099,7 @@
 <li><strong>NSAR1 5-marker platform confirmed.</strong> Oikawa 2020 (PMC7725655) documents NSAR1 (niaD⁻, sC⁻, ΔargB, adeA⁻) plus <em>ptrA</em> pyrithiamine-resistance marker providing <strong>5 simultaneous integration slots</strong> — used for ≥17-gene fungal biosynthetic gene cluster reconstitutions. The H01 2-cassette design uses two of those slots; three remain free for downstream additions. (In Vitro; source: H01-ward-dual-cassette.md)</li>
 <li><strong>Solid-state dual-protein remains the un-tested cell.</strong> Sun et al. 2024 (PMC11051239) explicitly notes that "there are certain proteins that are not secreted in solid-state culture, unlike submerged culture, such as the glucoamylase-encoding gene glaB" — solid-state and submerged secretion patterns differ in protein-specific ways. Whether AmyB-fused Lf and uricase fall on the "secretes in both" or "secretes in submerged only" side of this divide is the actual experimental novelty of §1.9. (In Vitro; source: H01-ward-dual-cassette.md)</li>
 </ul>
+<p><strong>comp-010 cassette compatibility update (2026-05-05):</strong> In silico sequence analysis of the uricase (Q00511) + lactoferrin (P02788) payload pair found <strong>no blocking cassette-design issues</strong> for the proposed asymmetric architecture (direct-secretion uricase + glucoamylase-KEX2 lactoferrin). Overall cassette-design risk: <strong>LOW</strong> (Mechanistic Extrapolation). Two actionable design notes before gene synthesis: (1) Lactoferrin has a moderate-risk internal KEX2 site at mature position 579 (P1'=K) — monitor by SDS-PAGE in §1.9 for a ~67 kDa truncated band; if seen, mutate K597→Q in the codon-optimized gene. (2) <em>A. flavus</em> uricase (<em>uaZ</em>) ends in ...SKL (canonical PTS1 peroxisomal signal) — verify secretion by anti-uricase ELISA on culture supernatant vs. cell lysate; if misrouted, append C-terminal 3×Ala to mask the PTS1 signal. Combined ER disulfide burden = 1.06× Huynh 2020 adalimumab baseline (17 disulfides, all on Lf; uricase contributes zero), within demonstrated NSlD-ΔP10 capacity. Full analysis: <a href="../cassette-compatibility-computational/">cassette-compatibility-computational.md</a>. (source: cassette-compatibility-computational.md)</p>
 <p>[[aspergillus-oryzae|Koji]] is the first platform target in the [[open-enzyme-vision|Open Enzyme]] project because:</p>
 <ol>
 <li><strong>No genetic engineering needed for digestive enzymes</strong> — wild-type koji already produces therapeutic-grade lipase, protease, and amylase</li>
