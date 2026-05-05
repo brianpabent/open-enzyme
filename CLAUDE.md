@@ -239,6 +239,29 @@ Most of this runs automatically via the sweep daemon — when you save a file un
 - **Cross-references:** Prefer standard markdown links; Obsidian `[[wiki-links]]` work in Obsidian but not on GitHub
 - **Revision history:** Git. No inline changelogs in documents.
 
+### Push-batching discipline (Open Enzyme overrides the umbrella's "push immediately" rule)
+
+The umbrella `~/Documents/Claude/Projects/abent/CLAUDE.md` git steward pattern says "Push immediately after each commit, every time." **That rule is overridden in this repo.** Reason: every push to `wiki/*.md` fires the multi-pass wiki sweep daemon (Pass 1 propagate → Pass 2 synthesize → Pass 3 review → DeepSeek peer-review). Each daemon run costs ~$0.65 and takes ~9–12 minutes; multiple parallel runs cause merge conflicts that consume far more time than the eager push saved.
+
+**Commit eagerly. Push at logical batch boundaries.**
+
+| Push when | Don't push when |
+|---|---|
+| End of a sweep walkthrough (after the inbox-zero pass) | After every individual commit during active session |
+| End of a clearly-bounded work batch (e.g., a peer-track scope page + its 6-surface tracking infrastructure) | After each subagent's output lands in isolation |
+| User explicitly says "push" or "ship it" | Just because a commit is "done" |
+| End of session | Just because the working tree is clean |
+| Before walking away from the laptop with uncommitted work pending | Just because the daemon hasn't caught up yet — let the daemon run on the FULL batch, not piecemeal |
+
+**Operational rules:**
+- Commit immediately after each substantive write (per the umbrella steward pattern — that part still applies).
+- Hold all pushes until a batch boundary OR end of session.
+- If asked "did you push?" — answer honestly. Don't auto-push to clear the conversation.
+- Surface uncommitted-but-unpushed state at end of session: "8 commits sitting locally, ready when you want to push."
+- The exception: if the work is genuinely time-critical (e.g., a hotfix to a broken page that's actively being read by collaborators), push immediately. Default is batch.
+
+**Why this matters specifically for this repo:** the daemon's value comes from running on a *coherent* batch of related changes. Running it 6 times during a single session as 6 separate sweeps produces 6 fragmented synthesis blocks (often substantively duplicate of each other and of the canonical pages). Running it once at the end produces one coherent sweep on the full batch. The latter is cheaper, faster, and produces better synthesis output.
+
 ---
 
 ## Contact & Escalation
