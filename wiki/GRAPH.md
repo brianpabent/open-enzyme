@@ -193,6 +193,7 @@ graph TB
         KE9["H01 Killshot 1 SURVIVED 2026-05-05 — architecture validated submerged; solid-state remains open"]
         KE10["NSlD-dP10 protease-deletion host — default for Lf cassette (Huynh 2020)"]
         KE11["NSAR1 5-marker platform — 5 integration slots (Oikawa 2020)"]
+        KE12["comp-010 cassette compatibility — LOW overall risk; KEX2 pos 579 moderate; uricase SKL PTS1 verify"]
     end
 
     %% Core relationships
@@ -399,6 +400,11 @@ graph TB
     KE10 -->|"required for Lf titer threshold (In Vitro)"| KE3
     KE11 -->|"provides 5 integration slots"| KE2
     KE11 -->|"provides 5 integration slots"| KE3
+    %% comp-010 cassette compatibility (2026-05-05): LOW overall risk; two design notes
+    %% (source: cassette-compatibility-computational.md)
+    KE12 -->|"confirms LOW cassette-design risk"| KE1
+    KE12 -->|"KEX2 pos 579 moderate risk — monitor SDS-PAGE"| KE3
+    KE12 -->|"uricase SKL PTS1 — verify secretion in 1.9"| KE2
 
     %% Discovery engine → repurposing surface (source: open-enzyme-vision.md §2)
     DE1 -->|"produces"| DE2
