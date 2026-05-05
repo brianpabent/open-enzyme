@@ -13,7 +13,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 .claude/hooks/validate-commit-msg.py"
+            "command": "python3 '/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.claude/hooks/validate-commit-msg.py'"
           }
         ]
       }
