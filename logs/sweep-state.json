@@ -1,17 +1,26 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "d6b4210e057c78595dda688b333426c3f8360f8a",
-    "timestamp": "2026-05-05T22:58:08Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-05-d6b4210.md",
-    "review_commit": "d6b4210e057c78595dda688b333426c3f8360f8a",
+    "commit": "3e928d322199c15fb6efe74fe50bcb6a7d4847cd",
+    "timestamp": "2026-05-05T23:54:07Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-05-3e928d3.md",
+    "review_commit": "3e928d322199c15fb6efe74fe50bcb6a7d4847cd",
     "trigger_files": [
-      "wiki/hypotheses/H04-tcm-rigor-intersection.md",
-      "wiki/tcm-modern-rigor-intersection.md",
+      "wiki/GRAPH.md",
+      "wiki/c-utilis-uricase-cassette-compatibility-computational.md",
+      "wiki/chaperone-orthogonal-stacking.md",
+      "wiki/complement-c5a-gout.md",
+      "wiki/computational-experiments.md",
+      "wiki/daf-cd55-scr14-truncated-computational.md",
+      "wiki/hypotheses/H01-ward-dual-cassette.md",
+      "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
+      "wiki/manual-literature-mining.md",
+      "wiki/modality-chokepoint-matrix.md",
+      "wiki/open-enzyme-vision.md",
       "wiki/team.md",
-      "wiki/ward-1995-lab-access-global.md"
+      "wiki/uricase-variant-selection.md"
     ],
-    "run_id": "25406390196"
+    "run_id": "25408323687"
   },
   "recent_runs": [
     {
@@ -58,6 +67,15 @@
       "failed_phase": null,
       "trigger_paths_count": 4,
       "synthesis_log": "logs/v4-synthesis-2026-05-05-d6b4210.md"
+    },
+    {
+      "run_id": "25408323687",
+      "trigger": "push",
+      "completed_at": "2026-05-05T23:54:07Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 13,
+      "synthesis_log": "logs/v4-synthesis-2026-05-05-3e928d3.md"
     }
   ]
 }
