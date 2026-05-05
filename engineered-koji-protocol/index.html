@@ -5890,13 +5890,18 @@ Brian Abent</p>
 </tbody>
 </table>
 <h3 id="proposed-validation-experiment_1">Proposed Validation Experiment<a class="headerlink" href="#proposed-validation-experiment_1" title="Permanent link">&para;</a></h3>
-<p><strong>Phase A — Solid-state feasibility (the missing data point):</strong>
-- Transform <em>A. oryzae</em> RIB40 (or NSAR1 auxotroph) with single-copy <code>[PamyB–glucoamylase–KEX2site–hLF–TamyB]</code> cassette, cloning Ward 1995's architecture.
-- Ferment 100 mL on polished rice at 30°C, 48-60 h, 35% moisture (standard koji conditions).
-- Quantify lactoferrin titer by ELISA + SDS-PAGE / Western (anti-hLF antibody).
-- <strong>Accept</strong>: ≥500 mg/L pore fluid equivalent → promote to Phase B.
-- <strong>Revisit</strong>: 100-500 mg/L → optimize promoter, fusion architecture, protease knockouts before promoting.
-- <strong>Reject</strong>: &lt;100 mg/L after reasonable optimization → fall back to submerged A. oryzae or P. pastoris as alternative hosts.</p>
+<p><strong>Phase A — Solid-state feasibility (the missing data point):</strong></p>
+<blockquote>
+<p><strong>Updated host recommendation (post-H01 Killshot #1, 2026-05-05):</strong> The literature deep-dive for <a href="../hypotheses/H01-ward-dual-cassette/">H01</a> surfaced a material upgrade to the default host choice. <strong>Protease-deletion is now default, not fallback.</strong> Huynh et al. 2020 (PMC7257131) showed wild-type RIB40 was inadequate for functional antibody production; only the <strong>ten-protease-deletion strain (NSlD-ΔP10)</strong> reached the 39.7 mg/L titer. For the Lf side of the dual cassette to clear the 500 mg/L threshold, starting from a comparable protease-knockout chassis is the safer default. Additionally, the <strong>NSAR1 5-marker platform</strong> (Oikawa 2020, PMC7725655) provides 5 simultaneous integration slots — the lactoferrin cassette uses one, leaving four free for downstream additions. (In Vitro; source: H01-ward-dual-cassette.md)</p>
+</blockquote>
+<ul>
+<li>Transform <em>A. oryzae</em> RIB40 (or NSAR1 auxotroph; <strong>prefer NSlD-ΔP10 or equivalent protease-knockout chassis</strong> for the lactoferrin cassette) with single-copy <code>[PamyB–glucoamylase–KEX2site–hLF–TamyB]</code> cassette, cloning Ward 1995's architecture.</li>
+<li>Ferment 100 mL on polished rice at 30°C, 48-60 h, 35% moisture (standard koji conditions).</li>
+<li>Quantify lactoferrin titer by ELISA + SDS-PAGE / Western (anti-hLF antibody).</li>
+<li><strong>Accept</strong>: ≥500 mg/L pore fluid equivalent → promote to Phase B.</li>
+<li><strong>Revisit</strong>: 100-500 mg/L → optimize promoter, fusion architecture, protease knockouts before promoting.</li>
+<li><strong>Reject</strong>: &lt;100 mg/L after reasonable optimization → fall back to submerged A. oryzae or P. pastoris as alternative hosts.</li>
+</ul>
 <p><strong>Phase B — Activity retention:</strong>
 - Confirm iron binding by UV-Vis at 465 nm (apo-vs-holo lactoferrin characteristic absorbance).
 - Confirm antimicrobial activity vs. <em>E. coli</em> or <em>S. aureus</em> (standard disk-diffusion or MIC assay).
