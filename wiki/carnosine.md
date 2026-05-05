@@ -6,6 +6,7 @@ related:
   - supplements-stack.md
   - nlrp3-inhibitor-screen.md
   - engineered-koji-protocol.md
+  - koji-endgame-strain.md
   - gout-deep-dive.md
   - androgen-urate-axis.md
   - abcg2-modulators.md
@@ -49,6 +50,14 @@ Carnosine's relevance to gout spans two distinct axes — urate handling and inf
 - **Zinc-carnosine (polaprezinc) as an alternative.** The zinc-carnosine complex is stable in the GI tract and provides local carnosine activity at the gut mucosa with slower systemic release. Approved in Japan for gastric ulcer. Useful alternative formulation when the target site is the gut itself (e.g., gut-barrier healing, local anti-inflammatory effect) rather than systemic. (Clinical Trial for GI indication.)
 - **Engineered-food delivery (koji) bypasses first-pass degradation for the gut-resident fraction.** If carnosine is delivered inside koji biomass that reaches the lower GI tract, local effects (gut-barrier NLRP3 suppression, renal-axis feedback via systemic absorption) are both achievable with a single product.
 
+## Strategic position in the koji endgame strain
+
+**Carnosine as precision countermeasure to androgen-driven hyperuricemia (2026-05-05 addition).** The [koji endgame strain](./koji-endgame-strain.md) §2.5 identifies carnosine as the highest-priority optional third cassette for a male/high-androgen product configuration. The rationale is mechanistic precision: [androgen-urate-axis.md](./androgen-urate-axis.md) establishes that testosterone transcriptionally upregulates URAT1 (SLC22A12) in renal proximal tubule — the canonical driver of the under-excreter phenotype in ~90% of gout patients. Carnosine's URAT1/GLUT9 downregulation in the same tissue compartment is mechanistically mirror-image to this androgen-driven upregulation. For male patients and those on TRT/SERMs/AAS — the platform's primary demographic — androgen-driven URAT1 upregulation is an active, ongoing driver of hyperuricemia that the endgame strain's NLRP3-focused payload does not address. Carnosine is the most direct fermentable countermeasure to that driver identified to date. (Animal Model for URAT1/GLUT9 downregulation; Mechanistic Extrapolation for the androgen-axis precision-countermeasure argument — two Animal Model links composed: androgen → URAT1↑ in one set of experiments; carnosine → URAT1↓ in a different set; the combined precision argument is sound but not directly confirmed in a combined androgen + carnosine experiment.) (source: koji-endgame-strain.md §2.5)
+
+**Distinction from ABCG2-axis and gut-lumen mechanisms.** Carnosine operates at the *renal reabsorption arm* (URAT1/GLUT9 ↓ → less UA reabsorbed from the glomerular filtrate). This is complementary and non-overlapping with two other urate-handling levers in the platform: (1) ABCG2 modulation at the intestinal secretion arm (butyrate/fiber → ABCG2↑), and (2) gut-lumen uricase degradation of the secreted substrate pool. Three mechanistically distinct levers — renal reabsorption, intestinal secretion, gut-lumen degradation — operate in series and are additive. See [abcg2-modulators.md](./abcg2-modulators.md) for the secretion arm. (source: koji-endgame-strain.md §2.5)
+
+**Format constraint for koji delivery.** A carnosine-expressing strain **cannot be delivered intact via the shio-koji format**. Carnosine (β-alanyl-L-histidine) is a classic dipeptidase substrate, and shio-koji's defining feature is 7–14 days of active native proteases at room temperature. The dipeptide will be hydrolyzed back to β-alanine + L-histidine, destroying the therapeutic molecule. Default delivery format is dried/heat-inactivated koji powder. See [engineered-koji-protocol.md §15](./engineered-koji-protocol.md) for the full format ranking table. (source: engineered-koji-protocol.md §15)
+
 ## Engineered production
 
 - **Yeast baseline: ~150 mg/L (unsourced estimate — flagged).** The NLRP3 inhibitor screen (source: nlrp3-inhibitor-screen.md) lists carnosine engineered-production feasibility at an estimated 100–500 mg/L in *S. cerevisiae*, "based on analogous dipeptide engineering" — **no primary source cited, and no peer-reviewed yeast carnosine titer has been located to confirm the ~150 mg/L working number**. Treat as provisional until a published titer is cross-checked.
@@ -73,7 +82,9 @@ Carnosine's relevance to gout spans two distinct axes — urate handling and inf
 
 ## Cross-references
 
-- [engineered-koji-protocol.md § 15 Carnosine Co-Expression Module](./engineered-koji-protocol.md) — co-engineering proposal, validation experiment, decision point.
+- [engineered-koji-protocol.md § 15 Carnosine Co-Expression Module](./engineered-koji-protocol.md) — co-engineering proposal, validation experiment, decision point, format constraint table.
+- [koji-endgame-strain.md §2.5](./koji-endgame-strain.md) — carnosine as optional third cassette; androgen-axis precision-countermeasure framing; strategic position relative to the dual-cassette uricase + lactoferrin primary payload.
 - [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) — April 2026 screen ranking carnosine Tier 2 secondary-synergy candidate; rationale and evidence summary.
+- [androgen-urate-axis.md](./androgen-urate-axis.md) — URAT1 upregulation mechanism driven by testosterone; carnosine as the mechanistically mirror-image countermeasure.
 - [supplements-stack.md](./supplements-stack.md) — carnosine as a standalone supplement entry (separate doc track).
 - [gout-deep-dive.md](./gout-deep-dive.md) — overall gout mechanism context (hyperuricemia, NLRP3, MSU flare).

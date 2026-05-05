@@ -176,9 +176,10 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 
 - **Human gout RCT evidence is absent.** Hyperuricemia rat dual-phenotype data is promising; translation to human serum uric acid / flare reduction is unknown. See [carnosine.md Open questions](./carnosine.md).
 - **Engineered yeast carnosine titer (~150 mg/L baseline) needs primary-source confirmation.** Carried from internal analysis without cited peer-reviewed titer. See [carnosine.md Open questions](./carnosine.md), [engineered-koji-protocol.md §15](./engineered-koji-protocol.md).
-- **Koji carnosine co-expression feasibility.** No published carnosine-in-koji data; target is mechanistic extrapolation. See [engineered-koji-protocol.md §15](./engineered-koji-protocol.md).
+- **Koji carnosine co-expression feasibility.** No published carnosine-in-koji data; target is mechanistic extrapolation. See [engineered-koji-protocol.md §15](./engineered-koji-protocol.md), [validation-experiments.md §1.22](./validation-experiments.md).
 - **Serum carnosinase (CN1) half-life limits.** Whether rapid cleavage caps peak systemic exposure below effective NLRP3-suppression concentration in humans is unresolved. Carnosinase-resistant analogs (D-carnosine, N-acetyl-carnosine) not yet gout-tested. See [carnosine.md Open questions](./carnosine.md).
 - **Carnosine + uricase co-delivery: additive, synergistic, or flat?** Complementary mechanisms (renal URAT1/GLUT9 vs. luminal urate degradation). See [carnosine.md Open questions](./carnosine.md).
+- **Androgen + carnosine combined experiment not yet run.** The "precision countermeasure" framing in [koji-endgame-strain.md §2.5](./koji-endgame-strain.md) composes two Animal Model links (androgen → URAT1↑ in one set of experiments; carnosine → URAT1↓ in a different set). A combined experiment — hyperuricemia rat on androgen supplementation + carnosine co-treatment vs. androgen alone — would directly confirm or falsify the precision-countermeasure claim. (Mechanistic Extrapolation; source: koji-endgame-strain.md §2.5)
 
 ### Zileuton
 

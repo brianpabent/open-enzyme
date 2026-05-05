@@ -181,6 +181,17 @@ graph TB
         AM5["Curcumin / Quercetin / EGCG (functional inhibitors)"]
     end
 
+    subgraph KojiEndgame["KOJI ENDGAME STRAIN (NEW)"]
+        KE1["Ward 1995 dual-cassette gate (A. awamori glucoamylase-KEX2 hLf >2 g/L)"]
+        KE2["Uricase cassette (PamyB + uaZ, primary)"]
+        KE3["Lactoferrin cassette (glucoamylase-KEX2-hLf, secondary)"]
+        KE4["Carnosine cassette (CarnS + panD, optional third)"]
+        KE5["Native kojic acid (3-5 g/L, free)"]
+        KE6["Native ergothioneine (~20 mg/g, free)"]
+        KE7["Format constraint: shio-koji unsuitable for peptide payloads"]
+        KE8["Dried koji powder (heat-inactivated, default for peptides)"]
+    end
+
     %% Core relationships
     A1 --> B1
     A4 --> B1
@@ -364,6 +375,21 @@ graph TB
     S8 -->|"blocks T→E2 aromatization (↑T, ↓E2)"| S1
     S8 -.->|"loss of estrogen's urate-excretion boost"| S2
 
+    %% Koji endgame strain architecture (source: koji-endgame-strain.md, engineered-koji-protocol.md §15-16)
+    KE1 -->|"gates single-strain feasibility"| KE2
+    KE1 -->|"gates single-strain feasibility"| KE3
+    KE2 -->|"CP0-upstream trigger elimination"| C1
+    KE3 -->|"CP1a + CP4 + CP6b coverage"| C2
+    KE3 -->|"suppresses TNFα → relieves ABCG2 block (Speculative)"| AM3
+    KE4 -->|"URAT1/GLUT9 downregulation (Animal Model)"| B1
+    KE5 -->|"NF-κB suppression (In Vitro)"| Q2
+    KE6 -->|"ROS scavenging → CP1b (In Vitro)"| O3
+    KE7 -->|"protease hydrolysis rules out"| KE4
+    KE8 -->|"preserves peptide payloads"| KE4
+    %% Androgen-axis precision countermeasure (source: koji-endgame-strain.md §2.5)
+    %% Note: S1 --> S4 edge already exists in Androgens subgraph above
+    KE4 -->|"carnosine counters androgen-driven URAT1 upregulation (Animal Model)"| S4
+
     %% Discovery engine → repurposing surface (source: open-enzyme-vision.md §2)
     DE1 -->|"produces"| DE2
     DE2 -->|"surfaces"| DE3
@@ -412,6 +438,7 @@ graph TB
     style MultiCP fill:#f0ffe0
     style Androgens fill:#e8d8f0
     style DiscoveryEngine fill:#fff8e6
+    style KojiEndgame fill:#e6fff0
 ```
 
 ## Key Pathway Descriptions

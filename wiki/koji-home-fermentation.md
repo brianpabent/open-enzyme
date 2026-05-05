@@ -168,6 +168,23 @@ If you have white koji on hand: **use it first to learn the process** (Stage 1 +
 
 ---
 
+## Format Constraints for Engineered Payloads — Shio-Koji Is Not Universal
+
+A critical constraint from [engineered-koji-protocol.md §15](./engineered-koji-protocol.md): **shio-koji cannot be used as a delivery format for peptide payloads**. The 7–14 day salt ferment maintains active native proteases at room temperature. Any small peptide — carnosine (β-alanyl-L-histidine), KPV (Lys-Pro-Val), BPC-157 (gastric pentadecapeptide), or any future therapeutic peptide — will be hydrolyzed back to its constituent amino acids during the shio-koji fermentation window, destroying the therapeutic molecule. (Mechanistic Extrapolation; source: engineered-koji-protocol.md §15)
+
+**Format ranking for peptide payloads, by survival expectation:**
+
+| Format | Peptide survival | Reason |
+|---|---|---|
+| **Dried koji powder** (heat-inactivated) | Highest | Heat denatures native proteases; peptides thermally stable across typical food-processing temperatures |
+| **Amazake** (cooked, <24 h, finished at 80°C) | High | Brief enzyme exposure, then heat inactivation |
+| **Fresh koji** (refrigerated, days, no salt) | Medium | Proteases active but short exposure window; cold storage slows hydrolysis |
+| **Shio-koji** (7–14 day salt ferment) | **Effectively zero** | Sustained protease exposure; salt does not protect peptide bonds |
+
+**Shio-koji remains the optimal format for robustly folded enzyme payloads** (uricase tetramer, lactoferrin glycoprotein) where conformational stability and disulfide bonding provide protease resistance — not exposed peptide bonds. For the multi-format endgame strain, this implies a split delivery model: shio-koji for live-enzyme payloads, dried powder or amazake for peptide payloads. (source: engineered-koji-protocol.md §15)
+
+---
+
 ## Project relevance
 
 This protocol is the **wild-type baseline** that the engineered-koji platform (see [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-construct-design.md](./koji-construct-design.md), [koji-endgame-strain.md](./koji-endgame-strain.md)) must outperform to justify itself for EPI applications.
