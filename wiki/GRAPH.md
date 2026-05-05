@@ -190,6 +190,9 @@ graph TB
         KE6["Native ergothioneine (~20 mg/g, free)"]
         KE7["Format constraint: shio-koji unsuitable for peptide payloads"]
         KE8["Dried koji powder (heat-inactivated, default for peptides)"]
+        KE9["H01 Killshot 1 SURVIVED 2026-05-05 — architecture validated submerged; solid-state remains open"]
+        KE10["NSlD-dP10 protease-deletion host — default for Lf cassette (Huynh 2020)"]
+        KE11["NSAR1 5-marker platform — 5 integration slots (Oikawa 2020)"]
     end
 
     %% Core relationships
@@ -389,6 +392,13 @@ graph TB
     %% Androgen-axis precision countermeasure (source: koji-endgame-strain.md §2.5)
     %% Note: S1 --> S4 edge already exists in Androgens subgraph above
     KE4 -->|"carnosine counters androgen-driven URAT1 upregulation (Animal Model)"| S4
+    %% H01 Killshot #1 result (2026-05-05): architecture validated submerged; solid-state open
+    %% (source: H01-ward-dual-cassette.md)
+    KE9 -->|"architecture validated In Vitro submerged"| KE1
+    KE9 -->|"solid-state format remains Mechanistic Extrapolation"| KE3
+    KE10 -->|"required for Lf titer threshold (In Vitro)"| KE3
+    KE11 -->|"provides 5 integration slots"| KE2
+    KE11 -->|"provides 5 integration slots"| KE3
 
     %% Discovery engine → repurposing surface (source: open-enzyme-vision.md §2)
     DE1 -->|"produces"| DE2

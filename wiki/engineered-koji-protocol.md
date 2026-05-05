@@ -953,7 +953,10 @@ The submerged-culture path is de-risked. **The open question is whether the Ward
 ### Proposed Validation Experiment
 
 **Phase A — Solid-state feasibility (the missing data point):**
-- Transform *A. oryzae* RIB40 (or NSAR1 auxotroph) with single-copy `[PamyB–glucoamylase–KEX2site–hLF–TamyB]` cassette, cloning Ward 1995's architecture.
+
+> **Updated host recommendation (post-H01 Killshot #1, 2026-05-05):** The literature deep-dive for [H01](./hypotheses/H01-ward-dual-cassette.md) surfaced a material upgrade to the default host choice. **Protease-deletion is now default, not fallback.** Huynh et al. 2020 (PMC7257131) showed wild-type RIB40 was inadequate for functional antibody production; only the **ten-protease-deletion strain (NSlD-ΔP10)** reached the 39.7 mg/L titer. For the Lf side of the dual cassette to clear the 500 mg/L threshold, starting from a comparable protease-knockout chassis is the safer default. Additionally, the **NSAR1 5-marker platform** (Oikawa 2020, PMC7725655) provides 5 simultaneous integration slots — the lactoferrin cassette uses one, leaving four free for downstream additions. (In Vitro; source: H01-ward-dual-cassette.md)
+
+- Transform *A. oryzae* RIB40 (or NSAR1 auxotroph; **prefer NSlD-ΔP10 or equivalent protease-knockout chassis** for the lactoferrin cassette) with single-copy `[PamyB–glucoamylase–KEX2site–hLF–TamyB]` cassette, cloning Ward 1995's architecture.
 - Ferment 100 mL on polished rice at 30°C, 48-60 h, 35% moisture (standard koji conditions).
 - Quantify lactoferrin titer by ELISA + SDS-PAGE / Western (anti-hLF antibody).
 - **Accept**: ≥500 mg/L pore fluid equivalent → promote to Phase B.
