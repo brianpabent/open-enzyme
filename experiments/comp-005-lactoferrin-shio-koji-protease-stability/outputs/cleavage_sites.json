@@ -1,0 +1,263 @@
+{
+  "protein": "Lactoferrin (lactotransferrin), Homo sapiens (P02788)",
+  "alphafold_model": "AF-P02788-F1-model_v6",
+  "signal_peptide_aa": "1-19 (cleaved during mammalian secretion; retention in A. oryzae expression context uncertain)",
+  "conditions": {
+    "NaCl_pct": 17.5,
+    "NaCl_pct_range": [
+      15,
+      20
+    ],
+    "pH_range": [
+      4.5,
+      5.2
+    ],
+    "temperature_C": 22,
+    "duration_days": [
+      7,
+      14
+    ],
+    "notes": "Standard shio-koji: ~15-20% NaCl, RT ferment 7-14 days. pH driven by kojic acid and organic acids produced during initial koji growth."
+  },
+  "sequence_stats": {
+    "length": 710,
+    "mean_plddt": 95.0,
+    "min_plddt": 35.8,
+    "max_plddt": 98.9,
+    "pct_residues_above_80": 96.1,
+    "pct_residues_above_90": 94.1
+  },
+  "protease_results": {
+    "ALP": {
+      "full_name": "Alkaline protease (subtilisin-type, Alp/NpII)",
+      "total_recognition_sites": 492,
+      "exposed_sites": 21,
+      "partially_exposed_sites": 4,
+      "buried_sites": 467,
+      "salt_residual_activity_at_nacl": 0.188,
+      "ph_activity_factor": 1.0,
+      "effective_activity": 0.188,
+      "max_risk_score": 0.188,
+      "mean_risk_score_top5": 0.188,
+      "top_5_sites": [
+        {
+          "position": 1,
+          "P1": "M",
+          "P1_prime": "K",
+          "mean_plddt_window": 48.8,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.188,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 2,
+          "P1": "K",
+          "P1_prime": "L",
+          "mean_plddt_window": 48.6,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.188,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 3,
+          "P1": "L",
+          "P1_prime": "V",
+          "mean_plddt_window": 48.2,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.188,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 4,
+          "P1": "V",
+          "P1_prime": "F",
+          "mean_plddt_window": 48.1,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.188,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 5,
+          "P1": "F",
+          "P1_prime": "L",
+          "mean_plddt_window": 47.4,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.188,
+          "region": "signal_peptide"
+        }
+      ],
+      "mature_protein_max_risk_score": 0.188,
+      "mature_protein_exposed_sites": 3
+    },
+    "NPr": {
+      "full_name": "Neutral metalloprotease (thermolysin-like, NpI)",
+      "total_recognition_sites": 234,
+      "exposed_sites": 14,
+      "partially_exposed_sites": 1,
+      "buried_sites": 219,
+      "salt_residual_activity_at_nacl": 0.388,
+      "ph_activity_factor": 1.0,
+      "effective_activity": 0.388,
+      "max_risk_score": 0.388,
+      "mean_risk_score_top5": 0.388,
+      "top_5_sites": [
+        {
+          "position": 2,
+          "P1": "K",
+          "P1_prime": "L",
+          "mean_plddt_window": 48.6,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.388,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 3,
+          "P1": "L",
+          "P1_prime": "V",
+          "mean_plddt_window": 48.2,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.388,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 4,
+          "P1": "V",
+          "P1_prime": "F",
+          "mean_plddt_window": 48.1,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.388,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 5,
+          "P1": "F",
+          "P1_prime": "L",
+          "mean_plddt_window": 47.4,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.388,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 6,
+          "P1": "L",
+          "P1_prime": "V",
+          "mean_plddt_window": 46.9,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.388,
+          "region": "signal_peptide"
+        }
+      ],
+      "mature_protein_max_risk_score": 0.155,
+      "mature_protein_exposed_sites": 0
+    },
+    "acid_protease": {
+      "full_name": "Acid protease (aspergillopepsin I)",
+      "total_recognition_sites": 128,
+      "exposed_sites": 10,
+      "partially_exposed_sites": 0,
+      "buried_sites": 118,
+      "salt_residual_activity_at_nacl": 0.65,
+      "ph_activity_factor": 0.3,
+      "effective_activity": 0.195,
+      "max_risk_score": 0.195,
+      "mean_risk_score_top5": 0.195,
+      "top_5_sites": [
+        {
+          "position": 3,
+          "P1": "L",
+          "P1_prime": "V",
+          "mean_plddt_window": 48.2,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.195,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 4,
+          "P1": "V",
+          "P1_prime": "F",
+          "mean_plddt_window": 48.1,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.195,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 5,
+          "P1": "F",
+          "P1_prime": "L",
+          "mean_plddt_window": 47.4,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.195,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 6,
+          "P1": "L",
+          "P1_prime": "V",
+          "mean_plddt_window": 46.9,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.195,
+          "region": "signal_peptide"
+        },
+        {
+          "position": 7,
+          "P1": "V",
+          "P1_prime": "L",
+          "mean_plddt_window": 45.4,
+          "accessibility": "exposed",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.195,
+          "region": "signal_peptide"
+        }
+      ],
+      "mature_protein_max_risk_score": 0.02,
+      "mature_protein_exposed_sites": 0
+    }
+  },
+  "mature_protein_verdict": "MODERATE",
+  "mature_protein_worst_score": 0.188,
+  "mature_protein_worst_protease": "ALP"
+}

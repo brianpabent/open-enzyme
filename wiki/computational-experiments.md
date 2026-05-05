@@ -38,6 +38,22 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+### comp-005 — Lactoferrin Shio-Koji Protease Stability
+
+| Field | Value |
+|---|---|
+| **Question** | Will human lactoferrin (P02788) survive the shio-koji protease environment with meaningful structural integrity retained? |
+| **Method** | AlphaFold pLDDT structural analysis + P1/P1' cleavage-site prediction for 3 *A. oryzae* koji proteases (ALP, NPr, acid protease) + shio-koji condition corrections (17.5% NaCl, pH 4.5–5.0). Shared library with comp-001; two verdicts computed: full sequence and mature protein (excl. signal peptide). |
+| **Verdict** | **HIGH (full sequence) / MODERATE (mature protein aa 20–710)**. All top-5 sites across all 3 proteases are in the signal peptide (pLDDT 35–54). Mature-protein max risk 0.188 (ALP, 3 exposed sites). Signal peptide processing by *A. oryzae* is uncertain — if cleaved, operative risk is MODERATE. |
+| **Key finding** | The HIGH verdict is signal-peptide-contingent. Mature lactoferrin (aa 20–710) is MODERATE — less resistant than uricase (LOW) but substantially more resistant than the full-sequence headline implies. ALP's conservative pH factor (1.0, outside active pH 6–12) likely overstates mature-protein risk. Glycosylation at N137, N478, N623 not modelled — may further reduce accessibility. |
+| **Informs** | [`validation-experiments.md` §1.10](./validation-experiments.md) — lactoferrin arm remains a feasibility gate (unlike uricase arm, which comp-001 reframed as confirmation) |
+| **Experiment folder** | [`experiments/comp-005-lactoferrin-shio-koji-protease-stability/`](../experiments/comp-005-lactoferrin-shio-koji-protease-stability/) |
+| **Interpretive wiki page** | [`wiki/lactoferrin-protease-stability-computational.md`](./lactoferrin-protease-stability-computational.md) |
+| **Date** | 2026-05-05 |
+| **Status** | Complete |
+
+---
+
 ### comp-004 — Supplement ABCG2 Antagonism
 
 | Field | Value |
@@ -59,7 +75,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ID | Question | Informs | Priority |
 |---|---|---|---|
 | comp-002 | Uricase thermal/pH stability under shio-koji conditions (MD simulation or Rosetta ΔΔG) | §1.10 follow-up if wet-lab shows unexpected degradation | Low (pending §1.10 result) |
-| comp-003 | Lactoferrin cleavage-site analysis under same shio-koji conditions | §1.10 extension — endgame strain carries both payloads | Medium |
+| ~~comp-003~~ → **comp-005** | Lactoferrin cleavage-site analysis under same shio-koji conditions | §1.10 extension — completed 2026-05-05; see comp-005 above | ✓ Done |
 
 ---
 
