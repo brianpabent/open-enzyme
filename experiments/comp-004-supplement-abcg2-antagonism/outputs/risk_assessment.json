@@ -1,0 +1,111 @@
+{
+  "experiment": "comp-004",
+  "title": "Supplement ABCG2 Antagonism \u2014 Pharmacological Risk Assessment",
+  "target": {
+    "name": "ABCG2 (Breast Cancer Resistance Protein / BCRP)",
+    "chembl_id": "CHEMBL5393",
+    "uniprot": "Q9UNQ0",
+    "gene": "ABCG2",
+    "species": "Homo sapiens",
+    "function": "ATP-driven urate efflux transporter; apical surface of enterocytes exports uric acid from blood into gut lumen. Accounts for ~33% of total gut urate secretion. Loss-of-function Q141K variant (rs2231142) reduces surface expression ~50% and is enriched in East Asian populations.",
+    "go_term": "GO:0015143 \u2014 urate transmembrane transporter activity"
+  },
+  "gut_model_parameters": {
+    "description": "Reference parameters for the small intestine gut-lumen compartment relevant to ABCG2-mediated urate transport",
+    "small_intestine_lumen_volume_L": 0.25,
+    "volume_source": "Commonly cited reference value for fasted small intestinal fluid volume; Johnson 1997 GI physiology; 250 mL is the conservative (high) estimate \u2014 lower volume estimates (100-150 mL proximal SI) would increase effective concentration",
+    "ph_range": [
+      6.5,
+      7.0
+    ],
+    "ph_source": "Proximal small intestine pH range; ABCG2 is expressed throughout SI with peak in duodenum/jejunum",
+    "transit_time_hours": 2.0,
+    "transit_note": "Small intestine transit ~2-4h; solubility-limited drugs reach peak concentration in proximal SI before dilution/transit",
+    "abcg2_expression_note": "ABCG2 highest in duodenum and proximal jejunum (apical surface). The 250 mL whole-SI estimate over-dilutes relative to the proximal compartment where ABCG2 density is highest \u2014 effective inhibition concentrations may be higher than model outputs suggest.",
+    "modeling_approach": "Effective dissolved concentration = min(dose-limited concentration, solubility cap). Risk ratio = effective concentration / IC50. Hill equation with n=1: fractional inhibition = ratio / (ratio + 1)."
+  },
+  "risk_thresholds": {
+    "LOW": "risk_ratio < 0.5 (< 33% predicted inhibition)",
+    "MODERATE": "0.5 <= risk_ratio < 2.0 (33-67% predicted inhibition)",
+    "HIGH": "2.0 <= risk_ratio < 5.0 (67-83% predicted inhibition)",
+    "VERY_HIGH": "risk_ratio >= 5.0 (> 83% predicted inhibition)",
+    "NOT_APPLICABLE": "Expression-regulation mechanism; IC50 occupancy framework not applicable"
+  },
+  "results": [
+    {
+      "compound": "Quercetin",
+      "chembl_id": "CHEMBL50",
+      "dose_mg": 500,
+      "bioavailability_fraction": 0.17,
+      "mw_g_mol": 302.24,
+      "intestinal_solubility_mg_L": 15.0,
+      "gut_lumen_concentration": {
+        "gut_mass_mg": 415.0,
+        "dose_limited_mg_L": 1660.0,
+        "solubility_capped": true,
+        "effective_dissolved_mg_L": 15.0,
+        "effective_dissolved_uM": 49.6,
+        "effective_dissolved_nM": 49629.0
+      },
+      "ic50_nM": 7250,
+      "mechanism": "direct_transport_inhibition",
+      "risk_ratio": 6.85,
+      "predicted_fractional_inhibition": 0.873,
+      "risk_level": "VERY_HIGH",
+      "assay_type": "Hoechst 33342 efflux assay (cell-based)",
+      "source": "Bioorg Med Chem 2011",
+      "data_note": "Hoechst 33342 is a fluorescent ABCG2 substrate; assay measures inhibition of its efflux. MCF7 cells overexpress ABCG2 vs enterocytes \u2014 functional inhibition in primary enterocytes may differ.",
+      "mechanism_note": ""
+    },
+    {
+      "compound": "EGCG",
+      "chembl_id": "CHEMBL297453",
+      "dose_mg": 400,
+      "bioavailability_fraction": 0.02,
+      "mw_g_mol": 458.37,
+      "intestinal_solubility_mg_L": 500.0,
+      "gut_lumen_concentration": {
+        "gut_mass_mg": 392.0,
+        "dose_limited_mg_L": 1568.0,
+        "solubility_capped": true,
+        "effective_dissolved_mg_L": 500.0,
+        "effective_dissolved_uM": 1090.8,
+        "effective_dissolved_nM": 1090822.0
+      },
+      "ic50_nM": null,
+      "mechanism": "expression_regulation",
+      "risk_ratio": null,
+      "predicted_fractional_inhibition": null,
+      "risk_level": "NOT_APPLICABLE",
+      "assay_type": null,
+      "source": "PubMed search 2026-05-05; Yu 2024 in vivo gout study showed net-favorable urate direction (likely indirect anti-inflammatory effects dominating over ABCG2 expression changes)",
+      "data_note": "The \u00a71.14 Caco-2 transwell assay (48h, acute urate flux) will not detect EGCG's mechanism. A separate longer-treatment arm (72h) with ABCG2 Western blot is needed to quantify EGCG's expression effect.",
+      "mechanism_note": "EGCG downregulates ABCG2 mRNA and protein expression over 24-72h in cell culture. Effect is transcriptional/post-transcriptional, not acute transport inhibition. No kinetic IC50 for direct transport block exists in ChEMBL."
+    },
+    {
+      "compound": "Curcumin",
+      "chembl_id": "CHEMBL140",
+      "dose_mg": 1000,
+      "bioavailability_fraction": 0.01,
+      "mw_g_mol": 368.38,
+      "intestinal_solubility_mg_L": 5.0,
+      "gut_lumen_concentration": {
+        "gut_mass_mg": 990.0,
+        "dose_limited_mg_L": 3960.0,
+        "solubility_capped": true,
+        "effective_dissolved_mg_L": 5.0,
+        "effective_dissolved_uM": 13.6,
+        "effective_dissolved_nM": 13573.0
+      },
+      "ic50_nM": 1630,
+      "mechanism": "direct_transport_inhibition",
+      "risk_ratio": 8.33,
+      "predicted_fractional_inhibition": 0.893,
+      "risk_level": "VERY_HIGH",
+      "assay_type": "Mitoxantrone efflux assay (cell-based)",
+      "source": "Eur J Med Chem 2022",
+      "data_note": "Mitoxantrone is a high-affinity ABCG2 substrate; assay measures inhibition of its efflux. MCF7-VP cells overexpress ABCG2. Single value \u2014 no replication across labs in ChEMBL for this specific assay.",
+      "mechanism_note": ""
+    }
+  ]
+}

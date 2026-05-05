@@ -38,6 +38,22 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+### comp-004 — Supplement ABCG2 Antagonism
+
+| Field | Value |
+|---|---|
+| **Question** | Do quercetin, EGCG, and curcumin reach gut-lumen concentrations sufficient to inhibit ABCG2-mediated urate efflux at standard supplement doses? |
+| **Method** | IC50 occupancy framework: effective dissolved gut-lumen concentration ÷ ABCG2 IC50 (from ChEMBL). Two-step concentration model: dose-limited capped by intestinal solubility. Hill equation (n=1) for fractional inhibition prediction. |
+| **Verdict** | **VERY HIGH risk (provisional)** for quercetin and curcumin — 6.8× and 8.3× IC50 respectively, predicting 87–89% ABCG2 inhibition. EGCG acts via expression downregulation, not scored by this framework. |
+| **Key finding** | Curcumin paradox: < 1% bioavailability concentrates > 99% of oral dose in gut lumen, reaching 8.3× its IC50 (1,630 nM) despite lower gut concentration than quercetin. Supplement-induced ABCG2 inhibition may reduce gut urate excretion, paradoxically worsening hyperuricemia. |
+| **Informs** | [`validation-experiments.md` §1.14](./validation-experiments.md) — shifts supplement arms from screening to quantification of a pharmacologically-predicted effect |
+| **Experiment folder** | [`experiments/comp-004-supplement-abcg2-antagonism/`](../experiments/comp-004-supplement-abcg2-antagonism/) |
+| **Interpretive wiki page** | [`wiki/supplement-abcg2-antagonism-computational.md`](./supplement-abcg2-antagonism-computational.md) |
+| **Date** | 2026-05-05 |
+| **Status** | Complete |
+
+---
+
 ## Planned Analyses
 
 | ID | Question | Informs | Priority |

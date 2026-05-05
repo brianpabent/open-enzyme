@@ -1,0 +1,59 @@
+{
+  "target": {
+    "name": "ABCG2 (Breast Cancer Resistance Protein / BCRP)",
+    "chembl_id": "CHEMBL5393",
+    "uniprot": "Q9UNQ0",
+    "gene": "ABCG2",
+    "species": "Homo sapiens",
+    "function": "ATP-driven urate efflux transporter; apical surface of enterocytes exports uric acid from blood into gut lumen. Accounts for ~33% of total gut urate secretion. Loss-of-function Q141K variant (rs2231142) reduces surface expression ~50% and is enriched in East Asian populations.",
+    "go_term": "GO:0015143 — urate transmembrane transporter activity"
+  },
+  "ic50_data": [
+    {
+      "compound": "Quercetin",
+      "chembl_id": "CHEMBL50",
+      "mechanism": "direct_transport_inhibition",
+      "ic50_nM": 7250,
+      "ic50_values_nM": [6900, 7600],
+      "ic50_used_nM": 7250,
+      "ic50_derivation": "Mean of two reported values (6900 and 7600 nM)",
+      "assay_type": "Hoechst 33342 efflux assay (cell-based)",
+      "cell_line": "MCF7 cells expressing ABCG2",
+      "source_citation": "Bioorg Med Chem 2011",
+      "fetch_date": "2026-05-05",
+      "fetch_method": "ChEMBL MCP query (chembl_id CHEMBL50, target CHEMBL5393)",
+      "notes": "Hoechst 33342 is a fluorescent ABCG2 substrate; assay measures inhibition of its efflux. MCF7 cells overexpress ABCG2 vs enterocytes — functional inhibition in primary enterocytes may differ.",
+      "assay_applicable": true
+    },
+    {
+      "compound": "EGCG",
+      "chembl_id": "CHEMBL297453",
+      "mechanism": "expression_regulation",
+      "ic50_nM": null,
+      "ic50_used_nM": null,
+      "assay_applicable": false,
+      "mechanism_detail": "EGCG downregulates ABCG2 mRNA and protein expression over 24-72h in cell culture. Effect is transcriptional/post-transcriptional, not acute transport inhibition. No kinetic IC50 for direct transport block exists in ChEMBL.",
+      "source_citation": "PubMed search 2026-05-05; Yu 2024 in vivo gout study showed net-favorable urate direction (likely indirect anti-inflammatory effects dominating over ABCG2 expression changes)",
+      "fetch_date": "2026-05-05",
+      "fetch_method": "ChEMBL MCP (no IC50 found) + PubMed literature search",
+      "notes": "The §1.14 Caco-2 transwell assay (48h, acute urate flux) will not detect EGCG's mechanism. A separate longer-treatment arm (72h) with ABCG2 Western blot is needed to quantify EGCG's expression effect.",
+      "experimental_implication": "§1.14 should include a 72h EGCG arm with ABCG2 protein quantification to detect expression-level changes"
+    },
+    {
+      "compound": "Curcumin",
+      "chembl_id": "CHEMBL140",
+      "mechanism": "direct_transport_inhibition",
+      "ic50_nM": 1630,
+      "ic50_values_nM": [1630],
+      "ic50_used_nM": 1630,
+      "ic50_derivation": "Single reported value",
+      "assay_type": "Mitoxantrone efflux assay (cell-based)",
+      "cell_line": "MCF7-VP cells (ABCG2-overexpressing)",
+      "source_citation": "Eur J Med Chem 2022",
+      "fetch_date": "2026-05-05",
+      "fetch_method": "ChEMBL MCP query (chembl_id CHEMBL140, target CHEMBL5393)",
+      "notes": "Mitoxantrone is a high-affinity ABCG2 substrate; assay measures inhibition of its efflux. MCF7-VP cells overexpress ABCG2. Single value — no replication across labs in ChEMBL for this specific assay.",
+      "assay_applicable": true
+    }
+  ]
+}
