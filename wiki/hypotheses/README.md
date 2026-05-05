@@ -50,6 +50,8 @@ Committing to a hypothesis is a commitment to *attempt to falsify it*, not a com
 | ID | Title | Status | Survival count | Committed | Link |
 |---|---|---|---|---|---|
 | H01 | Ward 1995 glucoamylase-KEX2 dual-cassette architecture layers uricase + lactoferrin in *A. oryzae* solid-state rice koji | Pending | 0 | 2026-04-24 | [H01-ward-dual-cassette.md](./H01-ward-dual-cassette.md) |
+| H02 | Engineered *Faecalibacterium prausnitzii* delivering colonic butyrate is a viable peer-track therapeutic chassis to engineered koji for gout, with genotype-agnostic ABCG2 induction (WT + Q141K) as the primary mechanism of action | Stub | 0 | 2026-05-05 | [H02-engineered-lbp-thesis.md](./H02-engineered-lbp-thesis.md) |
+| H03 | Kidney-tropic siRNA against URAT1 mRNA is a viable long-horizon therapeutic modality for under-excreter gout, mechanistically cleaner than small-molecule URAT1 inhibitors but gated on the maturation of kidney-tropic conjugate delivery chemistry | Stub | 0 | 2026-05-05 | [H03-sirna-urat1-thesis.md](./H03-sirna-urat1-thesis.md) |
 
 *(Add new rows as hypotheses are committed. Sort by ID.)*
 
