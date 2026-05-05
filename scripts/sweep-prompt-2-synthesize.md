@@ -2,7 +2,16 @@ You are running **Pass 2** of the Open Enzyme sweep — full-corpus synthesis. P
 
 <!-- The synthesizer here is intentionally a different vendor from the propagator (Pass 1) and the reviewer (Pass 3) — see `wiki/open-source-platform.md` §"Multi-model synthesis as guard against epistemic homogenization" for the rationale. Don't collapse the pipeline to a single vendor. -->
 
-**Read `CLAUDE.md` first** for evidence-level standards and voice.
+## Required pre-reading (do this BEFORE generating any synthesis)
+
+1. **`CLAUDE.md`** — evidence-level standards and voice.
+2. **`wiki/synthesis.md` bottom-of-file sections** — specifically:
+   - **`## Sweep history`** table — what's been swept before, when, and which log file captures it.
+   - **`## Where actioned items live now`** — the canonical homes (file + section paths) where prior-sweep findings have been baked into the wiki. **A connection that already lives at one of these named locations is not new — it has been actioned. Do not re-surface it as a fresh finding.**
+   - **`## Strategic Reflections Queue`** if present — content-triggered reflections that are *intentionally* deferred. Don't try to "find" these as new connections; they're already queued.
+3. **The most recent ~3 entries in the Sweep history table** — read the corresponding `logs/v4-synthesis-*.md` files. Items that appeared in those prior syntheses are candidates for the duplicate filter (Drift guard, below).
+
+**Why this matters.** The wiki is updated by the sweep workflow itself. After Pass 3 commits review annotations, the human walkthrough actions findings into canonical pages (e.g., adding a new `§4.7 Substrate-Supply Synergy` section to `lactoferrin.md`). The next sweep fires; if you ignore the audit trail, you will re-derive those exact connections from the wiki content that now contains them. **The drift-guard test is whether the connection is already explicit in the wiki at any level — synthesis.md, the canonical pages named in "Where actioned items live now," OR a recent prior-sweep log.**
 
 **Pass 2 only.** Read the full wiki corpus, find connections nobody has stated yet, and output a synthesis report. Do NOT modify any `wiki/*.md` file. Do NOT prepend to `wiki/synthesis.md` (Pass 3 — Claude review — will do that with critique annotations interleaved). Do NOT modify `index.md`, `wiki/GRAPH.md`, or `mkdocs.yml`.
 
@@ -22,15 +31,32 @@ The TRIGGER block tells you the date and commit SHA short form to use.
 
 ## What to look for
 
-Cross-document connections that emerge only when you read multiple files together:
+Cross-document connections that emerge only when you read multiple files together — **AND that are not already explicit in the wiki content itself.**
 
-1. **Cross-domain synergies** — findings from one track that unlock opportunities in another (e.g., a koji secondary metabolite that hits an NLRP3 chokepoint nobody mapped to it)
-2. **Contradictions or tensions** — two documents disagreeing on mechanism, strategy, or feasibility
-3. **Unexploited combinations** — molecules, pathways, organisms that appear in multiple documents without anyone connecting them into a strategy
-4. **New experiments** — especially cheap, fast ones that de-risk expensive downstream work
-5. **Risk interactions** — risks that compound or cancel across tracks
-6. **Blind spots** — questions nobody is asking that someone should
-7. **Platform-level patterns** — observations that apply across multiple compounds/strains/chokepoints rather than to one
+**The novelty bar:** would a knowledgeable reader who has read the cited canonical wiki pages see your proposed finding as new information, or as a restatement of what those pages already say? If it's a restatement, it's a duplicate — drop it. The threshold isn't "the wiki doesn't make this connection in a single sentence somewhere" — it's "no canonical wiki page treats this connection as a named section, callout, or first-class topic." Use the "Where actioned items live now" pointers (synthesis.md bottom) as your primary duplicate-check.
+
+**Concrete duplicate-check examples** (these are not new findings; do NOT include them in your output):
+
+- "Lactoferrin → ↓TNFα → ↑ABCG2 substrate supply for co-expressed uricase" — already a named section at `lactoferrin.md §4.7` and a rescue arm in `validation-experiments.md §1.14`.
+- "Carnosine as precision countermeasure for androgen-driven URAT1 upregulation" — already at `koji-endgame-strain.md §2.5` and `validation-experiments.md §1.24`.
+- "Native koji metabolite chorus (kojic acid + ergothioneine) as free CP1a/CP1b coverage" — already at `open-enzyme-vision.md §4`.
+- "Supplement stack contains functional ABCG2 inhibitors (quercetin, EGCG, curcumin)" — already a tier-stratified callout at `abcg2-modulators.md §"The supplements-stack contradiction"` and `open-enzyme-vision.md §10`.
+- "Shio-koji proteases destroy peptide payloads (carnosine, KPV)" — already at `engineered-koji-protocol.md §15`.
+- "Ward 1995 dual-cassette feasibility = #1 priority gate" — already `validation-experiments.md §1.9` and falsification card `wiki/hypotheses/H01-ward-dual-cassette.md`.
+
+These are ALL valid connections — they just aren't *new*. Your job is to find the next layer beyond what's already actioned.
+
+**The seven categories where genuine novelty can still be found:**
+
+1. **Cross-domain synergies** — findings from one track that unlock opportunities in another, AND not already cross-linked in either canonical page (e.g., a *new* koji secondary metabolite that hits an NLRP3 chokepoint nobody mapped to it)
+2. **Contradictions or tensions** — two documents disagreeing on mechanism, strategy, or feasibility, where the contradiction is NOT already documented in either page
+3. **Unexploited combinations** — molecules, pathways, organisms that appear in multiple documents without anyone connecting them into a strategy. If `koji-endgame-strain.md` already lists the combination, it's exploited.
+4. **New experiments** — especially cheap, fast ones that de-risk expensive downstream work, AND not already in `validation-experiments.md` or `computational-experiments.md` Planned Analyses
+5. **Risk interactions** — risks that compound or cancel across tracks, where the interaction isn't already named in `synthesis.md` Strategic Reflections Queue or canonical risk pages
+6. **Blind spots** — questions nobody is asking that someone should, AND not already in `open-questions.md`
+7. **Platform-level patterns** — observations that apply across multiple compounds/strains/chokepoints rather than to one, AND not already framed in `open-enzyme-vision.md`, `modality-chokepoint-matrix.md`, or platform-thesis pages
+
+If your candidate finding fails the novelty bar in any of these categories, drop it. **Three high-quality novel findings beat ten restatements.**
 
 ---
 
@@ -95,7 +121,13 @@ Cross-document connections that emerge only when you read multiple files togethe
 
 ## Drift guard
 
-If after reading the corpus you find no genuinely new connections — e.g., the trigger was a typo fix, or the synthesis would just restate what's already in the most-recent block of `wiki/synthesis.md` — output a brief note saying so and exit.
+If after reading the corpus you find no genuinely new connections, output a brief note and exit. The drift guard fires when **any** of these conditions hold:
+
+1. **Trigger was a typo fix or trivial edit** — no semantic change to evaluate.
+2. **Restates current synthesis.md** — your candidate findings would just repeat what's already in the most-recent block of `wiki/synthesis.md` (if any items remain there post-inbox-zero).
+3. **Restates the canonical wiki pages** — your candidate findings are already explicit as named sections, callouts, or first-class topics in the cited canonical pages. Use the "Where actioned items live now" pointers (synthesis.md bottom) and the duplicate-check examples in "What to look for" above as your reference.
+4. **Restates a recent prior-sweep log** — your candidate findings appear in any `logs/v4-synthesis-*.md` from the last 3 sweep-history entries.
+5. **Inbox-zero blind-spot trap** — `wiki/synthesis.md` shows `(none — inbox zero as of YYYY-MM-DD)` AND the trigger files were just heavily edited by the human walkthrough that produced that inbox-zero. In this case, the wiki content explicitly contains the connections that were just actioned; re-deriving them is the failure mode this drift guard exists to prevent. Read the most recent sweep-history entry's log file and treat its findings as already-actioned.
 
 ```markdown
 # Synthesis — <YYYY-MM-DD>
@@ -103,6 +135,8 @@ If after reading the corpus you find no genuinely new connections — e.g., the 
 ```
 
 Better to skip than to pollute the queue with low-signal entries. Pass 3 reviewer will see the no-op and prepend a corresponding short entry to `wiki/synthesis.md`.
+
+**Partial-novelty case.** If you find 1–2 genuinely novel items and 5+ restatements, output ONLY the novel items. Do not pad the synthesis with restatements to "fill" the standard 3+3+3+3 structure. The structure is a maximum, not a quota. A synthesis with one new Connection and zero of the other categories is a valid output if that's what the corpus actually contains.
 
 ---
 
