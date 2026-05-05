@@ -253,6 +253,36 @@ Treat the wiki sweep, every literature scan, every subagent research task, and e
 
 **Why this rule exists:** explicitly added 2026-05-05 after a TCM × modern rigor scope page was drafted with "language barrier" listed as a limitation. Brian's correction: *"i think one of the things that i want to take advantage of is that you are multilingual, so you can read chinese papers. you can read chinese text. you can read japanese. so we should be ingesting EVERYTHING not just western-centric research. seems foolish to not search globally in 2026."* Path-dependent narrowing, exactly the failure mode the umbrella's "Curiosity and First-Principles Framing" rule warns against.
 
+#### Translation protocol (two-model independent cross-check + inline disagreement annotations)
+
+When ingesting non-English source material, **translate with two independent models** (different vendors, ideally different training pipelines) and produce an annotated translation that surfaces disagreements rather than collapsing them. Same multi-vendor cross-check discipline the wiki sweep daemon already uses (Pass 2 Gemini + Pass 3 Claude + Pass 4 DeepSeek peer-review per `wiki/open-source-platform.md` §"Multi-model synthesis as guard against epistemic homogenization"). Translation has the same homogenization risk; the same heterogeneity guard applies.
+
+**Operational pattern:**
+
+1. **Two independent translations.** Pick two models from different vendors:
+   - Model A: Claude (Anthropic) OR Gemini (Google)
+   - Model B: DeepSeek OR Qwen (both Chinese-vendor; native-language depth) OR GPT-5 (OpenAI)
+   For Chinese-source material, at least one model should be a Chinese-vendor model (DeepSeek or Qwen) — the native-language training depth catches idiomatic and classical-TCM-terminology nuances Western-trained models miss. For Japanese-source material, prefer including a model with strong Japanese (Claude is competent; Gemini is reasonable; for deep Kampo medicine terminology, a Japanese-vendor option if available; otherwise two competent Western models is acceptable).
+2. **Sentence-level comparison.** Compare the two translations at sentence granularity (or paragraph if sentences are too short to differ meaningfully).
+3. **Where models AGREE → confident translation.** Use that text directly.
+4. **Where models DISAGREE → inline annotation.** Use a clear, scannable convention:
+   ```
+   The compound shows {Model A: "significant" | Model B: "notable"} reduction in IL-1β secretion at 10 μM.
+   ```
+   Or for substantive disagreements (different mechanism implications, different evidence tier, different magnitude):
+   ```
+   {Model A: "decreased serum urate by 1.2 mg/dL"} {Model B: "decreased serum uric acid by approximately 71 μmol/L"}
+   [TRANSLATION NOTE: Models agree on direction and rough magnitude (1.2 mg/dL ≈ 71 μmol/L), differ on unit choice in the source. Verify against original-language paper if precision matters for downstream calculation.]
+   ```
+5. **For load-bearing claims, escalate.** If a translation disagreement affects an evidence-tier judgment, a dose calculation, a mechanism mapping, or a chokepoint assignment — flag it explicitly in the wiki with `[TRANSLATION-DISAGREEMENT]` so future readers know the underlying source has interpretive ambiguity. Do not resolve the disagreement silently by picking one translation.
+6. **Specific high-risk categories** where translation disagreement should always be flagged: scientific terminology with mechanism implications (e.g., "inhibits" vs "modulates" vs "suppresses"), evidence-tier hedging language ("shows" vs "suggests" vs "may"), dosing units and routes, classical TCM / Kampo / Ayurvedic terminology vs modernized equivalents, statistical significance language, sample-size and study-design descriptions.
+
+**Why two models, why independent, why surface disagreements:** translation is interpretation. A single model's interpretation has the model's training-distribution bias, vendor bias, and idiomatic-fluency strengths/weaknesses baked in. Two models from different vendors share less bias. The disagreements are EXACTLY where translation nuance lives — silently picking one model's choice loses information the original-language paper had. Surfacing the disagreement preserves the precision the source intended.
+
+**Cost note:** translation runs add a small marginal cost per non-English source ingested (typically <$0.05 per paper at current API pricing). Negligible relative to the value of getting the translation right for load-bearing scientific claims. Does NOT add cost to the sweep daemon (which is English-corpus synthesis) — only to the explicit lit-scan / source-ingestion subagent flows.
+
+**Why this rule exists:** added 2026-05-05 in the same conversation as the global-multilingual default. Brian's specific framing: *"if we bring in non-english papers, i think we need to have a protocol for translation that involves 2 completely independent models and we can have inline annotations where the models may disagree on nuance because in science nuance and precision matter."* The discipline matches the heterogeneity-guard logic already established for the sweep daemon.
+
 ### Push-batching discipline (Open Enzyme overrides the umbrella's "push immediately" rule)
 
 The umbrella `~/Documents/Claude/Projects/abent/CLAUDE.md` git steward pattern says "Push immediately after each commit, every time." **That rule is overridden in this repo.** Reason: every push to `wiki/*.md` fires the multi-pass wiki sweep daemon (Pass 1 propagate → Pass 2 synthesize → Pass 3 review → DeepSeek peer-review). Each daemon run costs ~$0.65 and takes ~9–12 minutes; multiple parallel runs cause merge conflicts that consume far more time than the eager push saved.

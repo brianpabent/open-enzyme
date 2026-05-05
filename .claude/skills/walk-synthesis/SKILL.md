@@ -212,6 +212,7 @@ Subagents have NO conversation context. The prompt must be self-contained and br
 5. **What they should report back** (length cap, structure)
 6. **Memory cautions** if relevant (e.g., "Paperclip MCP `map` operator hallucinates — use `search` / `cat` / `grep` instead" per `memory/feedback_paperclip_map_unreliable.md`)
 7. **Global-multilingual default** for any literature-scan or research task. Per `Open Enzyme/CLAUDE.md` §"Global-multilingual research by default," explicitly include non-English sources in the briefing: ChiCTR, CNKI / WanFang (Chinese), J-STAGE / CiNii (Japanese), KISS / RISS (Korean), eLIBRARY.RU (Russian), TIB (German), SciELO (Spanish/Portuguese). Reading non-English sources is zero marginal cost; treating language as a "barrier" is path-dependent narrowing the project explicitly rejects.
+8. **Translation cross-check protocol** when the subagent will ingest non-English source material that produces load-bearing claims (evidence-tier judgments, dosing, mechanism mappings). Per `Open Enzyme/CLAUDE.md` §"Translation protocol," instruct the subagent to translate with two independent models (one Western-vendor, one Chinese-vendor for Chinese sources) and surface disagreements as inline annotations rather than silently picking one. Particularly important for: scientific hedging language, dosing units, classical-TCM terminology, statistical significance language. The cost is small (~$0.05/paper) relative to the value of translation precision for scientific claims.
 
 ### File-collision management
 
