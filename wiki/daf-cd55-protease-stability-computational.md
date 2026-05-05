@@ -166,6 +166,8 @@ The HIGH ectodomain verdict is not a verdict on SCR1–4; it is a verdict on the
 
 - [modality-chokepoint-matrix.md](./modality-chokepoint-matrix.md) — "Engineered soluble complement regulators" row; comp-006 verdict updates the status of this exploration vector
 - [complement-c5a-gout.md](./complement-c5a-gout.md) — CP0 chokepoint; why this analysis exists
+- [daf-cd55-scr14-truncated-computational.md](./daf-cd55-scr14-truncated-computational.md) — **comp-012 (2026-05-05):** SCR1-4-only truncated construct (aa 35–285) confirmed **LOW** protease risk (max 0.039, identical to uricase). Stalk truncation removed 100% of exposed sites. The CP0 platform-gap closure thesis is now in silico-validated. (Mechanistic Extrapolation; source: daf-cd55-scr14-truncated-computational.md)
+- [hypotheses/H05-daf-scr14-cp0-thesis.md](./hypotheses/H05-daf-scr14-cp0-thesis.md) — Falsification card for the DAF SCR1-4 CP0-closure thesis (stub, committed 2026-05-05)
 - [uricase-protease-stability-computational.md](./uricase-protease-stability-computational.md) — comp-001; the LOW-verdict baseline
 - [lactoferrin-protease-stability-computational.md](./lactoferrin-protease-stability-computational.md) — comp-005; the HIGH/MODERATE lactoferrin comparison
 - [computational-experiments.md](./computational-experiments.md) — tracking index
