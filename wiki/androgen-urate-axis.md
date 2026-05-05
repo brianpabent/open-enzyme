@@ -7,6 +7,7 @@ related:
   - uricase.md
   - gut-lumen-sink.md
   - carnosine.md
+  - koji-endgame-strain.md
   - supplements-stack.md
   - self-experiment-protocol.md
   - abcg2-modulators.md
@@ -120,7 +121,7 @@ An underappreciated feedback:
 
 - **The androgen-urate axis is a sex-specific driver on top of the transporter biology.** Patient stratification for the engineered uricase product should capture TRT / SERM / AAS / AI status and SHBG as part of the clinical characterization panel — it predicts response variance.
 - **Androgen suppression of ABCG2 lowers the dose-response asymptote of the gut-lumen-sink** — how much urate the intestinal secretion pathway can pull out of the blood per unit time. This is a structural ceiling on the platform's primary demographic, not a uricase-dose variable: more enzyme does not rescue substrate the transporter never delivers. The ceiling is partially rescuable on the *transporter* side — fermentable fiber → colonic butyrate → PPARγ-driven ABCG2 induction, plus Nrf2-axis inducers (sulforaphane, indole-3-carbinol; see [abcg2-modulators.md](./abcg2-modulators.md)) — which is the lever for high-androgen patients whose UA does not drop as expected on the enzyme alone.
-- **Carnosine's URAT1/GLUT9 modulation** (see [carnosine.md](./carnosine.md)) is mechanistically aligned with reversing the androgen-driven URAT1 upregulation — making carnosine particularly well-suited for androgen-driven hyperuricemia as a supplement-stack complement to the engineered uricase.
+- **Carnosine's URAT1/GLUT9 modulation** (see [carnosine.md](./carnosine.md)) is mechanistically aligned with reversing the androgen-driven URAT1 upregulation — making carnosine particularly well-suited for androgen-driven hyperuricemia as a supplement-stack complement to the engineered uricase. The [koji endgame strain](./koji-endgame-strain.md) §2.5 formalizes this as the "precision countermeasure" framing: carnosine's URAT1/GLUT9 downregulation is mechanistically mirror-image to androgen-driven URAT1 upregulation, making it the highest-priority optional third cassette for a male/high-androgen product configuration. (Animal Model for URAT1/GLUT9 downregulation; Mechanistic Extrapolation for the androgen-axis precision-countermeasure argument — the two-step composed argument is sound but not directly confirmed in a combined androgen + carnosine experiment.) (source: koji-endgame-strain.md §2.5)
 - **The post-menopausal cohort is underserved.** Current gout research and drug development is male-skewed because male gout is more common; but the fastest-growing gout demographic is post-menopausal women, and the estrogen-loss mechanism is distinct enough to warrant its own exploit-map analysis. (Open research direction.)
 
 ## Beyond transporters: direct androgen effects on NLRP3 priming

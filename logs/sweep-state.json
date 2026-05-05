@@ -1,23 +1,15 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "734bf5183e1a15400f7edc9951dfcbc6ca8b0b53",
-    "timestamp": "2026-05-05T16:22:04Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-05-734bf51.md",
-    "review_commit": "734bf5183e1a15400f7edc9951dfcbc6ca8b0b53",
+    "commit": "6e3614da10047a34d4d1eb3a2eefc7fffe1e7482",
+    "timestamp": "2026-05-05T17:01:42Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-05-6e3614d.md",
+    "review_commit": "6e3614da10047a34d4d1eb3a2eefc7fffe1e7482",
     "trigger_files": [
-      "wiki/blood-barrier-exploits.md",
-      "wiki/enzyme-deficit-deep-dive.md",
-      "wiki/gout-deep-dive.md",
-      "wiki/gout-pathophysiology.md",
-      "wiki/nlrp3-inhibitor-screen.md",
-      "wiki/open-questions.md",
-      "wiki/supplements-stack.md",
-      "wiki/theaflavins.md",
-      "wiki/uricase-variant-selection.md",
-      "wiki/zileuton.md"
+      "wiki/engineered-koji-protocol.md",
+      "wiki/koji-endgame-strain.md"
     ],
-    "run_id": "25387724226"
+    "run_id": "25389796548"
   },
   "recent_runs": [
     {
@@ -28,6 +20,15 @@
       "failed_phase": null,
       "trigger_paths_count": 10,
       "synthesis_log": "logs/v4-synthesis-2026-05-05-734bf51.md"
+    },
+    {
+      "run_id": "25389796548",
+      "trigger": "push",
+      "completed_at": "2026-05-05T17:01:42Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 2,
+      "synthesis_log": "logs/v4-synthesis-2026-05-05-6e3614d.md"
     }
   ]
 }

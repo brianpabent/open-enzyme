@@ -53,6 +53,8 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§1.20](#120-lactoferrin--egcg-cp1a-super-additivity-assay-thp-1-macrophage-23-dose-matrix) | Lactoferrin + EGCG CP1a super-additivity (THP-1 2×3 matrix) — **gated on §1.9** | In Vitro | $1,500 | 3–4 | Proposed | [lactoferrin](./lactoferrin.md), [egcg](./egcg.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [koji-endgame-strain](./koji-endgame-strain.md) |
 | [§1.21](#121-natural-product-c5ar1-antagonist-screening--computational-pass-closes-the-cp0-fermentable-coverage-question) | Natural-product C5aR1 antagonist screen (CP0 fermentable-coverage question) | Computational | $0 | 0.5 | **Closed (negative, 2026-04-27)** | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [open-enzyme-vision](./open-enzyme-vision.md) |
 | [§1.22](#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue) | Gut-selective food-grade HDAC inhibitor screen for Q141K-ABCG2 trafficking rescue | In Vitro | $5,000–8,000 | 8–10 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [supplements-stack](./supplements-stack.md), [gut-lumen-sink](./gut-lumen-sink.md) |
+| [§1.23](#123-androgen--msu--nlrp3-in-macrophages--tiered-mechanistic-protocol) | Androgen × MSU × NLRP3 macrophage tiered protocol (T1 THP-1 / T2 PBMC / T3 mouse air-pouch) — fills literature gap | In Vitro | $5–10K (T1); $105–160K (full cascade) | 6–8 (T1); ~12 mo (full) | Proposed | [androgen-urate-axis](./androgen-urate-axis.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [self-experiment-protocol](./self-experiment-protocol.md) |
+| [§1.24](#124-carnosine-co-expression-validation-in-a-oryzae-koji-endgame-optional-third-cassette) | Carnosine co-expression in *A. oryzae* (koji endgame optional third cassette) | In Vitro | $1,500–2,500 | 4–6 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [carnosine](./carnosine.md), [androgen-urate-axis](./androgen-urate-axis.md) |
 | [§2.1](#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii) | Gnotobiotic mouse colonization (S. boulardii) | Animal | $5,000–15,000 | 8–12 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./team.md) |
 | [§2.2](#22-hyperuricemic-rat-model-engineered-yeast-efficacy) | Hyperuricemic rat model (yeast efficacy) | Animal | $8,000–12,000 | 6–8 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gout-deep-dive](./gout-deep-dive.md), [uricase](./uricase.md) |
 | [§2.3](#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model) | Engineered koji EPI model | Animal | $6,000–10,000 | 8–10 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md) |
@@ -752,6 +754,41 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 - **Antagonistic (CI >1.3):** unexpected — investigate whether the lactoferrin matrix interferes with EGCG bioavailability or proteasome access. Plausible mechanism: iron–EGCG chelation. Lactoferrin is a high-affinity iron-binding protein and EGCG is a known iron chelator; the apo vs. holo form of lactoferrin should differentiate iron-mediated antagonism from a direct interaction. Likely indicates one compound should be dosed alone, not in combination.
 
 **Cross-references:** [synthesis.md](./synthesis.md) 2026-04-24 Connection #4 + Proposed Experiment #2; [lactoferrin.md](./lactoferrin.md) §3 (LPS/CD14 sequestration mechanism); [egcg.md](./egcg.md) (20S proteasome 86 nM target, hepatotoxicity ceiling); [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) v1.2 CP1a (independent input/output barrier framing); [supplements-stack.md](./supplements-stack.md) (current standalone entries for both compounds); [koji-endgame-strain.md](./koji-endgame-strain.md) (downstream engineering implication, gated on §1.9).
+
+---
+
+### 1.24 Carnosine Co-Expression Validation in A. oryzae (Koji Endgame Optional Third Cassette)
+
+**Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 4–6 | **Phase**: 1
+
+**Affected wiki**: [koji-endgame-strain](./koji-endgame-strain.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [carnosine](./carnosine.md), [androgen-urate-axis](./androgen-urate-axis.md)
+
+**What it tests:** Can *Lactobacillus* carnosine synthase (CarnS, ATP-grasp family, ~460 aa) co-expressed in *A. oryzae* with bacterial aspartate decarboxylase (*panD*, ~140 aa, for β-alanine supply) produce carnosine at ≥500 mg/L in koji pore fluid — the threshold needed to deliver 1–1.5 g carnosine/day at 10–15 g dry koji/day? This is the gating experiment for the optional third cassette in the koji endgame strain, specifically targeting the androgen-driven URAT1 upregulation axis that the primary uricase + lactoferrin dual-cassette does not address. (source: engineered-koji-protocol.md §15; koji-endgame-strain.md §2.5)
+
+**Proposed in:** [engineered-koji-protocol.md §15](./engineered-koji-protocol.md) — Carnosine Co-Expression Module, Proposed Validation Experiment section.
+
+**Protocol:**
+- Transform *A. oryzae* RIB40 (or NSAR1 for auxotrophic selection) with single-copy `[PTEF1–CarnS–TamyB]` cassette integrated at a characterized neutral locus (specific locus TBD; see [koji-construct-design.md](./koji-construct-design.md) and [engineered-koji-protocol.md §03](./engineered-koji-protocol.md) for current standard choices). Selection marker: separate auxotrophic marker from uricase cassette (e.g., niaD or adeA if uricase uses pyrG).
+- Ferment 100 mL on polished rice at 30°C, 48–60 h at 35% moisture.
+- If β-alanine bottleneck is suspected after first pass, add a second construct with `[PTEF1–panD–TamyB]` and re-test.
+- **Primary readout:** Carnosine titer by LC-MS (OPA/FMOC derivatization, quantify against a carnosine standard curve; β-alanine and histidine pools measured in the same run). Accept: ≥500 mg/L in pore fluid. Reject: <100 mg/L.
+- **Secondary readouts:** Uricase titer (if dual-cassette strain; spectrophotometric urate-degradation assay at 293 nm), growth rate vs. parental strain (radial extension on PDA at 30°C), kojic acid baseline (HPLC), β-alanine and histidine pool sizes (LC-MS), carnosine stability through standard workup (measure before and after lyophilization + grinding).
+
+**Estimated cost:** $1,500–2,500 — gene synthesis (CarnS codon-optimized, ~1.4 kb; plus optional *panD*, ~420 bp; ~$600–1,000), HPLC carnosine standards ($150), β-alanine/histidine standards ($100), fermentation consumables ($200), LC-MS time ($400), labor ($150–500).
+
+**Estimated timeline:** 4–6 weeks end-to-end.
+
+**Dependencies:** *A. oryzae* transformation capacity (same infrastructure as §1.9 Ward 1995 dual-cassette test). Can be run in parallel with §1.9 if lab access permits, or sequentially after §1.9 confirms the dual-cassette architecture is viable.
+
+**Success criteria:**
+- **Promote to combined strain** if carnosine ≥500 mg/L AND uricase titer unchanged AND growth rate within 10% of parental. Move carnosine cassette into the production uricase-expressing strain.
+- **Add β-alanine supply module** if carnosine 100–500 mg/L AND β-alanine pool appears limiting. Re-test with *panD* co-expression.
+- **De-prioritize koji track for carnosine** if <100 mg/L after *panD* co-expression. Fall back to *S. cerevisiae* as the carnosine production host.
+- **Re-engineer the cassette** if base koji phenotype is impaired. Options: swap PTEF1 → PamyB (inducible, lower metabolic burden baseline), try an alternative neutral locus, or reduce cassette copy number.
+
+**Strategic context:** Carnosine is the highest-priority optional third cassette for a male/high-androgen product configuration because its URAT1/GLUT9 downregulation is mechanistically mirror-image to androgen-driven URAT1 upregulation — the dominant driver of hyperuricemia in the platform's primary demographic (male gout patients, TRT/SERM/AAS users). The uricase + lactoferrin dual-cassette does not address this renal reabsorption axis; carnosine is the natural extension. (source: koji-endgame-strain.md §2.5; androgen-urate-axis.md)
+
+**Cross-references:** [koji-endgame-strain.md §2.5](./koji-endgame-strain.md) (carnosine as optional third cassette, androgen-axis alignment); [engineered-koji-protocol.md §15](./engineered-koji-protocol.md) (full co-expression protocol, decision point, format constraints); [carnosine.md](./carnosine.md) (mechanism, gout-specific evidence, bioavailability); [androgen-urate-axis.md](./androgen-urate-axis.md) (URAT1 upregulation mechanism).
 
 ---
 
@@ -1509,6 +1546,7 @@ Phase 1 (In Vitro)
 | 3 | Serum C5a (3.7) | CP0 priming documentation | Measurable baseline; informative either direction |
 | 3 | DHA vs. EPA (3.8) | Directional omega-3 preference | Clear winner or confirmed null |
 | 3 | Zileuton off-label (3.9) | LTB4 reduction + flare reduction | ≥50% LTB4 drop, ≥50% flare reduction |
+| 1 | Carnosine co-expression (1.24) | Carnosine titer in koji pore fluid | ≥500 mg/L (promote); <100 mg/L (de-prioritize koji track) |
 
 ---
 

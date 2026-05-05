@@ -146,7 +146,7 @@ Open Enzyme supports two GRAS hosts, but the platform is now **koji-first** for 
 Some heterologous compounds may express better in *S. cerevisiae* than *A. oryzae* — particularly tetrameric proteins (the rasburicase precedent: *A. flavus* uricase expressed in *S. cerevisiae* reportedly reaches 13% of total cellular protein). The yeast track preserves flexibility for compounds where koji expression fails or yields are inadequate. Specific decision points we have not yet resolved:
 
 - **Ursolic acid** — 8.59 g/L record in engineered *S. cerevisiae*; untested in koji.
-- **Carnosine** — biosynthesis requires heterologous carnosine synthase; host choice open.
+- **Carnosine** — biosynthesis requires heterologous carnosine synthase (*Lactobacillus* CarnS + bacterial *panD* for β-alanine supply); koji is the preferred host for the androgen-dominant product configuration (URAT1/GLUT9 downregulation as precision countermeasure to androgen-driven hyperuricemia — see [koji-endgame-strain.md §2.5](./koji-endgame-strain.md) and [carnosine.md](./carnosine.md)). Format constraint: cannot be delivered via shio-koji (protease hydrolysis); default format is dried koji powder. (source: koji-endgame-strain.md §2.5)
 - **Lactoferrin** — 3.5 g/L record in *P. pastoris*; *Aspergillus* precedent exists (Ward 1992: *A. oryzae* 25 mg/L; Ward 1995: *A. awamori* >2 g/L), upgrading this from a Year 5+ to a Year 2–3 target. See [lactoferrin.md](./lactoferrin.md).
 - **Uricase itself** — rasburicase proves the *S. cerevisiae* path works; the koji path needs to be developed.
 
