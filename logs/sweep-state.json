@@ -1,35 +1,27 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "145204eda47f2b0422a8e440fae158db55af8bc9",
-    "timestamp": "2026-05-05T21:10:36Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-05-145204e.md",
-    "review_commit": "145204eda47f2b0422a8e440fae158db55af8bc9",
+    "commit": "487fad35b1aebd96a007877f0cf31e6aa89ab20c",
+    "timestamp": "2026-05-05T22:17:04Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-05-487fad3.md",
+    "review_commit": "487fad35b1aebd96a007877f0cf31e6aa89ab20c",
     "trigger_files": [
       "wiki/GRAPH.md",
-      "wiki/abcg2-modulators.md",
-      "wiki/androgen-urate-axis.md",
       "wiki/aspergillus-oryzae.md",
-      "wiki/carnosine.md",
+      "wiki/cassette-compatibility-computational.md",
+      "wiki/complement-c5a-gout.md",
       "wiki/computational-experiments.md",
-      "wiki/daf-cd55-protease-stability-computational.md",
-      "wiki/engineered-lbp-chassis.md",
-      "wiki/food-grade-hdaci-screen-computational.md",
-      "wiki/hypotheses/H02-engineered-lbp-thesis.md",
-      "wiki/hypotheses/H03-sirna-urat1-thesis.md",
+      "wiki/engineered-koji-protocol.md",
+      "wiki/gout-pathophysiology.md",
+      "wiki/hypotheses/H01-ward-dual-cassette.md",
+      "wiki/hypotheses/README.md",
+      "wiki/index.md",
       "wiki/koji-endgame-strain.md",
-      "wiki/koji-home-fermentation.md",
-      "wiki/lactoferrin-protease-stability-computational.md",
-      "wiki/modality-chokepoint-matrix.md",
-      "wiki/open-enzyme-vision.md",
-      "wiki/open-questions.md",
-      "wiki/self-experiment-protocol.md",
-      "wiki/sirna-urat1-modality.md",
-      "wiki/supplement-abcg2-antagonism-computational.md",
-      "wiki/uricase-protease-stability-computational.md",
+      "wiki/lactoferrin.md",
+      "wiki/uricase-variant-selection.md",
       "wiki/validation-experiments.md"
     ],
-    "run_id": "25401990186"
+    "run_id": "25405186920"
   },
   "recent_runs": [
     {
@@ -58,6 +50,15 @@
       "failed_phase": null,
       "trigger_paths_count": 22,
       "synthesis_log": "logs/v4-synthesis-2026-05-05-145204e.md"
+    },
+    {
+      "run_id": "25405186920",
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-05-05T22:17:04Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 14,
+      "synthesis_log": "logs/v4-synthesis-2026-05-05-487fad3.md"
     }
   ]
 }
