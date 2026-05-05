@@ -109,6 +109,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | comp-002 | Uricase thermal/pH stability under shio-koji conditions (MD simulation or Rosetta ΔΔG) | §1.10 follow-up if wet-lab shows unexpected degradation | Low (pending §1.10 result) |
 | ~~comp-003~~ → **comp-005** | Lactoferrin cleavage-site analysis under same shio-koji conditions | §1.10 extension — completed 2026-05-05; see comp-005 above | ✓ Done |
 | comp-008 | *Faecalibacterium prausnitzii* heterologous expression feasibility — codon usage, GC content, secretion machinery, payload tractability ranking | [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) Phase 2 P2-4; informs whether *F. prausnitzii* is engineering-tractable for OE-relevant payloads (uricase, lactoferrin, soluble complement regulators, butyrate-pathway boost) | Medium (LBP track Phase 2) |
+| comp-009 | URAT1 mRNA structural analysis for siRNA target site selection — SLC22A12 transcript variants, RNAfold secondary structure, accessibility scoring, mammalian-ortholog conservation | [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) Phase 2 P2-2; cheapest mechanistic killshot for the siRNA / URAT1 thesis (no accessible target sites = thesis collapse before delivery is even considered) | Medium (siRNA / URAT1 track Phase 2) |
 
 ---
 

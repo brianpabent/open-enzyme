@@ -251,6 +251,19 @@ The [Engineered LBP Chassis](./engineered-lbp-chassis.md) page (committed 2026-0
 
 Phase 3 (content-triggered, not calendar-triggered): platform-framing reflection — does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Reflection note queued in [`open-enzyme-vision.md`](./open-enzyme-vision.md).
 
+### siRNA against URAT1 — discovery-engine output (peer-track exploration vector to LBP)
+
+The [siRNA / URAT1 modality](./sirna-urat1-modality.md) page (committed 2026-05-05 as scope-page in response to 2026-05-05 sweep Priority Action #3) formalizes kidney-tropic siRNA against URAT1 mRNA as a **discovery-engine output** — non-fermentable, non-microbial, positioned for partner / spinout development rather than in-house manufacture. Sister to the [LBP chassis](./engineered-lbp-chassis.md) under the broader chase-every-avenue framing. Six in silico Phase 2 follow-ups queued — none requires pharma-partner involvement to start:
+
+- **P2-1 — Lit scan: kidney-tropic conjugate chemistry state-of-the-art.** Megalin-binding peptides, CDP nanoparticles, kidney-cortex-selective LNPs, aptamer-siRNA chimeras — design space, current best titers / pharmacokinetics, IP landscape. (Queued, Opus subagent.)
+- **P2-2 — comp-009: URAT1 mRNA structural analysis for siRNA target site selection.** Tracked in [`computational-experiments.md` Planned Analyses](./computational-experiments.md). (Queued, Sonnet subagent.)
+- **P2-3 — Lit scan: commercial / clinical landscape for kidney-tropic siRNA programs.** Alnylam, Arrowhead, Dicerna / Novo Nordisk, Sirnaomics — non-gout indications and what transfers; partnership / licensing profile. (Queued, Opus subagent.)
+- **P2-4 — Comparative analysis: siRNA vs. small-molecule URAT1 inhibitors** (pozdeutinurad / AR882 efficacy, safety, cost, durability, hormone-axis-interaction). Honest competitive 5–10 year horizon assessment. (Queued.)
+- **P2-5 — Falsification card H03.** Stub committed at [`hypotheses/H03-sirna-urat1-thesis.md`](./hypotheses/H03-sirna-urat1-thesis.md); full population queued.
+- **P2-6 — Lit scan: FDA siRNA regulatory path.** Inclisiran / patisiran precedent, IND-enabling package, ballpark timeline + capital for a kidney-tropic siRNA BLA. (Queued, Opus subagent.)
+
+Phase 3 reflection (shared with LBP track and rolled into the same Strategic Reflections Queue entry in [`synthesis.md`](./synthesis.md)): does the discovery-engine track accumulate enough substance to formally rebrand Open Enzyme as "open-source gout-solving research project" rather than "open-source koji-engineered enzyme library"?
+
 ### Community fermentation and strain stability
 
 - **Does engineered koji drift across generations of home propagation?** Food-grade strains carry no antibiotic selection marker (correct for GRAS compliance), which removes the pressure that keeps the construct in the population. Chromosomal integration + redundant copies mitigate but don't eliminate. See [open-source-platform.md §Open Questions](./open-source-platform.md).

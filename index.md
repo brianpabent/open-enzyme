@@ -28,6 +28,8 @@ Open source library of engineered, food-grade microbial strains producing therap
 | LBP-1 | LBP track Phase 2: lit scans (engineering toolkit + commercial landscape + FDA LBP path) — see [`engineered-lbp-chassis.md`](wiki/engineered-lbp-chassis.md) Open Follow-Ups | $0 | 1–2 | Whether the engineered-LBP peer track is technically and commercially viable to pursue |
 | LBP-2 | LBP track Phase 2: comp-008 *F. prausnitzii* heterologous expression feasibility | $0 | 1 | Which OE-relevant payloads are tractable in *F. prausnitzii* (uricase / lactoferrin / sCR1 / butyrate boost) |
 | 1.23-T1 | Androgen × MSU × NLRP3 macrophage screen (§1.23 Tier 1, THP-1) — fills documented literature gap | $5–10K | 6–8 | Whether direct-androgen contribution to gout inflammation exists; gates Tiers 2–3 |
+| siRNA-1 | siRNA / URAT1 track Phase 2: lit scans (kidney-tropic conjugate chemistry + commercial landscape + FDA regulatory path) — see [`sirna-urat1-modality.md`](wiki/sirna-urat1-modality.md) Open Follow-Ups | $0 | 1–2 | Whether kidney-tropic siRNA delivery chemistry is on a 3–5 year first-in-human horizon vs. stalled |
+| siRNA-2 | siRNA / URAT1 track Phase 2: comp-009 URAT1 mRNA target site selection (RNAfold + accessibility scoring) | $0 | 1 | Whether URAT1 mRNA has accessible siRNA target sites — cheapest mechanistic killshot for the H03 thesis |
 
 See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the full consolidated experiment list.
 
