@@ -133,6 +133,8 @@ This section is an addition, not a retraction, of the #1 *A. flavus* ranking. Th
 
 **Summary**: Expression is proven and scalable; moderate yields; disulfide bond formation feasible.
 
+**Secretion routing note (comp-010, 2026-05-05):** *A. flavus* uricase (*uaZ*, UniProt Q00511) ends in ...SKL — a canonical PTS1 peroxisomal targeting signal in fungi. In an *A. oryzae* expression context with an N-terminal amyB signal peptide (the §1.9 design), the ER secretory pathway should override PTS1 routing. However, this must be verified empirically: run anti-uricase ELISA on secreted fraction vs. cell lysate. If peroxisomal misrouting is confirmed (uricase in cell lysate only, absent from culture supernatant), append a short C-terminal 3×Ala linker to mask the PTS1 signal. This finding is specific to the *A. oryzae* expression context; it does not affect *S. cerevisiae* expression (rasburicase track) where the PTS1 signal is not recognized in the same way. (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)
+
 #### d) Specific Activity
 
 **Kinetic Parameters**:
