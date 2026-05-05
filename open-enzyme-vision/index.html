@@ -550,6 +550,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#native-metabolite-chorus-strategic-advantage-of-the-a-oryzae-chassis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Metabolite Chorus — Strategic Advantage of the A. oryzae Chassis
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3533,6 +3544,12 @@ The discovery engine is the more transferable contribution. </p>
 <h2 id="4-the-platform-vision">4. The Platform Vision<a class="headerlink" href="#4-the-platform-vision" title="Permanent link">&para;</a></h2>
 <p>Open Enzyme is an open source library of engineered microbial strains. Each strain addresses a specific enzyme deficit. Each is built in a food-safe (GRAS) host organism. Each comes with everything needed to reproduce it: the gene construct, transformation protocol, fermentation instructions, dosing math, and safety data.</p>
 <p>Every strain can be grown at home with simple equipment — rice, a basic incubator, a fermentation vessel. No clean room. No bioreactor. No prescription.</p>
+<blockquote>
+<p><strong>Phase 3 reflection note (queued 2026-05-05, content-triggered):</strong></p>
+<p>The "engineered enzymes in koji" framing in this section is the platform's first and primary chassis expression — but it is not the entire mission. The 2026-05-05 commit of <a href="../engineered-lbp-chassis/"><code>engineered-lbp-chassis.md</code></a> opened a peer track (engineered Live Biotherapeutic Products — obligate-anaerobe colonic residents like <em>F. prausnitzii</em>) that serves the same gout-solving mission via a fundamentally different chassis class (commercial-pharmaceutical, FDA LBP regulatory path, not home-fermentable).</p>
+<p><strong>Reflection trigger:</strong> revisit this section <em>after</em> the LBP track's six in silico Phase 2 follow-ups land (engineering-toolkit lit scan, commercial-landscape lit scan, regulatory-path lit scan, comp-008 expression feasibility, falsification card H02, comparative chassis matrix). At that point, decide whether to reframe this section's leading sentence from "Open Enzyme is an open source library of engineered microbial strains [implying koji/yeast]" to "Open Enzyme is an open source research project to solve gout via every available modality, with the engineered koji/yeast strain library as its first and primary output." Naming follows substance — the reframe is conditional on whether the LBP track accumulates enough rigorous content to justify equal billing.</p>
+<p>Tracking surfaces for the LBP track's Phase &#8532; work: <a href="../engineered-lbp-chassis/"><code>engineered-lbp-chassis.md</code></a> §"Open Follow-Ups", <a href="../open-questions/"><code>open-questions.md</code></a> §"Engineered LBP chassis", <a href="../computational-experiments/"><code>computational-experiments.md</code></a> (comp-008), <a href="../hypotheses/H02-engineered-lbp-thesis/"><code>hypotheses/H02-engineered-lbp-thesis.md</code></a>, <a href="../synthesis/"><code>synthesis.md</code></a> "Strategic Reflections Queue".</p>
+</blockquote>
 <h3 id="the-github-analogy">The GitHub Analogy<a class="headerlink" href="#the-github-analogy" title="Permanent link">&para;</a></h3>
 <p>If you think about this as software, the architecture snaps into focus:</p>
 <table>
@@ -3589,12 +3606,45 @@ The discovery engine is the more transferable contribution. </p>
 <p>Some heterologous compounds may express better in <em>S. cerevisiae</em> than <em>A. oryzae</em> — particularly tetrameric proteins (the rasburicase precedent: <em>A. flavus</em> uricase expressed in <em>S. cerevisiae</em> reportedly reaches 13% of total cellular protein). The yeast track preserves flexibility for compounds where koji expression fails or yields are inadequate. Specific decision points we have not yet resolved:</p>
 <ul>
 <li><strong>Ursolic acid</strong> — 8.59 g/L record in engineered <em>S. cerevisiae</em>; untested in koji.</li>
-<li><strong>Carnosine</strong> — biosynthesis requires heterologous carnosine synthase; host choice open.</li>
+<li><strong>Carnosine</strong> — biosynthesis requires heterologous carnosine synthase (<em>Lactobacillus</em> CarnS + bacterial <em>panD</em> for β-alanine supply); koji is the preferred host for the androgen-dominant product configuration (URAT1/GLUT9 downregulation as precision countermeasure to androgen-driven hyperuricemia — see <a href="../koji-endgame-strain/">koji-endgame-strain.md §2.5</a> and <a href="../carnosine/">carnosine.md</a>). Format constraint: cannot be delivered via shio-koji (protease hydrolysis); default format is dried koji powder. (source: koji-endgame-strain.md §2.5)</li>
 <li><strong>Lactoferrin</strong> — 3.5 g/L record in <em>P. pastoris</em>; <em>Aspergillus</em> precedent exists (Ward 1992: <em>A. oryzae</em> 25 mg/L; Ward 1995: <em>A. awamori</em> &gt;2 g/L), upgrading this from a Year 5+ to a Year 2–3 target. See <a href="../lactoferrin/">lactoferrin.md</a>.</li>
 <li><strong>Uricase itself</strong> — rasburicase proves the <em>S. cerevisiae</em> path works; the koji path needs to be developed.</li>
 </ul>
 <p>These are empirical questions, not ideological ones. We build in koji first and fall back to yeast when the data says to.</p>
 <p>The Year 2-3 target is the <strong>koji endgame strain</strong> (see <a href="../koji-endgame-strain/">wiki/koji-endgame-strain.md</a>) — one engineered <em>A. oryzae</em> strain layering engineered uricase + engineered lactoferrin onto native kojic acid + native ergothioneine, covering five NLRP3-pathway chokepoints (CP0-adjacent trigger elimination, CP1a, CP1b, CP4, CP6b; three of the five contributed by molecules the host already makes for free). The Ward 1995 <em>A. awamori</em> glucoamylase-KEX2 dual-cassette architecture is the gating feasibility test ($3-5k, 8-12 weeks) — if it transfers to <em>A. oryzae</em> solid-state, the platform converges on a single strain; if not, the fallback is two strains co-fermented with the same therapeutic coverage.</p>
+<h3 id="native-metabolite-chorus-strategic-advantage-of-the-a-oryzae-chassis">Native Metabolite Chorus — Strategic Advantage of the <em>A. oryzae</em> Chassis<a class="headerlink" href="#native-metabolite-chorus-strategic-advantage-of-the-a-oryzae-chassis" title="Permanent link">&para;</a></h3>
+<p>Wild-type <em>A. oryzae</em> produces two well-characterized secondary metabolites during standard koji fermentation at concentrations that make them relevant to the therapeutic platform before any genetic engineering is applied.</p>
+<table>
+<thead>
+<tr>
+<th>Metabolite</th>
+<th>Native titer</th>
+<th>Primary mechanism</th>
+<th>NLRP3 chokepoint</th>
+<th>Evidence level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kojic acid</strong></td>
+<td>3–5 g/L submerged; 1–3 g per 100 g dry rice koji</td>
+<td>NF-κB suppression in multiple inflamed cell types (iron chelation + TLR4/NF-κB pathway attenuation)</td>
+<td>CP1a — NF-κB priming arm</td>
+<td><strong>In Vitro (Reasonable)</strong> — NF-κB suppression documented; direct NLRP3 inflammasome activity is unpublished (flagged as open question in <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>)</td>
+</tr>
+<tr>
+<td><strong>Ergothioneine</strong></td>
+<td>~20 mg/g dry mycelial mass</td>
+<td>Mitochondria-targeted thiol antioxidant; scavenges hydroxyl radical, HOCl, peroxynitrite; reduces ROS upstream of NLRP3</td>
+<td>CP1b — C5a → ROS non-transcriptional priming</td>
+<td><strong>In Vitro + Mechanistic Extrapolation (Reasonable)</strong> — ROS scavenging is Supported; Nrf2 stabilization is a two-step extrapolation (ROS ↓ → Nrf2 stabilization → downstream), not a direct binding claim</td>
+</tr>
+</tbody>
+</table>
+<p>The strategic consequence: <strong>any engineered koji strain — the year-1 uricase-only starting strain, the year-2 dual-cassette endgame strain, or any future koji derivative — ships with a baseline anti-inflammatory payload at no additional engineering cost.</strong> A host like <em>S. cerevisiae</em> or <em>E. coli</em> is biologically cleaner but metabolically inert in this sense: producing kojic acid or ergothioneine in yeast would require engineering entirely separate secondary-metabolite pathways — substantial lift for a baseline that <em>A. oryzae</em> provides for free.</p>
+<p>This is not a marginal consideration. Three of the five chokepoints covered in the endgame strain coverage matrix (<a href="../koji-endgame-strain/">koji-endgame-strain.md</a> §1) score Reasonable or better on the strength of native-metabolite contributions alone — none requiring cassette insertion. Choosing <em>A. oryzae</em> as the primary chassis is partly a bet on what the organism already produces, not only on what can be engineered into it.</p>
+<p><strong>Evidence-level discipline.</strong> The chorus framing is correct directionally but must be presented with appropriate evidence tags. Kojic acid's CP1a contribution is NF-κB suppression upstream (In Vitro, Reasonable) — not a direct NLRP3 binder, and not equivalent to the clinical-grade rasburicase precedent for uricase. Ergothioneine's Nrf2 link is Mechanistic Extrapolation. The "free bonus chokepoints" characterization is accurate, but the evidence level must accompany any public-facing statement to avoid overstating the baseline. Surfaced as Connection #3 in the 2026-05-05 synthesis sweep.</p>
+<p>Sources: <a href="../aspergillus-oryzae/">aspergillus-oryzae.md</a> §"Native Secondary Metabolites"; <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §01b; <a href="../koji-endgame-strain/">koji-endgame-strain.md</a> §2.3, §2.4; <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>.</p>
 <hr />
 <h2 id="5-first-targets">5. First Targets<a class="headerlink" href="#5-first-targets" title="Permanent link">&para;</a></h2>
 <h3 id="uricase-gout-active-development">Uricase — Gout (Active Development)<a class="headerlink" href="#uricase-gout-active-development" title="Permanent link">&para;</a></h3>
@@ -3766,6 +3816,13 @@ The discovery engine is the more transferable contribution. </p>
 <h3 id="defuse-the-bomb">Defuse the Bomb<a class="headerlink" href="#defuse-the-bomb" title="Permanent link">&para;</a></h3>
 <p>NLRP3 inflammasome suppression stack spanning the 7-chokepoint exploit map (CP0 complement priming → CP6 neutrophil amplification + pyroptotic exit): beta-hydroxybutyrate (BHB), oridonin, sulforaphane, KPV peptide, quercetin, ursolic acid, β-caryophyllene, <a href="../carnosine/">carnosine</a>, taurine, <a href="../lactoferrin/">lactoferrin</a>, <a href="../egcg/">EGCG</a> (widest-spectrum natural compound — CP1/CP1a/CP4/CP5a via 20S proteasome at 86 nM), <a href="../zileuton/">zileuton</a> (CP6a 5-LOX/LTB4, overlooked pharma-repurposing candidate), and <a href="../spm-resolution-pathway/">SPMs</a> for CP5b active resolution (DHA-derived RvD1, MaR1 specifically for gout). Each compound targets a different step in the NLRP3 activation pathway — CP0 complement priming, CP1a (TNFSF14) / CP1b (C5a→ROS), CP2 K⁺ efflux, CP3–CP4 assembly, CP5a (IL-1β receptor blockade) / CP5b (active resolution), or CP6a (5-LOX/LTB4) / CP6b (GSDMD pyroptosis). See <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> for the full 7-chokepoint framework and <a href="../complement-c5a-gout/">complement-c5a-gout.md</a>, <a href="../tnfsf14-gout-target/">tnfsf14-gout-target.md</a> for the newly-elaborated CP0 and CP1a dossiers.</p>
 <p><strong>CP0 gap — honest acknowledgment (scan-confirmed 2026-04-27).</strong> The Open Enzyme stack has <strong>no fermentable C5a / C5aR1 modulator</strong>, and a computational scan of the natural-product chemical space at human C5aR1 (<a href="../validation-experiments/#121-natural-product-c5ar1-antagonist-screening--computational-pass-closes-the-cp0-fermentable-coverage-question">validation-experiments §1.21</a>, 2026-04-27) returned zero wet-lab-validated natural-product antagonists across ChEMBL (CHEMBL2373, 4,873 bioactivities), NPASS, LOTUS, Open Targets, and a targeted primary-literature sweep — only two computational-only docking hits (acteoside, toxicarioside; Shaikh &amp; Siu 2016, never wet-lab-validated; toxicarioside non-pursuable on safety grounds) and one indirect "neutraligand" (resveratrol binding C5a, not C5aR1; Mishra 2020). Avacopan (Tavneos, oral C5aR1 antagonist, FDA-approved 2021 for ANCA vasculitis) is the pharma adjunct here — the CP0 chokepoint is covered by a small-molecule antagonist, not anything a GRAS yeast or koji can produce. This is a structural feature of the platform, not a hedge: the scan was run, the result is closed, and the gap is permanent absent one of the §1.21 re-open conditions. See <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> for the full analysis.</p>
+<p><strong>ABCG2-axis contradiction — a structural conflict in the stack.</strong> Two compounds listed above — quercetin and EGCG — are functional inhibitors of ABCG2 at typical supplement doses. ABCG2 is the gut transporter the platform's uricase mechanism depends on: it pumps uric acid from the bloodstream into the gut where the engineered enzyme degrades it. Using quercetin or EGCG at supplement-grade doses in the same protocol may pharmacologically close that gate, partially or fully undermining the platform's primary intervention. This is not a theoretical concern — it is a direct pharmacological antagonism. The severity is genotype- and androgen-dependent:</p>
+<ul>
+<li><strong>Highest risk:</strong> Q141K homozygote (the major gout-risk gene variant, present in ~30–50% of gout patients in some populations) + androgen-dominant (TRT, SERM, AAS users) + high-dose flavonoid supplement (&gt;500 mg quercetin or equivalent). In this profile, ABCG2 is suppressed at the genetic level, suppressed again by androgens, and then pharmacologically blocked on top — the gut-sink gate may be functionally closed during the dose window.</li>
+<li><strong>Lower risk:</strong> dietary-level intake of these compounds (a cup of tea, onions in cooking, turmeric in a meal) reaches gut concentrations well below the inhibitory threshold. No restriction at food-level doses.</li>
+<li><strong>EGCG nuance:</strong> one 2024 mouse study showed net-favorable ABCG2 effect in vivo despite EGCG's known in vitro inhibition; the clinical direction is unresolved and should not be assumed either way at supplement doses.</li>
+</ul>
+<p>Full risk-tier stratification (four tiers by genotype + androgen status + dose) in <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code></a> §"The supplements-stack contradiction" and <a href="../supplements-stack/"><code>supplements-stack.md</code></a> §"Stack-level contradictions." The counter-strategy: sulforaphane (broccoli sprouts) and fermentable fiber → butyrate actively <em>induce</em> ABCG2 through separate pathways and should be prioritized in androgen-dominant or Q141K-positive protocols. Surfaced as Contradiction #1 in the 2026-05-05 synthesis sweep.</p>
 <p><strong>Platform positioning — pathway modulator, not direct-inhibitor knockoff.</strong> Open Enzyme is a <strong>food-derived, multi-target NLRP3 pathway modulator</strong> platform — not an attempt to produce a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). The distinction matters: pharma has tested direct inhibitors in gout and the class has largely stalled (MCC950 hepatotoxicity halt, dapansutrile no Phase 2b/3 post-2a). The only curated direct-human-NLRP3 IC50 values in ChEMBL are dapansutrile (1 μM), oridonin (5.18 μM), and curcumin (24.2 μM). Pharma's only post-2010 gout win at the inflammasome cascade is canakinumab at CP5a (IL-1β receptor blockade, FDA-approved Aug 2023). The Open Enzyme stack is overwhelmingly pathway modulators — hitting upstream priming (CP1a/CP1b), K⁺ efflux (CP2), active resolution (CP5b), and neutrophil amplification (CP6a) — chokepoints that pharma has not rigorously tested in gout. Multi-target pathway modulators hitting redundant nodes can plausibly produce meaningful IL-1β suppression through cumulative effect, even if no single compound matches pharma-grade potency at a single target. This is a more honest and more defensible positioning than "supplement-grade version of MCC950." (source: <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a>, <a href="../gout-clinical-pipeline/">gout-clinical-pipeline.md</a>, <a href="../chembl-cross-check/">chembl-cross-check.md</a>)</p>
 <h3 id="heal-the-damage">Heal the Damage<a class="headerlink" href="#heal-the-damage" title="Permanent link">&para;</a></h3>
 <p>Peptides for tissue repair: BPC-157 (angiogenesis, tendon/joint repair), TB-500/Thymosin β4 (anti-inflammatory, tissue remodeling). Addresses existing damage from prior flares.</p>

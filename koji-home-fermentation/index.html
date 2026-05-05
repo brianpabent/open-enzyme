@@ -1706,6 +1706,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#format-constraints-for-engineered-payloads-shio-koji-is-not-universal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Constraints for Engineered Payloads — Shio-Koji Is Not Universal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#project-relevance" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3354,6 +3365,42 @@
 </table>
 <p><strong>Recommendation for the EPI / home-PERT-alternative use case:</strong> yellow koji (<em>A. oryzae</em>) is the better-fit default. White koji is functional but tangier and has slightly lower diastatic power.</p>
 <p>If you have white koji on hand: <strong>use it first to learn the process</strong> (Stage 1 + a basic shio-koji or amazake batch). Switch to yellow when restocking — Cold Mountain (Marukawa Miso, Japan; widely sold in US Asian groceries) and GEM Cultures (Washington State, US) are accessible yellow-koji starter sources.</p>
+<hr />
+<h2 id="format-constraints-for-engineered-payloads-shio-koji-is-not-universal">Format Constraints for Engineered Payloads — Shio-Koji Is Not Universal<a class="headerlink" href="#format-constraints-for-engineered-payloads-shio-koji-is-not-universal" title="Permanent link">&para;</a></h2>
+<p>A critical constraint from <a href="../engineered-koji-protocol/">engineered-koji-protocol.md §15</a>: <strong>shio-koji cannot be used as a delivery format for peptide payloads</strong>. The 7–14 day salt ferment maintains active native proteases at room temperature. Any small peptide — carnosine (β-alanyl-L-histidine), KPV (Lys-Pro-Val), BPC-157 (gastric pentadecapeptide), or any future therapeutic peptide — will be hydrolyzed back to its constituent amino acids during the shio-koji fermentation window, destroying the therapeutic molecule. (Mechanistic Extrapolation; source: engineered-koji-protocol.md §15)</p>
+<p><strong>Format ranking for peptide payloads, by survival expectation:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Peptide survival</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dried koji powder</strong> (heat-inactivated)</td>
+<td>Highest</td>
+<td>Heat denatures native proteases; peptides thermally stable across typical food-processing temperatures</td>
+</tr>
+<tr>
+<td><strong>Amazake</strong> (cooked, &lt;24 h, finished at 80°C)</td>
+<td>High</td>
+<td>Brief enzyme exposure, then heat inactivation</td>
+</tr>
+<tr>
+<td><strong>Fresh koji</strong> (refrigerated, days, no salt)</td>
+<td>Medium</td>
+<td>Proteases active but short exposure window; cold storage slows hydrolysis</td>
+</tr>
+<tr>
+<td><strong>Shio-koji</strong> (7–14 day salt ferment)</td>
+<td><strong>Effectively zero</strong></td>
+<td>Sustained protease exposure; salt does not protect peptide bonds</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Shio-koji remains the optimal format for robustly folded enzyme payloads</strong> (uricase tetramer, lactoferrin glycoprotein) where conformational stability and disulfide bonding provide protease resistance — not exposed peptide bonds. For the multi-format endgame strain, this implies a split delivery model: shio-koji for live-enzyme payloads, dried powder or amazake for peptide payloads. (source: engineered-koji-protocol.md §15)</p>
 <hr />
 <h2 id="project-relevance">Project relevance<a class="headerlink" href="#project-relevance" title="Permanent link">&para;</a></h2>
 <p>This protocol is the <strong>wild-type baseline</strong> that the engineered-koji platform (see <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a>, <a href="../koji-construct-design/">koji-construct-design.md</a>, <a href="../koji-endgame-strain/">koji-endgame-strain.md</a>) must outperform to justify itself for EPI applications.</p>

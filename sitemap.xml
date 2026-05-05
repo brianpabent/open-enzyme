@@ -69,11 +69,19 @@
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
+         <loc>https://brianpabent.github.io/open-enzyme/computational-experiments/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
          <loc>https://brianpabent.github.io/open-enzyme/crispr-uricase/</loc>
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/cross-validation/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/daf-cd55-protease-stability-computational/</loc>
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
@@ -97,11 +105,19 @@
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
+         <loc>https://brianpabent.github.io/open-enzyme/engineered-lbp-chassis/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
          <loc>https://brianpabent.github.io/open-enzyme/engineered-yeast-uricase-proposal/</loc>
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/enzyme-deficit-deep-dive/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/food-grade-hdaci-screen-computational/</loc>
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
@@ -142,6 +158,10 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/kpv-peptide/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/lactoferrin-protease-stability-computational/</loc>
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
@@ -213,7 +233,15 @@
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
+         <loc>https://brianpabent.github.io/open-enzyme/sirna-urat1-modality/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
          <loc>https://brianpabent.github.io/open-enzyme/spm-resolution-pathway/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/supplement-abcg2-antagonism-computational/</loc>
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
@@ -234,6 +262,10 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/tnfsf14-gout-target/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/uricase-protease-stability-computational/</loc>
          <lastmod>2026-05-05</lastmod>
     </url>
     <url>
@@ -258,6 +290,14 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/hypotheses/H01-ward-dual-cassette/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/hypotheses/H02-engineered-lbp-thesis/</loc>
+         <lastmod>2026-05-05</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/hypotheses/H03-sirna-urat1-thesis/</loc>
          <lastmod>2026-05-05</lastmod>
     </url>
 </urlset>
