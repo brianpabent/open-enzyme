@@ -2490,6 +2490,8 @@
         
       
         
+      
+        
           
         
       
@@ -3203,6 +3205,89 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#paperclip-gxl-agent-native-scientific-literature-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paperclip (GXL) — Agent-Native Scientific Literature MCP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paperclip (GXL) — Agent-Native Scientific Literature MCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#corpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Corpus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-to-the-anthropic-life-sciences-marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to the Anthropic Life Sciences Marketplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sweep-daemon-integration-open-platform-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sweep-Daemon Integration — Open Platform Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#integration-using-all-three-tools-together" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3327,6 +3412,34 @@
     <span class="md-status md-status--published"></span>
   
 
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paperclip-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paperclip (GXL) Literature MCP
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -4168,6 +4281,106 @@
 </ul>
 <h3 id="how-it-differs-from-openais-codex-life-sciences-plugin">How It Differs from OpenAI's Codex Life Sciences Plugin<a class="headerlink" href="#how-it-differs-from-openais-codex-life-sciences-plugin" title="Permanent link">&para;</a></h3>
 <p>Covered in <a href="../ai-bio-tools-playbook/">ai-bio-tools-playbook.md</a> §Codex. Both connect Claude / GPT to life-science databases. The Bio Research plugin is tighter (10 curated servers + 6 vetted skills) where Codex is broader (50+ databases, looser scaffolding). For Open Enzyme, which runs inside Claude Code, the Bio Research plugin wins on environment fit — it stays in the terminal with the wiki.</p>
+<hr />
+<h2 id="paperclip-gxl-agent-native-scientific-literature-mcp">Paperclip (GXL) — Agent-Native Scientific Literature MCP<a class="headerlink" href="#paperclip-gxl-agent-native-scientific-literature-mcp" title="Permanent link">&para;</a></h2>
+<p><a href="https://paperclip.gxl.ai/">Paperclip</a> is an MCP server built by GXL (Generative Expert Labs), a Stanford-adjacent group connected to James Zou's lab. It exposes scientific literature to an LLM as a structured filesystem — search, grep, cat, map, and SQL operations chain through a stateful <code>results_id</code>, so an agent can narrow a corpus iteratively without re-searching. See <a href="../paperclip-deep-dive/">paperclip-deep-dive.md</a> for full documentation.</p>
+<p>(source: paperclip-deep-dive.md)</p>
+<h3 id="corpus">Corpus<a class="headerlink" href="#corpus" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Coverage</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PubMed Central</td>
+<td>~5M+</td>
+<td>Full text, biomedical, open access</td>
+</tr>
+<tr>
+<td>arXiv</td>
+<td>~3M</td>
+<td>Full text, ML / math / quant-bio / physics / CS</td>
+</tr>
+<tr>
+<td>bioRxiv + medRxiv</td>
+<td>~3M+</td>
+<td>Full text, preprints</td>
+</tr>
+<tr>
+<td>OpenAlex</td>
+<td>~150M+</td>
+<td>Abstracts + structured metadata only</td>
+</tr>
+</tbody>
+</table>
+<p>Total: ~11M full-text papers + ~150M abstracts. Coverage caveats: PMC has embargo periods for some journals; only open-access full text is indexed. (source: paperclip-deep-dive.md)</p>
+<h3 id="key-commands">Key Commands<a class="headerlink" href="#key-commands" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>search</code></td>
+<td>Hybrid (BM25 + vector embedding) search; returns 1–2 sentence TL;DRs</td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td>Regex / keyword search within full text</td>
+</tr>
+<tr>
+<td><code>cat</code></td>
+<td>Reads structured paper text (sections, tables, figures)</td>
+</tr>
+<tr>
+<td><code>map</code></td>
+<td>Applies a prompt across a result set — the synthesis primitive</td>
+</tr>
+<tr>
+<td><code>ask-image</code></td>
+<td>Multimodal query against figures and images</td>
+</tr>
+<tr>
+<td><code>--from &lt;results_id&gt;</code></td>
+<td>Chains operations against a previous result set</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>--from</code> chaining is the load-bearing feature: every search produces a cloud-stored <code>results_id</code>, and subsequent grep / map / cat operations can target it without re-searching. (source: paperclip-deep-dive.md)</p>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>claude mcp add --transport http paperclip https://paperclip.gxl.ai/mcp
+</code></pre></div>
+<p>Currently free; no API key required. Pricing tiers not yet announced. (source: paperclip-deep-dive.md)</p>
+<h3 id="relationship-to-the-anthropic-life-sciences-marketplace">Relationship to the Anthropic Life Sciences Marketplace<a class="headerlink" href="#relationship-to-the-anthropic-life-sciences-marketplace" title="Permanent link">&para;</a></h3>
+<p>Paperclip is <strong>complementary, not a replacement</strong> for the Anthropic marketplace plugins:</p>
+<ul>
+<li><strong>Marketplace wins on per-source depth:</strong> PubMed's MeSH vocabulary index, ChEMBL's bioactivity tables, Open Targets' target–disease evidence — these are best-in-class for their specific sources.</li>
+<li><strong>Paperclip wins on full-text search and cross-source synthesis:</strong> searching <em>within</em> papers, cross-domain queries spanning biomedical + ML, multi-paper synthesis via <code>map</code>, and agent-driven workflows that need stateful corpus narrowing.</li>
+</ul>
+<p><strong>When to use Paperclip for Open Enzyme:</strong>
+- Uricase mutation landscape — search + grep + map across PMC and arXiv to catalog published variants, hosts, catalytic parameters, immunogenicity (complements <code>uricase.md</code>, <code>crispr-uricase.md</code>, <code>engineered-koji-protocol.md</code>)
+- NLRP3 inhibition mechanisms — map across the NLRP3 corpus for dosing and efficacy data (complements <code>nlrp3-exploit-map.md</code>, <code>nlrp3-inhibitor-screen.md</code>)
+- Koji / <em>A. oryzae</em> expression systems — cross-reference food-science and synthetic-biology literature for promoter / cassette / yield data (expands <code>aspergillus-oryzae.md</code>, <code>koji-endgame-strain.md</code>)
+- Cross-domain queries — e.g., grep for "uricase" + "food-grade" or "ABCG2" + "probiotic" across the full corpus to surface intersections that PubMed and Scholar fragment
+- arXiv coverage for protein language models, directed-evolution algorithms, and novel delivery vectors (keeps <code>bio-ai-tools.md</code> current without bouncing between PubMed and arXiv)</p>
+<p>(source: paperclip-deep-dive.md)</p>
+<h3 id="sweep-daemon-integration-open-platform-decision">Sweep-Daemon Integration — Open Platform Decision<a class="headerlink" href="#sweep-daemon-integration-open-platform-decision" title="Permanent link">&para;</a></h3>
+<p>A Paperclip-augmented sweep pass could query for new literature matching project keywords on each sweep and produce a "literature delta" surface — papers published since the last sweep that touch active research tracks, with cross-references to specific wiki pages. This is a real architectural change (adds an outward-facing input to a currently closed-corpus pipeline), with consequences for sweep runtime, OpenRouter token usage, and signal-to-noise. Routed to <code>wiki/synthesis.md</code> as a Priority Action / Open Question rather than implemented inline. (source: paperclip-deep-dive.md)</p>
+<h3 id="limitations_1">Limitations<a class="headerlink" href="#limitations_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PMC embargo lag: recent high-impact papers in non-OA journals will be abstract-only</li>
+<li>Rate limits: untested for sustained automated query volume</li>
+<li>Pricing: currently free; plan for the possibility of usage limits</li>
+<li>MeSH vocabulary searches not supported (use PubMed MCP for those)</li>
+</ul>
+<p>(source: paperclip-deep-dive.md)</p>
 <hr />
 <h2 id="integration-using-all-three-tools-together">Integration: Using All Three Tools Together<a class="headerlink" href="#integration-using-all-three-tools-together" title="Permanent link">&para;</a></h2>
 <h3 id="workflow-example-design-engineered-koji-from-scratch">Workflow Example: Design Engineered Koji from Scratch<a class="headerlink" href="#workflow-example-design-engineered-koji-from-scratch" title="Permanent link">&para;</a></h3>

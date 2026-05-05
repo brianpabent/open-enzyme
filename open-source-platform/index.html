@@ -619,6 +619,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#paperclip-literature-delta-sweep-open-platform-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paperclip literature-delta sweep — open platform decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#multi-model-synthesis-as-guard-against-epistemic-homogenization" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3047,6 +3058,8 @@
         
       
         
+      
+        
           
         
       
@@ -3172,6 +3185,34 @@
     <span class="md-status md-status--published"></span>
   
 
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paperclip-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paperclip (GXL) Literature MCP
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -3486,6 +3527,8 @@ Some heterologous compounds may express better in <em>S. cerevisiae</em> than <e
 <p>(Source: open-enzyme-vision.md, §10)</p>
 <h3 id="5-open-substrate-for-ai-assisted-peer-review">5. Open Substrate for AI-Assisted Peer Review<a class="headerlink" href="#5-open-substrate-for-ai-assisted-peer-review" title="Permanent link">&para;</a></h3>
 <p>Because the wiki source is public markdown at a stable URL, it also functions as an open substrate for AI-assisted peer review. Any collaborator can point their own AI — Claude, GPT, Codex, or any other — at this repository, run a rigor check, and contribute findings back via PR or synthesis entry. Traditional peer review is ~10 hours × 2–3 reviewers × weeks of back-and-forth. AI-assisted review on a shared substrate is ~20 minutes × unbounded reviewers × async. Disagreements between different AIs, grounded in the same inspectable evidence, become productive signals — pointing humans at the exact places where manual digging pays off, rather than hiding in private inference. Evidence-level tags, the ChEMBL cross-check, and the <a href="../linter-design/">Falsification Lint design</a> are the rigor discipline that makes this substrate trustworthy enough for that pattern to work. (source: open-enzyme-vision.md, §4)</p>
+<h4 id="paperclip-literature-delta-sweep-open-platform-decision">Paperclip literature-delta sweep — open platform decision<a class="headerlink" href="#paperclip-literature-delta-sweep-open-platform-decision" title="Permanent link">&para;</a></h4>
+<p>The four-pass sweep daemon (Sonnet 4.6 → Gemini 2.5 Pro → Opus 4.7 → DeepSeek V4-Pro) currently operates only on the wiki itself. <a href="../paperclip-deep-dive/">Paperclip</a> — an MCP server exposing ~11M full-text papers (PMC + arXiv + bioRxiv/medRxiv) + ~150M abstracts (OpenAlex) — could augment a sweep pass to query for new literature matching project keywords and produce a "literature delta" surface: papers published since the last sweep that touch active research tracks, with cross-references to specific wiki pages. This is a real architectural change (adds an outward-facing input to a currently closed-corpus pipeline), with consequences for sweep runtime, OpenRouter token usage, signal-to-noise, and whether the synthesis pass is responsible for triaging external findings vs. just propagating internal ones. Flagged as an open platform decision; see <code>wiki/synthesis.md</code> for triage. (source: paperclip-deep-dive.md; Mechanistic Extrapolation)</p>
 <h4 id="multi-model-synthesis-as-guard-against-epistemic-homogenization">Multi-model synthesis as guard against epistemic homogenization<a class="headerlink" href="#multi-model-synthesis-as-guard-against-epistemic-homogenization" title="Permanent link">&para;</a></h4>
 <p>A knowledge graph maintained by a single synthesizer converges, over time, on that synthesizer's blind spots and biases — the corpus starts to encode one model's prior rather than the underlying biology. This concern was surfaced by the system itself: in the <a href="../logs/v4-peer-review-2026-04-25-deepseek.md">2026-04-25 DeepSeek V4-Pro peer-review pass</a> (Connection 7), a DeepSeek model reviewing the Claude-Opus output flagged that running cheap full-corpus sweeps on a single model would erode exactly the diversity that makes the corpus trustworthy. That a model from a different vendor caught a methodological risk Claude had not surfaced unprompted is the demonstration of why heterogeneity earns its keep. The sweep workflow described in <a href="../.github/workflows/wiki-sweep.yml"><code>.github/workflows/wiki-sweep.yml</code></a> is therefore deliberately cross-vendor: Sonnet 4.6 propagates findings across cross-referenced pages, Gemini 2.5 Pro emits full-corpus synthesis, Opus 4.7 critiques the synthesis with fixed-verdict tags, and DeepSeek V4-Pro runs an independent peer-review pass on the Claude output — four models, three vendors (Anthropic, Google, DeepSeek), all routed through OpenRouter. Heterogeneity is the principle, not the implementation: future workflow changes should preserve cross-vendor coverage. Collapsing the pipeline to a single vendor — even a cheaper or faster one — is a regression against this principle, not an optimization.</p>
 <h3 id="6-not-medical-advice">6. Not Medical Advice<a class="headerlink" href="#6-not-medical-advice" title="Permanent link">&para;</a></h3>
