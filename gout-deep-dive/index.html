@@ -2619,6 +2619,8 @@
       
         
       
+        
+      
     
     
     
@@ -2887,6 +2889,41 @@
     
   </span>
   
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theaflavins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theaflavins
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -4051,6 +4088,7 @@ status: published</p>
 <p>The research in this document eventually led to a practical question: could we engineer food-safe organisms to produce the missing uricase enzyme and deliver it orally? Two parallel tracks emerged, both now documented in detail:</p>
 <h3 id="the-yeast-track-engineered-s-cerevisiae">The Yeast Track: Engineered <em>S. cerevisiae</em><a class="headerlink" href="#the-yeast-track-engineered-s-cerevisiae" title="Permanent link">&para;</a></h3>
 <p>Baker's yeast (<em>S. cerevisiae</em>) already produces rasburicase commercially — the FDA-approved IV uricase used for tumor lysis syndrome. The <a href="../engineered-yeast-uricase-proposal/">Engineered Yeast Uricase Proposal</a> details a research plan to adapt this into an oral format: engineered yeast that produces uricase in the gut lumen, degrading the ~&#8531; of uric acid excreted through the intestines. The core mechanism is supported by preclinical and early-clinical work from three independent systems (ALLN-346, PULSE probiotic, and a 2025 <em>ACS Synthetic Biology</em> paper on engineered <em>S. boulardii</em>). <strong>Update (2026-04-23):</strong> ALLN-346's Phase 2a CKD trial was terminated September 2022 — the scientific rationale remains intact, but no pharma champion is actively pursuing gut-lumen uricase in a clinical program. See <a href="../gout-clinical-pipeline/">gout-clinical-pipeline.md</a> for the current competitive landscape (PRX-115 and SSS11 are both systemic IV, not gut-lumen).</p>
+<p><strong>Uricase variant update (2026-05-05):</strong> Industry-revealed preference analysis shows that 3-of-4 recent non-rasburicase uricase programs chose <em>Candida utilis</em> (SSS11, ALLN-346, SEL-212) over <em>A. flavus</em>. Tang 2025 directed evolution head-to-head (PMID 39892538) shows post-evolution <em>A. flavus</em> retains a ~50% specific-activity advantage (46.21 vs. 31.43 U/mg), but industry preference for <em>C. utilis</em> is driven by IP, oral-tolerance profile, and the publicly disclosed ALLN-346 ProteinGPS mutations (US10815461B2). For the oral/gut-lumen track, <em>C. utilis</em> is now co-primary alongside <em>A. flavus</em>. See <a href="../uricase-variant-selection/">uricase-variant-selection.md</a> for the full analysis. (In Vitro + Clinical Trial; source: uricase-variant-selection.md)</p>
 <h3 id="the-koji-track-engineered-a-oryzae">The Koji Track: Engineered <em>A. oryzae</em><a class="headerlink" href="#the-koji-track-engineered-a-oryzae" title="Permanent link">&para;</a></h3>
 <p>The <a href="../engineered-koji-protocol/">Engineered Koji Protocol</a> documents the complementary approach: engineering the koji mold (<em>A. oryzae</em>) to produce uricase alongside its native digestive enzymes. Wild-type koji already produces the proteases, lipases, and amylases in Lynn's digestive enzyme supplements — it's her solution without any engineering. The stretch goal is a dual-purpose strain producing both digestive enzymes and uricase.</p>
 <h3 id="the-key-insight-you-might-not-need-to-cross-the-barrier">The Key Insight: You Might Not Need to Cross the Barrier<a class="headerlink" href="#the-key-insight-you-might-not-need-to-cross-the-barrier" title="Permanent link">&para;</a></h3>
@@ -4068,8 +4106,9 @@ status: published</p>
 <strong>Chokepoint 3:</strong> ASC speck formation (blocked by colchicine, parthenolide)
 <strong>Chokepoint 4:</strong> Caspase-1 activation (blocked by disulfiram <em>via GSDMD — now CP6b</em>, VX-765, BHB)
 <strong>Chokepoint 5:</strong> IL-1β / IL-18 output — split into <strong>CP5a</strong> (receptor blockade: anakinra, canakinumab <em>FDA-approved for gout Aug 2023</em>, rilonacept) and <strong>CP5b</strong> (active resolution via ALX/FPR2: RvD1, RvD2, MaR1 — direct MSU gout animal data, Zaninelli 2022 PMID 35716378; Jiang 2023 PMID 37996809; lactoferrin as fermentable adjunct) (source: spm-resolution-pathway.md)
-<strong>Chokepoint 6:</strong> Neutrophil amplification + pyroptotic exit — split into <strong>CP6a</strong> (5-LOX → LTB4 → neutrophil chemotaxis: quercetin 300 nM IC50, AKBA ~2.7 μM cellular, zileuton FDA-approved 5-LOX inhibitor never tested in gout, EPA substrate competition) and <strong>CP6b</strong> (GSDMD pore formation: disulfiram, DMF, NSA — blocks pyroptotic IL-1β release) (source: zileuton.md, nlrp3-exploit-map.md)</p>
+<strong>Chokepoint 6:</strong> Neutrophil amplification + pyroptotic exit — split into <strong>CP6a</strong> (5-LOX → LTB4 → neutrophil chemotaxis: quercetin 300 nM IC50, AKBA ~2.7 μM cellular, zileuton FDA-approved 5-LOX inhibitor never tested in gout [zero ClinicalTrials.gov entries as of 2026-05-05], EPA substrate competition) and <strong>CP6b</strong> (GSDMD pore formation: disulfiram, DMF, NSA — blocks pyroptotic IL-1β release) (source: zileuton.md, nlrp3-exploit-map.md)</p>
 <blockquote>
+<p><strong>Theaflavins (added 2026-05-05):</strong> Black-tea polyphenols (TF1/TF2A/TF2B/TF3) hit CP2/CP3 via NLRP3-NEK7 interaction disruption (distinct from EGCG's proteasome-mediated CP1a route) and CP1a via TF3 TNFSF14/HVEM modulation. Unique in the OE stack: simultaneous ↓URAT1, ↓GLUT9 (renal urate reabsorption block) + ↑OAT1/OCTN1/OAT2 (secretion enhancement). Direct MSU peritonitis Animal Model (Chen 2023 PMID 37221235). Tier 2 supplement candidate. See <a href="../theaflavins/">theaflavins.md</a>. (In Vitro + Animal Model; source: theaflavins.md)</p>
 <p><strong>Key Insight</strong></p>
 <p><strong>Beta-hydroxybutyrate (BHB)</strong> — the ketone body produced during fasting or ketosis — hits three chokepoints (CP1, CP2, CP3). Still multi-chokepoint, but the v1.2 expansion reveals that <strong>lactoferrin</strong> (a single, fermentable 80 kDa protein) now covers CP1a (LPS/CD14 + NF-κB suppression), CP4/CP6b (direct GSDMD suppression via mitophagy, Shan 2026 PMID 41524100), and partial CP5b (resolution). Single-protein four-chokepoint coverage via one engineerable A. oryzae target. See the <a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a> and <a href="../lactoferrin/">lactoferrin.md</a> for the full analysis.</p>
 <p><strong>Species-gap caveat (2026-04-23):</strong> Rodent cellular IC50 values for NLRP3 inhibitors can diverge from human cellular IC50 by up to 3 orders of magnitude (dapansutrile: 1 nM mouse vs. 1 μM human, same assay format). Every rodent-derived NLRP3 potency claim in the chokepoint framework should be read with that translation uncertainty in mind. (source: chembl-cross-check.md)</p>

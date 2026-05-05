@@ -1843,6 +1843,8 @@
       
         
       
+        
+      
     
     
     
@@ -2111,6 +2113,41 @@
     
   </span>
   
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theaflavins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theaflavins
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -2747,6 +2784,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reliability-2026-05-05-verification-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliability — 2026-05-05 verification test
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reliability — 2026-05-05 verification test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trust-ranking-by-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trust ranking by tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concrete-examples-from-the-2026-05-05-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concrete examples from the 2026-05-05 test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probable-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Probable mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-discipline-for-any-future-paperclip-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification discipline for any future Paperclip session
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#relevance-to-open-enzyme" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2770,10 +2868,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-sweep-daemon-integration-open-platform-decision" class="md-nav__link">
+  <a href="#2-sweep-daemon-integration-decided-2026-05-05-do-not-integrate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Sweep-daemon integration — open platform decision
+        2. Sweep-daemon integration — DECIDED 2026-05-05: do not integrate
       
     </span>
   </a>
@@ -3202,6 +3300,95 @@
 <p><strong>When to still use PubMed:</strong> MeSH-vocabulary searches, citation tracking by PMID, peer-reviewed-only filtering. (Paperclip does not appear to support MeSH; preprints and OA full text are mixed in by default.)</p>
 <p><strong>Where Paperclip is differentiated:</strong> searching <em>within</em> papers, cross-domain queries that span biomedical + ML, multi-paper synthesis via <code>map</code>, and any agent-driven workflow.</p>
 <p>The OE <a href="../bio-ai-tools/">bio-ai-tools.md</a> page already lists the Anthropic life-sciences MCP marketplace (PubMed, bioRxiv, ChEMBL, Open Targets, ClinicalTrials.gov) as Phase 0 core. Paperclip is complementary, not a replacement: the marketplace plugins are best-in-class for their specific sources (PubMed's MeSH index, ChEMBL's bioactivity tables); Paperclip wins on full-text search and cross-source synthesis.</p>
+<h2 id="reliability-2026-05-05-verification-test">Reliability — 2026-05-05 verification test<a class="headerlink" href="#reliability-2026-05-05-verification-test" title="Permanent link">&para;</a></h2>
+<p>A first end-to-end test (uricase variant landscape + <em>A. oryzae</em> expression evidence) surfaced a <strong>systematic hallucination pattern in the <code>map</code> operator</strong> that significantly changes the trust model for this MCP. Documenting here so future Paperclip sessions inherit the correct guardrails.</p>
+<h3 id="trust-ranking-by-tool">Trust ranking by tool<a class="headerlink" href="#trust-ranking-by-tool" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Reliability</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>search</code></td>
+<td><strong>High</strong></td>
+<td>Returns real PMC / bioRxiv / arXiv records with accurate IDs and titles. Verified by spot-checking against <code>meta.json</code> and external lookups.</td>
+</tr>
+<tr>
+<td><code>cat /papers/&lt;id&gt;/meta.json</code></td>
+<td><strong>High</strong></td>
+<td>Authoritative paper metadata — title, abstract, authors, journal, PMID, DOI. Use as ground truth for abstract-level claims.</td>
+</tr>
+<tr>
+<td><code>grep PATTERN /papers/&lt;id&gt;/...</code></td>
+<td><strong>High</strong></td>
+<td>Returns real text from indexed paper bodies. Use to verify any quantitative claim before propagation.</td>
+</tr>
+<tr>
+<td><code>cat /papers/&lt;id&gt;/content.lines</code></td>
+<td><strong>High</strong></td>
+<td>Real full-text. Same trust level as grep.</td>
+</tr>
+<tr>
+<td><code>map --from &lt;id&gt; "extract X"</code></td>
+<td><strong>LOW — hallucinates quantitative data and misattributes organisms</strong></td>
+<td>Lighter "reader" model behind <code>map</code> substitutes plausible-looking domain values when full text doesn't directly support the requested field. Treat outputs as hypothesis-generation, not evidence.</td>
+</tr>
+<tr>
+<td><code>reduce --from &lt;map-id&gt; ...</code></td>
+<td><strong>Compounding risk</strong> (model-on-model)</td>
+<td>If the underlying <code>map</code> is wrong, <code>reduce</code> consolidates wrong claims into a confident-looking summary.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="concrete-examples-from-the-2026-05-05-test">Concrete examples from the 2026-05-05 test<a class="headerlink" href="#concrete-examples-from-the-2026-05-05-test" title="Permanent link">&para;</a></h3>
+<p>All of these were caught by grep-verifying body text or reading the actual abstract via <code>meta.json</code> after <code>map</code> returned the structured field. None of these are subtle — they're load-bearing identity errors.</p>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Abstract / body says</th>
+<th><code>map</code> returned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PMC9773812 (Najjari 2022, PASylated UOX)</td>
+<td><strong><em>A. flavus</em> UOX</strong>, K<sub>m</sub> 52.61 µM</td>
+<td><strong><em>A. globiformis</em></strong> uricase variant (S284G, K304R), K<sub>m</sub> 0.007 mM (~7,500× off)</td>
+</tr>
+<tr>
+<td>PMC4881585 (Xie 2016, chimeric uricase)</td>
+<td><strong>Porcine</strong>-human exon-replacement chimera</td>
+<td><strong><em>P. chrysogenum</em></strong>-human exon chimera (different organism entirely)</td>
+</tr>
+<tr>
+<td>PMC10561068 (Yan 2023, <em>Arthrobacter</em> CSAJ-16)</td>
+<td>Optimal <strong>T 20°C</strong>, K<sub>m</sub> <strong>0.048 mM</strong> (Lineweaver-Burk, body L40)</td>
+<td>Optimal T 40°C, K<sub>m</sub> 0.015 mM</td>
+</tr>
+<tr>
+<td>PMC12106716 (Rahbar 2025, A. flavus disulfide design)</td>
+<td><strong>Pure computational paper</strong> — frustration mapping + RMSF + tunnel analysis, no wet-lab</td>
+<td>Invented Tm 64.9 → 70.3°C, K<sub>m</sub>/k<sub>cat</sub> measurements as if wet-lab data existed; named non-existent S173C/L221C mutation pair (real predicted pairs are A6-C290 and S119-C220)</td>
+</tr>
+</tbody>
+</table>
+<p>These are not transcription errors. They are confabulations — plausible-looking values and organism names that would pass a casual review but are not in the underlying full text.</p>
+<h3 id="probable-mechanism">Probable mechanism<a class="headerlink" href="#probable-mechanism" title="Permanent link">&para;</a></h3>
+<p>Paperclip's <code>map</code> operator runs a lightweight per-paper extraction model. When asked for specific quantitative or identity fields the model can't ground in the indexed text, it appears to substitute domain-plausible values rather than emit "not reported." This is a known failure mode for small models forced into structured-output tasks they can't actually support.</p>
+<h3 id="verification-discipline-for-any-future-paperclip-session">Verification discipline for any future Paperclip session<a class="headerlink" href="#verification-discipline-for-any-future-paperclip-session" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Use <code>search</code> and <code>grep</code> as primary evidence.</strong> Treat <code>map</code> outputs as a sketch of where to look, not as data.</li>
+<li><strong>Grep-verify every load-bearing number</strong> against the paper body before letting it into the wiki. If grep can't find it, it didn't come from the paper.</li>
+<li><strong>Anchor identity claims (organism, gene, host, year) to <code>meta.json</code>.</strong> Abstracts in <code>meta.json</code> are clean — use them as the source of truth for organism / engineering-approach claims.</li>
+<li><strong>Never propagate <code>reduce</code> summaries directly.</strong> If the underlying <code>map</code> was bad, <code>reduce</code> will confidently consolidate the bad claims.</li>
+<li><strong>Computational vs. wet-lab status must be checked from the abstract or methods section.</strong> <code>map</code> does not reliably distinguish these.</li>
+</ol>
+<p>The corpus and the deterministic tools are good. The model-mediated synthesis layer is not yet trustworthy for content destined for the wiki.</p>
 <h2 id="relevance-to-open-enzyme">Relevance to Open Enzyme<a class="headerlink" href="#relevance-to-open-enzyme" title="Permanent link">&para;</a></h2>
 <p>Three plausible roles, listed by how concrete the integration is:</p>
 <h3 id="1-manual-research-depth-immediately-usable">1. Manual research depth — immediately usable<a class="headerlink" href="#1-manual-research-depth-immediately-usable" title="Permanent link">&para;</a></h3>
@@ -3212,17 +3399,20 @@
 <li><strong>Koji / <em>A. oryzae</em> expression systems</strong> — cross-reference food-science and synthetic-biology literature for promoter / cassette / yield data; expands <code>aspergillus-oryzae.md</code> and the Ward 1995 dual-cassette material in <code>koji-endgame-strain.md</code>.</li>
 <li><strong>Cross-domain queries</strong> — e.g., grep for "uricase" + "food-grade" or "ABCG2" + "probiotic" across the full corpus to surface intersections that PubMed and Scholar fragment.</li>
 </ul>
-<h3 id="2-sweep-daemon-integration-open-platform-decision">2. Sweep-daemon integration — open platform decision<a class="headerlink" href="#2-sweep-daemon-integration-open-platform-decision" title="Permanent link">&para;</a></h3>
-<p>The four-pass sweep daemon (Sonnet 4.6 → Gemini 2.5 Pro → Opus 4.7 → DeepSeek V4-Pro, see <a href="../open-source-platform/">open-source-platform.md</a>) currently operates only on the wiki itself. A Paperclip-augmented pass could query for new literature matching project keywords on each sweep and produce a "literature delta" surface — papers published since the last sweep that touch active research tracks, with cross-references to specific wiki pages.</p>
-<p>This is a real architectural change to the sweep, not a tactical install — it adds an outward-facing input to a currently closed-corpus pipeline, with consequences for sweep runtime, OpenRouter token usage, signal-to-noise (literature deltas can be noisy), and whether the synthesis pass is responsible for triaging external findings vs. just propagating internal ones. Routed through <code>wiki/synthesis.md</code> as a Priority Action / Open Question rather than implemented inline. See triage note in synthesis.</p>
+<h3 id="2-sweep-daemon-integration-decided-2026-05-05-do-not-integrate">2. Sweep-daemon integration — DECIDED 2026-05-05: do not integrate<a class="headerlink" href="#2-sweep-daemon-integration-decided-2026-05-05-do-not-integrate" title="Permanent link">&para;</a></h3>
+<p><strong>Decision: do not wire Paperclip into the four-pass sweep daemon.</strong> The reliability finding above (<code>map</code> operator hallucinations) is disqualifying for any architecture that lands Paperclip-derived content into the wiki without a human in the loop.</p>
+<p>The original framing — Paperclip-augmented pass producing a "literature delta" surface for the synthesis stage — assumed the synthesis primitive (<code>map</code>) could be trusted to faithfully extract per-paper findings. The 2026-05-05 verification test invalidated that assumption: <code>map</code> produced load-bearing identity errors (wrong organisms, wrong gene names, fabricated kinetic numbers) on multiple papers in a single session. Wiring this into the sweep would inject a structured external hallucination source into a corpus designed for PhD-grade rigor, exactly the failure mode the multi-model synthesis architecture in <a href="../open-source-platform/">open-source-platform.md</a> is meant to guard against.</p>
+<p>The reopen condition: if GXL ships a verified upgrade of the <code>map</code> reader model and we re-run the verification test (uricase variant landscape is a clean repeatable probe; ~12 papers, multiple known-correct ground truths via abstract + grep) and it passes cleanly, revisit. Until then Paperclip remains a manual-research-only tool, used interactively with verification discipline, never embedded in an automated pipeline.</p>
+<p>The original "open platform decision" entry in <code>synthesis.md</code> should be closed as resolved on the same date with this same outcome.</p>
 <h3 id="3-protein-engineering-support-via-arxiv-coverage">3. Protein-engineering support — via arXiv coverage<a class="headerlink" href="#3-protein-engineering-support-via-arxiv-coverage" title="Permanent link">&para;</a></h3>
 <p>arXiv inclusion brings the ML / computational biology literature into the same index as biomedical full text. Useful for keeping <code>bio-ai-tools.md</code> current — e.g., new protein language models, directed-evolution algorithms, or kidney-tropic siRNA delivery (the <code>modality-chokepoint-matrix.md</code> URAT1 vector) without bouncing between PubMed and arXiv.</p>
 <h2 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h2>
-<p>Concrete next steps, ordered by reversibility:</p>
+<p>Updated 2026-05-05 after the verification test:</p>
 <ol>
-<li><strong>Install the MCP.</strong> One line, free, reversible. Available across the abent umbrella once installed, not just OE.</li>
-<li><strong>Run a representative test query.</strong> Suggested first probe: search "engineered uricase oral delivery", grep for "Saccharomyces" or "Aspergillus", map "summarize expression system, host, and catalytic activity for each variant." This both validates the tool and produces material the wiki may want.</li>
-<li><strong>Triage sweep-integration in <code>synthesis.md</code>.</strong> The literature-delta-sweep idea is the only recommendation here that affects platform architecture; everything else is tactical and can land inline.</li>
+<li><strong>Install the MCP.</strong> Done. Available across the abent umbrella, not just OE.</li>
+<li><strong>Use Paperclip as a manual research tool only</strong>, with the verification discipline above. Never propagate <code>map</code> or <code>reduce</code> outputs into the wiki unverified — anchor every quantitative claim in a <code>grep</code> or abstract <code>meta.json</code> cross-check.</li>
+<li><strong>Do not integrate Paperclip into the sweep daemon.</strong> See §"Sweep-daemon integration — DECIDED" above for rationale and reopen condition.</li>
+<li><strong>Report the <code>map</code> hallucination pattern to GXL.</strong> Bug report drafted 2026-05-05 (see session log); contains reproducible examples with paper IDs and what abstract says vs. what <code>map</code> returned.</li>
 </ol>
 <h2 id="watch-list">Watch list<a class="headerlink" href="#watch-list" title="Permanent link">&para;</a></h2>
 <ul>

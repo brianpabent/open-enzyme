@@ -2306,6 +2306,8 @@
       
         
       
+        
+      
     
     
     
@@ -2574,6 +2576,41 @@
     
   </span>
   
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theaflavins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theaflavins
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -3439,7 +3476,7 @@ Secretion (using signal peptides like the α-mating factor prepro sequence) woul
 | Higher specific activity; basis for ALLN-346 engineering. <strong>ALLN-346 mutations disclosed in US10815461B2</strong> — highest-value substitutions for protease-resistance engineering: I180V, V190G, Y165F, E51K, Q244K, I132R, A87G. See Section 1 "Publicly Disclosed Engineering" subsection. |
 | Not directly comparable (measured as μmol/h/OD in whole cells) | Selected specifically for high activity in yeast cellular context | Newest entrant. Chosen by the 2025 ACS Synth Bio group specifically for yeast expression. |
 | Literature values vary | Native 145 kDa heterotetramer | Less commonly used for recombinant work. Unusual subunit heterogeneity. |
-<strong>Recommendation:</strong> Start with <em>A. flavus</em> uaZ. It has the deepest validation in <em>S. cerevisiae</em>, is the basis for an approved pharmaceutical product, and there is extensive published characterization data. The <em>V. vulnificus</em> uricase is an interesting second candidate given the 2025 <em>S. boulardii</em> results, but it adds risk by being less characterized. In parallel, testing the <em>C. utilis</em> gene in <em>S. cerevisiae</em> would be informative — its higher specific activity could be advantageous if it expresses well.</p>
+<strong>Recommendation:</strong> Start with <em>A. flavus</em> uaZ for the <em>S. cerevisiae</em> intracellular track (deepest validation, FDA precedent, post-evolution activity advantage per Tang 2025 PMID 39892538: af-UA 46.21 U/mg vs. cu-UA 31.43 U/mg after directed evolution). For the oral/gut-lumen track, <strong>elevate <em>C. utilis</em> to co-primary</strong>: industry-revealed preference shows 3-of-4 recent non-rasburicase programs chose <em>C. utilis</em> (SSS11, ALLN-346, SEL-212), driven by IP, oral-tolerance profile, and the publicly disclosed ALLN-346 ProteinGPS mutations (US10815461B2). The <em>V. vulnificus</em> uricase is an interesting third candidate given the 2025 <em>S. boulardii</em> results, but it adds risk by being less characterized. See <a href="../uricase-variant-selection/">uricase-variant-selection.md</a> for the full industry-preference analysis. (In Vitro + Clinical Trial; source: uricase-variant-selection.md)</p>
 <blockquote>
 <p><strong>How to resolve: Which uricase gene performs best in S. cerevisiae</strong></p>
 <p>Order codon-optimized synthetic genes for all three candidates (<em>A. flavus</em>, <em>C. utilis</em>, <em>V. vulnificus</em>), each in the same expression cassette (e.g., pTEF1 promoter, CYC1 terminator, integrated at the same locus). Transform into the same <em>S. cerevisiae</em> background. Compare: (a) expression level by Western blot/total protein, (b) specific uricase activity in cell lysate, &copy; enzyme stability at 37°C over 24h. Three genes × two replicates = six transformations.
