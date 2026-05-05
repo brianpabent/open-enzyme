@@ -6,6 +6,16 @@ related: ["validation-experiments.md", "open-questions.md", "logs/sweep-log.md"]
 sources: ["sweep daemon (wiki/*.md saves)", "manual sweeps", "V4 peer-review pass"]
 ---
 
+## Sweep — 2026-05-05 (no new synthesis)
+
+**Synthesis log:** [`logs/v4-synthesis-2026-05-05-487fad3.md`](../logs/v4-synthesis-2026-05-05-487fad3.md)
+**Substrate:** Open Enzyme wiki at commit `487fad3`
+**Synthesizer:** google/gemini-2.5-pro (drift-guard: nothing new worth synthesizing)
+**Reviewer:** anthropic/claude-opus-4-7 (no review needed)
+
+---
+
+
 ## Sweep — 2026-05-05 (DeepSeek V4-Pro synthesis + Claude review)
 
 **Synthesis log:** [`logs/v4-synthesis-2026-05-05-145204e.md`](../logs/v4-synthesis-2026-05-05-145204e.md)
