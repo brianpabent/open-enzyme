@@ -79,6 +79,48 @@ The hosted MCP at `paperclip.gxl.ai/mcp` is currently free and does not appear t
 
 The OE [bio-ai-tools.md](./bio-ai-tools.md) page already lists the Anthropic life-sciences MCP marketplace (PubMed, bioRxiv, ChEMBL, Open Targets, ClinicalTrials.gov) as Phase 0 core. Paperclip is complementary, not a replacement: the marketplace plugins are best-in-class for their specific sources (PubMed's MeSH index, ChEMBL's bioactivity tables); Paperclip wins on full-text search and cross-source synthesis.
 
+## Reliability — 2026-05-05 verification test
+
+A first end-to-end test (uricase variant landscape + *A. oryzae* expression evidence) surfaced a **systematic hallucination pattern in the `map` operator** that significantly changes the trust model for this MCP. Documenting here so future Paperclip sessions inherit the correct guardrails.
+
+### Trust ranking by tool
+
+| Tool | Reliability | Notes |
+|---|---|---|
+| `search` | **High** | Returns real PMC / bioRxiv / arXiv records with accurate IDs and titles. Verified by spot-checking against `meta.json` and external lookups. |
+| `cat /papers/<id>/meta.json` | **High** | Authoritative paper metadata — title, abstract, authors, journal, PMID, DOI. Use as ground truth for abstract-level claims. |
+| `grep PATTERN /papers/<id>/...` | **High** | Returns real text from indexed paper bodies. Use to verify any quantitative claim before propagation. |
+| `cat /papers/<id>/content.lines` | **High** | Real full-text. Same trust level as grep. |
+| `map --from <id> "extract X"` | **LOW — hallucinates quantitative data and misattributes organisms** | Lighter "reader" model behind `map` substitutes plausible-looking domain values when full text doesn't directly support the requested field. Treat outputs as hypothesis-generation, not evidence. |
+| `reduce --from <map-id> ...` | **Compounding risk** (model-on-model) | If the underlying `map` is wrong, `reduce` consolidates wrong claims into a confident-looking summary. |
+
+### Concrete examples from the 2026-05-05 test
+
+All of these were caught by grep-verifying body text or reading the actual abstract via `meta.json` after `map` returned the structured field. None of these are subtle — they're load-bearing identity errors.
+
+| Paper | Abstract / body says | `map` returned |
+|---|---|---|
+| PMC9773812 (Najjari 2022, PASylated UOX) | ***A. flavus* UOX**, K<sub>m</sub> 52.61 µM | ***A. globiformis*** uricase variant (S284G, K304R), K<sub>m</sub> 0.007 mM (~7,500× off) |
+| PMC4881585 (Xie 2016, chimeric uricase) | **Porcine**-human exon-replacement chimera | ***P. chrysogenum***-human exon chimera (different organism entirely) |
+| PMC10561068 (Yan 2023, *Arthrobacter* CSAJ-16) | Optimal **T 20°C**, K<sub>m</sub> **0.048 mM** (Lineweaver-Burk, body L40) | Optimal T 40°C, K<sub>m</sub> 0.015 mM |
+| PMC12106716 (Rahbar 2025, A. flavus disulfide design) | **Pure computational paper** — frustration mapping + RMSF + tunnel analysis, no wet-lab | Invented Tm 64.9 → 70.3°C, K<sub>m</sub>/k<sub>cat</sub> measurements as if wet-lab data existed; named non-existent S173C/L221C mutation pair (real predicted pairs are A6-C290 and S119-C220) |
+
+These are not transcription errors. They are confabulations — plausible-looking values and organism names that would pass a casual review but are not in the underlying full text.
+
+### Probable mechanism
+
+Paperclip's `map` operator runs a lightweight per-paper extraction model. When asked for specific quantitative or identity fields the model can't ground in the indexed text, it appears to substitute domain-plausible values rather than emit "not reported." This is a known failure mode for small models forced into structured-output tasks they can't actually support.
+
+### Verification discipline for any future Paperclip session
+
+1. **Use `search` and `grep` as primary evidence.** Treat `map` outputs as a sketch of where to look, not as data.
+2. **Grep-verify every load-bearing number** against the paper body before letting it into the wiki. If grep can't find it, it didn't come from the paper.
+3. **Anchor identity claims (organism, gene, host, year) to `meta.json`.** Abstracts in `meta.json` are clean — use them as the source of truth for organism / engineering-approach claims.
+4. **Never propagate `reduce` summaries directly.** If the underlying `map` was bad, `reduce` will confidently consolidate the bad claims.
+5. **Computational vs. wet-lab status must be checked from the abstract or methods section.** `map` does not reliably distinguish these.
+
+The corpus and the deterministic tools are good. The model-mediated synthesis layer is not yet trustworthy for content destined for the wiki.
+
 ## Relevance to Open Enzyme
 
 Three plausible roles, listed by how concrete the integration is:
@@ -92,11 +134,15 @@ For any specific question already in the wiki, Paperclip enables systematic full
 - **Koji / *A. oryzae* expression systems** — cross-reference food-science and synthetic-biology literature for promoter / cassette / yield data; expands `aspergillus-oryzae.md` and the Ward 1995 dual-cassette material in `koji-endgame-strain.md`.
 - **Cross-domain queries** — e.g., grep for "uricase" + "food-grade" or "ABCG2" + "probiotic" across the full corpus to surface intersections that PubMed and Scholar fragment.
 
-### 2. Sweep-daemon integration — open platform decision
+### 2. Sweep-daemon integration — DECIDED 2026-05-05: do not integrate
 
-The four-pass sweep daemon (Sonnet 4.6 → Gemini 2.5 Pro → Opus 4.7 → DeepSeek V4-Pro, see [open-source-platform.md](./open-source-platform.md)) currently operates only on the wiki itself. A Paperclip-augmented pass could query for new literature matching project keywords on each sweep and produce a "literature delta" surface — papers published since the last sweep that touch active research tracks, with cross-references to specific wiki pages.
+**Decision: do not wire Paperclip into the four-pass sweep daemon.** The reliability finding above (`map` operator hallucinations) is disqualifying for any architecture that lands Paperclip-derived content into the wiki without a human in the loop.
 
-This is a real architectural change to the sweep, not a tactical install — it adds an outward-facing input to a currently closed-corpus pipeline, with consequences for sweep runtime, OpenRouter token usage, signal-to-noise (literature deltas can be noisy), and whether the synthesis pass is responsible for triaging external findings vs. just propagating internal ones. Routed through `wiki/synthesis.md` as a Priority Action / Open Question rather than implemented inline. See triage note in synthesis.
+The original framing — Paperclip-augmented pass producing a "literature delta" surface for the synthesis stage — assumed the synthesis primitive (`map`) could be trusted to faithfully extract per-paper findings. The 2026-05-05 verification test invalidated that assumption: `map` produced load-bearing identity errors (wrong organisms, wrong gene names, fabricated kinetic numbers) on multiple papers in a single session. Wiring this into the sweep would inject a structured external hallucination source into a corpus designed for PhD-grade rigor, exactly the failure mode the multi-model synthesis architecture in [open-source-platform.md](./open-source-platform.md) is meant to guard against.
+
+The reopen condition: if GXL ships a verified upgrade of the `map` reader model and we re-run the verification test (uricase variant landscape is a clean repeatable probe; ~12 papers, multiple known-correct ground truths via abstract + grep) and it passes cleanly, revisit. Until then Paperclip remains a manual-research-only tool, used interactively with verification discipline, never embedded in an automated pipeline.
+
+The original "open platform decision" entry in `synthesis.md` should be closed as resolved on the same date with this same outcome.
 
 ### 3. Protein-engineering support — via arXiv coverage
 
@@ -104,11 +150,12 @@ arXiv inclusion brings the ML / computational biology literature into the same i
 
 ## Recommendations
 
-Concrete next steps, ordered by reversibility:
+Updated 2026-05-05 after the verification test:
 
-1. **Install the MCP.** One line, free, reversible. Available across the abent umbrella once installed, not just OE.
-2. **Run a representative test query.** Suggested first probe: search "engineered uricase oral delivery", grep for "Saccharomyces" or "Aspergillus", map "summarize expression system, host, and catalytic activity for each variant." This both validates the tool and produces material the wiki may want.
-3. **Triage sweep-integration in `synthesis.md`.** The literature-delta-sweep idea is the only recommendation here that affects platform architecture; everything else is tactical and can land inline.
+1. **Install the MCP.** Done. Available across the abent umbrella, not just OE.
+2. **Use Paperclip as a manual research tool only**, with the verification discipline above. Never propagate `map` or `reduce` outputs into the wiki unverified — anchor every quantitative claim in a `grep` or abstract `meta.json` cross-check.
+3. **Do not integrate Paperclip into the sweep daemon.** See §"Sweep-daemon integration — DECIDED" above for rationale and reopen condition.
+4. **Report the `map` hallucination pattern to GXL.** Bug report drafted 2026-05-05 (see session log); contains reproducible examples with paper IDs and what abstract says vs. what `map` returned.
 
 ## Watch list
 
