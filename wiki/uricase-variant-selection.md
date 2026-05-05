@@ -45,11 +45,12 @@ The ranking above prioritizes *A. flavus* on the strength of the rasburicase pre
 |---------|---------------|---------------|--------|-----------|
 | **SSS11** | *Candida utilis* uricase (pegylated) | Systemic PEG-protein | Phase 1, recruiting (NCT06629376, Shanghai) | *(Clinical Trial)* |
 | **ALLN-346** | *C. utilis* uricase, ProteinGPS-engineered | Oral, gut-lumen | Terminated 2022 (Allena bankruptcy, not efficacy failure); mutations publicly disclosed in US10815461B2 — see [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md) | *(Clinical Trial / patent)* |
+| **SEL-212 (pegadricase + ImmTOR)** | ***C. utilis* uricase**, pegylated | Systemic IV + tolerogenic rapamycin nanoparticle | Phase 3 — Selecta → Sobi (DISSOLVE I/II completed; pegadricase = pegylated *C. utilis* uricase per Sands 2022 *Nat Commun* PMID 35022448) | *(Clinical Trial)* |
 | **ACS Synth Bio 2025 *S. boulardii*** | *Vibrio vulnificus* uricase (365 μmol/h/OD specific activity) | Oral, engineered probiotic yeast | Preclinical (published 2025) | *(In Vitro)* |
-| **PRX-115** | PEG-uricase (Shanghai Pharma) | Systemic IV | Phase 1 | *(Clinical Trial)* |
+| **PRX-115** | PEG-uricase (Protalix; species not publicly disclosed) | Systemic IV | Phase 2 RELEASE (NCT07280156, Dec 2025) | *(Clinical Trial)* |
 | **Rasburicase / Krystexxa** | *A. flavus* / chimeric mammalian | Systemic IV (legacy) | Approved (2002 / 2010) | *(Clinical Trial)* |
 
-**Observation:** Of the three recent non-IV / oral-lumen uricase programs, **three of three chose something other than *A. flavus*** — SSS11 and ALLN-346 picked *C. utilis*; the ACS Synth Bio *S. boulardii* team picked *V. vulnificus*. *A. flavus* remains entrenched in IV systemic programs (rasburicase, Krystexxa) but has not been selected for any recent oral / gut-lumen effort in the public literature.
+**Observation:** Of the four recent non-rasburicase / non-Krystexxa uricase programs with publicly disclosed parent enzyme, **three of four chose *C. utilis*** (SSS11, ALLN-346, SEL-212) and the fourth (ACS Synth Bio *S. boulardii*) picked *V. vulnificus*. **None chose *A. flavus*.** *A. flavus* remains entrenched in IV systemic legacy programs (rasburicase, Krystexxa) but has not been selected for any recent program — oral, IV-with-tolerance, or probiotic — in the public literature. *(2026-05-05 update: SEL-212 species attribution added on the basis of Sands 2022 PMID 35022448. Prior tally was 3-of-3 oral programs; the broader 4-of-4-recent-programs framing is the more accurate reading of industry preference.)*
 
 ### Should our default follow?
 
@@ -58,6 +59,9 @@ Not automatically. *A. flavus* retains real advantages that industry selection p
 - Rasburicase precedent specifically in *S. cerevisiae* (not *C. utilis*, not *V. vulnificus*). For any rasburicase-derivative workflow, *A. flavus* inherits decades of host compatibility.
 - Deepest published biochemical characterization (Km, Vmax, pH profile, disulfide engineering literature).
 - 20+ years of pharmaceutical-scale manufacturing experience.
+- **Catalytic ceiling — Tang 2025 head-to-head directed evolution (PMID 39892538):** parallel error-prone-PCR + high-throughput screening of *A. flavus* and *C. utilis* uricases yielded af-UA at **46.21 U/mg** (Thr231Ala) vs. cu-UA at **31.43 U/mg** (Val234Met) — both authors' highest reported activities to date. Wild-type *C. utilis* (≈38 IU/mg per Liu 2011 PMID 21573940) actually exceeds wild-type *A. flavus*, but **post-evolution *A. flavus* retains a ~50% activity advantage**. The industry preference for *C. utilis* is therefore *not* about specific activity. (In Vitro; Animal Model in vivo)
+
+The likely drivers for the *C. utilis* tilt are: (a) freedom-to-operate around the rasburicase IP estate, (b) immunogenicity / oral-tolerance profile (ALLN-346 Phase 1 + SEL-212 ImmTOR programs both rely on this), (c) the publicly disclosed ProteinGPS mutations (US10815461B2) available to adopt without re-engineering from scratch, and (d) the GRAS food-yeast precedent — *Candida utilis* is the Torula yeast used for decades as a flavor enhancer and protein source.
 
 But the signal is real and cannot be ignored. The *C. utilis* backbone specifically carries **publicly disclosed directed-evolution improvements** (US10815461B2 — the ALLN-346 mutations I180V, V190G, Y165F, E51K, Q244K, I132R, A87G, and the R2_Vxx composites). For the oral / gut-lumen track, this disclosed prior art converts *C. utilis* from "less-characterized alternative" into "less-characterized alternative with millions of dollars of ProteinGPS-guided protease-resistance engineering already published."
 

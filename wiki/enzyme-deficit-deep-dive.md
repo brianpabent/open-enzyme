@@ -445,7 +445,7 @@ Here's where the research meets the kitchen table. What can Brian and Lynn actua
 
 **Targeted microbiome interventions.** Probiotic formulations specifically designed for uric acid reduction, based on the growing understanding of which gut bacteria degrade urate. Several companies are working on this.
 
-**SEL-212 and pegloticase improvements.** For severe gout: pegloticase (IV uricase) with immunomodulation to prevent anti-drug antibodies. SEL-212 combines pegylated uricase with rapamycin-loaded nanoparticles to tolerize the immune system. Phase 3 results have been promising.
+**SEL-212 and pegloticase improvements.** For severe gout: pegloticase (IV uricase) with immunomodulation to prevent anti-drug antibodies. SEL-212 combines pegylated *C. utilis* uricase (pegadricase) with rapamycin-loaded ImmTOR nanoparticles to tolerize the immune system (Sands 2022 *Nat Commun* PMID 35022448). Phase 3 results have been promising.
 
 #### Future — 5–15+ Years
 

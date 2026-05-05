@@ -1,6 +1,6 @@
 ---
 title: "Zileuton (Zyflo / Zyflo CR)"
-date: 2026-04-24
+date: 2026-05-05
 tags: ["zileuton", "zyflo", "5-lox", "ltb4", "asthma", "gout", "cp6a", "repurposing", "pharmaceutical"]
 related:
   - nlrp3-exploit-map.md
@@ -17,8 +17,8 @@ sources:
   - "Bell et al. *Allergy Asthma Proc* 2008;29(1):55–65 — Zyflo CR 1,200 mg BID bioequivalence / safety"
   - "Ford-Hutchinson *Crit Rev Immunol* 1990;10(1):1–12 — LTB4 as neutrophil chemoattractant, 100× C5a in some assays"
   - "Rae & Smith *Prostaglandins Leukot Med* 1981;6(1):71–78 (PMID 6259703) — LTB4 in synovial fluid of gout patients"
-  - "*J Med Chem* 1991 — quercetin 5-LOX IC50 = 300 nM (ChEMBL v34, cross-check 2026-04-24)"
-  - "ClinicalTrials.gov search 2026-04-24 — zero zileuton gout trials registered"
+  - "*J Med Chem* 1991 — quercetin 5-LOX IC50 = 300 nM (ChEMBL v34, cross-check 2026-05-05)"
+  - "ClinicalTrials.gov search 2026-05-05 — zero zileuton gout trials registered"
 ---
 
 # Zileuton (Zyflo / Zyflo CR)
@@ -37,14 +37,14 @@ See [supplements-stack.md](./supplements-stack.md) for the over-the-counter CP6a
 - **Mechanism class:** Direct, reversible, iron-chelating 5-LOX inhibitor. Binds the non-heme iron at the active site of the 5-LOX enzyme and prevents arachidonic acid → 5-HPETE → LTA4 conversion. Unlike montelukast (a leukotriene-receptor antagonist acting downstream at CysLT1), zileuton blocks upstream leukotriene synthesis — both the LTB4 branch (neutrophil chemotaxis) and the cysteinyl-leukotriene branch (LTC4/D4/E4, bronchoconstriction).
 - **Approval:** FDA-approved 1996 for prophylaxis and chronic treatment of asthma in patients ≥12 years. Zyflo (immediate-release, 600 mg QID) and Zyflo CR (controlled-release, 1,200 mg BID) are bioequivalent for AUC.
 - **Sponsor history:** Abbott → Critical Therapeutics → Cornerstone Therapeutics → Chiesi. Now available generic.
-- **Cost:** ~$50/month generic as of 2026-04-24 (varies; the brand Zyflo CR remains expensive).
+- **Cost:** ~$50/month generic as of 2026-05-05 (varies; the brand Zyflo CR remains expensive).
 - **Access:** Prescription required; written most often by pulmonologists for asthma. No current rheumatology indication.
 
 ---
 
 ## Mechanism in gout (CP6a) — our theory
 
-This section frames the case as a testable hypothesis, not an efficacy claim. No gout clinical trial of zileuton exists (ClinicalTrials.gov search 2026-04-24 returns zero results).
+This section frames the case as a testable hypothesis, not an efficacy claim. No gout clinical trial of zileuton exists (ClinicalTrials.gov search 2026-05-05 returns zero results).
 
 1. **MSU crystal deposition activates macrophages and recruits neutrophils**, which synthesize eicosanoids from arachidonic acid via 5-LOX. Synovial fluid from gout patients contains elevated LTB4 during flares (Rae & Smith 1981, PMID 6259703 — In Vitro / ex vivo human).
 2. **The primary 5-LOX product relevant to gout is leukotriene B4 (LTB4)** — a potent neutrophil chemoattractant. In some early chemotaxis assays LTB4 was reported as ~100× more active than C5a for neutrophil migration (Ford-Hutchinson *Crit Rev Immunol* 1990 — In Vitro). The quantitative ratio is assay-dependent, but LTB4's status as a dominant neutrophil chemoattractant in tissue-level inflammation is well established.
@@ -113,15 +113,15 @@ The koji intervention is still in Phase 0 — research and design. Zileuton is a
 - **Generic, prescription required.** No OTC path. US only — some countries never approved zileuton.
 - **Who writes the script:** pulmonology writes it routinely for asthma. Rheumatology and primary care are unlikely to think of it for gout — the CP6a mechanism rationale has to be explicitly pitched. A forward-thinking internist is more likely to engage than a gout-specialist rheumatologist; gout rheumatology is heavily anchored on urate-lowering + colchicine + IL-1 biologics, and 5-LOX is not part of the standard framework.
 - **Monitoring logistics:** baseline ALT/AST, then monthly × 3 months, then quarterly. Cheap lab — same panel most patients get anyway. Requires discipline, not expertise.
-- **Cost:** ~$50/month generic as of 2026-04-24. Brand Zyflo CR is substantially more expensive; insurance coverage variable (it's an asthma drug, not a gout drug — off-label billing may be required).
+- **Cost:** ~$50/month generic as of 2026-05-05. Brand Zyflo CR is substantially more expensive; insurance coverage variable (it's an asthma drug, not a gout drug — off-label billing may be required).
 
 ---
 
 ## Open questions
 
-1. **Has zileuton ever been tested in gout clinically?** ClinicalTrials.gov search 2026-04-24: **zero gout trials.** PubMed search (2026-04-24): no gout-specific efficacy publications. This is a complete pipeline gap, not a "buried negative result" problem.
+1. **Has zileuton ever been tested in gout clinically?** ClinicalTrials.gov search 2026-05-05: **zero gout trials.** PubMed search (2026-05-05): no gout-specific efficacy publications. The two PubMed hits for "zileuton + gout/uric acid" are incidental (PMID 34723750 — ESRD metabolomics paper mentioning zileuton-O-glucuronide as a biomarker; PMID 29727733 — Sri Lankan medicinal plant 5-LOX assay using zileuton as a positive control). Refreshed via the 2026-05-05 Paperclip-equivalent audit. This is a complete pipeline gap, not a "buried negative result" problem.
 2. **Does it abort acute flares or only reduce frequency?** 5-LOX block is continuous — the drug has a short half-life (~2.5 hours for immediate-release, longer for CR) but its effect on leukotriene synthesis is ongoing while circulating. Unlike colchicine, zileuton probably cannot "rescue" an in-progress flare the way microtubule disruption can; the amplification loop has already delivered most of its neutrophils by the time pain peaks. Best use case is chronic prophylaxis, not acute rescue.
-3. **Are there published case reports of asthma patients with incidental gout who responded to zileuton?** This is a natural population to survey — any pulmonology clinic with a zileuton-prescribing practice has a few dozen patients who also have gout. Retrospective chart review of flare frequency before/after zileuton start is cheap and could generate signal. No such study has been published as of 2026-04-24.
+3. **Are there published case reports of asthma patients with incidental gout who responded to zileuton?** This is a natural population to survey — any pulmonology clinic with a zileuton-prescribing practice has a few dozen patients who also have gout. Retrospective chart review of flare frequency before/after zileuton start is cheap and could generate signal. **No such study has been published as of 2026-05-05** (re-confirmed via PubMed full-text + bioRxiv audit; the existence-search question is closed in the negative — the gap is real, not a "buried negative result" problem).
 4. **Does 5-LOX block synergize with NLRP3 block, or show a ceiling effect?** CP2 (NLRP3 assembly) and CP6a (LTB4 amplification) are mechanistically different. The prediction is additive, but a plateau is plausible if one branch is already rate-limiting. A quercetin + BHB combination in a MSU-mouse model would be the cheapest first test of the synergy question.
 5. **Is urinary LTE4 a reliable biomarker to titrate zileuton dose in gout?** In asthma, urinary LTE4 is the standard PD readout for leukotriene-modifier drugs. Its use in gout patients has not been validated — baseline LTE4 and response curves may differ. Worth including as a secondary endpoint in any n-of-1 protocol.
 
@@ -139,4 +139,4 @@ The koji intervention is still in Phase 0 — research and design. Zileuton is a
 
 ---
 
-*Last updated: April 2026. This is a research hypothesis dossier, not medical advice. Zileuton has not been tested in gout; the CP6a mechanism case is real but unvalidated clinically.*
+*Last updated: May 2026. This is a research hypothesis dossier, not medical advice. Zileuton has not been tested in gout; the CP6a mechanism case is real but unvalidated clinically.*

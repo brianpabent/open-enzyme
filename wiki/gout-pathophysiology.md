@@ -220,7 +220,7 @@ The gout pipeline is more active now than it's been in decades:
 | Drug | Mechanism | Phase | Status |
 |---|---|---|---|
 | **Pozdeutinurad (AR882)** | Next-gen selective URAT1 inhibitor | Phase 3 | REDUCE 1 & 2 pivotal trials fully enrolled. NDA planned 2026. |
-| **SEL-212** | Pegylated uricase + rapamycin nanoparticles (prevents immunogenicity) | Phase 3 | DISSOLVE I & II completed. 46–56% response rates. Superior to pegloticase. |
+| **SEL-212** | Pegylated ***C. utilis* uricase** (pegadricase) + rapamycin nanoparticles (prevents immunogenicity) — Sands 2022 *Nat Commun* PMID 35022448 | Phase 3 | DISSOLVE I & II completed. 46–56% response rates. Superior to pegloticase. |
 | **Firsekibart (Genakumab)** | Anti-IL-1β monoclonal antibody | Phase 3 | Reduced new flare risk by 90% at 12 weeks, 87% at 24 weeks. |
 | **Dapansutrile (OLT1177)** | Oral selective NLRP3 inflammasome inhibitor | Phase 2a only | 2020 Phase 2a (N=34): 52–68% pain reduction. **No Phase 2b/3 in gout registered as of April 2026 — gout development appears stalled.** (source: gout-clinical-pipeline.md) |
 | **Dotinurad (URECE)** | Selective URAT1 inhibitor | Approved (Asia) | Approved in Japan, China, Thailand, Philippines. |

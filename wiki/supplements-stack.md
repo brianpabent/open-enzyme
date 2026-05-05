@@ -177,7 +177,7 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 **Mechanism:** Activates Keap1-Nrf2 pathway → master regulator of cellular antioxidant defense; cross-talk with NF-κB (CP1/CP2). **Sub-μM Nrf2 activation: EC50 = 580 nM** (*J Med Chem* 2019, ChEMBL) — rare potency for a food-derived compound. **ABCG2 induction bonus:** Sulforaphane activates Nrf2 in enterocytes → upregulates intestinal ABCG2 expression, increasing gut urate secretion capacity (In Vitro + Animal Model; source: abcg2-modulators.md). This makes sulforaphane the only stack compound that simultaneously suppresses NLRP3 priming (CP1/CP2) AND enhances the gut-lumen sink substrate supply.
 
-**Evidence level:** Established (Nrf2 activation) + **Animal Model hyperuricemia (2026-04-23 re-audit, PROMOTED from Tier 4)** — Wang 2022 *J Adv Res* (PMID 36371056): sulforaphane decreased urate synthesis + increased renal urate excretion + Nrf2-mediated epigenetic modification in hyperuricemic rats. This bridges the uric-acid and inflammation axes in a single compound. The prior "no gout-specific evidence" framing was keyword-gated on "gout" in abstracts and missed the hyperuricemia rat model. (source: nlrp3-inhibitor-screen.md 2026-04-23 re-audit)
+**Evidence level:** Established (Nrf2 activation) + **Animal Model hyperuricemia (2026-04-23 re-audit, PROMOTED from Tier 4)** — Wang 2022 *J Adv Res* (PMID 36371056): sulforaphane decreased urate synthesis + increased renal urate excretion + Nrf2-mediated epigenetic modification in hyperuricemic rats. This bridges the uric-acid and inflammation axes in a single compound. The prior "no gout-specific evidence" framing was keyword-gated on "gout" in abstracts and missed the hyperuricemia rat model. (source: nlrp3-inhibitor-screen.md 2026-04-23 re-audit) **Upgraded to Tier 2 on 2026-05-05** with two additional citations: Yang 2018 *Rheumatology (Oxford)* (PMID 29340626) — oral SFN attenuated MSU-crystal-induced foot-pad swelling and air-pouch acute gout in mice (Animal Model, oral); Greaney 2015 *J Leukoc Biol* (PMID 26269198) — sulforaphane inhibits NLRP1, NLRP3, NAIP5/NLRC4, and AIM2 inflammasomes **independent of Nrf2** in macrophages and in vivo acute gout peritonitis. Adds a direct caspase-1 / inflammasome-assembly mechanism distinct from the Nrf2 → ABCG2 / NF-κB axis.
 
 **Population context:** Broad applicability. Animal-model UA evidence is in male rats; sex-differential effect on urate axis is not characterized. Goitrogenic effect of cruciferous glucosinolates is dose-dependent and clinically negligible at supplement-relevant doses, but patients with overt iodine deficiency or untreated hypothyroidism may want iodine adequacy in parallel. Hashimoto's patients: cruciferous goitrogen concern is largely overstated at dietary doses but present at concentrated extract doses.
 
@@ -207,6 +207,48 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 - **Synergy with NAC:** both push the glutathione/Nrf2 axis (CP2).
 
 **Cost:** $5–10/week (raw sprouts) or $20–30/month (supplement)
+
+---
+
+### Theaflavins (Black Tea Polyphenols) — ADDED 2026-05-05
+
+**Category:** Phytonutrient / NLRP3 inhibitor / multi-transporter renal urate handling
+
+**Mechanism:** Theaflavins are dimeric polyphenols formed when EGCG and ECG are oxidized by polyphenol oxidase during black-tea fermentation; they are the dominant red-orange pigments of black tea, oolong, and pu'er. **Mechanism is distinct from EGCG:** theaflavins disrupt the **NLRP3-NEK7 interaction** downstream of mitochondrial ROS suppression (CP2/CP3 — assembly-step), whereas EGCG's dominant route is proteasome-mediated IκB stabilization (CP1a). **Unique to theaflavins in the OE stack:** simultaneous downregulation of **URAT1 + GLUT9** (apical and basolateral renal urate reabsorption) and upregulation of OAT1/OCTN1/OAT2/Oct1/2 (proximal-tubule secretion) — the only multi-transporter renal urate handling compound in the stack besides carnosine, and without carnosine's serum-carnosinase clearance ceiling. Secondary CP1a coverage via TNFSF14/HVEM modulation (TF3 specifically; Hosokawa 2010 PMID 20461739 — already cited in `tnfsf14-gout-target.md`).
+
+**Evidence level:**
+- **In vitro:** Chen 2023 *Acta Pharmacol Sin* (PMID 37221235) — 50–200 μM theaflavin dose-dependently inhibited NLRP3 inflammasome activation in LPS-primed macrophages stimulated with **MSU crystals**, ATP, or nigericin; suppressed ASC speck formation, caspase-1 p10 cleavage, GSDMD-NT pyroptosis, and IL-1β release. Mechanism: protected mitochondrial function, reduced mtROS, blocked NLRP3-NEK7 interaction. (In Vitro)
+- **Animal Model (oral, MSU peritonitis):** Same Chen 2023 paper — oral theaflavin significantly attenuated MSU-induced mouse peritonitis (acute-gout-flare proxy model). (Animal Model)
+- **Mechanism review:** Chen 2023 *Phytomedicine* (PMID 36990009) — comprehensive anti-gout mechanism review covering URAT1/GLUT9 downregulation + OAT1/OCTN1/OAT2 upregulation + network-pharmacology prediction (ABCB1, MAPK14, TERT, STAT1, MMP2/14, BCL2 as anti-gout targets).
+- **No human gout RCT exists.** Cardiovascular and lipid trials (700–2,500 mg/day theaflavin-enriched extract for 12+ weeks) establish a safety baseline at typical supplement doses.
+
+**Population context:** Broad applicability. The unique URAT1 angle is particularly relevant for under-excreter phenotypes (URAT1 hyperactivity-driven hyperuricemia, the male-predominant subtype documented in `androgen-urate-axis.md`). No documented sex-differential effect specific to theaflavins.
+
+**Dosing range:**
+- **Theaflavin-enriched extract:** 200–500 mg/day, standardized to 30–80% theaflavins. TF3 (theaflavin-3,3'-digallate) is the most potent fraction; some commercial products specify TF3 content separately.
+- **Black tea:** 4–6 cups/day delivers ~50–150 mg theaflavins. Pu'er > black > oolong on a per-gram-leaf basis.
+- **Combine with EGCG, not substitute:** mechanism-orthogonal at NLRP3; additive when stacked.
+
+**Contraindications:** Pregnancy (concentrated extract doses unstudied; dietary intake fine). Iron-deficiency anemia (theaflavins, like other tannins, chelate non-heme iron — separate from iron-containing meals or supplements by ≥1 hour).
+
+**Drug interactions:**
+- **CYP3A4 substrates with narrow therapeutic index:** weak inhibition (similar to other tea polyphenols); minor effect at supplement doses for tacrolimus, cyclosporine, simvastatin.
+- **Iron supplements / iron-rich meals:** spaced dosing required.
+- **Caffeine confounder:** black tea contains caffeine; concentrated theaflavin extracts may or may not be decaffeinated — check the label.
+
+**Dose-dependent risk profile:**
+- 200–500 mg/day theaflavin-enriched extract: well-tolerated at supplement range based on cardiovascular trial data.
+- >1,000 mg/day chronic: GI upset (tannin-driven), possible iron-status drift; not gout-specific risk.
+
+**Stack interactions (within this catalog):**
+- **EGCG (additive, not redundant):** EGCG and theaflavins overlap on TNFSF14/HVEM but the dominant non-redundant activities are different (EGCG → proteasome 86 nM; theaflavins → URAT1/inflammasome assembly). Combining adds CP1a + CP2/CP3 + URAT1 coverage. Strong recommended pairing.
+- **Carnosine (overlap at URAT1 — pick one):** both downregulate URAT1 in animal models. Theaflavins do not face the carnosinase clearance ceiling. **Diminishing returns if stacked at maximum dose; pick one for the URAT1 axis** — theaflavins are favored if the carnosinase question is unresolved.
+- **Sulforaphane / quercetin / oridonin (Nrf2 axis):** theaflavins do not strongly activate Nrf2. Mechanism-orthogonal — combine without redundancy.
+- **No ABCG2 interaction documented.** Theaflavins are not on the curcumin/quercetin/EGCG/genistein ABCG2 functional-inhibitor list per `abcg2-modulators.md`, but a direct theaflavin-on-ABCG2 study has not been done.
+
+**Cost:** $20–40/month for theaflavin-enriched supplement (300 mg/day). ~$10/week if relying on brewed black tea.
+
+**Reference:** [theaflavins.md](./theaflavins.md) for the full dossier including TF1/TF2A/TF2B/TF3 sub-fraction context, formulation strategies, and open questions.
 
 ---
 

@@ -438,7 +438,8 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 **Evidence Level:**
 - **In vitro:** Sub-μM Nrf2 activation (EC50 580 nM, *J Med Chem* 2019)
 - **Animal (hyperuricemia, re-audit 2026-04-23, PROMOTED):** Wang 2022 *J Adv Res* (PMID 36371056): hyperuricemic rat model — sulforaphane decreased urate synthesis + increased renal urate excretion + Nrf2-mediated epigenetic modification of urate-handling genes. Dual mechanism (synthesis block + excretion enhancement) bridges the uric-acid and inflammation axes. (Animal Model; source: nlrp3-inhibitor-screen.md 2026-04-23 re-audit)
-- **Gout-specific (direct MSU):** Not yet published; Wang 2022 hyperuricemia data is the closest validation.
+- **Gout-specific (direct MSU, 2026-05-05 audit, ADDED):** **Yang 2018** *Rheumatology* (Oxford) (PMID 29340626): oral sulforaphane attenuated MSU-crystal-induced foot-pad swelling and neutrophil recruitment in mice; air-pouch gout model confirmed in vivo NLRP3 suppression; in primary mouse macrophages SFN suppressed NLRP3 inflammasome activation by MSU, ATP, and nigericin (but not poly(dA:dT)) independent of ROS, suggesting direct action on the NLRP3 complex. (Animal Model; oral administration; source: 2026-05-05 audit)
+- **Mechanistic (Nrf2-independent inflammasome inhibition, 2026-05-05 audit, ADDED):** **Greaney 2015** *J Leukoc Biol* (PMID 26269198): sulforaphane inhibits NLRP1, NLRP3, NAIP5/NLRC4, and AIM2 inflammasomes in macrophages **independent of Nrf2 / antioxidant response element pathway** — distinct from the classical Nrf2 → NF-κB cross-talk mechanism. Confirmed in vivo via acute gout peritonitis model (cell recruitment + IL-1β secretion ↓). Adds a direct caspase-1 / inflammasome-assembly mechanism on top of the Nrf2 → ABCG2 / NF-κB axis. (In Vitro + Animal Model; source: 2026-05-05 audit)
 
 **Production Feasibility:**
 - **S. cerevisiae / A. oryzae:** No published engineered microbial production. Requires glucosinolate (glucoraphanin) pathway (6+ heterologous plant genes from *Brassica*) + myrosinase activation
@@ -460,7 +461,51 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 - Gout-specific MSU model not yet tested (hyperuricemia extrapolation only)
 - Isothiocyanate reactivity: off-target thiol covalent modification at high doses
 
-**Ranking Rationale:** **Promoted to Tier 2–3 for supplement use** (hyperuricemic rat model + sub-μM Nrf2 EC50 contradict the prior "weak NLRP3 evidence" framing). **Engineered-production path stays Tier 4** — glucosinolate pathway has never been reconstructed in yeast and the food-industry broccoli-sprout route is shorter. Prior exclusion table entry was keyword-gated on "NLRP3" in abstracts and missed the 2022 hyperuricemia data.
+**Ranking Rationale:** **Promoted to Tier 2 for supplement use** (Yang 2018 direct MSU foot-pad acute gout + Wang 2022 hyperuricemic rat + Greaney 2015 Nrf2-independent inflammasome mechanism + sub-μM Nrf2 EC50). The 2026-05-05 audit upgraded sulforaphane from Tier 2–3 to Tier 2 — three independent in vivo gout-relevant readouts now exist. **Engineered-production path stays Tier 4** — glucosinolate pathway has never been reconstructed in yeast and the food-industry broccoli-sprout route is shorter.
+
+---
+
+#### 11. **Theaflavins (TF1, TF2A, TF2B, TF3)** — ADDED 2026-05-05
+
+**NLRP3 Mechanism:** (In vitro & animal, MSU peritonitis)
+- Theaflavins are the dominant red-orange polyphenols of black tea / oolong / pu'er, formed by polyphenol-oxidase oxidation of EGCG and ECG during fermentation
+- Mechanism is **distinct from EGCG**: theaflavins disrupt **NLRP3-NEK7 interaction** downstream of mitochondrial ROS suppression, blocking inflammasome **assembly** (CP2/CP3) rather than EGCG's proteasome-mediated CP1a route
+- Suppress ASC speck formation and oligomerization → blocked caspase-1 p10 cleavage, GSDMD-NT pyroptosis, mature IL-1β release
+- TF3 (theaflavin-3,3'-digallate) is the most potent fraction across in vitro assays
+- **Secondary CP1a coverage:** Hosokawa 2010 (PMID 20461739) — TF3 + EGCG + ECG suppress TNFSF14-induced IL-6 and downregulate HVEM receptor on target cells
+
+**Renal urate handling (unique to theaflavins, not shared with EGCG):**
+- ↓ URAT1, ↓ GLUT9 (apical and basolateral reabsorption block)
+- ↑ OAT1, ↑ OCTN1, ↑ OAT2, ↑ Oct1/2 (proximal-tubule secretion)
+- This is the **only multi-transporter renal urate handling profile** in the wider OE supplement stack besides carnosine (which faces serum carnosinase clearance ceiling)
+
+**Evidence Level:**
+- **In vitro (MSU NLRP3 assembly, 2026-05-05 audit, ADDED):** Chen 2023 *Acta Pharmacol Sin* (PMID 37221235): 50–200 μM theaflavin dose-dependently inhibited NLRP3 inflammasome activation in LPS-primed macrophages stimulated with ATP, nigericin, or **MSU crystals**. (In Vitro)
+- **Animal (oral, MSU peritonitis):** Same Chen 2023 paper — oral theaflavin significantly attenuated MSU-induced mouse peritonitis (acute-gout-flare proxy model); also rescued bacterial sepsis survival via the same NLRP3-NEK7 mechanism. (Animal Model)
+- **Mechanism review:** Chen 2023 *Phytomedicine* (PMID 36990009): comprehensive anti-gout mechanism review covering URAT1/GLUT9 downregulation + OAT1/OCTN1/OAT2 upregulation + network-pharmacology prediction (ABCB1, MAPK14, TERT, STAT1, MMP2/14, BCL2 as anti-gout targets).
+
+**Production Feasibility:**
+- **S. cerevisiae / A. oryzae:** No engineered route. Theaflavin biosynthesis requires plant polyphenol oxidase + EGCG and ECG substrates — full pathway has never been reconstructed in yeast or bacteria, and substrate cost would dominate. **Tier 4 for engineered production.**
+- **Food-industry path:** Black tea (1–2% theaflavins by dry weight), oolong, pu'er; concentrated supplement extracts standardized to 30–80% TF content. Mature commercial supply chain.
+
+**Food Safety:**
+- GRAS: Black tea, all common tea types
+- Cardiovascular and lipid trials: 700–2,500 mg/day theaflavin-enriched extract for 12+ weeks well-tolerated
+- TF3 standardized extracts in commercial OTC supplements
+
+**Advantages:**
+- **Mechanism-orthogonal to EGCG** at the NLRP3 step (assembly disruption vs. proteasome) — additive when stacked
+- **Unique URAT1 downregulation** in the OE stack (without carnosine's carnosinase ceiling)
+- Direct MSU peritonitis Animal Model (oral)
+- Mature commercial supply (theaflavin-enriched extracts)
+
+**Limitations:**
+- Poor oral bioavailability (~0.1–1%); same formulation challenge as EGCG
+- In vitro effective concentrations (50–200 μM) are 100× higher than achievable plasma exposures from oral dosing — in vivo MSU peritonitis effect may operate via a different mechanism at lower concentrations
+- No human gout RCT; dose extrapolated from cardiovascular trials
+- No engineered microbial production route
+
+**Ranking Rationale:** **Tier 2 supplement candidate** (direct MSU peritonitis Animal Model + multi-mechanism URAT1/GLUT9/OAT modulation + secondary TNFSF14/HVEM coverage). The mechanism breadth is comparable to EGCG; the unique URAT1 angle pulls in a chokepoint EGCG doesn't reach. **Engineered-production path: Tier 4** — no microbial route. See [theaflavins.md](./theaflavins.md) for the full dossier.
 
 ---
 
@@ -475,6 +520,8 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 > 4. Nrf2 / NF-κB pathway activity at sub-μM potency (not just direct NLRP3)
 >
 > for every compound, not just those with "gout" in the title. Applied retroactively: EGCG → Tier 2; limonene → Tier 3 supplement / Tier 4 production; sulforaphane → Tier 2–3 supplement / Tier 4 production.
+>
+> **2026-05-05 follow-up audit (PubMed full-text + bioRxiv):** Sulforaphane upgraded from Tier 2–3 to **Tier 2** with two additional citations (Yang 2018 PMID 29340626 direct MSU foot-pad acute gout; Greaney 2015 PMID 26269198 Nrf2-independent inflammasome inhibition). **Theaflavins added** as a new Tier 2 entry (Chen 2023 PMID 37221235 direct MSU peritonitis Animal Model + Chen 2023 PMID 36990009 multi-transporter URAT1/GLUT9/OAT review). α-Pinene confirmed: no direct MSU/gout animal-model data exists; Tier 4 ranking stands.
 
 ---
 
