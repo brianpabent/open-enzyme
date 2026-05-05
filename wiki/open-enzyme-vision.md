@@ -146,6 +146,23 @@ These are empirical questions, not ideological ones. We build in koji first and 
 
 The Year 2-3 target is the **koji endgame strain** (see [wiki/koji-endgame-strain.md](./koji-endgame-strain.md)) — one engineered *A. oryzae* strain layering engineered uricase + engineered lactoferrin onto native kojic acid + native ergothioneine, covering five NLRP3-pathway chokepoints (CP0-adjacent trigger elimination, CP1a, CP1b, CP4, CP6b; three of the five contributed by molecules the host already makes for free). The Ward 1995 *A. awamori* glucoamylase-KEX2 dual-cassette architecture is the gating feasibility test ($3-5k, 8-12 weeks) — if it transfers to *A. oryzae* solid-state, the platform converges on a single strain; if not, the fallback is two strains co-fermented with the same therapeutic coverage.
 
+### Native Metabolite Chorus — Strategic Advantage of the *A. oryzae* Chassis
+
+Wild-type *A. oryzae* produces two well-characterized secondary metabolites during standard koji fermentation at concentrations that make them relevant to the therapeutic platform before any genetic engineering is applied.
+
+| Metabolite | Native titer | Primary mechanism | NLRP3 chokepoint | Evidence level |
+|---|---|---|---|---|
+| **Kojic acid** | 3–5 g/L submerged; 1–3 g per 100 g dry rice koji | NF-κB suppression in multiple inflamed cell types (iron chelation + TLR4/NF-κB pathway attenuation) | CP1a — NF-κB priming arm | **In Vitro (Reasonable)** — NF-κB suppression documented; direct NLRP3 inflammasome activity is unpublished (flagged as open question in [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md)) |
+| **Ergothioneine** | ~20 mg/g dry mycelial mass | Mitochondria-targeted thiol antioxidant; scavenges hydroxyl radical, HOCl, peroxynitrite; reduces ROS upstream of NLRP3 | CP1b — C5a → ROS non-transcriptional priming | **In Vitro + Mechanistic Extrapolation (Reasonable)** — ROS scavenging is Supported; Nrf2 stabilization is a two-step extrapolation (ROS ↓ → Nrf2 stabilization → downstream), not a direct binding claim |
+
+The strategic consequence: **any engineered koji strain — the year-1 uricase-only starting strain, the year-2 dual-cassette endgame strain, or any future koji derivative — ships with a baseline anti-inflammatory payload at no additional engineering cost.** A host like *S. cerevisiae* or *E. coli* is biologically cleaner but metabolically inert in this sense: producing kojic acid or ergothioneine in yeast would require engineering entirely separate secondary-metabolite pathways — substantial lift for a baseline that *A. oryzae* provides for free.
+
+This is not a marginal consideration. Three of the five chokepoints covered in the endgame strain coverage matrix ([koji-endgame-strain.md](./koji-endgame-strain.md) §1) score Reasonable or better on the strength of native-metabolite contributions alone — none requiring cassette insertion. Choosing *A. oryzae* as the primary chassis is partly a bet on what the organism already produces, not only on what can be engineered into it.
+
+**Evidence-level discipline.** The chorus framing is correct directionally but must be presented with appropriate evidence tags. Kojic acid's CP1a contribution is NF-κB suppression upstream (In Vitro, Reasonable) — not a direct NLRP3 binder, and not equivalent to the clinical-grade rasburicase precedent for uricase. Ergothioneine's Nrf2 link is Mechanistic Extrapolation. The "free bonus chokepoints" characterization is accurate, but the evidence level must accompany any public-facing statement to avoid overstating the baseline. Surfaced as Connection #3 in the 2026-05-05 synthesis sweep.
+
+Sources: [aspergillus-oryzae.md](./aspergillus-oryzae.md) §"Native Secondary Metabolites"; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §01b; [koji-endgame-strain.md](./koji-endgame-strain.md) §2.3, §2.4; [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md).
+
 ---
 
 ## 5. First Targets

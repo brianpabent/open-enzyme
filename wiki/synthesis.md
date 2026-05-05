@@ -49,6 +49,8 @@ sources: ["sweep daemon (wiki/*.md saves)", "manual sweeps", "V4 peer-review pas
 
     > **Claude review — Confirmed.** Well-sourced against `aspergillus-oryzae.md` §"Native Secondary Metabolites" (kojic acid 3–5 g/L, ergothioneine ~20 mg/g dry mass) and `engineered-koji-protocol.md` §01b. The CP1a/CP1b chokepoint mapping is already made in `koji-endgame-strain.md` §1 coverage matrix (which scores these Reasonable at CP1a and CP1b respectively). One caution worth surfacing in the suggested action: the kojic-acid direct-NLRP3 activity is flagged as "unpublished/open question" in `nlrp3-inhibitor-screen.md`, and ergothioneine's "Nrf2 inducer" classification is a two-step mechanistic extrapolation (ROS scavenger → Nrf2 stabilization → downstream) rather than a direct Nrf2 binder. The "free chorus" framing is correct directionally but the strategic page should tag evidence levels (In Vitro / Mechanistic Extrapolation) rather than present it as supported coverage.
 
+**✓ Actioned 2026-05-05:** Added `open-enzyme-vision.md` §4 subsection "Native Metabolite Chorus — Strategic Advantage of the *A. oryzae* Chassis" with a two-row metabolite table (kojic acid + ergothioneine, titer / mechanism / chokepoint / evidence-level columns), the strategic consequence paragraph (any koji strain ships a baseline payload at no engineering cost), an evidence-level discipline note explicitly tagging both at In Vitro / Mechanistic Extrapolation rather than Supported, and cross-references to aspergillus-oryzae.md, engineered-koji-protocol.md §01b, and nlrp3-inhibitor-screen.md.
+
 ## Contradictions Found
 
 1.  **The recommended supplements stack contains potent functional inhibitors of ABCG2, directly antagonizing the platform's core gut-lumen sink mechanism.**
