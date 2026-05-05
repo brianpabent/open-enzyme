@@ -32,6 +32,18 @@ sources:
   - "Li Q, Zhang C, Li J, et al. Synth Syst Biotechnol 2024;10(2):365-372 (PMID: 39830075)"
   - "Wang S, Xue Y, Zhang P, et al. J Agric Food Chem 2023;71(41):15194-15203 (PMID: 37807677)"
   - "US Patent 5,571,697 (Conneely et al., 1996) — expired"
+  - "Huynh HH, Morita N, Sakamoto T, Katayama T, Miyakawa T, Tanokura M, et al. Functional production of human antibody by the filamentous fungus Aspergillus oryzae. Fungal Biol Biotechnol 2020;7:7 (PMID: 32514366; PMC7257131)"
+  - "Ward M, Lin C, Victoria DC, Fox BP, Fox JA, Wong DL, et al. Characterization of humanized antibodies secreted by Aspergillus niger var. awamori. Appl Environ Microbiol 2004;70:2567-2576 (PMID: 15128505)"
+  - "Wakai S, Nakashima N, Ogino C, Tsutsumi H, Hata Y, Kondo A. Modified expression of multi-cellulases in a filamentous fungus Aspergillus oryzae. Bioresour Technol 2019;276:146-153 (PMID: 30623869)"
+  - "Oikawa H. Heterologous production of fungal natural products: Reconstitution of biosynthetic gene clusters in model host Aspergillus oryzae. Proc Jpn Acad Ser B 2020;96:420-430 (PMID: 33177296; PMC7725655)"
+  - "Jin FJ, Maruyama J, Juvvadi PR, Arioka M, Kitamoto K. Development of a novel quadruple auxotrophic host transformation system by argB gene disruption using adeA gene and exploiting adenine auxotrophy in Aspergillus oryzae. FEMS Microbiol Lett 2004;239:79-85 (PMID: 15451104)"
+  - "Li Q, Lu J, Zhang G, Zhou J, Li J, Du G, Chen J. CRISPR/Cas9-Mediated Multiplexed Genome Editing in Aspergillus oryzae. J Fungi 2023;9(1):109 (PMC9864741)"
+  - "Sheng Y, Qiu S, Deng Y, Zeng B. Recent Advances in Heterologous Protein Expression and Natural Product Synthesis by Aspergillus. (PMC12299000)"
+  - "Sun Z, Wu Y, Long S, Feng S, Jia X, Hu Y, et al. Aspergillus oryzae as a Cell Factory: Research and Applications in Industrial Production. J Fungi 2024;10(4):248 (PMC11051239)"
+  - "Karaman E, Eyüpoğlu AE, Mahmoudi Azar L, Uysal S. Large-Scale Production of Anti-RNase A VHH Expressed in pyrG Auxotrophic Aspergillus oryzae. Curr Issues Mol Biol 2023 (PMC10297652)"
+  - "Shinkawa S, Mitsuzawa S. Feasibility study of on-site solid-state enzyme production by Aspergillus oryzae. Biotechnol Biofuels 2020;13:36 (PMC7045521)"
+  - "Rendsvig JKH, Workman CT, Hoof JB. Bidirectional histone-gene promoters in Aspergillus: characterization and application for multi-gene expression. Fungal Biol Biotechnol 2019;6:24 (PMC6900853)"
+  - "Jin F-J, Hu S, Wang B-T, Jin L. Advances in Genetic Engineering Technology and Its Application in the Industrial Fungus Aspergillus oryzae. Front Microbiol 2021;12:644404 (PMC7940364)"
 ---
 
 # H01 — Ward Dual-Cassette Feasibility
@@ -165,11 +177,11 @@ Coverage gaps are acceptable — H01 is a feasibility-gate hypothesis, not a mec
 
 ## Status
 
-**Pending.** No killshot executed as of the committed date (2026-04-24).
+**Survived Killshot #1 (Literature/patent landscape, 2026-05-05).** Killshot #1 produced a **partial-validates / partial-confirms-novelty** outcome: **dual-cassette heterologous protein co-expression in *A. oryzae* under submerged conditions is well-precedented** — including direct architectural analogues of Ward 1995 — but **the solid-state rice koji aspect of the assumption stack remains novel** (no published demonstration of two heterologous proteins co-expressed in *A. oryzae* solid-state at therapeutic-grade titers). This narrows the load-bearing question of §1.9 from a feasibility-of-architecture question to a **format-translation question** (submerged → solid-state). Assumption 1 (species translation *A. awamori* → *A. oryzae*) and Assumption 6 (KEX-2 capacity for fusion cassettes) are upgraded from **Mechanistic Extrapolation** to **In Vitro (multiple precedents)**. Assumption 2 (solid-state dual-protein) remains **Mechanistic Extrapolation** but now with two adjacent flanking precedents (Wakai 2019 — three-cassette submerged in *A. oryzae*; Shinkawa 2020 — single-cassette heterologous SSF in *A. oryzae*) bracketing the gap. Killshot #2 (the wet-lab dual-cassette experiment) remains the next gating move.
 
-**Survival count:** 0.
+**Survival count:** 1.
 
-**Survival score:** 0.0 (undefined until first survived killshot).
+**Survival score:** 0.3 (one killshot survived; partial-validates outcome scored at the lower end of the kill_pr range to reflect that the residual solid-state-specific question is unanswered).
 
 ---
 
@@ -177,7 +189,96 @@ Coverage gaps are acceptable — H01 is a feasibility-gate hypothesis, not a mec
 
 | Date | Killshot | Outcome | Notes |
 |---|---|---|---|
-| — | — | — | (empty — no executions yet) |
+| 2026-05-05 | #1 — Lit/patent landscape | **VALIDATES (architecture) + CONFIRMS NOVELTY (solid-state format)** | See [Killshot #1 Findings](#killshot-1-findings-2026-05-05) below. Sub-thresholds: assumption 1 partially validated (Ward-style dual-fusion architecture demonstrated for adalimumab heavy+light chain at niaD/sC loci in *A. oryzae*, Huynh 2020 PMC7257131); assumption 6 partially validated (KEX-2-like KRGGG cleavage of two simultaneous AmyB-fusion cassettes works in *A. oryzae*); assumption 2 (solid-state dual-protein) un-falsified but unprobed by literature. No published failure mode that would kill H01 was surfaced. |
+
+---
+
+## Killshot #1 Findings (2026-05-05)
+
+### Headline
+
+**Outcome category: VALIDATES (architecture-level) + CONFIRMS NOVELTY (solid-state-format-level).**
+
+The assumption "no published precedent for *A. oryzae* dual-heterologous-cassette expression" is **partially false**. Multiple peer-reviewed papers demonstrate two-or-more heterologous protein cassettes co-expressed in *A. oryzae* under submerged conditions, including a **direct architectural precedent of the Ward 1995 glucoamylase-KEX2-fusion design** applied to two simultaneous heterologous payloads (Huynh 2020 [1]). The species-translation assumption (*A. awamori* → *A. oryzae*) is independently validated by full-length antibody expression in both species (Ward 2004 *A. awamori* [2]; Huynh 2020 *A. oryzae* [1]). However, **no paper reports two heterologous proteins simultaneously expressed in *A. oryzae* solid-state rice koji at therapeutic-grade titers**, so the §1.9 experiment retains its novelty premise on the format axis.
+
+### Top precedents (ranked by direct relevance to H01)
+
+| # | Citation | Year | PMID/PMCID | Study type | Key finding (1 sentence) | Relevance to H01 |
+|---|---|---|---|---|---|---|
+| 1 | Huynh et al. — *Functional production of human antibody by the filamentous fungus Aspergillus oryzae* [1] | 2020 | PMC7257131 (PMID 32514366) | In Vitro (submerged) | Adalimumab heavy chain and light chain co-expressed as **two separate AmyB-KRGGG-fusion cassettes** integrated at *niaD* and *sC* loci in *A. oryzae* RIB40-derived host (NSlD-ΔP10 ten-protease deletion strain), yielding **39.7 mg/L** functional full-length IgG with antigen-binding equivalent to commercial Humira®. | **Direct architectural precedent.** Same cassette design (P_amyB::amyB-KRGGG-payload::T_amyB), same host, same KEX-2-like cleavage strategy that H01 hypothesizes for layering uricase onto Ward Lf cassette. Validates assumptions 1, 3 (with caveat of needing protease-deletion host), and 6. Format = submerged DPY medium; not solid-state. |
+| 2 | Ward et al. — *Characterization of humanized antibodies secreted by Aspergillus niger var. awamori* [2] | 2004 | PMID 15128505 | In Vitro (submerged, 14 L bioreactor) | Trastuzumab IgG produced at **900 mg/L** in *A. awamori* using glucoamylase fusion architecture — the original Ward 1995 design extended to dual-chain antibody. | **Validates assumption 1** at high-titer scale. Demonstrates the Ward fusion architecture scales to two simultaneously-expressed heterologous payloads. Same caveat (submerged, *A. awamori* not *A. oryzae* — but Huynh 2020 closes the species gap). |
+| 3 | Wakai et al. — *Modified expression of multi-cellulases in a filamentous fungus Aspergillus oryzae* [3] | 2019 | PMID 30623869 | In Vitro (submerged) | Three distinct heterologous cellulase genes (cellobiohydrolase, endoglucanase, β-glucosidase) co-expressed in *A. oryzae* with multi-copy integration (5–16 copies/gene); P-sodM/T-glaB promoter/terminator set was strongest per copy; optimized strain achieved **~40-fold cellulolytic activity** over single-integration baseline. | **Three-payload precedent.** If the Ward-style architecture works for two heterologous proteins (Huynh 2020), Wakai 2019 demonstrates *A. oryzae* tolerates three. Validates assumption 6 (no saturation of secretion machinery at 2 cassettes). Format = submerged. |
+| 4 | Oikawa — *Heterologous production of fungal natural products: Reconstitution of biosynthetic gene clusters in model host Aspergillus oryzae* [4] | 2020 | PMC7725655 (PMID 33177296) | Review of In Vitro work | Quadruple-auxotrophic *A. oryzae* host **NSAR1 (niaD⁻, sC⁻, ΔargB, adeA⁻)** plus *ptrA* pyrithiamine-resistance marker provides **5 simultaneous integration slots** (vectors pTAex3, pUNA, pUSA, pAdeA, pPTRI17). Used to reconstitute fungal biosynthetic gene clusters of up to **17 genes** (penitrem, indole diterpenes); produces aphidicolin/solanapyrone at ~100 mg/kg in solid medium. | **Validates assumption 5** (multiple selection markers co-existing without conflict — established industrial practice). The 5-marker NSAR1 platform is directly usable for the H01 design. Aphidicolin/solanapyrone "in solid medium" is the closest published touch-point on solid-substrate heterologous production, though those are small-molecule metabolites not secreted proteins. |
+| 5 | Li, Lu, Zhang et al. — *CRISPR/Cas9-Mediated Multiplexed Genome Editing in Aspergillus oryzae* [5] | 2023 | PMC9864741 | In Vitro (submerged) | CRISPR/Cas9 multiplexed editing in *A. oryzae* RIB40 with up to four simultaneous targets (yA + three amylase copies); single-step integration of *Thermomyces lanuginosus* lipase (TLL) at amyB and amyC loci with 9.9% knock-in efficiency for two simultaneous integrations; double-copy strains showed elevated TLL activity. | **Tooling precedent.** Demonstrates that the molecular biology of inserting two cassettes at two loci in one transformation in *A. oryzae* is now routine; CRISPR/Cas9 with the *yA* morphological marker reaches 100% editing efficiency under colour selection. De-risks the engineering side of §1.9. |
+| 6 | Li, Zhang, Li et al. — *Characterization of Aspergillus oryzae mutant and its application in heterologous lipase expression* [6] | 2024 | PMC11742560 (PMID 39830075; named in H01 assumption stack) | In Vitro (submerged) | Three-locus integration of TLL lipase at amyA, amyB, and amyC in *A. oryzae* C19 mutant chassis cell yielded **3.3-fold expression increase** over single-copy (113.6 U/L shake flask, 125.6 U/L 5-L bioreactor); α-amylase locus identified as efficient heterologous-protein integration site. | **Validates the multi-copy / multi-locus integration strategy** for the same protein. With Wakai 2019 (different proteins) and Huynh 2020 (different proteins), brackets the H01 dual-cassette claim from both directions. |
+| 7 | Karaman et al. — *Large-Scale Production of Anti-RNase A VHH Expressed in pyrG Auxotrophic Aspergillus oryzae* [7] | 2023 | PMC10297652 | In Vitro (submerged, 6 L fermenter) | Single-cassette VHH antibody fragment under glucoamylase promoter in pyrG⁻ *A. oryzae* yielded **44 mg/L (shake flask)** and **1.4 g/L (fermenter)** — confirming that the glucoamylase-fusion *A. oryzae* expression platform reaches gram-per-liter titers at scale. | **Titer-scaling reference.** Establishes the upper end of single-cassette glucoamylase-fusion *A. oryzae* productivity is ~1 g/L in standard fermenter conditions, supporting the >2 g/L Ward 1995 claim is not anomalous. Submerged. |
+| 8 | Shinkawa & Mitsuzawa — *Feasibility study of on-site solid-state enzyme production by Aspergillus oryzae* [8] | 2020 | PMC7045521 | In Vitro (solid-state, ammonia-treated rice straw) | Constructed a *pyrG⁻ ligD⁻* *A. oryzae* HO2 platform strain; transformed with three separate single-cassette constructs (endoxylanase from *Talaromyces aurantiacus*, β-glucosidase and cellobiohydrolase from *T. cellulolyticus*); each strain confirmed secretion of its respective heterologous enzyme in solid-state biomass culture. | **Closest solid-state heterologous precedent.** Confirms that *A. oryzae* can secrete heterologous enzymes in a solid-state format with biomass substrate. Limitation: each enzyme was expressed in a *separate* strain, not co-expressed in one strain; titers not g/L-quantified; substrate is rice straw not polished koji rice. The dual-cassette-on-rice question is one inferential step away. |
+| 9 | Sun et al. — *Aspergillus oryzae as a Cell Factory* (review) [9] | 2024 | PMC11051239 | Review | Comprehensive review of *A. oryzae* as industrial chassis. Notes critical caveat: "**there are certain proteins that are not secreted in solid-state culture, unlike submerged culture, such as the glucoamylase-encoding gene glaB**" — solid-state and submerged secretion patterns differ in protein-specific ways. | **Material caveat.** Some proteins secrete in submerged but not solid-state. This is the primary open risk for H01: even if Lf and uricase express well in submerged dual-cassette format (per Huynh 2020 + Wakai 2019), solid-state-specific silencing or secretion failure for one or both is empirically untested. |
+| 10 | Rendsvig, Workman, Hoof — *Bidirectional histone-gene promoters in Aspergillus: characterization and application for multi-gene expression* [10] | 2019 | PMC6900853 | In Vitro (multiple Aspergillus species) | Characterized the conserved bidirectional H4.1/H3 histone intergenic region as a strong constitutive **bidirectional promoter (P_h4h3)** in five Aspergillus species; expressed mRFP1 + mCitrine simultaneously from a single locus. | **Architectural alternative** to the Ward two-locus design. If two-locus integration proves problematic in solid-state, a single-locus bidirectional cassette is a fallback. Not yet tested with secreted proteins at industrial titers. |
+
+### What this means for assumption stack
+
+Synthesis of literature against H01's assumption stack:
+
+| Assumption | Pre-K1 evidence level | Post-K1 evidence level | Change rationale |
+|---|---|---|---|
+| 1. Ward 1995 *A. awamori* → *A. oryzae* translation | In Vitro (Ward 1992 single-cassette only) | **In Vitro (multiple precedents)** | Huynh 2020 [1] + Karaman 2023 [7] + Wakai 2019 [3] + Li 2024 [6] all demonstrate Ward-style glucoamylase/amylase-promoter heterologous expression in *A. oryzae*. The species translation is no longer an extrapolation. |
+| 2. Solid-state dual-protein supports both folding/secretion loads | Mechanistic Extrapolation | **Mechanistic Extrapolation (with adjacent precedents)** | Bracketed by Wakai 2019 (three cassettes submerged) and Shinkawa 2020 (single cassette solid-state). The dual-cassette × solid-state intersection is the un-tested cell. Sun 2024 [9] caveat re: glaB silencing in solid-state is a flagged risk. |
+| 3. Native proteases don't degrade Lf/uricase at lethal rates | Mechanistic Extrapolation | **In Vitro (with caveat)** | Huynh 2020 [1] shows **endogenous proteases are the dominant loss mechanism for heterologous antibody** in *A. oryzae* — a 10-protease deletion strain (NSlD-ΔP10) was required for 39.7 mg/L titer. Implication for H01: a protease-deletion host (or inducer-controlled timing) is likely needed to hit the 500 mg/L Lf threshold. The pepE/dppIV/dppV/alpA/pepA/AopepAa/AopepAd/cpI deletion set is a documented starting point. |
+| 4. Solid-state Lf retains iron-binding | In Vitro (submerged only) | **In Vitro (submerged only) — no change** | No solid-state recombinant Lf paper found. Killshot #5 (iron-binding assay) remains the way to test this. |
+| 5. Multiple selection markers co-exist without conflict | In Vitro (industrial practice) | **In Vitro (multiple precedents)** | Oikawa 2020 [4] documents the NSAR1 quadruple-auxotrophic platform plus ptrA = **5 simultaneous markers** in *A. oryzae* (niaD, sC, argB, adeA, ptrA), used routinely for ≥17-gene cluster reconstitutions. The 2-marker H01 design is well within precedent. |
+| 6. KEX-2 capacity sufficient for two fusion cassettes | Mechanistic Extrapolation | **In Vitro (direct precedent)** | Huynh 2020 [1] demonstrates simultaneous KEX-2 cleavage of **two distinct AmyB-KRGGG-payload fusions** (heavy chain + light chain) producing both correctly-cleaved proteins. KEX-2 capacity is not the bottleneck at the 39.7 mg/L scale; whether it saturates at the 500 mg/L Lf + 100 mg/L uricase H01 targets is empirically open but no published evidence suggests it would. |
+| 7. Solid-state Lf glycosylation within submerged envelope | Animal Model (submerged only) | **Animal Model (submerged only) — no change** | No published comparative glycan analysis of *A. oryzae* solid-state vs. submerged secreted protein. Future Killshot #6 (glycan profiling) would test this. |
+
+### What this means for §1.9 wet-lab framing
+
+§1.9 (Ward 1995 dual-cassette feasibility test) is **not eliminated by literature** but its framing changes:
+
+1. **The dual-cassette engineering is no longer the load-bearing risk** — it's textbook in *A. oryzae* under submerged conditions. The §1.9 experimental design should explicitly include a **submerged-culture parallel control** (already in killshot #2 spec) so that solid-state-specific failure modes can be cleanly attributed to the format rather than the architecture.
+2. **Protease-deletion host is now elevated from "fallback" to "default."** Huynh 2020 [1] shows ten-protease-deletion (NSlD-ΔP10) was necessary to detect functional antibody at all; the wild-type RIB40 background may be a non-starter for the Lf side of the dual cassette. The §1.9 design should consider starting from NSlD-ΔP10 or an equivalent industrial protease-knockout chassis.
+3. **The solid-state question is the real load-bearing test.** Sun 2024 [9] explicitly notes glaB-type proteins fail to secrete in solid-state despite secreting in submerged. Whether AmyB-fused Lf and AmyB-fused uricase fall on the "secretes in both" or "secretes in submerged only" side of this divide is the actual experimental novelty.
+4. **The 5-marker NSAR1 platform** (Oikawa 2020 [4]) is the suggested host platform — it's already industrial-practice and accommodates the 2-cassette H01 design with three slots to spare for downstream additions (e.g., kojic-acid-pathway enhancement, ergothioneine pathway maintenance).
+5. **No urgency change for §1.9 priority** — it remains the #1 gate. The literature deep-dive narrowed the question but didn't answer it.
+
+### Most material caveat / what couldn't be verified
+
+1. **Patent landscape was not directly searchable.** Google Patents returns JavaScript-only pages that WebFetch cannot parse, and Espacenet rejected the unauthenticated request (HTTP 403). Three industrial actors (Novozymes, DSM, Genencor/Danisco) have ≥30 years of *Aspergillus* multi-protein engineering history that is largely unpublished except as patent claims. **Estimated ~30% probability** that one of them has filed (or holds expired/abandoned) IP on a directly-relevant *A. oryzae* dual-cassette koji process. Worth a follow-up via authenticated patent-database access (Brian or Lauren via Emory library).
+2. **No published *A. oryzae* dual-heterologous-protein × solid-state × therapeutic-titer paper exists.** This is the actual gap H01 is testing. The Wakai 2019 + Shinkawa 2020 bracket suggests the gap is closeable but not closed.
+3. **Glycoprotein-specific solid-state secretion patterns are under-characterized.** The Sun 2024 [9] glaB observation is one data point; whether it generalizes to AmyB-fusion architectures or only to native glaB is unclear.
+4. **The Wang 2023 *A. niger* multi-locus paper named in the H01 sources frontmatter (PMID 37807677) was not in the Paperclip corpus** and could not be verified directly. Its inclusion in the assumption stack as an adjacent precedent should be re-checked when accessible.
+5. **Ward 1995 (PMID 9634791) itself was not in the Paperclip corpus** — relied on the Ward 2004 follow-up (PMID 15128505) and downstream citation chain to characterize the architecture.
+
+### References (Paperclip citation block)
+
+[1] Huynh HH, Morita N, Sakamoto T, Katayama T, Miyakawa T, Tanokura M, Fushinobu S, Maruyama J. "Functional production of human antibody by the filamentous fungus *Aspergillus oryzae*." *Fungal Biology and Biotechnology* 7:7 (2020). PMC7257131. doi:10.1186/s40694-020-00098-w
+    https://citations.gxl.ai/papers/PMC7257131#L25
+
+[2] Ward M, Lin C, Victoria DC, Fox BP, Fox JA, Wong DL, Meerman HJ, Pucci JP, Fong RB, Heng MH, Tsurushita N, Gieswein C, Park M, Wang H. "Characterization of humanized antibodies secreted by *Aspergillus niger*." *Applied and Environmental Microbiology* 70:2567-2576 (2004). PMID 15128505.
+    *(Cited in [1] as ref 13; not in Paperclip corpus directly)*
+
+[3] Wakai S, Nakashima N, Ogino C, Tsutsumi H, Hata Y, Kondo A. "Modified expression of multi-cellulases in a filamentous fungus *Aspergillus oryzae*." *Bioresource Technology* 276:146-153 (2019). PMID 30623869. doi:10.1016/j.biortech.2018.12.117
+    *(Verified via PubMed abstract; not in Paperclip corpus directly)*
+
+[4] Oikawa H. "Heterologous production of fungal natural products: Reconstitution of biosynthetic gene clusters in model host *Aspergillus oryzae*." *Proceedings of the Japan Academy. Series B, Physical and Biological Sciences* 96:420-430 (2020). PMC7725655. doi:10.2183/pjab.96.031
+    https://citations.gxl.ai/papers/PMC7725655#L18
+
+[5] Li Q, Lu J, Zhang G, Zhou J, Li J, Du G, Chen J. "CRISPR/Cas9-Mediated Multiplexed Genome Editing in *Aspergillus oryzae*." *Journal of Fungi* 9(1):109 (2023). PMC9864741. doi:10.3390/jof9010109
+    https://citations.gxl.ai/papers/PMC9864741#L42
+
+[6] Li Q, Zhang C, Li J, Du G, Li Z, Zhou J, Zhang G. "Characterization of *Aspergillus oryzae* mutant and its application in heterologous lipase expression." *Synthetic and Systems Biotechnology* 10(2):365-372 (2024). PMC11742560. doi:10.1016/j.synbio.2024.12.005
+    https://citations.gxl.ai/papers/PMC11742560#L52
+
+[7] Karaman E, Eyüpoğlu AE, Mahmoudi Azar L, Uysal S. "Large-Scale Production of Anti-RNase A VHH Expressed in *pyrG* Auxotrophic *Aspergillus oryzae*." *Current Issues in Molecular Biology* 45(6):4778-4791 (2023). PMC10297652. doi:10.3390/cimb45060304
+    https://citations.gxl.ai/papers/PMC10297652#L54
+
+[8] Shinkawa S, Mitsuzawa S. "Feasibility study of on-site solid-state enzyme production by *Aspergillus oryzae*." *Biotechnology for Biofuels* 13:36 (2020). PMC7045521. doi:10.1186/s13068-020-1669-3
+    https://citations.gxl.ai/papers/PMC7045521#L40
+
+[9] Sun Z, Wu Y, Long S, Feng S, Jia X, Hu Y, Ma M, Liu J, Zeng B. "*Aspergillus oryzae* as a Cell Factory: Research and Applications in Industrial Production." *Journal of Fungi* 10(4):248 (2024). PMC11051239. doi:10.3390/jof10040248
+    https://citations.gxl.ai/papers/PMC11051239#L28
+
+[10] Rendsvig JKH, Workman CT, Hoof JB. "Bidirectional histone-gene promoters in *Aspergillus*: characterization and application for multi-gene expression." *Fungal Biology and Biotechnology* 6:24 (2019). PMC6900853. doi:10.1186/s40694-019-0088-3
+    https://citations.gxl.ai/papers/PMC6900853#L7
 
 ---
 
