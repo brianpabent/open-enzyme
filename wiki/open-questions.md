@@ -252,6 +252,19 @@ The [Engineered LBP Chassis](./engineered-lbp-chassis.md) page (committed 2026-0
 
 Phase 3 (content-triggered, not calendar-triggered): platform-framing reflection — does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Reflection note queued in [`open-enzyme-vision.md`](./open-enzyme-vision.md).
 
+### TCM × Modern Rigor — discovery-engine output (fourth peer-track exploration vector)
+
+The [TCM × Modern Rigor scope page](./tcm-modern-rigor-intersection.md) (committed 2026-05-05) formalizes traditional Chinese medicine materia medica as a **discovery-engine output** — applying a six-rule methodology lens (chokepoint mapping, ChEMBL cross-check, bioavailability-honest framing, formula decomposition, standardized-extract specification, falsification-card discipline) to TCM compounds with documented gout/hyperuricemia indications. Sister to the [LBP chassis](./engineered-lbp-chassis.md) and [siRNA/URAT1](./sirna-urat1-modality.md) peer tracks. Six in silico Phase 2 follow-ups queued — none requires pharma-partner involvement to start:
+
+- **P2-1 — Lit scan: classical TCM gout formulas + modern Chinese clinical evidence.** Si Miao San family, Bai Hu Jia Gui Zhi Tang, Smilax-enhanced variations. **Global multilingual sources by default** — ChiCTR registry, CNKI/WanFang (Chinese-language papers, read in original), J-STAGE (Japanese Kampo medicine literature), PubMed (English cross-check only). Output: evidence-tier-tagged summary of which formulas have credible clinical signal vs. tradition-only. (Queued, Opus subagent.)
+- **P2-2 — comp-011: ChEMBL cross-check of the 8 candidate TCM gout compounds.** Same framework as comp-004 (supplement ABCG2 antagonism). Inputs: Smilax glabra, Rheum officinale, Plantago asiatica, Phellodendron amurense, Polygonum cuspidatum, Cinnamomum cassia, Atractylodes macrocephala, Astragalus membranaceus. Targets: NLRP3, ABCG2, URAT1, GLUT9, XO, NF-κB pathway. Output: per-compound mechanism + curated bioactivity + chokepoint hit map + IC50 vs. achievable gut-luminal concentration. (Queued, Sonnet subagent.)
+- **P2-3 — Lit scan: Smilax glabra (Tu Fu Ling 土茯苓) deep-dive.** Highest-leverage single compound — explicit primary gout herb in classical TCM with substantial modern Chinese clinical literature. XO inhibition kinetics, uricosuric mechanism, standardization issues, drug interactions, adverse effects. (Queued, Opus subagent.)
+- **P2-4 — Lit scan: Si Miao San multi-component coverage analysis.** Decompose the four-herb formula (Phellodendron, Atractylodes, Achyranthes, Coix) per "formula decomposition" discipline. Map each component to chokepoints. Identify designed-coverage vs. redundant vs. synergistic design. (Queued, Opus subagent.)
+- **P2-5 — Falsification card H04: TCM × rigor methodology lens.** Stub committed at [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md); full population queued. (Stub committed; full population queued.)
+- **P2-6 — Bioavailability characterization for top 3 compounds advancing from P2-2.** Quantitative oral bioavailability + gut-vs-systemic distribution + first-pass metabolism + microbiome metabolism. Maps to the "embrace gut-luminal mechanisms" discipline (rule #3). (Queued, Opus subagent.)
+
+Phase 3 reflection (content-triggered, not calendar-triggered): does the TCM-rigor track accumulate enough substance to elevate from "methodology lens" to "first-class discovery-engine output named in `open-enzyme-vision.md` §2.2 alongside the repurposing-surface candidates"? Trigger: after P2-1 through P2-6 land.
+
 ### siRNA against URAT1 — discovery-engine output (peer-track exploration vector to LBP)
 
 The [siRNA / URAT1 modality](./sirna-urat1-modality.md) page (committed 2026-05-05 as scope-page in response to 2026-05-05 sweep Priority Action #3) formalizes kidney-tropic siRNA against URAT1 mRNA as a **discovery-engine output** — non-fermentable, non-microbial, positioned for partner / spinout development rather than in-house manufacture. Sister to the [LBP chassis](./engineered-lbp-chassis.md) under the broader chase-every-avenue framing. Six in silico Phase 2 follow-ups queued — none requires pharma-partner involvement to start:
@@ -264,6 +277,17 @@ The [siRNA / URAT1 modality](./sirna-urat1-modality.md) page (committed 2026-05-
 - **P2-6 — Lit scan: FDA siRNA regulatory path.** Inclisiran / patisiran precedent, IND-enabling package, ballpark timeline + capital for a kidney-tropic siRNA BLA. (Queued, Opus subagent.)
 
 Phase 3 reflection (shared with LBP track and rolled into the same Strategic Reflections Queue entry in [`synthesis.md`](./synthesis.md)): does the discovery-engine track accumulate enough substance to formally rebrand Open Enzyme as "open-source gout-solving research project" rather than "open-source koji-engineered enzyme library"?
+
+### Ward 1995 §1.9 — global lab-access landscape
+
+The [Ward 1995 §1.9 Lab Access — Global Landscape](./ward-1995-lab-access-global.md) scope page (committed 2026-05-05) maps parallel options for executing [validation-experiments.md §1.9](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) across Japan, China, and Europe. Key findings:
+
+- **NSlD-ΔP10 (the ten-protease-deletion chassis required for H01 Killshot #1) is not deposited in any public culture collection.** The Maruyama lab at the University of Tokyo is the only verified source. (source: ward-1995-lab-access-global.md)
+- **Single most actionable lead:** Jun-ichi Maruyama (amarujun@mail.ecc.u-tokyo.ac.jp), University of Tokyo, origin lab for NSlD-ΔP10. Draft email included in the scope page.
+- **Parallel paths if Tokyo doesn't engage:** Jingwen Zhou / Guoqiang Zhang group at Jiangnan University (C19 chassis, multi-locus integration); Mortensen group at DTU (CRISPR-Cas9/Mad7 toolkit, strongest in Europe).
+- **Order-of-operations:** Week 0 email Maruyama + Jiangnan in parallel; Week 2 email DTU if no response; Week 4 query JCM/CGMCC for substitute strains; Week 6 reframe as paid CRO request.
+
+This is an **active-search resource**, not a static reference; expect updates as outreach lands. (source: ward-1995-lab-access-global.md)
 
 ### Community fermentation and strain stability
 

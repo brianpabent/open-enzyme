@@ -25,6 +25,8 @@ sources:
 ## Executive Summary
 
 This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by engineered *S. cerevisiae* or *A. oryzae*, ranked by:
+
+> **TCM lineage note (2026-05-05):** Several compounds in this screen have explicit TCM materia medica lineage — oridonin (*Rabdosia rubescens* / Dong Ling Cao 冬凌草), EGCG (green tea / Lu Cha 绿茶), resveratrol (*Polygonum cuspidatum* / Hu Zhang 虎杖), curcumin (turmeric / Jiang Huang 姜黄), berberine (*Coptis chinensis* / Huang Lian 黄连). The methodology for applying modern scientific rigor to these compounds — including chokepoint mapping, ChEMBL cross-check, and bioavailability-honest framing — is formalized in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md). (source: tcm-modern-rigor-intersection.md)
 1. **NLRP3 inhibition evidence strength** (clinical > animal > in vitro > mechanistic)
 2. **Microbial production feasibility** (established biosynthetic pathways, expression titers, known host organisms)
 3. **Food-safety status** (GRAS or traditional use in fermented foods)

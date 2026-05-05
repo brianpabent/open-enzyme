@@ -97,6 +97,8 @@ nav:
     - Aspergillus oryzae: aspergillus-oryzae.md
     - Engineered LBP Chassis: engineered-lbp-chassis.md
     - siRNA / URAT1 Modality: sirna-urat1-modality.md
+    - TCM × Modern Rigor (Discovery Engine): tcm-modern-rigor-intersection.md
+    - Ward 1995 Lab Access — Global Landscape: ward-1995-lab-access-global.md
 
   - Delivery & Barrier:
     - Gut-Lumen Sink: gut-lumen-sink.md
@@ -137,6 +139,7 @@ nav:
     - H01 — Ward Dual-Cassette: hypotheses/H01-ward-dual-cassette.md
     - H02 — Engineered LBP Thesis: hypotheses/H02-engineered-lbp-thesis.md
     - H03 — siRNA / URAT1 Thesis: hypotheses/H03-sirna-urat1-thesis.md
+    - H04 — TCM × Modern Rigor Methodology Lens: hypotheses/H04-tcm-rigor-intersection.md
     - Computational Experiments: computational-experiments.md
     - Uricase Protease Stability (comp-001): uricase-protease-stability-computational.md
     - Lactoferrin Protease Stability (comp-005): lactoferrin-protease-stability-computational.md

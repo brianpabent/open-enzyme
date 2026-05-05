@@ -6,6 +6,115 @@ related: ["validation-experiments.md", "open-questions.md", "logs/sweep-log.md"]
 sources: ["sweep daemon (wiki/*.md saves)", "manual sweeps", "V4 peer-review pass"]
 ---
 
+## Sweep — 2026-05-05 (DeepSeek V4-Pro synthesis + Claude review)
+
+**Synthesis log:** [`logs/v4-synthesis-2026-05-05-d6b4210.md`](../logs/v4-synthesis-2026-05-05-d6b4210.md)
+**Substrate:** Open Enzyme wiki at commit `d6b4210`
+**Diff base:** `07924b3166faa2f57365e3883f9061ebcc8275ca`
+**Trigger files:** wiki/hypotheses/H04-tcm-rigor-intersection.md,wiki/tcm-modern-rigor-intersection.md,wiki/team.md,wiki/ward-1995-lab-access-global.md
+**Synthesizer:** google/gemini-2.5-pro
+**Reviewer:** anthropic/claude-opus-4-7
+**Reviews merged:** 9
+
+---
+```markdown
+# Synthesis — 2026-05-05
+
+**Substrate:** Open Enzyme wiki at commit `d6b4210`
+**Trigger files:** `wiki/hypotheses/H04-tcm-rigor-intersection.md`, `wiki/tcm-modern-rigor-intersection.md`, `wiki/team.md`, `wiki/ward-1995-lab-access-global.md`
+**Diff base:** `07924b3166faa2f57365e3883f9061ebcc8275ca`
+**Reviewer:** `deepseek/deepseek-v4-pro`
+
+---
+
+## New Connections
+
+1. **The same computational pharmacology pipeline used for supplement ABCG2 antagonism (comp-004) and food-grade HDAC inhibitor ranking (comp-007) can be extended to TCM compounds — converting the queued comp-011 from a standalone item into a proof-of-concept for bridging global indigenous knowledge with Western quantitative pharmacology.** *Speculative*. `[CHAIN-DEPTH: 2]` `[PHASE-A-MATCH: partial]`
+
+   - *Documents Connected:* `tcm-modern-rigor-intersection.md`, `supplement-abcg2-antagonism-computational.md`, `food-grade-hdaci-screen-computational.md`, `computational-experiments.md`, `nlrp3-inhibitor-screen.md`
+   - *Page-pair linkage:* Weak. The TCM-rigor scope page mentions ChEMBL cross-check and bioavailability honesty, but does not explicitly cite the recently completed comp-004 and comp-007 computational frameworks. Conversely, the computational experiments pages do not reference potential TCM applications.
+   - *Why It Matters:* The comp-004 analysis (gut-luminal IC50 occupancy for curcumin, quercetin, EGCG) and the comp-007 analysis (potency × selectivity × gut-enrichment scoring for butyrate vs. sulforaphane) together define a reproducible in silico triage for supplement-grade compounds. The TCM-modern-rigor methodology already demands ChEMBL cross-check (rule #2) and bioavailability-honest framing (rule #3). **The concrete pipeline already exists — it just hasn't been named as a transferable tool.** Applying this pipeline to the 8 candidate TCM gout compounds (Smilax glabra, Rheum, Plantago, etc.) would directly test whether the TCM methodology produces actionable prioritization, and would establish a generalizable framework for any future compound (TCM, ayurvedic, dietary) entering the corpus. This is not "run comp-011 later" — it's "the same framework has already been validated twice, and extending it to TCM formally bridges the global-multilingual default with the platform's quantitative backbone."
+   - *Suggested Action:* Frame comp-011 as an explicit instance of the "comp-004/007 pipeline for TCM" in both `computational-experiments.md` and `tcm-modern-rigor-intersection.md`. Add a cross-reference from comp-004 and comp-007 interpretive pages to the TCM page noting the transferable methodology.
+
+   Grep tool seems broken for these patterns. I'll rely on the inlined cache content, which clearly shows both strings. Let me proceed with reviews based on the cache.
+
+Key observations from cache:
+- `tcm-modern-rigor-intersection.md` DOES explicitly reference comp-004 as partial validation and names P2-2 as "comp-011: ChEMBL cross-check... Same framework as comp-004" — so Pass 2's claim about "does not explicitly cite the recently completed comp-004 and comp-007 computational frameworks" is PARTIALLY WRONG (comp-004 is cited; comp-007 isn't).
+- The "global multilingual sources by default" IS already explicitly in `tcm-modern-rigor-intersection.md` and in `ward-1995-lab-access-global.md` (Week 0 outreach plan). So the "operationalizes the same principle" connection is real but both sides name the principle already.
+- `open-questions.md` already has a dedicated "Ward 1995 §1.9 — global lab-access landscape" subsection which references the page — so Pass 2's claim that "other peer-track scope pages ... do not yet link to it" is accurate for LBP/siRNA but open-questions DOES link it.
+- The "operational search artifact" document class framing (Item 3) is genuinely novel reframing.
+
+> **Claude review — Partial.** `[OVERLAP: EXTENSION]` The framing that comp-004/007 together constitute a transferable pipeline is a reasonable reframe, but Pass 2's page-pair linkage claim is partly wrong: `tcm-modern-rigor-intersection.md` **does** explicitly cite comp-004 twice (once in §"Bioavailability honesty" — "This is the same discipline as comp-004" — and again in the Cross-References). The P2-2 entry also already says "comp-011: ChEMBL cross-check… Same framework as comp-004". What's genuinely missing is the comp-007 linkage (HDAC scoring transferability) and the *generalization* of the dual framework into a named transferable tool. Tighten the Suggested Action to: "add comp-007 cross-reference to TCM page and name the comp-004+comp-007 composite as a reusable pipeline" — not "frame comp-011 as an instance," since comp-011 is *already* framed that way in `computational-experiments.md` Planned Analyses ("Same IC50 occupancy framework as comp-004").
+
+2. **The global lab-access strategy for the Ward 1995 dual-cassette experiment (active multilingual outreach to Japan, China, and Europe) operationalizes the same principle mandated by the TCM-modern-rigor methodology: proactively accessing non-English scientific communities to overcome Western-research bias.** *Supported.* `[CHAIN-DEPTH: 2]` `[PHASE-A-MATCH: no]`
+
+   - *Documents Connected:* `ward-1995-lab-access-global.md`, `tcm-modern-rigor-intersection.md`, `team.md`, `open-source-platform.md`
+   - *Page-pair linkage:* None existent. The lab-access page is new (committed this sweep) and connects to validation-experiments, team, and koji pages — but not to TCM-modern-rigor or the global-multilingual principle.
+   - *Why It Matters:* This is not merely a superficial "both involve international search" observation. The TCM methodology formally requires that "Open Enzyme should ingest global multilingual sources by default" (CLAUDE.md §Global-multilingual research). The lab-access page executes this at the operational level: it maps specific Japanese academic groups, Chinese research clusters (Jiangnan, South China Univ of Tech), European fungal engineering centers, and Japanese/Chinese strain repositories — all with explicit contact strategies. The structural parallel is that both efforts treat language as a non-barrier and proactively identify non-English-world resources as first-class assets rather than secondary fallbacks. This pattern suggests a broader platform principle: **any future track that requires specialized biological materials (e.g., an engineered LBP chassis from NextBiotix, a kidney-tropic siRNA conjugate from a Japanese pharmaceutical pipeline) should follow the same methodology — map the global landscape, identify the origin lab or repository, and pursue direct multilingual outreach as the default.**
+   - *Suggested Action:* Add a brief note to `tcm-modern-rigor-intersection.md` under Limitations or Open Follow-Ups ("the lab-access strategy for the koji dual-cassette experiment independently validates that multilingual proactive outreach is feasible and productive; future TCM-compound sourcing (e.g., Smilax glabra standardized extracts from Chinese suppliers, Si Miao San Chinese RCT contact with original authors) can follow the same operational template"). Likewise, add a cross-reference from `ward-1995-lab-access-global.md` to `tcm-modern-rigor-intersection.md` noting the methodological connection.
+
+   > **Claude review — Confirmed.** `[OVERLAP: EXTENSION]` The structural parallel is real and non-trivial. Both `tcm-modern-rigor-intersection.md` (P2-1: "Global multilingual sources by default — ChiCTR, CNKI/WanFang, J-STAGE") and `ward-1995-lab-access-global.md` (Japan/China/Europe parallel pursuit, Maruyama-primary) independently invoke the same multilingual-proactive principle; neither page currently cross-references the other for *that methodological reason*. The H04 stub even names "Global multilingual research" as the gating assumption. The Suggested Action is the right minimal move. One refinement: `CLAUDE.md` is cited in H04 as the canonical site of the "global-multilingual-search default rule" — if the principle is going to be promoted to a reusable platform asset, the canonical statement should live there (or in `open-source-platform.md` §Platform Principles) rather than as cross-references between two scope pages.
+
+3. **The `ward-1995-lab-access-global.md` page, together with the `team.md` subsection, establishes a new wiki document class — "active operational search artifacts" — that tracks competitive parallel pursuit of external resources with a pre-defined decision tree and order-of-operations, distinct from static reference pages or experiment protocols.** *Supported.* `[REFRAME]` `[PHASE-A-MATCH: partial]`
+
+   - *Documents Connected:* `ward-1995-lab-access-global.md`, `team.md`, `engineered-lbp-chassis.md`, `sirna-urat1-modality.md`, `open-questions.md`
+   - *Page-pair linkage:* The lab-access page is cross-referenced from team.md only; the other peer-track scope pages (LBP, siRNA) and open-questions.md do not yet link to it or to each other in a similar operationally-active pattern.
+   - *Why It Matters:* Most wiki pages are either (a) compound/concept dossiers (uricase, NLRP3, EGCG), (b) experimental protocols with static cost/timeline estimates (validation-experiments.md), or (c) strategic scope pages (LBP chassis, siRNA modality). The lab-access page introduces a fourth class: **an active-search resource with a decision tree, parallel paths, and a "single most actionable lead" plus draft email**. This recognizes that some platform bottlenecks are not scientific questions but resource-acquisition tasks — obtaining a specific strain, accessing a specific collaborator, licensing a specific technology. The pattern is: name the bottleneck, map the global landscape (Japan, China, Europe), identify the single highest-leverage contact (Maruyama), provide a draft outreach, and specify a fallback order-of-operations if primary leads fail. This template can and should be reused for other tracks: an engineered LBP chassis might need a specific *F. prausnitzii* engineering toolkit from NextBiotix or a Sonnenburg lab strain; a siRNA/URAT1 development might need a megalin-binding conjugate chemistry partner from Alnylam or Arrowhead. Creating an "operational search artifact" for those tracks as they mature would accelerate platform progress without requiring dedicated hiring.
+   - *Suggested Action:* Add a note to `open-questions.md` under the Engineered LBP and siRNA sections linking to `ward-1995-lab-access-global.md` as a template for future resource-acquisition tracks. In the Strategic Reflections Queue, note that when any peer track approaches a resource-acquisition bottleneck (e.g., comp-008 identifies a need for a specific strain), the first action should be creating an analogous operational search page following this template.
+
+   > **Claude review — Confirmed, prioritize.** `[OVERLAP: NOVEL]` This is the strongest finding in the sweep. Pass 2 correctly identifies that `ward-1995-lab-access-global.md` introduces a document class the wiki does not currently name: active-search resource with decision tree, parallel paths, single most-actionable lead, and draft outreach email. The existing taxonomy (compound dossiers, experiment protocols, scope pages, hypothesis cards) does not have a slot for "operational bottleneck map with competitive parallel pursuit." The LBP and siRNA scope pages both have sections that *would* benefit from this treatment — e.g., `engineered-lbp-chassis.md` flags "recruiting collaborators with anaerobic-bacterium genetic engineering experience (Sonnenburg-lab alumni, Synlogic alumni, NextBiotix alumni)" but doesn't map specific contacts or draft outreach; `sirna-urat1-modality.md` names Alnylam/Arrowhead/Dicerna but again without the operational layer. Elevate this to Priority Action and consider naming the class formally in `open-source-platform.md` or a new meta-page. Minor correction: `open-questions.md` already has a "Ward 1995 §1.9 — global lab-access landscape" subsection linking the page, so the claim "open-questions.md does not yet link to it" is not quite right — but the *template reuse* framing is still novel.
+
+## Contradictions Found
+
+None identified among the trigger files that surface a genuine conflict with existing corpus content.
+
+> **Claude review — Confirmed.** `[OVERLAP: RESTATEMENT]` Trigger files are a pair of scope pages (TCM + lab-access-global) and a team.md addendum. No genuine contradictions with existing corpus are expected from additive scope-page commits — this is the correct drift-guard no-op. Worth noting the H04 stub does carry latent tension with `chembl-cross-check.md` (natural-product curation sparseness) and with the "alternative-medicine-washing" failure mode from `linter-design.md` — but both are acknowledged as anticipated assumption-stack failure points within H04 itself, not unresolved contradictions.
+
+## Proposed Experiments (ranked by insight per cost)
+
+No new wet-lab experiments surfaced by this sweep that are not already queued or superseded by the connections above.
+
+> **Claude review — Confirmed.** `[OVERLAP: RESTATEMENT]` The TCM scope page's six Phase 2 follow-ups (P2-1 through P2-6) already cover lit scans, comp-011, Smilax deep-dive, Si Miao San decomposition, H04 card, and bioavailability characterization — all queued, tracked in `open-questions.md`. The Ward 1995 lab-access page is an operational artifact, not a proposed experiment. Correctly flagged as no-net-new. Team.md additions are recruiting-layer, not experimental. No gap here.
+
+## Open Questions
+
+None.
+
+> **Claude review — Partial.** `[OVERLAP: EXTENSION]` Pass 2 says "None" but the trigger files do surface legitimate open questions that aren't currently in `open-questions.md`: (a) whether the comp-004/007 composite pipeline generalizes across TCM / ayurvedic / dietary compound classes (raised by Item 1); (b) whether the "operational search artifact" document class should be formally named and templated (Item 3). Both are meta-methodology questions rather than scientific unknowns, which may be why Pass 2 suppressed them. The `open-questions.md` file has a "Platform / Strategic" section that would accommodate both. Not a blocker — but "None" under-reports.
+
+## Priority Actions
+
+1. **Cross-link the comp-004/comp-007 frameworks to the TCM-modern-rigor page** — elevate comp-011 from an isolated task to the first application of a validated platform pipeline, and make the transferability explicit.
+
+   > **Claude review — Confirmed.** `[OVERLAP: EXTENSION]` Priority Action is correctly derived from Item 1. Suggested phrasing tightening (consistent with Item 1 review): name the composite comp-004+comp-007 pipeline explicitly (IC50-occupancy + potency×selectivity×gut-enrichment scoring) and cross-reference *both* frameworks from the TCM page, not just one. comp-004 is already linked; comp-007 is the actual gap.
+
+2. **Cross-reference `ward-1995-lab-access-global.md` and `tcm-modern-rigor-intersection.md`** to establish the global-multilingual proactive-outreach principle as a reusable platform asset, not a one-off task.
+
+   > **Claude review — Confirmed.** `[OVERLAP: EXTENSION]` Reasonable Priority Action derivative of Item 2. The "global-multilingual proactive-outreach" framing as a reusable platform asset is the right abstraction. Suggestion: if this is promoted to a platform principle, the canonical statement should live in `CLAUDE.md` (already cited by H04 as the source of the rule) or `open-source-platform.md` §Platform Principles (currently lists 6 principles; this would be a natural 7th), not just as cross-references between two scope pages. That way the LBP and siRNA tracks inherit it by default rather than having to be cross-referenced individually.
+
+3. **Recognize the "operational search artifact" document class** and flag it for future reuse across peer-track scope pages (LBP, siRNA) in `open-questions.md`.
+
+   > **Claude review — Confirmed, prioritize.** `[OVERLAP: NOVEL]` This is the highest-leverage Priority Action in the sweep. Naming the "operational search artifact" document class formally — with a template (bottleneck statement → global landscape map → parallel-path decision tree → single most-actionable lead → draft outreach → order-of-operations fallback) — would let future peer-track scope pages instantiate the pattern rather than rediscover it. Concrete candidates already identifiable: LBP chassis needs a NextBiotix/Synlogic/Sonnenburg-lab outreach artifact (already flagged as a recruiting gap in `engineered-lbp-chassis.md` Limitations); siRNA/URAT1 needs an Alnylam/Arrowhead partnership-scoping artifact. Recommend: create a short template page (e.g., `wiki/operational-search-template.md`) and link it from `open-source-platform.md` so it's discoverable at the platform level, not buried in `open-questions.md`.
+
+---
+
+Sources cited:
+- wiki/tcm-modern-rigor-intersection.md
+- wiki/supplement-abcg2-antagonism-computational.md
+- wiki/food-grade-hdaci-screen-computational.md
+- wiki/computational-experiments.md
+- wiki/nlrp3-inhibitor-screen.md
+- wiki/ward-1995-lab-access-global.md
+- wiki/team.md
+- wiki/open-source-platform.md
+- wiki/engineered-lbp-chassis.md
+- wiki/sirna-urat1-modality.md
+- wiki/open-questions.md
+```
+
+---
+
+
 ## Sweep — 2026-05-05 commit `487fad3` (DeepSeek V4-Pro synthesis; Pass 3 prepend bug)
 
 **Synthesis log:** [`logs/v4-synthesis-2026-05-05-487fad3.md`](../logs/v4-synthesis-2026-05-05-487fad3.md) — substantive Pass 2 output (4 Connections, 1 Contradiction, 3 Proposed Experiments, 3 Open Questions, 2 Priority Actions, all with new `[CHAIN-DEPTH: N]` and `[PHASE-A-MATCH: yes/no/partial]` self-tags per the 2026-05-05 prompt enhancement).

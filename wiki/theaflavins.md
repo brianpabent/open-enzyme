@@ -123,6 +123,12 @@ For Open Enzyme, this means theaflavins are best treated as a **sibling Tier 2�
 
 ---
 
+## TCM Lineage
+
+Theaflavins derive from black tea (Hong Cha 红茶), which has a long history of use in TCM-adjacent medicinal traditions. The broader methodology for applying modern scientific rigor to TCM-lineage compounds — including chokepoint mapping, ChEMBL cross-check, and bioavailability-honest framing — is formalized in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md). Theaflavins are listed there as a TCM-adjacent compound in the existing wiki corpus. (source: tcm-modern-rigor-intersection.md)
+
+---
+
 ## Related
 
 - [EGCG](./egcg.md) — sibling green-tea polyphenol; theaflavins are EGCG/ECG oxidation products with distinct binding profile.
