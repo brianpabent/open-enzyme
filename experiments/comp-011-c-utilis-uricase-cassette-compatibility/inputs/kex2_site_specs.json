@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "description": "KEX2 endoprotease cleavage rules for the Ward 1995 glucoamylase-KEX2-payload fusion architecture. Validated in A. oryzae by Huynh et al. 2020 (PMC7257131) for adalimumab heavy+light chain dual-cassette.",
+    "enzyme": "Kex2p-family endoprotease (furin-like subtilisin, calcium-dependent serine protease). A. oryzae encodes a KEX2 ortholog (gene: kexB; AO090701000432); the Huynh 2020 KRGGG linker was cleaved by this endogenous enzyme.",
+    "sources": [
+      "Bathurst IC et al. Science 1987;235:348-50 — KEX2 cleavage rule KR|X (PMID 3099383)",
+      "Rockwell NC, Krysan DJ, Komiyama T, Fuller RS. Chem Rev 2002;102(12):4525-48 — P1' preferences comprehensive review (PMID 12475198)",
+      "Brenner C, Fuller RS. Proc Natl Acad Sci 1992;89:922-6 — P1' restrictions: D/E abolished; P reduced; preferred small/uncharged (PMID 1371243)",
+      "Huynh HH et al. Fungal Biol Biotechnol 2020;7:7 — KRGGG linker geometry validated in A. oryzae dual-cassette (PMC7257131)",
+      "Ward PP et al. Biotechnology (N Y) 1995;13:498-503 — original glucoamylase-KR-hLf architecture (PMID 9634791)"
+    ],
+    "fetch_date": "2026-05-05"
+  },
+  "cleavage_rule": {
+    "canonical_sequence": "K-R↓X",
+    "p2": "K (Lys) strongly preferred; R (Arg) tolerated at P2",
+    "p1": "R (Arg) required at P1",
+    "cleavage_occurs_after": "P1 (R)",
+    "p1_prime_preferences": {
+      "preferred": ["A", "G", "S", "T", "V", "L", "I", "M", "N", "Q", "H", "F", "Y", "W"],
+      "reduced_efficiency": ["K", "R", "P", "C"],
+      "abolished_or_poor": ["D", "E"],
+      "notes": "P1'=P (Pro) dramatically reduces cleavage rate (rigid backbone constrains Kex2 active site). P1'=D or E (acidic) abolishes cleavage in the canonical active site geometry. P1'=K or R (basic) reduces efficiency but does not abolish. Gly (G) is the best-characterized compatible small residue — hence KRGGG linker."
+    }
+  },
+  "huynh_2020_validated_linker": {
+    "sequence": "KRGGG",
+    "cleavage_site": "KR↓GGG",
+    "p1_prime": "G (Gly) — optimal small neutral residue",
+    "additional_gly_rationale": "GGG spacer provides conformational flexibility between glucoamylase C-terminus and payload N-terminus; allows Kex2 active site to access the KR dipeptide without steric clash from folded payload domain. Three Gly residues chosen empirically in Ward 1995; validated by Huynh 2020 for two simultaneous cassettes.",
+    "context": "AmyB signal peptide — glucoamylase propeptide — glucoamylase catalytic domain — KRGGG — [payload] — TamyB terminator"
+  },
+  "internal_kr_site_risk": {
+    "description": "Internal K-R dipeptides within the payload sequence (downstream of the KEX2 linker) will be recognized and cleaved by endogenous Kex2p, producing truncated proteins. This is the primary Ward-architecture failure mode for new payloads.",
+    "risk_categories": {
+      "low": "0 internal K-R dipeptides in mature payload sequence",
+      "moderate": "1-2 internal K-R dipeptides; may produce minor truncation bands visible on SDS-PAGE",
+      "high": "3+ internal K-R dipeptides, or any K-R in an exposed flexible loop (high cleavage probability)"
+    },
+    "p1_prime_modifier": "For each internal K-R site, check the P1' residue. If P1'=D or E: near-zero cleavage risk (site is non-functional). If P1'=P: low risk. If P1'=G/A/S: high risk (site is likely cleaved). Adjust risk downward for sites buried in well-folded domains (pLDDT > 80 at P1 and flanking residues)."
+  },
+  "alternative_linkers": {
+    "description": "If internal K-R sites in a payload are problematic, alternative linker sequences reduce recognition ambiguity while preserving cleavage at the designed site.",
+    "options": [
+      {
+        "linker": "LVPR↓GS",
+        "notes": "Thrombin recognition site; not native to Kex2p; requires exogenous protease. Not compatible with in vivo Kex2p-based processing."
+      },
+      {
+        "linker": "KRGGGGG",
+        "notes": "Extended Gly linker — adds conformational flexibility but same recognition dipeptide. No published evidence of improved specificity over KRGGG."
+      },
+      {
+        "linker": "RRGGG",
+        "notes": "P2=R reduces Kex2 efficiency ~2-3x relative to P2=K. Useful if internal K-R sites dominate and K-containing linkers worsen off-target cleavage."
+      }
+    ]
+  }
+}

@@ -74,6 +74,18 @@ See [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.m
 
 This section is an addition, not a retraction, of the #1 *A. flavus* ranking. The ranking stands for the *S. cerevisiae* intracellular track. For the oral track, the choice should be made empirically by head-to-head expression comparison rather than by inheriting the rasburicase default.
 
+### Cassette Compatibility — comp-011 Update (2026-05-05)
+
+[comp-011](../experiments/comp-011-c-utilis-uricase-cassette-compatibility/) ran the same seven-analysis cassette-design pipeline as [comp-010](../experiments/comp-010-cassette-compatibility/) (*A. flavus*) on the *C. utilis* (P78609) + lactoferrin (P02788) pair in the Ward 1995 / *A. oryzae* architecture. Results: **MODERATE cassette-design risk** (vs. comp-010 *A. flavus* = LOW). The MODERATE verdict is design-driven, not a fundamental incompatibility — three manageable differences vs. *A. flavus*:
+
+1. **Codon burden: HEAVY** — *C. utilis* is AT-biased (GC~42%) in a GC-biased host (*A. oryzae* ~54%); CAI proxy 0.65 vs. 1.51 for *A. flavus*. Full gene synthesis with *A. oryzae* codon optimization is mandatory for *C. utilis* (same requirement as lactoferrin). *A. flavus* required minimal optimization due to shared GC preference.
+
+2. **4 free cysteines** (positions 39, 168, 250, 293; 0 disulfide bonds annotated) vs. 0 cysteines in *A. flavus*. Free thiols in the oxidizing *A. oryzae* ER lumen during secretion transit can form aberrant intermolecular disulfides, risking aggregation. Mitigation: non-reducing SDS-PAGE QC on secreted fractions; Cys→Ser mutagenesis of surface-exposed positions if aggregation is detected.
+
+3. **2 internal KR sites** (positions 130 and 138, both HIGH by KEX2 P1' scoring) vs. 1 in *A. flavus* (position 128 HIGH). Non-load-bearing in the direct-secretion cassette design — KEX2 does not encounter the payload. If *C. utilis* uricase is ever moved to a glucoamylase-KEX2 fusion, double KR→KQ mutation at positions 130 and 138 is required.
+
+**Platform recommendation implied by comp-010 + comp-011:** Order both *A. flavus* (Q00511, codon-optimized) and *C. utilis* (P78609, codon-optimized + ALLN-346 mutations from US10815461B2) as direct-secretion cassettes for §1.9 solid-state koji. Running them in parallel resolves the variant selection decision empirically at $0 additional fermentation cost. See [c-utilis-uricase-cassette-compatibility-computational.md](./c-utilis-uricase-cassette-compatibility-computational.md) for the full interpretive analysis. *(Mechanistic Extrapolation — in silico only; 2026-05-05)*
+
 ---
 
 ## Detailed Variant Analysis

@@ -1,0 +1,310 @@
+{
+  "experiment": "comp-011",
+  "title": "Cassette Compatibility \u2014 C. utilis Uricase (P78609) + Lactoferrin (P02788) in A. oryzae (Ward 1995 Architecture)",
+  "date": "2026-05-05",
+  "uricase_accession": "P78609",
+  "lactoferrin_accession": "P02788",
+  "uricase": {
+    "codon": {
+      "protein_name": "C. utilis uricase (P78609)",
+      "origin": "Cyberlindnera jadinii (yeast, AT-biased)",
+      "sequence_length": 303,
+      "codons_analyzed": 303,
+      "rare_codons_count": 0,
+      "fraction_rare": 0.0,
+      "cai_proxy": 0.6525,
+      "burden_label": "HEAVY",
+      "burden_note": "Full codon optimization required: CAI proxy (0.6525) indicates systematic codon mismatch between origin organism and A. oryzae host \u2014 all preferred codons are in the disfavored-but-not-rare range (RSCU 0.40\u20130.80). This is characteristic of an AT-biased yeast origin in a GC-biased filamentous fungus host. Full gene synthesis with A. oryzae codon optimization is required. Compare: A. flavus CAI proxy ~1.50 (near-matching host); C. utilis CAI proxy 0.6525 (systematic mismatch).",
+      "hotspots_count": 0,
+      "hotspots": [],
+      "method_note": "Amino-acid-level CAI proxy: for each residue, the origin-organism's preferred codon is looked up in A. oryzae RSCU table. Rare = RSCU < 0.4. Hotspot = 3+ consecutive rare residues. This overestimates burden (worst-case): actual CDS may use better-tolerated synonymous codons. For C. utilis uricase (C. utilis origin), C. utilis preferred codons (AT-biased, GC ~ 42%) are used as reference \u2014 these differ substantially from A. oryzae preferences (GC-biased, ~54%). For lactoferrin (human origin), human preferred codons are used. Evidence level: Mechanistic Extrapolation."
+    },
+    "kex2": {
+      "protein_name": "C. utilis uricase (P78609)",
+      "signal_peptide_end": 0,
+      "mature_sequence_length": 303,
+      "total_kr_sites_in_mature": 2,
+      "high_risk_sites_count": 2,
+      "moderate_risk_sites_count": 0,
+      "low_risk_sites_count": 0,
+      "overall_kex2_risk": "HIGH",
+      "kex2_note": "2 high-risk site(s) \u2014 truncated protein species predicted; linker redesign or site mutation recommended",
+      "internal_kr_sites": [
+        {
+          "position_in_mature": 130,
+          "position_in_full": 130,
+          "p1": "K",
+          "p1_plus1": "R",
+          "p1_prime": "I",
+          "site_risk": "HIGH",
+          "site_note": "P1'=I \u2014 KEX2 cleavage likely; site is functional",
+          "context": "GGEKRITDL"
+        },
+        {
+          "position_in_mature": 138,
+          "position_in_full": 138,
+          "p1": "K",
+          "p1_plus1": "R",
+          "p1_prime": "S",
+          "site_risk": "HIGH",
+          "site_note": "P1'=S \u2014 KEX2 cleavage likely; site is functional",
+          "context": "LYYKRSGDY"
+        }
+      ],
+      "method_note": "KEX2 canonical recognition KR|X. P1' classification per Rockwell et al. 2002 (PMID 12475198) and Brenner & Fuller 1992 (PMID 1371243). P1'=D/E: abolished. P1'=P/K/R: reduced. All other residues: preferred or neutral. Analysis uses mature protein (post-signal-peptide). Structural accessibility not modeled here \u2014 buried KR sites in high-pLDDT regions have lower cleavage probability; this analysis is a conservative upper bound. Evidence level: Mechanistic Extrapolation (A. oryzae kexB P1' rules inferred from S. cerevisiae Kex2p homology)."
+    },
+    "routing": {
+      "protein_name": "C. utilis uricase (P78609)",
+      "signal_peptide_end": 0,
+      "issues_found": [
+        {
+          "type": "PTS1_peroxisomal",
+          "motif": "TKL",
+          "position": "C-terminal tripeptide",
+          "risk": "MODERATE",
+          "note": "C-terminal TKL is annotated by UniProt as a microbody targeting signal (residues 301\u2013303 of full sequence). TKL is a weak PTS1 variant (non-canonical T at position -3). In the native C. utilis context this signal routes the protein to peroxisomes. In an A. oryzae expression context with an N-terminal secretion signal (amyB SP), the ER-targeting signal should outcompete the weak C-terminal PTS1. However: if expressed without a secretion signal (e.g., intracellular), TKL may route the protein to peroxisomes rather than cytoplasm. Verify that the secretion signal is intact in the final construct. In vivo immunofluorescence recommended if unexpected localization is observed.",
+          "uniprot_annotation": "Microbody targeting signal annotated at residues 301-303 (TKL) in UniProt P78609"
+        }
+      ],
+      "routing_risk": "MODERATE",
+      "routing_summary": "Moderate-risk routing signal(s) detected \u2014 verify in vivo",
+      "method_note": "Scans for: ER-retention C-terminal tetrapeptides (KDEL/HDEL family, canonical fungal signal); peroxisomal PTS1 C-terminal tripeptides (SKL family + TKL UniProt-annotated variant); PTS2 N-terminal motifs. Interior motifs flagged for awareness but scored LOW. Fungal A. oryzae uses HDEL as the primary ER-retention signal. C. utilis uricase has UniProt-annotated TKL microbody targeting signal (residues 301-303). Evidence level: Mechanistic Extrapolation (signal motifs from consensus databases; functional confirmation requires in vivo immunofluorescence or ELISA fractionation)."
+    },
+    "disulfide": {
+      "protein_name": "C. utilis uricase (P78609)",
+      "origin": "Cyberlindnera jadinii (yeast)",
+      "total_cysteine_count": 4,
+      "known_disulfide_bonds": 0,
+      "free_cysteine_estimate": 4,
+      "huynh_2020_baseline": 16,
+      "folding_load_index": 0.0,
+      "folding_load_description": "0.00x Huynh 2020 adalimumab baseline",
+      "fold_risk": "VERY LOW",
+      "fold_note": "No disulfide bonds annotated (UniProt) \u2014 no PDI load from disulfide formation. However, 4 free cysteine(s) present: risk of aberrant intermolecular disulfide formation in the oxidizing ER environment during secretion. Monitor for aggregation bands in non-reducing SDS-PAGE. A. oryzae ER is oxidizing (PDI/ERO1 system active); free cysteines in secreted proteins can form unintended disulfide bonds during transit. Folding is otherwise independent of the PDI oxidative pathway.",
+      "method_note": "Cysteine count from sequence. Known disulfide bond count from UniProt annotation. Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). A. oryzae NSlD-\u0394P10 demonstrated capacity for the Huynh 2020 baseline \u2014 whether higher disulfide loads saturate ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here. For C. utilis uricase: 4 Cys, 0 disulfides annotated. Free cysteines in the oxidizing ER lumen pose a theoretical aggregation risk during secretion transit. Evidence level: Mechanistic Extrapolation."
+    },
+    "glycosylation": {
+      "protein_name": "C. utilis uricase (P78609)",
+      "signal_peptide_end": 0,
+      "predicted_nxst_count": 1,
+      "predicted_nxst_sites": [
+        {
+          "position_full": 54,
+          "position_mature": 54,
+          "sequon": "NSS",
+          "x_residue": "S",
+          "st_residue": "S"
+        }
+      ],
+      "method_note": "N-X-S/T sequon scan where X != P (standard N-glycosylation recognition rule). Not all sequons are glycosylated \u2014 occupancy depends on local structure, N-glycosyltransferase accessibility, and glycoprotein processing. This scan gives an upper bound on potential glycosylation sites. For C. utilis uricase (P78609): no N-glycosylation annotated in UniProt (consistent with intracellular/peroxisomal localization in native context). However, if expressed via the secretory pathway in A. oryzae, any N-X-S/T sequon accessible to OST (oligosaccharyltransferase) in the ER lumen may become glycosylated. Evidence level: Mechanistic Extrapolation."
+    }
+  },
+  "lactoferrin": {
+    "codon": {
+      "protein_name": "Lactoferrin (P02788)",
+      "origin": "Homo sapiens (mammalian)",
+      "sequence_length": 710,
+      "codons_analyzed": 710,
+      "rare_codons_count": 0,
+      "fraction_rare": 0.0,
+      "cai_proxy": 1.4463,
+      "burden_label": "LOW",
+      "burden_note": "Minimal codon optimization needed; origin-preferred codons largely overlap A. oryzae preferences",
+      "hotspots_count": 0,
+      "hotspots": [],
+      "method_note": "Amino-acid-level CAI proxy: for each residue, the origin-organism's preferred codon is looked up in A. oryzae RSCU table. Rare = RSCU < 0.4. Hotspot = 3+ consecutive rare residues. This overestimates burden (worst-case): actual CDS may use better-tolerated synonymous codons. For C. utilis uricase (C. utilis origin), C. utilis preferred codons (AT-biased, GC ~ 42%) are used as reference \u2014 these differ substantially from A. oryzae preferences (GC-biased, ~54%). For lactoferrin (human origin), human preferred codons are used. Evidence level: Mechanistic Extrapolation."
+    },
+    "kex2": {
+      "protein_name": "Lactoferrin (P02788)",
+      "signal_peptide_end": 19,
+      "mature_sequence_length": 691,
+      "total_kr_sites_in_mature": 2,
+      "high_risk_sites_count": 0,
+      "moderate_risk_sites_count": 1,
+      "low_risk_sites_count": 1,
+      "overall_kex2_risk": "MODERATE",
+      "kex2_note": "1 moderate-risk site(s) \u2014 may produce minor truncation bands; verify by SDS-PAGE",
+      "internal_kr_sites": [
+        {
+          "position_in_mature": 38,
+          "position_in_full": 57,
+          "p1": "K",
+          "p1_plus1": "R",
+          "p1_prime": "D",
+          "site_risk": "LOW",
+          "site_note": "P1'=D (acidic \u2014 KEX2 cleavage abolished; this site is non-functional)",
+          "context": "SCIKRDSPI"
+        },
+        {
+          "position_in_mature": 579,
+          "position_in_full": 598,
+          "p1": "K",
+          "p1_plus1": "R",
+          "p1_prime": "K",
+          "site_risk": "MODERATE",
+          "site_note": "P1'=K \u2014 KEX2 cleavage reduced but possible",
+          "context": "LDGKRKPVT"
+        }
+      ],
+      "method_note": "KEX2 canonical recognition KR|X. P1' classification per Rockwell et al. 2002 (PMID 12475198) and Brenner & Fuller 1992 (PMID 1371243). P1'=D/E: abolished. P1'=P/K/R: reduced. All other residues: preferred or neutral. Analysis uses mature protein (post-signal-peptide). Structural accessibility not modeled here \u2014 buried KR sites in high-pLDDT regions have lower cleavage probability; this analysis is a conservative upper bound. Evidence level: Mechanistic Extrapolation (A. oryzae kexB P1' rules inferred from S. cerevisiae Kex2p homology)."
+    },
+    "routing": {
+      "protein_name": "Lactoferrin (P02788)",
+      "signal_peptide_end": 19,
+      "issues_found": [],
+      "routing_risk": "LOW",
+      "routing_summary": "No ER-retention, PTS1, or PTS2 signals detected in mature protein sequence",
+      "method_note": "Scans for: ER-retention C-terminal tetrapeptides (KDEL/HDEL family, canonical fungal signal); peroxisomal PTS1 C-terminal tripeptides (SKL family + TKL UniProt-annotated variant); PTS2 N-terminal motifs. Interior motifs flagged for awareness but scored LOW. Fungal A. oryzae uses HDEL as the primary ER-retention signal. C. utilis uricase has UniProt-annotated TKL microbody targeting signal (residues 301-303). Evidence level: Mechanistic Extrapolation (signal motifs from consensus databases; functional confirmation requires in vivo immunofluorescence or ELISA fractionation)."
+    },
+    "disulfide": {
+      "protein_name": "Lactoferrin (P02788)",
+      "origin": "Homo sapiens (mammalian)",
+      "total_cysteine_count": 33,
+      "known_disulfide_bonds": 17,
+      "free_cysteine_estimate": 0,
+      "huynh_2020_baseline": 16,
+      "folding_load_index": 1.062,
+      "folding_load_description": "1.06x Huynh 2020 adalimumab baseline",
+      "fold_risk": "MODERATE",
+      "fold_note": "17 disulfides \u2014 comparable to Huynh 2020 adalimumab baseline (16 disulfides)",
+      "method_note": "Cysteine count from sequence. Known disulfide bond count from UniProt annotation. Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). A. oryzae NSlD-\u0394P10 demonstrated capacity for the Huynh 2020 baseline \u2014 whether higher disulfide loads saturate ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here. For C. utilis uricase: 4 Cys, 0 disulfides annotated. Free cysteines in the oxidizing ER lumen pose a theoretical aggregation risk during secretion transit. Evidence level: Mechanistic Extrapolation."
+    },
+    "glycosylation": {
+      "protein_name": "Lactoferrin (P02788)",
+      "signal_peptide_end": 19,
+      "predicted_nxst_count": 3,
+      "predicted_nxst_sites": [
+        {
+          "position_full": 156,
+          "position_mature": 137,
+          "sequon": "NWT",
+          "x_residue": "W",
+          "st_residue": "T"
+        },
+        {
+          "position_full": 497,
+          "position_mature": 478,
+          "sequon": "NQT",
+          "x_residue": "Q",
+          "st_residue": "T"
+        },
+        {
+          "position_full": 642,
+          "position_mature": 623,
+          "sequon": "NGS",
+          "x_residue": "G",
+          "st_residue": "S"
+        }
+      ],
+      "method_note": "N-X-S/T sequon scan where X != P (standard N-glycosylation recognition rule). Not all sequons are glycosylated \u2014 occupancy depends on local structure, N-glycosyltransferase accessibility, and glycoprotein processing. This scan gives an upper bound on potential glycosylation sites. For C. utilis uricase (P78609): no N-glycosylation annotated in UniProt (consistent with intracellular/peroxisomal localization in native context). However, if expressed via the secretory pathway in A. oryzae, any N-X-S/T sequon accessible to OST (oligosaccharyltransferase) in the ER lumen may become glycosylated. Evidence level: Mechanistic Extrapolation."
+    }
+  },
+  "combined_burden": {
+    "dual_cassette_disulfide_load": 17,
+    "dual_cassette_nxst_sites": 4,
+    "dual_load_index_vs_huynh": 1.062,
+    "huynh_2020_titer_mg_L": 39.7,
+    "oe_target_lf_mg_L": 500,
+    "oe_target_uricase_mg_L": 100,
+    "lf_titer_gap_vs_huynh": "12.6x above Huynh 2020",
+    "concurrent_risk_flags": [
+      "C. utilis uricase codon burden is HEAVY \u2014 AT-biased codons are rare in A. oryzae (GC-biased host). Full gene synthesis with A. oryzae codon optimization is required. Without optimization, expected expression will be substantially reduced (estimated 2-5x titer penalty based on codon harmonization studies in Aspergillus; Mechanistic Extrapolation).",
+      "C. utilis uricase has 4 free cysteine(s): risk of aberrant disulfide formation in the oxidizing ER lumen during secretion. Monitor for aggregation bands by non-reducing SDS-PAGE. This risk is ABSENT in A. flavus uricase (0 cysteines)."
+    ],
+    "uricase_kex2_informational": "C. utilis uricase has 2 internal K-R site(s) (overall KEX2 risk: HIGH). NOT load-bearing: the proposed protocol places uricase on a direct-secretion cassette (PTEF1-amyB_SP-C_utilis_uricase-TgpdA), not a glucoamylase-KEX2 fusion. If C. utilis uricase is later moved to a fusion architecture, both sites require attention \u2014 notably position 130 (P1'=I, HIGH) and position 138 (P1'=S, HIGH). These two sites are in close proximity (8 residues apart, GEKRITD...YYKRSGD) \u2014 if uricase is ever placed in a KEX2 fusion, a KR->KQ double mutation at both sites would be required.",
+    "overall_dual_cassette_risk": "MODERATE",
+    "codon_burden_summary": {
+      "uricase": "HEAVY",
+      "lactoferrin": "LOW"
+    },
+    "kex2_risk_summary": {
+      "uricase": "HIGH",
+      "lactoferrin": "MODERATE"
+    },
+    "fold_risk_summary": {
+      "uricase": "VERY LOW",
+      "lactoferrin": "MODERATE"
+    },
+    "routing_risk_summary": {
+      "uricase": "MODERATE",
+      "lactoferrin": "LOW"
+    },
+    "glycosylation_summary": {
+      "uricase_nxst": 1,
+      "lactoferrin_nxst": 3
+    },
+    "c_utilis_vs_aflavus_material_differences": [
+      "Codon burden: HEAVY (C. utilis AT-biased, ~42% GC) vs. LOW (A. flavus GC-biased, ~54% GC, matching A. oryzae host). Full codon optimization required for C. utilis; minimal optimization for A. flavus.",
+      "KEX2 internal sites: 2 sites (positions 130 HIGH + 138 MODERATE) vs. 1 site (position 128 HIGH) in A. flavus. Both are non-load-bearing in direct-secretion design but relevant if moved to fusion.",
+      "Free cysteines: 4 Cys (0 disulfides annotated) vs. 0 Cys in A. flavus. Risk of aberrant ER disulfide bonds during secretion \u2014 absent in A. flavus.",
+      "Routing signal: TKL microbody targeting signal (UniProt-annotated, residues 301-303) vs. SKL PTS1 variant in A. flavus (residues 300-302). Both are weak PTS1 variants; both are outcompeted by N-terminal secretion signal.",
+      "Sequence origin: C. utilis is a yeast (Ascomycete, OX=4903) but has substantially different codon preference from A. oryzae (also Ascomycete but filamentous, higher GC). The A. flavus\u2013A. oryzae GC alignment is a much closer match."
+    ],
+    "method_note": "Synthesizes analyses 1-5. Overall dual-cassette risk = HIGH if any KEX2 or fold axis is blocking; MODERATE if C. utilis codon burden is HEAVY or 2+ concurrent risk flags; LOW otherwise. The MODERATE verdict for C. utilis reflects the codon burden issue as a design requirement, not a blocker \u2014 full gene synthesis with A. oryzae codon optimization resolves it. Titer gap (500 mg/L target vs. 39.7 mg/L Huynh 2020) assessed against Ward 1995 >2 g/L precedent (submerged, with strain improvement). Evidence level: Mechanistic Extrapolation."
+  },
+  "comparison": {
+    "aflavus_reference": {
+      "accession": "Q00511",
+      "origin": "A. flavus (fungal, GC-biased, ~54% GC \u2014 closely matches A. oryzae host)",
+      "cysteine_count": 0,
+      "disulfide_bonds": 0,
+      "codon_burden": "LOW",
+      "kex2_sites": 1,
+      "kex2_high_risk": 1,
+      "kex2_overall": "HIGH (position 128, P1'=N) \u2014 not load-bearing in direct-secretion",
+      "routing_risk": "MODERATE (C-terminal SKL PTS1 variant)",
+      "nxst_sites": 1,
+      "overall_cassette_risk": "LOW",
+      "note": "comp-010 result \u2014 see experiments/comp-010-cassette-compatibility/"
+    },
+    "huynh_2020_reference": {
+      "protein_pair": "Adalimumab heavy chain + light chain",
+      "disulfide_bonds_total": 16,
+      "glycosylation_sites": 2,
+      "codon_burden": "HEAVY (both mammalian)",
+      "host_strain": "NSlD-\u0394P10",
+      "architecture": "AmyB-KRGGG-HC + AmyB-KRGGG-LC",
+      "titer_mg_L": 39.7,
+      "pmid": "PMC7257131 (PMID 32514366)"
+    },
+    "oe_cutilis_pair": {
+      "accession": "P78609",
+      "origin": "C. utilis / Cyberlindnera jadinii (yeast, AT-biased, ~42% GC \u2014 diverges from A. oryzae)",
+      "cysteine_count": 4,
+      "disulfide_bonds": 0,
+      "codon_burden": "HEAVY",
+      "kex2_sites": 2,
+      "kex2_high_risk": 2,
+      "kex2_overall": "HIGH",
+      "routing_risk": "MODERATE",
+      "nxst_sites": 1,
+      "overall_cassette_risk": "MODERATE"
+    },
+    "cutilis_easier_than_aflavus": [
+      "ALLN-346 prior art: C. utilis backbone carries publicly disclosed directed-evolution improvements (US10815461B2: I180V, V190G, Y165F, E51K, Q244K, I132R, A87G) from Allena's ProteinGPS program. These mutations improve protease resistance and stability in the gut lumen \u2014 directly relevant to oral delivery. A. flavus has no equivalent publicly disclosed protease-resistance mutation panel. This advantage is in the engineering/IP domain, not the cassette-design domain, but it is a material consideration for the oral/gut-lumen track."
+    ],
+    "cutilis_harder_than_aflavus": [
+      "Codon burden: HEAVY (C. utilis, AT-biased ~42% GC) vs. LOW (A. flavus, GC-biased ~54% GC). A. flavus codon preferences closely match A. oryzae (both GC-biased filamentous ascomycetes); C. utilis codon preferences diverge substantially (yeast AT-bias). Full gene synthesis from scratch with A. oryzae codon optimization is required for C. utilis \u2014 the same requirement as for human lactoferrin. This adds cost and lead time but does not block the architecture.",
+      "KEX2 internal sites: C. utilis has 2 sites (130 HIGH, 138 HIGH) vs. A. flavus 1 site (128 HIGH). Both are non-load-bearing in the direct-secretion architecture. If either uricase variant is moved to a KEX2 fusion, C. utilis requires mutation of 2 sites vs. 1 \u2014 a modest but real additional engineering step.",
+      "Free cysteines: C. utilis has 4 Cys (0 disulfides) vs. A. flavus 0 Cys. The 4 free cysteines in C. utilis uricase are a new risk factor: aberrant disulfide bond formation in the oxidizing A. oryzae ER lumen during secretion. This is specific to C. utilis and absent in A. flavus. Risk mitigation: monitor by non-reducing SDS-PAGE; if aggregation bands appear, consider Cys\u2192Ser mutation of solvent-exposed free cysteines."
+    ],
+    "cutilis_comparable_to_aflavus": [
+      "Disulfide load: both A. flavus and C. utilis uricase have 0 annotated disulfide bonds \u2014 neither adds PDI burden. The full 17-disulfide load of the dual-cassette system comes from lactoferrin only.",
+      "Routing signals: both have C-terminal PTS1-like motifs (A. flavus: SKL; C. utilis: TKL). Both are annotated by UniProt as microbody targeting signals. In a secretion-signal context (amyB SP), both are outcompeted by the N-terminal ER-targeting signal. Same risk level (MODERATE, verify in vivo) for both variants."
+    ],
+    "cutilis_easier_than_huynh": [
+      "C. utilis uricase has 0 annotated disulfide bonds \u2014 no PDI load from the uricase cassette. Adalimumab both chains are disulfide-rich. C. utilis uricase cassette is structurally simpler for folding."
+    ],
+    "cutilis_harder_than_huynh": [
+      "Codon burden: C. utilis uricase is AT-biased (GC~42%) in an A. oryzae host (GC~54%). Full codon optimization is required \u2014 same as human lactoferrin and both adalimumab chains. In comp-010 (A. flavus), the uricase cassette had LOW codon burden, making one of the two cassettes effectively optimization-free. With C. utilis, BOTH cassettes require full optimization.",
+      "OE Lf titer target (500 mg/L) is 12.6x the Huynh 2020 adalimumab titer (39.7 mg/L). However, Ward 1995 submerged Lf achieved >2 g/L \u2014 so the Huynh adalimumab titer reflects antibody-specific constraints, not the maximum capacity of the Lf + A. oryzae system. 500 mg/L is within Ward 1995 validated Lf range with strain improvement.",
+      "Solid-state format: OE primary target is solid-state rice koji, not submerged. Huynh 2020 was submerged only. Solid-state adds format-translation risk (Sun 2024 caveat).",
+      "Free cysteines: C. utilis uricase has 4 free Cys (0 annotated disulfides). Adalimumab has all cysteines paired in disulfides. Free cysteines in the oxidizing ER lumen pose an aggregation risk not present in the Huynh 2020 system."
+    ],
+    "cutilis_comparable_to_huynh": [
+      "Both OE and Huynh use the same NSlD-\u0394P10 protease-deletion host. Both require KRGGG linker KEX2 processing for lactoferrin. Both target dual loci (niaD + sC or equivalent).",
+      "Lactoferrin (human, glycosylated, high disulfide) is mechanistically similar to adalimumab heavy chain. Huynh 2020 demonstrated A. oryzae ER can handle mammalian-origin heavily-disulfided proteins."
+    ],
+    "platform_decision_implication": "comp-010 (A. flavus): LOW cassette-design risk. comp-011 (C. utilis): MODERATE cassette-design risk. The delta is driven by (a) codon burden (HEAVY for C. utilis vs. LOW for A. flavus \u2014 codon optimization required, resolves with gene synthesis), (b) free cysteine risk (4 Cys in C. utilis vs. 0 in A. flavus \u2014 new risk factor requiring SDS-PAGE monitoring), and (c) 2 vs. 1 KEX2 internal sites (non-load-bearing in direct-secretion design). None of these differences are BLOCKING for the architecture \u2014 they are all manageable with standard gene synthesis and SDS-PAGE QC. The MODERATE vs. LOW risk difference reflects more design work required for C. utilis, not a fundamental incompatibility. If adopting C. utilis: (1) full codon optimization is mandatory (same as lactoferrin), (2) add non-reducing SDS-PAGE to the QC panel to catch free-Cys aggregation, (3) note that the ALLN-346 ProteinGPS mutations (US10815461B2) are available to layer on top of the P78609 backbone for protease-resistance improvement."
+  }
+}
