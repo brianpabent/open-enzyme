@@ -163,35 +163,92 @@ TOOL_HANDLERS = {
 }
 
 
-def build_evidence_context(trigger_files, cited_files):
+def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000):
     """Inline trigger + cited files. Trigger files are the cause of the
     sweep; cited_files are everything Pass 2 referenced in its synthesis.
     Both go into the warm cache so the reviewer doesn't need a tool
-    round-trip for the most likely sources."""
+    round-trip for the most likely sources.
+
+    char_budget: hard cap on total inlined characters. Default 1.4M chars
+    ≈ 350K tokens. Pass 3 is agentic — the model can run up to 8 tool
+    round-trips, each shipping the entire accumulated message history
+    back to the model. A single round-trip with one wiki-file read +
+    intermediate reasoning consumes ~50-100K tokens. With 8 iterations
+    × ~75K = ~600K of round-trip overhead, plus the prompt template +
+    synthesis log + output generation, the initial inlined evidence must
+    leave ~600K headroom under Opus's 1M cap → ~350K initial inline cap.
+    Trigger files always inline (skipping a triggering file breaks the
+    review's premise); cited files inline until budget, then are skipped
+    with a notice (the model can still tool-fetch them).
+
+    Returns (concatenated_text, included_list, skipped_list).
+    `included_list`: [(path, label)] for files actually inlined.
+    `skipped_list`: [(path, label, reason)] for files skipped — these
+    appear in the final prompt as a "not inlined; tool-fetch if needed"
+    section so the reviewer knows the file exists and why it wasn't pre-loaded.
+    """
     seen = set()
     parts = []
     included = []
-    for label, paths in (("trigger", trigger_files), ("cited", cited_files)):
+    skipped = []
+    used_chars = 0
+    # Trigger files always inline — skipping a trigger breaks the premise
+    # of the review (you're reviewing changes triggered by these files).
+    # Cited files are best-effort: inline until budget, then skip.
+    for label, paths, force in (
+        ("trigger", trigger_files, True),
+        ("cited", cited_files, False),
+    ):
         for p in paths:
             if p in seen or not os.path.exists(p):
                 continue
             seen.add(p)
             with open(p) as f:
-                parts.append(f"\n\n=== {p} ({label}) ===\n\n{f.read()}")
-                included.append((p, label))
-    return "".join(parts), included
+                content = f.read()
+            entry = f"\n\n=== {p} ({label}) ===\n\n{content}"
+            entry_chars = len(entry)
+            if not force and used_chars + entry_chars > char_budget:
+                skipped.append((p, label, f"budget ({used_chars:,} + {entry_chars:,} chars > {char_budget:,} cap)"))
+                continue
+            parts.append(entry)
+            included.append((p, label))
+            used_chars += entry_chars
+    return "".join(parts), included, skipped
 
 
 def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_tokens):
     """Drive the bounded agentic loop: tool calls until the model returns
     a final response (no tool calls), then return that final content.
     Returns (content, total_in_tokens, total_out_tokens). Raises SystemExit
-    on hard failures."""
+    on hard failures.
+
+    Cumulative-size guard: before each API call, estimate the total prompt
+    size (sum of message contents). If approaching the model's context cap
+    (Opus = 1M tokens ≈ 4M chars), force the next call to be the final
+    one (tool_choice=none) so we don't ship an over-cap request that
+    OpenRouter will 400 on. This is the post-mortem fix for the 21:17Z
+    failure where 4 tool round-trips pushed cumulative input to 1.023M
+    tokens > 1M cap."""
+    # Conservative cap: 3.6M chars ≈ 900K tokens. Leave 100K headroom
+    # for the model's response + finishing reasoning. Opus's true cap
+    # is 1M tokens so we want to force-finish well before that.
+    CUMULATIVE_CHAR_BUDGET = 3_600_000
+
     messages = [{"role": "user", "content": initial_prompt}]
     total_in = 0
     total_out = 0
 
     for iteration in range(max_iterations + 1):
+        # Estimate cumulative request size in chars; force-finish if approaching cap
+        cumulative_chars = sum(
+            len(m.get("content") or "") for m in messages
+        )
+        approaching_cap = cumulative_chars > CUMULATIVE_CHAR_BUDGET
+        if approaching_cap:
+            print(f"  [iter {iteration+1}/{max_iterations}] cumulative request {cumulative_chars:,} chars "
+                  f"approaches budget {CUMULATIVE_CHAR_BUDGET:,}; forcing final response (no more tool calls)",
+                  file=sys.stderr)
+
         body = {
             "model": model,
             "messages": messages,
@@ -199,9 +256,9 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
             "max_tokens": max_tokens,
             "temperature": 0.5,
         }
-        # Force a final response on the last allowed iteration — no more tool
-        # calls accepted.
-        if iteration == max_iterations:
+        # Force a final response on the last allowed iteration OR when
+        # approaching the cumulative-size cap — no more tool calls accepted.
+        if iteration == max_iterations or approaching_cap:
             body["tool_choice"] = "none"
 
         resp = call_openrouter_raw(api_key, body)
@@ -356,10 +413,18 @@ def main():
 
     trigger_files = _split(args.trigger_files)
     cited_files = _split(args.cited_files)
-    evidence_context, included = build_evidence_context(trigger_files, cited_files)
+    evidence_context, included, skipped = build_evidence_context(trigger_files, cited_files)
     timestamp = datetime.datetime.utcnow().isoformat() + "Z"
     trigger_list = "\n".join(f"  - {f}" for f in trigger_files) or "  (none specified)"
     cited_list = "\n".join(f"  - {f}" for f in cited_files) or "  (none parsed from synthesis)"
+    if skipped:
+        skipped_list = "\n".join(f"  - {f} ({label}) — {reason}" for f, label, reason in skipped)
+        skipped_block = (
+            f"  cited files SKIPPED from inlining (budget cap; tool-fetch if needed):\n"
+            f"{skipped_list}\n"
+        )
+    else:
+        skipped_block = ""
 
     prompt = (
         sweep_brief
@@ -371,6 +436,7 @@ def main():
         + f"  commit_sha:       {args.commit_sha}\n"
         + f"  trigger files (caused this sweep):\n{trigger_list}\n"
         + f"  cited files (Pass 2 referenced these):\n{cited_list}\n"
+        + skipped_block
         + f"  max_tool_iterations: {args.max_iterations}\n"
         + "ci=github-actions-sweep-3-review\n\n"
         + "Tools available: read_file, list_files, grep (read-only). Use them\n"
@@ -391,8 +457,12 @@ def main():
     print(f"Pass 3 prompt: synthesis log + {n_trig} trigger + {n_cited} cited files inlined "
           f"(~{prompt_tok_est:,} tokens est.); tool iters cap {args.max_iterations}",
           file=sys.stderr)
-    if prompt_tok_est > 180_000:
-        print(f"WARNING: estimate {prompt_tok_est:,} tokens — close to Opus's 200K cap.",
+    # Opus's actual context cap is 1M tokens. Warn at 80% (800K) — well
+    # below the cumulative-loop budget (900K) so warnings fire before the
+    # agentic loop's force-finish guard would.
+    if prompt_tok_est > 800_000:
+        print(f"WARNING: estimate {prompt_tok_est:,} tokens — close to Opus's 1M cap. "
+              f"build_evidence_context's char_budget may need to be lowered.",
               file=sys.stderr)
 
     content, in_tok, out_tok = run_agentic_review(
