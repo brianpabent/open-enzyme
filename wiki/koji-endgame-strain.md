@@ -322,6 +322,16 @@ The starting strain is a Year 1 engineering target with decades of precedent. Th
 
 The discipline this page enforces: **the endgame strain is not "more ambition layered on the starting strain." It is a structurally distinct engineering project contingent on a specific feasibility test that has not yet been run.** If the test passes, the endgame strain converges to a shippable single product. If the test fails, the fallback ladder in §4 preserves the coverage matrix across multiple products.
 
+### 6.4 Peer Track — Engineered LBP Chassis (Commercial-Pharmaceutical Track)
+
+**The koji endgame strain is one of two peer tracks under the broader Open Enzyme mission of solving gout via every available modality.** The second is the [Engineered Live Biotherapeutic Products (LBP) chassis](./engineered-lbp-chassis.md) — engineered obligate-anaerobe colonic residents (*Faecalibacterium prausnitzii*, *Akkermansia muciniphila*, *Bacteroides*) delivered as oral lyophilized capsules.
+
+The two tracks serve **different patient populations on different regulatory paths.** Koji (this page) is the democratized home-fermentable chassis for the broader market — daily dosing, GRAS food path, $0–500K capital to first community-validated strain, decentralized distribution. The LBP track is a commercial-pharmaceutical chassis for the high-severity / Q141K / refractory subset — quarterly dosing via durable colonization, FDA Live Biotherapeutic Product BLA path, $50–200M capital, conventional pharmacy distribution.
+
+**Where the LBP track is mechanistically clean for a population the koji track is structurally limited for:** the male-demographic ceiling noted in §1's coverage matrix footnote (androgen suppression of ABCG2 caps how much urate the gut sink can pull from blood) compounds with the Q141K variant subgroup (~10% of gout patients with broken ABCG2 trafficking). For Q141K carriers specifically, butyrate is the cleanest known genotype-agnostic intervention — it both induces wild-type ABCG2 (PPARγ pathway) and rescues Q141K trafficking (class-I HDAC inhibition pathway). But oral butyrate is rapidly absorbed in the small intestine and does not reach the colonic crypt where it needs to act. **A colonically-resident engineered *F. prausnitzii* solves this delivery problem in a way the koji chassis cannot** — koji delivers protein payloads to the gut lumen, but it cannot continuously produce a small-molecule metabolite at the colonic epithelium.
+
+This is not a competing thesis or a chassis pivot. The koji endgame strain remains the platform's primary Year 2–3 deliverable. The LBP track is an additional research direction, currently at scope-page stage with six in silico Phase 2 follow-ups queued (lit scans on engineering toolkit + commercial landscape + regulatory path; comp-008 expression feasibility; falsification card H02; comparative chassis matrix). All Phase 2 items are pure desk research — none requires a pharma partner to start. See [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) § Open Follow-Ups for the queue.
+
 ---
 
 ## 7. Cost and Timeline Estimates

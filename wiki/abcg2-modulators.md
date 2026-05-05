@@ -309,6 +309,14 @@ Three potential additions to the koji platform that would couple substrate-suppl
 
 3. **Tryptophan-pathway probiotic co-strain.** *L. reuteri* or similar AhR-agonist-producing strain co-formulated with the engineered *S. boulardii* or *S. cerevisiae* uricase strain. Each contributes a different mechanism to the gut sink. **Speculative — strain compatibility under fermentation conditions and survival post-ingestion not yet established.**
 
+### For an engineered LBP peer track (commercial-pharmaceutical chassis)
+
+The butyrate dual-action documented above (PPARγ → WT ABCG2 induction + class-I HDAC inhibition → Q141K trafficking rescue) is the cleanest **genotype-agnostic** mechanism in this entire page. Most ABCG2-relevant interventions hit either WT or Q141K, not both. Butyrate hits both simultaneously — but its bioavailability problem (rapid small-intestinal absorption before reaching the colon) makes oral butyrate dosing impractical at clinically meaningful colonic concentrations.
+
+**An engineered colonically-resident butyrate producer solves the bioavailability problem at the dose-frequency level.** *Faecalibacterium prausnitzii*, a strict-anaerobe colonic resident already producing butyrate natively at 3–5% gut abundance, is the obvious chassis. Engineered overproduction would put butyrate where it needs to be (the colonic crypt, against the epithelium) on a continuous basis after a single quarterly capsule rather than requiring constant oral dosing.
+
+This is fundamentally a **commercial-pharmaceutical track**, not a koji-style home-fermentation track — obligate anaerobes require anaerobic bioreactor manufacturing, cold-chain stabilization, and the FDA Live Biotherapeutic Product (LBP) regulatory path. See [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) for the full peer-track scope, regulatory discussion, and queued Phase 2 follow-ups (lit scans on engineering toolkit, commercial landscape, FDA LBP path; comp-008 expression feasibility analysis; falsification card H02). The two tracks (koji + LBP) serve complementary patient populations: koji for the broader market and prevention, LBP for the high-severity / Q141K-genotype / refractory subset where pharmaceutical-grade durability justifies the cost-and-distribution overhead.
+
 ### For the supplements stack catalog
 
 Per-compound stack-interaction fields including ABCG2 status should be a required field for any new compound considered for [`supplements-stack.md`](./supplements-stack.md). The four functional inhibitors documented above are the current contradiction set; new entries that meet that pharmacology profile should carry a counter-indication note for high-T or Q141K-positive readers.

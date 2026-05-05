@@ -211,3 +211,29 @@ An example of this protocol applied to the EPI track. A structured self-experime
 **Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only. Generates hypotheses for formal testing; does not establish efficacy. Paired stool-fat (steatocrit) measurement before and after a controlled trial would be the next-rigor step.
 
 Full daily log lives in the experimenter's private storage (e.g., `<your-private-repo>/<subject>/experiments/<date>_<topic>.md`). Only de-identified pattern findings are reproduced here, per the PHI policy in §7 above.
+
+---
+
+## 11. Optional ex vivo monitoring add-ons
+
+Lower-cost subject-specific assays that supplement the standard four-biomarker panel for specific intervention contexts. Each is opt-in, runs as a quarterly add-on to the standard blood draw, and stays in the subject's private storage per §7.
+
+### 11.1 Ex vivo MSU PBMC challenge (androgen-elevated subjects, Tier 4 of `validation-experiments.md` §1.23)
+
+**When relevant:** Subject is on clomid, TRT, anabolic-androgenic steroids, or has high baseline endogenous testosterone, AND has gout / hyperuricemia history. The 2026-05-05 androgen × NLRP3 literature scan ([`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Beyond transporters") identified a gap: testosterone × MSU-crystal × NLRP3 in macrophages has zero indexed papers. The general-tissue literature suggests androgens are anti-inflammatory in macrophages (Norata 2006 in vitro), but cardiac macrophages flip the direction (testosterone → ↑NLRP3 → male-skewed myocarditis). Whether gout-relevant macrophages follow the general-tissue pattern or the cardiac-tissue pattern is an open question. This add-on provides a low-cost personal signal in the absence of formal Tier 1–3 wet-lab data.
+
+**What it measures:** Whether subject's PBMCs (peripheral blood mononuclear cells) produce more or less IL-1β in response to MSU crystal challenge ex vivo, tracked across panels as serum testosterone fluctuates (e.g., mid-cycle vs. trough on clomid; pre/post a TRT dose adjustment).
+
+**Protocol:**
+- **Sample:** Add 10 mL EDTA tube to the standard quarterly draw. Send to a clinical lab offering ex vivo cytokine release assays (these exist; vendors include Cellular Technology Limited and several specialty hospital labs).
+- **Lab protocol (request from vendor):** Isolate PBMCs by Ficoll gradient → seed at 1×10⁶/well → 6-hr challenge with MSU crystals (100 μg/mL) ± LPS pre-priming (100 ng/mL × 3 hr, optional second arm) → measure IL-1β in supernatant by ELISA. Negative control: vehicle only. Positive control: nigericin 5 μM (NLRP3 activator).
+- **Cost:** $500–1,000 per panel (vendor-dependent). Add-on to standard quarterly draw — no extra venipuncture.
+- **Tracking:** IL-1β (pg/mL) per panel, alongside serum total + free testosterone, hs-CRP, and the standard four-biomarker panel from §4. Plot quarterly trajectory.
+
+**What you can and can't conclude:**
+- **Can:** Detect within-subject directional signal — does *your* MSU-induced IL-1β response track *your* serum T fluctuations? Useful for personal protocol decisions (e.g., does a heavier anti-inflammatory layer correlate with lower MSU-IL-1β release in your own cells?).
+- **Cannot:** Prove causality (n=1, uncontrolled). Cannot generalize to other androgen-elevated subjects. Cannot substitute for the formal `validation-experiments.md` §1.23 Tier 1–3 cascade — that's where mechanistic claims get established.
+
+**Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only for personal protocol decisions. Generates hypotheses; does not establish efficacy.
+
+**Cross-references:** [`validation-experiments.md` §1.23](./validation-experiments.md) (the formal Tier 1–3 cascade this is the n=1 parallel of); [`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Beyond transporters" (the literature gap being probed); [`nlrp3-inflammasome.md`](./nlrp3-inflammasome.md) (NLRP3 activation mechanism background).

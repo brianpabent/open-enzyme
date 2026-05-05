@@ -25,6 +25,9 @@ Open source library of engineered, food-grade microbial strains producing therap
 | 2 | Quercetin + ursolic acid + carnosine combo on MSU-stimulated macrophages (§1.17) | $1,500 | 4 | Whether to engineer one NLRP3 inhibitor or three |
 | 3 | WT / SB-1 / OPT-1 engineered uricase variants in koji → GI simulation (§1.16) | $2,000 | 8 | Platform choice (koji vs yeast) |
 | **GATE** | **Ward 1995 dual-cassette feasibility (§1.9) — #1 priority gate** | $3–5K | 8–12 | Single-strain vs. two-strain endgame; gates entire koji endgame thesis |
+| LBP-1 | LBP track Phase 2: lit scans (engineering toolkit + commercial landscape + FDA LBP path) — see [`engineered-lbp-chassis.md`](wiki/engineered-lbp-chassis.md) Open Follow-Ups | $0 | 1–2 | Whether the engineered-LBP peer track is technically and commercially viable to pursue |
+| LBP-2 | LBP track Phase 2: comp-008 *F. prausnitzii* heterologous expression feasibility | $0 | 1 | Which OE-relevant payloads are tractable in *F. prausnitzii* (uricase / lactoferrin / sCR1 / butyrate boost) |
+| 1.23-T1 | Androgen × MSU × NLRP3 macrophage screen (§1.23 Tier 1, THP-1) — fills documented literature gap | $5–10K | 6–8 | Whether direct-androgen contribution to gout inflammation exists; gates Tiers 2–3 |
 
 See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the full consolidated experiment list.
 

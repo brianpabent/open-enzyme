@@ -103,6 +103,14 @@ Open Enzyme is an open source library of engineered microbial strains. Each stra
 
 Every strain can be grown at home with simple equipment — rice, a basic incubator, a fermentation vessel. No clean room. No bioreactor. No prescription.
 
+> **Phase 3 reflection note (queued 2026-05-05, content-triggered):**
+>
+> The "engineered enzymes in koji" framing in this section is the platform's first and primary chassis expression — but it is not the entire mission. The 2026-05-05 commit of [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) opened a peer track (engineered Live Biotherapeutic Products — obligate-anaerobe colonic residents like *F. prausnitzii*) that serves the same gout-solving mission via a fundamentally different chassis class (commercial-pharmaceutical, FDA LBP regulatory path, not home-fermentable).
+>
+> **Reflection trigger:** revisit this section *after* the LBP track's six in silico Phase 2 follow-ups land (engineering-toolkit lit scan, commercial-landscape lit scan, regulatory-path lit scan, comp-008 expression feasibility, falsification card H02, comparative chassis matrix). At that point, decide whether to reframe this section's leading sentence from "Open Enzyme is an open source library of engineered microbial strains [implying koji/yeast]" to "Open Enzyme is an open source research project to solve gout via every available modality, with the engineered koji/yeast strain library as its first and primary output." Naming follows substance — the reframe is conditional on whether the LBP track accumulates enough rigorous content to justify equal billing.
+>
+> Tracking surfaces for the LBP track's Phase 2/3 work: [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) §"Open Follow-Ups", [`open-questions.md`](./open-questions.md) §"Engineered LBP chassis", [`computational-experiments.md`](./computational-experiments.md) (comp-008), [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md), [`synthesis.md`](./synthesis.md) "Strategic Reflections Queue".
+
 ### The GitHub Analogy
 
 If you think about this as software, the architecture snaps into focus:

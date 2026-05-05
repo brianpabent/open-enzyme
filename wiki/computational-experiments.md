@@ -38,6 +38,38 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+### comp-006 — DAF/CD55 Shio-Koji Protease Stability
+
+| Field | Value |
+|---|---|
+| **Question** | Would the DAF/CD55 soluble ectodomain (aa 35–353: SCR1–4 + Ser/Thr stalk) survive the shio-koji protease environment if expressed in *A. oryzae*? |
+| **Method** | AlphaFold pLDDT structural analysis + P1/P1' cleavage-site prediction for 3 *A. oryzae* koji proteases (ALP, NPr, acid protease) + shio-koji condition corrections (17.5% NaCl, pH 4.5–5.0). Shared library with comp-001/comp-005; **three verdicts** computed: full sequence, mature protein (excl. signal peptide aa 1–34), and soluble ectodomain (excl. signal peptide + GPI-anchor propeptide aa 354–381). |
+| **Verdict** | **HIGH / HIGH / HIGH** — all three scopes. Driver: Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52, fully disordered) within the soluble ectodomain itself. NPr has 9 exposed stalk sites; ALP has 48. SCR1–4 domains (aa 35–285, pLDDT 85–98) contribute **zero exposed sites** — they are structurally well-folded and largely buried. |
+| **Key finding** | The HIGH verdict is stalk-contingent, not SCR-domain-contingent. A construct truncated at SCR4 (aa 35–285) would remove all NPr- and ALP-exposed ectodomain sites. The SCR1–4 core compares favorably with uricase (comp-001) in structural stability. A comp-007 analysis of the SCR1-4-only construct is the logical follow-up before concluding the CD55 engineering thesis is unviable. |
+| **Informs** | [`wiki/modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — "Engineered soluble complement regulators" row (CP0 platform gap) |
+| **Experiment folder** | [`experiments/comp-006-daf-cd55-shio-koji-protease-stability/`](../experiments/comp-006-daf-cd55-shio-koji-protease-stability/) |
+| **Interpretive wiki page** | [`wiki/daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md) |
+| **Date** | 2026-05-05 |
+| **Status** | Complete |
+
+---
+
+### comp-007 — Food-Grade HDAC Inhibitor Screen for Q141K-ABCG2 Trafficking Rescue
+
+| Field | Value |
+|---|---|
+| **Question** | Which food-grade or GRAS-classified HDAC inhibitor candidates best combine class I HDAC potency (HDAC1/2/3), HDAC6 selectivity (off-target cardiotoxicity avoidance), and gut-enriched exposure for Q141K-ABCG2 trafficking rescue? |
+| **Method** | Composite scoring across three axes: (1) potency_score = 1/geomean(HDAC1/2/3 IC50), max-normalized; (2) selectivity_score = HDAC6_IC50/(HDAC6_IC50+mean_classI_IC50), midpoint ratio=10, unknown-HDAC6 penalty 0.30; (3) gut_selectivity_score = 1 − oral bioavailability fraction. IC50 data from ChEMBL MCP + PubMed primary literature (butyrate HIGH confidence; others LOW or DATA_UNAVAILABLE). |
+| **Verdict** | **Butyrate (rank 1, 0.374) >> Sulforaphane (rank 2, 0.090) > PEITC (rank 3, 0.060).** Only Butyrate has confirmed class I selectivity (167× over HDAC6, HIGH confidence). Caffeic acid and ferulic acid score 0 (DATA_UNAVAILABLE — no isoform IC50). |
+| **Key finding** | Butyrate is the only food-grade compound with biochemical-assay IC50 data against all four HDAC isoforms; its 167× HDAC1/2/3 over HDAC6 selectivity is structurally explained (carboxylate zinc coordination, insufficient for bulkier HDAC6 active site). Sulforaphane's ranking is fragile — HDAC isoform selectivity is uncharacterized and the mechanism (indirect, via mercapturic acid metabolites) differs from butyrate's direct zinc chelation. |
+| **Informs** | [`validation-experiments.md` §1.22](./validation-experiments.md#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue) — Stage 1 complete; top 3 advance to Stage 2 (paired Caco-2/HepG2 HDAC activity assay) |
+| **Experiment folder** | [`experiments/comp-007-food-grade-hdaci-screen/`](../experiments/comp-007-food-grade-hdaci-screen/) |
+| **Interpretive wiki page** | [`wiki/food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) |
+| **Date** | 2026-05-05 |
+| **Status** | Complete |
+
+---
+
 ### comp-005 — Lactoferrin Shio-Koji Protease Stability
 
 | Field | Value |
@@ -76,6 +108,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 |---|---|---|---|
 | comp-002 | Uricase thermal/pH stability under shio-koji conditions (MD simulation or Rosetta ΔΔG) | §1.10 follow-up if wet-lab shows unexpected degradation | Low (pending §1.10 result) |
 | ~~comp-003~~ → **comp-005** | Lactoferrin cleavage-site analysis under same shio-koji conditions | §1.10 extension — completed 2026-05-05; see comp-005 above | ✓ Done |
+| comp-008 | *Faecalibacterium prausnitzii* heterologous expression feasibility — codon usage, GC content, secretion machinery, payload tractability ranking | [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) Phase 2 P2-4; informs whether *F. prausnitzii* is engineering-tractable for OE-relevant payloads (uricase, lactoferrin, soluble complement regulators, butyrate-pathway boost) | Medium (LBP track Phase 2) |
 
 ---
 

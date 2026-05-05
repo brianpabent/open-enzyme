@@ -238,6 +238,19 @@ The [Modality × Target Matrix](./modality-chokepoint-matrix.md) (2026-04-28) su
 - **mRNA-IL-1RA pulse therapy for acute flare termination.** Transient expression matches flare window. Zero programs; mechanistically defensible; competes with canakinumab on cost. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
 - **Wearable sweat-based or microneedle continuous UA monitoring.** Changes intervention-titration kinetics. UCSD/Stanford research-stage. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
 
+### Engineered LBP chassis (peer track to koji)
+
+The [Engineered LBP Chassis](./engineered-lbp-chassis.md) page (committed 2026-05-05 as scope-page in response to 2026-05-05 sweep Open Question #3) formalizes engineered obligate anaerobes (*Faecalibacterium prausnitzii* primary, *Akkermansia muciniphila*, *Bacteroides*) as a peer track to the koji chassis. Six discrete in silico follow-ups are queued — none requires pharma-partner involvement to start:
+
+- **P2-1 — Lit scan: *F. prausnitzii* engineering state-of-the-art.** Genetic toolkit maturity, heterologous payload titers achieved, gap to therapeutic-grade. (Queued, Opus subagent.)
+- **P2-2 — Lit scan: commercial / clinical engineered-LBP landscape.** Synlogic, Vedanta, NextBiotix, Seres, Pendulum — programs, partnership / licensing profile. (Queued, Opus subagent.)
+- **P2-3 — Lit scan: FDA LBP regulatory path.** 2018 guidance, Vowst precedent, IND-enabling package, timeline + capital. (Queued, Opus subagent.)
+- **P2-4 — comp-008: *F. prausnitzii* heterologous expression feasibility.** Tracked in [`computational-experiments.md` Planned Analyses](./computational-experiments.md). (Queued, Sonnet subagent.)
+- **P2-5 — Falsification card H02.** Stub committed at [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md); full population queued.
+- **P2-6 — Comparative chassis matrix for gout indication.** *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* vs. engineered *E. coli* Nissle — payload tractability, niche fit, engineering complexity.
+
+Phase 3 (content-triggered, not calendar-triggered): platform-framing reflection — does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Reflection note queued in [`open-enzyme-vision.md`](./open-enzyme-vision.md).
+
 ### Community fermentation and strain stability
 
 - **Does engineered koji drift across generations of home propagation?** Food-grade strains carry no antibiotic selection marker (correct for GRAS compliance), which removes the pressure that keeps the construct in the population. Chromosomal integration + redundant copies mitigate but don't eliminate. See [open-source-platform.md §Open Questions](./open-source-platform.md).

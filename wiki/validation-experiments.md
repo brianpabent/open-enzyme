@@ -837,7 +837,65 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 - **No candidate outperforms butyrate on selectivity:** confirms butyrate as the best available food-grade Q141K-rescue agent and locks in the fermentable-fiber adjunct recommendation for Q141K carriers.
 - **A candidate with class I selectivity and hepatocyte-sparing profile emerges but doesn't rescue trafficking:** updates the Q141K rescue model (suggests additional misfolding mechanism beyond class I HDAC).
 
-**Cross-references:** [abcg2-modulators.md](./abcg2-modulators.md) §6 (butyrate + PPARγ/HDACi mechanism; Basseville 2012 PMID 22472121); [supplements-stack.md](./supplements-stack.md) §"Q141K-personalized recommendations"; [gut-lumen-sink.md](./gut-lumen-sink.md); [synthesis.md](./synthesis.md) 2026-05-05 Proposed Experiment #3.
+**Stage 1 results (comp-007, 2026-05-05):** In silico screen completed. Composite scoring (potency × HDAC6 selectivity × gut-enrichment proxy) across 7 candidates ranked: **Butyrate** (0.374, HIGH confidence — confirmed 167× HDAC6 selectivity, biochemical IC50 data from ChEMBL/ACS Med Chem Lett 2011) >> **Sulforaphane** (0.090, LOW — estimated IC50, HDAC6 profile uncharacterized) > **PEITC** (0.060, LOW — estimated IC50 by analogy with SFN). Caffeic acid and ferulic acid score 0 (no isoform-specific IC50 available). **Advancing to Stage 2:** Butyrate, Sulforaphane, PEITC. Stage 2 must include HDAC6 isoform-selective substrate assay for SFN and PEITC; butyrate's HDAC6 selectivity is confirmed. Full analysis: [`experiments/comp-007-food-grade-hdaci-screen/`](../experiments/comp-007-food-grade-hdaci-screen/). Interpretive wiki: [`wiki/food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md). Evidence level: Mechanistic Extrapolation.
+
+**Cross-references:** [abcg2-modulators.md](./abcg2-modulators.md) §6 (butyrate + PPARγ/HDACi mechanism; Basseville 2012 PMID 22472121); [supplements-stack.md](./supplements-stack.md) §"Q141K-personalized recommendations"; [gut-lumen-sink.md](./gut-lumen-sink.md); [synthesis.md](./synthesis.md) 2026-05-05 Proposed Experiment #3; [food-grade-hdaci-screen-computational.md](./food-grade-hdaci-screen-computational.md).
+
+---
+
+### 1.23 Androgen × MSU × NLRP3 in Macrophages — Tiered Mechanistic Protocol
+
+**Status**: Proposed | **Cost**: Tier 1: $5–10K; full T1+T2+T3 cascade $105–160K | **Weeks**: Tier 1: 6–8; full cascade ~12 months | **Phase**: 1
+
+**Affected wiki**: [androgen-urate-axis](./androgen-urate-axis.md) §"Beyond transporters: direct androgen effects on NLRP3 priming", [nlrp3-inflammasome](./nlrp3-inflammasome.md), [koji-endgame-strain](./koji-endgame-strain.md), [self-experiment-protocol](./self-experiment-protocol.md) §11 (Tier 4 n=1)
+
+**What it tests:** Whether testosterone/DHT directly modulates MSU-crystal-induced NLRP3 inflammasome activation in macrophages — the gout-relevant cell type and stimulus combination. The 2026-05-05 androgen × NLRP3 literature scan (`androgen-urate-axis.md` §"Beyond transporters") confirmed that this exact intersection has zero indexed papers despite both halves (androgen × macrophage NLRP3 with TLR4/LPS priming; MSU × macrophage NLRP3 in gout) being independently well-characterized. The general-tissue literature direction is **anti-inflammatory** (DHT → AR → ↓NF-κB → ↓TLR4 → dampened priming; Norata 2006 in vitro on human macrophages), but the cardiac-tissue exception (testosterone → ↑NLRP3 in cardiac macrophages, the explanation for male-skewed myocarditis) shows the effect is tissue-context-dependent. Whether synovial / gout-relevant macrophages follow the general-tissue or the cardiac pattern is unknown, and the answer matters for: (a) whether androgen-elevated patients (elevated endogenous T, clomid, TRT, AAS users) need a heavier anti-inflammatory layer in the gout stack, (b) whether the male-skew of gout incidence has a direct-inflammation contribution beyond the well-documented transporter contribution.
+
+**Proposed in:** `wiki/synthesis.md` 2026-05-05 Open Question #2 (androgen axis × NLRP3) — actioned by lit scan (Option A: section in `androgen-urate-axis.md`). The promotion criteria stated in that section (≥3 convergent mechanistic studies, OR ≥1 in vivo dose-response, OR clear human evidence) are exactly what this experiment generates if positive.
+
+**Background on the gap:** The reason this intersection has not been studied is sociological, not technical. Gout immunology funding flows to clinical-translational drug studies (canakinumab, MCC950, dapansutrile). Sex-hormone × innate-immunity research is a separate community focused on autoimmune disease using LPS/TLR4 as the prototypical priming stimulus. The two communities have not overlapped. The assays themselves are standard.
+
+**Protocol — Tiered, gating logic:**
+
+**Tier 1 — THP-1 macrophage in vitro screen ($5,000–10,000; 6–8 weeks):**
+- **Cell line:** THP-1 monocytes differentiated to macrophages with PMA (50–100 nM, 48–72 hr).
+- **Pre-treatment:** ± DHT at 1 nM, 10 nM, 100 nM, 1 μM (physiological → supraphysiological) × 24–72 hr. Vehicle control (ethanol or DMSO matched). Androgen receptor antagonist arm (flutamide 1 μM or enzalutamide 1 μM) for AR-dependence.
+- **Challenge:** MSU crystals (50–200 μg/mL × 6 hr; ATP 5 mM × 30 min as orthogonal NLRP3 trigger control).
+- **Readouts:** IL-1β secretion (ELISA, primary endpoint); caspase-1 cleavage (Western, p20/p10); ASC speck formation (immunofluorescence, % cells with specks); NLRP3 mRNA (qPCR baseline + post-priming); pyroptosis (LDH release).
+- **Success criterion (Tier 1 → Tier 2):** ≥30% modulation of MSU-induced IL-1β by DHT pre-treatment at any concentration AND AR-dependence confirmed by antagonist arm. Either direction (suppression or amplification) is interpretable; null result closes the question without needing Tier 2.
+
+**Tier 2 — Primary human PBMC-derived macrophages, donor-stratified ($20,000–30,000; 12 weeks; gated on Tier 1 positive):**
+- **Cells:** PBMC-derived macrophages from male donors stratified by serum total + free testosterone (high-T quartile vs. low-T quartile, n=8 per group).
+- **Same MSU challenge protocol as Tier 1.**
+- **Readouts:** IL-1β + IL-18 (gout-relevant cytokines); donor-stratified comparison rather than dose-response (the donor T levels *are* the dose).
+- **Success criterion (Tier 2 → Tier 3):** Donor T-quartile correlates with MSU-induced IL-1β response in the same direction as Tier 1 immortalized-line signal, with effect size ≥20%. Null in primary cells closes the question; positive Tier 1 + null Tier 2 indicates immortalized-line artifact and is itself useful.
+- **Ethics note:** Donor recruitment and consent through standard IRB-approved protocols; serum T measurement is non-invasive standard-of-care.
+
+**Tier 3 — Murine MSU air-pouch model ± castration ± T add-back ($80,000–120,000; 6 months; gated on Tier 2 confirmation):**
+- **Animals:** Male C57BL/6 mice. Three arms: intact, castrated + vehicle, castrated + T replacement (low-dose ~physiological, high-dose ~supraphysiological).
+- **Standard gout model:** Subcutaneous air pouch raised over 6 days; MSU crystal injection (3 mg in PBS); 6-hr or 24-hr lavage.
+- **Readouts:** Lavage neutrophil count (primary endpoint — this is the standard gout-model readout); IL-1β + cytokine cascade (IL-6, CXCL1, KC); pouch-tissue NLRP3 / ASC / caspase-1 by Western.
+- **Success criterion:** Causal demonstration that manipulating circulating T modulates MSU-induced gouty inflammation in vivo. Establishes whether the male-skew of gout has a direct-inflammation contribution, with a quantified effect size suitable for translating to recommendations.
+- **Outcome:** Positive Tier 3 → publishable as a single mechanistic paper with clinical implications; updates the OE platform's anti-inflammatory layer dosing recommendation for androgen-elevated patients.
+
+**Tier 4 (n=1, parallel and independent) — Brian's ex vivo PBMC MSU challenge:** see [`self-experiment-protocol.md` §11](./self-experiment-protocol.md). Cost $500–1,000 per panel as quarterly add-on. Does not prove causality but provides a low-cost personal signal of whether clomid-elevated T associates with hotter MSU-induced inflammation in his own cells.
+
+**Estimated cost (full cascade):** Tier 1 $5–10K → +Tier 2 $20–30K → +Tier 3 $80–120K = **$105–160K total** if all tiers fire. Tier 1 alone is the entry cost; Tier 2/3 only proceed if signal warrants.
+
+**Estimated timeline (full cascade):** Tier 1: 6–8 weeks. + Tier 2: +12 weeks (gated). + Tier 3: +6 months (gated). Best case (early null at Tier 1): 8 weeks. Worst case (full cascade): ~12 months.
+
+**Success criteria (overall):**
+- **Direct-inflammation androgen contribution confirmed (positive Tier 1 + Tier 2 + Tier 3):** Updates platform recommendations — androgen-elevated patients (clomid, TRT, AAS, high-endogenous-T) get an elevated anti-inflammatory layer (BHB, oridonin, lactoferrin) in the stack. Adds a section to `koji-endgame-strain.md` male-skew framing. Falsification card H02 (engineered LBP) gains a new use case (LBP-delivered NLRP3 silencing for high-T subgroup).
+- **Null at Tier 1:** Closes the open question. The transporter-axis male-skew is the only confirmed driver. No platform changes needed. Negative result is publishable as a clear gap-fill.
+- **Tier 1 positive but Tier 2 null:** Indicates immortalized-line artifact; updates the literature scan and closes the in vivo escalation. No platform changes.
+
+**Limitations:**
+- Tier 1 uses an immortalized line — known limitations of THP-1 vs. primary cells (stable phenotype, possibly less responsive to MSU than monocyte-derived primary cells).
+- Tier 2's donor stratification will have confounders (BMI, fiber intake, baseline inflammation). Statistical power calculation needed before recruitment.
+- Tier 3's murine air-pouch model is the standard gout model but is acute, not chronic. Translating to chronic-flare biology requires additional model considerations.
+- All three tiers focus on the priming + activation step. They do not address resolution (SPM pathway) or aggregated-NET amplification — those would be separate experiments.
+
+**Cross-references:** [androgen-urate-axis.md](./androgen-urate-axis.md) §"Beyond transporters: direct androgen effects on NLRP3 priming" (the lit scan section that surfaced this gap); [nlrp3-inflammasome.md](./nlrp3-inflammasome.md); [self-experiment-protocol.md](./self-experiment-protocol.md) §11 (Tier 4 n=1 ex vivo PBMC); [koji-endgame-strain.md](./koji-endgame-strain.md) (male-demographic ceiling framing); [synthesis.md](./synthesis.md) 2026-05-05 Open Question #2.
 
 ---
 
