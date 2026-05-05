@@ -32,7 +32,7 @@
       "exposed_sites": 0,
       "partially_exposed_sites": 0,
       "buried_sites": 215,
-      "salt_residual_activity_at_17pct_NaCl": 0.19,
+      "salt_residual_activity_at_nacl": 0.188,
       "ph_activity_factor": 1.0,
       "effective_activity": 0.188,
       "max_risk_score": 0.019,
@@ -44,7 +44,7 @@
           "P1_prime": "S",
           "mean_plddt_window": 90.8,
           "accessibility": "buried",
-          "salt_residual_activity": 0.19,
+          "salt_residual_activity": 0.188,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.188,
           "risk_score": 0.019
@@ -55,7 +55,7 @@
           "P1_prime": "A",
           "mean_plddt_window": 92.0,
           "accessibility": "buried",
-          "salt_residual_activity": 0.19,
+          "salt_residual_activity": 0.188,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.188,
           "risk_score": 0.019
@@ -66,7 +66,7 @@
           "P1_prime": "V",
           "mean_plddt_window": 92.8,
           "accessibility": "buried",
-          "salt_residual_activity": 0.19,
+          "salt_residual_activity": 0.188,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.188,
           "risk_score": 0.019
@@ -77,7 +77,7 @@
           "P1_prime": "K",
           "mean_plddt_window": 93.5,
           "accessibility": "buried",
-          "salt_residual_activity": 0.19,
+          "salt_residual_activity": 0.188,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.188,
           "risk_score": 0.019
@@ -88,7 +88,7 @@
           "P1_prime": "A",
           "mean_plddt_window": 96.0,
           "accessibility": "buried",
-          "salt_residual_activity": 0.19,
+          "salt_residual_activity": 0.188,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.188,
           "risk_score": 0.019
@@ -101,7 +101,7 @@
       "exposed_sites": 0,
       "partially_exposed_sites": 0,
       "buried_sites": 97,
-      "salt_residual_activity_at_17pct_NaCl": 0.39,
+      "salt_residual_activity_at_nacl": 0.388,
       "ph_activity_factor": 1.0,
       "effective_activity": 0.388,
       "max_risk_score": 0.039,
@@ -113,7 +113,7 @@
           "P1_prime": "A",
           "mean_plddt_window": 92.0,
           "accessibility": "buried",
-          "salt_residual_activity": 0.39,
+          "salt_residual_activity": 0.388,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.388,
           "risk_score": 0.039
@@ -124,7 +124,7 @@
           "P1_prime": "V",
           "mean_plddt_window": 92.8,
           "accessibility": "buried",
-          "salt_residual_activity": 0.39,
+          "salt_residual_activity": 0.388,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.388,
           "risk_score": 0.039
@@ -135,7 +135,7 @@
           "P1_prime": "A",
           "mean_plddt_window": 96.0,
           "accessibility": "buried",
-          "salt_residual_activity": 0.39,
+          "salt_residual_activity": 0.388,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.388,
           "risk_score": 0.039
@@ -146,7 +146,7 @@
           "P1_prime": "A",
           "mean_plddt_window": 97.0,
           "accessibility": "buried",
-          "salt_residual_activity": 0.39,
+          "salt_residual_activity": 0.388,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.388,
           "risk_score": 0.039
@@ -157,7 +157,7 @@
           "P1_prime": "V",
           "mean_plddt_window": 98.8,
           "accessibility": "buried",
-          "salt_residual_activity": 0.39,
+          "salt_residual_activity": 0.388,
           "ph_activity_factor": 1.0,
           "effective_protease_activity": 0.388,
           "risk_score": 0.039
@@ -170,7 +170,7 @@
       "exposed_sites": 0,
       "partially_exposed_sites": 0,
       "buried_sites": 44,
-      "salt_residual_activity_at_17pct_NaCl": 0.65,
+      "salt_residual_activity_at_nacl": 0.65,
       "ph_activity_factor": 0.3,
       "effective_activity": 0.195,
       "max_risk_score": 0.02,

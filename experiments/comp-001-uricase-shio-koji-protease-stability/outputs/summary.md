@@ -114,6 +114,7 @@ The highest single-site risk score is 0.039 (from `NPr` — Neutral metalloprote
 - pLDDT ≠ solvent accessibility. Some high-pLDDT residues on protein surface loops may still be accessible. A molecular dynamics simulation or explicit solvent-accessibility calculation would sharpen this.
 - P1/P1' rules only. Real protease extended binding subsites (P2–P4) are not modelled; this may over-count recognition sites.
 - Monomer structure only. Quaternary burial (tetramer interfaces) would reduce accessible surface further — this analysis is conservative.
+- ALP and NPr pH factors set to 1.0 (conservative). ALP is outside its active pH range at shio-koji pH 4.5–5.0; NPr is at its lower edge. True risk from these two proteases is lower than computed.
 - No fermentation dynamics. During active koji growth (before shio-koji is made), proteases operate at higher activity. The shio-koji format specifically starts after koji is harvested and mixed with salt — the peak-activity phase is before the salt environment.
 
 ### Recommended action

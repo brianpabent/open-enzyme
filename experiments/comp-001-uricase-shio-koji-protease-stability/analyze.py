@@ -1,209 +1,58 @@
 #!/usr/bin/env python3
 """
 comp-001: Uricase protease stability in shio-koji fermentation
-============================================================
-Predicts cleavage-site vulnerability of A. flavus uricase (Q00511) to the
-three major A. oryzae koji proteases under shio-koji conditions (15-20% NaCl,
-pH 4.5-5.0, RT, 7-14 days).
 
-Method:
-  1. Scan uricase sequence for P1/P1' recognition sites matching each protease
-  2. For each site, look up AlphaFold pLDDT confidence of flanking residues
-     (high pLDDT = well-folded = likely buried = lower protease accessibility)
-  3. Apply shio-koji condition corrections:
-     - Salt inhibition (15-20% NaCl suppresses ALP/NPr substantially)
-     - pH correction (acid protease partially active at pH 4.5-5.0)
-  4. Compute per-protease and overall risk score
-  5. Write outputs/cleavage_sites.json and outputs/summary.md
+Orchestrator — loads inputs, calls shared library, writes comp-001-specific outputs.
+Core algorithm lives in experiments/lib/protease_stability.py.
 
-Limitations:
-  - pLDDT is a folding confidence score, not a direct measure of solvent
-    accessibility. High pLDDT strongly correlates with burial but isn't identical.
-  - Specificity rules are simplified (P1/P1' only); real proteases have extended
-    binding subsites (P2-P4, P2'-P4') not encoded here, so this may overcount sites.
-  - Quaternary structure (uricase is a homotetramer in vivo) would further bury
-    subunit interfaces; this analysis uses the monomer structure only, so is
-    conservative (underestimates burial).
-  - Salt-inhibition values are literature approximations (±15%).
-
-Usage: python3 analyze.py
+Usage: python3 analyze.py   (from this directory)
 Outputs: outputs/cleavage_sites.json, outputs/summary.md
 """
 
 import json
-import os
+import sys
 from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).parent
-INPUTS = SCRIPT_DIR / "inputs"
-OUTPUTS = SCRIPT_DIR / "outputs"
+sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
+from protease_stability import (
+    load_sequence,
+    load_plddt,
+    load_proteases,
+    compute_sequence_stats,
+    run_all_proteases,
+)
+
+INPUTS  = Path(__file__).parent / "inputs"
+OUTPUTS = Path(__file__).parent / "outputs"
 OUTPUTS.mkdir(exist_ok=True)
-
-PLDDT_BURIED_THRESHOLD = 80.0    # > 80: well-folded, likely buried
-PLDDT_PARTIAL_THRESHOLD = 65.0   # 65-80: probably folded, partially accessible
-# < 65: likely disordered/exposed loop
-
-SHIO_KOJI_NACL_PCT = 17.5        # midpoint of 15-20% range
-ACID_PROTEASE_PH_ACTIVITY = 0.30  # ~30% of pH-optimal activity at pH 4.5-5.0
-
-
-def load_sequence(fasta_path):
-    seq = ""
-    with open(fasta_path) as f:
-        for line in f:
-            if not line.startswith(">"):
-                seq += line.strip()
-    return seq
-
-
-def load_plddt(plddt_path):
-    with open(plddt_path) as f:
-        raw = json.load(f)
-    return {int(k): v for k, v in raw.items()}
-
-
-def load_proteases(spec_path):
-    with open(spec_path) as f:
-        data = json.load(f)
-    return data["proteases"], data["shio_koji_conditions"]
-
-
-def interpolate_salt_inhibition(protease_data, nacl_pct):
-    """Linear interpolation between the 10% and 20% NaCl residual-activity values."""
-    si = protease_data["salt_inhibition"]
-    lo_pct, lo_act = 10.0, si["NaCl_10pct_residual_activity"]
-    hi_pct, hi_act = 20.0, si["NaCl_20pct_residual_activity"]
-    t = (nacl_pct - lo_pct) / (hi_pct - lo_pct)
-    return lo_act + t * (hi_act - lo_act)
-
-
-def site_plddt(plddt, pos, seq_len, window=3):
-    """Mean pLDDT of residues within ±window of the cleavage site (1-indexed)."""
-    scores = []
-    for i in range(max(1, pos - window), min(seq_len, pos + window + 1)):
-        if i in plddt:
-            scores.append(plddt[i])
-    return sum(scores) / len(scores) if scores else 0.0
-
-
-def classify_accessibility(mean_plddt):
-    if mean_plddt >= PLDDT_BURIED_THRESHOLD:
-        return "buried"
-    elif mean_plddt >= PLDDT_PARTIAL_THRESHOLD:
-        return "partially_exposed"
-    else:
-        return "exposed"
-
-
-def find_cleavage_sites(seq, protease_name, protease_data, plddt, nacl_pct, ph_factor=1.0):
-    """Scan sequence for P1/P1' recognition sites and score each."""
-    p1_set = set(protease_data.get("P1_preferred", []))
-    p1p_set = set(protease_data.get("P1_prime_preferred", []))
-    sites = []
-
-    for i in range(len(seq) - 1):
-        aa_p1 = seq[i]
-        aa_p1p = seq[i + 1]
-        pos = i + 1  # 1-indexed
-
-        p1_match = (not p1_set) or (aa_p1 in p1_set)
-        p1p_match = (not p1p_set) or (aa_p1p in p1p_set)
-
-        if p1_match and p1p_match:
-            mean_plddt = site_plddt(plddt, pos, len(seq))
-            accessibility = classify_accessibility(mean_plddt)
-            salt_activity = interpolate_salt_inhibition(protease_data, nacl_pct)
-            effective_activity = salt_activity * ph_factor
-            # Risk = how accessible the site is × how active the protease still is
-            accessibility_score = {
-                "buried": 0.1,
-                "partially_exposed": 0.4,
-                "exposed": 1.0,
-            }[accessibility]
-            risk_score = round(accessibility_score * effective_activity, 3)
-
-            sites.append({
-                "position": pos,
-                "P1": aa_p1,
-                "P1_prime": aa_p1p,
-                "mean_plddt_window": round(mean_plddt, 1),
-                "accessibility": accessibility,
-                "salt_residual_activity": round(salt_activity, 2),
-                "ph_activity_factor": round(ph_factor, 2),
-                "effective_protease_activity": round(effective_activity, 3),
-                "risk_score": risk_score,
-            })
-
-    return sorted(sites, key=lambda x: -x["risk_score"])
 
 
 def main():
-    seq = load_sequence(INPUTS / "Q00511.fasta")
-    plddt = load_plddt(INPUTS / "alphafold_Q00511_plddt.json")
+    seq       = load_sequence(INPUTS / "Q00511.fasta")
+    plddt     = load_plddt(INPUTS / "alphafold_Q00511_plddt.json")
     proteases, conditions = load_proteases(INPUTS / "protease_specificities.json")
 
-    nacl_pct = conditions["NaCl_pct"]
-    results = {}
-
-    for name, pdata in proteases.items():
-        ph_factor = ACID_PROTEASE_PH_ACTIVITY if name == "acid_protease" else 1.0
-        sites = find_cleavage_sites(seq, name, pdata, plddt, nacl_pct, ph_factor)
-        n_exposed = sum(1 for s in sites if s["accessibility"] == "exposed")
-        n_partial = sum(1 for s in sites if s["accessibility"] == "partially_exposed")
-        n_buried = sum(1 for s in sites if s["accessibility"] == "buried")
-        salt_act = interpolate_salt_inhibition(pdata, nacl_pct)
-        ph_factor_val = ACID_PROTEASE_PH_ACTIVITY if name == "acid_protease" else 1.0
-        top_sites = sites[:5]
-
-        results[name] = {
-            "full_name": pdata["full_name"],
-            "total_recognition_sites": len(sites),
-            "exposed_sites": n_exposed,
-            "partially_exposed_sites": n_partial,
-            "buried_sites": n_buried,
-            "salt_residual_activity_at_17pct_NaCl": round(salt_act, 2),
-            "ph_activity_factor": round(ph_factor_val, 2),
-            "effective_activity": round(salt_act * ph_factor_val, 3),
-            "max_risk_score": round(sites[0]["risk_score"], 3) if sites else 0,
-            "mean_risk_score_top5": round(
-                sum(s["risk_score"] for s in top_sites) / len(top_sites), 3
-            ) if top_sites else 0,
-            "top_5_sites": top_sites,
-        }
-
-    plddt_vals = list(plddt.values())
-    sequence_stats = {
-        "length": len(seq),
-        "mean_plddt": round(sum(plddt_vals) / len(plddt_vals), 1),
-        "min_plddt": round(min(plddt_vals), 1),
-        "max_plddt": round(max(plddt_vals), 1),
-        "pct_residues_above_80": round(
-            100 * sum(1 for v in plddt_vals if v >= 80) / len(plddt_vals), 1
-        ),
-        "pct_residues_above_90": round(
-            100 * sum(1 for v in plddt_vals if v >= 90) / len(plddt_vals), 1
-        ),
-    }
+    sequence_stats   = compute_sequence_stats(plddt)
+    protease_results = run_all_proteases(seq, plddt, proteases, conditions)
 
     output = {
-        "protein": "Uricase (urate oxidase), Aspergillus flavus (Q00511)",
-        "conditions": conditions,
-        "sequence_stats": sequence_stats,
-        "protease_results": results,
+        "protein":          "Uricase (urate oxidase), Aspergillus flavus (Q00511)",
+        "conditions":       conditions,
+        "sequence_stats":   sequence_stats,
+        "protease_results": protease_results,
     }
 
     with open(OUTPUTS / "cleavage_sites.json", "w") as f:
         json.dump(output, f, indent=2)
 
-    # Write human-readable summary
     write_summary(output, OUTPUTS / "summary.md")
     print("Done. Outputs written to outputs/")
 
 
 def write_summary(data, path):
-    ss = data["sequence_stats"]
+    ss   = data["sequence_stats"]
     cond = data["conditions"]
-    pr = data["protease_results"]
+    pr   = data["protease_results"]
 
     lines = [
         "# comp-001 — Uricase Shio-Koji Protease Stability: Summary",
@@ -217,8 +66,8 @@ def write_summary(data, path):
         "",
         "## Structural Overview",
         "",
-        f"| Metric | Value |",
-        f"|---|---|",
+        "| Metric | Value |",
+        "|---|---|",
         f"| Sequence length | {ss['length']} aa |",
         f"| Mean pLDDT (AlphaFold confidence) | {ss['mean_plddt']} / 100 |",
         f"| Minimum pLDDT (most flexible residue) | {ss['min_plddt']} / 100 |",
@@ -237,13 +86,13 @@ def write_summary(data, path):
         lines += [
             f"### {r['full_name']} (`{name}`)",
             "",
-            f"| Parameter | Value |",
-            f"|---|---|",
+            "| Parameter | Value |",
+            "|---|---|",
             f"| Recognition sites in sequence | {r['total_recognition_sites']} |",
             f"| Buried (pLDDT ≥ 80) | {r['buried_sites']} |",
             f"| Partially exposed (pLDDT 65–80) | {r['partially_exposed_sites']} |",
             f"| Exposed (pLDDT < 65) | {r['exposed_sites']} |",
-            f"| Residual activity at 17.5% NaCl | {r['salt_residual_activity_at_17pct_NaCl']*100:.0f}% |",
+            f"| Residual activity at 17.5% NaCl | {r['salt_residual_activity_at_nacl']*100:.0f}% |",
             f"| pH activity factor (shio-koji pH) | {r['ph_activity_factor']*100:.0f}% |",
             f"| Effective protease activity (salt × pH) | {r['effective_activity']*100:.1f}% |",
             f"| Max risk score (0–1) | {r['max_risk_score']} |",
@@ -271,18 +120,18 @@ def write_summary(data, path):
     ]
 
     max_risks = {n: r["max_risk_score"] for n, r in pr.items()}
-    worst = max(max_risks, key=max_risks.get)
+    worst     = max(max_risks, key=max_risks.get)
     worst_score = max_risks[worst]
 
     if worst_score < 0.15:
         verdict = "**LOW** — protease degradation in shio-koji is unlikely to meaningfully reduce uricase activity"
-        color = "Low"
+        color   = "Low"
     elif worst_score < 0.30:
         verdict = "**MODERATE** — some degradation possible; wet-lab confirmation (§1.10) recommended before relying on shio-koji format"
-        color = "Moderate"
+        color   = "Moderate"
     else:
         verdict = "**HIGH** — significant protease risk; shio-koji format likely incompatible with uricase delivery"
-        color = "High"
+        color   = "High"
 
     lines += [
         f"**Overall risk: {color}**",
@@ -303,6 +152,7 @@ def write_summary(data, path):
         "- pLDDT ≠ solvent accessibility. Some high-pLDDT residues on protein surface loops may still be accessible. A molecular dynamics simulation or explicit solvent-accessibility calculation would sharpen this.",
         "- P1/P1' rules only. Real protease extended binding subsites (P2–P4) are not modelled; this may over-count recognition sites.",
         "- Monomer structure only. Quaternary burial (tetramer interfaces) would reduce accessible surface further — this analysis is conservative.",
+        "- ALP and NPr pH factors set to 1.0 (conservative). ALP is outside its active pH range at shio-koji pH 4.5–5.0; NPr is at its lower edge. True risk from these two proteases is lower than computed.",
         "- No fermentation dynamics. During active koji growth (before shio-koji is made), proteases operate at higher activity. The shio-koji format specifically starts after koji is harvested and mixed with salt — the peak-activity phase is before the salt environment.",
         "",
         "### Recommended action",
