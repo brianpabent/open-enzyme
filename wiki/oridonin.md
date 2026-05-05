@@ -89,7 +89,9 @@ The mechanism is well-established in cell culture and animal models, but clinica
 
 ### Rabdosia rubescens Usage
 
-*Rabdosia rubescens* (also called *Isodon rubescens*) is a plant used in traditional Chinese medicine for inflammatory conditions, clearing heat, and removing toxins. The plant has been used for centuries in Asian herbal medicine, though oridonin specifically was only isolated and characterized in modern times.
+*Rabdosia rubescens* (also called *Isodon rubescens*) is a plant used in traditional Chinese medicine for inflammatory conditions, clearing heat, and removing toxins (冬凌草 Dong Ling Cao — "heat-clearing detoxification" category in TCM materia medica). The plant has been used for centuries in Asian herbal medicine, though oridonin specifically was only isolated and characterized in modern times.
+
+Oridonin is one of several TCM-lineage compounds in the Open Enzyme stack. The broader methodology for applying modern scientific rigor to TCM materia medica — including chokepoint mapping, ChEMBL cross-check, bioavailability-honest framing, and formula decomposition — is formalized in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md). Oridonin is explicitly listed there as a TCM-lineage compound with an existing wiki page. (source: tcm-modern-rigor-intersection.md)
 
 ### Modern Extraction & Standardization
 

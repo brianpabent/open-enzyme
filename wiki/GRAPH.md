@@ -160,6 +160,10 @@ graph TB
         DE6["Strain Library (synthesis output)"]
         DE7["Modality × Target Matrix — exploration surface"]
         DE8["Paperclip GXL — 11M full-text papers + 150M abstracts MCP"]
+        DE9["TCM × Modern Rigor — empirical-prior re-mining lens"]
+        DE10["Si Miao San / Si Miao Wan — 4-herb gout formula (ChiCTR RCTs)"]
+        DE11["Smilax glabra (Tu Fu Ling) — primary TCM gout herb"]
+        DE12["Global Lab Access — Maruyama Tokyo / Jiangnan / DTU parallel paths"]
     end
 
     subgraph Androgens["ANDROGEN-URATE AXIS (NEW)"]
@@ -421,6 +425,16 @@ graph TB
     %% Paperclip literature MCP (source: paperclip-deep-dive.md)
     DE8 -->|"full-text search augments"| DE1
     DE8 -->|"literature delta surfaces"| DE2
+    %% TCM × Modern Rigor lens (source: tcm-modern-rigor-intersection.md)
+    DE9 -->|"applies chokepoint mapping to"| DE1
+    DE9 -->|"ChEMBL cross-checks"| DE2
+    DE9 -->|"surfaces formula-decomposed"| DE10
+    DE9 -->|"surfaces single-compound"| DE11
+    DE10 -->|"XO inhibition + NLRP3 (Animal Model)"| C2
+    DE11 -->|"XO inhibition + URAT1 modulation"| B1
+    %% Global lab access (source: ward-1995-lab-access-global.md)
+    DE12 -->|"provides NSlD-dP10 chassis for"| KE10
+    DE12 -->|"parallel path via C19 chassis"| KE1
 
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2

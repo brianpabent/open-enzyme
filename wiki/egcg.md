@@ -34,6 +34,7 @@ See also the stack-level entry in [supplements-stack.md](./supplements-stack.md)
 - **Chemistry:** Flavan-3-ol (catechin) with a gallate ester at the C3 position. Three phenolic rings, eight free hydroxyl groups — the highest hydroxyl density of any major dietary polyphenol. The gallate group is what drives proteasome chymotrypsin-site binding; non-gallated catechins (EC, EGC) are 10–100× weaker at the same target.
 - **Source:** The dominant flavan-3-ol in *Camellia sinensis* (green tea); ~50–60% of total green tea catechins by mass. Matcha and white tea concentrate EGCG further; fully oxidized teas (black, pu'er) convert much of the EGCG into theaflavins and thearubigins.
 - **Not producible in engineered yeast or koji at practical titers** — see [Engineered-production angle](#engineered-production-angle) below. EGCG is a dietary / supplement compound, not an Open Enzyme production target.
+- **TCM lineage:** EGCG is the dominant catechin in green tea (Lu Cha 绿茶), which has a long history of medicinal use in TCM. The broader methodology for applying modern scientific rigor to TCM-lineage compounds — including chokepoint mapping, ChEMBL cross-check, and bioavailability-honest framing — is formalized in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md). EGCG is explicitly listed there as a TCM-lineage compound with an existing wiki page. (source: tcm-modern-rigor-intersection.md)
 
 ---
 
