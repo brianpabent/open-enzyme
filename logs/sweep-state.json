@@ -1,27 +1,17 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "487fad35b1aebd96a007877f0cf31e6aa89ab20c",
-    "timestamp": "2026-05-05T22:17:04Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-05-487fad3.md",
-    "review_commit": "487fad35b1aebd96a007877f0cf31e6aa89ab20c",
+    "commit": "d6b4210e057c78595dda688b333426c3f8360f8a",
+    "timestamp": "2026-05-05T22:58:08Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-05-d6b4210.md",
+    "review_commit": "d6b4210e057c78595dda688b333426c3f8360f8a",
     "trigger_files": [
-      "wiki/GRAPH.md",
-      "wiki/aspergillus-oryzae.md",
-      "wiki/cassette-compatibility-computational.md",
-      "wiki/complement-c5a-gout.md",
-      "wiki/computational-experiments.md",
-      "wiki/engineered-koji-protocol.md",
-      "wiki/gout-pathophysiology.md",
-      "wiki/hypotheses/H01-ward-dual-cassette.md",
-      "wiki/hypotheses/README.md",
-      "wiki/index.md",
-      "wiki/koji-endgame-strain.md",
-      "wiki/lactoferrin.md",
-      "wiki/uricase-variant-selection.md",
-      "wiki/validation-experiments.md"
+      "wiki/hypotheses/H04-tcm-rigor-intersection.md",
+      "wiki/tcm-modern-rigor-intersection.md",
+      "wiki/team.md",
+      "wiki/ward-1995-lab-access-global.md"
     ],
-    "run_id": "25405186920"
+    "run_id": "25406390196"
   },
   "recent_runs": [
     {
@@ -59,6 +49,15 @@
       "failed_phase": null,
       "trigger_paths_count": 14,
       "synthesis_log": "logs/v4-synthesis-2026-05-05-487fad3.md"
+    },
+    {
+      "run_id": "25406390196",
+      "trigger": "push",
+      "completed_at": "2026-05-05T22:58:08Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 4,
+      "synthesis_log": "logs/v4-synthesis-2026-05-05-d6b4210.md"
     }
   ]
 }
