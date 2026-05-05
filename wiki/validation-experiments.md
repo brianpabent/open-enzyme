@@ -44,7 +44,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§1.11](#111-ergothioneine--abcg2-induction-in-caco-2-native-koji-synergy-test) | Ergothioneine → ABCG2 Caco-2 (native koji synergy) | In Vitro | $1,000–1,500 | 3–4 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.12](#112-local-h2o2-stress-in-caco-2-from-high-gut-lumen-uricase) | Local H₂O₂ epithelial stress from gut-lumen uricase | In Vitro | $800–1,200 | 2–3 | Proposed | [uricase](./uricase.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.13](#113-limonene--abcg2-induction-in-caco-2-tier-3-stack-synergy-test) | Limonene → ABCG2 Caco-2 (Tier-3 stack synergy) | In Vitro | $800–1,200 | 3–4 | Proposed | [supplements-stack](./supplements-stack.md), [abcg2-modulators](./abcg2-modulators.md), [cannabinoids-terpenes](./cannabinoids-terpenes.md) |
-| [§1.14](#114-additive-abcg2-suppression-by-androgens--tnf--butyrate-rescue) | DHT + TNFα additive ABCG2 suppression + butyrate rescue | In Vitro | $1,500–2,500 | 4–6 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [androgen-urate-axis](./androgen-urate-axis.md), [gut-lumen-sink](./gut-lumen-sink.md) |
+| [§1.14](#114-additive-abcg2-suppression-by-androgens--tnfα--butyrate-rescue--lactoferrin-synergy) | DHT + TNFα additive ABCG2 suppression + butyrate rescue + lactoferrin synergy | In Vitro | $1,800–2,800 | 4–6 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [androgen-urate-axis](./androgen-urate-axis.md), [gut-lumen-sink](./gut-lumen-sink.md), [lactoferrin](./lactoferrin.md), [koji-endgame-strain](./koji-endgame-strain.md) |
 | [§1.15](#115-rice-bran-substrate--koji-uricase-gi-survival) | Rice-bran substrate × koji uricase GI survival | In Vitro | $800–1,200 | 3 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [gi-survival-prediction](./gi-survival-prediction.md) |
 | [§1.16](#116-opt-1-disulfide-engineered-uricase-in-koji-vs-wt--gi-survival-head-to-head) | OPT-1 disulfide uricase in koji vs. WT (GI survival) | In Vitro | $1,800–2,500 | 6–8 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [uricase-variant-selection](./uricase-variant-selection.md), [protein-engineering-strategy](./protein-engineering-strategy.md) |
 | [§1.17](#117-quercetin--ursolic-acid--carnosine-three-way-synergy-on-msu-stimulated-thp-1) | Quercetin × ursolic × carnosine 3-way synergy (THP-1 MSU) | In Vitro | $1,500–2,000 | 3–4 | Proposed | [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [carnosine](./carnosine.md) |
@@ -495,37 +495,40 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 ---
 
-### 1.14 Additive ABCG2 Suppression by Androgens + TNFα + Butyrate Rescue
+### 1.14 Additive ABCG2 Suppression by Androgens + TNFα + Butyrate Rescue + Lactoferrin Synergy
 
-**Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 4–6 | **Phase**: 1
+**Status**: Proposed | **Cost**: $1,800–2,800 | **Weeks**: 4–6 | **Phase**: 1
 
-**Affected wiki**: [abcg2-modulators](./abcg2-modulators.md), [androgen-urate-axis](./androgen-urate-axis.md), [gut-lumen-sink](./gut-lumen-sink.md), [supplements-stack](./supplements-stack.md)
+**Affected wiki**: [abcg2-modulators](./abcg2-modulators.md), [androgen-urate-axis](./androgen-urate-axis.md), [gut-lumen-sink](./gut-lumen-sink.md), [supplements-stack](./supplements-stack.md), [lactoferrin](./lactoferrin.md), [koji-endgame-strain](./koji-endgame-strain.md)
 
-**What it tests:** Two questions in one experiment. (1) Are androgen (DHT) and inflammatory (TNFα) suppression of ABCG2 **additive**, producing a "worst-case" phenotype for the gut-lumen sink in patients with both elevated androgens and chronic inflammation? (2) Does butyrate co-treatment **rescue** the suppressed phenotype via PPARγ induction, restoring substrate flow for the engineered uricase?
+**What it tests:** Three questions in one experiment. (1) Are androgen (DHT) and inflammatory (TNFα) suppression of ABCG2 **additive**, producing a "worst-case" phenotype for the gut-lumen sink in patients with both elevated androgens and chronic inflammation? (2) Does butyrate co-treatment **rescue** the suppressed phenotype via PPARγ induction, restoring substrate flow for the engineered uricase? (3) Does lactoferrin co-treatment **also rescue** the TNFα-suppressed phenotype via TNFα suppression (independent of PPARγ) — testing whether the koji endgame strain's engineered lactoferrin payload would synergize with its co-expressed uricase by relieving the inflammatory brake on ABCG2?
 
-**Proposed in:** `wiki/synthesis.md` 2026-04-27 Connection #1 + Proposed Experiment #2 (DHT + TNFα additive ABCG2 suppression). Per the Pass 3 review augmentation: include butyrate co-treatment to test the "gate-opening stack" claim in the same experiment without materially increasing cost.
+**Proposed in:** `wiki/synthesis.md` 2026-04-27 Connection #1 + Proposed Experiment #2 (DHT + TNFα additive ABCG2 suppression); 2026-05-05 Connection #1 (lactoferrin → TNFα → ABCG2 derepression as substrate-supply synergy). Per the Pass 3 review augmentation: bundle the lactoferrin arm into the same Caco-2 factorial rather than queue a parallel experiment — the marginal cost is small relative to running two batches.
 
 **Protocol:**
 - **Cells:** Caco-2 transwell (used in both Xie 2020 and Solbakk 2025 per `abcg2-modulators.md`), 21-day differentiated.
-- **Treatment arms (3 × 3 + butyrate, n=4 per arm):**
+- **Treatment arms (3 × 3 + rescue arms, n=4 per arm):**
   - DHT: 0, 10, 100 nM
   - TNFα: 0, 5, 20 ng/mL
   - All 9 combinations (DHT × TNFα factorial)
-  - **Butyrate rescue arm:** repeat the highest-suppression combination (DHT 100 nM + TNFα 20 ng/mL) ± butyrate 1 mM apical
+  - **Butyrate rescue arm:** repeat the highest-suppression combination (DHT 100 nM + TNFα 20 ng/mL) ± butyrate 1 mM apical.
+  - **Lactoferrin rescue arm:** repeat the TNFα-only suppression (TNFα 20 ng/mL, DHT 0) and the worst-case combination (DHT 100 nM + TNFα 20 ng/mL) ± bovine lactoferrin 100 µg/mL basolateral (mimicking gut-lumen-side delivery from the koji endgame strain). Compare to the butyrate rescue arm — lactoferrin's mechanism (TNFα suppression upstream) is mechanistically distinct from butyrate's (PPARγ induction), so the two should not be redundant in the worst-case phenotype.
 - **Time-course:** 48 h.
-- **Readouts:** ABCG2 mRNA (qPCR), ABCG2 protein (Western, apical-membrane fraction), functional urate efflux (transwell, basolateral-to-apical urate flux), AR activation (CYP3A4 mRNA as positive control), NF-κB activation (IκBα Western).
+- **Readouts:** ABCG2 mRNA (qPCR), ABCG2 protein (Western, apical-membrane fraction), functional urate efflux (transwell, basolateral-to-apical urate flux — *primary readout per Pass 3 critique that expression ≠ function*), AR activation (CYP3A4 mRNA as positive control), NF-κB activation (IκBα Western), TNFα abundance in lactoferrin arms (ELISA, confirming that lactoferrin actually suppressed the added TNFα).
 
-**Estimated cost:** $1,500–2,500 — Caco-2 + transwell ($400), DHT + TNFα + butyrate standards ($200), urate analytics ($300), qPCR + Western antibodies ($600), assay reagents ($300), labor ($200).
+**Estimated cost:** $1,800–2,800 — Caco-2 + transwell ($400), DHT + TNFα + butyrate standards ($200), bovine lactoferrin (research-grade, ~$150 for 1 g; ample for 100 µg/mL × 4 wells × 4 conditions), urate analytics ($300), qPCR + Western antibodies ($600), TNFα ELISA ($150), assay reagents ($300), labor ($200).
 
-**Estimated timeline:** 4–6 weeks.
+**Estimated timeline:** 4–6 weeks (unchanged — lactoferrin arms run in the same batch).
 
-**Dependencies:** Caco-2 access. Stand-alone or paired with §1.11/§1.13 in the same Caco-2 batch run.
+**Dependencies:** Caco-2 access. Stand-alone or paired with §1.11/§1.13 in the same Caco-2 batch run. Bovine lactoferrin is over-the-counter (Jarrow / NOW supplements work for pilot; research-grade Sigma L9507 for the actual experiment).
 
 **Success criteria:**
-- **Additive suppression confirmed AND butyrate rescue confirmed:** elevates the "dense-downstream + gate-opening stack" framing to supported. Strengthens the personalized-medicine case for fiber/butyrate in [`abcg2-modulators.md`](./abcg2-modulators.md). Informs the male-on-TRT subgroup of the self-experiment protocol.
-- **Suppression sub-additive (synergistic-suppression rather than additive)** or **butyrate fails to rescue:** triggers a redesign of the gut-lumen-sink dosing model — uricase output capacity must compensate for unrescuable ABCG2 capping in the worst-case phenotype.
+- **Additive suppression confirmed AND butyrate rescue confirmed AND lactoferrin rescue confirmed:** elevates the "dense-downstream + dual gate-opening stack" framing to supported. Strengthens the personalized-medicine case for fiber/butyrate in [`abcg2-modulators.md`](./abcg2-modulators.md). Validates the lactoferrin-as-substrate-supply-synergist hypothesis in [`lactoferrin.md`](./lactoferrin.md) §4.7 and the [`koji-endgame-strain.md`](./koji-endgame-strain.md) §2.2 positive-feedback framing — making the case for layering both cassettes (uricase + lactoferrin) substantially stronger than either alone.
+- **Lactoferrin rescues but butyrate doesn't (or vice versa):** identifies which gate-opener is operative in which subphenotype — informs whether the koji endgame strain payload is sufficient (lactoferrin built-in) or requires fermentable-fiber adjunct (butyrate-via-microbiome).
+- **Neither rescues the worst-case phenotype:** triggers a redesign of the gut-lumen-sink dosing model — uricase output capacity must compensate for unrescuable ABCG2 capping in the male/inflamed subgroup.
+- **Suppression sub-additive (synergistic-suppression rather than additive):** triggers same redesign as the no-rescue case.
 
-**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Connection #1 + Proposed Experiment #2; [abcg2-modulators.md](./abcg2-modulators.md) §3 (TNFα suppression — Ferrer-Picón 2020 PMID 31211831); [androgen-urate-axis.md](./androgen-urate-axis.md) (AR-mediated ABCG2 suppression).
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Connection #1 + Proposed Experiment #2; 2026-05-05 Connection #1 (lactoferrin substrate-supply synergy); [abcg2-modulators.md](./abcg2-modulators.md) §3 (TNFα suppression — Ferrer-Picón 2020 PMID 31211831); [androgen-urate-axis.md](./androgen-urate-axis.md) (AR-mediated ABCG2 suppression); [lactoferrin.md](./lactoferrin.md) §4.1 (Habib 2023 PMID 37926296 — Lf → ↓TNFα in vivo) and §4.7 (substrate-supply synergy framing); [koji-endgame-strain.md](./koji-endgame-strain.md) §2.2.
 
 ---
 
