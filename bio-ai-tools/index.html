@@ -3298,10 +3298,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sweep-daemon-integration-open-platform-decision" class="md-nav__link">
+  <a href="#reliability-trust-ranking-by-tool-2026-05-05-verification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sweep-Daemon Integration — Open Platform Decision
+        Reliability — Trust Ranking by Tool (2026-05-05 verification)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sweep-daemon-integration-decided-2026-05-05-do-not-integrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sweep-Daemon Integration — DECIDED 2026-05-05: Do Not Integrate
       
     </span>
   </a>
@@ -4408,8 +4419,86 @@
 - Cross-domain queries — e.g., grep for "uricase" + "food-grade" or "ABCG2" + "probiotic" across the full corpus to surface intersections that PubMed and Scholar fragment
 - arXiv coverage for protein language models, directed-evolution algorithms, and novel delivery vectors (keeps <code>bio-ai-tools.md</code> current without bouncing between PubMed and arXiv)</p>
 <p>(source: paperclip-deep-dive.md)</p>
-<h3 id="sweep-daemon-integration-open-platform-decision">Sweep-Daemon Integration — Open Platform Decision<a class="headerlink" href="#sweep-daemon-integration-open-platform-decision" title="Permanent link">&para;</a></h3>
-<p>A Paperclip-augmented sweep pass could query for new literature matching project keywords on each sweep and produce a "literature delta" surface — papers published since the last sweep that touch active research tracks, with cross-references to specific wiki pages. This is a real architectural change (adds an outward-facing input to a currently closed-corpus pipeline), with consequences for sweep runtime, OpenRouter token usage, and signal-to-noise. Routed to <code>wiki/synthesis.md</code> as a Priority Action / Open Question rather than implemented inline. (source: paperclip-deep-dive.md)</p>
+<h3 id="reliability-trust-ranking-by-tool-2026-05-05-verification">Reliability — Trust Ranking by Tool (2026-05-05 verification)<a class="headerlink" href="#reliability-trust-ranking-by-tool-2026-05-05-verification" title="Permanent link">&para;</a></h3>
+<p>A first end-to-end test (uricase variant landscape + <em>A. oryzae</em> expression evidence) surfaced a systematic hallucination pattern in the <code>map</code> operator. (source: paperclip-deep-dive.md)</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Reliability</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>search</code></td>
+<td><strong>High</strong></td>
+<td>Returns real PMC / bioRxiv / arXiv records with accurate IDs and titles</td>
+</tr>
+<tr>
+<td><code>cat /papers/&lt;id&gt;/meta.json</code></td>
+<td><strong>High</strong></td>
+<td>Authoritative paper metadata — use as ground truth for abstract-level claims</td>
+</tr>
+<tr>
+<td><code>grep PATTERN /papers/&lt;id&gt;/...</code></td>
+<td><strong>High</strong></td>
+<td>Returns real text from indexed paper bodies</td>
+</tr>
+<tr>
+<td><code>cat /papers/&lt;id&gt;/content.lines</code></td>
+<td><strong>High</strong></td>
+<td>Real full-text</td>
+</tr>
+<tr>
+<td><code>map --from &lt;id&gt; "extract X"</code></td>
+<td><strong>LOW — hallucinates quantitative data and misattributes organisms</strong></td>
+<td>Lighter reader model substitutes plausible-looking domain values when full text doesn't support the requested field</td>
+</tr>
+<tr>
+<td><code>reduce --from &lt;map-id&gt; ...</code></td>
+<td><strong>Compounding risk</strong></td>
+<td>If underlying <code>map</code> is wrong, <code>reduce</code> consolidates wrong claims into a confident-looking summary</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Verification discipline for any Paperclip session:</strong> (1) Use <code>search</code> and <code>grep</code> as primary evidence; treat <code>map</code> as hypothesis-generation only. (2) Grep-verify every load-bearing number against the paper body. (3) Anchor identity claims (organism, gene, host) to <code>meta.json</code>. (4) Never propagate <code>reduce</code> summaries directly. (5) Check computational vs. wet-lab status from the abstract or methods section. (source: paperclip-deep-dive.md)</p>
+<h3 id="sweep-daemon-integration-decided-2026-05-05-do-not-integrate">Sweep-Daemon Integration — DECIDED 2026-05-05: Do Not Integrate<a class="headerlink" href="#sweep-daemon-integration-decided-2026-05-05-do-not-integrate" title="Permanent link">&para;</a></h3>
+<p><strong>Decision: do not wire Paperclip into the four-pass sweep daemon.</strong> A verification test (uricase variant landscape, ~12 papers with known-correct ground truths) revealed a systematic hallucination pattern in the <code>map</code> operator that is disqualifying for any automated pipeline. (source: paperclip-deep-dive.md)</p>
+<p><strong>Concrete hallucination examples from the 2026-05-05 test</strong> (In Vitro / verification):</p>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Abstract / body says</th>
+<th><code>map</code> returned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PMC9773812 (Najjari 2022, PASylated UOX)</td>
+<td><em>A. flavus</em> UOX, K<sub>m</sub> 52.61 µM</td>
+<td><em>A. globiformis</em> uricase variant, K<sub>m</sub> 0.007 mM (~7,500× off)</td>
+</tr>
+<tr>
+<td>PMC4881585 (Xie 2016, chimeric uricase)</td>
+<td>Porcine-human exon-replacement chimera</td>
+<td><em>P. chrysogenum</em>-human exon chimera (different organism)</td>
+</tr>
+<tr>
+<td>PMC10561068 (Yan 2023, <em>Arthrobacter</em> CSAJ-16)</td>
+<td>Optimal T 20°C, K<sub>m</sub> 0.048 mM</td>
+<td>Optimal T 40°C, K<sub>m</sub> 0.015 mM</td>
+</tr>
+<tr>
+<td>PMC12106716 (Rahbar 2025, A. flavus disulfide design)</td>
+<td>Pure computational paper — no wet-lab</td>
+<td>Invented Tm, K<sub>m</sub>/k<sub>cat</sub> measurements; named non-existent mutation pair</td>
+</tr>
+</tbody>
+</table>
+<p>These are confabulations — plausible-looking values that would pass casual review but are not in the underlying full text. Wiring this into the sweep would inject a structured external hallucination source into a corpus designed for PhD-grade rigor.</p>
+<p><strong>Reopen condition:</strong> if GXL ships a verified upgrade of the <code>map</code> reader model and the uricase variant probe (~12 papers, multiple known-correct ground truths via abstract + grep) passes cleanly, revisit. Until then Paperclip remains a manual-research-only tool. (source: paperclip-deep-dive.md; Mechanistic Extrapolation)</p>
 <h3 id="limitations_1">Limitations<a class="headerlink" href="#limitations_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>PMC embargo lag: recent high-impact papers in non-OA journals will be abstract-only</li>

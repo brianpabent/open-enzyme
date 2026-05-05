@@ -3159,19 +3159,17 @@
 <strong>Reviewer:</strong> google/gemini-2.5-pro</p>
 <h2 id="new-connections">New Connections<a class="headerlink" href="#new-connections" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p><strong>Lactoferrin co-expression in the endgame strain may create a positive feedback loop by relieving inflammatory suppression of the gut-lumen sink.</strong> <em>Speculative</em>.</p>
-<ul>
+<li><strong>Lactoferrin co-expression in the endgame strain may create a positive feedback loop by relieving inflammatory suppression of the gut-lumen sink.</strong> <em>Speculative</em>.<ul>
 <li><em>Documents Connected:</em> <code>lactoferrin.md</code>, <code>abcg2-modulators.md</code>, <code>koji-endgame-strain.md</code>, <code>gut-lumen-sink.md</code></li>
 <li><em>Why It Matters:</em> The platform's core uricase mechanism depends on ABCG2 transporting urate into the gut. Chronic low-grade inflammation, driven by TNFα, suppresses ABCG2 expression (<code>abcg2-modulators.md</code>). Lactoferrin is known to suppress TNFα (<code>lactoferrin.md</code>). Therefore, co-expressing lactoferrin in the <code>koji-endgame-strain</code> could relieve this inflammatory brake on ABCG2, increasing substrate supply for the co-expressed uricase. This transforms lactoferrin from a simple multi-chokepoint NLRP3 modulator into a direct synergist for the platform's primary urate-lowering mechanism.</li>
 <li><em>Suggested Action:</em> Propose an in vitro experiment co-treating Caco-2 cells with TNFα and lactoferrin, then measuring ABCG2 expression and urate transport to validate this feedback loop. This should be added to <code>validation-experiments.md</code>.</li>
 </ul>
-<p>Interesting — the grep is case-sensitive I think, but let me verify. The inlined file clearly contains "Faecalibacterium" and siRNA. Must be an issue with the tool. Let me proceed — I have enough info from the inlined cache.</p>
 </li>
 </ol>
 <blockquote>
 <p><strong>Claude review — Confirmed.</strong> Strong synthesis. The TNFα → ABCG2-suppression axis is directly supported by Ferrer-Picón 2020 (PMID 31211831) in <code>abcg2-modulators.md</code> §3, and lactoferrin's TNFα suppression is documented in <code>lactoferrin.md</code> §4.1 (Habib 2023 PMID 37926296). The positive-feedback framing is novel — lactoferrin was previously positioned as a CP1a/CP4/CP6b NLRP3 modulator only. One refinement: the platform already flags lactoferrin as "may be doing more for the gut-sink than its current positioning suggests" in <code>open-questions.md</code> §"Co-engineered substrate-supply mechanisms", so this elevates an existing hypothesis rather than originating it. The proposed Caco-2 TNFα + lactoferrin + urate transport experiment is well-scoped and should land in <code>validation-experiments.md</code> as a focused addition to §1.14 (which already tests DHT + TNFα additive suppression + butyrate rescue).</p>
 </blockquote>
+<p><strong>✓ Actioned 2026-05-05:</strong> Extended <code>validation-experiments.md</code> §1.14 to include a lactoferrin rescue arm alongside butyrate (renamed "Additive ABCG2 Suppression by Androgens + TNFα + Butyrate Rescue + Lactoferrin Synergy"; cost +$300 for Lf reagent + TNFα ELISA, timeline unchanged); added new <code>lactoferrin.md</code> §4.7 "Indirect Substrate-Supply Synergy" formalizing the composed mechanism with evidence-level tags; added a "Beyond chokepoint coverage" paragraph at end of <code>koji-endgame-strain.md</code> §2.2 framing the dual-cassette architecture as positive-feedback geometry. Stray garbage sentence at L32 of this file removed.</p>
 <ol>
 <li>
 <p><strong>Carnosine is a uniquely well-suited co-expression candidate for the androgen-dominant gout phenotype because it directly counters androgen-driven hyperuricemia at the renal level.</strong> <em>Supported</em>.</p>
