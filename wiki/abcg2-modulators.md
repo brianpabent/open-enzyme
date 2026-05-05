@@ -238,6 +238,17 @@ Documented functional ABCG2 inhibitors at supplement-relevant doses:
 | EGCG | Functional BCRP inhibitor in pharmacology assays. Yu et al. 2024 (*Food Funct*, PMID 38757391) showed mouse PO-induced hyperuricemic model net-favorable effect on ABCG2/URAT1/GLUT9 expression at the tissue level — direction opposite to the in vitro inhibition story. Net clinical effect on gut sink: unresolved. | Mixed: pharmacology in vitro vs. animal model in vivo |
 | Genistein / soy isoflavones | Established BCRP substrate-inhibitor. Dietary intake from natto/miso is much smaller than supplement doses. | Pharmacology literature |
 
+**Risk-tier stratification** (propagated from `supplements-stack.md` §"Stack-level contradictions" 2026-04-27; updated framing 2026-05-05):
+
+| User profile | ABCG2 status | Risk tier | Practical implication |
+|---|---|---|---|
+| Q141K homozygote + androgen-suppressed (TRT / SERM / AAS) + high-dose flavonoid (>500 mg quercetin OR >600 mg EGCG OR >500 mg curcumin) | Triple-hit suppressed | **Highest concern** | Gut sink may be functionally closed during dose window. Pause inhibitor flavonoids; favor inducers (sulforaphane, fermentable fiber → butyrate, §"Inducers of intestinal ABCG2" above). |
+| Q141K heterozygote OR androgen-dominant (high-T, no SERM) + supplement-grade flavonoid | One axis suppressed + acute pharmacological inhibition | **High concern** | Meaningful gut-sink narrowing during the dose window. Time inhibitor flavonoids away from urate spikes (post-fructose meals, peri-flare). Acceptable with UA monitoring. |
+| Wild-type ABCG2 + supplement-grade flavonoid | Pharmacological inhibition only | **Moderate concern** | Net effect dose- and chronicity-dependent. Watch UA trajectory after introduction; down-titrate if UA rises. |
+| Any genotype + dietary-level flavonoid (onions, tea, turmeric, fermented soy at normal food portions) | Sub-Ki gut concentrations | **Minimal concern** | No restriction. Food-level intake is unlikely to be clinically significant for the gut sink. |
+
+Stratification matters because a blanket "avoid quercetin" message undermines compliance for the largest cohort (wild-type genotype, dietary intake) where the risk is essentially zero. The clinically meaningful signal concentrates in androgen-suppressed Q141K-positive readers at supplement-grade doses.
+
 **Practical inference for high-T or Q141K-positive patients:** avoid high-dose curcumin and quercetin acutely when the gut sink matters most (post-meal urate spikes, fructose challenges, etc.). Dietary-level intake of these compounds (turmeric in food, onions, tea) is unlikely to be problematic; supplement-grade doses are the concern.
 
 This also surfaces a research-level open question: how much of the "non-responder" rate in nutraceutical gout RCTs is explained by ABCG2-inhibitor co-supplementation rather than by per-compound efficacy failure?
