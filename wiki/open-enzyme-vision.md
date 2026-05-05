@@ -171,6 +171,26 @@ This is not a marginal consideration. Three of the five chokepoints covered in t
 
 Sources: [aspergillus-oryzae.md](./aspergillus-oryzae.md) §"Native Secondary Metabolites"; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §01b; [koji-endgame-strain.md](./koji-endgame-strain.md) §2.3, §2.4; [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md).
 
+### One Strain, Multiple Downstream Formats — The Multi-Format Delivery Default
+
+The implicit early framing of the platform was "one engineered koji condiment cures gout" — a single fermented food product carrying all the engineered payloads. The 2026-05-05 sweep surfaced a structural reality that breaks that framing: **uricase's LOW protease-stability verdict in shio-koji conditions (comp-001) is the exception, not the rule.**
+
+| Payload | comp-NNN | Shio-koji verdict | Implied delivery format |
+|---|---|---|---|
+| Uricase (*A. flavus* uaZ) | comp-001 | **LOW** (0.039 max risk; 0 exposed sites) | Shio-koji is fine — payload survives the 7–14 day room-temperature ferment |
+| Lactoferrin (mature, aa 20–710) | comp-005 | **MODERATE** (full sequence HIGH; 3 ALP-exposed mature sites) | Shio-koji marginal; dried powder safer; signal peptide processing uncertain |
+| DAF/CD55 ectodomain (aa 35–353) | comp-006 | **HIGH** (0.388; disordered Ser/Thr stalk drives risk) | Shio-koji unsuitable for full ectodomain |
+| DAF/CD55 SCR1-4 truncated (aa 35–285) | comp-012 | **LOW** (0.039; identical to uricase) | Shio-koji fine if truncated construct is engineered |
+| Carnosine (dipeptide) | (n/a — biochemistry direct) | **Destroyed** by native koji proteases over 7–14 days | Shio-koji unusable for any small-peptide payload; dried powder or amazake required |
+
+The pattern: well-folded globular proteins with no disordered regions (uricase, truncated DAF SCR1-4) survive shio-koji's protease environment fine. Anything with a disordered region (full DAF ectodomain stalk; lactoferrin's signal peptide unless processed by *A. oryzae* signal peptidase) is at risk. Anything that's a small peptide (carnosine, KPV) is destroyed wholesale.
+
+**The platform reframe surfaced by this evidence:** the koji endgame strain is **one organism producing multiple payloads, but the payloads then split downstream into multiple stable food formats tailored to each payload's biophysical character.** Uricase + DAF-SCR1-4 can ship as shio-koji. Lactoferrin probably needs dried powder or amazake. Carnosine (if added as the optional third cassette) needs dried powder, full stop. The single-fermentation, single-organism economy is preserved — but the consumer-facing product is a small format-portfolio, not a single condiment.
+
+This is structurally the right framing for two reasons. First, **it's what the protease-stability evidence actually supports** — pretending a single shio-koji condiment carries every payload would require ignoring the comp-005, comp-006, and engineered-koji-protocol §15 results. Second, **it doesn't actually weaken the platform's "democratized home access" thesis** — multiple stable food formats from one strain are still home-fermentable (the user grows the koji once, then takes a portion fresh-as-shio-koji and dries the rest into powder). The economic and operational simplicity of single-strain fermentation is preserved; only the literal "one condiment" framing relaxes.
+
+This reframe was surfaced as a Contradiction in the 2026-05-05 synthesis sweep ([`logs/v4-synthesis-2026-05-05-487fad3.md`](../logs/v4-synthesis-2026-05-05-487fad3.md)) — exactly the kind of multi-level pattern the daemon was designed to find (composing comp-001 + comp-005 + comp-006 + engineered-koji-protocol §15 into a platform-level implication that none of the individual pages had named explicitly).
+
 ---
 
 ## 5. First Targets

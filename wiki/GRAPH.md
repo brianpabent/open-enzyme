@@ -196,6 +196,19 @@ graph TB
         KE12["comp-010 cassette compatibility — LOW overall risk; KEX2 pos 579 moderate; uricase SKL PTS1 verify"]
     end
 
+    subgraph Chaperones["ER CHAPERONE SUBSYSTEMS (NEW)"]
+        CH1["BiP/Kar2 — generic HSP70 ER chaperone"]
+        CH2["PDI/ERO1 — disulfide bond formation"]
+        CH3["Calnexin/Calreticulin — N-glycoprotein QC"]
+        CH4["HacA UPR — transcriptional capacity expansion"]
+        CH5["Chaperone-orthogonal stacking framework — predict synergy from non-overlapping load classes"]
+        CH6["Pairwise expression matrix — falsifiable test of framework"]
+        CH7["Wakai 2019 3-cellulase 40× synergy — direct A. oryzae evidence (light-class stacking)"]
+        CH8["Huynh 2020 39.7 mg/L mAb ceiling — 2 PDI-heavy cassettes, NSlD-dP10 required"]
+        CH9["Zhou 2016 — constitutive HacA in koji REDUCES amylase via RESS feedback"]
+        CH10["Cross-class helper combinations (Pichia, 6.5-8.7×) — highest-leverage capacity expansion"]
+    end
+
     %% Core relationships
     A1 --> B1
     A4 --> B1
@@ -406,6 +419,29 @@ graph TB
     KE12 -->|"KEX2 pos 579 moderate risk — monitor SDS-PAGE"| KE3
     KE12 -->|"uricase SKL PTS1 — verify secretion in 1.9"| KE2
 
+    %% Chaperone-orthogonal stacking framework (2026-05-05)
+    %% (source: chaperone-orthogonal-stacking.md)
+    %% Cassette → chaperone load mapping
+    KE2 -->|"BiP-transit only (0 disulfides, 0 N-glycans)"| CH1
+    KE3 -->|"PDI-heavy (17 disulfides)"| CH2
+    KE3 -->|"calnexin-moderate (3 N-glycans)"| CH3
+    KE3 -->|"BiP-heavy (691 aa single chain)"| CH1
+    KE4 -->|"bypasses secretion entirely (cytosolic)"| CH5
+    %% Framework retroactively explains endgame strain design
+    CH5 -->|"predicts ≥0.85 synergy for 4-molecule endgame strain"| KE1
+    CH5 -->|"informs which 5th cassette to add (fill underused load classes)"| KE2
+    CH5 -.->|"falsifiable test"| CH6
+    %% Supporting evidence
+    CH7 -.->|"validates light-substrate super-additivity"| CH5
+    CH8 -.->|"validates PDI-heavy ceiling"| CH5
+    %% Capacity expansion levers
+    KE10 -->|"raises secretion floor for PDI-heavy substrates"| CH2
+    CH4 -->|"upregulates BiP, PDI, ERAD"| CH1
+    CH4 -->|"upregulates BiP, PDI, ERAD"| CH2
+    CH4 -->|"upregulates BiP, PDI, ERAD"| CH3
+    CH9 -->|"rules out naive HacA-CA in koji (RESS feedback suppresses native amylase)"| CH4
+    CH10 -->|"highest-leverage untested lever in koji (Pichia precedent)"| CH5
+
     %% Discovery engine → repurposing surface (source: open-enzyme-vision.md §2)
     DE1 -->|"produces"| DE2
     DE2 -->|"surfaces"| DE3
@@ -455,6 +491,7 @@ graph TB
     style Androgens fill:#e8d8f0
     style DiscoveryEngine fill:#fff8e6
     style KojiEndgame fill:#e6fff0
+    style Chaperones fill:#e6f0ff
 ```
 
 ## Key Pathway Descriptions

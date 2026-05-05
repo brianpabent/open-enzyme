@@ -6,12 +6,27 @@ related: ["validation-experiments.md", "open-questions.md", "logs/sweep-log.md"]
 sources: ["sweep daemon (wiki/*.md saves)", "manual sweeps", "V4 peer-review pass"]
 ---
 
-## Sweep — 2026-05-05 (no new synthesis)
+## Sweep — 2026-05-05 commit `487fad3` (DeepSeek V4-Pro synthesis; Pass 3 prepend bug)
 
-**Synthesis log:** [`logs/v4-synthesis-2026-05-05-487fad3.md`](../logs/v4-synthesis-2026-05-05-487fad3.md)
-**Substrate:** Open Enzyme wiki at commit `487fad3`
-**Synthesizer:** google/gemini-2.5-pro (drift-guard: nothing new worth synthesizing)
-**Reviewer:** anthropic/claude-opus-4-7 (no review needed)
+**Synthesis log:** [`logs/v4-synthesis-2026-05-05-487fad3.md`](../logs/v4-synthesis-2026-05-05-487fad3.md) — substantive Pass 2 output (4 Connections, 1 Contradiction, 3 Proposed Experiments, 3 Open Questions, 2 Priority Actions, all with new `[CHAIN-DEPTH: N]` and `[PHASE-A-MATCH: yes/no/partial]` self-tags per the 2026-05-05 prompt enhancement).
+
+**Synthesizer:** deepseek/deepseek-v4-pro-20260423 (NOT Gemini as the buggy automatic prepend originally claimed; cost reporting bug — `served_model` returned with date suffix didn't match the `PRICING_USD_PER_MTOK` table key, defaulting cost to $0.00 and falsely flagging fallback. Real cost ~$0.20/run on DeepSeek primary path.)
+
+**Pass 3 prepend bug:** the Pass 3 review automation prepended "no new synthesis" claiming the drift guard fired. That's wrong on three counts — (a) synthesizer was DeepSeek not Gemini, (b) drift guard didn't fire (Pass 2 produced substantive output as the log file shows), (c) Pass 3 didn't actually run independent review on this content (no `Claude review` blockquotes appended). The substantive Pass 2 output is sitting in the log file. Filed as a follow-up bug to fix in `scripts/sweep-3-review.py`.
+
+**Items below are manually transcribed from the Pass 2 log + actioned in this session.** Future sweeps with the bug fixed should produce these annotations automatically.
+
+### Pass 2 items — actioning status
+
+- **Connection 1 — comp-011 *C. utilis* uricase cassette compatibility hasn't been computed.** [CHAIN-DEPTH: 2] [PHASE-A-MATCH: partial]. **✓ Actioned 2026-05-05 via Sonnet subagent** (in flight at time of this annotation; will update with verdict on land).
+- **Connection 2 — DAF/CD55 SCR1-4 stalk-truncated construct as fermentable CP0 modulator.** [CHAIN-DEPTH: 2] [PHASE-A-MATCH: partial]. **✓ Actioned 2026-05-05 via comp-012 Sonnet subagent: verdict LOW (0.039, identical to uricase).** Stalk truncation removed 100% of exposed sites (9 NPr + 48 ALP + 1 acid_protease all gone). The CP0 platform gap closure thesis is now in silico-validated; wet-lab DAF SCR1-4 expression in *A. oryzae* becomes the next concrete move. Full results: [`wiki/daf-cd55-scr14-truncated-computational.md`](./daf-cd55-scr14-truncated-computational.md).
+- **Connection 3 + Priority Action 1 — Manual Paperclip Mining Protocol.** [CHAIN-DEPTH: 1] [PHASE-A-MATCH: no]. **✓ Actioned 2026-05-05:** created [`wiki/manual-literature-mining.md`](./manual-literature-mining.md) codifying the five-rule verification discipline (safe primitives only; anchor identity to meta.json; grep-verify all numbers; never propagate map/reduce summaries; cite line-anchored). Plus a queue of six specific OE questions worth Paperclip-time.
+- **Contradiction 1 + Priority Action 2 + Open Question 2 — Single-strain single-format vs. payload-stability evidence ("uricase LOW is the EXCEPTION not the rule").** [CHAIN-DEPTH: 1] [PHASE-A-MATCH: partial]. **✓ Actioned 2026-05-05:** added new section "One Strain, Multiple Downstream Formats — The Multi-Format Delivery Default" to [`open-enzyme-vision.md` §4](./open-enzyme-vision.md). Includes payload-by-payload stability table (uricase LOW / lactoferrin MODERATE / DAF full HIGH / DAF SCR1-4 LOW / carnosine destroyed) and the platform-thesis reframe — the "one condiment" framing relaxes to "one organism, multiple stable food formats tailored to payload biophysics," but the operational/economic single-fermentation simplicity is preserved. Holding the parallel `koji-endgame-strain.md` update (synthesizer's full Priority Action 2 ask) until the patent landscape subagent finishes — collision risk on that file.
+- **Proposed Experiment 1 — comp-011** (= Connection 1, same actioning).
+- **Proposed Experiment 2 — Wet-lab DAF/CD55(SCR1-4) expression in *A. oryzae*.** Now gated on the comp-012 in silico LOW verdict (just landed). Concrete next move: clone SCR1-4 (aa 35–285) with koji-native α-amylase signal peptide; express in *A. oryzae* RIB40 (or NSlD-ΔP10 if Maruyama lab path opens); SDS-PAGE for secretion + disulfide folding; CCP-regulatory activity assay. Estimated $2.5–4K, 6–8 weeks. Add to `validation-experiments.md` as new section after the patent-agent batch settles.
+- **Proposed Experiment 3 — Paperclip search for *C. utilis* uricase precedent in fungal hosts.** Folded into the comp-011 Sonnet subagent's brief (the subagent will surface any precedent papers as part of its analysis).
+- **Open Question 1 — Minimum-viable payload set for koji endgame closing CP0.** Strategic. Added to Strategic Reflections Queue below.
+- **Open Question 3 — Espacenet/lens.org expired-patent search.** **✓ Actioned 2026-05-05 via Opus subagent** (in flight at time of this annotation; will update H01 Killshot Log when it lands).
 
 ---
 

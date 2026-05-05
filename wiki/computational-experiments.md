@@ -54,6 +54,38 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+### comp-012 — DAF/CD55 SCR1-4 Truncated Shio-Koji Protease Stability
+
+| Field | Value |
+|---|---|
+| **Question** | Does the stalk-truncated DAF/CD55 SCR1-4 construct (aa 35–285, removing the disordered Ser/Thr stalk that drove comp-006's HIGH verdict) survive shio-koji protease conditions? |
+| **Method** | Same shared library as comp-001 / comp-005 / comp-006 (`experiments/lib/protease_stability.py`). Sequence + AlphaFold pLDDT scoped to aa 35–285. Three *A. oryzae* proteases (ALP, NPr, acid_protease) at shio-koji conditions (17.5% NaCl, pH 4.5–5.0). |
+| **Verdict** | **LOW** (max risk 0.039, NPr — **identical to uricase** comp-001). Stalk truncation removed 100% of exposed sites: 9 NPr-exposed + 48 ALP-exposed + 1 acid_protease-exposed → 0 exposed in SCR1-4. All 242 recognition sites in the truncated construct are buried. |
+| **Key finding** | The CP0 platform-gap closure thesis is now in silico-validated. comp-006's HIGH verdict (0.388) was 100% stalk-driven, not SCR-domain-driven; the truncation hypothesis surfaced by comp-006's own analysis (and elevated to wet-lab proposal by the 2026-05-05 sweep daemon) is computationally confirmed. **A fermentable engineering candidate for the wiki's only "honest platform gap" now exists.** Three wet-lab unknowns remain (disulfide folding, CCP-regulatory function preservation, mucosal delivery geometry) — see [`hypotheses/H05-daf-scr14-cp0-thesis.md`](./hypotheses/H05-daf-scr14-cp0-thesis.md). |
+| **Informs** | [`complement-c5a-gout.md`](./complement-c5a-gout.md) — CP0 status reframe from "honest platform gap" to "active engineering candidate"; [`hypotheses/H05`](./hypotheses/H05-daf-scr14-cp0-thesis.md) (new stub); [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) Engineered-soluble-complement-regulators row updated 🟡→🔬 |
+| **Experiment folder** | [`experiments/comp-012-daf-cd55-scr14-truncated/`](../experiments/comp-012-daf-cd55-scr14-truncated/) |
+| **Interpretive wiki page** | [`wiki/daf-cd55-scr14-truncated-computational.md`](./daf-cd55-scr14-truncated-computational.md) |
+| **Date** | 2026-05-05 |
+| **Status** | Complete |
+
+---
+
+### comp-011 — *C. utilis* Uricase Cassette Compatibility (Parallel to comp-010 *A. flavus*)
+
+| Field | Value |
+|---|---|
+| **Question** | Does *Candida utilis* uricase (industry-revealed preference per ALLN-346 + 2 other commercial programs) have the same cassette-compatibility profile as *A. flavus* uricase, or does the alternative payload introduce blocking design issues? |
+| **Method** | Same seven-analysis pipeline as comp-010 (KEX2 site geometry, codon usage CAI, signal peptide / secretion routing, disulfide load, glycosylation scan, concurrent secretion-pathway burden, comparison to Huynh 2020 baseline). Run on *C. utilis* uricase (UniProt **P78609** — corrects the prior P15296 misattribution; P15296 returns Drosophila transposable element) paired with human lactoferrin in the Ward 1995 / *A. oryzae* architecture. |
+| **Verdict** | **MODERATE** (vs. *A. flavus* LOW per comp-010). Difference is design-driven, not fundamental incompatibility. |
+| **Key finding** | The platform decision this enables: **don't pick — run BOTH variants in §1.9 as parallel direct-secretion cassettes** at ~$200–400 in additional gene synthesis costs and $0 additional fermentation cost. Empirical comparison resolves the *A. flavus* vs. *C. utilis* question. Three drivers of the MODERATE verdict: (1) codon burden 2.3× heavier for *C. utilis* (CAI 0.65 vs 1.51 *A. flavus*) — full codon-optimized gene synthesis mandatory; (2) 4 free cysteines in *C. utilis* vs. 0 in *A. flavus* — risk of aberrant ER disulfide formation; mitigation via non-reducing SDS-PAGE QC + Cys→Ser if aggregation observed; (3) 2 internal KR sites (positions 130, 138) vs. 1 in *A. flavus* — non-load-bearing for direct-secretion design. The ALLN-346 mutation I132R sits adjacent to position 130 KR; order ALLN-346 mutations together with codon-optimized synthesis. |
+| **Informs** | [`uricase-variant-selection.md`](./uricase-variant-selection.md) (new comp-011 subsection); [`validation-experiments.md` §1.9](./validation-experiments.md) — the dual-cassette wet-lab experiment design now naturally accommodates parallel testing of both uricase variants. |
+| **Experiment folder** | [`experiments/comp-011-c-utilis-uricase-cassette-compatibility/`](../experiments/comp-011-c-utilis-uricase-cassette-compatibility/) |
+| **Interpretive wiki page** | [`wiki/c-utilis-uricase-cassette-compatibility-computational.md`](./c-utilis-uricase-cassette-compatibility-computational.md) |
+| **Date** | 2026-05-05 |
+| **Status** | Complete |
+
+---
+
 ### comp-010 — Cassette Compatibility for the Dual-Cassette Koji Endgame Strain
 
 | Field | Value |
