@@ -3120,6 +3120,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#comp-010-follow-up-cassette-compatibility-2026-05-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comp-010 Follow-Up: Cassette Compatibility (2026-05-05)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#most-material-caveat-what-couldnt-be-verified" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3941,6 +3952,15 @@
 <li><strong>The 5-marker NSAR1 platform</strong> (Oikawa 2020 [4]) is the suggested host platform — it's already industrial-practice and accommodates the 2-cassette H01 design with three slots to spare for downstream additions (e.g., kojic-acid-pathway enhancement, ergothioneine pathway maintenance).</li>
 <li><strong>No urgency change for §1.9 priority</strong> — it remains the #1 gate. The literature deep-dive narrowed the question but didn't answer it.</li>
 </ol>
+<h3 id="comp-010-follow-up-cassette-compatibility-2026-05-05">comp-010 Follow-Up: Cassette Compatibility (2026-05-05)<a class="headerlink" href="#comp-010-follow-up-cassette-compatibility-2026-05-05" title="Permanent link">&para;</a></h3>
+<p><strong>comp-010 is in silico design support — not a killshot and not a survived killshot.</strong> It addresses sequence-level cassette-design questions that Killshot #1 (literature audit) could not: KEX2 internal-site geometry, codon-optimization burden, disulfide load, and secretion-targeting signals. Key findings for the H01 assumption stack:</p>
+<ul>
+<li><strong>Assumption 6 (KEX-2 capacity):</strong> No high-risk KEX2 internal sites in lactoferrin (2 sites: 1 abolished P1'=D, 1 moderate P1'=K). Uricase has 1 high-risk site (pos 128, P1'=N) but <strong>only load-bearing if uricase is in a fusion architecture</strong> — the §1.9 proposed design uses direct secretion for uricase, making this moot. Assumption 6 remains <strong>In Vitro (direct precedent)</strong> per Killshot #1; comp-010 adds no new evidence level.</li>
+<li><strong>Assumption 3 (protease load, H01 only):</strong> Disulfide load analysis confirms dual-cassette ER burden = 1.06× Huynh 2020 baseline (17 disulfides, all on Lf). Within demonstrated capacity. No change to assumption-3 evidence level.</li>
+<li><strong>Uricase C-terminal SKL:</strong> A potential PTS1 peroxisomal signal in the uricase sequence. Verify secretion in §1.9. If misrouted, append 3×Ala to mask. Pre-experiment design note, not a H01 assumption change.</li>
+</ul>
+<p>Full analysis: <a href="../../cassette-compatibility-computational/"><code>wiki/cassette-compatibility-computational.md</code></a> | <a href="../../experiments/comp-010-cassette-compatibility/"><code>experiments/comp-010-cassette-compatibility/</code></a></p>
+<hr />
 <h3 id="most-material-caveat-what-couldnt-be-verified">Most material caveat / what couldn't be verified<a class="headerlink" href="#most-material-caveat-what-couldnt-be-verified" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Patent landscape was not directly searchable.</strong> Google Patents returns JavaScript-only pages that WebFetch cannot parse, and Espacenet rejected the unauthenticated request (HTTP 403). Three industrial actors (Novozymes, DSM, Genencor/Danisco) have ≥30 years of <em>Aspergillus</em> multi-protein engineering history that is largely unpublished except as patent claims. <strong>Estimated ~30% probability</strong> that one of them has filed (or holds expired/abandoned) IP on a directly-relevant <em>A. oryzae</em> dual-cassette koji process. Worth a follow-up via authenticated patent-database access (Brian or Lauren via Emory library).</li>
