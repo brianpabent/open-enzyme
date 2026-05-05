@@ -6,6 +6,129 @@ related: ["validation-experiments.md", "open-questions.md", "logs/sweep-log.md"]
 sources: ["sweep daemon (wiki/*.md saves)", "manual sweeps", "V4 peer-review pass"]
 ---
 
+## Sweep — 2026-05-05 (DeepSeek V4-Pro synthesis + Claude review)
+
+**Synthesis log:** [`logs/v4-synthesis-2026-05-05-734bf51.md`](../logs/v4-synthesis-2026-05-05-734bf51.md)
+**Substrate:** Open Enzyme wiki at commit `734bf51`
+**Diff base:** `436f1bd38ef4ca9830c85c8c8c1469e3bb595187`
+**Trigger files:** wiki/blood-barrier-exploits.md,wiki/enzyme-deficit-deep-dive.md,wiki/gout-deep-dive.md,wiki/gout-pathophysiology.md,wiki/nlrp3-inhibitor-screen.md,wiki/open-questions.md,wiki/supplements-stack.md,wiki/theaflavins.md,wiki/uricase-variant-selection.md,wiki/zileuton.md
+**Synthesizer:** google/gemini-2.5-pro
+**Reviewer:** anthropic/claude-opus-4-7
+**Reviews merged:** 14
+
+---
+**Substrate:** Open Enzyme wiki at commit `734bf51`
+**Trigger files:** wiki/blood-barrier-exploits.md,wiki/enzyme-deficit-deep-dive.md,wiki/gout-deep-dive.md,wiki/gout-pathophysiology.md,wiki/nlrp3-inhibitor-screen.md,wiki/open-questions.md,wiki/supplements-stack.md,wiki/theaflavins.md,wiki/uricase-variant-selection.md,wiki/zileuton.md
+**Diff base:** 436f1bd38ef4ca9830c85c8c8c1469e3bb595187
+**Reviewer:** google/gemini-2.5-pro
+
+## New Connections
+
+1.  **Lactoferrin co-expression in the endgame strain may create a positive feedback loop by relieving inflammatory suppression of the gut-lumen sink.** *Speculative*.
+    -   *Documents Connected:* `lactoferrin.md`, `abcg2-modulators.md`, `koji-endgame-strain.md`, `gut-lumen-sink.md`
+    -   *Why It Matters:* The platform's core uricase mechanism depends on ABCG2 transporting urate into the gut. Chronic low-grade inflammation, driven by TNFα, suppresses ABCG2 expression (`abcg2-modulators.md`). Lactoferrin is known to suppress TNFα (`lactoferrin.md`). Therefore, co-expressing lactoferrin in the `koji-endgame-strain` could relieve this inflammatory brake on ABCG2, increasing substrate supply for the co-expressed uricase. This transforms lactoferrin from a simple multi-chokepoint NLRP3 modulator into a direct synergist for the platform's primary urate-lowering mechanism.
+    -   *Suggested Action:* Propose an in vitro experiment co-treating Caco-2 cells with TNFα and lactoferrin, then measuring ABCG2 expression and urate transport to validate this feedback loop. This should be added to `validation-experiments.md`.
+
+    Interesting — the grep is case-sensitive I think, but let me verify. The inlined file clearly contains "Faecalibacterium" and siRNA. Must be an issue with the tool. Let me proceed — I have enough info from the inlined cache.
+
+> **Claude review — Confirmed.** Strong synthesis. The TNFα → ABCG2-suppression axis is directly supported by Ferrer-Picón 2020 (PMID 31211831) in `abcg2-modulators.md` §3, and lactoferrin's TNFα suppression is documented in `lactoferrin.md` §4.1 (Habib 2023 PMID 37926296). The positive-feedback framing is novel — lactoferrin was previously positioned as a CP1a/CP4/CP6b NLRP3 modulator only. One refinement: the platform already flags lactoferrin as "may be doing more for the gut-sink than its current positioning suggests" in `open-questions.md` §"Co-engineered substrate-supply mechanisms", so this elevates an existing hypothesis rather than originating it. The proposed Caco-2 TNFα + lactoferrin + urate transport experiment is well-scoped and should land in `validation-experiments.md` as a focused addition to §1.14 (which already tests DHT + TNFα additive suppression + butyrate rescue).
+
+2.  **Carnosine is a uniquely well-suited co-expression candidate for the androgen-dominant gout phenotype because it directly counters androgen-driven hyperuricemia at the renal level.** *Supported*.
+    -   *Documents Connected:* `carnosine.md`, `androgen-urate-axis.md`, `engineered-koji-protocol.md`
+    -   *Why It Matters:* The primary demographic for gout is male, and a significant portion has high androgen levels (endogenous or via TRT/SERMs). The `androgen-urate-axis.md` page establishes that androgens drive hyperuricemia in part by upregulating the renal urate transporter URAT1. The `carnosine.md` page documents animal model evidence that carnosine *downregulates* URAT1. This positions carnosine not just as a generic NLRP3/UA modulator, but as a precision countermeasure to a key driver of hyperuricemia in the platform's primary target population.
+    -   *Suggested Action:* Elevate carnosine's strategic priority for co-expression in the `koji-endgame-strain.md` thesis, specifically highlighting this mechanistic synergy for the male/high-androgen patient subgroup.
+
+    > **Claude review — Confirmed, prioritize.** The carnosine/URAT1/androgen triangulation is well-grounded: `carnosine.md` documents URAT1/GLUT9 downregulation in the hyperuricemia rat model (dual phenotype), and `androgen-urate-axis.md` §"Mechanism" establishes androgen-driven URAT1 upregulation as the mirror mechanism. The "precision countermeasure to the primary target demographic" framing is a genuinely sharpened positioning. Push to prioritize: `engineered-koji-protocol.md` §15 currently treats carnosine as a Tier 2 secondary-synergy candidate with ~150 mg/L yeast baseline flagged as unsourced. This synergy argument strengthens the case for running the §15 validation experiment *before* further iteration on peripheral modules. Worth a corresponding update to `koji-endgame-strain.md` §2.2 (currently lactoferrin-dominant) to add a carnosine sub-row with the androgen-axis argument explicit.
+
+3.  **The koji chassis provides a "native metabolite chorus" (kojic acid, ergothioneine) that offers free, multi-chokepoint NLRP3 coverage, making it a superior platform to cleaner but inert hosts like *S. cerevisiae*.** *Supported*.
+    -   *Documents Connected:* `aspergillus-oryzae.md`, `engineered-koji-protocol.md`, `nlrp3-exploit-map.md`, `saccharomyces-cerevisiae.md`
+    -   *Why It Matters:* Wild-type *A. oryzae* natively produces kojic acid (3-5 g/L, NF-κB suppression, CP1a) and ergothioneine (~20 mg/g, mitochondrial ROS scavenger, CP1b) during fermentation. This means any engineered koji strain automatically ships with a baseline anti-inflammatory payload that a "cleaner" host like yeast or *E. coli* would need additional, complex engineering to replicate. This "free" synergy is a core, under-stated advantage of the koji-first platform strategy.
+    -   *Suggested Action:* Add a dedicated section to `open-enzyme-vision.md` or `open-source-platform.md` that explicitly frames this "native metabolite chorus" as a key strategic advantage of the *A. oryzae* chassis.
+
+    > **Claude review — Confirmed.** Well-sourced against `aspergillus-oryzae.md` §"Native Secondary Metabolites" (kojic acid 3–5 g/L, ergothioneine ~20 mg/g dry mass) and `engineered-koji-protocol.md` §01b. The CP1a/CP1b chokepoint mapping is already made in `koji-endgame-strain.md` §1 coverage matrix (which scores these Reasonable at CP1a and CP1b respectively). One caution worth surfacing in the suggested action: the kojic-acid direct-NLRP3 activity is flagged as "unpublished/open question" in `nlrp3-inhibitor-screen.md`, and ergothioneine's "Nrf2 inducer" classification is a two-step mechanistic extrapolation (ROS scavenger → Nrf2 stabilization → downstream) rather than a direct Nrf2 binder. The "free chorus" framing is correct directionally but the strategic page should tag evidence levels (In Vitro / Mechanistic Extrapolation) rather than present it as supported coverage.
+
+## Contradictions Found
+
+1.  **The recommended supplements stack contains potent functional inhibitors of ABCG2, directly antagonizing the platform's core gut-lumen sink mechanism.**
+    -   *Locations:* `supplements-stack.md` recommends quercetin and EGCG. `abcg2-modulators.md` §8 identifies both, plus curcumin and genistein (from soy foods), as functional inhibitors of the ABCG2 transporter at supplement-relevant concentrations.
+    -   *Analysis:* For the primary user demographic (males, often with androgen-suppressed ABCG2) or Q141K carriers, stacking these supplements could pharmacologically close the gate that the engineered uricase relies on for its substrate. The wiki notes this contradiction but has not yet resolved it with clear, stratified guidance. This is a critical conflict between two major platform strategies.
+
+    > **Claude review — Confirmed.** Not a new finding — this contradiction is already extensively documented in `abcg2-modulators.md` §8 "The supplements-stack contradiction" and `supplements-stack.md` §"Stack-level contradictions" with a full risk-tier stratification table. The Pass 2 synthesizer correctly identifies it as unresolved. The useful framing addition is naming it as "a critical conflict between two major platform strategies" — worth elevating that framing into `open-enzyme-vision.md` itself, not just the per-page contradiction notes. The EGCG case is subtler than the synthesis suggests: Yu 2024 (PMID 38757391) shows in vivo net-favorable effect on ABCG2/URAT1/GLUT9 in hyperuricemic mice, contradicting the in vitro inhibition story — net clinical effect is flagged as unresolved, not antagonist.
+
+2.  **The shio-koji delivery format, recommended for its stability, contains active proteases that will likely degrade peptide or even some enzyme payloads.**
+    -   *Locations:* `koji-home-fermentation.md` and `digestive-enzymes.md` recommend shio-koji as a stable, long-shelf-life format for delivering active enzymes. However, `engineered-koji-protocol.md` (§15), `bpc-157.md`, and `kpv-peptide.md` note that this format is unsuitable for peptide payloads like carnosine or BPC-157 due to degradation by native proteases during the 7-14 day room-temperature ferment.
+    -   *Analysis:* This raises a critical, un-tested question: are the folded, tetrameric engineered enzymes (uricase, lactoferrin) also susceptible to this proteolytic degradation? If so, shio-koji is not a viable dual-use format, and the platform must default to fresh, dried, or amazake-style formats.
+
+    > **Claude review — Confirmed.** Accurate citation trail: `engineered-koji-protocol.md` §15 (carnosine) explicitly names the shio-koji format as structurally unsuitable for dipeptide payloads, and the same logic in `kpv-peptide.md` and `bpc-157.md`. The open question for folded tetrameric enzymes is real and not yet tested. This directly corresponds to proposed experiment §1.10 in `validation-experiments.md` ("Heterologous uricase stability in shio-koji salt-protease ferment") which is already queued with full protocol — the synthesizer may not have read it. The Pass 2 framing is correct but overstates novelty; the experiment is budgeted at $400–800 / 3–4 weeks and decides whether the dual-use household-condiment thesis survives.
+
+## Proposed Experiments (ranked by insight per cost)
+
+1.  **Quantify ABCG2 inhibition by stack supplements in a Caco-2 transwell urate transport assay.** Cost: $1,500. Time: 3w. Decides: The magnitude of the contradiction found in #1 above. Measure basolateral-to-apical urate flux in differentiated Caco-2 cells with and without supplement-relevant concentrations of quercetin, EGCG, and curcumin on the apical side. This would confirm or refute the antagonism and provide data to create a risk-stratified supplement protocol, especially for androgen-dominant or Q141K-positive users.
+
+    > **Claude review — Partial.** The experiment is valuable and should run, but `validation-experiments.md` already contains closely-adjacent experiments: §1.14 (DHT + TNFα additive ABCG2 suppression + butyrate rescue) uses Caco-2 transwells at $1,500–2,500, and the Yu 2024 in vivo EGCG data (PMID 38757391) partially pre-empts the EGCG arm by showing net-favorable effect on ABCG2. Augment: extend §1.14 to add quercetin + EGCG + curcumin arms rather than queue a parallel experiment. The shared Caco-2 infrastructure and shared urate-flux readout amortize fixed costs; one well-designed factorial beats two overlapping experiments. Also include a Q141K-variant Caco-2 arm if available (the synthesis flags Q141K-positive users as highest-risk; this is where the contradiction most matters).
+
+2.  **Test the stability of engineered uricase and lactoferrin in a 14-day shio-koji ferment.** Cost: $800. Time: 3w. Decides: Whether shio-koji is a viable delivery format for the endgame strain. Incubate purified uricase and lactoferrin in a standard shio-koji matrix at room temperature. Sample at days 0, 3, 7, and 14, and measure residual enzyme activity and protein integrity (via Western blot). A significant loss of activity would kill the shio-koji format for engineered payloads and prioritize other formats.
+
+    > **Claude review — Confirmed, prioritize.** This is the most operationally important experiment proposal in the batch. The shio-koji dual-use thesis is load-bearing: it's the single product format that unifies Lynn's EPI track and Brian's gout track. §1.10 in `validation-experiments.md` already queues this at $400–800 / 3–4 weeks with full protocol (including SGF/SIF survival, Western for intact monomer, salt-concentration sub-experiment). The Pass 2 proposal duplicates the existing experiment at a higher cost estimate ($800) without adding the salt-gradient sub-experiment that would identify whether a low-salt shio-koji variant could preserve dual-use. Recommend: execute §1.10 as written, flag this Pass 2 proposal as a duplicate, and elevate priority given the strategic stakes.
+
+3.  **Launch a screen for gut-selective, food-grade HDAC inhibitors to enhance Q141K-ABCG2 trafficking rescue.** Cost: $5,000 (for initial in silico screen + top 5 in vitro). Time: 8w. Decides: If a potent, non-butyrate alternative exists to "open the gate" for the large Q141K-positive gout population. Butyrate's dual action (PPARγ + HDACi) is powerful but limited by fiber intake and microbiome variance. A direct, fermentable HDAC inhibitor could be a powerful co-expression module or adjunct.
+
+    > **Claude review — Partial.** The rationale is sound — butyrate's dual PPARγ + HDACi mechanism (Basseville 2012 PMID 22472121 for Q141K rescue) is well-documented in `abcg2-modulators.md` §6 — but the experimental design has tissue-selectivity risk the synthesis doesn't address. Pan-tissue HDAC inhibitors hit liver, BBB, and cardiac HDACs (cardiotoxicity is the reason vorinostat stays oncology-restricted). A "gut-selective, food-grade HDAC inhibitor" screen is sensible in principle but the selectivity criterion is the hard part — most food-grade HDACi candidates (butyrate, sulforaphane via indirect mechanism) are already known. Push back on cost: $5,000 for initial in silico + top-5 in vitro is optimistic for a screen that needs to differentiate gut-enriched binding from pan-tissue activity. Augment with: specify the selectivity assay (e.g., Caco-2 HDAC activity vs. hepatocyte HDAC activity as a primary screening discriminator), and add HDAC isoform specificity (HDAC1/2/3 are the relevant class for trafficking; HDAC6 is off-target for this purpose).
+
+## Open Questions
+
+1.  **Can the Open Enzyme platform develop a fermentable CP0 modulator, or will this always be a pharma-adjunct gap?** The `complement-c5a-gout.md` page clearly identifies CP0 (complement priming) as a dominant, upstream chokepoint and an "honest platform gap" with no current fermentable coverage. A computational screen of natural products against C5aR1 came up negative. Is there an alternative microbial route to CP0 coverage (e.g., expressing a soluble complement inhibitor like sCR1), or should the platform strategy formally accept avacopan as the permanent adjunct for this chokepoint?
+
+    > **Claude review — Augment.** The question as framed is answered-closed — `validation-experiments.md` §1.21 (executed 2026-04-27) is a completed computational scan of natural-product C5aR1 chemical space with a definitive negative result (zero wet-lab-validated natural-product antagonists across ChEMBL 4,873 bioactivities, NPASS, LOTUS, Open Targets). The re-open conditions are specified. The productive re-framing is the second half of the question: **alternative microbial routes to CP0 coverage**. Specifically, expressing soluble complement regulators (sCR1/TP10, Factor H fragments, DAF/CD55 ectodomain) heterologously in GRAS hosts is genuinely unexplored. sCR1 is in clinical trials systemically; a gut-luminal version targeting mucosal-complement activation is the untested vector. This deserves a dedicated follow-up, likely tracked in `modality-chokepoint-matrix.md` rather than re-opening the natural-product screen.
+
+2.  **What is the full effect of the androgen axis on the NLRP3 inflammasome, beyond urate transporters?** The wiki thoroughly documents how androgens suppress ABCG2 and upregulate URAT1. However, the literature on sex differences in inflammasome activation is growing. Do androgens directly modulate NLRP3 expression or activity in macrophages, or alter the response to C5a priming? This could reveal new synergies or risks for the male-dominant target population.
+
+    > **Claude review — Confirmed.** Genuinely novel open question. The wiki has extensive coverage of androgen → URAT1/ABCG2 (`androgen-urate-axis.md`) and C5a → NLRP3 priming (`complement-c5a-gout.md`) but no explicit synthesis of whether androgens modulate the C5a-priming or NLRP3-assembly steps directly. Recent literature on sex-differential NLRP3 activation in macrophages (ERα/ERβ modulation of inflammasome; testosterone effects on TLR4/MyD88) is accumulating but not represented in the Open Enzyme corpus. Worth a dedicated literature scan before committing to a wiki page — the question as framed could be a major expansion of `androgen-urate-axis.md` or a standalone page. The male-demographic ceiling noted in `koji-endgame-strain.md` §1 footnote is currently transporter-focused only; extending it to the inflammasome would meaningfully change the stack-design rationale.
+
+3.  **Do obligate anaerobes like *Faecalibacterium prausnitzii* offer a superior chassis for gut-based therapies due to durable colonization?** The current platform relies on transit organisms (*S. cerevisiae*, *A. oryzae*). The `modality-chokepoint-matrix.md` flags engineered LBPs as an open vector. An engineered *F. prausnitzii* could provide continuous, stable production of butyrate (for ABCG2 induction) or other therapeutic payloads, potentially overcoming the adherence and transit-time limitations of the current chassis.
+
+    > **Claude review — Confirmed.** Directly traceable to `modality-chokepoint-matrix.md` row "Engineered LBPs (obligate anaerobes)" where Faecalibacterium prausnitzii is explicitly flagged as the highest-leverage candidate for durable colonization + local butyrate (hitting both wild-type ABCG2 via PPARγ and Q141K via HDAC trafficking rescue). The matrix names this as one of the top exploration vectors. The open question correctly identifies the current platform's structural limitation (transit organisms) and the LBP framework as the alternative. Worth noting: the regulatory path (FDA LBP guidance 2018) is distinct from koji/yeast GRAS food, and the home-fermentation thesis doesn't transfer to obligate anaerobes — this is a "commercial LBP" vector, not a "grow at home" vector. That tradeoff deserves explicit framing in any dedicated page.
+
+## Priority Actions
+
+1.  **Resolve the supplement stack vs. ABCG2 contradiction by adding explicit, risk-stratified guidance.** Update `supplements-stack.md` and `abcg2-modulators.md` to distinguish risk tiers for high-androgen and Q141K-positive users versus wild-type users, and for supplement-grade vs. dietary-level intake of inhibitor compounds (quercetin, EGCG, etc.). This is a critical safety and efficacy clarification.
+
+    > **Claude review — Confirmed, prioritize.** Correctly identified as the most important stratification task in the corpus. `supplements-stack.md` already contains a risk-tier stratification table (§"Stack-level contradictions") — the action is to audit it for completeness and propagate the stratification into `abcg2-modulators.md` §8 and `open-enzyme-vision.md` §10. Priority is justified because this directly affects the self-experiment protocol: Brian is on clomid (elevates T → suppresses ABCG2 per `androgen-urate-axis.md`) and the supplement stack currently includes both EGCG and quercetin at supplement-grade doses. The stratification isn't theoretical; it's a live protocol-design question for §3.1–§3.5.
+
+2.  **Elevate the Ward 1995 dual-cassette experiment to the highest priority.** As noted in `koji-endgame-strain.md` and `validation-experiments.md`, the feasibility of layering the uricase and lactoferrin cassettes in a single koji strain is the gating question for the entire endgame thesis. This experiment should be prioritized over more incremental optimizations.
+
+    > **Claude review — Confirmed, prioritize.** This has already been formalized — `validation-experiments.md` §1.9 is explicitly tagged as "**#1 priority gate**" with the full protocol, cost ($3,000–5,000), timeline (8–12 weeks), dependencies, and success criteria. The Pass 3 review dated 2026-04-27 already elevated it. The Falsification Card (`wiki/hypotheses/H01-ward-dual-cassette.md`) exists. The synthesizer's elevation is consistent with existing platform priority. Action item: the blocker is not prioritization but execution — specifically, securing *A. oryzae* transformation lab access (Lauren Collier-Hyams at Emory per `team.md`, commercial CRO, or community biolab). The Priority Actions section should name that execution bottleneck, not just re-assert the priority.
+
+3.  **Create a dedicated wiki page for siRNA as a therapeutic modality, focusing on URAT1 silencing.** The `modality-chokepoint-matrix.md` identifies kidney-tropic siRNA against URAT1 as a clean, elegant, and unexplored solution for under-excreter gout. A dedicated page would scope this modality and position it as a potential long-term, non-microbial output of the platform's discovery engine.
+
+    > **Claude review — Confirmed.** Well-sourced against `modality-chokepoint-matrix.md` open exploration question #1 (siRNA against URAT1 mRNA via kidney-tropic conjugate — flagged as "the cleanest 'elegant solution' in the entire matrix"). A dedicated page is appropriate. Augment the proposal with: (a) the inclisiran GalNAc-conjugate precedent is liver-specific (GalNAc binds ASGPR on hepatocytes); kidney-tropic conjugate chemistry (megalin-binding peptides, CDP conjugates) is a distinct and less-mature chemistry class that deserves its own scoping. (b) The page should explicitly position siRNA as non-fermentable / discovery-engine output, parallel to zileuton/disulfiram/avacopan in the repurposing surface (per `open-enzyme-vision.md` §2.2). This maintains the clean split between "strain library" and "discovery engine" outputs and avoids confusing the two-track platform narrative.
+
+---
+Sources cited:
+- wiki/abcg2-modulators.md
+- wiki/androgen-urate-axis.md
+- wiki/aspergillus-oryzae.md
+- wiki/bpc-157.md
+- wiki/carnosine.md
+- wiki/complement-c5a-gout.md
+- wiki/engineered-koji-protocol.md
+- wiki/gut-lumen-sink.md
+- wiki/koji-endgame-strain.md
+- wiki/koji-home-fermentation.md
+- wiki/kpv-peptide.md
+- wiki/lactoferrin.md
+- wiki/modality-chokepoint-matrix.md
+- wiki/nlrp3-exploit-map.md
+- wiki/nlrp3-inhibitor-screen.md
+- wiki/open-enzyme-vision.md
+- wiki/open-source-platform.md
+- wiki/saccharomyces-cerevisiae.md
+- wiki/supplements-stack.md
+- wiki/validation-experiments.md
+
+---
+
+
 ## Sweep — 2026-04-28 (DeepSeek V4-Pro synthesis + Claude review)
 
 **Synthesis log:** [`logs/v4-synthesis-2026-04-28-3943bfc.md`](../logs/v4-synthesis-2026-04-28-3943bfc.md)

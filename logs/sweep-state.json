@@ -1,14 +1,33 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "dda0202622c367a08616eefc4d399976465ef4f8",
-    "timestamp": "2026-04-28T13:45:01Z",
-    "synthesis_log": "logs/v4-synthesis-2026-04-28-3943bfc.md",
-    "review_commit": "dda0202622c367a08616eefc4d399976465ef4f8",
-    "trigger_files": [],
-    "run_id": null,
-    "_backfilled": true,
-    "_backfilled_at": "2026-04-28T13:46:09Z"
+    "commit": "734bf5183e1a15400f7edc9951dfcbc6ca8b0b53",
+    "timestamp": "2026-05-05T16:22:04Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-05-734bf51.md",
+    "review_commit": "734bf5183e1a15400f7edc9951dfcbc6ca8b0b53",
+    "trigger_files": [
+      "wiki/blood-barrier-exploits.md",
+      "wiki/enzyme-deficit-deep-dive.md",
+      "wiki/gout-deep-dive.md",
+      "wiki/gout-pathophysiology.md",
+      "wiki/nlrp3-inhibitor-screen.md",
+      "wiki/open-questions.md",
+      "wiki/supplements-stack.md",
+      "wiki/theaflavins.md",
+      "wiki/uricase-variant-selection.md",
+      "wiki/zileuton.md"
+    ],
+    "run_id": "25387724226"
   },
-  "recent_runs": []
+  "recent_runs": [
+    {
+      "run_id": "25387724226",
+      "trigger": "push",
+      "completed_at": "2026-05-05T16:22:04Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 10,
+      "synthesis_log": "logs/v4-synthesis-2026-05-05-734bf51.md"
+    }
+  ]
 }
