@@ -239,6 +239,20 @@ Most of this runs automatically via the sweep daemon — when you save a file un
 - **Cross-references:** Prefer standard markdown links; Obsidian `[[wiki-links]]` work in Obsidian but not on GitHub
 - **Revision history:** Git. No inline changelogs in documents.
 
+### Global-multilingual research by default (no English-only bias)
+
+Treat the wiki sweep, every literature scan, every subagent research task, and every "what does the field say" investigation as **multilingual by default.** The AI substrate (Claude, DeepSeek, Qwen, Gemini) is fluent in Chinese, Japanese, Korean, German, Russian, French, Spanish, Arabic, Hindi, Portuguese, Italian and more. The marginal cost of reading a Chinese-language paper or Japanese database is zero. Treating language as a "barrier" in 2026 is path-dependent narrowing — it silently shrinks the search space and biases findings toward the English-language Western-research subset.
+
+**Operational rules:**
+
+- **Lit scan briefings** (subagent prompts) MUST explicitly include non-English sources where relevant: ChiCTR (China Clinical Trial Registry), CNKI / WanFang (Chinese-language papers — read in original, no translation step needed), J-STAGE / CiNii / J-GLOBAL (Japanese), KISS / RISS (Korean), eLIBRARY.RU (Russian), TIB / GND (German), SciELO (Latin American Spanish/Portuguese). For each query, name the non-English sources to check.
+- **The sweep daemon's Pass 2 prompt** should explicitly note that the wiki may have inherited Western-research bias and that finding genuinely new connections often requires looking at non-English-source angles. (`scripts/sweep-prompt-2-synthesize.md` — update separately.)
+- **Compound and mechanism investigations** should check both Western (PubMed-indexed) AND Chinese (CNKI / TCM materia medica) AND Japanese (Kampo medicine literature) sources before declaring an evidence-tier verdict. A compound with thin Western evidence but substantial Chinese clinical evidence has stronger empirical backing than the Western-only view shows.
+- **Do not flag "language barrier" as a limitation** in wiki pages or subagent briefings. It is not a limitation. If a relevant source is non-English, read it directly, cite it directly (with original-language title in the citation alongside an English gloss).
+- **Brian-facing summaries stay in English** — the multilingual ingestion happens upstream; the synthesis you present to Brian is in English. The discipline is about what you READ, not what you WRITE for the project's working language.
+
+**Why this rule exists:** explicitly added 2026-05-05 after a TCM × modern rigor scope page was drafted with "language barrier" listed as a limitation. Brian's correction: *"i think one of the things that i want to take advantage of is that you are multilingual, so you can read chinese papers. you can read chinese text. you can read japanese. so we should be ingesting EVERYTHING not just western-centric research. seems foolish to not search globally in 2026."* Path-dependent narrowing, exactly the failure mode the umbrella's "Curiosity and First-Principles Framing" rule warns against.
+
 ### Push-batching discipline (Open Enzyme overrides the umbrella's "push immediately" rule)
 
 The umbrella `~/Documents/Claude/Projects/abent/CLAUDE.md` git steward pattern says "Push immediately after each commit, every time." **That rule is overridden in this repo.** Reason: every push to `wiki/*.md` fires the multi-pass wiki sweep daemon (Pass 1 propagate → Pass 2 synthesize → Pass 3 review → DeepSeek peer-review). Each daemon run costs ~$0.65 and takes ~9–12 minutes; multiple parallel runs cause merge conflicts that consume far more time than the eager push saved.

@@ -211,6 +211,7 @@ Subagents have NO conversation context. The prompt must be self-contained and br
 4. **Constraints** (style, length, evidence level conventions, any "don't" rules from project CLAUDE.md)
 5. **What they should report back** (length cap, structure)
 6. **Memory cautions** if relevant (e.g., "Paperclip MCP `map` operator hallucinates — use `search` / `cat` / `grep` instead" per `memory/feedback_paperclip_map_unreliable.md`)
+7. **Global-multilingual default** for any literature-scan or research task. Per `Open Enzyme/CLAUDE.md` §"Global-multilingual research by default," explicitly include non-English sources in the briefing: ChiCTR, CNKI / WanFang (Chinese), J-STAGE / CiNii (Japanese), KISS / RISS (Korean), eLIBRARY.RU (Russian), TIB (German), SciELO (Spanish/Portuguese). Reading non-English sources is zero marginal cost; treating language as a "barrier" is path-dependent narrowing the project explicitly rejects.
 
 ### File-collision management
 
