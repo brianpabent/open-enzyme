@@ -210,28 +210,30 @@ This is the single highest-leverage strain-side consideration. Synthesis of the 
 
 3. **Mortensen group, DTU — academic collaboration on the toolkit + co-development** *(parallel-path Europe option)*. Strongest CRISPR-Cas9 / Mad7 toolkit in Europe; Novonesis-alumni density in Copenhagen; would be a natural collaboration if Open Enzyme can frame the §1.9 work as a published toolkit-validation case study. Cost 10–30K range; timeline 6–12 months. Less direct strain access than Tokyo, more methodological depth than Jiangnan.
 
-### Single most-actionable lead — what to send tomorrow
+### Single most-actionable lead — outreach context for the Maruyama group
 
-**Email Jun-ichi Maruyama tomorrow morning.** Draft skeleton:
+The substantive context for any researcher reaching out to the Maruyama group. The literal email text is operational/transactional and lives in private outreach storage, not in this public research wiki.
 
-> Dear Prof. Maruyama,
->
-> I'm Brian Abent, the founder of Open Enzyme — an open-source research project building food-grade engineered koji strains expressing therapeutic enzymes (uricase for gout, digestive enzymes for EPI). Our project files are public at [GitHub link].
->
-> I'm writing because your 2020 *Fungal Biology and Biotechnology* paper (Huynh et al., PMC7257131) is the foundational reference for our #1 priority experiment: a dual-cassette feasibility test layering *A. flavus* uricase on the Ward 1995 lactoferrin architecture in an *A. oryzae* chassis. Our just-completed in silico cassette-compatibility analysis (1.06× the disulfide load of your adalimumab work; no blocking issues) and the Killshot #1 falsification check both depend critically on the **NSlD-ΔP10** strain you constructed (Yoon, Maruyama, Kitamoto 2011).
->
-> Two specific asks:
->
-> 1. Would your group be willing to provide NSlD-ΔP10 under an MTA for our research use?
-> 2. More ambitiously: would you have interest in a small collaboration (or fee-for-service arrangement) where your group performs the dual-cassette transformation? We have full cassette designs ready and ~$10K in seed funding allocated to this experiment specifically.
->
-> Brief project context: [link to wiki/koji-endgame-strain.md and wiki/validation-experiments.md §1.9]. Falsification card: [link to wiki/hypotheses/H01-ward-dual-cassette.md].
->
-> Happy to send fuller technical detail. Thank you for considering.
->
-> Brian Abent
-> brian@headsupresults.com
-> Open Enzyme
+**Why this group specifically:**
+- Strain origin lab for NSlD-ΔP10 (Yoon, Maruyama, Kitamoto 2011 PMID 20957357)
+- Corresponding-author group on Huynh et al. 2020 (PMC7257131) — the foundational reference for the dual-cassette architecture used in §1.9
+- Demonstrated foreign-collaboration precedent
+
+**Two asks, ordered by ambition:**
+1. **Material Transfer Agreement (MTA) for NSlD-ΔP10** — minimum needed to unblock §1.9. Standard academic MTA; expect 4–8 weeks for paperwork.
+2. **Collaboration or fee-for-service on the dual-cassette transformation itself** — more ambitious. The project has cassette designs ready (per [`koji-endgame-strain.md` §3.4](./koji-endgame-strain.md) and `engineered-koji-protocol.md` §16) and seed funding allocated. The Maruyama group's existing experience with the exact strain + similar architecture (adalimumab heavy + light chains) makes this the lowest-execution-risk path.
+
+**Substantive technical points worth bringing in the first message:**
+- Reference the exact paper (Huynh 2020 PMC7257131) so context is unambiguous
+- Note the comp-010 cassette-compatibility result: 1.06× the disulfide load of the Maruyama group's adalimumab work (within demonstrated NSlD-ΔP10 ER capacity), with LOW design risk per the in silico analysis
+- Note the Killshot #1 (H01) falsification check explicitly cites their work as the architecture-validating precedent
+- Brief on the project framing: open-source, food-grade, gout-focused, with the §1.9 spec and falsification card publicly readable
+
+**Project-context pages worth linking in the message:**
+- [`validation-experiments.md` §1.9](./validation-experiments.md) — the experiment spec
+- [`koji-endgame-strain.md`](./koji-endgame-strain.md) — the platform thesis the experiment gates
+- [`hypotheses/H01-ward-dual-cassette.md`](./hypotheses/H01-ward-dual-cassette.md) — the falsification card with assumption stack and Killshot #1 findings
+- [`cassette-compatibility-computational.md`](./cassette-compatibility-computational.md) — comp-010, the cassette-design-risk verdict
 
 ### If Lauren falls through — order-of-operations parallel pursuit
 
