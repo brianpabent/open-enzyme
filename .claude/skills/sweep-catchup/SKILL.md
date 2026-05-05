@@ -53,7 +53,7 @@ git diff --name-only <override-base> HEAD -- 'wiki/*.md' | grep -v 'wiki/synthes
 ### Step 3 — Validate the list
 
 - **Empty list** → report "no backlog; nothing to sweep" and exit. Don't fire an empty dispatch.
-- **Non-empty list** → show Brian the count and the first 5–10 paths. Confirm before firing. Pass 2 of the workflow costs ~$0.65 per run; firing against an empty or wrong-base list wastes that.
+- **Non-empty list** → show Brian the count and the first 5–10 paths. Confirm before firing. Pass 2 of the workflow costs ~$0.20 per run on the DeepSeek V4-Pro primary path (~$0.65 if Gemini Pro fallback fires); Pass 3 (Claude Opus review) adds another ~$0.30–0.50 depending on agentic tool-call iterations. Total sweep ~$0.50–1.00 per run. Firing against an empty or wrong-base list wastes that.
 
 ### Step 4 — Fire the workflow
 
