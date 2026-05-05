@@ -319,6 +319,10 @@ graph TB
     R1 -->|"LPS/CD14 + NF-κB suppression"| Q2
     R1 -->|"GSDMD direct suppression via mitophagy (Shan 2026 PMID 41524100)"| C4
     R1 -->|"partial SPM resolution overlap"| P1
+    %% Lactoferrin substrate-supply synergy with uricase via TNFα → ABCG2 axis
+    %% (Speculative; composed of Animal Model + In Vitro links; source: lactoferrin.md §4.7, koji-endgame-strain.md §2.2)
+    R1 -->|"suppresses TNFα (Animal Model)"| AM3
+    AM3 -.->|"TNFα suppression relieves ABCG2 block (Speculative)"| S5
     R2 -->|"proteasome block stabilizes IκBα → NF-κB"| Q2
     R2 -->|"suppresses caspase-1"| C4
     R3 -->|"FDA-approved 5-LOX inhibitor, gout-untested"| N1
