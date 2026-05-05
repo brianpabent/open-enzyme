@@ -66,25 +66,41 @@ EXCLUDE = {
 #     fructose challenge, carnosine counter-agent) when run on the same
 #     wiki corpus, plus extra contradiction-resolution and pushback work,
 #     at ~3.3x the unit cost (~$0.65/sweep vs. ~$0.20).
-#   2026-05-05 (attempt 1, REVERTED — see commit d023cbe): tried re-routing
-#     to deepseek/deepseek-v4-pro AS PRIMARY with Gemini fallback. WRONG —
-#     I didn't verify DeepSeek V4-Pro's context cap (~128K tokens) before
-#     shipping. The wiki corpus is now 1.8M tokens; DeepSeek would fail
-#     every request at the context-size check and OpenRouter would always
-#     fall back to Gemini, netting zero savings plus added latency.
-#   2026-05-05 (attempt 2): re-routed to google/gemini-2.5-flash AS PRIMARY
-#     with google/gemini-2.5-pro AS AUTOMATIC FALLBACK. Flash has the same
-#     2M context cap as Pro (handles the corpus) but is ~4× cheaper
-#     ($0.30/$2.50 per Mtok vs $1.25/$5.00). Expected cost: ~$0.18/sweep
-#     on Flash success path, ~$0.65/sweep on fallback (e.g., if Flash
-#     refuses or returns garbage on the synthesis task). Savings: ~$0.47/
-#     sweep × ~10 sweeps/month = ~$4.70/month, reliable and corpus-safe.
-#     Quality risk: Flash may produce shallower synthesis than Pro. Test
-#     by reading the next ~3 sweep outputs and comparing to recent Pro
-#     baseline. If Flash quality is meaningfully worse, swap primary back
-#     to Pro and accept the cost.
-DEFAULT_MODEL = "google/gemini-2.5-flash"
+#   2026-05-05 (attempt 1, REVERTED — see commit d023cbe / a412109):
+#     compounding errors. First mistake: shipped DeepSeek V4-Pro as primary
+#     without verifying its context cap. Second mistake: panicked, assumed
+#     DeepSeek was 128K (V3 era, wrong) and swapped to Gemini Flash as
+#     "the smart cheap option." Brian corrected both: DeepSeek V4-Pro is
+#     1M context, AND Flash is too shallow for this multi-level-synthesis
+#     task. Both mistakes caught before any sweep ran with either bad
+#     config.
+#   2026-05-05 (attempt 3, current): re-routed to deepseek/deepseek-v4-pro
+#     AS PRIMARY with google/gemini-2.5-pro AS AUTOMATIC FALLBACK via
+#     OpenRouter's `models` array. Verified corpus size (611K tokens) fits
+#     comfortably under DeepSeek's 1M context cap with ~388K headroom.
+#     Expected cost: ~$0.20/sweep on V4-Pro success path, ~$0.65/sweep on
+#     fallback days. Savings: ~$0.45/sweep × ~10 sweeps/month = ~$4.50/month.
+#     Provider-side throttling that motivated the 2026-04-25 switch has
+#     since stabilized; if V4-Pro flakes again, OpenRouter's fallback
+#     array means Gemini Pro auto-takes-over without code intervention.
+#
+# Always verify a model's context window against the current corpus size
+# before swapping primaries. See CONTEXT_WINDOW_TOKENS below for the
+# explicit guard table.
+DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
 FALLBACK_MODELS = ["google/gemini-2.5-pro"]
+
+# Context window per model (tokens). Used by the size-fit guard at startup
+# so we never silently swap to a model that can't accept the corpus.
+# Update when adding model options or when providers expand context windows.
+CONTEXT_WINDOW_TOKENS = {
+    "google/gemini-2.5-pro":      2_000_000,
+    "google/gemini-2.5-flash":    2_000_000,
+    "deepseek/deepseek-v4-pro":   1_000_000,
+    "deepseek/deepseek-v4-flash":   200_000,
+    "anthropic/claude-opus-4-7":  1_000_000,
+    "openai/gpt-5":                 400_000,
+}
 
 # OpenRouter pricing per Mtok (input, output) — used for cost reporting.
 # Update when adding model options.
@@ -206,10 +222,26 @@ def main():
     print(f"Corpus: {len(included_paths)} files, ~{prompt_token_estimate:,} tokens (est.)",
           file=sys.stderr)
 
-    # Sanity check — Gemini 2.5 Pro caps at 2M input tokens (huge headroom);
-    # for other models check OpenRouter's per-model context limit.
-    if prompt_token_estimate > 1_800_000:
-        print(f"WARNING: estimate {prompt_token_estimate:,} tokens — close to Gemini 2.5 Pro's 2M cap. May need EXCLUDE expansion.",
+    # Size-fit guard: refuse to send a prompt that overflows the model's
+    # context window. Hard fail rather than silently truncate or 400 from
+    # the provider. Check against the PRIMARY model; OpenRouter's `models`
+    # fallback array means a smaller-context primary failure can fall back
+    # to a larger-context model, so the warning threshold uses the SMALLEST
+    # context window across [primary] + fallbacks.
+    candidate_models = [args.model] + (FALLBACK_MODELS if args.model == DEFAULT_MODEL else [])
+    candidate_caps = [CONTEXT_WINDOW_TOKENS.get(m, 200_000) for m in candidate_models]
+    primary_cap = candidate_caps[0]
+    largest_cap = max(candidate_caps)
+    # 90% of primary cap = warn (fallback path may still work)
+    # 90% of largest cap = hard refuse (no model can accept this)
+    if prompt_token_estimate > int(0.90 * largest_cap):
+        print(f"FATAL: estimate {prompt_token_estimate:,} tokens exceeds 90% of the largest available context "
+              f"({largest_cap:,} tokens across models {candidate_models}). Trim corpus via EXCLUDE or split sweep.",
+              file=sys.stderr)
+        sys.exit(2)
+    if prompt_token_estimate > int(0.90 * primary_cap):
+        print(f"WARNING: estimate {prompt_token_estimate:,} tokens approaches primary {args.model}'s {primary_cap:,} cap. "
+              f"Likely fallback to {FALLBACK_MODELS[0] if FALLBACK_MODELS else '(no fallback)'}.",
               file=sys.stderr)
 
     # Build request body. OpenRouter's `models` array provides automatic
