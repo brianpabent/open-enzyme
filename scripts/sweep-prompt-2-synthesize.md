@@ -22,9 +22,41 @@ The TRIGGER block tells you the date and commit SHA short form to use.
 
 ---
 
+## Process — enumerate, map, then synthesize
+
+This project's value is non-linear, multi-level, cross-domain synthesis. Surface duplicates have been a chronic failure mode. Both problems share the same root cause: synthesis without first reading the existing connection landscape carefully. **Solve both by working in three phases.**
+
+### Phase A — Enumerate what already exists
+
+Before producing any synthesis, scan the wiki and produce an internal-only enumeration of connections that are *already* explicit. You don't need to output this enumeration in your final synthesis log — it's a working step for you. The enumeration should cover:
+
+- Every connection that's a named section, callout, or first-class topic in a canonical wiki page (use `wiki/synthesis.md` "Where actioned items live now" as the index)
+- Every connection in the most recent ~3 entries of the Sweep history table (read the corresponding `logs/v4-synthesis-*.md` files)
+- Every cross-reference in the trigger files' frontmatter `related:` fields and inline `[link](page.md)` references
+
+Treat this enumeration as your **"already-known" baseline**. Findings that match this baseline at the SINGLE-LINK level are duplicates. Findings that compose multiple already-known links into a chain not in the baseline are novel — that's the daemon's central value.
+
+### Phase B — Map the connection graph
+
+From the corpus, build a working mental model of which pages cross-reference each other and which don't. Pay particular attention to:
+
+- **Page pairs with strong existing cross-reference linkage** (e.g., `lactoferrin.md` ↔ `abcg2-modulators.md` — heavily linked) — easy connections here are likely already found.
+- **Page pairs with WEAK or NO existing cross-reference linkage** — this is where non-obvious connections live. These pairs are where the daemon's edge over a human reader matters most. Examples worth probing in this corpus: pages on different organisms (yeast vs. koji vs. LBP chassis), pages on different chokepoints that the chokepoint map doesn't directly link, pages on different patient subgroups (Q141K vs. androgen-elevated vs. wild-type), pages on different therapeutic modalities (small-molecule vs. fermentable vs. siRNA vs. LBP).
+- **Pages that share a non-obvious common term, mechanism, or ontology** but don't cite each other.
+
+**Bias your synthesis attention disproportionately toward the weakly-connected page pairs.** The pages that already heavily cite each other have largely had their easy connections found. The interesting findings are the ones connecting things across pages humans don't usually read together.
+
+### Phase C — Synthesize
+
+Now find connections that are NOT in your Phase A enumeration. **Bias toward depth and weirdness.** This project's value comes from non-linear thinking — the multi-level chains, cross-domain analogies, and inverted-perspective questions that linear single-page reading misses. **The daemon's job is to be the reader who's read everything at once.**
+
+For each finding you surface, add a chain-depth tag (see "Output format" below) so the human reviewer can quickly distinguish surface findings from deep multi-step compositions.
+
+---
+
 ## What to look for
 
-Cross-document connections that emerge only when you read multiple files together. **Bias toward depth and weirdness.** This project's value comes from non-linear thinking — the multi-level chains, cross-domain analogies, and inverted-perspective questions that linear single-page reading misses. **The daemon's job is to be the reader who's read everything at once.**
+Cross-document connections that emerge only when you read multiple files together.
 
 1. **Cross-domain synergies** — findings from one track that unlock opportunities in another (e.g., a koji secondary metabolite that hits an NLRP3 chokepoint nobody mapped to it)
 2. **Contradictions or tensions** — two documents disagreeing on mechanism, strategy, or feasibility
@@ -44,6 +76,15 @@ Cross-document connections that emerge only when you read multiple files togethe
 
 **Critical**: end every numbered item (each Connection, Contradiction, Experiment, Open Question, Priority Action) with a `{{PEER-REVIEW}}` marker on its own line. Pass 3 (Claude review) substitutes each marker with a review blockquote via deterministic merge — your content is preserved verbatim.
 
+**Each numbered item must include a chain-depth tag.** This makes shallow vs. deep synthesis visible to the human reviewer at a glance. Tags:
+
+- `[CHAIN-DEPTH: 1]` — single connection between two concepts. If both endpoints are already cross-referenced in each other's pages, this is a surface finding likely already known.
+- `[CHAIN-DEPTH: 2]` — two-link composition (A → B → C) where the full chain is novel even if individual links are documented.
+- `[CHAIN-DEPTH: 3+]` — three-or-more-link chain or cross-domain composition where the full pattern emerges only from reading multiple weakly-connected pages together. **Highest-value findings.**
+- `[REFRAME]` — known connection seen from a new angle that elevates a footnote into a first-class topic, surfaces a non-obvious implication, or inverts the question. Depth-agnostic but explicitly value-additive.
+
+Also include a `[PHASE-A-MATCH: <yes/no/partial>]` tag — your honest self-assessment of whether this finding matched anything in the Phase A enumeration. `yes` means it's a probable duplicate; `no` means it's genuinely outside the already-known baseline; `partial` means some sub-steps are known but the composition is new. **Surface "yes"-tagged findings only when there's a clear new angle (REFRAME); otherwise drop them.**
+
 ```markdown
 # Synthesis — <YYYY-MM-DD>
 **Substrate:** Open Enzyme wiki at commit `<sha>`
@@ -53,8 +94,9 @@ Cross-document connections that emerge only when you read multiple files togethe
 
 ## New Connections
 
-1. **<one-sentence claim>.** *Supported* OR *Speculative*.
+1. **<one-sentence claim>.** *Supported* OR *Speculative*. `[CHAIN-DEPTH: N]` `[PHASE-A-MATCH: yes/no/partial]`
    - *Documents Connected:* `file-a.md`, `file-b.md`, `file-c.md`
+   - *Page-pair linkage:* (briefly: are the connected pages already cross-referenced to each other? If yes, name the existing link; if no, note that this is a weakly-connected pair)
    - *Why It Matters:* (3-6 sentences explaining the leverage)
    - *Suggested Action:* (concrete next step)
 
