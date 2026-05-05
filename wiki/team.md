@@ -167,9 +167,18 @@ Each role owns a critical domain (safety, efficacy, microbiome, translation), ma
 
 ---
 
+## Active Lab-Access Search — §1.9 Ward 1995 Dual-Cassette
+
+The named US contact above (Lauren Collier-Hyams at Emory) is the primary lead for [validation-experiments.md §1.9](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) — the project's #1 priority experimental gate. As of 2026-05-05 she has acknowledged the request and is investigating internally; no timeline yet. To de-risk that timeline (and to surface potentially cheaper / faster / better-positioned execution paths in parallel), a global lab-access scope was completed mapping options across **Japan, China, and Europe**.
+
+The headline result: the **Maruyama lab at the University of Tokyo** (origin of the NSlD-ΔP10 ten-protease-deletion strain that H01 Killshot #1 made the default chassis) is the single highest-leverage international contact, because NSlD-ΔP10 is not deposited in any public culture collection that this scope could verify. See [`ward-1995-lab-access-global.md`](./ward-1995-lab-access-global.md) for the full landscape — Japanese academic groups + culture collections, Chinese academic groups (Jiangnan, South China Univ of Tech, Tianjin Institute of Industrial Biotechnology) + CGMCC, European groups (Wösten at Utrecht, Mortensen at DTU, Westerdijk Institute) — including a Brian-specific recommendation, an order-of-operations parallel-pursuit plan if the US lead doesn't move forward, and a draft email to Maruyama if Brian wants to fire that lead immediately. This is an **active-search resource**, not a static reference; expect updates as outreach lands.
+
+---
+
 ## Related Concepts
 
 - [Open Enzyme: Founding Vision](./open-enzyme-vision.md) — The project Brian is building
+- [Ward 1995 §1.9 Lab Access — Global Landscape](./ward-1995-lab-access-global.md) — Japan / China / Europe parallel options (active search)
 
 ## Key Insight
 
