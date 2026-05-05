@@ -193,12 +193,23 @@ Uricase (oral, engineered, or as probiotic) addresses the root cause of gout by 
 
 The success of uricase as an oral therapeutic enzyme opens pathways for other missing or insufficient enzymes in humans, as part of the broader [[open-enzyme-vision|Open Enzyme platform]]. (Source: open-enzyme-vision.md)
 
+## Industry-Revealed Preference: *C. utilis* for Oral/Gut-Lumen Track
+
+An important finding from the 2026-05-05 audit of the clinical pipeline: of the four recent non-rasburicase/non-Krystexxa uricase programs with publicly disclosed parent enzyme, **three of four chose *C. utilis*** (SSS11, ALLN-346, SEL-212) and the fourth (ACS Synth Bio *S. boulardii* 2025) picked *V. vulnificus*. **None chose *A. flavus* for any recent oral, IV-with-tolerance, or probiotic program.** (source: uricase-variant-selection.md)
+
+This does not displace *A. flavus* for the *S. cerevisiae* intracellular track (where rasburicase precedent is decisive), but it elevates *C. utilis* to **co-primary alongside *A. flavus*** for the oral/gut-lumen track. Key drivers: (a) freedom-to-operate around the rasburicase IP estate, (b) publicly disclosed ALLN-346 protease-resistance mutations (US10815461B2: I180V, V190G, Y165F, E51K, Q244K, I132R, A87G), (c) GRAS food-yeast precedent. (In Vitro + Clinical Trial; source: uricase-variant-selection.md)
+
+**Tang 2025 head-to-head directed evolution (PMID 39892538):** Parallel error-prone-PCR + high-throughput screening of *A. flavus* and *C. utilis* uricases yielded af-UA at **46.21 U/mg** (Thr231Ala) vs. cu-UA at **31.43 U/mg** (Val234Met). Wild-type *C. utilis* (~38 IU/mg) actually exceeds wild-type *A. flavus*, but **post-evolution *A. flavus* retains a ~50% activity advantage**. Industry preference for *C. utilis* is therefore not about specific activity — it is about IP, oral-tolerance profile, and the disclosed ProteinGPS mutations. (In Vitro; source: uricase-variant-selection.md)
+
+**SEL-212 species attribution confirmed:** SEL-212 (pegadricase + ImmTOR) uses ***C. utilis* uricase** (pegylated), per Sands 2022 *Nat Commun* PMID 35022448. This is the Phase 3-validated systemic IV program that solved pegloticase's immunogenicity problem. (Clinical Trial; source: uricase-variant-selection.md)
+
 ## AI Analysis Findings (April 2026)
 
 **Variant Comparison Completed:**
-- *Aspergillus flavus* confirmed as primary candidate (FDA approval via rasburicase; proven S. cerevisiae expression; extensive stability engineering precedent)
+- *Aspergillus flavus* confirmed as primary candidate for *S. cerevisiae* intracellular track (FDA approval via rasburicase; proven S. cerevisiae expression; extensive stability engineering precedent; post-evolution activity advantage per Tang 2025)
+- *Candida utilis* elevated to co-primary for oral/gut-lumen track (industry-revealed preference in 3-of-3 recent oral programs; publicly disclosed ALLN-346 mutations; GRAS food-yeast precedent)
 - *Arthrobacter globiformis* ranked secondary (superior thermostability, neutral pH activity; requires novel expression system optimization)
-- Four additional variants evaluated; see [[ai-analysis/01-uricase-variant-selection|01 — Uricase Variant Selection]] for detailed ranking
+- Four additional variants evaluated; see [uricase-variant-selection.md](./uricase-variant-selection.md) for detailed ranking
 
 **GI Survival Profile:**
 - Baseline survival: 15–25% of ingested enzyme reaches small intestine in active form

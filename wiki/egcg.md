@@ -9,6 +9,7 @@ related:
   - chembl-cross-check.md
   - tnfsf14-gout-target.md
   - gout-deep-dive.md
+  - theaflavins.md
 sources:
   - nlrp3-inhibitor-screen.md
   - chembl-cross-check.md

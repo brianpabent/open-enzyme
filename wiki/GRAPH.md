@@ -123,6 +123,7 @@ graph TB
         R2["EGCG — 20S proteasome 86 nM → CP1a + CP4 + CP5"]
         R3["Zileuton — FDA 5-LOX inhibitor (CP6a), never tested in gout"]
         R4["Koji Uricase — upstream crystal elimination (removes trigger)"]
+        R5["Theaflavins — NLRP3-NEK7 disruption (CP2/CP3) + URAT1/GLUT9 down + TF3 TNFSF14/HVEM (CP1a)"]
     end
 
     subgraph Cannabinoids["CANNABINOIDS / TERPENES"]
@@ -322,6 +323,9 @@ graph TB
     R2 -->|"suppresses caspase-1"| C4
     R3 -->|"FDA-approved 5-LOX inhibitor, gout-untested"| N1
     R4 -->|"removes upstream MSU crystal trigger"| C1
+    R5 -->|"NLRP3-NEK7 disruption (CP2/CP3 assembly)"| C2
+    R5 -->|"TF3 suppresses TNFSF14-induced IL-6 (CP1a)"| Q1
+    R5 -->|"URAT1/GLUT9 downregulation"| B1
 
     %% Style the v1.2 additions distinctly
     linkStyle default stroke-width:1px

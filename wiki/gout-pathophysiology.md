@@ -1,8 +1,8 @@
 ---
 title: Gout Pathophysiology
 aliases: [gout-cascade, purine-metabolism, uric-acid-handling, inflammasome, urate-transporters, clinical-treatments]
-related: [nlrp3-inflammasome, fructose-connection, validation-experiments, supplements-stack, complement-c5a-gout, spm-resolution-pathway, tnfsf14-gout-target, androgen-urate-axis, abcg2-modulators]
-sources: [gout-deep-dive.md, nlrp3-exploit-map.md, complement-c5a-gout.md, tnfsf14-gout-target.md, spm-resolution-pathway.md, androgen-urate-axis.md, abcg2-modulators.md]
+related: [nlrp3-inflammasome, fructose-connection, validation-experiments, supplements-stack, complement-c5a-gout, spm-resolution-pathway, tnfsf14-gout-target, androgen-urate-axis, abcg2-modulators, theaflavins, zileuton]
+sources: [gout-deep-dive.md, nlrp3-exploit-map.md, complement-c5a-gout.md, tnfsf14-gout-target.md, spm-resolution-pathway.md, androgen-urate-axis.md, abcg2-modulators.md, theaflavins.md, zileuton.md]
 ---
 
 # Gout Pathophysiology
@@ -345,10 +345,11 @@ INTERVENTION POINTS:
 - C5a/C5aR1 blockade: Block complement priming (Avacopan — repurposing candidate; CP0)
 - TNFSF14/LIGHT blockade: Suppress priming amplifier (CERC-002, EGCG; CP1a)
 - NLRP3 inhibitors: Block inflammasome (Dapansutrile, Oridonin, BHB; CP2–CP4)
-- 5-LOX/LTB4 inhibitors: Block neutrophil amplification (Quercetin 300 nM, AKBA, Zileuton; CP6a)
+- 5-LOX/LTB4 inhibitors: Block neutrophil amplification (Quercetin 300 nM, AKBA, Zileuton FDA-approved 5-LOX inhibitor; CP6a) — see [zileuton.md](./zileuton.md) for the full repurposing dossier
 - IL-1 blockers: Block cytokine (Firsekibart, Anakinra, Canakinumab; CP5a)
 - SPMs/ALX/FPR2 agonists: Active resolution (Omega-3-derived RvD1/MaR1; CP5b)
 - Colchicine: Block neutrophil migration, inflammasome assembly
+- Theaflavins (black-tea polyphenols): NLRP3-NEK7 disruption (CP2/CP3 assembly block) + ↓URAT1/↓GLUT9 renal urate reabsorption + secondary TNFSF14/HVEM modulation (CP1a); direct MSU peritonitis Animal Model (Chen 2023 PMID 37221235); Tier 2 supplement candidate — see [theaflavins.md](./theaflavins.md) (source: theaflavins.md)
 ```
 
 ---
