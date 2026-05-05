@@ -1,8 +1,8 @@
 ---
 title: Open Source Platform
 aliases: [platform, github-model, strain-library, forkable-strains, decentralized-biology]
-related: [validation-experiments, open-enzyme-vision, engineered-yeast-uricase, engineered-koji-protocol]
-sources: [open-enzyme-vision.md]
+related: [validation-experiments, open-enzyme-vision, engineered-yeast-uricase, engineered-koji-protocol, paperclip-deep-dive]
+sources: [open-enzyme-vision.md, paperclip-deep-dive.md]
 ---
 
 # Open Source Platform
@@ -95,6 +95,10 @@ The distributed nature of the platform means each person working with a strain i
 ### 5. Open Substrate for AI-Assisted Peer Review
 
 Because the wiki source is public markdown at a stable URL, it also functions as an open substrate for AI-assisted peer review. Any collaborator can point their own AI — Claude, GPT, Codex, or any other — at this repository, run a rigor check, and contribute findings back via PR or synthesis entry. Traditional peer review is ~10 hours × 2–3 reviewers × weeks of back-and-forth. AI-assisted review on a shared substrate is ~20 minutes × unbounded reviewers × async. Disagreements between different AIs, grounded in the same inspectable evidence, become productive signals — pointing humans at the exact places where manual digging pays off, rather than hiding in private inference. Evidence-level tags, the ChEMBL cross-check, and the [Falsification Lint design](./linter-design.md) are the rigor discipline that makes this substrate trustworthy enough for that pattern to work. (source: open-enzyme-vision.md, §4)
+
+#### Paperclip literature-delta sweep — open platform decision
+
+The four-pass sweep daemon (Sonnet 4.6 → Gemini 2.5 Pro → Opus 4.7 → DeepSeek V4-Pro) currently operates only on the wiki itself. [Paperclip](./paperclip-deep-dive.md) — an MCP server exposing ~11M full-text papers (PMC + arXiv + bioRxiv/medRxiv) + ~150M abstracts (OpenAlex) — could augment a sweep pass to query for new literature matching project keywords and produce a "literature delta" surface: papers published since the last sweep that touch active research tracks, with cross-references to specific wiki pages. This is a real architectural change (adds an outward-facing input to a currently closed-corpus pipeline), with consequences for sweep runtime, OpenRouter token usage, signal-to-noise, and whether the synthesis pass is responsible for triaging external findings vs. just propagating internal ones. Flagged as an open platform decision; see `wiki/synthesis.md` for triage. (source: paperclip-deep-dive.md; Mechanistic Extrapolation)
 
 #### Multi-model synthesis as guard against epistemic homogenization
 

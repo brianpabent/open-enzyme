@@ -158,6 +158,7 @@ graph TB
         DE5["Avacopan — CP0 C5aR1 (FDA ANCA)"]
         DE6["Strain Library (synthesis output)"]
         DE7["Modality × Target Matrix — exploration surface"]
+        DE8["Paperclip GXL — 11M full-text papers + 150M abstracts MCP"]
     end
 
     subgraph Androgens["ANDROGEN-URATE AXIS (NEW)"]
@@ -367,6 +368,9 @@ graph TB
     %% Modality × Target Matrix (source: modality-chokepoint-matrix.md)
     DE7 -->|"orthogonal exploration of"| DE1
     DE7 -->|"surfaces novel modalities for"| DE2
+    %% Paperclip literature MCP (source: paperclip-deep-dive.md)
+    DE8 -->|"full-text search augments"| DE1
+    DE8 -->|"literature delta surfaces"| DE2
 
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2

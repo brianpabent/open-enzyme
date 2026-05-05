@@ -1,8 +1,8 @@
 ---
 title: Bio AI Tools
 aliases: [AI-tools, AI-bio, GPT-Rosalind, Amazon-Bio-Discovery, Anthropic-Coefficient, computational-biology, protein-language-models, open-source-bio-AI]
-related: [engineered-yeast-uricase, engineered-koji-protocol, validation-experiments, uricase, nlrp3-inflammasome]
-sources: [ai-bio-tools-playbook.md]
+related: [engineered-yeast-uricase, engineered-koji-protocol, validation-experiments, uricase, nlrp3-inflammasome, paperclip-deep-dive]
+sources: [ai-bio-tools-playbook.md, paperclip-deep-dive.md]
 ---
 
 # Bio AI Tools
@@ -649,6 +649,75 @@ The plugin augments the **research and reasoning** layer. The computational biol
 ### How It Differs from OpenAI's Codex Life Sciences Plugin
 
 Covered in [ai-bio-tools-playbook.md](./ai-bio-tools-playbook.md) §Codex. Both connect Claude / GPT to life-science databases. The Bio Research plugin is tighter (10 curated servers + 6 vetted skills) where Codex is broader (50+ databases, looser scaffolding). For Open Enzyme, which runs inside Claude Code, the Bio Research plugin wins on environment fit — it stays in the terminal with the wiki.
+
+---
+
+## Paperclip (GXL) — Agent-Native Scientific Literature MCP
+
+[Paperclip](https://paperclip.gxl.ai/) is an MCP server built by GXL (Generative Expert Labs), a Stanford-adjacent group connected to James Zou's lab. It exposes scientific literature to an LLM as a structured filesystem — search, grep, cat, map, and SQL operations chain through a stateful `results_id`, so an agent can narrow a corpus iteratively without re-searching. See [paperclip-deep-dive.md](./paperclip-deep-dive.md) for full documentation.
+
+(source: paperclip-deep-dive.md)
+
+### Corpus
+
+| Source | Coverage | Type |
+|---|---|---|
+| PubMed Central | ~5M+ | Full text, biomedical, open access |
+| arXiv | ~3M | Full text, ML / math / quant-bio / physics / CS |
+| bioRxiv + medRxiv | ~3M+ | Full text, preprints |
+| OpenAlex | ~150M+ | Abstracts + structured metadata only |
+
+Total: ~11M full-text papers + ~150M abstracts. Coverage caveats: PMC has embargo periods for some journals; only open-access full text is indexed. (source: paperclip-deep-dive.md)
+
+### Key Commands
+
+| Command | Function |
+|---|---|
+| `search` | Hybrid (BM25 + vector embedding) search; returns 1–2 sentence TL;DRs |
+| `grep` | Regex / keyword search within full text |
+| `cat` | Reads structured paper text (sections, tables, figures) |
+| `map` | Applies a prompt across a result set — the synthesis primitive |
+| `ask-image` | Multimodal query against figures and images |
+| `--from <results_id>` | Chains operations against a previous result set |
+
+The `--from` chaining is the load-bearing feature: every search produces a cloud-stored `results_id`, and subsequent grep / map / cat operations can target it without re-searching. (source: paperclip-deep-dive.md)
+
+### Setup
+
+```
+claude mcp add --transport http paperclip https://paperclip.gxl.ai/mcp
+```
+
+Currently free; no API key required. Pricing tiers not yet announced. (source: paperclip-deep-dive.md)
+
+### Relationship to the Anthropic Life Sciences Marketplace
+
+Paperclip is **complementary, not a replacement** for the Anthropic marketplace plugins:
+
+- **Marketplace wins on per-source depth:** PubMed's MeSH vocabulary index, ChEMBL's bioactivity tables, Open Targets' target–disease evidence — these are best-in-class for their specific sources.
+- **Paperclip wins on full-text search and cross-source synthesis:** searching *within* papers, cross-domain queries spanning biomedical + ML, multi-paper synthesis via `map`, and agent-driven workflows that need stateful corpus narrowing.
+
+**When to use Paperclip for Open Enzyme:**
+- Uricase mutation landscape — search + grep + map across PMC and arXiv to catalog published variants, hosts, catalytic parameters, immunogenicity (complements `uricase.md`, `crispr-uricase.md`, `engineered-koji-protocol.md`)
+- NLRP3 inhibition mechanisms — map across the NLRP3 corpus for dosing and efficacy data (complements `nlrp3-exploit-map.md`, `nlrp3-inhibitor-screen.md`)
+- Koji / *A. oryzae* expression systems — cross-reference food-science and synthetic-biology literature for promoter / cassette / yield data (expands `aspergillus-oryzae.md`, `koji-endgame-strain.md`)
+- Cross-domain queries — e.g., grep for "uricase" + "food-grade" or "ABCG2" + "probiotic" across the full corpus to surface intersections that PubMed and Scholar fragment
+- arXiv coverage for protein language models, directed-evolution algorithms, and novel delivery vectors (keeps `bio-ai-tools.md` current without bouncing between PubMed and arXiv)
+
+(source: paperclip-deep-dive.md)
+
+### Sweep-Daemon Integration — Open Platform Decision
+
+A Paperclip-augmented sweep pass could query for new literature matching project keywords on each sweep and produce a "literature delta" surface — papers published since the last sweep that touch active research tracks, with cross-references to specific wiki pages. This is a real architectural change (adds an outward-facing input to a currently closed-corpus pipeline), with consequences for sweep runtime, OpenRouter token usage, and signal-to-noise. Routed to `wiki/synthesis.md` as a Priority Action / Open Question rather than implemented inline. (source: paperclip-deep-dive.md)
+
+### Limitations
+
+- PMC embargo lag: recent high-impact papers in non-OA journals will be abstract-only
+- Rate limits: untested for sustained automated query volume
+- Pricing: currently free; plan for the possibility of usage limits
+- MeSH vocabulary searches not supported (use PubMed MCP for those)
+
+(source: paperclip-deep-dive.md)
 
 ---
 

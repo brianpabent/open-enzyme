@@ -127,6 +127,7 @@ nav:
   - Tools & Reference:
     - AI Bio Tools: bio-ai-tools.md
     - AI Bio Tools Playbook: ai-bio-tools-playbook.md
+    - Paperclip (GXL) Literature MCP: paperclip-deep-dive.md
     - ChEMBL Cross-Check: chembl-cross-check.md
     - Linter Design (Falsification + Document Lint): linter-design.md
     - Hypotheses Index: hypotheses/README.md
