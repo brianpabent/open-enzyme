@@ -54,15 +54,28 @@ EXCLUDE = {
     "wiki/ai-bio-tools-playbook.md",  # tooling reference, not biology
 }
 
-# Default Pass 2 synthesizer. Switched from deepseek/deepseek-v4-pro on
-# 2026-04-25: V4-Pro through OpenRouter exhibited two distinct unreliable
-# failure modes (sustained 429 throttling on Together / SiliconFlow, plus
-# null-content responses with finish_reason=null). Gemini 2.5 Pro produced
-# the same three top-tier connections V4-Pro found on 2026-04-24 (androgen
-# ceiling, fructose challenge, carnosine counter-agent) when run on the
-# same wiki corpus, plus extra contradiction-resolution and pushback work,
-# at ~3.3x the unit cost (~$0.65/sweep vs. ~$0.20).
-DEFAULT_MODEL = "google/gemini-2.5-pro"
+# Default Pass 2 synthesizer.
+#
+# Timeline:
+#   2026-04-24: launched on deepseek/deepseek-v4-pro (~$0.20/sweep).
+#   2026-04-25: switched to google/gemini-2.5-pro after V4-Pro through
+#     OpenRouter exhibited two unreliable failure modes (sustained 429
+#     throttling on Together / SiliconFlow, plus null-content responses
+#     with finish_reason=null). Gemini 2.5 Pro produced the same three
+#     top-tier connections V4-Pro found on 2026-04-24 (androgen ceiling,
+#     fructose challenge, carnosine counter-agent) when run on the same
+#     wiki corpus, plus extra contradiction-resolution and pushback work,
+#     at ~3.3x the unit cost (~$0.65/sweep vs. ~$0.20).
+#   2026-05-05: re-routed to deepseek/deepseek-v4-pro AS PRIMARY with
+#     google/gemini-2.5-pro AS AUTOMATIC FALLBACK via OpenRouter's
+#     `models` array. The V4-Pro flakiness was launch-day dogpile (DeepSeek
+#     v4 family released 2026-04-23); provider-side throttling has since
+#     stabilized. The fallback array means Gemini auto-takes-over on any
+#     V4-Pro failure (429, null content, timeout) without code intervention.
+#     Expected cost: ~$0.20/sweep on V4-Pro success path, ~$0.65/sweep on
+#     fallback days. Savings: ~$0.45/sweep × ~10 sweeps/month = ~$4.50/month.
+DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
+FALLBACK_MODELS = ["google/gemini-2.5-pro"]
 
 # OpenRouter pricing per Mtok (input, output) — used for cost reporting.
 # Update when adding model options.
@@ -190,13 +203,21 @@ def main():
         print(f"WARNING: estimate {prompt_token_estimate:,} tokens — close to Gemini 2.5 Pro's 2M cap. May need EXCLUDE expansion.",
               file=sys.stderr)
 
-    # Build request body
+    # Build request body. OpenRouter's `models` array provides automatic
+    # provider-side fallback: if the primary model fails (429 throttle, null
+    # content, upstream provider down), OpenRouter tries the next model in
+    # the array without code intervention. The python-side retry loop below
+    # still handles transient curl-level errors (network timeouts, etc.).
+    # When --model is overridden via CLI, no fallback is used (caller is
+    # explicit about which model to test).
     body = {
         "model": args.model,
         "messages": [{"role": "user", "content": full_prompt}],
         "max_tokens": args.max_tokens,
         "temperature": 0.7,
     }
+    if args.model == DEFAULT_MODEL:
+        body["models"] = [args.model] + FALLBACK_MODELS
 
     with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as tf:
         json.dump(body, tf)
@@ -280,7 +301,15 @@ def main():
     in_tok = usage.get("prompt_tokens", 0)
     out_tok = usage.get("completion_tokens", 0)
 
-    in_per, out_per = PRICING_USD_PER_MTOK.get(args.model, (None, None))
+    # OpenRouter returns the actual model that served the request in
+    # `resp["model"]`, which may differ from args.model when the fallback
+    # array kicked in (e.g., DeepSeek primary failed, Gemini served).
+    # Use the served model for cost reporting and frontmatter so the log
+    # accurately reflects what ran.
+    served_model = resp.get("model", args.model)
+    fallback_used = served_model != args.model
+
+    in_per, out_per = PRICING_USD_PER_MTOK.get(served_model, (None, None))
     if in_per is None:
         cost_in = cost_out = cost_total = 0.0
     else:
@@ -288,7 +317,8 @@ def main():
         cost_out = out_tok * out_per / 1_000_000
         cost_total = cost_in + cost_out
 
-    print(f"Tokens: in={in_tok:,} out={out_tok:,}  cost=${cost_total:.4f}",
+    fallback_note = f" (FALLBACK from {args.model})" if fallback_used else ""
+    print(f"Tokens: in={in_tok:,} out={out_tok:,}  cost=${cost_total:.4f}  model={served_model}{fallback_note}",
           file=sys.stderr)
 
     # Save with frontmatter
@@ -300,7 +330,9 @@ def main():
         f"commit: {args.commit_sha}\n"
         f"diff_base: {args.diff_base or 'unknown'}\n"
         f"trigger_files: {args.trigger_files or '(none)'}\n"
-        f"reviewer_model: {args.model}\n"
+        f"reviewer_model: {served_model}\n"
+        f"reviewer_model_requested: {args.model}\n"
+        f"reviewer_fallback_used: {fallback_used}\n"
         f"input_tokens: {in_tok}\n"
         f"output_tokens: {out_tok}\n"
         f"cost_usd: {cost_total:.4f}\n"
