@@ -73,6 +73,7 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 | siRNA / ASOs | ⚪ | ⚪ | 🟡 (myeloid-tropic NLRP3 / NF-κB silencer) | 🟡 (TNFα siRNA local) | — |
 | CRISPR / base editing in patient | — | 🟡 (Q141K → Q141 base edit in crypt stem cells; delivery unsolved) | ⚪ | ⚪ | — |
 | Antibodies / biologics | — | ⚪ | ⚪ | ⚪ (anti-TNFα systemic; overkill) | — |
+| Engineered soluble complement regulators (sCR1, Factor H, DAF/CD55) | — | — | 🟡 (gut-luminal sCR1 / Factor H fragment / DAF ectodomain heterologously expressed in GRAS host for mucosal CP0 coverage — closes the wiki's only "honest platform gap") | ⚪ | — |
 | Pharmacological chaperones | — | 🟡 (Q141K folding rescue à la CFTR-corrector class) | ⚪ | ⚪ | — |
 | SPM precursors (DHA → RvD1/MaR1) | — | 🔬 | ✅ ([SPM](./spm-resolution-pathway.md)) | 🔬 | — |
 | Fermentable fiber / prebiotics | — | ✅ ([butyrate → PPARγ → ABCG2](./abcg2-modulators.md)) | 🔬 | 🔬 (mucus-layer support) | ✅ |
@@ -185,6 +186,17 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
   3. **Intra-articular exosomes for acute flare** carrying IL-1RA or NLRP3 silencer.
 - **Status:** research-stage clinically; Codiak/Lonza alumni and several startups (Vesigen, Aegle, Ilias). For OE: a future complementary modality, not a near-term build.
 
+### Engineered soluble complement regulators (sCR1, Factor H, DAF/CD55)
+- **Strengths:** **closes the only "honest platform gap" in the OE corpus.** [`complement-c5a-gout.md`](./complement-c5a-gout.md) identifies CP0 (complement priming via C5a) as a dominant upstream chokepoint with no fermentable coverage — and `validation-experiments.md` §1.21 (executed 2026-04-27) confirmed via computational scan of ChEMBL / NPASS / LOTUS / Open Targets that **no validated natural-product C5aR1 antagonists exist.** This forced the platform to formally accept avacopan (a prescription pharma drug) as a permanent adjunct — awkward against the "your microbe makes the medicine" thesis. **The unexplored alternative** is to express endogenous human soluble complement regulators heterologously in the gut: sCR1 (soluble complement receptor 1), Factor H fragments, or DAF/CD55 ectodomain — proteins that already exist clinically as systemic IV biologics for autoimmune disease but have never been engineered for gut-luminal mucosal-complement coverage.
+- **Best-fit cells in the matrix:** gut macrophages NLRP3 priming (the CP0 step); plausibly gut barrier (complement deposition contributes to barrier dysfunction).
+- **Coverage gap relative to current OE:** **the wiki has no page on this.** All four candidate proteins (sCR1, Factor H, DAF/CD55, CD46) are in the human proteome — UniProt-fetchable, AlphaFold-modelled, MEROPS-screenable for shio-koji compatibility (the same comp-NNN protease-stability framework used for uricase and lactoferrin would apply directly).
+- **Open exploration questions:**
+  1. Can a soluble complement regulator be expressed in *A. oryzae* or *S. cerevisiae* at gut-luminal concentrations meaningful for mucosal C5a neutralization? sCR1 is ~190 kDa with 30 SCR domains — possibly too large for koji secretion. Factor H is ~150 kDa with 20 SCR domains. **DAF (CD55) ectodomain is ~70 kDa with 4 SCR domains — likely the most tractable engineering target.**
+  2. Does mucosal C5a inhibition (luminal-side) meaningfully blunt CP0 priming? The macrophages doing the priming are submucosal — does luminal sCR1 / Factor H reach them, or does it require basolateral access?
+  3. Same protease-stability question as uricase / lactoferrin: do the SCR (short consensus repeat) domains survive the koji fermentation environment? Run a comp-NNN analysis (e.g., comp-006) on the AlphaFold model of CD55 before any wet-lab engineering.
+- **Status:** **zero programs.** All systemic complement-regulator biologics (TP10/sCR1 by Avant, mirococept by Univ. Oxford, ARC1905 anti-C5 aptamer) target IV / intravitreal delivery for autoimmune indications. **A gut-luminal mucosal-complement strategy is genuinely unexplored** and well-aligned with the OE chassis.
+- **Regulatory class:** if expressed in food-grade GRAS organism (koji, S. boulardii), this stays in the OE chassis lane — distinct from the systemic sCR1 biologic regulatory path. Same lane as engineered uricase / lactoferrin.
+
 ### Microbiome consortia / FMT
 - **Strengths:** community-level intervention rather than single-strain. Vowst (Seres) FDA-approved 2023 for C. diff is the precedent.
 - **Best-fit cells:** gut microbiome reshaping at community level; gut barrier; potentially distal effects via systemic SCFA.
@@ -252,6 +264,8 @@ The cells where 🟡 marks the genuinely novel exploration space, ordered by lev
 3. **Myeloid-tropic LNP delivering NLRP3-silencing mRNA / siRNA to vessel-wall macrophages.** Brian-pattern Lp-PLA2 persistence is the n=1 case study. Acuitas / Moderna myeloid LNPs exist for oncology; gout repurposing is novel.
 
 4. **Pharmacological chaperone for ABCG2 Q141K folding rescue.** CFTR-corrector class precedent (~$10B annual market for ΔF508 correction). Same ATP-binding cassette superfamily. Academic mechanism literature exists; no clinical programs. Could be a small-molecule discovery campaign with AI-era binder design.
+
+4b. **Gut-luminal soluble complement regulator (sCR1 / Factor H / DAF/CD55 ectodomain) expressed in GRAS host for CP0 mucosal coverage.** Closes the only "honest platform gap" in the OE corpus — `complement-c5a-gout.md` flags CP0 as having no fermentable coverage; `validation-experiments.md` §1.21 confirmed zero natural-product C5aR1 antagonists exist. All four candidate proteins are human-endogenous, UniProt-fetchable, AlphaFold-modelled. **DAF/CD55 ectodomain (~70 kDa, 4 SCR domains) is the most tractable engineering target** (vs. sCR1 at 190 kDa / 30 SCR domains). Zero programs anywhere — all clinical complement regulators target systemic IV delivery. Mucosal-luminal expression is unexplored. First step: comp-NNN protease-stability analysis on AlphaFold CD55 model under shio-koji conditions (same framework as comp-001 uricase / comp-005 lactoferrin) before committing to wet-lab engineering.
 
 5. **mRNA-IL-1RA pulse therapy for acute flare termination.** Transient expression matches flare window. Zero programs; mechanistically defensible; competes with canakinumab on cost (mRNA manufacturing scales; $300K/yr biologic doesn't).
 
