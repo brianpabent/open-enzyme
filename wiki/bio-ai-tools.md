@@ -706,9 +706,37 @@ Paperclip is **complementary, not a replacement** for the Anthropic marketplace 
 
 (source: paperclip-deep-dive.md)
 
-### Sweep-Daemon Integration — Open Platform Decision
+### Reliability — Trust Ranking by Tool (2026-05-05 verification)
 
-A Paperclip-augmented sweep pass could query for new literature matching project keywords on each sweep and produce a "literature delta" surface — papers published since the last sweep that touch active research tracks, with cross-references to specific wiki pages. This is a real architectural change (adds an outward-facing input to a currently closed-corpus pipeline), with consequences for sweep runtime, OpenRouter token usage, and signal-to-noise. Routed to `wiki/synthesis.md` as a Priority Action / Open Question rather than implemented inline. (source: paperclip-deep-dive.md)
+A first end-to-end test (uricase variant landscape + *A. oryzae* expression evidence) surfaced a systematic hallucination pattern in the `map` operator. (source: paperclip-deep-dive.md)
+
+| Tool | Reliability | Notes |
+|---|---|---|
+| `search` | **High** | Returns real PMC / bioRxiv / arXiv records with accurate IDs and titles |
+| `cat /papers/<id>/meta.json` | **High** | Authoritative paper metadata — use as ground truth for abstract-level claims |
+| `grep PATTERN /papers/<id>/...` | **High** | Returns real text from indexed paper bodies |
+| `cat /papers/<id>/content.lines` | **High** | Real full-text |
+| `map --from <id> "extract X"` | **LOW — hallucinates quantitative data and misattributes organisms** | Lighter reader model substitutes plausible-looking domain values when full text doesn't support the requested field |
+| `reduce --from <map-id> ...` | **Compounding risk** | If underlying `map` is wrong, `reduce` consolidates wrong claims into a confident-looking summary |
+
+**Verification discipline for any Paperclip session:** (1) Use `search` and `grep` as primary evidence; treat `map` as hypothesis-generation only. (2) Grep-verify every load-bearing number against the paper body. (3) Anchor identity claims (organism, gene, host) to `meta.json`. (4) Never propagate `reduce` summaries directly. (5) Check computational vs. wet-lab status from the abstract or methods section. (source: paperclip-deep-dive.md)
+
+### Sweep-Daemon Integration — DECIDED 2026-05-05: Do Not Integrate
+
+**Decision: do not wire Paperclip into the four-pass sweep daemon.** A verification test (uricase variant landscape, ~12 papers with known-correct ground truths) revealed a systematic hallucination pattern in the `map` operator that is disqualifying for any automated pipeline. (source: paperclip-deep-dive.md)
+
+**Concrete hallucination examples from the 2026-05-05 test** (In Vitro / verification):
+
+| Paper | Abstract / body says | `map` returned |
+|---|---|---|
+| PMC9773812 (Najjari 2022, PASylated UOX) | *A. flavus* UOX, K<sub>m</sub> 52.61 µM | *A. globiformis* uricase variant, K<sub>m</sub> 0.007 mM (~7,500× off) |
+| PMC4881585 (Xie 2016, chimeric uricase) | Porcine-human exon-replacement chimera | *P. chrysogenum*-human exon chimera (different organism) |
+| PMC10561068 (Yan 2023, *Arthrobacter* CSAJ-16) | Optimal T 20°C, K<sub>m</sub> 0.048 mM | Optimal T 40°C, K<sub>m</sub> 0.015 mM |
+| PMC12106716 (Rahbar 2025, A. flavus disulfide design) | Pure computational paper — no wet-lab | Invented Tm, K<sub>m</sub>/k<sub>cat</sub> measurements; named non-existent mutation pair |
+
+These are confabulations — plausible-looking values that would pass casual review but are not in the underlying full text. Wiring this into the sweep would inject a structured external hallucination source into a corpus designed for PhD-grade rigor.
+
+**Reopen condition:** if GXL ships a verified upgrade of the `map` reader model and the uricase variant probe (~12 papers, multiple known-correct ground truths via abstract + grep) passes cleanly, revisit. Until then Paperclip remains a manual-research-only tool. (source: paperclip-deep-dive.md; Mechanistic Extrapolation)
 
 ### Limitations
 
