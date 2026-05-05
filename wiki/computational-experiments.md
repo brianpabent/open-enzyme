@@ -54,6 +54,22 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+### comp-010 — Cassette Compatibility for the Dual-Cassette Koji Endgame Strain
+
+| Field | Value |
+|---|---|
+| **Question** | Does the uricase (Q00511) + lactoferrin (P02788) payload pair have any cassette-design-specific issues — codon collisions, KEX2 site geometry problems, or secretion-pathway burden — that the Ward 1995 glucoamylase-KEX2 architecture will not handle out of the box? |
+| **Method** | Seven analyses on protein sequences (stdlib only): (1) codon usage CAI proxy + rare-codon hotspot scan vs. A. oryzae RSCU table; (2) internal K-R dipeptide census + P1' risk scoring (canonical Kex2p family rules); (3) ER-retention / PTS1 / PTS2 secretion-targeting scan; (4) disulfide bonding load vs. Huynh 2020 adalimumab baseline (16 disulfides = 1.00×); (5) N-X-S/T glycosylation site prediction + UniProt cross-reference; (6) combined concurrent-expression burden synthesis; (7) dimension-by-dimension comparison to Huynh 2020. |
+| **Verdict** | **LOW** overall cassette-design risk for the proposed asymmetric architecture (direct-secretion uricase + glucoamylase-KEX2-fusion lactoferrin). No blocking issues. Uricase: 0 disulfides, fungal origin, no KEX2 fusion concerns. Lactoferrin: 17 disulfides (1.06× Huynh 2020 baseline), 2 internal K-R sites (1 abolished P1'=D; 1 moderate P1'=K). Uricase has 1 high-risk internal KR site (pos 128) — irrelevant for direct-secretion cassette design; only load-bearing if moved to fusion architecture. |
+| **Key finding** | The OE payload pair is within the Huynh 2020 ER-capacity precedent. Uricase contributes zero PDI/disulfide load (fungal, intracellular origin). The 12.6× Lf titer gap vs. Huynh 2020 (39.7 mg/L adalimumab) is not the correct benchmark — Ward 1995 >2 g/L Lf is the appropriate reference. Two design notes: (1) monitor Lf KEX2 site at mature pos 579 (P1'=K, moderate truncation risk) by SDS-PAGE; (2) verify uricase secretion vs. C-terminal SKL PTS1 motif in §1.9. |
+| **Informs** | [`validation-experiments.md` §1.9](./validation-experiments.md) — Ward 1995 dual-cassette feasibility test; comp-010 removes cassette architecture as a pre-experiment concern; §1.9 remains a feasibility gate (format risk unresolved) |
+| **Experiment folder** | [`experiments/comp-010-cassette-compatibility/`](../experiments/comp-010-cassette-compatibility/) |
+| **Interpretive wiki page** | [`wiki/cassette-compatibility-computational.md`](./cassette-compatibility-computational.md) |
+| **Date** | 2026-05-05 |
+| **Status** | Complete |
+
+---
+
 ### comp-007 — Food-Grade HDAC Inhibitor Screen for Q141K-ABCG2 Trafficking Rescue
 
 | Field | Value |

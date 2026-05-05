@@ -1,0 +1,261 @@
+{
+  "experiment": "comp-010",
+  "title": "Cassette Compatibility \u2014 Dual-Cassette Koji Endgame Strain (Uricase + Lactoferrin in A. oryzae)",
+  "date": "2026-05-05",
+  "uricase": {
+    "codon": {
+      "protein_name": "Uricase (Q00511)",
+      "origin": "A. flavus (fungal)",
+      "sequence_length": 302,
+      "codons_analyzed": 302,
+      "rare_codons_count": 0,
+      "fraction_rare": 0.0,
+      "cai_proxy": 1.5074,
+      "burden_label": "LOW",
+      "burden_note": "Minimal codon optimization needed; origin-preferred codons largely overlap A. oryzae preferences",
+      "hotspots_count": 0,
+      "hotspots": [],
+      "method_note": "Amino-acid-level CAI proxy: for each residue, the origin-organism's preferred codon is looked up in A. oryzae RSCU table. Rare = RSCU < 0.4. Hotspot = 3+ consecutive rare residues. This overestimates burden (worst-case): actual CDS may use better-tolerated synonymous codons. For uricase (A. flavus origin), A. flavus preferred codons are used as reference. For lactoferrin (human origin), human preferred codons are used. Evidence level: Mechanistic Extrapolation."
+    },
+    "kex2": {
+      "protein_name": "Uricase (Q00511)",
+      "signal_peptide_end": 0,
+      "mature_sequence_length": 302,
+      "total_kr_sites_in_mature": 1,
+      "high_risk_sites_count": 1,
+      "moderate_risk_sites_count": 0,
+      "low_risk_sites_count": 0,
+      "overall_kex2_risk": "HIGH",
+      "kex2_note": "1 high-risk site(s) \u2014 truncated protein species predicted; linker redesign or site mutation recommended",
+      "internal_kr_sites": [
+        {
+          "position_in_mature": 128,
+          "position_in_full": 128,
+          "p1": "K",
+          "p1_plus1": "R",
+          "p1_prime": "N",
+          "site_risk": "HIGH",
+          "site_note": "P1'=N \u2014 KEX2 cleavage likely; site is functional"
+        }
+      ],
+      "method_note": "KEX2 canonical recognition KR\u2193X. P1' classification per Rockwell et al. 2002 (PMID 12475198) and Brenner & Fuller 1992 (PMID 1371243). P1'=D/E: abolished. P1'=P/K/R: reduced. All other residues: preferred or neutral. Analysis uses mature protein (post-signal-peptide). Structural accessibility not modeled here \u2014 buried KR sites in high-pLDDT regions have lower cleavage probability; this analysis is a conserviative upper bound. Evidence level: Mechanistic Extrapolation (A. oryzae kexB P1' rules inferred from S. cerevisiae Kex2p homology)."
+    },
+    "routing": {
+      "protein_name": "Uricase (Q00511)",
+      "signal_peptide_end": 0,
+      "issues_found": [
+        {
+          "type": "PTS1_peroxisomal",
+          "motif": "SKL",
+          "position": "C-terminal tripeptide",
+          "risk": "MODERATE",
+          "note": "C-terminal SKL resembles a PTS1 peroxisomal targeting signal. Unlikely to override secretion signal in fusion context, but worth checking in vivo."
+        }
+      ],
+      "routing_risk": "MODERATE",
+      "routing_summary": "Moderate-risk routing signal(s) detected \u2014 verify in vivo",
+      "method_note": "Scans for: ER-retention C-terminal tetrapeptides (KDEL/HDEL family, the canonical fungal signal); peroxisomal PTS1 C-terminal tripeptides (SKL family); PTS2 N-terminal motifs. Interior motifs flagged for awareness but scored LOW (not functional in isolation). Fungal A. oryzae uses HDEL as the primary ER-retention signal (not KDEL, which is mammalian). Evidence level: Mechanistic Extrapolation (signal motifs from consensus databases; functional confirmation requires in vivo immunofluorescence or ELISA fractionation)."
+    },
+    "disulfide": {
+      "protein_name": "Uricase (Q00511)",
+      "origin": "A. flavus (fungal)",
+      "total_cysteine_count": 3,
+      "known_disulfide_bonds": 0,
+      "free_cysteine_estimate": 3,
+      "huynh_2020_baseline": 16,
+      "folding_load_index": 0.0,
+      "folding_load_description": "0.00\u00d7 Huynh 2020 adalimumab baseline",
+      "fold_risk": "VERY LOW",
+      "fold_note": "No disulfide bonds \u2014 no PDI load. Folding is independent of ER oxidative machinery.",
+      "method_note": "Cysteine count from sequence. Known disulfide bond count from UniProt annotation. Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). A. oryzae NSlD-\u0394P10 demonstrated capacity for the Huynh 2020 baseline \u2014 whether higher disulfide loads saturate ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here (no domain-resolved PDI-pathway analysis). Evidence level: Mechanistic Extrapolation."
+    },
+    "glycosylation": {
+      "protein_name": "Uricase (Q00511)",
+      "signal_peptide_end": 0,
+      "predicted_nxst_count": 1,
+      "predicted_nxst_sites": [
+        {
+          "position_full": 191,
+          "position_mature": 191,
+          "sequon": "NFS",
+          "x_residue": "F",
+          "st_residue": "S"
+        }
+      ],
+      "method_note": "N-X-S/T sequon scan where X != P (standard N-glycosylation recognition rule). Not all sequons are glycosylated \u2014 occupancy depends on local structure, N-glycosyltransferase accessibility, and glycoprotein processing. This scan gives an upper bound on potential glycosylation sites. UniProt-annotated sites for lactoferrin (N137, N478, N623 in full sequence) should be present in the predicted list. Evidence level: Mechanistic Extrapolation."
+    }
+  },
+  "lactoferrin": {
+    "codon": {
+      "protein_name": "Lactoferrin (P02788)",
+      "origin": "Homo sapiens (mammalian)",
+      "sequence_length": 710,
+      "codons_analyzed": 710,
+      "rare_codons_count": 0,
+      "fraction_rare": 0.0,
+      "cai_proxy": 1.4463,
+      "burden_label": "LOW",
+      "burden_note": "Minimal codon optimization needed; origin-preferred codons largely overlap A. oryzae preferences",
+      "hotspots_count": 0,
+      "hotspots": [],
+      "method_note": "Amino-acid-level CAI proxy: for each residue, the origin-organism's preferred codon is looked up in A. oryzae RSCU table. Rare = RSCU < 0.4. Hotspot = 3+ consecutive rare residues. This overestimates burden (worst-case): actual CDS may use better-tolerated synonymous codons. For uricase (A. flavus origin), A. flavus preferred codons are used as reference. For lactoferrin (human origin), human preferred codons are used. Evidence level: Mechanistic Extrapolation."
+    },
+    "kex2": {
+      "protein_name": "Lactoferrin (P02788)",
+      "signal_peptide_end": 19,
+      "mature_sequence_length": 691,
+      "total_kr_sites_in_mature": 2,
+      "high_risk_sites_count": 0,
+      "moderate_risk_sites_count": 1,
+      "low_risk_sites_count": 1,
+      "overall_kex2_risk": "MODERATE",
+      "kex2_note": "1 moderate-risk site(s) \u2014 may produce minor truncation bands; verify by SDS-PAGE",
+      "internal_kr_sites": [
+        {
+          "position_in_mature": 38,
+          "position_in_full": 57,
+          "p1": "K",
+          "p1_plus1": "R",
+          "p1_prime": "D",
+          "site_risk": "LOW",
+          "site_note": "P1'=D (acidic \u2014 KEX2 cleavage abolished; this site is non-functional)"
+        },
+        {
+          "position_in_mature": 579,
+          "position_in_full": 598,
+          "p1": "K",
+          "p1_plus1": "R",
+          "p1_prime": "K",
+          "site_risk": "MODERATE",
+          "site_note": "P1'=K \u2014 KEX2 cleavage reduced but possible"
+        }
+      ],
+      "method_note": "KEX2 canonical recognition KR\u2193X. P1' classification per Rockwell et al. 2002 (PMID 12475198) and Brenner & Fuller 1992 (PMID 1371243). P1'=D/E: abolished. P1'=P/K/R: reduced. All other residues: preferred or neutral. Analysis uses mature protein (post-signal-peptide). Structural accessibility not modeled here \u2014 buried KR sites in high-pLDDT regions have lower cleavage probability; this analysis is a conserviative upper bound. Evidence level: Mechanistic Extrapolation (A. oryzae kexB P1' rules inferred from S. cerevisiae Kex2p homology)."
+    },
+    "routing": {
+      "protein_name": "Lactoferrin (P02788)",
+      "signal_peptide_end": 19,
+      "issues_found": [],
+      "routing_risk": "LOW",
+      "routing_summary": "No ER-retention, PTS1, or PTS2 signals detected in mature protein sequence",
+      "method_note": "Scans for: ER-retention C-terminal tetrapeptides (KDEL/HDEL family, the canonical fungal signal); peroxisomal PTS1 C-terminal tripeptides (SKL family); PTS2 N-terminal motifs. Interior motifs flagged for awareness but scored LOW (not functional in isolation). Fungal A. oryzae uses HDEL as the primary ER-retention signal (not KDEL, which is mammalian). Evidence level: Mechanistic Extrapolation (signal motifs from consensus databases; functional confirmation requires in vivo immunofluorescence or ELISA fractionation)."
+    },
+    "disulfide": {
+      "protein_name": "Lactoferrin (P02788)",
+      "origin": "Homo sapiens (mammalian)",
+      "total_cysteine_count": 33,
+      "known_disulfide_bonds": 17,
+      "free_cysteine_estimate": 0,
+      "huynh_2020_baseline": 16,
+      "folding_load_index": 1.062,
+      "folding_load_description": "1.06\u00d7 Huynh 2020 adalimumab baseline",
+      "fold_risk": "MODERATE",
+      "fold_note": "17 disulfides \u2014 comparable to Huynh 2020 adalimumab baseline (16 disulfides)",
+      "method_note": "Cysteine count from sequence. Known disulfide bond count from UniProt annotation. Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). A. oryzae NSlD-\u0394P10 demonstrated capacity for the Huynh 2020 baseline \u2014 whether higher disulfide loads saturate ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here (no domain-resolved PDI-pathway analysis). Evidence level: Mechanistic Extrapolation."
+    },
+    "glycosylation": {
+      "protein_name": "Lactoferrin (P02788)",
+      "signal_peptide_end": 19,
+      "predicted_nxst_count": 3,
+      "predicted_nxst_sites": [
+        {
+          "position_full": 156,
+          "position_mature": 137,
+          "sequon": "NWT",
+          "x_residue": "W",
+          "st_residue": "T"
+        },
+        {
+          "position_full": 497,
+          "position_mature": 478,
+          "sequon": "NQT",
+          "x_residue": "Q",
+          "st_residue": "T"
+        },
+        {
+          "position_full": 642,
+          "position_mature": 623,
+          "sequon": "NGS",
+          "x_residue": "G",
+          "st_residue": "S"
+        }
+      ],
+      "method_note": "N-X-S/T sequon scan where X != P (standard N-glycosylation recognition rule). Not all sequons are glycosylated \u2014 occupancy depends on local structure, N-glycosyltransferase accessibility, and glycoprotein processing. This scan gives an upper bound on potential glycosylation sites. UniProt-annotated sites for lactoferrin (N137, N478, N623 in full sequence) should be present in the predicted list. Evidence level: Mechanistic Extrapolation."
+    }
+  },
+  "combined_burden": {
+    "dual_cassette_disulfide_load": 17,
+    "dual_cassette_nxst_sites": 4,
+    "dual_load_index_vs_huynh": 1.062,
+    "huynh_2020_titer_mg_L": 39.7,
+    "oe_target_lf_mg_L": 500,
+    "oe_target_uricase_mg_L": 100,
+    "lf_titer_gap_vs_huynh": "12.6\u00d7 above Huynh 2020",
+    "concurrent_risk_flags": [],
+    "uricase_kex2_informational": "Uricase has 1 internal K-R site(s) (overall KEX2 risk: HIGH). NOT load-bearing: the \u00a71.9 protocol places uricase on a direct-secretion cassette (PTEF1-amyB_SP-uaZ-TgpdA), not a glucoamylase-KEX2 fusion. If uricase is later moved to a fusion architecture, this site requires attention.",
+    "overall_dual_cassette_risk": "LOW",
+    "codon_burden_summary": {
+      "uricase": "LOW",
+      "lactoferrin": "LOW"
+    },
+    "kex2_risk_summary": {
+      "uricase": "HIGH",
+      "lactoferrin": "MODERATE"
+    },
+    "fold_risk_summary": {
+      "uricase": "VERY LOW",
+      "lactoferrin": "MODERATE"
+    },
+    "routing_risk_summary": {
+      "uricase": "MODERATE",
+      "lactoferrin": "LOW"
+    },
+    "glycosylation_summary": {
+      "uricase_nxst": 1,
+      "lactoferrin_nxst": 3
+    },
+    "method_note": "Synthesizes analyses 1\u20135. Overall dual-cassette risk = HIGH if any KEX2 or fold axis is blocking; MODERATE if 2+ concurrent risk flags or heavy codon burden; LOW otherwise. Titer gap (500 mg/L target vs. 39.7 mg/L Huynh 2020) assessed against Ward 1995 >2 g/L precedent (submerged, with strain improvement). Evidence level: Mechanistic Extrapolation."
+  },
+  "huynh_comparison": {
+    "huynh_2020_reference": {
+      "protein_pair": "Adalimumab heavy chain + light chain",
+      "cassette_count": 2,
+      "origin_both": "Mammalian (human IgG1)",
+      "disulfide_bonds_total": 16,
+      "glycosylation_sites": "2 (N-glycosylation at Asn297 in Fc, one per heavy chain)",
+      "host_strain": "NSlD-\u0394P10 (A. oryzae RIB40 background, 10 protease knockouts)",
+      "architecture": "AmyB-KRGGG-HC at niaD locus; AmyB-KRGGG-LC at sC locus",
+      "titer_mg_L": 39.7,
+      "format": "Submerged (DPY medium)",
+      "pmid": "PMC7257131 (PMID 32514366)"
+    },
+    "oe_pair": {
+      "protein_pair": "A. flavus uricase (Q00511) + human lactoferrin (P02788)",
+      "cassette_count": 2,
+      "origin_uricase": "Fungal (A. flavus \u2014 near-identical codon usage to A. oryzae)",
+      "origin_lactoferrin": "Mammalian (human)",
+      "disulfide_bonds_uricase": 0,
+      "disulfide_bonds_lactoferrin": 17,
+      "disulfide_bonds_total": 17,
+      "glycosylation_sites_uricase": 1,
+      "glycosylation_sites_lactoferrin": 3,
+      "host_strain_recommended": "NSlD-\u0394P10 (same as Huynh 2020) \u2014 protease-deletion now default per H01 KS#1",
+      "architecture_proposed": "Cassette A: PamyB-glucoamylase-KRGGG-hLf-TamyB (pyrG); Cassette B: PTEF1-amyB_SP-uaZ-TgpdA (niaD)",
+      "target_titer_lf_mg_L": 500,
+      "target_titer_uricase_mg_L": 100,
+      "format_target": "Solid-state rice koji (primary) + submerged control"
+    },
+    "oe_is_easier_than_huynh": [
+      "Uricase origin is fungal (A. flavus) \u2014 near-identical codon usage to A. oryzae host. No codon optimization required for uricase; both adalimumab chains required heavy optimization."
+    ],
+    "oe_is_harder_than_huynh": [
+      "Total disulfide load: OE pair has 17 disulfides (driven by Lf's 17 alone) vs. Huynh 16. Lf folds the same disulfide count from a single chain vs. adalimumab's 16 across two chains.",
+      "OE Lf titer target (500 mg/L) is 12.6\u00d7 the Huynh 2020 adalimumab titer (39.7 mg/L). However, Ward 1995 submerged Lf achieved >2 g/L \u2014 so the Huynh adalimumab titer reflects antibody-specific constraints, not the maximum capacity of the Lf + A. oryzae system. 500 mg/L is within Ward 1995 validated Lf range with strain improvement.",
+      "Solid-state format: OE primary target is solid-state rice koji, not submerged. Huynh 2020 was submerged only. Solid-state adds format-translation risk (Sun 2024 \u2014 some proteins that secrete in submerged do not secrete in solid-state)."
+    ],
+    "oe_is_comparable_to_huynh": [
+      "Both OE and Huynh use the same NSlD-\u0394P10 protease-deletion host. Both require KRGGG linker KEX2 processing. Both target dual loci (niaD + sC or equivalent).",
+      "Lactoferrin (human, glycosylated, high disulfide) is mechanistically similar to adalimumab heavy chain in folding complexity. Huynh 2020 demonstrated the A. oryzae ER can handle mammalian-origin heavily-disulfided proteins."
+    ]
+  }
+}

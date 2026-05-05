@@ -240,6 +240,18 @@ Synthesis of literature against H01's assumption stack:
 4. **The 5-marker NSAR1 platform** (Oikawa 2020 [4]) is the suggested host platform — it's already industrial-practice and accommodates the 2-cassette H01 design with three slots to spare for downstream additions (e.g., kojic-acid-pathway enhancement, ergothioneine pathway maintenance).
 5. **No urgency change for §1.9 priority** — it remains the #1 gate. The literature deep-dive narrowed the question but didn't answer it.
 
+### comp-010 Follow-Up: Cassette Compatibility (2026-05-05)
+
+**comp-010 is in silico design support — not a killshot and not a survived killshot.** It addresses sequence-level cassette-design questions that Killshot #1 (literature audit) could not: KEX2 internal-site geometry, codon-optimization burden, disulfide load, and secretion-targeting signals. Key findings for the H01 assumption stack:
+
+- **Assumption 6 (KEX-2 capacity):** No high-risk KEX2 internal sites in lactoferrin (2 sites: 1 abolished P1'=D, 1 moderate P1'=K). Uricase has 1 high-risk site (pos 128, P1'=N) but **only load-bearing if uricase is in a fusion architecture** — the §1.9 proposed design uses direct secretion for uricase, making this moot. Assumption 6 remains **In Vitro (direct precedent)** per Killshot #1; comp-010 adds no new evidence level.
+- **Assumption 3 (protease load, H01 only):** Disulfide load analysis confirms dual-cassette ER burden = 1.06× Huynh 2020 baseline (17 disulfides, all on Lf). Within demonstrated capacity. No change to assumption-3 evidence level.
+- **Uricase C-terminal SKL:** A potential PTS1 peroxisomal signal in the uricase sequence. Verify secretion in §1.9. If misrouted, append 3×Ala to mask. Pre-experiment design note, not a H01 assumption change.
+
+Full analysis: [`wiki/cassette-compatibility-computational.md`](../cassette-compatibility-computational.md) | [`experiments/comp-010-cassette-compatibility/`](../../experiments/comp-010-cassette-compatibility/)
+
+---
+
 ### Most material caveat / what couldn't be verified
 
 1. **Patent landscape was not directly searchable.** Google Patents returns JavaScript-only pages that WebFetch cannot parse, and Espacenet rejected the unauthenticated request (HTTP 403). Three industrial actors (Novozymes, DSM, Genencor/Danisco) have ≥30 years of *Aspergillus* multi-protein engineering history that is largely unpublished except as patent claims. **Estimated ~30% probability** that one of them has filed (or holds expired/abandoned) IP on a directly-relevant *A. oryzae* dual-cassette koji process. Worth a follow-up via authenticated patent-database access (Brian or Lauren via Emory library).
