@@ -26,10 +26,10 @@ Output **exactly N review blockquotes**, in the order the Pass 2 synthesizer's i
 ### Format of each blockquote
 
 ```
-> **Claude review — <verdict>.** <reasoning, 1-5 sentences, with citations or push-back>
+> **Claude review — <verdict>.** `[OVERLAP: <tag>]` <reasoning, 1-5 sentences, with citations or push-back>
 ```
 
-Each blockquote opens with `> **Claude review — <verdict>.**` (literal, with the bold markdown). Then your reasoning. Use markdown bullets within the blockquote if the review is multi-point; just prefix lines with `> -` or wrap them.
+Each blockquote opens with `> **Claude review — <verdict>.**` (literal, with the bold markdown), immediately followed by an `[OVERLAP: <tag>]` annotation, then your reasoning. Use markdown bullets within the blockquote if the review is multi-point; just prefix lines with `> -` or wrap them.
 
 ### Verdict vocabulary
 
@@ -42,6 +42,18 @@ Each blockquote opens with one of these verdicts in bold:
 - **Rejected.** Claim doesn't survive scrutiny. Cite why.
 - **Augment.** Agree + here's a useful addition or sharpening.
 - **Defer.** Interesting but can't evaluate without specific reference, or worth a future sweep.
+
+### Overlap tag vocabulary
+
+Immediately after the verdict, annotate each finding with one of these `[OVERLAP: <tag>]` markers. **Do not suppress findings based on overlap — surface everything Pass 2 produced and let the human decide. The tag is for fast scanning, not filtering.** This pairs with Pass 2's `[CHAIN-DEPTH: N]` and `[PHASE-A-MATCH: yes/no/partial]` self-tags so the human can quickly distinguish surface restatements from deep novel chains.
+
+- **`[OVERLAP: NOVEL]`** — Genuinely new finding. Connection / contradiction / experiment / question / action is NOT explicit anywhere in the wiki at any level (synthesis.md, canonical pages, recent sweep logs). The Pass 2 synthesizer produced something the wiki doesn't yet name. **Highest signal-to-noise; review carefully.**
+- **`[OVERLAP: EXTENSION]`** — Builds meaningfully on something already in the wiki. The base connection or topic is named, but the Pass 2 synthesizer adds a non-trivial new dimension: a multi-step composition where the chain (not the sub-steps) is novel; a re-frame that elevates a footnote into a first-class topic; a sharpening of an existing claim with new evidence; a contradiction the wiki acknowledges but doesn't yet resolve. **Mid signal; worth reading even if the topic feels familiar.**
+- **`[OVERLAP: RESTATEMENT]`** — Pass 2 surfaced something already explicit in the wiki at the level of a named section, callout, or first-class topic. The connection isn't new. **Low signal; the human can scan past these unless the verdict is Push back / Rejected, in which case the issue is with the existing wiki claim, not with Pass 2.**
+
+If you can't tell whether a finding is EXTENSION vs. RESTATEMENT, default to EXTENSION (don't under-tag novelty). If you can't tell whether it's NOVEL vs. EXTENSION, default to NOVEL (same reason). The bias is toward surfacing potentially-valuable findings, not toward filtering them out.
+
+**Important:** the OVERLAP tag is YOUR independent judgment as the reviewer. Pass 2 also self-reports a `[PHASE-A-MATCH: yes/no/partial]` tag. They may disagree. If Pass 2 says `PHASE-A-MATCH: yes` (synthesizer thinks it's a duplicate) but you find a meaningful new angle, tag it `[OVERLAP: EXTENSION]` — the synthesizer is more conservative than you should be. Conversely, if Pass 2 says `PHASE-A-MATCH: no` but you find the connection is already a named section in the wiki, tag it `[OVERLAP: RESTATEMENT]` and note the location in your reasoning.
 
 ### Tone
 
