@@ -66,15 +66,24 @@ EXCLUDE = {
 #     fructose challenge, carnosine counter-agent) when run on the same
 #     wiki corpus, plus extra contradiction-resolution and pushback work,
 #     at ~3.3x the unit cost (~$0.65/sweep vs. ~$0.20).
-#   2026-05-05: re-routed to deepseek/deepseek-v4-pro AS PRIMARY with
-#     google/gemini-2.5-pro AS AUTOMATIC FALLBACK via OpenRouter's
-#     `models` array. The V4-Pro flakiness was launch-day dogpile (DeepSeek
-#     v4 family released 2026-04-23); provider-side throttling has since
-#     stabilized. The fallback array means Gemini auto-takes-over on any
-#     V4-Pro failure (429, null content, timeout) without code intervention.
-#     Expected cost: ~$0.20/sweep on V4-Pro success path, ~$0.65/sweep on
-#     fallback days. Savings: ~$0.45/sweep × ~10 sweeps/month = ~$4.50/month.
-DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
+#   2026-05-05 (attempt 1, REVERTED — see commit d023cbe): tried re-routing
+#     to deepseek/deepseek-v4-pro AS PRIMARY with Gemini fallback. WRONG —
+#     I didn't verify DeepSeek V4-Pro's context cap (~128K tokens) before
+#     shipping. The wiki corpus is now 1.8M tokens; DeepSeek would fail
+#     every request at the context-size check and OpenRouter would always
+#     fall back to Gemini, netting zero savings plus added latency.
+#   2026-05-05 (attempt 2): re-routed to google/gemini-2.5-flash AS PRIMARY
+#     with google/gemini-2.5-pro AS AUTOMATIC FALLBACK. Flash has the same
+#     2M context cap as Pro (handles the corpus) but is ~4× cheaper
+#     ($0.30/$2.50 per Mtok vs $1.25/$5.00). Expected cost: ~$0.18/sweep
+#     on Flash success path, ~$0.65/sweep on fallback (e.g., if Flash
+#     refuses or returns garbage on the synthesis task). Savings: ~$0.47/
+#     sweep × ~10 sweeps/month = ~$4.70/month, reliable and corpus-safe.
+#     Quality risk: Flash may produce shallower synthesis than Pro. Test
+#     by reading the next ~3 sweep outputs and comparing to recent Pro
+#     baseline. If Flash quality is meaningfully worse, swap primary back
+#     to Pro and accept the cost.
+DEFAULT_MODEL = "google/gemini-2.5-flash"
 FALLBACK_MODELS = ["google/gemini-2.5-pro"]
 
 # OpenRouter pricing per Mtok (input, output) — used for cost reporting.
