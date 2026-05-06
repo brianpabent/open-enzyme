@@ -46,7 +46,7 @@ A chemistry collaborator joining the project (one of the three actively-recruiti
 3. Ethanol precipitation (4 vol EtOH, 4°C overnight) → polysaccharide-peptide fraction
 4. DEAE-Sepharose anion-exchange chromatography → fraction by charge profile
 5. Sephacryl S-500 size-exclusion chromatography → MW-based separation
-6. SEC-MALS verification of MW (target: confirm or correct the published 520 kDa figure that comp-014 Phase 7-1a flagged as inconsistent with Lin lab's GL-PP at 37 kDa / GL-PP2 at 31 kDa)
+6. SEC-MALS verification of MW (target: determine which Lin-lab fraction the HUA mechanism load-bears on — 520 kDa is the bulk crude prep per sister paper PMC11351902; 31–42 kDa are post-DEAE sub-fractions per PMID 37852403 + 29541200; Lin 2022 HUA paper itself does not specify which fraction. Resolved 2026-05-06 grep-verify gate — see [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) for full citation chain)
 7. Amino acid analysis (peptide composition)
 8. Glycan linkage NMR fingerprint
 

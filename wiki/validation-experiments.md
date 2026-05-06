@@ -1237,7 +1237,8 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 **Limitations:**
 - Mouse strain may interact with cordycepin metabolism — verify via Phase 5b CNKI dive
 - Pentostatin research-use sourcing may add 3-6 weeks if license framework not pre-established
-- GLPP MW figure (520 kDa scope vs Lin lab's 37 kDa) needs primary-source verification before dose math finalized
+- GLPP MW resolution (2026-05-06 grep-verify gate): 520 kDa = bulk crude prep (sister paper PMC11351902 confirms); 31-42 kDa = post-DEAE sub-fractions (PMID 37852403 + 29541200); Lin 2022 HUA paper itself does not specify which sub-fraction it used. SOP-1 SEC-MALS will resolve which fraction the HUA mechanism load-bears on. Not a blocker for §2.6 — dose math anchors on whole-extract per published g/kg, not on MW.
+- Xia 2017 (PMID 29056419) cordycepin:pentostatin natural ratio is paywalled and not in open-access secondary sources (mechanism is robustly verified via 3 independent secondary citations; only the absolute COR:PTN ratio number is unavailable). Non-blocking for the 4-arm design — pentostatin is sourced separately at FDA-approved-drug clinical-equivalent dose (~0.5 mg/kg), not at the natural ratio. Documented for completeness; if a future arm requires the natural ratio explicitly, primary-source access will be needed.
 - 14-day duration captures acute effect, not chronic durability — separate follow-up if positive
 
 **Cross-references:** [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (parent scope); [H06](./hypotheses/H06-medicinal-mushroom-complement-track.md) Dimension 3; [SOP-1](./medicinal-mushroom-extract-sops.md) (gating dependency); §1.25 DAF SCR1-4 (sister wet-lab gate sharing lab-access infrastructure).
