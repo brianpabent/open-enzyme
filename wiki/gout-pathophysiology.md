@@ -79,6 +79,29 @@ This distinction matters enormously for treatment strategy:
 
 (Source: gout-deep-dive.md, §2)
 
+### Multi-track urate transporter coverage (added 2026-05-06)
+
+The Open Enzyme platform's three concurrently-developing tracks — **engineered koji**, **medicinal mushroom complement**, and **TCM × modern rigor** — each address a different therapeutic mechanism. When mapped onto the renal urate handling nodes plus xanthine oxidase upstream, they collectively cover all four major transporter targets + the production enzyme. This coverage is **emergent, not designed** — each track was chosen for an independent therapeutic mechanism, and the multi-node coverage fell out as a happy accident. The map is operationally useful: it shows which combinations of tracks are mechanism-additive (covering different nodes) vs. which would be redundant (covering the same node) for any given patient phenotype.
+
+**Mechanism-first view** (transporter rows × track columns; modality-first view in [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) is the complementary surface):
+
+| Renal node / Enzyme | Mechanism | Engineered koji track | Medicinal mushroom track | TCM × rigor track |
+|---|---|---|---|---|
+| **URAT1** (SLC22A12) | Reabsorbs urate from tubular lumen back into blood; major drug target | — | **Cordycepin** (animal-model URAT1 mRNA reduction; PMID 29422889) | **Astilbin** from *Smilax glabra* (animal-model + classical TCM use) |
+| **GLUT9** (SLC2A9) | Basolateral exit transporter; strongest GWAS hit | — | **GLPP** (animal-model GLUT9 modulation per comp-014 outputs) | — |
+| **ABCG2** | Secretes urate into gut lumen + renal tubule; #1 genetic risk locus | **Lactoferrin → TNFα suppression → ABCG2 derepression** (Mechanistic Extrapolation — indirect, not direct transporter modulation; see [`lactoferrin.md`](./lactoferrin.md) §4.7 + [`koji-endgame-strain.md`](./koji-endgame-strain.md) §2.2) | — | — |
+| **OAT1 / OAT3** (SLC22A6/8) | Basolateral uptake of urate from blood into tubular cells for secretion | — | **GLPP** (animal-model OAT1 modulation per comp-014 outputs) | — |
+| **Xanthine oxidase** (upstream) | Catalyzes hypoxanthine → xanthine → urate; #1 pharmacological target (allopurinol, febuxostat) | — | — | **Astilbin** (animal-model XO inhibition + classical TCM use) |
+| **Gut-lumen urate sink** (post-renal) | Direct degradation of urate in gut lumen, creating concentration gradient that pulls serum urate into gut for ABCG2-mediated secretion | **Uricase** (engineered koji secretes active uricase into gut lumen — degrades luminal urate, *direct mechanism*) | — | — |
+
+**Evidence-tier discipline.** Direct transporter / enzyme effects (URAT1 by cordycepin, GLUT9/OAT1 by GLPP, XO by astilbin, gut-lumen urate degradation by koji uricase) sit at **Animal Model** evidence tier from primary literature. The **lactoferrin → ABCG2** link is **Mechanistic Extrapolation** (lactoferrin → TNFα suppression is documented in vitro / clinical biopsy per [`lactoferrin.md`](./lactoferrin.md) §4.7; TNFα suppression → ABCG2 transcriptional derepression is the Mechanistic Extrapolation step composed onto it). This is a substantively weaker claim than the direct-modulation claims and should be flagged as such whenever the multi-track coverage map is invoked downstream.
+
+**Compartment discipline.** Pass 2's framing called this an "all gut-luminal" coverage map. **That's wrong.** The mechanisms are multi-compartment: cordycepin and astilbin both have systemic bioavailability sufficient to act at renal URAT1 (per animal-model evidence cited in [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) and the medicinal mushroom track scope page); GLPP and the koji uricase work primarily in the gut-luminal compartment; lactoferrin's TNFα-suppression effect is systemic. The coverage map is best read as **mechanism + compartment composite** rather than collapsed to either dimension alone.
+
+**Operational implication.** For a hyperuricemic patient phenotype where the dominant defect is **under-excretion** (~90% of gout patients per the Under-Excretor Problem section above), the mechanism-additive combination is **engineered koji (gut-lumen + ABCG2-derepression)** + **medicinal mushroom (URAT1 / GLUT9 / OAT1 direct)** + optionally **TCM-derived astilbin (URAT1 / XO)**. This is not a treatment recommendation — it's a mechanism-coverage map that informs clinical-design conversations once the platform reaches the relevant translation phase. For an **over-producer** phenotype (~10%), XO inhibition (astilbin or pharmacological allopurinol/febuxostat) is the priority, with under-excretor mechanisms as add-ons.
+
+(Source: synthesized 2026-05-06 from individual mechanism documentation across [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md), [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md), [`lactoferrin.md`](./lactoferrin.md), and [`androgen-urate-axis.md`](./androgen-urate-axis.md). Cross-reference: modality-first view in [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md).)
+
 ---
 
 ## Step 3: Crystallization — When Chemistry Becomes Pathology
