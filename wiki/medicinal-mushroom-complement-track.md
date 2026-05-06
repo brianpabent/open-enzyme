@@ -54,9 +54,12 @@ The fourth track is **the lightest engineering effort and the most accessible UX
 
 **Routed to the medicinal-mushroom-complement track (per comp-014 Phase 6):**
 
-- **GLPP polysaccharide-peptide** (*Ganoderma lucidum*) — ADA + GLUT9 + OAT1 chokepoints, 40.6% UA reduction in HUA mice. Not a koji-engineering target; biosynthesis of the 520 kDa polysaccharide-peptide is mycelium-specific. Native cultivation is the route.
-- **Cordycepin** (*Cordyceps militaris*) — URAT1 chokepoint, animal model SUA 337→203 µmol/L. C. militaris liquid fermentation is a mature commercial process. Heterologous koji expression unwarranted.
-- **Ergothioneine** (*Pleurotus ostreatus* highest known producer; *A. oryzae* / koji also produces, secondary). Redox/thiol antioxidant. Pleurotus is the native-cultivation route; koji's secondary production is an interesting chassis-side note.
+- **GLPP polysaccharide-peptide** (*Ganoderma lucidum*) — ADA + GLUT9 + OAT1 chokepoints, 40.6% UA reduction in HUA mice. Not a koji-engineering target; biosynthesis is mycelium-specific. Native cultivation is the route. **MW caveat (Phase 7-1a strain scan, 2026-05-06):** The 520 kDa figure I originally cited needs Phase 5b primary-source verification — Lin lab's own follow-up papers characterize GL-PP at 37 kDa and GL-PP2 at 31 kDa, an order-of-magnitude gap. The 520 kDa may be the crude pre-fractionation fraction or sourced from a different paper. Re-anchor before downstream synthesis depends on it.
+- **Cordycepin** (*Cordyceps militaris*) — URAT1 chokepoint, animal model SUA 337→203 µmol/L. C. militaris liquid fermentation is mature; top strain GYS60 (plasma-mutagenesis derivative) hits 7,883 mg/L static liquid (PMID 33463932). **Major Phase 7-1b finding:** Cordycepin CAN be produced in food-grade *A. oryzae* via cns1+cns2 heterologous expression at 564 mg/L/d on glucose (Jeennor 2023, PMID 38071331). This **rebalances the chassis decision** — cordycepin is a koji-engineering candidate, not just a Cordyceps-cultivation candidate. Both routes coexist; the koji route is novel and aligned with OE's chassis thesis.
+
+- **The natural Cordyceps ADA-inhibitor pairing** — C. militaris natively co-produces **pentostatin** from the same BGC cluster as cordycepin (Xia 2017, PMID 29056419). Pentostatin is a clinical-grade ADA inhibitor; this means whole-fermentate Cordyceps preparations have a built-in safeguard against cordycepin deamination that purified cordycepin lacks. **This reframes the Phase 6 GLPP+cordycepin synergy hypothesis** — the native ADA inhibitor is already packaged with cordycepin in fermented C. militaris. The GLPP+cordycepin synergy may be redundant with whole-fermentate Cordyceps, but a **purified cordycepin + GLPP** combination would still benefit from GLPP's ADA modulation. Wet-lab gate now has a 4-arm question: whole-fermentate Cordyceps vs purified cordycepin vs purified cordycepin + GLPP vs purified cordycepin + pentostatin.
+
+- **Ergothioneine** — **Phase 7-1c correction:** *Pleurotus ostreatus* is NOT the highest EGT producer; ***P. citrinopileatus* (golden oyster) is 2-3× higher** (7.0 vs 2.4 mg/g DW). Apex strain: *P. citrinopileatus* 303 with two-stage H₂O₂+vit C oxidative stimulus → 641.76 mg/L submerged fermentation (Li 2025). Dietary intake plausibly therapeutic-dose: 50-100g fresh oyster ≈ 12-24 mg EGT, within published RCT-investigational range. OCTN1/SLC22A4 saturates at ~25 mg/day → **concentrated extracts have diminishing returns**, "daily oyster mushroom in dinner stir-fry" is mechanistically sound. *A. oryzae* / koji also produces ergothioneine (secondary).
 - **Eritadenine** (*Lentinula edodes*) — cardiovascular activity, cholesterol-lowering. Native cultivation route.
 - **Erinacines / hericenones** (*Hericium erinaceus*) — NGF-inducing (CNS-relevant). Native cultivation route.
 - **Inotodiol / betulinic acid derivatives** (*Inonotus obliquus*) — triterpenoid chemistry overlapping reishi. Native cultivation route.
@@ -70,10 +73,12 @@ The fourth track is **the lightest engineering effort and the most accessible UX
 - **DAE (methyl 2,4-dihydroxybenzoate)** — small molecule, chemical synthesis preferred over fungal extraction (per comp-014 Phase 6 production-route assessment)
 - **Any future therapeutic protein** — koji is the chassis when secreted protein is the deliverable
 
-**Combined / synergy candidates (per comp-014 Phase 6):**
+**Combined / synergy candidates (per comp-014 Phase 6, refined by Phase 7-1b strain scan):**
 
-- **GLPP + cordycepin** — GLPP's ADA inhibition could extend cordycepin's notoriously short half-life (cordycepin is rapidly deaminated to 3'-deoxyinosine by serum/intestinal ADA). Both home-cultivable. The cleanest synergy pair surfaced by the breadth pass.
-- **Engineered koji uricase + GLPP supplement** — koji handles bulk urate degradation in gut lumen; GLPP modulates ADA upstream + GLUT9/OAT1 transporters for renal-side support.
+- **Whole-fermentate Cordyceps (cordycepin + native pentostatin)** — Phase 7-1b discovered that *C. militaris* natively co-produces pentostatin from the same BGC as cordycepin. Whole-fermentate preparations have the ADA-inhibitor safeguard built in. **This is the cleanest single-organism medicinal-mushroom-complement product** — fermented C. militaris on brown rice (4-8 week home cycle) delivers cordycepin + pentostatin in their natural ratio, no synergy assembly required.
+- **GLPP + (purified) cordycepin** — only relevant if purified cordycepin is the delivery format. With whole-fermentate Cordyceps, the ADA-inhibitor pairing is already intrinsic. Wet-lab gate (4-arm comparison) now answers: which delivery format wins on dose efficiency + reproducibility.
+- **Engineered koji cordycepin (cns1+cns2) + GLPP supplement** — the *engineered-koji-track* equivalent of the synergy pair. Koji's heterologous cordycepin lacks the natural pentostatin co-production unless the whole BGC is engineered in. May need pentostatin co-engineering OR GLPP supplementation as the ADA-inhibitor source. Open engineering question.
+- **Engineered koji uricase + GLPP supplement** — koji handles bulk urate degradation in gut lumen; GLPP modulates ADA upstream + GLUT9/OAT1 transporters for renal-side support. Cleanest cross-track synergy (engineering + cultivation).
 
 ## Scope (Phase 1)
 
@@ -89,7 +94,10 @@ Subset of the comp-014 Phase 5 anchor list, prioritized by:
 |---|---|---|---|---|
 | *Ganoderma lucidum* | reishi / lingzhi | GLPP, ganoderic acids (400+), ergosterol | Solid-state on hardwood; commercial mycelium kits widely available; 6-12 months for fruiting body | GRAS supplement |
 | *Cordyceps militaris* | cultivated cordyceps | cordycepin, polysaccharides, ergosterol peroxide | Liquid fermentation OR solid-state on brown rice; 4-8 weeks home cycle; commercial kits available | GRAS supplement |
-| *Pleurotus ostreatus* | oyster mushroom | ergothioneine (highest known), lovastatin, pleuran | **Easiest home cultivation** — straw / coffee grounds / sawdust substrate; 4-6 weeks; widely sold consumer kits | GRAS food |
+| ***P. citrinopileatus*** | golden oyster | **ergothioneine (highest fungal producer — 7.0 mg/g DW)**, β-glucans | Same straw / sawdust substrate as P. ostreatus; commercially less common than oyster but kits available | GRAS food |
+| *Pleurotus ostreatus* | oyster mushroom | ergothioneine (2.4 mg/g DW — was originally claimed as highest, corrected by Phase 7-1c scan), lovastatin (190-342 mg/kg DW), pleuran | **Easiest home cultivation** — straw / coffee grounds / sawdust substrate; 4-6 weeks; widely sold consumer kits | GRAS food |
+| *P. djamor* | pink oyster | β-glucans (43% DW — highest in genus) | Same as P. ostreatus | GRAS food |
+| *P. eryngii* | king oyster | ergothioneine (5.84 mg/g DW Hi-Ergo strain) | Same as P. ostreatus | GRAS food |
 | *Lentinula edodes* | shiitake | lentinan, eritadenine, ergosterol→D2 | Log / sawdust block; 6-18 months; widely sold consumer kits | GRAS food |
 | *Hericium erinaceus* | lion's mane | erinacines, hericenones | Sawdust block / log; 4-8 weeks; widely sold consumer kits | GRAS food |
 | *Trametes versicolor* | turkey tail / yun zhi | PSK, PSP | Hardwood log / dowels; 6-18 months for fruiting body | Supplement (PSK is approved drug in Japan) |
