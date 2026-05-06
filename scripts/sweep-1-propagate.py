@@ -66,6 +66,18 @@ PRICING_USD_PER_MTOK = {
     "deepseek/deepseek-v4-pro":     (0.435, 0.87),
 }
 
+# Anthropic prompt-cache read pricing per Mtok. Cache reads bill at 10% of base
+# input. Cache writes bill at 1.25× base; we don't bother tracking write cost
+# separately since OpenRouter's OAI-compat usage shim doesn't expose the
+# write/non-cached split (only the read portion via prompt_tokens_details).
+# Result: the printed cost slightly over-reports vs. the OpenRouter dashboard
+# (treats writes at 1× instead of 1.25×), but the savings direction is right.
+CACHE_READ_USD_PER_MTOK = {
+    "anthropic/claude-sonnet-4-6":  0.30,
+    "anthropic/claude-haiku-4-5":   0.08,
+    "anthropic/claude-opus-4-7":    1.50,
+}
+
 TOOLS = [
     {"type": "function", "function": {
         "name": "read_file",
@@ -222,10 +234,48 @@ def read_api_key():
     sys.exit("OPENROUTER_API_KEY not set in env or .env")
 
 
+def _inject_cache_breakpoints(messages, model):
+    """Return a copy of `messages` with `cache_control` markers on the system
+    prompt and the most recent tool message.
+
+    Only Anthropic models support prompt caching via OpenRouter; for other
+    providers (DeepSeek, Gemini, etc.) the markers are inert but the array-
+    of-blocks content format is still valid OpenAI-compat, so we apply the
+    transform unconditionally and let non-Anthropic backends ignore it.
+
+    The "rolling cache" pattern: each iteration writes a checkpoint at the
+    last tool message, which the *next* iteration reads as a prefix hit. The
+    system prompt checkpoint is stable across the whole run.
+    """
+    if not messages:
+        return messages
+    last_tool_idx = -1
+    for i, m in enumerate(messages):
+        if m.get("role") == "tool":
+            last_tool_idx = i
+    out = []
+    for i, m in enumerate(messages):
+        m2 = dict(m)
+        if i == 0 and m2.get("role") == "system" and isinstance(m2.get("content"), str):
+            m2["content"] = [{
+                "type": "text",
+                "text": m2["content"],
+                "cache_control": {"type": "ephemeral"},
+            }]
+        elif i == last_tool_idx and isinstance(m2.get("content"), str):
+            m2["content"] = [{
+                "type": "text",
+                "text": m2["content"],
+                "cache_control": {"type": "ephemeral"},
+            }]
+        out.append(m2)
+    return out
+
+
 def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
     body = {
         "model": model,
-        "messages": messages,
+        "messages": _inject_cache_breakpoints(messages, model),
         "tools": TOOLS,
         "max_tokens": max_tokens,
         "temperature": 0.3,
@@ -286,7 +336,7 @@ def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
     ]
-    total_in = total_out = 0
+    total_in = total_out = total_cached = 0
     iteration = 0
     done_summary = None
     last_text = None
@@ -301,8 +351,10 @@ def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=
         usage = resp.get("usage", {})
         in_tok = usage.get("prompt_tokens", 0)
         out_tok = usage.get("completion_tokens", 0)
+        cached_tok = (usage.get("prompt_tokens_details") or {}).get("cached_tokens", 0)
         total_in += in_tok
         total_out += out_tok
+        total_cached += cached_tok
 
         assistant_turn = {"role": "assistant", "content": msg.get("content")}
         if msg.get("tool_calls"):
@@ -313,7 +365,9 @@ def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=
 
         tool_calls = msg.get("tool_calls") or []
         tc_summary = ",".join(tc["function"]["name"] for tc in tool_calls) or "(no tools)"
-        print(f"  [iter {iteration}] {dt:.1f}s in={in_tok} out={out_tok} tools={tc_summary}", file=sys.stderr, flush=True)
+        cache_note = f" cached={cached_tok}" if cached_tok else ""
+        print(f"  [iter {iteration}] {dt:.1f}s in={in_tok}{cache_note} out={out_tok} tools={tc_summary}",
+              file=sys.stderr, flush=True)
         if not tool_calls:
             break
 
@@ -343,6 +397,7 @@ def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=
     return {
         "iterations": iteration,
         "input_tokens": total_in,
+        "cached_input_tokens": total_cached,
         "output_tokens": total_out,
         "done_summary": done_summary,
         "completed": done_summary is not None,
@@ -476,8 +531,18 @@ def main():
     )
 
     in_per, out_per = PRICING_USD_PER_MTOK.get(args.model, (None, None))
+    cache_read_per = CACHE_READ_USD_PER_MTOK.get(args.model)
+    cached = loop["cached_input_tokens"]
+    non_cached = max(0, loop["input_tokens"] - cached)
     if in_per is not None:
-        cost = (loop["input_tokens"] * in_per + loop["output_tokens"] * out_per) / 1_000_000
+        if cache_read_per is not None and cached > 0:
+            cost = (
+                non_cached * in_per
+                + cached * cache_read_per
+                + loop["output_tokens"] * out_per
+            ) / 1_000_000
+        else:
+            cost = (loop["input_tokens"] * in_per + loop["output_tokens"] * out_per) / 1_000_000
         cost_str = f"${cost:.4f}"
     else:
         cost_str = "(unknown)"
@@ -487,8 +552,12 @@ def main():
         f"hit_iter_cap={loop['hit_iter_cap']}",
         file=sys.stderr,
     )
-    print(f"Tokens: in={loop['input_tokens']:,} out={loop['output_tokens']:,} cost={cost_str}",
-          file=sys.stderr)
+    cache_pct = (cached / loop["input_tokens"] * 100) if loop["input_tokens"] else 0
+    print(
+        f"Tokens: in={loop['input_tokens']:,} (cached={cached:,}, "
+        f"{cache_pct:.0f}%) out={loop['output_tokens']:,} cost={cost_str}",
+        file=sys.stderr,
+    )
 
     summary = loop["done_summary"] or loop["last_text"] or ""
     committed, changed_paths = stage_and_commit(
