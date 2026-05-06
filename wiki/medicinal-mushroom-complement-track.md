@@ -117,6 +117,25 @@ Three home-feasibility levels:
 
 Open Enzyme's value-add at the cultivation-method layer is **standardization + characterization protocols**, not novel cultivation. Consumer-grade reishi grow kits are ubiquitous; what's missing is the protocol that says "this batch contains X mg/g GLPP, Y% triterpene content, Z µg/g ergosterol — verified by standardized extraction + analysis." That's the Open Enzyme contribution to this track.
 
+### Production route — sequential cultivation-first default (added 2026-05-06)
+
+For compounds that have both a cultivation route and a koji-engineering route — cordycepin being the canonical case — the platform default is **sequential cultivation-first**. The koji-engineering route is held as documented contingency, not parallel commit.
+
+**Cordycepin example (the worked case):**
+
+| Route | Titer / time | Format | Maturity | Cost to test |
+|---|---|---|---|---|
+| ***C. militaris* GYS60** cultivation (PMID 33463932) | 7,883 mg/L | Liquid submerged fermentation | Mature industrial process; established CROs | $1–2K outsourced |
+| **Engineered *A. oryzae* cns1+cns2** (Jeennor 2023, PMID 38071331) | 564 mg/L/day | Solid-state koji | One paper, novel | $2–4K outsourced; in-house requires separate setup |
+
+**Why not parallel head-to-head (Principle 6 carve-out):** [Platform Principle 6 — variant-agnostic empirical head-to-head](./open-source-platform.md) says default to parallel testing when literature is split AND marginal cost is bounded by shared infrastructure. The cordycepin case fails the second precondition: cultivation requires liquid submerged bioreactor, koji-engineering requires solid-state trays — different fermentation infrastructure, different downstream purification, different QA. Sequential cultivation-first is the right call: GYS60's 7,883 mg/L is mature and reproducible; koji-engineering at 564 mg/L/day (~14× lower per unit time) is one paper. The chassis-coherence appeal of "everything in koji" is real but not load-bearing for a small-molecule supplement — cordycepin's structure doesn't care which organism made it.
+
+**Supply check.** Even at high-end therapeutic dosing (~500 mg/day pure cordycepin — see Phase 7 follow-up #7 for verification queue), 1 L of GYS60 broth = ~16 daily doses. A modest 1,000-L run = ~44 person-years of supply. Neither route is supply-constrained for this product class; the decision is cost, reproducibility, and CRO availability — not throughput.
+
+**When the koji-engineering contingency activates:** if (a) cultivation supply chain experiences disruption / quality issues, or (b) scale-up economics later favor solid-state for some other co-produced compound (synergy with native koji metabolites), or (c) IP / regulatory positioning makes the engineered-organism route strategically valuable. Until one of those triggers, GYS60 cultivation is the documented default.
+
+**The same sequential-first logic applies generally** to any compound with both a mature cultivation precedent and a novel-engineering route. Default to the mature route; document the engineering contingency; only switch when supply, cost, or strategic-fit forces it.
+
 ### Therapeutic UX
 
 Consumption modalities for the cultivation track:
@@ -140,7 +159,7 @@ Consumer-grade mushroom supplements have known quality issues:
 
 **Open Enzyme's contribution to this track:** publish reproducible cultivation + extraction + characterization protocols. Strain selection criteria. HPLC/MS validation methods. Make a comp-014-style triage repeatable for any open-source contributor. The chemistry IS in the public domain — what's missing is the rigor.
 
-## Six Phase 7 follow-ups queued
+## Seven Phase 7 follow-ups queued
 
 Same pattern as `engineered-lbp-chassis.md` and `sirna-urat1-modality.md`:
 
@@ -155,6 +174,8 @@ Same pattern as `engineered-lbp-chassis.md` and `sirna-urat1-modality.md`:
 5. **Hypothesis card H06 — medicinal-mushroom-complement track viability**. Specifies: what's the kill criterion? When would we abandon this track? Default: if (a) compound yield variability across cultivation batches exceeds 50% even with standardized protocols AND (b) standardized extracts cannot replicate the published in vivo effect sizes within 2× — that's pipeline failure regardless of mechanism truth. Falsifiable.
 
 6. **Comparative chassis/platform matrix for gout** — extend `modality-chokepoint-matrix.md` with a new row "Native-compound mushroom complement" populated with the Phase 7 candidates × chokepoint mapping. Forces explicit comparison: koji-uricase vs reishi-GLPP at the gut-lumen / urate-axis cells. Doesn't pre-determine which wins; makes the comparison tractable for case-by-case decisions.
+
+7. **Therapeutic dose grounding pass** (added 2026-05-06) — for each load-bearing compound in the track (cordycepin, GLPP, ergothioneine, eritadenine, erinacines, PSK, inotodiol, astilbin), grep-verify the human therapeutic dose range from primary clinical / supplement-trial literature under [CLAUDE.md Rule 4 pre-commit grep-verify gate](../CLAUDE.md). The mushroom track scope page currently discusses production yields (mg/L, mg/g DW) without a dose-context anchor — without that anchor, "GYS60 hits 7,883 mg/L" is meaningless to a supplement-stack decision. Output: per-compound dose-grounding table (typical supplement range / clinical-trial range / mechanism-derived effective range / load-bearing-confidence tier). This should land before any wet-lab-gated Phase 2 follow-up depends on compound dose assumptions. Cross-applies to the [TCM compound triage](./tcm-gout-compound-triage-computational.md) compounds — same gap.
 
 ## Regulatory clarity (compared to the koji track)
 
