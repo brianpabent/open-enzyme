@@ -14,6 +14,50 @@ This log is **public** (operations/ folder is in the public repo) — same postu
 
 ---
 
+## 2026-05-05 — A guy and a laptop found a reliability problem in a well-funded Stanford research tool
+
+**What happened.** Paperclip is the biomedical literature-indexing MCP tool from Stanford's GXL group — well-funded, well-publicized, full-text index across PubMed / bioRxiv / medRxiv / arXiv (~11M papers), the tool everyone in the AI-for-bio space has been excited about. We started using it for OE literature scans earlier in this project's life. In a session a few weeks back, the `map` operator (Paperclip's convenience-aggregation primitive — "give me a summary across N papers matching this query") returned outputs that, when grep-verified against the source papers, contained:
+
+- **Wrong organisms** named in mechanism descriptions (the source papers actually studied a different organism)
+- **Fabricated kinetic numbers** — specific IC50 / Km values that did not appear in any of the cited source papers
+- **Made-up author affiliations** in citations
+
+In other words, the convenience operator was doing model-side aggregation that filled in plausible-sounding details that weren't actually in the source documents. The `search`, `cat`, `head`, `grep`, `scan` primitives don't exhibit this — they return raw paper content, line-anchored, verifiable. The failure mode is specific to the aggregation step.
+
+The open-source response (today, 2026-05-05): codified a five-rule verification discipline as [`wiki/manual-literature-mining.md`](../wiki/manual-literature-mining.md):
+
+1. Use safe primitives only (search/cat/head/grep/scan); ban `map`/`reduce` from automated workflows
+2. Anchor identity to `meta.json` (cite from canonical metadata, not inferred from paper body)
+3. Grep-verify all numbers before they enter the wiki
+4. Never propagate `map`/`reduce` summaries (treat as un-validated, re-derive from safe primitives)
+5. Cite line-anchored, with the project's existing citation format
+
+Plus a memory record (`feedback_paperclip_map_unreliable.md`) so future Claude sessions don't re-discover the failure the hard way. Plus the global-multilingual-search rule + translation-protocol disciplines that combine with this for non-English sources.
+
+**Why it matters.** Two layers.
+
+**Layer 1 — practical:** anyone using Paperclip for serious scientific synthesis needs the verification discipline. The convenience operator is a trap precisely because its outputs LOOK reasonable. Researchers building on Paperclip without grep-verifying numbers are silently propagating fabrication into published work. This is a real reliability concern for anyone in the AI-assisted-biomed-research space, not a niche annoyance.
+
+**Layer 2 — meta-narrative:** **Open Enzyme is a guy and a laptop.** No grant funding, no team yet, no institutional backing. Stanford's GXL group is well-funded and well-staffed. A small project applying rigorous verification discipline (grep every number; cross-check every claim; anchor to canonical metadata) found a load-bearing problem in a major research tool that the well-resourced team either hasn't found, hasn't fixed, or hasn't documented prominently. The asymmetry isn't about resources — it's about epistemics. The verification discipline doesn't cost money; it costs attention. AI-assisted research-rigor compounds in unexpected directions when a small team treats their tools with appropriate skepticism.
+
+This is the deeper Open Enzyme thesis playing out at the meta level: the chokepoint methodology + multi-vendor cross-check + falsification-card discipline + AI-assisted velocity produces results that big-team-big-budget setups miss because they presume their own tooling is correct. The Paperclip finding is a concrete proof-point — small project, rigorous discipline, real reliability finding in a famous tool. The same epistemic move is what surfaced the CP0 closure path 6 hours after starting the day with "honest platform gap."
+
+**Three places where engagement / outside expertise would matter:**
+
+1. **Paperclip team / Stanford GXL** — if anyone reading this knows the team, the finding is worth surfacing directly. They might want to either fix the `map` operator's hallucination behavior, or add explicit warnings in the documentation, or restrict the operator to use cases where it's actually reliable. Open Enzyme is happy to share the specific test cases that surfaced the hallucinations.
+2. **Other AI-bio research projects using Paperclip** — anyone running automated literature synthesis using this tool should adopt similar verification discipline. The five-rule protocol in `wiki/manual-literature-mining.md` is open-source and reusable.
+3. **The broader AI-for-research-rigor methodology question** — this is one specific instance of a pattern: aggregation primitives in research tools systematically over-promise. What other widely-used tools have similar failure modes that nobody's documented? This is a meta-research question worth a community-level audit.
+
+**External-comms angle.** Strong LinkedIn / blog-post material, **deliberately not framed as "Stanford did a bad thing"** — that's the cheap shot and not what's actually interesting. The interesting frame is:
+
+> "We found a reliability problem in a major AI-bio research tool. Open Enzyme is a guy and a laptop. The tool is from Stanford. The asymmetry isn't resources — it's epistemic discipline. Here's the five-rule verification protocol we built in response, and here's the broader methodology question it surfaces about how AI-assisted research tools should be evaluated."
+
+Tone: collaborative ("we want to share this so it gets fixed"), substantive (concrete examples of the hallucination, not vague "tool is unreliable"), generalizable (the meta-pattern matters more than the specific instance). Close with the protocol link + the offer to share test cases with the Paperclip team.
+
+**Reference:** [`wiki/manual-literature-mining.md`](../wiki/manual-literature-mining.md) — the formal verification protocol. Memory record: `feedback_paperclip_map_unreliable.md` (memory file, not wiki; documents the failure history).
+
+---
+
 ## 2026-05-05 — Patent landscape on the koji-endgame architecture: clean FTO + a lapsed Novozymes patent that quietly validates the design
 
 **What happened.** Asked an Opus subagent to do an exhaustive patent-landscape deep-dive on *Aspergillus oryzae* dual-heterologous-cassette expression — across Espacenet, Google Patents, USPTO, Lens.org, JPlatPat (Japan), CNIPA (China), DPMA (Germany). The motivation: H01 Killshot #1 (the academic-literature pass that ran earlier today) flagged ~30% probability of unpublished industrial IP from Novonesis (formerly Novozymes), DSM-Firmenich, or Genencor that could either validate the architecture, kill it, or block freedom-to-operate.
