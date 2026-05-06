@@ -47,7 +47,8 @@ Same structural pattern as `experiments/` (created earlier when computational an
 
 ## Index
 
-- [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) — global lab-access landscape for §1.9 Ward 1995 dual-cassette feasibility test (active outreach in flight)
+- [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) — global lab-access landscape for §1.9 Ward 1995 dual-cassette feasibility test (active outreach in flight). Canonical instance of the operational search artifact document class (see template below).
+- [`operational-search-template.md`](./operational-search-template.md) — reusable structure + when-to-use criteria + required sections for any project bottleneck that is resource-acquisition rather than scientific question. Future peer-track scope pages requiring specialized resources should instantiate this template. See also [`open-source-platform.md` §"7. Operational Search Artifacts as a First-Class Document Class"](../wiki/open-source-platform.md) for the platform-level framing.
 - [`todos.md`](./todos.md) — active operational todos across the project
 - [`notable-moments.md`](./notable-moments.md) — append-only log of project moments worth external communication (blog posts, LinkedIn posts, talks). Translated for non-scientific human readers.
 

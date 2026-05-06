@@ -146,7 +146,21 @@ This rule was added 2026-05-06 in response to the 2026-05-05 sweep's Connection 
 - [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) — chassis-choice decision exists but cost structure does NOT match the preconditions (different bioreactor runs per chassis); sequential testing is the right pattern there
 - [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — chemistry-choice decisions exist but per-candidate cost is in the $10K+ range; literature pre-selection burden is justified there
 
-### 7. Not Medical Advice
+### 7. Operational Search Artifacts as a First-Class Document Class
+
+When a project bottleneck is **resource-acquisition rather than scientific question** — obtaining a specific strain, accessing a specific collaborator, licensing a specific technology, sourcing a specific reagent, or recruiting a specific kind of expertise — it gets a dedicated artifact in [`operations/`](../operations/) following the [operational search artifact template](../operations/operational-search-template.md).
+
+**Why it's a platform principle, not just a documentation convention:** the existing wiki taxonomy (compound dossiers, experiment protocols, scope pages, hypothesis cards, computational interpretive pages) doesn't have a slot for "active-search resource with decision tree, parallel paths, single most-actionable lead, draft outreach, and order-of-operations fallback." Without a dedicated document class, resource-acquisition bottlenecks either (a) get inlined into scope pages where they bloat the research narrative, (b) get scattered across `todos.md` where they lose their decision-tree structure, or (c) live in conversations and Slack threads where they're invisible to future-readers and disappear into git-archaeology.
+
+**The template forces explicit primary-path naming.** It's tempting to offer a balanced menu of options and leave the choice to the reader; the template requires picking *the* highest-leverage primary path and justifying it. The reader can override, but they override against a stated default rather than choose from a menu. Naming the primary path also forces the analytical work of *why* — which surfaces decision criteria that would otherwise stay implicit.
+
+**Multilingual by default.** Per [`CLAUDE.md` §"Global-multilingual research by default"](../CLAUDE.md), operational searches treat language as a non-barrier — Japanese / Chinese / Korean / German / Russian / Spanish / Portuguese candidates are first-class options, not afterthoughts. The first instance ([`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md)) maps Japan as the natural primary lead specifically because Japan is the *A. oryzae* origin region — a Western-centric search would have missed Maruyama / Kitamoto entirely.
+
+**Living documents, not one-shot scoping.** Operational searches evolve as primary contacts respond, parallel paths get ruled out, new candidates surface, and order-of-operations steps complete. The artifact is the operational state of the search, not a static document.
+
+This principle was added 2026-05-06 from the 2026-05-05 sweep's Sweep B Connection 3 + Priority Action 3 finding: the lab-access page introduced a new wiki document class the existing taxonomy didn't have a slot for. Codifying it as Principle 7 (rather than burying it in operations/) makes the document class discoverable at the platform-level for any future peer-track scope page that hits a resource-acquisition bottleneck.
+
+### 8. Not Medical Advice
 
 This is citizen science, self-experimentation, and open knowledge sharing. We document what we build, what we observe, and what the published literature supports. We do not prescribe, diagnose, or claim to cure.
 
