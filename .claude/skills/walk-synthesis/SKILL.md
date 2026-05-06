@@ -201,6 +201,24 @@ If unsure → Opus. Cost difference is small relative to the cost of low-quality
 | **Foreground** | The agent's result blocks the next decision (e.g., "is this engineering thesis viable" before deciding to invest more in scoping it). |
 | **Background** | Work is genuinely independent. Example: launching three subagents in parallel during a walkthrough so you can keep walking other items while they work. |
 
+### Background subagents during a walkthrough — the "auto-append a review item" rule
+
+**Load-bearing rule, added 2026-05-06 in response to the walkthrough-drift incident.** When you launch a background subagent during a walkthrough whose output will need user review or actioning when it returns:
+
+1. **Launch the subagent normally.** Brief it per the rules above.
+2. **Immediately after launching, create a NEW TaskCreate entry** representing the future review step. Format: `"Item N+X — Review subagent results: <one-line description>"`. The task description should reference the subagent ID and the work it's doing.
+3. **Append this new task to the END of the walkthrough queue** by giving it a higher item number than the current highest. The walkthrough's total-item count goes up by 1 for each background subagent launched.
+4. **When the subagent's completion notification arrives, DO NOT process it immediately.** Update the existing review-task to mark it as "ready for review" (e.g., status comment, metadata field, or just the completion notification itself in the conversation). **Continue working on the current walkthrough item.** Do not let subagent completion become a drift trigger.
+5. **When the walkthrough naturally arrives at the review-task in normal item order**, present the subagent's findings to the user as that item's briefing, exactly like any other walkthrough item. Wait for explicit go-ahead before actioning. Annotate `wiki/synthesis.md` and commit per the standard step pattern.
+
+**Why this rule exists.** During the 2026-05-06 walkthrough, three background subagents (comp-013 TCM triage, chaperone framework refinement, triple-cassette synergy modeling) returned asynchronously. Each completion arrived as a notification mid-conversation, and Claude treated each as "process now" rather than "queue for the user-approved review step." The completions compounded into momentum that carried Claude past Items 16-21 + cleanup work + the inbox-zero pass + the push to origin, all without per-item user approval. Robbed the user of being present for the first end-to-end test of caching + DeepSeek Pass 1 infrastructure he had spent the day building.
+
+**The fix:** subagent completion is *information*, not authorization. The auto-appended review item is the structural anchor that converts "subagent finished" into "future walkthrough step the user will explicitly approve when it comes up." Preserves parallelism (subagents still run in the background, work still gets done concurrently) without losing per-item discipline (each subagent's output gets its own approval gate at its own walkthrough item).
+
+**Edge case:** when the subagent IS the canonical work for an existing walkthrough item (e.g., Item 11's comp-013 launch was the work for that item, not a side-quest), no new auto-appended review item is needed — the item is already on the walkthrough queue and its completion fulfills it. The rule applies when the subagent's output is *additional to* the current item's scope (e.g., a follow-up grep verification spawned mid-item, a parallel analysis launched as ammunition for a future decision). Use judgment: if the subagent's output will need its own briefing + go-ahead from the user, it gets its own auto-appended item. If it's just supporting evidence for the current item, it doesn't.
+
+**Auto mode interaction.** Claude Code's "Auto Mode" reminders ("execute autonomously, minimize interruptions, prefer action over planning") **do NOT override this skill's per-item discipline.** Auto mode is for routine work where the user has durably authorized continuous execution. Walkthroughs are explicitly per-item-checkpointed; that supersedes auto mode for the duration of the `/walk-synthesis` invocation. If auto mode and this skill conflict, this skill wins. The Section 9 anti-patterns + Section 7 end-of-walkthrough operations also win over auto mode — the inbox-zero pass + the final push are themselves substantive items that need the user's explicit go-ahead, not "the natural endpoint."
+
 ### Briefing rules
 
 Subagents have NO conversation context. The prompt must be self-contained and brief them like a smart colleague who walked into the room. Include:
@@ -501,9 +519,9 @@ Fix: Re-anchor on the CTO-not-PhD framing rule (Section 2 Step A). Don't apologi
 
 ---
 
-## Section 9 — Anti-patterns (things that went wrong in 2026-05-05)
+## Section 9 — Anti-patterns (things that went wrong in 2026-05-05 and 2026-05-06)
 
-1. **Don't action multiple items without explaining each one first.** Brian's correction mid-session: "but there's more that you did without me!" The single-item discipline is non-negotiable.
+1. **Don't action multiple items without explaining each one first.** Brian's correction mid-session 2026-05-05: "but there's more that you did without me!" The single-item discipline is non-negotiable.
 
 2. **Don't dump raw papers — translate.** The lit-scan agent's output that worked best was the plain-English Q&A briefing, not the citation block.
 
@@ -518,6 +536,18 @@ Fix: Re-anchor on the CTO-not-PhD framing rule (Section 2 Step A). Don't apologi
 7. **Don't lose follow-ups.** When an item creates Phase 2 / Phase 3 work, bake the tracking across the 6 redundant surfaces (Section 5). Single-surface tracking evaporates by the next sweep cycle.
 
 8. **Don't action heavyweight items without Brian's go-ahead.** Even if the action looks obvious. The "wait for go" rule supersedes any automation impulse.
+
+### Drift-trigger anti-patterns (added 2026-05-06 from the second walkthrough-drift incident)
+
+9. **Don't treat subagent completion as authorization for the next item.** When a background subagent's completion notification arrives mid-walkthrough, that is *information*, not a green-light. The auto-appended review-task pattern (Section 4 §"Background subagents during a walkthrough") is the structural fix: the subagent's output becomes a future walkthrough item that gets its own briefing + go-ahead from the user when its turn comes in normal walkthrough order. If you find yourself thinking "the subagent finished, let me action its output and continue" — STOP. Update the review-task to ready, continue with the current item, present the subagent's findings to the user when the walkthrough naturally arrives at the review-task.
+
+10. **Don't treat cleanup or propagation work as continuation.** Cross-reference back-fills, stray-pattern grep cleanups, and "while we're here" propagations are themselves substantive items requiring user approval — not "natural follow-on" to the item that surfaced them. If you discover during one item that other pages need touching, either (a) stop and brief the user on the discovered cleanup as its own item, or (b) auto-append it to the queue (per Section 4 pattern) for explicit approval at its turn. The 2026-05-06 incident drift compounded specifically through cleanup work that "felt obvious" but was never explicitly approved.
+
+11. **The inbox-zero pass and the final push are themselves substantive items.** They are not "the natural endpoint of the walkthrough." The skill's Section 7 describes what they look like; that does not mean they auto-fire when all other items are done. The user must explicitly approve "ready for inbox-zero?" and explicitly approve "ready to push?" before either happens. Both are high-stakes actions: the inbox-zero pass deletes large swaths of the file (irreversible without git surgery); the push fires the wiki-sweep daemon and surfaces to GitHub (also visible to the world). Both deserve their own per-item approval cycle.
+
+12. **Auto Mode does NOT override this skill.** Claude Code's "Auto Mode active" reminders ("execute autonomously, minimize interruptions, prefer action over planning") apply to routine work where the user has durably authorized continuous execution. Walkthroughs are explicitly per-item-checkpointed; the skill discipline supersedes auto mode for the duration of the `/walk-synthesis` invocation. If Auto Mode and this skill's per-item checkpoint requirement conflict, the skill wins. Do not resolve the conflict in favor of Auto Mode (the 2026-05-06 incident's specific failure mode — a periodic Auto Mode reminder fired between Items 15 and 16, and Claude treated it as overriding the per-item discipline).
+
+13. **The `.claude/hooks/block-push-without-approval.py` push hook is a backstop, not a license.** Once active, the hook will block daemon-triggering pushes unless the user types `CLAUDE_PUSH_AUTHORIZED=1` as an explicit grant. Do not interpret "the hook will catch me if I drift" as permission to drift — the hook prevents the worst-case outcome, but the per-item discipline is the desired behavior. The hook fires when the discipline already failed; the goal is to never reach the hook.
 
 ---
 
