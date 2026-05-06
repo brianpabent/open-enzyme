@@ -104,6 +104,20 @@ Mitigation strategy: (1) run non-reducing SDS-PAGE on secreted fractions to dete
 
 In the proposed direct-secretion cassette design (PTEF1 or PamyB – amyB SP – uricase – TgpdA), KEX2 is not involved in uricase processing. Both sites are non-load-bearing. If *C. utilis* uricase is ever moved to a glucoamylase-KEX2 fusion architecture, a double KR→KQ mutation at positions 130 and 138 would be required (vs. single mutation at 128 for *A. flavus*). (Mechanistic Extrapolation; P1' rules from S. cerevisiae Kex2p homology)
 
+### 4.4 Chaperone-load implications (cross-reference to chaperone-orthogonal stacking framework)
+
+The 4 free cysteines flagged in §4.2 are not just a cassette-design QC item — they have downstream implications under the [chaperone-orthogonal stacking framework](./chaperone-orthogonal-stacking.md). The framework's central claim is that two cassettes competing for the same ER chaperone subsystem (especially PDI/ERO1) show steep yield collapse, while orthogonal cassettes (loading different subsystems) preserve dual-cassette synergy.
+
+The framework's [§4 cassette scoring table](./chaperone-orthogonal-stacking.md#4-open-enzyme-candidate-cassettes--scored) currently lists uricase as "BiP-transit only — chaperone-light," scored against *A. flavus* (Q00511, 0 disulfides, 0 free Cys). That score does not transfer to *C. utilis*: 4 free thiols in the oxidizing ER lumen will engage PDI/ERO1 (the same subsystem lactoferrin's 17 disulfides load heavily), whether or not aberrant intermolecular bonds form.
+
+**Direction-only prediction:** *C. utilis* uricase + lactoferrin in a dual cassette is predicted to show *some* synergy penalty relative to *A. flavus* + lactoferrin, because the *C. utilis* variant is no longer fully PDI-orthogonal. The *A. flavus* baseline (chaperone framework §5: synergy 0.8–1.0) is the upper bound; the *C. utilis* synergy is predicted lower but **the magnitude is not computable from the framework as written.**
+
+**Why no number:** §4.2 explicitly notes "no quantitative model available for magnitude" of free-Cys ER aggregation risk, and the chaperone framework's §3 substrate categorization treats disulfide *count* as bulk PDI load without a per-free-Cys coefficient. Both the comp-011 risk frame and the chaperone framework's calibration are silent on the same number. Any threshold-style claim ("synergy drops below 0.7") would be invented, not derived.
+
+**Practical consequence for §1.9:** the parallel head-to-head recommended in §6.3 below is the right empirical resolution — the synergy penalty is exactly the kind of bounded-unknown that a $200–400 second-cassette gene synthesis cost can resolve directly via Lf titer comparison across the two strains. If the *A. flavus* + Lf strain hits >500 mg/L Lf and the *C. utilis* + Lf strain stalls below ~150 mg/L (other variables held), that's the synergy penalty made visible. If both strains achieve comparable Lf titers, the framework's chaperone-competition prediction is partially falsified for free-Cys-mediated PDI load (a useful result for future cassette decisions).
+
+This bidirectional cross-reference is mirrored in [chaperone-orthogonal-stacking.md §4](./chaperone-orthogonal-stacking.md#4-open-enzyme-candidate-cassettes--scored) — the cassette scoring table now carries a *C. utilis* variant note flagging this load shift, so the implicit "uricase = *A. flavus*" assumption does not propagate silently.
+
 ---
 
 ## 5. Strategic Advantage of *C. utilis* (Non-Cassette Axis)

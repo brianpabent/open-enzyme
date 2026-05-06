@@ -118,6 +118,7 @@ The prediction: cassettes whose dominant load classes (the heaviest 1-2 features
 | Cassette | Origin | Disulfides | N-glyc sites | Assembly | Length | Target | **Dominant load class** |
 |---|---|---|---|---|---|---|---|
 | **Uricase** (*uaZ*, A. flavus, Q00511) | Fungal | 0 | 0 (annotated; 1 sequon predicted but unoccupied per [comp-010 §5.5](./cassette-compatibility-computational.md#55-n-glycosylation)) | Homotetramer | 302 aa | Cytosolic native; secreted via amyB SP | **BiP-only (transit)** — chaperone-light |
+| **Uricase variant — *C. utilis*** (URIC_CYBJA, P78609; per [comp-011 §4.2](./c-utilis-uricase-cassette-compatibility-computational.md#42-free-cysteines-4-vs-0)) | Yeast | 0 disulfides + **4 free Cys** (positions 39, 168, 250, 293) | 1 predicted (NSS pos 54, not annotated) | Homotetramer | 302 aa | Secreted via amyB SP | **PDI-engaged via free-Cys load** — variant choice matters; magnitude unknown ([comp-011 §4.4](./c-utilis-uricase-cassette-compatibility-computational.md#44-chaperone-load-implications-cross-reference-to-chaperone-orthogonal-stacking-framework)) |
 | **Lactoferrin** (hLf, P02788) | Mammalian | 17 (one chain) | 3 confirmed | Monomer | 691 aa | Secreted | **PDI-heavy** + calnexin-moderate + BiP-heavy |
 | **Native lipase** (e.g., *A. oryzae* TGL) | Fungal native | 3 | 0-1 | Monomer | ~270 aa | Secreted | **PDI-light** — well-adapted |
 | **Native α-amylase** (TAKA-amylase) | Fungal native | 1 | 4-5 | Monomer | 478 aa | Secreted | **Calnexin-moderate** + PDI-light |
@@ -130,7 +131,7 @@ The prediction: cassettes whose dominant load classes (the heaviest 1-2 features
 
 The pattern is striking: the **Open Enzyme koji endgame strain is implicitly already a chaperone-orthogonal design.** The five "molecules" of [koji-endgame-strain.md](./koji-endgame-strain.md) §1 distribute across non-overlapping load classes —
 
-- **Uricase**: BiP-transit only (zero disulfide, zero glycosylation, zero subunit assembly)
+- **Uricase**: BiP-transit only (zero disulfide, zero glycosylation, zero subunit assembly) — *this orthogonality is variant-specific to A. flavus (Q00511); the C. utilis variant (P78609) carries 4 free Cys that engage PDI/ERO1, partially collapsing the orthogonality. See [comp-011 §4.4](./c-utilis-uricase-cassette-compatibility-computational.md#44-chaperone-load-implications-cross-reference-to-chaperone-orthogonal-stacking-framework) for the bidirectional analysis. The §1.9 parallel head-to-head is the empirical resolver.*
 - **Lactoferrin**: PDI + calnexin + BiP — carries essentially the entire ER chaperone load on its own
 - **Native digestives** (lipase, protease, amylase): light, well-adapted, host-evolved
 - **Carnosine + panD**: cytosolic — completely off the secretion pathway
