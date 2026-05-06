@@ -1,0 +1,240 @@
+{
+  "_meta": {
+    "date": "2026-05-06",
+    "phase": "3a (intersection: LOTUS InChIKey-based fungal compounds × ChEMBL bioactivity by canonical SMILES)",
+    "lotus_compounds": 6798,
+    "chembl_activities_scanned": 1000,
+    "matched_compound_target_pairs": 12
+  },
+  "by_target": {
+    "ABCG2": [
+      {
+        "lotus_inchikey": "LMPLCDBTXJVFFT-UHFFFAOYSA-N",
+        "lotus_name": "5,8-dihydroxy-10-methoxy-2-methylbenzo[h]chromen-4-one",
+        "lotus_species": [
+          "[query-hint] Aspergillus niger"
+        ],
+        "molecular_formula": "C15H12O5",
+        "chembl_molecule_id": "CHEMBL454794",
+        "chembl_molecule_name": null,
+        "target_chembl_id": "CHEMBL5393",
+        "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+        "standard_type": "IC50",
+        "standard_value": 12800,
+        "standard_units": "nM",
+        "pchembl_value": 4.89,
+        "assay_description": "Inhibition of ABCG2-mediated drug efflux expressed in human NCI-H460 cells",
+        "document_year": 2010
+      },
+      {
+        "lotus_inchikey": "KLKFLNXANXGSIT-UHFFFAOYSA-N",
+        "lotus_name": "5,8-dihydroxy-6-methoxy-2-methylbenzo[g]chromen-4-one",
+        "lotus_species": [
+          "[query-hint] Aspergillus niger"
+        ],
+        "molecular_formula": "C15H12O5",
+        "chembl_molecule_id": "CHEMBL252106",
+        "chembl_molecule_name": null,
+        "target_chembl_id": "CHEMBL5393",
+        "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+        "standard_type": "IC50",
+        "standard_value": null,
+        "standard_units": null,
+        "pchembl_value": null,
+        "assay_description": "Inhibition of ABCG2-mediated drug efflux expressed in human NCI-H460 cells",
+        "document_year": 2010
+      },
+      {
+        "lotus_inchikey": "REFJWTPEDVJJIY-UHFFFAOYSA-N",
+        "lotus_name": "quercetin",
+        "lotus_species": [
+          "[query-hint] Agaricus"
+        ],
+        "molecular_formula": "C15H10O7",
+        "chembl_molecule_id": "CHEMBL50",
+        "chembl_molecule_name": "QUERCETIN",
+        "target_chembl_id": "CHEMBL5393",
+        "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+        "standard_type": "IC50",
+        "standard_value": 6900,
+        "standard_units": "nM",
+        "pchembl_value": 5.16,
+        "assay_description": "Inhibition of BCRP expressed in MDCK cells using Hoechst 33342 staining",
+        "document_year": 2011
+      },
+      {
+        "lotus_inchikey": "YXOLAZRVSSWPPT-UHFFFAOYSA-N",
+        "lotus_name": "bois d,arc",
+        "lotus_species": [
+          "[query-hint] Ganoderma",
+          "[query-hint] Ganoderma lucidum"
+        ],
+        "molecular_formula": "C15H10O7",
+        "chembl_molecule_id": "CHEMBL28626",
+        "chembl_molecule_name": "MORIN",
+        "target_chembl_id": "CHEMBL5393",
+        "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+        "standard_type": "IC50",
+        "standard_value": 21000,
+        "standard_units": "nM",
+        "pchembl_value": 4.68,
+        "assay_description": "Inhibition of BCRP expressed in MDCK cells using Hoechst 33342 staining",
+        "document_year": 2011
+      },
+      {
+        "lotus_inchikey": "TZBJGXHYKVUXJN-UHFFFAOYSA-N",
+        "lotus_name": "genistein",
+        "lotus_species": [
+          "[query-hint] Cordyceps sinensis",
+          "[query-hint] Ophiocordyceps"
+        ],
+        "molecular_formula": "C15H10O5",
+        "chembl_molecule_id": "CHEMBL44",
+        "chembl_molecule_name": "GENISTEIN",
+        "target_chembl_id": "CHEMBL5393",
+        "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+        "standard_type": "IC50",
+        "standard_value": 6900,
+        "standard_units": "nM",
+        "pchembl_value": 5.16,
+        "assay_description": "Inhibition of BCRP expressed in MDCK cells using Hoechst 33342 staining",
+        "document_year": 2011
+      },
+      {
+        "lotus_inchikey": "REFJWTPEDVJJIY-UHFFFAOYSA-N",
+        "lotus_name": "quercetin",
+        "lotus_species": [
+          "[query-hint] Agaricus"
+        ],
+        "molecular_formula": "C15H10O7",
+        "chembl_molecule_id": "CHEMBL50",
+        "chembl_molecule_name": "QUERCETIN",
+        "target_chembl_id": "CHEMBL5393",
+        "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+        "standard_type": "IC50",
+        "standard_value": 7600,
+        "standard_units": "nM",
+        "pchembl_value": 5.12,
+        "assay_description": "Inhibition of BCRP expressed in MCF-7 MX cells using Hoechst 33342 staining",
+        "document_year": 2011
+      },
+      {
+        "lotus_inchikey": "YXOLAZRVSSWPPT-UHFFFAOYSA-N",
+        "lotus_name": "bois d,arc",
+        "lotus_species": [
+          "[query-hint] Ganoderma",
+          "[query-hint] Ganoderma lucidum"
+        ],
+        "molecular_formula": "C15H10O7",
+        "chembl_molecule_id": "CHEMBL28626",
+        "chembl_molecule_name": "MORIN",
+        "target_chembl_id": "CHEMBL5393",
+        "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+        "standard_type": "IC50",
+        "standard_value": 49000,
+        "standard_units": "nM",
+        "pchembl_value": 4.31,
+        "assay_description": "Inhibition of BCRP expressed in MCF-7 MX cells using Hoechst 33342 staining",
+        "document_year": 2011
+      }
+    ],
+    "C5aR1": [],
+    "NLRP3": [],
+    "URAT1": [
+      {
+        "lotus_inchikey": "YXOLAZRVSSWPPT-UHFFFAOYSA-N",
+        "lotus_name": "bois d,arc",
+        "lotus_species": [
+          "[query-hint] Ganoderma",
+          "[query-hint] Ganoderma lucidum"
+        ],
+        "molecular_formula": "C15H10O7",
+        "chembl_molecule_id": "CHEMBL28626",
+        "chembl_molecule_name": "MORIN",
+        "target_chembl_id": "CHEMBL6120",
+        "target_name": "Solute carrier family 22 member 12",
+        "standard_type": "IC50",
+        "standard_value": 2000,
+        "standard_units": "nM",
+        "pchembl_value": 5.7,
+        "assay_description": "Inhibition of human URAT1-mediated urate uptake in HEK293 cells",
+        "document_year": 2007
+      }
+    ],
+    "XO": [
+      {
+        "lotus_inchikey": "REFJWTPEDVJJIY-UHFFFAOYSA-N",
+        "lotus_name": "quercetin",
+        "lotus_species": [
+          "[query-hint] Agaricus"
+        ],
+        "molecular_formula": "C15H10O7",
+        "chembl_molecule_id": "CHEMBL50",
+        "chembl_molecule_name": "QUERCETIN",
+        "target_chembl_id": "CHEMBL1929",
+        "target_name": "Xanthine dehydrogenase/oxidase",
+        "standard_type": "IC50",
+        "standard_value": 3000,
+        "standard_units": "nM",
+        "pchembl_value": 5.52,
+        "assay_description": "Inhibition of xanthine oxidase-mediated formation of uric acid by spectrophotometry",
+        "document_year": 2002
+      },
+      {
+        "lotus_inchikey": "REFJWTPEDVJJIY-UHFFFAOYSA-N",
+        "lotus_name": "quercetin",
+        "lotus_species": [
+          "[query-hint] Agaricus"
+        ],
+        "molecular_formula": "C15H10O7",
+        "chembl_molecule_id": "CHEMBL50",
+        "chembl_molecule_name": "QUERCETIN",
+        "target_chembl_id": "CHEMBL1929",
+        "target_name": "Xanthine dehydrogenase/oxidase",
+        "standard_type": "IC50",
+        "standard_value": 2620,
+        "standard_units": "nM",
+        "pchembl_value": 5.58,
+        "assay_description": "Inhibition of xanthine oxidase assessed as decrease in uric acid production by spectrophotometry",
+        "document_year": 1998
+      },
+      {
+        "lotus_inchikey": "YXOLAZRVSSWPPT-UHFFFAOYSA-N",
+        "lotus_name": "bois d,arc",
+        "lotus_species": [
+          "[query-hint] Ganoderma",
+          "[query-hint] Ganoderma lucidum"
+        ],
+        "molecular_formula": "C15H10O7",
+        "chembl_molecule_id": "CHEMBL28626",
+        "chembl_molecule_name": "MORIN",
+        "target_chembl_id": "CHEMBL1929",
+        "target_name": "Xanthine dehydrogenase/oxidase",
+        "standard_type": "IC50",
+        "standard_value": 10100,
+        "standard_units": "nM",
+        "pchembl_value": 5,
+        "assay_description": "Inhibition of xanthine oxidase assessed as decrease in uric acid production by spectrophotometry",
+        "document_year": 1998
+      },
+      {
+        "lotus_inchikey": "REFJWTPEDVJJIY-UHFFFAOYSA-N",
+        "lotus_name": "quercetin",
+        "lotus_species": [
+          "[query-hint] Agaricus"
+        ],
+        "molecular_formula": "C15H10O7",
+        "chembl_molecule_id": "CHEMBL50",
+        "chembl_molecule_name": "QUERCETIN",
+        "target_chembl_id": "CHEMBL1929",
+        "target_name": "Xanthine dehydrogenase/oxidase",
+        "standard_type": "IC50",
+        "standard_value": 3500,
+        "standard_units": "nM",
+        "pchembl_value": 5.46,
+        "assay_description": "Inhibition of xanthine oxidase (unknown origin) using xanthine as substrate assessed as inhibition of uric acid formation after 30 mins by spectrophotometric method",
+        "document_year": 2016
+      }
+    ]
+  }
+}
