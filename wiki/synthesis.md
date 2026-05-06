@@ -21,7 +21,9 @@ Inbox-zero passes (2026-04-27, 2026-05-05, 2026-05-06) prune everything marked `
 
 ## Pending — open items
 
-**(none — inbox zero as of 2026-05-06, second pass).**
+**Queued for next session — deeper coverage audit of the 2026-05-06 V4-Pro sweep.** A Haiku audit (transcript at agent task ID `a4cb5603635273b42`) flagged 3 medium-severity + 3 low-severity cross-cutting gaps the V4-Pro sweep didn't surface (the sweep was narrow on the medicinal-mushroom + TCM tracks; under-engaged the koji / protein-engineering / non-fermentable peer tracks). Mediums: (1) §1.9 Ward dual-cassette gate has no explicit cross-link to fully-populated H01 card; (2) acid-stability tier framework (SB-1 / BAL-1 / OPT-1) in `protein-engineering-strategy.md` maps to §1.16 OPT-1 experiment but the tiered validation pathway (SB-1 in yeast → BAL-1 in koji → OPT-1 in koji) is never explicit anywhere; (3) the new multi-track urate transporter coverage map in [`gout-pathophysiology.md`](./gout-pathophysiology.md) names GLPP/cordycepin/astilbin for URAT1 but doesn't reference the dedicated [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) peer-track. Lows: LBP chassis peer-track invisibility in coverage map; bio-ai-tools / computational-experiments stale-trigger uncertainty; H02-H04 stub-population coordination. **Brian's call 2026-05-06:** Haiku finding enough signal to warrant deeper audit before actioning — defer to a deeper-model pass (Opus 4.7 head-loop or Sonnet subagent) tomorrow / next session, then walk the resulting findings through the standard /walk-synthesis discipline.
+
+(Other pending: none — inbox zero on the 2026-05-06 V4-Pro sweep itself.)
 
 Two inbox-zero passes happened on 2026-05-06. The earlier pass actioned 21 items from three pending sweep blocks (3e928d3 + d6b4210 + 487fad3 straggler) — see prior commit history for that pass's findings (CLAUDE.md Rule 4 pre-commit grep-verify gate codified; chaperone framework architecture refinement; comp-013 TCM compound triage; DAF SCR1-4 disulfide correction 12 → 8; etc.).
 
