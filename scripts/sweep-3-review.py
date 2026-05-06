@@ -69,6 +69,18 @@ PRICING_USD_PER_MTOK = {
     "google/gemini-2.5-pro":        (1.25, 5.00),
 }
 
+# Anthropic prompt-cache read pricing per Mtok. Cache reads bill at 10% of
+# base input; cache writes bill at 1.25× base. Same caveat as Pass 1
+# (sweep-1-propagate.py): OpenRouter's OAI-compat usage shim only exposes
+# read tokens via prompt_tokens_details, so reported cost treats writes at
+# 1× and slightly under-reports vs. the OpenRouter dashboard. Direction
+# (cached < non-cached) is correct; magnitude is optimistic.
+CACHE_READ_USD_PER_MTOK = {
+    "anthropic/claude-sonnet-4-6":  0.30,
+    "anthropic/claude-haiku-4-5":   0.08,
+    "anthropic/claude-opus-4-7":    1.50,
+}
+
 # Read-only research tools for Pass 3. NO edit, NO write — Pass 3 is
 # critique, not propagation. Tools are bounded by MAX_TOOL_ITERATIONS.
 TOOLS = [
@@ -216,6 +228,52 @@ def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000):
     return "".join(parts), included, skipped
 
 
+def _inject_cache_breakpoints(messages, model):
+    """Return a copy of `messages` with `cache_control` markers on the
+    initial user prompt and the most recent tool message.
+
+    Pass 3's structure differs from Pass 1: there's no system role.
+    Message 0 is the user prompt with the synthesis log + trigger files +
+    cited files inlined (~250–400K tokens on a typical sweep). That's the
+    breakpoint that matters most — without it, every iteration re-pays
+    full input price on a quarter-million-token prefix that hasn't
+    changed. Cache-write on the latest tool message gives a rolling
+    checkpoint: each iter writes, the next iter reads.
+
+    Anthropic models honor the markers via OpenRouter's pass-through
+    (10% cache-read pricing); DeepSeek/OpenAI cache automatically and
+    ignore the markers; the array-of-blocks content shape is valid
+    OpenAI-compat for every provider, so the transform is safe to apply
+    unconditionally. See sweep-1-propagate.py for the validation history
+    and per-provider notes.
+    """
+    if not messages:
+        return messages
+    last_tool_idx = -1
+    for i, m in enumerate(messages):
+        if m.get("role") == "tool":
+            last_tool_idx = i
+    out = []
+    for i, m in enumerate(messages):
+        m2 = dict(m)
+        # Cache the initial user prompt (huge inlined evidence block)
+        if i == 0 and m2.get("role") == "user" and isinstance(m2.get("content"), str):
+            m2["content"] = [{
+                "type": "text",
+                "text": m2["content"],
+                "cache_control": {"type": "ephemeral"},
+            }]
+        # Rolling cache write on the latest tool message
+        elif i == last_tool_idx and isinstance(m2.get("content"), str):
+            m2["content"] = [{
+                "type": "text",
+                "text": m2["content"],
+                "cache_control": {"type": "ephemeral"},
+            }]
+        out.append(m2)
+    return out
+
+
 def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_tokens):
     """Drive the bounded agentic loop: tool calls until the model returns
     a final response (no tool calls), then return that final content.
@@ -237,6 +295,7 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
     messages = [{"role": "user", "content": initial_prompt}]
     total_in = 0
     total_out = 0
+    total_cached = 0
 
     for iteration in range(max_iterations + 1):
         # Estimate cumulative request size in chars; force-finish if approaching cap
@@ -251,7 +310,7 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
 
         body = {
             "model": model,
-            "messages": messages,
+            "messages": _inject_cache_breakpoints(messages, model),
             "tools": TOOLS,
             "max_tokens": max_tokens,
             "temperature": 0.5,
@@ -271,6 +330,7 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
         usage = resp.get("usage", {}) or {}
         total_in += usage.get("prompt_tokens", 0)
         total_out += usage.get("completion_tokens", 0)
+        total_cached += (usage.get("prompt_tokens_details") or {}).get("cached_tokens", 0)
 
         tool_calls = msg.get("tool_calls") or []
         content = msg.get("content")
@@ -278,7 +338,7 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
         # Terminal: model returned content with no tool calls. That's our
         # final review output.
         if content and not tool_calls:
-            return content, total_in, total_out
+            return content, total_in, total_out, total_cached
 
         # If there are tool calls, execute each and append the results.
         if tool_calls:
@@ -465,20 +525,32 @@ def main():
               f"build_evidence_context's char_budget may need to be lowered.",
               file=sys.stderr)
 
-    content, in_tok, out_tok = run_agentic_review(
+    content, in_tok, out_tok, cached_tok = run_agentic_review(
         api_key, args.model, prompt,
         max_iterations=args.max_iterations,
         max_tokens=args.max_tokens,
     )
 
     in_per, out_per = PRICING_USD_PER_MTOK.get(args.model, (None, None))
+    cache_read_per = CACHE_READ_USD_PER_MTOK.get(args.model)
+    non_cached = max(0, in_tok - cached_tok)
     if in_per is not None:
-        cost = (in_tok * in_per + out_tok * out_per) / 1_000_000
+        if cache_read_per is not None and cached_tok > 0:
+            cost = (
+                non_cached * in_per
+                + cached_tok * cache_read_per
+                + out_tok * out_per
+            ) / 1_000_000
+        else:
+            cost = (in_tok * in_per + out_tok * out_per) / 1_000_000
         cost_str = f"${cost:.4f}"
     else:
         cost_str = "(unknown)"
 
-    print(f"Tokens: in={in_tok:,} out={out_tok:,} cost={cost_str}", file=sys.stderr)
+    cache_pct = (cached_tok / in_tok * 100) if in_tok else 0
+    cache_note = f" (cached={cached_tok:,}, {cache_pct:.0f}%)" if cached_tok else ""
+    print(f"Tokens: in={in_tok:,}{cache_note} out={out_tok:,} cost={cost_str}",
+          file=sys.stderr)
 
     # Reviews go to stdout — workflow captures to REVIEWS_FILE
     sys.stdout.write(content)
