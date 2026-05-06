@@ -88,6 +88,7 @@ nav:
     - Enzyme Deficit Deep Dive: enzyme-deficit-deep-dive.md
     - Engineered Koji Protocol: engineered-koji-protocol.md
     - Koji Endgame Strain: koji-endgame-strain.md
+    - Chaperone-Orthogonal Cassette Stacking: chaperone-orthogonal-stacking.md
     - Koji Construct Design: koji-construct-design.md
     - Digestive Enzyme Optimization: digestive-enzyme-optimization.md
     - Koji Home Fermentation: koji-home-fermentation.md
@@ -140,13 +141,17 @@ nav:
     - H02 — Engineered LBP Thesis: hypotheses/H02-engineered-lbp-thesis.md
     - H03 — siRNA / URAT1 Thesis: hypotheses/H03-sirna-urat1-thesis.md
     - H04 — TCM × Modern Rigor Methodology Lens: hypotheses/H04-tcm-rigor-intersection.md
+    - H05 — DAF SCR1-4 CP0-Closure Thesis: hypotheses/H05-daf-scr14-cp0-thesis.md
     - Computational Experiments: computational-experiments.md
     - Uricase Protease Stability (comp-001): uricase-protease-stability-computational.md
     - Lactoferrin Protease Stability (comp-005): lactoferrin-protease-stability-computational.md
     - DAF/CD55 Protease Stability (comp-006): daf-cd55-protease-stability-computational.md
+    - DAF/CD55 SCR1-4 Truncated Stability (comp-012): daf-cd55-scr14-truncated-computational.md
     - Food-Grade HDAC Inhibitor Screen (comp-007): food-grade-hdaci-screen-computational.md
     - Supplement ABCG2 Antagonism (comp-004): supplement-abcg2-antagonism-computational.md
     - Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010): cassette-compatibility-computational.md
+    - C. utilis Uricase Cassette Compatibility (comp-011): c-utilis-uricase-cassette-compatibility-computational.md
+    - Manual Literature Mining Protocol: manual-literature-mining.md
     - Open Questions Index: open-questions.md
     - Concept Graph: GRAPH.md
     - Citations: references.md
