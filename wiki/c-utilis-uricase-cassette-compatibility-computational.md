@@ -146,6 +146,7 @@ This strategic asymmetry is noted here but does not change the cassette-design r
 
 3. **Recommended approach for §1.9: empirical head-to-head:**
    - Order both *A. flavus* (Q00511, codon-optimized) and *C. utilis* (P78609, codon-optimized + ALLN-346 mutations) as direct-secretion cassettes. The §1.9 fermentation experiment resolves the platform decision empirically at $0 additional fermentation cost (same experiment, two strains). Total gene synthesis cost delta: ~$200–400 for the second codon-optimized gene.
+   - This recommendation is the canonical instance of the platform's [Principle 6: Variant-Agnostic Empirical Head-to-Head](./open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared) (codified 2026-05-06 from this comp-011 pattern). All three preconditions are satisfied: shared §1.9 fermentation infrastructure, bounded marginal input cost ($200-400), genuine literature split (industry prefers *C. utilis*, academic precedent favors *A. flavus*).
 
 4. **Lactoferrin cassette (unchanged from comp-010):** PamyB – glucoamylase – KRGGG – hLf (codon-optimized) – TamyB. Monitor internal KR site at position 579 (P1'=K, MODERATE risk) by SDS-PAGE.
 

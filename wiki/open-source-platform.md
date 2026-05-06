@@ -104,7 +104,49 @@ The four-pass sweep daemon (Sonnet 4.6 → Gemini 2.5 Pro → Opus 4.7 → DeepS
 
 A knowledge graph maintained by a single synthesizer converges, over time, on that synthesizer's blind spots and biases — the corpus starts to encode one model's prior rather than the underlying biology. This concern was surfaced by the system itself: in the [2026-04-25 DeepSeek V4-Pro peer-review pass](../logs/v4-peer-review-2026-04-25-deepseek.md) (Connection 7), a DeepSeek model reviewing the Claude-Opus output flagged that running cheap full-corpus sweeps on a single model would erode exactly the diversity that makes the corpus trustworthy. That a model from a different vendor caught a methodological risk Claude had not surfaced unprompted is the demonstration of why heterogeneity earns its keep. The sweep workflow described in [`.github/workflows/wiki-sweep.yml`](../.github/workflows/wiki-sweep.yml) is therefore deliberately cross-vendor: Sonnet 4.6 propagates findings across cross-referenced pages, Gemini 2.5 Pro emits full-corpus synthesis, Opus 4.7 critiques the synthesis with fixed-verdict tags, and DeepSeek V4-Pro runs an independent peer-review pass on the Claude output — four models, three vendors (Anthropic, Google, DeepSeek), all routed through OpenRouter. Heterogeneity is the principle, not the implementation: future workflow changes should preserve cross-vendor coverage. Collapsing the pipeline to a single vendor — even a cheaper or faster one — is a regression against this principle, not an optimization.
 
-### 6. Not Medical Advice
+### 6. Variant-Agnostic Empirical Head-to-Head (when marginal cost is bounded and infrastructure is shared)
+
+When the literature is split or thin between candidate variants for the same chassis-payload role — and the marginal cost of running both candidates in parallel is bounded by shared experimental infrastructure — **default to running both rather than pre-selecting one from literature precedent.** Let the experiment decide.
+
+**The principle, stated precisely:**
+
+> If candidates A and B address the same chassis-payload role, and the *additional* cost of running both vs. running one is small (because the experiment shares fermentation runs / shares assay readouts / requires only an extra synthesis-cost-grade input per candidate), and the literature does not unambiguously dominate one over the other — order both, run them in the same experiment, and let the empirical result resolve the platform decision.
+
+**Why this is its own principle, not just a tactic:**
+
+Pre-selecting a single variant from literature precedent silently bakes in path-dependent narrowing — the project commits to one branch of the decision tree based on whichever literature happened to be most-cited or most-recent at the moment of selection. When the actual marginal cost of empirical resolution is small, that pre-selection costs the project the option value of the parallel test for no real saving. The principle inverts the default: when running both is bounded-cheap, the burden of proof shifts onto pre-selection, not onto parallel testing.
+
+**Cost-structure preconditions (the principle does NOT generalize to all chassis-payload questions):**
+
+The principle applies cleanly when:
+
+1. **Shared experimental infrastructure.** Both candidates use the same fermentation run, the same assay readouts, the same downstream characterization. Marginal cost is bounded by the per-candidate input (gene synthesis, primer design, etc.), not by the experiment itself.
+2. **Bounded marginal input cost.** The per-candidate cost is in the $100s-to-low-$1000s range, not the $10K+ range. Empirical parallel testing is cheap relative to the value of the resolved decision.
+3. **No unambiguous literature dominance.** If one candidate has 10 papers showing it works and the other has 1 paper showing it might work, parallel testing is wasted effort. The principle is for genuine literature splits, not lazy avoidance of literature reading.
+
+The principle does NOT apply when:
+
+1. **Different experimental infrastructure per candidate.** Choosing between *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* as an LBP chassis requires separate anaerobic-bioreactor runs, different payload-integration toolkits per organism, different assay setups. Marginal cost of "run both" is not bounded — it doubles or triples the experimental cost. Sequential testing (with the lower-cost candidate first) is the right pattern here.
+2. **Per-candidate cost is large.** When per-candidate input cost is $10K+ (custom delivery vehicles, animal models, etc.), parallel testing is no longer "bounded-cheap" and the literature pre-selection burden is justified.
+3. **Decision criteria are not measurable in the parallel run.** If the empirical experiment can't actually distinguish A from B (because the readout doesn't capture the relevant property), parallel testing produces ambiguous output and the literature-driven pre-selection is unavoidable.
+
+**Canonical instance — comp-011 (2026-05-05):**
+
+The *A. flavus* (Q00511) vs. *C. utilis* (P78609) uricase variant decision for the §1.9 Ward 1995 dual-cassette experiment. Industry programs (ALLN-346, SEL-212 pegadricase, SSS11) prefer *C. utilis*; academic precedent (rasburicase derivative IP, comp-001 protease stability) favors *A. flavus*. comp-011's recommendation: order both as codon-optimized direct-secretion cassettes (~$200-400 marginal gene synthesis cost, $0 marginal fermentation cost — both strains run in the same §1.9 experiment), and let the empirical Lf titer + uricase activity comparison resolve the decision. See [`c-utilis-uricase-cassette-compatibility-computational.md` §6.3](./c-utilis-uricase-cassette-compatibility-computational.md). This instance satisfies all three preconditions: shared §1.9 fermentation, $200-400 marginal input cost, genuine literature split.
+
+**Why this principle exists in this project specifically:**
+
+Open Enzyme operates with one full-time researcher + AI assistance + bounded compute budget. Path-dependent narrowing — silently committing to one branch of a decision tree based on whichever-literature-was-most-cited — is the failure mode this scale of operation is most prone to (no team peer pressure forcing the question "did you also consider X?"). The variant-agnostic-empirical-head-to-head principle is a structural defense: it forces the explicit cost-structure analysis ("would running both cost <X% extra?") and inverts the default toward parallel testing whenever the answer is yes.
+
+This rule was added 2026-05-06 in response to the 2026-05-05 sweep's Connection 4 surfacing the comp-011 pattern as generalizable. The Claude review on that sweep narrowed the original Pass 2 framing — "platform default for any chassis-payload question" → "principle with cost-structure preconditions" — and the narrower framing landed here as Principle 6.
+
+**Cross-references:**
+
+- [`c-utilis-uricase-cassette-compatibility-computational.md` §6.3](./c-utilis-uricase-cassette-compatibility-computational.md) — canonical instance, advocates the parallel head-to-head approach for §1.9
+- [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) — chassis-choice decision exists but cost structure does NOT match the preconditions (different bioreactor runs per chassis); sequential testing is the right pattern there
+- [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — chemistry-choice decisions exist but per-candidate cost is in the $10K+ range; literature pre-selection burden is justified there
+
+### 7. Not Medical Advice
 
 This is citizen science, self-experimentation, and open knowledge sharing. We document what we build, what we observe, and what the published literature supports. We do not prescribe, diagnose, or claim to cure.
 
