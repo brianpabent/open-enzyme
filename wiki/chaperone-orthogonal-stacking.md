@@ -172,6 +172,126 @@ The Open Enzyme endgame strain's predicted weighted synergy ~0.85 — close to a
 
 ---
 
+## 5.5 Triple-Cassette Prospective Prediction — Uricase + Lactoferrin + DAF SCR1-4
+
+**This is Sweep A Proposed Experiment 1 (2026-05-05, commit 3e928d3): the first real prospective test of whether the chaperone-orthogonal framework has predictive power beyond retrofit.**
+
+The question is load-bearing for the platform: **Can the koji endgame strain be a single triple-cassette strain (uricase + lactoferrin + DAF SCR1-4) that closes CP0 (complement-priming chokepoint, per [H05](../hypotheses/H05-daf-scr14-cp0-thesis.md)) as well as the existing CP1-CP6 coverage from uricase + lactoferrin? Or does chaperone-load competition from adding DAF SCR1-4 force it onto a separate strain or onto the [engineered LBP chassis](./engineered-lbp-chassis.md) as a parallel peer track?**
+
+All predictions in this section are **Mechanistic Extrapolation** anchored to the verified source numbers in §10.1. No new unverified quantitative claims are introduced.
+
+### 5.5.1 Setup — Cassettes, Disulfide Totals, and Baseline
+
+The three cassettes:
+
+| Cassette | Gene | Disulfides | N-glyc sites | Dominant load class |
+|---|---|---|---|---|
+| **Uricase** | *A. flavus uaZ* (Q00511) | **0** | 0 (unoccupied) | BiP-transit only — chaperone-light |
+| **Lactoferrin** | hLf (P02788) | **17** (one chain) | 3 confirmed | PDI-heavy + calnexin-moderate |
+| **DAF SCR1-4** | P08174 aa 35–285 | **8** (2 per SCR × 4 SCRs, per UniProt P08174 DISULFID features, verified 2026-05-06; see [comp-012 §1.5](./daf-cd55-scr14-truncated-computational.md#15-correction-note-2026-05-06-disulfide-count-anchor)) | 0 (stalk truncation removed glycosylation sites) | PDI-moderate |
+
+**Triple-cassette disulfide total: 25** (0 + 17 + 8). This is 1.56× the Huynh 2020 adalimumab baseline of 16 disulfides (4 inter-chain + 12 intra-chain; verified via UniProt P01857 + P01834; see §10.1). Compare to the dual-cassette (comp-010) of 17 disulfides = 1.06× the Huynh baseline. Adding DAF SCR1-4 pushes the triple 47% above the dual on the PDI-load axis, and 56% above the demonstrated capacity ceiling if the Huynh ceiling is architecture-independent.
+
+**Calibration context:** The §1.9 wet-lab experiment has a Lf-alone arm that directly resolves the capacity-vs-titer benchmark ambiguity flagged in §8 item 7 and [koji-endgame-strain.md §3.3](./koji-endgame-strain.md). If Lf alone reaches >500 mg/L in NSlD-ΔP10 solid-state, the Huynh ceiling is antibody-architecture-specific (dual-chain assembly difficulty, not single-chain disulfide count), and the framework's synergy coefficients are systematically conservative. Until that data lands, both scenarios must bound the prediction.
+
+### 5.5.2 Per-Pair Synergy Recap (With Corrected DAF Disulfide Count)
+
+Three pairwise synergies from §5, applied to the corrected 8-disulfide DAF count:
+
+| Pair | §5 predicted synergy | Note with corrected 8-disulfide DAF |
+|---|---|---|
+| **Uricase × Lactoferrin** | **0.8–1.0** | Unchanged — uricase carries zero disulfides, Lf carries 17. This pair is the framework's best-case: fully orthogonal on the PDI axis. (Validated direction by [comp-010](./cassette-compatibility-computational.md): 1.06× Huynh baseline, within demonstrated capacity.) |
+| **Uricase × DAF SCR1-4** | **0.85–1.0** | Largely unchanged by the disulfide correction. Uricase's zero disulfide load means it doesn't compete with DAF's PDI draw regardless of whether DAF has 8 or 12 disulfides. Both remain light-load cassettes from each other's perspective; the prior prediction holds. |
+| **Lactoferrin × DAF SCR1-4** | **0.5–0.7** | **This is the worst pair and it stays worst after the disulfide correction.** The prior estimate assumed 12 DAF disulfides; the correct number is 8. The corrected total Lf + DAF load is 17 + 8 = 25 disulfides vs. the prior 17 + 12 = 29. The PDI saturation risk is real but ~14% lower than the prior framing implied — the pair synergy range of 0.5–0.7 still reflects PDI-saturation risk, but the lower bound is somewhat less severe than a 29-disulfide prior would suggest. The pairwise prediction remains "likely PDI-saturating without UPR upregulation." |
+
+**The Lf × DAF SCR1-4 pair is the dominant constraint on the triple.** Any combination that includes this pair inherits its synergy floor. Uricase's orthogonality does not rescue the Lf-DAF competition.
+
+### 5.5.3 Triple-Cassette Composition Rule — Two Bounding Models
+
+Pairwise synergy coefficients do not compose trivially for a triple. Two models bound the prediction:
+
+**Model A — Multiplicative pairwise (floor estimate).**
+Treat each pair's synergy as an independent multiplier on the others. The three pairs are Uricase × Lf (midpoint ~0.90), Uricase × DAF (midpoint ~0.925), and Lf × DAF (midpoint ~0.60). Naive multiplication: 0.90 × 0.925 × 0.60 ≈ 0.50. This is a floor because it assumes the three pairwise competitions are independent — that adding a third cassette creates additive marginal penalties. In a saturated system, the third cassette may find the pool already depleted and contribute near-zero additional burden (the marginal cost flattens once the bottleneck is hit). Therefore 0.50 is a conservative lower bound, not the expected value.
+
+**Model B — Chaperone-saturation (upper estimate).**
+If the Lf × DAF pair already saturates PDI/ERO1 at pairwise synergy 0.5–0.7, adding a third cassette (uricase) that is PDI-orthogonal does not worsen the saturated subsystem. The triple-cassette synergy converges to the worst pairwise synergy (Lf × DAF), limited by how far the saturation ceiling has already been hit. Upper bound: if the Lf-alone arm of §1.9 shows >500 mg/L in NSlD-ΔP10 (suggesting the Huynh ceiling is antibody-specific), then the effective PDI capacity for single-chain substrates may accommodate the 25-disulfide load more readily, pushing the saturation-model upper bound toward the higher end of the Lf × DAF range (0.65–0.70).
+
+**Neither model is empirically validated in koji.** The Wakai 2019 verification (§10.1) confirmed that three light-substrate cellulases stack without titer collapse — but all three are fungal-native with negligible disulfide load. There is no published koji-specific data point for a two-PDI-heavy-substrate stacking scenario (the closest is Huynh 2020, which is a dual-chain antibody, not two separate PDI-heavy proteins). The models below should be read with this absence explicitly in mind.
+
+### 5.5.4 Predicted Synergy Range — 0.45–0.70
+
+**Lower bound: ~0.45** (multiplicative pairwise model; no UPR rescue; Huynh ceiling is architecture-independent).
+
+Anchored to: (a) Lf × DAF pairwise prediction of 0.5–0.7, floor 0.5; (b) multiplicative composition reducing the effective triple synergy ~10% below the worst pair; (c) the Huynh 2020 capacity ceiling interpretation where 16 disulfides represents a genuine PDI/ERO1 saturation limit and 25 disulfides exceeds it.
+
+**Named uncertainty sources for the lower bound:**
+- Whether the multiplicative pairwise composition rule holds in a saturated system (it may be an overestimate of penalty if the bottleneck is already hit at the pairwise level)
+- Whether the Huynh ceiling applies to single-chain substrates (Lf is single-chain; adalimumab is dual-chain; §8 item 7)
+
+**Upper bound: ~0.70** (chaperone-saturation model; single PDI overexpression rescue; Huynh ceiling is antibody-specific).
+
+Anchored to: (a) Lf × DAF pairwise upper bound of 0.70; (b) saturation-model composition convergence to the worst pair without additional multiplicative penalty from uricase; (c) if §1.9 Lf-alone arm shows >500 mg/L, the effective PDI capacity for single-chain substrates may accommodate the triple's 25-disulfide load at or near the Lf × DAF pairwise ceiling; (d) single PDI overexpression (one additional cassette) provides 1.05–1.15× rescue in the same-paper comparison to baseline (within Zhang 2006 PMID 16889384; the cross-paper comparison to Yu 2017 is confounded — see §10.1), which can marginally lift the upper bound without displacing it to the >0.85 tier.
+
+**Named uncertainty sources for the upper bound:**
+- Whether the §1.9 Lf-alone result resolves the Huynh ambiguity in the favorable direction (this is the single biggest mover of the range)
+- Whether UPR background upregulation in NSlD-ΔP10 under high-load conditions provides a free rescue effect not captured in the pairwise estimates
+- Whether the Lf × DAF 0.5–0.7 range is itself calibrated correctly (it is an extrapolation from Pichia and *A. niger* data, not a koji-measured value)
+
+**Central expectation: 0.55–0.65.** This lands in the 0.6–0.85 decision gate — feasible with chaperone-helper augmentation, but not cleanly stackable as a simple triple.
+
+### 5.5.5 Decision Threshold Gates
+
+**Important disclaimer:** These thresholds are **framework-convention**, not derived from empirical data. They should be read as "if the wet-lab measurement of the triple-cassette strain lands in this region, this is the recommended decision direction" — not as bright-line rules with mechanistic derivation.
+
+| Measured triple-cassette synergy | Interpretation | Recommended platform direction |
+|---|---|---|
+| **>0.85** | Triple stacks cleanly; PDI subsystem not saturated by the 25-disulfide load. | Pursue triple-cassette endgame strain as the single-strain CP0+CP1-CP6 solution. **Assessed probability: low**, given the Lf × DAF pairwise prediction. Would require the Huynh ceiling to be strongly antibody-architecture-specific AND NSlD-ΔP10 to have unusually high single-chain PDI capacity. |
+| **0.6–0.85** | Feasible with chaperone-helper augmentation. PDI/ERO1 partially saturated but rescuable. | Pursue triple-cassette with a PDI co-expression cassette (4-cassette design). Per §10.1 Zhang 2006 verification (PMID 16889384), **single PDI overexpression alone captures ~1.05-1.15× rescue** (intra-paper comparison; single-chaperone arms gave 4-7×, combinations gave 6.5-8.7×, combination/single advantage = ~1.2-1.5×). The NSlD-ΔP10 host's existing ten-protease-deletion background may also provide an indirect rescue effect by reducing post-secretion degradation of any misfolded intermediate, marginally reducing the apparent PDI bottleneck. **Assessed probability: medium**, dependent on §1.9 Lf-alone resolving the Huynh ambiguity favorably. |
+| **<0.6** | DAF cassette should go on a separate strain (two-strain co-fermentation) or onto the [engineered LBP chassis](./engineered-lbp-chassis.md) as a parallel peer track. The CP0 closure thesis (H05) stays alive in all three cases — only the chassis-route changes. | Maintain uricase + Lf dual-cassette as the endgame strain (CP1-CP6 coverage); route DAF SCR1-4 separately. **Assessed probability: high**, given the Lf × DAF pairwise prediction and the central expectation of 0.55–0.65. |
+
+### 5.5.6 Dominant Predicted Bottleneck
+
+**PDI/ERO1 saturation from the simultaneous Lf + DAF disulfide load (17 + 8 = 25 disulfides)** is the almost-certain dominant bottleneck. Rationale:
+
+- Lactoferrin alone at 17 disulfides already approaches the demonstrated Huynh 2020 capacity ceiling of 16 disulfides (though the antibody-architecture ambiguity in §8 item 7 creates uncertainty about how hard that ceiling is for single-chain substrates).
+- Adding 8 DAF SCR1-4 disulfides pushes the simultaneous PDI/ERO1 load 56% above the Huynh benchmark.
+- Uricase contributes zero disulfides — it does not contribute to this bottleneck.
+- The BiP/Kar2 pathway (which handles all ER-targeted proteins generically) is less likely to be limiting: uricase's transit load is small, DAF SCR1-4 at ~250 aa is also small, and Lf at 691 aa is the largest contributor — consistent with the dual-cassette (comp-010) already being within comfortable BiP range at 1.06× baseline.
+- The calnexin/calreticulin pathway is not predicted to be limiting: Lf has 3 N-glycan sites (moderate), DAF SCR1-4 has 0 sites after stalk truncation, uricase has 0 confirmed sites.
+
+**Cross-reference §8 item 7 (capacity-vs-titer benchmark ambiguity):** If the §1.9 Lf-alone arm demonstrates >500 mg/L Lf in NSlD-ΔP10 solid-state, this indicates the Huynh ceiling is antibody-architecture-specific (dual-chain assembly difficulty, not total disulfide count). In that scenario, the triple-cassette upper bound shifts more favorably — PDI/ERO1 can handle single-chain substrates at higher disulfide loads than the antibody baseline implies, and the predicted bottleneck is less severe. The §1.9 experiment directly resolves this before any triple-cassette wet-lab work is committed.
+
+### 5.5.7 Prospective Falsifiable Prediction
+
+**Framework prediction:** triple-cassette (uricase + Lf + DAF SCR1-4) synergy falls in the range **0.45–0.70** (central expectation 0.55–0.65), with PDI/ERO1 saturation as the dominant bottleneck.
+
+**The falsifiable test:** Wet-lab measurement of the triple-cassette strain's Lf titer (or DAF SCR1-4 titer) in NSlD-ΔP10 solid-state, compared to the dual-cassette (uricase + Lf) baseline measured in the same §1.9 experiment, directly tests this prediction. The synergy coefficient is:
+
+$$
+\text{Synergy}_{\text{triple}} = \frac{\text{Lf titer (triple-cassette strain)} + \text{DAF titer (triple-cassette strain)} + \text{Uricase activity (triple-cassette strain)}}{\text{Lf titer (dual-cassette alone)} + \text{DAF titer (DAF alone)} + \text{Uricase activity (uricase alone)}}
+$$
+
+In practice, measuring Lf titer alone in the triple vs. dual-cassette context gives the cleanest single-protein readout: if **Lf titer in the triple-cassette strain is >85% of the dual-cassette baseline**, the triple stacks cleanly (synergy >0.85 regime). If Lf titer is 60-85% of dual-cassette baseline, augmentation is warranted. If Lf titer drops below 60% of the dual-cassette baseline, separate-strain routing is the framework-recommended direction.
+
+**This is the first real prospective test of whether the chaperone-orthogonal framework has predictive power beyond retrofit.** All existing synergy coefficients were derived to explain known outcomes (Huynh 2020, Wakai 2019, comp-010). The triple-cassette prediction is the first case where the framework commits to a specific outcome *before* wet-lab data exists. Outcome range 0.45–0.70 is a falsifiable prediction; any measured value outside this range (particularly synergy >0.85) would require framework revision.
+
+### 5.5.8 Platform Decision Tree — What This Changes
+
+| Scenario | Probability | Platform direction |
+|---|---|---|
+| Synergy >0.85 (triple stacks cleanly) | Low | Pursue triple-cassette endgame strain as CP0+CP1-CP6 single-strain solution. Four cassette slots free in NSAR1 5-marker platform for downstream additions (kojA/kojR overexpression, carnosine module). |
+| Synergy 0.6–0.85 (feasible with helper augmentation) | Medium | Pursue triple-cassette with single-PDI-overexpression cassette (4-cassette total). Characterize bottleneck (PDI vs. ERO1 vs. BiP) before adding helper, per §7 order-of-operations. NSlD-ΔP10's protease-deletion background may provide partial rescue without a dedicated helper cassette. |
+| Synergy <0.6 (separate-strain routing) | High | Maintain uricase + Lf dual-cassette as the endgame strain. Route DAF SCR1-4 to either: (a) a dedicated second *A. oryzae* strain co-fermented with the dual-cassette strain, OR (b) the engineered LBP chassis ([engineered-lbp-chassis.md](./engineered-lbp-chassis.md)) as a parallel peer track. H05 thesis stays alive — only the chassis-route changes. The endgame strain stays at CP1-CP6 coverage (five chokepoints, four molecules per [koji-endgame-strain.md](./koji-endgame-strain.md) §1); CP0 direct-antagonism coverage becomes a separate-strain or peer-track output. |
+
+**Key point in all three scenarios:** the H05 CP0-closure thesis is not killed by a low triple-cassette synergy — it only changes where the DAF SCR1-4 cassette lives. The platform's five-chokepoint endgame strain design is preserved regardless of which gate the triple-cassette measurement lands in.
+
+**Dependency on §1.9 experiment arms:** The §1.9 wet-lab design now has three cassette-configuration arms relevant to chaperone-load resolution:
+1. **Lf-alone arm** — resolves the capacity-vs-titer ambiguity (§8 item 7). Required before interpreting any dual or triple result.
+2. **Uricase + Lf dual-cassette arm** — validates the comp-010 prediction (1.06× Huynh baseline, within capacity). Required for interpreting the triple.
+3. **Uricase + Lf + DAF SCR1-4 triple-cassette arm** — the prospective falsifiable test of this §5.5 prediction. **Optional for the §1.9 gate decision** (the dual-cassette arm is sufficient to decide whether to proceed with the endgame strain); adds ~$1-2k and 2-3 weeks but provides the framework's first prospective validation data point.
+
+---
+
 ## 6. The Falsifiable Test — Pairwise Expression Matrix
 
 The framework is testable. Construction of a pairwise expression matrix on a small set of representative substrates would either validate or falsify the predicted synergy coefficients.
