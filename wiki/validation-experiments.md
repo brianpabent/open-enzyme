@@ -707,7 +707,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - **Both arms survive ≥30%:** extract-vs-biomass distinction doesn't matter for native enzymes; substrate or food-matrix is the driver. Decouples the construct decision.
 - **Both arms <10%:** native enzyme delivery via koji is inherently limited to pre-ingestion (marinade) effects; engineered delivery requires enteric coating regardless of intracellular vs. secreted strategy.
 
-**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Proposed Experiment #3; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §06 (Koji-S vs. Koji-I trade-off); [digestive-enzyme-optimization.md](./digestive-enzyme-optimization.md) §4 (native enzyme activity).
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Proposed Experiment #3; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §06 (Koji-S vs. Koji-I trade-off); [digestive-enzyme-optimization.md](./digestive-enzyme-optimization.md) §4 (native enzyme activity); [enzyme-quantification-protocol.md](./enzyme-quantification-protocol.md) §3 + §5 (assay methodology + sample-prep for the readouts above).
 
 ---
 

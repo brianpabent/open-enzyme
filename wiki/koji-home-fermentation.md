@@ -203,7 +203,7 @@ A pedagogical note for the engineered-strain rollout: the engineered-strain plat
 
 ## Open questions
 
-- Quantitative comparison of shio-koji enzyme activity (units/g) vs. commercial PERT (Creon, Zenpep) units per pill. Lab-measurable but not yet done.
+- Quantitative comparison of shio-koji enzyme activity (units/g) vs. commercial PERT (Creon, Zenpep) units per pill. Lab-measurable; methodology now specified in [enzyme-quantification-protocol.md](./enzyme-quantification-protocol.md) (tiered home → bench → outsource path). Tier 3 first-run is the load-bearing experiment that converts ongoing batch QC into clinically interpretable percent-of-Creon-cap-equivalent figures.
 - Gastric survival of shio-koji-derived enzymes vs. enteric-coated PERT. Hypothesis: poor without coating; useful only for pre-digestion in marinade phase, not in-gut activity post-ingestion.
 - Lipase activity of *A. oryzae* shio-koji (low compared to *A. niger* or engineered strains) — likely the limiting digestive-enzyme axis for fat malabsorption phenotype EPI.
 - Comparative evidence: any human studies of koji-fermented diets in EPI specifically? (Not aware of any; would be valuable.)
