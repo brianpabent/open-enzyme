@@ -122,4 +122,5 @@ Anticipated structure:
 - [`modality-chokepoint-matrix.md`](../modality-chokepoint-matrix.md) — the matrix's "Engineered soluble complement regulators" row (now reflecting comp-012 verdict)
 - [`koji-endgame-strain.md`](../koji-endgame-strain.md) — could add CP0 as a candidate row alongside the four current chokepoints if H05 progresses through wet-lab
 - [`linter-design.md`](../linter-design.md) — schema for the Falsification Card format
+- [`validation-experiments.md` §1.25](../validation-experiments.md) — formalized wet-lab gate (single-cassette DAF SCR1-4 expression in *A. oryzae*); readouts directly address the three named wet-lab unknowns above (titer / disulfide folding / CCP-regulatory activity). Single-cassette routing per [`chaperone-orthogonal-stacking.md` §5.5](../chaperone-orthogonal-stacking.md) triple-cassette prediction landing below 0.6 decision gate.
 - [H01](./H01-ward-dual-cassette.md), [H02](./H02-engineered-lbp-thesis.md), [H03](./H03-sirna-urat1-thesis.md), [H04](./H04-tcm-rigor-intersection.md) — sibling falsification cards

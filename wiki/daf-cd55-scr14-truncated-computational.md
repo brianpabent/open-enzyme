@@ -167,6 +167,8 @@ The computational feasibility gate is cleared. The logical next step is a minima
 
 **Collaboration context:** comp-006 cross-references Rheinallt Jones (Emory, immunology) and Lauren Collier-Hyams (Emory, epithelial biology) as potential collaborators for functional complement assays. Expression screen could be a Phase 0 co-experiment if collaboration is established.
 
+**Formalized as [`validation-experiments.md` §1.25](./validation-experiments.md) (2026-05-06):** the full wet-lab protocol with construct design, host strain selection (RIB40 first; NSlD-ΔP10 unlikely needed for single-cassette per Item 10 chaperone framework refinement), readouts (SDS-PAGE reducing+non-reducing / anti-DAF Western / anti-DAF ELISA / mass spec disulfide-pairing / zymosan C5a inhibition / native metabolite carryover), success criteria (≥50 mg/L titer + ≥40% native folded form + ≥30% C5a inhibition), cost ($2.5-4K), timeline (6-8 weeks), and Accept/Iterate/Reject thresholds — with explicit single-cassette routing per the [`chaperone-orthogonal-stacking.md` §5.5 triple-cassette prediction](./chaperone-orthogonal-stacking.md) landing below 0.6 decision gate (architecture-refined 2026-05-06).
+
 ---
 
 ## Cross-references
@@ -178,3 +180,6 @@ The computational feasibility gate is cleared. The logical next step is a minima
 - [lactoferrin-protease-stability-computational.md](./lactoferrin-protease-stability-computational.md) — comp-005; the HIGH/MODERATE comparison
 - [computational-experiments.md](./computational-experiments.md) — tracking index
 - [engineered-koji-protocol.md](./engineered-koji-protocol.md) — A. oryzae expression context
+- [validation-experiments.md §1.25](./validation-experiments.md) — formalized wet-lab gate experiment (2026-05-06)
+- [chaperone-orthogonal-stacking.md §5.5](./chaperone-orthogonal-stacking.md) — triple-cassette prediction (architecture-refined 2026-05-06) that motivated single-cassette routing for §1.25
+- [hypotheses/H05-daf-scr14-cp0-thesis.md](./hypotheses/H05-daf-scr14-cp0-thesis.md) — falsification card; §1.25 readouts directly address H05's three named wet-lab unknowns
