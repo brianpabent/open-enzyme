@@ -28,7 +28,7 @@ related:
   - open-questions.md
   - synthesis.md
   - hypotheses/H04-tcm-rigor-intersection.md
-  - ward-1995-lab-access-global.md
+  - ../operations/ward-1995-lab-access.md
 sources:
   - "Yang Y, Cao Y, Wu Y, et al. Si Miao Wan in hyperuricemia / gout meta-analyses (Chinese clinical trials, ChiCTR registry)"
   - "Li S, Wang Z, Chen S, et al. Smilax glabra (Tu Fu Ling) and gout — modern biochemical and clinical reviews"
