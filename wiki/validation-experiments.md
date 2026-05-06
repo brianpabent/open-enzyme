@@ -1242,6 +1242,36 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Cross-references:** [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (parent scope); [H06](./hypotheses/H06-medicinal-mushroom-complement-track.md) Dimension 3; [SOP-1](./medicinal-mushroom-extract-sops.md) (gating dependency); §1.25 DAF SCR1-4 (sister wet-lab gate sharing lab-access infrastructure).
 
+#### Phase 7-4b follow-up — koji × mushroom additivity arm (queued, gated on §2.6 base results, added 2026-05-06)
+
+**Status**: Queued (gated on §2.6 base study confirming mushroom synergy) | **Cost adder**: ~$1.5–2.5K | **Weeks adder**: 1–2 wk if run as scope expansion of §2.6; 6+ months as standalone follow-up
+
+**What it tests:** does the multi-track urate transporter coverage map (per [`gout-pathophysiology.md` §"Multi-track urate transporter coverage"](./gout-pathophysiology.md)) compose **additively** when koji and mushroom tracks are combined, or is there a **ceiling effect** where additional mechanisms stop reducing serum urate? The §2.6 base study (4 arms) tests cordycepin × GLPP × pentostatin within the medicinal-mushroom track only; it does NOT test koji × mushroom combinations. This follow-up adds a 5th arm explicitly designed to answer the additivity question.
+
+**Why this matters:** the multi-track coverage map is currently an *emergent designed-coverage pattern* (each track chosen for an independent therapeutic mechanism, multi-node coverage fell out as accident). Whether the implied "stack the tracks for additive serum-urate reduction" recommendation actually holds is a load-bearing assumption for any consumer-product framing combining engineered koji + cultivated mushroom extracts. If additivity holds → multi-track stacking is a real platform-level differentiator; if a ceiling effect dominates → tracks should be presented as alternatives, not stack.
+
+**Proposed in:** 2026-05-06 sweep Open Question 2 + Item 5 multi-track coverage subsection synthesis. Reviewer recommended promoting from Open Question to Priority Action; chosen Option B (queued follow-up gated on §2.6 base) over Option A (concurrent 5th arm) to preserve clean attribution in the §2.6 base study and avoid §1.9-strain-readiness dependency.
+
+**Proposed protocol (stub-level, fires on §2.6 success gate):**
+- **Arm 5 (added):** **best-performing arm from §2.6** (likely arm 1 whole-fermentate Cordyceps + GLPP based on Phase 6 triage prior) **+ engineered-koji uricase strain** (per [`koji-endgame-strain.md`](./koji-endgame-strain.md), delivered as koji-condiment in food matrix, dose-matched to deliver gut-luminal uricase activity comparable to Huynh 2020 baseline)
+- **n=8** (matches §2.6 arm sizing; powered for 25% incremental SUA reduction over arm 1)
+- **Same model** (PO+HX hyperuricemia mouse), **same readouts** (SUA d14, cordycepin PK, URAT1/GLUT9/OAT1 mRNA), **same duration** (14 days)
+- **Additional readout:** kidney-side urate dynamics (incremental gut-lumen sink contribution measurable as d14 urinary urate excretion increase relative to arm 1)
+
+**Success criteria:**
+- **Additivity confirmed**: arm 5 SUA reduction ≥ arm-1 reduction + 8% (incremental ≥1/3 of arm-1 effect, mechanism-independent gut-lumen sink contribution); urinary urate d14 elevated vs. arm 1 (consistent with luminal degradation pulling serum urate into gut)
+- **Ceiling effect dominates**: arm 5 SUA reduction within ±5% of arm 1 (no incremental benefit) → multi-track stacking should NOT be presented as platform-level differentiator; tracks become alternatives, not stack
+- **Synergy (rare but possible)**: arm 5 SUA reduction > arm-1 + 15% (greater than mechanism-independent additivity; investigate gut-axis interaction, e.g., uricase-degraded urate metabolites affecting transporter expression)
+
+**Decision gate to fire this follow-up:** §2.6 arm 1 (whole-fermentate Cordyceps) achieves ≥20% SUA reduction. If §2.6 base mushroom synergy fails (<10% across arms), this follow-up is moot — no point spending $2K to confirm "still doesn't work." If §2.6 succeeds at ≥20%, Phase 7-4b becomes the next-cycle priority for the medicinal-mushroom track.
+
+**Limitations:**
+- Engineered-koji uricase strain readiness: gated on Ward 1995 §1.9 (#1 priority dual-cassette feasibility test). If §1.9 hasn't returned positive results by §2.6 conclusion, Phase 7-4b waits for §1.9 OR uses a documented surrogate (Huynh 2020 koji-uricase strain reproduction).
+- 14-day duration captures acute additivity, not chronic durability — long-term follow-up separate experiment if positive.
+- Mouse strain consistency with §2.6 base must be maintained (no cross-cohort comparisons).
+
+**Cross-references:** [gout-pathophysiology.md §"Multi-track urate transporter coverage"](./gout-pathophysiology.md) (the coverage map this follow-up tests); §2.6 base (parent study); [§1.9 Ward 1995](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) (engineered-koji-uricase-strain dependency); [`koji-endgame-strain.md`](./koji-endgame-strain.md) (koji track context).
+
 ---
 
 ## Phase 3: Human Self-Experimentation and Biomarker Tracking
