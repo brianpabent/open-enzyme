@@ -265,6 +265,28 @@ The [TCM × Modern Rigor scope page](./tcm-modern-rigor-intersection.md) (commit
 
 Phase 3 reflection (content-triggered, not calendar-triggered): does the TCM-rigor track accumulate enough substance to elevate from "methodology lens" to "first-class discovery-engine output named in `open-enzyme-vision.md` §2.2 alongside the repurposing-surface candidates"? Trigger: after P2-1 through P2-6 land.
 
+### Medicinal mushroom complement — Phase 7 peer track (cultivation, not engineering)
+
+The [Medicinal Mushroom Complement Track scope page](./medicinal-mushroom-complement-track.md) (committed 2026-05-06) formalizes native-compound medicinal mushrooms (*Ganoderma lucidum* GLPP, *Cordyceps militaris* cordycepin+pentostatin, *Pleurotus citrinopileatus* ergothioneine, *Lentinula edodes* eritadenine, *Hericium erinaceus* erinacines, *Trametes versicolor* PSK, *Inonotus obliquus* inotodiol) as a peer track to engineered koji / engineered LBPs / siRNA discovery. Different engineering discipline (cultivation + extraction, NO genetic engineering); different consumption UX (decoction / tincture / dried fruiting body vs koji condiments); regulatory simplicity (GRAS food / supplement-grade, no GMO burden). Six Phase 7 follow-ups status per [scope page §6](./medicinal-mushroom-complement-track.md):
+
+- **#1 Strain selection lit scan ✅** (multilingual, 2026-05-06; outputs: Ganoderma / Cordyceps / Pleurotus per-species scan files in comp-014 outputs dir)
+- **#2 Cultivation × yield meta-analysis ✅** (2026-05-06)
+- **#3 Extract characterization SOPs** — stub at [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) (SOP-1 GLPP gated on Phase 5b CNKI dive; SOP-3 EGT lowest-friction)
+- **#4 GLPP+cordycepin synergy wet-lab gate** — stub at [`validation-experiments.md` §2.6](./validation-experiments.md) (4-arm: whole-fermentate / cordycepin / cordycepin+GLPP / cordycepin+pentostatin)
+- **#5 H06 hypothesis card ✅** (stub at [`hypotheses/H06-medicinal-mushroom-complement-track.md`](./hypotheses/H06-medicinal-mushroom-complement-track.md))
+- **#6 Modality-chokepoint-matrix native-compound row ✅** (2026-05-06)
+
+**Brian CTO-actionable TODOs** (no scientific expertise required, registered for umbrella TODO aggregation per CLAUDE.md):
+
+- **TODO-1** — Order *P. citrinopileatus* (golden oyster) grow kit (~$30); run Phase 7-2 home-cultivation protocol; freeze-dry harvest. Self-experiment data validating OE reproducibility-layer thesis. ☐ Open. ($30 + 3 weeks elapsed)
+- **TODO-2** — Email Lin Zhanxi 林占熺 lab (Fujian Agriculture & Forestry U / Juncao Center) for Juncao GLPP cultivation SOP referenced in PMID 36385640. ☐ Open. (10 min) Closes load-bearing CNKI gating dependency for SOP-1.
+- **TODO-3** — Open GitHub Issue "Phase 5b CNKI/J-STAGE/KISS deep-dive contributions wanted" with Phase 7-1 scan outputs as contributor brief. ☐ Open. (15-20 min) Community-sources institutional-access problem.
+- **TODO-4** — Frame comp-014 findings as recruiting material for the three open collaborator roles (Gut Microbiome / Pharma Translation / Innate Immune Safety) per [`team.md`](./team.md). ☐ Open. (30-60 min drafting) Suggested timing: after TODO-1/2/3 land.
+
+Full detail + maintenance protocol: [`medicinal-mushroom-complement-track.md` §"CTO-actionable items"](./medicinal-mushroom-complement-track.md#cto-actionable-items-no-scientific-expertise-required-doable-from-desk-this-week).
+
+Phase 3 reflection (content-triggered, not calendar-triggered): does the medicinal-mushroom-complement track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to include native-compound producers as first-class platform contribution? Likely yes given the regulatory simplicity + home-fermentability + multi-compound-per-species advantages, but defer formal reflection until SOP-3 (EGT) lands as proof-of-concept.
+
 ### siRNA against URAT1 — discovery-engine output (peer-track exploration vector to LBP)
 
 The [siRNA / URAT1 modality](./sirna-urat1-modality.md) page (committed 2026-05-05 as scope-page in response to 2026-05-05 sweep Priority Action #3) formalizes kidney-tropic siRNA against URAT1 mRNA as a **discovery-engine output** — non-fermentable, non-microbial, positioned for partner / spinout development rather than in-house manufacture. Sister to the [LBP chassis](./engineered-lbp-chassis.md) under the broader chase-every-avenue framing. Six in silico Phase 2 follow-ups queued — none requires pharma-partner involvement to start:
