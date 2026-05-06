@@ -1,6 +1,48 @@
 {
   "_doc": "Data sources planned for comp-014 multi-database aggregation. Phase 1 (this commit) registers sources and access methods; Phase 2 executes the aggregation. Per Open Enzyme/CLAUDE.md global-multilingual-research rule, non-English-corpus sources are first-class — not 'language barrier' caveats.",
-  "_phase_1_status": "scope only — no DB calls executed",
+  "_phase_1_status": "scope only — no DB calls executed in Phase 1; Phase 2a starts now",
+  "toxicity_reference_databases": {
+    "FDA_GRAS_Notice_Inventory": {
+      "url": "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory",
+      "use": "Inclusion list — fungal species with explicit FDA food-safety review."
+    },
+    "EFSA_QPS_list": {
+      "url": "https://www.efsa.europa.eu/en/topics/topic/qualified-presumption-safety-qps",
+      "use": "Inclusion list — biennially-updated EFSA Qualified Presumption of Safety microorganism list."
+    },
+    "WHO_Fungal_Priority_Pathogens_2022": {
+      "url": "https://www.who.int/publications/i/item/9789240060241",
+      "use": "Hard exclusion — 19 species causing serious human invasive disease."
+    },
+    "FDA_EFSA_Mycotoxin_DBs": {
+      "use": "Hard exclusion — mycotoxin-producing species (aflatoxin, ochratoxin, fumonisin, trichothecene, ergot, amatoxin)."
+    },
+    "DEA_Schedule_I_II": {
+      "url": "https://www.deadiversion.usdoj.gov/schedules",
+      "use": "Hard exclusion — controlled-substance-producing fungi (Psilocybe spp.)."
+    },
+    "ClinicalTrials_gov_WHO_ICTRP_ChiCTR": {
+      "use": "Inclusion list — any registered human clinical trial implies regulatory safety review preceded the trial."
+    },
+    "_full_filter_definition": "see toxicity-filter.json"
+  },
+  "translation_models_for_phase_5": {
+    "_principle": "Per Open Enzyme/CLAUDE.md §Translation protocol, two-model independent cross-check with inline disagreement annotations. Brian framing 2026-05-06: 'really cheap to use DeepSeek to read those papers' — confirmed: DeepSeek as Model B for Chinese sources is the cheap+native-fluency choice; same heterogeneity-guard pattern the wiki sweep daemon already uses (Pass 4 DeepSeek peer review).",
+    "Chinese_sources_CNKI_Wanfang": {
+      "model_a": "Claude Sonnet 4.6 (or Opus 4.7) — primary Western-trained substrate",
+      "model_b": "DeepSeek V4-Pro via OpenRouter — Chinese-vendor, native Mandarin fluency, ~$0.14/M tokens (vs. Claude $15-75/M).",
+      "cost_estimate": "~$0.05/paper at typical paper length; thousands of papers = couple hundred USD total — not a real gate."
+    },
+    "Japanese_sources_JSTAGE_CiNii": {
+      "model_a": "Claude Sonnet 4.6",
+      "model_b": "Gemini 2.5 Pro OR DeepSeek (DeepSeek reasonable Japanese fluency despite Chinese-vendor — the multi-vendor heterogeneity guard is what matters, not language-vendor exact match)"
+    },
+    "Korean_sources_KISS_RISS": {
+      "model_a": "Claude",
+      "model_b": "Gemini 2.5 Pro OR GPT-5 — no Korean-vendor frontier model in standard set; two competent Western-trained models acceptable per CLAUDE.md."
+    },
+    "openrouter_proxy": "All non-Anthropic models hit via OpenRouter (https://openrouter.ai) — same pattern wiki sweep daemon uses (per Open Enzyme/CLAUDE.md §sweep daemon)."
+  },
   "compound_databases": {
     "LOTUS": {
       "url": "https://lotus.naturalproducts.net",

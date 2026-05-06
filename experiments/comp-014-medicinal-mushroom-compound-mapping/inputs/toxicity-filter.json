@@ -1,0 +1,98 @@
+{
+  "_doc": "Operational definition of 'known to be not toxic' for comp-014 species inclusion. Replaces the curated-candidate-list approach. Phase 2 pulls fungal-compound records species-agnostically from LOTUS / NPAtlas / KNApSAcK / NPASS / TCMSP, then applies this filter to the unique species list that emerges. Inclusion-OR (any positive match → include); Exclusion-OR (any positive match → drop, regardless of inclusion-list status — exclusion takes precedence).",
+  "_principle": "Brian framing 2026-05-06: 'we don't want to get every fungus, but we don't want to get toxic ones. So can we get the ones that are known to be not toxic?' Operationalized via authoritative safety lists rather than Claude's judgment.",
+  "inclusion_lists": {
+    "FDA_GRAS_Notice_Inventory": {
+      "url": "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory",
+      "scope": "FDA Generally Recognized As Safe notices for food use. Explicit positive safety review.",
+      "use": "Any fungal species with a GRAS Notice (any GRN number) is automatically included.",
+      "examples": ["Aspergillus oryzae", "Aspergillus sojae", "Saccharomyces cerevisiae", "Pichia pastoris", "Yarrowia lipolytica", "Mortierella alpina"]
+    },
+    "EFSA_QPS_list": {
+      "url": "https://www.efsa.europa.eu/en/topics/topic/qualified-presumption-safety-qps",
+      "scope": "EFSA Qualified Presumption of Safety — biennially-updated list of food-grade microorganisms (bacteria, yeasts, filamentous fungi). Most recent update typically late in calendar year.",
+      "use": "Any fungal species on the QPS list (and the species-complex it represents) is included.",
+      "examples": ["Aspergillus niger", "Aspergillus oryzae", "Aspergillus sojae", "Hamamotoa singularis", "Saccharomyces cerevisiae", "Komagataella phaffii (Pichia pastoris)", "Yarrowia lipolytica"]
+    },
+    "Codex_Alimentarius_food_use": {
+      "url": "https://www.fao.org/fao-who-codexalimentarius",
+      "scope": "FAO/WHO Codex Alimentarius — international food safety standards including approved fungi for food and food-additive production.",
+      "use": "Any fungus with documented Codex food-use precedent included."
+    },
+    "Traditional_pharmacopoeia": {
+      "sources": [
+        "Chinese Pharmacopoeia (中华人民共和国药典) — current edition + historical materia medica references via TCMID/TCMSP/HIT",
+        "Japanese Pharmacopoeia (日本薬局方) — current edition + Kampo materia medica",
+        "Korean Pharmacopoeia (대한민국약전) — current edition + traditional Korean medicine references",
+        "United States Pharmacopoeia (USP) — herbal section + dietary supplement monographs",
+        "European Pharmacopoeia (Ph. Eur.) — herbal monographs"
+      ],
+      "scope": "Listing in any current pharmacopoeia (esp. herbal/traditional sections) implies long-standing human use without acute toxicity flag.",
+      "use": "Cross-reference Phase 2 species list against pharmacopoeia herbal/traditional sections."
+    },
+    "Published_human_clinical_trials": {
+      "sources": ["ClinicalTrials.gov (search filter: intervention contains species name)", "WHO ICTRP (International Clinical Trials Registry Platform)", "ChiCTR (China Clinical Trial Registry)", "PubMed published RCTs and Phase I-IV trials"],
+      "scope": "Any fungal species that has been administered to humans in a registered clinical trial implies a regulatory safety review preceded the trial.",
+      "use": "Inclusion if ≥1 trial registry entry exists, regardless of trial outcome.",
+      "examples": ["Trametes versicolor PSK (FDA-approved adjuvant in Japan)", "Cordyceps militaris (numerous Chinese trials)", "Ganoderma lucidum (numerous trials including FDA-IND-cleared studies)", "Hericium erinaceus", "Antrodia camphorata antroquinonol (Phase II oncology)"]
+    },
+    "LOTUS_NPAtlas_records_without_mycotoxin_flag": {
+      "scope": "Compounds appearing in LOTUS or NPAtlas with a fungal source-organism annotation, where neither the compound nor the source species appears in the mycotoxin reference DB.",
+      "use": "Default inclusion for less-studied species — environmental isolate or research-only fungus with characterized chemistry but no documented human exposure.",
+      "flag": "Mark as 'safety_review_pending' so Phase 4-5 re-checks before downstream recommendation."
+    }
+  },
+  "exclusion_lists": {
+    "WHO_Fungal_Priority_Pathogens_2022": {
+      "url": "https://www.who.int/publications/i/item/9789240060241",
+      "scope": "WHO 2022 priority pathogens list — 19 fungal species causing serious human invasive disease.",
+      "critical_priority": ["Cryptococcus neoformans", "Candida auris", "Aspergillus fumigatus", "Candida albicans"],
+      "high_priority": ["Nakaseomyces glabrata (Candida glabrata)", "Histoplasma spp.", "eumycetoma causative agents", "Mucorales", "Fusarium spp.", "Candida tropicalis", "Candida parapsilosis"],
+      "medium_priority": ["Scedosporium spp.", "Lomentospora prolificans", "Coccidioides spp.", "Pichia kudriavzevii (Candida krusei)", "Cryptococcus gattii", "Talaromyces marneffei", "Pneumocystis jirovecii", "Paracoccidioides spp."],
+      "use": "Hard exclusion — any species on this list is dropped regardless of compound bioactivity. Note: this excludes most Fusarium spp. and Aspergillus fumigatus, but A. oryzae / A. niger / A. sojae remain included via GRAS/QPS — Aspergillus genus does not exclude as a whole."
+    },
+    "Mycotoxin_producers": {
+      "sources": ["FDA Mycotoxin reference data", "EFSA mycotoxin guidance documents", "JECFA monographs (FAO/WHO Joint Expert Committee on Food Additives)"],
+      "scope": "Documented producers of acutely toxic compounds at human-exposure-relevant doses.",
+      "exclude_species_dominated_by_toxin_profile": [
+        "Aspergillus flavus (aflatoxin B1/B2/G1/G2 — hepatocarcinogen)",
+        "Aspergillus parasiticus (aflatoxin)",
+        "Aspergillus carbonarius (ochratoxin A)",
+        "Penicillium expansum (patulin)",
+        "Penicillium verrucosum (ochratoxin A)",
+        "Fusarium graminearum (deoxynivalenol/zearalenone)",
+        "Fusarium verticillioides (fumonisins)",
+        "Stachybotrys chartarum (trichothecenes — black mold)",
+        "Claviceps purpurea (ergot alkaloids — historical interest only; LSD origin)",
+        "Amanita phalloides / A. virosa (amatoxins, lethal)",
+        "Amanita muscaria (muscimol/ibotenic acid — neurotoxic)",
+        "Cortinarius rubellus / C. orellanus (orellanine — nephrotoxic)",
+        "Gyromitra esculenta (gyromitrin — hepatotoxic, carcinogen)",
+        "Inocybe spp. (muscarine)",
+        "Galerina marginata (amatoxins)",
+        "Lepiota brunneoincarnata (amatoxins)"
+      ],
+      "use": "Hard exclusion. If a compound from one of these species has chokepoint relevance, it gets manual-review status — the chemistry may be valuable but the producing organism cannot be the production chassis."
+    },
+    "Schedule_I_II_controlled_substance_producers": {
+      "url": "https://www.deadiversion.usdoj.gov/schedules",
+      "scope": "DEA Schedule I/II controlled-substance-producing fungi. Not actionable for Open Enzyme commercial path.",
+      "examples": ["Psilocybe cubensis", "Psilocybe semilanceata", "Psilocybe mexicana", "Panaeolus cyanescens (psilocybin)", "Conocybe (psilocybin some species)"],
+      "use": "Hard exclusion for breadth pass. Research interest exists separately; defer to clinical trial channel."
+    },
+    "Plant_pathogens_dominated_by_toxin_profile": {
+      "scope": "Agricultural plant pathogens whose human-relevant compound profile is dominated by mycotoxins or whose ecological role is causing crop disease.",
+      "examples": ["Magnaporthe oryzae (rice blast — no documented medicinal chemistry)", "Puccinia graminis (wheat rust)", "Phytophthora spp. (oomycete, not true fungi but often grouped)"],
+      "use": "Soft exclusion — if a compound from one of these species shows chokepoint relevance via Phase 4 intersection, manual review."
+    }
+  },
+  "grey_zone_protocol": {
+    "definition": "Species appearing in NEITHER inclusion list NOR exclusion list. Most likely environmental isolates with no documented human exposure data — neither evidence-of-safety nor evidence-of-harm.",
+    "default_handling": "Include with safety_review_pending flag.",
+    "Phase_4_5_treatment": "If chokepoint intersection promotes a grey-zone species as a candidate, Phase 5 does explicit human-exposure-data lookup before any downstream recommendation. Look for: documented natural occurrence in foodstuffs, documented allergenic reactions, documented case reports of clinical infection."
+  },
+  "expected_yield": {
+    "rough_estimate": "500-2000 unique species after filtering across LOTUS + NPAtlas + KNApSAcK + NPASS + TCMSP. Phase 2a (LOTUS only) likely surfaces ~500-1000 fungal species. Phase 2b (NPAtlas) is microbial-NP focused with strong fungal coverage, likely ~300-500 distinct species after dedup with LOTUS. KNApSAcK adds the East-Asian-traditional-medicine corpus.",
+    "anchor_species_check": "phase-5-anchor-species.json contains 18 well-studied medicinal fungi. The breadth pass should surface all 18 — if any are missing from the Phase 2 output, that indicates a pipeline bug (filter too aggressive, or DB pull missed records). Sanity-check fail triggers re-run, not soft-fail-with-warning."
+  }
+}

@@ -1,0 +1,483 @@
+{
+  "_meta": {
+    "date": "2026-05-06",
+    "phase": "2c",
+    "method": "PubMed search across 3 axes — chokepoint × fungus, species × indication, multilingual catch-net (English-abstract-indexed Asian papers). Tool: mcp__plugin_pubmed_PubMed__search_articles + get_article_metadata. All citations via PubMed.",
+    "scope_note": "Breadth pass: titles + abstracts only (no full-text reads). Phase 5 will deep-dive top candidates. Open-access broad reviews (e.g. NLRP3 mechanism reviews not directly fungal) were filtered out of the by_chokepoint extraction.",
+    "attribution": "PubMed via NCBI E-utilities. DOIs preserved per article."
+  },
+  "_summary": {
+    "searches_run": 17,
+    "axes": {
+      "axis_1_chokepoint_fungus": 10,
+      "axis_2_species_indication": 5,
+      "axis_3_multilingual_catchnet": 2
+    },
+    "papers_metadata_fetched": 92,
+    "high_signal_hits": 14,
+    "total_pubmed_results_estimated": ">8000 across all axes (most off-target, primary signal concentrated in XO/NLRP3/hyperuricemia axes; URAT1/ABCG2 thinner; C5aR1 essentially zero direct fungal antagonist hits)"
+  },
+  "by_chokepoint": {
+    "XO_xanthine_oxidase": [
+      {
+        "pmid": "35750011",
+        "doi": "10.1016/j.fitote.2022.105202",
+        "title": "Hypouricemic effect of 2,4-dihydroxybenzoic acid methyl ester in hyperuricemic mice through inhibiting XOD and down-regulating URAT1.",
+        "year": "2022",
+        "evidence_level": "animal",
+        "fungus": "Ganoderma applanatum",
+        "compound": "2,4-dihydroxybenzoic acid methyl ester (DAE)",
+        "finding": "DAE (Ganoderma applanatum) reduces serum uric acid in mice from 407 to 134 µmol/L via dual XOD inhibition and URAT1 down-regulation — DUAL-CHOKEPOINT hit, in vivo, structurally allopurinol-like."
+      },
+      {
+        "pmid": "36801789",
+        "doi": "10.1016/j.ijbiomac.2023.123695",
+        "title": "Anti-gout activity and the interaction mechanisms between Sanghuangporus vaninii active components and xanthine oxidase.",
+        "year": "2023",
+        "evidence_level": "in vitro + animal",
+        "fungus": "Sanghuangporus vaninii (Phellinus / Sanghuang)",
+        "compound": "davallialactone",
+        "finding": "Davallialactone isolated from S. vaninii at 97.7% purity exhibits mixed XO inhibition with IC50 = 90.07 µM."
+      },
+      {
+        "pmid": "37734263",
+        "doi": null,
+        "title": "Inhibition of xanthine oxidase-catalyzed xanthine and 6-mercaptopurine oxidation by luteolin, naringenin, myricetin, ampelopsin and their conjugated metabolites.",
+        "year": "2023",
+        "evidence_level": "in vitro",
+        "fungus": "n/a (plant flavonoids — included as substrate-pharmacology reference)",
+        "compound": "luteolin, naringenin, myricetin, ampelopsin",
+        "finding": "Reference paper for flavonoid XO mechanism — sulfate/glucuronide conjugates often retain inhibitory activity, important for mushroom-derived flavonoid bioavailability framing."
+      },
+      {
+        "pmid": "30980888",
+        "doi": null,
+        "title": "Novel xanthine oxidase-based cell model using HK-2 cell for screening antihyperuricemic functional compounds.",
+        "year": "2019",
+        "evidence_level": "in vitro",
+        "fungus": "n/a (assay methodology)",
+        "compound": "n/a",
+        "finding": "HK-2 cell-based XO assay — useful screening platform for fungal extracts."
+      },
+      {
+        "pmid": "40158583",
+        "doi": null,
+        "title": "Diacylglycerol from camellia oil improves hyperuricemia by inhibiting xanthine oxidase and modulating gut microbiota.",
+        "year": "2025",
+        "evidence_level": "animal",
+        "fungus": "n/a (camellia oil — non-fungal but co-indexed)",
+        "compound": "diacylglycerol",
+        "finding": "Off-target for our scope but useful microbiota-axis comparator."
+      },
+      {
+        "pmid": "40388492",
+        "doi": null,
+        "title": "Galangin Protects against Hyperuricemia via Ameliorating Gut-Kidney Axis Dysfunction in Mice.",
+        "year": "2025",
+        "evidence_level": "animal",
+        "fungus": "n/a (galangin from propolis/Alpinia — flavonoid)",
+        "compound": "galangin",
+        "finding": "Flavonoid hits XO + gut-kidney axis. Comparator for fungal flavonoid programs."
+      },
+      {
+        "pmid": "29735945",
+        "doi": null,
+        "title": "Hypouricemic Effect of 2,5-Dihydroxyacetophenone, a Computational Screened Bioactive Compound from [Cordyceps], on Hyperuricemic Mice.",
+        "year": "2018",
+        "evidence_level": "animal",
+        "fungus": "Cordyceps spp.",
+        "compound": "2,5-dihydroxyacetophenone (DHAP)",
+        "finding": "DHAP from Cordyceps reduces SUA, inhibits hepatic XOD, computationally screened against XO active site."
+      }
+    ],
+    "URAT1": [
+      {
+        "pmid": "35750011",
+        "doi": "10.1016/j.fitote.2022.105202",
+        "title": "Hypouricemic effect of 2,4-dihydroxybenzoic acid methyl ester in hyperuricemic mice through inhibiting XOD and down-regulating URAT1.",
+        "year": "2022",
+        "evidence_level": "animal",
+        "fungus": "Ganoderma applanatum",
+        "compound": "2,4-dihydroxybenzoic acid methyl ester (DAE)",
+        "finding": "Same DAE entry — also down-regulates URAT1 (this is the load-bearing dual-chokepoint hit)."
+      },
+      {
+        "pmid": "29422889",
+        "doi": null,
+        "title": "Cordycepin, a Characteristic Bioactive Constituent in [Cordyceps], Ameliorates Hyperuricemia through URAT1 in Hyperuricemic Mice.",
+        "year": "2018",
+        "evidence_level": "animal",
+        "fungus": "Cordyceps militaris (cordycepin = 3'-deoxyadenosine)",
+        "compound": "cordycepin",
+        "finding": "Cordycepin lowers SUA from 337 to 203 µmol/L via URAT1 modulation — direct URAT1 chokepoint hit, dose-response, mouse model."
+      },
+      {
+        "pmid": "37279627",
+        "doi": null,
+        "title": "Sanghuangporus vaninii ethanol extract alleviates hyperuricemic renal injury by regulating the uric acid transporters and inhibiting HK-2 apoptosis.",
+        "year": "2023",
+        "evidence_level": "animal",
+        "fungus": "Sanghuangporus vaninii",
+        "compound": "ethanol extract (mixed)",
+        "finding": "S. vaninii ethanol extract regulates uric acid transporters (URAT1/GLUT9/OAT1/ABCG2 family) — extract-level evidence; component-level identification still needed."
+      },
+      {
+        "pmid": "41905012",
+        "doi": "10.1016/j.bioorg.2026.109806",
+        "title": "Biotransformation-derived metabolites from Astragalus membranaceus and Cordyceps militaris alleviate hyperuricemia via multi-target regulation.",
+        "year": "2026",
+        "evidence_level": "animal",
+        "fungus": "Cordyceps militaris (co-fermented with Astragalus)",
+        "compound": "AMC-BFE (mixed extract)",
+        "finding": "AMC-BFE downregulates URAT1 + GLUT9, alters ABCG2, activates PPARα — multi-chokepoint extract; LC-MS/MS profile shows isoflavone aglycones, nucleosides, polyols. URAT1 + ABCG2 + PPARα triple-leverage."
+      },
+      {
+        "pmid": "35714456",
+        "doi": null,
+        "title": "Caffeic acid phenethyl ester alleviated hypouricemia in hyperuricemic mice through inhibiting XOD and up-regulating OAT3.",
+        "year": "2022",
+        "evidence_level": "animal",
+        "fungus": "n/a (CAPE — propolis component, not fungal but co-indexed)",
+        "compound": "caffeic acid phenethyl ester",
+        "finding": "CAPE hits XOD + OAT3. Propolis-derived comparator (non-fungal)."
+      }
+    ],
+    "ABCG2": [
+      {
+        "pmid": "37788785",
+        "doi": "10.1016/j.jep.2023.117262",
+        "title": "Fuling-Zexie formula attenuates hyperuricemia-induced nephropathy and inhibits JAK2/STAT3 signaling and NLRP3 inflammasome activation in mice.",
+        "year": "2023",
+        "evidence_level": "animal",
+        "fungus": "Poria cocos (component of FZ formula — Wolfiporia extensa, sclerotium-forming fungus)",
+        "compound": "FZ formula (mixed); Poria cocos contribution unspecified",
+        "finding": "FZ formula modulates ABCG2/GLUT9/OAT1 expression and suppresses NLRP3 inflammasome in HUA mice. Poria cocos is the only fungal ingredient. Hits ABCG2 + NLRP3 simultaneously — multi-chokepoint TCM formula."
+      },
+      {
+        "pmid": "39508089",
+        "doi": "10.7554/eLife.100068",
+        "title": "Host-derived [Lactobacillus] alleviates hyperuricemia by improving gut microbial community and hydrolase-mediated degradation of purine nucleosides.",
+        "year": "2024",
+        "evidence_level": "animal",
+        "fungus": "n/a (Lactobacillus — bacterial; not fungal)",
+        "compound": "L. plantarum SQ001 nucleoside hydrolase",
+        "finding": "Probiotic strain enhances ABCG2 expression in kidney + downregulates GLUT9 — relevant chokepoint biology comparator, not fungal."
+      },
+      {
+        "pmid": "39564988",
+        "doi": null,
+        "title": "Tryptophan Metabolism-Regulating Probiotics Alleviate Hyperuricemia by Protecting the Gut Barrier Integrity and Enhancing Colonic Uric Acid Excretion.",
+        "year": "2024",
+        "evidence_level": "animal",
+        "fungus": "n/a (bacterial probiotics)",
+        "compound": "indole-3-propionic acid, indole-3-acetic acid",
+        "finding": "Indole metabolites correlate with ABCG2 expression — not fungal; mechanism comparator for AhR-pathway chokepoint biology."
+      }
+    ],
+    "NLRP3_inflammasome": [
+      {
+        "pmid": "37788785",
+        "doi": "10.1016/j.jep.2023.117262",
+        "title": "Fuling-Zexie formula attenuates hyperuricemia-induced nephropathy and inhibits JAK2/STAT3 signaling and NLRP3 inflammasome activation in mice.",
+        "year": "2023",
+        "evidence_level": "animal",
+        "fungus": "Poria cocos (in FZ formula)",
+        "compound": "FZ formula",
+        "finding": "Suppresses NLRP3 + ASC + cleaved-caspase-1 in HUA-nephropathy mouse model."
+      },
+      {
+        "pmid": "40450627",
+        "doi": "10.1007/s11046-025-00950-w",
+        "title": "Exopolysaccharides of Ganoderma lucidum Activate the NLRP3 Inflammasome, Modulating Phagocytes and the Response of Mice to Infection with Cryptococcus neoformans.",
+        "year": "2025",
+        "evidence_level": "animal + in vitro",
+        "fungus": "Ganoderma lucidum",
+        "compound": "exopolysaccharides (EPS)",
+        "finding": "DIRECTIONALITY CAVEAT: G. lucidum EPS ACTIVATE (not inhibit) NLRP3 via dectin-1/Syk/NF-κB — protective in cryptococcosis but counterproductive for gout. Critical for downstream framing — Ganoderma polysaccharides are NLRP3 activators in some contexts."
+      },
+      {
+        "pmid": "41378217",
+        "doi": "10.3389/fphar.2025.1690192",
+        "title": "Sporoderm-removed ganoderma lucidum spore powder (S-GLSP) alleviates neuroinflammation injury by regulating microglial polarization through inhibition of NLRP3 inflammasome activation.",
+        "year": "2025",
+        "evidence_level": "animal + in vitro",
+        "fungus": "Ganoderma lucidum (spore powder, sporoderm-removed)",
+        "compound": "S-GLSP (mixed: 42 compounds — flavonoids, alkaloids, terpenoids, saccharides)",
+        "finding": "S-GLSP INHIBITS NLRP3 in AD model — opposite directionality from PMID 40450627. Spore powder (broken-shell, lipid+terpene-rich) ≠ EPS (β-glucan). Suggests cell-wall vs spore-extract pharmacology diverges — important for compound-level Phase 5 design."
+      },
+      {
+        "pmid": "36145248",
+        "doi": "10.3390/nu14183872",
+        "title": "[Ganoderma lucidum extract] Modulates Inflammatory Responses following 1-Methyl-4-Phenyl-1,2,3,6-Tetrahydropyridine (MPTP) Administration in Mice.",
+        "year": "2022",
+        "evidence_level": "animal",
+        "fungus": "Ganoderma lucidum",
+        "compound": "GLE extract (mixed)",
+        "finding": "GLE represses microglial NLRP3 in Parkinson model. Confirms G. lucidum extracts inhibit NLRP3 in CNS contexts."
+      },
+      {
+        "pmid": "39522844",
+        "doi": "10.1016/j.jep.2024.119065",
+        "title": "Ganoderma lucidum polysaccharide alleviates cognitive dysfunction by inhibiting neuroinflammation via NLRP3/NF-κB signaling pathway.",
+        "year": "2024",
+        "evidence_level": "animal",
+        "fungus": "Ganoderma lucidum",
+        "compound": "GLP (β-glucan)",
+        "finding": "GLP inhibits NLRP3 in cognitive-dysfunction model. Note: this β-glucan INHIBITS NLRP3 here, contradicting PMID 40450627's EPS finding — context-dependent. Phase 5 must distinguish polysaccharide structures."
+      },
+      {
+        "pmid": "30673679",
+        "doi": "10.1159/000493896",
+        "title": "Anti-Inflammatory and Hepatoprotective Effects of Ganoderma lucidum Polysaccharides against Carbon Tetrachloride-Induced Liver Injury in Kunming Mice.",
+        "year": "2019",
+        "evidence_level": "animal",
+        "fungus": "Ganoderma lucidum",
+        "compound": "GLPS polysaccharides",
+        "finding": "GLPS suppresses NLRP3/ASC/caspase-1 in CCl4 liver injury."
+      },
+      {
+        "pmid": "40592243",
+        "doi": "10.1016/j.carres.2025.109591",
+        "title": "Structural basis of immunomodulation by edible fungal polysaccharides: From molecular characteristics to action mechanisms.",
+        "year": "2025",
+        "evidence_level": "review (mechanistic)",
+        "fungus": "multiple (G. lucidum, Lentinus edodes)",
+        "compound": "β-glucans, sulfated polysaccharides",
+        "finding": "Review: β-glucan triple-helix conformation activates macrophage receptors. NLRP3 engagement is structure-dependent (MW, branching, sulfation). Supports our directionality-caveat finding above."
+      },
+      {
+        "pmid": "41302443",
+        "doi": "10.3390/molecules30224384",
+        "title": "Fungal Polysaccharides as Modulators of Molecular Pathways in Liver Health.",
+        "year": "2025",
+        "evidence_level": "review",
+        "fungus": "multiple",
+        "compound": "polysaccharides",
+        "finding": "Review of fungal polysaccharide regulation of NF-κB / Nrf2 / NLRP3 in liver disease — confirms multi-species hepatic NLRP3 modulation."
+      },
+      {
+        "pmid": "38907332",
+        "doi": "10.1186/s40168-024-01826-9",
+        "title": "Gut microbiota dysbiosis in hyperuricaemia promotes renal injury through the activation of NLRP3 inflammasome.",
+        "year": "2024",
+        "evidence_level": "animal",
+        "fungus": "n/a (microbiota mechanism)",
+        "compound": "n/a",
+        "finding": "NLRP3 axis confirmed as load-bearing in HUA-driven renal injury — establishes the chokepoint relevance for fungal compound program."
+      },
+      {
+        "pmid": "33130474",
+        "doi": "10.1016/j.phymed.2020.153398",
+        "title": "Celastrol ameliorates Propionibacterium acnes/LPS-induced liver damage and MSU-induced gouty arthritis via inhibiting K63 deubiquitination of NLRP3.",
+        "year": "2020",
+        "evidence_level": "animal",
+        "fungus": "n/a (celastrol — plant)",
+        "compound": "celastrol",
+        "finding": "MSU-induced gouty arthritis NLRP3 mechanism comparator (non-fungal) — reference for our gout NLRP3 framing."
+      }
+    ],
+    "C5aR1_complement": [
+      {
+        "pmid": "20599785",
+        "doi": "10.1016/j.bcp.2010.06.017",
+        "title": "Complement and periodontitis.",
+        "year": "2010",
+        "evidence_level": "review (mechanistic)",
+        "fungus": "n/a (Porphyromonas gingivalis subverts C5aR1 — bacterial)",
+        "compound": "n/a",
+        "finding": "Establishes C5aR1 subversion as immune-evasion mechanism; not a fungal antagonist."
+      },
+      {
+        "pmid": "41983141",
+        "doi": "10.3389/fimmu.2026.1778759",
+        "title": "Complement and inflammasome crosstalk in chronic inflammation.",
+        "year": "2026",
+        "evidence_level": "review (mechanistic)",
+        "fungus": "n/a",
+        "compound": "n/a",
+        "finding": "Crucial mechanism reference: C3a/C5a/MAC directly prime NLRP3, inflammasome-derived IL-1β/IL-18 amplifies complement — confirms §1.21 platform-gap rationale (C5aR1 inhibition would synergize with NLRP3 inhibition). NO fungal antagonist surfaced."
+      },
+      {
+        "pmid": "17895634",
+        "doi": null,
+        "title": "Effects of beta-glucans on the immune system.",
+        "year": "2007",
+        "evidence_level": "review",
+        "fungus": "multiple medicinal mushrooms",
+        "compound": "β-glucans",
+        "finding": "DIRECTIONALITY: mushroom β-glucans ACTIVATE complement (via CR3/iC3b opsonization) — opposite of inhibition. Same pattern as NLRP3 directionality issue: fungal cell-wall β-glucans are immune ACTIVATORS, not antagonists. C5aR1 antagonist program will need synthetic-route compounds, not whole-mushroom polysaccharides."
+      }
+    ],
+    "Hyperuricemia_gout_general": [
+      {
+        "pmid": "35736485",
+        "doi": "10.3390/metabo12060553",
+        "title": "Hypouricemic Effect of Submerged Culture of [Ganoderma] in Potassium Oxonate-Induced Hyperuricemic Rats.",
+        "year": "2022",
+        "evidence_level": "animal",
+        "fungus": "Ganoderma lucidum (mycelium + EPS)",
+        "compound": "GM (mycelium powder), GP (extracellular polysaccharide)",
+        "finding": "GM at 200-400 mg/kg lowers serum UA from 5.56 to 4.45 mg/dL, downregulates hepatic XOD activity. GP improves renal function (BUN, ALT). Direct anti-hyperuricemia evidence for G. lucidum culture products."
+      },
+      {
+        "pmid": "36385640",
+        "doi": "10.1039/d2fo02431d",
+        "title": "[Ganoderma lucidum] polysaccharide peptide alleviates hyperuricemia by regulating adenosine deaminase and urate transporters.",
+        "year": "2022",
+        "evidence_level": "animal + in vitro",
+        "fungus": "Ganoderma lucidum",
+        "compound": "GLPP (polysaccharide-peptide)",
+        "finding": "GLPP reduces blood UA up to 40.6% in HUA mice via ADA inhibition + GLUT9 down + OAT1 up. Hits THREE chokepoints: ADA, GLUT9, OAT1. Adenosine deaminase as a fungal-druggable target is novel for our chokepoint map."
+      },
+      {
+        "pmid": "37560890",
+        "doi": "10.1615/IntJMedMushrooms.2023048598",
+        "title": "Antihyperuricemic and Renal Protective Effect of Cordyceps chanhua (Ascomycetes) Fruiting Bodies in Acute Hyperuricemia and Chronic Gout Rodent Models.",
+        "year": "2023",
+        "evidence_level": "animal (acute HUA mice + chronic gout rats)",
+        "fungus": "Cordyceps chanhua",
+        "compound": "fruiting body extract (FBCC)",
+        "finding": "FBCC reduces SUA + suppresses XOD + reduces renal tubulointerstitial damage in chronic gout rats. Strong chronic-gout evidence."
+      },
+      {
+        "pmid": "39024793",
+        "doi": "10.1016/j.jpba.2024.116368",
+        "title": "Amelioration of hyperuricemia by cordycepin and Cordyceps militaris aqueous extract in mice via modulating gut microbiota and restoring metabolic profile.",
+        "year": "2024",
+        "evidence_level": "animal",
+        "fungus": "Cordyceps militaris",
+        "compound": "cordycepin (CME = aqueous extract)",
+        "finding": "CME inhibits XO + reduces purine precursor availability + modulates gut microbiota. Cordycepin's anti-HUA effect comparable to whole CME."
+      },
+      {
+        "pmid": "40334761",
+        "doi": "10.1016/j.jep.2025.119926",
+        "title": "Clerodendranthus spicatus-Cordyceps cicadae regulates mitophagy and protects renal tubular epithelial cells from hyperuricemic nephropathy.",
+        "year": "2025",
+        "evidence_level": "animal + in vitro",
+        "fungus": "Cordyceps cicadae",
+        "compound": "CS-CC mixed (14 compounds identified)",
+        "finding": "CS-CC restores PINK1-mediated mitophagy + reduces renal fibrosis in HUA nephropathy. Mitophagy as a NEW chokepoint — not in our current Open Enzyme map."
+      },
+      {
+        "pmid": "26457607",
+        "doi": "10.1002/14651858.CD009698.pub2",
+        "title": "Cordyceps sinensis (a traditional Chinese medicine) for kidney transplant recipients.",
+        "year": "2015",
+        "evidence_level": "CLINICAL — Cochrane systematic review of RCTs",
+        "fungus": "Cordyceps sinensis",
+        "compound": "Cordyceps sinensis preparations",
+        "finding": "CLINICAL EVIDENCE: 5 RCTs (n=447) showed Cordyceps reduces hyperuricemia, hyperlipidemia, hyperglycemia, liver injury vs azathioprine in transplant patients. Quality unclear but clinical-grade evidence exists."
+      },
+      {
+        "pmid": "28137532",
+        "doi": "10.1016/j.ctim.2016.12.007",
+        "title": "Efficacy of Cordyceps sinensis as an adjunctive treatment in kidney transplant patients: A systematic-review and meta-analysis.",
+        "year": "2016",
+        "evidence_level": "CLINICAL — meta-analysis of 9 RCTs",
+        "fungus": "Cordyceps sinensis",
+        "compound": "Cordyceps sinensis (natural + fermented)",
+        "finding": "CLINICAL: 9 RCTs (mostly Chinese, including CNKI sources). Cordyceps + cyclosporine A reduces hyperuricemia and CNI nephrotoxicity. Concrete clinical evidence for hyperuricemia indication."
+      },
+      {
+        "pmid": "30693917",
+        "doi": null,
+        "title": "Hypouricemic and nephroprotective roles of anthocyanins in hyperuricemic mice.",
+        "year": "2018",
+        "evidence_level": "animal",
+        "fungus": "n/a (anthocyanins — plant)",
+        "compound": "anthocyanins",
+        "finding": "Comparator only; not fungal."
+      }
+    ],
+    "Lp_PLA2": [],
+    "HDAC6": [],
+    "PPAR_gamma": [
+      {
+        "pmid": "41905012",
+        "doi": "10.1016/j.bioorg.2026.109806",
+        "title": "Biotransformation-derived metabolites from Astragalus membranaceus and Cordyceps militaris alleviate hyperuricemia via multi-target regulation.",
+        "year": "2026",
+        "evidence_level": "animal",
+        "fungus": "Cordyceps militaris (co-fermented with Astragalus)",
+        "compound": "AMC-BFE — isoflavone aglycones, nucleosides",
+        "finding": "Activates hepatic PPARα signaling pathway alongside URAT1/GLUT9/ABCG2 effects. Same paper as URAT1 entry — multi-chokepoint extract."
+      }
+    ],
+    "ergothioneine_thioredoxin_TXNIP": [
+      {
+        "_note": "Search returned 2234 hits but top-relevance hits were dominated by oxidative-stress mechanism reviews, not fungal-source primary studies. Phase 5 should query LOTUS/ChEMBL directly for ergothioneine + thioredoxin chokepoint binding rather than relying on PubMed for this axis."
+      }
+    ]
+  },
+  "by_species": {
+    "Ganoderma_lucidum": [
+      {"pmid": "35750011", "compound": "2,4-DAE (G. applanatum sister species)", "indication": "XO + URAT1", "evidence": "animal — IN VIVO DUAL-CHOKEPOINT"},
+      {"pmid": "36385640", "compound": "GLPP polysaccharide-peptide", "indication": "ADA + GLUT9 + OAT1", "evidence": "animal"},
+      {"pmid": "35736485", "compound": "mycelium + EPS", "indication": "XOD + renal protection", "evidence": "animal"},
+      {"pmid": "40450627", "compound": "exopolysaccharides", "indication": "NLRP3 ACTIVATION (anti-cryptococcal — wrong direction for gout)", "evidence": "animal"},
+      {"pmid": "41378217", "compound": "S-GLSP spore powder", "indication": "NLRP3 inhibition (Alzheimer)", "evidence": "animal"},
+      {"pmid": "39522844", "compound": "GLP β-glucan", "indication": "NLRP3 inhibition (cognitive)", "evidence": "animal"},
+      {"pmid": "30673679", "compound": "GLPS polysaccharides", "indication": "NLRP3 inhibition (liver)", "evidence": "animal"},
+      {"pmid": "36145248", "compound": "GLE extract", "indication": "NLRP3 inhibition (CNS)", "evidence": "animal"}
+    ],
+    "Cordyceps_militaris": [
+      {"pmid": "29422889", "compound": "cordycepin", "indication": "URAT1", "evidence": "animal — DIRECT CHOKEPOINT"},
+      {"pmid": "39024793", "compound": "cordycepin + CME extract", "indication": "XO + microbiota", "evidence": "animal"},
+      {"pmid": "41905012", "compound": "AMC-BFE biotransformation", "indication": "URAT1 + GLUT9 + ABCG2 + PPARα", "evidence": "animal — MULTI-CHOKEPOINT"}
+    ],
+    "Cordyceps_sinensis": [
+      {"pmid": "26457607", "compound": "Cordyceps sinensis preparations", "indication": "hyperuricemia + nephroprotection", "evidence": "CLINICAL — 5 RCTs Cochrane"},
+      {"pmid": "28137532", "compound": "natural + fermented Cordyceps", "indication": "hyperuricemia + CNI nephrotoxicity", "evidence": "CLINICAL — 9 RCTs meta-analysis"}
+    ],
+    "Cordyceps_chanhua": [
+      {"pmid": "37560890", "compound": "FBCC fruiting body", "indication": "XOD + chronic gout", "evidence": "animal — chronic gout rat model"}
+    ],
+    "Cordyceps_cicadae": [
+      {"pmid": "40334761", "compound": "CS-CC mixed (with C. spicatus)", "indication": "mitophagy + renal fibrosis", "evidence": "animal — novel chokepoint (mitophagy)"}
+    ],
+    "Sanghuangporus_vaninii": [
+      {"pmid": "36801789", "compound": "davallialactone", "indication": "XO inhibition (IC50=90 µM)", "evidence": "in vitro"},
+      {"pmid": "37279627", "compound": "ethanol extract", "indication": "uric acid transporters (URAT1/GLUT9/OAT1/ABCG2 family)", "evidence": "animal"}
+    ],
+    "Ganoderma_applanatum": [
+      {"pmid": "35750011", "compound": "2,4-DAE", "indication": "XOD + URAT1 dual", "evidence": "animal — KEY HIT"}
+    ],
+    "Poria_cocos_Wolfiporia": [
+      {"pmid": "37788785", "compound": "in FZ formula (with Pueraria/Alisma/Atractylodes)", "indication": "ABCG2 + GLUT9 + OAT1 + NLRP3 + JAK2/STAT3", "evidence": "animal — multi-chokepoint TCM"}
+    ],
+    "Inonotus_obliquus_chaga": [
+      {"pmid": "27562990", "compound": "triterpenes (inotodiol, betulinic acid)", "indication": "anticancer focus, immune modulation (no direct gout/HUA hit found)", "evidence": "in vitro review"},
+      {"pmid": "39204121", "compound": "inotodiol-rich extract", "indication": "anticancer (HepG2, CAL-62)", "evidence": "in vitro"}
+    ],
+    "Trametes_versicolor_PSK": [
+      {"_note": "Search returned only 2 hits, neither directly addressing NLRP3 or gout chokepoints in our target frame. Phase 5 may need direct ChEMBL query for PSK / coriolan structural derivatives."}
+    ],
+    "Pleurotus_ostreatus": [
+      {"_note": "Search returned 189 hits dominated by general nutrition/cholesterol papers. Lovastatin/cholesterol-axis only — not direct chokepoint relevance for our XO/URAT1/NLRP3/C5aR1 frame."}
+    ]
+  },
+  "high_signal_findings": [
+    "DUAL-CHOKEPOINT HIT: Ganoderma applanatum 2,4-DAE (PMID 35750011) inhibits BOTH XOD and URAT1 in mouse model — structurally allopurinol-like, in vivo SUA reduction from 407 to 134 µmol/L. This is the strongest single-compound finding from the breadth scan.",
+    "CORDYCEPIN AS DIRECT URAT1 MODULATOR: Cordyceps militaris cordycepin (PMID 29422889) — dose-response in mice, SUA 337→203 µmol/L, mechanism proven via ELISA/RT-PCR/WB. Already a well-characterized molecule (3'-deoxyadenosine) with established pharmacology.",
+    "CLINICAL-LEVEL EVIDENCE: Cordyceps sinensis has TWO meta-analyses (PMIDs 26457607 Cochrane + 28137532) of RCTs in transplant patients showing hyperuricemia reduction. Highest evidence-tier finding in the entire scan — clinical, not preclinical.",
+    "MULTI-CHOKEPOINT EXTRACT: AMC-BFE (Cordyceps militaris × Astragalus biotransformation, PMID 41905012, 2026) hits URAT1 + GLUT9 + ABCG2 + PPARα simultaneously. Bidirectional fermentation enriches isoflavone aglycones — koji-relevant biotransformation strategy comparator.",
+    "ABCG2 + NLRP3 SIMULTANEOUS HIT: Poria cocos in Fuling-Zexie formula (PMID 37788785) modulates ABCG2/GLUT9/OAT1 + suppresses NLRP3/ASC/cleaved-caspase-1. Poria is the only fungal ingredient — needs decomposition to identify which compound class drives which axis.",
+    "POLYSACCHARIDE DIRECTIONALITY PROBLEM: G. lucidum exopolysaccharides ACTIVATE NLRP3 in cryptococcosis (PMID 40450627, beneficial) but G. lucidum spore powder INHIBITS NLRP3 in Alzheimer (PMID 41378217). β-Glucan structure (MW, branching, sulfation, triple-helix conformation) determines directionality (PMID 40592243 review). Critical for Phase 5: spore powder ≠ EPS ≠ fruiting-body β-glucan. Cell-wall vs cytoplasmic vs lipid-fraction extracts have OPPOSITE NLRP3 effects.",
+    "C5aR1 PLATFORM GAP CONFIRMED (per validation-experiments.md §1.21): NO direct fungal antagonist of C5aR1 surfaced in PubMed scan. β-glucans ACTIVATE complement (CR3/iC3b opsonization, PMID 17895634) — opposite of inhibition. Complement-NLRP3 crosstalk review (PMID 41983141) confirms the mechanistic synergy rationale but identifies no natural fungal small-molecule antagonist. Phase 5 C5aR1 work will need synthetic-derivative or non-fungal-source approaches; whole-mushroom polysaccharide programs will not fill this gap.",
+    "NOVEL CHOKEPOINT — MITOPHAGY: Cordyceps cicadae regulates PINK1-mediated mitophagy in HUA nephropathy (PMID 40334761). Not in current Open Enzyme chokepoint map — worth surfacing to validation-experiments.md as a new candidate.",
+    "NOVEL CHOKEPOINT — ADENOSINE DEAMINASE (ADA): Ganoderma lucidum GLPP polysaccharide-peptide inhibits ADA (PMID 36385640). ADA upstream of XO — earlier intervention point. Worth adding to chokepoint map.",
+    "Sanghuangporus vaninii davallialactone (PMID 36801789): XO IC50 = 90 µM. Fruiting-body XO inhibitor at characterized purity (97.7%). Mid-tier potency (allopurinol IC50 ~7 µM) but novel scaffold.",
+    "MULTILINGUAL CATCH-NET: PubMed indexed extensive Chinese-author primary research (Shandong U, Peking U, Northwest A&F, Shanghai Academy, Guangdong CM University). The TCM × hyperuricemia search (PMID 38907332, 39176260, etc.) confirms the 'Chinese-language clinical evidence is real' framing — do not gate on Western evidence alone.",
+    "Lp-PLA2 (15 hits total) and HDAC6 (155 hits total): essentially zero direct fungal hits on these chokepoints. Phase 5 will need ChEMBL/LOTUS querying or structural prediction work — PubMed primary literature is empty.",
+    "Trametes versicolor / PSK: only 2 hits total, neither NLRP3-focused. PSK is well-characterized as immune adjuvant in Japan, but PubMed primary research on PSK × NLRP3 is essentially absent. Phase 5 may need direct screening.",
+    "Pleurotus ostreatus / oyster mushroom: 189 hits dominated by lovastatin/cholesterol. Statin axis is real (Pleurotus produces lovastatin natively) but does not map to our XO/URAT1/NLRP3/C5aR1 chokepoints. Off-target for current scope."
+  ],
+  "phase_5_recommendations": [
+    "Top 3 compounds for Phase 5 deep-dive: (1) Ganoderma applanatum 2,4-DAE (dual XO+URAT1, PMID 35750011); (2) Cordyceps militaris cordycepin (URAT1 + already characterized as 3'-deoxyadenosine, PMID 29422889 + clinical track via Cordyceps sinensis); (3) Sanghuangporus vaninii davallialactone (novel XO scaffold, PMID 36801789).",
+    "Multi-chokepoint extract for whole-organism modeling: AMC-BFE Cordyceps × Astragalus biotransformation (PMID 41905012) — shows what fungal solid-state fermentation can produce.",
+    "Polysaccharide work needs structural specification: triple-helix β-glucan vs sulfated β-glucan vs spore-derived terpenoid mix produce OPPOSITE NLRP3 effects. Phase 5 must specify polysaccharide structure before claiming inflammasome modulation.",
+    "Add ADA and PINK1/mitophagy to Open Enzyme chokepoint map (validation-experiments.md) — both surfaced as fungal-druggable in this scan but absent from current map.",
+    "C5aR1 platform-gap: scan confirms PubMed primary fungal literature has no antagonist. Either accept gap or pivot to chemical synthesis route or non-fungal source for that chokepoint."
+  ]
+}

@@ -71,17 +71,17 @@ def render_summary(sources: dict, species: dict, chokepoints: dict) -> str:
     lines = []
     lines.append("# comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping")
     lines.append("")
-    lines.append("**Status:** Phase 1 (scope) — execution pending Brian sign-off.")
+    lines.append("**Status:** Phase 1 scope complete; Phase 2 starting.")
     lines.append("")
-    lines.append("## Phase 1 inventory")
+    lines.append("## Inventory")
     lines.append("")
-    lines.append(f"- **Candidate fungal species:** {n_species}")
+    lines.append(f"- **Phase 5 anchor species (sanity-check):** {n_species}")
     lines.append(f"- **Open Enzyme chokepoint targets:** {n_chokepoints} ({proposed_chokepoint_count} proposed, not-yet-canonical)")
     lines.append(f"- **Compound databases planned:** {n_compound_dbs}")
     lines.append(f"- **Bioactivity / target databases planned:** {n_bioactivity_dbs}")
     lines.append(f"- **Multilingual literature corpora planned:** {n_lit_corpora}")
     lines.append("")
-    lines.append("## Candidate species (Phase 2 expansion may extend)")
+    lines.append("## Phase 5 anchor species (NOT the breadth gate — sanity-check only)")
     lines.append("")
     for c in species["candidates"]:
         flag = ""
@@ -153,13 +153,16 @@ def render_summary(sources: dict, species: dict, chokepoints: dict) -> str:
 
 def main():
     sources = load_json(INPUTS / "data-sources.json")
-    species = load_json(INPUTS / "candidate-species.json")
+    species = load_json(INPUTS / "phase-5-anchor-species.json")
     chokepoints = load_json(INPUTS / "chokepoint-targets.json")
+    toxicity = load_json(INPUTS / "toxicity-filter.json")
 
     issues: list[str] = []
     issues += validate_data_sources(sources)
     issues += validate_candidate_species(species)
     issues += validate_chokepoint_targets(chokepoints)
+    if "inclusion_lists" not in toxicity or "exclusion_lists" not in toxicity:
+        issues.append("toxicity-filter.json missing inclusion_lists or exclusion_lists")
 
     if issues:
         print("VALIDATION ISSUES:")

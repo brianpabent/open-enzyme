@@ -64,7 +64,9 @@ Three converging reasons:
 
 ## §3 Scope (Phase 1)
 
-### §3.1 Candidate species (18 total — Cordyceps split into *C. militaris* and *Ophiocordyceps sinensis* per Phase 1 peer review)
+### §3.1 Phase 5 anchor species (18 — sanity-check, NOT the breadth gate)
+
+**Reframed 2026-05-06 per Brian's correction:** breadth means species-agnostic pull from LOTUS/NPAtlas/KNApSAcK/NPASS/TCMSP filtered by `toxicity-filter.json`, not a curated medicinal-fungus list. The 18 species below serve two roles: (1) **Phase 2 sanity-check** — every one of them MUST appear in the Phase 2 output, else the pipeline has a bug; (2) **Phase 5 deep-dive seed** — they are the well-studied anchor when Phase 4 chokepoint intersection produces hits, since they have established CNKI/J-STAGE clinical-evidence corpora to ingest first.
 
 Selected for substantive characterized chemistry + human-use precedent + regulatory tractability. Exclusions: psychoactive (Schedule I — Psilocybe), toxic (Amanita, Claviceps), culinary-only (truffles). Full rationale per species in `experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/candidate-species.json`.
 
@@ -132,8 +134,8 @@ Full source list with URLs, access methods, expected yield, and license terms in
 
 ## §4 Method (planned for Phases 2-6)
 
-### §4.1 Phase 2 — Breadth aggregation
-Pull from 6 primary compound databases (LOTUS, NPAtlas, KNApSAcK, NPASS, TCMSP, COCONUT). Filter to fungi (Kingdom = Fungi where the DB supports it; species-name match against `candidate-species.json` + Phase 2 expansion list otherwise). Dedup by InChIKey across all sources, preserving per-source provenance for each compound-species record. Output: a unified table of fungal compounds × producer species × source provenance.
+### §4.1 Phase 2 — Breadth aggregation (species-agnostic)
+Pull every fungal compound record from LOTUS, NPAtlas, KNApSAcK, NPASS, TCMSP, COCONUT — Kingdom = Fungi filter at the database level, NO pre-curated species list. Apply `toxicity-filter.json`: include any species with FDA GRAS / EFSA QPS / pharmacopoeia / clinical-trial precedent OR any species in compound DBs without coexisting mycotoxin flag (default-include with `safety_review_pending` for grey-zone species); hard-exclude WHO Fungal Priority Pathogens 2022, documented mycotoxin producers, DEA Schedule I/II producers. Dedup by InChIKey across all sources. Expected yield: **500-2000 unique species after filtering** (vs. 18 in the curated anchor list). Output: a unified table of fungal compounds × producer species × source provenance × safety status.
 
 ### §4.2 Phase 3 — Target mapping
 For each compound, query empirical bioactivity in this priority order:
@@ -153,8 +155,17 @@ Join compound × target × `chokepoint-targets.json`. For each compound, score:
 
 Output: ranked candidate compound × chokepoint pairs.
 
-### §4.4 Phase 5 — Multilingual deep-dive
-For the top 3-5 species flagged by Phase 4, ingest CNKI + Wanfang + J-STAGE + KISS primary literature with two-model translation cross-check. Compare Asian clinical evidence against the breadth-pass mechanism map. Decide: confirm or reject the proposed redox/disulfide chokepoint addition.
+### §4.4 Phase 5 — Multilingual literature ingestion (parallel, all chokepoint-hit species)
+Run multilingual primary-literature ingestion for **every species with a chokepoint hit from Phase 4**, parallelized via subagents. NOT capped at top 3-5 — Brian's correction 2026-05-06: capping was the exact path-dependent narrowing CLAUDE.md flags ("Never gate exploration by cost or wall-time-to-build"). Translation cost via DeepSeek is ~$0.05/paper; even thousands of papers totals a couple hundred USD, not a real gate.
+
+**Two-model cross-check pairing per CLAUDE.md §Translation protocol:**
+- **Chinese sources (CNKI, Wanfang):** Claude (Sonnet 4.6 or Opus 4.7) + **DeepSeek V4-Pro** via OpenRouter. DeepSeek is the cheap (~$0.14/M tokens vs. Claude $15-75/M) Chinese-vendor model with native Mandarin fluency — same heterogeneity-guard pattern the wiki sweep daemon already uses (Pass 4 DeepSeek peer review).
+- **Japanese sources (J-STAGE, CiNii):** Claude + Gemini 2.5 Pro (or DeepSeek as backup — DeepSeek's Japanese is reasonable despite Chinese-vendor).
+- **Korean sources (KISS, RISS):** Claude + Gemini OR GPT-5.
+
+**The actual constraint on this phase, honestly stated:** CNKI / Wanfang / KISS need institutional subscriptions for full text; J-STAGE / CiNii / PubMed are public. Paywall access is its own operational task — work with open-access subset and flag the paywalled gap explicitly per ingestion run.
+
+Phase 5 deliverable: redox/disulfide chokepoint admit/PRELIMINARY/reject decision (criteria in §3.2).
 
 ### §4.5 Phase 6 — Per-compound triage
 comp-013-style IC50 occupancy + composite scoring. Verdicts: GUT-LUMINAL VIABLE / SYSTEMIC VIABLE / MECHANISM UNCLEAR / NON-VIABLE. Subset gets shio-koji protease stability comp-NNN follow-ups (the same comp-001/005/006/012 pattern for any compound that becomes a candidate engineering payload — though most fungal-compound hits will be small molecules where the relevant downstream decision is supplement-stack inclusion rather than koji engineering).
@@ -180,7 +191,7 @@ comp-013-style IC50 occupancy + composite scoring. Verdicts: GUT-LUMINAL VIABLE 
 
 2. **Database coverage may be uneven.** KNApSAcK is decades-old and well-maintained but not API-first; some Asian-hosted databases (TCMID notably) have had maintenance gaps. Phase 2 will verify each source is actually accessible before fetching; sources that prove inaccessible will be documented as gaps in the Phase 2 provenance update, not silently dropped.
 
-3. **Translation cost is real.** Phase 5 multilingual primary-literature ingestion with two-model cross-check costs roughly 2× single-model translation. Per CLAUDE.md the cost is negligible per paper (<$0.05) but scales with paper count. Phase 5 will scope to top-3-5 species' literature, not blanket all 17 candidate species.
+3. ~~**Translation cost is real.**~~ **REMOVED 2026-05-06** — this was the exact failure mode the umbrella `CLAUDE.md` Curiosity & First-Principles Framing rule warns against ("Never gate exploration by cost or wall-time-to-build. Both have collapsed in the AI era"). Translation via DeepSeek is ~$0.05/paper × thousands of papers = a couple hundred USD total. Not a gate. Phase 5 runs for every chokepoint-hit species in parallel via subagents, not the top-3-5 subset I originally imposed.
 
 4. **SwissTargetPrediction outputs are hypotheses, not validated bioactivity.** Phase 3's predicted-target rows must remain flagged as such all the way through to Phase 6 verdict assignment. Pretending a SwissTargetPrediction hit equals a ChEMBL IC50 would produce false confidence — same epistemic discipline as comp-013's animal-model-evidence rule (admissible but visibly distinguished from biochem IC50).
 

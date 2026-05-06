@@ -1,16 +1,16 @@
 # comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping
 
-**Status:** Phase 1 (scope) — execution pending Brian sign-off.
+**Status:** Phase 1 scope complete; Phase 2 starting.
 
-## Phase 1 inventory
+## Inventory
 
-- **Candidate fungal species:** 18
+- **Phase 5 anchor species (sanity-check):** 18
 - **Open Enzyme chokepoint targets:** 19 (1 proposed, not-yet-canonical)
 - **Compound databases planned:** 14
 - **Bioactivity / target databases planned:** 6
 - **Multilingual literature corpora planned:** 7
 
-## Candidate species (Phase 2 expansion may extend)
+## Phase 5 anchor species (NOT the breadth gate — sanity-check only)
 
 - *Ganoderma lucidum* (reishi / lingzhi)
 - *Cordyceps militaris* (cordyceps (cultivated))

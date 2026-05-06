@@ -1,6 +1,8 @@
 {
-  "_doc": "Initial candidate medicinal fungi for comp-014 breadth aggregation. Selected for: (a) substantive characterized compound chemistry, (b) human-use precedent (food, supplement, or traditional-medicine), (c) regulatory tractability for Open Enzyme downstream. Excluded: psychoactive (Schedule I — Psilocybe), toxic (Amanita muscaria, A. phalloides), niche-Western only (truffle Tuber spp. — culinary not medicinal). Phase 2 may extend list based on what KNApSAcK/TCMSP/MIBiG surface.",
-  "_phase_1_status": "candidate set — to be expanded after Phase 2 reveals less-studied fungi with rich BGC profiles",
+  "_doc": "Phase 5 deep-dive anchor species + Phase 2 sanity-check list. NOT the breadth gate. Phase 2 pulls fungal-compound records species-agnostically from LOTUS / NPAtlas / KNApSAcK / NPASS / TCMSP, filters via toxicity-filter.json. The 18 species below are the well-studied medicinal fungi that the breadth pass MUST surface — if any are missing from Phase 2 output, that indicates a pipeline bug (filter too aggressive, or DB pull missed records). They are also the seed for Phase 5 multilingual literature deep-dive when paired against Phase 4 chokepoint-hit results.",
+  "_role_change_2026_05_06": "Originally framed as 'the candidate species we pull from' (depth-first thinking). Reframed as 'sanity-check anchor + Phase 5 deep-dive seed' after Brian's 2026-05-06 correction that breadth means species-agnostic pull with toxicity filter, not curated medicinal list. The species below remain valid; their role in the pipeline shifted from gate to checkpoint.",
+  "_phase_2_role": "sanity-check — every species below should appear in Phase 2 output, else pipeline bug",
+  "_phase_5_role": "deep-dive seed — when Phase 4 surfaces chokepoint-hit fungi, intersect with this list to know which already have established CNKI/J-STAGE clinical-evidence corpora worth ingesting first",
   "candidates": [
     {
       "common_name": "reishi / lingzhi",
