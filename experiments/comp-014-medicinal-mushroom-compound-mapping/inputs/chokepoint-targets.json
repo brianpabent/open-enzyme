@@ -1,0 +1,182 @@
+{
+  "_doc": "Open Enzyme chokepoint targets to map fungal compounds against. Derived from wiki/modality-chokepoint-matrix.md (canonical chokepoint inventory) + wiki/nlrp3-exploit-map.md (NLRP3 sub-chokepoints CP0-CP6) + wiki/abcg2-modulators.md (transporter biology) + wiki/complement-c5a-gout.md (CP0 complement layer). UniProt accessions are the join key for cross-database target mapping.",
+  "_phase_1_status": "canonical chokepoint set + ONE proposed addition (redox/disulfide chokepoint) flagged for Phase 5 confirmation",
+  "_proposed_new_chokepoint": "Per Brian's framing 2026-05-06: fungi are biochemically rich in thiol/disulfide-modulating compounds (ergothioneine, gliotoxin-class ETPs, glutathione analogs). The wiki's chokepoint inventory does not currently include redox/disulfide chemistry as a named chokepoint. comp-014 may surface enough fungal-compound coverage of this axis to warrant adding it as a formal chokepoint with its own modality-row of fermentable interventions. The DAF SCR1-4 disulfide-count incident (CLAUDE.md §Pre-commit verification gate) shows disulfide chemistry is already load-bearing for the engineering side; the patient-side biology has been less developed.",
+  "chokepoints": {
+    "uricase_substrate": {
+      "name": "Uric acid degradation (luminal sink)",
+      "wiki_page": "uricase.md",
+      "site": "gut lumen",
+      "targets": [],
+      "rationale": "Not a protein target — substrate degradation. Fungal compounds are not direct uricase competitors but may include other purine-degrading enzymes or substrate-modifying chemistries. LOW priority for breadth pass (modality is enzymatic, not small-molecule)."
+    },
+    "URAT1": {
+      "name": "Renal urate reabsorption transporter",
+      "uniprot": "Q96S37",
+      "gene": "SLC22A12",
+      "wiki_pages": ["abcg2-modulators.md", "androgen-urate-axis.md", "gout-pathophysiology.md"],
+      "site": "renal tubule",
+      "rationale": "Validated drug target (probenecid, benzbromarone, lesinurad, dotinurad). comp-013 found astilbin, luteolin, berberine all have URAT1 animal-model evidence. Fungal hits here are HIGH priority."
+    },
+    "GLUT9": {
+      "name": "Renal/intestinal urate transporter",
+      "uniprot": "Q9NRM0",
+      "gene": "SLC2A9",
+      "wiki_pages": ["abcg2-modulators.md", "gout-pathophysiology.md"],
+      "site": "renal tubule + gut epithelium",
+      "rationale": "Less drugged than URAT1 but mechanistically validated."
+    },
+    "ABCG2": {
+      "name": "Gut + renal urate efflux transporter",
+      "uniprot": "Q9UNQ0",
+      "gene": "ABCG2",
+      "wiki_pages": ["abcg2-modulators.md"],
+      "site": "gut epithelium + renal tubule",
+      "rationale": "comp-004 supplement screen validated this target. Q141K variant (Brian-relevant) needs both inducers (PPARγ agonists) AND folding rescuers. Fungal pharmacological-chaperone candidates are an open exploration vector."
+    },
+    "Xanthine_Oxidase": {
+      "name": "Xanthine → uric acid producer",
+      "uniprot": "P47989",
+      "gene": "XDH",
+      "wiki_pages": ["gout-pathophysiology.md"],
+      "site": "systemic + gut + liver",
+      "rationale": "Allopurinol, febuxostat target. comp-013 confirmed luteolin XO 550 nM. Fungal XO inhibitors are extensively reported in CNKI/Asian literature with limited Western coverage."
+    },
+    "NLRP3": {
+      "name": "NLRP3 inflammasome (assembly)",
+      "uniprot": "Q96P20",
+      "gene": "NLRP3",
+      "wiki_pages": ["nlrp3-inflammasome.md", "nlrp3-exploit-map.md"],
+      "site": "macrophages (gut + synovial + vessel-wall)",
+      "rationale": "Central gout-flare driver. β-glucan modulation of NLRP3 priming is a well-studied fungal-compound axis (turkey tail PSK, maitake D-fraction, lentinan)."
+    },
+    "ASC": {
+      "name": "ASC (PYCARD) inflammasome adaptor",
+      "uniprot": "Q9ULZ3",
+      "gene": "PYCARD",
+      "wiki_pages": ["nlrp3-inflammasome.md"],
+      "rationale": "Oridonin and related natural products block ASC oligomerization. Some fungal triterpenes may bind the PYD domain."
+    },
+    "Caspase_1": {
+      "name": "Inflammasome effector caspase",
+      "uniprot": "P29466",
+      "gene": "CASP1",
+      "rationale": "Downstream of NLRP3+ASC; pharmacological inhibition is a separate intervention class."
+    },
+    "IL_1B": {
+      "name": "Pro-inflammatory cytokine (flare effector)",
+      "uniprot": "P01584",
+      "gene": "IL1B",
+      "rationale": "Canakinumab/anakinra target. Fungal compounds may modulate at transcription, processing, or signaling layers."
+    },
+    "TNFA": {
+      "name": "TNFα (gut barrier / vessel-wall inflammation)",
+      "uniprot": "P01375",
+      "gene": "TNF",
+      "wiki_pages": ["bpc-157.md", "carnosine.md"],
+      "rationale": "Gut-barrier and vessel-wall inflammation cycle. Fungal hits often have anti-TNF effects via NF-κB modulation."
+    },
+    "DAF_CD55": {
+      "name": "Decay-Accelerating Factor (complement regulator)",
+      "uniprot": "P08174",
+      "gene": "CD55",
+      "wiki_pages": ["complement-c5a-gout.md", "daf-cd55-protease-stability-computational.md", "daf-cd55-scr14-truncated-computational.md"],
+      "site": "engineered chassis output, not target",
+      "rationale": "Open Enzyme is engineering CD55 SCR1-4 itself (comp-006/comp-012). NOT a target for fungal-compound binding — included for completeness in the chokepoint inventory."
+    },
+    "C5aR1": {
+      "name": "C5a receptor (CP0 priming)",
+      "uniprot": "P21730",
+      "gene": "C5AR1",
+      "wiki_pages": ["complement-c5a-gout.md"],
+      "rationale": "validation-experiments.md §1.21 already concluded ZERO validated natural-product C5aR1 antagonists exist after ChEMBL/NPASS/LOTUS/Open Targets scan. Fungal-only re-scan via comp-014 may surface candidates Open Targets missed (especially Asian-literature compounds). HIGH priority for the breadth pass — surfacing even one validated fungal C5aR1 antagonist would partially close the avacopan-dependence gap."
+    },
+    "Lp_PLA2": {
+      "name": "Lp-PLA2 (vessel-wall inflammation, Brian-relevant biomarker)",
+      "uniprot": "Q13093",
+      "gene": "PLA2G7",
+      "wiki_pages": ["spm-resolution-pathway.md", "tnfsf14-gout-target.md"],
+      "rationale": "Brian's persistent elevation across panels. Fungal-compound modulation is unmapped territory."
+    },
+    "HDAC6": {
+      "name": "HDAC6 (Q141K-ABCG2 trafficking rescue)",
+      "uniprot": "Q9UBN7",
+      "gene": "HDAC6",
+      "wiki_pages": ["food-grade-hdaci-screen-computational.md"],
+      "rationale": "comp-007 ran the supplement-grade HDACi screen. Fungal compounds with HDAC6 selectivity are an open exploration class."
+    },
+    "PPARG": {
+      "name": "PPARγ (ABCG2 induction via butyrate axis)",
+      "uniprot": "P37231",
+      "gene": "PPARG",
+      "wiki_pages": ["abcg2-modulators.md"],
+      "rationale": "Fungal triterpenoids (esp. ganoderic acids, lanostanes) often have PPARγ agonist activity."
+    },
+    "NRF2_KEAP1": {
+      "name": "Nrf2/KEAP1 (oxidative stress / barrier integrity)",
+      "uniprot_keap1": "Q14145",
+      "uniprot_nrf2": "Q16236",
+      "gene": "NFE2L2 / KEAP1",
+      "wiki_pages": ["supplements-stack.md"],
+      "rationale": "Sulforaphane axis; fungal compounds (esp. triterpenoids, melanins) often activate Nrf2."
+    },
+    "OAT1_OAT3": {
+      "name": "Renal organic anion transporters",
+      "uniprot_oat1": "Q4U2R8",
+      "uniprot_oat3": "Q8TCC7",
+      "gene": "SLC22A6 / SLC22A8",
+      "rationale": "Off-target risk profile for any URAT1-targeted compound — needs counter-screen."
+    },
+    "OAT4": {
+      "name": "OAT4 — apical urate exchanger (renal proximal tubule)",
+      "uniprot": "Q9NS40",
+      "gene": "SLC22A11",
+      "_canonical_wiki_gap": "OAT4 is NOT in the canonical Open Enzyme wiki as of 2026-05-06 — Phase 1 peer review of comp-014 surfaced this as a wiki gap. OAT4 is a known benzbromarone target alongside URAT1 (apical urate exchanger in renal proximal tubule); it should be in abcg2-modulators.md or gout-pathophysiology.md but currently is not. Adding it here both for comp-014's intended scope and as a forcing function for the wiki gap to be closed in a separate sweep.",
+      "rationale": "Apical urate exchanger; benzbromarone hits this alongside URAT1. Off-target counter-screen relevance similar to OAT1/OAT3."
+    },
+    "_PROPOSED_redox_disulfide_modulators": {
+      "name": "Redox/disulfide chemistry (PROPOSED — not yet a wiki chokepoint)",
+      "_status": "PROPOSED 2026-05-06 by comp-014 scope. Not yet added to wiki/modality-chokepoint-matrix.md or wiki/nlrp3-exploit-map.md. Phase 5 deliverable: confirm or reject the chokepoint-warrant claim based on what fungal-compound coverage actually surfaces.",
+      "candidate_targets": [
+        {
+          "name": "Protein Disulfide Isomerase",
+          "uniprot": "P07237",
+          "gene": "P4HB",
+          "rationale": "ER-resident; load-bearing for disulfide-rich therapeutic protein folding (DAF SCR1-4 engineering directly depends on this — see CLAUDE.md DAF disulfide incident)."
+        },
+        {
+          "name": "PDIA3 (ERP57)",
+          "uniprot": "P30101",
+          "gene": "PDIA3"
+        },
+        {
+          "name": "Thioredoxin",
+          "uniprot": "P10599",
+          "gene": "TXN",
+          "rationale": "Plasma + intracellular redox buffering; modulates NLRP3 priming via TXNIP axis."
+        },
+        {
+          "name": "TXNIP (Thioredoxin-Interacting Protein)",
+          "uniprot": "Q9H3M7",
+          "gene": "TXNIP",
+          "rationale": "Direct NLRP3 activator under oxidative stress. Connects redox state → inflammasome priming. **Bidirectional relevance:** if fungal compounds suppress TXNIP, they suppress NLRP3 priming — connects redox chokepoint to NLRP3 chokepoint."
+        },
+        {
+          "name": "Glutaredoxin",
+          "uniprot": "P35754",
+          "gene": "GLRX"
+        },
+        {
+          "name": "ergothioneine biosynthesis (fungal-side)",
+          "rationale": "Fungal Egt1/Egt2 enzymes; not a human target. Listed for the producer-side: oyster mushroom and koji are ergothioneine-rich. If we want to elevate ergothioneine as a chokepoint-relevant compound, the producer organisms matter."
+        }
+      ],
+      "rationale_for_inclusion": "Fungi are biochemically distinctive in thiol/disulfide chemistry (ergothioneine biosynthesis is essentially fungal-and-mycobacterial; epipolythiodioxopiperazine ETPs like gliotoxin are fungal-specific). A breadth-first compound aggregation across fungi will surface this chemistry whether or not we ask for it. The choice is whether to map it onto a named chokepoint or let it appear as 'unmapped target space.' Adding it to the formal chokepoint inventory (Phase 5 decision) makes future breadth passes able to flag it directly.",
+      "phase_5_verdict_tiers": {
+        "ADMIT": "≥20 fungal compounds with annotated activity across ≥3 mechanistic classes — formal chokepoint addition to modality-chokepoint-matrix.md as a new column.",
+        "PRELIMINARY": "10-19 fungal compounds across ≥2 mechanistic classes — provisional column in the matrix with explicit 'needs Phase 5b expansion' tag. Phase 1 peer review (2026-05-06) recommended this intermediate tier to avoid binary admit/reject when the evidence is on the boundary.",
+        "REJECT": "Fewer than 10 fungal compounds OR dominated by one mechanistic class — fold the surfaced compounds into the existing NLRP3 sub-chokepoint map as an additional priming axis (TXNIP/redox), without elevating to a standalone chokepoint."
+      }
+    }
+  }
+}
