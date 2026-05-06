@@ -328,7 +328,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
   - Cassette B (uricase): `[PTEF1 — amyB signal peptide — *A. flavus uaZ* codon-optimized — TgpdA]`. Distinct promoter (constitutive TEF1) to separate transcriptional program from Cassette A. Selection marker: niaD or amdS.
 - **Host strain.** *A. oryzae* RIB40 or NSAR1 (pyrG-deficient auxotroph). **Updated recommendation (post-H01 Killshot #1, 2026-05-05):** For the lactoferrin cassette specifically, prefer a protease-deletion chassis (NSlD-ΔP10 or equivalent: ΔtppA ΔpepE ΔnptB ΔdppIV ΔdppV ΔalpA ΔpepA ΔAopepAa ΔAopepAd ΔcpI) over wild-type RIB40. Huynh et al. 2020 (PMC7257131) showed wild-type RIB40 was inadequate for functional antibody production at the titer threshold needed; only the ten-protease-deletion strain reached 39.7 mg/L. RIB40 remains appropriate for the uricase-only Year 1 starting strain. The NSAR1 5-marker platform (Oikawa 2020, PMC7725655) provides 5 simultaneous integration slots — the 2-cassette H01 design uses two, leaving three free for downstream additions. (In Vitro; source: H01-ward-dual-cassette.md)
 - **Transformation.** PEG/CaCl₂ protoplast, sequential: Cassette A first → select on pyrG-minus → confirm hLf expression by Western → transform Cassette B into validated hLf clone → select on niaD/amdS.
-- **Fermentation.** Solid-state rice koji, 48–60 h at 30°C, 35% moisture. Parallel submerged-culture control (100 mL shake flask, 28°C) to isolate solid-state variable.
+- **Fermentation.** Solid-state rice koji, 48–60 h at 30°C, 35% moisture. Parallel submerged-culture control (100 mL shake flask, 28°C) to isolate solid-state variable. **Add Lf-alone single-cassette arm** (no uricase cassette, otherwise identical) to resolve the capacity-vs-titer benchmark ambiguity flagged 2026-05-06 — see "Capacity-vs-titer side-product readout" below.
 - **Readouts.**
   - Uricase activity: spectrophotometric UA-disappearance assay (per [engineered-koji-protocol.md](./engineered-koji-protocol.md) §05).
   - Lactoferrin titer: anti-hLf ELISA + Western blot.
@@ -336,6 +336,16 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
   - Native metabolite profile: kojic acid titer (HPLC) + ergothioneine titer (LC-MS) — is WT baseline preserved within 30%?
   - qPCR for both cassette copy numbers (stability check).
   - SDS-PAGE to detect any incompletely-processed glucoamylase-hLf fusion (KEX-2 saturation signal).
+
+**Capacity-vs-titer side-product readout (added 2026-05-06):** The Lf-alone single-cassette arm above resolves a load-bearing benchmark ambiguity in the OE wiki: the [chaperone-orthogonal stacking framework](./chaperone-orthogonal-stacking.md) calibrates synergy coefficients against the Huynh 2020 antibody capacity ceiling (39.7 mg/L adalimumab in NSlD-ΔP10, 16 disulfides), while [koji-endgame-strain.md](./koji-endgame-strain.md) §3.1 cites Ward 1995 (>2 g/L Lf in *A. awamori*) as the lactoferrin titer precedent. Both numbers cannot be the binding constraint: 17-disulfide Lf at 2 g/L would be impossible if 16-disulfide adalimumab at 40 mg/L were a hard capacity ceiling. The §1.9 Lf-alone arm directly resolves which baseline applies in the actual §1.9 host (NSlD-ΔP10) and format (solid-state koji) — neither of which matches the original Ward 1995 conditions (*A. awamori*, submerged). Three actionable readouts:
+
+| Lf-alone titer | Implication for chaperone framework | Implication for endgame strain |
+|---|---|---|
+| ≥500 mg/L | Huynh ceiling is antibody-architecture-specific; framework's synergy coefficients are systematically conservative for single-chain payloads | Endgame strain dual-cassette in good shape; can stack additional PDI-loaded payloads with confidence |
+| 100–500 mg/L | Genuine intermediate regime; framework calibration is approximately right for single-chain payloads | Dual-cassette feasible but third PDI-loaded cassette (e.g., DAF SCR1-4) needs conservative framing |
+| <100 mg/L | Huynh ceiling is approximately the real ceiling regardless of architecture; framework is well-calibrated | Dual-PDI-cassette designs are at higher risk than the Ward 1995 precedent suggests; two-strain co-fermentation fallback (§4.1 koji-endgame-strain.md) becomes more attractive |
+
+This is a free byproduct of the §1.9 readout — no additional fermentation cost, only the Lf-alone strain construction (which is already a prerequisite for the dual-cassette construction sequence per "Transformation" above: Cassette A first → confirm hLf expression → transform Cassette B). The Lf-alone titer was previously reported only as part of the construct-validation step; this addendum elevates it to a load-bearing platform readout.
 
 **Estimated cost:** $3,000–5,000 — gene synthesis for two codon-optimized cassettes (~$600–1,000), cloning and transformation reagents ($500–1,000), fermentation consumables ($200–400), ELISA + Western antibodies ($800–1,200), metabolite assay reagents ($500–800), CRO or academic lab time if outsourced ($1,000–2,000 per batch).
 
