@@ -99,6 +99,7 @@ nav:
     - Engineered LBP Chassis: engineered-lbp-chassis.md
     - siRNA / URAT1 Modality: sirna-urat1-modality.md
     - TCM × Modern Rigor (Discovery Engine): tcm-modern-rigor-intersection.md
+    - Medicinal Mushroom Complement Track: medicinal-mushroom-complement-track.md
     - Ward 1995 Lab Access — Global Landscape: ward-1995-lab-access-global.md
 
   - Delivery & Barrier:
@@ -128,6 +129,7 @@ nav:
     - Supplements Stack: supplements-stack.md
     - Self-Experiment Protocol: self-experiment-protocol.md
     - Validation Experiments: validation-experiments.md
+    - Enzyme Quantification Protocol: enzyme-quantification-protocol.md
     - Modality × Target Matrix: modality-chokepoint-matrix.md
 
   - Tools & Reference:
@@ -142,6 +144,7 @@ nav:
     - H03 — siRNA / URAT1 Thesis: hypotheses/H03-sirna-urat1-thesis.md
     - H04 — TCM × Modern Rigor Methodology Lens: hypotheses/H04-tcm-rigor-intersection.md
     - H05 — DAF SCR1-4 CP0-Closure Thesis: hypotheses/H05-daf-scr14-cp0-thesis.md
+    - H06 — Medicinal-Mushroom-Complement Track Viability: hypotheses/H06-medicinal-mushroom-complement-track.md
     - Computational Experiments: computational-experiments.md
     - Uricase Protease Stability (comp-001): uricase-protease-stability-computational.md
     - Lactoferrin Protease Stability (comp-005): lactoferrin-protease-stability-computational.md
@@ -151,6 +154,8 @@ nav:
     - Supplement ABCG2 Antagonism (comp-004): supplement-abcg2-antagonism-computational.md
     - Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010): cassette-compatibility-computational.md
     - C. utilis Uricase Cassette Compatibility (comp-011): c-utilis-uricase-cassette-compatibility-computational.md
+    - Medicinal Mushroom Compound × Chokepoint Mapping (comp-014): medicinal-mushroom-compound-mapping-computational.md
+    - Medicinal Mushroom Extract Characterization SOPs: medicinal-mushroom-extract-sops.md
     - Manual Literature Mining Protocol: manual-literature-mining.md
     - Open Questions Index: open-questions.md
     - Concept Graph: GRAPH.md

@@ -166,6 +166,19 @@ graph TB
         DE12["Global Lab Access — Maruyama Tokyo / Jiangnan / DTU parallel paths"]
     end
 
+    subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
+        MT1["Ganoderma lucidum / lingzhi — GLPP polysaccharide-peptide"]
+        MT2["Cordyceps militaris — cordycepin + native pentostatin ADA-inhibitor"]
+        MT3["Pleurotus citrinopileatus — ergothioneine (7.0 mg/g DW)"]
+        MT4["Lentinula edodes / shiitake — eritadenine"]
+        MT5["Hericium erinaceus / lion's mane — erinacines"]
+        MT6["Trametes versicolor / turkey tail — PSK/PSP"]
+        MT7["Inonotus obliquus / chaga — inotodiol"]
+        MT8["comp-014 — breadth aggregation (6,798 compounds, 55 species)"]
+        MT9["H06 — track viability falsification card (stub)"]
+        MT10["Extract Characterization SOPs — GLPP / cordycepin / EGT"]
+    end
+
     subgraph Androgens["ANDROGEN-URATE AXIS (NEW)"]
         S1["Testosterone (endogenous or exogenous)"]
         S2["Estradiol"]
@@ -472,6 +485,29 @@ graph TB
     DE12 -->|"provides NSlD-dP10 chassis for"| KE10
     DE12 -->|"parallel path via C19 chassis"| KE1
 
+    %% Medicinal mushroom complement track (source: medicinal-mushroom-complement-track.md, comp-014)
+    %% Phase 7 peer track — cultivation + extraction, NO genetic engineering
+    MT8 -->|"Phase 6 triage routed to cultivation track"| MT1
+    MT8 -->|"Phase 6 triage routed to cultivation track"| MT2
+    MT8 -->|"Phase 6 triage routed to cultivation track"| MT3
+    MT1 -->|"ADA + GLUT9 + OAT1 — 40.6% UA reduction HUA mice"| B1
+    MT1 -->|"GLUT9/OAT1 expression modulation"| S4
+    MT2 -->|"URAT1 modulation — SUA 337→203 µmol/L"| B1
+    MT2 -->|"native pentostatin ADA-inhibitor co-product"| MT1
+    MT3 -->|"Keap1/Nrf2/HO-1 redox modulator"| O3
+    MT3 -->|"OCTN1/SLC22A4 dietary therapeutic dose"| B3
+    MT4 -->|"cardiovascular cholesterol-lowering"| C2
+    MT5 -->|"NGF-inducing CNS-relevant"| C2
+    MT6 -->|"β-glucan immunomodulator (FDA-approved adjuvant Japan)"| C2
+    MT7 -->|"triterpenoid chemistry"| C2
+    MT9 -->|"falsification card for track viability"| MT8
+    MT10 -->|"characterization protocols operationalize"| MT1
+    MT10 -->|"characterization protocols operationalize"| MT2
+    MT10 -->|"characterization protocols operationalize"| MT3
+    %% Cross-track synergy
+    MT1 -->|"GLPP + koji uricase = cross-track synergy"| KE2
+    MT2 -->|"cordycepin also producible in A. oryzae via cns1+cns2"| KE2
+
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2
     M2 -->|"CB2/TLR4/NLRP3 — MSU gout model"| C2
@@ -506,6 +542,7 @@ graph TB
     style DiscoveryEngine fill:#fff8e6
     style KojiEndgame fill:#e6fff0
     style Chaperones fill:#e6f0ff
+    style MushroomTrack fill:#e6ffe6
 ```
 
 ## Key Pathway Descriptions
