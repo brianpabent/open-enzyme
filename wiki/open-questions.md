@@ -276,14 +276,7 @@ The [Medicinal Mushroom Complement Track scope page](./medicinal-mushroom-comple
 - **#5 H06 hypothesis card ✅** (stub at [`hypotheses/H06-medicinal-mushroom-complement-track.md`](./hypotheses/H06-medicinal-mushroom-complement-track.md))
 - **#6 Modality-chokepoint-matrix native-compound row ✅** (2026-05-06)
 
-**Brian CTO-actionable TODOs** (no scientific expertise required, registered for umbrella TODO aggregation per CLAUDE.md):
-
-- **TODO-1** — Order *P. citrinopileatus* (golden oyster) grow kit (~$30); run Phase 7-2 home-cultivation protocol; freeze-dry harvest. Self-experiment data validating OE reproducibility-layer thesis. ☐ Open. ($30 + 3 weeks elapsed)
-- **TODO-2** — Email Lin Zhanxi 林占熺 lab (Fujian Agriculture & Forestry U / Juncao Center) for Juncao GLPP cultivation SOP referenced in PMID 36385640. ☐ Open. (10 min) Closes load-bearing CNKI gating dependency for SOP-1.
-- **TODO-3** — Open GitHub Issue "Phase 5b CNKI/J-STAGE/KISS deep-dive contributions wanted" with Phase 7-1 scan outputs as contributor brief. ☐ Open. (15-20 min) Community-sources institutional-access problem.
-- **TODO-4** — Frame comp-014 findings as recruiting material for the three open collaborator roles (Gut Microbiome / Pharma Translation / Innate Immune Safety) per [`team.md`](./team.md). ☐ Open. (30-60 min drafting) Suggested timing: after TODO-1/2/3 land.
-
-Full detail + maintenance protocol: [`medicinal-mushroom-complement-track.md` §"CTO-actionable items"](./medicinal-mushroom-complement-track.md#cto-actionable-items-no-scientific-expertise-required-doable-from-desk-this-week).
+**CTO-actionable TODOs** are tracked operationally — see [`operations/todos.md`](../operations/todos.md) §"Phase 7 medicinal-mushroom-complement track" (TODO surface; this index points to it for completeness per the umbrella aggregation pattern).
 
 Phase 3 reflection (content-triggered, not calendar-triggered): does the medicinal-mushroom-complement track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to include native-compound producers as first-class platform contribution? Likely yes given the regulatory simplicity + home-fermentability + multi-compound-per-species advantages, but defer formal reflection until SOP-3 (EGT) lands as proof-of-concept.
 
