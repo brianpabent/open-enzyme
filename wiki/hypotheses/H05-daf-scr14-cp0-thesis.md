@@ -46,7 +46,7 @@ A soluble DAF/CD55 SCR1-4 truncated construct (UniProt P08174, residues 35–285
 
 The thesis composes three sub-claims, each independently falsifiable:
 
-1. **Cassette feasibility.** The SCR1-4 construct can be cloned with a koji-native α-amylase signal peptide, expressed in *A. oryzae* (RIB40 or NSlD-ΔP10 protease-deletion host) at therapeutic-relevant titers (≥50 mg/L pore-fluid equivalent, mirroring the H01 lactoferrin floor scaled for the smaller protein), and secreted as a correctly-folded soluble fragment with all 12 intrachain disulfide bonds (3 per SCR domain × 4 SCRs) intact.
+1. **Cassette feasibility.** The SCR1-4 construct can be cloned with a koji-native α-amylase signal peptide, expressed in *A. oryzae* (RIB40 or NSlD-ΔP10 protease-deletion host) at therapeutic-relevant titers (≥50 mg/L pore-fluid equivalent, mirroring the H01 lactoferrin floor scaled for the smaller protein), and secreted as a correctly-folded soluble fragment with all 8 intrachain disulfide bonds (2 per SCR domain × 4 SCRs, per UniProt P08174) intact.
 
 2. **Functional CCP-regulatory activity.** The expressed soluble truncated fragment retains decay-accelerating function — specifically C3b and C4b binding, and C3 convertase decay-acceleration sufficient to suppress C5a generation in a complement-activation assay (e.g., zymosan-stimulated human serum + ELISA for C5a).
 
@@ -60,7 +60,7 @@ The truncation is grounded in [comp-012](../daf-cd55-scr14-truncated-computation
 
 Anticipated load-bearing assumptions:
 
-1. **Disulfide folding fidelity.** *A. oryzae* ER PDI capacity is sufficient to fold 12 intrachain disulfides on a single ~28 kDa secreted protein. Comp-010 noted the OE pair (uricase 0 disulfides + lactoferrin 17 disulfides = 17 total) is within demonstrated NSlD-ΔP10 capacity per Huynh 2020. Adding DAF SCR1-4's 12 disulfides as a third co-expressed cassette would push to 29 total — a real but not catastrophic increase.
+1. **Disulfide folding fidelity.** *A. oryzae* ER PDI capacity is sufficient to fold 8 intrachain disulfides on a single ~28 kDa secreted protein. Comp-010 noted the OE pair (uricase 0 disulfides + lactoferrin 17 disulfides = 17 total) is within demonstrated NSlD-ΔP10 capacity per Huynh 2020. Adding DAF SCR1-4's 8 disulfides (per UniProt P08174, corrected from an earlier hallucinated estimate of 12; see comp-012 §1.5 correction note) as a third co-expressed cassette would push to 25 total — a real but not catastrophic increase, and ~14% lower than the prior estimate.
 2. **CCP-regulatory function survives truncation.** Native DAF/CD55's decay-accelerating function uses all four SCR domains plus the membrane GPI anchor for proper geometry; truncating to soluble SCR1-4 changes the geometry. Some published soluble DAF constructs retain function; whether the specific aa 35–285 boundary preserves activity is not pre-validated.
 3. **Mucosal access geometry.** Submucosal macrophages doing CP0 priming are on the basolateral side of the epithelium; luminal-side soluble DAF would need to either cross the epithelium (unlikely for a 28 kDa protein) or modulate complement upstream (in the lumen, on bacterial surfaces, in the mucus layer) in a way that meaningfully reduces priming load reaching the macrophages.
 4. **Alternative-pathway dominance in gout-relevant complement priming.** DAF inhibits both classical and alternative pathway C3 convertases; if the gout-relevant priming is driven primarily by a pathway DAF doesn't cover (e.g., MBL-pathway dominance or direct C5 cleavage), the inhibition is incomplete.

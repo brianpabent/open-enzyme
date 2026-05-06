@@ -41,6 +41,16 @@ sources:
 
 ---
 
+## §1.5 Correction note (2026-05-06): disulfide count anchor
+
+An earlier draft of this page (the 2026-05-05 Sonnet subagent output) asserted "3 conserved disulfide bonds per SCR domain → 12 total for SCR1-4." This was an unverified hallucination: the comp-012 pipeline (AlphaFold pLDDT-based protease stability scoring) does not model disulfide bonds at all — the Limitations section below explicitly states "Disulfide bonds not modelled." The number 3 per domain was never derived from a primary source.
+
+Primary source verification against UniProt P08174 (human DAF/CD55, canonical isoform, SV=4, accessed 2026-05-06) confirms exactly **8 DISULFID feature annotations** in the SCR1-4 region: 2 per SCR domain (Cys36-Cys81, Cys65-Cys94 [SCR1]; Cys98-Cys145, Cys129-Cys158 [SCR2]; Cys163-Cys204, Cys190-Cys220 [SCR3]; Cys225-Cys267, Cys253-Cys283 [SCR4]). This is the canonical sushi/CCP fold (Cys1-Cys3 + Cys2-Cys4 motif), standard complement biology. The corrected count (8 total) is now anchored to UniProt feature annotations throughout this page and in [H05](../hypotheses/H05-daf-scr14-cp0-thesis.md).
+
+This class of error — a plausible-sounding number invented without primary source verification — is exactly what [wiki/manual-literature-mining.md](./manual-literature-mining.md) exists to prevent. Surface it here so the correction is traceable.
+
+---
+
 ## Context: this experiment completes the comp-006 decision tree
 
 [comp-006](./daf-cd55-protease-stability-computational.md) found the full DAF/CD55 ectodomain (aa 35–353) is HIGH protease risk. The driver was unambiguous: the Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52) contributed 9 NPr-exposed sites, 48 ALP-exposed sites, and 1 acid_protease exposed site — all within 68 disordered residues. The SCR1–4 domains (aa 35–285, pLDDT 85–98) contributed zero exposed sites. comp-006's own Limitations section identified the stalk-truncated construct as the logical follow-up; the 2026-05-05 sweep formalized this into a wet-lab proposal. comp-012 runs the in silico verdict before any wet-lab resources are committed.
@@ -67,7 +77,7 @@ Accessibility weights: buried (pLDDT ≥ 80) = 0.1; partially exposed (pLDDT 65�
 
 ## Structural context
 
-**SCR1 (aa 35–96):** pLDDT 85–98 — well-folded. Three conserved disulfide bonds (6 Cys). Inter-SCR junction at aa 83–96 remains well-folded (pLDDT 89–96).
+**SCR1 (aa 35–96):** pLDDT 85–98 — well-folded. Two conserved disulfide bonds (4 Cys: Cys36-Cys81, Cys65-Cys94 per UniProt P08174). Inter-SCR junction at aa 83–96 remains well-folded (pLDDT 89–96).
 
 **SCR2 (aa 97–160):** pLDDT 90–98 — well-folded. Minor dip at aa 99–102 (~91) at the interdomain connection.
 
@@ -114,7 +124,7 @@ comp-006 established that the SCR1–4 domains contribute zero exposed sites. co
 
 The SCR1-4 construct matches uricase on every structural metric. The max risk scores are identical (both 0.039) because both have only buried sites and the NPr effective activity (0.388) sets the buried-site ceiling for the same conditions.
 
-**Important caveat on the disulfide contribution:** The SCR domains contain 12 conserved disulfide bonds (3 per domain). This analysis treats them as standard polypeptide — disulfide cross-linking further reduces backbone flexibility and proteolytic accessibility relative to what pLDDT alone captures. The true risk in the SCR domains is therefore lower than 0.039 for any correctly folded construct. The LOW verdict likely *underestimates* the actual protease resistance of a disulfide-intact SCR1-4 fragment.
+**Important caveat on the disulfide contribution:** The SCR domains contain 8 conserved disulfide bonds (2 per domain — canonical sushi/CCP fold per UniProt P08174 DISULFID annotations: Cys36-Cys81, Cys65-Cys94 [SCR1]; Cys98-Cys145, Cys129-Cys158 [SCR2]; Cys163-Cys204, Cys190-Cys220 [SCR3]; Cys225-Cys267, Cys253-Cys283 [SCR4]). This analysis treats them as standard polypeptide — disulfide cross-linking further reduces backbone flexibility and proteolytic accessibility relative to what pLDDT alone captures. The true risk in the SCR domains is therefore lower than 0.039 for any correctly folded construct. The LOW verdict likely *underestimates* the actual protease resistance of a disulfide-intact SCR1-4 fragment.
 
 ---
 
@@ -125,8 +135,8 @@ The computational feasibility gate is resolved in favor of the SCR1-4 construct.
 **1. Does SCR1-4 without the stalk retain complement-regulatory activity?**  
 Native DAF/CD55 requires SCR2–4 for C3b/C4b binding and C3 convertase decay-accelerating activity; SCR1 contributes primarily to cofactor function. The stalk is a GPI-anchor linker with no known enzymatic or binding activity. Soluble forms of related proteins (sCR1, which lacks a GPI anchor) retain full complement-inhibitory function, suggesting SCR domains function independently of the stalk. However, this is a mechanistic extrapolation — the specific CD55 SCR1-4 soluble fragment has not been validated functionally in a gut-lumen complement assay (Mechanistic Extrapolation).
 
-**2. Can A. oryzae fold 12 intrachain disulfide bonds in a secreted protein?**  
-A. oryzae has protein disulfide isomerase (PDI) activity in its ER. The organism secretes disulfide-containing proteins (e.g., glucoamylase, which has 2 disulfide bonds). Whether it can fold 12 intrachain disulfides in an SCR repeat array is unknown. This is a non-trivial question — misfolded SCR domains would be non-functional even if protease-stable. Small-scale expression in A. oryzae with SDS-PAGE under reducing vs. non-reducing conditions would answer this.
+**2. Can A. oryzae fold 8 intrachain disulfide bonds in a secreted protein?**  
+A. oryzae has protein disulfide isomerase (PDI) activity in its ER. The organism secretes disulfide-containing proteins (e.g., glucoamylase, which has 2 disulfide bonds). Whether it can fold 8 intrachain disulfides in an SCR repeat array (2 per SCR × 4 SCRs) is unknown — though 8 sits comfortably between glucoamylase's 2 and lactoferrin's 17, which is less concerning than prior framings implied. This is a non-trivial question — misfolded SCR domains would be non-functional even if protease-stable. Small-scale expression in A. oryzae with SDS-PAGE under reducing vs. non-reducing conditions would answer this.
 
 **3. Is gut-lumen complement relevant to gout flare suppression?**  
 The CP0 hypothesis (complement priming via C5a) is established in synovial fluid and joint tissue. Gut-lumen complement activation, and whether mucosal-expressed CD55 can suppress it meaningfully, is less characterized. Complement activity in the gut lumen is documented (particularly in inflammatory states), but whether gut-lumen DAF expression can modulate systemic C5a-mediated joint inflammation requires direct evidence. This is the fundamental CP0 mucosal-coverage question.
@@ -138,7 +148,7 @@ Even a correctly folded, protease-stable, functionally active SCR1-4 fragment ne
 
 ## Key limitations
 
-- **Disulfide bonds not modelled.** 12 conserved disulfide bonds in SCR1-4 (3 per domain) substantially reduce backbone flexibility and proteolytic susceptibility beyond pLDDT. This analysis likely **overestimates** the already-low risk in the SCR domains. The true risk for a correctly-folded construct is lower than 0.039.
+- **Disulfide bonds not modelled.** 8 conserved disulfide bonds in SCR1-4 (2 per domain, per UniProt P08174) substantially reduce backbone flexibility and proteolytic susceptibility beyond pLDDT. This analysis likely **overestimates** the already-low risk in the SCR domains. The true risk for a correctly-folded construct is lower than 0.039.
 - **pLDDT ≠ solvent accessibility.** All 242 SCR-domain sites are classified as buried (pLDDT ≥ 80), but SASA calculation on the AlphaFold structure would identify which surface loops are actually solvent-exposed at domain interfaces. Some "buried" sites may be accessible at the protein surface. A structure-based SASA analysis would refine this.
 - **P1/P1' rules only.** Extended subsite specificity (P2–P4) not modelled. May over-count recognition sites; extended context in the compact SCR fold may disfavor cleavage at many nominal sites.
 - **ALP and NPr pH factors conservatively set to 1.0.** ALP is outside its active range (pH 6–12) at shio-koji pH 4.5–5.0; NPr is at the lower edge. True activity is lower — risk is conservatively overstated. If corrected, max risk score would fall below 0.039.
@@ -153,7 +163,7 @@ The computational feasibility gate is cleared. The logical next step is a minima
 
 **Expression screen:** Clone DAF/CD55 SCR1-4 (aa 35–285) with an A. oryzae α-amylase signal peptide (Ward et al. 1995) into an A. oryzae expression vector (e.g., pANe-based system). Express under standard koji fermentation conditions. Assess: (a) secretion (SDS-PAGE of culture supernatant), (b) correct folding (non-reducing vs. reducing SDS-PAGE for disulfide bond count), (c) protease stability in shio-koji-conditioned medium over 7–14 days.
 
-**Complexity:** Medium. Standard A. oryzae transformation protocols are well-established; the expression construct is a 750 bp insert with no unusual features beyond the 12 disulfide bonds. The disulfide folding question is the primary unknown.
+**Complexity:** Medium. Standard A. oryzae transformation protocols are well-established; the expression construct is a 750 bp insert with no unusual features beyond the 8 disulfide bonds (2 per SCR × 4 SCRs, per UniProt P08174). The disulfide folding question is the primary unknown.
 
 **Collaboration context:** comp-006 cross-references Rheinallt Jones (Emory, immunology) and Lauren Collier-Hyams (Emory, epithelial biology) as potential collaborators for functional complement assays. Expression screen could be a Phase 0 co-experiment if collaboration is established.
 
