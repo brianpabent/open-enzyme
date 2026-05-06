@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "03948e92b467ed9450e969ec7a7afcb826b283e8",
-    "timestamp": "2026-05-06T20:35:17Z",
+    "commit": "b4a55fc5b88302be8c6501ca11c6a810fd640a4b",
+    "timestamp": "2026-05-06T20:38:07Z",
     "synthesis_log": "logs/v4-synthesis-2026-05-06-121731c.md",
-    "review_commit": "03948e92b467ed9450e969ec7a7afcb826b283e8",
+    "review_commit": "b4a55fc5b88302be8c6501ca11c6a810fd640a4b",
     "trigger_files": [
       "wiki/GRAPH.md",
       "wiki/aspergillus-oryzae.md",
@@ -42,7 +42,7 @@
       "wiki/tcm-modern-rigor-intersection.md",
       "wiki/validation-experiments.md"
     ],
-    "run_id": "local-1778099717"
+    "run_id": "local-rebase-fix-1778099887"
   },
   "recent_runs": [
     {
@@ -103,6 +103,15 @@
       "run_id": "local-1778099717",
       "trigger": "workflow_dispatch",
       "completed_at": "2026-05-06T20:35:17Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 35,
+      "synthesis_log": "logs/v4-synthesis-2026-05-06-121731c.md"
+    },
+    {
+      "run_id": "local-rebase-fix-1778099887",
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-05-06T20:38:07Z",
       "outcome": "success",
       "failed_phase": null,
       "trigger_paths_count": 35,
