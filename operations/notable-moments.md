@@ -14,6 +14,81 @@ This log is **public** (operations/ folder is in the public repo) — same postu
 
 ---
 
+## 2026-05-06 — An AI agent invented a number nobody asked it to invent. The next day's process found it. Here's exactly what happened and what discipline catches this.
+
+**What happened.** Yesterday (2026-05-05), an AI subagent was asked to write up a computational experiment on a complement-system protein called DAF/CD55 (specifically a truncated version called SCR1-4, relevant to the project's CP0 chokepoint closure thesis). The experiment itself was a protease-stability analysis — does the protein survive being cooked into the koji-fermentation environment? The AI's analysis pipeline used AlphaFold-predicted protein structure to score how exposed each protease cleavage site is. The experiment is well-defined and reproducible.
+
+The pipeline does NOT count disulfide bonds. The page itself, in its own Limitations section, says explicitly: *"Disulfide bonds not modelled."*
+
+But the AI agent, while writing the page, asserted in 4 places of prose narrative that the protein contains "3 conserved disulfide bonds per SCR domain → 12 total disulfides." Nobody asked it for that number. The pipeline didn't compute it. There was no source attached to the claim. The agent just wrote it confidently, in flowing scientific prose, in multiple spots.
+
+The number then propagated overnight into a related "falsification card" page (the project's pre-registered hypothesis-tracking discipline) which used "12 disulfides" to derive a downstream calculation: "12 + 17 = 29 total disulfide bonds across the proposed three-cassette engineered strain — a real but not catastrophic increase." That 29 number then drove a chaperone-load synergy analysis predicting the strain might be at risk of folding-pathway saturation.
+
+Today (2026-05-06), the project's wiki sweep daemon (a multi-pass system that uses Gemini, Claude, and DeepSeek across different vendors to cross-check every wiki edit for inconsistencies) flagged the discrepancy: the chaperone-orthogonal stacking framework page had "8 disulfides (4 SCRs × 2 disulfides each)," while the comp-012 page and the H05 stub said "12." Two pages disagreed on a load-bearing structural number.
+
+**The verification, performed live during the walkthrough:** queried UniProt directly for the canonical human DAF/CD55 entry (P08174) and pulled the disulfide-bond feature annotations. The result:
+
+```
+FT   DISULFID        36..81    ┐ SCR1: 2 disulfides
+FT   DISULFID        65..94    ┘
+FT   DISULFID        98..145   ┐ SCR2: 2 disulfides
+FT   DISULFID        129..158  ┘
+FT   DISULFID        163..204  ┐ SCR3: 2 disulfides
+FT   DISULFID        190..220  ┘
+FT   DISULFID        225..267  ┐ SCR4: 2 disulfides
+FT   DISULFID        253..283  ┘
+```
+
+**Eight disulfide bonds, not twelve.** Two per SCR domain, four domains, total of eight. This is the canonical sushi/CCP fold (Cys1–Cys3 + Cys2–Cys4 motif) — textbook complement biology. The chaperone framework page happened to have used the textbook number; the comp-012 + H05 pages had been fabricated.
+
+The fix landed within ~30 minutes: corrected numbers in 5 places of comp-012 + 2 places of H05, anchored every reference to the UniProt feature annotations, added a "Correction note" to the comp-012 page documenting the error and how it was caught, and codified the missing discipline (a pre-commit grep-verify gate for every load-bearing quantitative claim in newly-authored wiki content) into the project's CLAUDE.md and the canonical methodology page.
+
+**The downstream good news from the correction:** 8 disulfides instead of 12 means the proposed three-cassette engineered strain has a total disulfide load of 25 (17 lactoferrin + 8 DAF) instead of 29. The "can the cell fold all this in its protein-folding factory" question is meaningfully easier than yesterday's pages reflected — glucoamylase has 2, lactoferrin 17, 8 sits comfortably between. The CP0-closure engineering thesis is in better shape than the wrong numbers had suggested.
+
+**Why it matters.** This is the citizen-science-with-AI dynamic in concrete form, with a happy ending and an instructive lesson.
+
+The reassuring part: **the multi-pass cross-vendor process worked as designed.** The wiki sweep is built on the assumption that no single AI model should be trusted to be its own backstop. Different vendors (Gemini, Claude, DeepSeek) have different training distributions, different failure modes, different blind spots. When one model writes the substrate and a different model reads it for synthesis, inconsistencies surface that single-vendor workflows would miss. The DAF disulfide count is exactly the kind of error a single-model loop would propagate happily — but with cross-vendor synthesis on top, it surfaces as a flagged inconsistency within 24 hours.
+
+The unreassuring part: **24 hours is too late.** The wrong number was already in the corpus. It had already been ingested into downstream synthesis (the chaperone-load triple-cassette analysis). It had propagated to a second page (H05). If the sweep daemon had been delayed by a week, the wrong number would have shaped multiple subsequent decisions before being caught. The sweep is a backstop, not a gate — and a backstop is the wrong place to catch fabricated coefficients.
+
+The right place to catch this class of error is **before the content commits.** That's now codified as a project rule (CLAUDE.md Rule 4 + the canonical statement in `wiki/manual-literature-mining.md` §"Pre-commit verification gate"): every load-bearing quantitative claim must be grep-verified against its primary source before the commit lands. UniProt accession + feature annotation. PMID + section. ChEMBL ID + bioactivity record. NCT trial ID + endpoint. The verification takes 30 seconds; the propagation cost of skipping it is days of downstream re-work.
+
+**The general lesson for citizen-science-with-AI work:**
+
+1. **AI models will write confident-sounding scientific prose containing fabricated numbers,** even on tasks where the analysis pipeline didn't compute those numbers. The fabrication is not malicious — it's a side effect of the model trying to produce coherent-feeling explanatory narrative. "3 disulfides per SCR domain" is the kind of number that *sounds* like a textbook fact; it isn't.
+
+2. **Single-model workflows will not catch this on their own.** A single AI loop tends to be internally consistent because it's drawing from one training distribution. Inconsistencies surface when a *different* model reads what the first one wrote and notices the math doesn't work.
+
+3. **Cross-vendor multi-pass review is cheap and worth it.** OpenRouter routes calls to any of a dozen vendors at ~constant marginal cost. Running synthesis through Gemini, then critique through Claude, then peer-review through DeepSeek catches things any single one would miss. The wiki sweep daemon's full cycle costs ~$0.65 and runs in ~9-12 minutes — affordable for a one-person research project.
+
+4. **Cross-vendor review is still a backstop, not a gate.** The right defense is verifying numbers at the moment they enter the corpus. Grep-verify every load-bearing number against a named primary source. Cite line-anchored. If you can't verify, don't ship — write a placeholder and come back to it. "Verify after the fact when the sweep flags it" is a worse posture than "verify before the commit."
+
+5. **Document the discipline in the project's own canon, not just in the heads of the people running it.** The DAF incident is now in two places that future Claude sessions will read: the project CLAUDE.md (which is loaded into every session) and the methodology wiki page (which the sweep daemon ingests). The next subagent that authors a comp-NNN page will be briefed with the verification protocol baked in. A discipline that lives only in someone's head fades; one that lives in the project's instructions persists.
+
+**The interesting community framing:** AI-assisted citizen-science research is going to grow rapidly. The tooling is good enough now (Claude Code + an MCP for literature + access to UniProt/ChEMBL/PubMed APIs + git for version control + a $20/month OpenAI or Anthropic subscription) that one person can run a real research operation. The thing that distinguishes work that contributes to the scientific record from work that fills it with confident-sounding noise is **the verification discipline.** Not the model quality, not the workflow speed, not the tool stack — the verification discipline. The DAF incident is one specific instance of a generalizable lesson: **the AI will hallucinate; the question is whether your process catches it before or after the corpus is contaminated.**
+
+Open Enzyme's working answer is multi-pass cross-vendor sweep + pre-commit grep-verify gate + falsification cards with pre-registered thresholds + line-anchored citation + the manual-literature-mining methodology page that documents all of this. It's not unique to this project — it's a kit of disciplines that any small AI-assisted research operation can adopt. Most of it is documented in this repo's `wiki/` and `scripts/SWEEP-ARCHITECTURE.md`; the rest is in the CLAUDE.md and the falsification cards under `wiki/hypotheses/`.
+
+**External-comms angle.** Strong blog-post material, framed as a case study in AI-research-rigor disciplines, NOT as a "Claude is broken" post. The headline is the verification discipline, not the hallucination. Suggested title: *"An AI agent invented a number on a research project. Here's how the next day's process caught it, and the discipline that prevents the next one."*
+
+Tone: honest about the failure (the model wrote a confident-sounding hallucination, that's a real failure mode, naming it clearly is more useful than minimizing it), generous about the catch (multi-pass cross-vendor architecture worked as designed; the discipline matters more than the model brand), forward-looking (here's the protocol, here's the canonical methodology page, here's the project rule that codifies it — anyone running an AI-assisted research project can adopt this kit).
+
+The substantive value the post offers a thoughtful reader: a concrete checklist they can adapt for their own projects. Not "AI is unreliable" (a non-actionable claim) and not "Claude/Gemini/DeepSeek is great" (a marketing claim) — but "here is the multi-pass architecture, here is the per-claim verification micro-protocol, here is what each component catches that the others miss."
+
+**Three engagement opportunities:**
+
+1. **Other AI-assisted research projects** — the kit of disciplines (multi-pass cross-vendor sweep + pre-commit grep-verify + falsification cards + line-anchored citation) is open and adoptable. If you're running an AI-assisted research operation and your verification posture is "trust the model and hope," this is the upgrade path. The full architecture is documented in this repo: `scripts/SWEEP-ARCHITECTURE.md`, `wiki/manual-literature-mining.md`, `CLAUDE.md`. Clone, adapt, contribute back.
+
+2. **AI-research-tooling vendors** — the failure mode this caught is generic to LLM-authored scientific prose (not specific to any one model). A general "do your tools have a verification gate before content enters a knowledge base" question is worth asking across the major AI-research-tool vendors. The DAF case is a concrete example to point at.
+
+3. **Citizen-science / open-science methodology workshops** — the kit-of-disciplines framing composes well with broader conversations about how AI changes research rigor. The Open Enzyme stack (chokepoint mapping + falsification cards + multi-pass sweep + pre-commit verification) is one specific instance of a methodology that could be generalized, written up, and shared as a workshop or methods paper if anyone wants to organize one.
+
+**The reciprocal invitation, which is the headline of why this entry is in a public log at all:** Open Enzyme is published in public for exactly the same reason as Paperclip — so that other people can find OUR mistakes and make us better. The DAF disulfide-count incident is in this log not because we've solved AI hallucinations (we haven't) but because we want the failure mode and the discipline that catches it to be visible and adoptable. The verification rules we apply to other people's tools (grep every number, anchor identity to canonical metadata, cross-check every claim, line-anchored citation) apply equally to anyone auditing this corpus. We hope readers grep our numbers, find the next fabricated coefficient hiding somewhere we haven't looked, push back on our evidence-tier tags, surface the chokepoint claims we haven't documented honestly enough. **If you find a mistake in this corpus, please tell us. That's the deal we're trying to participate in.**
+
+**Reference:** [`wiki/manual-literature-mining.md`](../wiki/manual-literature-mining.md) §"Pre-commit verification gate" — canonical statement of the discipline. [`wiki/daf-cd55-scr14-truncated-computational.md`](../wiki/daf-cd55-scr14-truncated-computational.md) §1.5 — correction note documenting the specific incident. [`CLAUDE.md`](../CLAUDE.md) §"Core Rules" Rule 4 — the project-level rule that applies to every AI session in this repo. [`scripts/SWEEP-ARCHITECTURE.md`](../scripts/SWEEP-ARCHITECTURE.md) — the multi-pass cross-vendor sweep that caught the inconsistency.
+
+---
+
 ## 2026-05-05 — A guy and a laptop found a reliability problem in a well-funded Stanford research tool
 
 **What happened.** Paperclip is the biomedical literature-indexing MCP tool from Stanford's GXL group — well-funded, well-publicized, full-text index across PubMed / bioRxiv / medRxiv / arXiv (~11M papers), the tool everyone in the AI-for-bio space has been excited about. We started using it for OE literature scans earlier in this project's life. In a session a few weeks back, the `map` operator (Paperclip's convenience-aggregation primitive — "give me a summary across N papers matching this query") returned outputs that, when grep-verified against the source papers, contained:

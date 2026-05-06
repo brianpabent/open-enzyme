@@ -63,7 +63,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 **Workflow:**
 1. Create new wiki page in `wiki/` with `.md` extension
 2. Include frontmatter: `title`, `date`, `tags` (and `related`, `sources` if you have them)
-3. Write with evidence levels (see Rule 4 below)
+3. Write with evidence levels (see Rule 5 below)
 4. Update all relevant wiki pages and `index.md`
 5. Update `wiki/GRAPH.md` if adding new nodes or relationships
 6. Prefer standard markdown links (`[text](./path.md)`); `[[wiki-links]]` also work in Obsidian but don't render on GitHub
@@ -79,7 +79,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 **Tone:** Honest, rigorous, direct. Audience = PhD scientists.
 
 **Standards:**
-- Distinguish proven from speculative (see Rule 4)
+- Distinguish proven from speculative (see Rule 5)
 - No marketing language or overselling
 - State assumptions and limitations clearly
 - Cite primary sources; include evidence level
@@ -92,7 +92,17 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 **Example (bad):**
 > Oridonin is a powerful NLRP3 inhibitor that crushes gout inflammation.
 
-### 4. Evidence Levels
+### 4. Pre-commit grep-verify gate for load-bearing numbers
+
+**Every load-bearing quantitative claim in newly-authored wiki content must be grep-verified against its primary source BEFORE the commit lands.** This applies to disulfide counts, residue positions, sequence lengths, kinetic constants (IC50, Km, Ki), dose-response numbers, cohort sizes, percent changes, evidence-tier verdicts — anything downstream reasoning will depend on. Not "verify after the sweep flags an inconsistency"; verify before the content ships into the corpus.
+
+**Operational protocol:** see [`wiki/manual-literature-mining.md` §"Pre-commit verification gate"](./wiki/manual-literature-mining.md#pre-commit-verification-gate-the-rule-that-catches-errors-before-the-sweep-not-after) — the canonical statement of the discipline, including the per-claim micro-protocol (identify load-bearing numbers → name primary source → grep-verify → cite line-anchored → drop or placeholder if unverifiable).
+
+**Why this rule exists:** The wiki sweep daemon catches cross-page inconsistencies in Pass 2 / Pass 3 / Pass 4, but by then the wrong number has already propagated to multiple pages and been ingested into downstream synthesis. The DAF SCR1-4 disulfide-count incident (2026-05-06) is the canonical case: a Sonnet subagent authoring `wiki/daf-cd55-scr14-truncated-computational.md` (comp-012) hallucinated "3 disulfides per SCR domain → 12 total" in 4 places of prose narrative — a number the comp-012 pipeline doesn't actually compute (its Limitations section says "Disulfide bonds not modelled"). The error propagated into `wiki/hypotheses/H05-daf-scr14-cp0-thesis.md` overnight, drove a downstream chaperone-orthogonal triple-cassette synergy panic ("17+12=29 disulfides, 1.8× Huynh"), and was only caught by the next day's sweep + walkthrough verification against UniProt P08174 (which has exactly 8 DISULFID feature annotations in SCR1-4 — canonical sushi/CCP fold, 2 per domain). The sweep is a backstop; the pre-commit gate is where this class of error should die.
+
+**The discipline applies to all comp-NNN authoring runs, all H-card stubs, all scope pages, all primary-research wiki edits.** When delegating wiki authoring to a subagent, the verification protocol must be in the subagent's brief — not "verify if you have time," but "verify each load-bearing number against primary source before writing it into the page."
+
+### 5. Evidence Levels
 
 **Always state the level of evidence for claims.** Use these tags:
 
@@ -109,7 +119,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 - "S. cerevisiae colonizes the mouse gut (animal model, murine gnotobiotic, Microbiome. 2023)."
 - "Mechanistic extrapolation: If engineered S. cerevisiae express uricase at high levels and survive passage to the colon, they should degrade luminal uric acid."
 
-### 5. Cross-References & Links
+### 6. Cross-References & Links
 
 **In wiki pages:**
 - Prefer standard markdown links: `[uricase](./uricase.md)`, `[NLRP3 inflammasome](./nlrp3-inflammasome.md)`. These render on GitHub.
@@ -126,7 +136,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 - Ensure all nodes appear in at least one subgraph.
 - Label edges with relationship type (e.g., "produces", "inhibits", "activates").
 
-### 6. The HTML Files Are Published Versions
+### 7. The HTML Files Are Published Versions
 
 - **Do not edit *.html files.** They are the formatted public versions.
 - The markdown (`wiki/`) is the working knowledge base.

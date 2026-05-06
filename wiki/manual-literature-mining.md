@@ -78,6 +78,63 @@ Citation discipline (from existing wiki convention):
   ```
 - Never expose Paperclip's internal `doc_id` in prose (only in the URL).
 
+## Pre-commit verification gate (the rule that catches errors BEFORE the sweep, not after)
+
+Rule 3 above ("grep-verify all numbers before they enter the wiki") covers Paperclip-sourced numbers specifically. This section generalizes the same discipline to **every load-bearing quantitative claim** in newly-authored wiki content — disulfide counts, residue counts, sequence lengths, IC50s, Kms, dose-response numbers, cohort sizes, percent changes, kinetic constants, evidence-tier counts. Whether the source is Paperclip, UniProt, ChEMBL, ClinicalTrials.gov, a PMC paper, or a database API response, the verification gate is the same.
+
+**The rule:**
+
+> Before any commit lands a wiki page (especially `wiki/<comp-NNN>-*.md` interpretive pages and `wiki/hypotheses/H<NN>-*.md` cards) that introduces a load-bearing quantitative claim, **the author must grep-verify the claim against its primary source and add a line-anchored citation inline.** A claim that cannot be grep-verified is not committed; it is either re-derived, replaced with a bounded "TBD pending source verification" marker, or dropped.
+
+**Why this gate exists:**
+
+The wiki sweep daemon (Pass 1 propagate → Pass 2 synthesize → Pass 3 review → Pass 4 DeepSeek peer-review) is *good* at catching cross-page inconsistencies — exactly the failure mode that surfaced the DAF SCR1-4 disulfide-count error on 2026-05-06 (Sweep A Connection 2). But that means the discipline currently catches errors ~12–24 hours *after* they ship into the corpus, by which time:
+
+- The wrong number has propagated to multiple pages (DAF SCR1-4: comp-012 → H05 stub).
+- The wrong number has been ingested into the synthesizer's context for downstream reasoning (the chaperone-orthogonal triple-cassette synergy panic — predicting 17+12=29 disulfides, 1.8× Huynh — was based on a fabricated coefficient).
+- A peer-review pass and a hand-walkthrough are required to find and fix the propagation, instead of catching it at the source.
+
+The sweep is a backstop, not a substitute. The pre-commit verification gate is the right moment to catch hallucinated numbers — at the moment they would enter the corpus, not after they've been laundered through the substrate.
+
+**Operational pattern:**
+
+When authoring new wiki content (especially comp-NNN interpretive pages, H-card stubs, scope pages, or any page making mechanistic / kinetic / structural claims), follow this micro-protocol per quantitative claim:
+
+1. **Identify the load-bearing numbers in the draft.** Anything that downstream reasoning will depend on (cassette counts, disulfide counts, kinetic constants, evidence-tier verdicts, cohort sizes, percent-change magnitudes). Numbers used for color or rough order-of-magnitude framing are lower-stakes; load-bearing numbers feed into matrices, decision criteria, threshold gates, or other pages' calculations.
+
+2. **For each load-bearing number, name the primary source.** UniProt accession + feature line, PMID + page/section, ChEMBL ID, NCT trial ID, etc. If you cannot name the primary source, the number is suspect — either find it or drop it.
+
+3. **Grep-verify the number against the primary source.** For UniProt: `curl -s "https://rest.uniprot.org/uniprotkb/<ACC>.txt" | grep "<feature>"`. For PMC: `grep -i "<number>" /papers/<id>/content.lines`. For ChEMBL: pull the bioactivity record and check the value field. The verification should produce the number directly from the source, not be inferred from a summary.
+
+4. **Cite line-anchored inline.** Per Rule 5 above for Paperclip; for UniProt: `(per UniProt P08174 DISULFID feature: Cys36-Cys81)` is line-anchored enough. For PMC: `(PMID 12345678 Table 2)` or `(PMID 12345678 §Results para 3)`. The citation must let a future reader (or the sweep's Pass 3 reviewer) re-verify in <30 seconds.
+
+5. **If the number cannot be verified, do not ship it.** Options: re-derive from a different source, drop the claim and note the gap, or write a placeholder like `[TBD: pending UniProt verification]` and keep it out of the load-bearing path until verified.
+
+**What counts as load-bearing — heuristics:**
+
+- Any number that appears in a downstream comparison, table, matrix, decision criterion, or quantitative threshold ("if synergy <0.7, then..." / "29 vs. 25 total disulfides").
+- Any number that, if wrong, would change the evidence-tier verdict, the experimental design, or the platform decision.
+- Any number that other wiki pages will cite or reuse.
+- Any number that the sweep daemon's Pass 2 synthesizer might pull into a cross-doc connection (which, in practice, is *almost any quantitative claim* — the synthesizer reads everything).
+
+**What counts as low-stakes — exempt from the gate:**
+
+- Order-of-magnitude framing where precision doesn't matter ("on the order of millions of dollars," "weeks not months").
+- Numbers used purely for color in narrative prose, where the surrounding text would still be correct if the number were ±20% off.
+- Numbers explicitly tagged as estimates or projections (with the tag making the uncertainty visible).
+
+**The DAF SCR1-4 incident (2026-05-06) — provenance for this rule:**
+
+The 2026-05-05 Sonnet subagent that authored `wiki/daf-cd55-scr14-truncated-computational.md` (comp-012) asserted "3 conserved disulfide bonds per SCR domain → 12 total" in 4 places of prose narrative. The comp-012 pipeline (AlphaFold pLDDT-based protease stability) does not actually count disulfides; comp-012's own Limitations section explicitly says "Disulfide bonds not modelled." The "12" was hallucinated at write-time. The error then propagated into `wiki/hypotheses/H05-daf-scr14-cp0-thesis.md` (the CP0-closure thesis stub) without independent verification.
+
+The 2026-05-05 sweep daemon caught the inconsistency the next day (Sweep A Connection 2: chaperone framework had "8 (4 SCRs × 2 disulfides each)," comp-012 + H05 had "12") and surfaced it as a Priority Action. Verification against UniProt P08174 during the 2026-05-06 walkthrough confirmed 8 DISULFID feature annotations across SCR1-4 (the canonical sushi/CCP fold: Cys1-Cys3 + Cys2-Cys4 motif, 2 per domain).
+
+If the pre-commit verification gate had been in place when comp-012 was authored, the number would have been grep-verified against UniProt at write-time and the wrong claim would never have shipped. The sweep would still have run, but it wouldn't have needed to find this class of error — only genuine cross-doc synthesis findings.
+
+This rule generalizes: **the sweep daemon should be catching novel cross-doc connections, not catching fabricated coefficients.** Numerical hygiene is upstream of synthesis.
+
+---
+
 ## Specific OE questions worth Paperclip search-and-verify time
 
 These are questions whose primary-literature grounding would meaningfully advance the platform but require non-trivial scanning. Listed here so they're discoverable as a queue (anyone reading this page can pick one up):
