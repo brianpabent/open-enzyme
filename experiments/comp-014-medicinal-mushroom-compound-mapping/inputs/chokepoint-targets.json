@@ -134,9 +134,29 @@
       "_canonical_wiki_gap": "OAT4 is NOT in the canonical Open Enzyme wiki as of 2026-05-06 — Phase 1 peer review of comp-014 surfaced this as a wiki gap. OAT4 is a known benzbromarone target alongside URAT1 (apical urate exchanger in renal proximal tubule); it should be in abcg2-modulators.md or gout-pathophysiology.md but currently is not. Adding it here both for comp-014's intended scope and as a forcing function for the wiki gap to be closed in a separate sweep.",
       "rationale": "Apical urate exchanger; benzbromarone hits this alongside URAT1. Off-target counter-screen relevance similar to OAT1/OAT3."
     },
-    "_PROPOSED_redox_disulfide_modulators": {
-      "name": "Redox/disulfide chemistry (PROPOSED — not yet a wiki chokepoint)",
-      "_status": "PROPOSED 2026-05-06 by comp-014 scope. Not yet added to wiki/modality-chokepoint-matrix.md or wiki/nlrp3-exploit-map.md. Phase 5 deliverable: confirm or reject the chokepoint-warrant claim based on what fungal-compound coverage actually surfaces.",
+    "ADA": {
+      "name": "Adenosine Deaminase — purine catabolism upstream of XO",
+      "uniprot": "P00813",
+      "gene": "ADA",
+      "site": "systemic + liver + kidney",
+      "_added_via_comp_014_phase_5": "Promoted from implicit-downstream-of-XO to first-class chokepoint based on G. lucidum GLPP polysaccharide-peptide evidence (PMID 36385640): 40.6% UA reduction in HUA mice with ADA as load-bearing mechanism. ADA is biochemically canonical purine catabolism (adenosine → inosine → hypoxanthine → xanthine → UA); inhibiting it reduces flux into the XO substrate pool.",
+      "rationale": "Druggable, biochemically distinct from XO (allopurinol/febuxostat) and uricase (rasburicase). Existing pentostatin-class inhibitors are chemotoxicity-grade — fungal natural-product ADA inhibitors (e.g., GLPP polysaccharide-peptide, structurally distinct from nucleoside analogs) are an open exploration vector with potentially cleaner toxicity profile.",
+      "phase_5b_action": "Add to modality-chokepoint-matrix.md as new column under urate-axis grouping; add to gout-pathophysiology.md and abcg2-modulators.md."
+    },
+    "_PRELIMINARY_PINK1_mitophagy": {
+      "name": "PINK1 / Mitophagy (PRELIMINARY — single paper, NLRP3-priming-adjacent)",
+      "uniprot": "Q9BXM7",
+      "gene": "PINK1",
+      "rationale": "Single-paper PRELIMINARY-tier chokepoint candidate per Phase 1 peer-review-recommended three-tier rubric. PMID 40334761 (Cordyceps cicadae) shows PINK1-mediated mitophagy modulation in HUA nephropathy. Mechanism connects to NLRP3 priming via mitochondrial-dysfunction-induced ROS — folds naturally into the existing NLRP3 sub-chokepoint map.",
+      "_status": "PRELIMINARY",
+      "promotion_criteria": "≥3 additional papers from independent groups demonstrating PINK1/mitophagy modulation by fungal compounds with HUA / NLRP3 outcomes → promote to canonical chokepoint.",
+      "current_action": "Track in chokepoint-targets.json with _PRELIMINARY_ prefix; do NOT propagate to canonical wiki pages."
+    },
+    "_REJECTED_redox_disulfide_modulators": {
+      "name": "Redox/disulfide chemistry — REJECTED 2026-05-06 (Phase 5 verdict)",
+      "_phase_5_verdict": "REJECT per the three-tier rubric. Breadth pass surfaced essentially zero direct evidence base for a standalone redox/disulfide chokepoint. PubMed Phase 2c had one entry under ergothioneine_thioredoxin_TXNIP and that entry was empty. Phase 5 GLPP deep-read confirmed redox chemistry exists in fungal compounds (Keap1/Nrf2/HO-1 via GLPP — PMC11351902) but the redox axis is NOT the load-bearing claim for any HUA outcome; it's a sister-paper finding, decoupled from the urate-axis chokepoints comp-014 is mapping. Action: fold redox/disulfide-modulating fungal compounds into the existing NLRP3 sub-chokepoint map as a 'redox/Keap1-Nrf2 priming axis' rather than elevating to a standalone chokepoint. TXNIP target stays under NLRP3 axis, not standalone.",
+      "_re_evaluation_trigger": "Future comp-NNN extending to marine fungi (per medicinal-mushroom-compound-mapping-computational.md §6.9 limitation) surfacing ETP-class compounds (gliotoxin, sirodesmin, chetomin family) with disulfide-bridge-mediated activity at ≥3 mechanistic classes → re-open. Terrestrial-fungi-only scope is the binding constraint.",
+      "_originally_proposed_status": "PROPOSED 2026-05-06 by comp-014 scope. Not yet added to wiki/modality-chokepoint-matrix.md or wiki/nlrp3-exploit-map.md. Phase 5 deliverable: confirm or reject the chokepoint-warrant claim based on what fungal-compound coverage actually surfaces.",
       "candidate_targets": [
         {
           "name": "Protein Disulfide Isomerase",
