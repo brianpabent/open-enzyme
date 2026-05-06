@@ -80,7 +80,8 @@ Selected for substantive characterized chemistry + human-use precedent + regulat
 | chaga | *Inonotus obliquus* | betulinic acid, lanostanes, melanin | — |
 | maitake | *Grifola frondosa* | D-fraction β-glucan | — |
 | shiitake | *Lentinula edodes* | lentinan, **eritadenine** (cholesterol-lowering) | — |
-| **oyster mushroom** | ***Pleurotus ostreatus*** | **lovastatin (originally discovered here), highest known ergothioneine producer** | **PRIMARY** |
+| **oyster mushroom** | ***Pleurotus ostreatus*** | **lovastatin (originally discovered here), ergothioneine 2.4 mg/g DW** [Phase 7-1c correction: *P. ostreatus* is NOT the highest fungal EGT producer — that's ***P. citrinopileatus*** at 7.0 mg/g DW; see Phase 7-1c strain scan output and [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) candidate species table] | **PRIMARY** |
+| **golden oyster** | ***Pleurotus citrinopileatus*** | **ergothioneine — highest known fungal producer (7.0 mg/g DW), apex strain *P. citrinopileatus* 303 → 641.76 mg/L submerged with H₂O₂+vit C oxidative stimulus per Li 2025; β-glucans** [added 2026-05-06 as Phase 7-1c propagation back-fix] | **PRIMARY** |
 | almond mushroom | *Agaricus blazei* | β-glucans (agaritine = toxicity flag) | — |
 | antrodia | *Antrodia camphorata* | antrocins, antroquinonol (Phase II oncology) | — |
 | sang hwang | *Phellinus linteus* | hispolon | — |
