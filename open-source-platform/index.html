@@ -646,10 +646,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-not-medical-advice" class="md-nav__link">
+  <a href="#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Not Medical Advice
+        6. Variant-Agnostic Empirical Head-to-Head (when marginal cost is bounded and infrastructure is shared)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-operational-search-artifacts-as-a-first-class-document-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Operational Search Artifacts as a First-Class Document Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-not-medical-advice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Not Medical Advice
       
     </span>
   </a>
@@ -4215,7 +4237,46 @@ Some heterologous compounds may express better in <em>S. cerevisiae</em> than <e
 <p>The four-pass sweep daemon (Sonnet 4.6 → Gemini 2.5 Pro → Opus 4.7 → DeepSeek V4-Pro) currently operates only on the wiki itself. <a href="../paperclip-deep-dive/">Paperclip</a> — an MCP server exposing ~11M full-text papers (PMC + arXiv + bioRxiv/medRxiv) + ~150M abstracts (OpenAlex) — was evaluated as a potential sweep-pass augmentation to produce a "literature delta" surface. <strong>Decision: do not integrate.</strong> A 2026-05-05 verification test (uricase variant landscape, ~12 papers with known-correct ground truths) revealed that the <code>map</code> operator — the synthesis primitive that would power any automated extraction — systematically hallucinates quantitative data and misattributes organisms. Concrete examples: wrong organism identity (A. flavus → A. globiformis), fabricated kinetic parameters (~7,500× off), and invented wet-lab data for a purely computational paper. Wiring this into the sweep would inject a structured external hallucination source into a corpus designed for PhD-grade rigor, exactly the failure mode the multi-model synthesis architecture is meant to guard against. Paperclip remains a manual-research-only tool, used interactively with verification discipline (grep-verify every load-bearing number; anchor identity claims to <code>meta.json</code>; never propagate <code>reduce</code> summaries). <strong>Reopen condition:</strong> if GXL ships a verified upgrade of the <code>map</code> reader model and the uricase variant probe passes cleanly, revisit. (source: paperclip-deep-dive.md; Mechanistic Extrapolation)</p>
 <h4 id="multi-model-synthesis-as-guard-against-epistemic-homogenization">Multi-model synthesis as guard against epistemic homogenization<a class="headerlink" href="#multi-model-synthesis-as-guard-against-epistemic-homogenization" title="Permanent link">&para;</a></h4>
 <p>A knowledge graph maintained by a single synthesizer converges, over time, on that synthesizer's blind spots and biases — the corpus starts to encode one model's prior rather than the underlying biology. This concern was surfaced by the system itself: in the <a href="../logs/v4-peer-review-2026-04-25-deepseek.md">2026-04-25 DeepSeek V4-Pro peer-review pass</a> (Connection 7), a DeepSeek model reviewing the Claude-Opus output flagged that running cheap full-corpus sweeps on a single model would erode exactly the diversity that makes the corpus trustworthy. That a model from a different vendor caught a methodological risk Claude had not surfaced unprompted is the demonstration of why heterogeneity earns its keep. The sweep workflow described in <a href="../.github/workflows/wiki-sweep.yml"><code>.github/workflows/wiki-sweep.yml</code></a> is therefore deliberately cross-vendor: Sonnet 4.6 propagates findings across cross-referenced pages, Gemini 2.5 Pro emits full-corpus synthesis, Opus 4.7 critiques the synthesis with fixed-verdict tags, and DeepSeek V4-Pro runs an independent peer-review pass on the Claude output — four models, three vendors (Anthropic, Google, DeepSeek), all routed through OpenRouter. Heterogeneity is the principle, not the implementation: future workflow changes should preserve cross-vendor coverage. Collapsing the pipeline to a single vendor — even a cheaper or faster one — is a regression against this principle, not an optimization.</p>
-<h3 id="6-not-medical-advice">6. Not Medical Advice<a class="headerlink" href="#6-not-medical-advice" title="Permanent link">&para;</a></h3>
+<h3 id="6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared">6. Variant-Agnostic Empirical Head-to-Head (when marginal cost is bounded and infrastructure is shared)<a class="headerlink" href="#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared" title="Permanent link">&para;</a></h3>
+<p>When the literature is split or thin between candidate variants for the same chassis-payload role — and the marginal cost of running both candidates in parallel is bounded by shared experimental infrastructure — <strong>default to running both rather than pre-selecting one from literature precedent.</strong> Let the experiment decide.</p>
+<p><strong>The principle, stated precisely:</strong></p>
+<blockquote>
+<p>If candidates A and B address the same chassis-payload role, and the <em>additional</em> cost of running both vs. running one is small (because the experiment shares fermentation runs / shares assay readouts / requires only an extra synthesis-cost-grade input per candidate), and the literature does not unambiguously dominate one over the other — order both, run them in the same experiment, and let the empirical result resolve the platform decision.</p>
+</blockquote>
+<p><strong>Why this is its own principle, not just a tactic:</strong></p>
+<p>Pre-selecting a single variant from literature precedent silently bakes in path-dependent narrowing — the project commits to one branch of the decision tree based on whichever literature happened to be most-cited or most-recent at the moment of selection. When the actual marginal cost of empirical resolution is small, that pre-selection costs the project the option value of the parallel test for no real saving. The principle inverts the default: when running both is bounded-cheap, the burden of proof shifts onto pre-selection, not onto parallel testing.</p>
+<p><strong>Cost-structure preconditions (the principle does NOT generalize to all chassis-payload questions):</strong></p>
+<p>The principle applies cleanly when:</p>
+<ol>
+<li><strong>Shared experimental infrastructure.</strong> Both candidates use the same fermentation run, the same assay readouts, the same downstream characterization. Marginal cost is bounded by the per-candidate input (gene synthesis, primer design, etc.), not by the experiment itself.</li>
+<li><strong>Bounded marginal input cost.</strong> The per-candidate cost is in the $100s-to-low-$1000s range, not the $10K+ range. Empirical parallel testing is cheap relative to the value of the resolved decision.</li>
+<li><strong>No unambiguous literature dominance.</strong> If one candidate has 10 papers showing it works and the other has 1 paper showing it might work, parallel testing is wasted effort. The principle is for genuine literature splits, not lazy avoidance of literature reading.</li>
+</ol>
+<p>The principle does NOT apply when:</p>
+<ol>
+<li><strong>Different experimental infrastructure per candidate.</strong> Choosing between <em>F. prausnitzii</em> vs. <em>Akkermansia</em> vs. <em>Bacteroides</em> as an LBP chassis requires separate anaerobic-bioreactor runs, different payload-integration toolkits per organism, different assay setups. Marginal cost of "run both" is not bounded — it doubles or triples the experimental cost. Sequential testing (with the lower-cost candidate first) is the right pattern here.</li>
+<li><strong>Per-candidate cost is large.</strong> When per-candidate input cost is $10K+ (custom delivery vehicles, animal models, etc.), parallel testing is no longer "bounded-cheap" and the literature pre-selection burden is justified.</li>
+<li><strong>Decision criteria are not measurable in the parallel run.</strong> If the empirical experiment can't actually distinguish A from B (because the readout doesn't capture the relevant property), parallel testing produces ambiguous output and the literature-driven pre-selection is unavoidable.</li>
+</ol>
+<p><strong>Canonical instance — comp-011 (2026-05-05):</strong></p>
+<p>The <em>A. flavus</em> (Q00511) vs. <em>C. utilis</em> (P78609) uricase variant decision for the §1.9 Ward 1995 dual-cassette experiment. Industry programs (ALLN-346, SEL-212 pegadricase, SSS11) prefer <em>C. utilis</em>; academic precedent (rasburicase derivative IP, comp-001 protease stability) favors <em>A. flavus</em>. comp-011's recommendation: order both as codon-optimized direct-secretion cassettes (~$200-400 marginal gene synthesis cost, $0 marginal fermentation cost — both strains run in the same §1.9 experiment), and let the empirical Lf titer + uricase activity comparison resolve the decision. See <a href="../c-utilis-uricase-cassette-compatibility-computational/"><code>c-utilis-uricase-cassette-compatibility-computational.md</code> §6.3</a>. This instance satisfies all three preconditions: shared §1.9 fermentation, $200-400 marginal input cost, genuine literature split.</p>
+<p><strong>Why this principle exists in this project specifically:</strong></p>
+<p>Open Enzyme operates with one full-time researcher + AI assistance + bounded compute budget. Path-dependent narrowing — silently committing to one branch of a decision tree based on whichever-literature-was-most-cited — is the failure mode this scale of operation is most prone to (no team peer pressure forcing the question "did you also consider X?"). The variant-agnostic-empirical-head-to-head principle is a structural defense: it forces the explicit cost-structure analysis ("would running both cost &lt;X% extra?") and inverts the default toward parallel testing whenever the answer is yes.</p>
+<p>This rule was added 2026-05-06 in response to the 2026-05-05 sweep's Connection 4 surfacing the comp-011 pattern as generalizable. The Claude review on that sweep narrowed the original Pass 2 framing — "platform default for any chassis-payload question" → "principle with cost-structure preconditions" — and the narrower framing landed here as Principle 6.</p>
+<p><strong>Cross-references:</strong></p>
+<ul>
+<li><a href="../c-utilis-uricase-cassette-compatibility-computational/"><code>c-utilis-uricase-cassette-compatibility-computational.md</code> §6.3</a> — canonical instance, advocates the parallel head-to-head approach for §1.9</li>
+<li><a href="../engineered-lbp-chassis/"><code>engineered-lbp-chassis.md</code></a> — chassis-choice decision exists but cost structure does NOT match the preconditions (different bioreactor runs per chassis); sequential testing is the right pattern there</li>
+<li><a href="../sirna-urat1-modality/"><code>sirna-urat1-modality.md</code></a> — chemistry-choice decisions exist but per-candidate cost is in the $10K+ range; literature pre-selection burden is justified there</li>
+</ul>
+<h3 id="7-operational-search-artifacts-as-a-first-class-document-class">7. Operational Search Artifacts as a First-Class Document Class<a class="headerlink" href="#7-operational-search-artifacts-as-a-first-class-document-class" title="Permanent link">&para;</a></h3>
+<p>When a project bottleneck is <strong>resource-acquisition rather than scientific question</strong> — obtaining a specific strain, accessing a specific collaborator, licensing a specific technology, sourcing a specific reagent, or recruiting a specific kind of expertise — it gets a dedicated artifact in <a href="../operations/"><code>operations/</code></a> following the <a href="../operations/operational-search-template.md">operational search artifact template</a>.</p>
+<p><strong>Why it's a platform principle, not just a documentation convention:</strong> the existing wiki taxonomy (compound dossiers, experiment protocols, scope pages, hypothesis cards, computational interpretive pages) doesn't have a slot for "active-search resource with decision tree, parallel paths, single most-actionable lead, draft outreach, and order-of-operations fallback." Without a dedicated document class, resource-acquisition bottlenecks either (a) get inlined into scope pages where they bloat the research narrative, (b) get scattered across <code>todos.md</code> where they lose their decision-tree structure, or &copy; live in conversations and Slack threads where they're invisible to future-readers and disappear into git-archaeology.</p>
+<p><strong>The template forces explicit primary-path naming.</strong> It's tempting to offer a balanced menu of options and leave the choice to the reader; the template requires picking <em>the</em> highest-leverage primary path and justifying it. The reader can override, but they override against a stated default rather than choose from a menu. Naming the primary path also forces the analytical work of <em>why</em> — which surfaces decision criteria that would otherwise stay implicit.</p>
+<p><strong>Multilingual by default.</strong> Per <a href="../CLAUDE.md"><code>CLAUDE.md</code> §"Global-multilingual research by default"</a>, operational searches treat language as a non-barrier — Japanese / Chinese / Korean / German / Russian / Spanish / Portuguese candidates are first-class options, not afterthoughts. The first instance (<a href="../operations/ward-1995-lab-access.md"><code>operations/ward-1995-lab-access.md</code></a>) maps Japan as the natural primary lead specifically because Japan is the <em>A. oryzae</em> origin region — a Western-centric search would have missed Maruyama / Kitamoto entirely.</p>
+<p><strong>Living documents, not one-shot scoping.</strong> Operational searches evolve as primary contacts respond, parallel paths get ruled out, new candidates surface, and order-of-operations steps complete. The artifact is the operational state of the search, not a static document.</p>
+<p>This principle was added 2026-05-06 from the 2026-05-05 sweep's Sweep B Connection 3 + Priority Action 3 finding: the lab-access page introduced a new wiki document class the existing taxonomy didn't have a slot for. Codifying it as Principle 7 (rather than burying it in operations/) makes the document class discoverable at the platform-level for any future peer-track scope page that hits a resource-acquisition bottleneck.</p>
+<h3 id="8-not-medical-advice">8. Not Medical Advice<a class="headerlink" href="#8-not-medical-advice" title="Permanent link">&para;</a></h3>
 <p>This is citizen science, self-experimentation, and open knowledge sharing. We document what we build, what we observe, and what the published literature supports. We do not prescribe, diagnose, or claim to cure.</p>
 <p>(Source: open-enzyme-vision.md, §10)</p>
 <hr />

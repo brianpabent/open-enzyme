@@ -2981,6 +2981,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#125-dafcd55-scr1-4-truncated-single-cassette-expression-in-a-oryzae-cp0-engineering-candidate-wet-lab-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.25 DAF/CD55 SCR1-4 Truncated Single-Cassette Expression in A. oryzae (CP0 Engineering Candidate Wet-Lab Gate)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4680,7 +4691,7 @@
   - Cassette B (uricase): <code>[PTEF1 — amyB signal peptide — *A. flavus uaZ* codon-optimized — TgpdA]</code>. Distinct promoter (constitutive TEF1) to separate transcriptional program from Cassette A. Selection marker: niaD or amdS.
 - <strong>Host strain.</strong> <em>A. oryzae</em> RIB40 or NSAR1 (pyrG-deficient auxotroph). <strong>Updated recommendation (post-H01 Killshot #1, 2026-05-05):</strong> For the lactoferrin cassette specifically, prefer a protease-deletion chassis (NSlD-ΔP10 or equivalent: ΔtppA ΔpepE ΔnptB ΔdppIV ΔdppV ΔalpA ΔpepA ΔAopepAa ΔAopepAd ΔcpI) over wild-type RIB40. Huynh et al. 2020 (PMC7257131) showed wild-type RIB40 was inadequate for functional antibody production at the titer threshold needed; only the ten-protease-deletion strain reached 39.7 mg/L. RIB40 remains appropriate for the uricase-only Year 1 starting strain. The NSAR1 5-marker platform (Oikawa 2020, PMC7725655) provides 5 simultaneous integration slots — the 2-cassette H01 design uses two, leaving three free for downstream additions. (In Vitro; source: H01-ward-dual-cassette.md)
 - <strong>Transformation.</strong> PEG/CaCl₂ protoplast, sequential: Cassette A first → select on pyrG-minus → confirm hLf expression by Western → transform Cassette B into validated hLf clone → select on niaD/amdS.
-- <strong>Fermentation.</strong> Solid-state rice koji, 48–60 h at 30°C, 35% moisture. Parallel submerged-culture control (100 mL shake flask, 28°C) to isolate solid-state variable.
+- <strong>Fermentation.</strong> Solid-state rice koji, 48–60 h at 30°C, 35% moisture. Parallel submerged-culture control (100 mL shake flask, 28°C) to isolate solid-state variable. <strong>Add Lf-alone single-cassette arm</strong> (no uricase cassette, otherwise identical) to resolve the capacity-vs-titer benchmark ambiguity flagged 2026-05-06 — see "Capacity-vs-titer side-product readout" below.
 - <strong>Readouts.</strong>
   - Uricase activity: spectrophotometric UA-disappearance assay (per <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a> §05).
   - Lactoferrin titer: anti-hLf ELISA + Western blot.
@@ -4688,6 +4699,34 @@
   - Native metabolite profile: kojic acid titer (HPLC) + ergothioneine titer (LC-MS) — is WT baseline preserved within 30%?
   - qPCR for both cassette copy numbers (stability check).
   - SDS-PAGE to detect any incompletely-processed glucoamylase-hLf fusion (KEX-2 saturation signal).</p>
+<p><strong>Capacity-vs-titer side-product readout (added 2026-05-06):</strong> The Lf-alone single-cassette arm above resolves a load-bearing benchmark ambiguity in the OE wiki: the <a href="../chaperone-orthogonal-stacking/">chaperone-orthogonal stacking framework</a> calibrates synergy coefficients against the Huynh 2020 antibody capacity ceiling (39.7 mg/L adalimumab in NSlD-ΔP10, 16 disulfides), while <a href="../koji-endgame-strain/">koji-endgame-strain.md</a> §3.1 cites Ward 1995 (&gt;2 g/L Lf in <em>A. awamori</em>) as the lactoferrin titer precedent. Both numbers cannot be the binding constraint: 17-disulfide Lf at 2 g/L would be impossible if 16-disulfide adalimumab at 40 mg/L were a hard capacity ceiling. The §1.9 Lf-alone arm directly resolves which baseline applies in the actual §1.9 host (NSlD-ΔP10) and format (solid-state koji) — neither of which matches the original Ward 1995 conditions (<em>A. awamori</em>, submerged). Three actionable readouts:</p>
+<table>
+<thead>
+<tr>
+<th>Lf-alone titer</th>
+<th>Implication for chaperone framework</th>
+<th>Implication for endgame strain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≥500 mg/L</td>
+<td>Huynh ceiling is antibody-architecture-specific; framework's synergy coefficients are systematically conservative for single-chain payloads</td>
+<td>Endgame strain dual-cassette in good shape; can stack additional PDI-loaded payloads with confidence</td>
+</tr>
+<tr>
+<td>100–500 mg/L</td>
+<td>Genuine intermediate regime; framework calibration is approximately right for single-chain payloads</td>
+<td>Dual-cassette feasible but third PDI-loaded cassette (e.g., DAF SCR1-4) needs conservative framing</td>
+</tr>
+<tr>
+<td>&lt;100 mg/L</td>
+<td>Huynh ceiling is approximately the real ceiling regardless of architecture; framework is well-calibrated</td>
+<td>Dual-PDI-cassette designs are at higher risk than the Ward 1995 precedent suggests; two-strain co-fermentation fallback (§4.1 koji-endgame-strain.md) becomes more attractive</td>
+</tr>
+</tbody>
+</table>
+<p>This is a free byproduct of the §1.9 readout — no additional fermentation cost, only the Lf-alone strain construction (which is already a prerequisite for the dual-cassette construction sequence per "Transformation" above: Cassette A first → confirm hLf expression → transform Cassette B). The Lf-alone titer was previously reported only as part of the construct-validation step; this addendum elevates it to a load-bearing platform readout.</p>
 <p><strong>Estimated cost:</strong> $3,000–5,000 — gene synthesis for two codon-optimized cassettes (~$600–1,000), cloning and transformation reagents ($500–1,000), fermentation consumables ($200–400), ELISA + Western antibodies ($800–1,200), metabolite assay reagents ($500–800), CRO or academic lab time if outsourced ($1,000–2,000 per batch).</p>
 <p><strong>Estimated timeline:</strong> 8–12 weeks — 2–3 weeks gene synthesis + construct assembly, 2–3 weeks sequential transformation + clonal screening, 1–2 weeks parallel fermentation (solid-state + submerged), 2–3 weeks full assay suite + write-up.</p>
 <p><strong>Dependencies:</strong> <em>A. oryzae</em> genetic-engineering lab access. Candidate pathways: (a) Lauren Collier-Hyams at Emory (see <a href="../team/">team.md</a>) if the recruiting conversation converts her to active collaboration; (b) commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic) — faster but more expensive; &copy; community biolab with protoplast-transformation capability (Genspace NY has precedent on <em>A. oryzae</em>). <strong>Global parallel options (Japan / China / Europe) are mapped in <a href="./ward-1995-lab-access-global.md"><code>ward-1995-lab-access-global.md</code></a></strong> — the Maruyama lab at the University of Tokyo is the single most important contact globally (origin lab for NSlD-ΔP10, the default chassis per H01 Killshot #1); Jiangnan University (C19 chassis) and DTU Mortensen group (CRISPR toolkit) are the parallel-path options. (source: ward-1995-lab-access-global.md)</p>
@@ -5095,6 +5134,70 @@
 - Tier 3's murine air-pouch model is the standard gout model but is acute, not chronic. Translating to chronic-flare biology requires additional model considerations.
 - All three tiers focus on the priming + activation step. They do not address resolution (SPM pathway) or aggregated-NET amplification — those would be separate experiments.</p>
 <p><strong>Cross-references:</strong> <a href="../androgen-urate-axis/">androgen-urate-axis.md</a> §"Beyond transporters: direct androgen effects on NLRP3 priming" (the lit scan section that surfaced this gap); <a href="../nlrp3-inflammasome/">nlrp3-inflammasome.md</a>; <a href="../self-experiment-protocol/">self-experiment-protocol.md</a> §11 (Tier 4 n=1 ex vivo PBMC); <a href="../koji-endgame-strain/">koji-endgame-strain.md</a> (male-demographic ceiling framing); <a href="../synthesis/">synthesis.md</a> 2026-05-05 Open Question #2.</p>
+<hr />
+<h3 id="125-dafcd55-scr1-4-truncated-single-cassette-expression-in-a-oryzae-cp0-engineering-candidate-wet-lab-gate">1.25 DAF/CD55 SCR1-4 Truncated Single-Cassette Expression in <em>A. oryzae</em> (CP0 Engineering Candidate Wet-Lab Gate)<a class="headerlink" href="#125-dafcd55-scr1-4-truncated-single-cassette-expression-in-a-oryzae-cp0-engineering-candidate-wet-lab-gate" title="Permanent link">&para;</a></h3>
+<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: $2,500–4,000 | <strong>Weeks</strong>: 6–8 | <strong>Phase</strong>: 1</p>
+<p><strong>Affected wiki</strong>: <a href="../daf-cd55-scr14-truncated-computational/">daf-cd55-scr14-truncated-computational</a>, <a href="../hypotheses/H05-daf-scr14-cp0-thesis/">hypotheses/H05-daf-scr14-cp0-thesis</a>, <a href="../chaperone-orthogonal-stacking/">chaperone-orthogonal-stacking</a>, <a href="../koji-endgame-strain/">koji-endgame-strain</a>, <a href="../complement-c5a-gout/">complement-c5a-gout</a>, <a href="../modality-chokepoint-matrix/">modality-chokepoint-matrix</a></p>
+<p><strong>What it tests:</strong> Can engineered <em>A. oryzae</em> (RIB40 or NSlD-ΔP10) secrete the truncated DAF/CD55 SCR1-4 construct (aa 35–285, residues immediately following the signal peptide cleavage site through the end of SCR4 — see <a href="../daf-cd55-scr14-truncated-computational/">comp-012</a>) as a correctly-folded, complement-regulatory-active soluble protein? This is the wet-lab gate for the CP0 closure thesis: comp-012 confirmed protease stability (LOW risk in shio-koji), but expression + correct disulfide folding + retained CCP-regulatory activity have to be demonstrated empirically before the construct becomes a real platform component.</p>
+<p><strong>Single-cassette expression, NOT triple-cassette.</strong> Per the <a href="../chaperone-orthogonal-stacking/">chaperone-orthogonal stacking framework's triple-cassette prediction</a> (§5.5, refined 2026-05-06), the triple combination (uricase + lactoferrin + DAF SCR1-4) lands in the architecture-adjusted synergy range 0.35–0.65 (central 0.45–0.55) — firmly below the 0.6 decision gate. Recommended platform direction is <strong>separate-strain routing</strong> for DAF SCR1-4 (or routing to the engineered LBP chassis as a parallel peer track per <a href="../engineered-lbp-chassis/"><code>engineered-lbp-chassis.md</code></a>). This experiment validates the single-cassette feasibility step; if positive, the DAF strain becomes either (a) a sister koji strain co-fermented with the uricase + lactoferrin endgame strain, or (b) a candidate payload for the LBP chassis once that peer track matures.</p>
+<p><strong>Proposed in:</strong> <code>wiki/synthesis.md</code> 2026-05-05 sweep block 487fad3 Pass 2 Proposed Experiment 2 (gated on the comp-012 in silico LOW verdict, which landed same session). Held during the 2026-05-05 walkthrough due to patent-agent batch collision; landed 2026-05-06 with the disulfide count corrected from the original "12" to the verified 8 (per <a href="../daf-cd55-scr14-truncated-computational/">comp-012 §1.5 correction note</a> anchored to UniProt P08174).</p>
+<p><strong>Background on the gating context:</strong> comp-012 (2026-05-05) confirmed the SCR1-4 truncated construct is shio-koji protease-stable (LOW verdict, max risk score 0.039 — identical to uricase, 10× drop from the comp-006 full ectodomain HIGH verdict driven by removing the Ser/Thr-rich stalk aa 286–353). H05 stub (2026-05-05) registered the CP0 closure thesis as a falsification card with three named wet-lab unknowns: (1) does SCR1-4 retain complement-regulatory activity without the stalk, (2) can <em>A. oryzae</em> fold 8 intrachain disulfides per molecule (corrected from 12, per UniProt P08174 DISULFID feature annotations: Cys36-Cys81, Cys65-Cys94 [SCR1]; Cys98-Cys145, Cys129-Cys158 [SCR2]; Cys163-Cys204, Cys190-Cys220 [SCR3]; Cys225-Cys267, Cys253-Cys283 [SCR4]), and (3) does the construct express at therapeutic-relevant titer. This experiment addresses all three.</p>
+<p><strong>Effective PDI load context (from chaperone framework refinement, 2026-05-06):</strong> 8 disulfides × CCP/SCR architecture coefficient α=0.3-0.6 = effective PDI load <strong>2.4-4.8 disulfide-equivalents</strong> — substantially lighter than the 17 (or 16, per Notari 2023 corrected count) lactoferrin transferrin-lobe load of 24-40 effective. Single-cassette DAF SCR1-4 expression should be well within demonstrated <em>A. oryzae</em> secretion capacity even on wild-type RIB40 — the 8 vs. 12 disulfide-count correction (Item 2 of the 2026-05-06 walkthrough) shifts the "can A. oryzae fold this" question from "uncertain" to "highly probable."</p>
+<p><strong>Protocol:</strong></p>
+<ul>
+<li><strong>Construct design.</strong></li>
+<li>Cassette: <code>[PamyB — *A. oryzae* α-amylase signal peptide — DAF SCR1-4 mature sequence (aa 35–285 of UniProt P08174, codon-optimized for *A. oryzae*) — TamyB]</code>. Direct secretion via amyB SP, no glucoamylase fusion (DAF SCR1-4 has no internal KEX2 sites that would require glucoamylase-KEX2 architecture). Selection marker: pyrG complementation (food-grade, no antibiotic).</li>
+<li>Codon optimization: full optimization for <em>A. oryzae</em> codon table — DAF/CD55 native codon preferences are mammalian (high-GC) and broadly compatible with <em>A. oryzae</em> (~54% GC) but standard gene synthesis optimization captures any remaining suboptimal codons. Cost: ~$300-500 for codon-optimized gene synthesis (~750 bp).</li>
+<li>
+<p><strong>Disulfide assessment design:</strong> the 8 disulfides form 2 per SCR domain in the canonical sushi/CCP fold (Cys1-Cys3, Cys2-Cys4 motif within each ~60-aa domain). Misfolding modes to detect: (a) intermolecular disulfide-linked aggregates (would show up as high-MW bands on non-reducing SDS-PAGE), (b) within-domain mis-pairing (would not show up on SDS-PAGE but would compromise CCP-regulatory activity), &copy; mature protein with reduced free Cys (would show up as smaller MW on non-reducing SDS-PAGE indicating fewer than 8 disulfides formed). All three are detectable with the Western + activity assay readouts below.</p>
+</li>
+<li>
+<p><strong>Host strain.</strong> <em>A. oryzae</em> RIB40 (genome-sequenced reference) for the first-pass strain. NSlD-ΔP10 (10-protease-deletion via Maruyama lab path per <a href="../operations/ward-1995-lab-access.md"><code>operations/ward-1995-lab-access.md</code></a>) optional if early RIB40 results show titer gated by extracellular protease degradation. <strong>Per the chaperone framework refinement, NSlD-ΔP10 is unlikely to be needed for single-cassette DAF SCR1-4 — effective PDI load 2.4-4.8 is well below the Huynh 2020 capacity baseline of 16.</strong> RIB40 should suffice for this experiment.</p>
+</li>
+<li>
+<p><strong>Transformation.</strong> PEG/CaCl₂ protoplast, single-step transformation → select on pyrG-minus → confirm cassette integration by PCR + qPCR for copy number stability across 5 serial passages.</p>
+</li>
+<li>
+<p><strong>Fermentation.</strong> Solid-state rice koji, 48–60 h at 30°C, 35% moisture (the project's standard koji condition; matches §1.9 dual-cassette fermentation conditions for downstream comparability). Parallel submerged-culture control (100 mL shake flask, 28°C) to isolate solid-state vs. submerged variable.</p>
+</li>
+<li>
+<p><strong>Readouts.</strong></p>
+</li>
+<li><strong>Secretion + apparent MW:</strong> SDS-PAGE under reducing AND non-reducing conditions on culture supernatant. Reducing condition: detect monomeric ~28 kDa band (predicted from 251-aa mature protein × ~110 Da/aa average + glycosylation if any). Non-reducing condition: confirm intramolecular disulfide formation (band shifts to slightly lower apparent MW vs. reducing) AND absence of high-MW aggregation bands (absence = no intermolecular Cys mis-pairing). Western blot with anti-DAF/CD55 antibody (commercial — Abcam ab1422 or similar) to confirm identity.</li>
+<li><strong>Quantitative titer:</strong> anti-DAF/CD55 ELISA on culture supernatant. Target: ≥50 mg/L pore-fluid equivalent (mirroring the H01 lactoferrin floor scaled for the smaller protein).</li>
+<li><strong>Disulfide folding fidelity:</strong> mass spectrometry (MALDI-TOF or LC-MS) on purified protein under non-reducing conditions to confirm correct disulfide pairing (8 expected) vs. mispaired isoforms. This is the load-bearing readout for the CP0 thesis — protease-stable + secreted ≠ functionally folded.</li>
+<li><strong>CCP-regulatory activity assay:</strong> zymosan-activation assay measuring C5a generation in human serum + purified recombinant DAF SCR1-4 vs. control (heat-denatured DAF SCR1-4 + buffer-only). Target: ≥30% C5a-generation inhibition vs. control at therapeutically-plausible DAF concentration (rough target ~1-10 μg/mL based on literature soluble DAF activity ranges). This is the H05 third wet-lab unknown — does SCR1-4 retain complement-regulatory activity without the stalk?</li>
+<li><strong>Native metabolite profile</strong> (carryover check): kojic acid titer (HPLC) + ergothioneine titer (LC-MS) — confirm WT baseline preserved within 30% on the engineered strain (i.e., the heterologous DAF cassette doesn't perturb the native koji metabolite chorus that contributes to the CP1a + CP1b coverage per <code>koji-endgame-strain.md</code> §1).</li>
+</ul>
+<p><strong>Estimated cost ($2,500-4,000 breakdown):</strong>
+- Codon-optimized gene synthesis: $300-500
+- Cloning + transformation reagents: $400-600
+- Fermentation consumables: $200-300
+- Anti-DAF antibody (commercial): $400-600
+- ELISA reagents + Western consumables: $500-700
+- Mass spec analysis (outsourced to core facility): $300-500
+- Zymosan + complement activity assay reagents: $200-400
+- CRO or academic lab time if outsourced: $1,000-2,000 (otherwise embedded in lab partnership)</p>
+<p><strong>Estimated timeline (6-8 weeks breakdown):</strong>
+- 2-3 weeks: gene synthesis + construct assembly + cloning verification
+- 2 weeks: transformation + clonal screening + copy-number stability check
+- 1 week: parallel fermentation (solid-state + submerged controls)
+- 2 weeks: full assay suite (SDS-PAGE + Western + ELISA + MS + activity assay) + write-up</p>
+<p><strong>Dependencies:</strong> Same lab-access pathway as §1.9 — Lauren Collier-Hyams at Emory (per <a href="../team/"><code>team.md</code></a>) if the recruiting conversation converts; commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic); community biolab with protoplast-transformation capability (Genspace NY has <em>A. oryzae</em> precedent). Global parallel options mapped in <a href="../operations/ward-1995-lab-access.md"><code>operations/ward-1995-lab-access.md</code></a>. <strong>This experiment shares lab-access infrastructure with §1.9</strong> — both are <em>A. oryzae</em> protoplast transformation + solid-state koji fermentation + standard mammalian-protein readout assays. If §1.9 is running in a partner lab, §1.25 is a natural co-batch experiment with marginal infrastructure cost (sequential transformations on the same host, parallel fermentations under the same conditions).</p>
+<p><strong>Success criteria:</strong>
+- <strong>Accept</strong> (proceed to integration with platform — sister-strain co-ferment with uricase + Lf endgame strain, OR queue for LBP-chassis transfer): secreted titer ≥50 mg/L pore-fluid equivalent + correct apparent MW on non-reducing SDS-PAGE + ≥40% native disulfide-folded form on mass spec + ≥30% C5a-generation inhibition vs. control at therapeutically-plausible DAF concentration + native metabolite program preserved within 30% of WT.
+- <strong>Iterate</strong> (adjust architecture, re-test): titer 10-50 mg/L OR 20-40% native folded form OR 10-30% C5a inhibition. Try NSlD-ΔP10 host (extracellular protease deletion), alternative integration sites, alternative signal peptide (TamyG or glaA SP).
+- <strong>Reject</strong> (DAF SCR1-4 not viable in koji chassis; route to LBP chassis or shelve CP0 closure thesis): titer &lt;10 mg/L after two optimization rounds, OR &lt;20% native folded form, OR no detectable CCP-regulatory activity, OR native metabolite program collapse (kojic acid down &gt;50% vs. WT). Reject outcome triggers H05 falsification card update (Killshot #1 fired) and re-routing of CP0 closure to the <a href="../engineered-lbp-chassis/"><code>engineered-lbp-chassis.md</code></a> peer track or the soluble-Factor-H-fragment alternative documented in <code>complement-c5a-gout.md</code>.</p>
+<p><strong>Computational priors that informed this design:</strong>
+- <a href="../daf-cd55-scr14-truncated-computational/">comp-012 (2026-05-05)</a> — protease stability LOW verdict for the SCR1-4 construct; gates the wet-lab feasibility question
+- <a href="../chaperone-orthogonal-stacking/">chaperone-orthogonal-stacking framework</a> §3.5 + §4 (refined 2026-05-06) — per-architecture α coefficient for CCP/SCR fold (0.3-0.6) gives effective PDI load 2.4-4.8 for single-cassette DAF SCR1-4, well within demonstrated <em>A. oryzae</em> capacity even on wild-type RIB40
+- <a href="../chaperone-orthogonal-stacking/">chaperone-orthogonal-stacking framework</a> §5.5 (refined 2026-05-06) — triple-cassette prediction lands below 0.6 decision gate, supporting the <strong>separate-strain (single-cassette) routing</strong> decision encoded in this experiment design</p>
+<p><strong>Limitations:</strong>
+- Single-cassette test does not directly answer whether DAF SCR1-4 can co-express with uricase + Lf in a triple cassette (that would be a separate, gated experiment if the chaperone framework's prediction proves too pessimistic in the §1.9 readout)
+- Mass spec disulfide-pairing analysis assumes high-quality purification; if the purification step is suboptimal, mis-paired isoforms may be undercounted
+- CCP-regulatory activity assay measures one specific complement readout (C5a generation in zymosan-activation); doesn't directly measure C3 convertase decay-acceleration (the canonical DAF activity) — that would be a follow-up assay if C5a-arm is positive
+- No in vivo gut-lumen activity readout in this experiment — that's a Phase 2 / Phase 3 follow-up gated on positive in vitro result</p>
+<p><strong>Cross-references:</strong> <a href="../daf-cd55-scr14-truncated-computational/">daf-cd55-scr14-truncated-computational.md</a> (comp-012, the in silico prior); <a href="../hypotheses/H05-daf-scr14-cp0-thesis/">hypotheses/H05-daf-scr14-cp0-thesis.md</a> (the falsification card this experiment addresses); <a href="../chaperone-orthogonal-stacking/">chaperone-orthogonal-stacking.md</a> §5.5 (the triple-cassette prediction that motivated single-cassette routing); <a href="../koji-endgame-strain/">koji-endgame-strain.md</a> (sister-strain co-fermentation context); <a href="../engineered-lbp-chassis/">engineered-lbp-chassis.md</a> (alternative chassis if reject outcome); <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> (the CP0 chokepoint biology); <a href="../operations/ward-1995-lab-access.md">operations/ward-1995-lab-access.md</a> (lab-access shared with §1.9); <a href="../synthesis/">synthesis.md</a> 2026-05-05 487fad3 Pass 2 Proposed Experiment 2.</p>
 <hr />
 <h2 id="phase-2-animal-model-validation">Phase 2: Animal Model Validation<a class="headerlink" href="#phase-2-animal-model-validation" title="Permanent link">&para;</a></h2>
 <h3 id="21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii">2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii<a class="headerlink" href="#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii" title="Permanent link">&para;</a></h3>

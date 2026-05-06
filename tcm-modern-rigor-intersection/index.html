@@ -4071,9 +4071,9 @@
 </tr>
 <tr>
 <td><strong>P2-2</strong></td>
-<td>comp-011: ChEMBL cross-check of the 8 candidate TCM gout compounds in the table above. Same framework as comp-004 (supplement ABCG2 antagonism). Inputs: compound list with ChEMBL IDs; targets: NLRP3, ABCG2, URAT1, GLUT9, XO, NF-κB pathway components. Output: per-compound mechanism + curated bioactivity + chokepoint hit map + IC50 vs. achievable gut-luminal concentration. Mirrors comp-004 structure exactly.</td>
-<td>Computational analysis (Sonnec subagent)</td>
-<td>Queued</td>
+<td>~~comp-011~~ → <strong>comp-013</strong>: ChEMBL cross-check + comp-007 composite scoring of 9 candidate TCM gout compounds (renumbered after comp-011 was reassigned 2026-05-05 to <em>C. utilis</em> uricase). <strong>COMPLETE 2026-05-06</strong> — see <a href="../tcm-gout-compound-triage-computational/"><code>tcm-gout-compound-triage-computational.md</code></a>. Verdict: 4 GUT-LUMINAL VIABLE (luteolin, astilbin, emodin, berberine) + 1 MODERATE / dose-caveat (rhein) + 4 MECHANISM UNCLEAR (aucubin, cylindrin, chlorogenic acid, atractylenolide I). Most-represented mechanism: URAT1 expression downregulation in murine PO model (5-25 mg/kg active range across 3 of the 4 viable candidates). <strong>Key meta-finding</strong>: ChEMBL coverage gap is load-bearing — 5 of 9 compounds are not curated at all. The chembl-cross-check discipline (rule #2 of this page) needs amendment: for TCM compounds with sparse ChEMBL coverage, animal-model in vivo dose-response data must be admissible to the verdict.</td>
+<td>Computational analysis (Opus subagent)</td>
+<td>✓ Complete (comp-013)</td>
 </tr>
 <tr>
 <td><strong>P2-3</strong></td>
@@ -4125,9 +4125,11 @@
 <li><a href="../engineered-lbp-chassis/"><code>engineered-lbp-chassis.md</code></a>, <a href="../sirna-urat1-modality/"><code>sirna-urat1-modality.md</code></a> — sister peer-track scope pages under chase-every-avenue</li>
 <li><a href="../open-enzyme-vision/"><code>open-enzyme-vision.md</code></a> §2.2 — discovery-engine output / repurposing surface</li>
 <li><a href="../open-questions/"><code>open-questions.md</code></a> — meta-index where the TCM Phase 2 follow-ups will be tracked</li>
-<li><a href="../computational-experiments/"><code>computational-experiments.md</code></a> — comp-011 (Phase 2 P2-2) Planned Analyses</li>
+<li><a href="../computational-experiments/"><code>computational-experiments.md</code></a> — <strong>comp-013</strong> (Phase 2 P2-2 closed 2026-05-06) Analyses table</li>
+<li><a href="../tcm-gout-compound-triage-computational/"><code>tcm-gout-compound-triage-computational.md</code></a> — <strong>comp-013 interpretive page</strong> (per-compound triage verdicts, methodology adaptation notes, cross-cutting findings)</li>
 <li><a href="../hypotheses/H04-tcm-rigor-intersection/"><code>hypotheses/H04-tcm-rigor-intersection.md</code></a> — falsification card stub for the methodology lens</li>
 <li><a href="../synthesis/"><code>synthesis.md</code></a> Strategic Reflections Queue — Phase 3 platform-framing reflection rolled in</li>
+<li><a href="../operations/ward-1995-lab-access.md"><code>../operations/ward-1995-lab-access.md</code></a> — sister operationalization of the <strong>global-multilingual research default</strong> (<code>Open Enzyme/CLAUDE.md</code> §"Global-multilingual research by default"). Both pages independently treat language as a non-barrier and proactively map non-English-world resources as first-class assets: this TCM page targets Chinese / Japanese clinical literature (CNKI / WanFang / J-STAGE / ChiCTR / Kampo medicine literature); the Ward 1995 lab-access page targets Japan / China / Europe academic + industrial fungal-engineering groups. Same methodology, different operational domains (literature ingestion vs. resource acquisition). The Maruyama lab at the University of Tokyo (the primary lead in the Ward lab-access page) is itself a parallel instance — Japan publishes substantial fungal-engineering work in Japanese-language journals that English PubMed indexes thinly; the lab-access strategy treats Japanese-language outreach as default, not workaround.</li>
 </ul>
 
 

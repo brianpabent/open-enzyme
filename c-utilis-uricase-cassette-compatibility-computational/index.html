@@ -3525,6 +3525,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#44-chaperone-load-implications-cross-reference-to-chaperone-orthogonal-stacking-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Chaperone-load implications (cross-reference to chaperone-orthogonal stacking framework)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3838,6 +3849,13 @@
 <p><em>C. utilis</em> uricase has 2 internal KR dipeptides (positions 130–131: KRIT, P1'=I; positions 138–139: KRSG, P1'=S). Both I and S are in the "preferred" P1' category for KEX2 cleavage — both are scored HIGH by the canonical Rockwell 2002 / Brenner 1992 rules. The two sites are 8 residues apart in context GGEKRITDLYYKRSGD.</p>
 <p><em>A. flavus</em> has 1 internal KR site (position 128, P1'=N, HIGH).</p>
 <p>In the proposed direct-secretion cassette design (PTEF1 or PamyB – amyB SP – uricase – TgpdA), KEX2 is not involved in uricase processing. Both sites are non-load-bearing. If <em>C. utilis</em> uricase is ever moved to a glucoamylase-KEX2 fusion architecture, a double KR→KQ mutation at positions 130 and 138 would be required (vs. single mutation at 128 for <em>A. flavus</em>). (Mechanistic Extrapolation; P1' rules from S. cerevisiae Kex2p homology)</p>
+<h3 id="44-chaperone-load-implications-cross-reference-to-chaperone-orthogonal-stacking-framework">4.4 Chaperone-load implications (cross-reference to chaperone-orthogonal stacking framework)<a class="headerlink" href="#44-chaperone-load-implications-cross-reference-to-chaperone-orthogonal-stacking-framework" title="Permanent link">&para;</a></h3>
+<p>The 4 free cysteines flagged in §4.2 are not just a cassette-design QC item — they have downstream implications under the <a href="../chaperone-orthogonal-stacking/">chaperone-orthogonal stacking framework</a>. The framework's central claim is that two cassettes competing for the same ER chaperone subsystem (especially PDI/ERO1) show steep yield collapse, while orthogonal cassettes (loading different subsystems) preserve dual-cassette synergy.</p>
+<p>The framework's <a href="../chaperone-orthogonal-stacking/#4-open-enzyme-candidate-cassettes--scored">§4 cassette scoring table</a> currently lists uricase as "BiP-transit only — chaperone-light," scored against <em>A. flavus</em> (Q00511, 0 disulfides, 0 free Cys). That score does not transfer to <em>C. utilis</em>: 4 free thiols in the oxidizing ER lumen will engage PDI/ERO1 (the same subsystem lactoferrin's 17 disulfides load heavily), whether or not aberrant intermolecular bonds form.</p>
+<p><strong>Direction-only prediction:</strong> <em>C. utilis</em> uricase + lactoferrin in a dual cassette is predicted to show <em>some</em> synergy penalty relative to <em>A. flavus</em> + lactoferrin, because the <em>C. utilis</em> variant is no longer fully PDI-orthogonal. The <em>A. flavus</em> baseline (chaperone framework §5: synergy 0.8–1.0) is the upper bound; the <em>C. utilis</em> synergy is predicted lower but <strong>the magnitude is not computable from the framework as written.</strong></p>
+<p><strong>Why no number:</strong> §4.2 explicitly notes "no quantitative model available for magnitude" of free-Cys ER aggregation risk, and the chaperone framework's §3 substrate categorization treats disulfide <em>count</em> as bulk PDI load without a per-free-Cys coefficient. Both the comp-011 risk frame and the chaperone framework's calibration are silent on the same number. Any threshold-style claim ("synergy drops below 0.7") would be invented, not derived.</p>
+<p><strong>Practical consequence for §1.9:</strong> the parallel head-to-head recommended in §6.3 below is the right empirical resolution — the synergy penalty is exactly the kind of bounded-unknown that a $200–400 second-cassette gene synthesis cost can resolve directly via Lf titer comparison across the two strains. If the <em>A. flavus</em> + Lf strain hits &gt;500 mg/L Lf and the <em>C. utilis</em> + Lf strain stalls below ~150 mg/L (other variables held), that's the synergy penalty made visible. If both strains achieve comparable Lf titers, the framework's chaperone-competition prediction is partially falsified for free-Cys-mediated PDI load (a useful result for future cassette decisions).</p>
+<p>This bidirectional cross-reference is mirrored in <a href="../chaperone-orthogonal-stacking/#4-open-enzyme-candidate-cassettes--scored">chaperone-orthogonal-stacking.md §4</a> — the cassette scoring table now carries a <em>C. utilis</em> variant note flagging this load shift, so the implicit "uricase = <em>A. flavus</em>" assumption does not propagate silently.</p>
 <hr />
 <h2 id="5-strategic-advantage-of-c-utilis-non-cassette-axis">5. Strategic Advantage of <em>C. utilis</em> (Non-Cassette Axis)<a class="headerlink" href="#5-strategic-advantage-of-c-utilis-non-cassette-axis" title="Permanent link">&para;</a></h2>
 <p>The comp-010 vs. comp-011 comparison is purely a cassette-design comparison. There is one strategic advantage of <em>C. utilis</em> that is not captured by the cassette-design analysis but is directly relevant to the oral/gut-lumen track:</p>
@@ -3864,8 +3882,9 @@
 <li>
 <p><strong>Recommended approach for §1.9: empirical head-to-head:</strong></p>
 </li>
+<li>Order both <em>A. flavus</em> (Q00511, codon-optimized) and <em>C. utilis</em> (P78609, codon-optimized + ALLN-346 mutations) as direct-secretion cassettes. The §1.9 fermentation experiment resolves the platform decision empirically at $0 additional fermentation cost (same experiment, two strains). Total gene synthesis cost delta: ~$200–400 for the second codon-optimized gene.</li>
 <li>
-<p>Order both <em>A. flavus</em> (Q00511, codon-optimized) and <em>C. utilis</em> (P78609, codon-optimized + ALLN-346 mutations) as direct-secretion cassettes. The §1.9 fermentation experiment resolves the platform decision empirically at $0 additional fermentation cost (same experiment, two strains). Total gene synthesis cost delta: ~$200–400 for the second codon-optimized gene.</p>
+<p>This recommendation is the canonical instance of the platform's <a href="../open-source-platform/#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared">Principle 6: Variant-Agnostic Empirical Head-to-Head</a> (codified 2026-05-06 from this comp-011 pattern). All three preconditions are satisfied: shared §1.9 fermentation infrastructure, bounded marginal input cost ($200-400), genuine literature split (industry prefers <em>C. utilis</em>, academic precedent favors <em>A. flavus</em>).</p>
 </li>
 <li>
 <p><strong>Lactoferrin cassette (unchanged from comp-010):</strong> PamyB – glucoamylase – KRGGG – hLf (codon-optimized) – TamyB. Monitor internal KR site at position 579 (P1'=K, MODERATE risk) by SDS-PAGE.</p>
