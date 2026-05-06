@@ -21,7 +21,7 @@ A Research Proposal for Proof-of-Concept Collaboration
 **Author:** Brian Abent
 **Date:** April 2026
 **Status:** Proposal for expert review — requesting guidance, not endorsement
-**Circulated to (potential collaborators):** Rheinallt Jones (Emory Pediatric GI / Gnotobiotic Animal Core), Lauren Collier-Hyams (Pharma, NF-κB/intestinal signaling), Valerie Jones (TLR5/innate immunity)
+**Circulated to (potential collaborators):** Role 1 (Gut Microbiome / Gnotobiotic Animal Core), Role 2 (Pharma Translation / NF-κB & intestinal signaling), Role 3 (Innate Immune Safety / TLR signaling) — see [`team.md`](./team.md) for the full role descriptions.
 This proposal is part of the [Open Enzyme](open-enzyme-vision.md) project — an open-source therapeutic enzyme platform. The yeast track is the fastest path to a working uricase producer.
 Evidence levels used throughout:
 Established Peer-reviewed, replicated
@@ -166,10 +166,10 @@ The colonization question is critical. Published data show that *S. boulardii* a
 Therapeutic credibility:  High (most directly validated approach)
 > **How to resolve: Continuous production in the gut**
 >
-> This is precisely the kind of question that could be answered at Rheinallt's gnotobiotic facility, if he joins as a collaborator. Colonize germ-free mice with engineered *S. boulardii* expressing uricase. Measure: (a) fecal yeast counts daily, (b) fecal and cecal uricase activity, (c) serum uric acid (requires Uox-knockout mice or potassium oxonate-treated mice for a hyperuricemic model). Compare to conventional mice gavaged daily. This gives both colonization kinetics and functional uricase delivery data.
+> This is precisely the kind of question that could be answered at a Role 1 collaborator's gnotobiotic facility. Colonize germ-free mice with engineered *S. boulardii* expressing uricase. Measure: (a) fecal yeast counts daily, (b) fecal and cecal uricase activity, (c) serum uric acid (requires Uox-knockout mice or potassium oxonate-treated mice for a hyperuricemic model). Compare to conventional mice gavaged daily. This gives both colonization kinetics and functional uricase delivery data.
 **Cost:** ~$5,000–15,000 (gnotobiotic mouse work is expensive)
 **Time:** 8–12 weeks
-**Who:** Rheinallt Jones, Emory Gnotobiotic Animal Core *(potential collaborator — not yet confirmed)*
+**Who:** Role 1 collaborator (Gut Microbiome / Gnotobiotic Animal Core) *(actively recruiting)*
 ### e. Yeast Lysate (Concentrated Enzyme Liquid)
 Grow engineered yeast in a bioreactor, lyse the cells mechanically or enzymatically, filter, and concentrate the uricase-containing supernatant. This is closest to a traditional enzyme supplement — essentially a crude or semi-purified uricase preparation in a food-grade liquid.
 Advantages: maximal control over enzyme concentration, can be standardized by activity assay, could be flavored or formulated as a shot/tonic. Disadvantages: more processing steps, requires some manufacturing infrastructure, shorter shelf life unless lyophilized.
@@ -231,20 +231,20 @@ The synthesis queue entry ran the same calculation with slightly different inter
 
 ## 6. Open Scientific Questions
 These are framed as questions for specific experts, but each one includes a path to an answer.
-### For Rheinallt (Gut Microbiome / Gnotobiotic Models) *(potential collaborator)*
+### For Role 1 — Gut Microbiome / Gnotobiotic Models *(actively recruiting)*
 > **Q1: Colonization vs. transit for engineered S. boulardii**
 >
-> Published data show *S. boulardii* clears from humans within 2–5 days of stopping dosing. In your gnotobiotic mouse experience, what colonization density and residence time would you predict for an engineered *S. boulardii* strain? Is daily gavage the realistic model, or are there strategies (biofilm formation, mucoadhesive modifications) that could extend residence?
+> Published data show *S. boulardii* clears from humans within 2–5 days of stopping dosing. From a gnotobiotic-mouse perspective, what colonization density and residence time would you predict for an engineered *S. boulardii* strain? Is daily gavage the realistic model, or are there strategies (biofilm formation, mucoadhesive modifications) that could extend residence?
 > **Experiment to resolve Q1**
 >
 > Colonize gnotobiotic mice with engineered *S. boulardii*. Track fecal CFU daily for 30 days with continuous dosing, then stop dosing and continue tracking for 14 days. Compare with and without competing bacterial flora (gnotobiotic → gnotobiotic + defined bacterial community). Simultaneously measure cecal and fecal uricase activity to confirm the yeast is producing enzyme in vivo.
 **Cost:** ~$8,000–15,000
 **Time:** 10–14 weeks
-**Facility:** Emory Gnotobiotic Animal Core
-> **Q2: Would your gnotobiotic facility be appropriate for proof-of-concept?**
+**Facility:** Any gnotobiotic animal core
+> **Q2: Is the gnotobiotic facility appropriate for proof-of-concept?**
 >
-> The ideal experiment: Uox-knockout or oxonate-treated mice colonized with engineered *S. boulardii*, measuring serum urate over time. Is this feasible in the gnotobiotic core? What's the timeline and approximate cost for a small-scale study (e.g., 3 groups × 8 mice)?
-### For Valerie (TLR5 / Innate Immunity)
+> The ideal experiment: Uox-knockout or oxonate-treated mice colonized with engineered *S. boulardii*, measuring serum urate over time. Is this feasible in a gnotobiotic core? What's the timeline and approximate cost for a small-scale study (e.g., 3 groups × 8 mice)?
+### For Role 3 — TLR / Innate Immunity
 > **Q3: Innate immune responses to engineered yeast in the gut**
 >
 > Would an engineered *S. cerevisiae* or *S. boulardii* strain expressing a foreign protein (fungal uricase) trigger TLR-mediated innate immune responses in the intestinal epithelium? *S. cerevisiae* cell wall components (β-glucan, mannan, chitin) are recognized by Dectin-1, Dectin-2, and TLR2. Is the immune response to probiotic yeast well characterized enough to predict tolerability of daily dosing?
@@ -253,26 +253,26 @@ These are framed as questions for specific experts, but each one includes a path
 > Expose Caco-2 or HT-29 intestinal epithelial cell monolayers to: (a) wild-type *S. boulardii*, (b) engineered *S. boulardii* expressing uricase, (c) purified uricase alone, (d) LPS positive control. Measure cytokine panel (IL-8, TNF-α, IL-1β, IL-10) at 4h and 24h by ELISA. Monitor transepithelial electrical resistance (TEER) for barrier integrity. If the engineered strain shows significantly different immune activation than wild-type, that's a flag.
 **Cost:** ~$2,000–4,000
 **Time:** 3–4 weeks (cell culture + assays)
-**Who:** Valerie or any lab with intestinal epithelial cell models
-### For Lauren (Pharma / Translational / NF-κB Signaling)
+**Who:** Role 3 collaborator or any lab with intestinal epithelial cell models
+### For Role 2 — Pharma / Translational / NF-κB Signaling
 > **Q4: Regulatory path for a GMO yeast food product**
 >
 > What's the realistic regulatory pathway for a food or supplement containing a GMO yeast that produces a therapeutic enzyme? Is this a food (GRAS self-determination?), a dietary supplement (DSHEA framework — but engineered organisms complicate this), or does it require a Biologics License Application? The FDA has been evolving its framework for "live biotherapeutic products" (LBPs) — does that apply here, and does it matter whether the product contains live vs. killed yeast?
 > **Path to resolve Q4**
 >
-> This isn't a bench experiment — it's a regulatory mapping exercise. Steps: (1) Review FDA's 2016 "Early Clinical Trials with Live Biotherapeutic Products" guidance and the 2024 updates. (2) Search for precedents: has any GMO yeast been approved as a food ingredient or supplement? (GTC Nutrition's GanedenBC30 *Bacillus* is the closest precedent in probiotics.) (3) Have a pre-IND meeting or a pre-submission meeting with FDA's Office of Food Additive Safety or CBER, depending on how the product is positioned. Lauren's pharma regulatory network would be invaluable for identifying the right FDA contact.
+> This isn't a bench experiment — it's a regulatory mapping exercise. Steps: (1) Review FDA's 2016 "Early Clinical Trials with Live Biotherapeutic Products" guidance and the 2024 updates. (2) Search for precedents: has any GMO yeast been approved as a food ingredient or supplement? (GTC Nutrition's GanedenBC30 *Bacillus* is the closest precedent in probiotics.) (3) Have a pre-IND meeting or a pre-submission meeting with FDA's Office of Food Additive Safety or CBER, depending on how the product is positioned. A Role 2 collaborator's pharma regulatory network would be invaluable for identifying the right FDA contact.
 **Cost:** $0–5,000 (depending on whether you engage a regulatory consultant)
 **Time:** 4–8 weeks for the research; 3–6 months if seeking a formal FDA meeting
-**Who:** Lauren (guidance), regulatory consultant (optional)
+**Who:** Role 2 collaborator (guidance), regulatory consultant (optional)
 > **Q5: Immunogenicity of oral uricase — a different immune context?**
 >
-> Rasburicase (IV uricase) induces anti-drug antibodies in ~60% of patients, limiting re-dosing.[[12]](#ref12) But IV delivery presents the antigen to the systemic immune system, while oral delivery primarily encounters the mucosal immune system, which is generally tolerogenic. Is there evidence that oral exposure to a foreign protein would induce tolerance rather than antibody formation? The oral tolerance literature from allergen immunotherapy is relevant here. Lauren, with your NF-κB and intestinal signaling background — does the gut immune context fundamentally change the immunogenicity risk?
+> Rasburicase (IV uricase) induces anti-drug antibodies in ~60% of patients, limiting re-dosing.[[12]](#ref12) But IV delivery presents the antigen to the systemic immune system, while oral delivery primarily encounters the mucosal immune system, which is generally tolerogenic. Is there evidence that oral exposure to a foreign protein would induce tolerance rather than antibody formation? The oral tolerance literature from allergen immunotherapy is relevant here. With NF-κB / intestinal-signaling expertise — does the gut immune context fundamentally change the immunogenicity risk?
 > **Experiment to resolve Q5**
 >
 > In mice, gavage with uricase daily for 28 days. Collect serum at days 0, 14, and 28. Run ELISA for anti-uricase IgG and IgE. Compare to a group that receives the same total dose of uricase by subcutaneous injection (positive control for systemic immunization). Measure fecal IgA as a mucosal immune readout. If oral exposure produces minimal IgG compared to the injected group, that supports the oral tolerance hypothesis.
 **Cost:** ~$3,000–6,000 (mice, enzyme, ELISAs)
 **Time:** 6–8 weeks
-**Who:** Any immunology lab; could be combined with a gnotobiotic study if Rheinallt collaborates
+**Who:** Any immunology lab; could be combined with a gnotobiotic study via Role 1
 ### For Everyone: The pH Challenge
 > **Q6: Does uricase survive the GI gauntlet?**
 >
@@ -319,7 +319,7 @@ Here is a staged approach, designed so that each phase answers a go/no-go questi
 > **Total estimated cost: Phases 0–3**
 >
 > **$11,200–23,300** | approximately 20–27 weeks
-> This is deliberately a minimal viable experiment path. It answers the fundamental question — can engineered yeast deliver therapeutically relevant uricase activity in a living animal — without requiring industrial-scale investment. Phases 0–1 could be done by a single graduate student or postdoc with yeast and biochemistry experience. Phase 2 requires an intestinal cell biology lab. Phase 3 requires a gnotobiotic facility (Rheinallt's Emory core would be ideal, if he joins the project).
+> This is deliberately a minimal viable experiment path. It answers the fundamental question — can engineered yeast deliver therapeutically relevant uricase activity in a living animal — without requiring industrial-scale investment. Phases 0–1 could be done by a single graduate student or postdoc with yeast and biochemistry experience. Phase 2 requires an intestinal cell biology lab. Phase 3 requires a gnotobiotic facility (a Role 1 collaborator's gnotobiotic core, if recruiting succeeds).
 8. The Parallel Track: Koji (*A. oryzae*)
 *Aspergillus oryzae* (koji) is the other organism under consideration. These two tracks are complementary, not competing:
 | Dimension |
@@ -364,10 +364,10 @@ That is precisely why this is a proposal for a proof-of-concept experiment, not 
 This is a proposal for a small-scale proof-of-concept collaboration. Not a startup. Not a product launch. Not a clinical trial.
 The core question is: **Can engineered *S. cerevisiae* (or *S. boulardii*) produce therapeutically relevant levels of active uricase in a food-compatible format that survives GI transit?**
 Everything else — delivery format optimization, dosing studies, regulatory strategy, commercialization — depends on the answer to that question.
-### What I'm Asking Of Each Of You
-**Rheinallt:** Your expertise in gut microbiology and your gnotobiotic facility are the keys to a credible in vivo proof-of-concept. I'm asking whether a small mouse study (Phase 3 in the validation path) is feasible in your core, and whether you'd be interested in collaborating on design and execution. I'm also asking you to poke holes in the gut-lumen degradation thesis from a microbiome perspective — what am I missing about how this would interact with the resident gut flora?
-**Lauren:** Your translational and pharma experience is invaluable for two things: (1) the regulatory question — what is this product, legally speaking, and what's the path? (2) the immunogenicity question — with your NF-κB and intestinal signaling expertise, is oral tolerance a reasonable expectation, or am I being naively optimistic? And more generally, is there anything in here that a pharma reviewer would immediately flag as a non-starter?
-**Valerie:** Your TLR and innate immunity expertise speaks directly to the safety question. If someone consumes engineered yeast daily, is the innate immune response to yeast cell wall components (β-glucan, mannan) a concern at the doses we're discussing? *S. boulardii* is already taken daily as a probiotic by millions of people, but expressing a novel protein changes the picture. What would you want to see in the immune profiling data to be comfortable?
+### What I'm Asking Of Each Role
+**Role 1 (Gut Microbiome / Gnotobiotic Models):** Expertise in gut microbiology and access to a gnotobiotic facility are the keys to a credible in vivo proof-of-concept. The ask: whether a small mouse study (Phase 3 in the validation path) is feasible in your core, and whether you'd be interested in collaborating on design and execution. Also: poke holes in the gut-lumen degradation thesis from a microbiome perspective — what am I missing about how this would interact with the resident gut flora?
+**Role 2 (Pharma Translation / Regulatory):** Translational and pharma experience is invaluable for two things: (1) the regulatory question — what is this product, legally speaking, and what's the path? (2) the immunogenicity question — with NF-κB and intestinal-signaling expertise, is oral tolerance a reasonable expectation, or am I being naively optimistic? And more generally, is there anything in here that a pharma reviewer would immediately flag as a non-starter?
+**Role 3 (Innate Immune Safety):** TLR / innate-immunity expertise speaks directly to the safety question. If someone consumes engineered yeast daily, is the innate immune response to yeast cell wall components (β-glucan, mannan) a concern at the doses we're discussing? *S. boulardii* is already taken daily as a probiotic by millions of people, but expressing a novel protein changes the picture. What would you want to see in the immune profiling data to be comfortable?
 ### What I Bring
 I know enough molecular biology to be dangerous and enough brewing science to be useful. I can do the Phase 0 bench work (gene synthesis, transformation, activity assays) with minimal hand-holding. I can brew the test batches. I can design and run the SGF/SIF simulations. I have a home uric acid meter for n=1 self-experiments. I'm willing to fund Phases 0–2 out of pocket (~$4,000–8,000). Phase 3 (the mouse study) is where I need both expertise and potentially institutional support.
 I'm presenting this as someone who has done his homework, is honest about what he doesn't know, and wants guidance from people who know more than he does. The worst outcome is that you tell me this won't work and why — and that's actually a valuable outcome, because it saves me from chasing something futile.

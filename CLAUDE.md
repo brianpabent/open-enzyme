@@ -13,7 +13,7 @@ Guidelines for any Claude or AI system working on this project. This document en
 - **Digestive enzymes** (lipase, protease, amylase) — Exocrine pancreatic insufficiency (EPI)
 - **Koji** (A. oryzae) — Natural multi-enzyme producer; genetic engineering for enzyme enhancement
 
-**Team:** Currently just Brian (CTO background). Three Emory PhDs (Rheinallt Jones, Lauren Collier-Hyams, Valerie Jones) are potential collaborators but have full-time jobs — recruiting them is an active project goal. Audience = PhD-level scientists. No overselling.
+**Team:** Currently just Brian (CTO background). Three PhD-level collaborator roles are actively being recruited (Gut Microbiome / In Vivo Validation, Pharma Translation / Regulatory, Innate Immune Safety) — see [`wiki/team.md`](wiki/team.md). Audience = PhD-level scientists. No overselling.
 
 **Phase:** Research & Design (Phase 0)
 

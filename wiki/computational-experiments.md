@@ -54,6 +54,23 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+### comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping
+
+| Field | Value |
+|---|---|
+| **Question** | Across all known characterized fungal natural products — aggregated globally, not just Western pharma — which compounds map onto Open Enzyme's chokepoints (uricase substrate, URAT1, ABCG2, NLRP3 axis, complement CP0, Lp-PLA2, HDAC6, redox/disulfide), and which fungal species are the highest-leverage producers? |
+| **Method (planned)** | 6-phase pipeline. Phase 2: breadth aggregation across LOTUS + NPAtlas + KNApSAcK + NPASS + TCMSP + COCONUT (+ MIBiG/antiSMASH-DB for BGC space). Phase 3: target mapping via ChEMBL + HIT + PubChem BioAssay → SwissTargetPrediction for orphans. Phase 4: chokepoint intersection. Phase 5: multilingual primary-literature deep-dive on top 3-5 species via CNKI/Wanfang/J-STAGE/KISS with two-model translation cross-check per `Open Enzyme/CLAUDE.md` §Translation protocol. Phase 6: comp-013-style per-compound triage with IC50 occupancy + composite scoring. |
+| **Verdict** | **PHASE 2 RAN.** ChEMBL sweep + LOTUS pull (6,798 unique fungal compounds, 55 species) + PubMed scan (14 high-signal hits) executed 2026-05-06. Highest-leverage finding: *Ganoderma applanatum* 2,4-DAE shows in vivo dual XO + URAT1 SUA reduction 407→134 µmol/L (Fitoterapia 2022). C5aR1 platform-gap (§1.21) confirmed empirically — zero direct fungal antagonists in either ChEMBL or PubMed. ChEMBL coverage of canonical mushroom compounds is near-zero (CLAUDE.md global-multilingual warning empirically validated). Two new chokepoint candidates surfaced: ADA (purine catabolism) and PINK1/mitophagy (NLRP3-priming-adjacent). KNApSAcK + NPASS + TCMSP + HIT pulls still pending; Phase 3 (target mapping) starts next. |
+| **Key finding (Phase 1)** | Three reasons the experiment is not "ChEMBL only with extra steps": (1) comp-013 already established that 5/9 TCM compounds had no ChEMBL records — same coverage gap will apply to fungi, likely worse, because mycotherapy is a deeper East-Asian-traditional-medicine vertical than most herbs; (2) fungi are biochemically distinctive in ergothioneine, ETP-class disulfide-bridged compounds, and lanostane triterpenoid diversity that adjacent kingdoms don't produce; (3) the redox/disulfide chemistry angle may warrant adding a new chokepoint to `modality-chokepoint-matrix.md` — the wiki's first patient-side disulfide chokepoint, complementing the engineering-side load-bearing-ness already established by the DAF SCR1-4 incident. **Highest single-leverage potential:** if breadth pass surfaces a validated fungal C5aR1 antagonist that `validation-experiments.md` §1.21's ChEMBL/NPASS/LOTUS/Open Targets scan missed, that partially closes the avacopan-dependence "honest platform gap." |
+| **Informs** | [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) (Phase 5 may write back a new redox/disulfide column); [`complement-c5a-gout.md`](./complement-c5a-gout.md) CP0 platform gap; [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) (methodological extension); [`open-source-platform.md`](./open-source-platform.md) (operationalizes global-multilingual claim) |
+| **Experiment folder** | [`experiments/comp-014-medicinal-mushroom-compound-mapping/`](../experiments/comp-014-medicinal-mushroom-compound-mapping/) |
+| **Interpretive wiki page** | [`wiki/medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) |
+| **Date** | 2026-05-06 |
+| **Status** | Phase 2 (ChEMBL + LOTUS + PubMed) complete; Phase 3 (target mapping) in progress; Phases 4-6 queued |
+| **Phase 2 findings doc** | [`experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md`](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md) |
+
+---
+
 ### comp-013 — TCM Gout Compound Triage
 
 | Field | Value |

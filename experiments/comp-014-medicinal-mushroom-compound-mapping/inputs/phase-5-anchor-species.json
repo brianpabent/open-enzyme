@@ -1,0 +1,186 @@
+{
+  "_doc": "Phase 5 deep-dive anchor species + Phase 2 sanity-check list. NOT the breadth gate. Phase 2 pulls fungal-compound records species-agnostically from LOTUS / NPAtlas / KNApSAcK / NPASS / TCMSP, filters via toxicity-filter.json. The 18 species below are the well-studied medicinal fungi that the breadth pass MUST surface — if any are missing from Phase 2 output, that indicates a pipeline bug (filter too aggressive, or DB pull missed records). They are also the seed for Phase 5 multilingual literature deep-dive when paired against Phase 4 chokepoint-hit results.",
+  "_role_change_2026_05_06": "Originally framed as 'the candidate species we pull from' (depth-first thinking). Reframed as 'sanity-check anchor + Phase 5 deep-dive seed' after Brian's 2026-05-06 correction that breadth means species-agnostic pull with toxicity filter, not curated medicinal list. The species below remain valid; their role in the pipeline shifted from gate to checkpoint.",
+  "_phase_2_role": "sanity-check — every species below should appear in Phase 2 output, else pipeline bug",
+  "_phase_5_role": "deep-dive seed — when Phase 4 surfaces chokepoint-hit fungi, intersect with this list to know which already have established CNKI/J-STAGE clinical-evidence corpora worth ingesting first",
+  "candidates": [
+    {
+      "common_name": "reishi / lingzhi",
+      "scientific": "Ganoderma lucidum",
+      "ncbi_taxonomy_id": 5315,
+      "tcm_name": "灵芝",
+      "japanese": "霊芝 (Reishi)",
+      "compound_classes_known": ["triterpenoids (ganoderic acids — 400+ characterized)", "polysaccharides (β-glucans)", "ergosterol derivatives", "ganodermic acids"],
+      "rationale": "Most-studied medicinal mushroom. Largest characterized compound space. Strong CNKI/J-STAGE clinical literature.",
+      "regulatory_class": "GRAS food/supplement"
+    },
+    {
+      "common_name": "cordyceps (cultivated)",
+      "scientific": "Cordyceps militaris",
+      "ncbi_taxonomy_id": 73501,
+      "tcm_note": "C. militaris is the cultivated commercial source; chemically distinct from wild-harvested C. sinensis (now Ophiocordyceps sinensis) — cordycepin is abundant in C. militaris, sparse in O. sinensis.",
+      "compound_classes_known": ["cordycepin / 3'-deoxyadenosine (adenosine analog — abundant in militaris)", "polysaccharides", "ergosterol", "cordymin (peptide)"],
+      "rationale": "Cordycepin is structurally an adenosine analog — relevant to nucleotide salvage and potentially XO substrate biology. Adenosine deaminase / XO axis is the canonical purine-degradation pathway upstream of urate. Commercial supply is overwhelmingly C. militaris (cultivable).",
+      "regulatory_class": "GRAS food/supplement"
+    },
+    {
+      "common_name": "caterpillar fungus (wild-harvested)",
+      "scientific": "Ophiocordyceps sinensis",
+      "ncbi_taxonomy_id": 72228,
+      "tcm_name": "冬虫夏草 (Dōng chóng xià cǎo)",
+      "tcm_note": "Wild-harvested only; chemistry differs from C. militaris — much lower cordycepin, distinct polysaccharide and nucleoside profile. Heavy CNKI literature; near-impossible to cultivate at commercial scale (host insect dependency).",
+      "compound_classes_known": ["adenosine + cordyceps acid (mannitol)", "polysaccharides (CSP family)", "ergosterol peroxide", "cordymin"],
+      "rationale": "TCM-canonical caterpillar fungus; included separately from C. militaris because the chemistry diverges. Cultivation infeasibility limits OE engineering relevance but the literature is the ground truth for many TCM clinical claims that get attributed to 'cordyceps' generically.",
+      "regulatory_class": "TCM use; supplement (often substituted with C. militaris due to wild-harvest constraints)"
+    },
+    {
+      "common_name": "lion's mane",
+      "scientific": "Hericium erinaceus",
+      "ncbi_taxonomy_id": 91752,
+      "tcm_name": "猴头菇",
+      "compound_classes_known": ["erinacines (cyathin diterpenoids — NGF inducers)", "hericenones (aromatic compounds)", "polysaccharides"],
+      "rationale": "Erinacines/hericenones cross BBB and induce NGF in some models — adjacent to neurogenic / vagus-axis biology. Less direct gout relevance but high biochemical novelty.",
+      "regulatory_class": "GRAS food/supplement"
+    },
+    {
+      "common_name": "turkey tail / yun zhi",
+      "scientific": "Trametes versicolor (Coriolus versicolor)",
+      "ncbi_taxonomy_id": 5325,
+      "tcm_name": "云芝",
+      "japanese": "Kawaratake",
+      "compound_classes_known": ["PSK (krestin) — protein-bound polysaccharide", "PSP — polysaccharopeptide", "ergosterol derivatives"],
+      "rationale": "PSK is FDA-approved (in Japan) as cancer adjuvant. β-glucan immunomodulation — directly relevant to NLRP3 priming biology.",
+      "regulatory_class": "PSK approved drug in Japan; whole mushroom GRAS"
+    },
+    {
+      "common_name": "chaga",
+      "scientific": "Inonotus obliquus",
+      "ncbi_taxonomy_id": 167651,
+      "tcm_name": "桦褐孔菌",
+      "compound_classes_known": ["betulinic acid + derivatives", "inotodiol", "lanostane triterpenes", "melanin", "phenolic polymers"],
+      "rationale": "Triterpenoid chemistry overlaps reishi; melanin is a free-radical scavenger; betulinic acid is in early oncology trials.",
+      "regulatory_class": "supplement"
+    },
+    {
+      "common_name": "maitake",
+      "scientific": "Grifola frondosa",
+      "ncbi_taxonomy_id": 5627,
+      "tcm_name": "舞茸",
+      "compound_classes_known": ["D-fraction (β-1,6-branched β-1,3-glucan)", "MD-fraction", "ergosterol"],
+      "rationale": "Immunomodulator — same NLRP3-priming-relevant β-glucan class as turkey tail.",
+      "regulatory_class": "GRAS food/supplement"
+    },
+    {
+      "common_name": "shiitake",
+      "scientific": "Lentinula edodes",
+      "ncbi_taxonomy_id": 5353,
+      "tcm_name": "香菇",
+      "compound_classes_known": ["lentinan (β-1,3-glucan)", "eritadenine (cholesterol-lowering)", "ergosterol → vitamin D2 precursor"],
+      "rationale": "Eritadenine is the first known fungal small-molecule cardiovascular intervention — relevant to Lp-PLA2 / vessel-wall biology row of chokepoint matrix.",
+      "regulatory_class": "GRAS food"
+    },
+    {
+      "common_name": "oyster mushroom",
+      "scientific": "Pleurotus ostreatus",
+      "ncbi_taxonomy_id": 5322,
+      "compound_classes_known": ["lovastatin (statin precursor — discovered IN this organism)", "pleuran (β-glucan)", "ergothioneine (highest known producer)"],
+      "rationale": "Lovastatin discovery proves fungi can produce blockbuster-class CV drugs. **Highest known ergothioneine producer** — directly relevant to the proposed redox/disulfide-modulator chokepoint that this experiment may add.",
+      "regulatory_class": "GRAS food",
+      "redox_chokepoint_relevance": "primary"
+    },
+    {
+      "common_name": "almond mushroom",
+      "scientific": "Agaricus blazei (A. subrufescens)",
+      "ncbi_taxonomy_id": 5374,
+      "compound_classes_known": ["agaritine (hydrazine derivative — hepatotoxicity flag)", "β-glucans", "ergosterol"],
+      "rationale": "β-glucan immunomodulation; agaritine is a known toxicity concern — included for negative-control / flag-it-out coverage.",
+      "regulatory_class": "supplement (with toxicity caveat)"
+    },
+    {
+      "common_name": "antrodia / niu zhang zhi",
+      "scientific": "Antrodia camphorata (Taiwanofungus camphoratus)",
+      "ncbi_taxonomy_id": 187171,
+      "tcm_name": "牛樟芝 (Taiwan)",
+      "compound_classes_known": ["antrocins", "antroquinonol (in oncology trials)", "antcin"],
+      "rationale": "Taiwan-endemic; rich triterpenoid chemistry; antroquinonol reached Phase II oncology. Heavy CNKI coverage that PubMed misses.",
+      "regulatory_class": "supplement (Taiwan); antroquinonol = investigational"
+    },
+    {
+      "common_name": "phellinus / sang hwang",
+      "scientific": "Phellinus linteus",
+      "ncbi_taxonomy_id": 51353,
+      "tcm_name": "桑黄",
+      "korean": "Sanghwang (상황)",
+      "compound_classes_known": ["hispolon (phenolic styrylpyranone)", "interfungins", "polysaccharides"],
+      "rationale": "Strong Korean clinical literature — KISS/RISS sources will surface evidence PubMed misses. Hispolon is a defined small-molecule with anti-inflammatory mechanism.",
+      "regulatory_class": "supplement"
+    },
+    {
+      "common_name": "fu ling / poria",
+      "scientific": "Wolfiporia cocos (Poria cocos)",
+      "ncbi_taxonomy_id": 80763,
+      "tcm_name": "茯苓",
+      "compound_classes_known": ["pachymic acid + lanostane triterpenes", "polyporenic acid", "polysaccharides", "ergosterol peroxide"],
+      "rationale": "Heavily used in TCM gout and arthritis formulas. Direct relevance to comp-013 TCM triage extension. Limited Western literature — heavy CNKI coverage.",
+      "regulatory_class": "GRAS in TCM use; supplement classification varies by jurisdiction"
+    },
+    {
+      "common_name": "zhu ling",
+      "scientific": "Polyporus umbellatus",
+      "ncbi_taxonomy_id": 80596,
+      "tcm_name": "猪苓",
+      "compound_classes_known": ["polyporusterone A-G (ergostane derivatives)", "polysaccharides", "biotin"],
+      "rationale": "Classic TCM diuretic — historically prescribed for edema and urinary conditions including gout-adjacent. CNKI clinical literature.",
+      "regulatory_class": "TCM use; supplement"
+    },
+    {
+      "common_name": "tremella / yin er",
+      "scientific": "Tremella fuciformis",
+      "ncbi_taxonomy_id": 64657,
+      "tcm_name": "银耳",
+      "compound_classes_known": ["acidic heteropolysaccharides", "tremellan", "ergosterol"],
+      "rationale": "Polysaccharide chemistry overlaps shiitake/turkey tail; lower priority for breadth pass but included for representative coverage.",
+      "regulatory_class": "GRAS food"
+    },
+    {
+      "common_name": "wood ear / mu er",
+      "scientific": "Auricularia auricula-judae",
+      "ncbi_taxonomy_id": 5210,
+      "tcm_name": "木耳",
+      "compound_classes_known": ["acidic polysaccharides (anticoagulant)", "ergosterol"],
+      "rationale": "Polysaccharide anticoagulant activity; heavy TCM use. Low novelty for non-polysaccharide compound mining but maps the polysaccharide modality space.",
+      "regulatory_class": "GRAS food"
+    },
+    {
+      "common_name": "koji (Open Enzyme chassis)",
+      "scientific": "Aspergillus oryzae",
+      "ncbi_taxonomy_id": 5062,
+      "japanese": "麹 (Kōji)",
+      "compound_classes_known": ["kojic acid (tyrosinase inhibitor)", "ergothioneine (producer)", "glycoamylase + α-amylase + proteases (the chassis enzymes)"],
+      "rationale": "Already the platform chassis — included for completeness so the breadth pass can confirm whether koji's own metabolite profile maps to any chokepoints we've missed. **Ergothioneine producer** — relevant to redox/disulfide chokepoint thesis.",
+      "regulatory_class": "GRAS",
+      "redox_chokepoint_relevance": "secondary"
+    },
+    {
+      "common_name": "Aspergillus terreus (lovastatin-original producer)",
+      "scientific": "Aspergillus terreus",
+      "ncbi_taxonomy_id": 33178,
+      "compound_classes_known": ["lovastatin (the original commercial source pre-Pleurotus)", "terrein", "butyrolactones"],
+      "rationale": "Industrial precedent for fungal small-molecule blockbuster drug. Maps the 'fungi as drug-class discovery engine' thesis.",
+      "regulatory_class": "industrial fermentation host (not for direct food use)"
+    }
+  ],
+  "expansion_criteria_for_phase_2": [
+    "Any fungus with >50 characterized compounds in LOTUS/NPAtlas after dedup",
+    "Any fungus with >5 entries in HIT/BATMAN-TCM with target predictions intersecting chokepoint-targets.json",
+    "Any fungus with KNApSAcK metabolite count >100 not already in this list",
+    "Any fungus with MIBiG-curated BGC predicted-product class matching gout-relevant chemistry (e.g., HMG-CoA reductase inhibitors, XO inhibitors, NLRP3 binders by structural similarity)"
+  ],
+  "exclusions": [
+    "Psilocybe spp. — psilocybin Schedule I (US); not actionable for Open Enzyme commercial path. Research interest exists; defer to clinical trials channel.",
+    "Amanita muscaria — muscimol/ibotenic acid neurotoxic profile dominates; not actionable.",
+    "Amanita phalloides — α-amanitin lethal; toxicology-only relevance.",
+    "Tuber spp. (truffles) — culinary, no medicinal compound profile of relevance.",
+    "Claviceps purpurea (ergot) — alkaloid toxicity; relevance is historical drug-discovery (LSD origin), not Open Enzyme-targetable."
+  ]
+}

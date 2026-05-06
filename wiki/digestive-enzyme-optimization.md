@@ -558,6 +558,7 @@ A fully optimized CRISPR/Cas9 system exists for *A. oryzae*:
    - Perform ex vivo gastric + intestinal pH simulation with koji; measure lipase retention
    - Compare to Creon under same conditions
    - Assess impact of food matrix on enzyme stability
+   - **Methodology:** assay protocols (Tier 1 home → Tier 3 bench p-NPP / azocasein / DNS) specified in [enzyme-quantification-protocol.md](./enzyme-quantification-protocol.md); 2-arm extract-vs-biomass GI-survival design in [validation-experiments.md §1.18](./validation-experiments.md). The U/g values cited throughout this page are anchorable against in-house batches via the Tier 3 first-run calibration.
 
 2. **Genetic engineering proof-of-concept:**
    - Construct tglA-overexpression strain (CRISPR/Cas9); confirm 2–3-fold improvement

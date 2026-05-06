@@ -68,13 +68,13 @@ All research lives in `wiki/` — long-form primary documents and shorter synthe
 
 - **Brian Abent** — Founder, Platform Architecture
 
-### Potential Collaborators (actively recruiting)
+### Collaborator Roles (actively recruiting)
 
-- **Rheinallt Jones, PhD** — Gut Microbiome Ecology, In Vivo Validation, Dosing Strategy
-- **Lauren Collier-Hyams, PhD** — NF-κB Signaling, Pharma Translation, Regulatory Pathway
-- **Valerie Jones, PhD** — Innate Immune Safety, Off-Target Assessment, Clinical Design
+The project is recruiting PhD-level collaborators in three complementary domains. See [`wiki/team.md`](wiki/team.md) for the full role descriptions and the questions each role would answer.
 
-All three trained at Emory's Epithelial Pathobiology Unit under Andrew Neish.
+- **Role 1 — Gut Microbiome & In Vivo Validation** (gnotobiotic models, microbiome dynamics)
+- **Role 2 — Pharma Translation & Regulatory Strategy** (NF-κB / intestinal signaling, FDA / IND pathway)
+- **Role 3 — Innate Immune Safety** (TLR signaling, PAMP / epitope analysis)
 
 ---
 
@@ -133,4 +133,4 @@ Open Enzyme is released under [MIT License](LICENSE). All research documents and
 ## Contact
 
 **Project Lead:** Brian Abent  
-**Email:** brian@headsupresults.com
+**Email:** brian.abent@gmail.com

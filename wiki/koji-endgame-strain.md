@@ -231,7 +231,7 @@ A first-pass dual-cassette strain needs to resolve the following specific questi
 **Timeline.** 8–12 weeks: 2–3 weeks gene synthesis + construct assembly, 2–3 weeks sequential transformation + clonal screening, 1–2 weeks fermentation (×2 formats, parallel), 2–3 weeks assay suite + write-up.
 
 **Dependencies.** *A. oryzae* genetic-engineering lab access. Candidates:
-- Lauren Collier-Hyams at Emory (see [team.md](./team.md)) if the conversation converts her from "potential collaborator" to active. Her NF-κB / pharma translation background is a natural fit.
+- A Role 2 (Pharma Translation) collaborator (see [team.md](./team.md)) whose NF-κB / pharma-translation background is a natural fit, if recruiting converts.
 - A commercial CRO specializing in filamentous-fungus engineering (e.g., Lonza, Novozymes contract services, Dyadic International) — more expensive but faster turnaround.
 - Community biolab with protoplast-transformation capability (Genspace NY has done *A. oryzae* work; BioCurious Sunnyvale has not publicly).
 
@@ -382,17 +382,17 @@ The 6-month extension protocol ([validation-experiments.md](./validation-experim
 
 ### 8.2 Collaborator Pitch
 
-The endgame strain is the concrete platform vision for the three Emory PhDs (Rheinallt Jones, Lauren Collier-Hyams, Valerie Jones) being recruited per [team.md](./team.md). Instead of "help us build an open-source enzyme library" (broad, unscoped), the pitch becomes:
+The endgame strain is the concrete platform vision for the three PhD-level collaborator roles being recruited per [team.md](./team.md). Instead of "help us build an open-source enzyme library" (broad, unscoped), the pitch becomes:
 
 > One engineered *A. oryzae* koji strain that covers five NLRP3-pathway chokepoints from four molecules. Two heterologous expression cassettes (uricase + lactoferrin) layered on two native metabolites (kojic acid + ergothioneine). Peer-reviewed Aspergillus precedent for each piece (Ward 1995 hLf >2 g/L *A. awamori*; rasburicase precedent 2001 for uricase in *S. cerevisiae*; Wang 2023 for multi-locus *A. niger*; Li 2024 for multi-copy *A. oryzae* α-amylase sites). The single feasibility test that gates the whole thing is a dual-cassette layering experiment costing $3–5k and taking 8–12 weeks.
 
-That pitch converts the project from "open-ended biotech research" into "one specific, scoped, published-precedent-grounded engineering target with a clear yes/no feasibility question." Each PhD finds a natural entry:
+That pitch converts the project from "open-ended biotech research" into "one specific, scoped, published-precedent-grounded engineering target with a clear yes/no feasibility question." Each role finds a natural entry:
 
-- **Lauren (NF-κB + pharma translation)** — the NLRP3 cascade mapping and CP1a/CP4/CP6b mechanistic case for lactoferrin is in her technical domain. She can critique the coverage matrix, identify missing receptors/pathways, and potentially run the cell-based validation (THP-1 + MSU crystal + endgame-strain extract).
-- **Rheinallt (gut microbiome)** — the koji matrix + oral delivery + gut-lumen uricase + gut-resident bacterial modulation by lactoferrin is a direct fit. Whether the endgame strain's constituents interact with the gut microbiome (lactoferrin is bacteriostatic; could this alter SCFA production or colonization resistance?) is exactly his question.
-- **Valerie (innate immune safety)** — the multi-heterologous protein + native metabolite payload needs an explicit PAMP/epitope safety audit. Fungal-glycosylated lactoferrin is less allergenic than native (Almond 2012), but is the dual-cassette strain safe at chronic 10–15 g/day oral dose for years? That's her audit to run.
+- **Role 2 (NF-κB + pharma translation)** — the NLRP3 cascade mapping and CP1a/CP4/CP6b mechanistic case for lactoferrin is squarely in this technical domain. Critique the coverage matrix, identify missing receptors/pathways, potentially run the cell-based validation (THP-1 + MSU crystal + endgame-strain extract).
+- **Role 1 (gut microbiome)** — the koji matrix + oral delivery + gut-lumen uricase + gut-resident bacterial modulation by lactoferrin is a direct fit. Whether the endgame strain's constituents interact with the gut microbiome (lactoferrin is bacteriostatic; could this alter SCFA production or colonization resistance?) is exactly the Role 1 question.
+- **Role 3 (innate immune safety)** — the multi-heterologous protein + native metabolite payload needs an explicit PAMP/epitope safety audit. Fungal-glycosylated lactoferrin is less allergenic than native (Almond 2012), but is the dual-cassette strain safe at chronic 10–15 g/day oral dose for years? That's the Role 3 audit.
 
-The endgame strain is a *shared canvas* — three PhDs can each pull at the thread most relevant to their expertise without the scope collapsing.
+The endgame strain is a *shared canvas* — the three roles can each pull at the thread most relevant to their expertise without the scope collapsing.
 
 ---
 
@@ -412,7 +412,7 @@ In priority order for the endgame-strain research agenda:
 6. **Does lactoferrin iron-loading state (apo vs. holo) matter for CP4/CP6b mechanism?** Most published gout-adjacent Lf work is on native bLf which is partially iron-saturated (10–20%); Shan 2026 PMID 41524100 did not specify apo-vs-holo. The mitophagy-induction arm is probably form-independent, but the iron-sequestration arm (CP1b via reduced Fenton ROS) requires apo-Lf. Recombinant fungal Lf glycosylation differs from native — could shift iron-binding kinetics or apo-vs-holo equilibrium. Empirical question worth a dedicated assay.
 7. **Is there a path to adding CP6a coverage (5-LOX) via a third heterologous pathway, or does CP6a pair with quercetin / AKBA supplementation indefinitely?** *A. oryzae* does not natively produce quercetin or AKBA; engineering a terpenoid-biosynthesis pathway (for AKBA) or flavonoid pathway (for quercetin) would be a major additional engineering lift. Most plausible near-term answer: supplement-pair, don't engineer. But worth flagging as a Year 3+ research direction.
 8. **What is the shelf life of the dual-cassette strain under standard koji drying + packaging?** Ward 1995 characterization was wet-culture samples; food-grade koji products are typically air-dried to ~10% moisture for shelf stability. Lactoferrin is thermally labile above ~60°C; air-drying at 40°C is standard koji practice and should preserve activity, but explicit pre-and-post-drying activity assays are needed.
-9. **Does the endgame strain offer regulatory advantage (or hazard) relative to the two-strain fallback?** GRAS-pathway argument: single-strain engineered koji with two heterologous genes is still *A. oryzae*-based, and the koji-food history is intact. Two strains blended is also *A. oryzae*-based. But regulatory filings for "engineered microbial strain containing human-gene-derived lactoferrin" might differ between FDA's GRAS, NDI, and biologic pathways. This needs explicit regulatory-pathway analysis — likely a Valerie conversation combined with an FDA regulatory consultant.
+9. **Does the endgame strain offer regulatory advantage (or hazard) relative to the two-strain fallback?** GRAS-pathway argument: single-strain engineered koji with two heterologous genes is still *A. oryzae*-based, and the koji-food history is intact. Two strains blended is also *A. oryzae*-based. But regulatory filings for "engineered microbial strain containing human-gene-derived lactoferrin" might differ between FDA's GRAS, NDI, and biologic pathways. This needs explicit regulatory-pathway analysis — likely a Role 3 (innate immune safety) conversation combined with an FDA regulatory consultant.
 10. **Is the "CP0 via trigger elimination" semantic claim defensible, or is it a marketing flourish?** The coverage matrix marks CP0 as "Partial (upstream)" — uricase doesn't block C5a signaling but removes the crystal trigger that drives most of the CP0 activation in gout. Whether reviewers accept this as CP0 coverage vs. "a different kind of intervention, not CP0 at all" is a framing question that will recur in any public-facing communication. The honest statement is the one in §2.1 and §5: "upstream trigger elimination, functionally CP0 coverage at the cascade level, not C5aR1 antagonism."
 
 ---

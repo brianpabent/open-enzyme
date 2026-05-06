@@ -258,7 +258,7 @@ For a community biolab or non-traditional setting, AMT is worth considering beca
 
 > **For a Non-Traditional Lab Setting**
 
-**PEG-protoplast transformation is the move.** It requires a laminar flow hood (or still-air box), a shaking incubator, a basic centrifuge, and standard consumables. No electroporation equipment, no Agrobacterium culture needed. The protocol has been successfully executed in teaching labs. Lauren could do this in a community biolab with standard equipment in an afternoon.
+**PEG-protoplast transformation is the move.** It requires a laminar flow hood (or still-air box), a shaking incubator, a basic centrifuge, and standard consumables. No electroporation equipment, no Agrobacterium culture needed. The protocol has been successfully executed in teaching labs. A trained collaborator could run it in a community biolab with standard equipment in an afternoon.
 
 ## 05 Screening & Validation
 
@@ -621,7 +621,7 @@ Community biolabs, university partnerships, or CRO services. You have options.
 
 ### University Collaboration
 
-If Lauren Hyams has academic connections, a university lab is ideal. Many mycology, fermentation science, or synthetic biology labs have all the equipment and expertise. This could be framed as a collaboration or independent study project. Universities with strong Aspergillus programs: Vanderbilt, UC Davis, University of Wisconsin-Madison, Wageningen (Netherlands), NRIB (Japan).
+An academic-lab pathway via a Role 2 (pharma-translation) collaborator is ideal. Many mycology, fermentation-science, or synthetic-biology labs have all the equipment and expertise. This could be framed as a collaboration or independent study project. Universities with strong Aspergillus programs: Vanderbilt, UC Davis, University of Wisconsin-Madison, Wageningen (Netherlands), NRIB (Japan).
 
 ### Contract Research Organizations (CROs)
 
@@ -685,7 +685,7 @@ Establish a sustainable home fermentation practice. Weekly koji batch. Maintain 
 
 > **Timeline Reality**
 
-With lab access and the gene ordered today, you could have a validated uricase-producing koji strain in **6–8 weeks**, and self-experiment results within **12–14 weeks**. The bottlenecks are biological (waiting for mold to grow, waiting for colonies to appear) not technical. The actual hands-on lab time is maybe 40–60 hours total. Lauren could do Phases 1–3 in a few weekends at a community biolab.
+With lab access and the gene ordered today, you could have a validated uricase-producing koji strain in **6–8 weeks**, and self-experiment results within **12–14 weeks**. The bottlenecks are biological (waiting for mold to grow, waiting for colonies to appear) not technical. The actual hands-on lab time is maybe 40–60 hours total. A trained collaborator could run Phases 1–3 in a few weekends at a community biolab.
 
 ## 13 Alternative Approaches
 

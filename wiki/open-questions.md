@@ -78,10 +78,10 @@ Questions about uricase variant selection, GI survival, protease resistance, yea
 
 ### Wild-type koji baseline and EPI applications
 
-- **What is the quantitative enzyme activity of shio-koji (units/g) vs. commercial PERT (Creon, Zenpep units per pill)?** Lab-measurable via amylase/protease assays of finished shio-koji, but not yet done. This is the key comparison that determines whether wild-type koji is a meaningful PERT-reducer or merely a condiment. See [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
+- **What is the quantitative enzyme activity of shio-koji (units/g) vs. commercial PERT (Creon, Zenpep units per pill)?** Lab-measurable via amylase / protease / lipase assays of finished shio-koji, but not yet done. This is the key comparison that determines whether wild-type koji is a meaningful PERT-reducer or merely a condiment. **Methodology now specified in [enzyme-quantification-protocol.md](./enzyme-quantification-protocol.md)** — Tier 3 bench first-run (~$200–400 reagents, single-day session at a community-college lab) is the load-bearing experiment. See also [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md, enzyme-quantification-protocol.md)
 - **Is shio-koji-marinated protein a meaningful PERT-reducer in mild-to-moderate EPI?** N=1 / household trials with PERT-dose-per-meal tracking would generate informative observational data. No formal evidence exists. See [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
 - **What is the gastric survival of shio-koji-derived enzymes?** Hypothesis: poor without enteric coating; useful only for pre-digestion in marinade phase, not in-gut activity post-ingestion. Testable via simulated gastric fluid (SGF pH 2, pepsin, 2h). See [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
-- **Is lipase the limiting digestive-enzyme axis for fat malabsorption EPI when using wild-type *A. oryzae* shio-koji?** Lipase activity of *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains. Quantitative comparison needed. See [koji-home-fermentation.md](./koji-home-fermentation.md), [aspergillus-oryzae.md](./aspergillus-oryzae.md). (source: koji-home-fermentation.md)
+- **Is lipase the limiting digestive-enzyme axis for fat malabsorption EPI when using wild-type *A. oryzae* shio-koji?** Lipase activity of *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains. Quantitative comparison needed. Methodology in [enzyme-quantification-protocol.md §3.1](./enzyme-quantification-protocol.md) (p-NPP lipase assay vs. Creon-cap-equivalent reference standard). See also [koji-home-fermentation.md](./koji-home-fermentation.md), [aspergillus-oryzae.md](./aspergillus-oryzae.md). (source: koji-home-fermentation.md, enzyme-quantification-protocol.md)
 - **Are there any human studies of koji-fermented diets in EPI specifically?** None identified. Would be high-value evidence. See [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
 
 ### Yeast vs. koji platform choice
@@ -264,6 +264,21 @@ The [TCM × Modern Rigor scope page](./tcm-modern-rigor-intersection.md) (commit
 - **P2-6 — Bioavailability characterization for top 3 compounds advancing from P2-2.** Quantitative oral bioavailability + gut-vs-systemic distribution + first-pass metabolism + microbiome metabolism. Maps to the "embrace gut-luminal mechanisms" discipline (rule #3). (Queued, Opus subagent.)
 
 Phase 3 reflection (content-triggered, not calendar-triggered): does the TCM-rigor track accumulate enough substance to elevate from "methodology lens" to "first-class discovery-engine output named in `open-enzyme-vision.md` §2.2 alongside the repurposing-surface candidates"? Trigger: after P2-1 through P2-6 land.
+
+### Medicinal mushroom complement — Phase 7 peer track (cultivation, not engineering)
+
+The [Medicinal Mushroom Complement Track scope page](./medicinal-mushroom-complement-track.md) (committed 2026-05-06) formalizes native-compound medicinal mushrooms (*Ganoderma lucidum* GLPP, *Cordyceps militaris* cordycepin+pentostatin, *Pleurotus citrinopileatus* ergothioneine, *Lentinula edodes* eritadenine, *Hericium erinaceus* erinacines, *Trametes versicolor* PSK, *Inonotus obliquus* inotodiol) as a peer track to engineered koji / engineered LBPs / siRNA discovery. Different engineering discipline (cultivation + extraction, NO genetic engineering); different consumption UX (decoction / tincture / dried fruiting body vs koji condiments); regulatory simplicity (GRAS food / supplement-grade, no GMO burden). Six Phase 7 follow-ups status per [scope page §6](./medicinal-mushroom-complement-track.md):
+
+- **#1 Strain selection lit scan ✅** (multilingual, 2026-05-06; outputs: Ganoderma / Cordyceps / Pleurotus per-species scan files in comp-014 outputs dir)
+- **#2 Cultivation × yield meta-analysis ✅** (2026-05-06)
+- **#3 Extract characterization SOPs** — stub at [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) (SOP-1 GLPP gated on Phase 5b CNKI dive; SOP-3 EGT lowest-friction)
+- **#4 GLPP+cordycepin synergy wet-lab gate** — stub at [`validation-experiments.md` §2.6](./validation-experiments.md) (4-arm: whole-fermentate / cordycepin / cordycepin+GLPP / cordycepin+pentostatin)
+- **#5 H06 hypothesis card ✅** (stub at [`hypotheses/H06-medicinal-mushroom-complement-track.md`](./hypotheses/H06-medicinal-mushroom-complement-track.md))
+- **#6 Modality-chokepoint-matrix native-compound row ✅** (2026-05-06)
+
+**CTO-actionable TODOs** are tracked operationally — see [`operations/todos.md`](../operations/todos.md) §"Phase 7 medicinal-mushroom-complement track" (TODO surface; this index points to it for completeness per the umbrella aggregation pattern).
+
+Phase 3 reflection (content-triggered, not calendar-triggered): does the medicinal-mushroom-complement track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to include native-compound producers as first-class platform contribution? Likely yes given the regulatory simplicity + home-fermentability + multi-compound-per-species advantages, but defer formal reflection until SOP-3 (EGT) lands as proof-of-concept.
 
 ### siRNA against URAT1 — discovery-engine output (peer-track exploration vector to LBP)
 

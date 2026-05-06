@@ -36,7 +36,7 @@ status: scope-page
 
 # Ward 1995 §1.9 Wet-Lab Access — Global Landscape (Japan / China / Europe)
 
-**Status:** scope-page (2026-05-05). Maps the global parallel options for executing [validation-experiments.md §1.9](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) — the project's #1 priority gate. Companion to the US-only scope (covered separately in the Lauren Collier-Hyams contact thread; see [team.md](./team.md)). This page exists so that if the US lead doesn't move forward, or if an alternative path is cheaper / faster / better-positioned, Brian has a pre-mapped order-of-operations to fall back on.
+**Status:** scope-page (2026-05-05). Maps the global parallel options for executing [validation-experiments.md §1.9](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) — the project's #1 priority gate. Companion to the US-only scope (covered separately via the active US Role 2 / Pharma Translation contact thread; see [team.md](./team.md)). This page exists so that if the US lead doesn't move forward, or if an alternative path is cheaper / faster / better-positioned, Brian has a pre-mapped order-of-operations to fall back on.
 
 ---
 
@@ -50,7 +50,7 @@ status: scope-page
 - pyrG / niaD / amdS / ptrA selection markers — the food-grade-compatible set
 - qPCR (cassette copy number), ELISA + Western (heterologous protein quantification), spectrophotometric uricase activity assay, HPLC for kojic acid baseline
 
-Lauren Collier-Hyams at Emory was emailed today and replied "ok lemme try to dig into this and i'll get back to ya" — engaged, no timeline. This page de-risks her timeline by mapping global parallel options; if she comes back without direct execution capacity, several leads here can carry the experiment.
+The active US Role 2 (Pharma Translation) lead was emailed today and replied "ok lemme try to dig into this and i'll get back to ya" — engaged, no timeline. This page de-risks that timeline by mapping global parallel options; if the lead comes back without direct execution capacity, several leads here can carry the experiment.
 
 US-based options were scoped separately and are intentionally out of scope here.
 
@@ -235,7 +235,7 @@ The substantive context for any researcher reaching out to the Maruyama group. T
 - [`hypotheses/H01-ward-dual-cassette.md`](./hypotheses/H01-ward-dual-cassette.md) — the falsification card with assumption stack and Killshot #1 findings
 - [`cassette-compatibility-computational.md`](./cassette-compatibility-computational.md) — comp-010, the cassette-design-risk verdict
 
-### If Lauren falls through — order-of-operations parallel pursuit
+### If the US lead falls through — order-of-operations parallel pursuit
 
 1. **Week 0:** Email Maruyama (above).
 2. **Week 0 (parallel):** Email Jingwen Zhou + Guoqiang Zhang (Jiangnan, corresponding authors of PMC11742560) with a similar but C19-chassis-framed request.
@@ -259,7 +259,7 @@ The substantive context for any researcher reaching out to the Maruyama group. T
 ## Cross-References
 
 - [`validation-experiments.md`](./validation-experiments.md) §1.9 — the experiment this page is about
-- [`team.md`](./team.md) — Brian + named collaborator (Lauren Collier-Hyams, Emory) plus the addendum pointing here
+- [`team.md`](./team.md) — Brian + the three actively-recruiting collaborator roles, plus the addendum pointing here
 - [`hypotheses/H01-ward-dual-cassette.md`](./hypotheses/H01-ward-dual-cassette.md) — the falsification card; Killshot #1 surfaced NSlD-ΔP10 as the default chassis
 - [`cassette-compatibility-computational.md`](./cassette-compatibility-computational.md) — comp-010, the in silico cassette-design analysis (LOW risk verdict)
 - [`koji-endgame-strain.md`](./koji-endgame-strain.md) — the endgame strain thesis §1.9 gates

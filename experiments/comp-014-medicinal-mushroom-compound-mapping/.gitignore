@@ -1,0 +1,4 @@
+# Raw API response cache. Reproducible by re-running phase_2b_lotus_pull.sh.
+# Aggregated artifacts (phase-2b-*.json, phase-2b-*.md) ARE committed.
+outputs/_lotus_raw/
+outputs/_chembl_raw/

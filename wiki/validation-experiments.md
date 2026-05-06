@@ -351,7 +351,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Estimated timeline:** 8–12 weeks — 2–3 weeks gene synthesis + construct assembly, 2–3 weeks sequential transformation + clonal screening, 1–2 weeks parallel fermentation (solid-state + submerged), 2–3 weeks full assay suite + write-up.
 
-**Dependencies:** *A. oryzae* genetic-engineering lab access. Candidate pathways: (a) Lauren Collier-Hyams at Emory (see [team.md](./team.md)) if the recruiting conversation converts her to active collaboration; (b) commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic) — faster but more expensive; (c) community biolab with protoplast-transformation capability (Genspace NY has precedent on *A. oryzae*). **Global parallel options (Japan / China / Europe) are mapped in [`ward-1995-lab-access-global.md`](./ward-1995-lab-access-global.md)** — the Maruyama lab at the University of Tokyo is the single most important contact globally (origin lab for NSlD-ΔP10, the default chassis per H01 Killshot #1); Jiangnan University (C19 chassis) and DTU Mortensen group (CRISPR toolkit) are the parallel-path options. (source: ward-1995-lab-access-global.md)
+**Dependencies:** *A. oryzae* genetic-engineering lab access. Candidate pathways: (a) a Role 2 (Pharma Translation) collaborator (see [team.md](./team.md)) if recruiting converts; (b) commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic) — faster but more expensive; (c) community biolab with protoplast-transformation capability (Genspace NY has precedent on *A. oryzae*). **Global parallel options (Japan / China / Europe) are mapped in [`ward-1995-lab-access-global.md`](./ward-1995-lab-access-global.md)** — the Maruyama lab at the University of Tokyo is the single most important contact globally (origin lab for NSlD-ΔP10, the default chassis per H01 Killshot #1); Jiangnan University (C19 chassis) and DTU Mortensen group (CRISPR toolkit) are the parallel-path options. (source: ward-1995-lab-access-global.md)
 
 **Success criteria:**
 - **Accept** (go to full endgame strain development per [koji-endgame-strain.md](./koji-endgame-strain.md) §7): lactoferrin titer ≥500 mg/L koji pore-fluid equivalent, uricase activity ≥50 μmol/h/OD retained from single-cassette baseline, native kojic acid + ergothioneine titers within 30% of WT.
@@ -707,7 +707,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - **Both arms survive ≥30%:** extract-vs-biomass distinction doesn't matter for native enzymes; substrate or food-matrix is the driver. Decouples the construct decision.
 - **Both arms <10%:** native enzyme delivery via koji is inherently limited to pre-ingestion (marinade) effects; engineered delivery requires enteric coating regardless of intracellular vs. secreted strategy.
 
-**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Proposed Experiment #3; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §06 (Koji-S vs. Koji-I trade-off); [digestive-enzyme-optimization.md](./digestive-enzyme-optimization.md) §4 (native enzyme activity).
+**Cross-references:** [synthesis.md](./synthesis.md) 2026-04-27 Proposed Experiment #3; [engineered-koji-protocol.md](./engineered-koji-protocol.md) §06 (Koji-S vs. Koji-I trade-off); [digestive-enzyme-optimization.md](./digestive-enzyme-optimization.md) §4 (native enzyme activity); [enzyme-quantification-protocol.md](./enzyme-quantification-protocol.md) §3 + §5 (assay methodology + sample-prep for the readouts above).
 
 ---
 
@@ -1000,7 +1000,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - 1 week: parallel fermentation (solid-state + submerged controls)
 - 2 weeks: full assay suite (SDS-PAGE + Western + ELISA + MS + activity assay) + write-up
 
-**Dependencies:** Same lab-access pathway as §1.9 — Lauren Collier-Hyams at Emory (per [`team.md`](./team.md)) if the recruiting conversation converts; commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic); community biolab with protoplast-transformation capability (Genspace NY has *A. oryzae* precedent). Global parallel options mapped in [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md). **This experiment shares lab-access infrastructure with §1.9** — both are *A. oryzae* protoplast transformation + solid-state koji fermentation + standard mammalian-protein readout assays. If §1.9 is running in a partner lab, §1.25 is a natural co-batch experiment with marginal infrastructure cost (sequential transformations on the same host, parallel fermentations under the same conditions).
+**Dependencies:** Same lab-access pathway as §1.9 — a Role 2 (Pharma Translation) collaborator (per [`team.md`](./team.md)) if recruiting converts; commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic); community biolab with protoplast-transformation capability (Genspace NY has *A. oryzae* precedent). Global parallel options mapped in [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md). **This experiment shares lab-access infrastructure with §1.9** — both are *A. oryzae* protoplast transformation + solid-state koji fermentation + standard mammalian-protein readout assays. If §1.9 is running in a partner lab, §1.25 is a natural co-batch experiment with marginal infrastructure cost (sequential transformations on the same host, parallel fermentations under the same conditions).
 
 **Success criteria:**
 - **Accept** (proceed to integration with platform — sister-strain co-ferment with uricase + Lf endgame strain, OR queue for LBP-chassis transfer): secreted titer ≥50 mg/L pore-fluid equivalent + correct apparent MW on non-reducing SDS-PAGE + ≥40% native disulfide-folded form on mass spec + ≥30% C5a-generation inhibition vs. control at therapeutically-plausible DAF concentration + native metabolite program preserved within 30% of WT.
@@ -1048,7 +1048,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Dependencies:** 
 - Requires optimized S. boulardii uricase strain from Phase 1
-- Requires access to a gnotobiotic facility — ideally Rheinallt Jones's Emory Gnotobiotic Animal Core, if he joins as a collaborator
+- Requires access to a gnotobiotic facility — ideally via a Role 1 (Gut Microbiome / In Vivo Validation) collaborator, if recruiting converts
 
 **Success criteria:** 
 - Maintain >10⁶ CFU/mL fecal yeast counts through day 7
@@ -1189,6 +1189,58 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - Maintain serum uric acid within 2.0–4.0 mg/dL range (homeostatic)
 - Self-regulate in response to acute uric acid load
 - Clear allantoin without accumulation
+
+---
+
+### 2.6 GLPP + Cordycepin Synergy in Hyperuricemic Mice — 4-Arm Wet-Lab Gate (Phase 7-4 Stub)
+
+**Status**: Proposed (stub — full protocol pending chemistry collaborator) | **Cost**: $8,000–15,000 | **Weeks**: 10–14 | **Phase**: 2
+
+**Affected wiki**: [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [hypotheses/H06-medicinal-mushroom-complement-track](./hypotheses/H06-medicinal-mushroom-complement-track.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md), [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md), [modality-chokepoint-matrix](./modality-chokepoint-matrix.md)
+
+**What it tests:** The Phase 6 GLPP+cordycepin synergy hypothesis — does combined administration achieve URAT1 modulation at lower individual doses than either alone, with acceptable PK/PD? **Refined to 4-arm comparison** after Phase 7-1b strain scan surfaced that *C. militaris* natively co-produces pentostatin from the same BGC as cordycepin (Xia 2017, [PMID 29056419](https://pubmed.ncbi.nlm.nih.gov/29056419)) — pentostatin is the natural ADA-inhibitor that protects cordycepin from deamination. Whole-fermentate Cordyceps preparations have the synergy built in; purified cordycepin lacks it.
+
+**Why this matters:** validates whether the medicinal-mushroom-complement track delivers a real platform contribution. Per [H06](./hypotheses/H06-medicinal-mushroom-complement-track.md) Dimension 3, replication of GLPP 40.6% UA reduction (PMID 36385640) within 2× of published effect size is the load-bearing claim — if the published effect doesn't replicate at higher methodological rigor, the track is not viable in a way no protocol-improvement fixes.
+
+**Proposed in:** [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) §"Six Phase 7 follow-ups queued" #4 (committed 2026-05-06); refined by [Phase 7-1b strain scan](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7b-cordyceps-strain-scan.md) pentostatin discovery; framed as 4-arm via [comp-014 Phase 6 triage](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage.md).
+
+**Protocol (stub-level — full design pending chemistry collaborator):**
+- **Model:** PO+HX hyperuricemia mouse (potassium oxonate + hypoxanthine), C57BL/6 or matching PMID 36385640's strain (verify via Phase 5b CNKI dive of Chinese-language strain rationale)
+- **Sample size:** n=8/arm × 4 arms + 8 healthy controls = 40 mice (powered for 25% SUA reduction, α=0.05, 80% power, based on PMID 36385640 effect 40.6% with 15% SD)
+- **4 arms:**
+  1. **Whole-fermentate *C. militaris*** (top strain GYS60 per Phase 7-1b, brown-rice SSF per Phase 7-2 SOP) — natural cordycepin + pentostatin pairing
+  2. **Purified cordycepin alone** (commercial ≥98% HPLC, Sigma C9881 or equivalent)
+  3. **Purified cordycepin + GLPP** (GLPP from ITS-verified *G. lingzhi* per [SOP-1](./medicinal-mushroom-extract-sops.md); GLPP serves as alternative ADA inhibitor)
+  4. **Purified cordycepin + pentostatin** (FDA-approved drug, regulated research-use sourcing; positive control for ADA-inhibitor-mediated cordycepin protection)
+- **Doses:** equimolar cordycepin across arms 2-4; whole-fermentate dosed to deliver matched cordycepin (1-25 mg/g DW per Phase 7-1b); GLPP at PMID 36385640 top dose (400 mg/kg PO); pentostatin low pharmacological dose (~0.5 mg/kg)
+- **Duration:** 14 days PO daily dosing
+- **Primary endpoint:** SUA reduction at d14
+- **Secondary endpoints:** cordycepin + 3'-deoxyinosine plasma PK at d1/d7/d14 (does ADA inhibition extend cordycepin t½?); URAT1 mRNA/protein in kidney; GLUT9 + OAT1 mRNA (GLPP pathway); ADA activity in serum + intestinal mucosa; safety (ALT/AST, BUN/Cr, body weight)
+
+**Estimated cost ($8,000-15,000):** mice $1,500-3,000; vivarium $1,200-2,000; cordycepin standard $400-600; pentostatin (license + small qty) $1,500-3,000; GLPP source $500-1,500; whole-fermentate Cordyceps $200-500; assays (SUA, cordycepin PK, transporter expression) $2,000-3,500; CRO/lab labor $500-1,500.
+
+**Estimated timeline (10-14 weeks):** 3-4 wk source acquisition; 1 wk dose validation HPLC; 4-5 wk in vivo arm; 2-3 wk assay completion + analysis.
+
+**Dependencies:**
+- [SOP-1 GLPP fractionation](./medicinal-mushroom-extract-sops.md) drafted to operational state — currently stub-level; gated on Phase 5b CNKI dive of Lin Zhanxi Juncao methods (TODO-2 in scope page)
+- Pentostatin research-use sourcing (FDA-approved drug, restricted access)
+- Wet-lab access — same recruiting target as §1.25 (Role 2 / Pharma Translation collaborator per [team.md](./team.md); alternatively CRO with rodent metabolic-disease capability)
+- ITS-verified *G. lingzhi* strain (Mycelia.bvba M9724 per Phase 7-1a, ~$50-100)
+
+**Success criteria:**
+- **Accept** ([H06](./hypotheses/H06-medicinal-mushroom-complement-track.md) Dimension 3 passes): arm 1 SUA reduction ≥20% (within 2× of 40.6%); arm 2 < arm 1 due to BA collapse; arms 3/4 recover toward arm 1 (mechanism validated). Cordycepin t½ ≥3× longer in arms 1/3/4 vs arm 2.
+- **Iterate**: arms 1+3 work but arm 4 (pentostatin) shows toxicity at therapeutic-equiv dose — reprioritize whole-fermentate + GLPP-paired routes over purified-cordycepin+pentostatin commercial-pharma route.
+- **Reject** (H06 Dimension 3 fails): all 4 arms <10% SUA reduction OR cordycepin t½ unchanged by ADA inhibitor co-treatment. Triggers H06 falsification — published effect sizes don't replicate at controlled methodological rigor; medicinal-mushroom-complement track narrows to ergothioneine-only (Phase 5 redox-as-Nrf2-priming subset) or de-prioritizes.
+
+**Computational priors:** [comp-014 Phase 4 ranked candidates](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-ranked-candidates.md); [Phase 5 deep-reads](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-5-FINDINGS.md); [Phase 6 triage](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage.md); [Phase 7-1b strain scan](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7b-cordyceps-strain-scan.md) (pentostatin BGC co-production finding).
+
+**Limitations:**
+- Mouse strain may interact with cordycepin metabolism — verify via Phase 5b CNKI dive
+- Pentostatin research-use sourcing may add 3-6 weeks if license framework not pre-established
+- GLPP MW figure (520 kDa scope vs Lin lab's 37 kDa) needs primary-source verification before dose math finalized
+- 14-day duration captures acute effect, not chronic durability — separate follow-up if positive
+
+**Cross-references:** [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (parent scope); [H06](./hypotheses/H06-medicinal-mushroom-complement-track.md) Dimension 3; [SOP-1](./medicinal-mushroom-extract-sops.md) (gating dependency); §1.25 DAF SCR1-4 (sister wet-lab gate sharing lab-access infrastructure).
 
 ---
 

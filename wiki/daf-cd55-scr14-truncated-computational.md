@@ -165,7 +165,7 @@ The computational feasibility gate is cleared. The logical next step is a minima
 
 **Complexity:** Medium. Standard A. oryzae transformation protocols are well-established; the expression construct is a 750 bp insert with no unusual features beyond the 8 disulfide bonds (2 per SCR × 4 SCRs, per UniProt P08174). The disulfide folding question is the primary unknown.
 
-**Collaboration context:** comp-006 cross-references Rheinallt Jones (Emory, immunology) and Lauren Collier-Hyams (Emory, epithelial biology) as potential collaborators for functional complement assays. Expression screen could be a Phase 0 co-experiment if collaboration is established.
+**Collaboration context:** comp-006 cross-references Role 1 (in-vivo / immunology) and Role 2 (pharma-translation / epithelial biology) collaborator pathways for functional complement assays. Expression screen could be a Phase 0 co-experiment if collaboration is established.
 
 **Formalized as [`validation-experiments.md` §1.25](./validation-experiments.md) (2026-05-06):** the full wet-lab protocol with construct design, host strain selection (RIB40 first; NSlD-ΔP10 unlikely needed for single-cassette per Item 10 chaperone framework refinement), readouts (SDS-PAGE reducing+non-reducing / anti-DAF Western / anti-DAF ELISA / mass spec disulfide-pairing / zymosan C5a inhibition / native metabolite carryover), success criteria (≥50 mg/L titer + ≥40% native folded form + ≥30% C5a inhibition), cost ($2.5-4K), timeline (6-8 weeks), and Accept/Iterate/Reject thresholds — with explicit single-cassette routing per the [`chaperone-orthogonal-stacking.md` §5.5 triple-cassette prediction](./chaperone-orthogonal-stacking.md) landing below 0.6 decision gate (architecture-refined 2026-05-06).
 
