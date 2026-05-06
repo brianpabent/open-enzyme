@@ -1,0 +1,353 @@
+"""
+Phase 6: comp-013-style triage on Phase 5-surviving leads.
+
+Inputs:
+- Phase 5 verdicts on lead compounds (from PHASE-5-FINDINGS.md)
+- Compound classification (small molecule / polysaccharide-peptide / whole extract)
+- In vivo dose-response data (mouse → human equivalent via standard 12.3x BSA conversion)
+- Production-route assessment (koji-engineered / native-cultivation / commercial / synthesizable)
+
+Output:
+- outputs/phase-6-triage.json — per-compound verdict + rationale + wet-lab gate
+- outputs/phase-6-triage.md — human punch list
+
+Verdict tiers:
+- PURSUE: production route + dose feasibility + mechanism evidence all defensible; wet-lab gate framed
+- DEFER: missing one critical input (typically full-text data); requires Phase 5b before triage
+- DROP: production route infeasible OR mechanism not pharmacologically relevant at achievable doses
+"""
+import json
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent.parent / "outputs"
+
+# Mouse-to-human dose conversion: BSA-based, divide mouse mg/kg by 12.3
+def mouse_to_human(mg_kg_mouse):
+    return mg_kg_mouse / 12.3
+
+# 70 kg human reference
+def daily_dose_70kg(mg_kg_human):
+    return mg_kg_human * 70
+
+
+candidates = [
+    {
+        "id": "DAE",
+        "compound": "methyl 2,4-dihydroxybenzoate (DAE)",
+        "smiles": "COC(=O)c1ccc(O)cc1O",
+        "pubchem_cid": 78329,
+        "compound_class": "small molecule (phenolic ester)",
+        "molecular_weight": 168.15,
+        "fungal_source": "Ganoderma applanatum (computational attribution; commercial reagent in PMID 35750011)",
+        "phase_5_verdict": "KEEP — single defined small molecule, dose-feasible, dual XO+URAT1",
+        "chokepoints": ["XO", "URAT1 (expression-level)"],
+        "evidence": {
+            "tier": "in vivo mouse",
+            "model": "potassium oxonate + hypoxanthine HUA mouse",
+            "dose_response_mouse_mg_kg": {
+                "20": "SUA 195 µmol/L",
+                "40": "SUA 145 µmol/L",
+                "80": "SUA 134 µmol/L (vs control 407 µmol/L)",
+            },
+            "primary_source": "PMID 35750011 (Biomed Pharmacother)",
+        },
+        "human_equiv_dose_mg_kg": mouse_to_human(80),  # 6.5 mg/kg human
+        "human_equiv_daily_mg_70kg": daily_dose_70kg(mouse_to_human(80)),  # ~455 mg
+        "production_routes": [
+            {"route": "chemical synthesis", "feasibility": "trivial (Fischer esterification of 2,4-dihydroxybenzoic acid + methanol)", "cost": "<$1/g at 100g scale", "preferred": True},
+            {"route": "commercial purchase", "feasibility": "available (Sigma, Combi-Blocks)", "cost": "~$50/g pharma grade"},
+            {"route": "extraction from G. applanatum", "feasibility": "low — natural abundance not validated; Model B flagged this gap", "cost": "high"},
+            {"route": "heterologous expression in koji", "feasibility": "not warranted — small phenolic, synthesis is much easier than engineering BGC", "cost": "n/a"},
+        ],
+        "verdict": "PURSUE",
+        "rationale": "Defined small molecule with verified mouse dose-response. Human equivalent dose (~455 mg/day at top mouse dose) is supplement-grade and feasible. Chemical synthesis is the right production route — heterologous expression in koji is not warranted for a simple methyl ester. Wet-lab gate is straightforward.",
+        "wet_lab_gate": [
+            "Synthesize or purchase 100g methyl 2,4-dihydroxybenzoate (≥99% purity, HPLC)",
+            "PO+HX mouse HUA model, dose-response 20/40/80 mg/kg PO daily x 14d, n=8/group",
+            "Primary endpoint: SUA reduction at d14",
+            "Mechanism: liver XO activity + renal URAT1 mRNA/protein at endpoint",
+            "Safety: ALT/AST, BUN/Cr, body weight, liver/kidney histology",
+            "**Critical**: confirm SUA does not over-correct below normal mouse SUA (~88 µmol/L) — Phase 5 flagged 134 is sub-normal-control",
+        ],
+        "phase_5b_verifications_outstanding": [
+            "Full PDF of PMID 35750011 (~$30) — verify XOD IC50, kinetic constants, inhibition type",
+            "CNKI dive on Yong/Liang group's TCM diuresis literature (per Model A recommendation)",
+            "Confirm DAE natural abundance in G. applanatum (Model B flag)",
+        ],
+    },
+    {
+        "id": "cordycepin",
+        "compound": "cordycepin (3'-deoxyadenosine)",
+        "smiles": "Nc1ncnc2c1ncn2[C@@H]3O[C@H](CO)C[C@@H]3O",
+        "pubchem_cid": 6303,
+        "compound_class": "small molecule (nucleoside analog)",
+        "molecular_weight": 251.24,
+        "fungal_source": "Cordyceps militaris (cultivated) — abundant; sparse in wild O. sinensis",
+        "phase_5_verdict": "Mid-tier — direct URAT1 modulator, animal-only evidence",
+        "chokepoints": ["URAT1"],
+        "evidence": {
+            "tier": "in vivo mouse",
+            "model": "potassium oxonate HUA mouse",
+            "dose_response_mouse_mg_kg": {
+                "6.25": "modest SUA reduction",
+                "12.5": "intermediate SUA reduction",
+                "25": "SUA 337 → 203 µmol/L (~40% reduction)",
+            },
+            "primary_source": "PMID 29422889",
+        },
+        "human_equiv_dose_mg_kg": mouse_to_human(25),  # ~2 mg/kg human
+        "human_equiv_daily_mg_70kg": daily_dose_70kg(mouse_to_human(25)),  # ~140 mg
+        "ba_caveat": "Cordycepin has notoriously poor oral BA — rapidly deaminated to 3'-deoxyinosine by serum/intestinal ADA. Effective BA may be <5% without prodrug or co-administration with ADA inhibitor.",
+        "production_routes": [
+            {"route": "C. militaris liquid fermentation (commercial)", "feasibility": "well-established; commercial cordycepin available at $200-500/g pharma-grade", "cost": "~$200-500/g", "preferred": True, "notes": "Shih et al. published optimized fermentation conditions; this is the production-mature route"},
+            {"route": "C. militaris solid-state fermentation (home)", "feasibility": "moderate — slower than liquid culture; brown rice substrate works", "cost": "low (substrate + spores)", "notes": "Home-grown Cordyceps fruiting body cordycepin content varies 0.5-5 mg/g dry weight"},
+            {"route": "chemical synthesis", "feasibility": "possible but more complex than DAE (nucleoside chemistry); not cost-competitive with fermentation", "cost": "high"},
+            {"route": "heterologous expression in koji", "feasibility": "not warranted — C. militaris fermentation is mature", "cost": "n/a"},
+        ],
+        "verdict": "PURSUE",
+        "rationale": "Production route is commercial fermentation (mature) or home C. militaris cultivation (substrate-limited but feasible). Mechanism (URAT1 modulation) is in-vivo-validated. The BA caveat is the binding constraint — combination with ADA inhibitor (e.g., GLPP from G. lucidum?) could dramatically extend half-life. Adjacent to GLPP — the comp-014 GLPP+cordycepin combination is a real Phase 6 question.",
+        "wet_lab_gate": [
+            "Source: commercial cordycepin (≥98% HPLC purity) for first wet-lab pass; Phase 7 home-cultivation comparison",
+            "PO HUA mouse model, dose-response 6.25/12.5/25 mg/kg PO daily x 14d",
+            "Primary endpoint: SUA reduction",
+            "Mechanism arm: cordycepin alone vs cordycepin + ADA-inhibitor (pentostatin or GLPP)",
+            "Pharmacokinetics: cordycepin + 3'-deoxyinosine plasma levels at multiple timepoints",
+            "Critical question: does ADA inhibition co-treatment extend cordycepin half-life enough to lower the daily dose?",
+        ],
+        "phase_5b_verifications_outstanding": [
+            "PK studies with/without ADA inhibitor co-administration",
+            "Verify cordycepin content in commercially available C. militaris fruiting bodies (literature varies 0.5-5 mg/g dry weight)",
+        ],
+        "synergy_with": ["GLPP (G. lucidum) — ADA inhibition could extend cordycepin half-life. Both are accessible via medicinal mushroom cultivation. This is the Phase 7 medicinal-mushroom-complement integration point."],
+    },
+    {
+        "id": "GLPP",
+        "compound": "GLPP (Ganoderma lucidum polysaccharide-peptide)",
+        "compound_class": "polysaccharide-peptide hybrid (~520 kDa; glycopeptide vs proteoglycan distinction unresolved per Model B)",
+        "molecular_weight": 520000,
+        "fungal_source": "Ganoderma lucidum mycelium (Juncao substrate, per Yang lab)",
+        "phase_5_verdict": "KEEP — drives ADA chokepoint addition. Multi-target (ADA + GLUT9 + OAT1 + Keap1/Nrf2 sister-paper)",
+        "chokepoints": ["ADA", "GLUT9", "OAT1", "(Keap1/Nrf2 in sister paper PMC11351902)"],
+        "evidence": {
+            "tier": "in vivo mouse",
+            "model": "PO HUA mouse",
+            "dose_response_mouse_mg_kg": {
+                "200-400": "up to 40.6% UA reduction (top dose)",
+            },
+            "primary_source": "PMID 36385640 (Food & Function 2022)",
+        },
+        "human_equiv_dose_mg_kg": mouse_to_human(400),  # ~32 mg/kg human
+        "human_equiv_daily_mg_70kg": daily_dose_70kg(mouse_to_human(400)),  # ~2.3 g
+        "production_routes": [
+            {"route": "G. lucidum mycelium liquid fermentation", "feasibility": "well-established commercial process; multiple manufacturers", "cost": "~$1-5/g extract grade", "preferred": True, "notes": "Phase 7 territory — native cultivation track, not koji-engineering track"},
+            {"route": "G. lucidum solid-state fermentation (home)", "feasibility": "moderate — Reishi mushroom kits available consumer-grade; fruiting body extraction yields lower polysaccharide than mycelium", "cost": "low ($10-30 grow kit)"},
+            {"route": "G. lucidum fruiting body extraction (commercial supplement)", "feasibility": "ubiquitous; quality varies wildly; 'GLPP' specifically requires defined extraction protocol", "cost": "consumer supplements $0.50-2/g but uncharacterized"},
+            {"route": "heterologous expression in koji", "feasibility": "infeasible — polysaccharide-peptide is biosynthesis product, not single gene; mycelium-specific glycosylation machinery", "cost": "n/a"},
+        ],
+        "verdict": "PURSUE in Phase 7 (cultivation track, not koji-engineering)",
+        "rationale": "Polysaccharide-peptide is fundamentally not a koji-engineering target — it's a fermentation product of G. lucidum mycelium. This is exactly the Phase 7 medicinal-mushroom-complement strategy use case. Native cultivation route is mature; the binding question is **strain selection + extraction protocol standardization** rather than genetic engineering. Polysaccharides have ~0% systemic bioavailability — they work via gut signaling (immune modulation, microbiome), not direct ADA binding. The 'ADA inhibition' mechanism is likely indirect via gut-associated lymphoid tissue.",
+        "wet_lab_gate_phase_7": [
+            "Strain selection: compare 3-5 commercial G. lucidum strains for GLPP yield + composition",
+            "Cultivation method comparison: liquid fermentation (defined media) vs Juncao substrate vs other solid-state",
+            "Extraction protocol: hot water > ethanol precipitation > Sephacryl S-500 chromatography (per Yang lab method)",
+            "Characterization: MW (SEC-MALS), peptide composition (amino acid analysis), glycan linkage (NMR)",
+            "Mechanism question: is ADA inhibition direct or indirect? Test purified GLPP fraction vs intestinal lysate ADA in vitro",
+            "Mouse HUA model verification: 200/400 mg/kg PO daily, replicate 40.6% UA reduction claim",
+        ],
+        "phase_5b_verifications_outstanding": [
+            "Full PDF of PMID 36385640 (Food & Function paywalled)",
+            "Sister paper PMC11351902 review for Keap1/Nrf2 mechanism evidence",
+            "Resolve glycopeptide vs proteoglycan distinction (Model B flag) — affects pharmacology framing",
+        ],
+        "synergy_with": ["cordycepin — GLPP's ADA inhibition could extend cordycepin's notoriously short half-life. Both are home-cultivable medicinal mushrooms. Phase 7 medicinal-mushroom-complement integration."],
+    },
+    {
+        "id": "AMC-BFE",
+        "compound": "AMC-BFE (Cordyceps militaris × Astragalus membranaceus solid-state fermentation extract)",
+        "compound_class": "whole extract — active components NOT identified",
+        "fungal_source": "Cordyceps militaris co-fermented with Astragalus",
+        "phase_5_verdict": "DOWNGRADE Tier 1→Tier 2 — quadruple chokepoint claim quantitatively unverified, ABCG2 effect is hepatic not intestinal, active compound NOT identified",
+        "chokepoints": ["URAT1", "GLUT9", "(hepatic) ABCG2", "PPARα downstream"],
+        "evidence": {
+            "tier": "in vivo mouse (paywalled — abstract only)",
+            "primary_source": "PMID 41905012 (2026)",
+        },
+        "production_routes": [
+            {"route": "solid-state co-fermentation (academic protocol)", "feasibility": "documented in analog studies (Zhao 2025 PMC12805540); reproducibility uncertain without full PDF", "cost": "moderate — substrate + dual-strain inoculum"},
+        ],
+        "verdict": "DEFER — full PDF retrieval required before triage",
+        "rationale": "Phase 5 deep-read flagged that authors explicitly hedge 'contribution of individual metabolites requires further investigation.' Whole-extract evidence cannot be triaged with comp-013 IC50-occupancy methodology — there's no defined active compound to model. Phase 6 cannot complete this triage without (a) full PDF + (b) compound-fractionation work.",
+        "wet_lab_gate": "BLOCKED on Phase 5b: retrieve full PDF, attempt compound fractionation, then re-triage. Estimated $30 + 4-6 weeks fractionation → re-enter Phase 6.",
+    },
+    {
+        "id": "lovastatin",
+        "compound": "lovastatin (mevinolin)",
+        "smiles": "CC[C@H](C)C(=O)O[C@H]1C[C@@H](C)C=C2C=C[C@H](C)[C@H](CC[C@@H]3C[C@@H](O)CC(=O)O3)[C@@H]12",
+        "pubchem_cid": 53232,
+        "compound_class": "small molecule (HMG-CoA reductase inhibitor, statin class)",
+        "molecular_weight": 404.54,
+        "fungal_source": "Aspergillus terreus (industrial), Pleurotus ostreatus (native producer)",
+        "phase_5_verdict": "Surfaced via Phase 2a ChEMBL — HDAC6 + PPARG hits in vitro biochem at 16+ µM IC50",
+        "chokepoints": ["HDAC6 (in vitro 16.3 µM)", "PPARγ (functional 1 µM, Kd ~110 µM)"],
+        "evidence": {
+            "tier": "in vitro biochem only at chokepoint targets; clinical data is for HMG-CoA reductase (primary target)",
+        },
+        "clinical_exposure_at_standard_dose": "Lovastatin 20-80 mg/day → systemic Cmax ~50-200 nM",
+        "in_vitro_chokepoint_ic50": "HDAC6 16.3 µM; PPARγ Kd ~110 µM",
+        "occupancy_at_clinical_exposure": "<0.5% at HDAC6; <0.1% at PPARγ",
+        "verdict": "DROP",
+        "rationale": "In vitro HDAC6 + PPARγ IC50s are ~100-1000× higher than clinical lovastatin Cmax. The chokepoint hits are pharmacologically irrelevant at clinical doses. Lovastatin's gout-axis relevance, IF any, is via hepatic HMG-CoA reductase inhibition reducing isoprenoid synthesis (NLRP3-priming-adjacent), NOT via the ChEMBL HDAC6/PPARγ off-targets. Statins are already a commercial drug class — Open Enzyme has nothing to add by re-engineering them.",
+        "wet_lab_gate": "Not applicable — DROPPED for chokepoint occupancy reasons. The Pleurotus-as-native-lovastatin-producer thesis remains valid but for HMG-CoA-reductase pathway, not the comp-014 chokepoint set.",
+    },
+    {
+        "id": "FZ-Poria",
+        "compound": "Wolfiporia cocos (Poria cocos) in FZ multi-herb formula",
+        "compound_class": "multi-herb formula component (Poria + Pinellia + Cinnamomum + Achyranthes + Atractylodes)",
+        "fungal_source": "Wolfiporia cocos sclerotium (TCM 茯苓)",
+        "phase_5_verdict": "Multi-herb confounded — single-component attribution impossible",
+        "chokepoints": ["ABCG2", "GLUT9", "OAT1", "NLRP3/ASC"],
+        "evidence": {
+            "tier": "in vivo mouse (multi-herb formula; cannot attribute to Poria alone)",
+            "primary_source": "PMID 37788785",
+        },
+        "verdict": "DEFER — needs single-component Poria study before advancing",
+        "rationale": "FZ formula contains 5+ herbs. The chokepoint-modulation is real for the formula but unattributable to Poria specifically. A standalone Poria study would be needed to triage. CNKI likely has single-component Poria pharmacology papers (Wolfiporia is heavily studied in TCM); a Phase 5b CNKI dive could resolve this.",
+        "wet_lab_gate_blocked": "Single-component Poria HUA study needed; if Phase 5b CNKI dive surfaces such a study, re-triage. If not, formal isolation + characterization study is required before any wet-lab.",
+    },
+]
+
+# Build summary
+summary = {
+    "PURSUE": [c["id"] for c in candidates if c["verdict"] == "PURSUE"],
+    "PURSUE_in_phase_7": [c["id"] for c in candidates if c["verdict"] == "PURSUE in Phase 7 (cultivation track, not koji-engineering)"],
+    "DEFER": [c["id"] for c in candidates if c["verdict"].startswith("DEFER")],
+    "DROP": [c["id"] for c in candidates if c["verdict"] == "DROP"],
+}
+
+result = {
+    "_meta": {
+        "date": "2026-05-06",
+        "phase": "6 — closing triage on Phase 5-surviving leads",
+        "method": "comp-013-style production-route + dose-feasibility + chokepoint-occupancy assessment, modified for non-small-molecule classes (polysaccharide-peptide, whole-extract).",
+    },
+    "_summary": summary,
+    "candidates": candidates,
+    "synergy_pairs": [
+        {
+            "pair": "GLPP + cordycepin",
+            "rationale": "GLPP's ADA inhibition could extend cordycepin's notoriously short half-life (cordycepin is rapidly deaminated to 3'-deoxyinosine by serum/intestinal ADA). Both are accessible via medicinal mushroom cultivation (G. lucidum + C. militaris). This is the cleanest Phase 7 medicinal-mushroom-complement integration point — two home-cultivable organisms producing complementary compounds.",
+            "wet_lab_question": "Does combined GLPP + cordycepin co-administration achieve URAT1 modulation at lower individual doses than either alone, with acceptable PK/PD?",
+        },
+    ],
+    "phase_7_handoff": {
+        "compounds_routed_to_cultivation_track": ["GLPP (G. lucidum)", "cordycepin (C. militaris)", "ergothioneine (Pleurotus ostreatus, koji A. oryzae) — comp-014 anchor species"],
+        "compounds_staying_with_koji_engineering_track": ["DAE (chemical synthesis preferred; not engineering candidate)", "DAF SCR1-4 / uricase / lactoferrin (existing koji engineering thesis, not comp-014 derived)"],
+        "platform_thesis_expansion": "Engineering chassis (koji) + native-compound complement (medicinal mushrooms) = expanded Open Enzyme platform. Phase 7 scope page formalizes the parallel track.",
+    },
+}
+
+(BASE / "phase-6-triage.json").write_text(json.dumps(result, indent=2, ensure_ascii=False))
+
+# Markdown
+md = ["# Phase 6 — Triage of Phase 5-Surviving Leads", ""]
+md.append("**Date:** 2026-05-06")
+md.append("**Method:** comp-013-style production-route + dose-feasibility + chokepoint-occupancy assessment, adapted for non-small-molecule compound classes.")
+md.append("")
+md.append("## Summary")
+md.append("")
+md.append(f"- **PURSUE (koji-track / chemical-synthesis):** {', '.join(summary['PURSUE']) or '(none)'}")
+md.append(f"- **PURSUE in Phase 7 (medicinal-mushroom cultivation track):** {', '.join(summary['PURSUE_in_phase_7']) or '(none)'}")
+md.append(f"- **DEFER (Phase 5b prerequisites):** {', '.join(summary['DEFER']) or '(none)'}")
+md.append(f"- **DROP:** {', '.join(summary['DROP']) or '(none)'}")
+md.append("")
+
+for c in candidates:
+    md.append(f"## {c['id']} — {c['compound']}")
+    md.append("")
+    md.append(f"**Class:** {c['compound_class']}")
+    if 'molecular_weight' in c:
+        md.append(f"**MW:** {c['molecular_weight']} {'g/mol' if isinstance(c['molecular_weight'], (int, float)) and c['molecular_weight'] < 10000 else 'Da'}")
+    md.append(f"**Source:** {c['fungal_source']}")
+    md.append(f"**Chokepoints:** {', '.join(c['chokepoints'])}")
+    md.append("")
+    md.append(f"**Verdict: {c['verdict']}**")
+    md.append("")
+    md.append(f"*Rationale:* {c['rationale']}")
+    md.append("")
+    if "human_equiv_daily_mg_70kg" in c:
+        md.append(f"**Dosing math:** Mouse top dose → human equivalent ≈ {c['human_equiv_dose_mg_kg']:.1f} mg/kg → ~{c['human_equiv_daily_mg_70kg']:.0f} mg/day for a 70 kg person.")
+        md.append("")
+    if c.get("ba_caveat"):
+        md.append(f"**BA caveat:** {c['ba_caveat']}")
+        md.append("")
+    if c.get("clinical_exposure_at_standard_dose"):
+        md.append(f"**Clinical exposure at standard dose:** {c['clinical_exposure_at_standard_dose']}")
+        md.append(f"**In vitro chokepoint IC50:** {c['in_vitro_chokepoint_ic50']}")
+        md.append(f"**Occupancy at clinical exposure:** {c['occupancy_at_clinical_exposure']}")
+        md.append("")
+    if "production_routes" in c:
+        md.append("**Production routes:**")
+        md.append("")
+        for r in c["production_routes"]:
+            star = " ⭐" if r.get("preferred") else ""
+            md.append(f"- {r['route']}{star} — {r['feasibility']}; cost: {r.get('cost', '?')}")
+            if r.get("notes"):
+                md.append(f"  - {r['notes']}")
+        md.append("")
+    if c.get("wet_lab_gate"):
+        md.append("**Wet-lab gate:**")
+        md.append("")
+        if isinstance(c["wet_lab_gate"], list):
+            for step in c["wet_lab_gate"]:
+                md.append(f"- {step}")
+        else:
+            md.append(c["wet_lab_gate"])
+        md.append("")
+    if c.get("wet_lab_gate_phase_7"):
+        md.append("**Wet-lab gate (Phase 7 cultivation track):**")
+        md.append("")
+        for step in c["wet_lab_gate_phase_7"]:
+            md.append(f"- {step}")
+        md.append("")
+    if c.get("phase_5b_verifications_outstanding"):
+        md.append("**Phase 5b verifications outstanding:**")
+        md.append("")
+        for v in c["phase_5b_verifications_outstanding"]:
+            md.append(f"- {v}")
+        md.append("")
+    if c.get("synergy_with"):
+        md.append("**Synergy candidates:**")
+        for s in c["synergy_with"]:
+            md.append(f"- {s}")
+        md.append("")
+    md.append("---")
+    md.append("")
+
+md.append("## Synergy pairs")
+md.append("")
+for sp in result["synergy_pairs"]:
+    md.append(f"### {sp['pair']}")
+    md.append("")
+    md.append(sp["rationale"])
+    md.append("")
+    md.append(f"**Wet-lab question:** {sp['wet_lab_question']}")
+    md.append("")
+md.append("---")
+md.append("")
+md.append("## Phase 7 handoff")
+md.append("")
+md.append(f"**Compounds routed to cultivation track:** {', '.join(result['phase_7_handoff']['compounds_routed_to_cultivation_track'])}")
+md.append("")
+md.append(f"**Compounds staying with koji engineering track:** {', '.join(result['phase_7_handoff']['compounds_staying_with_koji_engineering_track'])}")
+md.append("")
+md.append(f"**Platform thesis expansion:** {result['phase_7_handoff']['platform_thesis_expansion']}")
+md.append("")
+
+(BASE / "phase-6-triage.md").write_text("\n".join(md))
+print(f"Wrote {BASE / 'phase-6-triage.json'}")
+print(f"Wrote {BASE / 'phase-6-triage.md'}")
+print(f"\nVerdicts:")
+print(f"  PURSUE (koji-track): {summary['PURSUE']}")
+print(f"  PURSUE (Phase 7 mushroom cultivation): {summary['PURSUE_in_phase_7']}")
+print(f"  DEFER (need Phase 5b): {summary['DEFER']}")
+print(f"  DROP: {summary['DROP']}")
