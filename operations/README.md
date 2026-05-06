@@ -72,4 +72,12 @@ This is the same epistemic discipline as the wiki's evidence-tier rule (Clinical
 
 When a notable-moment entry actually gets used externally (LinkedIn post lands, talk gets given, podcast soundbite happens, blog post published), append a "Used in:" line at the bottom of the entry with the URL/venue + date. Keep the entry — the log is also a record of what's been said publicly about the project.
 
+### Mutual-audit invitation — standing posture
+
+Whenever a notable-moment entry surfaces a finding about another project, tool, paper, or claim, the entry MUST close with the **explicit reciprocal invitation:** Open Enzyme is published in public for exactly the same reason — so that other people can find OUR mistakes and make us better. The verification disciplines we apply to other people's tools (grep every number, anchor identity to canonical metadata, cross-check every claim, line-anchored citation) apply equally to anyone auditing this corpus. We hope readers push back on our evidence-tier tags, find the edges in our chokepoint claims, surface the mechanisms we haven't documented honestly enough.
+
+**This isn't a softener after a critical finding.** It's the structural premise of the whole project. Open infrastructure compounds when downstream users audit upstream tools AND upstream tools audit downstream uses. We're trying to be a participant in that feedback loop, not just a beneficiary of it. If you find a mistake in this corpus — a wrong PMID, a fabricated number, an evidence-tier inflation, a missing limitation, a wrong-direction mechanistic claim — please tell us. **That's the deal we're trying to participate in.**
+
+Triggered by Brian 2026-05-05: "and we hope people find our mistakes and make us better too" — said in response to the Paperclip notable-moment entry. The reciprocal-invitation language is the closing posture of every relevant entry from now on; not optional.
+
 This standing rule was added 2026-05-05 in the same conversation that created the file, after observing that ~6 hours of working session moved CP0 from "platform gap" to "active engineering candidate" — the kind of arc that's invisible in commits but exactly what an external reader would find compelling. If we don't log these moments as they happen, they evaporate into git history that nobody reads.

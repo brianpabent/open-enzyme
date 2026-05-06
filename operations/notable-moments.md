@@ -56,6 +56,8 @@ There's also a smaller meta-observation worth naming: **rigor discipline is chea
 
 Tone: grateful (Paperclip is genuinely useful — that's why we built workflow on top of it), collaborative (sharing back so the tool gets better, not gotcha), substantive (concrete query patterns + verification protocol, not vague "it's unreliable"), forward-looking (community audit of similar primitives across other tools as the bigger opportunity). Close with the protocol link + the explicit "happy to share test cases with the Paperclip team."
 
+**And the explicit reciprocal invitation, which is the headline:** Open Enzyme is published in public for exactly the same reason. Every wiki page, every comp-NNN experiment, every falsification card, every chokepoint claim — everything is open and inspectable specifically so that other people can find OUR mistakes and make us better. The five-rule verification protocol we built for ourselves applies equally to anyone auditing what we've done. We hope people grep our numbers, cross-check our citations, push back on our evidence-tier tags, and surface the edges we haven't named yet. Mutual audit is the whole point — Stanford's tool got audited because it's open; ours is open for the same reason. **If you find a mistake in this corpus, please tell us. That's the deal we're trying to participate in.**
+
 **Reference:** [`wiki/manual-literature-mining.md`](../wiki/manual-literature-mining.md) — the formal verification protocol. Memory record: `feedback_paperclip_map_unreliable.md` (memory file, not wiki; documents the failure history).
 
 ---
