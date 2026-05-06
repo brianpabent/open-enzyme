@@ -43,6 +43,7 @@ The matrix below uses a 5-symbol legend:
 | Symbol | Meaning |
 |:-:|---|
 | ✅ | OE has live coverage at this cell — see linked wiki page |
+| 🧪 | OE has an in silico-validated, wet-lab-gated engineering candidate — comp-NNN computational prior LOW or LOW-MODERATE; specific construct designed; wet-lab expression / activity confirmation pending |
 | 🔬 | OE has partial / mechanism-relevant coverage; specific intervention not yet engineered |
 | 🟡 | Open exploration vector — modality could plausibly answer a stuck question at this target; not currently in OE |
 | ⚪ | Mechanistically possible but no realistic path / overkill / addressed by another modality |
@@ -73,7 +74,7 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 | siRNA / ASOs | ⚪ | ⚪ | 🟡 (myeloid-tropic NLRP3 / NF-κB silencer) | 🟡 (TNFα siRNA local) | — |
 | CRISPR / base editing in patient | — | 🟡 (Q141K → Q141 base edit in crypt stem cells; delivery unsolved) | ⚪ | ⚪ | — |
 | Antibodies / biologics | — | ⚪ | ⚪ | ⚪ (anti-TNFα systemic; overkill) | — |
-| Engineered soluble complement regulators (sCR1, Factor H, DAF/CD55) | — | — | 🔬 (DAF/CD55 SCR1-4 truncated in silico-validated 2026-05-05 — LOW protease risk in shio-koji per [comp-012](./daf-cd55-scr14-truncated-computational.md), identical to uricase. CP0 status moved from "honest platform gap" to "active engineering candidate, three wet-lab unknowns documented in [`hypotheses/H05`](./hypotheses/H05-daf-scr14-cp0-thesis.md)".) | ⚪ | — |
+| Engineered soluble complement regulators (sCR1, Factor H, DAF/CD55) | — | — | 🧪 (DAF/CD55 SCR1-4 truncated in silico-validated 2026-05-05 — LOW protease risk in shio-koji per [comp-012](./daf-cd55-scr14-truncated-computational.md), identical to uricase. CP0 status moved from "honest platform gap" to "active engineering candidate, three wet-lab unknowns documented in [`hypotheses/H05`](./hypotheses/H05-daf-scr14-cp0-thesis.md)".) | ⚪ | — |
 | Pharmacological chaperones | — | 🟡 (Q141K folding rescue à la CFTR-corrector class) | ⚪ | ⚪ | — |
 | SPM precursors (DHA → RvD1/MaR1) | — | 🔬 | ✅ ([SPM](./spm-resolution-pathway.md)) | 🔬 | — |
 | Fermentable fiber / prebiotics | — | ✅ ([butyrate → PPARγ → ABCG2](./abcg2-modulators.md)) | 🔬 | 🔬 (mucus-layer support) | ✅ |
