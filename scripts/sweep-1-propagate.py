@@ -41,7 +41,7 @@ import time
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(REPO_ROOT)
 
-DEFAULT_MODEL = "anthropic/claude-sonnet-4-6"
+DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
 DEFAULT_PROMPT = "scripts/sweep-prompt-1-propagate.md"
 
 # Paths the model is forbidden to write to. Mirrors sweep-prompt-1-propagate.md
@@ -70,8 +70,11 @@ PRICING_USD_PER_MTOK = {
 # input. Cache writes bill at 1.25× base; we don't bother tracking write cost
 # separately since OpenRouter's OAI-compat usage shim doesn't expose the
 # write/non-cached split (only the read portion via prompt_tokens_details).
-# Result: the printed cost slightly over-reports vs. the OpenRouter dashboard
-# (treats writes at 1× instead of 1.25×), but the savings direction is right.
+# Result: the printed cost slightly UNDER-reports vs. the OpenRouter dashboard
+# (treats writes at 1× instead of 1.25×). The dashboard will show a higher
+# bill than the script prints; reconcile against the dashboard when the gap
+# matters. The savings *direction* is still correct, but the magnitude here
+# is optimistic, not conservative.
 CACHE_READ_USD_PER_MTOK = {
     "anthropic/claude-sonnet-4-6":  0.30,
     "anthropic/claude-haiku-4-5":   0.08,
@@ -238,10 +241,23 @@ def _inject_cache_breakpoints(messages, model):
     """Return a copy of `messages` with `cache_control` markers on the system
     prompt and the most recent tool message.
 
-    Only Anthropic models support prompt caching via OpenRouter; for other
-    providers (DeepSeek, Gemini, etc.) the markers are inert but the array-
-    of-blocks content format is still valid OpenAI-compat, so we apply the
-    transform unconditionally and let non-Anthropic backends ignore it.
+    Applied unconditionally — Anthropic models honor the markers via
+    OpenRouter's pass-through (10% cache-read pricing); DeepSeek and OpenAI
+    do server-side automatic caching and ignore the markers; Gemini uses a
+    separate `cachedContent` API surface and also ignores per-message
+    markers. The array-of-blocks content shape is valid OpenAI-compat for
+    every provider we currently route through, so the transform is safe to
+    apply unconditionally rather than gating on provider prefix.
+
+    Validated empirically against deepseek/deepseek-v4-pro on 2026-05-06
+    (logs/eval-propagation/2026-05-06-deepseek-deepseek-v4-pro-01-chembl-
+    ic50-cross-check.md) — DeepSeek accepted the array-of-blocks shape and
+    produced 1.00/1.00 recall/precision. If a future model 400s on this
+    shape, do NOT add a hard-coded `model.startswith("anthropic/")` gate;
+    introduce a per-provider strategy registry instead — the cache-control
+    landscape is heterogeneous (explicit breakpoints for Anthropic/Qwen,
+    automatic for DeepSeek/OpenAI, separate cachedContent object for
+    Gemini), and a binary anthropic-vs-not gate flattens that.
 
     The "rolling cache" pattern: each iteration writes a checkpoint at the
     last tool message, which the *next* iteration reads as a prefix hit. The

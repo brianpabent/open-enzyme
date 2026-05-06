@@ -161,7 +161,7 @@ jobs:
             --commit-sha "${{ github.sha }}" \
             --trigger-files "$TRIGGER_FILES" \
             --diff-base "$DIFF_BASE" \
-            --model anthropic/claude-sonnet-4-6 \
+            --model deepseek/deepseek-v4-pro \
             --max-iterations 40
 
       - name: Push propagation
