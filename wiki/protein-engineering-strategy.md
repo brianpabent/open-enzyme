@@ -727,7 +727,7 @@ Any variant with main tunnel bottleneck radius <1.8 Å should be deprioritized (
 ### **Weeks 9+: Phase 5–6 (In Vivo Proof-of-Concept)**
 
 7. **Mouse Study Design & Execution**
-   - Coordinate with gnotobiotic facility (Rheinallt Jones, Emory)
+   - Coordinate with a Role 1 (Gut Microbiome / In Vivo Validation) collaborator's gnotobiotic facility
    - Run Phase 3 study with lead variants (SB-1, BAL-1, or OPT-1)
    - Expected outcome: 15–40% serum urate reduction if in-vivo delivery is efficient
 
@@ -836,7 +836,7 @@ All proposed mutations are **loss-of-function** (protease sites eliminated, rigi
 ### 10.4 Expected Outcome
 
 **Success Criterion:**
-OPT-1 variant achieves ≥8–10 fold improvement in GI survival relative to wild-type A. flavus uricase, reducing effective oral dose to a therapeutically administrable level (10–20 grams of yeast product per day or 1–2 capsule-equivalents of lyophilized powder). This would enable transition to Phase 3 mouse efficacy studies and subsequent pathway toward Phase 1 human safety data (via Rheinallt's gnotobiotic collaboration with regulatory guidance from Lauren's network).
+OPT-1 variant achieves ≥8–10 fold improvement in GI survival relative to wild-type A. flavus uricase, reducing effective oral dose to a therapeutically administrable level (10–20 grams of yeast product per day or 1–2 capsule-equivalents of lyophilized powder). This would enable transition to Phase 3 mouse efficacy studies and subsequent pathway toward Phase 1 human safety data (via a Role 1 collaborator's gnotobiotic facility, with regulatory guidance from a Role 2 collaborator's pharma network).
 
 ---
 

@@ -589,7 +589,7 @@ After reload, the MCP servers auto-attach as callable tools in every session in 
 | **chembl** | MCP | **Install now.** Compound bioactivity database (IC50/Ki/Kd). Look up NLRP3 inhibitors, xanthine oxidase inhibitors, CB2 agonists in one query instead of parsing papers. |
 | **open-targets** | MCP | **Install now.** Target–disease evidence platform. Validates target rationale for gout / EPI / SIBO. |
 | **biorender** | MCP | Optional. Scientific illustration generation. Useful when publishing figures; not Phase 0 critical. |
-| **synapse** | MCP | Optional. Sage Bionetworks collaborative data management. Install if/when Rheinallt / Lauren / Valerie join and we need a shared data platform. |
+| **synapse** | MCP | Optional. Sage Bionetworks collaborative data management. Install if/when collaborators join and we need a shared data platform. |
 | **wiley-scholar-gateway** | MCP | Optional. Wiley journal access. Useful when a cited paper is paywalled. |
 | **nextflow-development** | Skill | Defer. Runs nf-core pipelines (RNA-seq, variant calling, ATAC-seq) on local or public GEO/SRA data. Load-bearing when wet-lab sequencing data arrives. |
 | **scvi-tools** | Skill | Defer. Deep-learning single-cell omics. Relevant for macrophage NLRP3 response phenotyping or gut immune cell atlases — future. |

@@ -8,13 +8,25 @@ status: active
 
 Active action items across the project that don't fit `wiki/synthesis.md`'s Strategic Reflections Queue (which is for content-triggered research-strategy reflections, not transactional todos). Triaged by category. Date-stamped when added.
 
+## Phase 7 medicinal-mushroom-complement track (CTO-seat work, no scientific expertise required)
+
+Surfaced from comp-014 Phase 7 (committed 2026-05-06). All four are doable from desk this week. Full context on each: [`wiki/medicinal-mushroom-complement-track.md`](../wiki/medicinal-mushroom-complement-track.md) + the Phase 7-1 strain-scan outputs in `experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/`.
+
+- **[2026-05-06] Order *P. citrinopileatus* (golden oyster) grow kit (~$30).** Run the [Phase 7-2 home-cultivation protocol](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7-cultivation-yield-meta-analysis.md) — pasteurized-straw bag, 12-20 day cycle, freeze-dry to powder. Document yield + cycle + any deviations. *Why:* self-experiment data validating the OE reproducibility-layer thesis from your kitchen; cleanest n=1 contribution; informs H06 Dimension 1 (cultivation reproducibility). *Effort:* $30 + 3 weeks elapsed, ~3 hr active time.
+
+- **[2026-05-06] Email Lin Zhanxi (林占熺) lab at Fujian Agriculture & Forestry U / Juncao Center.** Ask for Juncao GLPP cultivation SOP referenced in PMID 36385640 (the 40.6% UA reduction paper). *Why:* closes the load-bearing CNKI gating dependency for [SOP-1 GLPP fractionation](../wiki/medicinal-mushroom-extract-sops.md). Without the upstream Juncao protocol, GLPP work cannot be reproduced from English-language literature alone. Worst case no reply; best case a research collaboration opens. *Effort:* 10 min.
+
+- **[2026-05-06] Open GitHub Issue on Open-Enzyme repo: "Phase 5b CNKI/J-STAGE/KISS deep-dive contributions wanted".** Body: link to Phase 7-1a/b/c scan outputs §"Phase 5b follow-ups queued" sections (specific paper IDs + search strategies are the contributor brief). *Why:* community-source the institutional-CNKI-access problem; OSS-thesis play. *Effort:* 15-20 min.
+
+- **[2026-05-06] Frame comp-014 findings as recruiting material for the Role 2 (Pharma Translation) collaborator pipeline.** Per CLAUDE.md / `team.md`, the recruiting target pool. The Phase 7 corpus (multi-vendor-validated chokepoint mapping, peer-reviewed verdicts, falsification cards, structured wet-lab gates) is significantly stronger ground than "we have a wiki and an idea." *Why:* SOP and wet-lab gate work needs a chemistry collaborator; comp-014 demonstrates project substance. *Effort:* 30-60 min drafting + variable response time. *Suggested timing:* after #1-3 land — having self-experiment data + Lin lab outreach status + GitHub Issue gives concrete context.
+
 ## §1.9 Ward 1995 dual-cassette execution path
 
-- **[2026-05-05] Wait for Lauren Collier-Hyams' read on §1.9.** She replied "ok lemme try to dig into this and i'll get back to ya" after the Huynh-2020 + comp-010 follow-up. If no response by 2026-05-12, send a soft check-in nudge.
-- **[2026-05-05] Outreach to Maruyama group at Tokyo University.** See [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) for substantive context. Two asks: MTA on NSlD-ΔP10 (minimum) + collaboration / fee-for-service on the dual-cassette transformation (more ambitious). Send when Lauren's path is clearer (parallel-track, don't double-ask).
+- **[2026-05-05] Wait for the US Role 2 (Pharma Translation) lead's read on §1.9.** They replied "ok lemme try to dig into this and i'll get back to ya" after the Huynh-2020 + comp-010 follow-up. If no response by 2026-05-12, send a soft check-in nudge.
+- **[2026-05-05] Outreach to Maruyama group at Tokyo University.** See [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) for substantive context. Two asks: MTA on NSlD-ΔP10 (minimum) + collaboration / fee-for-service on the dual-cassette transformation (more ambitious). Send when the US lead's path is clearer (parallel-track, don't double-ask).
 - **[2026-05-05] Verify NSlD-ΔP10 is genuinely not in any public strain repository.** Direct catalog queries to JCM, NBRC, CGMCC, CBS-KNAW, ATCC, FGSC. The lab-access subagent's verification was best-effort; one batch of confirmation emails would close this with certainty. Particularly check NBRC (the Japanese repository the Maruyama group is most likely to deposit through).
 - **[2026-05-05] Pull PI corresponding-author emails for Jiangnan, DTU, Wösten, South China Univ of Tech groups.** They exist in the published papers' corresponding-author footers but weren't pulled into [`ward-1995-lab-access.md`](./ward-1995-lab-access.md). Pre-outreach data hygiene.
-- **[2026-05-05] Espacenet patent landscape deep-dive on *A. oryzae* dual-cassette.** Per H01 Killshot #1's residual caveat (~30% probability of unpublished industrial IP from Novonesis [née Novozymes], DSM-Firmenich, Genencor lineage). Worth running through Emory's authenticated patent database access if Lauren engages further.
+- **[2026-05-05] Espacenet patent landscape deep-dive on *A. oryzae* dual-cassette.** Per H01 Killshot #1's residual caveat (~30% probability of unpublished industrial IP from Novonesis [née Novozymes], DSM-Firmenich, Genencor lineage). Worth running through an academic-collaborator's authenticated patent database access if a Role 2 (Pharma Translation) collaborator engages further.
 
 ## Project-context outreach (general)
 

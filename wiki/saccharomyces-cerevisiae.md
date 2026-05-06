@@ -180,7 +180,7 @@ Grow engineered yeast in bulk, harvest, and process into a dried product (powder
 
 **Therapeutic credibility:** High (most directly validated approach in the literature)
 
-**Colonization Resolution Path:** A gnotobiotic facility (such as Rheinallt's Emory core, if he joins as a collaborator) could directly answer residence time and functional delivery questions. Colonize germ-free mice with engineered *S. boulardii* expressing uricase. Measure: (a) fecal yeast counts daily, (b) fecal and cecal uricase activity, (c) serum uric acid (requires Uox-knockout mice or potassium oxonate-treated mice for hyperuricemia model). Compare to conventional mice with daily gavage. This yields both colonization kinetics and functional uricase delivery data. Cost: ~$5,000–15,000 (gnotobiotic mouse work is expensive). Time: 8–12 weeks. (Source: engineered-yeast-uricase-proposal.md)
+**Colonization Resolution Path:** A gnotobiotic facility (via a Role 1 collaborator) could directly answer residence time and functional delivery questions. Colonize germ-free mice with engineered *S. boulardii* expressing uricase. Measure: (a) fecal yeast counts daily, (b) fecal and cecal uricase activity, (c) serum uric acid (requires Uox-knockout mice or potassium oxonate-treated mice for hyperuricemia model). Compare to conventional mice with daily gavage. This yields both colonization kinetics and functional uricase delivery data. Cost: ~$5,000–15,000 (gnotobiotic mouse work is expensive). Time: 8–12 weeks. (Source: engineered-yeast-uricase-proposal.md)
 
 ### d. Beer (LOW CREDIBILITY - FIGHT THE VEHICLE)
 
@@ -336,7 +336,7 @@ The regulatory path depends on:
 - Whether the engineered organism is considered a "new use" of GRAS yeast or a novel organism
 - Patent strategy (if any)
 
-This is a Lauren conversation—the FDA's guidance is evolving, and the path may already exist in the LBP framework. (Source: engineered-yeast-uricase-proposal.md)
+This is a Role 2 (pharma-translation / regulatory) conversation — the FDA's guidance is evolving, and the path may already exist in the LBP framework. (Source: engineered-yeast-uricase-proposal.md)
 
 ## AI Analysis Findings (April 2026)
 

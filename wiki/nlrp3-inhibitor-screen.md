@@ -851,4 +851,4 @@ Refresh cadence: annually, or whenever a new direct NLRP3 inhibitor clinical pro
 
 **Document prepared:** 2026-04-21  
 **Review status:** Ready for validation phase planning  
-**Next owner:** Rheinallt Jones (enzymatic mechanism validation)
+**Next owner:** Role 1 collaborator (enzymatic mechanism / in-vivo validation)

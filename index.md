@@ -115,7 +115,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 ## Team
 
-- **[Team](wiki/team.md)** — Brian Abent (Platform/Engineering, sole current member); potential collaborators: Rheinallt Jones PhD (Gut Microbiome), Lauren Collier-Hyams PhD (NF-κB/Pharma), Valerie Jones PhD (Innate Immune Safety). Active lab-access search for §1.9 Ward 1995 dual-cassette: Lauren Collier-Hyams (Emory, primary US lead) + global parallel options mapped in [`ward-1995-lab-access-global.md`](wiki/ward-1995-lab-access-global.md).
+- **[Team](wiki/team.md)** — Brian Abent (Platform/Engineering, sole current member). Three collaborator roles actively recruiting: Role 1 (Gut Microbiome / In Vivo Validation), Role 2 (Pharma Translation / Regulatory), Role 3 (Innate Immune Safety). Lab-access pathways for §1.9 Ward 1995 dual-cassette mapped in [`ward-1995-lab-access-global.md`](wiki/ward-1995-lab-access-global.md).
 
 ---
 
