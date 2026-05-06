@@ -92,6 +92,29 @@ For each compound, a downstream functional readout that confirms bioactivity bey
 
 **Reproducibility target:** consistent dose-response shape across operators; absolute potency may vary 2× operator-to-operator on cell-based assays (typical for biological readouts).
 
+### SOP-6 — Tiered methodology framework (added 2026-05-06)
+
+The SOPs above (SOP-1 GLPP, SOP-2 cordycepin, SOP-3 EGT) are written at **Tier 3 (bench, publication-grade)** rigor. The koji enzyme quantification work has matured a four-tier framework — kitchen → smartphone → bench → outsourced — that **transfers cleanly to mushroom extract characterization**, giving any open-source contributor a rigor-graded path from "I made a tea, did anything happen?" up to "this is a quantified extract suitable for synergy-experiment use." Reuse pattern: calibrate once at Tier 3, then track downstream batches at Tier 1 / Tier 2 against the calibrated reference standard. This is the same "calibrate-once-track-batches-cheap" discipline that makes the koji track home-feasible.
+
+**Source framework:** [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md). Tier definitions adapted from that document's structure.
+
+| Compound | Tier 1 (kitchen, ~$0) | Tier 2 (smartphone colorimetry, ~$50) | Tier 3 (bench HPLC, ~$2K) | Tier 4 (outsourced regulatory) |
+|---|---|---|---|---|
+| **Cordycepin** | Visual + dosing-by-known-extract-ratio (calibrated against Tier 3 batch); not analytical, just consistency | **Speculative — needs literature verification.** Diazo-coupling chemistry typically targets phenolic/amine groups; cordycepin is a 3'-deoxyadenosine analog without those motifs. Pass 2's diazo proposal is plausible but unverified — do NOT commit until primary-literature confirmation of a validated colorimetric cordycepin assay at this sensitivity range. Alternative: borrow UV-vis at 260 nm (purine absorption) with known extract-ratio backing. | **SOP-2** above (HPLC, calibrated cordycepin standard from Sigma C3394) | Outsourced GMP-grade HPLC if regulatory submission ever needed |
+| **Ergothioneine** | Visual + dosing-by-known-extract-ratio | **Ellman's reagent (DTNB) thiol detection**, smartphone colorimetry. Well-established chemistry (DTNB → 412 nm yellow on free thiol); EGT's free thiol is the substrate. Pharmacy-accessible reagent. Calibrate against a Tier 3 EGT-quantified batch to convert absorbance → mg/g. | **SOP-3** above (HILIC-HPLC with stable-isotope internal standard) | Outsourced GMP-grade HILIC-HPLC if regulatory ever needed |
+| **GLPP** | Visual + extract weight + standardized decoction yield (mass-balance check, not compound-specific) | **Phenol-sulfuric acid total polysaccharide assay** (well-established colorimetric method, ~490 nm). **Caveat: measures total polysaccharide, not GLPP specifically.** Co-extracted *Ganoderma* polysaccharides + any residual decoction polysaccharides will be counted. Useful as a batch-to-batch consistency check ("this batch is in the same polysaccharide ballpark as the calibrated reference"), NOT as a GLPP-specific quantification. SOP-1's SEC-MALS at Tier 3 is non-negotiable for the protein:polysaccharide ratio per H06 Dimension 2 reproducibility discipline. | **SOP-1** above (SEC-MALS for MW + protein:polysaccharide ratio, with phenol-sulfuric and Bradford / Lowry as orthogonal anchors) | Outsourced GMP-grade SEC-MALS if regulatory ever needed |
+
+**Operational pattern (the calibrate-once-track-batches workflow):**
+
+1. **Initial Tier 3 calibration** — quantify a reference batch by SOP-1/2/3 above. Anchor numbers: mg/g extract for each target compound; document extract source, batch ID, lot, harvest details.
+2. **Batch tracking at Tier 2** — for each new batch of extract from the same protocol, run the Tier 2 colorimetric assay against the reference batch as the standard curve anchor. If batch reads within ±20% of reference, accept. If outside, escalate to Tier 3 re-quantification.
+3. **Field-grade Tier 1** — for end-user / kitchen-grade reproducibility, dosing follows the Tier 3-calibrated extract-ratio (e.g., "1 g of this batch ≈ 8 mg cordycepin per the SOP-2 quantification done on this lot"). Tier 1 is consumption-side, not characterization-side.
+4. **Tier 4 outsourced** — only invoked if regulatory submission requires it. Adds GLP/GMP overhead but uses the same analytical chemistry as Tier 3.
+
+**Why this matters operationally:** without the tiered framework, every batch would need full Tier 3 HPLC (cost-prohibitive at scale and impossible for distributed open-source contributors without HPLC access). With it, Tier 3 is invoked once per protocol revision; Tier 2 handles batch consistency cheaply; Tier 1 keeps end-user dosing tied to verified content. Same discipline that lets the koji track work as a home-fermentation project rather than a CRO-only project.
+
+**Cross-reference to [§"Reality check — current consumer-grade fruiting-body extracts deliver sub-therapeutic cordycepin doses"](./medicinal-mushroom-complement-track.md):** the tiered framework is *also* the discipline that catches dose-vs-product-content mismatches like the Real Mushrooms Cordyceps-M case (3-4 mg cordycepin per 1 g serving at 0.4% content). A Tier 2 colorimetric check on a commercial extract would surface this mismatch before it became a "URAT1 layer" recommendation. Anyone evaluating a commercial mushroom extract for therapeutic-dose targeting should run the Tier 2 check (or insist on the manufacturer's published HPLC content) before downstream reasoning depends on the active-compound dose.
+
 ### SOP-5 — Strain Banking + ITS Authentication
 
 **Cross-reference:** Phase 7-1a outlined the ITS-PCR authentication protocol (Cao 2012 *Ganoderma*-specific primers); applies to all medicinal mushroom strains used for Open Enzyme protocols.
