@@ -1,0 +1,70 @@
+{
+  "description": "Gout-relevant target panel for TCM compound triage. ChEMBL target IDs verified via target_search MCP queries 2026-05-06.",
+  "fetch_date": "2026-05-06",
+  "targets": [
+    {
+      "name": "URAT1 (SLC22A12)",
+      "chembl_id": "CHEMBL6120",
+      "uniprot": "Q96S37",
+      "gene": "SLC22A12",
+      "function": "Apical urate reabsorber in kidney proximal tubule. Inhibition reduces serum urate (uricosuric). Drug target for benzbromarone, lesinurad, dotinurad.",
+      "gout_relevance": "primary therapeutic target — uricosuric class"
+    },
+    {
+      "name": "ABCG2",
+      "chembl_id": "CHEMBL5393",
+      "uniprot": "Q9UNQ0",
+      "gene": "ABCG2",
+      "function": "Apical urate efflux transporter; gut + kidney. Accounts for ~33% gut urate secretion. Q141K LoF variant strongly associated with hyperuricemia.",
+      "gout_relevance": "INHIBITION RAISES SERUM URATE — bad for gout if compound inhibits in gut. Activation would be therapeutic."
+    },
+    {
+      "name": "GLUT9 (SLC2A9)",
+      "chembl_id": "CHEMBL2052034",
+      "uniprot": "Q9NRM0",
+      "gene": "SLC2A9",
+      "function": "Basolateral urate exporter in kidney; also intestinal. Inhibition reduces serum urate.",
+      "gout_relevance": "potential uricosuric target; few selective inhibitors known"
+    },
+    {
+      "name": "Xanthine dehydrogenase/oxidase",
+      "chembl_id": "CHEMBL1929",
+      "uniprot": "P47989",
+      "gene": "XDH",
+      "function": "Catalyzes hypoxanthine→xanthine→urate. Inhibition lowers serum urate (urate-production class).",
+      "gout_relevance": "primary therapeutic target — allopurinol, febuxostat class"
+    },
+    {
+      "name": "NLRP3",
+      "chembl_id": "CHEMBL1741208",
+      "uniprot": "Q96P20",
+      "gene": "NLRP3",
+      "function": "Inflammasome; activated by MSU crystals → IL-1β release → gout flare inflammation.",
+      "gout_relevance": "anti-inflammatory target for flare prevention; not urate-lowering"
+    },
+    {
+      "name": "Soluble epoxide hydrolase (sEH)",
+      "chembl_id": "CHEMBL2409",
+      "uniprot": "P34913",
+      "gene": "EPHX2",
+      "function": "Hydrolyzes anti-inflammatory epoxyeicosatrienoic acids (EETs) to less-active diols. Inhibition raises EETs → anti-inflammatory.",
+      "gout_relevance": "anti-inflammatory adjacent target; not urate-lowering"
+    },
+    {
+      "name": "OAT1 (SLC22A6)",
+      "chembl_id": "CHEMBL1641347",
+      "uniprot": "Q4U2R8",
+      "gene": "SLC22A6",
+      "function": "Basolateral organic anion transporter in kidney proximal tubule; uptakes urate from blood for secretion.",
+      "gout_relevance": "OAT1 upregulation increases urate clearance (Smilax glabra mechanism per PMID 30851369)"
+    },
+    {
+      "name": "OAT3 (SLC22A8)",
+      "chembl_id": "CHEMBL1641348",
+      "uniprot": "Q8TCC7",
+      "gene": "SLC22A8",
+      "function": "Basolateral organic anion transporter in kidney; co-localized with OAT1; secretes urate.",
+      "gout_relevance": "OAT3 modulators may alter urate clearance"
+    }
+  ]
+}

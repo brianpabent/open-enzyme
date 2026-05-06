@@ -1,0 +1,12 @@
+{
+  "description": "Gut/plasma physiological model parameters — same as comp-004 unless noted. Used for IC50 occupancy calculations.",
+  "small_intestine_lumen_volume_L": 0.25,
+  "small_intestine_pH": 6.5,
+  "plasma_volume_L": 3.0,
+  "vd_typical_polyphenol_L_kg": 1.0,
+  "body_weight_kg_default": 70,
+  "abcg2_expression_note": "ABCG2 is most expressed in proximal SI (duodenum/jejunum). 250 mL volume estimate may underestimate concentration in proximal SI by 2-3×.",
+  "urat1_location_note": "URAT1 is on apical brush border of kidney proximal tubule — accessed via plasma → glomerular filtrate. Plasma Cmax is the relevant gating concentration.",
+  "xo_location_note": "Xanthine oxidase is in liver, intestinal epithelium, vascular endothelium — accessed via plasma. Plasma Cmax is the relevant gating concentration.",
+  "nlrp3_location_note": "NLRP3 is in macrophages and other innate immune cells — accessed via tissue interstitium; plasma Cmax is the relevant gating concentration."
+}

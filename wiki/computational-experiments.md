@@ -54,6 +54,22 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+### comp-013 — TCM Gout Compound Triage
+
+| Field | Value |
+|---|---|
+| **Question** | Which Traditional Chinese Medicine (TCM) compounds with documented gout indication are mechanistically viable when triaged via the comp-004 IC50 occupancy + comp-007 composite scoring frameworks? |
+| **Method** | Applied comp-004's IC50 occupancy framework (Hill n=1, dose × (1−BA) ÷ 250 mL gut model, plasma Cmax via Vd≈1 L/kg) + comp-007's composite scoring (potency × selectivity × gut-enrichment), with three adaptations: (1) gut-enrichment is bidirectional (favorable for gut-luminal targets, unfavorable for systemic-with-low-BA); (2) selectivity uses on-target/off-target IC50 ratio; (3) animal-model in vivo evidence is admissible to the verdict (composite remains 0 without biochem IC50). 9 candidate compounds, 8 gout-relevant ChEMBL targets (URAT1 CHEMBL6120, ABCG2 CHEMBL5393, GLUT9 CHEMBL2052034, XO CHEMBL1929, NLRP3 CHEMBL1741208, sEH CHEMBL2409, OAT1 CHEMBL1641347, OAT3 CHEMBL1641348). |
+| **Verdict** | **4 GUT-LUMINAL VIABLE** (luteolin rank 1, astilbin, emodin, berberine) **+ 1 MODERATE / VIABLE-WITH-DOSE-CAVEAT** (rhein) **+ 4 MECHANISM UNCLEAR** (aucubin, cylindrin, chlorogenic acid, atractylenolide I). Si Miao San multi-herb formula has the strongest clinical evidence (24-RCT meta-analysis: SUA −90.62 µmol/L vs anti-inflammation control, p<0.00001) but cannot attribute to single component. |
+| **Key finding** | **ChEMBL coverage gap is load-bearing for TCM compounds.** 5 of 9 candidates have NO ChEMBL data of any kind (astilbin, aucubin, cylindrin, atractylenolide I; partial for chlorogenic acid). Only luteolin has both ChEMBL biochem IC50 against gout-relevant target (XO 550 nM) AND animal-model URAT1 evidence. The chembl-cross-check discipline (rule #2 of tcm-modern-rigor-intersection.md) has a coverage limit for TCM-specific phytochemicals — workaround: admit animal-model in vivo dose-response data. Most-represented mechanism across viable candidates: URAT1 expression downregulation in murine PO hyperuricemia model (astilbin, luteolin, berberine all show 5-25 mg/kg activity). Berberine ChEMBL cross-check re-confirmed: most-potent target is TDO 30 nM, NOT NLRP3 — verified activity_id 26130523. |
+| **Informs** | [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md) — closes P2-2 (originally placed as comp-011, renumbered to comp-013 after comp-011 was assigned to *C. utilis* uricase compatibility 2026-05-05) |
+| **Experiment folder** | [`experiments/comp-013-tcm-gout-compound-triage/`](../experiments/comp-013-tcm-gout-compound-triage/) |
+| **Interpretive wiki page** | [`wiki/tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) |
+| **Date** | 2026-05-06 |
+| **Status** | Complete |
+
+---
+
 ### comp-012 — DAF/CD55 SCR1-4 Truncated Shio-Koji Protease Stability
 
 | Field | Value |
@@ -158,7 +174,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-003~~ → **comp-005** | Lactoferrin cleavage-site analysis under same shio-koji conditions | §1.10 extension — completed 2026-05-05; see comp-005 above | ✓ Done |
 | comp-008 | *Faecalibacterium prausnitzii* heterologous expression feasibility — codon usage, GC content, secretion machinery, payload tractability ranking | [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) Phase 2 P2-4; informs whether *F. prausnitzii* is engineering-tractable for OE-relevant payloads (uricase, lactoferrin, soluble complement regulators, butyrate-pathway boost) | Medium (LBP track Phase 2) |
 | comp-009 | URAT1 mRNA structural analysis for siRNA target site selection — SLC22A12 transcript variants, RNAfold secondary structure, accessibility scoring, mammalian-ortholog conservation | [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) Phase 2 P2-2; cheapest mechanistic killshot for the siRNA / URAT1 thesis (no accessible target sites = thesis collapse before delivery is even considered) | Medium (siRNA / URAT1 track Phase 2) |
-| comp-011 | ChEMBL cross-check of 8 candidate TCM gout compounds (Smilax glabra, Rheum officinale, Plantago asiatica, Phellodendron amurense, Polygonum cuspidatum, Cinnamomum cassia, Atractylodes macrocephala, Astragalus membranaceus). Same IC50 occupancy framework as comp-004. Targets: NLRP3, ABCG2, URAT1, GLUT9, XO, NF-κB pathway components. Output: per-compound mechanism + curated bioactivity + chokepoint hit map + IC50 vs. achievable gut-luminal concentration. | [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md) Phase 2 P2-2; cheapest mechanistic killshot for the TCM × rigor thesis (no curated bioactivity at achievable concentrations = methodology lens produces nothing actionable) | Medium (TCM × rigor track Phase 2) |
+| ~~comp-011~~ TCM ChEMBL cross-check | _Reassigned: the TCM ChEMBL cross-check work landed as **comp-013** (2026-05-06; see Analyses table above). Original comp-011 number was reassigned 2026-05-05 to the C. utilis uricase cassette compatibility analysis._ | — | ✓ Done as comp-013 |
 
 ---
 

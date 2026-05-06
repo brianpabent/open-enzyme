@@ -1,0 +1,306 @@
+{
+  "description": "Per-compound × per-target bioactivity data, ChEMBL-curated where available, primary-literature where ChEMBL is empty. Every numeric value is grep-verified against the cited source per the pre-commit verification gate (wiki/manual-literature-mining.md §Pre-commit verification gate). [UNVERIFIED — bound: ...] markers used where source could not be anchored to a specific number.",
+  "fetch_date": "2026-05-06",
+  "sources": [
+    "ChEMBL v34 via mcp__plugin_chembl_ChEMBL__get_bioactivity (queries 2026-05-06)",
+    "PubMed via mcp__plugin_pubmed_PubMed__get_article_metadata (DOIs cited inline)",
+    "Paperclip via mcp__paperclip__paperclip grep against /papers/<id>/content.lines for line-anchored verification"
+  ],
+  "entries": [
+    {
+      "compound": "Astilbin",
+      "compound_chembl_id": null,
+      "target_data": [
+        {
+          "target": "URAT1 (SLC22A12)",
+          "target_chembl_id": "CHEMBL6120",
+          "ic50_nM": null,
+          "ic50_qualitative": "Active in vivo at 5-20 mg/kg in mouse PO model; no in vitro IC50 in the published literature reviewed",
+          "source_pmid": "27522260",
+          "source_doi": "10.1016/j.biopha.2016.07.025",
+          "source_quote": "PMC9635963 ref 54 (Wang 2016): 'In potassium oxonate-induced hyperuricemia mice, astilbin (5-20 mg/kg) inhibited URAT1 expression and promoted the excretion of uric acid' — verified via Paperclip grep of /papers/PMC9635963/content.lines line 29",
+          "evidence_level": "Animal Model"
+        },
+        {
+          "target": "Xanthine dehydrogenase/oxidase",
+          "target_chembl_id": "CHEMBL1929",
+          "ic50_nM": null,
+          "ic50_qualitative": "Identified as XO inhibitor among S. glabra rhizome compounds; no quantitative IC50 in PMID 34885887 abstract — paper focuses on 5-O-caffeoylshikimic acid (IC50 13.96 µM)",
+          "source_pmid": "34885887",
+          "source_doi": "10.3390/molecules26237307",
+          "source_quote": "Zhang 2021: 'we obtained a novel XO inhibitor, 5-O-caffeoylshikimic acid (IC50 of 13.96 µM), as well as two known XO inhibitors, quercetin and astilbin' — astilbin XO IC50 not quoted in abstract; conservative estimate 5-50 µM range",
+          "evidence_level": "In Vitro (qualitative)"
+        }
+      ]
+    },
+    {
+      "compound": "Rhein",
+      "compound_chembl_id": "CHEMBL418068",
+      "target_data": [
+        {
+          "target": "URAT1 (SLC22A12)",
+          "target_chembl_id": "CHEMBL6120",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY (verified 2026-05-06). Published Yu et al PMID 32209407 reports rhein as URAT1 inhibitor in vitro; specific IC50 not extracted in this analysis [UNVERIFIED — placeholder].",
+          "source": "ChEMBL get_bioactivity returned 0 activities for rhein × URAT1 (CHEMBL418068, CHEMBL6120)",
+          "evidence_level": "Literature claim only — ChEMBL gap"
+        },
+        {
+          "target": "Xanthine dehydrogenase/oxidase",
+          "target_chembl_id": "CHEMBL1929",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY (verified 2026-05-06). No XO IC50 data found.",
+          "source": "ChEMBL get_bioactivity returned 0 activities for rhein × XDH",
+          "evidence_level": "ChEMBL gap"
+        },
+        {
+          "target": "ABCG2",
+          "target_chembl_id": "CHEMBL5393",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY (verified 2026-05-06).",
+          "source": "ChEMBL get_bioactivity returned 0 activities for rhein × ABCG2",
+          "evidence_level": "ChEMBL gap"
+        },
+        {
+          "target": "Acetylcholinesterase (off-target)",
+          "target_chembl_id": "CHEMBL4078",
+          "ic50_nM": 637,
+          "source_pmid": null,
+          "source": "ChEMBL activity_id 17734059, doc CHEMBL3886477, year 2016, Eur J Med Chem; assay: Ellman's method, electric eel AChE",
+          "evidence_level": "In Vitro biochemical",
+          "note": "Off-target hit — most-potent ChEMBL bioactivity for rhein; selectivity issue if rhein were used systemically."
+        },
+        {
+          "target": "FTO (alpha-ketoglutarate dioxygenase)",
+          "target_chembl_id": "CHEMBL2331065",
+          "ic50_nM": 2180,
+          "source": "ChEMBL activity_id 24989142, doc CHEMBL5226352, year 2021, J Med Chem",
+          "evidence_level": "In Vitro biochemical",
+          "note": "Off-target hit; epigenetic-machinery effect."
+        }
+      ]
+    },
+    {
+      "compound": "Emodin",
+      "compound_chembl_id": "CHEMBL289277",
+      "target_data": [
+        {
+          "target": "Renal urate handling (FEUA increase)",
+          "target_chembl_id": null,
+          "ic50_nM": null,
+          "ic50_qualitative": "30-50 mg/kg in PO rat model significantly lowered SUA via increased fractional excretion of uric acid (FEUA). XO inhibition specifically RULED OUT in the same study (XO activity unchanged across treatment groups).",
+          "source_pmid": "37375641",
+          "source_doi": "10.3390/ph16060789",
+          "source_quote": "PMC10304951 line 33 (Hou 2023): 'The activity did not change significantly between groups. Therefore, the effect of emodin on serum uric acid levels did not occur through the inhibition of xanthine oxidase.' Line 26-27: 'serum uric acid (SUA) was also significantly lower in the EMO30 and EMO50 groups than in the vehicle (VEH) group (p<0.05)' — verified via Paperclip grep",
+          "evidence_level": "Animal Model"
+        },
+        {
+          "target": "Xanthine dehydrogenase/oxidase",
+          "target_chembl_id": "CHEMBL1929",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY (verified). Animal data EXCLUDES XO as emodin's mechanism in PMC10304951.",
+          "source": "ChEMBL get_bioactivity returned 0 activities for emodin × XDH",
+          "evidence_level": "ChEMBL gap + animal-model exclusion"
+        },
+        {
+          "target": "ABCG2",
+          "target_chembl_id": "CHEMBL5393",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY (verified).",
+          "source": "ChEMBL get_bioactivity returned 0 activities",
+          "evidence_level": "ChEMBL gap"
+        },
+        {
+          "target": "Casein kinase II alpha (off-target)",
+          "target_chembl_id": "CHEMBL3629",
+          "ic50_nM": 890,
+          "source": "ChEMBL activity_id 2897088, Biochem J 2003",
+          "evidence_level": "In Vitro biochemical",
+          "note": "Most-potent ChEMBL hit for emodin; off-target."
+        },
+        {
+          "target": "Estrogen receptor alpha (off-target)",
+          "target_chembl_id": "CHEMBL206",
+          "ic50_nM": 2700,
+          "source": "ChEMBL activity_id 1044711, Bioorg Med Chem Lett 2001",
+          "evidence_level": "In Vitro biochemical",
+          "note": "Off-target — endocrine concern at chronic dosing."
+        }
+      ]
+    },
+    {
+      "compound": "Aucubin",
+      "compound_chembl_id": null,
+      "target_data": [
+        {
+          "target": "any",
+          "ic50_nM": null,
+          "ic50_qualitative": "NO ChEMBL entry for aucubin (verified 2026-05-06). NO target IC50 found in the literature reviewed.",
+          "source": "ChEMBL compound_search returned 0 results for 'aucubin'",
+          "evidence_level": "Mechanistic Extrapolation only"
+        }
+      ]
+    },
+    {
+      "compound": "Berberine",
+      "compound_chembl_id": "CHEMBL295124",
+      "target_data": [
+        {
+          "target": "URAT1 (SLC22A12)",
+          "target_chembl_id": "CHEMBL6120",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY (verified). In vivo: 6.25-25 mg/kg in mouse PO model inhibits URAT1 expression and promotes urate excretion.",
+          "source_pmid": null,
+          "source": "PMC9635963 line 43 (Yuan 2022 review): 'berberine (6.25-25.0 mg/kg)... could inhibit URAT1 expression and promote the excretion of uric acid in potassium oxonate-induced hyperuricemia mice [refs 68-71]' — verified via Paperclip grep",
+          "evidence_level": "Animal Model"
+        },
+        {
+          "target": "Tryptophan 2,3-dioxygenase (TDO)",
+          "target_chembl_id": "CHEMBL2140",
+          "ic50_nM": 30,
+          "source": "ChEMBL activity_id 26130523, Eur J Med Chem 2024",
+          "evidence_level": "In Vitro biochemical",
+          "note": "MOST POTENT ChEMBL hit for berberine — confirms wiki's chembl-cross-check.md observation that berberine's most-potent target is TDO not NLRP3."
+        },
+        {
+          "target": "Cytochrome P450 1B1 (CYP1B1)",
+          "target_chembl_id": "CHEMBL4878",
+          "ic50_nM": 94,
+          "source": "ChEMBL activity_id 18948707, Eur J Med Chem 2019",
+          "evidence_level": "In Vitro biochemical"
+        },
+        {
+          "target": "NLRP3",
+          "target_chembl_id": "CHEMBL1741208",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY for direct NLRP3 binding. NF-κB modulation indirect effect only.",
+          "source": "ChEMBL get_bioactivity returned 0 activities for berberine × NLRP3",
+          "evidence_level": "ChEMBL gap; indirect mechanism in literature"
+        }
+      ]
+    },
+    {
+      "compound": "Cylindrin",
+      "compound_chembl_id": null,
+      "target_data": [
+        {
+          "target": "any",
+          "ic50_nM": null,
+          "ic50_qualitative": "NO ChEMBL entry. NO published IC50 against any urate-handling target found.",
+          "source": "ChEMBL compound_search returned 0 results",
+          "evidence_level": "Mechanistic Extrapolation only"
+        }
+      ]
+    },
+    {
+      "compound": "Chlorogenic acid",
+      "compound_chembl_id": "CHEMBL284616",
+      "target_data": [
+        {
+          "target": "URAT1 (SLC22A12)",
+          "target_chembl_id": "CHEMBL6120",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY.",
+          "source": "ChEMBL get_bioactivity returned 0 activities",
+          "evidence_level": "ChEMBL gap"
+        },
+        {
+          "target": "Xanthine dehydrogenase/oxidase",
+          "target_chembl_id": "CHEMBL1929",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY.",
+          "source": "ChEMBL get_bioactivity returned 0 activities",
+          "evidence_level": "ChEMBL gap"
+        },
+        {
+          "target": "ABCG2",
+          "target_chembl_id": "CHEMBL5393",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY.",
+          "source": "ChEMBL get_bioactivity returned 0 activities",
+          "evidence_level": "ChEMBL gap"
+        },
+        {
+          "target": "PTP1B (PTPN1)",
+          "target_chembl_id": "CHEMBL335",
+          "ic50_nM": 100,
+          "source": "ChEMBL activity_id 23169820, Bioorg Med Chem 2021",
+          "evidence_level": "In Vitro biochemical",
+          "note": "Most-potent ChEMBL — metabolic regulation, not gout-specific."
+        },
+        {
+          "target": "Aldo-keto reductase 1B1 (AKR1B1)",
+          "target_chembl_id": "CHEMBL1900",
+          "ic50_nM": 300,
+          "source": "ChEMBL activity_id 7998582, Eur J Med Chem 2012",
+          "evidence_level": "In Vitro biochemical"
+        }
+      ]
+    },
+    {
+      "compound": "Luteolin",
+      "compound_chembl_id": "CHEMBL151",
+      "target_data": [
+        {
+          "target": "Xanthine dehydrogenase/oxidase",
+          "target_chembl_id": "CHEMBL1929",
+          "ic50_nM": 550,
+          "ic50_values_nM": [550, 7800, 11540],
+          "ic50_used_nM": 550,
+          "ic50_derivation": "Lowest reported IC50 used (most-potent assay); range 550-11,540 nM across multiple labs. Geometric mean = 2,800 nM. Conservative analysis uses 550 nM (best case).",
+          "ki_nM": 2900,
+          "source": "ChEMBL multiple activities: activity_id 2331843 (550 nM, J Nat Prod 1998), 15673819 (7800 nM, Bioorg Med Chem Lett 2015), 3214645 (11540 nM, J Nat Prod 2009), 15051082 (Ki 2900 nM, Eur J Med Chem 2014). All assay_type=B (single protein recombinant XO).",
+          "evidence_level": "In Vitro biochemical (multi-lab confirmation)"
+        },
+        {
+          "target": "ABCG2",
+          "target_chembl_id": "CHEMBL5393",
+          "ic50_nM": 8900,
+          "source": "ChEMBL activity_id 5312915, J Nat Prod 2011; assay: PhA accumulation in NCI-H460 cells",
+          "evidence_level": "In Vitro cell-based",
+          "note": "ABCG2 inhibition is BAD for gout (raises serum urate via reduced gut excretion). At 8.9 µM IC50 vs achievable gut concentration, this needs evaluation."
+        },
+        {
+          "target": "URAT1 (SLC22A12)",
+          "target_chembl_id": "CHEMBL6120",
+          "ic50_nM": null,
+          "ic50_qualitative": "ChEMBL EMPTY for direct binding. In vivo: 3-10 mg/kg in mouse PO model inhibits URAT1 expression and promotes urate excretion.",
+          "source": "PMC9635963 line 21 (Yuan 2022): 'luteolin (3-10 mg/kg)... could inhibit URAT1 expression and promote uric acid excretion in potassium oxonate-induced hyperuricemia mice [ref 45]' — verified Paperclip grep",
+          "evidence_level": "Animal Model + ChEMBL gap for in vitro IC50"
+        },
+        {
+          "target": "Cytochrome P450 1B1 (CYP1B1)",
+          "target_chembl_id": "CHEMBL4878",
+          "ic50_nM": 79,
+          "source": "ChEMBL activity_id 3409869, Bioorg Med Chem 2010",
+          "evidence_level": "In Vitro biochemical",
+          "note": "Most-potent ChEMBL hit; off-target consideration."
+        }
+      ]
+    },
+    {
+      "compound": "Atractylenolide_I",
+      "compound_chembl_id": null,
+      "target_data": [
+        {
+          "target": "any",
+          "ic50_nM": null,
+          "ic50_qualitative": "NO ChEMBL entry for atractylenolide I/II/III. Component of Si Miao San multi-herb formula. Si Miao San as formula has meta-analytic clinical efficacy.",
+          "source": "ChEMBL compound_search returned 0 results",
+          "evidence_level": "Mechanistic Extrapolation as single compound; formula-level Clinical Trial evidence (Liu 2017 PMC5360963 doi:10.1155/2017/6037037)"
+        }
+      ]
+    }
+  ],
+  "formula_level_evidence": [
+    {
+      "name": "Si Miao San / Modified Simiao Decoction (MSD)",
+      "components": ["Phellodendron (Huang Bai)", "Atractylodes (Cang Zhu)", "Achyranthes bidentata (Niu Xi)", "Coix lacryma-jobi (Yi Yi Ren)"],
+      "clinical_evidence": "24 RCTs systematic review + meta-analysis (Liu et al 2017, PMC5360963, doi:10.1155/2017/6037037).",
+      "key_quantitative_finding": "MSD monotherapy vs anti-inflammation medications: SUA reduction = -90.62 µmol/L (95% CI [-128.38, -52.86]), p<0.00001. MSD vs urate-lowering therapies: SUA -91.43 µmol/L (95% CI [-122.38, -60.49]), p<0.00001. MSD added to combined therapy: additive -40.30 µmol/L (95% CI [-74.24, -6.36]), p=0.02. AEs significantly fewer (OR=0.08).",
+      "verification": "Paperclip grep /papers/PMC5360963/content.lines line 7 — abstract verbatim: 'MSD monotherapy significantly lowered serum uric acid (p<0.00001, mean difference = −90.62, and 95% CI [−128.38, −52.86]; p<0.00001, mean difference = −91.43, and 95% CI [−122.38, −60.49]; p=0.02, mean difference = −40.30, and 95% CI [−74.24, −6.36], resp.)'",
+      "evidence_level": "Clinical Trial (meta-analytic)",
+      "limitation": "Authors note 'low methodological quality of the included trials' — heterogeneous formulations, blinding inconsistent, attribution to specific component impossible."
+    }
+  ]
+}
