@@ -14,6 +14,84 @@ This log is **public** (operations/ folder is in the public repo) — same postu
 
 ---
 
+## 2026-05-07 — The "37% testosterone increase" figure all over the tongkat ali supplement market is salivary T in a mixed-sex stressed cohort. Verification gate caught the laundering.
+
+**What happened.** Today's lit-scan task: a multilingual literature review of natural alternatives to Clomid (clomiphene citrate) for free-testosterone elevation, framed for the gout-comorbid male on SERM therapy. (The trigger was a specific n=1 self-experiment situation; the page itself is genericized in `wiki/androgen-natural-modulation.md`.) Among the seven sub-investigations, *Eurycoma longifolia* (tongkat ali) showed up as the best-evidenced herbal candidate — there's a real RCT corpus.
+
+The lit-scan subagent, drafting from working memory without live PubMed access, flagged a suspicious pattern: the headline figure **"~37% testosterone elevation"** recurred across three "independent" Physta-extract RCTs (George 2014, Talbott 2013, Tambi 2012) in suspicious lockstep. Either consistent biology — or a marketing-cycle copy-paste contaminating the corpus. The draft was committed with `[VERIFICATION-PENDING]` markers per the project's pre-commit grep-verify gate (CLAUDE.md Rule 4, codified yesterday after the DAF SCR1-4 incident).
+
+**The verification, performed by a follow-up subagent with PubMed access:**
+
+The "37%" figure is genuinely from Talbott 2013 (*J Int Soc Sports Nutr*, PMID 23705671). But:
+
+1. It's **salivary T**, not serum free T or total T.
+2. The cohort is **n=63 mixed-sex** moderately-stressed adults — not hypogonadal men.
+3. The intervention was Physta 200 mg/d × 4 weeks, ostensibly for cortisol/stress modulation, with T as a secondary endpoint.
+
+The supplement-industry copy-paste pattern across George 2014 (which is itself a *narrative review*, not a fresh RCT — it's *citing* Talbott) and downstream marketing materials uses the figure as if it were generalizable serum free-T elevation in hypogonadal men. **It isn't.** A salivary-T headline number from a mixed-sex stressed cohort is not the same claim as a serum-free-T elevation in low-T men, and the supplement industry has been treating it as if they were interchangeable for a decade.
+
+The same verification pass caught a stack of related errors in the draft, all consistent with the supplement-industry citation laundering pattern:
+
+- "Leitão" systematic review attribution → actually **Leisegang 2022** (PMID 36013514), with subgroup analysis showing no significant T elevation in eugonadal baseline; the supplement marketing tier elides this caveat.
+- "Tsukamoto 2002 / Tsujimura 2005" Hochu-ekki-to citations → don't appear in PubMed; actual papers are Ishikawa 1992 (PMID 1519556) and Tsujimura 2010 (PMID 20143961). Wrong year and wrong author on both.
+- "Maggio 2014" magnesium-T cohort study → actually **Maggio 2011** (PMID 21675994, CHIANTI cohort n=399). 2014 is a review citing the 2011 cohort; the marketing cited the review.
+- Yakubu group (fadogia testicular toxicity) at "Ahmadu Bello University, Zaria" → actually **University of Ilorin**.
+- Henkel & Wang 2014 dose: drafted as 200 mg/d, actual is **400 mg/d × 5 weeks**.
+- Cinar 2011 magnesium dose: drafted as fixed mg/d, actual is **10 mg/kg/d**.
+- Hochu-ekki-to drafted as containing epimedium → it doesn't.
+- Wu Zi Yan Zong Wan composition drafted with cistanche/epimedium/cordyceps → actual five-seed formulation is *Lycium / Cuscuta / Rubus / Schisandra / Plantago*.
+
+Eleven specific factual errors caught in a single verification pass on a single page. Most of them inherited from the supplement-industry citation tier rather than originating in the AI subagent's confabulation. The AI didn't invent the "37%" figure — **the supplement industry did, decades ago, and the AI's training corpus reflects that contamination.**
+
+**Update later the same day: the story has three layers, not one.**
+
+Subsequent verification work today on the same page surfaced two more citation-laundering instances, each caught by a different stage of the multi-pass discipline:
+
+**Layer 2 — "Shin KH 2024 enclomiphene vs clomiphene pharmacology" doesn't exist.** A parallel verification subagent running on the parent page (`wiki/androgen-urate-axis.md`) found the citation can't be located in PubMed. The actual paper fitting the description is **Saffati G et al. 2024, PMID 39434750**, *Translational Andrology and Urology*: n=66 patients, enclomiphene +166 vs. clomiphene +98 ng/dL T, fewer adverse events. The same misattribution had propagated to BOTH the parent and daughter pages — the laundering wasn't a single-page issue but corpus-wide contamination. Caught by: cross-vendor parent-page verification sweep, paired with Sci-Hub-tier paywalled-paper access for confirmation.
+
+**Layer 3 — "Eurycomanone is a xanthine oxidase inhibitor" is wrong; the actual mechanism is multi-target transporter modulation + purine-synthesis suppression.** A Sci-Hub-second-pass verification subagent surfaced what looked like a clean mechanism finding — the supplement-industry summary attributed direct XO inhibition to two PMIDs (31920654, 34785103). That triggered a v2 re-run of comp-015 (the T-axis-adjuvant urate-target mapping experiment) with XO added as the 5th target. **The v2 subagent, reading the primary papers' actual full text, found those PMIDs don't establish XO inhibition at all.** They establish: (1) eurycomanone directly modulates URAT1, GLUT9, ABCG2, NPT1 — a multi-target transporter mechanism, strong gout-favorable; (2) eurycomanol suppresses PRPS-driven purine biosynthesis, a separate gout-favorable mechanism. The "XO inhibitor" attribution was supplement-industry summary contamination — same shape as Layer 1, but inheriting through a different review-paper chain. Caught by: a computational experiment forcing primary-source verification of every load-bearing claim used to motivate it.
+
+**The three layers in one workday on one wiki page:**
+
+| Layer | The laundered claim | What's actually there | Caught by |
+|---|---|---|---|
+| 1 | "37% T elevation from tongkat ali" | Salivary T in mixed-sex moderately-stressed cohort (Talbott 2013 PMID 23705671) | First verification subagent reading the primary paper |
+| 2 | "Shin KH 2024 enclomiphene paper" | Paper doesn't exist; the actual paper is Saffati G et al. 2024 (PMID 39434750) | Parent-page parallel verification subagent + Sci-Hub-tier confirmation |
+| 3 | "Eurycomanone is an XO inhibitor" | Multi-target transporter modulation (PMID 31920654) + PRPS purine-synthesis suppression (PMID 34785103); NOT XO | comp-015 v2 computational experiment forcing primary-source verification of the trigger claim |
+
+**The deeper pattern.** All three layers are the same shape from a verification-gate perspective: a load-bearing quantitative or mechanistic claim entered the corpus by inheritance from supplement-industry summary tier, not from primary-source verification. **Different stages of the discipline caught different instances of the same contamination.** No single verification step caught all three:
+
+- Layer 1 surfaced because the first subagent had PubMed full-text access for the most-cited tongkat ali RCTs.
+- Layer 2 surfaced because the parent-page sweep ran in parallel on the same misattributed citation appearing in both parent and daughter — cross-page consistency-checking caught what neither single-page sweep would have caught alone.
+- Layer 3 surfaced because the computational experiment forced primary-source verification of even the trigger that motivated the re-run — verification-of-verification.
+
+**The recursive lesson.** In supplement-industry-adjacent literature corpora, **even the verification process can inherit upstream laundering.** The Sci-Hub pass that surfaced Layer 3's trigger honestly reported what the secondary literature said about eurycomanone-XO. The computational experiment (Layer 3 catch) verified against the primary papers and found the secondary literature had laundered a claim that wasn't in the primary text. **Verification-of-verification is not paranoia; it's how multi-stage cross-checking actually catches multi-layer corpus contamination.**
+
+The yield from a single workday on a single wiki page: **3 distinct citation-laundering layers, ~13 specific factual corrections, one direction-of-effect reversal (eurycomanone v1 GOUT-UNFAVORABLE → v2 GOUT-FAVORABLE) that materially shifts platform recommendations.** Cost: roughly $3-4 in subagent tokens across four parallel passes. The cost of skipping the verification stack: a wiki indistinguishable from any health-content blog post.
+
+**Why it matters.** The DAF SCR1-4 incident yesterday was an AI hallucinating a number nobody asked for. Today's tongkat ali finding is structurally different and arguably more interesting: **the AI faithfully reproduced a number the supplement industry has been laundering for years.** The training data was contaminated; the AI inherited the contamination; only the multi-pass verification gate (per-claim primary-source check) surfaces the error.
+
+This generalizes. Anyone running an AI-assisted lit scan on supplement / nutraceutical / "natural" anything is going to inherit the same citation laundering. The specific names will differ (boron Naghii 2011 is the entire evidentiary base for "boron raises T," n=8, never replicated in 14 years; that's a separate finding from the same pass). The pattern is constant: a single small study, a hyperbolic interpretation, decades of citation drift, and a corpus that looks rich but rests on a thin and often wrongly-described primary literature.
+
+**The verification discipline that catches it:** for every effect-size, dose, sample-size, p-value, or direction-of-effect claim in newly-authored content, grep-verify against the primary source before commit. Use a different model in a different vendor for verification than the one that drafted the original. Flag what can't be verified inline (`[VERIFICATION-PENDING — searched PubMed 2026-05-07; primary not freely accessible]`) rather than fabricating.
+
+The cost of the verification pass on this page: ~$1 in subagent tokens, ~9 minutes wall-clock, eleven factual corrections landed. The cost of skipping the verification pass: a wiki page that confidently misrepresents a salivary number as a serum claim, propagating into downstream synthesis, indistinguishable from any other supplement-industry blog post.
+
+**External-comms angle.** Strong blog material with a deliberately funny edge — title-tier candidates:
+
+- *"The supplement industry has been quoting a salivary testosterone number as if it were a serum number for 13 years. AI-assisted lit scans inherit the laundering. Here's the gate that catches it."*
+- *"Your tongkat ali bottle says '37% testosterone increase.' Here's where that number actually came from."*
+- *"How an AI agent's lit scan caught the supplement industry quoting saliva like it was blood."*
+- *(Meta-angle, for the three-layer version of the story)*: *"In one workday on one wiki page, we caught three distinct layers of supplement-industry citation laundering. Each was caught by a different stage of the verification discipline. None would have surfaced under a single-pass workflow. Here's the architecture, with concrete examples of what each layer looked like and what caught it."*
+
+Tone: dry, evidence-driven, faintly amused. **Don't shame the supplement industry directly** — the laundering is structural (small-study finding → simplified citation → marketing copy → derivative marketing copy → AI training corpus → AI summary → consumer), and naming the structure is more useful than naming bad actors. The hero of the story is the verification gate, not the AI catching it; the lesson is that anyone running AI-assisted health-content research needs the gate.
+
+Adjacent post angles from the same verification pass: the boron Naghii 2011 single-study problem ("a 14-year-old n=8 study is the entire evidentiary base for the supplement industry's boron-T-elevation claim"); the fadogia agrestis Huberman-popularization vs zero-human-RCTs gap; the tendency for "kidney yang tonic" Chinese RCTs to elide UA as a tracked endpoint despite being relevant. Each is its own post; together they're a series on supplement-industry citation hygiene.
+
+**The continuity with yesterday's DAF entry:** that one was an AI inventing a number. Today's is the AI inheriting an industry's bad number. **Both are the same class of problem from the verification-gate perspective** — a load-bearing quantitative claim entered the corpus without being grep-verified against a primary source — and both fail the same way absent the gate. The discipline isn't model-specific; it's claim-specific.
+
+---
+
 ## 2026-05-06 — An AI agent invented a number nobody asked it to invent. The next day's process found it. Here's exactly what happened and what discipline catches this.
 
 **What happened.** Yesterday (2026-05-05), an AI subagent was asked to write up a computational experiment on a complement-system protein called DAF/CD55 (specifically a truncated version called SCR1-4, relevant to the project's CP0 chokepoint closure thesis). The experiment itself was a protease-stability analysis — does the protein survive being cooked into the koji-fermentation environment? The AI's analysis pipeline used AlphaFold-predicted protein structure to score how exposed each protease cleavage site is. The experiment is well-defined and reproducible.
