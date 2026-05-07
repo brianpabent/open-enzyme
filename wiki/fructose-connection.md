@@ -71,6 +71,8 @@ URIC ACID ← This is the endpoint in humans (no uricase)
 
 This cascade generates **new purines from scratch**, not just degrading existing DNA/RNA. This is called **de novo purine synthesis**, and it's accelerated by fructose.
 
+**The PRPS connection (added 2026-05-07):** The rate-limiting enzyme of de novo purine biosynthesis is **phosphoribosyl pyrophosphate synthetase (PRPS)**. Under normal conditions, PRPS is feedback-inhibited by IMP and ADP/GDP. Fructose-driven ATP depletion → AMP rise → IMP via AMP deaminase → **PRPS allosteric inhibition is relieved** → PRPP rises → de novo purine biosynthesis accelerates → urate production rises. This is the canonical pathological PRPP-elevation pathway — the molecular link between fructose and gout at the purine-biosynthesis level. See [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) for the full chokepoint scope page, including the first natural-product PRPS modulator in the OE corpus (eurycomanol from tongkat ali, In Vitro, PMID 34785103). (Mechanistic Extrapolation; source: prps-purine-biosynthesis-chokepoint.md)
+
 (Source: gout-deep-dive.md, Section 9)
 
 ---

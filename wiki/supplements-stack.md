@@ -1,7 +1,7 @@
 ---
 title: Supplements Stack
 aliases: [stack, multi-intervention, NLRP3 protocol, inflammasome suppression]
-related: [nlrp3-inflammasome, gout-pathophysiology, validation-experiments, androgen-urate-axis, abcg2-modulators, gut-lumen-sink]
+related: [nlrp3-inflammasome, gout-pathophysiology, validation-experiments, androgen-urate-axis, androgen-natural-modulation, abcg2-modulators, gut-lumen-sink]
 sources: [nlrp3-exploit-map.md, gout-deep-dive.md, peptide-gout-addendum.md, abcg2-modulators.md]
 ---
 
@@ -582,6 +582,48 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 ---
 
+### Tongkat Ali (*Eurycoma longifolia* — Physta / LJ100) — Dual T-axis + UA-Favorable
+
+**Category:** Herbal / SHBG Modulator / Multi-Target Urate Modulator
+
+**Mechanism (dual phenotype: free-T elevation + serum UA reduction — rare in the T-axis adjuvant class):**
+- **SHBG displacement** — quassinoid metabolites (eurycomanone) compete with testosterone for SHBG binding, freeing bound T into the active free fraction. Meta-analysis (Leisegang 2022, PMID 36013514): pooled SMD = 1.352, p = 0.001 for total T elevation; significant in hypogonadism subgroup, non-significant in eugonadal men. (Clinical Trial)
+- **Multi-target urate modulation** — eurycomanone and eurycomanol downregulate URAT1 + GLUT9, upregulate ABCG2 + NPT1 in kidney (PMID 31920654, Animal Model); eurycomanol suppresses PRPS-driven purine biosynthesis (PMID 34785103, In Vitro) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md). **Tongkat ali is NOT an XO inhibitor** — the supplement-industry "XO inhibition" claim is a citation-laundering artifact; the actual mechanism is multi-target transporter modulation + purine-synthesis suppression. (Animal Model + In Vitro; source: t-axis-adjuvant-urate-mapping-computational.md)
+- **Human UA-lowering RCT:** 2021 placebo-controlled trial (n=105 men aged 50–70, Physta 100/200 mg/d × 12 wk): SUA ↓7% at 100 mg/d, ↓11% at 200 mg/d. (Clinical Trial; source: androgen-natural-modulation.md §1.7)
+
+**Evidence level:** Clinical Trial (T elevation meta-analysis + UA-lowering RCT) + Animal Model (urate transporter modulation) + In Vitro (PRPS suppression)
+
+**Population context:** **Best-evidenced herbal T-axis adjuvant for the gout-comorbid case.** The dual T-up + UA-down phenotype is rare — most T-elevation interventions raise UA via URAT1. Particularly relevant for men with mild hypogonadism + gout who want T-axis support without worsening hyperuricemia. Effect on T is modest (10–30% free-T elevation in mildly suboptimal men, near-zero in already-eugonadal men per Leisegang 2022). Not a replacement for clomiphene at full pharmacological dose in true secondary hypogonadism. (source: androgen-natural-modulation.md)
+
+**Dosing range:**
+- **Physta** (Biotropics Malaysia, hot-water extract): 200 mg/day — the most-RCT-validated extract; standardized to 0.8–1.5% eurycomanone
+- **LJ100** (HP Ingredients): 200 mg/day — different extraction protocol; smaller clinical corpus
+- Avoid unstandardized "100:1" or "200:1" bulk extracts — ratio nomenclature is meaningless without quassinoid assay
+
+**Contraindications:** Pregnancy (insufficient data). Active hepatic disease (theoretical quassinoid hepatic stress at supplemented doses — not clinically documented). Insomnia / increased aggression are the most-reported subjective side effects (consistent with raised free-T).
+
+**Drug interactions:**
+- **CYP3A4 substrates:** mild in vitro inhibition by quassinoids; clinical significance small at standard doses.
+- **Warfarin / antiplatelets:** no documented interaction.
+- **SERMs (clomiphene, tamoxifen):** additive T-elevation — monitor free-T and UA if combining.
+
+**Dose-dependent risk profile:**
+- 200 mg/day standardized Physta or LJ100: well-tolerated; the RCT-validated dose.
+- 400 mg/day: some studies show no advantage over 200 mg (saturation). Dose-stacking above 400 mg has no RCT support.
+- Heavy-metal contamination risk in non-standardized Indonesian product — standardized Physta or LJ100 from reputable supplier only.
+
+**Stack interactions (within this catalog):**
+- **Cordyceps (additive, not redundant):** both are gout-favorable T-axis adjuvants via different mechanisms — cordycepin (URAT1-dominant), eurycomanone (multi-target transporter + PRPS). Mechanism-orthogonal; stacking is supported. See [t-axis-adjuvant-urate-mapping-computational.md](./t-axis-adjuvant-urate-mapping-computational.md) for the head-to-head analysis. (source: t-axis-adjuvant-urate-mapping-computational.md)
+- **Carnosine (overlap at URAT1):** both downregulate URAT1 — diminishing returns if stacked at maximum dose; pick one for the URAT1 axis.
+- **No ABCG2 interaction documented.** Tongkat ali is NOT on the curcumin/quercetin/EGCG/genistein ABCG2 functional-inhibitor list. Favorable for the gut-lumen-sink platform.
+- **Synergy with engineered uricase (future):** tongkat ali's multi-target transporter modulation (URAT1↓, ABCG2↑) opens both the renal and intestinal urate-handling gates — complementary to gut-lumen uricase degradation.
+
+**Cost:** $25–50/month (standardized Physta or LJ100, 200 mg/day)
+
+**Reference:** [androgen-natural-modulation.md](./androgen-natural-modulation.md) §1 for the full entry including RCT effect sizes, standardization details, and the UA-direction reversal finding (2026-05-07).
+
+---
+
 ### Quercetin (Phytosome Form Preferred)
 
 **Category:** Flavonoid
@@ -988,6 +1030,7 @@ These become available as Open Enzyme [[engineered-yeast-uricase]] and [[enginee
 | **Limonene** (d-limonene) | Animal Model (MSU rat, Venkatesan 2025) | CP1, CP2 | Nrf2 + TLR4 suppression | $15–25 |
 | **Lactoferrin** (bovine) | Animal + Clinical Ph3 (talactoferrin) | CP5 | NLRP3/caspase-1/GSDMD axis; fills canakinumab gap | $30–60 |
 | **Carnosine** (L-carnosine) | Animal Model (HUA rat) | CP1, CP2, +urate | Dual UA + NLRP3 (unique in stack); androgen-axis aligned | $20–35 |
+| **Tongkat Ali** (Physta/LJ100) | Clinical Trial (T meta + UA RCT) | +urate (multi-target transporter + PRPS) | Dual T-up + UA-down (rare in class); URAT1↓, GLUT9↓, ABCG2↑, PRPS↓; **NOT an XO inhibitor** | $25–50 |
 | Beta-caryophyllene | Animal Model (MSU gout) | CP1, CP2 | CB2 agonism / TLR4 / NLRP3 | $15–30 |
 | Vitamin D3 + K2 | Established | CP1 | VDR activation | $10–15 |
 | Disulfiram | Established | CP6b | GSDMD pore blockade | ~$30 |

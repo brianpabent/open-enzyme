@@ -31,7 +31,15 @@ Every cell in your body contains DNA and RNA built from purine bases (adenine an
 
 This is where drugs like **allopurinol** and **febuxostat** intervene — they inhibit XO to reduce uric acid production at the source.
 
-(Source: gout-deep-dive.md, §1)
+### The De Novo Purine Biosynthesis Arm — PRPS as a Distinct Chokepoint
+
+**Phosphoribosyl pyrophosphate synthetase (PRPS)** catalyzes the rate-limiting first committed step of de novo purine biosynthesis: ribose-5-phosphate + ATP → PRPP + AMP. PRPP is the central substrate for purine (and pyrimidine) biosynthesis. PRPS sits **one biosynthetic step upstream** of the degradation pathway above — inhibiting PRPS reduces total purine flux at the source, which is mechanistically orthogonal to XO inhibition (which acts after purines are built and being broken down). (Mechanistic Extrapolation; source: prps-purine-biosynthesis-chokepoint.md)
+
+PRPS is regulated by allosteric feedback from IMP and ADP/GDP. Conditions that deplete these (e.g., fructose-driven ATP depletion → AMP rise → IMP via AMP deaminase) **disinhibit PRPS** → PRPP rises → de novo purine biosynthesis accelerates → urate production rises. This is the canonical pathological PRPP-elevation pathway linking fructose to gout (see [fructose-connection.md](./fructose-connection.md)). PRPS1 gain-of-function mutations cause early-onset gout — direct human-genetic evidence that PRPS dysregulation drives clinical hyperuricemia. (In Vitro + Clinical Genetics; source: prps-purine-biosynthesis-chokepoint.md)
+
+The first natural-product PRPS modulator documented in the OE corpus is **eurycomanol** from *Eurycoma longifolia* (tongkat ali), which suppresses PRPS-driven purine biosynthesis in vitro (PMID 34785103). Tongkat ali Physta also shows SUA ↓7–11% in a 2021 placebo-controlled human RCT (n=105). See [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) for the full chokepoint scope page and [androgen-natural-modulation.md](./androgen-natural-modulation.md) §1 for the tongkat ali entry. (In Vitro + Clinical Trial; source: prps-purine-biosynthesis-chokepoint.md, androgen-natural-modulation.md)
+
+(Source: gout-deep-dive.md, §1; prps-purine-biosynthesis-chokepoint.md)
 
 ### The Evolutionary Loss
 
@@ -92,6 +100,7 @@ The Open Enzyme platform's three concurrently-developing tracks — **engineered
 | **ABCG2** | Secretes urate into gut lumen + renal tubule; #1 genetic risk locus | **Lactoferrin → TNFα suppression → ABCG2 derepression** (Mechanistic Extrapolation — indirect, not direct transporter modulation; see [`lactoferrin.md`](./lactoferrin.md) §4.7 + [`koji-endgame-strain.md`](./koji-endgame-strain.md) §2.2) | — | — |
 | **OAT1 / OAT3** (SLC22A6/8) | Basolateral uptake of urate from blood into tubular cells for secretion | — | **GLPP** (animal-model OAT1 modulation per comp-014 outputs) | — |
 | **Xanthine oxidase** (upstream) | Catalyzes hypoxanthine → xanthine → urate; #1 pharmacological target (allopurinol, febuxostat) | — | — | **Astilbin** (animal-model XO inhibition + classical TCM use) |
+| **PRPS** (upstream) | Rate-limiting enzyme of de novo purine biosynthesis; PRPP synthesis; distinct chokepoint class from XO | — | — | **Eurycomanol** from *Eurycoma longifolia* / tongkat ali (In Vitro PRPS suppression, PMID 34785103; 2021 RCT SUA ↓7–11%, n=105) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) |
 | **Gut-lumen urate sink** (post-renal) | Direct degradation of urate in gut lumen, creating concentration gradient that pulls serum urate into gut for ABCG2-mediated secretion | **Uricase** (engineered koji secretes active uricase into gut lumen — degrades luminal urate, *direct mechanism*) | — | — |
 
 **Evidence-tier discipline.** Direct transporter / enzyme effects (URAT1 by cordycepin, GLUT9/OAT1 by GLPP, XO by astilbin, gut-lumen urate degradation by koji uricase) sit at **Animal Model** evidence tier from primary literature. The **lactoferrin → ABCG2** link is **Mechanistic Extrapolation** (lactoferrin → TNFα suppression is documented in vitro / clinical biopsy per [`lactoferrin.md`](./lactoferrin.md) §4.7; TNFα suppression → ABCG2 transcriptional derepression is the Mechanistic Extrapolation step composed onto it). This is a substantively weaker claim than the direct-modulation claims and should be flagged as such whenever the multi-track coverage map is invoked downstream.
@@ -361,6 +370,7 @@ PURINE INTAKE → Purine Metabolism (XO) → URIC ACID
                     (Pain, swelling, erythema)
 
 INTERVENTION POINTS:
+- PRPS inhibition: Reduce de novo purine biosynthesis at the source (eurycomanol from tongkat ali, In Vitro; distinct from XO inhibition downstream) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md)
 - XO inhibitors: Block uric acid production (Allopurinol, Febuxostat)
 - URAT1 inhibitors: Reduce renal reabsorption (Pozdeutinurad, Lesinurad)
 - ABCG2 enhancement: Boost gut secretion via butyrate/PPARγ (fermentable fiber, DASH RCT 0.25–0.73 mg/dL UA reduction, Clinical Trial), sulforaphane/Nrf2, Q141K rescue via HDAC inhibitors (In Vitro) — see [abcg2-modulators.md](./abcg2-modulators.md)

@@ -68,6 +68,8 @@ nav:
     - Gout Clinical Pipeline: gout-clinical-pipeline.md
     - Complement / C5a (CP0): complement-c5a-gout.md
     - Androgen-Urate Axis: androgen-urate-axis.md
+    - Androgen Natural Modulation: androgen-natural-modulation.md
+    - PRPS / Purine Biosynthesis Chokepoint: prps-purine-biosynthesis-chokepoint.md
     - Uricase: uricase.md
     - Uricase Variant Selection: uricase-variant-selection.md
     - GI Survival Prediction: gi-survival-prediction.md
@@ -127,9 +129,11 @@ nav:
     - Peptide Gout Addendum: peptide-gout-addendum.md
 
   - Self-Experiment & Validation:
+    - Practitioner Toolkit: practitioner-toolkit.md
     - SIBO: sibo.md
     - Supplements Stack: supplements-stack.md
     - Self-Experiment Protocol: self-experiment-protocol.md
+    - Personal Genome Protocol: personal-genome-protocol.md
     - Validation Experiments: validation-experiments.md
     - Enzyme Quantification Protocol: enzyme-quantification-protocol.md
     - Modality × Target Matrix: modality-chokepoint-matrix.md
@@ -147,6 +151,7 @@ nav:
     - H04 — TCM × Modern Rigor Methodology Lens: hypotheses/H04-tcm-rigor-intersection.md
     - H05 — DAF SCR1-4 CP0-Closure Thesis: hypotheses/H05-daf-scr14-cp0-thesis.md
     - H06 — Medicinal Mushroom Complement Track: hypotheses/H06-medicinal-mushroom-complement-track.md
+    - H07 — Clomid Intestinal-ER Antagonism: hypotheses/H07-clomid-intestinal-er-antagonism.md
     - Computational Experiments: computational-experiments.md
     - Uricase Protease Stability (comp-001): uricase-protease-stability-computational.md
     - Lactoferrin Protease Stability (comp-005): lactoferrin-protease-stability-computational.md
@@ -158,6 +163,10 @@ nav:
     - C. utilis Uricase Cassette Compatibility (comp-011): c-utilis-uricase-cassette-compatibility-computational.md
     - TCM Gout Compound Triage (comp-013): tcm-gout-compound-triage-computational.md
     - Medicinal Mushroom Compound Mapping (comp-014): medicinal-mushroom-compound-mapping-computational.md
+    - T-axis Adjuvant Urate Mapping (comp-015): t-axis-adjuvant-urate-mapping-computational.md
+    - T × Intestinal ABCG2 Evidence Mining (comp-016): t-abcg2-suppression-evidence-mining-computational.md
+    - Intestinal ABCG2 Sex-Dimorphism Mining (comp-017): intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md
+    - Autonomous AI Screening Methodology: autonomous-screening-methodology.md
     - Manual Literature Mining Protocol: manual-literature-mining.md
     - Open Questions Index: open-questions.md
     - Concept Graph: GRAPH.md

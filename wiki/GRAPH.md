@@ -181,6 +181,15 @@ graph TB
         MT10["Extract Characterization SOPs — GLPP / cordycepin / EGT"]
     end
 
+    subgraph PRPS_arm["PRPS / PURINE BIOSYNTHESIS CHOKEPOINT (NEW)"]
+        PR1["PRPS — phosphoribosyl pyrophosphate synthetase"]
+        PR2["PRPP — central purine/pyrimidine substrate"]
+        PR3["De novo purine biosynthesis"]
+        PR4["Eurycomanol (tongkat ali) — PRPS suppression (In Vitro, PMID 34785103)"]
+        PR5["Fructose → ATP depletion → PRPS disinhibition (canonical pathological pathway)"]
+        PR6["Tongkat Ali Physta — SUA ↓7-11% (2021 RCT, n=105)"]
+    end
+
     subgraph Androgens["ANDROGEN-URATE AXIS (NEW)"]
         S1["Testosterone (endogenous or exogenous)"]
         S2["Estradiol"]
@@ -421,6 +430,21 @@ graph TB
     S6 -->|"suppresses SHBG synthesis; high sensitivity = ↑SHBG"| S3
     S7 -->|"↑endogenous T, modestly ↑SHBG, ↑E2"| S1
     S7 -->|"peripheral ER agonism"| S2
+    S9["Tongkat Ali (Eurycoma longifolia) — dual T-up + UA-down"]
+    S9 -->|"SHBG displacement → ↑free-T"| S3
+    S9 -->|"multi-target transporter modulation (URAT1↓, GLUT9↓, ABCG2↑)"| S4
+    S9 -->|"multi-target transporter modulation"| S5
+
+    %% PRPS / purine biosynthesis chokepoint (source: prps-purine-biosynthesis-chokepoint.md)
+    PR1 -->|"catalyzes rate-limiting step →"| PR2
+    PR2 -->|"substrate for"| PR3
+    PR3 -->|"produces purines → catabolized to"| B1
+    PR4 -->|"suppresses PRPS (In Vitro)"| PR1
+    PR4 -->|"component of"| S9
+    PR5 -->|"fructose-driven ATP depletion relieves PRPS inhibition"| PR1
+    PR5 -->|"canonical fructose-gout link"| B1
+    PR6 -->|"human RCT evidence for"| S9
+    PR6 -->|"SUA reduction via multi-target mechanism"| B1
 
     %% ABCG2 modulators (2026-04-26)
     %% Pharmacological levers on the gut urate sink — separate from sex-hormone axis
@@ -573,6 +597,7 @@ graph TB
     style TNFSF14_arm fill:#fff5cc
     style MultiCP fill:#f0ffe0
     style Androgens fill:#e8d8f0
+    style PRPS_arm fill:#fff0e0
     style DiscoveryEngine fill:#fff8e6
     style KojiEndgame fill:#e6fff0
     style Chaperones fill:#e6f0ff
