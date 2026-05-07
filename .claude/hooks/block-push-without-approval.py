@@ -27,8 +27,12 @@ This hook is the structural backstop.
 
 Authorization:
   - Brian runs the command himself in his terminal (always works)
-  - Brian prefixes the specific command with the one-shot env var:
-      `CLAUDE_PUSH_AUTHORIZED=1 git push`
+  - Brian gives verbal authorization in conversation ("push", "ship it",
+    "let's push", etc.) — Claude then adds the `CLAUDE_PUSH_AUTHORIZED=1`
+    prefix on Brian's behalf. The prefix exists so Claude can pass through
+    explicit verbal authorization; it is NOT a literal string Brian has to
+    type. The honor system: Claude only adds the prefix when Brian has
+    actually authorized the push in this turn.
   - Brian sets `CLAUDE_PUSH_AUTHORIZED=1` in his Claude Code shell
     environment (grants session-level authorization; use sparingly)
 
@@ -187,10 +191,14 @@ def main() -> None:
         print(
             f"BLOCKED: `gh workflow run wiki-sweep` always triggers the daemon\n"
             f"(~$0.65 + ~9-12 min) and Brian wants to be present for daemon\n"
-            f"runs he didn't initiate. Authorize with:\n"
+            f"runs he didn't initiate. If Brian explicitly authorized this in\n"
+            f"conversation, re-run with the prefix on his behalf:\n"
+            f"\n"
             f"  CLAUDE_PUSH_AUTHORIZED=1 {command}\n"
             f"\n"
-            f"Or use the /sweep-catchup skill which Brian explicitly invokes.\n",
+            f"Honor system — only add the prefix when Brian actually said to\n"
+            f"fire the daemon this turn. Otherwise ask first, or use the\n"
+            f"/sweep-catchup skill which Brian invokes himself.\n",
             file=sys.stderr,
         )
         sys.exit(2)
@@ -221,19 +229,21 @@ def main() -> None:
             f"  {files_preview}\n"
             f"\n"
             f"Per the walk-synthesis skill §7.2 + the 2026-05-06 incident,\n"
-            f"Claude must ask Brian explicitly before firing the daemon. Two\n"
-            f"ways to authorize:\n"
+            f"Claude needs explicit authorization from Brian before firing the\n"
+            f"daemon. If Brian already said push / ship it / let's go in this\n"
+            f"turn, that IS the authorization — Claude should re-run with the\n"
+            f"`CLAUDE_PUSH_AUTHORIZED=1` prefix on Brian's behalf:\n"
             f"\n"
-            f"  1. Brian runs the push himself in his terminal\n"
-            f"  2. Brian types in conversation:  CLAUDE_PUSH_AUTHORIZED=1 git push\n"
-            f"     (Claude can include this prefix only because Brian typed it.)\n"
+            f"  CLAUDE_PUSH_AUTHORIZED=1 {command}\n"
+            f"\n"
+            f"The prefix is the pass-through mechanism, not a literal string\n"
+            f"Brian has to type. Honor system: only add it when Brian has\n"
+            f"actually authorized the push in this turn. If Brian has NOT\n"
+            f"said to push, ask first — don't add the prefix unilaterally.\n"
             f"\n"
             f"Pushes touching only scripts/, operations/, .claude/, logs/, etc.\n"
             f"are allowed without authorization — only wiki-changes-that-would-\n"
-            f"fire-the-daemon are gated.\n"
-            f"\n"
-            f"Command that triggered the block:\n"
-            f"  {command}\n",
+            f"fire-the-daemon are gated.\n",
             file=sys.stderr,
         )
         sys.exit(2)
