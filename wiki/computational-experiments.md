@@ -54,6 +54,38 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+### comp-015 — T-axis Adjuvant Urate-Target Mapping (v2)
+
+| Field | Value |
+|---|---|
+| **Question** | For each of four T-axis-active natural compounds (cordycepin, eurycomanone, icariin, echinacoside), what is the curated bioactivity evidence at the **five** dominant urate-handling + T-axis targets (URAT1, ABCG2, OAT1, SHBG, **XO** — added v2), and which compound is the most gout-favorable T-axis adjuvant? |
+| **Method** | comp-013 verdict-tagging + comp-007 achievable/IC50 thresholds + comp-004 gut-conc model applied to a 4×5 matrix (v2 adds XO column). ChEMBL bioactivity lookup, primary-literature claim aggregation (PubMed search 2026-05-07), achievable-concentration estimates, per-pair direction-of-effect tagging, per-compound aggregated verdict with mechanism-orthogonal XO logic (XO inhibition is gout-favorable regardless of transporter direction because it blocks urate production at the source). |
+| **Verdict (v2)** | **H-AN-02 PARTIALLY FALSIFIED.** Cordycepin = **GOUT-FAVORABLE** (URAT1 expression downregulation Animal Model PMID 29422889 + supplementary in vitro XO IC50 55.7 µM PMID 38141695, ratio 0.001 below systemic threshold). Eurycomanone = **GOUT-FAVORABLE** *(REVERSED v1→v2)* — multi-target: hURAT1 inhibition + URAT1/GLUT9 down + ABCG2/NPT1 up (PMID 31920654) + purine synthesis suppression via PRPS (PMID 34785103) + 2021 RCT SUA ↓7-11% n=105. Icariin = **MECHANISM-UNCLEAR** (XO ruled out by negative-screen PMID 17666819 Mo 2007; no transporter evidence; NLRP3 mechanism off-panel). Echinacoside = **MECHANISM-UNCLEAR**. |
+| **Key finding (v2)** | **v2 = added XO target after v1 missed eurycomanone XO inhibition mechanism trigger.** The XO trigger turned out to be a citation-laundering artifact (PMID 31920654 / 34785103 establish transporter+purine-synthesis modulation, NOT direct XO inhibition for eurycomanone), but adding XO to the panel was still correct — XO is load-bearing for any urate-axis scan (allopurinol/febuxostat target, classical TCM compound mechanism). **v2 dual contribution: panel completeness (XO column) + eurycomanone evidence reversal.** v1 PubMed search missed PMID 31920654 — the v1 "cordycepin uniquely positioned" framing was an artifact of search recall, not biology. v2 finds 5 direct-evidence cells (vs v1's 1); eurycomanone is now better-characterized than cordycepin on the urate axis. **New chokepoint candidate surfaced: PRPS (phosphoribosyl pyrophosphate synthetase)** — eurycomanol mechanism per PMID 34785103, distinct from XO downstream catabolism. |
+| **Informs** | [`androgen-natural-modulation.md`](./androgen-natural-modulation.md) §10 H-AN-02 — partially falsifies "cordycepin uniquely positioned" framing AND surfaces a citation-laundering audit point on the §1.7 eurycomanone XO claim; [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) — anchors cordycepin URAT1 + supplementary XO data; [`androgen-urate-axis.md`](./androgen-urate-axis.md) — the v2 eurycomanone evidence reversal weakens the v1 mechanistic-extrapolation that drove eurycomanone's UNFAVORABLE verdict; future panel candidate: PRPS chokepoint scope page. |
+| **Experiment folder** | [`experiments/comp-015-t-axis-adjuvant-urate-mapping/`](../experiments/comp-015-t-axis-adjuvant-urate-mapping/) |
+| **Interpretive wiki page** | [`wiki/t-axis-adjuvant-urate-mapping-computational.md`](./t-axis-adjuvant-urate-mapping-computational.md) |
+| **Date** | 2026-05-07 (v1 + v2 same day) |
+| **Status** | Complete (v2). v2 = added XO target after v1 missed eurycomanone XO inhibition mechanism. v2 substantively reverses eurycomanone v1 verdict (UNFAVORABLE → FAVORABLE) via newly-surfaced PMID 31920654 / 34785103 transporter + purine-synthesis evidence. |
+
+---
+
+### comp-016 — T × Intestinal ABCG2 Suppression Evidence Mining
+
+| Field | Value |
+|---|---|
+| **Question** | Does primary literature support the load-bearing platform-thesis claim that androgens directly suppress intestinal ABCG2 expression at magnitudes consistent with a structural ceiling on the gut-lumen-sink platform efficacy in male/androgen-dominant patients? |
+| **Method** | Targeted PubMed scan (2026-05-07) + WebSearch-summary aggregation across six SKILL-prompt sub-questions (animal-model castration studies, sex-stratified human studies, renal vs intestinal compartment, sex difference magnitude, ADT cohorts, receptor mechanism). 17 curated studies tagged per-tissue / per-evidence-tier / per-direction-of-effect. Load-bearing-for-intestinal-claim flag = (intestinal tissue measured) ∧ (hormone OR genotype manipulation) ∧ (ABCG2 readout). Verdict logic: count of supporting vs contradicting studies in the load-bearing subset. |
+| **Verdict** | **WEAK / UNCONFIRMED (provisional — abstract-level scan only, full-text grep-verification pending).** Of 17 studies, **zero** primary studies demonstrate androgen-driven intestinal ABCG2 suppression directly. 1 study supports broader sex-dimorphism (Hoque 2020 Nature Communications PMID 32488095 — Q140K mouse, 88% intestinal ABCG2 protein loss in males, females protected). 1 supports female-positive arm (Yu 2021 PMID 34144706 — estradiol ↑ intestinal ABCG2 via PI3K/Akt). 1 directly contradicts at in vitro intestinal level (Klyushova 2023 — T INDUCES ABCG2 in Caco-2 via PXR/FXR). 1 explicit null finding for sex difference at healthy rat intestinal baseline (MacLean 2008 PMID 18378562). |
+| **Key finding** | The intestinal compartment IS sex-dimorphic in a urate-relevant way, but the directional driver appears to be **estradiol POSITIVE on the female side** (Yu 2021 PI3K/Akt), not **androgen NEGATIVE on the male side**. The platform-thesis "structural ceiling from androgen-driven ABCG2 suppression" framing should be softened to "modest dose-response shift driven by absent estradiol-positive signaling in male physiology." Sakamoto 2018 ADT cohort (−0.66 mg/dL serum UA at 6 months ADT, n=489) is real and clinically meaningful but the magnitude is consistent with URAT1-only renal mechanism; intestinal ABCG2 is not separately measured in any human cohort. No direct AR-ARE on the ABCG2 promoter has been identified — closest mechanism is the indirect Jeong 2015 LNCaP CREB/CRTC2 axis (cancer-cell context, not enterocyte). |
+| **Informs** | [`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Mechanism — hormones steer the transporters" + §"Why this matters for the platform" — softens the load-bearing claim that triggered this scan; [`abcg2-modulators.md`](./abcg2-modulators.md) §1 (Androgens entry) — softens the AR-mediated repression framing; [`gut-lumen-sink.md`](./gut-lumen-sink.md) — softens male-asymptote framing; [`koji-endgame-strain.md`](./koji-endgame-strain.md) §1 + [`cross-validation.md`](./cross-validation.md) Claim 1 if they cite the structural-ceiling argument. |
+| **Experiment folder** | [`experiments/comp-016-t-abcg2-suppression-evidence-mining/`](../experiments/comp-016-t-abcg2-suppression-evidence-mining/) |
+| **Interpretive wiki page** | [`wiki/t-abcg2-suppression-evidence-mining-computational.md`](./t-abcg2-suppression-evidence-mining-computational.md) |
+| **Date** | 2026-05-07 |
+| **Status** | Complete (with verification-pending caveat — magnitudes are abstract-level / WebSearch-summary-level, not full-text grep-verified per [`manual-literature-mining.md`](./manual-literature-mining.md) §Pre-commit verification gate; multilingual scan also deferred to Phase 2) |
+
+---
+
 ### comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping
 
 | Field | Value |

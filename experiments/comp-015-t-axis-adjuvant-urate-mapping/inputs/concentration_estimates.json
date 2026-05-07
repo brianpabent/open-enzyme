@@ -1,0 +1,81 @@
+{
+  "description": "Achievable plasma + gut-luminal concentration estimates for each compound at typical oral supplement dose. Same model as comp-013/comp-004: Cmax_plasma ≈ dose × F / (Vd × BW); gut_lumen ≈ dose × (1 - F) ÷ 250 mL; bounded by intestinal solubility. Vd = 1 L/kg polyphenol/quassinoid default; BW = 70 kg adult; lumen volume = 250 mL (small-intestine working volume). All BA values cited from inputs/compounds.json with primary-source PMIDs.",
+  "fetch_date": "2026-05-07",
+  "model_parameters": {
+    "small_intestine_lumen_volume_L": 0.25,
+    "vd_typical_L_kg": 1.0,
+    "body_weight_kg": 70,
+    "vd_total_L": 70,
+    "model_caveats": [
+      "Polyphenol Vd ~1 L/kg is order-of-magnitude; real Vd varies. Use as bounded estimate.",
+      "Cmax single-dose; chronic supplementation can give different steady-state.",
+      "Gut-luminal estimate assumes dissolution-limited; for very-poorly-soluble compounds capped at solubility (none of these four are solubility-limited at typical dose).",
+      "For cordycepin specifically: PMC6823370 (Sci Rep 2019) showed NO INTACT cordycepin in systemic circulation after oral gavage in rats; the 2% BA estimate in compounds.json is a working bound (the metabolite 3'-deoxyinosine is what reaches systemic circulation, and may be reactivated). Whole-fermentate Cordyceps with native pentostatin co-delivery is plausibly higher than 2% — open uncertainty per medicinal-mushroom-complement-track.md."
+    ]
+  },
+  "estimates": [
+    {
+      "compound": "Cordycepin",
+      "dose_mg": 50,
+      "molecular_weight_g_mol": 251.24,
+      "ba_fraction": 0.02,
+      "absorbed_mg": 1.0,
+      "cmax_plasma_mg_L": 0.0143,
+      "cmax_plasma_uM": 0.057,
+      "cmax_plasma_uM_caveat": "Working estimate using F=2%. Real human Cmax of intact cordycepin from purified-cordycepin oral may approach zero per PMC6823370 rat data. Whole-fermentate Cordyceps + pentostatin pairing plausibly raises this 5-10× — open question.",
+      "gut_lumen_mass_mg": 49.0,
+      "gut_lumen_mg_L": 196.0,
+      "gut_lumen_uM": 780.0,
+      "gut_lumen_caveat": "Solubility >5 g/L; not solubility-limited. ADA-deamination in gut + first-pass hepatic metabolism rapidly degrade intact cordycepin during transit — actual gut-luminal residence time of intact cordycepin much shorter than transit time. Estimate is upper-bound dose-density, not steady-state.",
+      "primary_source_pk_pmid": "PMC6823370 / 31654017 (Sci Rep 2019); PMID 36377517 (UHPLC-HRMS/MS rat blood); PMID 20302371 (Pharmacokinetics of cordycepin in rat)"
+    },
+    {
+      "compound": "Eurycomanone",
+      "dose_mg": 200,
+      "molecular_weight_g_mol": 408.40,
+      "dose_pure_eurycomanone_mg_per_200mg_extract": 2.0,
+      "dose_used_for_calculation_note": "200 mg standardized Physta extract (~1% eurycomanone) → ~2 mg pure eurycomanone. Calculations below use the 2 mg pure-eurycomanone figure to avoid overstating systemic exposure of the active principal.",
+      "ba_fraction": 0.105,
+      "absorbed_mg": 0.21,
+      "cmax_plasma_mg_L": 0.003,
+      "cmax_plasma_uM": 0.0073,
+      "cmax_plasma_uM_caveat": "Calculation: 2 mg × 0.105 / 70 L = 0.003 mg/L = 7.3 nM. **Cross-check against PMID 16206032 primary data**: rat oral PK reports Cmax ≈ 0.33 µg/mL = 0.33 mg/L = 808 nM (at higher mg/kg dose). **Disagreement scale: ~100×.** Resolution: the rat PK was at much higher mg/kg (typically 100 mg/kg PO); scaling to 2 mg pure eurycomanone in a 70 kg human equivalent (~0.03 mg/kg) gives a much smaller Cmax. Both estimates are bounded; the human-equivalent ~7-10 nM range is consistent with ~50× lower dose × ~10% BA. **Real measured human Cmax data for eurycomanone is sparse — open gap.** ",
+      "gut_lumen_mass_mg": 1.79,
+      "gut_lumen_mg_L": 7.16,
+      "gut_lumen_uM": 17.5,
+      "gut_lumen_caveat": "Calculated for pure eurycomanone (2 mg dose × 0.895 unabsorbed / 0.25 L). 17.5 µM is a non-trivial gut concentration but eurycomanone has no characterized gut-target activity.",
+      "primary_source_pk_pmid": "PMID 16206032 (Low 2005 Planta Med — primary BA paper); PMID 29997335 (Han 2015 — replication 11.8% BA)"
+    },
+    {
+      "compound": "Icariin",
+      "dose_mg": 30,
+      "molecular_weight_g_mol": 676.66,
+      "ba_fraction": 0.012,
+      "ba_caveat": "1.2% is intermediate between intact-icariin Cmax (0.1%) and total-flavonoid-derived recovery (12%, dominated by icariside II metabolite). The PHARMACOLOGICALLY-RELEVANT systemic species is actually icariside II / icaritin — not parent icariin — per Xu 2017 PMID 29259982 (91.2% icariin → icariside II in vivo).",
+      "absorbed_mg": 0.36,
+      "cmax_plasma_mg_L": 0.00514,
+      "cmax_plasma_uM": 0.0076,
+      "cmax_plasma_uM_caveat": "Icariin parent Cmax cross-check: PMID 29259982 reports Cmax of icariin parent = 27.20 ng/mL = 0.027 mg/L ≈ 40 nM at 30 mg/kg PO in rats. At 30 mg human dose (~0.4 mg/kg), human Cmax of intact parent ~0.5-1 nM if scaled. **Most icariin is converted to icariside II in gut microbiome (91.2%).** The relevant 'systemic flavonoid' may be icariside II at ~30 nM Cmax (PMID 29259982). For the URAT1/ABCG2/OAT1 target panel, icaritin (the further-metabolized aglycone) has its own distinct PK.",
+      "gut_lumen_mass_mg": 29.64,
+      "gut_lumen_mg_L": 118.6,
+      "gut_lumen_uM": 175.3,
+      "gut_lumen_caveat": "Substantial gut-luminal exposure (175 µM). However, icariin is rapidly deglycosylated by gut microbiota to icariside II / icaritin within hours, so 175 µM is a peak transient density; steady-state intact icariin concentration is much lower.",
+      "primary_source_pk_pmid": "PMID 29259982 (Xu 2017, BioMed Res Int — primary icariin PK in rat); PMID 26633326 (Cheng 2015 Molecules — icariin vs icariside II PK comparison)"
+    },
+    {
+      "compound": "Echinacoside",
+      "dose_mg": 75,
+      "molecular_weight_g_mol": 786.73,
+      "ba_fraction": 0.0083,
+      "absorbed_mg": 0.62,
+      "cmax_plasma_mg_L": 0.00889,
+      "cmax_plasma_uM": 0.0113,
+      "cmax_plasma_uM_caveat": "Calculation: 75 × 0.0083 / 70 = 0.0089 mg/L = 11 nM. Cross-check: PMID 16931184 reports rat Cmax 612 ng/mL at 100 mg/kg PO = 612/786.73 × 1000 nM ≈ 778 nM. Scaling to ~1 mg/kg human-equivalent: ~10 nM. Consistent. **Plain extract systemic concentration is in low-nM range — well below any plausible transporter IC50 (sub-µM at best).** Phospholipid-complex / co-formulation can raise BA 1.4-2.6× (PMID 25686726, PMC4544722) but does not cross 100 nM threshold at typical dose.",
+      "gut_lumen_mass_mg": 74.4,
+      "gut_lumen_mg_L": 297.5,
+      "gut_lumen_uM": 378.1,
+      "gut_lumen_caveat": "High gut-luminal density (378 µM). Microbiota deglycosylate echinacoside to caffeic acid + hydroxytyrosol metabolites — the 'systemic compound' from echinacoside is variable by microbiome composition.",
+      "primary_source_pk_pmid": "PMID 16931184 (Jia 2006 — primary echinacoside BA in rat); PMID 25686726 (Wang 2015 — phospholipid complex enhancement); PMC4544722 (verapamil/clove oil enhancement)"
+    }
+  ]
+}
