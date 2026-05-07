@@ -3822,6 +3822,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#killshot-tiering-pick-the-lowest-cost-experiment-that-resolves-the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Killshot tiering — pick the lowest-cost experiment that resolves the question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#specific-oe-questions-worth-paperclip-search-and-verify-time" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4066,6 +4077,78 @@
 <p>The 2026-05-05 sweep daemon caught the inconsistency the next day (Sweep A Connection 2: chaperone framework had "8 (4 SCRs × 2 disulfides each)," comp-012 + H05 had "12") and surfaced it as a Priority Action. Verification against UniProt P08174 during the 2026-05-06 walkthrough confirmed 8 DISULFID feature annotations across SCR1-4 (the canonical sushi/CCP fold: Cys1-Cys3 + Cys2-Cys4 motif, 2 per domain).</p>
 <p>If the pre-commit verification gate had been in place when comp-012 was authored, the number would have been grep-verified against UniProt at write-time and the wrong claim would never have shipped. The sweep would still have run, but it wouldn't have needed to find this class of error — only genuine cross-doc synthesis findings.</p>
 <p>This rule generalizes: <strong>the sweep daemon should be catching novel cross-doc connections, not catching fabricated coefficients.</strong> Numerical hygiene is upstream of synthesis.</p>
+<hr />
+<h2 id="killshot-tiering-pick-the-lowest-cost-experiment-that-resolves-the-question">Killshot tiering — pick the lowest-cost experiment that resolves the question<a class="headerlink" href="#killshot-tiering-pick-the-lowest-cost-experiment-that-resolves-the-question" title="Permanent link">&para;</a></h2>
+<p>Sister discipline to the pre-commit verification gate: <strong>before declaring an experiment as the "killshot" for an open hypothesis, walk a cost ladder and pick the lowest-tier option that resolves the question above noise floor for the platform's purposes.</strong> The default "killshot" definition in institutional research is grant-tier ($50K–$500K mouse / cell-line / cohort study). For an open-source citizen-science project run by a CTO not a pharma lab, that default is wrong — both literally too expensive AND epistemically over-specified relative to the decision the experiment is supposed to inform.</p>
+<p><strong>The OE killshot tier menu:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Cost</th>
+<th>Time</th>
+<th>Source / route</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tier 0</strong></td>
+<td>$0</td>
+<td>hours-days</td>
+<td>Public dataset mining; full-text re-read of papers comp-NNN got at abstract-level; published-data synthesis</td>
+<td>GTEx + Human Protein Atlas sex-stratified expression mining; GWAS catalog lookup; UniProt feature-annotation queries; full-text retrieval via Sci-Hub / Anna's Archive of papers cited only at abstract-tier; Mendelian randomization via published MR-Base summary statistics</td>
+</tr>
+<tr>
+<td><strong>Tier 1</strong></td>
+<td>$200–500</td>
+<td>days-weeks</td>
+<td>Leverages existing self-experiment infrastructure</td>
+<td>n=1 LabCorp / Quest panels (FEUA, hs-CRP, hormone panels); 16S microbiome OTU mining if the panel is already running; spot urinary biomarker measurements; serum-panel snapshots with pre-committed protocol</td>
+</tr>
+<tr>
+<td><strong>Tier 2</strong></td>
+<td>$0–500</td>
+<td>weeks</td>
+<td>Crowdsourced / community-leveraged</td>
+<td>Recruiting men's-health forum cohorts to share LabCorp panels; Twitter/Reddit-based n&gt;&gt;1 cohort assembly; community-sourced patient-reported outcomes; OSF-style collaborative protocols on existing self-experimenter populations</td>
+</tr>
+<tr>
+<td><strong>Tier 3</strong></td>
+<td>$2–5K</td>
+<td>4–12 weeks</td>
+<td>Friendly bench (community college, undergrad thesis, sympathetic small lab)</td>
+<td>Caco-2 / HEK293 / HepG2 cell-culture work with consumables-only budget; small-scale Western blot / qPCR / ELISA assay; tissue-culture collaboration where the academic partner has the equipment and the OE side funds reagents</td>
+</tr>
+<tr>
+<td><strong>Tier 4</strong></td>
+<td>$5–15K (academic collaborator) / $30–60K (institutional)</td>
+<td>8 weeks–3 months</td>
+<td>Academic-collaboration animal study / formal cell-line work / contracted assay</td>
+<td>Mouse castration + replacement studies via academic IACUC-protocol-leveraged route; published-with co-authorship arrangement; CRO-tier work (the institutional baseline) is the last resort</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The discipline:</strong> before promoting an experiment to "killshot" status, walk the ladder Tier 0 → Tier 4 and ask at each tier <em>"could I resolve this question above noise floor without spending more?"</em> Default to the lowest tier that answers yes. The mouse experiment is rarely the right first move for an OE-tier question; it is sometimes the right last move.</p>
+<p><strong>Why this matters specifically for OE:</strong></p>
+<ol>
+<li><strong>Budget reality.</strong> OE is a CTO + AI-substrate research operation, not pharma. A daemon sweep costs ~$0.65; freaking out over a $50 sweep cost is the appropriate calibration. Proposing $30K+ experiments without walking the upstream cost ladder is a category error.</li>
+<li><strong>Tier 0 + Tier 1 frequently resolve the question.</strong> comp-016's verdict (T → intestinal ABCG2 suppression WEAK / UNCONFIRMED) was reached entirely from public-literature scanning — the question was already answered by Klyushova 2023, MacLean 2008, Hoque 2020, Yu 2021. <strong>The institutional-default mouse experiment was unnecessary; the answer existed.</strong> Tier 0 caught what Tier 4 would have only confirmed.</li>
+<li><strong>Existing self-experiment infrastructure makes Tier 1 nearly free.</strong> OE has running n=1 self-experiment protocols (<a href="../self-experiment-protocol/"><code>self-experiment-protocol.md</code></a>) with established lab-panel workflows. Adding a new measurement to that workflow costs $50–100 per data point, not $30K.</li>
+<li><strong>Crowdsourced cohorts produce real n&gt;&gt;1 evidence at $0 marginal cost.</strong> The men's-health, gout, and microbiome communities on Twitter / Reddit / Hone routinely share lab panels publicly. Treating that as a usable data source (with appropriate methodological caveats) is the open-source-platform thesis applied to evidence gathering.</li>
+<li><strong>The "killshot" framing should be: cheapest experiment that resolves the question, not biggest experiment that proves the answer beyond doubt.</strong> Falsification-card discipline (per <a href="../linter-design/"><code>linter-design.md</code></a>) is about <em>attempting</em> to falsify, not about overwhelming the question with budget. A $300 experiment that crosses a pre-committed threshold kills (or saves) a hypothesis as decisively as a $30K one.</li>
+</ol>
+<p><strong>Worked example — H07 Clomid intestinal-ER-antagonism thesis</strong> (<a href="../hypotheses/H07-clomid-intestinal-er-antagonism/"><code>hypotheses/H07-clomid-intestinal-er-antagonism.md</code></a>):</p>
+<ul>
+<li><strong>Tier 0:</strong> GTEx + HPA sex-stratified intestinal ABCG2 mining ($0); full-text re-read of the 4 anchor papers Klyushova 2023, MacLean 2008, Hoque 2020, Yu 2021 ($0). Estimated to resolve sub-claim 1 (does the PI3K/Akt → ABCG2 mechanism replicate in vivo?) and partially sub-claim 3 (is the renal arm enough?).</li>
+<li><strong>Tier 1:</strong> n=1 FEUA tracking on Clomid dose changes (~$300). Resolves sub-claim 3 for one individual definitively.</li>
+<li><strong>Tier 2:</strong> Crowdsourced clomiphene-vs-enclomiphene-vs-TRT cohort labs sharing ($0 in materials, weeks of community work). Resolves sub-claim 4 (the enclomiphene UA-direction question).</li>
+<li><strong>Tier 3:</strong> Caco-2 + SERM treatment ($2–5K). Resolves sub-claim 2 (intestinal ER tissue-specificity under clomiphene).</li>
+<li><strong>Tier 4:</strong> Mouse castration + T/E2 replacement + intestinal ABCG2 measurement ($5–15K via academic collaborator). Reserved as last resort.</li>
+</ul>
+<p>The Tier 0 + Tier 1 combination probably closes the H07 thesis at &gt;80% confidence for ~$300 + a week of analysis. Tier 4 is the institutional default; for OE it's the last resort, not the first move.</p>
+<p><strong>This discipline composes with the pre-commit verification gate.</strong> Both are "walk the checklist before shipping." The verification gate catches numerical hallucinations; the killshot tiering catches budget over-specification. Different failure modes; same shape of fix (named protocol, applied at the right moment in the workflow).</p>
+<p>For falsification-card stub authoring (per <a href="../hypotheses/"><code>hypotheses/README.md</code></a>), the killshot menu in the stub should be tier-explicit: each killshot listed with its cost tier, so the stub-to-full-card promotion can pick the right starting tier rather than defaulting to institutional.</p>
 <hr />
 <h2 id="specific-oe-questions-worth-paperclip-search-and-verify-time">Specific OE questions worth Paperclip search-and-verify time<a class="headerlink" href="#specific-oe-questions-worth-paperclip-search-and-verify-time" title="Permanent link">&para;</a></h2>
 <p>These are questions whose primary-literature grounding would meaningfully advance the platform but require non-trivial scanning. Listed here so they're discoverable as a queue (anyone reading this page can pick one up):</p>
