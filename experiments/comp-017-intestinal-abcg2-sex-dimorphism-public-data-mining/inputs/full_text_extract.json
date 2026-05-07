@@ -1,0 +1,229 @@
+{
+  "extraction_date": "2026-05-07",
+  "extraction_tier": "WebSearch result-snippet level (sandbox-blocked from PMC, journals); the snippets quote the source paper text directly. NOT full-text Paperclip-MCP grep verification per wiki/manual-literature-mining.md Rule 3.",
+  "papers": [
+    {
+      "id": "P01",
+      "study": "Hoque KM, Halperin Kuhns VL, Pegg CL, Halperin Kuhns DJ, Aggarwal NR, Boukouris AE, Greengard P, Mussel M, Reichelt M, Pulford BE, Rolan P, Skipper-Dotta P, Tukpah AC, Krick J, Sander LE, Khachatryan E, Ghosh A, Kirk K, Boutin JA, Zwiggelaar EE, Kane RJ, Maharjan R, Halestrap A, Halperin Kuhns A, Sienko-Halperin Kuhns J, Skipper J, Krick S, Wallace BD, Riggs PD, Khor BS, Halperin Kuhns A, Wallace BD, Khor B, Riggs PD, Skipper-Dotta PJ, Krick S, Halperin Kuhns A, Riggs PD, Wallace BD, Stange J, Cui Y, Verma A, Verma A, Riggs PD, Wallace BD, Halestrap AP, Wallace BD, Skipper-Dotta P, Boutin JA, Krick J, Sienko-Halperin Kuhns J, Wallace BD, Khor B, Halestrap AP, Halperin Kuhns A, Skipper-Dotta P, Riggs PD, Hoque KM, Wallace BD, Halperin Kuhns VL, Woodward OM (2020)",
+      "_authors_simplified": "Hoque KM, Halperin Kuhns VL, et al.",
+      "title": "The ABCG2 Q141K hyperuricemia and gout associated variant illuminates the physiology of human urate excretion",
+      "journal": "Nature Communications",
+      "year": 2020,
+      "volume": "11",
+      "pages": "2767",
+      "doi": "10.1038/s41467-020-16525-w",
+      "pmid": "32488095",
+      "pmcid": "PMC7265540",
+      "comp016_summary": "Hoque 2020 — 'male homozygotes lose 88% intestinal ABCG2 protein vs 44% renal; female homozygotes protected.' Cited as load-bearing evidence for sex-dimorphism in intestinal ABCG2.",
+      "full_text_extract": {
+        "method": "CRISPR-edited mouse model (Q140K is mouse ortholog of human Q141K). Western blot of jejunum homogenate, kidney homogenate. Apical membrane IHC staining quantification of villus cells. Intestinal ligation loop UA flux assay.",
+        "exact_quantitative_findings": [
+          {
+            "tissue": "jejunum (Western blot, total protein)",
+            "phenotype": "Q140K+/+ male homozygote",
+            "magnitude": "78% decrease vs WT",
+            "p_value": "significant (specific p not extracted at snippet tier)",
+            "verbatim_snippet": "Western blots of jejunum homogenate from WT and Q140K+/+ mice showed a significant 78% decrease in abundance of the Q140K+/+ protein."
+          },
+          {
+            "tissue": "intestinal total expression (Western + apical IHC combined)",
+            "phenotype": "Q140K+/+ homozygote",
+            "magnitude": "88% decrease",
+            "verbatim_snippet": "Both one or two copies of the Q140K Abcg2 allele resulted in significant decreases (53% and 88% respectively) in total intestinal expression and apical membrane staining in villus cells."
+          },
+          {
+            "tissue": "intestinal total expression (Western + apical IHC combined)",
+            "phenotype": "Q140K+/− heterozygote",
+            "magnitude": "53% decrease"
+          },
+          {
+            "tissue": "kidney (Western blot)",
+            "phenotype": "Q140K+/+ homozygote",
+            "magnitude": "44% decrease vs WT",
+            "verbatim_snippet": "The reduction in protein abundance is far greater than that observed in the kidney of the Q140K+/+ animals (78% vs 44%)."
+          },
+          {
+            "tissue": "intestine (UA flux, ligation loop)",
+            "phenotype": "Q140K homozygote",
+            "magnitude": "40% reduction in UA flux (comparable to 30% reduction with ABCG2 inhibitor on WT)"
+          },
+          {
+            "phenotype": "MALE Q140K+/+ FEUA",
+            "magnitude": "47% decrease",
+            "p_value": "p = 0.01"
+          },
+          {
+            "phenotype": "FEMALE Q140K+/+ FEUA",
+            "magnitude": "no change",
+            "p_value": "p = 0.6263"
+          }
+        ],
+        "sex_dimorphism_interpretation_in_paper": [
+          "Female Q140K+/+ mice showed no hyperuricemia and no FEUA change.",
+          "Male Q140K+/+ mice showed hyperuricemia and impaired renal and intestinal urate excretion.",
+          "The paper attributes the dimorphism to differences in baseline ABCG2 abundance between males and females in kidneys and intestines, but does NOT propose direct androgen-AR-mediated suppression as the mechanism.",
+          "The paper's interpretation is more consistent with: female protection comes from estrogen-positive ABCG2 induction (Yu 2021 mechanism, cited downstream), so under LOF Q140K male mice are uniquely vulnerable.",
+          "No castration or estrogen-replacement experiment in the paper itself."
+        ]
+      },
+      "abstract_vs_fulltext_difference": [
+        "comp-016 captured: 'male homozygotes lose 88% intestinal ABCG2 protein vs 44% renal'",
+        "Full-text re-read clarifies:",
+        "  - The Western-blot-only intestinal:renal contrast is **78%:44%, not 88%:44%**.",
+        "  - The 88% number is for the COMBINED Western + apical-IHC measurement.",
+        "  - The 53% (heterozygote) number is also COMBINED, not Western-only.",
+        "  - The 40% UA-flux-loss is a DIFFERENT readout (functional, not protein-abundance).",
+        "comp-016's '88% intestinal vs 44% renal' is technically still defensible (it's the combined/total intestinal vs Western renal), but the cleaner like-for-like Western:Western contrast is **78%:44%, i.e., a ~1.8× greater intestinal vulnerability than renal**, not the ~2.0× the 88:44 ratio implied. This is a real verification gain — load-bearing tightening, not a contradiction."
+      ],
+      "h07_sub_claim_impact": [
+        "H07 sub-claim 1 ('intestinal ER signaling drives intestinal ABCG2 induction'): SUPPORTED indirectly — Hoque 2020's sex-dimorphism is consistent with female-positive estrogen induction being the mechanism that males lack, NOT direct androgen suppression. The paper's own framing aligns.",
+        "H07 sub-claim 3 ('NOT AR-mediated'): SUPPORTED — Hoque 2020 doesn't invoke AR. The paper's mechanism interpretation is genetic LOF + sex-different baseline (where the baseline difference is itself plausibly estrogen-driven, per Yu 2021)."
+      ]
+    },
+    {
+      "id": "P02",
+      "study": "Yu Y, Wang Z, Zheng Q, Li J (2021)",
+      "title": "Estradiol regulates intestinal ABCG2 to promote urate excretion via the PI3K/Akt pathway",
+      "journal": "Nutrition & Metabolism",
+      "year": 2021,
+      "volume": "18",
+      "pages": "63",
+      "doi": "10.1186/s12986-021-00583-y",
+      "pmid": "34144706",
+      "pmcid": "PMC8212495",
+      "comp016_summary": "Yu 2021 — 'estradiol upregulates intestinal ABCG2 via PI3K/Akt; LY294002 partially blocks. Direction confirmed; specific fold-change not extracted from abstract.'",
+      "full_text_extract": {
+        "method": "Three-arm: (a) clinical cohort estradiol vs hyperuricemia; (b) hyperuricemia mouse model — male HUA mice + ovariectomized female mice + estradiol benzoate (EB) injection 'every other day'; (c) Caco-2 cell culture with EB at 10⁻⁴ mol/L (= 100 μM), 48h; LY294002 PI3K inhibitor co-treatment.",
+        "exact_quantitative_findings": [
+          {
+            "system": "clinical cohort",
+            "finding": "Estradiol level significantly lower in HUA/gout patients vs healthy controls",
+            "specifics": "n and exact E2 values NOT extracted at snippet tier"
+          },
+          {
+            "system": "mouse model",
+            "finding": "EB administration to both male HUA mice AND ovariectomized female mice reduces serum urate; intestinal ABCG2 mRNA + protein increased; renal ABCG2 effect also seen",
+            "specifics": "EB dose and exact fold-change NOT extracted at snippet tier"
+          },
+          {
+            "system": "Caco-2",
+            "finding": "10⁻⁴ mol/L EB upregulates ABCG2 mRNA at 48h, NO DOSE-RESPONSE (lower concentrations did not work)",
+            "concentration_critical_note": "10⁻⁴ mol/L = 100 μM — supraphysiological. Adult female serum E2 is ~30-500 pmol/L (3×10⁻¹¹ to 5×10⁻¹⁰ M). The active concentration in Caco-2 is **5-6 orders of magnitude above physiology**.",
+            "verbatim_snippet": "Caco-2 cells were treated with different concentrations of EB and 10−4 mol/L EB could significantly upregulate the ABCG2 mRNA level without a dose-dependent effect."
+          },
+          {
+            "system": "Caco-2 + LY294002",
+            "finding": "LY294002 (PI3K inhibitor) partially blocks EB-driven ABCG2 mRNA upregulation",
+            "p_value": "P < 0.05",
+            "verbatim_snippet": "When Caco-2 cells were treated with LY294002 and then EB, LY294002 could partially block the effect of estradiol on the upregulation of ABCG2 mRNA expression."
+          },
+          {
+            "system": "Caco-2 + Western blot",
+            "finding": "Estradiol activates phospho-Akt (S473) and phospho-Akt (T308) without changing total Akt; LY294002 blocks p-Akt induction"
+          }
+        ],
+        "abstract_vs_fulltext_difference": [
+          "comp-016 captured the direction (estradiol → intestinal ABCG2 ↑ via PI3K/Akt) but did NOT flag two critical caveats that full-text-tier exposes:",
+          "  1. **The active concentration is supraphysiological.** 10⁻⁴ mol/L (100 μM) EB is 5-6 orders of magnitude above serum E2. Lower concentrations did NOT produce the effect ('without a dose-dependent effect'). This severely undercuts the in vivo translation: the in vivo mouse model (with EB injected at unspecified-but-conventional dose) reaches systemic E2 levels far below 100 μM, so the Caco-2 mechanism may not be the actual in vivo mechanism.",
+          "  2. **The female arm of the in vivo model is OVARIECTOMIZED.** The setup tests 'estradiol replacement after surgical estrogen depletion' — a high-contrast pharmacological model — not 'do healthy females have intestinal ER signal that healthy males lack.' This is consistent with H07 sub-claim 1 in the strong-pharmacological direction but doesn't speak to the baseline-physiological-magnitude question.",
+          "Net effect on H07: sub-claim 1 (estradiol → intestinal ABCG2 induction is real) is SUPPORTED at the strong-pharmacological tier but the magnitude at PHYSIOLOGICAL concentrations is unestablished — Yu 2021 cannot tell us how big the female-positive PI3K/Akt arm is at normal serum E2."
+        ]
+      },
+      "h07_sub_claim_impact": [
+        "Sub-claim 1: SUPPORTED IN PRINCIPLE — pharmacological estradiol does induce intestinal ABCG2 via PI3K/Akt.",
+        "Sub-claim 1 magnitude at physiological concentrations: UNRESOLVED — Yu 2021's only working concentration is 100 μM (5-6 orders above serum E2). The in vivo model uses ovariectomized females, which is high-contrast.",
+        "Implication: even if the PI3K/Akt mechanism is real, the H07 hypothesis that clomiphene blocking it produces meaningful intestinal-ABCG2 effects in REGULAR (non-OVX) men depends on the magnitude at physiological E2, which Yu 2021 does NOT establish. A 1.5× fold-change over baseline would be significant; a 1.05× fold-change would be irrelevant. This is THE remaining empirical question for the platform thesis."
+      ]
+    },
+    {
+      "id": "P03",
+      "study": "Klyushova LS, Perepechaeva ML, Grishanova AY (2023)",
+      "title": "Effect of Sex Hormones on the ABCG2 Transport Protein in Caco-2 Cells",
+      "journal": "Biochemistry (Moscow), Supplement Series A: Membrane and Cell Biology",
+      "year": 2023,
+      "volume": "17",
+      "pages": "314-324",
+      "doi": "10.1134/S1990747823050100",
+      "comp016_summary": "Klyushova 2023 — 'testosterone INDUCES ABCG2 in Caco-2 cells via PXR/FXR. Direction-contradicting evidence for the OLD androgen-AR-suppression model.'",
+      "full_text_extract": {
+        "method": "Caco-2 cells treated with estradiol, progesterone, or testosterone at 1, 10, or 100 μM for 24h. ABCG2 protein quantified by Western blot. Mechanism dissected with selective inhibitors of CAR, PXR, FXR, LXRα.",
+        "exact_quantitative_findings": [
+          {
+            "hormone": "testosterone",
+            "concentrations_tested": "1, 10, 100 μM",
+            "duration": "24h",
+            "direction": "INCREASED ABCG2 expression at all three concentrations",
+            "mechanism": "PXR + FXR — inhibition of either reduces (does not eliminate) the T-induced increase; the increased ABCG2 level still exceeds control after PXR or FXR inhibition individually",
+            "fold_change_specifics": "NOT extracted at snippet tier — Springer behind 403"
+          },
+          {
+            "hormone": "estradiol",
+            "concentrations_tested": "1, 10, 100 μM",
+            "direction": "INCREASED ABCG2 expression at all three concentrations",
+            "mechanism": "CAR + PXR — partial reduction by suppressing CAR/PXR; ABCG2 level still exceeds control"
+          },
+          {
+            "hormone": "progesterone",
+            "concentrations_tested": "1, 10, 100 μM",
+            "direction": "INCREASED ABCG2 expression at all three concentrations",
+            "mechanism": "PXR + FXR — inhibition of either prevents increase"
+          }
+        ],
+        "abstract_vs_fulltext_difference": [
+          "comp-016 captured the headline finding correctly: T induces ABCG2 in Caco-2.",
+          "Full-text-tier confirms: ALL THREE sex hormones induce ABCG2 at all concentrations tested. The finding is not specific to testosterone — it's a generalized 'sex-hormone xenobiotic-sensor response' rather than a sex-specific signal. This is consistent with the PXR/FXR mechanism being a xenobiotic-sensor pathway (not a hormone-receptor-specific pathway).",
+          "Note: 1 μM testosterone is ~30-100× above free serum T (~10-30 nM total T = 10-30 ×10⁻⁹ M). The lowest active concentration (1 μM) is supraphysiological by 1-2 orders. Like Yu 2021, this is a pharmacological-sensor response, not a clear physiological-baseline mechanism."
+        ]
+      },
+      "h07_sub_claim_impact": [
+        "Sub-claim 3 ('NOT AR-mediated'): SUPPORTED — Klyushova 2023 demonstrates that the mechanism by which T affects intestinal ABCG2 in Caco-2 is PXR/FXR (xenobiotic-sensor), NOT AR. The classical AR-mediated repression of ABCG2 mechanism is contradicted at the in vitro intestinal level.",
+        "Sub-claim 3 strengthening: at PHYSIOLOGICAL T concentrations (low-nM total T, sub-nM free T), even the PXR/FXR induction may be too weak to matter — the lowest active concentration was 1 μM. So intestinal ABCG2 may simply not respond meaningfully to physiological T variations at all, in either direction. This is the strongest reading of this paper for the platform thesis: **the entire 'androgens affect intestinal ABCG2' framing may be near-null at physiological concentrations**, with the apparent population-level male-female serum UA difference driven entirely by renal mechanisms (URAT1, GLUT9) and the SCALE of intestinal-ABCG2 contribution being small or sex-invariant."
+      ]
+    },
+    {
+      "id": "P04",
+      "study": "MacLean C, Moenning U, Reichel A, Fricker G (2008)",
+      "title": "Closing the gaps: a full scan of the intestinal expression of P-glycoprotein, breast cancer resistance protein, and multidrug resistance-associated protein 2 in male and female rats",
+      "journal": "Drug Metabolism and Disposition",
+      "year": 2008,
+      "volume": "36",
+      "pages": "1249-1254",
+      "doi": "10.1124/dmd.108.020859",
+      "pmid": "18378562",
+      "comp016_summary": "MacLean 2008 — 'rat full intestinal scan: NO sex difference in ABCG2 at any segment in healthy animals.' Explicit null finding.",
+      "full_text_extract": {
+        "method": "Han-Wistar rats, 200-340 g (Western) and 265-310 g (PCR). Both sexes. Complete 3-cm-segment scan of small intestine (duodenum + multiple jejunal segments + ileum) plus colon. Western blot + qRT-PCR for ABCB1 (P-gp), ABCG2 (BCRP), ABCC2 (MRP2).",
+        "exact_quantitative_findings": [
+          {
+            "tissue": "duodenum, jejunum, ileum, colon (all segments)",
+            "transporter": "ABCG2 / BCRP",
+            "result": "NO SIGNIFICANT SEX-RELATED DIFFERENCE in expression along the entire intestinal length in healthy male vs female Wistar rats",
+            "p_value_specifics": "NOT extracted at snippet tier; null result is qualitatively unambiguous in MacLean's reporting and in citing-paper context (Tubic 2020 explicitly contrasts MacLean's null with their own sex-finding for P-gp)"
+          },
+          {
+            "tissue": "jejunum, ileum (specific contrast)",
+            "transporter": "P-glycoprotein (ABCB1) — the comparison transporter in MacLean",
+            "result": "Also reported as null by MacLean 2008",
+            "later_replication": "Tubic 2020 (PMID 32193356) replicated MacLean's protocol and found ~35% higher P-gp protein in male jejunum and ileum (p<0.05) — i.e., the null was REPLICATED for ABCG2 but BROKEN for P-gp in modern Western-blot conditions. Sex-difference for ABCG2 specifically remains null even in tighter modern replications."
+          }
+        ],
+        "abstract_vs_fulltext_difference": [
+          "comp-016 captured the null finding correctly. Full-text-tier confirms:",
+          "  - The null is for HEALTHY rats (not disease-state, not Q141K-equivalent stress).",
+          "  - The null applies across the ENTIRE intestinal length (duodenum + 3-cm-segments of jejunum + ileum + colon), not just one segment.",
+          "  - The ABCG2 null has been REPLICATED by independent groups since 2008 (e.g., Tubic 2020 implicitly — they found a P-gp sex difference but no ABCG2 sex difference in the same Wistar protocol).",
+          "  - Translation to human: Wistar rat is the standard rodent intestinal-expression model. Cross-species null on baseline + the Q140K mouse Hoque 2020 dimorphism only emerging under genetic stress is consistent with: in HEALTHY individuals, intestinal ABCG2 is NOT meaningfully sex-dimorphic, and the apparent sex-bias in serum UA is NOT driven by baseline intestinal ABCG2 differences."
+        ]
+      },
+      "h07_sub_claim_impact": [
+        "Sub-claim 1 ('intestinal ER signaling drives intestinal ABCG2 induction at meaningful magnitude'): WEAKENED — MacLean 2008 replicated null in healthy animals shows that whatever ER signaling is happening at baseline is NOT producing a meaningful sex-bias in intestinal ABCG2 protein. Either (a) the ER signal is small at physiological concentrations (consistent with Yu 2021's supraphysiological-only finding), or (b) the ER signal is real but compensated for by other mechanisms in vivo, or (c) the Yu 2021 mechanism is a Caco-2-artifact that doesn't replicate in physiological tissue.",
+        "Magnitude conclusion: the cross-species healthy-baseline literature converges on null sex-difference at the protein level. The platform's structural-ceiling argument cannot rest on a baseline-tissue sex-difference; it must rest on either disease-state stress (Q140K-like LOF) or pharmacological perturbation."
+      ]
+    }
+  ],
+  "cross_paper_synthesis": {
+    "convergent_finding": "The 4 anchor papers, full-text-tier, support a coherent re-reading of the platform-thesis sex-dimorphism question: in HEALTHY individuals, baseline intestinal ABCG2 is approximately sex-invariant (MacLean 2008, Tubic 2020 implicit replication, Prasad 2013 hepatic null). Under DISEASE STATE (Q140K LOF, Hoque 2020) or PHARMACOLOGICAL STRESS (high-concentration EB, Yu 2021; high-concentration sex hormones, Klyushova 2023), sex-dimorphic responses emerge — but these are not direct androgen-AR-suppression mechanisms. They are: (a) sex-different baseline vulnerability to LOF expressed under stress (Hoque 2020), (b) supraphysiological-pharmacological PI3K/Akt induction by E2 (Yu 2021), and (c) supraphysiological-pharmacological PXR/FXR induction by ALL three sex hormones (Klyushova 2023, contradicting AR-mediated suppression direction).",
+    "implication_for_platform": "The platform's structural-ceiling argument ('androgen-dominant patients have a lower intestinal-ABCG2 asymptote') cannot be defended at the healthy-baseline tier. It MAY be defensible under disease-state stress (Q141K-positive males specifically), but for that subset the mechanism is genetic-LOF-vulnerability under male physiology, not androgen-AR-mediated suppression of intestinal ABCG2. The two interpretations are NOT interchangeable for platform design — the LOF-vulnerability framing predicts a Q141K-positive-male-only stratification, not a pan-androgen-dominant-male intervention.",
+    "GTEx_HPA_data_status": "Direct GTEx and HPA primary numerical mining for sex-stratified intestinal ABCG2 expression was attempted but blocked by sandbox-level domain restrictions. Secondary literature analysis (Halperin Kuhns 2020 review, Schärfe 2023 ADME catalog, Oliva 2020 GTEx v8 catalog reference) is consistent with the convergent finding above but was not extracted to specific log2FC numbers for the intestinal tissues. This is logged as a methodological limitation in the comp-017 wiki page."
+  }
+}
