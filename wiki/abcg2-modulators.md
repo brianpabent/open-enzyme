@@ -92,11 +92,15 @@ This refinement matters because it untangles the wild-type induction mechanism f
 
 What is making the gate leaky in the typical gout patient:
 
-### 1. Androgens (T, DHT) — covered in [`androgen-urate-axis.md`](./androgen-urate-axis.md)
+### 1. Sex-dimorphic intestinal ABCG2 — covered in [`androgen-urate-axis.md`](./androgen-urate-axis.md)
 
-AR-mediated transcriptional repression of ABCG2 in gut and kidney. **Mechanistic Extrapolation + Animal Model** (rodent renal expression studies; primate physiology supports gut homology). Clinically anchored by ~0.3–0.8 mg/dL serum UA rise on physiological-replacement TRT, larger at supraphysiological doses (Clinical, observational + small RCTs).
+**[REFRAMED 2026-05-07 per [comp-016 evidence-mining](./t-abcg2-suppression-evidence-mining-computational.md).]** Earlier framing here described "AR-mediated transcriptional repression of ABCG2 in gut and kidney." The comp-016 17-study primary-literature scan found **zero** primary studies demonstrating direct androgen-driven suppression of intestinal ABCG2 in vivo. No published ChIP-seq locates a classical androgen response element on the ABCG2 promoter. The closest mechanistic anchor (Jeong 2015 LNCaP, PMID 25615818) is an indirect CREB/CRTC2 axis in **prostate cancer cells**, not intestinal epithelium. One in vitro study (Klyushova 2023 Caco-2) shows testosterone INCREASES ABCG2 via PXR/FXR — opposite direction to the prior framing. MacLean 2008 (PMID 18378562) found NO sex difference in healthy rat intestinal ABCG2 across all four segments.
 
-For SERMs (e.g., clomid) the androgen-driver effect is the same as exogenous TRT: clomid raises endogenous T → URAT1 up + ABCG2 down. (Mechanistic Extrapolation, supported by single-arm clinical observation.)
+**Updated framing:** Intestinal ABCG2 is sex-dimorphic in a urate-relevant way (Hoque 2020 Nat Commun PMID 32488095 — male Q140K mice show 88% intestinal ABCG2 protein loss + severe hyperuricemia; female Q140K mice protected), but the mechanistic driver is **estradiol POSITIVE on the female side via PI3K/Akt** (Yu 2021 Nutr Metab PMID 34144706, In Vitro + Animal Model; LY294002 partially blocks), not androgen NEGATIVE on the male side. The male-female asymptote difference at healthy baseline is empirically near-null (MacLean 2008) and only emerges under disease state (e.g., Q141K-positive gout patients per Hoque 2020). The renal arm of the androgen-urate axis IS partially supported (Hosoyamada/Takiue 2010 PMID 20589576: T → URAT1 mRNA in mouse kidney) — but this is renal, not intestinal.
+
+**Clinical-cohort anchoring** (cohort-level, mechanism-not-isolated-to-intestine): Sakamoto 2018 (PMID 30557349) reports −0.66 mg/dL serum UA at 6 months ADT (n=150 ADT vs 339 surgery); Yahyaoui 2008 PMID 18349066 confirms FtM cross-sex T administration raises serum UA + decreases FEUA over 2 years. These are real and clinically meaningful but consistent with URAT1 alone being the dominant transporter affected; they do NOT distinguish the intestinal ABCG2 mechanism. (Clinical — observational, not RCT.)
+
+For SERMs (e.g., clomid): the androgen-driver effect on **renal URAT1** is the same as exogenous TRT (clomid raises endogenous T → URAT1 mRNA up); the **intestinal ABCG2** arm of the prior framing is not directly supported by primary literature and should be considered open. (Mechanistic Extrapolation, supported by single-arm clinical observation; intestinal compartment uncertain.) [VERIFICATION-PENDING — comp-016 was abstract-level; full-text grep verification of Hoque 88%, Yu PI3K/Akt, MacLean null is deferred to a Paperclip-MCP follow-up. Direction of the verdict is robust to this caveat.]
 
 ### 2. Inflammation / TNFα
 
