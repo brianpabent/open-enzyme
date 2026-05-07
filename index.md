@@ -47,6 +47,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[SIBO](wiki/sibo.md)** — Lynn's condition; brush-border enzyme damage; NLRP3 involvement; KPV relevance
 - **[Fructose Connection](wiki/fructose-connection.md)** — Hidden gout accelerant: fructokinase (no negative feedback), ATP depletion cascade, GLUT9 dual transporter, KHK inhibitors
 - **[Androgen-Urate Axis](wiki/androgen-urate-axis.md)** — Sex-hormone layer on urate handling: testosterone ↑URAT1 / ↓ABCG2; estrogen opposite; SHBG and the bound/free picture; TRT/SERM/AAS/AI effects; post-menopausal convergence
+- **[PRPS / Purine Biosynthesis Chokepoint](wiki/prps-purine-biosynthesis-chokepoint.md)** — *(stub, 2026-05-07)* — Phosphoribosyl pyrophosphate synthetase as a distinct gout chokepoint class. Production-side ("make less purine in the first place") vs handling-side (URAT1/ABCG2/OAT1) vs catabolism-side (XO). Eurycomanol PRPS suppression (PMID 34785103) is the trigger anchor; fructose is the canonical pathological PRPP-elevation pathway. Surfaced from comp-015 v2 primary-source verification.
 
 ## Engineered Organisms & Platforms
 
