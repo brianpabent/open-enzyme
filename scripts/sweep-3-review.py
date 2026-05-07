@@ -312,16 +312,39 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
                   f"approaches budget {CUMULATIVE_CHAR_BUDGET:,}; forcing final response (no more tool calls)",
                   file=sys.stderr)
 
+        # Force a final response on the last allowed iteration OR when
+        # approaching the cumulative-size cap — no more tool calls accepted.
+        forcing_final = iteration == max_iterations or approaching_cap
+
+        # When forcing final output, append an explicit user instruction
+        # alongside tool_choice=none. tool_choice=none alone forbids tools
+        # but doesn't tell the model what to do instead — after extensive
+        # tool use, Opus has been observed to return content=null with
+        # finish_reason='stop' (no recovery path: there's no prior final
+        # content to fall back on, since tool-using rounds produce
+        # tool_calls, not reviews). The synthetic user message removes
+        # the ambiguity by stating the deliverable in the format the
+        # merge step expects. Observed failure: run abc8de9 (2026-05-07).
+        request_messages = _inject_cache_breakpoints(messages, model)
+        if forcing_final:
+            request_messages = list(request_messages) + [{
+                "role": "user",
+                "content": (
+                    "Research phase complete. Output the review blockquotes "
+                    "now, separated by `<<<NEXT>>>` markers (one per Pass 2 "
+                    "marker, in order). Do not request more tools. Begin "
+                    "your response with `> **Claude review —`."
+                ),
+            }]
+
         body = {
             "model": model,
-            "messages": _inject_cache_breakpoints(messages, model),
+            "messages": request_messages,
             "tools": TOOLS,
             "max_tokens": max_tokens,
             "temperature": 0.5,
         }
-        # Force a final response on the last allowed iteration OR when
-        # approaching the cumulative-size cap — no more tool calls accepted.
-        if iteration == max_iterations or approaching_cap:
+        if forcing_final:
             body["tool_choice"] = "none"
 
         resp = call_openrouter_raw(api_key, body)
