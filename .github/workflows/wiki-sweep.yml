@@ -387,22 +387,32 @@ jobs:
             exit 0
           fi
 
+          git add wiki/synthesis.md
+          git commit -m "sweep-3-review: Claude review of Gemini 2.5 Pro synthesis → wiki/synthesis.md [skip-wiki-sweep]"
+          REVIEW_COMMIT=$(git rev-parse HEAD)
+          echo "Pass 3 review commit: $REVIEW_COMMIT"
+
           # Update the sweep-state registry (component #2 of the sweep
           # automation architecture, scripts/SWEEP-ARCHITECTURE.md). The
           # registry is the canonical cursor — `last_successful_sweep` is
-          # updated only on Pass 3 success, atomically committed alongside
-          # the synthesis.md prepend in this same commit. This replaces the
-          # brittle `git log --grep='^sweep'` regex that the workflow's
-          # diff-base detection used to rely on.
+          # updated only on Pass 3 success. We point the cursor at the
+          # synthesis.md prepend commit we just made (REVIEW_COMMIT) rather
+          # than github.sha (the workflow trigger SHA), so that the cursor
+          # cleanly excludes Pass 1's propagation edits and Pass 2's log
+          # write. Otherwise the next call to `sweep-state.py pending-paths`
+          # would report Pass 1's wiki/*.md edits as a false-positive backlog
+          # immediately after the sweep finishes. This replaces the brittle
+          # `git log --grep='^sweep'` regex that the workflow's diff-base
+          # detection used to rely on.
           python3 scripts/sweep-state.py update-success \
-            --commit "${{ github.sha }}" \
+            --commit "$REVIEW_COMMIT" \
             --synthesis-log "$SYNTHESIS_LOG" \
             --trigger-files "$(echo "$TRIGGER_FILES" | tr '\n' ',' | sed 's/,$//')" \
             --run-id "${{ github.run_id }}" \
             --trigger "${{ github.event_name }}"
 
-          git add wiki/synthesis.md logs/sweep-state.json
-          git commit -m "sweep-3-review: Claude review of Gemini 2.5 Pro synthesis → wiki/synthesis.md [skip-wiki-sweep]"
+          git add logs/sweep-state.json
+          git commit -m "sweep-3-review: advance cursor to $REVIEW_COMMIT [skip-wiki-sweep]"
 
       - name: Push review
         run: |

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "77d0f6e9192b5d1be9adf1d6426cc89537474dae",
+    "commit": "6eced8cc47812c3a01644753012477214e53f47e",
     "timestamp": "2026-05-07T21:44:55Z",
     "synthesis_log": "logs/v4-synthesis-2026-05-07-77d0f6e.md",
-    "review_commit": "77d0f6e9192b5d1be9adf1d6426cc89537474dae",
+    "review_commit": "6eced8cc47812c3a01644753012477214e53f47e",
     "trigger_files": [
       "wiki/chaperone-orthogonal-stacking.md",
       "wiki/gout-pathophysiology.md",
