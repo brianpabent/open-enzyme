@@ -60,7 +60,7 @@ os.chdir(REPO_ROOT)
 
 DEFAULT_MODEL = "anthropic/claude-opus-4-7"
 DEFAULT_PROMPT = "scripts/sweep-prompt-3-review.md"
-MAX_TOOL_ITERATIONS = 8  # bound research depth; final response counts as "done"
+MAX_TOOL_ITERATIONS = 16  # bound research depth; final response counts as "done"
 
 PRICING_USD_PER_MTOK = {
     "anthropic/claude-sonnet-4-6":  (3.00, 15.00),
@@ -182,13 +182,17 @@ def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000):
     round-trip for the most likely sources.
 
     char_budget: hard cap on total inlined characters. Default 1.4M chars
-    ≈ 350K tokens. Pass 3 is agentic — the model can run up to 8 tool
+    ≈ 350K tokens. Pass 3 is agentic — the model can run up to 16 tool
     round-trips, each shipping the entire accumulated message history
     back to the model. A single round-trip with one wiki-file read +
-    intermediate reasoning consumes ~50-100K tokens. With 8 iterations
-    × ~75K = ~600K of round-trip overhead, plus the prompt template +
-    synthesis log + output generation, the initial inlined evidence must
-    leave ~600K headroom under Opus's 1M cap → ~350K initial inline cap.
+    intermediate reasoning consumes ~50-100K tokens. The cumulative-size
+    guard in run_agentic_review (CUMULATIVE_CHAR_BUDGET = 900K tokens)
+    force-finishes before Opus's 1M cap, so in practice the effective max
+    iters is bounded by cumulative cost: 350K initial + ~75K per round
+    ≈ 7-10 rounds before the guard fires. The 16-iter ceiling is a
+    safety net against runaway loops, not the binding constraint —
+    cumulative budget is. Bumped 8 → 16 (2026-05-07) after the
+    abc8de9 run hit the 8-iter cap before producing final output.
     Trigger files always inline (skipping a triggering file breaks the
     review's premise); cited files inline until budget, then are skipped
     with a notice (the model can still tool-fetch them).
