@@ -226,6 +226,8 @@ graph TB
         CH8["Huynh 2020 39.7 mg/L mAb ceiling — 2 PDI-heavy cassettes, NSlD-dP10 required"]
         CH9["Zhou 2016 — constitutive HacA in koji REDUCES amylase via RESS feedback"]
         CH10["Cross-class helper combinations (Pichia, 6.5-8.7×) — highest-leverage capacity expansion"]
+        CH11["Per-architecture PDI residence time (α coefficients) — CCP 0.3-0.6, Ig-like 1.0, transferrin-lobe 1.5-2.5"]
+        CH12["DAF SCR1-4 single-cassette routing — triple-cassette synergy 0.35-0.65 below 0.6 decision gate"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7, NEW)"]
@@ -462,7 +464,7 @@ graph TB
     %% (source: chaperone-orthogonal-stacking.md)
     %% Cassette → chaperone load mapping
     KE2 -->|"BiP-transit only (0 disulfides, 0 N-glycans)"| CH1
-    KE3 -->|"PDI-heavy (17 disulfides)"| CH2
+    KE3 -->|"PDI-heavy (16 disulfides per Notari 2023 PMC10465537; arch-adjusted effective load 24-40)"| CH2
     KE3 -->|"calnexin-moderate (3 N-glycans)"| CH3
     KE3 -->|"BiP-heavy (691 aa single chain)"| CH1
     KE4 -->|"bypasses secretion entirely (cytosolic)"| CH5
@@ -480,6 +482,9 @@ graph TB
     CH4 -->|"upregulates BiP, PDI, ERAD"| CH3
     CH9 -->|"rules out naive HacA-CA in koji (RESS feedback suppresses native amylase)"| CH4
     CH10 -->|"highest-leverage untested lever in koji (Pichia precedent)"| CH5
+    CH11 -->|"refines bulk disulfide count for PDI load prediction"| CH5
+    CH12 -->|"DAF SCR1-4 routed to separate strain per framework prediction"| CH5
+    CH12 -->|"wet-lab gate formalized as validation-experiments 1.25"| KE1
 
     %% Discovery engine → repurposing surface (source: open-enzyme-vision.md §2)
     DE1 -->|"produces"| DE2

@@ -42,38 +42,21 @@ One engineered *Aspergillus oryzae* koji strain expressing uricase + NLRP3 inhib
 
 ---
 
-## New This Week (2026-05-05)
+## New This Week (2026-05-07)
 
-The "Open Enzyme as gout-solving research project" framing got concrete this week — two new peer-track scope pages, four computational experiments, three new wet-lab queue entries, and an inbox-zero pass on the synthesis queue.
+This week's sweep was a propagation pass — seven trigger files, seven affected pages updated. The major changes:
 
-**Two new peer-track scope pages** (sister to the koji chassis under the broader gout-solving mission):
+**LF disulfide count correction (17→16) propagated across four pages.** Notari 2023 (PMC10465537) explicitly states 16 disulfides for human lactoferrin. The correction flows through [koji-endgame-strain.md](koji-endgame-strain.md), [lactoferrin.md](lactoferrin.md), [cassette-compatibility-computational.md](cassette-compatibility-computational.md), and [aspergillus-oryzae.md](aspergillus-oryzae.md). The architecture-adjusted effective PDI load for LF is 24–40 (16 disulfides × transferrin-lobe α = 1.5–2.5), substantially higher than the bulk count suggests. (source: chaperone-orthogonal-stacking.md §3.5, §10.2)
 
-- **[Engineered LBP Chassis](engineered-lbp-chassis.md)** — engineered obligate-anaerobe colonic residents (*F. prausnitzii*, *Akkermansia*, *Bacteroides*) as a commercial-pharmaceutical sub-track. Butyrate dual-action is the anchor: genotype-agnostic ABCG2 induction (WT via PPARγ + Q141K via class-I HDAC). Six in silico Phase 2 follow-ups queued; falsification card [H02](hypotheses/H02-engineered-lbp-thesis.md) committed at stub level.
-- **[siRNA / URAT1 Modality](sirna-urat1-modality.md)** — kidney-tropic siRNA against the dominant renal urate-reabsorption transporter, positioned as discovery-engine output (partner / spinout territory, not in-house manufacture). Sequence-specificity eliminates the off-target metabolite class that withdrew benzbromarone. Six Phase 2 follow-ups queued; falsification card [H03](hypotheses/H03-sirna-urat1-thesis.md) committed at stub level.
+**Chaperone-orthogonal stacking framework refined with per-architecture PDI residence time coefficients.** Three fold architectures scored: CCP/SCR sushi (α = 0.3–0.6), Ig-like (α = 1.0 reference), transferrin-lobe (α = 1.5–2.5). The triple-cassette prediction (uricase + Lf + DAF SCR1-4) revised from 0.45–0.70 to **0.35–0.65 (central 0.45–0.55)** — firmly below the 0.6 decision gate. DAF SCR1-4 routed to separate-strain or LBP-chassis peer track. (source: chaperone-orthogonal-stacking.md §3.5, §5.5)
 
-**Four new computational experiments** under the new `comp-NNN` framework — reproducible scripts + inputs + outputs committed; tracking index at [computational-experiments.md](computational-experiments.md):
+**DAF/CD55 SCR1-4 single-cassette wet-lab gate formalized** as [validation-experiments.md §1.25](validation-experiments.md). $2.5–4K, 6–8 weeks. Tests expression, correct disulfide folding (8 disulfides, corrected from 12 per UniProt P08174), and CCP-regulatory activity in *A. oryzae*. (source: validation-experiments.md §1.25, daf-cd55-scr14-truncated-computational.md §1.5)
 
-- **[comp-001 — Uricase shio-koji protease stability](uricase-protease-stability-computational.md)** — verdict **LOW**. Reframes the uricase arm of §1.10 from feasibility gate to confirmation experiment.
-- **[comp-005 — Lactoferrin shio-koji protease stability](lactoferrin-protease-stability-computational.md)** — verdict **HIGH (full sequence, signal-peptide-driven) / MODERATE (mature protein)**. Lactoferrin arm of §1.10 remains a feasibility gate.
-- **[comp-006 — DAF/CD55 shio-koji protease stability](daf-cd55-protease-stability-computational.md)** — verdict **HIGH** on all three scopes, driven by a disordered Ser/Thr stalk; SCR1–4 truncated construct (aa 35–285) would remove all exposed sites.
-- **[comp-007 — Food-grade HDACi in silico ranking](food-grade-hdaci-screen-computational.md)** — Stage 1 of §1.22. Butyrate dominates (167× HDAC6 selectivity confirmed); sulforaphane and PEITC advance to Stage 2 wet-lab.
+**Medicinal mushroom complement track expanded.** *P. citrinopileatus* (golden oyster) confirmed as highest fungal EGT producer at 7.0 mg/g DW (vs. *P. ostreatus* at 2.4 mg/g). Cordycepin koji-engineering route documented (cns1+cns2 in *A. oryzae* at 564 mg/L/day per Jeennor 2023 PMID 38071331) — sequential cultivation-first default with koji-engineering as documented contingency. GLPP+cordycepin synergy wet-lab gate refined to 4-arm comparison with the natural *C. militaris* pentostatin ADA-inhibitor pairing. Phase 7-4b follow-up (koji × mushroom additivity arm) queued. (source: medicinal-mushroom-complement-track.md, medicinal-mushroom-extract-sops.md)
 
-**Three new wet-lab queue entries** in [validation-experiments.md](validation-experiments.md):
+**Multi-track urate transporter coverage map** added to [gout-pathophysiology.md](gout-pathophysiology.md). Engineered koji, medicinal mushroom, and TCM × rigor tracks collectively cover URAT1, GLUT9, ABCG2, OAT1/OAT3, and xanthine oxidase — emergent designed-coverage, not planned. (source: gout-pathophysiology.md §"Multi-track urate transporter coverage")
 
-- **§1.22 — Gut-selective food-grade HDAC inhibitor screen** for Q141K-ABCG2 trafficking rescue (Stage 1 actioned via comp-007 above)
-- **§1.23 — Androgen × MSU × NLRP3 macrophage tiered protocol** (T1 THP-1 / T2 PBMC / T3 mouse air-pouch). Fills a documented literature gap — testosterone × MSU-crystal × NLRP3 in macrophages has zero indexed papers despite both halves being independently well-characterized.
-- **§1.24 — Carnosine co-expression validation in *A. oryzae*** (koji endgame optional third cassette — androgen-driven URAT1 countermeasure)
-
-**Other meaningful updates:**
-
-- **[Modality × Target Matrix](modality-chokepoint-matrix.md)** — new "Engineered soluble complement regulators" row closes the only "honest platform gap" (CP0 / complement priming) with a heterologous-protein engineering vector (sCR1, Factor H, DAF/CD55 ectodomain).
-- **[Lactoferrin](lactoferrin.md) §4.7** — new "Indirect Substrate-Supply Synergy" section: composed mechanism (lactoferrin → ↓TNFα → ↑ABCG2 expression → ↑uricase substrate). Validated in §1.14 Caco-2 design.
-- **[Koji Endgame Strain](koji-endgame-strain.md) §2.5 + §6.4** — new carnosine renal-transporter arm (precision countermeasure for androgen-dominant gout phenotype) and new "Peer Track — Engineered LBP Chassis" subsection framing the two-track platform model.
-- **[Self-Experiment Protocol](self-experiment-protocol.md) §11.1** — new ex vivo MSU PBMC challenge add-on for androgen-elevated subjects ($500–1K per quarterly panel).
-- **[Androgen-Urate Axis](androgen-urate-axis.md)** — new "Beyond transporters" section documenting the direct androgen → NLRP3 axis (bidirectional: anti-inflammatory in most tissues, pro-inflammatory in cardiac macrophages; gout-specific intersection unstudied).
-- **[Synthesis Queue](synthesis.md)** inbox-zero pass — 14-item sweep walked 1-by-1 and pruned; Strategic Reflections Queue added at the bottom for content-triggered platform reframes.
-
-Most weeks don't see this much movement; this was a focused walkthrough of two stale sweep blocks combined with ad-hoc work that emerged from a framing reframe ("Open Enzyme is the first chassis output of a broader gout-solving research project, not the project itself").
+**Concept graph updated** with new chaperone subsystem nodes (per-architecture α coefficients, DAF SCR1-4 single-cassette routing) and LF disulfide count correction. (source: GRAPH.md)
 
 ---
 

@@ -128,12 +128,12 @@ Uricase (*A. flavus uaZ*) ends in ...SKL — a canonical PTS1 peroxisomal target
 | Protein | Cysteines | Disulfides (UniProt) | Folding load (vs. Huynh = 1.00) | Fold risk |
 |---|---|---|---|---|
 | Uricase Q00511 | 3 | **0** | 0.00× | VERY LOW |
-| Lactoferrin P02788 | 33 | **17** | 1.06× | MODERATE |
-| Combined | 36 | **17** | **1.06×** | — |
+| Lactoferrin P02788 | 33 | **16** | 1.00× | MODERATE |
+| Combined | 36 | **16** | **1.00×** | — |
 
 Uricase is a disulfide-free enzyme — all three cysteine residues in the *A. flavus* sequence are free thiols, consistent with the intracellular homotetramer biology (no ER oxidative machinery required). This means the ER PDI/ERO1 burden of the dual-cassette strain is entirely attributable to lactoferrin.
 
-Lactoferrin's 17 disulfides (1.06× Huynh 2020 adalimumab baseline) fall within the demonstrated capacity of the *A. oryzae* NSlD-ΔP10 ER folding machinery. Huynh 2020 achieved 39.7 mg/L functional full-length adalimumab (16 disulfides, two chains) — confirming that this host's ER can correctly fold ~16–17 disulfide bonds simultaneously in a secreted mammalian-origin glycoprotein. Lactoferrin's 17 disulfides are concentrated in a single chain rather than split across two, which slightly increases the per-chain folding complexity but does not change the total oxidative load.
+Lactoferrin's 16 disulfides (1.00× Huynh 2020 adalimumab baseline) fall within the demonstrated capacity of the *A. oryzae* NSlD-ΔP10 ER folding machinery. Huynh 2020 achieved 39.7 mg/L functional full-length adalimumab (16 disulfides, two chains) — confirming that this host's ER can correctly fold ~16 disulfide bonds simultaneously in a secreted mammalian-origin glycoprotein. Lactoferrin's 16 disulfides are concentrated in a single chain rather than split across two, which slightly increases the per-chain folding complexity but does not change the total oxidative load. **Note:** LF disulfide count corrected from 17 to 16 per Notari 2023 (PMC10465537) — see [chaperone-orthogonal-stacking.md §10.2](./chaperone-orthogonal-stacking.md#102-architecture-coefficient-verification-provenance-added-2026-05-06). The architecture-adjusted effective PDI load for LF is 24–40 (16 disulfides × transferrin-lobe α = 1.5–2.5 per [chaperone-orthogonal-stacking.md §3.5](./chaperone-orthogonal-stacking.md)). (Mechanistic Extrapolation; source: chaperone-orthogonal-stacking.md)
 
 ### 5.5 N-Glycosylation
 
@@ -148,10 +148,10 @@ All three lactoferrin glycosylation sites are correctly predicted by the N-X-S/T
 
 | Axis | Uricase | Lactoferrin | Combined | Huynh 2020 baseline |
 |---|---|---|---|---|
-| Disulfides | 0 | 17 | **17** | 16 |
+| Disulfides | 0 | 16 | **16** | 16 |
 | N-glycosylation | ~0 (unoccupied) | 3 | **3** | 2 |
 | Codon burden | LOW (fungal) | LOW (proxy) / full-opt in practice | — | HEAVY (both mammalian) |
-| Folding load index | 0.00 | 1.06 | **1.06×** | 1.00 |
+| Folding load index | 0.00 | 1.00 | **1.00×** | 1.00 |
 
 **OE dual-cassette burden is essentially equal to or slightly below the Huynh 2020 adalimumab precedent.** Uricase contributes zero disulfide load (unlike adalimumab light chain which contributed 4–6 of the 16 disulfides). The combined glycosylation is 3 sites (slightly above Huynh's 2 Fc sites). Overall: the ER processing machinery faces a comparable or lighter folding load than it handled for adalimumab at 39.7 mg/L.
 
@@ -160,7 +160,7 @@ All three lactoferrin glycosylation sites are correctly predicted by the N-X-S/T
 | Dimension | OE pair | Huynh 2020 adalimumab |
 |---|---|---|
 | Protein origins | Fungal + Mammalian | Mammalian + Mammalian |
-| Total disulfides | 17 (all on Lf) | 16 (8 per chain) |
+| Total disulfides | 16 (all on Lf) | 16 (8 per chain) |
 | Glycosylation sites | 3 (Lf only) | 2 (Fc N297 ×2) |
 | Host strain | NSlD-ΔP10 (recommended) | NSlD-ΔP10 (required) |
 | Architecture | AmyB-KRGGG-Lf + direct uricase | AmyB-KRGGG-HC + AmyB-KRGGG-LC |
@@ -176,7 +176,7 @@ All three lactoferrin glycosylation sites are correctly predicted by the N-X-S/T
 
 **Comparable to Huynh:**
 - Same NSlD-ΔP10 host, same KRGGG linker KEX2 architecture, same dual-locus integration strategy.
-- Lactoferrin's per-chain disulfide complexity (~17 SS bonds in one chain) is analogous to adalimumab heavy chain's disulfide density in the Huynh 2020 system.
+- Lactoferrin's per-chain disulfide complexity (~16 SS bonds in one chain) is analogous to adalimumab heavy chain's disulfide density in the Huynh 2020 system.
 
 ---
 
