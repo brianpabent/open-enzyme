@@ -1,20 +1,30 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "6eced8cc47812c3a01644753012477214e53f47e",
-    "timestamp": "2026-05-07T21:44:55Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-07-77d0f6e.md",
-    "review_commit": "6eced8cc47812c3a01644753012477214e53f47e",
+    "commit": "440a73a335f4caf90e9333de615d0050a497e460",
+    "timestamp": "2026-05-07T23:17:42Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-07-abc8de9.md",
+    "review_commit": "440a73a335f4caf90e9333de615d0050a497e460",
     "trigger_files": [
-      "wiki/chaperone-orthogonal-stacking.md",
-      "wiki/gout-pathophysiology.md",
-      "wiki/medicinal-mushroom-complement-track.md",
-      "wiki/medicinal-mushroom-compound-mapping-computational.md",
-      "wiki/medicinal-mushroom-extract-sops.md",
-      "wiki/open-questions.md",
-      "wiki/validation-experiments.md"
+      "wiki/abcg2-modulators.md",
+      "wiki/androgen-natural-modulation.md",
+      "wiki/androgen-urate-axis.md",
+      "wiki/autonomous-screening-methodology.md",
+      "wiki/computational-experiments.md",
+      "wiki/cross-validation.md",
+      "wiki/gut-lumen-sink.md",
+      "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
+      "wiki/hypotheses/README.md",
+      "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
+      "wiki/koji-endgame-strain.md",
+      "wiki/manual-literature-mining.md",
+      "wiki/personal-genome-protocol.md",
+      "wiki/practitioner-toolkit.md",
+      "wiki/prps-purine-biosynthesis-chokepoint.md",
+      "wiki/t-abcg2-suppression-evidence-mining-computational.md",
+      "wiki/t-axis-adjuvant-urate-mapping-computational.md"
     ],
-    "run_id": "25522855762"
+    "run_id": "local-recovery-25525354463"
   },
   "recent_runs": [
     {
@@ -97,6 +107,15 @@
       "failed_phase": null,
       "trigger_paths_count": 7,
       "synthesis_log": "logs/v4-synthesis-2026-05-07-77d0f6e.md"
+    },
+    {
+      "run_id": "local-recovery-25525354463",
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-05-07T23:17:42Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 17,
+      "synthesis_log": "logs/v4-synthesis-2026-05-07-abc8de9.md"
     }
   ]
 }
