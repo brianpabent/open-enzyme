@@ -13,11 +13,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 '/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.claude/hooks/validate-commit-msg.py'"
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/validate-commit-msg.py\""
           },
           {
             "type": "command",
-            "command": "python3 '/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.claude/hooks/block-push-without-approval.py'"
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/block-push-without-approval.py\""
           }
         ]
       }
