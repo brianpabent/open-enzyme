@@ -90,17 +90,30 @@ jobs:
             CHANGED=$(echo "${{ inputs.trigger_paths }}" | tr ' ' '\n' | grep -v '^$' || true)
             DIFF_BASE="manual"
           else
-            LAST_SWEEP=$(git log --format='%H' --grep='^sweep' -n 1 || true)
-            if [[ -n "$LAST_SWEEP" ]]; then
-              DIFF_BASE="$LAST_SWEEP"
-              echo "Last sweep commit: $LAST_SWEEP"
-            else
-              DIFF_BASE="HEAD~1"
-              echo "No prior sweep commit found; diffing HEAD~1..HEAD"
+            # Read the canonical diff base from the sweep-state registry.
+            # This replaces the brittle `git log --grep='^sweep'` regex that
+            # used to live here — it accidentally matched human-authored
+            # walkthrough commits like "sweep items 4+12: ..." in addition
+            # to the daemon's own "sweep-1-propagate" / "sweep-3-review"
+            # commits, causing the workflow to pick a too-recent diff base
+            # and exit "No wiki changes to sweep" while real work sat
+            # un-synthesized. The registry's `last_successful_sweep.commit`
+            # is the authoritative cursor (updated atomically in Pass 3
+            # alongside the synthesis.md prepend — see scripts/sweep-state.py
+            # cmd_update_success).
+            if [[ ! -f logs/sweep-state.json ]]; then
+              echo "ERROR: logs/sweep-state.json is missing — cannot determine diff base."
+              echo "Run \`python3 scripts/sweep-state.py init\` to backfill from git history."
+              exit 1
             fi
-            CHANGED=$(git diff --name-only "$DIFF_BASE" HEAD 2>/dev/null \
-              | grep -E '^wiki/.*\.md$' \
-              | grep -v '^wiki/synthesis\.md$' || true)
+            DIFF_BASE=$(python3 -c "import json; d=json.load(open('logs/sweep-state.json')).get('last_successful_sweep') or {}; print(d.get('commit', ''))")
+            if [[ -z "$DIFF_BASE" ]]; then
+              echo "ERROR: sweep-state.json has no last_successful_sweep recorded."
+              echo "Run \`python3 scripts/sweep-state.py init\` to backfill."
+              exit 1
+            fi
+            echo "Last successful sweep (from registry): $DIFF_BASE"
+            CHANGED=$(python3 scripts/sweep-state.py pending-paths || true)
           fi
 
           if [[ -z "${CHANGED// /}" ]]; then
