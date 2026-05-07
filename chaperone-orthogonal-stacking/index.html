@@ -4540,8 +4540,25 @@
 <td>0</td>
 <td><strong>0</strong></td>
 </tr>
+<tr>
+<td><strong>Cordycepin biosynthesis</strong> (cns1+cns2; per Jeennor 2023 PMID 38071331)</td>
+<td>Bacterial (heterologous in <em>A. oryzae</em>)</td>
+<td>0</td>
+<td>0</td>
+<td>Cytosolic enzymes</td>
+<td>~390 + ~270 aa</td>
+<td>Cytosolic biosynthesis (small-molecule product secreted)</td>
+<td><strong>Bypasses secretion entirely</strong> — small-molecule product</td>
+<td>N/A (cytosolic)</td>
+<td>0</td>
+<td><strong>0</strong></td>
+</tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>Cross-chassis combinations are trivially off-framework.</strong> Compounds produced by a separate organism (e.g., cultivated <em>Cordyceps militaris</em> cordycepin, <em>Ganoderma lucidum</em> GLPP, <em>Pleurotus citrinopileatus</em> ergothioneine — see <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a>) impose <strong>zero</strong> chaperone load on the koji endgame strain because they are not co-expressed in koji at all. They appear in the consumer product as cultivated mushroom extracts paired with the engineered koji. No framework needed for that combination — the orthogonality is by virtue of separate chassis. The cordycepin row above scores the alternative <em>koji-engineering route</em> (Jeennor 2023's cns1+cns2 heterologous expression in <em>A. oryzae</em>); even that route is off the secretion/folding axis because cns1 and cns2 are bacterial cytosolic enzymes that never enter the ER.</p>
+<p><strong>Scope note — what this framework tracks and what it doesn't.</strong> The framework scores <strong>ER folding-machinery competition</strong> (PDI for disulfides, calnexin for N-glycans, BiP for general transit). It does <strong>not</strong> track generic proteome burden (ribosomes, amino acid pool, ATP for tRNA charging) imposed by cytosolic enzymes. For the current cassette stack, ER folding lanes are the binding constraint — koji's wild-type translation budget already supports ~30% secretion-dedicated output, so adding a ~400 aa cytosolic enzyme like cns1 is small change against the existing translation pool. If the platform later stacks multiple cytosolic biosynthesis clusters (e.g., cordycepin + a terpenoid pathway + a polyketide cluster), translation burden may become load-bearing — at that point a proteome-constrained metabolic model (pcSecKoji-style) is the correct upgrade per <a href="../synthesis/#strategic-reflections-queue"><code>synthesis.md</code> Strategic Reflections Queue §"Chaperone framework predictive-power validation"</a>.</p>
+</blockquote>
 <p>The pattern is striking: the <strong>Open Enzyme koji endgame strain is implicitly already a chaperone-orthogonal design.</strong> The five "molecules" of <a href="../koji-endgame-strain/">koji-endgame-strain.md</a> §1 distribute across non-overlapping load classes —</p>
 <ul>
 <li><strong>Uricase</strong>: BiP-transit only (zero disulfide, zero glycosylation, zero subunit assembly) — <em>this orthogonality is variant-specific to A. flavus (Q00511); the C. utilis variant (P78609) carries 4 free Cys that engage PDI/ERO1, partially collapsing the orthogonality. See <a href="../c-utilis-uricase-cassette-compatibility-computational/#44-chaperone-load-implications-cross-reference-to-chaperone-orthogonal-stacking-framework">comp-011 §4.4</a> for the bidirectional analysis. The §1.9 parallel head-to-head is the empirical resolver.</em></li>
