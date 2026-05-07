@@ -1,48 +1,20 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "b4a55fc5b88302be8c6501ca11c6a810fd640a4b",
-    "timestamp": "2026-05-06T20:38:07Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-06-121731c.md",
-    "review_commit": "b4a55fc5b88302be8c6501ca11c6a810fd640a4b",
+    "commit": "77d0f6e9192b5d1be9adf1d6426cc89537474dae",
+    "timestamp": "2026-05-07T21:44:55Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-07-77d0f6e.md",
+    "review_commit": "77d0f6e9192b5d1be9adf1d6426cc89537474dae",
     "trigger_files": [
-      "wiki/GRAPH.md",
-      "wiki/aspergillus-oryzae.md",
-      "wiki/bio-ai-tools.md",
-      "wiki/c-utilis-uricase-cassette-compatibility-computational.md",
       "wiki/chaperone-orthogonal-stacking.md",
-      "wiki/complement-c5a-gout.md",
-      "wiki/computational-experiments.md",
-      "wiki/daf-cd55-protease-stability-computational.md",
-      "wiki/daf-cd55-scr14-truncated-computational.md",
-      "wiki/digestive-enzyme-optimization.md",
-      "wiki/engineered-koji-protocol.md",
-      "wiki/engineered-lbp-chassis.md",
-      "wiki/engineered-yeast-uricase-proposal.md",
-      "wiki/enzyme-quantification-protocol.md",
-      "wiki/hypotheses/H01-ward-dual-cassette.md",
-      "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
-      "wiki/hypotheses/H06-medicinal-mushroom-complement-track.md",
-      "wiki/hypotheses/README.md",
-      "wiki/koji-endgame-strain.md",
-      "wiki/koji-home-fermentation.md",
-      "wiki/manual-literature-mining.md",
+      "wiki/gout-pathophysiology.md",
       "wiki/medicinal-mushroom-complement-track.md",
       "wiki/medicinal-mushroom-compound-mapping-computational.md",
       "wiki/medicinal-mushroom-extract-sops.md",
-      "wiki/modality-chokepoint-matrix.md",
-      "wiki/nlrp3-exploit-map.md",
-      "wiki/nlrp3-inhibitor-screen.md",
       "wiki/open-questions.md",
-      "wiki/open-source-platform.md",
-      "wiki/protein-engineering-strategy.md",
-      "wiki/saccharomyces-cerevisiae.md",
-      "wiki/sirna-urat1-modality.md",
-      "wiki/tcm-gout-compound-triage-computational.md",
-      "wiki/tcm-modern-rigor-intersection.md",
       "wiki/validation-experiments.md"
     ],
-    "run_id": "local-rebase-fix-1778099887"
+    "run_id": "25522855762"
   },
   "recent_runs": [
     {
@@ -116,6 +88,15 @@
       "failed_phase": null,
       "trigger_paths_count": 35,
       "synthesis_log": "logs/v4-synthesis-2026-05-06-121731c.md"
+    },
+    {
+      "run_id": "25522855762",
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-05-07T21:44:55Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 7,
+      "synthesis_log": "logs/v4-synthesis-2026-05-07-77d0f6e.md"
     }
   ]
 }
