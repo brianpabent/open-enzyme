@@ -36,15 +36,15 @@ The privacy threat model is **active**, not paranoid:
 | 2 | Sequencing.com / Dante / generic WGS services | Better but third-party-held; read TOS not marketing | $400–600 | WGS | "We don't sell your data" usually means "yet" |
 | 3 | Nebula Genomics | Privacy-architected (blockchain-gated access; you can host your own decrypted data) | $300–600 | WGS | Still a third party physically holds the sample |
 | 4 | **Clinical routing — physician-ordered CLIA WGS** | Best send-out option (HIPAA chain of custody; lab destroys sample) | $1,000–3,000 | WGS | Needs willing physician |
-| 5 | **MinION at home, basecall locally** | Self-sovereign — data never leaves your laptop | ~$1,100 setup + ~$200/run reagents | Long-read WGS | Higher per-base raw error; you do all the wet work |
+| 5 | **MinION at home, basecall locally** | Self-sovereign — data never leaves your laptop | **~$3,000+ setup** [VERIFIED 2026-05-07 — Nanopore Store entry-tier MinION bundles start over $3K; the historical "$1K MinION" marketing era is over. Per-bundle exact cost should be verified against [https://store.nanoporetech.com/minion.html](https://store.nanoporetech.com/minion.html) before purchase] + ~$200–300/run reagents | Long-read WGS | Higher per-base raw error; you do all the wet work |
 
-**Recommendation for Brian's threat model: Tier 5.** Same hardware doubles as Open Enzyme strain-QC infrastructure (see Project Crossover below). If short-read accuracy is later needed for a clinical-grade SNP confirmation (e.g., HLA-B*58:01 typing), do it Tier 4 (physician-routed) — never touch Tier 1.
+**Recommendation for the privacy-prioritizing self-experimenter: Tier 5** — but note that current Nanopore Store pricing has narrowed the cost gap with Tier 4 (physician-routed CLIA WGS $1,000–3,000) considerably. The Tier 5 case is now anchored less on "cheapest" and more on "self-sovereign data + dual-purpose hardware (Project Crossover below) + amortized cost across many runs." If short-read accuracy is later needed for a clinical-grade SNP confirmation (e.g., HLA-B*58:01 typing), do it Tier 4 (physician-routed) — never touch Tier 1.
 
 ## Kitchen-table setup
 
-### Hardware (one-time, ~$1,100)
-- Oxford Nanopore MinION Mk1B starter (~$1,000)
-- Laptop with NVIDIA GPU (8GB+ VRAM) for Dorado basecaller — local, no cloud round-trip
+### Hardware (one-time, ~$3,000+ for MinION starter; laptop + microcentrifuge separate)
+- **Oxford Nanopore MinION Mk1B starter pack (~$3,000+)** — [VERIFIED 2026-05-07 against [Nanopore Store](https://store.nanoporetech.com/minion.html); historical ~$1,000 starter pricing era is over. The corpus inherited the "$1K MinION" claim from earlier marketing material; current store-listed entry tier is meaningfully higher. Verify current bundle structure (device + flow cells + sequencing kits + accessories) before purchase. The Mk1C variant with embedded compute runs higher still; Mk1B requires GPU laptop.]
+- Laptop with NVIDIA GPU (8GB+ VRAM) for Dorado basecaller — local, no cloud round-trip. ~$1,500–3,000 if purchasing new; many CTO-tier self-experimenters already own one.
 - Microcentrifuge (used eBay, $100–200) — needed for library prep
 
 ### Per-run consumables (~$200–300/genome)
