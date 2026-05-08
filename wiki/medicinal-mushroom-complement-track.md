@@ -162,6 +162,19 @@ Consumer-grade mushroom supplements have known quality issues:
 
 **Open Enzyme's contribution to this track:** publish reproducible cultivation + extraction + characterization protocols. Strain selection criteria. HPLC/MS validation methods. Make a comp-014-style triage repeatable for any open-source contributor. The chemistry IS in the public domain — what's missing is the rigor.
 
+### Consumer-product caveat — structure-dependent β-glucan NLRP3 directionality (added 2026-05-08)
+
+**Mushroom β-glucans are not a monolithic anti-inflammatory class.** Their effect on the NLRP3 inflammasome is *structure-dependent* — different polysaccharide fractions from the same species can activate or inhibit NLRP3 depending on extraction method, branching pattern, and molecular weight.
+
+Per comp-014 Phase 5 ([medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)), as captured in [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md):
+
+- ***G. lucidum* exopolysaccharides (EPS)** — secreted polysaccharide fractions from liquid-fermentation broth — can **activate** NLRP3 via the Dectin-1 / Syk pathway. Wrong direction for a gout intervention.
+- ***G. lucidum* spore-powder β-glucans / GLP** — fractions from cracked-spore preparations or dual-decoction GLPP-enriched extracts — can **inhibit** NLRP3 (immune-training / Treg-induction mode of action). Right direction.
+
+**Why this matters for consumer products:** a generic "reishi extract 1000mg" capsule is opaque about which polysaccharide fraction it contains. EPS-dominant preparations and spore-powder/GLPP-dominant preparations are functionally different products at the NLRP3 axis, and a gout patient can inadvertently *worsen* inflammation by picking the wrong fraction. The dual-decoction extraction protocol in [SOP-1](./medicinal-mushroom-extract-sops.md) is specifically designed to enrich for the GLPP fraction, not whole-extract β-glucan; this is part of why "compound content uncharacterized" (#2 above) is load-bearing rather than cosmetic.
+
+**Propagation discipline:** when reishi / GLPP enters [`supplements-stack.md`](./supplements-stack.md) as a catalog entry, OR enters [`gout-action-guide.md`](./gout-action-guide.md) as a specific recommendation, this caveat must travel with it. Currently neither catalog mentions reishi specifically, so no propagation-gap exists today — but the manual `fresh-stack.py` discipline (see [`synthesis.md` Strategic Reflections Queue](./synthesis.md#strategic-reflections-queue)) will need to flag this as a known caveat-with-the-compound entry when promotion eventually fires.
+
 ## Seven Phase 7 follow-ups queued
 
 Same pattern as `engineered-lbp-chassis.md` and `sirna-urat1-modality.md`:
