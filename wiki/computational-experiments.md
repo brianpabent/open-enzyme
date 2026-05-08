@@ -243,6 +243,28 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+## Infrastructure proposals
+
+### comp-NNN verification agent (ClockBase hypothesis-then-verify pattern) — added 2026-05-08
+
+**The proposal.** Every comp-NNN run produces a primary output report from a *generation* agent (the subagent that does the literature mining / structure analysis / breadth scan). Add a second pass: a *verification* agent (potentially a different LLM per the multi-vendor heterogeneity discipline in [`open-source-platform.md`](./open-source-platform.md) §"Multi-model synthesis as guard against epistemic homogenization") that re-checks every load-bearing number — disulfide counts, residue indices, IC50/Ki values, organism identities, accession numbers, cohort sizes — against primary databases (UniProt, ChEMBL, PDB, PubMed, NCBI Taxonomy) BEFORE the comp-NNN output is considered complete.
+
+**Source pattern.** [`autonomous-screening-methodology.md`](./autonomous-screening-methodology.md) §"Hypothesis-then-verify pattern" extracts this from the ClockBase Agent paper (Ying, Tyshkovskiy, Gladyshev et al. bioRxiv 2023.02.28.530532v3) where it's the load-bearing architectural feature that lets ClockBase's autonomous-screening output be wet-lab-handoff-quality.
+
+**Sister discipline at a different scope.** [`manual-literature-mining.md`](./manual-literature-mining.md) §"Pre-commit verification gate" applies the same pattern at the per-page commit scope (CLAUDE.md Rule 4). This proposal applies it at the per-comp-NNN run scope. Same structural pattern (generate → verify against primary source); different operational scope. Naming the equivalence consolidates the discipline across both scopes.
+
+**The failure mode it would catch.** The 2026-05-06 DAF SCR1-4 disulfide-count hallucination ("3 per SCR domain → 12 total" asserted in 4 places of prose narrative; primary-source-verified to be 8 per UniProt P08174) was caught by the multi-vendor sweep daemon 24h later via Pass 2 cross-check. A verification agent at comp-NNN-generation time would have caught it before the wrong number entered the corpus, preventing the overnight propagation into H05 and the downstream chaperone-load synergy panic. See [`operations/notable-moments.md`](../operations/notable-moments.md) 2026-05-06 entry for the canonical case.
+
+**Adjacent failure mode it would also catch.** Today's brief-contamination retrospective ([`operations/comp-018-vs-comp-020-retrospective.md`](../operations/comp-018-vs-comp-020-retrospective.md), 2026-05-08) demonstrated that **brief-level** contamination is structurally similar to model-level confabulation — different inputs to the same architecture produce different outputs, and independent re-running surfaces the discrepancy. The verification-agent proposal here is a NUMBER-level guard; the brief-scrubbing discipline (codified at [`scripts/SWEEP-ARCHITECTURE.md` §"Subagent brief hygiene"](../scripts/SWEEP-ARCHITECTURE.md)) is a SCOPE-level guard. Both belong in the comp-NNN authoring discipline.
+
+**Implementation sketch.** When a comp-NNN subagent finishes its primary output, the next step (before commit) is to spawn a verification subagent — different vendor preferred (e.g., Claude generates, DeepSeek verifies; or Opus generates, GPT-5.5 verifies). The verification agent's brief: read the primary output's load-bearing numerical claims, look each one up in the cited primary source via direct database query (UniProt API for protein features; PubMed MCP for trial values; ChEMBL API for bioactivity; etc.), and produce a verification report flagging any discrepancy. The primary subagent then either fixes flagged claims or marks them `[UNVERIFIED]` per CLAUDE.md Rule 4.
+
+**Cost.** ~$3-5 per comp-NNN at current Opus/DeepSeek/GPT-5.5 rates; 10-30 minutes wall-clock added to the workflow. Cheap-enough-to-default-to.
+
+**Status.** Planned infrastructure, not yet implemented. The discipline already exists informally — comp-018 vs. comp-020 (today's brief-contamination retrospective) was an ad-hoc verification re-run that worked. Codifying it as a routine comp-NNN step is the structural fix.
+
+---
+
 ## How to add a new analysis
 
 1. Create `experiments/comp-NNN-<slug>/` with `analyze.py`, `inputs/`, `outputs/`, `README.md`, `inputs/provenance.md`
