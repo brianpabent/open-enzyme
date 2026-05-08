@@ -39,6 +39,8 @@ sources:
 
 **Platform implication:** This closes the computational feasibility gate for the koji-CD55 engineering thesis. The SCR1-4-only construct is the first computationally validated complement regulator candidate compatible with shio-koji fermentation. Whether it provides meaningful CP0 coverage (C5a reduction in a gut-lumen assay) remains an open wet-lab question — but the protease stability objection is resolved.
 
+> **Cross-track coordination per comp-018 (2026-05-08):** The [upstream complement modulator sweep](./upstream-complement-modulator-sweep-computational.md) surfaced **recombinant C1-INH expression** as a near-twin engineering thesis to comp-012/H05. C1-INH is a soluble human serpin (FDA-approved as Berinert/Cinryze/Ruconest for hereditary angioedema) that operates at the C1r/C1s + AP convertase regulator nodes — different complement layer from DAF SCR1-4 (which operates at C3 convertase decay-acceleration). Both share the same chassis logic (express a soluble human complement regulator in koji or LBP) and would provide complementary, not redundant, coverage at upstream-CP0. **Phase 2 follow-up:** open a parallel comp-NNN for koji-expressed C1-INH protease stability (mirror of comp-006/comp-012). If LOW or MODERATE, OE has two engineering candidates at upstream-CP0 operating at different cascade nodes. comp-018 also surfaced a TIER-1 dietary-tier modulator (rosmarinic acid, C3 convertase IC50 5-10 µM) which is mechanistically additive to engineered DAF (different geometric scale: engineered DAF saturates the MSU surface; dietary RMA saturates fluid-phase + gut-luminal C3 convertase). (source: `wiki/upstream-complement-modulator-sweep-computational.md` §7.1, §7.4)
+
 ---
 
 ## §1.5 Correction note (2026-05-06): disulfide count anchor
