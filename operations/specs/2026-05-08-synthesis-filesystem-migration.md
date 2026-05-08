@@ -1,9 +1,9 @@
 ---
 title: "Synthesis Filesystem Migration Spec"
 date: 2026-05-08
-status: revised post-spec-review (ready for implementation)
+status: revised post-spec-rereview (pending Sonnet third-pass before implementation)
 authors: brian + claude
-reviewer: claude opus 4.7 (independent peer review, see §11 review history)
+reviewers: claude opus 4.7 (first + second pass, see §11) → claude sonnet 4.6 (third pass, pending)
 related:
   - 2026-05-08-synthesis-filesystem-migration-spec-review.md
   - ../../scripts/SWEEP-ARCHITECTURE.md
@@ -95,6 +95,9 @@ Every file in this list contains a `wiki/synthesis.md` or `synthesis-merge` refe
 - `.claude/hooks/validate-commit-msg.py` — line 96 has the special-case exclusion `p != "wiki/synthesis.md"` in daemon-trigger detection. Remove the special case (file no longer exists).
 - `.claude/hooks/block-push-without-approval.py` — lines 11, 118, 163 exclude `wiki/synthesis.md` from daemon-triggering paths. Update logic: a push touching `synthesis/queue/*.md` or `synthesis/history/*.md` should NOT trigger the daemon (because daemon doesn't fire on `synthesis/**`). The hook's daemon-detection logic needs to be updated to reflect the new architecture.
 
+**Parallel workflows that write to `wiki/synthesis.md` (added per spec re-review N1):**
+- `scripts/chembl-refresh-prompt.md` — separate quarterly workflow (NOT the wiki-sweep daemon) that prepends to `wiki/synthesis.md` from its Pass 4. 7 references at lines 18, 23, 26, 82, 84, 127, 141, 142. Post-migration this workflow would either fail with file-not-found OR silently re-create the deleted file, putting the repo in mixed state. **Decision (per spec re-review N1, option 2 — direct write):** chembl-refresh's Pass 4 changes from "prepend to `wiki/synthesis.md`" to "write `synthesis/queue/<date>-chembl-discrepancy-N.md` files directly," one per discrepancy finding. Does NOT go through `synthesis-emit-files.py` (its findings are flat-list, not the daemon's structured 7-section format). Walkthrough flow handles the resulting queue/ files identically (read queue/, action, mv to done/) — they're just produced by a different upstream. The new `<type>` value `chembl-discrepancy` is added to §5.1's enumeration. The chembl-refresh prompt's `[skip-wiki-sweep]` rationale (line 127, "prevents wiki-sweep from firing on the chembl-refresh's synthesis.md edit") needs updating: post-migration, chembl-refresh writes to `synthesis/**` which the daemon path-filter doesn't trigger on AND `[skip-wiki-sweep]` marker still applies as belt-and-suspenders per §5.9.
+
 **`.claude/skills/`:**
 - `.claude/skills/walk-synthesis/SKILL.md` — major update. Section 1 (Pre-flight): inventory becomes `ls synthesis/queue/` instead of "read synthesis.md end-to-end." Section 2 Step C (Action it) + Step D (Annotate `✓ Actioned`) + Step E (Commit immediately): closure flow becomes append-closure-annotation-to-file + `git mv synthesis/queue/<file>.md synthesis/done/`. Section 2 Step F (end-of-item summary): explicit re-grounding in the per-file model — "loose ends" inventory still applies; "carryover to Item X" anchoring becomes explicit cross-references between queue files. Section 7 (End-of-walkthrough): inbox-zero is automatic (empty queue/ = inbox zero); no surgical synthesis.md edit. Section 6 templates (actioned annotation, end-of-item summary): updated for per-file format. Section 9 anti-patterns: add #15 "don't try to edit `wiki/synthesis.md` (it doesn't exist anymore)."
 - `.claude/skills/sweep-status/SKILL.md` — line 3 (description) and line 54 references "synthesis.md prepend"; update to reference `synthesis/queue/` + `synthesis/history/` outputs.
@@ -123,11 +126,19 @@ The implementation step for cross-link rewrites is §8 step before deletion, not
 
 ### 4.5 User-facing docs
 
-- `README.md` (top-level) — lines 63 + 86 link to `wiki/synthesis.md`. Rewrite to `synthesis/README.md` (the new entry point for the synthesis system).
-- `mkdocs.yml` — line 60 has `Platform Thesis & Synthesis: synthesis.md` in the nav. Rewrite to `synthesis/README.md` so the published docs site doesn't 404.
-- `wiki/index.md` — already covered in §4.4.
-- `CLAUDE.md` (`Open Enzyme/CLAUDE.md`) — update §"Document Structure" `wiki/synthesis.md` mention; update §"Workflow for Updates" if it references the file.
-- `index.md` (repo root) — update "Synthesis queue" pointer to `synthesis/queue/`.
+Enumerated per spec re-review N2 — each line location explicitly named:
+
+- **`README.md`** (top-level) — lines 63 + 86 link to `wiki/synthesis.md`. Rewrite both to `synthesis/README.md`.
+- **`mkdocs.yml`** — line 60 has `Platform Thesis & Synthesis: synthesis.md` in the nav. Rewrite to `synthesis/README.md` so the published docs site doesn't 404.
+- **`wiki/index.md`** line 84 — "[Synthesis Queue](synthesis.md)" link → rewrite to `synthesis/README.md`.
+- **`CLAUDE.md`** (`Open Enzyme/CLAUDE.md`) — three references:
+  - Line 27 §"Document Structure" — `wiki/synthesis.md` mention. Update.
+  - Line 130 §"Workflow for Updates" — reference if present. Update.
+  - Line 247 §"Version Control & Maintenance" — "Action queue: wiki/synthesis.md" line. Update.
+- **`index.md`** (repo root) — three references:
+  - Line 15 — "Derivation in [wiki/synthesis.md]" pointer. Update.
+  - Line 21 — "Synthesis queue" pointer. Rewrite to `synthesis/queue/`.
+  - Line 176 — "Synthesis (current)" link in concept index. Update.
 
 ### 4.6 Files deleted
 
@@ -149,7 +160,7 @@ These are choices the peer reviewer can challenge. (Reviewer engaged with these 
 Format: `<sweep-date>-<type>-<index>-<slug>.md`
 
 - `<sweep-date>`: ISO date in UTC of the workflow_run's `event.head_commit` timestamp (date the trigger commit landed, not the date the daemon eventually ran). Format `YYYY-MM-DD`.
-- `<type>`: one of `connection`, `contradiction`, `experiment`, `open-question`, `priority-action`, `riskiest-assumption`, `most-curious-thread`. **Hyphenated** for readability.
+- `<type>`: one of `connection`, `contradiction`, `experiment`, `open-question`, `priority-action`, `riskiest-assumption`, `most-curious-thread`, **`chembl-discrepancy`** (added per spec re-review N1 — produced by chembl-refresh-prompt.md direct-write, not by `synthesis-emit-files.py`). **Hyphenated** for readability.
 - `<index>`: the Pass 2 item's number within its section (1, 2, 3...). Tiebreaker for slug collisions; guaranteed unique within a `(sweep-date, type)` tuple.
 - `<slug>`: kebab-case ASCII slug derived from the synthesizer's headline. Max length 60 chars. Generated by:
   - Take the bolded headline of the Pass 2 item (per §5.4 parser).
@@ -215,7 +226,7 @@ The `Proposed Experiments` regex tolerates the optional `(ranked by insight per 
   overlap_with: <slug-of-other-item>  # only when verdict tags OVERLAP / DUPLICATE
   ---
   ```
-- Body: the Pass 2 item's full content (verbatim, including the `{{PEER-REVIEW}}` marker stripped) followed by the Pass 3 review blockquote.
+- Body: the Pass 2 item's full content with the `{{PEER-REVIEW}}` marker stripped, followed by the Pass 3 review blockquote. (Reworded per spec re-review N3 — original parenthetical was ambiguous.)
 
 **Sweep-history file emission:** in addition to the per-item files, the script emits one file at `synthesis/history/<sweep-date>-<short-sha>.md`. Content per §5.6.
 
@@ -274,10 +285,11 @@ items_by_type:
 
 `synthesis/strategic-reflections/` is **human-curated only**. Daemon does NOT write here. Walk-synthesis skill checks the directory (lists open reflections) but does not action them — they fire on substance maturity, not on walkthrough cadence.
 
-**Resolution criteria:** when a reflection's trigger condition fires AND the user-decided outcome is documented, the file moves to `synthesis/strategic-reflections/_resolved/<original-filename>.md`. The migration includes the move:
+**Resolution criteria:** when a reflection's trigger condition fires AND the user-decided outcome is documented, the file moves (via `git mv` to preserve path history per re-review N4) to `synthesis/strategic-reflections/_resolved/<original-filename>.md`. The migration includes the move:
 - Frontmatter gets a new field: `resolved_date: YYYY-MM-DD`
 - File body gets an appended section: `## Resolution outcome` documenting what was decided
 - Original Trigger / Outcome sections preserved verbatim above the resolution section
+- **Path preservation: full content stays git-tracked; only path changes** (consistent with §5.10 done/_archive/ rule).
 
 The `_resolved/` directory is NOT created in this migration since no reflections are resolved yet. First resolution will create it.
 
@@ -407,6 +419,8 @@ Test execution: run the new script against EACH log with a synthetic Pass 3 revi
 
 **Atomic feature-branch merge.** All steps execute on `walk-synthesis-2026-05-08` branch; merge to main is a single PR (#4) so the daemon's first post-merge run uses the new architecture, no transition window with mixed state.
 
+**Step ordering rationale (clarified per spec re-review N5):** the workflow YAML update lands LAST (step 4.x) intentionally — until that step, the daemon's old entry point (`synthesis-merge.py`) is still on disk and would still execute correctly if a daemon push fired during the transition. The workflow is the daemon's true entry point; updating it last ensures the daemon either runs the OLD pipeline end-to-end OR the NEW pipeline end-to-end, never a half-state. Wiki cross-link cleanup (step 4.viii) lands before script writing (step 4.ix) because cross-link rewrites are content-only changes that don't affect daemon execution. Deletion of `wiki/synthesis.md` + `synthesis-merge.py` (step 4.xi) is the truly atomic last step before final grep verification.
+
 1. ~~Author this spec~~ → done
 2. ~~**Independent Opus subagent — spec review**~~ → done; report at `operations/specs/2026-05-08-synthesis-filesystem-migration-spec-review.md`
 3. ~~Address spec findings~~ → done in this revision; see §11 review history
@@ -519,12 +533,44 @@ All 4 open questions from the original spec draft are resolved per the §11 revi
 - §8 spec-review-before-implementation discipline — 2-stage review pattern
 - Atomic-merge-with-PR-#4 decision — sensible
 
-**Status after revision:** spec is approvable for implementation. A second-pass spec review is NOT required (the first review's findings are addressed in this revision); the code review against spec (§8 step 5) is the next gate.
+**Status after revision:** spec is approvable for implementation contingent on second-pass review. (The original closing line "second-pass spec review is NOT required" was retracted per re-review N6 — it was the spec author's self-assessment, not the reviewer's; the second pass DID surface a real critical finding (N1 chembl-refresh-prompt.md), validating the gate.)
+
+### 2026-05-08 — Independent peer re-review (Opus 4.7)
+
+**Reviewer:** Claude Opus 4.7 (1M context), spawned as a fresh independent reviewer (not the same process as the first review; SendMessage tooling unavailable in the session). Briefed with the first review's findings + the revised spec; tasked with verifying each prior finding was properly addressed plus checking for new issues.
+
+**Verdict:** APPROVED WITH MINOR CHANGES — 17 of 18 prior findings properly addressed; 1 partially addressed (Finding 1 — `scripts/chembl-refresh-prompt.md` was missed); 5 minor nits (N2-N6) introduced or surfaced by the revision.
+
+**Full re-review report:** [`2026-05-08-synthesis-filesystem-migration-spec-rereview.md`](./2026-05-08-synthesis-filesystem-migration-spec-rereview.md).
+
+**Critical-tier remaining issue (N1) addressed:**
+
+- **`scripts/chembl-refresh-prompt.md`** — separate quarterly workflow (NOT the wiki-sweep daemon) writes to `wiki/synthesis.md` from its Pass 4. 7 references the spec author missed. Same root cause as Finding 1: grepped daemon-direct files only, missed parallel-workflow files. **Resolution:** Brian decision 2026-05-08 — option 2 (direct write of `synthesis/queue/<date>-chembl-discrepancy-N.md` files; new `chembl-discrepancy` type added to §5.1; chembl-refresh's Pass 4 changes accordingly; documented in §4.3 under new "Parallel workflows that write to `wiki/synthesis.md`" sub-bullet).
+
+**Minor findings (N2-N6) addressed:**
+
+- **N2 (incomplete index.md / CLAUDE.md enumeration):** §4.5 expanded with explicit line-by-line callouts (`index.md` lines 15, 21, 176; `CLAUDE.md` lines 27, 130, 247).
+- **N3 (confusing parenthetical in §5.4):** reworded — "Pass 2 item's full content with the `{{PEER-REVIEW}}` marker stripped, followed by the Pass 3 review blockquote."
+- **N4 (verb consistency between §5.7 and §5.10):** §5.7 explicitly notes `git mv` and "full content stays git-tracked; only path changes" consistent with §5.10.
+- **N5 (§8 step ordering rationale):** added one-line note explaining why workflow update lands last.
+- **N6 (§11 over-confident "no second-pass needed" claim):** retracted; this re-review entry documents the second-pass gate validating its own value.
+
+**§11 review-history accuracy (per re-review):** "honest and accurate; the only over-claim was the closing line." That's now corrected.
+
+**Strongest improvements over original spec (preserved from re-review):** §5.4 parser specification (concrete enough to write the script); §5.9 recursion-protection redesign with `[skip-wiki-sweep]` as canonical guard; §5.1 `<index>` tiebreaker (slug collision structurally impossible); §7 multi-log test list; §8 cleanup-before-deletion ordering with explicit atomic feature-branch merge.
+
+### 2026-05-08 — Independent peer third-pass review (Sonnet 4.6)
+
+**Reviewer:** Claude Sonnet 4.6, spawned as fresh independent reviewer. Briefed with the prior review reports + the now-twice-revised spec. Tasked with mechanical verification that N1-N6 are properly addressed + catch any new issues introduced by the second revision.
+
+**Status:** pending.
+
+**Status after this third-pass review:** spec implementation gate. If approved → §8 step 4 begins.
 
 ---
 
 ## End of spec
 
-**Status:** revised post-spec-review; ready for implementation.
+**Status:** twice-revised; pending Sonnet third-pass spec review.
 
-**Implementation gate:** §8 step 4 may now begin. Code review against spec (§8 step 5) is the next gate before local testing and merge.
+**Implementation gate:** §8 step 4 may begin AFTER the third-pass review approves the revisions. Code review against spec (§8 step 5) remains the gate before local testing and merge.
