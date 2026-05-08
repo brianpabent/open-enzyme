@@ -392,7 +392,9 @@ Let me produce the reviews now.
 
 ## Priority Actions
 
-1. **Add a visual evidence-tier indicator to the multi-track coverage map in `gout-pathophysiology.md`** — specifically for the ABCG2 cell where lactoferrin's indirect derepression mechanism (Mechanistic Extrapolation) is presented alongside direct Animal Model claims for other transporter nodes. The footnote is honest but the table format undermines it. Use distinct cell shading, an "(indirect, ME)" tag, or split the ABCG2 row into direct and indirect sub-rows. This is a one-line wiki edit with disproportionate impact on
+1. **Add a visual evidence-tier indicator to the multi-track coverage map in `gout-pathophysiology.md`** — specifically for the ABCG2 cell where lactoferrin's indirect derepression mechanism (Mechanistic Extrapolation) is presented alongside direct Animal Model claims for other transporter nodes. The footnote is honest but the table format undermines it. Use distinct cell shading, an "(indirect, ME)" tag, or split the ABCG2 row into direct and indirect sub-rows. This is a one-line wiki edit with disproportionate impact on [reader-comprehension at the table-scanning level — body truncated by daemon merge-script artifact; remainder reconstructed from connected synthesis-block context].
+
+   > **✓ Already actioned 2026-05-08** (closure note): Priority Action 1 is the dual of Contradiction #1 (Item 23 above), which implemented Pass 3's recommended row-split approach in `gout-pathophysiology.md`. The ABCG2 row is now split into "ABCG2 — direct modulation" (empty across all three tracks — surfaces the platform gap) and "ABCG2 — indirect derepression via TNFα suppression" (lactoferrin/koji, ME-tagged). The Pass 3 review block misplaced above OQ2 actually pertained to THIS Priority Action and was incorporated into Item 23's implementation. Pure closure note pointing at Item 23. **This closes the 2026-05-07 77d0f6e sweep block (Items 20–28). All 28 items of the 2026-05-08 walkthrough are now actioned.**
 
 ---
 
