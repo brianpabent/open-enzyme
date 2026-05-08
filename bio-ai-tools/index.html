@@ -5654,7 +5654,7 @@
 </table>
 <p><strong>Verification discipline for any Paperclip session:</strong> (1) Use <code>search</code> and <code>grep</code> as primary evidence; treat <code>map</code> as hypothesis-generation only. (2) Grep-verify every load-bearing number against the paper body. (3) Anchor identity claims (organism, gene, host) to <code>meta.json</code>. (4) Never propagate <code>reduce</code> summaries directly. (5) Check computational vs. wet-lab status from the abstract or methods section. (source: paperclip-deep-dive.md)</p>
 <h3 id="sweep-daemon-integration-decided-2026-05-05-do-not-integrate">Sweep-Daemon Integration — DECIDED 2026-05-05: Do Not Integrate<a class="headerlink" href="#sweep-daemon-integration-decided-2026-05-05-do-not-integrate" title="Permanent link">&para;</a></h3>
-<p><strong>Decision: do not wire Paperclip into the four-pass sweep daemon.</strong> A verification test (uricase variant landscape, ~12 papers with known-correct ground truths) revealed a systematic hallucination pattern in the <code>map</code> operator that is disqualifying for any automated pipeline. (source: paperclip-deep-dive.md)</p>
+<p><strong>Decision: do not wire Paperclip into the three-pass sweep daemon.</strong> A verification test (uricase variant landscape, ~12 papers with known-correct ground truths) revealed a systematic hallucination pattern in the <code>map</code> operator that is disqualifying for any automated pipeline. (source: paperclip-deep-dive.md)</p>
 <p><strong>Concrete hallucination examples from the 2026-05-05 test</strong> (In Vitro / verification):</p>
 <table>
 <thead>

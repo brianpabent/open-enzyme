@@ -4331,11 +4331,11 @@
 <p>Before any commit lands a wiki page (especially <code>wiki/&lt;comp-NNN&gt;-*.md</code> interpretive pages and <code>wiki/hypotheses/H&lt;NN&gt;-*.md</code> cards) that introduces a load-bearing quantitative claim, <strong>the author must grep-verify the claim against its primary source and add a line-anchored citation inline.</strong> A claim that cannot be grep-verified is not committed; it is either re-derived, replaced with a bounded "TBD pending source verification" marker, or dropped.</p>
 </blockquote>
 <p><strong>Why this gate exists:</strong></p>
-<p>The wiki sweep daemon (Pass 1 propagate → Pass 2 synthesize → Pass 3 review → Pass 4 DeepSeek peer-review) is <em>good</em> at catching cross-page inconsistencies — exactly the failure mode that surfaced the DAF SCR1-4 disulfide-count error on 2026-05-06 (Sweep A Connection 2). But that means the discipline currently catches errors ~12–24 hours <em>after</em> they ship into the corpus, by which time:</p>
+<p>The wiki sweep daemon (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Review) is <em>good</em> at catching cross-page inconsistencies — exactly the failure mode that surfaced the DAF SCR1-4 disulfide-count error on 2026-05-06 (Sweep A Connection 2). But that means the discipline currently catches errors ~12–24 hours <em>after</em> they ship into the corpus, by which time:</p>
 <ul>
 <li>The wrong number has propagated to multiple pages (DAF SCR1-4: comp-012 → H05 stub).</li>
 <li>The wrong number has been ingested into the synthesizer's context for downstream reasoning (the chaperone-orthogonal triple-cassette synergy panic — predicting 17+12=29 disulfides, 1.8× Huynh — was based on a fabricated coefficient).</li>
-<li>A peer-review pass and a hand-walkthrough are required to find and fix the propagation, instead of catching it at the source.</li>
+<li>A second-opinion synthesis pass and a hand-walkthrough are required to find and fix the propagation, instead of catching it at the source.</li>
 </ul>
 <p>The sweep is a backstop, not a substitute. The pre-commit verification gate is the right moment to catch hallucinated numbers — at the moment they would enter the corpus, not after they've been laundered through the substrate.</p>
 <p><strong>Operational pattern:</strong></p>
