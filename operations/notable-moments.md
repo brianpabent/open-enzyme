@@ -14,6 +14,26 @@ This log is **public** (operations/ folder is in the public repo) — same postu
 
 ---
 
+## 2026-05-08 — Two independent reads of the same wiki, same day, same external-comms insight: multi-vendor heterogeneity catching opportunities, not just errors
+
+**What happened.** This morning Brian published [Grounding the AI Scientist Hype](https://0xbpa.substack.com/p/grounding-the-ai-scientist-hype) on Substack — a public case study using the DAF SCR1-4 disulfide-count incident (logged 2026-05-06 in this same file) as the canonical example of how AI-assisted scientific research catches its own hallucinations through multi-vendor verification, not by avoiding them. The post went live before the day's wiki sweep daemon ran.
+
+Later the same day, the sweep daemon fired on commit `e842754`. The synthesizer (Gemini 2.5 Pro) independently surfaced as a Pass 2 finding: *"Write up the DAF SCR1-4 incident as a mini case study … a potent, concrete case study that validates the entire linter-and-sweep approach."* The Pass 3 reviewer (GPT-5.5, freshly swapped into this slot this morning, replacing Claude Opus 4.7) pushed back: "the wiki already documents the loop-closure." Narrowly true — `manual-literature-mining.md` §"The DAF SCR1-4 incident" and the 2026-05-06 entry in this file both have the wiki coverage. But the synthesizer wasn't suggesting wiki coverage. It was suggesting **public communication**, which had already happened, on a surface the daemon by design cannot see (the personal blog repo is private; the public sweep daemon must not read private siblings, by the umbrella's one-way privacy gradient).
+
+So: the synthesizer was right about what to do. Brian had already done it six hours earlier. The reviewer couldn't verify the external action because the daemon's scope is correctly bounded to the wiki.
+
+**Why it matters.** The original framing of multi-vendor heterogeneity in this project was *defensive* — different vendors cross-checking each other to catch errors that single-vendor pipelines would homogenize. The DAF SCR1-4 incident itself was the canonical demonstration: Sonnet hallucinated a number, the multi-vendor sweep caught it the next day.
+
+What happened today is *generative*. Two completely independent reads of the same substrate — a Gemini-based wiki synthesizer running unattended, and a human writer drafting a blog post over coffee — converged on the same external-comms angle without coordination. The same multi-vendor heterogeneity that catches wrong numbers also catches valuable opportunities. That's a different and more interesting validation of the multi-model thesis than the original framing anticipated.
+
+There's also a structural property worth naming, separate from any specific model's calibration: the wiki sweep daemon is a **closed-system tool**. It operates on the wiki, by design and by the project's privacy gradient. So when the synthesizer points outside the closed system — at external comms, sibling-repo work, application surfaces — the reviewer's "already covered" verdict is necessarily scoped to *the wiki*. Coordination of work outside the daemon's scope stays a human responsibility. That's not a defect; it's the correct architecture for a public daemon. It just means Pass 3 verdicts of "already covered" carry an implicit "in the wiki" qualifier.
+
+**External-comms angle.** The previous DAF SCR1-4 post framed multi-vendor heterogeneity as an error-correction discipline. The natural follow-on — this entry — is about the *generative* property: when you have multiple competent agents reading the same substrate independently, they don't just catch each other's mistakes, they converge on the same valuable angles. Three things stack: the original homogenization risk (DAF SCR1-4) → multi-vendor catches the error; the convergent-insight moment today → multi-vendor surfaces the same opportunity; and the closed-system property (the daemon is by-design wiki-scoped, so external action is by-design human-coordinated). Story arc: heterogeneity isn't just a safety net, it's a search amplifier.
+
+Notable for: open-source-research workflow design, AI-assisted science methodology, the tension between agent-driven discovery and human-driven editorial judgment, the structural property that public-facing daemons are correctly scope-limited.
+
+---
+
 ## 2026-05-07 — The "37% testosterone increase" figure all over the tongkat ali supplement market is salivary T in a mixed-sex stressed cohort. Verification gate caught the laundering.
 
 **What happened.** Today's lit-scan task: a multilingual literature review of natural alternatives to Clomid (clomiphene citrate) for free-testosterone elevation, framed for the gout-comorbid male on SERM therapy. (The trigger was a specific n=1 self-experiment situation; the page itself is genericized in `wiki/androgen-natural-modulation.md`.) Among the seven sub-investigations, *Eurycoma longifolia* (tongkat ali) showed up as the best-evidenced herbal candidate — there's a real RCT corpus.
