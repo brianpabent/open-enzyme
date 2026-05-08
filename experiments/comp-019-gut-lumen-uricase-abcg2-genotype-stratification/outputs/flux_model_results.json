@@ -1,0 +1,403 @@
+{
+  "_metadata": {
+    "model_version": "comp-019 v1.0",
+    "model_assumptions": [
+      "ABCG2 operates in linear regime in vivo (lumen urate ~0.6 uM << Km 8240 uM)",
+      "Uricase clamps lumen urate to ~0; sink amplification factor 0.40 (40% of secreted urate would have been reabsorbed without uricase)",
+      "Genotype scales secretion capacity linearly per Matsuo 2014 + Miyazaki 2025 framework",
+      "Renal compensation offsets 30% of gut delta-flux (sensitivity: 0-50%)",
+      "1st-order steady-state approximation for delta-SUA"
+    ],
+    "monte_carlo_n": 5000,
+    "random_seed": 42
+  },
+  "central_estimates": {
+    "WT_male": {
+      "low_5mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 231.0,
+        "uricase_capacity_mg_per_day": 7534.6902,
+        "capacity_ratio": 32.617706493506496,
+        "delta_intestinal_with_uricase_mg": 92.4,
+        "net_delta_flux_mg": 64.68,
+        "delta_sua_mg_dL": -0.7392000000000001
+      },
+      "mid_25mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 231.0,
+        "uricase_capacity_mg_per_day": 37673.45100000001,
+        "capacity_ratio": 163.0885324675325,
+        "delta_intestinal_with_uricase_mg": 92.4,
+        "net_delta_flux_mg": 64.68,
+        "delta_sua_mg_dL": -0.7392000000000001
+      },
+      "high_50mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 231.0,
+        "uricase_capacity_mg_per_day": 75346.90200000002,
+        "capacity_ratio": 326.177064935065,
+        "delta_intestinal_with_uricase_mg": 92.4,
+        "net_delta_flux_mg": 64.68,
+        "delta_sua_mg_dL": -0.7392000000000001
+      }
+    },
+    "Q141K_het_male": {
+      "low_5mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 173.25,
+        "uricase_capacity_mg_per_day": 7534.6902,
+        "capacity_ratio": 43.49027532467532,
+        "delta_intestinal_with_uricase_mg": 69.3,
+        "net_delta_flux_mg": 48.51,
+        "delta_sua_mg_dL": -0.58905
+      },
+      "mid_25mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 173.25,
+        "uricase_capacity_mg_per_day": 37673.45100000001,
+        "capacity_ratio": 217.45137662337666,
+        "delta_intestinal_with_uricase_mg": 69.3,
+        "net_delta_flux_mg": 48.51,
+        "delta_sua_mg_dL": -0.58905
+      },
+      "high_50mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 173.25,
+        "uricase_capacity_mg_per_day": 75346.90200000002,
+        "capacity_ratio": 434.9027532467533,
+        "delta_intestinal_with_uricase_mg": 69.3,
+        "net_delta_flux_mg": 48.51,
+        "delta_sua_mg_dL": -0.58905
+      }
+    },
+    "Q141K_hom_male": {
+      "low_5mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 115.5,
+        "uricase_capacity_mg_per_day": 7534.6902,
+        "capacity_ratio": 65.23541298701299,
+        "delta_intestinal_with_uricase_mg": 46.2,
+        "net_delta_flux_mg": 32.34,
+        "delta_sua_mg_dL": -0.43890000000000007
+      },
+      "mid_25mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 115.5,
+        "uricase_capacity_mg_per_day": 37673.45100000001,
+        "capacity_ratio": 326.177064935065,
+        "delta_intestinal_with_uricase_mg": 46.2,
+        "net_delta_flux_mg": 32.34,
+        "delta_sua_mg_dL": -0.43890000000000007
+      },
+      "high_50mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 115.5,
+        "uricase_capacity_mg_per_day": 75346.90200000002,
+        "capacity_ratio": 652.35412987013,
+        "delta_intestinal_with_uricase_mg": 46.2,
+        "net_delta_flux_mg": 32.34,
+        "delta_sua_mg_dL": -0.43890000000000007
+      }
+    },
+    "WT_female": {
+      "low_5mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 231.0,
+        "uricase_capacity_mg_per_day": 7534.6902,
+        "capacity_ratio": 32.617706493506496,
+        "delta_intestinal_with_uricase_mg": 92.4,
+        "net_delta_flux_mg": 64.68,
+        "delta_sua_mg_dL": -0.6468
+      },
+      "mid_25mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 231.0,
+        "uricase_capacity_mg_per_day": 37673.45100000001,
+        "capacity_ratio": 163.0885324675325,
+        "delta_intestinal_with_uricase_mg": 92.4,
+        "net_delta_flux_mg": 64.68,
+        "delta_sua_mg_dL": -0.6468
+      },
+      "high_50mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 231.0,
+        "uricase_capacity_mg_per_day": 75346.90200000002,
+        "capacity_ratio": 326.177064935065,
+        "delta_intestinal_with_uricase_mg": 92.4,
+        "net_delta_flux_mg": 64.68,
+        "delta_sua_mg_dL": -0.6468
+      }
+    },
+    "Q141K_het_female": {
+      "low_5mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 173.25,
+        "uricase_capacity_mg_per_day": 7534.6902,
+        "capacity_ratio": 43.49027532467532,
+        "delta_intestinal_with_uricase_mg": 69.3,
+        "net_delta_flux_mg": 48.51,
+        "delta_sua_mg_dL": -0.51975
+      },
+      "mid_25mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 173.25,
+        "uricase_capacity_mg_per_day": 37673.45100000001,
+        "capacity_ratio": 217.45137662337666,
+        "delta_intestinal_with_uricase_mg": 69.3,
+        "net_delta_flux_mg": 48.51,
+        "delta_sua_mg_dL": -0.51975
+      },
+      "high_50mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 173.25,
+        "uricase_capacity_mg_per_day": 75346.90200000002,
+        "capacity_ratio": 434.9027532467533,
+        "delta_intestinal_with_uricase_mg": 69.3,
+        "net_delta_flux_mg": 48.51,
+        "delta_sua_mg_dL": -0.51975
+      }
+    },
+    "Q141K_hom_female": {
+      "low_5mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 115.5,
+        "uricase_capacity_mg_per_day": 7534.6902,
+        "capacity_ratio": 65.23541298701299,
+        "delta_intestinal_with_uricase_mg": 46.2,
+        "net_delta_flux_mg": 32.34,
+        "delta_sua_mg_dL": -0.36960000000000004
+      },
+      "mid_25mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 115.5,
+        "uricase_capacity_mg_per_day": 37673.45100000001,
+        "capacity_ratio": 326.177064935065,
+        "delta_intestinal_with_uricase_mg": 46.2,
+        "net_delta_flux_mg": 32.34,
+        "delta_sua_mg_dL": -0.36960000000000004
+      },
+      "high_50mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 115.5,
+        "uricase_capacity_mg_per_day": 75346.90200000002,
+        "capacity_ratio": 652.35412987013,
+        "delta_intestinal_with_uricase_mg": 46.2,
+        "net_delta_flux_mg": 32.34,
+        "delta_sua_mg_dL": -0.36960000000000004
+      }
+    },
+    "Severe_dysfunction_male": {
+      "low_5mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 57.75,
+        "uricase_capacity_mg_per_day": 7534.6902,
+        "capacity_ratio": 130.47082597402598,
+        "delta_intestinal_with_uricase_mg": 23.1,
+        "net_delta_flux_mg": 16.17,
+        "delta_sua_mg_dL": -0.24255000000000002
+      },
+      "mid_25mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 57.75,
+        "uricase_capacity_mg_per_day": 37673.45100000001,
+        "capacity_ratio": 652.35412987013,
+        "delta_intestinal_with_uricase_mg": 23.1,
+        "net_delta_flux_mg": 16.17,
+        "delta_sua_mg_dL": -0.24255000000000002
+      },
+      "high_50mg": {
+        "baseline_renal_mg": 468.99999999999994,
+        "baseline_intestinal_wt_mg": 231.0,
+        "baseline_intestinal_genotype_adjusted_mg": 57.75,
+        "uricase_capacity_mg_per_day": 75346.90200000002,
+        "capacity_ratio": 1304.70825974026,
+        "delta_intestinal_with_uricase_mg": 23.1,
+        "net_delta_flux_mg": 16.17,
+        "delta_sua_mg_dL": -0.24255000000000002
+      }
+    }
+  },
+  "monte_carlo": {
+    "WT_male": {
+      "low_5mg": {
+        "median": -0.8319333325867676,
+        "p05": -1.1388730893843952,
+        "p95": -0.5674739358336272,
+        "mean": -0.839910556056002,
+        "stdev": 0.1778351921800589
+      },
+      "mid_25mg": {
+        "median": -0.8330094380353729,
+        "p05": -1.1342184118503473,
+        "p95": -0.5711702019606454,
+        "mean": -0.8400092665096534,
+        "stdev": 0.17581585458685275
+      },
+      "high_50mg": {
+        "median": -0.8310763235624916,
+        "p05": -1.1334559383241352,
+        "p95": -0.5670322775079655,
+        "mean": -0.8375460488897978,
+        "stdev": 0.1753493191411055
+      }
+    },
+    "Q141K_het_male": {
+      "low_5mg": {
+        "median": -0.6643238533513249,
+        "p05": -0.9097776274689676,
+        "p95": -0.45101220658275737,
+        "mean": -0.6701341768949701,
+        "stdev": 0.1425091935226404
+      },
+      "mid_25mg": {
+        "median": -0.6678126300816407,
+        "p05": -0.9092035758033362,
+        "p95": -0.45281279775389105,
+        "mean": -0.6703456895051693,
+        "stdev": 0.14210218579702352
+      },
+      "high_50mg": {
+        "median": -0.6673915653751676,
+        "p05": -0.9109134323294562,
+        "p95": -0.45696641554430767,
+        "mean": -0.6714693593471133,
+        "stdev": 0.14041092245544784
+      }
+    },
+    "Q141K_hom_male": {
+      "low_5mg": {
+        "median": -0.49503427633924796,
+        "p05": -0.6731558939549828,
+        "p95": -0.3366879688990231,
+        "mean": -0.497770935983221,
+        "stdev": 0.10438894673608862
+      },
+      "mid_25mg": {
+        "median": -0.4978145722857252,
+        "p05": -0.6783948567687065,
+        "p95": -0.33748510890647343,
+        "mean": -0.49935080298979473,
+        "stdev": 0.10526072567561041
+      },
+      "high_50mg": {
+        "median": -0.49470091792653836,
+        "p05": -0.6742289257467932,
+        "p95": -0.3404781548570588,
+        "mean": -0.4986662233904353,
+        "stdev": 0.1044490988136362
+      }
+    },
+    "WT_female": {
+      "low_5mg": {
+        "median": -0.7327766017297248,
+        "p05": -0.9976920511392031,
+        "p95": -0.501565737938305,
+        "mean": -0.7362501003196085,
+        "stdev": 0.15345528549044027
+      },
+      "mid_25mg": {
+        "median": -0.7359845212747897,
+        "p05": -0.9981569579275241,
+        "p95": -0.5002378469556278,
+        "mean": -0.7372386956846473,
+        "stdev": 0.15539762901462983
+      },
+      "high_50mg": {
+        "median": -0.7359143163805201,
+        "p05": -1.0025734067749106,
+        "p95": -0.4967193483702193,
+        "mean": -0.7389800348264429,
+        "stdev": 0.15569575976786126
+      }
+    },
+    "Q141K_het_female": {
+      "low_5mg": {
+        "median": -0.5840277334908197,
+        "p05": -0.8003733271760866,
+        "p95": -0.3986739384296826,
+        "mean": -0.588427196763523,
+        "stdev": 0.12427197731291921
+      },
+      "mid_25mg": {
+        "median": -0.5882899600064543,
+        "p05": -0.7992571523688902,
+        "p95": -0.4002137431972685,
+        "mean": -0.5901467088683363,
+        "stdev": 0.1226636008472328
+      },
+      "high_50mg": {
+        "median": -0.5869111733266175,
+        "p05": -0.8027387883219073,
+        "p95": -0.40217313567229396,
+        "mean": -0.5905273087493537,
+        "stdev": 0.12398036457152546
+      }
+    },
+    "Q141K_hom_female": {
+      "low_5mg": {
+        "median": -0.4138669650345569,
+        "p05": -0.5703920270702288,
+        "p95": -0.284688241119733,
+        "mean": -0.4190770421834234,
+        "stdev": 0.08818882683187834
+      },
+      "mid_25mg": {
+        "median": -0.4167753020771849,
+        "p05": -0.5734143538530274,
+        "p95": -0.286918126580043,
+        "mean": -0.42108005913853075,
+        "stdev": 0.0888577035271302
+      },
+      "high_50mg": {
+        "median": -0.41653896046346633,
+        "p05": -0.5696500198633595,
+        "p95": -0.2889787898774545,
+        "mean": -0.42043195170137426,
+        "stdev": 0.08743791234137033
+      }
+    },
+    "Severe_dysfunction_male": {
+      "low_5mg": {
+        "median": -0.2737274066335351,
+        "p05": -0.3766589315209649,
+        "p95": -0.18743392731785313,
+        "mean": -0.27681032026454666,
+        "stdev": 0.05878141523457007
+      },
+      "mid_25mg": {
+        "median": -0.2754291328935037,
+        "p05": -0.3739466855858248,
+        "p95": -0.18642750794660795,
+        "mean": -0.27579073815312316,
+        "stdev": 0.05849234349132423
+      },
+      "high_50mg": {
+        "median": -0.2744494847267562,
+        "p05": -0.37425470313081055,
+        "p95": -0.18821080573764576,
+        "mean": -0.2767080108827987,
+        "stdev": 0.05800946312284899
+      }
+    }
+  }
+}

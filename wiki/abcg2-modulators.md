@@ -60,6 +60,8 @@ Most ABCG2 literature conflates two mechanisms with opposite implications for th
 
 **Q141K trafficking rescue** is a third, distinct mode discussed in §6 — relevant only to carriers of the Q141K polymorphism but mechanistically different from both functional inhibition and transcriptional induction.
 
+> **Cross-reference [comp-019](./uricase-abcg2-genotype-stratification-computational.md) 2026-05-08:** Q141K trafficking rescue interventions (butyrate, fermentable fiber, HDIs) ADD to the gut-lumen uricase sink rather than replacing it. The flux model shows the gut-lumen sink mechanism works ACROSS genotypes — WT/WT shows the LARGEST predicted ΔSUA (−0.83 mg/dL at 25 mg/day mid-dose, 90% CI −1.13 to −0.57), Q141K homozygotes the smallest among typical-genotype patients (−0.50 mg/dL). Mechanism is multiplicative on residual ABCG2 capacity. Q141K-positive patients get a synergy bonus from rescue interventions because the rescue restores some of the residual ABCG2 capacity, which then provides more substrate for the gut-lumen sink to amplify. **Q141K + butyrate + gut-lumen uricase is therefore a triple-mechanism intervention, but it is NOT a different mechanism than the WT/WT + gut-lumen uricase pathway — it's the same mechanism with rescued ABCG2 capacity.**
+
 ---
 
 ## The transcriptional regulation map
