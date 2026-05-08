@@ -29,7 +29,7 @@ Output exactly **N** review blockquotes (N = `marker_count` in the TRIGGER block
 - Use `> -` or wrap lines for multi-point reviews.
 - Allowed verdicts: `Confirmed.` / `Confirmed, prioritize.` / `Partial.` / `Push back.` / `Rejected.` / `Augment.` / `Defer.`
 - Allowed OVERLAP tags: `NOVEL` / `EXTENSION` / `RESTATEMENT`.
-- The literal `> **Claude review —` opener is required (the merge script's preamble-stripping defense looks for it).
+- The literal `> **Claude review —` opener is required. (Naming legacy: when the daemon switched from Anthropic Opus to GPT-5.5 for Pass 3, the in-prose label stayed "Claude review" so prior synthesis.md entries remain searchable by the same string. Treat it as a stable token, not literal attribution.)
 - Output ONLY the blockquotes. No "Here are my reviews:", no "Done.", no thinking-out-loud.
 
 If the Pass 2 log has zero markers, output the single line `NO_MARKERS` and stop. If the marker count in the log doesn't match `marker_count` in the TRIGGER block, output the single line `MARKER_COUNT_MISMATCH` and stop.

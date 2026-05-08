@@ -337,10 +337,17 @@ jobs:
           echo "Found $MARKER_COUNT {{PEER-REVIEW}} markers in Pass 2 synthesis"
           echo "marker_count=$MARKER_COUNT" >> "$GITHUB_OUTPUT"
 
-      - name: Run Pass 3 review (Opus via OpenRouter)
+      - name: Run Pass 3 review (GPT-5.5 via OpenRouter)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          REVIEWER_MODEL:    anthropic/claude-opus-4-7
+          # Default reviewer is GPT-5.5 with the GPT-5.5-tuned prompt
+          # (sweep-prompt-3-review-gpt55.md). Switched from Opus 4.7
+          # 2026-05-08 after a 3-way eval (evals/pass-3-reviewer/) showed
+          # tuned GPT-5.5 produces comparable-or-better reviews at 1/5 the
+          # cost. Both prompts and the canonical Opus path are preserved
+          # for future side-by-side evals; see the eval comparison doc.
+          REVIEWER_MODEL:    openai/gpt-5.5
+          REVIEWER_PROMPT:   scripts/sweep-prompt-3-review-gpt55.md
           SYNTHESIS_LOG:     ${{ needs.synthesize.outputs.synthesis_log }}
           TRIGGER_FILES:     ${{ needs.propagate.outputs.trigger_files }}
           CITED_FILES:       ${{ needs.synthesize.outputs.cited_files }}
@@ -369,6 +376,7 @@ jobs:
             --cited-files "$CITED_FILES" \
             --marker-count "$MARKER_COUNT" \
             --model "$REVIEWER_MODEL" \
+            --prompt-file "$REVIEWER_PROMPT" \
             > "$REVIEWS_FILE"
 
           # Run the deterministic merge — Pass 2 content preserved verbatim
