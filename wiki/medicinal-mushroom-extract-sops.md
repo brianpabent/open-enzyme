@@ -96,6 +96,8 @@ For each compound, a downstream functional readout that confirms bioactivity bey
 
 The SOPs above (SOP-1 GLPP, SOP-2 cordycepin, SOP-3 EGT) are written at **Tier 3 (bench, publication-grade)** rigor. The koji enzyme quantification work has matured a four-tier framework — kitchen → smartphone → bench → outsourced — that **transfers cleanly to mushroom extract characterization**, giving any open-source contributor a rigor-graded path from "I made a tea, did anything happen?" up to "this is a quantified extract suitable for synergy-experiment use." Reuse pattern: calibrate once at Tier 3, then track downstream batches at Tier 1 / Tier 2 against the calibrated reference standard. This is the same "calibrate-once-track-batches-cheap" discipline that makes the koji track home-feasible.
 
+> **First execution / de-stubbing path (queued 2026-05-08):** SOP-6's framework is complete; first-batch numbers don't exist yet. The natural next step is a demonstration batch — commercial *C. militaris* grow kit, Tier 1 yield + Tier 2 EGT colorimetry done at home, one outsourced Tier 3 HPLC reference run for cordycepin (~$200-400 total). Operational details + scope queued in [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) Phase 7 follow-up #3 sub-bullet. GLPP demo batch deferred until Tier 3 SEC-MALS access is sourced. Cordycepin Tier 2 diazo-coupling stays speculative pending follow-up #7's primary-literature verification.
+
 **Source framework:** [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md). Tier definitions adapted from that document's structure.
 
 | Compound | Tier 1 (kitchen, ~$0) | Tier 2 (smartphone colorimetry, ~$50) | Tier 3 (bench HPLC, ~$2K) | Tier 4 (outsourced regulatory) |
