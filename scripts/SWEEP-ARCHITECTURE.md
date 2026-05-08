@@ -269,6 +269,97 @@ Total scope: **medium project**. The system goes from "memory + ad-hoc commit-me
 
 ---
 
+## Subagent brief hygiene: scope propagates, predictions don't (added 2026-05-08)
+
+This section is broader than the daemon — it applies to **all subagent-briefing flows**, including comp-NNN computational experiments, lit-scan tasks, and any independent investigation a Claude session spawns into a subagent. The discipline below was empirically grounded by the comp-018 vs comp-020 retrospective ([`operations/comp-018-vs-comp-020-retrospective.md`](../operations/comp-018-vs-comp-020-retrospective.md), 2026-05-08).
+
+### Why this matters
+
+When a human briefs an AI subagent, the briefer's idle phrasing is *part of the experimental setup* — not just project-management overhead. Phrasings that feel like motivational context to the human ("if it's rosemary, I'll grow rosemary") read as scope guidance to the subagent ("the user expects rosemary; satisfy this expectation; promote rosemary-relevant findings"). The subagent does what its brief said; the brief silently constrained the answer. This is structurally similar to a leading question in survey methodology — it shapes the answer even when there are right answers available.
+
+This is a class of confounder that doesn't exist in human-only research: **prompt contamination**.
+
+### The dividing line
+
+User direction describes either THE WORK (legitimate scope) or THE USER's hopes about the work (contamination). The fix is to keep the first and scrub the second.
+
+**Propagate (these describe the work):**
+- Scope decisions — target list, compound classes in/out, time horizon, geographic scope, what to broaden vs. narrow
+- Methodological constraints — tools to use, evidence-level discipline, grep-verify requirements, multi-vendor cross-check
+- What's already known or ruled out — so the subagent doesn't redo work
+- Output format and reporting expectations — length cap, structure, top-of-file plain-English summary
+- Project conventions — CLAUDE.md rules, phase positioning, audience framing
+- Time, cost, and git-flow constraints
+- Tool corrections from prior reviewer feedback ("Paperclip is wrong corpus for CNKI; do direct multilingual instead")
+- Memory cautions for known unreliable tools (e.g., Paperclip's `map` operator hallucinates per `memory/feedback_paperclip_map_unreliable.md`)
+
+**Scrub (these describe the user, not the work):**
+- Contrived examples that name specific things ("if it's in rosemary I'll grow rosemary," "could be ergosterol," "maybe a flavonoid")
+- Aspirational framings ("I really want this to work," "wouldn't it be amazing if Y")
+- Speculative compound names the user thinks might be relevant
+- Personal anecdotes that aren't directly load-bearing for the investigation
+- Narrative-cohesion phrasings that aren't substantive constraints
+
+### The sharper test
+
+Would a competent independent researcher with no access to the user's specific phrasing do the same investigation and reach the same conclusions?
+
+- **If yes**, the phrasing is scope/method — keep it.
+- **If no** — if the user's phrasing materially constrains where the researcher would look or what they'd headline-promote — it's contamination, scrub it.
+
+### The rhetorical-callback tell
+
+If the subagent's report-back uses your phrasing back at you ("your X framing landed empirically," "as you suspected"), that's a signal your phrasing influenced not just the search but the framing of the result. Watch for it. It's the smoking gun for narrative-cohesion bias even when the underlying findings are real.
+
+### Guardrail against over-correction
+
+Stripping user direction so aggressively that the subagent loses scope context is its own bias.
+
+- **Don't strip scope direction.** If the user says "broaden beyond fungal," that's load-bearing — removing it produces a narrow fungal-only sweep.
+- **Don't strip "what's known/ruled out" context.** That prevents redundant work.
+- **Don't strip methodological discipline.** Tool corrections, evidence-level rules, and multi-vendor expectations all stay.
+- **DO strip examples, hopes, predictions, speculative compound names.** Those are the contamination class.
+
+The check: would removing the phrase from the brief make the subagent's task less defined? If yes, keep it. If removing it leaves the same well-scoped investigation, scrub it.
+
+### Verification re-run as a discipline
+
+When a subagent brief contains user-named compounds, contrived examples, or motivational framing that could plausibly bias narrative-cohesion, the cheapest corrective is an independent re-run with a scrubbed brief. Cost: ~$5 in Opus subagent compute, 30-60 minutes wall-clock, ~25 minutes human attention. Cheap enough to default to whenever the brief contains contamination-class content.
+
+The re-run brief should:
+- Strip all compound names, contrived examples, and user phrasing
+- Retain identical scope, methodology, and "what's known/ruled out" context
+- Add explicit anti-bias instructions: "no compound prioritization in the headline; surface ALL compounds within ~20% of the lead metric; depth-first at each compound class; no rhetorical callbacks to user phrasing"
+- Be framed as an "independent verification re-run" — the verification subagent should NOT be told what the predecessor found
+
+The comparison happens AFTER both reports land. If they converge, confidence in the original goes up. If they diverge, you've surfaced a confounder.
+
+### Catch from instinct, codify in discipline
+
+The discipline above doesn't preempt first-time issues. It's the safety net for the SECOND instance of a class of problem. The FIRST instance gets caught by:
+
+1. Human pattern-recognition / suspicion (the user notices something feels off)
+2. Verification (independent test of the suspicion)
+3. Codification (the discipline gets written down for next time)
+
+For citizen scientists doing AI-assisted research without the OE project's multi-pass safety net: cultivate the instinct first. Watch for results that feel too narratively coherent with how you framed the question. That feeling is data.
+
+### Origin: comp-018 brief contamination 2026-05-08
+
+The comp-018 (Upstream Complement Modulator Sweep) subagent brief inadvertently included Brian's contrived "if it's in rosemary I'll grow rosemary" example as motivation. The subagent's headline finding (rosmarinic acid as TIER-1 dietary C3-convertase inhibitor) is real — Englberger 1988 PMID 3198307 is a foundational 38-year paper, and rosmarinic acid is named after rosemary because it was first isolated from rosemary in 1958 — but the *headline-promotion* of rosmarinic acid singularly (vs. luteolin, tiliroside, *Helicteres* benzofuran lignans, marine sulfated polysaccharides, ganoderic acid Sz) was contaminated by narrative-cohesion with the user phrasing. The subagent's report-back literally said "Brian's literal 'if it's in rosemary I'll grow rosemary' framing landed empirically" — the rhetorical-callback tell.
+
+Brian's instinct caught it: *"This has got to be a hallucination — I just said rosemary because it was the first herb that popped into my head."* The verification re-run (comp-020, brief-scrubbed) found:
+- Three tied tier-1 candidates instead of one (rosmarinic acid, *Helicteres* benzofuran lignans, luteolin)
+- comp-018 missed *Helicteres* benzofuran lignans at the headline tier (4-20× more potent than RMA on matched assay)
+- comp-018 underweighted marine sulfated polysaccharides
+- The rosmarinic acid IC50 spread is 44× across assays (comp-018 noted 20-30×); the load-bearing mechanism is upstream covalent C3b modification, NOT direct C5 convertase inhibition
+
+Underlying findings NOT contaminated. Headline-promotion WAS contaminated. Coverage breadth PARTIALLY contaminated. Brian's suspicion was empirically correct.
+
+Full retrospective: [`operations/comp-018-vs-comp-020-retrospective.md`](../operations/comp-018-vs-comp-020-retrospective.md). External-comms entry: [`operations/notable-moments.md`](../operations/notable-moments.md) 2026-05-08 brief-contamination entry.
+
+---
+
 ## Cross-references
 
 - The Alma project's hooks-and-skills pattern is the explicit precedent (Brian, 2026-04-28). Same structural insight: conventions that are checked don't drift; conventions that depend on memory always do, eventually.

@@ -102,6 +102,8 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 
 **The discipline applies to all comp-NNN authoring runs, all H-card stubs, all scope pages, all primary-research wiki edits.** When delegating wiki authoring to a subagent, the verification protocol must be in the subagent's brief — not "verify if you have time," but "verify each load-bearing number against primary source before writing it into the page."
 
+**Sister discipline — subagent brief hygiene:** when *composing* a subagent's brief, scope and method propagate from user direction; predictions and contrived examples don't. User's contrived "if it's rosemary I'll grow rosemary" framing landed verbatim in the comp-018 brief 2026-05-08 and biased the headline finding toward narrative-cohesion. Full discipline + empirical case at [`scripts/SWEEP-ARCHITECTURE.md` §"Subagent brief hygiene"](./scripts/SWEEP-ARCHITECTURE.md). Retrospective at [`operations/comp-018-vs-comp-020-retrospective.md`](./operations/comp-018-vs-comp-020-retrospective.md). The pre-commit grep-verify gate above catches errors *inside* the subagent's output; subagent brief hygiene catches contamination *upstream of* the subagent's run. Different failure modes, both worth disciplined practice.
+
 ### 5. Evidence Levels
 
 **Always state the level of evidence for claims.** Use these tags:
