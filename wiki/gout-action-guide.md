@@ -39,6 +39,8 @@ Pick the closest match. Each row links to a tailored section below.
 
 Most readers. No genotype info, mostly diet-managed gout, want a sensible mechanism-grounded stack.
 
+> **Calibration note (2026-05-08):** the strongest engineered-strain benefit from the OE pipeline (gut-lumen uricase via koji) may be **conditional on ABCG2 genotype, not pan-male**. Recent computational work ([comp-017](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md)) found near-null sex dimorphism in healthy-baseline intestinal ABCG2 — meaning the gut-lumen-sink mechanism likely depends on Q141K-positive disease-state ABCG2 deficiency rather than constitutive male suppression. comp-019 (queued in [open-questions.md](./open-questions.md) Genotype-stratification section) is the in-progress experiment to quantify this. **Practical implication for this Default path:** the dietary + over-the-counter supplement entries below are genuinely broadly applicable; the engineered-strain Future entries may end up Q141K-conditional. Genotyping yourself ("This year" entry below) matters more than it sounds — you may belong on the [Q141K-positive path](#q141k-positive-path) instead.
+
 ### Today (start in the next 24 hours)
 
 - **Cut high-fructose corn syrup** — fructose drives PRPS-mediated purine biosynthesis upstream of XO (the enzyme allopurinol blocks). This is a single dietary change with real mechanistic backing. See [PRPS chokepoint](./prps-purine-biosynthesis-chokepoint.md), [fructose connection](./fructose-connection.md).
