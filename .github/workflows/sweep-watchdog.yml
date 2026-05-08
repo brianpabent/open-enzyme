@@ -45,7 +45,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          # Full history is required — sweep-state.py pending-paths runs
+          # `git diff <registry.last_successful_sweep.commit> HEAD` to compute
+          # the unsweept-wiki backlog. With fetch-depth: 1 the registry's
+          # cursor commit isn't in the shallow clone and git exits 128.
+          # Same pattern as wiki-sweep.yml (Pass 1 also uses fetch-depth: 0).
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
