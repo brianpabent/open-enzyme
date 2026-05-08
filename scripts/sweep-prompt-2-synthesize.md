@@ -72,6 +72,18 @@ Cross-document connections that emerge only when you read multiple files togethe
 
 ---
 
+## Forced-rank close (Riskiest Assumption + Most Curious Thread)
+
+After enumeration, **commit to two single-answer forced-rank picks**. These are deliberately a different cognitive move than the enumeration sections above — they require *picking*, not *listing*. Rationale and broader context: [`posts/notes/hypothesis-generation-gap.md`](../posts/notes/hypothesis-generation-gap.md).
+
+**Riskiest Assumption.** One paragraph. Name the single load-bearing belief in the *current platform thesis* (top of `index.md` and `wiki/open-enzyme-vision.md`) that is *least* supported by the corpus — the belief whose failure would most invalidate the platform direction. Anchor to specific wiki page(s) where the belief is asserted and specific evidence (or absence of evidence) you can point at. Not "what could go wrong in general" — the specific belief.
+
+**Most Curious Thread.** One paragraph. Of everything in this corpus, pick *one* thread you'd spend the next experiment slot on. Must include: (a) the specific corpus evidence supporting the hunch, line-anchored as `file.md §section` or page-name+topic, (b) the specific evidence that would refute it, (c) the cheapest experiment that would discriminate. Multi-vendor signal: if you suspect another sweep model would converge on this pick, say so; if you suspect this is your idiosyncratic taste, say that too — divergence may be as informative as convergence here.
+
+These are corpus-anchored take commitments, the take-equivalent of the project's pre-commit grep-verify gate (CLAUDE.md Rule 4): just as load-bearing numbers must be grep-verifiable against a primary source before they ship, load-bearing *takes* must be grep-anchorable against specific corpus locations before they ship. Don't hand-wave; point at lines.
+
+---
+
 ## Output format
 
 **Critical**: end every numbered item (each Connection, Contradiction, Experiment, Open Question, Priority Action) with a `{{PEER-REVIEW}}` marker on its own line. Pass 3 (Claude review) substitutes each marker with a review blockquote via deterministic merge — your content is preserved verbatim.
@@ -130,11 +142,24 @@ Also include a `[PHASE-A-MATCH: <yes/no/partial>]` tag — your honest self-asse
 1. **<action>** (1-2 lines on what + why)
 
    {{PEER-REVIEW}}
+
+## Riskiest Assumption
+
+(One paragraph. Single load-bearing belief in the current platform thesis that is least supported by the corpus. Anchor to specific wiki page(s) and specific evidence or absence of evidence. See "Forced-rank close" above.)
+
+{{PEER-REVIEW}}
+
+## Most Curious Thread
+
+(One paragraph. The single thread you'd spend the next experiment slot on. Must include: corpus evidence supporting, corpus evidence that would refute, cheapest discriminating experiment. Flag whether convergent or idiosyncratic. See "Forced-rank close" above.)
+
+{{PEER-REVIEW}}
 ```
 
 ### Marker discipline
 
 - One `{{PEER-REVIEW}}` per numbered item. Not at section headers, not at sub-bullets.
+- For the **forced-rank sections** (Riskiest Assumption, Most Curious Thread), one `{{PEER-REVIEW}}` marker per section, placed after the single paragraph. These sections are not numbered lists — they are single-answer commitments.
 - Place on its own line, separated from the item content above by a blank line.
 - The marker text is exactly `{{PEER-REVIEW}}` (case-sensitive, double curly braces, no spaces inside).
 - If you produce a "no new synthesis" no-op output (drift guard), you do not need any markers — the no-op block has nothing to review.
