@@ -1026,6 +1026,46 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 ---
 
+### 1.26 Cordycepin × Pentostatin × GLPP — Five-Arm ADA Half-Life Assay (ADA Chokepoint Synergy Validation)
+
+**Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [gout-pathophysiology](./gout-pathophysiology.md), [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
+
+**What it tests:** Does combining ADA inhibitors from two independent biochemical mechanisms (pentostatin = small-molecule competitive inhibition; GLPP = polysaccharide-peptide binding) extend cordycepin's in-vitro half-life enough to make a fermentable, food-grade urate-lowering protocol viable at sub-multi-gram daily dosing? Specifically: does the two-organism combination (whole-fermentate *Cordyceps militaris* + *Ganoderma lucidum* GLPP) outperform either single-organism preparation?
+
+**Proposed in:** `wiki/synthesis.md` 2026-05-08 sweep block e842754 Connection 1 + Proposed Experiment 1; Pass 3 review (GPT-5.5) flagged the original 4-arm design as incomplete because it tested purified pairings and whole-fermentate alone but NOT the two-organism combination — fifth arm added per Pass 3's specific recommendation.
+
+**Background — the ADA chokepoint:** Adenosine deaminase (ADA) is the enzyme that rapidly deaminates cordycepin (3'-deoxyadenosine) to its inactive metabolite, limiting cordycepin's half-life and forcing impractical multi-gram daily doses for therapeutic urate-axis effects. Two natural ADA inhibitors are documented: pentostatin (small-molecule, FDA-approved as Nipent for hairy-cell leukaemia, NATIVELY co-produced with cordycepin in *C. militaris* per the Xia 2017 BGC characterization PMID 29056419) and GLPP polysaccharide-peptide from *G. lucidum* (mechanism orthogonal to pentostatin — polysaccharide binding rather than competitive nucleoside-mimetic inhibition). Whole-fermentate *Cordyceps* delivers cordycepin + pentostatin in their natural ratio; supplementing with GLPP adds a second, mechanistically orthogonal ADA blockade. See [medicinal-mushroom-complement-track.md §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) for the full thesis.
+
+**Protocol — Five-arm in-vitro design:**
+
+| Arm | Composition | Tests |
+|---|---|---|
+| **1. Cordycepin alone** | Recombinant human ADA (Sigma A6535) + cordycepin standard (Sigma C3394, 100 µM) in PBS pH 7.4, 37°C | Baseline ADA-driven cordycepin deamination kinetics |
+| **2. Cordycepin + pentostatin** | Arm 1 + research-grade pentostatin (Sigma P3650, 1 µM and 10 µM dose-response) | Pentostatin's quantitative ADA-inhibition contribution at gut-relevant concentrations |
+| **3. Cordycepin + GLPP** | Arm 1 + GLPP-enriched fraction from a SEC-MALS-characterized *G. lingzhi* dual-decoction extract (per [SOP-1](./medicinal-mushroom-extract-sops.md), 100 µg/mL polysaccharide-peptide) | GLPP's ADA-inhibition contribution alone, mechanistically distinct from pentostatin |
+| **4. Whole-fermentate *Cordyceps***  | Total water/ethanol-coextract from *C. militaris* (GYS60 strain or commercial fruiting-body extract; cordycepin-equivalent dose normalized to 100 µM via SOP-2 HPLC quantification) | Whole-fermentate co-delivery of cordycepin + native pentostatin in their natural ratio — single-organism baseline |
+| **5. Whole-fermentate *Cordyceps* + GLPP** *(added per Pass 3)* | Arm 4 + GLPP from Arm 3 | The two-organism combination — does adding mechanistically-orthogonal GLPP-mediated ADA inhibition further extend cordycepin half-life beyond what whole-fermentate's native pentostatin already delivers? |
+
+**Primary readout:** cordycepin remaining at t = 0, 15, 30, 60, 120, 240 min, measured by HPLC (per [SOP-2](./medicinal-mushroom-extract-sops.md) cordycepin quantification — calibrated reference standard). Compute half-life per arm. Loewe combination index for arms 2/3/5 vs. additive expectation.
+
+**Secondary readout:** ADA enzyme activity (residual deamination rate) measured directly via commercial ADA assay kit (Diazyme, 1064-330) — confirms the ADA-inhibition mechanism rather than off-target cordycepin protection.
+
+**Success criteria:**
+- **Promote two-organism stack to mouse PK study** if Arm 5 shows ≥2× cordycepin half-life extension over Arm 4 (whole-fermentate alone) AND the half-life extension correlates with ADA activity reduction in the secondary readout. This would justify a follow-on PO HUA mouse study testing the combination at therapeutic dose.
+- **Drop GLPP from the cordycepin-targeting protocol** if Arm 5 ≈ Arm 4 (no meaningful improvement over native pentostatin) — implies GLPP's ADA inhibition is redundant with pentostatin in whole-fermentate context, and the simpler whole-fermentate-alone preparation is the right consumer product.
+- **Reframe the platform thesis** if Arm 4 ≈ Arm 1 (whole-fermentate's native pentostatin is too dilute to matter at gut-relevant concentrations) — implies cordycepin needs supplemental purified pentostatin or GLPP regardless of preparation, and the "single-organism whole-fermentate" framing in [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) needs revision.
+
+**Limitations:**
+- In vitro ADA assay does not capture gut-microbiome metabolism of cordycepin (which may matter for in vivo half-life). The half-life extension demonstrated here is necessary but not sufficient for clinical effect.
+- Recombinant human ADA (Sigma A6535) is the standard substrate but doesn't model intestinal mucosa-localized ADA dynamics. Mouse PK study (queued as gated follow-on) is the next-step de-risker.
+- GLPP fraction quality is load-bearing — Tier 3 SEC-MALS characterization per SOP-1 is non-negotiable. Generic "reishi extract" cannot substitute. Per the [structure-dependent β-glucan caveat](./medicinal-mushroom-complement-track.md#consumer-product-caveat--structure-dependent-β-glucan-nlrp3-directionality), wrong-fraction substitution would produce uninterpretable results.
+
+**Cross-references:** [medicinal-mushroom-complement-track.md §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) (Item 1 of the 2026-05-08 walkthrough — the two-organism synergy bullet); [gout-pathophysiology.md §"ADA (Adenosine Deaminase) — Purine Catabolism Chokepoint Candidate"](./gout-pathophysiology.md); [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md) (comp-014 Phase 2, where ADA was first surfaced); [synthesis.md](./synthesis.md) 2026-05-08 sweep Connection 1 + Proposed Experiment 1.
+
+---
+
 ## Phase 2: Animal Model Validation
 
 ### 2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii
