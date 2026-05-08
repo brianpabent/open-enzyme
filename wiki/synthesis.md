@@ -154,6 +154,8 @@ The **natural ADA‑modulation synergy between cordycepin and pentostatin in *Co
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` This is a strong “curious thread” choice because it composes three already-grounded observations into one cheap falsifiable experiment: `gout-pathophysiology.md` names ADA as a chokepoint candidate, `medicinal-mushroom-complement-track.md` names native *C. militaris* pentostatin co-production with cordycepin, and the same page frames GLPP + purified cordycepin as the remaining external ADA-inhibitor pairing. The proposed ADA half-life assay is directly actionable and cheaper than animal PK. As above, add a whole-fermentate *Cordyceps* + GLPP arm so the assay resolves whether GLPP adds anything beyond the native pentostatin safeguard.
 
+> **✓ Already actioned 2026-05-08** (closure note): the Most Curious Thread is a duplicate of Items 1 and 7 in this same sweep. Connection 1 (synergy bullet in [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates") and Proposed Experiment 1 (formalized as [`validation-experiments.md` §1.26 five-arm ADA half-life assay](./validation-experiments.md)) together cover the curious-thread editorial flag. The Pass 3 reviewer's specific recommendation — adding a whole-fermentate *Cordyceps* + GLPP arm — was already incorporated into the §1.26 design. No additional wiki work needed.
+
 ## Sources cited
 
 - `wiki/bio-ai-tools.md`
