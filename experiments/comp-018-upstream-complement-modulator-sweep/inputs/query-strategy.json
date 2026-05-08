@@ -1,0 +1,93 @@
+{
+  "description": "Multi-source query strategy for comp-018. Per Open Enzyme CLAUDE.md tool discipline (§Tool discipline) — Paperclip MCP for PMC/arXiv/bioRxiv/medRxiv full text and OpenAlex abstracts ONLY (NOT for CNKI / WanFang / J-STAGE — wrong corpus). Direct multilingual searches (CNKI, WanFang, J-STAGE) handled via the model's native multilingual training, not Paperclip. Paperclip `map` operator forbidden per memory/feedback_paperclip_map_unreliable.md.",
+  "fetch_date": "2026-05-08",
+  "primary_sources": [
+    {
+      "name": "PubMed via mcp__plugin_pubmed_PubMed",
+      "use": "depth pass for English-language complement biology + natural-product anticomplement literature",
+      "query_pattern": "(target_node OR target_synonyms) AND (compound_class OR specific_compound) AND (inhibit* OR antagonist OR modulator)"
+    },
+    {
+      "name": "Paperclip MCP via mcp__paperclip",
+      "use": "PMC/arXiv/bioRxiv/medRxiv full-text grep + scan for line-anchored verification of load-bearing IC50 values",
+      "primitives_allowed": ["search", "cat", "grep", "scan", "head", "lookup", "ls"],
+      "primitives_forbidden": ["map", "reduce"]
+    },
+    {
+      "name": "ChEMBL (per-compound)",
+      "use": "bioactivity coverage check for each candidate compound; document ChEMBL-coverage gap explicitly per comp-013 precedent (5/9 TCM compounds had zero ChEMBL data)",
+      "expected": "natural-product compounds especially classical TCM and fungal will largely be ABSENT from ChEMBL — that is the documented gap, not a methodology failure"
+    }
+  ],
+  "multilingual_sources_direct_read": [
+    {
+      "name": "CNKI / WanFang (Chinese)",
+      "use": "TCM materia medica anticomplement evidence; Chinese-language clinical and biochem papers",
+      "translation_protocol": "two-model cross-check per CLAUDE.md §Translation protocol — Claude (Anthropic) + DeepSeek V4-Pro (Chinese-vendor) for load-bearing claims. Surface disagreements with inline {Model A | Model B} annotations.",
+      "comp018_phase": "Phase 1 sample read; full ingestion deferred to Phase 2 if hits warrant"
+    },
+    {
+      "name": "J-STAGE / CiNii (Japanese)",
+      "use": "Kampo medicine literature; Japanese natural product chemistry (Magnolia tiliroside source corpus)",
+      "translation_protocol": "Claude + Gemini 2.5 Pro per CLAUDE.md",
+      "comp018_phase": "Phase 1 sample read"
+    },
+    {
+      "name": "KISS / RISS (Korean)",
+      "use": "Korean natural-product chemistry — substantial anticomplement-flavone literature lives here",
+      "translation_protocol": "Claude + Gemini per CLAUDE.md",
+      "comp018_phase": "Phase 1 sample read"
+    }
+  ],
+  "search_macros_executed_2026_05_08": [
+    {
+      "query": "(\"C1q\" OR \"C1 esterase\") AND natural-product AND inhibit*",
+      "tool": "PubMed",
+      "result_count": 34,
+      "yield": "C1q literature predominantly in MeSH-indexed Western pharma context; little direct natural-product coverage"
+    },
+    {
+      "query": "\"complement C3 convertase\" AND (inhibit* OR antagonist) AND (natural OR plant OR herbal OR flavonoid OR triterpene OR saponin OR polysaccharide OR fungal OR mushroom)",
+      "tool": "PubMed",
+      "result_count": 12,
+      "yield": "PRIMARY HIT CORPUS — rosmarinic acid (PMID 3198307) is the seed; everything downstream cites it as positive control"
+    },
+    {
+      "query": "\"complement system\" AND \"rosmarinic acid\"",
+      "tool": "PubMed",
+      "result_count": 12,
+      "yield": "depth on rosmarinic acid mechanism + in vivo precedent"
+    },
+    {
+      "query": "(\"Ganoderma\" OR \"Cordyceps\" OR \"Inonotus\" OR \"Lentinula\" OR \"Trametes\" OR \"Hericium\") AND complement",
+      "tool": "PubMed",
+      "result_count": 110,
+      "yield": "Ganoderma triterpenes (PMID 20091270) confirm fungal anticomplement chemistry"
+    },
+    {
+      "query": "(berberine OR quercetin OR luteolin OR baicalein OR EGCG OR curcumin) AND complement AND (C3 OR convertase) AND IC50",
+      "tool": "PubMed",
+      "result_count": 16,
+      "yield": "Luteolin (PMID 18400428) most-potent flavonoid CP+AP in CH50/AP50 0.19/0.17 mM"
+    },
+    {
+      "query": "complestatin AND complement",
+      "tool": "PubMed",
+      "result_count": 9,
+      "yield": "Streptomyces NPRPS-derived peptide; precedent for bacterial-actinobacterial anticomplement chemistry"
+    },
+    {
+      "query": "K-76 AND complement",
+      "tool": "PubMed",
+      "result_count": 49,
+      "yield": "K-76 = filifolinol-derived sesquiterpene C5 inhibitor; IC50 570 µM crude (PMID 22835722); semi-synthetic improvements possible"
+    },
+    {
+      "query": "anticomplement* AND (polysaccharide OR triterpene OR saponin) AND IC50",
+      "tool": "PubMed",
+      "result_count": 19,
+      "yield": "Bupleurum polysaccharides (Wu 2015 PMID 26579461) lectin pathway IC50 0.98-1.06 mg/mL; cycloartane triterpenes (Mu 2013 PMID 24144800) ~137-200 µM; oleanane triterpenes from Aceriphyllum (PMID 22870809) IC50 77.5-348 µM"
+    }
+  ],
+  "verification_gate_protocol": "Per CLAUDE.md Rule 4 — every IC50 / mechanism / dose claim grep-verified against primary source line-anchor BEFORE wiki commit. Where source is paywalled and no PMC mirror exists, claim is marked [UNVERIFIED — abstract-tier] explicitly."
+}
