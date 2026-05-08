@@ -1066,6 +1066,49 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 ---
 
+### 1.27 Ergothioneine + Lactoferrin Combination ROS Assay in MSU-Stimulated THP-1 Macrophages (Cross-Track ROS / CP1b Additivity Validation)
+
+**Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [gout-pathophysiology.md](./gout-pathophysiology.md) (multi-track coverage map ROS / CP1b row), [lactoferrin.md](./lactoferrin.md), [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md), [koji-endgame-strain.md](./koji-endgame-strain.md)
+
+**What it tests:** Do ergothioneine (mushroom track, direct thiol scavenging of hydroxyl radicals + peroxynitrite) and apo-lactoferrin (koji track, iron-sequestration Fenton suppression) operate as mechanistically orthogonal ROS-reduction routes in a gout-relevant cell model — and if so, do they produce additive or synergistic suppression of NLRP3 priming when combined?
+
+**Proposed in:** `wiki/synthesis.md` 2026-05-07 77d0f6e Connection 3 + Proposed Experiment 2; Pass 3 review (Opus 4.7) added two refinements (extended Lf dose range to koji-pore-fluid-achievable; apo vs holo Lf comparison to confirm iron-sequestration mechanism). This is the wet-lab gate that would promote the [`gout-pathophysiology.md` ROS / CP1b coverage row (added 2026-05-08, Item 22 walkthrough)](./gout-pathophysiology.md) from *speculative* to *supported*.
+
+**Sequencing:** gated on §1.20 (Lactoferrin + EGCG CP1a Super-Additivity Assay), which itself is gated on §1.9. Run §1.27 after §1.20 to share THP-1 macrophage + MSU stimulation + IL-1β ELISA infrastructure.
+
+**Protocol:**
+
+- **Cells:** THP-1 monocytes differentiated to macrophages (PMA, 100 nM × 24h then rest 24h). Human cells chosen to avoid the rodent-IC50 translation gap per [§1.19 standing methodology](./validation-experiments.md).
+- **Priming:** LPS (100 ng/mL × 4 h).
+- **Stimulation:** MSU crystals (250 µg/mL × 6 h) — gout-relevant inflammasome trigger.
+- **Treatment arms** (treatment 1 h before MSU, continued through readout):
+  - Vehicle control
+  - Ergothioneine alone: 1, 10, 100 µM (brackets dietary-achievable plasma range ~5–25 µM per [P. citrinopileatus correction in `medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) Phase 7-1c)
+  - **Apo-lactoferrin alone: 10, 100, 500 µg/mL** (Pass 3 refinement — extended from original 10–100 µg/mL range to test koji-pore-fluid-achievable concentrations)
+  - **Holo-lactoferrin (iron-loaded) at 500 µg/mL — apo-vs-holo comparator arm** (Pass 3 refinement — Fenton-suppression mechanism is apo-specific; any apo-lactoferrin additivity that disappears in holo confirms the iron-sequestration mechanism rather than a generic anti-inflammatory effect)
+  - Combination: ergothioneine 10 µM + apo-lactoferrin 100 µg/mL (mid-range × mid-range, Loewe-index reference point)
+
+- **Primary readout:** IL-1β ELISA (gold-standard NLRP3 activation readout)
+- **Secondary readouts:** intracellular ROS (DCFDA fluorescence), NF-κB priming (IκBα Western blot)
+- **Analysis:** Loewe combination index for ROS and IL-1β. CI < 1 = synergy; CI ≈ 1 = additive; CI > 1 = antagonism. Apo-vs-holo comparison: if apo-Lf-additivity disappears in holo arm, mechanism is iron-sequestration-specific (the platform-relevant story).
+
+**Success criteria:**
+
+- **Promote ROS / CP1b coverage row from *speculative* to *supported* in [`gout-pathophysiology.md` multi-track coverage table](./gout-pathophysiology.md)** if Loewe CI ≤ 1.0 for IL-1β at the mid-range × mid-range combination, AND apo-Lf-driven additivity is greater than holo-Lf in the apo-vs-holo comparator (mechanism confirmed iron-sequestration-specific). This is the Item 22 wet-lab gate.
+- **Strengthen the case for combining koji + mushroom tracks** beyond urate-transporter rationale, providing an anti-inflammatory additivity argument for the multi-track product strategy.
+- **Drop the orthogonal-ROS framing** if apo-Lf additivity is no greater than holo (mechanism is generic anti-inflammatory, not Fenton-iron-specific) OR if Loewe CI ≫ 1 (compounds antagonistic rather than additive).
+
+**Limitations:**
+- THP-1 is a single human macrophage line; primary human MDM (monocyte-derived macrophage) replication would strengthen translation but doubles cost.
+- LPS + MSU stimulation is a two-signal model that doesn't capture all in vivo gout-flare priming pathways.
+- Fenton-iron mechanism in cell culture vs. in vivo gut lumen has different iron-availability conditions; cell-culture additivity may not translate to gut-luminal additivity.
+
+**Cross-references:** [gout-pathophysiology.md §"Multi-track urate transporter coverage" ROS / CP1b row](./gout-pathophysiology.md) (the speculative claim this experiment gates); [lactoferrin.md §4.1](./lactoferrin.md) (Fenton-iron mechanism); [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (P. citrinopileatus EGT source); [validation-experiments.md §1.19](./validation-experiments.md) (rodent-IC50 species-gap discipline); [validation-experiments.md §1.20](./validation-experiments.md) (sister CP1a super-additivity assay sharing THP-1 + MSU infrastructure); [synthesis.md](./synthesis.md) 2026-05-07 77d0f6e Connection 3 + Item 22 walkthrough closure.
+
+---
+
 ## Phase 2: Animal Model Validation
 
 ### 2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii
