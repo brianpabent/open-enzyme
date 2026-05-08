@@ -6,6 +6,10 @@ Open source library of engineered, food-grade microbial strains producing therap
 
 ---
 
+> **Have gout? Want to know what to do?** → Read **[`gout-action-guide.md`](wiki/gout-action-guide.md)** first. It's the situation-first entry surface (today / this month / this year, by patient situation) that translates the research wiki below into action. The dashboard, synthesis queue, and concept index on the rest of this page are research-facing.
+
+---
+
 ## Status
 
 **Current platform thesis:** One engineered *A. oryzae* koji strain expressing uricase + NLRP3 inhibitors, fermented on rice bran, positioned as adjunct to allopurinol for gout — not a monotherapy replacement. Derivation in [wiki/synthesis.md](wiki/synthesis.md).
@@ -89,8 +93,9 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 ## Strategy & Practice
 
+- **[Gout Action Guide](wiki/gout-action-guide.md)** — *(NEW 2026-05-08)* — "I have gout, what do I do?" entry surface. Situation-first decision tree (default-male / androgen-elevated / Q141K-positive / active flare / on allopurinol / prevention) × time horizon (today / this month / this year / future). Translates the research wiki into action; links into the supplements catalog for compound depth and into individual research pages for mechanism depth. Patient/practitioner-facing, not PhD-research-facing — read this first if you arrived asking "what should I do?"
 - **[Gout Clinical Pipeline](wiki/gout-clinical-pipeline.md)** — Current ClinicalTrials.gov + PubMed snapshot (2026-04-23): ALLN-346 program terminated 2022, dapansutrile gout development stalled, canakinumab FDA-approved for gout Aug 2023, PRX-115 is the new systemic-uricase competitor. Refreshable quarterly via MCP.
-- **[Supplements Stack](wiki/supplements-stack.md)** — Practical NOW/SOON/FUTURE recommendations with dosing and evidence levels
+- **[Supplements Stack](wiki/supplements-stack.md)** — Compound-first catalog (1,100+ lines): per-compound mechanism, dose, contraindications, drug interactions, stack-level antagonisms. NOW (Section 1) / SOON (Section 2) / FUTURE (Section 3). For situation-first triage, see [`gout-action-guide.md`](wiki/gout-action-guide.md).
 - **[Complement C5a in Gout](wiki/complement-c5a-gout.md)** — CP0: MSU directly activates complement; C5a dominant NLRP3 priming signal; avacopan repurposing candidate; stack gap
 - **[TNFSF14 / LIGHT in Gout](wiki/tnfsf14-gout-target.md)** — CP1a: Second-highest gout-flare biomarker; LIGHT amplifies NF-κB; EGCG and DHA as natural moderators; CERC-002 mAb precedent
 - **[SPM Resolution Pathway](wiki/spm-resolution-pathway.md)** — CP5b: RvD1/MaR1 direct MSU gout animal model evidence; ALX/FPR2 agonism; aspirin-triggered resolvins
