@@ -116,7 +116,7 @@ All [Default path → Today](#today-start-in-the-next-24-hours) entries.
 ### This year
 
 - Self-experiment with rigor — Q141K-positive responders are who Open Enzyme's gut-lumen-sink thesis depends on most, so good n=1 data here is genuinely valuable.
-- Watch [comp-018](./computational-experiments.md) (multilingual fungal complement-modulator sweep, pending) and [food-grade HDACi screen (comp-007)](./food-grade-hdaci-screen-computational.md) for new candidate ABCG2-rescue compounds.
+- Watch [comp-018 — upstream complement modulator sweep](./upstream-complement-modulator-sweep-computational.md) (Phase 1 complete 2026-05-08; **rosmarinic acid** + **luteolin** + **Bupleurum polysaccharides** as upstream-CP0 dietary candidates — note: a brief-scrubbed verification re-run as [comp-020](./upstream-complement-verification-rerun-computational.md) flagged that comp-018's headline-promotion of rosmarinic acid was contaminated by user phrasing in the brief; *Helicteres* benzofuran lignans actually beat rosmarinic acid 4-20× on matched-assay potency — see retrospective at `operations/comp-018-vs-comp-020-retrospective.md`) and [food-grade HDACi screen (comp-007)](./food-grade-hdaci-screen-computational.md) for new candidate ABCG2-rescue compounds.
 
 ---
 

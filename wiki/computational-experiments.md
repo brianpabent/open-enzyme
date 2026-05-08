@@ -22,6 +22,22 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
+### comp-018 — Upstream Complement Modulator Sweep
+
+| Field | Value |
+|---|---|
+| **Question** | Across all compound classes (fungal, plant, bacterial, marine, dietary, FDA-approved drug, classical TCM/Kampo/Ayurveda), which compounds have documented activity at upstream complement cascade nodes proximal to C5a generation, and which are gout-platform-relevant? |
+| **Method** | PubMed MCP depth pass + Paperclip MCP full-text grep (PMC/arXiv/bioRxiv/medRxiv only — `map` operator forbidden per `memory/feedback_paperclip_map_unreliable.md`). 16 upstream nodes (C1q, MBL, MASP-2, C3 convertase CP/LP/AP, Factor B/D/H, properdin, C1-INH, DAF/CD55, CD59, C5, C5aR1) targeted. Per-compound ChEMBL coverage check. Tier classification (TIER_1 strong + in vivo + dietary; TIER_2 in vitro IC50 anchored; TIER_3 weak/abstract-only). Pre-commit grep-verify gate per CLAUDE.md Rule 4. CNKI/WanFang/J-STAGE direct multilingual searches deferred to Phase 2 with two-model translation cross-check. |
+| **Verdict** | **Direct natural-product C5aR1 antagonists empty (re-confirms comp-014 + §1.21).** Moving one node upstream to C3 convertase uncovers a substantial natural-product literature anchored by **rosmarinic acid** (rosemary, lemon balm, spearmint) — C3-convertase IC50 5-10 µM optimal (Englberger 1988 PMID 3198307), three independent in vivo precedents (rat CVF lung injury 10 mg/kg, mouse + rat ADPKD), FDA-GRAS source plants, dietary-tier viable. **TIER 1 anchor: rosmarinic acid.** TIER 2: luteolin (CP+AP, triple-mechanism with comp-013 XO + URAT1), tiliroside, Bupleurum polysaccharides (lectin pathway), falcarindiol, ganoderic acid Sz, ergosterol, quercetin (microbiome-deglycosylated active), dicaffeoylquinic acid, K-76 / complestatin (engineering-relevant). |
+| **Key finding** | (1) **The chokepoint-hacker move worked** — Brian's "if the answer is rosemary, I'll grow rosemary" framing was load-bearing. Rosmarinic acid is the most well-characterized natural-product upstream-complement modulator in the literature. (2) **Luteolin triple-convergence** — XO + URAT1 + C3 convertase across CP+AP. Highest-leverage single dietary compound the platform has surfaced. (3) **comp-014 β-glucan structure-dependence mechanistically explained** — Ganoderma contains both lectin-pathway-activating glucans AND CP-convertase-inhibiting triterpenes/sterols. Argues for fraction-specific (triterpene-enriched) reishi preparations. (4) **Engineered C1-INH parallel thread proposed** — near-twin to H05 DAF SCR1-4 (soluble human complement regulator, FDA-approved precedent, koji/LBP heterologous expression candidate). (5) **ChEMBL anticomplement coverage 0/32 = 0%** — natural-product hemolytic-assay anticomplement was never systematically curated; same gap pattern as comp-013, worse here. |
+| **Informs** | [`complement-c5a-gout.md`](./complement-c5a-gout.md) — CP0 status update: dietary-modulator axis newly active alongside engineered-DAF axis. [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — proposed new row "upstream complement modulator (dietary / small-molecule)". [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) — luteolin third-mechanism update. [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) — Ganoderma triterpene anticomplement adds to comp-014. [`hypotheses/H05-daf-scr14-cp0-thesis.md`](./hypotheses/H05-daf-scr14-cp0-thesis.md) — engineering coordination + C1-INH parallel thread. [`gout-action-guide.md`](./gout-action-guide.md) — luteolin-rich foods + rosmarinic acid sources flagged as future research. |
+| **Experiment folder** | [`experiments/comp-018-upstream-complement-modulator-sweep/`](../experiments/comp-018-upstream-complement-modulator-sweep/) |
+| **Interpretive wiki page** | [`wiki/upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) |
+| **Date** | 2026-05-08 |
+| **Status** | Phase 1 complete. Phase 2 (CNKI/WanFang/J-STAGE multilingual ingestion + translation cross-check; engineered C1-INH protease stability comp-NNN; complestatin BGC LBP heterologous expression scope) queued. |
+
+---
+
 ### comp-001 — Uricase Shio-Koji Protease Stability
 
 | Field | Value |
