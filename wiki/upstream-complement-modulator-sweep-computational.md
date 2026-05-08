@@ -39,6 +39,14 @@ status: complete (Phase 1)
 
 # Upstream Complement Modulator Sweep — Computational Analysis (comp-018)
 
+> **⚠️ Read this before propagating any finding from this page.**
+>
+> The brief that produced this experiment was contaminated by a contrived user-framing example ("if it's in rosemary I'll grow rosemary"), which biased the headline-promotion of rosmarinic acid as the singular Tier-1 candidate. **An independent brief-scrubbed verification re-run (comp-020)** ran 2026-05-08 and produced a meaningfully different ranking: three tied tier-1 candidates instead of one, with ***Helicteres* benzofuran lignans** (CH50 9/40 µM, single-paper anchor PMC6273495) as the highest-potency single hit in the corpus — beating rosmarinic acid by 4-20× on a matched assay. comp-020 also surfaced **marine sulfated polysaccharides** that this page underweighted, and reframed the rosmarinic acid load-bearing mechanism as **upstream covalent C3b modification** rather than direct C5 convertase inhibition (44× IC50 spread across assays).
+>
+> **Use [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) (comp-020) as the canonical source for prioritization decisions.** This page (comp-018) remains as the original-search artifact and as the empirical case for the brief-contamination retrospective at [`operations/comp-018-vs-comp-020-retrospective.md`](../operations/comp-018-vs-comp-020-retrospective.md). Underlying findings on this page are NOT contaminated (rosmarinic acid is real, Englberger 1988 PMID 3198307 is real, the in vivo precedents are real); the contamination affected which compound got headline-promoted, not which compounds exist.
+>
+> Discipline lesson codified at [`scripts/SWEEP-ARCHITECTURE.md`](../scripts/SWEEP-ARCHITECTURE.md) §"Subagent brief hygiene." External-comms version at [`operations/notable-moments.md`](../operations/notable-moments.md) 2026-05-08 brief-contamination entry.
+
 ## Plain-English summary (CTO-not-PhD)
 
 Gout flares are driven in large part by a protein cascade called **complement**. When MSU crystals form in your joint, complement gets activated on the crystal surface, which generates a small protein called **C5a** that "primes" your immune system's NLRP3 inflammasome — that's the alarm bell that triggers the actual flare. We call this priming step **CP0**.
