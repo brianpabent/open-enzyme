@@ -1,5 +1,6 @@
 ---
 title: Grounding the AI Scientist hype
+subtitle: A field read from a mere mortal running an AI-first research project
 date: 2026-05-08
 status: draft
 tags: [ai-augmented-research, methodology, citation-laundering, hypothesis-generation]
