@@ -65,6 +65,11 @@ The briefing has a strict structure that respects the CTO-not-PhD framing:
 ```
 **Item N/total — [Section type]: [Item title]**
 
+[If the item inherits loose ends from a prior item per Step F's carryover discipline:]
+**Inherited loose ends (carryover from Item M):**
+- [Loose end + why it matters for THIS item's framing]
+- [Each inherited loose end gets explicit disposition as part of THIS item's actions]
+
 **The plain-English version:**
 [1–3 paragraphs. Lead with the headline finding in one sentence. Gloss every jargon term on first use 
 (e.g., "URAT1 [the kidney transporter that reabsorbs urate from urine back into the blood]"). 
@@ -77,6 +82,7 @@ Walk the mechanism like a flowchart, not a research paper. Use analogies where t
 **What I'd propose to do:**
 [Concrete action. Name files that would change. Estimate scope ("inline, ~10 min" / "subagent, ~5 min 
 to spawn" / "no wiki work needed — already done" / "needs your decision between A and B").]
+[If inherited loose ends apply, explicitly include their disposition in the proposed action.]
 
 [If decision needed:] **My recommendation:** [Option] — [one-sentence justification].
 
@@ -136,6 +142,28 @@ Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 **Do NOT use `[skip-wiki-sweep]`.** That marker is reserved for daemon-generated commits. Hand-applying it suppresses the sweep on user content (root cause of the 2026-04-27 walkthrough's blind spot — see CLAUDE.md). The commit-msg hook enforces this.
 
 **Hold the push until end of batch** (Section 7) so the daemon fires once across the whole batch, not N times.
+
+### Step F — Summarize what landed + loose ends + user disposition (added 2026-05-08)
+
+**An item is NOT done after Step E.** Committing the closure note is necessary but not sufficient. An item is done when (a) the action landed, (b) loose ends are dispositioned, AND (c) the user has explicitly approved moving on.
+
+**The end-of-item summary discipline:** before briefing the next item, post a short summary back to the user covering:
+
+1. **What landed** — 2–4 sentences naming the files changed, commit hash(es), and any key decisions made. The user may not have followed every Edit/Bash call; this is the cumulative human-readable diff.
+
+2. **Loose ends** — explicitly listed, each categorized as one of three types:
+
+   - **Acceptably deferred** — already queued elsewhere (`validation-experiments.md`, `open-questions.md`, comp-NNN follow-up, Phase 2 sub-task on a scope page, Strategic Reflections Queue). Listing for completeness so nothing silently drops.
+   - **Needs disposition now** — could change the next item's framing or downstream work. The user picks defer / action / ignore.
+   - **Carries over to Item X** — explicitly anchored to a specific future walkthrough item. The future-item briefing will absorb it. Without this anchoring, cross-item loose ends silently get forgotten.
+
+3. **Wait for user disposition** before briefing the next item. The user explicitly approves moving on (typically by greenlighting the next item's briefing, OR by saying "go" / "next" / "Item N+1"). Auto-advance is forbidden.
+
+**Why this rule exists.** The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while open loose ends (brief-contamination caveat propagation, methodological discipline doc, comp-018 page disclosure, retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally, the user had to back the conversation up, and the unresolved loose ends became larger work than they would have been if disposed of at end of Item 10. The fix is upstream of moving to Item 11 — explicit summary + loose-ends inventory + user disposition before the next briefing fires.
+
+**Template** at Section 6 §"End-of-item summary" below. Anti-pattern formalized at Section 9 §14.
+
+**The carryover discipline:** when an item walk discovers a cross-item loose end (e.g., comp-019's results contradict a calibration note added in Item 8 that won't be revisited until Item 11), the loose end gets added explicitly to the **inherited loose ends** section of the NEXT item's briefing. So when the briefing for Item N+1 fires, it includes "carryover from Item N: [the calibration note now points wrong direction; needs reversal during this walk]." Cross-item state is impossible to forget when it's surfaced as part of the future item's briefing context.
 
 ---
 
@@ -284,6 +312,42 @@ tracking pointers if applicable]. [Phase 3 reflection note location if relevant]
 **✓ Already actioned YYYY-MM-DD** (closure note): [Why no new work needed — point at where the canonical 
 content already lives, with file/line references]. No additional wiki work needed for this [Connection / 
 Contradiction / Open Question / Priority Action].
+```
+
+### End-of-item summary (Step F discipline — between every item and the next)
+
+Post this as a Brian-facing message AFTER the closure-note commit and BEFORE briefing the next item. The summary forces explicit user disposition before walking on.
+
+```markdown
+**Item N done — summary + loose ends:**
+
+**What landed:**
+- [File 1] — [one-line what changed] (commit `<hash>`)
+- [File 2] — [one-line what changed] (commit `<hash>`)
+- [Key decisions taken]
+
+**Loose ends:**
+
+*Acceptably deferred* (already queued elsewhere; listing for completeness):
+- [Loose end] → queued at [`location.md` §X]
+- [Loose end] → queued as Phase 2 follow-up in [scope page]
+
+*Needs disposition now* (could change the next item's framing or downstream work):
+- [Loose end] — options: defer / action now / ignore. My recommendation: [option] because [reason].
+
+*Carries over to Item X* (will surface in that future briefing):
+- [Loose end] → anchored to Item X for explicit disposition there
+
+**Item N closed?** [Wait for explicit user yes/next/go before briefing Item N+1.]
+```
+
+**Skip the loose-ends sub-headers if a category is empty.** A clean walk with no loose ends is just:
+
+```markdown
+**Item N done — summary:**
+- [Files changed + commits]
+- No loose ends.
+**Item N closed?** Ready for Item N+1.
 ```
 
 ### Peer-track scope-page skeleton (frontmatter through cross-references)
@@ -548,6 +612,10 @@ Fix: Re-anchor on the CTO-not-PhD framing rule (Section 2 Step A). Don't apologi
 12. **Auto Mode does NOT override this skill.** Claude Code's "Auto Mode active" reminders ("execute autonomously, minimize interruptions, prefer action over planning") apply to routine work where the user has durably authorized continuous execution. Walkthroughs are explicitly per-item-checkpointed; the skill discipline supersedes auto mode for the duration of the `/walk-synthesis` invocation. If Auto Mode and this skill's per-item checkpoint requirement conflict, the skill wins. Do not resolve the conflict in favor of Auto Mode (the 2026-05-06 incident's specific failure mode — a periodic Auto Mode reminder fired between Items 15 and 16, and Claude treated it as overriding the per-item discipline).
 
 13. **The `.claude/hooks/block-push-without-approval.py` push hook is a backstop, not a license.** Once active, the hook will block daemon-triggering pushes unless the user types `CLAUDE_PUSH_AUTHORIZED=1` as an explicit grant. Do not interpret "the hook will catch me if I drift" as permission to drift — the hook prevents the worst-case outcome, but the per-item discipline is the desired behavior. The hook fires when the discipline already failed; the goal is to never reach the hook.
+
+### End-of-item discipline anti-pattern (added 2026-05-08 from the third walkthrough-drift incident)
+
+14. **Don't treat "I committed the closure note" as "the item is done."** An item is done when (a) the action landed, (b) loose ends are dispositioned, AND (c) the user has explicitly approved moving on. Committing the closure note is necessary but not sufficient. Step F (Section 2) is the structural fix: end-of-item summary + loose-ends inventory + explicit user disposition before the next briefing fires. The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while four open loose ends (brief-contamination caveat propagation; methodological discipline doc; comp-018 page disclosure; retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally; Brian had to back the conversation up to Item 10; the unresolved loose ends turned into much larger work than they would have been if disposed of at end of Item 10. **Loose ends compound.** The fix is upstream of "should I move to Item N+1?" — explicit summary + loose-ends inventory before the question even fires. **Three categories** for each loose end (per Step F): acceptably deferred (already queued elsewhere); needs disposition now (user picks defer/action/ignore); carries over to Item X (explicitly anchored, will surface in that future briefing). Cross-item state is impossible to forget when it's surfaced as inherited loose ends in the future item's briefing.
 
 ---
 
