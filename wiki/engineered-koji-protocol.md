@@ -302,6 +302,16 @@ For a more quantitative assessment:
 - **Western blot:** If you can source an anti-uricase antibody (or anti-His tag if you added one), this confirms identity. Not strictly necessary if the activity assay is positive.
 - **RT-qPCR:** Measure uaZ mRNA levels relative to a housekeeping gene. Useful for comparing expression across different transformants/conditions.
 
+### Step 5: Strain QC Infrastructure (genome sequencing for integration verification + off-target screening)
+
+For any strain that progresses past the activity-assay stage (i.e., a real platform candidate, not just a screen hit), the next-tier verification is **whole-genome sequencing** to confirm: (a) the cassette is integrated where it was meant to be (not at an off-target locus), (b) there are no unintended secondary integrations or large indels elsewhere, (c) plasmid sequence is what was designed, and (d) the strain genome can be published as proof-of-construct alongside the strain release per the open-source-strain-library thesis.
+
+The hardware/wetware/pipeline for this overlaps **completely** with the personal-genome MinION setup documented in [`personal-genome-protocol.md`](./personal-genome-protocol.md). Same MinION + Dorado basecaller + Flye/Clair3 variant-calling pipeline that sequences a human genome handles strain-genome assembly + variant verification + plasmid validation. **One amortized hardware investment, two outputs.** This is a deliberate dual-use property of the platform's infrastructure choices.
+
+**Cost note (calibrated 2026-05-08):** the MinION at-home buildout is ~$5,000 all-in (device + supporting wet-lab equipment + GPU laptop), plus ~$1,000/run for flow cell + reagents at usable read depth. Per-strain genome sequencing once the buildout exists is in the ~$300–500 range (single flow cell amortized across multiple strains is feasible — a MinION flow cell can multiplex ~12-24 microbial genomes per run depending on read depth target). Until the strain pipeline reaches Phase 1+ wet work and a real strain QC need exists, the cost-justification rests entirely on the personal-genome use case (see [`personal-genome-protocol.md`](./personal-genome-protocol.md) §"Tier table" — not imminent for Brian as of 2026-05-08). A contributor with the hardware joining the project would change the calculus immediately.
+
+**Alternative for Phase 0 / pre-buildout:** outsourced strain genome sequencing via commercial CRO (Plasmidsaurus, Eurofins, etc.) at ~$50–200 per strain for plasmid + integration site verification. Cheaper per-strain when N is small; in-house MinION wins on cost amortization once N gets large enough or when a contributor's hardware investment becomes platform infrastructure.
+
 ### How Much Uricase Per Gram of Koji?
 
 Literature on heterologous protein expression in *A. oryzae* reports yields of **1–10 g/L** for well-expressed secreted proteins (e.g., lipase, glucoamylase). These are industrial fermentation numbers. For a koji solid-state fermentation, yields are typically reported as mg protein per gram dry substrate.
