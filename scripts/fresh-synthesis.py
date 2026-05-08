@@ -1,35 +1,39 @@
 #!/usr/bin/env python3
 """
-peer-review.py — ad-hoc peer-review pass on the Open Enzyme wiki.
+fresh-synthesis.py — manual full-corpus synthesis with the model of your choice.
 
-Local CLI tool (NOT the CI synthesis path — that's scripts/synthesize.py).
-Use this when you want a one-off second-opinion pass against an existing
-Claude synthesis: the model (default: DeepSeek V4-Pro) reads the full wiki
-INCLUDING synthesis.md (so it sees what Claude wrote), produces its own
-synthesis, and adds a differential-analysis section.
+Local CLI tool (NOT the daemon path — see .github/workflows/wiki-sweep.yml
+for the CI sweep). The daemon is a 3-pass pipeline (Pass 1 Propagate →
+Pass 2 Synthesize → Pass 3 Review). This script is the manual sibling:
+point it at any OpenRouter-served model and ask "what does THIS model find
+across our corpus?"
 
-The CI sweep workflow uses scripts/synthesize.py + Pass 3 Claude review for
-the production pattern. This script is for human-triggered peer-review
-investigations between sweeps, or for benchmarking new long-context models
-against the same corpus.
+Two main use cases:
+
+1. **Model bench.** When a new long-context model ships (next Claude Opus,
+   next Gemini, next GPT, next DeepSeek), run it across the corpus and
+   compare its synthesis against what the daemon's Pass 2 has been
+   surfacing. The architecture is intentionally model-agnostic — only the
+   OpenRouter slug changes.
+
+2. **Second-opinion synthesis.** When you want fresh eyes on the corpus
+   between daemon sweeps — a different vendor, a different prompt, a
+   different time horizon — run this manually. It reads the full wiki
+   INCLUDING wiki/synthesis.md, so it sees what the daemon has already
+   surfaced and can produce a differential.
 
 Reads OPENROUTER_API_KEY from env first, falls back to .env. Saves output
-to logs/v4-peer-review-<date>.md (file naming convention is fixed regardless
-of the model used; the actual model is recorded in the log's frontmatter).
-Reports token usage and cost.
+to logs/fresh-synth-<model-slug>-<date>.md. Reports token usage and cost.
 
 Run from the repo root:
-    python3 scripts/peer-review.py
-    python3 scripts/peer-review.py --model anthropic/claude-3.5-sonnet
-    python3 scripts/peer-review.py --model google/gemini-2.5-pro
+    python3 scripts/fresh-synthesis.py
+    python3 scripts/fresh-synthesis.py --model anthropic/claude-opus-4-7
+    python3 scripts/fresh-synthesis.py --model google/gemini-2.5-pro
+    python3 scripts/fresh-synthesis.py --model openai/gpt-5.5
 
-# TODO(model-flexibility): when new long-context models land — Gemini Deep
-# Research, Claude Opus with 1M, GPT-5 Pro, Llama 4 long-context, etc. —
-# benchmark each against DeepSeek V4-Pro on the same corpus + prompt. The
-# architecture is intentionally model-agnostic; only the OpenRouter slug
-# changes. A useful follow-up: a scripts/benchmark-models.py that runs the
-# same prompt against multiple models and compares outputs side-by-side.
-# Out of scope for v0.
+Future work (out of scope for v0): a scripts/benchmark-models.py that runs
+the same prompt against multiple models and produces a side-by-side
+comparison artifact in evals/.
 """
 
 import os
@@ -106,25 +110,34 @@ corpus = "".join(corpus_parts)
 corpus_chars = len(corpus)
 corpus_token_estimate = corpus_chars // 4  # rough English-prose ratio
 
-# --- Peer-review prompt --------------------------------------------------------
-prompt = f"""You are running a peer-review pass on the Open Enzyme research wiki.
+# --- Fresh-synthesis prompt ----------------------------------------------------
+# The substrate is the entire wiki corpus PLUS wiki/synthesis.md, so the model
+# can see what the daemon's Pass 2 has been surfacing and produce a differential.
+# The prompt is intentionally model-agnostic — only the corpus and the model slug
+# vary between runs.
+substrate_commit = subprocess.run(
+    ["git", "rev-parse", "--short", "HEAD"],
+    capture_output=True, text=True, check=False,
+).stdout.strip() or "unknown"
 
-Yesterday (commit 4a40f74), Claude Opus 4.7 ran a Pass 2 synthesis on this corpus. The result is the most-recent block at the top of `wiki/synthesis.md` ("New this sweep — 2026-04-24 (local session, 25-file v1.2 batch)"). It surfaced 7 new connections, 2 contradictions, 6 proposed experiments, 6 open questions, 3 priority actions.
+prompt = f"""You are running an independent full-corpus synthesis on the Open Enzyme research wiki.
 
-Your task: do an independent Pass 2 synthesis on the same corpus, then compare.
+This wiki is normally maintained by a 3-pass daemon (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Review) that fires on each push. The most recent daemon-produced synthesis is at the top of `wiki/synthesis.md`. The wiki corpus below is the substrate; `wiki/synthesis.md` is included so you can see what the daemon has already surfaced.
+
+Your task: do an independent Pass-2-style synthesis on the same corpus, then compare against what the daemon has been finding.
 
 1. Read the entire corpus below (files concatenated under `=== filename ===` markers).
-2. Read the existing 2026-04-24 synthesis block at the top of `wiki/synthesis.md` carefully — that is what Claude found.
-3. Generate your own Pass 2 synthesis. New connections you would surface, contradictions you spot, experiments you would propose, open questions you would flag.
-4. Then add a final **Differential Analysis** section: which of Claude's 7 connections do you confirm, partially-confirm, push back on, or reject? What did Claude miss that you found? What did Claude find that you did not? Be specific — cite document names and PMIDs where applicable.
+2. Read the most recent block at the top of `wiki/synthesis.md` carefully — that's what the daemon's Pass 2 surfaced (with Pass 3 review verdicts inline).
+3. Generate your own synthesis: new connections you would surface, contradictions you spot, experiments you would propose, open questions you would flag.
+4. Add a final **Differential Analysis** section: which of the daemon's findings do you confirm, partially-confirm, push back on, or reject? What did the daemon miss that you found? What did the daemon find that you did not? Be specific — cite document names and PMIDs where applicable.
 
-Output format: the same Pass 2 structure as Claude used.
+Output format:
 
 ```
-## V4 peer-review pass — 2026-04-25
+## Fresh synthesis — {{date}}
 
-**Reviewer**: {args.model} (via OpenRouter)
-**Substrate**: Open Enzyme wiki at commit 4a40f74
+**Model**: {args.model} (via OpenRouter)
+**Substrate**: Open Enzyme wiki at commit {substrate_commit}
 
 ### New Connections
 
@@ -136,21 +149,21 @@ Output format: the same Pass 2 structure as Claude used.
 
 ### Open Questions
 
-### Differential Analysis vs. Claude 4a40f74
+### Differential Analysis vs. the daemon's most recent synthesis
 
 Confirmed: ...
 Partially confirmed: ...
 Push-back: ...
 Rejected: ...
-Missed by Claude (newly surfaced by V4): ...
-Missed by V4 (Claude caught): ...
+Missed by the daemon (newly surfaced here): ...
+Missed here (daemon caught): ...
 ```
 
 Discipline:
 - Tag every substantive claim with evidence level: **Clinical Trial / Animal Model / In Vitro / Mechanistic Extrapolation**.
 - Mark each Connection as **Supported** (multiple sources align) or **Speculative** (reasonable but unvalidated).
 - Cite specific document names and PMIDs where applicable.
-- Do NOT propose file edits. Do NOT generate commit messages. Synthesis text only — this is a peer-review pass, not a sweep.
+- Do NOT propose file edits. Do NOT generate commit messages. Synthesis text only.
 - Honest framing: PhD audience. No marketing language. Distinguish proven from speculative.
 
 [CORPUS BELOW]
@@ -191,7 +204,7 @@ try:
             "-H", f"Authorization: Bearer {API_KEY}",
             "-H", "Content-Type: application/json",
             "-H", "HTTP-Referer: https://github.com/brianpabent/open-enzyme",
-            "-H", "X-Title: Open Enzyme V4 peer-review",
+            "-H", "X-Title: Open Enzyme fresh-synthesis",
             "-d", f"@{body_path}",
             "--max-time", "600",
         ],
@@ -243,31 +256,30 @@ print(f"  Cost:          ${total_cost:.4f}  (in: ${input_cost:.4f}, out: ${outpu
 date_str = datetime.date.today().isoformat()
 # Model-tagged filename so head-to-head runs on the same date don't overwrite.
 model_tag = args.model.split("/")[-1].replace("-pro", "").replace("-", "")
-output_path = f"logs/v4-peer-review-{date_str}-{model_tag}.md"
+output_path = f"logs/fresh-synth-{model_tag}-{date_str}.md"
 os.makedirs("logs", exist_ok=True)
 
 header = f"""---
-title: "Peer-review pass ({args.model}) — {date_str}"
+title: "Fresh synthesis ({args.model}) — {date_str}"
 date: {date_str}
-reviewer: {args.model} (via OpenRouter)
-substrate_commit: 4a40f74
-substrate_label: "Claude Opus 4.7 local-session sweep, 2026-04-24"
+model: {args.model} (via OpenRouter)
+substrate_commit: {substrate_commit}
 input_tokens: {prompt_tokens}
 output_tokens: {completion_tokens}
 cost_usd: {total_cost:.4f}
 ---
 
-# Peer-review pass — {args.model} — {date_str}
+# Fresh synthesis — {args.model} — {date_str}
 
-This is the first concrete instance of the multi-agent peer-review pattern named in
-[`open-enzyme-vision.md`](../wiki/open-enzyme-vision.md) §3. {args.model} was given
-the same wiki corpus Claude swept yesterday (commit `4a40f74`) and asked to produce an
-independent Pass 2 synthesis plus a differential analysis. Output below is verbatim
-model output, unedited.
+Independent full-corpus synthesis run via `scripts/fresh-synthesis.py`. The model
+read the entire wiki corpus (including `wiki/synthesis.md`, so it could see what
+the daemon's Pass 2 has been surfacing) and produced its own findings plus a
+differential analysis. Output below is verbatim model output, unedited.
 
-The discipline that makes this trustworthy is the same on both sides: evidence-level
-tags, inline provenance, distinguishable Supported vs. Speculative claims. The wiki is
-the shared substrate; V4 and Claude are the two reviewers.
+This is the manual sibling of the daemon's Pass 2 — same substrate, different
+model, run on demand rather than on push. Useful for benchmarking new long-context
+models against the corpus and for surfacing what the daemon's vendor mix has been
+missing.
 
 ---
 
@@ -277,4 +289,4 @@ with open(output_path, "w") as f:
     f.write(header + content + "\n")
 
 print(f"\nSaved: {output_path}")
-print(f"\nNext: read {output_path} and compare against the 2026-04-24 block at the top of wiki/synthesis.md.")
+print(f"\nNext: read {output_path} and compare its Differential Analysis section against the most recent sweep block at the top of wiki/synthesis.md.")

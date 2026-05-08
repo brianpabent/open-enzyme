@@ -66,7 +66,7 @@ This auto-fixes Obsidian-incompatible Mermaid syntax.
 
 ---
 
-## Commit (Pass 4 of 4 for this job)
+## Commit (final step)
 
 When propagation is complete, stage every file you modified or created and commit with this message format:
 

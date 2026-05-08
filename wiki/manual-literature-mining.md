@@ -88,11 +88,11 @@ Rule 3 above ("grep-verify all numbers before they enter the wiki") covers Paper
 
 **Why this gate exists:**
 
-The wiki sweep daemon (Pass 1 propagate → Pass 2 synthesize → Pass 3 review → Pass 4 DeepSeek peer-review) is *good* at catching cross-page inconsistencies — exactly the failure mode that surfaced the DAF SCR1-4 disulfide-count error on 2026-05-06 (Sweep A Connection 2). But that means the discipline currently catches errors ~12–24 hours *after* they ship into the corpus, by which time:
+The wiki sweep daemon (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Review) is *good* at catching cross-page inconsistencies — exactly the failure mode that surfaced the DAF SCR1-4 disulfide-count error on 2026-05-06 (Sweep A Connection 2). But that means the discipline currently catches errors ~12–24 hours *after* they ship into the corpus, by which time:
 
 - The wrong number has propagated to multiple pages (DAF SCR1-4: comp-012 → H05 stub).
 - The wrong number has been ingested into the synthesizer's context for downstream reasoning (the chaperone-orthogonal triple-cassette synergy panic — predicting 17+12=29 disulfides, 1.8× Huynh — was based on a fabricated coefficient).
-- A peer-review pass and a hand-walkthrough are required to find and fix the propagation, instead of catching it at the source.
+- A second-opinion synthesis pass and a hand-walkthrough are required to find and fix the propagation, instead of catching it at the source.
 
 The sweep is a backstop, not a substitute. The pre-commit verification gate is the right moment to catch hallucinated numbers — at the moment they would enter the corpus, not after they've been laundered through the substrate.
 

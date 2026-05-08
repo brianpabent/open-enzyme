@@ -1,6 +1,6 @@
-You are running **Pass 3** of the Open Enzyme sweep — peer review. The synthesizer model (Gemini 2.5 Pro by default, but the architecture is model-agnostic) just produced a synthesis at `logs/v4-synthesis-<date>-<sha>.md` with `{{PEER-REVIEW}}` markers placed at the end of each numbered item.
+You are running **Pass 3** of the Open Enzyme sweep — review of the Pass 2 synthesis. Pass 2 (model-agnostic, currently DeepSeek V4-Pro with Gemini 2.5 Pro fallback) just produced a synthesis at `logs/v4-synthesis-<date>-<sha>.md` with `{{PEER-REVIEW}}` markers at the end of each numbered item. (The `PEER-REVIEW` marker name is legacy; the marker function is "Pass 3 reviews this item" regardless.)
 
-**Your role: produce review blockquotes only.** A Python merge script (`scripts/synthesis-merge.py`) does the actual substitution into `wiki/synthesis.md` — that step is deterministic and you don't touch the Pass 2 synthesizer's content. This narrow role exists because preserving the Pass 2 synthesizer's exact wording matters for the multi-agent peer-review pattern, and templating-with-substitution is more robust than asking you to merge two documents in one call.
+**Your role: produce review blockquotes only.** A Python merge script (`scripts/synthesis-merge.py`) does the actual substitution into `wiki/synthesis.md` — that step is deterministic and you don't touch the Pass 2 synthesizer's content. This narrow role exists because preserving the synthesizer's exact wording matters for the multi-vendor adversarial-review pattern, and templating-with-substitution is more robust than asking you to merge two documents in one call.
 
 **Read `CLAUDE.md` first** for evidence-level standards and voice.
 
@@ -26,10 +26,10 @@ Output **exactly N review blockquotes**, in the order the Pass 2 synthesizer's i
 ### Format of each blockquote
 
 ```
-> **Claude review — <verdict>.** `[OVERLAP: <tag>]` <reasoning, 1-5 sentences, with citations or push-back>
+> **Pass 3 review — <verdict>.** `[OVERLAP: <tag>]` <reasoning, 1-5 sentences, with citations or push-back>
 ```
 
-Each blockquote opens with `> **Claude review — <verdict>.**` (literal, with the bold markdown), immediately followed by an `[OVERLAP: <tag>]` annotation, then your reasoning. Use markdown bullets within the blockquote if the review is multi-point; just prefix lines with `> -` or wrap them.
+Each blockquote opens with `> **Pass 3 review — <verdict>.**` (literal, with the bold markdown), immediately followed by an `[OVERLAP: <tag>]` annotation, then your reasoning. Use markdown bullets within the blockquote if the review is multi-point; just prefix lines with `> -` or wrap them.
 
 ### Verdict vocabulary
 
@@ -61,19 +61,19 @@ PhD audience. Specific. Cite primary sources where you push back.
 
 A weak review:
 ```
-> **Claude review — Confirmed.** Looks good.
+> **Pass 3 review — Confirmed.** Looks good.
 <<<NEXT>>>
 ```
 
 A strong review:
 ```
-> **Claude review — Confirmed.** Mechanism well-established (Habuchi 2003 PMID 14613816, Takiue 2011 PMID 21262960 — primate renal physiology). The claim that this caps maximum effect of luminal uricase follows from the gut-lumen-sink ABCG2 dependence in `wiki/gut-lumen-sink.md`. One refinement: the Pass 2 synthesizer says "regardless of dose" — strictly the dose-response curve flattens (sigmoid ceiling) rather than absolute cap. Conclusion holds practically.
+> **Pass 3 review — Confirmed.** Mechanism well-established (Habuchi 2003 PMID 14613816, Takiue 2011 PMID 21262960 — primate renal physiology). The claim that this caps maximum effect of luminal uricase follows from the gut-lumen-sink ABCG2 dependence in `wiki/gut-lumen-sink.md`. One refinement: the Pass 2 synthesizer says "regardless of dose" — strictly the dose-response curve flattens (sigmoid ceiling) rather than absolute cap. Conclusion holds practically.
 <<<NEXT>>>
 ```
 
 A strong push-back:
 ```
-> **Claude review — Push back.** the Pass 2 synthesizer cites `lactoferrin.md` for the CP1b iron→ROS mechanism, but `wiki/lactoferrin.md` §3.2 explicitly flags that as Mechanistic Extrapolation, not Supported. The wiki's CP1b is specifically C5a→ROS (per `wiki/nlrp3-exploit-map.md` line 102), not iron→ROS. the Pass 2 synthesizer conflated two different ROS-priming mechanisms.
+> **Pass 3 review — Push back.** the Pass 2 synthesizer cites `lactoferrin.md` for the CP1b iron→ROS mechanism, but `wiki/lactoferrin.md` §3.2 explicitly flags that as Mechanistic Extrapolation, not Supported. The wiki's CP1b is specifically C5a→ROS (per `wiki/nlrp3-exploit-map.md` line 102), not iron→ROS. the Pass 2 synthesizer conflated two different ROS-priming mechanisms.
 <<<NEXT>>>
 ```
 

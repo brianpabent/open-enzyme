@@ -723,7 +723,7 @@ A first end-to-end test (uricase variant landscape + *A. oryzae* expression evid
 
 ### Sweep-Daemon Integration — DECIDED 2026-05-05: Do Not Integrate
 
-**Decision: do not wire Paperclip into the four-pass sweep daemon.** A verification test (uricase variant landscape, ~12 papers with known-correct ground truths) revealed a systematic hallucination pattern in the `map` operator that is disqualifying for any automated pipeline. (source: paperclip-deep-dive.md)
+**Decision: do not wire Paperclip into the three-pass sweep daemon.** A verification test (uricase variant landscape, ~12 papers with known-correct ground truths) revealed a systematic hallucination pattern in the `map` operator that is disqualifying for any automated pipeline. (source: paperclip-deep-dive.md)
 
 **Concrete hallucination examples from the 2026-05-05 test** (In Vitro / verification):
 

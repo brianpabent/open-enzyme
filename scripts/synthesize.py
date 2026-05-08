@@ -12,10 +12,12 @@ the model used; the actual model is recorded in the log file's YAML frontmatter
 under `reviewer_model:`. This means future logs are still discoverable by the
 established naming pattern even when the default model changes.
 
-Differs from scripts/peer-review.py: that script does *peer review* against
-an existing Claude synthesis. This script does *fresh synthesis* with no
-comparison baseline — Pass 3 (Claude review via scripts/synthesis-merge.py) is
-what produces the differential.
+Sibling script: scripts/fresh-synthesis.py runs a manual, model-agnostic
+full-corpus synthesis (no daemon, no markers, model chosen via --model). Use
+it for benchmarking new long-context models against the corpus or for
+on-demand second-opinion synthesis between sweeps. This script (the daemon's
+Pass 2) emits {{PEER-REVIEW}} markers for Pass 3 to substitute reviews into;
+fresh-synthesis.py does not.
 
 Reads OPENROUTER_API_KEY from env first, falls back to .env (for local runs).
 Reads scripts/sweep-prompt-2-synthesize.md for the model brief.

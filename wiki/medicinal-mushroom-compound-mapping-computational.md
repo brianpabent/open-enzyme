@@ -160,7 +160,7 @@ Output: ranked candidate compound × chokepoint pairs.
 Run multilingual primary-literature ingestion for **every species with a chokepoint hit from Phase 4**, parallelized via subagents. NOT capped at top 3-5 — Brian's correction 2026-05-06: capping was the exact path-dependent narrowing CLAUDE.md flags ("Never gate exploration by cost or wall-time-to-build"). Translation cost via DeepSeek is ~$0.05/paper; even thousands of papers totals a couple hundred USD, not a real gate.
 
 **Two-model cross-check pairing per CLAUDE.md §Translation protocol:**
-- **Chinese sources (CNKI, Wanfang):** Claude (Sonnet 4.6 or Opus 4.7) + **DeepSeek V4-Pro** via OpenRouter. DeepSeek is the cheap (~$0.14/M tokens vs. Claude $15-75/M) Chinese-vendor model with native Mandarin fluency — same heterogeneity-guard pattern the wiki sweep daemon already uses (Pass 4 DeepSeek peer review).
+- **Chinese sources (CNKI, Wanfang):** Claude (Sonnet 4.6 or Opus 4.7) + **DeepSeek V4-Pro** via OpenRouter. DeepSeek is the cheap (~$0.14/M tokens vs. Claude $15-75/M) Chinese-vendor model with native Mandarin fluency — same multi-vendor heterogeneity-guard pattern the wiki sweep daemon already uses across Pass 1 / Pass 2 / Pass 3.
 - **Japanese sources (J-STAGE, CiNii):** Claude + Gemini 2.5 Pro (or DeepSeek as backup — DeepSeek's Japanese is reasonable despite Chinese-vendor).
 - **Korean sources (KISS, RISS):** Claude + Gemini OR GPT-5.
 

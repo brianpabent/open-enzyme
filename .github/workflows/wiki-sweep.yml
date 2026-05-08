@@ -1,37 +1,41 @@
 name: Wiki Sweep (Hybrid)
 
-# Three-stage hybrid sweep architecture:
+# Three-pass sweep daemon (model-agnostic, vendor-heterogeneous by design):
 #
-#   Pass 1 — Claude propagation (small input, precision)
+#   Pass 1 — Propagate (small input, precision)
 #       Reads trigger files, propagates findings across affected wiki pages,
-#       commits surgical edits. Sweep-prompt-1-propagate.md.
+#       commits surgical edits. scripts/sweep-prompt-1-propagate.md.
+#       Currently DeepSeek V4-Pro; model is configurable via --model.
 #
-#   Pass 2 — Gemini 2.5 Pro synthesis (large input, full corpus)
+#   Pass 2 — Synthesize (large input, full corpus)
 #       Reads ALL of wiki/, finds cross-document connections, outputs raw
-#       synthesis to logs/v4-synthesis-<date>-<sha>.md. The 2M context window
-#       lets Gemini 2.5 Pro see the whole knowledge base in one call.
-#       (Switched from DeepSeek V4-Pro on 2026-04-25 — reliability;
-#       Gemini surfaced the same top findings on the same corpus.)
-#       Sweep-prompt-2-synthesize.md.
+#       synthesis to logs/v4-synthesis-<date>-<sha>.md.
+#       scripts/sweep-prompt-2-synthesize.md.
+#       Currently DeepSeek V4-Pro primary (cost + speed) with Gemini 2.5 Pro
+#       fallback (large context, fires when V4-Pro flakes — not uncommon).
 #
-#   Pass 3 — Claude review (small input, critique)
+#   Pass 3 — Review (small input, critique)
 #       Reads the Pass 2 synthesis log, writes interleaved review (synthesizer
-#       content + Claude verdict blockquote per item) prepended to wiki/synthesis.md.
-#       Verdict vocabulary: Confirmed / Confirmed-prioritize / Partial /
-#       Push-back / Rejected / Augment / Defer. Sweep-prompt-3-review.md.
+#       content + Pass 3 verdict blockquote per item) prepended to
+#       wiki/synthesis.md. Verdict vocabulary: Confirmed / Confirmed-prioritize /
+#       Partial / Push-back / Rejected / Augment / Defer.
+#       scripts/sweep-prompt-3-review-gpt55.md (default; tuned for GPT-5.5).
+#       scripts/sweep-prompt-3-review.md (alternate; tuned for Anthropic models).
+#       Currently OpenAI GPT-5.5; full eval at evals/pass-3-reviewer/.
+#
+# Manual sibling: scripts/fresh-synthesis.py runs an on-demand full-corpus
+# synthesis with the model of your choice. Useful for benchmarking new
+# long-context models against the corpus and for second-opinion synthesis
+# between sweeps. Not part of the daemon.
 #
 # Each job has [skip-wiki-sweep] in its commit message + the workflow's job-
 # level `if:` checks for that marker, so internal commits don't recursively
 # retrigger the whole pipeline.
 #
 # Secrets required:
-#   OPENROUTER_API_KEY — used by all three passes:
-#                          Pass 1 (Sonnet 4.6), Pass 2 (Gemini 2.5 Pro), Pass 3 (Opus 4.7)
-#
-# Why every pass routes through OpenRouter rather than Anthropic-direct:
-# all three passes send enough cumulative input to blow past the 30K
-# input-tokens-per-minute cap on the Anthropic-direct API tier. OpenRouter
-# is its own rate-limit pool.
+#   OPENROUTER_API_KEY — every pass routes through OpenRouter so a single
+#   credential covers all vendors and we don't get throttled by any one
+#   vendor's per-org rate limits.
 
 on:
   push:
@@ -56,7 +60,7 @@ jobs:
   # PASS 1 — Claude propagation
   # ============================================================================
   propagate:
-    name: "Pass 1 — Claude propagation"
+    name: "Pass 1 — Propagate"
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -154,7 +158,7 @@ jobs:
           fi
           echo "skip_pass_1=$SKIP_PASS_1" >> "$GITHUB_OUTPUT"
 
-      - name: Run Pass 1 propagation (Sonnet via OpenRouter)
+      - name: Run Pass 1 propagation
         id: run_pass_1
         if: steps.trigger.outputs.has_changes == 'true' && steps.trigger.outputs.skip_pass_1 != 'true'
         env:
@@ -208,7 +212,7 @@ jobs:
   # PASS 2 — Gemini 2.5 Pro synthesis (full corpus)
   # ============================================================================
   synthesize:
-    name: "Pass 2 — Gemini 2.5 Pro synthesis"
+    name: "Pass 2 — Synthesize"
     runs-on: ubuntu-latest
     timeout-minutes: 30
     needs: propagate
@@ -233,7 +237,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run Gemini 2.5 Pro synthesis
+      - name: Run Pass 2 synthesis
         id: run
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -305,7 +309,7 @@ jobs:
   # PASS 3 — Claude review (interleaved into wiki/synthesis.md)
   # ============================================================================
   review:
-    name: "Pass 3 — Claude review"
+    name: "Pass 3 — Review"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     needs: [propagate, synthesize]
@@ -337,7 +341,7 @@ jobs:
           echo "Found $MARKER_COUNT {{PEER-REVIEW}} markers in Pass 2 synthesis"
           echo "marker_count=$MARKER_COUNT" >> "$GITHUB_OUTPUT"
 
-      - name: Run Pass 3 review (GPT-5.5 via OpenRouter)
+      - name: Run Pass 3 review
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           # Default reviewer is GPT-5.5 with the GPT-5.5-tuned prompt

@@ -136,7 +136,7 @@ For any specific question already in the wiki, Paperclip enables systematic full
 
 ### 2. Sweep-daemon integration — DECIDED 2026-05-05: do not integrate
 
-**Decision: do not wire Paperclip into the four-pass sweep daemon.** The reliability finding above (`map` operator hallucinations) is disqualifying for any architecture that lands Paperclip-derived content into the wiki without a human in the loop.
+**Decision: do not wire Paperclip into the three-pass sweep daemon.** The reliability finding above (`map` operator hallucinations) is disqualifying for any architecture that lands Paperclip-derived content into the wiki without a human in the loop.
 
 The original framing — Paperclip-augmented pass producing a "literature delta" surface for the synthesis stage — assumed the synthesis primitive (`map`) could be trusted to faithfully extract per-paper findings. The 2026-05-05 verification test invalidated that assumption: `map` produced load-bearing identity errors (wrong organisms, wrong gene names, fabricated kinetic numbers) on multiple papers in a single session. Wiring this into the sweep would inject a structured external hallucination source into a corpus designed for PhD-grade rigor, exactly the failure mode the multi-model synthesis architecture in [open-source-platform.md](./open-source-platform.md) is meant to guard against.
 

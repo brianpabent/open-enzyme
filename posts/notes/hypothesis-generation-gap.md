@@ -36,7 +36,7 @@ These run inside the existing sweep, no new pass, no new infrastructure. Margina
 
 ## The richer version, if the cheap one shows signal
 
-A dedicated **Pass 5: Curiosity** that runs after the existing Pass 4 peer review. Inputs:
+A dedicated **Pass 4: Curiosity** that runs after Pass 3 review. Inputs:
 
 1. Current state of the wiki corpus (already loaded).
 2. Current platform thesis (top of `index.md` and `wiki/open-enzyme-vision.md`).

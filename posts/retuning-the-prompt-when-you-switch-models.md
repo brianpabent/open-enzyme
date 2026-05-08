@@ -7,7 +7,7 @@ tags: [prompt-engineering, llm-cost, model-evaluation, sweep-daemon, methodology
 
 # A 5× cost cut from one prompt rewrite
 
-I run a small open-source biology project with a multi-pass review pipeline. Each substantive edit to the research wiki triggers four passes — Claude propagates, Gemini synthesises, a third model peer-reviews the synthesis, DeepSeek peer-reviews *that*. The third pass — the verdict-and-pushback layer — was running on Claude Opus 4.7 at roughly $8 per sweep, which adds up faster than I'd like for a daemon that fires on every push.
+I run a small open-source biology project with a three-pass review daemon that fires on each push to the wiki. Pass 1 propagates new findings into affected pages (DeepSeek). Pass 2 reads the full corpus and surfaces cross-document connections (DeepSeek primary, Gemini fallback). Pass 3 — the verdict-and-pushback layer — reads Pass 2's output and either confirms or pushes back on each finding. That third pass was running on Claude Opus 4.7 at roughly $8 per sweep, which adds up faster than I'd like for a daemon that fires on every push.
 
 I switched the third pass to GPT-5.5 today. The cost dropped to $1.66 — about 5× cheaper. But the interesting part isn't the cost. It's that the *first* time I ran GPT-5.5 with the existing prompt, I got results I would not have shipped, and I almost concluded the model was the problem. It wasn't. The prompt was.
 
