@@ -166,6 +166,8 @@ graph TB
         DE12["Global Lab Access — Maruyama Tokyo / Jiangnan / DTU parallel paths"]
         DE13["comp-013 TCM Gout Compound Triage — 4 GUT-LUMINAL VIABLE"]
         DE14["comp-014 Medicinal Mushroom Compound Mapping — Phase 2 complete"]
+        DE15["ADA — adenosine deaminase (chokepoint candidate)"]
+        DE16["PINK1/mitophagy — NLRP3-priming-adjacent (chokepoint candidate)"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -540,6 +542,8 @@ graph TB
     DE14 -->|"C5aR1 platform gap confirmed empirically — zero direct fungal antagonists"| O2
     DE14 -->|"spawned Phase 7 medicinal mushroom complement track"| MT1
     DE14 -->|"surfaced ADA + PINK1/mitophagy chokepoint candidates"| DE1
+    DE15 -->|"purine catabolism upstream of XO; GLPP + cordycepin/pentostatin coverage"| B1
+    DE16 -->|"mitochondrial quality control upstream of NLRP3 mtROS (CP2)"| C2
     %% Global lab access (source: ward-1995-lab-access-global.md)
     DE12 -->|"provides NSlD-dP10 chassis for"| KE10
     DE12 -->|"parallel path via C19 chassis"| KE1

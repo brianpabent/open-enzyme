@@ -1,8 +1,8 @@
 ---
 title: Gout Pathophysiology
 aliases: [gout-cascade, purine-metabolism, uric-acid-handling, inflammasome, urate-transporters, clinical-treatments]
-related: [nlrp3-inflammasome, fructose-connection, validation-experiments, supplements-stack, complement-c5a-gout, spm-resolution-pathway, tnfsf14-gout-target, androgen-urate-axis, abcg2-modulators, theaflavins, zileuton]
-sources: [gout-deep-dive.md, nlrp3-exploit-map.md, complement-c5a-gout.md, tnfsf14-gout-target.md, spm-resolution-pathway.md, androgen-urate-axis.md, abcg2-modulators.md, theaflavins.md, zileuton.md]
+related: [nlrp3-inflammasome, fructose-connection, validation-experiments, supplements-stack, complement-c5a-gout, spm-resolution-pathway, tnfsf14-gout-target, androgen-urate-axis, abcg2-modulators, theaflavins, zileuton, medicinal-mushroom-compound-mapping-computational]
+sources: [gout-deep-dive.md, nlrp3-exploit-map.md, complement-c5a-gout.md, tnfsf14-gout-target.md, spm-resolution-pathway.md, androgen-urate-axis.md, abcg2-modulators.md, theaflavins.md, zileuton.md, medicinal-mushroom-compound-mapping-computational.md]
 ---
 
 # Gout Pathophysiology
@@ -40,6 +40,22 @@ PRPS is regulated by allosteric feedback from IMP and ADP/GDP. Conditions that d
 The first natural-product PRPS modulator documented in the OE corpus is **eurycomanol** from *Eurycoma longifolia* (tongkat ali), which suppresses PRPS-driven purine biosynthesis in vitro (PMID 34785103). Tongkat ali Physta also shows SUA ↓7–11% in a 2021 placebo-controlled human RCT (n=105). See [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) for the full chokepoint scope page and [androgen-natural-modulation.md](./androgen-natural-modulation.md) §1 for the tongkat ali entry. (In Vitro + Clinical Trial; source: prps-purine-biosynthesis-chokepoint.md, androgen-natural-modulation.md)
 
 (Source: gout-deep-dive.md, §1; prps-purine-biosynthesis-chokepoint.md)
+
+### ADA (Adenosine Deaminase) — Purine Catabolism Chokepoint Candidate
+
+**Adenosine deaminase (ADA)** catalyzes the irreversible deamination of adenosine → inosine and 2'-deoxyadenosine → 2'-deoxyinosine, a key step in purine catabolism upstream of xanthine oxidase. ADA sits in the purine degradation pathway between adenosine and inosine — modulating ADA activity changes the flux of purine nucleosides entering the XO → urate pipeline. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
+
+ADA was surfaced as a chokepoint candidate by comp-014 (medicinal mushroom compound × chokepoint mapping, Phase 2, 2026-05-06): the breadth aggregation of 6,798 fungal compounds across ChEMBL + LOTUS + PubMed identified ADA as a target with fungal-compound coverage, notably via **GLPP polysaccharide-peptide** from *Ganoderma lucidum* (lingzhi/reishi) and **cordycepin** (3'-deoxyadenosine) from *Cordyceps militaris*, which is itself an adenosine analog and ADA substrate. The native co-production of **pentostatin** (a clinical-grade ADA inhibitor) alongside cordycepin in *C. militaris* (Xia 2017, PMID 29056419) makes whole-fermentate Cordyceps a natural ADA-modulating preparation. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md, medicinal-mushroom-complement-track.md)
+
+**Status:** Chokepoint candidate — not yet formalized as a named chokepoint in the modality-chokepoint-matrix or NLRP3 exploit map. Pending Phase 3-6 comp-014 follow-ups for formal admit/reject decision. (source: medicinal-mushroom-compound-mapping-computational.md)
+
+### PINK1/Mitophagy — NLRP3-Priming-Adjacent Chokepoint Candidate
+
+**PINK1 (PTEN-induced kinase 1)** is a mitochondrial serine/threonine kinase that serves as the master sensor of mitochondrial damage, recruiting Parkin (PRKN) to depolarized mitochondria to initiate mitophagy — the selective autophagic clearance of damaged mitochondria. Damaged mitochondria are a primary source of the mtROS that drives NLRP3 inflammasome activation (CP2). Enhancing PINK1/Parkin-mediated mitophagy clears damaged mitochondria before they can trigger NLRP3 assembly. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
+
+PINK1/mitophagy was surfaced as a chokepoint candidate by comp-014 (Phase 2, 2026-05-06): the breadth aggregation identified fungal compounds with PINK1-modulating activity. This mechanism is **NLRP3-priming-adjacent** — it operates upstream of CP2 (K⁺ efflux / mtROS) by removing the mitochondrial source of the activation signal, rather than blocking NLRP3 assembly directly. It is mechanistically distinct from both direct NLRP3 inhibitors (oridonin, dapansutrile) and pathway modulators (BHB, quercetin). (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
+
+**Status:** Chokepoint candidate — not yet formalized. Pending Phase 3-6 comp-014 follow-ups for formal admit/reject decision. (source: medicinal-mushroom-compound-mapping-computational.md)
 
 ### The Evolutionary Loss
 
@@ -371,6 +387,8 @@ PURINE INTAKE → Purine Metabolism (XO) → URIC ACID
 
 INTERVENTION POINTS:
 - PRPS inhibition: Reduce de novo purine biosynthesis at the source (eurycomanol from tongkat ali, In Vitro; distinct from XO inhibition downstream) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md)
+- ADA modulation: Alter purine catabolism flux upstream of XO (GLPP from *G. lucidum*, cordycepin + native pentostatin from *C. militaris* — chokepoint candidate surfaced by comp-014 Phase 2, 2026-05-06) — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
+- PINK1/mitophagy enhancement: Clear damaged mitochondria before they trigger NLRP3 (fungal compounds with PINK1-modulating activity — chokepoint candidate surfaced by comp-014 Phase 2, 2026-05-06) — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
 - XO inhibitors: Block uric acid production (Allopurinol, Febuxostat)
 - URAT1 inhibitors: Reduce renal reabsorption (Pozdeutinurad, Lesinurad)
 - ABCG2 enhancement: Boost gut secretion via butyrate/PPARγ (fermentable fiber, DASH RCT 0.25–0.73 mg/dL UA reduction, Clinical Trial), sulforaphane/Nrf2, Q141K rescue via HDAC inhibitors (In Vitro) — see [abcg2-modulators.md](./abcg2-modulators.md)

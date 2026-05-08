@@ -53,6 +53,8 @@ The v1.2 restructure (April 2026) adds CP0 (complement priming — C5a-dominant,
 
 - **Platform gap:** No fermentable C5aR1 modulator currently in the Open Enzyme stack. Whether dietary flavonoids have meaningful C5aR1 affinity is an open question. Microbial C5aR1 antagonist peptides are a speculative long-term engineering target. (source: complement-c5a-gout.md)
 
+**C5aR1 platform gap confirmed empirically by comp-014 (2026-05-06):** The [comp-014 medicinal mushroom compound × chokepoint mapping](./medicinal-mushroom-compound-mapping-computational.md) Phase 2 breadth aggregation (6,798 fungal compounds across ChEMBL + LOTUS + PubMed) independently confirmed that **zero direct fungal C5aR1 antagonists exist** in either ChEMBL or PubMed — strengthening the conclusion that natural-product CP0 coverage is structurally absent. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
+
 See [Complement C5a in Gout](./complement-c5a-gout.md) for the full analysis.
 
 ### Chokepoint 1 (CP1a / CP1b): NF-κB Priming

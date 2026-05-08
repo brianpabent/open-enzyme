@@ -18,6 +18,7 @@ related:
   - open-source-platform.md
   - open-enzyme-vision.md
   - gout-pathophysiology.md
+  - medicinal-mushroom-compound-mapping-computational.md
 sources:
   - "Brian framing 2026-04-28: 'OE is the mission, not the koji chassis'"
   - "Synthesis derived from existing wiki pages (chokepoint map, transporter biology, exploit map)"
@@ -329,3 +330,10 @@ The cells where 🟡 marks the genuinely novel exploration space, ordered by lev
 - **When a new chokepoint, transporter, or biomarker surfaces:** add it as a column; re-evaluate which rows light up.
 - **When OE makes a new build commitment:** mark the cell ✅ and link to the canonical wiki page; the matrix becomes the index.
 - **The matrix is a meta-tool for exploration, not a roadmap.** Don't pretend a 🟡 cell is committed work; don't pretend a ⚪ cell is forever closed.
+
+### Chokepoint candidates surfaced by comp-014 (2026-05-06) — pending formal admit/reject
+
+Two new chokepoint candidates were surfaced by [comp-014](./medicinal-mushroom-compound-mapping-computational.md) Phase 2 (breadth aggregation of 6,798 fungal compounds across ChEMBL + LOTUS + PubMed). Neither has been formally admitted to the matrix as a column; both are pending Phase 3-6 follow-ups.
+
+- **ADA (adenosine deaminase)** — purine catabolism enzyme upstream of XO. Fungal-compound coverage via GLPP (*G. lucidum*) and cordycepin + native pentostatin (*C. militaris*). ADA modulation changes purine nucleoside flux entering the XO → urate pipeline. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
+- **PINK1/mitophagy** — mitochondrial quality-control pathway. PINK1 senses mitochondrial damage and recruits Parkin to initiate mitophagy, clearing damaged mitochondria before they generate the mtROS that triggers NLRP3 (CP2). NLRP3-priming-adjacent — operates upstream of CP2 rather than at NLRP3 assembly directly. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
