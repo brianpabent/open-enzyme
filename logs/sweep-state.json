@@ -1,30 +1,18 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "440a73a335f4caf90e9333de615d0050a497e460",
-    "timestamp": "2026-05-07T23:17:42Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-07-abc8de9.md",
-    "review_commit": "440a73a335f4caf90e9333de615d0050a497e460",
+    "commit": "bbdc7c8ac5fe9a0ec0cb487b6115fe4aad0ce6dc",
+    "timestamp": "2026-05-08T15:33:01Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-08-e842754.md",
+    "review_commit": "bbdc7c8ac5fe9a0ec0cb487b6115fe4aad0ce6dc",
     "trigger_files": [
-      "wiki/abcg2-modulators.md",
-      "wiki/androgen-natural-modulation.md",
-      "wiki/androgen-urate-axis.md",
-      "wiki/autonomous-screening-methodology.md",
-      "wiki/computational-experiments.md",
-      "wiki/cross-validation.md",
-      "wiki/gut-lumen-sink.md",
-      "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
-      "wiki/hypotheses/README.md",
-      "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
-      "wiki/koji-endgame-strain.md",
+      "wiki/bio-ai-tools.md",
       "wiki/manual-literature-mining.md",
-      "wiki/personal-genome-protocol.md",
-      "wiki/practitioner-toolkit.md",
-      "wiki/prps-purine-biosynthesis-chokepoint.md",
-      "wiki/t-abcg2-suppression-evidence-mining-computational.md",
-      "wiki/t-axis-adjuvant-urate-mapping-computational.md"
+      "wiki/medicinal-mushroom-compound-mapping-computational.md",
+      "wiki/open-source-platform.md",
+      "wiki/paperclip-deep-dive.md"
     ],
-    "run_id": "local-recovery-25525354463"
+    "run_id": "25562918758"
   },
   "recent_runs": [
     {
@@ -116,6 +104,15 @@
       "failed_phase": null,
       "trigger_paths_count": 17,
       "synthesis_log": "logs/v4-synthesis-2026-05-07-abc8de9.md"
+    },
+    {
+      "run_id": "25562918758",
+      "trigger": "push",
+      "completed_at": "2026-05-08T15:33:01Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 5,
+      "synthesis_log": "logs/v4-synthesis-2026-05-08-e842754.md"
     }
   ]
 }
