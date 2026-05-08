@@ -188,6 +188,32 @@ Where the sum runs over all co-expressed cassettes, each with its own architectu
 
 **Note on lactoferrin disulfide count correction:** The OE wiki has used "17 disulfides" for lactoferrin in prior pages (including §5.5 of this document), derived from UniProt P02788 annotation. Notari 2023 (PMC10465537) explicitly states "16 disulfides" for human lactoferrin. Wally & Buchanan 2007 confirms LF has fewer disulfides than serum transferrin (hTF has 3 additional disulfide bonds not present in LF). UniProt P02788 annotation shows 35 cysteines total forming 16–17 disulfides depending on whether one counts the inferred or explicitly annotated bonds. For this architecture-adjusted model, **use 16 disulfides for LF** (Notari 2023 source-verified; §10.2 below documents the discrepancy). The effective PDI load computation is recalculated accordingly.
 
+### 3.5.4 Calibration-set candidate: §1.9 (lactoferrin, transferrin-lobe) + §1.25 (DAF SCR1-4, CCP/SCR) (added 2026-05-08)
+
+The α coefficients in §3.5.2 are derived from mammalian / non-koji folding studies; §3.5.3's effective-PDI-load predictions are therefore **bounded estimates pending direct koji-specific calibration**. The two highest-leverage planned wet-lab experiments — [`validation-experiments.md` §1.9](./validation-experiments.md) (Ward 1995 dual-cassette gate, lactoferrin = transferrin-lobe) and [`validation-experiments.md` §1.25](./validation-experiments.md) (DAF SCR1-4 single-cassette gate, CCP/SCR sushi fold) — together span the framework's two architecturally-extreme α classes (CCP/SCR 0.3–0.6 vs. transferrin-lobe 1.5–2.5), and their measured per-cassette titers would be a natural calibration set for the framework if the two experiments are run under harmonized conditions.
+
+**Pre-registered calibration framework (conditional):**
+
+The §1.9 + §1.25 pairing functions as a calibration set ONLY if the following experimental conditions are harmonized:
+
+| Variable | Required harmonization | Current §1.9 design | Current §1.25 design |
+|---|---|---|---|
+| Host strain | Single host (NSlD-ΔP10 preferred) | NSlD-ΔP10 (mandated) | RIB40 default; NSlD-ΔP10 listed as optional arm |
+| Format | Solid-state shio-koji OR submerged — pick one | Solid-state shio-koji | Mixed (solid-state primary; submerged optional) |
+| Promoter | Same promoter strength (e.g., glaA or PamyB) | glaA secretion cassette | Per [§1.25](./validation-experiments.md) — confirm |
+| Titer units | mg/L mature protein, ELISA-quantified | mg/L (ELISA) | mg/L (ELISA) |
+
+If §1.25 is run with the optional NSlD-ΔP10 arm under the same solid-state format and matching promoter, the two experiments produce a paired calibration measurement. Otherwise the comparison is confounded by host/format effects and cannot recalibrate α.
+
+**Pre-registered framework predictions (bounded):**
+
+- §1.9 lactoferrin-alone arm (transferrin-lobe, α 1.5–2.5, 16 disulfides, effective PDI load 24–40): **predicted ≥500 mg/L** if the framework's α coefficients transfer to koji; **<40 mg/L** if PDI-saturation dominates (lower bound from §5.5 worst case).
+- §1.25 DAF SCR1-4 arm (CCP/SCR, α 0.3–0.6, 8 disulfides, effective PDI load 2.4–4.8): **predicted ≥100 mg/L** under the framework — substantially higher per-cassette titer than lactoferrin because of the lower α coefficient.
+
+**Decision rule:** if the observed titer ranking matches the framework's prediction (DAF SCR1-4 > lactoferrin per cassette, on a normalized basis), the per-architecture α coefficients have transferable predictive power to koji and the framework can be used prospectively for new cassette design. If the ranking inverts (lactoferrin > DAF SCR1-4 per cassette), the α coefficients calibrated from non-koji data **do not transfer** — the framework needs revision toward koji-specific kinetics, and predictions for novel cassettes (e.g., the C1-INH thread surfaced in [comp-018](./upstream-complement-modulator-sweep-computational.md)) would need to be flagged as uncalibrated.
+
+**Cross-references:** [`validation-experiments.md §1.9`](./validation-experiments.md), [`validation-experiments.md §1.25`](./validation-experiments.md), [`synthesis.md` Strategic Reflections Queue](./synthesis.md#strategic-reflections-queue) (chaperone-framework predictive-power validation entry — this calibration set is the operational instantiation of that reflection's trigger condition).
+
 ---
 
 ## 4. Open Enzyme Candidate Cassettes — Scored
