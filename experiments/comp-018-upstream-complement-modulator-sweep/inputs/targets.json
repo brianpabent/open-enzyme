@@ -1,0 +1,124 @@
+{
+  "description": "Upstream complement cascade nodes — every step proximal to C5a generation. C5aR1 antagonism is the *downstream* CP0 modality that comp-014 + §1.21 confirmed has zero direct natural-product coverage; comp-018 instead asks whether compounds at any of these UPSTREAM nodes can prevent C5a from being generated in the first place.",
+  "fetch_date": "2026-05-08",
+  "platform_thesis_anchor": "complement-c5a-gout.md §2 — MSU crystals activate complement primarily via the classical pathway (IgM/CRP → C1q → C4b2a C3 convertase) and amplify via the alternative pathway (C3bBb). Therefore upstream C3 convertase inhibition is the most direct upstream-of-CP0 mechanism. Lectin pathway is non-dominant in MSU but ingestion-relevant (gut microbiota mannose patterns).",
+  "targets": [
+    {
+      "id": "C1q",
+      "uniprot": "P02745 (C1QA), P02746 (C1QB), P02747 (C1QC)",
+      "node_class": "classical pathway initiation",
+      "msu_relevance": "DOMINANT — C1q binds IgM-coated MSU crystals and CRP-coated MSU crystals (Wessig 2022 PMID 35296708). First step of the dominant MSU initiation pathway.",
+      "intervention_direction": "block C1q binding to MSU surface OR block C1r/C1s catalytic activation"
+    },
+    {
+      "id": "C1r/C1s",
+      "uniprot": "P00736 (C1R), P09871 (C1S)",
+      "node_class": "classical pathway serine proteases",
+      "msu_relevance": "DOMINANT — cleave C4 and C2 to form C4b2a, the classical-pathway C3 convertase",
+      "intervention_direction": "serine protease inhibition (overlap with C1-INH biology)"
+    },
+    {
+      "id": "MBL",
+      "uniprot": "P11226",
+      "node_class": "lectin pathway initiation",
+      "msu_relevance": "NON-DOMINANT for crystals themselves but possibly relevant for gut microbiota-derived mannose/glucan patterns that prime systemic complement tone",
+      "intervention_direction": "block MBL recognition OR MASP catalytic activity"
+    },
+    {
+      "id": "MASP-2",
+      "uniprot": "O00187",
+      "node_class": "lectin pathway serine protease",
+      "msu_relevance": "narsoplimab-target; same logic as MBL upstream",
+      "intervention_direction": "serine protease inhibition"
+    },
+    {
+      "id": "C3_convertase_classical_lectin",
+      "uniprot": "C4b (P0C0L4) + C2a (P06681)",
+      "node_class": "convertase complex (CP/LP)",
+      "msu_relevance": "DOMINANT — C4b2a generates surface C3b on MSU. The natural-product literature most consistently targets this complex (rosmarinic acid, tiliroside, biflavonoids).",
+      "intervention_direction": "destabilize convertase OR block C4b2a assembly OR mimic DAF/CD55 decay-acceleration"
+    },
+    {
+      "id": "C3_convertase_alternative",
+      "uniprot": "C3b (P01024) + Bb (P00751)",
+      "node_class": "convertase complex (AP)",
+      "msu_relevance": "AMPLIFIER — C3bBb is the alternative-pathway feedback loop on MSU surfaces (deficient host-surface Factor H recruitment because MSU lacks sialic acid)",
+      "intervention_direction": "destabilize C3bBb OR upregulate Factor H"
+    },
+    {
+      "id": "Factor_B",
+      "uniprot": "P00751",
+      "node_class": "alternative pathway zymogen",
+      "msu_relevance": "AMPLIFIER — required for C3bBb formation",
+      "intervention_direction": "block Bb binding to C3b (iptacopan synthetic precedent)"
+    },
+    {
+      "id": "Factor_D",
+      "uniprot": "P00746",
+      "node_class": "alternative pathway protease",
+      "msu_relevance": "AMPLIFIER — cleaves Factor B → Bb, rate-limiting in AP",
+      "intervention_direction": "serine protease inhibition (danicopan synthetic precedent)"
+    },
+    {
+      "id": "Factor_H",
+      "uniprot": "P08603",
+      "node_class": "host regulator (NEGATIVE complement regulator)",
+      "msu_relevance": "PROTECTIVE — Factor H upregulation should DAMPEN MSU-surface AP amplification. Note: positive intervention (upregulate, not inhibit).",
+      "intervention_direction": "UPREGULATE expression OR enhance C3b-binding affinity"
+    },
+    {
+      "id": "Properdin",
+      "uniprot": "P27918",
+      "node_class": "alternative pathway POSITIVE regulator",
+      "msu_relevance": "AMPLIFIER — stabilizes C3bBb on surfaces, extends half-life ~10-fold",
+      "intervention_direction": "block C3bBb stabilization"
+    },
+    {
+      "id": "DAF_CD55",
+      "uniprot": "P08174",
+      "node_class": "host membrane regulator",
+      "msu_relevance": "ENGINEERING ANCHOR — comp-006/comp-012/H05 thread; soluble truncated DAF SCR1-4 is the OE engineering candidate. Natural-product upregulators of endogenous DAF would synergize with the engineered construct.",
+      "intervention_direction": "UPREGULATE host DAF expression (positive intervention) OR mimic DAF decay-acceleration via small molecule (rare class)"
+    },
+    {
+      "id": "CD59",
+      "uniprot": "P13987",
+      "node_class": "host MAC inhibitor",
+      "msu_relevance": "DOWNSTREAM of C5a but blocks sublytic MAC priming on host cells",
+      "intervention_direction": "UPREGULATE expression"
+    },
+    {
+      "id": "C5_convertase",
+      "uniprot": "C4b2a3b (CP) or C3bBbC3b (AP)",
+      "node_class": "terminal upstream node",
+      "msu_relevance": "TERMINAL UPSTREAM — last step before C5a is generated",
+      "intervention_direction": "block C5 cleavage (overlap with eculizumab-class)"
+    },
+    {
+      "id": "C5",
+      "uniprot": "P01031",
+      "node_class": "terminal upstream substrate",
+      "msu_relevance": "the substrate whose cleavage produces C5a — included for completeness; eculizumab/zilucoplan/vilobelimab pharma anchors",
+      "intervention_direction": "block C5 cleavage"
+    },
+    {
+      "id": "C5aR1",
+      "uniprot": "P21730",
+      "node_class": "downstream receptor (CP0 proper)",
+      "msu_relevance": "INCLUDED FOR COMPLETENESS — comp-014 + §1.21 already empty; included so search expansion can confirm or refute",
+      "intervention_direction": "receptor antagonism (avacopan synthetic precedent)"
+    },
+    {
+      "id": "C1_INH",
+      "uniprot": "P05155",
+      "node_class": "host fluid-phase regulator",
+      "msu_relevance": "PROTECTIVE — natural inhibitor of C1r/C1s and MASPs; inhibits AP convertase per Jiang 2001 PMID 11733575",
+      "intervention_direction": "UPREGULATE host C1-INH OR exogenous C1-INH replacement"
+    }
+  ],
+  "scope_notes": [
+    "Per Brian framing 2026-05-08: scope is BROAD — fungal, plant, bacterial, marine, dietary, FDA-approved drug, classical TCM/Kampo/Ayurveda. Don't pre-narrow.",
+    "Sub-targets DAF/CD55, Factor H, C1-INH, CD59 are HOST regulators where the desired direction is UPREGULATION (positive intervention) — not inhibition. Do not penalize compounds that upregulate without inhibiting.",
+    "C5aR1 is included as a sanity check on the comp-014 / §1.21 finding (no direct natural-product C5aR1 antagonist). If comp-018 surfaces a hit here, that would be a novel finding."
+  ]
+}

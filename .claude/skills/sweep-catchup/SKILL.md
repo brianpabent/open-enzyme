@@ -18,7 +18,7 @@ This is the **minimal version**. Once `logs/sweep-state.json` exists (component 
 | Brian says "/sweep-catchup" or "fire a catchup sweep" | Yes | Explicit ask. |
 | End of a long session that committed substantive wiki content with `[skip-wiki-sweep]` markers | Yes | The walkthrough pattern from 2026-04-27. |
 | `gh run list --workflow=wiki-sweep --limit 5` shows recent failure(s) on real wiki commits | Yes | Recovery from race / 503. |
-| `git diff --name-only <last-sweep> HEAD -- 'wiki/*.md'` returns ≥1 file (excluding synthesis.md) | Yes | Pending backlog. |
+| `git diff --name-only <last-sweep> HEAD -- 'wiki/*.md'` returns ≥1 file (post-2026-05-08 migration: `synthesis/` is sibling to `wiki/`, so `wiki/*.md` paths never include synthesis content) | Yes | Pending backlog. |
 | No wiki files changed since last successful Pass 3 | No | Nothing to do. Report "no backlog". |
 | A wiki-sweep run is currently in-progress | No | Wait for it to finish (would race on push). Use `gh run list --workflow=wiki-sweep --limit 1` to check. |
 
@@ -32,7 +32,7 @@ The canonical cursor is `logs/sweep-state.json`'s `last_successful_sweep.commit`
 python3 scripts/sweep-state.py pending-paths
 ```
 
-That command (a) reads the registry, (b) computes `git diff --name-only <last_successful_sweep.commit> HEAD -- 'wiki/*.md'`, (c) excludes `wiki/synthesis.md`, (d) prints one path per line, sorted and deduplicated.
+That command (a) reads the registry, (b) computes `git diff --name-only <last_successful_sweep.commit> HEAD -- 'wiki/*.md'`, (c) prints one path per line, sorted and deduplicated. (Post-2026-05-08 migration: `synthesis/` is sibling to `wiki/`, so `wiki/*.md` scoping naturally excludes synthesis content — no separate exclusion needed.)
 
 If the registry is missing (`logs/sweep-state.json` doesn't exist), bootstrap it once:
 
@@ -47,7 +47,7 @@ That backfills from the latest existing `logs/v4-synthesis-*.md` log and the mos
 The list comes back already validated and sorted from Step 1. If the user passed `--base <SHA>` as an override, use this fallback path instead:
 
 ```bash
-git diff --name-only <override-base> HEAD -- 'wiki/*.md' | grep -v 'wiki/synthesis\.md' | sort -u
+git diff --name-only <override-base> HEAD -- 'wiki/*.md' | sort -u
 ```
 
 ### Step 3 — Validate the list
@@ -81,8 +81,10 @@ After the run finishes:
 # New synthesis log should exist
 ls -lt logs/v4-synthesis-*.md | head -3
 
-# wiki/synthesis.md should have a new sweep block prepended
-git log -1 wiki/synthesis.md --format='%h %s'
+# synthesis/queue/ should have new per-item files; synthesis/history/ should have the new Pass 2 log copy
+ls -lt synthesis/queue/ | head -10
+ls -lt synthesis/history/ | head -3
+git log -1 synthesis/queue/ synthesis/history/ --format='%h %s'
 ```
 
 If the workflow run failed, surface the failure mode (Pass 1 / Pass 2 / Pass 3) and which step. The hardened workflow should retry rebase 3× and retry transient API errors with backoff, so any remaining failures are likely real (auth, quota, prompt bug) rather than transient.
@@ -99,10 +101,10 @@ The skill accepts free-text args from the user:
 ## Don't
 
 - Don't fire if a wiki-sweep run is already in progress. Check `gh run list --workflow=wiki-sweep --limit 1` first; if status is `in_progress`, wait or skip.
-- Don't pass `wiki/synthesis.md` in the trigger_paths list. The workflow filter excludes it; passing it is silently ignored but signals you didn't read this skill.
+- Don't pass any `synthesis/**` path in the trigger_paths list. The workflow path filter is `wiki/**.md`; synthesis paths are sibling to wiki and never match. Passing them is silently ignored but signals you didn't read this skill.
 - Don't fall back to `git log --grep='^sweep'` (the workflow's brittle default). The whole point of this skill is to bypass that regex.
 - Don't update the registry yet — `logs/sweep-state.json` doesn't exist. After component #2 ships, update both this skill and the workflow to read/write it.
 
 ## Implementation note
 
-The skill reads from the registry (`logs/sweep-state.json`) via `scripts/sweep-state.py pending-paths`. This bypasses the workflow's brittle `git log --grep='^sweep'` regex and is robust to hand-edited commits with `sweep-N-...` prefixes. The registry is updated only on Pass 3 success (atomically, in the same commit as the synthesis.md prepend), so a partial sweep cycle never moves the cursor forward.
+The skill reads from the registry (`logs/sweep-state.json`) via `scripts/sweep-state.py pending-paths`. This bypasses the workflow's brittle `git log --grep='^sweep'` regex and is robust to hand-edited commits with `sweep-N-...` prefixes. The registry is updated only on Pass 3 success (atomically, in the same commit as the per-item file emit into `synthesis/queue/` + Pass 2 log copy into `synthesis/history/`), so a partial sweep cycle never moves the cursor forward.

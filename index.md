@@ -6,15 +6,19 @@ Open source library of engineered, food-grade microbial strains producing therap
 
 ---
 
+> **Have gout? Want to know what to do?** → Read **[`gout-action-guide.md`](wiki/gout-action-guide.md)** first. It's the situation-first entry surface (today / this month / this year, by patient situation) that translates the research wiki below into action. The dashboard, synthesis queue, and concept index on the rest of this page are research-facing.
+
+---
+
 ## Status
 
-**Current platform thesis:** One engineered *A. oryzae* koji strain expressing uricase + NLRP3 inhibitors, fermented on rice bran, positioned as adjunct to allopurinol for gout — not a monotherapy replacement. Derivation in [wiki/synthesis.md](wiki/synthesis.md).
+**Current platform thesis:** One engineered *A. oryzae* koji strain expressing uricase + NLRP3 inhibitors, fermented on rice bran, positioned as adjunct to allopurinol for gout — not a monotherapy replacement. Derivation in [`synthesis/`](synthesis/README.md) (action queue + history + strategic reflections; per-item files in `synthesis/queue/` + `synthesis/done/`).
 
 **Two parallel outputs:** (1) A **discovery engine** — a chokepoint-based methodology for mapping every vector that causes, treats, or mitigates a given disease, applied first to gout. Produces a structured cascade map plus a repurposing surface (FDA-approved drugs that hit relevant chokepoints but were never clinically tested for the target disease). (2) An **open-source strain library** — the engineered-koji platform is one synthesis from the discovery engine. (source: open-enzyme-vision.md, §1–2)
 
 **Platform positioning:** Open Enzyme is a **food-derived, multi-target NLRP3 pathway modulator** platform — not an attempt to produce a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). The stack hits upstream priming (CP1a/CP1b), K⁺ efflux (CP2), active resolution (CP5b), and neutrophil amplification (CP6a) — chokepoints that pharma has not rigorously tested in gout. (source: open-enzyme-vision.md, §10)
 
-**Synthesis queue:** [wiki/synthesis.md](wiki/synthesis.md) — unreviewed cross-analysis findings. The sweep daemon prepends new findings here after each save; prune by deleting bullets you've acted on. Git preserves the full history.
+**Synthesis queue:** [`synthesis/queue/`](synthesis/queue/) — per-item daemon-emitted action queue (one file per finding). The sweep daemon emits a new file here after each Pass 3 review. Walkthrough closes items by appending a closure annotation + `git mv` to [`synthesis/done/`](synthesis/done/). Inbox-zero is automatic when queue/ is empty. Architecture overview at [`synthesis/README.md`](synthesis/README.md).
 
 **Cheapest next experiments** (from current synthesis, ordered by cost/ROI):
 
@@ -89,8 +93,9 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 ## Strategy & Practice
 
+- **[Gout Action Guide](wiki/gout-action-guide.md)** — *(NEW 2026-05-08)* — "I have gout, what do I do?" entry surface. Situation-first decision tree (default-male / androgen-elevated / Q141K-positive / active flare / on allopurinol / prevention) × time horizon (today / this month / this year / future). Translates the research wiki into action; links into the supplements catalog for compound depth and into individual research pages for mechanism depth. Patient/practitioner-facing, not PhD-research-facing — read this first if you arrived asking "what should I do?"
 - **[Gout Clinical Pipeline](wiki/gout-clinical-pipeline.md)** — Current ClinicalTrials.gov + PubMed snapshot (2026-04-23): ALLN-346 program terminated 2022, dapansutrile gout development stalled, canakinumab FDA-approved for gout Aug 2023, PRX-115 is the new systemic-uricase competitor. Refreshable quarterly via MCP.
-- **[Supplements Stack](wiki/supplements-stack.md)** — Practical NOW/SOON/FUTURE recommendations with dosing and evidence levels
+- **[Supplements Stack](wiki/supplements-stack.md)** — Compound-first catalog (1,100+ lines): per-compound mechanism, dose, contraindications, drug interactions, stack-level antagonisms. NOW (Section 1) / SOON (Section 2) / FUTURE (Section 3). For situation-first triage, see [`gout-action-guide.md`](wiki/gout-action-guide.md).
 - **[Complement C5a in Gout](wiki/complement-c5a-gout.md)** — CP0: MSU directly activates complement; C5a dominant NLRP3 priming signal; avacopan repurposing candidate; stack gap
 - **[TNFSF14 / LIGHT in Gout](wiki/tnfsf14-gout-target.md)** — CP1a: Second-highest gout-flare biomarker; LIGHT amplifies NF-κB; EGCG and DHA as natural moderators; CERC-002 mAb precedent
 - **[SPM Resolution Pathway](wiki/spm-resolution-pathway.md)** — CP5b: RvD1/MaR1 direct MSU gout animal model evidence; ALX/FPR2 agonism; aspirin-triggered resolvins
@@ -168,7 +173,7 @@ These are the long-form research documents that the shorter concept pages above 
 
 ## Cross-Analysis & Synthesis
 
-- **[Synthesis (current)](wiki/synthesis.md)** — Cross-doc connections, contradictions, and proposed experiments. The sweep daemon prepends new findings here after each save. **This is the action queue — read it, then prune what you've acted on.**
+- **[Synthesis (current)](synthesis/README.md)** — Cross-doc connections, contradictions, and proposed experiments. **The action queue lives at [`synthesis/queue/`](synthesis/queue/)** — one file per finding emitted by the daemon's Pass 3. Walkthrough closes items by appending closure annotation + `git mv` to [`synthesis/done/`](synthesis/done/). Inbox-zero is automatic when queue/ is empty.
 - **[Concept Graph](wiki/GRAPH.md)** — Mermaid diagram of all concept relationships (produces / inhibits / activates / requires / synergizes / degrades)
 
 ### Engineering & Design (deep dives)

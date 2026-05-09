@@ -1,15 +1,15 @@
 ---
 name: walk-synthesis
-description: Walk wiki/synthesis.md item-by-item with Brian, propose action for each, execute with his go-ahead, annotate the actioned items, and finish with an inbox-zero pass + single-push handoff to the sweep daemon. Codifies the conventions discovered ad-hoc during the 2026-05-05 walkthrough — item discipline, CTO-not-PhD framing, subagent decision tree, multi-surface follow-up tracking, and final-push merge handling. Invoke when Brian says "walk the synthesis," "walk the sweep," "walk the queue," or `/walk-synthesis`.
+description: Walk synthesis/queue/ item-by-item with Brian, propose action for each, execute with his go-ahead, annotate the actioned items, and finish with an inbox-zero pass + single-push handoff to the sweep daemon. Codifies the conventions discovered ad-hoc during the 2026-05-05 walkthrough — item discipline, CTO-not-PhD framing, subagent decision tree, multi-surface follow-up tracking, and final-push merge handling. Invoke when Brian says "walk the synthesis," "walk the sweep," "walk the queue," or `/walk-synthesis`.
 ---
 
 # /walk-synthesis
 
-Walk `wiki/synthesis.md` item-by-item, action each with Brian's go-ahead, prune to inbox-zero, and ship the batch with a single push.
+Walk `synthesis/queue/` item-by-item, action each with Brian's go-ahead, prune to inbox-zero, and ship the batch with a single push.
 
 ## Background
 
-`wiki/synthesis.md` is the action queue produced by the wiki sweep daemon (multi-pass: propagate → synthesize → critique → DeepSeek peer-review). The daemon prepends new findings; humans (or AI in human's stead) action them and prune. This skill codifies the discipline that makes the walkthrough fast and consistent.
+`synthesis/queue/` is the action queue produced by the wiki sweep daemon (multi-pass: propagate → synthesize → critique → DeepSeek peer-review). The daemon prepends new findings; humans (or AI in human's stead) action them and prune. This skill codifies the discipline that makes the walkthrough fast and consistent.
 
 **Why this skill exists.** During the 2026-05-05 walkthrough, several things had to be discovered mid-session: that Brian wants explicit item-by-item walking (not batched action), that the CTO-not-PhD framing rule must be applied to every briefing, that follow-ups need multi-surface tracking to survive, that the daemon may run in parallel during a long session and create section-number collisions on push. This skill front-loads those lessons.
 
@@ -21,7 +21,7 @@ Walk `wiki/synthesis.md` item-by-item, action each with Brian's go-ahead, prune 
 |---|---|
 | Brian says "walk the synthesis" / "walk the sweep" / "walk the queue" | Yes |
 | `/walk-synthesis` invoked | Yes |
-| `wiki/synthesis.md` has items pending and Brian wants to process them | Yes |
+| `synthesis/queue/` has items pending and Brian wants to process them | Yes |
 | One specific item needs actioning (not full walkthrough) | Skip skill — action directly |
 | Brian wants only the inbox-zero cleanup pass | Skip to Section 7 |
 | You're mid-conversation and Brian says "let's keep going" on a walkthrough already in progress | Continue from current item; don't restart |
@@ -39,12 +39,14 @@ Before announcing the first item, do all of these:
    ```
    If `.claude/` paths block the rebase with "Operation not permitted," retry with `dangerouslyDisableSandbox: true`. If conflicts, resolve via the patterns in Section 8.
 
-2. **Read `wiki/synthesis.md` end-to-end.** Inventory every item. Synthesis files are typically structured: New Connections (N items), Contradictions Found (M items), Proposed Experiments (K items), Open Questions (J items), Priority Actions (L items). Total = N+M+K+J+L. **Number them globally** (item 1/total through item total/total) so Brian can navigate.
+2. **Inventory the queue.** Run `ls synthesis/queue/` to list every pending item. Each file is one item (Connection / Contradiction / Experiment / Open Question / Priority Action / Riskiest Assumption / Most Curious Thread / chembl-discrepancy). Filename format: `<sweep-date>-<type>-<index>-<slug>.md`. **Read each file** to surface its frontmatter (`type`, `pass3_verdict`, `overlap_with`) + headline + body + Pass 3 review. **Group by sweep date**, then by type within sweep, and **number globally** (item 1/total through item total/total) so Brian can navigate.
 
-3. **Look at the Strategic Reflections Queue at the bottom.** Note any pending content-triggered reflections. Do not action these as part of the walkthrough — they fire on substance, not on the walkthrough cadence.
+3. **Check `synthesis/strategic-reflections/`** for pending content-triggered reflections. Do not action these as part of the walkthrough — they fire on substance maturity, not on walkthrough cadence. Note them so Brian can see what's queued.
 
-4. **State the inventory back to Brian in one short message** before starting item 1. Format:
-   > "Sweep dated YYYY-MM-DD has X items: N Connections, M Contradictions, K Proposed Experiments, J Open Questions, L Priority Actions. Ready to walk them 1-by-1?"
+4. **Check `synthesis/history/`** for the most recent sweep entry — it holds the per-sweep narrative and the items table that grouped this batch.
+
+5. **State the inventory back to Brian in one short message** before starting item 1. Format:
+   > "Queue at `synthesis/queue/` has X items from sweep YYYY-MM-DD: N Connections, M Contradictions, K Proposed Experiments, J Open Questions, L Priority Actions [+ riskiest-assumption / most-curious-thread / chembl-discrepancy if present]. Ready to walk them 1-by-1?"
 
 5. **Check for in-flight subagents** (from prior sessions or earlier in this conversation). If any are running, note their target files so you don't collide.
 
@@ -65,6 +67,11 @@ The briefing has a strict structure that respects the CTO-not-PhD framing:
 ```
 **Item N/total — [Section type]: [Item title]**
 
+[If the item inherits loose ends from a prior item per Step F's carryover discipline:]
+**Inherited loose ends (carryover from Item M):**
+- [Loose end + why it matters for THIS item's framing]
+- [Each inherited loose end gets explicit disposition as part of THIS item's actions]
+
 **The plain-English version:**
 [1–3 paragraphs. Lead with the headline finding in one sentence. Gloss every jargon term on first use 
 (e.g., "URAT1 [the kidney transporter that reabsorbs urate from urine back into the blood]"). 
@@ -77,6 +84,7 @@ Walk the mechanism like a flowchart, not a research paper. Use analogies where t
 **What I'd propose to do:**
 [Concrete action. Name files that would change. Estimate scope ("inline, ~10 min" / "subagent, ~5 min 
 to spawn" / "no wiki work needed — already done" / "needs your decision between A and B").]
+[If inherited loose ends apply, explicitly include their disposition in the proposed action.]
 
 [If decision needed:] **My recommendation:** [Option] — [one-sentence justification].
 
@@ -102,33 +110,47 @@ Three execution patterns:
 
 | Action type | How |
 |---|---|
-| **Inline (you do it)** | Edit files directly. Most cross-link updates, small wiki-page additions, synthesis annotations. |
+| **Inline (you do it)** | Edit canonical wiki files directly. Most cross-link updates, small wiki-page additions, propagation. |
 | **Background subagent** | When the work is independent and you want to keep walking other items. See Section 4 for Sonnet vs. Opus decision. |
 | **Foreground subagent** | When the agent's result blocks the next item or you need its findings before continuing. |
-| **Already done** | If the existing wiki state already reflects the action, write a closure note in synthesis.md instead of re-doing the work. |
+| **Already done** | If the canonical wiki state already reflects the action, the closure annotation just says so. No new wiki work. |
 
-### Step D — Annotate `✓ Actioned`
+### Step D — Append closure annotation to the queue file (NOT to a shared synthesis.md)
 
-Immediately after the work lands, add this annotation directly under the relevant Claude review block in `wiki/synthesis.md`:
+Each item has its own file at `synthesis/queue/<sweep-date>-<type>-<index>-<slug>.md`. After the substantive action lands (or you confirm it's already done), **append the closure annotation to the bottom of that item's file**:
 
 ```markdown
-**✓ Actioned YYYY-MM-DD:** [What was done — name the files changed, key decisions made, and where the 
-work landed canonically. If the action was a closure note ("already done"), say so explicitly.] [Cross-link 
-to new pages, sections, or experiments created.] [If follow-ups were created, list them with where they're 
-tracked.]
+
+---
+
+## ✓ Actioned YYYY-MM-DD
+
+[What was done — name the files changed, key decisions made, and where the work landed canonically.
+If the action was a closure note ("already done"), say so explicitly.] [Cross-link to new pages, sections,
+or experiments created.] [If follow-ups were created, list them with where they're tracked.]
 ```
+
+The `---` separator + `## ✓ Actioned <date>` H2 keeps the closure visually distinct from the original Pass 2 / Pass 3 content above.
 
 **The annotation is non-optional.** It closes the loop and documents what shipped.
 
-### Step E — Commit immediately
+### Step E — `git mv` queue → done + commit
 
-Per Brian's git steward pattern (from the umbrella CLAUDE.md), commit after each substantive write — don't batch. The commit message:
+After the closure annotation is appended, **move the file** from `synthesis/queue/` to `synthesis/done/`:
+
+```bash
+git mv synthesis/queue/<sweep-date>-<type>-<index>-<slug>.md synthesis/done/
+```
+
+The `git mv` preserves the file's git history. Empty `synthesis/queue/` directory = inbox-zero by construction.
+
+Commit immediately per the umbrella CLAUDE.md git steward pattern. The commit message:
 
 ```
 sweep item N: <one-line action summary>
 
 <2-4 line body covering: what shipped, which files, any decisions made,
-any follow-ups queued. Cross-reference the synthesis.md annotation if useful.>
+any follow-ups queued. The queue→done move is part of this commit.>
 
 Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 ```
@@ -136,6 +158,28 @@ Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 **Do NOT use `[skip-wiki-sweep]`.** That marker is reserved for daemon-generated commits. Hand-applying it suppresses the sweep on user content (root cause of the 2026-04-27 walkthrough's blind spot — see CLAUDE.md). The commit-msg hook enforces this.
 
 **Hold the push until end of batch** (Section 7) so the daemon fires once across the whole batch, not N times.
+
+### Step F — Summarize what landed + loose ends + user disposition (added 2026-05-08)
+
+**An item is NOT done after Step E.** Committing the closure note is necessary but not sufficient. An item is done when (a) the action landed, (b) loose ends are dispositioned, AND (c) the user has explicitly approved moving on.
+
+**The end-of-item summary discipline:** before briefing the next item, post a short summary back to the user covering:
+
+1. **What landed** — 2–4 sentences naming the files changed, commit hash(es), and any key decisions made. The user may not have followed every Edit/Bash call; this is the cumulative human-readable diff.
+
+2. **Loose ends** — explicitly listed, each categorized as one of three types:
+
+   - **Acceptably deferred** — already queued elsewhere (`validation-experiments.md`, `open-questions.md`, comp-NNN follow-up, Phase 2 sub-task on a scope page, Strategic Reflections Queue). Listing for completeness so nothing silently drops.
+   - **Needs disposition now** — could change the next item's framing or downstream work. The user picks defer / action / ignore.
+   - **Carries over to Item X** — explicitly anchored to a specific future walkthrough item. The future-item briefing will absorb it. Without this anchoring, cross-item loose ends silently get forgotten.
+
+3. **Wait for user disposition** before briefing the next item. The user explicitly approves moving on (typically by greenlighting the next item's briefing, OR by saying "go" / "next" / "Item N+1"). Auto-advance is forbidden.
+
+**Why this rule exists.** The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while open loose ends (brief-contamination caveat propagation, methodological discipline doc, comp-018 page disclosure, retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally, the user had to back the conversation up, and the unresolved loose ends became larger work than they would have been if disposed of at end of Item 10. The fix is upstream of moving to Item 11 — explicit summary + loose-ends inventory + user disposition before the next briefing fires.
+
+**Template** at Section 6 §"End-of-item summary" below. Anti-pattern formalized at Section 9 §14.
+
+**The carryover discipline:** when an item walk discovers a cross-item loose end (e.g., comp-019's results contradict a calibration note added in Item 8 that won't be revisited until Item 11), the loose end gets added explicitly to the **inherited loose ends** section of the NEXT item's briefing. So when the briefing for Item N+1 fires, it includes "carryover from Item N: [the calibration note now points wrong direction; needs reversal during this walk]." Cross-item state is impossible to forget when it's surfaced as part of the future item's briefing context.
 
 ---
 
@@ -178,7 +222,7 @@ When to spawn an agent vs. action inline, and which model.
 | Work type | Action |
 |---|---|
 | Cross-link updates across 2–6 files | Inline |
-| Annotation in `synthesis.md` | Inline |
+| Annotation in `synthesis/queue/` | Inline |
 | New scope page following an established template | Inline (you've already mastered the template) |
 | Multi-query literature scan with judgment | Subagent (Opus) |
 | Computational experiment using established framework | Subagent (Sonnet, via `new-comp-experiment` skill) |
@@ -209,7 +253,7 @@ If unsure → Opus. Cost difference is small relative to the cost of low-quality
 2. **Immediately after launching, create a NEW TaskCreate entry** representing the future review step. Format: `"Item N+X — Review subagent results: <one-line description>"`. The task description should reference the subagent ID and the work it's doing.
 3. **Append this new task to the END of the walkthrough queue** by giving it a higher item number than the current highest. The walkthrough's total-item count goes up by 1 for each background subagent launched.
 4. **When the subagent's completion notification arrives, DO NOT process it immediately.** Update the existing review-task to mark it as "ready for review" (e.g., status comment, metadata field, or just the completion notification itself in the conversation). **Continue working on the current walkthrough item.** Do not let subagent completion become a drift trigger.
-5. **When the walkthrough naturally arrives at the review-task in normal item order**, present the subagent's findings to the user as that item's briefing, exactly like any other walkthrough item. Wait for explicit go-ahead before actioning. Annotate `wiki/synthesis.md` and commit per the standard step pattern.
+5. **When the walkthrough naturally arrives at the review-task in normal item order**, present the subagent's findings to the user as that item's briefing, exactly like any other walkthrough item. Wait for explicit go-ahead before actioning. Annotate `synthesis/queue/` and commit per the standard step pattern.
 
 **Why this rule exists.** During the 2026-05-06 walkthrough, three background subagents (comp-013 TCM triage, chaperone framework refinement, triple-cassette synergy modeling) returned asynchronously. Each completion arrived as a notification mid-conversation, and Claude treated each as "process now" rather than "queue for the user-approved review step." The completions compounded into momentum that carried Claude past Items 16-21 + cleanup work + the inbox-zero pass + the push to origin, all without per-item user approval. Robbed the user of being present for the first end-to-end test of caching + DeepSeek Pass 1 infrastructure he had spent the day building.
 
@@ -238,7 +282,7 @@ When multiple subagents are in flight, brief each on what files OTHER agents are
 
 - `wiki/computational-experiments.md` (any comp-NNN agent will edit this)
 - `wiki/modality-chokepoint-matrix.md` (peer-track scope-page agents edit per-modality sections)
-- `wiki/synthesis.md` (any agent can add an actioned annotation)
+- `synthesis/queue/` (any agent can add an actioned annotation)
 - `wiki/validation-experiments.md` (experiment-creating agents add §X.Y entries)
 - `experiments/lib/protease_stability.py` (locked — orchestrators import only, never modify)
 
@@ -257,14 +301,14 @@ When an item creates a new exploration vector, peer-track scope page, or set of 
 | 3. `wiki/computational-experiments.md` Planned Analyses table | Any comp-NNN follow-ups (with "Informs" pointing to the new page) |
 | 4. `wiki/hypotheses/HNN-<thesis>.md` falsification card stub | Forces "what would kill this thesis" framing; full population queued as a Phase 2 item |
 | 5. `index.md` cheapest-experiments table | The 1–2 highest-leverage Phase 2 items (the daemon-fires-on-push surface that catches Brian's eye most often) |
-| 6. `wiki/synthesis.md` actioned annotation + Strategic Reflections Queue | The annotation closes the item; the Reflections Queue holds content-triggered platform reframes |
+| 6. `synthesis/queue/` actioned annotation + Strategic Reflections Queue | The annotation closes the item; the Reflections Queue holds content-triggered platform reframes |
 
 **Phase taxonomy** (use these labels for clarity):
 - **Phase 1:** what we do now in this session
 - **Phase 2:** queued in silico follow-ups, no pharma-partner dependency, can be subagent-executed in future sessions
 - **Phase 3:** content-triggered reflections — fire when accumulated substance crosses a maturity threshold (not calendar-triggered)
 
-Phase 3 entries belong in the Strategic Reflections Queue subsection of `wiki/synthesis.md` so the daemon surfaces them on every sweep.
+Phase 3 entries belong in the Strategic Reflections Queue subsection of `synthesis/queue/` so the daemon surfaces them on every sweep.
 
 ---
 
@@ -286,6 +330,42 @@ content already lives, with file/line references]. No additional wiki work neede
 Contradiction / Open Question / Priority Action].
 ```
 
+### End-of-item summary (Step F discipline — between every item and the next)
+
+Post this as a Brian-facing message AFTER the closure-note commit and BEFORE briefing the next item. The summary forces explicit user disposition before walking on.
+
+```markdown
+**Item N done — summary + loose ends:**
+
+**What landed:**
+- [File 1] — [one-line what changed] (commit `<hash>`)
+- [File 2] — [one-line what changed] (commit `<hash>`)
+- [Key decisions taken]
+
+**Loose ends:**
+
+*Acceptably deferred* (already queued elsewhere; listing for completeness):
+- [Loose end] → queued at [`location.md` §X]
+- [Loose end] → queued as Phase 2 follow-up in [scope page]
+
+*Needs disposition now* (could change the next item's framing or downstream work):
+- [Loose end] — options: defer / action now / ignore. My recommendation: [option] because [reason].
+
+*Carries over to Item X* (will surface in that future briefing):
+- [Loose end] → anchored to Item X for explicit disposition there
+
+**Item N closed?** [Wait for explicit user yes/next/go before briefing Item N+1.]
+```
+
+**Skip the loose-ends sub-headers if a category is empty.** A clean walk with no loose ends is just:
+
+```markdown
+**Item N done — summary:**
+- [Files changed + commits]
+- No loose ends.
+**Item N closed?** Ready for Item N+1.
+```
+
 ### Peer-track scope-page skeleton (frontmatter through cross-references)
 
 ```markdown
@@ -298,7 +378,7 @@ related:
   - [parent-mechanism-page.md]
   - open-questions.md
   - open-enzyme-vision.md
-  - synthesis.md
+  - synthesis/queue/
   - hypotheses/HNN-<thesis>.md
 sources:
   - "[Key precedent 1 — citation]"
@@ -389,7 +469,7 @@ When a new wet-lab experiment has cost-escalating tiers gated on prior-tier resu
 
 **What it tests:** [1 paragraph framing the literature gap and why this matters]
 
-**Proposed in:** [synthesis.md reference]
+**Proposed in:** [synthesis/queue/ entry]
 
 **Background on the gap:** [1 paragraph]
 
@@ -428,35 +508,25 @@ When a new wet-lab experiment has cost-escalating tiers gated on prior-tier resu
 
 After the last item is actioned and committed:
 
-### 7.1 — Inbox-zero pass on `wiki/synthesis.md`
+### 7.1 — Inbox-zero is automatic (post-2026-05-08 migration)
 
-The pruning convention is established by the file's own meta-header: actioned items get deleted (preserved in git history + sweep logs). When all items in a sweep block are actioned:
+**There is no manual inbox-zero pass anymore.** Each item's closure flow is `git mv synthesis/queue/<file>.md synthesis/done/` per Step E. When every queue file has been moved, the queue/ directory is empty by construction — that IS inbox zero.
 
-1. **Delete the entire sweep block** (Connections, Contradictions, Proposed Experiments, Open Questions, Priority Actions, Sources cited — the whole thing).
-2. **Preserve the Strategic Reflections Queue** (content-triggered, hasn't fired).
-3. **Update "Pending — open items"** to `**(none — inbox zero as of YYYY-MM-DD).**` plus a one-paragraph note pointing to the audit trail (`git log --since=YYYY-MM-DD` and `logs/v4-synthesis-*.md`).
-4. **Add a row to the Sweep history table** with date / trigger / synthesizer / reviewer / log path. If the sweep was a substantive duplicate of another, note that.
-5. **Update "Where actioned items live now"** to include any new canonical homes created during the walkthrough (new wiki pages, new H-cards, new comp-NNN folders, new validation-experiments §X.Y entries, new self-experiment-protocol sections).
+Verify before pushing:
 
-Target file size after pruning: ~80 lines (~2 KB). The 2026-05-05 inbox-zero dropped synthesis.md from 323 → 80 lines.
-
-Commit:
+```bash
+ls synthesis/queue/                  # should show only .gitkeep (empty queue)
+ls synthesis/done/ | tail -10        # confirms today's items landed in done/
 ```
-synthesis: YYYY-MM-DD inbox-zero pass
 
-Pruned the YYYY-MM-DD sweep block (N items, all actioned during this session).
-[If duplicate sweep also pruned, name it.]
+If `synthesis/queue/` has only `.gitkeep` left, you're at inbox zero. No further bookkeeping. The pre-2026-05-08 manual prune pass (delete sweep block, update "Pending", add sweep-history row, update "Where actioned items live now") is **gone** — those concerns are now structural:
 
-File reduced from X → Y lines. Findings preserved in:
-- Canonical wiki pages (per "Where actioned items live now" — updated)
-- Sweep history table (entry added)
-- Strategic Reflections Queue (preserved)
-- git log + logs/v4-synthesis-*.md
+- "Pending" = whatever's in `synthesis/queue/` right now. Empty queue = no pending items.
+- "Sweep history" = `synthesis/history/` directory listing. Each sweep emits its own per-sweep history file via `synthesis-emit-files.py`.
+- "Where actioned items live now" = `synthesis/done/` for actioned items + canonical wiki pages for substantive content. Per-item granularity makes the manual index unnecessary.
+- "Strategic Reflections Queue" = `synthesis/strategic-reflections/` directory.
 
-Pending — open items: (none — inbox zero as of YYYY-MM-DD).
-
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
-```
+If a walkthrough creates a NEW canonical wiki page or NEW comp-NNN that's worth a separate cross-reference, surface it via the closure annotation in the relevant queue→done file (where the action happened) rather than maintaining a parallel index.
 
 ### 7.2 — Single push at end
 
@@ -465,7 +535,7 @@ cd "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme"
 git push
 ```
 
-The sweep daemon fires on push to `wiki/*.md`. Pushing once at end means **one daemon run, not N**.
+The sweep daemon fires on push to `wiki/**.md`. The walkthrough's commits typically touch wiki/ (canonical content updates) AND synthesis/ (queue→done moves). The wiki/ commits trigger the daemon; the synthesis/ moves are sibling-of-wiki and don't intersect the path filter, so daemon fires exactly once on the wiki updates. The `[skip-wiki-sweep]` marker is for daemon-emitted commits ONLY — never apply to walkthrough commits.
 
 ### 7.3 — Anticipate the merge
 
@@ -493,7 +563,7 @@ git merge origin/main --no-edit  # may exit with conflicts
 
 Common conflict patterns:
 
-- **`wiki/synthesis.md`:** daemon's fresh sweep block usually duplicates content you already actioned. Take ours (the inbox-zero version). Add a sweep-history row noting the daemon's sweep was substantively duplicate.
+- **`synthesis/queue/`:** daemon's fresh sweep block usually duplicates content you already actioned. Take ours (the inbox-zero version). Add a sweep-history row noting the daemon's sweep was substantively duplicate.
 - **`wiki/validation-experiments.md`:** section-number collision (most common). Daemon assigned §1.X to its experiment; you assigned §1.X to a different experiment. Keep yours; renumber daemon's to §1.X+N (whichever has fewer cross-references). Update all cross-refs (search: `grep -rn "§1\.X" --include="*.md"`).
 - **`index.md`:** keep both sides; update any cross-refs whose section number changed.
 
@@ -549,6 +619,12 @@ Fix: Re-anchor on the CTO-not-PhD framing rule (Section 2 Step A). Don't apologi
 
 13. **The `.claude/hooks/block-push-without-approval.py` push hook is a backstop, not a license.** Once active, the hook will block daemon-triggering pushes unless the user types `CLAUDE_PUSH_AUTHORIZED=1` as an explicit grant. Do not interpret "the hook will catch me if I drift" as permission to drift — the hook prevents the worst-case outcome, but the per-item discipline is the desired behavior. The hook fires when the discipline already failed; the goal is to never reach the hook.
 
+### End-of-item discipline anti-pattern (added 2026-05-08 from the third walkthrough-drift incident)
+
+14. **Don't treat "I committed the closure note" as "the item is done."** An item is done when (a) the action landed, (b) loose ends are dispositioned, AND (c) the user has explicitly approved moving on. Committing the closure note is necessary but not sufficient. Step F (Section 2) is the structural fix: end-of-item summary + loose-ends inventory + explicit user disposition before the next briefing fires. The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while four open loose ends (brief-contamination caveat propagation; methodological discipline doc; comp-018 page disclosure; retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally; Brian had to back the conversation up to Item 10; the unresolved loose ends turned into much larger work than they would have been if disposed of at end of Item 10. **Loose ends compound.** The fix is upstream of "should I move to Item N+1?" — explicit summary + loose-ends inventory before the question even fires. **Three categories** for each loose end (per Step F): acceptably deferred (already queued elsewhere); needs disposition now (user picks defer/action/ignore); carries over to Item X (explicitly anchored, will surface in that future briefing). Cross-item state is impossible to forget when it's surfaced as inherited loose ends in the future item's briefing.
+
+15. **Don't try to edit `wiki/synthesis.md` — it doesn't exist anymore.** Post-2026-05-08 migration, the action queue lives at `synthesis/queue/` (per-item files) and history at `synthesis/history/`. Old habits / muscle memory of "open synthesis.md, append closure to the actioned item, prune at end of walkthrough" are gone. New flow: `ls synthesis/queue/` to inventory; per-item file gets a closure annotation appended (Step D); `git mv synthesis/queue/<file>.md synthesis/done/` to close (Step E); inbox-zero is automatic (Section 7.1). Strategic Reflections live at `synthesis/strategic-reflections/`. Sweep history lives at `synthesis/history/<sweep-date>-<sha>.md`. Daemon emits new items via `scripts/synthesis-emit-files.py`. If you find yourself writing to `wiki/synthesis.md` STOP — the file is deleted; the changes won't persist where you think they will. Migration spec at [`operations/specs/2026-05-08-synthesis-filesystem-migration.md`](../../../operations/specs/2026-05-08-synthesis-filesystem-migration.md).
+
 ---
 
 ## Section 10 — What this skill does NOT cover
@@ -571,4 +647,4 @@ Fix: Re-anchor on the CTO-not-PhD framing rule (Section 2 Step A). Don't apologi
 
 ## Provenance
 
-This skill codifies conventions discovered during the 2026-05-05 walkthrough of the 14-item DeepSeek V4-Pro / Gemini 2.5 Pro / Claude Opus 4.7 synthesis sweep on commit `734bf51` (and the substantively duplicate 2026-04-28 sweep). The session produced: comp-005 (lactoferrin), comp-006 (DAF/CD55, via Sonnet subagent), comp-007 (food-grade HDACi, via Sonnet subagent), the engineered LBP chassis scope page (sister to koji), the siRNA / URAT1 modality scope page (discovery-engine output), H02 + H03 falsification card stubs, validation-experiments §1.23 (androgen × MSU × NLRP3 four-tier protocol), self-experiment-protocol §11.1 (n=1 ex vivo PBMC MSU challenge), the androgen × NLRP3 literature scan section in `androgen-urate-axis.md`, and the inbox-zero pass on `synthesis.md`. The conventions in this skill are the rules that, in retrospect, would have made that session smoother.
+This skill codifies conventions discovered during the 2026-05-05 walkthrough of the 14-item DeepSeek V4-Pro / Gemini 2.5 Pro / Claude Opus 4.7 synthesis sweep on commit `734bf51` (and the substantively duplicate 2026-04-28 sweep). The session produced: comp-005 (lactoferrin), comp-006 (DAF/CD55, via Sonnet subagent), comp-007 (food-grade HDACi, via Sonnet subagent), the engineered LBP chassis scope page (sister to koji), the siRNA / URAT1 modality scope page (discovery-engine output), H02 + H03 falsification card stubs, validation-experiments §1.23 (androgen × MSU × NLRP3 four-tier protocol), self-experiment-protocol §11.1 (n=1 ex vivo PBMC MSU challenge), the androgen × NLRP3 literature scan section in `androgen-urate-axis.md`, and the inbox-zero pass on `synthesis/queue/`. The conventions in this skill are the rules that, in retrospect, would have made that session smoother.

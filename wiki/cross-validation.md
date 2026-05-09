@@ -77,8 +77,30 @@ Engineered *E. coli* Nissle 1917 with a uric acid-responsive biosensor expressin
 
 **Verdict on Claim 1:** The underlying mechanism is real. Proof-of-concept exists in mice and weak signal in some humans. **But the threshold between "enzyme works in gut lumen" and "achieves clinically meaningful serum urate reduction in typical gout patients" is not yet crossed in humans.** This is the project's core scientific bet. It is not frivolous, but it is not a fait accompli.
 
-**Feasibility Rating: 6/10**  
-*Rationale:* Mechanism is validated in preclinical. Clinical signal exists but is marginal and inconsistent. Requires de-risking in human proof-of-concept studies.
+**Feasibility Rating: 6.5/10** *(updated 2026-05-08 post-[comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model — was 6/10)*
+*Rationale:* Mechanism is validated in preclinical. Clinical signal exists but is marginal and inconsistent. **comp-019 flux model resolves the genotype-dependency worry — the mechanism is genotype-robust, with WT/WT patients showing the LARGEST predicted ΔSUA (−0.83 mg/dL at 25 mg/day mid-dose, 90% CI −1.13 to −0.57) and severe-ABCG2-dysfunction patients showing the smallest (−0.28 mg/dL).** The Phase 2b RCT can run as a typical-gout cohort with Q141K + Q126* as stratification variables (NOT enrichment), simplifying trial design. The 0.5-point upgrade reflects the resolved genotype-dependency worry (mechanism not narrow); the remaining 3.5 points await Phase 2b RCT validation of the flux-model-predicted magnitudes. Requires de-risking in human proof-of-concept studies.
+
+#### Genotype-Robustness of Gut-Lumen Sink Confirmed by Flux Model (Resolved 2026-05-08, comp-019)
+
+[ADDED 2026-05-08 per [comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model.] The genotype-dependency worry that motivated comp-019 — "does the gut-lumen sink only work in Q141K-positive patients?" — is resolved by the in-silico flux model. Prediction across the genotype × sex × dose matrix:
+
+| Scenario | ΔSUA at 25 mg/day uricase (Monte Carlo median, 90% CI) |
+|---|---|
+| WT/WT, male gout | **−0.83 mg/dL (−1.13 to −0.57)** |
+| Q141K heterozygous, male gout | −0.67 mg/dL (−0.91 to −0.45) |
+| Q141K homozygous, male gout | −0.50 mg/dL (−0.68 to −0.34) |
+| WT/WT, female gout | −0.74 mg/dL (−1.00 to −0.50) |
+| Q141K heterozygous, female gout | −0.59 mg/dL (−0.80 to −0.40) |
+| Q141K homozygous, female gout | −0.42 mg/dL (−0.57 to −0.29) |
+| Severe ABCG2 dysfunction (Q126*+Q141K) | −0.28 mg/dL (−0.37 to −0.19) |
+
+**The mechanism is genotype-robust. Non-Q141K patients show the LARGEST per-patient response, not the smallest.** This is because the gut-lumen sink mechanism is multiplicative on residual ABCG2 capacity (uricase amplifies whatever ABCG2 delivers into the lumen) — patients with full ABCG2 function have the most capacity to amplify. The platform's primary demographic should remain "all gout patients," not be narrowed to Q141K-positive carriers.
+
+**Strain-engineering implication:** the flux model predicts substrate-limited regime at all dose scenarios tested (5–50 mg/day), with capacity ratios 32× to 1300× (uricase capacity vastly exceeds delivered intestinal urate flux). The yield target can stay at ~25 mg/dose; engineering effort should shift further toward GI-survival optimization, not yield optimization. This re-prioritization is consistent with the Claim 2 GI Survival rating remaining the binding constraint at 5/10.
+
+**Phase 2b RCT design implication:** run as a typical-gout RCT with Q141K + Q126* genotyping at enrollment as stratification variables (NOT enrichment criteria). Power for ΔSUA ~−0.5 to −1.0 mg/dL mean in unstratified cohort; Q141K subgroup analysis is hypothesis-generating, not primary endpoint. Pre-stratify by CKD stage (renal compensation reserve dominates, per the model's renal-compensation parameter sensitivity 0–50%). Single dose ~25 mg/day is sufficient (dose-response is flat above ~5 mg/day per the substrate-limited regime).
+
+**Notable Phase A negative finding:** across the entire published clinical-trial corpus of oral and systemic uricase therapy — ALLN-346 (Studies 201/202), PRX-115 (Phase 1, Protalix 2024 ACR), rasburicase (post-marketing), pegloticase — ZERO trials have stratified results by ABCG2 Q141K genotype. The Q141K × allopurinol response literature is rich (Wallace 2018 OR=2.43 meta-analysis, Vora 2021 oxypurinol PK/PD, Stamp 2019 sensitivity analysis); the Q141K × uricase response literature is empty. Every uricase trial since rasburicase (2001) has missed an obvious pharmacogenomic stratification axis. This is publishable in itself.
 
 #### Sex-Dimorphic Intestinal ABCG2 Modulates the Gut-Lumen Sink Asymptote (Reframed 2026-05-07)
 

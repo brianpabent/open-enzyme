@@ -38,6 +38,8 @@ sources:
 >
 > Pre-registration discipline (per H01) does not apply until this stub is upgraded to a full card.
 
+> **Coordination with comp-018 (2026-05-08):** The [upstream complement modulator sweep](../upstream-complement-modulator-sweep-computational.md) operates at the same chokepoint (CP0) but a different angle (compound-class breadth at upstream nodes vs. engineered-DAF at C3 convertase decay-acceleration). H05's thesis is NOT undermined by comp-018; the two threads are mechanistically complementary. Specifically: dietary rosmarinic acid (TIER-1 C3 convertase inhibitor, IC50 5-10 µM) and engineered DAF SCR1-4 act at different geometric scales — RMA in fluid phase + gut lumen, DAF on the MSU surface. comp-018 also surfaces **C1-INH** as a near-twin engineering thesis (different soluble human complement regulator, different node, FDA-approved precedent), which becomes H05's sister-hypothesis card if C1-INH protease stability passes a future comp-NNN computational gate.
+
 ---
 
 ## Claim (provisional, stub-level)

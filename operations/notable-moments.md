@@ -14,6 +14,68 @@ This log is **public** (operations/ folder is in the public repo) — same postu
 
 ---
 
+## 2026-05-08 — Brief contamination is real: a contrived "if it's in rosemary I'll grow rosemary" example landed verbatim in the subagent brief and biased the headline finding. A scrubbed re-run found something better.
+
+**What happened.** Today's wiki sweep proposed running comp-018 (Upstream Complement Modulator Sweep) — a literature-mining experiment to find compounds that interfere with the complement cascade upstream of C5a. While Brian was clarifying the scope on his end (telling Claude to broaden beyond just fungal compounds), he said *"if the answer is rosemary, I'll grow some fucking rosemary"* — meant as a contrived example, the first herb that popped into his head, not as an actual hint about what to look for.
+
+Claude (drafting the comp-018 subagent brief) included that exact phrase verbatim as motivational framing. The subagent then ran a 32-compound breadth scan and came back with **rosmarinic acid** (the active compound in rosemary, lemon balm, and spearmint, named after rosemary because it was first isolated from rosemary in 1958) as the singular headline finding — TIER-1 dietary C3-convertase inhibitor, IC50 5-10 µM optimal, three independent in vivo precedents, FDA-GRAS source plants, and the subagent's report-back literally said *"Brian's literal 'if it's in rosemary I'll grow rosemary' framing landed empirically."*
+
+Brian's first reaction was suspicion: *"This has got to be a hallucination — I just said rosemary because it was the first herb that popped into my head, and now you're telling me there's a compound called rosmarinic acid that does this exact thing?"* That suspicion was the catch.
+
+**Verification, layer 1:** the underlying claim is real. Englberger et al. 1988 (PMID 3198307) is a real foundational paper titled literally *"Rosmarinic acid: a new inhibitor of complement C3-convertase with anti-inflammatory activity."* Two follow-on in vivo precedents (Proctor 2006 PMID 16782534; Su 2014 PMID 24494798) extended the evidence. Rosemary is FDA GRAS. Rosmarinic acid is *the* most well-characterized natural-product upstream complement modulator in the published literature. Not a hallucination. The "coincidence" between Brian saying rosemary and the headline being rosmarinic acid is partly explained by name-bias: rosmarinic acid is named after rosemary specifically because rosemary is where it was first isolated, so any complement-related compound found in plants will over-index in rosemary.
+
+**Verification, layer 2 (the actually-noteworthy part):** Brian asked Claude to write a *scrubbed* version of the subagent brief — no compound names, no user-framing phrases, no contrived examples — and re-run the sweep as comp-020 to test whether rosmarinic acid as headline was a real result or a contamination artifact.
+
+The comp-020 (scrubbed) re-run came back with three significant differences from comp-018:
+
+1. **No singular headline.** Three tier-1 candidates tied within 20%: *Helicteres* benzofuran lignans (CH50 9/40 µM — the highest-potency single hit in the corpus, single-paper anchor PMC6273495, needs replication), rosmarinic acid (still real, still tier-1, but not singular), and luteolin (a dietary flavonoid with three independent gout-relevant mechanisms across the OE corpus).
+
+2. **comp-018 missed Helicteres entirely at the headline tier.** *Helicteres* benzofuran lignans beat rosmarinic acid by 4-20× on a matched CH50 hemolytic assay. comp-018's brief contamination apparently nudged the subagent toward narrative-cohesion with the user's "rosemary" framing strongly enough that Helicteres got buried.
+
+3. **comp-018 underweighted marine sulfated polysaccharides** (Ascophyllum ANW, sea cucumber SC, Saccharina SJW-3) — IC50 0.98-3.11 µg/mL, with the caveat that they have anticoagulation safety considerations.
+
+4. **The rosmarinic acid IC50 spread is wider than comp-018 reported** — 44× across assays (34 µM C3b deposition vs. 1500 µM C5 convertase), which implies RMA's load-bearing mechanism is upstream covalent C3b modification rather than direct C5 convertase inhibition. comp-018 framed it less precisely.
+
+**Verdict on the contamination:** underlying findings were NOT contaminated (rosmarinic acid IS real and surfaced again on independent search). Headline-promotion WAS contaminated (comp-018 promoted it singular; comp-020 places it in a 3-way tie). Coverage breadth was PARTIALLY contaminated (comp-018 missed Helicteres at headline tier and underweighted marine polysaccharides; comp-020 surfaced both).
+
+**Brian's suspicion was empirically correct.**
+
+**Why it matters.** AI-assisted research has a class of confounder that doesn't exist in human-only research: **prompt contamination**. If the user's phrasing ends up in the subagent brief — through carelessness, motivational framing, or just unconsidered handover — the subagent can be biased toward narrative-cohesion with the user's framing without ever overtly hallucinating. The subagent does what its brief said; the brief silently constrained the answer.
+
+The fix is upstream of the subagent: **brief hygiene at the moment of brief composition.** Scope and method propagate from user direction (those describe the work). Predictions and contrived examples don't (those describe the user's hopes about the work). Independent re-run with scrubbed framing — at ~$5 in compute and 30-60 minutes wall-clock — is cheap enough to make a default whenever a brief contains user-named compounds or phrases.
+
+For citizen scientists doing AI-assisted research without the multi-pass safety net the Open Enzyme project has: **this is a category of error you should know about. Your prompt is part of the experiment. Control for it.**
+
+**The catch came from Brian's instinct, not the discipline.** The discipline is being formalized AFTER the suspicion forced verification. That's the right ordering for first-time issues — instinct catches it once, discipline prevents the next instance.
+
+**External-comms angle.** Builds on yesterday's DAF SCR1-4 disulfide-hallucination story (single-AI confabulation caught by multi-vendor sweep) and on this morning's "two independent reads of the same wiki, same day, same insight" story (multi-vendor convergent intelligence). Today's story is the third in the series: **brief-level multi-vendor heterogeneity guard**. Different prompt → different output. The same multi-pass discipline that catches model-level errors also catches prompt-level contamination, but you have to apply it explicitly.
+
+The full retrospective with side-by-side comparison and recommendations for citizen-science workflows lives at [`operations/comp-018-vs-comp-020-retrospective.md`](./comp-018-vs-comp-020-retrospective.md). The methodological discipline is codified at [`scripts/SWEEP-ARCHITECTURE.md`](../scripts/SWEEP-ARCHITECTURE.md) §"Subagent brief hygiene." Three story arcs across three days — homogenization (DAF SCR1-4), convergent insight (DAF retrospective post), and brief contamination (this entry) — together describe the multi-vendor discipline as a search amplifier, an opportunity surface, AND a confounder guard. None of these were predictable from first principles; all of them surfaced empirically.
+
+Notable for: AI-assisted research methodology, citizen-science workflow design, the structural property that subagent briefs are part of the experimental setup and not just project-management overhead.
+
+---
+
+## 2026-05-08 — Two independent reads of the same wiki, same day, same external-comms insight: multi-vendor heterogeneity catching opportunities, not just errors
+
+**What happened.** This morning Brian published [Grounding the AI Scientist Hype](https://0xbpa.substack.com/p/grounding-the-ai-scientist-hype) on Substack — a public case study using the DAF SCR1-4 disulfide-count incident (logged 2026-05-06 in this same file) as the canonical example of how AI-assisted scientific research catches its own hallucinations through multi-vendor verification, not by avoiding them. The post went live before the day's wiki sweep daemon ran.
+
+Later the same day, the sweep daemon fired on commit `e842754`. The synthesizer (Gemini 2.5 Pro) independently surfaced as a Pass 2 finding: *"Write up the DAF SCR1-4 incident as a mini case study … a potent, concrete case study that validates the entire linter-and-sweep approach."* The Pass 3 reviewer (GPT-5.5, freshly swapped into this slot this morning, replacing Claude Opus 4.7) pushed back: "the wiki already documents the loop-closure." Narrowly true — `manual-literature-mining.md` §"The DAF SCR1-4 incident" and the 2026-05-06 entry in this file both have the wiki coverage. But the synthesizer wasn't suggesting wiki coverage. It was suggesting **public communication**, which had already happened, on a surface the daemon by design cannot see (the personal blog repo is private; the public sweep daemon must not read private siblings, by the umbrella's one-way privacy gradient).
+
+So: the synthesizer was right about what to do. Brian had already done it six hours earlier. The reviewer couldn't verify the external action because the daemon's scope is correctly bounded to the wiki.
+
+**Why it matters.** The original framing of multi-vendor heterogeneity in this project was *defensive* — different vendors cross-checking each other to catch errors that single-vendor pipelines would homogenize. The DAF SCR1-4 incident itself was the canonical demonstration: Sonnet hallucinated a number, the multi-vendor sweep caught it the next day.
+
+What happened today is *generative*. Two completely independent reads of the same substrate — a Gemini-based wiki synthesizer running unattended, and a human writer drafting a blog post over coffee — converged on the same external-comms angle without coordination. The same multi-vendor heterogeneity that catches wrong numbers also catches valuable opportunities. That's a different and more interesting validation of the multi-model thesis than the original framing anticipated.
+
+There's also a structural property worth naming, separate from any specific model's calibration: the wiki sweep daemon is a **closed-system tool**. It operates on the wiki, by design and by the project's privacy gradient. So when the synthesizer points outside the closed system — at external comms, sibling-repo work, application surfaces — the reviewer's "already covered" verdict is necessarily scoped to *the wiki*. Coordination of work outside the daemon's scope stays a human responsibility. That's not a defect; it's the correct architecture for a public daemon. It just means Pass 3 verdicts of "already covered" carry an implicit "in the wiki" qualifier.
+
+**External-comms angle.** The previous DAF SCR1-4 post framed multi-vendor heterogeneity as an error-correction discipline. The natural follow-on — this entry — is about the *generative* property: when you have multiple competent agents reading the same substrate independently, they don't just catch each other's mistakes, they converge on the same valuable angles. Three things stack: the original homogenization risk (DAF SCR1-4) → multi-vendor catches the error; the convergent-insight moment today → multi-vendor surfaces the same opportunity; and the closed-system property (the daemon is by-design wiki-scoped, so external action is by-design human-coordinated). Story arc: heterogeneity isn't just a safety net, it's a search amplifier.
+
+Notable for: open-source-research workflow design, AI-assisted science methodology, the tension between agent-driven discovery and human-driven editorial judgment, the structural property that public-facing daemons are correctly scope-limited.
+
+---
+
 ## 2026-05-07 — The "37% testosterone increase" figure all over the tongkat ali supplement market is salivary T in a mixed-sex stressed cohort. Verification gate caught the laundering.
 
 **What happened.** Today's lit-scan task: a multilingual literature review of natural alternatives to Clomid (clomiphene citrate) for free-testosterone elevation, framed for the gout-comorbid male on SERM therapy. (The trigger was a specific n=1 self-experiment situation; the page itself is genericized in `wiki/androgen-natural-modulation.md`.) Among the seven sub-investigations, *Eurycoma longifolia* (tongkat ali) showed up as the best-evidenced herbal candidate — there's a real RCT corpus.

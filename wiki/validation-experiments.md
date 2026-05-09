@@ -322,6 +322,8 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 **Proposed in:** `wiki/synthesis.md` 2026-04-24 Pass 2 Connection 1 + Proposed Experiment 1; formalized in [koji-endgame-strain.md](./koji-endgame-strain.md) §3. This is the gating experiment that decides whether the endgame strain is engineerable in its one-strain form (go to full development) or needs the two-strain fallback ([koji-endgame-strain.md](./koji-endgame-strain.md) §4.1).
 
+**Secondary role — chaperone-framework calibration set (added 2026-05-08):** the lactoferrin-alone arm of this experiment is the transferrin-lobe data point in the calibration-set candidate documented in [`chaperone-orthogonal-stacking.md` §3.5.4](./chaperone-orthogonal-stacking.md) (paired with §1.25's DAF SCR1-4 CCP/SCR data point). Pre-registered framework prediction: **≥500 mg/L** lactoferrin-alone if the framework's α coefficients transfer to koji; **<40 mg/L** if PDI-saturation dominates. This calibration role does NOT change §1.9's primary objective or design — it just means the lactoferrin-alone titer should be reported with enough precision to compare against §1.25's DAF SCR1-4 titer under harmonized conditions (same host = NSlD-ΔP10, same format = solid-state shio-koji, same titer units = mg/L mature protein by ELISA).
+
 **Protocol:**
 - **Construct design.**
   - Cassette A (lactoferrin): `[PamyB — glucoamylase — KEX2site (Lys-Arg) — hLf codon-optimized for *A. oryzae* — TamyB]`. Matches Ward 1995 architecture. Selection marker: pyrG complementation.
@@ -958,6 +960,8 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Single-cassette expression, NOT triple-cassette.** Per the [chaperone-orthogonal stacking framework's triple-cassette prediction](./chaperone-orthogonal-stacking.md) (§5.5, refined 2026-05-06), the triple combination (uricase + lactoferrin + DAF SCR1-4) lands in the architecture-adjusted synergy range 0.35–0.65 (central 0.45–0.55) — firmly below the 0.6 decision gate. Recommended platform direction is **separate-strain routing** for DAF SCR1-4 (or routing to the engineered LBP chassis as a parallel peer track per [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md)). This experiment validates the single-cassette feasibility step; if positive, the DAF strain becomes either (a) a sister koji strain co-fermented with the uricase + lactoferrin endgame strain, or (b) a candidate payload for the LBP chassis once that peer track matures.
 
+**Secondary role — chaperone-framework calibration set (added 2026-05-08):** this experiment is the CCP/SCR data point in the calibration-set candidate documented in [`chaperone-orthogonal-stacking.md` §3.5.4](./chaperone-orthogonal-stacking.md) (paired with §1.9's lactoferrin transferrin-lobe data point). Pre-registered framework prediction: **≥100 mg/L** DAF SCR1-4 if the framework's α coefficients transfer to koji — substantially higher per-cassette titer than lactoferrin because of the lower α (CCP/SCR 0.3–0.6 vs. transferrin-lobe 1.5–2.5). **For this experiment to function as the calibration-set data point, run the optional NSlD-ΔP10 arm under the same solid-state shio-koji format and matching promoter as §1.9** — otherwise the host/format mismatch confounds the comparison and the calibration cannot recalibrate α. RIB40-only execution is fine for §1.25's primary objective (CP0 engineering candidate validation) but does NOT produce calibration data.
+
 **Proposed in:** `wiki/synthesis.md` 2026-05-05 sweep block 487fad3 Pass 2 Proposed Experiment 2 (gated on the comp-012 in silico LOW verdict, which landed same session). Held during the 2026-05-05 walkthrough due to patent-agent batch collision; landed 2026-05-06 with the disulfide count corrected from the original "12" to the verified 8 (per [comp-012 §1.5 correction note](./daf-cd55-scr14-truncated-computational.md) anchored to UniProt P08174).
 
 **Background on the gating context:** comp-012 (2026-05-05) confirmed the SCR1-4 truncated construct is shio-koji protease-stable (LOW verdict, max risk score 0.039 — identical to uricase, 10× drop from the comp-006 full ectodomain HIGH verdict driven by removing the Ser/Thr-rich stalk aa 286–353). H05 stub (2026-05-05) registered the CP0 closure thesis as a falsification card with three named wet-lab unknowns: (1) does SCR1-4 retain complement-regulatory activity without the stalk, (2) can *A. oryzae* fold 8 intrachain disulfides per molecule (corrected from 12, per UniProt P08174 DISULFID feature annotations: Cys36-Cys81, Cys65-Cys94 [SCR1]; Cys98-Cys145, Cys129-Cys158 [SCR2]; Cys163-Cys204, Cys190-Cys220 [SCR3]; Cys225-Cys267, Cys253-Cys283 [SCR4]), and (3) does the construct express at therapeutic-relevant titer. This experiment addresses all three.
@@ -1019,6 +1023,89 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - No in vivo gut-lumen activity readout in this experiment — that's a Phase 2 / Phase 3 follow-up gated on positive in vitro result
 
 **Cross-references:** [daf-cd55-scr14-truncated-computational.md](./daf-cd55-scr14-truncated-computational.md) (comp-012, the in silico prior); [hypotheses/H05-daf-scr14-cp0-thesis.md](./hypotheses/H05-daf-scr14-cp0-thesis.md) (the falsification card this experiment addresses); [chaperone-orthogonal-stacking.md](./chaperone-orthogonal-stacking.md) §5.5 (the triple-cassette prediction that motivated single-cassette routing); [koji-endgame-strain.md](./koji-endgame-strain.md) (sister-strain co-fermentation context); [engineered-lbp-chassis.md](./engineered-lbp-chassis.md) (alternative chassis if reject outcome); [complement-c5a-gout.md](./complement-c5a-gout.md) (the CP0 chokepoint biology); [operations/ward-1995-lab-access.md](../operations/ward-1995-lab-access.md) (lab-access shared with §1.9); [synthesis.md](./synthesis.md) 2026-05-05 487fad3 Pass 2 Proposed Experiment 2.
+
+---
+
+### 1.26 Cordycepin × Pentostatin × GLPP — Five-Arm ADA Half-Life Assay (ADA Chokepoint Synergy Validation)
+
+**Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [gout-pathophysiology](./gout-pathophysiology.md), [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
+
+**What it tests:** Does combining ADA inhibitors from two independent biochemical mechanisms (pentostatin = small-molecule competitive inhibition; GLPP = polysaccharide-peptide binding) extend cordycepin's in-vitro half-life enough to make a fermentable, food-grade urate-lowering protocol viable at sub-multi-gram daily dosing? Specifically: does the two-organism combination (whole-fermentate *Cordyceps militaris* + *Ganoderma lucidum* GLPP) outperform either single-organism preparation?
+
+**Proposed in:** `wiki/synthesis.md` 2026-05-08 sweep block e842754 Connection 1 + Proposed Experiment 1; Pass 3 review (GPT-5.5) flagged the original 4-arm design as incomplete because it tested purified pairings and whole-fermentate alone but NOT the two-organism combination — fifth arm added per Pass 3's specific recommendation.
+
+**Background — the ADA chokepoint:** Adenosine deaminase (ADA) is the enzyme that rapidly deaminates cordycepin (3'-deoxyadenosine) to its inactive metabolite, limiting cordycepin's half-life and forcing impractical multi-gram daily doses for therapeutic urate-axis effects. Two natural ADA inhibitors are documented: pentostatin (small-molecule, FDA-approved as Nipent for hairy-cell leukaemia, NATIVELY co-produced with cordycepin in *C. militaris* per the Xia 2017 BGC characterization PMID 29056419) and GLPP polysaccharide-peptide from *G. lucidum* (mechanism orthogonal to pentostatin — polysaccharide binding rather than competitive nucleoside-mimetic inhibition). Whole-fermentate *Cordyceps* delivers cordycepin + pentostatin in their natural ratio; supplementing with GLPP adds a second, mechanistically orthogonal ADA blockade. See [medicinal-mushroom-complement-track.md §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) for the full thesis.
+
+**Protocol — Five-arm in-vitro design:**
+
+| Arm | Composition | Tests |
+|---|---|---|
+| **1. Cordycepin alone** | Recombinant human ADA (Sigma A6535) + cordycepin standard (Sigma C3394, 100 µM) in PBS pH 7.4, 37°C | Baseline ADA-driven cordycepin deamination kinetics |
+| **2. Cordycepin + pentostatin** | Arm 1 + research-grade pentostatin (Sigma P3650, 1 µM and 10 µM dose-response) | Pentostatin's quantitative ADA-inhibition contribution at gut-relevant concentrations |
+| **3. Cordycepin + GLPP** | Arm 1 + GLPP-enriched fraction from a SEC-MALS-characterized *G. lingzhi* dual-decoction extract (per [SOP-1](./medicinal-mushroom-extract-sops.md), 100 µg/mL polysaccharide-peptide) | GLPP's ADA-inhibition contribution alone, mechanistically distinct from pentostatin |
+| **4. Whole-fermentate *Cordyceps***  | Total water/ethanol-coextract from *C. militaris* (GYS60 strain or commercial fruiting-body extract; cordycepin-equivalent dose normalized to 100 µM via SOP-2 HPLC quantification) | Whole-fermentate co-delivery of cordycepin + native pentostatin in their natural ratio — single-organism baseline |
+| **5. Whole-fermentate *Cordyceps* + GLPP** *(added per Pass 3)* | Arm 4 + GLPP from Arm 3 | The two-organism combination — does adding mechanistically-orthogonal GLPP-mediated ADA inhibition further extend cordycepin half-life beyond what whole-fermentate's native pentostatin already delivers? |
+
+**Primary readout:** cordycepin remaining at t = 0, 15, 30, 60, 120, 240 min, measured by HPLC (per [SOP-2](./medicinal-mushroom-extract-sops.md) cordycepin quantification — calibrated reference standard). Compute half-life per arm. Loewe combination index for arms 2/3/5 vs. additive expectation.
+
+**Secondary readout:** ADA enzyme activity (residual deamination rate) measured directly via commercial ADA assay kit (Diazyme, 1064-330) — confirms the ADA-inhibition mechanism rather than off-target cordycepin protection.
+
+**Success criteria:**
+- **Promote two-organism stack to mouse PK study** if Arm 5 shows ≥2× cordycepin half-life extension over Arm 4 (whole-fermentate alone) AND the half-life extension correlates with ADA activity reduction in the secondary readout. This would justify a follow-on PO HUA mouse study testing the combination at therapeutic dose.
+- **Drop GLPP from the cordycepin-targeting protocol** if Arm 5 ≈ Arm 4 (no meaningful improvement over native pentostatin) — implies GLPP's ADA inhibition is redundant with pentostatin in whole-fermentate context, and the simpler whole-fermentate-alone preparation is the right consumer product.
+- **Reframe the platform thesis** if Arm 4 ≈ Arm 1 (whole-fermentate's native pentostatin is too dilute to matter at gut-relevant concentrations) — implies cordycepin needs supplemental purified pentostatin or GLPP regardless of preparation, and the "single-organism whole-fermentate" framing in [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) needs revision.
+
+**Limitations:**
+- In vitro ADA assay does not capture gut-microbiome metabolism of cordycepin (which may matter for in vivo half-life). The half-life extension demonstrated here is necessary but not sufficient for clinical effect.
+- Recombinant human ADA (Sigma A6535) is the standard substrate but doesn't model intestinal mucosa-localized ADA dynamics. Mouse PK study (queued as gated follow-on) is the next-step de-risker.
+- GLPP fraction quality is load-bearing — Tier 3 SEC-MALS characterization per SOP-1 is non-negotiable. Generic "reishi extract" cannot substitute. Per the [structure-dependent β-glucan caveat](./medicinal-mushroom-complement-track.md#consumer-product-caveat--structure-dependent-β-glucan-nlrp3-directionality), wrong-fraction substitution would produce uninterpretable results.
+
+**Cross-references:** [medicinal-mushroom-complement-track.md §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) (Item 1 of the 2026-05-08 walkthrough — the two-organism synergy bullet); [gout-pathophysiology.md §"ADA (Adenosine Deaminase) — Purine Catabolism Chokepoint Candidate"](./gout-pathophysiology.md); [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md) (comp-014 Phase 2, where ADA was first surfaced); [synthesis.md](./synthesis.md) 2026-05-08 sweep Connection 1 + Proposed Experiment 1.
+
+---
+
+### 1.27 Ergothioneine + Lactoferrin Combination ROS Assay in MSU-Stimulated THP-1 Macrophages (Cross-Track ROS / CP1b Additivity Validation)
+
+**Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 3–4 | **Phase**: 1
+
+**Affected wiki**: [gout-pathophysiology.md](./gout-pathophysiology.md) (multi-track coverage map ROS / CP1b row), [lactoferrin.md](./lactoferrin.md), [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md), [koji-endgame-strain.md](./koji-endgame-strain.md)
+
+**What it tests:** Do ergothioneine (mushroom track, direct thiol scavenging of hydroxyl radicals + peroxynitrite) and apo-lactoferrin (koji track, iron-sequestration Fenton suppression) operate as mechanistically orthogonal ROS-reduction routes in a gout-relevant cell model — and if so, do they produce additive or synergistic suppression of NLRP3 priming when combined?
+
+**Proposed in:** `wiki/synthesis.md` 2026-05-07 77d0f6e Connection 3 + Proposed Experiment 2; Pass 3 review (Opus 4.7) added two refinements (extended Lf dose range to koji-pore-fluid-achievable; apo vs holo Lf comparison to confirm iron-sequestration mechanism). This is the wet-lab gate that would promote the [`gout-pathophysiology.md` ROS / CP1b coverage row (added 2026-05-08, Item 22 walkthrough)](./gout-pathophysiology.md) from *speculative* to *supported*.
+
+**Sequencing:** gated on §1.20 (Lactoferrin + EGCG CP1a Super-Additivity Assay), which itself is gated on §1.9. Run §1.27 after §1.20 to share THP-1 macrophage + MSU stimulation + IL-1β ELISA infrastructure.
+
+**Protocol:**
+
+- **Cells:** THP-1 monocytes differentiated to macrophages (PMA, 100 nM × 24h then rest 24h). Human cells chosen to avoid the rodent-IC50 translation gap per [§1.19 standing methodology](./validation-experiments.md).
+- **Priming:** LPS (100 ng/mL × 4 h).
+- **Stimulation:** MSU crystals (250 µg/mL × 6 h) — gout-relevant inflammasome trigger.
+- **Treatment arms** (treatment 1 h before MSU, continued through readout):
+  - Vehicle control
+  - Ergothioneine alone: 1, 10, 100 µM (brackets dietary-achievable plasma range ~5–25 µM per [P. citrinopileatus correction in `medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) Phase 7-1c)
+  - **Apo-lactoferrin alone: 10, 100, 500 µg/mL** (Pass 3 refinement — extended from original 10–100 µg/mL range to test koji-pore-fluid-achievable concentrations)
+  - **Holo-lactoferrin (iron-loaded) at 500 µg/mL — apo-vs-holo comparator arm** (Pass 3 refinement — Fenton-suppression mechanism is apo-specific; any apo-lactoferrin additivity that disappears in holo confirms the iron-sequestration mechanism rather than a generic anti-inflammatory effect)
+  - Combination: ergothioneine 10 µM + apo-lactoferrin 100 µg/mL (mid-range × mid-range, Loewe-index reference point)
+
+- **Primary readout:** IL-1β ELISA (gold-standard NLRP3 activation readout)
+- **Secondary readouts:** intracellular ROS (DCFDA fluorescence), NF-κB priming (IκBα Western blot)
+- **Analysis:** Loewe combination index for ROS and IL-1β. CI < 1 = synergy; CI ≈ 1 = additive; CI > 1 = antagonism. Apo-vs-holo comparison: if apo-Lf-additivity disappears in holo arm, mechanism is iron-sequestration-specific (the platform-relevant story).
+
+**Success criteria:**
+
+- **Promote ROS / CP1b coverage row from *speculative* to *supported* in [`gout-pathophysiology.md` multi-track coverage table](./gout-pathophysiology.md)** if Loewe CI ≤ 1.0 for IL-1β at the mid-range × mid-range combination, AND apo-Lf-driven additivity is greater than holo-Lf in the apo-vs-holo comparator (mechanism confirmed iron-sequestration-specific). This is the Item 22 wet-lab gate.
+- **Strengthen the case for combining koji + mushroom tracks** beyond urate-transporter rationale, providing an anti-inflammatory additivity argument for the multi-track product strategy.
+- **Drop the orthogonal-ROS framing** if apo-Lf additivity is no greater than holo (mechanism is generic anti-inflammatory, not Fenton-iron-specific) OR if Loewe CI ≫ 1 (compounds antagonistic rather than additive).
+
+**Limitations:**
+- THP-1 is a single human macrophage line; primary human MDM (monocyte-derived macrophage) replication would strengthen translation but doubles cost.
+- LPS + MSU stimulation is a two-signal model that doesn't capture all in vivo gout-flare priming pathways.
+- Fenton-iron mechanism in cell culture vs. in vivo gut lumen has different iron-availability conditions; cell-culture additivity may not translate to gut-luminal additivity.
+
+**Cross-references:** [gout-pathophysiology.md §"Multi-track urate transporter coverage" ROS / CP1b row](./gout-pathophysiology.md) (the speculative claim this experiment gates); [lactoferrin.md §4.1](./lactoferrin.md) (Fenton-iron mechanism); [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (P. citrinopileatus EGT source); [validation-experiments.md §1.19](./validation-experiments.md) (rodent-IC50 species-gap discipline); [validation-experiments.md §1.20](./validation-experiments.md) (sister CP1a super-additivity assay sharing THP-1 + MSU infrastructure); [synthesis.md](./synthesis.md) 2026-05-07 77d0f6e Connection 3 + Item 22 walkthrough closure.
 
 ---
 

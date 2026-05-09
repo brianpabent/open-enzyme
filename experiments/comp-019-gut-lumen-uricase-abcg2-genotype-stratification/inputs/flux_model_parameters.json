@@ -1,0 +1,129 @@
+{
+  "_schema_note": "Phase B flux model parameters. Each parameter cites primary source + verification tier. Uncertainty bounds drive sensitivity analysis in scripts/flux_model.py.",
+
+  "daily_mass_balance": {
+    "total_daily_urate_production_mg_per_day": {
+      "central": 700,
+      "low": 600,
+      "high": 900,
+      "source": "engineered-yeast-uricase-proposal.md / cross-validation.md citing standard physiology references; consistent with Choi 2005 and most clinical-pharm reviews",
+      "tier": "Standard physiology"
+    },
+    "renal_excretion_fraction_normal_kidney": {
+      "central": 0.67,
+      "low": 0.60,
+      "high": 0.70,
+      "source": "Takada 2014 PMID 24940679 mouse KO confirms ~2/3 renal in WT; multiple historical tracer studies",
+      "tier": "Multi-source consensus"
+    },
+    "intestinal_excretion_fraction_normal_kidney": {
+      "central": 0.33,
+      "low": 0.30,
+      "high": 0.40,
+      "source": "Takada 2014; PMC8907525 review; Sorensen 1962/1965 historical tracers",
+      "tier": "Multi-source consensus"
+    }
+  },
+
+  "abcg2_transporter_kinetics": {
+    "Km_urate_mM": {
+      "central": 8.24,
+      "low": 6.80,
+      "high": 9.68,
+      "source": "Nakayama 2011 PMID 22132962 membrane vesicle assay (Km = 8.24 +/- 1.44 mM)",
+      "tier": "Direct grep-verified abstract"
+    },
+    "Vmax_nmol_per_min_per_mg_protein": {
+      "central": 6.96,
+      "low": 6.07,
+      "high": 7.85,
+      "source": "Nakayama 2011 PMID 22132962 (Vmax = 6.96 +/- 0.89 nmol/min/mg protein)",
+      "tier": "Direct grep-verified abstract"
+    },
+    "_note_on_in_vivo_application": "Vmax in vitro is per mg of ABCG2 protein, not per intestine. We do not have a reliable absolute total ABCG2 protein abundance per human jejunum + ileum + colon. Therefore the flux model uses RELATIVE flux scaling (functional class A x B x C, where C is the WT-baseline daily intestinal urate excretion of ~230 mg/day) rather than an absolute Vmax-based first-principles calculation. The Miyazaki 2025 measured ratios ARE the empirical anchor."
+  },
+
+  "abcg2_q141k_relative_function": {
+    "_methodology": "Relative function = (functional ABCG2 surface expression) x (per-protein transport rate). Q141K causes a ~63% reduction in surface expression PLUS some per-protein rate reduction (~53% at the transport-rate level). Combined, the heterozygous Q141K phenotype is ~75% functional and homozygous is ~50% functional. This is the Japanese functional-classification framework (Matsuo 2014 / Miyazaki 2025) we adopt.",
+    "WT_WT_100_percent": 1.00,
+    "Q141K_het_75_percent": 0.75,
+    "Q141K_hom_50_percent": 0.50,
+    "Q126_star_het_50_percent_alternative": 0.50,
+    "Q126_star_hom_or_compound_het_severe_dysfunction_25_percent": 0.25,
+    "source": "Matsuo 2014 PMID 24940678 + Hoque 2020 (PMID 32488095) functional-classification framework",
+    "tier": "Multi-source consensus"
+  },
+
+  "miyazaki_2025_empirical_anchor": {
+    "_purpose": "These are the direct in-vivo measurements that anchor the flux model. The flux model uses the RATIO of secretion rates between functional classes — robust to absolute scaling.",
+    "delta_C_5min_ratio_100pct_to_50pct_median": 2.66,
+    "delta_C_5min_ratio_100pct_to_75pct_median": 1.39,
+    "delta_C_5min_ratio_100pct_to_50pct_mean": 13.40,
+    "delta_C_5min_ratio_100pct_to_75pct_mean": 2.41,
+    "_note_on_median_vs_mean": "The mean ratio is much larger than the median ratio because of skewed distributions and small n in the 50%-functional group (n=5). Prefer median for central estimate; report mean for sensitivity bound. The flux model's central estimate uses MEDIAN ratios (more conservative, less prone to outlier dominance).",
+    "p_for_trend": 0.058,
+    "n_per_group": {"100pct": 11, "75pct": 18, "50pct": 5},
+    "tier": "Direct full-text grep-verified from PMC11877951"
+  },
+
+  "luminal_urate_concentration": {
+    "human_jejunum_baseline_uM_per_miyazaki_2025": {
+      "central": 0.59,
+      "range_uM": "0.06 to 1.16 (IQR conversion from 10.1-194.0 pg/uL)",
+      "calculation": "99.5 pg/uL = 99.5 ng/mL; uric acid MW 168.11 g/mol -> 99.5/168.11/1000 = 0.592 uM",
+      "tier": "Direct grep from full-text PMC11877951"
+    },
+    "interpretation": "Baseline jejunal urate is ~0.6 uM, FAR below ABCG2 Km of 8.24 mM = 8240 uM. The transporter operates in the LINEAR regime (rate proportional to substrate, not saturated). This means: (a) reducing lumen urate via uricase increases the gradient roughly proportionally; (b) the ~0.3 mM cited in the comp-019 brief is an upper-bound figure from inflamed/post-meal physiology, not steady-state baseline. We use 0.59 uM (Miyazaki) as central estimate and 50 uM as sensitivity upper bound (post-fructose / post-purine-meal spike)."
+  },
+
+  "uricase_kinetic_priors": {
+    "Km_uricase_uM": {
+      "central": 25,
+      "low": 5,
+      "high": 100,
+      "source": "Sanofi rasburicase regulatory label (the closest validated A. flavus uricase Km in clinical use); literature variable across in-house assay conditions",
+      "tier": "Regulatory/label tier"
+    },
+    "specific_activity_U_per_mg": {
+      "central": 8.3,
+      "_note": "1 U = 1 umol urate degraded per minute at pH 8.5, 37C",
+      "source": "Sanofi rasburicase label",
+      "tier": "Regulatory/label tier"
+    },
+    "_note_on_lumen_pH": "Colonic pH ~7-8, near uricase pH-optimum (8.5). Small intestinal pH 6-7, sub-optimal but still functional. Effective specific activity in vivo likely 50-80% of the pH-8.5 in-vitro value. We use 6 U/mg (~75% of the label value) for in vivo flux model central estimate."
+  },
+
+  "uricase_dose_scenarios": {
+    "_methodology": "Three uricase-dose scenarios for the engineered koji / S. boulardii product, in mg active enzyme reaching the colon per day. Anchored against ALLN-346 dosing (Phase 2a, 5 capsules tid) and S. boulardii engineered ACS Synth Bio 2025 yield (365 umol/h/OD).",
+    "low_dose_mg_per_day": 5,
+    "mid_dose_mg_per_day": 25,
+    "high_dose_mg_per_day": 50,
+    "_note": "ALLN-346 phase 2a equivalent is ~50 mg/day total enzyme; mid-dose 25 mg/day matches the engineered-yeast-uricase-proposal.md home-fermentation feasibility window."
+  },
+
+  "renal_compensation_fraction": {
+    "central": 0.30,
+    "low": 0.0,
+    "high": 0.50,
+    "_note": "When intestinal urate excretion is reduced (due to Q141K) or augmented (due to gut-lumen uricase), the kidney partially compensates by adjusting tubular handling. Matsuo 2014 showed Q141K dysfunction shifts load to the kidney (UUE up); but in CKD/aging/typical gout patients the renal compensation reserve is constrained. We model 30% partial compensation as central estimate (intestinal flux delta is 30% offset by renal counter-adjustment).",
+    "source": "Matsuo 2014 directional + clinical-pharmacology inference",
+    "tier": "Mechanistic extrapolation"
+  },
+
+  "serum_urate_typical_baseline_mg_dL": {
+    "_purpose": "Reference point for converting absolute urate flux into delta-SUA",
+    "male_gout_typical": 8.0,
+    "female_gout_typical": 7.0,
+    "non_gout_male": 5.5,
+    "non_gout_female": 4.5,
+    "uM_per_mg_dL": 59.48,
+    "_note": "Uric acid MW 168.11 -> 1 mg/dL = 10 mg/L = 59.48 umol/L = 59.48 uM"
+  },
+
+  "extracellular_urate_pool_size_mg": {
+    "central": 1200,
+    "_note": "Total miscible urate pool in gout patients ~1200 mg (Choi 2005, standard physiology). For non-gout pool ~600-800 mg. This sets the buffering capacity for any single-day flux delta.",
+    "source": "Choi 2005 / standard hyperuricemia clinical physiology",
+    "tier": "Standard physiology"
+  }
+}

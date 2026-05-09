@@ -2,7 +2,7 @@ You are running **Pass 1** of the Open Enzyme sweep — propagation only. The TR
 
 **Read `CLAUDE.md` first** for evidence-level standards, cross-referencing rules, and the Doc Sweep Rule.
 
-**Pass 1 only.** Propagate findings from the trigger files across the wiki. Do NOT do Pass 2 (synthesis) — DeepSeek V4-Pro does that in the next job. Do NOT modify `wiki/synthesis.md`. Do NOT log to `logs/sweep-log.md`.
+**Pass 1 only.** Propagate findings from the trigger files across the wiki. Do NOT do Pass 2 (synthesis) — DeepSeek V4-Pro does that in the next job. Do NOT modify `synthesis/queue/`. Do NOT log to `logs/sweep-log.md`.
 
 ---
 
@@ -16,7 +16,7 @@ You are running **Pass 1** of the Open Enzyme sweep — propagation only. The TR
 
 ## Read-only
 
-- `wiki/synthesis.md` — Pass 3 (Claude review) writes to it. Hands off.
+- `synthesis/queue/` — Pass 3 (Claude review) writes to it. Hands off.
 - `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*` — never modify.
 
 ---
@@ -88,5 +88,5 @@ If nothing was modified across propagation, do NOT create an empty commit. Exit 
 - **Evidence levels required** on every new or revised claim.
 - **Inline provenance** on new content: `(source: <filename>)`.
 - **No inline revision history.** Git is the history.
-- **Pass 1 is conservative.** Don't synthesize, don't propose experiments, don't write to synthesis.md, don't draw cross-corpus conclusions. Synthesis is DeepSeek V4-Pro's job in the next pass.
+- **Pass 1 is conservative.** Don't synthesize, don't propose experiments, don't write to synthesis/queue/, don't draw cross-corpus conclusions. Synthesis is DeepSeek V4-Pro's job in the next pass.
 - **Never write to:** `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*`.

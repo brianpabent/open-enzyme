@@ -1,0 +1,71 @@
+{
+  "_provenance": "comp-020 brief-scrubbed verification re-run; target list constructed independently from CLAUDE.md mission specification; no prior comp-018/019 outputs consulted.",
+  "_design_note": "Independent verification re-run. The author was given target nodes and compound-class scope; no prior compound names. All findings emerge from the lit-scan.",
+  "initiation": {
+    "C1q": {
+      "uniprot": ["P02745", "P02746", "P02747"],
+      "role": "Classical pathway initiation; binds IgG/IgM Fc, charged surfaces, dying cells",
+      "gout_relevance": "MSU crystals coated with IgG/IgM activate classical pathway via C1q (Russell 1982 PMID 6749358; Doherty 1988 PMID 2833185)"
+    },
+    "MBL_collectins_ficolins": {
+      "uniprot": ["P11226", "Q15485", "O00602"],
+      "role": "Lectin pathway initiation; binds carbohydrate patterns",
+      "gout_relevance": "MBL deposits on MSU; lectin-pathway contribution to gout flare priming"
+    },
+    "C3_alternative_tickover": {
+      "uniprot": "P01024",
+      "role": "Spontaneous C3 hydrolysis seeds alternative pathway amplification loop",
+      "gout_relevance": "Amplification on MSU surface drives convertase formation"
+    }
+  },
+  "convertases": {
+    "C3_convertase": {
+      "components": ["C4b2a (classical/lectin)", "C3bBb (alternative)"],
+      "role": "Cleaves C3 -> C3a + C3b",
+      "gout_relevance": "Central amplification node"
+    },
+    "C5_convertase": {
+      "components": ["C4b2a3b", "C3bBbC3b"],
+      "role": "Cleaves C5 -> C5a + C5b",
+      "gout_relevance": "Generates C5a (dominant NLRP3 priming signal in gout)"
+    }
+  },
+  "soluble_factors": {
+    "Factor_B": {"uniprot": "P00751", "role": "AP convertase precursor"},
+    "Factor_D": {"uniprot": "P00746", "role": "Cleaves Factor B; rate-limiting AP enzyme; iptacopan adjacent"},
+    "Factor_I": {"uniprot": "P05156", "role": "Inactivates C3b/C4b"},
+    "Factor_H": {"uniprot": "P08603", "role": "AP regulator; UPREGULATING is positive intervention"},
+    "Properdin": {"uniprot": "P27918", "role": "Stabilizes AP C3 convertase"},
+    "Clusterin": {"uniprot": "P10909", "role": "Inhibits MAC formation"}
+  },
+  "membrane_regulators": {
+    "DAF_CD55": {"uniprot": "P08174", "role": "Decay-accelerating factor; convertase decay"},
+    "CD59": {"uniprot": "P13987", "role": "MAC inhibitor"},
+    "CR1_CD35": {"uniprot": "P17927", "role": "Convertase decay + cofactor for FI"}
+  },
+  "residual_C5_axis": {
+    "C5": {"uniprot": "P01031", "role": "Cleaved to C5a + C5b"},
+    "C5aR1_C5L2": {"uniprot": ["P21730", "Q9P296"], "role": "C5a receptors; C5aR1 = pro-inflammatory; C5L2 = decoy/modulator"}
+  },
+  "compound_classes_to_sweep": [
+    "fungal_metabolites",
+    "plant_phenolic_acids",
+    "plant_flavonoids",
+    "plant_terpenoids",
+    "plant_polysaccharides",
+    "plant_lignans",
+    "plant_alkaloids",
+    "bacterial_metabolites",
+    "marine_compounds",
+    "dietary_compounds",
+    "fda_approved_drugs",
+    "TCM_materia_medica",
+    "kampo_japanese_herbal",
+    "ayurvedic_compounds"
+  ],
+  "ruled_out_do_not_redo": [
+    "Direct natural-product C5aR1 antagonist class (comp-014 + validation-experiments §1.21 - empty)",
+    "Avacopan (synthetic C5aR1 antagonist; FDA-approved; not fermentable; in corpus already)",
+    "DAF/CD55 SCR1-4 protein engineering thread (comp-012, H05)"
+  ]
+}

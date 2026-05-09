@@ -18,8 +18,8 @@ Execution model — agentic with bounded iterations:
      on-demand matters more than the round-trip overhead.
   3. The reviewer signals completion by returning content (no tool
      calls). That content is the final review output: review blockquotes
-     separated by `<<<NEXT>>>` markers. The downstream synthesis-merge.py
-     script does deterministic substitution into wiki/synthesis.md.
+     separated by `<<<NEXT>>>` markers. The downstream synthesis-emit-files.py
+     script does deterministic substitution into synthesis/queue/.
 
 Why agentic now (was one-shot pre-2026-04-28): Pass 3 is critique, but
 critique without source-material access is just internal-consistency
@@ -31,7 +31,7 @@ inlined warm cache missed without giving it write or edit power.
 
 Strict scope preserved: tools are read-only, max iterations capped, and
 the final output is still ONLY the review blockquotes separated by
-`<<<NEXT>>>`. The synthesis-merge script counts separators and bails on
+`<<<NEXT>>>`. The synthesis-emit-files script counts separators and bails on
 mismatch, so any verbose preamble from the model would fail-fast.
 
 Usage in CI:

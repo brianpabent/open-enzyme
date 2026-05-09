@@ -167,7 +167,7 @@ Links: [wiki/slug-computational.md], [experiments/comp-NNN-slug/]
 
 ### Step 8 — Commit
 
-Stage: `experiments/comp-NNN-<slug>/` (entire folder) + `wiki/computational-experiments.md` + `wiki/<slug>-computational.md` + `wiki/validation-experiments.md` + `wiki/synthesis.md` (if annotating an action item).
+Stage: `experiments/comp-NNN-<slug>/` (entire folder) + `wiki/computational-experiments.md` + `wiki/<slug>-computational.md` + `wiki/validation-experiments.md` + `synthesis/queue/` (if annotating an action item).
 
 Commit message format:
 ```

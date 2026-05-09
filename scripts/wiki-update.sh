@@ -2,7 +2,7 @@
 # wiki-update.sh — run a two-pass doc sweep for a changed file.
 #
 # Pass 1 propagates the change into affected wiki pages.
-# Pass 2 prepends new cross-doc connections to wiki/synthesis.md.
+# Pass 2 prepends new cross-doc connections to synthesis/queue/.
 # Pass 3 logs to logs/sweep-log.md. Pass 4 optionally commits.
 #
 # The actual sweep logic lives in scripts/sweep-prompt.md. This script just
@@ -10,7 +10,7 @@
 #
 # Usage:
 #   ./scripts/wiki-update.sh wiki/some-page.md
-#   ./scripts/wiki-update.sh wiki/synthesis.md
+#   ./scripts/wiki-update.sh synthesis/queue/
 #   ./scripts/wiki-update.sh wiki/some-page.md --no-commit
 #
 # Requires: claude CLI (Claude Code) in PATH

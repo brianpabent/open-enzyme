@@ -83,7 +83,9 @@ def main() -> None:
     has_skip = "[skip-wiki-sweep]" in msg
     has_sweep_prefix = bool(re.match(r"^sweep-[123]-(propagate|synthesize|review):", first_line))
 
-    # Check whether staged files include wiki/*.md (excluding synthesis.md)
+    # Check whether staged files include wiki/*.md. Post-2026-05-08 migration
+    # synthesis/ is sibling to wiki/, not under it, so the wiki/ prefix scope
+    # naturally excludes synthesis content — no separate exclusion needed.
     try:
         r = subprocess.run(
             ["git", "diff", "--cached", "--name-only"],
@@ -93,7 +95,7 @@ def main() -> None:
     except (subprocess.SubprocessError, OSError):
         staged = []
     touches_wiki = any(
-        p.startswith("wiki/") and p.endswith(".md") and p != "wiki/synthesis.md"
+        p.startswith("wiki/") and p.endswith(".md")
         for p in staged
     )
 

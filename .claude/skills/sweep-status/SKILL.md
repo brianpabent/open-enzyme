@@ -1,6 +1,6 @@
 ---
 name: sweep-status
-description: Report the current state of the wiki-sweep automation — last successful sweep, pending file count, recent workflow runs (success/failure), and recommended next action. Use when (a) Brian asks "what's the sweep state?" or "what came back from the last sweep?" or "/sweep-status", (b) a long session is ending and you want to confirm whether anything needs catching up before declaring done, (c) before firing /sweep-catchup so we know whether it's needed at all. Skip if the registry doesn't exist yet (run `python3 scripts/sweep-state.py init` first) or if the user asks specifically for git log / synthesis.md content rather than automation state.
+description: Report the current state of the wiki-sweep automation — last successful sweep, pending file count, recent workflow runs (success/failure), and recommended next action. Use when (a) Brian asks "what's the sweep state?" or "what came back from the last sweep?" or "/sweep-status", (b) a long session is ending and you want to confirm whether anything needs catching up before declaring done, (c) before firing /sweep-catchup so we know whether it's needed at all. Skip if the registry doesn't exist yet (run `python3 scripts/sweep-state.py init` first) or if the user asks specifically for git log / `synthesis/queue/` content rather than automation state.
 ---
 
 # /sweep-status — automation state at a glance
@@ -51,5 +51,5 @@ If the registry file is missing, FIRST suggest running `python3 scripts/sweep-st
 ## Don't
 
 - Don't fire `gh workflow run` from this skill. That's `/sweep-catchup`'s job. This skill is read-only.
-- Don't update the registry. The registry is updated only by Pass 3 in the workflow (atomic with the synthesis.md prepend) or by `sweep-state.py init` for first-time setup.
+- Don't update the registry. The registry is updated only by Pass 3 in the workflow (atomic with the per-item file emit into `synthesis/queue/` + Pass 2 log copy into `synthesis/history/`) or by `sweep-state.py init` for first-time setup.
 - Don't infer pending paths from `git log --grep='^sweep'` — that's the brittle pattern this whole architecture replaces. Always go through `sweep-state.py pending-paths`.

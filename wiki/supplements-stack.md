@@ -21,6 +21,18 @@ This catalog is not a replacement for medical care. Work with a physician on any
 
 ---
 
+## Where to start (triage by situation)
+
+**This catalog is compound-first.** If you arrived with "I have gout, what do I do?" and want a *situation-first* entry surface — what to start today, what to build out over a month, what to plan for over a year — read **[`gout-action-guide.md`](./gout-action-guide.md)** first. It triages by patient situation (default-male, androgen-elevated, Q141K-positive, active flare, on allopurinol, prevention) and links back into the per-compound entries below for depth.
+
+**Use this catalog when** you've already identified a candidate compound and want full mechanism, dose, contraindications, drug interactions, and stack-level antagonism details. Each entry below has all of that.
+
+**Use the action guide when** you don't yet know which compound is right for your situation, or when you're new to the project and want a 5-minute orientation rather than a 1,100-line catalog read.
+
+The two surfaces are linked — every action-guide compound entry points back here for compound depth, and major catalog updates (new compound additions, dose revisions, contraindication updates) need to propagate to the action guide. The propagation is currently manual; see [synthesis.md → Strategic Reflections Queue](./synthesis.md#strategic-reflections-queue) for the planned `fresh-stack.py` discipline that will eventually formalize it.
+
+---
+
 ## Section 1: NOW (Available Today)
 
 Compounds currently accessible, with strong evidence, that can be started immediately.
