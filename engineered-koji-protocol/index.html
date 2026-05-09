@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../synthesis/" class="md-nav__link">
+      <a href="../synthesis/README.md" class="md-nav__link">
         
   
   
@@ -1782,6 +1782,17 @@
     <span class="md-ellipsis">
       
         Step 4: Expression Quantification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-strain-qc-infrastructure-genome-sequencing-for-integration-verification-off-target-screening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Strain QC Infrastructure (genome sequencing for integration verification + off-target screening)
       
     </span>
   </a>
@@ -5856,6 +5867,11 @@ Brian Abent</p>
 <li><strong>Western blot:</strong> If you can source an anti-uricase antibody (or anti-His tag if you added one), this confirms identity. Not strictly necessary if the activity assay is positive.</li>
 <li><strong>RT-qPCR:</strong> Measure uaZ mRNA levels relative to a housekeeping gene. Useful for comparing expression across different transformants/conditions.</li>
 </ul>
+<h3 id="step-5-strain-qc-infrastructure-genome-sequencing-for-integration-verification-off-target-screening">Step 5: Strain QC Infrastructure (genome sequencing for integration verification + off-target screening)<a class="headerlink" href="#step-5-strain-qc-infrastructure-genome-sequencing-for-integration-verification-off-target-screening" title="Permanent link">&para;</a></h3>
+<p>For any strain that progresses past the activity-assay stage (i.e., a real platform candidate, not just a screen hit), the next-tier verification is <strong>whole-genome sequencing</strong> to confirm: (a) the cassette is integrated where it was meant to be (not at an off-target locus), (b) there are no unintended secondary integrations or large indels elsewhere, &copy; plasmid sequence is what was designed, and (d) the strain genome can be published as proof-of-construct alongside the strain release per the open-source-strain-library thesis.</p>
+<p>The hardware/wetware/pipeline for this overlaps <strong>completely</strong> with the personal-genome MinION setup documented in <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a>. Same MinION + Dorado basecaller + Flye/Clair3 variant-calling pipeline that sequences a human genome handles strain-genome assembly + variant verification + plasmid validation. <strong>One amortized hardware investment, two outputs.</strong> This is a deliberate dual-use property of the platform's infrastructure choices.</p>
+<p><strong>Cost note (calibrated 2026-05-08):</strong> the MinION at-home buildout is ~$5,000 all-in (device + supporting wet-lab equipment + GPU laptop), plus ~$1,000/run for flow cell + reagents at usable read depth. Per-strain genome sequencing once the buildout exists is in the ~$300–500 range (single flow cell amortized across multiple strains is feasible — a MinION flow cell can multiplex ~12-24 microbial genomes per run depending on read depth target). Until the strain pipeline reaches Phase 1+ wet work and a real strain QC need exists, the cost-justification rests entirely on the personal-genome use case (see <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a> §"Tier table" — not imminent for Brian as of 2026-05-08). A contributor with the hardware joining the project would change the calculus immediately.</p>
+<p><strong>Alternative for Phase 0 / pre-buildout:</strong> outsourced strain genome sequencing via commercial CRO (Plasmidsaurus, Eurofins, etc.) at ~$50–200 per strain for plasmid + integration site verification. Cheaper per-strain when N is small; in-house MinION wins on cost amortization once N gets large enough or when a contributor's hardware investment becomes platform infrastructure.</p>
 <h3 id="how-much-uricase-per-gram-of-koji">How Much Uricase Per Gram of Koji?<a class="headerlink" href="#how-much-uricase-per-gram-of-koji" title="Permanent link">&para;</a></h3>
 <p>Literature on heterologous protein expression in <em>A. oryzae</em> reports yields of <strong>1–10 g/L</strong> for well-expressed secreted proteins (e.g., lipase, glucoamylase). These are industrial fermentation numbers. For a koji solid-state fermentation, yields are typically reported as mg protein per gram dry substrate.</p>
 <p>Conservative estimate for uricase expression under PamyB on rice: <strong>0.5–5 mg uricase per gram dry koji</strong>. This is the range we'll use for dosing calculations in Section 8.</p>

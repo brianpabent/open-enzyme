@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../synthesis/" class="md-nav__link">
+      <a href="../synthesis/README.md" class="md-nav__link">
         
   
   
@@ -2930,10 +2930,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hardware-one-time-3000-for-minion-starter-laptop-microcentrifuge-separate" class="md-nav__link">
+  <a href="#hardware-one-time-5000-all-in-minion-supporting-wet-lab-kit-gpu-laptop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hardware (one-time, ~$3,000+ for MinION starter; laptop + microcentrifuge separate)
+        Hardware (one-time, ~$5,000 all-in: MinION + supporting wet-lab kit + GPU laptop)
       
     </span>
   </a>
@@ -4392,17 +4392,18 @@
 <td>5</td>
 <td><strong>MinION at home, basecall locally</strong></td>
 <td>Self-sovereign — data never leaves your laptop</td>
-<td><strong>~$3,000+ setup</strong> [VERIFIED 2026-05-07 — Nanopore Store entry-tier MinION bundles start over $3K; the historical "$1K MinION" marketing era is over. Per-bundle exact cost should be verified against <a href="https://store.nanoporetech.com/minion.html">https://store.nanoporetech.com/minion.html</a> before purchase] + ~$200–300/run reagents</td>
+<td><strong>~$5,000 all-in setup</strong> [CALIBRATED 2026-05-08 — actual real-world buildout: ~$3,000+ for MinION Mk1B device itself (Nanopore Store) <strong>plus ~$3,500 of supporting wet-lab equipment</strong> (microcentrifuge, micropipettes, magnetic rack, thermocycler-or-equivalent, GPU laptop if not already owned), <strong>plus ~$1,000/run</strong> for flow cell + library prep reagents at usable read depth — NOT the entry-tier "$200–300/run" framing. The historical "$1K MinION = casual hobby purchase" era is fully over.]</td>
 <td>Long-read WGS</td>
-<td>Higher per-base raw error; you do all the wet work</td>
+<td>Higher per-base raw error; you do all the wet work; the hardware buildout makes this a deliberate multi-year-amortized investment, not a casual hobby purchase</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Recommendation for the privacy-prioritizing self-experimenter: Tier 5</strong> — but note that current Nanopore Store pricing has narrowed the cost gap with Tier 4 (physician-routed CLIA WGS $1,000–3,000) considerably. The Tier 5 case is now anchored less on "cheapest" and more on "self-sovereign data + dual-purpose hardware (Project Crossover below) + amortized cost across many runs." If short-read accuracy is later needed for a clinical-grade SNP confirmation (e.g., HLA-B*58:01 typing), do it Tier 4 (physician-routed) — never touch Tier 1.</p>
+<p><strong>Recommendation for the privacy-prioritizing self-experimenter: Tier 5 only if multi-year amortization is realistic.</strong> Current real-world buildout (~$5K hardware + ~$1K/run) puts Tier 5 ABOVE Tier 4 (physician-routed CLIA WGS, $1,000–3,000) on raw cost — Tier 5's case rests entirely on (a) self-sovereign data, (b) dual-purpose hardware that doubles as Open Enzyme strain-QC infrastructure (see Project Crossover below), and &copy; cost-amortization across many runs over years. <strong>For Brian as of 2026-05-08, this is not imminent</strong> — the $5K hardware buildout is too expensive to justify against the personal-pharmacogenomics use case alone. Becomes load-bearing only when (i) the engineered-koji strain pipeline reaches Phase 1+ wet work and needs in-house genome QC, OR (ii) a contributor with the hardware joins the project. If short-read accuracy is later needed for a clinical-grade SNP confirmation (e.g., HLA-B*58:01 typing), do it Tier 4 (physician-routed) — never touch Tier 1.</p>
 <h2 id="kitchen-table-setup">Kitchen-table setup<a class="headerlink" href="#kitchen-table-setup" title="Permanent link">&para;</a></h2>
-<h3 id="hardware-one-time-3000-for-minion-starter-laptop-microcentrifuge-separate">Hardware (one-time, ~$3,000+ for MinION starter; laptop + microcentrifuge separate)<a class="headerlink" href="#hardware-one-time-3000-for-minion-starter-laptop-microcentrifuge-separate" title="Permanent link">&para;</a></h3>
+<h3 id="hardware-one-time-5000-all-in-minion-supporting-wet-lab-kit-gpu-laptop">Hardware (one-time, ~$5,000 all-in: MinION + supporting wet-lab kit + GPU laptop)<a class="headerlink" href="#hardware-one-time-5000-all-in-minion-supporting-wet-lab-kit-gpu-laptop" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Oxford Nanopore MinION Mk1B starter pack (~$3,000+)</strong> — [VERIFIED 2026-05-07 against <a href="https://store.nanoporetech.com/minion.html">Nanopore Store</a>; historical ~$1,000 starter pricing era is over. The corpus inherited the "$1K MinION" claim from earlier marketing material; current store-listed entry tier is meaningfully higher. Verify current bundle structure (device + flow cells + sequencing kits + accessories) before purchase. The Mk1C variant with embedded compute runs higher still; Mk1B requires GPU laptop.]</li>
+<li><strong>Supporting wet-lab equipment (~$3,500)</strong> — [CALIBRATED 2026-05-08 by Brian — the MinION device alone is the headline number, but a working setup also needs: microcentrifuge, micropipette set (P2 / P10 / P20 / P200 / P1000) + tips, magnetic rack for SPRI bead cleanups, thermocycler or thermomixer-or-equivalent for incubation steps, vortex mixer, balance for reagent prep, labware (tubes, racks, plates), basic PPE. Together these are the "$3.5K of supporting equipment" that turn a MinION purchase into a working sequencing setup. Without them the device sits idle.]</li>
 <li>Laptop with NVIDIA GPU (8GB+ VRAM) for Dorado basecaller — local, no cloud round-trip. ~$1,500–3,000 if purchasing new; many CTO-tier self-experimenters already own one.</li>
 <li>Microcentrifuge (used eBay, $100–200) — needed for library prep</li>
 </ul>

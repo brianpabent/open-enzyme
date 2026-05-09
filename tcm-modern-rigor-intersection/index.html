@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../synthesis/" class="md-nav__link">
+      <a href="../synthesis/README.md" class="md-nav__link">
         
   
   
@@ -1972,6 +1972,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="5. Standardization (defined extracts, not raw herb)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5a-tcm-extract-characterization-sops-tiered-framework-added-2026-05-08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5a. TCM Extract Characterization SOPs — tiered framework (added 2026-05-08)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4365,6 +4382,72 @@
 <p>This decomposition is exactly the same analytical structure as <a href="../koji-endgame-strain/"><code>koji-endgame-strain.md</code></a> §1 coverage matrix — naming which chokepoints each payload hits.</p>
 <h3 id="5-standardization-defined-extracts-not-raw-herb">5. Standardization (defined extracts, not raw herb)<a class="headerlink" href="#5-standardization-defined-extracts-not-raw-herb" title="Permanent link">&para;</a></h3>
 <p>Wild-collected TCM herbs vary 10–100× in active-compound content depending on growing region, season, age, drying method, storage. Modern rigor requires defined extracts with documented active-compound concentrations. <strong>The bar:</strong> any TCM-derived intervention proposed to the wiki specifies the standardized extract (e.g., Theracurmin, NovaSOL micellar curcumin, oridonin from a defined Rabdosia extract) or notes "standardization is unresolved" as an open question.</p>
+<h4 id="5a-tcm-extract-characterization-sops-tiered-framework-added-2026-05-08">5a. TCM Extract Characterization SOPs — tiered framework (added 2026-05-08)<a class="headerlink" href="#5a-tcm-extract-characterization-sops-tiered-framework-added-2026-05-08" title="Permanent link">&para;</a></h4>
+<p>Rule #5 above sets the bar; this subsection fills the operational gap by adapting the four-tier framework from <a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code> SOP-6</a> (which itself adapts <a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a>) to TCM compound classes. The pattern is the same: kitchen → smartphone colorimetry → bench HPLC → outsourced GMP-grade, with the <strong>calibrate-once-at-Tier-3, track-batches-at-Tier-&frac12;</strong> discipline that makes home-feasibility tractable for any open-source contributor.</p>
+<p><strong>Tier table — comp-013 priority compounds:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Compound</th>
+<th>TCM source</th>
+<th>Tier 1 (kitchen, ~$0)</th>
+<th>Tier 2 (smartphone colorimetry, ~$50)</th>
+<th>Tier 3 (bench HPLC, ~$2K)</th>
+<th>Tier 4 (outsourced GMP)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Luteolin</strong></td>
+<td><em>Lonicera japonica</em> (金银花), <em>Achyranthes bidentata</em> (牛膝); also dietary (parsley, celery, peppers)</td>
+<td>Visual + dosing-by-known-extract-ratio against a Tier 3 calibrated batch</td>
+<td><strong>AlCl₃ colorimetric flavonoid assay</strong> (~415 nm yellow). Well-established for total flavonoids; <strong>caveat: NON-SELECTIVE</strong> — quantifies total flavonoids, not luteolin specifically. Useful as batch-to-batch consistency check ("this batch is in the same flavonoid ballpark as the calibrated reference"); not as luteolin-specific quantification. Rutin equivalents the standard expression.</td>
+<td>HPLC-DAD with luteolin reference standard (Sigma L9283). Calibration curve at 350 nm. The load-bearing Tier-3 assay.</td>
+<td>Outsourced GMP-grade HPLC if regulatory submission ever needed</td>
+</tr>
+<tr>
+<td><strong>Astilbin</strong></td>
+<td><em>Smilax glabra</em> (土茯苓) — the canonical PO-HUA-model gout indication compound per <a href="../tcm-gout-compound-triage-computational/">comp-013</a></td>
+<td>Visual + dosing-by-known-extract-ratio</td>
+<td><strong>AlCl₃ colorimetric</strong> (astilbin is a flavanonol — same chemistry; same caveat) OR <strong>Folin-Ciocalteu total phenolics</strong> (~765 nm); both are non-selective for astilbin specifically. Use as consistency check, not quantification.</td>
+<td>HPLC-DAD with astilbin reference standard (Sigma SMB00478 or equivalent); 290 nm detection. <strong>The load-bearing assay for the comp-013 astilbin claim.</strong></td>
+<td>Outsourced GMP-grade</td>
+</tr>
+<tr>
+<td><strong>Emodin</strong></td>
+<td><em>Rheum officinale</em> (大黄), <em>Polygonum cuspidatum</em> (虎杖)</td>
+<td>Visual + extract-ratio</td>
+<td><strong>Bornträger reaction</strong> (emodin is an anthraquinone — alkaline solution turns red, ~520 nm). Smartphone-readable, well-established. <strong>Caveat: total anthraquinones</strong> — co-extracted aloe-emodin, chrysophanol, rhein all give signal.</td>
+<td>HPLC-DAD with emodin reference standard; 254/450 nm detection (anthraquinones absorb at both UV and visible)</td>
+<td>Outsourced GMP-grade</td>
+</tr>
+<tr>
+<td><strong>Berberine</strong></td>
+<td><em>Coptis chinensis</em> (黄连), <em>Phellodendron chinense</em> (黄柏)</td>
+<td>Visual (yellow color of crude extract is itself partially indicative) + dosing-by-known-extract-ratio</td>
+<td><strong>Dragendorff reagent colorimetric</strong> (orange precipitate with alkaloids, ~470 nm in TLC-densitometry) OR direct UV at 345 nm (berberine has a distinctive UV-Vis spectrum). <strong>Caveat — alkaloid total</strong> — berberine + palmatine + jatrorrhizine all give Dragendorff signal in <em>Coptis</em>; direct UV at 345 nm is more selective.</td>
+<td>HPLC-DAD with berberine reference standard (Sigma B3251); 345 nm detection.</td>
+<td>Outsourced GMP-grade</td>
+</tr>
+<tr>
+<td><strong>Rhein</strong></td>
+<td><em>Rheum officinale</em> (大黄) — same source as emodin</td>
+<td>Visual + extract-ratio</td>
+<td><strong>Same Bornträger reaction</strong> as emodin (rhein is a related anthraquinone). Same total-anthraquinone caveat.</td>
+<td>HPLC-DAD with rhein reference standard; 254/430 nm detection</td>
+<td>Outsourced GMP-grade</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Operational pattern (the calibrate-once-track-batches discipline):</strong></p>
+<ol>
+<li><strong>Tier 3 once per cultivar / batch source.</strong> When a contributor sources a new extract (specific Smilax glabra cultivar, specific Coptis chinensis vendor, etc.), run Tier 3 HPLC against the certified reference standard once. This produces the calibrated mg-compound-per-gram-extract value for that source.</li>
+<li><strong>Tier &frac12; every batch.</strong> Subsequent batches from the same source get Tier 2 colorimetry (or just Tier 1 visual + dosing-by-extract-ratio) compared against the Tier-3-calibrated reference. The Tier 2 number is interpreted as "this batch is X% above/below the calibrated reference" — NOT as an absolute quantification (because the colorimetric assays are non-selective for the specific compound).</li>
+<li><strong>Re-Tier-3 at trigger conditions.</strong> New cultivar, new vendor, suspect storage degradation, or any other reason to suspect the source has shifted requires re-running Tier 3 to recalibrate.</li>
+</ol>
+<p><strong>Tier &frac12; non-selectivity is the load-bearing caveat across compound classes.</strong> Same pattern as SOP-6's GLPP phenol-sulfuric (total polysaccharide, not GLPP-specific). The Tier 2 assays in the table above are useful for consistency tracking but cannot substitute for Tier 3 HPLC for the actual compound-of-interest quantification. <strong>Tier 3 HPLC is non-negotiable</strong> as the load-bearing assay, with Tier 4 (outsourced GMP) reserved for regulatory-submission scenarios that aren't yet on the OE Phase 0 roadmap.</p>
+<p><strong>Reproducibility target:</strong> consistent dose-response shape across operators and source-batches; absolute potency may vary 2× operator-to-operator on cell-based downstream assays (typical for biological readouts), but the consistency check at the extract-characterization layer prevents that variance from compounding with extract-batch variance.</p>
+<p><strong>Cross-references:</strong> <a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code> SOP-6</a> (parent framework); <a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a> (original koji-track framework); <a href="../tcm-gout-compound-triage-computational/"><code>tcm-gout-compound-triage-computational.md</code></a> (comp-013 priority compounds + verdicts); <a href="./synthesis.md">synthesis.md 2026-05-07 77d0f6e Connection 2 / Item 21 walkthrough</a>.</p>
 <h3 id="6-falsification-card-per-major-claim">6. Falsification card per major claim<a class="headerlink" href="#6-falsification-card-per-major-claim" title="Permanent link">&para;</a></h3>
 <p>Per <a href="../linter-design/"><code>linter-design.md</code></a> and the existing H01 / H02 / H03 cards, any TCM-derived claim that becomes load-bearing for a platform decision (e.g., "Smilax glabra is a viable koji-payload candidate," or "Si Miao San as adjunct to allopurinol shows additive UA reduction") gets a falsification card with assumption stack + killshot menu + pre-committed thresholds. <strong>The bar:</strong> TCM-source compounds get the same falsification discipline as engineered enzymes. No epistemic carve-out for "but it's traditional."</p>
 <p>H04 stub at <a href="../hypotheses/H04-tcm-rigor-intersection/"><code>hypotheses/H04-tcm-rigor-intersection.md</code></a> is the meta-card for the lens itself; specific compound or formula claims would get H05+ as they emerge.</p>
@@ -4671,7 +4754,7 @@
 <li><a href="../computational-experiments/"><code>computational-experiments.md</code></a> — <strong>comp-013</strong> (Phase 2 P2-2 closed 2026-05-06) Analyses table</li>
 <li><a href="../tcm-gout-compound-triage-computational/"><code>tcm-gout-compound-triage-computational.md</code></a> — <strong>comp-013 interpretive page</strong> (per-compound triage verdicts, methodology adaptation notes, cross-cutting findings)</li>
 <li><a href="../hypotheses/H04-tcm-rigor-intersection/"><code>hypotheses/H04-tcm-rigor-intersection.md</code></a> — falsification card stub for the methodology lens</li>
-<li><a href="../synthesis/"><code>synthesis.md</code></a> Strategic Reflections Queue — Phase 3 platform-framing reflection rolled in</li>
+<li><a href="./synthesis.md"><code>synthesis.md</code></a> Strategic Reflections Queue — Phase 3 platform-framing reflection rolled in</li>
 <li><a href="../operations/ward-1995-lab-access.md"><code>../operations/ward-1995-lab-access.md</code></a> — sister operationalization of the <strong>global-multilingual research default</strong> (<code>Open Enzyme/CLAUDE.md</code> §"Global-multilingual research by default"). Both pages independently treat language as a non-barrier and proactively map non-English-world resources as first-class assets: this TCM page targets Chinese / Japanese clinical literature (CNKI / WanFang / J-STAGE / ChiCTR / Kampo medicine literature); the Ward 1995 lab-access page targets Japan / China / Europe academic + industrial fungal-engineering groups. Same methodology, different operational domains (literature ingestion vs. resource acquisition). The Maruyama lab at the University of Tokyo (the primary lead in the Ward lab-access page) is itself a parallel instance — Japan publishes substantial fungal-engineering work in Japanese-language journals that English PubMed indexes thinly; the lab-access strategy treats Japanese-language outreach as default, not workaround.</li>
 </ul>
 

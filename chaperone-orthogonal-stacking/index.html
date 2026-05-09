@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../synthesis/" class="md-nav__link">
+      <a href="../synthesis/README.md" class="md-nav__link">
         
   
   
@@ -1619,6 +1619,17 @@
     <span class="md-ellipsis">
       
         3.5.3 Architecture-Adjusted Effective PDI Loads for OE Cassettes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#354-calibration-set-candidate-19-lactoferrin-transferrin-lobe-125-daf-scr1-4-ccpscr-added-2026-05-08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.4 Calibration-set candidate: §1.9 (lactoferrin, transferrin-lobe) + §1.25 (DAF SCR1-4, CCP/SCR) (added 2026-05-08)
       
     </span>
   </a>
@@ -4676,6 +4687,54 @@
 </tbody>
 </table>
 <p><strong>Note on lactoferrin disulfide count correction:</strong> The OE wiki has used "17 disulfides" for lactoferrin in prior pages (including §5.5 of this document), derived from UniProt P02788 annotation. Notari 2023 (PMC10465537) explicitly states "16 disulfides" for human lactoferrin. Wally &amp; Buchanan 2007 confirms LF has fewer disulfides than serum transferrin (hTF has 3 additional disulfide bonds not present in LF). UniProt P02788 annotation shows 35 cysteines total forming 16–17 disulfides depending on whether one counts the inferred or explicitly annotated bonds. For this architecture-adjusted model, <strong>use 16 disulfides for LF</strong> (Notari 2023 source-verified; §10.2 below documents the discrepancy). The effective PDI load computation is recalculated accordingly.</p>
+<h3 id="354-calibration-set-candidate-19-lactoferrin-transferrin-lobe-125-daf-scr1-4-ccpscr-added-2026-05-08">3.5.4 Calibration-set candidate: §1.9 (lactoferrin, transferrin-lobe) + §1.25 (DAF SCR1-4, CCP/SCR) (added 2026-05-08)<a class="headerlink" href="#354-calibration-set-candidate-19-lactoferrin-transferrin-lobe-125-daf-scr1-4-ccpscr-added-2026-05-08" title="Permanent link">&para;</a></h3>
+<p>The α coefficients in §3.5.2 are derived from mammalian / non-koji folding studies; §3.5.3's effective-PDI-load predictions are therefore <strong>bounded estimates pending direct koji-specific calibration</strong>. The two highest-leverage planned wet-lab experiments — <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.9</a> (Ward 1995 dual-cassette gate, lactoferrin = transferrin-lobe) and <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.25</a> (DAF SCR1-4 single-cassette gate, CCP/SCR sushi fold) — together span the framework's two architecturally-extreme α classes (CCP/SCR 0.3–0.6 vs. transferrin-lobe 1.5–2.5), and their measured per-cassette titers would be a natural calibration set for the framework if the two experiments are run under harmonized conditions.</p>
+<p><strong>Pre-registered calibration framework (conditional):</strong></p>
+<p>The §1.9 + §1.25 pairing functions as a calibration set ONLY if the following experimental conditions are harmonized:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Required harmonization</th>
+<th>Current §1.9 design</th>
+<th>Current §1.25 design</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host strain</td>
+<td>Single host (NSlD-ΔP10 preferred)</td>
+<td>NSlD-ΔP10 (mandated)</td>
+<td>RIB40 default; NSlD-ΔP10 listed as optional arm</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Solid-state shio-koji OR submerged — pick one</td>
+<td>Solid-state shio-koji</td>
+<td>Mixed (solid-state primary; submerged optional)</td>
+</tr>
+<tr>
+<td>Promoter</td>
+<td>Same promoter strength (e.g., glaA or PamyB)</td>
+<td>glaA secretion cassette</td>
+<td>Per <a href="../validation-experiments/">§1.25</a> — confirm</td>
+</tr>
+<tr>
+<td>Titer units</td>
+<td>mg/L mature protein, ELISA-quantified</td>
+<td>mg/L (ELISA)</td>
+<td>mg/L (ELISA)</td>
+</tr>
+</tbody>
+</table>
+<p>If §1.25 is run with the optional NSlD-ΔP10 arm under the same solid-state format and matching promoter, the two experiments produce a paired calibration measurement. Otherwise the comparison is confounded by host/format effects and cannot recalibrate α.</p>
+<p><strong>Pre-registered framework predictions (bounded):</strong></p>
+<ul>
+<li>§1.9 lactoferrin-alone arm (transferrin-lobe, α 1.5–2.5, 16 disulfides, effective PDI load 24–40): <strong>predicted ≥500 mg/L</strong> if the framework's α coefficients transfer to koji; <strong>&lt;40 mg/L</strong> if PDI-saturation dominates (lower bound from §5.5 worst case).</li>
+<li>§1.25 DAF SCR1-4 arm (CCP/SCR, α 0.3–0.6, 8 disulfides, effective PDI load 2.4–4.8): <strong>predicted ≥100 mg/L</strong> under the framework — substantially higher per-cassette titer than lactoferrin because of the lower α coefficient.</li>
+</ul>
+<p><strong>Decision rule:</strong> if the observed titer ranking matches the framework's prediction (DAF SCR1-4 &gt; lactoferrin per cassette, on a normalized basis), the per-architecture α coefficients have transferable predictive power to koji and the framework can be used prospectively for new cassette design. If the ranking inverts (lactoferrin &gt; DAF SCR1-4 per cassette), the α coefficients calibrated from non-koji data <strong>do not transfer</strong> — the framework needs revision toward koji-specific kinetics, and predictions for novel cassettes (e.g., the C1-INH thread surfaced in <a href="../upstream-complement-modulator-sweep-computational/">comp-018</a>) would need to be flagged as uncalibrated.</p>
+<p><strong>Cross-references:</strong> <a href="../validation-experiments/"><code>validation-experiments.md §1.9</code></a>, <a href="../validation-experiments/"><code>validation-experiments.md §1.25</code></a>, <a href="./synthesis.md#strategic-reflections-queue"><code>synthesis.md</code> Strategic Reflections Queue</a> (chaperone-framework predictive-power validation entry — this calibration set is the operational instantiation of that reflection's trigger condition).</p>
 <hr />
 <h2 id="4-open-enzyme-candidate-cassettes-scored">4. Open Enzyme Candidate Cassettes — Scored<a class="headerlink" href="#4-open-enzyme-candidate-cassettes-scored" title="Permanent link">&para;</a></h2>
 <table>
@@ -4855,7 +4914,7 @@
 </table>
 <blockquote>
 <p><strong>Cross-chassis combinations are trivially off-framework.</strong> Compounds produced by a separate organism (e.g., cultivated <em>Cordyceps militaris</em> cordycepin, <em>Ganoderma lucidum</em> GLPP, <em>Pleurotus citrinopileatus</em> ergothioneine — see <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a>) impose <strong>zero</strong> chaperone load on the koji endgame strain because they are not co-expressed in koji at all. They appear in the consumer product as cultivated mushroom extracts paired with the engineered koji. No framework needed for that combination — the orthogonality is by virtue of separate chassis. The cordycepin row above scores the alternative <em>koji-engineering route</em> (Jeennor 2023's cns1+cns2 heterologous expression in <em>A. oryzae</em>); even that route is off the secretion/folding axis because cns1 and cns2 are bacterial cytosolic enzymes that never enter the ER.</p>
-<p><strong>Scope note — what this framework tracks and what it doesn't.</strong> The framework scores <strong>ER folding-machinery competition</strong> (PDI for disulfides, calnexin for N-glycans, BiP for general transit). It does <strong>not</strong> track generic proteome burden (ribosomes, amino acid pool, ATP for tRNA charging) imposed by cytosolic enzymes. For the current cassette stack, ER folding lanes are the binding constraint — koji's wild-type translation budget already supports ~30% secretion-dedicated output, so adding a ~400 aa cytosolic enzyme like cns1 is small change against the existing translation pool. If the platform later stacks multiple cytosolic biosynthesis clusters (e.g., cordycepin + a terpenoid pathway + a polyketide cluster), translation burden may become load-bearing — at that point a proteome-constrained metabolic model (pcSecKoji-style) is the correct upgrade per <a href="../synthesis/#strategic-reflections-queue"><code>synthesis.md</code> Strategic Reflections Queue §"Chaperone framework predictive-power validation"</a>.</p>
+<p><strong>Scope note — what this framework tracks and what it doesn't.</strong> The framework scores <strong>ER folding-machinery competition</strong> (PDI for disulfides, calnexin for N-glycans, BiP for general transit). It does <strong>not</strong> track generic proteome burden (ribosomes, amino acid pool, ATP for tRNA charging) imposed by cytosolic enzymes. For the current cassette stack, ER folding lanes are the binding constraint — koji's wild-type translation budget already supports ~30% secretion-dedicated output, so adding a ~400 aa cytosolic enzyme like cns1 is small change against the existing translation pool. If the platform later stacks multiple cytosolic biosynthesis clusters (e.g., cordycepin + a terpenoid pathway + a polyketide cluster), translation burden may become load-bearing — at that point a proteome-constrained metabolic model (pcSecKoji-style) is the correct upgrade per <a href="./synthesis.md#strategic-reflections-queue"><code>synthesis.md</code> Strategic Reflections Queue §"Chaperone framework predictive-power validation"</a>.</p>
 </blockquote>
 <p>The pattern is striking: the <strong>Open Enzyme koji endgame strain is implicitly already a chaperone-orthogonal design.</strong> The five "molecules" of <a href="../koji-endgame-strain/">koji-endgame-strain.md</a> §1 distribute across non-overlapping load classes —</p>
 <ul>

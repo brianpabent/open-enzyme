@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../synthesis/" class="md-nav__link">
+      <a href="../synthesis/README.md" class="md-nav__link">
         
   
   
@@ -3569,6 +3569,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#comp-018-upstream-complement-modulator-sweep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comp-018 — Upstream Complement Modulator Sweep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comp-020-upstream-complement-modulator-sweep-brief-scrubbed-verification-re-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comp-020 — Upstream Complement Modulator Sweep (Brief-Scrubbed Verification Re-Run)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#comp-001-uricase-shio-koji-protease-stability" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3606,6 +3628,17 @@
     <span class="md-ellipsis">
       
         comp-016 — T × Intestinal ABCG2 Suppression Evidence Mining
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comp-019-gut-lumen-uricase-abcg2-genotype-stratification-flux-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model
       
     </span>
   </a>
@@ -3724,6 +3757,34 @@
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure proposals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure proposals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comp-nnn-verification-agent-clockbase-hypothesis-then-verify-pattern-added-2026-05-08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comp-NNN verification agent (ClockBase hypothesis-then-verify pattern) — added 2026-05-08
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4334,6 +4395,105 @@
 <p><strong>Relationship to wet-lab experiments:</strong> Computational analyses inform priors — they shift confidence before a wet-lab experiment runs, and help interpret results after. They do not replace wet-lab validation. Each analysis notes the wet-lab experiment it informs and whether it functions as a feasibility gate or a confirmation experiment.</p>
 <hr />
 <h2 id="analyses">Analyses<a class="headerlink" href="#analyses" title="Permanent link">&para;</a></h2>
+<h3 id="comp-018-upstream-complement-modulator-sweep">comp-018 — Upstream Complement Modulator Sweep<a class="headerlink" href="#comp-018-upstream-complement-modulator-sweep" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Question</strong></td>
+<td>Across all compound classes (fungal, plant, bacterial, marine, dietary, FDA-approved drug, classical TCM/Kampo/Ayurveda), which compounds have documented activity at upstream complement cascade nodes proximal to C5a generation, and which are gout-platform-relevant?</td>
+</tr>
+<tr>
+<td><strong>Method</strong></td>
+<td>PubMed MCP depth pass + Paperclip MCP full-text grep (PMC/arXiv/bioRxiv/medRxiv only — <code>map</code> operator forbidden per <code>memory/feedback_paperclip_map_unreliable.md</code>). 16 upstream nodes (C1q, MBL, MASP-2, C3 convertase CP/LP/AP, Factor B/D/H, properdin, C1-INH, DAF/CD55, CD59, C5, C5aR1) targeted. Per-compound ChEMBL coverage check. Tier classification (TIER_1 strong + in vivo + dietary; TIER_2 in vitro IC50 anchored; TIER_3 weak/abstract-only). Pre-commit grep-verify gate per CLAUDE.md Rule 4. CNKI/WanFang/J-STAGE direct multilingual searches deferred to Phase 2 with two-model translation cross-check.</td>
+</tr>
+<tr>
+<td><strong>Verdict</strong></td>
+<td><strong>Direct natural-product C5aR1 antagonists empty (re-confirms comp-014 + §1.21).</strong> Moving one node upstream to C3 convertase uncovers a substantial natural-product literature anchored by <strong>rosmarinic acid</strong> (rosemary, lemon balm, spearmint) — C3-convertase IC50 5-10 µM optimal (Englberger 1988 PMID 3198307), three independent in vivo precedents (rat CVF lung injury 10 mg/kg, mouse + rat ADPKD), FDA-GRAS source plants, dietary-tier viable. <strong>TIER 1 anchor: rosmarinic acid.</strong> TIER 2: luteolin (CP+AP, triple-mechanism with comp-013 XO + URAT1), tiliroside, Bupleurum polysaccharides (lectin pathway), falcarindiol, ganoderic acid Sz, ergosterol, quercetin (microbiome-deglycosylated active), dicaffeoylquinic acid, K-76 / complestatin (engineering-relevant).</td>
+</tr>
+<tr>
+<td><strong>Key finding</strong></td>
+<td>(1) <strong>The chokepoint-hacker move worked</strong> — Brian's "if the answer is rosemary, I'll grow rosemary" framing was load-bearing. Rosmarinic acid is the most well-characterized natural-product upstream-complement modulator in the literature. (2) <strong>Luteolin triple-convergence</strong> — XO + URAT1 + C3 convertase across CP+AP. Highest-leverage single dietary compound the platform has surfaced. (3) <strong>comp-014 β-glucan structure-dependence mechanistically explained</strong> — Ganoderma contains both lectin-pathway-activating glucans AND CP-convertase-inhibiting triterpenes/sterols. Argues for fraction-specific (triterpene-enriched) reishi preparations. (4) <strong>Engineered C1-INH parallel thread proposed</strong> — near-twin to H05 DAF SCR1-4 (soluble human complement regulator, FDA-approved precedent, koji/LBP heterologous expression candidate). (5) <strong>ChEMBL anticomplement coverage 0/32 = 0%</strong> — natural-product hemolytic-assay anticomplement was never systematically curated; same gap pattern as comp-013, worse here.</td>
+</tr>
+<tr>
+<td><strong>Informs</strong></td>
+<td><a href="../complement-c5a-gout/"><code>complement-c5a-gout.md</code></a> — CP0 status update: dietary-modulator axis newly active alongside engineered-DAF axis. <a href="../modality-chokepoint-matrix/"><code>modality-chokepoint-matrix.md</code></a> — proposed new row "upstream complement modulator (dietary / small-molecule)". <a href="../tcm-gout-compound-triage-computational/"><code>tcm-gout-compound-triage-computational.md</code></a> — luteolin third-mechanism update. <a href="../medicinal-mushroom-compound-mapping-computational/"><code>medicinal-mushroom-compound-mapping-computational.md</code></a> — Ganoderma triterpene anticomplement adds to comp-014. <a href="../hypotheses/H05-daf-scr14-cp0-thesis/"><code>hypotheses/H05-daf-scr14-cp0-thesis.md</code></a> — engineering coordination + C1-INH parallel thread. <a href="../gout-action-guide/"><code>gout-action-guide.md</code></a> — luteolin-rich foods + rosmarinic acid sources flagged as future research.</td>
+</tr>
+<tr>
+<td><strong>Experiment folder</strong></td>
+<td><a href="../experiments/comp-018-upstream-complement-modulator-sweep/"><code>experiments/comp-018-upstream-complement-modulator-sweep/</code></a></td>
+</tr>
+<tr>
+<td><strong>Interpretive wiki page</strong></td>
+<td><a href="../upstream-complement-modulator-sweep-computational/"><code>wiki/upstream-complement-modulator-sweep-computational.md</code></a></td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2026-05-08</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Phase 1 complete. Phase 2 (CNKI/WanFang/J-STAGE multilingual ingestion + translation cross-check; engineered C1-INH protease stability comp-NNN; complestatin BGC LBP heterologous expression scope) queued. <strong>Note:</strong> comp-018's brief inadvertently included user-framing language that biased headline-promotion toward rosmarinic acid; brief-scrubbed verification re-run as comp-020 below produced different ranking. See <code>operations/comp-018-vs-comp-020-retrospective.md</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="comp-020-upstream-complement-modulator-sweep-brief-scrubbed-verification-re-run">comp-020 — Upstream Complement Modulator Sweep (Brief-Scrubbed Verification Re-Run)<a class="headerlink" href="#comp-020-upstream-complement-modulator-sweep-brief-scrubbed-verification-re-run" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Question</strong></td>
+<td>Across the upstream complement cascade (C1q / MBL-MASP-2 / C3 tickover; convertases; soluble factors B/D/H/I/properdin/clusterin; membrane regulators DAF/CD59/CR1; residual C5/C5aR1), which compounds (any class — fungal, plant, bacterial, marine, dietary, FDA-approved, TCM/Kampo/Ayurvedic) have documented direct modulator activity in matched assay format, anchored only to target nodes (no compound names supplied, no prior comp-018 findings consulted)?</td>
+</tr>
+<tr>
+<td><strong>Method</strong></td>
+<td>Paperclip MCP literature mining (PMC + bioRxiv full-text + abstracts; <code>search</code>/<code>grep</code>/<code>cat</code> only — <code>map</code> operator NOT used per <code>memory/feedback_paperclip_map_unreliable.md</code>); per-target anchor queries for 13 named upstream complement nodes; WebSearch supplements for primary-paper PubMed records not in Paperclip corpus; ChEMBL coverage spot-check via PubChem cross-reference. Pre-commit grep-verification gate per CLAUDE.md Rule 4 — every load-bearing IC50/CH50/AP50 value verified against primary-paper full text before being written. Multilingual default (CLAUDE.md §Global-multilingual) — substantively executed for Chinese-author/English-journal scans; CNKI/WanFang/J-STAGE direct queries partially executed (Phase 2 follow-up flagged).</td>
+</tr>
+<tr>
+<td><strong>Verdict</strong></td>
+<td><strong>NO single headline compound</strong> — three classes occupy distinct top-tier mechanistic positions and are within ~5–20× of each other on respective lead metrics. <strong>Top tier per node:</strong> (1) C1q-cascade — Helicteres benzofuran lignans machicendonal + (7S,8R)-dihydrodehydrodiconiferyl alcohol (CH50 9+40 μM, single paper, replication needed) and luteolin (CH50 190 μM, multi-mechanism candidate already in corpus); (2) MASP-2/LP — heparin oligosaccharides (octa- 3 / hexa- 4 / tetra- 21 μg/mL LP-selective) and Bupleurum chinense polysaccharide (LP IC50 98 μg/mL); (3) C3 convertase — rosmarinic acid (C3b covalent IC50 34 μM, 30+ year primary-literature record across 3 papers, dietary-tier accessible, mechanistically distinctive); (4) Marine sulfated polysaccharides — ANW + SC + SJW-3 within 3× of each other at 1–3 μg/mL. <strong>Coverage gaps surfaced:</strong> Factor H <em>upregulators</em> (empty natural-product class), CD55/CD59/CR1 <em>upregulators</em> (engineering-thread territory), direct fungal natural-product upstream complement modulators (independently extends comp-014's C5aR1 finding to all upstream nodes), bacterial-metabolite direct upstream modulators.</td>
+</tr>
+<tr>
+<td><strong>Key finding</strong></td>
+<td><strong>Three independent computational scans now agree</strong> (comp-013 TCM, comp-014 fungi, comp-020 upstream complement) that ChEMBL is structurally biased — coverage rate ~20% across surveyed natural-product / polysaccharide / TCM phytochemical compounds, vs. typical &gt;70% for kinases/GPCRs. Primary-literature mining (Paperclip / PubMed / CNKI / J-STAGE) is the load-bearing tool, not ChEMBL. <strong>Two assay-format spreads documented:</strong> rosmarinic acid 44× spread (C3b 34 μM → C5 convertase 1500 μM — primary mechanism is upstream of C5 convertase) and heparin 50× spread (LP 2 → AP 76 μg/mL — pathway-stratified assays use different serum dilutions and different downstream readouts). The "no headline" surface ALSO surfaces <strong>convergence-multi-mechanism candidate luteolin</strong> — the only compound in the OE corpus with documented activity at three independent gout chokepoints (XO IC50 550 nM per comp-013, URAT1 expression downregulation per comp-013, complement CP+AP CH50 190 μM per comp-020). <strong>Rosmarinic acid is the highest mechanistic-distinctiveness candidate</strong> (covalent C3b modification, not broad-cascade flavonoid pattern) — concrete Phase 2 test: rosmarinic acid + MSU crystal surface C3b deposition + C5a generation suppression assay, currently not in the surveyed literature.</td>
+</tr>
+<tr>
+<td><strong>Informs</strong></td>
+<td><a href="../complement-c5a-gout/"><code>complement-c5a-gout.md</code></a> — natural-product / dietary / repurposing thread of CP0 coverage, complementary to the comp-012 engineering thread; <a href="../hypotheses/H05-daf-scr14-cp0-thesis/"><code>hypotheses/H05-daf-scr14-cp0-thesis.md</code></a> — surfaces parallel exploration vectors that could close CP0 coverage if H05 wet-lab outcome is reject; <a href="../tcm-gout-compound-triage-computational/"><code>tcm-gout-compound-triage-computational.md</code></a> — luteolin convergence (XO + URAT1 + complement); <a href="../medicinal-mushroom-compound-mapping-computational/"><code>medicinal-mushroom-compound-mapping-computational.md</code></a> — comp-014 C5aR1 finding independently extended to all upstream complement nodes (zero direct fungal natural-product modulators).</td>
+</tr>
+<tr>
+<td><strong>Experiment folder</strong></td>
+<td><a href="../experiments/comp-020-upstream-complement-verification-rerun/"><code>experiments/comp-020-upstream-complement-verification-rerun/</code></a></td>
+</tr>
+<tr>
+<td><strong>Interpretive wiki page</strong></td>
+<td><a href="../upstream-complement-verification-rerun-computational/"><code>wiki/upstream-complement-verification-rerun-computational.md</code></a></td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2026-05-08</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Phase 1 complete (literature mining + per-node tables + assay-format heterogeneity log + ChEMBL coverage gap + multilingual partial-execution disclosure). <strong>This is a brief-scrubbed verification re-run; predecessor (comp-018) outputs were NOT consulted during this run.</strong> Comparison against predecessor queued for separate sweep walkthrough. Phase 2 follow-ups: CNKI/WanFang Chinese-language deep dive; J-STAGE Kampo query; Helicteres lignan replication; rosmarinic acid + MSU surface assay; comp-021 candidate (compound × upstream-complement chokepoint × matched-assay-format mapping).</td>
+</tr>
+<tr>
+<td>---</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="comp-001-uricase-shio-koji-protease-stability">comp-001 — Uricase Shio-Koji Protease Stability<a class="headerlink" href="#comp-001-uricase-shio-koji-protease-stability" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -4522,6 +4682,54 @@
 <tr>
 <td><strong>Status</strong></td>
 <td>Complete (with verification-pending caveat — magnitudes are abstract-level / WebSearch-summary-level, not full-text grep-verified per <a href="../manual-literature-mining/"><code>manual-literature-mining.md</code></a> §Pre-commit verification gate; multilingual scan also deferred to Phase 2)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="comp-019-gut-lumen-uricase-abcg2-genotype-stratification-flux-model">comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model<a class="headerlink" href="#comp-019-gut-lumen-uricase-abcg2-genotype-stratification-flux-model" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Question</strong></td>
+<td>Can the gut-lumen uricase sink produce meaningful serum urate reduction in non-Q141K males, or does the mechanism rely on Q141K-positive disease-state ABCG2 vulnerability? Phase A literature stratification mining (oral + systemic uricase trials × Q141K genotype). Phase B first-principles flux model predicting ΔSUA in WT-male / Q141K-het male / Q141K-hom male / female / severe-dysfunction under three uricase-dose scenarios.</td>
+</tr>
+<tr>
+<td><strong>Method</strong></td>
+<td><strong>Phase A:</strong> PubMed MCP + WebSearch + WebFetch against Q141K × ULT response literature (Wallace 2018 OR=2.43 meta-analysis; Vora 2021 oxypurinol PK/PD; Stamp 2019 allopurinol-sensitivity; Matsuo 2014 functional classification; Takada 2014 mouse Abcg2-KO; Nakayama 2011 transporter kinetics Km=8.24 mM, Vmax=6.96 nmol/min/mg), ALLN-346 Phase 2a Studies 201 (n=16) + 202 (n=19, terminated Sep 2022), PRX-115 Phase 1 (n=64), and the load-bearing direct human in-vivo measurement of jejunal urate secretion stratified by ABCG2 functional class (Miyazaki 2025 PMID 40033341 PMC11877951, n=34, double-balloon endoscopy). <strong>Phase B:</strong> Python stdlib flux model with Monte Carlo n=5000. Linear-regime ABCG2 transport (lumen urate ~0.6 µM far below Km 8240 µM); genotype scaling 100/75/50/25% per Matsuo 2014 / Miyazaki 2025; sink amplification factor 0.40; renal compensation 30% (sensitivity 0–50%). Three uricase-dose scenarios: 5 / 25 / 50 mg/day.</td>
+</tr>
+<tr>
+<td><strong>Verdict</strong></td>
+<td><strong>The gut-lumen uricase mechanism does NOT depend on Q141K-positive disease-state vulnerability.</strong> WT/WT males show the LARGEST predicted ΔSUA (−0.83 mg/dL, 90% CI −1.13 to −0.57 at mid-dose 25 mg/day), Q141K hom males the smallest among typical-genotype patients (−0.50 mg/dL). Mechanism is multiplicative on residual ABCG2 capacity; non-Q141K patients have the most capacity to amplify. Severe ABCG2 dysfunction (~25% functional, Q126*+Q141K compound) shows the smallest absolute response (−0.28 mg/dL) — this is the platform's structural ceiling for the worst-impaired patients but applies only to the small severe-dysfunction subset.</td>
+</tr>
+<tr>
+<td><strong>Key finding</strong></td>
+<td><strong>TWO load-bearing findings.</strong> (1) Genotype ordering is INVERTED relative to the worry framing — WT/WT &gt; Q141K het &gt; Q141K hom &gt; severe dysfunction in absolute ΔSUA magnitude. The platform's primary demographic should remain "all gout patients," not be narrowed to Q141K-positive carriers. (2) <strong>Across the entire published clinical-trial corpus of oral and systemic uricase therapy, ZERO trials have stratified results by ABCG2 Q141K genotype.</strong> The Q141K × allopurinol response literature is rich (Wallace 2018, Vora 2021, Stamp 2019); the Q141K × uricase response literature is empty. Every uricase trial since rasburicase (2001) has missed an obvious pharmacogenomic stratification axis — this is publishable in itself. <strong>Strain-engineering implication:</strong> flux model predicts substrate-limited regime at all dose scenarios (capacity ratios 32–1300×). Yield target can stay at 25 mg/dose; engineering effort should shift further toward GI-survival optimization, not yield optimization.</td>
+</tr>
+<tr>
+<td><strong>Informs</strong></td>
+<td><a href="../cross-validation/"><code>cross-validation.md</code></a> Claim 1 — gut-lumen sink rating updated 6/10 → 6.5/10 (mechanism is genotype-robust per flux model; clinical magnitude prediction in −0.5 to −1.0 mg/dL band awaits Phase 2b RCT). <a href="../gut-lumen-sink/"><code>gut-lumen-sink.md</code></a> — patient-stratification note updated to reflect mechanism works MORE in non-Q141K than Q141K-positive patients. <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code></a> §6 — Q141K rescue interventions ADD to the gut-lumen sink rather than replacing it. <a href="../open-questions/"><code>open-questions.md</code></a> Open Question 1 — actioned. <a href="./synthesis.md"><code>synthesis.md</code></a> Sweep 2026-05-08 Open Question 1 — actioned. <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a> — Q141K + Q126<em> genotyping is now load-bearing for n=1 protocol interpretation. <a href="../engineered-yeast-uricase-proposal/"><code>engineered-yeast-uricase-proposal.md</code></a> — yield target can remain ~25 mg/dose; GI-survival becomes even more the binding engineering constraint. </em><em>Phase 2b RCT design recommendation:</em><em> run as typical-gout RCT with Q141K + Q126</em> as stratification variables, NOT enrichment criteria; single dose ~25 mg/day (dose-response is flat above ~5 mg/day); pre-stratify by CKD stage (renal compensation reserve dominates).</td>
+</tr>
+<tr>
+<td><strong>Experiment folder</strong></td>
+<td><a href="../experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/"><code>experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/</code></a></td>
+</tr>
+<tr>
+<td><strong>Interpretive wiki page</strong></td>
+<td><a href="../uricase-abcg2-genotype-stratification-computational/"><code>wiki/uricase-abcg2-genotype-stratification-computational.md</code></a></td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2026-05-08</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Complete (with prospective qualifier — flux-model predictions await Phase 2b RCT validation; abstract-tier verification on most ABCG2 kinetics + Q141K-allopurinol numbers, full-text grep-verified for Miyazaki 2025; multilingual scan deferred but unlikely to surface a missed Q141K × uricase RCT given the strong indexing of Q141K × allopurinol).</td>
 </tr>
 </tbody>
 </table>
@@ -5005,6 +5213,17 @@
 </tr>
 </tbody>
 </table>
+<hr />
+<h2 id="infrastructure-proposals">Infrastructure proposals<a class="headerlink" href="#infrastructure-proposals" title="Permanent link">&para;</a></h2>
+<h3 id="comp-nnn-verification-agent-clockbase-hypothesis-then-verify-pattern-added-2026-05-08">comp-NNN verification agent (ClockBase hypothesis-then-verify pattern) — added 2026-05-08<a class="headerlink" href="#comp-nnn-verification-agent-clockbase-hypothesis-then-verify-pattern-added-2026-05-08" title="Permanent link">&para;</a></h3>
+<p><strong>The proposal.</strong> Every comp-NNN run produces a primary output report from a <em>generation</em> agent (the subagent that does the literature mining / structure analysis / breadth scan). Add a second pass: a <em>verification</em> agent (potentially a different LLM per the multi-vendor heterogeneity discipline in <a href="../open-source-platform/"><code>open-source-platform.md</code></a> §"Multi-model synthesis as guard against epistemic homogenization") that re-checks every load-bearing number — disulfide counts, residue indices, IC50/Ki values, organism identities, accession numbers, cohort sizes — against primary databases (UniProt, ChEMBL, PDB, PubMed, NCBI Taxonomy) BEFORE the comp-NNN output is considered complete.</p>
+<p><strong>Source pattern.</strong> <a href="../autonomous-screening-methodology/"><code>autonomous-screening-methodology.md</code></a> §"Hypothesis-then-verify pattern" extracts this from the ClockBase Agent paper (Ying, Tyshkovskiy, Gladyshev et al. bioRxiv 2023.02.28.530532v3) where it's the load-bearing architectural feature that lets ClockBase's autonomous-screening output be wet-lab-handoff-quality.</p>
+<p><strong>Sister discipline at a different scope.</strong> <a href="../manual-literature-mining/"><code>manual-literature-mining.md</code></a> §"Pre-commit verification gate" applies the same pattern at the per-page commit scope (CLAUDE.md Rule 4). This proposal applies it at the per-comp-NNN run scope. Same structural pattern (generate → verify against primary source); different operational scope. Naming the equivalence consolidates the discipline across both scopes.</p>
+<p><strong>The failure mode it would catch.</strong> The 2026-05-06 DAF SCR1-4 disulfide-count hallucination ("3 per SCR domain → 12 total" asserted in 4 places of prose narrative; primary-source-verified to be 8 per UniProt P08174) was caught by the multi-vendor sweep daemon 24h later via Pass 2 cross-check. A verification agent at comp-NNN-generation time would have caught it before the wrong number entered the corpus, preventing the overnight propagation into H05 and the downstream chaperone-load synergy panic. See <a href="../operations/notable-moments.md"><code>operations/notable-moments.md</code></a> 2026-05-06 entry for the canonical case.</p>
+<p><strong>Adjacent failure mode it would also catch.</strong> Today's brief-contamination retrospective (<a href="../operations/comp-018-vs-comp-020-retrospective.md"><code>operations/comp-018-vs-comp-020-retrospective.md</code></a>, 2026-05-08) demonstrated that <strong>brief-level</strong> contamination is structurally similar to model-level confabulation — different inputs to the same architecture produce different outputs, and independent re-running surfaces the discrepancy. The verification-agent proposal here is a NUMBER-level guard; the brief-scrubbing discipline (codified at <a href="../scripts/SWEEP-ARCHITECTURE.md"><code>scripts/SWEEP-ARCHITECTURE.md</code> §"Subagent brief hygiene"</a>) is a SCOPE-level guard. Both belong in the comp-NNN authoring discipline.</p>
+<p><strong>Implementation sketch.</strong> When a comp-NNN subagent finishes its primary output, the next step (before commit) is to spawn a verification subagent — different vendor preferred (e.g., Claude generates, DeepSeek verifies; or Opus generates, GPT-5.5 verifies). The verification agent's brief: read the primary output's load-bearing numerical claims, look each one up in the cited primary source via direct database query (UniProt API for protein features; PubMed MCP for trial values; ChEMBL API for bioactivity; etc.), and produce a verification report flagging any discrepancy. The primary subagent then either fixes flagged claims or marks them <code>[UNVERIFIED]</code> per CLAUDE.md Rule 4.</p>
+<p><strong>Cost.</strong> ~$3-5 per comp-NNN at current Opus/DeepSeek/GPT-5.5 rates; 10-30 minutes wall-clock added to the workflow. Cheap-enough-to-default-to.</p>
+<p><strong>Status.</strong> Planned infrastructure, not yet implemented. The discipline already exists informally — comp-018 vs. comp-020 (today's brief-contamination retrospective) was an ad-hoc verification re-run that worked. Codifying it as a routine comp-NNN step is the structural fix.</p>
 <hr />
 <h2 id="how-to-add-a-new-analysis">How to add a new analysis<a class="headerlink" href="#how-to-add-a-new-analysis" title="Permanent link">&para;</a></h2>
 <ol>

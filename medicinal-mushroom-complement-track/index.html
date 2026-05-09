@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../synthesis/" class="md-nav__link">
+      <a href="../synthesis/README.md" class="md-nav__link">
         
   
   
@@ -2034,6 +2034,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Why this isn&#39;t just &#34;buy mushroom supplements&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consumer-product-caveat-structure-dependent-glucan-nlrp3-directionality-added-2026-05-08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consumer-product caveat — structure-dependent β-glucan NLRP3 directionality (added 2026-05-08)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4380,6 +4397,7 @@
 <ul>
 <li><strong>Whole-fermentate Cordyceps (cordycepin + native pentostatin)</strong> — Phase 7-1b discovered that <em>C. militaris</em> natively co-produces pentostatin from the same BGC as cordycepin. Whole-fermentate preparations have the ADA-inhibitor safeguard built in. <strong>This is the cleanest single-organism medicinal-mushroom-complement product</strong> — fermented C. militaris on brown rice (4-8 week home cycle) delivers cordycepin + pentostatin in their natural ratio, no synergy assembly required.</li>
 <li><strong>GLPP + (purified) cordycepin</strong> — only relevant if purified cordycepin is the delivery format. With whole-fermentate Cordyceps, the ADA-inhibitor pairing is already intrinsic. Wet-lab gate (4-arm comparison) now answers: which delivery format wins on dose efficiency + reproducibility.</li>
+<li><strong>Whole-fermentate Cordyceps + GLPP (two-organism stack)</strong> — the cultivation-only, zero-engineering combination: fermented <em>C. militaris</em> (delivering cordycepin + native pentostatin) + <em>G. lucidum</em>-derived GLPP supplement. Targets ADA from two independent biochemical entry points — pentostatin (small-molecule competitive inhibitor) + GLPP (polysaccharide-peptide binding) — while cordycepin is the substrate whose half-life is being protected. This is the <strong>fermentable / enzymatically-naive intervention</strong> at the ADA chokepoint: requires only cultivating two GRAS fungi, no genetic engineering. Distinct from the whole-fermentate-Cordyceps-alone bullet above because GLPP adds a <em>second</em>, mechanistically orthogonal ADA-blockade path rather than substituting for the native pentostatin. Wet-lab gate: 4-arm ADA half-life assay (per Proposed Experiment in 2026-05-08 sweep) extended with a fifth arm — whole-fermentate <em>Cordyceps</em> + GLPP — to test whether the two-organism combination outperforms either single-organism preparation.</li>
 <li><strong>Engineered koji cordycepin (cns1+cns2) + GLPP supplement</strong> — the <em>engineered-koji-track</em> equivalent of the synergy pair. Koji's heterologous cordycepin lacks the natural pentostatin co-production unless the whole BGC is engineered in. May need pentostatin co-engineering OR GLPP supplementation as the ADA-inhibitor source. Open engineering question.</li>
 <li><strong>Engineered koji uricase + GLPP supplement</strong> — koji handles bulk urate degradation in gut lumen; GLPP modulates ADA upstream + GLUT9/OAT1 transporters for renal-side support. Cleanest cross-track synergy (engineering + cultivation).</li>
 </ul>
@@ -4550,6 +4568,15 @@
 <li><strong>Extract method opaque</strong> — water-only extracts miss terpenoids; ethanol-only extracts miss polysaccharides; consumers can't tell which they bought.</li>
 </ol>
 <p><strong>Open Enzyme's contribution to this track:</strong> publish reproducible cultivation + extraction + characterization protocols. Strain selection criteria. HPLC/MS validation methods. Make a comp-014-style triage repeatable for any open-source contributor. The chemistry IS in the public domain — what's missing is the rigor.</p>
+<h3 id="consumer-product-caveat-structure-dependent-glucan-nlrp3-directionality-added-2026-05-08">Consumer-product caveat — structure-dependent β-glucan NLRP3 directionality (added 2026-05-08)<a class="headerlink" href="#consumer-product-caveat-structure-dependent-glucan-nlrp3-directionality-added-2026-05-08" title="Permanent link">&para;</a></h3>
+<p><strong>Mushroom β-glucans are not a monolithic anti-inflammatory class.</strong> Their effect on the NLRP3 inflammasome is <em>structure-dependent</em> — different polysaccharide fractions from the same species can activate or inhibit NLRP3 depending on extraction method, branching pattern, and molecular weight.</p>
+<p>Per comp-014 Phase 5 (<a href="../medicinal-mushroom-compound-mapping-computational/">medicinal-mushroom-compound-mapping-computational.md</a>), as captured in <a href="../modality-chokepoint-matrix/"><code>modality-chokepoint-matrix.md</code></a>:</p>
+<ul>
+<li><strong><em>G. lucidum</em> exopolysaccharides (EPS)</strong> — secreted polysaccharide fractions from liquid-fermentation broth — can <strong>activate</strong> NLRP3 via the Dectin-1 / Syk pathway. Wrong direction for a gout intervention.</li>
+<li><strong><em>G. lucidum</em> spore-powder β-glucans / GLP</strong> — fractions from cracked-spore preparations or dual-decoction GLPP-enriched extracts — can <strong>inhibit</strong> NLRP3 (immune-training / Treg-induction mode of action). Right direction.</li>
+</ul>
+<p><strong>Why this matters for consumer products:</strong> a generic "reishi extract 1000mg" capsule is opaque about which polysaccharide fraction it contains. EPS-dominant preparations and spore-powder/GLPP-dominant preparations are functionally different products at the NLRP3 axis, and a gout patient can inadvertently <em>worsen</em> inflammation by picking the wrong fraction. The dual-decoction extraction protocol in <a href="../medicinal-mushroom-extract-sops/">SOP-1</a> is specifically designed to enrich for the GLPP fraction, not whole-extract β-glucan; this is part of why "compound content uncharacterized" (#2 above) is load-bearing rather than cosmetic.</p>
+<p><strong>Propagation discipline:</strong> when reishi / GLPP enters <a href="../supplements-stack/"><code>supplements-stack.md</code></a> as a catalog entry, OR enters <a href="../gout-action-guide/"><code>gout-action-guide.md</code></a> as a specific recommendation, this caveat must travel with it. Currently neither catalog mentions reishi specifically, so no propagation-gap exists today — but the manual <code>fresh-stack.py</code> discipline (see <a href="./synthesis.md#strategic-reflections-queue"><code>synthesis.md</code> Strategic Reflections Queue</a>) will need to flag this as a known caveat-with-the-compound entry when promotion eventually fires.</p>
 <h2 id="seven-phase-7-follow-ups-queued">Seven Phase 7 follow-ups queued<a class="headerlink" href="#seven-phase-7-follow-ups-queued" title="Permanent link">&para;</a></h2>
 <p>Same pattern as <code>engineered-lbp-chassis.md</code> and <code>sirna-urat1-modality.md</code>:</p>
 <ol>
@@ -4562,6 +4589,9 @@
 <li>
 <p><strong>Extract characterization protocol standardization</strong> — write the open-source SOPs for: (a) reishi dual-decoction extraction yielding GLPP-enriched fraction, (b) cordyceps water extraction yielding cordycepin + polysaccharide fraction, &copy; HPLC quantification methods + reference standards. The goal is reproducibility — an Open Enzyme contributor anywhere should be able to follow the SOP and produce a comparable extract.</p>
 </li>
+</ol>
+<p><strong>Sub-bullet (added 2026-05-08):</strong> the SOP-6 framework in <a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code></a> is the canonical standardization scaffold — kitchen → smartphone → bench → outsourced tiers, calibrate-once at Tier-3 / track-batches at Tier-2 discipline, per-compound method specs. <strong>Next operational step: a first-execution demonstration batch</strong> — commercial <em>C. militaris</em> grow kit (~$50-150) cultivated through Tier 1 yield + Tier 2 EGT colorimetry done at home (Ellman's reagent, well-established), with one outsourced Tier 3 HPLC reference run for cordycepin (~$200-400 CRO). Scope: cordycepin + EGT only; GLPP deferred until Tier 3 SEC-MALS access (load-bearing assay per Pass 3 caveat) is sourced. Cordycepin Tier 2 diazo-coupling stays speculative and is covered by follow-up #7's primary-literature verification pass before being committed to the SOP. Outcome: de-stubbed SOP-2 / SOP-3 with first-batch numbers; reproducibility benchmark for any open-source contributor's later batches. Currently unscheduled — needs a free Brian-weekend or a contributor with a grow setup.</p>
+<ol>
 <li>
 <p><strong>GLPP + cordycepin synergy wet-lab gate</strong> — comp-014 Phase 6 flagged this as the cleanest synergy pair in the breadth pass. Study design: PO HUA mouse model, 4 arms (control / GLPP alone / cordycepin alone / combination), measure SUA + cordycepin PK + ADA activity. Critical question: does ADA inhibition co-treatment extend cordycepin half-life enough to lower the daily dose meaningfully? This is a focused, falsifiable experiment.</p>
 </li>
