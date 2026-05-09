@@ -199,22 +199,39 @@ def extract_items_from_section(section_body: str, type_slug: str) -> list[dict]:
     body up to the first {{PEER-REVIEW}} marker is one item.
     """
     items = []
+    truncation_drops = []
     if type_slug in NUMBERED_SECTIONS:
         # Find each numbered item start
         item_starts = list(NUMBERED_ITEM_RE.finditer(section_body))
         if not item_starts:
-            return items  # empty section is OK
+            return items, truncation_drops  # empty section is OK
         for i, m in enumerate(item_starts):
             index_str = m.group(1)
             start = m.start()
             end = item_starts[i + 1].start() if i + 1 < len(item_starts) else len(section_body)
             content = section_body[start:end]
+            is_last_item = (i + 1 == len(item_starts))
             # Item should contain exactly one marker
             marker_count = content.count(MARKER)
             if marker_count == 0:
+                # Pass 2 (Gemini) routinely truncates mid-output on this workload —
+                # 3 of 5 historical logs and the 2026-05-09 dfd05a0 run all had a
+                # final item cut off mid-prose with no marker emitted. Treat the
+                # LAST item with no marker as truncation: drop it with a warning
+                # and proceed with the items that DO have markers. A mid-section
+                # missing marker (i.e. not the last item) is real corruption — fail.
+                if is_last_item:
+                    print(
+                        f"WARNING: Item {type_slug} #{index_str} has no {MARKER} marker — "
+                        f"likely Pass 2 truncation. Dropping this item and continuing.",
+                        file=sys.stderr,
+                    )
+                    truncation_drops.append({"type_slug": type_slug, "index": int(index_str)})
+                    continue
                 sys.exit(
-                    f"Item {type_slug} #{index_str} has no {MARKER} marker. "
-                    f"Pass 2 prompt requires exactly one marker per item."
+                    f"Item {type_slug} #{index_str} has no {MARKER} marker, and is not "
+                    f"the last item in the section. This indicates real corruption "
+                    f"(not just trailing truncation). Pass 2 prompt requires one marker per item."
                 )
             if marker_count > 1:
                 sys.exit(
@@ -229,17 +246,24 @@ def extract_items_from_section(section_body: str, type_slug: str) -> list[dict]:
         # Whole section between header and first marker is one item.
         marker_pos = section_body.find(MARKER)
         if marker_pos == -1:
-            sys.exit(
-                f"Single-paragraph section {type_slug} has no {MARKER} marker. "
-                f"Pass 2 prompt requires one."
+            # Same truncation-tolerance reasoning as above — riskiest-assumption
+            # and most-curious-thread sections come AFTER the numbered sections,
+            # so a missing marker here typically means Pass 2 truncated before
+            # writing it. Drop the section with a warning rather than fail-fast.
+            print(
+                f"WARNING: Single-paragraph section {type_slug} has no {MARKER} marker — "
+                f"likely Pass 2 truncation. Dropping this section and continuing.",
+                file=sys.stderr,
             )
+            truncation_drops.append({"type_slug": type_slug, "index": 1})
+            return items, truncation_drops
         # Include content through the marker (so the item body retains the marker
         # location for the substitution step). End-of-item is end of section body.
         items.append({
             "index": 1,
             "content": section_body.strip(),
         })
-    return items
+    return items, truncation_drops
 
 
 def extract_headline(content: str, type_slug: str, fallback_index: int) -> str:
@@ -367,8 +391,10 @@ def emit_history_file(
     reviewer: str,
     pass2_log_path: str,
     items: list[dict],
+    truncation_drops: list[dict] | None = None,
 ) -> Path:
     """Write the per-sweep history file."""
+    truncation_drops = truncation_drops or []
     by_type = Counter(item["type_slug"] for item in items)
     by_type_yaml = "\n".join(f"  {t}: {n}" for t, n in sorted(by_type.items()))
 
@@ -383,6 +409,38 @@ def emit_history_file(
         )
     table_body = "\n".join(table_rows)
 
+    truncation_yaml = ""
+    truncation_section = ""
+    if truncation_drops:
+        # YAML list of {type_slug, index} dicts. Compact inline form keeps the
+        # frontmatter readable when audit trail matters.
+        drop_entries = [
+            f"  - {{type: {d['type_slug']}, index: {d['index']}}}"
+            for d in truncation_drops
+        ]
+        truncation_yaml = (
+            f"truncation_drops_count: {len(truncation_drops)}\n"
+            f"truncation_drops:\n"
+            f"{chr(10).join(drop_entries)}\n"
+        )
+        drop_lines = [
+            f"- `{d['type_slug']}` #{d['index']}" for d in truncation_drops
+        ]
+        truncation_section = (
+            f"\n"
+            f"## Truncation drops\n"
+            f"\n"
+            f"Pass 2 output appears to have been cut off mid-stream by the synthesizer "
+            f"({synthesizer}). The following trailing items were dropped because they had "
+            f"no `{{{{PEER-REVIEW}}}}` marker:\n"
+            f"\n"
+            f"{chr(10).join(drop_lines)}\n"
+            f"\n"
+            f"This is an audit signal, not an error — the well-formed items were emitted "
+            f"normally. If truncation drops persist across sweeps, investigate Pass 2's "
+            f"output token budget or split the corpus.\n"
+        )
+
     content = (
         f"---\n"
         f"sweep_date: {sweep_date}\n"
@@ -394,6 +452,7 @@ def emit_history_file(
         f"items_emitted: {len(items)}\n"
         f"items_by_type:\n"
         f"{by_type_yaml}\n"
+        f"{truncation_yaml}"
         f"---\n"
         f"\n"
         f"# Sweep {sweep_date} — {sweep_sha}\n"
@@ -409,6 +468,7 @@ def emit_history_file(
         f"| Type | Index | File | Verdict | Path |\n"
         f"|---|---|---|---|---|\n"
         f"{table_body}\n"
+        f"{truncation_section}"
     )
 
     filename = f"{sweep_date}-{sweep_sha}.md"
@@ -521,6 +581,7 @@ def main():
 
     # Flatten into ordered list of items (preserving Pass 2 marker order)
     all_items = []
+    all_truncation_drops = []
     global_index = 0
     headline_extraction_failures = 0
     for section_text, type_slug in [(sections.get(t), t) for t in [
@@ -530,7 +591,8 @@ def main():
     ]]:
         if section_text is None:
             continue
-        section_items = extract_items_from_section(section_text, type_slug)
+        section_items, section_drops = extract_items_from_section(section_text, type_slug)
+        all_truncation_drops.extend(section_drops)
         for item in section_items:
             global_index += 1
             headline = extract_headline(item["content"], type_slug, global_index)
@@ -633,6 +695,7 @@ def main():
         args.reviewer,
         args.synthesis_log,
         emitted_records,
+        all_truncation_drops,
     )
 
     print(f"Emitted {len(emitted_records)} items to {queue_dir}")
