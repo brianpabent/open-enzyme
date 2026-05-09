@@ -387,24 +387,28 @@ jobs:
             --prompt-file "$REVIEWER_PROMPT" \
             > "$REVIEWS_FILE"
 
-          # Run the deterministic merge — Pass 2 content preserved verbatim
+          # Run the per-item emitter — Pass 2 content preserved verbatim
+          # --sweep-date: ISO date of the trigger commit (UTC) per spec §5.1
+          SWEEP_DATE=$(git log -1 --format=%cd --date=short "${{ github.sha }}")
           python3 scripts/synthesis-emit-files.py \
             --synthesis-log "$SYNTHESIS_LOG" \
             --reviews-file "$REVIEWS_FILE" \
             --commit-sha "${{ github.sha }}" \
+            --sweep-date "$SWEEP_DATE" \
             --diff-base "$DIFF_BASE" \
             --trigger-files "$(echo "$TRIGGER_FILES" | tr '\n' ',' | sed 's/,$//')" \
             --synthesizer "google/gemini-2.5-pro" \
             --reviewer "$REVIEWER_MODEL"
 
-          # Commit the synthesis.md prepend
-          if git diff --quiet synthesis/queue/; then
-            echo "Pass 3 made no changes to synthesis.md"
+          # Commit the per-item queue + history emit. The script writes to BOTH
+          # synthesis/queue/ AND synthesis/history/, so check both.
+          if git diff --quiet synthesis/queue/ synthesis/history/; then
+            echo "Pass 3 made no changes to synthesis/"
             exit 0
           fi
 
-          git add synthesis/queue/
-          git commit -m "sweep-3-review: Claude review of Gemini 2.5 Pro synthesis → synthesis/queue/ [skip-wiki-sweep]"
+          git add synthesis/queue/ synthesis/history/
+          git commit -m "sweep-3-review: ${REVIEWER_MODEL} review of Gemini 2.5 Pro synthesis → synthesis/queue/ + synthesis/history/ [skip-wiki-sweep]"
           REVIEW_COMMIT=$(git rev-parse HEAD)
           echo "Pass 3 review commit: $REVIEW_COMMIT"
 

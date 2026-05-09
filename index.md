@@ -12,13 +12,13 @@ Open source library of engineered, food-grade microbial strains producing therap
 
 ## Status
 
-**Current platform thesis:** One engineered *A. oryzae* koji strain expressing uricase + NLRP3 inhibitors, fermented on rice bran, positioned as adjunct to allopurinol for gout — not a monotherapy replacement. Derivation in [synthesis/README.md](synthesis/README.md).
+**Current platform thesis:** One engineered *A. oryzae* koji strain expressing uricase + NLRP3 inhibitors, fermented on rice bran, positioned as adjunct to allopurinol for gout — not a monotherapy replacement. Derivation in [`synthesis/`](synthesis/README.md) (action queue + history + strategic reflections; per-item files in `synthesis/queue/` + `synthesis/done/`).
 
 **Two parallel outputs:** (1) A **discovery engine** — a chokepoint-based methodology for mapping every vector that causes, treats, or mitigates a given disease, applied first to gout. Produces a structured cascade map plus a repurposing surface (FDA-approved drugs that hit relevant chokepoints but were never clinically tested for the target disease). (2) An **open-source strain library** — the engineered-koji platform is one synthesis from the discovery engine. (source: open-enzyme-vision.md, §1–2)
 
 **Platform positioning:** Open Enzyme is a **food-derived, multi-target NLRP3 pathway modulator** platform — not an attempt to produce a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). The stack hits upstream priming (CP1a/CP1b), K⁺ efflux (CP2), active resolution (CP5b), and neutrophil amplification (CP6a) — chokepoints that pharma has not rigorously tested in gout. (source: open-enzyme-vision.md, §10)
 
-**Synthesis queue:** [synthesis/README.md](synthesis/README.md) — unreviewed cross-analysis findings. The sweep daemon prepends new findings here after each save; prune by deleting bullets you've acted on. Git preserves the full history.
+**Synthesis queue:** [`synthesis/queue/`](synthesis/queue/) — per-item daemon-emitted action queue (one file per finding). The sweep daemon emits a new file here after each Pass 3 review. Walkthrough closes items by appending a closure annotation + `git mv` to [`synthesis/done/`](synthesis/done/). Inbox-zero is automatic when queue/ is empty. Architecture overview at [`synthesis/README.md`](synthesis/README.md).
 
 **Cheapest next experiments** (from current synthesis, ordered by cost/ROI):
 
@@ -173,7 +173,7 @@ These are the long-form research documents that the shorter concept pages above 
 
 ## Cross-Analysis & Synthesis
 
-- **[Synthesis (current)](synthesis/README.md)** — Cross-doc connections, contradictions, and proposed experiments. The sweep daemon prepends new findings here after each save. **This is the action queue — read it, then prune what you've acted on.**
+- **[Synthesis (current)](synthesis/README.md)** — Cross-doc connections, contradictions, and proposed experiments. **The action queue lives at [`synthesis/queue/`](synthesis/queue/)** — one file per finding emitted by the daemon's Pass 3. Walkthrough closes items by appending closure annotation + `git mv` to [`synthesis/done/`](synthesis/done/). Inbox-zero is automatic when queue/ is empty.
 - **[Concept Graph](wiki/GRAPH.md)** — Mermaid diagram of all concept relationships (produces / inhibits / activates / requires / synergizes / degrades)
 
 ### Engineering & Design (deep dives)

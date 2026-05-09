@@ -24,7 +24,7 @@ Guidelines for any Claude or AI system working on this project. This document en
 ### wiki/ — Research Library (living)
 All research — long-form primary research docs and shorter synthesized concept pages — lives here side by side. Source of truth. The sweep daemon updates these as new findings land.
 
-- `synthesis/README.md` — Cross-doc connections, contradictions, proposed experiments. **Action queue.** Daemon prepends new findings after Pass 2; AI annotates actioned items inline as the work lands (`**✓ Actioned <date>:**` directly under the relevant Claude review block, briefly describing what landed in which file); Brian prunes manually in his review pass.
+- `synthesis/queue/` — Per-item daemon-emitted action queue (one file per Connection / Contradiction / Experiment / Open Question / Priority Action). **Walkthrough closes items by appending closure annotation + `git mv` to `synthesis/done/`.** Inbox-zero is automatic when queue/ is empty. See [`synthesis/README.md`](./synthesis/README.md) for the full directory architecture (queue/, done/, history/, strategic-reflections/).
 - `wiki/GRAPH.md` — Mermaid diagram of all concept relationships.
 - `wiki/[concept].md` — Individual wiki pages. Long-form research (e.g. `gout-deep-dive.md`, `engineered-koji-protocol.md`) and shorter concept pages (`uricase.md`, `nlrp3-inflammasome.md`) are both here. Organize by topic, not by length.
 
@@ -127,7 +127,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 - Prefer standard markdown links: `[uricase](./uricase.md)`, `[NLRP3 inflammasome](./nlrp3-inflammasome.md)`. These render on GitHub.
 - Obsidian-style `[[wiki-links]]` also work in Obsidian but don't render on GitHub. Use sparingly, and only in files you don't expect to share externally.
 - Include YAML frontmatter with `title`, `date`, `tags` (and `related`, `sources` when applicable).
-- Link to `index.md` for the dashboard, `synthesis/README.md` for the action queue.
+- Link to `index.md` for the dashboard, `synthesis/queue/` for the action queue (or `synthesis/README.md` for the architecture overview).
 
 **In index.md:**
 - Keep the dashboard (platform thesis, synthesis queue, cheapest experiments) at the top.
@@ -244,7 +244,7 @@ Most of this runs automatically via the sweep daemon — when you save a file un
 
 - **Source of truth:** `wiki/`
 - **Dashboard:** `index.md` (repo root)
-- **Action queue:** `synthesis/README.md`
+- **Action queue:** `synthesis/queue/` (per-item files); architecture at `synthesis/README.md`
 - **Canonical material (read-only):** `reference/`
 - **Published format:** `*.html` (do not edit directly)
 - **Metadata:** YAML frontmatter in all `.md` files

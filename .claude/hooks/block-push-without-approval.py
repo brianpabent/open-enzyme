@@ -7,9 +7,11 @@ the env var `CLAUDE_PUSH_AUTHORIZED=1` is set in the shell that invokes
 the command (or inline-prefixed on the command itself).
 
 Daemon trigger conditions (per .github/workflows/wiki-sweep.yml):
-  1. push to `main` branch where any file in `wiki/**.md` changed,
-     EXCEPT changes only to `synthesis/queue/` (synthesis is excluded
-     from the daemon trigger to prevent recursion)
+  1. push to `main` branch where any file in `wiki/**.md` changed.
+     Post-2026-05-08 migration: synthesis/ is sibling to wiki/, NOT under
+     wiki/, so daemon-emitted writes to synthesis/queue/ + synthesis/history/
+     never match the path filter. The `[skip-wiki-sweep]` commit-msg marker
+     remains the canonical recursion guard.
   2. workflow_dispatch (manual run via `gh workflow run wiki-sweep.yml`)
 
 Pushes to feature branches do NOT fire the daemon (only main triggers it).
@@ -115,10 +117,11 @@ def is_authorized(command: str) -> bool:
 
 
 def get_daemon_triggering_files() -> list[str]:
-    """Return wiki/**.md files (excluding synthesis.md) in unpushed
-    commits on the current branch, IF the current branch is main.
-    Returns empty list if (a) not on main, (b) no upstream configured,
-    or (c) no daemon-triggering wiki changes pending.
+    """Return wiki/**.md files in unpushed commits on the current branch,
+    IF the current branch is main. Returns empty list if (a) not on main,
+    (b) no upstream configured, or (c) no daemon-triggering wiki changes
+    pending. Post-2026-05-08 migration: synthesis/ is sibling to wiki/,
+    not under it, so synthesis/** paths don't appear here at all.
     """
     try:
         branch_proc = subprocess.run(
@@ -160,9 +163,11 @@ def get_daemon_triggering_files() -> list[str]:
     for line in diff_proc.stdout.strip().splitlines():
         if not line.endswith(".md"):
             continue
-        if line == "synthesis/queue/":
-            # Excluded from daemon trigger per workflow path filter
-            continue
+        # Post-2026-05-08 migration: synthesis/ is sibling to wiki/, NOT under it.
+        # The wiki-sweep daemon's path filter is `wiki/**.md` only — synthesis/**
+        # paths never match the filter, so no recursion guard is needed at the
+        # commit-content level. The [skip-wiki-sweep] commit-msg marker remains
+        # the canonical recursion guard for daemon-emitted commits.
         # wiki/**.md matches recursive — include hypotheses/, etc.
         daemon_triggering.append(line)
 

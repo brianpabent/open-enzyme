@@ -85,8 +85,9 @@ if not API_KEY:
     sys.exit("OPENROUTER_API_KEY not in env or .env")
 
 # --- Build the corpus ----------------------------------------------------------
-# All wiki/*.md including synthesis.md (V4 needs to see Claude's existing
-# Pass 2 to do a differential). Concatenate with === filename === separators.
+# All wiki/*.md only. Post-2026-05-08 migration `synthesis/` is sibling to
+# wiki/, not under it; excluded from this corpus by scope. Concatenate with
+# === filename === separators.
 #
 # OpenRouter caps deepseek/deepseek-v4-pro at 512K tokens (platform policy,
 # even though the model itself supports 1M). Excluding three low-synthesis-

@@ -93,7 +93,7 @@ def main() -> None:
     except (subprocess.SubprocessError, OSError):
         staged = []
     touches_wiki = any(
-        p.startswith("wiki/") and p.endswith(".md") and p != "synthesis/queue/"
+        p.startswith("wiki/") and p.endswith(".md")
         for p in staged
     )
 

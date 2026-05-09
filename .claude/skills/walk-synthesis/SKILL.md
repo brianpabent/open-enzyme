@@ -39,12 +39,14 @@ Before announcing the first item, do all of these:
    ```
    If `.claude/` paths block the rebase with "Operation not permitted," retry with `dangerouslyDisableSandbox: true`. If conflicts, resolve via the patterns in Section 8.
 
-2. **Read `synthesis/queue/` end-to-end.** Inventory every item. Synthesis files are typically structured: New Connections (N items), Contradictions Found (M items), Proposed Experiments (K items), Open Questions (J items), Priority Actions (L items). Total = N+M+K+J+L. **Number them globally** (item 1/total through item total/total) so Brian can navigate.
+2. **Inventory the queue.** Run `ls synthesis/queue/` to list every pending item. Each file is one item (Connection / Contradiction / Experiment / Open Question / Priority Action / Riskiest Assumption / Most Curious Thread / chembl-discrepancy). Filename format: `<sweep-date>-<type>-<index>-<slug>.md`. **Read each file** to surface its frontmatter (`type`, `pass3_verdict`, `overlap_with`) + headline + body + Pass 3 review. **Group by sweep date**, then by type within sweep, and **number globally** (item 1/total through item total/total) so Brian can navigate.
 
-3. **Look at the Strategic Reflections Queue at the bottom.** Note any pending content-triggered reflections. Do not action these as part of the walkthrough — they fire on substance, not on the walkthrough cadence.
+3. **Check `synthesis/strategic-reflections/`** for pending content-triggered reflections. Do not action these as part of the walkthrough — they fire on substance maturity, not on walkthrough cadence. Note them so Brian can see what's queued.
 
-4. **State the inventory back to Brian in one short message** before starting item 1. Format:
-   > "Sweep dated YYYY-MM-DD has X items: N Connections, M Contradictions, K Proposed Experiments, J Open Questions, L Priority Actions. Ready to walk them 1-by-1?"
+4. **Check `synthesis/history/`** for the most recent sweep entry — it holds the per-sweep narrative and the items table that grouped this batch.
+
+5. **State the inventory back to Brian in one short message** before starting item 1. Format:
+   > "Queue at `synthesis/queue/` has X items from sweep YYYY-MM-DD: N Connections, M Contradictions, K Proposed Experiments, J Open Questions, L Priority Actions [+ riskiest-assumption / most-curious-thread / chembl-discrepancy if present]. Ready to walk them 1-by-1?"
 
 5. **Check for in-flight subagents** (from prior sessions or earlier in this conversation). If any are running, note their target files so you don't collide.
 
@@ -108,33 +110,47 @@ Three execution patterns:
 
 | Action type | How |
 |---|---|
-| **Inline (you do it)** | Edit files directly. Most cross-link updates, small wiki-page additions, synthesis annotations. |
+| **Inline (you do it)** | Edit canonical wiki files directly. Most cross-link updates, small wiki-page additions, propagation. |
 | **Background subagent** | When the work is independent and you want to keep walking other items. See Section 4 for Sonnet vs. Opus decision. |
 | **Foreground subagent** | When the agent's result blocks the next item or you need its findings before continuing. |
-| **Already done** | If the existing wiki state already reflects the action, write a closure note in synthesis/queue/ closure annotation instead of re-doing the work. |
+| **Already done** | If the canonical wiki state already reflects the action, the closure annotation just says so. No new wiki work. |
 
-### Step D — Annotate `✓ Actioned`
+### Step D — Append closure annotation to the queue file (NOT to a shared synthesis.md)
 
-Immediately after the work lands, add this annotation directly under the relevant Claude review block in `synthesis/queue/`:
+Each item has its own file at `synthesis/queue/<sweep-date>-<type>-<index>-<slug>.md`. After the substantive action lands (or you confirm it's already done), **append the closure annotation to the bottom of that item's file**:
 
 ```markdown
-**✓ Actioned YYYY-MM-DD:** [What was done — name the files changed, key decisions made, and where the 
-work landed canonically. If the action was a closure note ("already done"), say so explicitly.] [Cross-link 
-to new pages, sections, or experiments created.] [If follow-ups were created, list them with where they're 
-tracked.]
+
+---
+
+## ✓ Actioned YYYY-MM-DD
+
+[What was done — name the files changed, key decisions made, and where the work landed canonically.
+If the action was a closure note ("already done"), say so explicitly.] [Cross-link to new pages, sections,
+or experiments created.] [If follow-ups were created, list them with where they're tracked.]
 ```
+
+The `---` separator + `## ✓ Actioned <date>` H2 keeps the closure visually distinct from the original Pass 2 / Pass 3 content above.
 
 **The annotation is non-optional.** It closes the loop and documents what shipped.
 
-### Step E — Commit immediately
+### Step E — `git mv` queue → done + commit
 
-Per Brian's git steward pattern (from the umbrella CLAUDE.md), commit after each substantive write — don't batch. The commit message:
+After the closure annotation is appended, **move the file** from `synthesis/queue/` to `synthesis/done/`:
+
+```bash
+git mv synthesis/queue/<sweep-date>-<type>-<index>-<slug>.md synthesis/done/
+```
+
+The `git mv` preserves the file's git history. Empty `synthesis/queue/` directory = inbox-zero by construction.
+
+Commit immediately per the umbrella CLAUDE.md git steward pattern. The commit message:
 
 ```
 sweep item N: <one-line action summary>
 
 <2-4 line body covering: what shipped, which files, any decisions made,
-any follow-ups queued. Cross-reference the queue-file annotation if useful.>
+any follow-ups queued. The queue→done move is part of this commit.>
 
 Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 ```
@@ -492,35 +508,25 @@ When a new wet-lab experiment has cost-escalating tiers gated on prior-tier resu
 
 After the last item is actioned and committed:
 
-### 7.1 — Inbox-zero pass on `synthesis/queue/`
+### 7.1 — Inbox-zero is automatic (post-2026-05-08 migration)
 
-The pruning convention is established by the file's own meta-header: actioned items get deleted (preserved in git history + sweep logs). When all items in a sweep block are actioned:
+**There is no manual inbox-zero pass anymore.** Each item's closure flow is `git mv synthesis/queue/<file>.md synthesis/done/` per Step E. When every queue file has been moved, the queue/ directory is empty by construction — that IS inbox zero.
 
-1. **Delete the entire sweep block** (Connections, Contradictions, Proposed Experiments, Open Questions, Priority Actions, Sources cited — the whole thing).
-2. **Preserve the Strategic Reflections Queue** (content-triggered, hasn't fired).
-3. **Update "Pending — open items"** to `**(none — inbox zero as of YYYY-MM-DD).**` plus a one-paragraph note pointing to the audit trail (`git log --since=YYYY-MM-DD` and `logs/v4-synthesis-*.md`).
-4. **Add a row to the Sweep history table** with date / trigger / synthesizer / reviewer / log path. If the sweep was a substantive duplicate of another, note that.
-5. **Update "Where actioned items live now"** to include any new canonical homes created during the walkthrough (new wiki pages, new H-cards, new comp-NNN folders, new validation-experiments §X.Y entries, new self-experiment-protocol sections).
+Verify before pushing:
 
-Target file size after pruning: ~80 lines (~2 KB). The 2026-05-05 inbox-zero dropped wiki/synthesis.md from 323 → 80 lines (pre-migration era).
-
-Commit:
+```bash
+ls synthesis/queue/                  # should show only .gitkeep (empty queue)
+ls synthesis/done/ | tail -10        # confirms today's items landed in done/
 ```
-synthesis: YYYY-MM-DD inbox-zero pass
 
-Pruned the YYYY-MM-DD sweep block (N items, all actioned during this session).
-[If duplicate sweep also pruned, name it.]
+If `synthesis/queue/` has only `.gitkeep` left, you're at inbox zero. No further bookkeeping. The pre-2026-05-08 manual prune pass (delete sweep block, update "Pending", add sweep-history row, update "Where actioned items live now") is **gone** — those concerns are now structural:
 
-File reduced from X → Y lines. Findings preserved in:
-- Canonical wiki pages (per "Where actioned items live now" — updated)
-- Sweep history table (entry added)
-- Strategic Reflections Queue (preserved)
-- git log + logs/v4-synthesis-*.md
+- "Pending" = whatever's in `synthesis/queue/` right now. Empty queue = no pending items.
+- "Sweep history" = `synthesis/history/` directory listing. Each sweep emits its own per-sweep history file via `synthesis-emit-files.py`.
+- "Where actioned items live now" = `synthesis/done/` for actioned items + canonical wiki pages for substantive content. Per-item granularity makes the manual index unnecessary.
+- "Strategic Reflections Queue" = `synthesis/strategic-reflections/` directory.
 
-Pending — open items: (none — inbox zero as of YYYY-MM-DD).
-
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
-```
+If a walkthrough creates a NEW canonical wiki page or NEW comp-NNN that's worth a separate cross-reference, surface it via the closure annotation in the relevant queue→done file (where the action happened) rather than maintaining a parallel index.
 
 ### 7.2 — Single push at end
 
@@ -529,7 +535,7 @@ cd "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme"
 git push
 ```
 
-The sweep daemon fires on push to `wiki/*.md`. Pushing once at end means **one daemon run, not N**.
+The sweep daemon fires on push to `wiki/**.md`. The walkthrough's commits typically touch wiki/ (canonical content updates) AND synthesis/ (queue→done moves). The wiki/ commits trigger the daemon; the synthesis/ moves are sibling-of-wiki and don't intersect the path filter, so daemon fires exactly once on the wiki updates. The `[skip-wiki-sweep]` marker is for daemon-emitted commits ONLY — never apply to walkthrough commits.
 
 ### 7.3 — Anticipate the merge
 
@@ -616,6 +622,8 @@ Fix: Re-anchor on the CTO-not-PhD framing rule (Section 2 Step A). Don't apologi
 ### End-of-item discipline anti-pattern (added 2026-05-08 from the third walkthrough-drift incident)
 
 14. **Don't treat "I committed the closure note" as "the item is done."** An item is done when (a) the action landed, (b) loose ends are dispositioned, AND (c) the user has explicitly approved moving on. Committing the closure note is necessary but not sufficient. Step F (Section 2) is the structural fix: end-of-item summary + loose-ends inventory + explicit user disposition before the next briefing fires. The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while four open loose ends (brief-contamination caveat propagation; methodological discipline doc; comp-018 page disclosure; retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally; Brian had to back the conversation up to Item 10; the unresolved loose ends turned into much larger work than they would have been if disposed of at end of Item 10. **Loose ends compound.** The fix is upstream of "should I move to Item N+1?" — explicit summary + loose-ends inventory before the question even fires. **Three categories** for each loose end (per Step F): acceptably deferred (already queued elsewhere); needs disposition now (user picks defer/action/ignore); carries over to Item X (explicitly anchored, will surface in that future briefing). Cross-item state is impossible to forget when it's surfaced as inherited loose ends in the future item's briefing.
+
+15. **Don't try to edit `wiki/synthesis.md` — it doesn't exist anymore.** Post-2026-05-08 migration, the action queue lives at `synthesis/queue/` (per-item files) and history at `synthesis/history/`. Old habits / muscle memory of "open synthesis.md, append closure to the actioned item, prune at end of walkthrough" are gone. New flow: `ls synthesis/queue/` to inventory; per-item file gets a closure annotation appended (Step D); `git mv synthesis/queue/<file>.md synthesis/done/` to close (Step E); inbox-zero is automatic (Section 7.1). Strategic Reflections live at `synthesis/strategic-reflections/`. Sweep history lives at `synthesis/history/<sweep-date>-<sha>.md`. Daemon emits new items via `scripts/synthesis-emit-files.py`. If you find yourself writing to `wiki/synthesis.md` STOP — the file is deleted; the changes won't persist where you think they will. Migration spec at [`operations/specs/2026-05-08-synthesis-filesystem-migration.md`](../../../operations/specs/2026-05-08-synthesis-filesystem-migration.md).
 
 ---
 

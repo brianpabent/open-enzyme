@@ -60,7 +60,7 @@ All research lives in `wiki/` — long-form primary documents and shorter synthe
 [BPC-157](wiki/bpc-157.md) · [KPV Tripeptide](wiki/kpv-peptide.md) · [BHB / Ketones](wiki/bhb-ketones.md) · [Oridonin](wiki/oridonin.md) · [Disulfiram](wiki/disulfiram.md)
 
 **Synthesis & Graph:**
-[Synthesis](synthesis/README.md) — cross-doc connections and proposed experiments (action queue) · [GRAPH.md](wiki/GRAPH.md) — Mermaid concept graph
+[Synthesis queue](synthesis/queue/) — per-item action queue (cross-doc connections, contradictions, proposed experiments); architecture at [`synthesis/README.md`](synthesis/README.md) · [GRAPH.md](wiki/GRAPH.md) — Mermaid concept graph
 
 ---
 
@@ -83,7 +83,7 @@ The project is recruiting PhD-level collaborators in three complementary domains
 ### For Researchers
 1. Read [open-enzyme-vision.md](wiki/open-enzyme-vision.md) (10 min)
 2. Browse [index.md](index.md) for the current platform thesis and concept map
-3. Check [synthesis/README.md](synthesis/README.md) for the latest cross-doc connections
+3. Check [`synthesis/queue/`](synthesis/queue/) for the latest cross-doc connections (one file per finding); architecture overview at [`synthesis/README.md`](synthesis/README.md)
 4. Dive into primary research docs for full citations and methodology
 
 ### For Engineers & Makers

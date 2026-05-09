@@ -263,15 +263,38 @@ def extract_headline(content: str, type_slug: str, fallback_index: int) -> str:
     return f"unnamed-item-{fallback_index}"
 
 
-def parse_verdict(review_text: str) -> tuple[str, str | None]:
-    """Extract verdict + optional overlap-with from a Pass 3 review blockquote."""
+def parse_verdict(review_text: str) -> tuple[str, str | None, int | None]:
+    """Extract (verdict, overlap_tag, duplicate_of_index) from a Pass 3 review blockquote.
+
+    Per spec §5.2, the OVERLAP tag and DUPLICATE-OF-N marker are distinct things:
+      - [OVERLAP: NOVEL|EXTENSION|RESTATEMENT] — the reviewer's classification of how
+        much of this finding is already in the wiki. Belongs in `overlap_tag` frontmatter.
+      - [DUPLICATE-OF-N] — the reviewer asserts this item is a near-duplicate of another
+        item by section_index N within this same sweep. The frontmatter `overlap_with`
+        gets resolved to the other item's emitted filename in a second pass over all items.
+
+    The pre-2026-05-08 implementation conflated these into a single `overlap_with` string
+    which was either the OVERLAP type ("NOVEL", etc.) — meaningless as a slug — or a bare
+    "item-N" placeholder rather than a real cross-link. Now they're separate fields.
+    """
     m = VERDICT_RE.search(review_text)
     verdict = m.group(1).strip() if m else "unknown"
     overlap_match = OVERLAP_RE.search(review_text)
-    overlap_with = None
+    overlap_tag = None
+    duplicate_of_index = None
     if overlap_match:
-        overlap_with = overlap_match.group(1) or f"item-{overlap_match.group(2)}"
-    return verdict, overlap_with
+        if overlap_match.group(1) is not None:
+            overlap_tag = overlap_match.group(1)
+        elif overlap_match.group(2) is not None:
+            duplicate_of_index = int(overlap_match.group(2))
+    return verdict, overlap_tag, duplicate_of_index
+
+
+def compute_filename(sweep_date: str, type_slug: str, section_index: int, headline: str) -> str:
+    """Compute the per-item filename. Used in pass 1 (filename map) and pass 2 (write)."""
+    base_slug = slugify(headline)
+    # <index> is the section_index, providing collision-proof disambiguation
+    return f"{sweep_date}-{type_slug}-{section_index}-{base_slug}.md"
 
 
 def emit_item_file(
@@ -285,13 +308,12 @@ def emit_item_file(
     body_with_marker_stripped: str,
     review_blockquote: str,
     verdict: str,
-    overlap_with: str | None,
+    overlap_tag: str | None,
+    overlap_with_filename: str | None,
     used_slugs: set,
 ) -> Path:
     """Write one item file. Returns the path."""
-    base_slug = slugify(headline)
-    # <index> is the section_index, providing collision-proof disambiguation
-    filename = f"{sweep_date}-{type_slug}-{section_index}-{base_slug}.md"
+    filename = compute_filename(sweep_date, type_slug, section_index, headline)
     path = queue_dir / filename
 
     if filename in used_slugs:
@@ -311,8 +333,14 @@ def emit_item_file(
         f"global_index: {global_index}",
         f"pass3_verdict: {verdict}",
     ]
-    if overlap_with:
-        frontmatter_lines.append(f"overlap_with: {overlap_with}")
+    if overlap_tag:
+        # Reviewer's [OVERLAP: NOVEL|EXTENSION|RESTATEMENT] classification —
+        # how much of this finding is already in the wiki.
+        frontmatter_lines.append(f"overlap_tag: {overlap_tag}")
+    if overlap_with_filename:
+        # Resolved cross-link to another emitted item in this same sweep
+        # (from a [DUPLICATE-OF-N] marker, where N is the other item's section_index).
+        frontmatter_lines.append(f"overlap_with: {overlap_with_filename}")
     frontmatter_lines.append("---")
     frontmatter = "\n".join(frontmatter_lines)
 
@@ -444,6 +472,11 @@ def main():
                         help="Directory for per-item queue files")
     parser.add_argument("--history-dir", default="synthesis/history",
                         help="Directory for per-sweep history files")
+    parser.add_argument("--sweep-date", default=None,
+                        help="ISO date (YYYY-MM-DD) of the trigger commit. "
+                             "Per spec §5.1: workflow_run's event.head_commit timestamp date in UTC. "
+                             "If unset, falls back to today's date — acceptable for local testing but "
+                             "the workflow MUST pass --sweep-date for correct filenames.")
     args = parser.parse_args()
 
     queue_dir = Path(args.queue_dir)
@@ -452,7 +485,7 @@ def main():
     history_dir.mkdir(parents=True, exist_ok=True)
 
     sweep_sha_short = args.commit_sha[:7]
-    sweep_date = datetime.date.today().isoformat()
+    sweep_date = args.sweep_date or datetime.date.today().isoformat()
 
     # --- Read Pass 2 log -----------------------------------------------------
     pass2_path = Path(args.synthesis_log)
@@ -535,11 +568,37 @@ def main():
             f"Pass 3 provided {len(reviews)} reviews. Investigate."
         )
 
+    # --- Parse Pass 3 verdicts + build (type_slug, section_index) → filename map ---
+    # Two-pass emission: pass 1 builds the filename map so DUPLICATE-OF-N markers can
+    # resolve to actual filenames; pass 2 writes the files with resolved cross-links.
+    parsed_reviews = [parse_verdict(r) for r in reviews]
+    section_index_to_filename: dict[tuple[str, int], str] = {}
+    for item in all_items:
+        section_index_to_filename[(item["type_slug"], item["section_index"])] = compute_filename(
+            sweep_date, item["type_slug"], item["section_index"], item["headline"]
+        )
+
     # --- Emit per-item files -------------------------------------------------
     used_slugs = set()
     emitted_records = []
-    for item, review in zip(all_items, reviews):
-        verdict, overlap_with = parse_verdict(review)
+    for item, review, (verdict, overlap_tag, duplicate_of_index) in zip(
+        all_items, reviews, parsed_reviews
+    ):
+        # Resolve [DUPLICATE-OF-N] to an emitted filename. N is a section_index, but the
+        # marker doesn't say which type's section_index — best effort: prefer the same
+        # type as the current item, then fall back to any type with that index. If we
+        # can't resolve, leave overlap_with unset rather than emitting a broken pointer.
+        overlap_with_filename: str | None = None
+        if duplicate_of_index is not None:
+            same_type = section_index_to_filename.get((item["type_slug"], duplicate_of_index))
+            if same_type:
+                overlap_with_filename = same_type
+            else:
+                for (t, idx), fn in section_index_to_filename.items():
+                    if idx == duplicate_of_index and (t, idx) != (item["type_slug"], item["section_index"]):
+                        overlap_with_filename = fn
+                        break
+
         # Strip the marker from the body content
         body_content = item["content"].replace(MARKER, "").rstrip()
         path = emit_item_file(
@@ -553,7 +612,8 @@ def main():
             body_content,
             review,
             verdict,
-            overlap_with,
+            overlap_tag,
+            overlap_with_filename,
             used_slugs,
         )
         emitted_records.append({

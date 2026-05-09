@@ -149,7 +149,7 @@ Read the TRIGGER block's `commit=` directive.
   chembl-refresh: quarterly sweep <YYYY-MM-DD> — <N> compounds, <M> discrepancies [skip-chembl-refresh] [skip-wiki-sweep]
   ```
 
-  Where `<N>` is the total number of compounds queried (baseline + new) and `<M>` is the count of meaningful discrepancies from Pass 4 ("0" if none). **Both markers are required**: `[skip-chembl-refresh]` prevents this workflow from re-triggering itself; `[skip-wiki-sweep]` prevents `wiki-sweep.yml` from firing on the `wiki/chembl-cross-check.md` change (which would be redundant since the refresh already synthesized into synthesis.md). **Do NOT use `[skip ci]`** — that's nuclear; it blocks every workflow including `deploy-docs.yml`, and the published site would go stale after every quarterly refresh. The workflow-specific markers are surgical.
+  Where `<N>` is the total number of compounds queried (baseline + new) and `<M>` is the count of meaningful discrepancies from Pass 4 ("0" if none). **Both markers are required**: `[skip-chembl-refresh]` prevents this workflow from re-triggering itself; `[skip-wiki-sweep]` prevents `wiki-sweep.yml` from firing on the `wiki/chembl-cross-check.md` change (which would be redundant since the refresh already wrote per-discrepancy files directly into `synthesis/queue/`). **Do NOT use `[skip ci]`** — that's nuclear; it blocks every workflow including `deploy-docs.yml`, and the published site would go stale after every quarterly refresh. The workflow-specific markers are surgical.
 
   If nothing was modified across any pass, **do not create an empty commit.** Exit cleanly and let the "Push refresh output" step no-op.
 
@@ -163,5 +163,5 @@ Read the TRIGGER block's `commit=` directive.
 - **Evidence levels required** on every new or revised claim.
 - **Inline provenance** on new content: `(source: ChEMBL v3X refresh <date>)`.
 - **No inline revision history.** Git is the history.
-- **Never write to:** `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*`, or any `wiki/*.md` other than `chembl-cross-check.md` and `synthesis.md`.
-- **Do not race the wiki-sweep workflow.** This refresh writes to a narrow set of files by design; cross-wiki propagation happens through `synthesis.md` and subsequent wiki-sweep runs.
+- **Never write to:** `reference/*`, `*.html`, `CLAUDE.md`, `README.md`, `scripts/*`, `.claude/*`, `.obsidian/*`, `.git/*`, or any `wiki/*.md` other than `chembl-cross-check.md`. Per-discrepancy items go directly to `synthesis/queue/<date>-chembl-discrepancy-N.md` (one file per discrepancy) — see Pass 4 for the file template.
+- **Do not race the wiki-sweep workflow.** This refresh writes to a narrow set of files by design; cross-wiki propagation happens through the per-item files in `synthesis/queue/` and subsequent wiki-sweep runs.

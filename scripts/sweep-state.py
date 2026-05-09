@@ -150,7 +150,7 @@ def cmd_pending_paths(_args: argparse.Namespace) -> None:
     )
     paths = [
         p for p in r.stdout.strip().splitlines()
-        if p and p != "synthesis/queue/"
+        if p
     ]
     for p in sorted(set(paths)):
         print(p)

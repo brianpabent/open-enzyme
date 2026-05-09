@@ -47,7 +47,7 @@ DEFAULT_PROMPT = "scripts/sweep-prompt-1-propagate.md"
 # Paths the model is forbidden to write to. Mirrors sweep-prompt-1-propagate.md
 # but enforced here so a misbehaving model can't cause damage.
 READ_ONLY_GLOBS = [
-    "synthesis/queue/",
+    "synthesis/**",
     "reference/**",
     "*.html",
     "CLAUDE.md",
@@ -595,7 +595,6 @@ def main():
         os.path.normpath(p) for p in changed_paths
         if p.startswith("wiki/") and p.endswith(".md")
         and os.path.normpath(p) not in trigger_set
-        and os.path.normpath(p) != "synthesis/queue/"
     })
 
     print(f"\nPropagated to {len(propagated_files)} files (excluding trigger set):", file=sys.stderr)
