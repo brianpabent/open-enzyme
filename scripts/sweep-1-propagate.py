@@ -47,7 +47,7 @@ DEFAULT_PROMPT = "scripts/sweep-prompt-1-propagate.md"
 # Paths the model is forbidden to write to. Mirrors sweep-prompt-1-propagate.md
 # but enforced here so a misbehaving model can't cause damage.
 READ_ONLY_GLOBS = [
-    "wiki/synthesis.md",
+    "synthesis/queue/",
     "reference/**",
     "*.html",
     "CLAUDE.md",
@@ -521,11 +521,11 @@ def main():
           "There is no git or shell — the harness will stage and commit your "
           "changes after you call done(). Do NOT attempt git operations.\n\n"
           "Read-only paths (the harness will reject writes to these): "
-          "wiki/synthesis.md, reference/, *.html, CLAUDE.md, README.md, "
+          "synthesis/queue/, reference/, *.html, CLAUDE.md, README.md, "
           "scripts/, .claude/, .obsidian/, .git/.\n\n"
           "Pass 1 scope: propagate the trigger findings to affected wiki "
           "pages with surgical edits. Do NOT synthesize, do NOT propose "
-          "experiments, do NOT touch wiki/synthesis.md (that is Pass 2's "
+          "experiments, do NOT touch synthesis/queue/ (that is Pass 2's "
           "job). When all needed edits are done, call done() with a "
           "one-paragraph summary."
     )
@@ -595,7 +595,7 @@ def main():
         os.path.normpath(p) for p in changed_paths
         if p.startswith("wiki/") and p.endswith(".md")
         and os.path.normpath(p) not in trigger_set
-        and os.path.normpath(p) != "wiki/synthesis.md"
+        and os.path.normpath(p) != "synthesis/queue/"
     })
 
     print(f"\nPropagated to {len(propagated_files)} files (excluding trigger set):", file=sys.stderr)

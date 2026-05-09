@@ -24,7 +24,7 @@ Subcommands:
                                     last_successful_sweep.
   pending-paths                   — print wiki/*.md files modified since
                                     last_successful_sweep.commit (excluding
-                                    wiki/synthesis.md).
+                                    synthesis/queue/).
   init                            — initialize the registry from the most
                                     recent existing v4-synthesis-*.md log
                                     and sweep-3-review commit. One-time
@@ -150,7 +150,7 @@ def cmd_pending_paths(_args: argparse.Namespace) -> None:
     )
     paths = [
         p for p in r.stdout.strip().splitlines()
-        if p and p != "wiki/synthesis.md"
+        if p and p != "synthesis/queue/"
     ]
     for p in sorted(set(paths)):
         print(p)

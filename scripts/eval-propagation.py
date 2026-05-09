@@ -501,7 +501,7 @@ def main():
           "Create new pages with write_file. When you are done, call done() with a one-paragraph "
           "summary of what you changed and why.\n\n"
           "Stay in scope: only propagate. Do not author new findings, do not run synthesis, "
-          "do not edit wiki/synthesis.md (that is Pass 2's job)."
+          "do not edit synthesis/queue/ (that is Pass 2's job)."
     )
 
     trigger_list = "\n".join(f"  - {f}" for f in scenario["trigger_files"])

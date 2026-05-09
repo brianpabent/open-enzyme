@@ -4,9 +4,9 @@ You are running **Pass 2** of the Open Enzyme sweep — full-corpus synthesis. P
 
 **Read `CLAUDE.md` first** for evidence-level standards, voice, and the **global-multilingual research default** rule (§"Global-multilingual research by default"). The wiki may have inherited Western-research bias from prior English-only synthesis passes; finding genuinely new connections often requires looking at non-English-source angles. If the corpus has compounds, mechanisms, or organisms with substantial Chinese / Japanese / Korean / German / Russian literature that the wiki doesn't reflect, that's exactly the kind of multi-level chain (Phase B "weakly-connected page pairs") this synthesis should surface.
 
-**Useful context (read but do not let it filter your output):** `wiki/synthesis.md` bottom-of-file sections — `## Sweep history` (audit trail), `## Where actioned items live now` (canonical homes for prior findings), `## Strategic Reflections Queue` (intentionally deferred reflections). And the most recent ~3 entries in the Sweep history table point to `logs/v4-synthesis-*.md` files showing what prior syntheses surfaced. **This context is for awareness, not for restriction.** A connection that touches an already-actioned area can still be genuinely novel — what matters is whether the *full synthesis you're proposing* (the chain, the angle, the platform-level pattern) is named anywhere in the wiki, not whether the sub-steps are. **Bias toward inclusion.** The cost of one duplicate finding is annoyance; the cost of one missed multi-level connection is significant. This project's edge is non-linear, multi-level synthesis — that's the daemon's central value, not a side effect to discipline. Pass 3 (Claude review) will tag duplicates downstream; you don't need to filter them upstream.
+**Useful context (read but do not let it filter your output):** `synthesis/queue/` bottom-of-file sections — `## Sweep history` (audit trail), `## Where actioned items live now` (canonical homes for prior findings), `## Strategic Reflections Queue` (intentionally deferred reflections). And the most recent ~3 entries in the Sweep history table point to `logs/v4-synthesis-*.md` files showing what prior syntheses surfaced. **This context is for awareness, not for restriction.** A connection that touches an already-actioned area can still be genuinely novel — what matters is whether the *full synthesis you're proposing* (the chain, the angle, the platform-level pattern) is named anywhere in the wiki, not whether the sub-steps are. **Bias toward inclusion.** The cost of one duplicate finding is annoyance; the cost of one missed multi-level connection is significant. This project's edge is non-linear, multi-level synthesis — that's the daemon's central value, not a side effect to discipline. Pass 3 (Claude review) will tag duplicates downstream; you don't need to filter them upstream.
 
-**Pass 2 only.** Read the full wiki corpus, find connections nobody has stated yet, and output a synthesis report. Do NOT modify any `wiki/*.md` file. Do NOT prepend to `wiki/synthesis.md` (Pass 3 — Claude review — will do that with critique annotations interleaved). Do NOT modify `index.md`, `wiki/GRAPH.md`, or `mkdocs.yml`.
+**Pass 2 only.** Read the full wiki corpus, find connections nobody has stated yet, and output a synthesis report. Do NOT modify any `wiki/*.md` file. Do NOT prepend to `synthesis/queue/` (Pass 3 — Claude review — will do that with critique annotations interleaved). Do NOT modify `index.md`, `wiki/GRAPH.md`, or `mkdocs.yml`.
 
 ---
 
@@ -30,7 +30,7 @@ This project's value is non-linear, multi-level, cross-domain synthesis. Surface
 
 Before producing any synthesis, scan the wiki and produce an internal-only enumeration of connections that are *already* explicit. You don't need to output this enumeration in your final synthesis log — it's a working step for you. The enumeration should cover:
 
-- Every connection that's a named section, callout, or first-class topic in a canonical wiki page (use `wiki/synthesis.md` "Where actioned items live now" as the index)
+- Every connection that's a named section, callout, or first-class topic in a canonical wiki page (use `synthesis/queue/` "Where actioned items live now" as the index)
 - Every connection in the most recent ~3 entries of the Sweep history table (read the corresponding `logs/v4-synthesis-*.md` files)
 - Every cross-reference in the trigger files' frontmatter `related:` fields and inline `[link](page.md)` references
 
@@ -168,14 +168,14 @@ Also include a `[PHASE-A-MATCH: <yes/no/partial>]` tag — your honest self-asse
 
 ## Drift guard
 
-If after reading the corpus you find no genuinely new connections — e.g., the trigger was a typo fix, or the synthesis would just restate what's already in the most-recent block of `wiki/synthesis.md` (verbatim, not just touching the same area) — output a brief note saying so and exit.
+If after reading the corpus you find no genuinely new connections — e.g., the trigger was a typo fix, or the synthesis would just restate what's already in the most-recent block of `synthesis/queue/` (verbatim, not just touching the same area) — output a brief note saying so and exit.
 
 ```markdown
 # Synthesis — <YYYY-MM-DD>
 **Status:** No new synthesis. <one-sentence reason>.
 ```
 
-Better to skip than to pollute the queue with low-signal entries. Pass 3 reviewer will see the no-op and prepend a corresponding short entry to `wiki/synthesis.md`.
+Better to skip than to pollute the queue with low-signal entries. Pass 3 reviewer will see the no-op and prepend a corresponding short entry to `synthesis/queue/`.
 
 **The drift guard is for genuinely empty triggers (typo fix, no semantic change), not for "your finding overlaps with an actioned area."** Overlap is fine — Pass 3 will tag it. The bar to skip is "I have literally nothing new at any level." When in doubt, output something. The structure is a maximum (3+3+3+3 is a target, not a quota); 1–2 high-quality items beat empty padding, but a thin synthesis still beats a no-op when the trigger files are non-trivial.
 

@@ -60,7 +60,7 @@ Three coordinated fixes — all under the same principle: **every pass must decl
 
 ### `propagated_files` (Pass 1 → Pass 2)
 
-Pass 1's Python driver now diffs its own commit and writes the list of *propagated files* (wiki pages it modified, excluding the original trigger set and `wiki/synthesis.md`) to `$GITHUB_OUTPUT`. The workflow promotes that to the `propagate` job's outputs, and Pass 2 receives both `trigger_files` (cause) and `propagated_files` (where new content now lives) as separate inputs.
+Pass 1's Python driver now diffs its own commit and writes the list of *propagated files* (wiki pages it modified, excluding the original trigger set and `synthesis/queue/`) to `$GITHUB_OUTPUT`. The workflow promotes that to the `propagate` job's outputs, and Pass 2 receives both `trigger_files` (cause) and `propagated_files` (where new content now lives) as separate inputs.
 
 The Pass 2 prompt's TRIGGER block names both lists explicitly with semantic labels and instructs the synthesizer: *"new cross-document connections are most likely to emerge from the union of the two sets — weight your attention there."*
 
@@ -75,7 +75,7 @@ Pass 3's driver was rewritten as a bounded agentic loop:
 1. **Warm cache** — at startup, inline both `trigger_files` and `cited_files` into the reviewer's initial prompt with `=== <path> (trigger|cited) ===` separators. This covers the most likely sources without any tool round-trip.
 2. **Read-only tools** — `read_file`, `list_files`, `grep`. The reviewer can investigate any file the cache missed. No edit, no write — Pass 3 is critique, not propagation.
 3. **Iteration cap** — `MAX_TOOL_ITERATIONS=8`. On the last iteration the driver sets `tool_choice: "none"` to force final output. A model that returns content with no tool calls signals completion.
-4. **Strict output scope preserved** — the merge script (`scripts/synthesis-merge.py`) still counts `<<<NEXT>>>` separators and bails on mismatch, so any preamble or commentary outside the blockquotes fails fast.
+4. **Strict output scope preserved** — the merge script (`scripts/synthesis-emit-files.py`) still counts `<<<NEXT>>>` separators and bails on mismatch, so any preamble or commentary outside the blockquotes fails fast.
 
 The cost trade-off: Pass 3 may now run multiple OpenRouter calls instead of one. In practice it tends to call 0–2 tools (most reviews don't need fetches beyond the warm cache), so the typical cost increase is small. The previous failure mode — review verdicts that admitted lack of access — was strictly worse than the bounded extra cost of letting the reviewer fetch on demand.
 

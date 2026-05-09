@@ -74,7 +74,7 @@ Make a tool call when ANY of these apply:
 - A factual claim names a specific number, residue, citation, or PMID that you haven't directly verified against the source.
 - The finding references a hypothesis card outside the inlined evidence — read it.
 
-Do not stop after the first or second round. A 6-marker review with thorough verification typically takes 6–12 tool calls. Stopping at 2 rounds is under-verification, not efficiency. The cost of an extra `grep` is trivial; the cost of letting a synthesizer error propagate into `wiki/synthesis.md` is non-trivial.
+Do not stop after the first or second round. A 6-marker review with thorough verification typically takes 6–12 tool calls. Stopping at 2 rounds is under-verification, not efficiency. The cost of an extra `grep` is trivial; the cost of letting a synthesizer error propagate into `synthesis/queue/` is non-trivial.
 
 Stop tool use only when:
 
@@ -87,9 +87,9 @@ Stop tool use only when:
 - **Defaulting to RESTATEMENT to be safe.** Under-tagging novelty erodes the multi-model heterogeneity guard's value.
 - **Defaulting to Partial when Push-back is correct.** Verifiable factual errors deserve Push-back, not softened verdicts.
 - **Skipping verification of "the page says X" claims.** This is exactly where the synthesizer is most error-prone (e.g., the H07 worked-example error).
-- **Preamble or thinking-out-loud before the first blockquote.** The merge script will substitute it into `wiki/synthesis.md` as part of the first review.
+- **Preamble or thinking-out-loud before the first blockquote.** The merge script will substitute it into `synthesis/queue/` as part of the first review.
 - **Reproducing the synthesizer's content.** The merge script keeps the synthesizer's prose verbatim; your output is only the review blockquotes.
-- **Editing files directly.** You are critique-only. The merge script writes to `wiki/synthesis.md`.
+- **Editing files directly.** You are critique-only. The merge script writes to `synthesis/queue/`.
 
 ## Tone — strong example
 
@@ -111,4 +111,4 @@ The strong version names the file, names the section, quotes the subsection titl
 
 The TRIGGER block names the Pass 2 synthesis log path and `marker_count: N`. The prompt below this divider inlines the synthesis log + an evidence cache (trigger files + cited files). The cache is the warm starting point; the tools fetch what the cache misses.
 
-When done, return your N review blockquotes — that signals completion. The driver writes them to the merge step, which substitutes them into `wiki/synthesis.md`.
+When done, return your N review blockquotes — that signals completion. The driver writes them to the merge step, which substitutes them into `synthesis/queue/`.

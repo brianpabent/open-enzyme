@@ -417,7 +417,7 @@ def main():
     for m in _re.finditer(r"wiki/[A-Za-z0-9_\-./]+\.md", content):
         path = m.group(0)
         # Don't include synthesis.md itself — it's the target, not a source
-        if path == "wiki/synthesis.md":
+        if path == "synthesis/queue/":
             continue
         cited_set.add(path)
 

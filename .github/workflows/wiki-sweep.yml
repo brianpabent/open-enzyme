@@ -17,7 +17,7 @@ name: Wiki Sweep (Hybrid)
 #   Pass 3 — Review (small input, critique)
 #       Reads the Pass 2 synthesis log, writes interleaved review (synthesizer
 #       content + Pass 3 verdict blockquote per item) prepended to
-#       wiki/synthesis.md. Verdict vocabulary: Confirmed / Confirmed-prioritize /
+#       synthesis/queue/. Verdict vocabulary: Confirmed / Confirmed-prioritize /
 #       Partial / Push-back / Rejected / Augment / Defer.
 #       scripts/sweep-prompt-3-review-gpt55.md (default; tuned for GPT-5.5).
 #       scripts/sweep-prompt-3-review.md (alternate; tuned for Anthropic models).
@@ -42,7 +42,11 @@ on:
     branches: [main]
     paths:
       - 'wiki/**.md'
-      - '!wiki/synthesis.md'
+      # Note: post-2026-05-08 migration, synthesis/ is sibling to wiki/, not under it.
+      # The path filter on wiki/**.md does not match synthesis/**, so the daemon
+      # naturally doesn't trigger on its own writes to synthesis/queue/ or
+      # synthesis/history/. The [skip-wiki-sweep] commit-msg marker remains the
+      # canonical recursion guard per migration spec §5.9.
   workflow_dispatch:
     inputs:
       trigger_paths:
@@ -306,7 +310,7 @@ jobs:
           retention-days: 30
 
   # ============================================================================
-  # PASS 3 — Claude review (interleaved into wiki/synthesis.md)
+  # PASS 3 — Claude review (interleaved into synthesis/queue/)
   # ============================================================================
   review:
     name: "Pass 3 — Review"
@@ -384,7 +388,7 @@ jobs:
             > "$REVIEWS_FILE"
 
           # Run the deterministic merge — Pass 2 content preserved verbatim
-          python3 scripts/synthesis-merge.py \
+          python3 scripts/synthesis-emit-files.py \
             --synthesis-log "$SYNTHESIS_LOG" \
             --reviews-file "$REVIEWS_FILE" \
             --commit-sha "${{ github.sha }}" \
@@ -394,13 +398,13 @@ jobs:
             --reviewer "$REVIEWER_MODEL"
 
           # Commit the synthesis.md prepend
-          if git diff --quiet wiki/synthesis.md; then
+          if git diff --quiet synthesis/queue/; then
             echo "Pass 3 made no changes to synthesis.md"
             exit 0
           fi
 
-          git add wiki/synthesis.md
-          git commit -m "sweep-3-review: Claude review of Gemini 2.5 Pro synthesis → wiki/synthesis.md [skip-wiki-sweep]"
+          git add synthesis/queue/
+          git commit -m "sweep-3-review: Claude review of Gemini 2.5 Pro synthesis → synthesis/queue/ [skip-wiki-sweep]"
           REVIEW_COMMIT=$(git rev-parse HEAD)
           echo "Pass 3 review commit: $REVIEW_COMMIT"
 

@@ -32,7 +32,7 @@ The canonical cursor is `logs/sweep-state.json`'s `last_successful_sweep.commit`
 python3 scripts/sweep-state.py pending-paths
 ```
 
-That command (a) reads the registry, (b) computes `git diff --name-only <last_successful_sweep.commit> HEAD -- 'wiki/*.md'`, (c) excludes `wiki/synthesis.md`, (d) prints one path per line, sorted and deduplicated.
+That command (a) reads the registry, (b) computes `git diff --name-only <last_successful_sweep.commit> HEAD -- 'wiki/*.md'`, (c) excludes `synthesis/queue/`, (d) prints one path per line, sorted and deduplicated.
 
 If the registry is missing (`logs/sweep-state.json` doesn't exist), bootstrap it once:
 
@@ -81,8 +81,8 @@ After the run finishes:
 # New synthesis log should exist
 ls -lt logs/v4-synthesis-*.md | head -3
 
-# wiki/synthesis.md should have a new sweep block prepended
-git log -1 wiki/synthesis.md --format='%h %s'
+# synthesis/queue/ should have a new sweep block prepended
+git log -1 synthesis/queue/ --format='%h %s'
 ```
 
 If the workflow run failed, surface the failure mode (Pass 1 / Pass 2 / Pass 3) and which step. The hardened workflow should retry rebase 3× and retry transient API errors with backoff, so any remaining failures are likely real (auth, quota, prompt bug) rather than transient.
@@ -99,7 +99,7 @@ The skill accepts free-text args from the user:
 ## Don't
 
 - Don't fire if a wiki-sweep run is already in progress. Check `gh run list --workflow=wiki-sweep --limit 1` first; if status is `in_progress`, wait or skip.
-- Don't pass `wiki/synthesis.md` in the trigger_paths list. The workflow filter excludes it; passing it is silently ignored but signals you didn't read this skill.
+- Don't pass `synthesis/queue/` in the trigger_paths list. The workflow filter excludes it; passing it is silently ignored but signals you didn't read this skill.
 - Don't fall back to `git log --grep='^sweep'` (the workflow's brittle default). The whole point of this skill is to bypass that regex.
 - Don't update the registry yet — `logs/sweep-state.json` doesn't exist. After component #2 ships, update both this skill and the workflow to read/write it.
 

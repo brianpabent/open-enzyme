@@ -1,15 +1,15 @@
 ---
 name: walk-synthesis
-description: Walk wiki/synthesis.md item-by-item with Brian, propose action for each, execute with his go-ahead, annotate the actioned items, and finish with an inbox-zero pass + single-push handoff to the sweep daemon. Codifies the conventions discovered ad-hoc during the 2026-05-05 walkthrough — item discipline, CTO-not-PhD framing, subagent decision tree, multi-surface follow-up tracking, and final-push merge handling. Invoke when Brian says "walk the synthesis," "walk the sweep," "walk the queue," or `/walk-synthesis`.
+description: Walk synthesis/queue/ item-by-item with Brian, propose action for each, execute with his go-ahead, annotate the actioned items, and finish with an inbox-zero pass + single-push handoff to the sweep daemon. Codifies the conventions discovered ad-hoc during the 2026-05-05 walkthrough — item discipline, CTO-not-PhD framing, subagent decision tree, multi-surface follow-up tracking, and final-push merge handling. Invoke when Brian says "walk the synthesis," "walk the sweep," "walk the queue," or `/walk-synthesis`.
 ---
 
 # /walk-synthesis
 
-Walk `wiki/synthesis.md` item-by-item, action each with Brian's go-ahead, prune to inbox-zero, and ship the batch with a single push.
+Walk `synthesis/queue/` item-by-item, action each with Brian's go-ahead, prune to inbox-zero, and ship the batch with a single push.
 
 ## Background
 
-`wiki/synthesis.md` is the action queue produced by the wiki sweep daemon (multi-pass: propagate → synthesize → critique → DeepSeek peer-review). The daemon prepends new findings; humans (or AI in human's stead) action them and prune. This skill codifies the discipline that makes the walkthrough fast and consistent.
+`synthesis/queue/` is the action queue produced by the wiki sweep daemon (multi-pass: propagate → synthesize → critique → DeepSeek peer-review). The daemon prepends new findings; humans (or AI in human's stead) action them and prune. This skill codifies the discipline that makes the walkthrough fast and consistent.
 
 **Why this skill exists.** During the 2026-05-05 walkthrough, several things had to be discovered mid-session: that Brian wants explicit item-by-item walking (not batched action), that the CTO-not-PhD framing rule must be applied to every briefing, that follow-ups need multi-surface tracking to survive, that the daemon may run in parallel during a long session and create section-number collisions on push. This skill front-loads those lessons.
 
@@ -21,7 +21,7 @@ Walk `wiki/synthesis.md` item-by-item, action each with Brian's go-ahead, prune 
 |---|---|
 | Brian says "walk the synthesis" / "walk the sweep" / "walk the queue" | Yes |
 | `/walk-synthesis` invoked | Yes |
-| `wiki/synthesis.md` has items pending and Brian wants to process them | Yes |
+| `synthesis/queue/` has items pending and Brian wants to process them | Yes |
 | One specific item needs actioning (not full walkthrough) | Skip skill — action directly |
 | Brian wants only the inbox-zero cleanup pass | Skip to Section 7 |
 | You're mid-conversation and Brian says "let's keep going" on a walkthrough already in progress | Continue from current item; don't restart |
@@ -39,7 +39,7 @@ Before announcing the first item, do all of these:
    ```
    If `.claude/` paths block the rebase with "Operation not permitted," retry with `dangerouslyDisableSandbox: true`. If conflicts, resolve via the patterns in Section 8.
 
-2. **Read `wiki/synthesis.md` end-to-end.** Inventory every item. Synthesis files are typically structured: New Connections (N items), Contradictions Found (M items), Proposed Experiments (K items), Open Questions (J items), Priority Actions (L items). Total = N+M+K+J+L. **Number them globally** (item 1/total through item total/total) so Brian can navigate.
+2. **Read `synthesis/queue/` end-to-end.** Inventory every item. Synthesis files are typically structured: New Connections (N items), Contradictions Found (M items), Proposed Experiments (K items), Open Questions (J items), Priority Actions (L items). Total = N+M+K+J+L. **Number them globally** (item 1/total through item total/total) so Brian can navigate.
 
 3. **Look at the Strategic Reflections Queue at the bottom.** Note any pending content-triggered reflections. Do not action these as part of the walkthrough — they fire on substance, not on the walkthrough cadence.
 
@@ -111,11 +111,11 @@ Three execution patterns:
 | **Inline (you do it)** | Edit files directly. Most cross-link updates, small wiki-page additions, synthesis annotations. |
 | **Background subagent** | When the work is independent and you want to keep walking other items. See Section 4 for Sonnet vs. Opus decision. |
 | **Foreground subagent** | When the agent's result blocks the next item or you need its findings before continuing. |
-| **Already done** | If the existing wiki state already reflects the action, write a closure note in synthesis.md instead of re-doing the work. |
+| **Already done** | If the existing wiki state already reflects the action, write a closure note in synthesis/queue/ closure annotation instead of re-doing the work. |
 
 ### Step D — Annotate `✓ Actioned`
 
-Immediately after the work lands, add this annotation directly under the relevant Claude review block in `wiki/synthesis.md`:
+Immediately after the work lands, add this annotation directly under the relevant Claude review block in `synthesis/queue/`:
 
 ```markdown
 **✓ Actioned YYYY-MM-DD:** [What was done — name the files changed, key decisions made, and where the 
@@ -134,7 +134,7 @@ Per Brian's git steward pattern (from the umbrella CLAUDE.md), commit after each
 sweep item N: <one-line action summary>
 
 <2-4 line body covering: what shipped, which files, any decisions made,
-any follow-ups queued. Cross-reference the synthesis.md annotation if useful.>
+any follow-ups queued. Cross-reference the queue-file annotation if useful.>
 
 Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 ```
@@ -206,7 +206,7 @@ When to spawn an agent vs. action inline, and which model.
 | Work type | Action |
 |---|---|
 | Cross-link updates across 2–6 files | Inline |
-| Annotation in `synthesis.md` | Inline |
+| Annotation in `synthesis/queue/` | Inline |
 | New scope page following an established template | Inline (you've already mastered the template) |
 | Multi-query literature scan with judgment | Subagent (Opus) |
 | Computational experiment using established framework | Subagent (Sonnet, via `new-comp-experiment` skill) |
@@ -237,7 +237,7 @@ If unsure → Opus. Cost difference is small relative to the cost of low-quality
 2. **Immediately after launching, create a NEW TaskCreate entry** representing the future review step. Format: `"Item N+X — Review subagent results: <one-line description>"`. The task description should reference the subagent ID and the work it's doing.
 3. **Append this new task to the END of the walkthrough queue** by giving it a higher item number than the current highest. The walkthrough's total-item count goes up by 1 for each background subagent launched.
 4. **When the subagent's completion notification arrives, DO NOT process it immediately.** Update the existing review-task to mark it as "ready for review" (e.g., status comment, metadata field, or just the completion notification itself in the conversation). **Continue working on the current walkthrough item.** Do not let subagent completion become a drift trigger.
-5. **When the walkthrough naturally arrives at the review-task in normal item order**, present the subagent's findings to the user as that item's briefing, exactly like any other walkthrough item. Wait for explicit go-ahead before actioning. Annotate `wiki/synthesis.md` and commit per the standard step pattern.
+5. **When the walkthrough naturally arrives at the review-task in normal item order**, present the subagent's findings to the user as that item's briefing, exactly like any other walkthrough item. Wait for explicit go-ahead before actioning. Annotate `synthesis/queue/` and commit per the standard step pattern.
 
 **Why this rule exists.** During the 2026-05-06 walkthrough, three background subagents (comp-013 TCM triage, chaperone framework refinement, triple-cassette synergy modeling) returned asynchronously. Each completion arrived as a notification mid-conversation, and Claude treated each as "process now" rather than "queue for the user-approved review step." The completions compounded into momentum that carried Claude past Items 16-21 + cleanup work + the inbox-zero pass + the push to origin, all without per-item user approval. Robbed the user of being present for the first end-to-end test of caching + DeepSeek Pass 1 infrastructure he had spent the day building.
 
@@ -266,7 +266,7 @@ When multiple subagents are in flight, brief each on what files OTHER agents are
 
 - `wiki/computational-experiments.md` (any comp-NNN agent will edit this)
 - `wiki/modality-chokepoint-matrix.md` (peer-track scope-page agents edit per-modality sections)
-- `wiki/synthesis.md` (any agent can add an actioned annotation)
+- `synthesis/queue/` (any agent can add an actioned annotation)
 - `wiki/validation-experiments.md` (experiment-creating agents add §X.Y entries)
 - `experiments/lib/protease_stability.py` (locked — orchestrators import only, never modify)
 
@@ -285,14 +285,14 @@ When an item creates a new exploration vector, peer-track scope page, or set of 
 | 3. `wiki/computational-experiments.md` Planned Analyses table | Any comp-NNN follow-ups (with "Informs" pointing to the new page) |
 | 4. `wiki/hypotheses/HNN-<thesis>.md` falsification card stub | Forces "what would kill this thesis" framing; full population queued as a Phase 2 item |
 | 5. `index.md` cheapest-experiments table | The 1–2 highest-leverage Phase 2 items (the daemon-fires-on-push surface that catches Brian's eye most often) |
-| 6. `wiki/synthesis.md` actioned annotation + Strategic Reflections Queue | The annotation closes the item; the Reflections Queue holds content-triggered platform reframes |
+| 6. `synthesis/queue/` actioned annotation + Strategic Reflections Queue | The annotation closes the item; the Reflections Queue holds content-triggered platform reframes |
 
 **Phase taxonomy** (use these labels for clarity):
 - **Phase 1:** what we do now in this session
 - **Phase 2:** queued in silico follow-ups, no pharma-partner dependency, can be subagent-executed in future sessions
 - **Phase 3:** content-triggered reflections — fire when accumulated substance crosses a maturity threshold (not calendar-triggered)
 
-Phase 3 entries belong in the Strategic Reflections Queue subsection of `wiki/synthesis.md` so the daemon surfaces them on every sweep.
+Phase 3 entries belong in the Strategic Reflections Queue subsection of `synthesis/queue/` so the daemon surfaces them on every sweep.
 
 ---
 
@@ -362,7 +362,7 @@ related:
   - [parent-mechanism-page.md]
   - open-questions.md
   - open-enzyme-vision.md
-  - synthesis.md
+  - synthesis/queue/
   - hypotheses/HNN-<thesis>.md
 sources:
   - "[Key precedent 1 — citation]"
@@ -453,7 +453,7 @@ When a new wet-lab experiment has cost-escalating tiers gated on prior-tier resu
 
 **What it tests:** [1 paragraph framing the literature gap and why this matters]
 
-**Proposed in:** [synthesis.md reference]
+**Proposed in:** [synthesis/queue/ entry]
 
 **Background on the gap:** [1 paragraph]
 
@@ -492,7 +492,7 @@ When a new wet-lab experiment has cost-escalating tiers gated on prior-tier resu
 
 After the last item is actioned and committed:
 
-### 7.1 — Inbox-zero pass on `wiki/synthesis.md`
+### 7.1 — Inbox-zero pass on `synthesis/queue/`
 
 The pruning convention is established by the file's own meta-header: actioned items get deleted (preserved in git history + sweep logs). When all items in a sweep block are actioned:
 
@@ -502,7 +502,7 @@ The pruning convention is established by the file's own meta-header: actioned it
 4. **Add a row to the Sweep history table** with date / trigger / synthesizer / reviewer / log path. If the sweep was a substantive duplicate of another, note that.
 5. **Update "Where actioned items live now"** to include any new canonical homes created during the walkthrough (new wiki pages, new H-cards, new comp-NNN folders, new validation-experiments §X.Y entries, new self-experiment-protocol sections).
 
-Target file size after pruning: ~80 lines (~2 KB). The 2026-05-05 inbox-zero dropped synthesis.md from 323 → 80 lines.
+Target file size after pruning: ~80 lines (~2 KB). The 2026-05-05 inbox-zero dropped wiki/synthesis.md from 323 → 80 lines (pre-migration era).
 
 Commit:
 ```
@@ -557,7 +557,7 @@ git merge origin/main --no-edit  # may exit with conflicts
 
 Common conflict patterns:
 
-- **`wiki/synthesis.md`:** daemon's fresh sweep block usually duplicates content you already actioned. Take ours (the inbox-zero version). Add a sweep-history row noting the daemon's sweep was substantively duplicate.
+- **`synthesis/queue/`:** daemon's fresh sweep block usually duplicates content you already actioned. Take ours (the inbox-zero version). Add a sweep-history row noting the daemon's sweep was substantively duplicate.
 - **`wiki/validation-experiments.md`:** section-number collision (most common). Daemon assigned §1.X to its experiment; you assigned §1.X to a different experiment. Keep yours; renumber daemon's to §1.X+N (whichever has fewer cross-references). Update all cross-refs (search: `grep -rn "§1\.X" --include="*.md"`).
 - **`index.md`:** keep both sides; update any cross-refs whose section number changed.
 
@@ -639,4 +639,4 @@ Fix: Re-anchor on the CTO-not-PhD framing rule (Section 2 Step A). Don't apologi
 
 ## Provenance
 
-This skill codifies conventions discovered during the 2026-05-05 walkthrough of the 14-item DeepSeek V4-Pro / Gemini 2.5 Pro / Claude Opus 4.7 synthesis sweep on commit `734bf51` (and the substantively duplicate 2026-04-28 sweep). The session produced: comp-005 (lactoferrin), comp-006 (DAF/CD55, via Sonnet subagent), comp-007 (food-grade HDACi, via Sonnet subagent), the engineered LBP chassis scope page (sister to koji), the siRNA / URAT1 modality scope page (discovery-engine output), H02 + H03 falsification card stubs, validation-experiments §1.23 (androgen × MSU × NLRP3 four-tier protocol), self-experiment-protocol §11.1 (n=1 ex vivo PBMC MSU challenge), the androgen × NLRP3 literature scan section in `androgen-urate-axis.md`, and the inbox-zero pass on `synthesis.md`. The conventions in this skill are the rules that, in retrospect, would have made that session smoother.
+This skill codifies conventions discovered during the 2026-05-05 walkthrough of the 14-item DeepSeek V4-Pro / Gemini 2.5 Pro / Claude Opus 4.7 synthesis sweep on commit `734bf51` (and the substantively duplicate 2026-04-28 sweep). The session produced: comp-005 (lactoferrin), comp-006 (DAF/CD55, via Sonnet subagent), comp-007 (food-grade HDACi, via Sonnet subagent), the engineered LBP chassis scope page (sister to koji), the siRNA / URAT1 modality scope page (discovery-engine output), H02 + H03 falsification card stubs, validation-experiments §1.23 (androgen × MSU × NLRP3 four-tier protocol), self-experiment-protocol §11.1 (n=1 ex vivo PBMC MSU challenge), the androgen × NLRP3 literature scan section in `androgen-urate-axis.md`, and the inbox-zero pass on `synthesis/queue/`. The conventions in this skill are the rules that, in retrospect, would have made that session smoother.

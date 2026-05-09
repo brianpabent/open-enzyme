@@ -81,7 +81,7 @@ This week's sweep was a propagation pass — seven trigger files, seven affected
 
 ## Latest Synthesis
 
-The [Synthesis Queue](synthesis.md) captures cross-document connections, proposed experiments, and open questions. Updated by the sweep daemon as new research lands. Cheapest validated experiments are prioritized first.
+The [Synthesis Queue](../synthesis/README.md) captures cross-document connections, proposed experiments, and open questions. Updated by the sweep daemon as new research lands. Cheapest validated experiments are prioritized first.
 
 ---
 

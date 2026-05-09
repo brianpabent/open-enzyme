@@ -19,7 +19,7 @@ Two main use cases:
 2. **Second-opinion synthesis.** When you want fresh eyes on the corpus
    between daemon sweeps — a different vendor, a different prompt, a
    different time horizon — run this manually. It reads the full wiki
-   INCLUDING wiki/synthesis.md, so it sees what the daemon has already
+   INCLUDING synthesis/queue/, so it sees what the daemon has already
    surfaced and can produce a differential.
 
 Reads OPENROUTER_API_KEY from env first, falls back to .env. Saves output
@@ -111,7 +111,7 @@ corpus_chars = len(corpus)
 corpus_token_estimate = corpus_chars // 4  # rough English-prose ratio
 
 # --- Fresh-synthesis prompt ----------------------------------------------------
-# The substrate is the entire wiki corpus PLUS wiki/synthesis.md, so the model
+# The substrate is the entire wiki corpus PLUS synthesis/queue/, so the model
 # can see what the daemon's Pass 2 has been surfacing and produce a differential.
 # The prompt is intentionally model-agnostic — only the corpus and the model slug
 # vary between runs.
@@ -122,12 +122,12 @@ substrate_commit = subprocess.run(
 
 prompt = f"""You are running an independent full-corpus synthesis on the Open Enzyme research wiki.
 
-This wiki is normally maintained by a 3-pass daemon (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Review) that fires on each push. The most recent daemon-produced synthesis is at the top of `wiki/synthesis.md`. The wiki corpus below is the substrate; `wiki/synthesis.md` is included so you can see what the daemon has already surfaced.
+This wiki is normally maintained by a 3-pass daemon (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Review) that fires on each push. The most recent daemon-produced synthesis is at the top of `synthesis/queue/`. The wiki corpus below is the substrate; `synthesis/queue/` is included so you can see what the daemon has already surfaced.
 
 Your task: do an independent Pass-2-style synthesis on the same corpus, then compare against what the daemon has been finding.
 
 1. Read the entire corpus below (files concatenated under `=== filename ===` markers).
-2. Read the most recent block at the top of `wiki/synthesis.md` carefully — that's what the daemon's Pass 2 surfaced (with Pass 3 review verdicts inline).
+2. Read the most recent block at the top of `synthesis/queue/` carefully — that's what the daemon's Pass 2 surfaced (with Pass 3 review verdicts inline).
 3. Generate your own synthesis: new connections you would surface, contradictions you spot, experiments you would propose, open questions you would flag.
 4. Add a final **Differential Analysis** section: which of the daemon's findings do you confirm, partially-confirm, push back on, or reject? What did the daemon miss that you found? What did the daemon find that you did not? Be specific — cite document names and PMIDs where applicable.
 
@@ -272,7 +272,7 @@ cost_usd: {total_cost:.4f}
 # Fresh synthesis — {args.model} — {date_str}
 
 Independent full-corpus synthesis run via `scripts/fresh-synthesis.py`. The model
-read the entire wiki corpus (including `wiki/synthesis.md`, so it could see what
+read the entire wiki corpus (including `synthesis/queue/`, so it could see what
 the daemon's Pass 2 has been surfacing) and produced its own findings plus a
 differential analysis. Output below is verbatim model output, unedited.
 
@@ -289,4 +289,4 @@ with open(output_path, "w") as f:
     f.write(header + content + "\n")
 
 print(f"\nSaved: {output_path}")
-print(f"\nNext: read {output_path} and compare its Differential Analysis section against the most recent sweep block at the top of wiki/synthesis.md.")
+print(f"\nNext: read {output_path} and compare its Differential Analysis section against the most recent sweep block at the top of synthesis/queue/.")

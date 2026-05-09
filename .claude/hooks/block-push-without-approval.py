@@ -8,7 +8,7 @@ the command (or inline-prefixed on the command itself).
 
 Daemon trigger conditions (per .github/workflows/wiki-sweep.yml):
   1. push to `main` branch where any file in `wiki/**.md` changed,
-     EXCEPT changes only to `wiki/synthesis.md` (synthesis is excluded
+     EXCEPT changes only to `synthesis/queue/` (synthesis is excluded
      from the daemon trigger to prevent recursion)
   2. workflow_dispatch (manual run via `gh workflow run wiki-sweep.yml`)
 
@@ -160,7 +160,7 @@ def get_daemon_triggering_files() -> list[str]:
     for line in diff_proc.stdout.strip().splitlines():
         if not line.endswith(".md"):
             continue
-        if line == "wiki/synthesis.md":
+        if line == "synthesis/queue/":
             # Excluded from daemon trigger per workflow path filter
             continue
         # wiki/**.md matches recursive — include hypotheses/, etc.
