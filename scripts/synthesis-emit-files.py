@@ -209,12 +209,27 @@ def extract_items_from_section(section_body: str, type_slug: str) -> list[dict]:
             start = m.start()
             end = item_starts[i + 1].start() if i + 1 < len(item_starts) else len(section_body)
             content = section_body[start:end]
+            is_last_item = (i + 1 == len(item_starts))
             # Item should contain exactly one marker
             marker_count = content.count(MARKER)
             if marker_count == 0:
+                # Pass 2 (Gemini) routinely truncates mid-output on this workload —
+                # 3 of 5 historical logs and the 2026-05-09 dfd05a0 run all had a
+                # final item cut off mid-prose with no marker emitted. Treat the
+                # LAST item with no marker as truncation: drop it with a warning
+                # and proceed with the items that DO have markers. A mid-section
+                # missing marker (i.e. not the last item) is real corruption — fail.
+                if is_last_item:
+                    print(
+                        f"WARNING: Item {type_slug} #{index_str} has no {MARKER} marker — "
+                        f"likely Pass 2 truncation. Dropping this item and continuing.",
+                        file=sys.stderr,
+                    )
+                    continue
                 sys.exit(
-                    f"Item {type_slug} #{index_str} has no {MARKER} marker. "
-                    f"Pass 2 prompt requires exactly one marker per item."
+                    f"Item {type_slug} #{index_str} has no {MARKER} marker, and is not "
+                    f"the last item in the section. This indicates real corruption "
+                    f"(not just trailing truncation). Pass 2 prompt requires one marker per item."
                 )
             if marker_count > 1:
                 sys.exit(
@@ -229,10 +244,16 @@ def extract_items_from_section(section_body: str, type_slug: str) -> list[dict]:
         # Whole section between header and first marker is one item.
         marker_pos = section_body.find(MARKER)
         if marker_pos == -1:
-            sys.exit(
-                f"Single-paragraph section {type_slug} has no {MARKER} marker. "
-                f"Pass 2 prompt requires one."
+            # Same truncation-tolerance reasoning as above — riskiest-assumption
+            # and most-curious-thread sections come AFTER the numbered sections,
+            # so a missing marker here typically means Pass 2 truncated before
+            # writing it. Drop the section with a warning rather than fail-fast.
+            print(
+                f"WARNING: Single-paragraph section {type_slug} has no {MARKER} marker — "
+                f"likely Pass 2 truncation. Dropping this section and continuing.",
+                file=sys.stderr,
             )
+            return items
         # Include content through the marker (so the item body retains the marker
         # location for the substitution step). End-of-item is end of section body.
         items.append({
