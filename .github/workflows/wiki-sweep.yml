@@ -388,8 +388,10 @@ jobs:
             > "$REVIEWS_FILE"
 
           # Run the per-item emitter — Pass 2 content preserved verbatim
-          # --sweep-date: ISO date of the trigger commit (UTC) per spec §5.1
-          SWEEP_DATE=$(git log -1 --format=%cd --date=short "${{ github.sha }}")
+          # --sweep-date: ISO date of the trigger commit in UTC per spec §5.1.
+          # Uses %cI (strict-ISO) + cut to avoid committer-TZ off-by-one — Brian's
+          # -0400 commit at UTC 00:58 would otherwise render as the prior day.
+          SWEEP_DATE=$(git log -1 --format='%cI' "${{ github.sha }}" | cut -c1-10)
           python3 scripts/synthesis-emit-files.py \
             --synthesis-log "$SYNTHESIS_LOG" \
             --reviews-file "$REVIEWS_FILE" \
@@ -400,14 +402,17 @@ jobs:
             --synthesizer "google/gemini-2.5-pro" \
             --reviewer "$REVIEWER_MODEL"
 
-          # Commit the per-item queue + history emit. The script writes to BOTH
-          # synthesis/queue/ AND synthesis/history/, so check both.
-          if git diff --quiet synthesis/queue/ synthesis/history/; then
+          # Stage emitted files first, THEN check diff. The emitter writes NEW files
+          # to synthesis/queue/ + synthesis/history/, and `git diff` (without --cached)
+          # only sees changes to TRACKED files — newly created untracked files are
+          # invisible to that check, which silently dropped the first 19-item sweep
+          # post-migration on 2026-05-09. Stage-then-check-cached is the fix.
+          git add synthesis/queue/ synthesis/history/
+          if git diff --cached --quiet -- synthesis/queue/ synthesis/history/; then
             echo "Pass 3 made no changes to synthesis/"
             exit 0
           fi
 
-          git add synthesis/queue/ synthesis/history/
           git commit -m "sweep-3-review: ${REVIEWER_MODEL} review of Gemini 2.5 Pro synthesis → synthesis/queue/ + synthesis/history/ [skip-wiki-sweep]"
           REVIEW_COMMIT=$(git rev-parse HEAD)
           echo "Pass 3 review commit: $REVIEW_COMMIT"
