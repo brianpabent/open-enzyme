@@ -18,6 +18,7 @@ This analysis models the transit of *Aspergillus flavus* uricase (rasburicase so
 - Enteric coating or engineered acid resistance (via disulfide bonds) could improve survival to 40–50%, substantially reducing required dose.
 - Yeast cell wall protection is modest (~10–15% additional survival); insufficient as sole strategy.
 - The active window is the duodenum and jejunum (pH 5.5–7.5, ~45–120 min transit). Colon activity is negligible.
+- **Yield-vs-survival priority update (2026-05-08 per [comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model):** The gut-lumen uricase mechanism is **substrate-limited, not enzyme-limited** — capacity ratios 32–1300× across dose scenarios. Engineering cycles should shift away from yield optimization toward GI-survival optimization. (Mechanistic Extrapolation — in silico; source: uricase-abcg2-genotype-stratification-computational.md)
 
 ---
 

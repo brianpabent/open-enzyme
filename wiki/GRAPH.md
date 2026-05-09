@@ -168,6 +168,8 @@ graph TB
         DE14["comp-014 Medicinal Mushroom Compound Mapping — Phase 2 complete"]
         DE15["ADA — adenosine deaminase (chokepoint candidate)"]
         DE16["PINK1/mitophagy — NLRP3-priming-adjacent (chokepoint candidate)"]
+        DE17["comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Flux Model"]
+        DE18["comp-018/comp-020 — Upstream Complement Modulator Sweep (dietary CP0)"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -544,6 +546,13 @@ graph TB
     DE14 -->|"surfaced ADA + PINK1/mitophagy chokepoint candidates"| DE1
     DE15 -->|"purine catabolism upstream of XO; GLPP + cordycepin/pentostatin coverage"| B1
     DE16 -->|"mitochondrial quality control upstream of NLRP3 mtROS (CP2)"| C2
+    %% comp-019 gut-lumen uricase × ABCG2 genotype flux model (source: uricase-abcg2-genotype-stratification-computational.md)
+    DE17 -->|"genotype-robust; WT/WT LARGEST ΔSUA (−0.83 mg/dL); substrate-limited regime"| G1
+    DE17 -->|"Q141K genotype stratification → allopurinol response gap mapped"| AM4
+    DE17 -->|"Phase 2b RCT design: typical-gout, Q141K+Q126* as stratification"| L1
+    %% comp-018/comp-020 upstream complement modulator sweep (source: upstream-complement-modulator-sweep-computational.md, upstream-complement-verification-rerun-computational.md)
+    DE18 -->|"dietary upstream-CP0 axis: rosmarinic acid + luteolin + Helicteres lignans"| O1
+    DE18 -->|"engineered C1-INH parallel thread to H05 DAF SCR1-4"| DE1
     %% Global lab access (source: ward-1995-lab-access-global.md)
     DE12 -->|"provides NSlD-dP10 chassis for"| KE10
     DE12 -->|"parallel path via C19 chassis"| KE1
