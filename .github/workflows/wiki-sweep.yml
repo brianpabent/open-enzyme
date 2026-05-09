@@ -389,9 +389,14 @@ jobs:
 
           # Run the per-item emitter — Pass 2 content preserved verbatim
           # --sweep-date: ISO date of the trigger commit in UTC per spec §5.1.
-          # Uses %cI (strict-ISO) + cut to avoid committer-TZ off-by-one — Brian's
-          # -0400 commit at UTC 00:58 would otherwise render as the prior day.
-          SWEEP_DATE=$(git log -1 --format='%cI' "${{ github.sha }}" | cut -c1-10)
+          # `TZ=UTC` + `--date=short-local` forces the date to be rendered in UTC.
+          # Plain `%cI` or `%cd --date=short` returns committer-LOCAL date (with
+          # offset on `%cI`, which `cut -c1-10` then discards while keeping the
+          # local-date portion — same off-by-one as `--date=short`). Brian's
+          # -0400 merge at UTC 00:58 on 2026-05-09 rendered as 2026-05-08
+          # without `TZ=UTC`, which silently dated Pass 3 history one day
+          # behind Pass 2's runner-UTC log filename.
+          SWEEP_DATE=$(TZ=UTC git log -1 --format='%cd' --date=short-local "${{ github.sha }}")
           python3 scripts/synthesis-emit-files.py \
             --synthesis-log "$SYNTHESIS_LOG" \
             --reviews-file "$REVIEWS_FILE" \
