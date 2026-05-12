@@ -749,6 +749,47 @@ These are confabulations — plausible-looking values that would pass casual rev
 
 ---
 
+## BioDesignBench — LLM Agent Evaluation for Protein Design
+
+**Status: PRIMARY-SOURCE-PENDING** — claims below sourced from the bioRxiv abstract summary, not the full PDF (Cloudflare blocked direct fetch 2026-05-12). PDF-fetch TODO logged in [`brian/open-enzyme-backlog.md`](../../abent-family-health/brian/open-enzyme-backlog.md). Until verified, **do not cite BioDesignBench from `open-source-platform.md` as architectural validation** for the multi-model sweep daemon — the verification gate is open.
+
+bioRxiv [2026.05.06.723381](https://www.biorxiv.org/content/10.64898/2026.05.06.723381v1) — "Benchmarking and behavioral characterization of LLM agents for protein design." A benchmark and behavioral-characterization framework for LLM agents on protein design: 76 expert-curated tasks across diverse protein classes, integrating AlphaFold, RFdiffusion, ProteinMPNN, and Rosetta as tool calls.
+
+### Three findings that matter for Open Enzyme
+
+1. **DeepSeek V3 significantly outperforms GPT-5 and Gemini 2.5 Pro** on the 76-task benchmark (per abstract; verification pending). OE's sweep daemon uses DeepSeek V4-Pro (V3's successor) as the Pass 4 cross-vendor peer-reviewer on heterogeneity grounds ([open-source-platform.md §"Multi-model synthesis as guard against epistemic homogenization"](./open-source-platform.md)). If the abstract claim holds, the V4-Pro anchor is not only the heterogeneity guard but also the empirically strongest protein-design reasoner among major frontier models — a substantive upgrade to the architectural justification.
+
+2. **Tool-gap vs science-gap decomposition** as a diagnostic framework. The paper splits agent failures into:
+   - **Tool gap** — correct plan, failed execution (model knew what to do, fumbled the toolchain)
+   - **Science gap** — wrong plan altogether (model didn't understand the biology)
+
+   Per the abstract, DeepSeek V3 and GPT-5 are dominated by tool gap; Gemini 2.5 Pro by science gap. OE's Pass 3 (Opus critique) currently emits a fixed-verdict tag on each synthesis claim but doesn't attribute disagreements to mechanism. Adding a tool-gap-vs-science-gap axis to Pass 3 or Pass 4 would make the sweep daemon's disagreement-resolution **diagnostic** rather than just adjudicatory. Methodological-upgrade candidate.
+
+3. **Potential self-evaluation substrate.** 76 expert-curated tasks is the right scale for the sweep daemon to be measured against single-model agent baselines — concrete claim shape: "the cross-vendor synthesis pipeline scores X on BioDesignBench vs. Y for the best single-model agent." Pending: benchmark availability (open-source / reproducible? — TBD from PDF). Possible [`validation-experiments.md`](./validation-experiments.md) entry once confirmed.
+
+### Tool integrations (per abstract)
+
+| Tool | Function | OE-pipeline status |
+|---|---|---|
+| AlphaFold | Structure prediction | In OE stack via ColabFold |
+| RFdiffusion | De novo design from active-site geometry | In OE stack (RFdiffusion2) |
+| ProteinMPNN | Sequence design for target structure | In OE stack |
+| Rosetta | Energy minimization / mutation scoring | **Not currently in OE stack — gap to investigate** |
+
+### What to verify when the PDF lands
+
+When the PDF is fetched and saved to `reference/biodesignbench-2026.pdf`, grep-verify before promoting any of the above to load-bearing:
+- DeepSeek V3 vs GPT-5 vs Gemini 2.5 Pro performance numbers (specific scores, not just "outperforms")
+- Whether V3 outperforms across all 76 tasks or only on some protein classes (matters for whether the OE-architecture claim is universal or scoped)
+- Tool-gap vs science-gap definitions (operational, not just intuitive — needed for porting to Pass 3/4)
+- Benchmark availability (open-source code/data? reproducible? license?)
+- Rosetta integration details (which Rosetta sub-modules; could inform OE-stack gap closure)
+- Authors / institution (matters for citation + potential outreach)
+
+Once verified: update this section, remove the `PRIMARY-SOURCE-PENDING` flag, and add the DeepSeek-outperforms finding as a citation in `open-source-platform.md §"Multi-model synthesis"`. (Source: bioRxiv 2026.05.06.723381; PRIMARY-SOURCE-PENDING.)
+
+---
+
 ## Integration: Using All Three Tools Together
 
 ### Workflow Example: Design Engineered Koji from Scratch
