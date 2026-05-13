@@ -2,26 +2,32 @@
 """
 Figure 1 - The two-layer cross-vendor cycle.
 
-Visual structure:
-- TOP band: Layer 1 (vibe-science). Faint amber-tinted region containing
-  the Author + Claude Opus box. Output: new wiki content.
-- MIDDLE band (handoff): Wiki corpus, sitting on the boundary between
-  layers because it's Layer 1's output and Layer 2's input.
-- BOTTOM band: Layer 2 (automated sweep daemon). Faint indigo-tinted
-  region containing Pass 1, Pass 2, Pass 3, synthesis queue, and the
-  human walkthrough that closes the loop.
-- A prominent curved arrow returns from the walkthrough (Layer 2) up
-  through the wiki boundary and back into the Author box (Layer 1),
-  making the cycle visible.
-- The episodic peer-review pass is shown OFF both bands at the bottom
-  as a dotted optional branch from the walkthrough.
+Clean vertical-flow layout. The cycle is the figure's single load-bearing
+visual element. Inter-pass artifact handoff details belong in prose, not
+in the figure. The peer-review optional branch is shown as a small inset
+beside the cycle, not woven through it.
 
-Model assignments (all verified against the codebase):
- - Layer 1 - Anthropic Claude Opus (interactive, via Claude Code)
- - Layer 2 Pass 1 - DeepSeek V4-Pro (.github/workflows/wiki-sweep.yml:185)
- - Layer 2 Pass 2 - DeepSeek V4-Pro primary, Google Gemini 2.5 Pro
-   automatic fallback (scripts/synthesize.py:92-93)
- - Layer 2 Pass 3 - OpenAI GPT-5.5 (.github/workflows/wiki-sweep.yml:357)
+Layout (top to bottom):
+   +-- LAYER 1 BAND (amber) ----------------------------+
+   |  Author + Anthropic Claude Opus                    |
+   +-----------------+----------------------------------+
+                     |  new wiki content
+                     v
+                Wiki corpus
+                     |  git push triggers
+                     v
+   +-- LAYER 2 BAND (indigo) ---------------------------+
+   |  Pass 1 (DeepSeek) -> Pass 2 (DeepSeek/Gemini)     |
+   |                   -> Pass 3 (GPT-5.5)              |
+   |                   -> synthesis/queue/              |
+   +-----------------+----------------------------------+
+                     |  verdict-tagged findings
+                     v
+              Human walkthrough
+                     |
+                     +--- LOOP back to Layer 1 ---^
+
+Peer-review optional branch shown to the right as a small inset.
 """
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
@@ -36,19 +42,17 @@ COLORS = {
     "google":    "#5C7C8E",
     "openai":    "#6B8B6B",
     "neutral":   "#888888",
-    "trigger":   "#444444",
-    "output":    "#444444",
     "human":     "#A05858",
-    "loop":      "#A05858",
+    "output":    "#444444",
 }
 
-# Faint layer-background tints (very light wash of the layer's primary vendor)
-LAYER1_BG = "#FAF1E0"  # very pale amber
-LAYER2_BG = "#EEEEF5"  # very pale indigo
-BAND_EDGE = "#CCCCCC"
+LAYER1_BG = "#FAF1E0"
+LAYER2_BG = "#EEEEF5"
+BAND_EDGE = "#BBBBBB"
 
 
-def make_box(ax, x, y, w, h, text, fc, ec="black", lw=1.2, text_color="white", fontsize=9):
+def make_box(ax, x, y, w, h, text, fc, ec="black", lw=1.2,
+             text_color="white", fontsize=9):
     box = FancyBboxPatch(
         (x, y), w, h,
         boxstyle="round,pad=0.05,rounding_size=0.1",
@@ -59,169 +63,181 @@ def make_box(ax, x, y, w, h, text, fc, ec="black", lw=1.2, text_color="white", f
             color=text_color, fontsize=fontsize, fontweight="bold")
 
 
-def straight_arrow(ax, x1, y1, x2, y2, label=None, dashed=False, color="black",
-                   offset=0.0, fontsize=7.5, lw=1.2):
-    style = "--" if dashed else "-"
+def vertical_arrow(ax, x, y_top, y_bot, label=None, color="black",
+                   fontsize=8, lw=1.5):
     arr = FancyArrowPatch(
-        (x1, y1), (x2, y2),
-        arrowstyle="->", mutation_scale=18,
-        linewidth=lw, color=color, linestyle=style,
+        (x, y_top), (x, y_bot),
+        arrowstyle="->", mutation_scale=22,
+        linewidth=lw, color=color,
     )
     ax.add_patch(arr)
     if label:
-        mx, my = (x1 + x2)/2, (y1 + y2)/2 + offset
-        ax.text(mx, my, label, ha="center", va="center",
-                fontsize=fontsize, color=color, style="italic",
-                bbox=dict(facecolor="white", edgecolor="none", pad=1.5))
+        ax.text(x + 0.25, (y_top + y_bot) / 2, label,
+                ha="left", va="center", fontsize=fontsize,
+                color=color, style="italic")
 
 
 def main():
-    fig, ax = plt.subplots(figsize=(13, 9))
-    ax.set_xlim(0, 13)
-    ax.set_ylim(0, 9)
+    # Tall-narrow aspect so the vertical flow reads cleanly.
+    # Cycle column on the left half; peer-review inset on the right.
+    fig, ax = plt.subplots(figsize=(11, 11))
+    ax.set_xlim(0, 11)
+    ax.set_ylim(0, 11)
     ax.axis("off")
 
-    # ===== Title row =====
-    ax.text(6.5, 8.65,
-            "Figure 1. The two-layer cross-vendor cycle",
+    # Title
+    ax.text(5.5, 10.80, "Figure 1. The two-layer cross-vendor cycle",
             ha="center", fontsize=12, fontweight="bold")
-    ax.text(6.5, 8.30,
-            "Layer 1 originates new content via vibe-science. The wiki corpus is the handoff. Layer 2 propagates and reviews automatically. The human triages and the cycle restarts.",
+    ax.text(5.5, 10.45,
+            "Layer 1 originates new wiki content. Layer 2 propagates and reviews it automatically. The human triages the queue and the cycle restarts.",
             ha="center", fontsize=8.5, style="italic", color="#555555")
 
-    # ===== Layer 1 background band =====
-    # Top region covering Layer 1 box. Use a soft amber background to make
-    # the layer visually distinct without dominating the figure.
-    layer1_band = Rectangle((0.2, 6.6), 12.6, 1.4,
-                            facecolor=LAYER1_BG, edgecolor=BAND_EDGE,
-                            linewidth=0.8, linestyle=":")
-    ax.add_patch(layer1_band)
-    ax.text(0.4, 7.85, "Layer 1 - Vibe-science (origination)",
+    # === Layer 1 band (top) ===
+    # Band extended up to y=10.05 to give the title breathing room above
+    # the Author/Opus box (Brian's read-pass note 2026-05-13).
+    band1 = Rectangle((0.5, 8.4), 6.5, 1.65, facecolor=LAYER1_BG,
+                      edgecolor=BAND_EDGE, linewidth=0.8, linestyle=":")
+    ax.add_patch(band1)
+    ax.text(0.7, 9.88, "Layer 1 - Vibe-science (origination)",
             ha="left", va="center", fontsize=10, fontweight="bold",
             color="#7A5A2E")
+    make_box(ax, 1.6, 8.55, 4.3, 1.0,
+             "Author + Anthropic Claude Opus\n(via Claude Code: curiosity, picks threads,\nnames sub-claims, comp-NNN before wet-lab)",
+             fc=COLORS["anthropic"], text_color="black", fontsize=9)
 
-    # Layer 1 box: author + Claude Opus
-    make_box(ax, 0.6, 6.85, 4.0, 1.0,
-             "Author + Anthropic Claude Opus\n(Claude Code: curiosity, picks threads,\nnames sub-claims, comp-NNN before wet-lab)",
-             fc=COLORS["anthropic"], text_color="black", fontsize=8.5)
+    # Arrow Layer 1 -> wiki
+    vertical_arrow(ax, 3.75, 8.4, 7.85, label="new wiki content",
+                   color=COLORS["neutral"])
 
-    # Layer 1 narrative on the right side of the band
-    ax.text(8.7, 7.35,
-            "The author drives synthesis with an\nAnthropic Claude Opus session: leading\nwith curiosity, picking threads worth pulling,\nrunning comp-NNN computational experiments\nbefore any wet-lab spend.",
-            ha="left", va="center", fontsize=8.5, color="#444444",
-            style="italic")
-
-    # ===== Wiki handoff (between the layers) =====
-    # Down arrow from Layer 1 box to wiki
-    straight_arrow(ax, 2.6, 6.85, 2.6, 6.20, color=COLORS["neutral"],
-                   label="new wiki content", offset=0.0)
-
-    make_box(ax, 1.3, 5.6, 2.6, 0.6,
+    # Wiki corpus (between bands)
+    make_box(ax, 2.25, 7.05, 3.0, 0.75,
              "Wiki corpus\n~95 pages, ~625k tokens",
-             fc="#777777", fontsize=8.5)
+             fc="#777777", fontsize=9)
 
-    ax.text(4.3, 5.9,
-            "(the handoff: Layer 1 writes, Layer 2 reads)",
-            ha="left", va="center", fontsize=8, color="#666666", style="italic")
+    # Arrow wiki -> Layer 2
+    vertical_arrow(ax, 3.75, 7.05, 6.45, label="git push triggers",
+                   color=COLORS["neutral"])
 
-    # ===== Layer 2 background band =====
-    layer2_band = Rectangle((0.2, 1.7), 12.6, 3.4,
-                            facecolor=LAYER2_BG, edgecolor=BAND_EDGE,
-                            linewidth=0.8, linestyle=":")
-    ax.add_patch(layer2_band)
-    ax.text(0.4, 4.92, "Layer 2 - Automated sweep daemon",
+    # === Layer 2 band ===
+    band2 = Rectangle((0.5, 3.5), 6.5, 3.0, facecolor=LAYER2_BG,
+                      edgecolor=BAND_EDGE, linewidth=0.8, linestyle=":")
+    ax.add_patch(band2)
+    ax.text(0.7, 6.25, "Layer 2 - Automated sweep daemon",
             ha="left", va="center", fontsize=10, fontweight="bold",
             color="#3A3A6A")
 
-    # Wiki -> Pass 1 (down + into the band)
-    straight_arrow(ax, 2.6, 5.6, 2.6, 4.45, color=COLORS["neutral"],
-                   label="git push triggers", offset=0.0)
-
-    # Pass row
-    make_box(ax, 1.4, 3.4, 2.2, 1.0,
-             "Pass 1 - Propagate\nDeepSeek V4-Pro",
-             fc=COLORS["deepseek"], fontsize=9)
-    make_box(ax, 4.2, 3.4, 2.2, 1.0,
-             "Pass 2 - Synthesize\nDeepSeek V4-Pro\n(Gemini fallback)",
+    # Pass row (horizontal inside Layer 2 band)
+    make_box(ax, 0.7, 5.0, 1.95, 0.9,
+             "Pass 1\nPropagate\nDeepSeek V4-Pro",
              fc=COLORS["deepseek"], fontsize=8.5)
-    make_box(ax, 7.0, 3.4, 2.2, 1.0,
-             "Pass 3 - Review\nOpenAI GPT-5.5\n(Claude Opus alt.)",
+    make_box(ax, 2.83, 5.0, 1.95, 0.9,
+             "Pass 2\nSynthesize\nDeepSeek (Gemini fallback)",
+             fc=COLORS["deepseek"], fontsize=8)
+    make_box(ax, 4.96, 5.0, 1.95, 0.9,
+             "Pass 3\nReview\nOpenAI GPT-5.5",
              fc=COLORS["openai"], fontsize=8.5)
 
-    # Inter-pass arrows
-    straight_arrow(ax, 3.6, 3.9, 4.2, 3.9,
-                   label="propagated_files\n+ trigger_files", offset=0.42)
-    straight_arrow(ax, 6.4, 3.9, 7.0, 3.9,
-                   label="cited_files\n+ synthesis_log", offset=0.42)
+    # Pass 1 -> Pass 2 -> Pass 3 (small arrows between)
+    for x_start, x_end in [(2.65, 2.83), (4.78, 4.96)]:
+        arr = FancyArrowPatch(
+            (x_start, 5.45), (x_end, 5.45),
+            arrowstyle="->", mutation_scale=14, linewidth=1.0,
+            color=COLORS["neutral"])
+        ax.add_patch(arr)
 
-    # Pass 3 -> queue (down)
-    straight_arrow(ax, 8.1, 3.4, 8.1, 2.65, color=COLORS["neutral"])
-    make_box(ax, 7.0, 1.9, 2.2, 0.75,
-             "synthesis/queue/\n(verdict-tagged findings)",
-             fc=COLORS["output"], fontsize=8)
+    # Synthesis queue centered under the pass row, narrower than passes so
+    # the connecting arrow from Pass 3 reads as a clean short diagonal.
+    make_box(ax, 2.4, 3.7, 3.1, 0.7,
+             "synthesis/queue/  (verdict-tagged findings)",
+             fc=COLORS["output"], fontsize=9)
 
-    # queue -> walkthrough
-    straight_arrow(ax, 9.2, 2.28, 9.8, 2.28, color=COLORS["human"])
-    make_box(ax, 9.8, 1.9, 2.4, 0.75,
+    # Pass 3 -> queue: short straight diagonal (no kink).
+    arr_p3 = FancyArrowPatch(
+        (5.94, 5.0), (5.4, 4.4),
+        arrowstyle="->", mutation_scale=16, linewidth=1.2,
+        color=COLORS["neutral"],
+    )
+    ax.add_patch(arr_p3)
+
+    # Arrow Layer 2 -> walkthrough
+    vertical_arrow(ax, 3.75, 3.5, 2.25,
+                   label="verdict-tagged findings", color=COLORS["human"])
+
+    # Walkthrough
+    make_box(ax, 1.4, 1.4, 4.7, 0.85,
              "Human walkthrough\n(triage: action / defer / drop)",
-             fc=COLORS["human"], fontsize=8)
+             fc=COLORS["human"], fontsize=9.5)
 
-    # ===== THE LOOP BACK (the load-bearing visual element) =====
-    # Big curved arrow from the walkthrough, up over the layer-2 band,
-    # across the wiki handoff, and back into the Layer-1 box.
+    # === LOOP back to Layer 1 ===
+    # Three explicit segments (left, up, right) so the arrow arrives at
+    # Author's left edge perpendicularly.  Arc3 curves can't produce this
+    # arrival geometry (control-point constraint), and a free-bowing arc
+    # reads as "where is this arrow going" rather than "cycle."
+    LOOP_X = 0.45
+    loop_color = COLORS["human"]
+    loop_lw = 2.6
+    # Bottom: walkthrough left edge -> LOOP_X
+    ax.plot([1.4, LOOP_X], [1.83, 1.83],
+            color=loop_color, linewidth=loop_lw, solid_capstyle="round")
+    # Vertical: up the left side
+    ax.plot([LOOP_X, LOOP_X], [1.83, 9.05],
+            color=loop_color, linewidth=loop_lw, solid_capstyle="round")
+    # Top + arrowhead: LOOP_X -> Author's left edge
     arr_loop = FancyArrowPatch(
-        (11.0, 2.65), (4.6, 7.35),
-        arrowstyle="->", mutation_scale=24,
-        linewidth=2.2, color=COLORS["loop"], linestyle="-",
-        connectionstyle="arc3,rad=-0.42",
+        (LOOP_X, 9.05), (1.6, 9.05),
+        arrowstyle="->", mutation_scale=26,
+        linewidth=loop_lw, color=loop_color,
     )
     ax.add_patch(arr_loop)
-    ax.text(12.55, 5.0,
-            "the cycle:\nfindings re-enter\nLayer 1\n(vibe-science)\nand a new\nedit starts",
-            ha="center", va="center", fontsize=8.5,
-            color=COLORS["loop"], fontweight="bold",
-            bbox=dict(facecolor="white", edgecolor=COLORS["loop"],
-                      pad=4, boxstyle="round,pad=0.4"))
+    # "the cycle" label inside the loop, rotated.
+    ax.text(0.85, 5.4, "the cycle",
+            ha="center", va="center", fontsize=10,
+            color=loop_color, fontweight="bold", rotation=90)
 
-    # ===== Optional Branch: Episodic Peer-Review (below both bands) =====
-    ax.text(0.2, 1.40, "Optional branch from the walkthrough (off the critical path)",
-            ha="left", va="center", fontsize=8.5, fontweight="bold",
+    # === Peer-review optional branch (right column) ===
+    ax.text(7.5, 6.30, "Optional branch\n(when warranted; off critical path)",
+            ha="left", va="top", fontsize=9, fontweight="bold",
             color="#444444", style="italic")
 
-    make_box(ax, 4.2, 0.45, 2.4, 0.55,
-             "Peer-Review (episodic)\nIndependent vendor",
-             fc=COLORS["deepseek"], fontsize=8)
-    make_box(ax, 7.2, 0.45, 2.6, 0.55,
-             "Audit trail\nlogs/v4-peer-review-*.md",
-             fc=COLORS["output"], fontsize=8)
-    straight_arrow(ax, 6.6, 0.72, 7.2, 0.72, dashed=True, color=COLORS["deepseek"])
-
-    # walkthrough -> peer-review (decision arrow)
+    # From walkthrough into peer-review.  Use a clean right-angle elbow
+    # (right first, then up) — every curve attempt at this aspect ratio
+    # reads wrong; a deterministic elbow reads as "branch off the cycle."
     arr_branch = FancyArrowPatch(
-        (10.4, 1.9), (5.4, 1.0),
+        (6.1, 1.83), (8.3, 5.0),
         arrowstyle="->", mutation_scale=16, linewidth=1.1,
         color=COLORS["human"], linestyle=":",
-        connectionstyle="arc3,rad=0.25",
+        connectionstyle="angle,angleA=0,angleB=-90,rad=8",
     )
     ax.add_patch(arr_branch)
-    ax.text(8.0, 1.05, "when warranted:\nfire peer-review",
-            ha="center", va="center", fontsize=7.5,
-            color=COLORS["human"], style="italic",
-            bbox=dict(facecolor="white", edgecolor="none", pad=1.5))
 
-    # substrate arrow from wiki down to peer-review (curved left of pass row)
+    # Peer-review box
+    make_box(ax, 7.5, 5.0, 3.0, 0.7,
+             "Peer-Review (episodic)\nIndependent vendor",
+             fc=COLORS["deepseek"], fontsize=9)
+
+    # Substrate from Layer 1 (Author/Opus) to peer-review (dashed).
+    # The substrate IS the wiki corpus, but it's produced by Layer 1, so the
+    # provenance line originates there (Brian's note 2026-05-13: "the line
+    # should come from Layer 1").
     arr_sub = FancyArrowPatch(
-        (1.3, 5.7), (4.2, 0.72),
+        (5.9, 8.55), (8.0, 5.7),
         arrowstyle="->", mutation_scale=14, linewidth=1.0,
-        color=COLORS["deepseek"], linestyle="--",
-        connectionstyle="arc3,rad=0.4",
-    )
+        color=COLORS["deepseek"], linestyle="--")
     ax.add_patch(arr_sub)
-    ax.text(0.05, 2.7, "substrate", ha="left", va="center",
-            fontsize=7.5, color=COLORS["deepseek"], style="italic",
-            bbox=dict(facecolor="white", edgecolor="none", pad=1.5))
+    ax.text(7.15, 7.35, "substrate", ha="left", va="center",
+            fontsize=8, color=COLORS["deepseek"], style="italic")
 
-    # Legend at the very bottom
+    # Audit trail
+    make_box(ax, 7.5, 3.9, 3.0, 0.7,
+             "Audit trail\nlogs/v4-peer-review-*.md",
+             fc=COLORS["output"], fontsize=8.5)
+    arr_audit = FancyArrowPatch(
+        (9.0, 5.0), (9.0, 4.6),
+        arrowstyle="->", mutation_scale=14, linewidth=1.0,
+        color=COLORS["deepseek"], linestyle="--")
+    ax.add_patch(arr_audit)
+
+    # Legend
     handles = [
         patches.Patch(facecolor=COLORS["anthropic"], label="Anthropic (Layer 1)"),
         patches.Patch(facecolor=COLORS["deepseek"], label="DeepSeek (Pass 1+2)"),
@@ -229,8 +245,8 @@ def main():
         patches.Patch(facecolor=COLORS["google"], label="Google (Pass 2 fallback)"),
         patches.Patch(facecolor=COLORS["human"], label="Human-in-the-loop"),
     ]
-    ax.legend(handles=handles, loc="lower center", fontsize=8, ncol=5,
-              frameon=False, bbox_to_anchor=(0.5, -0.04))
+    ax.legend(handles=handles, loc="lower center", fontsize=8.5, ncol=5,
+              frameon=False, bbox_to_anchor=(0.5, -0.02))
 
     plt.tight_layout()
     pdf_path = OUT_DIR / "figure1_architecture.pdf"

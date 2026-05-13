@@ -433,6 +433,217 @@ The manuscript is submission-ready pending only the Zenodo DOI minting (requires
 
 ---
 
+## Catch 32 — §6 misframed the DeepSeek/Gemini routing decision as a token-fit check
+
+**Source:** Brian, on read-pass of §3/§6 prose, 2026-05-13.
+
+**Claim under review (pre-edit):** §3 line 106 said the 2026-05-05 routing switch was *"after verifying corpus size fits"*. That collapses the actual decision into the least-interesting dimension.
+
+**Brian's correction (verbatim):** *"we looked at more than does the tokens fit. we evaluated the FINDINGS and deepseek was the best AND the cheapest BUT it was flaky!"*
+
+**What actually happened (re-narrated):**
+1. Head-to-head finding-quality evaluation between Gemini-primary (then-current) and DeepSeek as the candidate primary on representative sweep outputs.
+2. DeepSeek won on finding quality.
+3. DeepSeek was also cheaper per call.
+4. DeepSeek's OpenRouter route was operationally flaky (transient API errors during the eval window).
+5. Decision: route DeepSeek as primary because empirically validated on quality and cost; retain Gemini as automatic fallback purely for reliability, not because it's a comparable substitute.
+
+**Correction applied to §6:** the sentence now names all three eval dimensions (findings quality, cost, reliability) and explicitly says the fallback exists for reliability, not as a quality-comparable alternate.
+
+**Knock-on correction to §3:** the closing paragraph of §3 was updated to call out eval-driven model rotation as the discipline behind specific vendor-to-layer assignments, citing the 2026-05-08 Pass 3 switch to GPT-5.5 (`evals/pass-3-reviewer/`) and the 2026-05-05 Pass 2 switch to DeepSeek as the two operational instances. Surfaces the methodological commitment that was implicit before.
+
+**Class of failure:** drafter compressed a multi-factor decision into the single factor most easily citable in the codebase. Lost the actual reasoning. Caught only by Brian's read-pass — the codebase history block doesn't carry the eval-quality reasoning; that lives in operational memory.
+
+**Process lesson:** when narrating a config change in the paper, the in-codebase change-log line is necessary but not sufficient. Verify the *reasoning* with the human who made the decision before claiming you've captured the rationale.
+
+---
+
+## Catch 33 — Figure 1 spaghetti, two redraw passes to fix overlapping arrows and out-of-box text
+
+**Source:** Brian, looking at the rendered figure, 2026-05-13: *"Their lines are overlapping, and the text is flowing outside of the boxes. It's not showing a cycle; it's showing a fucking pile of spaghetti. Goal not achieved."*
+
+**Pre-correction state:** the figure tried to show too much — full Layer 1 narrative text + Wiki + 3 passes + inter-pass artifact handoff arrows (propagated_files, cited_files) + queue + walkthrough + peer-review branch + substrate dashed arrow + audit trail + loop arrow + cycle annotation, all on a single canvas. Result: arrows crossing, labels colliding with arrow paths, text overflowing band regions.
+
+**Fix applied:** rewrote `figures/figure1_architecture.py` with severe simplification:
+1. Dropped inter-pass artifact handoff arrows entirely (those belong in §3.5 prose, not the figure).
+2. Aligned the main cycle elements on a single vertical center line at x=3.75 (Author/Opus, Wiki, Pass row, Queue, Walkthrough all share a vertical spine).
+3. Pass 3 → queue collapsed to one L-bend instead of a two-segment kink.
+4. Cycle-back loop arrow uses `arc3,rad=0.55` so it bulges far enough left that the inline "the cycle" label (now rotated 90° and placed inside the curve) doesn't sit on the arrow path.
+5. Peer-review branch moved to a right-hand inset rather than weaving through the main flow.
+
+**Class of failure:** drafter conflated "show the architecture" with "show every component of the architecture." The figure's job is the *cycle*; the components belong in surrounding prose. Removing detail from the figure made the cycle visible.
+
+---
+
+## Catch 34 — §7 prompt-brittleness paragraph told the wrong story
+
+**Source:** Brian, on read-pass of §7 Limitations, 2026-05-13.
+
+**Claim under review (pre-edit):** §7 line 318 framed the brittleness limitation as "unannounced vendor model updates (including silent rollouts)" being "the most common cause of silent-pipeline-degradation incidents in the operational record." That framing is fabricated — there is no incident in the operational record of a silent vendor update degrading a pass.
+
+**Brian's correction (paraphrased from his message):** the brittleness story in the actual record is the GPT-5.5 launch, not silent updates. GPT-5.5 came out; the project wanted to try it; the initial eval was too narrow and the Anthropic-tuned prompt looked worse on GPT-5.5 than on Opus 4.7; reading OpenAI's published prompt-engineering guidance for GPT-5.5 and re-tuning the prompt to match flipped the result — GPT-5.5 then produced the best Pass 3 verdicts the project had seen, at ~5× lower cost. The story is about eval discipline + per-vendor prompt tuning, not vendor-side silent breaking changes.
+
+**Correction applied to §7:** rewrote the paragraph to name the GPT-5.5 incident as the actual operational instance, cite the eval file and commit (`evals/pass-3-reviewer/2026-05-07-abc8de9-comparison.md`, commit `e728d0d`), and reframe the lesson: cross-vendor heterogeneity does not survive "swap the model and re-run" — it requires per-vendor prompt tuning aligned to each vendor's published guidance, plus evals broad enough to distinguish "this model is worse" from "our prompt is worse for this model." Without the GPT-5.5 retune the project would have correctly concluded the model was inferior on the existing prompt and incorrectly concluded that cross-vendor heterogeneity was hard to scale.
+
+**Class of failure:** drafter substituted a plausible-sounding hypothetical risk (silent vendor updates) for the actual risk surfaced in the record (new model releases requiring vendor-specific prompt re-tuning). Same failure class as Catch 32 (DeepSeek/Gemini routing collapsed to token-fit instead of the three-axis eval). When the operational record has a specific story, surface it. Don't generalize to a hypothetical.
+
+**Process lesson:** §7 limitations sections are especially prone to this failure mode. "Plausible risk we haven't actually hit" reads as a risk-aware paper to a reviewer, but it fails the paper's own discipline. The paper should name what it actually hit and how that maps to a generalizable risk class.
+
+**Where this surfaced in the audit:** the catch-history audit on 2026-05-13 (`audit-2026-05-13-catch-history.md` §1.3) already surfaced the GPT-5.5 eval as a top-candidate item not yet in the paper. Brian's correction here is the same insight applied to a different section: the GPT-5.5 incident isn't just a §6 case study (which the audit recommended), it's the *actual* worked example for the §7 prompt-brittleness limitation. Same story serves both sections.
+
+---
+
+## Session 9, 2026-05-13 (audit-driven structural additions and corrections)
+
+After Brian's final read-pass through the manuscript, a wide-scope Explore agent audited the project's git history and operational record for catch moments not yet in §5 (audit memo preserved at `audit-2026-05-13-catch-history.md`). Five paper-bound items from the audit were applied. Each strengthens the paper's argument and is logged here.
+
+### Catch 35 — §3.5 infrastructure failure class now tells the actual race-condition story
+
+**Source:** audit memo §1.1 + §1.2; Brian's read-pass choice to apply.
+
+**Pre-edit state:** §3.5 "Inter-pass artifact handoff" mentioned "a failure class that surfaced after the initial deployment was not workflow-runtime errors but information loss between passes" abstractly, without telling the underlying incident. The §3.6 operational hardening list mentioned rebase-before-push as item 1, also without the incident.
+
+**Correction applied:** §3.5 expanded to cover two failure classes (information loss inside the architecture; information loss to CI infrastructure) with the 2026-04-28 race-condition incident as the concrete instance of the latter ($0.73 synthesis lost when push rejected on concurrent commit, Pass 3 never ran). Recovery commits cited (`05f8c74`, `b5dd4e0`). Closing claim added: "Cross-vendor heterogeneity guards against vendor-specific model behaviors; it does not guard against race conditions or transient API outages, and those need their own architectural treatment." Section now reads as architectural recovery from a real incident rather than a design decision in isolation.
+
+### Catch 36 — §4 expanded to cover capability profile and exposed subjectivity
+
+**Source:** audit memo §1.4 + §5.2; Brian's read-pass choice.
+
+**Pre-edit state:** §4 "Why cross-vendor specifically" argued that heterogeneity is about training-distribution priors (i.e., bias diversity) but did not address two adjacent dimensions: vendor-specific capability differences (prompt caching, structured outputs, multilingual fluency) and the observation that cross-vendor review *exposes* subjective disagreements (e.g., novelty thresholds) rather than resolving them.
+
+**Correction applied:** new subsection "Capability profile and exposed subjectivity" inserted between "Why cross-vendor specifically" and "The self-demonstrating moment." Two paragraphs:
+1. Capability profile: vendors differ in native API capabilities; the Open Enzyme daemon exploits Anthropic prompt caching (91% cache-hit rate on Pass 3), OpenAI structured-output discipline (the GPT-5.5 tuned prompt), and Gemini multilingual fluency (assumed by `CLAUDE.md` §"Global-multilingual research by default").
+2. Exposed subjectivity: the 2026-05-07 eval had Opus 4.7 tag 2/3/1 NOVEL/EXTENSION/RESTATEMENT and GPT-5.5 tuned tag 0/2/4 on the same 6 markers; both internally coherent and defensible by their respective verdict criteria. Cross-vendor review surfaces the choice of verdict criterion as a thing to consciously calibrate.
+
+### Catch 37 — §5.6 added: corpus-level contamination caught by verification-of-verification
+
+**Source:** audit memo §1.7 + §3.2; Brian's read-pass choice.
+
+**Pre-edit state:** §5 case studies covered four within-pipeline-catchable failure classes (§5.1–§5.4) plus a generative case study (§5.5). The paper claimed in §7 "Shared training-data leakage" that cross-vendor review cannot defend against corpus-level contamination inherited from training data, but offered no worked example.
+
+**Correction applied:** new §5.6 case study added: the 2026-05-07 three-layer citation laundering on the testosterone-axis adjuvant landscape. Layer 1: the "37% testosterone elevation" figure for *Eurycoma longifolia* traces to Talbott 2013 PMID 23705671 reporting salivary T in a mixed-sex moderately-stressed cohort, not serum free T in hypogonadal men. Layer 2: "Shin KH 2024 enclomiphene vs clomiphene" citation does not exist in PubMed; actual paper is Saffati et al. 2024 PMID 39434750. Layer 3: eurycomanone is not an XO inhibitor; verified mechanism is multi-target purine-handling modulation (URAT1, GLUT9, ABCG2, NPT1 + PRPS-suppression). Wiki tag flipped GOUT-UNFAVORABLE → GOUT-FAVORABLE (commit `c32a623`). Three-layer verification chain cost ~$3-4. Class: corpus-level contamination, defended by verification-of-verification, not by cross-vendor heterogeneity.
+
+**Knock-on edits:**
+- §5 preamble updated from "four catches" to "five catches plus a generative case study"
+- §6.3 "Distribution of catches by class" updated to acknowledge §5.6 as outside Figure 2's within-pipeline taxonomy
+- §7 "Shared training-data leakage" paragraph updated to cite §5.6 as the worked example
+- §9 Conclusion catch list updated from "four representative catches" to five
+- Figure 2 caption updated to note §5.6 is outside the figure's taxonomy (figure itself not yet redrawn to include §5.6 as a fifth cell)
+
+### Catch 38 — §6 verification-discipline cost economics added
+
+**Source:** audit memo §7; Brian's choice (partial application).
+
+**Pre-edit state:** §6 Operational Data had Table 1 (per-sweep costs) and §6.2 failure modes, but no per-incident cost economics for verification disciplines invoked manually (brief-hygiene re-runs, V-of-V chains).
+
+**Correction applied:** new §6.2 subsection "Verification-discipline costs (per-incident)" between Table 1 commentary and "Failure modes observed and recovery." Two cost lines: brief-hygiene re-run ~$5 + 30-60min wall-clock (comp-018 → comp-020 case, §5.2); V-of-V chains ~$3-4 (three-layer citation laundering case, §5.6). Closing claim: both disciplines apply at workflow level, independent of model selection.
+
+Skipped per Brian's call: retry-with-backoff cost (~$0.05/call) and truncation-tolerance check cost (~$0.01) were too granular to add to §6 without diluting the table.
+
+### Catch 39 — §8 reflexive note tightened with 34-catch audit-trail framing
+
+**Source:** Brian's choice; aligns with Codex's earlier observation that "the revision log is the paper's best asset."
+
+**Pre-edit state:** §8 closed with a one-sentence reflexive observation: "this manuscript was drafted using the methodology it describes." Mentioned Catch 1 (primary-drafter confabulation) in passing.
+
+**Correction applied:** paragraph expanded to leverage the audit trail directly. Named the cross-vendor review distribution (DeepSeek/Gemini/Claude+DeepSeek), the 34-catch total, the 16/18 split between reviewer-surfaced and author-surfaced catches, and four representative catches that map onto the failure classes §5 enumerates: confabulation (§5.1 class), fabricated risk-class generalization (§5.6 class), stale Pass 3 model name, Figure 1 spaghetti. Closing claim: "The audit trail's value is showing what the methodology caught and what it missed when applied to the paper's own production." This is the §8 articulation of what Codex called the paper's biggest asset.
+
+### Knock-on Methods Appendix updates (audit-driven)
+
+The Methods Appendix and Appendix A vendor-attribution table required catch-up edits to reflect Catches 32–34 from Session 8 + Catches 35–39 from this session, plus the Codex external review pass (Catches 21–26) which wasn't fully represented as a separate review stage in Appendix A. Updates:
+
+- Methods Appendix: "two working sessions" replaced with the actual multi-session timeline including cross-vendor review, response-to-review, Codex external review, audit, and author read-pass.
+- Appendix A §3 row: added Catch 32 (DeepSeek/Gemini routing reframe + eval-driven rotation discipline).
+- Appendix A §7 row: noted Catch 34 superseded the framing introduced by Catch 15.
+- Appendix A Figure 1 row: added Catch 33 (overlapping arrows, redrawn).
+- New "Subsequent review passes" paragraph after Appendix A table summarizing Codex pass + audit + author read-pass + updated 34-catch audit-trail total.
+
+### Catch 40 — Figure 2 redrawn to include §5.6 as a fifth cell
+
+**Source:** Brian's choice after Session 9 §5.6 addition, 2026-05-13.
+
+**Pre-edit state:** Figure 2 was a 4-cell taxonomy (§5.1, §5.2, §5.3, §5.4) recast from a bar chart per Codex Catch 24. After adding §5.6 in Catch 37, the figure caption acknowledged §5.6 as a fifth failure class outside the figure's taxonomy. Visually inconsistent with the §5 case-study count.
+
+**Correction applied:** `figures/figure2_catches.py` updated:
+1. New cell for §5.6 (title "Corpus-level contamination", exemplar "Tongkat ali citation laundering / eurycomanone reversal", date 2026-05-07, surfacing "Verification-of-verification chain (primary-source)").
+2. New surfacing color `vov` = `#A05858` (matches Figure 1's human-in-loop red) to distinguish V-of-V from cross-vendor (DeepSeek indigo) and within-pipeline manual discipline (grey).
+3. Layout widened from 1×4 to 1×5 (figsize 13 → 16, x-bounds 10 → 12.5; cell-w and cell-h preserved).
+4. Legend expanded from 2 to 3 entries.
+
+Figure 2 caption in draft.md rewritten to reflect the new fifth cell as part of the taxonomy. §6.3 "Distribution of catches by class" prose rewritten to acknowledge §5.6 as IN the taxonomy with a distinct surfacing mechanism, not OUTSIDE it.
+
+---
+
+### Items NOT applied (logged for transparency)
+
+Three of the audit's candidate items were deliberately not applied to the paper, per Brian's "don't add shit unless it makes the paper better" rule:
+
+- **§5.5 footnote on 2026-05-08 DAF SCR1-4 blog + daemon convergence:** the convergence-without-coordination angle is already covered by the 2026-04-25 dual-peer-review case in §5.5. Adding a second instance does not sharpen the argument. Moved to `papers/future-work-pipeline.md` F5 for a future blog post.
+- **§6 or §7 paragraph on truncation tolerance / graceful degradation:** graceful degradation is a general systems-engineering principle, not specific to cross-vendor heterogeneity. Adding it dilutes focus. Saved for a future "resilient AI-pipeline architectures" piece if one materializes.
+- **§5.3 callout on the five-rule verification protocol for external tools:** the protocol is already referenced in §5.3 prose via the `wiki/manual-literature-mining.md` link. Promoting to a sidebar would distract from §5.3's actual argument (external-tool reliability as a failure class).
+
+---
+
+## Session 10, 2026-05-13 (second Codex external review, response pass)
+
+After Session 9's audit-driven additions, Brian ran a second Codex external review on the local draft. Bottom line: *"this is much closer to bioRxiv-ready than the version I saw before"* — pre-submission polish rather than conceptual surgery. Codex flagged five items + spot-checked four adjacent-literature citations as findable (Peterson, Wright et al., Rudko/Bonab, LiRA, all verified). All five flagged items applied.
+
+### Catch 41 — §1 intro framing overstrong vs §4
+
+**Source:** Codex Session-10 review item 1.
+
+**Pre-edit state:** §1 lines 20 and 22 used absolute framings ("almost all" prior work is within-vendor; cross-vendor is "the level" where diversity appears; blind spots are "unlikely" to recur) that §4's more careful version had already moved away from ("predominantly within a single vendor"; "a level at which substantial prior-distribution diversity reliably appears"; "less likely to appear in the same form"). The intro promised more than the paper delivered.
+
+**Correction applied:** §1 framing aligned to §4. "almost all of this work operates within a single vendor" → "predominantly within a single vendor"; "is the right granularity for the heterogeneity guard. It is the level at which prior-distribution diversity actually appears" → "is a level at which substantial prior-distribution diversity reliably appears"; "unlikely to appear in the same form" → "less likely to appear in the same form, though correlated blind spots from shared upstream data exist and are discussed as a limitation in §7"; "Within-vendor heterogeneity is multi-instance" → "Within-vendor heterogeneity is primarily multi-instance, not multi-perspective at the prior-distribution level."
+
+### Catch 42 — Case-study count harmonized across abstract / intro / §5 preamble
+
+**Source:** Codex Session-10 review item 2.
+
+**Pre-edit state:** Abstract said "five case studies"; intro said "five case studies"; §5 preamble said "five catches plus a generative case study"; §9 conclusion said "five representative catches." After Session 9 added §5.6, the §5 directory had six subsections: §5.1–§5.4 defensive, §5.5 generative, §5.6 boundary-case. The terminology was inconsistent across sections.
+
+**Correction applied:** Codex-suggested framing adopted across all four locations: "**six case studies: four defensive, one generative, one boundary-case limitation**." Abstract enumerates the six; §1 intro enumerates the six with explicit class labels; §5 preamble names the structure; §9 conclusion catch list previously updated in Catch 37. The "boundary-case limitation" framing for §5.6 sharpens the paper's posture: §5.6 is the failure class the architecture does *not* catch, not a case the architecture catches.
+
+### Catch 43 — §5.6 softened: claims about all-vendor distribution were too absolute
+
+**Source:** Codex Session-10 review item 3.
+
+**Pre-edit state:** §5.6 paragraphs (originally added in Catch 37) said cross-vendor review "would not catch any" of the three contamination layers, and that "every major frontier model" knows the contaminated claim. The investigation did not actually run multi-vendor verification on the tongkat ali example, so the all-vendor claims were predictions on theoretical grounds presented as factual reports.
+
+**Correction applied:** Three softenings:
+1. Subsection heading "Why cross-vendor review would not catch any of the three" → "Why cross-vendor review is unlikely to catch contamination at this layer."
+2. "in the training corpus of every major frontier model" → "plausibly distributes across the training corpora of major frontier models."
+3. "A second vendor reviewing the wiki page produces the same verdicts because the contamination is upstream of the vendor" → "A second vendor reviewing the wiki page is less likely to flag the verdicts because the contamination is upstream of the vendor. We did not run multi-vendor verification on these three claims as part of this investigation, so the prediction is on theoretical grounds; an empirical multi-vendor check would tighten the claim."
+4. Class-of-failure summary "Distributes identically across vendors because the same wrong claim is in every vendor's training corpus" → "Plausibly distributes broadly across major-vendor training corpora because the laundered claim appears in widely-indexed secondary literature."
+
+Honest scoping: §5.6 is now framed as theoretical-prediction grounded in mechanism, not empirically-tested cross-vendor null.
+
+### Catch 44 — Appendix A malformed placeholder cells fixed
+
+**Source:** Codex Session-10 review item 4.
+
+**Pre-edit state:** Four rows in the vendor-attribution table (Abstract, §1, §5.5, §9, Methods Appendix) had stray `|,` syntax in cells where the reviewer or catches column should have been empty or contained parenthetical notes. The pattern rendered as malformed cells in markdown preview.
+
+**Correction applied:** Replaced `|, (parenthetical) |, |` patterns with proper empty/parenthetical cell syntax: `| (parenthetical) | (none logged) |`. All `|,` stray syntax removed from the table. Five rows touched.
+
+### Catch 45 — "vibe-science" moved out of abstract; "interactive hypothesis-development layer" used in abstract
+
+**Source:** Codex Session-10 review item 5.
+
+**Pre-edit state:** Abstract used "*vibe-science interactive layer*" as the term for Layer 1. Codex flagged this as too informal for a bioRxiv abstract where reviewers expect clinical terminology. Brian agreed.
+
+**Correction applied:** Abstract now uses "interactive hypothesis-development layer" for Layer 1 (clinical, descriptive). Intro §1 introduces both terms with the cross-reference: "*interactive hypothesis-development layer* (author plus Anthropic Claude Opus; the project calls this *vibe-science*, defined in §3)." §3 retains the full vibe-science definition unchanged (the project's preferred term, defined as the lab analogue of vibe-coding). The term survives intact for in-project use; only the abstract is sanitized for first-impression reading.
+
+### Codex spot-check verification
+
+Codex's review noted that the adjacent-literature additions from Session 8 are real and findable: Peterson (knowledge collapse, arXiv:2404.03502), Wright et al. (epistemic diversity, U Copenhagen profile), Rudko/Bonab (output homogenization, Springer DOI 10.1007/s10676-025-09845-2), LiRA (arXiv:2510.05138). No corrections needed; logged here for the audit trail.
+
+### Codex bottom line on submission readiness
+
+*"yes, this latest version is on the right track for bioRxiv. I'd call it pre-submission polish rather than conceptual surgery now. The remaining work is consistency, tone-softening, appendix cleanup, and Zenodo DOI."* All four named items addressed in Session 10 except the Zenodo DOI (gating submission per Catch 25 / Codex C5 from Session 8; Brian's action item).
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.

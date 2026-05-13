@@ -5,8 +5,14 @@ Figure 2 — Failure-class taxonomy for the cross-vendor heterogeneity-guard pap
 Recast (2026-05-13 per Codex external review):
 Earlier version was a bar chart with N=1 per class, which read as a
 quantitative distribution and overclaimed the operational record. This
-version is a taxonomy: four cells, one per failure class, with the
-operational exemplar and surfacing mechanism. Explicitly qualitative.
+version is a taxonomy: one cell per failure class, with the operational
+exemplar and surfacing mechanism. Explicitly qualitative.
+
+Session 9 expansion (2026-05-13): added a fifth cell for §5.6 (corpus-level
+contamination) since the audit-driven addition to the paper makes this a
+distinct failure class with its own defense mechanism (verification-of-
+verification chains targeting primary source, distinct from both cross-
+vendor review and within-pipeline manual discipline).
 
 Run: python3 figure2_catches.py
 Outputs: figure2_catches.pdf, figure2_catches.png (300dpi)
@@ -24,9 +30,10 @@ COLORS = {
     "google":    "#5C7C8E",
     "openai":    "#6B8B6B",
     "manual":    "#888888",
+    "vov":       "#A05858",  # V-of-V chains; matches Figure 1's human-in-loop red
 }
 
-# The four classes, presented as a taxonomy
+# The five classes, presented as a taxonomy
 CLASSES = [
     {
         "title": "Within-vendor cascade",
@@ -59,6 +66,14 @@ CLASSES = [
         "surfacing": "DeepSeek V4-Pro\nindependent\npeer-review",
         "surfacing_color": "deepseek",
         "what_it_is": "Risk class invisible from\nwithin the dominant vendor's\npipeline because the blind\nspot aligns with its own prior.",
+    },
+    {
+        "title": "Corpus-level\ncontamination",
+        "exemplar": "§5.6 — Tongkat ali\ncitation laundering /\neurycomanone reversal",
+        "exemplar_date": "2026-05-07",
+        "surfacing": "Verification-of-\nverification chain\n(primary-source)",
+        "surfacing_color": "vov",
+        "what_it_is": "Contamination distributes\nidentically across vendors\nbecause it is in every\nvendor's training corpus.",
     },
 ]
 
@@ -126,27 +141,28 @@ def make_cell(ax, x, y, w, h, cls):
 
 
 def main():
-    fig, ax = plt.subplots(figsize=(13, 6.2))
-    ax.set_xlim(0, 10)
+    fig, ax = plt.subplots(figsize=(16, 6.2))
+    ax.set_xlim(0, 12.5)
     ax.set_ylim(0, 5.0)
     ax.axis("off")
 
-    # 1x4 layout — bigger cells, more inter-cell gap, taller cells for 3-line wraps
+    # 1x5 layout, same per-cell dimensions; figsize widened to fit.
     cell_w = 2.30
     cell_h = 3.9
     gap = 0.18
     y = 0.4
-    start_x = (10 - 4*cell_w - 3*gap) / 2
+    n = len(CLASSES)
+    start_x = (12.5 - n*cell_w - (n-1)*gap) / 2
 
     for i, cls in enumerate(CLASSES):
         x = start_x + i * (cell_w + gap)
         make_cell(ax, x, y, cell_w, cell_h, cls)
 
-    # Title + caption
-    ax.text(5.0, 4.80,
+    # Title + caption (centered above the cell row)
+    ax.text(6.25, 4.80,
             "Figure 2. Failure-class taxonomy for the cross-vendor heterogeneity guard",
             ha="center", fontsize=11.5, fontweight="bold")
-    ax.text(5.0, 4.52,
+    ax.text(6.25, 4.52,
             "Each cell is qualitative (N=1 in the 13-day operational window); the figure is a taxonomy of failure classes, not a frequency distribution.",
             ha="center", fontsize=8.5, style="italic", color="#555555")
 
@@ -156,9 +172,11 @@ def main():
                        label="Cross-vendor surfacing (DeepSeek)"),
         mpatches.Patch(facecolor=COLORS["manual"],
                        label="Within-pipeline manual discipline"),
+        mpatches.Patch(facecolor=COLORS["vov"],
+                       label="Verification-of-verification (primary-source chain)"),
     ]
     ax.legend(handles=handles, loc="lower center", fontsize=8.5,
-              ncol=2, frameon=False, bbox_to_anchor=(0.5, -0.04))
+              ncol=3, frameon=False, bbox_to_anchor=(0.5, -0.04))
 
     plt.tight_layout()
     pdf_path = OUT_DIR / "figure2_catches.pdf"
