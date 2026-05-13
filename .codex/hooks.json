@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 '/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.codex/hooks/validate-commit-msg.py'"
+          },
+          {
+            "type": "command",
+            "command": "python3 '/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.codex/hooks/block-push-without-approval.py'"
+          }
+        ]
+      }
+    ]
+  }
+}
