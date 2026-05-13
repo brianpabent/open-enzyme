@@ -407,6 +407,32 @@ The manuscript is submission-ready pending only the Zenodo DOI minting (requires
 
 ---
 
+## Catch 31 — Sonnet subagent investigation surfaced instrumentation bug in `synthesize.py`
+
+**Trigger:** during validation of §6 operational data against actual sweep-log frontmatter, the 2026-05-09 sweep's frontmatter showed `reviewer_fallback_used: True` while the served model was DeepSeek (the requested primary). Brian asked what the flag actually means and instructed me to delegate investigation to a Sonnet subagent rather than guess.
+
+**Subagent (Anthropic Claude Sonnet via Explore) returned:**
+
+- `reviewer_fallback_used` is set at `scripts/synthesize.py` line 353 by `fallback_used = served_model != args.model`.
+- The check is a string-equality test on OpenRouter's response field `resp["model"]`. OpenRouter canonicalizes bare aliases like `deepseek/deepseek-v4-pro` to versioned slugs like `deepseek/deepseek-v4-pro-20260423` in its response. The strings differ, so the flag fires — *even when the request succeeded on the first try and Gemini was never invoked*.
+- In a spot-check of the five most recent post-2026-05-05 sweeps, the flag was `True` in all five (100% false-positive rate) despite the served model being a DeepSeek-family slug in every case.
+- Correct test would be vendor-family comparison or `served_model not in [args.model] + FALLBACK_MODELS`.
+
+**Implication for the paper.** The architectural commitment to Gemini-as-Pass-2-fallback is intact in code (`synthesize.py` lines 92–93). What's unobservable from the operational record is how often the fallback has actually fired in practice. The paper's §3 architectural claim is correct; the paper's §6 must not silently rely on the flag.
+
+**Correction applied to §6:** added an "instrumentation caveat" paragraph that names the bug, cites the specific code line, and reports the 5-of-5 false-positive observation. Surfaces the issue rather than hides it — a methodology paper that under-reports the integrity of its own operational record fails its own discipline.
+
+**Followup for Brian (separate from the paper):**
+1. Fix `synthesize.py` line 353 to test vendor-family or the actual fallback set, not bare string inequality.
+2. Audit recent sweep logs to determine whether Gemini has *ever* fired as a real fallback since the 2026-05-05 DeepSeek-primary switch.
+3. Re-check the 2026-05-08 `operations/notable-moments.md` entry's "Gemini synthesizer surfacing the DAF case study" claim — confirm against that sweep's actual served model, since the alias-expansion bug means the log frontmatter may have been misleading the whole time.
+
+**Class of failure:** instrumentation bug in load-bearing audit infrastructure. The daemon was correctly designed (Gemini fallback exists architecturally) but the flag that's supposed to tell us when it fires has been silently broken since the 2026-05-05 config change. Same failure class as §5.1's DAF disulfide-count cascade — a quantity recorded in the corpus without being verified at the source. Caught here by explicit subagent investigation, not by routine review.
+
+**Process lesson:** Brian's instruction to delegate to a Sonnet subagent rather than guess was the correct discipline. The "guess from memory and reasoning" alternative would have produced a plausible-sounding wrong answer (e.g., "the flag indicates which fallback path executed"). The grep-verify-against-source pattern that §5.1 advocates for applies to internal-tool instrumentation as much as to wiki content.
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.
