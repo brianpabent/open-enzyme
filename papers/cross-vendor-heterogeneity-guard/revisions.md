@@ -179,6 +179,33 @@ Both catches surfaced in a *self*-verify pass — same vendor (Anthropic Claude 
 
 ---
 
+## Session 6 — 2026-05-13 (figures + structure cleanup)
+
+**Drafted/produced:**
+- Figure 1 (architecture diagram) via `figures/figure1_architecture.py` — three-pass cross-vendor sweep with episodic peer-review pass shown as dashed independent surface; renders to both PDF and PNG @ 300dpi
+- Figure 2 (catches-by-class) via `figures/figure2_catches.py` — four §5 case studies color-coded by surfacing vendor; §5.4 DeepSeek catch annotated as seminal
+- `figures/README.md` with shared color palette + rebuild commands
+- Manuscript-directory `README.md` indexing every file/dir and the drafting-session timeline
+- Structural cleanup: Abstract moved to its proper position at the top of the manuscript (was previously between Appendix B and References — a drafting artifact). Appendix A vendor-attribution table fully populated with actual drafter/reviewer state + cross-references to specific catches in this log.
+
+**No new catches.** This was a polish session; the prose was untouched apart from caption/wiring additions. Internal consistency check confirmed:
+- Section ordering (Abstract → §1–§9 → Methods Appendix → Appendix A → Appendix B → References) is standard paper layout
+- Numbered citations [1]-[12] in body each map to a References entry
+- Author-year §2 citations (11 papers) each map to a BibTeX key in `refs.bib`
+- Both figures wired into the manuscript with caption blocks pointing to figure-source scripts
+
+---
+
+## State after Session 6
+
+**Solo-draftable arc complete.** What remains:
+1. Cross-vendor review prompts fired (Brian)
+2. Catches from those review passes land in this file → manuscript corrections applied → updated `revisions.md` entries
+3. bioRxiv preprint submission per `submission-checklist.md` (Brian)
+4. *Patterns* (Cell Press) peer-review submission after preprint stabilizes
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.
