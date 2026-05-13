@@ -28,7 +28,7 @@ incident from the operational logs.
 |---|---|---|---|
 | 1 | Propagate | Claude Sonnet 4.6 | Anthropic |
 | 2 | Synthesize | DeepSeek V4-Pro (primary), Gemini 2.5 Pro (fallback) | DeepSeek / Google |
-| 3 | Review | Claude Opus 4.7 (or GPT-5.5 alternative) | Anthropic / OpenAI |
+| 3 | Review | GPT-5.5 (default since 2026-05-08; Claude Opus 4.7 alternate) | OpenAI / Anthropic |
 | Peer-review (episodic) | Independent cross-vendor verification | DeepSeek V4-Pro | DeepSeek |
 
 ## 3. Cost and Latency Measurements

@@ -343,6 +343,26 @@ The manuscript is submission-ready pending only the Zenodo DOI minting (requires
 
 ---
 
+## Catch 27 — Pass 3 default reviewer model was wrong (caught by Brian during his read)
+
+**Source:** Brian's first reading-pass through `draft.md` (2026-05-13).
+
+**Claim under review:** §3 and Table 1 both said Pass 3 was "Anthropic Claude Opus 4.7, or OpenAI GPT-5.5 in an alternative configuration." Glossary said the same. Figure 1 box read "Pass 3 — Review · Claude Opus 4.7 (or GPT-5.5)". Abstract said "three operational passes assigned across Anthropic, DeepSeek, and Google models."
+
+**Verdict:** Rejected — factual error.
+
+**Reasoning:** `.github/workflows/wiki-sweep.yml` lines 22–24 and 352–357 show GPT-5.5 has been the **default** Pass 3 reviewer since 2026-05-08 (switched from Opus 4.7 after a three-way eval preserved at `evals/pass-3-reviewer/`). The Anthropic Opus configuration is the **alternate**, not the primary. The Claude-Opus framing in the manuscript reflected a pre-2026-05-08 configuration.
+
+**Correction applied:** §3 Pass 3 paragraph rewritten to lead with GPT-5.5 + the 2026-05-08 switch date; Claude Opus 4.7 demoted to "alternate" with its own model-tuned prompt path noted (`scripts/sweep-prompt-3-review-gpt55.md` for GPT-5.5 vs. `scripts/sweep-prompt-3-review.md` for Claude). Table 1 row 3 fixed. Figure 1 Pass 3 box updated to "GPT-5.5 / Claude Opus 4.7 alt." with the OpenAI green-grey vendor color, not Anthropic amber. Abstract vendor enumeration corrected to "Anthropic, DeepSeek, and OpenAI (with Google Gemini as a configured alternate at Pass 2)." Glossary Pass 2 + Pass 3 entries updated. Figure 1 PDF + PNG regenerated.
+
+**Why the cross-vendor review pass missed this in Session 7:** Gemini reviewed §3 + §6 + §7 in Session 7 and caught the "Gemini as fallback" framing (Catch 13) and the architectural vendor-collision in the peer-review pass (Catch 12) — but did NOT cross-check the Pass 3 model identity against the actual workflow file. The reviewer's brief asked for architectural-accuracy verification but Gemini operated on the manuscript's internal consistency rather than running ground-truth checks against `.github/workflows/wiki-sweep.yml`. This is a real failure-class instance: cross-vendor review caught framing/under-crediting issues but didn't catch a load-bearing model-identity mis-statement that primary-source verification would have caught. **A within-pipeline ground-truth verification step (the pre-commit grep-verify gate the paper itself advocates for, applied to the manuscript's own architectural claims against the actual workflow file) would have caught this.** Brian's institutional-memory catch is doing exactly what §5.1 says the pre-commit gate should have done at authoring time.
+
+**Class of failure:** within-vendor cascade in the manuscript's architectural description — the drafter (Claude) authored the Pass 3 description based on an older mental model of the daemon configuration without grep-verifying against the current `.github/workflows/wiki-sweep.yml`. Cross-vendor review (Gemini) didn't catch it because the reviewer's brief was about manuscript-internal consistency, not ground-truth-against-code. Caught by Brian's institutional knowledge during his first reading pass.
+
+**Lesson preserved for the methodology argument:** the paper's pre-commit grep-verify gate (§5.1) and the cross-vendor review pass (§5.4) are complementary, not redundant. Cross-vendor review is excellent at framing, vendor-skew, and overconfident-claim catches. It is much less reliable for "does this specific factual claim match the current state of the code" — that needs the grep-verify gate, ideally specified in the reviewer's brief. Future cross-vendor review prompts should explicitly include "verify load-bearing architectural claims against the named source file."
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.

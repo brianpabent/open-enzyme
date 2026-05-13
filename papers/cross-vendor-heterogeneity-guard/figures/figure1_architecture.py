@@ -87,8 +87,8 @@ def main():
 
     # Pass 3
     make_box(ax, 6.8, 3.8, 2.0, 1.2,
-             "Pass 3 — Review\nClaude Opus 4.7\n(or GPT-5.5)",
-             fc=COLORS["anthropic"], text_color="black")
+             "Pass 3 — Review\nGPT-5.5\n(Claude Opus 4.7 alt.)",
+             fc=COLORS["openai"])
 
     # Inter-pass artifacts
     arrow(ax, 2.2, 4.4, 3.5, 4.4,

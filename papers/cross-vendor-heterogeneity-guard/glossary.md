@@ -36,9 +36,9 @@ Terms grouped by topic, not by section.
 
 **Pass 1 — Propagate.** First model (currently Anthropic Claude Sonnet 4.6) reads the edited file and propagates the new findings to any other wiki pages that cross-reference the affected concepts. Inline updates only; no synthesis.
 
-**Pass 2 — Synthesize.** Second model (currently DeepSeek V4-Pro primary, Google Gemini 2.5 Pro fallback) reads the entire corpus and emits cross-document synthesis: new connections, contradictions, open questions, proposed experiments. Each finding ends with a `{{PEER-REVIEW}}` marker so Pass 3 knows where to insert a review.
+**Pass 2 — Synthesize.** Second model (currently DeepSeek V4-Pro or Google Gemini 2.5 Pro — both configured as primary, choice is operational) reads the entire corpus and emits cross-document synthesis: new connections, contradictions, open questions, proposed experiments. Each finding ends with a `{{PEER-REVIEW}}` marker so Pass 3 knows where to insert a review.
 
-**Pass 3 — Review.** Third model (currently Anthropic Claude Opus 4.7, or OpenAI GPT-5.5 in an alternative configuration) critiques each Pass 2 finding with a fixed verdict vocabulary (*Confirmed* / *Confirmed-prioritize* / *Partial* / *Push-back* / *Rejected*). Has read-only tool access for primary-source spot-checks.
+**Pass 3 — Review.** Third model (currently OpenAI GPT-5.5; Anthropic Claude Opus 4.7 available as an alternate). GPT-5.5 became the default on 2026-05-08 after a three-way eval. Critiques each Pass 2 finding with a fixed verdict vocabulary (*Confirmed* / *Confirmed-prioritize* / *Partial* / *Push-back* / *Rejected*). Has read-only tool access for primary-source spot-checks. The reviewer prompt is model-tuned — `scripts/sweep-prompt-3-review-gpt55.md` for GPT-5.5, `scripts/sweep-prompt-3-review.md` for Claude.
 
 **Episodic peer-review pass.** A separate, formalized fourth pattern: an independent vendor's model receives the substrate (the wiki at a given commit) and produces a parallel synthesis plus a differential analysis against the daemon's output. Run when a major architectural change lands, when a class of synthesis output is suspect, or when the cost of a missed connection is high. The seminal instance is DeepSeek V4-Pro reviewing Claude Opus 4.7 on 2026-04-25 — the catch that motivated formalizing the cross-vendor daemon itself.
 
