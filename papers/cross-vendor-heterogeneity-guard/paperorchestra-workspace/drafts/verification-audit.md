@@ -35,6 +35,16 @@ The S2 rate-limit incident (2026-05-13): the script ran a first pass at 1.0s spa
 
 **Manual fallback applied.** For the 7 unverified candidates, records were constructed from the WebSearch results already in the drafting context plus the canonical arXiv IDs returned in those results. Each record is marked `"verification": "websearch+arxiv"` in `citation_pool.json`. The arXiv IDs are load-bearing — they are the canonical identifiers WebSearch returned, and they resolve to the listed metadata on arxiv.org. Authors, titles, years, and abstracts come from the WebSearch summaries, which in turn come from arxiv.org listings.
 
+## S2 API key request status
+
+**Submitted: 2026-05-13.** Brian filed the S2 API key request form at `https://www.semanticscholar.org/product/api#api-key-form` with the use-case description, endpoint list (`/graph/v1/paper/search`, `/graph/v1/paper/{paperId}`, `/graph/v1/paper/arXiv:{id}`), and request-volume estimate (100-500/day during drafting bursts, <50/day average, never above 1 QPS). All five required-checkbox acknowledgments confirmed honestly: prior unauthenticated requests made, exponential backoff in place, 60-day-inactivity removal acknowledged, license read and accepted.
+
+Response from the form: *"Thank you for your request. We have received your information. Please note that we are currently working on a backlog of requests and we appreciate your patience!"*
+
+**Approval is asynchronous and not guaranteed by submission deadline.** Public issue threads report 5+ day waits with no response in some cases. The fallback plan if the key arrives in time is to re-run `run_verify.py` with `SEMANTIC_SCHOLAR_API_KEY` set and upgrade the 7 WebSearch+arXiv records to full S2-verified.
+
+**If the key does not arrive before submission**, the next-session task is to swap the verification arm from S2 to **arXiv's direct API** (`http://export.arxiv.org/api/query?id_list=<arxiv_id>`), which is free, unauthenticated, no rate limit at our query volume, and returns title/authors/abstract/date for every one of the 7 fallback records (each has an arXiv ID). This is strictly better than the current WebSearch+arXiv-string fallback because the metadata comes from arXiv's canonical record, not from a search-result summary.
+
 ## Why this gap is acceptable for the draft, with caveats
 
 The literature-review-agent's S2 verification step is a backstop against the case where a candidate paper does not exist or is mis-titled. In our case, every candidate was already known to exist (WebSearch returned arxiv.org URLs for each), so the S2 check would have been a belt-and-suspenders confirmation rather than a discovery mechanism. Skipping it under rate-limit duress and noting the gap is defensible for a working draft.
