@@ -364,5 +364,100 @@
     ],
     "verification": "s2",
     "_bibkey": "ouyang2022training"
+  },
+  {
+    "paperId": "599548449032b38d0fed8fef28ee266fc8b18c3a",
+    "title": "AI and the problem of knowledge collapse",
+    "year": 2024,
+    "venue": "Ai & Society",
+    "authors": [
+      "Andrew J. Peterson"
+    ],
+    "abstract": "While artificial intelligence has the potential to process vast amounts of data, generate new insights, and unlock greater productivity, its widespread adoption may entail unforeseen consequences. We identify conditions under which AI, by reducing the cost of access to certain modes of knowledge, can paradoxically harm public understanding. While large language models are trained on vast amounts of diverse data, they naturally generate output towards the \u2018center\u2019 of the distribution. This is gen",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2404-03502",
+      "ArXiv": "2404.03502",
+      "DOI": "10.1007/s00146-024-02173-x",
+      "CorpusId": 268889277
+    },
+    "clusters": [
+      "knowledge_collapse"
+    ],
+    "verification": "s2",
+    "_bibkey": "peterson2024ai"
+  },
+  {
+    "paperId": "540260940e8750e7943e6832e501d3971fa8e5d2",
+    "title": "LiRA: A Multi-Agent Framework for Reliable and Readable Literature Review Generation",
+    "year": 2025,
+    "venue": "AAAI Conference on Artificial Intelligence",
+    "authors": [
+      "Gregory Hok Tjoan Go",
+      "Khang Ly",
+      "A. Sogaard",
+      "A. Tabatabaei",
+      "M. D. Rijke",
+      "Xinyi Chen"
+    ],
+    "abstract": "The rapid growth of scientific publications has made it increasingly difficult to keep literature reviews comprehensive and up-to-date. Though prior work has focused on automating retrieval and screening, the writing phase of systematic reviews remains largely under-explored, especially with regard to readability and factual accuracy. To address this, we present LiRA (Literature Review Agents), a multi-agent collaborative workflow which emulates the human literature review process. LiRA utilizes",
+    "externalIds": {
+      "ArXiv": "2510.05138",
+      "DBLP": "journals/corr/abs-2510-05138",
+      "DOI": "10.48550/arXiv.2510.05138",
+      "CorpusId": 281886200
+    },
+    "clusters": [
+      "lira_multiagent"
+    ],
+    "verification": "s2",
+    "_bibkey": "go2025lira"
+  },
+  {
+    "paperId": "CorpusId:280390782",
+    "title": "ChatGPT is incredible (at being average)",
+    "year": 2025,
+    "venue": "Ethics and Information Technology",
+    "authors": [
+      "Ihor Rudko",
+      "Aysan Bashirpour Bonab"
+    ],
+    "abstract": "Argues that LLM output homogenization \u2014 the tendency of chatbots to structure outputs as recognizable clich\u00e9s, truisms, and predictable argumentations \u2014 is a distinct and under-studied failure mode relative to hallucination and bias. Distinguishes \"what-BS\" (falsehoods, factual inconsistencies) from \"how-BS\" (output-structure homogenization), framed via Frankfurt's analysis of bullshit. Argues that homogenization has powerful structuring effects on individuals, organizations, and institutions.",
+    "externalIds": {
+      "DOI": "10.1007/s10676-025-09845-2",
+      "DBLP": "journals/ethicsit/RudkoB25",
+      "CorpusId": 280390782
+    },
+    "clusters": [
+      "output_homogenization"
+    ],
+    "verification": "s2-meta+websearch-summary",
+    "verification_note": "S2 record has the canonical title/year/venue/DOI/authors but no abstract field. Abstract here is paraphrased from a WebSearch summary of the Springer publisher page (auth-gated for direct fetch). Verbatim abstract retrievable from publisher DOI 10.1007/s10676-025-09845-2.",
+    "_bibkey": "rudko2025chatgpt"
+  },
+  {
+    "paperId": "10f163d312af816e83dfe9c92578327355be286d",
+    "title": "Epistemic Diversity and Knowledge Collapse in Large Language Models",
+    "year": 2025,
+    "venue": "arXiv.org",
+    "authors": [
+      "Dustin Wright",
+      "Sarah Masud",
+      "Jared Moore",
+      "Srishti Yadav",
+      "Maria Antoniak",
+      "C. Park"
+    ],
+    "abstract": "Large language models (LLMs) tend to generate homogenous texts, which may impact the diversity of knowledge generated across different outputs. Given their potential to replace existing forms of knowledge acquisition, this poses a risk of knowledge collapse, where homogenous LLMs may lead most people to be exposed to largely the same information, thus mediating a shrinking in the range of accessible information over time as underepresented knowledge is forgotten. To assess the risk of knowledge ",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2510-04226",
+      "ArXiv": "2510.04226",
+      "DOI": "10.48550/arXiv.2510.04226",
+      "CorpusId": 281843058
+    },
+    "clusters": [
+      "epistemic_diversity"
+    ],
+    "verification": "s2",
+    "_bibkey": "wright2025epistemic"
   }
 ]

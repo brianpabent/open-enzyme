@@ -289,6 +289,60 @@ The cross-vendor reviews have, by the paper's own definition, demonstrated the m
 
 ---
 
+## Session 8 — 2026-05-13 (Codex external review, response pass)
+
+Brian shared a Codex external review of the manuscript. Bottom line: *"Yes on both, with one important caveat: this is publishable as a methods / scientific communication / AI-for-science workflow case study, not as a broad empirical proof that cross-vendor systems outperform within-vendor systems."* Codex named six specific recommendations. All applied in this session.
+
+### Catch 21 — Codex C1: Stale metadata in `draft.md` status line and Appendix A
+
+`draft.md` status line and Appendix A vendor-attribution table still said the cross-vendor reviews were pending, even though `revisions.md` Session 7 had completed and applied them. **Correction:** status line rewritten to reflect sessions 1–8 scope; Appendix A table fully updated with the actual review assignments (DeepSeek on §4+§5, Gemini on §3+§6+§7, Claude+DeepSeek on §2) and cross-references to specific catches (Catches 9–20 mapped to their sections). Added a "Cross-vendor review run summary" row noting the OpenRouter orchestration, $0.18 total cost, ~131s parallel wall time, and pointer to verbatim review outputs at `paperorchestra-workspace/reviews/`.
+
+### Catch 22 — Codex C2: "Proof" framing replaced with "case-study evidence"
+
+Several sentences in the abstract and §1 read as broad empirical claims rather than case-study evidence. **Corrections:**
+- Abstract: "The seminal catch ... is the principle demonstrated by working" → "is a concrete instance of the principle the architecture generalizes." Added explicit framing: "We frame the contribution as a methodology case study with N=1 operational deployment and qualitative catches; controlled ablations comparing cross-vendor against alternative review architectures remain future work."
+- §1 contribution paragraph: "demonstrating the principle by working" → "The paper's posture is methodology case study with N=1 deployment and qualitative catches, not broad empirical proof; we frame the operational record as case-study evidence and queue controlled ablations as future work."
+
+### Catch 23 — Codex C3: Missing adjacent-literature citations
+
+Codex named four adjacent papers the §2.6 model-collapse cluster should engage with. All four verified via S2 (now that the API key is in `~/.config/abent/paperorchestra.env`):
+- **Peterson 2024** "AI and the Problem of Knowledge Collapse" (arXiv:2404.03502, *AI & Society*) — societal-level recursive-AI failure. Added as ref [13].
+- **Wright et al. 2025** "Epistemic Diversity and Knowledge Collapse in Large Language Models" (arXiv:2510.04226) — empirical methodology for measuring LLM epistemic diversity across 27 models / 155 topics; finds all models less diverse than basic web search, model size hurts diversity, RAG helps. Added as ref [14].
+- **Rudko and Bonab 2025** "ChatGPT is incredible (at being average)" (Ethics and Information Technology, Springer) — argues output homogenization is structurally distinct from hallucination; distinguishes "what-BS" from "how-BS." Added as ref [15]. *Note: S2 record had empty abstract field; abstract paraphrased from a WebSearch summary of the Springer publisher page, flagged with `verification: "s2-meta+websearch-summary"` in citation_pool.json. Verbatim abstract available at the publisher DOI 10.1007/s10676-025-09845-2 for reviewers who want to verify.*
+- **Go et al. 2025** "LiRA: A Multi-Agent Framework for Reliable and Readable Literature Review Generation" (arXiv:2510.05138) — Codex referenced this as the "Elhuyar 2026 multi-agent scientific literature summarization paper" but the actual title and authorship are different; LiRA is a closely-matching multi-agent literature-review framework that fits §2.5's automated-AI-scientist cluster. Added as ref [16].
+
+Plus **Ouyang et al. 2022** InstructGPT (arXiv:2203.02155, NeurIPS 2022) added during the Catch 10 correction in Session 7 (Anthropic-skew fix). Cite key `ouyang2022training`, ref [5].
+
+§2.6 rewritten substantially to engage with all four adjacent constructs (model collapse / knowledge collapse / epistemic-diversity measurement / output homogenization) as distinct-but-related failure modes, positioning epistemic homogenization (this paper's central term) as the corpus-level analogue. Wright et al.'s empirical methodology now flagged as the obvious future-work direction for a quantitative validation of the cross-vendor pattern.
+
+### Catch 24 — Codex C4: Figure 2 recast from bar chart to qualitative taxonomy
+
+Codex flagged the original Figure 2 (bar chart, N=1 per class) as reading like a frequency distribution and over-claiming the operational record. **Correction:** `figure2_catches.py` rewritten to render a 4-cell taxonomy with explicit "Each cell is qualitative (N=1 in the 13-day operational window); the figure is a taxonomy of failure classes, not a frequency distribution" caption. Each cell shows: title (failure class), description, exemplar (§5.X), exemplar date, surfacing mechanism (color-coded by vendor). The §5.4 cross-vendor catch is the one cell with a colored surfacing band (DeepSeek indigo); the other three cells show grey "within-pipeline manual discipline" bands. PDF + PNG regenerated.
+
+### Catch 25 — Codex C5: Zenodo DOI is a submission gate
+
+Codex noted that the manuscript depends heavily on open logs and inline references to mutable repo files; without a Zenodo snapshot DOI, reviewers will not trust the audit trail. **Correction:** `submission-checklist.md` Zenodo section rewritten from "[ ] consider Zenodo" placeholder to a full step-by-step workflow (enable GitHub integration → create release tag at submission commit → push → Zenodo auto-archives + mints DOI → update manuscript Data and Code Availability section with the DOI). Verification step added enumerating every repo artifact the Zenodo snapshot must include.
+
+### Catch 26 — Codex C6: Reference scheme harmonization
+
+The manuscript had two parallel citation schemes: §2 used author-year (Du et al. 2023, etc.) pointing to BibTeX keys in `refs.bib`, while §3-§9 used numbered `[N](path)` markdown links pointing to repo-internal artifacts. Codex flagged this as inconsistent and recommended numbered references throughout with repo artifacts moved to a Data and Code Availability section.
+
+**Correction applied:**
+- §2 author-year citations → numbered [1]-[16] format referring to a unified References section with 16 academic papers (the S2-verified pool).
+- §3-§9 numbered repo-citations → inline italicized filepath parentheticals (e.g., `(`scripts/SWEEP-ARCHITECTURE.md`)`) instead of numbered references.
+- New "Data and Code Availability" section near the end of the manuscript consolidates all repo-internal artifacts cited inline.
+- Unified References section now contains 16 academic citations in §2 first-appearance order.
+
+### Codex meta-observation: "the revision log is the paper's best asset"
+
+Codex specifically called out the §5.3 7,500× → 7.5× catch as *"the paper's strongest evidence ... it shows exactly what the manuscript argues: an internally coherent corpus error propagated until a cross-vendor review pass caught it. That reflexive catch turns the paper from 'interesting essay' into 'documented production case study.'"* This is independent external confirmation that the Session 7 reflexive framing was the right call. The reflexive narrative now has converging endorsement from (a) the Session 7 cross-vendor reviewers themselves, (b) the user's own pre-existing methodology, and (c) Codex external review. No correction needed; flagged here for the audit trail.
+
+### State after Session 8
+
+The manuscript is submission-ready pending only the Zenodo DOI minting (requires Brian to enable Zenodo's GitHub integration and create the release tag — see `submission-checklist.md` for the step-by-step). 16 academic citations all S2-verified; reference scheme unified; tone harmonized to case-study evidence; adjacent literature engaged; Figure 2 recast as taxonomy; stale metadata updated. 26 catches in the revision log total (1 pre-drafting, 5 self-verify during sessions 1-6, 12 cross-vendor review pass, 8 Codex external review).
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.

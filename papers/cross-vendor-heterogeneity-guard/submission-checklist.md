@@ -37,13 +37,30 @@ Path from "current draft state" to "bioRxiv preprint live + manuscript submitted
 
 ---
 
-## Code and data preparation
+## Code and data preparation — Zenodo DOI is required, not optional
 
-- [ ] **Snapshot the Open Enzyme repo** at the submission-time commit. Cite the commit SHA in Appendix C.
-- [ ] **Zenodo DOI** for the snapshot. Generate via Zenodo's GitHub integration on the snapshot commit; cite the DOI in Appendix C and in the bibliography.
-- [ ] **Sample synthesis log** for supplementary materials — pick one representative `logs/v4-synthesis-*.md` log that shows the synthesis discipline cleanly. Anonymize if needed.
-- [ ] **Sample peer-review log** for supplementary materials — `logs/v4-peer-review-2026-04-25-deepseek.md` is the seminal case-study artifact; include it verbatim as supplementary material with a brief framing note.
-- [ ] **GitHub Actions workflow file** — `.github/workflows/wiki-sweep.yml` — included as supplementary material so reviewers can verify the architectural claims in §3.
+Codex external review (2026-05-13) flagged that the paper depends heavily on open logs and inline references to mutable local files. Reviewers will not trust a manuscript that points to a repo state that can change after submission. A Zenodo snapshot with a citable DOI is a submission gate, not a nice-to-have.
+
+### Step-by-step Zenodo workflow
+
+1. **Enable Zenodo's GitHub integration on `brianpabent/open-enzyme`.** Log in at https://zenodo.org/ with the GitHub OAuth flow, navigate to the GitHub tab, and flip the toggle next to `brianpabent/open-enzyme` from off to on. Zenodo will then watch the repo for new releases.
+2. **Create a GitHub release** at the submission-time commit:
+   ```bash
+   cd "Open Enzyme"
+   git tag -a v0.1.0-paper1 -m "Submission snapshot for cross-vendor heterogeneity-guard paper (bioRxiv preprint)"
+   git push origin v0.1.0-paper1
+   gh release create v0.1.0-paper1 --title "Paper #1 submission snapshot" --notes "Snapshot of the Open Enzyme repository at the submission-time commit for the cross-vendor heterogeneity-guard methodology paper (bioRxiv preprint)."
+   ```
+3. **Wait ~1-2 minutes for Zenodo to archive the release** and mint a DOI. The DOI appears on https://zenodo.org/account/settings/github/ under the repo's entry.
+4. **Update the manuscript's Data and Code Availability section** with the actual Zenodo DOI (e.g., `doi:10.5281/zenodo.XXXXXXX`). Add the DOI prominently in §1 Introduction and in the Methods Appendix.
+5. **Verify the Zenodo snapshot includes all artifacts** the paper references inline: `scripts/SWEEP-ARCHITECTURE.md`, `scripts/sweep-prompt-*.md`, `.github/workflows/wiki-sweep.yml`, `wiki/open-source-platform.md`, `wiki/paperclip-deep-dive.md`, `wiki/daf-cd55-scr14-truncated-computational.md`, `CLAUDE.md`, `logs/v4-peer-review-2026-04-25-deepseek.md`, `operations/comp-018-vs-comp-020-retrospective.md`, plus the entire `papers/cross-vendor-heterogeneity-guard/` directory (manuscript + workspace + reviews + figures).
+
+### Other code/data prep
+
+- [ ] **Sample synthesis log** for supplementary materials — pick one representative `logs/v4-synthesis-*.md` log that shows the synthesis discipline cleanly.
+- [ ] **Cross-vendor review outputs** — `paperorchestra-workspace/reviews/{claude-on-2,deepseek-on-2,deepseek-on-4-5,gemini-on-3-6-7}.md` ship as supplementary material. These are the verbatim catch-surfacing artifacts that the manuscript's Appendix A and `revisions.md` audit-trail point to.
+- [ ] **PaperOrchestra workspace** — entire `paperorchestra-workspace/` directory, including `citation_pool.json`, `refs.bib`, `drafts/verification-audit.md`, `run_reviews.py`, `run_verify.py`, `manual_supplement.py`, `build_bib.py`. Documents the §2 production process end-to-end.
+- [ ] **Figure source scripts** — `figures/figure1_architecture.py`, `figures/figure2_catches.py`, and the rendered PDFs/PNGs. The matplotlib sources allow reviewers to rebuild the figures exactly.
 
 ---
 
