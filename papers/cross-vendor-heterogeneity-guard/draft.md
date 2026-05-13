@@ -3,7 +3,13 @@
 **Brian Abent**
 Open Enzyme · brian@headsupresults.com
 
-**Status:** Working draft. §1, §2, §3, §4, §5, §6, §7, §8, §9 drafted in sessions 1–4 (2026-05-13). §2 drafted using the Ar9av/PaperOrchestra community implementation of the literature-review-agent skill, driven manually through Claude Code (Path B install — no permanent ~/.claude/skills/ footprint). Citation pool, BibTeX, LaTeX section output, and verification audit at `paperorchestra-workspace/`. Cross-vendor review of §2 by Claude + DeepSeek per `review-prompts.md` Prompt 3 pending. Abstract and final references in subsequent sessions per `outline.md`.
+**Status:** Working draft. Sessions 1–6 (2026-05-13) drafted abstract + §1–§9, Methods Appendix, Appendix A, Table 1, Figures 1–2, and the full §2 bibliography (11 S2-verified citations). §2 drafted using the Ar9av/PaperOrchestra community implementation of the literature-review-agent skill, driven manually through Claude Code (Path B install — no permanent ~/.claude/skills/ footprint). Citation pool, BibTeX, LaTeX section output, and verification audit at `paperorchestra-workspace/`. Cross-vendor review prompts for §3-§9 and §2 are ready in `review-prompts.md` — pending Brian firing them at Gemini / DeepSeek. After review-pass catches land, the manuscript is ready for bioRxiv preprint per `submission-checklist.md`.
+
+---
+
+## Abstract
+
+AI-assisted literature synthesis is becoming load-bearing infrastructure for scientific research. A new failure mode emerges when a single AI model is the sole synthesizer of a long-lived knowledge corpus: the corpus accumulates that model's blind spots and biases over time, with each individual edit plausible and internally consistent but the cumulative drift invisible without an outside reference. We call this drift *epistemic homogenization* and distinguish it from per-output hallucination. We argue that the right granularity of defense is **cross-vendor heterogeneity** — routing successive synthesis passes through frontier models trained by different companies, with different training corpora and different reinforcement-learning-from-human-feedback procedures. Existing multi-agent AI literature (debate, self-refine, jury-of-LLMs, Constitutional AI, automated-research systems) operates almost exclusively within a single vendor; the cross-vendor regime is under-explored as an explicit architectural commitment. We describe a production deployment of the cross-vendor pattern — the Open Enzyme wiki-sweep daemon, maintaining an ~80-page biotechnology research wiki via three operational passes assigned across Anthropic, DeepSeek, and Google models — and present four catches from ~3 weeks of operation that exemplify the failure classes the pattern protects against: a within-vendor hallucination cascade, an upstream-of-subagent framing contamination, an external-tool reliability failure, and a cross-vendor catch of a methodological risk invisible from within the dominant vendor's pipeline. The seminal catch — a DeepSeek peer-review pass surfacing the homogenization risk that the within-vendor pipeline had not named unprompted — is the principle demonstrated by working. The manuscript is drafted using its own methodology; a logged self-catch during drafting is preserved as the cleanest available reflexive evidence the guard applies to its own production.
 
 ---
 
@@ -324,30 +330,28 @@ This appendix documents the production process for the manuscript itself, in kee
 
 ---
 
-## Appendix A — Vendor attribution by section *(to be filled in after PaperOrchestra completes §2)*
+## Appendix A — Vendor attribution by section
 
 | Section | Primary drafter | Independent reviewer | Catches logged |
 |---|---|---|---|
-| §1 Introduction | TBD | TBD | TBD |
-| §2 Related work | Ar9av/PaperOrchestra community implementation (literature-review-agent skill), driven by Claude Opus 4.7 (Path B install) | Cross-vendor review pending (Claude + DeepSeek per `review-prompts.md` Prompt 3) | 1 verification-process gap logged: S2 rate-limit incident, WebSearch+arXiv fallback for 7 of 11 records (see `paperorchestra-workspace/drafts/verification-audit.md`) |
-| §3 Architecture | Anthropic Claude Opus 4.7 | DeepSeek V4-Pro | TBD |
-| §4 Heterogeneity rationale | Anthropic Claude Opus 4.7 | Gemini 2.5 Pro + DeepSeek | TBD |
-| §5 Case studies | Anthropic Claude Opus 4.7 | Gemini 2.5 Pro + DeepSeek | TBD (1 self-catch logged: see Methods Appendix) |
-| §6 Operational data | Anthropic Claude Opus 4.7 (direct log extraction) | All three vendors | TBD |
-| §7 Limitations | Anthropic Claude Opus 4.7 | DeepSeek V4-Pro | TBD |
-| §8 Discussion | Anthropic Claude Opus 4.7 | DeepSeek V4-Pro | TBD |
-| §9 Conclusion | Anthropic Claude Opus 4.7 | — | TBD |
-| Methods Appendix | Anthropic Claude Opus 4.7 (context unique to drafter) | — | TBD |
+| Abstract | Anthropic Claude Opus 4.7 | Single-vendor pass pending (DeepSeek) | — |
+| §1 Introduction | Anthropic Claude Opus 4.7 | Cross-vendor review pending | — |
+| §2 Related work | Ar9av/PaperOrchestra community implementation (literature-review-agent skill), driven by Claude Opus 4.7 (Path B install) | Cross-vendor review pending (Claude + DeepSeek per `review-prompts.md` Prompt 3) | Catch 6 (S2 rate-limit, RESOLVED 2026-05-13 same-day after key arrived); Catch 7 (PoLL vendor-composition mischaracterization, self-caught against S2 abstract); Catch 8 (AI Scientist v2 venue-rigor inflation, self-caught against S2 abstract). See `revisions.md`. |
+| §3 Architecture | Anthropic Claude Opus 4.7 | Cross-vendor review pending (Gemini 2.5 Pro per Prompt 2) | — |
+| §4 Heterogeneity rationale | Anthropic Claude Opus 4.7 | Cross-vendor review pending (DeepSeek V4-Pro per Prompt 1) | Catch 2 (four-pass framing didn't match operational three-pass daemon, self-caught) |
+| §5 Case studies | Anthropic Claude Opus 4.7 | Cross-vendor review pending (DeepSeek V4-Pro per Prompt 1) | Catch 3 (§5.1 manual-walkthrough understated); Catch 4 (§5.3 Km/specific-activity mix-up); Catch 5 (§5.4 pre-daemon architecture misdescribed). All self-caught. |
+| §6 Operational data | Anthropic Claude Opus 4.7 (direct log extraction) | Cross-vendor review pending (Gemini 2.5 Pro per Prompt 2) | — |
+| §7 Limitations | Anthropic Claude Opus 4.7 | Cross-vendor review pending (Gemini 2.5 Pro per Prompt 2) | — |
+| §8 Discussion | Anthropic Claude Opus 4.7 | Cross-vendor review pending (DeepSeek V4-Pro) | — |
+| §9 Conclusion | Anthropic Claude Opus 4.7 | — | — |
+| Methods Appendix | Anthropic Claude Opus 4.7 (context unique to drafter) | — | Catch 1 (primary drafter confabulated PaperOrchestra's existence on first ask, caught by user push-back). Preserved verbatim in the Methods Appendix as the load-bearing reflexive demonstration. |
+| Figure 1 | Anthropic Claude Opus 4.7 (matplotlib script) | — | — |
+| Figure 2 | Anthropic Claude Opus 4.7 (matplotlib script) | — | — |
+| Table 1 | Anthropic Claude Opus 4.7 (direct extraction from `scripts/SWEEP-ARCHITECTURE.md` + `logs/v4-peer-review-2026-04-25-deepseek.md`) | — | — |
 
 ---
 
 ## Appendix B — Revision log *(see `revisions.md` for the working log)*
-
----
-
-## Abstract
-
-AI-assisted literature synthesis is becoming load-bearing infrastructure for scientific research. A new failure mode emerges when a single AI model is the sole synthesizer of a long-lived knowledge corpus: the corpus accumulates that model's blind spots and biases over time, with each individual edit plausible and internally consistent but the cumulative drift invisible without an outside reference. We call this drift *epistemic homogenization* and distinguish it from per-output hallucination. We argue that the right granularity of defense is **cross-vendor heterogeneity** — routing successive synthesis passes through frontier models trained by different companies, with different training corpora and different reinforcement-learning-from-human-feedback procedures. Existing multi-agent AI literature (debate, self-refine, jury-of-LLMs, Constitutional AI, automated-research systems) operates almost exclusively within a single vendor; the cross-vendor regime is under-explored as an explicit architectural commitment. We describe a production deployment of the cross-vendor pattern — the Open Enzyme wiki-sweep daemon, maintaining an ~80-page biotechnology research wiki via three operational passes assigned across Anthropic, DeepSeek, and Google models — and present four catches from ~3 weeks of operation that exemplify the failure classes the pattern protects against: a within-vendor hallucination cascade, an upstream-of-subagent framing contamination, an external-tool reliability failure, and a cross-vendor catch of a methodological risk invisible from within the dominant vendor's pipeline. The seminal catch — a DeepSeek peer-review pass surfacing the homogenization risk that the within-vendor pipeline had not named unprompted — is the principle demonstrated by working. The manuscript is drafted using its own methodology; a logged self-catch during drafting is preserved as the cleanest available reflexive evidence the guard applies to its own production.
 
 ---
 
