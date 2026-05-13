@@ -30,13 +30,17 @@ Terms grouped by topic, not by section.
 
 ---
 
-## Architectural terms (what the daemon is)
+## Architectural terms (the two-layer pattern)
 
-**Sweep daemon.** The automated three-pass review pipeline described in this paper. Fires on every wiki edit; runs the three passes; commits results back to the repository.
+**Vibe-science.** The project's term for the lab analogue of vibe-coding. The interactive working pattern in which the author drives synthesis with an LLM (Anthropic Claude Opus in this project, via Claude Code with bio plugins), leading with curiosity, asking why and why not dozens of times, picking the threads worth pulling, naming the sub-claims downstream experiments will need to test, and running computational experiments before any wet-lab spend. Originated by Brian Abent and named in the 2026-05-08 essay "Grounding the AI Scientist Hype." Constitutes Layer 1 of the two-layer architecture; new wiki content originates here.
 
-**Pass 1 - Propagate.** First model (currently Anthropic Claude Sonnet 4.6) reads the edited file and propagates the new findings to any other wiki pages that cross-reference the affected concepts. Inline updates only; no synthesis.
+**Two-layer architecture.** The paper's deployment pattern. Layer 1 is the vibe-science interactive layer (author + Anthropic Claude Opus). Layer 2 is the automated sweep daemon (DeepSeek Pass 1 propagate + DeepSeek Pass 2 synthesize with Google Gemini fallback + OpenAI GPT-5.5 Pass 3 review). Cross-vendor heterogeneity is achieved across both layers: Anthropic at Layer 1, DeepSeek + OpenAI + (when fallback fires) Google at Layer 2.
 
-**Pass 2 - Synthesize.** Second model (currently DeepSeek V4-Pro or Google Gemini 2.5 Pro, both configured as primary, choice is operational) reads the entire corpus and emits cross-document synthesis: new connections, contradictions, open questions, proposed experiments. Each finding ends with a `{{PEER-REVIEW}}` marker so Pass 3 knows where to insert a review.
+**Sweep daemon.** Layer 2 of the architecture. The automated three-pass review pipeline that fires on every wiki edit, runs the three passes, and commits results back to the repository.
+
+**Pass 1 - Propagate.** First model (currently DeepSeek V4-Pro per `.github/workflows/wiki-sweep.yml` line 185) reads the edited file and propagates the new findings to any other wiki pages that cross-reference the affected concepts. Inline updates only; no synthesis.
+
+**Pass 2 - Synthesize.** Second model (currently DeepSeek V4-Pro primary per `scripts/synthesize.py` line 92; Google Gemini 2.5 Pro automatic fallback per line 93, fires when DeepSeek fails with context overflow or transient API error) reads the entire corpus and emits cross-document synthesis: new connections, contradictions, open questions, proposed experiments. Each finding ends with a `{{PEER-REVIEW}}` marker so Pass 3 knows where to insert a review.
 
 **Pass 3 - Review.** Third model (currently OpenAI GPT-5.5; Anthropic Claude Opus 4.7 available as an alternate). GPT-5.5 became the default on 2026-05-08 after a three-way eval. Critiques each Pass 2 finding with a fixed verdict vocabulary (*Confirmed* / *Confirmed-prioritize* / *Partial* / *Push-back* / *Rejected*). Has read-only tool access for primary-source spot-checks. The reviewer prompt is model-tuned: `scripts/sweep-prompt-3-review-gpt55.md` for GPT-5.5, `scripts/sweep-prompt-3-review.md` for Claude.
 
