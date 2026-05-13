@@ -22,7 +22,7 @@ Path from "current draft state" to "bioRxiv preprint live + manuscript submitted
 
 ### Author-side review
 
-- [ ] Brian's glossary-check pass — every term in `draft.md` either in `glossary.md` with an understandable gloss, or rewritten
+- [ ] Brian's glossary-check pass, every term in `draft.md` either in `glossary.md` with an understandable gloss, or rewritten
 - [ ] Brian's "explain this sentence back in your own words" pass on §4 and §5 specifically (the conceptual spine and concrete demonstrations)
 - [ ] Brian's confirmation of the three open questions in `revisions.md` Session 1 (author byline format, vendor naming, reflexive-Methods-Appendix entry)
 
@@ -37,7 +37,7 @@ Path from "current draft state" to "bioRxiv preprint live + manuscript submitted
 
 ---
 
-## Code and data preparation — Zenodo DOI is required, not optional
+## Code and data preparation, Zenodo DOI is required, not optional
 
 Codex external review (2026-05-13) flagged that the paper depends heavily on open logs and inline references to mutable local files. Reviewers will not trust a manuscript that points to a repo state that can change after submission. A Zenodo snapshot with a citable DOI is a submission gate, not a nice-to-have.
 
@@ -57,19 +57,19 @@ Codex external review (2026-05-13) flagged that the paper depends heavily on ope
 
 ### Other code/data prep
 
-- [ ] **Sample synthesis log** for supplementary materials — pick one representative `logs/v4-synthesis-*.md` log that shows the synthesis discipline cleanly.
-- [ ] **Cross-vendor review outputs** — `paperorchestra-workspace/reviews/{claude-on-2,deepseek-on-2,deepseek-on-4-5,gemini-on-3-6-7}.md` ship as supplementary material. These are the verbatim catch-surfacing artifacts that the manuscript's Appendix A and `revisions.md` audit-trail point to.
-- [ ] **PaperOrchestra workspace** — entire `paperorchestra-workspace/` directory, including `citation_pool.json`, `refs.bib`, `drafts/verification-audit.md`, `run_reviews.py`, `run_verify.py`, `manual_supplement.py`, `build_bib.py`. Documents the §2 production process end-to-end.
-- [ ] **Figure source scripts** — `figures/figure1_architecture.py`, `figures/figure2_catches.py`, and the rendered PDFs/PNGs. The matplotlib sources allow reviewers to rebuild the figures exactly.
+- [ ] **Sample synthesis log** for supplementary materials, pick one representative `logs/v4-synthesis-*.md` log that shows the synthesis discipline cleanly.
+- [ ] **Cross-vendor review outputs**, `paperorchestra-workspace/reviews/{claude-on-2,deepseek-on-2,deepseek-on-4-5,gemini-on-3-6-7}.md` ship as supplementary material. These are the verbatim catch-surfacing artifacts that the manuscript's Appendix A and `revisions.md` audit-trail point to.
+- [ ] **PaperOrchestra workspace**, entire `paperorchestra-workspace/` directory, including `citation_pool.json`, `refs.bib`, `drafts/verification-audit.md`, `run_reviews.py`, `run_verify.py`, `manual_supplement.py`, `build_bib.py`. Documents the §2 production process end-to-end.
+- [ ] **Figure source scripts**, `figures/figure1_architecture.py`, `figures/figure2_catches.py`, and the rendered PDFs/PNGs. The matplotlib sources allow reviewers to rebuild the figures exactly.
 
 ---
 
 ## Pre-submission integrity passes
 
-- [ ] **Primary-source verification pass** — re-grep every load-bearing quantitative or identity claim in the final manuscript against its named primary source. Same discipline as the comp-NNN wiki authoring protocol.
-- [ ] **Citation completeness check** — every numbered reference [N] in the body has a matching entry in References; every reference in References is cited at least once.
-- [ ] **Glossary completeness check** — every precise term in `glossary.md` is used somewhere in the manuscript; every precise term in the manuscript that's not common knowledge is in the glossary.
-- [ ] **Reflexive narrative preserved** — Methods Appendix entry on the Catch 1 PaperOrchestra confabulation is intact. This is central to the paper's argument.
+- [ ] **Primary-source verification pass**, re-grep every load-bearing quantitative or identity claim in the final manuscript against its named primary source. Same discipline as the comp-NNN wiki authoring protocol.
+- [ ] **Citation completeness check**, every numbered reference [N] in the body has a matching entry in References; every reference in References is cited at least once.
+- [ ] **Glossary completeness check**, every precise term in `glossary.md` is used somewhere in the manuscript; every precise term in the manuscript that's not common knowledge is in the glossary.
+- [ ] **Reflexive narrative preserved**, Methods Appendix entry on the Catch 1 PaperOrchestra confabulation is intact. This is central to the paper's argument.
 
 ---
 
@@ -77,7 +77,7 @@ Codex external review (2026-05-13) flagged that the paper depends heavily on ope
 
 - [ ] Convert final draft to PDF (PaperOrchestra produces LaTeX; render to PDF).
 - [ ] Prepare bioRxiv-compatible figure files (PNG or PDF, sufficient resolution).
-- [ ] bioRxiv submission portal: select category "Synthetic Biology" or "Bioinformatics" depending on framing — recommend "Bioinformatics" given the AI-methods focus.
+- [ ] bioRxiv submission portal: select category "Synthetic Biology" or "Bioinformatics" depending on framing, recommend "Bioinformatics" given the AI-methods focus.
 - [ ] Cross-post to arXiv cs.AI on the same day for the ML audience.
 - [ ] Update `paper-1-status.md` (or equivalent tracking doc) with the bioRxiv DOI once live.
 - [ ] Update Open Enzyme `index.md` with a link to the preprint.
@@ -89,18 +89,18 @@ Codex external review (2026-05-13) flagged that the paper depends heavily on ope
 After the bioRxiv preprint lands and any community feedback has been digested:
 
 - [ ] Read *Patterns* author guidelines; format manuscript and references per their style.
-- [ ] Prepare cover letter — emphasize the cross-vendor pattern's novelty relative to existing multi-agent literature, the operational deployment as evidence the pattern works, and the reflexive Methods Appendix.
+- [ ] Prepare cover letter, emphasize the cross-vendor pattern's novelty relative to existing multi-agent literature, the operational deployment as evidence the pattern works, and the reflexive Methods Appendix.
 - [ ] Identify suggested reviewers and any conflicts to flag.
 - [ ] Submit via the Cell Press portal.
-- [ ] Response loop on reviewer comments — apply the same cross-vendor review discipline to any substantive rewrites required by peer review.
+- [ ] Response loop on reviewer comments, apply the same cross-vendor review discipline to any substantive rewrites required by peer review.
 
 ---
 
 ## Backup venues if *Patterns* rejects
 
-- [ ] *Nature Computational Science* — stretch target; higher bar but the cross-vendor framing fits.
-- [ ] *PLOS Computational Biology* — open-access fallback; high publication rate; aligned with the open-source ethos of the Open Enzyme project.
-- [ ] *Bioinformatics* (OUP) — narrower fit (more bench-bio tools than AI methodology), but plausible.
+- [ ] *Nature Computational Science*, stretch target; higher bar but the cross-vendor framing fits.
+- [ ] *PLOS Computational Biology*, open-access fallback; high publication rate; aligned with the open-source ethos of the Open Enzyme project.
+- [ ] *Bioinformatics* (OUP), narrower fit (more bench-bio tools than AI methodology), but plausible.
 
 ---
 

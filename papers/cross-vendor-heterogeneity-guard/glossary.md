@@ -1,24 +1,24 @@
 # Glossary
 
-Running list of precise terms used in the paper, with plain-English glosses. **How to use this:** read the gloss alongside the term in the draft. If a sentence in the draft uses one of these terms and the gloss here doesn't help you understand what the sentence means, the sentence is wrong — flag it for rewrite. Conversely, if the draft uses a technical term that is not in this glossary, it needs to either be added here or replaced in the prose.
+Running list of precise terms used in the paper, with plain-English glosses. **How to use this:** read the gloss alongside the term in the draft. If a sentence in the draft uses one of these terms and the gloss here doesn't help you understand what the sentence means, the sentence is wrong, flag it for rewrite. Conversely, if the draft uses a technical term that is not in this glossary, it needs to either be added here or replaced in the prose.
 
 Terms grouped by topic, not by section.
 
 ---
 
-## Conceptual terms — the paper's argument
+## Conceptual terms (the paper's argument)
 
-**Epistemic homogenization.** The drift of a knowledge corpus — a wiki, a research graph, an AI-assisted literature synthesis — toward the blind spots and biases of whichever AI model is doing the synthesis. Distinct from per-output hallucination, which is a single wrong answer. Homogenization is the corpus *as a whole* starting to reflect one model's prior rather than the underlying reality. The paper's central concept.
+**Epistemic homogenization.** The drift of a knowledge corpus (a wiki, a research graph, an AI-assisted literature synthesis) toward the blind spots and biases of whichever AI model is doing the synthesis. Distinct from per-output hallucination, which is a single wrong answer. Homogenization is the corpus *as a whole* starting to reflect one model's prior rather than the underlying reality. The paper's central concept.
 
 **Heterogeneity guard.** A procedural defense against epistemic homogenization. Forces synthesis or review to pass through models with different training pipelines, so a blind spot in one is likely caught by another.
 
-**Cross-vendor vs. multi-model.** "Multi-model" means using more than one model — but those models can all be from the same company (e.g., GPT-4o + GPT-4 + GPT-3.5 are multi-model but single-vendor). "Cross-vendor" means models trained by different companies on different data with different alignment procedures. The paper argues that cross-vendor is the heterogeneity level that matters, not multi-model alone.
+**Cross-vendor vs. multi-model.** "Multi-model" means using more than one model, but those models can all be from the same company (e.g., GPT-4o + GPT-4 + GPT-3.5 are multi-model but single-vendor). "Cross-vendor" means models trained by different companies on different data with different alignment procedures. The paper argues that cross-vendor is the heterogeneity level that matters, not multi-model alone.
 
-**Adversarial collaboration.** A pattern from social science where two researchers with opposing predictions design an experiment together. Used in this paper as an analogy for what cross-vendor review produces — different models with different priors are forced to converge on the same evidence, with disagreement highlighted as data.
+**Adversarial collaboration.** A pattern from social science where two researchers with opposing predictions design an experiment together. Used in this paper as an analogy for what cross-vendor review produces: different models with different priors are forced to converge on the same evidence, with disagreement highlighted as data.
 
 **Training-distribution prior.** The implicit "default opinions" a model picks up from the data it was trained on. Two models trained on substantially different data have different priors; two models from the same vendor trained on overlapping data have largely the same prior, even if the models themselves are different sizes.
 
-**RLHF (Reinforcement Learning from Human Feedback).** The procedure by which frontier model vendors fine-tune raw language models to be more helpful, harmless, and honest. Each vendor's RLHF pipeline reflects that vendor's choices about which behaviors to reward — which is why two models from different vendors have characteristically different verbal patterns and failure modes even when their base capability is similar.
+**RLHF (Reinforcement Learning from Human Feedback).** The procedure by which frontier model vendors fine-tune raw language models to be more helpful, harmless, and honest. Each vendor's RLHF pipeline reflects that vendor's choices about which behaviors to reward, which is why two models from different vendors have characteristically different verbal patterns and failure modes even when their base capability is similar.
 
 **RLAIF (Reinforcement Learning from AI Feedback).** Extension of RLHF in which the preference labels driving reward-model training come from an off-the-shelf LLM rather than from human annotators. Originated as part of Anthropic's Constitutional AI work and was later scaled and benchmarked against RLHF on summarization and dialogue tasks. Same-vendor AI feedback by construction in the standard formulation.
 
@@ -26,21 +26,21 @@ Terms grouped by topic, not by section.
 
 **Model collapse.** The training-time failure mode in which a generative model trained recursively on its own outputs progressively loses the tails of its output distribution and degrades irreversibly. Documented by Shumailov et al. (2023, 2024). Related to but distinct from epistemic homogenization: model collapse manifests in the model's parameters; homogenization manifests in a corpus the model maintains, with the model itself unchanged.
 
-**Ensemble methods / variance reduction.** A classical machine-learning pattern where multiple models' outputs are combined to produce a more reliable answer than any single model could give. Works because random errors in different models are uncorrelated and tend to cancel. The cross-vendor heterogeneity guard is a special case of ensemble logic applied at the vendor level — the heterogeneity is at the level of training-distribution prior, not at the level of inference-time stochasticity.
+**Ensemble methods / variance reduction.** A classical machine-learning pattern where multiple models' outputs are combined to produce a more reliable answer than any single model could give. Works because random errors in different models are uncorrelated and tend to cancel. The cross-vendor heterogeneity guard is a special case of ensemble logic applied at the vendor level. The heterogeneity is at the level of training-distribution prior, not at the level of inference-time stochasticity.
 
 ---
 
-## Architectural terms — what the daemon is
+## Architectural terms (what the daemon is)
 
 **Sweep daemon.** The automated three-pass review pipeline described in this paper. Fires on every wiki edit; runs the three passes; commits results back to the repository.
 
-**Pass 1 — Propagate.** First model (currently Anthropic Claude Sonnet 4.6) reads the edited file and propagates the new findings to any other wiki pages that cross-reference the affected concepts. Inline updates only; no synthesis.
+**Pass 1 - Propagate.** First model (currently Anthropic Claude Sonnet 4.6) reads the edited file and propagates the new findings to any other wiki pages that cross-reference the affected concepts. Inline updates only; no synthesis.
 
-**Pass 2 — Synthesize.** Second model (currently DeepSeek V4-Pro or Google Gemini 2.5 Pro — both configured as primary, choice is operational) reads the entire corpus and emits cross-document synthesis: new connections, contradictions, open questions, proposed experiments. Each finding ends with a `{{PEER-REVIEW}}` marker so Pass 3 knows where to insert a review.
+**Pass 2 - Synthesize.** Second model (currently DeepSeek V4-Pro or Google Gemini 2.5 Pro, both configured as primary, choice is operational) reads the entire corpus and emits cross-document synthesis: new connections, contradictions, open questions, proposed experiments. Each finding ends with a `{{PEER-REVIEW}}` marker so Pass 3 knows where to insert a review.
 
-**Pass 3 — Review.** Third model (currently OpenAI GPT-5.5; Anthropic Claude Opus 4.7 available as an alternate). GPT-5.5 became the default on 2026-05-08 after a three-way eval. Critiques each Pass 2 finding with a fixed verdict vocabulary (*Confirmed* / *Confirmed-prioritize* / *Partial* / *Push-back* / *Rejected*). Has read-only tool access for primary-source spot-checks. The reviewer prompt is model-tuned — `scripts/sweep-prompt-3-review-gpt55.md` for GPT-5.5, `scripts/sweep-prompt-3-review.md` for Claude.
+**Pass 3 - Review.** Third model (currently OpenAI GPT-5.5; Anthropic Claude Opus 4.7 available as an alternate). GPT-5.5 became the default on 2026-05-08 after a three-way eval. Critiques each Pass 2 finding with a fixed verdict vocabulary (*Confirmed* / *Confirmed-prioritize* / *Partial* / *Push-back* / *Rejected*). Has read-only tool access for primary-source spot-checks. The reviewer prompt is model-tuned: `scripts/sweep-prompt-3-review-gpt55.md` for GPT-5.5, `scripts/sweep-prompt-3-review.md` for Claude.
 
-**Episodic peer-review pass.** A separate, formalized fourth pattern: an independent vendor's model receives the substrate (the wiki at a given commit) and produces a parallel synthesis plus a differential analysis against the daemon's output. Run when a major architectural change lands, when a class of synthesis output is suspect, or when the cost of a missed connection is high. The seminal instance is DeepSeek V4-Pro reviewing Claude Opus 4.7 on 2026-04-25 — the catch that motivated formalizing the cross-vendor daemon itself.
+**Episodic peer-review pass.** A separate, formalized fourth pattern: an independent vendor's model receives the substrate (the wiki at a given commit) and produces a parallel synthesis plus a differential analysis against the daemon's output. Run when a major architectural change lands, when a class of synthesis output is suspect, or when the cost of a missed connection is high. The seminal instance is DeepSeek V4-Pro reviewing Claude Opus 4.7 on 2026-04-25 - the catch that motivated formalizing the cross-vendor daemon itself.
 
 **OpenRouter.** A third-party API gateway that exposes multiple vendors' models behind one HTTP interface. The sweep uses it to avoid per-vendor rate limits and to make the cross-vendor pattern operationally simple. Cost dashboards and routing logs are OpenRouter's, not the underlying vendor's.
 
@@ -74,7 +74,7 @@ Terms grouped by topic, not by section.
 
 **Subagent brief.** The prompt given to a subagent. Contains scope, method, source pointers.
 
-**Subagent brief hygiene.** The discipline of keeping the subagent's brief uncontaminated by the user's contrived examples, predictions, or framings — because those propagate verbatim into the subagent's output and bias its findings. Scope and method propagate; predictions and contrived examples scrub.
+**Subagent brief hygiene.** The discipline of keeping the subagent's brief uncontaminated by the user's contrived examples, predictions, or framings, because those propagate verbatim into the subagent's output and bias its findings. Scope and method propagate; predictions and contrived examples scrub.
 
 **Rhetorical-callback tell.** When a subagent's report-back uses the user's exact phrasing back at the user ("your X framing landed empirically," "as you suspected"), that is a signal the user's phrasing influenced not just the search but the framing of the result. A smoking gun for narrative-cohesion bias.
 
@@ -90,7 +90,7 @@ Terms grouped by topic, not by section.
 
 **Complement (in immunology).** A cascade of plasma proteins that, when activated, marks pathogens for destruction. DAF/CD55 is one of the human regulators that prevents the complement cascade from activating against the body's own cells. Engineering a soluble version of DAF SCR1-4 for delivery via fungal fermentation is one of the Open Enzyme platform's active engineering candidates.
 
-**SCR domain (sushi / CCP fold).** Short Consensus Repeat domain — the canonical building block of complement regulators. Each SCR has two intra-domain disulfide bonds (cysteine pairs that hold the fold together). The 2026-05-06 hallucination incident in §5.1 was about the disulfide count in this specific fold class.
+**SCR domain (sushi / CCP fold).** Short Consensus Repeat domain, the canonical building block of complement regulators. Each SCR has two intra-domain disulfide bonds (cysteine pairs that hold the fold together). The 2026-05-06 hallucination incident in §5.1 was about the disulfide count in this specific fold class.
 
 **UniProt.** The international canonical database of protein sequences and annotations. UniProt feature annotations are the authoritative source for things like disulfide-bond positions; the §5.1 catch came from grepping UniProt P08174 directly.
 
@@ -98,7 +98,7 @@ Terms grouped by topic, not by section.
 
 **MEROPS.** A database of proteases (enzymes that cut other proteins) and their cleavage-site preferences. Used in OE to predict which proteases will cut a designed construct.
 
-**Km (Michaelis-Menten substrate-affinity constant).** The substrate concentration at which an enzyme operates at half its maximum velocity. A core kinetic parameter for any enzyme; the §5.3 Paperclip probe surfaced a ~7.5-fold error on Km specifically (the magnitude is small but the misreport is qualitatively wrong — kinetic parameters are diagnostic of enzyme identity). The earlier "~7,500×" framing in this glossary and elsewhere in the corpus was itself an arithmetic error caught by cross-vendor review during paper drafting (see revisions.md Catch 9).
+**Km (Michaelis-Menten substrate-affinity constant).** The substrate concentration at which an enzyme operates at half its maximum velocity. A core kinetic parameter for any enzyme; the §5.3 Paperclip probe surfaced a ~7.5-fold error on Km specifically (the magnitude is small but the misreport is qualitatively wrong, kinetic parameters are diagnostic of enzyme identity). The earlier "~7,500×" framing in this glossary and elsewhere in the corpus was itself an arithmetic error caught by cross-vendor review during paper drafting (see revisions.md Catch 9).
 
 **Paperclip MCP.** An external tool that exposes ~11 million full-text scientific papers via an API. Tested for integration with the sweep daemon; failed the verification probe.
 
@@ -114,6 +114,6 @@ Terms grouped by topic, not by section.
 
 **Independent reviewer.** A model from a different vendor than the primary drafter, run on the section after the initial draft. Catches that surface are logged in `revisions.md`.
 
-**PaperOrchestra.** Two distinct artifacts share this name and the paper engages with both. (1) **Song et al. 2026 PaperOrchestra paper** (arXiv:2604.05018) — a research paper from Google Cloud AI Research describing a multi-agent framework for automated AI research paper writing (Outline / Plotting / Literature Review / Section Writing / Content Refinement, with Semantic Scholar citation verification). **No code release.** This is the work cited in §2.5. (2) **Ar9av/PaperOrchestra** (github.com/Ar9av/PaperOrchestra) — a community implementation of the Song et al. paper as a skill pack for coding agents (Claude Code, Cursor, Antigravity, Cline, Aider). Released April 2026 by Arnav (GitHub user `Ar9av`); 445 stars at time of writing; no vendor affiliation. This is the artifact we actually drove for §2 drafting via the Path B install (no permanent `~/.claude/skills/` footprint). The distinction matters because the host coding agent (Claude Code in our case) does all LLM reasoning under the community implementation, so §2 was Anthropic-driven via Claude even though the conceptual pipeline came from Google's paper.
+**PaperOrchestra.** Two distinct artifacts share this name and the paper engages with both. (1) **Song et al. 2026 PaperOrchestra paper** (arXiv:2604.05018), a research paper from Google Cloud AI Research describing a multi-agent framework for automated AI research paper writing (Outline / Plotting / Literature Review / Section Writing / Content Refinement, with Semantic Scholar citation verification). **No code release.** This is the work cited in §2.5. (2) **Ar9av/PaperOrchestra** (github.com/Ar9av/PaperOrchestra), a community implementation of the Song et al. paper as a skill pack for coding agents (Claude Code, Cursor, Antigravity, Cline, Aider). Released April 2026 by Arnav (GitHub user `Ar9av`); 445 stars at time of writing; no vendor affiliation. This is the artifact we actually drove for §2 drafting via the Path B install (no permanent `~/.claude/skills/` footprint). The distinction matters because the host coding agent (Claude Code in our case) does all LLM reasoning under the community implementation, so §2 was Anthropic-driven via Claude even though the conceptual pipeline came from Google's paper.
 
 **Self-verification pass.** The drafter applying the project's own pre-commit grep-verify gate to load-bearing quantitative and identity claims in its own output before commit. Distinct from cross-vendor review (which is an independent vendor's pass). Captures the catches in `revisions.md`.

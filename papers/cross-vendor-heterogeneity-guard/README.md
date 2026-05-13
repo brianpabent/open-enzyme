@@ -1,4 +1,4 @@
-# Paper #1 — Cross-vendor heterogeneity guard
+# Paper #1, Cross-vendor heterogeneity guard
 
 **Working title:** *Cross-vendor heterogeneity as a guard against epistemic homogenization in AI-assisted scientific literature synthesis.*
 
@@ -16,7 +16,7 @@
 | `revisions.md` | Chronological catches log across all drafting sessions. Becomes Appendix B of the final paper. 8 catches landed so far. |
 | `review-prompts.md` | Three ready-to-fire cross-vendor review prompts (DeepSeek on §4/§5, Gemini on §3/§6/§7, parallel review of §2). Copy-paste-and-fire at the model's chat interface. |
 | `submission-checklist.md` | Step-by-step path from current draft state to bioRxiv preprint live + Patterns submission. |
-| `paperorchestra-handoff.md` | Self-contained brief for handing the manuscript to PaperOrchestra. Now historical context — §2 has already been drafted via the Ar9av/PaperOrchestra Path B install. |
+| `paperorchestra-handoff.md` | Self-contained brief for handing the manuscript to PaperOrchestra. Now historical context, §2 has already been drafted via the Ar9av/PaperOrchestra Path B install. |
 | **`figures/`** | Self-rendering matplotlib scripts for Figures 1 and 2, plus PDF/PNG outputs. See `figures/README.md` for rebuild commands. |
 | **`paperorchestra-workspace/`** | The Ar9av/PaperOrchestra workspace used to draft §2. Inputs (idea, exp log, conference guidelines, template), outline.json, BibTeX (refs.bib), S2-verified citation pool, LaTeX section output, and the verification audit. See workspace's own `drafts/verification-audit.md` for the complete provenance trail on §2 citations. |
 
@@ -64,4 +64,4 @@ python3 build_bib.py
 
 ## Why this paper exists
 
-Open Enzyme's `wiki/open-source-platform.md` introduces the cross-vendor heterogeneity-guard pattern operationally; this paper formalizes it as an explicit architectural commitment and presents it as a publishable methodology contribution. The strategic frame: a published methodology paper is the credibility artifact that converts cold grad-student / wet-lab outreach into warm collaborative conversations (see [`project_oe_methodology_paper`](memory entry) and [`project_oe_wet_lab_search`](memory entry)). The reflexive twist — the paper is drafted using its own methodology, with self-catches logged as Appendix B — is the central argument.
+Open Enzyme's `wiki/open-source-platform.md` introduces the cross-vendor heterogeneity-guard pattern operationally; this paper formalizes it as an explicit architectural commitment and presents it as a publishable methodology contribution. The strategic frame: a published methodology paper is the credibility artifact that converts cold grad-student / wet-lab outreach into warm collaborative conversations (see [`project_oe_methodology_paper`](memory entry) and [`project_oe_wet_lab_search`](memory entry)). The reflexive twist, the paper is drafted using its own methodology, with self-catches logged as Appendix B, is the central argument.

@@ -1,12 +1,12 @@
 # Cross-vendor review prompts
 
-Ready-to-fire prompts for the independent cross-vendor review passes required by the paper's own methodology. Each prompt is self-contained — paste the relevant section of the draft into the indicated placeholder and fire.
+Ready-to-fire prompts for the independent cross-vendor review passes required by the paper's own methodology. Each prompt is self-contained, paste the relevant section of the draft into the indicated placeholder and fire.
 
-The reviewers should produce findings in the `revisions.md` format: numbered catches, each with (a) the specific claim or sentence under review, (b) the verdict (*Confirmed* / *Partial* / *Push-back* / *Rejected*), (c) the reasoning, (d) the suggested correction if applicable. Catches land in the manuscript's `revisions.md` under "Session 3 — cross-vendor review."
+The reviewers should produce findings in the `revisions.md` format: numbered catches, each with (a) the specific claim or sentence under review, (b) the verdict (*Confirmed* / *Partial* / *Push-back* / *Rejected*), (c) the reasoning, (d) the suggested correction if applicable. Catches land in the manuscript's `revisions.md` under "Session 3, cross-vendor review."
 
 ---
 
-## Prompt 1 — DeepSeek V4-Pro on §4 + §5 (heterogeneity argument + case-study factual claims)
+## Prompt 1, DeepSeek V4-Pro on §4 + §5 (heterogeneity argument + case-study factual claims)
 
 ```
 You are running an independent cross-vendor review of a draft scientific paper titled
@@ -58,7 +58,7 @@ What to check:
 Output format — one numbered entry per catch:
 
 ```
-### Catch N — [section §X.Y]
+### Catch N, [section §X.Y]
 
 **Claim under review:** [paste the specific sentence or passage]
 
@@ -81,7 +81,7 @@ positives are worse than missed catches for this review pass.
 
 ---
 
-## Prompt 2 — Google Gemini 2.5 Pro on §3 + §6 + §7 (architecture + operational data + limitations)
+## Prompt 2, Google Gemini 2.5 Pro on §3 + §6 + §7 (architecture + operational data + limitations)
 
 ```
 You are running an independent cross-vendor review of a draft scientific paper titled
@@ -137,7 +137,7 @@ What to check:
 Output format — one numbered entry per catch:
 
 ```
-### Catch N — [section §X.Y]
+### Catch N, [section §X.Y]
 
 **Claim under review:** [paste the specific sentence or passage]
 
@@ -160,7 +160,7 @@ positives are worse than missed catches for this review pass.
 
 ---
 
-## Prompt 3 — Cross-vendor review of PaperOrchestra's §2 output
+## Prompt 3, Cross-vendor review of PaperOrchestra's §2 output
 
 (To be fired AFTER PaperOrchestra produces §2.)
 
@@ -230,12 +230,12 @@ Claude, gemini.google.com for Gemini, deepseek.com or OpenRouter for DeepSeek) b
 pasting the prompt with the section text inserted at the placeholder.
 
 Alternative: fire via the OpenRouter API with the prompt as a system message and the
-section text as the user message. Costs at current pricing are negligible — each
+section text as the user message. Costs at current pricing are negligible, each
 review pass is roughly $0.05–$0.30 of API spend.
 
 After each review pass returns catches:
 
-1. Paste the catches verbatim into `revisions.md` under a new "Session 3 —
+1. Paste the catches verbatim into `revisions.md` under a new "Session 3 -
    cross-vendor review" section.
 2. For each catch where the verdict is *Partial*, *Push-back*, or *Rejected*,
    evaluate whether to apply the suggested correction. Apply with edit to `draft.md`.
