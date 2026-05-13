@@ -363,6 +363,50 @@ The manuscript is submission-ready pending only the Zenodo DOI minting (requires
 
 ---
 
+## Catch 28 — Paper framed the heterogeneity guard as defensive-only; missed the generative value entirely (caught by Brian's read)
+
+**Source:** Brian's continued read, 2026-05-13. Surfaced as: *"so.. the heterogeneity guard can find problems. yes. but it's also there to find new ideas that are not seen by epistemic homogenization. this is what drives me."*
+
+**Claim under review:** The pre-edit manuscript framed the heterogeneity guard almost entirely as a defensive mechanism — §4 was titled "the heterogeneity-guard rationale" with the rationale being entirely about catching errors and preventing drift. All four §5 case studies were error-catch instances. The abstract's framing was "we describe a production deployment ... and present four catches from ~3 weeks of operation that exemplify the failure classes the pattern protects against." §8 HITL paragraph framed the architecture as a "trigger-and-filter for human attention."
+
+**Verdict:** Rejected — the manuscript captured one of two load-bearing values and presented it as the whole story.
+
+**Reasoning:** The within-vendor pipeline catches errors via grep-verify (§5.1) regardless of cross-vendor presence. What makes cross-vendor strictly stronger than within-vendor + rigorous verification is the *generative* value — different vendors propose different connections, not just catch different errors. The space of useful syntheses any one model surfaces is bounded by what its training-distribution prior makes salient. A connection that aligns with DeepSeek's prior may never be proposed by Claude regardless of how carefully Claude self-reviews. Without the generative framing, a skeptical reviewer asks "if your grep-verify gate works, why do you need cross-vendor at all?" and the manuscript has no clean answer ready.
+
+**Corrections applied — extensive restructure across the manuscript:**
+
+1. **Abstract rewritten** to explicitly name the two values (safety-net / search-amplifier) and frame the five case studies as four-defensive-plus-one-generative.
+
+2. **§1 contribution paragraph reframed** from twofold to threefold contribution — added "we distinguish two complementary values of the pattern — a safety-net value (defensive) and a search-amplifier value (generative) — and argue that the search-amplifier value is what makes cross-vendor strictly stronger than within-vendor + rigorous verification."
+
+3. **§4 restructured** with a new subsection "Two values of the heterogeneity guard: safety net and search amplifier" placed between the homogenization definition and the why-cross-vendor argument. The phrase **"cross-vendor heterogeneity isn't just a safety net — it's a search amplifier"** is incorporated directly from the project's `operations/notable-moments.md` 2026-05-08 entry where the author had already articulated the framing. The §4.3 self-demonstrating-moment subsection now notes that Connection 7 was a hybrid catch — both defensive (caught a methodological risk in Claude's substrate) and generative (the framing of "epistemic homogenization" as a distinct construct came from DeepSeek's analysis, not from the substrate).
+
+4. **§5.5 added — "The generative class: cross-vendor as idea discovery (2026-04-25 double-peer-review)."** Anchored on the strongest available empirical example: on 2026-04-25 the same Claude Opus 4.7 substrate was reviewed by DeepSeek V4-Pro AND Google Gemini 2.5 Pro independently. Both vendors converged on the SAME three "Missed by Claude" generative findings:
+   - **Androgen-urate axis as therapeutic ceiling** (not stratification note) — male gout demographic has a baseline ABCG2-suppression-driven ceiling on uricase efficacy. Drove comp-016, comp-017, comp-019, H-AN-08 hypothesis card, and the `androgen-natural-modulation.md` wiki page.
+   - **Carnosine as androgen-specific counter-agent** (not generic NLRP3 synergy) — combined `carnosine.md` URAT1 downregulation with `androgen-urate-axis.md` URAT1 upregulation. Actioned in commit 6e3614d "synthesis 2026-05-05 item 2/14: carnosine → androgen-URAT1 axis — precision countermeasure for male gout."
+   - **Fructose challenge test** (acute n-of-1 efficacy readout, not just dietary risk factor) — KHK pathway as controlled stress-test for in-gut enzyme activity. Actioned in commit cf5fc94 ("action remaining 3 synthesis findings (fructose challenge, CRISPR bridge, glucose-dominant starches)").
+   §5.5 also includes a brief closing observation about the 2026-05-08 Gemini-synthesizer-and-human-blog-writer convergence on the DAF case study (per `operations/notable-moments.md` 2026-05-08 entry), as a second-substrate example showing the same search-amplifier pattern can appear in AI-AI convergence and in AI-human convergence.
+
+5. **§8 HITL paragraph rewritten** to acknowledge both values (trigger-and-filter + search-amplifier) and the human-as-one-of-the-vendors angle surfaced by the 2026-05-08 incident.
+
+6. **Appendix A vendor-attribution table gets a new row** for §5.5 documenting the dual-peer-review primary sources and the actioned downstream impact.
+
+**Class of failure caught:** the manuscript was under-claiming its own contribution. The author's motivating question (the generative value) was not visible in the paper. A reviewer reading the pre-edit version would have classified the contribution as "error-catching methodology" — real but incomplete. The post-edit version frames cross-vendor heterogeneity as strictly dominating within-vendor + rigorous verification because the search-amplifier value is something verification alone cannot supply.
+
+**Method origin:** the framing "heterogeneity isn't just a safety net — it's a search amplifier" came directly from `operations/notable-moments.md` 2026-05-08, where the author had previously written: *"What happened today is generative ... heterogeneity isn't just a safety net, it's a search amplifier."* Incorporating this verbatim preserves the author's voice and references the project's own prior intellectual work on the question.
+
+---
+
+## Catch 29 — `~/.claude/projects/.../memory/` should record an updated project-status note
+
+**Source:** drafter housekeeping during Catch 28 restructure.
+
+**Claim under review:** the auto-memory entry at `~/.claude/projects/.../memory/project_oe_methodology_paper.md` still references "§1, §3-§9 + Methods Appendix complete, §2 awaits PaperOrchestra" — that's pre-Session 4 state.
+
+**Correction applied:** updated in a separate housekeeping pass (not committed in this revision-log entry; tracked separately).
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.
