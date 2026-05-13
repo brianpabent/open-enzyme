@@ -106,13 +106,15 @@
 5. §7, §8, §9 (limitations, discussion, conclusion) ✅ Session 2
 6. Methods Appendix + Appendix A skeleton ✅ Session 2
 7. §1 (introduction) — written after the body has shape ✅ Session 3
-8. **§2 (related work)** — the careful lit-survey lift — **PENDING** (PaperOrchestra)
-9. **Abstract** — written last, after §2 lands — **PENDING**
-10. Cross-vendor review passes on §3–§9 per `review-prompts.md` — **PENDING**
-11. Cross-vendor review of PaperOrchestra's §2 output — **PENDING**
-12. Figures (Fig 1 architecture diagram, Fig 2 catches-by-class) — **PENDING** (PaperOrchestra)
-13. Tables (Table 1 cost/latency, Table 2 vendor attribution) — **PENDING**
-14. References compilation + bibliography formatting — **PENDING** (PaperOrchestra)
-15. Submission package per `submission-checklist.md` — **PENDING**
+8. §2 (related work) — drafted via Ar9av/PaperOrchestra literature-review-agent (Path B), 11 S2-verified citations ✅ Sessions 4–5
+9. Abstract ✅ Session 5
+10. Drafter self-verify on §2 against S2 abstracts (caught 2 framing errors) ✅ Session 5
+11. Table 1 (per-pass cost/latency/vendor) ✅ Session 5
+12. Glossary additions for §2 terms (RLAIF, PoLL, model collapse) ✅ Session 5
+13. Cross-vendor review passes on §3–§9 per `review-prompts.md` — **PENDING** (Brian fires)
+14. Cross-vendor review of PaperOrchestra's §2 output — **PENDING** (Brian fires)
+15. Figures (Fig 1 architecture diagram, Fig 2 catches-by-class) — **PENDING**
+16. Final reference compilation + bibliography formatting consistency check — **PENDING**
+17. Submission package per `submission-checklist.md` — **PENDING**
 
-**Solo-drafted body sections complete after Session 3.** All sections of the main paper except §2 are drafted. §2 awaits PaperOrchestra. Cross-vendor review prompts are ready in `review-prompts.md` for the user to fire when bandwidth allows.
+**Solo-draftable work effectively complete after Session 5.** The manuscript has §1 through §9, abstract, Methods Appendix, Table 1, and full §2 with S2-verified citations. Two drafter self-catches landed (Catches 7 and 8 in revisions.md). What remains requires either Brian's hands (cross-vendor review prompt firings, bioRxiv submission) or PaperOrchestra's figure-generation arm.

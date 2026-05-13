@@ -20,6 +20,12 @@ Terms grouped by topic, not by section.
 
 **RLHF (Reinforcement Learning from Human Feedback).** The procedure by which frontier model vendors fine-tune raw language models to be more helpful, harmless, and honest. Each vendor's RLHF pipeline reflects that vendor's choices about which behaviors to reward — which is why two models from different vendors have characteristically different verbal patterns and failure modes even when their base capability is similar.
 
+**RLAIF (Reinforcement Learning from AI Feedback).** Extension of RLHF in which the preference labels driving reward-model training come from an off-the-shelf LLM rather than from human annotators. Originated as part of Anthropic's Constitutional AI work and was later scaled and benchmarked against RLHF on summarization and dialogue tasks. Same-vendor AI feedback by construction in the standard formulation.
+
+**PoLL (Panel of LLM evaluators).** Term coined by Verga et al. (2024). An ensemble of LLM judges (rather than a single large judge) used to evaluate the quality of LLM outputs. The original PoLL construction is cross-vendor (Cohere, OpenAI, Anthropic) and is the closest antecedent in the existing literature to this paper's cross-vendor heterogeneity guard, applied to per-output evaluation rather than corpus-level synthesis.
+
+**Model collapse.** The training-time failure mode in which a generative model trained recursively on its own outputs progressively loses the tails of its output distribution and degrades irreversibly. Documented by Shumailov et al. (2023, 2024). Related to but distinct from epistemic homogenization: model collapse manifests in the model's parameters; homogenization manifests in a corpus the model maintains, with the model itself unchanged.
+
 **Ensemble methods / variance reduction.** A classical machine-learning pattern where multiple models' outputs are combined to produce a more reliable answer than any single model could give. Works because random errors in different models are uncorrelated and tend to cancel. The cross-vendor heterogeneity guard is a special case of ensemble logic applied at the vendor level — the heterogeneity is at the level of training-distribution prior, not at the level of inference-time stochasticity.
 
 ---

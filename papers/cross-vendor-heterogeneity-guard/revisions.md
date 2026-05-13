@@ -145,6 +145,40 @@ The literature-review-agent's Semantic Scholar verification is a separate, narro
 
 ---
 
+## Session 5 — 2026-05-13 (continued)
+
+**Drafter self-verification pass on §2** against the S2 abstracts now available in `paperorchestra-workspace/citation_pool.json`. Read each cited paper's abstract verbatim and compared §2 prose claim-by-claim against the source material. Same discipline as the pre-commit grep-verify gate the paper itself argues for.
+
+### Catch 7 — §2.3 misstated PoLL's vendor composition
+
+**Claim under review:** §2.3 originally asserted *"the diversity in PoLL is across model sizes and families but, in the original construction, predominantly within a single vendor's lineup; the paper's commitment to cross-vendor diversity is implicit at best."*
+
+**Source check:** Verga et al. (2024) explicitly uses Cohere's command-r, OpenAI's gpt-3.5-turbo, and Anthropic's Claude haiku as the PoLL panel — three distinct vendors. The earlier WebSearch result on this paper had stated this directly: *"a PoLL composed of a larger number of smaller models outperforms a single large judge, exhibits less intra-model bias due to its composition of disjoint model families."*
+
+**Verdict:** Rejected. My claim was wrong in the load-bearing direction — PoLL is *already* cross-vendor in the original Verga construction, which makes it the closest antecedent in the literature to this paper's contribution, not a within-vendor pattern.
+
+**Correction landed:** §2.3 rewritten to acknowledge PoLL as the closest cross-vendor antecedent and to relocate the distinction from "diversity granularity" to "abstraction level of application" (per-output evaluation vs. corpus-level synthesis). The new framing is stronger and more honest — the contribution is the application surface, not the cross-vendor commitment, which Verga's work already pioneered at the evaluation tier.
+
+**Class of failure:** within-vendor confabulation about a third-party paper's design choices, caught by primary-source verification. Same failure class as §5.1 of the main paper. This is the second self-catch in the manuscript's own drafting (after Catch 1's PaperOrchestra confabulation), again preserved as load-bearing evidence the methodology applies to its own production.
+
+### Catch 8 — §2.5 inflated AI Scientist v2's peer-review claim
+
+**Claim under review:** §2.5 originally asserted Yamada et al. (2025) reported the first AI-generated paper *"to pass a rigorous human peer-review process."*
+
+**Source check:** The S2-verified abstract says *"first entirely AI generated peer-review-accepted workshop paper."* The published claim is specifically a workshop venue, not a main-conference or journal peer review.
+
+**Verdict:** Partial — the claim is true but inflated. "Rigorous" oversells what a workshop-paper accept signals.
+
+**Correction landed:** §2.5 amended to *"first fully AI-generated paper to pass workshop-level human peer review."* Both `draft.md` and `paperorchestra-workspace/drafts/section2.tex` updated.
+
+**Class of failure:** academic-prestige inflation — a venue's actual rigor level was upgraded in the prose without source justification. Common in lit-review drafting; caught by reading the abstract verbatim rather than working from memory of the WebSearch summary.
+
+### Why both catches matter for the methodology argument
+
+Both catches surfaced in a *self*-verify pass — same vendor (Anthropic Claude Opus 4.7) reviewing its own draft against the underlying sources. This is **not** the cross-vendor heterogeneity guard the paper argues is necessary; this is the pre-commit grep-verify gate, the discipline that operates *before* the cross-vendor pass. The fact that two catches surfaced at this step is consistent with the paper's argument that within-vendor self-review still catches a meaningful fraction of failures when the discipline is to read primary sources rather than work from memory. The cross-vendor review pass (still pending — Prompts 1 and 2 in `review-prompts.md`) is expected to surface additional catches that this within-vendor pass missed, particularly framing biases that align with Claude's own prior.
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.
