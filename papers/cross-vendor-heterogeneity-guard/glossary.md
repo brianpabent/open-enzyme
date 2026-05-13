@@ -98,7 +98,7 @@ Terms grouped by topic, not by section.
 
 **MEROPS.** A database of proteases (enzymes that cut other proteins) and their cleavage-site preferences. Used in OE to predict which proteases will cut a designed construct.
 
-**Km (Michaelis-Menten substrate-affinity constant).** The substrate concentration at which an enzyme operates at half its maximum velocity. A core kinetic parameter for any enzyme; the §5.3 Paperclip probe surfaced a ~7,500-fold error on Km specifically.
+**Km (Michaelis-Menten substrate-affinity constant).** The substrate concentration at which an enzyme operates at half its maximum velocity. A core kinetic parameter for any enzyme; the §5.3 Paperclip probe surfaced a ~7.5-fold error on Km specifically (the magnitude is small but the misreport is qualitatively wrong — kinetic parameters are diagnostic of enzyme identity). The earlier "~7,500×" framing in this glossary and elsewhere in the corpus was itself an arithmetic error caught by cross-vendor review during paper drafting (see revisions.md Catch 9).
 
 **Paperclip MCP.** An external tool that exposes ~11 million full-text scientific papers via an API. Tested for integration with the sweep daemon; failed the verification probe.
 
