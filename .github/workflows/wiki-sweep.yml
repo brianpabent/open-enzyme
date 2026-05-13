@@ -45,8 +45,15 @@ on:
       # Note: post-2026-05-08 migration, synthesis/ is sibling to wiki/, not under it.
       # The path filter on wiki/**.md does not match synthesis/**, so the daemon
       # naturally doesn't trigger on its own writes to synthesis/queue/ or
-      # synthesis/history/. The [skip-wiki-sweep] commit-msg marker remains the
-      # canonical recursion guard per migration spec §5.9.
+      # synthesis/history/.
+      #
+      # The recursion guard against the daemon's own wiki/*.md writes is the
+      # `gate` job below (commit-prefix + skip-marker analysis via
+      # scripts/sweep-state.py should-sweep), not a head-commit message check.
+      # The original head-commit [skip-wiki-sweep] guard was too narrow: it
+      # silently dropped user wiki content when a non-wiki tooling commit with
+      # the marker landed at the tip of a mixed push (failure surfaced
+      # 2026-05-13 after the compounding-pharmacy-track merge to main).
   workflow_dispatch:
     inputs:
       trigger_paths:
@@ -61,15 +68,62 @@ concurrency:
 
 jobs:
   # ============================================================================
+  # GATE — should we sweep on this trigger?
+  # ============================================================================
+  # Replaces the original head-commit-only [skip-wiki-sweep] check.  That
+  # check silently dropped wiki content when a non-wiki-touching tooling
+  # commit with the marker landed at the tip of a push that also contained
+  # user wiki commits (failure mode discovered 2026-05-13 after the
+  # compounding-pharmacy-track merge to main).
+  #
+  # The new gate consults logs/sweep-state.json + the commit-prefix +
+  # skip-marker analysis implemented in scripts/sweep-state.py should-sweep.
+  # Decision logic:
+  #   run  — at least one commit since cursor touched wiki/*.md and is
+  #          neither a daemon-self-write (sweep-1-/sweep-2-/sweep-3-) nor
+  #          marked [skip-wiki-sweep] anywhere in its message.
+  #   skip — no such commit exists.
+  # Manual workflow_dispatch always runs (user-initiated override).
+  gate:
+    name: "Gate — should we sweep?"
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      decision: ${{ steps.check.outputs.decision }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history; should-sweep diffs against the cursor
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Decide whether to sweep
+        id: check
+        run: |
+          set -euo pipefail
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "decision=run" >> "$GITHUB_OUTPUT"
+            echo "Trigger: workflow_dispatch (manual override); decision: run"
+            exit 0
+          fi
+          echo "--- gate rationale ---"
+          python3 scripts/sweep-state.py should-sweep 1>/dev/null
+          echo "--- gate decision ---"
+          DECISION=$(python3 scripts/sweep-state.py should-sweep 2>/dev/null)
+          echo "$DECISION"
+          echo "decision=$DECISION" >> "$GITHUB_OUTPUT"
+
+  # ============================================================================
   # PASS 1 — Claude propagation
   # ============================================================================
   propagate:
     name: "Pass 1 — Propagate"
+    needs: gate
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
       contents: write
-    if: "!contains(github.event.head_commit.message, '[skip-wiki-sweep]')"
+    if: needs.gate.outputs.decision == 'run'
     outputs:
       trigger_files:    ${{ steps.trigger.outputs.changed }}
       propagated_files: ${{ steps.run_pass_1.outputs.propagated_files }}

@@ -156,6 +156,68 @@ def cmd_pending_paths(_args: argparse.Namespace) -> None:
         print(p)
 
 
+def cmd_should_sweep(_args: argparse.Namespace) -> None:
+    """Decide whether the workflow should run a sweep on the current HEAD.
+
+    Prints `run` or `skip` (and a one-line rationale to stderr) based on:
+      - last_successful_sweep cursor in the registry
+      - commits between cursor and HEAD that touched wiki/*.md
+      - exclusion of daemon-self-writes (subject starts with sweep-1-/sweep-2-/sweep-3-)
+      - exclusion of commits whose full message contains [skip-wiki-sweep]
+
+    A sweep runs iff at least one wiki-touching commit since cursor is neither
+    a daemon-self-write nor explicitly skip-marked. This replaces the original
+    head-commit-only [skip-wiki-sweep] check that silently dropped wiki content
+    when a non-wiki-touching tooling commit with the marker landed on top of a
+    push that also contained user wiki commits.
+    """
+    data = read_registry()
+    last = data.get("last_successful_sweep") or {}
+    base = last.get("commit")
+    if not base:
+        print("run")
+        print("sweep-state.py should-sweep: no cursor recorded; defaulting to run", file=sys.stderr)
+        return
+
+    # Subject + full body for each wiki-touching commit since cursor.  Use
+    # NUL-separated records so commit messages with newlines parse cleanly.
+    sep = "\x1e"  # ASCII record separator, unlikely in commit messages
+    r = subprocess.run(
+        ["git", "log", f"--format=%H%x00%s%x00%B{sep}", f"{base}..HEAD", "--", "wiki/*.md"],
+        capture_output=True, text=True, check=True,
+    )
+    records = [rec for rec in r.stdout.split(sep) if rec.strip()]
+    if not records:
+        print("skip")
+        print("sweep-state.py should-sweep: no wiki/*.md commits since cursor", file=sys.stderr)
+        return
+
+    DAEMON_PREFIXES = ("sweep-1-", "sweep-2-", "sweep-3-")
+    SKIP_MARKER = "[skip-wiki-sweep]"
+    sweepable = []
+    for rec in records:
+        parts = rec.lstrip("\n").split("\x00", 2)
+        if len(parts) < 3:
+            continue
+        sha, subject, body = parts
+        if subject.startswith(DAEMON_PREFIXES):
+            continue
+        if SKIP_MARKER in subject or SKIP_MARKER in body:
+            continue
+        sweepable.append((sha[:8], subject))
+
+    if sweepable:
+        print("run")
+        print(f"sweep-state.py should-sweep: {len(sweepable)} sweepable wiki commit(s) since cursor:",
+              file=sys.stderr)
+        for sha, subject in sweepable:
+            print(f"  {sha} {subject}", file=sys.stderr)
+    else:
+        print("skip")
+        print(f"sweep-state.py should-sweep: {len(records)} wiki commit(s) since cursor; "
+              "all are daemon-self-writes or marked [skip-wiki-sweep]", file=sys.stderr)
+
+
 def cmd_init(args: argparse.Namespace) -> None:
     """One-time backfill from existing logs/v4-synthesis-*.md + last sweep-3-review commit."""
     if REGISTRY_PATH.exists() and not args.force:
@@ -227,6 +289,8 @@ def main() -> None:
 
     sub.add_parser("pending-paths", help="print wiki/*.md files since last successful sweep")
 
+    sub.add_parser("should-sweep", help="print 'run' or 'skip' based on registry + commit-prefix + skip-marker analysis")
+
     s_init = sub.add_parser("init", help="backfill the registry from existing logs + git history")
     s_init.add_argument("--force", action="store_true")
 
@@ -237,6 +301,7 @@ def main() -> None:
         "update-success": cmd_update_success,
         "record-failure": cmd_record_failure,
         "pending-paths": cmd_pending_paths,
+        "should-sweep": cmd_should_sweep,
         "init": cmd_init,
     }
     handlers[args.cmd](args)
