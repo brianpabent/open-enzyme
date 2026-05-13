@@ -5,23 +5,23 @@ gaps are. This document is load-bearing for the paper's Appendix B (revision
 log) since §2 was the section drafted with explicit cross-vendor / external
 tooling.
 
-## Pool composition
+## Pool composition (post S2-rerun)
 
-11 records total in `citation_pool.json`:
+11 records total in `citation_pool.json`, **all S2-verified**:
 
 | Cite key | Cluster | Year | Verification | Source |
 |---|---|---|---|---|
-| `bai2022constitutional` | constitutional_ai | 2022 | **S2** | Semantic Scholar canonical record |
-| `lu2024ai` | ai_scientist | 2024 | **S2** | Semantic Scholar canonical record |
-| `shumailov2024ai` | model_collapse | 2024 | **S2** | Semantic Scholar canonical record |
+| `du2023improving` | multiagent_debate | 2023 | **S2** | Semantic Scholar canonical record |
+| `madaan2023self` | self_refine | 2023 | **S2** | Semantic Scholar canonical record |
 | `shinn2023reflexion` | reflexion | 2023 | **S2** | Semantic Scholar canonical record |
-| `du2023improving` | multiagent_debate | 2023 | **WebSearch + arXiv ID** | arXiv:2305.14325 |
-| `madaan2023self` | self_refine | 2023 | **WebSearch + arXiv ID** | arXiv:2303.17651 |
-| `verga2024replacing` | llm_jury | 2024 | **WebSearch + arXiv ID** | arXiv:2404.18796 |
-| `lee2023rlaif` | rlaif | 2023 | **WebSearch + arXiv ID** | arXiv:2309.00267 |
-| `yamada2025ai` | ai_scientist_v2 | 2025 | **WebSearch + arXiv ID** | arXiv:2504.08066 |
-| `song2026paperorchestra` | paper_orchestra | 2026 | **WebSearch + arXiv ID** | arXiv:2604.05018 |
-| `shumailov2023curse` | curse_recursion | 2023 | **WebSearch + arXiv ID** | arXiv:2305.17493 |
+| `verga2024replacing` | llm_jury | 2024 | **S2** | Semantic Scholar canonical record |
+| `bai2022constitutional` | constitutional_ai | 2022 | **S2** | Semantic Scholar canonical record |
+| `lee2023rlaif` | rlaif | 2023 | **S2** | Semantic Scholar canonical record (ICML conference version) |
+| `lu2024ai` | ai_scientist | 2024 | **S2** | Semantic Scholar canonical record |
+| `yamada2025ai` | ai_scientist_v2 | 2025 | **S2** | Semantic Scholar canonical record |
+| `song2026paperorchestra` | paper_orchestra | 2026 | **S2** | Semantic Scholar canonical record |
+| `shumailov2024ai` | model_collapse | 2024 | **S2** | Semantic Scholar canonical record |
+| `shumailov2023curse` | curse_recursion | 2023 | **S2** | Semantic Scholar canonical record |
 
 ## Verification process and gap
 
@@ -35,15 +35,17 @@ The S2 rate-limit incident (2026-05-13): the script ran a first pass at 1.0s spa
 
 **Manual fallback applied.** For the 7 unverified candidates, records were constructed from the WebSearch results already in the drafting context plus the canonical arXiv IDs returned in those results. Each record is marked `"verification": "websearch+arxiv"` in `citation_pool.json`. The arXiv IDs are load-bearing — they are the canonical identifiers WebSearch returned, and they resolve to the listed metadata on arxiv.org. Authors, titles, years, and abstracts come from the WebSearch summaries, which in turn come from arxiv.org listings.
 
-## S2 API key request status
+## S2 API key request status — RESOLVED 2026-05-13
 
-**Submitted: 2026-05-13.** Brian filed the S2 API key request form at `https://www.semanticscholar.org/product/api#api-key-form` with the use-case description, endpoint list (`/graph/v1/paper/search`, `/graph/v1/paper/{paperId}`, `/graph/v1/paper/arXiv:{id}`), and request-volume estimate (100-500/day during drafting bursts, <50/day average, never above 1 QPS). All five required-checkbox acknowledgments confirmed honestly: prior unauthenticated requests made, exponential backoff in place, 60-day-inactivity removal acknowledged, license read and accepted.
+**Submitted 2026-05-13** at `https://www.semanticscholar.org/product/api#api-key-form` with use-case description, endpoint list, and request-volume estimate (100-500/day bursty, <50/day average, never above 1 QPS). All five required acknowledgments confirmed honestly.
 
-Response from the form: *"Thank you for your request. We have received your information. Please note that we are currently working on a backlog of requests and we appreciate your patience!"*
+**Approved same day.** Key delivered, persisted to `~/.config/abent/paperorchestra.env` (mode 600, outside the repo), and used to re-run `run_verify.py` against all 11 candidates.
 
-**Approval is asynchronous and not guaranteed by submission deadline.** Public issue threads report 5+ day waits with no response in some cases. The fallback plan if the key arrives in time is to re-run `run_verify.py` with `SEMANTIC_SCHOLAR_API_KEY` set and upgrade the 7 WebSearch+arXiv records to full S2-verified.
+**Re-verification result: 11 of 11 records now S2-verified.** First-pass returned 10 clean hits; the 11th (RLAIF) required a query refinement — S2's record for the arXiv preprint title ("RLAIF: Scaling…") had an empty abstract, while the ICML conference version ("RLAIF vs. RLHF: Scaling…") had the full abstract. The conference-version record is the better canonical reference anyway since it represents the peer-reviewed publication, not the preprint. Both records share the same arXiv ID (2309.00267) so the citation resolves identically.
 
-**If the key does not arrive before submission**, the next-session task is to swap the verification arm from S2 to **arXiv's direct API** (`http://export.arxiv.org/api/query?id_list=<arxiv_id>`), which is free, unauthenticated, no rate limit at our query volume, and returns title/authors/abstract/date for every one of the 7 fallback records (each has an arXiv ID). This is strictly better than the current WebSearch+arXiv-string fallback because the metadata comes from arXiv's canonical record, not from a search-result summary.
+`citation_pool.pre-s2-rerun.json` preserved as the pre-rerun snapshot for the audit trail. All 11 active records now carry `"verification": "s2"`.
+
+The arXiv-API fallback plan is preserved as a known-good Plan B in case S2 access ever degrades again. The implementation pattern would be `http://export.arxiv.org/api/query?id_list=<arxiv_id>` per record, which works without auth at our query volume.
 
 ## Why this gap is acceptable for the draft, with caveats
 

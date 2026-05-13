@@ -1,5 +1,120 @@
 [
   {
+    "paperId": "4780d0a027c5c5a8e01d7cf697f6296880ffc945",
+    "title": "Improving Factuality and Reasoning in Language Models through Multiagent Debate",
+    "year": 2023,
+    "venue": "International Conference on Machine Learning",
+    "authors": [
+      "Yilun Du",
+      "Shuang Li",
+      "A. Torralba",
+      "J. Tenenbaum",
+      "Igor Mordatch"
+    ],
+    "abstract": "Large language models (LLMs) have demonstrated remarkable capabilities in language generation, understanding, and few-shot learning in recent years. An extensive body of work has explored how their performance may be further improved through the tools of prompting, ranging from verification, self-consistency, or intermediate scratchpads. In this paper, we present a complementary approach to improve language responses where multiple language model instances propose and debate their individual res",
+    "externalIds": {
+      "ArXiv": "2305.14325",
+      "DBLP": "journals/corr/abs-2305-14325",
+      "DOI": "10.48550/arXiv.2305.14325",
+      "CorpusId": 258841118
+    },
+    "clusters": [
+      "multiagent_debate"
+    ],
+    "_bibkey": "du2023improving",
+    "verification": "s2"
+  },
+  {
+    "paperId": "3aaf6a2cbad5850ad81ab5c163599cb3d523436f",
+    "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+    "year": 2023,
+    "venue": "Neural Information Processing Systems",
+    "authors": [
+      "Aman Madaan",
+      "Niket Tandon",
+      "Prakhar Gupta",
+      "Skyler Hallinan",
+      "Luyu Gao",
+      "Sarah Wiegreffe",
+      "Uri Alon",
+      "Nouha Dziri",
+      "Shrimai Prabhumoye",
+      "Yiming Yang",
+      "S. Welleck",
+      "Bodhisattwa Prasad Majumder",
+      "Shashank Gupta",
+      "A. Yazdanbakhsh",
+      "Peter Clark"
+    ],
+    "abstract": "Like humans, large language models (LLMs) do not always generate the best output on their first try. Motivated by how humans refine their written text, we introduce Self-Refine, an approach for improving initial outputs from LLMs through iterative feedback and refinement. The main idea is to generate an initial output using an LLMs; then, the same LLMs provides feedback for its output and uses it to refine itself, iteratively. Self-Refine does not require any supervised training data, additional",
+    "externalIds": {
+      "ArXiv": "2303.17651",
+      "DBLP": "journals/corr/abs-2303-17651",
+      "DOI": "10.48550/arXiv.2303.17651",
+      "CorpusId": 257900871
+    },
+    "clusters": [
+      "self_refine"
+    ],
+    "_bibkey": "madaan2023self",
+    "verification": "s2"
+  },
+  {
+    "paperId": "0671fd553dd670a4e820553a974bc48040ba0819",
+    "title": "Reflexion: language agents with verbal reinforcement learning",
+    "year": 2023,
+    "venue": "Neural Information Processing Systems",
+    "authors": [
+      "Noah Shinn",
+      "Federico Cassano",
+      "Beck Labash",
+      "A. Gopinath",
+      "Karthik Narasimhan",
+      "Shunyu Yao"
+    ],
+    "abstract": "Large language models (LLMs) have been increasingly used to interact with external environments (e.g., games, compilers, APIs) as goal-driven agents. However, it remains challenging for these language agents to quickly and efficiently learn from trial-and-error as traditional reinforcement learning methods require extensive training samples and expensive model fine-tuning. We propose Reflexion, a novel framework to reinforce language agents not by updating weights, but instead through linguistic",
+    "externalIds": {
+      "DBLP": "conf/nips/ShinnCGNY23",
+      "ArXiv": "2303.11366",
+      "DOI": "10.52202/075280-0377",
+      "CorpusId": 258833055
+    },
+    "clusters": [
+      "reflexion"
+    ],
+    "_bibkey": "shinn2023reflexion",
+    "verification": "s2"
+  },
+  {
+    "paperId": "1a9d2a8093d2886b27e5854c1f20d873f02edfb0",
+    "title": "Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models",
+    "year": 2024,
+    "venue": "arXiv.org",
+    "authors": [
+      "Pat Verga",
+      "Sebastian Hofst\u00e4tter",
+      "Sophia Althammer",
+      "Yixuan Su",
+      "Aleksandra Piktus",
+      "Arkady Arkhangorodsky",
+      "Minjie Xu",
+      "Naomi White",
+      "Patrick Lewis"
+    ],
+    "abstract": "As Large Language Models (LLMs) have become more advanced, they have outpaced our abilities to accurately evaluate their quality. Not only is finding data to adequately probe particular model properties difficult, but evaluating the correctness of a model's freeform generation alone is a challenge. To address this, many evaluations now rely on using LLMs themselves as judges to score the quality of outputs from other LLMs. Evaluations most commonly use a single large model like GPT4. While this ",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2404-18796",
+      "ArXiv": "2404.18796",
+      "DOI": "10.48550/arXiv.2404.18796",
+      "CorpusId": 269449458
+    },
+    "clusters": [
+      "llm_jury"
+    ],
+    "_bibkey": "verga2024replacing",
+    "verification": "s2"
+  },
+  {
     "paperId": "3936fd3c6187f606c6e4e2e20b196dbc41cc4654",
     "title": "Constitutional AI: Harmlessness from AI Feedback",
     "year": 2022,
@@ -67,8 +182,8 @@
     "clusters": [
       "constitutional_ai"
     ],
-    "verification": "s2",
-    "_bibkey": "bai2022constitutional"
+    "_bibkey": "bai2022constitutional",
+    "verification": "s2"
   },
   {
     "paperId": "33161a5a9b5dcb635b5a97475e6a6209a69ada7d",
@@ -92,8 +207,58 @@
     "clusters": [
       "ai_scientist"
     ],
-    "verification": "s2",
-    "_bibkey": "lu2024ai"
+    "_bibkey": "lu2024ai",
+    "verification": "s2"
+  },
+  {
+    "paperId": "39983a80f111f7f6e793f02c5725a14bca76b32d",
+    "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+    "year": 2025,
+    "venue": "arXiv.org",
+    "authors": [
+      "Yutaro Yamada",
+      "R. Lange",
+      "Cong Lu",
+      "Shengran Hu",
+      "Chris Lu",
+      "Jakob Foerster",
+      "Jeff Clune",
+      "David Ha"
+    ],
+    "abstract": "AI is increasingly playing a pivotal role in transforming how scientific discoveries are made. We introduce The AI Scientist-v2, an end-to-end agentic system capable of producing the first entirely AI generated peer-review-accepted workshop paper. This system iteratively formulates scientific hypotheses, designs and executes experiments, analyzes and visualizes data, and autonomously authors scientific manuscripts. Compared to its predecessor (v1, Lu et al., 2024 arXiv:2408.06292), The AI Scient",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2504-08066",
+      "ArXiv": "2504.08066",
+      "DOI": "10.48550/arXiv.2504.08066",
+      "CorpusId": 277741107
+    },
+    "clusters": [
+      "ai_scientist_v2"
+    ],
+    "_bibkey": "yamada2025ai",
+    "verification": "s2"
+  },
+  {
+    "paperId": "b5622bd83c70b91a2f422504ff267d31af12f65e",
+    "title": "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing",
+    "year": 2026,
+    "venue": "",
+    "authors": [
+      "Yiwen Song",
+      "Yale Song",
+      "Tomas Pfister",
+      "Jinsung Yoon"
+    ],
+    "abstract": "Synthesizing unstructured research materials into manuscripts is an essential yet under-explored challenge in AI-driven scientific discovery. Existing autonomous writers are rigidly coupled to specific experimental pipelines, and produce superficial literature reviews. We introduce PaperOrchestra, a multi-agent framework for automated AI research paper writing. It flexibly transforms unconstrained pre-writing materials into submission-ready LaTeX manuscripts, including comprehensive literature s",
+    "externalIds": {
+      "ArXiv": "2604.05018",
+      "CorpusId": 287208248
+    },
+    "clusters": [
+      "paper_orchestra"
+    ],
+    "_bibkey": "song2026paperorchestra",
+    "verification": "s2"
   },
   {
     "paperId": "603d3f90fc40f79ff51258f0295de3ec5107f73e",
@@ -119,185 +284,59 @@
     "clusters": [
       "model_collapse"
     ],
-    "verification": "s2",
-    "_bibkey": "shumailov2024ai"
+    "_bibkey": "shumailov2024ai",
+    "verification": "s2"
   },
   {
-    "paperId": "0671fd553dd670a4e820553a974bc48040ba0819",
-    "title": "Reflexion: language agents with verbal reinforcement learning",
-    "year": 2023,
-    "venue": "Neural Information Processing Systems",
-    "authors": [
-      "Noah Shinn",
-      "Federico Cassano",
-      "Beck Labash",
-      "A. Gopinath",
-      "Karthik Narasimhan",
-      "Shunyu Yao"
-    ],
-    "abstract": "Large language models (LLMs) have been increasingly used to interact with external environments (e.g., games, compilers, APIs) as goal-driven agents. However, it remains challenging for these language agents to quickly and efficiently learn from trial-and-error as traditional reinforcement learning methods require extensive training samples and expensive model fine-tuning. We propose Reflexion, a novel framework to reinforce language agents not by updating weights, but instead through linguistic",
-    "externalIds": {
-      "DBLP": "conf/nips/ShinnCGNY23",
-      "ArXiv": "2303.11366",
-      "DOI": "10.52202/075280-0377",
-      "CorpusId": 258833055
-    },
-    "clusters": [
-      "reflexion"
-    ],
-    "verification": "s2",
-    "_bibkey": "shinn2023reflexion"
-  },
-  {
-    "paperId": "manual:arxiv:2305.14325",
-    "title": "Improving Factuality and Reasoning in Language Models through Multiagent Debate",
-    "year": 2023,
-    "venue": "ICML",
-    "authors": [
-      "Yilun Du",
-      "Shuang Li",
-      "Antonio Torralba",
-      "Joshua B. Tenenbaum",
-      "Igor Mordatch"
-    ],
-    "abstract": "Multi-agent debate framework where multiple instances of a language model propose and debate their reasoning over rounds. Improves factuality and reasoning on mathematical/strategic tasks. Requires only black-box access. Operates within a single vendor's model.",
-    "externalIds": {
-      "ArXiv": "2305.14325"
-    },
-    "clusters": [
-      "multiagent_debate"
-    ],
-    "verification": "websearch+arxiv",
-    "_bibkey": "du2023improving"
-  },
-  {
-    "paperId": "manual:arxiv:2303.17651",
-    "title": "Self-Refine: Iterative Refinement with Self-Feedback",
-    "year": 2023,
-    "venue": "NeurIPS",
-    "authors": [
-      "Aman Madaan",
-      "Niket Tandon",
-      "Prakhar Gupta",
-      "et al."
-    ],
-    "abstract": "Approach for improving LLM outputs through iterative self-feedback. Single LLM acts as generator, refiner, and feedback provider. No additional training data or supervised fine-tuning required. Evaluated across 7 tasks; ~20% preference improvement over one-shot generation.",
-    "externalIds": {
-      "ArXiv": "2303.17651"
-    },
-    "clusters": [
-      "self_refine"
-    ],
-    "verification": "websearch+arxiv",
-    "_bibkey": "madaan2023self"
-  },
-  {
-    "paperId": "manual:arxiv:2404.18796",
-    "title": "Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models",
-    "year": 2024,
-    "venue": "arXiv preprint",
-    "authors": [
-      "Pat Verga",
-      "et al."
-    ],
-    "abstract": "Panel of LLM evaluators (PoLL) of three smaller models outperforms single large judge (e.g. GPT-4) on QA tasks. Reduces intra-model bias via disjoint model families. Over 7x less expensive than single large-model judging. Evaluated on single-hop QA, multi-hop QA, and chatbot arena.",
-    "externalIds": {
-      "ArXiv": "2404.18796"
-    },
-    "clusters": [
-      "llm_jury"
-    ],
-    "verification": "websearch+arxiv",
-    "_bibkey": "verga2024replacing"
-  },
-  {
-    "paperId": "manual:arxiv:2309.00267",
-    "title": "RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback",
-    "year": 2023,
-    "venue": "ICML",
-    "authors": [
-      "Harrison Lee",
-      "Samrat Phatale",
-      "Hassan Mansoor",
-      "et al."
-    ],
-    "abstract": "RLAIF trains preference models on AI-generated labels rather than human labels. Achieves performance comparable to RLHF on summarization, helpful dialogue, harmless dialogue tasks. Reduces dependency on human annotation. Same-vendor self-supervision approach.",
-    "externalIds": {
-      "ArXiv": "2309.00267"
-    },
-    "clusters": [
-      "rlaif"
-    ],
-    "verification": "websearch+arxiv",
-    "_bibkey": "lee2023rlaif"
-  },
-  {
-    "paperId": "manual:arxiv:2504.08066",
-    "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
-    "year": 2025,
-    "venue": "arXiv preprint",
-    "authors": [
-      "Yutaro Yamada",
-      "Robert Tjarko Lange",
-      "Cong Lu",
-      "Shengran Hu",
-      "Chris Lu",
-      "Jakob Foerster",
-      "Jeff Clune",
-      "David Ha"
-    ],
-    "abstract": "Extends Sakana AI Scientist via agentic tree search. Produced the first fully AI-generated paper to pass a rigorous human peer-review process. End-to-end automated research pipeline within a single vendor's model family.",
-    "externalIds": {
-      "ArXiv": "2504.08066"
-    },
-    "clusters": [
-      "ai_scientist_v2"
-    ],
-    "verification": "websearch+arxiv",
-    "_bibkey": "yamada2025ai"
-  },
-  {
-    "paperId": "manual:arxiv:2604.05018",
-    "title": "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing",
-    "year": 2026,
-    "venue": "arXiv preprint",
-    "authors": [
-      "Yiwen Song",
-      "Yale Song",
-      "Tomas Pfister",
-      "Jinsung Yoon"
-    ],
-    "abstract": "Multi-agent framework with five communicating agents (outline, plotting, literature review, section writing, content refinement) that transforms pre-writing materials into submission-ready LaTeX manuscripts. Literature Review agent verifies cited papers exist via Semantic Scholar. Beats single-agent and tree-search baselines 50-68% on lit-review quality, 14-38% on overall quality on PaperWritingBench (200 reverse-engineered CVPR/ICLR papers).",
-    "externalIds": {
-      "ArXiv": "2604.05018"
-    },
-    "clusters": [
-      "paper_orchestra"
-    ],
-    "verification": "websearch+arxiv",
-    "_bibkey": "song2026paperorchestra"
-  },
-  {
-    "paperId": "manual:arxiv:2305.17493",
+    "paperId": "155aec5cff650263a4c71136f97570611d1bba7a",
     "title": "The Curse of Recursion: Training on Generated Data Makes Models Forget",
     "year": 2023,
-    "venue": "arXiv preprint",
+    "venue": "arXiv.org",
     "authors": [
       "Ilia Shumailov",
       "Zakhar Shumaylov",
       "Yiren Zhao",
-      "Yarin Gal",
+      "Y. Gal",
       "Nicolas Papernot",
       "Ross Anderson"
     ],
-    "abstract": "Documents the phenomenon of model collapse: when generative models are trained on their own outputs recursively, distributional tails are lost and model performance degrades irreversibly. Precursor to the Nature 2024 model collapse paper.",
+    "abstract": "Stable Diffusion revolutionised image creation from descriptive text. GPT-2, GPT-3(.5) and GPT-4 demonstrated astonishing performance across a variety of language tasks. ChatGPT introduced such language models to the general public. It is now clear that large language models (LLMs) are here to stay, and will bring about drastic change in the whole ecosystem of online text and images. In this paper we consider what the future might hold. What will happen to GPT-{n} once LLMs contribute much of th",
     "externalIds": {
-      "ArXiv": "2305.17493"
+      "DBLP": "journals/corr/abs-2305-17493",
+      "ArXiv": "2305.17493",
+      "CorpusId": 258987240
     },
     "clusters": [
       "curse_recursion"
     ],
-    "verification": "websearch+arxiv",
-    "_bibkey": "shumailov2023curse"
+    "_bibkey": "shumailov2023curse",
+    "verification": "s2"
+  },
+  {
+    "paperId": "600ff4c4ae9fc506c86673c5ecce4fa90803e987",
+    "title": "RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback",
+    "year": 2023,
+    "venue": "International Conference on Machine Learning",
+    "authors": [
+      "Harrison Lee",
+      "Samrat Phatale",
+      "H. Mansoor",
+      "Kellie Lu",
+      "Thomas Mesnard",
+      "Colton Bishop",
+      "Victor Carbune",
+      "Abhinav Rastogi"
+    ],
+    "abstract": "Reinforcement learning from human feedback (RLHF) has proven effective in aligning large language models (LLMs) with human preferences, but gathering high-quality preference labels is expensive. RL from AI Feedback (RLAIF), introduced in Bai et al., offers a promising alternative that trains the reward model (RM) on preferences generated by an off-the-shelf LLM. Across the tasks of summarization, helpful dialogue generation, and harmless dialogue generation, we show that RLAIF achieves comparabl",
+    "externalIds": {
+      "DBLP": "conf/icml/0001PMMFLBHCRP24",
+      "ArXiv": "2309.00267",
+      "CorpusId": 261493811
+    },
+    "clusters": [
+      "rlaif"
+    ],
+    "verification": "s2",
+    "_bibkey": "lee2023rlaif"
   }
 ]

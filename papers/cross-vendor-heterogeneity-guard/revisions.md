@@ -117,7 +117,15 @@ S2-verified (4): Bai et al. 2022 (Constitutional AI), Lu et al. 2024 (AI Scienti
 
 WebSearch+arXiv-verified (7): Du et al. 2023 (Multi-agent Debate, arXiv:2305.14325), Madaan et al. 2023 (Self-Refine, arXiv:2303.17651), Verga et al. 2024 (LLM-as-Jury, arXiv:2404.18796), Lee et al. 2023 (RLAIF, arXiv:2309.00267), Yamada et al. 2025 (AI Scientist-v2, arXiv:2504.08066), Song et al. 2026 (PaperOrchestra, arXiv:2604.05018), Shumailov et al. 2023 (Curse of Recursion, arXiv:2305.17493).
 
-### Catch 6 — Semantic Scholar rate-limit incident (2026-05-13)
+### Catch 6 — Semantic Scholar rate-limit incident (2026-05-13) — RESOLVED same day
+
+**Resolution:** S2 API key arrived from Semantic Scholar approval queue on 2026-05-13 (faster than expected; public reports of 5+ day waits did not materialize for our request). Key persisted to `~/.config/abent/paperorchestra.env` (mode 600, outside repo). Re-ran `run_verify.py` against all 11 candidates with authenticated requests.
+
+**Final state: 11 of 11 records S2-verified.** First-pass returned 10 clean hits; RLAIF (11th) required a query-title refinement — S2's preprint-version record had an empty abstract, while the ICML conference-version record had the full abstract. Both share arXiv ID 2309.00267; the ICML record is the better canonical reference. All 11 records in `citation_pool.json` now carry `"verification": "s2"`. The `manual_supplement.py` WebSearch+arXiv fallback is preserved in repo history as a known-good Plan B if S2 access ever degrades again.
+
+The original (rate-limit-induced) catch:
+
+
 
 The literature-review-agent's Phase 2 verification pass — sequential 1-QPS S2 `paper/search` queries with Levenshtein > 0.70 / non-empty-abstract / year-≤-cutoff checks — partially failed under the unauthenticated S2 endpoint's rate limit. First pass at 1.0s spacing got 3 records before HTTP 429. Retry pass at 8.0s spacing recovered 1 more. Remaining 7 candidates hit `rate-limited and retries exhausted` even with extended backoff.
 

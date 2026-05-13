@@ -27,7 +27,7 @@ The remainder of the paper is organized as follows. §2 positions the cross-vend
 
 ## §2 Related work
 
-**Drafted using the literature-review-agent skill from the Ar9av/PaperOrchestra community implementation (Path B install — no permanent symlinks). Output lives at `paperorchestra-workspace/drafts/section2.tex` (LaTeX) and is summarized below in markdown. BibTeX at `paperorchestra-workspace/refs.bib`. Citation pool with verification provenance at `paperorchestra-workspace/citation_pool.json`. Verification audit (including a partial-S2-rate-limit gap and the manual-fallback discipline applied) at `paperorchestra-workspace/drafts/verification-audit.md`.**
+**Drafted using the literature-review-agent skill from the Ar9av/PaperOrchestra community implementation (Path B install — no permanent symlinks). Output lives at `paperorchestra-workspace/drafts/section2.tex` (LaTeX) and is summarized below in markdown. BibTeX at `paperorchestra-workspace/refs.bib`. Citation pool with verification provenance at `paperorchestra-workspace/citation_pool.json`. All 11 cited papers are S2-verified (`verification: "s2"`) after the 2026-05-13 same-day key approval; full audit trail at `paperorchestra-workspace/drafts/verification-audit.md`.**
 
 The cross-vendor heterogeneity guard described in this paper sits in a literature already rich with multi-agent and self-reflective patterns for improving language-model outputs. This section positions the contribution against five methodology clusters in that literature, plus a sixth body of work on the underlying corpus-collapse phenomenon that motivates the guard.
 
