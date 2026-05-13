@@ -73,6 +73,8 @@ Mapping FDA-approved drugs onto the chokepoints surfaces compounds that hit a go
 
 Each has decades (or in the avacopan case, recent regulatory) of human safety data. Each is mechanistically aligned to a gout chokepoint. None has been clinically tested in gout. **None of these candidates require Open Enzyme to build anything** — they are pure discovery-engine output and represent a zero-engineering path to impact, parallel to and independent of the strain library. The methodology surfaces them; the project's contribution is the systematic mapping that identifies them as candidates.
 
+**Delivery route for the repurposing surface:** The [compounding pharmacy track](./compounding-pharmacy-track.md) (committed 2026-05-11) formalizes the path from "FDA-approved drug X hits gout chokepoint Y at off-label dose Z" to "patient can actually take it." For off-patent FDA-approved drugs with bulk API on the FDA 503A/503B lists, a compounding pharmacy can formulate custom doses, release profiles, and combinations — the MINX-style pattern (AI-aided formulation review + lipid-matrix design + 503A compounding + dissolution testing) collapses the timeline from years to days. This is the lowest-engineering-effort delivery route in the platform and the natural output side for the discovery engine's repurposing surface. (source: compounding-pharmacy-track.md)
+
 This recurring pattern (FDA-approved drug, mechanism-matched to a gout chokepoint, never clinically tested in gout) is itself a signal that the chokepoint-based discovery methodology has identifiable surface area beyond strain engineering — a strategic asset of the platform's overall contribution.
 
 ### 2.3 Where koji emerged from this

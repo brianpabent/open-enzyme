@@ -170,6 +170,8 @@ graph TB
         DE16["PINK1/mitophagy — NLRP3-priming-adjacent (chokepoint candidate)"]
         DE17["comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Flux Model"]
         DE18["comp-018/comp-020 — Upstream Complement Modulator Sweep (dietary CP0)"]
+        DE19["Compounding Pharmacy Track — 503A/503B delivery for repurposing surface"]
+        DE20["Ginkgo Cloud Lab — cell-free $39/protein pre-gate + strain-engineering eval"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -553,6 +555,15 @@ graph TB
     %% comp-018/comp-020 upstream complement modulator sweep (source: upstream-complement-modulator-sweep-computational.md, upstream-complement-verification-rerun-computational.md)
     DE18 -->|"dietary upstream-CP0 axis: rosmarinic acid + luteolin + Helicteres lignans"| O1
     DE18 -->|"engineered C1-INH parallel thread to H05 DAF SCR1-4"| DE1
+    %% Compounding pharmacy track (source: compounding-pharmacy-track.md)
+    DE19 -->|"delivery route for"| DE2
+    DE19 -->|"highest-priority candidate"| DE4
+    DE19 -->|"candidate"| DE3
+    DE19 -->|"candidate (custom-dose colchicine)"| J5
+    %% Ginkgo Cloud Lab evaluation (source: ginkgo-cloud-lab-evaluation.md)
+    DE20 -->|"cell-free pre-gate validates uricase sequences"| KE1
+    DE20 -->|"cell-free weak for DAF/CD55 SCR1-4 (glycoprotein, disulfide-rich)"| CH12
+    DE20 -->|"complements (different gate)"| DE12
     %% Global lab access (source: ward-1995-lab-access-global.md)
     DE12 -->|"provides NSlD-dP10 chassis for"| KE10
     DE12 -->|"parallel path via C19 chassis"| KE1

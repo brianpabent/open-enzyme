@@ -43,6 +43,8 @@ Brian has gout — a uricase deficiency — and got tired of waiting for the sys
 
 The project is seeking PhD-level collaborators in three complementary domains. Each role answers a question the platform cannot answer alone. No names are published here until collaborators have formally joined.
 
+**Wet-lab partner evaluation — Ginkgo Cloud Lab (2026-05-13):** Brian probed Ginkgo Bioworks' Cloud Lab via their EstiMate sales bot on 2026-05-12. Two offers surfaced: (1) **Cell-Free Protein Expression Validation at $39/protein** — confirms a designed sequence produces folded polypeptide in cell-free lysate, ~5–10 day turnaround. This is a real fail-fast pre-gate for uricase variants (E. coli-lysate-compatible fold) but a weak test for DAF/CD55 SCR1-4 (glycoprotein, disulfide-rich). (2) A **96-construct S. cerevisiae strain-engineering campaign at ≈$2,340 total (≈$24.38/sample)** — almost certainly a lead-magnet teaser, not a real quote. The cell-free pre-gate complements the community-college / grad-student path (different gates: cell-free answers "does the sequence produce a folded protein at all?"; the CC path answers "does it secrete from a fungal host in a real fermentation context?"). See [ginkgo-cloud-lab-evaluation.md](./ginkgo-cloud-lab-evaluation.md) for full evaluation. (source: ginkgo-cloud-lab-evaluation.md)
+
 ### Role 1 — Gut Microbiome & In Vivo Validation
 
 **Expertise needed:** Gut microbiome dynamics, gnotobiotic (germ-free) animal models, in vivo validation of engineered microbes, 16S sequencing and metabolomics interpretation.

@@ -27,6 +27,8 @@ Zileuton is an oral 5-lipoxygenase (5-LOX) inhibitor. FDA-approved for asthma in
 
 **Repurposing surface origin:** Zileuton is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are disulfiram (CP6b GSDMD, FDA-approved for alcohol use disorder) and avacopan (CP0 C5aR1, FDA-approved for ANCA vasculitis). See [open-enzyme-vision.md §2.2](./open-enzyme-vision.md) for the full repurposing surface framing. (source: open-enzyme-vision.md)
 
+**Compounding pharmacy delivery route:** Zileuton is a candidate on the [compounding pharmacy track](./compounding-pharmacy-track.md) — FDA-approved, off-patent, but bulk API availability is uncertain and would need verification. If bulk API is available, a compounded low-dose extended-release zileuton for flare prophylaxis is a clean repurposing experiment. Risk: zileuton has known hepatotoxicity signal in asthma cohorts; compounded use needs liver monitoring. (source: compounding-pharmacy-track.md)
+
 See [supplements-stack.md](./supplements-stack.md) for the over-the-counter CP6a entries (quercetin, AKBA, EPA) that already sit on this mechanism. Zileuton is the pharma-grade version of the same pathway reach.
 
 ---

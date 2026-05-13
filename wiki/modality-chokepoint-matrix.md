@@ -81,6 +81,7 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 | SPM precursors (DHA → RvD1/MaR1) | — | 🔬 | ✅ ([SPM](./spm-resolution-pathway.md)) | 🔬 | — |
 | Fermentable fiber / prebiotics | — | ✅ ([butyrate → PPARγ → ABCG2](./abcg2-modulators.md)) | 🔬 | 🔬 (mucus-layer support) | ✅ |
 | **Native-compound medicinal mushroom complement** | 🔬 ([GLPP](./medicinal-mushroom-complement-track.md) from *G. lucidum* — 40.6% UA reduction in HUA mice via ADA inhibition + GLUT9/OAT1, [PMID 36385640](https://pubmed.ncbi.nlm.nih.gov/36385640); cordycepin from *C. militaris* — URAT1 modulation 337→203 µmol/L, [PMID 29422889](https://pubmed.ncbi.nlm.nih.gov/29422889); whole-fermentate Cordyceps includes natural pentostatin ADA-inhibitor pairing per [Phase 7-1b](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7b-cordyceps-strain-scan.md)) | 🔬 (FZ-formula *Poria cocos* multi-herb modulates ABCG2/GLUT9/OAT1 + NLRP3, [PMID 37788785](https://pubmed.ncbi.nlm.nih.gov/37788785) — multi-herb attribution issue per [comp-014 Phase 6](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage.md); GLPP modulates GLUT9/OAT1 directly) | 🔬 (β-glucans + ergothioneine modulate NLRP3 — **directionality structure-dependent per Phase 5**: *G. lucidum* exopolysaccharides ACTIVATE; spore powder + GLP β-glucan INHIBIT; phase-6 methodology constraint) | ✅ ([ergothioneine](./medicinal-mushroom-complement-track.md) via OCTN1/SLC22A4 absorption — **dietary 50-100 g fresh oyster delivers 12-24 mg, within RCT-investigational range per [Phase 7-1c](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7c-pleurotus-strain-scan.md)**; *P. citrinopileatus* is highest fungal producer 7.0 mg/g DW; β-glucans general gut-barrier support) | ✅ (mushroom polysaccharides extensively shape gut microbiome — well-established literature; lentinan, GLPP, pleuran, PSK all documented) |
+| **Compounding pharmacy (503A/503B)** | ⚪ (proteins/enzymes not compoundable — stay on fermentation chassis) | ⚪ | ⚪ | ⚪ | ⚪ |
 
 ### Row 2: Renal compartment targets
 
@@ -104,6 +105,7 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 | SPM precursors | — | — | 🔬 |
 | Fermentable fiber / prebiotics | — | 🔬 (systemic SCFA → modest renal effect) | — |
 | **Native-compound medicinal mushroom complement** | 🔬 (cordycepin URAT1 modulation animal evidence [PMID 29422889](https://pubmed.ncbi.nlm.nih.gov/29422889); GLPP GLUT9 down + OAT1 up [PMID 36385640](https://pubmed.ncbi.nlm.nih.gov/36385640); both **expression-level, not direct binding** — comp-014 Phase 5 finding) | 🔬 (GLPP modulates renal OAT1 expression; FZ-formula *Poria* increases ABCG2 expression — multi-herb confounded) | 🟡 (ergothioneine OCTN1-mediated tissue distribution may reach kidney macrophages but **no direct evidence** in comp-014 scan; open exploration vector) |
+| **Compounding pharmacy (503A/503B)** | ✅ (allopurinol custom doses + probenecid combos — see [compounding-pharmacy-track.md](./compounding-pharmacy-track.md)) | ⚪ | ⚪ |
 
 ### Row 3: Tissue-resident NLRP3 sites + acute flare
 
@@ -124,6 +126,7 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 | SPM precursors | ✅ ([SPM](./spm-resolution-pathway.md) — RvD1/MaR1 in animal MSU model) | 🔬 (DHA-emphasis rationale per [tnfsf14](./tnfsf14-gout-target.md)) | 🔬 |
 | Fermentable fiber | — | 🔬 (systemic anti-inflammatory) | ⚪ |
 | **Native-compound medicinal mushroom complement** | 🔬 (β-glucans + hispolon from *Phellinus* + ergothioneine systemic anti-inflammatory effects — generic, no specific synovial targeting documented) | 🔬 (ergothioneine OCTN1-mediated tissue distribution; eritadenine cardiovascular activity from shiitake; **weak direct Lp-PLA2 evidence** — Phase 5 found this gap) | ⚪ (slow-onset chronic supplement context, not flare-termination tool — same limitation as engineered yeast/koji row) |
+| **Compounding pharmacy (503A/503B)** | 🔬 (colchicine custom doses for acute flare — see [compounding-pharmacy-track.md](./compounding-pharmacy-track.md)) | ⚪ | 🔬 (colchicine and prednisone already standard; compounding adds custom-dose flexibility) |
 
 ### Row 4: Monitoring / detection
 
@@ -145,6 +148,15 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 - **Strengths:** GRAS, food-grade, home-fermentable, dual-enzyme (uricase + carnosine + lactoferrin co-expression), gut-lumen sink mechanism is the cleanest fit for these chassis.
 - **Coverage gaps relative to platform mission:** anything that requires durable colonization, anything renal, anything systemic at high titer.
 - **Live OE pages:** [`engineered-koji-protocol.md`](./engineered-koji-protocol.md), [`engineered-yeast-uricase-proposal.md`](./engineered-yeast-uricase-proposal.md), [`koji-home-fermentation.md`](./koji-home-fermentation.md), [`koji-endgame-strain.md`](./koji-endgame-strain.md).
+
+### Compounding pharmacy (503A/503B) — delivery route, not chassis
+- **Strengths:** **lowest engineering effort of any peer track** — formulation engineering only (release matrix, dose, dissolution profile), no genetic engineering, no drug discovery. MINX-style pattern: AI-aided formulation review + lipid-matrix release-control design + 503A compounding pharmacy + dissolution testing → days, not years. The active ingredient is already FDA-approved; the work is formulation engineering.
+- **Cleavage rule:** small-molecule + FDA-approved API + off-patent / off-label → compoundable. Proteins / enzymes / biologics stay on fermentation chassis.
+- **Coverage gaps relative to current OE:** the wiki had no delivery-route page for the repurposing surface until the [compounding-pharmacy-track.md](./compounding-pharmacy-track.md) scope page (committed 2026-05-11). The discovery engine surfaces FDA-approved drugs hitting gout chokepoints; compounding is the output side that turns identification into access.
+- **Highest-priority candidate:** disulfiram (CP6b GSDMD inhibitor, FDA-approved for AUD, off-patent, bulk API available). Secondary candidates: colchicine custom doses, allopurinol custom doses, probenecid combos, zileuton (bulk API uncertain), pentostatin/cordycepin pairing.
+- **Regulatory class:** 503A (patient-specific Rx) or 503B (registered outsourcing facility). Off-label prescribing is physician's discretion.
+- **Critical limitation:** does NOT replace clinical trials. Compounding is an *access* path, not an *evidence* path. The discovery engine still has to do the science.
+- **Dedicated scope page (committed 2026-05-11):** [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md). 7 Phase 2 follow-ups queued (bulk API audit, pharmacy partner ID, physician partner pathway, USP characterization library, insurance reality, disulfiram dose modeling comp-NNN, sweep-daemon discovery-engine hook). (source: compounding-pharmacy-track.md)
 
 ### Native-compound medicinal mushroom complement (Phase 7 peer track)
 

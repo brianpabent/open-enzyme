@@ -99,6 +99,8 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 **Success criteria:** Identify highest-performing gene with >50 μmol/h/OD activity
 
+**Pre-gate option — Ginkgo Cloud Lab cell-free expression ($39/protein, ~5–10 day turnaround):** Before committing to the full $2,000–3,000 gene synthesis + transformation + screening pipeline, a single $39 cell-free run on the lead uricase variant from [uricase-variant-selection.md](./uricase-variant-selection.md) can confirm the ORF translates without ribosomal stalling and the polypeptide folds into a soluble state in an E. coli-lysate-like environment. Negative result = redesign the construct before any fungal work. Positive result = construct is worth committing fungal-host effort to. See [ginkgo-cloud-lab-evaluation.md](./ginkgo-cloud-lab-evaluation.md) for full evaluation. (source: ginkgo-cloud-lab-evaluation.md; Mechanistic Extrapolation)
+
 ---
 
 ### 1.2 Secretion vs. Intracellular Expression
