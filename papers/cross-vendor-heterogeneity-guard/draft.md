@@ -73,7 +73,12 @@ The cross-vendor heterogeneity guard does not address training-time model collap
 
 ## §3 Architecture
 
-The system this paper describes is the **Open Enzyme wiki-sweep daemon**, a continuously running pipeline that fires on every edit to the project's research wiki. The wiki is a Markdown corpus of ~80 long-form research pages plus a graph of cross-references, maintained as a living synthesis of the literature relevant to a single open-source biotechnology project (engineered food-grade fungal strains for therapeutic enzyme production). The daemon's job is to keep the corpus internally consistent and to surface novel connections across pages that no single human or model has explicitly stated.
+The system this paper describes is the **Open Enzyme wiki-sweep daemon**, a continuously running pipeline that fires on every edit to the project's research wiki (Figure 1).
+
+![Figure 1. Cross-vendor heterogeneity guard architecture](./figures/figure1_architecture.png)
+
+**Figure 1.** Cross-vendor heterogeneity guard architecture as deployed on the Open Enzyme wiki-sweep daemon. Three operational passes are routed across distinct vendors via OpenRouter (Pass 1 Anthropic Sonnet, Pass 2 DeepSeek with Gemini fallback, Pass 3 Anthropic Opus or OpenAI alternative). An episodic peer-review pass by DeepSeek V4-Pro provides an independent cross-vendor verification surface that is not part of the per-edit critical path. Inter-pass artifact handoff (`propagated_files`, `cited_files`) is shown on the horizontal arrows; see §3 inter-pass handoff for details. Figure source: `figures/figure1_architecture.py`.
+ The wiki is a Markdown corpus of ~80 long-form research pages plus a graph of cross-references, maintained as a living synthesis of the literature relevant to a single open-source biotechnology project (engineered food-grade fungal strains for therapeutic enzyme production). The daemon's job is to keep the corpus internally consistent and to surface novel connections across pages that no single human or model has explicitly stated.
 
 ### The three operational passes
 
@@ -223,7 +228,12 @@ A third failure class — Pass 3 admitting it could not verify a Pass 2 citation
 
 ### Distribution of catches by class
 
-Across the 13-day operational window 2026-04-25 to 2026-05-08, the four case studies in §5 are representative of four distinct failure classes. The catches in §5.1, §5.2, and §5.3 each surfaced exactly one instance during the window; §5.4 is the seminal cross-vendor catch that motivated the entire architecture. The operational data does not yet support a quantitative false-positive rate estimate — the production daemon has not flagged enough findings during the window to compute one with confidence. A more rigorous false-positive analysis is queued as future work once the operational record extends to ~6 months.
+Across the 13-day operational window 2026-04-25 to 2026-05-08, the four case studies in §5 are representative of four distinct failure classes. Figure 2 visualizes the catches alongside the surfacing mechanism for each. The catches in §5.1, §5.2, and §5.3 each surfaced exactly one instance during the window via within-pipeline discipline (manual walkthrough, independent re-run, ground-truth probe). §5.4 is the seminal cross-vendor catch that motivated the entire architecture, surfaced by DeepSeek V4-Pro's independent peer-review pass on Claude-driven synthesis. The operational data does not yet support a quantitative false-positive rate estimate — the production daemon has not flagged enough findings during the window to compute one with confidence. A more rigorous false-positive analysis is queued as future work once the operational record extends to ~6 months.
+
+![Figure 2. Catches by failure class](./figures/figure2_catches.png)
+
+**Figure 2.** Catches surfaced by failure class during the operational window 2026-04-25 to 2026-05-08. Each bar represents one of the four case studies in §5; bar color indicates the vendor that surfaced the catch (blue = cross-vendor DeepSeek; grey = within-pipeline manual discipline). The seminal §5.4 catch is annotated separately because it is structurally distinct: it is the cross-vendor catch that motivated the cross-vendor architecture, demonstrating the heterogeneity-guard principle by working. Figure source: `figures/figure2_catches.py`.
+
 
 The qualitative observation is that the most expensive catches by potential downstream impact are the cross-vendor methodological ones (§5.4 class). A single missed within-vendor cascade (§5.1 class) might propagate one wrong number across a dozen pages — recoverable. A missed methodological risk that aligns with the within-vendor model's prior can shape the corpus's direction for months before any reader notices.
 
