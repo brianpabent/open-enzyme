@@ -3,7 +3,29 @@
 **Brian Abent**
 Open Enzyme · brian@headsupresults.com
 
-**Status:** Working draft. §3, §4, §5, §6, §7, §8, §9 drafted in sessions 1–2 (2026-05-13). §1 introduction, §2 related work, abstract, and final references in subsequent sessions per `outline.md`. §2 related work is the section explicitly to be drafted with Google Cloud's PaperOrchestra and cross-vendor reviewed by Claude + DeepSeek per the methodology in this paper.
+**Status:** Working draft. §1, §3, §4, §5, §6, §7, §8, §9 drafted in sessions 1–3 (2026-05-13). §2 related work is to be drafted with Google Cloud's PaperOrchestra and cross-vendor reviewed by Claude + DeepSeek per the methodology in this paper. Abstract and final references in subsequent sessions per `outline.md`.
+
+---
+
+## §1 Introduction
+
+AI-assisted literature synthesis is becoming a load-bearing component of how scientific research is conducted. Research groups across biotechnology, chemistry, physics, and the life sciences are deploying frontier language models to read primary literature, propose connections across papers, draft hypotheses, and maintain working knowledge graphs that span hundreds or thousands of source documents. The pattern is no longer experimental; it is operational infrastructure.
+
+This shift introduces a new class of failure that does not exist in traditional human-only research. When a single AI model is the sole synthesizer of a long-lived knowledge corpus, the corpus accumulates that model's blind spots and biases over time. Each individual synthesis output is reviewed and edited, but the review itself runs through the same model, propagating the same prior. New entries cross-reference older entries that were already shaped by the same model's framings. After hundreds of edits, the corpus no longer represents the underlying literature; it represents the literature *as that model sees it*. We call this drift **epistemic homogenization**.
+
+Epistemic homogenization is structurally different from per-output hallucination. A hallucinated answer is a single wrong claim that any careful reader can catch. Homogenization is a property of the corpus as a whole — consistent biases compounding across hundreds of internally-coherent edits, no single output obviously wrong, the cumulative drift invisible without an outside reference. A reader querying the homogenized corpus receives confident, internally consistent answers that drift from reality in a direction the reader cannot easily perceive. The corpus's defenses (peer review of individual edits; cross-referencing; evidence-tagging) operate within the same prior that produced the drift in the first place.
+
+The natural response is to introduce diversity into the synthesis pipeline — run multiple models in review, alternate which model writes which sections, ensemble the outputs. The existing literature on multi-agent AI systems (debate, self-refine, jury-of-LLMs, Constitutional AI) develops these patterns substantially. But almost all of this work operates *within* a single vendor: multiple instances of the same company's model, or multiple sizes of the same company's model family. Within-vendor heterogeneity is multi-instance, not multi-perspective. It does not guard against blind spots that are characteristic of the vendor's training pipeline as a whole.
+
+This paper argues that **cross-vendor heterogeneity** — models trained by different companies, on different (though overlapping) data corpora, with different reinforcement-learning-from-human-feedback (RLHF) procedures and different alignment objectives — is the right granularity for the heterogeneity guard. It is the level at which prior-distribution diversity actually appears. A blind spot in Anthropic's training pipeline is unlikely to appear in the same form in Google's, or in DeepSeek's, or in OpenAI's. The cross-vendor pattern exploits this independence in the same way classical ensemble methods exploit cross-architecture independence — but at a vendor abstraction level that the existing multi-agent literature has not explicitly developed.
+
+The contribution of this paper is twofold. First, we develop the cross-vendor heterogeneity guard as an explicit architectural pattern, formalize the failure class it protects against (epistemic homogenization), and distinguish it from the within-vendor patterns in the existing multi-agent literature (§4). Second, we describe an operational deployment — the Open Enzyme wiki-sweep daemon, a continuously-running pipeline that has maintained an ~80-page biotechnology research wiki across approximately three weeks of production use — and present four case studies from its operational record that illustrate the failure classes the pattern catches (§5). The seminal case study (§5.4) is the catch that motivated the pattern itself: an independent DeepSeek peer-review pass on Claude-driven synthesis output named the homogenization risk that the Claude-driven pipeline had not surfaced unprompted, demonstrating the principle by working.
+
+The remainder of the paper is organized as follows. §2 positions the cross-vendor pattern against prior multi-agent AI literature. §3 describes the architecture of the Open Enzyme deployment. §4 develops the heterogeneity-guard rationale and the formal distinction from within-vendor patterns. §5 presents the four case studies. §6 reports operational data (cost, latency, failure modes). §7 enumerates the architecture's limitations and the failure classes it does *not* protect against. §8 discusses generalization (how many vendors is enough, scaling to non-text modalities, implications for autonomous-research systems). §9 concludes. A Methods Appendix documents the cross-vendor process used to produce this manuscript itself — the paper is drafted using the methodology it describes, including a logged self-catch where the primary drafter confabulated a fact that primary-source verification would have caught.
+
+---
+
+## §2 Related work *(to be drafted by PaperOrchestra; see `paperorchestra-handoff.md` for the brief)*
 
 ---
 
@@ -267,11 +289,7 @@ This appendix documents the production process for the manuscript itself, in kee
 
 ---
 
-## §1 Introduction *(to be drafted)*
-
-## §2 Related work *(to be drafted by PaperOrchestra; cross-vendor reviewed)*
-
-## Abstract *(to be drafted last)*
+## Abstract *(to be drafted after §2 is complete)*
 
 ---
 

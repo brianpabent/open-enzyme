@@ -99,14 +99,20 @@
 
 ## Draft order
 
-1. §4 (heterogeneity rationale) — the conceptual spine
-2. §5 (case studies) — the concrete demonstrations
-3. §3 (architecture) — compress from `SWEEP-ARCHITECTURE.md`
-4. §6 (operational data) — extract from logs
-5. §2 (related work) — the careful lit-survey lift
-6. §1 (introduction) — written after the body has shape
-7. §7, §8, §9 (limitations, discussion, conclusion)
-8. Abstract
-9. References + appendices
+1. §4 (heterogeneity rationale) — the conceptual spine ✅ Session 1
+2. §5 (case studies) — the concrete demonstrations ✅ Session 1
+3. §3 (architecture) — compress from `SWEEP-ARCHITECTURE.md` ✅ Session 2
+4. §6 (operational data) — extract from logs ✅ Session 2
+5. §7, §8, §9 (limitations, discussion, conclusion) ✅ Session 2
+6. Methods Appendix + Appendix A skeleton ✅ Session 2
+7. §1 (introduction) — written after the body has shape ✅ Session 3
+8. **§2 (related work)** — the careful lit-survey lift — **PENDING** (PaperOrchestra)
+9. **Abstract** — written last, after §2 lands — **PENDING**
+10. Cross-vendor review passes on §3–§9 per `review-prompts.md` — **PENDING**
+11. Cross-vendor review of PaperOrchestra's §2 output — **PENDING**
+12. Figures (Fig 1 architecture diagram, Fig 2 catches-by-class) — **PENDING** (PaperOrchestra)
+13. Tables (Table 1 cost/latency, Table 2 vendor attribution) — **PENDING**
+14. References compilation + bibliography formatting — **PENDING** (PaperOrchestra)
+15. Submission package per `submission-checklist.md` — **PENDING**
 
-Sessions 1-2 cover §4 and §5 (this commit). Session 3+ continues from §3.
+**Solo-drafted body sections complete after Session 3.** All sections of the main paper except §2 are drafted. §2 awaits PaperOrchestra. Cross-vendor review prompts are ready in `review-prompts.md` for the user to fire when bandwidth allows.

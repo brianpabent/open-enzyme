@@ -71,6 +71,30 @@ The session 1 draft of §5.4 stated *"the original sweep design used three passe
 
 ---
 
+## Session 3 — 2026-05-13 (continued autonomously)
+
+**Drafted:**
+- §1 Introduction (~700 words). Frames the homogenization problem; positions cross-vendor as the right granularity; previews the paper's structure. No outside literature cited — that comes in §2.
+- `review-prompts.md` — ready-to-fire cross-vendor review prompts for DeepSeek (on §4/§5), Gemini (on §3/§6/§7), and the PaperOrchestra-output review pattern (on §2 once PaperOrchestra produces it).
+- `submission-checklist.md` — step-by-step path from current draft state to bioRxiv preprint live + *Patterns* submission.
+- Outline updated to reflect what's been drafted vs. what's pending.
+
+**Primary drafter:** Claude Opus 4.7 (Anthropic).
+
+**Self-verification note:** §1 deliberately does not cite outside literature, so the load-bearing claims are restated propositions from §4. Verified internal consistency with §4 — definitions of epistemic homogenization, cross-vendor vs. within-vendor, training-distribution prior are used identically across §1 and §4.
+
+**State after session 3:**
+- §1 + §3 + §4 + §5 + §6 + §7 + §8 + §9 drafted.
+- §2 pending PaperOrchestra.
+- Abstract pending §2 completion.
+- Three cross-vendor review passes pending (prompts ready).
+- Figures + tables pending (PaperOrchestra can generate from current text).
+- References pending bibliography compilation.
+
+Solo work that can be done without Brian: substantially complete. The remaining steps (PaperOrchestra runs, cross-vendor review pass execution, figure generation, submission) require either Brian's hands or his decision-making on tradeoffs the drafter shouldn't make alone.
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.
