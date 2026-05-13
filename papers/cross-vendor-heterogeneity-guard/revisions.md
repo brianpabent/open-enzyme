@@ -95,6 +95,48 @@ Solo work that can be done without Brian: substantially complete. The remaining 
 
 ---
 
+## Session 4 — 2026-05-13 (PaperOrchestra integration, Path B)
+
+**Drafted:** §2 Related work (~1,100 words across 6 subsections), via the Ar9av/PaperOrchestra community implementation of the literature-review-agent skill (Path B install — no permanent `~/.claude/skills/` symlinks; skill driven manually from `~/paper-orchestra/skills/literature-review-agent/`).
+
+**Workspace:** `paperorchestra-workspace/`
+- `inputs/` — idea.md, experimental_log.md, conference_guidelines.md, template.tex
+- `outline.json` — intro_related_work_plan only (skipped plotting_plan and section_plan since we only needed §2)
+- `run_verify.py`, `run_verify_retry.py` — Phase 2 Semantic Scholar verification scripts
+- `manual_supplement.py` — S2 rate-limit fallback (constructs records from WebSearch + arXiv IDs)
+- `build_bib.py` — emits refs.bib from citation_pool.json
+- `citation_pool.json` — 11 verified records (4 S2-verified + 7 WebSearch+arXiv-verified)
+- `refs.bib` — 11 BibTeX entries
+- `drafts/section2.tex` — LaTeX output
+- `drafts/section2_scaffold.md` — markdown working scaffold
+- `drafts/verification-audit.md` — honest record of the S2 verification gap
+
+**Citations landed (11 total):**
+
+S2-verified (4): Bai et al. 2022 (Constitutional AI), Lu et al. 2024 (AI Scientist), Shumailov et al. 2024 (Model Collapse Nature), Shinn et al. 2023 (Reflexion).
+
+WebSearch+arXiv-verified (7): Du et al. 2023 (Multi-agent Debate, arXiv:2305.14325), Madaan et al. 2023 (Self-Refine, arXiv:2303.17651), Verga et al. 2024 (LLM-as-Jury, arXiv:2404.18796), Lee et al. 2023 (RLAIF, arXiv:2309.00267), Yamada et al. 2025 (AI Scientist-v2, arXiv:2504.08066), Song et al. 2026 (PaperOrchestra, arXiv:2604.05018), Shumailov et al. 2023 (Curse of Recursion, arXiv:2305.17493).
+
+### Catch 6 — Semantic Scholar rate-limit incident (2026-05-13)
+
+The literature-review-agent's Phase 2 verification pass — sequential 1-QPS S2 `paper/search` queries with Levenshtein > 0.70 / non-empty-abstract / year-≤-cutoff checks — partially failed under the unauthenticated S2 endpoint's rate limit. First pass at 1.0s spacing got 3 records before HTTP 429. Retry pass at 8.0s spacing recovered 1 more. Remaining 7 candidates hit `rate-limited and retries exhausted` even with extended backoff.
+
+**Manual fallback applied.** WebSearch+arXiv metadata (already in drafting context from Phase 1 discovery) was used to construct the remaining 7 records. Each is marked `"verification": "websearch+arxiv"` in `citation_pool.json` for the audit trail. The arXiv IDs are load-bearing — they are the canonical identifiers WebSearch returned, and they resolve to the listed metadata on arxiv.org.
+
+**Class of failure:** external-tool reliability degradation under rate limits, with verification arm of the pipeline forced into manual fallback. Same failure class as §5.3 of the main paper (Paperclip MCP probe) — except in this case the gap was honestly documented and the work continued rather than abandoning the candidate set.
+
+**Lesson for the paper's methodology:** the heterogeneity-guard pattern should not depend on a single external verification service. If S2 rate-limits, fall back to the next-best canonical identifier (arXiv ID), log the degradation honestly rather than pretend verification succeeded. This is the rigor-under-degradation discipline the paper itself argues for.
+
+**To-do for Brian before bioRxiv submission:** re-run `run_verify.py` with `SEMANTIC_SCHOLAR_API_KEY` set (free key at https://api.semanticscholar.org/). Any candidate that fails S2 verification with a key in place must be either replaced or flagged as an unverified citation. See `paperorchestra-workspace/drafts/verification-audit.md` for the full submission-prep punchlist on §2.
+
+### Note on the Path B install and the cross-vendor framing
+
+The Ar9av/PaperOrchestra skill pack is host-agent-agnostic — the host coding agent does all LLM work; the deterministic Python helpers in `scripts/` do verification math. With Claude Opus 4.7 as the host driver, §2 is currently **Anthropic-driven** (not Gemini-driven as the original PaperOrchestra paper's reference implementation would suggest). The §2 cross-vendor review pass (Claude + DeepSeek per `review-prompts.md` Prompt 3) is therefore especially load-bearing — it is the only architectural step on §2 that provides actual cross-vendor heterogeneity. Without that review pass, §2 has no cross-vendor coverage at all and undermines the paper's own methodology argument.
+
+The literature-review-agent's Semantic Scholar verification is a separate, narrower defense — against fabricated or mis-titled citations specifically. Even with a working S2 key, it does not provide vendor heterogeneity; it provides fact-existence verification.
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.

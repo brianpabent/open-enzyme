@@ -1,0 +1,86 @@
+{
+  "intro_related_work_plan": {
+    "introduction_strategy": {
+      "hook_hypothesis": "AI-assisted literature synthesis is becoming a load-bearing component of scientific research workflows. When a single AI model is the sole synthesizer of a long-lived knowledge corpus, the corpus accumulates that model's blind spots and biases over time — a corpus-level drift we call epistemic homogenization that is structurally distinct from per-output hallucination.",
+      "problem_gap_hypothesis": "Existing multi-agent AI literature (debate, self-refine, jury-of-LLMs, Constitutional AI, automated-research systems) operates almost exclusively within a single vendor. Multi-model within-vendor heterogeneity is insufficient because all such models share the same training-distribution prior, the same RLHF pipeline, and the same characteristic failure modes. The cross-vendor regime — models trained by different companies on different data corpora with different alignment procedures — is the level at which prior-distribution diversity actually appears and has not been explicitly developed as an architectural pattern for AI-assisted scientific synthesis.",
+      "search_directions": [
+        "Find foundational papers on multi-agent LLM debate, consensus mechanisms, and adversarial-collaboration patterns for improving factuality and reasoning (Du et al. 2023 and follow-ons)",
+        "Find papers on self-refinement, self-critique, and iterative reflection loops in LLMs (Self-Refine by Madaan et al. 2023; Reflexion by Shinn et al. 2023)",
+        "Find papers on LLM-as-jury, ensemble-of-judges, and panel-of-evaluators approaches to LLM output evaluation (Verga et al. 2024)",
+        "Find foundational work on Constitutional AI, RLAIF, and AI-feedback alignment procedures (Bai et al. 2022)",
+        "Find recent papers on end-to-end automated AI-scientist systems for research paper generation (Sakana's AI Scientist; Analemma's FARS; Google's PaperOrchestra)",
+        "Find papers on epistemic homogenization, model collapse, and AI-output-on-AI-output training degradation in long-lived corpora"
+      ]
+    },
+    "related_work_strategy": {
+      "overview": "Position the cross-vendor heterogeneity-guard pattern against five distinct methodology clusters in the existing multi-agent AI and AI-for-science literature. Establish that prior work operates either within a single vendor (debate, self-refine, jury, Constitutional AI) or at a different abstraction level than vendor (ensembles, mixture-of-experts), leaving the cross-vendor regime under-explored as an architectural commitment for AI-assisted scientific synthesis.",
+      "subsections": [
+        {
+          "subsection_title": "2.1 Multi-Agent Debate and Consensus Approaches",
+          "methodology_cluster": "Multi-agent debate / consensus systems for improving factuality and reasoning",
+          "sota_investigation_mission": "Identify foundational and recent papers on multi-agent debate (Du et al. 2023 'Improving Factuality and Reasoning in Language Models through Multiagent Debate' and follow-on work). Establish whether debate operates within a single vendor (multiple instances of the same model) vs. across vendors. Determine task domains evaluated and what factuality / reasoning gains are claimed.",
+          "limitation_hypothesis": "Existing debate frameworks deploy multiple instances of the same model (or sibling models from the same vendor's family) and rely on inference-time argumentation rather than training-distribution diversity. The heterogeneity is at the level of inference-time stochasticity, not at the level of prior-distribution diversity.",
+          "limitation_search_queries": [
+            "Du multiagent debate language models factuality reasoning 2023",
+            "LLM multi-agent debate consensus same-vendor architecture",
+            "multi-agent argumentation language models scientific reasoning",
+            "agent debate evaluation benchmark long-context synthesis"
+          ],
+          "bridge_to_our_method": "The cross-vendor heterogeneity guard described in this paper operates at the vendor abstraction level rather than the inference-time argumentation level — the heterogeneity is in the training-distribution prior, not in inference-time agent behavior."
+        },
+        {
+          "subsection_title": "2.2 Self-Refinement and Iterative Reflection",
+          "methodology_cluster": "Self-critique loops and same-model iterative refinement",
+          "sota_investigation_mission": "Identify foundational papers on Self-Refine (Madaan et al. 2023) and Reflexion (Shinn et al. 2023), plus subsequent work on self-critique and iterative refinement patterns. Establish that these patterns are all same-model reflection (one model critiques its own output) with no vendor heterogeneity.",
+          "limitation_hypothesis": "Self-refinement loops are by construction same-vendor — a model critiquing its own output cannot surface blind spots that are characteristic of its training pipeline. Self-critique catches local consistency errors but cannot catch corpus-level drift toward the model's prior.",
+          "limitation_search_queries": [
+            "Self-Refine iterative refinement self-feedback language models Madaan",
+            "Reflexion verbal reinforcement language agents Shinn 2023",
+            "LLM self-critique iterative refinement limitations",
+            "self-correction language models output evaluation cycle"
+          ],
+          "bridge_to_our_method": "Self-refinement and the cross-vendor heterogeneity guard solve disjoint problems: self-refinement improves a single output via same-model reflection; the cross-vendor guard prevents corpus-level drift across many outputs via different-vendor review."
+        },
+        {
+          "subsection_title": "2.3 LLM-as-Jury and Panel-of-Evaluators",
+          "methodology_cluster": "Ensemble-of-judges and panel evaluation patterns",
+          "sota_investigation_mission": "Identify recent work on LLM-as-jury / panel-of-evaluators (Verga et al. 2024 'Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models'). Establish whether such panels use cross-vendor models or are typically same-vendor across model sizes.",
+          "limitation_hypothesis": "Jury-of-LLMs patterns improve evaluation robustness but typically operate across model sizes within a single vendor's family. They are not explicitly designed as a guard against vendor-specific training-distribution biases in long-lived synthesis corpora.",
+          "limitation_search_queries": [
+            "LLM jury panel diverse models evaluation Verga 2024",
+            "ensemble LLM judges evaluation robustness factuality",
+            "panel evaluators LLM output assessment heterogeneity",
+            "LLM as judge cross-model evaluation reliability"
+          ],
+          "bridge_to_our_method": "The cross-vendor pattern in this paper extends the jury-of-LLMs framing to the explicit cross-vendor case, applied to corpus synthesis rather than per-output evaluation, with the heterogeneity guard against epistemic homogenization as the structural commitment."
+        },
+        {
+          "subsection_title": "2.4 Constitutional AI and AI-Feedback Alignment",
+          "methodology_cluster": "AI-feedback alignment procedures and same-vendor self-supervision",
+          "sota_investigation_mission": "Identify Constitutional AI (Bai et al. 2022) and RLAIF follow-on work. Establish that these are alignment procedures using same-vendor self-supervision, distinct from cross-vendor synthesis-time review.",
+          "limitation_hypothesis": "Constitutional AI is an alignment technique at training time, not a runtime architecture for synthesis review. It uses same-vendor AI feedback to shape model behavior; it does not address the corpus-level drift problem in long-lived AI-maintained knowledge graphs.",
+          "limitation_search_queries": [
+            "Constitutional AI harmlessness AI feedback Bai Anthropic 2022",
+            "RLAIF reinforcement learning AI feedback alignment",
+            "AI feedback supervision language model training",
+            "constitutional principles LLM alignment same-vendor"
+          ],
+          "bridge_to_our_method": "Constitutional AI shapes a model's behavior at training time using same-vendor AI feedback. The cross-vendor heterogeneity guard operates at synthesis time using different-vendor models. Adjacent but disjoint: Constitutional AI affects a single model's prior; the cross-vendor guard prevents that prior from dominating a corpus."
+        },
+        {
+          "subsection_title": "2.5 Automated AI-Scientist Systems for Research Paper Generation",
+          "methodology_cluster": "End-to-end and writing-only automated paper generation systems",
+          "sota_investigation_mission": "Identify recent automated-research and paper-generation systems: Sakana AI Scientist, Analemma FARS, Google's PaperOrchestra (Song et al. 2026, arXiv:2604.05018). Establish whether any deploys cross-vendor heterogeneity as an architectural commitment vs. running entirely within a single vendor's model family.",
+          "limitation_hypothesis": "Current automated-research systems are single-vendor by construction: AI Scientist uses Claude or GPT; FARS uses one vendor's model family; PaperOrchestra is Gemini-based. None addresses epistemic homogenization across the loop, despite the homogenization risk compounding precisely in such end-to-end systems where every step builds on prior AI output.",
+          "limitation_search_queries": [
+            "Sakana AI Scientist automated research paper generation",
+            "PaperOrchestra multi-agent research paper writing arxiv 2604.05018",
+            "FARS Analemma automated AI research agent",
+            "automated end-to-end scientific paper generation evaluation"
+          ],
+          "bridge_to_our_method": "Automated AI-scientist systems are the most natural deployment target for the cross-vendor heterogeneity guard, because the homogenization risk compounds across many loop iterations. This paper provides an explicit pattern such systems can adopt to prevent corpus-level drift."
+        }
+      ]
+    }
+  }
+}
