@@ -264,7 +264,7 @@ The Open Enzyme sweep daemon has been in continuous operation since approximatel
 
 ### Pass-level cost and latency
 
-Table 1 summarizes per-pass cost, latency, and token volume from representative sweeps during the operational window. Pass 2 dominates both metrics because it reads the full ~650k-token corpus on every run; Pass 1 reads only the trigger and affected pages; Pass 3 reads the warm cache plus on-demand fetches.
+Table 1 summarizes per-layer and per-pass cost, latency, and token volume from representative sweeps during the operational window. Pass 2 dominates Layer 2 cost and latency because it reads the full corpus on every run; Pass 1 reads only the trigger and affected pages; Pass 3 reads the warm cache plus on-demand fetches. The corpus has grown over the operational window from 60 files (~560k Pass-2-input tokens, 2026-04-28, `logs/v4-synthesis-2026-04-28-3943bfc.md`) to 98 files (~866k Pass-2-input tokens, 2026-05-09, `logs/v4-synthesis-2026-05-09-259a8e8.md`). Pass 2 input includes the corpus plus prompt overhead, so Pass-2-input-tokens runs higher than the pure-corpus token count.
 
 **Table 1.** Layer-and-pass cost, latency, and vendor assignment for the Open Enzyme two-layer cross-vendor architecture. All daemon costs in USD via OpenRouter. Layer 1 costs are subscription-based (Anthropic Claude Code) rather than per-call and are not enumerated per-edit. Representative values from sweep logs and `scripts/SWEEP-ARCHITECTURE.md` (`scripts/SWEEP-ARCHITECTURE.md`, `logs/v4-peer-review-2026-04-25-deepseek.md`).
 
@@ -272,7 +272,7 @@ Table 1 summarizes per-pass cost, latency, and token volume from representative 
 |---|---|---|---|---|---|---|
 | Layer 1 - Vibe-science | Origination: new content, cross-page connections, comp-NNN | Claude Opus 4.7 (via Claude Code) | Anthropic | Subscription; not per-call | Interactive, author-paced | Working sessions, variable |
 | Layer 2 - Pass 1 | Propagate | DeepSeek V4-Pro | DeepSeek | $0.05–$0.20 | 2–3 min | trigger + affected pages (~50–150k) |
-| Layer 2 - Pass 2 | Synthesize | DeepSeek V4-Pro primary; Google Gemini 2.5 Pro automatic fallback | DeepSeek / Google | $0.40–$0.80 | 5–7 min | full corpus (~625k); 2026-04-28 Gemini fallback run: $0.7288 |
+| Layer 2 - Pass 2 | Synthesize | DeepSeek V4-Pro primary; Google Gemini 2.5 Pro automatic fallback | DeepSeek / Google | $0.40–$0.80 | 5–7 min | corpus + prompt overhead: 559k–866k (2026-04-28 → 2026-05-09); Gemini run 2026-04-28: $0.7322 |
 | Layer 2 - Pass 3 | Review | OpenAI GPT-5.5 (default since 2026-05-08; Claude Opus 4.7 alternate) | OpenAI / Anthropic | $0.05–$0.30 | 1–2 min + tool calls | warm cache (triggers + cited files); on-demand fetches |
 | Peer-review (episodic) | Independent cross-vendor verification | DeepSeek V4-Pro | DeepSeek | $0.20–$0.30 | varies | full corpus; 2026-04-25 run: 467,964 in / 4,005 out, $0.2070 |
 | **Full Layer-2 three-pass sweep** | | | | **$0.50–$1.30** | **9–12 min** | |
