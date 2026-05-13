@@ -1,45 +1,17 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "e85a59032bbccc71788a48e2f4d8306ec9f150fd",
-    "timestamp": "2026-05-09T02:19:57Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-09-259a8e8.md",
-    "review_commit": "e85a59032bbccc71788a48e2f4d8306ec9f150fd",
+    "commit": "6f5586d308ea1e57383a35383f0abc4b06356311",
+    "timestamp": "2026-05-13T23:50:48Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-13-69103ce.md",
+    "review_commit": "6f5586d308ea1e57383a35383f0abc4b06356311",
     "trigger_files": [
-      "wiki/GRAPH.md",
-      "wiki/abcg2-modulators.md",
-      "wiki/androgen-natural-modulation.md",
-      "wiki/androgen-urate-axis.md",
-      "wiki/chaperone-orthogonal-stacking.md",
-      "wiki/complement-c5a-gout.md",
-      "wiki/computational-experiments.md",
-      "wiki/cross-validation.md",
-      "wiki/daf-cd55-scr14-truncated-computational.md",
-      "wiki/engineered-koji-protocol.md",
-      "wiki/gi-survival-prediction.md",
-      "wiki/gout-action-guide.md",
-      "wiki/gout-pathophysiology.md",
-      "wiki/gut-lumen-sink.md",
-      "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
-      "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
-      "wiki/index.md",
-      "wiki/koji-endgame-strain.md",
-      "wiki/lactoferrin.md",
-      "wiki/medicinal-mushroom-complement-track.md",
-      "wiki/medicinal-mushroom-compound-mapping-computational.md",
-      "wiki/medicinal-mushroom-extract-sops.md",
-      "wiki/open-questions.md",
-      "wiki/personal-genome-protocol.md",
-      "wiki/supplements-stack.md",
-      "wiki/synthesis.md",
-      "wiki/tcm-modern-rigor-intersection.md",
-      "wiki/upstream-complement-modulator-sweep-computational.md",
-      "wiki/upstream-complement-verification-rerun-computational.md",
-      "wiki/uricase-abcg2-genotype-stratification-computational.md",
-      "wiki/uricase.md",
-      "wiki/validation-experiments.md"
+      "wiki/bio-ai-tools.md",
+      "wiki/compounding-pharmacy-track.md",
+      "wiki/ginkgo-cloud-lab-evaluation.md",
+      "wiki/paperclip-deep-dive.md"
     ],
-    "run_id": "25588798185"
+    "run_id": "25832216287"
   },
   "recent_runs": [
     {
@@ -149,6 +121,15 @@
       "failed_phase": null,
       "trigger_paths_count": 32,
       "synthesis_log": "logs/v4-synthesis-2026-05-09-259a8e8.md"
+    },
+    {
+      "run_id": "25832216287",
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-05-13T23:50:48Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 4,
+      "synthesis_log": "logs/v4-synthesis-2026-05-13-69103ce.md"
     }
   ]
 }
