@@ -206,6 +206,89 @@ Both catches surfaced in a *self*-verify pass — same vendor (Anthropic Claude 
 
 ---
 
+## Session 7 — 2026-05-13 (cross-vendor external review pass)
+
+**Drafter authorization:** Brian explicitly authorized orchestrating the cross-vendor reviews ("you can orchestrate the x-vendor reviews") and surfaced that the OpenRouter API key lives in `Open Enzyme/.env`.
+
+**Method:** `paperorchestra-workspace/run_reviews.py` fires four review jobs in parallel via OpenRouter HTTP gateway:
+- `deepseek/deepseek-v4-pro` reviewing §4 + §5
+- `google/gemini-2.5-pro` reviewing §3 + §6 + §7
+- `anthropic/claude-opus-4.5` reviewing §2 (one of two parallel reviewers on §2)
+- `deepseek/deepseek-v4-pro` reviewing §2 (second of two parallel reviewers on §2)
+
+**Total cost:** ~$0.18 across all four reviews. **Latency:** 43-131 seconds per review (parallel execution).
+
+Raw outputs saved verbatim to `paperorchestra-workspace/reviews/{deepseek-on-4-5,gemini-on-3-6-7,claude-on-2,deepseek-on-2}.md`.
+
+### Catches surfaced and corrections applied
+
+**Catch 9 — §5.3 Km misreport magnitude was wrong by 3 orders of magnitude (DeepSeek-on-4-5 Catch 4, Rejected verdict). LANDMARK REFLEXIVE CATCH.**
+
+Original §5.3 (and the underlying wiki source `paperclip-deep-dive.md`) claimed Paperclip's `map` operator returned a Km value "off by approximately 7,500-fold" for the Najjari 2022 PASylated uricase paper. DeepSeek's review correctly computed the arithmetic: 52.61 µM = 0.05261 mM; Paperclip returned 0.007 mM; the actual factor is 0.05261/0.007 = **~7.5×, not ~7,500×**. The original "7,500×" was a unit-confusion arithmetic mistake in the wiki documentation that propagated into the paper draft and was never caught by the §5.1 pre-commit grep-verify gate. This is the canonical example of **the exact failure class the paper warns against, in the paper's own documentation, caught by the cross-vendor review the paper advocates for, 9 days after the wiki error was introduced (2026-05-05 → 2026-05-13).** Both `wiki/paperclip-deep-dive.md` (with a §"2026-05-13 correction" note) and §5.3 of `draft.md` corrected to the actual ~7.5× figure. §5.3 now includes a self-aware parenthetical pointing to this very revision-log entry as the reflexive demonstration.
+
+**Catch 10 — §2.4 Anthropic-favorable citation skew (Claude-on-2 Catch 3, Push-back).**
+
+§2.4 originally cited Constitutional AI (Bai et al. 2022, Anthropic) and RLAIF (Lee et al. 2023, Anthropic) as the entire alignment-via-AI-feedback cluster — no non-Anthropic alignment work cited. Claude-the-reviewer flagged this as drafter-vendor-favorable framing (drafter is Anthropic; reviewer is also Anthropic catching its own family-of-vendor's representation bias). **Correction:** Ouyang et al. 2022 (InstructGPT, OpenAI) added to citation pool as `ouyang2022training`, S2-verified (CorpusId 246426909, NeurIPS 2022). §2.4 prose rewritten to cover the broader RLHF/RLAIF/Constitutional AI family across vendors (OpenAI, Anthropic, Google) rather than presenting it as an Anthropic-specific cluster. Pool now has 12 records.
+
+**Catch 11 — §5.3 Km claim and §5.4 self-demonstration tone overstated (DeepSeek-on-4-5 Catches 1, 2, 3, 5, 6).**
+
+DeepSeek flagged multiple absolute-language claims in §4 as too strong:
+- "Same training-distribution prior" (GPT-4 vs GPT-4o) — too absolute. Softened to "substantial overlap in training-distribution prior."
+- "Is the level at which prior-distribution diversity actually appears" — too absolute. Softened to "is a level at which substantial prior-distribution diversity reliably appears."
+- "Unlikely to appear in the same form" — softened to "less likely" + added forward-pointer to §7 shared-training-data limitation.
+- "Architecture's motivation came from architecture working" — softened to "the principle that later motivated the architecture was demonstrated in advance by the cross-vendor review pass that prefigured it."
+- "Cheaper architectures cannot catch it" (§5.4) — softened to "less likely to catch this class" + added explicit note that controlled ablation is future work.
+
+**Catch 12 — §3 peer-review-pass vendor collision (Gemini-on-3-6-7 Catch 1, Partial).**
+
+Original §3 claimed the episodic peer-review pass uses DeepSeek V4-Pro and is "an independent cross-vendor verification surface." But Pass 2 of the main pipeline also uses DeepSeek V4-Pro, creating a vendor collision when the peer-review pass runs against a DeepSeek-driven substrate. **Correction:** §3 now specifies that the peer-review vendor is deliberately chosen to differ from the substrate-pipeline vendor — for example, when the daemon ran with DeepSeek at Pass 2, the peer-review pass might route to Google Gemini or OpenAI GPT rather than back to DeepSeek. The seminal 2026-04-25 DeepSeek catch is reframed as natural because the substrate was Claude-only at that time.
+
+**Catch 13 — §3 + §6 Table 1 "Gemini as fallback" under-credit (Gemini-on-3-6-7 Catch 2, Push-back).**
+
+Original §3 + Table 1 framed Pass 2 as "DeepSeek V4-Pro, with Google Gemini 2.5 Pro as fallback." Gemini-the-reviewer flagged this as under-crediting Google's role: in a heterogeneity-architected system, two distinct vendor models for a critical pass are an architectural strength, not a primary/backup relationship. This is exactly the **reciprocal asymmetry-detection** the cross-vendor review is designed for — a Google model catching the framing that disadvantages Google. **Correction:** Pass 2 reframed as "DeepSeek V4-Pro or Google Gemini 2.5 Pro" with an explicit note that the choice on any given run is operational (load-balancing, API availability), not architectural; both are full primary backends.
+
+**Catch 14 — §6 Table 1 arithmetic (Gemini-on-3-6-7 Catch 3, Partial).**
+
+Table 1 reported per-pass cost ranges that summed to $0.50–$1.30 at the high end, but the "Full three-pass sweep" row claimed $0.50–$1.50. Gemini did the addition: $0.20 + $0.80 + $0.30 = $1.30, not $1.50. **Correction:** total range fixed to $0.50–$1.30 to match the sum of components. (This is the second arithmetic error in the manuscript surfaced by the cross-vendor pass — the first was the Km factor in Catch 9.)
+
+**Catch 15 — §7 missing prompt-brittleness limitation (Gemini-on-3-6-7 Catch 4, Partial).**
+
+Gemini noted that §7's enumeration of "what the architecture does not protect against" omits prompt brittleness / unannounced vendor model updates as a failure class. **Correction:** new paragraph added enumerating prompt-tuning sensitivity, vendor-side silent rollouts, and the architecture's reliance on out-of-band monitoring (sweep-log diff review) as a mitigation. Listed as the most common cause of silent-pipeline-degradation incidents in the operational record.
+
+**Catch 16 — §7 "data-heavy no value" too sharp (Gemini-on-3-6-7 Catch 5, Push-back).**
+
+Original §7 closing said the pattern provides little value for "data-heavy synthesis with numerical/statistical failure mode." Gemini argued this is overdrawn — for hybrid literature/numerical tasks (clinical trial summaries, kinetic-parameter compilations), the cross-vendor pass retains value at catching hallucinated numbers. Particularly relevant because §5.3 of this paper is *precisely* such a hybrid task. **Correction:** softened to "reduced, though not eliminated" + added explicit reference to §5.3 as evidence the cross-vendor pass catches numerical errors in hybrid tasks.
+
+**Catch 17 — FARS reference unsupported (DeepSeek-on-2 Catch 1, Rejected; Claude-on-2 Catch 7, Push-back).**
+
+Both reviewers independently flagged the FARS (Fully Automated Research System) reference in §2.5 as lacking a verified citation in the bibliography. The §2.5 mention cited specific operational details (228 hours, 100 papers, March 2026) sourced only from blog posts and a tweet, not from a peer-reviewed or arXiv-hosted paper. **Correction:** FARS sentence dropped from §2.5 entirely. The "single-vendor pipeline" framing that depended on FARS is rewritten to reference only the verified AI Scientist and PaperOrchestra examples. The §2.5 prose now also includes an explicit disclosure that this manuscript's §2 was drafted via PaperOrchestra (addressing Claude-on-2 Catch 1's PaperOrchestra-favorable-framing concern).
+
+**Catch 18 — Yamada 2025 "first workshop-level" overstated (DeepSeek-on-2 Catch 2, Push-back).**
+
+Even after Session 5's Catch 8 softened "rigorous peer review" to "workshop-level peer review," DeepSeek pointed out that Lu et al. 2024 (AI Scientist v1) had already reported workshop-level acceptance. Attributing "first" to Yamada 2025 misrepresents the timeline. **Correction:** Yamada 2025 reframed as "further demonstrated AI-generated papers passing workshop-level peer review under a different review threshold," and Lu 2024 reframed as "with AI-generated papers accepted at workshop-level venues" (vs the prior framing of Lu as the "first system aimed at end-to-end open-ended scientific discovery").
+
+**Catch 19 — Du et al. (2023) "same model" framing too tight (Claude-on-2 Catch 4, Partial).**
+
+Original §2.1 described multi-agent debate as "multiple instances of the same model." Claude pointed out that Du et al. (2023) also explored mixed-model configurations (e.g., ChatGPT and Bard in debate). **Correction:** §2.1 amended to "multiple instances — typically of the same model, though Du et al. also explored mixed-model configurations such as ChatGPT and Bard in debate." The downstream framing (debate operates at inference-time argumentation, not at training-distribution prior heterogeneity) stands.
+
+**Catch 20 — Shumailov 2023/2024 citation relationship unclear (Claude-on-2 Catch 6, Partial).**
+
+§2.6 cited both Shumailov 2024 (Nature) and Shumailov 2023 (arXiv) as if they were distinct works. Claude flagged that these are the preprint and published version of the same line of research. **Correction:** §2.6 now explicitly states the relationship ("first as an arXiv preprint (2023, 'The Curse of Recursion') and subsequently as a published paper in *Nature* (2024, 'AI models collapse when trained on recursively generated data')").
+
+### False-positive from the review pass (audit-trail honest)
+
+**Claude-on-2 Catches 1, 7 — alleged "future dates" on Song 2026 and FARS March 2026.** Claude-the-reviewer assumed the current date was 2025 or earlier and flagged these as fabricated/hallucinated. The current date is in fact 2026-05-13 and both PaperOrchestra (April 2026) and FARS (March 2026) predate it. The reviewer's date-orientation failure was itself a within-vendor blind spot — Claude's training cutoff biased it toward treating 2026 as future-tense. Logged here for the reflexive audit: cross-vendor review surfaces real catches AND produces false positives whose nature is itself diagnostic of vendor-prior limitations.
+
+### Summary
+
+20 catches total across all reviews; **12 substantive corrections applied to the manuscript** (Catches 9-20), **1 documentation-side fix to the underlying wiki primary source** (paperclip-deep-dive.md Km magnitude), and **2 false positives logged for transparency** (Claude-on-2 date confusion). Plus 1 new citation added to the S2-verified pool (Ouyang et al. 2022 InstructGPT, addressing the §2.4 Anthropic-skew catch).
+
+**The single highest-value catch was Catch 9** — the 7,500× → 7.5× Km arithmetic error. This is the paper's own primary-source documentation containing exactly the failure mode the paper warns against, caught by exactly the cross-vendor review pass the paper advocates for, in the very drafting of the paper about it. The reflexive narrative is now substantially stronger than it was before the review pass.
+
+The cross-vendor reviews have, by the paper's own definition, demonstrated the methodology working on a corpus drift that the within-vendor pipeline (the drafter, the self-verify pass) had not detected.
+
+---
+
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.

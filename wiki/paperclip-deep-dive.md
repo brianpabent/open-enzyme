@@ -100,12 +100,20 @@ All of these were caught by grep-verifying body text or reading the actual abstr
 
 | Paper | Abstract / body says | `map` returned |
 |---|---|---|
-| PMC9773812 (Najjari 2022, PASylated UOX) | ***A. flavus* UOX**, K<sub>m</sub> 52.61 µM | ***A. globiformis*** uricase variant (S284G, K304R), K<sub>m</sub> 0.007 mM (~7,500× off) |
+| PMC9773812 (Najjari 2022, PASylated UOX) | ***A. flavus* UOX**, K<sub>m</sub> 52.61 µM | ***A. globiformis*** uricase variant (S284G, K304R), K<sub>m</sub> 0.007 mM (~7.5× off — see §"2026-05-13 correction" below) |
 | PMC4881585 (Xie 2016, chimeric uricase) | **Porcine**-human exon-replacement chimera | ***P. chrysogenum***-human exon chimera (different organism entirely) |
 | PMC10561068 (Yan 2023, *Arthrobacter* CSAJ-16) | Optimal **T 20°C**, K<sub>m</sub> **0.048 mM** (Lineweaver-Burk, body L40) | Optimal T 40°C, K<sub>m</sub> 0.015 mM |
 | PMC12106716 (Rahbar 2025, A. flavus disulfide design) | **Pure computational paper** — frustration mapping + RMSF + tunnel analysis, no wet-lab | Invented Tm 64.9 → 70.3°C, K<sub>m</sub>/k<sub>cat</sub> measurements as if wet-lab data existed; named non-existent S173C/L221C mutation pair (real predicted pairs are A6-C290 and S119-C220) |
 
 These are not transcription errors. They are confabulations — plausible-looking values and organism names that would pass a casual review but are not in the underlying full text.
+
+### 2026-05-13 correction — Km magnitude
+
+The original table entry for PMC9773812 (Najjari 2022) recorded the Paperclip `map` operator's misreport as `K_m 0.007 mM (~7,500× off)`. This was itself an arithmetic / unit-confusion error in the *documentation*: the true Km is 52.61 µM = 0.05261 mM, and the misreported value is 0.007 mM = 7 µM. The actual factor between them is 0.05261/0.007 ≈ **7.5×, not 7,500×.**
+
+The original "7,500×" figure propagated from this wiki page into the cross-vendor heterogeneity-guard paper draft (papers/cross-vendor-heterogeneity-guard/) §5.3 and was surfaced during a cross-vendor review of that paper on 2026-05-13 — DeepSeek V4-Pro (review of §4+§5) flagged the arithmetic discrepancy as Rejected, with the correct factor and a unit-conversion note. The wiki table has been corrected above; the paper §5.3 has been corrected and the catch is logged in the paper's `revisions.md` as a reflexive demonstration of the methodology working on its own production.
+
+The substantive point of the case study is unchanged: a ~7.5× misreport of a kinetic parameter is still a disqualifying reliability failure for an automated literature-extraction tool. The case-study lesson holds — only the magnitude was overstated. The correction here is itself the canonical example of why the pre-commit grep-verify gate exists: the original "7,500×" claim was never verified against the arithmetic, and the error rode the corpus for nine days (2026-05-05 → 2026-05-13) before an external cross-vendor pass caught it.
 
 ### Probable mechanism
 
