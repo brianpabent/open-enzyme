@@ -1,6 +1,6 @@
 # Revision log — cross-vendor heterogeneity-guard paper
 
-Catches from the cross-vendor review process during drafting of this manuscript. This log is the load-bearing input to Appendix B of the final paper.
+Catches from the cross-vendor review process during drafting of this manuscript. This log is the primary input to Appendix B of the final paper.
 
 ---
 
@@ -81,7 +81,7 @@ The session 1 draft of §5.4 stated *"the original sweep design used three passe
 
 **Primary drafter:** Claude Opus 4.7 (Anthropic).
 
-**Self-verification note:** §1 deliberately does not cite outside literature, so the load-bearing claims are restated propositions from §4. Verified internal consistency with §4 — definitions of epistemic homogenization, cross-vendor vs. within-vendor, training-distribution prior are used identically across §1 and §4.
+**Self-verification note:** §1 deliberately does not cite outside literature, so the substantive claims are restated propositions from §4. Verified internal consistency with §4 — definitions of epistemic homogenization, cross-vendor vs. within-vendor, training-distribution prior are used identically across §1 and §4.
 
 **State after session 3:**
 - §1 + §3 + §4 + §5 + §6 + §7 + §8 + §9 drafted.
@@ -129,7 +129,7 @@ The original (rate-limit-induced) catch:
 
 The literature-review-agent's Phase 2 verification pass — sequential 1-QPS S2 `paper/search` queries with Levenshtein > 0.70 / non-empty-abstract / year-≤-cutoff checks — partially failed under the unauthenticated S2 endpoint's rate limit. First pass at 1.0s spacing got 3 records before HTTP 429. Retry pass at 8.0s spacing recovered 1 more. Remaining 7 candidates hit `rate-limited and retries exhausted` even with extended backoff.
 
-**Manual fallback applied.** WebSearch+arXiv metadata (already in drafting context from Phase 1 discovery) was used to construct the remaining 7 records. Each is marked `"verification": "websearch+arxiv"` in `citation_pool.json` for the audit trail. The arXiv IDs are load-bearing — they are the canonical identifiers WebSearch returned, and they resolve to the listed metadata on arxiv.org.
+**Manual fallback applied.** WebSearch+arXiv metadata (already in drafting context from Phase 1 discovery) was used to construct the remaining 7 records. Each is marked `"verification": "websearch+arxiv"` in `citation_pool.json` for the audit trail. The arXiv IDs are the canonical identifiers WebSearch returned, and they resolve to the listed metadata on arxiv.org.
 
 **Class of failure:** external-tool reliability degradation under rate limits, with verification arm of the pipeline forced into manual fallback. Same failure class as §5.3 of the main paper (Paperclip MCP probe) — except in this case the gap was honestly documented and the work continued rather than abandoning the candidate set.
 
@@ -139,7 +139,7 @@ The literature-review-agent's Phase 2 verification pass — sequential 1-QPS S2 
 
 ### Note on the Path B install and the cross-vendor framing
 
-The Ar9av/PaperOrchestra skill pack is host-agent-agnostic — the host coding agent does all LLM work; the deterministic Python helpers in `scripts/` do verification math. With Claude Opus 4.7 as the host driver, §2 is currently **Anthropic-driven** (not Gemini-driven as the original PaperOrchestra paper's reference implementation would suggest). The §2 cross-vendor review pass (Claude + DeepSeek per `review-prompts.md` Prompt 3) is therefore especially load-bearing — it is the only architectural step on §2 that provides actual cross-vendor heterogeneity. Without that review pass, §2 has no cross-vendor coverage at all and undermines the paper's own methodology argument.
+The Ar9av/PaperOrchestra skill pack is host-agent-agnostic — the host coding agent does all LLM work; the deterministic Python helpers in `scripts/` do verification math. With Claude Opus 4.7 as the host driver, §2 is currently **Anthropic-driven** (not Gemini-driven as the original PaperOrchestra paper's reference implementation would suggest). The §2 cross-vendor review pass (Claude + DeepSeek per `review-prompts.md` Prompt 3) is therefore especially critical — it is the only architectural step on §2 that provides actual cross-vendor heterogeneity. Without that review pass, §2 has no cross-vendor coverage at all and undermines the paper's own methodology argument.
 
 The literature-review-agent's Semantic Scholar verification is a separate, narrower defense — against fabricated or mis-titled citations specifically. Even with a working S2 key, it does not provide vendor heterogeneity; it provides fact-existence verification.
 
@@ -155,11 +155,11 @@ The literature-review-agent's Semantic Scholar verification is a separate, narro
 
 **Source check:** Verga et al. (2024) explicitly uses Cohere's command-r, OpenAI's gpt-3.5-turbo, and Anthropic's Claude haiku as the PoLL panel — three distinct vendors. The earlier WebSearch result on this paper had stated this directly: *"a PoLL composed of a larger number of smaller models outperforms a single large judge, exhibits less intra-model bias due to its composition of disjoint model families."*
 
-**Verdict:** Rejected. My claim was wrong in the load-bearing direction — PoLL is *already* cross-vendor in the original Verga construction, which makes it the closest antecedent in the literature to this paper's contribution, not a within-vendor pattern.
+**Verdict:** Rejected. My claim was wrong in the direction that matters most — PoLL is *already* cross-vendor in the original Verga construction, which makes it the closest antecedent in the literature to this paper's contribution, not a within-vendor pattern.
 
 **Correction landed:** §2.3 rewritten to acknowledge PoLL as the closest cross-vendor antecedent and to relocate the distinction from "diversity granularity" to "abstraction level of application" (per-output evaluation vs. corpus-level synthesis). The new framing is stronger and more honest — the contribution is the application surface, not the cross-vendor commitment, which Verga's work already pioneered at the evaluation tier.
 
-**Class of failure:** within-vendor confabulation about a third-party paper's design choices, caught by primary-source verification. Same failure class as §5.1 of the main paper. This is the second self-catch in the manuscript's own drafting (after Catch 1's PaperOrchestra confabulation), again preserved as load-bearing evidence the methodology applies to its own production.
+**Class of failure:** within-vendor confabulation about a third-party paper's design choices, caught by primary-source verification. Same failure class as §5.1 of the main paper. This is the second self-catch in the manuscript's own drafting (after Catch 1's PaperOrchestra confabulation), again preserved as material evidence the methodology applies to its own production.
 
 ### Catch 8 — §2.5 inflated AI Scientist v2's peer-review claim
 
@@ -355,7 +355,7 @@ The manuscript is submission-ready pending only the Zenodo DOI minting (requires
 
 **Correction applied:** §3 Pass 3 paragraph rewritten to lead with GPT-5.5 + the 2026-05-08 switch date; Claude Opus 4.7 demoted to "alternate" with its own model-tuned prompt path noted (`scripts/sweep-prompt-3-review-gpt55.md` for GPT-5.5 vs. `scripts/sweep-prompt-3-review.md` for Claude). Table 1 row 3 fixed. Figure 1 Pass 3 box updated to "GPT-5.5 / Claude Opus 4.7 alt." with the OpenAI green-grey vendor color, not Anthropic amber. Abstract vendor enumeration corrected to "Anthropic, DeepSeek, and OpenAI (with Google Gemini as a configured alternate at Pass 2)." Glossary Pass 2 + Pass 3 entries updated. Figure 1 PDF + PNG regenerated.
 
-**Why the cross-vendor review pass missed this in Session 7:** Gemini reviewed §3 + §6 + §7 in Session 7 and caught the "Gemini as fallback" framing (Catch 13) and the architectural vendor-collision in the peer-review pass (Catch 12) — but did NOT cross-check the Pass 3 model identity against the actual workflow file. The reviewer's brief asked for architectural-accuracy verification but Gemini operated on the manuscript's internal consistency rather than running ground-truth checks against `.github/workflows/wiki-sweep.yml`. This is a real failure-class instance: cross-vendor review caught framing/under-crediting issues but didn't catch a load-bearing model-identity mis-statement that primary-source verification would have caught. **A within-pipeline ground-truth verification step (the pre-commit grep-verify gate the paper itself advocates for, applied to the manuscript's own architectural claims against the actual workflow file) would have caught this.** Brian's institutional-memory catch is doing exactly what §5.1 says the pre-commit gate should have done at authoring time.
+**Why the cross-vendor review pass missed this in Session 7:** Gemini reviewed §3 + §6 + §7 in Session 7 and caught the "Gemini as fallback" framing (Catch 13) and the architectural vendor-collision in the peer-review pass (Catch 12) — but did NOT cross-check the Pass 3 model identity against the actual workflow file. The reviewer's brief asked for architectural-accuracy verification but Gemini operated on the manuscript's internal consistency rather than running ground-truth checks against `.github/workflows/wiki-sweep.yml`. This is a real failure-class instance: cross-vendor review caught framing/under-crediting issues but didn't catch a critical model-identity mis-statement that primary-source verification would have caught. **A within-pipeline ground-truth verification step (the pre-commit grep-verify gate the paper itself advocates for, applied to the manuscript's own architectural claims against the actual workflow file) would have caught this.** Brian's institutional-memory catch is doing exactly what §5.1 says the pre-commit gate should have done at authoring time.
 
 **Class of failure:** within-vendor cascade in the manuscript's architectural description — the drafter (Claude) authored the Pass 3 description based on an older mental model of the daemon configuration without grep-verifying against the current `.github/workflows/wiki-sweep.yml`. Cross-vendor review (Gemini) didn't catch it because the reviewer's brief was about manuscript-internal consistency, not ground-truth-against-code. Caught by Brian's institutional knowledge during his first reading pass.
 
@@ -369,7 +369,7 @@ The manuscript is submission-ready pending only the Zenodo DOI minting (requires
 
 **Claim under review:** The pre-edit manuscript framed the heterogeneity guard almost entirely as a defensive mechanism — §4 was titled "the heterogeneity-guard rationale" with the rationale being entirely about catching errors and preventing drift. All four §5 case studies were error-catch instances. The abstract's framing was "we describe a production deployment ... and present four catches from ~3 weeks of operation that exemplify the failure classes the pattern protects against." §8 HITL paragraph framed the architecture as a "trigger-and-filter for human attention."
 
-**Verdict:** Rejected — the manuscript captured one of two load-bearing values and presented it as the whole story.
+**Verdict:** Rejected — the manuscript captured one of two co-equal values and presented it as the whole story.
 
 **Reasoning:** The within-vendor pipeline catches errors via grep-verify (§5.1) regardless of cross-vendor presence. What makes cross-vendor strictly stronger than within-vendor + rigorous verification is the *generative* value — different vendors propose different connections, not just catch different errors. The space of useful syntheses any one model surfaces is bounded by what its training-distribution prior makes salient. A connection that aligns with DeepSeek's prior may never be proposed by Claude regardless of how carefully Claude self-reviews. Without the generative framing, a skeptical reviewer asks "if your grep-verify gate works, why do you need cross-vendor at all?" and the manuscript has no clean answer ready.
 

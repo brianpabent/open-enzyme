@@ -21,7 +21,7 @@
 - Reflexive note: this manuscript was drafted using the methodology it describes
 
 ### §1 Introduction (~600 words)
-- AI-assisted knowledge graphs are becoming load-bearing in scientific research workflows
+- AI-assisted knowledge graphs are becoming consequential infrastructure in scientific research workflows
 - Risk: when one vendor's model is the sole synthesizer, the corpus accumulates that vendor's blind spots and biases
 - This risk is structurally different from per-output hallucination — it's distributional drift in the corpus itself
 - The paper's claim: cross-*vendor* (not just multi-model) review is the right granularity for the guard
@@ -68,12 +68,12 @@
 - Shared training-data leakage: vendors share web-crawl corpora; common-cause biases persist
 - Cost overhead: four passes vs. one is ~4× the API spend
 - Latency overhead: ~9-12 minutes per sweep vs. seconds for a single pass
-- Audience scope: when this matters (load-bearing corpora, regulated domains) and when it doesn't
+- Audience scope: when this matters (consequential corpora, regulated domains) and when it doesn't
 
 ### §8 Discussion (~500 words)
 - How many vendors is enough?
 - Does the guard scale to non-text modalities (vision, structure prediction, multi-omics)?
-- Implications for autonomous-research systems where AI-assisted synthesis is a load-bearing component
+- Implications for autonomous-research systems where AI-assisted synthesis is the critical step
 - The reflexive observation: a methodology paper drafted using its own methodology is empirical evidence the methodology works
 
 ### §9 Conclusion (~200 words)

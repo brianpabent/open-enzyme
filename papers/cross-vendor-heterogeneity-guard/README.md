@@ -12,7 +12,7 @@
 |---|---|
 | **`draft.md`** | The manuscript. Read this first. |
 | `outline.md` | Section-by-section scope, target venues, completion checklist |
-| `glossary.md` | Plain-English glosses for every load-bearing precise term in the manuscript. Brian's review-handle for "do I understand this sentence?" |
+| `glossary.md` | Plain-English glosses for every precise term in the manuscript. Brian's review-handle for "do I understand this sentence?" |
 | `revisions.md` | Chronological catches log across all drafting sessions. Becomes Appendix B of the final paper. 8 catches landed so far. |
 | `review-prompts.md` | Three ready-to-fire cross-vendor review prompts (DeepSeek on §4/§5, Gemini on §3/§6/§7, parallel review of §2). Copy-paste-and-fire at the model's chat interface. |
 | `submission-checklist.md` | Step-by-step path from current draft state to bioRxiv preprint live + Patterns submission. |
@@ -64,4 +64,4 @@ python3 build_bib.py
 
 ## Why this paper exists
 
-Open Enzyme's `wiki/open-source-platform.md` introduces the cross-vendor heterogeneity-guard pattern operationally; this paper formalizes it as an explicit architectural commitment and presents it as a publishable methodology contribution. The strategic frame: a published methodology paper is the credibility artifact that converts cold grad-student / wet-lab outreach into warm collaborative conversations (see [`project_oe_methodology_paper`](memory entry) and [`project_oe_wet_lab_search`](memory entry)). The reflexive twist — the paper is drafted using its own methodology, with self-catches logged as Appendix B — is the load-bearing argument.
+Open Enzyme's `wiki/open-source-platform.md` introduces the cross-vendor heterogeneity-guard pattern operationally; this paper formalizes it as an explicit architectural commitment and presents it as a publishable methodology contribution. The strategic frame: a published methodology paper is the credibility artifact that converts cold grad-student / wet-lab outreach into warm collaborative conversations (see [`project_oe_methodology_paper`](memory entry) and [`project_oe_wet_lab_search`](memory entry)). The reflexive twist — the paper is drafted using its own methodology, with self-catches logged as Appendix B — is the central argument.

@@ -12,7 +12,7 @@ Self-contained brief for handing this paper to Google Cloud's PaperOrchestra. Si
 
 **Author:** Brian Abent (Open Enzyme · brian@headsupresults.com). Single author.
 
-**Voice:** Academic-formal. Plain prose around precise terms. PhD-level audience but written so a CS-literate non-PhD can follow every load-bearing claim. Every load-bearing technical term has a parenthetical gloss on first use. Glossary file (`glossary.md`) is the authoritative term list.
+**Voice:** Academic-formal. Plain prose around precise terms. PhD-level audience but written so a CS-literate non-PhD can follow every substantive claim. Every precise technical term has a parenthetical gloss on first use. Glossary file (`glossary.md`) is the authoritative term list.
 
 **Target venues (in order):**
 1. **bioRxiv preprint + arXiv cs.AI cross-post** — immediate, zero gating.
@@ -39,8 +39,8 @@ In the same directory as this file:
   - §9 Conclusion (~200 words)
   - Methods Appendix on cross-vendor production process used for this manuscript
   - Appendix A skeleton (vendor attribution by section)
-- **`glossary.md`** — every load-bearing precise term in §3–§9 with plain-English glosses. Use this to keep the voice consistent.
-- **`revisions.md`** — catches logged during drafting, including a reflexive self-catch (the primary drafter confabulated PaperOrchestra's existence on first ask, caught by user push-back). This is preserved in the Methods Appendix as a load-bearing demonstration that the methodology applies to the paper's own production. The reflexive narrative is **load-bearing**; do not strip it.
+- **`glossary.md`** — every precise term in §3–§9 with plain-English glosses. Use this to keep the voice consistent.
+- **`revisions.md`** — catches logged during drafting, including a reflexive self-catch (the primary drafter confabulated PaperOrchestra's existence on first ask, caught by user push-back). This is preserved in the Methods Appendix as the cleanest demonstration that the methodology applies to the paper's own production. The reflexive narrative is **central to the paper's argument**; do not strip it.
 
 ---
 
@@ -83,7 +83,7 @@ PaperOrchestra is also welcome to:
 
 ## What PaperOrchestra is **not** being asked to do
 
-1. **Do not rewrite §4 or §5.** These are the conceptual spine and the concrete demonstrations; they have been grep-verified against the primary sources and are load-bearing. Voice consistency tightening is fine; rewriting is not.
+1. **Do not rewrite §4 or §5.** These are the conceptual spine and the concrete demonstrations; they have been grep-verified against the primary sources and are the manuscript's spine. Voice consistency tightening is fine; rewriting is not.
 2. **Do not strip the reflexive Methods Appendix entry on Catch 1.** This is the paper's strongest argument made by demonstration. The primary drafter (Claude) confabulated PaperOrchestra's existence on first ask; the catch was the user pushing back; the lesson is that the heterogeneity guard has to apply to the paper's own production. Preserve this in full.
 3. **Do not make claims about the operational record beyond what is in §6.** The false-positive rate, longitudinal data, etc. are explicitly flagged as future work in §6 — do not invent quantitative claims.
 4. **Do not collapse the cross-vendor framing to "multi-agent" or "multi-model."** The whole argument of the paper is that those framings are insufficient; mis-framing this in the abstract or introduction would undermine the paper.

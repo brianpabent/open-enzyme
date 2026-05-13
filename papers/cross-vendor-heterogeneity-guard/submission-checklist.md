@@ -69,7 +69,7 @@ Codex external review (2026-05-13) flagged that the paper depends heavily on ope
 - [ ] **Primary-source verification pass** — re-grep every load-bearing quantitative or identity claim in the final manuscript against its named primary source. Same discipline as the comp-NNN wiki authoring protocol.
 - [ ] **Citation completeness check** — every numbered reference [N] in the body has a matching entry in References; every reference in References is cited at least once.
 - [ ] **Glossary completeness check** — every precise term in `glossary.md` is used somewhere in the manuscript; every precise term in the manuscript that's not common knowledge is in the glossary.
-- [ ] **Reflexive narrative preserved** — Methods Appendix entry on the Catch 1 PaperOrchestra confabulation is intact. This is load-bearing for the paper's argument.
+- [ ] **Reflexive narrative preserved** — Methods Appendix entry on the Catch 1 PaperOrchestra confabulation is intact. This is central to the paper's argument.
 
 ---
 
