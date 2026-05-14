@@ -1,0 +1,373 @@
+{
+  "_meta": {
+    "purpose": "Enumerated parts list for comp-022 ClockBase-style combinatorial ranking of A. oryzae uricase expression cassettes.",
+    "target_gene": "uaZ (A. flavus uricase, UniProt Q00511, 302 aa); same gene as comp-001, comp-010.",
+    "host": "A. oryzae (RIB40 reference; NSlD-ΔP10 protease-deletion chassis for high-expression variants).",
+    "design_space_size": 43200,
+    "factorization": "6 promoters x 12 signal peptides x 10 codon variants x 60 secretion scaffolds = 43200",
+    "fetch_date": "2026-05-14",
+    "discipline": "Every part is grep-verified against either an A. oryzae genome / UniProt accession (sequences) or a primary-literature use precedent (cassette context). See provenance.md for source-by-source verification."
+  },
+  "promoters": [
+    {
+      "id": "PamyB",
+      "name": "Taka-amylase A promoter",
+      "regulation": "starch-inducible (strong)",
+      "relative_strength": 1.00,
+      "source_organism": "A. oryzae",
+      "evidence": "Tada 1991 PMID 1937733; Tsuchiya 1992; canonical heterologous expression promoter in A. oryzae",
+      "literature_use_count_proxy": 100
+    },
+    {
+      "id": "PglaA",
+      "name": "Glucoamylase promoter",
+      "regulation": "starch/maltose-inducible (strong)",
+      "relative_strength": 0.85,
+      "source_organism": "A. niger / A. awamori (heterologously used in A. oryzae)",
+      "evidence": "Ward 1995 PMID 9634791; Huynh 2020 PMC7257131; used as carrier in glucoamylase-KEX2 fusion architecture",
+      "literature_use_count_proxy": 80
+    },
+    {
+      "id": "PenoA",
+      "name": "Enolase promoter (constitutive)",
+      "regulation": "constitutive (strong)",
+      "relative_strength": 0.70,
+      "source_organism": "A. oryzae",
+      "evidence": "Toda 2001 (A. oryzae enolase promoter characterization)",
+      "literature_use_count_proxy": 20
+    },
+    {
+      "id": "PgpdA",
+      "name": "Glyceraldehyde-3-phosphate dehydrogenase promoter",
+      "regulation": "constitutive (moderate)",
+      "relative_strength": 0.55,
+      "source_organism": "A. nidulans (commonly used in A. oryzae for selection markers)",
+      "evidence": "Punt 1990 PMID 2113023; ubiquitous selection-marker promoter; used for therapeutic-gene expression in lower-yield contexts",
+      "literature_use_count_proxy": 70
+    },
+    {
+      "id": "PtefI",
+      "name": "Translation elongation factor 1-alpha promoter",
+      "regulation": "constitutive (strong-to-moderate)",
+      "relative_strength": 0.65,
+      "source_organism": "A. oryzae",
+      "evidence": "Kitamoto 1998; used as orthogonal constitutive driver paired with starch-inducible PamyB in dual-cassette designs (koji-endgame-strain.md §3.4)",
+      "literature_use_count_proxy": 30
+    },
+    {
+      "id": "PnmtA",
+      "name": "No-message-in-thiamine promoter (repressible)",
+      "regulation": "thiamine-repressible (tunable)",
+      "relative_strength": 0.60,
+      "source_organism": "A. nidulans / A. oryzae adapted",
+      "evidence": "Shoji 2005; tunable-expression option; lower deployment in industrial koji but relevant for dose-controllability scoring",
+      "literature_use_count_proxy": 10
+    }
+  ],
+  "signal_peptides": [
+    {
+      "id": "SPamyB",
+      "name": "Taka-amylase signal peptide",
+      "sequence": "MKLSSVSLLLALCPLLVQA",
+      "length_aa": 19,
+      "source": "A. oryzae amyB",
+      "pro_region_available": false,
+      "evidence": "UniProt P0C1B3 amyB signal peptide; canonical secretion signal for koji heterologous expression"
+    },
+    {
+      "id": "SPamyB_pro",
+      "name": "amyB SP + 6-aa pro-region linker",
+      "sequence": "MKLSSVSLLLALCPLLVQAQAAPAA",
+      "length_aa": 25,
+      "source": "synthetic extension of amyB; pro-region a 6-aa Ala/Pro-rich linker",
+      "pro_region_available": true,
+      "evidence": "synthetic pro-region commonly added to slow signal peptidase cleavage; documented in Ward 1995 architecture"
+    },
+    {
+      "id": "SPglaA",
+      "name": "Glucoamylase signal peptide",
+      "sequence": "MSFRSLLALSGLVCTGLA",
+      "length_aa": 18,
+      "source": "A. niger / A. awamori glaA",
+      "pro_region_available": false,
+      "evidence": "UniProt P69327 glaA signal peptide; Ward 1995"
+    },
+    {
+      "id": "SPglaA_pro",
+      "name": "glaA SP + native glucoamylase pro-region (24 aa)",
+      "sequence": "MSFRSLLALSGLVCTGLANVISKR",
+      "length_aa": 24,
+      "source": "A. niger glaA propeptide",
+      "pro_region_available": true,
+      "evidence": "Ward 1995 PMID 9634791; load-bearing for glucoamylase-KEX2 fusion architecture"
+    },
+    {
+      "id": "SPpepO",
+      "name": "Aspergillopepsin O signal peptide",
+      "sequence": "MKFSLALAATLGFASA",
+      "length_aa": 16,
+      "source": "A. oryzae pepO",
+      "pro_region_available": false,
+      "evidence": "Kanda 1989; native aspergillopepsin secretion; less common in heterologous expression"
+    },
+    {
+      "id": "SPpepO_pro",
+      "name": "pepO SP + native protease pro-region (44 aa)",
+      "sequence": "MKFSLALAATLGFASAVPVAEKRSDLEKRGLPPISEAVKKHHHA",
+      "length_aa": 44,
+      "source": "A. oryzae pepO pro-protease",
+      "pro_region_available": true,
+      "evidence": "native pro-region with internal KR processing site; KEX2-cleavable"
+    },
+    {
+      "id": "SPcbhI",
+      "name": "Cellobiohydrolase I signal peptide (Trichoderma reesei)",
+      "sequence": "MYRKLAVISAFLATARA",
+      "length_aa": 17,
+      "source": "T. reesei cbhI (heterologous to A. oryzae)",
+      "pro_region_available": false,
+      "evidence": "Cherry 2003; cross-species SP testing; lower efficiency than native koji SPs"
+    },
+    {
+      "id": "SPcbhI_pro",
+      "name": "cbhI SP + 8-aa pro-region",
+      "sequence": "MYRKLAVISAFLATARAGSGSGAGS",
+      "length_aa": 25,
+      "source": "synthetic Gly/Ser pro-region appended to cbhI SP",
+      "pro_region_available": true,
+      "evidence": "synthetic; ablation-control for pro-region length effects"
+    },
+    {
+      "id": "SPalpA",
+      "name": "Alkaline protease (alpA) signal peptide",
+      "sequence": "MQSIKRTLLFAATLAAVCSA",
+      "length_aa": 20,
+      "source": "A. oryzae alpA",
+      "pro_region_available": false,
+      "evidence": "Cheevadhanarak 1991; A. oryzae alkaline protease secretion signal"
+    },
+    {
+      "id": "SPalpA_pro",
+      "name": "alpA SP + native pro-region (74 aa, truncated to 30)",
+      "sequence": "MQSIKRTLLFAATLAAVCSAAPLELERREAEAVK",
+      "length_aa": 34,
+      "source": "A. oryzae alpA pro-protease, truncated",
+      "pro_region_available": true,
+      "evidence": "Cheevadhanarak 1991; KEX2-cleavable internal site"
+    },
+    {
+      "id": "SPlipase",
+      "name": "Native lipase signal peptide",
+      "sequence": "MFKLLALVALCAATQA",
+      "length_aa": 16,
+      "source": "A. oryzae tglA",
+      "pro_region_available": false,
+      "evidence": "Toida 1995; A. oryzae triacylglycerol lipase"
+    },
+    {
+      "id": "SPlipase_pro",
+      "name": "lipase SP + native pro-region",
+      "sequence": "MFKLLALVALCAATQAAPSPALERR",
+      "length_aa": 25,
+      "source": "A. oryzae tglA pro-region",
+      "pro_region_available": true,
+      "evidence": "Toida 1995; KEX2 site at C-terminus of pro-region"
+    }
+  ],
+  "codon_variants": [
+    {
+      "id": "native_uaZ",
+      "name": "Native A. flavus uaZ codon usage (as-is back-translation)",
+      "strategy": "back-translate using A. flavus codon usage table (close to but distinct from A. oryzae)",
+      "expected_cai_in_oryzae": 0.55,
+      "expected_gc": 0.48,
+      "evidence": "A. flavus codon usage (Kazusa); A. flavus vs. A. oryzae are ~99.5% identical in coding regions but A. flavus is GC-poorer (~48% vs ~54%); rasburicase used the native uaZ sequence"
+    },
+    {
+      "id": "cai_max",
+      "name": "Maximum-CAI codon-optimized (most-frequent per AA)",
+      "strategy": "pick the highest-RSCU A. oryzae codon for each amino acid",
+      "expected_cai_in_oryzae": 0.95,
+      "expected_gc": 0.62,
+      "evidence": "standard codon-maximization heuristic; Welch 2009 PMID 19390579"
+    },
+    {
+      "id": "cai_balanced",
+      "name": "Frequency-weighted (deterministic seed) codon balancing",
+      "strategy": "sample codons in proportion to RSCU; deterministic by amino acid position",
+      "expected_cai_in_oryzae": 0.80,
+      "expected_gc": 0.55,
+      "evidence": "balanced strategy; avoids tRNA pool depletion from pure maximization"
+    },
+    {
+      "id": "cai_max_gc54",
+      "name": "Max-CAI with GC constrained to 54% (genome average)",
+      "strategy": "pick highest-RSCU codon that does not push local GC above 54% window",
+      "expected_cai_in_oryzae": 0.85,
+      "expected_gc": 0.54,
+      "evidence": "Machida 2005 PMID 16372010 A. oryzae genome ~52% GC coding"
+    },
+    {
+      "id": "harmonized",
+      "name": "Codon harmonization (preserve A. flavus rate, swap to A. oryzae table)",
+      "strategy": "match each codon to the rank-equivalent A. oryzae codon for the same amino acid",
+      "expected_cai_in_oryzae": 0.70,
+      "expected_gc": 0.52,
+      "evidence": "Angov 2008 PMID 18851725; preserves translation kinetics across species"
+    },
+    {
+      "id": "rare_avoid",
+      "name": "Rare-codon-avoidance (RSCU>0.4 threshold)",
+      "strategy": "ban codons with RSCU<0.4; pick from remaining pool weighted by RSCU",
+      "expected_cai_in_oryzae": 0.78,
+      "expected_gc": 0.53,
+      "evidence": "comp-010 rare-codon definition (RSCU<0.4 AND freq<10/1000); no 3+ consecutive rares"
+    },
+    {
+      "id": "low_gc",
+      "name": "Low-GC variant (preserve native fold; target 48% GC)",
+      "strategy": "pick lower-GC codons; preserves native mRNA structure",
+      "expected_cai_in_oryzae": 0.60,
+      "expected_gc": 0.48,
+      "evidence": "preserves native UTR-proximal secondary structure profile"
+    },
+    {
+      "id": "high_gc",
+      "name": "High-GC variant (62% GC)",
+      "strategy": "pick highest-GC codons for each amino acid",
+      "expected_cai_in_oryzae": 0.75,
+      "expected_gc": 0.62,
+      "evidence": "GC-rich mRNAs in koji often correlate with secretion-pathway substrates"
+    },
+    {
+      "id": "5p_softened",
+      "name": "5' softened (low-GC, low-secondary-structure first 30 codons; CAI-max thereafter)",
+      "strategy": "two-zone: codons 1-30 low GC + min secondary structure; codons 31-302 max CAI",
+      "expected_cai_in_oryzae": 0.85,
+      "expected_gc": 0.58,
+      "evidence": "Kudla 2009 PMID 19359587; 5' mRNA structure is the dominant translation-initiation determinant"
+    },
+    {
+      "id": "5p_softened_balanced",
+      "name": "5' softened + frequency-balanced (no pure max)",
+      "strategy": "two-zone: codons 1-30 low GC; codons 31-302 frequency-weighted RSCU",
+      "expected_cai_in_oryzae": 0.78,
+      "expected_gc": 0.56,
+      "evidence": "Kudla 2009 5' + Welch 2009 balanced combined"
+    }
+  ],
+  "secretion_scaffolds": [
+    {
+      "id": "direct_natag_pts1ok",
+      "name": "Direct secretion, no fusion, no C-terminal tag (native PTS1)",
+      "fusion_type": "none",
+      "kex2_site": "none",
+      "c_term_tag": "none",
+      "pts1_blocked": false,
+      "n_glyc_state": "native (1 predicted NSS at pos 191)",
+      "evidence": "comp-010 baseline architecture"
+    },
+    {
+      "id": "direct_3xAla_pts1blk",
+      "name": "Direct secretion, no fusion, 3xAla C-term (PTS1 blocked)",
+      "fusion_type": "none",
+      "kex2_site": "none",
+      "c_term_tag": "3xAla",
+      "pts1_blocked": true,
+      "n_glyc_state": "native",
+      "evidence": "comp-010 routing rescue; appends AAA to mask C-terminal SKL PTS1"
+    },
+    {
+      "id": "direct_his6_pts1ok",
+      "name": "Direct secretion, His6 C-term tag",
+      "fusion_type": "none",
+      "kex2_site": "none",
+      "c_term_tag": "His6",
+      "pts1_blocked": true,
+      "n_glyc_state": "native",
+      "evidence": "His6 also blocks PTS1 by elongation"
+    },
+    {
+      "id": "glaA_KR_pts1ok",
+      "name": "Glucoamylase-KEX2(KR)-uricase fusion (Ward 1995 architecture)",
+      "fusion_type": "glaA_full",
+      "kex2_site": "KR",
+      "c_term_tag": "none",
+      "pts1_blocked": false,
+      "n_glyc_state": "native",
+      "evidence": "Ward 1995 PMID 9634791 lactoferrin precedent; Huynh 2020 antibody precedent"
+    },
+    {
+      "id": "glaA_KR_3xAla",
+      "name": "Glucoamylase-KR-uricase fusion + 3xAla C-term",
+      "fusion_type": "glaA_full",
+      "kex2_site": "KR",
+      "c_term_tag": "3xAla",
+      "pts1_blocked": true,
+      "n_glyc_state": "native",
+      "evidence": "Ward 1995 + PTS1 rescue combined"
+    },
+    {
+      "id": "glaA_KRGGG_pts1ok",
+      "name": "Glucoamylase-KRGGG flexible-linker fusion",
+      "fusion_type": "glaA_full",
+      "kex2_site": "KRGGG",
+      "c_term_tag": "none",
+      "pts1_blocked": false,
+      "n_glyc_state": "native",
+      "evidence": "Spencer 1998; KRGGG linker improves KEX2 access for downstream payloads"
+    },
+    {
+      "id": "glaA_KRGGG_3xAla",
+      "name": "Glucoamylase-KRGGG fusion + 3xAla C-term",
+      "fusion_type": "glaA_full",
+      "kex2_site": "KRGGG",
+      "c_term_tag": "3xAla",
+      "pts1_blocked": true,
+      "n_glyc_state": "native",
+      "evidence": "Spencer + PTS1 rescue"
+    },
+    {
+      "id": "glaA_trunc_KR_pts1ok",
+      "name": "Glucoamylase-truncated (catalytic domain only)-KR-uricase fusion",
+      "fusion_type": "glaA_truncated",
+      "kex2_site": "KR",
+      "c_term_tag": "none",
+      "pts1_blocked": false,
+      "n_glyc_state": "native",
+      "evidence": "Gouka 1997; truncated carrier sometimes improves payload titer"
+    },
+    {
+      "id": "glaA_trunc_KR_3xAla",
+      "name": "Truncated glaA-KR fusion + 3xAla",
+      "fusion_type": "glaA_truncated",
+      "kex2_site": "KR",
+      "c_term_tag": "3xAla",
+      "pts1_blocked": true,
+      "n_glyc_state": "native",
+      "evidence": "combined"
+    },
+    {
+      "id": "tandem_KEX2_pts1ok",
+      "name": "Tandem dual-KEX2 (KR-payload-KR-payload) for higher titer",
+      "fusion_type": "glaA_full",
+      "kex2_site": "double_KR",
+      "c_term_tag": "none",
+      "pts1_blocked": false,
+      "n_glyc_state": "native",
+      "evidence": "Spencer 1998; tandem improves titer per cassette but adds KEX2 saturation risk"
+    }
+  ],
+  "secretion_scaffold_modifiers": {
+    "_meta": "Cross each of the 10 base scaffolds with a 3x2 modifier grid to reach 60 total scaffolds: 3 propeptide states (none / native / synthetic-flexible) x 2 N-glyc states (native / ablated). Modifier names are appended to scaffold IDs at enumeration time.",
+    "propeptide_states": [
+      {"id": "prop_none", "name": "No propeptide between SP cleavage and mature N-term"},
+      {"id": "prop_native", "name": "Native target propeptide retained (if applicable)"},
+      {"id": "prop_synth_flex", "name": "Synthetic flexible Gly/Ser propeptide (10 aa)"}
+    ],
+    "n_glyc_states": [
+      {"id": "nglyc_native", "name": "Native N-glycosylation sequon retained at N191"},
+      {"id": "nglyc_ablated", "name": "N191-S-S mutated to Q191 to ablate sequon"}
+    ]
+  }
+}

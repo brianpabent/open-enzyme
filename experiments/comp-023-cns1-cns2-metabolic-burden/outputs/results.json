@@ -1,0 +1,242 @@
+{
+  "comp": "comp-023",
+  "gem": {
+    "id": "iWV1314",
+    "biomodels": "MODEL1507180056",
+    "source": "Vongsangnak 2008, BMC Genomics PMID 18801187",
+    "reactions": 2361,
+    "metabolites": 1104,
+    "genes": 1346,
+    "compartments": [
+      "Cytosol",
+      "Peroxisome",
+      "Extracellular",
+      "Mitochondria"
+    ]
+  },
+  "constants": {
+    "glucose_uptake_mmol_gDW_h": 10.0,
+    "cordycepin_demand_mmol_gDW_h": 0.018728440269596136,
+    "cordycepin_titer_anchor_mg_L_day": 564.64,
+    "cordycepin_titer_pmid": "38071331 (Jeennor 2023)",
+    "lactoferrin_aa_demand_mmol_gDW_h": 0.03744039878630256,
+    "uricase_aa_demand_mmol_gDW_h": 0.0028761904761904766,
+    "carnosine_demand_mmol_gDW_h": 0.005,
+    "panD_demand_mmol_gDW_h": 0.01,
+    "biomass_density_gDW_L_assumed": 5.0
+  },
+  "scenarios": {
+    "WT": {
+      "scenario": "WT",
+      "status": "optimal",
+      "growth_h_inv": 17.678440597111003,
+      "glucose_uptake_mmol_gDW_h": 10.0,
+      "kojic_acid_flux_mmol_gDW_h": 0.0,
+      "ergothioneine_flux_mmol_gDW_h": 0.0,
+      "max_kojic_flux_mmol_gDW_h": 5.766666666666711,
+      "max_egt_flux_mmol_gDW_h": 1.0984126984126963
+    },
+    "dual (uricase + Lf)": {
+      "scenario": "dual (uricase + Lf)",
+      "status": "optimal",
+      "growth_h_inv": 17.674798860065003,
+      "glucose_uptake_mmol_gDW_h": 10.0,
+      "kojic_acid_flux_mmol_gDW_h": 0.0,
+      "ergothioneine_flux_mmol_gDW_h": 0.0,
+      "uricase_load_mmol_aa_gDW_h": 0.0028761904761904766,
+      "lactoferrin_load_mmol_aa_gDW_h": 0.03744039878630256,
+      "max_kojic_flux_mmol_gDW_h": 5.765478740416565,
+      "max_egt_flux_mmol_gDW_h": 1.098186426746018
+    },
+    "+cns1-cns2 (triple, cordycepin arm)": {
+      "scenario": "+cns1-cns2 (triple, cordycepin arm)",
+      "status": "optimal",
+      "growth_h_inv": 17.67537300391262,
+      "glucose_uptake_mmol_gDW_h": 10.0,
+      "kojic_acid_flux_mmol_gDW_h": 0.0,
+      "ergothioneine_flux_mmol_gDW_h": 0.0,
+      "cordycepin_flux_mmol_gDW_h": 0.018728440269596133,
+      "uricase_load_mmol_aa_gDW_h": 0.0028761904761904766,
+      "lactoferrin_load_mmol_aa_gDW_h": 0.03744039878630256,
+      "max_kojic_flux_mmol_gDW_h": 5.765666024818881,
+      "max_egt_flux_mmol_gDW_h": 1.0982220999655132
+    },
+    "+carnS+panD (triple, carnosine arm)": {
+      "scenario": "+carnS+panD (triple, carnosine arm)",
+      "status": "optimal",
+      "growth_h_inv": 17.67445397719203,
+      "glucose_uptake_mmol_gDW_h": 10.0,
+      "kojic_acid_flux_mmol_gDW_h": 0.0,
+      "ergothioneine_flux_mmol_gDW_h": 0.0,
+      "carnosine_flux_mmol_gDW_h": 0.005,
+      "uricase_load_mmol_aa_gDW_h": 0.0028761904761904766,
+      "lactoferrin_load_mmol_aa_gDW_h": 0.03744039878630256,
+      "max_kojic_flux_mmol_gDW_h": 5.765366240418286,
+      "max_egt_flux_mmol_gDW_h": 1.0981649981749115
+    },
+    "+panD only": {
+      "scenario": "+panD only",
+      "status": "optimal",
+      "growth_h_inv": 17.674645578788134,
+      "glucose_uptake_mmol_gDW_h": 10.0,
+      "kojic_acid_flux_mmol_gDW_h": 0.0,
+      "ergothioneine_flux_mmol_gDW_h": 0.0,
+      "uricase_load_mmol_aa_gDW_h": 0.0028761904761904766,
+      "lactoferrin_load_mmol_aa_gDW_h": 0.03744039878630256,
+      "max_kojic_flux_mmol_gDW_h": 5.765428740417143,
+      "max_egt_flux_mmol_gDW_h": 1.098176902936608
+    },
+    "+cns1-cns2 stress 10x titer": {
+      "scenario": "+cns1-cns2 stress 10x titer",
+      "status": "optimal",
+      "growth_h_inv": 17.68054029854099,
+      "glucose_uptake_mmol_gDW_h": 10.0,
+      "kojic_acid_flux_mmol_gDW_h": 0.0,
+      "ergothioneine_flux_mmol_gDW_h": 0.0,
+      "cordycepin_flux_mmol_gDW_h": 0.18728440269596133,
+      "uricase_load_mmol_aa_gDW_h": 0.0028761904761904766,
+      "lactoferrin_load_mmol_aa_gDW_h": 0.03744039878630256,
+      "max_kojic_flux_mmol_gDW_h": 5.767351584443717,
+      "max_egt_flux_mmol_gDW_h": 1.0985431589417005
+    },
+    "+cns1-cns2 stress 100x titer": {
+      "scenario": "+cns1-cns2 stress 100x titer",
+      "status": "optimal",
+      "growth_h_inv": 17.730868965889066,
+      "glucose_uptake_mmol_gDW_h": 10.0,
+      "kojic_acid_flux_mmol_gDW_h": 0.0,
+      "ergothioneine_flux_mmol_gDW_h": 0.0,
+      "cordycepin_flux_mmol_gDW_h": 1.8728440269596138,
+      "uricase_load_mmol_aa_gDW_h": 0.0028761904761904766,
+      "lactoferrin_load_mmol_aa_gDW_h": 0.03744039878630256,
+      "max_kojic_flux_mmol_gDW_h": 5.774842960552843,
+      "max_egt_flux_mmol_gDW_h": 1.1100226189956548
+    },
+    "+cns1-cns2 stress 1000x titer": {
+      "scenario": "+cns1-cns2 stress 1000x titer",
+      "status": "optimal",
+      "growth_h_inv": 15.864861137332307,
+      "glucose_uptake_mmol_gDW_h": 10.0,
+      "kojic_acid_flux_mmol_gDW_h": 0.0,
+      "ergothioneine_flux_mmol_gDW_h": 0.0,
+      "cordycepin_flux_mmol_gDW_h": 18.728440269596135,
+      "uricase_load_mmol_aa_gDW_h": 0.0028761904761904766,
+      "lactoferrin_load_mmol_aa_gDW_h": 0.03744039878630256,
+      "max_kojic_flux_mmol_gDW_h": 5.235558257125907,
+      "max_egt_flux_mmol_gDW_h": 1.1854094167077616
+    },
+    "+cns1-cns2 stress 10000x titer": {
+      "scenario": "+cns1-cns2 stress 10000x titer",
+      "status": "infeasible",
+      "growth_h_inv": null,
+      "glucose_uptake_mmol_gDW_h": null
+    },
+    "+cns1-cns2 stress 100000x titer": {
+      "scenario": "+cns1-cns2 stress 100000x titer",
+      "status": "infeasible",
+      "growth_h_inv": null,
+      "glucose_uptake_mmol_gDW_h": null
+    }
+  },
+  "decision_table": [
+    {
+      "scenario": "dual (uricase + Lf)",
+      "growth_h_inv": 17.674798860065003,
+      "growth_penalty_vs_WT": 0.0002059987715542331,
+      "max_kojic_mmol_gDW_h": 5.765478740416565,
+      "kojic_yield_vs_dual": 1.0,
+      "max_egt_mmol_gDW_h": 1.098186426746018,
+      "egt_yield_vs_dual": 1.0,
+      "cordycepin_mmol_gDW_h": null,
+      "verdict": "GREEN"
+    },
+    {
+      "scenario": "+cns1-cns2 (triple, cordycepin arm)",
+      "growth_h_inv": 17.67537300391262,
+      "growth_penalty_vs_WT": 0.00017352170750205466,
+      "max_kojic_mmol_gDW_h": 5.765666024818881,
+      "kojic_yield_vs_dual": 1.0000324837555992,
+      "max_egt_mmol_gDW_h": 1.0982220999655132,
+      "egt_yield_vs_dual": 1.0000324837556052,
+      "cordycepin_mmol_gDW_h": 0.018728440269596133,
+      "verdict": "GREEN"
+    },
+    {
+      "scenario": "+carnS+panD (triple, carnosine arm)",
+      "growth_h_inv": 17.67445397719203,
+      "growth_penalty_vs_WT": 0.00022550744207743714,
+      "max_kojic_mmol_gDW_h": 5.765366240418286,
+      "kojic_yield_vs_dual": 0.9999804873101881,
+      "max_egt_mmol_gDW_h": 1.0981649981749115,
+      "egt_yield_vs_dual": 0.999980487310183,
+      "cordycepin_mmol_gDW_h": null,
+      "verdict": "GREEN"
+    },
+    {
+      "scenario": "+panD only",
+      "growth_h_inv": 17.674645578788134,
+      "growth_penalty_vs_WT": 0.00021466929178634396,
+      "max_kojic_mmol_gDW_h": 5.765428740417143,
+      "kojic_yield_vs_dual": 0.9999913276933844,
+      "max_egt_mmol_gDW_h": 1.098176902936608,
+      "egt_yield_vs_dual": 0.9999913276933879,
+      "cordycepin_mmol_gDW_h": null,
+      "verdict": "GREEN"
+    },
+    {
+      "scenario": "+cns1-cns2 stress 10x titer",
+      "growth_h_inv": 17.68054029854099,
+      "growth_penalty_vs_WT": -0.00011877186895830671,
+      "max_kojic_mmol_gDW_h": 5.767351584443717,
+      "kojic_yield_vs_dual": 1.0003248375566842,
+      "max_egt_mmol_gDW_h": 1.0985431589417005,
+      "egt_yield_vs_dual": 1.0003248375567158,
+      "cordycepin_mmol_gDW_h": 0.18728440269596133,
+      "verdict": "GREEN"
+    },
+    {
+      "scenario": "+cns1-cns2 stress 100x titer",
+      "growth_h_inv": 17.730868965889066,
+      "growth_penalty_vs_WT": -0.002965667050216574,
+      "max_kojic_mmol_gDW_h": 5.774842960552843,
+      "kojic_yield_vs_dual": 1.001624187783511,
+      "max_egt_mmol_gDW_h": 1.1100226189956548,
+      "egt_yield_vs_dual": 1.0107779444012144,
+      "cordycepin_mmol_gDW_h": 1.8728440269596138,
+      "verdict": "GREEN"
+    },
+    {
+      "scenario": "+cns1-cns2 stress 1000x titer",
+      "growth_h_inv": 15.864861137332307,
+      "growth_penalty_vs_WT": 0.10258707207891796,
+      "max_kojic_mmol_gDW_h": 5.235558257125907,
+      "kojic_yield_vs_dual": 0.9080873406789511,
+      "max_egt_mmol_gDW_h": 1.1854094167077616,
+      "egt_yield_vs_dual": 1.0794245747693219,
+      "cordycepin_mmol_gDW_h": 18.728440269596135,
+      "verdict": "RED"
+    },
+    {
+      "scenario": "+cns1-cns2 stress 10000x titer",
+      "growth_h_inv": null,
+      "growth_penalty_vs_WT": null,
+      "max_kojic_mmol_gDW_h": null,
+      "kojic_yield_vs_dual": null,
+      "max_egt_mmol_gDW_h": null,
+      "egt_yield_vs_dual": null,
+      "cordycepin_mmol_gDW_h": null,
+      "verdict": "INFEASIBLE"
+    },
+    {
+      "scenario": "+cns1-cns2 stress 100000x titer",
+      "growth_h_inv": null,
+      "growth_penalty_vs_WT": null,
+      "max_kojic_mmol_gDW_h": null,
+      "kojic_yield_vs_dual": null,
+      "max_egt_mmol_gDW_h": null,
+      "egt_yield_vs_dual": null,
+      "cordycepin_mmol_gDW_h": null,
+      "verdict": "INFEASIBLE"
+    }
+  ]
+}
