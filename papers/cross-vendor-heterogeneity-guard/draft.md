@@ -595,7 +595,7 @@ The case studies in §5 are summarized below. Each row anchors a single catch to
 
 ## Data and Code Availability
 
-All Open Enzyme research-wiki content, sweep-daemon code and prompts, operational logs, and the drafting workspace for this manuscript are publicly available at https://github.com/brianpabent/open-enzyme. A Zenodo snapshot of the repository at submission-time commit will be archived with a DOI and listed here. Specific artifacts referenced inline in this manuscript:
+All Open Enzyme research-wiki content, sweep-daemon code and prompts, operational logs, and the drafting workspace for this manuscript are publicly available at https://github.com/brianpabent/open-enzyme. The submission-time snapshot of the repository, including the full empirical-vendor-comparison pilot artifacts (raw vendor responses, claim codings, and the reproducible analysis pipeline), is archived on Zenodo as the **"Epistemic Heterodoxy"** release: version-specific DOI [10.5281/zenodo.20190078](https://doi.org/10.5281/zenodo.20190078) (the immutable archive of the exact state cited in this manuscript), concept DOI [10.5281/zenodo.20190077](https://doi.org/10.5281/zenodo.20190077) (resolves to the latest version of the release as the corpus evolves). Source repository tag: `epistemic-heterodoxy-v1`. Specific artifacts referenced inline in this manuscript:
 
 - **Sweep daemon engineering doc:** `scripts/SWEEP-ARCHITECTURE.md` (architecture, failure modes, operational hardening)
 - **GitHub Actions workflow:** `.github/workflows/wiki-sweep.yml` (the daemon's CI orchestration)
