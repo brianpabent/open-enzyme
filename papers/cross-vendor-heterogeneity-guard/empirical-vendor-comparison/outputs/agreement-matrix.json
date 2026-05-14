@@ -81,12 +81,12 @@
         },
         "gemini_vs_openai": {
           "n_claims": 6,
-          "n_agree_substantive": 3,
+          "n_agree_substantive": 4,
           "n_one_ignored": 1,
           "n_both_ignored": 0,
-          "n_substantive_disagreement": 2,
+          "n_substantive_disagreement": 1,
           "n_refusal_involved": 0,
-          "agreement_rate": 0.6
+          "agreement_rate": 0.8
         },
         "gemini_vs_anthropic": {
           "n_claims": 6,
@@ -885,7 +885,7 @@
       },
       "gemini_vs_openai": {
         "n_prompts": 8,
-        "mean_agreement_rate": 0.771
+        "mean_agreement_rate": 0.796
       },
       "deepseek_vs_anthropic": {
         "n_prompts": 7,
@@ -903,7 +903,7 @@
     "by_task_type": {
       "factual": {
         "n_data_points": 3,
-        "mean_agreement_rate": 0.633,
+        "mean_agreement_rate": 0.7,
         "min": 0.5,
         "max": 0.8
       },

@@ -49,7 +49,7 @@
       "claim_text": "Peroxisomal targeting signal is SKL at the extreme C-terminus (residues 299-301 of the 301-aa mature protein). GROUND TRUTH per Legoux et al. 1992 + UniProt Q00511.",
       "verdicts": {
         "deepseek":  {"verdict": "disagree", "alternative": "SRL", "value_quoted": "Ser-Arg-Leu (SRL) at residues 300-302"},
-        "gemini":    {"verdict": "disagree", "alternative": "SSH", "value_quoted": "Ser-Ser-His (SSH) at residues 300-302"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "**-SKL-** (Ser-Lys-Leu) at residues 300-302 of the 302-amino acid protein", "audit_correction": "2026-05-14: Original coding 'disagree / SSH / Ser-Ser-His' was incorrect; raw gemini-r1.md shipped SKL, the canonical answer. Mismatch caught by independent cross-vendor manuscript audit (Codex review of the §6 prose against the response artifacts). Preserved as audit_correction rather than silently overwritten so the meta-catch in §6 remains traceable."},
         "openai":    {"verdict": "affirm", "value_quoted": "Ser-Lys-Leu (SKL) at residues 299-301"},
         "anthropic": {"verdict": "refusal"}
       }

@@ -1,20 +1,20 @@
 {
-  "headline_within_vendor_agreement_rate": 0.906,
-  "headline_cross_vendor_agreement_rate": 0.819,
+  "headline_within_vendor_agreement_rate": 0.908,
+  "headline_cross_vendor_agreement_rate": 0.823,
   "by_vendor_within": {
     "deepseek": 0.907,
-    "gemini": 0.892,
+    "gemini": 0.899,
     "openai": 0.883,
     "anthropic": 0.94
   },
   "by_vendor_cross": {
     "deepseek": 0.846,
-    "gemini": 0.799,
-    "openai": 0.81,
+    "gemini": 0.808,
+    "openai": 0.819,
     "anthropic": 0.819
   },
   "by_task_type_within": {
-    "factual": 0.858,
+    "factual": 0.872,
     "factual-quantitative": 0.952,
     "mechanism-inference": 0.861,
     "hypothesis-generation": 0.875,
@@ -23,7 +23,7 @@
     "hypothesis-generation + mechanism": 1.0
   },
   "by_task_type_cross": {
-    "factual": 0.633,
+    "factual": 0.7,
     "factual-quantitative": 0.976,
     "mechanism-inference": 0.807,
     "hypothesis-generation": 0.675,
@@ -160,12 +160,12 @@
       ],
       "pair_stats": {
         "r1_vs_r2": {
-          "n_agree": 4,
-          "n_disagree": 2,
+          "n_agree": 5,
+          "n_disagree": 1,
           "n_skip": 0,
           "n_refusal_asymm": 0,
           "n_both_refused": 0,
-          "agreement_rate": 0.6666666666666666,
+          "agreement_rate": 0.8333333333333334,
           "per_claim": [
             [
               "C1.1",
@@ -185,7 +185,7 @@
             ],
             [
               "C1.5",
-              "disagree"
+              "agree"
             ],
             [
               "C1.6",
@@ -262,7 +262,7 @@
           ]
         }
       },
-      "cell_mean_agreement_rate": 0.7222222222222222,
+      "cell_mean_agreement_rate": 0.7777777777777778,
       "n_pairs_with_data": 3
     },
     {

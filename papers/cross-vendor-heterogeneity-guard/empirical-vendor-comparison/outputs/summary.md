@@ -13,7 +13,7 @@
 |---|---|---|---|
 | deepseek | gemini | 8 | 79.6% |
 | deepseek | openai | 8 | 88.7% |
-| gemini | openai | 8 | 77.1% |
+| gemini | openai | 8 | 79.6% |
 | deepseek | anthropic | 7 | 85.6% |
 | gemini | anthropic | 7 | 83.6% |
 | openai | anthropic | 7 | 76.7% |
@@ -22,7 +22,7 @@
 
 | Task type | n data points | mean agreement | min | max |
 |---|---|---|---|---|
-| factual | 3 | 63.3% | 50.0% | 80.0% |
+| factual | 3 | 70.0% | 50.0% | 80.0% |
 | factual-quantitative | 6 | 97.6% | 85.7% | 100.0% |
 | mechanism-inference | 12 | 80.7% | 66.7% | 100.0% |
 | hypothesis-generation | 6 | 67.5% | 50.0% | 100.0% |
@@ -41,7 +41,7 @@
   - deepseek_vs_gemini: agreement=50.0%  (agree=3, disagree=3, refusals=0)
   - deepseek_vs_openai: agreement=80.0%  (agree=4, disagree=1, refusals=0)
   - deepseek_vs_anthropic: agreement=n/a  (agree=0, disagree=0, refusals=6)
-  - gemini_vs_openai: agreement=60.0%  (agree=3, disagree=2, refusals=0)
+  - gemini_vs_openai: agreement=80.0%  (agree=4, disagree=1, refusals=0)
   - gemini_vs_anthropic: agreement=n/a  (agree=0, disagree=0, refusals=6)
   - openai_vs_anthropic: agreement=n/a  (agree=0, disagree=0, refusals=6)
 

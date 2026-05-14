@@ -3,22 +3,22 @@
 - Vendors: deepseek, gemini, openai, anthropic
 - Replicates configured: [1, 2, 3]
 - Cells with at least 2 codable replicates: 32
-- **Headline within-vendor mean agreement rate: 90.6%**
-- Headline cross-vendor mean agreement rate (pilot, for comparison): 81.9%
-- Within-vendor minus cross-vendor: +8.7%
+- **Headline within-vendor mean agreement rate: 90.8%**
+- Headline cross-vendor mean agreement rate (pilot, for comparison): 82.3%
+- Within-vendor minus cross-vendor: +8.4%
 
 ## Partition of cross-vendor disagreement
-- Cross-vendor disagreement rate: 18.1%
-- Within-vendor disagreement rate (temperature noise): 9.4%
-- Residual cross-vendor heterogeneity signal: 8.7% (48% of total cross-vendor disagreement)
+- Cross-vendor disagreement rate: 17.7%
+- Within-vendor disagreement rate (temperature noise): 9.2%
+- Residual cross-vendor heterogeneity signal: 8.4% (48% of total cross-vendor disagreement)
 
 ## Per-vendor stability
 
 | Vendor | Within-vendor | Cross-vendor | Delta |
 |---|---|---|---|
 | deepseek | 90.7% | 84.6% | +6.1% |
-| gemini | 89.2% | 79.9% | +9.3% |
-| openai | 88.3% | 81.0% | +7.3% |
+| gemini | 89.9% | 80.8% | +9.1% |
+| openai | 88.3% | 81.9% | +6.4% |
 | anthropic | 94.0% | 81.9% | +12.1% |
 
 ## By task type
@@ -26,7 +26,7 @@
 | Task type | Within-vendor | Cross-vendor |
 |---|---|---|
 | adversarial-review | 87.6% | 78.6% |
-| factual | 85.8% | 63.3% |
+| factual | 87.2% | 70.0% |
 | factual-quantitative | 95.2% | 97.6% |
 | hypothesis-generation | 87.5% | 67.5% |
 | hypothesis-generation + mechanism | 100.0% | 89.7% |
@@ -38,7 +38,7 @@
 | Prompt | Vendor | Task type | Cell mean | Pairs |
 |---|---|---|---|---|
 | 01-uricase-mechanism-factual | deepseek | factual | 88.9% | r1_vs_r2=67%; r1_vs_r3=100%; r2_vs_r3=100% |
-| 01-uricase-mechanism-factual | gemini | factual | 72.2% | r1_vs_r2=67%; r1_vs_r3=67%; r2_vs_r3=83% |
+| 01-uricase-mechanism-factual | gemini | factual | 77.8% | r1_vs_r2=83%; r1_vs_r3=67%; r2_vs_r3=83% |
 | 01-uricase-mechanism-factual | openai | factual | 82.2% | r1_vs_r2=80%; r1_vs_r3=100%; r2_vs_r3=67% |
 | 01-uricase-mechanism-factual | anthropic | factual | 100.0% | r1_vs_r2=100%; r1_vs_r3=100%; r2_vs_r3=100% |
 | 02-abcg2-q141k-factual-quant | deepseek | factual-quantitative | 95.2% | r1_vs_r2=100%; r1_vs_r3=86%; r2_vs_r3=100% |
