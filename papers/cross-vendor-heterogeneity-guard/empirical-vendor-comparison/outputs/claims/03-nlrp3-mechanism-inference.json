@@ -1,0 +1,68 @@
+{
+  "prompt_id": "03-nlrp3-mechanism-inference",
+  "task_type": "mechanism-inference",
+  "coding_notes": "Gemini's original response was truncated; re-run at higher max_tokens=5000 produced full coverage. All sub-claims now codable. Anthropic was also re-run with the higher cap and produced more complete content. Verdicts below reflect re-run responses.",
+  "ground_truth_notes": "Gout flare-trigger priming is an active research question; consensus does not exist on which mechanism is dominant. Best-supported in current literature (per Joosten et al. 2010 Arthritis Rheum + Crișan et al. 2016 Ann Rheum Dis): TLR2/FFA priming + soluble urate co-priming; gut-LPS translocation is plausible but less directly demonstrated for gout-flare context. The 'top mechanism for in-vivo test' has no single right answer.",
+  "claims": [
+    {
+      "id": "C3.1",
+      "claim_text": "Mechanism #1 includes gut-derived LPS / endotoxin translocation acting via TLR4 on macrophages.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Mechanism 1: LPS->TLR4 gut translocation"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Mechanism 1: LPS->TLR4 gut translocation"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Mechanism 1: LPS->TLR4/MD-2/CD14 gut translocation"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Mechanism 1: gut LPS/PAMP -> TLR4"}
+      }
+    },
+    {
+      "id": "C3.2",
+      "claim_text": "At least one named mechanism involves saturated free fatty acids (FFAs) priming via TLR2 (Joosten 2010 axis).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Mechanism 3: FFA->TLR2/TLR4, cites Wen 2011 (NOT Joosten)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Mechanism 3: palmitate/stearate -> TLR2/TLR4, cites Shi 2006 (NOT Joosten)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Mechanism 2: palmitate/stearate->TLR2/TLR4/CD36"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Mechanism 2: C16:0/C18:0 -> TLR2 (cites Joosten 2010 directly)"}
+      }
+    },
+    {
+      "id": "C3.3",
+      "claim_text": "DAMPs (HMGB1, S100A8/A9, or related) are named as a candidate priming mechanism.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Mechanism 2: HMGB1/HSPs/S100A8/A9"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Mechanism 2: HMGB1 + S100A8/A9 (cites Holzinger 2012, Yanai 2013)"},
+        "openai":    {"verdict": "ignore", "value_quoted": "(did not list DAMPs as separate top-3; mentioned only in passing)"},
+        "anthropic": {"verdict": "ignore", "value_quoted": "(replaced by soluble urate priming as third mechanism)"}
+      }
+    },
+    {
+      "id": "C3.4",
+      "claim_text": "Soluble urate itself is named as a priming-signal candidate.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore"},
+        "gemini":    {"verdict": "ignore"},
+        "openai":    {"verdict": "ignore"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Mechanism 3: soluble urate (Crișan 2016, Braga 2017)"}
+      }
+    },
+    {
+      "id": "C3.5",
+      "claim_text": "Top mechanism prioritized for in-vivo test is gut-LPS / TLR4.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Top: TLR4 antagonist (TAK-242) in hyperuricemic flare model"},
+        "gemini":    {"verdict": "disagree", "alternative": "FFA-TLR2-prefer", "value_quoted": "Top priority: Mechanism 3 (FFAs), human dietary challenge with monocyte IL-1β assay"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Top priority: LPS/TLR4 in-vivo test"},
+        "anthropic": {"verdict": "disagree", "alternative": "FFA-TLR2-prefer", "value_quoted": "Anthropic explicitly prioritized Mechanism 2 (FFA/TLR2) OVER LPS/TLR4, citing Joosten 2010 cleaner causal evidence and eritoran-failure precedent"}
+      }
+    },
+    {
+      "id": "C3.6",
+      "claim_text": "Alternative non-priming explanation: protein-corona / crystal-shedding / bioavailability change of MSU.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Protein corona / granuloma disruption as signal-2 modulation"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Modulation of MSU Crystal Bioavailability via ApoB protein corona"},
+        "openai":    {"verdict": "ignore", "value_quoted": "(truncated before reaching alternative section)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Crystal-shedding / mechanical destabilization of tophi (Ortiz-Bravo 1993)"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "prompt_id": "08-cordycepin-koji-feasibility",
+  "task_type": "hypothesis-generation + mechanism",
+  "coding_notes": "Gemini was originally truncated; re-run at higher max_tokens provided full 6-section coverage. cns3 (pentostatin-like ADA inhibitor co-expressed in C. militaris) is a known component of the natural cordycepin biosynthetic gene cluster and is essential for self-protection in the native producer. Whether each vendor names it is a load-bearing mechanism-correctness check. Verdicts below reflect the gemini re-run.",
+  "ground_truth_notes": "Established knowledge: cns3 is a deaminase-domain protein in the Cordyceps militaris cordycepin BGC that confers self-resistance by inhibiting adenosine deaminase (ADA). The natural pathway is cns1+cns2+cns3 (Xia et al. 2017 Cell Chem Biol; Wang et al. 2020 metabolic engineering). Heterologous cordycepin expression in non-Cordyceps hosts requires cns3 (or equivalent host engineering) for stable production.",
+  "claims": [
+    {
+      "id": "C8.1",
+      "claim_text": "cns1+cns2 cytosolic pathway does NOT compete with uricase + lactoferrin for ER chaperones (no PDI/ERO1 conflict).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    },
+    {
+      "id": "C8.2",
+      "claim_text": "Names cordycepin self-toxicity (RNA chain terminator / actively kills host) as a major host-viability risk.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "'High-flux cytotoxic small molecule synthesis...actively kills the host'"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    },
+    {
+      "id": "C8.3",
+      "claim_text": "Names cns3 (pentostatin-like ADA inhibitor) as essential / non-negotiable for stable cordycepin co-expression. (CRITICAL MECHANISM)",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "names-ADA-but-not-cns3", "value_quoted": "Names ADA-mediated 3'-deoxyinosine conversion as a purity risk; does NOT name cns3 as the solution. Suggests ADA knockout or resistant pol as engineering options."},
+        "gemini":    {"verdict": "disagree", "alternative": "names-ADA-but-not-cns3", "value_quoted": "Names endogenous A. oryzae ADAs and 3'-deoxyinosine as purity issue; does NOT name cns3"},
+        "openai":    {"verdict": "disagree", "alternative": "names-ADA-but-not-cns3", "value_quoted": "Names ADA conversion as the dominant risk; does NOT name cns3."},
+        "anthropic": {"verdict": "affirm", "value_quoted": "EXPLICIT: 'C. militaris solves this by co-expressing cns3, a pentostatin-like ADA inhibitor...if you express cns1+cns2 without cns3, you get the worst of both worlds...cns3 is non-negotiable'"}
+      }
+    },
+    {
+      "id": "C8.4",
+      "claim_text": "Specifies a cordycepin titer estimate with assumptions and a published sanity-check from a different heterologous host.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "5-20 mg/L base; cites Xia 2017 yeast 0.2 mg/L, E. coli 0.1-0.8 g/L, Y. lipolytica >3 g/L"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "<50 mg/L; cites Qin 2020 Metab Eng S. cerevisiae ~168 mg/L"},
+        "openai":    {"verdict": "ignore", "value_quoted": "Discusses titer-related metabolic risks but does not give specific titer estimate"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "50-250 mg/L with cns3; cites Tan 2022 Metab Eng, Yang group; honestly notes 'memory may be imperfect, verify against current Metabolic Engineering literature'"}
+      }
+    },
+    {
+      "id": "C8.5",
+      "claim_text": "Recommends a specific low-cost de-risking experiment (cordycepin tolerance assay).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Cordycepin-sensitivity growth assay; <€500; MIC threshold for go/no-go"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "Discusses growth-defect vs induced-culture observations but does not specify cordycepin tolerance assay as a separate experiment"},
+        "openai":    {"verdict": "ignore", "value_quoted": "(focuses on adenosine feeding / extraction questions instead)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Cordycepin sensitivity assay; <$500; 3 IC50 thresholds for go/cns3-required/abandon decisions"}
+      }
+    },
+    {
+      "id": "C8.6",
+      "claim_text": "Pushes back on the proposal: recommends parallel mono-cassette strains instead of single co-expression strain.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "'biologically ill-advised'; recommends parallel mono-cassette strategy"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "'Develop two parallel, specialized strains'; Strain A optimized for protein + Strain B optimized for cordycepin"},
+        "openai":    {"verdict": "affirm", "value_quoted": "'Would not make the triple-function strain the primary development path'; recommends mono-cassette cordycepin strain first"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Implied via 'switch host (Y. lipolytica, S. cerevisiae) for cordycepin and keep A. oryzae for the uricase+lactoferrin cassette'"}
+      }
+    }
+  ]
+}

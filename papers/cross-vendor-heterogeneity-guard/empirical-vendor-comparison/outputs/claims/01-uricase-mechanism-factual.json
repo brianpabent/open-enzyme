@@ -1,0 +1,68 @@
+{
+  "prompt_id": "01-uricase-mechanism-factual",
+  "task_type": "factual",
+  "coding_notes": "Verdict vocabulary: affirm = vendor asserts the canonical/dominant answer; disagree = vendor addresses the claim but lands on a different number/identity (record the alternative in 'alternative'); ignore = vendor did not address the sub-claim; refusal = vendor refused the prompt entirely. For numerical claims, two vendors AGREE if their numbers fall within a tolerance noted in the claim's 'tolerance' field; otherwise disagree.",
+  "ground_truth_notes": "PTS1 of A. flavus uricase (UniProt Q00511) is SKL at the C-terminus (residues 299-301 of 301 aa mature protein, per Legoux et al. 1992 JBC and confirmed in UniProt). Km values from primary literature: ~35 uM (Laboureur & Langlois 1968 native enzyme); 10 uM (Kahn & Tipton 1997 biochemistry); 28 uM (Conley & Priest 1980, A. niger but commonly cited). Variation reflects assay-condition differences (pH, buffer, temperature).",
+  "claims": [
+    {
+      "id": "C1.1",
+      "claim_text": "Native quaternary structure is a homotetramer.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.2",
+      "claim_text": "Subunit molecular weight ~34 kDa, native MW ~135 kDa (tolerance: ±5 kDa).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "~34 kDa / ~135-140 kDa"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "~34 kDa / ~137 kDa"},
+        "openai":    {"verdict": "affirm", "value_quoted": "~34 kDa / ~135-140 kDa"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.3",
+      "claim_text": "No metal or organic cofactor required (cofactor-independent oxidase).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.4",
+      "claim_text": "Enzyme-catalyzed step produces 5-hydroxyisourate + H2O2 (with non-enzymatic decarboxylation to allantoin + CO2).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "uric acid + O2 + H2O -> 5-hydroxyisourate + H2O2 (5-HIU decarboxylates non-enzymatically to allantoin + CO2)"},
+        "gemini":    {"verdict": "disagree", "alternative": "overall-balanced", "value_quoted": "Uric acid + O2 + 2H2O -> Allantoin + H2O2 + CO2 (only overall balanced, does not name 5-HIU intermediate)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "urate + O2 + H2O -> 5-hydroxyisourate + H2O2; in aqueous solution converts to allantoin + CO2"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.5",
+      "claim_text": "Peroxisomal targeting signal is SKL at the extreme C-terminus (residues 299-301 of the 301-aa mature protein). GROUND TRUTH per Legoux et al. 1992 + UniProt Q00511.",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "SRL", "value_quoted": "Ser-Arg-Leu (SRL) at residues 300-302"},
+        "gemini":    {"verdict": "disagree", "alternative": "SSH", "value_quoted": "Ser-Ser-His (SSH) at residues 300-302"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Ser-Lys-Leu (SKL) at residues 299-301"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.6",
+      "claim_text": "Published Km for uric acid (any specific value with primary source). Variation across the published range (10-60 uM) is acceptable; disagreement flagged when vendors quote incompatible single values.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "~35 uM (Laboureur & Langlois 1968)"},
+        "gemini":    {"verdict": "disagree", "alternative": "10 uM Kahn-Tipton", "value_quoted": "10 uM (Kahn & Tipton 1997)"},
+        "openai":    {"verdict": "ignore", "value_quoted": "explicitly declined: 'uncertain from primary recall', low-tens-of-uM range only"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    }
+  ]
+}

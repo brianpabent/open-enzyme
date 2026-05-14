@@ -1,0 +1,78 @@
+{
+  "prompt_id": "02-abcg2-q141k-factual-quant",
+  "task_type": "factual-quantitative",
+  "coding_notes": "Gemini's original response was truncated; re-run at max_tokens=5000 produced full coverage. All sub-claims are now codable. Verdicts below reflect the higher-coverage re-run.",
+  "ground_truth_notes": "Per Ichida 2012 Nat Commun and Woodward 2009 PNAS / Matsuo 2009 Sci Transl Med, established consensus: ABCG2 ~30% of total urate excretion; Q141K residual activity ~50% of WT; MAF EAS ~0.29-0.32, EUR ~0.09-0.11; gout per-allele OR ~1.7-1.8 in Europeans, higher in homozygotes; gut/intestine is the dominant ABCG2 site.",
+  "claims": [
+    {
+      "id": "C2.1",
+      "claim_text": "ABCG2 mediates approximately one-third (30-33%) of total uric acid excretion.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "~30% (Ichida 2012)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "~33%, 'one-third' (extra-renal, attributed to ABCG2)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "~30% (with explicit caveat that direct ABCG2-specific measurement has not been done)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "~30% (with explicit 'uncertain' caveat)"}
+      }
+    },
+    {
+      "id": "C2.2",
+      "claim_text": "Q141K reduces transporter activity by ~50% relative to wild-type.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "~53% reduction (Woodward 2009)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "~50% activity (Woodward 2009)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "~47% reduction (Matsuo 2009)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "~50% reduction (Woodward 2009 / Matsuo 2009)"}
+      }
+    },
+    {
+      "id": "C2.3",
+      "claim_text": "Q141K minor allele frequency in East Asian populations: ~0.29-0.32.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "~0.30 (gnomAD EAS 0.295)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "30-35% (gnomAD v2.1.1 EAS 0.339)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "0.29-0.31"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "0.29-0.32"}
+      }
+    },
+    {
+      "id": "C2.4",
+      "claim_text": "Q141K MAF in European (non-Finnish) populations: ~0.09-0.11.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "~0.09"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "10-12% (gnomAD NFE 0.111)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "0.09-0.11"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "0.09-0.11"}
+      }
+    },
+    {
+      "id": "C2.5",
+      "claim_text": "Published OR for gout/hyperuricemia associated with Q141K is in the ~1.6-2.3 range (varying by population/method).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Het OR=1.74 (NZ study), Hom OR=2.94"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Per-allele OR=1.67 for hyperuricemia (Matsuo 2009 Science)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Het OR ~2.3 in Japanese (Matsuo 2009); per-allele OR 1.6-1.8 GWAS"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Het OR ~2.3 (Matsuo Japanese); per-allele OR 1.74 (Dehghan 2008 whites)"}
+      }
+    },
+    {
+      "id": "C2.6",
+      "claim_text": "Homozygote (KK) gout OR is substantially higher than heterozygote (QK). Vendors that name a specific value should agree within 2x.",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "OR=2.94", "value_quoted": "OR=2.94 (1.87-4.63), NZ study"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "Gives per-allele OR only, not clean het/hom split"},
+        "openai":    {"verdict": "ignore", "value_quoted": "Did not give clean het/hom split, only per-allele"},
+        "anthropic": {"verdict": "disagree", "alternative": "OR=5.97", "value_quoted": "OR=5.97 (Matsuo Japanese)"}
+      }
+    },
+    {
+      "id": "C2.7",
+      "claim_text": "Gut/intestine is the dominant site of ABCG2-mediated uric acid excretion (as opposed to kidney).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "gut dominant (Ichida 2012, Abcg2-KO mice)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "gut dominant; ABCG2-KO mice + Ichida 2012"},
+        "openai":    {"verdict": "affirm", "value_quoted": "gut/intestine generally dominant (Ichida 2012)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "gut/intestine dominant (Ichida 2012, Abcg2-KO mice)"}
+      }
+    }
+  ]
+}

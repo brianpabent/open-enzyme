@@ -1,0 +1,68 @@
+{
+  "prompt_id": "06-cross-document-synthesis",
+  "task_type": "synthesis",
+  "coding_notes": "Cross-document synthesis with no objective ground truth. Coding focuses on STRUCTURAL agreement on the dominant proposed mechanism (more vs. less benefit for Q141K) and whether vendors converge on similar tradeoff classes. Gemini's original response was truncated mid-section-1; re-run at higher max_tokens produced full coverage and the verdicts below reflect the re-run.",
+  "ground_truth_notes": "No ground truth — open synthesis prompt. Three of three substantive vendors agreed on the MORE-benefit direction for Q141K. Each named slightly different specific tradeoffs.",
+  "claims": [
+    {
+      "id": "C6.1",
+      "claim_text": "Q141K carriers benefit MORE from the uricase + lactoferrin combination than wild-type ABCG2 (compounding-deficit logic).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "MORE benefit; hyper-active inflammasome amplifies value of lactoferrin"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "MORE benefit; chronic systemic hyperuricemia primes GALT inflammation; lactoferrin locally suppresses"},
+        "openai":    {"verdict": "disagree", "alternative": "split-finding", "value_quoted": "More benefit on the INFLAMMATION arm but LESS benefit on urate-lowering arm — argues benefit-profile shifts, not benefit-magnitude"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "MORE benefit via compounding-deficit; explicitly contrasts with additive-only alternative"}
+      }
+    },
+    {
+      "id": "C6.2",
+      "claim_text": "Single-strain co-expression locks the cassette dose ratio, which conflicts with genotype-stratified dosing.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Fixed-ratio constraint; uricase-biased vs balanced cassette design tradeoff"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Fixed-ratio production at 1:1 from dual amyB promoters; need for stratified dosing creates conflict"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Cassette architecture should be uricase-floor-constrained; tunable promoters needed"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Single-fermentation locks ratio; genotype-stratified dosing then requires two strains or blending"}
+      }
+    },
+    {
+      "id": "C6.3",
+      "claim_text": "Glycosylation differences between gut-luminal vs systemic action create a payload-incompatibility (uricase wants minimal glycan, lactoferrin wants native-like).",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore"},
+        "gemini":    {"verdict": "ignore"},
+        "openai":    {"verdict": "ignore"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "EXPLICIT: 'Heavy N-glycans on uricase may extend serum half-life if absorbed but are irrelevant or detrimental for luminal activity'; lactoferrin benefits from native glycan; unique to Anthropic"}
+      }
+    },
+    {
+      "id": "C6.4",
+      "claim_text": "Includes a testable in-silico or low-cost hypothesis to discriminate between proposed mechanisms.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "QSP model comparing IL-1β suppression vs urate reduction by genotype"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "PBPK model with virtual Q141K vs WT cohorts, oral uricase Vmax/Km parameters"},
+        "openai":    {"verdict": "ignore", "value_quoted": "Detailed mechanism reasoning but no explicit discriminating-hypothesis design"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Humanized-ABCG2-Q141K mouse with 2x2 ANOVA interaction term; in-silico cheaper version specified"}
+      }
+    },
+    {
+      "id": "C6.5",
+      "claim_text": "Explicitly flags load-bearing inferences not directly supported by the excerpts.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Q141K -> clinically meaningful NLRP3 activation is the load-bearing inference"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Three explicit load-bearing inferences flagged with 'what evidence I would need'"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Uses EL-1/EL-2/EL-3 evidence-level scheme inline"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "I1-I5 table of 5 explicit load-bearing inferences"}
+      }
+    },
+    {
+      "id": "C6.6",
+      "claim_text": "Tags findings with chain-depth (CHAIN-DEPTH: N) as the prompt requested.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    }
+  ]
+}

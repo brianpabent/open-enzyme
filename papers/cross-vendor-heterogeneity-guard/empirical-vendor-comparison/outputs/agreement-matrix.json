@@ -1,0 +1,966 @@
+{
+  "per_prompt": [
+    {
+      "prompt_id": "01-uricase-mechanism-factual",
+      "task_type": "factual",
+      "responses": {
+        "deepseek": {
+          "status": "ok",
+          "model_served": "deepseek/deepseek-v4-pro",
+          "input_tokens": 198,
+          "output_tokens": 5753,
+          "cost_usd": 0.0051,
+          "latency_seconds": 184.3,
+          "finish_reason": "stop",
+          "response_sha": "039cb7c78bde",
+          "body_chars": 1679
+        },
+        "gemini": {
+          "status": "ok",
+          "model_served": "google/gemini-2.5-pro",
+          "input_tokens": 193,
+          "output_tokens": 3919,
+          "cost_usd": 0.0198,
+          "latency_seconds": 39.54,
+          "finish_reason": "stop",
+          "response_sha": "0fe7b3d32093",
+          "body_chars": 1957
+        },
+        "openai": {
+          "status": "ok",
+          "model_served": "openai/gpt-5.5",
+          "input_tokens": 208,
+          "output_tokens": 5337,
+          "cost_usd": 0.0647,
+          "latency_seconds": 114.14,
+          "finish_reason": "stop",
+          "response_sha": "9344ed17c8e6",
+          "body_chars": 2363
+        },
+        "anthropic": {
+          "status": "EMPTY",
+          "model_served": "anthropic/claude-4.7-opus",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0.0,
+          "latency_seconds": 0.0,
+          "finish_reason": "stop",
+          "response_sha": "",
+          "body_chars": 16
+        }
+      },
+      "claims_loaded": true,
+      "n_claims": 6,
+      "agreement": {
+        "deepseek_vs_gemini": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 0,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 3,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.5
+        },
+        "deepseek_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        },
+        "deepseek_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 0,
+          "n_one_ignored": 0,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 6,
+          "agreement_rate": null
+        },
+        "gemini_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 2,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.6
+        },
+        "gemini_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 0,
+          "n_one_ignored": 0,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 6,
+          "agreement_rate": null
+        },
+        "openai_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 0,
+          "n_one_ignored": 0,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 6,
+          "agreement_rate": null
+        }
+      }
+    },
+    {
+      "prompt_id": "02-abcg2-q141k-factual-quant",
+      "task_type": "factual-quantitative",
+      "responses": {
+        "deepseek": {
+          "status": "ok",
+          "model_served": "deepseek/deepseek-v4-pro",
+          "input_tokens": 238,
+          "output_tokens": 3621,
+          "cost_usd": 0.0033,
+          "latency_seconds": 68.64,
+          "finish_reason": "stop",
+          "response_sha": "849e8849e79a",
+          "body_chars": 2908
+        },
+        "gemini": {
+          "status": "ok",
+          "model_served": "google/gemini-2.5-pro",
+          "input_tokens": 257,
+          "output_tokens": 3527,
+          "cost_usd": 0.018,
+          "latency_seconds": 39.36,
+          "finish_reason": "stop",
+          "response_sha": "3dca7c699956",
+          "body_chars": 5347
+        },
+        "openai": {
+          "status": "ok",
+          "model_served": "openai/gpt-5.5",
+          "input_tokens": 249,
+          "output_tokens": 7583,
+          "cost_usd": 0.0917,
+          "latency_seconds": 157.08,
+          "finish_reason": "stop",
+          "response_sha": "3c4d7a2003ec",
+          "body_chars": 3259
+        },
+        "anthropic": {
+          "status": "ok",
+          "model_served": "anthropic/claude-4.7-opus",
+          "input_tokens": 386,
+          "output_tokens": 1604,
+          "cost_usd": 0.1261,
+          "latency_seconds": 27.95,
+          "finish_reason": "stop",
+          "response_sha": "de394445fe93",
+          "body_chars": 3762
+        }
+      },
+      "claims_loaded": true,
+      "n_claims": 7,
+      "agreement": {
+        "deepseek_vs_gemini": {
+          "n_claims": 7,
+          "n_agree_substantive": 6,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "deepseek_vs_openai": {
+          "n_claims": 7,
+          "n_agree_substantive": 6,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "deepseek_vs_anthropic": {
+          "n_claims": 7,
+          "n_agree_substantive": 6,
+          "n_one_ignored": 0,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8571428571428571
+        },
+        "gemini_vs_openai": {
+          "n_claims": 7,
+          "n_agree_substantive": 6,
+          "n_one_ignored": 0,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "gemini_vs_anthropic": {
+          "n_claims": 7,
+          "n_agree_substantive": 6,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "openai_vs_anthropic": {
+          "n_claims": 7,
+          "n_agree_substantive": 6,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        }
+      }
+    },
+    {
+      "prompt_id": "03-nlrp3-mechanism-inference",
+      "task_type": "mechanism-inference",
+      "responses": {
+        "deepseek": {
+          "status": "ok",
+          "model_served": "deepseek/deepseek-v4-pro",
+          "input_tokens": 369,
+          "output_tokens": 4458,
+          "cost_usd": 0.004,
+          "latency_seconds": 73.78,
+          "finish_reason": "stop",
+          "response_sha": "b3bd4d288236",
+          "body_chars": 8022
+        },
+        "gemini": {
+          "status": "ok",
+          "model_served": "google/gemini-2.5-pro",
+          "input_tokens": 376,
+          "output_tokens": 4751,
+          "cost_usd": 0.0242,
+          "latency_seconds": 49.2,
+          "finish_reason": "stop",
+          "response_sha": "80f0f3d4006a",
+          "body_chars": 9327
+        },
+        "openai": {
+          "status": "ok",
+          "model_served": "openai/gpt-5.5",
+          "input_tokens": 389,
+          "output_tokens": 8000,
+          "cost_usd": 0.0972,
+          "latency_seconds": 191.54,
+          "finish_reason": "length",
+          "response_sha": "d0efdf0bdbc6",
+          "body_chars": 7421
+        },
+        "anthropic": {
+          "status": "ok",
+          "model_served": "anthropic/claude-4.7-opus",
+          "input_tokens": 615,
+          "output_tokens": 2833,
+          "cost_usd": 0.2217,
+          "latency_seconds": 44.8,
+          "finish_reason": "stop",
+          "response_sha": "addc4fccd69a",
+          "body_chars": 7142
+        }
+      },
+      "claims_loaded": true,
+      "n_claims": 6,
+      "agreement": {
+        "deepseek_vs_gemini": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 0,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        },
+        "deepseek_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 2,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "deepseek_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 2,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.75
+        },
+        "gemini_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 2,
+          "n_one_ignored": 2,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.6666666666666666
+        },
+        "gemini_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 2,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "openai_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 2,
+          "n_one_ignored": 2,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.6666666666666666
+        }
+      }
+    },
+    {
+      "prompt_id": "04-koji-uricase-hypothesis-gen",
+      "task_type": "hypothesis-generation",
+      "responses": {
+        "deepseek": {
+          "status": "ok",
+          "model_served": "deepseek/deepseek-v4-pro",
+          "input_tokens": 328,
+          "output_tokens": 4118,
+          "cost_usd": 0.0037,
+          "latency_seconds": 84.42,
+          "finish_reason": "stop",
+          "response_sha": "0269e14f1112",
+          "body_chars": 5732
+        },
+        "gemini": {
+          "status": "ok",
+          "model_served": "google/gemini-2.5-pro",
+          "input_tokens": 339,
+          "output_tokens": 4165,
+          "cost_usd": 0.0212,
+          "latency_seconds": 42.02,
+          "finish_reason": "stop",
+          "response_sha": "5968a12a7921",
+          "body_chars": 6946
+        },
+        "openai": {
+          "status": "ok",
+          "model_served": "openai/gpt-5.5",
+          "input_tokens": 334,
+          "output_tokens": 6410,
+          "cost_usd": 0.0779,
+          "latency_seconds": 146.26,
+          "finish_reason": "stop",
+          "response_sha": "d19df580a6c1",
+          "body_chars": 10352
+        },
+        "anthropic": {
+          "status": "ok",
+          "model_served": "anthropic/claude-4.7-opus",
+          "input_tokens": 532,
+          "output_tokens": 3186,
+          "cost_usd": 0.2469,
+          "latency_seconds": 56.88,
+          "finish_reason": "stop",
+          "response_sha": "a6a07164ee4a",
+          "body_chars": 8173
+        }
+      },
+      "claims_loaded": true,
+      "n_claims": 6,
+      "agreement": {
+        "deepseek_vs_gemini": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 2,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.6
+        },
+        "deepseek_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 2,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.75
+        },
+        "deepseek_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 5,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "gemini_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 2,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.6
+        },
+        "gemini_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 0,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 3,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.5
+        },
+        "openai_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 2,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.6
+        }
+      }
+    },
+    {
+      "prompt_id": "05-rasburicase-ada-mechanism",
+      "task_type": "mechanism-inference",
+      "responses": {
+        "deepseek": {
+          "status": "ok",
+          "model_served": "deepseek/deepseek-v4-pro",
+          "input_tokens": 333,
+          "output_tokens": 2431,
+          "cost_usd": 0.0023,
+          "latency_seconds": 121.03,
+          "finish_reason": "stop",
+          "response_sha": "e73b9944a799",
+          "body_chars": 11257
+        },
+        "gemini": {
+          "status": "ok",
+          "model_served": "google/gemini-2.5-pro",
+          "input_tokens": 339,
+          "output_tokens": 4312,
+          "cost_usd": 0.022,
+          "latency_seconds": 48.37,
+          "finish_reason": "stop",
+          "response_sha": "d20095c81097",
+          "body_chars": 9756
+        },
+        "openai": {
+          "status": "ok",
+          "model_served": "openai/gpt-5.5",
+          "input_tokens": 346,
+          "output_tokens": 7302,
+          "cost_usd": 0.0887,
+          "latency_seconds": 175.96,
+          "finish_reason": "stop",
+          "response_sha": "f9fed4229adf",
+          "body_chars": 14405
+        },
+        "anthropic": {
+          "status": "ok",
+          "model_served": "anthropic/claude-4.7-opus",
+          "input_tokens": 569,
+          "output_tokens": 2749,
+          "cost_usd": 0.2147,
+          "latency_seconds": 48.51,
+          "finish_reason": "stop",
+          "response_sha": "82f859f726b2",
+          "body_chars": 7128
+        }
+      },
+      "claims_loaded": true,
+      "n_claims": 6,
+      "agreement": {
+        "deepseek_vs_gemini": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        },
+        "deepseek_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 0,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        },
+        "deepseek_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 0,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        },
+        "gemini_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        },
+        "gemini_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        },
+        "openai_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 0,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        }
+      }
+    },
+    {
+      "prompt_id": "06-cross-document-synthesis",
+      "task_type": "synthesis",
+      "responses": {
+        "deepseek": {
+          "status": "ok",
+          "model_served": "deepseek/deepseek-v4-pro",
+          "input_tokens": 932,
+          "output_tokens": 5544,
+          "cost_usd": 0.0052,
+          "latency_seconds": 92.53,
+          "finish_reason": "stop",
+          "response_sha": "295f1cbbc551",
+          "body_chars": 5694
+        },
+        "gemini": {
+          "status": "ok",
+          "model_served": "google/gemini-2.5-pro",
+          "input_tokens": 969,
+          "output_tokens": 5952,
+          "cost_usd": 0.031,
+          "latency_seconds": 64.98,
+          "finish_reason": "stop",
+          "response_sha": "bc8b90b7d319",
+          "body_chars": 9187
+        },
+        "openai": {
+          "status": "ok",
+          "model_served": "openai/gpt-5.5",
+          "input_tokens": 969,
+          "output_tokens": 5271,
+          "cost_usd": 0.0662,
+          "latency_seconds": 100.62,
+          "finish_reason": "stop",
+          "response_sha": "1985e7d350f9",
+          "body_chars": 12209
+        },
+        "anthropic": {
+          "status": "ok",
+          "model_served": "anthropic/claude-4.7-opus",
+          "input_tokens": 1561,
+          "output_tokens": 2441,
+          "cost_usd": 0.2065,
+          "latency_seconds": 38.06,
+          "finish_reason": "stop",
+          "response_sha": "e3dd4803c6c7",
+          "body_chars": 5991
+        }
+      },
+      "claims_loaded": true,
+      "n_claims": 6,
+      "agreement": {
+        "deepseek_vs_gemini": {
+          "n_claims": 6,
+          "n_agree_substantive": 5,
+          "n_one_ignored": 0,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "deepseek_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 1,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.75
+        },
+        "deepseek_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 5,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "gemini_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 1,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.75
+        },
+        "gemini_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 5,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "openai_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 2,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.75
+        }
+      }
+    },
+    {
+      "prompt_id": "07-self-demonstrating-review",
+      "task_type": "adversarial-review",
+      "responses": {
+        "deepseek": {
+          "status": "ok",
+          "model_served": "deepseek/deepseek-v4-pro",
+          "input_tokens": 579,
+          "output_tokens": 5369,
+          "cost_usd": 0.0049,
+          "latency_seconds": 167.29,
+          "finish_reason": "stop",
+          "response_sha": "3541881b73e6",
+          "body_chars": 2821
+        },
+        "gemini": {
+          "status": "ok",
+          "model_served": "google/gemini-2.5-pro",
+          "input_tokens": 588,
+          "output_tokens": 2884,
+          "cost_usd": 0.0152,
+          "latency_seconds": 32.62,
+          "finish_reason": "stop",
+          "response_sha": "57f4cbb0ca54",
+          "body_chars": 2387
+        },
+        "openai": {
+          "status": "ok",
+          "model_served": "openai/gpt-5.5",
+          "input_tokens": 580,
+          "output_tokens": 1105,
+          "cost_usd": 0.015,
+          "latency_seconds": 20.54,
+          "finish_reason": "stop",
+          "response_sha": "f64ccde6dcc6",
+          "body_chars": 3331
+        },
+        "anthropic": {
+          "status": "ok",
+          "model_served": "anthropic/claude-4.7-opus",
+          "input_tokens": 988,
+          "output_tokens": 1568,
+          "cost_usd": 0.1324,
+          "latency_seconds": 23.79,
+          "finish_reason": "stop",
+          "response_sha": "102a49dfa82d",
+          "body_chars": 4739
+        }
+      },
+      "claims_loaded": true,
+      "n_claims": 5,
+      "agreement": {
+        "deepseek_vs_gemini": {
+          "n_claims": 5,
+          "n_agree_substantive": 2,
+          "n_one_ignored": 2,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.6666666666666666
+        },
+        "deepseek_vs_openai": {
+          "n_claims": 5,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "deepseek_vs_anthropic": {
+          "n_claims": 5,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.75
+        },
+        "gemini_vs_openai": {
+          "n_claims": 5,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.75
+        },
+        "gemini_vs_anthropic": {
+          "n_claims": 5,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.75
+        },
+        "openai_vs_anthropic": {
+          "n_claims": 5,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 0,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        }
+      }
+    },
+    {
+      "prompt_id": "08-cordycepin-koji-feasibility",
+      "task_type": "hypothesis-generation + mechanism",
+      "responses": {
+        "deepseek": {
+          "status": "ok",
+          "model_served": "deepseek/deepseek-v4-pro",
+          "input_tokens": 539,
+          "output_tokens": 6909,
+          "cost_usd": 0.0062,
+          "latency_seconds": 151.11,
+          "finish_reason": "stop",
+          "response_sha": "3dbeeb996a09",
+          "body_chars": 6161
+        },
+        "gemini": {
+          "status": "ok",
+          "model_served": "google/gemini-2.5-pro",
+          "input_tokens": 523,
+          "output_tokens": 5474,
+          "cost_usd": 0.028,
+          "latency_seconds": 57.99,
+          "finish_reason": "stop",
+          "response_sha": "a28244034d3b",
+          "body_chars": 9499
+        },
+        "openai": {
+          "status": "ok",
+          "model_served": "openai/gpt-5.5",
+          "input_tokens": 565,
+          "output_tokens": 4913,
+          "cost_usd": 0.0607,
+          "latency_seconds": 92.95,
+          "finish_reason": "stop",
+          "response_sha": "b371555a9418",
+          "body_chars": 12206
+        },
+        "anthropic": {
+          "status": "ok",
+          "model_served": "anthropic/claude-4.7-opus",
+          "input_tokens": 860,
+          "output_tokens": 3530,
+          "cost_usd": 0.2777,
+          "latency_seconds": 56.32,
+          "finish_reason": "stop",
+          "response_sha": "208bb8c98706",
+          "body_chars": 8908
+        }
+      },
+      "claims_loaded": true,
+      "n_claims": 6,
+      "agreement": {
+        "deepseek_vs_gemini": {
+          "n_claims": 6,
+          "n_agree_substantive": 5,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "deepseek_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 2,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "deepseek_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 5,
+          "n_one_ignored": 0,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8333333333333334
+        },
+        "gemini_vs_openai": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 1,
+          "n_both_ignored": 1,
+          "n_substantive_disagreement": 0,
+          "n_refusal_involved": 0,
+          "agreement_rate": 1.0
+        },
+        "gemini_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 4,
+          "n_one_ignored": 1,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.8
+        },
+        "openai_vs_anthropic": {
+          "n_claims": 6,
+          "n_agree_substantive": 3,
+          "n_one_ignored": 2,
+          "n_both_ignored": 0,
+          "n_substantive_disagreement": 1,
+          "n_refusal_involved": 0,
+          "agreement_rate": 0.75
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "total_prompts": 8,
+    "vendors": [
+      "deepseek",
+      "gemini",
+      "openai",
+      "anthropic"
+    ],
+    "total_cost_usd": 2.2022,
+    "pairwise_means": {
+      "deepseek_vs_gemini": {
+        "n_prompts": 8,
+        "mean_agreement_rate": 0.796
+      },
+      "deepseek_vs_openai": {
+        "n_prompts": 8,
+        "mean_agreement_rate": 0.887
+      },
+      "gemini_vs_openai": {
+        "n_prompts": 8,
+        "mean_agreement_rate": 0.771
+      },
+      "deepseek_vs_anthropic": {
+        "n_prompts": 7,
+        "mean_agreement_rate": 0.856
+      },
+      "gemini_vs_anthropic": {
+        "n_prompts": 7,
+        "mean_agreement_rate": 0.836
+      },
+      "openai_vs_anthropic": {
+        "n_prompts": 7,
+        "mean_agreement_rate": 0.767
+      }
+    },
+    "by_task_type": {
+      "factual": {
+        "n_data_points": 3,
+        "mean_agreement_rate": 0.633,
+        "min": 0.5,
+        "max": 0.8
+      },
+      "factual-quantitative": {
+        "n_data_points": 6,
+        "mean_agreement_rate": 0.976,
+        "min": 0.857,
+        "max": 1.0
+      },
+      "mechanism-inference": {
+        "n_data_points": 12,
+        "mean_agreement_rate": 0.807,
+        "min": 0.667,
+        "max": 1.0
+      },
+      "hypothesis-generation": {
+        "n_data_points": 6,
+        "mean_agreement_rate": 0.675,
+        "min": 0.5,
+        "max": 1.0
+      },
+      "synthesis": {
+        "n_data_points": 6,
+        "mean_agreement_rate": 0.875,
+        "min": 0.75,
+        "max": 1.0
+      },
+      "adversarial-review": {
+        "n_data_points": 6,
+        "mean_agreement_rate": 0.786,
+        "min": 0.667,
+        "max": 1.0
+      },
+      "hypothesis-generation + mechanism": {
+        "n_data_points": 6,
+        "mean_agreement_rate": 0.897,
+        "min": 0.75,
+        "max": 1.0
+      }
+    },
+    "refusals_by_vendor": {
+      "deepseek": 0,
+      "gemini": 0,
+      "openai": 0,
+      "anthropic": 1
+    },
+    "empties_by_vendor": {
+      "deepseek": 0,
+      "gemini": 0,
+      "openai": 0,
+      "anthropic": 0
+    },
+    "ok_by_vendor": {
+      "deepseek": 8,
+      "gemini": 8,
+      "openai": 8,
+      "anthropic": 7
+    }
+  }
+}

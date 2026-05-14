@@ -1,0 +1,68 @@
+{
+  "prompt_id": "04-koji-uricase-hypothesis-gen",
+  "task_type": "hypothesis-generation",
+  "coding_notes": "Gemini originally truncated mid-assumptions; re-run produced full 3-experiment proposal. Hypothesis-generation prompts have no 'right answer'; we code for structural agreement (did the vendor propose similar experiment classes, similar decision frames, similar cost orderings). Verdicts below reflect the re-run.",
+  "ground_truth_notes": "No ground truth — this is a creative experimental-design task. Heterogeneity here is the point. We measure CONVERGENCE on experiment classes proposed and DIVERGENCE on which specific risks are foregrounded.",
+  "claims": [
+    {
+      "id": "C4.1",
+      "claim_text": "Proposed Experiment #1 is an in-silico cassette/sequence audit (SignalP + codon + structure prediction).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "In silico signal peptide cleavage + AlphaFold structure"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "In Silico Cassette Integrity Analysis (SignalP, Mfold, cryptic splice/poly-A scan)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "In-silico secretory-expression liability audit"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "In silico signal-peptide and subcellular-targeting audit (with explicit PTS1 conflict callout)"}
+      }
+    },
+    {
+      "id": "C4.2",
+      "claim_text": "Vendor specifically flags the native A. flavus uricase PTS1 (peroxisomal targeting signal) as a conflict with the secretion path. (DOMINANT-RISK INSIGHT).",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "Mentions A. flavus uricase is intracellular/peroxisomal in assumptions, but does not foreground PTS1 conflict as the design risk"},
+        "gemini":    {"verdict": "disagree", "alternative": "monomer-assumption", "value_quoted": "Explicitly assumes uricase is a monomeric enzyme — INCORRECT (it's a homotetramer) and obscures the PTS1 risk entirely"},
+        "openai":    {"verdict": "disagree", "alternative": "no-explicit-PTS1-call", "value_quoted": "Mentions 'native fungal uricases may have intracellular/peroxisomal context' as one bullet of 8, not foregrounded"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "EXPLICITLY flags PTS1 SKL as 'the single most likely silent failure mode'; names Pex5 recognition and specific mitigation steps"}
+      }
+    },
+    {
+      "id": "C4.3",
+      "claim_text": "Includes a wet-lab experiment that produces and assays the enzyme protein in a non-host system (E. coli or cell-free).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Experiment 2: E. coli expression + GI stability assay"},
+        "gemini":    {"verdict": "disagree", "alternative": "in-host-protoplast", "value_quoted": "Experiment 2: Transient expression in A. oryzae protoplasts directly (does not decouple host from cassette)"},
+        "openai":    {"verdict": "disagree", "alternative": "promoter-mapping", "value_quoted": "Replaces this slot with parental-strain amyB promoter mapping (different experimental class)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Experiment 2: cell-free expression + activity assay (PURExpress/wheat-germ)"}
+      }
+    },
+    {
+      "id": "C4.4",
+      "claim_text": "Includes a GI-tract stability / simulated-fluid stress test.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Bundled into Experiment 2 (simulated gastric + intestinal fluid)"},
+        "gemini":    {"verdict": "disagree", "alternative": "supernatant-stability", "value_quoted": "Experiment 3: stability in A. oryzae supernatant, NOT GI-tract stability"},
+        "openai":    {"verdict": "ignore", "value_quoted": "(not foregrounded; this prompt focuses cassette-design rather than product-form, so OpenAI emphasizes promoter regulation instead)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Experiment 3: SGF + SIF + commercial uricase surrogate"}
+      }
+    },
+    {
+      "id": "C4.5",
+      "claim_text": "Experiment is in the right cost class (in-silico = $0; low wet-lab < $500; mid $500-5000).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "All three costed; orders correctly by cost"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "All three costed; ordering correct"},
+        "openai":    {"verdict": "affirm", "value_quoted": "All three costed; ordering correct"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "All three costed; one is borderline (~$400-800)"}
+      }
+    },
+    {
+      "id": "C4.6",
+      "claim_text": "Names a kill criterion (specific threshold below which the design is abandoned).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "k_cat < 1%, >50% loss in SGF, no activity in eukaryote -> kill"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Kill criteria stated per experiment (no detectable protein; <12hr activity loss)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Names 'kill the cassette design' conditional on liability audit / pilot failures"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Names specific kill criteria including 'inactivation in SIF -> kill entire product hypothesis'"}
+      }
+    }
+  ]
+}

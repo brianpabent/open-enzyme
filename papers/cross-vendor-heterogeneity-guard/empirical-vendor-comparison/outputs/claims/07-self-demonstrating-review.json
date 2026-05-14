@@ -1,0 +1,58 @@
+{
+  "prompt_id": "07-self-demonstrating-review",
+  "task_type": "adversarial-review",
+  "coding_notes": "This is the paper's own review-prompt format. We code whether each vendor produced a substantive critique on each of the three load-bearing claims in the passage. Note Anthropic produced 5 catches (4 substantive + 1 'Confirmed clean'); others produced 3. Anthropic notably caught the vendor-favoring-framing issue in catch 4 — somewhat counterintuitively given Anthropic IS the drafting vendor.",
+  "ground_truth_notes": "No ground truth — this is the heterogeneity-guard methodology in action. Convergence on the same load-bearing critiques across vendors is a STRENGTH signal for the underlying claims (all vendors agree these are the weak spots); divergence in what each vendor catches is the heterogeneity-guard value-add. ALL FOUR vendors ran cleanly with no refusals on this prompt.",
+  "claims": [
+    {
+      "id": "C7.1",
+      "claim_text": "Critiques the 'less likely cross-vendor blind spot' claim as asserted-without-evidence; flags shared training data / RLHF / benchmark pressure as alternative.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Catch 1: Push-back; 'comparative likelihood claim without empirical backing'"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Catch 1: Push-back; 'major vendors train on overlapping web-scale datasets'"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Catch 1: Partial; 'shared web-scale corpora, shared RLHF conventions, shared benchmark pressure'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Catch 1: Push-back; 'enormous overlapping training data... cross-distillation effects'"}
+      }
+    },
+    {
+      "id": "C7.2",
+      "claim_text": "Critiques the 'in the same way classical ensemble methods' analogy as overreaching.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Catch 2: Push-back; 'in the same way' implies decorrelation comparable to classical ensembles"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "(re-run dropped this catch; the original 3-catch response had a different Catch 2 about novelty claim, not ensemble analogy)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Catch 2: Push-back; 'compresses several contestable claims'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Catch 2: Push-back; 'classical ensembles derive variance-reduction guarantees from quantifiable decorrelation'"}
+      }
+    },
+    {
+      "id": "C7.3",
+      "claim_text": "Critiques 'cleanest available reflexive evidence' as overstating N=1 evidence weight.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Catch 3: Push-back; 'N=1 qualitative catch... overstates inferential weight'"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Catch 3: Rejected; 'overconfidence (N=1 problem) and potentially Anthropic-favorable framing'"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Catch 3: Push-back; 'too strong for an N=1 operational deployment'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Catch 3: Push-back; 'rhetorically strong for what is, by the paper's own admission, an N=1 anecdote'"}
+      }
+    },
+    {
+      "id": "C7.4",
+      "claim_text": "Catches the Anthropic-favorable / drafter-favoring framing in the passage (the brief explicitly asked reviewers to look for this).",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "(no explicit vendor-bias catch)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Catch 3 explicitly: 'potentially Anthropic-favorable framing... burnishes the drafting model's capabilities for self-correction'"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Catch 3 explicitly: 'If the self-catch came primarily from the Anthropic drafter, clarify... to avoid over-crediting the drafting vendor'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "DEDICATED catch 4 on vendor-favoring framing; 'renders the reviewing model (DeepSeek) implicit'"}
+      }
+    },
+    {
+      "id": "C7.5",
+      "claim_text": "Number of substantive catches emitted on the passage (more aggressive review = higher).",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "3-catches", "value_quoted": "3 catches"},
+        "gemini":    {"verdict": "disagree", "alternative": "2-catches", "value_quoted": "2 catches (re-run; original was 3 catches but covered different sub-claims)"},
+        "openai":    {"verdict": "disagree", "alternative": "3-catches", "value_quoted": "3 catches"},
+        "anthropic": {"verdict": "disagree", "alternative": "5-catches", "value_quoted": "5 catches (4 substantive + 1 'Confirmed clean')"}
+      }
+    }
+  ]
+}
