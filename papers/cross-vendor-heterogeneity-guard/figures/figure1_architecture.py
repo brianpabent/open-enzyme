@@ -98,11 +98,11 @@ def main():
     band1 = Rectangle((0.5, 8.4), 6.5, 1.65, facecolor=LAYER1_BG,
                       edgecolor=BAND_EDGE, linewidth=0.8, linestyle=":")
     ax.add_patch(band1)
-    ax.text(0.7, 9.88, "Layer 1 - Vibe-science (origination)",
+    ax.text(0.7, 9.88, "Layer 1 - Interactive hypothesis development",
             ha="left", va="center", fontsize=10, fontweight="bold",
             color="#7A5A2E")
     make_box(ax, 1.6, 8.55, 4.3, 1.0,
-             "Author + Anthropic Claude Opus\n(via Claude Code: curiosity, picks threads,\nnames sub-claims, comp-NNN before wet-lab)",
+             "Author + Anthropic Claude Opus\n(interactive synthesis; picks threads,\nnames sub-claims, queues computation before wet-lab)",
              fc=COLORS["anthropic"], text_color="black", fontsize=9)
 
     # Arrow Layer 1 -> wiki

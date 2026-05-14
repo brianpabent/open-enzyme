@@ -2,7 +2,7 @@
   "prompt_id": "01-uricase-mechanism-factual",
   "replicate": 2,
   "task_type": "factual",
-  "coding_notes": "Replicate 2 verdicts. Coded against the same atomic-claim taxonomy as r1. Striking within-vendor drift on C1.5 (PTS1): DeepSeek SRL r1 -> SKL r2; Gemini SSH r1 -> SKL r2; OpenAI SKL r1 -> AKL r2. Anthropic refused again (same prompt, same vendor-specific brittleness as r1).",
+  "coding_notes": "Replicate 2 verdicts. Coded against the same atomic-claim taxonomy as corrected r1. Striking within-vendor drift on C1.5 (PTS1): DeepSeek SRL r1 -> SKL r2; Gemini SKL r1 -> SKL r2; OpenAI SKL r1 -> AKL r2. Anthropic refused again (same prompt, same vendor-specific brittleness as r1). Note: the first r1 coding pass incorrectly recorded Gemini as SSH; corrected in 01-uricase-mechanism-factual.json with audit_correction preserved.",
   "ground_truth_notes": "PTS1 of A. flavus uricase is SKL (Legoux 1992 + UniProt). Km published 10-60 uM range.",
   "claims": [
     {

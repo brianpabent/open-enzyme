@@ -47,7 +47,7 @@ CLASSES = [
         "title": "Upstream-of-subagent\ncontamination",
         "exemplar": "§5.2 — comp-018\nrosmarinic-framing\nbias",
         "exemplar_date": "2026-05-08",
-        "surfacing": "Independent re-run\n(comp-020, scrubbed\nbrief)",
+        "surfacing": "Independent re-run\n(comp-020,\nscrubbed brief)",
         "surfacing_color": "manual",
         "what_it_is": "User framing in subagent\nbrief biases the subagent's\nheadline finding via\nnarrative cohesion.",
     },
@@ -55,7 +55,7 @@ CLASSES = [
         "title": "External-tool\nreliability failure",
         "exemplar": "§5.3 — Paperclip MCP\nmap-operator probe",
         "exemplar_date": "2026-05-05",
-        "surfacing": "Ground-truth probe\n(12-paper uricase\nset)",
+        "surfacing": "Ground-truth probe\n(12-paper\nuricase set)",
         "surfacing_color": "manual",
         "what_it_is": "Tool returns plausible-\nlooking but fabricated\nquantitative values; caught\nonly by pre-integration probe.",
     },
@@ -71,7 +71,7 @@ CLASSES = [
         "title": "Corpus-level\ncontamination",
         "exemplar": "§5.6 — Tongkat ali\ncitation laundering /\neurycomanone reversal",
         "exemplar_date": "2026-05-07",
-        "surfacing": "Verification-of-\nverification chain\n(primary-source)",
+        "surfacing": "V-of-V chain\n(primary source)",
         "surfacing_color": "vov",
         "what_it_is": "Contamination distributes\nidentically across vendors\nbecause it is in every\nvendor's training corpus.",
     },
@@ -86,7 +86,7 @@ def make_cell(ax, x, y, w, h, cls):
     #   surfacing band (bottom 28%)
     top = y + h
     band_h_title = h * 0.13
-    band_h_surf  = h * 0.28
+    band_h_surf  = h * 0.32
 
     # Outer box
     box = FancyBboxPatch(
@@ -132,37 +132,37 @@ def make_cell(ax, x, y, w, h, cls):
     )
     ax.add_patch(band)
     text_color = "white" if cls["surfacing_color"] != "anthropic" else "black"
-    ax.text(x + w/2, y + band_h_surf * 0.72, "Surfaced by",
+    ax.text(x + w/2, y + band_h_surf * 0.76, "Surfaced by",
             ha="center", va="center", fontsize=7.5, color=text_color,
             style="italic")
-    ax.text(x + w/2, y + band_h_surf * 0.32, cls["surfacing"],
-            ha="center", va="center", fontsize=8.5, color=text_color,
+    ax.text(x + w/2, y + band_h_surf * 0.34, cls["surfacing"],
+            ha="center", va="center", fontsize=7.3, color=text_color,
             fontweight="bold", linespacing=1.2)
 
 
 def main():
-    fig, ax = plt.subplots(figsize=(16, 6.2))
-    ax.set_xlim(0, 12.5)
-    ax.set_ylim(0, 5.0)
+    fig, ax = plt.subplots(figsize=(18, 7.0))
+    ax.set_xlim(0, 14.0)
+    ax.set_ylim(0, 5.4)
     ax.axis("off")
 
     # 1x5 layout, same per-cell dimensions; figsize widened to fit.
-    cell_w = 2.30
-    cell_h = 3.9
+    cell_w = 2.58
+    cell_h = 4.15
     gap = 0.18
     y = 0.4
     n = len(CLASSES)
-    start_x = (12.5 - n*cell_w - (n-1)*gap) / 2
+    start_x = (14.0 - n*cell_w - (n-1)*gap) / 2
 
     for i, cls in enumerate(CLASSES):
         x = start_x + i * (cell_w + gap)
         make_cell(ax, x, y, cell_w, cell_h, cls)
 
     # Title + caption (centered above the cell row)
-    ax.text(6.25, 4.80,
+    ax.text(7.0, 5.18,
             "Figure 2. Failure-class taxonomy for the cross-vendor heterogeneity guard",
             ha="center", fontsize=11.5, fontweight="bold")
-    ax.text(6.25, 4.52,
+    ax.text(7.0, 4.90,
             "Each cell is qualitative (N=1 in the 13-day operational window); the figure is a taxonomy of failure classes, not a frequency distribution.",
             ha="center", fontsize=8.5, style="italic", color="#555555")
 
