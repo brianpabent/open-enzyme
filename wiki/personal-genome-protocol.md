@@ -88,6 +88,21 @@ Once you have your VCF, the highest-signal queries given Open Enzyme's gout focu
 - **CFTR, PRSS1, SPINK1** — only if EPI is in personal/family history. Otherwise skip.
 - **HNF1A, HNF1B** — pancreatic function modifiers; relevant only if EPI co-target applies.
 
+## Genotype-stratified T-axis adjuvant selection (speculative)
+
+The [T-axis adjuvant urate mapping](./t-axis-adjuvant-urate-mapping-computational.md) (comp-015 v2) identifies cordycepin (*Cordyceps militaris*) and eurycomanone (*Eurycoma longifolia* / tongkat ali) as the two gout-favorable T-axis adjuvants, acting via different mechanisms. Cordycepin is URAT1-dominant. Eurycomanone is multi-target: URAT1 down, GLUT9 down, ABCG2 up, plus PRPS (purine-synthesis) suppression. The mechanism asymmetry predicts that genotype should inform adjuvant choice for the gout-comorbid hypogonadal subgroup.
+
+| Genotype context | Dominant bottleneck | Adjuvant prediction (speculative) |
+|---|---|---|
+| ABCG2 Q141K homozygote, androgen-elevated (TRT or clomid) | Compromised ABCG2 gut/renal secretion plus URAT1 reabsorption rising with T | Eurycomanone's ABCG2-up arm directly addresses Q141K; URAT1-down and PRPS suppression add. Predicted preference over cordycepin. |
+| ABCG2 wild-type, URAT1 gain-of-function | Reabsorption-side dominance, secretion intact | Cordycepin's URAT1-only mechanism is sufficient; eurycomanone's ABCG2-up offers no marginal benefit. |
+| ABCG2 Q141K heterozygote | Partial Q141K, partial ABCG2 function | Either compound plausible; eurycomanone retains a mechanism-coverage advantage. |
+| SLC2A9 reduced-function variants | GLUT9 already attenuated | Eurycomanone's GLUT9-down arm adds little; cordycepin matches on the URAT1 axis alone. |
+
+**This is hypothesis-generation, not a clinical selection rule.** The eurycomanone evidence (PMID 31920654 transporter modulation, PMID 34785103 PRPS suppression, 2021 Physta n=105 RCT with SUA reduction 7–11%) is animal-model + in-vitro + small-RCT-tier. None of those studies stratified by ABCG2 Q141K or URAT1 variants. The framing is mechanistic: a Q141K-positive androgen-elevated user has a reason to expect more benefit from eurycomanone than from cordycepin, and the [planned head-to-head wet-lab gate](./t-axis-adjuvant-urate-mapping-computational.md#impact-on-experimental-priorities-v2) (cordyceps vs. tongkat ali vs. combination vs. placebo, n=12+) could be stratified by genotype to test the prediction directly.
+
+**Future comp candidate:** stratify the comp-015 v2 candidate panel (cordycepin, eurycomanone, icariin, echinacoside) by ABCG2 Q141K, SLC22A12 (URAT1), and SLC2A9 (GLUT9) genotype, scoring predicted benefit per genotype × compound cell. In silico only; sits on top of the existing 5-target matrix. Outcome: a genotype-aware selection table feeding [`gout-action-guide.md`](./gout-action-guide.md)'s androgen-elevated path.
+
 ## Interpretation discipline
 
 - **Evidence-level tagging.** Every finding gets the standard wiki tagging (Clinical Trial / Animal Model / In Vitro / Mechanistic Extrapolation). A pharmacogenomic finding from a single GWAS in one population is not the same as an FDA-actionable variant.

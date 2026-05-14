@@ -207,6 +207,7 @@ For a gout-comorbid hypogonadal supplement-curious individual: **both cordyceps 
 - [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) — comp-014, methodological precedent for breadth aggregation + chokepoint intersection.
 - [`computational-experiments.md`](./computational-experiments.md) — comp-015 entry in the tracking index.
 - [`validation-experiments.md`](./validation-experiments.md) — wet-lab experiment registry; the cordyceps-vs-tongkat-ali confirmation experiment should be added there as a follow-up.
+- [`personal-genome-protocol.md`](./personal-genome-protocol.md) §"Genotype-stratified T-axis adjuvant selection" — ABCG2 Q141K, URAT1, and SLC2A9 variants as a basis for choosing between cordycepin (URAT1-dominant) and eurycomanone (multi-target transporter + PRPS) per patient.
 - [`experiments/comp-015-t-axis-adjuvant-urate-mapping/`](../experiments/comp-015-t-axis-adjuvant-urate-mapping/) — the reproducible artifact (analyze.py, inputs/, outputs/, provenance.md).
 
 ## Status
