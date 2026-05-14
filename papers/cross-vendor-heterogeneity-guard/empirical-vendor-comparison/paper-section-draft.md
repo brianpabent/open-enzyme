@@ -1,5 +1,7 @@
 # §6.X Empirical inter-vendor agreement, pilot evidence
 
+> **SUPERSEDED.** This file is the subagent's intermediate working draft of §6. The canonical, post-audit version lives in `../draft.md` §6, which incorporates: (1) the within-vendor replicate study integrated into the main interpretation, (2) the 2026-05-14 cross-vendor audit-trail catch of the PTS1 / Gemini-r1 / claim-coding mismatch (preserved as the §6 meta-catch box), and (3) corrected agreement numbers (cross-vendor 82.3%, within-vendor 90.8%, real-heterogeneity gap 8.5 pp; Gemini answered SKL correctly on r1, not SSH). Wherever this file's prose differs from `../draft.md` §6, the latter is canonical. Retained here for provenance.
+
 The case studies in §5 are qualitative and curated, six catches selected from approximately three weeks of operational deployment. A reviewer can reasonably ask whether the underlying premise of the cross-vendor heterogeneity argument, that different-vendor frontier models actually produce meaningfully different outputs on the same scientific-synthesis prompts, is itself well-supported. This subsection presents pilot empirical evidence for that premise.
 
 ## §6.X.1 Method

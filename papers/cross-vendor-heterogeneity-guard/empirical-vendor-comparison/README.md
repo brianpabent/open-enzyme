@@ -1,5 +1,7 @@
 # Empirical vendor-comparison pilot
 
+> **Canonical numbers and narrative live in `../draft.md` §6.** This README documents the artifact directory structure and reproducible pipeline. Where this README's prose still cites pre-correction numbers (cross-vendor 81.8%, within-vendor 90.6%, the Gemini-SSH narrative), the canonical post-audit numbers in `../draft.md` supersede them (cross-vendor 82.3%, within-vendor 90.8%; Gemini answered SKL correctly on r1; the audit-trail claim-coding mismatch was caught by an independent cross-vendor manuscript review on 2026-05-14 and is preserved as the §6 meta-catch in the paper). Computed outputs (`outputs/agreement-matrix.json`, `outputs/within-vendor-matrix.json`, `outputs/summary.md`, `outputs/within-vendor-summary.md`) and the claim files (`outputs/claims/*.json`) are post-correction. `paper-section-draft.md` in this directory is also superseded by `../draft.md` §6.
+
 Pilot study designed to give the cross-vendor heterogeneity paper (this directory's parent) actual data on how often the four vendor models disagree on the same prompt, rather than only the case-study + architectural argument the rest of the manuscript carries.
 
 ## What the study tested
