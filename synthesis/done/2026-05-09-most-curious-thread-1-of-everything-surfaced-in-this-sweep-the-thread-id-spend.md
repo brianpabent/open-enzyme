@@ -34,3 +34,13 @@ Sources cited:
 - wiki/gut-lumen-sink.md
 
 > **Pass 3 review — Partial.** `[OVERLAP: EXTENSION]` The cordycepin thread is genuinely interesting and the cheapest discriminating experiment is correctly identified, but the synthesis overclaims novelty and uniqueness: `chaperone-orthogonal-stacking.md` already contains the cns1+cns2 row with zero ER/PDI load, and `koji-endgame-strain.md` already has carnosine as a cytosolic optional third cassette that extends URAT1/GLUT9 coverage without PDI saturation. The strongest version of this item is not “cordycepin is the only such compound,” but “cordycepin is an additional cytosolic small-molecule arm with demonstrated *A. oryzae* production precedent and a distinct URAT1-modulating mushroom-track bridge, pending metabolic-burden modeling.”
+
+---
+
+## ✓ Actioned 2026-05-14
+
+Queued as **comp-023** in [`wiki/computational-experiments.md`](../../wiki/computational-experiments.md) §Planned Analyses: metabolic / proteome burden of cns1+cns2 cordycepin biosynthesis on top of the dual uricase + lactoferrin cassette. Flux-balance or pcSecKoji-style model evaluating ATP / SAM / precursor / translation-pool burden, comparators against wild-type + dual-cassette + existing optional cytosolic third cassettes (carnS, panD).
+
+Closes the proteome-burden gap that `chaperone-orthogonal-stacking.md` line 238 explicitly flags as out-of-scope for the chaperone framework. Decision thresholds wired into the brief: <10% growth penalty AND >80% native yield = green-light cordycepin arm in §1.9 extended design; >10% growth penalty OR >20% native yield reduction = red-flag, route to LBP chassis or separate strain.
+
+Brief queued; run deferred per same discipline as comp-022 and comp-024. Closes alongside the other items in this cluster ([2026-05-09-experiment-2](./2026-05-09-experiment-2-in-silico-cns1-cns2-compatibility-assessment-with-uricase.md), [2026-05-09-open-question-2](./2026-05-09-open-question-2-could-cordycepin-be-co-expressed-with-uricase-lactoferrin.md), [2026-05-09-most-curious-thread-1](./2026-05-09-most-curious-thread-1-of-everything-surfaced-in-this-sweep-the-thread-id-spend.md), and the already-closed [2026-05-09-connection-5](./2026-05-09-connection-5-cordycepin-koji-engineering-cns1-cns2-is-implicitly.md)).
