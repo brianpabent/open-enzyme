@@ -1,0 +1,39 @@
+% PDF rendering tweaks for the cross-vendor heterogeneity guard manuscript.
+% Two real problems being fixed:
+%   1. Long monospace paths in inline code overflow the right margin.
+%   2. Wide tables (Appendix A, Appendix C, the §6 pilot tables) overlap
+%      cells because pandoc-generated longtable column widths don't fit.
+% This header addresses both.
+
+% --- Inline-code / URL overflow tweaks ---
+
+\emergencystretch=3em
+\hfuzz=2pt
+\hbadness=2000
+\vbadness=2000
+
+\usepackage{xurl}
+\Urlmuskip=0mu plus 1mu
+
+% --- Wide-table handling ---
+
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{ragged2e}
+
+% Tighten inter-column padding everywhere; gives wide tables more cell room.
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+
+% Apply \small font to every table to gain ~10-15% more horizontal room
+% per cell. Cosmetic but materially reduces overlap in wide cells.
+\AtBeginEnvironment{longtable}{\small}
+\AtBeginEnvironment{tabular}{\small}
+\AtBeginEnvironment{tabularx}{\small}
+
+% Page-break flexibility around section headers and tables.
+\widowpenalty=1000
+\clubpenalty=1000
+\setlength{\LTpre}{0.5em}
+\setlength{\LTpost}{0.5em}
