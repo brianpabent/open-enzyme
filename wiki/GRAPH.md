@@ -228,6 +228,8 @@ graph TB
         KE10["NSlD-dP10 protease-deletion host — default for Lf cassette (Huynh 2020)"]
         KE11["NSAR1 5-marker platform — 5 integration slots (Oikawa 2020)"]
         KE12["comp-010 cassette compatibility — LOW overall risk; KEX2 pos 579 moderate; uricase SKL PTS1 verify"]
+        KE13["comp-022 uricase cassette ranking — 43,200 candidates; top cluster confirms PamyB+amyB SP+direct-secretion"]
+        KE14["comp-023 cordycepin cassette burden — GREEN FBA verdict; breakpoint ~1,000× Jeennor titer"]
     end
 
     subgraph Chaperones["ER CHAPERONE SUBSYSTEMS (NEW)"]
@@ -263,6 +265,8 @@ graph TB
         EQ3["Protease azocasein assay — shio-koji marinade pre-digestion readout"]
         EQ4["Amylase DNS reducing-sugar assay — batch QC"]
         EQ5["Tier 3 first-run calibration — anchors home assays to clinical units"]
+        EQ6["Quantification Ladder — canonical 4-tier framework definition"]
+        EQ7["Smartphone photometry — Tier 2 bridge between kitchen and bench"]
     end
 
     %% Core relationships
@@ -489,6 +493,15 @@ graph TB
     KE12 -->|"confirms LOW cassette-design risk"| KE1
     KE12 -->|"KEX2 pos 579 moderate risk — monitor SDS-PAGE"| KE3
     KE12 -->|"uricase SKL PTS1 — verify secretion in 1.9"| KE2
+    %% comp-022 uricase cassette ranking (2026-05-14): ClockBase-style exhaustive enumeration
+    %% (source: uricase-cassette-ranking-computational.md)
+    KE13 -->|"confirms PamyB + amyB SP + direct-secretion architecture"| KE2
+    KE13 -->|"three gene-synthesis-time refinements: 5p-softened codon, PTS1-blocking tag, N191Q ablation"| KE1
+    %% comp-023 cordycepin cassette burden (2026-05-14): FBA on iWV1314
+    %% (source: cordycepin-cassette-burden-computational.md)
+    KE14 -->|"GREEN FBA burden verdict at Jeennor 2023 titer"| KE1
+    KE14 -->|"cytosolic; PDI load 0; bypasses secretion entirely"| CH5
+    KE14 -->|"cns1+cns2 cordycepin arm metabolic-burden-feasible"| MT2
 
     %% Chaperone-orthogonal stacking framework (2026-05-05)
     %% (source: chaperone-orthogonal-stacking.md)
@@ -589,6 +602,10 @@ graph TB
     EQ3 -->|"azocasein protease assay for marinade pre-digestion"| F7
     EQ4 -->|"DNS amylase assay for batch QC"| F4
     EQ5 -->|"calibration bridge: Tier 1 home → Tier 3 bench → clinical U/g"| EQ1
+    %% Quantification ladder (source: quantification-ladder.md)
+    EQ6 -->|"canonical 4-tier framework instantiated by"| EQ1
+    EQ6 -->|"canonical 4-tier framework instantiated by"| MT9
+    EQ7 -->|"smartphone photometry bridges kitchen to bench for"| EQ1
 
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2

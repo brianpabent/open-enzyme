@@ -163,6 +163,8 @@ nav:
     - Supplement ABCG2 Antagonism (comp-004): supplement-abcg2-antagonism-computational.md
     - Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010): cassette-compatibility-computational.md
     - C. utilis Uricase Cassette Compatibility (comp-011): c-utilis-uricase-cassette-compatibility-computational.md
+    - Uricase Cassette Ranking, ClockBase-Style (comp-022): uricase-cassette-ranking-computational.md
+    - Cordycepin Cassette Metabolic Burden (comp-023): cordycepin-cassette-burden-computational.md
     - TCM Gout Compound Triage (comp-013): tcm-gout-compound-triage-computational.md
     - Medicinal Mushroom Compound Mapping (comp-014): medicinal-mushroom-compound-mapping-computational.md
     - T-axis Adjuvant Urate Mapping (comp-015): t-axis-adjuvant-urate-mapping-computational.md
@@ -170,6 +172,7 @@ nav:
     - Intestinal ABCG2 Sex-Dimorphism Mining (comp-017): intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md
     - Autonomous AI Screening Methodology: autonomous-screening-methodology.md
     - Manual Literature Mining Protocol: manual-literature-mining.md
+    - Quantification Ladder (kitchen → smartphone → bench → outsourced): quantification-ladder.md
     - Open Questions Index: open-questions.md
     - Concept Graph: GRAPH.md
     - Citations: references.md
