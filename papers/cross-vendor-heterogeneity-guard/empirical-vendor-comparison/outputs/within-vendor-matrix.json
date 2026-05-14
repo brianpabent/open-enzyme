@@ -1,0 +1,3760 @@
+{
+  "headline_within_vendor_agreement_rate": 0.906,
+  "headline_cross_vendor_agreement_rate": 0.819,
+  "by_vendor_within": {
+    "deepseek": 0.907,
+    "gemini": 0.892,
+    "openai": 0.883,
+    "anthropic": 0.94
+  },
+  "by_vendor_cross": {
+    "deepseek": 0.846,
+    "gemini": 0.799,
+    "openai": 0.81,
+    "anthropic": 0.819
+  },
+  "by_task_type_within": {
+    "factual": 0.858,
+    "factual-quantitative": 0.952,
+    "mechanism-inference": 0.861,
+    "hypothesis-generation": 0.875,
+    "synthesis": 0.963,
+    "adversarial-review": 0.876,
+    "hypothesis-generation + mechanism": 1.0
+  },
+  "by_task_type_cross": {
+    "factual": 0.633,
+    "factual-quantitative": 0.976,
+    "mechanism-inference": 0.807,
+    "hypothesis-generation": 0.675,
+    "synthesis": 0.875,
+    "adversarial-review": 0.786,
+    "hypothesis-generation + mechanism": 0.897
+  },
+  "n_cells_with_data": 32,
+  "per_cell": [
+    {
+      "prompt_id": "01-uricase-mechanism-factual",
+      "vendor": "deepseek",
+      "task_type": "factual",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 4,
+          "n_disagree": 2,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6666666666666666,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree"
+            ],
+            [
+              "C1.2",
+              "agree"
+            ],
+            [
+              "C1.3",
+              "agree"
+            ],
+            [
+              "C1.4",
+              "agree"
+            ],
+            [
+              "C1.5",
+              "disagree"
+            ],
+            [
+              "C1.6",
+              "disagree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree"
+            ],
+            [
+              "C1.2",
+              "agree"
+            ],
+            [
+              "C1.3",
+              "agree"
+            ],
+            [
+              "C1.4",
+              "agree"
+            ],
+            [
+              "C1.5",
+              "skip-one-ignored"
+            ],
+            [
+              "C1.6",
+              "skip-one-ignored"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree"
+            ],
+            [
+              "C1.2",
+              "agree"
+            ],
+            [
+              "C1.3",
+              "agree"
+            ],
+            [
+              "C1.4",
+              "agree"
+            ],
+            [
+              "C1.5",
+              "skip-one-ignored"
+            ],
+            [
+              "C1.6",
+              "skip-one-ignored"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.8888888888888888,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "01-uricase-mechanism-factual",
+      "vendor": "gemini",
+      "task_type": "factual",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 4,
+          "n_disagree": 2,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6666666666666666,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree"
+            ],
+            [
+              "C1.2",
+              "agree"
+            ],
+            [
+              "C1.3",
+              "agree"
+            ],
+            [
+              "C1.4",
+              "agree"
+            ],
+            [
+              "C1.5",
+              "disagree"
+            ],
+            [
+              "C1.6",
+              "disagree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 2,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6666666666666666,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree"
+            ],
+            [
+              "C1.2",
+              "agree"
+            ],
+            [
+              "C1.3",
+              "agree"
+            ],
+            [
+              "C1.4",
+              "agree"
+            ],
+            [
+              "C1.5",
+              "disagree"
+            ],
+            [
+              "C1.6",
+              "disagree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 1,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8333333333333334,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree"
+            ],
+            [
+              "C1.2",
+              "agree"
+            ],
+            [
+              "C1.3",
+              "agree"
+            ],
+            [
+              "C1.4",
+              "agree"
+            ],
+            [
+              "C1.5",
+              "disagree"
+            ],
+            [
+              "C1.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.7222222222222222,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "01-uricase-mechanism-factual",
+      "vendor": "openai",
+      "task_type": "factual",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 4,
+          "n_disagree": 1,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree"
+            ],
+            [
+              "C1.2",
+              "agree"
+            ],
+            [
+              "C1.3",
+              "agree"
+            ],
+            [
+              "C1.4",
+              "agree"
+            ],
+            [
+              "C1.5",
+              "disagree"
+            ],
+            [
+              "C1.6",
+              "skip-one-ignored"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree"
+            ],
+            [
+              "C1.2",
+              "agree"
+            ],
+            [
+              "C1.3",
+              "agree"
+            ],
+            [
+              "C1.4",
+              "agree"
+            ],
+            [
+              "C1.5",
+              "agree"
+            ],
+            [
+              "C1.6",
+              "skip-one-ignored"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 2,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6666666666666666,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree"
+            ],
+            [
+              "C1.2",
+              "agree"
+            ],
+            [
+              "C1.3",
+              "agree"
+            ],
+            [
+              "C1.4",
+              "agree"
+            ],
+            [
+              "C1.5",
+              "disagree"
+            ],
+            [
+              "C1.6",
+              "disagree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.8222222222222223,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "01-uricase-mechanism-factual",
+      "vendor": "anthropic",
+      "task_type": "factual",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 6,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree-both-refused"
+            ],
+            [
+              "C1.2",
+              "agree-both-refused"
+            ],
+            [
+              "C1.3",
+              "agree-both-refused"
+            ],
+            [
+              "C1.4",
+              "agree-both-refused"
+            ],
+            [
+              "C1.5",
+              "agree-both-refused"
+            ],
+            [
+              "C1.6",
+              "agree-both-refused"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 6,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree-both-refused"
+            ],
+            [
+              "C1.2",
+              "agree-both-refused"
+            ],
+            [
+              "C1.3",
+              "agree-both-refused"
+            ],
+            [
+              "C1.4",
+              "agree-both-refused"
+            ],
+            [
+              "C1.5",
+              "agree-both-refused"
+            ],
+            [
+              "C1.6",
+              "agree-both-refused"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 6,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C1.1",
+              "agree-both-refused"
+            ],
+            [
+              "C1.2",
+              "agree-both-refused"
+            ],
+            [
+              "C1.3",
+              "agree-both-refused"
+            ],
+            [
+              "C1.4",
+              "agree-both-refused"
+            ],
+            [
+              "C1.5",
+              "agree-both-refused"
+            ],
+            [
+              "C1.6",
+              "agree-both-refused"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "02-abcg2-q141k-factual-quant",
+      "vendor": "deepseek",
+      "task_type": "factual-quantitative",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "skip-one-ignored"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 1,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8571428571428571,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "disagree"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "skip-one-ignored"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.9523809523809524,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "02-abcg2-q141k-factual-quant",
+      "vendor": "gemini",
+      "task_type": "factual-quantitative",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "skip-both-ignored"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "skip-both-ignored"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "skip-both-ignored"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "02-abcg2-q141k-factual-quant",
+      "vendor": "openai",
+      "task_type": "factual-quantitative",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "skip-one-ignored"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "skip-both-ignored"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "skip-one-ignored"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "02-abcg2-q141k-factual-quant",
+      "vendor": "anthropic",
+      "task_type": "factual-quantitative",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 6,
+          "n_disagree": 1,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8571428571428571,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "disagree"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 1,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8571428571428571,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "disagree"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 1,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8571428571428571,
+          "per_claim": [
+            [
+              "C2.1",
+              "agree"
+            ],
+            [
+              "C2.2",
+              "agree"
+            ],
+            [
+              "C2.3",
+              "agree"
+            ],
+            [
+              "C2.4",
+              "agree"
+            ],
+            [
+              "C2.5",
+              "agree"
+            ],
+            [
+              "C2.6",
+              "disagree"
+            ],
+            [
+              "C2.7",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.8571428571428571,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "03-nlrp3-mechanism-inference",
+      "vendor": "deepseek",
+      "task_type": "mechanism-inference",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 2,
+          "n_disagree": 1,
+          "n_skip": 3,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6666666666666666,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C3.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C3.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.5",
+              "agree"
+            ],
+            [
+              "C3.6",
+              "disagree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C3.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C3.5",
+              "agree"
+            ],
+            [
+              "C3.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 2,
+          "n_disagree": 1,
+          "n_skip": 3,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6666666666666666,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C3.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C3.5",
+              "agree"
+            ],
+            [
+              "C3.6",
+              "disagree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.7777777777777777,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "03-nlrp3-mechanism-inference",
+      "vendor": "gemini",
+      "task_type": "mechanism-inference",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 3,
+          "n_disagree": 2,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "agree"
+            ],
+            [
+              "C3.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.5",
+              "disagree"
+            ],
+            [
+              "C3.6",
+              "disagree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 1,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "agree"
+            ],
+            [
+              "C3.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.5",
+              "disagree"
+            ],
+            [
+              "C3.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 2,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "agree"
+            ],
+            [
+              "C3.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.5",
+              "disagree"
+            ],
+            [
+              "C3.6",
+              "disagree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.6666666666666666,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "03-nlrp3-mechanism-inference",
+      "vendor": "openai",
+      "task_type": "mechanism-inference",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 2,
+          "n_disagree": 1,
+          "n_skip": 3,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6666666666666666,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C3.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.5",
+              "disagree"
+            ],
+            [
+              "C3.6",
+              "skip-both-ignored"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 2,
+          "n_disagree": 1,
+          "n_skip": 3,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6666666666666666,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.5",
+              "disagree"
+            ],
+            [
+              "C3.6",
+              "skip-one-ignored"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 0,
+          "n_skip": 3,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C3.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.5",
+              "agree"
+            ],
+            [
+              "C3.6",
+              "skip-one-ignored"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.7777777777777777,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "03-nlrp3-mechanism-inference",
+      "vendor": "anthropic",
+      "task_type": "mechanism-inference",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.4",
+              "agree"
+            ],
+            [
+              "C3.5",
+              "agree"
+            ],
+            [
+              "C3.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.4",
+              "agree"
+            ],
+            [
+              "C3.5",
+              "agree"
+            ],
+            [
+              "C3.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C3.1",
+              "agree"
+            ],
+            [
+              "C3.2",
+              "agree"
+            ],
+            [
+              "C3.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C3.4",
+              "agree"
+            ],
+            [
+              "C3.5",
+              "agree"
+            ],
+            [
+              "C3.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "04-koji-uricase-hypothesis-gen",
+      "vendor": "deepseek",
+      "task_type": "hypothesis-generation",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C4.3",
+              "agree"
+            ],
+            [
+              "C4.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C4.3",
+              "agree"
+            ],
+            [
+              "C4.4",
+              "agree"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C4.3",
+              "agree"
+            ],
+            [
+              "C4.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "04-koji-uricase-hypothesis-gen",
+      "vendor": "gemini",
+      "task_type": "hypothesis-generation",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.3",
+              "disagree"
+            ],
+            [
+              "C4.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.3",
+              "disagree"
+            ],
+            [
+              "C4.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C4.3",
+              "disagree"
+            ],
+            [
+              "C4.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.75,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "04-koji-uricase-hypothesis-gen",
+      "vendor": "openai",
+      "task_type": "hypothesis-generation",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.3",
+              "disagree"
+            ],
+            [
+              "C4.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "disagree"
+            ],
+            [
+              "C4.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.4",
+              "disagree"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.75,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "04-koji-uricase-hypothesis-gen",
+      "vendor": "anthropic",
+      "task_type": "hypothesis-generation",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "agree"
+            ],
+            [
+              "C4.3",
+              "agree"
+            ],
+            [
+              "C4.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "agree"
+            ],
+            [
+              "C4.3",
+              "agree"
+            ],
+            [
+              "C4.4",
+              "agree"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C4.1",
+              "agree"
+            ],
+            [
+              "C4.2",
+              "agree"
+            ],
+            [
+              "C4.3",
+              "agree"
+            ],
+            [
+              "C4.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C4.5",
+              "agree"
+            ],
+            [
+              "C4.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "05-rasburicase-ada-mechanism",
+      "vendor": "deepseek",
+      "task_type": "mechanism-inference",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C5.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C5.4",
+              "agree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C5.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C5.4",
+              "disagree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C5.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C5.4",
+              "disagree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.8333333333333334,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "05-rasburicase-ada-mechanism",
+      "vendor": "gemini",
+      "task_type": "mechanism-inference",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "agree"
+            ],
+            [
+              "C5.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C5.4",
+              "agree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "agree"
+            ],
+            [
+              "C5.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C5.4",
+              "agree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "agree"
+            ],
+            [
+              "C5.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C5.4",
+              "agree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "05-rasburicase-ada-mechanism",
+      "vendor": "openai",
+      "task_type": "mechanism-inference",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C5.3",
+              "agree"
+            ],
+            [
+              "C5.4",
+              "agree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C5.3",
+              "agree"
+            ],
+            [
+              "C5.4",
+              "agree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C5.3",
+              "agree"
+            ],
+            [
+              "C5.4",
+              "agree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "05-rasburicase-ada-mechanism",
+      "vendor": "anthropic",
+      "task_type": "mechanism-inference",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C5.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C5.4",
+              "disagree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C5.3",
+              "skip-one-ignored"
+            ],
+            [
+              "C5.4",
+              "disagree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C5.1",
+              "agree"
+            ],
+            [
+              "C5.2",
+              "agree"
+            ],
+            [
+              "C5.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C5.4",
+              "agree"
+            ],
+            [
+              "C5.5",
+              "agree"
+            ],
+            [
+              "C5.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.8333333333333334,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "06-cross-document-synthesis",
+      "vendor": "deepseek",
+      "task_type": "synthesis",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C6.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C6.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "06-cross-document-synthesis",
+      "vendor": "gemini",
+      "task_type": "synthesis",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "agree"
+            ],
+            [
+              "C6.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "agree"
+            ],
+            [
+              "C6.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "agree"
+            ],
+            [
+              "C6.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "06-cross-document-synthesis",
+      "vendor": "openai",
+      "task_type": "synthesis",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "agree"
+            ],
+            [
+              "C6.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C6.1",
+              "disagree"
+            ],
+            [
+              "C6.2",
+              "agree"
+            ],
+            [
+              "C6.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 1,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8,
+          "per_claim": [
+            [
+              "C6.1",
+              "disagree"
+            ],
+            [
+              "C6.2",
+              "agree"
+            ],
+            [
+              "C6.3",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.85,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "06-cross-document-synthesis",
+      "vendor": "anthropic",
+      "task_type": "synthesis",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C6.3",
+              "agree"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C6.3",
+              "agree"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C6.1",
+              "agree"
+            ],
+            [
+              "C6.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C6.3",
+              "agree"
+            ],
+            [
+              "C6.4",
+              "agree"
+            ],
+            [
+              "C6.5",
+              "agree"
+            ],
+            [
+              "C6.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "07-self-demonstrating-review",
+      "vendor": "deepseek",
+      "task_type": "adversarial-review",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 2,
+          "n_disagree": 1,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.6666666666666666,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C7.5",
+              "disagree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "agree"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C7.5",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "skip-one-ignored"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "agree"
+            ],
+            [
+              "C7.5",
+              "disagree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.8055555555555555,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "07-self-demonstrating-review",
+      "vendor": "gemini",
+      "task_type": "adversarial-review",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 3,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C7.5",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C7.5",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "skip-both-ignored"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C7.5",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "07-self-demonstrating-review",
+      "vendor": "openai",
+      "task_type": "adversarial-review",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 4,
+          "n_disagree": 1,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "agree"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "agree"
+            ],
+            [
+              "C7.5",
+              "disagree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 1,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.8,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "agree"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "agree"
+            ],
+            [
+              "C7.5",
+              "disagree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "agree"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "agree"
+            ],
+            [
+              "C7.5",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.8666666666666667,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "07-self-demonstrating-review",
+      "vendor": "anthropic",
+      "task_type": "adversarial-review",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "agree"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "agree"
+            ],
+            [
+              "C7.5",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "agree"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C7.5",
+              "disagree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 3,
+          "n_disagree": 1,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 0.75,
+          "per_claim": [
+            [
+              "C7.1",
+              "agree"
+            ],
+            [
+              "C7.2",
+              "agree"
+            ],
+            [
+              "C7.3",
+              "agree"
+            ],
+            [
+              "C7.4",
+              "skip-one-ignored"
+            ],
+            [
+              "C7.5",
+              "disagree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 0.8333333333333334,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "08-cordycepin-koji-feasibility",
+      "vendor": "deepseek",
+      "task_type": "hypothesis-generation + mechanism",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "agree"
+            ],
+            [
+              "C8.5",
+              "skip-one-ignored"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "agree"
+            ],
+            [
+              "C8.5",
+              "agree"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "agree"
+            ],
+            [
+              "C8.5",
+              "skip-one-ignored"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "08-cordycepin-koji-feasibility",
+      "vendor": "gemini",
+      "task_type": "hypothesis-generation + mechanism",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "agree"
+            ],
+            [
+              "C8.5",
+              "skip-one-ignored"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "agree"
+            ],
+            [
+              "C8.5",
+              "skip-both-ignored"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 5,
+          "n_disagree": 0,
+          "n_skip": 1,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "agree"
+            ],
+            [
+              "C8.5",
+              "skip-one-ignored"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "08-cordycepin-koji-feasibility",
+      "vendor": "openai",
+      "task_type": "hypothesis-generation + mechanism",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C8.5",
+              "skip-both-ignored"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C8.5",
+              "skip-both-ignored"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 4,
+          "n_disagree": 0,
+          "n_skip": 2,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "skip-both-ignored"
+            ],
+            [
+              "C8.5",
+              "skip-both-ignored"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    },
+    {
+      "prompt_id": "08-cordycepin-koji-feasibility",
+      "vendor": "anthropic",
+      "task_type": "hypothesis-generation + mechanism",
+      "available_replicates": [
+        1,
+        2,
+        3
+      ],
+      "pair_stats": {
+        "r1_vs_r2": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "agree"
+            ],
+            [
+              "C8.5",
+              "agree"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        },
+        "r1_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "agree"
+            ],
+            [
+              "C8.5",
+              "agree"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        },
+        "r2_vs_r3": {
+          "n_agree": 6,
+          "n_disagree": 0,
+          "n_skip": 0,
+          "n_refusal_asymm": 0,
+          "n_both_refused": 0,
+          "agreement_rate": 1.0,
+          "per_claim": [
+            [
+              "C8.1",
+              "agree"
+            ],
+            [
+              "C8.2",
+              "agree"
+            ],
+            [
+              "C8.3",
+              "agree"
+            ],
+            [
+              "C8.4",
+              "agree"
+            ],
+            [
+              "C8.5",
+              "agree"
+            ],
+            [
+              "C8.6",
+              "agree"
+            ]
+          ]
+        }
+      },
+      "cell_mean_agreement_rate": 1.0,
+      "n_pairs_with_data": 3
+    }
+  ],
+  "vendors": [
+    "deepseek",
+    "gemini",
+    "openai",
+    "anthropic"
+  ],
+  "replicates": [
+    1,
+    2,
+    3
+  ]
+}

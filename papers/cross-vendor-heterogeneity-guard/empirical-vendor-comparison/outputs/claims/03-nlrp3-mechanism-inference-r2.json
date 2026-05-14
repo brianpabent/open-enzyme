@@ -1,0 +1,69 @@
+{
+  "prompt_id": "03-nlrp3-mechanism-inference",
+  "replicate": 2,
+  "task_type": "mechanism-inference",
+  "coding_notes": "Replicate 2 verdicts. Substantial within-vendor drift in DeepSeek (mechanism trio different from r1: r2 = LPS+C5a+mast-cell-TNF vs r1 = LPS+DAMPs+FFAs). Gemini also shifted top-pick from FFAs (r1) to S100A8/A9 (r2). Anthropic essentially stable. OpenAI now lists DAMPs (vs r1 ignore) and changed top-pick from gut-LPS (r1) to FFA (r2).",
+  "ground_truth_notes": "No single right answer for top-mechanism prioritization.",
+  "claims": [
+    {
+      "id": "C3.1",
+      "claim_text": "Mechanism #1 includes gut-derived LPS / endotoxin translocation acting via TLR4 on macrophages.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Mechanism 1: LPS->TLR4 gut translocation"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Mechanism 1: LPS->TLR4 gut PAMP translocation"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Mechanism 1: gut LPS->CD14/MD-2/TLR4"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Mechanism 1: gut LPS->TLR4"}
+      }
+    },
+    {
+      "id": "C3.2",
+      "claim_text": "At least one named mechanism involves saturated free fatty acids (FFAs) priming via TLR2 (Joosten 2010 axis).",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "r2 mechanism trio was {LPS, C5a-complement, mast-cell TNF}; FFAs not listed"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Mechanism 3: palmitate->TLR4/TLR2 heterodimer"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Mechanism 2: C16:0/C18:0 -> TLR2 (cites Joosten 2010)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Mechanism 2: C18:0/C16:0 -> TLR2 (cites Joosten 2010)"}
+      }
+    },
+    {
+      "id": "C3.3",
+      "claim_text": "DAMPs (HMGB1, S100A8/A9, or related) are named as a candidate priming mechanism.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "Did not list DAMPs; r2 trio differs from r1"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Mechanism 2: S100A8/A9 (Holzinger 2012)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Mechanism 3: S100A8/A9 + HMGB1 -> TLR4/RAGE"},
+        "anthropic": {"verdict": "ignore", "value_quoted": "Mechanism 3 was soluble urate, not DAMPs"}
+      }
+    },
+    {
+      "id": "C3.4",
+      "claim_text": "Soluble urate itself is named as a priming-signal candidate.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore"},
+        "gemini":    {"verdict": "ignore"},
+        "openai":    {"verdict": "ignore"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Mechanism 3: soluble urate (Crișan 2016)"}
+      }
+    },
+    {
+      "id": "C3.5",
+      "claim_text": "Top mechanism prioritized for in-vivo test is gut-LPS / TLR4.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Top: LPS/TLR4 antagonist test first"},
+        "gemini":    {"verdict": "disagree", "alternative": "S100A8/A9-DAMP-prefer", "value_quoted": "Top priority: S100A8/A9 (in target tissue)"},
+        "openai":    {"verdict": "disagree", "alternative": "FFA-TLR2-prefer", "value_quoted": "Top: FFA/TLR2 priming"},
+        "anthropic": {"verdict": "disagree", "alternative": "FFA-TLR2-prefer", "value_quoted": "Top: FFA/TLR2 (Joosten 2010 direct gout evidence)"}
+      }
+    },
+    {
+      "id": "C3.6",
+      "claim_text": "Alternative non-priming explanation: protein-corona / crystal-shedding / bioavailability change of MSU.",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "tonic-suppression-loss-adenosine", "value_quoted": "Alternative: loss of tonic adenosine A2A suppression"},
+        "gemini":    {"verdict": "disagree", "alternative": "checkpoint-inhibitor-removal", "value_quoted": "Alternative: removal of inflammasome checkpoint/inhibitor (A20, IRAK-M)"},
+        "openai":    {"verdict": "ignore", "value_quoted": "Truncated at length finish reason before clean alternative section"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Alternative: ApoB-coated crystal unmasking (Terkeltaub / Ortiz-Bravo)"}
+      }
+    }
+  ]
+}

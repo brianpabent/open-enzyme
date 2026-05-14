@@ -1,0 +1,69 @@
+{
+  "prompt_id": "03-nlrp3-mechanism-inference",
+  "replicate": 3,
+  "task_type": "mechanism-inference",
+  "coding_notes": "Replicate 3 verdicts. DeepSeek r3 returned to LPS+FFA+urate trio (different from r2's LPS+C5a+mast-cell). Gemini r3 trio = LPS+DAMPs+FFA, but TOP changed from r2's S100A8/A9 back to LPS. OpenAI r3 picked LPS+FFA+cytokines (similar to r1's LPS+FFA+something), top is FFA-TLR2. Anthropic r3 awaiting (currently no file).",
+  "ground_truth_notes": "No single right answer.",
+  "claims": [
+    {
+      "id": "C3.1",
+      "claim_text": "Mechanism #1 includes gut-derived LPS / endotoxin translocation acting via TLR4 on macrophages.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Mechanism 1: LPS->TLR4 gut translocation"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Mechanism 1: LPS->TLR4 gut PAMP translocation"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Mechanism 2: gut LPS->TLR4/MD2/CD14"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Mechanism 2: alcohol-induced barrier disruption -> LPS TLR4"}
+      }
+    },
+    {
+      "id": "C3.2",
+      "claim_text": "At least one named mechanism involves saturated free fatty acids (FFAs) priming via TLR2 (Joosten 2010 axis).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Mechanism 2: FFA palmitate->TLR4/CD36 (NOT Joosten TLR2 explicitly)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Mechanism 3: palmitate->TLR4/TLR2 heterodimer"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Mechanism 1: C18:0/C16:0->TLR2 (cites Joosten 2010)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Mechanism 1: C18:0 stearate -> TLR2 (cites Joosten 2010)"}
+      }
+    },
+    {
+      "id": "C3.3",
+      "claim_text": "DAMPs (HMGB1, S100A8/A9, or related) are named as a candidate priming mechanism.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "Did not list DAMPs; r3 trio = LPS+FFA+urate"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Mechanism 2: S100A8/A9 + HMGB1 (Holzinger 2012)"},
+        "openai":    {"verdict": "ignore", "value_quoted": "Mechanism 3 was cytokine priming (TNF/IL-1) not DAMPs specifically"},
+        "anthropic": {"verdict": "ignore", "value_quoted": "r3 trio = FFA+LPS+urate, no DAMPs"}
+      }
+    },
+    {
+      "id": "C3.4",
+      "claim_text": "Soluble urate itself is named as a priming-signal candidate.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Mechanism 3: soluble urate->NF-kB priming directly (Crișan 2016)"},
+        "gemini":    {"verdict": "ignore"},
+        "openai":    {"verdict": "ignore"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Mechanism 3: soluble urate via Akt/PRAS40 (Crișan 2016)"}
+      }
+    },
+    {
+      "id": "C3.5",
+      "claim_text": "Top mechanism prioritized for in-vivo test is gut-LPS / TLR4.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Top: LPS/TLR4 antagonist test first"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Top: LPS/gut-PAMP-TLR4 (antibiotic + TAK-242 experiment)"},
+        "openai":    {"verdict": "disagree", "alternative": "FFA-TLR2-prefer", "value_quoted": "For 'rich meal' I would test FFA/TLR2; for alcohol gut LPS"},
+        "anthropic": {"verdict": "disagree", "alternative": "FFA-TLR2-prefer", "value_quoted": "Top: FFA/TLR2 (lipid infusion in hyperuricemic mice with TLR2-/- controls)"}
+      }
+    },
+    {
+      "id": "C3.6",
+      "claim_text": "Alternative non-priming explanation: protein-corona / crystal-shedding / bioavailability change of MSU.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Crystal-shedding / protein coat stripping during trigger"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "ApoE/ApoB protein corona stripping or new uncoated crystal precipitation"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Acute crystal-surface/crystal-burden change rather than new signal-1"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "ApoB/ApoE lipoprotein corona shielding loss; same as r1 + r2"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "prompt_id": "04-koji-uricase-hypothesis-gen",
+  "replicate": 2,
+  "task_type": "hypothesis-generation",
+  "coding_notes": "Replicate 2 verdicts. Anthropic dropped the GI-stability test it had in r1 (C4.4 ignore vs r1 affirm). OpenAI moved from promoter-mapping (r1 disagree) to cell-free expression (r2 affirm) on C4.3.",
+  "ground_truth_notes": "No ground truth.",
+  "claims": [
+    {
+      "id": "C4.1",
+      "claim_text": "Proposed Experiment #1 is an in-silico cassette/sequence audit (SignalP + codon + structure prediction).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Exp 1: in-silico manufacturability audit (SignalP, AlphaFold, codon, splice scan)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Exp 1: In Silico Signal Peptide Functionality Assessment"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Exp 1: in-silico secretory-expression developability audit"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Exp 1: SignalP + PTS1 motif scan + secretion-pathway audit"}
+      }
+    },
+    {
+      "id": "C4.2",
+      "claim_text": "Vendor specifically flags the native A. flavus uricase PTS1 (peroxisomal targeting signal) as a conflict with the secretion path. (DOMINANT-RISK INSIGHT).",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "Mentions intracellular/peroxisomal native context in assumptions but does NOT foreground PTS1 as kill criterion in Exp 1"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "Did not flag PTS1; focused on signal-peptide cleavage prediction only"},
+        "openai":    {"verdict": "ignore", "value_quoted": "Mentions 'normally cytosolic/peroxisomal uricase motifs' as one item among many; not foregrounded as kill"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "EXPLICITLY flags PTS1 SKL/AKL/SRL as kill criterion: 'If C-terminal PTS1 present -> kill this exact cassette design'"}
+      }
+    },
+    {
+      "id": "C4.3",
+      "claim_text": "Includes a wet-lab experiment that produces and assays the enzyme protein in a non-host system (E. coli or cell-free).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Exp 2: PURExpress cell-free expression of mature uricase"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Exp 2: Cell-free TX-TL (wheat-germ)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Exp 3: cell-free or microscale heterologous mature uricase expression"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Exp 3: Pichia/S. cerevisiae surrogate-host secretion test"}
+      }
+    },
+    {
+      "id": "C4.4",
+      "claim_text": "Includes a GI-tract stability / simulated-fluid stress test.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "Did not include GI/SGF/SIF test in this round"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "Exp 3 is transient protoplast secretion; no GI stress test"},
+        "openai":    {"verdict": "disagree", "alternative": "supernatant-stability", "value_quoted": "Exp 2 is conditioned-medium spike-in stability, not GI"},
+        "anthropic": {"verdict": "ignore", "value_quoted": "Dropped GI stability test relative to r1; r2 covers in-silico + codon + Pichia surrogate"}
+      }
+    },
+    {
+      "id": "C4.5",
+      "claim_text": "Experiment is in the right cost class (in-silico = $0; low wet-lab < $500; mid $500-5000).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "All three costed; ordering correct"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "All three costed; ordering correct"},
+        "openai":    {"verdict": "affirm", "value_quoted": "All three costed; ordering correct"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "All three costed; ordering correct ($0/$0/$1500-3k)"}
+      }
+    },
+    {
+      "id": "C4.6",
+      "claim_text": "Names a kill criterion (specific threshold below which the design is abandoned).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Kill if SignalP <0.5, pLDDT <70, cell-free activity <5% control"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Kill if multiple experiments fail; pivot to new strategy"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Kill if mature secreted form predicted intrinsically incompatible with activity"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Kill if PTS1 present; kill if no activity anywhere in Exp 3"}
+      }
+    }
+  ]
+}

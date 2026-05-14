@@ -1,0 +1,59 @@
+{
+  "prompt_id": "07-self-demonstrating-review",
+  "replicate": 2,
+  "task_type": "adversarial-review",
+  "coding_notes": "Replicate 2 verdicts. DeepSeek dropped C7.2 ensemble critique but added C7.4 vendor-favoring critique (DRIFT in both directions). Anthropic produced 5 catches again (4 substantive + 1 confirmed-clean), same structure as r1. OpenAI produced 4 catches in r2 vs 3 in r1. Gemini produced 2 catches in r2 vs 2 in codified r1.",
+  "ground_truth_notes": "No ground truth.",
+  "claims": [
+    {
+      "id": "C7.1",
+      "claim_text": "Critiques the 'less likely cross-vendor blind spot' claim as asserted-without-evidence; flags shared training data / RLHF / benchmark pressure as alternative.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Catch 1: Push-back, shared pretraining data + convergent architectures + RLHF"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Catch 1: Push-back, Common Crawl + Wikipedia + Transformers shared"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Catch 1: Partial, vendor boundary only weak proxy for epistemic independence"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Catch 1: Push-back, asymmetry cross-vendor > within-vendor needs evidence"}
+      }
+    },
+    {
+      "id": "C7.2",
+      "claim_text": "Critiques the 'in the same way classical ensemble methods' analogy as overreaching.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "r2 dropped ensemble critique; only 2 catches"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "Did not raise ensemble critique"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Catch 2: Push-back on ensemble analogy"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Catch 2: bagging/boosting decorrelation vs vendor abstraction"}
+      }
+    },
+    {
+      "id": "C7.3",
+      "claim_text": "Critiques 'cleanest available reflexive evidence' as overstating N=1 evidence weight.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Catch 2: N=1 case study, single event cannot serve as general evidence"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Catch 2: superlative overstates what N=1 can demonstrate"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Catch 4: 'too confident and self-validating for N=1'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Catch 4: one anecdote cannot establish guard 'applies' as general property"}
+      }
+    },
+    {
+      "id": "C7.4",
+      "claim_text": "Catches the Anthropic-favorable / drafter-favoring framing in the passage (the brief explicitly asked reviewers to look for this).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Catch 2 explicit: 'elevating the drafting vendor's contribution' - DRIFT from r1 ignore"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "r2 dropped vendor-bias catch (DRIFT vs r1 affirm)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Catch 4: 'subtly over-credit the drafter rather than the cross-vendor review structure'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "DEDICATED Catch 4 on vendor-favoring framing - same as r1"}
+      }
+    },
+    {
+      "id": "C7.5",
+      "claim_text": "Number of substantive catches emitted on the passage (more aggressive review = higher).",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "2-catches", "value_quoted": "2 catches in r2"},
+        "gemini":    {"verdict": "disagree", "alternative": "2-catches", "value_quoted": "2 catches"},
+        "openai":    {"verdict": "disagree", "alternative": "4-catches", "value_quoted": "4 catches in r2"},
+        "anthropic": {"verdict": "disagree", "alternative": "5-catches", "value_quoted": "5 catches"}
+      }
+    }
+  ]
+}

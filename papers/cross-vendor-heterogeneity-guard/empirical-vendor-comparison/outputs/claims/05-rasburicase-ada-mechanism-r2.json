@@ -1,0 +1,69 @@
+{
+  "prompt_id": "05-rasburicase-ada-mechanism",
+  "replicate": 2,
+  "task_type": "mechanism-inference",
+  "coding_notes": "Replicate 2 verdicts. Notable: OpenAI again catches the pegloticase mammalian-cell error (r1 affirm + r2 affirm, very stable). Anthropic NOW catches the error in r2 (vs r1 ambiguous-mammalian disagree). Gemini doubles down again on the error in r2 (same as r1 — stable error propagation). DeepSeek dropped yeast mannose glycans and IV-context drivers in r2 (replaced with aggregation + H2O2).",
+  "ground_truth_notes": "Pegloticase is made in E. coli + chemically PEGylated; NOT mammalian-cell-produced. Yeast mannose PAMPs are a major rasburicase ADA driver.",
+  "claims": [
+    {
+      "id": "C5.1",
+      "claim_text": "Foreign protein sequence (no human ortholog circulating because UOX is pseudogene) is named as a top driver of rasburicase ADA.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "explicitly cites uricase pseudogenization (Wu 1989/1992)"}
+      }
+    },
+    {
+      "id": "C5.2",
+      "claim_text": "Yeast-derived mannose glycans / xenoglycan PAMPs are named as an adjuvant or ADA driver.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "r2 trio = {foreign, aggregation, H2O2}; dropped yeast glycans vs r1"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Driver 2: yeast high-mannose oligosaccharides as PAMPs (mannose receptor / DC-SIGN)"},
+        "openai":    {"verdict": "ignore", "value_quoted": "Mentions yeast HCPs as 'biologically plausible' but not as top-3 driver"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Driver (c): yeast-derived high-mannose N-glycans engage CD206/DC-SIGN"}
+      }
+    },
+    {
+      "id": "C5.3",
+      "claim_text": "Repeated IV dosing context (parenteral exposure, no mucosal tolerance) is named as a top driver.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "r2 trio dropped IV-context driver"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "r2 trio replaced IV driver with aggregation/HCPs; IV mentioned only in oral comparison section"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Driver 3: Systemic repeated IV exposure in high-danger inflammatory context"},
+        "anthropic": {"verdict": "ignore", "value_quoted": "Not in top-3 drivers; mentioned implicitly in §4 oral comparison"}
+      }
+    },
+    {
+      "id": "C5.4",
+      "claim_text": "Vendor catches and pushes back on the prompt's factual error about pegloticase production host (real answer: E. coli + PEGylated; prompt claimed mammalian cells).",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "accepts-prompt-claim", "value_quoted": "Says 'pegloticase is a mammalian (porcine/baboon-chimeric) uricase' without pushing back on production-host claim"},
+        "gemini":    {"verdict": "disagree", "alternative": "accepts-and-doubles-down", "value_quoted": "DOUBLES DOWN: 'By using a mammalian cell production system, pegloticase avoids the high-mannose PAMP issue entirely' — same error-amplification pattern as r1"},
+        "openai":    {"verdict": "affirm", "value_quoted": "EXPLICITLY pushes back: 'Minor factual note: pegloticase is...bacterial expression followed by chemical PEGylation, rather than production as a mammalian-cell-secreted glycoprotein'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Explicit correction: 'Pegloticase is produced in E. coli (no N-glycosylation)' in driver-(c) row, contradicting the prompt's mammalian-cell claim"}
+      }
+    },
+    {
+      "id": "C5.5",
+      "claim_text": "PEG itself becomes the dominant epitope class for pegloticase (anti-PEG ADA explains loss of efficacy).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "PEG as hapten, anti-PEG IgM/IgG; ~40% ADA"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "'fundamental change in dominant epitope class'; cites Ganson 2016, Armstrong 2007"},
+        "openai":    {"verdict": "affirm", "value_quoted": "'majority of pegloticase ADAs recognized the PEG portion rather than uricase protein core'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "'majority of clinically relevant pegloticase ADAs are anti-PEG, not anti-uricase'"}
+      }
+    },
+    {
+      "id": "C5.6",
+      "claim_text": "Oral gut-lumen-only uricase would face MUCH lower systemic ADA risk than rasburicase / pegloticase.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "'ADA risk would be dramatically lower, approaching background'"}
+      }
+    }
+  ]
+}

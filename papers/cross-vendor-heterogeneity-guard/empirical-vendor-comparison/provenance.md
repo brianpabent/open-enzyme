@@ -20,15 +20,51 @@ The changes to `MAX_TOKENS_BY_VENDOR` were applied while the run was in progress
 
 Recomputed from raw token counts × per-vendor pricing (current as of 2026-05-14). Includes both the initial run and the targeted re-runs of Gemini and Anthropic at higher max_tokens caps after the initial run's truncation events.
 
+### Replicate 1 (original pilot, 2026-05-14 morning):
+
 | Vendor | Slug | OK calls (used) | Refusals | Cost |
 |---|---|---|---|---|
 | deepseek | `deepseek/deepseek-v4-pro` | 8 | 0 | ~$0.035 |
 | gemini | `google/gemini-2.5-pro` | 8 | 0 | ~$0.18 |
 | openai | `openai/gpt-5.5` | 8 | 0 | ~$0.56 |
 | anthropic | `anthropic/claude-opus-4-7` | 7 | 1 | ~$1.43 |
-| **TOTAL** | | **31** | **1** | **$2.20** |
+| **r1 TOTAL** | | **31** | **1** | **$2.20** |
 
-(Final precise figure from `analysis.py`: $2.2022. The pilot stayed well under the $15 budget. Anthropic dominates cost because of its 5x pricing premium relative to the next-most-expensive vendor.)
+### Replicates 2 + 3 (within-vendor variance study, 2026-05-14 afternoon):
+
+| Vendor | r2 calls | r3 calls | r2+r3 cost |
+|---|---|---|---|
+| deepseek | 8 | 8 | ~$0.08 |
+| gemini | 8 | 8 | ~$0.35 |
+| openai | 8 | 8 | ~$1.17 |
+| anthropic | 7 (1 refusal) | 7 (1 refusal) | ~$2.78 |
+| **r2+r3 TOTAL** | **31** | **31** | **~$4.38** |
+
+### Combined project total:
+
+| Total OK calls | Total refusals | Total cost |
+|---|---|---|
+| 93 | 3 | ~$6.58 |
+
+Both phases stayed well under the $10 + $15 = $25 cumulative budget. Anthropic dominates cost in both phases because of its 5x pricing premium relative to the next-most-expensive vendor.
+
+## Replicate timeline
+
+| Phase | Started (UTC) | Finished (UTC) | Wall-clock |
+|---|---|---|---|
+| Replicate 1 (original pilot) | 2026-05-14 ~15:02 | 2026-05-14 ~15:54 | ~52 min (incl. mid-run iterations on max_tokens) |
+| Replicate 2 | 2026-05-14 ~16:54 | 2026-05-14 ~17:39 | ~45 min |
+| Replicate 3 | 2026-05-14 ~17:15 | (in progress / completed during analysis) | ~45-50 min projected |
+
+Replicate 2 and Replicate 3 ran concurrently after a brief sequential start; both processes are independent OpenRouter sessions against the same API key with no observed rate-limit contention.
+
+## Refusal stability across replicates
+
+| Prompt | Vendor | r1 | r2 | r3 |
+|---|---|---|---|---|
+| 01-uricase-mechanism-factual | anthropic | refusal | refusal | refusal |
+
+Anthropic Claude Opus 4.7 refused all three replicates of prompt 01. The refusal pattern is highly stable. This is itself a heterogeneity-guard signal: a single-vendor pipeline routed through Anthropic alone would have a robust coverage gap on this prompt class that no replication strategy would close.
 
 ## Refusal events
 

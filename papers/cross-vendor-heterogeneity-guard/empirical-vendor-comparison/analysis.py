@@ -70,7 +70,12 @@ def parse_frontmatter(text):
 
 
 def load_response(prompt_id, vendor):
-    p = RESPONSES_DIR / prompt_id / f"{vendor}.md"
+    # r1 is the canonical "original pilot" response. After the replicate study
+    # renamed the originals to <vendor>-r1.md, look there first; fall back to
+    # the un-suffixed name for backward compatibility.
+    p_r1 = RESPONSES_DIR / prompt_id / f"{vendor}-r1.md"
+    p_legacy = RESPONSES_DIR / prompt_id / f"{vendor}.md"
+    p = p_r1 if p_r1.exists() else p_legacy
     if not p.exists():
         return None
     text = p.read_text()

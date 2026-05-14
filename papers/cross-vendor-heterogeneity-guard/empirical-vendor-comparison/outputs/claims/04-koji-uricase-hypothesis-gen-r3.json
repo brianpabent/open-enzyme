@@ -1,0 +1,69 @@
+{
+  "prompt_id": "04-koji-uricase-hypothesis-gen",
+  "replicate": 3,
+  "task_type": "hypothesis-generation",
+  "coding_notes": "Replicate 3 verdicts. OpenAI r3 now includes PTS1 scan AND GI stability test (drift from r1 and r2). Gemini r3 went 3-in-silico (no wet-lab). DeepSeek r3 retained the GI stability test it had in r1 (lost in r2). Anthropic r3 covers PTS1 explicitly, cell-free, GI stability - all stable.",
+  "ground_truth_notes": "No ground truth.",
+  "claims": [
+    {
+      "id": "C4.1",
+      "claim_text": "Proposed Experiment #1 is an in-silico cassette/sequence audit (SignalP + codon + structure prediction).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Exp 1: in silico cassette audit (SignalP + mRNA folding)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Exp 1: in-silico SignalP + TMHMM + Phobius"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Exp 1: in-silico cassette + secretory-pathway liability audit"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Exp 1: SignalP + DeepLoc + PTS1 predictor + glycosylation"}
+      }
+    },
+    {
+      "id": "C4.2",
+      "claim_text": "Vendor specifically flags the native A. flavus uricase PTS1 (peroxisomal targeting signal) as a conflict with the secretion path. (DOMINANT-RISK INSIGHT).",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "Not explicitly flagged in r3"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "Not explicitly flagged"},
+        "openai":    {"verdict": "affirm", "value_quoted": "EXPLICIT in r3: 'Scan for C-terminal peroxisomal targeting motifs'; 'Remove/alter a peroxisomal targeting motif if present' - DRIFT from r1 ignore"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "EXPLICIT: 'If PTS1 is intact and predicted active -> modify cassette to truncate or mutate' (same as r1, r2)"}
+      }
+    },
+    {
+      "id": "C4.3",
+      "claim_text": "Includes a wet-lab experiment that produces and assays the enzyme protein in a non-host system (E. coli or cell-free).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Exp 2: cell-free coupled transcription-translation with microsomal membranes"},
+        "gemini":    {"verdict": "disagree", "alternative": "all-in-silico", "value_quoted": "r3 has 3 in-silico experiments only (signal peptide + bioinformatics + AlphaFold), NO wet-lab non-host experiment"},
+        "openai":    {"verdict": "ignore", "value_quoted": "Exp 3 uses commercial/purified surrogate uricase (not cell-free expression of designed CDS)"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Exp 2: IVTT (in vitro transcription/translation) cell-free"}
+      }
+    },
+    {
+      "id": "C4.4",
+      "claim_text": "Includes a GI-tract stability / simulated-fluid stress test.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Exp 3: simulated gastric fluid pH 2 + pepsin / simulated intestinal fluid pH 6.8 + pancreatin"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "No GI stability test in r3"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Exp 3: surrogate uricase luminal-compatibility in simulated GI matrices - DRIFT from r1 ignore"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Exp 3: SGF pH 1.2 + pepsin / SIF pH 6.8 + pancreatin"}
+      }
+    },
+    {
+      "id": "C4.5",
+      "claim_text": "Experiment is in the right cost class (in-silico = $0; low wet-lab < $500; mid $500-5000).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "All three costed; ordering correct"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Three in-silico at $0 - costs technically correct but distribution unusual"},
+        "openai":    {"verdict": "affirm", "value_quoted": "All three costed"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "All three costed; ordering correct"}
+      }
+    },
+    {
+      "id": "C4.6",
+      "claim_text": "Names a kill criterion (specific threshold below which the design is abandoned).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Specific kill criteria per experiment"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Kill criteria stated implicitly via 'modify' vs 'proceed' decisions"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Kill/rethink if multiple liabilities converge"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Kill criterion: PTS1 present, no activity in CFE, no supernatant activity in A. oryzae"}
+      }
+    }
+  ]
+}

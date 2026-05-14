@@ -1,0 +1,69 @@
+{
+  "prompt_id": "08-cordycepin-koji-feasibility",
+  "replicate": 2,
+  "task_type": "hypothesis-generation + mechanism",
+  "coding_notes": "Replicate 2 verdicts. CNS3 CATCH FULLY REPRODUCED: Anthropic r2 again named cns3 as critical ('This is the showstopper. You must co-express the resistance gene cns3'). Other three vendors again did NOT name cns3 in r2 (same as r1). Cross-vendor heterogeneity-guard finding is stable across replicates: anthropic uniquely catches this mechanism, the other three uniformly miss it both times.",
+  "ground_truth_notes": "cns3 is essential per Cordyceps natural BGC.",
+  "claims": [
+    {
+      "id": "C8.1",
+      "claim_text": "cns1+cns2 cytosolic pathway does NOT compete with uricase + lactoferrin for ER chaperones (no PDI/ERO1 conflict).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "ER chaperones: None. cytosolic enzymes"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "ER Chaperones: None. cytosolic pathway"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    },
+    {
+      "id": "C8.2",
+      "claim_text": "Names cordycepin self-toxicity (RNA chain terminator / actively kills host) as a major host-viability risk.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "AK phosphorylation -> 3'-dATP RNA chain terminator; cell dies"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "3'-dATP RNA/DNA pol chain termination -> cell death"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Cordycepin-5'-triphosphate terminates transcription; 'This is the showstopper'"}
+      }
+    },
+    {
+      "id": "C8.3",
+      "claim_text": "Names cns3 (pentostatin-like ADA inhibitor) as essential / non-negotiable for stable cordycepin co-expression. (CRITICAL MECHANISM)",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "names-ADA-but-not-cns3", "value_quoted": "Same as r1: names ADA conversion to 3'-deoxyinosine as purity risk, no cns3"},
+        "gemini":    {"verdict": "disagree", "alternative": "names-ADA-but-not-cns3", "value_quoted": "Same as r1: names ADA but not cns3"},
+        "openai":    {"verdict": "disagree", "alternative": "names-ADA-but-not-cns3", "value_quoted": "Mentions 'transporter engineering, possibly including a cns3-like function' but not as critical mitigation"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "REPRODUCED: 'This is the showstopper. You must co-express the resistance gene (cns3 / the cluster-associated deaminase)'"}
+      }
+    },
+    {
+      "id": "C8.4",
+      "claim_text": "Specifies a cordycepin titer estimate with assumptions and a published sanity-check from a different heterologous host.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "0.1-0.5 g/L shake-flask"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "20-100 mg/L; S. cerevisiae 150-250 mg/L sanity check"},
+        "openai":    {"verdict": "ignore", "value_quoted": "No specific titer number"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "S. cerevisiae cns1/cns2/cns3 ~250 mg/L (Tan 2022); same Tan citation as r1"}
+      }
+    },
+    {
+      "id": "C8.5",
+      "claim_text": "Recommends a specific low-cost de-risking experiment (cordycepin tolerance assay).",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "Response truncated at 8000 token cap; tolerance assay may have been planned beyond cutoff"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Cordycepin IC50 determination; <$1k; 1-2 weeks"},
+        "openai":    {"verdict": "ignore"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "validate uricase+lactoferrin stability first then layer cordycepin"}
+      }
+    },
+    {
+      "id": "C8.6",
+      "claim_text": "Pushes back on the proposal: recommends parallel mono-cassette strains instead of single co-expression strain.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Recommends not single-strain co-expression"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Parallel mono-cassette Strain 1 + Strain 2"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Sequence integrations; layer cns1/cns2/cns3 after uricase stability"}
+      }
+    }
+  ]
+}

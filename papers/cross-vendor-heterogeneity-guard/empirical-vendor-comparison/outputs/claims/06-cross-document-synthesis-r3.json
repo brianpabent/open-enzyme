@@ -1,0 +1,69 @@
+{
+  "prompt_id": "06-cross-document-synthesis",
+  "replicate": 3,
+  "task_type": "synthesis",
+  "coding_notes": "Replicate 3 verdicts. Anthropic r3 again called out the glycosylation tradeoff (C6.3 affirm, stable across r1+r2+r3). OpenAI r3 shifted from split-finding (r1+r2) to MORE-benefit direction (C6.1 affirm, DRIFT). DeepSeek r3 picked chaperone-competition tradeoff (C6.2 ignore - drift from r1 affirm).",
+  "ground_truth_notes": "No ground truth.",
+  "claims": [
+    {
+      "id": "C6.1",
+      "claim_text": "Q141K carriers benefit MORE from the uricase + lactoferrin combination than wild-type ABCG2 (compounding-deficit logic).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "MORE benefit via enterocyte pyroptosis suppression"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Expected to maintain MORE-benefit direction"},
+        "openai":    {"verdict": "affirm", "value_quoted": "ACTUAL r3: 'Q141K carriers may benefit more from a uricase + lactoferrin combination' - DRIFT from r1+r2 split-finding disagree"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "ACTUAL r3: 'disproportionately greater anti-inflammatory benefit per unit of co-administered lactoferrin'"}
+      }
+    },
+    {
+      "id": "C6.2",
+      "claim_text": "Single-strain co-expression locks the cassette dose ratio, which conflicts with genotype-stratified dosing.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "r3 picked chaperone-competition tradeoff, not fixed-ratio"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Expected: fixed-ratio tradeoff"},
+        "openai":    {"verdict": "affirm", "value_quoted": "ACTUAL r3: 'uricase activity units, not total secreted protein, the dominant design constraint'"},
+        "anthropic": {"verdict": "ignore", "value_quoted": "ACTUAL r3: picked glycan-budget tradeoff, not fixed-ratio"}
+      }
+    },
+    {
+      "id": "C6.3",
+      "claim_text": "Glycosylation differences between gut-luminal vs systemic action create a payload-incompatibility (uricase wants minimal glycan, lactoferrin wants native-like).",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore"},
+        "gemini":    {"verdict": "ignore"},
+        "openai":    {"verdict": "ignore"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "ACTUAL r3: 'glycan-budget constraint' uricase wants stability glycan, lactoferrin wants receptor glycan - stable across r1+r2+r3"}
+      }
+    },
+    {
+      "id": "C6.4",
+      "claim_text": "Includes a testable in-silico or low-cost hypothesis to discriminate between proposed mechanisms.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Caco-2 monolayers WT vs Q141K; pyroptosis readouts"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Expected: stable discriminating-predictions framework"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    },
+    {
+      "id": "C6.5",
+      "claim_text": "Explicitly flags load-bearing inferences not directly supported by the excerpts.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    },
+    {
+      "id": "C6.6",
+      "claim_text": "Tags findings with chain-depth (CHAIN-DEPTH: N) as the prompt requested.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    }
+  ]
+}

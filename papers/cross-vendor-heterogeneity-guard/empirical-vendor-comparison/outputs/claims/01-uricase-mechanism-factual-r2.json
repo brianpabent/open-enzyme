@@ -1,0 +1,69 @@
+{
+  "prompt_id": "01-uricase-mechanism-factual",
+  "replicate": 2,
+  "task_type": "factual",
+  "coding_notes": "Replicate 2 verdicts. Coded against the same atomic-claim taxonomy as r1. Striking within-vendor drift on C1.5 (PTS1): DeepSeek SRL r1 -> SKL r2; Gemini SSH r1 -> SKL r2; OpenAI SKL r1 -> AKL r2. Anthropic refused again (same prompt, same vendor-specific brittleness as r1).",
+  "ground_truth_notes": "PTS1 of A. flavus uricase is SKL (Legoux 1992 + UniProt). Km published 10-60 uM range.",
+  "claims": [
+    {
+      "id": "C1.1",
+      "claim_text": "Native quaternary structure is a homotetramer.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.2",
+      "claim_text": "Subunit molecular weight ~34 kDa, native MW ~135 kDa (tolerance: ±5 kDa).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "~34 kDa / ~136 kDa"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "~34 kDa / ~136 kDa"},
+        "openai":    {"verdict": "affirm", "value_quoted": "~34 kDa / ~135 kDa"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.3",
+      "claim_text": "No metal or organic cofactor required (cofactor-independent oxidase).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.4",
+      "claim_text": "Enzyme-catalyzed step produces 5-hydroxyisourate + H2O2 (with non-enzymatic decarboxylation to allantoin + CO2).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "uric acid + O2 + H2O -> 5-HIU + H2O2 (HIU decays non-enzymatically to allantoin + CO2)"},
+        "gemini":    {"verdict": "disagree", "alternative": "overall-balanced", "value_quoted": "uric acid + O2 + H2O -> allantoin + CO2 + H2O2 (overall balanced; mentions 5-HIU as intermediate but doesn't name it as the enzyme product)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "urate + O2 + H2O + H+ -> 5-HIU + H2O2; HIU then converts non-enzymatically to allantoin"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.5",
+      "claim_text": "Peroxisomal targeting signal is SKL at the extreme C-terminus (residues 299-301 of the 301-aa mature protein). GROUND TRUTH per Legoux et al. 1992 + UniProt Q00511.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Ser-Lys-Leu (SKL) at residues 300-302"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Ser-Lys-Leu (SKL) at residues 302-304"},
+        "openai":    {"verdict": "disagree", "alternative": "AKL", "value_quoted": "Ala-Lys-Leu (AKL) at residues 299-301"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    },
+    {
+      "id": "C1.6",
+      "claim_text": "Published Km for uric acid (any specific value with primary source). Variation across the published range (10-60 uM) is acceptable; disagreement flagged when vendors quote incompatible single values.",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "5.1 uM Legoux", "value_quoted": "Km = 5.1 uM (Legoux 1992)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "11.5 uM (Kahn 1997 JBC)"},
+        "openai":    {"verdict": "affirm", "value_quoted": "~12 uM (Legoux 1992)"},
+        "anthropic": {"verdict": "refusal"}
+      }
+    }
+  ]
+}

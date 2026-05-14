@@ -169,7 +169,9 @@ def main():
     parser.add_argument("--only-prompt", default="", help="if set, only run prompts whose stem contains this substring")
     parser.add_argument("--only-vendor", default="", help="if set, only run this vendor key (deepseek/gemini/openai/anthropic)")
     parser.add_argument("--dry-run", action="store_true", help="show what would be called, don't call")
+    parser.add_argument("--replicate", type=int, default=1, help="replicate number; writes to <vendor>-r<N>.md. Default 1.")
     args = parser.parse_args()
+    replicate_suffix = f"-r{args.replicate}"
 
     api_key = read_api_key()
     RESPONSES_DIR.mkdir(exist_ok=True)
@@ -196,7 +198,7 @@ def main():
 
         print(f"\n=== {prompt_id}  (sha256:{prompt_hash}) ===", file=sys.stderr)
         for vendor_key, model_slug in vendors.items():
-            out_path = per_prompt_dir / f"{vendor_key}.md"
+            out_path = per_prompt_dir / f"{vendor_key}{replicate_suffix}.md"
             if out_path.exists() and out_path.stat().st_size > 200 and not args.force:
                 print(f"  [skip] {vendor_key} already has a response", file=sys.stderr)
                 skipped += 1
@@ -222,7 +224,7 @@ def main():
                     f"call_timestamp_utc: {ts}\nstatus: ERROR\nerror: |\n  {(err or '').replace(chr(10), chr(10)+'  ')}\n---\n\n"
                     f"(no response — see error)\n"
                 )
-                _log_call(prompt_id, vendor_key, model_slug, None, None, None, dt, ts, "error", err)
+                _log_call(prompt_id, vendor_key, model_slug, None, None, None, dt, ts, "error", err, args.replicate)
                 continue
 
             choice = resp["choices"][0]
@@ -246,7 +248,7 @@ def main():
                     f"model_served: {served}\nmodel_served_raw: {served_raw}\nfinish_reason: {finish_reason}\n"
                     f"call_timestamp_utc: {ts}\nstatus: EMPTY\n---\n\n(empty content)\n"
                 )
-                _log_call(prompt_id, vendor_key, model_slug, served, in_tok, out_tok, dt, ts, "empty", err_msg)
+                _log_call(prompt_id, vendor_key, model_slug, served, in_tok, out_tok, dt, ts, "empty", err_msg, args.replicate)
                 continue
 
             response_hash = hashlib.sha256(content.encode()).hexdigest()[:12]
@@ -255,6 +257,7 @@ def main():
                 f"prompt_id: {prompt_id}\n"
                 f"prompt_sha256_12: {prompt_hash}\n"
                 f"vendor: {vendor_key}\n"
+                f"replicate: {args.replicate}\n"
                 f"model_requested: {model_slug}\n"
                 f"model_served: {served}\n"
                 f"model_served_raw: {served_raw}\n"
@@ -269,8 +272,8 @@ def main():
                 f"---\n\n"
             )
             out_path.write_text(header + content + "\n")
-            print(f"  [done] {vendor_key} cost=${call_cost:.4f} ({in_tok} in / {out_tok} out, {dt:.1f}s)", file=sys.stderr)
-            _log_call(prompt_id, vendor_key, model_slug, served, in_tok, out_tok, dt, ts, "ok", None)
+            print(f"  [done] {vendor_key} r{args.replicate} cost=${call_cost:.4f} ({in_tok} in / {out_tok} out, {dt:.1f}s)", file=sys.stderr)
+            _log_call(prompt_id, vendor_key, model_slug, served, in_tok, out_tok, dt, ts, "ok", None, args.replicate)
 
     print(f"\n--- summary ---", file=sys.stderr)
     print(f"calls made:      {calls}", file=sys.stderr)
@@ -283,11 +286,12 @@ def main():
             print(f"  - {prompt_id} / {vendor}: {(err or '')[:200]}", file=sys.stderr)
 
 
-def _log_call(prompt_id, vendor, model_req, model_served, in_tok, out_tok, dt, ts, status, err):
+def _log_call(prompt_id, vendor, model_req, model_served, in_tok, out_tok, dt, ts, status, err, replicate=1):
     rec = {
         "timestamp_utc": ts,
         "prompt_id": prompt_id,
         "vendor": vendor,
+        "replicate": replicate,
         "model_requested": model_req,
         "model_served": model_served,
         "input_tokens": in_tok,

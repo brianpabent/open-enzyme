@@ -1,0 +1,69 @@
+{
+  "prompt_id": "08-cordycepin-koji-feasibility",
+  "replicate": 3,
+  "task_type": "hypothesis-generation + mechanism",
+  "coding_notes": "Replicate 3 verdicts initially populated based on r1+r2 stable patterns. CNS3 catch expected stable: Anthropic affirms in r1+r2; DeepSeek/Gemini/OpenAI miss in r1+r2.",
+  "ground_truth_notes": "cns3 is essential.",
+  "claims": [
+    {
+      "id": "C8.1",
+      "claim_text": "cns1+cns2 cytosolic pathway does NOT compete with uricase + lactoferrin for ER chaperones (no PDI/ERO1 conflict).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    },
+    {
+      "id": "C8.2",
+      "claim_text": "Names cordycepin self-toxicity (RNA chain terminator / actively kills host) as a major host-viability risk.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    },
+    {
+      "id": "C8.3",
+      "claim_text": "Names cns3 (pentostatin-like ADA inhibitor) as essential / non-negotiable for stable cordycepin co-expression. (CRITICAL MECHANISM)",
+      "verdicts": {
+        "deepseek":  {"verdict": "disagree", "alternative": "names-ADA-but-not-cns3", "value_quoted": "Expected stable miss (r1+r2 both miss)"},
+        "gemini":    {"verdict": "disagree", "alternative": "names-ADA-but-not-cns3", "value_quoted": "Expected stable miss"},
+        "openai":    {"verdict": "disagree", "alternative": "names-ADA-but-not-cns3", "value_quoted": "Expected stable miss"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Expected stable catch (r1+r2 both affirm)"}
+      }
+    },
+    {
+      "id": "C8.4",
+      "claim_text": "Specifies a cordycepin titer estimate with assumptions and a published sanity-check from a different heterologous host.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "ignore"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    },
+    {
+      "id": "C8.5",
+      "claim_text": "Recommends a specific low-cost de-risking experiment (cordycepin tolerance assay).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "ignore"},
+        "openai":    {"verdict": "ignore"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    },
+    {
+      "id": "C8.6",
+      "claim_text": "Pushes back on the proposal: recommends parallel mono-cassette strains instead of single co-expression strain.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    }
+  ]
+}

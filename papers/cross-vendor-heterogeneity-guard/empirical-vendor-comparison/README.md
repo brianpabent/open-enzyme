@@ -45,19 +45,30 @@ Pairwise agreement is computed by `analysis.py` over the six pairs spanning four
 
 ```bash
 # Set OPENROUTER_API_KEY in env or repo-root .env
-python3 run_experiment.py                 # fires all prompts at all vendors, skipping cached
-python3 run_experiment.py --force         # re-runs everything
-python3 run_experiment.py --only-prompt 01-uricase --only-vendor deepseek
-python3 analysis.py                       # computes agreement metrics from responses/ + outputs/claims/
+python3 run_experiment.py                 # fires all prompts at all vendors at replicate 1
+python3 run_experiment.py --replicate 2   # fires replicate 2 (writes to <vendor>-r2.md)
+python3 run_experiment.py --replicate 3   # fires replicate 3 (writes to <vendor>-r3.md)
+python3 run_experiment.py --force         # re-runs everything for the active replicate
+python3 run_experiment.py --only-prompt 01-uricase --only-vendor deepseek --replicate 2
+python3 analysis.py                       # computes cross-vendor agreement from responses/ + outputs/claims/
+python3 analysis_within_vendor.py         # computes within-vendor agreement across replicates
 ```
 
-Total cost of the pilot was $2.20 (well under the $15 budget; see `provenance.md` for token-level accounting).
+The original pilot ran $2.20 at N=1 replicate per cell. The within-vendor replicate study added 64 more calls (32 cells × 2 additional replicates) for an incremental $4.38, bringing total project cost to $6.58 against a $10 ceiling. See `provenance.md` for token-level accounting.
+
+## Intra-vendor variance study (replicate sampling)
+
+To partition the original 18.2% cross-vendor disagreement into (a) real cross-vendor heterogeneity and (b) within-vendor temperature stochasticity, each of the 32 (prompt, vendor) cells was called twice more at the same prompt, same temperature (0.7), same per-vendor max_tokens cap. The original pilot run is replicate 1 (`<vendor>-r1.md`); the additional calls are replicate 2 (`<vendor>-r2.md`) and replicate 3 (`<vendor>-r3.md`). Each replicate response is coded against the same atomic-claim taxonomy from the original run; replicate verdicts are at `outputs/claims/<prompt-id>-r{2,3}.json`.
+
+Within-vendor pairwise agreement is computed across the three replicates per cell (r1-r2, r1-r3, r2-r3 = three pairs per cell), aggregated across 32 cells. Output at `outputs/within-vendor-matrix.json` and `outputs/within-vendor-summary.md`.
+
+**Headline within-vendor agreement: 90.6%** (versus 81.8% cross-vendor), implying that roughly half of the original cross-vendor disagreement reflects real vendor-prior difference and roughly half reflects within-vendor temperature noise. Per-vendor stability does *not* support the reasoning-mode hypothesis: Anthropic (94.0%) is the most stable, with reasoning and non-reasoning models bracketing each other. See `paper-section-draft.md` §6.X.4 for the full interpretation.
 
 ## V1 simplifications worth flagging
 
 - N=8 prompts is small. The paper section calls this "pilot evidence" not "definitive."
 - Manual claim extraction means the agreement coding has irreducible human judgment in it. Each claim file is in JSON so the verdicts are auditable per-claim. A separate reviewer running through the same response files independently would be a stronger validation.
-- Each vendor was called exactly once per prompt (single-shot, no replicate sampling). Within-vendor temperature noise is not measured. Replicate sampling within-vendor at the same temperature was outside scope.
+- ~~Each vendor was called exactly once per prompt (single-shot, no replicate sampling).~~ Addressed by the intra-vendor variance study described above: N=3 replicates per cell. N=3 captures modal behavior; if within-vendor variance is real, three samples surface it. N=10+ replicates per cell would tighten per-vendor stability estimates and is v2 work.
 - The Gemini and Anthropic max_tokens caps were calibrated mid-run after observing truncations. Two prompts (02, 03 for Gemini; 03 for Anthropic) were partially truncated. Re-runs at the higher cap are documented in `provenance.md`; the analysis uses the highest-coverage response per (prompt, vendor) pair.
 - Prompts are synthetic-but-realistic rather than drawn directly from daemon Pass 2 production logs. Three prompts (04, 06, 08) are designed to mirror Pass 2 synthesis task shape but were not actually fired by the daemon. Prompt 07 is taken near-directly from the manuscript's own review-prompts catalog and is the closest to a real daemon call in the set.
 - The single most striking inter-vendor finding (PTS1 disagreement on prompt 01) is documented in the paper section. That finding is itself a heterogeneity-guard validation: three vendors gave three different three-letter sequences for the same biochemical fact, and one vendor refused the prompt entirely.

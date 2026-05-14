@@ -1,0 +1,69 @@
+{
+  "prompt_id": "05-rasburicase-ada-mechanism",
+  "replicate": 3,
+  "task_type": "mechanism-inference",
+  "coding_notes": "Replicate 3 verdicts. DeepSeek r3 NOW catches the pegloticase mammalian-cell error (vs r1+r2 missed - drift). Gemini r3 again doubles down on the error (3-for-3 stable error propagation). Driver triplets vary across replicates per vendor.",
+  "ground_truth_notes": "Pegloticase: E. coli + PEGylated; yeast mannose for rasburicase; gut-only -> oral tolerance.",
+  "claims": [
+    {
+      "id": "C5.1",
+      "claim_text": "Foreign protein sequence (no human ortholog circulating because UOX is pseudogene) is named as a top driver of rasburicase ADA.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "Driver 1: foreign T-cell epitopes (non-self sequence)"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Driver 1: Foreign Sequence + T-Cell Epitopes"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Driver 1: foreign uricase non-self B- and T-cell epitopes"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Xenogeneic primary sequence (driver a)"}
+      }
+    },
+    {
+      "id": "C5.2",
+      "claim_text": "Yeast-derived mannose glycans / xenoglycan PAMPs are named as an adjuvant or ADA driver.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "r3 drivers = {foreign, tetrameric B-cell, aggregation} - no yeast glycans"},
+        "gemini":    {"verdict": "affirm", "value_quoted": "Driver 2: yeast high-mannose glycans (CD206/DC-SIGN PAMP)"},
+        "openai":    {"verdict": "ignore", "value_quoted": "Explicitly does NOT make yeast production dominant: 'Rasburicase is not usually described as an ADA problem driven primarily by anti-yeast glycans'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Driver (c): yeast high-mannose N-glycans + HCPs"}
+      }
+    },
+    {
+      "id": "C5.3",
+      "claim_text": "Repeated IV dosing context (parenteral exposure, no mucosal tolerance) is named as a top driver.",
+      "verdicts": {
+        "deepseek":  {"verdict": "ignore", "value_quoted": "r3 dropped IV/parenteral driver"},
+        "gemini":    {"verdict": "ignore", "value_quoted": "Driver 3 was enzymatic activity/H2O2 not IV"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Driver 3: IV systemic exposure with intermittent/repeated dosing (same as r2)"},
+        "anthropic": {"verdict": "ignore"}
+      }
+    },
+    {
+      "id": "C5.4",
+      "claim_text": "Vendor catches and pushes back on the prompt's factual error about pegloticase production host (real answer: E. coli + PEGylated; prompt claimed mammalian cells).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm", "value_quoted": "EXPLICIT: 'the prompt describes pegloticase as mammalian-cell-produced; the currently marketed pegloticase (Krystexxa) is actually produced in E. coli' - DRIFT from r1+r2 disagree"},
+        "gemini":    {"verdict": "disagree", "alternative": "accepts-and-doubles-down", "value_quoted": "DOUBLES DOWN again: 'Produced in mammalian cells (e.g., CHO), pegloticase possesses more human-like glycan structures' - 3-for-3 stable error propagation"},
+        "openai":    {"verdict": "affirm", "value_quoted": "Minor factual note: 'regulatory descriptions commonly state E. coli production'"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "EXPLICIT: 'expressed in E. coli, covalently conjugated with multiple 10-kDa mPEG chains per subunit'"}
+      }
+    },
+    {
+      "id": "C5.5",
+      "claim_text": "PEG itself becomes the dominant epitope class for pegloticase (anti-PEG ADA explains loss of efficacy).",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm", "value_quoted": "Most pegloticase ADAs are anti-PEG"}
+      }
+    },
+    {
+      "id": "C5.6",
+      "claim_text": "Oral gut-lumen-only uricase would face MUCH lower systemic ADA risk than rasburicase / pegloticase.",
+      "verdicts": {
+        "deepseek":  {"verdict": "affirm"},
+        "gemini":    {"verdict": "affirm"},
+        "openai":    {"verdict": "affirm"},
+        "anthropic": {"verdict": "affirm"}
+      }
+    }
+  ]
+}
