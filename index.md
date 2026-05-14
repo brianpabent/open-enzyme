@@ -148,6 +148,7 @@ How a single researcher (institutional or independent) works rigorously at kitch
 - [`linter-design.md`](wiki/linter-design.md) — falsification + document lint architecture
 - [`autonomous-screening-methodology.md`](wiki/autonomous-screening-methodology.md) — ClockBase Agent prior-art methodology for comp-NNN
 - [`tcm-modern-rigor-intersection.md`](wiki/tcm-modern-rigor-intersection.md) — six-rule traditional-medicine evidence-leveling
+- [`quantification-ladder.md`](wiki/quantification-ladder.md) — canonical four-tier framework (kitchen → smartphone → bench → outsourced) for compound or enzyme content measurement; instantiated by `enzyme-quantification-protocol.md` (koji enzymes) and `medicinal-mushroom-extract-sops.md` SOP-6 (mushroom extracts)
 - [`cross-validation.md`](wiki/cross-validation.md) — thesis stress-test discipline
 
 ## Team

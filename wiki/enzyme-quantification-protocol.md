@@ -25,6 +25,8 @@ A protocol-and-methods companion to the koji wiki. Specifies **how to measure** 
 
 **This page does not relock literature U/g values for wild-type *A. oryzae* enzymes** — those live in [digestive-enzyme-optimization.md](./digestive-enzyme-optimization.md). It does not relock the GI-survival 2-arm experimental design — that lives in [validation-experiments.md §1.18](./validation-experiments.md). It is the **methods layer** that operationalizes the open question called out in [koji-home-fermentation.md §"Open questions"](./koji-home-fermentation.md): *quantitative comparison of shio-koji enzyme activity (units/g) vs. commercial PERT (Creon, Zenpep) units per pill — lab-measurable but not yet done.*
 
+> **Framework reference.** This page is the **canonical first instantiation** of the four-tier quantification ladder (kitchen → smartphone → bench → outsourced). The abstract framework definition, operational pattern ("calibrate once at Tier 3, track batches cheap at Tier 1 / Tier 2"), and discipline notes live at [`quantification-ladder.md`](./quantification-ladder.md). This page covers the koji-enzyme-specific instantiation (lipase / amylase / protease assays + calibration anchors); the sister instantiation for medicinal mushroom extract characterization lives at [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-6.
+
 ---
 
 ## 1. Decision frame — what to measure and why

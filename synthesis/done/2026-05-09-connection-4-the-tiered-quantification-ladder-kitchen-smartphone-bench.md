@@ -17,3 +17,19 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Draft a short principle page (`open-source-platform.md` section or standalone) documenting the quantification ladder as a cross-track quality methodology, with explicit references to both the enzyme and mushroom instantiations. This is a documentation synthesis, not a new experiment.
 
 > **Pass 3 review — Push back.** `[OVERLAP: EXTENSION]` The “no wiki page names this as a general methodology” premise is too strong: `medicinal-mushroom-extract-sops.md` SOP-6 already says the four-tier framework from `enzyme-quantification-protocol.md` “transfers cleanly to mushroom extract characterization” and states the “calibrate-once-at-Tier-3, track-batches-at-Tier-1/2” discipline. A standalone platform-principle page may still be useful, but the finding should be framed as elevating an already named cross-track SOP pattern, not discovering two isolated local solutions.
+
+---
+
+## ✓ Actioned 2026-05-14
+
+Pass 3 confirmed that `medicinal-mushroom-extract-sops.md` SOP-6 already named the cross-track transfer of the four-tier ladder from `enzyme-quantification-protocol.md`, calling Pass 2's "novelty" claim overstated. But the operational concern is independent of novelty: two parallel articulations of the same framework risk stale-divergence drift. Pass 3 acknowledged the standalone platform-principle page "would still reduce duplication" but framed it as nice-to-have rather than load-bearing. Brian's call: stale-data risk = consolidate, novelty isn't the right criterion.
+
+Closed by creating **[`wiki/quantification-ladder.md`](../../wiki/quantification-ladder.md)** as the canonical framework page (the four tiers, the calibrate-once-track-batches-cheap operational pattern, discipline notes, instantiation pointers). Both source pages updated to defer the framework definition to the central page:
+- `wiki/enzyme-quantification-protocol.md`: framework-reference callout added after intro paragraph, naming itself the canonical first instantiation.
+- `wiki/medicinal-mushroom-extract-sops.md` SOP-6: framework-reference callout replacing the "four-tier framework" prose, retaining the mushroom-specific Tier 1-4 compound table.
+
+Added to [`index.md`](../../index.md) §Rigor Disciplines.
+
+Closes alongside [2026-05-09-experiment-3](./2026-05-09-experiment-3-unified-documentation-of-the-tiered-quantification-ladder.md) (same action).
+
+**Second Pass 3 failure-pattern observation:** Pass 3 over-weights "is this novel?" and under-weights "does this make the corpus better operationally?" Pattern tracked alongside Items 1-2's "named-in-prose ≠ queued-with-comp-NNN-ID" pattern; if a third instance lands, propose prompt tweak to `scripts/sweep-prompt-3-review.md` adding an operational-improvement axis to the verdict rubric.
