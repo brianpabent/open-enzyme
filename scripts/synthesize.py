@@ -36,6 +36,7 @@ to commit and pass to Pass 3.
 """
 
 import os
+import re
 import sys
 import json
 import glob
@@ -114,6 +115,30 @@ PRICING_USD_PER_MTOK = {
     "anthropic/claude-opus-4-7":  (15.00, 75.00),
     "openai/gpt-5":               (2.50, 10.00),
 }
+
+
+# OpenRouter returns the served model with cosmetic suffixes that don't
+# indicate a fallback:
+#   - Provider-routing variant: ':nitro', ':floor', ':online' (after colon)
+#   - Date-version: '-20260423' (8-digit YYYYMMDD at end of last path component)
+# Both are routing-tier decisions on the SAME model, not the fallback array
+# kicking in. Strip both before fallback detection and pricing lookup.
+# Catch 31 (papers/cross-vendor-heterogeneity-guard/revisions.md) caught the
+# original `served_model != args.model` test as 100% false-positive across
+# five spot-checked sweeps because OpenRouter was returning the versioned slug.
+_DATE_VERSION_SUFFIX_RE = re.compile(r"-\d{8}$")
+
+
+def canonical_model_slug(slug: str) -> str:
+    """Normalize an OpenRouter slug for fallback comparison + pricing lookup.
+
+    Strips both alias variants OpenRouter appends to served-model strings:
+    ':nitro' / ':floor' / ':online' provider-routing tags, and the
+    '-YYYYMMDD' date-version suffix that triggered Catch 31's false-positive
+    fallback flag.
+    """
+    base = slug.split(":", 1)[0]
+    return _DATE_VERSION_SUFFIX_RE.sub("", base)
 
 
 def read_api_key():
@@ -345,12 +370,20 @@ def main():
     out_tok = usage.get("completion_tokens", 0)
 
     # OpenRouter returns the actual model that served the request in
-    # `resp["model"]`, which may differ from args.model when the fallback
-    # array kicked in (e.g., DeepSeek primary failed, Gemini served).
-    # Use the served model for cost reporting and frontmatter so the log
-    # accurately reflects what ran.
-    served_model = resp.get("model", args.model)
-    fallback_used = served_model != args.model
+    # `resp["model"]`. Two cases can make it differ from args.model:
+    #   (1) Real fallback — primary model failed and OpenRouter's fallback
+    #       array routed to a different model. Canonical slug differs from
+    #       args.model's canonical slug.
+    #   (2) Alias expansion — same model, cosmetic suffix appended by
+    #       OpenRouter (provider-routing ':variant' or date-version
+    #       '-YYYYMMDD'). Canonical slugs match. Not a fallback.
+    # Compare canonical slugs (suffixes stripped) so alias expansion doesn't
+    # false-positive the flag. Catch 31 documented the original string-
+    # equality test as 100% false-positive across five spot-checked sweeps.
+    served_model_raw = resp.get("model", args.model)
+    served_model = canonical_model_slug(served_model_raw)
+    args_model_canonical = canonical_model_slug(args.model)
+    fallback_used = served_model != args_model_canonical
 
     in_per, out_per = PRICING_USD_PER_MTOK.get(served_model, (None, None))
     if in_per is None:
@@ -361,7 +394,8 @@ def main():
         cost_total = cost_in + cost_out
 
     fallback_note = f" (FALLBACK from {args.model})" if fallback_used else ""
-    print(f"Tokens: in={in_tok:,} out={out_tok:,}  cost=${cost_total:.4f}  model={served_model}{fallback_note}",
+    alias_note = f" (alias: {served_model_raw})" if served_model_raw != served_model else ""
+    print(f"Tokens: in={in_tok:,} out={out_tok:,}  cost=${cost_total:.4f}  model={served_model}{alias_note}{fallback_note}",
           file=sys.stderr)
 
     # Save with frontmatter
@@ -374,6 +408,7 @@ def main():
         f"diff_base: {args.diff_base or 'unknown'}\n"
         f"trigger_files: {args.trigger_files or '(none)'}\n"
         f"reviewer_model: {served_model}\n"
+        f"reviewer_model_served_raw: {served_model_raw}\n"
         f"reviewer_model_requested: {args.model}\n"
         f"reviewer_fallback_used: {fallback_used}\n"
         f"input_tokens: {in_tok}\n"
