@@ -17,3 +17,11 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a row for cns1+cns2 to the chaperone-orthogonal-stacking cassette scoring table (§4) with a predicted orthogonality score. Queue a comp-NNN (in silico) evaluating the metabolic burden of the cns1+cns2 pathway on top of the dual uricase + lactoferrin background. If favourable, add a cordycepin arm to the §1.9 extended triple-cassette design.
 
 > **Pass 3 review — Push back.** `[OVERLAP: EXTENSION]` The proposed endgame-strain extension is interesting, but the factual claim that the chaperone framework “does not evaluate the cns1+cns2 pair” is wrong: `chaperone-orthogonal-stacking.md` §4 already has a “Cordycepin biosynthesis (cns1+cns2; Jeennor 2023 PMID 38071331)” row, marks the enzymes as bacterial cytosolic proteins, assigns effective PDI load 0, and explicitly says the koji-engineering route is off the secretion/folding axis. Do not emit the suggested action “add a row” as if missing; the remaining valid action is a metabolic/proteome-burden assessment on top of uricase + lactoferrin.
+
+---
+
+## ✓ Actioned 2026-05-14
+
+Pass 3 verified: `chaperone-orthogonal-stacking.md` line 234 already has the row "Cordycepin biosynthesis (cns1+cns2; per Jeennor 2023 PMID 38071331)" scored as bacterial cytosolic, PDI load 0, off the secretion/folding axis. Line 238 explicitly says the framework does not track generic proteome burden (ribosomes, amino acid pool, ATP for tRNA charging) and flags metabolic-burden modeling as a future upgrade.
+
+The chaperone-orthogonality claim from Pass 2 is already documented; closed as already-named. The legitimate residual question — metabolic / proteome burden of cns1+cns2 on top of the dual uricase+lactoferrin background — will be queued as comp-023 in `computational-experiments.md` §Planned Analyses when we walk Item 8 ([2026-05-09-experiment-2](./2026-05-09-experiment-2-in-silico-cns1-cns2-compatibility-assessment-with-uricase.md)), Item 11 ([2026-05-09-open-question-2](./2026-05-09-open-question-2-could-cordycepin-be-co-expressed-with-uricase-lactoferrin.md)), and Item 16 ([2026-05-09-most-curious-thread-1](./2026-05-09-most-curious-thread-1-of-everything-surfaced-in-this-sweep-the-thread-id-spend.md)), all of which collapse to the same metabolic-burden comp.
