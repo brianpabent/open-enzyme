@@ -26,11 +26,15 @@
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.05}
 
-% Apply \small font to every table to gain ~10-15% more horizontal room
-% per cell. Cosmetic but materially reduces overlap in wide cells.
-\AtBeginEnvironment{longtable}{\small}
-\AtBeginEnvironment{tabular}{\small}
-\AtBeginEnvironment{tabularx}{\small}
+% No global table-font override. Wide tables (Table 1 in §6; Appendix A;
+% Appendix C) get explicit `\begingroup\scriptsize ... \endgroup` wrappers
+% in the markdown source. Narrow tables (§6 pilot data, etc.) stay at body
+% font size where they remain readable.
+%
+% Earlier version of this file globally forced `\small` inside every
+% longtable via \AtBeginEnvironment. That fired AFTER \begingroup\scriptsize
+% from the per-table wraps and silently reverted them to \small, which is
+% why Table 1 in §6 kept overflowing despite the wrap being applied.
 
 % Page-break flexibility around section headers and tables.
 \widowpenalty=1000

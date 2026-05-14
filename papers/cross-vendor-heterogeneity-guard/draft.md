@@ -314,6 +314,8 @@ Table 1 summarizes per-layer and per-pass cost, latency, and token volume from r
 
 **Table 1.** Layer-and-pass cost, latency, and vendor assignment for the Open Enzyme two-layer cross-vendor architecture. All daemon costs in USD via OpenRouter. Layer 1 costs are subscription-based (Anthropic Claude Code) rather than per-call and are not enumerated per-edit. Representative values from sweep logs and `scripts/SWEEP-ARCHITECTURE.md` (`scripts/SWEEP-ARCHITECTURE.md`, `logs/v4-peer-review-2026-04-25-deepseek.md`).
 
+\begingroup\scriptsize
+
 | Layer / Pass | Role | Model | Vendor | Typical cost | Typical latency | Input tokens (representative) |
 |---|---|---|---|---|---|---|
 | Layer 1 - Interactive | Origination: new content, cross-page connections, numbered computational-experiment briefs | Claude Opus 4.7 (via Claude Code) | Anthropic | Subscription; not per-call | Interactive, author-paced | Working sessions, variable |
@@ -322,6 +324,8 @@ Table 1 summarizes per-layer and per-pass cost, latency, and token volume from r
 | Layer 2 - Pass 3 | Review | OpenAI GPT-5.5 (default since 2026-05-08; Claude Opus 4.7 alternate) | OpenAI / Anthropic | $0.05–$0.30 | 1–2 min + tool calls | warm cache (triggers + cited files); on-demand fetches |
 | Peer-review (episodic) | Independent cross-vendor verification | DeepSeek V4-Pro | DeepSeek | $0.20–$0.30 | varies | full corpus; 2026-04-25 run: 467,964 in / 4,005 out, $0.2070 |
 | **Full Layer-2 three-pass sweep** | | | | **$0.50–$1.30** | **9–12 min** | |
+
+\endgroup
 
 The daemon's total monthly operational cost during normal use is in the low tens of dollars, a small fraction of the underlying API spend on a research project of this scope. The cross-vendor peer-review pass, when run episodically, adds approximately $0.20–$0.30 to that monthly total. Cost is not the binding constraint on the architecture; latency is, for use cases that need synthesis output in real time (see §7).
 
