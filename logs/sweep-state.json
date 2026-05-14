@@ -1,17 +1,23 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "6f5586d308ea1e57383a35383f0abc4b06356311",
-    "timestamp": "2026-05-13T23:50:48Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-13-69103ce.md",
-    "review_commit": "6f5586d308ea1e57383a35383f0abc4b06356311",
+    "commit": "8c0bb51109a078baf3332a63d25ada754d293c70",
+    "timestamp": "2026-05-14T13:44:59Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-14-81e6264.md",
+    "review_commit": "8c0bb51109a078baf3332a63d25ada754d293c70",
     "trigger_files": [
-      "wiki/bio-ai-tools.md",
-      "wiki/compounding-pharmacy-track.md",
-      "wiki/ginkgo-cloud-lab-evaluation.md",
-      "wiki/paperclip-deep-dive.md"
+      "wiki/chaperone-orthogonal-stacking.md",
+      "wiki/complement-c5a-gout.md",
+      "wiki/computational-experiments.md",
+      "wiki/cordycepin-cassette-burden-computational.md",
+      "wiki/enzyme-quantification-protocol.md",
+      "wiki/medicinal-mushroom-extract-sops.md",
+      "wiki/personal-genome-protocol.md",
+      "wiki/quantification-ladder.md",
+      "wiki/t-axis-adjuvant-urate-mapping-computational.md",
+      "wiki/uricase-cassette-ranking-computational.md"
     ],
-    "run_id": "25832216287"
+    "run_id": "25862359338"
   },
   "recent_runs": [
     {
@@ -130,6 +136,15 @@
       "failed_phase": null,
       "trigger_paths_count": 4,
       "synthesis_log": "logs/v4-synthesis-2026-05-13-69103ce.md"
+    },
+    {
+      "run_id": "25862359338",
+      "trigger": "push",
+      "completed_at": "2026-05-14T13:44:59Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 10,
+      "synthesis_log": "logs/v4-synthesis-2026-05-14-81e6264.md"
     }
   ]
 }
