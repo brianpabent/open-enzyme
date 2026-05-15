@@ -1070,6 +1070,38 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Cross-references:** [medicinal-mushroom-complement-track.md §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) (Item 1 of the 2026-05-08 walkthrough — the two-organism synergy bullet); [gout-pathophysiology.md §"ADA (Adenosine Deaminase) — Purine Catabolism Chokepoint Candidate"](./gout-pathophysiology.md); [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md) (comp-014 Phase 2, where ADA was first surfaced); [synthesis.md](./synthesis.md) 2026-05-08 sweep Connection 1 + Proposed Experiment 1.
 
+#### Sixth-arm extension — engineered-koji cordycepin + GLPP (added 2026-05-15; gated on strain availability)
+
+**Status**: Proposed extension to §1.26 base | **Cost**: ~$500–1,000 adder | **Weeks**: same as §1.26 base | **Phase**: 2 | **Hard gating**: engineered-koji cordycepin strain must exist (downstream of §1.9-extended design + comp-025 ADA-competition GREEN + comp-028 three-axis GREEN)
+
+**What it tests:** Can koji-track cordycepin (lacking the native pentostatin that *C. militaris* co-produces from the same BGC) achieve ADA half-life protection equivalent to whole-fermentate *Cordyceps* by leveraging GLPP's polysaccharide-binding ADA inhibition? Specifically: does engineered-koji cordycepin extract + GLPP match the whole-fermentate *Cordyceps* native arms (§1.26 Arms 4 + 5) on ADA half-life?
+
+**Why a sixth arm:** the §1.26 base tests purified cordycepin, pentostatin, GLPP, whole-fermentate *Cordyceps*, and whole-fermentate *Cordyceps* + GLPP. The koji-track equivalent of the cordycepin + ADA-inhibitor pair — koji cordycepin + GLPP — is the synergy named in [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" but never assayed against the whole-fermentate baseline. Without the sixth arm, the koji-track cordycepin strain ships without empirical ADA-protection data; the strain's deliverable falls back to pairing with whole-fermentate *Cordyceps* (per §2.7's cross-chassis stability test) rather than the cleaner GLPP route.
+
+**Distinction from §2.7 (Item 19's Koji × *Cordyceps* Co-Formulation Stability Test):** §2.7 tests **engineered-koji cordycepin + whole-fermentate *C. militaris***  (native pentostatin) for co-formulation stability. The §1.26 sixth arm tests **engineered-koji cordycepin + GLPP** (polysaccharide-binding ADA inhibitor — different ADA-inhibitor source). Both inform the koji-track ADA-protection strategy from different angles; together they decide which co-product (whole-fermentate *Cordyceps* OR purified GLPP) is the preferred pairing for the engineered koji.
+
+**Arm 6 protocol:** identical to §1.26 base — ADA challenge (recombinant human ADA, Sigma A6535) at defined enzyme concentration, sampling at 0/15/30/60/120/240 min, LC-MS cordycepin vs. 3'-deoxyinosine quantification — but the substrate is engineered-koji cordycepin extract (cns1+cns2 strain, post-fermentation extraction per [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-2) co-administered with Tier 3-anchored GLPP (per SOP-1 SEC-MALS characterization).
+
+**Success criteria (sixth arm → next phase):**
+- **GREEN:** sixth-arm cordycepin half-life ≥ 70% of Arm 4 (whole-fermentate *Cordyceps*) AND ≥ 90% of Arm 5 (whole-fermentate + GLPP). → koji cordycepin + GLPP is a viable two-organism deliverable independent of *C. militaris* cultivation; update `medicinal-mushroom-complement-track.md` to promote this from synergy candidate to validated route.
+- **YELLOW:** sixth-arm cordycepin half-life 50–70% of Arm 4. → koji cordycepin + GLPP partially protects; needs higher GLPP dose OR co-formulation with whole-fermentate *Cordyceps* per §2.7. Decision deferred to per-dose cost analysis.
+- **RED:** sixth-arm cordycepin half-life < 50% of Arm 4. → GLPP alone is insufficient ADA protection for the koji cordycepin route; the koji track depends on either (a) co-formulation with whole-fermentate *Cordyceps* (per §2.7) or (b) pentostatin co-engineering (higher cassette complexity per comp-024-class follow-up).
+
+**Estimated cost:** $500–1,000 adder
+- Engineered-koji cordycepin extract preparation (one-time, gated on strain): ~$200
+- Additional LC-MS quantification samples (1 arm × 6 timepoints × 3 replicates = 18 samples × $35 ≈ $630)
+- Tier 3-anchored GLPP reagent (shared with §1.26 base): negligible adder
+
+**Estimated timeline:** same as §1.26 base — sixth arm runs in parallel with Arms 1–5 once the strain exists; no incremental wall-clock time.
+
+**Limitations:**
+
+1. Same in-vitro-ADA limitation as §1.26 base — recombinant human ADA doesn't model gut-microbiome metabolism of cordycepin.
+2. The cordycepin extract from engineered koji may have different impurity profile than whole-fermentate *Cordyceps* extract; this affects interpretation only if impurities themselves modulate ADA activity (unlikely but flagged).
+3. GLPP fraction quality is the same load-bearing requirement as §1.26 base — Tier 3 SEC-MALS characterization per SOP-1 non-negotiable.
+
+**Cross-references:** §1.26 base (parent five-arm assay); [§2.7](#27-koji--cordyceps-co-formulation-stability-test--ada-challenge-assay-added-2026-05-15) (sister Tier 2 stability test on engineered-koji + whole-fermentate *Cordyceps* pairing — different ADA inhibitor source); [`medicinal-mushroom-complement-track.md` §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) (the koji + GLPP entry this sixth arm validates); [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) (comp-023 engineering thread); [`computational-experiments.md`](./computational-experiments.md) comp-025 (ADA × cns1 kinetic gate — must clear before this experiment runs).
+
 ---
 
 ### 1.27 Ergothioneine + Lactoferrin Combination ROS Assay in MSU-Stimulated THP-1 Macrophages (Cross-Track ROS / CP1b Additivity Validation)
