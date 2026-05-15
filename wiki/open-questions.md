@@ -242,6 +242,26 @@ See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [sy
 
 Questions about the koji-first vs. yeast-first choice, community fermentation reliability, strain stability, regulatory positioning, and the overall platform thesis.
 
+### Riskiest assumption — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? *(added 2026-05-15, **the platform's #1 load-bearing scientific bet**)*
+
+**Falsification card committed:** [H08 — Gut-Lumen Sink Platform Thesis](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (stub, 2026-05-15). The full killshot menu, pre-committed thresholds, and assumption stack are queued as Phase 2 on the H08 card.
+
+The platform's load-bearing belief is that the gut-lumen sink produces a clinically meaningful SUA reduction in a typical (non-CKD) gout cohort, in the −0.5 to −1.0 mg/dL band predicted by the [comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model. The biology is sound (ABCG2 secretes ~33% of daily UA elimination into the gut lumen; comp-019's flux model is internally consistent against Miyazaki 2025 measurements) but the clinical-translation link is unvalidated:
+
+- **ALLN-346 Phase 2a Study 201** showed signal in CKD patients; Study 202 (broader cohort) showed 0–5% reduction, no significance vs. placebo, and the program terminated with 19/200 enrolled.
+- **Zero** uricase trials (ALLN-346, PRX-115, rasburicase, pegloticase) have stratified by ABCG2 Q141K genotype — the Q141K × allopurinol response literature is rich, the Q141K × uricase response literature is empty.
+- The comp-019 flux model is prospective and unvalidated against any human cohort.
+
+**If the typical-gout effect is <0.5 mg/dL**, the platform collapses from "core mechanism" to "mild adjunct" — reshaping commercial framing, self-experiment framing, and the priority of peer tracks ([LBP](./engineered-lbp-chassis.md), [siRNA/URAT1](./sirna-urat1-modality.md), [medicinal-mushroom-complement](./medicinal-mushroom-complement-track.md)).
+
+**Phase 2 follow-ups (queued on H08 card):**
+- P2-1 — Lit scan for any post-ALLN-346 oral or gut-targeted uricase Phase 2 typical-gout readout (Opus subagent).
+- P2-2 — Re-analysis attempt of ALLN-346 Study 202 cohort-level genotype data accessibility (FOIA / sponsor request / supplementary data grep). Highest information-per-dollar killshot if data obtainable.
+- P2-3 through P2-6 — Populate assumption stack, killshot menu, pre-committed thresholds, failure-mode coverage map per H01 template.
+- P2-7 — Integrate n=1 self-experiment design with the FEUA protocol on [self-experiment-protocol.md](./self-experiment-protocol.md).
+
+**Cross-references:** [cross-validation.md §Claim 1](./cross-validation.md) (feasibility 6.5/10), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [uricase-abcg2-genotype-stratification-computational.md (comp-019)](./uricase-abcg2-genotype-stratification-computational.md), `synthesis/done/2026-05-09-riskiest-assumption-1*.md` (originating sweep item).
+
 ### Genotype stratification — Q141K and the gut-lumen-sink mechanism's responder population *(added 2026-05-08, **highest-priority open question for the platform's primary demographic**)*
 
 - **Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does the mechanism rely on Q141K-positive disease-state ABCG2 vulnerability to show benefit?** This is the single most important unanswered question for Open Enzyme's primary demographic positioning. If the mechanism only works in Q141K-positive readers (~25-30% of European-descent men, ~50%+ of East Asian men), the platform's addressable population shrinks dramatically — from "all gout patients" to "Q141K-positive gout patients." That's a strategic question that should change trial design, demographic targeting, and possibly commercial framing. (Source: surfaced 2026-05-08 sweep Open Question 1; comp-017 + cross-validation.md prior-art context; [synthesis.md 2026-05-08 Item 8](./synthesis.md).)
