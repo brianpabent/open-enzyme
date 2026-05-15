@@ -100,6 +100,14 @@ to spawn" / "no wiki work needed — already done" / "needs your decision betwee
 - Numbers in context: "0.388 (39% of theoretical max)" not bare "0.388".
 - Tables when comparing 3+ things; prose when explaining 1–2.
 
+**Chassis-pending check (added 2026-05-15).** For every item in the queue, ask one explicit question as part of the briefing: ***"Does this finding hit a chokepoint we care about? If yes — does it have a chassis?"*** Three branches:
+
+1. **Hits chokepoint + fits a current chassis (koji, compounding pharmacy, S. boulardii, etc.)** → action normally; the proposed action will name the relevant chassis page.
+2. **Hits chokepoint + chassis is open** → propose adding to [`wiki/chassis-pending-interventions.md`](../../../wiki/chassis-pending-interventions.md) as the action. The intervention is real; the chassis question is the next question, not the filter that kills the first one. Do NOT deprioritize the item just because koji isn't the right chassis.
+3. **Doesn't hit a documented chokepoint** → action as normal (might be a methodology improvement, a tracking artifact, a contradiction-resolution, etc., where the chassis question doesn't apply).
+
+This is the operational expression of the discipline named in [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../../../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md). Chassis is downstream of chokepoint; the closure question gates the chokepoint-hit check before the chassis-fit check, which prevents quiet chassis-filter narrowing at the recommendation step.
+
 ### Step B — Wait for go-ahead
 
 Do NOT action the item until Brian says "yes" / "go" / "engage" / "do it" / "proceed" / similar. If he asks a clarifying question, answer it and re-ask. If he picks a different option than your recommendation, action his choice without resistance.
