@@ -521,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../team/" class="md-nav__link">
+      <a href="../team.md" class="md-nav__link">
         
   
   
@@ -3707,7 +3707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../practitioner-toolkit/" class="md-nav__link">
+      <a href="../practitioner-toolkit.md" class="md-nav__link">
         
   
   
@@ -4091,7 +4091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bio-ai-tools/" class="md-nav__link">
+      <a href="../bio-ai-tools.md" class="md-nav__link">
         
   
   
@@ -4119,7 +4119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+      <a href="../ai-bio-tools-playbook.md" class="md-nav__link">
         
   
   
@@ -4132,13 +4132,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -4154,7 +4147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../paperclip-deep-dive/" class="md-nav__link">
+      <a href="../paperclip-deep-dive.md" class="md-nav__link">
         
   
   
@@ -4182,7 +4175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chembl-cross-check/" class="md-nav__link">
+      <a href="../chembl-cross-check.md" class="md-nav__link">
         
   
   
@@ -5150,7 +5143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../autonomous-screening-methodology/" class="md-nav__link">
+      <a href="../autonomous-screening-methodology.md" class="md-nav__link">
         
   
   
@@ -5178,7 +5171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manual-literature-mining/" class="md-nav__link">
+      <a href="../manual-literature-mining.md" class="md-nav__link">
         
   
   
@@ -5191,13 +5184,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -5276,7 +5262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GRAPH/" class="md-nav__link">
+      <a href="../GRAPH.md" class="md-nav__link">
         
   
   
@@ -5304,7 +5290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../references/" class="md-nav__link">
+      <a href="../references.md" class="md-nav__link">
         
   
   
@@ -5960,7 +5946,7 @@
 <p><strong>Does Lf affect joint-resident synovial macrophages differently than tissue-resident colonic macrophages?</strong> Joint-resident macrophages are a partially distinct lineage with different receptor expression profiles. All existing mechanistic data (Zhao 2020, Habib 2023, Shan 2026, He 2023) is from non-synovial tissues. A synovial-fluid macrophage isolation + Lf dose-response + MSU challenge would directly test the gout-context mechanism.</p>
 </li>
 <li>
-<p><strong>RFdiffusion + ProteinMPNN tool-stack integration for variant design</strong> <em>(added 2026-05-15)</em>. Lactoferrin variant design — lactoferricin / lactoferrampin peptide-only constructs per #7 above, host-optimized glycosylation variants per #3, or apo-form-stabilized variants per #4 — is a <strong>redesign</strong> problem. Per the BioDesignBench-validated tool stack (Kim &amp; Romero 2026; see <a href="../bio-ai-tools/"><code>bio-ai-tools.md</code> §BioDesignBench</a>), the canonical computational tools for structure-conditioned sequence redesign are <strong>RFdiffusion</strong> and <strong>ProteinMPNN</strong>, neither of which is currently in OE's stack. Both are available via the <strong>protein-design-mcp</strong> package (<a href="https://github.com/jasonkim8652/protein-design-mcp">github.com/jasonkim8652/protein-design-mcp</a>, MIT licence, Docker images). <strong>Fires when:</strong> any of #3, #4, or #7 above moves from question to scope-able computational experiment, OR when the koji-Lf production gate (#2) returns a folding or stability problem that the current ESM2 + Boltz-2 stack can't resolve. Until then, dormant. <strong>Phase 2 integration tasks (if triggered):</strong> (a) deploy protein-design-mcp as a sibling MCP server; (b) re-run candidate variants through RFdiffusion + ProteinMPNN + AlphaFold3 for multi-method concordance per <a href="../autonomous-screening-methodology/"><code>autonomous-screening-methodology.md</code> §"BioDesignBench evaluation-depth audit"</a>.</p>
+<p><strong>RFdiffusion + ProteinMPNN tool-stack integration for variant design</strong> <em>(added 2026-05-15)</em>. Lactoferrin variant design — lactoferricin / lactoferrampin peptide-only constructs per #7 above, host-optimized glycosylation variants per #3, or apo-form-stabilized variants per #4 — is a <strong>redesign</strong> problem. Per the BioDesignBench-validated tool stack (Kim &amp; Romero 2026; see <a href="../etc/bio-ai-tools/"><code>etc/bio-ai-tools.md</code> §BioDesignBench</a>), the canonical computational tools for structure-conditioned sequence redesign are <strong>RFdiffusion</strong> and <strong>ProteinMPNN</strong>, neither of which is currently in OE's stack. Both are available via the <strong>protein-design-mcp</strong> package (<a href="https://github.com/jasonkim8652/protein-design-mcp">github.com/jasonkim8652/protein-design-mcp</a>, MIT licence, Docker images). <strong>Fires when:</strong> any of #3, #4, or #7 above moves from question to scope-able computational experiment, OR when the koji-Lf production gate (#2) returns a folding or stability problem that the current ESM2 + Boltz-2 stack can't resolve. Until then, dormant. <strong>Phase 2 integration tasks (if triggered):</strong> (a) deploy protein-design-mcp as a sibling MCP server; (b) re-run candidate variants through RFdiffusion + ProteinMPNN + AlphaFold3 for multi-method concordance per <a href="../etc/autonomous-screening-methodology/"><code>etc/autonomous-screening-methodology.md</code> §"BioDesignBench evaluation-depth audit"</a>.</p>
 </li>
 </ol>
 <hr />

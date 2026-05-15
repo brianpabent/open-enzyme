@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/linter-design/">
       
       
-        <link rel="prev" href="../chembl-cross-check/">
+        <link rel="prev" href="../modality-chokepoint-matrix/">
       
       
         <link rel="next" href="../hypotheses/">
@@ -521,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../team/" class="md-nav__link">
+      <a href="../team.md" class="md-nav__link">
         
   
   
@@ -2981,7 +2981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../practitioner-toolkit/" class="md-nav__link">
+      <a href="../practitioner-toolkit.md" class="md-nav__link">
         
   
   
@@ -3367,7 +3367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bio-ai-tools/" class="md-nav__link">
+      <a href="../bio-ai-tools.md" class="md-nav__link">
         
   
   
@@ -3395,7 +3395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
+      <a href="../ai-bio-tools-playbook.md" class="md-nav__link">
         
   
   
@@ -3408,13 +3408,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3430,7 +3423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../paperclip-deep-dive/" class="md-nav__link">
+      <a href="../paperclip-deep-dive.md" class="md-nav__link">
         
   
   
@@ -3458,7 +3451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chembl-cross-check/" class="md-nav__link">
+      <a href="../chembl-cross-check.md" class="md-nav__link">
         
   
   
@@ -4768,7 +4761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../autonomous-screening-methodology/" class="md-nav__link">
+      <a href="../autonomous-screening-methodology.md" class="md-nav__link">
         
   
   
@@ -4796,7 +4789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manual-literature-mining/" class="md-nav__link">
+      <a href="../manual-literature-mining.md" class="md-nav__link">
         
   
   
@@ -4809,13 +4802,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -4894,7 +4880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GRAPH/" class="md-nav__link">
+      <a href="../GRAPH.md" class="md-nav__link">
         
   
   
@@ -4922,7 +4908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../references/" class="md-nav__link">
+      <a href="../references.md" class="md-nav__link">
         
   
   
@@ -5068,7 +5054,7 @@
 <td><code>species-gap-caveat</code></td>
 <td>soft</td>
 <td>Claude-semantic</td>
-<td>Rodent IC50 citations (<code>mouse</code>, <code>rat</code>, <code>murine</code>, <code>rodent</code> near <code>IC50</code>, <code>EC50</code>, <code>Ki</code>) require nearby species-gap caveat or link to <code>chembl-cross-check.md</code>. Examples: dapansutrile 1000× mouse→human ratio; BCP rat 100–400 mg/kg → human 50–200 mg/day 20–50× under-dose.</td>
+<td>Rodent IC50 citations (<code>mouse</code>, <code>rat</code>, <code>murine</code>, <code>rodent</code> near <code>IC50</code>, <code>EC50</code>, <code>Ki</code>) require nearby species-gap caveat or link to <code>etc/chembl-cross-check.md</code>. Examples: dapansutrile 1000× mouse→human ratio; BCP rat 100–400 mg/kg → human 50–200 mg/day 20–50× under-dose.</td>
 </tr>
 <tr>
 <td><code>no-inline-revision-history</code></td>
@@ -5109,7 +5095,7 @@
 </tbody>
 </table>
 <p><strong>v0 scope decision.</strong> Implement the regex-level rules first: <code>evidence-tag-required</code> (regex heuristic only, not semantic), <code>cross-ref-resolves</code>, <code>mkdocs-nav-coverage</code>, <code>no-inline-revision-history</code>, <code>frontmatter-complete</code>, <code>standard-markdown-links</code>. These are free, deterministic, and cover ~80% of the consistency wins. Claude-semantic rules (<code>species-gap-caveat</code>, <code>claim-calibration</code>) layer in once the regex set is stable and we have calibration on token cost.</p>
-<p><strong>Existing infrastructure.</strong> <code>chembl-cross-check.md</code> is effectively an already-deployed linter for one dimension (rodent-IC50 cross-check against ChEMBL human-target data). It's user-invoked, quarterly. Document Lint formalizes this pattern: existing tools stay, new lint rules slot in alongside.</p>
+<p><strong>Existing infrastructure.</strong> <code>etc/chembl-cross-check.md</code> is effectively an already-deployed linter for one dimension (rodent-IC50 cross-check against ChEMBL human-target data). It's user-invoked, quarterly. Document Lint formalizes this pattern: existing tools stay, new lint rules slot in alongside.</p>
 <hr />
 <h2 id="4-falsification-card-schema">§4 — Falsification Card Schema<a class="headerlink" href="#4-falsification-card-schema" title="Permanent link">&para;</a></h2>
 <p>Each hypothesis lives at <code>wiki/hypotheses/H0N-slug.md</code> and conforms to this schema.</p>
@@ -5276,7 +5262,7 @@
 <p><strong>Claude-semantic rules vs. regex rules — token-cost ceiling for v0?</strong> <em>Open.</em> Regex rules are free; semantic rules cost per PR / per sweep. A reasonable v0 budget: 100–500 input tokens and 50–200 output tokens per semantic rule, per document, per sweep pass. At current Open Enzyme sweep volume (a few sweeps per day), this is ~$0.05–0.50/day. Acceptable. If it becomes a cost bottleneck, sampling (run semantic rules only on changed files, or only on promoted hypotheses) is the first knob.</p>
 </li>
 <li>
-<p><strong>Integration with existing infrastructure.</strong> <em>Partially resolved.</em> <code>chembl-cross-check.md</code> is an existing user-invoked quarterly linter for one dimension (rodent-IC50 cross-check). Sweep-prompt Pass 1 does some lint-like work during propagation (enforces cross-refs, updates CP labels). Document Lint formalizes and extends these patterns without replacing them.</p>
+<p><strong>Integration with existing infrastructure.</strong> <em>Partially resolved.</em> <code>etc/chembl-cross-check.md</code> is an existing user-invoked quarterly linter for one dimension (rodent-IC50 cross-check). Sweep-prompt Pass 1 does some lint-like work during propagation (enforces cross-refs, updates CP labels). Document Lint formalizes and extends these patterns without replacing them.</p>
 </li>
 <li>
 <p><strong>Who is Falsification Lint <em>for</em> in the current regime?</strong> <em>Answer:</em> Brian. When Brian commits to a hypothesis — when money, time, or collaborator attention is about to be spent — Falsification Lint is the scrutinize-yourself tool. If three PhD collaborators join, the calibration-curve question (§11.3) reopens; for now the answer is "single-researcher instrument."</p>

@@ -5,15 +5,7 @@
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
-         <loc>https://brianpabent.github.io/open-enzyme/GRAPH/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
          <loc>https://brianpabent.github.io/open-enzyme/abcg2-modulators/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
-         <loc>https://brianpabent.github.io/open-enzyme/ai-bio-tools-playbook/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
@@ -29,15 +21,7 @@
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
-         <loc>https://brianpabent.github.io/open-enzyme/autonomous-screening-methodology/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
          <loc>https://brianpabent.github.io/open-enzyme/bhb-ketones/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
-         <loc>https://brianpabent.github.io/open-enzyme/bio-ai-tools/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
@@ -74,10 +58,6 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/chassis-pending-interventions/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
-         <loc>https://brianpabent.github.io/open-enzyme/chembl-cross-check/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
@@ -241,10 +221,6 @@
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
-         <loc>https://brianpabent.github.io/open-enzyme/manual-literature-mining/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
          <loc>https://brianpabent.github.io/open-enzyme/medicinal-mushroom-complement-track/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
@@ -289,19 +265,11 @@
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
-         <loc>https://brianpabent.github.io/open-enzyme/paperclip-deep-dive/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
          <loc>https://brianpabent.github.io/open-enzyme/peptide-gout-addendum/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/personal-genome-protocol/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
-         <loc>https://brianpabent.github.io/open-enzyme/practitioner-toolkit/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
@@ -318,10 +286,6 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/quantification-ladder/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
-         <loc>https://brianpabent.github.io/open-enzyme/references/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
@@ -369,10 +333,6 @@
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
-         <loc>https://brianpabent.github.io/open-enzyme/team/</loc>
-         <lastmod>2026-05-15</lastmod>
-    </url>
-    <url>
          <loc>https://brianpabent.github.io/open-enzyme/theaflavins/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
@@ -414,6 +374,50 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/zileuton/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/GRAPH/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/ai-bio-tools-playbook/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/autonomous-screening-methodology/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/bio-ai-tools/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/chembl-cross-check/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/manual-literature-mining/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/paperclip-deep-dive/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/practitioner-toolkit/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/references/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/team/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
