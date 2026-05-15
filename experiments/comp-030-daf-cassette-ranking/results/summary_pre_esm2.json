@@ -1,0 +1,36 @@
+{
+  "experiment_id": "comp-030",
+  "date": "2026-05-15",
+  "target": "DAF/CD55 SCR1-4 (aa 35-285, UniProt P08174)",
+  "target_disulfides": 8,
+  "target_cys": 16,
+  "alpha_central": 0.45,
+  "alpha_range": [
+    0.3,
+    0.6
+  ],
+  "intrinsic_daf_pdi_load_central": 3.6,
+  "design_space": {
+    "promoters": 6,
+    "signal_peptides": 12,
+    "codon_variants": 10,
+    "scaffolds": 60,
+    "total": 43200
+  },
+  "models_1_to_4_cutoffs": {
+    "cai_top20_cutoff": 1.0,
+    "mfe_top20_cutoff_kcal_per_mol": -19.5,
+    "chaperone_load_top20_cutoff": 3.7,
+    "promoter_sp_prior_top20_cutoff": 0.7179611650485436
+  },
+  "concordance_n4_distribution_pre_esm2": {
+    "2": 6816,
+    "1": 15504,
+    "4": 168,
+    "3": 1704,
+    "0": 19008
+  },
+  "protein_distinct_combinations_total": 720,
+  "protein_distinct_combinations_pre_filter_n4_ge_2": 672,
+  "esm2_step": "pending -- run run_esm2.py next"
+}

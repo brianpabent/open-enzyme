@@ -197,3 +197,4 @@ The DAF SCR1-4 truncated construct is a **redesign** problem (modifying the exis
 - [validation-experiments.md §1.25](./validation-experiments.md) — formalized wet-lab gate experiment (2026-05-06)
 - [chaperone-orthogonal-stacking.md §5.5](./chaperone-orthogonal-stacking.md) — triple-cassette prediction (architecture-refined 2026-05-06) that motivated single-cassette routing for §1.25
 - [hypotheses/H05-daf-scr14-cp0-thesis.md](./hypotheses/H05-daf-scr14-cp0-thesis.md) — falsification card; §1.25 readouts directly address H05's three named wet-lab unknowns
+- [daf-cd55-scr14-cassette-ranking-computational.md](./daf-cd55-scr14-cassette-ranking-computational.md) — comp-030 (2026-05-15); exhaustive cassette ranking (43,200 candidates); top cluster = PamyB + SPamyB + cai_max + direct-secretion; α-coefficient CORROBORATED (pLDDT mean 88.8, 100% above 80)
