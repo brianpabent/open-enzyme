@@ -236,6 +236,16 @@ See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [sy
 
 - **ChEMBL cross-check sweep on remaining stack compounds** (BHB, KPV, ursolic acid, taurine, sulforaphane, berberine, resveratrol, curcumin, ergothioneine, ferulic acid, kojic acid): 2-5 more mechanistic reframings are expected when primary curated bioactivities are compared to the current wiki mechanism claims. See [synthesis.md 2026-04-23 Connection 4](./synthesis.md).
 
+### Quantification methodology — Tier 2 inter-operator reproducibility *(added 2026-05-15)*
+
+- **Can the [quantification-ladder.md](./quantification-ladder.md) Tier 2 assays stay within their pre-registered tracking tolerance (±20% per the ladder's calibrate-once-at-Tier-3 / track-batches-cheap operational pattern) when run by multiple independent home / community-biolab operators after a shared Tier 3 calibration?** The framework is specified; no multi-operator reproducibility data exists. Per Pass 3 review of the 2026-05-14 Open Question 1 sweep item — which mis-cited H06 Dimension 2's ±15% threshold (Dimension 2 specifies that for Tier 3 HPLC/MS, not Tier 2) — the narrower question is the right framing. Applies to:
+  - **Ergothioneine** ([SOP-6](./medicinal-mushroom-extract-sops.md) Ellman's reagent / DTNB) — well-anchored chemistry but multi-operator data lacking
+  - **GLPP** ([SOP-6](./medicinal-mushroom-extract-sops.md) phenol-sulfuric) — same
+  - **Cordycepin** ([SOP-6](./medicinal-mushroom-extract-sops.md) diazo-coupling, Speculative) — the *method validity* question is the upstream gate; tracked at [`validation-experiments.md` §1.28](./validation-experiments.md). The *inter-operator reproducibility* question fires only after §1.28 returns GREEN.
+  - **Uricase activity** ([enzyme-quantification-protocol.md](./enzyme-quantification-protocol.md), 293 nm UV absorbance) — same multi-operator gap
+- **Fires when:** Tier 2 assays start being used in practice by ≥3 independent operators (home + community-biolab adopters); structural prerequisite for the [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) batch-CV claim (CV < 30% cross-user requires both producer + assay-runner reproducibility). Until then, dormant. Resolution work: design a small multi-operator round-robin (single calibrated reference batch sent to N=3–5 operators, each runs the Tier 2 assay independently, compare results) — estimated $500–1,000 + 4–6 weeks once operator network exists.
+- **Cross-references:** [H06](./hypotheses/H06-medicinal-mushroom-complement-track.md), [H09](./hypotheses/H09-community-fermentation-reliability.md), [`quantification-ladder.md`](./quantification-ladder.md), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6, [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md), [`self-experiment-protocol.md`](./self-experiment-protocol.md) §12 (the workflow that depends on this).
+
 ---
 
 ## Platform / Strategic
