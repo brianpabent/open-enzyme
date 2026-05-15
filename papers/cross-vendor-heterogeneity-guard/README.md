@@ -2,7 +2,7 @@
 
 **Working title:** *Cross-vendor heterogeneity as a guard against epistemic homogenization in AI-assisted scientific literature synthesis.*
 
-**Author:** Brian Abent (Open Enzyme · brian@headsupresults.com). Single author.
+**Author:** Brian Abent (Open Enzyme · brian.abent@gmail.com). Single author.
 
 **Status (2026-05-13):** Solo-draftable work complete. Manuscript has Abstract, §1–§9, Methods Appendix, Appendix A (vendor attribution), Table 1, Figures 1–2, and an 11-citation S2-verified bibliography. Pending: cross-vendor external review passes (Brian fires the prompts in `review-prompts.md`), then bioRxiv preprint submission per `submission-checklist.md`.
 

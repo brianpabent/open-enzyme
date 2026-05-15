@@ -324,4 +324,4 @@ The umbrella `~/Documents/Claude/Projects/abent/CLAUDE.md` git steward pattern s
 
 If you're uncertain about scope, evidence standard, or whether a change triggers the "doc sweep rule", default to **conservatism**: err toward more updates, not fewer. This project is rigorous for PhD scientists, and consistency is non-negotiable.
 
-**Project Lead:** Brian Abent (brian@headsupresults.com)
+**Project Lead:** Brian Abent (brian.abent@gmail.com)

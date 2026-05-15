@@ -10,7 +10,7 @@ Self-contained brief for handing this paper to Google Cloud's PaperOrchestra. Si
 
 **Type:** Methodology paper. Argues that cross-vendor (different companies' models) heterogeneity is the right granularity for guarding against bias accumulation in long-lived AI-maintained knowledge corpora, distinct from within-vendor multi-model approaches in the existing multi-agent literature. Uses the Open Enzyme wiki-sweep daemon as the worked example, with four concrete catches from the operational record as case studies.
 
-**Author:** Brian Abent (Open Enzyme · brian@headsupresults.com). Single author.
+**Author:** Brian Abent (Open Enzyme · brian.abent@gmail.com). Single author.
 
 **Voice:** Academic-formal. Plain prose around precise terms. PhD-level audience but written so a CS-literate non-PhD can follow every substantive claim. Every precise technical term has a parenthetical gloss on first use. Glossary file (`glossary.md`) is the authoritative term list.
 
