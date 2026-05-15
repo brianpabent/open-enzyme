@@ -22,7 +22,7 @@ overlap_tag: EXTENSION
 
 ## ✓ Actioned 2026-05-15 (drafted AND implemented)
 
-User direction was to implement, not just draft. Shipped:
+Brian's direction was to implement, not just draft. Shipped:
 
 **Pilot proposal** drafted as a top-level section in [`scripts/SWEEP-ARCHITECTURE.md`](../../scripts/SWEEP-ARCHITECTURE.md) §"Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution":
 
