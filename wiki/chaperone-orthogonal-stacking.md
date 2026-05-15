@@ -433,7 +433,7 @@ The design-escape framing is therefore: "cytosolic third cassettes are *promisin
 
 ### Comp-028 as the feasibility gate
 
-[comp-028](./computational-experiments.md) (Planned Analyses, queued 2026-05-15) is the explicit computational pass that resolves the open question. It requires two orthogonal models (per the BioDesignBench evaluation-depth discipline at [`autonomous-screening-methodology.md` §"BioDesignBench evaluation-depth audit"](./autonomous-screening-methodology.md)):
+[comp-028](./computational-experiments.md) (Planned Analyses, queued 2026-05-15) is the explicit computational pass that resolves the open question. It requires two orthogonal models (per the BioDesignBench evaluation-depth discipline at [`etc/autonomous-screening-methodology.md` §"BioDesignBench evaluation-depth audit"](./etc/autonomous-screening-methodology.md)):
 
 - The chaperone framework with explicit confidence bounds (this section, with Pass 3 softening applied)
 - iWV1314 FBA with the dual-cassette uricase + lactoferrin metabolic baseline overlaid on the cns1+cns2 cordycepin demand (not just cns1+cns2 alone as comp-023 ran)
@@ -556,11 +556,11 @@ Honest about edges:
 - [koji-construct-design.md](./koji-construct-design.md) — Cassette architecture (promoters, signal peptides, terminators)
 - [protein-engineering-strategy.md](./protein-engineering-strategy.md) — Substrate-specific protein engineering
 - [validation-experiments.md](./validation-experiments.md) §1.9 — First wet-lab dual-cassette test; generates the first 2 data points for the pairwise matrix
-- [manual-literature-mining.md](./manual-literature-mining.md) §"Pre-commit verification gate" — methodology applied retroactively to this page on 2026-05-06; see §10.1 below for outcomes
+- [manual-literature-mining.md](./etc/manual-literature-mining.md) §"Pre-commit verification gate" — methodology applied retroactively to this page on 2026-05-06; see §10.1 below for outcomes
 
 ### 10.1 Verification provenance
 
-Pre-commit verification gate ([manual-literature-mining.md](./manual-literature-mining.md) §"Pre-commit verification gate") applied retroactively on 2026-05-06 to the three load-bearing numbers feeding §1 and §7. Outcomes:
+Pre-commit verification gate ([manual-literature-mining.md](./etc/manual-literature-mining.md) §"Pre-commit verification gate") applied retroactively on 2026-05-06 to the three load-bearing numbers feeding §1 and §7. Outcomes:
 
 | Source paper | Number(s) verified | Verdict | Source location | Date |
 |---|---|---|---|---|
@@ -573,7 +573,7 @@ Pre-commit verification gate ([manual-literature-mining.md](./manual-literature-
 
 ### 10.2 Architecture Coefficient Verification Provenance (added 2026-05-06)
 
-Pre-commit verification gate ([manual-literature-mining.md](./manual-literature-mining.md) §"Pre-commit verification gate") applied to all per-architecture folding kinetics claims in §3.5. Sources retrieved and verified via `mcp__plugin_pubmed_PubMed__get_article_metadata` and `mcp__paperclip__paperclip` (search + head commands; never `map` or `reduce` per memory/feedback_paperclip_map_unreliable.md) on 2026-05-06.
+Pre-commit verification gate ([manual-literature-mining.md](./etc/manual-literature-mining.md) §"Pre-commit verification gate") applied to all per-architecture folding kinetics claims in §3.5. Sources retrieved and verified via `mcp__plugin_pubmed_PubMed__get_article_metadata` and `mcp__paperclip__paperclip` (search + head commands; never `map` or `reduce` per memory/feedback_paperclip_map_unreliable.md) on 2026-05-06.
 
 | Source | Claim verified | Verdict | Source location | Placeholder flags |
 |---|---|---|---|---|

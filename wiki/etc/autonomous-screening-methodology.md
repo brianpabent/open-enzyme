@@ -3,12 +3,12 @@ title: Autonomous AI Screening Methodology — Lessons from ClockBase Agent for 
 date: 2026-05-07
 tags: [methodology, ai-driven-discovery, comp-NNN, peer-track, prior-art, rigor-discipline]
 related:
-  - computational-experiments.md
+  - ../computational-experiments.md
   - manual-literature-mining.md
-  - linter-design.md
+  - ../linter-design.md
   - ai-bio-tools-playbook.md
-  - chaperone-orthogonal-stacking.md
-  - open-source-platform.md
+  - ../chaperone-orthogonal-stacking.md
+  - ../open-source-platform.md
 sources:
   - "Ying K, Tyshkovskiy A, Gladyshev VN et al. Autonomous AI Agents Discover Aging Interventions from Millions of Molecular Profiles. bioRxiv 2023.02.28.530532v3 (current version posted late 2025 / early 2026)"
   - "PMC ID PMC12667862; PubMed PMID 41332661"
@@ -80,11 +80,11 @@ The transferable pattern is **composite score across orthogonal models**, not an
 For comp-NNN: don't rank purely on AlphaFold confidence or purely on codon adaptation index. Combine ≥3 orthogonal scores:
 
 - Folding stability (AlphaFold + ESMFold + Boltz-2 consensus)
-- Secretion-pathway compatibility ([`chaperone-orthogonal-stacking.md`](./chaperone-orthogonal-stacking.md))
+- Secretion-pathway compatibility ([`chaperone-orthogonal-stacking.md`](../chaperone-orthogonal-stacking.md))
 - mRNA structure metrics (RNAfold accessibility, codon usage)
 - Host-toxicity proxies (where applicable)
 
-**Disagreement across orthogonal models = uncertainty signal.** This connects to the multi-vendor / multi-model heterogeneity discipline established in [CLAUDE.md §"Multi-model synthesis as guard against epistemic homogenization"](../CLAUDE.md) and [`open-source-platform.md`](./open-source-platform.md). ClockBase's >40 aging clocks is the same idea at scale.
+**Disagreement across orthogonal models = uncertainty signal.** This connects to the multi-vendor / multi-model heterogeneity discipline established in [CLAUDE.md §"Multi-model synthesis as guard against epistemic homogenization"](../CLAUDE.md) and [`open-source-platform.md`](../open-source-platform.md). ClockBase's >40 aging clocks is the same idea at scale.
 
 ### 3. Hypothesis-then-verify pattern (mirrors the pre-commit grep-verify gate)
 
@@ -92,9 +92,9 @@ ClockBase's two-pass pattern (hypothesis-generation agent → verification agent
 
 **Comp-NNN implementation:** candidate-scoring agent produces a ranked shortlist; **independent verification agent** re-checks load-bearing numbers (residue indices, disulfide counts, predicted Tm, cleavage-site predictions) against primary databases (UniProt, ChEMBL, AlphaFold) before the candidate enters the wet-lab queue. The DAF SCR1-4 disulfide-count incident (2026-05-06) is the canonical case showing why this is needed — exactly what a verification-pass would have caught.
 
-**Operational instantiation (comp-022, 2026-05-14):** The ClockBase exhaustive-search-then-rank pattern was instantiated at full cardinality for the first time in the OE corpus — 43,200 uricase cassette candidates enumerated, scored across 5 orthogonal models (CAI, ViennaRNA MFE, chaperone load, promoter×SP prior, ESM2 pseudo-pLDDT), with N-of-5 ≥ 4 concordance gate producing 71 promoted cassettes. The v1→v2 retrofit (adding real ViennaRNA MFE + ESM2 fold-quality proxy) confirmed the v1 top cluster at 100% survival. See [`uricase-cassette-ranking-computational.md`](./uricase-cassette-ranking-computational.md). (Mechanistic Extrapolation; source: uricase-cassette-ranking-computational.md)
+**Operational instantiation (comp-022, 2026-05-14):** The ClockBase exhaustive-search-then-rank pattern was instantiated at full cardinality for the first time in the OE corpus — 43,200 uricase cassette candidates enumerated, scored across 5 orthogonal models (CAI, ViennaRNA MFE, chaperone load, promoter×SP prior, ESM2 pseudo-pLDDT), with N-of-5 ≥ 4 concordance gate producing 71 promoted cassettes. The v1→v2 retrofit (adding real ViennaRNA MFE + ESM2 fold-quality proxy) confirmed the v1 top cluster at 100% survival. See [`uricase-cassette-ranking-computational.md`](../uricase-cassette-ranking-computational.md). (Mechanistic Extrapolation; source: uricase-cassette-ranking-computational.md)
 
-**Proxy-quality lesson from comp-022 v2 retrofit (added 2026-05-15).** comp-022 v1 used a GC-content + GC-clamp + palindromic-4mer proxy for mRNA 5′ secondary structure (cheap, no external dependency). The v2 retrofit replaced it with real ViennaRNA 2.7.2 MFE calculation. Spearman correlation between the v1 GC-clamp proxy and the v2 ViennaRNA MFE: **ρ = 0.241** (weak; see [`uricase-cassette-ranking-computational.md` §9.4](./uricase-cassette-ranking-computational.md)). **430 of 501 v1-shortlisted cassettes were re-ranked outside the v2 N-of-5 ≥ 4 gate** when the real biophysical model replaced the proxy. The v1 top cluster survived intact (100% retained), but the long tail of v1-eligible candidates was substantially noise. The lesson generalizes: **cheap proxies can be near-uncorrelated noise with the real biophysical quantity they're standing in for; if a comp-NNN uses any proxy in the composite ranking, the proxy's correlation against the real model must be explicitly validated before wet-lab promotion of the long-tail candidates.** Operationally for new comp-NNNs: prefer real biophysical models (ViennaRNA / RNAfold for mRNA folding, ESMFold / AlphaFold for structure, Rosetta / PyRosetta for energy, FBA for metabolic) over cheap heuristics, unless a published proxy-vs-real correlation ≥ 0.7 already exists for the specific assay. This discipline is now wired into the walk-synthesis SKILL.md §4 subagent-briefing rule #9 (Deep multi-metric evaluation discipline) and into the Pass 3 review prompts' "Evaluation depth > tool coverage" anchor — both anchored to the BioDesignBench finding (Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381) and now empirically corroborated by comp-022's own retrofit experience.
+**Proxy-quality lesson from comp-022 v2 retrofit (added 2026-05-15).** comp-022 v1 used a GC-content + GC-clamp + palindromic-4mer proxy for mRNA 5′ secondary structure (cheap, no external dependency). The v2 retrofit replaced it with real ViennaRNA 2.7.2 MFE calculation. Spearman correlation between the v1 GC-clamp proxy and the v2 ViennaRNA MFE: **ρ = 0.241** (weak; see [`uricase-cassette-ranking-computational.md` §9.4](../uricase-cassette-ranking-computational.md)). **430 of 501 v1-shortlisted cassettes were re-ranked outside the v2 N-of-5 ≥ 4 gate** when the real biophysical model replaced the proxy. The v1 top cluster survived intact (100% retained), but the long tail of v1-eligible candidates was substantially noise. The lesson generalizes: **cheap proxies can be near-uncorrelated noise with the real biophysical quantity they're standing in for; if a comp-NNN uses any proxy in the composite ranking, the proxy's correlation against the real model must be explicitly validated before wet-lab promotion of the long-tail candidates.** Operationally for new comp-NNNs: prefer real biophysical models (ViennaRNA / RNAfold for mRNA folding, ESMFold / AlphaFold for structure, Rosetta / PyRosetta for energy, FBA for metabolic) over cheap heuristics, unless a published proxy-vs-real correlation ≥ 0.7 already exists for the specific assay. This discipline is now wired into the walk-synthesis SKILL.md §4 subagent-briefing rule #9 (Deep multi-metric evaluation discipline) and into the Pass 3 review prompts' "Evaluation depth > tool coverage" anchor — both anchored to the BioDesignBench finding (Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381) and now empirically corroborated by comp-022's own retrofit experience.
 
 ### 4. Autonomy boundary = ranking, not validation
 
@@ -159,9 +159,9 @@ The audit reaffirms that the N-of-M concordance pattern this page advocates IS t
 
 ## See also
 
-- [`computational-experiments.md`](./computational-experiments.md) — comp-NNN tracking index
+- [`computational-experiments.md`](../computational-experiments.md) — comp-NNN tracking index
 - [`manual-literature-mining.md`](./manual-literature-mining.md) — five-rule discipline for safe LLM literature use
-- [`linter-design.md`](./linter-design.md) — falsification-card + document-lint architecture
+- [`linter-design.md`](../linter-design.md) — falsification-card + document-lint architecture
 - [`ai-bio-tools-playbook.md`](./ai-bio-tools-playbook.md) — computational stack
-- [`open-source-platform.md`](./open-source-platform.md) — multi-vendor heterogeneity guard discipline
+- [`open-source-platform.md`](../open-source-platform.md) — multi-vendor heterogeneity guard discipline
 - [`practitioner-toolkit.md`](./practitioner-toolkit.md) — section umbrella (self-experiments + DIY-bio + rigor disciplines)

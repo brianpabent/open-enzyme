@@ -3,10 +3,10 @@ title: Practitioner Toolkit — Self-Experiments, DIY-Bio, Rigor Disciplines
 date: 2026-05-07
 tags: [practitioner-toolkit, self-experiments, DIY-bio, rigor, index, kitchen-table]
 related:
-  - self-experiment-protocol.md
-  - personal-genome-protocol.md
-  - koji-home-fermentation.md
-  - enzyme-quantification-protocol.md
+  - ../self-experiment-protocol.md
+  - ../personal-genome-protocol.md
+  - ../koji-home-fermentation.md
+  - ../enzyme-quantification-protocol.md
   - manual-literature-mining.md
   - autonomous-screening-methodology.md
 sources: []
@@ -26,19 +26,19 @@ Section umbrella for the practitioner-side wiki: how a single researcher (instit
 
 Personal protocols and in-progress n=1 work.
 
-- **[`self-experiment-protocol.md`](./self-experiment-protocol.md)** — biomarker monitoring framework: blood panels (CBC / CMP / UA / hs-CRP / LDH / HbA1c), 16S stool, daily diary, red-flag halt criteria; specialty biomarkers (C3 / C4 / CH50 / C5a CP0; urinary LTE4 CP6a)
-- **[`personal-genome-protocol.md`](./personal-genome-protocol.md)** — kitchen-table sequencing as both personal genome project AND Open Enzyme strain-QC infrastructure; gout pharmacogenomic query list (HLA-B*58:01, ABCG2 Q141K, SLC2A9, URAT1, PDZK1, MEFV)
-- **PERT-timing self-experiment** (April 2026 → ongoing) — BoulderBio dose/timing n=1; documented inline in [`digestive-enzyme-optimization.md`](./digestive-enzyme-optimization.md). Splits dose-finding from formulation question for the engineered-platform endgame.
+- **[`self-experiment-protocol.md`](../self-experiment-protocol.md)** — biomarker monitoring framework: blood panels (CBC / CMP / UA / hs-CRP / LDH / HbA1c), 16S stool, daily diary, red-flag halt criteria; specialty biomarkers (C3 / C4 / CH50 / C5a CP0; urinary LTE4 CP6a)
+- **[`personal-genome-protocol.md`](../personal-genome-protocol.md)** — kitchen-table sequencing as both personal genome project AND Open Enzyme strain-QC infrastructure; gout pharmacogenomic query list (HLA-B*58:01, ABCG2 Q141K, SLC2A9, URAT1, PDZK1, MEFV)
+- **PERT-timing self-experiment** (April 2026 → ongoing) — BoulderBio dose/timing n=1; documented inline in [`digestive-enzyme-optimization.md`](../digestive-enzyme-optimization.md). Splits dose-finding from formulation question for the engineered-platform endgame.
 
 ## DIY Capability Builds
 
 Kitchen-table / minimal-equipment procedures. Several of these double as platform infrastructure for the engineered-strain library.
 
-- **[`koji-home-fermentation.md`](./koji-home-fermentation.md)** — wild-type small-batch koji protocol (koji-kin → koji rice → shio-koji / amazake); pre-engineering baseline + n=1 trial bed for the EPI co-target.
-- **[`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md)** — tiered methods for measuring amylase / protease / lipase activity (kitchen → smartphone colorimetry → community-college bench → outsourced contract assay).
-- **[`engineered-koji-protocol.md`](./engineered-koji-protocol.md)** — engineering-stage protocol for *A. oryzae* multi-enzyme fermentation; bridges DIY-bio capability into platform engineering.
-- **[`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md)** — planned extract characterization SOPs (GLPP, cordycepin, ergothioneine); operator-independent reproducibility tolerances.
-- **Sequencing capability** (sub-bucket of [`personal-genome-protocol.md`](./personal-genome-protocol.md)) — MinION + Dorado + Flye / Clair3 pipeline for personal genome AND CRISPR integration verification, off-target indel screening, plasmid validation, released-strain genome QC.
+- **[`koji-home-fermentation.md`](../koji-home-fermentation.md)** — wild-type small-batch koji protocol (koji-kin → koji rice → shio-koji / amazake); pre-engineering baseline + n=1 trial bed for the EPI co-target.
+- **[`enzyme-quantification-protocol.md`](../enzyme-quantification-protocol.md)** — tiered methods for measuring amylase / protease / lipase activity (kitchen → smartphone colorimetry → community-college bench → outsourced contract assay).
+- **[`engineered-koji-protocol.md`](../engineered-koji-protocol.md)** — engineering-stage protocol for *A. oryzae* multi-enzyme fermentation; bridges DIY-bio capability into platform engineering.
+- **[`medicinal-mushroom-extract-sops.md`](../medicinal-mushroom-extract-sops.md)** — planned extract characterization SOPs (GLPP, cordycepin, ergothioneine); operator-independent reproducibility tolerances.
+- **Sequencing capability** (sub-bucket of [`personal-genome-protocol.md`](../personal-genome-protocol.md)) — MinION + Dorado + Flye / Clair3 pipeline for personal genome AND CRISPR integration verification, off-target indel screening, plasmid validation, released-strain genome QC.
 
 ## Rigor Disciplines (cross-cutting)
 
@@ -46,15 +46,15 @@ Methodology that applies to **all** research modes — wet-lab, computational, l
 
 - **[`manual-literature-mining.md`](./manual-literature-mining.md)** — five-rule protocol for safe LLM literature use (safe primitives only, anchor to meta.json, grep-verify all numbers, never propagate map / reduce summaries, cite line-anchored). Surfaced 2026-05-05 after documented Paperclip `map` operator hallucination.
 - **[`chembl-cross-check.md`](./chembl-cross-check.md)** — quarterly ChEMBL v34 cross-reference of stack compounds; separates direct-inhibitor claims from pathway-modulator claims (e.g., quercetin → 5-LOX, not NLRP3).
-- **[`linter-design.md`](./linter-design.md)** — two-linter architecture (Document Lint always-on; Falsification Lint on-demand per-hypothesis with killshot menus, failure-mode ontology, survival scoring).
-- **[`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md)** — six-rule methodology for evidence-leveling traditional-medicine claims (chokepoint mapping, ChEMBL cross-check, bioavailability-honest framing, formula decomposition, standardized-extract specification, falsification-card discipline).
+- **[`linter-design.md`](../linter-design.md)** — two-linter architecture (Document Lint always-on; Falsification Lint on-demand per-hypothesis with killshot menus, failure-mode ontology, survival scoring).
+- **[`tcm-modern-rigor-intersection.md`](../tcm-modern-rigor-intersection.md)** — six-rule methodology for evidence-leveling traditional-medicine claims (chokepoint mapping, ChEMBL cross-check, bioavailability-honest framing, formula decomposition, standardized-extract specification, falsification-card discipline).
 - **[`autonomous-screening-methodology.md`](./autonomous-screening-methodology.md)** — peer-track methodology page on ClockBase Agent (Ying et al. bioRxiv v3, late 2025 / early 2026); transferable patterns for comp-NNN: search-space sizing, composite-score ranking across orthogonal predictors, hypothesis-then-verify, autonomy boundary, N-of-M concordance for wet-lab handoff.
-- **[`cross-validation.md`](./cross-validation.md)** — thesis stress-test discipline; risk matrix across all tracks; identifies true blockers vs. surmountable obstacles.
+- **[`cross-validation.md`](../cross-validation.md)** — thesis stress-test discipline; risk matrix across all tracks; identifies true blockers vs. surmountable obstacles.
 
 ## Section conventions
 
 - **Evidence-level discipline applies.** Every personal-protocol claim gets the standard wiki tagging (Clinical Trial / Animal Model / In Vitro / Mechanistic Extrapolation). n=1 is its own evidence level — useful for personal-protocol decisions, weak for population claims.
-- **Privacy-by-default.** Self-experiment data is private unless explicitly published. Genetic data in particular is governed by the privacy gradient in [`personal-genome-protocol.md`](./personal-genome-protocol.md).
+- **Privacy-by-default.** Self-experiment data is private unless explicitly published. Genetic data in particular is governed by the privacy gradient in [`personal-genome-protocol.md`](../personal-genome-protocol.md).
 - **Project crossover where applicable.** Several self-experiment / DIY-bio capabilities (sequencing, fermentation, enzyme assays) double as Open Enzyme platform infrastructure. Pages flag this crossover explicitly.
 - **Pre-commit grep-verify gate** ([CLAUDE.md §4](../CLAUDE.md)) applies to load-bearing numbers in all three sub-buckets equally.
 

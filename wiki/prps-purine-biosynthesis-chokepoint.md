@@ -122,7 +122,7 @@ Early-onset gout cases driven by rare PRPS1 GoF mutations are direct human-genet
 
 4. **Medicinal mushroom corpus — ergothioneine, GLPP, cordycepin** ([`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md)) — these compounds were screened against the comp-014 chokepoint panel (NLRP3 + transporters + XO) but not PRPS. Re-screening with PRPS added is a low-cost extension.
 
-5. **Pharmaceutical PRPS inhibitors — landscape audit.** Are there any FDA-approved or development-stage PRPS-targeting drugs (oncology, gout, or otherwise)? This is a Tier 0 lit-mining task per the killshot-tiering discipline ([`manual-literature-mining.md`](./manual-literature-mining.md) §"Killshot tiering"). Mercaptopurine and mycophenolate target downstream purine-biosynthesis steps but not PRPS specifically; whether any pure PRPS modulator is in clinical development is unknown.
+5. **Pharmaceutical PRPS inhibitors — landscape audit.** Are there any FDA-approved or development-stage PRPS-targeting drugs (oncology, gout, or otherwise)? This is a Tier 0 lit-mining task per the killshot-tiering discipline ([`etc/manual-literature-mining.md`](./etc/manual-literature-mining.md) §"Killshot tiering"). Mercaptopurine and mycophenolate target downstream purine-biosynthesis steps but not PRPS specifically; whether any pure PRPS modulator is in clinical development is unknown.
 
 6. **In vivo translation of eurycomanol PRPS effect.** PMID 34785103 establishes the in vitro mechanism; the 2021 tongkat ali human RCT shows SUA reduction; the connection between the two is mechanistic extrapolation. A direct measurement (e.g., serum/urinary purine intermediates, hypoxanthine, xanthine in tongkat ali RCT participants) would close the loop. Tier 1 / Tier 2 killshot per the cost-tiering discipline.
 
@@ -153,5 +153,5 @@ Until then, the stub serves as the entry point for any new finding that mentions
 - [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) — peer track whose compounds (cordycepin, GLPP, ergothioneine) have not yet been screened against PRPS.
 - [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — matrix needs a new column or row for the PRPS / purine-biosynthesis chokepoint class when this stub upgrades.
 - [`uricase.md`](./uricase.md) — the "missing enzyme" that humans lost; uricase degrades urate further to allantoin (downstream of XO). PRPS inhibition reduces production; uricase increases catabolism. Different ends of the pathway; potentially additive.
-- [`manual-literature-mining.md`](./manual-literature-mining.md) §"Killshot tiering" — cost-tier menu for promoting any PRPS-related experiment from this stub.
+- [`etc/manual-literature-mining.md`](./etc/manual-literature-mining.md) §"Killshot tiering" — cost-tier menu for promoting any PRPS-related experiment from this stub.
 - [`operations/notable-moments.md`](../operations/notable-moments.md) §"2026-05-07 — three-layer citation laundering" — the meta-finding that surfaced PRPS as a chokepoint class.

@@ -20,7 +20,7 @@ related:
   - gout-pathophysiology.md
   - nlrp3-exploit-map.md
   - nlrp3-inflammasome.md
-  - GRAPH.md
+  - etc/GRAPH.md
 sources:
   - "Misawa et al. 2013 — Microtubule-driven spatial arrangement of mitochondria promotes activation of the NLRP3 inflammasome — *Nat Immunol* 14:454–460 (PMID 23502856)"
   - "Terkeltaub et al. 2010 — High versus low dosing of oral colchicine for early acute gout flare — AGREE trial — *Arthritis Rheum* 62:1060–1068 (PMID 20131255)"
@@ -225,7 +225,7 @@ Plausibly testable hypothesis for the project: **engineered-koji prophylaxis on 
 - Clinical pipeline comparator: [`gout-clinical-pipeline.md`](gout-clinical-pipeline.md)
 - Platform thesis: [`open-enzyme-vision.md`](open-enzyme-vision.md), [`engineered-koji-protocol.md`](engineered-koji-protocol.md)
 - **Compounding pharmacy delivery route:** [`compounding-pharmacy-track.md`](compounding-pharmacy-track.md) — colchicine is a candidate for custom-dose compounding (pediatric/weight-based doses, liquid suspensions, fixed-dose combinations with allopurinol). (source: compounding-pharmacy-track.md)
-- Concept graph node: [`GRAPH.md`](GRAPH.md) — should add edge `colchicine → CP3 (ASC speck block)` and `colchicine → CP2 (P2X7 inhibition)`
+- Concept graph node: [`etc/GRAPH.md`](GRAPH.md) — should add edge `colchicine → CP3 (ASC speck block)` and `colchicine → CP2 (P2X7 inhibition)`
 
 ## 10. References
 

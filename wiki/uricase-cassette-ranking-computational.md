@@ -15,7 +15,7 @@ tags:
   - ranking
 related:
   - computational-experiments.md
-  - autonomous-screening-methodology.md
+  - etc/autonomous-screening-methodology.md
   - cassette-compatibility-computational.md
   - chaperone-orthogonal-stacking.md
   - validation-experiments.md

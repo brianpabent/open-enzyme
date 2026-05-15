@@ -30,7 +30,7 @@ status: stub
 
 The Phase 7 medicinal-mushroom-complement track positions Open Enzyme as a **reproducibility + characterization layer** on top of the existing supplement industry. Per Phase 7-1a finding: 93-100% of US "G. lucidum" supplements are species-mis-IDed. Per Phase 7-2 conclusion: cultivation + extraction protocol standardization is what Open Enzyme actually contributes — the chemistry is in the public domain.
 
-A chemistry collaborator joining the project (one of the three actively-recruiting collaborator roles per CLAUDE.md / [`team.md`](./team.md)) should be able to find the SOP work registered here, not buried in a scope-page follow-up list.
+A chemistry collaborator joining the project (one of the three actively-recruiting collaborator roles per CLAUDE.md / [`etc/team.md`](./etc/team.md)) should be able to find the SOP work registered here, not buried in a scope-page follow-up list.
 
 ## Planned SOPs
 

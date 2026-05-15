@@ -18,7 +18,7 @@ related:
   - hypotheses/README.md
   - hypotheses/H01-ward-dual-cassette.md
   - koji-endgame-strain.md
-  - chembl-cross-check.md
+  - etc/chembl-cross-check.md
   - self-experiment-protocol.md
   - ../synthesis/README.md
   - open-questions.md
@@ -100,7 +100,7 @@ Rules are tagged with severity (hard / soft / style) and detection method (regex
 | `cross-ref-resolves` | hard | regex + filesystem existence check | `[text](./path.md)` targets must exist. Dangling refs flagged with the target path. |
 | `mkdocs-nav-coverage` | hard | regex (scan `mkdocs.yml` nav + `wiki/*.md` filesystem) | Every `wiki/*.md` must appear in `mkdocs.yml` nav, or in an explicit `nav-excluded.txt` allowlist. |
 | `chokepoint-label-v1.2` | soft | regex | References to "CP5" without `a`/`b`, or "Chokepoint 6" without `a`/`b`, are ambiguous post-v1.2 exploit map. Flag for disambiguation. |
-| `species-gap-caveat` | soft | Claude-semantic | Rodent IC50 citations (`mouse`, `rat`, `murine`, `rodent` near `IC50`, `EC50`, `Ki`) require nearby species-gap caveat or link to `chembl-cross-check.md`. Examples: dapansutrile 1000× mouse→human ratio; BCP rat 100–400 mg/kg → human 50–200 mg/day 20–50× under-dose. |
+| `species-gap-caveat` | soft | Claude-semantic | Rodent IC50 citations (`mouse`, `rat`, `murine`, `rodent` near `IC50`, `EC50`, `Ki`) require nearby species-gap caveat or link to `etc/chembl-cross-check.md`. Examples: dapansutrile 1000× mouse→human ratio; BCP rat 100–400 mg/kg → human 50–200 mg/day 20–50× under-dose. |
 | `no-inline-revision-history` | hard | regex | Forbidden section headers: `## Changelog`, `## Revision History`, `## Change Log`, `## History`. Git is the revision history per project convention. |
 | `frontmatter-complete` | hard | regex (YAML block parse) | Required keys: `title`, `date`, `tags`. Strongly recommended: `related`, `sources`, `status`. |
 | `standard-markdown-links` | style | regex | Prefer `[text](./path.md)` over `[[wiki-links]]` for GitHub rendering. `[[wiki-links]]` are Obsidian-only. |
@@ -110,7 +110,7 @@ Rules are tagged with severity (hard / soft / style) and detection method (regex
 
 **v0 scope decision.** Implement the regex-level rules first: `evidence-tag-required` (regex heuristic only, not semantic), `cross-ref-resolves`, `mkdocs-nav-coverage`, `no-inline-revision-history`, `frontmatter-complete`, `standard-markdown-links`. These are free, deterministic, and cover ~80% of the consistency wins. Claude-semantic rules (`species-gap-caveat`, `claim-calibration`) layer in once the regex set is stable and we have calibration on token cost.
 
-**Existing infrastructure.** `chembl-cross-check.md` is effectively an already-deployed linter for one dimension (rodent-IC50 cross-check against ChEMBL human-target data). It's user-invoked, quarterly. Document Lint formalizes this pattern: existing tools stay, new lint rules slot in alongside.
+**Existing infrastructure.** `etc/chembl-cross-check.md` is effectively an already-deployed linter for one dimension (rodent-IC50 cross-check against ChEMBL human-target data). It's user-invoked, quarterly. Document Lint formalizes this pattern: existing tools stay, new lint rules slot in alongside.
 
 ---
 
@@ -313,7 +313,7 @@ Cross-reference: `self-experiment-protocol.md` §7 (Logging and version control 
 
 4. **Claude-semantic rules vs. regex rules — token-cost ceiling for v0?** *Open.* Regex rules are free; semantic rules cost per PR / per sweep. A reasonable v0 budget: 100–500 input tokens and 50–200 output tokens per semantic rule, per document, per sweep pass. At current Open Enzyme sweep volume (a few sweeps per day), this is ~$0.05–0.50/day. Acceptable. If it becomes a cost bottleneck, sampling (run semantic rules only on changed files, or only on promoted hypotheses) is the first knob.
 
-5. **Integration with existing infrastructure.** *Partially resolved.* `chembl-cross-check.md` is an existing user-invoked quarterly linter for one dimension (rodent-IC50 cross-check). Sweep-prompt Pass 1 does some lint-like work during propagation (enforces cross-refs, updates CP labels). Document Lint formalizes and extends these patterns without replacing them.
+5. **Integration with existing infrastructure.** *Partially resolved.* `etc/chembl-cross-check.md` is an existing user-invoked quarterly linter for one dimension (rodent-IC50 cross-check). Sweep-prompt Pass 1 does some lint-like work during propagation (enforces cross-refs, updates CP labels). Document Lint formalizes and extends these patterns without replacing them.
 
 6. **Who is Falsification Lint *for* in the current regime?** *Answer:* Brian. When Brian commits to a hypothesis — when money, time, or collaborator attention is about to be spent — Falsification Lint is the scrutinize-yourself tool. If three PhD collaborators join, the calibration-curve question (§11.3) reopens; for now the answer is "single-researcher instrument."
 

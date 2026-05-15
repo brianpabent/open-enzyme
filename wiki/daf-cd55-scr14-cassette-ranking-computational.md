@@ -22,7 +22,7 @@ related:
   - uricase-cassette-ranking-computational.md
   - validation-experiments.md
   - chaperone-orthogonal-stacking.md
-  - autonomous-screening-methodology.md
+  - etc/autonomous-screening-methodology.md
   - cassette-compatibility-computational.md
   - engineered-koji-protocol.md
   - hypotheses/H05-daf-scr14-cp0-thesis.md

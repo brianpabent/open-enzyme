@@ -88,7 +88,7 @@ Anticipated load-bearing assumptions:
 
 ## Killshot Menu (placeholder — to be populated when this stub is upgraded)
 
-Anticipated highest-info-per-dollar killshots, ordered cheapest first per the OE killshot tiering discipline. **Tier structure follows the five-tier killshot ladder defined in [`manual-literature-mining.md` §"Killshot tiering"](../manual-literature-mining.md) (Tier 0 free public-data → Tier 4 ~$5–15K academic-collaborator animal study, with the discipline "default to the lowest tier that resolves the question above noise floor"). The methodology page's §"Worked example — H07 Clomid intestinal-ER-antagonism thesis" walks each tier against this card's sub-claims and uses H07 as the canonical instantiation of the discipline; this card is the implementation, that section is the spec.**
+Anticipated highest-info-per-dollar killshots, ordered cheapest first per the OE killshot tiering discipline. **Tier structure follows the five-tier killshot ladder defined in [`etc/manual-literature-mining.md` §"Killshot tiering"](../etc/manual-literature-mining.md) (Tier 0 free public-data → Tier 4 ~$5–15K academic-collaborator animal study, with the discipline "default to the lowest tier that resolves the question above noise floor"). The methodology page's §"Worked example — H07 Clomid intestinal-ER-antagonism thesis" walks each tier against this card's sub-claims and uses H07 as the canonical instantiation of the discipline; this card is the implementation, that section is the spec.**
 
 ### Tier 0 — $0, hours of work
 

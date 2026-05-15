@@ -24,7 +24,7 @@ related:
   - tcm-gout-compound-triage-computational.md
   - modality-chokepoint-matrix.md
   - nlrp3-exploit-map.md
-  - manual-literature-mining.md
+  - etc/manual-literature-mining.md
   - gout-action-guide.md
 sources:
   - "Brian framing 2026-05-08: 'What are all the things upstream of CP0 that we could exploit, and any compound — fungal, plant, bacterial, marine — that affects them. If the answer is rosemary, I'll grow rosemary.'"

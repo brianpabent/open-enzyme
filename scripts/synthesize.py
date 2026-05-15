@@ -48,14 +48,20 @@ import tempfile
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(REPO_ROOT)
 
-# Files excluded from the corpus regardless of model — Mermaid diagrams,
-# bibliographies, and tooling references add input cost without contributing
-# to biology synthesis.
-EXCLUDE = {
-    "wiki/GRAPH.md",                  # Mermaid diagram — hard for non-vision models
-    "wiki/references.md",             # bibliography
-    "wiki/ai-bio-tools-playbook.md",  # tooling reference, not biology
-}
+# Files excluded from the corpus regardless of model.
+#
+# As of 2026-05-15, the convention is to keep reference / methodology /
+# tooling pages in `wiki/etc/` rather than maintaining a per-file EXCLUDE
+# list. Pages in wiki/etc/ remain in the wiki (humans browsing find them
+# via cross-reference and via the etc/README.md index) but the synthesis
+# corpus skips the directory entirely.
+#
+# The build_corpus() loader already skips wiki/etc/* via its glob pattern
+# (it globs wiki/*.md, not wiki/**/*.md, so wiki/etc/foo.md is naturally
+# excluded). This set is kept empty for forward compatibility but should
+# not need entries in normal operation — anything that doesn't belong in
+# the synthesis corpus belongs in wiki/etc/.
+EXCLUDE = set()
 
 # Default Pass 2 synthesizer.
 #

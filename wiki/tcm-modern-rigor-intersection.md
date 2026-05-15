@@ -16,7 +16,7 @@ tags:
   - first-principles
 related:
   - modality-chokepoint-matrix.md
-  - chembl-cross-check.md
+  - etc/chembl-cross-check.md
   - oridonin.md
   - egcg.md
   - theaflavins.md
@@ -63,7 +63,7 @@ Every TCM compound that enters the wiki must be mapped to a specific chokepoint 
 
 ### 2. ChEMBL cross-check (curated bioactivity, not folk claim)
 
-Every claimed mechanism gets cross-checked against ChEMBL's curated bioactivity data per [`chembl-cross-check.md`](./chembl-cross-check.md). This is the discipline that already produced the Open Enzyme corpus's most useful surprises:
+Every claimed mechanism gets cross-checked against ChEMBL's curated bioactivity data per [`etc/chembl-cross-check.md`](./etc/chembl-cross-check.md). This is the discipline that already produced the Open Enzyme corpus's most useful surprises:
 
 - **Berberine's most-potent ChEMBL bioactivity is TDO (tryptophan 2,3-dioxygenase) at 30 nM, not NLRP3.** Berberine's NLRP3-pathway claim is via NF-κB / TLR4 modulation — real, but indirect.
 - **Resveratrol's most-potent ChEMBL bioactivity is DPP-4 at 0.6 nM, not SIRT1.** The SIRT1 / NF-κB story rests on mechanism rather than potency.
@@ -234,7 +234,7 @@ Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked
 ## Cross-References
 
 - [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — the matrix this lens applies across
-- [`chembl-cross-check.md`](./chembl-cross-check.md) — the ChEMBL discipline (rule #2 of the methodology)
+- [`etc/chembl-cross-check.md`](./etc/chembl-cross-check.md) — the ChEMBL discipline (rule #2 of the methodology)
 - [`gut-lumen-sink.md`](./gut-lumen-sink.md) — the gut-luminal mechanism thesis that fits TCM bioavailability honestly (rule #3)
 - [`oridonin.md`](./oridonin.md), [`egcg.md`](./egcg.md), [`theaflavins.md`](./theaflavins.md), [`supplements-stack.md`](./supplements-stack.md), [`nlrp3-inhibitor-screen.md`](./nlrp3-inhibitor-screen.md) — existing wiki pages on TCM-lineage compounds
 - [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — sister peer-track scope pages under chase-every-avenue

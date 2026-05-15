@@ -28,7 +28,7 @@ related:
   - nlrp3-exploit-map.md
   - complement-c5a-gout.md
   - abcg2-modulators.md
-  - manual-literature-mining.md
+  - etc/manual-literature-mining.md
   - open-source-platform.md
   - open-enzyme-vision.md
 sources:

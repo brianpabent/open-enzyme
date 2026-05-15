@@ -6,13 +6,13 @@ related:
   - supplements-stack.md
   - nlrp3-exploit-map.md
   - nlrp3-inhibitor-screen.md
-  - chembl-cross-check.md
+  - etc/chembl-cross-check.md
   - tnfsf14-gout-target.md
   - gout-deep-dive.md
   - theaflavins.md
 sources:
   - nlrp3-inhibitor-screen.md
-  - chembl-cross-check.md
+  - etc/chembl-cross-check.md
   - "Nam et al. *Bioorg Med Chem* 2001 / confirmed *Bioorg Med Chem* 2010 — 20S proteasome IC50 = 86 nM, ChEMBL assay CHEMBL4433382 (pChEMBL 7.07)"
   - "Lee et al. *Molecules* 2019;24(11):2138 (PMID 31174271) — EGCG blocks MSU-induced NLRP3 in mouse macrophages + foot inflammation"
   - "Hosokawa et al. *Mol Nutr Food Res* 2010;54 Suppl 2:S151–8 (PMID 20461739) — EGCG suppresses TNFSF14-induced IL-6 and downregulates HVEM"
@@ -23,7 +23,7 @@ sources:
 
 # EGCG (Epigallocatechin Gallate)
 
-EGCG = (−)-epigallocatechin-3-gallate (ChEMBL ID CHEMBL297453). This dossier unifies four separately-catalogued chokepoint effects through a single upstream mechanism — **20S proteasome inhibition → IκBα stabilization → NF-κB blockade** — that was not visible in the wiki until the 2026-04-24 ChEMBL cross-check surfaced the sub-100 nM human proteasome IC50 (source: [chembl-cross-check.md](./chembl-cross-check.md)).
+EGCG = (−)-epigallocatechin-3-gallate (ChEMBL ID CHEMBL297453). This dossier unifies four separately-catalogued chokepoint effects through a single upstream mechanism — **20S proteasome inhibition → IκBα stabilization → NF-κB blockade** — that was not visible in the wiki until the 2026-04-24 ChEMBL cross-check surfaced the sub-100 nM human proteasome IC50 (source: [chembl-cross-check.md](./etc/chembl-cross-check.md)).
 
 See also the stack-level entry in [supplements-stack.md](./supplements-stack.md) and the chokepoint map in [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
 
@@ -44,7 +44,7 @@ The four chokepoint effects the wiki currently attributes to EGCG (CP1 NF-κB pr
 
 **Step by step:**
 
-1. **EGCG inhibits the 20S proteasome chymotrypsin-like activity at IC50 = 86 nM** in human cells (In Vitro; *Bioorg Med Chem* 2010, confirmed *Eur J Med Chem* 2019, ChEMBL assay CHEMBL4433382, pChEMBL 7.07; source: [chembl-cross-check.md](./chembl-cross-check.md)). This is EGCG's single most potent human target in the curated ChEMBL v34 database outside the *Plasmodium* anti-malarial activity (ENR Ki = 8 nM, not human-relevant).
+1. **EGCG inhibits the 20S proteasome chymotrypsin-like activity at IC50 = 86 nM** in human cells (In Vitro; *Bioorg Med Chem* 2010, confirmed *Eur J Med Chem* 2019, ChEMBL assay CHEMBL4433382, pChEMBL 7.07; source: [chembl-cross-check.md](./etc/chembl-cross-check.md)). This is EGCG's single most potent human target in the curated ChEMBL v34 database outside the *Plasmodium* anti-malarial activity (ENR Ki = 8 nM, not human-relevant).
 2. **The 26S proteasome (which contains the 20S core) is the sole enzymatic route for IκBα degradation.** Canonical NF-κB activation requires IKK to phosphorylate IκBα at Ser32/Ser36 → SCF^βTrCP ubiquitin ligase polyubiquitinates phospho-IκBα → 26S proteasome degrades IκBα → NF-κB heterodimers (p50/p65) are released into the cytoplasm.
 3. **With the proteasome chymotrypsin site inhibited, polyubiquitinated IκBα accumulates instead of being degraded.** Accumulated IκBα continues to sequester NF-κB in the cytoplasm regardless of how much upstream IKK activity is present.
 4. **No nuclear NF-κB → no transcription of pro-IL-1β, NLRP3, TNFSF14, COX2, or the other NF-κB-dependent priming genes.** This is CP1 blockade at a layer upstream of where the wiki previously located it.

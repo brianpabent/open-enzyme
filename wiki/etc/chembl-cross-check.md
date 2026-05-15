@@ -3,13 +3,13 @@ title: "ChEMBL Cross-Check: Stack Compounds vs Curated Bioactivity"
 date: 2026-04-24
 tags: ["ChEMBL", "rigor", "bioactivity", "cross-check", "NLRP3", "off-targets", "polypharmacology"]
 related:
-  - nlrp3-inhibitor-screen.md
-  - nlrp3-exploit-map.md
-  - nlrp3-inflammasome.md
-  - supplements-stack.md
-  - bhb-ketones.md
-  - kpv-peptide.md
-  - cannabinoids-terpenes.md
+  - ../nlrp3-inhibitor-screen.md
+  - ../nlrp3-exploit-map.md
+  - ../nlrp3-inflammasome.md
+  - ../supplements-stack.md
+  - ../bhb-ketones.md
+  - ../kpv-peptide.md
+  - ../cannabinoids-terpenes.md
   - ../synthesis/README.md
 sources:
   - "EMBL-EBI ChEMBL v34 (queried via Anthropic life-sciences MCP, 2026-04-24)"
@@ -26,9 +26,9 @@ sources:
 
 This is a **standing rigor page** that cross-references every NLRP3/gout-relevant compound discussed in the Open Enzyme wiki against the EMBL-EBI ChEMBL v34 curated bioactivity database. The goal: separate "direct inhibitor of target X" claims (supported by a curated binding/inhibition IC50 in a named assay) from "pathway modulator" claims (functional downstream readouts, mechanism inferred from review literature).
 
-**TCM lineage note:** Several compounds in this cross-check table have explicit TCM materia medica lineage — berberine (*Coptis chinensis* / Huang Lian 黄连), EGCG (green tea / Lu Cha 绿茶), resveratrol (*Polygonum cuspidatum* / Hu Zhang 虎杖), curcumin (turmeric / Jiang Huang 姜黄), oridonin (*Rabdosia rubescens* / Dong Ling Cao 冬凌草). The ChEMBL cross-check discipline is one of the six rules in the TCM × modern rigor methodology lens formalized at [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md) — rule #2 specifically. The cross-check results here (e.g., berberine's most potent curated activity is TDO at 30 nM, not NLRP3; resveratrol's is DPP-4 at 0.6 nM, not SIRT1) are exactly the kind of "ChEMBL surprise" that the TCM rigor methodology is designed to surface. (source: tcm-modern-rigor-intersection.md)
+**TCM lineage note:** Several compounds in this cross-check table have explicit TCM materia medica lineage — berberine (*Coptis chinensis* / Huang Lian 黄连), EGCG (green tea / Lu Cha 绿茶), resveratrol (*Polygonum cuspidatum* / Hu Zhang 虎杖), curcumin (turmeric / Jiang Huang 姜黄), oridonin (*Rabdosia rubescens* / Dong Ling Cao 冬凌草). The ChEMBL cross-check discipline is one of the six rules in the TCM × modern rigor methodology lens formalized at [`tcm-modern-rigor-intersection.md`](../tcm-modern-rigor-intersection.md) — rule #2 specifically. The cross-check results here (e.g., berberine's most potent curated activity is TDO at 30 nM, not NLRP3; resveratrol's is DPP-4 at 0.6 nM, not SIRT1) are exactly the kind of "ChEMBL surprise" that the TCM rigor methodology is designed to surface. (source: tcm-modern-rigor-intersection.md)
 
-Quercetin's 5-LOX finding — surfaced during the 2026-04-23 sweep of [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) — is the template: a compound the wiki frames primarily as an NLRP3 pathway inhibitor actually has its single most potent curated activity on a different enzyme (5-LOX, IC50 300 nM), and that target is relevant to gout biology (leukotriene B4 drives neutrophil chemotaxis in MSU flares). Whenever a similar gap shows up, it goes here first, then propagates to the primary concept page on a follow-up sweep.
+Quercetin's 5-LOX finding — surfaced during the 2026-04-23 sweep of [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md) — is the template: a compound the wiki frames primarily as an NLRP3 pathway inhibitor actually has its single most potent curated activity on a different enzyme (5-LOX, IC50 300 nM), and that target is relevant to gout biology (leukotriene B4 drives neutrophil chemotaxis in MSU flares). Whenever a similar gap shows up, it goes here first, then propagates to the primary concept page on a follow-up sweep.
 
 **NLRP3 target ID (reference):** CHEMBL1741208 (*NACHT, LRR and PYD domains-containing protein 3*, Homo sapiens, UniProt Q96P20).
 
@@ -76,9 +76,9 @@ Quercetin's 5-LOX finding — surfaced during the 2026-04-23 sweep of [nlrp3-inh
 
 **Finding:** Resveratrol (CHEMBL165) has a curated human DPP-4 IC50 of **0.6 nM** (pChEMBL 9.22, *Eur J Med Chem* 2018). This is the single strongest curated activity in resveratrol's entire ChEMBL bioactivity profile — stronger than any of its reported SIRT1, Nrf2, or quinone reductase activities, and stronger than the approved gliptin class of DPP-4 inhibitors (sitagliptin IC50 ~19 nM).
 
-**Current wiki framing:** [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) frames resveratrol as a "stilbenoid polyphenol; non-covalent NLRP3 binding; primary mechanisms: mitochondrial integrity preservation, SIRT1-dependent autophagy." No mention of DPP-4.
+**Current wiki framing:** [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md) frames resveratrol as a "stilbenoid polyphenol; non-covalent NLRP3 binding; primary mechanisms: mitochondrial integrity preservation, SIRT1-dependent autophagy." No mention of DPP-4.
 
-**Suggested reframing:** Add a mechanism note to [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) Tier 2 entry: "Resveratrol's single most potent ChEMBL-curated human activity is DPP-4 inhibition (IC50 = 0.6 nM, pChEMBL 9.22, *Eur J Med Chem* 2018) — a validated type-2 diabetes target. This does not directly improve the gout case, but flags resveratrol as mechanistically more similar to the gliptin class than to SIRT1 activators at physiologically achievable concentrations. If resveratrol is co-administered, DPP-4 inhibition may contribute to glucose homeostasis effects independent of SIRT1." Also worth a note in [gout-deep-dive.md](./gout-deep-dive.md) given the gout-T2D comorbidity cluster.
+**Suggested reframing:** Add a mechanism note to [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md) Tier 2 entry: "Resveratrol's single most potent ChEMBL-curated human activity is DPP-4 inhibition (IC50 = 0.6 nM, pChEMBL 9.22, *Eur J Med Chem* 2018) — a validated type-2 diabetes target. This does not directly improve the gout case, but flags resveratrol as mechanistically more similar to the gliptin class than to SIRT1 activators at physiologically achievable concentrations. If resveratrol is co-administered, DPP-4 inhibition may contribute to glucose homeostasis effects independent of SIRT1." Also worth a note in [gout-deep-dive.md](../gout-deep-dive.md) given the gout-T2D comorbidity cluster.
 
 **Caveat:** The 2018 DPP-4 paper is a single curated entry; replication in independent labs would strengthen the claim. But the datum itself (human enzyme, purified protein, standard Gly-Pro-AMC substrate, pChEMBL 9.22) is high-confidence.
 
@@ -90,9 +90,9 @@ Quercetin's 5-LOX finding — surfaced during the 2026-04-23 sweep of [nlrp3-inh
 
 **Finding:** Berberine (CHEMBL295124) has a curated TDO IC50 of **30 nM** (*Eur J Med Chem* 2024, pChEMBL 7.52), and a curated CYP1B1 Ki of 44 nM (*Eur J Med Chem* 2017), and AChE IC50 of 100 nM (*Bioorg Med Chem* 2015). All three are sub-100 nM against human targets, all three are medicinal-chem quality data.
 
-**Current wiki framing:** Berberine appears in [nlrp3-exploit-map.md](./nlrp3-exploit-map.md), [nlrp3-inflammasome.md](./nlrp3-inflammasome.md), [sibo.md](./sibo.md), [gut-lumen-sink.md](./gut-lumen-sink.md), [digestive-enzymes.md](./digestive-enzymes.md) — almost always framed as "AMPK activator / gut antimicrobial / dysbiosis modulator / NLRP3 suppressor." TDO, CYP1B1, and AChE are not mentioned.
+**Current wiki framing:** Berberine appears in [nlrp3-exploit-map.md](../nlrp3-exploit-map.md), [nlrp3-inflammasome.md](../nlrp3-inflammasome.md), [sibo.md](../sibo.md), [gut-lumen-sink.md](../gut-lumen-sink.md), [digestive-enzymes.md](../digestive-enzymes.md) — almost always framed as "AMPK activator / gut antimicrobial / dysbiosis modulator / NLRP3 suppressor." TDO, CYP1B1, and AChE are not mentioned.
 
-**Suggested reframing:** TDO is the most interesting because tryptophan → kynurenine metabolism sits at the T-cell / NLRP3 / inflammation crossroads, and TDO inhibition has been explored as an adjunctive immuno-oncology and anti-inflammatory strategy. Add a mechanism note to [nlrp3-inflammasome.md](./nlrp3-inflammasome.md) under berberine: "ChEMBL-curated TDO IC50 = 30 nM (*Eur J Med Chem* 2024) places berberine's strongest validated target at the kynurenine-pathway entry point, not AMPK. This is consistent with berberine's broader anti-inflammatory phenotype and may partially explain its NLRP3-downstream effects (kynurenine metabolites modulate aryl hydrocarbon receptor signaling, which crosstalks with NF-κB priming)." The CYP1B1 inhibition is a drug-drug-interaction flag worth noting in [supplements-stack.md](./supplements-stack.md).
+**Suggested reframing:** TDO is the most interesting because tryptophan → kynurenine metabolism sits at the T-cell / NLRP3 / inflammation crossroads, and TDO inhibition has been explored as an adjunctive immuno-oncology and anti-inflammatory strategy. Add a mechanism note to [nlrp3-inflammasome.md](../nlrp3-inflammasome.md) under berberine: "ChEMBL-curated TDO IC50 = 30 nM (*Eur J Med Chem* 2024) places berberine's strongest validated target at the kynurenine-pathway entry point, not AMPK. This is consistent with berberine's broader anti-inflammatory phenotype and may partially explain its NLRP3-downstream effects (kynurenine metabolites modulate aryl hydrocarbon receptor signaling, which crosstalks with NF-κB priming)." The CYP1B1 inhibition is a drug-drug-interaction flag worth noting in [supplements-stack.md](../supplements-stack.md).
 
 ---
 
@@ -102,9 +102,9 @@ Quercetin's 5-LOX finding — surfaced during the 2026-04-23 sweep of [nlrp3-inh
 
 **Finding:** EGCG (CHEMBL297453) has a curated human 20S proteasome chymotrypsin-like activity IC50 of **86 nM** (*Bioorg Med Chem* 2010, confirmed in *Eur J Med Chem* 2019, both pChEMBL 7.07). It also has sub-30 nM activity against *Plasmodium falciparum* enoyl-ACP reductase (Ki = 8 nM, *J Med Chem* 2007) and DNMT1 (Ki = 28 nM), but the human proteasome hit is the most translationally relevant.
 
-**Current wiki framing:** EGCG in [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) is framed as a "green tea catechin; suppresses ROS-driven NLRP3 activation; direct binding to NLRP3 and/or TLR4." No mention of proteasome.
+**Current wiki framing:** EGCG in [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md) is framed as a "green tea catechin; suppresses ROS-driven NLRP3 activation; direct binding to NLRP3 and/or TLR4." No mention of proteasome.
 
-**Suggested reframing:** 20S proteasome inhibition is a double-edged datapoint. On one hand, proteasome inhibitors (bortezomib, carfilzomib) are cancer drugs with significant cardiotoxicity and neuropathy profiles at clinical doses. On the other hand, EGCG's proteasome hit is ~100× weaker than bortezomib's, and dietary EGCG exposure is orders of magnitude below therapeutic proteasome-inhibitor plasma levels. Still: add a safety note to [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) and [supplements-stack.md](./supplements-stack.md) that high-dose EGCG (>800 mg/day) is a known hepatotoxicity risk (EMA 2018), and the sub-100-nM proteasome activity is a plausible contributing mechanism that should be factored into dose-ceiling recommendations.
+**Suggested reframing:** 20S proteasome inhibition is a double-edged datapoint. On one hand, proteasome inhibitors (bortezomib, carfilzomib) are cancer drugs with significant cardiotoxicity and neuropathy profiles at clinical doses. On the other hand, EGCG's proteasome hit is ~100× weaker than bortezomib's, and dietary EGCG exposure is orders of magnitude below therapeutic proteasome-inhibitor plasma levels. Still: add a safety note to [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md) and [supplements-stack.md](../supplements-stack.md) that high-dose EGCG (>800 mg/day) is a known hepatotoxicity risk (EMA 2018), and the sub-100-nM proteasome activity is a plausible contributing mechanism that should be factored into dose-ceiling recommendations.
 
 ---
 
@@ -114,7 +114,7 @@ Quercetin's 5-LOX finding — surfaced during the 2026-04-23 sweep of [nlrp3-inh
 
 **Finding:** Curcumin (CHEMBL140) has a **curated direct human NLRP3 IC50 of 24.2 μM** in LPS-primed PMA-differentiated THP-1 cells with nigericin challenge (*J Nat Prod* 2020, pChEMBL 4.62). This makes curcumin the **third compound** in the entire Open Enzyme stack with a ChEMBL-curated direct human NLRP3 number, after dapansutrile (1.0 μM) and oridonin (5.18 μM). Its strongest curated activity overall is amyloid-β Ki = 0.208 nM (*J Med Chem* 2006), which is a well-known off-target and the basis for curcumin's Alzheimer's-research positioning.
 
-**Current wiki framing:** [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) Tier 3 entry cites "In vitro: Curcumin (10–50 μM) blocked MSU-induced NLRP3 inflammasome assembly and IL-1β secretion." This is consistent with the curated 24.2 μM IC50.
+**Current wiki framing:** [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md) Tier 3 entry cites "In vitro: Curcumin (10–50 μM) blocked MSU-induced NLRP3 inflammasome assembly and IL-1β secretion." This is consistent with the curated 24.2 μM IC50.
 
 **Suggested reframing:** Minor — update the Tier-3 entry to cite the specific curated human NLRP3 IC50 (24.2 μM, THP-1, pChEMBL 4.62, *J Nat Prod* 2020) and rank curcumin's NLRP3 potency relative to dapansutrile and oridonin: curcumin is **24× weaker than dapansutrile** and **5× weaker than oridonin** in the same human cellular assay format. Combined with curcumin's ~5% oral bioavailability, the functional gout-arthritis animal data probably reflects very high local GI/portal exposure more than systemic NLRP3 block.
 
@@ -122,7 +122,7 @@ Quercetin's 5-LOX finding — surfaced during the 2026-04-23 sweep of [nlrp3-inh
 
 ### Quercetin → 5-LOX (300 nM, already documented in 2026-04-23 sweep)
 
-Already propagated in [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) appendix. Listed here for continuity and as the reference template for the other expanded sections above.
+Already propagated in [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md) appendix. Listed here for continuity and as the reference template for the other expanded sections above.
 
 ---
 
@@ -130,9 +130,9 @@ Already propagated in [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) a
 
 | Compound | Reason | Implication |
 |---|---|---|
-| **KPV (Lys-Pro-Val)** | Tripeptide below ChEMBL's small-molecule curation focus; no salt/synonym match | Absence does not indicate weakness — the [peptide-gout-addendum.md](./peptide-gout-addendum.md) framing (direct NLRP3 + NF-κB, PepT1-transported) is from peptide-pharmacology literature not in ChEMBL's scope. Note in wiki: "KPV is not small-molecule-curated; mechanistic claims rest on α-MSH fragment pharmacology papers." |
-| **Ergothioneine** | Name search and SMILES similarity both return zero hits | Ergothioneine is a sulfur-containing trimethylammonium betaine; its unusual structure and physiological (rather than drug-like) pharmacology likely explain the absence. The wiki's "indirect ROS scavenger" framing in [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) is honest and appropriate. |
-| **β-Caryophyllene** | Present as CHEMBL445740 but zero direct human NLRP3 entries | See [2026-04-23 sweep](./nlrp3-inhibitor-screen.md#appendix-chembl-ic50-cross-check-2026-04-23). CB2 agonism is well-established; the "direct NLRP3 binding" claim from 2021 docking is not ChEMBL-curated. |
+| **KPV (Lys-Pro-Val)** | Tripeptide below ChEMBL's small-molecule curation focus; no salt/synonym match | Absence does not indicate weakness — the [peptide-gout-addendum.md](../peptide-gout-addendum.md) framing (direct NLRP3 + NF-κB, PepT1-transported) is from peptide-pharmacology literature not in ChEMBL's scope. Note in wiki: "KPV is not small-molecule-curated; mechanistic claims rest on α-MSH fragment pharmacology papers." |
+| **Ergothioneine** | Name search and SMILES similarity both return zero hits | Ergothioneine is a sulfur-containing trimethylammonium betaine; its unusual structure and physiological (rather than drug-like) pharmacology likely explain the absence. The wiki's "indirect ROS scavenger" framing in [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md) is honest and appropriate. |
+| **β-Caryophyllene** | Present as CHEMBL445740 but zero direct human NLRP3 entries | See [2026-04-23 sweep](../nlrp3-inhibitor-screen.md#appendix-chembl-ic50-cross-check-2026-04-23). CB2 agonism is well-established; the "direct NLRP3 binding" claim from 2021 docking is not ChEMBL-curated. |
 
 **These absences are the single most important meta-observation from this cross-check:** a large fraction of the Open Enzyme stack is not represented in ChEMBL with direct binding/inhibition data, because the database is curated for medicinal-chemistry lead compounds, not nutraceuticals, peptides, or endogenous metabolites. This is neither surprising nor damning — but it does mean that **the evidence base for most stack compounds is functional (cell/animal IL-1β readouts, downstream markers), not biochemical (Kd/IC50 on purified protein)**. Any claim of "direct NLRP3 inhibitor" for a stack compound should be treated with the same two-tier labeling introduced in the 2026-04-23 sweep:
 
@@ -200,6 +200,6 @@ get_bioactivity(molecule_chembl_id=<ID>, target_chembl_id=<target>)
 - Sulforaphane Nrf2/Keap1: *J Med Chem* 2019 and *Eur J Med Chem* 2020 (pChEMBL 6.06–6.24).
 - Kojic acid tyrosinase: *Bioorg Med Chem Lett* 2008–2014 (multiple curated entries; pChEMBL 5.00–5.13).
 - Ferulic acid amyloid fibril imaging: *Bioorg Med Chem Lett* 2007 (CHEMBL888360; pChEMBL 9.11, imaging probe displacement).
-- Quercetin 5-LOX: *J Med Chem* 1991 (see [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) 2026-04-23 appendix).
+- Quercetin 5-LOX: *J Med Chem* 1991 (see [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md) 2026-04-23 appendix).
 - Oridonin human NLRP3 THP-1: *Eur J Med Chem* 2023 (see same appendix).
 - Dapansutrile human/mouse NLRP3: *Eur J Med Chem* 2023 and *Bioorg Med Chem Lett* 2021 (same appendix).

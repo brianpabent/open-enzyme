@@ -249,7 +249,7 @@ A first-pass dual-cassette strain needs to resolve the following specific questi
 **Timeline.** 8–12 weeks: 2–3 weeks gene synthesis + construct assembly, 2–3 weeks sequential transformation + clonal screening, 1–2 weeks fermentation (×2 formats, parallel), 2–3 weeks assay suite + write-up.
 
 **Dependencies.** *A. oryzae* genetic-engineering lab access. Candidates:
-- A Role 2 (Pharma Translation) collaborator (see [team.md](./team.md)) whose NF-κB / pharma-translation background is a natural fit, if recruiting converts.
+- A Role 2 (Pharma Translation) collaborator (see [team.md](./etc/team.md)) whose NF-κB / pharma-translation background is a natural fit, if recruiting converts.
 - A commercial CRO specializing in filamentous-fungus engineering (e.g., Lonza, Novozymes contract services, Dyadic International) — more expensive but faster turnaround.
 - Community biolab with protoplast-transformation capability (Genspace NY has done *A. oryzae* work; BioCurious Sunnyvale has not publicly).
 
@@ -400,7 +400,7 @@ The 6-month extension protocol ([validation-experiments.md](./validation-experim
 
 ### 8.2 Collaborator Pitch
 
-The endgame strain is the concrete platform vision for the three PhD-level collaborator roles being recruited per [team.md](./team.md). Instead of "help us build an open-source enzyme library" (broad, unscoped), the pitch becomes:
+The endgame strain is the concrete platform vision for the three PhD-level collaborator roles being recruited per [team.md](./etc/team.md). Instead of "help us build an open-source enzyme library" (broad, unscoped), the pitch becomes:
 
 > One engineered *A. oryzae* koji strain that covers five NLRP3-pathway chokepoints from four molecules. Two heterologous expression cassettes (uricase + lactoferrin) layered on two native metabolites (kojic acid + ergothioneine). Peer-reviewed Aspergillus precedent for each piece (Ward 1995 hLf >2 g/L *A. awamori*; rasburicase precedent 2001 for uricase in *S. cerevisiae*; Wang 2023 for multi-locus *A. niger*; Li 2024 for multi-copy *A. oryzae* α-amylase sites). The single feasibility test that gates the whole thing is a dual-cassette layering experiment costing $3–5k and taking 8–12 weeks.
 

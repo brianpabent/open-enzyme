@@ -16,7 +16,7 @@ tags:
 related:
   - ../tcm-modern-rigor-intersection.md
   - ../modality-chokepoint-matrix.md
-  - ../chembl-cross-check.md
+  - ../etc/chembl-cross-check.md
   - ../engineered-lbp-chassis.md
   - ../sirna-urat1-modality.md
   - ../open-enzyme-vision.md
@@ -60,7 +60,7 @@ The thesis is **gated on multilingual research access** — Chinese-language cli
 The full assumption stack will be populated after the Phase 2 lit scans (P2-1 classical formulas, P2-3 Smilax glabra deep-dive, P2-4 Si Miao San decomposition, P2-6 bioavailability characterization) and comp-011 (P2-2 ChEMBL cross-check) land. Anticipated load-bearing assumptions:
 
 1. The chokepoint map ([`nlrp3-exploit-map.md`](../nlrp3-exploit-map.md), [`gout-pathophysiology.md`](../gout-pathophysiology.md)) is granular enough to capture TCM compound mechanisms (vs. forcing them into mismatched modern categories)
-2. ChEMBL's curated bioactivity dataset has sufficient coverage of TCM-relevant compounds (many natural products are sparsely curated in ChEMBL relative to medicinal-chemistry-derived compounds — this is documented in `chembl-cross-check.md`)
+2. ChEMBL's curated bioactivity dataset has sufficient coverage of TCM-relevant compounds (many natural products are sparsely curated in ChEMBL relative to medicinal-chemistry-derived compounds — this is documented in `etc/chembl-cross-check.md`)
 3. Modern Chinese clinical trial literature (ChiCTR registry) is sufficient quality to update wiki evidence tiers (Chinese RCTs have heterogeneous quality; this is empirically verifiable)
 4. The "embrace gut-luminal mechanisms" reframe (rule #3) actually predicts therapeutic effect for low-bioavailability TCM compounds (vs. the alternative explanation that they don't work at all). Comp-004's IC50 occupancy framework on curcumin / quercetin / EGCG is a partial validation; broader compound classes need similar treatment.
 5. The "designed coverage" interpretation of multi-component formulas (rule #4) is biologically defensible vs. being modern bias projection onto historical practice. Formula decomposition needs to falsify this too.
@@ -105,7 +105,7 @@ To be populated. Anticipated relevant failure modes from [linter-design.md](../l
 
 - [tcm-modern-rigor-intersection.md](../tcm-modern-rigor-intersection.md) — the platform thesis this hypothesis formalizes
 - [modality-chokepoint-matrix.md](../modality-chokepoint-matrix.md) — the chokepoint framework the lens applies across
-- [chembl-cross-check.md](../chembl-cross-check.md) — the cross-check discipline (rule #2)
+- [chembl-cross-check.md](../etc/chembl-cross-check.md) — the cross-check discipline (rule #2)
 - [supplement-abcg2-antagonism-computational.md](../supplement-abcg2-antagonism-computational.md) (comp-004) — partial validation of the gut-luminal IC50 occupancy framework on TCM-lineage compounds
 - [engineered-lbp-chassis.md](../engineered-lbp-chassis.md), [sirna-urat1-modality.md](../sirna-urat1-modality.md) — sister peer-track scope pages under chase-every-avenue
 - [linter-design.md](../linter-design.md) — schema for the Falsification Card format

@@ -51,13 +51,13 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§1.16](#116-opt-1-disulfide-engineered-uricase-in-koji-vs-wt--gi-survival-head-to-head) | OPT-1 disulfide uricase in koji vs. WT (GI survival) | In Vitro | $1,800–2,500 | 6–8 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [uricase-variant-selection](./uricase-variant-selection.md), [protein-engineering-strategy](./protein-engineering-strategy.md) |
 | [§1.17](#117-quercetin--ursolic-acid--carnosine-three-way-synergy-on-msu-stimulated-thp-1) | Quercetin × ursolic × carnosine 3-way synergy (THP-1 MSU) | In Vitro | $1,500–2,000 | 3–4 | Proposed | [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [carnosine](./carnosine.md) |
 | [§1.18](#118-native-koji-enzyme-sgf-survival--free-extract-vs-whole-biomass-2-arm) | Native koji enzyme SGF (free extract vs. whole biomass) | In Vitro | $300–500 | 2 | Proposed | [koji-home-fermentation](./koji-home-fermentation.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md) |
-| [§1.19](#119-methodological-standard--rodent-cellular-ic50-translation-caveat) | Methodology — rodent cellular IC50 translation caveat | Standing | $0 | ongoing | Standing | [chembl-cross-check](./chembl-cross-check.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md) |
+| [§1.19](#119-methodological-standard--rodent-cellular-ic50-translation-caveat) | Methodology — rodent cellular IC50 translation caveat | Standing | $0 | ongoing | Standing | [chembl-cross-check](./etc/chembl-cross-check.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md) |
 | [§1.20](#120-lactoferrin--egcg-cp1a-super-additivity-assay-thp-1-macrophage-23-dose-matrix) | Lactoferrin + EGCG CP1a super-additivity (THP-1 2×3 matrix) — **gated on §1.9** | In Vitro | $1,500 | 3–4 | Proposed | [lactoferrin](./lactoferrin.md), [egcg](./egcg.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [koji-endgame-strain](./koji-endgame-strain.md) |
 | [§1.21](#121-natural-product-c5ar1-antagonist-screening--computational-pass-closes-the-cp0-fermentable-coverage-question) | Natural-product C5aR1 antagonist screen (CP0 fermentable-coverage question) | Computational | $0 | 0.5 | **Closed (negative, 2026-04-27)** | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [open-enzyme-vision](./open-enzyme-vision.md) |
 | [§1.22](#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue) | Gut-selective food-grade HDAC inhibitor screen for Q141K-ABCG2 trafficking rescue | In Vitro | $5,000–8,000 | 8–10 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [supplements-stack](./supplements-stack.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.23](#123-androgen--msu--nlrp3-in-macrophages--tiered-mechanistic-protocol) | Androgen × MSU × NLRP3 macrophage tiered protocol (T1 THP-1 / T2 PBMC / T3 mouse air-pouch) — fills literature gap | In Vitro | $5–10K (T1); $105–160K (full cascade) | 6–8 (T1); ~12 mo (full) | Proposed | [androgen-urate-axis](./androgen-urate-axis.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 | [§1.24](#124-carnosine-co-expression-validation-in-a-oryzae-koji-endgame-optional-third-cassette) | Carnosine co-expression in *A. oryzae* (koji endgame optional third cassette) | In Vitro | $1,500–2,500 | 4–6 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [carnosine](./carnosine.md), [androgen-urate-axis](./androgen-urate-axis.md) |
-| [§2.1](#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii) | Gnotobiotic mouse colonization (S. boulardii) | Animal | $5,000–15,000 | 8–12 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./team.md) |
+| [§2.1](#21-gnotobiotic-mouse-colonization-with-engineered-s-boulardii) | Gnotobiotic mouse colonization (S. boulardii) | Animal | $5,000–15,000 | 8–12 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./etc/team.md) |
 | [§2.2](#22-hyperuricemic-rat-model-engineered-yeast-efficacy) | Hyperuricemic rat model (yeast efficacy) | Animal | $8,000–12,000 | 6–8 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gout-deep-dive](./gout-deep-dive.md), [uricase](./uricase.md) |
 | [§2.3](#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model) | Engineered koji EPI model | Animal | $6,000–10,000 | 8–10 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md) |
 | [§2.4](#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model) | NLRP3 inhibition in MSU arthritis model | Animal | $10,000–15,000 | 10–12 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [gout-deep-dive](./gout-deep-dive.md), [supplements-stack](./supplements-stack.md) |
@@ -357,7 +357,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Estimated timeline:** 8–12 weeks — 2–3 weeks gene synthesis + construct assembly, 2–3 weeks sequential transformation + clonal screening, 1–2 weeks parallel fermentation (solid-state + submerged), 2–3 weeks full assay suite + write-up.
 
-**Dependencies:** *A. oryzae* genetic-engineering lab access. Candidate pathways: (a) a Role 2 (Pharma Translation) collaborator (see [team.md](./team.md)) if recruiting converts; (b) commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic) — faster but more expensive; (c) community biolab with protoplast-transformation capability (Genspace NY has precedent on *A. oryzae*). **Global parallel options (Japan / China / Europe) are mapped in [`ward-1995-lab-access-global.md`](./ward-1995-lab-access-global.md)** — the Maruyama lab at the University of Tokyo is the single most important contact globally (origin lab for NSlD-ΔP10, the default chassis per H01 Killshot #1); Jiangnan University (C19 chassis) and DTU Mortensen group (CRISPR toolkit) are the parallel-path options. (source: ward-1995-lab-access-global.md)
+**Dependencies:** *A. oryzae* genetic-engineering lab access. Candidate pathways: (a) a Role 2 (Pharma Translation) collaborator (see [team.md](./etc/team.md)) if recruiting converts; (b) commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic) — faster but more expensive; (c) community biolab with protoplast-transformation capability (Genspace NY has precedent on *A. oryzae*). **Global parallel options (Japan / China / Europe) are mapped in [`ward-1995-lab-access-global.md`](./ward-1995-lab-access-global.md)** — the Maruyama lab at the University of Tokyo is the single most important contact globally (origin lab for NSlD-ΔP10, the default chassis per H01 Killshot #1); Jiangnan University (C19 chassis) and DTU Mortensen group (CRISPR toolkit) are the parallel-path options. (source: ward-1995-lab-access-global.md)
 
 **Success criteria:**
 - **Accept** (go to full endgame strain development per [koji-endgame-strain.md](./koji-endgame-strain.md) §7): lactoferrin titer ≥500 mg/L koji pore-fluid equivalent, uricase activity ≥50 μmol/h/OD retained from single-cassette baseline, native kojic acid + ergothioneine titers within 30% of WT.
@@ -725,7 +725,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Status**: Standing | **Cost**: $0 | **Weeks**: ongoing | **Phase**: 1 (methodology)
 
-**Affected wiki**: [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [chembl-cross-check](./chembl-cross-check.md), [supplements-stack](./supplements-stack.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), all per-compound pages citing rodent IC50 values.
+**Affected wiki**: [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [chembl-cross-check](./etc/chembl-cross-check.md), [supplements-stack](./supplements-stack.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), all per-compound pages citing rodent IC50 values.
 
 **Standard (not an experiment — methodology):** Rodent cellular IC50 values for NLRP3 inhibitors and other inflammasome-pathway compounds may diverge from human cellular IC50 by up to 3 orders of magnitude. Anchoring example: **dapansutrile IC50 = 1 nM in mouse J774A.1 vs. 1,000 nM (1 μM) in human MDM** under LPS+nigericin stimulation (ChEMBL v34). Apply across the wiki:
 
@@ -737,7 +737,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Proposed in:** `synthesis/` (architecture: synthesis/README.md) 2026-04-23 Connection #2 (dapansutrile species-gap). L584.
 
-**Cross-references:** [chembl-cross-check.md](./chembl-cross-check.md) (curated ChEMBL evidence per compound), [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) §"Species-gap caveat" line 38, every per-compound wiki page citing rodent data.
+**Cross-references:** [chembl-cross-check.md](./etc/chembl-cross-check.md) (curated ChEMBL evidence per compound), [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) §"Species-gap caveat" line 38, every per-compound wiki page citing rodent data.
 
 ---
 
@@ -1012,7 +1012,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - 1 week: parallel fermentation (solid-state + submerged controls)
 - 2 weeks: full assay suite (SDS-PAGE + Western + ELISA + MS + activity assay) + write-up
 
-**Dependencies:** Same lab-access pathway as §1.9 — a Role 2 (Pharma Translation) collaborator (per [`team.md`](./team.md)) if recruiting converts; commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic); community biolab with protoplast-transformation capability (Genspace NY has *A. oryzae* precedent). Global parallel options mapped in [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md). **This experiment shares lab-access infrastructure with §1.9** — both are *A. oryzae* protoplast transformation + solid-state koji fermentation + standard mammalian-protein readout assays. If §1.9 is running in a partner lab, §1.25 is a natural co-batch experiment with marginal infrastructure cost (sequential transformations on the same host, parallel fermentations under the same conditions).
+**Dependencies:** Same lab-access pathway as §1.9 — a Role 2 (Pharma Translation) collaborator (per [`etc/team.md`](./etc/team.md)) if recruiting converts; commercial CRO specializing in filamentous-fungus engineering (Lonza, Novozymes, Dyadic); community biolab with protoplast-transformation capability (Genspace NY has *A. oryzae* precedent). Global parallel options mapped in [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md). **This experiment shares lab-access infrastructure with §1.9** — both are *A. oryzae* protoplast transformation + solid-state koji fermentation + standard mammalian-protein readout assays. If §1.9 is running in a partner lab, §1.25 is a natural co-batch experiment with marginal infrastructure cost (sequential transformations on the same host, parallel fermentations under the same conditions).
 
 **Success criteria:**
 - **Accept** (proceed to integration with platform — sister-strain co-ferment with uricase + Lf endgame strain, OR queue for LBP-chassis transfer): secreted titer ≥50 mg/L pore-fluid equivalent + correct apparent MW on non-reducing SDS-PAGE + ≥40% native disulfide-folded form on mass spec + ≥30% C5a-generation inhibition vs. control at therapeutically-plausible DAF concentration + native metabolite program preserved within 30% of WT.
@@ -1195,7 +1195,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Status**: Proposed | **Cost**: $5,000–15,000 | **Weeks**: 8–12 | **Phase**: 2
 
-**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./team.md)
+**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gut-lumen-sink](./gut-lumen-sink.md), [team](./etc/team.md)
 
 **What it tests:** Can engineered probiotic yeast survive and function in the mouse gut? What dosing is needed?
 
@@ -1391,7 +1391,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 **Dependencies:**
 - [SOP-1 GLPP fractionation](./medicinal-mushroom-extract-sops.md) drafted to operational state — currently stub-level; gated on Phase 5b CNKI dive of Lin Zhanxi Juncao methods (TODO-2 in scope page)
 - Pentostatin research-use sourcing (FDA-approved drug, restricted access)
-- Wet-lab access — same recruiting target as §1.25 (Role 2 / Pharma Translation collaborator per [team.md](./team.md); alternatively CRO with rodent metabolic-disease capability)
+- Wet-lab access — same recruiting target as §1.25 (Role 2 / Pharma Translation collaborator per [team.md](./etc/team.md); alternatively CRO with rodent metabolic-disease capability)
 - ITS-verified *G. lingzhi* strain (Mycelia.bvba M9724 per Phase 7-1a, ~$50-100)
 
 **Success criteria:**

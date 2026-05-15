@@ -6,12 +6,12 @@ aliases:
 related:
   - open-enzyme-vision
 sources:
-  - open-enzyme-vision.md
+  - ../open-enzyme-vision.md
 ---
 
 # Open Enzyme Team
 
-The Open Enzyme project is currently a solo effort by Brian Abent. Three collaborator roles are actively being recruited — each would address a critical question the project needs answered. Their expertise maps directly to the biological, engineering, and translational challenges of the OE platform mission, **scoped at the platform level (chokepoint-first, chassis-second) rather than at the engineered-koji track specifically**. The In Vivo Validation, Pharma Translation, and Innate Immune Safety roles apply to any intervention OE surfaces — koji-engineered cassettes, chassis-pending interventions ([`chassis-pending-interventions.md`](./chassis-pending-interventions.md)), and discovery-engine outputs alike.
+The Open Enzyme project is currently a solo effort by Brian Abent. Three collaborator roles are actively being recruited — each would address a critical question the project needs answered. Their expertise maps directly to the biological, engineering, and translational challenges of the OE platform mission, **scoped at the platform level (chokepoint-first, chassis-second) rather than at the engineered-koji track specifically**. The In Vivo Validation, Pharma Translation, and Innate Immune Safety roles apply to any intervention OE surfaces — koji-engineered cassettes, chassis-pending interventions ([`chassis-pending-interventions.md`](../chassis-pending-interventions.md)), and discovery-engine outputs alike.
 
 ## Brian Abent — Platform & Engineering
 
@@ -43,7 +43,7 @@ Brian has gout — a uricase deficiency — and got tired of waiting for the sys
 
 The project is seeking PhD-level collaborators in three complementary domains. Each role answers a question the platform cannot answer alone. No names are published here until collaborators have formally joined.
 
-**Wet-lab partner evaluation — Ginkgo Cloud Lab (2026-05-13):** Brian probed Ginkgo Bioworks' Cloud Lab via their EstiMate sales bot on 2026-05-12. Two offers surfaced: (1) **Cell-Free Protein Expression Validation at $39/protein** — confirms a designed sequence produces folded polypeptide in cell-free lysate, ~5–10 day turnaround. This is a real fail-fast pre-gate for uricase variants (E. coli-lysate-compatible fold) but a weak test for DAF/CD55 SCR1-4 (glycoprotein, disulfide-rich). (2) A **96-construct S. cerevisiae strain-engineering campaign at ≈$2,340 total (≈$24.38/sample)** — almost certainly a lead-magnet teaser, not a real quote. The cell-free pre-gate complements the community-college / grad-student path (different gates: cell-free answers "does the sequence produce a folded protein at all?"; the CC path answers "does it secrete from a fungal host in a real fermentation context?"). See [ginkgo-cloud-lab-evaluation.md](./ginkgo-cloud-lab-evaluation.md) for full evaluation. (source: ginkgo-cloud-lab-evaluation.md)
+**Wet-lab partner evaluation — Ginkgo Cloud Lab (2026-05-13):** Brian probed Ginkgo Bioworks' Cloud Lab via their EstiMate sales bot on 2026-05-12. Two offers surfaced: (1) **Cell-Free Protein Expression Validation at $39/protein** — confirms a designed sequence produces folded polypeptide in cell-free lysate, ~5–10 day turnaround. This is a real fail-fast pre-gate for uricase variants (E. coli-lysate-compatible fold) but a weak test for DAF/CD55 SCR1-4 (glycoprotein, disulfide-rich). (2) A **96-construct S. cerevisiae strain-engineering campaign at ≈$2,340 total (≈$24.38/sample)** — almost certainly a lead-magnet teaser, not a real quote. The cell-free pre-gate complements the community-college / grad-student path (different gates: cell-free answers "does the sequence produce a folded protein at all?"; the CC path answers "does it secrete from a fungal host in a real fermentation context?"). See [ginkgo-cloud-lab-evaluation.md](../ginkgo-cloud-lab-evaluation.md) for full evaluation. (source: ginkgo-cloud-lab-evaluation.md)
 
 ### Role 1 — Gut Microbiome & In Vivo Validation
 
@@ -171,7 +171,7 @@ Each role owns a critical domain (safety, efficacy, microbiome, translation), ma
 
 ## Related Concepts
 
-- [Open Enzyme: Founding Vision](./open-enzyme-vision.md) — The project Brian is building
+- [Open Enzyme: Founding Vision](../open-enzyme-vision.md) — The project Brian is building
 
 ## Key Insight
 

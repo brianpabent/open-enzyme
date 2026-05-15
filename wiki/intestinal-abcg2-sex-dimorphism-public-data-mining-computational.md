@@ -32,7 +32,7 @@ related:
   - androgen-natural-modulation.md
   - abcg2-modulators.md
   - gut-lumen-sink.md
-  - manual-literature-mining.md
+  - etc/manual-literature-mining.md
   - computational-experiments.md
 sources:
   - "Hoque KM, Halperin Kuhns VL et al. (2020) Nature Communications 11:2767, PMID 32488095, doi:10.1038/s41467-020-16525-w"

@@ -33,7 +33,7 @@ related:
   - validation-experiments.md
   - hypotheses/H05-daf-scr14-cp0-thesis.md
   - computational-experiments.md
-  - manual-literature-mining.md
+  - etc/manual-literature-mining.md
 sources:
   - "Zhang T, Chen DF. Anticomplementary principles of a Chinese multiherb remedy for the treatment and prevention of SARS. J Ethnopharmacol 117(2):351-61 (2008). PMC7126446"
   - "Yin X, Lu Y, Cheng ZH, Chen DF. Anti-Complementary Components of Helicteres angustifolia. Molecules 21(11):1506 (2016). PMC6273495"

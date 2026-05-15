@@ -21,7 +21,7 @@ sources:
   - complement-c5a-gout.md
   - spm-resolution-pathway.md
   - tnfsf14-gout-target.md
-  - chembl-cross-check.md
+  - etc/chembl-cross-check.md
   - theaflavins.md
   - zileuton.md
   - nlrp3-inhibitor-screen.md

@@ -5,7 +5,7 @@ tags: ["zileuton", "zyflo", "5-lox", "ltb4", "asthma", "gout", "cp6a", "repurpos
 related:
   - nlrp3-exploit-map.md
   - gout-clinical-pipeline.md
-  - chembl-cross-check.md
+  - etc/chembl-cross-check.md
   - supplements-stack.md
   - disulfiram.md
   - cross-validation.md
@@ -139,7 +139,7 @@ The koji intervention is still in Phase 0 — research and design. Zileuton is a
 
 - [NLRP3 Exploit Map](./nlrp3-exploit-map.md) — CP6a is defined here, v1.2.
 - [Gout Clinical Pipeline](./gout-clinical-pipeline.md) — zileuton is flagged as a latent CP6a repurposing candidate.
-- [ChEMBL Cross-Check](./chembl-cross-check.md) — quercetin 5-LOX = 300 nM, the finding that first surfaced CP6a as a first-class branch.
+- [ChEMBL Cross-Check](./etc/chembl-cross-check.md) — quercetin 5-LOX = 300 nM, the finding that first surfaced CP6a as a first-class branch.
 - [Supplements Stack](./supplements-stack.md) — quercetin, AKBA, EPA are the OTC CP6a entries.
 - [Disulfiram](./disulfiram.md) — companion pharma drug at CP6b (GSDMD).
 - [Cross-Validation](./cross-validation.md) — methodology for integrating in vitro and clinical evidence.

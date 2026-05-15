@@ -11,7 +11,7 @@ tags:
 related:
   - paperclip-deep-dive.md
   - bio-ai-tools.md
-  - open-source-platform.md
+  - ../open-source-platform.md
   - chembl-cross-check.md
   - CLAUDE.md
 sources:
@@ -155,11 +155,11 @@ Sister discipline to the pre-commit verification gate: **before declaring an exp
 
 1. **Budget reality.** OE is a CTO + AI-substrate research operation, not pharma. A daemon sweep costs ~$0.65; freaking out over a $50 sweep cost is the appropriate calibration. Proposing $30K+ experiments without walking the upstream cost ladder is a category error.
 2. **Tier 0 + Tier 1 frequently resolve the question.** comp-016's verdict (T → intestinal ABCG2 suppression WEAK / UNCONFIRMED) was reached entirely from public-literature scanning — the question was already answered by Klyushova 2023, MacLean 2008, Hoque 2020, Yu 2021. **The institutional-default mouse experiment was unnecessary; the answer existed.** Tier 0 caught what Tier 4 would have only confirmed.
-3. **Existing self-experiment infrastructure makes Tier 1 nearly free.** OE has running n=1 self-experiment protocols ([`self-experiment-protocol.md`](./self-experiment-protocol.md)) with established lab-panel workflows. Adding a new measurement to that workflow costs $50–100 per data point, not $30K.
+3. **Existing self-experiment infrastructure makes Tier 1 nearly free.** OE has running n=1 self-experiment protocols ([`self-experiment-protocol.md`](../self-experiment-protocol.md)) with established lab-panel workflows. Adding a new measurement to that workflow costs $50–100 per data point, not $30K.
 4. **Crowdsourced cohorts produce real n>>1 evidence at $0 marginal cost.** The men's-health, gout, and microbiome communities on Twitter / Reddit / Hone routinely share lab panels publicly. Treating that as a usable data source (with appropriate methodological caveats) is the open-source-platform thesis applied to evidence gathering.
-5. **The "killshot" framing should be: cheapest experiment that resolves the question, not biggest experiment that proves the answer beyond doubt.** Falsification-card discipline (per [`linter-design.md`](./linter-design.md)) is about *attempting* to falsify, not about overwhelming the question with budget. A $300 experiment that crosses a pre-committed threshold kills (or saves) a hypothesis as decisively as a $30K one.
+5. **The "killshot" framing should be: cheapest experiment that resolves the question, not biggest experiment that proves the answer beyond doubt.** Falsification-card discipline (per [`linter-design.md`](../linter-design.md)) is about *attempting* to falsify, not about overwhelming the question with budget. A $300 experiment that crosses a pre-committed threshold kills (or saves) a hypothesis as decisively as a $30K one.
 
-**Worked example — H07 Clomid intestinal-ER-antagonism thesis** ([`hypotheses/H07-clomid-intestinal-er-antagonism.md`](./hypotheses/H07-clomid-intestinal-er-antagonism.md)):
+**Worked example — H07 Clomid intestinal-ER-antagonism thesis** ([`hypotheses/H07-clomid-intestinal-er-antagonism.md`](../hypotheses/H07-clomid-intestinal-er-antagonism.md)):
 
 - **Tier 0:** GTEx + HPA sex-stratified intestinal ABCG2 mining ($0); full-text re-read of the 4 anchor papers Klyushova 2023, MacLean 2008, Hoque 2020, Yu 2021 ($0). Estimated to resolve sub-claim 1 (does the PI3K/Akt → ABCG2 mechanism replicate in vivo?) and partially sub-claim 3 (is the renal arm enough?).
 - **Tier 1:** n=1 FEUA tracking on Clomid dose changes (~$300). Resolves sub-claim 3 for one individual definitively.
@@ -171,7 +171,7 @@ The Tier 0 + Tier 1 combination probably closes the H07 thesis at >80% confidenc
 
 **This discipline composes with the pre-commit verification gate.** Both are "walk the checklist before shipping." The verification gate catches numerical hallucinations; the killshot tiering catches budget over-specification. Different failure modes; same shape of fix (named protocol, applied at the right moment in the workflow).
 
-For falsification-card stub authoring (per [`hypotheses/README.md`](./hypotheses/README.md)), the killshot menu in the stub should be tier-explicit: each killshot listed with its cost tier, so the stub-to-full-card promotion can pick the right starting tier rather than defaulting to institutional.
+For falsification-card stub authoring (per [`hypotheses/README.md`](../hypotheses/README.md)), the killshot menu in the stub should be tier-explicit: each killshot listed with its cost tier, so the stub-to-full-card promotion can pick the right starting tier rather than defaulting to institutional.
 
 ---
 
@@ -183,7 +183,7 @@ These are questions whose primary-literature grounding would meaningfully advanc
 2. ***Aspergillus oryzae* heterologous expression precedents** beyond what comp-010 + Killshot #1 already surfaced — particularly any solid-state-format dual-protein work. Search: `Aspergillus oryzae solid-state heterologous protein` + grep dual cassette, multi-cassette, two genes.
 3. **ABCG2-probiotic intersections** — does any published probiotic strain (engineered or natural) modulate intestinal ABCG2 expression in vivo? Informs the LBP track's butyrate-via-*F. prausnitzii* thesis. Search: `ABCG2 probiotic` + grep intestinal expression, fold-change.
 4. **GRAS-host complement-regulator expression** — has anyone published heterologous expression of soluble complement regulators (sCR1, Factor H, DAF/CD55) in any GRAS organism? Informs comp-006 / comp-012 platform implications. Search: `complement regulator heterologous expression yeast Aspergillus` + grep specific protein names.
-5. **Si Miao San and related TCM gout formulas** — modern Chinese clinical evidence. Per the global-multilingual default ([CLAUDE.md](../CLAUDE.md) §"Global-multilingual research by default"), search Chinese-language sources directly via CNKI / WanFang / ChiCTR, not just PubMed-indexed translations. Informs the TCM × rigor track ([tcm-modern-rigor-intersection.md](./tcm-modern-rigor-intersection.md)) Phase 2 P2-1.
+5. **Si Miao San and related TCM gout formulas** — modern Chinese clinical evidence. Per the global-multilingual default ([CLAUDE.md](../CLAUDE.md) §"Global-multilingual research by default"), search Chinese-language sources directly via CNKI / WanFang / ChiCTR, not just PubMed-indexed translations. Informs the TCM × rigor track ([tcm-modern-rigor-intersection.md](../tcm-modern-rigor-intersection.md)) Phase 2 P2-1.
 6. **NSlD-ΔP10 strain availability outside the Maruyama lab** — verify the `operations/ward-1995-lab-access.md` finding that the strain isn't in any public repository by direct catalog query at JCM, NBRC, CGMCC, CBS-KNAW, ATCC, FGSC.
 
 ## When Paperclip is the wrong tool
@@ -198,5 +198,5 @@ These are questions whose primary-literature grounding would meaningfully advanc
 - [`paperclip-deep-dive.md`](./paperclip-deep-dive.md) — full Paperclip MCP capability + limitation audit (the upstream documentation this page operationalizes for OE)
 - [`bio-ai-tools.md`](./bio-ai-tools.md) — broader AI-tool landscape for biology research
 - [`chembl-cross-check.md`](./chembl-cross-check.md) — sister discipline for ChEMBL bioactivity verification
-- [`open-source-platform.md`](./open-source-platform.md) §"Multi-model synthesis as guard against epistemic homogenization" — the broader epistemic-rigor framework this protocol fits within
+- [`open-source-platform.md`](../open-source-platform.md) §"Multi-model synthesis as guard against epistemic homogenization" — the broader epistemic-rigor framework this protocol fits within
 - [`CLAUDE.md`](../CLAUDE.md) §"Global-multilingual research by default" + §"Translation protocol" — the multilingual + cross-vendor disciplines that combine with this protocol for non-English Paperclip-adjacent work

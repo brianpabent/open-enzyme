@@ -20,7 +20,7 @@ related:
   - cross-validation.md
   - koji-endgame-strain.md
   - computational-experiments.md
-  - manual-literature-mining.md
+  - etc/manual-literature-mining.md
 sources:
   - Hoque KM et al. Nature Communications (2020) PMID 32488095
   - Sakamoto et al. PLOS One (2018) PMID 30557349

@@ -91,7 +91,7 @@ Anticipated highest-priority killshots:
 
 - **Wet-lab expression in *A. oryzae* RIB40 first** (~$2K, ~6 weeks): is the construct secreted at all? SDS-PAGE under non-reducing conditions for disulfide assessment.
 - **CCP-regulatory activity assay on the secreted fragment** (~$1K reagents + assay): does the truncated soluble form retain function?
-- **Literature deep-dive on published soluble DAF constructs** ($0, ~1 week — could be a Paperclip-grep follow-up per `manual-literature-mining.md`): has anyone made and tested an aa 35–285 soluble DAF? What was the activity profile?
+- **Literature deep-dive on published soluble DAF constructs** ($0, ~1 week — could be a Paperclip-grep follow-up per `etc/manual-literature-mining.md`): has anyone made and tested an aa 35–285 soluble DAF? What was the activity profile?
 - **Comparison with sCR1 / Factor H truncated soluble constructs** ($0): if other complement regulators have published soluble-truncated activity precedents, that informs the DAF design space.
 
 ---

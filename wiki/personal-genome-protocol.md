@@ -6,7 +6,7 @@ related:
   - self-experiment-protocol.md
   - abcg2-modulators.md
   - gout-pathophysiology.md
-  - ai-bio-tools-playbook.md
+  - etc/ai-bio-tools-playbook.md
 sources:
   - Hung S-I et al. 2005 (HLA-B*5801 and allopurinol SCAR; PNAS)
   - Matsuo H et al. 2009 (ABCG2 Q141K and gout; Sci Transl Med)
@@ -135,5 +135,5 @@ This is not optional for Phase 1+ wet work. The hardware investment is both pers
 - [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) — Tier 2 assay SOPs for cordycepin, ergothioneine, GLPP
 - [`abcg2-modulators.md`](./abcg2-modulators.md) — pharmacological levers on ABCG2; PPARγ induction via butyrate; HDAC-inhibitor rescue of Q141K
 - [`gout-pathophysiology.md`](./gout-pathophysiology.md) — full gout cascade including 351 GWAS loci
-- [`ai-bio-tools-playbook.md`](./ai-bio-tools-playbook.md) — computational stack including variant interpretation
-- [`practitioner-toolkit.md`](./practitioner-toolkit.md) — section umbrella (self-experiments + DIY-bio + rigor disciplines)
+- [`etc/ai-bio-tools-playbook.md`](./etc/ai-bio-tools-playbook.md) — computational stack including variant interpretation
+- [`etc/practitioner-toolkit.md`](./etc/practitioner-toolkit.md) — section umbrella (self-experiments + DIY-bio + rigor disciplines)

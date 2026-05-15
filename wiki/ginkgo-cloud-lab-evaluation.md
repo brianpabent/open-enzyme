@@ -16,7 +16,7 @@ related:
   - uricase-variant-selection.md
   - daf-cd55-scr14-truncated-computational.md
   - validation-experiments.md
-  - ai-bio-tools-playbook.md
+  - etc/ai-bio-tools-playbook.md
 sources:
   - "EstiMate (Ginkgo Bioworks Cloud Lab compatibility & pricing assistant) — 2026-05-12 chat session, Brian Abent"
 status: working-note
@@ -148,7 +148,7 @@ The active wet-lab strategy across OE has two parallel candidate paths, answerin
 | Gate | Path | Cost order | Turnaround |
 |---|---|---|---|
 | Does the designed sequence produce a folded polypeptide at all? | Ginkgo Cloud Lab cell-free ($39/protein) | $10s–$100s | ~1 week |
-| Does the construct work in a fungal host with secretion, real fermentation, and downstream activity? | Community-college / grad-student thesis path (see [`team.md`](./team.md) and the wet-lab-search memory) | Time-only (if a willing grad student lands) | months |
+| Does the construct work in a fungal host with secretion, real fermentation, and downstream activity? | Community-college / grad-student thesis path (see [`etc/team.md`](./etc/team.md) and the wet-lab-search memory) | Time-only (if a willing grad student lands) | months |
 
 The Ginkgo cell-free pre-gate is **upstream** of the fungal/fermentation gate. Negative cell-free result = redesign the construct before any fungal work. Positive cell-free result = construct is worth committing fungal-host effort to. Either way, $39 buys earlier information than the fungal path can provide.
 
@@ -196,7 +196,7 @@ No clinical, animal, or in vitro evidence is generated on this page. The recomme
 
 - EstiMate (Ginkgo Bioworks Cloud Lab compatibility & pricing assistant) — 2026-05-12 chat session transcript, on file in Brian's notes.
 - UniProt P08174 (DAF / CD55 *H. sapiens*) — disulfide annotations (8 DISULFID features in SCR1-4).
-- [`ai-bio-tools-playbook.md`](./ai-bio-tools-playbook.md) — prior mention of Ginkgo as a lab-in-the-loop routing destination via Amazon Bio Discovery.
+- [`etc/ai-bio-tools-playbook.md`](./etc/ai-bio-tools-playbook.md) — prior mention of Ginkgo as a lab-in-the-loop routing destination via Amazon Bio Discovery.
 
 ---
 

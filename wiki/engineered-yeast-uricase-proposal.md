@@ -21,7 +21,7 @@ A Research Proposal for Proof-of-Concept Collaboration
 **Author:** Brian Abent
 **Date:** April 2026
 **Status:** Proposal for expert review — requesting guidance, not endorsement
-**Circulated to (potential collaborators):** Role 1 (Gut Microbiome / Gnotobiotic Animal Core), Role 2 (Pharma Translation / NF-κB & intestinal signaling), Role 3 (Innate Immune Safety / TLR signaling) — see [`team.md`](./team.md) for the full role descriptions.
+**Circulated to (potential collaborators):** Role 1 (Gut Microbiome / Gnotobiotic Animal Core), Role 2 (Pharma Translation / NF-κB & intestinal signaling), Role 3 (Innate Immune Safety / TLR signaling) — see [`etc/team.md`](./etc/team.md) for the full role descriptions.
 This proposal is part of the [Open Enzyme](open-enzyme-vision.md) project — an open-source therapeutic enzyme platform. The yeast track is the fastest path to a working uricase producer.
 Evidence levels used throughout:
 Established Peer-reviewed, replicated

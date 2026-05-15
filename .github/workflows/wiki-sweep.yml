@@ -42,6 +42,15 @@ on:
     branches: [main]
     paths:
       - 'wiki/**.md'
+      - '!wiki/etc/**'
+      # The 'wiki/etc/**' negation (added 2026-05-15) exempts reference /
+      # methodology / tooling pages that live in wiki/etc/ — they belong in
+      # the wiki for human browsing but should NOT drive synthesis sweeps
+      # because the daemon won't read them anyway (build_corpus() in
+      # scripts/synthesize.py globs wiki/*.md, not wiki/**/*.md, so wiki/etc/
+      # is naturally excluded from the synthesis input). Editing an etc/ page
+      # to add a tool reference shouldn't cost ~$0.50 + ~10 min in daemon time.
+      #
       # Note: post-2026-05-08 migration, synthesis/ is sibling to wiki/, not under it.
       # The path filter on wiki/**.md does not match synthesis/**, so the daemon
       # naturally doesn't trigger on its own writes to synthesis/queue/ or

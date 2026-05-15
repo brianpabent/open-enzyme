@@ -26,11 +26,11 @@ tags:
   - peer-track
 related:
   - tcm-modern-rigor-intersection.md
-  - chembl-cross-check.md
+  - etc/chembl-cross-check.md
   - supplement-abcg2-antagonism-computational.md
   - food-grade-hdaci-screen-computational.md
   - computational-experiments.md
-  - manual-literature-mining.md
+  - etc/manual-literature-mining.md
   - gut-lumen-sink.md
   - abcg2-modulators.md
   - gout-pathophysiology.md
