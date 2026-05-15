@@ -172,6 +172,7 @@ graph TB
         DE18["comp-018/comp-020 — Upstream Complement Modulator Sweep (dietary CP0)"]
         DE19["Compounding Pharmacy Track — 503A/503B delivery for repurposing surface"]
         DE20["Ginkgo Cloud Lab — cell-free $39/protein pre-gate + strain-engineering eval"]
+        DE21["Delivery Route × Compound Class Matrix — companion exploration surface (route axis)"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -582,6 +583,12 @@ graph TB
     %% Global lab access (source: ward-1995-lab-access-global.md)
     DE12 -->|"provides NSlD-dP10 chassis for"| KE10
     DE12 -->|"parallel path via C19 chassis"| KE1
+    %% Delivery Route × Compound Class Matrix (source: delivery-route-matrix.md)
+    DE21 -->|"orthogonal route axis to"| DE7
+    DE21 -->|"surfaces non-oral cells for"| DE2
+    DE21 -->|"chassis-as-formulation: H2O2 housekeeping advantage"| KE1
+    DE21 -->|"intra-articular uricase + catalase as #1 open vector"| B1
+    DE21 -->|"open-source SEL-212-equivalent extends engineering layer"| DE19
 
     %% Medicinal mushroom complement track (source: medicinal-mushroom-complement-track.md)
     MT1 -->|"ADA + GLUT9 + OAT1 — 40.6% UA reduction HUA mice"| B1
