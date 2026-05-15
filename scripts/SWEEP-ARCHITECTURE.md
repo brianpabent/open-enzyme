@@ -360,6 +360,63 @@ Full retrospective: [`operations/comp-018-vs-comp-020-retrospective.md`](../oper
 
 ---
 
+## Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution (added 2026-05-15)
+
+**Status:** Pilot. Wired into Pass 3 prompts (`scripts/sweep-prompt-3-review.md` + `scripts/sweep-prompt-3-review-gpt55.md`) for the next 2–3 sweep cycles starting 2026-05-15. Evaluated against the promote/abandon gates below. Not a permanent architecture change yet.
+
+### What changed
+
+When the Pass 3 reviewer emits a disagreement verdict (`Partial` / `Push back` / `Rejected`), the reviewer also emits a `[GAP: <tag>]` annotation immediately after the existing `[OVERLAP: <tag>]` annotation. Confirmed / Confirmed-prioritize / Augment / Defer verdicts get no GAP tag.
+
+Available tags:
+
+- **`tool-gap`** — Pass 2 identified the right topic / mechanism / connection but executed wrong: wrong magnitude, wrong citation, conflated entities, wrong assay format / dose / unit, wrong polarity, misread an evidence-tier tag. The synthesizer understood the biology; the failure is in plumbing.
+- **`science-gap`** — Pass 2 surfaced a connection that doesn't hold biologically. Misunderstood mechanism, applied a pattern from one system where it doesn't transfer, claimed a chokepoint relevance the biology doesn't support. The plumbing was OK; the biology understanding is wrong.
+- **`both`** — Both failure modes contribute; reviewer specifies which dominates.
+- **`unclear`** — Reviewer can tell the synthesizer is wrong but can't cleanly attribute the failure.
+
+### Why
+
+The sweep daemon's existing 3-pass design (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Critique, with a Pass 4 DeepSeek peer-reviewer planned) is a guard against epistemic homogenization across vendors. But when reviewers disagree with synthesizers, the existing verdict tags (Confirmed / Partial / Push back / Rejected) are **adjudicatory** — they tell the human *that* there's a problem, not *where to look*. Adding a tool-gap vs. science-gap axis converts the disagreement into a **diagnostic**:
+
+- "Push back, tool-gap" → reviewer trusts Pass 2's biology understanding; the citation / number / mechanism-label needs fixing
+- "Push back, science-gap" → reviewer disagrees with Pass 2's biology read entirely; the connection itself may not hold
+- "Push back, both" → fix the plumbing AND re-examine whether the connection is real
+- "Push back, unclear" → the disagreement is interpretive; surface for human adjudication
+
+Over time, per-model patterns emerge ("Gemini Pass 2 consistently shows science-gap failures on intracellular trafficking biology" → re-route trafficking-relevant claims to a different synthesizer). This is the kind of self-knowledge a multi-vendor sweep daemon should have but currently doesn't.
+
+The decomposition is named in the BioDesignBench preprint (bioRxiv 2026.05.06.723381) per their finding that DeepSeek V3 and GPT-5 are dominated by tool-gap and Gemini 2.5 Pro by science-gap on the 76-task benchmark. **BioDesignBench remains PRIMARY-SOURCE-PENDING** ([`wiki/bio-ai-tools.md`](../wiki/bio-ai-tools.md) §BioDesignBench — PDF fetch was Cloudflare-blocked 2026-05-12). The pilot draws on the *idea* without depending on the preprint's empirical claims; if BioDesignBench fails verification, the pilot still stands or falls on its own utility.
+
+### Promote / abandon gates
+
+Evaluated after ~3 sweep cycles past 2026-05-15:
+
+**Promote to permanent if all three hold:**
+
+1. **Signal density.** At least 30% of disagreement verdicts (Partial / Push back / Rejected) get a clean tool-gap or science-gap attribution (not "unclear" or "both"). Fewer than 30% clean attribution means the diagnostic isn't discriminating enough to be useful.
+2. **Per-model patterns.** At least one model (Pass 2 synthesizer, Pass 3 reviewer, or Pass 4 DeepSeek when implemented) shows a >2× skew toward one gap type. Without a per-model pattern, the tag is just labeling individual disagreements without surfacing routable signal.
+3. **Walkthrough utility.** The walkthrough operator (Brian, or Claude on Brian's behalf) reports at least one item where the GAP tag changed the closure action — e.g., a tool-gap verdict led to a citation-fix annotation rather than a wiki rewrite, or a science-gap verdict triggered a deeper grep of the underlying biology page rather than a quick patch.
+
+**Abandon if any of the following:**
+
+- **Cargo-cult tagging.** Reviewers emit "tool-gap" or "science-gap" without substantive attribution in the reasoning, defaulting to one tag (e.g., "tool-gap" applied to everything because it sounds less harsh). The tag becomes noise.
+- **Mode collapse.** >80% of disagreements tag as "unclear" or "both." The dichotomy isn't carving reality at its joints in this domain; abandon and try a different decomposition.
+- **Operational burden.** Prompts get unwieldy; reviewers spend more tokens debating gap attribution than verifying claims. The diagnostic costs more than it produces.
+
+### Implementation surface
+
+- `scripts/sweep-prompt-3-review.md` — Opus variant; added Gap tag vocabulary section + format update + strong-push-back example update
+- `scripts/sweep-prompt-3-review-gpt55.md` — GPT-5.5 variant; added Decision rule — GAP tag section + format update + example
+- No Pass 4 prompt file exists yet (DeepSeek pass implementation pending). When it lands, mirror the GAP tag instruction into the Pass 4 prompt.
+- `wiki/bio-ai-tools.md` §BioDesignBench — points at this pilot section so the methodology-upgrade-candidate mention has a concrete operational home.
+
+### Origin
+
+Surfaced as 2026-05-13 sweep Connection 2 in `synthesis/done/2026-05-13-connection-2-the-biodesignbench-tool-gap-vs-science-gap-decomposition.md`. Pass 3 verdict was "Partial" with the suggestion to pilot rather than commit; this section is the pilot.
+
+---
+
 ## Cross-references
 
 - The Alma project's hooks-and-skills pattern is the explicit precedent (Brian, 2026-04-28). Same structural insight: conventions that are checked don't drift; conventions that depend on memory always do, eventually.

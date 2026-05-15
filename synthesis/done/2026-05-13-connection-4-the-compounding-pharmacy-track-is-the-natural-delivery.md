@@ -17,3 +17,17 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a “Compounding pharmacy access” subsection to `gout-action-guide.md` under the “Future” or “This year” sections, linking to `compounding-pharmacy-track.md` and naming disulfiram and zileuton as the highest-priority candidates. Flag that this requires a physician partner and is not DIY.
 
 > **Pass 3 review — Partial.** `[OVERLAP: EXTENSION]` The pipeline gap is real: `compounding-pharmacy-track.md` explicitly says the repurposing surface was "operationally orphaned" and that compounding is the natural output side for FDA-approved small molecules, while `gout-action-guide.md` contains no compounding-pharmacy access path. The overreach is the access wording for specific candidates: the compounding page says disulfiram bulk API is available, but zileuton's bulk API availability is **uncertain** and queued for verification, so a patient-facing action-guide subsection should not imply zileuton is already compoundable.
+
+---
+
+## ✓ Actioned 2026-05-15
+
+Added a single bullet to `wiki/gout-action-guide.md` Default-path §"This year (advanced)" between self-experiment and Future-Phase-0:
+
+- Names compounding-pharmacy access as a path, with the **requires physician partner; not DIY** qualifier in the bullet header.
+- Disulfiram surfaced as the lead candidate (bulk API **confirmed**); references comp-027 for the dose-modeling gate.
+- Zileuton + custom-dose colchicine / allopurinol / probenecid named in passing as "tracked at compounding-pharmacy-track.md, **pending bulk API verification**" — honoring the Pass 3 caveat that zileuton bulk API is uncertain.
+- Cross-links to `compounding-pharmacy-track.md` for the full candidate list rather than duplicating it.
+- Scoped to the **Default path only** for now; if the bulk API audit (Item 11, this walk) confirms broader candidates, the bullet can extend to the Androgen-elevated / Q141K-positive / Prevention paths in a follow-up sweep.
+
+**Loose end picked up in same commit:** the existing "Genotype yourself — 23andMe or a clinical-grade panel" bullet at line 60 was reworked. Patient-facing copy now leads with clinical-grade testing (via rheumatologist or CLIA-grade direct-to-consumer service); consumer panels (23andMe, AncestryDNA) explicitly not recommended for gout-stack-relevant SNPs, with a brief note on data-ownership concerns. The reframe aligns the action guide with Brian's "doesn't trust consumer genetic testing" stance without making it Brian-internal — the patient-facing rationale (uneven data quality on specific variants + ToS data-ownership ambiguity) generalizes beyond Brian's personal preference.

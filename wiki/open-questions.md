@@ -242,6 +242,65 @@ See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [sy
 
 Questions about the koji-first vs. yeast-first choice, community fermentation reliability, strain stability, regulatory positioning, and the overall platform thesis.
 
+### Layered intervention — combining a compounded repurposed-drug pill with the engineered-koji daily food *(added 2026-05-15, **dormant until both upstream products exist**)*
+
+The compounding-pharmacy track and the engineered-koji daily-food track target **non-overlapping chokepoints** and use **non-overlapping consumption modes**. A combined intervention would deliver:
+
+- **Compounded pill** (Rx, daily) — hits CP6a (5-LOX, via zileuton) or CP6b (GSDMD, via disulfiram) — see [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates"
+- **Engineered-koji daily food** (shio-koji / amazake / miso) — hits CP0 (luminal uricase) and upstream priming (CP1–CP5) — see [`koji-endgame-strain.md`](./koji-endgame-strain.md)
+
+The combination is mechanistically clean (different mechanisms, different routes), but **no co-administration protocol or patient-experience model exists**:
+
+- What's the timing relationship between the pill and the food? Does enzyme activity in the gut lumen affect drug absorption? Do gut-microbiota changes from daily fermented food alter drug PK?
+- What does the daily patient experience look like (pill + condiment + food prep + monitoring)? Adherence-friendly or burdensome?
+- What endpoints + biomarkers would actually let us measure layered effect vs. either track alone?
+- Off-target interactions: any reasonable drug-food interaction concerns at therapeutic doses?
+
+**Fires when:** (a) the compounding-pharmacy track's first prescription pathway opens for a discovery-engine candidate (disulfiram is the lead — see [`comp-027` brief](./computational-experiments.md) on disulfiram dose modeling) AND (b) the engineered-koji strain becomes available (Phase 0 currently — neither the §1.9 dual-cassette koji nor a community-college-lab proxy exists yet). Until both upstream gates clear, the co-administration protocol is **dormant** — drafting it now would be path-dependent speculation about two products that don't exist.
+
+**Cross-references:** [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates" (originating mention), [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`comp-027`](./computational-experiments.md) (disulfiram dose modeling), `synthesis/done/2026-05-13-open-question-1-can-the-compounding-pharmacy-tracks-repurposed-drug.md` (originating sweep item).
+
+### Riskiest assumption #2 — can engineered koji be reliably home- and community-fermented at therapeutic doses? *(added 2026-05-15, **the platform's #2 load-bearing scientific bet — production/delivery side**)*
+
+**Falsification card committed:** [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) (stub, 2026-05-15). Full killshot menu, pre-committed thresholds, and assumption stack queued as Phase 2 on the H09 card.
+
+Sister risk to [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (mechanism side). The platform thesis has two equally load-bearing risks: even if the gut-lumen mechanism works (H08), the platform's distinctive accessibility thesis ("grow it at home like sourdough") rests on this assumption (H09). If H09 dies, the platform collapses to "centrally-manufactured oral enzyme with a non-traditional supply chain" — defensible but no longer open-source-accessible.
+
+The corpus offers strong mitigation sketches (chromosomal integration, first-batch QC, never-backslop-past-N rule) and honest framing (`cross-validation.md` Claim 5 calls "Easy as Sourdough" the most audacious and least-validated platform claim), but **zero direct empirical evidence for an engineered multi-cassette *A. oryzae* strain in the community-fermentation context.** Ward 1995 §1.9 dual-cassette feasibility test is the first wet-lab gate — but only validates lab expression, not community-fermentation reliability.
+
+**Provisional alive/killed thresholds:** CV < 30% cross-user enzyme activity, strain retention ≥ 95% at generation 5, contamination < 5% per batch under hygiene protocol. Killed if a properly-powered multi-user pilot materially misses any of these.
+
+**Phase 2 follow-ups (queued on H09 card, see full table there):**
+- P2-1 Lit scan: industrial koji batch-CV baseline (Japanese miso/sake reproducibility data)
+- P2-2 Multi-user community-fermentation pilot trial (N=5–10, central QC at community biolab)
+- P2-3 Passaging-based strain stability protocol (50 generations, qPCR/activity readout)
+- P2-4 Drying activity-retention comparison (lyophilization vs. oven-dry vs. trehalose-lyoprotected)
+- P2-5 Contamination-spike test (wild-strain spike, 5-generation tracking)
+- P2-6 Smartphone-camera colorimetric uric-acid assay validation
+- P2-11 Regulatory framework scoping pass (engineered-spore distribution path) — user-action-required (external consultant engagement)
+
+**Cross-references:** [cross-validation.md §Claim 5](./cross-validation.md) (3/10 → 6/10 reframe), [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](./open-source-platform.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-endgame-strain.md](./koji-endgame-strain.md), [self-experiment-protocol.md](./self-experiment-protocol.md) (Brian's n=1 home-fermentation data point), [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) (note: at `operations/`, not `wiki/`), `synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md` (originating sweep item).
+
+### Riskiest assumption #1 — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? *(added 2026-05-15, **the platform's #1 load-bearing scientific bet — mechanism side**)*
+
+**Falsification card committed:** [H08 — Gut-Lumen Sink Platform Thesis](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (stub, 2026-05-15). The full killshot menu, pre-committed thresholds, and assumption stack are queued as Phase 2 on the H08 card.
+
+The platform's load-bearing belief is that the gut-lumen sink produces a clinically meaningful SUA reduction in a typical (non-CKD) gout cohort, in the −0.5 to −1.0 mg/dL band predicted by the [comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model. The biology is sound (ABCG2 secretes ~33% of daily UA elimination into the gut lumen; comp-019's flux model is internally consistent against Miyazaki 2025 measurements) but the clinical-translation link is unvalidated:
+
+- **ALLN-346 Phase 2a Study 201** showed signal in CKD patients; Study 202 (broader cohort) showed 0–5% reduction, no significance vs. placebo, and the program terminated with 19/200 enrolled.
+- **Zero** uricase trials (ALLN-346, PRX-115, rasburicase, pegloticase) have stratified by ABCG2 Q141K genotype — the Q141K × allopurinol response literature is rich, the Q141K × uricase response literature is empty.
+- The comp-019 flux model is prospective and unvalidated against any human cohort.
+
+**If the typical-gout effect is <0.5 mg/dL**, the platform collapses from "core mechanism" to "mild adjunct" — reshaping commercial framing, self-experiment framing, and the priority of peer tracks ([LBP](./engineered-lbp-chassis.md), [siRNA/URAT1](./sirna-urat1-modality.md), [medicinal-mushroom-complement](./medicinal-mushroom-complement-track.md)).
+
+**Phase 2 follow-ups (queued on H08 card):**
+- P2-1 — Lit scan for any post-ALLN-346 oral or gut-targeted uricase Phase 2 typical-gout readout (Opus subagent).
+- P2-2 — Re-analysis attempt of ALLN-346 Study 202 cohort-level genotype data accessibility (FOIA / sponsor request / supplementary data grep). Highest information-per-dollar killshot if data obtainable.
+- P2-3 through P2-6 — Populate assumption stack, killshot menu, pre-committed thresholds, failure-mode coverage map per H01 template.
+- P2-7 — Integrate n=1 self-experiment design with the FEUA protocol on [self-experiment-protocol.md](./self-experiment-protocol.md).
+
+**Cross-references:** [cross-validation.md §Claim 1](./cross-validation.md) (feasibility 6.5/10), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [uricase-abcg2-genotype-stratification-computational.md (comp-019)](./uricase-abcg2-genotype-stratification-computational.md), `synthesis/done/2026-05-09-riskiest-assumption-1*.md` (originating sweep item).
+
 ### Genotype stratification — Q141K and the gut-lumen-sink mechanism's responder population *(added 2026-05-08, **highest-priority open question for the platform's primary demographic**)*
 
 - **Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does the mechanism rely on Q141K-positive disease-state ABCG2 vulnerability to show benefit?** This is the single most important unanswered question for Open Enzyme's primary demographic positioning. If the mechanism only works in Q141K-positive readers (~25-30% of European-descent men, ~50%+ of East Asian men), the platform's addressable population shrinks dramatically — from "all gout patients" to "Q141K-positive gout patients." That's a strategic question that should change trial design, demographic targeting, and possibly commercial framing. (Source: surfaced 2026-05-08 sweep Open Question 1; comp-017 + cross-validation.md prior-art context; [synthesis.md 2026-05-08 Item 8](./synthesis.md).)

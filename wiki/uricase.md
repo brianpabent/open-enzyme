@@ -183,6 +183,8 @@ ALLN-346 Phase 1 trials showed no serious adverse events, no systemic absorption
 
 Uricase produces H₂O₂ as a byproduct. In cells, catalase immediately degrades this. In the gut lumen, catalase from *A. oryzae* (which would be co-delivered with engineered koji) would neutralize H₂O₂. Additionally, the gut lumen has significant peroxidase activity from microbiome and epithelial cells. At expected therapeutic uricase activity levels, H₂O₂ production would be minimal and rapidly scavenged—not a safety concern. (Source: engineered-koji-protocol.md)
 
+The peroxisomal co-localization of uricase + endogenous catalase in the whole-cell oral chassis is more than a safety reassurance — it's free formulation work that every alternative delivery route (IV, SC, intra-articular, rectal) has to re-solve through formulation engineering. See [`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question — and why the chassis solves it for free"](./engineered-koji-protocol.md) and [`delivery-route-matrix.md` §"Chassis-as-formulation"](./delivery-route-matrix.md) for the route-by-route treatment.
+
 ## Therapeutic Applications
 
 ### Gout Management
