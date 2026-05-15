@@ -260,7 +260,28 @@ The combination is mechanistically clean (different mechanisms, different routes
 
 **Cross-references:** [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates" (originating mention), [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`comp-027`](./computational-experiments.md) (disulfiram dose modeling), `synthesis/done/2026-05-13-open-question-1-can-the-compounding-pharmacy-tracks-repurposed-drug.md` (originating sweep item).
 
-### Riskiest assumption — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? *(added 2026-05-15, **the platform's #1 load-bearing scientific bet**)*
+### Riskiest assumption #2 — can engineered koji be reliably home- and community-fermented at therapeutic doses? *(added 2026-05-15, **the platform's #2 load-bearing scientific bet — production/delivery side**)*
+
+**Falsification card committed:** [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) (stub, 2026-05-15). Full killshot menu, pre-committed thresholds, and assumption stack queued as Phase 2 on the H09 card.
+
+Sister risk to [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (mechanism side). The platform thesis has two equally load-bearing risks: even if the gut-lumen mechanism works (H08), the platform's distinctive accessibility thesis ("grow it at home like sourdough") rests on this assumption (H09). If H09 dies, the platform collapses to "centrally-manufactured oral enzyme with a non-traditional supply chain" — defensible but no longer open-source-accessible.
+
+The corpus offers strong mitigation sketches (chromosomal integration, first-batch QC, never-backslop-past-N rule) and honest framing (`cross-validation.md` Claim 5 calls "Easy as Sourdough" the most audacious and least-validated platform claim), but **zero direct empirical evidence for an engineered multi-cassette *A. oryzae* strain in the community-fermentation context.** Ward 1995 §1.9 dual-cassette feasibility test is the first wet-lab gate — but only validates lab expression, not community-fermentation reliability.
+
+**Provisional alive/killed thresholds:** CV < 30% cross-user enzyme activity, strain retention ≥ 95% at generation 5, contamination < 5% per batch under hygiene protocol. Killed if a properly-powered multi-user pilot materially misses any of these.
+
+**Phase 2 follow-ups (queued on H09 card, see full table there):**
+- P2-1 Lit scan: industrial koji batch-CV baseline (Japanese miso/sake reproducibility data)
+- P2-2 Multi-user community-fermentation pilot trial (N=5–10, central QC at community biolab)
+- P2-3 Passaging-based strain stability protocol (50 generations, qPCR/activity readout)
+- P2-4 Drying activity-retention comparison (lyophilization vs. oven-dry vs. trehalose-lyoprotected)
+- P2-5 Contamination-spike test (wild-strain spike, 5-generation tracking)
+- P2-6 Smartphone-camera colorimetric uric-acid assay validation
+- P2-11 Regulatory framework scoping pass (engineered-spore distribution path) — user-action-required (external consultant engagement)
+
+**Cross-references:** [cross-validation.md §Claim 5](./cross-validation.md) (3/10 → 6/10 reframe), [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](./open-source-platform.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-endgame-strain.md](./koji-endgame-strain.md), [self-experiment-protocol.md](./self-experiment-protocol.md) (Brian's n=1 home-fermentation data point), [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) (note: at `operations/`, not `wiki/`), `synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md` (originating sweep item).
+
+### Riskiest assumption #1 — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? *(added 2026-05-15, **the platform's #1 load-bearing scientific bet — mechanism side**)*
 
 **Falsification card committed:** [H08 — Gut-Lumen Sink Platform Thesis](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (stub, 2026-05-15). The full killshot menu, pre-committed thresholds, and assumption stack are queued as Phase 2 on the H08 card.
 

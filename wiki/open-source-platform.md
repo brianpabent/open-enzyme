@@ -521,6 +521,8 @@ The goal is not venture funding or IPO. The goal is accessibility.
 
 ## Open Questions — Reliability of Community Fermentation
 
+> **Falsification card (2026-05-15):** This section's reliability questions are formalized as [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md), the platform's #2 riskiest-assumption anchor (paired with [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) on the mechanism side). H09's full killshot menu — multi-user community-fermentation pilot, passaging strain stability, drying activity-retention, contamination spike, smartphone colorimetric QC validation, regulatory framework scoping — is queued as Phase 2. Read H09 before extending strong claims off this page.
+
 The "grown at home like sourdough starter" framing is central to the platform's accessibility thesis, but home fermentation introduces a set of reliability problems that pharma-grade production avoids by brute force (controlled bioreactors, GMP SOPs, antibiotic selection, cold chain). These problems are **tractable**, not disqualifying — but they need explicit mitigation paths, not hand-waving.
 
 ### 1. Strain Stability Across Generations *(Mechanistic Extrapolation)*

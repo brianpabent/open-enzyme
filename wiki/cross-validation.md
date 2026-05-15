@@ -360,7 +360,7 @@ This claim is the most **audacious and least rigorously validated** in the entir
 - The beverage is consumed fresh or lightly pasteurized (minimal enzyme loss if processing is gentle).
 - No drying required; just fermentation and bottling.
 
-**Verdict on "Easy as Sourdough":** The vision is aspirational but not realistic as stated. Growing the yeast is easy. Producing a standardized, therapeutically active, contamination-free final product at home is not. **This claim needs serious revision.**
+**Verdict on "Easy as Sourdough":** The vision is aspirational but not realistic as stated. Growing the yeast is easy. Producing a standardized, therapeutically active, contamination-free final product at home is not. **This claim needs serious revision.** **Falsification card:** committed at stub-level as [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) (2026-05-15) — the platform's #2 riskiest-assumption anchor (paired with [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) for the mechanism risk); pre-committed magnitude band CV < 30% cross-user / strain retention ≥ 95% at gen 5 / contamination < 5%; killshot menu (multi-user pilot, passaging stability, drying retention, contamination spike, smartphone colorimetric assay validation) queued in Phase 2.
 
 **Feasibility Rating: 3/10** (as stated). Revised to **6/10** if the model is reframed as "Community BioLab + Home Fermentation" rather than "Entirely Home-Based."
 
