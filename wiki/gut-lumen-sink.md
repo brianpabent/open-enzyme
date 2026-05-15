@@ -21,6 +21,8 @@ sources:
 
 # Gut-Lumen Sink Strategy
 
+> **Falsification card (2026-05-15):** This page describes the platform's core scientific bet. The riskiest-assumption framing — that the gut-lumen sink produces a clinically meaningful SUA reduction in a typical (non-CKD) gout cohort, in the −0.5 to −1.0 mg/dL band predicted by [comp-019](./uricase-abcg2-genotype-stratification-computational.md) — is committed as a stub-level falsification card at [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md). The killshot menu (incl. ALLN-346 Study 202 genotype-stratified re-analysis attempt, n=1 self-experiment, Phase 2b RCT) is queued in Phase 2. Read H08 before extending strong claims off this page.
+
 ## Overview
 
 The gut-lumen sink strategy represents a paradigm shift in oral [[uricase|uricase]] delivery. Rather than attempting the difficult task of transporting a 135 kDa enzyme protein across the intestinal epithelium into systemic circulation, this approach places active uricase *in the intestinal lumen itself*—where it degrades uric acid that has been actively secreted from the bloodstream via ABCG2 transporters. This creates a concentration "sink" that pulls additional uric acid from serum across the intestinal epithelium without requiring systemic enzyme absorption. The strategy is validated by multiple independent lines of evidence and represents the most biologically elegant and practically feasible approach to oral uricase delivery. (Source: engineered-yeast-uricase-proposal.md, blood-barrier-exploits.md, open-enzyme-vision.md)
