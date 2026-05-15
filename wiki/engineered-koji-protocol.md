@@ -611,9 +611,17 @@ An important distinction: rasburicase given IV causes anti-drug antibodies in ~6
 - **ALLN-346 safety data:** Phase 1 trials showed no serious adverse events, no systemic absorption, and no immune reactions from oral uricase at any dose level tested.
 - **Allergenicity assessment:** Uricase has no known cross-reactivity with common allergens. Bioinformatic analysis (comparison to FARRP allergen database) would be prudent but is unlikely to flag issues for an enzyme from a food organism.
 
-### The Hydrogen Peroxide Question
+### The Hydrogen Peroxide Question — and why the chassis solves it for free
 
-Uricase produces H2O2 as a byproduct. In the cell, catalase immediately degrades this. In the gut lumen, what happens to the peroxide? *A. oryzae* produces abundant catalase, which would be co-delivered in the koji and would neutralize H2O2. Additionally, the gut lumen has significant peroxidase activity from the microbiome and epithelial cells. At the expected uricase activity levels, H2O2 production would be minimal and rapidly scavenged. This is not a concern at therapeutic doses.
+Uricase produces H2O2 as a byproduct (1:1 stoichiometry — see §"Mechanism of Action" above). For any oxidase enzyme delivered as a therapeutic, H2O2 housekeeping is a real formulation question: H2O2 is a small, uncharged, membrane-permeant reactive species that oxidizes nearby tissue if not scavenged before it diffuses away from the site of generation.
+
+**The whole-cell oral chassis solves this for free.** *A. oryzae* expresses catalase as part of normal aerobic peroxisomal metabolism (catA, catR, and other homologs in the genome). Catalase converts 2 H2O2 → 2 H2O + O2 with kcat ~10^7 s⁻¹, near the diffusion limit — one of the most catalytically efficient enzymes in biology. The native uricase has a C-terminal PTS1 (SKL) peroxisomal targeting signal, so in the unmodified case both enzymes are co-localized in the same organelle and H2O2 is intercepted within angstroms of where it's generated. Even with PTS1 removed (per the design decision in §6 above), cytoplasmic catalase still buffers H2O2 before secretion. The patient ingests **a whole cell containing both the engineered uricase and the host catalase** — co-formulated by the cell, not by us.
+
+This is a positive argument for whole-cell oral delivery, not just a safety reassurance. **Every alternative delivery format has to re-solve the H2O2 housekeeping problem through formulation engineering** — IV uricase relies on circulating endogenous catalase in RBCs and tissue (works because circulating catalase is abundant); SC depot, intra-articular, and other tissue-local formats require explicit catalase co-formulation or uricase-catalase fusion engineering (Schiavon, Veronese et al. early-2000s precedent — see [`delivery-route-matrix.md` §"Why SC uricase doesn't work" and §"Open exploration questions" #7](./delivery-route-matrix.md)).
+
+For the gut-luminal application: in the gut lumen specifically, the koji-co-delivered catalase plus significant peroxidase activity from the microbiome and epithelial cells means H2O2 production at expected uricase activity levels is rapidly scavenged. This is not a safety concern at therapeutic doses — but the deeper point is that the chassis is doing free formulation work that any other route would have to acquire.
+
+The principle is generic: any oxidase or peroxidase-byproduct-generating enzyme considered for OE production (D-amino acid oxidase, monoamine oxidases, etc.) inherits the same co-localized catalase housekeeping when expressed in the same chassis. The chassis is generic; the housekeeping is generic. See [`delivery-route-matrix.md`](./delivery-route-matrix.md) for the full treatment of how this advantage interacts with route choice across the platform.
 
 ## 11 Where To Do This
 
