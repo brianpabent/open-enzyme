@@ -1366,6 +1366,53 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Cross-references:** [gout-pathophysiology.md §"Multi-track urate transporter coverage"](./gout-pathophysiology.md) (the coverage map this follow-up tests); §2.6 base (parent study); [§1.9 Ward 1995](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) (engineered-koji-uricase-strain dependency); [`koji-endgame-strain.md`](./koji-endgame-strain.md) (koji track context).
 
+### 2.7 Koji × *Cordyceps* Co-Formulation Stability Test — ADA-Challenge Assay (added 2026-05-15)
+
+**Status**: Proposed | **Cost**: $1,500–3,000 | **Weeks**: 3–4 | **Phase**: 2 (low-cost, low-friction)
+
+**Affected wiki**: [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates"; [cordycepin-cassette-burden-computational.md](./cordycepin-cassette-burden-computational.md) §"Impact on experimental priorities"; [computational-experiments.md](./computational-experiments.md) comp-025 (ADA × cns1 kinetic modeling); [koji-endgame-strain.md](./koji-endgame-strain.md) cordycepin arm.
+
+**What it tests:** Does whole-fermentate *C. militaris* extract (providing native pentostatin) protect engineered-koji-produced cordycepin from ADA-mediated deamination when the two are co-formulated? If yes, the cross-chassis pairing (engineered koji handles bulk cordycepin production at scale; cultivated *C. militaris* extract provides ADA-protecting pentostatin from native co-evolved chemistry) becomes a minimal-complexity delivery strategy that avoids the additional cassette OR ADA-knockout work that comp-024 / comp-025 would otherwise gate. If no, the co-formulation strategy fails and the platform routes through full-BGC engineering OR ADA knockout OR purified pentostatin co-supplementation.
+
+**Proposed in:** 2026-05-14 sweep Connection 4 (synthesis/done/2026-05-14-connection-4-cordycepins-ada-vulnerability-creates-a-two-organism.md).
+
+**Background on the gap:** comp-023 confirmed engineered cns1+cns2 cordycepin production in koji is metabolically feasible (GREEN at Jeennor 2023 564 mg/L/d). But cordycepin is rapidly deaminated by adenosine deaminase (ADA) to its inactive 3'-deoxyinosine form. Native *C. militaris* solves this by co-producing pentostatin (a clinical-grade ADA inhibitor) from the same BGC as cordycepin (Xia 2017, PMID 29056419). The minimal-complexity workaround for engineered koji: don't engineer pentostatin; pair the koji fermentate with a small co-formulated dose of cultivated *C. militaris* extract. This experiment tests whether the pairing actually delivers ADA protection or whether the formulation context (mixing solid-state koji + dried *Cordyceps* extract) compromises pentostatin's activity.
+
+**Protocol:**
+
+- **Test article preparation:**
+  - Arm A (negative control): engineered-koji cordycepin fermentate alone, no ADA inhibitor
+  - Arm B (positive control — native): whole-fermentate *C. militaris* alone (intrinsic cordycepin + pentostatin from native BGC)
+  - Arm C (cross-chassis pairing — the test): engineered-koji cordycepin fermentate + dried *C. militaris* extract at pentostatin dose calibrated to match Arm B's pentostatin content
+  - Arm D (purified-pentostatin reference): engineered-koji cordycepin fermentate + commercial pentostatin (Nipent or research-grade)
+- **ADA challenge assay:**
+  - Spike each arm with bovine intestinal ADA (or human recombinant ADA) at a defined enzyme concentration
+  - Sample at t = 0, 15 min, 30 min, 60 min, 120 min, 240 min
+  - Quantify cordycepin vs. 3'-deoxyinosine (the ADA product) by LC-MS at each timepoint
+- **Readout:** cordycepin half-life under ADA challenge for each arm; comparison vs. Arm A baseline (no ADA inhibition)
+- **Stability check:** Arm C cordycepin + pentostatin content at 0, 7, 14 days post-co-formulation (room temperature + 4°C storage) to verify the co-formulation doesn't degrade pentostatin
+- **Success criterion (test → next phase):** Arm C cordycepin half-life ≥ 50% of Arm B's half-life. (Arm B is the native co-evolved benchmark; co-formulation reaching half of native protection is meaningful evidence the strategy works.)
+
+**Estimated cost:** $1,500–3,000
+- *C. militaris* cultivation (~2 weeks home or community-biolab) + dried extract preparation: ~$200–400
+- Engineered-koji cordycepin fermentate (or comp-023-feasibility-proxy via Jeennor 2023 reference batch): ~$500 if outsourced; gated on engineered-koji-cordycepin strain availability
+- LC-MS quantification ($25–50/sample × 4 arms × 6 timepoints × 3 replicates = 72 samples × $35 ≈ $2,500)
+- Bovine ADA reagent: ~$100
+
+**Estimated timeline:** 3–4 weeks (2 weeks *Cordyceps* cultivation + 1 week assay run + 1 week LC-MS turnaround)
+
+**Success criteria (overall):**
+- **Arm C cordycepin half-life ≥ 50% of Arm B (native co-evolved):** the cross-chassis pairing works as a minimal-complexity ADA-protection route. Update [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) to promote the pairing from "synergy candidate" to "validated route"; update [`koji-endgame-strain.md`](./koji-endgame-strain.md) cordycepin-arm framing to note this avoids pentostatin co-engineering complexity.
+- **Arm C half-life < 50% of Arm B:** the co-formulation strategy fails. Route through pentostatin co-engineering (additional cassette in koji) OR ADA knockout (host engineering) OR purified pentostatin co-supplementation. Comp-024 / comp-025 outcomes determine which.
+
+**Limitations:**
+
+1. In vitro ADA challenge does not capture gut-lumen-realistic conditions (mixed flora, gut-wall ADA distribution, pH variation). Use the in vitro result as a go/no-go for whether the cross-chassis pairing is mechanistically possible, not as a guarantee of in vivo performance.
+2. Pentostatin dose-matching across Arm B (native) and Arm C (co-formulated) requires accurate quantification of pentostatin in the dried *C. militaris* extract. Use an HPLC-UV anchor measurement per [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) or send to a Tier 3 vendor for absolute quantification before the assay.
+3. Engineered-koji cordycepin fermentate availability is gated on the cns1+cns2 cassette being expressed in koji. Until that happens, this experiment uses Jeennor 2023's *C. militaris* fermentate as a stand-in cordycepin source (with the native pentostatin removed via chromatographic purification before re-spiking).
+
+**Cross-references:** [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" (originating section); [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) §"Impact on experimental priorities" (cordycepin engineering-feasibility prior); [comp-025 ADA × cns1 substrate competition](./computational-experiments.md) (computational gate that informs whether this experiment is needed); §2.6 (4-arm whole-fermentate vs. purified comparison — sister experiment); [Xia 2017 PMID 29056419](https://pubmed.ncbi.nlm.nih.gov/29056419/) (native pentostatin co-production primary source).
+
 ---
 
 ## Phase 3: Human Self-Experimentation and Biomarker Tracking
