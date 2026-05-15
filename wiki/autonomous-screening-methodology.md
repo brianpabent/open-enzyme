@@ -92,6 +92,8 @@ ClockBase's two-pass pattern (hypothesis-generation agent → verification agent
 
 **Comp-NNN implementation:** candidate-scoring agent produces a ranked shortlist; **independent verification agent** re-checks load-bearing numbers (residue indices, disulfide counts, predicted Tm, cleavage-site predictions) against primary databases (UniProt, ChEMBL, AlphaFold) before the candidate enters the wet-lab queue. The DAF SCR1-4 disulfide-count incident (2026-05-06) is the canonical case showing why this is needed — exactly what a verification-pass would have caught.
 
+**Operational instantiation (comp-022, 2026-05-14):** The ClockBase exhaustive-search-then-rank pattern was instantiated at full cardinality for the first time in the OE corpus — 43,200 uricase cassette candidates enumerated, scored across 5 orthogonal models (CAI, ViennaRNA MFE, chaperone load, promoter×SP prior, ESM2 pseudo-pLDDT), with N-of-5 ≥ 4 concordance gate producing 71 promoted cassettes. The v1→v2 retrofit (adding real ViennaRNA MFE + ESM2 fold-quality proxy) confirmed the v1 top cluster at 100% survival. See [`uricase-cassette-ranking-computational.md`](./uricase-cassette-ranking-computational.md). (Mechanistic Extrapolation; source: uricase-cassette-ranking-computational.md)
+
 ### 4. Autonomy boundary = ranking, not validation
 
 Useful prior: keep the AI on the **"produce ranked shortlist + provenance + composite score"** side of the boundary; humans (or an explicit gating ritual) make the wet-lab commit. Don't oversell autonomy.

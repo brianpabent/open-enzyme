@@ -232,6 +232,7 @@ comp-010 does **not** reframe §1.9 as a confirmation experiment. §1.9 remains 
 - [computational-experiments.md](./computational-experiments.md) — comp-010 tracking entry
 - [uricase-protease-stability-computational.md](./uricase-protease-stability-computational.md) — comp-001: uricase shio-koji protease stability (LOW risk)
 - [lactoferrin-protease-stability-computational.md](./lactoferrin-protease-stability-computational.md) — comp-005: lactoferrin shio-koji protease stability (MODERATE mature)
+- [uricase-cassette-ranking-computational.md](./uricase-cassette-ranking-computational.md) — comp-022 v2: 43,200-candidate ClockBase-style ranking; 71 pass N-of-5 ≥ 4; confirms PamyB + amyB SP + direct-secretion architecture with three gene-synthesis-time refinements (5'-softened codon, PTS1-blocking C-terminal tag, N191Q glycosylation-sequon ablation)
 - [experiments/comp-010-cassette-compatibility/](../experiments/comp-010-cassette-compatibility/) — Reproducible experiment folder
 
 ---

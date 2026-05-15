@@ -497,11 +497,13 @@ graph TB
     %% (source: uricase-cassette-ranking-computational.md)
     KE13 -->|"confirms PamyB + amyB SP + direct-secretion architecture"| KE2
     KE13 -->|"three gene-synthesis-time refinements: 5p-softened codon, PTS1-blocking tag, N191Q ablation"| KE1
+    KE13 -->|"v2 retrofit: ESM2 pseudo-pLDDT + ViennaRNA MFE; 71 pass N-of-5 ≥ 4; v1 top cluster survives 100%"| KE1
     %% comp-023 cordycepin cassette burden (2026-05-14): FBA on iWV1314
     %% (source: cordycepin-cassette-burden-computational.md)
     KE14 -->|"GREEN FBA burden verdict at Jeennor 2023 titer"| KE1
     KE14 -->|"cytosolic; PDI load 0; bypasses secretion entirely"| CH5
     KE14 -->|"cns1+cns2 cordycepin arm metabolic-burden-feasible"| MT2
+    KE14 -->|"carnS+panD also GREEN; two mutually exclusive cytosolic third-cassette options"| KE4
 
     %% Chaperone-orthogonal stacking framework (2026-05-05)
     %% (source: chaperone-orthogonal-stacking.md)
