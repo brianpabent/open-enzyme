@@ -129,7 +129,10 @@ This is not optional for Phase 1+ wet work. The hardware investment is both pers
 
 ## See also
 
-- [`self-experiment-protocol.md`](./self-experiment-protocol.md) — biomarker monitoring framework
+- [`self-experiment-protocol.md`](./self-experiment-protocol.md) — biomarker monitoring framework; **see §12 "Genotype-informed supplement quantification workflow"** for the closed-loop n=1 pharmacogenomics composition (genotype → compound selection → home production → Tier 2 batch QC → calibrated dose → biomarker tracking)
+- [`quantification-ladder.md`](./quantification-ladder.md) — home / community-biolab Tier 2 assay framework that turns supplement dose from fixed-input to verified variable; composes with this page per `self-experiment-protocol.md` §12
+- [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) — koji enzyme activity quantification (Tier 2/3)
+- [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) — Tier 2 assay SOPs for cordycepin, ergothioneine, GLPP
 - [`abcg2-modulators.md`](./abcg2-modulators.md) — pharmacological levers on ABCG2; PPARγ induction via butyrate; HDAC-inhibitor rescue of Q141K
 - [`gout-pathophysiology.md`](./gout-pathophysiology.md) — full gout cascade including 351 GWAS loci
 - [`ai-bio-tools-playbook.md`](./ai-bio-tools-playbook.md) — computational stack including variant interpretation
