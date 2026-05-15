@@ -1769,6 +1769,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#56-design-escape-cytosolic-third-cassette-bypasses-the-secreted-stacking-bottleneck-added-2026-05-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Design escape — cytosolic third cassette bypasses the secreted-stacking bottleneck (added 2026-05-15)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6 Design escape — cytosolic third cassette bypasses the secreted-stacking bottleneck (added 2026-05-15)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-56-does-not-claim-pass-3-softening-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What §5.6 does NOT claim (Pass 3 softening discipline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comp-028-as-the-feasibility-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comp-028 as the feasibility gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generalization-cytosolic-payloads-as-a-strategic-design-lever" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generalization — cytosolic payloads as a strategic design lever
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#6-the-falsifiable-test-pairwise-expression-matrix" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5093,7 +5143,7 @@
 <blockquote>
 <p><strong>Cross-chassis combinations are trivially off-framework.</strong> Compounds produced by a separate organism (e.g., cultivated <em>Cordyceps militaris</em> cordycepin, <em>Ganoderma lucidum</em> GLPP, <em>Pleurotus citrinopileatus</em> ergothioneine — see <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a>) impose <strong>zero</strong> chaperone load on the koji endgame strain because they are not co-expressed in koji at all. They appear in the consumer product as cultivated mushroom extracts paired with the engineered koji. No framework needed for that combination — the orthogonality is by virtue of separate chassis. The cordycepin row above scores the alternative <em>koji-engineering route</em> (Jeennor 2023's cns1+cns2 heterologous expression in <em>A. oryzae</em>); even that route is off the secretion/folding axis because cns1 and cns2 are bacterial cytosolic enzymes that never enter the ER.</p>
 <p><strong>Scope note — what this framework tracks and what it doesn't.</strong> The framework scores <strong>ER folding-machinery competition</strong> (PDI for disulfides, calnexin for N-glycans, BiP for general transit). It does <strong>not</strong> track generic proteome burden (ribosomes, amino acid pool, ATP for tRNA charging) imposed by cytosolic enzymes. For the current cassette stack, ER folding lanes are the binding constraint — koji's wild-type translation budget already supports ~30% secretion-dedicated output, so adding a ~400 aa cytosolic enzyme like cns1 is small change against the existing translation pool. If the platform later stacks multiple cytosolic biosynthesis clusters (e.g., cordycepin + a terpenoid pathway + a polyketide cluster), translation burden may become load-bearing — at that point a proteome-constrained metabolic model (pcSecKoji-style) is the correct upgrade per <a href="./synthesis.md#strategic-reflections-queue"><code>synthesis.md</code> Strategic Reflections Queue §"Chaperone framework predictive-power validation"</a>.</p>
-<p><strong>Update (2026-05-14, comp-023):</strong> the cytosolic-burden gap named in this scope note is now closed for the cns1+cns2 cordycepin row specifically by <a href="../cordycepin-cassette-burden-computational/"><code>cordycepin-cassette-burden-computational.md</code></a>, which ran plain FBA on the Vongsangnak 2008 iWV1314 GEM with dual + cns1-cns2 + carnS + panD scenarios. Verdict: GREEN at the Jeennor 2023 empirical titer (564 mg/L/d); the FBA breakpoint where cordycepin demand materially competes with growth is ~1,000× the empirical titer (~564 g/L/d). The two analyses cover orthogonal axes: this framework covers ER folding, comp-023 covers cytosolic carbon + nitrogen + ATP + NADPH burden. Both verdicts must hold for the full endgame strain stack to be feasible. pcSec-class proteome-saturation modeling remains the v2 upgrade target.</p>
+<p><strong>Update (2026-05-14, comp-023):</strong> the cytosolic-burden gap named in this scope note is now closed for the cns1+cns2 cordycepin row specifically by <a href="../cordycepin-cassette-burden-computational/"><code>cordycepin-cassette-burden-computational.md</code></a>, which ran plain FBA on the Vongsangnak 2008 iWV1314 GEM with dual + cns1-cns2 + carnS + panD scenarios. Verdict: GREEN at the Jeennor 2023 empirical titer (564 mg/L/d); the FBA breakpoint where cordycepin demand materially competes with growth is ~1,000× the empirical titer (~564 g/L/d). The two analyses cover orthogonal axes: this framework covers ER folding, comp-023 covers cytosolic carbon + nitrogen + ATP + NADPH burden. Both verdicts must hold for the full endgame strain stack to be feasible. pcSec-class proteome-saturation modeling remains the v2 upgrade target. (source: cordycepin-cassette-burden-computational.md)</p>
 </blockquote>
 <p>The pattern is striking: the <strong>Open Enzyme koji endgame strain is implicitly already a chaperone-orthogonal design.</strong> The five "molecules" of <a href="../koji-endgame-strain/">koji-endgame-strain.md</a> §1 distribute across non-overlapping load classes —</p>
 <ul>
@@ -5361,6 +5411,37 @@ $$</p>
 1. <strong>Lf-alone arm</strong> — resolves the capacity-vs-titer ambiguity (§8 item 7). Required before interpreting any dual or triple result.
 2. <strong>Uricase + Lf dual-cassette arm</strong> — validates the comp-010 prediction (1.06× Huynh baseline, within capacity). Required for interpreting the triple.
 3. <strong>Uricase + Lf + DAF SCR1-4 triple-cassette arm</strong> — the prospective falsifiable test of this §5.5 prediction. <strong>Optional for the §1.9 gate decision</strong> (the dual-cassette arm is sufficient to decide whether to proceed with the endgame strain); adds ~$1-2k and 2-3 weeks but provides the framework's first prospective validation data point.</p>
+<h2 id="56-design-escape-cytosolic-third-cassette-bypasses-the-secreted-stacking-bottleneck-added-2026-05-15">5.6 Design escape — cytosolic third cassette bypasses the secreted-stacking bottleneck (added 2026-05-15)<a class="headerlink" href="#56-design-escape-cytosolic-third-cassette-bypasses-the-secreted-stacking-bottleneck-added-2026-05-15" title="Permanent link">&para;</a></h2>
+<p>§5.5 above analyses a triple-cassette strain where all three payloads are <strong>secreted</strong> — uricase + lactoferrin + DAF SCR1-4. That analysis predicts the triple pushes PDI/ERO1 chaperone load into the sub-0.6 synergy regime (0.35–0.65 range, §5.5.4) and recommends routing DAF onto a separate strain or peer-track chassis. A natural follow-up question, surfaced by the 2026-05-14 sweep Connection 1: <strong>can the third cassette be cytosolic instead of secreted, escaping the chaperone bottleneck entirely?</strong></p>
+<p><a href="../cordycepin-cassette-burden-computational/">comp-023</a> (cordycepin cassette burden FBA, verdict GREEN 2026-05-14) demonstrated that the <em>Cordyceps militaris</em> cns1+cns2 cordycepin pathway is <strong>cytosolic</strong> in <em>A. oryzae</em>: no signal peptide, no ER transit, no disulfide bonds, no PDI load, and &lt; 1% metabolic burden at the Jeennor 2023 564 mg/L/day titer. This means a triple-cassette strain of:</p>
+<ul>
+<li><strong>Uricase</strong> (secreted, PDI load 0 after N191Q glycosylation ablation per <a href="../uricase-cassette-ranking-computational/">comp-022</a>)</li>
+<li><strong>Lactoferrin</strong> (secreted, PDI load 24–40 range per §3.5.3 architecture-adjusted model)</li>
+<li><strong>Cordycepin</strong> (cytosolic, PDI load <strong>0</strong>)</li>
+</ul>
+<p>… has a total PDI/ERO1 load of <strong>24–40 (range)</strong> — identical to the dual-cassette uricase + lactoferrin baseline. The third cassette adds therapeutic mechanism breadth (cordycepin as a URAT1-modulating + ADA-inhibiting payload — see <a href="../cordycepin-cassette-burden-computational/"><code>cordycepin-cassette-burden-computational.md</code></a> for the mechanism rationale) without adding to the chaperone load that drives §5.5's pessimistic synergy prediction.</p>
+<h3 id="what-56-does-not-claim-pass-3-softening-discipline">What §5.6 does NOT claim (Pass 3 softening discipline)<a class="headerlink" href="#what-56-does-not-claim-pass-3-softening-discipline" title="Permanent link">&para;</a></h3>
+<p>The 2026-05-14 sweep Connection 1 Pass 3 review flagged two specific overclaims to avoid:</p>
+<ol>
+<li><strong>"Within demonstrated NSlD-ΔP10 capacity" is NOT source-supported.</strong> The Lf-alone capacity question against the Huynh 16-disulfide reference is <strong>unresolved</strong> in the current corpus (§3.5.4 explicitly flags this — Lf-alone in §1.9 will produce the calibration data). Until §1.9 returns, treat the PDI load 24–40 range as the <em>budget</em> the design must fit within, not as a <em>demonstrated-capacity</em> assertion. Adding the cytosolic third cassette doesn't add to the budget; it doesn't, however, <em>prove</em> the budget is achievable.</li>
+<li><strong>"≥0.85 triple-synergy" is NOT source-supported.</strong> §5.5's synergy framework (0.35–0.65 range under architecture-adjusted modeling) was derived for <em>secreted-only</em> payloads. The cytosolic-third-cassette case isn't a continuous extension of that framework — it's a structurally different decomposition (the chaperone load is dual-cassette plus a metabolic-only third), and the synergy question for this case is <strong>an outcome of <a href="../computational-experiments/">comp-028</a>, not an input.</strong></li>
+</ol>
+<p>The design-escape framing is therefore: "cytosolic third cassettes are <em>promising</em> because they don't add chaperone load," not "the triple is <em>proven</em> to work."</p>
+<h3 id="comp-028-as-the-feasibility-gate">Comp-028 as the feasibility gate<a class="headerlink" href="#comp-028-as-the-feasibility-gate" title="Permanent link">&para;</a></h3>
+<p><a href="../computational-experiments/">comp-028</a> (Planned Analyses, queued 2026-05-15) is the explicit computational pass that resolves the open question. It requires two orthogonal models (per the BioDesignBench evaluation-depth discipline at <a href="../autonomous-screening-methodology/"><code>autonomous-screening-methodology.md</code> §"BioDesignBench evaluation-depth audit"</a>):</p>
+<ul>
+<li>The chaperone framework with explicit confidence bounds (this section, with Pass 3 softening applied)</li>
+<li>iWV1314 FBA with the dual-cassette uricase + lactoferrin metabolic baseline overlaid on the cns1+cns2 cordycepin demand (not just cns1+cns2 alone as comp-023 ran)</li>
+</ul>
+<p>Decision rule: GREEN iff both axes pass with explicit bounds; YELLOW if one axis is uncertain (route through §1.9 Lf-alone readout first); RED if either fails. If GREEN: add cordycepin arm to <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.9</a> wet-lab design.</p>
+<h3 id="generalization-cytosolic-payloads-as-a-strategic-design-lever">Generalization — cytosolic payloads as a strategic design lever<a class="headerlink" href="#generalization-cytosolic-payloads-as-a-strategic-design-lever" title="Permanent link">&para;</a></h3>
+<p>The cytosolic-third-cassette pattern generalizes beyond cordycepin. Future OE design questions involving a third (or fourth) payload should explicitly check <strong>secreted vs. cytosolic</strong>:</p>
+<ul>
+<li><strong>Cytosolic payloads</strong> (cordycepin, kojic acid, ergothioneine native to <em>A. oryzae</em>, ursolic acid biosynthesis) — PDI-null; do not consume chaperone capacity; can be stacked beyond the dual-cassette limit without triggering §5.5-style pessimism</li>
+<li><strong>Secreted payloads</strong> (uricase, lactoferrin, DAF SCR1-4, soluble complement regulators, recombinant peptides) — consume PDI/ERO1 capacity per §3.5.3; cumulative load must fit the chaperone-capacity envelope per the synergy framework</li>
+</ul>
+<p>The platform-design implication is meaningful: <strong>the practical stacking limit for the koji endgame strain is the count of <em>secreted</em> cassettes, not the total cassette count.</strong> A four-cassette strain of uricase (secreted) + lactoferrin (secreted) + cordycepin (cytosolic) + ergothioneine biosynthesis (cytosolic, native enhancement) is, in principle, no harder on chaperone capacity than the two-cassette dual-cassette baseline — provided each cytosolic cassette's metabolic burden is verified separately under FBA.</p>
+<p>This generalization is itself a candidate for codification once comp-028 returns and the pattern is empirically anchored.</p>
 <hr />
 <h2 id="6-the-falsifiable-test-pairwise-expression-matrix">6. The Falsifiable Test — Pairwise Expression Matrix<a class="headerlink" href="#6-the-falsifiable-test-pairwise-expression-matrix" title="Permanent link">&para;</a></h2>
 <p>The framework is testable. Construction of a pairwise expression matrix on a small set of representative substrates would either validate or falsify the predicted synergy coefficients.</p>
@@ -5472,9 +5553,10 @@ $$</p>
 <li>
 <p><strong>The published koji multi-cassette literature is thin, and the architecture-adjusted coefficients remain extrapolations.</strong> There is no published koji-specific pairwise expression matrix at the time of this writing (2026-05-06). The framework's quantitative synergy coefficients are extrapolated from Pichia, <em>A. niger</em>, and yeast literature; they may need rescaling once direct koji data is generated. The §3.5 architecture coefficients (α = 0.3–0.6 for CCP/SCR; α = 1.0 for Ig-like reference; α = 1.5–2.5 for transferrin-lobe) are bounded from in vitro folding kinetics and structural data — not from directly measured PDI residence times in a functional ER system. Two specific caveats: (a) Notari 2023's lactoferrin oxidative folding kinetics were measured from a fully denatured state in vitro; in vivo ER-assisted co-translational folding with PDI acting on the nascent chain may be substantially faster, implying the transferrin-lobe α could be closer to 1.0 than 2.5 in the functional secretory context; (b) the SCR/CCP architecture coefficient (0.3–0.6) is inferred from structural rigidity (Schmidt 2010) rather than measured PDI kcat — a fast-folding structural argument, not a kinetic measurement. The architecture-adjusted synergy coefficients in §5 (e.g., Lf × DAF SCR1-4 "0.40–0.65") are more differentiated than the bulk-count model but carry the same calibration uncertainty. The three load-bearing source numbers feeding §1 and §7 — Huynh 2020 39.7 mg/L, Wakai 2019 40×, Zhang 2006 6.5-8.7× — were grep-verified against primary sources on 2026-05-06; see §10.1 "Verification provenance" for source-line anchoring. Architecture coefficient sources (Notari 2023, Schmidt 2010, Vinci 2004, Feige 2009, Hellman 1999) are documented in §10.2.</p>
 </li>
-<li>
-<p><strong>Capacity-vs-titer benchmark ambiguity (flagged 2026-05-06).</strong> The framework calibrates synergy coefficients against the Huynh 2020 antibody capacity ceiling (39.7 mg/L adalimumab in NSlD-ΔP10, 16 disulfides). <a href="../koji-endgame-strain/"><code>koji-endgame-strain.md</code> §3.3</a> cites Ward 1995 (&gt;2 g/L lactoferrin in <em>A. awamori</em>, 17 disulfides) as the lactoferrin titer precedent. Both numbers cannot be the binding constraint — Lf at 2 g/L would be impossible if 16-disulfide adalimumab at 40 mg/L were a hard capacity ceiling. Three resolutions are possible: (a) Huynh's ceiling is antibody-architecture-specific (single-chain Lf folds easier than dual-chain HC+LC paired assembly), (b) <em>A. awamori</em> (Ward) has different chaperone capacity than <em>A. oryzae</em> NSlD-ΔP10 (Huynh), &copy; submerged ≠ solid-state. <strong>If resolution (a) holds, this framework's synergy coefficients are systematically conservative for single-chain payloads.</strong> The §1.9 wet-lab Lf-alone arm directly resolves the ambiguity (<a href="../validation-experiments/"><code>validation-experiments.md</code> §1.9 "Capacity-vs-titer side-product readout"</a>). Until that data lands, the framework's coefficient ranges should be read with this asymmetry in mind: the lower bounds are well-anchored, the upper bounds may understate true capacity for single-chain glycoproteins.</p>
-</li>
+</ol>
+<p><strong>Generalization caveat (added 2026-05-15).</strong> The §3.5.4 calibration set (§1.9 lactoferrin transferrin-lobe + §1.25 DAF SCR1-4 CCP/SCR under harmonized NSlD-ΔP10 / solid-state / matching-promoter conditions) is designed to validate <strong>two fold classes in one host under one format.</strong> A successful calibration confirms the α coefficients for these two architectures. It does NOT generalize to future secreted disulfide-rich payloads with different fold architectures — e.g., C1-INH serpin (the parallel CP0 candidate flagged in comp-018 Phase 2), recombinant antibody-derived constructs, or other novel-fold secreted enzymes. Each such payload's α-coefficient prediction remains bounded extrapolation until similar calibration data lands for <em>that</em> fold class. The framework's predictive power scales with calibration-set breadth, not depth — adding a third or fourth fold class to the calibration set (cost: 1 wet-lab arm per fold class, ~$3–5K + 8 weeks per class) is the path to broader confident application. The complementary direct-measurement path — a PDI-residence-time assay in <em>A. oryzae</em> microsomes — would generalize across fold classes simultaneously but is a multi-year tool-build (no published <em>A. oryzae</em>-specific PDI kcat data exists for any fold class as of 2026-05-06). Operational guidance: when a new secreted disulfide-rich payload is being considered for OE, surface the α-coefficient uncertainty explicitly in the design decision rather than treating the framework's prior as a measured number. The cytosolic-payload design rule (<a href="#56-design-escape--cytosolic-third-cassette-bypasses-the-secreted-stacking-bottleneck-added-2026-05-15">§5.6</a> + <code>koji-endgame-strain.md</code> §3 third-cassette slot design rule) sidesteps this concern entirely for cytosolic payloads.</p>
+<ol>
+<li><strong>Capacity-vs-titer benchmark ambiguity (flagged 2026-05-06).</strong> The framework calibrates synergy coefficients against the Huynh 2020 antibody capacity ceiling (39.7 mg/L adalimumab in NSlD-ΔP10, 16 disulfides). <a href="../koji-endgame-strain/"><code>koji-endgame-strain.md</code> §3.3</a> cites Ward 1995 (&gt;2 g/L lactoferrin in <em>A. awamori</em>, 17 disulfides) as the lactoferrin titer precedent. Both numbers cannot be the binding constraint — Lf at 2 g/L would be impossible if 16-disulfide adalimumab at 40 mg/L were a hard capacity ceiling. Three resolutions are possible: (a) Huynh's ceiling is antibody-architecture-specific (single-chain Lf folds easier than dual-chain HC+LC paired assembly), (b) <em>A. awamori</em> (Ward) has different chaperone capacity than <em>A. oryzae</em> NSlD-ΔP10 (Huynh), &copy; submerged ≠ solid-state. <strong>If resolution (a) holds, this framework's synergy coefficients are systematically conservative for single-chain payloads.</strong> The §1.9 wet-lab Lf-alone arm directly resolves the ambiguity (<a href="../validation-experiments/"><code>validation-experiments.md</code> §1.9 "Capacity-vs-titer side-product readout"</a>). Until that data lands, the framework's coefficient ranges should be read with this asymmetry in mind: the lower bounds are well-anchored, the upper bounds may understate true capacity for single-chain glycoproteins.</li>
 </ol>
 <hr />
 <h2 id="9-open-questions">9. Open Questions<a class="headerlink" href="#9-open-questions" title="Permanent link">&para;</a></h2>

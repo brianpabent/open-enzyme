@@ -3918,10 +3918,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#three-findings-that-matter-for-open-enzyme" class="md-nav__link">
+  <a href="#what-the-paper-actually-finds" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Three findings that matter for Open Enzyme
+        What the paper actually finds
       
     </span>
   </a>
@@ -3929,10 +3929,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tool-integrations-per-abstract" class="md-nav__link">
+  <a href="#leaderboard-full-benchmark-mean-total-score-out-of-100" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tool integrations (per abstract)
+        Leaderboard (full benchmark; mean total score out of 100)
       
     </span>
   </a>
@@ -3940,10 +3940,65 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-to-verify-when-the-pdf-lands" class="md-nav__link">
+  <a href="#tool-gap-vs-science-gap-the-gap-tag-pilots-empirical-anchor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What to verify when the PDF lands
+        Tool-gap vs. science-gap (the GAP tag pilot's empirical anchor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-taxonomy-76-tasks-52-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task taxonomy (76 tasks, 5×2 matrix)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-integrations-the-17-tool-mcp-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool integrations — the 17-tool MCP package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means-for-oe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this means for OE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-leaderboard-public" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code + leaderboard (public)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-status-oe-locally-deployed-2026-05-15-cpu-mode-partial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment status — OE locally deployed 2026-05-15 (CPU mode, partial)
       
     </span>
   </a>
@@ -5927,64 +5982,210 @@
 <p>(source: paperclip-deep-dive.md)</p>
 <hr />
 <h2 id="biodesignbench-llm-agent-evaluation-for-protein-design">BioDesignBench — LLM Agent Evaluation for Protein Design<a class="headerlink" href="#biodesignbench-llm-agent-evaluation-for-protein-design" title="Permanent link">&para;</a></h2>
-<p><strong>Status: PRIMARY-SOURCE-PENDING</strong> — claims below sourced from the bioRxiv abstract summary, not the full PDF (Cloudflare blocked direct fetch 2026-05-12). PDF-fetch TODO logged in <a href="../../abent-family-health/brian/open-enzyme-backlog.md"><code>brian/open-enzyme-backlog.md</code></a>. Until verified, <strong>do not cite BioDesignBench from <code>open-source-platform.md</code> as architectural validation</strong> for the multi-model sweep daemon — the verification gate is open.</p>
-<p>bioRxiv <a href="https://www.biorxiv.org/content/10.64898/2026.05.06.723381v1">2026.05.06.723381</a> — "Benchmarking and behavioral characterization of LLM agents for protein design." A benchmark and behavioral-characterization framework for LLM agents on protein design: 76 expert-curated tasks across diverse protein classes, integrating AlphaFold, RFdiffusion, ProteinMPNN, and Rosetta as tool calls.</p>
-<h3 id="three-findings-that-matter-for-open-enzyme">Three findings that matter for Open Enzyme<a class="headerlink" href="#three-findings-that-matter-for-open-enzyme" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>DeepSeek V3 significantly outperforms GPT-5 and Gemini 2.5 Pro</strong> on the 76-task benchmark (per abstract; verification pending). OE's sweep daemon uses DeepSeek V4-Pro (V3's successor) as the Pass 4 cross-vendor peer-reviewer on heterogeneity grounds (<a href="../open-source-platform/">open-source-platform.md §"Multi-model synthesis as guard against epistemic homogenization"</a>). If the abstract claim holds, the V4-Pro anchor is not only the heterogeneity guard but also the empirically strongest protein-design reasoner among major frontier models — a substantive upgrade to the architectural justification.</p>
-</li>
-<li>
-<p><strong>Tool-gap vs science-gap decomposition</strong> as a diagnostic framework. The paper splits agent failures into:</p>
-</li>
-<li><strong>Tool gap</strong> — correct plan, failed execution (model knew what to do, fumbled the toolchain)</li>
-<li><strong>Science gap</strong> — wrong plan altogether (model didn't understand the biology)</li>
-</ol>
-<p>Per the abstract, DeepSeek V3 and GPT-5 are dominated by tool gap; Gemini 2.5 Pro by science gap. OE's Pass 3 (Opus critique) currently emits a fixed-verdict tag on each synthesis claim but doesn't attribute disagreements to mechanism. Adding a tool-gap-vs-science-gap axis to Pass 3 or Pass 4 would make the sweep daemon's disagreement-resolution <strong>diagnostic</strong> rather than just adjudicatory. Methodological-upgrade candidate.</p>
-<ol>
-<li><strong>Potential self-evaluation substrate.</strong> 76 expert-curated tasks is the right scale for the sweep daemon to be measured against single-model agent baselines — concrete claim shape: "the cross-vendor synthesis pipeline scores X on BioDesignBench vs. Y for the best single-model agent." Pending: benchmark availability (open-source / reproducible? — TBD from PDF). Possible <a href="../validation-experiments/"><code>validation-experiments.md</code></a> entry once confirmed.</li>
-</ol>
-<h3 id="tool-integrations-per-abstract">Tool integrations (per abstract)<a class="headerlink" href="#tool-integrations-per-abstract" title="Permanent link">&para;</a></h3>
+<p><strong>Status: VERIFIED 2026-05-15</strong> — full PDF read via <code>pdftotext</code> after Brian provided local copy (bioRxiv web layer + Cloudflare blocked headless WebFetch; bioRxiv API surfaced only abstract + metadata; the bioRxiv MCP server in OE's stack was failing to connect at the time of verification).</p>
+<p>Kim &amp; Romero (Duke University), bioRxiv <a href="https://www.biorxiv.org/content/10.64898/2026.05.06.723381v1">10.64898/2026.05.06.723381</a> — "Benchmarking and behavioral characterization of LLM agents for protein design." Posted 2026-05-08. NIH R01GM150929. <strong>Note: DOI prefix is <code>10.64898/</code>, not <code>10.1101/</code> — bioRxiv migrated DOI registrars; references using the old prefix are wrong.</strong></p>
+<h3 id="what-the-paper-actually-finds">What the paper actually finds<a class="headerlink" href="#what-the-paper-actually-finds" title="Permanent link">&para;</a></h3>
+<p>The headline finding is <strong>behavioral, not capability-limited.</strong> Top LLM agents (DeepSeek V3, GPT-5) can match or exceed a deterministic hardcoded pipeline at protein design but consistently underperform expert practice — and the gap is <strong>not</strong> that they pick the wrong tools. The gap is that they <strong>evaluate candidate designs too shallowly, never compare alternatives, and never discard candidates</strong>:</p>
+<ul>
+<li>Scoring/evaluation tools invoked at only <strong>~14% of expert intensity</strong> (Fig. 3c)</li>
+<li><strong>No LLM condition ever discarded a generated candidate across all 836 task–condition observations</strong> (Section 2.4) — agents treat stochastic samples as deterministic answers</li>
+<li>Evaluation-variety vs. score: Spearman ρ = 0.68 (p &lt; 10⁻¹¹⁵; n = 836)</li>
+<li>Forced-depth intervention (≥3 evaluation-metric categories per candidate, compute-matched against shallow control): DeepSeek V3 +9.3 points (p = 0.002), GPT-5 +15.9 points (p &lt; 0.001) — gains concentrated in Approach + Orchestration, not structural Quality</li>
+<li>The hardcoded pipeline (which already has multi-metric evaluation built into its fixed workflow) gains nothing from the forced-depth intervention (∆ = 1.6, n.s.) — confirming the deficit is <strong>specifically behavioral</strong>, not generic compute</li>
+</ul>
+<h3 id="leaderboard-full-benchmark-mean-total-score-out-of-100">Leaderboard (full benchmark; mean total score out of 100)<a class="headerlink" href="#leaderboard-full-benchmark-mean-total-score-out-of-100" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Tool</th>
-<th>Function</th>
+<th>Condition</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Human oracle (expert-curated optimal tool sequence per task — benchmark ceiling)</td>
+<td>75.2</td>
+</tr>
+<tr>
+<td>Human expert (single practitioner, same 17 MCP tools as agents)</td>
+<td>61.7</td>
+</tr>
+<tr>
+<td><strong>DeepSeek V3 unguided</strong></td>
+<td><strong>60.6</strong></td>
+</tr>
+<tr>
+<td>DeepSeek V3 guided</td>
+<td>58.6</td>
+</tr>
+<tr>
+<td>GPT-5 unguided</td>
+<td>55.8</td>
+</tr>
+<tr>
+<td>GPT-5 guided</td>
+<td>55.4</td>
+</tr>
+<tr>
+<td>Hardcoded pipeline (deterministic 4-stage; non-LLM reference)</td>
+<td>54.5</td>
+</tr>
+<tr>
+<td>Claude Sonnet 4.5 guided</td>
+<td>50.5</td>
+</tr>
+<tr>
+<td>Claude Sonnet 4.5 unguided</td>
+<td>41.2</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Pro guided</td>
+<td>8.8</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Pro unguided</td>
+<td>8.1</td>
+</tr>
+</tbody>
+</table>
+<p>DeepSeek V3 significantly outperformed all other LLM conditions (Wilcoxon signed-rank with Bonferroni correction; p &lt; 0.05). Gemini 2.5 Pro's near-zero score is attributed by the paper to "a systematic tool-calling failure rather than poor scientific reasoning."</p>
+<h3 id="tool-gap-vs-science-gap-the-gap-tag-pilots-empirical-anchor">Tool-gap vs. science-gap (the GAP tag pilot's empirical anchor)<a class="headerlink" href="#tool-gap-vs-science-gap-the-gap-tag-pilots-empirical-anchor" title="Permanent link">&para;</a></h3>
+<p>The paper's Section 2.3 + Supplementary G formally decompose agent failures into:
+- <strong>Tool gap</strong> — correct plan, failed execution (knew what to do, fumbled the toolchain)
+- <strong>Science gap</strong> — wrong plan altogether (didn't understand the biology)</p>
+<p>Per-model dominance (guided mode, all 76 tasks): <strong>DeepSeek V3 and GPT-5 dominated by tool gap; Gemini 2.5 Pro dominated by science gap</strong> across all molecular subjects.</p>
+<p>This empirically grounds the GAP tag pilot wired into OE's Pass 3 prompts on 2026-05-15. Operational definitions, pilot scope, promote/abandon gates: <a href="../scripts/SWEEP-ARCHITECTURE.md"><code>scripts/SWEEP-ARCHITECTURE.md</code> §"Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution"</a>.</p>
+<h3 id="task-taxonomy-76-tasks-52-matrix">Task taxonomy (76 tasks, 5×2 matrix)<a class="headerlink" href="#task-taxonomy-76-tasks-52-matrix" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>De novo (n=47)</th>
+<th>Redesign (n=29)</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antibody</td>
+<td>—</td>
+<td>—</td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>Enzyme</strong></td>
+<td>—</td>
+<td>—</td>
+<td><strong>12</strong></td>
+</tr>
+<tr>
+<td>Mini-protein binder</td>
+<td>(all)</td>
+<td>empty</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Scaffold</td>
+<td>—</td>
+<td>—</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Fluorescent protein</td>
+<td>—</td>
+<td>—</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p>Binder × redesign is biologically empty. <strong>Per-task specifications are deliberately not publicly released</strong> to prevent data contamination of future LLM training — only condition-level aggregates are available via the leaderboard. Per-task data requires a data use agreement with the authors. All tasks drawn from 2024–2026 publications, post-cutoff for evaluated models.</p>
+<h3 id="tool-integrations-the-17-tool-mcp-package">Tool integrations — the 17-tool MCP package<a class="headerlink" href="#tool-integrations-the-17-tool-mcp-package" title="Permanent link">&para;</a></h3>
+<p>The paper exposes all 17 protein-design tools through a <strong>single MCP interface</strong> (<code>github.com/jasonkim8652/protein-design-mcp</code>, MIT licence, Docker images for reproducible deployment). Four functional categories:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Tools</th>
 <th>OE-pipeline status</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>AlphaFold</td>
-<td>Structure prediction</td>
-<td>In OE stack via ColabFold</td>
+<td>Generative</td>
+<td>RFdiffusion, ProteinMPNN, ESM-IF</td>
+<td>RFdiffusion + ProteinMPNN <strong>NOT currently in OE stack — gap to investigate for DAF SCR1-4 + lactoferrin redesign work</strong></td>
 </tr>
 <tr>
-<td>RFdiffusion</td>
-<td>De novo design from active-site geometry</td>
-<td>In OE stack (RFdiffusion2)</td>
+<td>Predictive (structure)</td>
+<td>AlphaFold2, AlphaFold3, Boltz-2, ESMFold</td>
+<td>AlphaFold2 in OE stack via ColabFold; AlphaFold3 / Boltz-2 / ESMFold not yet integrated</td>
 </tr>
 <tr>
-<td>ProteinMPNN</td>
-<td>Sequence design for target structure</td>
-<td>In OE stack</td>
+<td>Physics-based</td>
+<td>Rosetta / PyRosetta, DSSP</td>
+<td><strong>Not currently in OE stack</strong></td>
 </tr>
 <tr>
-<td>Rosetta</td>
-<td>Energy minimization / mutation scoring</td>
-<td><strong>Not currently in OE stack — gap to investigate</strong></td>
+<td>Analysis</td>
+<td>Interface metrics, TM-align, sequence identity</td>
+<td>TM-align / sequence identity available; interface-metrics not yet integrated</td>
 </tr>
 </tbody>
 </table>
-<h3 id="what-to-verify-when-the-pdf-lands">What to verify when the PDF lands<a class="headerlink" href="#what-to-verify-when-the-pdf-lands" title="Permanent link">&para;</a></h3>
-<p>When the PDF is fetched and saved to <code>reference/biodesignbench-2026.pdf</code>, grep-verify before promoting any of the above to load-bearing:
-- DeepSeek V3 vs GPT-5 vs Gemini 2.5 Pro performance numbers (specific scores, not just "outperforms")
-- Whether V3 outperforms across all 76 tasks or only on some protein classes (matters for whether the OE-architecture claim is universal or scoped)
-- Tool-gap vs science-gap definitions (operational, not just intuitive — needed for porting to Pass &frac34;)
-- Benchmark availability (open-source code/data? reproducible? license?)
-- Rosetta integration details (which Rosetta sub-modules; could inform OE-stack gap closure)
-- Authors / institution (matters for citation + potential outreach)</p>
-<p>Once verified: update this section, remove the <code>PRIMARY-SOURCE-PENDING</code> flag, and add the DeepSeek-outperforms finding as a citation in <code>open-source-platform.md §"Multi-model synthesis"</code>. (Source: bioRxiv 2026.05.06.723381; PRIMARY-SOURCE-PENDING.)</p>
+<p>The protein-design-mcp package is <strong>directly deployable</strong> — OE could mount it as a sibling MCP server to abent-somm, papercip, pubmed, etc.</p>
+<h3 id="what-this-means-for-oe">What this means for OE<a class="headerlink" href="#what-this-means-for-oe" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>OE's existing N-of-M concordance methodology (comp-022 with N-of-5 ≥ 4 across CAI / ViennaRNA / chaperone-load / promoter-SP / ESM2) IS the BioDesignBench-recommended cure</strong> for the shallow-evaluation failure mode. The paper validates the methodology empirically.</li>
+<li><strong>Audit OE's other comp-NNNs for shallow-eval risk.</strong> comp-019 (5-metric flux Monte Carlo) and comp-022 are clearly multi-metric; comp-023, comp-024, comp-025, comp-026, comp-027 should be audited against three axes — (a) multiple candidates generated? (b) multi-metric evaluation? &copy; head-to-head comparison + filtering? Audit table at <a href="../autonomous-screening-methodology/"><code>autonomous-screening-methodology.md</code> §"BioDesignBench evaluation-depth audit"</a>.</li>
+<li><strong>Tool-stack gap is concrete and addressable.</strong> For OE's DAF SCR1-4 + lactoferrin redesign work, RFdiffusion + ProteinMPNN are the canonical de-novo / sequence-design tools that the protein-design-mcp package would unlock at near-zero integration cost.</li>
+<li><strong>Citation hook.</strong> Direct reference for both <a href="../autonomous-screening-methodology/"><code>autonomous-screening-methodology.md</code></a> §"Computational-to-wet-lab handoff: N-of-M concordance" and the cross-vendor heterogeneity-guard paper draft.</li>
+</ol>
+<h3 id="code-leaderboard-public">Code + leaderboard (public)<a class="headerlink" href="#code-leaderboard-public" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Framework</strong>: <a href="https://github.com/RomeroLab/BioDesignBench">github.com/RomeroLab/BioDesignBench</a> (MIT)</li>
+<li><strong>17-tool MCP</strong>: <a href="https://github.com/jasonkim8652/protein-design-mcp">github.com/jasonkim8652/protein-design-mcp</a> (MIT; Docker images + pip package)</li>
+<li><strong>Leaderboard</strong>: <a href="https://huggingface.co/spaces/RomeroLab-Duke/BioDesignBench-Leaderboard">huggingface.co/spaces/RomeroLab-Duke/BioDesignBench-Leaderboard</a> — accepts new agent submissions; returns scores from deterministic evaluation pipeline</li>
+</ul>
+<h3 id="deployment-status-oe-locally-deployed-2026-05-15-cpu-mode-partial">Deployment status — OE locally deployed 2026-05-15 (CPU mode, partial)<a class="headerlink" href="#deployment-status-oe-locally-deployed-2026-05-15-cpu-mode-partial" title="Permanent link">&para;</a></h3>
+<p><code>pip install protein-design-mcp</code> (v1.0.0) + <code>protein-design-mcp-setup --local --client claude-code -y</code>. Local Python config written to <code>~/.claude/mcp.json</code> invoking <code>python3 -m protein_design_mcp.server</code>. Loads on next Claude Code session start (not current session).</p>
+<p><strong>9 of 19 tools active in CPU mode:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Tools</th>
+<th>Why disabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Active (CPU)</strong></td>
+<td><code>predict_structure</code>, <code>predict_complex</code>, <code>score_stability</code>, <code>energy_minimize</code>, <code>analyze_interface</code>, <code>validate_design</code>, <code>suggest_hotspots</code>, <code>get_design_status</code>, <code>design_sequence</code> / <code>optimize_sequence</code> (CPU-slow but functional via ProteinMPNN)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>GPU-required</strong></td>
+<td><code>design_binder</code>, <code>design_fold</code>, <code>generate_backbone</code> (RFdiffusion-backed)</td>
+<td>No NVIDIA GPU on Mac. Apple Silicon MPS port spec'd in <code>abent-family-health/brian/open-enzyme-backlog.md</code> (A4 task)</td>
+</tr>
+<tr>
+<td><strong>PyRosetta-required</strong></td>
+<td><code>rosetta_score</code>, <code>rosetta_relax</code>, <code>rosetta_interface_score</code>, <code>rosetta_design</code></td>
+<td>UW export-control review of academic PyRosetta license, in effect since 2026-04-01. Email license@uw.edu queued 2026-05-15. When unblocked: <code>pip install "protein-design-mcp[rosetta]"</code></td>
+</tr>
+<tr>
+<td><strong>Boltz-2-required</strong></td>
+<td><code>predict_structure_boltz</code>, <code>predict_affinity_boltz</code></td>
+<td>Boltz-2 requires isolated torch venv (conflicts with RFdiffusion torch==2.0.1); not installed. Defer until either RFdiffusion port lands or separate venv setup</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Deployment decisions captured:</strong>
+- <strong>A1 (CPU-mode local install)</strong> — done 2026-05-15. Covers DAF SCR1-4 + lactoferrin redesign without RFdiffusion. ProteinMPNN slow on CPU but functional.
+- <strong>A2 (Modal cloud GPU)</strong> — not pursued. Fallback option if RFdiffusion becomes load-bearing before A4 lands.
+- <strong>A4 (Apple Silicon MPS port)</strong> — backlogged at <a href="../../abent-family-health/brian/open-enzyme-backlog.md"><code>abent-family-health/brian/open-enzyme-backlog.md</code></a> §"Next up → In-silico." YaoYinYing's fork has a working MPS branch (~13 min/design vs. ~30–60s on NVIDIA); SE3-Transformer NVTX/DGL surgery + Mac-native build. Spec session planned for tonight or tomorrow.</p>
+<p><strong>Ghcr.io Docker image pull failed during setup</strong> with <code>unauthorized</code> error (the public image at <code>ghcr.io/jasonkim8652/protein-design-mcp:latest</code> is apparently access-gated). Local Python path used instead. If Modal cloud deployment becomes the right move (A2), the Modal proxy entry point is <code>protein-design-mcp-modal</code>.</p>
+<p>(Source: Kim &amp; Romero 2026, bioRxiv 10.64898/2026.05.06.723381; verified against full PDF at <code>/private/tmp/claude-501/biodesignbench.txt</code>, 2026-05-15. Original "Cloudflare blocked direct fetch 2026-05-12" PRIMARY-SOURCE-PENDING flag was lifted via Brian-provided local PDF copy + pdftotext extraction; the structural failure mode was treating a single failed fetch attempt as a durable gate without trying alternative tools — see <a href="../../../.claude/projects/-Users-brianabent-Documents-Claude-Projects-abent/memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md"><code>memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md</code></a>.)</p>
 <hr />
 <h2 id="integration-using-all-three-tools-together">Integration: Using All Three Tools Together<a class="headerlink" href="#integration-using-all-three-tools-together" title="Permanent link">&para;</a></h2>
 <h3 id="workflow-example-design-engineered-koji-from-scratch">Workflow Example: Design Engineered Koji from Scratch<a class="headerlink" href="#workflow-example-design-engineered-koji-from-scratch" title="Permanent link">&para;</a></h3>

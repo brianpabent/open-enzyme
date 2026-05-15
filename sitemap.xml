@@ -73,6 +73,10 @@
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
+         <loc>https://brianpabent.github.io/open-enzyme/chassis-pending-interventions/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
          <loc>https://brianpabent.github.io/open-enzyme/chembl-cross-check/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
@@ -113,7 +117,15 @@
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
+         <loc>https://brianpabent.github.io/open-enzyme/daf-cd55-scr14-cassette-ranking-computational/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
          <loc>https://brianpabent.github.io/open-enzyme/daf-cd55-scr14-truncated-computational/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/delivery-route-matrix/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
@@ -181,7 +193,15 @@
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
+         <loc>https://brianpabent.github.io/open-enzyme/gout-kill-chain-delivery-routes/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
          <loc>https://brianpabent.github.io/open-enzyme/gout-pathophysiology/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/gsdmd-pore-delivery-paradox/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
@@ -290,6 +310,10 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/prps-purine-biosynthesis-chokepoint/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/purine-degrading-bacteria/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
@@ -422,6 +446,14 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/hypotheses/H07-clomid-intestinal-er-antagonism/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/hypotheses/H08-gut-lumen-sink-platform-thesis/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/hypotheses/H09-community-fermentation-reliability/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
 </urlset>

@@ -4615,6 +4615,11 @@
         DE18["comp-018/comp-020 — Upstream Complement Modulator Sweep (dietary CP0)"]
         DE19["Compounding Pharmacy Track — 503A/503B delivery for repurposing surface"]
         DE20["Ginkgo Cloud Lab — cell-free $39/protein pre-gate + strain-engineering eval"]
+        DE21["Delivery Route × Compound Class Matrix — companion exploration surface (route axis)"]
+        DE22["Gout Kill Chain Delivery Route Analysis — chokepoint × route per-node grid"]
+        DE23["GSDMD Pore Self-Delivery Paradox — pore as size-selective delivery window"]
+        DE24["Purine-Degrading Bacteria (PDB) — gut as independent urate disposal organ"]
+        DE25["Chassis-Pending Interventions — index of interventions awaiting chassis"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -4940,11 +4945,13 @@
     %% (source: uricase-cassette-ranking-computational.md)
     KE13 --&gt;|"confirms PamyB + amyB SP + direct-secretion architecture"| KE2
     KE13 --&gt;|"three gene-synthesis-time refinements: 5p-softened codon, PTS1-blocking tag, N191Q ablation"| KE1
+    KE13 --&gt;|"v2 retrofit: ESM2 pseudo-pLDDT + ViennaRNA MFE; 71 pass N-of-5 ≥ 4; v1 top cluster survives 100%"| KE1
     %% comp-023 cordycepin cassette burden (2026-05-14): FBA on iWV1314
     %% (source: cordycepin-cassette-burden-computational.md)
     KE14 --&gt;|"GREEN FBA burden verdict at Jeennor 2023 titer"| KE1
     KE14 --&gt;|"cytosolic; PDI load 0; bypasses secretion entirely"| CH5
     KE14 --&gt;|"cns1+cns2 cordycepin arm metabolic-burden-feasible"| MT2
+    KE14 --&gt;|"carnS+panD also GREEN; two mutually exclusive cytosolic third-cassette options"| KE4
 
     %% Chaperone-orthogonal stacking framework (2026-05-05)
     %% (source: chaperone-orthogonal-stacking.md)
@@ -5023,6 +5030,27 @@
     %% Global lab access (source: ward-1995-lab-access-global.md)
     DE12 --&gt;|"provides NSlD-dP10 chassis for"| KE10
     DE12 --&gt;|"parallel path via C19 chassis"| KE1
+    %% Delivery Route × Compound Class Matrix (source: delivery-route-matrix.md)
+    DE21 --&gt;|"orthogonal route axis to"| DE7
+    DE21 --&gt;|"surfaces non-oral cells for"| DE2
+    DE21 --&gt;|"chassis-as-formulation: H2O2 housekeeping advantage"| KE1
+    DE21 --&gt;|"intra-articular uricase + catalase as #1 open vector"| B1
+    DE21 --&gt;|"open-source SEL-212-equivalent extends engineering layer"| DE19
+    %% Gout kill-chain delivery route analysis (source: gout-kill-chain-delivery-routes.md)
+    DE22 --&gt;|"chokepoint × route per-node companion to"| DE21
+    DE22 --&gt;|"compounding pharmacy candidates: zileuton + disulfiram + VX-765"| DE19
+    DE22 --&gt;|"comp-019 SUA reduction band cited at Uricase node"| DE17
+    DE22 --&gt;|"IA delivery as systematic gap across CP2-CP6b"| DE25
+    %% GSDMD pore self-delivery paradox (source: gsdmd-pore-delivery-paradox.md)
+    DE23 --&gt;|"size-selective delivery window for OE biologics in 10-20 nm range"| DE22
+    DE23 --&gt;|"KPV / nanobody / single-SCR / lactoferrin / IL-1RA pass through pore"| DE21
+    %% Purine-degrading bacteria (source: purine-degrading-bacteria.md)
+    DE24 --&gt;|"gut PDB as independent CP6 urate disposal — needs non-koji chassis"| DE25
+    DE24 --&gt;|"butyrate -&gt; ABCG2 PPARγ + Q141K HDAC rescue compounds the mechanism"| AM4
+    DE24 --&gt;|"natural genotype-targeted therapy for Q141K (#1 GWAS variant)"| AM4
+    %% Chassis-pending interventions (source: chassis-pending-interventions.md)
+    DE25 --&gt;|"operationalizes chokepoint-first chassis-second discipline"| DE2
+    DE25 --&gt;|"PDB / siRNA-URAT1 / engineered-LBP / mRNA-IL-1RA / IA-uricase entries"| DE7
 
     %% Medicinal mushroom complement track (source: medicinal-mushroom-complement-track.md)
     MT1 --&gt;|"ADA + GLUT9 + OAT1 — 40.6% UA reduction HUA mice"| B1

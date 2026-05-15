@@ -2187,10 +2187,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recommended-next-move" class="md-nav__link">
+  <a href="#recommended-next-move-revised-2026-05-13-none-deferred" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended next move
+        Recommended next move (revised 2026-05-13: none — deferred)
       
     </span>
   </a>
@@ -2229,6 +2229,17 @@
     <span class="md-ellipsis">
       
         References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
       
     </span>
   </a>
@@ -4531,9 +4542,9 @@
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Two offers surfaced.</strong> Cell-Free Protein Expression Validation at <strong>$39/protein</strong> (≤1,800 bp, ~5–10 day turnaround) confirms a designed sequence produces folded polypeptide in cell-free lysate. A <strong>96-construct S. cerevisiae strain-engineering campaign at ≈$2,340 total (≈$24.38/sample)</strong> was also quoted.</li>
-<li><strong>The $39 cell-free offer is real and worth using as a sequence-validation pre-gate.</strong> It de-risks the more expensive fungal/fermentation work regardless of which downstream partner runs that work.</li>
-<li><strong>The $2,340 strain-engineering quote is almost certainly a lead-magnet teaser</strong>, not what a formal Ginkgo service request will return. Historic Ginkgo strain-engineering campaigns at this scope have priced mid-five to six figures. Don't budget against the $24/sample number until a real quote lands.</li>
-<li><strong>Construct fit is mixed.</strong> Cell-free is a clean test for <strong>uricase variants</strong> (no glycosylation requirement, E. coli-lysate-compatible fold). It is a <strong>weak test for DAF/CD55 SCR1-4</strong> (SCR domains carry O-glycans; aglyco backbone tells you the ORF works but not functional folding).</li>
+<li><strong>Decision (2026-05-13): skip the $39 cell-free for now.</strong> The offer is real and the price is right, but it was originally scoped as a pre-gate for the <em>fungal</em> wet-lab work, and the current priority stack has that wet-lab work as downstream — Ginkgo doesn't need to happen before, during, or after current Phase 0 work. The cell-free test would surface no information the existing computational corpus (comp-019 flux model, comp-022 cassette ranking, comp-023 cordycepin burden, ViennaRNA mRNA folding + ESM2 pseudo-pLDDT proxies) doesn't already give to high confidence. Revisit when a wet-lab experiment actually needs the pre-gate to be load-bearing; until then, save the $39 and the calendar drag.</li>
+<li><strong>Don't budget against the $24/sample number.</strong> The $2,340 strain-engineering quote is almost certainly a lead-magnet teaser, not what a formal Ginkgo service request will return — historic Ginkgo strain-engineering campaigns at this scope have priced mid-five to six figures. Real strain-engineering campaigns at the OE scope are $3,000–$50,000+ per the academic-collaboration cost framing in <a href="./ward-1995-lab-access.md"><code>ward-1995-lab-access.md</code></a> and <a href="../validation-experiments/"><code>validation-experiments.md</code></a> §1.9.</li>
+<li><strong>Construct fit is mixed (preserved for future revisit).</strong> Cell-free is a clean test for <strong>uricase variants</strong> (no glycosylation requirement, E. coli-lysate-compatible fold). It is a <strong>weak test for DAF/CD55 SCR1-4</strong> (SCR domains carry O-glycans; aglyco backbone tells you the ORF works but not functional folding). This analysis stands; the skip-for-now decision is about timing and incremental value, not technical fit.</li>
 <li><strong>Ginkgo Cloud Lab and the community-college / grad-student path are complementary, not competing.</strong> Cell-free answers an earlier gate ("does the sequence produce a folded protein at all?"); the CC path answers the gate Ginkgo's plate-based Cloud Lab cannot ("does it secrete from a fungal host in a real fermentation context?"). Ambr 250 / bioreactor work is, per EstiMate, a separate downstream Ginkgo service.</li>
 </ul>
 <hr />
@@ -4648,7 +4659,7 @@
 <h4 id="uricase-variants-strong-fit-for-the-39-gate">Uricase variants — strong fit for the $39 gate<a class="headerlink" href="#uricase-variants-strong-fit-for-the-39-gate" title="Permanent link">&para;</a></h4>
 <p>Aspergillus flavus uricase (the rasburicase parent) is a <strong>homotetrameric, non-glycosylated, non-disulfide-bonded</strong> ~34 kDa enzyme. It folds in E. coli expression systems routinely — recombinant production for crystallography, activity studies, and rasburicase manufacturing is well-established. Mechanistic extrapolation: a cell-free run of an A. flavus uricase variant should produce active, soluble enzyme; if it doesn't, the variant has a real folding problem.</p>
 <p>Activity is straightforward to test in-tube — urate has a characteristic UV absorbance at 293 nm that drops as uricase converts it to allantoin. Kinetic absorbance readout. EstiMate explicitly listed BMG Pherastar for the uricase activity assay, so the readout is supported in their main strain-engineering tier; the question for the $39 cell-free tier is whether activity-measurement is bundled or a separate line item.</p>
-<p><strong>Suggested first run:</strong> the lead uricase variant from <a href="../uricase-variant-selection/"><code>uricase-variant-selection.md</code></a>. One construct, one $39 cell-free run, real polypeptide expression data, ~1 week.</p>
+<p><strong>Suggested first run (deferred per the skip-for-now decision in the TL;DR):</strong> the lead uricase variant from <a href="../uricase-variant-selection/"><code>uricase-variant-selection.md</code></a> would be the construct most fit for the $39 test if/when the cell-free pre-gate becomes load-bearing for downstream wet-lab work. Held as a future option, not a current action.</p>
 <h4 id="digestive-enzymes-lipase-protease-amylase-likely-strong-fit">Digestive enzymes (lipase, protease, amylase) — likely strong fit<a class="headerlink" href="#digestive-enzymes-lipase-protease-amylase-likely-strong-fit" title="Permanent link">&para;</a></h4>
 <p>Generally similar to uricase: many bacterial and fungal digestive enzymes express in E. coli lysate (with activity-screening considerations per enzyme). Lipase folding is sometimes finicky due to interfacial activation requirements; protease activity assays in cell-free lysate need careful background-protease subtraction. Detailed per-enzyme analysis deferred — this evaluation is scoped to the offer, not to per-construct planning. See <a href="../digestive-enzymes/"><code>digestive-enzymes.md</code></a> for the construct list.</p>
 <h4 id="dafcd55-scr1-4-weak-fit-for-the-39-gate">DAF/CD55 SCR1-4 — weak fit for the $39 gate<a class="headerlink" href="#dafcd55-scr1-4-weak-fit-for-the-39-gate" title="Permanent link">&para;</a></h4>
@@ -4705,14 +4716,15 @@
 </table>
 <p>The Ginkgo cell-free pre-gate is <strong>upstream</strong> of the fungal/fermentation gate. Negative cell-free result = redesign the construct before any fungal work. Positive cell-free result = construct is worth committing fungal-host effort to. Either way, $39 buys earlier information than the fungal path can provide.</p>
 <p>Ginkgo's full strain-engineering tier sits <strong>in the same niche</strong> as the CC path — but plate-based, not fermentation-based, and at unknown true cost. Worth a real quote before deciding it's the right tool.</p>
-<h3 id="recommended-next-move">Recommended next move<a class="headerlink" href="#recommended-next-move" title="Permanent link">&para;</a></h3>
-<p>Run one $39 cell-free on the lead uricase variant from <a href="../uricase-variant-selection/"><code>uricase-variant-selection.md</code></a>.</p>
-<p>Rationale:
+<h3 id="recommended-next-move-revised-2026-05-13-none-deferred">Recommended next move (revised 2026-05-13: none — deferred)<a class="headerlink" href="#recommended-next-move-revised-2026-05-13-none-deferred" title="Permanent link">&para;</a></h3>
+<p><strong>No action.</strong> The $39 cell-free pre-gate was originally framed as a sequence-validation step upstream of the fungal wet-lab work. The current priority stack has that wet-lab work downstream of in-flight in-silico work; the cell-free test would not surface information the existing computational corpus (comp-019, comp-022, comp-023, ViennaRNA mRNA folding + ESM2 pseudo-pLDDT) doesn't already provide to high confidence.</p>
+<p>Revisit when a downstream wet-lab experiment becomes load-bearing and an independent E. coli-lysate fold-check would meaningfully de-risk it. Until then, save the $39 and the calendar drag.</p>
+<p>For reference, the original (now-deferred) recommendation rationale:
 - Cheap. Single-construct, productized SKU, no campaign commitment.
 - Real test of EstiMate's claims — does the $39 actually deliver what the bot described, on what turnaround, with what data product.
 - Construct-appropriate — uricase is the OE construct best matched to E. coli-lysate cell-free.
-- Information-positive regardless of outcome — a successful expression gives you a green light for the variant; a failure gives you signal that the variant needs redesign before any fungal-host work.
-- Establishes a vendor relationship that's useful regardless of which path takes the strain-engineering work later.</p>
+- Establishes a vendor relationship useful for downstream work.</p>
+<p>The rationale stands; the <em>timing</em> is what changed.</p>
 <hr />
 <h2 id="open-questions-to-resolve-before-committing">Open questions to resolve before committing<a class="headerlink" href="#open-questions-to-resolve-before-committing" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4737,6 +4749,13 @@
 <li>EstiMate (Ginkgo Bioworks Cloud Lab compatibility &amp; pricing assistant) — 2026-05-12 chat session transcript, on file in Brian's notes.</li>
 <li>UniProt P08174 (DAF / CD55 <em>H. sapiens</em>) — disulfide annotations (8 DISULFID features in SCR1-4).</li>
 <li><a href="../ai-bio-tools-playbook/"><code>ai-bio-tools-playbook.md</code></a> — prior mention of Ginkgo as a lab-in-the-loop routing destination via Amazon Bio Discovery.</li>
+</ul>
+<hr />
+<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../open-source-platform/"><code>open-source-platform.md</code> §External Service Acceleration</a> — names the productized-external-services pattern this page instantiates on the strain-library side.</li>
+<li><a href="../compounding-pharmacy-track/"><code>compounding-pharmacy-track.md</code></a> — the complementary external-service track on the small-molecule / repurposing-surface side. Ginkgo answers "does the protein fold?"; compounding answers "can the small-molecule reach a patient?". Different sides of the platform, same pattern.</li>
+<li><a href="./ward-1995-lab-access.md"><code>ward-1995-lab-access.md</code></a> — the academic-collaboration wet-lab path; Ginkgo's $39 pre-gate sits <em>upstream</em> of this path, not in competition with it.</li>
 </ul>
 
 
