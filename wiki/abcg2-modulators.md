@@ -151,6 +151,12 @@ Ranked roughly by evidence + safety + tissue selectivity:
 
 ### Tier 2 — Solid mechanism, modest evidence
 
+***Alistipes indistinctus* / Hippuric acid (PPARγ — microbiome axis)**
+- **Mechanism:** *A. indistinctus* produces hippuric acid via aromatic amino acid catabolism. Hippuric acid enhances PPARγ binding to the ABCG2 promoter AND promotes ABCG2 localization to brush border membranes via PDZK1 (a PDZ-domain scaffold that retains ABCG2 at the apical membrane).
+- **Anchoring evidence:** *A. indistinctus* gavage decreased serum urate to baseline in mouse models; *A. indistinctus* is depleted in hyperuricemia subjects. (Animal Model + Human Observational — Jiang et al. 2024, Cell Host & Microbe, PMID 38412863)
+- **Practical lever:** *A. indistinctus* is not commercially available as a probiotic. Dietary hippuric acid precursor route: polyphenol-rich foods (tea, berries, citrus) → gut catabolism → hippuric acid. Speculative for clinical magnitude. (Mechanistic Extrapolation for dietary intervention)
+- **OE relevance:** This is a second PPARγ → ABCG2 axis operating via a distinct gut microbiome member from the butyrate/PDB pathway — the two axes are additive. A combined prebiotic approach (fiber for PDB → butyrate + polyphenol foods for *A. indistinctus* → hippuric acid) could achieve higher ABCG2 induction than either alone. See [purine-degrading-bacteria.md](./purine-degrading-bacteria.md) for the PDB / butyrate connection.
+
 **Indole-3-carbinol / DIM (AhR)**
 - **Mechanism:** AhR activation; gut-AhR is highly active because the receptor evolved partly to sense gut microbial metabolites.
 - **Anchoring evidence:** **In Vitro + Animal Model.** Cruciferous-vegetable consumption epidemiologically associated with lower UA, though mechanism may be multifactorial.
