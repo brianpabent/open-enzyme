@@ -862,7 +862,7 @@ OPT-1 variant achieves ≥8–10 fold improvement in GI survival relative to wil
 
 9. **Ouyang-Zhang, J., et al.** (2024). Predicting a Protein's Stability under a Million Mutations. *arXiv*, 2310.12979. [Machine learning approaches to ΔΔG prediction; comparison to FoldX/Rosetta].
 
-10. **Hershfield, M.S., et al.** (2020). Oral Treatment With an Engineered Uricase, ALLN-346, Reduces Hyperuricemia and Uricosuria in Urate Oxidase-Deficient Mice. *Frontiers in Medicine*, 7, 569215. [ALLN-346 precedent; 20-fold protease improvement; t_50 ~85 min in pancreatin].
+10. **Pierzynowska, K., et al.** (2020). Oral Treatment With an Engineered Uricase, ALLN-346, Reduces Hyperuricemia and Uricosuria in Urate Oxidase-Deficient Mice. *Frontiers in Medicine*, 7, 569215. [ALLN-346 precedent; 20-fold protease improvement; t_50 ~85 min in pancreatin]. Full author list: K. Pierzynowska, A. Deshpande, N. Mosiichuk, R. Terkeltaub, P. Szczurek, E. Salido, S. Pierzynowski, D. Grujic.
 
 ### Literature on Acid Stability & Pepsin/Trypsin Engineering
 
@@ -1054,7 +1054,7 @@ Lookup table for every proposed variant, individual mutation, and rejected appro
 ### Key Literature (Appendix)
 
 1. Shen, Y., et al. (2025). Stability and functional consequences of disulfide bond engineering in *Aspergillus flavus* uricase. *Scientific Reports*, 15. — disulfide bond stabilization; 8–15 °C Tm improvement; preserved activity.
-2. Hershfield, M.S., et al. (2020). Oral Treatment With an Engineered Uricase (ALLN-346). *Frontiers in Medicine*, 7, 569215. — 20-fold protease improvement (*C. utilis* uricase, directed evolution); Phase 2a human data.
+2. Pierzynowska, K., et al. (2020). Oral Treatment With an Engineered Uricase (ALLN-346). *Frontiers in Medicine*, 7, 569215. — 20-fold protease improvement (*C. utilis* uricase, directed evolution via Codexis ProteinGPS); the URKO-mouse preclinical proof-of-concept that motivated the Phase 1/2a program.
 3. Park et al. (2016). Accurate Protein Stability Predictions from Homology Models. *Protein Science*, 25(10). — Rosetta ddg_monomer + cartesian_ddg protocols.
 4. Ahmad, S., et al. (2012). Probing protein stability and proteolytic resistance by loop scanning. *Protein Science*, 21(3), 433–446. — proline concept; up to 1000-fold cleavage reduction.
 
