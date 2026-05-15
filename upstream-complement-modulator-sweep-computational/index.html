@@ -3874,6 +3874,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
 
       </a>
     </li>
@@ -3901,6 +3908,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
   
 
       </a>
@@ -3930,6 +3944,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
 
       </a>
     </li>
@@ -3957,6 +3978,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
   
 
       </a>
@@ -3986,6 +4014,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
 
       </a>
     </li>
@@ -4013,6 +4048,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
   
 
       </a>
@@ -4322,6 +4364,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
 
       </a>
     </li>
@@ -4349,6 +4398,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
   
 
       </a>
@@ -4568,428 +4624,17 @@
 
 <h1 id="upstream-complement-modulator-sweep-computational-analysis-comp-018">Upstream Complement Modulator Sweep — Computational Analysis (comp-018)<a class="headerlink" href="#upstream-complement-modulator-sweep-computational-analysis-comp-018" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>⚠️ Read this before propagating any finding from this page.</strong></p>
-<p>The brief that produced this experiment was contaminated by a contrived user-framing example ("if it's in rosemary I'll grow rosemary"), which biased the headline-promotion of rosmarinic acid as the singular Tier-1 candidate. <strong>An independent brief-scrubbed verification re-run (comp-020)</strong> ran 2026-05-08 and produced a meaningfully different ranking: three tied tier-1 candidates instead of one, with <strong><em>Helicteres</em> benzofuran lignans</strong> (CH50 9/40 µM, single-paper anchor PMC6273495) as the highest-potency single hit in the corpus — beating rosmarinic acid by 4-20× on a matched assay. comp-020 also surfaced <strong>marine sulfated polysaccharides</strong> that this page underweighted, and reframed the rosmarinic acid load-bearing mechanism as <strong>upstream covalent C3b modification</strong> rather than direct C5 convertase inhibition (44× IC50 spread across assays).</p>
-<p><strong>Use <a href="../upstream-complement-verification-rerun-computational/"><code>upstream-complement-verification-rerun-computational.md</code></a> (comp-020) as the canonical source for prioritization decisions.</strong> This page (comp-018) remains as the original-search artifact and as the empirical case for the brief-contamination retrospective at <a href="../operations/comp-018-vs-comp-020-retrospective.md"><code>operations/comp-018-vs-comp-020-retrospective.md</code></a>. Underlying findings on this page are NOT contaminated (rosmarinic acid is real, Englberger 1988 PMID 3198307 is real, the in vivo precedents are real); the contamination affected which compound got headline-promoted, not which compounds exist.</p>
-<p>Discipline lesson codified at <a href="../scripts/SWEEP-ARCHITECTURE.md"><code>scripts/SWEEP-ARCHITECTURE.md</code></a> §"Subagent brief hygiene." External-comms version at <a href="../operations/notable-moments.md"><code>operations/notable-moments.md</code></a> 2026-05-08 brief-contamination entry.</p>
+<p><strong>Frozen analysis archived to <a href="../experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md"><code>../experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md</code></a></strong> (336 lines).
+This wiki stub remains so cross-references resolve and the page stays discoverable.
+Computational analyses are write-once artifacts; the daemon does not need to re-read
+them on every sweep, so the long content lives next to the experiment that produced it
+at <code>experiments/comp-018-upstream-complement-modulator-sweep/</code>.</p>
+<p><strong>⚠️ Read this before propagating any finding from this page.</strong> &gt; &gt; The brief that produced this experiment was contaminated by a contrived user-framing example ("if it's in rosemary I'll grow rosemary"), which biased the headline-promotion of rosmarinic acid as the singular Tier-1 candidate. <strong>An independent brief-scrubbed verification re-run (comp-020)</strong> ran 2026-05-08 and produced a meaningfully different ranking: three tied tier-1 candidates instead of one, with <strong><em>Helicteres</em> benzofuran lignans</strong> (CH50 9/40 µM, single-paper anchor PMC6273495) as the highest-potency single hit in the corpus — beating rosmarinic acid by 4-20× on a matched assay. comp-020 also […]</p>
 </blockquote>
-<h2 id="plain-english-summary-cto-not-phd">Plain-English summary (CTO-not-PhD)<a class="headerlink" href="#plain-english-summary-cto-not-phd" title="Permanent link">&para;</a></h2>
-<p>Gout flares are driven in large part by a protein cascade called <strong>complement</strong>. When MSU crystals form in your joint, complement gets activated on the crystal surface, which generates a small protein called <strong>C5a</strong> that "primes" your immune system's NLRP3 inflammasome — that's the alarm bell that triggers the actual flare. We call this priming step <strong>CP0</strong>.</p>
-<p>Open Enzyme has been working on CP0 from two angles. First, an <strong>engineering angle</strong>: build a soluble version of the human protein DAF/CD55 that breaks complement on the crystal surface, and express it in koji. That's looking promising in silico (comp-012, hypothesis H05). Second, a <strong>direct natural-product angle</strong>: find a fungal or plant compound that blocks the C5a receptor (C5aR1). That came up empty — comp-014 confirmed there are zero documented natural-product C5aR1 antagonists.</p>
-<p>This experiment (comp-018) is a third angle: <strong>don't try to block C5a once it's made — find compounds that prevent it from being made in the first place.</strong> That means looking at every step in the complement cascade UPSTREAM of C5a generation, and asking what compounds — fungal, plant, dietary, drug — can interfere with any of them.</p>
-<p>The answer turns out to be: <strong>a lot of compounds.</strong> The most well-characterized natural-product upstream complement modulator in the literature is rosmarinic acid (the active compound in rosemary, lemon balm, and spearmint), documented since 1988 to block the C3 convertase — the central enzyme of complement — with three independent in vivo studies showing efficacy in animal models at modest doses. Other strong candidates surfaced in the same scan: luteolin (a dietary flavonoid; triple-mechanism — XO + URAT1 + C3 convertase CP+AP), tiliroside, <em>Bupleurum</em> polysaccharides (lectin-pathway), falcarindiol, ganoderic acid Sz, ergosterol, and others.</p>
-<blockquote>
-<p><strong>Four load-bearing caveats on the rosmarinic acid finding — read these before propagating it downstream.</strong></p>
-<ol>
-<li><strong>The "single-digit micromolar" IC50 (5-10 µM optimal) comes from the 1988 Englberger paper (PMID 3198307), which is paywalled and not in PMC.</strong> This number is <em>abstract-tier</em> sourced, NOT full-text grep-verified. Per CLAUDE.md Rule 4 (the pre-commit grep-verify gate), this is below the load-bearing-confidence bar; full-text retrieval is mandatory before any wet-lab gate depends on it.</li>
-<li><strong>There is a real IC50 discrepancy in the literature.</strong> Downstream papers using rosmarinic acid as a positive-control comparator (Cimanga 1999 PMID 17260306; Mu 2013 PMID 24144800) report <strong>137-182 µM</strong> for the same compound — about 20-30× higher than Englberger's 5-10 µM. Likely explanation is assay-format difference (different sheep-erythrocyte source, different complement serum, different endpoint definition), but the discrepancy is unresolved. Any in vitro confirmation must test BOTH ranges; any dose calculation that assumes 5-10 µM is the load-bearing concentration is making an unverified assumption.</li>
-<li><strong>The dose-response is bell-shaped — higher concentrations are LESS effective.</strong> Englberger 1988 reports 5-10 µM as the <em>optimal</em> concentration window, not as a typical "more is better" IC50. This implies a narrow therapeutic window even at the optimal concentration, and gut-luminal concentration management would be load-bearing for any consumer-facing recommendation.</li>
-<li><strong>Brief-contamination disclosure (added by user catch 2026-05-08).</strong> The subagent brief that produced this experiment inadvertently included Brian's contrived "if the answer is rosemary, I'll grow rosemary" framing as motivation. Subsequent rhetoric in this page that calls back to that framing should be read as narrative-cohesion, not independent confirmation. <strong>A scrubbed verification re-run (comp-020) is in progress</strong> to test whether rosmarinic-acid-as-headline survives without the priming. The underlying literature claims (Englberger 1988, Proctor 2006, Su 2014) are real papers and verifiable; the <em>headline-promotion</em> of rosmarinic acid specifically vs. luteolin / tiliroside / ganoderic acid Sz may have been amplified by the brief contamination. Decision on which compound is platform-prioritized stays open until comp-020 lands.</li>
-</ol>
-</blockquote>
-<p>Rosemary is FDA GRAS (21 CFR 182.10, 182.20), dietary, and grown in any backyard garden — those parts of the framing are independent of the IC50 discrepancy and are accurate. The platform-strategic question is whether 5-10 µM or 137-182 µM is the load-bearing concentration, and how that concentration is achieved at oral-dietary intake.</p>
-<p>The experiment also surfaced a couple of platform-level surprises:</p>
-<ol>
-<li>
-<p><strong>Luteolin</strong> (a common dietary flavonoid in honeysuckle, parsley, celery) now has <strong>three independent gout-relevant mechanisms</strong> in the OE corpus: it inhibits xanthine oxidase (the urate-production enzyme allopurinol targets), it downregulates URAT1 (the urate-reabsorbing transporter), and now per comp-018 it inhibits both the classical and alternative complement pathway C3 convertases at concentrations achievable in the gut lumen at gram-scale supplementation. This is the highest-leverage single dietary compound the platform has surfaced.</p>
-</li>
-<li>
-<p><strong>Recombinant C1-INH expression</strong> is a near-twin engineering thesis to DAF SCR1-4 — same logic, different soluble human complement regulator. Already FDA-approved for hereditary angioedema (Berinert / Ruconest); the molecule is a soluble human serpin that's plausibly producible in koji or LBP. Phase 2 follow-up.</p>
-</li>
-<li>
-<p><strong>comp-014's β-glucan structure-dependence is mechanistically explained.</strong> The same mushroom (Ganoderma) contains both complement activators (some β-glucan structures via lectin pathway) and complement inhibitors (some triterpenes and ergosterol via classical pathway C3 convertase inhibition). Whether a reishi extract is anti- or pro-inflammatory depends on which fractions dominate.</p>
-</li>
-</ol>
-<p>The chokepoint-class naming: I propose treating this as a <strong>scope expansion of CP0</strong> ("upstream-CP0") rather than a new chokepoint class. The decision is the user's; this is the recommendation.</p>
-<hr />
-<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
-<p><strong>Phase 1 complete — 2026-05-08.</strong> Sweep executed across all compound classes (fungal, plant, bacterial, marine, dietary, FDA-approved drug, classical TCM/Kampo/Ayurveda) for documented activity at upstream complement nodes. 32 compounds catalogued with primary-source IC50s where available; ChEMBL anticomplement coverage gap empirically confirmed at 0/33 = 0%. Phase 2 (direct CNKI/WanFang/J-STAGE multilingual ingestion with two-model translation cross-check) queued.</p>
-<h2 id="1-question">§1 Question<a class="headerlink" href="#1-question" title="Permanent link">&para;</a></h2>
-<p>Across all compound classes — fungal, plant, bacterial, marine, dietary, FDA-approved drugs, classical TCM, Kampo, Ayurveda — which compounds have documented activity at <strong>upstream complement cascade nodes proximal to C5a generation</strong>, and which are gout-platform-relevant?</p>
-<p>The framing per Brian (2026-05-08): <em>"What are all the things upstream of CP0 that we could exploit, and any compound — fungal, plant, bacterial, marine — that affects them. If the answer is rosemary, I'll grow rosemary."</em> — broad scope, chokepoint-hacker move (don't fight at CP0, find an even further-upstream lever).</p>
-<h2 id="2-why-this-experiment-exists-three-converging-threads-at-cp0">§2 Why this experiment exists — three converging threads at CP0<a class="headerlink" href="#2-why-this-experiment-exists-three-converging-threads-at-cp0" title="Permanent link">&para;</a></h2>
-<p>The OE corpus by 2026-05-08 had three threads at CP0:</p>
-<ol>
-<li><strong>Engineering thread</strong> — comp-006 → comp-012 → H05 → §1.25. The truncated DAF/CD55 SCR1-4 construct (aa 35–285) is in silico LOW protease risk in shio-koji (<a href="../daf-cd55-scr14-truncated-computational/">comp-012</a>); the wet-lab plan is scoped at <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.25</a>. Live engineering candidate.</li>
-<li><strong>Direct natural-product C5aR1 antagonist thread</strong> — comp-014 + §1.21: empty. Zero natural-product C5aR1 antagonists in ChEMBL or PubMed. Confirmed by two independent computational scans.</li>
-<li><strong>comp-018 (this page)</strong> — the third thread. Don't hunt for C5aR1 binders, hunt at every node UPSTREAM of C5a generation.</li>
-</ol>
-<p>The chokepoint-hacker logic: per <a href="../complement-c5a-gout/"><code>complement-c5a-gout.md</code> §2.6</a>, MSU activates complement primarily via the classical pathway (IgM/CRP → C1q → C4b2a C3 convertase) with alternative-pathway amplification. Therefore C3 convertase is the highest-leverage upstream node — block C3 convertase, no C5a is generated, no NLRP3 priming. The same logic that makes pegcetacoplan (FDA-approved C3 binder) clinically effective in PNH applies to gout-mechanistically: prevent the cascade from reaching C5.</p>
-<h2 id="3-method-multi-source-query-strategy-with-tool-discipline">§3 Method — multi-source query strategy with tool discipline<a class="headerlink" href="#3-method-multi-source-query-strategy-with-tool-discipline" title="Permanent link">&para;</a></h2>
-<h3 id="31-sources">§3.1 Sources<a class="headerlink" href="#31-sources" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Source</th>
-<th>Use</th>
-<th>Tool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>PubMed</strong></td>
-<td>Depth pass for English natural-product anticomplement literature</td>
-<td><code>mcp__plugin_pubmed_PubMed__search_articles</code> + <code>get_article_metadata</code></td>
-</tr>
-<tr>
-<td><strong>Paperclip MCP</strong></td>
-<td>Full-text grep for line-anchored verification of load-bearing IC50s</td>
-<td><code>mcp__paperclip__paperclip</code> (search/cat/grep — NOT <code>map</code>)</td>
-</tr>
-<tr>
-<td><strong>ChEMBL</strong> (per-compound)</td>
-<td>Bioactivity coverage check — document gap explicitly</td>
-<td>manual recall</td>
-</tr>
-<tr>
-<td><strong>CNKI / WanFang / J-STAGE</strong></td>
-<td>Direct multilingual searches via native multilingual training (NOT through Paperclip — wrong corpus)</td>
-<td>deferred to Phase 2</td>
-</tr>
-</tbody>
-</table>
-<h3 id="32-tool-discipline-applied">§3.2 Tool discipline applied<a class="headerlink" href="#32-tool-discipline-applied" title="Permanent link">&para;</a></h3>
-<p>Per the 2026-05-08 sweep Pass 3 review and <code>Open Enzyme/CLAUDE.md</code> §"Tool discipline" + <code>memory/feedback_paperclip_map_unreliable.md</code>:</p>
-<ul>
-<li><strong>Paperclip <code>map</code> operator NOT used</strong> — it hallucinates organisms and fabricates kinetic numbers. Restricted to <code>search</code> / <code>cat</code> / <code>grep</code> / <code>head</code> / <code>lookup</code>.</li>
-<li><strong>Paperclip restricted to PMC / arXiv / bioRxiv / medRxiv</strong> corpus — its actual scope. NOT used for CNKI / WanFang / J-STAGE / KISS — those need direct multilingual searches.</li>
-<li><strong>PubMed via MCP</strong> for English depth pass.</li>
-<li><strong>Translation cross-check protocol</strong> queued for Phase 2 — Claude (Anthropic) + DeepSeek V4-Pro (Chinese-vendor) for Chinese sources, with inline disagreement annotations.</li>
-</ul>
-<h3 id="33-pre-commit-verification-gate">§3.3 Pre-commit verification gate<a class="headerlink" href="#33-pre-commit-verification-gate" title="Permanent link">&para;</a></h3>
-<p>Per <a href="../manual-literature-mining/"><code>manual-literature-mining.md</code> §"Pre-commit verification gate"</a> and CLAUDE.md Rule 4. Every IC50 / mechanism / dose claim in <code>compounds.json</code> carries an explicit <code>verification_status</code> field — full-text-anchored, abstract-tier, or [UNVERIFIED]. Where sources are paywalled and no PMC mirror exists, the claim is marked as such. The DAF SCR1-4 disulfide-count incident (canonical case for this rule) is the discipline this gate enforces.</p>
-<h2 id="4-targets-16-upstream-complement-cascade-nodes">§4 Targets — 16 upstream complement cascade nodes<a class="headerlink" href="#4-targets-16-upstream-complement-cascade-nodes" title="Permanent link">&para;</a></h2>
-<p>(Full inventory in <code>experiments/comp-018-upstream-complement-modulator-sweep/inputs/targets.json</code>.)</p>
-<p>The 16 nodes span three logical layers:</p>
-<table>
-<thead>
-<tr>
-<th>Layer</th>
-<th>Nodes</th>
-<th>MSU relevance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Initiation</strong></td>
-<td>C1q, C1r/C1s, MBL, MASP-2</td>
-<td>DOMINANT (CP via IgM/CRP per Wessig 2022); non-dominant (LP)</td>
-</tr>
-<tr>
-<td><strong>Convertases</strong></td>
-<td>C3 convertase (CP/LP and AP), C5 convertase</td>
-<td>DOMINANT — C4b2a generates C3b on MSU; AP amplifies</td>
-</tr>
-<tr>
-<td><strong>Soluble factors</strong></td>
-<td>Factor B, Factor D, Factor H, Properdin, C1-INH</td>
-<td>AP amplifiers + host regulators</td>
-</tr>
-<tr>
-<td><strong>Membrane regulators</strong></td>
-<td>DAF/CD55 (host), CD59</td>
-<td>DAF is the engineering anchor (H05)</td>
-</tr>
-<tr>
-<td><strong>Terminal upstream</strong></td>
-<td>C5, C5aR1</td>
-<td>C5 = eculizumab anchor; C5aR1 = comp-014/§1.21-confirmed empty</td>
-</tr>
-</tbody>
-</table>
-<h2 id="5-findings-top-compounds-by-tier">§5 Findings — top compounds by tier<a class="headerlink" href="#5-findings-top-compounds-by-tier" title="Permanent link">&para;</a></h2>
-<p>Full table in <code>experiments/comp-018-upstream-complement-modulator-sweep/outputs/compounds.json</code>. Summary:</p>
-<h3 id="51-tier-1-strong-evidence-dietary-tier-in-vivo-precedent">§5.1 TIER 1 — strong evidence, dietary-tier, in vivo precedent<a class="headerlink" href="#51-tier-1-strong-evidence-dietary-tier-in-vivo-precedent" title="Permanent link">&para;</a></h3>
-<p><strong>Rosmarinic acid</strong> (Rosmarinus officinalis, Melissa officinalis, Salvia, Mentha):
-- C3 convertase classical pathway IC50 <strong>5-10 µM optimal</strong>, threshold 1 µM (Englberger 1988, <a href="https://pubmed.ncbi.nlm.nih.gov/3198307/">PMID 3198307</a>, <a href="https://doi.org/10.1016/0192-0561(88)90026-4">doi:10.1016/0192-0561(88)90026-4</a>) — In Vitro
-- <em>In vivo</em> rat CVF-induced ARDS model: 10 mg/kg i.v. RMA blocked CVF-induced neutropenia, lung neutrophil migration, BAL leakage, blood pressure changes, TNF-α elevation — <strong>comparable magnitude to direct C5aR/C3aR antagonists</strong> (Proctor 2006, <a href="https://pubmed.ncbi.nlm.nih.gov/16782534/">PMID 16782534</a>, <a href="https://doi.org/10.1016/j.intimp.2006.03.002">doi:10.1016/j.intimp.2006.03.002</a>) — Animal Model
-- <em>In vivo</em> Pkd1-/- mouse + Han:SPRD Cy/+ rat ADPKD: RMA reduced creatinine -50%, BUN -78%, kidney/body weight -60%, renal cystic index -60% (Su 2014, <a href="https://pubmed.ncbi.nlm.nih.gov/24494798/">PMID 24494798</a>, <a href="https://doi.org/10.1111/joim.12214">doi:10.1111/joim.12214</a>) — Animal Model
-- High-RMA spearmint tea improved knee OA stiffness, physical disability, pain over 16 weeks (Connelly 2014, in Luo 2020 review <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7059186/">PMC7059186</a>, <a href="https://doi.org/10.3389/fphar.2020.00153">doi:10.3389/fphar.2020.00153</a>) — Clinical (proxy for in-human bioavailability + activity)
-- <strong>Regulatory:</strong> Rosemary, lemon balm, spearmint are FDA GRAS (21 CFR 182.10, 182.20). Rosmarinic acid as isolated compound is dietary supplement / cosmetic ingredient.
-- <strong>Bell-shape note:</strong> Englberger 1988 reports higher RMA concentrations are LESS effective at C3 convertase inhibition. Load-bearing for dose-extrapolation — supplement-tier dosing should target sustained mid-µM gut/plasma levels, not max pharma-tier dosing.
-- <strong>IC50 discrepancy disclosed:</strong> the 2008-2013 downstream literature (Cimanga 1999 PMID 17260306, Mu 2013 PMID 24144800) cites RMA as IC50 137-182 µM in their assays — different from Englberger's 5-10 µM. Likely assay-format difference (different SRBC source, serum, endpoint definition). Both ranges flagged in <code>compounds.json</code>. The 5-10 µM optimal is the primary-source value.</p>
-<h3 id="52-tier-2-moderate-evidence-in-vitro-ic50-anchored-accessible-source">§5.2 TIER 2 — moderate evidence, in vitro IC50 anchored, accessible source<a class="headerlink" href="#52-tier-2-moderate-evidence-in-vitro-ic50-anchored-accessible-source" title="Permanent link">&para;</a></h3>
-<p>10 compounds; full per-compound data in <code>compounds.json</code>. Highlights:</p>
-<table>
-<thead>
-<tr>
-<th>Compound</th>
-<th>Source</th>
-<th>Node</th>
-<th>IC50</th>
-<th>Provenance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Luteolin</strong></td>
-<td>Lonicera, Achyranthes (Si Miao San), dietary</td>
-<td>C3 conv. (CP+AP)</td>
-<td>CH50 190 µM, AP50 170 µM</td>
-<td>Zhang &amp; Chen 2008, <a href="https://pubmed.ncbi.nlm.nih.gov/18400428/">PMID 18400428</a>, <a href="https://doi.org/10.1016/j.jep.2008.02.012">doi:10.1016/j.jep.2008.02.012</a></td>
-</tr>
-<tr>
-<td><strong>Tiliroside</strong></td>
-<td>Magnolia fargesii, Tilia</td>
-<td>CP convertase</td>
-<td>54 µM</td>
-<td>Jung 1998, <a href="https://pubmed.ncbi.nlm.nih.gov/9821813/">PMID 9821813</a>, <a href="https://doi.org/10.1248/bpb.21.1077">doi:10.1248/bpb.21.1077</a></td>
-</tr>
-<tr>
-<td><strong>Bupleurum polysaccharides</strong></td>
-<td>Chai Hu (TCM)</td>
-<td>Lectin pathway</td>
-<td>~1 mg/mL</td>
-<td>Wu 2015, <a href="https://pubmed.ncbi.nlm.nih.gov/26579461/">PMID 26579461</a>, <a href="https://doi.org/10.1016/j.apsb.2015.02.004">doi:10.1016/j.apsb.2015.02.004</a></td>
-</tr>
-<tr>
-<td><strong>Falcarindiol</strong></td>
-<td>Dendropanax / carrot / celery</td>
-<td>CP convertase</td>
-<td>15.2 µM</td>
-<td>Chung 2011, <a href="https://pubmed.ncbi.nlm.nih.gov/21520473/">PMID 21520473</a>, <a href="https://doi.org/10.1002/ptr.3336">doi:10.1002/ptr.3336</a></td>
-</tr>
-<tr>
-<td><strong>Ganoderic acid Sz</strong></td>
-<td>G. lucidum</td>
-<td>CP convertase</td>
-<td>44.6 µM</td>
-<td>Seo 2009, <a href="https://pubmed.ncbi.nlm.nih.gov/20091270/">PMID 20091270</a>, <a href="https://doi.org/10.1007/s12272-009-2109-x">doi:10.1007/s12272-009-2109-x</a></td>
-</tr>
-<tr>
-<td><strong>Ergosterol</strong></td>
-<td>Mushrooms generally</td>
-<td>CP convertase</td>
-<td>52 µM</td>
-<td>Seo 2009, <a href="https://pubmed.ncbi.nlm.nih.gov/20091270/">PMID 20091270</a></td>
-</tr>
-<tr>
-<td><strong>Quercetin</strong></td>
-<td>onions, apples, Sophora</td>
-<td>CP+AP</td>
-<td>qual. active; gut-microbiome-deglycosylated active form</td>
-<td>Zhang &amp; Chen 2008 <a href="https://pubmed.ncbi.nlm.nih.gov/18400428/">PMID 18400428</a>; Jin 2020 <a href="https://pubmed.ncbi.nlm.nih.gov/32092632/">PMID 32092632</a>, <a href="https://doi.org/10.1016/j.jpba.2020.113176">doi:10.1016/j.jpba.2020.113176</a></td>
-</tr>
-<tr>
-<td><strong>3,5-Dicaffeoylquinic acid</strong></td>
-<td>artichoke, honeysuckle, Bridelia</td>
-<td>C1 component</td>
-<td>&lt;10 µM</td>
-<td>Cimanga 1999, <a href="https://pubmed.ncbi.nlm.nih.gov/17260306/">PMID 17260306</a>, <a href="https://doi.org/10.1055/s-1999-14059">doi:10.1055/s-1999-14059</a></td>
-</tr>
-<tr>
-<td><strong>K-76 / K-76-COOH</strong></td>
-<td>Stachybotrys (toxic parent — semi-synthetic only)</td>
-<td>C5 inhibitor</td>
-<td>100-570 µM</td>
-<td>Larghi 2012, <a href="https://pubmed.ncbi.nlm.nih.gov/22835722/">PMID 22835722</a>, <a href="https://doi.org/10.1016/j.ejmech.2012.07.003">doi:10.1016/j.ejmech.2012.07.003</a>; Kawabata 2000, <a href="https://pubmed.ncbi.nlm.nih.gov/11092692/">PMID 11092692</a></td>
-</tr>
-<tr>
-<td><strong>Complestatin</strong></td>
-<td><em>Streptomyces</em> spp. (NRPS-derived)</td>
-<td>C5 inhibition</td>
-<td>qual. active in BGC-disruption study</td>
-<td>Chen 2018, <a href="https://pubmed.ncbi.nlm.nih.gov/30232534/">PMID 30232534</a>, <a href="https://doi.org/10.1007/s00253-018-9337-2">doi:10.1007/s00253-018-9337-2</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="53-tier-3-weak-abstract-only-source-limited-retracted">§5.3 TIER 3 — weak / abstract-only / source-limited / retracted<a class="headerlink" href="#53-tier-3-weak-abstract-only-source-limited-retracted" title="Permanent link">&para;</a></h3>
-<p>12 compounds; including:
-- Aceriphyllic acid C (oleanane triterpene from <em>Aceriphyllum rossii</em>, Min 2012 <a href="https://pubmed.ncbi.nlm.nih.gov/22870809/">PMID 22870809</a>, <a href="https://doi.org/10.1007/s12272-012-0607-8">doi:10.1007/s12272-012-0607-8</a>)
-- Cycloartane triterpene 4 from <em>Beesia calthaefolia</em> (Mu 2013 <a href="https://pubmed.ncbi.nlm.nih.gov/24144800/">PMID 24144800</a>, <a href="https://doi.org/10.1016/j.fitote.2013.10.005">doi:10.1016/j.fitote.2013.10.005</a>)
-- Phenylethanoid glycosides from <em>Paulownia tomentosa</em> (Si 2008 <a href="https://pubmed.ncbi.nlm.nih.gov/19031237/">PMID 19031237</a>, <a href="https://doi.org/10.1080/10286020802242364">doi:10.1080/10286020802242364</a>)
-- Apigenin, acaciin, hyperoside (Zhang &amp; Chen 2008 panel, weaker than luteolin)
-- Ergosterol peroxide (Seo 2009)
-- Dandelion polysaccharide PD1-1 (Guo 2019 <a href="https://pubmed.ncbi.nlm.nih.gov/30991766/">PMID 30991766</a>)
-- Biophytum umbraculum extract (Austarheim 2016 <a href="https://pubmed.ncbi.nlm.nih.gov/27260410/">PMID 27260410</a>)
-- Sorgoleone-386 — <strong>PRIMARY PAPER RETRACTED</strong>, drop from candidate list</p>
-<h3 id="54-fda-approved-drug-repurposing-surface">§5.4 FDA-approved drug repurposing surface<a class="headerlink" href="#54-fda-approved-drug-repurposing-surface" title="Permanent link">&para;</a></h3>
-<p>Already-approved upstream-CP0 drugs (synthetic, not natural-product candidates for OE platform but documented as anchors):
-- <strong>Eculizumab / Ravulizumab</strong> (anti-C5 mAb) — PNH, aHUS, gMG, NMO
-- <strong>Pegcetacoplan</strong> (compstatin-family cyclic peptide, C3 binder) — PNH (FDA 2021)
-- <strong>Iptacopan</strong> (Factor B small molecule) — PNH, IgAN, C3G (FDA 2023)
-- <strong>Danicopan</strong> (Factor D small molecule) — add-on PNH (FDA 2024)
-- <strong>Narsoplimab</strong> (anti-MASP-2 mAb) — HSCT-TMA (FDA 2025)
-- <strong>C1-INH</strong> (Berinert / Cinryze / Ruconest) — HAE; engineering anchor for OE-relevant heterologous expression
-- <strong>Avacopan</strong> (C5aR1 small molecule) — already in OE corpus per <code>complement-c5a-gout.md</code>; downstream not upstream</p>
-<p>The pharma upstream-CP0 surface is dense — every node from C3 to C5a has at least one FDA-approved drug. This validates the chokepoint pharmacologically; the OE platform's question is whether <em>natural-product</em> or <em>fermentable-engineering</em> coverage exists at any of these nodes.</p>
-<h2 id="6-chembl-coverage-gap-empirical">§6 ChEMBL coverage gap (empirical)<a class="headerlink" href="#6-chembl-coverage-gap-empirical" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Metric</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Compounds with documented anticomplement activity</td>
-<td>32</td>
-</tr>
-<tr>
-<td>With any ChEMBL record (other targets, e.g. XO, COX, kinases)</td>
-<td>14</td>
-</tr>
-<tr>
-<td>With curated ChEMBL anticomplement bioactivity</td>
-<td><strong>0</strong></td>
-</tr>
-<tr>
-<td>ChEMBL anticomplement coverage rate</td>
-<td><strong>0/32 = 0%</strong></td>
-</tr>
-</tbody>
-</table>
-<p>ChEMBL has zero curated hemolytic-assay (CH50/AP50) anticomplement data for any compound in this list. Same coverage gap as comp-013 (5/9 TCM compounds with no ChEMBL data) but worse — anticomplement is a niche assay class that ChEMBL never indexed systematically. This is a structural ChEMBL limitation, not a bioactivity-absence.</p>
-<p><strong>Implication for any future natural-product complement scan:</strong> ChEMBL-only is the path-dependent narrowing failure mode. Direct primary literature (PubMed + PMC + non-English-corpus) is mandatory.</p>
-<h2 id="7-cross-cutting-platform-implications">§7 Cross-cutting platform implications<a class="headerlink" href="#7-cross-cutting-platform-implications" title="Permanent link">&para;</a></h2>
-<h3 id="71-the-honest-platform-gap-at-cp0-is-partially-closeable-through-diet">§7.1 The "honest platform gap" at CP0 is partially closeable through diet<a class="headerlink" href="#71-the-honest-platform-gap-at-cp0-is-partially-closeable-through-diet" title="Permanent link">&para;</a></h3>
-<p>Rosmarinic acid at gram-scale rosemary supplementation (or sustained spearmint tea consumption per Connelly 2014) plausibly contributes upstream complement dampening at concentrations consistent with the 5-10 µM IC50. <strong>Brian's "if the answer is rosemary, I'll grow rosemary" framing was load-bearing — it is, in fact, rosemary (and lemon balm, spearmint, salvia).</strong> This is the chokepoint-hacker outcome the experiment was designed to surface.</p>
-<p>The platform's CP0 coverage shifts from:
-- 2026-04-27: "honest platform gap, only avacopan covers it" (pre-comp-012)
-- 2026-05-05: "active engineering candidate (DAF SCR1-4) with formalized wet-lab plan" (post-comp-012)
-- <strong>2026-05-08:</strong> "active engineering candidate + dietary-modulator backstop (rosmarinic acid + luteolin) at the upstream C3-convertase node"</p>
-<p>The engineering and dietary threads are not redundant — they operate at different geometric scales (engineered DAF saturates the MSU surface; dietary RMA saturates fluid-phase + gut-luminal C3 convertase) and likely combine additively rather than competitively.</p>
-<h3 id="72-luteolin-triple-convergence">§7.2 Luteolin triple-convergence<a class="headerlink" href="#72-luteolin-triple-convergence" title="Permanent link">&para;</a></h3>
-<p>Luteolin is now documented across <strong>three</strong> independent gout-relevant mechanisms in the OE corpus:
-- <strong>XO</strong> (xanthine oxidase): IC50 550 nM (J Nat Prod 1998, per <a href="../tcm-gout-compound-triage-computational/">comp-013</a>)
-- <strong>URAT1</strong>: animal-model expression downregulation 3-10 mg/kg PO (Lin 2018 PMID 29519319, per comp-013)
-- <strong>C3 convertase (CP+AP)</strong>: CH50 190 µM, AP50 170 µM (Zhang &amp; Chen 2008)</p>
-<p>This is the highest-leverage single dietary compound the platform has surfaced. The 100-300 mg/day commercial supplement dose achieves mM range gut-luminal concentrations and ~µM systemic — within reach of all three IC50s in the gut compartment, only XO in the systemic compartment. <strong>The gut-luminal-sink thesis applies cleanly: luteolin is a lumen-side multi-mechanism gout compound.</strong></p>
-<p>Recommend revisiting <a href="../gout-action-guide/"><code>gout-action-guide.md</code></a> for a luteolin-rich-foods entry (parsley, celery, chamomile tea, honeysuckle tea) and for a dietary rosmarinic acid entry (rosemary, lemon balm, spearmint, sage).</p>
-<h3 id="73-comp-014s-glucan-structure-dependence-mechanistic-closure">§7.3 comp-014's β-glucan structure-dependence — mechanistic closure<a class="headerlink" href="#73-comp-014s-glucan-structure-dependence-mechanistic-closure" title="Permanent link">&para;</a></h3>
-<p>The contradiction surfaced in <code>synthesis.md</code> 2026-05-08 (<code>modality-chokepoint-matrix.md</code> β-glucans structure-dependent — <em>G. lucidum</em> EPS activate, spore-powder/GLP inhibit) now has a mechanistic explanation: the same Ganoderma fruiting body contains:
-- <strong>β-glucan structures</strong> that activate complement via the lectin pathway (MBL recognizes β-1,3-glucan terminal patterns — Zhao 2002 PMID 12384422 demonstrates the principle for mannose-LPS)
-- <strong>Lanostane triterpenes (ganoderic acid Sz) + ergosterol</strong> that INHIBIT the classical pathway C3 convertase at 44-52 µM (Seo 2009)</p>
-<p>Whether a reishi extract is anti- or pro-inflammatory at the complement level depends on which fractions dominate. <strong>This argues for fraction-specific reishi preparations rather than whole-extract</strong> — consistent with the comp-014 Phase 5 caveat about structure-dependent NLRP3 effects. Triterpene-enriched fractions (ethyl-acetate-soluble) would be CP-inhibitory; β-glucan-enriched fractions (water-soluble polysaccharide) would be ambiguous.</p>
-<h3 id="74-engineered-c1-inh-parallel-thread-new-proposed">§7.4 Engineered C1-INH parallel thread (new — proposed)<a class="headerlink" href="#74-engineered-c1-inh-parallel-thread-new-proposed" title="Permanent link">&para;</a></h3>
-<p>Recombinant C1-INH is FDA-approved for hereditary angioedema (Berinert / Cinryze / Ruconest). The molecule is a soluble human serpin that's recombinant-producible (Ruconest is from rabbit milk; Berinert is plasma-derived). <strong>This is a near-twin engineering thesis to DAF SCR1-4 (H05):</strong></p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>DAF SCR1-4 (H05)</th>
-<th>C1-INH (proposed)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Source organism</td>
-<td>human</td>
-<td>human</td>
-</tr>
-<tr>
-<td>Function</td>
-<td>decay-accelerator + DAF mimetic on MSU surface</td>
-<td>classical/lectin protease inhibitor (C1r/C1s/MASP)</td>
-</tr>
-<tr>
-<td>Complement node</td>
-<td>C3 convertase</td>
-<td>C1r/s + AP regulator</td>
-</tr>
-<tr>
-<td>Molecular features</td>
-<td>4× CCP/SCR domains, 8 disulfides</td>
-<td>serpin + carbohydrate-rich, single-domain</td>
-</tr>
-<tr>
-<td>Engineering chassis</td>
-<td><em>A. oryzae</em> (koji) — comp-012 LOW protease risk</td>
-<td><em>A. oryzae</em> or LBP — protease stability TBD</td>
-</tr>
-<tr>
-<td>Clinical precedent</td>
-<td>none (novel construct)</td>
-<td>FDA-approved (HAE)</td>
-</tr>
-<tr>
-<td>OE wet-lab path</td>
-<td>§1.25 scoped</td>
-<td>not yet scoped</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Phase 2 follow-up: open a parallel comp-NNN for koji-expressed C1-INH protease stability</strong> (mirror of comp-006/comp-012). If LOW or MODERATE, this becomes a second CP0 engineering candidate operating at a different complement node — the engineering coverage of CP0 doubles.</p>
-<h3 id="75-bacterial-nrps-complement-chemistry-as-lbp-payload-class">§7.5 Bacterial NRPS complement chemistry as LBP payload class<a class="headerlink" href="#75-bacterial-nrps-complement-chemistry-as-lbp-payload-class" title="Permanent link">&para;</a></h3>
-<p>Complestatin (Streptomyces) and the S. xinghaiensis-related BGC (Chen 2018 PMID 30232534) show that <strong>bacterial NRPS (non-ribosomal peptide synthetase) chemistry is a candidate complement-modulator chemical class</strong> that the OE corpus had not previously enumerated. Bacterial NRPS clusters are not koji-tractable (they require bacterial Sfp-family phosphopantetheinyl transferases and bacterial ACP machinery) but are LBP-tractable (bacterial chassis, native NRPS infrastructure).</p>
-<p>Implication for the <a href="../engineered-lbp-chassis/">engineered-LBP-chassis</a> peer track: complestatin-family NRPS-derived anticomplement peptides are a previously-unmapped payload candidate. Phase 2 follow-up: scope an LBP-chassis comp-NNN for complestatin BGC heterologous expression.</p>
-<h2 id="8-recommendations">§8 Recommendations<a class="headerlink" href="#8-recommendations" title="Permanent link">&para;</a></h2>
-<h3 id="81-promote-to-in-vitro-complement-modulation-assay-priority-order">§8.1 Promote to in vitro complement-modulation assay (priority order)<a class="headerlink" href="#81-promote-to-in-vitro-complement-modulation-assay-priority-order" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Rosmarinic acid</strong> — anchor compound. Use as CH50 / AP50 / C3-deposition-on-MSU positive control. Dietary-tier supplement viable (rosemary, lemon balm, spearmint).</li>
-<li><strong>Luteolin</strong> — already in OE candidate stack. Test cross-mechanism contribution at gut-luminal concentrations achievable via 100-300 mg supplementation.</li>
-<li><strong>Bupleurum polysaccharides</strong> — different mechanism (lectin pathway); orthogonal to RMA + luteolin; supports the global-multilingual CNKI gap thesis. Suggest direct CNKI search before in vitro.</li>
-<li><strong>Ganoderic acid Sz + ergosterol</strong> — fungal-chemistry-distinctive; ties to comp-014. Use ethyl-acetate-soluble triterpene-enriched reishi fraction, not whole extract.</li>
-</ol>
-<h3 id="82-drop-deprioritize">§8.2 Drop / deprioritize<a class="headerlink" href="#82-drop-deprioritize" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sorgoleone</strong> — primary paper retracted.</li>
-<li><strong>K-76 native compound</strong> — Stachybotrys parent organism is mycotoxin-producing; toxicity-filter exclusion. K-76 semi-synthetic derivatives remain interesting as engineering payload class.</li>
-<li><strong>Curcumin / EGCG / berberine / resveratrol as upstream-complement modulators</strong> — broad anti-inflammatory but no direct upstream-node IC50 surfaced in this sweep. They may still help via downstream NLRP3 modulation but are not comp-018 candidates.</li>
-</ul>
-<h3 id="83-phase-2-follow-ups-queued">§8.3 Phase 2 follow-ups queued<a class="headerlink" href="#83-phase-2-follow-ups-queued" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Direct CNKI/WanFang/J-STAGE search</strong> for Bupleurum, Ganoderma, dandelion, Sophora, and Magnolia anticomplement literature using the two-model translation cross-check protocol (Claude + DeepSeek V4-Pro for Chinese sources) per CLAUDE.md §Translation protocol. Anchor expectation: substantial Chinese-language Bupleurum literature ChEMBL/PubMed has not curated.</li>
-<li><strong>Brown-algae fucoidan complement-modulation sub-search</strong> — heparin-mimetic mechanism (Park 1997 PMID 9388049) suggests sulfated polysaccharides operate via Factor H surface binding. Fucoidans are abundant in brown algae and dietary in Asian cuisines.</li>
-<li><strong>Engineered-koji or LBP heterologous expression of compstatin-family C3-binding peptides</strong> — pegcetacoplan validates the C3-binding cyclic peptide as an upstream-CP0 modality. Compstatin (~13 aa) is plausibly heterologously expressible.</li>
-<li><strong>Engineered C1-INH expression scope page</strong> — parallel to H05 DAF SCR1-4. Precedent is FDA-approved; chassis tractability unknown.</li>
-<li><strong>Complestatin-family BGC LBP heterologous expression</strong> — scope a peer-track comp-NNN for the engineered-LBP-chassis row of <code>modality-chokepoint-matrix.md</code>.</li>
-</ol>
-<h2 id="9-chokepoint-class-naming-proposal">§9 Chokepoint-class naming proposal<a class="headerlink" href="#9-chokepoint-class-naming-proposal" title="Permanent link">&para;</a></h2>
-<p><strong>Working term throughout this page: "upstream-CP0".</strong> Per Brian's instruction (2026-05-08), the eventual chokepoint-class naming decision is the user's; this section proposes a recommendation.</p>
-<p><strong>Recommendation:</strong> Treat the upstream-of-C5aR1 nodes (C1q, C3 convertase, C5 convertase, Factor B, Factor D, C5, Factor H upregulators, DAF/CD55 host upregulators, C1-INH, MBL, MASP-2) as a <strong>scope expansion of CP0</strong> rather than a wholly new chokepoint class (CP-1).</p>
-<p><strong>Rationale:</strong>
-- The OE corpus already names CP0 as "complement priming" — the mechanism of priming is C5a generation, which is the OUTPUT of the upstream cascade. Subdividing CP0 into "downstream-CP0" (C5aR1 antagonism / C5a binding) and "upstream-CP0" (everything proximal that prevents C5a generation) reads cleanly within the existing framework.
-- CP-1 as a wholly new chokepoint class implies a fundamentally different priming mechanism, which is not the case here. Both upstream and downstream are part of the same complement-priming chokepoint.
-- The matrix in <a href="../modality-chokepoint-matrix/"><code>modality-chokepoint-matrix.md</code></a> should add a new ROW for <strong>"upstream complement modulator (small molecule, dietary)"</strong> to capture the rosmarinic-acid / luteolin / Bupleurum-PS class — this is the cleanest update that doesn't require renaming chokepoint columns.</p>
-<p>The dash convention (CP-1, CP-2 going further upstream of CP0) is clean and could be useful if future chokepoints emerge that are mechanistically more upstream still. For now, the recommendation is scope-expansion within CP0.</p>
-<h2 id="10-limitations">§10 Limitations<a class="headerlink" href="#10-limitations" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>Phase 1 is English-corpus-anchored.</strong> Substantial Chinese-language Bupleurum / Ganoderma anticomplement literature is plausibly missed. Phase 2 multilingual ingestion will close this — Bupleurum, dandelion, Sophora, and Magnolia are the highest-likelihood-non-English-evidence candidates.</p>
-</li>
-<li>
-<p><strong>IC50 discrepancy on rosmarinic acid (5-10 µM Englberger 1988 vs 137-182 µM in 2008-2013 comparator literature) is unresolved.</strong> Likely assay-format difference. Both ranges flagged in <code>compounds.json</code>. Phase 2 should grep-verify the Englberger 1988 paper directly (currently abstract-tier only — not in PMC).</p>
-</li>
-<li>
-<p><strong>No load-bearing claim is grep-verified against the 1988 paper in full text.</strong> The 5-10 µM IC50 was extracted from the PubMed abstract. Per CLAUDE.md Rule 4 this is abstract-tier; the paper itself is paywalled and not in PMC. If this number becomes load-bearing for any future wet-lab gate, full-text retrieval is mandatory.</p>
-</li>
-<li>
-<p><strong>The bell-shape phenomenon in rosmarinic acid C3-convertase inhibition (higher concentrations less effective) is not mechanistically explained</strong> in the available literature. This is load-bearing for dose-extrapolation — supplement-tier dosing should target sustained mid-µM, not max pharma-tier.</p>
-</li>
-<li>
-<p><strong>Translation cross-check protocol was not triggered in Phase 1</strong> because all primary sources surfaced were English. Phase 2 will activate it for CNKI/WanFang/J-STAGE direct reads.</p>
-</li>
-<li>
-<p><strong>The C5aR1-empty finding (comp-014 + §1.21 + comp-018) is now triply-confirmed</strong> but the failure mode for all three scans is the same: Western-pharma-curated database (ChEMBL) + Western-language literature (PubMed). The non-Western corpus might still have a hit. Phase 2 multilingual ingestion is the residual risk-closure.</p>
-</li>
-<li>
-<p><strong>Synergy is unmodeled.</strong> Rosmarinic acid + luteolin + Bupleurum-PS at three different nodes (C3 conv. CP, C3 conv. CP+AP, lectin pathway) is mechanistically plausible additive — but no in vitro three-arm experiment has been run. Phase 2 in vitro design would test the combination.</p>
-</li>
-<li>
-<p><strong>Dose-extrapolation from animal-model i.v. to human-oral is speculative</strong> for rosmarinic acid. Proctor 2006 used 10 mg/kg i.v.; oral 10 mg/kg in human ≈ 600 mg, achievable from rosemary supplementation but with large first-pass loss. Connelly 2014 (16-week spearmint tea OA RCT) is the closest in-human evidence proxy for sustained mid-µM RMA achievability.</p>
-</li>
-</ol>
-<h2 id="11-outputs-machine-readable">§11 Outputs (machine-readable)<a class="headerlink" href="#11-outputs-machine-readable" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>experiments/comp-018-upstream-complement-modulator-sweep/inputs/targets.json</code> — 16 nodes, UniProt-anchored, MSU-relevance-tagged</li>
-<li><code>experiments/comp-018-upstream-complement-modulator-sweep/inputs/query-strategy.json</code> — multi-source query strategy + executed PubMed macros</li>
-<li><code>experiments/comp-018-upstream-complement-modulator-sweep/outputs/compounds.json</code> — 32 compounds × IC50 × source × tier × evidence-level</li>
-<li><code>experiments/comp-018-upstream-complement-modulator-sweep/outputs/scope-summary.md</code> — generated summary</li>
-<li><code>experiments/comp-018-upstream-complement-modulator-sweep/scripts/scope_validate.py</code> — reproducible validator + summary emitter</li>
-</ul>
-<h2 id="12-cross-references-back-write-coordination">§12 Cross-references (back-write coordination)<a class="headerlink" href="#12-cross-references-back-write-coordination" title="Permanent link">&para;</a></h2>
-<p>The following pages should gain a one-line cross-ref to comp-018 (back-references handled in this commit):</p>
-<ul>
-<li><a href="../complement-c5a-gout/"><code>complement-c5a-gout.md</code></a> — CP0 status update: upstream-modulator dietary axis newly active</li>
-<li><a href="../daf-cd55-scr14-truncated-computational/"><code>daf-cd55-scr14-truncated-computational.md</code></a> — engineered-DAF parallel; C1-INH thread proposed</li>
-<li><a href="../hypotheses/H05-daf-scr14-cp0-thesis/"><code>hypotheses/H05-daf-scr14-cp0-thesis.md</code></a> — H05 + comp-018 cross-track coordination</li>
-<li><a href="../medicinal-mushroom-compound-mapping-computational/"><code>medicinal-mushroom-compound-mapping-computational.md</code></a> — Ganoderma triterpene anticomplement adds to comp-014</li>
-<li><a href="../tcm-gout-compound-triage-computational/"><code>tcm-gout-compound-triage-computational.md</code></a> — luteolin third-mechanism update</li>
-<li><a href="../modality-chokepoint-matrix/"><code>modality-chokepoint-matrix.md</code></a> — proposed new row "upstream complement modulator (dietary / small-molecule)"</li>
-<li><a href="../gout-action-guide/"><code>gout-action-guide.md</code></a> — luteolin-rich foods + rosmarinic acid sources flagged as future research</li>
-</ul>
+<p><strong>Where the analysis lives:</strong>
+- Full archived analysis: <a href="../experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md"><code>../experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md</code></a>
+- Experiment directory (inputs, scripts, outputs): <a href="../experiments/comp-018-upstream-complement-modulator-sweep/"><code>../experiments/comp-018-upstream-complement-modulator-sweep/</code></a>
+- Computational experiments index: <a href="../computational-experiments/"><code>computational-experiments.md</code></a></p>
 
 
 

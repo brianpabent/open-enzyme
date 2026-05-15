@@ -4299,6 +4299,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
 
       </a>
     </li>
@@ -4326,6 +4333,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
   
 
       </a>
@@ -4355,6 +4369,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
 
       </a>
     </li>
@@ -4382,6 +4403,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
   
 
       </a>
@@ -4411,6 +4439,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
 
       </a>
     </li>
@@ -4438,6 +4473,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
   
 
       </a>
@@ -4747,6 +4789,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
 
       </a>
     </li>
@@ -4774,6 +4823,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
   
 
       </a>
@@ -5258,7 +5314,7 @@
 <li>§1.25 DAF SCR1-4 arm (CCP/SCR, α 0.3–0.6, 8 disulfides, effective PDI load 2.4–4.8): <strong>predicted ≥100 mg/L</strong> under the framework — substantially higher per-cassette titer than lactoferrin because of the lower α coefficient.</li>
 </ul>
 <p><strong>Decision rule:</strong> if the observed titer ranking matches the framework's prediction (DAF SCR1-4 &gt; lactoferrin per cassette, on a normalized basis), the per-architecture α coefficients have transferable predictive power to koji and the framework can be used prospectively for new cassette design. If the ranking inverts (lactoferrin &gt; DAF SCR1-4 per cassette), the α coefficients calibrated from non-koji data <strong>do not transfer</strong> — the framework needs revision toward koji-specific kinetics, and predictions for novel cassettes (e.g., the C1-INH thread surfaced in <a href="../upstream-complement-modulator-sweep-computational/">comp-018</a>) would need to be flagged as uncalibrated.</p>
-<p><strong>Cross-references:</strong> <a href="../validation-experiments/"><code>validation-experiments.md §1.9</code></a>, <a href="../validation-experiments/"><code>validation-experiments.md §1.25</code></a>, <a href="./synthesis.md#strategic-reflections-queue"><code>synthesis.md</code> Strategic Reflections Queue</a> (chaperone-framework predictive-power validation entry — this calibration set is the operational instantiation of that reflection's trigger condition).</p>
+<p><strong>Cross-references:</strong> <a href="../validation-experiments/"><code>validation-experiments.md §1.9</code></a>, <a href="../validation-experiments/"><code>validation-experiments.md §1.25</code></a>, <a href="../synthesis/strategic-reflections/"><code>synthesis/strategic-reflections/</code></a> (chaperone-framework predictive-power validation entry — this calibration set is the operational instantiation of that reflection's trigger condition).</p>
 <hr />
 <h2 id="4-open-enzyme-candidate-cassettes-scored">4. Open Enzyme Candidate Cassettes — Scored<a class="headerlink" href="#4-open-enzyme-candidate-cassettes-scored" title="Permanent link">&para;</a></h2>
 <table>
@@ -5438,7 +5494,7 @@
 </table>
 <blockquote>
 <p><strong>Cross-chassis combinations are trivially off-framework.</strong> Compounds produced by a separate organism (e.g., cultivated <em>Cordyceps militaris</em> cordycepin, <em>Ganoderma lucidum</em> GLPP, <em>Pleurotus citrinopileatus</em> ergothioneine — see <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a>) impose <strong>zero</strong> chaperone load on the koji endgame strain because they are not co-expressed in koji at all. They appear in the consumer product as cultivated mushroom extracts paired with the engineered koji. No framework needed for that combination — the orthogonality is by virtue of separate chassis. The cordycepin row above scores the alternative <em>koji-engineering route</em> (Jeennor 2023's cns1+cns2 heterologous expression in <em>A. oryzae</em>); even that route is off the secretion/folding axis because cns1 and cns2 are bacterial cytosolic enzymes that never enter the ER.</p>
-<p><strong>Scope note — what this framework tracks and what it doesn't.</strong> The framework scores <strong>ER folding-machinery competition</strong> (PDI for disulfides, calnexin for N-glycans, BiP for general transit). It does <strong>not</strong> track generic proteome burden (ribosomes, amino acid pool, ATP for tRNA charging) imposed by cytosolic enzymes. For the current cassette stack, ER folding lanes are the binding constraint — koji's wild-type translation budget already supports ~30% secretion-dedicated output, so adding a ~400 aa cytosolic enzyme like cns1 is small change against the existing translation pool. If the platform later stacks multiple cytosolic biosynthesis clusters (e.g., cordycepin + a terpenoid pathway + a polyketide cluster), translation burden may become load-bearing — at that point a proteome-constrained metabolic model (pcSecKoji-style) is the correct upgrade per <a href="./synthesis.md#strategic-reflections-queue"><code>synthesis.md</code> Strategic Reflections Queue §"Chaperone framework predictive-power validation"</a>.</p>
+<p><strong>Scope note — what this framework tracks and what it doesn't.</strong> The framework scores <strong>ER folding-machinery competition</strong> (PDI for disulfides, calnexin for N-glycans, BiP for general transit). It does <strong>not</strong> track generic proteome burden (ribosomes, amino acid pool, ATP for tRNA charging) imposed by cytosolic enzymes. For the current cassette stack, ER folding lanes are the binding constraint — koji's wild-type translation budget already supports ~30% secretion-dedicated output, so adding a ~400 aa cytosolic enzyme like cns1 is small change against the existing translation pool. If the platform later stacks multiple cytosolic biosynthesis clusters (e.g., cordycepin + a terpenoid pathway + a polyketide cluster), translation burden may become load-bearing — at that point a proteome-constrained metabolic model (pcSecKoji-style) is the correct upgrade per <a href="../synthesis/strategic-reflections/"><code>synthesis/strategic-reflections/</code> §"Chaperone framework predictive-power validation"</a>.</p>
 <p><strong>Update (2026-05-14, comp-023):</strong> the cytosolic-burden gap named in this scope note is now closed for the cns1+cns2 cordycepin row specifically by <a href="../cordycepin-cassette-burden-computational/"><code>cordycepin-cassette-burden-computational.md</code></a>, which ran plain FBA on the Vongsangnak 2008 iWV1314 GEM with dual + cns1-cns2 + carnS + panD scenarios. Verdict: GREEN at the Jeennor 2023 empirical titer (564 mg/L/d); the FBA breakpoint where cordycepin demand materially competes with growth is ~1,000× the empirical titer (~564 g/L/d). The two analyses cover orthogonal axes: this framework covers ER folding, comp-023 covers cytosolic carbon + nitrogen + ATP + NADPH burden. Both verdicts must hold for the full endgame strain stack to be feasible. pcSec-class proteome-saturation modeling remains the v2 upgrade target. (source: cordycepin-cassette-burden-computational.md)</p>
 </blockquote>
 <p>The pattern is striking: the <strong>Open Enzyme koji endgame strain is implicitly already a chaperone-orthogonal design.</strong> The five "molecules" of <a href="../koji-endgame-strain/">koji-endgame-strain.md</a> §1 distribute across non-overlapping load classes —</p>
