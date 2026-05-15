@@ -38,6 +38,8 @@ related:
   - abcg2-modulators.md
   - androgen-urate-axis.md
   - colchicine.md
+  - delivery-route-matrix.md
+  - ginkgo-cloud-lab-evaluation.md
 sources:
   - "Aggregated from `Open Questions` sections across the Open Enzyme wiki"
   - "Synthesis Pass 2 findings across 2026-04-23, 2026-04-24"

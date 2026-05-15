@@ -25,6 +25,7 @@ related:
   - koji-endgame-strain.md
   - protein-engineering-strategy.md
   - validation-experiments.md
+  - cordycepin-cassette-burden-computational.md
 sources:
   - "Huynh HH, Morita N, Sakamoto T, et al. Fungal Biol Biotechnol 2020;7:7 (PMC7257131) — adalimumab HC+LC dual cassette in NSlD-ΔP10, 39.7 mg/L"
   - "Wakai S, Yoshie T, Asai-Nakashima N, et al. Bioresour Technol 2019;276:146-153 (DOI: 10.1016/j.biortech.2018.12.117) — 3-cellulase co-expression in A. oryzae with 5–16 chromosomal copies; 40× total cellulolytic activity"

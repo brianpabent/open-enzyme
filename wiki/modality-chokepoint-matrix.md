@@ -19,6 +19,11 @@ related:
   - open-enzyme-vision.md
   - gout-pathophysiology.md
   - medicinal-mushroom-compound-mapping-computational.md
+  - delivery-route-matrix.md
+  - chassis-pending-interventions.md
+  - compounding-pharmacy-track.md
+  - ginkgo-cloud-lab-evaluation.md
+  - purine-degrading-bacteria.md
 sources:
   - "Brian framing 2026-04-28: 'OE is the mission, not the koji chassis'"
   - "Synthesis derived from existing wiki pages (chokepoint map, transporter biology, exploit map)"
@@ -330,6 +335,11 @@ The cells where 🟡 marks the genuinely novel exploration space, ordered by lev
 ## Cross-references
 
 - [`open-questions.md`](./open-questions.md) — meta-index where the leverage-bearing matrix cells should propagate as named open questions
+- [`delivery-route-matrix.md`](./delivery-route-matrix.md) — companion page, complementary axis (route × compound class; "how to get there" vs "what tools")
+- [`chassis-pending-interventions.md`](./chassis-pending-interventions.md) — companion index: interventions hitting chokepoints but awaiting chassis fit
+- [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) — delivery route for small-molecule repurposing surface
+- [`ginkgo-cloud-lab-evaluation.md`](./ginkgo-cloud-lab-evaluation.md) — wet-lab partner evaluation for cell-free pre-gating
+- [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) — gut PDB as independent urate disposal organ (chassis-pending entry #1)
 - [`synthesis/`](../synthesis/README.md) — action queue; expect new connections to surface here when the sweep daemon reads this page
 - [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) — the chokepoint map this matrix sits orthogonal to
 - [`abcg2-modulators.md`](./abcg2-modulators.md), [`androgen-urate-axis.md`](./androgen-urate-axis.md), [`gut-lumen-sink.md`](./gut-lumen-sink.md) — the transporter-biology trio that grounds the renal and gut columns

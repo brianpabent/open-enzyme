@@ -25,8 +25,8 @@ related:
   - oridonin.md
   - bhb-ketones.md
   - colchicine.md
-  - gout-clinical-pipeline.md
-  - validation-experiments.md
+  - purine-degrading-bacteria.md
+  - chassis-pending-interventions.md
 sources:
   - "Brian framing 2026-05-11 (from MINX/Veradermics screenshots): 'had not considered the compounding pharmacy angle. we should! we have identified lots of compounds and it might be easier to just make a pill than grow mold lol'"
   - "MINX precedent: 5 mg once-daily extended-release oral minoxidil developed via ChatGPT-aided formulation review + lipid-matrix design + 503A compounding pharmacy + dissolution testing; built in days, not the multi-year Veradermics trial track"
