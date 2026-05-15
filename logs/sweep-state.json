@@ -1,23 +1,15 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "8c0bb51109a078baf3332a63d25ada754d293c70",
-    "timestamp": "2026-05-14T13:44:59Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-14-81e6264.md",
-    "review_commit": "8c0bb51109a078baf3332a63d25ada754d293c70",
+    "commit": "65f9338140c623ac6c7d1af9b4c02b0df40972cb",
+    "timestamp": "2026-05-15T01:49:59Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-15-9fd8d05.md",
+    "review_commit": "65f9338140c623ac6c7d1af9b4c02b0df40972cb",
     "trigger_files": [
-      "wiki/chaperone-orthogonal-stacking.md",
-      "wiki/complement-c5a-gout.md",
       "wiki/computational-experiments.md",
-      "wiki/cordycepin-cassette-burden-computational.md",
-      "wiki/enzyme-quantification-protocol.md",
-      "wiki/medicinal-mushroom-extract-sops.md",
-      "wiki/personal-genome-protocol.md",
-      "wiki/quantification-ladder.md",
-      "wiki/t-axis-adjuvant-urate-mapping-computational.md",
       "wiki/uricase-cassette-ranking-computational.md"
     ],
-    "run_id": "25862359338"
+    "run_id": "25895348265"
   },
   "recent_runs": [
     {
@@ -145,6 +137,15 @@
       "failed_phase": null,
       "trigger_paths_count": 10,
       "synthesis_log": "logs/v4-synthesis-2026-05-14-81e6264.md"
+    },
+    {
+      "run_id": "25895348265",
+      "trigger": "push",
+      "completed_at": "2026-05-15T01:49:59Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 2,
+      "synthesis_log": "logs/v4-synthesis-2026-05-15-9fd8d05.md"
     }
   ]
 }
