@@ -52,7 +52,7 @@ The session 1 draft of §5.4 stated *"the original sweep design used three passe
 
 ### Open questions for Brian
 
-1. **Author byline format.** Currently *"Brian Abent · Open Enzyme · brian@headsupresults.com"*. Confirm or adjust.
+1. **Author byline format.** Currently *"Brian Abent · Open Enzyme · brian.abent@gmail.com"*. Confirm or adjust.
 2. **Vendor naming throughout.** Currently models are named explicitly by vendor + version (Claude Opus 4.7, DeepSeek V4-Pro, Gemini 2.5 Pro). Recommend keeping; reproducibility requires it. Confirm.
 3. **The reflexive Methods Appendix entry on Catch 1** (the PaperOrchestra confabulation). Recommend keeping; it is the strongest demonstration the paper has that the methodology applies to its own production. Could be cut if it feels like over-sharing. Confirm.
 4. **PaperOrchestra integration point.** When you next have bandwidth to fire PaperOrchestra at the input packet, §2 (related work) is the highest-leverage section for it. Other sections could go to PaperOrchestra for polish, but they are mostly drafted from primary sources I have direct access to.

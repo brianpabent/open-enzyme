@@ -218,6 +218,45 @@ Full daily log lives in the experimenter's private storage (e.g., `<your-private
 
 Lower-cost subject-specific assays that supplement the standard four-biomarker panel for specific intervention contexts. Each is opt-in, runs as a quarterly add-on to the standard blood draw, and stays in the subject's private storage per §7.
 
+### 11.0 Selenium + yanthine — PDB function screen *(added 2026-05-15)*
+
+**When relevant:** Any draw while hyperuricemia is active or gout risk is being managed. One-time triage, not ongoing monitoring.
+
+**Rationale:** The PDB (purine-degrading bacteria) gut pathway enzyme DOPDH is selenium-dependent and runs 27x faster with selenium than without. Selenium deficiency could functionally knock out PDB activity without any change in bacterial abundance — the bacteria are present, they just can't work. Yanthine (2,8-dioxopurine) is the first PDB pathway intermediate; elevated serum yanthine indicates PDB are depleted or dysfunctional (can't process it downstream). Together these two markers answer whether Brian's gut-compartment urate disposal is operating normally or is constrained by a potentially trivial dietary factor. See [purine-degrading-bacteria.md §"Cofactor Requirements"](./purine-degrading-bacteria.md).
+
+**What to order:**
+- **Serum selenium** — standard clinical test, available at any reference lab (Quest/LabCorp), ~$40–80. Normal range 70–150 ng/mL; optimal for DOPDH function is likely mid-to-upper-normal. If low-normal (<90 ng/mL), supplementation at 100–200 µg/day (selenomethionine) is safe and cheap.
+- **Yanthine (2,8-dioxopurine)** — not on standard panels. Triage step: check whether Metabolon Precision Metabolomics, Genova NutrEval, Great Plains Organic Acids, or a clinical pharmacology lab measures it. If a metabolomics panel (Metabolon, ~$300–600) already on the radar covers it, add at no incremental cost. If not available without a research lab arrangement, defer — serum selenium alone is the practical first step.
+
+**Cost:** Selenium ~$40–80 (clinical). Yanthine: $0 if a planned metabolomics panel includes it; $300–600 for a standalone metabolomics run; defer if unavailable commercially.
+
+**Cross-references:** [purine-degrading-bacteria.md](./purine-degrading-bacteria.md) §"Open Questions" PDB-Q3 and PDB-Q4.
+
+### 11.0a Cranberry juice n=1 — direct hippuric-acid → ABCG2 axis test *(added 2026-05-15)*
+
+**When relevant:** Same draw context as §11.0 — any draw while hyperuricemia is active or gout risk is being managed. Particularly informative when run in the same window as a §11.0 selenium / yanthine draw (the two protocols test parallel mechanisms hitting the same downstream node, ABCG2).
+
+**Rationale:** *Alistipes indistinctus* produces hippuric acid via aromatic amino acid catabolism; hippuric acid enhances PPARγ binding to the ABCG2 promoter and promotes ABCG2 localization to the apical brush border via PDZK1 (Xu et al. 2024 Cell Host & Microbe, PMID 38412863). The standard dietary route is polyphenol-rich foods → gut catabolism → hippuric acid — slow, indirect, microbiome-dependent. **Cranberries bypass the bacterial step**: cranberries contain unusually high natural benzoic acid; benzoic acid is conjugated with glycine in the liver to produce hippuric acid directly. This is the established mechanism behind the cranberry-UTI lore (cranberry consumption → elevated urinary hippuric acid). For an n=1 test of whether the hippuric-acid → ABCG2 mechanism moves serum urate at dietary doses, cranberry juice is the cleanest probe — independent of needing to colonize *A. indistinctus*. See [`abcg2-modulators.md` Alistipes Tier 2 entry](./abcg2-modulators.md).
+
+**Protocol:**
+- 4 weeks unsweetened cranberry juice, ~8 oz/day with breakfast (or split across day if GI tolerance is an issue).
+- Cost: ~$20 for the protocol.
+- No other intervention changes during the 4 weeks (hold supplements stack constant; hold allopurinol dose constant).
+- Standard 4-biomarker panel (serum urate + hs-CRP + fasting insulin + ApoB) at week 0 baseline + week 4.
+- Optional add: urinary hippuric acid (specialty test, ~$40 at some reference labs) at week 0 + week 4 — confirms the cranberry → hippuric-acid mechanism is engaging in this individual.
+
+**Expected effects:**
+- **Serum urate down 0.2–0.5 mg/dL** if the hippuric-acid → ABCG2 axis is meaningful at dietary doses (Mechanistic Extrapolation; the Animal Model + Human Observational data in Xu et al. 2024 doesn't quantify the magnitude at dietary cranberry doses).
+- **Urinary hippuric acid up substantially** at week 4 vs. baseline — confirms the mechanism is engaging.
+- **No change in hs-CRP / insulin / ApoB** — cranberry-juice carb load is small (unsweetened); no expected metabolic-syndrome effects at this dose.
+
+**Why this is informative regardless of outcome:**
+- If serum urate moves AND urinary hippuric is up → mechanism replicates in this physiology, supports the broader chassis-pending PDB / *A. indistinctus* axis.
+- If serum urate doesn't move AND urinary hippuric is up → mechanism engages but doesn't translate to ABCG2 / SUA effect at dietary dose; the *A. indistinctus* / hippuric axis may need higher concentrations than dietary route delivers, or may not be rate-limiting in this patient.
+- If urinary hippuric doesn't move → cranberry isn't getting absorbed / conjugated as expected; the experiment didn't actually test the mechanism. Interpretation problem, not a mechanism falsification.
+
+**Cross-references:** [`abcg2-modulators.md`](./abcg2-modulators.md) §"Tier 2 — Alistipes / Hippuric acid"; [`chassis-pending-interventions.md` §1](./chassis-pending-interventions.md) (PDB entry, "Cheapest first move" includes this).
+
 ### 11.1 Ex vivo MSU PBMC challenge (androgen-elevated subjects, Tier 4 of `validation-experiments.md` §1.23)
 
 **When relevant:** Subject is on clomid, TRT, anabolic-androgenic steroids, or has high baseline endogenous testosterone, AND has gout / hyperuricemia history. The 2026-05-05 androgen × NLRP3 literature scan ([`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Beyond transporters") identified a gap: testosterone × MSU-crystal × NLRP3 in macrophages has zero indexed papers. The general-tissue literature suggests androgens are anti-inflammatory in macrophages (Norata 2006 in vitro), but cardiac macrophages flip the direction (testosterone → ↑NLRP3 → male-skewed myocarditis). Whether gout-relevant macrophages follow the general-tissue pattern or the cardiac-tissue pattern is an open question. This add-on provides a low-cost personal signal in the absence of formal Tier 1–3 wet-lab data.
@@ -237,3 +276,52 @@ Lower-cost subject-specific assays that supplement the standard four-biomarker p
 **Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only for personal protocol decisions. Generates hypotheses; does not establish efficacy.
 
 **Cross-references:** [`validation-experiments.md` §1.23](./validation-experiments.md) (the formal Tier 1–3 cascade this is the n=1 parallel of); [`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Beyond transporters" (the literature gap being probed); [`nlrp3-inflammasome.md`](./nlrp3-inflammasome.md) (NLRP3 activation mechanism background).
+
+---
+
+## 12. Genotype-informed supplement quantification workflow (added 2026-05-15)
+
+The wiki has two operational clusters that are currently disconnected on the user-facing surface:
+
+- [`personal-genome-protocol.md`](./personal-genome-protocol.md) — **genotype-informed compound selection.** Clinical-grade genotyping (via rheumatologist or CLIA-grade direct-to-consumer service; consumer panels like 23andMe / AncestryDNA are not recommended per [`gout-action-guide.md`](./gout-action-guide.md) Default-path "This year (advanced)") → ABCG2 Q141K, SLC2A9, URAT1, NLRP3 promoter, IL-1β regulatory variants → variant-specific compound preferences.
+- [`quantification-ladder.md`](./quantification-ladder.md) + [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) + [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) — **home / community-biolab quantification.** Tier 2 colorimetric or absorbance-based assays that let a subject verify *how much* of a compound is actually in a given batch (cordycepin via diazo-coupling, ergothioneine via Ellman's, total polysaccharide via phenol-sulfuric, etc.), turning "I took some supplement" into "I took N mg of compound X."
+
+The §1–§11 protocols above treat supplement dose / form / timing as a **fixed input variable**. The quantification ladder turns it into a **verified variable**. The personal-genome-protocol turns the compound selection itself into a **genotype-informed variable**. Composing the two gives a closed-loop n=1 pharmacogenomics workflow:
+
+> **genotype → compound selection → home or community-biolab production → Tier 2 batch QC → calibrated dose → biomarker tracking → adjust**
+
+This workflow isn't named anywhere else in the wiki. This section names it.
+
+### 12.1 The five-step workflow
+
+For each intervention the subject considers:
+
+1. **Genotype-inform the selection** ([`personal-genome-protocol.md`](./personal-genome-protocol.md) §"Gout-specific pharmacogenomic query list"). Specific variants change the compound priority — e.g., ABCG2 Q141K → butyrate emphasis (HDAC trafficking rescue per [`abcg2-modulators.md`](./abcg2-modulators.md)); URAT1 gain-of-function variants → cordycepin > eurycomanone per [comp-015 v2](./t-axis-adjuvant-urate-mapping-computational.md); NLRP3 gain-of-function variants → upweight CP6 (oridonin, BHB) over CP1–CP4.
+2. **Source or produce the compound** at home or via community biolab per [`engineered-koji-protocol.md`](./engineered-koji-protocol.md) (for enzyme cassettes), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) (for cordycepin / GLPP / ergothioneine native-compound mushrooms), or commercial supplement purchase. Note batch / lot / source in the §7 daily log.
+3. **Tier 2 batch QC via the quantification ladder.** Use the matched assay from [`quantification-ladder.md`](./quantification-ladder.md): cordycepin via diazo-coupling colorimetric, ergothioneine via Ellman's, total polysaccharide via phenol-sulfuric, uricase activity via 293 nm UV absorbance, etc. Output: a per-batch potency number (mg of compound per gram of dried product, or activity units per gram). Calibrate once at Tier 3 (vendor or community-biolab analytical assay) if available; track each subsequent batch at Tier 2 against the Tier 3 anchor.
+4. **Calibrate dose against the batch potency.** A batch that returns 50% of the expected potency means the subject takes 2× the gram weight to hit the same calibrated dose — or notes the silent underdosing and tracks it as a confound in §7. Without this step, batch variation produces invisible noise in the biomarker readout.
+5. **Track biomarkers per §3–§4.** The quantification ladder closes the dosing variable, so any biomarker movement is attributable to dose × biology, not dose × batch-variation × biology. Adjust the intervention based on the result.
+
+### 12.2 Worked example — Q141K-positive carrier, butyrate-emphasis stack
+
+A subject genotyped via a clinical-grade panel returns **ABCG2 Q141K heterozygous** (rs2231142 C/A). Per [`abcg2-modulators.md`](./abcg2-modulators.md), butyrate is the dual-mechanism lever for this genotype (PPARγ-driven ABCG2 induction in WT + HDAC-inhibitor trafficking rescue for the Q141K variant). Standard supplement-stack recommendations elevate butyrate via fermentable-fiber-rich diet + targeted butyrate-producing probiotics or direct butyrate-ester supplementation.
+
+**Workflow application:**
+
+1. **Genotype:** Q141K heterozygous, confirmed via clinical lab (not 23andMe).
+2. **Selection:** Butyrate-emphasis stack — fermentable-fiber dietary baseline (resistant starch, inulin, RS2-type sources) + optional direct sodium butyrate supplementation.
+3. **Source:** Resistant starch from a known source (e.g., Bob's Red Mill unmodified potato starch, a documented RS2 source); sodium butyrate from a documented supplement vendor with reported potency.
+4. **Tier 2 batch QC:** Indirect readout — stool SCFA panel (butyrate + acetate + propionate) at week 4 of intervention vs. baseline. This is a *biomarker* of effective butyrate delivery, not a direct quantification of the supplement potency — but it's the available Tier 2 surface for the workflow. Direct quantification would require GC-MS of the supplement → defer to a Tier 3 lab if precision matters.
+5. **Track biomarkers:** Serum UA quarterly + the standard four-biomarker panel per §4. Predicted effect from [comp-019](./uricase-abcg2-genotype-stratification-computational.md): WT/WT non-Q141K cohort sees larger ΔSUA than Q141K heterozygotes under the substrate-limited gut-lumen uricase regime; for Q141K-positive subjects, the rescue mechanism (HDAC inhibition) is the dominant lever and the per-patient response can be larger if it activates. Track UA trajectory at 3-month intervals.
+
+**What this example does NOT claim:**
+- It does NOT claim that butyrate alone produces clinically meaningful ΔSUA — that's gated by [H08 — Gut-Lumen Sink Platform Thesis](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) and the absence of a typical-gout Phase 2b RCT.
+- It does NOT claim that the SCFA readout is mechanistically equivalent to a direct butyrate-supplement potency assay — it's an indirect proxy.
+- It DOES illustrate the workflow shape: every link in the chain is verified rather than assumed.
+
+### 12.3 Open follow-ups
+
+- **Tier 3 anchor library.** A growing list of compound-specific Tier 3 vendor or community-biolab anchors (GC-MS / HPLC / spectrophotometric) that the Tier 2 home assays calibrate against. Currently scattered across [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md), [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md), [`quantification-ladder.md`](./quantification-ladder.md); worth consolidating into a single anchor table once enough Tier 3 entries land.
+- **Workflow validation under H09.** The §12 workflow assumes home / community-biolab production at therapeutic doses, which is exactly what [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) is testing. If H09 dies, §12 reshapes — the genotype-informed selection still works, but the home-production step routes through commercial supplement vendors with verified potency rather than home fermentation.
+
+**Cross-references:** [`personal-genome-protocol.md`](./personal-genome-protocol.md), [`quantification-ladder.md`](./quantification-ladder.md), [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md), [`abcg2-modulators.md`](./abcg2-modulators.md), [`t-axis-adjuvant-urate-mapping-computational.md`](./t-axis-adjuvant-urate-mapping-computational.md), [`gout-action-guide.md`](./gout-action-guide.md), [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md), [H09](./hypotheses/H09-community-fermentation-reliability.md).

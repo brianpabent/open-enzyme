@@ -171,6 +171,18 @@ The computational feasibility gate is cleared. The logical next step is a minima
 
 **Formalized as [`validation-experiments.md` §1.25](./validation-experiments.md) (2026-05-06):** the full wet-lab protocol with construct design, host strain selection (RIB40 first; NSlD-ΔP10 unlikely needed for single-cassette per Item 10 chaperone framework refinement), readouts (SDS-PAGE reducing+non-reducing / anti-DAF Western / anti-DAF ELISA / mass spec disulfide-pairing / zymosan C5a inhibition / native metabolite carryover), success criteria (≥50 mg/L titer + ≥40% native folded form + ≥30% C5a inhibition), cost ($2.5-4K), timeline (6-8 weeks), and Accept/Iterate/Reject thresholds — with explicit single-cassette routing per the [`chaperone-orthogonal-stacking.md` §5.5 triple-cassette prediction](./chaperone-orthogonal-stacking.md) landing below 0.6 decision gate (architecture-refined 2026-05-06).
 
+## Open follow-up — RFdiffusion + ProteinMPNN tool-stack integration (added 2026-05-15)
+
+The DAF SCR1-4 truncated construct is a **redesign** problem (modifying the existing full ectodomain to drop SCR5 + GPI anchor while preserving native 8-disulfide folding in aa 35–285). Per the BioDesignBench-validated tool stack (Kim & Romero 2026; see [`bio-ai-tools.md` §BioDesignBench](./bio-ai-tools.md)), the canonical computational tools for this class of work are **RFdiffusion** (de novo backbone design + truncation-aware refolding) and **ProteinMPNN** (structure-conditioned sequence design to optimize the truncation interface). Neither is currently in OE's computational stack; both are available via the **protein-design-mcp** package ([github.com/jasonkim8652/protein-design-mcp](https://github.com/jasonkim8652/protein-design-mcp), MIT licence, Docker images for reproducible deployment).
+
+**Fires when:** comp-006 / §1.25 wet-lab work surfaces a folding-yield problem that the current ESM2 + Boltz-2 verdict can't resolve, OR a v2 of this comp-NNN is needed to refine the construct design before the wet-lab gate. Until then, dormant — the current computational verdict (HIGH protease stability) gates wet-lab work directly without further design iteration.
+
+**Phase 2 integration tasks (if triggered):**
+
+1. Deploy protein-design-mcp as a sibling MCP server alongside abent-somm / pubmed / paperclip.
+2. Re-run the DAF SCR1-4 truncated construct through RFdiffusion (backbone scaffold) + ProteinMPNN (sequence optimization) + AlphaFold3 (re-verification).
+3. Cross-check against the current ESM2 + Boltz-2 verdict; if multi-method concordance holds, increase confidence in the construct; if discordant, surface as a decision item before wet-lab spend.
+
 ---
 
 ## Cross-references
@@ -185,3 +197,4 @@ The computational feasibility gate is cleared. The logical next step is a minima
 - [validation-experiments.md §1.25](./validation-experiments.md) — formalized wet-lab gate experiment (2026-05-06)
 - [chaperone-orthogonal-stacking.md §5.5](./chaperone-orthogonal-stacking.md) — triple-cassette prediction (architecture-refined 2026-05-06) that motivated single-cassette routing for §1.25
 - [hypotheses/H05-daf-scr14-cp0-thesis.md](./hypotheses/H05-daf-scr14-cp0-thesis.md) — falsification card; §1.25 readouts directly address H05's three named wet-lab unknowns
+- [daf-cd55-scr14-cassette-ranking-computational.md](./daf-cd55-scr14-cassette-ranking-computational.md) — comp-030 (2026-05-15); exhaustive cassette ranking (43,200 candidates); top cluster = PamyB + SPamyB + cai_max + direct-secretion; α-coefficient CORROBORATED (pLDDT mean 88.8, 100% above 80)

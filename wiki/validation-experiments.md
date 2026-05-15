@@ -13,6 +13,8 @@ Single-source consolidated experiment library for the Open Enzyme project. The n
 
 As of 2026-04-24 this is the authoritative experiments file — earlier ambiguity about a separate `experiments.md` has been resolved, and all content lives here. The sweep daemon and human editors update this page in place.
 
+**Scope note (2026-05-15):** The experiments below are largely **koji-track-anchored** because the koji chassis is the most mature OE engineering track. Validation paths for chassis-pending interventions (kidney-tropic siRNA URAT1, engineered LBPs, PDB via engineered EcN, mRNA-IL-1RA pulse, intra-articular uricase + catalase, phage modulation) are tracked on each intervention's home page and indexed in [`chassis-pending-interventions.md`](./chassis-pending-interventions.md). Each chassis-pending entry has its own "Cheapest first move" — usually a $0 lit scan or sub-$5K wet-lab gate — not duplicated here. As chassis-pending interventions select a chassis and mature into dedicated tracks, their validation experiments will fold into this file or a parallel track-specific file (per the maintenance pattern that already produced `engineered-lbp-chassis.md` and `compounding-pharmacy-track.md`).
+
 ---
 
 ## Experiment Queue
@@ -99,7 +101,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 **Success criteria:** Identify highest-performing gene with >50 μmol/h/OD activity
 
-**Pre-gate option — Ginkgo Cloud Lab cell-free expression ($39/protein, ~5–10 day turnaround):** Before committing to the full $2,000–3,000 gene synthesis + transformation + screening pipeline, a single $39 cell-free run on the lead uricase variant from [uricase-variant-selection.md](./uricase-variant-selection.md) can confirm the ORF translates without ribosomal stalling and the polypeptide folds into a soluble state in an E. coli-lysate-like environment. Negative result = redesign the construct before any fungal work. Positive result = construct is worth committing fungal-host effort to. See [ginkgo-cloud-lab-evaluation.md](./ginkgo-cloud-lab-evaluation.md) for full evaluation. (source: ginkgo-cloud-lab-evaluation.md; Mechanistic Extrapolation)
+**Pre-gate option (deferred 2026-05-13) — Ginkgo Cloud Lab cell-free expression ($39/protein, ~5–10 day turnaround):** Before committing to the full $2,000–3,000 gene synthesis + transformation + screening pipeline, a single $39 cell-free run on the lead uricase variant from [uricase-variant-selection.md](./uricase-variant-selection.md) can confirm the ORF translates without ribosomal stalling and the polypeptide folds into a soluble state in an E. coli-lysate-like environment. Negative result = redesign the construct before any fungal work. Positive result = construct is worth committing fungal-host effort to. **Status: deferred per the 2026-05-13 priority-stack decision** — the existing computational corpus (comp-019 flux model, comp-022 cassette ranking, comp-023 cordycepin burden, ViennaRNA mRNA folding + ESM2 pseudo-pLDDT proxies) already answers the questions this test would surface to high confidence; the rationale stands and the option remains queued for when wet-lab work becomes load-bearing. See [ginkgo-cloud-lab-evaluation.md](./ginkgo-cloud-lab-evaluation.md) TL;DR for full deferred-decision context. (source: ginkgo-cloud-lab-evaluation.md; Mechanistic Extrapolation)
 
 ---
 
@@ -1021,6 +1023,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - [comp-012 (2026-05-05)](./daf-cd55-scr14-truncated-computational.md) — protease stability LOW verdict for the SCR1-4 construct; gates the wet-lab feasibility question
 - [chaperone-orthogonal-stacking framework](./chaperone-orthogonal-stacking.md) §3.5 + §4 (refined 2026-05-06) — per-architecture α coefficient for CCP/SCR fold (0.3-0.6) gives effective PDI load 2.4-4.8 for single-cassette DAF SCR1-4, well within demonstrated *A. oryzae* capacity even on wild-type RIB40
 - [chaperone-orthogonal-stacking framework](./chaperone-orthogonal-stacking.md) §5.5 (refined 2026-05-06) — triple-cassette prediction lands below 0.6 decision gate, supporting the **separate-strain (single-cassette) routing** decision encoded in this experiment design
+- **[comp-030 (2026-05-15)](./daf-cd55-scr14-cassette-ranking-computational.md)** — exhaustive cassette ranking (43,200 candidates; 6 promoters × 12 SP × 10 codon variants × 60 scaffolds). Top cluster: **PamyB + SPamyB + max-CAI codon variant + direct-secretion scaffold (His6 or no C-term tag) + no propeptide**. §1.25 baseline survives; one gene-synthesis-time refinement warranted: use **max-CAI codon optimization** (NOT 5'-softened — DAF SCR1-4's first-30 aa generate favorable 5' MFE under max-CAI; 5'-softening is target-specific to uricase). α-coefficient **CORROBORATED**: ESM2 pseudo-pLDDT mean = 88.8, std = 0.5, 100% of 720 protein-distinct candidates above pseudo-pLDDT 80 — consistent with CCP/SCR fast-folding, α = 0.3–0.6. (Mechanistic Extrapolation; in silico only.) Full analysis: [`wiki/daf-cd55-scr14-cassette-ranking-computational.md`](./daf-cd55-scr14-cassette-ranking-computational.md).
 
 **Limitations:**
 - Single-cassette test does not directly answer whether DAF SCR1-4 can co-express with uricase + Lf in a triple cassette (that would be a separate, gated experiment if the chaperone framework's prediction proves too pessimistic in the §1.9 readout)
@@ -1070,6 +1073,38 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Cross-references:** [medicinal-mushroom-complement-track.md §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) (Item 1 of the 2026-05-08 walkthrough — the two-organism synergy bullet); [gout-pathophysiology.md §"ADA (Adenosine Deaminase) — Purine Catabolism Chokepoint Candidate"](./gout-pathophysiology.md); [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md) (comp-014 Phase 2, where ADA was first surfaced); [synthesis.md](./synthesis.md) 2026-05-08 sweep Connection 1 + Proposed Experiment 1.
 
+#### Sixth-arm extension — engineered-koji cordycepin + GLPP (added 2026-05-15; gated on strain availability)
+
+**Status**: Proposed extension to §1.26 base | **Cost**: ~$500–1,000 adder | **Weeks**: same as §1.26 base | **Phase**: 2 | **Hard gating**: engineered-koji cordycepin strain must exist (downstream of §1.9-extended design + comp-025 ADA-competition GREEN + comp-028 three-axis GREEN)
+
+**What it tests:** Can koji-track cordycepin (lacking the native pentostatin that *C. militaris* co-produces from the same BGC) achieve ADA half-life protection equivalent to whole-fermentate *Cordyceps* by leveraging GLPP's polysaccharide-binding ADA inhibition? Specifically: does engineered-koji cordycepin extract + GLPP match the whole-fermentate *Cordyceps* native arms (§1.26 Arms 4 + 5) on ADA half-life?
+
+**Why a sixth arm:** the §1.26 base tests purified cordycepin, pentostatin, GLPP, whole-fermentate *Cordyceps*, and whole-fermentate *Cordyceps* + GLPP. The koji-track equivalent of the cordycepin + ADA-inhibitor pair — koji cordycepin + GLPP — is the synergy named in [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" but never assayed against the whole-fermentate baseline. Without the sixth arm, the koji-track cordycepin strain ships without empirical ADA-protection data; the strain's deliverable falls back to pairing with whole-fermentate *Cordyceps* (per §2.7's cross-chassis stability test) rather than the cleaner GLPP route.
+
+**Distinction from §2.7 (Item 19's Koji × *Cordyceps* Co-Formulation Stability Test):** §2.7 tests **engineered-koji cordycepin + whole-fermentate *C. militaris***  (native pentostatin) for co-formulation stability. The §1.26 sixth arm tests **engineered-koji cordycepin + GLPP** (polysaccharide-binding ADA inhibitor — different ADA-inhibitor source). Both inform the koji-track ADA-protection strategy from different angles; together they decide which co-product (whole-fermentate *Cordyceps* OR purified GLPP) is the preferred pairing for the engineered koji.
+
+**Arm 6 protocol:** identical to §1.26 base — ADA challenge (recombinant human ADA, Sigma A6535) at defined enzyme concentration, sampling at 0/15/30/60/120/240 min, LC-MS cordycepin vs. 3'-deoxyinosine quantification — but the substrate is engineered-koji cordycepin extract (cns1+cns2 strain, post-fermentation extraction per [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-2) co-administered with Tier 3-anchored GLPP (per SOP-1 SEC-MALS characterization).
+
+**Success criteria (sixth arm → next phase):**
+- **GREEN:** sixth-arm cordycepin half-life ≥ 70% of Arm 4 (whole-fermentate *Cordyceps*) AND ≥ 90% of Arm 5 (whole-fermentate + GLPP). → koji cordycepin + GLPP is a viable two-organism deliverable independent of *C. militaris* cultivation; update `medicinal-mushroom-complement-track.md` to promote this from synergy candidate to validated route.
+- **YELLOW:** sixth-arm cordycepin half-life 50–70% of Arm 4. → koji cordycepin + GLPP partially protects; needs higher GLPP dose OR co-formulation with whole-fermentate *Cordyceps* per §2.7. Decision deferred to per-dose cost analysis.
+- **RED:** sixth-arm cordycepin half-life < 50% of Arm 4. → GLPP alone is insufficient ADA protection for the koji cordycepin route; the koji track depends on either (a) co-formulation with whole-fermentate *Cordyceps* (per §2.7) or (b) pentostatin co-engineering (higher cassette complexity per comp-024-class follow-up).
+
+**Estimated cost:** $500–1,000 adder
+- Engineered-koji cordycepin extract preparation (one-time, gated on strain): ~$200
+- Additional LC-MS quantification samples (1 arm × 6 timepoints × 3 replicates = 18 samples × $35 ≈ $630)
+- Tier 3-anchored GLPP reagent (shared with §1.26 base): negligible adder
+
+**Estimated timeline:** same as §1.26 base — sixth arm runs in parallel with Arms 1–5 once the strain exists; no incremental wall-clock time.
+
+**Limitations:**
+
+1. Same in-vitro-ADA limitation as §1.26 base — recombinant human ADA doesn't model gut-microbiome metabolism of cordycepin.
+2. The cordycepin extract from engineered koji may have different impurity profile than whole-fermentate *Cordyceps* extract; this affects interpretation only if impurities themselves modulate ADA activity (unlikely but flagged).
+3. GLPP fraction quality is the same load-bearing requirement as §1.26 base — Tier 3 SEC-MALS characterization per SOP-1 non-negotiable.
+
+**Cross-references:** §1.26 base (parent five-arm assay); [§2.7](#27-koji--cordyceps-co-formulation-stability-test--ada-challenge-assay-added-2026-05-15) (sister Tier 2 stability test on engineered-koji + whole-fermentate *Cordyceps* pairing — different ADA inhibitor source); [`medicinal-mushroom-complement-track.md` §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) (the koji + GLPP entry this sixth arm validates); [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) (comp-023 engineering thread); [`computational-experiments.md`](./computational-experiments.md) comp-025 (ADA × cns1 kinetic gate — must clear before this experiment runs).
+
 ---
 
 ### 1.27 Ergothioneine + Lactoferrin Combination ROS Assay in MSU-Stimulated THP-1 Macrophages (Cross-Track ROS / CP1b Additivity Validation)
@@ -1112,6 +1147,45 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - Fenton-iron mechanism in cell culture vs. in vivo gut lumen has different iron-availability conditions; cell-culture additivity may not translate to gut-luminal additivity.
 
 **Cross-references:** [gout-pathophysiology.md §"Multi-track urate transporter coverage" ROS / CP1b row](./gout-pathophysiology.md) (the speculative claim this experiment gates); [lactoferrin.md §4.1](./lactoferrin.md) (Fenton-iron mechanism); [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (P. citrinopileatus EGT source); [validation-experiments.md §1.19](./validation-experiments.md) (rodent-IC50 species-gap discipline); [validation-experiments.md §1.20](./validation-experiments.md) (sister CP1a super-additivity assay sharing THP-1 + MSU infrastructure); [synthesis.md](./synthesis.md) 2026-05-07 77d0f6e Connection 3 + Item 22 walkthrough closure.
+
+### 1.28 Tier 2 Colorimetric Cordycepin Assay Validation (added 2026-05-15)
+
+**Status**: Proposed | **Cost**: ~$200 (reagents + cordycepin reference standard + Tier 3 anchor) | **Weeks**: 2 | **Phase**: 1
+
+**Affected wiki**: [medicinal-mushroom-extract-sops.md](./medicinal-mushroom-extract-sops.md) SOP-6 (the speculative-marked assay this validates); [quantification-ladder.md](./quantification-ladder.md) (the Tier-2 framework this anchors); [self-experiment-protocol.md](./self-experiment-protocol.md) §12 (the genotype-informed-supplement-quantification workflow that depends on home-quantification of cordycepin); [cordycepin-cassette-burden-computational.md](./cordycepin-cassette-burden-computational.md) (the cordycepin engineering thread); [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (cordycepin-bearing co-products).
+
+**What it tests:** Whether the diazo-coupling colorimetric assay proposed in [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md) — currently marked **Speculative** with the explicit "do not commit until primary-literature confirmation" caveat — is viable for Tier 2 home / community-biolab cordycepin quantification, or whether UV 260 nm absorbance must be used as the fallback. This is the gating wet-lab gate for cordycepin home quantification; load-bearing for [`self-experiment-protocol.md` §12](./self-experiment-protocol.md) (genotype-informed supplement quantification workflow surfaced 2026-05-15 Item 17) and for the broader [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Phase 7 follow-ups" #3 + #7 (extract characterization SOPs + dose-grounding pass).
+
+**Proposed in:** 2026-05-14 sweep Experiment 2 (`synthesis/done/2026-05-14-experiment-2-tier-2-colorimetric-cordycepin-assay-validation-diazo.md`).
+
+**Background on the gap:** SOP-6 proposes a Bratton-Marshall-style diazo-coupling colorimetric assay for cordycepin (3'-deoxyadenosine — a nucleoside analog with a primary aromatic amine accessible under hydrolysis conditions). The mechanism is plausible by analogy to nitrite-based colorimetric detection of aromatic amines (sulfanilamide, dapsone, etc.), but **no primary-literature precedent for cordycepin-specific diazo-coupling has been verified.** Until validated, the SOP carries the speculative caveat. UV 260 nm absorbance is the conservative fallback — cordycepin absorbs at λmax ~260 nm with ε ~14,500 M⁻¹·cm⁻¹, comparable to adenosine — but requires no derivatization and gives lower specificity (any 260-nm-absorbing contaminant interferes).
+
+**Protocol:**
+
+- **Reference standard:** Cordycepin reference standard (Sigma-Aldrich C3394 or equivalent, ≥98% purity, ~$50–80 for 10 mg). Prepare calibration series at 1, 5, 10, 25, 50, 100 µg/mL in 10% methanol/water (mirrors expected extract matrix).
+- **Arm A — Diazo-coupling colorimetric:** Per SOP-6 draft — acid hydrolysis (1 N HCl, 60 °C, 30 min) to expose the primary amine, neutralize, then react with sodium nitrite + N-(1-naphthyl)ethylenediamine (NEDA) per the standard Bratton-Marshall procedure. Read absorbance at 540–560 nm. Record: linearity (R² of standard curve), LoD (signal:noise ≥ 3), LoQ (signal:noise ≥ 10).
+- **Arm B — UV 260 nm fallback:** Direct absorbance at 260 nm in 10% methanol/water. Same calibration series. Same metrics.
+- **Cross-validation:** Send 3 calibration concentrations (low, mid, high) to a Tier 3 anchor (HPLC-UV, contract lab e.g. Eurofins or university analytical service, ~$50/sample × 3 = $150). Compare Tier 2 result (both arms) vs. Tier 3 ground truth.
+- **Specificity check:** Spike each calibration point with 100 µg/mL adenosine (the most likely cross-reactant — also a primary-amine-bearing nucleoside that diazo-couples). Quantify cross-reactivity: < 5% interference = clean; 5–20% = needs hydrolysis-condition optimization or column cleanup before diazo step; > 20% = method-fail for crude *Cordyceps* extracts (which contain orders-of-magnitude more adenosine than cordycepin by mass).
+
+**Success criterion (test → next phase):**
+
+- **Diazo-coupling GREEN:** linearity R² ≥ 0.98 across 1–100 µg/mL, LoD ≤ 2 µg/mL, adenosine cross-reactivity < 20%, Tier 2 vs. Tier 3 agreement within 20% on all three concentrations. → Promote SOP-6 from Speculative to Validated; update `medicinal-mushroom-extract-sops.md` to remove the caveat.
+- **Diazo-coupling YELLOW:** linearity + LoD pass but adenosine cross-reactivity is 20–50%. → Investigate hydrolysis-condition optimization or simple C18 SPE cleanup before assay. Iterate.
+- **Diazo-coupling RED** (linearity < 0.95 OR adenosine cross-reactivity > 50% OR Tier 2 vs. Tier 3 disagreement > 30%): use UV 260 nm fallback. Update SOP-6 to explicitly recommend UV 260 nm + downgrade the diazo path to "experimental, not for production quantification."
+
+**Estimated cost:** ~$200 (cordycepin reference standard $50–80; diazo + UV reagents $20; Tier 3 anchor HPLC-UV $150; misc consumables $20).
+
+**Estimated timeline:** 2 weeks (1 week reagent procurement + calibration; 1 week assay runs + Tier 3 turnaround).
+
+**Limitations:**
+
+1. The Bratton-Marshall-style diazo-coupling mechanism's applicability to cordycepin specifically is the speculative element this experiment tests. If literature surfaces a published precedent during execution, that may obviate the experimental validation step; check PubMed (English) + CNKI / J-STAGE per `Open Enzyme/CLAUDE.md` §"Global-multilingual research by default" before running.
+2. Adenosine cross-reactivity is the most likely failure mode. If detected, the workflow may require a brief solid-phase cleanup (C18 SPE cartridge separates polar adenosine from less-polar cordycepin) before diazo, adding ~$5/sample.
+3. Tier 3 HPLC-UV anchor cost is vendor-variable; $50/sample is a mid-range estimate. Verify quoting before committing.
+4. The validation is on pure cordycepin reference standard. Real-world extract performance (cordycepin in a *C. militaris* fermentate matrix) is a separate downstream question — typically the next experiment after a clean reference-standard validation.
+
+**Cross-references:** [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6 (the speculative-marked SOP this experiment validates); [`quantification-ladder.md`](./quantification-ladder.md) (Tier-2 framework); [`self-experiment-protocol.md`](./self-experiment-protocol.md) §12 (genotype-informed-supplement-quantification workflow); [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) (comp-023 engineering thread); [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" (cordycepin-bearing co-products); [§2.7](./validation-experiments.md) (sister Tier 2 assay — ADA-challenge stability test for engineered-koji + cultivated-*Cordyceps* co-formulation).
 
 ---
 
@@ -1365,6 +1439,53 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - Mouse strain consistency with §2.6 base must be maintained (no cross-cohort comparisons).
 
 **Cross-references:** [gout-pathophysiology.md §"Multi-track urate transporter coverage"](./gout-pathophysiology.md) (the coverage map this follow-up tests); §2.6 base (parent study); [§1.9 Ward 1995](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) (engineered-koji-uricase-strain dependency); [`koji-endgame-strain.md`](./koji-endgame-strain.md) (koji track context).
+
+### 2.7 Koji × *Cordyceps* Co-Formulation Stability Test — ADA-Challenge Assay (added 2026-05-15)
+
+**Status**: Proposed | **Cost**: $1,500–3,000 | **Weeks**: 3–4 | **Phase**: 2 (low-cost, low-friction)
+
+**Affected wiki**: [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates"; [cordycepin-cassette-burden-computational.md](./cordycepin-cassette-burden-computational.md) §"Impact on experimental priorities"; [computational-experiments.md](./computational-experiments.md) comp-025 (ADA × cns1 kinetic modeling); [koji-endgame-strain.md](./koji-endgame-strain.md) cordycepin arm.
+
+**What it tests:** Does whole-fermentate *C. militaris* extract (providing native pentostatin) protect engineered-koji-produced cordycepin from ADA-mediated deamination when the two are co-formulated? If yes, the cross-chassis pairing (engineered koji handles bulk cordycepin production at scale; cultivated *C. militaris* extract provides ADA-protecting pentostatin from native co-evolved chemistry) becomes a minimal-complexity delivery strategy that avoids the additional cassette OR ADA-knockout work that comp-024 / comp-025 would otherwise gate. If no, the co-formulation strategy fails and the platform routes through full-BGC engineering OR ADA knockout OR purified pentostatin co-supplementation.
+
+**Proposed in:** 2026-05-14 sweep Connection 4 (synthesis/done/2026-05-14-connection-4-cordycepins-ada-vulnerability-creates-a-two-organism.md).
+
+**Background on the gap:** comp-023 confirmed engineered cns1+cns2 cordycepin production in koji is metabolically feasible (GREEN at Jeennor 2023 564 mg/L/d). But cordycepin is rapidly deaminated by adenosine deaminase (ADA) to its inactive 3'-deoxyinosine form. Native *C. militaris* solves this by co-producing pentostatin (a clinical-grade ADA inhibitor) from the same BGC as cordycepin (Xia 2017, PMID 29056419). The minimal-complexity workaround for engineered koji: don't engineer pentostatin; pair the koji fermentate with a small co-formulated dose of cultivated *C. militaris* extract. This experiment tests whether the pairing actually delivers ADA protection or whether the formulation context (mixing solid-state koji + dried *Cordyceps* extract) compromises pentostatin's activity.
+
+**Protocol:**
+
+- **Test article preparation:**
+  - Arm A (negative control): engineered-koji cordycepin fermentate alone, no ADA inhibitor
+  - Arm B (positive control — native): whole-fermentate *C. militaris* alone (intrinsic cordycepin + pentostatin from native BGC)
+  - Arm C (cross-chassis pairing — the test): engineered-koji cordycepin fermentate + dried *C. militaris* extract at pentostatin dose calibrated to match Arm B's pentostatin content
+  - Arm D (purified-pentostatin reference): engineered-koji cordycepin fermentate + commercial pentostatin (Nipent or research-grade)
+- **ADA challenge assay:**
+  - Spike each arm with bovine intestinal ADA (or human recombinant ADA) at a defined enzyme concentration
+  - Sample at t = 0, 15 min, 30 min, 60 min, 120 min, 240 min
+  - Quantify cordycepin vs. 3'-deoxyinosine (the ADA product) by LC-MS at each timepoint
+- **Readout:** cordycepin half-life under ADA challenge for each arm; comparison vs. Arm A baseline (no ADA inhibition)
+- **Stability check:** Arm C cordycepin + pentostatin content at 0, 7, 14 days post-co-formulation (room temperature + 4°C storage) to verify the co-formulation doesn't degrade pentostatin
+- **Success criterion (test → next phase):** Arm C cordycepin half-life ≥ 50% of Arm B's half-life. (Arm B is the native co-evolved benchmark; co-formulation reaching half of native protection is meaningful evidence the strategy works.)
+
+**Estimated cost:** $1,500–3,000
+- *C. militaris* cultivation (~2 weeks home or community-biolab) + dried extract preparation: ~$200–400
+- Engineered-koji cordycepin fermentate (or comp-023-feasibility-proxy via Jeennor 2023 reference batch): ~$500 if outsourced; gated on engineered-koji-cordycepin strain availability
+- LC-MS quantification ($25–50/sample × 4 arms × 6 timepoints × 3 replicates = 72 samples × $35 ≈ $2,500)
+- Bovine ADA reagent: ~$100
+
+**Estimated timeline:** 3–4 weeks (2 weeks *Cordyceps* cultivation + 1 week assay run + 1 week LC-MS turnaround)
+
+**Success criteria (overall):**
+- **Arm C cordycepin half-life ≥ 50% of Arm B (native co-evolved):** the cross-chassis pairing works as a minimal-complexity ADA-protection route. Update [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) to promote the pairing from "synergy candidate" to "validated route"; update [`koji-endgame-strain.md`](./koji-endgame-strain.md) cordycepin-arm framing to note this avoids pentostatin co-engineering complexity.
+- **Arm C half-life < 50% of Arm B:** the co-formulation strategy fails. Route through pentostatin co-engineering (additional cassette in koji) OR ADA knockout (host engineering) OR purified pentostatin co-supplementation. Comp-024 / comp-025 outcomes determine which.
+
+**Limitations:**
+
+1. In vitro ADA challenge does not capture gut-lumen-realistic conditions (mixed flora, gut-wall ADA distribution, pH variation). Use the in vitro result as a go/no-go for whether the cross-chassis pairing is mechanistically possible, not as a guarantee of in vivo performance.
+2. Pentostatin dose-matching across Arm B (native) and Arm C (co-formulated) requires accurate quantification of pentostatin in the dried *C. militaris* extract. Use an HPLC-UV anchor measurement per [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) or send to a Tier 3 vendor for absolute quantification before the assay.
+3. Engineered-koji cordycepin fermentate availability is gated on the cns1+cns2 cassette being expressed in koji. Until that happens, this experiment uses Jeennor 2023's *C. militaris* fermentate as a stand-in cordycepin source (with the native pentostatin removed via chromatographic purification before re-spiking).
+
+**Cross-references:** [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" (originating section); [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) §"Impact on experimental priorities" (cordycepin engineering-feasibility prior); [comp-025 ADA × cns1 substrate competition](./computational-experiments.md) (computational gate that informs whether this experiment is needed); §2.6 (4-arm whole-fermentate vs. purified comparison — sister experiment); [Xia 2017 PMID 29056419](https://pubmed.ncbi.nlm.nih.gov/29056419/) (native pentostatin co-production primary source).
 
 ---
 

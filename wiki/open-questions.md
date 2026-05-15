@@ -236,11 +236,89 @@ See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [sy
 
 - **ChEMBL cross-check sweep on remaining stack compounds** (BHB, KPV, ursolic acid, taurine, sulforaphane, berberine, resveratrol, curcumin, ergothioneine, ferulic acid, kojic acid): 2-5 more mechanistic reframings are expected when primary curated bioactivities are compared to the current wiki mechanism claims. See [synthesis.md 2026-04-23 Connection 4](./synthesis.md).
 
+### Chaperone framework α-coefficient generalization — two-fold-class calibration vs. arbitrary novel-fold secreted disulfide-rich payloads *(added 2026-05-15)*
+
+- **Does the [chaperone-orthogonal-stacking.md](./chaperone-orthogonal-stacking.md) framework's α-coefficient calibration generalize beyond the two fold classes covered by the §3.5.4 calibration set (lactoferrin transferrin-lobe + DAF SCR1-4 CCP/SCR)?** The framework derives α coefficients from non-koji in vitro folding kinetics and structural-rigidity arguments (Notari 2023; Schmidt 2010); §1.9 + §1.25 will validate the two specific fold classes empirically, but a successful calibration does NOT generalize the framework to future secreted disulfide-rich payloads with different fold architectures — e.g., C1-INH serpin (the parallel CP0 candidate flagged in comp-018 Phase 2), recombinant antibody-derived constructs, or other novel-fold secreted enzymes. Per Pass 3 of the 2026-05-15 sweep: cytosolic-payload novel folds (complestatin NRPS modules, cytosolic biosynthesis pathways) are NOT affected — the α framework only covers ER-pathway PDI-load competition, so cytosolic payloads sidestep the question entirely.
+- **Two resolution paths:**
+  1. **Calibration-set breadth expansion** — add a third / fourth fold class to the §3.5.4 calibration set (cost: ~$3–5K + 8 weeks wet-lab per additional fold class). Linear scaling; each new fold class validates its α independently.
+  2. **Direct PDI-residence-time assay in *A. oryzae* microsomes** — multi-year tool-build that would generalize across fold classes simultaneously. No published *A. oryzae*-specific PDI kcat data exists for any fold class as of 2026-05-06. Tool-build cost not yet scoped.
+- **Fires when:** OE wants to commit a new secreted disulfide-rich payload to a cassette design (e.g., C1-INH for the parallel CP0 track, an antibody-derived construct, or any future ER-routed cassette) and the framework's α prediction is the load-bearing decision input. Cytosolic payloads (cordycepin / carnS / panD / native ergothioneine biosynthesis) bypass this question entirely per the [koji-endgame-strain.md §3 third-cassette slot design rule](./koji-endgame-strain.md). Until then, dormant.
+- **Cross-references:** [`chaperone-orthogonal-stacking.md` §8 item 6 "Generalization caveat (added 2026-05-15)"](./chaperone-orthogonal-stacking.md) (canonical home of the caveat); [`chaperone-orthogonal-stacking.md` §3.5.4](./chaperone-orthogonal-stacking.md) (the two-fold-class calibration set definition); [`validation-experiments.md` §1.9](./validation-experiments.md) + §1.25 (the calibration arms themselves); [H05 — DAF SCR1-4 CP0 thesis](./hypotheses/H05-daf-scr14-cp0-thesis.md) (uses the framework as load-bearing).
+
+### Quantification methodology — Tier 2 inter-operator reproducibility *(added 2026-05-15)*
+
+- **Can the [quantification-ladder.md](./quantification-ladder.md) Tier 2 assays stay within their pre-registered tracking tolerance (±20% per the ladder's calibrate-once-at-Tier-3 / track-batches-cheap operational pattern) when run by multiple independent home / community-biolab operators after a shared Tier 3 calibration?** The framework is specified; no multi-operator reproducibility data exists. Per Pass 3 review of the 2026-05-14 Open Question 1 sweep item — which mis-cited H06 Dimension 2's ±15% threshold (Dimension 2 specifies that for Tier 3 HPLC/MS, not Tier 2) — the narrower question is the right framing. Applies to:
+  - **Ergothioneine** ([SOP-6](./medicinal-mushroom-extract-sops.md) Ellman's reagent / DTNB) — well-anchored chemistry but multi-operator data lacking
+  - **GLPP** ([SOP-6](./medicinal-mushroom-extract-sops.md) phenol-sulfuric) — same
+  - **Cordycepin** ([SOP-6](./medicinal-mushroom-extract-sops.md) diazo-coupling, Speculative) — the *method validity* question is the upstream gate; tracked at [`validation-experiments.md` §1.28](./validation-experiments.md). The *inter-operator reproducibility* question fires only after §1.28 returns GREEN.
+  - **Uricase activity** ([enzyme-quantification-protocol.md](./enzyme-quantification-protocol.md), 293 nm UV absorbance) — same multi-operator gap
+- **Fires when:** Tier 2 assays start being used in practice by ≥3 independent operators (home + community-biolab adopters); structural prerequisite for the [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) batch-CV claim (CV < 30% cross-user requires both producer + assay-runner reproducibility). Until then, dormant. Resolution work: design a small multi-operator round-robin (single calibrated reference batch sent to N=3–5 operators, each runs the Tier 2 assay independently, compare results) — estimated $500–1,000 + 4–6 weeks once operator network exists.
+- **Cross-references:** [H06](./hypotheses/H06-medicinal-mushroom-complement-track.md), [H09](./hypotheses/H09-community-fermentation-reliability.md), [`quantification-ladder.md`](./quantification-ladder.md), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6, [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md), [`self-experiment-protocol.md`](./self-experiment-protocol.md) §12 (the workflow that depends on this).
+
 ---
 
 ## Platform / Strategic
 
 Questions about the koji-first vs. yeast-first choice, community fermentation reliability, strain stability, regulatory positioning, and the overall platform thesis.
+
+### Layered intervention — combining a compounded repurposed-drug pill with the engineered-koji daily food *(added 2026-05-15, **dormant until both upstream products exist**)*
+
+The compounding-pharmacy track and the engineered-koji daily-food track target **non-overlapping chokepoints** and use **non-overlapping consumption modes**. A combined intervention would deliver:
+
+- **Compounded pill** (Rx, daily) — hits CP6a (5-LOX, via zileuton) or CP6b (GSDMD, via disulfiram) — see [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates"
+- **Engineered-koji daily food** (shio-koji / amazake / miso) — hits CP0 (luminal uricase) and upstream priming (CP1–CP5) — see [`koji-endgame-strain.md`](./koji-endgame-strain.md)
+
+The combination is mechanistically clean (different mechanisms, different routes), but **no co-administration protocol or patient-experience model exists**:
+
+- What's the timing relationship between the pill and the food? Does enzyme activity in the gut lumen affect drug absorption? Do gut-microbiota changes from daily fermented food alter drug PK?
+- What does the daily patient experience look like (pill + condiment + food prep + monitoring)? Adherence-friendly or burdensome?
+- What endpoints + biomarkers would actually let us measure layered effect vs. either track alone?
+- Off-target interactions: any reasonable drug-food interaction concerns at therapeutic doses?
+
+**Fires when:** (a) the compounding-pharmacy track's first prescription pathway opens for a discovery-engine candidate (disulfiram is the lead — see [`comp-027` brief](./computational-experiments.md) on disulfiram dose modeling) AND (b) the engineered-koji strain becomes available (Phase 0 currently — neither the §1.9 dual-cassette koji nor a community-college-lab proxy exists yet). Until both upstream gates clear, the co-administration protocol is **dormant** — drafting it now would be path-dependent speculation about two products that don't exist.
+
+**Cross-references:** [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates" (originating mention), [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`comp-027`](./computational-experiments.md) (disulfiram dose modeling), `synthesis/done/2026-05-13-open-question-1-can-the-compounding-pharmacy-tracks-repurposed-drug.md` (originating sweep item).
+
+### Riskiest assumption #2 — can engineered koji be reliably home- and community-fermented at therapeutic doses? *(added 2026-05-15, **the platform's #2 load-bearing scientific bet — production/delivery side**)*
+
+**Falsification card committed:** [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) (stub, 2026-05-15). Full killshot menu, pre-committed thresholds, and assumption stack queued as Phase 2 on the H09 card.
+
+Sister risk to [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (mechanism side). The platform thesis has two equally load-bearing risks: even if the gut-lumen mechanism works (H08), the platform's distinctive accessibility thesis ("grow it at home like sourdough") rests on this assumption (H09). If H09 dies, the platform collapses to "centrally-manufactured oral enzyme with a non-traditional supply chain" — defensible but no longer open-source-accessible.
+
+The corpus offers strong mitigation sketches (chromosomal integration, first-batch QC, never-backslop-past-N rule) and honest framing (`cross-validation.md` Claim 5 calls "Easy as Sourdough" the most audacious and least-validated platform claim), but **zero direct empirical evidence for an engineered multi-cassette *A. oryzae* strain in the community-fermentation context.** Ward 1995 §1.9 dual-cassette feasibility test is the first wet-lab gate — but only validates lab expression, not community-fermentation reliability.
+
+**Provisional alive/killed thresholds:** CV < 30% cross-user enzyme activity, strain retention ≥ 95% at generation 5, contamination < 5% per batch under hygiene protocol. Killed if a properly-powered multi-user pilot materially misses any of these.
+
+**Phase 2 follow-ups (queued on H09 card, see full table there):**
+- P2-1 Lit scan: industrial koji batch-CV baseline (Japanese miso/sake reproducibility data)
+- P2-2 Multi-user community-fermentation pilot trial (N=5–10, central QC at community biolab)
+- P2-3 Passaging-based strain stability protocol (50 generations, qPCR/activity readout)
+- P2-4 Drying activity-retention comparison (lyophilization vs. oven-dry vs. trehalose-lyoprotected)
+- P2-5 Contamination-spike test (wild-strain spike, 5-generation tracking)
+- P2-6 Smartphone-camera colorimetric uric-acid assay validation
+- P2-11 Regulatory framework scoping pass (engineered-spore distribution path) — user-action-required (external consultant engagement)
+
+**Cross-references:** [cross-validation.md §Claim 5](./cross-validation.md) (3/10 → 6/10 reframe), [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](./open-source-platform.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-endgame-strain.md](./koji-endgame-strain.md), [self-experiment-protocol.md](./self-experiment-protocol.md) (Brian's n=1 home-fermentation data point), [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) (note: at `operations/`, not `wiki/`), `synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md` (originating sweep item).
+
+### Riskiest assumption #1 — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? *(added 2026-05-15, **the platform's #1 load-bearing scientific bet — mechanism side**)*
+
+**Falsification card committed:** [H08 — Gut-Lumen Sink Platform Thesis](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (stub, 2026-05-15). The full killshot menu, pre-committed thresholds, and assumption stack are queued as Phase 2 on the H08 card.
+
+The platform's load-bearing belief is that the gut-lumen sink produces a clinically meaningful SUA reduction in a typical (non-CKD) gout cohort, in the −0.5 to −1.0 mg/dL band predicted by the [comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model. The biology is sound (ABCG2 secretes ~33% of daily UA elimination into the gut lumen; comp-019's flux model is internally consistent against Miyazaki 2025 measurements) but the clinical-translation link is unvalidated:
+
+- **ALLN-346 Phase 2a Study 201** showed signal in CKD patients; Study 202 (broader cohort) showed 0–5% reduction, no significance vs. placebo, and the program terminated with 19/200 enrolled.
+- **Zero** uricase trials (ALLN-346, PRX-115, rasburicase, pegloticase) have stratified by ABCG2 Q141K genotype — the Q141K × allopurinol response literature is rich, the Q141K × uricase response literature is empty.
+- The comp-019 flux model is prospective and unvalidated against any human cohort.
+
+**If the typical-gout effect is <0.5 mg/dL**, the platform collapses from "core mechanism" to "mild adjunct" — reshaping commercial framing, self-experiment framing, and the priority of peer tracks ([LBP](./engineered-lbp-chassis.md), [siRNA/URAT1](./sirna-urat1-modality.md), [medicinal-mushroom-complement](./medicinal-mushroom-complement-track.md)).
+
+**Phase 2 follow-ups (queued on H08 card):**
+- P2-1 — Lit scan for any post-ALLN-346 oral or gut-targeted uricase Phase 2 typical-gout readout (Opus subagent).
+- P2-2 — Re-analysis attempt of ALLN-346 Study 202 cohort-level genotype data accessibility (FOIA / sponsor request / supplementary data grep). Highest information-per-dollar killshot if data obtainable.
+- P2-3 through P2-6 — Populate assumption stack, killshot menu, pre-committed thresholds, failure-mode coverage map per H01 template.
+- P2-7 — Integrate n=1 self-experiment design with the FEUA protocol on [self-experiment-protocol.md](./self-experiment-protocol.md).
+
+**Cross-references:** [cross-validation.md §Claim 1](./cross-validation.md) (feasibility 6.5/10), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [uricase-abcg2-genotype-stratification-computational.md (comp-019)](./uricase-abcg2-genotype-stratification-computational.md), `synthesis/done/2026-05-09-riskiest-assumption-1*.md` (originating sweep item).
 
 ### Genotype stratification — Q141K and the gut-lumen-sink mechanism's responder population *(added 2026-05-08, **highest-priority open question for the platform's primary demographic**)*
 
@@ -280,6 +358,22 @@ The [Engineered LBP Chassis](./engineered-lbp-chassis.md) page (committed 2026-0
 - **P2-6 — Comparative chassis matrix for gout indication.** *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* vs. engineered *E. coli* Nissle — payload tractability, niche fit, engineering complexity.
 
 Phase 3 (content-triggered, not calendar-triggered): platform-framing reflection — does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Reflection note queued in [`open-enzyme-vision.md`](./open-enzyme-vision.md).
+
+### Purine-Degrading Bacteria (PDB) — gut as independent urate disposal organ *(added 2026-05-15)*
+
+Full page: [purine-degrading-bacteria.md](./purine-degrading-bacteria.md). The 2,8-dioxopurine pathway (Liu et al. 2023 Cell + 2025 Nat Microbiol) establishes ~15–25% of gut bacteria as a functionally distinct urate disposal system that evolved to compensate for hominid uricase loss. Engineered EcN with the full gene cluster (CBT2.0) achieved −63% plasma UA in hyperuricemic mice. Five priority follow-up threads:
+
+**PDB-Q1 — Quantitative SUA reduction from PDB restoration in humans with intact renal function.** The FARMM study (n=30) had no statistical power to detect serum urate changes, and subjects had normal kidneys. What is the mg/dL effect in a typical gout patient? This number gates whether PDB restoration is "adjunctive to pharmacotherapy" or "potentially standalone." Required before designing any PDB clinical trial. No lit scan will resolve this — it requires a prospective study. Frame as a priority gap, not a computation. *(Human RCT or n-of-1 cohort; no current data)*
+
+**PDB-Q2 — Does PDB-derived butyrate at physiological gut concentrations activate ABCG2 via PPARγ?** The butyrate → PPARγ → ABCG2 mechanism is established at pharmacological doses and for dietary fiber effects (DASH RCT, Li 2023 PMID 36948133). Whether native PDB flux generates enough luminal butyrate to meaningfully activate this axis is unresolved. This is a tractable Caco-2 experiment: measure ABCG2 expression in enterocyte monolayers at the butyrate concentrations achievable via gut PDB fermentation vs. pharmacological sodium butyrate doses. **Estimated cost: $2,000–5,000 if a wet-lab partner has Caco-2 capability.** *(In Vitro; immediately testable)*
+
+**PDB-Q3 — Selenium status and gut PDB function in humans.** DOPDH (the key PDB enzyme) requires selenium and runs 27x faster with selenium than the sulfur-dependent variant. Liu et al. 2025 cites correlations between lower urinary molybdenum and higher serum urate / gout incidence; the selenium arm of this is implied but uncharacterized. **Immediate personal action: add serum selenium to next blood panel.** If Brian's selenium is low-normal, supplementation (55–200 µg/day, safe range, $0.10/day) could activate latent PDB capacity without any bacterial intervention. A lit scan for "serum selenium × serum urate × gut metagenomics" in existing biobank cohorts could be run as a subagent task in a few minutes. *(Mechanistic Extrapolation; trivial personal test)*
+
+**PDB-Q4 — Is yanthine (2,8-dioxopurine) measurable on any commercial panel?** Yanthine is elevated in gout patients vs. healthy controls (Life Metabolism 2025, n=68) — it is the first PDB pathway intermediate, and elevated serum yanthine = PDB insufficiency. If there is a commercial metabolomics panel or specialty lab offering yanthine measurement, adding it to Brian's next self-experiment draw would answer whether *his* gut PDB are functionally depleted. This is a $200–400 metabolomics panel question, not a $10K research study. Lit scan to identify: does Metabolon Precision Metabolomics, Genova NutrEval, or similar measure yanthine / 2,8-dioxopurine? *(Human biomarker; immediate triage task)*
+
+**PDB-Q5 — Dual-chassis EcN design: add the PDB gene cluster to the PULSE uricase system.** CBT2.0 demonstrated the full 8-gene PDB cluster is expressible in *E. coli* (Life Metabolism 2025). The PULSE system already uses EcN for gut-lumen uricase delivery. Combining them — EcN expressing both uricase AND the 2,8-dioxopurine pathway — creates a dual-mechanism organism hitting urate degradation via two independent pathways while SCFA outputs compound the effect via ABCG2. The primary engineering barrier is DOPDH: a selenoprotein requiring SelD (selenophosphate synthase), which EcN carries natively. A Phase 1 lit scan on "DOPDH heterologous expression in E. coli" + review of CBT2.0's expression construct would establish whether the PULSE + PDB combination is a near-term or long-term engineering target. *(Mechanistic Extrapolation + Animal Model precedent; lit scan feasibility ~30 min subagent)*
+
+See [engineered-lbp-chassis.md](./engineered-lbp-chassis.md) (LBP chassis peer track), [gut-lumen-sink.md](./gut-lumen-sink.md) (PULSE/uricase context), [abcg2-modulators.md](./abcg2-modulators.md) (butyrate/PPARγ + *A. indistinctus*/hippuric acid axes).
 
 ### TCM × Modern Rigor — discovery-engine output (fourth peer-track exploration vector)
 

@@ -11,7 +11,7 @@ sources:
 
 # Open Enzyme Team
 
-The Open Enzyme project is currently a solo effort by Brian Abent. Three collaborator roles are actively being recruited — each would address a critical question the project needs answered. Their expertise maps directly to the biological, engineering, and translational challenges of enzyme-based therapeutics.
+The Open Enzyme project is currently a solo effort by Brian Abent. Three collaborator roles are actively being recruited — each would address a critical question the project needs answered. Their expertise maps directly to the biological, engineering, and translational challenges of the OE platform mission, **scoped at the platform level (chokepoint-first, chassis-second) rather than at the engineered-koji track specifically**. The In Vivo Validation, Pharma Translation, and Innate Immune Safety roles apply to any intervention OE surfaces — koji-engineered cassettes, chassis-pending interventions ([`chassis-pending-interventions.md`](./chassis-pending-interventions.md)), and discovery-engine outputs alike.
 
 ## Brian Abent — Platform & Engineering
 

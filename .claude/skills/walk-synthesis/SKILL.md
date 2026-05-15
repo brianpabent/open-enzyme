@@ -100,6 +100,14 @@ to spawn" / "no wiki work needed — already done" / "needs your decision betwee
 - Numbers in context: "0.388 (39% of theoretical max)" not bare "0.388".
 - Tables when comparing 3+ things; prose when explaining 1–2.
 
+**Chassis-pending check (added 2026-05-15).** For every item in the queue, ask one explicit question as part of the briefing: ***"Does this finding hit a chokepoint we care about? If yes — does it have a chassis?"*** Three branches:
+
+1. **Hits chokepoint + fits a current chassis (koji, compounding pharmacy, S. boulardii, etc.)** → action normally; the proposed action will name the relevant chassis page.
+2. **Hits chokepoint + chassis is open** → propose adding to [`wiki/chassis-pending-interventions.md`](../../../wiki/chassis-pending-interventions.md) as the action. The intervention is real; the chassis question is the next question, not the filter that kills the first one. Do NOT deprioritize the item just because koji isn't the right chassis.
+3. **Doesn't hit a documented chokepoint** → action as normal (might be a methodology improvement, a tracking artifact, a contradiction-resolution, etc., where the chassis question doesn't apply).
+
+This is the operational expression of the discipline named in [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../../../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md). Chassis is downstream of chokepoint; the closure question gates the chokepoint-hit check before the chassis-fit check, which prevents quiet chassis-filter narrowing at the recommendation step.
+
 ### Step B — Wait for go-ahead
 
 Do NOT action the item until Brian says "yes" / "go" / "engage" / "do it" / "proceed" / similar. If he asks a clarifying question, answer it and re-ask. If he picks a different option than your recommendation, action his choice without resistance.
@@ -173,7 +181,35 @@ Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
    - **Needs disposition now** — could change the next item's framing or downstream work. The user picks defer / action / ignore.
    - **Carries over to Item X** — explicitly anchored to a specific future walkthrough item. The future-item briefing will absorb it. Without this anchoring, cross-item loose ends silently get forgotten.
 
-3. **Wait for user disposition** before briefing the next item. The user explicitly approves moving on (typically by greenlighting the next item's briefing, OR by saying "go" / "next" / "Item N+1"). Auto-advance is forbidden.
+3. **Wait for user disposition** before briefing the next item — *conditionally*. See "Auto-advance decision rule" below.
+
+#### Auto-advance decision rule (clarified 2026-05-15)
+
+Brian's flow (in his own words):
+
+1. Walk starts. You show me an item, and you stop.
+2. I tell you what we want to do with it, or we have some back and forth on questions.
+3. Sometimes we run an experiment, whatever.
+4. **If we're just doing the simple thing that's recommended, or if we're doing something discrete like a one-off, then auto-advance.**
+5. **If we're having a back and forth about it, if I'm asking questions, do not auto-advance.**
+6. **Auto-advance when something is clearly done, with no loose ends.**
+7. When you go to the next one, you'll display it, and you'll stop. You don't action it.
+
+**Translation into the walkthrough mechanics:**
+
+- **The wait-for-go gate is about ACTION, not about advancing.** Always wait for explicit "go" / "yes" / "do it" / "ship it" / "proceed" before editing files. Clarifying questions don't count as go-ahead — answer the question and wait. A "what if we did X instead" reply isn't go on either the original plan or X; it's a request for re-briefing.
+
+- **After a clean close (no friction, recommended-simple action, no loose ends), auto-advance** is the default — post the summary, then immediately brief the next item in the same response. Then stop (no action on the next item).
+
+- **After a friction-y close (back-and-forth, redirects, clarifying questions, loose ends needing disposition), wait for explicit "next" / "go" / "Item N+1"** before briefing the next item. Friction signals Brian wants to think between items.
+
+- **The next-item briefing is itself a stop point.** Auto-advancing means you display the next item and stop. It does NOT mean you action the next item.
+
+**Friction examples (do NOT auto-advance):** Brian asked a clarifying question mid-item; Brian redirected the recommendation; Brian flagged a process correction; loose ends are tracked as "carries over" or "needs disposition now"; the item required multiple back-and-forths to converge on the action.
+
+**Clean-close examples (DO auto-advance):** "go" / "ship it" / "yes" lands on the first briefing; the recommended action gets executed exactly as proposed; closure summary has "no loose ends."
+
+The old "Auto-advance is forbidden" rule (2026-05-08) was too broad — it conflated "don't action without go" (correct) with "don't display the next item without go" (over-strict). The corrected discipline keeps the action-gate strict and relaxes the display-gate based on whether the prior item closed cleanly.
 
 **Why this rule exists.** The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while open loose ends (brief-contamination caveat propagation, methodological discipline doc, comp-018 page disclosure, retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally, the user had to back the conversation up, and the unresolved loose ends became larger work than they would have been if disposed of at end of Item 10. The fix is upstream of moving to Item 11 — explicit summary + loose-ends inventory + user disposition before the next briefing fires.
 
@@ -275,6 +311,7 @@ Subagents have NO conversation context. The prompt must be self-contained and br
 6. **Memory cautions** if relevant (e.g., "Paperclip MCP `map` operator hallucinates — use `search` / `cat` / `grep` instead" per `memory/feedback_paperclip_map_unreliable.md`)
 7. **Global-multilingual default** for any literature-scan or research task. Per `Open Enzyme/CLAUDE.md` §"Global-multilingual research by default," explicitly include non-English sources in the briefing: ChiCTR, CNKI / WanFang (Chinese), J-STAGE / CiNii (Japanese), KISS / RISS (Korean), eLIBRARY.RU (Russian), TIB (German), SciELO (Spanish/Portuguese). Reading non-English sources is zero marginal cost; treating language as a "barrier" is path-dependent narrowing the project explicitly rejects.
 8. **Translation cross-check protocol** when the subagent will ingest non-English source material that produces load-bearing claims (evidence-tier judgments, dosing, mechanism mappings). Per `Open Enzyme/CLAUDE.md` §"Translation protocol," instruct the subagent to translate with two independent models (one Western-vendor, one Chinese-vendor for Chinese sources) and surface disagreements as inline annotations rather than silently picking one. Particularly important for: scientific hedging language, dosing units, classical-TCM terminology, statistical significance language. The cost is small (~$0.05/paper) relative to the value of translation precision for scientific claims.
+9. **Deep multi-metric evaluation discipline** (anchored to BioDesignBench Kim & Romero 2026 — see `wiki/bio-ai-tools.md` §BioDesignBench). For any comp-NNN authoring, hypothesis ranking, or candidate-evaluation subagent: explicitly require **(a) generating multiple candidates** (not single-shot), **(b) evaluating across ≥3 orthogonal metric categories** (not single-axis), **(c) head-to-head comparison + filtering before termination** (not first-candidate-wins). BioDesignBench's central empirical finding is that frontier LLM agents pick the right tools but invoke scoring/evaluation at only 14% of expert intensity and never discard candidates across 836 observations; forcing the three disciplines above recovers DeepSeek V3 by +9.3 points and GPT-5 by +15.9 points on the 76-task benchmark. The deficit is behavioral and **specifically remediable via the brief**. The N-of-M concordance pattern from `wiki/autonomous-screening-methodology.md` §5 is the canonical instance — require it in every comp-NNN brief.
 
 ### File-collision management
 
@@ -621,7 +658,9 @@ Fix: Re-anchor on the CTO-not-PhD framing rule (Section 2 Step A). Don't apologi
 
 ### End-of-item discipline anti-pattern (added 2026-05-08 from the third walkthrough-drift incident)
 
-14. **Don't treat "I committed the closure note" as "the item is done."** An item is done when (a) the action landed, (b) loose ends are dispositioned, AND (c) the user has explicitly approved moving on. Committing the closure note is necessary but not sufficient. Step F (Section 2) is the structural fix: end-of-item summary + loose-ends inventory + explicit user disposition before the next briefing fires. The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while four open loose ends (brief-contamination caveat propagation; methodological discipline doc; comp-018 page disclosure; retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally; Brian had to back the conversation up to Item 10; the unresolved loose ends turned into much larger work than they would have been if disposed of at end of Item 10. **Loose ends compound.** The fix is upstream of "should I move to Item N+1?" — explicit summary + loose-ends inventory before the question even fires. **Three categories** for each loose end (per Step F): acceptably deferred (already queued elsewhere); needs disposition now (user picks defer/action/ignore); carries over to Item X (explicitly anchored, will surface in that future briefing). Cross-item state is impossible to forget when it's surfaced as inherited loose ends in the future item's briefing.
+14. **Don't treat "I committed the closure note" as "the item is done."** An item is done when (a) the action landed AND (b) loose ends are dispositioned. Committing the closure note is necessary but not sufficient. Step F (Section 2) is the structural fix: end-of-item summary + loose-ends inventory. The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while four open loose ends (brief-contamination caveat propagation; methodological discipline doc; comp-018 page disclosure; retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally; Brian had to back the conversation up to Item 10; the unresolved loose ends turned into much larger work than they would have been if disposed of at end of Item 10. **Loose ends compound.** The fix is upstream of "should I move to Item N+1?" — explicit summary + loose-ends inventory before the question even fires. **Three categories** for each loose end (per Step F): acceptably deferred (already queued elsewhere); needs disposition now (user picks defer/action/ignore); carries over to Item X (explicitly anchored, will surface in that future briefing). Cross-item state is impossible to forget when it's surfaced as inherited loose ends in the future item's briefing. **When loose ends exist that need disposition or carry over, do NOT auto-advance** — wait for Brian's explicit "next" so the loose ends can be picked up or explicitly deferred. Clean closes (no loose ends, recommended action shipped as proposed) can auto-advance per the Auto-advance decision rule in Section 2 Step F.
+
+16. **Don't action without explicit go.** The wait-for-go discipline in Section 2 Step B is about ACTION, not advancing. Phrases like "Going to proceed unless you redirect" or "Proceeding with X" before Brian has said go are opt-out actioning — wrong even when the content is right. The clarification (2026-05-15): clarifying questions, expressions of interest ("sounds like a really good idea"), and process discussion are NOT go-ahead. Only explicit "go" / "yes" / "do it" / "ship it" / "proceed" / similar count. If Brian asks "are we drafting or implementing?", that's a clarifying question — answer it, restate the proposal scope, and re-ask. Don't read "I want to implement" as "implement now."
 
 15. **Don't try to edit `wiki/synthesis.md` — it doesn't exist anymore.** Post-2026-05-08 migration, the action queue lives at `synthesis/queue/` (per-item files) and history at `synthesis/history/`. Old habits / muscle memory of "open synthesis.md, append closure to the actioned item, prune at end of walkthrough" are gone. New flow: `ls synthesis/queue/` to inventory; per-item file gets a closure annotation appended (Step D); `git mv synthesis/queue/<file>.md synthesis/done/` to close (Step E); inbox-zero is automatic (Section 7.1). Strategic Reflections live at `synthesis/strategic-reflections/`. Sweep history lives at `synthesis/history/<sweep-date>-<sha>.md`. Daemon emits new items via `scripts/synthesis-emit-files.py`. If you find yourself writing to `wiki/synthesis.md` STOP — the file is deleted; the changes won't persist where you think they will. Migration spec at [`operations/specs/2026-05-08-synthesis-filesystem-migration.md`](../../../operations/specs/2026-05-08-synthesis-filesystem-migration.md).
 

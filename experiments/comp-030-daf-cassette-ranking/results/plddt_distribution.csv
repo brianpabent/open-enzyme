@@ -1,0 +1,4 @@
+group,n,mean_pLDDT,std_pLDDT,min_pLDDT,max_pLDDT,pct_above_75,pct_above_80
+all,720,88.79,0.47,87.64,89.85,100.0,100.0
+direct_secretion,216,88.82,0.48,87.64,89.85,100.0,100.0
+glaA_fusion,504,88.78,0.47,87.64,89.75,100.0,100.0
