@@ -242,6 +242,24 @@ See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [sy
 
 Questions about the koji-first vs. yeast-first choice, community fermentation reliability, strain stability, regulatory positioning, and the overall platform thesis.
 
+### Layered intervention — combining a compounded repurposed-drug pill with the engineered-koji daily food *(added 2026-05-15, **dormant until both upstream products exist**)*
+
+The compounding-pharmacy track and the engineered-koji daily-food track target **non-overlapping chokepoints** and use **non-overlapping consumption modes**. A combined intervention would deliver:
+
+- **Compounded pill** (Rx, daily) — hits CP6a (5-LOX, via zileuton) or CP6b (GSDMD, via disulfiram) — see [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates"
+- **Engineered-koji daily food** (shio-koji / amazake / miso) — hits CP0 (luminal uricase) and upstream priming (CP1–CP5) — see [`koji-endgame-strain.md`](./koji-endgame-strain.md)
+
+The combination is mechanistically clean (different mechanisms, different routes), but **no co-administration protocol or patient-experience model exists**:
+
+- What's the timing relationship between the pill and the food? Does enzyme activity in the gut lumen affect drug absorption? Do gut-microbiota changes from daily fermented food alter drug PK?
+- What does the daily patient experience look like (pill + condiment + food prep + monitoring)? Adherence-friendly or burdensome?
+- What endpoints + biomarkers would actually let us measure layered effect vs. either track alone?
+- Off-target interactions: any reasonable drug-food interaction concerns at therapeutic doses?
+
+**Fires when:** (a) the compounding-pharmacy track's first prescription pathway opens for a discovery-engine candidate (disulfiram is the lead — see [`comp-027` brief](./computational-experiments.md) on disulfiram dose modeling) AND (b) the engineered-koji strain becomes available (Phase 0 currently — neither the §1.9 dual-cassette koji nor a community-college-lab proxy exists yet). Until both upstream gates clear, the co-administration protocol is **dormant** — drafting it now would be path-dependent speculation about two products that don't exist.
+
+**Cross-references:** [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates" (originating mention), [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`comp-027`](./computational-experiments.md) (disulfiram dose modeling), `synthesis/done/2026-05-13-open-question-1-can-the-compounding-pharmacy-tracks-repurposed-drug.md` (originating sweep item).
+
 ### Riskiest assumption — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? *(added 2026-05-15, **the platform's #1 load-bearing scientific bet**)*
 
 **Falsification card committed:** [H08 — Gut-Lumen Sink Platform Thesis](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (stub, 2026-05-15). The full killshot menu, pre-committed thresholds, and assumption stack are queued as Phase 2 on the H08 card.
