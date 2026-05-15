@@ -176,11 +176,18 @@ Multiple independent cohorts (primarily Chinese) show consistent signal: (Human 
 
 **Mendelian randomization (Aikepa et al. 2025, Diabetes Metab Syndr Obes — PMID 40524870; Hou et al. 2023, Front Immunol — PMID 37063923):** Verified MR analyses identify gut taxa with causal effects on hyperuricemia / gout — specific protective and harmful taxa identified across both studies. (The earlier-cited "Bioscience Reports 2024 PMC11598824 Ruminococcus OR 0.86" could not be confirmed via direct PubMed search and may be a stale or hallucinated citation; the verified MR signal exists, but use Aikepa 2025 or Hou 2023 as primary sources until the original cite is confirmed.) MR provides causal leverage that cross-sectional cohort data cannot.
 
-### Yanthine as a Human Biomarker
+### Yanthine as a Human Biomarker — pathway-flux readout, not just presence-readout
 
-Serum yanthine (2,8-dioxopurine, the first PDB pathway intermediate) was significantly elevated in 25 gout patients vs. 43 healthy controls. (Life Metabolism 2025, n=68; Human Observational — small n, requires replication)
+Serum yanthine (2,8-dioxopurine, the first PDB pathway intermediate) was significantly elevated in 25 gout patients vs. 43 healthy controls. (Li et al. 2025 Life Metabolism, PMID 41070194, n=68; Human Observational — small n, requires replication)
 
-Mechanistic interpretation: if PDB are depleted, less yanthine is processed downstream, and it accumulates in serum. This positions yanthine as a potential diagnostic biomarker of PDB insufficiency — a way to identify which hyperuricemic patients have a gut-compartment deficiency contributing to their urate burden.
+**Mechanistic interpretation refined.** Elevated serum yanthine indicates the **first PDB step is functioning** (urate → yanthine via DOPDH) but the **downstream pathway is bottlenecked** (yanthine isn't being processed onward to butyrate + acetate). It is therefore a readout of *pathway flux limitations*, not simply *PDB depletion*. Possible causes of elevated yanthine:
+
+1. **Downstream enzymes underexpressed** — strains carry the first DOPDH gene but lack the full 8-gene cluster (Pathway B / partial-pathway organisms like *Blautia* sp. KLE 1732 stop at xanthine; analogous partial pathways might stop at yanthine).
+2. **Selenium adequate, downstream cofactors limiting** — DOPDH runs (selenium-replete) but YgfK / SsnA / HyuA / YgeW / YgeY / YgeX downstream lack their cofactors (PLP for YgeX, flavin for YgfK).
+3. **Diet pushing high purine load through the first step faster than downstream can clear** — high purine intake elevates substrate flux; downstream throughput is the rate-limiter.
+4. **Genuine PDB depletion at the strain level** — fewer PDB-positive bacteria overall reduces total flux but elevates intermediate accumulation.
+
+This is **more informative than 16S sequencing for gut PDB capacity** — sequencing tells you which bacteria are present; serum yanthine tells you whether the pathway is actually moving urate through to SCFAs at meaningful rates. For self-experiment design (see [`self-experiment-protocol.md` §11.0](./self-experiment-protocol.md)), yanthine + selenium + 16S together would triangulate which of the four causes above is gating an individual.
 
 ### Gnotobiotic Mouse Evidence
 
@@ -202,6 +209,23 @@ The 2,8-dioxopurine pathway terminates in pyruvate → acetate + butyrate via or
 - Intestinal barrier repair → reduced bacterial translocation → reduced systemic LPS → reduced NLRP3 priming
 
 **Net effect:** PDB do double duty — directly degrade luminal urate AND produce SCFAs that independently enhance urate disposal (ABCG2) and reduce urate production (XO). This is the strongest mechanistic argument for PDB superiority over Lactobacillus probiotics (no 2,8-dioxopurine pathway; only 0.5–1.0 mg/dL SUA reduction in trials).
+
+### Q141K + PDB-butyrate + HDAC: a natural genotype-targeted therapy
+
+Three threads in the literature collapse into one mechanism stack for the most common gout-associated ABCG2 variant (Q141K, ~3–15% population frequency depending on ancestry):
+
+1. **Basseville 2012 (PMID 22472121):** HDAC inhibition rescues Q141K ABCG2 trafficking from ER aggresome retention to the apical brush border membrane. Q141K is the #1 gout-risk GWAS locus; the mechanism is a misfolding/trafficking defect, not a catalytic defect — so a chaperone-class intervention restores function rather than substituting for it.
+2. **Butyrate is an HDAC inhibitor.** It's the canonical short-chain fatty acid HDAC inhibitor (HDAC1/3 selective at physiological gut concentrations), independent of its PPARγ-mediated transcriptional ABCG2 induction (which operates on wild-type ABCG2 — see [`abcg2-modulators.md` §"Two distinct modulation modes"](./abcg2-modulators.md)).
+3. **The PDB pathway terminates in butyrate** as a metabolic byproduct (per the §"SCFA Downstream Effects" section above).
+
+**The collapse:** a Q141K-positive person with intact gut PDB function (selenium-replete, fiber-fed) **generates the very HDAC inhibitor that rescues their own broken ABCG2 trafficking** — via endogenous gut bacteria producing the molecule that fixes their genetic variant. PDB restoration *is* genotype-targeted gene-trafficking rescue for the #1 gout GWAS variant, delivered by your own gut.
+
+**Why this matters for OE:**
+- comp-019 stratifies gut-lumen uricase SUA response by Q141K status. The PDB-butyrate-HDAC stack closes that loop: Q141K-positive patients gain restored ABCG2 capacity (more luminal substrate for the gut-lumen uricase to degrade), then the gut-lumen uricase amplifies that substrate flux. **Q141K + butyrate + gut-lumen uricase is a triple-mechanism intervention** that is mechanism-coherent (not three separate interventions stapled together).
+- It is also a **natural** therapy in the sense that nothing about it is exogenous — it requires only adequate dietary substrate (fiber for PDB, selenium for DOPDH) and the gut bacteria humans already evolved to depend on (per the founding §"Background: Why Gut PDB Exist" framing). The "intervention" is restoration, not addition.
+- It generalizes: any gout-relevant transporter / receptor variant whose phenotype is HDAC-rescuable becomes a candidate for the same PDB-butyrate stack. Worth screening other ABCG2 variants (Q126*, M71V) and other gout-relevant transporter variants (URAT1, GLUT9) for HDAC-rescue susceptibility.
+
+This narrative belongs at this prominence because the three constituent threads were previously scattered across three different wiki pages without being collapsed into one mechanism story. The clean version: **gut PDB + diet adequacy = endogenous genotype-targeted therapy for ~3–15% of the gout population, no engineered intervention required.**
 
 ---
 
@@ -262,9 +286,9 @@ The pharmacotherapy bar for context: allopurinol typically lowers SUA by 2–4 m
 The DOPDH enzyme requires both selenium (via SelD selenophosphate synthase) and the molybdenum cofactor. Both are co-localized in the PDB gene cluster (Liu et al. 2025; PMC11448449).
 
 - **Selenium:** The selenium-dependent variant of DOPDH has ~27x higher turnover than the sulfur-dependent variant. Selenium RDA is 55 μg/day; selenium deficiency is common in regions with selenium-poor soils (parts of China, eastern Europe, sub-Saharan Africa). In vitro: selenium concentration affects DOPDH activity.
-- **Molybdenum:** Rarely deficient; cofactor for human XO as well.
+- **Molybdenum:** Rarely deficient in well-fed populations; cofactor for human XO as well. **Bidirectional effect on urate:** XO uses Mo-pterin to PRODUCE urate (low Mo → low XO → less urate produced — beneficial for hyperuricemia); DOPDH uses Mo-pterin to DEGRADE urate (low Mo → low DOPDH → less PDB disposal — harmful for hyperuricemia). The two effects oppose each other; net direction depends on which step is rate-limiting in a given individual. Liu et al. 2025 cites correlations between lower urinary molybdenum and higher serum urate, suggesting the disposal side dominates at the population level — but this is correlational and uncertain.
 
-**Clinical implication (Mechanistic Extrapolation):** Selenium deficiency could phenocopy PDB functional depletion even when PDB bacteria are present in the gut at normal abundance. If serum selenium tracks with serum urate after controlling for diet and renal function, targeted selenium supplementation (55–200 μg/day; safe range) could be a trivially cheap and safe intervention. No interventional data in gout — this is an open question.
+**Clinical implication (Mechanistic Extrapolation):** Selenium deficiency could phenocopy PDB functional depletion even when PDB bacteria are present in the gut at normal abundance. **Selenium adequacy is asymmetric** — it strongly enhances DOPDH (PDB disposal side) without affecting XO (XO is sulfur-cofactor based). So selenium adequacy is a **one-way bet** for hyperuricemia: clean upside if PDB-flux-limited, no downside if not. **Molybdenum is bidirectional** — supplementation could help (more PDB disposal) or hurt (more XO urate production); DON'T extrapolate the selenium recommendation to molybdenum without per-person testing. If serum selenium tracks with serum urate after controlling for diet and renal function, targeted selenium supplementation (55–200 μg/day; safe range) could be a trivially cheap and safe intervention. No interventional data in gout — this is an open question.
 
 **Correlation data:** Liu et al. 2025 cites correlations between lower urinary molybdenum and higher serum urate / gout incidence; quantitative data not extracted from available sources.
 

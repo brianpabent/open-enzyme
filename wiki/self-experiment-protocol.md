@@ -232,6 +232,31 @@ Lower-cost subject-specific assays that supplement the standard four-biomarker p
 
 **Cross-references:** [purine-degrading-bacteria.md](./purine-degrading-bacteria.md) §"Open Questions" PDB-Q3 and PDB-Q4.
 
+### 11.0a Cranberry juice n=1 — direct hippuric-acid → ABCG2 axis test *(added 2026-05-15)*
+
+**When relevant:** Same draw context as §11.0 — any draw while hyperuricemia is active or gout risk is being managed. Particularly informative when run in the same window as a §11.0 selenium / yanthine draw (the two protocols test parallel mechanisms hitting the same downstream node, ABCG2).
+
+**Rationale:** *Alistipes indistinctus* produces hippuric acid via aromatic amino acid catabolism; hippuric acid enhances PPARγ binding to the ABCG2 promoter and promotes ABCG2 localization to the apical brush border via PDZK1 (Xu et al. 2024 Cell Host & Microbe, PMID 38412863). The standard dietary route is polyphenol-rich foods → gut catabolism → hippuric acid — slow, indirect, microbiome-dependent. **Cranberries bypass the bacterial step**: cranberries contain unusually high natural benzoic acid; benzoic acid is conjugated with glycine in the liver to produce hippuric acid directly. This is the established mechanism behind the cranberry-UTI lore (cranberry consumption → elevated urinary hippuric acid). For an n=1 test of whether the hippuric-acid → ABCG2 mechanism moves serum urate at dietary doses, cranberry juice is the cleanest probe — independent of needing to colonize *A. indistinctus*. See [`abcg2-modulators.md` Alistipes Tier 2 entry](./abcg2-modulators.md).
+
+**Protocol:**
+- 4 weeks unsweetened cranberry juice, ~8 oz/day with breakfast (or split across day if GI tolerance is an issue).
+- Cost: ~$20 for the protocol.
+- No other intervention changes during the 4 weeks (hold supplements stack constant; hold allopurinol dose constant).
+- Standard 4-biomarker panel (serum urate + hs-CRP + fasting insulin + ApoB) at week 0 baseline + week 4.
+- Optional add: urinary hippuric acid (specialty test, ~$40 at some reference labs) at week 0 + week 4 — confirms the cranberry → hippuric-acid mechanism is engaging in this individual.
+
+**Expected effects:**
+- **Serum urate down 0.2–0.5 mg/dL** if the hippuric-acid → ABCG2 axis is meaningful at dietary doses (Mechanistic Extrapolation; the Animal Model + Human Observational data in Xu et al. 2024 doesn't quantify the magnitude at dietary cranberry doses).
+- **Urinary hippuric acid up substantially** at week 4 vs. baseline — confirms the mechanism is engaging.
+- **No change in hs-CRP / insulin / ApoB** — cranberry-juice carb load is small (unsweetened); no expected metabolic-syndrome effects at this dose.
+
+**Why this is informative regardless of outcome:**
+- If serum urate moves AND urinary hippuric is up → mechanism replicates in this physiology, supports the broader chassis-pending PDB / *A. indistinctus* axis.
+- If serum urate doesn't move AND urinary hippuric is up → mechanism engages but doesn't translate to ABCG2 / SUA effect at dietary dose; the *A. indistinctus* / hippuric axis may need higher concentrations than dietary route delivers, or may not be rate-limiting in this patient.
+- If urinary hippuric doesn't move → cranberry isn't getting absorbed / conjugated as expected; the experiment didn't actually test the mechanism. Interpretation problem, not a mechanism falsification.
+
+**Cross-references:** [`abcg2-modulators.md`](./abcg2-modulators.md) §"Tier 2 — Alistipes / Hippuric acid"; [`chassis-pending-interventions.md` §1](./chassis-pending-interventions.md) (PDB entry, "Cheapest first move" includes this).
+
 ### 11.1 Ex vivo MSU PBMC challenge (androgen-elevated subjects, Tier 4 of `validation-experiments.md` §1.23)
 
 **When relevant:** Subject is on clomid, TRT, anabolic-androgenic steroids, or has high baseline endogenous testosterone, AND has gout / hyperuricemia history. The 2026-05-05 androgen × NLRP3 literature scan ([`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Beyond transporters") identified a gap: testosterone × MSU-crystal × NLRP3 in macrophages has zero indexed papers. The general-tissue literature suggests androgens are anti-inflammatory in macrophages (Norata 2006 in vitro), but cardiac macrophages flip the direction (testosterone → ↑NLRP3 → male-skewed myocarditis). Whether gout-relevant macrophages follow the general-tissue pattern or the cardiac-tissue pattern is an open question. This add-on provides a low-cost personal signal in the absence of formal Tier 1–3 wet-lab data.
