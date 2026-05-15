@@ -173,6 +173,10 @@ graph TB
         DE19["Compounding Pharmacy Track — 503A/503B delivery for repurposing surface"]
         DE20["Ginkgo Cloud Lab — cell-free $39/protein pre-gate + strain-engineering eval"]
         DE21["Delivery Route × Compound Class Matrix — companion exploration surface (route axis)"]
+        DE22["Gout Kill Chain Delivery Route Analysis — chokepoint × route per-node grid"]
+        DE23["GSDMD Pore Self-Delivery Paradox — pore as size-selective delivery window"]
+        DE24["Purine-Degrading Bacteria (PDB) — gut as independent urate disposal organ"]
+        DE25["Chassis-Pending Interventions — index of interventions awaiting chassis"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -589,6 +593,21 @@ graph TB
     DE21 -->|"chassis-as-formulation: H2O2 housekeeping advantage"| KE1
     DE21 -->|"intra-articular uricase + catalase as #1 open vector"| B1
     DE21 -->|"open-source SEL-212-equivalent extends engineering layer"| DE19
+    %% Gout kill-chain delivery route analysis (source: gout-kill-chain-delivery-routes.md)
+    DE22 -->|"chokepoint × route per-node companion to"| DE21
+    DE22 -->|"compounding pharmacy candidates: zileuton + disulfiram + VX-765"| DE19
+    DE22 -->|"comp-019 SUA reduction band cited at Uricase node"| DE17
+    DE22 -->|"IA delivery as systematic gap across CP2-CP6b"| DE25
+    %% GSDMD pore self-delivery paradox (source: gsdmd-pore-delivery-paradox.md)
+    DE23 -->|"size-selective delivery window for OE biologics in 10-20 nm range"| DE22
+    DE23 -->|"KPV / nanobody / single-SCR / lactoferrin / IL-1RA pass through pore"| DE21
+    %% Purine-degrading bacteria (source: purine-degrading-bacteria.md)
+    DE24 -->|"gut PDB as independent CP6 urate disposal — needs non-koji chassis"| DE25
+    DE24 -->|"butyrate -> ABCG2 PPARγ + Q141K HDAC rescue compounds the mechanism"| AM4
+    DE24 -->|"natural genotype-targeted therapy for Q141K (#1 GWAS variant)"| AM4
+    %% Chassis-pending interventions (source: chassis-pending-interventions.md)
+    DE25 -->|"operationalizes chokepoint-first chassis-second discipline"| DE2
+    DE25 -->|"PDB / siRNA-URAT1 / engineered-LBP / mRNA-IL-1RA / IA-uricase entries"| DE7
 
     %% Medicinal mushroom complement track (source: medicinal-mushroom-complement-track.md)
     MT1 -->|"ADA + GLUT9 + OAT1 — 40.6% UA reduction HUA mice"| B1
