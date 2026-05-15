@@ -52,6 +52,19 @@ Some heterologous compounds may express better in *S. cerevisiae* than *A. oryza
 
 ---
 
+## External Service Acceleration
+
+A small team without in-house wet-lab infrastructure depends on **productized external services** to run pre-gates and ship outputs. Two such services anchor opposite sides of the platform:
+
+- **Protein-expression validation** — Ginkgo Cloud Lab's $39/run cell-free expression offer is the upstream sequence-validation pre-gate for any designed protein. Answers "does this cassette produce a folded protein at all?" before committing to the koji / yeast / *F. prausnitzii* fermentation work the strain-library track requires. See [`ginkgo-cloud-lab-evaluation.md`](./ginkgo-cloud-lab-evaluation.md).
+- **Small-molecule delivery** — 503A / 503B compounding pharmacy is the downstream delivery surface for repurposing-track outputs (disulfiram, colchicine custom doses, zileuton, allopurinol custom doses). Turns "we found an FDA-approved drug that hits chokepoint X" into "patient can be prescribed X" without the multi-year NDA path. See [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md).
+
+These are **complementary, not substitutive**: Ginkgo accelerates the pre-fermentation killshots on the strain-library side; compounding pharmacy operationalizes the post-discovery access path on the repurposing-surface side. Neither replaces the fermentation thesis, the discovery engine, or the wet-lab collaboration tracks ([`ward-1995-lab-access.md`](./ward-1995-lab-access.md), [`team.md`](./team.md)).
+
+The pattern transfers. Future peer tracks plausibly anchor on productized services in the same way — siRNA conjugate synthesis via established RNA-CMO suppliers, medicinal-mushroom extract characterization via contract analytical labs, BGC cluster validation via Agilent / IDT / Twist DNA synthesis. The platform deliberately keeps the "outsourced layer" small and *modular*, used only where a productized SKU exists at a price point that beats in-house infrastructure spin-up.
+
+---
+
 ## Platform Principles
 
 ### 1. No Patents

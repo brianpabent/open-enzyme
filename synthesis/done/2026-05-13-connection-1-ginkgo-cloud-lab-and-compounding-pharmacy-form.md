@@ -17,3 +17,15 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a short “External service acceleration” subsection to `open-source-platform.md` or `open-enzyme-vision.md` naming Ginkgo (protein validation) and compounding pharmacy (small-molecule delivery) as the first two instances of this pattern. Cross-link both pages.
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: EXTENSION]` The composition holds: `ginkgo-cloud-lab-evaluation.md` frames Ginkgo's $39 cell-free offer as an upstream sequence-validation pre-gate and explicitly says it complements, rather than replaces, the community-college / fungal-fermentation path, while `compounding-pharmacy-track.md` formalizes 503A/503B formulation as the output side for small-molecule repurposing. I verified that the Ginkgo page and the compounding page do not cross-reference each other, so the "external service acceleration" pattern is a real cross-page synthesis rather than a named existing section.
+
+---
+
+## ✓ Actioned 2026-05-15
+
+Added the suggested cross-page synthesis directly:
+
+- **`wiki/open-source-platform.md`** — new section "External Service Acceleration" between Platform Architecture and Platform Principles. Names Ginkgo (protein-expression validation, strain-library side) and compounding pharmacy (small-molecule delivery, repurposing-surface side) as the first two instances of the productized-external-services pattern. Notes complementary-not-substitutive framing, pattern transferability to siRNA conjugate synthesis / mushroom extract characterization / BGC validation, and the deliberate "outsourced layer is small and modular" constraint.
+- **`wiki/ginkgo-cloud-lab-evaluation.md`** — new "Related" section at the bottom pointing at `open-source-platform.md §External Service Acceleration` (pattern name), `compounding-pharmacy-track.md` (sibling external-service track), and `ward-1995-lab-access.md` (upstream-of, not in competition with).
+- **`wiki/compounding-pharmacy-track.md`** — existing "Related" section extended with `open-source-platform.md §External Service Acceleration` + `ginkgo-cloud-lab-evaluation.md` cross-links, positioned above the existing compound-list entries.
+
+The Ginkgo ↔ compounding cross-reference loop is now closed. The pattern has a named home future peer-tracks can attach to.

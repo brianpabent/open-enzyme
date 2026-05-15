@@ -194,3 +194,11 @@ No clinical, animal, or in vitro evidence is generated on this page. The recomme
 - EstiMate (Ginkgo Bioworks Cloud Lab compatibility & pricing assistant) — 2026-05-12 chat session transcript, on file in Brian's notes.
 - UniProt P08174 (DAF / CD55 *H. sapiens*) — disulfide annotations (8 DISULFID features in SCR1-4).
 - [`ai-bio-tools-playbook.md`](./ai-bio-tools-playbook.md) — prior mention of Ginkgo as a lab-in-the-loop routing destination via Amazon Bio Discovery.
+
+---
+
+## Related
+
+- [`open-source-platform.md` §External Service Acceleration](./open-source-platform.md) — names the productized-external-services pattern this page instantiates on the strain-library side.
+- [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) — the complementary external-service track on the small-molecule / repurposing-surface side. Ginkgo answers "does the protein fold?"; compounding answers "can the small-molecule reach a patient?". Different sides of the platform, same pattern.
+- [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) — the academic-collaboration wet-lab path; Ginkgo's $39 pre-gate sits *upstream* of this path, not in competition with it.

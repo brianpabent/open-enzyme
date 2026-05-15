@@ -217,6 +217,8 @@ The honest summary: compounding pharmacy expands OE's *delivery menu* without ex
 ## Related
 
 - [Open Enzyme vision](./open-enzyme-vision.md) — §2.2 repurposing surface framing
+- [`open-source-platform.md` §External Service Acceleration](./open-source-platform.md) — names the productized-external-services pattern this page instantiates on the small-molecule / repurposing-surface side
+- [Ginkgo Cloud Lab evaluation](./ginkgo-cloud-lab-evaluation.md) — the complementary external-service track on the strain-library / protein-validation side. Ginkgo answers "does the protein fold?"; compounding answers "can the small-molecule reach a patient?". Different sides of the platform, same pattern.
 - [Modality × Target Matrix](./modality-chokepoint-matrix.md) — small-molecule rows are the candidate cells for this track
 - [Disulfiram](./disulfiram.md) — canonical repurposing surface compound; the highest-priority compounding candidate currently in OE
 - [Colchicine](./colchicine.md) — clinical-grade CP6 prophylaxis with custom-dose / combination compounding plays
