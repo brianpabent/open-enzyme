@@ -828,8 +828,28 @@ The protein-design-mcp package is **directly deployable** — OE could mount it 
 ### Code + leaderboard (public)
 
 - **Framework**: [github.com/RomeroLab/BioDesignBench](https://github.com/RomeroLab/BioDesignBench) (MIT)
-- **17-tool MCP**: [github.com/jasonkim8652/protein-design-mcp](https://github.com/jasonkim8652/protein-design-mcp) (MIT; Docker images)
+- **17-tool MCP**: [github.com/jasonkim8652/protein-design-mcp](https://github.com/jasonkim8652/protein-design-mcp) (MIT; Docker images + pip package)
 - **Leaderboard**: [huggingface.co/spaces/RomeroLab-Duke/BioDesignBench-Leaderboard](https://huggingface.co/spaces/RomeroLab-Duke/BioDesignBench-Leaderboard) — accepts new agent submissions; returns scores from deterministic evaluation pipeline
+
+### Deployment status — OE locally deployed 2026-05-15 (CPU mode, partial)
+
+`pip install protein-design-mcp` (v1.0.0) + `protein-design-mcp-setup --local --client claude-code -y`. Local Python config written to `~/.claude/mcp.json` invoking `python3 -m protein_design_mcp.server`. Loads on next Claude Code session start (not current session).
+
+**9 of 19 tools active in CPU mode:**
+
+| Status | Tools | Why disabled |
+|---|---|---|
+| **Active (CPU)** | `predict_structure`, `predict_complex`, `score_stability`, `energy_minimize`, `analyze_interface`, `validate_design`, `suggest_hotspots`, `get_design_status`, `design_sequence` / `optimize_sequence` (CPU-slow but functional via ProteinMPNN) | — |
+| **GPU-required** | `design_binder`, `design_fold`, `generate_backbone` (RFdiffusion-backed) | No NVIDIA GPU on Mac. Apple Silicon MPS port spec'd in `abent-family-health/brian/open-enzyme-backlog.md` (A4 task) |
+| **PyRosetta-required** | `rosetta_score`, `rosetta_relax`, `rosetta_interface_score`, `rosetta_design` | UW export-control review of academic PyRosetta license, in effect since 2026-04-01. Email license@uw.edu queued 2026-05-15. When unblocked: `pip install "protein-design-mcp[rosetta]"` |
+| **Boltz-2-required** | `predict_structure_boltz`, `predict_affinity_boltz` | Boltz-2 requires isolated torch venv (conflicts with RFdiffusion torch==2.0.1); not installed. Defer until either RFdiffusion port lands or separate venv setup |
+
+**Deployment decisions captured:**
+- **A1 (CPU-mode local install)** — done 2026-05-15. Covers DAF SCR1-4 + lactoferrin redesign without RFdiffusion. ProteinMPNN slow on CPU but functional.
+- **A2 (Modal cloud GPU)** — not pursued. Fallback option if RFdiffusion becomes load-bearing before A4 lands.
+- **A4 (Apple Silicon MPS port)** — backlogged at [`abent-family-health/brian/open-enzyme-backlog.md`](../../abent-family-health/brian/open-enzyme-backlog.md) §"Next up → In-silico." YaoYinYing's fork has a working MPS branch (~13 min/design vs. ~30–60s on NVIDIA); SE3-Transformer NVTX/DGL surgery + Mac-native build. Spec session planned for tonight or tomorrow.
+
+**Ghcr.io Docker image pull failed during setup** with `unauthorized` error (the public image at `ghcr.io/jasonkim8652/protein-design-mcp:latest` is apparently access-gated). Local Python path used instead. If Modal cloud deployment becomes the right move (A2), the Modal proxy entry point is `protein-design-mcp-modal`.
 
 (Source: Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381; verified against full PDF at `/private/tmp/claude-501/biodesignbench.txt`, 2026-05-15. Original "Cloudflare blocked direct fetch 2026-05-12" PRIMARY-SOURCE-PENDING flag was lifted via Brian-provided local PDF copy + pdftotext extraction; the structural failure mode was treating a single failed fetch attempt as a durable gate without trying alternative tools — see [`memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md`](../../../.claude/projects/-Users-brianabent-Documents-Claude-Projects-abent/memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md).)
 
