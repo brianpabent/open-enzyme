@@ -33,9 +33,9 @@ All pricing on this page is from a vendor sales agent, dated 2026-05-12, and **w
 ## TL;DR
 
 - **Two offers surfaced.** Cell-Free Protein Expression Validation at **$39/protein** (≤1,800 bp, ~5–10 day turnaround) confirms a designed sequence produces folded polypeptide in cell-free lysate. A **96-construct S. cerevisiae strain-engineering campaign at ≈$2,340 total (≈$24.38/sample)** was also quoted.
-- **The $39 cell-free offer is real and worth using as a sequence-validation pre-gate.** It de-risks the more expensive fungal/fermentation work regardless of which downstream partner runs that work.
-- **The $2,340 strain-engineering quote is almost certainly a lead-magnet teaser**, not what a formal Ginkgo service request will return. Historic Ginkgo strain-engineering campaigns at this scope have priced mid-five to six figures. Don't budget against the $24/sample number until a real quote lands.
-- **Construct fit is mixed.** Cell-free is a clean test for **uricase variants** (no glycosylation requirement, E. coli-lysate-compatible fold). It is a **weak test for DAF/CD55 SCR1-4** (SCR domains carry O-glycans; aglyco backbone tells you the ORF works but not functional folding).
+- **Decision (2026-05-13): skip the $39 cell-free for now.** The offer is real and the price is right, but it was originally scoped as a pre-gate for the *fungal* wet-lab work, and the current priority stack has that wet-lab work as downstream — Ginkgo doesn't need to happen before, during, or after current Phase 0 work. The cell-free test would surface no information the existing computational corpus (comp-019 flux model, comp-022 cassette ranking, comp-023 cordycepin burden, ViennaRNA mRNA folding + ESM2 pseudo-pLDDT proxies) doesn't already give to high confidence. Revisit when a wet-lab experiment actually needs the pre-gate to be load-bearing; until then, save the $39 and the calendar drag.
+- **Don't budget against the $24/sample number.** The $2,340 strain-engineering quote is almost certainly a lead-magnet teaser, not what a formal Ginkgo service request will return — historic Ginkgo strain-engineering campaigns at this scope have priced mid-five to six figures. Real strain-engineering campaigns at the OE scope are $3,000–$50,000+ per the academic-collaboration cost framing in [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) and [`validation-experiments.md`](./validation-experiments.md) §1.9.
+- **Construct fit is mixed (preserved for future revisit).** Cell-free is a clean test for **uricase variants** (no glycosylation requirement, E. coli-lysate-compatible fold). It is a **weak test for DAF/CD55 SCR1-4** (SCR domains carry O-glycans; aglyco backbone tells you the ORF works but not functional folding). This analysis stands; the skip-for-now decision is about timing and incremental value, not technical fit.
 - **Ginkgo Cloud Lab and the community-college / grad-student path are complementary, not competing.** Cell-free answers an earlier gate ("does the sequence produce a folded protein at all?"); the CC path answers the gate Ginkgo's plate-based Cloud Lab cannot ("does it secrete from a fungal host in a real fermentation context?"). Ambr 250 / bioreactor work is, per EstiMate, a separate downstream Ginkgo service.
 
 ---
@@ -104,7 +104,7 @@ Aspergillus flavus uricase (the rasburicase parent) is a **homotetrameric, non-g
 
 Activity is straightforward to test in-tube — urate has a characteristic UV absorbance at 293 nm that drops as uricase converts it to allantoin. Kinetic absorbance readout. EstiMate explicitly listed BMG Pherastar for the uricase activity assay, so the readout is supported in their main strain-engineering tier; the question for the $39 cell-free tier is whether activity-measurement is bundled or a separate line item.
 
-**Suggested first run:** the lead uricase variant from [`uricase-variant-selection.md`](./uricase-variant-selection.md). One construct, one $39 cell-free run, real polypeptide expression data, ~1 week.
+**Suggested first run (deferred per the skip-for-now decision in the TL;DR):** the lead uricase variant from [`uricase-variant-selection.md`](./uricase-variant-selection.md) would be the construct most fit for the $39 test if/when the cell-free pre-gate becomes load-bearing for downstream wet-lab work. Held as a future option, not a current action.
 
 #### Digestive enzymes (lipase, protease, amylase) — likely strong fit
 
@@ -154,16 +154,19 @@ The Ginkgo cell-free pre-gate is **upstream** of the fungal/fermentation gate. N
 
 Ginkgo's full strain-engineering tier sits **in the same niche** as the CC path — but plate-based, not fermentation-based, and at unknown true cost. Worth a real quote before deciding it's the right tool.
 
-### Recommended next move
+### Recommended next move (revised 2026-05-13: none — deferred)
 
-Run one $39 cell-free on the lead uricase variant from [`uricase-variant-selection.md`](./uricase-variant-selection.md).
+**No action.** The $39 cell-free pre-gate was originally framed as a sequence-validation step upstream of the fungal wet-lab work. The current priority stack has that wet-lab work downstream of in-flight in-silico work; the cell-free test would not surface information the existing computational corpus (comp-019, comp-022, comp-023, ViennaRNA mRNA folding + ESM2 pseudo-pLDDT) doesn't already provide to high confidence.
 
-Rationale:
+Revisit when a downstream wet-lab experiment becomes load-bearing and an independent E. coli-lysate fold-check would meaningfully de-risk it. Until then, save the $39 and the calendar drag.
+
+For reference, the original (now-deferred) recommendation rationale:
 - Cheap. Single-construct, productized SKU, no campaign commitment.
 - Real test of EstiMate's claims — does the $39 actually deliver what the bot described, on what turnaround, with what data product.
 - Construct-appropriate — uricase is the OE construct best matched to E. coli-lysate cell-free.
-- Information-positive regardless of outcome — a successful expression gives you a green light for the variant; a failure gives you signal that the variant needs redesign before any fungal-host work.
-- Establishes a vendor relationship that's useful regardless of which path takes the strain-engineering work later.
+- Establishes a vendor relationship useful for downstream work.
+
+The rationale stands; the *timing* is what changed.
 
 ---
 
