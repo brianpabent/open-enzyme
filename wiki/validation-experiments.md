@@ -13,6 +13,8 @@ Single-source consolidated experiment library for the Open Enzyme project. The n
 
 As of 2026-04-24 this is the authoritative experiments file — earlier ambiguity about a separate `experiments.md` has been resolved, and all content lives here. The sweep daemon and human editors update this page in place.
 
+**Scope note (2026-05-15):** The experiments below are largely **koji-track-anchored** because the koji chassis is the most mature OE engineering track. Validation paths for chassis-pending interventions (kidney-tropic siRNA URAT1, engineered LBPs, PDB via engineered EcN, mRNA-IL-1RA pulse, intra-articular uricase + catalase, phage modulation) are tracked on each intervention's home page and indexed in [`chassis-pending-interventions.md`](./chassis-pending-interventions.md). Each chassis-pending entry has its own "Cheapest first move" — usually a $0 lit scan or sub-$5K wet-lab gate — not duplicated here. As chassis-pending interventions select a chassis and mature into dedicated tracks, their validation experiments will fold into this file or a parallel track-specific file (per the maintenance pattern that already produced `engineered-lbp-chassis.md` and `compounding-pharmacy-track.md`).
+
 ---
 
 ## Experiment Queue

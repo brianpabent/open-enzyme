@@ -10,10 +10,12 @@ status: published
 Two parallel outputs of one project:
 
 - **A discovery engine** — a chokepoint-based methodology for mapping every vector that causes, treats, or mitigates a given disease, applied first to gout. Produces a structured cascade map plus a repurposing surface (FDA-approved drugs that hit relevant chokepoints but were never clinically tested for the target disease).
-- **An open-source library of food-grade, engineered microbial strains** — each producing a therapeutic enzyme, each growable at home, each freely available to anyone. The library is one synthesis from the discovery engine; the engineered-koji platform converged from the gout vector mapping.
+- **An open-source library of food-grade, engineered microbial strains** — each producing a therapeutic enzyme, each growable at home, each freely available to anyone. The library is the **highest-priority chassis** synthesized from the discovery engine because koji harmoniously hits multiple chokepoints in one strain (uricase + lactoferrin + carnosine + DAF SCR1-4) and matches the food-grade / open-source / democratized-access positioning. The engineered-koji track converged from the gout vector mapping; it is one chassis-shaped expression of the mission, not the mission itself.
 
 The library is the more visible artifact. 
 The discovery engine is the more transferable contribution. 
+
+**Chassis is downstream of chokepoint.** Discovery-engine outputs that hit OE chokepoints but don't fit the koji chassis are not deprioritized — they are tracked as [chassis-pending interventions](./chassis-pending-interventions.md) (e.g., kidney-tropic siRNA against URAT1, engineered LBPs for anaerobic colonization, purine-degrading bacteria via engineered EcN, mRNA-IL-1RA pulse for acute flare, intra-articular uricase + catalase, phage-mediated gut microbiome modulation). Each is a real intervention with a real chokepoint hit; the chassis question is the next step, not the filter. See [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md) for the discipline reflection that operationalized this distinction.
 
 **By:** Brian Abent  
 **Date:** April 2026  
