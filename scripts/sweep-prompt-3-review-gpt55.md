@@ -96,6 +96,8 @@ Make a tool call when ANY of these apply:
 
 Do not stop after the first or second round. A 6-marker review with thorough verification typically takes 6–12 tool calls. Stopping at 2 rounds is under-verification, not efficiency. The cost of an extra `grep` is trivial; the cost of letting a synthesizer error propagate into a per-item file in `synthesis/queue/` is non-trivial.
 
+**Evaluation depth > tool coverage** (anchored to BioDesignBench Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381, verified 2026-05-15). Top LLM agents on the BioDesignBench 76-task benchmark "select appropriate tools" but invoke scoring/evaluation tools at only **~14% of expert intensity** and **never discard a generated candidate across 836 task-condition observations** — they treat stochastic samples as deterministic answers. Forcing multi-metric evaluation (≥3 metric categories per candidate, compute-matched) recovers DeepSeek V3 by +9.3 points and GPT-5 by +15.9 points. The deficit is **behavioral, not capability-limited.** For Pass 3 review purposes this means: when you check a synthesizer claim, don't stop after the first confirming grep — apply orthogonal verification axes (canonical wiki source AND primary citation AND cross-page consistency). When pushing back, verify against multiple sources; when confirming, don't shortcut the cross-check. Single-axis verification is the failure mode the benchmark identifies; multi-metric verification is the cure.
+
 Stop tool use only when:
 
 - Every marker has been verified or disputed with concrete evidence from inlined cache or tool-fetched source, AND

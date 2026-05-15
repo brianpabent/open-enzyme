@@ -114,6 +114,8 @@ A strong push-back:
 - Always check `wiki/chembl-cross-check.md` for any IC50 / bioactivity claim — that file is the canonical curated source.
 - Read prior per-item files in `synthesis/queue/` and `synthesis/done/` for context on what's already in flight or actioned.
 
+**Evaluation depth > tool coverage** (anchored to BioDesignBench Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381, verified 2026-05-15). Top LLM agents on the BioDesignBench 76-task benchmark "select appropriate tools" but invoke scoring/evaluation tools at only **~14% of expert intensity** and **never discard a generated candidate across 836 task-condition observations** — they treat stochastic samples as deterministic answers. Forcing multi-metric evaluation (≥3 metric categories per candidate, compute-matched) recovers DeepSeek V3 by +9.3 points and GPT-5 by +15.9 points. The deficit is **behavioral, not capability-limited.** For Pass 3 review purposes this means: when you check a synthesizer claim, don't stop after the first confirming grep — apply orthogonal verification axes (canonical wiki source AND primary citation AND cross-page consistency). When pushing back, verify against multiple sources; when confirming a non-trivial claim, don't shortcut the cross-check. Single-axis verification is the failure mode BioDesignBench identifies; multi-metric verification is the cure. See [`wiki/bio-ai-tools.md` §BioDesignBench](../wiki/bio-ai-tools.md) for the full finding.
+
 ---
 
 ## Marker count discipline

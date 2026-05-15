@@ -106,6 +106,32 @@ ClockBase's confidence calibration was **cohort-level concordance across many ag
 
 Translates to comp-NNN as: **require N-of-M concordance across orthogonal scoring models before promoting to wet lab.** For Open Enzyme: don't promote a strain-engineering candidate to wet-lab spend on a single high-confidence model output; require concordance across folding + secretion + codon + scaffold models. Concordance threshold is calibration-dependent (ClockBase ~30/40 = 75%; OE's smaller orthogonal-model set likely needs ~4/5 = 80% or higher).
 
+## BioDesignBench evaluation-depth audit (added 2026-05-15)
+
+Kim & Romero's BioDesignBench paper (bioRxiv 10.64898/2026.05.06.723381, verified 2026-05-15 — see [`bio-ai-tools.md` §BioDesignBench](./bio-ai-tools.md)) empirically validates the "deeper multi-metric evaluation" methodology this page advocates. The paper's central finding across 836 task–condition observations on 76 protein-design tasks: top LLM agents (DeepSeek V3, GPT-5) select appropriate tools but **evaluate candidate designs at only ~14% of expert intensity** and **never discard a generated candidate** across the entire benchmark. Forcing multi-metric evaluation (≥3 metric categories per candidate, compute-matched against shallow control) recovers DeepSeek V3 by +9.3 points (p = 0.002) and GPT-5 by +15.9 points (p < 0.001). The deterministic hardcoded pipeline (which already has multi-metric evaluation built into its workflow) gains nothing from the intervention — confirming the deficit is **specifically behavioral**, not generic compute.
+
+This validates the N-of-M concordance methodology this page recommends (§5 above) and operationally instantiated in comp-022 (43,200 cassettes, 5 orthogonal scoring models, N-of-5 ≥ 4 gate, 71 promoted cassettes).
+
+**Audit of OE's existing comp-NNN stack** against BioDesignBench's three failure-mode axes — (A) multiple candidates generated? (B) multi-metric evaluation across orthogonal scoring axes? (C) head-to-head comparison + filtering before termination?
+
+| comp-NNN | Topic | (A) Multiple candidates? | (B) Multi-metric eval? | (C) Head-to-head + filter? | Audit verdict |
+|---|---|---|---|---|---|
+| comp-019 | Gut-lumen uricase × ABCG2 flux model | Yes (Monte Carlo n=5000 across genotype × sex × dose) | **Yes** (5-metric flux + capacity ratio + renal compensation + substrate-limit + dose-response) | Implicit (full grid stratified, no candidate-vs-candidate filtering — model is a continuous prediction surface, not a discrete-candidate selection problem) | **Clean** — methodology-fit for the question shape |
+| comp-022 | Uricase cassette ranking (v1 + v2) | Yes (43,200 enumerated; 195 pass v1; 71 pass v2 N-of-5 ≥ 4) | **Yes** (CAI + ViennaRNA MFE + chaperone-load + promoter×SP prior + ESM2 pseudo-pLDDT) | **Yes** (N-of-5 ≥ 4 gate; v1→v2 retrofit confirms top cluster at 100% survival) | **Canonical exemplar** — exactly the BioDesignBench-recommended cure |
+| comp-023 | cns1+cns2 cordycepin cassette burden FBA | Yes (5 scenarios: WT, dual cassette, +cns1-cns2, +carnS+panD, +panD only) | **Partial** (FBA alone — single-method evaluation; v1 verdict GREEN under static FBA) | Implicit (5-scenario comparison, but no orthogonal-method head-to-head; comp-023 v2 dynamic FBA was queued specifically to address this) | **Pending v2** — single-method risk acknowledged; v2 dFBA + CNKI cofactor refinement is the corrective queued in Planned Analyses |
+| comp-024 | Complestatin-family BGC heterologous expression | One chassis pair primary (Bacteroides vs. *E. coli* Nissle) | Multi-axis (BGC cluster size + NRPS module count + precursor supply + codon usage + toxicity + regulatory architecture) | **Limited** — no explicit head-to-head between chassis candidates beyond comparator; would benefit from broader candidate set | **Audit flag** — consider expanding candidate chassis set when comp-024 fires |
+| comp-025 | ADA × cns1 substrate competition | Yes (kinetic + FBA + strain-background comparison) | **Yes** (kinetic Km + FBA stratified pool + literature strain-background check; 3 orthogonal approaches per the brief) | Yes (3-approach concordance gates the verdict) | **Clean** — methodology-fit |
+| comp-026 | Multi-cassette induction interference | Multi-cassette enumeration (uricase + lactoferrin + cns1+cns2) | Multi-axis (regulatory promoter crosstalk + comparative comp-022 top-cluster regulation + orthogonal-promoter recommendation) | Yes (orthogonal-promoter analysis is the head-to-head filter) | **Clean** — methodology-fit |
+| comp-027 | Disulfiram dose modeling (GSDMD vs. AUD ceiling) | Methodology TBD (queued 2026-05-15) | **TBD** — brief covers 4 axes (PK, EC50, plasma-vs-deterrent ratio, sub-AUD window) but the methodology isn't yet specified | **TBD** | **Audit flag** — when comp-027 brief is finalized, ensure multi-method evaluation (PK modeling + literature meta-analysis + Brian-specific dose-response priors) rather than single-axis dose calculation |
+
+**Action items from the audit:**
+
+1. **comp-024 candidate-set expansion.** When comp-024 fires, expand beyond Bacteroides vs. *E. coli* Nissle to include the broader engineered-LBP chassis set (*Akkermansia*, *Faecalibacterium prausnitzii*) for proper head-to-head. Add to scope-page Phase 2.
+2. **comp-027 methodology spec.** When comp-027 brief is finalized, explicitly require multi-method evaluation per BioDesignBench's "≥3 evaluation-metric categories" finding. Don't ship comp-027 as a single-axis PK model.
+3. **General rule for new comp-NNN authoring.** Subagent briefs for new comp-NNNs must explicitly require multi-method evaluation + candidate filtering + termination only after head-to-head comparison. The walk-synthesis SKILL.md §4 briefing-rules now carries this guidance. The Pass 3 review prompt also emphasizes evaluation-depth-over-tool-coverage.
+
+The audit reaffirms that the N-of-M concordance pattern this page advocates IS the BioDesignBench cure; the gap is consistency of application across all comp-NNNs, not the methodology itself.
+
 ## Honest critiques
 
 - **Reproducibility:** Preprint, not peer-reviewed. Mouse cohort sizes, dosing schedule, blinding protocol, and statistical correction for multiple comparisons across 40 clocks are not pinned down in lay coverage. Need to read supplementary methods before citing specific numbers downstream.

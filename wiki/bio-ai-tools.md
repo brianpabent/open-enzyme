@@ -751,42 +751,87 @@ These are confabulations — plausible-looking values that would pass casual rev
 
 ## BioDesignBench — LLM Agent Evaluation for Protein Design
 
-**Status: PRIMARY-SOURCE-PENDING** — claims below sourced from the bioRxiv abstract summary, not the full PDF (Cloudflare blocked direct fetch 2026-05-12). PDF-fetch TODO logged in [`brian/open-enzyme-backlog.md`](../../abent-family-health/brian/open-enzyme-backlog.md). Until verified, **do not cite BioDesignBench from `open-source-platform.md` as architectural validation** for the multi-model sweep daemon — the verification gate is open.
+**Status: VERIFIED 2026-05-15** — full PDF read via `pdftotext` after Brian provided local copy (bioRxiv web layer + Cloudflare blocked headless WebFetch; bioRxiv API surfaced only abstract + metadata; the bioRxiv MCP server in OE's stack was failing to connect at the time of verification).
 
-bioRxiv [2026.05.06.723381](https://www.biorxiv.org/content/10.64898/2026.05.06.723381v1) — "Benchmarking and behavioral characterization of LLM agents for protein design." A benchmark and behavioral-characterization framework for LLM agents on protein design: 76 expert-curated tasks across diverse protein classes, integrating AlphaFold, RFdiffusion, ProteinMPNN, and Rosetta as tool calls.
+Kim & Romero (Duke University), bioRxiv [10.64898/2026.05.06.723381](https://www.biorxiv.org/content/10.64898/2026.05.06.723381v1) — "Benchmarking and behavioral characterization of LLM agents for protein design." Posted 2026-05-08. NIH R01GM150929. **Note: DOI prefix is `10.64898/`, not `10.1101/` — bioRxiv migrated DOI registrars; references using the old prefix are wrong.**
 
-### Three findings that matter for Open Enzyme
+### What the paper actually finds
 
-1. **DeepSeek V3 significantly outperforms GPT-5 and Gemini 2.5 Pro** on the 76-task benchmark (per abstract; verification pending). OE's sweep daemon uses DeepSeek V4-Pro (V3's successor) as the Pass 4 cross-vendor peer-reviewer on heterogeneity grounds ([open-source-platform.md §"Multi-model synthesis as guard against epistemic homogenization"](./open-source-platform.md)). If the abstract claim holds, the V4-Pro anchor is not only the heterogeneity guard but also the empirically strongest protein-design reasoner among major frontier models — a substantive upgrade to the architectural justification.
+The headline finding is **behavioral, not capability-limited.** Top LLM agents (DeepSeek V3, GPT-5) can match or exceed a deterministic hardcoded pipeline at protein design but consistently underperform expert practice — and the gap is **not** that they pick the wrong tools. The gap is that they **evaluate candidate designs too shallowly, never compare alternatives, and never discard candidates**:
 
-2. **Tool-gap vs science-gap decomposition** as a diagnostic framework. The paper splits agent failures into:
-   - **Tool gap** — correct plan, failed execution (model knew what to do, fumbled the toolchain)
-   - **Science gap** — wrong plan altogether (model didn't understand the biology)
+- Scoring/evaluation tools invoked at only **~14% of expert intensity** (Fig. 3c)
+- **No LLM condition ever discarded a generated candidate across all 836 task–condition observations** (Section 2.4) — agents treat stochastic samples as deterministic answers
+- Evaluation-variety vs. score: Spearman ρ = 0.68 (p < 10⁻¹¹⁵; n = 836)
+- Forced-depth intervention (≥3 evaluation-metric categories per candidate, compute-matched against shallow control): DeepSeek V3 +9.3 points (p = 0.002), GPT-5 +15.9 points (p < 0.001) — gains concentrated in Approach + Orchestration, not structural Quality
+- The hardcoded pipeline (which already has multi-metric evaluation built into its fixed workflow) gains nothing from the forced-depth intervention (∆ = 1.6, n.s.) — confirming the deficit is **specifically behavioral**, not generic compute
 
-   Per the abstract, DeepSeek V3 and GPT-5 are dominated by tool gap; Gemini 2.5 Pro by science gap. OE's Pass 3 (Opus critique) currently emits a fixed-verdict tag on each synthesis claim but doesn't attribute disagreements to mechanism. Adding a tool-gap-vs-science-gap axis to Pass 3 or Pass 4 would make the sweep daemon's disagreement-resolution **diagnostic** rather than just adjudicatory. **Piloted 2026-05-15:** wired into both Pass 3 prompts (`scripts/sweep-prompt-3-review.md` + `scripts/sweep-prompt-3-review-gpt55.md`) for the next 2–3 sweep cycles. Operational definitions, promote/abandon gates, and evaluation plan at [`scripts/SWEEP-ARCHITECTURE.md` §"Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution"](../scripts/SWEEP-ARCHITECTURE.md). The pilot draws on the decomposition idea without depending on BioDesignBench's empirical claims; if this entry fails primary-source verification, the pilot still stands or falls on its own utility.
+### Leaderboard (full benchmark; mean total score out of 100)
 
-3. **Potential self-evaluation substrate.** 76 expert-curated tasks is the right scale for the sweep daemon to be measured against single-model agent baselines — concrete claim shape: "the cross-vendor synthesis pipeline scores X on BioDesignBench vs. Y for the best single-model agent." Pending: benchmark availability (open-source / reproducible? — TBD from PDF). Possible [`validation-experiments.md`](./validation-experiments.md) entry once confirmed.
+| Condition | Score |
+|---|---|
+| Human oracle (expert-curated optimal tool sequence per task — benchmark ceiling) | 75.2 |
+| Human expert (single practitioner, same 17 MCP tools as agents) | 61.7 |
+| **DeepSeek V3 unguided** | **60.6** |
+| DeepSeek V3 guided | 58.6 |
+| GPT-5 unguided | 55.8 |
+| GPT-5 guided | 55.4 |
+| Hardcoded pipeline (deterministic 4-stage; non-LLM reference) | 54.5 |
+| Claude Sonnet 4.5 guided | 50.5 |
+| Claude Sonnet 4.5 unguided | 41.2 |
+| Gemini 2.5 Pro guided | 8.8 |
+| Gemini 2.5 Pro unguided | 8.1 |
 
-### Tool integrations (per abstract)
+DeepSeek V3 significantly outperformed all other LLM conditions (Wilcoxon signed-rank with Bonferroni correction; p < 0.05). Gemini 2.5 Pro's near-zero score is attributed by the paper to "a systematic tool-calling failure rather than poor scientific reasoning."
 
-| Tool | Function | OE-pipeline status |
+### Tool-gap vs. science-gap (the GAP tag pilot's empirical anchor)
+
+The paper's Section 2.3 + Supplementary G formally decompose agent failures into:
+- **Tool gap** — correct plan, failed execution (knew what to do, fumbled the toolchain)
+- **Science gap** — wrong plan altogether (didn't understand the biology)
+
+Per-model dominance (guided mode, all 76 tasks): **DeepSeek V3 and GPT-5 dominated by tool gap; Gemini 2.5 Pro dominated by science gap** across all molecular subjects.
+
+This empirically grounds the GAP tag pilot wired into OE's Pass 3 prompts on 2026-05-15. Operational definitions, pilot scope, promote/abandon gates: [`scripts/SWEEP-ARCHITECTURE.md` §"Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution"](../scripts/SWEEP-ARCHITECTURE.md).
+
+### Task taxonomy (76 tasks, 5×2 matrix)
+
+| | De novo (n=47) | Redesign (n=29) | Total |
+|---|---|---|---|
+| Antibody | — | — | 9 |
+| **Enzyme** | — | — | **12** |
+| Mini-protein binder | (all) | empty | 19 |
+| Scaffold | — | — | 25 |
+| Fluorescent protein | — | — | 11 |
+
+Binder × redesign is biologically empty. **Per-task specifications are deliberately not publicly released** to prevent data contamination of future LLM training — only condition-level aggregates are available via the leaderboard. Per-task data requires a data use agreement with the authors. All tasks drawn from 2024–2026 publications, post-cutoff for evaluated models.
+
+### Tool integrations — the 17-tool MCP package
+
+The paper exposes all 17 protein-design tools through a **single MCP interface** (`github.com/jasonkim8652/protein-design-mcp`, MIT licence, Docker images for reproducible deployment). Four functional categories:
+
+| Category | Tools | OE-pipeline status |
 |---|---|---|
-| AlphaFold | Structure prediction | In OE stack via ColabFold |
-| RFdiffusion | De novo design from active-site geometry | In OE stack (RFdiffusion2) |
-| ProteinMPNN | Sequence design for target structure | In OE stack |
-| Rosetta | Energy minimization / mutation scoring | **Not currently in OE stack — gap to investigate** |
+| Generative | RFdiffusion, ProteinMPNN, ESM-IF | RFdiffusion + ProteinMPNN **NOT currently in OE stack — gap to investigate for DAF SCR1-4 + lactoferrin redesign work** |
+| Predictive (structure) | AlphaFold2, AlphaFold3, Boltz-2, ESMFold | AlphaFold2 in OE stack via ColabFold; AlphaFold3 / Boltz-2 / ESMFold not yet integrated |
+| Physics-based | Rosetta / PyRosetta, DSSP | **Not currently in OE stack** |
+| Analysis | Interface metrics, TM-align, sequence identity | TM-align / sequence identity available; interface-metrics not yet integrated |
 
-### What to verify when the PDF lands
+The protein-design-mcp package is **directly deployable** — OE could mount it as a sibling MCP server to abent-somm, papercip, pubmed, etc.
 
-When the PDF is fetched and saved to `reference/biodesignbench-2026.pdf`, grep-verify before promoting any of the above to load-bearing:
-- DeepSeek V3 vs GPT-5 vs Gemini 2.5 Pro performance numbers (specific scores, not just "outperforms")
-- Whether V3 outperforms across all 76 tasks or only on some protein classes (matters for whether the OE-architecture claim is universal or scoped)
-- Tool-gap vs science-gap definitions (operational, not just intuitive — needed for porting to Pass 3/4)
-- Benchmark availability (open-source code/data? reproducible? license?)
-- Rosetta integration details (which Rosetta sub-modules; could inform OE-stack gap closure)
-- Authors / institution (matters for citation + potential outreach)
+### What this means for OE
 
-Once verified: update this section, remove the `PRIMARY-SOURCE-PENDING` flag, and add the DeepSeek-outperforms finding as a citation in `open-source-platform.md §"Multi-model synthesis"`. (Source: bioRxiv 2026.05.06.723381; PRIMARY-SOURCE-PENDING.)
+1. **OE's existing N-of-M concordance methodology (comp-022 with N-of-5 ≥ 4 across CAI / ViennaRNA / chaperone-load / promoter-SP / ESM2) IS the BioDesignBench-recommended cure** for the shallow-evaluation failure mode. The paper validates the methodology empirically.
+2. **Audit OE's other comp-NNNs for shallow-eval risk.** comp-019 (5-metric flux Monte Carlo) and comp-022 are clearly multi-metric; comp-023, comp-024, comp-025, comp-026, comp-027 should be audited against three axes — (a) multiple candidates generated? (b) multi-metric evaluation? (c) head-to-head comparison + filtering? Audit table at [`autonomous-screening-methodology.md` §"BioDesignBench evaluation-depth audit"](./autonomous-screening-methodology.md).
+3. **Tool-stack gap is concrete and addressable.** For OE's DAF SCR1-4 + lactoferrin redesign work, RFdiffusion + ProteinMPNN are the canonical de-novo / sequence-design tools that the protein-design-mcp package would unlock at near-zero integration cost.
+4. **Citation hook.** Direct reference for both [`autonomous-screening-methodology.md`](./autonomous-screening-methodology.md) §"Computational-to-wet-lab handoff: N-of-M concordance" and the cross-vendor heterogeneity-guard paper draft.
+
+### Code + leaderboard (public)
+
+- **Framework**: [github.com/RomeroLab/BioDesignBench](https://github.com/RomeroLab/BioDesignBench) (MIT)
+- **17-tool MCP**: [github.com/jasonkim8652/protein-design-mcp](https://github.com/jasonkim8652/protein-design-mcp) (MIT; Docker images)
+- **Leaderboard**: [huggingface.co/spaces/RomeroLab-Duke/BioDesignBench-Leaderboard](https://huggingface.co/spaces/RomeroLab-Duke/BioDesignBench-Leaderboard) — accepts new agent submissions; returns scores from deterministic evaluation pipeline
+
+(Source: Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381; verified against full PDF at `/private/tmp/claude-501/biodesignbench.txt`, 2026-05-15. Original "Cloudflare blocked direct fetch 2026-05-12" PRIMARY-SOURCE-PENDING flag was lifted via Brian-provided local PDF copy + pdftotext extraction; the structural failure mode was treating a single failed fetch attempt as a durable gate without trying alternative tools — see [`memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md`](../../../.claude/projects/-Users-brianabent-Documents-Claude-Projects-abent/memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md).)
 
 ---
 
