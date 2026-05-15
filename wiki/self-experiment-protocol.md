@@ -218,6 +218,20 @@ Full daily log lives in the experimenter's private storage (e.g., `<your-private
 
 Lower-cost subject-specific assays that supplement the standard four-biomarker panel for specific intervention contexts. Each is opt-in, runs as a quarterly add-on to the standard blood draw, and stays in the subject's private storage per §7.
 
+### 11.0 Selenium + yanthine — PDB function screen *(added 2026-05-15)*
+
+**When relevant:** Any draw while hyperuricemia is active or gout risk is being managed. One-time triage, not ongoing monitoring.
+
+**Rationale:** The PDB (purine-degrading bacteria) gut pathway enzyme DOPDH is selenium-dependent and runs 27x faster with selenium than without. Selenium deficiency could functionally knock out PDB activity without any change in bacterial abundance — the bacteria are present, they just can't work. Yanthine (2,8-dioxopurine) is the first PDB pathway intermediate; elevated serum yanthine indicates PDB are depleted or dysfunctional (can't process it downstream). Together these two markers answer whether Brian's gut-compartment urate disposal is operating normally or is constrained by a potentially trivial dietary factor. See [purine-degrading-bacteria.md §"Cofactor Requirements"](./purine-degrading-bacteria.md).
+
+**What to order:**
+- **Serum selenium** — standard clinical test, available at any reference lab (Quest/LabCorp), ~$40–80. Normal range 70–150 ng/mL; optimal for DOPDH function is likely mid-to-upper-normal. If low-normal (<90 ng/mL), supplementation at 100–200 µg/day (selenomethionine) is safe and cheap.
+- **Yanthine (2,8-dioxopurine)** — not on standard panels. Triage step: check whether Metabolon Precision Metabolomics, Genova NutrEval, Great Plains Organic Acids, or a clinical pharmacology lab measures it. If a metabolomics panel (Metabolon, ~$300–600) already on the radar covers it, add at no incremental cost. If not available without a research lab arrangement, defer — serum selenium alone is the practical first step.
+
+**Cost:** Selenium ~$40–80 (clinical). Yanthine: $0 if a planned metabolomics panel includes it; $300–600 for a standalone metabolomics run; defer if unavailable commercially.
+
+**Cross-references:** [purine-degrading-bacteria.md](./purine-degrading-bacteria.md) §"Open Questions" PDB-Q3 and PDB-Q4.
+
 ### 11.1 Ex vivo MSU PBMC challenge (androgen-elevated subjects, Tier 4 of `validation-experiments.md` §1.23)
 
 **When relevant:** Subject is on clomid, TRT, anabolic-androgenic steroids, or has high baseline endogenous testosterone, AND has gout / hyperuricemia history. The 2026-05-05 androgen × NLRP3 literature scan ([`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Beyond transporters") identified a gap: testosterone × MSU-crystal × NLRP3 in macrophages has zero indexed papers. The general-tissue literature suggests androgens are anti-inflammatory in macrophages (Norata 2006 in vitro), but cardiac macrophages flip the direction (testosterone → ↑NLRP3 → male-skewed myocarditis). Whether gout-relevant macrophages follow the general-tissue pattern or the cardiac-tissue pattern is an open question. This add-on provides a low-cost personal signal in the absence of formal Tier 1–3 wet-lab data.
