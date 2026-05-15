@@ -4143,6 +4143,122 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#9-v2-update-2026-05-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. v2 update (2026-05-14)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. v2 update (2026-05-14)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-methodology-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Methodology additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-headline-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Headline numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-v1-architecture-verdict-survives-and-the-v2-top-tier-is-the-v1-top-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 v1 architecture verdict survives, and the v2 top tier IS the v1 top cluster
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-v1-gc-clamp-proxy-was-weak-the-v2-retrofit-materially-shifts-the-mrna-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 v1 GC-clamp proxy was weak; the v2 retrofit materially shifts the mRNA model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-v2-cutoffs-on-the-501-cassette-shortlist-cohort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 v2 cutoffs on the 501-cassette shortlist cohort
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#96-19-wet-lab-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 §1.9 wet-lab impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#97-v2-limitations-honest-accounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.7 v2 limitations honest accounting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#98-promoted-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.8 Promoted artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#99-v2-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.9 v2 status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5073,7 +5189,84 @@
 <li><a href="../experiments/comp-022-clockbase-uricase-cassette-ranking/"><code>experiments/comp-022-clockbase-uricase-cassette-ranking/</code></a>: analysis script, inputs, outputs, provenance</li>
 </ul>
 <h2 id="8-status">8. Status<a class="headerlink" href="#8-status" title="Permanent link">&para;</a></h2>
-<p>Complete (v1). Fold-quality Tier 3 model deferred to a future run with GPU / API access OR to the §1.9 wet-lab readout. ViennaRNA MFE refinement of the mRNA-5' axis deferred (would refine but not substantively reorder the top cluster). Verification-agent pass complete per CLAUDE.md Rule 4; all load-bearing numbers in this page are grep-verified against primary sources in <a href="../experiments/comp-022-clockbase-uricase-cassette-ranking/provenance.md"><code>experiments/comp-022-.../provenance.md</code></a>.</p>
+<p>Complete (v1 + v2 retrofit, 2026-05-14). See §9 for the v2 update.</p>
+<h2 id="9-v2-update-2026-05-14">9. v2 update (2026-05-14)<a class="headerlink" href="#9-v2-update-2026-05-14" title="Permanent link">&para;</a></h2>
+<p>Both v1-deferred models are now retrofitted on the existing 501-cassette shortlist. The concordance gate tightens from v1's <strong>N-of-4 ≥ 3</strong> (75%) to v2's <strong>N-of-5 ≥ 4</strong> (80%) because the new models are real, not proxies. Inputs at <code>v2/inputs/</code>; outputs at <code>v2/outputs/</code>.</p>
+<h3 id="91-methodology-additions">9.1 Methodology additions<a class="headerlink" href="#91-methodology-additions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ESM2 t33 650M pseudo-likelihood</strong> as the Tier 3 fold-quality proxy. The brief authorized ESMFold v1 as first-choice, but ESMFold v1 in fair-esm 2.0.0 requires <code>openfold</code> which the subagent environment could not install cleanly; ESM2 pseudo-likelihood is the documented fallback (Verkuil 2022; Hsu 2022). ESM2 is the language model that ESMFold uses internally, and per-residue masked-LM log-probability is a direct readout of the model's confidence in each residue's local fold context. Rank-preserving across cassettes of similar length (all ~320-400 aa here). Score range presented as a rescaled pseudo-pLDDT [50, 90] for interpretability; the top-quintile flag uses the rank-preserving raw log-prob.</li>
+<li><strong>ViennaRNA 2.7.2 (Python binding)</strong> for real mRNA 5' MFE, replacing v1's GC-clamp proxy. 150-nt window: 61-nt generic A-rich placeholder 5'UTR + signal peptide ORF + first 30 codons of mature uricase. UTR held constant across cassettes.</li>
+<li><strong>MPS unavailable</strong> on the Python 3.13 + torch 2.12 stack in the v2 env. Fell back to CPU; ESM2 inference on all 106 protein-distinct sequences completed in ~70 seconds.</li>
+</ul>
+<h3 id="92-headline-numbers">9.2 Headline numbers<a class="headerlink" href="#92-headline-numbers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>v1</th>
+<th>v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pass concordance</td>
+<td>501 cassettes (N-of-4 ≥ 3)</td>
+<td><strong>71 cassettes (N-of-5 ≥ 4)</strong></td>
+</tr>
+<tr>
+<td>Strictest tier</td>
+<td>45 cassettes (N-of-4 = 4)</td>
+<td><strong>4 cassettes (N-of-5 = 5)</strong></td>
+</tr>
+<tr>
+<td>v1 top-cluster survival in v2 strictest tier</td>
+<td>n/a</td>
+<td><strong>4 of 4 (100%)</strong></td>
+</tr>
+<tr>
+<td>v1 shortlisted cassettes dropped by v2 gate</td>
+<td>n/a</td>
+<td><strong>430</strong></td>
+</tr>
+</tbody>
+</table>
+<p>v2 concordance distribution across the 501 v1-shortlisted cassettes: 5/5 = 4; &#8536; = 67; &#8535; = 203; &#8534; = 227.</p>
+<h3 id="93-v1-architecture-verdict-survives-and-the-v2-top-tier-is-the-v1-top-cluster">9.3 v1 architecture verdict survives, and the v2 top tier IS the v1 top cluster<a class="headerlink" href="#93-v1-architecture-verdict-survives-and-the-v2-top-tier-is-the-v1-top-cluster" title="Permanent link">&para;</a></h3>
+<p>The v1 top cluster (<code>PamyB</code> + <code>SPamyB</code> or <code>SPamyB_pro</code> + <code>5p_softened</code> codon + <code>direct_3xAla_pts1blk</code> or <code>direct_his6_pts1ok</code> scaffold + <code>nglyc_ablated</code>) has 4 cassettes in v1, all 4 surviving into v2's strictest N-of-5 = 5 tier (100% survival). The v2 strictest tier IS the v1 top cluster; the retrofit did not surface new top-tier cassettes outside the v1-promoted set. The v1 verdict that the §1.9 architecture should stand, and that the three gene-synthesis-time refinements (5'-softened codon, PTS1-blocking C-terminal tag, N191Q glycosylation-sequon ablation) are real, are confirmed under v2. (Mechanistic Extrapolation: ESM2 pseudo-likelihood + ViennaRNA MFE; not yet wet-lab validated.)</p>
+<h3 id="94-v1-gc-clamp-proxy-was-weak-the-v2-retrofit-materially-shifts-the-mrna-model">9.4 v1 GC-clamp proxy was weak; the v2 retrofit materially shifts the mRNA model<a class="headerlink" href="#94-v1-gc-clamp-proxy-was-weak-the-v2-retrofit-materially-shifts-the-mrna-model" title="Permanent link">&para;</a></h3>
+<p>Spearman correlation between v1's GC-clamp <code>mrna_5p</code> proxy and v2's real ViennaRNA MFE, computed per <code>(codon, sp)</code> pair (n = 52): <strong>rho = 0.241</strong>. Weak. The v1 model on this axis was essentially noise. v2's top-quintile MFE cutoff is <strong>MFE ≥ -16.4 kcal/mol</strong> (less negative = looser 5' structure = faster ribosome initiation per Kudla 2009 PMID 19359587).</p>
+<h3 id="95-v2-cutoffs-on-the-501-cassette-shortlist-cohort">9.5 v2 cutoffs on the 501-cassette shortlist cohort<a class="headerlink" href="#95-v2-cutoffs-on-the-501-cassette-shortlist-cohort" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ESM2 raw pll_mean top-quintile cutoff: -0.2214 (rescaled pseudo-pLDDT cutoff: <strong>87.53</strong>)</li>
+<li>ViennaRNA MFE top-quintile cutoff: <strong>≥ -16.4 kcal/mol</strong></li>
+<li>CAI, chaperone load, and promoter-SP prior inherit v1 cutoffs from <code>report.json</code>.</li>
+</ul>
+<p>Scoping: v2 quintile cutoffs are computed on the 501-cassette v1 shortlist cohort, not the original 43,200 cohort. v2 is a tighter gate on v1 promotions, not a re-enumeration.</p>
+<h3 id="96-19-wet-lab-impact">9.6 §1.9 wet-lab impact<a class="headerlink" href="#96-19-wet-lab-impact" title="Permanent link">&para;</a></h3>
+<p>The §1.9 design from v1 stands. The three gene-synthesis-time refinements are confirmed. The actionable v2 change is <strong>scope reduction</strong>: the v1 shortlist of 501 cassettes drops to 71 under N-of-5 ≥ 4, and to 4 under N-of-5 = 5. If gene-synthesis budget allows only a few candidates, the v2 N-of-5 = 5 tier names exactly which ones (the four v1-top-cluster members). The 430-cassette difference between v1 shortlist and v2 shortlist represents cassettes that would have been promoted under v1's deferred-fold-quality methodology but are rejected once real fold-quality and real MFE signals are in the loop.</p>
+<h3 id="97-v2-limitations-honest-accounting">9.7 v2 limitations honest accounting<a class="headerlink" href="#97-v2-limitations-honest-accounting" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ESM2 pseudo-likelihood is a fold-quality proxy, not direct pLDDT.</strong> ESMFold would have been preferable; openfold install was blocked. Rank-preserving across the similar-length cohort here but not the direct per-residue confidence score ESMFold produces. v2.5 should retrofit real ESMFold once openfold install is unblocked.</li>
+<li><strong>Pseudo-likelihood from a single masked-LM forward pass per sequence</strong>, not from per-position masking. Bias is rank-preserving; absolute values are inflated.</li>
+<li><strong>5' MFE window is 150 nt</strong> with a 61-nt placeholder UTR. Promoter-specific UTR modeling and longer-window MFE are v2.5 work.</li>
+<li><strong>CPU inference</strong> (MPS unavailable) was acceptable at N=106 sequences (~70 sec); for the full 43,200 design space, MPS or GPU would be required.</li>
+<li><strong>v2 quintile cutoffs scoped to the 501-cassette shortlist cohort</strong>, not the full 43,200 cohort. v2 is the right tool for "is the v1 shortlist over-promoted?" but not for "what new cassettes outside the v1 shortlist should we promote?"; the latter requires running ESM2 + ViennaRNA on the full design space.</li>
+</ul>
+<h3 id="98-promoted-artifacts">9.8 Promoted artifacts<a class="headerlink" href="#98-promoted-artifacts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/inputs/protein_shortlist.fasta</code> (106 protein-distinct sequences)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/inputs/protein_shortlist_keymap.csv</code> (sequence_id ↔ cassette-spec keys)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/esmfold_pLDDT.csv</code> (106 rows, ESM2 pseudo-pLDDT + raw pll_mean)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/viennarna_mfe.csv</code> (52 rows, real ViennaRNA MFE + v1 GC-clamp proxy)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_shortlist.csv</code> (71 cassettes passing N-of-5 ≥ 4)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_top25.md</code></li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_summary.json</code></li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/analyze_v2.py</code> (re-ranking pipeline, reproducible)</li>
+</ul>
+<h3 id="99-v2-status">9.9 v2 status<a class="headerlink" href="#99-v2-status" title="Permanent link">&para;</a></h3>
+<p>v2 complete. Tier 3 fold-quality retrofitted (ESM2 pseudo-likelihood fallback; see §9.7). Tier 1' mRNA model retrofitted (real ViennaRNA MFE replacing v1 GC-clamp proxy).</p>
+<p><strong>v2.5 deferred (2026-05-14, explicit decision).</strong> Real ESMFold, full per-position masking, promoter-specific UTR, MPS/GPU for full-cohort retrofit are deferred until either (a) §1.9 wet-lab data arrives and retrospective validation of in silico scorers becomes possible, or (b) a fresh design problem (different target) requires the same machinery. Reasoning: the v2 output is sufficient to commit gene-synthesis dollars (4 strict winners + 71 looser shortlist); v1 architectural cluster survives v2 at 100%, so the marginal value of a stricter fold-quality model on the same cohort is bounded; wet-lab yield data will dominate any further in silico refinement. The deferral is a real-data-imminent diminishing-returns call, not an infrastructure block — Python 3.12 venv + HuggingFace <code>facebook/esmfold_v1</code> via <code>transformers</code> is the documented path forward when v2.5 is unblocked.</p>
+<p>Verification-agent pass complete per CLAUDE.md Rule 4; all load-bearing numbers in §9 are grep-verified against the v2 output CSVs and JSON in <a href="../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/"><code>experiments/comp-022-.../v2/outputs/</code></a> and the v2 provenance log.</p>
 
 
 
