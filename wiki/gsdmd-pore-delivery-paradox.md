@@ -15,6 +15,11 @@ related:
   - nlrp3-exploit-map.md
   - gout-kill-chain-delivery-routes.md
   - nlrp3-inflammasome.md
+  - delivery-route-matrix.md
+  - chassis-pending-interventions.md
+  - daf-cd55-scr14-truncated-computational.md
+  - bpc-157.md
+  - peptide-gout-addendum.md
 sources:
   - "bioRxiv Feb 2025 — caspase inhibitor delivery through GSDMD pores (https://www.biorxiv.org/content/10.1101/2025.02.11.637513v1.full)"
   - "PNAS 2018 — Ac-FLTD-CMK GSDMD-derived blocking peptide"
@@ -36,8 +41,16 @@ Gasdermin D (GSDMD) is cleaved by activated caspase-1 (or caspase-4/5/11). The c
 
 - Small molecules (< 1 kDa): easy passage
 - Peptides (1–5 kDa): passage demonstrated
-- Nanobodies (~12–15 kDa): at the upper limit; passage likely for flexible structures
-- Full-size antibodies (~150 kDa): too large
+- Nanobodies (~12–15 kDa, ~3–4 nm hydrodynamic): pass readily
+- Single SCR domains (~7 kDa, ~3 nm): pass
+- IL-1RA / anakinra (~17 kDa, ~4 nm): passes
+- Lactoferrin monomer (~80 kDa, ~5–6 nm): borderline-permissive
+- DAF SCR1-4 ectodomain (~70 kDa, ~5–7 nm): borderline-permissive
+- Catalase tetramer (~240 kDa, ~10–12 nm): at the upper edge
+- Uricase tetramer (~134 kDa, ~10 nm): at the upper edge
+- Full-size IgG antibodies (~150 kDa, ~14 nm): pore-marginal to too-large
+
+**Implication for OE biologics specifically:** the pore is a size-selective delivery window. Several payloads on the OE roadmap (KPV, lactoferrin, DAF SCR1-4) fall in or near the permissive range. This converts the pore from "a way to deliver caspase inhibitors" into "a delivery mechanism for a *class* of OE-relevant biologics that happen to fall in the 10–20 nm size window." See [`delivery-route-matrix.md`](./delivery-route-matrix.md) for the broader compound-class × route grid in which this becomes a route option.
 
 Under normal conditions, the plasma membrane is a selective barrier. Many pharmacologically active compounds — charged peptides, certain caspase inhibitors, hydrophilic small molecules — are membrane-impermeant: they can be present in the extracellular fluid at therapeutic concentrations but cannot cross an intact plasma membrane to reach their intracellular target.
 

@@ -19,6 +19,12 @@ related:
   - gout-pathophysiology.md
   - gout-clinical-pipeline.md
   - complement-c5a-gout.md
+  - delivery-route-matrix.md
+  - compounding-pharmacy-track.md
+  - chassis-pending-interventions.md
+  - purine-degrading-bacteria.md
+  - gsdmd-pore-delivery-paradox.md
+  - uricase-abcg2-genotype-stratification-computational.md
 sources:
   - "ACS Applied Nano Materials 2025 — gout nanocarrier systems review"
   - "Frontiers Pharmacology 2025 — drug delivery systems for gout"
@@ -38,9 +44,13 @@ status: published
 
 A node-by-node pharmacological route analysis across all chokepoints in the gout/NLRP3 kill chain. Companion to [nlrp3-exploit-map.md](./nlrp3-exploit-map.md), which maps *what* to hit. This page maps *how to get there.*
 
+**Companion matrix:** [`delivery-route-matrix.md`](./delivery-route-matrix.md) is the orthogonal-axis view (rows = compound classes, columns = delivery routes). Both pages are deliberately complementary — chokepoint-anchored vs compound-class-anchored. Cross-reference both when a finding could land in either grid.
+
 **What this page adds:** The exploit map is rich in compounds but thin on delivery route reasoning. Mechanism match is necessary but not sufficient — a drug targeting a synovial macrophage enzyme that can only reach hepatocytes is a pharmacological dead end. Delivery route determines whether a compound's IC50 is biologically relevant at the target tissue.
 
 **Guiding principle:** compartment matching. Ask "where does this target live?" before asking "how do we deliver?" A renal proximal-tubule transporter (URAT1) is unreachable by intra-articular injection. A synovial macrophage target is unreachable by inhaled drug. Compartment mismatch is the dominant reason a mechanistically-correct compound fails to work in vivo.
+
+**Temporal axis:** The matrix below is largely time-static, but gout has at least three time regimes that gate route choice: (a) **flare onset** (0–6 hr) wants fast onset → sublingual / inhaled / IA; (b) **flare peak** (6–48 hr) wants sustained → IA hydrogel / SC depot; (c) **inter-flare chronic / lifetime prevention** wants once-daily oral or longer-cadence biologic / chassis-based. The right route for a given chokepoint depends on which clock you're on. Cells in the matrix should be read with this in mind even where it is not explicitly tagged.
 
 ---
 
@@ -268,7 +278,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 - IA delivery of peptidic caspase-1 inhibitors (Z-YVAD-FMK class): these inhibitors have poor cell membrane permeability due to size and charge — IA delivery puts them in the joint fluid but they cannot cross the macrophage plasma membrane to reach intracellular caspase-1. Small, lipophilic caspase-1 inhibitors (VX-765 class) can reach the intracellular target from the joint space; large peptidic inhibitors cannot.
 
 **Open territory:**
-- **GSDMD pore-mediated delivery of membrane-impermeant caspase inhibitors (2025 bioRxiv preprint):** A February 2025 bioRxiv preprint demonstrates that once GSDMD pores form (10–15 nm diameter), they serve as delivery conduits — membrane-impermeant caspase inhibitors passively enter GSDMD-pore-expressing pyroptotic cells more efficiently than normal cells. Paradoxical: the inflammatory cell's own exit pores become the drug delivery portal. This creates a therapeutic window at the intersection of CP4 and CP6b: as pyroptosis initiates (CP6b, GSDMD pores open), those pores enhance delivery of caspase inhibitors that close the CP4 executioner. No drug development program has exploited this in any disease, including gout. (In Vitro — preprint; Mechanistic Extrapolation — gout translation)
+- **GSDMD pore-mediated delivery of membrane-impermeant caspase inhibitors (2025 bioRxiv preprint):** A February 2025 bioRxiv preprint demonstrates that once GSDMD pores form (10–20 nm diameter), they serve as delivery conduits — membrane-impermeant caspase inhibitors passively enter GSDMD-pore-expressing pyroptotic cells more efficiently than normal cells. Paradoxical: the inflammatory cell's own exit pores become the drug delivery portal. This creates a therapeutic window at the intersection of CP4 and CP6b: as pyroptosis initiates (CP6b, GSDMD pores open), those pores enhance delivery of caspase inhibitors that close the CP4 executioner. No drug development program has exploited this in any disease, including gout. (In Vitro — preprint; Mechanistic Extrapolation — gout translation)
 - **Oral VX-765 for gout — zero trials in 28 years of mechanism availability:** Caspase-1 is the final executioner of the gout cascade (cleaves pro-IL-1β, pro-IL-18, GSDMD simultaneously). VX-765 has human Phase 2a safety data. No gout trials registered on ClinicalTrials.gov as of May 2026. Identical gap structure to zileuton at CP6a and disulfiram at CP6b — mechanistically-obvious repurposing candidates missed when discovering and treating research communities don't overlap.
 
 ---
@@ -346,8 +356,8 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 
 **Open territory:**
 - **Disulfiram for gout — the recognized but untried window:** Disulfiram's GSDMD Cys191 mechanism was published in Nature Immunology 2020. Five years later, no published case series of disulfiram co-administration for refractory gout management. Identical pattern to zileuton — mechanistically-obvious repurposing candidate, treating and discovering communities non-overlapping. $30/month generic. (Clinical Trial — approved indication; gap = zero gout evidence)
-- **GSDMD pore self-delivery paradox (2025 bioRxiv preprint) — dual relevance at CP4 and CP6b:** See CP4 note above. GSDMD pores (10–15 nm) serve as delivery conduits for membrane-impermeant inhibitors back into the pyroptotic cell — including GSDMD-derived blocking peptides (Ac-FLTD-CMK, PNAS 2018) that cannot normally cross intact plasma membranes. Once the pore opens, it enables delivery of compounds that close it. This paradox is unaddressed in gout pharmacology and in drug delivery literature generally. (In Vitro — preprint Feb 2025; Mechanistic Extrapolation)
-- **Lactoferrin CP6b via mitophagy pathway:** Lactoferrin induces PINK1/Parkin + FUNDC1/BNIP3/NIX mitophagy, clearing damaged mitochondria before they trigger GSDMD cleavage (Shan 2026, PMID 41524100). Mechanistically upstream of Cys191 chemistry — prevents GSDMD cleavage rather than blocking the cleaved fragment's pore formation. Delivery route: oral kojied lactoferrin. The only fermentable food-grade CP6b option in the OE stack. (Animal Model + In Vitro — Shan 2026)
+- **GSDMD pore self-delivery paradox (2025 bioRxiv preprint) — dual relevance at CP4 and CP6b:** See CP4 note above. GSDMD pores (10–20 nm) serve as delivery conduits for membrane-impermeant inhibitors back into the pyroptotic cell — including GSDMD-derived blocking peptides (Ac-FLTD-CMK, PNAS 2018) that cannot normally cross intact plasma membranes. Once the pore opens, it enables delivery of compounds that close it. This paradox is unaddressed in gout pharmacology and in drug delivery literature generally. (In Vitro — preprint Feb 2025; Mechanistic Extrapolation)
+- **Lactoferrin CP6b via mitophagy pathway:** Lactoferrin induces PINK1/Parkin + FUNDC1/BNIP3/NIX mitophagy, clearing damaged mitochondria before they trigger GSDMD cleavage. Mechanistically upstream of Cys191 chemistry — prevents GSDMD cleavage rather than blocking the cleaved fragment's pore formation. **Source paper Shan et al. 2026 (PMID 41524100, Food & Function) is a *radiation-induced intestinal injury (RIII)* model, NOT a gout model**; the PINK1/Parkin + FUNDC1/BNIP3/NIX mitophagy → NLRP3/caspase-1/GSDMD pyroptosis suppression mechanism is what transfers to gout (Mechanistic Extrapolation). Delivery route: oral kojied lactoferrin. The only fermentable food-grade CP6b option in the OE stack. (Animal Model + In Vitro for the RIII paper itself; Mechanistic Extrapolation for gout translation.)
 - **DMF gout trial — the low-friction alternative to disulfiram:** DMF (generic, oral, FDA-approved) succinates GSDMD Cys191 via a distinct chemistry from disulfiram's dithiocarbamate mechanism. DMF also activates Nrf2/HO-1 (anti-oxidant) and has lower hepatotoxicity profile than disulfiram. An investigator-initiated DMF gout flare management case series faces no regulatory barriers.
 
 ---
@@ -366,7 +376,7 @@ Nearly every node from CP2 through CP6b has a mechanistically coherent IA delive
 
 ### 2. The GSDMD pore self-delivery paradox
 
-The most structurally novel finding from this survey: GSDMD pores (10–15 nm diameter) serve as delivery conduits for membrane-impermeant caspase inhibitors and GSDMD-blocking peptides into the pyroptotic cell (bioRxiv February 2025). The inflammatory cell's own exit pore becomes the drug delivery portal. The CP4/CP6b overlap is the most concentrated opportunity — once GSDMD pores open (CP6b), they provide enhanced access for caspase-1 inhibitors (CP4) that normally cannot cross intact plasma membranes. No program in any disease. No gout pharmacologist has described this. The preprint is from 2025 and the delivery implication appears not to have been noticed by the gout field.
+The most structurally novel finding from this survey: GSDMD pores (10–20 nm diameter) serve as delivery conduits for membrane-impermeant caspase inhibitors and GSDMD-blocking peptides into the pyroptotic cell (bioRxiv February 2025). The inflammatory cell's own exit pore becomes the drug delivery portal. The CP4/CP6b overlap is the most concentrated opportunity — once GSDMD pores open (CP6b), they provide enhanced access for caspase-1 inhibitors (CP4) that normally cannot cross intact plasma membranes. No program in any disease. No gout pharmacologist has described this. The preprint is from 2025 and the delivery implication appears not to have been noticed by the gout field.
 
 ### 3. Three generic repurposing candidates with zero gout trials
 

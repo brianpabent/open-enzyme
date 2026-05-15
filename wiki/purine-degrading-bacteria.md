@@ -20,17 +20,19 @@ related:
   - nlrp3-inflammasome.md
   - gout-kill-chain-delivery-routes.md
   - engineered-lbp-chassis.md
+  - delivery-route-matrix.md
+  - chassis-pending-interventions.md
 sources:
   - "Liu et al. 2023 — Cell 186(16):3400–3413. PMID 37541197. DOI 10.1016/j.cell.2023.06.010. 'A widely distributed gene cluster compensates for uricase loss in hominids.'"
   - "Liu, Zhou, Jarman et al. 2025 — Nature Microbiology 10(9):2291–2305. PMID 40770490. DOI 10.1038/s41564-025-02079-4. PMCID PMC12666987. 'Gut bacteria degrade purines via the 2,8-dioxopurine pathway.'"
-  - "Terkeltaub et al. 2025 — Arthritis & Rheumatology. PMID 39829115. PMC12276925. 'The Gut Microbiome in Hyperuricemia and Gout.'"
-  - "Jiang et al. 2024 — Cell Host & Microbe. PMID 38412863. DOI 10.1016/j.chom.2024.02.001. 'Alistipes indistinctus-derived hippuric acid promotes intestinal urate excretion to alleviate hyperuricemia.'"
-  - "Life Metabolism 2025 — 4(6):loaf031. DOI 10.1093/lifemeta/loaf031. Reductive uric acid degradation pathway in anaerobic bacteria; CBT2.0 engineered strain; yanthine biomarker."
-  - "Antibiotic dysbiosis + purine metabolism (mouse): PMID 37442943 / PMC10339580"
-  - "Mendelian randomization Ruminococcus protective (OR 0.86): PMC11598824 (Bioscience Reports 2024)"
-  - "C. difficile selenium-dependent pathway: PMC11448449 (Microbiology Spectrum 2024)"
-  - "Butyrate → ABCG2 (Li 2023): PMID 36948133"
-  - "DASH fiber RCT → SUA reduction: PMID 33615722 (Juraschek 2021)"
+  - "Terkeltaub et al. 2025 — Arthritis & Rheumatology 77(8):955-965. PMID 39829115. PMC12276925. 'The Gut Microbiome in Hyperuricemia and Gout.'"
+  - "Xu et al. 2024 — Cell Host & Microbe 32(3):366-381.e9. PMID 38412863. DOI 10.1016/j.chom.2024.02.001. 'Alistipes indistinctus-derived hippuric acid promotes intestinal urate excretion to alleviate hyperuricemia.' (Last author: Yan Liu, Sun Yat-sen Univ.)"
+  - "Li et al. 2025 — Life Metabolism 4(6):loaf031. PMID 41070194. DOI 10.1093/lifemeta/loaf031. 'A reductive uric acid degradation pathway in anaerobic bacteria.' Defines the CBT2.0 engineered E. coli Nissle strain; identifies yanthine (2,8-dioxopurine) as serum biomarker elevated in gout patients."
+  - "Antibiotic dysbiosis + purine metabolism (mouse): PMID 37442943 / PMC10339580 — cited but not directly verified as of 2026-05-15"
+  - "Mendelian randomization for gout-protective gut taxa: closest verified citations are PMID 40524870 (Aikepa et al. 2025, Diabetes Metab Syndr Obes — MR analysis n=18,340 + clinical validation) and PMID 37063923 (Hou et al. 2023, Front Immunol — bidirectional MR via DHA mediation). The earlier-cited 'Bioscience Reports 2024 PMC11598824 Ruminococcus OR 0.86' could not be confirmed via direct PubMed search 2026-05-15 — use the Aikepa or Hou citations as the verified replacements."
+  - "C. difficile selenium-dependent pathway: PMC11448449 (Microbiology Spectrum 2024) — cited but not directly verified as of 2026-05-15"
+  - "Butyrate → ABCG2 (Li 2023): PMID 36948133 — sodium butyrate rescues ABCG2 expression in hyperuricemia mice + Caco-2 cells"
+  - "DASH fiber RCT → SUA reduction: PMID 33615722 (Juraschek 2021, Arthritis Rheumatol) — DASH diet reduced mean SUA 0.25 mg/dL (0.73 at baseline SUA ≥8)"
 status: published
 ---
 
@@ -172,7 +174,7 @@ Multiple independent cohorts (primarily Chinese) show consistent signal: (Human 
 - In early hyperuricemia: uric acid degradation gene clusters decreased **70%** while purine uptake genes increased 1.5-fold vs. healthy controls (metagenomics)
 - A diagnostic model based on 17 gut bacteria achieved 88.9% accuracy classifying hyperuricemia vs. healthy controls
 
-**Mendelian randomization (Bioscience Reports 2024, PMC11598824):** *Ruminococcus* genetically protective OR = 0.86 (95% CI 0.74–0.99, P=0.04). Class Bacilli harmful OR = 1.11 (95% CI 1.03–1.19). MR provides causal leverage that cross-sectional cohort data cannot.
+**Mendelian randomization (Aikepa et al. 2025, Diabetes Metab Syndr Obes — PMID 40524870; Hou et al. 2023, Front Immunol — PMID 37063923):** Verified MR analyses identify gut taxa with causal effects on hyperuricemia / gout — specific protective and harmful taxa identified across both studies. (The earlier-cited "Bioscience Reports 2024 PMC11598824 Ruminococcus OR 0.86" could not be confirmed via direct PubMed search and may be a stale or hallucinated citation; the verified MR signal exists, but use Aikepa 2025 or Hou 2023 as primary sources until the original cite is confirmed.) MR provides causal leverage that cross-sectional cohort data cannot.
 
 ### Yanthine as a Human Biomarker
 
@@ -205,7 +207,7 @@ The 2,8-dioxopurine pathway terminates in pyruvate → acetate + butyrate via or
 
 ## The Alistipes indistinctus / Hippuric Acid / ABCG2 Axis
 
-Mechanistically distinct from PDB but directly relevant and additive. (Jiang et al. 2024, Cell Host & Microbe, PMID 38412863; Animal Model + Human Observational)
+Mechanistically distinct from PDB but directly relevant and additive. (Xu et al. 2024, Cell Host & Microbe, PMID 38412863; Animal Model + Human Observational)
 
 *Alistipes indistinctus* is depleted in hyperuricemia subjects. It produces hippuric acid via aromatic amino acid catabolism. Hippuric acid:
 - Enhances PPARγ binding to the ABCG2 promoter → ABCG2 transcriptional upregulation

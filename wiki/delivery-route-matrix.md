@@ -10,6 +10,8 @@ tags:
   - exploration
 related:
   - modality-chokepoint-matrix.md
+  - gout-kill-chain-delivery-routes.md
+  - chassis-pending-interventions.md
   - compounding-pharmacy-track.md
   - engineered-koji-protocol.md
   - aspergillus-oryzae.md
@@ -17,6 +19,8 @@ related:
   - bpc-157.md
   - peptide-gout-addendum.md
   - gout-clinical-pipeline.md
+  - gsdmd-pore-delivery-paradox.md
+  - purine-degrading-bacteria.md
   - open-enzyme-vision.md
   - open-source-platform.md
 sources:
