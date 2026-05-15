@@ -278,7 +278,7 @@ The §1.9 design from v1 stands. The three gene-synthesis-time refinements are c
 - **Pseudo-likelihood from a single masked-LM forward pass per sequence**, not from per-position masking. Bias is rank-preserving; absolute values are inflated.
 - **5' MFE window is 150 nt** with a 61-nt placeholder UTR. Promoter-specific UTR modeling and longer-window MFE are v2.5 work.
 - **CPU inference** (MPS unavailable) was acceptable at N=106 sequences (~70 sec); for the full 43,200 design space, MPS or GPU would be required.
-- **v2 quintile cutoffs scoped to the 501-cassette shortlist cohort**, not the full 43,200 cohort. v2 is the right tool for "is the v1 shortlist over-promoted?" but not for "what new cassettes outside the v1 shortlist should we promote?" — the latter requires running ESM2 + ViennaRNA on the full design space.
+- **v2 quintile cutoffs scoped to the 501-cassette shortlist cohort**, not the full 43,200 cohort. v2 is the right tool for "is the v1 shortlist over-promoted?" but not for "what new cassettes outside the v1 shortlist should we promote?"; the latter requires running ESM2 + ViennaRNA on the full design space.
 
 ### 9.8 Promoted artifacts
 
@@ -293,60 +293,8 @@ The §1.9 design from v1 stands. The three gene-synthesis-time refinements are c
 
 ### 9.9 v2 status
 
-v2 complete. Tier 3 fold-quality retrofitted (ESM2 pseudo-likelihood fallback; see §9.7). Tier 1' mRNA model retrofitted (real ViennaRNA MFE replacing v1 GC-clamp proxy). v2.5 follow-ups: real ESMFold, full per-position masking, promoter-specific UTR, MPS/GPU for full-cohort retrofit.
+v2 complete. Tier 3 fold-quality retrofitted (ESM2 pseudo-likelihood fallback; see §9.7). Tier 1' mRNA model retrofitted (real ViennaRNA MFE replacing v1 GC-clamp proxy).
 
-## 9. v2 update (2026-05-14): ESMFold pLDDT and ViennaRNA MFE retrofits
+**v2.5 deferred (2026-05-14, explicit decision).** Real ESMFold, full per-position masking, promoter-specific UTR, MPS/GPU for full-cohort retrofit are deferred until either (a) §1.9 wet-lab data arrives and retrospective validation of in silico scorers becomes possible, or (b) a fresh design problem (different target) requires the same machinery. Reasoning: the v2 output is sufficient to commit gene-synthesis dollars (4 strict winners + 71 looser shortlist); v1 architectural cluster survives v2 at 100%, so the marginal value of a stricter fold-quality model on the same cohort is bounded; wet-lab yield data will dominate any further in silico refinement. The deferral is a real-data-imminent diminishing-returns call, not an infrastructure block — Python 3.12 venv + HuggingFace `facebook/esmfold_v1` via `transformers` is the documented path forward when v2.5 is unblocked.
 
-The v1 run deferred the Tier 3 fold-quality model (ESMFold/AlphaFold pLDDT) and used a GC-clamp proxy for the Tier 1' mRNA secondary-structure axis. The v2 retrofit closes both gaps: ESM2 pseudo-likelihood replaces the deferred fold-quality slot (ESMFold v1 weights require the openfold package, which was blocked by the auto-mode classifier as external-source code; ESM2 pseudo-likelihood is the brief-authorized fallback), and ViennaRNA 2.7.2 (real MFE calculation, Python binding) replaces the GC-clamp proxy. The retrofit operates on the v1 501-cassette shortlist; it is a tighter gate on v1 survivors, not a re-enumeration of the full 43,200 design space.
-
-### 9.1 Method changes from v1
-
-| Axis | v1 model | v2 model | Reason |
-|---|---|---|---|
-| Fold quality (Tier 3) | Deferred (sequence-preservation tie-breaker) | ESM2-650M pseudo-likelihood, rescaled to pseudo-pLDDT [50,90] (Computational; Verkuil 2022 / Hsu 2022 mechanism) | ESMFold fallback explicitly authorized by the brief; pseudo-likelihood preserves rank order for relative comparison of cassettes |
-| mRNA 5' structure (Tier 1') | GC-content + GC-clamp + palindromic-4mer count proxy | ViennaRNA 2.7.2 RNA.fold over 150 nt window (61 nt generic A-rich 5'UTR + signal peptide ORF + first 30 codons of uricase) | Real Turner-2004 nearest-neighbor MFE replaces the heuristic proxy |
-| Concordance threshold | N-of-4 ≥ 3 (75%) | N-of-5 ≥ 4 (80%) | Tighter gate now that the fold-quality axis is real |
-| Cohort for v2 top-quintile cutoffs | 43,200 (full enumeration) | 501 (v1 shortlist) | v2 retrofits only score v1 survivors; correct interpretive scope |
-
-### 9.2 v2 headline numbers (Computational)
-
-- **v2 shortlist (N-of-5 ≥ 4): 71 unique cassettes** (vs. v1's 501 at N-of-4 ≥ 3; v1 strict N-of-4 = 4 was 45 unique cassettes).
-- **v2 strict (N-of-5 = 5): 4 unique cassettes** (all five models in top quintile). These are PamyB + SPamyB_pro + 5p_softened + (direct_3xAla_pts1blk or direct_natag_pts1ok) + nglyc_ablated and their PglaA equivalent.
-- **v1 top cluster (PamyB + amyB-SP + 5p_softened + direct + PTS1-blocking + N191Q) survival in v2: 4 of 4 (100%).** All four v1 top-cluster cassettes pass the tighter N-of-5 ≥ 4 gate. **v1 architectural verdict validated.**
-- **v1 top cluster N-of-5 distribution:** all 4 cassettes score N-of-5 = 5 (the strict cohort). The fold-quality and ViennaRNA-MFE retrofits do not displace v1's top.
-- **Cassettes v1 promoted but v2 rejects on fold-quality grounds: 380 cassettes** (of the 430 not in v2 shortlist). These are cassettes whose ESM pseudo-pLDDT falls outside the top quintile of the 501-cohort distribution. Most are cbhI / pepO / lipase signal peptides combined with glaA-fusion scaffolds, where the carrier sequence pulls per-residue confidence scores down. **Interpretation:** these would have wasted gene-synthesis dollars in §1.9 if the fold model had not been retrofit and §1.9 had drawn from the full N-of-4 ≥ 3 shortlist at random.
-
-### 9.3 v1 GC-clamp proxy vs ViennaRNA MFE: weak correlation, falsifying the proxy
-
-Spearman rho (v1 GC-clamp proxy vs ViennaRNA MFE on the 52 unique codon × SP pairs in the shortlist): **0.241**. Pearson r: 0.227. **The v1 proxy is weakly correlated with real MFE.** This is mechanistically interpretable: the v1 proxy was a sum of three components (GC-fraction, GC-clamp count, palindromic-4mer count) and assumed these correlate with thermodynamic folding propensity. ViennaRNA computes the actual MFE under the Turner-2004 nearest-neighbor parameters; this captures stem-loop length, loop entropy, and stacking effects that the proxy cannot resolve. **Practical consequence:** the v1 ranking's order-on-the-mRNA axis was substantially noisy. The v2 retrofit shifts the mRNA axis enough to change the concordance call for 430 of 501 cassettes (the difference between v1's 501 and v2's 71).
-
-The v1 top cluster survives anyway because it scores top-quintile on at least four of the five models even after the mRNA axis is recomputed. The robust signal is on CAI + chaperone-load + promoter-prior + fold-quality; the mRNA axis is the noisiest of the five.
-
-### 9.4 ESM pseudo-pLDDT distribution on the shortlist
-
-pseudo-pLDDT range across the 106 protein-distinct sequences: 50.00 to 90.00 (rescaled from raw mean log-prob range of -0.285 to -0.209). The 7 protein-distinct keys with pseudo-pLDDT in the top quintile (≥ 87.5) are dominated by direct-secretion + amyB or glaA signal peptide + nglyc_ablated. The protein keys with lowest pseudo-pLDDT (50-60 range) are glaA-fusion scaffolds with the truncated glaA carrier head, where the partial-domain N-terminus introduces unnatural sequence context for the ESM2 prior. This is mechanistically consistent with the chaperone-load model: glucoamylase-fusion architectures impose chaperone overhead AND degrade the language-model fold confidence; two of the five concordance axes converge on rejecting the fusion architecture for uricase.
-
-### 9.5 v2 simplifications owned
-
-- **ESM2 pseudo-likelihood in place of ESMFold pLDDT.** openfold install was blocked by the auto-mode classifier as code-from-external; the brief explicitly authorizes ESM2 pseudo-likelihood as the fallback. Pseudo-likelihood is mechanistically related to fold quality (Verkuil 2022) and is well-validated as a fitness/stability proxy (Hsu 2022). For RANK comparison across cassettes the pseudo-pLDDT is rank-preserving with true pLDDT in the regime where both are measuring "is this sequence natural in fold-relevant ways." v2.5 should retrofit real ESMFold once the openfold dependency is unblocked.
-- **MPS unavailable on Python 3.13 + torch 2.12.** `torch.backends.mps.is_built() = True` but `torch.backends.mps.is_available() = False` on this build. Fell back to CPU; all 106 sequences scored in ~70 seconds at 8 CPU threads. No throughput penalty for the v2 retrofit.
-- **5'UTR held constant.** A generic 61-nt A-rich sequence is prepended to every (codon × SP) variant before ViennaRNA folding. Promoter-specific UTR sequences are not modeled in v1 or v2. This is a per-axis simplification: the rank order across cassettes within a single promoter is correct; cross-promoter MFE comparison inherits the assumption that the 5'UTR contribution to MFE is comparable across promoters.
-- **v2 top-quintile cutoffs computed on the 501-cassette shortlist cohort**, not the 43,200-cohort. v2 retrofits only score v1 survivors. The interpretive frame is "v2 is a tighter gate on v1 survivors," not "v2 re-enumerates the full design space." A v2.5 that retrofits ESMFold + ViennaRNA on the full 43,200 cohort would shift the cutoffs and likely tighten the v2 shortlist further (the 501-cohort is already pre-filtered for goodness on four axes).
-
-### 9.6 Impact on §1.9 wet-lab promotion
-
-The §1.9 architectural decision does not change. The top cassette across both v1 and v2 is `PamyB + SPamyB_pro + 5p_softened codon variant + direct_3xAla_pts1blk + N191Q glyc-ablation + no propeptide`. The gene-synthesis-time refinements identified in v1 §6.1 stand. v2 adds one additional finding usable at the §1.9 gate: **prefer the 4 cassettes in the v2 strict (N-of-5 = 5) shortlist over the broader v2 shortlist when narrowing to a single construct for synthesis.** All 4 are minor variations on the v1 top cluster, differing only in the SP variant (SPamyB_pro vs SPamyB) and the scaffold C-term tag (3xAla vs his6 vs native + pro-region).
-
-### 9.7 v2 artifacts
-
-- [`experiments/comp-022-.../v2/analyze_v2.py`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/analyze_v2.py): N-of-5 reranking script
-- [`experiments/comp-022-.../v2/run_esm2_pseudo_likelihood.py`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/run_esm2_pseudo_likelihood.py): ESM2-650M scoring (CPU, 70 s wall)
-- [`experiments/comp-022-.../v2/run_viennarna_mfe.py`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/run_viennarna_mfe.py): ViennaRNA MFE on 5'-mRNA window
-- [`experiments/comp-022-.../v2/outputs/v2_shortlist.csv`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_shortlist.csv): 71 N-of-5 ≥ 4 cassettes
-- [`experiments/comp-022-.../v2/outputs/v2_top25.md`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_top25.md): top-25 table
-- [`experiments/comp-022-.../v2/outputs/v2_summary.json`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_summary.json): machine-readable summary
-- [`experiments/comp-022-.../v2/outputs/esmfold_pLDDT.csv`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/esmfold_pLDDT.csv): per-protein pseudo-pLDDT scores
-- [`experiments/comp-022-.../v2/outputs/viennarna_mfe.csv`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/viennarna_mfe.csv): per-(codon × SP) MFE
-- [`experiments/comp-022-.../v2/provenance.md`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/provenance.md): v2 environment + verification log
-
-Verification-agent pass complete per CLAUDE.md Rule 4; all load-bearing numbers in this section are grep-verified against the v2 output CSVs and JSON in [`experiments/comp-022-.../v2/outputs/`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/) and the v2 provenance log.
+Verification-agent pass complete per CLAUDE.md Rule 4; all load-bearing numbers in §9 are grep-verified against the v2 output CSVs and JSON in [`experiments/comp-022-.../v2/outputs/`](../experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/) and the v2 provenance log.
