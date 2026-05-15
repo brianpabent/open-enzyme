@@ -409,6 +409,47 @@ In practice, measuring Lf titer alone in the triple vs. dual-cassette context gi
 2. **Uricase + Lf dual-cassette arm** — validates the comp-010 prediction (1.06× Huynh baseline, within capacity). Required for interpreting the triple.
 3. **Uricase + Lf + DAF SCR1-4 triple-cassette arm** — the prospective falsifiable test of this §5.5 prediction. **Optional for the §1.9 gate decision** (the dual-cassette arm is sufficient to decide whether to proceed with the endgame strain); adds ~$1-2k and 2-3 weeks but provides the framework's first prospective validation data point.
 
+## 5.6 Design escape — cytosolic third cassette bypasses the secreted-stacking bottleneck (added 2026-05-15)
+
+§5.5 above analyses a triple-cassette strain where all three payloads are **secreted** — uricase + lactoferrin + DAF SCR1-4. That analysis predicts the triple pushes PDI/ERO1 chaperone load into the sub-0.6 synergy regime (0.35–0.65 range, §5.5.4) and recommends routing DAF onto a separate strain or peer-track chassis. A natural follow-up question, surfaced by the 2026-05-14 sweep Connection 1: **can the third cassette be cytosolic instead of secreted, escaping the chaperone bottleneck entirely?**
+
+[comp-023](./cordycepin-cassette-burden-computational.md) (cordycepin cassette burden FBA, verdict GREEN 2026-05-14) demonstrated that the *Cordyceps militaris* cns1+cns2 cordycepin pathway is **cytosolic** in *A. oryzae*: no signal peptide, no ER transit, no disulfide bonds, no PDI load, and < 1% metabolic burden at the Jeennor 2023 564 mg/L/day titer. This means a triple-cassette strain of:
+
+- **Uricase** (secreted, PDI load 0 after N191Q glycosylation ablation per [comp-022](./uricase-cassette-ranking-computational.md))
+- **Lactoferrin** (secreted, PDI load 24–40 range per §3.5.3 architecture-adjusted model)
+- **Cordycepin** (cytosolic, PDI load **0**)
+
+… has a total PDI/ERO1 load of **24–40 (range)** — identical to the dual-cassette uricase + lactoferrin baseline. The third cassette adds therapeutic mechanism breadth (cordycepin as a URAT1-modulating + ADA-inhibiting payload — see [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) for the mechanism rationale) without adding to the chaperone load that drives §5.5's pessimistic synergy prediction.
+
+### What §5.6 does NOT claim (Pass 3 softening discipline)
+
+The 2026-05-14 sweep Connection 1 Pass 3 review flagged two specific overclaims to avoid:
+
+1. **"Within demonstrated NSlD-ΔP10 capacity" is NOT source-supported.** The Lf-alone capacity question against the Huynh 16-disulfide reference is **unresolved** in the current corpus (§3.5.4 explicitly flags this — Lf-alone in §1.9 will produce the calibration data). Until §1.9 returns, treat the PDI load 24–40 range as the *budget* the design must fit within, not as a *demonstrated-capacity* assertion. Adding the cytosolic third cassette doesn't add to the budget; it doesn't, however, *prove* the budget is achievable.
+2. **"≥0.85 triple-synergy" is NOT source-supported.** §5.5's synergy framework (0.35–0.65 range under architecture-adjusted modeling) was derived for *secreted-only* payloads. The cytosolic-third-cassette case isn't a continuous extension of that framework — it's a structurally different decomposition (the chaperone load is dual-cassette plus a metabolic-only third), and the synergy question for this case is **an outcome of [comp-028](./computational-experiments.md), not an input.**
+
+The design-escape framing is therefore: "cytosolic third cassettes are *promising* because they don't add chaperone load," not "the triple is *proven* to work."
+
+### Comp-028 as the feasibility gate
+
+[comp-028](./computational-experiments.md) (Planned Analyses, queued 2026-05-15) is the explicit computational pass that resolves the open question. It requires two orthogonal models (per the BioDesignBench evaluation-depth discipline at [`autonomous-screening-methodology.md` §"BioDesignBench evaluation-depth audit"](./autonomous-screening-methodology.md)):
+
+- The chaperone framework with explicit confidence bounds (this section, with Pass 3 softening applied)
+- iWV1314 FBA with the dual-cassette uricase + lactoferrin metabolic baseline overlaid on the cns1+cns2 cordycepin demand (not just cns1+cns2 alone as comp-023 ran)
+
+Decision rule: GREEN iff both axes pass with explicit bounds; YELLOW if one axis is uncertain (route through §1.9 Lf-alone readout first); RED if either fails. If GREEN: add cordycepin arm to [`validation-experiments.md` §1.9](./validation-experiments.md) wet-lab design.
+
+### Generalization — cytosolic payloads as a strategic design lever
+
+The cytosolic-third-cassette pattern generalizes beyond cordycepin. Future OE design questions involving a third (or fourth) payload should explicitly check **secreted vs. cytosolic**:
+
+- **Cytosolic payloads** (cordycepin, kojic acid, ergothioneine native to *A. oryzae*, ursolic acid biosynthesis) — PDI-null; do not consume chaperone capacity; can be stacked beyond the dual-cassette limit without triggering §5.5-style pessimism
+- **Secreted payloads** (uricase, lactoferrin, DAF SCR1-4, soluble complement regulators, recombinant peptides) — consume PDI/ERO1 capacity per §3.5.3; cumulative load must fit the chaperone-capacity envelope per the synergy framework
+
+The platform-design implication is meaningful: **the practical stacking limit for the koji endgame strain is the count of *secreted* cassettes, not the total cassette count.** A four-cassette strain of uricase (secreted) + lactoferrin (secreted) + cordycepin (cytosolic) + ergothioneine biosynthesis (cytosolic, native enhancement) is, in principle, no harder on chaperone capacity than the two-cassette dual-cassette baseline — provided each cytosolic cassette's metabolic burden is verified separately under FBA.
+
+This generalization is itself a candidate for codification once comp-028 returns and the pattern is empirically anchored.
+
 ---
 
 ## 6. The Falsifiable Test — Pairwise Expression Matrix
