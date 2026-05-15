@@ -284,9 +284,7 @@ This is the most strategically significant finding for the OE platform:
 
 This is additive, not redundant — the two pathways produce different products and the SCFA output feeds back to upregulate ABCG2, adding a third mechanism tier.
 
-**Not suitable for koji chassis:** DOPDH requires SelD (prokaryote-specific selenophosphate synthase) and is an obligate anaerobic enzyme. Both properties make the PDB gene cluster incompatible with *A. oryzae* (eukaryote, aerobic fermentation). Koji remains the right chassis for the uricase/ABCG2 approach; PDB heterologous expression is a bacterial-chassis problem.
-
-**Not suitable for *S. boulardii*:** Same issue — eukaryote, no SelD pathway, aerobic conditions during growth.
+**Koji is the wrong chassis for this — but the intervention is real, the chassis question is open.** DOPDH requires SelD (prokaryote-specific selenophosphate synthase) and is an obligate anaerobic enzyme. Both properties make the PDB gene cluster incompatible with *A. oryzae* (eukaryote, aerobic fermentation). *S. boulardii* has the same issue (eukaryote, no SelD pathway, aerobic). **This does not deprioritize PDB as an intervention — it names the chassis question.** Candidate chassis include engineered EcN (CBT2.0 precedent above; facultative anaerobe with native SelD), defined-strain anaerobic probiotic (*C. sporogenes* / *Lacrimispora saccharolytica*; oxygen-sensitive manufacturing is the barrier), FMT, and prebiotic enrichment. Chassis selection is the next question, not the filter that kills the first one. Tracked in [`chassis-pending-interventions.md` §1](./chassis-pending-interventions.md). Koji remains the right chassis for the uricase / ABCG2 / lactoferrin / DAF SCR1-4 multi-cassette path; PDB is a parallel intervention with a parallel chassis question.
 
 ### Prebiotic approach: the fiber finding is load-bearing
 
