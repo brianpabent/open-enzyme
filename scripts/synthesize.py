@@ -294,9 +294,22 @@ def main():
     # Retry on transient upstream rate limits — V4-Pro routes through
     # Together / SiliconFlow / DeepInfra and these provider-side throttles
     # come and go. Backoff: 10s, 30s, 60s, 120s.
+    #
+    # Two failure modes both trigger retry:
+    #   (a) curl-level errors (timeout, connection reset, 5xx surfaced via
+    #       --fail-with-body) — detected by returncode != 0 + transient string
+    #   (b) HTTP 200 OK with empty / non-JSON body — happens when the upstream
+    #       provider streams empty content under context-window pressure or
+    #       when OpenRouter returns 200 with an error envelope that's
+    #       structurally invalid. Without retry, this exits Pass 2 immediately
+    #       and the daemon never gets a chance to fall back to the next model
+    #       in the routing array (Gemini 2.5 Pro). Run 25938167555 (2026-05-15
+    #       merge of PR #11) hit exactly this — corpus near V4-Pro's 1M cap,
+    #       second attempt returned 200 + empty body, exited without retry.
     import time as _time
     max_retries = 5
     result = None
+    resp = None
     try:
         for attempt in range(max_retries):
             result = subprocess.run(
@@ -312,44 +325,81 @@ def main():
                 ],
                 capture_output=True, text=True, timeout=620,
             )
-            if result.returncode == 0:
-                break
-            # Transient detection across BOTH stdout and stderr. See
-            # sweep-1-propagate.py for the rationale (curl --fail-with-body
-            # writes HTTP status to stderr, response body to stdout; checking
-            # only stdout missed real 503s in run 25049501442).
-            combined = (result.stdout or "") + "\n" + (result.stderr or "")
-            transient = (
-                result.returncode == 22
-                or any(s in combined for s in (
-                    "429", "rate-limit", "rate limit", "temporarily",
-                    "502", "503", "504",
-                    "Connection reset", "Connection refused",
-                    "timed out", "timeout",
-                ))
+
+            # Branch (a): curl-level failure. Existing transient-string check.
+            if result.returncode != 0:
+                # Transient detection across BOTH stdout and stderr. See
+                # sweep-1-propagate.py for the rationale (curl --fail-with-body
+                # writes HTTP status to stderr, response body to stdout; checking
+                # only stdout missed real 503s in run 25049501442).
+                combined = (result.stdout or "") + "\n" + (result.stderr or "")
+                transient = (
+                    result.returncode == 22
+                    or any(s in combined for s in (
+                        "429", "rate-limit", "rate limit", "temporarily",
+                        "502", "503", "504",
+                        "Connection reset", "Connection refused",
+                        "timed out", "timeout",
+                    ))
+                )
+                if not transient or attempt == max_retries - 1:
+                    break
+                backoff = [10, 30, 60, 120][attempt] if attempt < 4 else 120
+                print(f"  [retry {attempt+1}/{max_retries-1}] transient curl error, sleeping {backoff}s ...", file=sys.stderr, flush=True)
+                _time.sleep(backoff)
+                continue
+
+            # Branch (b): curl succeeded (returncode 0). Validate the body —
+            # empty / non-JSON / missing choices / empty content all count as
+            # retryable conditions because OpenRouter's fallback routing only
+            # kicks in on a NEW request, not by re-trying the streamed-empty
+            # response in place.
+            stdout = result.stdout or ""
+            try:
+                candidate = json.loads(stdout) if stdout.strip() else None
+            except json.JSONDecodeError:
+                candidate = None
+
+            content_ok = (
+                candidate is not None
+                and "choices" in candidate
+                and candidate["choices"]
+                and candidate["choices"][0].get("message", {}).get("content")
             )
-            if not transient or attempt == max_retries - 1:
+            if content_ok:
+                resp = candidate
                 break
+
+            # Empty / malformed / no-content response — retry-able.
+            if attempt == max_retries - 1:
+                # Final attempt: surface the most informative error available.
+                if candidate is None:
+                    print(f"Non-JSON / empty response after {max_retries} attempts: {stdout[:2000]}", file=sys.stderr)
+                elif "choices" not in candidate:
+                    print(f"Unexpected response (no 'choices') after {max_retries} attempts: {json.dumps(candidate, indent=2)[:2000]}", file=sys.stderr)
+                else:
+                    finish_reason = candidate["choices"][0].get("finish_reason", "?")
+                    print(
+                        f"OpenRouter returned empty content after {max_retries} attempts "
+                        f"(finish_reason={finish_reason!r}). "
+                        f"Full choice: {json.dumps(candidate['choices'][0], indent=2)[:1500]}",
+                        file=sys.stderr,
+                    )
+                sys.exit(1)
             backoff = [10, 30, 60, 120][attempt] if attempt < 4 else 120
-            print(f"  [retry {attempt+1}/{max_retries-1}] transient error, sleeping {backoff}s ...", file=sys.stderr, flush=True)
+            reason = "non-JSON/empty body" if candidate is None else "empty content"
+            print(f"  [retry {attempt+1}/{max_retries-1}] HTTP 200 with {reason}, sleeping {backoff}s ...", file=sys.stderr, flush=True)
             _time.sleep(backoff)
     finally:
         os.unlink(body_path)
 
-    if result.returncode != 0:
+    # If we exited the loop without resp set, the only remaining path is a
+    # non-transient curl-level failure that broke out at line "if not transient
+    # or attempt == max_retries - 1: break".
+    if resp is None:
         print(f"curl failed (exit {result.returncode})", file=sys.stderr)
         print(f"stderr: {result.stderr.strip()}", file=sys.stderr)
         print(f"stdout: {result.stdout[:2000]}", file=sys.stderr)
-        sys.exit(1)
-
-    try:
-        resp = json.loads(result.stdout)
-    except json.JSONDecodeError:
-        print(f"Non-JSON response: {result.stdout[:2000]}", file=sys.stderr)
-        sys.exit(1)
-
-    if "choices" not in resp:
-        print(f"Unexpected response: {json.dumps(resp, indent=2)[:2000]}", file=sys.stderr)
         sys.exit(1)
 
     choice = resp["choices"][0]
