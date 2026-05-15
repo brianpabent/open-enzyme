@@ -29,4 +29,14 @@ Sources cited:
 - wiki/lactoferrin.md
 ```
 
-> **Pass 3 review — Push back.** `[OVERLAP: EXTENSION]` The thread is interesting, but the novelty claim is factually wrong: `medicinal-mushroom-complement-track.md` already names “Engineered koji cordycepin (cns1+cns2) + GLPP supplement” as a synergy candidate and explicitly connects it to comp-023’s GREEN metabolic-burden FBA. The proposed sixth arm in §1.26 remains a useful extension, because `validation-experiments.md` §1.26 currently tests whole-fermentate *Cordyceps* + GLPP but not engineered-koji cordycepin extract + GLPP. Reframe this as an experimental extension of an already-documented synergy, not as an idiosyncratic connection absent from the corpus.
+> **Pass 3 review — Push back.** `[OVERLAP: EXTENSION]` The thread is interesting, but the novelty claim is factually wrong: `medicinal-mushroom-complement-track.md` already names "Engineered koji cordycepin (cns1+cns2) + GLPP supplement" as a synergy candidate and explicitly connects it to comp-023's GREEN metabolic-burden FBA. The proposed sixth arm in §1.26 remains a useful extension, because `validation-experiments.md` §1.26 currently tests whole-fermentate *Cordyceps* + GLPP but not engineered-koji cordycepin extract + GLPP. Reframe this as an experimental extension of an already-documented synergy, not as an idiosyncratic connection absent from the corpus.
+
+---
+
+## ✓ Already actioned 2026-05-15 (closure note — Item 28 shipped the discriminating experiment)
+
+Pass 3's push-back held: the synergy is already named in `medicinal-mushroom-complement-track.md` §"Combined / synergy candidates" (with the comp-023 GREEN cross-reference). The novelty framing in Pass 2 was wrong.
+
+The genuine useful piece — the proposed sixth arm to `validation-experiments.md` §1.26 (engineered-koji cordycepin extract + GLPP, the koji-track equivalent of the synergy pair that whole-fermentate *Cordyceps* delivers natively) — was shipped earlier in this same walk as **Item 28 (2026-05-15 Experiment 1)**. Sixth-arm specification at `wiki/validation-experiments.md` §1.26 sub-subsection "Sixth-arm extension — engineered-koji cordycepin + GLPP (added 2026-05-15; gated on strain availability)". Hard-gated on engineered cordycepin strain availability + comp-025 ADA-competition GREEN + comp-028 three-axis GREEN. GREEN/YELLOW/RED decision rule with concrete thresholds. ~$500–1,000 adder, same wall-clock as §1.26 base.
+
+This most-curious-thread is therefore fully addressed by upstream items in this walk: the synergy is named (pre-existing + Item 19's reframe), and the discriminating experiment is queued (Item 28). No additional wiki work for this item. Closing.
