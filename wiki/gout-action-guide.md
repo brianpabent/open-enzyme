@@ -57,8 +57,9 @@ Most readers. No genotype info, mostly diet-managed gout, want a sensible mechan
 
 ### This year (advanced)
 
-- **Genotype yourself** — 23andMe or a clinical-grade panel for ABCG2 Q141K (rs2231142), SLC2A9, URAT1 variants. Changes the stack design substantially. See [personal-genome-protocol](./personal-genome-protocol.md).
+- **Get genotyped via clinical-grade testing** — order ABCG2 Q141K (rs2231142), SLC2A9, URAT1 variants through a clinical-grade lab (e.g., via your rheumatologist or a direct-to-consumer clinical service that returns CLIA-grade results). Changes the stack design substantially. Consumer panels (23andMe, AncestryDNA, etc.) are not recommended here — the raw SNP data quality is uneven for the specific variants gout stack design depends on, and the terms-of-service surrounding consumer-genomics data ownership are worth reading before submitting. See [personal-genome-protocol](./personal-genome-protocol.md) for ordering paths.
 - **Self-experiment with rigor** — log SUA monthly, track flares, A/B test compounds. See [self-experiment-protocol](./self-experiment-protocol.md).
+- **Compounding-pharmacy access for repurposed drugs (requires physician partner; not DIY)** — for off-patent FDA-approved drugs that hit gout chokepoints, a 503A compounding pharmacy can prepare custom formulations. **Disulfiram** is the highest-priority candidate (CP6b GSDMD blockade; bulk API confirmed on FDA 503A list; off-label dose modeling queued as [comp-027](./computational-experiments.md)). Other repurposing candidates (zileuton, custom-dose colchicine, custom-dose allopurinol, probenecid) are tracked at [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) but pending bulk API verification. This path requires a rheumatology / functional-medicine prescriber; it is not direct-to-consumer.
 
 ### Future (Open Enzyme pipeline — none shipping yet, Phase 0)
 
