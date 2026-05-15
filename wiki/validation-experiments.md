@@ -1113,6 +1113,45 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Cross-references:** [gout-pathophysiology.md §"Multi-track urate transporter coverage" ROS / CP1b row](./gout-pathophysiology.md) (the speculative claim this experiment gates); [lactoferrin.md §4.1](./lactoferrin.md) (Fenton-iron mechanism); [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (P. citrinopileatus EGT source); [validation-experiments.md §1.19](./validation-experiments.md) (rodent-IC50 species-gap discipline); [validation-experiments.md §1.20](./validation-experiments.md) (sister CP1a super-additivity assay sharing THP-1 + MSU infrastructure); [synthesis.md](./synthesis.md) 2026-05-07 77d0f6e Connection 3 + Item 22 walkthrough closure.
 
+### 1.28 Tier 2 Colorimetric Cordycepin Assay Validation (added 2026-05-15)
+
+**Status**: Proposed | **Cost**: ~$200 (reagents + cordycepin reference standard + Tier 3 anchor) | **Weeks**: 2 | **Phase**: 1
+
+**Affected wiki**: [medicinal-mushroom-extract-sops.md](./medicinal-mushroom-extract-sops.md) SOP-6 (the speculative-marked assay this validates); [quantification-ladder.md](./quantification-ladder.md) (the Tier-2 framework this anchors); [self-experiment-protocol.md](./self-experiment-protocol.md) §12 (the genotype-informed-supplement-quantification workflow that depends on home-quantification of cordycepin); [cordycepin-cassette-burden-computational.md](./cordycepin-cassette-burden-computational.md) (the cordycepin engineering thread); [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (cordycepin-bearing co-products).
+
+**What it tests:** Whether the diazo-coupling colorimetric assay proposed in [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md) — currently marked **Speculative** with the explicit "do not commit until primary-literature confirmation" caveat — is viable for Tier 2 home / community-biolab cordycepin quantification, or whether UV 260 nm absorbance must be used as the fallback. This is the gating wet-lab gate for cordycepin home quantification; load-bearing for [`self-experiment-protocol.md` §12](./self-experiment-protocol.md) (genotype-informed supplement quantification workflow surfaced 2026-05-15 Item 17) and for the broader [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Phase 7 follow-ups" #3 + #7 (extract characterization SOPs + dose-grounding pass).
+
+**Proposed in:** 2026-05-14 sweep Experiment 2 (`synthesis/done/2026-05-14-experiment-2-tier-2-colorimetric-cordycepin-assay-validation-diazo.md`).
+
+**Background on the gap:** SOP-6 proposes a Bratton-Marshall-style diazo-coupling colorimetric assay for cordycepin (3'-deoxyadenosine — a nucleoside analog with a primary aromatic amine accessible under hydrolysis conditions). The mechanism is plausible by analogy to nitrite-based colorimetric detection of aromatic amines (sulfanilamide, dapsone, etc.), but **no primary-literature precedent for cordycepin-specific diazo-coupling has been verified.** Until validated, the SOP carries the speculative caveat. UV 260 nm absorbance is the conservative fallback — cordycepin absorbs at λmax ~260 nm with ε ~14,500 M⁻¹·cm⁻¹, comparable to adenosine — but requires no derivatization and gives lower specificity (any 260-nm-absorbing contaminant interferes).
+
+**Protocol:**
+
+- **Reference standard:** Cordycepin reference standard (Sigma-Aldrich C3394 or equivalent, ≥98% purity, ~$50–80 for 10 mg). Prepare calibration series at 1, 5, 10, 25, 50, 100 µg/mL in 10% methanol/water (mirrors expected extract matrix).
+- **Arm A — Diazo-coupling colorimetric:** Per SOP-6 draft — acid hydrolysis (1 N HCl, 60 °C, 30 min) to expose the primary amine, neutralize, then react with sodium nitrite + N-(1-naphthyl)ethylenediamine (NEDA) per the standard Bratton-Marshall procedure. Read absorbance at 540–560 nm. Record: linearity (R² of standard curve), LoD (signal:noise ≥ 3), LoQ (signal:noise ≥ 10).
+- **Arm B — UV 260 nm fallback:** Direct absorbance at 260 nm in 10% methanol/water. Same calibration series. Same metrics.
+- **Cross-validation:** Send 3 calibration concentrations (low, mid, high) to a Tier 3 anchor (HPLC-UV, contract lab e.g. Eurofins or university analytical service, ~$50/sample × 3 = $150). Compare Tier 2 result (both arms) vs. Tier 3 ground truth.
+- **Specificity check:** Spike each calibration point with 100 µg/mL adenosine (the most likely cross-reactant — also a primary-amine-bearing nucleoside that diazo-couples). Quantify cross-reactivity: < 5% interference = clean; 5–20% = needs hydrolysis-condition optimization or column cleanup before diazo step; > 20% = method-fail for crude *Cordyceps* extracts (which contain orders-of-magnitude more adenosine than cordycepin by mass).
+
+**Success criterion (test → next phase):**
+
+- **Diazo-coupling GREEN:** linearity R² ≥ 0.98 across 1–100 µg/mL, LoD ≤ 2 µg/mL, adenosine cross-reactivity < 20%, Tier 2 vs. Tier 3 agreement within 20% on all three concentrations. → Promote SOP-6 from Speculative to Validated; update `medicinal-mushroom-extract-sops.md` to remove the caveat.
+- **Diazo-coupling YELLOW:** linearity + LoD pass but adenosine cross-reactivity is 20–50%. → Investigate hydrolysis-condition optimization or simple C18 SPE cleanup before assay. Iterate.
+- **Diazo-coupling RED** (linearity < 0.95 OR adenosine cross-reactivity > 50% OR Tier 2 vs. Tier 3 disagreement > 30%): use UV 260 nm fallback. Update SOP-6 to explicitly recommend UV 260 nm + downgrade the diazo path to "experimental, not for production quantification."
+
+**Estimated cost:** ~$200 (cordycepin reference standard $50–80; diazo + UV reagents $20; Tier 3 anchor HPLC-UV $150; misc consumables $20).
+
+**Estimated timeline:** 2 weeks (1 week reagent procurement + calibration; 1 week assay runs + Tier 3 turnaround).
+
+**Limitations:**
+
+1. The Bratton-Marshall-style diazo-coupling mechanism's applicability to cordycepin specifically is the speculative element this experiment tests. If literature surfaces a published precedent during execution, that may obviate the experimental validation step; check PubMed (English) + CNKI / J-STAGE per `Open Enzyme/CLAUDE.md` §"Global-multilingual research by default" before running.
+2. Adenosine cross-reactivity is the most likely failure mode. If detected, the workflow may require a brief solid-phase cleanup (C18 SPE cartridge separates polar adenosine from less-polar cordycepin) before diazo, adding ~$5/sample.
+3. Tier 3 HPLC-UV anchor cost is vendor-variable; $50/sample is a mid-range estimate. Verify quoting before committing.
+4. The validation is on pure cordycepin reference standard. Real-world extract performance (cordycepin in a *C. militaris* fermentate matrix) is a separate downstream question — typically the next experiment after a clean reference-standard validation.
+
+**Cross-references:** [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6 (the speculative-marked SOP this experiment validates); [`quantification-ladder.md`](./quantification-ladder.md) (Tier-2 framework); [`self-experiment-protocol.md`](./self-experiment-protocol.md) §12 (genotype-informed-supplement-quantification workflow); [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) (comp-023 engineering thread); [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" (cordycepin-bearing co-products); [§2.7](./validation-experiments.md) (sister Tier 2 assay — ADA-challenge stability test for engineered-koji + cultivated-*Cordyceps* co-formulation).
+
 ---
 
 ## Phase 2: Animal Model Validation
