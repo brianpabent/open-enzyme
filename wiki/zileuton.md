@@ -19,6 +19,11 @@ sources:
   - "Rae & Smith *Prostaglandins Leukot Med* 1981;6(1):71–78 (PMID 6259703) — LTB4 in synovial fluid of gout patients"
   - "*J Med Chem* 1991 — quercetin 5-LOX IC50 = 300 nM (ChEMBL v34, cross-check 2026-05-05)"
   - "ClinicalTrials.gov search 2026-05-05 — zero zileuton gout trials registered"
+  - "Kramer et al., Drug Safety 2007 (PMID 17722971) — zileuton hepatotoxicity surveillance, n=2,458; 4.4% ALT ≥3x ULN, zero ALF"
+  - "PMID 30247644 — metabolic profiling of 5-LOX activation in human acute gout (2018); explicitly states 5-LOX inhibition may be therapeutically valuable"
+  - "Amaral et al., Arthritis & Rheumatism 2012 — LTB4/BLT1/NLRP3/IL-1β in murine MSU-crystal gout"
+  - "Awni et al. 1995 (PMID 8620667) — zileuton + naproxen PK: no clinically significant interaction"
+  - "DailyMed zileuton ER FDA label — prednisone interaction formally studied, negative; zileuton-colchicine no documented interaction"
 ---
 
 # Zileuton (Zyflo / Zyflo CR)
@@ -57,7 +62,9 @@ This section frames the case as a testable hypothesis, not an efficacy claim. No
 
 **Evidence level summary:**
 - 5-LOX → LTB4 → neutrophil chemotaxis in gout: In Vitro + ex vivo human (Rae & Smith 1981; Ford-Hutchinson 1990).
-- Zileuton blocks 5-LOX at therapeutic oral doses: Clinical Trial (asthma registration, PMID 8239225, PMID 8969089).
+- Metabolic profiling of human acute gout patients confirms elevated plasma LTB4 is primarily driven by 5-LOX activation in uric-acid-stimulated neutrophils, dose- and time-dependent; same paper states "5-lipoxygenase inhibition may be of therapeutic value clinically." (Human observational — PMID 30247644, 2018)
+- LTB4 via BLT1 receptor was *necessary* for NLRP3 inflammasome activation and caspase-1-dependent IL-1β production in murine MSU-crystal gout. LTB4 drives MSU-induced ROS → NLRP3 → neutrophil influx cascade. (Animal Model — Amaral et al., Arthritis & Rheumatism 2012)
+- At standard therapeutic dosing, zileuton achieves ~90% inhibition of ex vivo LTB4 production from stimulated neutrophils — the pharmacodynamic target is robustly hit. (Clinical Trial — asthma registration PD data, PMID 8239225, PMID 8969089)
 - Zileuton reduces gout flare frequency or severity: **No evidence of any level.** Hypothesis only.
 
 ---
@@ -81,7 +88,7 @@ Framed as hypothesis-testing, n-of-1 style, on top of a stable allopurinol basel
 
 All of the below are currently used or plausibly used in gout management. Nothing here is an endorsement of any specific regimen.
 
-- **Zileuton:** Hepatotoxicity is the main concern — boxed warning. ALT/AST elevation in roughly 1–3% of trial subjects, mostly reversible on discontinuation (Carter *Drug Saf* 1995). Nausea and headache are common but usually mild. **Requires baseline + monthly LFTs for the first 3 months, then quarterly.** Pregnancy category C. Contraindicated in active liver disease. Many CYP1A2 drug interactions — notably theophylline and warfarin (dose-adjust).
+- **Zileuton:** Hepatotoxicity is the main concern — no boxed warning but significant Warnings and Precautions signal. Kramer et al. 2007 (Drug Safety, n=2,458 prospective) gives the best numbers: ALT ≥3x ULN in 4.4% (vs. 1.0% control), ALT ≥8x ULN in 1.3%, ALT ≥15x ULN in 0.4%. **84% of elevations were asymptomatic (detected only by monitoring)**. 64.2% of all elevations occurred within the first 3 months — meaning essentially none are documented within the first 1–2 weeks of use. For a 5–7 day short course, the hepatotoxicity risk is substantially lower than chronic use given this latency profile. Zero cases of acute liver failure across major prospective studies and the DILIN registry. Male risk for severe elevation (≥8x ULN) is 0.5% vs. 1.8% in women. Reversible on discontinuation (mean 4 weeks to resolution). **Requires baseline + monthly LFTs for first 3 months, then quarterly.** Contraindicated in active liver disease or baseline ALT ≥3x ULN. CYP1A2 drug interactions — notably theophylline (double theophylline AUC — halve dose) and warfarin (modest R-warfarin AUC +22%, manage with INR monitoring). **No clinically significant interaction with colchicine, NSAIDs (naproxen formally studied, negative), or prednisone/corticosteroids (formally studied, negative)** — relevant for the gout combination context.
 - **Colchicine:** Diarrhea is dose-limiting; GI upset common. Rare myopathy. Well-established for acute flares and prophylaxis. Cheap. Narrow therapeutic index; cumulative toxicity at high doses. CYP3A4 / P-glycoprotein interactions (statins, macrolides) — several reported deaths from co-administration with clarithromycin in renal insufficiency.
 - **Allopurinol:** Hypersensitivity is rare but severe (SJS/TEN, notably in HLA-B*58:01 carriers — test before starting in Asian ancestry patients). Rash. Hepatotoxicity exists but is less common than zileuton's. Renal dose adjustment needed. Gold standard for UA lowering; does **not** address inflammation.
 - **Canakinumab (Ilaris):** Injection-site reactions. Infection risk — bacterial pneumonia ~5% of exposed patients in some cohorts. ~$300K/year US list price. Directly neutralizes IL-1β (CP5a). Used off-label for gout until FDA-approved August 2023. Reserved for refractory or contraindicated-to-colchicine cases.
@@ -115,7 +122,7 @@ The koji intervention is still in Phase 0 — research and design. Zileuton is a
 - **Generic, prescription required.** No OTC path. US only — some countries never approved zileuton.
 - **Who writes the script:** pulmonology writes it routinely for asthma. Rheumatology and primary care are unlikely to think of it for gout — the CP6a mechanism rationale has to be explicitly pitched. A forward-thinking internist is more likely to engage than a gout-specialist rheumatologist; gout rheumatology is heavily anchored on urate-lowering + colchicine + IL-1 biologics, and 5-LOX is not part of the standard framework.
 - **Monitoring logistics:** baseline ALT/AST, then monthly × 3 months, then quarterly. Cheap lab — same panel most patients get anyway. Requires discipline, not expertise.
-- **Cost:** ~$50/month generic as of 2026-05-05. Brand Zyflo CR is substantially more expensive; insurance coverage variable (it's an asthma drug, not a gout drug — off-label billing may be required).
+- **Cost:** Generic zileuton ER 600mg available via GoodRx ~$283–320 per 120 tablets (2025–2026). For a 5–7 day course (40–56 tablets): ~$95–160. Retail without GoodRx: ~$2,900–$3,500/120 tablets — use GoodRx. Note: the $50/month estimate in earlier drafts of this page appears to reflect a specific pharmacy/plan combination; GoodRx price is more representative. Insurance coverage variable (off-label for gout).
 
 ---
 
