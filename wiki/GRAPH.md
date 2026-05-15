@@ -177,6 +177,8 @@ graph TB
         DE23["GSDMD Pore Self-Delivery Paradox — pore as size-selective delivery window"]
         DE24["Purine-Degrading Bacteria (PDB) — gut as independent urate disposal organ"]
         DE25["Chassis-Pending Interventions — index of interventions awaiting chassis"]
+        DE26["comp-030 DAF SCR1-4 Cassette Ranking — 43,200 candidates, top cluster confirms §1.25 baseline"]
+        DE27["comp-023 Cordycepin Burden FBA — GREEN verdict; <1% carbon, 1,000× Jeennor breakpoint"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -605,6 +607,15 @@ graph TB
     DE24 -->|"gut PDB as independent CP6 urate disposal — needs non-koji chassis"| DE25
     DE24 -->|"butyrate -> ABCG2 PPARγ + Q141K HDAC rescue compounds the mechanism"| AM4
     DE24 -->|"natural genotype-targeted therapy for Q141K (#1 GWAS variant)"| AM4
+    %% comp-030 DAF SCR1-4 cassette ranking (source: daf-cd55-scr14-cassette-ranking-computational.md)
+    DE26 -->|"confirms §1.25 PamyB+amyB SP+direct-secretion+max-CAI architecture"| CH12
+    DE26 -->|"α-coefficient CORRORORATED: ESM2 pLDDT 100% above 80, range [87.6,89.8]"| CH11
+    DE26 -->|"§1.25 baseline 60-candidate shortlist; N-of-5=5 strict tier 40 cassettes"| KE1
+    %% comp-023 cordycepin cassette burden (source: cordycepin-cassette-burden-computational.md)
+    DE27 -->|"GREEN FBA verdict; <1% carbon, breakpoint ~1,000× Jeennor titer"| KE1
+    DE27 -->|"cordycepin arm metabolic-burden-feasible; informs §1.9 extended design"| KE14
+    DE27 -->|"cns1+cns2 cytosolic; PDI load 0; bypasses secretion entirely"| CH5
+    DE27 -->|"native C. militaris pentostatin co-formulation alternative to ADA engineering"| MT2
     %% Chassis-pending interventions (source: chassis-pending-interventions.md)
     DE25 -->|"operationalizes chokepoint-first chassis-second discipline"| DE2
     DE25 -->|"PDB / siRNA-URAT1 / engineered-LBP / mRNA-IL-1RA / IA-uricase entries"| DE7
