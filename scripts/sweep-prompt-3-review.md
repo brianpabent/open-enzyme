@@ -26,10 +26,10 @@ Output **exactly N review blockquotes**, in the order the Pass 2 synthesizer's i
 ### Format of each blockquote
 
 ```
-> **Pass 3 review — <verdict>.** `[OVERLAP: <tag>]` <reasoning, 1-5 sentences, with citations or push-back>
+> **Pass 3 review — <verdict>.** `[OVERLAP: <tag>]` [GAP: <tag> only on disagreement verdicts — see §"Gap tag vocabulary (pilot)"] <reasoning, 1-5 sentences, with citations or push-back>
 ```
 
-Each blockquote opens with `> **Pass 3 review — <verdict>.**` (literal, with the bold markdown), immediately followed by an `[OVERLAP: <tag>]` annotation, then your reasoning. Use markdown bullets within the blockquote if the review is multi-point; just prefix lines with `> -` or wrap them.
+Each blockquote opens with `> **Pass 3 review — <verdict>.**` (literal, with the bold markdown), immediately followed by an `[OVERLAP: <tag>]` annotation, then optionally a `[GAP: <tag>]` annotation (only when the verdict is **Partial / Push back / Rejected** — see Gap tag vocabulary below), then your reasoning. Use markdown bullets within the blockquote if the review is multi-point; just prefix lines with `> -` or wrap them.
 
 ### Verdict vocabulary
 
@@ -55,6 +55,21 @@ If you can't tell whether a finding is EXTENSION vs. RESTATEMENT, default to EXT
 
 **Important:** the OVERLAP tag is YOUR independent judgment as the reviewer. Pass 2 also self-reports a `[PHASE-A-MATCH: yes/no/partial]` tag. They may disagree. If Pass 2 says `PHASE-A-MATCH: yes` (synthesizer thinks it's a duplicate) but you find a meaningful new angle, tag it `[OVERLAP: EXTENSION]` — the synthesizer is more conservative than you should be. Conversely, if Pass 2 says `PHASE-A-MATCH: no` but you find the connection is already a named section in the wiki, tag it `[OVERLAP: RESTATEMENT]` and note the location in your reasoning.
 
+### Gap tag vocabulary (pilot — 2026-05-15)
+
+When your verdict is **Partial**, **Push back**, or **Rejected** — i.e., you're substantively disagreeing with Pass 2 — add a `[GAP: <tag>]` annotation immediately after the `[OVERLAP: ...]` tag attributing the synthesizer's failure mode. This converts disagreement from a binary "reviewer disagrees" signal into a routable diagnostic.
+
+**Confirmed / Confirmed-prioritize / Augment / Defer:** no `[GAP: ...]` tag. (Confirmed isn't disagreement; Augment is collaboration; Defer is "can't evaluate.")
+
+Available GAP tags:
+
+- **`[GAP: tool-gap]`** — Pass 2 identified the right topic / mechanism / connection but executed wrong: wrong magnitude, wrong citation, conflated entities, wrong assay format / dose / unit, wrong polarity (inhibits vs activates), misread an evidence-tier tag, mis-applied a number from one source to a related claim. **The synthesizer understood the biology; the failure is in plumbing.**
+- **`[GAP: science-gap]`** — Pass 2 surfaced a connection that doesn't hold biologically. Misunderstood mechanism, applied a pattern from one system where it doesn't transfer, claimed a chokepoint relevance the biology doesn't support, inferred causation from correlation in a way the literature doesn't support, conflated two distinct mechanisms as one. **The plumbing was OK; the biology understanding is wrong.**
+- **`[GAP: both]`** — Both failure modes contribute. Specify which dominates in your reasoning.
+- **`[GAP: unclear]`** — You can tell the synthesizer is wrong but can't cleanly attribute the failure to tool vs. science. Surface this honestly — "unclear" often signals the disagreement itself is interpretive.
+
+**Pilot framing.** This tag is a pilot — emit it for the next 2–3 sweep cycles starting 2026-05-15. Inspired by the BioDesignBench tool-gap vs. science-gap decomposition (primary-source-pending; see `wiki/bio-ai-tools.md` §BioDesignBench). After ~3 sweeps, the pilot is evaluated against concrete promote/abandon gates in `scripts/SWEEP-ARCHITECTURE.md` §"Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution." Don't suppress findings based on this tag; it's diagnostic only.
+
 ### Tone
 
 PhD audience. Specific. Cite primary sources where you push back.
@@ -73,7 +88,7 @@ A strong review:
 
 A strong push-back:
 ```
-> **Pass 3 review — Push back.** the Pass 2 synthesizer cites `lactoferrin.md` for the CP1b iron→ROS mechanism, but `wiki/lactoferrin.md` §3.2 explicitly flags that as Mechanistic Extrapolation, not Supported. The wiki's CP1b is specifically C5a→ROS (per `wiki/nlrp3-exploit-map.md` line 102), not iron→ROS. the Pass 2 synthesizer conflated two different ROS-priming mechanisms.
+> **Pass 3 review — Push back.** `[OVERLAP: EXTENSION]` `[GAP: tool-gap]` the Pass 2 synthesizer cites `lactoferrin.md` for the CP1b iron→ROS mechanism, but `wiki/lactoferrin.md` §3.2 explicitly flags that as Mechanistic Extrapolation, not Supported. The wiki's CP1b is specifically C5a→ROS (per `wiki/nlrp3-exploit-map.md` line 102), not iron→ROS. The synthesizer correctly identified lactoferrin's role in CP1b but conflated two different ROS-priming mechanisms — the topic was right, the mechanism-label execution was wrong (tool-gap).
 <<<NEXT>>>
 ```
 

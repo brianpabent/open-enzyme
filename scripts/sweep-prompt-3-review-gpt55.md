@@ -23,12 +23,13 @@ Output exactly **N** review blockquotes (N = `marker_count` in the TRIGGER block
 ## Output format (true invariants — these are not judgment calls)
 
 ```
-> **Pass 3 review — <verdict>.** `[OVERLAP: <tag>]` <reasoning, 1-5 sentences, with citations or push-back>
+> **Pass 3 review — <verdict>.** `[OVERLAP: <tag>]` [GAP: <tag> only on disagreement verdicts] <reasoning, 1-5 sentences, with citations or push-back>
 ```
 
 - Use `> -` or wrap lines for multi-point reviews.
 - Allowed verdicts: `Confirmed.` / `Confirmed, prioritize.` / `Partial.` / `Push back.` / `Rejected.` / `Augment.` / `Defer.`
 - Allowed OVERLAP tags: `NOVEL` / `EXTENSION` / `RESTATEMENT`.
+- Allowed GAP tags (pilot — 2026-05-15 onward; **only on Partial / Push back / Rejected verdicts**): `tool-gap` / `science-gap` / `both` / `unclear`. Decision rule below.
 - The literal `> **Pass 3 review —` opener is required (it's the model-agnostic stable token for downstream tooling and human grep — don't substitute the actual model name).
 - Output ONLY the blockquotes. No "Here are my reviews:", no "Done.", no thinking-out-loud.
 
@@ -61,6 +62,25 @@ Default to **EXTENSION** when uncertain. The bias is toward surfacing potentiall
 If you find yourself reaching for RESTATEMENT, ask: "Does the wiki contain THIS specific composition, named as such?" If no — even if all the parts exist separately — the tag is EXTENSION, not RESTATEMENT.
 
 The tag is YOUR independent judgment as reviewer. The Pass 2 synthesizer also self-reports a `[PHASE-A-MATCH: yes/no/partial]` tag in its findings. If the synthesizer says `PHASE-A-MATCH: yes` (it thinks the connection is a duplicate) but you find a meaningful new compositional angle, tag EXTENSION — the synthesizer is more conservative than you should be.
+
+## Decision rule — GAP tag (pilot, 2026-05-15)
+
+**Emit `[GAP: <tag>]` only when the verdict is `Partial.` / `Push back.` / `Rejected.`** — i.e., when you're substantively disagreeing with Pass 2. Confirmed / Confirmed-prioritize / Augment / Defer verdicts get **no** GAP tag.
+
+The tag attributes the synthesizer's failure mode, converting disagreement from a binary "reviewer disagrees" signal into a routable diagnostic.
+
+- **`tool-gap`** — Pass 2 identified the right topic / mechanism / connection but executed wrong: wrong magnitude, wrong citation, conflated entities, wrong assay format / dose / unit, wrong polarity (inhibits vs activates), misread an evidence-tier tag, mis-applied a number from one source to a related claim. **Synthesizer understood the biology; failure is in plumbing.**
+- **`science-gap`** — Pass 2 surfaced a connection that doesn't hold biologically. Misunderstood mechanism, applied a pattern from one system where it doesn't transfer, claimed a chokepoint relevance the biology doesn't support, inferred causation from correlation in a way the literature doesn't support, conflated two distinct mechanisms as one. **Plumbing was OK; biology understanding is wrong.**
+- **`both`** — Both failure modes contribute. Specify which dominates in your reasoning.
+- **`unclear`** — You can tell the synthesizer is wrong but can't cleanly attribute the failure to tool vs. science. Surface this honestly.
+
+**Pilot framing.** Pilot starts 2026-05-15; evaluated over the next 2–3 sweep cycles against the promote/abandon gates documented in `scripts/SWEEP-ARCHITECTURE.md` §"Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution." Inspired by the BioDesignBench tool-gap vs. science-gap decomposition (primary-source-pending; `wiki/bio-ai-tools.md` §BioDesignBench). Don't suppress findings based on this tag; it's diagnostic only.
+
+Example (Push back with tool-gap attribution):
+```
+> **Pass 3 review — Push back.** `[OVERLAP: EXTENSION]` `[GAP: tool-gap]` The synthesizer correctly identified lactoferrin's role in CP1b priming, but cited `lactoferrin.md` for an iron→ROS mechanism; the wiki's CP1b is specifically C5a→ROS (per `nlrp3-exploit-map.md` line 102). Topic right; mechanism-label execution wrong.
+<<<NEXT>>>
+```
 
 ## Retrieval budget — bias toward MORE verification
 
