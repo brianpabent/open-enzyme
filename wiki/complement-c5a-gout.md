@@ -617,6 +617,31 @@ Because C5aR1 has not been well-characterized in natural-product chemical space 
 
 Expected outcome: most will be negative or weak (low-μM at best). If any shows sub-μM C5aR1 antagonism, it is a significant finding and worth medicinal-chemistry follow-up on the koji-expressible scaffold. **This is a concrete experiment** — one 384-well plate, ~20 compounds, ~1 day of assay time.
 
+### 9.7 Combined CP0 strategy (testable hypothesis) — dietary rosmarinic acid + engineered DAF SCR1-4 (added 2026-05-15)
+
+The OE corpus has two CP0 threads that have advanced in parallel without being named as a combined strategy:
+
+- **Dietary upstream-complement thread.** [comp-018](./upstream-complement-modulator-sweep-computational.md) + [comp-020](./upstream-complement-verification-rerun-computational.md) identified **rosmarinic acid** as a candidate **C3 convertase inhibitor** via covalent C3b modification — Englberger 1988 (PMID 3198307) primary mechanism, ~30 years of indexed primary literature, IC50 reported around 34 μM but with a **44× spread across assay formats** (comp-020 verification re-run). Mechanism distinctive at the C3b deposition step rather than direct C5 convertase inhibition.
+- **Engineered surface-decay thread.** [comp-012](./daf-cd55-scr14-truncated-computational.md) confirmed engineered **DAF SCR1-4 (aa 35–285)** is feasible in *A. oryzae* koji (LOW protease risk in shio-koji conditions per the comp-006 cascade; effective PDI load 2.4–4.8 per [`chaperone-orthogonal-stacking.md`](./chaperone-orthogonal-stacking.md) §3.5.3 with the corrected 8-disulfide count per UniProt P08174). [H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) formalizes the engineered-DAF CP0 thesis.
+
+The two threads target **different geometric scales of complement activation**:
+- Rosmarinic acid (dietary, gut-luminal and systemic post-absorption) — predicted operating site: fluid-phase C3 convertase + gut-luminal complement (where it would reduce C3b deposition substrate)
+- DAF SCR1-4 (engineered, luminal or systemic) — predicted operating site: MSU crystal surface (where it would accelerate decay of whatever C3b deposits)
+
+If both predictions hold, the two interventions cover complementary *steps* of the CP0 cascade — fewer convertases assembling AND faster decay of those that do. The combined strategy would provide robust two-layer CP0 coverage without relying solely on avacopan (currently the only OE CP0 candidate with serious clinical-development infrastructure, but expensive and on-patent).
+
+**What this section does NOT claim** (Pass 3 softening discipline preserved):
+
+1. **Rosmarinic acid does NOT "saturate fluid-phase and gut-luminal C3 convertase."** comp-020 documented IC50 ~34 μM with a **44× assay-format spread** and explicitly flagged dietary bioavailability + tissue occupancy as **unresolved**. Whether typical post-meal plasma + gut-luminal concentrations reach the IC50 range under either bound is unknown.
+2. **The two interventions are NOT asserted as "mechanistically additive."** Both luminal-side DAF engagement geometry AND MSU-surface DAF accessibility are wet-lab unknowns ([H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) Phase 2 killshots cover both). The combined-coverage claim is a **testable hypothesis**, not an asserted synergy.
+3. **No clinical effect-size prediction.** Even if the mechanism prediction holds, downstream clinical SUA / IL-1β effect-sizes are gated by the same H08-class clinical-translation question that gates the gut-lumen sink thesis.
+
+**Computational gate — [comp-029](./computational-experiments.md):** the combined-CP0 systems model is queued in Planned Analyses. comp-029's job: model rosmarinic acid C3 convertase inhibition kinetics with explicit 44× IC50 uncertainty range, model DAF SCR1-4 decay-accelerator kinetics on MSU surface, cross-multiply at typical post-meal gut-luminal concentrations + MSU-surface deposition rates, output predicted combined-effect range with explicit bounds (not a point estimate). Decision rule: GREEN if predicted combined-effect range is meaningfully larger than either intervention alone (justifies wet-lab co-administration experiment); YELLOW if combined-effect range overlaps either alone (synergy claim too speculative for current wet-lab spend); RED if the model surfaces an interaction blocker (e.g., DAF degraded in conditions where rosmarinic acid is bioavailable).
+
+**Wet-lab follow-up (gated on comp-029 GREEN):** the [`validation-experiments.md` §1.25](./validation-experiments.md) DAF SCR1-4 expression screen could add a rosmarinic-acid co-treatment arm at marginal cost — comparing CP0 coverage with engineered DAF alone vs. engineered DAF + rosmarinic-acid pre-incubation in a zymosan or MSU-crystal C5a-generation assay. This is one of the cheapest possible empirical tests of the combined-coverage hypothesis.
+
+**Cross-references:** [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 dietary scan), [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) (comp-020 verification re-run; the 44× IC50 spread caveat lives here), [`daf-cd55-scr14-truncated-computational.md`](./daf-cd55-scr14-truncated-computational.md) (comp-012 engineering feasibility), [`chaperone-orthogonal-stacking.md`](./chaperone-orthogonal-stacking.md) §3.5.3 (effective PDI load), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) (Tier 2 readout for rosmarinic acid potency in dietary sources), [H05 — DAF SCR1-4 CP0 thesis](./hypotheses/H05-daf-scr14-cp0-thesis.md).
+
 ---
 
 ## 10. Natural-Product Modulators — What the Literature Actually Shows
