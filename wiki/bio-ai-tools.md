@@ -569,7 +569,7 @@ Anthropic's ["Bio Research" experience on claude.ai](https://claude.com/plugins/
 /plugin install open-targets@life-sciences
 ```
 
-> **Note on skills:** The claude.ai bundle exposes `/scientific-problem-selection` and other skills (`/start`, etc.), but these are **not exposed as installable plugins** in the Claude Code marketplace — the repo has directories for them, but `marketplace.json` only lists the MCP servers and a subset of skills. If you need problem-scoping help, ask Claude directly against `wiki/synthesis.md` — no skill required.
+> **Note on skills:** The claude.ai bundle exposes `/scientific-problem-selection` and other skills (`/start`, etc.), but these are **not exposed as installable plugins** in the Claude Code marketplace — the repo has directories for them, but `marketplace.json` only lists the MCP servers and a subset of skills. If you need problem-scoping help, ask Claude directly against `synthesis/` (architecture: synthesis/README.md) — no skill required.
 
 **Step 3 — reload and verify:**
 
@@ -609,7 +609,7 @@ Pass 1 of the sweep (propagate findings across wiki pages) currently uses Claude
 
 *Action:* Once the plugin is installed, update `scripts/sweep-prompt.md` to instruct the daemon to prefer PubMed/bioRxiv MCP over WebFetch for biomedical claims.
 
-**2. Action Queue Pruning** (`wiki/synthesis.md`)
+**2. Action Queue Pruning** (`synthesis/` (architecture: synthesis/README.md))
 
 The synthesis queue is prose + bullets. `/scientific-problem-selection` is purpose-built to convert an unranked list of candidate investigations into a scored, scoped ranking. Run it against the current synthesis queue to produce a ranked action list without ad-hoc prioritization.
 
@@ -633,7 +633,7 @@ New wiki pages (like the cannabinoids page we just graduated) start with a liter
 | Compound bioactivity lookup | Read individual papers | ChEMBL MCP |
 | Target–disease evidence | Wiki page synthesis | Open Targets MCP |
 | Clinical trial status | Manual ClinicalTrials.gov browsing | ClinicalTrials.gov MCP |
-| Problem ranking / experiment prioritization | Ad-hoc in `synthesis.md` | `/scientific-problem-selection` |
+| Problem ranking / experiment prioritization | Ad-hoc in `synthesis/` (architecture: synthesis/README.md) | `/scientific-problem-selection` |
 | Protein structure / docking / design | ColabFold, Boltz-2, RFdiffusion2, DiffDock | **Unchanged** — the plugin is research/literature-oriented; core computational biology stays with the open-source stack |
 | Codon optimization | CodonTransformer | **Unchanged** |
 | Stability prediction | SPURS, RaSP, DDGemb, FoldX | **Unchanged** |

@@ -14,7 +14,7 @@ related:
   - androgen-urate-axis.md
   - abcg2-modulators.md
   - open-questions.md
-  - synthesis.md
+  - ../synthesis/README.md
   - open-source-platform.md
   - open-enzyme-vision.md
   - gout-pathophysiology.md
@@ -132,12 +132,12 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 
 | Modality | Real-time UA monitoring | Chokepoint biomarker readout | Microbiome state monitoring |
 |---|:-:|:-:|:-:|
-| Lab panel (Quest / clinical) | ✅ (intermittent) | 🔬 ([self-experiment-protocol](./self-experiment-protocol.md) — pending CP-biomarker map per [synthesis #4](./synthesis.md)) | ⚪ |
+| Lab panel (Quest / clinical) | ✅ (intermittent) | 🔬 ([self-experiment-protocol](./self-experiment-protocol.md) — pending CP-biomarker map per [synthesis archive #4](../synthesis/history/_pre-2026-05-08-archive.md)) | ⚪ |
 | Wearable sensors | 🟡 (sweat UA — UCSD / Stanford research; ~5 yr from clinical) | ⚪ | ⚪ |
 | Microneedle patches | 🟡 (continuous interstitial UA — research-stage CGM-equivalent) | ⚪ | ⚪ |
 | Implantable monitors | 🟡 (overkill for gout-only; unit economics flip if multi-marker) | 🟡 (multi-analyte) | ⚪ |
 | Stool 16S / shotgun sequencing | ⚪ | ⚪ | 🔬 (Onegevity, Viome — getting cheaper) |
-| At-home immune-cell profiling | ⚪ | 🟡 (citH3 / cfDNA / aggNET ratio per [synthesis #7](./synthesis.md)) | ⚪ |
+| At-home immune-cell profiling | ⚪ | 🟡 (citH3 / cfDNA / aggNET ratio per [synthesis archive #7](../synthesis/history/_pre-2026-05-08-archive.md)) | ⚪ |
 | **Native-compound medicinal mushroom complement** | ⚪ | ⚪ | ⚪ |
 
 ---
@@ -255,7 +255,7 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 ### Wearable / implantable monitoring
 - **Best-fit cells:** real-time UA monitoring; multi-analyte chokepoint biomarker readout.
 - **Status:** sweat-based UA sensors are research-active (UCSD, Stanford); microneedle continuous monitoring is research-stage. Implantable multi-analyte is overkill for gout-only but flips when bundled with cardiometabolic indications.
-- **Why this matters for OE:** any therapeutic intervention that's titrated against UA (carnosine dose, fiber load, clomid titration for the androgen-driven case) benefits from continuous data over discrete quarterly panels. The synthesis-queue chokepoint-biomarker map ([`synthesis.md`](./synthesis.md) #4) is partly bottlenecked by infrequent sampling.
+- **Why this matters for OE:** any therapeutic intervention that's titrated against UA (carnosine dose, fiber load, clomid titration for the androgen-driven case) benefits from continuous data over discrete quarterly panels. The synthesis-queue chokepoint-biomarker map ([`synthesis/`](../synthesis/README.md) #4) is partly bottlenecked by infrequent sampling.
 
 ---
 
@@ -330,7 +330,7 @@ The cells where 🟡 marks the genuinely novel exploration space, ordered by lev
 ## Cross-references
 
 - [`open-questions.md`](./open-questions.md) — meta-index where the leverage-bearing matrix cells should propagate as named open questions
-- [`synthesis.md`](./synthesis.md) — action queue; expect new connections to surface here when the sweep daemon reads this page
+- [`synthesis/`](../synthesis/README.md) — action queue; expect new connections to surface here when the sweep daemon reads this page
 - [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) — the chokepoint map this matrix sits orthogonal to
 - [`abcg2-modulators.md`](./abcg2-modulators.md), [`androgen-urate-axis.md`](./androgen-urate-axis.md), [`gut-lumen-sink.md`](./gut-lumen-sink.md) — the transporter-biology trio that grounds the renal and gut columns
 - [`open-source-platform.md`](./open-source-platform.md) — platform-strategy positioning; this matrix supports its "we explore all angles" claim

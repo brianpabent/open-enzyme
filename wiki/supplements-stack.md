@@ -29,7 +29,7 @@ This catalog is not a replacement for medical care. Work with a physician on any
 
 **Use the action guide when** you don't yet know which compound is right for your situation, or when you're new to the project and want a 5-minute orientation rather than a 1,100-line catalog read.
 
-The two surfaces are linked — every action-guide compound entry points back here for compound depth, and major catalog updates (new compound additions, dose revisions, contraindication updates) need to propagate to the action guide. The propagation is currently manual; see [synthesis.md → Strategic Reflections Queue](./synthesis.md#strategic-reflections-queue) for the planned `fresh-stack.py` discipline that will eventually formalize it.
+The two surfaces are linked — every action-guide compound entry points back here for compound depth, and major catalog updates (new compound additions, dose revisions, contraindication updates) need to propagate to the action guide. The propagation is currently manual; see [synthesis/strategic-reflections/](../synthesis/strategic-reflections/) for the planned `fresh-stack.py` discipline that will eventually formalize it.
 
 ---
 
@@ -697,7 +697,7 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 - Standardized beta-caryophyllene (BCP) supplement: 50–200 mg/day (available as copaiba oil extract, 45–55% BCP standardization)
 - Dietary: Black pepper, clove, hops, copaiba — dietary intake typically <10 mg/day from food alone
 
-> **Dose-translation caveat (flagged 2026-04-23, see `wiki/synthesis.md`):** The 2021 MSU rat gout efficacy was demonstrated at 100–400 mg/kg oral. BSA-scaled to a 70 kg human, that is ~1.1–4.5 g/day — **20–50× above the typical supplement dose listed above**. Whether 50–200 mg/day reproduces the synovial NLRP3/TLR4/NF-κB suppression seen in rats is unverified. Treat this entry as "plausible mechanism, dose adequacy unconfirmed" until a PK/PD translation check or human bioavailability study resolves the gap. The orthogonal CB2 mechanism still makes BCP a reasonable low-risk addition; just do not assume the rat dose-response translates to supplement-range doses.
+> **Dose-translation caveat (flagged 2026-04-23, see `synthesis/` (architecture: synthesis/README.md)):** The 2021 MSU rat gout efficacy was demonstrated at 100–400 mg/kg oral. BSA-scaled to a 70 kg human, that is ~1.1–4.5 g/day — **20–50× above the typical supplement dose listed above**. Whether 50–200 mg/day reproduces the synovial NLRP3/TLR4/NF-κB suppression seen in rats is unverified. Treat this entry as "plausible mechanism, dose adequacy unconfirmed" until a PK/PD translation check or human bioavailability study resolves the gap. The orthogonal CB2 mechanism still makes BCP a reasonable low-risk addition; just do not assume the rat dose-response translates to supplement-range doses.
 
 **Contraindications:** None absolute. Pregnancy: dietary spice exposure is fine; supplement-dose chronic is unstudied.
 

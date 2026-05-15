@@ -201,7 +201,7 @@ The *S. boulardii* group's reported activity of 365 μmol/h/OD[[11]](#ref11) sug
 **Time:** 2 weeks for bench; 2 weeks for self-experiment
 **Who:** Brian (self-experiment); any lab (bench work)
 
-### Dose Scalability Cross-Check — Yeast vs. Koji as a Daily Food Product *(Mechanistic Extrapolation; source: [wiki/synthesis.md](./synthesis.md) 2026-04-23)*
+### Dose Scalability Cross-Check — Yeast vs. Koji as a Daily Food Product *(Mechanistic Extrapolation; source: [synthesis/](../synthesis/README.md) 2026-04-23)*
 
 The "How Much Yeast Is That?" calculation above worked from enzyme activity per mL of dense culture. A simpler (and more unforgiving) check is to ask how much biomass a patient would need to consume per day to deliver a clinical-scale enzyme dose. This cross-check treats the yeast product as a daily food, not as a lab preparation.
 

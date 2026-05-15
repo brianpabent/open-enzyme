@@ -2,7 +2,7 @@
 title: Cross-Validation of Open Enzyme Thesis — Rigorous Stress Test
 date: April 2026
 tags: [feasibility analysis, risk assessment, evidence levels, engineering challenges, clinical validation, regulatory pathway]
-related: ["open-enzyme-vision.md", "engineered-yeast-uricase-proposal.md", "engineered-koji-protocol.md", "protein-engineering-strategy.md", "gi-survival-prediction.md", "uricase-variant-selection.md", "koji-construct-design.md", "nlrp3-inhibitor-screen.md", "digestive-enzyme-optimization.md", "synthesis.md"]
+related: ["open-enzyme-vision.md", "engineered-yeast-uricase-proposal.md", "engineered-koji-protocol.md", "protein-engineering-strategy.md", "gi-survival-prediction.md", "uricase-variant-selection.md", "koji-construct-design.md", "nlrp3-inhibitor-screen.md", "digestive-enzyme-optimization.md", "../synthesis/README.md"]
 sources: ["ALLN-346 Phase 2a trials", "PULSE probiotic (Cell Reports Medicine 2025)", "ACS Synthetic Biology 2025 S. boulardii uricase engineering", "Rasburicase (FDA 2001)", "ABCG2 transporter physiology", "Oral enzyme bioavailability", "FDA GRAS precedents"]
 status: draft
 ---

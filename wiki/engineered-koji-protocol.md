@@ -1005,7 +1005,7 @@ The submerged-culture path is de-risked. **The open question is whether the Ward
 - [open-enzyme-vision.md](./open-enzyme-vision.md) — platform thesis; lactoferrin added the resolution leg the platform was missing.
 - [validation-experiments.md](./validation-experiments.md) — Phase A feasibility experiment entry.
 
-(sources: Ward 1992 PMID 1368268, Ward 1995 PMID 9634791, Sun 1999 PMID 10089347, spm-resolution-pathway.md, synthesis.md 2026-04-24 Pass 2 Connection 4)
+(sources: Ward 1992 PMID 1368268, Ward 1995 PMID 9634791, Sun 1999 PMID 10089347, spm-resolution-pathway.md, synthesis archive 2026-04-24 Pass 2 Connection 4)
 
 ---
 

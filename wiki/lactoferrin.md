@@ -225,7 +225,7 @@ Fu et al. 2025 (*Front Immunol* 16:1576069; PMID 40589746; [DOI](https://doi.org
 
 **Open question — gut-lumen vs. systemic Lf delivery for this mechanism.** The Habib 2023 / Håversen 2002 TNFα-suppression evidence is from oral/parenteral Lf reaching systemic TNFα. Whether *gut-lumen-localized* Lf produced from a koji-resident strain achieves equivalent local TNFα suppression of intestinal-epithelial ABCG2 is the empirical question — the §1.14 extension answers it by applying Lf basolaterally to the Caco-2 transwell, mimicking gut-side delivery.
 
-**Cross-references:** [koji-endgame-strain.md](./koji-endgame-strain.md) §2.2 (coverage matrix, lactoferrin row); [abcg2-modulators.md](./abcg2-modulators.md) §3 (TNFα → ABCG2 suppression mechanism); [gut-lumen-sink.md](./gut-lumen-sink.md); [validation-experiments.md §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens--tnfα--butyrate-rescue--lactoferrin-synergy); [synthesis.md](./synthesis.md) 2026-05-05 Connection #1.
+**Cross-references:** [koji-endgame-strain.md](./koji-endgame-strain.md) §2.2 (coverage matrix, lactoferrin row); [abcg2-modulators.md](./abcg2-modulators.md) §3 (TNFα → ABCG2 suppression mechanism); [gut-lumen-sink.md](./gut-lumen-sink.md); [validation-experiments.md §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens--tnfα--butyrate-rescue--lactoferrin-synergy); [synthesis/](../synthesis/README.md) 2026-05-05 Connection #1.
 
 ---
 

@@ -19,7 +19,7 @@ related:
   - abcg2-modulators.md
   - open-questions.md
   - open-enzyme-vision.md
-  - synthesis.md
+  - ../synthesis/README.md
   - hypotheses/H02-engineered-lbp-thesis.md
 sources:
   - "Vowst (Seres / Ferring) — FDA approval April 2023, *C. difficile* recurrence prevention (FMT-derived live biotherapeutic)"
@@ -163,7 +163,7 @@ A future strategic question (Phase 3): does the LBP track justify expanding Open
 
 ## Open Follow-Ups
 
-These are the queued deep-dive items that will populate this page over the coming sweeps. Each is a discrete, scoped piece of in silico work with no pharma-partner dependency. Tracked in multiple redundant surfaces (this page, [`open-questions.md`](./open-questions.md), [`computational-experiments.md`](./computational-experiments.md), [`index.md`](../index.md), [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md), and [`synthesis.md`](./synthesis.md)) so the daemon surfaces them on each sweep cycle.
+These are the queued deep-dive items that will populate this page over the coming sweeps. Each is a discrete, scoped piece of in silico work with no pharma-partner dependency. Tracked in multiple redundant surfaces (this page, [`open-questions.md`](./open-questions.md), [`computational-experiments.md`](./computational-experiments.md), [`index.md`](../index.md), [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md), and [`synthesis/`](../synthesis/README.md)) so the daemon surfaces them on each sweep cycle.
 
 | ID | Item | Type | Status |
 |---|---|---|---|
@@ -197,5 +197,5 @@ These are the queued deep-dive items that will populate this page over the comin
 - [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) — comp-007; validated butyrate's HDAC isoform profile
 - [`daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md) — comp-006; the koji chassis HIGH-risk verdict for soluble complement regulators is one of the structural arguments for an LBP-chassis alternative
 - [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md) — falsification card stub
-- [`synthesis.md`](./synthesis.md) 2026-05-05 Open Question #3 — the originating action
+- [`synthesis/`](../synthesis/README.md) 2026-05-05 Open Question #3 — the originating action
 - [`open-source-platform.md` §"6. Variant-Agnostic Empirical Head-to-Head"](./open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared) — the principle that governs comp-011's parallel-uricase-variant approach; **explicitly does NOT apply to the *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* chassis-choice decision** because cost-structure preconditions don't match (different anaerobic-bioreactor runs per chassis, different payload-integration toolkits per organism). Sequential testing — lower-cost-candidate-first, gated on result — is the right pattern for the LBP chassis selection.

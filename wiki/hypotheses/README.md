@@ -10,7 +10,7 @@ tags:
   - killshot-menu
 related:
   - ../linter-design.md
-  - ../synthesis.md
+  - ../synthesis/README.md
   - ../open-questions.md
   - ../validation-experiments.md
 sources:
@@ -87,13 +87,13 @@ A hypothesis with status **Killed** is not deleted. The file stays; the killed c
 
 ---
 
-## Relationship to `wiki/synthesis.md` and `wiki/open-questions.md`
+## Relationship to `synthesis/` (architecture: synthesis/README.md) and `wiki/open-questions.md`
 
-- **synthesis.md** is the generative action queue — new dot-connections, proposed experiments, cross-doc findings. It is promiscuous, fast-moving, and pruned manually by Brian. Items in synthesis.md are candidates for hypothesis promotion; not all candidates graduate.
+- **synthesis/** is the generative action queue — new dot-connections, proposed experiments, cross-doc findings. It is promiscuous, fast-moving, and pruned manually by Brian. Items in synthesis/ are candidates for hypothesis promotion; not all candidates graduate.
 - **open-questions.md** is a cross-wiki index of unresolved questions. Some of those questions map to committed hypotheses; most don't. An open question is a prompt for investigation; a committed hypothesis is a specific falsifiable claim plus a plan to attempt falsification.
 - **hypotheses/** is where a specific, falsifiable claim gets a Falsification Card and a commit. Not everything in synthesis or open-questions becomes a hypothesis — only the ones the user is ready to commit resources against.
 
-Flow (typical): synthesis.md finding → open-questions.md entry → (if worth testing) → hypotheses/H0N commit → Falsification Lint → execute killshots → update status.
+Flow (typical): synthesis/ finding → open-questions.md entry → (if worth testing) → hypotheses/H0N commit → Falsification Lint → execute killshots → update status.
 
 ---
 

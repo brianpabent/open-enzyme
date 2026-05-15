@@ -10,7 +10,7 @@ related:
   - bhb-ketones.md
   - kpv-peptide.md
   - cannabinoids-terpenes.md
-  - synthesis.md
+  - ../synthesis/README.md
 sources:
   - "EMBL-EBI ChEMBL v34 (queried via Anthropic life-sciences MCP, 2026-04-24)"
   - "Eur J Med Chem 2018: Resveratrol DPP-4 inhibition"

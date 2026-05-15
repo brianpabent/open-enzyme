@@ -20,7 +20,7 @@ related:
   - engineered-lbp-chassis.md
   - open-questions.md
   - open-enzyme-vision.md
-  - synthesis.md
+  - ../synthesis/README.md
   - hypotheses/H03-sirna-urat1-thesis.md
 sources:
   - "Inclisiran (Alnylam / Novartis) — FDA approved 2021, GalNAc-conjugated siRNA against PCSK9 (liver-targeted via ASGPR)"
@@ -140,7 +140,7 @@ The three tracks together represent the chase-every-avenue framing: koji for the
 
 ## Open Follow-Ups
 
-Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked in multiple redundant surfaces (this page, [`open-questions.md`](./open-questions.md), [`computational-experiments.md`](./computational-experiments.md), [`index.md`](../index.md), [`hypotheses/H03-sirna-urat1-thesis.md`](./hypotheses/H03-sirna-urat1-thesis.md), and [`synthesis.md`](./synthesis.md) Strategic Reflections Queue).
+Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked in multiple redundant surfaces (this page, [`open-questions.md`](./open-questions.md), [`computational-experiments.md`](./computational-experiments.md), [`index.md`](../index.md), [`hypotheses/H03-sirna-urat1-thesis.md`](./hypotheses/H03-sirna-urat1-thesis.md), and [`synthesis/`](../synthesis/README.md) Strategic Reflections Queue).
 
 | ID | Item | Type | Status |
 |---|---|---|---|
@@ -150,7 +150,7 @@ Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked
 | **P2-4** | Comparative analysis: siRNA vs. small-molecule URAT1 inhibitors (pozdeutinurad / AR882 efficacy, safety, cost, durability, hormone-axis-interaction). Honest assessment of the competitive 5–10 year horizon | Synthesis (Opus subagent or inline) | Queued |
 | **P2-5** | Falsification card H03: siRNA / URAT1 thesis — full claim, assumption stack, killshot menu, pre-committed thresholds | Hypothesis formalization | [Stub committed](./hypotheses/H03-sirna-urat1-thesis.md); full population queued |
 | **P2-6** | Lit scan: FDA siRNA regulatory path (inclisiran / patisiran precedent, IND-enabling package, ballpark timeline + capital for a kidney-tropic siRNA BLA) | Literature review (Opus subagent) | Queued |
-| **P3** | Platform-framing reflection (shared with LBP track) — does the discovery-engine track (siRNA / URAT1, kidney-tropic conjugates, Q141K pharmacological chaperones, mRNA-IL-1RA pulse therapy) accumulate enough substance to formally rebrand Open Enzyme as "open-source gout-solving research project" rather than "open-source koji-engineered enzyme library"? | Strategic reflection | Queued, content-triggered; rolled into the existing Strategic Reflections Queue entry in `synthesis.md` |
+| **P3** | Platform-framing reflection (shared with LBP track) — does the discovery-engine track (siRNA / URAT1, kidney-tropic conjugates, Q141K pharmacological chaperones, mRNA-IL-1RA pulse therapy) accumulate enough substance to formally rebrand Open Enzyme as "open-source gout-solving research project" rather than "open-source koji-engineered enzyme library"? | Strategic reflection | Queued, content-triggered; rolled into the existing Strategic Reflections Queue entry in `synthesis/` (architecture: synthesis/README.md) |
 
 ---
 
@@ -174,5 +174,5 @@ Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked
 - [`open-questions.md`](./open-questions.md) §"Engineered LBP chassis" parallel; siRNA / URAT1 entry to be added in same section pattern
 - [`computational-experiments.md`](./computational-experiments.md) Planned Analyses — comp-009 entry
 - [`hypotheses/H03-sirna-urat1-thesis.md`](./hypotheses/H03-sirna-urat1-thesis.md) — falsification card stub
-- [`synthesis.md`](./synthesis.md) 2026-05-05 Priority Action #3 — the originating action; Strategic Reflections Queue entry
+- [`synthesis/`](../synthesis/README.md) 2026-05-05 Priority Action #3 — the originating action; Strategic Reflections Queue entry
 - [`open-source-platform.md` §"6. Variant-Agnostic Empirical Head-to-Head"](./open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared) — the principle that governs comp-011's parallel-uricase-variant approach; **explicitly does NOT apply to siRNA conjugate-chemistry decisions** (GalNAc-analog vs. peptide vs. kidney-tropic LNP) because per-candidate cost is in the $10K+ range — synthetic oligonucleotide chemistry, conjugate formulation, and animal biodistribution work each cost orders of magnitude more than the comp-011 gene-synthesis case. Literature pre-selection burden is justified here; parallel testing is reserved for candidates the literature genuinely cannot rank.

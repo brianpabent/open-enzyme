@@ -150,7 +150,7 @@ The original framing — Paperclip-augmented pass producing a "literature delta"
 
 The reopen condition: if GXL ships a verified upgrade of the `map` reader model and we re-run the verification test (uricase variant landscape is a clean repeatable probe; ~12 papers, multiple known-correct ground truths via abstract + grep) and it passes cleanly, revisit. Until then Paperclip remains a manual-research-only tool, used interactively with verification discipline, never embedded in an automated pipeline.
 
-The original "open platform decision" entry in `synthesis.md` should be closed as resolved on the same date with this same outcome.
+The original "open platform decision" entry in `synthesis/` (architecture: synthesis/README.md) should be closed as resolved on the same date with this same outcome.
 
 ### 3. Protein-engineering support — via arXiv coverage
 

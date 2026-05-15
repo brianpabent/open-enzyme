@@ -26,7 +26,7 @@ related:
   - sirna-urat1-modality.md
   - open-enzyme-vision.md
   - open-questions.md
-  - synthesis.md
+  - ../synthesis/README.md
   - hypotheses/H04-tcm-rigor-intersection.md
   - ../operations/ward-1995-lab-access.md
 sources:
@@ -126,7 +126,7 @@ Rule #5 above sets the bar; this subsection fills the operational gap by adaptin
 
 **Reproducibility target:** consistent dose-response shape across operators and source-batches; absolute potency may vary 2× operator-to-operator on cell-based downstream assays (typical for biological readouts), but the consistency check at the extract-characterization layer prevents that variance from compounding with extract-batch variance.
 
-**Cross-references:** [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md) (parent framework); [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) (original koji-track framework); [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) (comp-013 priority compounds + verdicts); [synthesis.md 2026-05-07 77d0f6e Connection 2 / Item 21 walkthrough](./synthesis.md).
+**Cross-references:** [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md) (parent framework); [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) (original koji-track framework); [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) (comp-013 priority compounds + verdicts); [synthesis archive 2026-05-07 77d0f6e Connection 2 / Item 21 walkthrough](../synthesis/history/_pre-2026-05-08-archive.md).
 
 ### 6. Falsification card per major claim
 
@@ -208,7 +208,7 @@ The four tracks together represent the chase-every-avenue framing: koji for the 
 
 ## Open Follow-Ups
 
-Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked across the redundant surfaces (this page, [`open-questions.md`](./open-questions.md), [`computational-experiments.md`](./computational-experiments.md), [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md), [`index.md`](../index.md), and `synthesis.md`).
+Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked across the redundant surfaces (this page, [`open-questions.md`](./open-questions.md), [`computational-experiments.md`](./computational-experiments.md), [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md), [`index.md`](../index.md), and `synthesis/`).
 
 | ID | Item | Type | Status |
 |---|---|---|---|
@@ -218,7 +218,7 @@ Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked
 | **P2-4** | Lit scan: Si Miao San multi-component coverage analysis. Decompose the four-herb formula per "Formula decomposition" discipline above. Map each component to chokepoints. Identify whether the formula's design is designed-coverage / redundant / synergistic. | Literature review + analysis (Opus subagent) | Queued |
 | **P2-5** | Falsification card H04: TCM × rigor methodology lens. Stub committed at [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md); full population queued. Includes the meta-claim that the methodology lens itself produces actionable findings vs. is just compound-cataloging. | Hypothesis formalization | [Stub committed](./hypotheses/H04-tcm-rigor-intersection.md); full population queued |
 | **P2-6** | Bioavailability characterization for the top 3 compounds advancing from P2-2. Quantitative oral bioavailability + gut-vs-systemic distribution + first-pass metabolism + microbiome metabolism. Maps to the "embrace gut-luminal mechanisms" discipline. | Literature review (Opus subagent) | Queued |
-| **P3** | Platform-framing reflection (rolled into the existing Strategic Reflections Queue entry in `synthesis.md`): does the TCM-rigor track accumulate enough substance to elevate this from "methodology lens" to "first-class discovery-engine output named in `open-enzyme-vision.md` §2.2 alongside the repurposing-surface candidates"? Trigger: after P2-1 through P2-6 land. | Strategic reflection | Queued, content-triggered |
+| **P3** | Platform-framing reflection (rolled into the existing Strategic Reflections Queue entry in `synthesis/` (architecture: synthesis/README.md)): does the TCM-rigor track accumulate enough substance to elevate this from "methodology lens" to "first-class discovery-engine output named in `open-enzyme-vision.md` §2.2 alongside the repurposing-surface candidates"? Trigger: after P2-1 through P2-6 land. | Strategic reflection | Queued, content-triggered |
 
 ---
 
@@ -243,5 +243,5 @@ Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked
 - [`computational-experiments.md`](./computational-experiments.md) — **comp-013** (Phase 2 P2-2 closed 2026-05-06) Analyses table
 - [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) — **comp-013 interpretive page** (per-compound triage verdicts, methodology adaptation notes, cross-cutting findings)
 - [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md) — falsification card stub for the methodology lens
-- [`synthesis.md`](./synthesis.md) Strategic Reflections Queue — Phase 3 platform-framing reflection rolled in
+- [`synthesis/`](../synthesis/README.md) Strategic Reflections Queue — Phase 3 platform-framing reflection rolled in
 - [`../operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) — sister operationalization of the **global-multilingual research default** (`Open Enzyme/CLAUDE.md` §"Global-multilingual research by default"). Both pages independently treat language as a non-barrier and proactively map non-English-world resources as first-class assets: this TCM page targets Chinese / Japanese clinical literature (CNKI / WanFang / J-STAGE / ChiCTR / Kampo medicine literature); the Ward 1995 lab-access page targets Japan / China / Europe academic + industrial fungal-engineering groups. Same methodology, different operational domains (literature ingestion vs. resource acquisition). The Maruyama lab at the University of Tokyo (the primary lead in the Ward lab-access page) is itself a parallel instance — Japan publishes substantial fungal-engineering work in Japanese-language journals that English PubMed indexes thinly; the lab-access strategy treats Japanese-language outreach as default, not workaround.

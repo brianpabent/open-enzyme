@@ -20,7 +20,7 @@ related:
   - koji-endgame-strain.md
   - chembl-cross-check.md
   - self-experiment-protocol.md
-  - synthesis.md
+  - ../synthesis/README.md
   - open-questions.md
   - validation-experiments.md
 sources:
@@ -77,7 +77,7 @@ Neither linter pre-filters ideation. Pass 2 sweep synthesis stays promiscuous. N
 
 Directly from the brief, adapted to the Open Enzyme context:
 
-1. **Generator stays promiscuous.** Pass 2 sweep synthesis (the second daemon pass that prepends new dot-connections to `wiki/synthesis.md`), new wiki page creation, Brian's 3 a.m. speculation riffs — untouched by either linter. The generator's failure mode is *not generating*; a lint that discourages dot-connecting is a lint that kills the product.
+1. **Generator stays promiscuous.** Pass 2 sweep synthesis (the second daemon pass that prepends new dot-connections to `synthesis/` (architecture: synthesis/README.md)), new wiki page creation, Brian's 3 a.m. speculation riffs — untouched by either linter. The generator's failure mode is *not generating*; a lint that discourages dot-connecting is a lint that kills the product.
 
 2. **Rigor is opt-in.** Document Lint findings are non-blocking reports/annotations. Falsification Lint is user-invoked per hypothesis. Neither gates a commit, blocks a build, or pre-filters upstream. The user decides when rigor is worth the cost.
 

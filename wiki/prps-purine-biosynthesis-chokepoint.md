@@ -29,7 +29,7 @@ related:
   - modality-chokepoint-matrix.md
   - uricase.md
   - gut-lumen-sink.md
-  - synthesis.md
+  - ../synthesis/README.md
 sources:
   - "comp-015 v2 (T-axis adjuvant urate-target mapping, 2026-05-07) — `t-axis-adjuvant-urate-mapping-computational.md`"
   - "PMID 34785103 — eurycomanol PRPS purine-synthesis suppression (the trigger paper for this stub; surfaced during comp-015 v2 primary-source verification of an eurycomanone-XO claim that turned out to be citation-laundering)"

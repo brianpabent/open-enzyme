@@ -193,7 +193,7 @@ The plan: a `fresh-stack.py` script (sibling to the existing `fresh-synthesis.py
 
 If you find a finding in the research wiki that should be reflected here but isn't, that's a propagation gap — open an issue or a PR.
 
-See [synthesis.md → Strategic Reflections Queue](./synthesis.md#strategic-reflections-queue) for the platform-architecture reflection on whether the daemon should eventually grow a propagation-to-application-surface pass.
+See [synthesis/strategic-reflections/](../synthesis/strategic-reflections/) for the platform-architecture reflection on whether the daemon should eventually grow a propagation-to-application-surface pass.
 
 ---
 
