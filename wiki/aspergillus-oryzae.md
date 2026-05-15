@@ -296,12 +296,15 @@ Uricase catalyzes: Uric acid + O₂ + H₂O → 5-hydroxyisourate → allantoin 
 
 H₂O₂ (hydrogen peroxide) is generated as a byproduct. In cells, catalase immediately degrades this to water and oxygen. In the gut lumen and koji medium:
 
-- Koji naturally produces catalase (abundant in fungi)
+- Koji naturally produces catalase (abundant in fungi — multiple homologs including catA, catR in the *A. oryzae* genome; peroxisomal localization)
+- Native uricase has a C-terminal PTS1 (SKL) peroxisomal targeting signal, putting uricase and catalase in the same organelle when retained
 - H₂O₂ production is minimal at expected therapeutic uricase activity levels
 - Gut lumen has significant peroxidase activity from microbiome and epithelial cells
 - H₂O₂ is rapidly scavenged and not a safety concern at therapeutic doses
 
-(Source: engineered-koji-protocol.md)
+The peroxisomal co-localization of uricase + endogenous catalase is the basis for the chassis-as-formulation argument: the whole-cell oral chassis solves H2O2 housekeeping for free, an advantage every alternative delivery route has to re-solve through formulation engineering. See [`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question — and why the chassis solves it for free"](./engineered-koji-protocol.md) and [`delivery-route-matrix.md` §"Chassis-as-formulation"](./delivery-route-matrix.md) for the route-by-route treatment.
+
+(Source: engineered-koji-protocol.md, delivery-route-matrix.md)
 
 ## Safety Considerations
 
