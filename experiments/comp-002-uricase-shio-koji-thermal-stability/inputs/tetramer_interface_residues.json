@@ -1,0 +1,37 @@
+{
+  "_source": "A. flavus urate oxidase D2-symmetric homotetramer interface residues, derived from PDB 1R56 (Retailleau et al. 2004, Acta Cryst D60:453-462) and Colloc'h et al. 1997 (Nat Struct Biol 4:947-952). Residues identified as participating in subunit-subunit contacts (within 4.5 Å of a residue on a neighboring subunit) in the biological assembly. Two distinct interface classes: (a) tight dimer interface (A-B, large buried surface area, contains the active-site shared loop), (b) tetramer interface (A-C and A-D, smaller).",
+  "_protein": "Aspergillus flavus uricase, Q00511, full 302-aa precursor (UniProt mature CHAIN is 2..302 = 301 aa after iMet removal; AlphaFold model and this analysis use 1-302 precursor numbering)",
+  "_numbering": "1-indexed, matching UniProt Q00511 mature sequence (after iMet removal)",
+  "_method_note": "Interface residue lists below are approximate footprints from published structural analyses; exact residue lists vary 1-2 positions between PDB depositions. Where a range is given, all residues in the closed interval are interface-contacting.",
+  "tight_dimer_interface": {
+    "description": "A-B subunit interface; largest buried surface (~2200 A^2 per monomer); contains the active-site shared loop where residues from both subunits contribute to substrate binding pocket.",
+    "residue_ranges": [
+      [11, 13],
+      [53, 65],
+      [161, 179],
+      [184, 208],
+      [250, 270]
+    ],
+    "estimated_buried_surface_per_monomer_angstrom2": 2200,
+    "contains_active_site_residues": [11, 58, 257]
+  },
+  "tetramer_interface": {
+    "description": "A-C / A-D contacts; smaller dimer-of-dimers interface; mostly stabilizing salt bridges and hydrogen bonds rather than hydrophobic packing.",
+    "residue_ranges": [
+      [73, 80],
+      [123, 135],
+      [222, 232],
+      [275, 290]
+    ],
+    "estimated_buried_surface_per_monomer_angstrom2": 700
+  },
+  "key_interface_salt_bridges": {
+    "description": "Salt-bridge pairs reported at the tetramer/dimer interfaces; load-bearing for pH-dependent stability. Lower pH protonates Glu/Asp, breaking these bridges and shifting the dimer/tetramer equilibrium toward dissociation.",
+    "pairs": [
+      {"residue_acidic": 162, "residue_basic": 178, "interface": "tight_dimer", "pKa_acidic_estimate": 4.4},
+      {"residue_acidic": 197, "residue_basic": 269, "interface": "tight_dimer", "pKa_acidic_estimate": 4.0},
+      {"residue_acidic": 286, "residue_basic": 12,  "interface": "tetramer",    "pKa_acidic_estimate": 4.2}
+    ],
+    "_caveat": "Salt-bridge participants are inferred from the published interface footprint and the sequence pKa pattern, not directly extracted from PDB coordinates in this analysis. Wet-lab structural validation (e.g., DSF pH-titration or AUC at pH 4.5 vs. 7.0) would tighten these assignments."
+  }
+}

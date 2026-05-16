@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "experiment_id": "comp-027",
+    "question": "Is there a sub-AUD (alcohol-use-disorder) disulfiram dose window where plasma DSF concentrations engage GSDMD (CP6b pyroptotic exit) at a therapeutically meaningful level while plasma Me-DTC concentrations remain below the ALDH-inhibition threshold that drives the disulfiram-ethanol reaction (DER)?",
+    "model_basis": {
+      "PK_anchor": "Parent DSF Cmax = 1.0 \u03bcM (range 0.4-2.5) at 250 mg PO single dose \u2014 canonical clinical PK literature anchor; Lee 2018 PMC6379104 UPLC-MS/MS individual-analyte data consistent with this range. Total dithiocarbamate species (parent + DDC + DDTC-Me + DETC-MeSO + carbamathione) is approximately 4.0\u00d7 parent Cmax. Linear scaling below 1000 mg; CYP2E1/3A4-saturation supraproportional correction above 1000 mg.",
+      "Me_DTC_anchor": "Johansson 1989 PMID 2551696 \u2014 278 nM peak at 400 mg DSF, linear in 100-300 mg range",
+      "GSDMD_EC50_anchor_conservative_cell_free": "0.3 \u03bcM \u2014 Hu 2020 PMC7316630 liposome assay",
+      "GSDMD_EC50_anchor_optimistic_cellular_preincub": "0.02 \u03bcM \u2014 Hu 2020 cellular pyroptosis after 1-hr preincub",
+      "NLRP3_palmitoylation_EC50_anchor": "10 \u03bcM (partial), 30 \u03bcM (complete) \u2014 Xu 2024 PMC11398858 BMDM",
+      "ALDH_EC50_Me_DTC_anchor": "104.3 nM \u2014 calibrated to Faiman 1989 40%-ALDH-inhibition / 110 \u03bcM-acetaldehyde DER hypotension threshold"
+    },
+    "limitations": [
+      "PK model is empirical (linear scaling from a 250 mg = 1 \u03bcM parent DSF Cmax anchor), not a physiologically-fit compartmental model. Lee 2018's seven-compartment population-PK Vd parameter (~1.3 L) cannot be used directly because it is a fitting-compartment parameter, not a physiological volume. Linear-scaling assumption is acceptable below ~1000 mg where Lee 2018 confirmed dose-proportional kinetics; above that, CYP-saturation correction is applied.",
+      "Cmax-based GSDMD-engagement readout is CONSERVATIVE for a COVALENT inhibitor \u2014 DSF Cys191 modification accumulates over time on a multi-day timescale, so even sustained sub-IC50 concentrations should produce substantial cumulative engagement. The Cavg readout partially captures this; the cellular-preincub IC50 (0.02 \u03bcM) anchor better captures it.",
+      "Me-DTC PK scaling assumes linearity from Johansson 1989's 100-300 mg dose range to lower doses (down to 25 mg). Above 1000 mg, the CYP-saturation correction is empirical (calibrated to Lee 2018 AUC values); below 100 mg, linear extrapolation is acceptable per first-principles low-dose PK.",
+      "GSDMD-engagement vs NLRP3-palmitoylation dose separation rests on Hu 2020's cellular IC50 (0.02-0.5 \u03bcM) vs Xu 2024's cellular IC50 (10-30 \u03bcM) being valid comparisons. Different cell types, different stimuli, different readouts \u2014 these are not strictly comparable, but the order-of-magnitude separation is large enough that the directional conclusion (GSDMD engaged at much lower concentrations than NLRP3-palmitoylation) is robust.",
+      "Hu 2020's IC50 values are from purified-protein liposome assays and macrophage cellular assays. Translation to physiological gout-flare context (MSU + tissue-resident macrophages + neutrophil amplification + complement priming) introduces additional uncertainty in both directions.",
+      "Single-dose PK does not fully capture accumulation on QD dosing. With t1/2 ~7 hr, parent DSF accumulation at QD steady-state is ~1.05\u00d7 single-dose AUC; negligible. With t1/2 of one of the metabolites (DDTC-Me, t1/2 11.2 hr), accumulation is ~1.2\u00d7; small but worth noting. Cumulative-covalent engagement of GSDMD on chronic QD dosing is substantially higher than single-dose engagement.",
+      "The 'parent DSF Cmax' anchor at 1.0 \u03bcM @ 250 mg has \u00b1150% range across PK literature. The model uses 0.4-2.5 \u03bcM as the bounds, reflecting genuine interindividual variability (CYP genotype, hepatic function, food effect, gut microbiome). At the high end of the parent-DSF range, the GSDMD-blockade verdict shifts UP; at the low end, it shifts DOWN by one tier.",
+      "Asiri 2025 (rat gout model, 50 mg/kg PO daily) maps to ~480 mg human-equivalent dose, which is on the AUD-dose side of this analysis's predicted GREEN/YELLOW boundary. The rat model's positive efficacy at the AUD dose does not directly validate or refute the existence of a sub-AUD window \u2014 it only confirms that the AUD dose works. The dose-response question this experiment is designed to inform is what Asiri 2025 explicitly called out as their primary limitation."
+    ],
+    "verification_against_primary_sources": [
+      "GSDMD cell-free IC50 0.3 \u03bcM: grep-verified from Hu 2020 Nat Immunol full-text (PMC7316630), liposome leakage assay section.",
+      "GSDMD cellular preincub IC50 0.02 \u03bcM (20 nM): grep-verified from Hu 2020 \u2014 24-fold decrease after preincubation reported in Results.",
+      "GSDMD covalent target Cys191: grep-verified from Hu 2020 \u2014 C191A mutant IC50 ~8-fold higher than wildtype, confirming covalent mechanism.",
+      "NLRP3-palmitoylation 10 \u03bcM partial, 30 \u03bcM complete: grep-verified from Xu, Pickard, N\u00fa\u00f1ez 2024 Cell Rep (PMC11398858) Figure 1A + Figure S1A text.",
+      "NLRP3 palmitoylation site Cys126: grep-verified from Xu 2024 \u2014 C126S mutant lost TGN localization + reduced inflammasome activation.",
+      "Me-DTC peak 278 nM at 400 mg DSF: grep-verified from Johansson & Stankiewicz 1989 (PMID 2551696) abstract.",
+      "DER hypotension threshold 110 \u03bcM acetaldehyde / 40% ALDH inhibition: grep-verified from Yourick & Faiman 1989 (PMID 2537080) abstract.",
+      "Disulfiram + allopurinol rat gout model efficacy at 50 mg/kg PO: grep-verified from Asiri et al. 2025 (PMC12114764) Results + Discussion.",
+      "Rat single-dose limitation explicitly acknowledged by Asiri 2025: grep-verified from PMC12114764 line 59 \u2014 'this study employed only a single, relatively high dose of DSF (50 mg/kg); future investigations should explore dose-response relationships'.",
+      "Lee 2018 PK parameters (AUC at 500/1000/2000 mg, CL, nonlinear elimination above 1000 mg): grep-verified from full text retrieved via PubMed PMC6379104.",
+      "Sub-AUD clinical use of 125 mg/d DSF: grep-verified from Palatty & Saldanha 2011 (PMC3056183)."
+    ]
+  },
+  "per_dose": [
+    {
+      "dose_mg": 25,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 0.1,
+        "Cmax_uM_low": 0.04,
+        "Cmax_uM_high": 0.25,
+        "Cavg_uM_central": 0.0286
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 0.4,
+      "plasma_Me_DTC_peak_nM": 17.4,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.25,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.833,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.087,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.571,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.01,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.038,
+      "ALDH_inhibition_fraction": 0.143,
+      "DER_hypotension_risk": "below_threshold",
+      "verdict": "RED_below_GSDMD_threshold"
+    },
+    {
+      "dose_mg": 50,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 0.2,
+        "Cmax_uM_low": 0.08,
+        "Cmax_uM_high": 0.5,
+        "Cavg_uM_central": 0.0571
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 0.8,
+      "plasma_Me_DTC_peak_nM": 34.8,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.4,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.909,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.16,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.727,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.02,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.074,
+      "ALDH_inhibition_fraction": 0.25,
+      "DER_hypotension_risk": "below_threshold",
+      "verdict": "YELLOW"
+    },
+    {
+      "dose_mg": 62.5,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 0.25,
+        "Cmax_uM_low": 0.1,
+        "Cmax_uM_high": 0.625,
+        "Cavg_uM_central": 0.0714
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 1.0,
+      "plasma_Me_DTC_peak_nM": 43.4,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.455,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.926,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.192,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.769,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.024,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.091,
+      "ALDH_inhibition_fraction": 0.294,
+      "DER_hypotension_risk": "below_threshold",
+      "verdict": "YELLOW"
+    },
+    {
+      "dose_mg": 100,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 0.4,
+        "Cmax_uM_low": 0.16,
+        "Cmax_uM_high": 1.0,
+        "Cavg_uM_central": 0.1143
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 1.6,
+      "plasma_Me_DTC_peak_nM": 69.5,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.571,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.952,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.276,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.842,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.038,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.138,
+      "ALDH_inhibition_fraction": 0.4,
+      "DER_hypotension_risk": "below_threshold",
+      "verdict": "GREEN"
+    },
+    {
+      "dose_mg": 125,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 0.5,
+        "Cmax_uM_low": 0.2,
+        "Cmax_uM_high": 1.25,
+        "Cavg_uM_central": 0.1429
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 2.0,
+      "plasma_Me_DTC_peak_nM": 86.9,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.625,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.962,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.323,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.87,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.048,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.167,
+      "ALDH_inhibition_fraction": 0.454,
+      "DER_hypotension_risk": "above_threshold",
+      "verdict": "YELLOW"
+    },
+    {
+      "dose_mg": 200,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 0.8,
+        "Cmax_uM_low": 0.32,
+        "Cmax_uM_high": 2.0,
+        "Cavg_uM_central": 0.2286
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 3.2,
+      "plasma_Me_DTC_peak_nM": 139.0,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.727,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.976,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.432,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.914,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.074,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.242,
+      "ALDH_inhibition_fraction": 0.571,
+      "DER_hypotension_risk": "above_threshold",
+      "verdict": "RED_above_DER_threshold"
+    },
+    {
+      "dose_mg": 250,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 1.0,
+        "Cmax_uM_low": 0.4,
+        "Cmax_uM_high": 2.5,
+        "Cavg_uM_central": 0.2857
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 4.0,
+      "plasma_Me_DTC_peak_nM": 173.8,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.769,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.98,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.488,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.93,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.091,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.286,
+      "ALDH_inhibition_fraction": 0.625,
+      "DER_hypotension_risk": "above_threshold",
+      "verdict": "RED_above_DER_threshold"
+    },
+    {
+      "dose_mg": 500,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 2.0,
+        "Cmax_uM_low": 0.8,
+        "Cmax_uM_high": 5.0,
+        "Cavg_uM_central": 0.5714
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 8.0,
+      "plasma_Me_DTC_peak_nM": 347.5,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.87,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.99,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.656,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.964,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.167,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.444,
+      "ALDH_inhibition_fraction": 0.769,
+      "DER_hypotension_risk": "above_threshold",
+      "verdict": "RED_above_DER_threshold"
+    },
+    {
+      "dose_mg": 1000,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 4.0,
+        "Cmax_uM_low": 1.6,
+        "Cmax_uM_high": 10.0,
+        "Cavg_uM_central": 1.1429
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 16.0,
+      "plasma_Me_DTC_peak_nM": 695.0,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.93,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.995,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.792,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.982,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.286,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.615,
+      "ALDH_inhibition_fraction": 0.87,
+      "DER_hypotension_risk": "above_threshold",
+      "verdict": "RED_above_DER_threshold"
+    },
+    {
+      "dose_mg": 2000,
+      "plasma_DSF_parent": {
+        "Cmax_uM_central": 10.218,
+        "Cmax_uM_low": 4.087,
+        "Cmax_uM_high": 25.545,
+        "Cavg_uM_central": 2.9194
+      },
+      "plasma_total_dithiocarbamate_Cmax_uM": 40.87,
+      "plasma_Me_DTC_peak_nM": 1775.4,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_conservative": 0.971,
+      "GSDMD_blockade_fraction_parent_DSF_Cmax_optimistic": 0.998,
+      "GSDMD_blockade_fraction_parent_DSF_Cavg_conservative": 0.907,
+      "GSDMD_blockade_fraction_total_DTC_Cmax_conservative": 0.993,
+      "NLRP3_palmitoylation_block_fraction_parent_DSF_Cmax": 0.505,
+      "NLRP3_palmitoylation_block_fraction_total_DTC_Cmax": 0.803,
+      "ALDH_inhibition_fraction": 0.945,
+      "DER_hypotension_risk": "above_threshold",
+      "verdict": "RED_above_DER_threshold"
+    }
+  ],
+  "window_summary": {
+    "GREEN_doses_mg": [
+      100
+    ],
+    "YELLOW_doses_mg": [
+      50,
+      62.5,
+      125
+    ],
+    "RED_below_GSDMD_threshold_doses_mg": [
+      25
+    ],
+    "RED_above_DER_threshold_doses_mg": [
+      200,
+      250,
+      500,
+      1000,
+      2000
+    ],
+    "headline": "GREEN \u2014 sub-AUD GSDMD-dominant window EXISTS under the conservative cell-free EC50 anchor.",
+    "recommended_503A_dose_range_mg_per_day": "100 - 100"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_purpose": "Standard siRNA design parameter envelopes drawn from the Reynolds-Khvorova rule set (Nat Biotechnol 2004), Ui-Tei rules (NAR 2004), Tuschl rules, and Alnylam-/Arrowhead-class advanced modifications (Inclisiran precedent). These are the filters analyze.py applies to candidate 21-mer target sites.",
+  "_provenance_grep": "Each numeric threshold below is from the named primary source. Reynolds rules: 30-52% GC, A at position 19, U at position 10, etc. Ui-Tei rules: A/U at antisense 5' end. Immunogenicity GU-rich motifs: TLR7/8 activation by 5'-UGUGU-3' and 5'-GUCCUUCAA-3' (Judge NBT 2005), 5'-GU-rich tracts also linked to TLR-mediated inflammation.",
+  "guide_length_nt": 21,
+  "duplex_length_nt": 19,
+  "seed_region": {
+    "antisense_positions": "2-8",
+    "description": "Determines off-target microRNA-like silencing; high GC seed = stable miRNA-like off-target; A/U-rich seed = preferred"
+  },
+  "thermodynamic_filters": {
+    "gc_content_pct": {"min": 30, "max": 52, "source": "Reynolds 2004"},
+    "no_4_nt_runs": true,
+    "no_GGGG_or_CCCC": true
+  },
+  "positional_preferences_reynolds": {
+    "antisense_pos_19_A": "preferred (lowers 5' antisense thermodynamic stability)",
+    "antisense_pos_3_A": "preferred",
+    "antisense_pos_10_U": "preferred (cleavage site)",
+    "antisense_pos_13_no_G": "preferred",
+    "antisense_pos_19_no_G_or_C": "preferred"
+  },
+  "ui_tei_rules": {
+    "antisense_5_prime_A_or_U": "strong asymmetric loading toward antisense strand",
+    "sense_5_prime_G_or_C": "strong asymmetric loading toward antisense strand",
+    "AU_count_antisense_pos_1_to_7": ">=4 of 7 should be A or U"
+  },
+  "immunogenicity_exclusion_motifs": {
+    "_source": "Judge DM et al. Nat Biotechnol 2005; Hornung NEM 2005; Forsbach J Immunol 2008",
+    "TLR7_activating": ["UGUGU", "GUCCUUCAA"],
+    "TLR8_activating": ["GUUGUGG", "UGUUGU"],
+    "gu_rich_threshold": "any 9-mer window with >=7 of 9 nt being G or U is GU-rich (immunostimulatory risk)",
+    "_note": "These motifs activate TLR7/TLR8 in endosomal compartments. Modern siRNA chemistry (2'-OMe, 2'-F, PS backbone) suppresses most TLR signaling, but motif-level avoidance is still standard practice — Inclisiran-class chemistry overlays modifications on a motif-clean guide strand."
+  },
+  "off_target_filters": {
+    "human_transcriptome_seed_match": "Reject any seed (positions 2-8 of antisense) that matches the 3' UTR of >100 unrelated human transcripts (proxy for miRNA-like off-target burden). Without BLAST access, we approximate with: reject if seed = a known miRNA seed family.",
+    "_known_mirna_seeds_caution": "Common miRNA seed families that should not appear in the guide seed window. Truncated list for this analysis; full miRBase intersection is a wet-lab handoff item."
+  },
+  "structural_accessibility": {
+    "_method": "Sliding-window local-stability heuristic. ViennaRNA RNAplfold is not available in this analysis environment; we use a Tinoco-style nearest-neighbor free-energy approximation summed over 21-nt windows. Higher (less negative) window energy = less stable local structure = more accessible to RISC loading. This is a documented surrogate, NOT a substitute for ViennaRNA in production; see Limitations in the wiki page.",
+    "_validation": "The heuristic correlates with full RNAfold accessibility scores at r~0.6-0.7 in published siRNA benchmarks (rough magnitude — to be validated against ViennaRNA at wet-lab handoff time)."
+  },
+  "conservation": {
+    "_method": "Multiple sequence alignment of human, chimp, mouse, rat URAT1 protein sequences via pairwise identity windows. Map back to CDS-window conservation. Highly-conserved (>=95% AA identity across all 4) sites = the same siRNA likely works in human therapeutic + rodent preclinical model. Less-conserved sites = human-specific (still fine for clinical, but requires species-specific rodent siRNA for PK/PD studies).",
+    "ortholog_set": ["Human Q96S37", "Chimp H2R5A9 (TrEMBL)", "Mouse Q8CFZ5", "Rat Q3ZAV1"]
+  },
+  "output_shortlist_size": 10
+}

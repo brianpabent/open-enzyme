@@ -1,0 +1,70 @@
+{
+  "comment": "Monte Carlo simulation parameters for the pulmonary IL-1Ra dose-AUC model.",
+  "n_samples": 20000,
+  "rng_seed": 33,
+  "decision_rule": {
+    "GREEN": "median predicted plasma Cmax >= 0.5 ug/mL (1/3 anakinra target) AND 5th percentile >= 0.1 ug/mL (anakinra trough scale) AND >=2 Tier A partners identified",
+    "YELLOW": "median plasma Cmax between 0.1 and 0.5 ug/mL OR partner count between 1-2",
+    "RED": "median plasma Cmax < 0.1 ug/mL OR architecturally implausible to reach therapeutic exposure"
+  },
+  "dose_range_mg_mrna_per_administration": {
+    "min": 4,
+    "max": 24,
+    "distribution": "log-uniform",
+    "comment": "Anchored on Translate Bio MRT5005 (8-24 mg) and Arcturus ARCT-032 (4-20 mg). Single-dose-per-flare model."
+  },
+  "translation_efficiency_ng_protein_per_ug_mrna_delivered": {
+    "min": 1000,
+    "max": 50000,
+    "distribution": "log-uniform",
+    "central": 7000,
+    "comment": "Mass ratio protein/mRNA in delivered alveolar tissue, integrated over the expression-duration window. mRNA template undergoes multiple translation rounds before degradation; modified-nucleoside chemistry extends template life. BNT162b2 IM precedent: 30 ug mRNA yields detectable spike trimer in plasma for 2 weeks, with estimated tens to hundreds of ug total spike protein produced (mass ratio ~1-10x). Inhaled mRNA-LNP in alveolar epithelium has comparable or higher local concentration. Wide log-uniform prior 1-50x mass ratio (1000-50000 ng protein per ug mRNA) reflects published variability across LNP+nucleoside-modification platforms. This is total protein synthesized in lung tissue across the expression-duration window — systemic bioavailability is applied separately downstream.",
+    "source_anchor": "Pardi 2018 Nat Rev Drug Discov; Patel 2019 ACS Nano; Ogata 2022 Clin Infect Dis BNT162b2 plasma protein; Cheng 2020 Nat Nanotech SORT-LNP. Specific mass-ratio anchor is order-of-magnitude inference across these; primary-paper verification queued."
+  },
+  "lung_delivery_efficiency_fraction": {
+    "min": 0.10,
+    "max": 0.40,
+    "distribution": "uniform",
+    "central": 0.20,
+    "comment": "Vibrating-mesh nebulizer (PARI eFlow class) lower-airway delivery fraction.",
+    "source_anchor": "Geller 2009 Respir Care; PARI eFlow performance data"
+  },
+  "systemic_bioavailability_from_alveolar_fraction": {
+    "min": 0.10,
+    "max": 0.50,
+    "distribution": "uniform",
+    "central": 0.25,
+    "comment": "Alveolar -> systemic transit fraction for 17 kDa non-glycosylated protein. Conservative.",
+    "source_anchor": "Patton & Byron 2007 Nat Rev Drug Discov; Afrezza precedent"
+  },
+  "expression_duration_hours": {
+    "min": 24,
+    "max": 96,
+    "distribution": "uniform",
+    "central": 48,
+    "comment": "Pulmonary mRNA-LNP expression duration with m1Psi chemistry + transient UTR + 80-120 nt polyA."
+  },
+  "il1ra_systemic_clearance_per_hour": {
+    "min": 0.10,
+    "max": 0.25,
+    "distribution": "uniform",
+    "central": 0.17,
+    "comment": "IL-1Ra plasma clearance constant; anakinra t1/2 = 4h gives k = ln(2)/4 = 0.173 /h. Range reflects inter-individual variability.",
+    "source_anchor": "Kineret USPI; Yang 2003"
+  },
+  "plasma_volume_distribution_L": {
+    "min": 12,
+    "max": 25,
+    "distribution": "uniform",
+    "central": 17,
+    "comment": "IL-1Ra Vd ~12-25 L per anakinra PK; central estimate 17 L."
+  },
+  "model_simplifications": [
+    "Single-compartment PK for systemic IL-1Ra. Anakinra PK is well-described by single-compartment SC model; pulmonary->systemic input is modeled as zero-order infusion over the expression-duration window. Validated by anakinra precedent.",
+    "Lung-expressed protein assumed to reach plasma at the systemic-bioavailability fraction. The alveolar interstitium kinetics are not separately modeled.",
+    "No mRNA degradation kinetics within the LNP -> alveolar epithelium pathway; the 'translation efficiency' parameter folds in all losses upstream of protein synthesis.",
+    "No saturation of cellular translation machinery at high mRNA doses. Reasonable at the 4-24 mg dose range; would need to be revisited if doses scaled to >100 mg.",
+    "No accounting for first-pass alveolar macrophage uptake (which would reduce delivery to alveolar epithelium). Conservative: this is part of the lung-delivery-efficiency fraction's lower bound.",
+    "Single administration per flare. Repeat dosing within a 72h flare window not modeled; the central dose-AUC predicts whether single-dose suffices."
+  ]
+}

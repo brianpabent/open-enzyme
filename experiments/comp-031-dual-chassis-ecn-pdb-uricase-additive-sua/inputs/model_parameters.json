@@ -1,0 +1,97 @@
+{
+  "_schema_note": "comp-031 parameters. Each parameter cites primary source + tier. Inherits from comp-019 where applicable.",
+
+  "daily_mass_balance": {
+    "total_daily_urate_production_mg_per_day": {"central": 700, "low": 600, "high": 900},
+    "renal_excretion_fraction_normal_kidney": {"central": 0.67, "low": 0.60, "high": 0.70},
+    "intestinal_excretion_fraction_normal_kidney": {"central": 0.33, "low": 0.30, "high": 0.40},
+    "tier": "Multi-source consensus, inherited from comp-019"
+  },
+
+  "serum_urate_typical_baseline_mg_dL": {
+    "male_gout_typical": 8.0,
+    "female_gout_typical": 7.0,
+    "uM_per_mg_dL": 59.48,
+    "extracellular_pool_mg": 1200,
+    "renal_compensation_fraction": {"central": 0.30, "low": 0.0, "high": 0.50}
+  },
+
+  "luminal_urate_concentration_uM": {
+    "_note": "Range Brian's brief 50-500 uM (colonic post-meal/fed). Miyazaki 2025 baseline jejunal 0.59 uM is the steady-state-fasted floor. Colonic concentrations vary across diet, meal state, and segment. Model bounds sweep over 1-500 uM.",
+    "baseline_fasted_jejunum": 0.59,
+    "central_colonic_fed": 100,
+    "low_colonic": 50,
+    "high_colonic_post_meal": 500,
+    "source": "Miyazaki 2025 PMC11877951 (fasted floor); Brian's brief / comp-019 sensitivity bound (fed range)"
+  },
+
+  "uricase_kinetic_priors": {
+    "_uricase_arm": "PULSE-style luminal uricase (engineered EcN with HucR-driven urate oxidase)",
+    "Km_uricase_uM": {"central": 25, "low": 5, "high": 100},
+    "specific_activity_U_per_mg_pH85": 8.3,
+    "effective_activity_U_per_mg_invivo": 6.0,
+    "kcat_per_sec_estimate": 22,
+    "_kcat_note": "kcat estimated from specific activity 8.3 U/mg * 60 s/min * (M.W. uricase tetramer ~135 kDa / 4 subunits = 33.75 kDa) -> 8.3 umol/min/mg * 33.75 mg/umol = 280 /min / 60 = ~4.7/s per subunit at pH 8.5. In vivo effective at ~75% pH-correction: ~3.5/s per subunit. Per-tetramer kcat ~14/s. Use 22/s as upper-bound per-subunit estimate consistent with literature variability.",
+    "uricase_dose_mg_per_day": {"low": 5, "mid": 25, "high": 50}
+  },
+
+  "pdb_pathway_kinetics": {
+    "_pdb_arm": "Engineered EcN expressing 2,8-dioxopurine cluster (CBT2.0 precedent)",
+    "DOPDH_kcat_per_sec_se_variant": 412,
+    "DOPDH_kcat_per_sec_s_variant": 15,
+    "_kcat_source": "Liu et al. 2023 Cell (selenium-dependent DOPDH from G. purinilytica, ~412 s-1; sulfur-dependent bovine XOR equivalent ~15 s-1)",
+    "DOPDH_Km_urate_uM_estimate": {"central": 50, "low": 10, "high": 200},
+    "_Km_note": "Direct DOPDH Km not in corpus. Estimated from sister Mo-Se hydroxylases (XOR-class enzymes have Km for urate in the 10-200 uM range; selenium-dependent variants in C. sporogenes show similar substrate affinities). Mechanistic extrapolation.",
+    "_anchor_data": "CBT2.0 in vivo (Li 2025 PMID 41070194): hyperuricemic mice plasma UA 463 -> 172 umol/L over 6 weeks (-63%). Use as empirical magnitude anchor."
+  },
+
+  "cbt20_anchor_in_vivo": {
+    "mouse_plasma_UA_baseline_uM": 463,
+    "mouse_plasma_UA_treated_uM": 172,
+    "fractional_reduction": 0.63,
+    "_uncertainty": "+/- 0.50x as the corpus tier is single-paper, mouse model. Range 0.31-0.95.",
+    "source": "Li et al. 2025 Life Metabolism PMID 41070194",
+    "human_translation_attenuation": {"central": 0.5, "low": 0.3, "high": 0.7, "_note": "Mouse-to-human translation for urate-axis interventions typically 0.3-0.7x mouse effect. Conservative central 0.5."}
+  },
+
+  "cbt20_colonization_density_CFU_per_g": {
+    "low": 1e9,
+    "central": 1e10,
+    "high": 1e11,
+    "_note": "Brian's brief 10^9-10^11. Standard engineered LBP transient colonization."
+  },
+
+  "butyrate_stoichiometry": {
+    "mol_butyrate_per_mol_urate_central": 0.5,
+    "mol_butyrate_per_mol_urate_low": 0.3,
+    "mol_butyrate_per_mol_urate_high": 0.7,
+    "_note": "PDB pathway terminates pyruvate -> fermentation -> acetate + butyrate. C. sporogenes partition strain-dependent. Mechanistic extrapolation from pathway stoichiometry."
+  },
+
+  "colonic_butyrate_background_mM": {
+    "luminal_low_fiber": 2,
+    "luminal_high_fiber": 15,
+    "epithelial_surface_attenuation_factor": 0.1,
+    "_note": "Luminal 5-20 mM on high-fiber diet (corpus-tier wiki/purine-degrading-bacteria.md line 232). Epithelial surface concentration roughly 10% of luminal (mucus + diffusion gradient)."
+  },
+
+  "basseville_hdac_threshold": {
+    "EC50_butyrate_mM_at_target": 1.0,
+    "hill_coefficient": 2.0,
+    "_note": "Basseville 2012 PMID 22472121 demonstrated Q141K trafficking rescue at 1-5 mM butyrate in cell culture. EC50 modeled at 1 mM with n=2 cooperative Hill function for HDAC inhibition.",
+    "in_vivo_crypt_attenuation": {"central": 0.1, "low": 0.05, "high": 0.5}
+  },
+
+  "abcg2_genotype_relative_function": {
+    "WT_WT": 1.00,
+    "Q141K_het": 0.75,
+    "Q141K_hom": 0.50,
+    "source": "Matsuo 2014 PMID 24940678 + Miyazaki 2025 PMID 40033341 functional classes, inherited from comp-019"
+  },
+
+  "compositional_check_interaction": {
+    "_question": "Do PULSE uricase and PDB compete for the same scarce luminal urate substrate?",
+    "comp019_finding": "Substrate-limited regime: at all tested uricase doses, capacity ratio 32-1300x exceeds substrate flux. Adding a second urate-consuming pathway competes for the same scarce substrate.",
+    "_modeling_choice": "Model competition explicitly via Michaelis-Menten partition: each arm consumes urate at rate (kcat*E*S)/(Km+S). When both present in same lumen, total consumption rate ~min(supply, sum of capacities). Below substrate saturation (most physiological conditions per comp-019), combined consumption approaches the supply ceiling, not the sum of capacities."
+  }
+}

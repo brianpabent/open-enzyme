@@ -1,0 +1,48 @@
+{
+  "uniprot_id": "P18510",
+  "name": "Interleukin-1 receptor antagonist (IL-1Ra)",
+  "trade_name_recombinant": "Anakinra (Kineret)",
+  "precursor_length_aa": 177,
+  "signal_peptide_aa": "1..25",
+  "mature_chain_aa": "26..177",
+  "mature_length_aa": 152,
+  "disulfide_bonds": ["C91-C141 (1 intramolecular)"],
+  "mature_mw_kda": 17.3,
+  "glycosylation": "none (anakinra is non-glycosylated; bacterial E. coli production OK)",
+  "mechanism": "Competitive antagonist at IL-1R1; blocks IL-1alpha and IL-1beta signaling. Same receptor as canakinumab target but receptor-side rather than ligand-side.",
+  "anakinra_clinical": {
+    "indication_fda": ["Rheumatoid arthritis (2001)", "CAPS (2012)", "DIRA (2018)"],
+    "off_label_gout": "Used off-label for acute gout flares unresponsive to NSAIDs/colchicine; meta-analyses support; not FDA-approved for gout",
+    "standard_dose": "100 mg SC daily",
+    "half_life_hours": 4.0,
+    "plasma_cmax_ug_per_ml": 1.5,
+    "comment_on_cmax": "Cmax range 1.3-1.8 ug/mL across PK studies; central estimate 1.5"
+  },
+  "alternative_il1_axis_payloads": {
+    "soluble_IL_1R2_decoy": {
+      "mechanism": "IL-1R2 is a decoy receptor; soluble form binds IL-1beta with high affinity but lacks signaling intracellular domain",
+      "evidence_level": "In Vitro / Animal Model — Symons 1995, Reddy 2007",
+      "vs_il1ra_for_flare": "Higher affinity for IL-1beta specifically but does NOT block IL-1alpha (which IS released during MSU/NLRP3); for gout-flare specifically IL-1Ra preferred for dual-blockade"
+    },
+    "il1beta_binding_nanobody": {
+      "mechanism": "VHH single-domain (12-15 kDa) against IL-1beta — analog of canakinumab without Fc",
+      "evidence_level": "Mechanistic Extrapolation — no clinical program for gout",
+      "vs_il1ra_for_flare": "Smaller payload (cheaper mRNA), but blocks only IL-1beta not IL-1alpha; canakinumab clinical precedent shows IL-1beta-only is sufficient for gout but at $300K/yr — does not change the modality math"
+    },
+    "selection": "IL-1Ra. Reasoning: (1) anakinra clinical precedent gives a direct exposure benchmark to model against; (2) dual IL-1alpha + IL-1beta blockade is the gout-flare-relevant mechanism; (3) 17 kDa is well within mRNA-LNP expression-burden range; (4) non-glycosylated — alveolar epithelium glycosylation differences are not a concern."
+  },
+  "route_selection": {
+    "options": ["SC (anakinra current)", "IV (rasburicase / pegloticase precedent)", "intra-articular (single joint, comp-035 sister geometry)", "inhaled (pulmonary)"],
+    "selection": "inhaled pulmonary",
+    "reasoning": "(1) Lung surface area ~70 m^2 — largest absorptive surface; (2) inhaled mRNA-LNP has the deepest CDMO + clinical-trial infrastructure (CF, RSV programs); (3) self-administration via nebulizer or DPI matches the home-flare-management use case better than SC injection (anakinra fails on patient adherence partly because injection at flare onset is unpleasant); (4) pulmonary expression -> systemic distribution via the alveolar capillary bed delivers IL-1Ra into the same plasma compartment that anakinra reaches via SC depot, with comparable or faster onset; (5) intra-articular requires one device per flare per joint and assumes the patient knows which joint will flare hours in advance.",
+    "limitations_acknowledged": [
+      "Systemic IL-1Ra distribution from pulmonary expression depends on alveolar -> capillary protein transit; the published precedent is for vaccine antigens (IM/IN), CF CFTR (cell-local), insulin (Afrezza, small molecule)",
+      "Lung-expressed IL-1Ra concentration profile is the model output, not a directly measured value"
+    ]
+  },
+  "sources": {
+    "uniprot": "https://www.uniprot.org/uniprotkb/P18510 — verified 2026-05-16",
+    "anakinra_pk": "Kineret prescribing information; Yang et al. 2003 PK summary; Granowitz 1992 single-dose PK",
+    "anakinra_gout_offlabel": "Janssen et al. 2019 Lancet Rheumatol meta-analysis; Ghosh et al. 2013"
+  }
+}

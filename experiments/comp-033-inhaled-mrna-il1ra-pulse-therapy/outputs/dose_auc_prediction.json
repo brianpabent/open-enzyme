@@ -1,0 +1,68 @@
+{
+  "verdict": "RED",
+  "verdict_reason": "median Cmax (0.025 ug/mL) < 0.1 ug/mL minimum-effective threshold at currently-feasible inhaled mRNA doses (4-24 mg/administration). Only the upper-decile prior space (p95 = 0.28 ug/mL) reaches anakinra-trough exposure. Dose modeling predicts 195 mg mRNA needed to reach 0.5 ug/mL median Cmax and 585 mg to reach anakinra Cmax \u2014 both outside currently-feasible single-administration inhaled doses. Partner landscape (4 Tier A) is intact; the dose-feasibility gap is the load-bearing finding for the OE handoff.",
+  "n_samples": 20000,
+  "rng_seed": 33,
+  "predicted_plasma_cmax_ug_per_ml": {
+    "name": "plasma_cmax_ug_per_ml",
+    "n": 20000,
+    "median": 0.0251210297476921,
+    "mean": 0.06817163161503938,
+    "p05": 0.0022990479514243493,
+    "p25": 0.00874739231495841,
+    "p75": 0.07262591459605305,
+    "p95": 0.27831845271693373,
+    "min": 0.00022889468324777793,
+    "max": 3.865730264422848
+  },
+  "predicted_plasma_auc_24h_ug_h_per_ml": {
+    "name": "plasma_auc_24h_ug_h_per_ml",
+    "n": 20000,
+    "median": 0.4551521328395052,
+    "mean": 1.2150604870981896,
+    "p05": 0.0424721170668644,
+    "p25": 0.1585247788858714,
+    "p75": 1.3116997852818655,
+    "p95": 4.955419268642503,
+    "min": 0.004267906631406526,
+    "max": 63.35078437768553
+  },
+  "anakinra_benchmark": {
+    "cmax_ug_per_ml": 1.5,
+    "auc_24h_ug_h_per_ml": 12.0
+  },
+  "ratio_inhaled_vs_anakinra": {
+    "cmax_ratio_median": 0.017,
+    "auc_ratio_median": 0.038,
+    "interpretation": "Median inhaled prediction reaches 2% of anakinra Cmax and 4% of anakinra 24h AUC"
+  },
+  "decision_gates": {
+    "median_cmax_minimum_gate": 0.5,
+    "median_cmax_observed": 0.0251210297476921,
+    "median_cmax_passes": false,
+    "p05_cmax_minimum_gate": 0.1,
+    "p05_cmax_observed": 0.0022990479514243493,
+    "p05_cmax_passes": false,
+    "tier_a_partners_required": 2,
+    "tier_a_partners_observed": 4,
+    "tier_a_partners_passes": true
+  },
+  "sensitivity_spearman_rho_vs_cmax": {
+    "dose_mg_mrna": 0.333,
+    "translation_eff_ng_per_ug": 0.781,
+    "lung_delivery_frac": 0.257,
+    "systemic_bioavail_frac": 0.277,
+    "expression_duration_h": -0.25,
+    "clearance_per_h": -0.163,
+    "vd_L": -0.133
+  },
+  "sensitivity_interpretation": "Largest |rho| inputs drive Cmax variance. Top driver: ('translation_eff_ng_per_ug', 0.781)",
+  "reverse_dose_calculation": {
+    "comment": "What single-administration mRNA dose would the model predict reaches the minimum-effective Cmax (0.5 ug/mL) and the anakinra-equivalent Cmax (1.5 ug/mL)? Linear-scaling extrapolation from median Cmax at median dose.",
+    "median_dose_explored_mg": 9.8,
+    "median_cmax_at_median_dose_ug_per_ml": 0.0251,
+    "dose_to_reach_0.5_ug_per_ml_mg": 195.0,
+    "dose_to_reach_1.5_ug_per_ml_mg": 585.0,
+    "interpretation": "Single-administration mRNA doses required to reach anakinra-equivalent systemic exposure are 30-100x above the highest currently-disclosed inhaled-mRNA clinical dose (24 mg). Three honest paths forward: (1) repeat-dosing within a single flare (2-4 administrations per 24h could plausibly accumulate to therapeutic AUC); (2) higher single-dose inhaled platforms \u2014 requires new device-engineering (beyond current vibrating-mesh nebulizer capacity); (3) different chassis entirely for systemic anakinra-equivalent \u2014 intra-articular mRNA-IL-1Ra delivered locally to the affected joint may have a more favorable math because local concentration is what matters and systemic dilution is bypassed."
+  }
+}

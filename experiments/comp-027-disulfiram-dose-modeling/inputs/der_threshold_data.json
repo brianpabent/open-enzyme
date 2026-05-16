@@ -1,0 +1,68 @@
+{
+  "description": "Disulfiram-ethanol reaction (DER) acetaldehyde + ALDH-inhibition + dose anchors. The DER ceiling is what bounds the upper dose; the GSDMD threshold is what bounds the lower dose. Window = ratio between them.",
+  "fetch_date": "2026-05-16",
+
+  "DER_pathophysiology": {
+    "mechanism": "Disulfiram (via its metabolites — primarily Me-DTC) covalently inhibits hepatic ALDH2. Ethanol metabolism produces acetaldehyde via ADH; without functional ALDH, acetaldehyde accumulates 5-10× normal. Acetaldehyde >50 μM produces flushing, tachycardia; >100 μM produces hypotension + nausea + cardiovascular distress.",
+    "acetaldehyde_hypotension_threshold_uM": 110,
+    "ALDH_inhibition_threshold_for_hypotension_percent": 40,
+    "source": "Yourick & Faiman 1989, PMID 2537080. Rat model with controlled ethanol challenge. Hypotension correlated with acetaldehyde, not ethanol; threshold 110 μM acetaldehyde requires ~40% ALDH inhibition."
+  },
+
+  "clinical_DER_dose_response": [
+    {
+      "DSF_dose_mg_PO": 100,
+      "DER_observed_with_ethanol_challenge": true,
+      "DER_severity": "mild_to_moderate",
+      "source": "Johansson 1989, PMID 2551696 — 100 mg DSF + ethanol challenge in volunteer subgroup",
+      "ALDH_inhibition_estimate_percent": 40
+    },
+    {
+      "DSF_dose_mg_PO": 200,
+      "DER_observed_with_ethanol_challenge": true,
+      "DER_severity": "moderate",
+      "source": "Johansson 1989",
+      "ALDH_inhibition_estimate_percent": 60
+    },
+    {
+      "DSF_dose_mg_PO": 250,
+      "DER_observed_with_ethanol_challenge": true,
+      "DER_severity": "moderate_to_severe",
+      "source": "FDA Antabuse label + 70+ years clinical experience",
+      "ALDH_inhibition_estimate_percent": 70
+    },
+    {
+      "DSF_dose_mg_PO": 300,
+      "DER_observed_with_ethanol_challenge": true,
+      "DER_severity": "severe",
+      "source": "Johansson 1989",
+      "ALDH_inhibition_estimate_percent": 80
+    },
+    {
+      "DSF_dose_mg_PO": 500,
+      "DER_observed_with_ethanol_challenge": true,
+      "DER_severity": "severe_potentially_dangerous",
+      "source": "FDA Antabuse label; cardiovascular collapse reported at very high ethanol exposures",
+      "ALDH_inhibition_estimate_percent": 95
+    },
+    {
+      "DSF_dose_mg_PO": 125,
+      "DER_observed_with_ethanol_challenge": "not_directly_tested",
+      "DER_severity": "predicted_subthreshold_to_mild",
+      "source": "Palatty 2011 PMC3056183 — 125 mg/day clinical use 60d with good tolerability; not challenged with ethanol",
+      "ALDH_inhibition_estimate_percent": 30,
+      "extrapolation_note": "Below the 40% ALDH-inhibition threshold for hypotension (Faiman 1989). Plasma Me-DTC linearly scales with dose at this range (Johansson 1989), so 125 mg → ~70 nM Me-DTC peak << 278 nM at 400 mg."
+    },
+    {
+      "DSF_dose_mg_PO": 62.5,
+      "DER_observed_with_ethanol_challenge": "not_systematically_tested",
+      "DER_severity": "predicted_subthreshold",
+      "source": "Lee 2018 supp. text cites prior 62.5 mg/day disulfiram dosing in HIV PK studies",
+      "ALDH_inhibition_estimate_percent": 15
+    }
+  ],
+
+  "key_finding": "DER threshold sits around DSF oral 100 mg + ethanol challenge. Below 100 mg/day, ALDH inhibition stays <40%, blood acetaldehyde stays <110 μM even with ethanol. This is the sub-AUD dose ceiling for the alcohol-deterrent effect.",
+
+  "biochemical_decoupling_caveat": "Even at sub-DER doses, partial ALDH inhibition still occurs (15-40%). For patients with NO incidental ethanol exposure, this is irrelevant. For patients consuming kombucha, koji-fermented foods, certain medications (mouthwash with ethanol, IV preparations with ethanol vehicle), even mild ALDH inhibition can produce mild flushing. Practical implication: sub-AUD dose still requires abstinence from incidental ethanol but tolerates accidental low-level exposure better than 250-500 mg AUD dose."
+}

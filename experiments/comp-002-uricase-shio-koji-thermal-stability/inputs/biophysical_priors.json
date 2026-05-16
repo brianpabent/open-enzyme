@@ -1,0 +1,62 @@
+{
+  "_source": "Primary literature biophysical priors for A. flavus uricase (Q00511) thermal/pH stability behavior.",
+  "_protein": "Aspergillus flavus uricase (urate oxidase, rasburicase parent), UniProt Q00511",
+  "_compiled_date": "2026-05-16",
+  "thermal_kinetics": {
+    "wt_Tm_celsius": 27.0,
+    "wt_Tm_source": "Imani & Shahmohamadnejad 2017, 3 Biotech 7:201, DOI:10.1007/s13205-017-0841-3, PMID:28667645. Lactose-supplemented condition raises Tm to 37°C; this is the WT-only value.",
+    "wt_thermal_halflife_minutes_at_40C": 38.0,
+    "wt_thermal_halflife_source": "Imani & Shahmohamadnejad 2017 (PMID:28667645) — 'UOX half-life is almost 38 min' at 40°C in buffer.",
+    "wt_thermal_halflife_minutes_at_40C_independent": 38.5,
+    "wt_thermal_halflife_independent_source": "Rezaeian Marjani et al. 2020, Iran J Biotechnol 18:e2662, DOI:10.30498/IJB.2020.2662, PMID:33850949 — 'Estimation of half life for wild-type enzyme demonstrated 38.5 min' at thermal-inactivation temperature (paper uses temperatures spanning enzyme's thermal range; cross-check confirms order-of-magnitude).",
+    "wt_thermal_inactivation_rate_constant_per_min_at_40C": 0.018,
+    "wt_thermal_inactivation_rate_constant_source": "Imani & Shahmohamadnejad 2017 (PMID:28667645) — first-order inactivation rate k = 0.018 min^-1 at 40°C.",
+    "activation_energy_kJ_per_mol_estimate": 200.0,
+    "activation_energy_source_note": "Typical activation energy for cooperative protein unfolding of a 35-kDa globular enzyme; range 150-300 kJ/mol in the literature (Daniel & Danson 2010, Trends Biochem Sci 35:584). Not directly measured for A. flavus uricase; legacy parameter retained for reference. The two-regime model in analyze.py uses ΔH_vH (below) for the cooperative-unfolding component and a much smaller residual Ea = 50 kJ/mol for the irreversible-loss chemistry, so the 200 kJ/mol value here is not actively used in the composite retention prediction.",
+    "van_t_hoff_enthalpy_kJ_per_mol": 400.0,
+    "van_t_hoff_enthalpy_source_note": "Van't Hoff unfolding enthalpy for a 35-kDa globular protein. Typical range 300-600 kJ/mol (Privalov 1979, Adv Protein Chem 33:167; Robertson & Murphy 1997, Chem Rev 97:1251). 400 kJ/mol is a conservative midpoint. This sets the steepness of the two-state unfolding transition centered at Tm = 27°C. Higher ΔH = sharper transition, lower fraction unfolded at temperatures even slightly below Tm. Uncertainty bracket in analyze.py varies this across 300-500 kJ/mol."
+  },
+  "pH_stability": {
+    "wt_pH_optimum": 8.5,
+    "wt_pH_optimum_source": "Rezaeian Marjani et al. 2020 (PMID:33850949) — pH optimum 7 for WT, broadened to 7-10 in disulfide mutants. Other literature consistently places A. flavus uricase pH optimum at 8-9. Use 8.5 as midpoint.",
+    "ph_residual_activity_curve": {
+      "_units": "fraction of pH-optimum activity (0-1), measured for soluble enzyme",
+      "_caveat": "Activity != stability. These are activity readouts; stability (tetramer integrity, irreversible unfolding) is generally retained over a wider pH range than activity. For shio-koji we care about *retained activity after 7-14 days at pH X*, which combines both axes.",
+      "4.0": 0.05,
+      "4.5": 0.12,
+      "5.0": 0.25,
+      "5.5": 0.45,
+      "6.0": 0.65,
+      "7.0": 0.90,
+      "8.5": 1.00,
+      "10.0": 0.70
+    },
+    "tetramer_dissociation_threshold_pH": 4.0,
+    "tetramer_dissociation_source_note": "Most homotetrameric enzymes with key interface salt bridges dissociate below pH ~4 as Asp/Glu protonate; A. flavus uricase has been crystallized down to pH 5 (Retailleau et al. 2004, Acta Cryst D60:453, PDB depositions span pH 5-8) without tetramer loss, suggesting threshold below 5. Below pH 4 is a soft estimate; not directly measured for Q00511."
+  },
+  "salt_effects_on_stability": {
+    "_summary": "NaCl at moderate-to-high concentration is a kosmotrope on the Hofmeister series (mild salting-out behavior at 15-20%). The net effect on globular protein stability is *stabilizing* via preferential hydration of the native state — opposite direction from the protease-activity effect modelled in comp-001.",
+    "preferential_hydration_factor_at_17_5pct_NaCl": 1.15,
+    "preferential_hydration_source": "Timasheff 2002, Biochemistry 41:13473 — typical kosmotrope-mediated stabilization factor for globular proteins at ~3 M NaCl (~17.5%) is +5 to +20% increase in apparent stability (ΔΔG_unfolding ~ +0.5 to +2 kJ/mol). Conservative midpoint: +15%.",
+    "interface_ion_pair_disruption_factor": 0.92,
+    "interface_ion_pair_disruption_source": "Counterbalancing effect: at very high [NaCl] (>2 M / >12%), Na+ and Cl- ions partially screen interfacial salt bridges, reducing their stabilization energy by ~5-15% per Bjerrum-length estimate. Net effect on tetramer interfaces is small but non-zero subtraction from the preferential-hydration gain.",
+    "net_salt_factor_at_17_5pct_NaCl": 1.058,
+    "_net_factor_calculation": "1.15 (preferential hydration) * 0.92 (ion pair screening) = 1.058 — small net stabilization."
+  },
+  "shio_koji_reference_conditions": {
+    "NaCl_pct": 17.5,
+    "NaCl_pct_range": [15.0, 20.0],
+    "pH_midpoint": 5.25,
+    "pH_range": [4.5, 6.0],
+    "temperature_C": 22.0,
+    "temperature_C_range": [20.0, 25.0],
+    "duration_days_range": [7, 14],
+    "_source": "Standard home-fermentation shio-koji protocol (engineered-koji-protocol.md §15, koji-home-fermentation.md). Salt set above the 12-13% Aspergillus oryzae growth limit to halt living-cell metabolism after koji harvest."
+  },
+  "sensitivity_sweep": {
+    "NaCl_pct_grid": [5.0, 10.0, 15.0, 17.5, 20.0],
+    "temperature_C_grid": [22.0, 25.0, 30.0, 32.0],
+    "pH_grid": [4.5, 5.0, 5.5, 6.0],
+    "duration_days_grid": [7, 14, 30]
+  }
+}

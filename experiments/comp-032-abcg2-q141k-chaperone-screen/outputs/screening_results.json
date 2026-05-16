@@ -1,0 +1,4009 @@
+{
+  "pocket_descriptor": {
+    "anchor_residue": {
+      "resnum": 141,
+      "name": "GLN",
+      "plddt": 97.06
+    },
+    "radius_angstroms": 10.0,
+    "n_pocket_residues": 21,
+    "pocket_residues": [
+      {
+        "resnum": 135,
+        "name": "THR",
+        "distance_a": 9.63,
+        "plddt": 95.44
+      },
+      {
+        "resnum": 136,
+        "name": "VAL",
+        "distance_a": 8.71,
+        "plddt": 96.88
+      },
+      {
+        "resnum": 137,
+        "name": "ARG",
+        "distance_a": 5.99,
+        "plddt": 97.62
+      },
+      {
+        "resnum": 138,
+        "name": "GLU",
+        "distance_a": 4.93,
+        "plddt": 96.75
+      },
+      {
+        "resnum": 139,
+        "name": "ASN",
+        "distance_a": 5.49,
+        "plddt": 96.56
+      },
+      {
+        "resnum": 140,
+        "name": "LEU",
+        "distance_a": 3.86,
+        "plddt": 96.69
+      },
+      {
+        "resnum": 141,
+        "name": "GLN",
+        "distance_a": 0.0,
+        "plddt": 97.06
+      },
+      {
+        "resnum": 142,
+        "name": "PHE",
+        "distance_a": 3.83,
+        "plddt": 96.56
+      },
+      {
+        "resnum": 143,
+        "name": "SER",
+        "distance_a": 5.51,
+        "plddt": 95.38
+      },
+      {
+        "resnum": 144,
+        "name": "ALA",
+        "distance_a": 5.04,
+        "plddt": 95.88
+      },
+      {
+        "resnum": 145,
+        "name": "ALA",
+        "distance_a": 5.89,
+        "plddt": 96.0
+      },
+      {
+        "resnum": 146,
+        "name": "LEU",
+        "distance_a": 8.65,
+        "plddt": 95.06
+      },
+      {
+        "resnum": 147,
+        "name": "ARG",
+        "distance_a": 9.99,
+        "plddt": 93.75
+      },
+      {
+        "resnum": 154,
+        "name": "ASN",
+        "distance_a": 9.34,
+        "plddt": 93.31
+      },
+      {
+        "resnum": 157,
+        "name": "LYS",
+        "distance_a": 7.83,
+        "plddt": 95.81
+      },
+      {
+        "resnum": 158,
+        "name": "ASN",
+        "distance_a": 7.19,
+        "plddt": 96.0
+      },
+      {
+        "resnum": 160,
+        "name": "ARG",
+        "distance_a": 9.76,
+        "plddt": 94.5
+      },
+      {
+        "resnum": 161,
+        "name": "ILE",
+        "distance_a": 7.04,
+        "plddt": 96.5
+      },
+      {
+        "resnum": 198,
+        "name": "MET",
+        "distance_a": 8.57,
+        "plddt": 94.38
+      },
+      {
+        "resnum": 201,
+        "name": "ILE",
+        "distance_a": 9.3,
+        "plddt": 89.94
+      },
+      {
+        "resnum": 379,
+        "name": "TRP",
+        "distance_a": 9.83,
+        "plddt": 96.75
+      }
+    ],
+    "charge_environment": {
+      "n_positive_residues": 4,
+      "n_negative_residues": 1,
+      "wt_net_charge": 3,
+      "q141k_net_charge_delta": 1,
+      "q141k_pocket_net_charge": 4
+    },
+    "aromatic_residues": 2,
+    "hydrophobic_residues": 10,
+    "atp_pocket_overlap": {
+      "min_dist_to_walker_a_angstroms": 28.23,
+      "min_dist_to_atp_loop2_angstroms": 16.51,
+      "overlaps_atp_pocket": false
+    },
+    "mean_pocket_plddt": 95.56
+  },
+  "all_scored_molecules": [
+    {
+      "name": "lumacaftor",
+      "drug_class": "CFTR corrector",
+      "class_prior": "cftr_corrector",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 452.41,
+      "logp": 4.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 1.0,
+        "s5_pose_stability": 1.0,
+        "composite": 1.0
+      }
+    },
+    {
+      "name": "tafamidis",
+      "drug_class": "Transthyretin tetramer stabilizer",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 308.12,
+      "logp": 4.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.956
+      }
+    },
+    {
+      "name": "ursodiol",
+      "drug_class": "Bile acid chaperone (UDCA)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 392.57,
+      "logp": 4.9,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.956
+      }
+    },
+    {
+      "name": "diflunisal",
+      "drug_class": "NSAID + TTR stabilizer (off-label)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 250.2,
+      "logp": 4.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.965,
+        "composite": 0.95
+      }
+    },
+    {
+      "name": "tauroursodeoxycholic_acid",
+      "drug_class": "Bile acid chaperone (TUDCA)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 499.71,
+      "logp": 2.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.888,
+        "composite": 0.934
+      }
+    },
+    {
+      "name": "deflazacort",
+      "drug_class": "Corticosteroid (Duchenne stabilizer effect)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 441.51,
+      "logp": 1.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.965,
+        "composite": 0.919
+      }
+    },
+    {
+      "name": "tezacaftor",
+      "drug_class": "CFTR corrector",
+      "class_prior": "cftr_corrector",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 520.5,
+      "logp": 4.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.932,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.959,
+        "s4_class_prior": 1.0,
+        "s5_pose_stability": 0.788,
+        "composite": 0.902
+      }
+    },
+    {
+      "name": "romidepsin",
+      "drug_class": "HDAC inhibitor",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "iv_only",
+      "cns_penetration": "no",
+      "mw": 540.71,
+      "logp": 3.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.864,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.919,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.884
+      }
+    },
+    {
+      "name": "ivacaftor",
+      "drug_class": "CFTR potentiator",
+      "class_prior": "cftr_potentiator",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 392.49,
+      "logp": 5.7,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.767,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.65,
+        "s5_pose_stability": 1.0,
+        "composite": 0.861
+      }
+    },
+    {
+      "name": "minocycline",
+      "drug_class": "Tetracycline",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 457.48,
+      "logp": -0.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.667,
+        "composite": 0.854
+      }
+    },
+    {
+      "name": "ambroxol",
+      "drug_class": "Pharmacological chaperone (GCase, off-label)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 378.11,
+      "logp": 3.2,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.849
+      }
+    },
+    {
+      "name": "ganetespib",
+      "drug_class": "Hsp90 inhibitor (research)",
+      "class_prior": "hsp_modulator",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "iv_only",
+      "cns_penetration": "no",
+      "mw": 364.4,
+      "logp": 3.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.45,
+        "s5_pose_stability": 1.0,
+        "composite": 0.844
+      }
+    },
+    {
+      "name": "vorinostat",
+      "drug_class": "HDAC inhibitor",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 264.32,
+      "logp": 1.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.836
+      }
+    },
+    {
+      "name": "elexacaftor",
+      "drug_class": "CFTR corrector",
+      "class_prior": "cftr_corrector",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 597.62,
+      "logp": 5.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.607,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.805,
+        "s4_class_prior": 1.0,
+        "s5_pose_stability": 0.843,
+        "composite": 0.829
+      }
+    },
+    {
+      "name": "ko143",
+      "drug_class": "ABCG2 inhibitor (research)",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "unknown",
+      "mw": 481.55,
+      "logp": 4.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.824
+      }
+    },
+    {
+      "name": "curcumin",
+      "drug_class": "Polyphenol / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 368.38,
+      "logp": 3.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.824
+      }
+    },
+    {
+      "name": "glycerol_phenylbutyrate",
+      "drug_class": "Ammonia scavenger / chaperone",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 530.62,
+      "logp": 4.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.898,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.939,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.581,
+        "composite": 0.821
+      }
+    },
+    {
+      "name": "fumitremorgin_c",
+      "drug_class": "ABCG2 inhibitor (research)",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "unknown",
+      "mw": 379.46,
+      "logp": 3.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.965,
+        "composite": 0.818
+      }
+    },
+    {
+      "name": "naringenin",
+      "drug_class": "Flavonoid",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 272.25,
+      "logp": 2.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.928,
+        "composite": 0.812
+      }
+    },
+    {
+      "name": "ver155008",
+      "drug_class": "Hsp70 inhibitor (research)",
+      "class_prior": "hsp_modulator",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "iv_only",
+      "cns_penetration": "no",
+      "mw": 460.27,
+      "logp": 3.0,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.45,
+        "s5_pose_stability": 0.888,
+        "composite": 0.806
+      }
+    },
+    {
+      "name": "imatinib",
+      "drug_class": "TKI / ABCG2 substrate-inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 493.6,
+      "logp": 4.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.888,
+        "composite": 0.805
+      }
+    },
+    {
+      "name": "resveratrol",
+      "drug_class": "Stilbene / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 228.24,
+      "logp": 3.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.913,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.965,
+        "composite": 0.804
+      }
+    },
+    {
+      "name": "raloxifene",
+      "drug_class": "SERM / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 473.59,
+      "logp": 5.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.833,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.795
+      }
+    },
+    {
+      "name": "benzbromarone",
+      "drug_class": "URAT1 uricosuric",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 424.07,
+      "logp": 5.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.8,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.788
+      }
+    },
+    {
+      "name": "quercetin",
+      "drug_class": "Flavonoid / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 302.24,
+      "logp": 1.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.761,
+        "composite": 0.78
+      }
+    },
+    {
+      "name": "ketoconazole",
+      "drug_class": "Azole antifungal / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 531.43,
+      "logp": 4.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.895,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.937,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.888,
+        "composite": 0.777
+      }
+    },
+    {
+      "name": "sodium_phenylbutyrate",
+      "drug_class": "Chaperone (Buphenyl)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 186.18,
+      "logp": 2.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.447,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.788,
+        "composite": 0.776
+      }
+    },
+    {
+      "name": "4-phenylbutyric_acid",
+      "drug_class": "Chemical chaperone (HDAC inhibitor)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 164.2,
+      "logp": 2.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.394,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.888,
+        "composite": 0.775
+      }
+    },
+    {
+      "name": "sulfasalazine",
+      "drug_class": "Aminosalicylate / ABCG2 substrate",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 398.4,
+      "logp": 3.8,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 1.0,
+        "composite": 0.758
+      }
+    },
+    {
+      "name": "salicylic_acid",
+      "drug_class": "NSAID / aromatic acid chaperone",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 138.12,
+      "logp": 2.3,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.331,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.928,
+        "composite": 0.756
+      }
+    },
+    {
+      "name": "probenecid",
+      "drug_class": "URAT1 uricosuric",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 285.36,
+      "logp": 3.2,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.752
+      }
+    },
+    {
+      "name": "gefitinib",
+      "drug_class": "EGFR TKI / ABCG2 substrate",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 446.9,
+      "logp": 4.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 1.0,
+        "composite": 0.75
+      }
+    },
+    {
+      "name": "topotecan",
+      "drug_class": "Topoisomerase I / ABCG2 substrate",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 421.45,
+      "logp": 0.8,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 1.0,
+        "composite": 0.75
+      }
+    },
+    {
+      "name": "sorafenib",
+      "drug_class": "Multikinase TKI",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 464.82,
+      "logp": 4.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.965,
+        "composite": 0.745
+      }
+    },
+    {
+      "name": "erlotinib",
+      "drug_class": "EGFR TKI",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 393.44,
+      "logp": 3.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.928,
+        "composite": 0.739
+      }
+    },
+    {
+      "name": "miglustat",
+      "drug_class": "Iminosugar chaperone (Gaucher)",
+      "class_prior": "iminosugar_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 219.28,
+      "logp": -1.8,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.526,
+        "s4_class_prior": 0.55,
+        "s5_pose_stability": 0.888,
+        "composite": 0.738
+      }
+    },
+    {
+      "name": "simvastatin",
+      "drug_class": "Statin",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 418.57,
+      "logp": 4.7,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 1.0,
+        "composite": 0.734
+      }
+    },
+    {
+      "name": "pravastatin",
+      "drug_class": "Statin",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 424.53,
+      "logp": 1.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.824,
+        "composite": 0.729
+      }
+    },
+    {
+      "name": "rosuvastatin",
+      "drug_class": "Statin",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 481.54,
+      "logp": 1.6,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.783,
+        "composite": 0.722
+      }
+    },
+    {
+      "name": "estradiol",
+      "drug_class": "Estrogen / ABCG2 substrate",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 272.38,
+      "logp": 4.0,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.788,
+        "composite": 0.7
+      }
+    },
+    {
+      "name": "migalastat",
+      "drug_class": "Iminosugar chaperone (Fabry)",
+      "class_prior": "iminosugar_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 163.17,
+      "logp": -2.7,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.392,
+        "s4_class_prior": 0.55,
+        "s5_pose_stability": 0.824,
+        "composite": 0.685
+      }
+    },
+    {
+      "name": "diclofenac",
+      "drug_class": "NSAID",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 296.15,
+      "logp": 4.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.684
+      }
+    },
+    {
+      "name": "losartan",
+      "drug_class": "ARB",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 422.91,
+      "logp": 4.0,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.684
+      }
+    },
+    {
+      "name": "febuxostat",
+      "drug_class": "XO inhibitor (urate)",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 316.38,
+      "logp": 4.2,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.684
+      }
+    },
+    {
+      "name": "lesinurad",
+      "drug_class": "URAT1 inhibitor",
+      "class_prior": "decoy",
+      "fda_status": "withdrawn",
+      "ind_503a_tier": "withdrawn",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 404.27,
+      "logp": 4.0,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.684
+      }
+    },
+    {
+      "name": "verinurad",
+      "drug_class": "URAT1 inhibitor (investigational)",
+      "class_prior": "decoy",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 358.81,
+      "logp": 4.2,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.684
+      }
+    },
+    {
+      "name": "dotinurad",
+      "drug_class": "URAT1 inhibitor (Japan)",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 357.78,
+      "logp": 3.6,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.684
+      }
+    },
+    {
+      "name": "mcc950",
+      "drug_class": "NLRP3 inhibitor (research)",
+      "class_prior": "decoy",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 404.46,
+      "logp": 2.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.684
+      }
+    },
+    {
+      "name": "ciprofloxacin",
+      "drug_class": "Fluoroquinolone",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 331.34,
+      "logp": 0.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.677
+      }
+    },
+    {
+      "name": "celecoxib",
+      "drug_class": "COX-2 NSAID",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 381.37,
+      "logp": 3.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.677
+      }
+    },
+    {
+      "name": "pioglitazone",
+      "drug_class": "Thiazolidinedione (PPARgamma agonist)",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 356.44,
+      "logp": 3.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.677
+      }
+    },
+    {
+      "name": "warfarin",
+      "drug_class": "Anticoagulant",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 308.33,
+      "logp": 2.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.677
+      }
+    },
+    {
+      "name": "apixaban",
+      "drug_class": "Factor Xa inhibitor",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 459.5,
+      "logp": 1.8,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.677
+      }
+    },
+    {
+      "name": "ezetimibe",
+      "drug_class": "Cholesterol absorption inh",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 409.43,
+      "logp": 4.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.677
+      }
+    },
+    {
+      "name": "trimethoprim",
+      "drug_class": "Antibiotic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 290.32,
+      "logp": 0.9,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.677
+      }
+    },
+    {
+      "name": "sulfamethoxazole",
+      "drug_class": "Antibiotic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 253.28,
+      "logp": 0.9,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.677
+      }
+    },
+    {
+      "name": "tolvaptan",
+      "drug_class": "Vasopressin V2 antagonist",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 448.94,
+      "logp": 4.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.677
+      }
+    },
+    {
+      "name": "elacridar",
+      "drug_class": "P-gp/ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 563.65,
+      "logp": 6.0,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.525,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.698,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.674
+      }
+    },
+    {
+      "name": "naproxen",
+      "drug_class": "NSAID",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 230.26,
+      "logp": 3.2,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.921,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.673
+      }
+    },
+    {
+      "name": "phenytoin",
+      "drug_class": "Anticonvulsant",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 252.27,
+      "logp": 2.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.965,
+        "composite": 0.673
+      }
+    },
+    {
+      "name": "isofagomine",
+      "drug_class": "Iminosugar chaperone (research)",
+      "class_prior": "iminosugar_chaperone",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 147.17,
+      "logp": -1.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.353,
+        "s4_class_prior": 0.55,
+        "s5_pose_stability": 0.824,
+        "composite": 0.671
+      }
+    },
+    {
+      "name": "atorvastatin",
+      "drug_class": "Statin",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 558.65,
+      "logp": 5.0,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 0.805,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.883,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.749,
+        "composite": 0.668
+      }
+    },
+    {
+      "name": "n_acetylcysteine",
+      "drug_class": "Mucolytic / antioxidant chaperone",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 163.2,
+      "logp": -0.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.196,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.668
+      }
+    },
+    {
+      "name": "zileuton",
+      "drug_class": "5-LOX inhibitor",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 236.29,
+      "logp": 2.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.945,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.965,
+        "composite": 0.665
+      }
+    },
+    {
+      "name": "clozapine",
+      "drug_class": "Atypical antipsychotic / ABCG2 substrate",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 326.83,
+      "logp": 3.2,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.928,
+        "composite": 0.663
+      }
+    },
+    {
+      "name": "cetirizine",
+      "drug_class": "Antihistamine H1",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 388.89,
+      "logp": 1.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.662
+      }
+    },
+    {
+      "name": "glipizide",
+      "drug_class": "Sulfonylurea",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 445.54,
+      "logp": 1.9,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.662
+      }
+    },
+    {
+      "name": "colchicine",
+      "drug_class": "Tubulin inhibitor",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 399.44,
+      "logp": 1.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.662
+      }
+    },
+    {
+      "name": "omeprazole",
+      "drug_class": "PPI",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 345.42,
+      "logp": 2.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.662
+      }
+    },
+    {
+      "name": "pantoprazole",
+      "drug_class": "PPI",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 383.37,
+      "logp": 2.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.662
+      }
+    },
+    {
+      "name": "clopidogrel",
+      "drug_class": "Antiplatelet",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 321.82,
+      "logp": 3.8,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.888,
+        "composite": 0.661
+      }
+    },
+    {
+      "name": "metaxalone",
+      "drug_class": "Muscle relaxant",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 221.25,
+      "logp": 2.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.885,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.661
+      }
+    },
+    {
+      "name": "tideglusib",
+      "drug_class": "GSK-3 inhibitor",
+      "class_prior": "decoy",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 334.39,
+      "logp": 4.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.888,
+        "composite": 0.661
+      }
+    },
+    {
+      "name": "geldanamycin_17_aag",
+      "drug_class": "Hsp90 inhibitor (research)",
+      "class_prior": "hsp_modulator",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "iv_only",
+      "cns_penetration": "no",
+      "mw": 585.69,
+      "logp": 2.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.595,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.829,
+        "s4_class_prior": 0.45,
+        "s5_pose_stability": 0.654,
+        "composite": 0.658
+      }
+    },
+    {
+      "name": "prednisone",
+      "drug_class": "Corticosteroid",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 358.43,
+      "logp": 1.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.965,
+        "composite": 0.658
+      }
+    },
+    {
+      "name": "valproic_acid",
+      "drug_class": "Anticonvulsant / HDAC inh",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 144.21,
+      "logp": 2.6,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.173,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.888,
+        "composite": 0.658
+      }
+    },
+    {
+      "name": "ondansetron",
+      "drug_class": "5-HT3 antagonist antiemetic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 293.37,
+      "logp": 2.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.857,
+        "composite": 0.657
+      }
+    },
+    {
+      "name": "fenofibrate",
+      "drug_class": "PPARalpha agonist",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 360.83,
+      "logp": 5.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.933,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.888,
+        "composite": 0.652
+      }
+    },
+    {
+      "name": "mitoxantrone",
+      "drug_class": "Anthracenedione / ABCG2 substrate",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "iv_only",
+      "cns_penetration": "no",
+      "mw": 444.49,
+      "logp": -3.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.8,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.607,
+        "composite": 0.649
+      }
+    },
+    {
+      "name": "loratadine",
+      "drug_class": "Antihistamine H1",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 382.88,
+      "logp": 5.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.933,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.857,
+        "composite": 0.648
+      }
+    },
+    {
+      "name": "trehalose",
+      "drug_class": "Osmolyte chemical chaperone",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "iv_only",
+      "cns_penetration": "no",
+      "mw": 342.3,
+      "logp": -4.7,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.333,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.493,
+        "composite": 0.645
+      }
+    },
+    {
+      "name": "carbamazepine",
+      "drug_class": "Anticonvulsant",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 236.27,
+      "logp": 2.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.945,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.788,
+        "composite": 0.639
+      }
+    },
+    {
+      "name": "hydrochlorothiazide",
+      "drug_class": "Diuretic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 297.74,
+      "logp": -0.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.824,
+        "composite": 0.637
+      }
+    },
+    {
+      "name": "amoxicillin",
+      "drug_class": "Beta-lactam antibiotic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 365.4,
+      "logp": -2.0,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.819,
+        "composite": 0.636
+      }
+    },
+    {
+      "name": "valsartan",
+      "drug_class": "ARB",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 435.52,
+      "logp": 5.8,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 0.733,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.928,
+        "composite": 0.634
+      }
+    },
+    {
+      "name": "lisinopril",
+      "drug_class": "ACE inhibitor",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 405.49,
+      "logp": -1.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.788,
+        "composite": 0.632
+      }
+    },
+    {
+      "name": "testosterone",
+      "drug_class": "Androgen",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 288.42,
+      "logp": 3.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.788,
+        "composite": 0.632
+      }
+    },
+    {
+      "name": "progesterone",
+      "drug_class": "Progestin",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 314.46,
+      "logp": 3.9,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.732,
+        "composite": 0.622
+      }
+    },
+    {
+      "name": "gemfibrozil",
+      "drug_class": "Fibrate",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 250.34,
+      "logp": 3.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.618
+      }
+    },
+    {
+      "name": "methotrexate",
+      "drug_class": "Antifolate / ABCG2 substrate",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 454.44,
+      "logp": -1.8,
+      "charge_phys": -2,
+      "scores": {
+        "s1_lipinski": 0.833,
+        "s2_charge_complementarity": 0.7,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.583,
+        "composite": 0.611
+      }
+    },
+    {
+      "name": "fluoxetine",
+      "drug_class": "SSRI",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 309.33,
+      "logp": 4.1,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.607
+      }
+    },
+    {
+      "name": "propranolol",
+      "drug_class": "Beta blocker",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 259.34,
+      "logp": 3.1,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.607
+      }
+    },
+    {
+      "name": "spiperone",
+      "drug_class": "Antipsychotic / receptor probe",
+      "class_prior": "decoy",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 395.47,
+      "logp": 4.0,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.607
+      }
+    },
+    {
+      "name": "haloperidol",
+      "drug_class": "Antipsychotic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 375.86,
+      "logp": 4.0,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.607
+      }
+    },
+    {
+      "name": "sodium_butyrate",
+      "drug_class": "HDAC inhibitor (SCFA)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 110.09,
+      "logp": 0.8,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.132,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.761,
+        "composite": 0.604
+      }
+    },
+    {
+      "name": "carvedilol",
+      "drug_class": "Beta blocker",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 406.47,
+      "logp": 4.2,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.928,
+        "composite": 0.598
+      }
+    },
+    {
+      "name": "citalopram",
+      "drug_class": "SSRI",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 324.39,
+      "logp": 3.5,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.888,
+        "composite": 0.593
+      }
+    },
+    {
+      "name": "escitalopram",
+      "drug_class": "SSRI",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 324.39,
+      "logp": 3.5,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.888,
+        "composite": 0.593
+      }
+    },
+    {
+      "name": "allopurinol",
+      "drug_class": "XO inhibitor (urate)",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 136.11,
+      "logp": -0.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.544,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.888,
+        "composite": 0.586
+      }
+    },
+    {
+      "name": "sertraline",
+      "drug_class": "SSRI",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 306.23,
+      "logp": 5.1,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 0.967,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.843,
+        "composite": 0.583
+      }
+    },
+    {
+      "name": "betaine",
+      "drug_class": "Osmolyte (homocystinuria)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 117.15,
+      "logp": -3.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.141,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.7,
+        "composite": 0.582
+      }
+    },
+    {
+      "name": "ibuprofen",
+      "drug_class": "NSAID",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 206.28,
+      "logp": 3.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.495,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.888,
+        "composite": 0.581
+      }
+    },
+    {
+      "name": "diphenhydramine",
+      "drug_class": "Antihistamine H1",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 255.36,
+      "logp": 3.3,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.788,
+        "composite": 0.579
+      }
+    },
+    {
+      "name": "aspirin",
+      "drug_class": "NSAID/antiplatelet",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 180.16,
+      "logp": 1.2,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.432,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.579
+      }
+    },
+    {
+      "name": "amlodipine",
+      "drug_class": "Calcium channel blocker",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 408.88,
+      "logp": 3.0,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.928,
+        "composite": 0.575
+      }
+    },
+    {
+      "name": "olanzapine",
+      "drug_class": "Atypical antipsychotic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 312.43,
+      "logp": 2.9,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.928,
+        "composite": 0.575
+      }
+    },
+    {
+      "name": "egcg",
+      "drug_class": "Catechin / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 458.37,
+      "logp": 1.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.333,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.493,
+        "composite": 0.574
+      }
+    },
+    {
+      "name": "doxycycline",
+      "drug_class": "Tetracycline",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 444.43,
+      "logp": -0.7,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.8,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.6,
+        "composite": 0.572
+      }
+    },
+    {
+      "name": "tariquidar",
+      "drug_class": "P-gp/ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "iv_only",
+      "cns_penetration": "no",
+      "mw": 646.74,
+      "logp": 5.8,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.375,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.565,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.749,
+        "composite": 0.57
+      }
+    },
+    {
+      "name": "buspirone",
+      "drug_class": "Anxiolytic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 385.51,
+      "logp": 2.6,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.888,
+        "composite": 0.57
+      }
+    },
+    {
+      "name": "metronidazole",
+      "drug_class": "Nitroimidazole",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 171.16,
+      "logp": -0.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.411,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.567
+      }
+    },
+    {
+      "name": "gabapentin",
+      "drug_class": "Anticonvulsant",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 171.24,
+      "logp": -1.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.411,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.554
+      }
+    },
+    {
+      "name": "acetaminophen",
+      "drug_class": "Analgesic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 151.16,
+      "logp": 0.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.363,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.824,
+        "composite": 0.532
+      }
+    },
+    {
+      "name": "etoposide",
+      "drug_class": "Topoisomerase II / ABCG2 substrate",
+      "class_prior": "abc_substrate",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 588.56,
+      "logp": 0.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.352,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.823,
+        "s4_class_prior": 0.25,
+        "s5_pose_stability": 0.669,
+        "composite": 0.529
+      }
+    },
+    {
+      "name": "atenolol",
+      "drug_class": "Beta blocker",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 266.34,
+      "logp": 0.2,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.527
+      }
+    },
+    {
+      "name": "ranitidine",
+      "drug_class": "H2 blocker",
+      "class_prior": "decoy",
+      "fda_status": "withdrawn",
+      "ind_503a_tier": "withdrawn",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 314.4,
+      "logp": 0.3,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.527
+      }
+    },
+    {
+      "name": "metoprolol",
+      "drug_class": "Beta blocker",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 267.36,
+      "logp": 1.9,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.965,
+        "composite": 0.523
+      }
+    },
+    {
+      "name": "celiprolol",
+      "drug_class": "Cardioselective beta blocker",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 379.5,
+      "logp": 3.3,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.928,
+        "composite": 0.519
+      }
+    },
+    {
+      "name": "tamoxifen",
+      "drug_class": "SERM",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 371.51,
+      "logp": 6.3,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 0.567,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.788,
+        "composite": 0.517
+      }
+    },
+    {
+      "name": "clomiphene",
+      "drug_class": "SERM",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 405.96,
+      "logp": 6.4,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 0.533,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.788,
+        "composite": 0.511
+      }
+    },
+    {
+      "name": "disulfiram",
+      "drug_class": "ALDH inhibitor (GSDMD covalent)",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 296.54,
+      "logp": 3.9,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.3,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.788,
+        "composite": 0.496
+      }
+    },
+    {
+      "name": "avacopan",
+      "drug_class": "C5aR1 antagonist",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 581.66,
+      "logp": 7.0,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.243,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.837,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.492
+      }
+    },
+    {
+      "name": "dapansutrile",
+      "drug_class": "NLRP3 inhibitor (investigational)",
+      "class_prior": "decoy",
+      "fda_status": "investigational",
+      "ind_503a_tier": "not_503a",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 191.25,
+      "logp": 1.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.229,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.888,
+        "composite": 0.482
+      }
+    },
+    {
+      "name": "itraconazole",
+      "drug_class": "Azole antifungal / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 705.63,
+      "logp": 5.7,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.241,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.353,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.665,
+        "composite": 0.464
+      }
+    },
+    {
+      "name": "telaprevir",
+      "drug_class": "Protease inhibitor (HCV)",
+      "class_prior": "decoy",
+      "fda_status": "withdrawn",
+      "ind_503a_tier": "withdrawn",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 679.85,
+      "logp": 4.0,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.4,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.64,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.552,
+        "composite": 0.448
+      }
+    },
+    {
+      "name": "metformin",
+      "drug_class": "Biguanide",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 129.16,
+      "logp": -1.4,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 0.155,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.667,
+        "composite": 0.37
+      }
+    },
+    {
+      "name": "metformin_extended_release",
+      "drug_class": "Biguanide ER",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 129.16,
+      "logp": -1.4,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 0.155,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.667,
+        "composite": 0.37
+      }
+    },
+    {
+      "name": "levothyroxine",
+      "drug_class": "Thyroid hormone",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 776.87,
+      "logp": 4.0,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.077,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.446,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 1.0,
+        "composite": 0.338
+      }
+    },
+    {
+      "name": "azithromycin",
+      "drug_class": "Macrolide antibiotic",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 748.99,
+      "logp": 4.0,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 0.057,
+        "s2_charge_complementarity": 0.45,
+        "s3_volume_fit": 0.502,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.548,
+        "composite": 0.254
+      }
+    },
+    {
+      "name": "rifaximin",
+      "drug_class": "Non-absorbed rifamycin",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 785.88,
+      "logp": 5.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.013,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.428,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.548,
+        "composite": 0.208
+      }
+    },
+    {
+      "name": "tacrolimus",
+      "drug_class": "Calcineurin inh / ABCG2 inh",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 804.02,
+      "logp": 3.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.392,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.669,
+        "composite": 0.039
+      }
+    },
+    {
+      "name": "venetoclax",
+      "drug_class": "BCL-2 inhibitor",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 868.44,
+      "logp": 7.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.263,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.669,
+        "composite": 0.03
+      }
+    },
+    {
+      "name": "rifampicin",
+      "drug_class": "Rifamycin antibiotic / PXR inducer",
+      "class_prior": "decoy",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 822.94,
+      "logp": 4.0,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.354,
+        "s4_class_prior": 0.15,
+        "s5_pose_stability": 0.493,
+        "composite": 0.029
+      }
+    },
+    {
+      "name": "cyclosporine_a",
+      "drug_class": "Calcineurin inh / P-gp,ABCG2 inh",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 1202.61,
+      "logp": 4.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.367,
+        "composite": 0.003
+      }
+    }
+  ],
+  "shortlist": [
+    {
+      "name": "lumacaftor",
+      "drug_class": "CFTR corrector",
+      "class_prior": "cftr_corrector",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 452.41,
+      "logp": 4.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 1.0,
+        "s5_pose_stability": 1.0,
+        "composite": 1.0
+      }
+    },
+    {
+      "name": "tafamidis",
+      "drug_class": "Transthyretin tetramer stabilizer",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 308.12,
+      "logp": 4.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.956
+      }
+    },
+    {
+      "name": "ursodiol",
+      "drug_class": "Bile acid chaperone (UDCA)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 392.57,
+      "logp": 4.9,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.956
+      }
+    },
+    {
+      "name": "diflunisal",
+      "drug_class": "NSAID + TTR stabilizer (off-label)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 250.2,
+      "logp": 4.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.965,
+        "composite": 0.95
+      }
+    },
+    {
+      "name": "tauroursodeoxycholic_acid",
+      "drug_class": "Bile acid chaperone (TUDCA)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 499.71,
+      "logp": 2.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.888,
+        "composite": 0.934
+      }
+    },
+    {
+      "name": "deflazacort",
+      "drug_class": "Corticosteroid (Duchenne stabilizer effect)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 441.51,
+      "logp": 1.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.965,
+        "composite": 0.919
+      }
+    },
+    {
+      "name": "ivacaftor",
+      "drug_class": "CFTR potentiator",
+      "class_prior": "cftr_potentiator",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 392.49,
+      "logp": 5.7,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.767,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.65,
+        "s5_pose_stability": 1.0,
+        "composite": 0.861
+      }
+    },
+    {
+      "name": "minocycline",
+      "drug_class": "Tetracycline",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 457.48,
+      "logp": -0.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.667,
+        "composite": 0.854
+      }
+    },
+    {
+      "name": "ambroxol",
+      "drug_class": "Pharmacological chaperone (GCase, off-label)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 378.11,
+      "logp": 3.2,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.849
+      }
+    },
+    {
+      "name": "vorinostat",
+      "drug_class": "HDAC inhibitor",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 264.32,
+      "logp": 1.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.836
+      }
+    }
+  ],
+  "shortlist_extended_diverse_top20": [
+    {
+      "name": "lumacaftor",
+      "drug_class": "CFTR corrector",
+      "class_prior": "cftr_corrector",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 452.41,
+      "logp": 4.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 1.0,
+        "s5_pose_stability": 1.0,
+        "composite": 1.0
+      }
+    },
+    {
+      "name": "tafamidis",
+      "drug_class": "Transthyretin tetramer stabilizer",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 308.12,
+      "logp": 4.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.956
+      }
+    },
+    {
+      "name": "ursodiol",
+      "drug_class": "Bile acid chaperone (UDCA)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 392.57,
+      "logp": 4.9,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.956
+      }
+    },
+    {
+      "name": "diflunisal",
+      "drug_class": "NSAID + TTR stabilizer (off-label)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 250.2,
+      "logp": 4.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.965,
+        "composite": 0.95
+      }
+    },
+    {
+      "name": "tauroursodeoxycholic_acid",
+      "drug_class": "Bile acid chaperone (TUDCA)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 499.71,
+      "logp": 2.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.888,
+        "composite": 0.934
+      }
+    },
+    {
+      "name": "deflazacort",
+      "drug_class": "Corticosteroid (Duchenne stabilizer effect)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 441.51,
+      "logp": 1.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.965,
+        "composite": 0.919
+      }
+    },
+    {
+      "name": "ivacaftor",
+      "drug_class": "CFTR potentiator",
+      "class_prior": "cftr_potentiator",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 392.49,
+      "logp": 5.7,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.767,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.65,
+        "s5_pose_stability": 1.0,
+        "composite": 0.861
+      }
+    },
+    {
+      "name": "minocycline",
+      "drug_class": "Tetracycline",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 457.48,
+      "logp": -0.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.667,
+        "composite": 0.854
+      }
+    },
+    {
+      "name": "ambroxol",
+      "drug_class": "Pharmacological chaperone (GCase, off-label)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 378.11,
+      "logp": 3.2,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.849
+      }
+    },
+    {
+      "name": "vorinostat",
+      "drug_class": "HDAC inhibitor",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 264.32,
+      "logp": 1.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.836
+      }
+    },
+    {
+      "name": "curcumin",
+      "drug_class": "Polyphenol / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 368.38,
+      "logp": 3.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.824
+      }
+    },
+    {
+      "name": "glycerol_phenylbutyrate",
+      "drug_class": "Ammonia scavenger / chaperone",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 530.62,
+      "logp": 4.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.898,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.939,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.581,
+        "composite": 0.821
+      }
+    },
+    {
+      "name": "naringenin",
+      "drug_class": "Flavonoid",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 272.25,
+      "logp": 2.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.928,
+        "composite": 0.812
+      }
+    },
+    {
+      "name": "imatinib",
+      "drug_class": "TKI / ABCG2 substrate-inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 493.6,
+      "logp": 4.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.888,
+        "composite": 0.805
+      }
+    },
+    {
+      "name": "resveratrol",
+      "drug_class": "Stilbene / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 228.24,
+      "logp": 3.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.913,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.965,
+        "composite": 0.804
+      }
+    },
+    {
+      "name": "raloxifene",
+      "drug_class": "SERM / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 473.59,
+      "logp": 5.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.833,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.795
+      }
+    },
+    {
+      "name": "benzbromarone",
+      "drug_class": "URAT1 uricosuric",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 424.07,
+      "logp": 5.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.8,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.788
+      }
+    },
+    {
+      "name": "quercetin",
+      "drug_class": "Flavonoid / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 302.24,
+      "logp": 1.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.761,
+        "composite": 0.78
+      }
+    },
+    {
+      "name": "ketoconazole",
+      "drug_class": "Azole antifungal / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 531.43,
+      "logp": 4.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.895,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.937,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.888,
+        "composite": 0.777
+      }
+    },
+    {
+      "name": "sodium_phenylbutyrate",
+      "drug_class": "Chaperone (Buphenyl)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 186.18,
+      "logp": 2.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.447,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.788,
+        "composite": 0.776
+      }
+    }
+  ],
+  "shortlist_pre_diversity_filter": [
+    {
+      "name": "lumacaftor",
+      "drug_class": "CFTR corrector",
+      "class_prior": "cftr_corrector",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 452.41,
+      "logp": 4.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 1.0,
+        "s5_pose_stability": 1.0,
+        "composite": 1.0
+      }
+    },
+    {
+      "name": "tafamidis",
+      "drug_class": "Transthyretin tetramer stabilizer",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 308.12,
+      "logp": 4.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.956
+      }
+    },
+    {
+      "name": "ursodiol",
+      "drug_class": "Bile acid chaperone (UDCA)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 392.57,
+      "logp": 4.9,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.956
+      }
+    },
+    {
+      "name": "diflunisal",
+      "drug_class": "NSAID + TTR stabilizer (off-label)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 250.2,
+      "logp": 4.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.965,
+        "composite": 0.95
+      }
+    },
+    {
+      "name": "tauroursodeoxycholic_acid",
+      "drug_class": "Bile acid chaperone (TUDCA)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 499.71,
+      "logp": 2.5,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.888,
+        "composite": 0.934
+      }
+    },
+    {
+      "name": "deflazacort",
+      "drug_class": "Corticosteroid (Duchenne stabilizer effect)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 441.51,
+      "logp": 1.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.965,
+        "composite": 0.919
+      }
+    },
+    {
+      "name": "tezacaftor",
+      "drug_class": "CFTR corrector",
+      "class_prior": "cftr_corrector",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 520.5,
+      "logp": 4.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.932,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.959,
+        "s4_class_prior": 1.0,
+        "s5_pose_stability": 0.788,
+        "composite": 0.902
+      }
+    },
+    {
+      "name": "ivacaftor",
+      "drug_class": "CFTR potentiator",
+      "class_prior": "cftr_potentiator",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 392.49,
+      "logp": 5.7,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.767,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.65,
+        "s5_pose_stability": 1.0,
+        "composite": 0.861
+      }
+    },
+    {
+      "name": "minocycline",
+      "drug_class": "Tetracycline",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 457.48,
+      "logp": -0.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.667,
+        "composite": 0.854
+      }
+    },
+    {
+      "name": "ambroxol",
+      "drug_class": "Pharmacological chaperone (GCase, off-label)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 378.11,
+      "logp": 3.2,
+      "charge_phys": 1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.55,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.849
+      }
+    },
+    {
+      "name": "vorinostat",
+      "drug_class": "HDAC inhibitor",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 264.32,
+      "logp": 1.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.85,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 1.0,
+        "composite": 0.836
+      }
+    },
+    {
+      "name": "elexacaftor",
+      "drug_class": "CFTR corrector",
+      "class_prior": "cftr_corrector",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 597.62,
+      "logp": 5.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.607,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.805,
+        "s4_class_prior": 1.0,
+        "s5_pose_stability": 0.843,
+        "composite": 0.829
+      }
+    },
+    {
+      "name": "curcumin",
+      "drug_class": "Polyphenol / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 368.38,
+      "logp": 3.2,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.824
+      }
+    },
+    {
+      "name": "glycerol_phenylbutyrate",
+      "drug_class": "Ammonia scavenger / chaperone",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 530.62,
+      "logp": 4.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.898,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.939,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.581,
+        "composite": 0.821
+      }
+    },
+    {
+      "name": "naringenin",
+      "drug_class": "Flavonoid",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 272.25,
+      "logp": 2.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.928,
+        "composite": 0.812
+      }
+    },
+    {
+      "name": "imatinib",
+      "drug_class": "TKI / ABCG2 substrate-inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 493.6,
+      "logp": 4.4,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.888,
+        "composite": 0.805
+      }
+    },
+    {
+      "name": "resveratrol",
+      "drug_class": "Stilbene / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 228.24,
+      "logp": 3.1,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.913,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.965,
+        "composite": 0.804
+      }
+    },
+    {
+      "name": "raloxifene",
+      "drug_class": "SERM / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 473.59,
+      "logp": 5.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.833,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.795
+      }
+    },
+    {
+      "name": "benzbromarone",
+      "drug_class": "URAT1 uricosuric",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier2_component_of_approved",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 424.07,
+      "logp": 5.6,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.8,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.788
+      }
+    },
+    {
+      "name": "quercetin",
+      "drug_class": "Flavonoid / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 302.24,
+      "logp": 1.5,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 1.0,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.761,
+        "composite": 0.78
+      }
+    },
+    {
+      "name": "ketoconazole",
+      "drug_class": "Azole antifungal / ABCG2 inhibitor",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 531.43,
+      "logp": 4.3,
+      "charge_phys": 0,
+      "scores": {
+        "s1_lipinski": 0.895,
+        "s2_charge_complementarity": 0.95,
+        "s3_volume_fit": 0.937,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 0.888,
+        "composite": 0.777
+      }
+    },
+    {
+      "name": "sodium_phenylbutyrate",
+      "drug_class": "Chaperone (Buphenyl)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 186.18,
+      "logp": 2.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.447,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.788,
+        "composite": 0.776
+      }
+    },
+    {
+      "name": "4-phenylbutyric_acid",
+      "drug_class": "Chemical chaperone (HDAC inhibitor)",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 164.2,
+      "logp": 2.4,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.394,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.888,
+        "composite": 0.775
+      }
+    },
+    {
+      "name": "salicylic_acid",
+      "drug_class": "NSAID / aromatic acid chaperone",
+      "class_prior": "misfolded_chaperone",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "yes",
+      "mw": 138.12,
+      "logp": 2.3,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.331,
+        "s4_class_prior": 0.8,
+        "s5_pose_stability": 0.928,
+        "composite": 0.756
+      }
+    },
+    {
+      "name": "probenecid",
+      "drug_class": "URAT1 uricosuric",
+      "class_prior": "abc_inhibitor",
+      "fda_status": "approved",
+      "ind_503a_tier": "tier1_usp_nf",
+      "pk_grade": "oral_bioavailable",
+      "cns_penetration": "no",
+      "mw": 285.36,
+      "logp": 3.2,
+      "charge_phys": -1,
+      "scores": {
+        "s1_lipinski": 1.0,
+        "s2_charge_complementarity": 1.0,
+        "s3_volume_fit": 0.6,
+        "s4_class_prior": 0.4,
+        "s5_pose_stability": 1.0,
+        "composite": 0.752
+      }
+    }
+  ],
+  "positive_control_validation": {
+    "positive_controls": {
+      "lumacaftor": 1.0,
+      "tezacaftor": 0.902,
+      "ivacaftor": 0.861,
+      "elexacaftor": 0.829
+    },
+    "rankings": {
+      "lumacaftor": {
+        "rank": 1,
+        "score": 1.0,
+        "percentile_top": 0.7
+      },
+      "tezacaftor": {
+        "rank": 7,
+        "score": 0.902,
+        "percentile_top": 5.2
+      },
+      "ivacaftor": {
+        "rank": 9,
+        "score": 0.861,
+        "percentile_top": 6.7
+      },
+      "elexacaftor": {
+        "rank": 14,
+        "score": 0.829,
+        "percentile_top": 10.4
+      }
+    },
+    "decoy_mean_score": 0.581,
+    "decoy_max_score": 0.684,
+    "all_positive_controls_above_decoy_mean": true,
+    "all_positive_controls_above_decoy_max": true
+  },
+  "methodology": {
+    "scoring_components": [
+      "S1 Lipinski rule-of-five fit",
+      "S2 pocket-charge complementarity (Q141K pocket +1)",
+      "S3 pocket-volume / MW fit",
+      "S4 drug-class chaperone prior",
+      "S5 pose-stability proxy (HBA/HBD/rotbonds)"
+    ],
+    "composite_aggregation": "geometric mean of S1..S5",
+    "shortlist_gate": {
+      "min_composite": 0.75,
+      "allowed_classes": [
+        "cftr_corrector",
+        "cftr_potentiator",
+        "misfolded_chaperone",
+        "iminosugar_chaperone",
+        "hsp_modulator",
+        "abc_inhibitor"
+      ],
+      "allowed_503a_tiers_or_chaperone": [
+        "tier1_usp_nf",
+        "tier2_component_of_approved"
+      ],
+      "required_pk_grade": "oral_bioavailable"
+    },
+    "limitations": [
+      "Heuristic NOT real docking; no 3D pose",
+      "Library 135 << full DrugBank ~3800",
+      "Q141K structure INFERRED from WT, not independently predicted",
+      "No membrane / dimer biological assembly context",
+      "No Q141K vs WT selectivity test"
+    ]
+  }
+}

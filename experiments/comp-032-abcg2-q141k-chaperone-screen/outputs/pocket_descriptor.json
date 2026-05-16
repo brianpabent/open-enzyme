@@ -1,0 +1,152 @@
+{
+  "anchor_residue": {
+    "resnum": 141,
+    "name": "GLN",
+    "plddt": 97.06
+  },
+  "radius_angstroms": 10.0,
+  "n_pocket_residues": 21,
+  "pocket_residues": [
+    {
+      "resnum": 135,
+      "name": "THR",
+      "distance_a": 9.63,
+      "plddt": 95.44
+    },
+    {
+      "resnum": 136,
+      "name": "VAL",
+      "distance_a": 8.71,
+      "plddt": 96.88
+    },
+    {
+      "resnum": 137,
+      "name": "ARG",
+      "distance_a": 5.99,
+      "plddt": 97.62
+    },
+    {
+      "resnum": 138,
+      "name": "GLU",
+      "distance_a": 4.93,
+      "plddt": 96.75
+    },
+    {
+      "resnum": 139,
+      "name": "ASN",
+      "distance_a": 5.49,
+      "plddt": 96.56
+    },
+    {
+      "resnum": 140,
+      "name": "LEU",
+      "distance_a": 3.86,
+      "plddt": 96.69
+    },
+    {
+      "resnum": 141,
+      "name": "GLN",
+      "distance_a": 0.0,
+      "plddt": 97.06
+    },
+    {
+      "resnum": 142,
+      "name": "PHE",
+      "distance_a": 3.83,
+      "plddt": 96.56
+    },
+    {
+      "resnum": 143,
+      "name": "SER",
+      "distance_a": 5.51,
+      "plddt": 95.38
+    },
+    {
+      "resnum": 144,
+      "name": "ALA",
+      "distance_a": 5.04,
+      "plddt": 95.88
+    },
+    {
+      "resnum": 145,
+      "name": "ALA",
+      "distance_a": 5.89,
+      "plddt": 96.0
+    },
+    {
+      "resnum": 146,
+      "name": "LEU",
+      "distance_a": 8.65,
+      "plddt": 95.06
+    },
+    {
+      "resnum": 147,
+      "name": "ARG",
+      "distance_a": 9.99,
+      "plddt": 93.75
+    },
+    {
+      "resnum": 154,
+      "name": "ASN",
+      "distance_a": 9.34,
+      "plddt": 93.31
+    },
+    {
+      "resnum": 157,
+      "name": "LYS",
+      "distance_a": 7.83,
+      "plddt": 95.81
+    },
+    {
+      "resnum": 158,
+      "name": "ASN",
+      "distance_a": 7.19,
+      "plddt": 96.0
+    },
+    {
+      "resnum": 160,
+      "name": "ARG",
+      "distance_a": 9.76,
+      "plddt": 94.5
+    },
+    {
+      "resnum": 161,
+      "name": "ILE",
+      "distance_a": 7.04,
+      "plddt": 96.5
+    },
+    {
+      "resnum": 198,
+      "name": "MET",
+      "distance_a": 8.57,
+      "plddt": 94.38
+    },
+    {
+      "resnum": 201,
+      "name": "ILE",
+      "distance_a": 9.3,
+      "plddt": 89.94
+    },
+    {
+      "resnum": 379,
+      "name": "TRP",
+      "distance_a": 9.83,
+      "plddt": 96.75
+    }
+  ],
+  "charge_environment": {
+    "n_positive_residues": 4,
+    "n_negative_residues": 1,
+    "wt_net_charge": 3,
+    "q141k_net_charge_delta": 1,
+    "q141k_pocket_net_charge": 4
+  },
+  "aromatic_residues": 2,
+  "hydrophobic_residues": 10,
+  "atp_pocket_overlap": {
+    "min_dist_to_walker_a_angstroms": 28.23,
+    "min_dist_to_atp_loop2_angstroms": 16.51,
+    "overlaps_atp_pocket": false
+  },
+  "mean_pocket_plddt": 95.56
+}

@@ -1,0 +1,42 @@
+{
+  "comment": "Construct-design priors for inhaled mRNA-IL-1Ra. These are NOT load-bearing for the GREEN/RED verdict (the verdict is dose-AUC + partner-ID gated). They are the discovery-engine handoff content — what a partner picking this up needs to know about codon, UTR, chemistry, polyA choices.",
+  "codon_optimization": {
+    "target_tissue": "Human alveolar epithelium (alveolar type II pneumocytes; tropism via passive inhaled-LNP deposition)",
+    "approach": "Codon optimization per human codon usage tables (Athey 2017 'CHARMING' or equivalent); avoid low-CAI codons that reduce ribosome elongation rate in lung epithelium",
+    "human_codon_table_source": "Kazusa codon usage database (https://www.kazusa.or.jp/codon/); human-cytoplasmic table",
+    "alveolar_specific_considerations": "Alveolar type II pneumocytes are highly secretory (surfactant production) — translation machinery is abundant; standard human-codon optimization sufficient. No alveolar-cell-specific codon bias documented.",
+    "comparator_anakinra": "Anakinra is non-glycosylated E. coli-produced; codon-optimized for E. coli. For human-alveolar mRNA expression the codon table is different but the protein sequence (UniProt P18510 mature 26-177) is identical."
+  },
+  "utr_choice": {
+    "5_prime_utr": {
+      "recommendation": "Human alpha-globin 5'UTR (HBA1) OR engineered 5'UTR with optimized Kozak context",
+      "comment": "Standard mRNA-therapeutic 5'UTR; supports efficient cap-dependent initiation. Pfizer-BioNTech BNT162b2 uses human HBA1 5'UTR."
+    },
+    "3_prime_utr": {
+      "recommendation": "Truncated alpha-globin OR mtRNR1 (mitochondrial 12S rRNA 3'UTR) for TRANSIENT expression",
+      "comment_on_durability_tradeoff": "Pfizer-BioNTech uses dual-element 3'UTR (mtRNR1 + AES) for durability. For acute-flare-abort the 12-72h expression window is the right shape — Translate Bio uses shorter 3'UTRs explicitly to limit expression duration. Single mtRNR1 OR truncated alpha-globin gives 24-48h half-life; suitable.",
+      "transient_vs_durable_choice": "TRANSIENT desired — flare resolves in 72h, sustained IL-1 blockade past day 5 risks systemic immunosuppression. Match expression window to flare window."
+    }
+  },
+  "modified_nucleoside_chemistry": {
+    "recommendation": "N1-methylpseudouridine (m1Psi) — Kariko & Weissman Nobel-anchored chemistry",
+    "alternatives": ["pseudouridine (Psi) — original; m1Psi has higher translation yield", "5-methylcytidine + pseudouridine (5mC+Psi) — Moderna early platforms"],
+    "rationale": "Pulmonary epithelium TLR3/RIG-I innate-immune sensing of unmodified mRNA is robust; modified nucleosides essential. m1Psi has the deepest clinical safety profile (BNT162b2, mRNA-1273 use m1Psi).",
+    "source": "Kariko et al. 2008 Mol Ther; Andries 2015 J Control Release; Nance & Meier 2021 ACS Cent Sci"
+  },
+  "polya_tail": {
+    "recommendation_length_nt": [80, 120],
+    "comment_on_short_vs_long": "Long polyA (>150 nt) extends mRNA half-life and protein expression duration. For transient-by-design flare-abort use case, MODERATE polyA (80-120 nt) tunes expression to the 24-48h window. Translate Bio CFTR used ~100 nt polyA. Pfizer BNT162b2 uses 110 nt segmented polyA (A30LinkerA70) to limit length stability during in vitro transcription.",
+    "source": "Pfizer 2021 patents; Translate Bio MRT5005 disclosure"
+  },
+  "signal_peptide": {
+    "recommendation": "Retain native IL-1Ra signal peptide (aa 1-25) OR substitute with stronger secretion signal (IL-2 SS, tPA SS) for alveolar epithelium",
+    "comment": "Alveolar type II pneumocytes are highly secretory; native IL-1Ra signal should function. tPA signal peptide is a common stronger-secretion swap if native is inefficient — verify in screen."
+  },
+  "lnp_formulation": {
+    "ionizable_lipid_class": "ALC-0315 (BioNTech), SM-102 (Moderna), or Acuitas LP-01 — for pulmonary, optimization for short particle-size distribution (<150 nm) and surfactant-compatibility",
+    "comment": "Inhaled LNP must survive nebulization shear (vibrating-mesh more forgiving than jet-nebulizer) and aerosolization-induced lipid restructuring. Translate Bio formulation for MRT5005 used proprietary lipid with explicit nebulization-stability screening. ReCode SORT-LNP class adds organ-selectivity by adjusting a selective organ-targeting lipid component.",
+    "device": "Vibrating-mesh nebulizer (PARI eFlow class) for POC and Phase 1/2; dry-powder inhaler (DPI) for eventual commercial product (better stability, no cold chain at point of use)"
+  },
+  "summary_for_handoff": "Construct design is mature; no construct-level novel risk. The Karikó-Weissman m1Psi chemistry + alpha-globin/mtRNR1 UTRs + 80-120 nt polyA + native IL-1Ra signal peptide is a defensible first-pass design. Risk concentrates in (a) lung-delivery efficiency at nebulization scale, (b) systemic bioavailability of expressed protein from alveolar compartment — these are the dose-modeling variables."
+}

@@ -1,0 +1,139 @@
+{
+  "scope": "Canonical assay-format taxonomy for upstream-complement inhibition. Each format defines what it actually measures — i.e., which mechanistic step in the cascade the IC50 number reflects. Two different assays of the same compound generate IC50 numbers that may legitimately disagree by orders of magnitude because they are not measuring the same biology.",
+  "formats": [
+    {
+      "code": "H-CP",
+      "name": "Hemolytic classical pathway",
+      "readout": "% lysis of sensitized sheep erythrocytes (EA) at A405-A415 nm",
+      "what_it_measures": "Whole CP cascade from C1q activation through C5b-9 MAC formation. C3 convertase (C4b2a) assembly + amplification + downstream MAC formation are all on the read path. Sensitive to inhibition at any step.",
+      "serum_source_typical": "guinea pig (1:80 dilution typical, Zhang & Chen 2008) or NHS (1:80-1:100 dilution)",
+      "rbc_source": "sheep RBC sensitized with rabbit anti-sheep antibody",
+      "buffer": "VBS²⁺ (Ca²⁺ + Mg²⁺)",
+      "preincubation": "compound + serum 10-15 min at 37°C, then add EA, incubate 30 min at 37°C, centrifuge, measure A405",
+      "endpoint_definition": "CH50: concentration of compound at which 50% of EA lysis is inhibited compared to drug-free control",
+      "gut_luminal_relevance_score": 2,
+      "gut_luminal_rationale": "Dilute serum (1:80-1:100) approximates fluid-phase / extracellular concentration of complement components, broadly relevant to gut-luminal regime where IgM/CRP/C1q load is similarly diluted relative to plasma. Hemolytic readout integrates over the full cascade, so the assay is dominated by whichever step the compound hits hardest. Not the most direct match to MSU-surface biology (which is particle-bound, not membrane-bound), but mechanistically closer than direct-enzymatic-on-purified-components.",
+      "anchor_papers": ["Zhang & Chen 2008 PMC7126446", "Yin 2016 PMC6273495", "Jin 2015 PMC4728500"]
+    },
+    {
+      "code": "H-AP",
+      "name": "Hemolytic alternative pathway",
+      "readout": "% lysis of unsensitized rabbit erythrocytes (ER) at A405 nm",
+      "what_it_measures": "Whole AP cascade. AP tickover + amplification via Factor B/D + properdin + MAC formation. Rabbit ER are spontaneously susceptible to NHS-AP (no antibody sensitization needed).",
+      "serum_source_typical": "NHS, 1:10 dilution (Zhang & Chen 2008) — higher serum concentration than CP because AP self-amplification requires more substrate",
+      "rbc_source": "rabbit RBC (unsensitized)",
+      "buffer": "VBS-Mg-EGTA (Ca²⁺-free, EGTA chelates to block CP)",
+      "preincubation": "compound + serum 10 min at 37°C, then add ER, incubate 30 min at 37°C",
+      "endpoint_definition": "AP50: same as CH50, applied to AP-only readout",
+      "gut_luminal_relevance_score": 1,
+      "gut_luminal_rationale": "AP tickover is amplification-dominated. The 1:10 serum dilution is closer to plasma concentration than gut-luminal regime; the AP read path doesn't include the IgM/CRP/C1q-driven initiation step that Wessig 2022 identified as load-bearing for MSU-induced complement activation. Less mechanistically aligned to the gout-MSU geometry than H-CP or ELISA-CP.",
+      "anchor_papers": ["Zhang & Chen 2008", "Yin 2016", "Sahu 1999 (cited)"]
+    },
+    {
+      "code": "H-LP",
+      "name": "Hemolytic lectin pathway (legacy)",
+      "readout": "% lysis on mannose-coated EA",
+      "what_it_measures": "LP via MBL → MASP cascade. Wu 2015 documents this format is interference-prone: ~25% overestimation of MBL-mediated hemolysis from residual CP activation, OR false negatives in MBL-deficient sera, unless anti-C1q antibodies are added. The Wu 2015 paper EXISTS specifically to replace this format with ELISA.",
+      "serum_source_typical": "NHS or MBL-sufficient pooled serum",
+      "rbc_source": "mannose-coated EA",
+      "buffer": "VBS²⁺ with anti-C1q to block CP",
+      "preincubation": "varied",
+      "endpoint_definition": "LP50; format-quality concerns documented",
+      "gut_luminal_relevance_score": 1,
+      "gut_luminal_rationale": "Format is known to be interference-prone; ELISA-LP supersedes. Not used as the primary anchor for any compound in this scope.",
+      "anchor_papers": ["Wu 2015 PMC4629277 (discussion)"]
+    },
+    {
+      "code": "ELISA-CP",
+      "name": "ELISA C3c-deposition classical pathway",
+      "readout": "OD495 of anti-C3c antibody capture on IgM-coated plate",
+      "what_it_measures": "C3c fragment generation on a defined IgM substrate, terminating at the C3 cleavage step (one step downstream of C3 convertase activity). Mechanistically more proximal to C3-convertase function than hemolytic CH50 (which integrates through MAC).",
+      "serum_source_typical": "guinea pig, 1:10 dilution typical (Wu 2015) — substantially higher serum concentration than hemolytic CP",
+      "coating": "human IgM at 5 µg/mL on Nunc plate, overnight 4°C, blocked with 1% BSA",
+      "buffer": "BVB++ (VBS + 0.5 mM MgCl₂, 1.5 mM CaCl₂, 0.05% Tween-20, 1% BSA, pH 7.5)",
+      "preincubation": "compound + serum 45 min at 37°C, then add to coated plate, incubate 1 h at 37°C",
+      "endpoint_definition": "IC50: compound concentration at which OD495 is reduced by 50% from drug-free control after BG subtraction",
+      "gut_luminal_relevance_score": 2,
+      "gut_luminal_rationale": "C3c capture isolates the C3-convertase activity step; matches the comp-029 mechanistic model where RA acts on C3b-deposition (Sahu 1999 mechanism). Better than hemolytic-CP for identifying C3-convertase-specific inhibitors, less integrated. Closer match to MSU-surface mechanism than H-CP.",
+      "anchor_papers": ["Wu 2015 PMC4629277"]
+    },
+    {
+      "code": "ELISA-LP-WieLISA",
+      "name": "WieLISA lectin pathway (commercial Euro Diagnostica)",
+      "readout": "OD450 of anti-C5b-9 capture on mannan-coated plate, 1:100 serum",
+      "what_it_measures": "LP-specific MAC formation on mannan substrate. Pathway-isolated via specific buffers and coatings.",
+      "serum_source_typical": "1:100 NHS",
+      "preincubation": "GAG + serum at room temperature 15 min, then transfer to mannan plate, 60 min at 37°C",
+      "endpoint_definition": "IC50 from dose-response curve fit",
+      "gut_luminal_relevance_score": 2,
+      "gut_luminal_rationale": "LP is a minor pathway in MSU-induced complement activation per Wessig 2022 (which fingered CP via IgM+CRP as dominant), but LP contributes in some MSU contexts and is mechanistically distinct from CP. Format-quality is high.",
+      "anchor_papers": ["Talsma 2020 PMC7212410"]
+    },
+    {
+      "code": "ELISA-CP-WieLISA",
+      "name": "WieLISA classical pathway",
+      "readout": "OD450 of anti-C5b-9 capture on IgM-coated plate, 1:100 serum",
+      "what_it_measures": "CP-specific MAC formation. Pathway-isolated.",
+      "serum_source_typical": "1:100 NHS",
+      "endpoint_definition": "IC50 from dose-response",
+      "gut_luminal_relevance_score": 2,
+      "gut_luminal_rationale": "Same logic as ELISA-CP (Wu 2015) but with MAC-level readout. Less proximal to C3 convertase step than ELISA-C3c.",
+      "anchor_papers": ["Talsma 2020 PMC7212410"]
+    },
+    {
+      "code": "ELISA-AP-WieLISA",
+      "name": "WieLISA alternative pathway",
+      "readout": "OD450 of anti-C5b-9 capture on LPS-coated plate, 1:50 NHS (higher serum than CP/LP)",
+      "what_it_measures": "AP-specific MAC formation. Note the 1:50 serum dilution vs. 1:100 for CP/LP — direct evidence that 'AP requires more substrate to read robustly' is a real assay-format constraint.",
+      "serum_source_typical": "1:50 NHS",
+      "endpoint_definition": "IC50 from dose-response",
+      "gut_luminal_relevance_score": 1,
+      "gut_luminal_rationale": "AP amplification, similar consideration as H-AP. 1:50 serum is closer to systemic than gut-luminal.",
+      "anchor_papers": ["Talsma 2020 PMC7212410"]
+    },
+    {
+      "code": "C4-CLEAVAGE",
+      "name": "MASP-mediated C4 deposition assay",
+      "readout": "Anti-C4d capture on mannan-MBL-MASP coated plate after C4 incubation",
+      "what_it_measures": "Direct MASP-2 proteolytic activity on purified C4. Mechanism-specific to the MASP-2 enzymatic step (one step further than ELISA-LP-WieLISA, which integrates through MAC).",
+      "serum_source_typical": "1:100 NHS overnight to load MBL-MASP, then washed, then add purified C4",
+      "endpoint_definition": "IC50 from dose-response of C4d deposition",
+      "gut_luminal_relevance_score": 1,
+      "gut_luminal_rationale": "Highly mechanism-specific (MASP-2 catalysis), but downstream of the MBL-binding step that determines whether LP is engaged at all. MSU itself doesn't recruit MBL strongly per Wessig 2022 — CRP+C1q dominates.",
+      "anchor_papers": ["Talsma 2020 PMC7212410"]
+    },
+    {
+      "code": "CELL-C3b",
+      "name": "Cell-based C3b deposition / covalent attachment",
+      "readout": "Anti-C3b on activated cell surface (or RA-modified C3b for the Sahu 1999 case)",
+      "what_it_measures": "C3b deposition on a particulate target surface in a cell-based context. Sahu 1999 specifically used this to measure RA's covalent C3b modification (NOT a cascade inhibition assay — a covalent modification mechanism distinct from convertase inhibition).",
+      "serum_source_typical": "Sahu 1999: NHS + activated cells (zymosan-treated to engage AP, or sensitized for CP)",
+      "endpoint_definition": "IC50 of compound at which C3b covalent attachment is reduced by 50%",
+      "gut_luminal_relevance_score": 3,
+      "gut_luminal_rationale": "**Direct match to MSU-surface mechanism.** MSU is a particulate target surface; C3b deposition on MSU is the operative step per Russell 1982 + Doherty 1988 + Wessig 2022 + Khameneh 2017 (corpus consensus). A compound IC50 measured in a particulate-C3b-deposition assay is the most mechanism-relevant number for predicting gout-MSU biology. Sahu 1999's 34 µM RA value is in this format; the comp-029 model's central tendency choice (34 µM Sahu cell-based) follows this logic.",
+      "anchor_papers": ["Sahu 1999 PMID 10353266"]
+    },
+    {
+      "code": "CONV-ENZ",
+      "name": "Purified convertase enzymatic assay",
+      "readout": "Cleavage of purified C3 (or C5) substrate by reconstituted C3 (or C5) convertase enzyme",
+      "what_it_measures": "Direct enzymatic activity of the convertase on its substrate, isolated from upstream initiation and downstream amplification. Englberger 1988 reported the RA IC50 in this format at 5-10 µM optimal.",
+      "serum_source_typical": "None — reconstituted enzyme from purified components",
+      "endpoint_definition": "IC50 of compound at which convertase enzymatic activity is reduced by 50%",
+      "gut_luminal_relevance_score": 1,
+      "gut_luminal_rationale": "Mechanism-isolated — useful for identifying the catalytic step the compound hits, but the IC50 from this format does NOT translate cleanly to a whole-cascade context because it omits upstream substrate availability and downstream amplification dynamics. The 5-10 µM Englberger optimal is a **lower-bound** IC50 because the assay subtracts most confounding noise; the operative IC50 in a complete biological context is higher.",
+      "anchor_papers": ["Englberger 1988 PMID 3198307 (abstract-tier; not in PMC)"]
+    },
+    {
+      "code": "DIRECT-C5-CONV",
+      "name": "Direct C5 convertase inhibition (assembled C5 convertase + C5)",
+      "readout": "Cleavage of C5 by pre-assembled C5 convertase",
+      "what_it_measures": "Whether the compound inhibits ALREADY-assembled C5 convertase. NOT the upstream C3 convertase / C3b deposition step.",
+      "serum_source_typical": "None — purified components",
+      "endpoint_definition": "IC50 against C5 convertase enzymatic activity",
+      "gut_luminal_relevance_score": 0,
+      "gut_luminal_rationale": "**Orthogonal step.** RA's 1500 µM IC50 in this format (Sahu 1999) is the upper bound of the 44× spread — but mechanistically RA doesn't act here; it acts upstream at C3b deposition. The 1500 µM number is essentially 'how badly does the compound look when measured at the wrong step.' Including this format in a single-IC50 summary statistic biases the prior pessimistically.",
+      "anchor_papers": ["Sahu 1999 PMID 10353266"]
+    }
+  ]
+}

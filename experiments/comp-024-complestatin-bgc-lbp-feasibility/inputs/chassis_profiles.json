@@ -1,0 +1,74 @@
+{
+  "_source": "Synthesized from canonical microbiology references — E. coli Nissle 1917 (CGAT-Genomes / Sonnenburg lab toolkit reviews); Bacteroides thetaiotaomicron VPI-5482 reference genome; Synlogic SYNB1934 / Synlogic-class engineered EcN precedents; F. prausnitzii A2-165 reference",
+  "candidate_hosts": {
+    "E_coli_Nissle_1917": {
+      "phylum": "Pseudomonadota (was Proteobacteria)",
+      "facultative_anaerobe": true,
+      "O2_in_colon_lumen": "essentially anoxic but EcN tolerates microaerobic and brief aerobic exposures; cell envelope adaptation supports a small O2 flux through respiratory chain",
+      "GC_content_pct": 50.7,
+      "average_CAI_streptomyces_native_seq_in_EcoliNissle_unoptimized": 0.45,
+      "average_CAI_streptomyces_native_seq_in_EcoliNissle_codon_optimized": 0.85,
+      "native_aromatic_amino_acid_supply": {
+        "tyrosine": "yes (TyrA/AroF pathway)",
+        "phenylalanine": "yes",
+        "tryptophan": "yes",
+        "Hpg_4_hydroxyphenylglycine": "no native pathway; must be supplied by cluster's hmaS/hmo/hpgT/pd",
+        "betaOHTyr": "no native pathway; must be supplied by OxyD-type beta-hydroxylase"
+      },
+      "PPTase_native": "AcpS (housekeeping; ACP-specific, NOT broad NRPS-PCP active)",
+      "PPTase_required_addition": "Sfp from B. subtilis or actinomycete Sfp-type (PcpS, KirP) — well-documented integration into E. coli chromosomal lacZ or rhaBAD locus",
+      "P450_redox_partner_compatibility": "needs heterologous ferredoxin/ferredoxin-reductase coexpression OR P450 fusion to reductase domain (e.g., BM3-style); E. coli endogenous redox does not pair productively with most Streptomyces P450s",
+      "engineering_toolkit_maturity": "very high — pSC101/pBR322 replicons, lambda-Red recombineering, MAGE, CRISPR-Cas9, RBS Calculator, well-characterized inducible promoters (P_BAD, P_T7, P_tet, P_rha), Synlogic-class genome integration via auxotrophic complementation",
+      "engineered_LBP_clinical_precedents": ["SYNB1618 (PKU)", "SYNB1934 (PKU)", "SYNB1353 (homocystinuria)", "SYNB8802 (enteric hyperoxaluria)"]
+    },
+    "Bacteroides_thetaiotaomicron_VPI_5482": {
+      "phylum": "Bacteroidota",
+      "facultative_anaerobe": false,
+      "strict_anaerobe": "tolerates brief O2 exposure (10-60 min) but cannot grow with O2; intracellular O2 partial pressure during growth essentially zero",
+      "GC_content_pct": 42.8,
+      "average_CAI_streptomyces_native_seq_in_Btheta_unoptimized": 0.30,
+      "average_CAI_streptomyces_native_seq_in_Btheta_codon_optimized": 0.78,
+      "native_aromatic_amino_acid_supply": {
+        "tyrosine": "yes (shikimate pathway present)",
+        "phenylalanine": "yes",
+        "tryptophan": "yes",
+        "Hpg_4_hydroxyphenylglycine": "no",
+        "betaOHTyr": "no"
+      },
+      "PPTase_native": "type II FAS housekeeping AcpS-like; no characterized Sfp-type broad-specificity PPTase",
+      "PPTase_required_addition": "yes (no precedent for Bacteroides NRPS megacluster expression; would need anaerobe-codon-optimized Sfp variant)",
+      "P450_redox_partner_compatibility": "fundamentally incompatible — Bacteroides P450 inventory is sparse and not designed for NRPS-tailoring biosynthesis; more importantly the P450 reaction itself requires O2",
+      "engineering_toolkit_maturity": "medium — Sonnenburg lab toolkit (NBU integration, anhydrotetracycline-inducible promoters, CRISPRi); no megacluster (>30 kb) heterologous expression precedent in any Bacteroides species",
+      "engineered_LBP_clinical_precedents": []
+    },
+    "F_prausnitzii_A2_165": {
+      "phylum": "Bacillota (was Firmicutes)",
+      "strict_anaerobe": true,
+      "_note": "Listed for completeness only. F. prausnitzii is the preferred LBP chassis for butyrate-pathway boost (cf. engineered-lbp-chassis.md butyrate dual-action), but is not a candidate for complestatin BGC expression — same O2 incompatibility as Bacteroides plus more brittle genetics toolkit. Excluded from this analysis."
+    }
+  },
+  "comparator_C1_INH_recombinant": {
+    "source_paper_class": "Sanofi Cinryze / Pharming Ruconest / various Pichia and CHO programs",
+    "protein_class": "single-chain serpin, 478 aa mature, heavily N- and O-glycosylated",
+    "FDA_approved_versions": ["plasma-derived (Berinert, Cinryze)", "recombinant rabbit-milk transgenic (Ruconest / conestat alfa, Pharming)", "recombinant human in CHO (developmental)"],
+    "Pichia_pastoris_titer_g_per_L": "~0.5-2 g/L reported in developmental literature; functional inhibitory activity equivalent to plasma C1-INH after pichia-glycoengineering",
+    "E_coli_feasibility": "very low — heavily glycosylated; aglycosylated recombinant C1-INH from E. coli is poorly secreted and rapidly cleared in vivo (similar pattern to other serpins)",
+    "Bacteroides_feasibility": "no precedent; obligate-anaerobe Bacteroides cannot perform mammalian-class N-glycosylation; same fundamental limitation",
+    "E_coli_Nissle_LBP_feasibility": "low for the secreted-protein angle but the chassis_question_is_different: C1-INH delivered as a continuous LBP-secreted payload would not need the half-life optimization that plasma-injected versions need. Could potentially work as a luminal-released payload but is heavily protease-vulnerable in the gut.",
+    "engineering_complexity_relative_to_complestatin": "much lower — single gene, no tailoring enzymes, no non-canonical amino acids, no megacluster, no O2-dependent biosynthesis chemistry. Glycosylation is the dominant feasibility question, and the LBP chassis dodges the systemic-half-life problem that drives the Pichia glycoengineering effort."
+  },
+  "feasibility_scoring_rubric": {
+    "_note": "Each factor scored 0.0 (catastrophic / cannot proceed) to 1.0 (no obstacle). Geometric mean across all factors = overall feasibility score. Cutoffs: >=0.60 GREEN; 0.30-0.59 YELLOW; <0.30 RED.",
+    "factors": [
+      "cluster_size_tractability",
+      "GC_content_codon_compatibility",
+      "non_canonical_amino_acid_precursor_supply",
+      "PPTase_compatibility",
+      "P450_redox_compatibility",
+      "O2_dependence_vs_host_lifestyle",
+      "engineering_toolkit_maturity",
+      "heterologous_expression_precedent",
+      "host_toxicity_self_resistance"
+    ]
+  }
+}

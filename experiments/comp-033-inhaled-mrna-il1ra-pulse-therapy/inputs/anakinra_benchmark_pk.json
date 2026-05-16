@@ -1,0 +1,37 @@
+{
+  "comment": "Anakinra is the reference benchmark for IL-1Ra therapeutic plasma exposure. The dose-modeling GREEN/RED gate is whether inhaled mRNA-IL-1Ra can plausibly reach an equivalent plasma AUC. Anakinra PK from Kineret prescribing information and published PK studies.",
+  "anakinra_pk": {
+    "route": "SC",
+    "dose_mg": 100,
+    "frequency": "QD (once daily)",
+    "bioavailability_sc_fraction": 0.95,
+    "half_life_hours": 4.0,
+    "tmax_hours": 6.0,
+    "plasma_cmax_ug_per_ml": 1.5,
+    "plasma_cmin_ug_per_ml": 0.05,
+    "comment": "Cmax range 1.3-1.8 ug/mL across studies; central estimate 1.5",
+    "auc_24h_ug_h_per_ml_estimate": 12.0,
+    "auc_calculation": "Approximated from Cmax * (half_life / ln2) * 1.44 absorption factor. Conservative central estimate.",
+    "single_flare_dose_anakinra_off_label": "100 mg daily x 3 days typical off-label gout flare regimen; sometimes 100 mg BID for first 24h. Total flare dose 300-600 mg over 3-5 days.",
+    "source": "Kineret USPI; Yang et al. 2003; Granowitz 1992; Janssen 2019 Lancet Rheumatol gout meta-analysis"
+  },
+  "target_for_inhaled_mrna": {
+    "comment": "What inhaled-mRNA-IL-1Ra must achieve to clear the GREEN gate",
+    "minimum_plasma_cmax_ug_per_ml": 0.5,
+    "comment_on_minimum": "Anakinra trough (Cmin) is 0.05 ug/mL and clinical effect is sustained. Sub-Cmax exposure is therapeutically meaningful. A Cmax of 0.5 ug/mL (1/3 anakinra Cmax) plausibly suffices for IL-1 blockade in acute gout context.",
+    "target_plasma_cmax_ug_per_ml": 1.5,
+    "target_auc_24h_ug_h_per_ml": 12.0,
+    "comment_on_target": "Anakinra-equivalent — the upper bar. The GREEN verdict requires the inhaled-mRNA approach to plausibly reach this target across the prior space."
+  },
+  "canakinumab_economic_benchmark": {
+    "drug": "canakinumab (Ilaris)",
+    "indication": "FDA-approved for gout flare 2023",
+    "dose_per_flare": "150 mg SC single dose",
+    "list_price_us_per_dose": 21000,
+    "annual_cost_5_flares_yr": 105000,
+    "annual_cost_8_flares_yr": 168000,
+    "annual_cost_max": 300000,
+    "comment": "The often-cited '$300K/year canakinumab' benchmark assumes ~10-12 flares/yr or autoinflammatory chronic dosing. Real-world gout-flare-only cost lands $50K-300K/yr depending on flare frequency. Either way, the order of magnitude is the benchmark.",
+    "source": "Canakinumab Ilaris prescribing info; AHFS pricing tables; FDA approval 2023"
+  }
+}

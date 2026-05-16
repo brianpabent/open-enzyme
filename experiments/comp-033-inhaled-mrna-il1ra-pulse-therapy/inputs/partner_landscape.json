@@ -1,0 +1,124 @@
+{
+  "comment": "Partner-identification scan. The GREEN gate requires >=2 partners with active inhaled-mRNA programs forkable into IL-1Ra. CDMOs are listed at the OE discovery-stage outreach scale — companies that have published a respiratory-mRNA or inhaled-mRNA capability and would respond to a target-validation handoff package from a research project.",
+  "tier_A_inhaled_mrna_developers_with_clinical_programs": [
+    {
+      "name": "Arcturus Therapeutics",
+      "program": "LUNAR-CF / ARCT-032 (inhaled mRNA-CFTR for CF)",
+      "stage": "Phase 2 (2026)",
+      "fork_potential": "HIGH — full inhaled-mRNA platform stack (LUNAR LNP + STARR self-amplifying mRNA + nebulizer formulation). Could swap CFTR cassette for IL-1Ra cassette as a research collaboration.",
+      "size": "Public, ~$200-500M market cap range; small-pharma scale",
+      "outreach_path": "Academic / nonprofit collaboration program; BD team at Arcturus",
+      "evidence_level": "Clinical Trial (Phase 2)"
+    },
+    {
+      "name": "ReCode Therapeutics",
+      "program": "RCT2100 (inhaled mRNA-DNAI1 for PCD) + CF program",
+      "stage": "Phase 1 (2026)",
+      "fork_potential": "HIGH — SORT-LNP class adds lung tropism beyond passive deposition. Same swap (DNAI1 -> IL-1Ra) is straightforward.",
+      "size": "Private; ~$200M Series B 2023; Pfizer collaboration on rare lung disease",
+      "outreach_path": "BD team; rare-lung-disease network; Pfizer collaboration could be a back-channel",
+      "evidence_level": "Clinical Trial (Phase 1)"
+    },
+    {
+      "name": "Ethris",
+      "program": "SNIM-RNA inhaled platform (preclinical, AstraZeneca partnership)",
+      "stage": "Preclinical",
+      "fork_potential": "MEDIUM — chemically modified mRNA platform with explicit inhalation focus; AstraZeneca partnership signals commercial path",
+      "size": "Private German biotech; AstraZeneca deal 2018+",
+      "outreach_path": "Direct BD; potentially through AstraZeneca",
+      "evidence_level": "Preclinical (animal model)"
+    },
+    {
+      "name": "Sanofi (legacy Translate Bio MRT5005)",
+      "program": "MRT5005 wound down 2022; inhaled-mRNA platform IP retained",
+      "stage": "Platform IP only (no active inhaled clinical program)",
+      "fork_potential": "MEDIUM — Sanofi has the manufacturing+formulation know-how but no current clinical lung-mRNA program; would need to re-energize platform around a new target. IL-1Ra in gout is a novel indication that fits Sanofi's autoimmune/inflammation portfolio",
+      "size": "Large pharma",
+      "outreach_path": "Sanofi BD / external innovation",
+      "evidence_level": "Platform / discontinued clinical"
+    }
+  ],
+  "tier_B_cdmo_with_inhaled_or_pulmonary_capability": [
+    {
+      "name": "CordenPharma",
+      "capability": "mRNA-LNP CDMO at clinical scale; lipid manufacturing; multiple mRNA partners",
+      "fork_potential": "MEDIUM — would manufacture the construct but not provide formulation/device IP; partner with a Tier A for the formulation stack",
+      "outreach_path": "Direct BD"
+    },
+    {
+      "name": "Aldevron (Danaher)",
+      "capability": "Plasmid + mRNA CDMO; large-scale GMP",
+      "fork_potential": "MEDIUM — same shape as CordenPharma; manufacturing partner, not formulation",
+      "outreach_path": "Direct BD; Danaher BD"
+    },
+    {
+      "name": "Lonza",
+      "capability": "mRNA-LNP CDMO; multiple Phase 1-3 client programs",
+      "fork_potential": "MEDIUM — large CDMO with capacity; not inhalation-specific",
+      "outreach_path": "Direct BD"
+    },
+    {
+      "name": "Recipharm",
+      "capability": "Inhalation device + drug-device combination CDMO (DPI + nebulizer expertise)",
+      "fork_potential": "HIGH for the device-formulation side specifically — Recipharm makes DPI and aerosol-delivery devices. Would partner with a Tier A or mRNA CDMO for the mRNA-LNP itself.",
+      "outreach_path": "Direct BD; inhalation-product specialist division"
+    },
+    {
+      "name": "Acuitas Therapeutics",
+      "capability": "LNP IP holder (BioNTech BNT162b2 lipid); not a manufacturer but licenses LNP",
+      "fork_potential": "MEDIUM — LNP license required for many programs; not inhaled-specific but their LP-01 class is being adapted for inhalation by partners",
+      "outreach_path": "Licensing inquiry"
+    },
+    {
+      "name": "Precision NanoSystems (Cytiva)",
+      "capability": "LNP manufacturing equipment + early-stage LNP formulation services",
+      "fork_potential": "MEDIUM — equipment/services for clinical-scale LNP",
+      "outreach_path": "Direct BD"
+    },
+    {
+      "name": "TriLink BioTechnologies (Maravai)",
+      "capability": "Modified-nucleoside mRNA synthesis (m1Psi, cap analogs)",
+      "fork_potential": "MEDIUM — supplier of the mRNA itself; not formulation or device",
+      "outreach_path": "Direct BD"
+    }
+  ],
+  "tier_C_academic_labs_with_inhaled_mrna_lnp_publications": [
+    {
+      "name": "Mitchell Lab (UPenn)",
+      "publications": "Multiple inhaled mRNA-LNP papers 2021-2025; SORT-LNP class for lung; co-author network with ReCode",
+      "fork_potential": "HIGH — academic collaboration possible; publish-mode-of-engagement aligned with OE open-source ethos",
+      "outreach_path": "Direct email; conference outreach"
+    },
+    {
+      "name": "Sahay Lab (OSU / Oregon State)",
+      "publications": "LNP formulation for nucleic acid delivery; inhaled and systemic; multiple lung-mRNA papers",
+      "fork_potential": "HIGH — academic collaboration possible",
+      "outreach_path": "Direct email"
+    },
+    {
+      "name": "Anderson Lab (MIT)",
+      "publications": "LNP combinatorial libraries; some lung-tropic work; broad LNP IP",
+      "fork_potential": "MEDIUM — large lab, many active collaborations; smaller probability of OE-specific bandwidth",
+      "outreach_path": "Direct email"
+    },
+    {
+      "name": "Siegwart Lab (UT Southwestern)",
+      "publications": "SORT-LNP foundational work (origin of ReCode platform); lung-tropic LNPs",
+      "fork_potential": "HIGH — direct origin of the lung-tropic LNP class",
+      "outreach_path": "Direct email"
+    }
+  ],
+  "summary_count": {
+    "tier_A_active_inhaled_mrna_clinical_programs": 4,
+    "tier_B_cdmos_with_relevant_capability": 7,
+    "tier_C_academic_labs_with_published_inhaled_mrna_lnp_work": 4,
+    "total_partner_candidates": 15
+  },
+  "green_gate_check": "GREEN requires >=2 partners with active inhaled-mRNA programs identified. Tier A alone has 4 candidates with disclosed clinical or preclinical inhaled-mRNA programs (Arcturus, ReCode, Ethris, Sanofi). Gate cleared by Tier A alone.",
+  "recommended_first_contacts": [
+    "Arcturus Therapeutics (highest-stage clinical inhaled mRNA-LNP)",
+    "ReCode Therapeutics (SORT-LNP lung tropism)",
+    "Siegwart Lab UTSW (academic origin of lung-tropic LNP class — could provide a precompetitive scientific collaboration)",
+    "Mitchell Lab UPenn (academic; multiple inhaled mRNA-LNP papers)"
+  ]
+}

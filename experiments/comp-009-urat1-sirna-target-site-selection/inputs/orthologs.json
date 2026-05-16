@@ -1,0 +1,24 @@
+{
+  "_provenance": "Fetched 2026-05-16 from rest.uniprot.org. Human, mouse, rat are reviewed (Swiss-Prot). Chimp is TrEMBL (unreviewed but near-identical to human at protein level — chimp/human SLC22A12 protein identity is >99% as expected for primates).",
+  "_use": "Used by analyze.py for off-target conservation analysis at the CDS level. A 21-mer siRNA target site that is highly conserved across human + chimp + mouse + rat is reusable for rodent preclinical models AND human therapeutic (siRNAs are mRNA-sequence-specific; cross-species conservation = the same guide strand works in both species). A 21-mer that is human-specific is fine for clinical product but requires species-specific siRNAs for rodent PK/PD.",
+  "human": {
+    "uniprot": "Q96S37",
+    "refseq_mrna": "NM_144585.3 (canonical), NM_153378.3, NM_001276326.2, NM_001276327.2",
+    "length_aa": 553
+  },
+  "chimp": {
+    "uniprot": "H2R5A9 (TrEMBL)",
+    "note": "Unreviewed; included for primate-conservation signal only",
+    "length_aa": 553
+  },
+  "mouse": {
+    "uniprot": "Q8CFZ5",
+    "refseq_mrna": "NM_009203",
+    "length_aa": 553
+  },
+  "rat": {
+    "uniprot": "Q3ZAV1",
+    "refseq_mrna": "NM_001034943",
+    "length_aa": 553
+  }
+}

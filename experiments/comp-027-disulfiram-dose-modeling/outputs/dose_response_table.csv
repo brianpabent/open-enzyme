@@ -1,0 +1,11 @@
+dose_mg,Cmax_parent_DSF_uM_central,Cmax_parent_DSF_uM_low,Cmax_parent_DSF_uM_high,Cavg_parent_DSF_uM,Cmax_total_DTC_uM,MeDTC_peak_nM,GSDMD_block_parent_Cmax_conservative,GSDMD_block_parent_Cmax_optimistic,GSDMD_block_total_DTC_Cmax,GSDMD_block_parent_Cavg,NLRP3_palm_block_parent,NLRP3_palm_block_totalDTC,ALDH_inhibition,DER_risk,verdict
+25,0.1,0.04,0.25,0.0286,0.4,17.4,0.25,0.833,0.571,0.087,0.01,0.038,0.143,below_threshold,RED_below_GSDMD_threshold
+50,0.2,0.08,0.5,0.0571,0.8,34.8,0.4,0.909,0.727,0.16,0.02,0.074,0.25,below_threshold,YELLOW
+62.5,0.25,0.1,0.625,0.0714,1.0,43.4,0.455,0.926,0.769,0.192,0.024,0.091,0.294,below_threshold,YELLOW
+100,0.4,0.16,1.0,0.1143,1.6,69.5,0.571,0.952,0.842,0.276,0.038,0.138,0.4,below_threshold,GREEN
+125,0.5,0.2,1.25,0.1429,2.0,86.9,0.625,0.962,0.87,0.323,0.048,0.167,0.454,above_threshold,YELLOW
+200,0.8,0.32,2.0,0.2286,3.2,139.0,0.727,0.976,0.914,0.432,0.074,0.242,0.571,above_threshold,RED_above_DER_threshold
+250,1.0,0.4,2.5,0.2857,4.0,173.8,0.769,0.98,0.93,0.488,0.091,0.286,0.625,above_threshold,RED_above_DER_threshold
+500,2.0,0.8,5.0,0.5714,8.0,347.5,0.87,0.99,0.964,0.656,0.167,0.444,0.769,above_threshold,RED_above_DER_threshold
+1000,4.0,1.6,10.0,1.1429,16.0,695.0,0.93,0.995,0.982,0.792,0.286,0.615,0.87,above_threshold,RED_above_DER_threshold
+2000,10.218,4.087,25.545,2.9194,40.87,1775.4,0.971,0.998,0.993,0.907,0.505,0.803,0.945,above_threshold,RED_above_DER_threshold
