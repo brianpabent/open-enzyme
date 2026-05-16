@@ -56,12 +56,11 @@ nav:
   - Home: index.md
 
   - Vision & Strategy:
-    - Open Enzyme Vision: open-enzyme-vision.md
-    - Platform Thesis & Synthesis: synthesis/README.md
+    - Open Enzyme Vision: etc/open-enzyme-vision.md
     - Cross-Validation: cross-validation.md
-    - Open Source Platform: open-source-platform.md
+    - Open Source Platform: etc/open-source-platform.md
     - Chassis-Pending Interventions: chassis-pending-interventions.md
-    - Team: team.md
+    - Team: etc/team.md
 
   - Gout & Uricase:
     - Gout Pathophysiology: gout-pathophysiology.md
@@ -108,7 +107,6 @@ nav:
     - Medicinal Mushroom Extract SOPs: medicinal-mushroom-extract-sops.md
     - Compounding Pharmacy Track: compounding-pharmacy-track.md
     - Ginkgo Cloud Lab Evaluation: ginkgo-cloud-lab-evaluation.md
-    - Ward 1995 Lab Access — Global Landscape: ward-1995-lab-access-global.md
 
   - Delivery & Barrier:
     - Gut-Lumen Sink: gut-lumen-sink.md
@@ -137,7 +135,7 @@ nav:
     - Peptide Gout Addendum: peptide-gout-addendum.md
 
   - Self-Experiment & Validation:
-    - Practitioner Toolkit: practitioner-toolkit.md
+    - Practitioner Toolkit: etc/practitioner-toolkit.md
     - Gout Action Guide: gout-action-guide.md
     - Genotype-Informed Supplement Workflow: genotype-informed-supplement-workflow.md
     - SIBO: sibo.md
@@ -149,10 +147,10 @@ nav:
     - Modality × Target Matrix: modality-chokepoint-matrix.md
 
   - Tools & Reference:
-    - AI Bio Tools: bio-ai-tools.md
-    - AI Bio Tools Playbook: ai-bio-tools-playbook.md
-    - Paperclip (GXL) Literature MCP: paperclip-deep-dive.md
-    - ChEMBL Cross-Check: chembl-cross-check.md
+    - AI Bio Tools: etc/bio-ai-tools.md
+    - AI Bio Tools Playbook: etc/ai-bio-tools-playbook.md
+    - Paperclip (GXL) Literature MCP: etc/paperclip-deep-dive.md
+    - ChEMBL Cross-Check: etc/chembl-cross-check.md
     - Linter Design (Falsification + Document Lint): linter-design.md
     - Hypotheses Index: hypotheses/README.md
     - H01 — Ward Dual-Cassette: hypotheses/H01-ward-dual-cassette.md
@@ -189,9 +187,9 @@ nav:
     - T-axis Adjuvant Urate Mapping (comp-015): t-axis-adjuvant-urate-mapping-computational.md
     - T × Intestinal ABCG2 Evidence Mining (comp-016): t-abcg2-suppression-evidence-mining-computational.md
     - Intestinal ABCG2 Sex-Dimorphism Mining (comp-017): intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md
-    - Autonomous AI Screening Methodology: autonomous-screening-methodology.md
-    - Manual Literature Mining Protocol: manual-literature-mining.md
+    - Autonomous AI Screening Methodology: etc/autonomous-screening-methodology.md
+    - Manual Literature Mining Protocol: etc/manual-literature-mining.md
     - Quantification Ladder (kitchen → smartphone → bench → outsourced): quantification-ladder.md
     - Open Questions Index: open-questions.md
-    - Concept Graph: GRAPH.md
-    - Citations: references.md
+    - Concept Graph: etc/GRAPH.md
+    - Citations: etc/references.md
