@@ -460,9 +460,24 @@ def run_agentic_synthesis(api_key, model, initial_prompt, fallback_models,
 
         tool_calls = msg.get("tool_calls") or []
         content = msg.get("content")
+        finish_reason = choice.get("finish_reason")
 
         # Terminal: content with no tool_calls = final synthesis log.
         if content and not tool_calls:
+            # Surface mid-content truncation. Pre-2026-05-16 the script
+            # silently accepted truncated output; the d7ce4b0 sweep hit
+            # max_tokens=8000 and cut off in the middle of experiment #1
+            # ("testing the") with no signal in CI logs. finish_reason
+            # "length" means the model wanted to keep generating and was
+            # capped by our max_tokens budget — re-fire with --max-tokens
+            # raised or shrink the synthesis scope.
+            if finish_reason == "length":
+                print(
+                    f"  WARNING: Pass 2 hit max_tokens={max_tokens} cap "
+                    f"(finish_reason='length'). Output is truncated. "
+                    f"Re-run with --max-tokens raised.",
+                    file=sys.stderr, flush=True,
+                )
             return content, total_in, total_out, resp
 
         # Tool calls: execute each and append results, then continue.
@@ -536,8 +551,15 @@ def main():
                         help=f"OpenRouter model slug (default: {DEFAULT_MODEL})")
     parser.add_argument("--prompt-file", default="scripts/sweep-prompt-2-synthesize.md",
                         help="Path to the synthesis prompt template")
-    parser.add_argument("--max-tokens", type=int, default=8000,
-                        help="Output token budget (default 8K)")
+    parser.add_argument("--max-tokens", type=int, default=32000,
+                        help=(
+                          "Output token budget (default 32K). Raised from 8K on "
+                          "2026-05-16 after the 192-trigger sweep at d7ce4b0 "
+                          "truncated mid-experiment-1 at ~8530 completion tokens "
+                          "(7 of ~30-40 items emitted). 32K is safely under "
+                          "Gemini 2.5 Pro's 65K cap and within DeepSeek V4-Pro's "
+                          "observed output range. The cap is a ceiling, not a "
+                          "floor — most sweeps finish well under it."))
     args = parser.parse_args()
 
     api_key = read_api_key()

@@ -494,10 +494,21 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
 
         tool_calls = msg.get("tool_calls") or []
         content = msg.get("content")
+        finish_reason = choice.get("finish_reason")
 
         # Terminal: model returned content with no tool calls. That's our
         # final review output.
         if content and not tool_calls:
+            # Surface mid-content truncation (see matching guard in
+            # scripts/synthesize.py — both passes now warn when the model
+            # wanted to keep generating but was capped by max_tokens).
+            if finish_reason == "length":
+                print(
+                    f"  WARNING: Pass 3 hit max_tokens={max_tokens} cap "
+                    f"(finish_reason='length'). Verdicts truncated. "
+                    f"Re-run with --max-tokens raised.",
+                    file=sys.stderr, flush=True,
+                )
             return content, total_in, total_out, total_cached
 
         # If there are tool calls, execute each and append the results.
@@ -615,7 +626,12 @@ def main():
     parser.add_argument("--marker-count", type=int, required=True)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--prompt-file", default=DEFAULT_PROMPT)
-    parser.add_argument("--max-tokens", type=int, default=8000)
+    parser.add_argument("--max-tokens", type=int, default=32000,
+                        help=(
+                          "Output token budget (default 32K). Raised from 8K on "
+                          "2026-05-16 alongside the matching Pass 2 raise — "
+                          "when Pass 2 emits 30-40 items the reviewer needs "
+                          "headroom to verdict every marker without truncation."))
     parser.add_argument("--max-iterations", type=int, default=MAX_TOOL_ITERATIONS,
                         help=f"Tool-use iteration cap (default {MAX_TOOL_ITERATIONS})")
     args = parser.parse_args()
