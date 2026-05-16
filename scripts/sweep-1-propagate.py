@@ -303,6 +303,12 @@ def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
         for attempt in range(max_retries):
             r = subprocess.run(
                 ["curl", "-sS", "--fail-with-body",
+                 # See synthesize.py for the --http1.1 rationale. Pass 1's
+                 # per-file requests are smaller (max_tokens=4000) so the
+                 # max-time stays at 300s, but the HTTP/2 stream failure
+                 # mode is connection-level and applies regardless of
+                 # payload size.
+                 "--http1.1",
                  "https://openrouter.ai/api/v1/chat/completions",
                  "-H", f"Authorization: Bearer {api_key}",
                  "-H", "Content-Type: application/json",
@@ -329,11 +335,14 @@ def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
             combined = (r.stdout or "") + "\n" + (r.stderr or "")
             transient = (
                 r.returncode == 22  # HTTP error per --fail-with-body
+                # Transport-level transient codes (see synthesize.py).
+                or r.returncode in (18, 52, 55, 56, 92)
                 or any(s in combined for s in (
                     "429", "rate-limit", "rate limit", "temporarily",
                     "502", "503", "504",
                     "Connection reset", "Connection refused",
                     "timed out", "timeout",
+                    "INTERNAL_ERROR", "HTTP/2 stream",
                 ))
             )
             if not transient or attempt == max_retries - 1:

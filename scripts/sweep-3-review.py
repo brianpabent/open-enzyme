@@ -573,14 +573,18 @@ def call_openrouter_raw(api_key, body):
         for attempt in range(max_retries):
             r = subprocess.run(
                 ["curl", "-sS", "--fail-with-body",
+                 # See synthesize.py for the rationale on --http1.1 +
+                 # bumped --max-time. Mirrored here so Pass 3 has the same
+                 # transport resilience as Pass 2.
+                 "--http1.1",
                  "https://openrouter.ai/api/v1/chat/completions",
                  "-H", f"Authorization: Bearer {api_key}",
                  "-H", "Content-Type: application/json",
                  "-H", "HTTP-Referer: https://github.com/brianpabent/open-enzyme",
                  "-H", "X-Title: Open Enzyme sweep Pass 3",
                  "-d", f"@{body_path}",
-                 "--max-time", "600"],
-                capture_output=True, text=True, timeout=620,
+                 "--max-time", "900"],
+                capture_output=True, text=True, timeout=920,
             )
             if r.returncode == 0:
                 try:
@@ -590,11 +594,13 @@ def call_openrouter_raw(api_key, body):
             combined = (r.stdout or "") + "\n" + (r.stderr or "")
             transient = (
                 r.returncode == 22
+                or r.returncode in (18, 52, 55, 56, 92)
                 or any(s in combined for s in (
                     "429", "rate-limit", "rate limit", "temporarily",
                     "502", "503", "504",
                     "Connection reset", "Connection refused",
                     "timed out", "timeout",
+                    "INTERNAL_ERROR", "HTTP/2 stream",
                 ))
             )
             if not transient or attempt == max_retries - 1:

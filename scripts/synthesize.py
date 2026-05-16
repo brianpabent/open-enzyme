@@ -327,27 +327,48 @@ def call_openrouter_raw(api_key, body):
             result = subprocess.run(
                 [
                     "curl", "-sS", "--fail-with-body",
+                    # Force HTTP/1.1. HTTP/2 multiplexes streams over a single
+                    # connection and is more prone to mid-stream protocol
+                    # errors on long-running requests (observed: run
+                    # 25969859652, 2026-05-16, "curl: (92) HTTP/2 stream 1 was
+                    # not closed cleanly: INTERNAL_ERROR" at 3m50s into a
+                    # 32K-output Pass 2 generation). HTTP/1.1 is one
+                    # connection per request — simpler and more reliable for
+                    # this use case where we get no benefit from
+                    # multiplexing.
+                    "--http1.1",
                     "https://openrouter.ai/api/v1/chat/completions",
                     "-H", f"Authorization: Bearer {api_key}",
                     "-H", "Content-Type: application/json",
                     "-H", "HTTP-Referer: https://github.com/brianpabent/open-enzyme",
                     "-H", "X-Title: Open Enzyme synthesis sweep",
                     "-d", f"@{body_path}",
-                    "--max-time", "600",
+                    # 900s = 15 min. Raised from 600s on 2026-05-16 alongside
+                    # max_tokens 8K → 32K — Pass 2 generation can legitimately
+                    # run 8-12 min at full output budget.
+                    "--max-time", "900",
                 ],
-                capture_output=True, text=True, timeout=620,
+                capture_output=True, text=True, timeout=920,
             )
 
             # Branch (a): curl-level failure. Existing transient-string check.
             if result.returncode != 0:
                 combined = (result.stdout or "") + "\n" + (result.stderr or "")
                 transient = (
-                    result.returncode == 22
+                    result.returncode == 22  # HTTP error per --fail-with-body
+                    # curl exit codes for transport-level transient failures.
+                    # 18=partial transfer, 52=empty reply, 55=send failure,
+                    # 56=recv failure, 92=HTTP/2 stream protocol error
+                    # (kept in the list even after --http1.1 as defense in
+                    # depth — some HTTP/2 paths may persist through proxies).
+                    or result.returncode in (18, 52, 55, 56, 92)
                     or any(s in combined for s in (
                         "429", "rate-limit", "rate limit", "temporarily",
                         "502", "503", "504",
                         "Connection reset", "Connection refused",
                         "timed out", "timeout",
+                        # HTTP/2 stream protocol errors (run 25969859652).
+                        "INTERNAL_ERROR", "HTTP/2 stream",
                     ))
                 )
                 if not transient or attempt == max_retries - 1:
