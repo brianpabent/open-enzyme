@@ -45,3 +45,15 @@ Sources cited:
 - wiki/hypotheses/H09-community-fermentation-reliability.md
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: RESTATEMENT]` The “most curious thread” choice is defensible: comp-023 gives the koji cns1+cns2 burden GREEN verdict, `medicinal-mushroom-complement-track.md` documents native *C. militaris* pentostatin co-production, and `validation-experiments.md` §2.7 is already the direct ADA-challenge stability test. Keep the caveat from the earlier review: success avoids pentostatin co-engineering or purified pentostatin sourcing, but it does not by itself retire the production-side ADA-competition or induction-interference gates.
+
+---
+
+## ✓ Closed via strategic deprioritization 2026-05-16
+
+**Walkthrough Item 16 — "most curious thread" pick rejected via strategic deprioritization.** The synthesizer's "single thread I'd spend the next experiment slot on" was the cross-chassis cordycepin / pentostatin co-formulation. Operator strategic call during walkthrough Item 7: koji-cordycepin engineering deprioritized because (a) no novel chokepoint coverage beyond the cultivation route, (b) open dose-vs-achievable-titer gap never closed by comp-023, (c) commercial availability at $20–60/month with native pentostatin protection. The "cheapest discriminating experiment" the synthesizer proposed (co-formulation ADA-challenge assay) is no longer the right experiment to spend a slot on — it gates a production route that the platform isn't pursuing.
+
+**Note on synthesizer pattern.** This is a useful telemetry signal: the Most Curious Thread output converged on the same composition (Connection 1 → Experiment 1 → this thread) and made the case via mechanism elegance, but the strategic frame ("does this deliver novel coverage worth the engineering complexity?") was outside the synthesizer's evaluation axis. The mechanism-elegance bias is worth noting — synthesizers can rank-order an engineering pathway as exciting on technical merit while the platform-strategy frame says don't pursue. Operator pushback is the right gate for that mismatch.
+
+What the "next experiment slot" should actually go to (post-deprioritization): TBD via the rest of the walkthrough — likely a dietary-tier action (rosmarinic acid + DAF SCR1-4 combined CP0 coverage, Items 9–10 / Experiment 3) or a Q141K-stratified comp (comp-019 / butyrate / fiber RCT design). Decision deferred until the rest of the queue is walked.
+
+Cluster-closure: closes with Items 7, 13, 17, 18 via the same strategic call.

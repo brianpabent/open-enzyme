@@ -42,8 +42,16 @@ sources:
   - "PMID 21514215 (Marui J et al. 2011, Appl Microbiol Biotechnol). Kojic acid biosynthesis in A. oryzae is regulated by a Zn(II)2Cys6 transcriptional activator"
   - "PMID 25496641 (Hu W et al. 2014, Org Lett). Bioinformatic and Biochemical Characterizations of C-S Bond Formation and Cleavage Enzymes in N. crassa Ergothioneine Biosynthetic Pathway"
   - "PMID 22276148 (Seebeck FP 2010, J Am Chem Soc / Bello MH 2012, Mol Microbiol). Ergothioneine biosynthesis EgtA-E mechanism"
-status: complete (v1)
+status: complete (v1) — target deprioritized 2026-05-16
 ---
+
+> **Target deprioritized 2026-05-16 — koji-cordycepin engineering removed from active cassette stack.** Strategic call during 2026-05-15 sweep walkthrough Item 7. comp-023's GREEN verdict on metabolic burden stands as a successful methodology validation (FBA on iWV1314 works; cytosolic-cassette burden modeling is reliable), but cordycepin is no longer an active koji engineering target. Three reasons:
+>
+> 1. **No novel chokepoint coverage.** Cordycepin's chokepoint targets (URAT1 modulation, AMPK / mitochondrial NLRP3-priming dampening) are already covered by the [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) via cultivation of *Cordyceps militaris*, which natively co-produces cordycepin with pentostatin at the co-evolved ratio. Engineering cordycepin into koji duplicates coverage that exists in a peer track at a different chassis (cultivation vs. genetic engineering).
+> 2. **Open dose-vs-achievable-titer gap.** comp-023 verified metabolic feasibility (cell carries the cassette at Jeennor 2023's 564 mg/L/day single-cassette optimized titer) but did NOT analyze whether that titer translates to a therapeutic dose in realistic home-fermentation conditions on a multi-cassette strain (uricase + lactoferrin competing for resources). Back-of-envelope at Jeennor's titer in a typical home batch lands at the LOW end of published nutraceutical doses (~70–280 mg/day vs 250–1500 mg/day target), assuming optimal titer transfer to home conditions and no multi-cassette penalty — both optimistic. The titer-to-therapeutic-dose conversion question was treated as out-of-scope by comp-023 and has not been closed by any subsequent analysis.
+> 3. **Commercial availability.** Cordycepin from cultivated *C. militaris* extract is widely available at $20–60/month nutraceutical pricing, with native pentostatin co-protection. The "endgame strain = full coverage + simple" principle (per [`koji-endgame-strain.md`](./koji-endgame-strain.md)) does not justify the engineering complexity (three open follow-up gates: comp-025 ADA substrate competition, comp-026 multi-cassette induction interference, comp-023 v2 dynamic FBA validation) for a payload that delivers no novel coverage and may not reach therapeutic dose anyway.
+>
+> Active cordycepin route in the platform: cultivation per [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md). Active koji endgame strain cassettes (post-2026-05-16): uricase + lactoferrin + DAF SCR1-4 (the secreted-protein triple where koji has unique value via solid-state food-grade fermentation + home accessibility for proteins not otherwise easily obtained). See [`koji-endgame-strain.md` §"Evaluated and deprioritized"](./koji-endgame-strain.md). comp-025 / comp-026 / comp-023 v2 marked Deprioritized in [`computational-experiments.md`](./computational-experiments.md).
 
 # Cordycepin (cns1+cns2) Cassette Metabolic Burden: Computational Analysis (comp-023)
 

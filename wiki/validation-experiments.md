@@ -1073,7 +1073,10 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Cross-references:** [medicinal-mushroom-complement-track.md §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) (Item 1 of the 2026-05-08 walkthrough — the two-organism synergy bullet); [gout-pathophysiology.md §"ADA (Adenosine Deaminase) — Purine Catabolism Chokepoint Candidate"](./gout-pathophysiology.md); [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md) (comp-014 Phase 2, where ADA was first surfaced); [synthesis/](../synthesis/README.md) 2026-05-08 sweep Connection 1 + Proposed Experiment 1.
 
-#### Sixth-arm extension — engineered-koji cordycepin + GLPP (added 2026-05-15; gated on strain availability)
+#### Sixth-arm extension — engineered-koji cordycepin + GLPP (added 2026-05-15; **Deprioritized 2026-05-16**; gated on strain availability)
+
+> **Deprioritized 2026-05-16 — koji-cordycepin engineering removed from active cassette stack.** Walkthrough Item 7 strategic call. The sixth arm tests engineered-koji cordycepin + GLPP for ADA half-life protection; with the koji-cordycepin engineering effort deprioritized (full reasoning at [`koji-endgame-strain.md` §3.5](./koji-endgame-strain.md)), the §1.26 base assay (Arms 1–5) stands as the canonical ADA-protection investigation — those arms use whole-fermentate *Cordyceps* and purified compounds, all available via the cultivation track. Sixth arm is moot until/unless koji-cordycepin engineering is re-prioritized.
+
 
 **Status**: Proposed extension to §1.26 base | **Cost**: ~$500–1,000 adder | **Weeks**: same as §1.26 base | **Phase**: 2 | **Hard gating**: engineered-koji cordycepin strain must exist (downstream of §1.9-extended design + comp-025 ADA-competition GREEN + comp-028 three-axis GREEN)
 
@@ -1440,9 +1443,11 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Cross-references:** [gout-pathophysiology.md §"Multi-track urate transporter coverage"](./gout-pathophysiology.md) (the coverage map this follow-up tests); §2.6 base (parent study); [§1.9 Ward 1995](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) (engineered-koji-uricase-strain dependency); [`koji-endgame-strain.md`](./koji-endgame-strain.md) (koji track context).
 
-### 2.7 Koji × *Cordyceps* Co-Formulation Stability Test — ADA-Challenge Assay (added 2026-05-15)
+### 2.7 Koji × *Cordyceps* Co-Formulation Stability Test — ADA-Challenge Assay (added 2026-05-15; **Deprioritized 2026-05-16**)
 
-**Status**: Proposed | **Cost**: $1,500–3,000 | **Weeks**: 3–4 | **Phase**: 2 (low-cost, low-friction)
+> **Deprioritized 2026-05-16 — koji-cordycepin engineering removed from active cassette stack.** Walkthrough Item 7 strategic call. This experiment was a gate for the engineered-koji cordycepin route + cross-chassis pentostatin protection; with the koji-cordycepin engineering effort deprioritized (full reasoning at [`koji-endgame-strain.md` §3.5](./koji-endgame-strain.md)), the experiment is moot — the cultivation route already delivers cordycepin + pentostatin together at the natural co-evolved ratio, and no engineered-koji cordycepin product is being developed for the gate to evaluate. Section retained for traceability; **do not execute.** Re-open only if the koji-cordycepin engineering thesis is re-prioritized (new evidence on therapeutic-dose achievability or a chokepoint that koji-engineered cordycepin uniquely addresses).
+
+**Status**: ~~Proposed~~ **Deprioritized** | **Cost**: $1,500–3,000 | **Weeks**: 3–4 | **Phase**: 2 (low-cost, low-friction)
 
 **Affected wiki**: [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates"; [cordycepin-cassette-burden-computational.md](./cordycepin-cassette-burden-computational.md) §"Impact on experimental priorities"; [computational-experiments.md](./computational-experiments.md) comp-025 (ADA × cns1 kinetic modeling); [koji-endgame-strain.md](./koji-endgame-strain.md) cordycepin arm.
 
