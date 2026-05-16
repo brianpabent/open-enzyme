@@ -179,6 +179,10 @@ graph TB
         DE25["Chassis-Pending Interventions — index of interventions awaiting chassis"]
         DE26["comp-030 DAF SCR1-4 Cassette Ranking — 43,200 candidates, top cluster confirms §1.25 baseline"]
         DE27["comp-023 Cordycepin Burden FBA — GREEN verdict; <1% carbon, 1,000× Jeennor breakpoint"]
+        DE28["comp-032 ABCG2 Q141K Chaperone Screen — GREEN; 5 FDA-approved candidates ranked"]
+        DE29["comp-035 IA Uricase H₂O₂ Reaction-Diffusion — GREEN across all 3 architectures"]
+        DE30["comp-029 Combined CP0 Systems Model — YELLOW; RA gut-luminal + DAF SCR1-4"]
+        DE31["comp-033/036 Inhaled mRNA-IL-1RA — RED single-dose / YELLOW repeat-dose"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -616,6 +620,20 @@ graph TB
     DE27 -->|"cordycepin arm metabolic-burden-feasible; informs §1.9 extended design"| KE14
     DE27 -->|"cns1+cns2 cytosolic; PDI load 0; bypasses secretion entirely"| CH5
     DE27 -->|"native C. militaris pentostatin co-formulation alternative to ADA engineering"| MT2
+    %% comp-032 ABCG2 Q141K chaperone screen (source: abcg2-q141k-chaperone-screen-computational.md)
+    DE28 -->|"GREEN: 5 FDA-approved candidates; diflunisal Tier-1 lowest-friction first call"| AM4
+    DE28 -->|"CFTR-corrector positive controls rank top 11%; FDA surface NOT empty"| DE25
+    DE28 -->|"next: per-hit Caco-2 Q141K trafficking-rescue assay"| KE1
+    %% comp-035 IA uricase H₂O₂ reaction-diffusion (source: intra-articular-uricase-h2o2-reaction-diffusion-computational.md)
+    DE29 -->|"GREEN: all 3 architectures clear <10 µM safe threshold by 5-50×"| DE25
+    DE29 -->|"catalase kcat/Km is dominant safety driver; proximity claims NOT mechanism"| DE21
+    DE29 -->|"next: Amplex Red microelectrode in synovial-fluid mimic"| DE22
+    %% comp-029 combined CP0 systems model (source: combined-cp0-systems-model-computational.md)
+    DE30 -->|"YELLOW: RA gut-luminal-transient, not systemic; combined 1.08-1.10× singleton"| DE18
+    DE30 -->|"gated on §1.25 DAF SCR1-4 α ≥ 0.5 for GREEN re-run"| CH12
+    %% comp-033/036 inhaled mRNA-IL-1RA (source: inhaled-mrna-il1ra-pulse-computational.md, repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md)
+    DE31 -->|"RED single-dose; YELLOW repeat-dose at corrected Kd 0.1-10 nM"| DE25
+    DE31 -->|"prednisone-displacement reframe: partial occupancy × cleaner side-effect profile"| DE22
     %% Chassis-pending interventions (source: chassis-pending-interventions.md)
     DE25 -->|"operationalizes chokepoint-first chassis-second discipline"| DE2
     DE25 -->|"PDB / siRNA-URAT1 / engineered-LBP / mRNA-IL-1RA / IA-uricase entries"| DE7

@@ -184,7 +184,7 @@ The payload choice is structurally similar to why ankakinra and not canakinumab 
 
 **Cheapest first move.** comp-NNN protease-stability + folding feasibility analysis of a uricase-catalase fusion construct under shio-koji conditions (extends the comp-006 / comp-007 framework to a chimeric protein). Then a single-construct expression test if the comp-NNN returns LOW risk.
 
-**H₂O₂ biochemistry gate — resolved by [comp-035](./computational-experiments.md) 2026-05-16: GREEN across all three architectures.** Reaction-diffusion analysis with Damköhler-number coupling, 20,000 Monte Carlo samples per architecture over kinetic / diffusion / geometric / joint-condition priors. Predicted steady-state [H₂O₂] at joint-tissue boundary (median, 5th–95th percentile):
+**H₂O₂ biochemistry gate — resolved by [comp-035](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) 2026-05-16: GREEN across all three architectures.** Reaction-diffusion analysis with Damköhler-number coupling, 20,000 Monte Carlo samples per architecture over kinetic / diffusion / geometric / joint-condition priors. Predicted steady-state [H₂O₂] at joint-tissue boundary (median, 5th–95th percentile):
 - **Pickering emulsion** (Liu 2025 PEBR geometry): **0.19 µM** [0.034–1.1 µM] — GREEN
 - **Fusion protein** (Schiavon class, 1–5 nm separation): **0.034 µM** [0.006–0.20 µM] — GREEN
 - **Free co-formulated**: **0.19 µM** [0.005–7.2 µM, max 120 µM in worst-case URI:CAT 100:1 corner] — GREEN at reasonable stoichiometry; YELLOW at uneven URI:CAT
@@ -213,9 +213,17 @@ All three clear the 10 µM safe threshold by 5–50× margin under reference con
 
 **Candidate chassis.** Small-molecule discovery campaign — AI-assisted binder design (RFdiffusion-style or related), structure-based virtual screening against ABCG2 Q141K. Compounding pharmacy track if a hit candidate has off-patent precedent in another indication (unlikely for novel chemistry, but worth checking).
 
-**Cheapest first move.** comp-NNN: AlphaFold structure of ABCG2 Q141K + computational screen for known FDA-approved small molecules with conformational stabilizer activity in ABC transporter family (could surface a repurposing candidate; unlikely but cheap).
+**Cheapest first move — COMPLETED 2026-05-16 as [comp-032](./abcg2-q141k-chaperone-screen-computational.md): GREEN.** AlphaFold Q141K structure + virtual screen of 134 FDA-approved molecules against the Q141K NBD pocket. All four CFTR-corrector positive controls ranked in the top 11% — the FDA-approved drug surface is NOT empty for ABCG2 Q141K chaperone candidates. **Top wet-lab-priority candidates** (ranked by composite score):
 
-**Cross-reference.** [`abcg2-modulators.md`](./abcg2-modulators.md) §"Q141K trafficking rescue".
+1. **Lumacaftor** (Tier 2, CFTR corrector) — strongest mechanistic prior; same ABC superfamily; on-patent for CF (Vertex), navigate patent landscape for off-label 503A
+2. **Tafamidis** (Tier 2, TTR tetramer stabilizer) — aromatic-acid stabilizer at hydrophobic interface; misfolded-state selective
+3. **Ursodiol / UDCA** (**Tier 1**, bile acid chaperone) — broad ER-stress chaperone via ATF6/Hsp70; F508del-CFTR rescue precedent; off-patent USP/NF monograph
+4. **Diflunisal** (**Tier 1, lowest-friction first call** — off-patent NSAID with USP/NF monograph + off-label ATTR-stabilization precedent) — anionic at pH 7.4, strongest electrostatic match for Q141K +1 pocket
+5. **TUDCA** (Tier 2, bile acid chaperone) — CNS-penetrant; F508del-CFTR + ALS-clinical-trial precedent
+
+**Next move:** per-hit cell-based Q141K trafficking-rescue assay on the top 3-5 candidates in a Caco-2 Q141K-transfected line. Compounding-pharmacy partner conversation can lead with diflunisal as the Tier-1 off-patent low-friction first call. (source: abcg2-modulators.md, abcg2-q141k-chaperone-screen-computational.md)
+
+**Cross-reference.** [`abcg2-modulators.md`](./abcg2-modulators.md) §"Pharmacological-chaperone route", [`abcg2-q141k-chaperone-screen-computational.md`](./abcg2-q141k-chaperone-screen-computational.md) (comp-032 full analysis).
 
 ---
 
