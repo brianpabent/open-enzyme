@@ -377,3 +377,9 @@ PDB adds a third gut track with distinct products and compounding effects:
 In the [delivery routes table](./gout-kill-chain-delivery-routes.md), PDB is listed under the PO Microbiome route for the uricase axis. It should be understood as a parallel axis with independent mechanism — not just a delivery variant.
 
 The dual-chassis EcN strategy (uricase + PDB gene cluster) is now the highest-priority heterologous engineering target in the bacterial track, by virtue of the CBT2.0 precedent and the SCFA compounding mechanism.
+
+### Companion intervention: compounded disulfiram (CP6b downstream)
+
+PDB acts *upstream* of NLRP3 — by draining luminal urate and inducing ABCG2 (via butyrate), it reduces the substrate that would have seeded MSU crystals in the first place. It does not, on its own, prevent the inflammatory amplification cascade if crystal formation has already occurred. Compounded oral disulfiram is the natural companion: it covalently modifies GSDMD Cys191 and blocks the pyroptotic pore that releases IL-1β downstream of NLRP3 firing. See [`disulfiram.md`](./disulfiram.md) for the CP6b GSDMD mechanism.
+
+The pairing — engineered PDB EcN + compounded disulfiram — is a **multi-chassis stack** with non-overlapping production, formulation, and regulatory routes. The PDB arm is a live biotherapeutic (engineered EcN); the disulfiram arm is a 503A-compounded small molecule. Indexed at [`chassis-pending-interventions.md` §"Multi-chassis stacks" M1](./chassis-pending-interventions.md). Computational priors: [comp-027](./computational-experiments.md) (disulfiram GSDMD dose window) and [comp-031](./computational-experiments.md) (dual-chassis EcN additive SUA prediction) are queued.

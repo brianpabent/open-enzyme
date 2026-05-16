@@ -191,6 +191,28 @@ When an entry's chassis question resolves, the entry migrates: either to a new d
 
 ---
 
+## Multi-chassis stacks (compositions across existing entries)
+
+Compositions where two interventions on *different* chassis hit complementary chokepoints and stack additively without competing for the same production / delivery resource. These are not chassis-pending entries themselves — both arms have selected chassis — but the *composition* is worth surfacing here because the same chassis-is-downstream-of-chokepoint discipline applies: don't filter a stack as "off-platform" just because one arm doesn't live in the koji track.
+
+### M1. Engineered PDB EcN × compounded disulfiram — urate-disposal upstream + CP6b pyroptotic-exit blockade
+
+**Composition.** Engineered *E. coli* Nissle expressing the 2,8-dioxopurine cluster (CBT2.0 precedent, Li 2025 PMID 41070194, −63% plasma UA in mice) consumes luminal urate and produces butyrate → ABCG2 induction + NLRP3 dampening, *before* MSU crystals seed an inflammasome. Compounded oral disulfiram (250 mg/day; covalently modifies GSDMD Cys191) blocks the pyroptotic pore *after* NLRP3 fires, preventing IL-1β release and the inflammatory amplification cascade. The two arms hit the urate→inflammation axis at opposite ends — one drains the substrate, one closes the exit — and share no production stack, no formulation stack, no regulatory pathway. Disulfiram is sub-AUD dose (see [comp-027 planned analysis](./computational-experiments.md)) so co-administration with ethanol-producing live biotherapeutics is bounded by the strain's residual ethanol output, not by the pill.
+
+**Chokepoint(s) hit.** CP6 urate-disposal (PDB arm, upstream of NLRP3) + CP6b GSDMD pyroptotic-exit (disulfiram arm, downstream of NLRP3). *Pass 3 label correction (2026-05-15): the synthesizer's original framing "both branches of CP6" is tightened — urate-disposal is upstream of CP6 even though one wiki entry loosely labels PDB as CP6.*
+
+**Chassis (both selected, neither pending).** PDB arm → engineered EcN LBP (entry 1 above, chassis option A). Disulfiram arm → compounding pharmacy track ([`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md)). Multi-chassis stack, not a chassis-pending question.
+
+**Why this entry exists here.** The composition was almost not surfaced because neither arm is novel individually — both are documented in their respective canonical pages. The *stack* is what's new, and absent an explicit "compositions" index, multi-chassis stacks risk being lost in the gap between single-modality pages. Per [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md), stacks composed across chassis deserve the same chokepoint-first treatment as single interventions.
+
+**Cheapest first move.** Two parallel comp-NNNs, both queued in [`computational-experiments.md`](./computational-experiments.md):
+- **comp-027** (already planned): disulfiram dose modeling for GSDMD-blockade clinical efficacy vs. AUD-deterrent ceiling. Gates the compounded-pill arm.
+- **comp-031** (new, queued by this entry): dual-chassis EcN additive SUA prediction — PDB cluster from CBT2.0 + PULSE-style uricase co-expression vs. PDB alone vs. uricase alone. Maps predicted additive serum urate reduction; also tests whether ABCG2 induction from PDB-butyrate compounds with the gut-lumen sink.
+
+**Cross-reference.** [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) §"Companion intervention: compounded disulfiram"; [`disulfiram.md`](./disulfiram.md) §"Companion intervention: PDB-engineered EcN"; [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md); [`computational-experiments.md`](./computational-experiments.md) comp-027 + comp-031.
+
+---
+
 ## Pending entries to triage into this list
 
 These are interventions surfaced in the OE corpus that map to chokepoints but haven't yet been formalized as chassis-pending entries. Each warrants a short audit pass to confirm chassis-status:
