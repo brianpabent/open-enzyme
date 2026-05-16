@@ -12,439 +12,438 @@ related:
 
 Tracking index for computational analyses in the Open Enzyme platform. Distinct from [`validation-experiments.md`](./validation-experiments.md) (wet-lab), these use structure prediction, sequence analysis, and simulation to generate evidence-based priors before committing wet-lab resources.
 
-**Convention:** Each analysis lives at `experiments/comp-NNN-<slug>/` at the repo root. The folder contains the script, inputs (with provenance), and raw outputs. This page and a dedicated wiki page carry the interpretation.
+**Convention:** Each analysis lives at `experiments/comp-NNN-<slug>/` at the repo root. The folder contains the script, inputs (with provenance), and raw outputs. This page is a tight index — detailed methodology, full key-finding lists, and Pass-3 review history live in the per-comp interpretive wiki stub (`wiki/<slug>-computational.md`) and the experiment folder.
 
-**Peer review:** Any collaborator can clone the repo, run `python3 analyze.py` in the relevant folder, and reproduce the outputs. The script, inputs, and provenance are all committed. Disagreements should be filed as GitHub issues against the relevant `comp-NNN` folder.
+**Peer review:** Any collaborator can clone the repo, run `python3 analyze.py` in the relevant folder, and reproduce the outputs. Disagreements should be filed as GitHub issues against the relevant `comp-NNN` folder.
 
-**Relationship to wet-lab experiments:** Computational analyses inform priors; they shift confidence before a wet-lab experiment runs, and help interpret results after. They do not replace wet-lab validation. Each analysis notes the wet-lab experiment it informs and whether it functions as a feasibility gate or a confirmation experiment.
+**Relationship to wet-lab experiments:** Computational analyses inform priors; they shift confidence before a wet-lab experiment runs, and help interpret results after. They do not replace wet-lab validation.
 
 ---
 
 ## Analyses
 
-### comp-035, Intra-articular Uricase H₂O₂ Reaction-Diffusion Analysis Across Three Spatial-Coupling Architectures
+### comp-035 — Intra-articular Uricase H₂O₂ Reaction-Diffusion (3 Architectures) — GREEN (2026-05-16)
 
-| Field | Value |
-|---|---|
-| **Question** | For each of three published spatial-coupling architectures (Pickering emulsion / uricase-catalase fusion protein / free co-formulated catalase), does the predicted steady-state [H₂O₂] at the synovial-tissue boundary stay below the derived safe-threshold band (<10 µM presumptively safe, 10-100 µM gray, >100 µM presumptively toxic)? Motivated by [`chassis-pending-interventions.md` §6](./chassis-pending-interventions.md) — the IA uricase chassis-pending entry's central H₂O₂ housekeeping safety question — which a 2026-05-16 lit scan confirmed was missing from every published architecture paper (Liu 2025 PMID 41390400 reports FRET <10 nm but does not compute predicted steady-state H₂O₂ escape flux; similar gap in Lin 2022 PMID 34968071, Liu 2025 *Nat Commun* PMID 40057522, Jung 2017 PMID 28287162). |
-| **Method** | Reaction-diffusion model with Damköhler-number analysis per architecture. Pickering: thin-shell Thiele-modulus solution f_escape = 1/cosh(√Da) with Da = (kcat/Km)_CAT × [CAT_shell] × thickness² / D, plus bulk catalase scavenging from all dispersed droplets in joint volume. Fusion: Smoluchowski first-passage P_capture_intra = r_capture / L_fusion at the colocated catalase site, plus bulk catalase scavenging. Free: well-mixed steady state with bulk catalase first-order destruction. 20,000 Monte Carlo samples per architecture over log-uniform priors on each kinetic, diffusion, geometric, and joint-condition input. Deterministic edge-case sweeps probe architecture robustness. Sensitivity analysis via Spearman rank correlation. Toxicity threshold band derived from Schalkwijk 1986 (PMID 3707631) IA-H₂O₂ damage anchor + in vitro chondrocyte bolus data + endogenous synovial baseline. Stdlib-only Python 3, RNG seed 35. Verification-agent pass per CLAUDE.md Rule 4 in `experiments/comp-035-.../inputs/provenance.md`. |
-| **Verdict** | **All three architectures GREEN under reference conditions.** Pickering (Liu 2025 geometry): median 0.19 µM, p95 1.1 µM. Fusion protein: median 0.034 µM, p95 0.20 µM. Free co-formulated: median 0.19 µM, p95 7.2 µM (max 120 µM under worst-case unfavorable conditions). All cleared the 10 µM presumptive-safe threshold by 5-10× margin under reference dosing. Evidence level: Mechanistic Extrapolation (in silico over published In Vitro and Animal Model anchors). |
-| **Key finding** | (1) **FRET-confirmed <10 nm proximity in Pickering emulsion is NOT what closes the H₂O₂ diffusion gap.** Da_shell median ~5 × 10⁻³ — far below 1; escape fraction ~0.998. The 5 nm catalase shell is too thin for catalase to scavenge in transit. **The Pickering safety mechanism is bulk-phase catalase scavenging from catalase distributed across all dispersed droplets**, mathematically equivalent to free co-formulated at the same total dose. Load-bearing finding for chassis-selection: proximity advertising in architecture papers is not load-bearing for safety; total catalase capacity in the joint is. (2) **Catalase (kcat/Km) is the dominant load-bearing input** across all three architectures (Spearman r = −0.95 to −0.97). Catalase preparation quality, in vivo stability, and proportional dosing are first-order chassis-selection variables. (3) **Architecture choice should be driven by other criteria** — production economics, regulatory pathway, manufacturing complexity, in vivo retention, immunogenicity — not by H₂O₂ diffusion math. (4) **Free co-formulated lands YELLOW at uneven URI:CAT ratio** (URI 100 µM / CAT 1 µM edge case → 31.6 µM). Pickering and fusion are robust because URI:CAT stoichiometry is fixed by architecture. (5) **Fusion protein has slightly better safety margin** (median 0.034 µM vs Pickering 0.19 µM) because ~24% of H₂O₂ is captured intramolecularly via Smoluchowski first-passage before reaching bulk. (6) **Toxicity threshold band (10/100 µM GREEN/YELLOW/RED bounds) is itself a comp-035 contribution** — no published steady-state synovial-tissue H₂O₂ toxicity curve exists; Schalkwijk 1986 reports injected GOx dose only. (7) **Multilingual scan (CNKI / J-STAGE)** corroborates the English-language gap — the reaction-diffusion analysis is missing in Chinese and Japanese literature as well. |
-| **Informs** | [`chassis-pending-interventions.md` §6](./chassis-pending-interventions.md): closes the H₂O₂ housekeeping safety risk as not-prohibitive across all three architectures. The chassis-pending entry can advance toward chassis-selection (production economics, regulatory, formulation engineering are now the load-bearing decision variables). [`gout-kill-chain-delivery-routes.md`](./gout-kill-chain-delivery-routes.md): corroborates the IA uricase + catalase open-territory framing. [`delivery-route-matrix.md`](./delivery-route-matrix.md): resolves the apparent contradiction with the SC uricase H₂O₂ critique — that critique applies at SC depot scale but does not transfer to IA at typical dosing because bulk catalase scavenging dominates at joint scale. [`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question"](./engineered-koji-protocol.md): sister insight — koji's peroxisomal co-localization solves the H₂O₂ problem at ~10 nm scale; for IA delivery, the equivalent is total catalase capacity at the joint scale. **Wet-lab handoff:** Amplex Red microelectrode H₂O₂ measurement in synovial-fluid mimic + dispersed architecture + 0.5 mM urate substrate is the load-bearing next-step assay across all three architectures (~$2-5K). |
-| **Experiment folder** | [`experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/`](../experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) |
-| **Interpretive wiki page** | [`wiki/intra-articular-uricase-h2o2-reaction-diffusion-computational.md`](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) |
-| **Date** | 2026-05-16 |
-| **Status** | Complete (v1, 2026-05-16). Pre-commit grep-verify gate passed with 1 [UNVERIFIED-AS-LITERAL] flag (Liu 2025 interfacial density exponent PMC HTML rendering ambiguity; covered by ±1 order-of-magnitude sensitivity range, not load-bearing for verdict) + 1 [ESTIMATED — DESIGN-SPACE PRIOR] flag (fusion-protein active-site separation; no published crystal structure exists). Multilingual scan executed (CNKI / J-STAGE); no translation cross-check required. v2 follow-ups: (a) tighter toxicity threshold band if empirical steady-state synovial-tissue H₂O₂ curve becomes available; (b) Liu 2025 supplemental fetch to resolve interfacial-density exponent; (c) AlphaFold prediction of a specific uricase-catalase fusion construct to tighten the fusion verdict; (d) direct FRAP measurement of D_H₂O₂ in synovial fluid mimic. |
+**Question:** Across Pickering emulsion / uricase-catalase fusion / free co-formulated catalase, does steady-state [H₂O₂] at the synovial-tissue boundary stay below the <10 µM presumptive-safe threshold?
 
----
+**Verdict:** **All three architectures GREEN under reference conditions.** Pickering median 0.19 µM (p95 1.1); fusion 0.034 µM (p95 0.20); free 0.19 µM (p95 7.2, max 120 worst-case). Free lands YELLOW at uneven URI:CAT ratio.
 
-### comp-034, Lactoferrin Inter-Lobe Linker Redesign Pilot
+**Key findings:**
+- FRET-confirmed <10 nm proximity is NOT what closes the diffusion gap; bulk-phase catalase scavenging dominates at joint scale.
+- Catalase (kcat/Km) is the dominant load-bearing input across all architectures (Spearman r ≈ −0.95). Chassis selection driven by production economics / regulatory / formulation, not diffusion math.
+- Toxicity threshold band (10/100 µM) is itself a comp-035 contribution — no published synovial-tissue H₂O₂ curve exists.
 
-| Field | Value |
-|---|---|
-| **Question** | Can the human lactoferrin inter-lobe linker (UniProt P02788 residues 353–363, mature 334–344, sequence `SEEEVAARRAR`) be redesigned to reduce predicted shio-koji protease cleavage while preserving (a) lobe-lobe spatial geometry from PDB 1B0L, (b) ESM2 fold-quality signal for the reconstructed full protein, and (c) *A. oryzae* codon compatibility? Motivated by comp-005's MODERATE-risk verdict identifying the inter-lobe linker as the single most plausible secondary protease vulnerability beyond the signal peptide. |
-| **Method** | Multi-metric concordance ranking per BioDesignBench discipline ([`etc/autonomous-screening-methodology.md`](./etc/autonomous-screening-methodology.md) §"BioDesignBench evaluation-depth audit"). 60 candidate linker sequences generated (1 WT control + 13 hypothesis-driven hand-designs + 46 sampler-generated). Five orthogonal scoring axes: (1) ESM2 pseudo-pLDDT on full reconstructed protein (fold-quality preserved); (2) predicted shio-koji protease cleavage in linker via `experiments/lib/protease_stability.py` (sum across ALP + NPr + acid_protease, lower better); (3) CAI in *A. oryzae* (back-translation favorability); (4) linker-loop pLDDT (banded [60, 90] — must remain flexible-but-not-disordered); (5) sequence-similarity-to-WT (preserve immunogenicity / regulatory familiarity). Concordance gate: N-of-5 ≥ 3 (GREEN) and N-of-5 = 5 (STRICT). **ProteinMPNN substitution flag:** the brief specified ProteinMPNN as the canonical sampler; the `protein_design_mcp.tools.design_sequence` MCP wrapper loads on this host (CPU-mode install per [`etc/bio-ai-tools.md`](./etc/bio-ai-tools.md) §"First-use install") but the external ProteinMPNN repo at `/opt/ProteinMPNN` is not present (auto-mode classifier blocked the clone); a structure-conditioned biased sampler was substituted transparently. Regenerating with genuine MPNN when installed is a single-command rerun. ESM2 pseudo-pLDDT computed via a fast WT-blend surrogate (full-protein ESM2 on 60 × 710-aa sequences is CPU-prohibitive); top-15 GREEN re-scoring with genuine ESM2 deferred to v2 follow-up. Verification-agent pass per CLAUDE.md Rule 4 in `experiments/comp-034-.../inputs/provenance.md`. |
-| **Verdict** | **15 of 60 candidates pass N-of-5 ≥ 3 (GREEN tier). Zero pass STRICT (5-of-5).** WT linker itself passes 3-of-5 (fails on `linker_cleavage_score` — confirming redesign premise — and on `linker_loop_plddt` because the WT linker is actually a high-pLDDT helix, not a flexible loop). **Primary wet-lab variant `EEEEPAARRAR` (S353E + V357P; mature S334E + V338P; 2-residue change, 82% WT identity) passes 4-of-5**, dropping predicted cleavage from WT 0.407 → 0.290 (~29% reduction). True single-V357P variant `SEEEPAARRAR` (91% WT identity) passes 3-of-5 only (fails loop_pLDDT band by 1.6); secondary wet-lab anchor. Aggressive `EEEEPAAPPAP` (multi-proline, 55% WT identity) passes 4-of-5 as second-line. Evidence level: Mechanistic Extrapolation (in silico only). |
-| **Key finding** | (1) **WT linker is a high-pLDDT structured α-helix (AF mean pLDDT 95.6), not a flexible loop** — corrects the wiki framing that called the inter-lobe linker "short α-helical linker, flexible" (the wiki was right about α-helical, but the flexibility framing was loose). Linker-loop pLDDT is a real design criterion, not a default-pass band. (2) **WT linker presents 16 cleavage sites across the three proteases** (ALP 0.152 + NPr 0.195 + acid 0.060 = 0.407 total cleavage score) — the redesign premise is empirically grounded. (3) **Conservative 2-residue variant `EEEEPAARRAR` (S353E + V357P) is the minimum-perturbation 4-of-5 candidate**; the true single V357P (`SEEEPAARRAR`) is 3-of-5 but is the cleanest regulatory story (91% WT identity). Both deserve wet-lab inclusion. (4) **First concrete use of the protein-design-mcp tool stack** (per [`etc/bio-ai-tools.md`](./etc/bio-ai-tools.md) §BioDesignBench); MCP wrapper loaded successfully, external ProteinMPNN repo absent. Documents the gap and the unblock path. (5) **Verification-agent pass caught and corrected a substantive load-bearing error** — the v1 draft framed `EEEEPAARRAR` as "single V357P" when it actually has 2 substitutions (S353E + V357P). Triggered the addition of `SEEEPAARRAR` (true single V357P) to the candidate pool, which then passed only 3-of-5. The pre-commit grep-verify gate (CLAUDE.md Rule 4) caught this before commit. (6) **Multilingual scan (J-STAGE / CiNii / CNKI / WanFang)** confirmed no prior linker-engineering precedent for hLf-in-A.oryzae expression — comp-034 is novel-ground in the cross-language literature. |
-| **Informs** | [`validation-experiments.md §1.10`](./validation-experiments.md): expands the lactoferrin arm from a single-variant feasibility test into a 4-lane multi-variant plate (WT + EEEEPAARRAR primary conservative + SEEEPAARRAR minimum-change + EEEEPAAPPAP aggressive) at +$1.5-3K gene-synthesis cost; converts §1.10 from binary feasibility into a ranked design study. [`lactoferrin-protease-stability-computational.md`](./lactoferrin-protease-stability-computational.md) (comp-005): adds the linker-specific cleavage analysis comp-005's general analysis flagged as the next step. [`etc/bio-ai-tools.md`](./etc/bio-ai-tools.md): first concrete use case for the protein-design-mcp tool stack; documents the install gap (`/opt/ProteinMPNN`) and unblock path. [`lactoferrin.md`](./lactoferrin.md) §"Open questions" #13: closes the "protease-resistant inter-lobe linker variants" sub-item with a v1 verdict. |
-| **Experiment folder** | [`experiments/comp-034-lactoferrin-linker-redesign/`](../experiments/comp-034-lactoferrin-linker-redesign/) |
-| **Interpretive wiki page** | [`wiki/lactoferrin-linker-redesign-computational.md`](./lactoferrin-linker-redesign-computational.md) |
-| **Date** | 2026-05-16 |
-| **Status** | Complete (pilot v1, 2026-05-16). ProteinMPNN substitution flagged transparently; v2 follow-ups queued: (1) regenerate candidate pool with genuine ProteinMPNN when `/opt/ProteinMPNN` is installed; (2) full ESM2 t33 650M scoring of top-15 GREEN candidates using comp-022 v2-env; (3) full ESMFold structure prediction of top-5 GREEN candidates; (4) IEDB / NetMHCIIpan epitope screen of top-5 candidates before any wet-lab commitment; (5) bovine lactoferrin counterpart analysis (5 of 11 linker positions differ between human and bovine Lf). Verification-agent pass complete (UniProt P02788 entry v268 + FT DOMAIN annotations + WT linker sequence assertion). |
+**Informs:** [chassis-pending-interventions §6](./chassis-pending-interventions.md) · [gout-kill-chain-delivery-routes](./gout-kill-chain-delivery-routes.md) · [delivery-route-matrix](./delivery-route-matrix.md) · [engineered-koji-protocol](./engineered-koji-protocol.md)
+
+**Detail:** [interpretive](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) · [experiments/](../experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) · Complete v1
 
 ---
 
-### comp-029, Combined CP0 Systems Model — Dietary Rosmarinic Acid + Engineered DAF SCR1-4
+### comp-034 — Lactoferrin Inter-Lobe Linker Redesign Pilot — Pilot Complete (2026-05-16)
 
-| Field | Value |
-|---|---|
-| **Question** | Does dietary rosmarinic acid (C3 convertase inhibitor at fluid-phase + gut-luminal scale) combined with engineered DAF SCR1-4 (decay-accelerator at the MSU crystal surface) provide additive CP0 coverage meaningfully larger than either intervention alone, with explicit confidence bounds over published priors? Composes [comp-018](./upstream-complement-modulator-sweep-computational.md) + [comp-020](./upstream-complement-verification-rerun-computational.md) (RA C3 convertase IC50 ~34 μM with 44× assay-format spread) with [comp-012](./daf-cd55-scr14-truncated-computational.md) (DAF SCR1-4 engineering feasibility) to test the [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) combined-strategy hypothesis surfaced 2026-05-15. |
-| **Method** | Two orthogonal Monte Carlo models per BioDesignBench discipline ([`etc/autonomous-screening-methodology.md`](./etc/autonomous-screening-methodology.md) §"BioDesignBench evaluation-depth audit"). **Model 1 — RA inhibition:** Hill function (n=1) with IC50 log-uniform [5 μM, 180 μM] (operative-mechanism range; excludes 1500 μM C5-convertase-direct as mechanistically wrong step). Two RA exposure regimes: fluid-phase free systemic 5-100 nM (Baba 2004 Cmax anchor) and gut-luminal 50-1100 μM (Kang 2021 calculated intestinal concentration after 200 mg oral). **Model 2 — DAF decay-acceleration:** steady-state surface convertase model with intrinsic C4b2a t₁/₂ = 7.5 min (Fischer 1981 PMC2186394), max acceleration cap 20× (Pangburn 1986 / Medof 1984 membrane-DAF ceiling), DAF concentration log-uniform 10-500 nM, three explicit MSU-surface accessibility priors α ∈ {0.05, 0.20, 0.80}. **Combined:** independent multiplicative composition f_combined = 1 - (1-f_RA)(1-f_DAF), with a coupled-scenario sensitivity check. 50,000 Monte Carlo draws per scenario; RNG seed 29; stdlib-only Python 3. Decision rule: GREEN if combined median ≥ 1.5× the better singleton AND 95% CI separated; YELLOW if combined CI overlaps either singleton; RED if interaction blocker. Pre-commit grep-verify gate per CLAUDE.md Rule 4 in `experiments/comp-029-.../inputs/provenance.md`. |
-| **Verdict** | **YELLOW** at all three accessibility priors. Combined median is only 1.08–1.10× the better singleton (well below the 1.5× GREEN threshold) and the combined 95% CI overlaps both singleton 95% CIs. **Both arms individually saturate** at their operative concentrations (RA gut-luminal median inhibition 0.886; DAF α=0.20 median 0.815), so multiplicative composition has structurally little room to grow over the better singleton. **The RED path is closed** — no interaction blocker found (no published evidence RA inactivates SCR/CCP proteins; DAF is comp-012-LOW protease risk under RA-bioavailable conditions; the two mechanisms operate on different C3b states at different time points). Evidence level: Mechanistic Extrapolation. |
-| **Key finding** | (1) **Both interventions reach the geometric scales the §9.7 hypothesis claimed**, but each saturates individually under current input uncertainty. The combined effect is **probably** larger than either alone — the issue is statistical separability, not mechanism. (2) **RA's CP0 leverage comes from the gut-luminal transient, not systemic plasma.** Baba 2004 free plasma Cmax (20 nM) is ~1700× below the central IC50 (34 μM), giving median 0.0007 inhibition. Gut-luminal 252-1100 μM (Kang 2021) does reach mechanistically active concentrations. **Sharpens the wet-lab framing:** the correct RA readout is a gut-luminal complement-activation assay, not a plasma-based one. (3) **The dominant uncertainty driver is DAF SCR1-4 MSU-surface accessibility** (the load-bearing wet-lab unknown per comp-012). The Sahu 1999 IC50 spread and gut-luminal RA exposure are the secondary drivers. (4) **Coupled-scenario sensitivity** (RA reducing upstream substrate available to DAF, modest super-additivity assumption) still does not deliver GREEN under current prior uncertainty. (5) **The combined-strategy thesis is not refuted — it's gated on reducing the underlying prior uncertainty before committing wet-lab spend on a co-administration arm.** |
-| **Informs** | [`complement-c5a-gout.md §9.7`](./complement-c5a-gout.md): provides the computational gate output the §9.7 hypothesis was waiting for; the §9.7 narrative is honored (Pass 3 softening discipline preserved; combined-coverage claim was correctly framed as testable hypothesis, not asserted synergy). [`validation-experiments.md §1.25`](./validation-experiments.md): does NOT change the §1.25 design; flags an OPTIONAL rosmarinic-acid co-treatment arm GATED on §1.25's own functional readout showing α ≥ 0.5 (mid-to-high MSU-surface engagement). If §1.25 returns α ≥ 0.5, comp-029 re-runs to GREEN and the co-treatment arm is justified at marginal cost (one additional plate condition, same ELISA readout). [`hypotheses/H05-daf-scr14-cp0-thesis.md`](./hypotheses/H05-daf-scr14-cp0-thesis.md): clarifies that the H05 thesis's load-bearing unknown (MSU-surface engagement geometry) is also the load-bearing unknown for the combined-strategy thesis — one wet-lab measurement resolves both. |
-| **Experiment folder** | [`experiments/comp-029-combined-cp0-systems-model/`](../experiments/comp-029-combined-cp0-systems-model/) |
-| **Interpretive wiki page** | [`wiki/combined-cp0-systems-model-computational.md`](./combined-cp0-systems-model-computational.md) |
-| **Date** | 2026-05-16 |
-| **Status** | Complete (v1, 2026-05-16). Six load-bearing values rely on review-paper / abstract-tier citations (Sahu 1999 IC50; Englberger 1988 lower-bound IC50; Wang 2017 rat bioavailability; Baba 2004 human Cmax; Fischer 1981 C4b2a half-life; Medof 1984 DAF effective threshold) — primary-paper full text not in Paperclip corpus (pre-PMC era). All six are individually NOT load-bearing for the verdict — sensitivity analysis shows ±2× variation in any single one does not shift YELLOW. Multilingual CNKI / Chinese-language search executed; corroborates English-language picture, no new quantitative anchor. v2 follow-ups deferred until §1.25 wet-lab data lands (the DAF accessibility α measurement is the load-bearing input). |
+**Question:** Can the hLf inter-lobe linker (P02788 aa 353–363, `SEEEVAARRAR`) be redesigned to reduce predicted shio-koji protease cleavage while preserving fold quality, codon compatibility, and loop flexibility?
 
----
+**Verdict:** **15 of 60 candidates pass N-of-5 ≥ 3 (GREEN). Zero pass STRICT 5-of-5.** Primary wet-lab variant `EEEEPAARRAR` (S353E + V357P, 82% WT identity) passes 4-of-5; cleavage 0.407 → 0.290 (~29% reduction). Secondary: true single-V357P `SEEEPAARRAR` (91% WT identity, 3-of-5).
 
-### comp-030, ClockBase-Style Combinatorial Ranking of A. oryzae DAF/CD55 SCR1-4 Expression Cassettes
+**Key findings:**
+- WT linker is a high-pLDDT structured α-helix (AF mean 95.6), not flexible loop — redesign premise empirically grounded by 16 cleavage sites.
+- ProteinMPNN MCP wrapper loads but `/opt/ProteinMPNN` repo absent; substitute biased sampler used transparently; single-command rerun when installed.
+- First concrete use of protein-design-mcp tool stack; documents install gap.
 
-| Field | Value |
-|---|---|
-| **Question** | Across the *A. oryzae* DAF/CD55 SCR1-4 expression cassette design space (6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations), which cassettes survive a multi-model concordance gate and warrant promotion to the [§1.25 single-cassette wet-lab feasibility test](./validation-experiments.md)? Two sub-questions: (1) Does the §1.25 baseline architecture (PamyB + amyB SP + direct secretion) survive, or does the exhaustive ranking surface a better alternative? (2) Does the ESM2 pLDDT distribution corroborate the α = 0.3–0.6 prediction for CCP/SCR fold from [`chaperone-orthogonal-stacking.md §3.5.2`](./chaperone-orthogonal-stacking.md)? |
-| **Method** | Five-model composite scoring with N-of-5 ≥ 4 (80%) concordance gate. Both comp-022 v1-deferred models baked in from the start: (1) ViennaRNA 2.7.2 real MFE on 150-nt 5' window per (codon, SP) pair (120 unique pairs); (2) ESM2 t33 650M pseudo-pLDDT on all 720 protein-distinct candidate sequences (ESMFold v1 authorized fallback; openfold blocked; same model used in comp-022 v2). Models 1-4 (CAI + ViennaRNA MFE + architecture-adjusted chaperone load + promoter × SP prior) computed per comp-022 methodology with DAF SCR1-4 target adaptations. Target: UniProt P08174 aa 35–285 (251 aa, 8 disulfide bonds, 16 Cys — verified against UniProt DISULFID annotations). α central estimate 0.45 (CCP/SCR range 0.3–0.6 per Schmidt 2010 PMC2806952). Verification-agent pass per CLAUDE.md Rule 4 in `experiments/comp-030-.../provenance.md`. |
-| **Verdict** | **§1.25 baseline survives; one target-specific refinement.** Top cluster: PamyB + SPamyB + **max-CAI codon variant** (NOT 5'-softened — DAF's first-30 aa generate favorable 5' MFE under max-CAI without softening) + direct-secretion scaffold (His6 tag preferred for characterization) + no propeptide. 40 candidates pass N-of-5 = 5 (all 5 models top quintile; 0.09% of space); 632 pass N-of-5 ≥ 4. §1.25 baseline (PamyB + amyB SP + direct + no propeptide, any codon variant) has 60 candidates in the shortlist. **α-coefficient CORROBORATED:** ESM2 pseudo-pLDDT mean = 88.8, std = 0.5, range [87.6, 89.8]; 100% of 720 protein-distinct candidates above pseudo-pLDDT 80. Evidence level: Mechanistic Extrapolation (in silico only). |
-| **Key finding** | (1) **§1.25 baseline confirmed; single gene-synthesis-time refinement:** max-CAI codon optimization (not 5'-softened; DAF's sequence is target-specific — the first 30 amino acids happen to generate favorable 5' mRNA structure under max-CAI due to the A. oryzae codon table for Asp/Cys/Gly/Leu residues). (2) **Glucoamylase-KEX2 fusion architecture is wrong for CCP/SCR fold targets.** glaA-full fusion adds ~10.2 effective PDI load on top of DAF's intrinsic 3.6, giving 13.8 total — 3.8× the reference ceiling vs. direct secretion's 3.6. (3) **α-coefficient check is the headline finding.** The ESM2 pLDDT distribution is the narrowest and highest seen for any OE target: 100% of candidates in the [87.6, 89.8] range, std = 0.5. This is the in silico fingerprint of a structurally sequence-robust fold — consistent with CCP/SCR pre-organized 2-disulfide β-sandwich modules that fold cooperatively and briefly. The α = 0.3–0.6 prediction is corroborated. (4) **Target-specificity of cassette design:** the same ClockBase framework produces different codon-optimization recommendations for different targets (5'-softened for uricase; max-CAI for DAF SCR1-4). Running the framework on each new target before gene synthesis is the correct discipline. |
-| **Informs** | [`validation-experiments.md §1.25`](./validation-experiments.md): refines cassette design (max-CAI codon variant + His6 C-terminal tag + no propeptide) at zero marginal cost; no change to §1.25 cost or timeline. [`chaperone-orthogonal-stacking.md §3.5.2`](./chaperone-orthogonal-stacking.md): α-coefficient check corroborates α = 0.3–0.6 for CCP/SCR in silico; raises prior that §1.25 wet-lab titer will exceed §1.9 LF titer per cassette. [`hypotheses/H05-daf-scr14-cp0-thesis.md`](./hypotheses/H05-daf-scr14-cp0-thesis.md): corroborating evidence on the folding/expression feasibility question (H05's second named unknown). |
-| **Experiment folder** | [`experiments/comp-030-daf-cassette-ranking/`](../experiments/comp-030-daf-cassette-ranking/) |
-| **Interpretive wiki page** | [`wiki/daf-cd55-scr14-cassette-ranking-computational.md`](./daf-cd55-scr14-cassette-ranking-computational.md) |
-| **Date** | 2026-05-15 |
-| **Status** | Complete (v1, 2026-05-15). Both comp-022 v1-deferred models baked in from start (no proxy fallback for MFE; ESM2 pseudo-pLDDT for fold-quality). v2 follow-up: real ESMFold pLDDT on 40-cassette strict tier when openfold install unblocked. Verification-agent pass complete. |
+**Informs:** [validation-experiments §1.10](./validation-experiments.md) · [lactoferrin-protease-stability-computational](./lactoferrin-protease-stability-computational.md) · [etc/bio-ai-tools](./etc/bio-ai-tools.md) · [lactoferrin](./lactoferrin.md)
+
+**Detail:** [interpretive](./lactoferrin-linker-redesign-computational.md) · [experiments/](../experiments/comp-034-lactoferrin-linker-redesign/) · Complete pilot v1 (v2: real ProteinMPNN + full ESM2 + epitope screen queued)
 
 ---
 
-### comp-022, ClockBase-Style Combinatorial Ranking of A. oryzae Uricase Expression Cassettes
+### comp-029 — Combined CP0 Systems Model (RA + DAF SCR1-4) — YELLOW (2026-05-16)
 
-| Field | Value |
-|---|---|
-| **Question** | Across the *A. oryzae* uricase expression cassette design space (6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations), which cassettes survive a multi-model concordance gate and warrant promotion to the [§1.9 dual-cassette wet-lab feasibility test](./validation-experiments.md)? Instantiates the ClockBase exhaustive-search-then-rank pattern documented in [`etc/autonomous-screening-methodology.md`](./etc/autonomous-screening-methodology.md). |
-| **Method** | Four-model composite scoring with N-of-4 concordance gate. Tier 1 (cheap, per-codon-variant): Codon Adaptation Index per Sharp & Li 1987 (PMID 3547335) + mRNA 5' secondary-structure proxy per Kudla 2009 (PMID 19359587) + rare-codon-cluster penalty. Tier 2 (chaperone-load, per-scaffold): architecture-adjusted PDI load per [`chaperone-orthogonal-stacking.md`](./chaperone-orthogonal-stacking.md) §3.5 formula. Tier 4 (priors): promoter strength × SP secretion-efficiency literature multiplier. Tier 3 (fold-quality / ESMFold pLDDT) **deferred to wet-lab** (no GPU access from subagent environment; brief authorized this v1 simplification). Concordance threshold: top quintile per model, N-of-4 ≥ 3 (75%) for shortlist promotion; chosen a priori from ClockBase 30/40 precedent (no retrospective calibration possible since comp-001..comp-014 were not cassette-ranking experiments). Verification-agent pass per CLAUDE.md Rule 4 in `experiments/comp-022-.../provenance.md`. |
-| **Verdict** | **The §1.9 architecture stands; refinements at the gene-synthesis layer.** Top-cluster: PamyB + amyB signal peptide (with or without 6-aa pro-region) + 5'-softened codon variant + direct-secretion + PTS1-blocking C-terminal tag (3×Ala or His6) + N191Q glycosylation-sequon ablation + no propeptide. 195 of 43,200 candidates (0.45%) pass N-of-4 = 4 (all four models in top quintile); 2,421 (5.6%) pass N-of-4 ≥ 3, collapsing to 501 unique (promoter, sp, codon, scaffold) combos after removing propeptide/N-glyc modifier degeneracy. Evidence level: Mechanistic Extrapolation (in silico only). |
-| **Key finding** | (1) **Design-space size matches brief estimate exactly: 43,200.** First comp-NNN to enumerate at full cardinality rather than examining a single candidate. (2) **Three gene-synthesis-time refinements to the existing §1.9 design,** each at zero marginal cost: 5'-softened codon optimization (low-GC first 30 codons + max-CAI thereafter, beats pure max-CAI on N-of-4 concordance). PTS1-blocking C-terminal tag (3×Ala or His6) to address the comp-010 routing risk at the cassette-design layer rather than waiting for §1.9 ELISA detection; N191Q glycosylation-sequon ablation to remove residual chaperone-pathway load. (3) **Glucoamylase-KEX2 fusion architecture (Ward 1995) is the wrong scaffold for uricase** (zero intrinsic disulfides + zero glycosylation = no benefit from a fusion carrier, plus the carrier imposes 10-25× the chaperone load). Confirms comp-010's intuition that uricase wants direct secretion and lactoferrin wants the fusion. (4) **Methodology validation:** the comp-022 framework was tested on a target where the right answer was already known from manual design (comp-010); the framework converges on that answer, providing reproducible-artifact justification before the same framework is applied to DAF SCR1-4 (§1.25) or engineered C1-INH where the right answer is not yet obvious. |
-| **Informs** | [`validation-experiments.md`](./validation-experiments.md) §1.9: refines the uricase cassette design (codon variant, C-terminal tag, glycosylation-sequon state) within the existing dual-cassette architecture; no change to §1.9 cost ($3-5K) or timeline (8-12 weeks). [`cassette-compatibility-computational.md`](./cassette-compatibility-computational.md) (comp-010): extends the single-candidate cassette compatibility analysis to a full design-space ranking; confirms comp-010's architectural intuition. [`koji-endgame-strain.md`](./koji-endgame-strain.md) §3.4: comp-022 promoter ranking favors dual-PamyB design as the single-promoter optimum, but the §1.9 current dual-PTEF1+PamyB design is justified by the orthogonal-promoter rationale (single-payload ranking does not override the dual-cassette competition consideration). [`etc/autonomous-screening-methodology.md`](./etc/autonomous-screening-methodology.md): operational instantiation of the ClockBase exhaustive-search-then-rank pattern at run scope. |
-| **Experiment folder** | [`experiments/comp-022-clockbase-uricase-cassette-ranking/`](../experiments/comp-022-clockbase-uricase-cassette-ranking/) |
-| **Interpretive wiki page** | [`wiki/uricase-cassette-ranking-computational.md`](./uricase-cassette-ranking-computational.md) |
-| **Date** | 2026-05-14 |
-| **Status** | **v2 complete (2026-05-14):** ESM2 pseudo-pLDDT retrofit on 106 protein-distinct sequences (ESMFold v1 fallback; openfold install blocked, ESM2 pseudo-likelihood is the brief-authorized fold-quality proxy per Verkuil 2022 / Hsu 2022), ViennaRNA 2.7.2 MFE retrofit on 52 codon × SP pairs, N-of-5 ≥ 4 concordance gate produces 71 cassettes for §1.9 wet-lab promotion (v1's top cluster, PamyB + amyB-SP + 5'-softened + direct + PTS1-blk + N191Q, survives 4/4 = 100%). Spearman correlation v1 GC-clamp proxy vs real ViennaRNA MFE = 0.241 (weakly correlated; v1 proxy was noisy on the mRNA axis, materially shifts rank for 430 of 501 cassettes). 4 cassettes pass N-of-5 = 5 strict gate (all 5 models in top quintile). v2 details in [`wiki/uricase-cassette-ranking-computational.md`](./uricase-cassette-ranking-computational.md) §9. v1 fold-quality Tier 3 was deferred; v2 closes that gap with the explicitly-authorized ESM2 fallback. **v2.5 deferred (2026-05-14)** until §1.9 wet-lab data arrives (real yield data will dominate further in silico refinement) or a fresh design problem motivates the same machinery; v2 output is sufficient to commit gene-synthesis dollars and v1's top cluster survives v2 at 100%, so the marginal value of stricter fold-quality scoring on the same cohort is bounded. Documented unblock path: Python 3.12 venv + HuggingFace `facebook/esmfold_v1` via `transformers` (skips openfold dependency entirely). |
+**Question:** Does dietary rosmarinic acid (C3 convertase) combined with engineered DAF SCR1-4 (decay-accelerator) provide additive CP0 coverage meaningfully larger than either alone?
 
----
+**Verdict:** **YELLOW at all three DAF accessibility priors.** Combined median 1.08–1.10× the better singleton (below 1.5× GREEN threshold); 95% CI overlaps both singletons. Both arms saturate individually. RED path closed (no interaction blocker).
 
-### comp-023; cns1+cns2 Cordycepin Cassette Metabolic Burden (FBA on iWV1314)
+**Key findings:**
+- RA's CP0 leverage is gut-luminal (Kang 2021 252–1100 µM), not systemic plasma (Baba 2004 Cmax ~20 nM, 1700× below IC50). Correct readout is gut-luminal complement-activation assay.
+- Dominant uncertainty driver: DAF SCR1-4 MSU-surface accessibility α (the §1.25 load-bearing wet-lab unknown).
+- Combined-strategy thesis not refuted; gated on reducing prior uncertainty before co-administration wet-lab spend.
 
-| Field | Value |
-|---|---|
-| **Question** | Does adding the bacterial cns1+cns2 cordycepin biosynthesis pathway (Jeennor 2023 PMID 38071331, 564 mg/L/day in *A. oryzae*) on top of the dual uricase + lactoferrin cassette impose a prohibitive metabolic burden? Closes the proteome-burden gap that [`chaperone-orthogonal-stacking.md`](./chaperone-orthogonal-stacking.md) line 238 names as out-of-scope ("framework scores ER folding-machinery competition... does NOT track generic proteome burden imposed by cytosolic enzymes"). |
-| **Method** | Public-GEM flux-balance analysis (not pcSecKoji; v1 simplification owned in Limitations). Loaded Vongsangnak 2008 iWV1314 from BioModels MODEL1507180056 (2,361 reactions / 1,104 metabolites / 1,346 genes / 4 compartments) via cobrapy 0.31.1. Configured glucose-minimal media (closed all 81 default uptake-source reactions + 18 reverse-direction excretion reactions; re-opened only D-glucose at 10 mmol gDW⁻¹ h⁻¹ + NH₃ + O₂ + P + S). Added cassette demands as fixed lower-bound flux constraints: uricase + lactoferrin as amino-acid-drain proxies (translation + ER folding ATP cost), cns1+cns2 net reaction (adenosine + ATP + NADPH → cordycepin + ADP + Pi + NADP⁺ + H⁺) per Yan 2024 *Front Chem Eng* review. Added kojic acid + ergothioneine biosynthesis pathways manually (not in iWV1314) per published net stoichiometry. Five primary scenarios (WT, dual, +cns1-cns2, +carnS+panD, +panD only) plus five stress-test scenarios sweeping cordycepin demand 10× to 100,000× the Jeennor titer. Verdict via FBA: growth rate (r1897) + max kojic flux + max EGT flux at ≥99% scenario biomass. Pre-commit grep-verify gate per [CLAUDE.md Rule 4](../CLAUDE.md). |
-| **Verdict** | **GREEN; cns1+cns2 cordycepin arm is metabolic-burden-feasible at the Jeennor 2023 empirical titer.** Growth penalty +0.02% vs WT; kojic acid + EGT yield headroom 100% of dual-cassette baseline. Cordycepin demand at 564 mg/L/d consumes ~0.02% of cellular carbon flux. FBA breakpoint where cordycepin demand materially competes with growth is ~1,000× the empirical titer (~564 g/L/d); three orders of magnitude beyond achievable submerged fungal fermentation. Carnosine + panD third-cassette alternatives also GREEN. |
-| **Key finding** | (1) **The Jeennor 564 mg/L/d titer is three orders of magnitude below the metabolic-burden breakpoint**; cordycepin cassette is effectively free on the carbon + ATP + NADPH axes. (2) **Cordycepin biosynthesis taps a low-cost intracellular adenosine pool**; the FBA flux distribution shows adenosine supplied via S-adenosylhomocysteinase (r857: SAH → adenosine + homocysteine, ~1.78 mmol gDW⁻¹ h⁻¹) rather than de novo purine synthesis; cordycepin export *substitutes* for the ATP-wasting adenosine kinase step (r1128) the cell would otherwise run. (3) **Kojic acid + ergothioneine pathways are off the cordycepin substrate axis entirely**; kojic acid from glucose, EGT from histidine + SAM + cysteine; none compete with adenosine. (4) **Methodology limitation acknowledged:** plain FBA does NOT capture PDI/chaperone proteome saturation effects; the [chaperone-orthogonal-stacking framework](./chaperone-orthogonal-stacking.md) is the load-bearing tool for that axis; the two analyses cover orthogonal burden axes (cytosolic vs ER). |
-| **Informs** | [`chaperone-orthogonal-stacking.md`](./chaperone-orthogonal-stacking.md); closes the proteome-burden gap flagged line 238 as out-of-scope; the cns1+cns2 row's "PDI load = 0" verdict is now backed by an orthogonal burden-axis analysis. [`koji-endgame-strain.md`](./koji-endgame-strain.md) §1.9; extended design's cordycepin arm gets a green-light on the burden axis (subject to three open follow-up gates: ADA competition, dynamic-FBA validation, multi-cassette induction interference). [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md); provides the in silico pre-feasibility evidence for the koji-engineered cordycepin route alongside the cultivation-track *Cordyceps* fruiting body route. [`validation-experiments.md` §1.9](./validation-experiments.md); informs the decision to add a cordycepin third-cassette arm to the §1.9 protocol (estimated +$1,500-2,500 cost; +2-3 weeks timeline). [`cassette-compatibility-computational.md`](./cassette-compatibility-computational.md) (comp-010); orthogonal complement; comp-010 covers cassette-design integration risk, comp-023 covers metabolic burden, both must pass for the triple stack. |
-| **Experiment folder** | [`experiments/comp-023-cns1-cns2-metabolic-burden/`](../experiments/comp-023-cns1-cns2-metabolic-burden/) |
-| **Interpretive wiki page** | [`wiki/cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) |
-| **Date** | 2026-05-14 |
-| **Status** | Complete (v1; plain-FBA-without-pcSec simplification owned in Limitations). Verification-agent pass complete (per `experiments/comp-023-.../inputs/provenance.md`). **v2 follow-ups queued:** `comp-023 v2` (dynamic FBA validation across all 5 scenarios, replaces v1 static FBA), `comp-025` (ADA pool competition for cns1 substrate, kinetic-competition methodology), `comp-026` (multi-cassette induction interference, regulatory-architecture question). pcSec-class proteome-constrained *A. oryzae* model proposed as new §Infrastructure entry (tool-build, enables future SECRETED-third-cassette burden analyses such as DAF SCR1-4 + engineered C1-INH + complestatin NRPS). CNKI / WanFang Chinese-language deep dive on cns1+cns2 cofactor mechanism (NADH-vs-NADPH refinement) bundled into the comp-023 v2 brief. |
+**Informs:** [complement-c5a-gout §9.7](./complement-c5a-gout.md) · [validation-experiments §1.25](./validation-experiments.md) (optional co-treatment arm gated on α ≥ 0.5) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
+
+**Detail:** [interpretive](./combined-cp0-systems-model-computational.md) · [experiments/](../experiments/comp-029-combined-cp0-systems-model/) · Complete v1
 
 ---
 
-### comp-018; Upstream Complement Modulator Sweep
+### comp-030 — ClockBase Combinatorial Ranking of A. oryzae DAF SCR1-4 Cassettes — §1.25 baseline confirmed (2026-05-15)
 
-| Field | Value |
-|---|---|
-| **Question** | Across all compound classes (fungal, plant, bacterial, marine, dietary, FDA-approved drug, classical TCM/Kampo/Ayurveda), which compounds have documented activity at upstream complement cascade nodes proximal to C5a generation, and which are gout-platform-relevant? |
-| **Method** | PubMed MCP depth pass + Paperclip MCP full-text grep (PMC/arXiv/bioRxiv/medRxiv only; `map` operator forbidden per `memory/feedback_paperclip_map_unreliable.md`). 16 upstream nodes (C1q, MBL, MASP-2, C3 convertase CP/LP/AP, Factor B/D/H, properdin, C1-INH, DAF/CD55, CD59, C5, C5aR1) targeted. Per-compound ChEMBL coverage check. Tier classification (TIER_1 strong + in vivo + dietary; TIER_2 in vitro IC50 anchored; TIER_3 weak/abstract-only). Pre-commit grep-verify gate per CLAUDE.md Rule 4. CNKI/WanFang/J-STAGE direct multilingual searches deferred to Phase 2 with two-model translation cross-check. |
-| **Verdict** | **Direct natural-product C5aR1 antagonists empty (re-confirms comp-014 + §1.21).** Moving one node upstream to C3 convertase uncovers a substantial natural-product literature anchored by **rosmarinic acid** (rosemary, lemon balm, spearmint). C3-convertase IC50 5-10 µM optimal (Englberger 1988 PMID 3198307), three independent in vivo precedents (rat CVF lung injury 10 mg/kg, mouse + rat ADPKD), FDA-GRAS source plants, dietary-tier viable. **TIER 1 anchor: rosmarinic acid.** TIER 2: luteolin (CP+AP, triple-mechanism with comp-013 XO + URAT1), tiliroside, Bupleurum polysaccharides (lectin pathway), falcarindiol, ganoderic acid Sz, ergosterol, quercetin (microbiome-deglycosylated active), dicaffeoylquinic acid, K-76 / complestatin (engineering-relevant). |
-| **Key finding** | (1) **The chokepoint-hacker move worked**; Brian's "if the answer is rosemary, I'll grow rosemary" framing was load-bearing. Rosmarinic acid is the most well-characterized natural-product upstream-complement modulator in the literature. (2) **Luteolin triple-convergence**; XO + URAT1 + C3 convertase across CP+AP. Highest-leverage single dietary compound the platform has surfaced. (3) **comp-014 β-glucan structure-dependence mechanistically explained**; Ganoderma contains both lectin-pathway-activating glucans AND CP-convertase-inhibiting triterpenes/sterols. Argues for fraction-specific (triterpene-enriched) reishi preparations. (4) **Engineered C1-INH parallel thread proposed**; near-twin to H05 DAF SCR1-4 (soluble human complement regulator, FDA-approved precedent, koji/LBP heterologous expression candidate). (5) **ChEMBL anticomplement coverage 0/32 = 0%**; natural-product hemolytic-assay anticomplement was never systematically curated; same gap pattern as comp-013, worse here. |
-| **Informs** | [`complement-c5a-gout.md`](./complement-c5a-gout.md). CP0 status update: dietary-modulator axis newly active alongside engineered-DAF axis. [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md); proposed new row "upstream complement modulator (dietary / small-molecule)". [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md); luteolin third-mechanism update. [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md). Ganoderma triterpene anticomplement adds to comp-014. [`hypotheses/H05-daf-scr14-cp0-thesis.md`](./hypotheses/H05-daf-scr14-cp0-thesis.md); engineering coordination + C1-INH parallel thread. [`gout-action-guide.md`](./gout-action-guide.md); luteolin-rich foods + rosmarinic acid sources flagged as future research. |
-| **Experiment folder** | [`experiments/comp-018-upstream-complement-modulator-sweep/`](../experiments/comp-018-upstream-complement-modulator-sweep/) |
-| **Interpretive wiki page** | [`wiki/upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) |
-| **Date** | 2026-05-08 |
-| **Status** | Phase 1 complete. Phase 2 (CNKI/WanFang/J-STAGE multilingual ingestion + translation cross-check; engineered C1-INH protease stability comp-NNN; complestatin BGC LBP heterologous expression scope) queued. **Note:** comp-018's brief inadvertently included user-framing language that biased headline-promotion toward rosmarinic acid; brief-scrubbed verification re-run as comp-020 below produced different ranking. See `operations/comp-018-vs-comp-020-retrospective.md`. |
+**Question:** Across the DAF SCR1-4 cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate; does the §1.25 baseline (PamyB + amyB SP + direct) survive, and does the ESM2 pLDDT distribution corroborate α = 0.3–0.6 for CCP/SCR fold?
 
----
+**Verdict:** **§1.25 baseline survives; one target-specific refinement (max-CAI codon, NOT 5'-softened).** 40 candidates pass N-of-5 = 5 (0.09%); 632 pass N-of-5 ≥ 4. α-coefficient CORROBORATED: ESM2 pseudo-pLDDT mean 88.8, std 0.5, 100% above 80.
 
-### comp-020; Upstream Complement Modulator Sweep (Brief-Scrubbed Verification Re-Run)
+**Key findings:**
+- Codon optimization is target-specific: 5'-softened for uricase (comp-022); max-CAI for DAF SCR1-4. Run the framework on each new target.
+- Glucoamylase-KEX2 fusion is wrong for CCP/SCR (adds ~10 PDI load on top of intrinsic 3.6).
+- ESM2 pLDDT distribution is the narrowest/highest seen for any OE target — in silico fingerprint of cooperatively-folding 2-disulfide β-sandwich.
 
-| Field | Value |
-|---|---|
-| **Question** | Across the upstream complement cascade (C1q / MBL-MASP-2 / C3 tickover; convertases; soluble factors B/D/H/I/properdin/clusterin; membrane regulators DAF/CD59/CR1; residual C5/C5aR1), which compounds (any class; fungal, plant, bacterial, marine, dietary, FDA-approved, TCM/Kampo/Ayurvedic) have documented direct modulator activity in matched assay format, anchored only to target nodes (no compound names supplied, no prior comp-018 findings consulted)? |
-| **Method** | Paperclip MCP literature mining (PMC + bioRxiv full-text + abstracts; `search`/`grep`/`cat` only; `map` operator NOT used per `memory/feedback_paperclip_map_unreliable.md`); per-target anchor queries for 13 named upstream complement nodes; WebSearch supplements for primary-paper PubMed records not in Paperclip corpus; ChEMBL coverage spot-check via PubChem cross-reference. Pre-commit grep-verification gate per CLAUDE.md Rule 4; every load-bearing IC50/CH50/AP50 value verified against primary-paper full text before being written. Multilingual default (CLAUDE.md §Global-multilingual); substantively executed for Chinese-author/English-journal scans; CNKI/WanFang/J-STAGE direct queries partially executed (Phase 2 follow-up flagged). |
-| **Verdict** | **NO single headline compound**; three classes occupy distinct top-tier mechanistic positions and are within ~5–20× of each other on respective lead metrics. **Top tier per node:** (1) C1q-cascade; Helicteres benzofuran lignans machicendonal + (7S,8R)-dihydrodehydrodiconiferyl alcohol (CH50 9+40 μM, single paper, replication needed) and luteolin (CH50 190 μM, multi-mechanism candidate already in corpus); (2) MASP-2/LP; heparin oligosaccharides (octa- 3 / hexa- 4 / tetra- 21 μg/mL LP-selective) and Bupleurum chinense polysaccharide (LP IC50 98 μg/mL); (3) C3 convertase; rosmarinic acid (C3b covalent IC50 34 μM, 30+ year primary-literature record across 3 papers, dietary-tier accessible, mechanistically distinctive); (4) Marine sulfated polysaccharides; ANW + SC + SJW-3 within 3× of each other at 1–3 μg/mL. **Coverage gaps surfaced:** Factor H *upregulators* (empty natural-product class), CD55/CD59/CR1 *upregulators* (engineering-thread territory), direct fungal natural-product upstream complement modulators (independently extends comp-014's C5aR1 finding to all upstream nodes), bacterial-metabolite direct upstream modulators. |
-| **Key finding** | **Three independent computational scans now agree** (comp-013 TCM, comp-014 fungi, comp-020 upstream complement) that ChEMBL is structurally biased; coverage rate ~20% across surveyed natural-product / polysaccharide / TCM phytochemical compounds, vs. typical >70% for kinases/GPCRs. Primary-literature mining (Paperclip / PubMed / CNKI / J-STAGE) is the load-bearing tool, not ChEMBL. **Two assay-format spreads documented:** rosmarinic acid 44× spread (C3b 34 μM → C5 convertase 1500 μM; primary mechanism is upstream of C5 convertase) and heparin 50× spread (LP 2 → AP 76 μg/mL; pathway-stratified assays use different serum dilutions and different downstream readouts). The "no headline" surface ALSO surfaces **convergence-multi-mechanism candidate luteolin**; the only compound in the OE corpus with documented activity at three independent gout chokepoints (XO IC50 550 nM per comp-013, URAT1 expression downregulation per comp-013, complement CP+AP CH50 190 μM per comp-020). **Rosmarinic acid is the highest mechanistic-distinctiveness candidate** (covalent C3b modification, not broad-cascade flavonoid pattern); concrete Phase 2 test: rosmarinic acid + MSU crystal surface C3b deposition + C5a generation suppression assay, currently not in the surveyed literature. |
-| **Informs** | [`complement-c5a-gout.md`](./complement-c5a-gout.md); natural-product / dietary / repurposing thread of CP0 coverage, complementary to the comp-012 engineering thread; [`hypotheses/H05-daf-scr14-cp0-thesis.md`](./hypotheses/H05-daf-scr14-cp0-thesis.md); surfaces parallel exploration vectors that could close CP0 coverage if H05 wet-lab outcome is reject; [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md); luteolin convergence (XO + URAT1 + complement); [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md); comp-014 C5aR1 finding independently extended to all upstream complement nodes (zero direct fungal natural-product modulators). |
-| **Experiment folder** | [`experiments/comp-020-upstream-complement-verification-rerun/`](../experiments/comp-020-upstream-complement-verification-rerun/) |
-| **Interpretive wiki page** | [`wiki/upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) |
-| **Date** | 2026-05-08 |
-| **Status** | Phase 1 complete (literature mining + per-node tables + assay-format heterogeneity log + ChEMBL coverage gap + multilingual partial-execution disclosure). **This is a brief-scrubbed verification re-run; predecessor (comp-018) outputs were NOT consulted during this run.** Comparison against predecessor queued for separate sweep walkthrough. Phase 2 follow-ups: CNKI/WanFang Chinese-language deep dive; J-STAGE Kampo query; Helicteres lignan replication; rosmarinic acid + MSU surface assay; comp-021 candidate (compound × upstream-complement chokepoint × matched-assay-format mapping). |
----
+**Informs:** [validation-experiments §1.25](./validation-experiments.md) · [chaperone-orthogonal-stacking §3.5.2](./chaperone-orthogonal-stacking.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
 
-### comp-001; Uricase Shio-Koji Protease Stability
-
-| Field | Value |
-|---|---|
-| **Question** | Will *A. flavus* uricase (Q00511) survive the shio-koji protease environment with meaningful activity retained? |
-| **Method** | AlphaFold pLDDT structural analysis + P1/P1' cleavage-site prediction for 3 *A. oryzae* koji proteases (ALP, NPr, acid protease) + shio-koji condition corrections (17.5% NaCl, pH 4.5–5.0) |
-| **Verdict** | **LOW risk**; all 356 recognition sites across 3 proteases are in confidently-folded regions (100% of residues pLDDT > 80, mean 97.1). Max risk score 0.039/1.0. |
-| **Key finding** | Two independent protective factors: (1) uricase is exceptionally well-folded (no exposed loops or disordered termini); (2) shio-koji's 15–20% NaCl suppresses ALP to ~19% residual activity. |
-| **Informs** | [`validation-experiments.md` §1.10](./validation-experiments.md); reframes from feasibility gate to confirmation experiment |
-| **Experiment folder** | [`experiments/comp-001-uricase-shio-koji-protease-stability/`](../experiments/comp-001-uricase-shio-koji-protease-stability/) |
-| **Interpretive wiki page** | [`wiki/uricase-protease-stability-computational.md`](./uricase-protease-stability-computational.md) |
-| **Date** | 2026-05-05 |
-| **Status** | Complete |
+**Detail:** [interpretive](./daf-cd55-scr14-cassette-ranking-computational.md) · [experiments/](../experiments/comp-030-daf-cassette-ranking/) · Complete v1 (v2: real ESMFold on 40-strict tier when openfold unblocked)
 
 ---
 
-### comp-006; DAF/CD55 Shio-Koji Protease Stability
+### comp-022 — ClockBase Combinatorial Ranking of A. oryzae Uricase Cassettes — §1.9 architecture stands (2026-05-14)
 
-| Field | Value |
-|---|---|
-| **Question** | Would the DAF/CD55 soluble ectodomain (aa 35–353: SCR1–4 + Ser/Thr stalk) survive the shio-koji protease environment if expressed in *A. oryzae*? |
-| **Method** | AlphaFold pLDDT structural analysis + P1/P1' cleavage-site prediction for 3 *A. oryzae* koji proteases (ALP, NPr, acid protease) + shio-koji condition corrections (17.5% NaCl, pH 4.5–5.0). Shared library with comp-001/comp-005; **three verdicts** computed: full sequence, mature protein (excl. signal peptide aa 1–34), and soluble ectodomain (excl. signal peptide + GPI-anchor propeptide aa 354–381). |
-| **Verdict** | **HIGH / HIGH / HIGH**; all three scopes. Driver: Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52, fully disordered) within the soluble ectodomain itself. NPr has 9 exposed stalk sites; ALP has 48. SCR1–4 domains (aa 35–285, pLDDT 85–98) contribute **zero exposed sites**; they are structurally well-folded and largely buried. |
-| **Key finding** | The HIGH verdict is stalk-contingent, not SCR-domain-contingent. A construct truncated at SCR4 (aa 35–285) would remove all NPr- and ALP-exposed ectodomain sites. The SCR1–4 core compares favorably with uricase (comp-001) in structural stability. A comp-007 analysis of the SCR1-4-only construct is the logical follow-up before concluding the CD55 engineering thesis is unviable. |
-| **Informs** | [`wiki/modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md); "Engineered soluble complement regulators" row (CP0 platform gap) |
-| **Experiment folder** | [`experiments/comp-006-daf-cd55-shio-koji-protease-stability/`](../experiments/comp-006-daf-cd55-shio-koji-protease-stability/) |
-| **Interpretive wiki page** | [`wiki/daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md) |
-| **Date** | 2026-05-05 |
-| **Status** | Complete |
+**Question:** Across the *A. oryzae* uricase cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate and warrant promotion to §1.9 wet-lab?
 
----
+**Verdict:** **§1.9 architecture stands; refinements at gene-synthesis layer.** Top cluster: PamyB + amyB SP + 5'-softened codon variant + direct-secretion + PTS1-blocking C-terminal tag + N191Q glycosylation ablation. v2: 71 cassettes pass N-of-5 ≥ 4; v1 top cluster survives 4/4 = 100%.
 
-### comp-015; T-axis Adjuvant Urate-Target Mapping (v2)
+**Key findings:**
+- Three zero-cost gene-synthesis refinements: 5'-softened codon optimization; PTS1-blocking C-term tag (addresses comp-010 routing risk at design layer); N191Q glycosylation ablation.
+- Glucoamylase-KEX2 fusion is wrong for uricase (no disulfides + no glycosylation = no carrier benefit, plus 10–25× chaperone load). Confirms comp-010: uricase wants direct secretion, Lf wants fusion.
+- v1 GC-clamp proxy vs real ViennaRNA MFE Spearman ρ = 0.241 — v1 proxy noisy on mRNA axis; v2 retrofit with ESM2 pseudo-pLDDT + real MFE materially shifted ranks but architecture verdict held.
 
-| Field | Value |
-|---|---|
-| **Question** | For each of four T-axis-active natural compounds (cordycepin, eurycomanone, icariin, echinacoside), what is the curated bioactivity evidence at the **five** dominant urate-handling + T-axis targets (URAT1, ABCG2, OAT1, SHBG, **XO**; added v2), and which compound is the most gout-favorable T-axis adjuvant? |
-| **Method** | comp-013 verdict-tagging + comp-007 achievable/IC50 thresholds + comp-004 gut-conc model applied to a 4×5 matrix (v2 adds XO column). ChEMBL bioactivity lookup, primary-literature claim aggregation (PubMed search 2026-05-07), achievable-concentration estimates, per-pair direction-of-effect tagging, per-compound aggregated verdict with mechanism-orthogonal XO logic (XO inhibition is gout-favorable regardless of transporter direction because it blocks urate production at the source). |
-| **Verdict (v2)** | **H-AN-02 PARTIALLY FALSIFIED.** Cordycepin = **GOUT-FAVORABLE** (URAT1 expression downregulation Animal Model PMID 29422889 + supplementary in vitro XO IC50 55.7 µM PMID 38141695, ratio 0.001 below systemic threshold). Eurycomanone = **GOUT-FAVORABLE** *(REVERSED v1→v2)*; multi-target: hURAT1 inhibition + URAT1/GLUT9 down + ABCG2/NPT1 up (PMID 31920654) + purine synthesis suppression via PRPS (PMID 34785103) + 2021 RCT SUA ↓7-11% n=105. Icariin = **MECHANISM-UNCLEAR** (XO ruled out by negative-screen PMID 17666819 Mo 2007; no transporter evidence; NLRP3 mechanism off-panel). Echinacoside = **MECHANISM-UNCLEAR**. |
-| **Key finding (v2)** | **v2 = added XO target after v1 missed eurycomanone XO inhibition mechanism trigger.** The XO trigger turned out to be a citation-laundering artifact (PMID 31920654 / 34785103 establish transporter+purine-synthesis modulation, NOT direct XO inhibition for eurycomanone), but adding XO to the panel was still correct; XO is load-bearing for any urate-axis scan (allopurinol/febuxostat target, classical TCM compound mechanism). **v2 dual contribution: panel completeness (XO column) + eurycomanone evidence reversal.** v1 PubMed search missed PMID 31920654; the v1 "cordycepin uniquely positioned" framing was an artifact of search recall, not biology. v2 finds 5 direct-evidence cells (vs v1's 1); eurycomanone is now better-characterized than cordycepin on the urate axis. **New chokepoint candidate surfaced: PRPS (phosphoribosyl pyrophosphate synthetase)**; eurycomanol mechanism per PMID 34785103, distinct from XO downstream catabolism. |
-| **Informs** | [`androgen-natural-modulation.md`](./androgen-natural-modulation.md) §10 H-AN-02; partially falsifies "cordycepin uniquely positioned" framing AND surfaces a citation-laundering audit point on the §1.7 eurycomanone XO claim; [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md); anchors cordycepin URAT1 + supplementary XO data; [`androgen-urate-axis.md`](./androgen-urate-axis.md); the v2 eurycomanone evidence reversal weakens the v1 mechanistic-extrapolation that drove eurycomanone's UNFAVORABLE verdict; future panel candidate: PRPS chokepoint scope page. |
-| **Experiment folder** | [`experiments/comp-015-t-axis-adjuvant-urate-mapping/`](../experiments/comp-015-t-axis-adjuvant-urate-mapping/) |
-| **Interpretive wiki page** | [`wiki/t-axis-adjuvant-urate-mapping-computational.md`](./t-axis-adjuvant-urate-mapping-computational.md) |
-| **Date** | 2026-05-07 (v1 + v2 same day) |
-| **Status** | Complete (v2). v2 = added XO target after v1 missed eurycomanone XO inhibition mechanism. v2 substantively reverses eurycomanone v1 verdict (UNFAVORABLE → FAVORABLE) via newly-surfaced PMID 31920654 / 34785103 transporter + purine-synthesis evidence. |
+**Informs:** [validation-experiments §1.9](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md) · [koji-endgame-strain §3.4](./koji-endgame-strain.md) · [etc/autonomous-screening-methodology](./etc/autonomous-screening-methodology.md)
+
+**Detail:** [interpretive](./uricase-cassette-ranking-computational.md) · [experiments/](../experiments/comp-022-clockbase-uricase-cassette-ranking/) · v2 complete (v2.5 deferred until §1.9 wet-lab data lands)
 
 ---
 
-### comp-016; T × Intestinal ABCG2 Suppression Evidence Mining
+### comp-023 — cns1+cns2 Cordycepin Cassette Metabolic Burden (FBA on iWV1314) — GREEN (2026-05-14)
 
-| Field | Value |
-|---|---|
-| **Question** | Does primary literature support the load-bearing platform-thesis claim that androgens directly suppress intestinal ABCG2 expression at magnitudes consistent with a structural ceiling on the gut-lumen-sink platform efficacy in male/androgen-dominant patients? |
-| **Method** | Targeted PubMed scan (2026-05-07) + WebSearch-summary aggregation across six SKILL-prompt sub-questions (animal-model castration studies, sex-stratified human studies, renal vs intestinal compartment, sex difference magnitude, ADT cohorts, receptor mechanism). 17 curated studies tagged per-tissue / per-evidence-tier / per-direction-of-effect. Load-bearing-for-intestinal-claim flag = (intestinal tissue measured) ∧ (hormone OR genotype manipulation) ∧ (ABCG2 readout). Verdict logic: count of supporting vs contradicting studies in the load-bearing subset. |
-| **Verdict** | **WEAK / UNCONFIRMED (provisional; abstract-level scan only, full-text grep-verification pending).** Of 17 studies, **zero** primary studies demonstrate androgen-driven intestinal ABCG2 suppression directly. 1 study supports broader sex-dimorphism (Hoque 2020 Nature Communications PMID 32488095; Q140K mouse, 88% intestinal ABCG2 protein loss in males, females protected). 1 supports female-positive arm (Yu 2021 PMID 34144706; estradiol ↑ intestinal ABCG2 via PI3K/Akt). 1 directly contradicts at in vitro intestinal level (Klyushova 2023; T INDUCES ABCG2 in Caco-2 via PXR/FXR). 1 explicit null finding for sex difference at healthy rat intestinal baseline (MacLean 2008 PMID 18378562). |
-| **Key finding** | The intestinal compartment IS sex-dimorphic in a urate-relevant way, but the directional driver appears to be **estradiol POSITIVE on the female side** (Yu 2021 PI3K/Akt), not **androgen NEGATIVE on the male side**. The platform-thesis "structural ceiling from androgen-driven ABCG2 suppression" framing should be softened to "modest dose-response shift driven by absent estradiol-positive signaling in male physiology." Sakamoto 2018 ADT cohort (−0.66 mg/dL serum UA at 6 months ADT, n=489) is real and clinically meaningful but the magnitude is consistent with URAT1-only renal mechanism; intestinal ABCG2 is not separately measured in any human cohort. No direct AR-ARE on the ABCG2 promoter has been identified; closest mechanism is the indirect Jeong 2015 LNCaP CREB/CRTC2 axis (cancer-cell context, not enterocyte). |
-| **Informs** | [`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Mechanism; hormones steer the transporters" + §"Why this matters for the platform"; softens the load-bearing claim that triggered this scan; [`abcg2-modulators.md`](./abcg2-modulators.md) §1 (Androgens entry); softens the AR-mediated repression framing; [`gut-lumen-sink.md`](./gut-lumen-sink.md); softens male-asymptote framing; [`koji-endgame-strain.md`](./koji-endgame-strain.md) §1 + [`cross-validation.md`](./cross-validation.md) Claim 1 if they cite the structural-ceiling argument. |
-| **Experiment folder** | [`experiments/comp-016-t-abcg2-suppression-evidence-mining/`](../experiments/comp-016-t-abcg2-suppression-evidence-mining/) |
-| **Interpretive wiki page** | [`wiki/t-abcg2-suppression-evidence-mining-computational.md`](./t-abcg2-suppression-evidence-mining-computational.md) |
-| **Date** | 2026-05-07 |
-| **Status** | Complete (with verification-pending caveat; magnitudes are abstract-level / WebSearch-summary-level, not full-text grep-verified per [`etc/manual-literature-mining.md`](./etc/manual-literature-mining.md) §Pre-commit verification gate; multilingual scan also deferred to Phase 2) |
+**Question:** Does adding the bacterial cns1+cns2 cordycepin pathway (Jeennor 2023, 564 mg/L/d) on top of dual uricase + Lf impose prohibitive metabolic burden?
 
----
+**Verdict:** **GREEN; cns1+cns2 burden-feasible at empirical titer.** Growth penalty +0.02% vs WT; kojic + EGT yield headroom 100%; cordycepin demand consumes ~0.02% of cellular carbon. Breakpoint ~1000× empirical titer.
 
-### comp-019; Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model
+**Key findings:**
+- Jeennor titer is three orders of magnitude below the burden breakpoint; cassette effectively free on carbon + ATP + NADPH axes.
+- Cordycepin biosynthesis taps intracellular adenosine via SAH hydrolysis (r857); cordycepin export substitutes for ATP-wasting adenosine kinase step.
+- Plain FBA does NOT capture PDI/chaperone proteome saturation — orthogonal to chaperone-orthogonal-stacking framework (different burden axes).
 
-| Field | Value |
-|---|---|
-| **Question** | Can the gut-lumen uricase sink produce meaningful serum urate reduction in non-Q141K males, or does the mechanism rely on Q141K-positive disease-state ABCG2 vulnerability? Phase A literature stratification mining (oral + systemic uricase trials × Q141K genotype). Phase B first-principles flux model predicting ΔSUA in WT-male / Q141K-het male / Q141K-hom male / female / severe-dysfunction under three uricase-dose scenarios. |
-| **Method** | **Phase A:** PubMed MCP + WebSearch + WebFetch against Q141K × ULT response literature (Wallace 2018 OR=2.43 meta-analysis; Vora 2021 oxypurinol PK/PD; Stamp 2019 allopurinol-sensitivity; Matsuo 2014 functional classification; Takada 2014 mouse Abcg2-KO; Nakayama 2011 transporter kinetics Km=8.24 mM, Vmax=6.96 nmol/min/mg), ALLN-346 Phase 2a Studies 201 (n=16) + 202 (n=19, terminated Sep 2022), PRX-115 Phase 1 (n=64), and the load-bearing direct human in-vivo measurement of jejunal urate secretion stratified by ABCG2 functional class (Miyazaki 2025 PMID 40033341 PMC11877951, n=34, double-balloon endoscopy). **Phase B:** Python stdlib flux model with Monte Carlo n=5000. Linear-regime ABCG2 transport (lumen urate ~0.6 µM far below Km 8240 µM); genotype scaling 100/75/50/25% per Matsuo 2014 / Miyazaki 2025; sink amplification factor 0.40; renal compensation 30% (sensitivity 0–50%). Three uricase-dose scenarios: 5 / 25 / 50 mg/day. |
-| **Verdict** | **The gut-lumen uricase mechanism does NOT depend on Q141K-positive disease-state vulnerability.** WT/WT males show the LARGEST predicted ΔSUA (−0.83 mg/dL, 90% CI −1.13 to −0.57 at mid-dose 25 mg/day), Q141K hom males the smallest among typical-genotype patients (−0.50 mg/dL). Mechanism is multiplicative on residual ABCG2 capacity; non-Q141K patients have the most capacity to amplify. Severe ABCG2 dysfunction (~25% functional, Q126*+Q141K compound) shows the smallest absolute response (−0.28 mg/dL); this is the platform's structural ceiling for the worst-impaired patients but applies only to the small severe-dysfunction subset. |
-| **Key finding** | **TWO load-bearing findings.** (1) Genotype ordering is INVERTED relative to the worry framing; WT/WT > Q141K het > Q141K hom > severe dysfunction in absolute ΔSUA magnitude. The platform's primary demographic should remain "all gout patients," not be narrowed to Q141K-positive carriers. (2) **Across the entire published clinical-trial corpus of oral and systemic uricase therapy, ZERO trials have stratified results by ABCG2 Q141K genotype.** The Q141K × allopurinol response literature is rich (Wallace 2018, Vora 2021, Stamp 2019); the Q141K × uricase response literature is empty. Every uricase trial since rasburicase (2001) has missed an obvious pharmacogenomic stratification axis; this is publishable in itself. **Strain-engineering implication:** flux model predicts substrate-limited regime at all dose scenarios (capacity ratios 32–1300×). Yield target can stay at 25 mg/dose; engineering effort should shift further toward GI-survival optimization, not yield optimization. |
-| **Informs** | [`cross-validation.md`](./cross-validation.md) Claim 1; gut-lumen sink rating updated 6/10 → 6.5/10 (mechanism is genotype-robust per flux model; clinical magnitude prediction in −0.5 to −1.0 mg/dL band awaits Phase 2b RCT). [`gut-lumen-sink.md`](./gut-lumen-sink.md); patient-stratification note updated to reflect mechanism works MORE in non-Q141K than Q141K-positive patients. [`abcg2-modulators.md`](./abcg2-modulators.md) §6; Q141K rescue interventions ADD to the gut-lumen sink rather than replacing it. [`open-questions.md`](./open-questions.md) Open Question 1; actioned. [`synthesis/`](../synthesis/README.md) Sweep 2026-05-08 Open Question 1; actioned. [`personal-genome-protocol.md`](./personal-genome-protocol.md). Q141K + Q126* genotyping is now load-bearing for n=1 protocol interpretation. [`engineered-yeast-uricase-proposal.md`](./engineered-yeast-uricase-proposal.md); yield target can remain ~25 mg/dose; GI-survival becomes even more the binding engineering constraint. **Phase 2b RCT design recommendation:** run as typical-gout RCT with Q141K + Q126* as stratification variables, NOT enrichment criteria; single dose ~25 mg/day (dose-response is flat above ~5 mg/day); pre-stratify by CKD stage (renal compensation reserve dominates). |
-| **Experiment folder** | [`experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/`](../experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/) |
-| **Interpretive wiki page** | [`wiki/uricase-abcg2-genotype-stratification-computational.md`](./uricase-abcg2-genotype-stratification-computational.md) |
-| **Date** | 2026-05-08 |
-| **Status** | Complete (with prospective qualifier; flux-model predictions await Phase 2b RCT validation; abstract-tier verification on most ABCG2 kinetics + Q141K-allopurinol numbers, full-text grep-verified for Miyazaki 2025; multilingual scan deferred but unlikely to surface a missed Q141K × uricase RCT given the strong indexing of Q141K × allopurinol). |
+**Informs:** [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md) · [koji-endgame-strain §1.9](./koji-endgame-strain.md) · [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) · [validation-experiments §1.9](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md)
+
+**Detail:** [interpretive](./cordycepin-cassette-burden-computational.md) · [experiments/](../experiments/comp-023-cns1-cns2-metabolic-burden/) · Complete v1 (v2 dynamic-FBA deprioritized 2026-05-16 — koji-cordycepin removed from active stack)
 
 ---
 
-### comp-017; Intestinal ABCG2 Sex-Dimorphism; Public-Data Mining + 4-Paper Full-Text Re-Read
+### comp-018 — Upstream Complement Modulator Sweep — Phase 1 complete (2026-05-08)
 
-| Field | Value |
-|---|---|
-| **Question** | Two-part Tier-0 killshot for [`H07-clomid-intestinal-er-antagonism`](./hypotheses/H07-clomid-intestinal-er-antagonism.md) sub-claims 1 and 3, also closing the full-text-verification follow-up flagged in [`comp-016`](./t-abcg2-suppression-evidence-mining-computational.md). Part A: GTEx + HPA mining for sex-stratified intestinal ABCG2 expression in healthy humans. Part B: Full-text re-read of 4 anchor papers (Yu Y et al. 2021; Klyushova LS et al. 2023; MacLean C et al. 2008; Hoque KM, Halperin Kuhns VL et al. 2020); what does full-text show that comp-016's abstract-only scan missed? |
-| **Method** | Targeted WebSearch + WebFetch against GTEx Portal (ENSG00000118777), Human Protein Atlas, Halperin Kuhns 2020 IJMS sex-differences review, Schärfe 2023 Nat Comm sex-differentiated ADME catalog, Oliva 2020 Science GTEx v8 sex catalog, and the 4 anchor papers' PMID/PMCID/DOI URLs. Sandbox blocked direct portal access (HTTP 403 across `gtexportal.org`, `proteinatlas.org`, `pmc.ncbi.nlm.nih.gov`, journal landing pages, Sci-Hub mirrors; Bash `curl` returned `host_not_allowed`); fell back to WebSearch result-snippet extraction quoting source-paper text (closer to full-text than abstract-only, but NOT line-anchored). Per-paper records aggregate `comp016_summary` (what comp-016 had), `full_text_extract` (full-text findings + verbatim snippets), `abstract_vs_fulltext_difference` (the gain), and `h07_sub_claim_impact` (sub-claim status updates). |
-| **Verdict** | **NULL OR NEAR-NULL SEX-DIMORPHISM at healthy baseline (provisional).** Sex-dimorphism in intestinal ABCG2 emerges only under **disease-state genetic stress** (Q140K LOF, Hoque 2020) or **pharmacological perturbation** (10⁻⁴ mol/L = 100 μM E2, Yu 2021; 1-100 μM sex hormones, Klyushova 2023). Healthy-baseline cross-species literature converges on null sex-difference (rat MacLean 2008 full-intestinal-scan, replicated by Tubic 2020; human hepatic Prasad 2013). Serum-UA male-bias is GWAS-real but mediated through **renal mechanisms** (Smct1 protein induction by T, GLUT9 attenuation, partial URAT1 mRNA; Hosoyamada 2010 surfaced in this scan). |
-| **Key finding** | **Three full-text-tier corrections to comp-016's abstract-tier framing.** (1) Hoque 2020: the load-bearing intestinal:renal protein-loss contrast is Western-jejunum **78%**:Western-kidney 44% (~1.8×), NOT comp-016's 88%:44% (~2.0×). The 88% number is COMBINED Western + apical IHC for homozygotes. Female FEUA unchanged (p=0.6263); strong null on female protection. (2) Yu 2021: Caco-2 active concentration is **100 μM** EB (5-6 orders above physiological serum E2 ~30-500 pmol/L). NO dose-response observed; female mouse arm OVARIECTOMIZED + EB replacement (high-contrast pharmacological model, not healthy comparison). The mechanism is real at strong-pharmacological tier but magnitude at PHYSIOLOGICAL E2 is unestablished. (3) Klyushova 2023: **all three sex hormones (T, E2, P) at all three concentrations (1, 10, 100 μM) INCREASE ABCG2** via PXR/FXR (NOT AR); the response is xenobiotic-sensor-mediated, not hormone-receptor-specific. **H07 sub-claim 3 ("NOT AR-mediated") strongly supported.** Bonus: Hosoyamada 2010 surfaced; testosterone affects renal URAT1 **mRNA only (protein unchanged)**; actual androgen-responsive renal urate transporter is **Smct1**, with GLUT9 attenuated. The renal-mechanism story propagated into [`androgen-urate-axis.md`](./androgen-urate-axis.md) needs refinement. |
-| **Informs** | [`hypotheses/H07-clomid-intestinal-er-antagonism.md`](./hypotheses/H07-clomid-intestinal-er-antagonism.md). Tier-0 killshot for sub-claims 1 + 3; sub-claim 1 PARTIALLY SUPPORTED (mechanism real, magnitude weak at physiological tier); sub-claim 3 STRONGLY SUPPORTED (NOT AR-mediated). [`t-abcg2-suppression-evidence-mining-computational.md`](./t-abcg2-suppression-evidence-mining-computational.md); closes comp-016's Pre-commit verification gate disclosure. [`androgen-urate-axis.md`](./androgen-urate-axis.md); structural-ceiling argument cannot be defended at healthy-baseline tier; Hosoyamada 2010 finding (URAT1 protein null, Smct1 protein up) should propagate. [`abcg2-modulators.md`](./abcg2-modulators.md) §1; softens AR-mediated repression entry further. [`gut-lumen-sink.md`](./gut-lumen-sink.md); male-asymptote framing should be retired except in explicit Q141K-positive context. |
-| **Experiment folder** | [`experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/`](../experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/) |
-| **Interpretive wiki page** | [`wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md`](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) |
-| **Date** | 2026-05-07 |
-| **Status** | Complete (with provisional qualifier; direct GTEx + HPA primary numerical mining was sandbox-blocked; verdict rests on secondary-literature consensus + 4-paper full-text-via-snippet re-read; future Paperclip MCP run recommended to line-anchor verify the specific magnitudes per [`etc/manual-literature-mining.md`](./etc/manual-literature-mining.md) §Pre-commit verification gate; multilingual scan still deferred). |
+**Question:** Across all compound classes, which compounds have documented activity at upstream complement cascade nodes proximal to C5a generation, and which are gout-platform-relevant?
 
----
+**Verdict:** **Direct natural-product C5aR1 antagonists empty (re-confirms comp-014 + §1.21).** Moving one node upstream uncovers substantial literature anchored by **rosmarinic acid** (TIER 1; C3 convertase IC50 5–10 µM, three in vivo precedents, FDA-GRAS sources). TIER 2: luteolin (triple-mechanism with comp-013 XO + URAT1), tiliroside, Bupleurum polysaccharides, falcarindiol, ganoderic acid Sz, quercetin, K-76, complestatin.
 
-### comp-014; Medicinal Mushroom Compound × Chokepoint Mapping
+**Key findings:**
+- "Chokepoint-hacker move" worked; rosmarinic acid is the most well-characterized natural-product upstream-complement modulator.
+- **Luteolin triple-convergence** (XO + URAT1 + C3 convertase CP+AP) — highest-leverage single dietary compound surfaced.
+- comp-014 β-glucan structure-dependence mechanistically explained; Ganoderma triterpene-enriched preps argued for.
+- Engineered C1-INH parallel thread proposed (near-twin to H05 DAF).
+- ChEMBL anticomplement coverage 0/32 = 0% — same gap pattern as comp-013/014.
 
-| Field | Value |
-|---|---|
-| **Question** | Across all known characterized fungal natural products; aggregated globally, not just Western pharma; which compounds map onto Open Enzyme's chokepoints (uricase substrate, URAT1, ABCG2, NLRP3 axis, complement CP0, Lp-PLA2, HDAC6, redox/disulfide), and which fungal species are the highest-leverage producers? |
-| **Method (planned)** | 6-phase pipeline. Phase 2: breadth aggregation across LOTUS + NPAtlas + KNApSAcK + NPASS + TCMSP + COCONUT (+ MIBiG/antiSMASH-DB for BGC space). Phase 3: target mapping via ChEMBL + HIT + PubChem BioAssay → SwissTargetPrediction for orphans. Phase 4: chokepoint intersection. Phase 5: multilingual primary-literature deep-dive on top 3-5 species via CNKI/Wanfang/J-STAGE/KISS with two-model translation cross-check per `Open Enzyme/CLAUDE.md` §Translation protocol. Phase 6: comp-013-style per-compound triage with IC50 occupancy + composite scoring. |
-| **Verdict** | **PHASE 2 RAN.** ChEMBL sweep + LOTUS pull (6,798 unique fungal compounds, 55 species) + PubMed scan (14 high-signal hits) executed 2026-05-06. Highest-leverage finding: *Ganoderma applanatum* 2,4-DAE shows in vivo dual XO + URAT1 SUA reduction 407→134 µmol/L (Fitoterapia 2022). C5aR1 platform-gap (§1.21) confirmed empirically; zero direct fungal antagonists in either ChEMBL or PubMed. ChEMBL coverage of canonical mushroom compounds is near-zero (CLAUDE.md global-multilingual warning empirically validated). Two new chokepoint candidates surfaced: ADA (purine catabolism) and PINK1/mitophagy (NLRP3-priming-adjacent). KNApSAcK + NPASS + TCMSP + HIT pulls still pending; Phase 3 (target mapping) starts next. |
-| **Key finding (Phase 1)** | Three reasons the experiment is not "ChEMBL only with extra steps": (1) comp-013 already established that 5/9 TCM compounds had no ChEMBL records; same coverage gap will apply to fungi, likely worse, because mycotherapy is a deeper East-Asian-traditional-medicine vertical than most herbs; (2) fungi are biochemically distinctive in ergothioneine, ETP-class disulfide-bridged compounds, and lanostane triterpenoid diversity that adjacent kingdoms don't produce; (3) the redox/disulfide chemistry angle may warrant adding a new chokepoint to `modality-chokepoint-matrix.md`; the wiki's first patient-side disulfide chokepoint, complementing the engineering-side load-bearing-ness already established by the DAF SCR1-4 incident. **Highest single-leverage potential:** if breadth pass surfaces a validated fungal C5aR1 antagonist that `validation-experiments.md` §1.21's ChEMBL/NPASS/LOTUS/Open Targets scan missed, that partially closes the avacopan-dependence "honest platform gap." |
-| **Informs** | [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) (Phase 5 may write back a new redox/disulfide column); [`complement-c5a-gout.md`](./complement-c5a-gout.md) CP0 platform gap; [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) (methodological extension); [`open-source-platform.md`](./etc/open-source-platform.md) (operationalizes global-multilingual claim) |
-| **Experiment folder** | [`experiments/comp-014-medicinal-mushroom-compound-mapping/`](../experiments/comp-014-medicinal-mushroom-compound-mapping/) |
-| **Interpretive wiki page** | [`wiki/medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) |
-| **Date** | 2026-05-06 |
-| **Status** | Phase 2 (ChEMBL + LOTUS + PubMed) complete; Phase 3 (target mapping) in progress; Phases 4-6 queued |
-| **Phase 2 findings doc** | [`experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md`](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md) |
+**Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [gout-action-guide](./gout-action-guide.md)
+
+**Detail:** [interpretive](./upstream-complement-modulator-sweep-computational.md) · [experiments/](../experiments/comp-018-upstream-complement-modulator-sweep/) · Phase 1 complete (Phase 2 multilingual + C1-INH + complestatin scopes queued). Brief contained user-framing bias; verification re-run is comp-020. See [retrospective](../operations/comp-018-vs-comp-020-retrospective.md).
 
 ---
 
-### comp-013; TCM Gout Compound Triage
+### comp-020 — Upstream Complement Sweep (Brief-Scrubbed Verification Re-Run) — Phase 1 complete (2026-05-08)
 
-| Field | Value |
-|---|---|
-| **Question** | Which Traditional Chinese Medicine (TCM) compounds with documented gout indication are mechanistically viable when triaged via the comp-004 IC50 occupancy + comp-007 composite scoring frameworks? |
-| **Method** | Applied comp-004's IC50 occupancy framework (Hill n=1, dose × (1−BA) ÷ 250 mL gut model, plasma Cmax via Vd≈1 L/kg) + comp-007's composite scoring (potency × selectivity × gut-enrichment), with three adaptations: (1) gut-enrichment is bidirectional (favorable for gut-luminal targets, unfavorable for systemic-with-low-BA); (2) selectivity uses on-target/off-target IC50 ratio; (3) animal-model in vivo evidence is admissible to the verdict (composite remains 0 without biochem IC50). 9 candidate compounds, 8 gout-relevant ChEMBL targets (URAT1 CHEMBL6120, ABCG2 CHEMBL5393, GLUT9 CHEMBL2052034, XO CHEMBL1929, NLRP3 CHEMBL1741208, sEH CHEMBL2409, OAT1 CHEMBL1641347, OAT3 CHEMBL1641348). |
-| **Verdict** | **4 GUT-LUMINAL VIABLE** (luteolin rank 1, astilbin, emodin, berberine) **+ 1 MODERATE / VIABLE-WITH-DOSE-CAVEAT** (rhein) **+ 4 MECHANISM UNCLEAR** (aucubin, cylindrin, chlorogenic acid, atractylenolide I). Si Miao San multi-herb formula has the strongest clinical evidence (24-RCT meta-analysis: SUA −90.62 µmol/L vs anti-inflammation control, p<0.00001) but cannot attribute to single component. |
-| **Key finding** | **ChEMBL coverage gap is load-bearing for TCM compounds.** 5 of 9 candidates have NO ChEMBL data of any kind (astilbin, aucubin, cylindrin, atractylenolide I; partial for chlorogenic acid). Only luteolin has both ChEMBL biochem IC50 against gout-relevant target (XO 550 nM) AND animal-model URAT1 evidence. The chembl-cross-check discipline (rule #2 of tcm-modern-rigor-intersection.md) has a coverage limit for TCM-specific phytochemicals; workaround: admit animal-model in vivo dose-response data. Most-represented mechanism across viable candidates: URAT1 expression downregulation in murine PO hyperuricemia model (astilbin, luteolin, berberine all show 5-25 mg/kg activity). Berberine ChEMBL cross-check re-confirmed: most-potent target is TDO 30 nM, NOT NLRP3; verified activity_id 26130523. |
-| **Informs** | [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md); closes P2-2 (originally placed as comp-011, renumbered to comp-013 after comp-011 was assigned to *C. utilis* uricase compatibility 2026-05-05) |
-| **Experiment folder** | [`experiments/comp-013-tcm-gout-compound-triage/`](../experiments/comp-013-tcm-gout-compound-triage/) |
-| **Interpretive wiki page** | [`wiki/tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) |
-| **Date** | 2026-05-06 |
-| **Status** | Complete |
+**Question:** Across upstream complement nodes (C1q/MBL-MASP-2/C3 tickover/convertases/soluble factors/membrane regulators), which compounds (anchored only to target nodes, no compound names supplied, no prior comp-018 consulted) have documented direct modulator activity?
 
----
+**Verdict:** **NO single headline compound.** Three classes occupy distinct top-tier mechanistic positions within ~5–20× of each other. **Top per node:** C1q — Helicteres benzofuran lignans + luteolin; MASP-2/LP — heparin oligos + Bupleurum polysaccharide; C3 convertase — rosmarinic acid (covalent IC50 34 µM, distinctive mechanism); marine sulfated polysaccharides 1–3 µg/mL.
 
-### comp-012; DAF/CD55 SCR1-4 Truncated Shio-Koji Protease Stability
+**Key findings:**
+- **Three independent scans now agree** (comp-013 + comp-014 + comp-020): ChEMBL is structurally biased (~20% NP coverage vs >70% kinase/GPCR). Primary-literature mining is the load-bearing tool.
+- Two assay-format spreads documented: rosmarinic acid 44× (C3b 34 µM → C5 convertase 1500 µM); heparin 50× (LP vs AP). Stratifying IC50 by assay type is load-bearing.
+- Luteolin convergence-multi-mechanism candidate confirmed; rosmarinic acid is highest mechanistic-distinctiveness candidate (covalent C3b modification).
+- Coverage gaps: Factor H upregulators (empty), CD55/CD59/CR1 upregulators (engineering territory), direct fungal upstream modulators (zero — extends comp-014).
 
-| Field | Value |
-|---|---|
-| **Question** | Does the stalk-truncated DAF/CD55 SCR1-4 construct (aa 35–285, removing the disordered Ser/Thr stalk that drove comp-006's HIGH verdict) survive shio-koji protease conditions? |
-| **Method** | Same shared library as comp-001 / comp-005 / comp-006 (`experiments/lib/protease_stability.py`). Sequence + AlphaFold pLDDT scoped to aa 35–285. Three *A. oryzae* proteases (ALP, NPr, acid_protease) at shio-koji conditions (17.5% NaCl, pH 4.5–5.0). |
-| **Verdict** | **LOW** (max risk 0.039, NPr; **identical to uricase** comp-001). Stalk truncation removed 100% of exposed sites: 9 NPr-exposed + 48 ALP-exposed + 1 acid_protease-exposed → 0 exposed in SCR1-4. All 242 recognition sites in the truncated construct are buried. |
-| **Key finding** | The CP0 platform-gap closure thesis is now in silico-validated. comp-006's HIGH verdict (0.388) was 100% stalk-driven, not SCR-domain-driven; the truncation hypothesis surfaced by comp-006's own analysis (and elevated to wet-lab proposal by the 2026-05-05 sweep daemon) is computationally confirmed. **A fermentable engineering candidate for the wiki's only "honest platform gap" now exists.** Three wet-lab unknowns remain (disulfide folding, CCP-regulatory function preservation, mucosal delivery geometry); see [`hypotheses/H05-daf-scr14-cp0-thesis.md`](./hypotheses/H05-daf-scr14-cp0-thesis.md). |
-| **Informs** | [`complement-c5a-gout.md`](./complement-c5a-gout.md). CP0 status reframe from "honest platform gap" to "active engineering candidate"; [`hypotheses/H05`](./hypotheses/H05-daf-scr14-cp0-thesis.md) (new stub); [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) Engineered-soluble-complement-regulators row updated 🟡→🔬 |
-| **Experiment folder** | [`experiments/comp-012-daf-cd55-scr14-truncated/`](../experiments/comp-012-daf-cd55-scr14-truncated/) |
-| **Interpretive wiki page** | [`wiki/daf-cd55-scr14-truncated-computational.md`](./daf-cd55-scr14-truncated-computational.md) |
-| **Date** | 2026-05-05 |
-| **Status** | Complete |
+**Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
+
+**Detail:** [interpretive](./upstream-complement-verification-rerun-computational.md) · [experiments/](../experiments/comp-020-upstream-complement-verification-rerun/) · Phase 1 complete (Phase 2: CNKI/WanFang/J-STAGE + Helicteres replication + RA/MSU assay + comp-021 mapping queued)
 
 ---
 
-### comp-011; *C. utilis* Uricase Cassette Compatibility (Parallel to comp-010 *A. flavus*)
+### comp-001 — Uricase Shio-Koji Protease Stability — LOW (2026-05-05)
 
-| Field | Value |
-|---|---|
-| **Question** | Does *Candida utilis* uricase (industry-revealed preference per ALLN-346 + 2 other commercial programs) have the same cassette-compatibility profile as *A. flavus* uricase, or does the alternative payload introduce blocking design issues? |
-| **Method** | Same seven-analysis pipeline as comp-010 (KEX2 site geometry, codon usage CAI, signal peptide / secretion routing, disulfide load, glycosylation scan, concurrent secretion-pathway burden, comparison to Huynh 2020 baseline). Run on *C. utilis* uricase (UniProt **P78609**; corrects the prior P15296 misattribution; P15296 returns Drosophila transposable element) paired with human lactoferrin in the Ward 1995 / *A. oryzae* architecture. |
-| **Verdict** | **MODERATE** (vs. *A. flavus* LOW per comp-010). Difference is design-driven, not fundamental incompatibility. |
-| **Key finding** | The platform decision this enables: **don't pick; run BOTH variants in §1.9 as parallel direct-secretion cassettes** at ~$200–400 in additional gene synthesis costs and $0 additional fermentation cost. Empirical comparison resolves the *A. flavus* vs. *C. utilis* question. Three drivers of the MODERATE verdict: (1) codon burden 2.3× heavier for *C. utilis* (CAI 0.65 vs 1.51 *A. flavus*); full codon-optimized gene synthesis mandatory; (2) 4 free cysteines in *C. utilis* vs. 0 in *A. flavus*; risk of aberrant ER disulfide formation; mitigation via non-reducing SDS-PAGE QC + Cys→Ser if aggregation observed; (3) 2 internal KR sites (positions 130, 138) vs. 1 in *A. flavus*; non-load-bearing for direct-secretion design. The ALLN-346 mutation I132R sits adjacent to position 130 KR; order ALLN-346 mutations together with codon-optimized synthesis. |
-| **Informs** | [`uricase-variant-selection.md`](./uricase-variant-selection.md) (new comp-011 subsection); [`validation-experiments.md` §1.9](./validation-experiments.md); the dual-cassette wet-lab experiment design now naturally accommodates parallel testing of both uricase variants. |
-| **Experiment folder** | [`experiments/comp-011-c-utilis-uricase-cassette-compatibility/`](../experiments/comp-011-c-utilis-uricase-cassette-compatibility/) |
-| **Interpretive wiki page** | [`wiki/c-utilis-uricase-cassette-compatibility-computational.md`](./c-utilis-uricase-cassette-compatibility-computational.md) |
-| **Date** | 2026-05-05 |
-| **Status** | Complete |
+**Question:** Will *A. flavus* uricase (Q00511) survive the shio-koji protease environment with meaningful activity retained?
 
----
+**Verdict:** **LOW risk.** All 356 recognition sites across 3 proteases are in confidently-folded regions (100% residues pLDDT > 80, mean 97.1). Max risk score 0.039/1.0.
 
-### comp-010; Cassette Compatibility for the Dual-Cassette Koji Endgame Strain
+**Key findings:**
+- Uricase is exceptionally well-folded (no exposed loops or disordered termini).
+- Shio-koji's 15–20% NaCl suppresses ALP to ~19% residual activity (second independent protective factor).
 
-| Field | Value |
-|---|---|
-| **Question** | Does the uricase (Q00511) + lactoferrin (P02788) payload pair have any cassette-design-specific issues; codon collisions, KEX2 site geometry problems, or secretion-pathway burden; that the Ward 1995 glucoamylase-KEX2 architecture will not handle out of the box? |
-| **Method** | Seven analyses on protein sequences (stdlib only): (1) codon usage CAI proxy + rare-codon hotspot scan vs. A. oryzae RSCU table; (2) internal K-R dipeptide census + P1' risk scoring (canonical Kex2p family rules); (3) ER-retention / PTS1 / PTS2 secretion-targeting scan; (4) disulfide bonding load vs. Huynh 2020 adalimumab baseline (16 disulfides = 1.00×); (5) N-X-S/T glycosylation site prediction + UniProt cross-reference; (6) combined concurrent-expression burden synthesis; (7) dimension-by-dimension comparison to Huynh 2020. |
-| **Verdict** | **LOW** overall cassette-design risk for the proposed asymmetric architecture (direct-secretion uricase + glucoamylase-KEX2-fusion lactoferrin). No blocking issues. Uricase: 0 disulfides, fungal origin, no KEX2 fusion concerns. Lactoferrin: 17 disulfides (1.06× Huynh 2020 baseline), 2 internal K-R sites (1 abolished P1'=D; 1 moderate P1'=K). Uricase has 1 high-risk internal KR site (pos 128); irrelevant for direct-secretion cassette design; only load-bearing if moved to fusion architecture. |
-| **Key finding** | The OE payload pair is within the Huynh 2020 ER-capacity precedent. Uricase contributes zero PDI/disulfide load (fungal, intracellular origin). The 12.6× Lf titer gap vs. Huynh 2020 (39.7 mg/L adalimumab) is not the correct benchmark; Ward 1995 >2 g/L Lf is the appropriate reference. Two design notes: (1) monitor Lf KEX2 site at mature pos 579 (P1'=K, moderate truncation risk) by SDS-PAGE; (2) verify uricase secretion vs. C-terminal SKL PTS1 motif in §1.9. |
-| **Informs** | [`validation-experiments.md` §1.9](./validation-experiments.md). Ward 1995 dual-cassette feasibility test; comp-010 removes cassette architecture as a pre-experiment concern; §1.9 remains a feasibility gate (format risk unresolved) |
-| **Experiment folder** | [`experiments/comp-010-cassette-compatibility/`](../experiments/comp-010-cassette-compatibility/) |
-| **Interpretive wiki page** | [`wiki/cassette-compatibility-computational.md`](./cassette-compatibility-computational.md) |
-| **Date** | 2026-05-05 |
-| **Status** | Complete |
+**Informs:** [validation-experiments §1.10](./validation-experiments.md) — reframes from feasibility gate to confirmation experiment
+
+**Detail:** [interpretive](./uricase-protease-stability-computational.md) · [experiments/](../experiments/comp-001-uricase-shio-koji-protease-stability/) · Complete
 
 ---
 
-### comp-007; Food-Grade HDAC Inhibitor Screen for Q141K-ABCG2 Trafficking Rescue
+### comp-006 — DAF/CD55 Shio-Koji Protease Stability (full ectodomain) — HIGH (2026-05-05)
 
-| Field | Value |
-|---|---|
-| **Question** | Which food-grade or GRAS-classified HDAC inhibitor candidates best combine class I HDAC potency (HDAC1/2/3), HDAC6 selectivity (off-target cardiotoxicity avoidance), and gut-enriched exposure for Q141K-ABCG2 trafficking rescue? |
-| **Method** | Composite scoring across three axes: (1) potency_score = 1/geomean(HDAC1/2/3 IC50), max-normalized; (2) selectivity_score = HDAC6_IC50/(HDAC6_IC50+mean_classI_IC50), midpoint ratio=10, unknown-HDAC6 penalty 0.30; (3) gut_selectivity_score = 1 − oral bioavailability fraction. IC50 data from ChEMBL MCP + PubMed primary literature (butyrate HIGH confidence; others LOW or DATA_UNAVAILABLE). |
-| **Verdict** | **Butyrate (rank 1, 0.374) >> Sulforaphane (rank 2, 0.090) > PEITC (rank 3, 0.060).** Only Butyrate has confirmed class I selectivity (167× over HDAC6, HIGH confidence). Caffeic acid and ferulic acid score 0 (DATA_UNAVAILABLE; no isoform IC50). |
-| **Key finding** | Butyrate is the only food-grade compound with biochemical-assay IC50 data against all four HDAC isoforms; its 167× HDAC1/2/3 over HDAC6 selectivity is structurally explained (carboxylate zinc coordination, insufficient for bulkier HDAC6 active site). Sulforaphane's ranking is fragile; HDAC isoform selectivity is uncharacterized and the mechanism (indirect, via mercapturic acid metabolites) differs from butyrate's direct zinc chelation. |
-| **Informs** | [`validation-experiments.md` §1.22](./validation-experiments.md#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue). Stage 1 complete; top 3 advance to Stage 2 (paired Caco-2/HepG2 HDAC activity assay) |
-| **Experiment folder** | [`experiments/comp-007-food-grade-hdaci-screen/`](../experiments/comp-007-food-grade-hdaci-screen/) |
-| **Interpretive wiki page** | [`wiki/food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) |
-| **Date** | 2026-05-05 |
-| **Status** | Complete |
+**Question:** Would the DAF/CD55 soluble ectodomain (aa 35–353: SCR1–4 + Ser/Thr stalk) survive shio-koji protease conditions?
 
----
+**Verdict:** **HIGH / HIGH / HIGH** across full / mature / soluble-ectodomain scopes. Driver: Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52, disordered). SCR1–4 (aa 35–285, pLDDT 85–98) contribute **zero exposed sites**.
 
-### comp-005; Lactoferrin Shio-Koji Protease Stability
+**Key findings:**
+- HIGH verdict is stalk-contingent, not SCR-domain-contingent. Truncation at SCR4 surfaces as the load-bearing follow-up (became comp-012).
+- SCR1–4 core compares favorably with uricase (comp-001) in structural stability.
 
-| Field | Value |
-|---|---|
-| **Question** | Will human lactoferrin (P02788) survive the shio-koji protease environment with meaningful structural integrity retained? |
-| **Method** | AlphaFold pLDDT structural analysis + P1/P1' cleavage-site prediction for 3 *A. oryzae* koji proteases (ALP, NPr, acid protease) + shio-koji condition corrections (17.5% NaCl, pH 4.5–5.0). Shared library with comp-001; two verdicts computed: full sequence and mature protein (excl. signal peptide). |
-| **Verdict** | **HIGH (full sequence) / MODERATE (mature protein aa 20–710)**. All top-5 sites across all 3 proteases are in the signal peptide (pLDDT 35–54). Mature-protein max risk 0.188 (ALP, 3 exposed sites). Signal peptide processing by *A. oryzae* is uncertain; if cleaved, operative risk is MODERATE. |
-| **Key finding** | The HIGH verdict is signal-peptide-contingent. Mature lactoferrin (aa 20–710) is MODERATE; less resistant than uricase (LOW) but substantially more resistant than the full-sequence headline implies. ALP's conservative pH factor (1.0, outside active pH 6–12) likely overstates mature-protein risk. Glycosylation at N137, N478, N623 not modelled; may further reduce accessibility. |
-| **Informs** | [`validation-experiments.md` §1.10](./validation-experiments.md); lactoferrin arm remains a feasibility gate (unlike uricase arm, which comp-001 reframed as confirmation) |
-| **Experiment folder** | [`experiments/comp-005-lactoferrin-shio-koji-protease-stability/`](../experiments/comp-005-lactoferrin-shio-koji-protease-stability/) |
-| **Interpretive wiki page** | [`wiki/lactoferrin-protease-stability-computational.md`](./lactoferrin-protease-stability-computational.md) |
-| **Date** | 2026-05-05 |
-| **Status** | Complete |
+**Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) — Engineered soluble complement regulators row
+
+**Detail:** [interpretive](./daf-cd55-protease-stability-computational.md) · [experiments/](../experiments/comp-006-daf-cd55-shio-koji-protease-stability/) · Complete
 
 ---
 
-### comp-004; Supplement ABCG2 Antagonism
+### comp-015 — T-axis Adjuvant Urate-Target Mapping (v2) — H-AN-02 PARTIALLY FALSIFIED (2026-05-07)
 
-| Field | Value |
-|---|---|
-| **Question** | Do quercetin, EGCG, and curcumin reach gut-lumen concentrations sufficient to inhibit ABCG2-mediated urate efflux at standard supplement doses? |
-| **Method** | IC50 occupancy framework: effective dissolved gut-lumen concentration ÷ ABCG2 IC50 (from ChEMBL). Two-step concentration model: dose-limited capped by intestinal solubility. Hill equation (n=1) for fractional inhibition prediction. |
-| **Verdict** | **VERY HIGH risk (provisional)** for quercetin and curcumin; 6.8× and 8.3× IC50 respectively, predicting 87–89% ABCG2 inhibition. EGCG acts via expression downregulation, not scored by this framework. |
-| **Key finding** | Curcumin paradox: < 1% bioavailability concentrates > 99% of oral dose in gut lumen, reaching 8.3× its IC50 (1,630 nM) despite lower gut concentration than quercetin. Supplement-induced ABCG2 inhibition may reduce gut urate excretion, paradoxically worsening hyperuricemia. |
-| **Informs** | [`validation-experiments.md` §1.14](./validation-experiments.md); shifts supplement arms from screening to quantification of a pharmacologically-predicted effect |
-| **Experiment folder** | [`experiments/comp-004-supplement-abcg2-antagonism/`](../experiments/comp-004-supplement-abcg2-antagonism/) |
-| **Interpretive wiki page** | [`wiki/supplement-abcg2-antagonism-computational.md`](./supplement-abcg2-antagonism-computational.md) |
-| **Date** | 2026-05-05 |
-| **Status** | Complete |
+**Question:** For four T-axis-active compounds (cordycepin, eurycomanone, icariin, echinacoside), what is the curated evidence at five urate-handling + T-axis targets (URAT1, ABCG2, OAT1, SHBG, XO)?
+
+**Verdict:** **H-AN-02 PARTIALLY FALSIFIED.** Cordycepin = **GOUT-FAVORABLE** (URAT1 down + supplementary XO IC50 55.7 µM). Eurycomanone = **GOUT-FAVORABLE** (v1→v2 REVERSED; hURAT1 + GLUT9 down + ABCG2/NPT1 up + PRPS suppression + 2021 RCT SUA −7-11% n=105). Icariin / echinacoside = **MECHANISM-UNCLEAR**.
+
+**Key findings:**
+- v2 added XO panel after v1 missed eurycomanone XO mechanism trigger; the trigger was citation-laundering (PMID 31920654/34785103 establish transporter+purine-synthesis, not direct XO) but panel addition still correct.
+- v2 finds 5 direct-evidence cells vs v1's 1; eurycomanone now better-characterized than cordycepin on urate axis.
+- New chokepoint surfaced: **PRPS (phosphoribosyl pyrophosphate synthetase)** — eurycomanol mechanism, distinct from XO.
+
+**Informs:** [androgen-natural-modulation §10 H-AN-02](./androgen-natural-modulation.md) · [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) · [androgen-urate-axis](./androgen-urate-axis.md)
+
+**Detail:** [interpretive](./t-axis-adjuvant-urate-mapping-computational.md) · [experiments/](../experiments/comp-015-t-axis-adjuvant-urate-mapping/) · Complete v2
+
+---
+
+### comp-016 — T × Intestinal ABCG2 Suppression Evidence Mining — WEAK / UNCONFIRMED (2026-05-07)
+
+**Question:** Does primary literature support the load-bearing claim that androgens directly suppress intestinal ABCG2 expression at platform-relevant magnitudes?
+
+**Verdict:** **WEAK / UNCONFIRMED (provisional; abstract-tier).** Of 17 studies, zero primary studies demonstrate androgen-driven intestinal ABCG2 suppression directly. 1 supports broader sex-dimorphism (Hoque 2020 Q140K mouse); 1 supports female-positive arm (Yu 2021, estradiol ↑ ABCG2); 1 directly contradicts (Klyushova 2023, T INDUCES via PXR/FXR).
+
+**Key findings:**
+- Intestinal compartment IS sex-dimorphic, but driver is **estradiol POSITIVE on female side**, not **androgen NEGATIVE on male side**.
+- Platform-thesis "structural ceiling from androgen-driven ABCG2 suppression" should soften to "modest dose-response shift driven by absent estradiol-positive signaling in male physiology."
+- Sakamoto 2018 ADT cohort (−0.66 mg/dL at 6 months, n=489) consistent with URAT1-only renal mechanism; no direct AR-ARE on ABCG2 promoter identified.
+
+**Informs:** [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md) · [koji-endgame-strain](./koji-endgame-strain.md) · [cross-validation](./cross-validation.md)
+
+**Detail:** [interpretive](./t-abcg2-suppression-evidence-mining-computational.md) · [experiments/](../experiments/comp-016-t-abcg2-suppression-evidence-mining/) · Complete (full-text follow-up → comp-017)
+
+---
+
+### comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model — Mechanism genotype-robust (2026-05-08)
+
+**Question:** Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does it rely on Q141K-positive disease-state vulnerability?
+
+**Verdict:** **Mechanism does NOT depend on Q141K-positive vulnerability.** WT/WT males show LARGEST predicted ΔSUA (−0.83 mg/dL at 25 mg/day, 90% CI −1.13 to −0.57); Q141K hom smallest among typical genotypes (−0.50); severe dysfunction smallest absolute (−0.28). Genotype ordering INVERTED relative to worry framing.
+
+**Key findings:**
+- Across the entire published uricase clinical-trial corpus, ZERO trials have stratified by ABCG2 Q141K genotype (rich Q141K × allopurinol literature; empty Q141K × uricase). Publishable in itself.
+- Flux model predicts substrate-limited regime at all dose scenarios (capacity ratios 32–1300×). Yield target stays ~25 mg/dose; engineering effort shifts to GI-survival optimization, not yield.
+- Phase 2b RCT design: typical-gout RCT with Q141K + Q126* as **stratification**, NOT enrichment; single ~25 mg/day; pre-stratify by CKD.
+
+**Informs:** [cross-validation Claim 1](./cross-validation.md) (rating 6/10 → 6.5/10) · [gut-lumen-sink](./gut-lumen-sink.md) · [abcg2-modulators §6](./abcg2-modulators.md) · [open-questions](./open-questions.md) Q1 · [personal-genome-protocol](./personal-genome-protocol.md) · [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md)
+
+**Detail:** [interpretive](./uricase-abcg2-genotype-stratification-computational.md) · [experiments/](../experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/) · Complete (prospective; awaits Phase 2b RCT validation)
+
+---
+
+### comp-017 — Intestinal ABCG2 Sex-Dimorphism Public-Data Mining + 4-Paper Full-Text Re-Read — NULL OR NEAR-NULL at healthy baseline (2026-05-07)
+
+**Question:** Tier-0 killshot for H07 sub-claims 1 and 3, closing comp-016's full-text-verification follow-up. Part A: GTEx + HPA sex-stratified intestinal ABCG2. Part B: full-text re-read of Yu 2021 / Klyushova 2023 / MacLean 2008 / Hoque 2020.
+
+**Verdict:** **NULL OR NEAR-NULL SEX-DIMORPHISM at healthy baseline (provisional).** Sex-dimorphism emerges only under **disease-state genetic stress** (Q140K LOF, Hoque) or **strong pharmacological perturbation** (100 µM E2, Yu; 1–100 µM sex hormones, Klyushova). Healthy-baseline literature converges on null.
+
+**Key findings:**
+- Hoque 2020 correction: Western-jejunum 78% : Western-kidney 44% (~1.8×), NOT comp-016's 88%:44%. Female FEUA unchanged (p=0.6263) — strong null on female protection.
+- Yu 2021: Caco-2 active at 100 µM EB (5–6 orders above physiological serum E2); mechanism real at strong-pharmacological tier; physiological magnitude unestablished.
+- Klyushova 2023: T/E2/P at 1/10/100 µM all INCREASE ABCG2 via PXR/FXR (NOT AR) — **H07 sub-claim 3 ("NOT AR-mediated") strongly supported.**
+- Hosoyamada 2010 surfaced: T affects renal URAT1 mRNA only (protein unchanged); actual androgen-responsive renal urate transporter is **Smct1**, GLUT9 attenuated.
+
+**Informs:** [hypotheses/H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) · [t-abcg2-suppression-evidence-mining-computational](./t-abcg2-suppression-evidence-mining-computational.md) · [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators §1](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md)
+
+**Detail:** [interpretive](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) · [experiments/](../experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/) · Complete (provisional; sandbox-blocked GTEx/HPA direct; Paperclip line-anchored re-run recommended)
+
+---
+
+### comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping — Phase 2 ran (2026-05-06)
+
+**Question:** Across all known characterized fungal natural products (globally, not Western pharma only), which compounds map onto OE chokepoints, and which fungal species are highest-leverage producers?
+
+**Verdict:** **PHASE 2 RAN.** ChEMBL sweep + LOTUS pull (6,798 unique fungal compounds, 55 species) + PubMed scan (14 high-signal hits). Highest-leverage: *Ganoderma applanatum* 2,4-DAE shows in vivo dual XO + URAT1 SUA reduction 407→134 µmol/L (Fitoterapia 2022).
+
+**Key findings:**
+- C5aR1 platform-gap (§1.21) confirmed empirically — zero direct fungal antagonists in either ChEMBL or PubMed.
+- ChEMBL coverage of canonical mushroom compounds near-zero; CLAUDE.md global-multilingual warning empirically validated.
+- Two new chokepoint candidates surfaced: ADA (purine catabolism) and PINK1/mitophagy (NLRP3-priming-adjacent).
+
+**Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [complement-c5a-gout](./complement-c5a-gout.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [etc/open-source-platform](./etc/open-source-platform.md)
+
+**Detail:** [interpretive](./medicinal-mushroom-compound-mapping-computational.md) · [Phase 2 findings](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md) · [experiments/](../experiments/comp-014-medicinal-mushroom-compound-mapping/) · Phase 2 complete; Phase 3 in progress
+
+---
+
+### comp-013 — TCM Gout Compound Triage — 4 viable + 1 caveat (2026-05-06)
+
+**Question:** Which TCM compounds with documented gout indication are mechanistically viable when triaged via comp-004 IC50 occupancy + comp-007 composite scoring?
+
+**Verdict:** **4 GUT-LUMINAL VIABLE** (luteolin rank 1, astilbin, emodin, berberine) **+ 1 MODERATE / VIABLE-WITH-DOSE-CAVEAT** (rhein) **+ 4 MECHANISM UNCLEAR** (aucubin, cylindrin, chlorogenic acid, atractylenolide I). Si Miao San formula has strongest clinical evidence (24-RCT meta SUA −90.62 µmol/L, p<0.00001) but multi-component.
+
+**Key findings:**
+- ChEMBL coverage gap is load-bearing for TCM: 5 of 9 candidates have NO ChEMBL data. Workaround: admit animal-model in vivo dose-response.
+- Most-represented mechanism: URAT1 expression downregulation in murine PO hyperuricemia (astilbin, luteolin, berberine all 5–25 mg/kg).
+- Berberine ChEMBL cross-check: most-potent target is TDO 30 nM, NOT NLRP3.
+
+**Informs:** [tcm-modern-rigor-intersection](./tcm-modern-rigor-intersection.md) — closes P2-2
+
+**Detail:** [interpretive](./tcm-gout-compound-triage-computational.md) · [experiments/](../experiments/comp-013-tcm-gout-compound-triage/) · Complete
+
+---
+
+### comp-012 — DAF/CD55 SCR1-4 Truncated Shio-Koji Protease Stability — LOW (2026-05-05)
+
+**Question:** Does the stalk-truncated DAF SCR1-4 construct (aa 35–285, removing the disordered Ser/Thr stalk that drove comp-006 HIGH) survive shio-koji protease conditions?
+
+**Verdict:** **LOW (max risk 0.039, identical to uricase comp-001).** Stalk truncation removed 100% of exposed sites: 9 NPr + 48 ALP + 1 acid → 0 exposed in SCR1-4. All 242 recognition sites buried.
+
+**Key findings:**
+- CP0 platform-gap closure thesis in silico-validated. comp-006's HIGH was 100% stalk-driven, not SCR-driven.
+- Fermentable engineering candidate for the wiki's only "honest platform gap" now exists. Three wet-lab unknowns remain (disulfide folding, CCP function preservation, mucosal delivery geometry).
+
+**Informs:** [complement-c5a-gout](./complement-c5a-gout.md) (CP0 status reframe) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) (new stub) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) (row updated 🟡→🔬)
+
+**Detail:** [interpretive](./daf-cd55-scr14-truncated-computational.md) · [experiments/](../experiments/comp-012-daf-cd55-scr14-truncated/) · Complete
+
+---
+
+### comp-011 — *C. utilis* Uricase Cassette Compatibility — MODERATE (2026-05-05)
+
+**Question:** Does *C. utilis* uricase (industry-revealed preference per ALLN-346) have the same cassette-compatibility profile as *A. flavus* uricase, or does the alternative payload introduce blocking issues?
+
+**Verdict:** **MODERATE** (vs *A. flavus* LOW per comp-010). Design-driven, not fundamental incompatibility.
+
+**Key findings:**
+- Platform decision: **don't pick; run BOTH variants in §1.9 as parallel direct-secretion cassettes** at ~$200–400 additional gene synthesis. Empirical comparison resolves *A. flavus* vs *C. utilis*.
+- Three MODERATE drivers: codon burden 2.3× heavier (CAI 0.65 vs 1.51); 4 free cysteines vs 0; 2 internal KR sites vs 1. ALLN-346 mutation I132R adjacent to position 130 KR.
+- Corrects prior P15296 misattribution; canonical UniProt is **P78609**.
+
+**Informs:** [uricase-variant-selection](./uricase-variant-selection.md) · [validation-experiments §1.9](./validation-experiments.md)
+
+**Detail:** [interpretive](./c-utilis-uricase-cassette-compatibility-computational.md) · [experiments/](../experiments/comp-011-c-utilis-uricase-cassette-compatibility/) · Complete
+
+---
+
+### comp-010 — Cassette Compatibility for Dual-Cassette Koji Endgame Strain — LOW (2026-05-05)
+
+**Question:** Does the uricase (Q00511) + lactoferrin (P02788) payload pair have cassette-design-specific issues (codon collisions, KEX2 geometry, secretion burden) that the Ward 1995 glucoamylase-KEX2 architecture won't handle?
+
+**Verdict:** **LOW** overall cassette-design risk for the asymmetric architecture (direct-secretion uricase + glucoamylase-KEX2-fusion Lf). Uricase: 0 disulfides; Lf: 17 disulfides (1.06× Huynh 2020). No blocking issues.
+
+**Key findings:**
+- OE payload pair within Huynh 2020 ER-capacity precedent. Ward 1995 >2 g/L Lf is the correct benchmark (not adalimumab 39.7 mg/L).
+- Monitor Lf KEX2 site at mature pos 579 (moderate truncation risk) by SDS-PAGE; verify uricase secretion vs C-terminal SKL PTS1 motif.
+- Uricase pos 128 high-risk KR is irrelevant for direct-secretion (load-bearing only if moved to fusion).
+
+**Informs:** [validation-experiments §1.9](./validation-experiments.md) — removes cassette architecture as pre-experiment concern
+
+**Detail:** [interpretive](./cassette-compatibility-computational.md) · [experiments/](../experiments/comp-010-cassette-compatibility/) · Complete
+
+---
+
+### comp-007 — Food-Grade HDAC Inhibitor Screen for Q141K-ABCG2 Trafficking Rescue — Butyrate rank 1 (2026-05-05)
+
+**Question:** Which food-grade HDAC inhibitor candidates best combine class I HDAC potency, HDAC6 selectivity, and gut-enriched exposure for Q141K-ABCG2 trafficking rescue?
+
+**Verdict:** **Butyrate (rank 1, 0.374) >> Sulforaphane (rank 2, 0.090) > PEITC (rank 3, 0.060).** Only Butyrate has confirmed class I selectivity (167× over HDAC6, HIGH confidence). Caffeic + ferulic acid score 0 (DATA_UNAVAILABLE).
+
+**Key findings:**
+- Butyrate is the only food-grade compound with biochemical IC50 against all four HDAC isoforms; 167× HDAC1/2/3-over-HDAC6 structurally explained (carboxylate zinc coordination).
+- Sulforaphane ranking fragile; isoform selectivity uncharacterized; indirect mercapturic-metabolite mechanism differs from butyrate.
+
+**Informs:** [validation-experiments §1.22](./validation-experiments.md#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue) — top 3 advance to Stage 2
+
+**Detail:** [interpretive](./food-grade-hdaci-screen-computational.md) · [experiments/](../experiments/comp-007-food-grade-hdaci-screen/) · Complete
+
+---
+
+### comp-005 — Lactoferrin Shio-Koji Protease Stability — HIGH (full) / MODERATE (mature) (2026-05-05)
+
+**Question:** Will human lactoferrin (P02788) survive the shio-koji protease environment with meaningful structural integrity retained?
+
+**Verdict:** **HIGH (full sequence) / MODERATE (mature aa 20–710).** All top-5 sites in signal peptide (pLDDT 35–54). Mature max risk 0.188 (ALP, 3 exposed sites). If signal peptide cleaved by *A. oryzae*, operative risk is MODERATE.
+
+**Key findings:**
+- HIGH verdict is signal-peptide-contingent. Mature Lf less resistant than uricase (LOW) but substantially more resistant than full-sequence headline.
+- ALP's conservative pH factor (1.0, outside active pH 6–12) likely overstates mature-protein risk. Glycosylation at N137/N478/N623 not modelled; may further reduce accessibility.
+- Inter-lobe linker flagged as most plausible secondary vulnerability → became comp-034.
+
+**Informs:** [validation-experiments §1.10](./validation-experiments.md) — Lf arm remains feasibility gate (unlike uricase)
+
+**Detail:** [interpretive](./lactoferrin-protease-stability-computational.md) · [experiments/](../experiments/comp-005-lactoferrin-shio-koji-protease-stability/) · Complete
+
+---
+
+### comp-004 — Supplement ABCG2 Antagonism — VERY HIGH risk (provisional) (2026-05-05)
+
+**Question:** Do quercetin, EGCG, and curcumin reach gut-lumen concentrations sufficient to inhibit ABCG2-mediated urate efflux at standard supplement doses?
+
+**Verdict:** **VERY HIGH risk (provisional)** for quercetin and curcumin; 6.8× and 8.3× IC50, predicting 87–89% ABCG2 inhibition. EGCG acts via expression downregulation, not scored by this framework.
+
+**Key findings:**
+- **Curcumin paradox:** <1% bioavailability concentrates >99% of oral dose in gut lumen, reaching 8.3× IC50 (1,630 nM) despite lower gut concentration than quercetin.
+- Supplement-induced ABCG2 inhibition may reduce gut urate excretion, paradoxically worsening hyperuricemia.
+
+**Informs:** [validation-experiments §1.14](./validation-experiments.md) — shifts supplement arms from screening to quantification
+
+**Detail:** [interpretive](./supplement-abcg2-antagonism-computational.md) · [experiments/](../experiments/comp-004-supplement-abcg2-antagonism/) · Complete
 
 ---
 
 ## Planned Analyses
 
-| ID | Question | Informs | Priority |
+| ID | Scope | Primary informs | Priority |
 |---|---|---|---|
-| comp-002 | Uricase thermal/pH stability under shio-koji conditions (MD simulation or Rosetta ΔΔG) | §1.10 follow-up if wet-lab shows unexpected degradation | Low (pending §1.10 result) |
-| ~~comp-003~~ → **comp-005** | Lactoferrin cleavage-site analysis under same shio-koji conditions | §1.10 extension; completed 2026-05-05; see comp-005 above | ✓ Done |
-| comp-008 | *Faecalibacterium prausnitzii* heterologous expression feasibility; codon usage, GC content, secretion machinery, payload tractability ranking | [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) Phase 2 P2-4; informs whether *F. prausnitzii* is engineering-tractable for OE-relevant payloads (uricase, lactoferrin, soluble complement regulators, butyrate-pathway boost) | Medium (LBP track Phase 2) |
-| comp-009 | URAT1 mRNA structural analysis for siRNA target site selection; SLC22A12 transcript variants, RNAfold secondary structure, accessibility scoring, mammalian-ortholog conservation | [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) Phase 2 P2-2; cheapest mechanistic killshot for the siRNA / URAT1 thesis (no accessible target sites = thesis collapse before delivery is even considered) | Medium (siRNA / URAT1 track Phase 2) |
-| ~~comp-011~~ TCM ChEMBL cross-check | _Reassigned: the TCM ChEMBL cross-check work landed as **comp-013** (2026-05-06; see Analyses table above). Original comp-011 number was reassigned 2026-05-05 to the C. utilis uricase cassette compatibility analysis._ |; | ✓ Done as comp-013 |
-| comp-021 | _Reserved: compound × upstream-complement chokepoint × matched-assay-format mapping (Phase 2 follow-up from comp-020); see [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) §"Phase 2 follow-ups." Brief not yet written._ | [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md); resolves the rosmarinic-acid 44× assay-format spread by stratifying IC50 reporting by assay type | Low (parked until upstream-complement track moves) |
-| ~~comp-022~~ | _Completed 2026-05-14; see comp-022 in the Analyses section above. Headline: 43,200 candidates enumerated; 195 (0.45%) pass N-of-4 = 4 concordance; top cluster confirms PamyB + amyB SP + direct-secretion architecture with three gene-synthesis-time refinements (5'-softened codon variant, PTS1-blocking C-terminal tag, N191Q glycosylation ablation)._ |; | ✓ Done |
-| comp-024 | Complestatin-family BGC heterologous expression feasibility in the engineered-LBP chassis (*Bacteroides* / *E. coli* Nissle), in silico: BGC cluster size + organization, NRPS module count and substrate specificity, precursor supply (host can synthesize the required amino acid substrates), codon usage compatibility, toxicity / host-fitness modeling (do the intermediates poison the host?), regulatory architecture (constitutive vs inducible). Comparator: the C1-INH recombinant-expression parallel engineering thread surfaced in comp-018 Phase 2. Verification agent pass before commit. | [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) Phase 2; turns the named-but-unscoped "complestatin BGC LBP heterologous expression" Phase 2 follow-up from comp-018 into a queued comp; adds a third mechanism class to CP0 coverage (engineering DAF SCR1-4 + dietary rosmarinic acid + bacterial complestatin NRPS), each via a distinct chassis | Medium (LBP track Phase 2; concrete first payload candidate beyond butyrate-pathway boost) |
-| comp-023 | _Promoted to Analyses 2026-05-14; verdict GREEN. See [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) + comp-023 entry above._ |; |; |
-| ~~comp-022 v2~~ | _Completed 2026-05-14; see comp-022 Status row in the Analyses section above. Headline: 71 cassettes pass N-of-5 ≥ 4 (vs v1's 501); v1's top cluster (PamyB + amyB-SP + 5p_softened + direct + PTS1-blk + N191Q) survives 4/4 = 100%; 4 cassettes pass N-of-5 = 5 strict; Spearman(v1 GC-clamp proxy, ViennaRNA MFE) = 0.241 (weak correlation; v1 proxy was noisy on mRNA axis). ESM2 pseudo-pLDDT used as ESMFold fallback (openfold install blocked; brief-authorized fallback). v1 architectural verdict validated._ |; | ✓ Done |
-| ~~comp-023 v2~~ | **Deprioritized 2026-05-16** — koji-cordycepin engineering removed from active cassette stack (walkthrough Item 7, see [`koji-endgame-strain.md` §3.5](./koji-endgame-strain.md)). Dynamic FBA validation moot once cns1+cns2 is no longer an active target. comp-023 v1 GREEN verdict on metabolic burden remains as methodology validation; the static-FBA limitation v2 was meant to close is now non-load-bearing. | (deprioritized) | Closed |
-| ~~comp-025~~ | **Deprioritized 2026-05-16** — koji-cordycepin engineering removed from active cassette stack. ADA × cns1 substrate competition is moot once cns1+cns2 is no longer being engineered into koji. The cultivation-route cordycepin (via *C. militaris* fruit body / fermentate per [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md)) inherits the native pentostatin ADA-inhibitor pairing at the co-evolved ratio; no kinetic-competition modeling needed. | (deprioritized) | Closed |
-| ~~comp-026~~ | **Deprioritized 2026-05-16** — koji-cordycepin engineering removed from active cassette stack. Multi-cassette induction interference is no longer load-bearing for the cordycepin arm specifically. The general question (do uricase + lactoferrin cassettes interfere under shared inducer conditions?) is now scoped to the dual-cassette §1.9 design only, where comp-022's PamyB + amyB-SP cluster + the existing §1.9 dual-PTEF1+PamyB orthogonal-promoter rationale already addresses the regulatory-architecture question. Re-open if a future cytosolic third-cassette candidate (carnosine, ergothioneine biosynthesis) lands and the induction-interference question becomes load-bearing for it. | (deprioritized; re-openable for future cytosolic third-cassette candidates) | Closed |
-| comp-027 | Disulfiram dose modeling for GSDMD-blockade clinical efficacy vs. alcohol-deterrent ceiling. The compounding-pharmacy track has flagged disulfiram as the highest-leverage repurposing-surface compound (CP6b GSDMD; FDA-approved 1951; off-patent; bulk API widely available on FDA 503A list) — but a 503A prescription pathway needs explicit dose modeling before opening. Approaches: (a) literature scan for disulfiram + DETC plasma PK (oral 250 mg/day AUD-baseline vs. higher / lower doses tested in oncology + neurology re-purposing trials); (b) GSDMD-blockade EC50 in macrophage NLRP3-pyroptosis models (Hu 2020 Nat Immunol PMID 32152506 + follow-up literature); (c) ratio of GSDMD-blockade-relevant plasma concentration to alcohol-deterrent threshold; (d) is there a sub-AUD dose window where GSDMD blockade dominates without the disulfiram-ethanol reaction risk? Bundled: drug-interaction landscape (CYP2E1, allopurinol co-administration), off-label prescribing precedent, formulation considerations for sub-AUD dosing. Outcome: a defensible dose-range proposal that gates whether the compounding-pharmacy track can advance disulfiram to a real 503A prescription pathway, or whether the GSDMD-blockade dose is too close to the alcohol-deterrent ceiling to be safely prescribable off-label. | [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) Phase 2 §6 (Disulfiram-specific computational prior); [`disulfiram.md`](./disulfiram.md); [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) CP6b GSDMD chokepoint | Medium-High (highest-leverage single compound for the repurposing-surface delivery thesis; gates the compounding-pharmacy track's disulfiram pathway) |
-| comp-030 | DAF SCR1-4 cassette ranking — comp-022-style exhaustive ClockBase ranking on the DAF SCR1-4 cassette design space (promoters × signal peptides × codon variants × secretion scaffolds), using **real ViennaRNA MFE + ESMFold (or ESM2 pseudo-pLDDT fallback) from the start** to avoid comp-022 v1's GC-clamp proxy failure (Spearman ρ = 0.241 vs. ViennaRNA; 430/501 cassettes re-ranked by v2 retrofit). Reference target: DAF/CD55 SCR1-4 truncated construct (aa 35–285, UniProt P08174, 8 disulfide bonds, 4 CCP/SCR modules). Current §1.25 baseline design: PamyB promoter + amyB signal peptide + direct secretion. Outputs: (1) ranked shortlist of top cassettes that survive N-of-5 ≥ 4 concordance gate (CAI, ViennaRNA 5′ mRNA MFE, chaperone load α-coefficient prediction, promoter×SP prior, ESMFold pLDDT); (2) independent empirical check on the [chaperone-orthogonal-stacking.md §3.5.2](./chaperone-orthogonal-stacking.md) α = 0.3–0.6 prediction for CCP/SCR architecture — by examining the distribution of structural-quality scores across the 43,200-class candidate space, the predicted "low PDI load" hypothesis is testable in silico. (3) Verdict on whether current §1.25 design is optimal vs. surfaces a better-ranked candidate. Pass 3 (2026-05-15) confirmed this turns `uricase-cassette-ranking-computational.md` §6.3's "recommended follow-up" into a concrete comp-NNN. **PROMOTED TO COMPLETED — see comp-030 in Analyses table above (2026-05-15).** | [`daf-cd55-scr14-truncated-computational.md`](./daf-cd55-scr14-truncated-computational.md) (comp-012); [`uricase-cassette-ranking-computational.md`](./uricase-cassette-ranking-computational.md) §6.3 (methodology source); [`chaperone-orthogonal-stacking.md`](./chaperone-orthogonal-stacking.md) §3.5.2 (α coefficient to validate); [`etc/autonomous-screening-methodology.md`](./etc/autonomous-screening-methodology.md) §"BioDesignBench evaluation-depth audit" (multi-method discipline anchor); [`validation-experiments.md`](./validation-experiments.md) §1.25 (wet-lab gate the ranking informs); [H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) (CP0 thesis the cassette serves) | ✓ Done (2026-05-15) |
-| ~~comp-029~~ | _Completed 2026-05-16; see comp-029 in the Analyses section above. Verdict YELLOW at all three DAF MSU-surface accessibility priors; combined median 1.08-1.10× the better singleton (below 1.5× GREEN threshold); combined 95% CI overlaps both singleton CIs; both arms individually saturate. No interaction blocker found (RED path closed). The combined-coverage thesis is not refuted; gated on the §1.25 wet-lab functional readout to resolve DAF SCR1-4 MSU-surface accessibility (the dominant uncertainty driver)._ |; | ✓ Done |
-| comp-033 | Inhaled mRNA-IL-1RA pulse therapy — target validation, dose modeling, and pharma-partner identification. Promotes the [`chassis-pending-interventions.md §4`](./chassis-pending-interventions.md) inhaled mRNA-IL-1RA placeholder to a concrete subagent-runnable brief. Approach: (a) **target validation** — IL-1Ra (UniProt P18510) vs alternative IL-1-axis payloads (e.g., soluble IL-1R2 decoy, IL-1β-binding nanobody); justify pulmonary route vs SC vs intra-articular for flare-abort; (b) **dose modeling** — pulmonary epithelial expression kinetics from published inhaled-mRNA CF/RSV programs (e.g., Vertex CF mRNA platform, Translate Bio TLN-RNA, Moderna respiratory mRNA pipeline); model AUC of lung-expressed IL-1Ra protein vs subcutaneous anakinra at therapeutic dose; estimate dose-per-flare in μg mRNA terms; (c) **construct-design priors** — codon optimization for human alveolar epithelium, 5'/3' UTR choice for transient (12–72h) expression vs durable expression, modified-nucleoside chemistry (pseudouridine / N1-methylpseudouridine per Karikó/Weissman), polyA-tail length tuning for short-half-life; (d) **economic comparison** — cost-per-flare at COVID-vaccine-class mRNA-LNP manufacturing economics ($5–20/dose at scale) × 5–10 flares/yr vs canakinumab benchmark (~$300K/yr); (e) **partner-identification scan** — which existing inhaled-mRNA programs (CF / RSV / asthma) have forkable LNP+device infrastructure; which CDMOs (CordenPharma, Recipharm, Aldevron/Danaher, Lonza, BioNTech-network, Moderna-network) are accessible at OE's discovery-stage outreach scale; flag academic-lab collaborators with vibrating-mesh-nebulizer inhaled-mRNA-LNP precedent for animal-POC partnership. Decision rule: GREEN iff dose modeling shows pulmonary IL-1Ra expression can plausibly reach anakinra-equivalent therapeutic exposure AND ≥2 partner candidates with active inhaled-mRNA programs are identified — justifies a discovery-engine partner outreach campaign. YELLOW iff target valid but partner landscape is sparse — park as long-cycle chassis-pending. RED iff dose modeling shows pulmonary expression categorically can't reach therapeutic AUC — drop the inhaled route, route to alternative chassis (intra-articular? hepatic-targeted SC?). Multilingual default applies — check J-STAGE / CNKI for Japanese / Chinese inhaled-biologics literature, particularly the academic CF and asthma device-formulation work outside the English-language CDMO commercial track. | [`open-enzyme-vision.md` §10 "Chronic prevention + pulsatile flare-abort"](./etc/open-enzyme-vision.md) (originating framing); [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md) (intervention entry); [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) (CP5a × mRNA cell); [`delivery-route-matrix.md`](./delivery-route-matrix.md) (RNA platforms × inhaled cell); [`gout-kill-chain-delivery-routes.md`](./gout-kill-chain-delivery-routes.md); [`gout-clinical-pipeline.md`](./gout-clinical-pipeline.md) (canakinumab benchmark + anakinra dose anchor) | Medium-High (closes the acute-flare temporal gap in the platform stack; OE's contribution is bounded — target validation + partner identification — but the framing influences how every future acute-flare-window intervention is evaluated) |
+| comp-002 | Uricase thermal/pH stability under shio-koji conditions (MD or Rosetta ΔΔG) | [§1.10 follow-up](./validation-experiments.md) | Low (pending §1.10 result) |
+| ~~comp-003~~ | Reassigned 2026-05-05 → comp-005 (lactoferrin cleavage-site analysis) | — | ✓ Done as comp-005 |
+| comp-008 | *F. prausnitzii* heterologous expression feasibility (codon, GC, secretion, payload tractability ranking) | [engineered-lbp-chassis](./engineered-lbp-chassis.md) Phase 2 P2-4 | Medium |
+| comp-009 | URAT1 mRNA structural analysis for siRNA target site selection | [sirna-urat1-modality](./sirna-urat1-modality.md) Phase 2 P2-2 | Medium |
+| ~~comp-011 TCM~~ | Reassigned 2026-05-05; TCM ChEMBL cross-check landed as comp-013 | — | ✓ Done as comp-013 |
+| comp-021 | Compound × upstream-complement chokepoint × matched-assay-format mapping (resolves RA 44× spread) | [upstream-complement-verification-rerun-computational](./upstream-complement-verification-rerun-computational.md) | Low (parked) |
+| ~~comp-022~~ | Completed 2026-05-14 — see Analyses above | — | ✓ Done |
+| comp-024 | Complestatin-family BGC heterologous expression feasibility in engineered-LBP chassis | [engineered-lbp-chassis](./engineered-lbp-chassis.md) Phase 2 | Medium |
+| comp-023 | Promoted to Analyses 2026-05-14 (GREEN) | — | ✓ Done |
+| ~~comp-022 v2~~ | Completed 2026-05-14 — see comp-022 Status above | — | ✓ Done |
+| ~~comp-023 v2~~ | Deprioritized 2026-05-16 — koji-cordycepin removed from active stack ([koji-endgame-strain §3.5](./koji-endgame-strain.md)) | — | Closed |
+| ~~comp-025~~ | Deprioritized 2026-05-16 — koji-cordycepin removed; cultivation-route cordycepin inherits native ADA-inhibitor pairing | — | Closed |
+| ~~comp-026~~ | Deprioritized 2026-05-16 — multi-cassette induction interference moot for cordycepin; re-openable for future cytosolic third-cassette candidate | — | Closed |
+| comp-027 | Disulfiram dose modeling for GSDMD-blockade vs alcohol-deterrent ceiling (CP6b; 503A pathway gate) | [compounding-pharmacy-track](./compounding-pharmacy-track.md) §6 · [disulfiram](./disulfiram.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) CP6b | Medium-High |
+| ~~comp-030~~ | Completed 2026-05-15 — see Analyses above | — | ✓ Done |
+| ~~comp-029~~ | Completed 2026-05-16 — YELLOW; see Analyses above | — | ✓ Done |
+| comp-031 | Dual-chassis EcN PDB + uricase additive SUA prediction (CP6 multi-chassis stack) | [purine-degrading-bacteria](./purine-degrading-bacteria.md) · [chassis-pending-interventions](./chassis-pending-interventions.md) M1 | Medium |
 | comp-032 | Pharmacological-chaperone virtual screen against ABCG2 Q141K. Promotes the placeholder "comp-NNN" in [`chassis-pending-interventions.md §7`](./chassis-pending-interventions.md) ("Pharmacological chaperones for ABCG2 Q141K folding rescue") to a concrete numbered comp. Approach: (a) AlphaFold structure of wild-type ABCG2 + AlphaFold structure of Q141K mutant — compare to surface the misfolded NBD region as a binding pocket of interest; (b) virtual screen of the FDA-approved drug set (DrugBank / ChEMBL approved-drugs subset, ~3,000–5,000 molecules) against the Q141K NBD pocket using AutoDock Vina or DiffDock, with positive controls drawn from the CFTR-corrector class (ivacaftor / tezacaftor / elexacaftor) and from documented ABC-transporter-binding compounds; (c) rank-order hits by binding-pose stability + drug-class diversity; (d) cross-check top 20 against known PK / safety profile + 503A bulk-API availability for the compounding-pharmacy delivery route. Outcome: a defensible shortlist of 0–10 repurposing candidates worth a per-hit cell-based Q141K trafficking-rescue assay, or a defensible empty-shortlist verdict that the FDA-approved drug surface lacks chaperone-active hits for Q141K and any chaperone campaign would need novel chemistry (informs the next-step decision: empty shortlist → drop the repurposing-surface thesis for this target, pivot to AI-aided novel binder design per RFdiffusion; non-empty → compounding-pharmacy partner conversation). | [`chassis-pending-interventions.md` §7](./chassis-pending-interventions.md) (promotes the placeholder comp-NNN); [`abcg2-modulators.md`](./abcg2-modulators.md) §"Pharmacological-chaperone route" (the orthogonal rescue mechanism); [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) (delivery route if a hit lands); [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) and [`abcg2-modulators.md`](./abcg2-modulators.md) §"Q141K rescue mechanism" (the HDAC/butyrate rescue track this is orthogonal to) | Medium (cheap subagent task; bounds a "repurposing surprise" hypothesis cheaply; non-blocking for any other track) |
-| comp-031 | Dual-chassis EcN PDB + uricase additive SUA prediction. Tests the multi-chassis CP6 stack thesis ([`chassis-pending-interventions.md` §"Multi-chassis stacks" M1](./chassis-pending-interventions.md)): does an engineered EcN expressing the 2,8-dioxopurine PDB cluster (CBT2.0 precedent, Li 2025) co-administered with a PULSE-style luminal uricase deliver additive serum urate reduction beyond either arm alone, and does PDB-derived butyrate compound with the uricase gut-lumen sink via ABCG2 induction in the colonic crypt? Approaches: (a) literature-anchored kinetic model of luminal urate consumption rates (PDB DOPDH cluster vs. uricase) at typical colonic urate concentrations; (b) butyrate flux from PDB pathway at CBT2.0-like colonization densities, layered onto the Basseville 2012 1 mM HDAC-inhibition threshold to estimate fractional Q141K ABCG2 trafficking rescue; (c) compositional check: do the two arms compete for luminal urate substrate (negative interaction) or compose additively (positive on different mechanism axes)? Outcome: defensible additive-SUA prediction range gates the dual-cassette EcN engineering investment vs. routing PDB and uricase to separate strains. | [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) §"OE Platform Implications" + §"Companion intervention: compounded disulfiram"; [`gut-lumen-sink.md`](./gut-lumen-sink.md) (PULSE uricase chassis context); [`abcg2-modulators.md`](./abcg2-modulators.md) (PPARγ/ABCG2 axis); [`chassis-pending-interventions.md` §"Multi-chassis stacks" M1](./chassis-pending-interventions.md); pairs with [comp-027](./computational-experiments.md) disulfiram dose window for the full multi-chassis CP6 stack analysis | Medium (gates dual-cassette EcN engineering decision; non-blocking for current koji track) |
-| ~~comp-028~~ | **Reframed and deprioritized 2026-05-16** — original brief was "triple-cassette endgame strain feasibility with cns1+cns2 cordycepin as the cytosolic third cassette." With koji-cordycepin removed from the active cassette stack (walkthrough Item 7, see [`koji-endgame-strain.md` §3.5](./koji-endgame-strain.md)), the cordycepin-specific arm of this brief is moot. The general design-escape question (does a cytosolic third cassette bypass the secreted-only chaperone bottleneck?) remains theoretically interesting — but with no concrete third-cassette candidate currently on the active stack (carnosine and ergothioneine biosynthesis are listed as candidates in `koji-endgame-strain.md` §3.5 but neither has cleared the "delivers novel chokepoint coverage" test that triggers active engineering), the design-escape question is also non-load-bearing today. Re-open as comp-028 v2 if a specific cytosolic third-cassette candidate lands a chokepoint-coverage justification. The chaperone-orthogonal-stacking framework's cytosolic-cassette logic (§5.6) stands as a documented design rule; the empirical instantiation waits on a real candidate. | (deprioritized; re-openable as comp-028 v2 if a cytosolic third-cassette candidate clears the chokepoint-coverage gate) | Closed |
+| comp-033 | Inhaled mRNA-IL-1RA pulse therapy — target validation, dose modeling, pharma-partner identification | [open-enzyme-vision §10](./etc/open-enzyme-vision.md) · [chassis-pending-interventions §4](./chassis-pending-interventions.md) | Medium-High |
+| ~~comp-028~~ | Reframed and deprioritized 2026-05-16 — cordycepin-arm moot; general design-escape question non-load-bearing today; re-openable for future cytosolic third-cassette candidate | — | Closed |
 
 ---
 
 ## Infrastructure proposals
 
-### comp-NNN verification agent (ClockBase hypothesis-then-verify pattern); added 2026-05-08
+### comp-NNN verification agent (ClockBase hypothesis-then-verify pattern) — Planned (2026-05-08)
 
-**The proposal.** Every comp-NNN run produces a primary output report from a *generation* agent (the subagent that does the literature mining / structure analysis / breadth scan). Add a second pass: a *verification* agent (potentially a different LLM per the multi-vendor heterogeneity discipline in [`open-source-platform.md`](./etc/open-source-platform.md) §"Multi-model synthesis as guard against epistemic homogenization") that re-checks every load-bearing number; disulfide counts, residue indices, IC50/Ki values, organism identities, accession numbers, cohort sizes; against primary databases (UniProt, ChEMBL, PDB, PubMed, NCBI Taxonomy) BEFORE the comp-NNN output is considered complete.
+Every comp-NNN run produces output from a *generation* agent; add a second-pass *verification* agent (different vendor preferred per the multi-vendor heterogeneity discipline) that re-checks every load-bearing number (disulfide counts, residue indices, IC50/Ki, accession numbers, cohort sizes) against primary databases (UniProt, ChEMBL, PDB, PubMed) before commit. Sister discipline to the per-page Pre-commit verification gate (CLAUDE.md Rule 4) — same pattern at a different scope. Would have caught the 2026-05-06 DAF SCR1-4 disulfide hallucination at generation time. Cost ~$3–5 + 10–30 min per comp.
 
-**Source pattern.** [`etc/autonomous-screening-methodology.md`](./etc/autonomous-screening-methodology.md) §"Hypothesis-then-verify pattern" extracts this from the ClockBase Agent paper (Ying, Tyshkovskiy, Gladyshev et al. bioRxiv 2023.02.28.530532v3) where it's the load-bearing architectural feature that lets ClockBase's autonomous-screening output be wet-lab-handoff-quality.
-
-**Sister discipline at a different scope.** [`etc/manual-literature-mining.md`](./etc/manual-literature-mining.md) §"Pre-commit verification gate" applies the same pattern at the per-page commit scope (CLAUDE.md Rule 4). This proposal applies it at the per-comp-NNN run scope. Same structural pattern (generate → verify against primary source); different operational scope. Naming the equivalence consolidates the discipline across both scopes.
-
-**The failure mode it would catch.** The 2026-05-06 DAF SCR1-4 disulfide-count hallucination ("3 per SCR domain → 12 total" asserted in 4 places of prose narrative; primary-source-verified to be 8 per UniProt P08174) was caught by the multi-vendor sweep daemon 24h later via Pass 2 cross-check. A verification agent at comp-NNN-generation time would have caught it before the wrong number entered the corpus, preventing the overnight propagation into H05 and the downstream chaperone-load synergy panic. See [`operations/notable-moments.md`](../operations/notable-moments.md) 2026-05-06 entry for the canonical case.
-
-**Adjacent failure mode it would also catch.** Today's brief-contamination retrospective ([`operations/comp-018-vs-comp-020-retrospective.md`](../operations/comp-018-vs-comp-020-retrospective.md), 2026-05-08) demonstrated that **brief-level** contamination is structurally similar to model-level confabulation; different inputs to the same architecture produce different outputs, and independent re-running surfaces the discrepancy. The verification-agent proposal here is a NUMBER-level guard; the brief-scrubbing discipline (codified at [`scripts/SWEEP-ARCHITECTURE.md` §"Subagent brief hygiene"](../scripts/SWEEP-ARCHITECTURE.md)) is a SCOPE-level guard. Both belong in the comp-NNN authoring discipline.
-
-**Implementation sketch.** When a comp-NNN subagent finishes its primary output, the next step (before commit) is to spawn a verification subagent; different vendor preferred (e.g., Claude generates, DeepSeek verifies; or Opus generates, GPT-5.5 verifies). The verification agent's brief: read the primary output's load-bearing numerical claims, look each one up in the cited primary source via direct database query (UniProt API for protein features; PubMed MCP for trial values; ChEMBL API for bioactivity; etc.), and produce a verification report flagging any discrepancy. The primary subagent then either fixes flagged claims or marks them `[UNVERIFIED]` per CLAUDE.md Rule 4.
-
-**Cost.** ~$3-5 per comp-NNN at current Opus/DeepSeek/GPT-5.5 rates; 10-30 minutes wall-clock added to the workflow. Cheap-enough-to-default-to.
-
-**Status.** Planned infrastructure, not yet implemented. The discipline already exists informally; comp-018 vs. comp-020 (today's brief-contamination retrospective) was an ad-hoc verification re-run that worked. Codifying it as a routine comp-NNN step is the structural fix.
+**Detail:** [etc/autonomous-screening-methodology](./etc/autonomous-screening-methodology.md) §"Hypothesis-then-verify pattern" · [etc/manual-literature-mining](./etc/manual-literature-mining.md) §"Pre-commit verification gate" · [operations/comp-018-vs-comp-020-retrospective](../operations/comp-018-vs-comp-020-retrospective.md)
 
 ---
 
-### pcSec-class proteome-constrained *A. oryzae* GEM build; added 2026-05-14
+### pcSec-class proteome-constrained *A. oryzae* GEM build — Planned (2026-05-14)
 
-**The proposal.** Layer secretion-pathway proteome cost constraints on iWV1314 (Vongsangnak 2008) or a more recent *A. oryzae* GEM. Include explicit PDI / calnexin / BiP saturation modeling, signal-peptide processing capacity, KEX2 endopeptidase flux, and Sec61 translocon throughput. Run plain FBA on the resulting pcSec-iWV1314 to evaluate whether adding a *secreted* third cassette (DAF SCR1-4 per [H05](./hypotheses/H05-daf-scr14-cp0-thesis.md), engineered C1-INH per comp-018 Phase 2 follow-up, complestatin-family NRPS per comp-024 in the LBP chassis) on top of the dual uricase + lactoferrin background would saturate the secretion machinery.
+Layer secretion-pathway proteome-cost constraints on iWV1314 (Vongsangnak 2008): explicit PDI/calnexin/BiP saturation, signal-peptide processing capacity, KEX2 flux, Sec61 throughput. Enables rigorous burden evaluation for any future *secreted* third cassette (DAF SCR1-4 per H05; engineered C1-INH per comp-018 Phase 2; complestatin NRPS per comp-024). Validation gate: must reproduce comp-023 GREEN for cytosolic cns1+cns2. Multi-week research project; not a single-subagent task. Surfaced as comp-023 v1 limitation.
 
-**Source pattern.** Proteome-constrained Secretion-pathway (pcSec) modeling was developed for *S. cerevisiae* and *P. pastoris* with documented predictive utility for heterologous-protein-expression strain engineering. The *A. oryzae* equivalent is research-grade; no public release exists as of 2026-05-14.
-
-**Value (why this is infrastructure, not a comp-NNN).** comp-023 v1 (cytosolic cassette burden) is robust without pcSec because cns1+cns2 doesn't touch the secretion pathway. But every future comp evaluating a *secreted* third cassette needs pcSec to answer the burden question rigorously. Currently the corpus has no model that can answer "if I add a third secreted protein, where does the strain break." Once built, pcSec-iWV1314 enables: H05 DAF SCR1-4 burden re-evaluation under realistic ER folding constraints; engineered C1-INH (comp-018 Phase 2) burden evaluation; complestatin NRPS (comp-024) host-fitness modeling with secretion-pathway cost; multi-payload LBP chassis burden analysis for any future *F. prausnitzii* / *Bacteroides* / *E. coli* Nissle payload stack (comp-008 follow-up).
-
-**Validation gate.** pcSec-iWV1314 should reproduce comp-023's GREEN verdict for cns1+cns2 (cytosolic; PDI load 0; no secretion-pathway perturbation expected). If it doesn't, the model is mis-calibrated and the build is incomplete.
-
-**Cost / timeline.** Multi-week research project. Realistically needs either a contributor with FBA + proteomics modeling depth, or a careful subagent build with verification scaffolding across multiple sessions (model construction → parameter calibration against published *A. oryzae* heterologous-expression data → validation against comp-023 → release as pcSec-iWV1314 v0.1). Not a tonight task; not a single-subagent task.
-
-**Companion to the "comp-NNN verification agent" proposal above.** Same pattern of building tooling that supports multiple downstream comps rather than answering a single scientific question. The two infrastructure threads complement each other: verification agent catches per-claim hallucinations within a comp-NNN run; pcSec model catches per-strain feasibility gaps across multiple comp-NNNs.
-
-**Status.** Planned infrastructure, not yet implemented. Surfaced 2026-05-14 from comp-023 v1's documented limitation that the FBA-without-pcSec simplification was not load-bearing for the cytosolic cassette but would be load-bearing for any secreted third cassette.
+**Detail:** [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md) · companion to verification-agent proposal (per-run vs per-strain infrastructure scopes)
 
 ---
 
 ## How to add a new analysis
 
 1. Create `experiments/comp-NNN-<slug>/` with `analyze.py`, `inputs/`, `outputs/`, `README.md`, `inputs/provenance.md`
-2. Add a row to the "Analyses" table above
+2. Add an entry to the "Analyses" section above (compact format) or the "Planned Analyses" table
 3. Create `wiki/<slug>-computational.md` for the interpretive page
 4. Link from the relevant wet-lab experiment in `validation-experiments.md`
 5. Commit script + inputs + outputs together (outputs are version-controlled; they are the peer-reviewable artifact)
