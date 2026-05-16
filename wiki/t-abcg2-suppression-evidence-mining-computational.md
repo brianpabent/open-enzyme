@@ -34,15 +34,15 @@ status: archived-to-experiments
 
 # Testosterone × Intestinal ABCG2 Suppression — Evidence Mining (comp-016)
 
-> **Frozen analysis archived to [`../experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md`](../experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md)** (198 lines).
+> **Frozen analysis archived to [`./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md`](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md)** (198 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
-> at `experiments/comp-016-t-abcg2-suppression-evidence-mining/`.
+> at `etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/`.
 
 Does primary literature support the load-bearing claim in [`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Why this matters for the platform" that *androgens directly suppress intestinal ABCG2 expression* at magnitudes consistent with a *structural ceiling on the gut-lumen-sink platform efficacy in male/androgen-dominant patients*?
 
 **Where the analysis lives:**
-- Full archived analysis: [`../experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md`](../experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md)
-- Experiment directory (inputs, scripts, outputs): [`../experiments/comp-016-t-abcg2-suppression-evidence-mining/`](../experiments/comp-016-t-abcg2-suppression-evidence-mining/)
+- Full archived analysis: [`./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md`](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md)
+- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/`](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

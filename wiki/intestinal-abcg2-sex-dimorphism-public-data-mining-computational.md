@@ -47,15 +47,15 @@ status: archived-to-experiments
 
 # Intestinal ABCG2 Sex-Dimorphism — Public-Data Mining + 4-Paper Full-Text Re-Read (comp-017)
 
-> **Frozen analysis archived to [`../experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md`](../experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md)** (183 lines).
+> **Frozen analysis archived to [`./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md`](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md)** (183 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
-> at `experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/`.
+> at `etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/`.
 
 Two-part Tier-0 killshot for [`H07-clomid-intestinal-er-antagonism`](./hypotheses/H07-clomid-intestinal-er-antagonism.md) sub-claims 1 and 3, also closing the full-text-verification follow-up flagged in [comp-016 §Pre-commit verification gate disclosure](./t-abcg2-suppression-evidence-mining-computational.md#pre-commit-verification-gate-disclosure):
 
 **Where the analysis lives:**
-- Full archived analysis: [`../experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md`](../experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md)
-- Experiment directory (inputs, scripts, outputs): [`../experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/`](../experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/)
+- Full archived analysis: [`./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md`](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md)
+- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/`](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

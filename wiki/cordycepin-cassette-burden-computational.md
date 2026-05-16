@@ -55,15 +55,15 @@ status: complete (v1) — target deprioritized 2026-05-16
 
 # Cordycepin (cns1+cns2) Cassette Metabolic Burden: Computational Analysis (comp-023)
 
-> **Frozen analysis archived to [`../experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md`](../experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md)** (183 lines).
+> **Frozen analysis archived to [`./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md`](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md)** (183 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
-> at `experiments/comp-023-cns1-cns2-metabolic-burden/`.
+> at `etc/experiments/comp-023-cns1-cns2-metabolic-burden/`.
 
 Does adding the bacterial **cns1+cns2 cordycepin biosynthesis pathway** (Jeennor 2023, [PMID 38071331](https://pubmed.ncbi.nlm.nih.gov/38071331/), 564 mg/L/day in *A. oryzae*) on top of the dual uricase + lactoferrin cassette in the [koji-endgame-strain](./koji-endgame-strain.md) §1 design impose a prohibitive metabolic burden, defined by:
 
 **Where the analysis lives:**
-- Full archived analysis: [`../experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md`](../experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md)
-- Experiment directory (inputs, scripts, outputs): [`../experiments/comp-023-cns1-cns2-metabolic-burden/`](../experiments/comp-023-cns1-cns2-metabolic-burden/)
+- Full archived analysis: [`./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md`](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md)
+- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-023-cns1-cns2-metabolic-burden/`](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

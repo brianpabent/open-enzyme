@@ -76,7 +76,7 @@ This section is an addition, not a retraction, of the #1 *A. flavus* ranking. Th
 
 ### Cassette Compatibility — comp-011 Update (2026-05-05)
 
-[comp-011](../experiments/comp-011-c-utilis-uricase-cassette-compatibility/) ran the same seven-analysis cassette-design pipeline as [comp-010](../experiments/comp-010-cassette-compatibility/) (*A. flavus*) on the *C. utilis* (P78609) + lactoferrin (P02788) pair in the Ward 1995 / *A. oryzae* architecture. Results: **MODERATE cassette-design risk** (vs. comp-010 *A. flavus* = LOW). The MODERATE verdict is design-driven, not a fundamental incompatibility — three manageable differences vs. *A. flavus*:
+[comp-011](./etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/) ran the same seven-analysis cassette-design pipeline as [comp-010](./etc/experiments/comp-010-cassette-compatibility/) (*A. flavus*) on the *C. utilis* (P78609) + lactoferrin (P02788) pair in the Ward 1995 / *A. oryzae* architecture. Results: **MODERATE cassette-design risk** (vs. comp-010 *A. flavus* = LOW). The MODERATE verdict is design-driven, not a fundamental incompatibility — three manageable differences vs. *A. flavus*:
 
 1. **Codon burden: HEAVY** — *C. utilis* is AT-biased (GC~42%) in a GC-biased host (*A. oryzae* ~54%); CAI proxy 0.65 vs. 1.51 for *A. flavus*. Full gene synthesis with *A. oryzae* codon optimization is mandatory for *C. utilis* (same requirement as lactoferrin). *A. flavus* required minimal optimization due to shared GC preference.
 

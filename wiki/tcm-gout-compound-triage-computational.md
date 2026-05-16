@@ -49,15 +49,15 @@ status: complete
 
 # TCM Gout Compound Triage — Computational Analysis (comp-013)
 
-> **Frozen analysis archived to [`../experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md`](../experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md)** (409 lines).
+> **Frozen analysis archived to [`./etc/experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md`](./etc/experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md)** (409 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
-> at `experiments/comp-013-tcm-gout-compound-triage/`.
+> at `etc/experiments/comp-013-tcm-gout-compound-triage/`.
 
 **Question:** Which Traditional Chinese Medicine (TCM) compounds with documented gout indication are mechanistically viable when triaged via the comp-004 IC50 occupancy + comp-007 composite scoring frameworks?
 
 **Where the analysis lives:**
-- Full archived analysis: [`../experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md`](../experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md)
-- Experiment directory (inputs, scripts, outputs): [`../experiments/comp-013-tcm-gout-compound-triage/`](../experiments/comp-013-tcm-gout-compound-triage/)
+- Full archived analysis: [`./etc/experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md`](./etc/experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md)
+- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-013-tcm-gout-compound-triage/`](./etc/experiments/comp-013-tcm-gout-compound-triage/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

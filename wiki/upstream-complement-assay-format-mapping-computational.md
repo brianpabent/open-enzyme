@@ -30,7 +30,7 @@ status: complete (Phase 1)
 
 # Upstream-Complement Compound × Assay-Format × IC50 Mapping (Computational, comp-021)
 
-> **Frozen analysis at [`../experiments/comp-021-upstream-complement-assay-format-mapping/`](../experiments/comp-021-upstream-complement-assay-format-mapping/) — README + analyze.py + inputs/ + outputs/ committed for reproducibility.** Wiki page is the interpretive layer.
+> **Frozen analysis at [`./etc/experiments/comp-021-upstream-complement-assay-format-mapping/`](./etc/experiments/comp-021-upstream-complement-assay-format-mapping/) — README + analyze.py + inputs/ + outputs/ committed for reproducibility.** Wiki page is the interpretive layer.
 
 ## Headline
 
@@ -59,7 +59,7 @@ This run did not execute new CNKI / WanFang / J-STAGE direct queries; comp-020's
 
 ## Where the analysis lives
 
-- Per-IC50 grep-verification: [`../experiments/comp-021-upstream-complement-assay-format-mapping/inputs/provenance.md`](../experiments/comp-021-upstream-complement-assay-format-mapping/inputs/provenance.md)
-- Compound × format × IC50 matrix: [`../experiments/comp-021-upstream-complement-assay-format-mapping/outputs/matrix.json`](../experiments/comp-021-upstream-complement-assay-format-mapping/outputs/matrix.json)
-- Summary with per-compound spread analysis: [`../experiments/comp-021-upstream-complement-assay-format-mapping/outputs/summary.md`](../experiments/comp-021-upstream-complement-assay-format-mapping/outputs/summary.md)
+- Per-IC50 grep-verification: [`./etc/experiments/comp-021-upstream-complement-assay-format-mapping/inputs/provenance.md`](./etc/experiments/comp-021-upstream-complement-assay-format-mapping/inputs/provenance.md)
+- Compound × format × IC50 matrix: [`./etc/experiments/comp-021-upstream-complement-assay-format-mapping/outputs/matrix.json`](./etc/experiments/comp-021-upstream-complement-assay-format-mapping/outputs/matrix.json)
+- Summary with per-compound spread analysis: [`./etc/experiments/comp-021-upstream-complement-assay-format-mapping/outputs/summary.md`](./etc/experiments/comp-021-upstream-complement-assay-format-mapping/outputs/summary.md)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

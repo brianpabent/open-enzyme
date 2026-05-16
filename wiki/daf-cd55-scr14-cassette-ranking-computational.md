@@ -43,15 +43,15 @@ status: complete (v1, 2026-05-15)
 
 # DAF/CD55 SCR1-4 Cassette Ranking, ClockBase-Style Combinatorial Composite Scoring (Computational, comp-030)
 
-> **Frozen analysis archived to [`../experiments/comp-030-daf-cassette-ranking/wiki-archive.md`](../experiments/comp-030-daf-cassette-ranking/wiki-archive.md)** (398 lines).
+> **Frozen analysis archived to [`./etc/experiments/comp-030-daf-cassette-ranking/wiki-archive.md`](./etc/experiments/comp-030-daf-cassette-ranking/wiki-archive.md)** (398 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
-> at `experiments/comp-030-daf-cassette-ranking/`.
+> at `etc/experiments/comp-030-daf-cassette-ranking/`.
 
 Across the *A. oryzae* DAF/CD55 SCR1-4 expression cassette design space, parameterized as **6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations**, which cassettes survive a multi-model concordance gate and warrant promotion to the [§1.25 wet-lab feasibility test](./validation-experiments.md)?
 
 **Where the analysis lives:**
-- Full archived analysis: [`../experiments/comp-030-daf-cassette-ranking/wiki-archive.md`](../experiments/comp-030-daf-cassette-ranking/wiki-archive.md)
-- Experiment directory (inputs, scripts, outputs): [`../experiments/comp-030-daf-cassette-ranking/`](../experiments/comp-030-daf-cassette-ranking/)
+- Full archived analysis: [`./etc/experiments/comp-030-daf-cassette-ranking/wiki-archive.md`](./etc/experiments/comp-030-daf-cassette-ranking/wiki-archive.md)
+- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-030-daf-cassette-ranking/`](./etc/experiments/comp-030-daf-cassette-ranking/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

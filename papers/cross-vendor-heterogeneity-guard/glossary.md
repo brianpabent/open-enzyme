@@ -84,7 +84,7 @@ Terms grouped by topic, not by section.
 
 **Verification re-run.** When a subagent brief contains contamination-class content (compound names, contrived examples, motivational framing), the cheapest corrective is an independent re-run with a scrubbed brief. The comparison happens after both reports land; convergence raises confidence, divergence surfaces a confounder.
 
-**Comp-NNN.** Open Enzyme's numbering for computational experiments. Each comp-NNN has its own folder (`experiments/comp-NNN-name/`) with method, data, results, and a wiki page summarizing the findings.
+**Comp-NNN.** Open Enzyme's numbering for computational experiments. Each comp-NNN has its own folder (`wiki/etc/experiments/comp-NNN-name/`) with method, data, results, and a wiki page summarizing the findings.
 
 ---
 

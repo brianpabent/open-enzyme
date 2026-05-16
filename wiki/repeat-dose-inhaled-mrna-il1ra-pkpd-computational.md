@@ -17,7 +17,7 @@ related:
   - nlrp3-inflammasome.md
   - gout-action-guide.md
 sources:
-  - "experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/ — Monte Carlo PK/PD, n=10,000/regimen, seed 36"
+  - "etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/ — Monte Carlo PK/PD, n=10,000/regimen, seed 36"
   - "Arend 1990 JCI (PMID 2139669, DOI 10.1172/JCI114622); Schreuder 1997 Nature (PMID 9062194); Vigers 1997 Nature (PMID 9062193); Saag 2021 Arthritis Rheumatol (PMID 33605029, DOI 10.1002/art.41699)"
 status: published
 ---
@@ -52,8 +52,8 @@ Top 3 drivers of mean window occupancy: **Kd_nM (ρ = -0.69)**, translation_eff_
 
 Repeat-dose inhaled mRNA-IL-1Ra is NOT a like-for-like anakinra replacement at the receptor-occupancy level. It IS a meaningfully-better-than-nothing option that could displace prednisone for gout patients tolerating sub-anakinra occupancy in exchange for no SC injections, no glucocorticoid burden (acute glucose/BP/mood/sleep; chronic bone/cataract/adrenal), and substantial cost edge vs canakinumab. Decision reframes from "match anakinra?" (no) to "partial-suppression × side-effect-advantage worth it vs prednisone?" (plausibly yes — needs wet-lab data).
 
-## Frozen analysis archived to ../experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/wiki-archive.md
+## Frozen analysis archived to ./etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/wiki-archive.md
 
 ## Cross-references
 
-[comp-036 reproducible analysis](../experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/) | [comp-033 single-dose precursor](../experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/) → [`inhaled-mrna-il1ra-pulse-computational.md`](./inhaled-mrna-il1ra-pulse-computational.md) | [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md) | [`gout-action-guide.md`](./gout-action-guide.md) | [`nlrp3-inflammasome.md`](./nlrp3-inflammasome.md)
+[comp-036 reproducible analysis](./etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/) | [comp-033 single-dose precursor](./etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/) → [`inhaled-mrna-il1ra-pulse-computational.md`](./inhaled-mrna-il1ra-pulse-computational.md) | [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md) | [`gout-action-guide.md`](./gout-action-guide.md) | [`nlrp3-inflammasome.md`](./nlrp3-inflammasome.md)

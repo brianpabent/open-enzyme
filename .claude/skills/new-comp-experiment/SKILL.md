@@ -9,7 +9,7 @@ Create a new comp-NNN computational experiment following the Open Enzyme framewo
 
 ## Background
 
-Computational analyses inform wet-lab priors before committing lab resources. They live at `experiments/comp-NNN-<slug>/` at the repo root, with a companion interpretive page at `wiki/<slug>-computational.md` and an entry in `wiki/computational-experiments.md`. The experiment folder is the peer-reviewable artifact — any collaborator can clone and run `python3 analyze.py` to reproduce the outputs.
+Computational analyses inform wet-lab priors before committing lab resources. They live at `wiki/etc/experiments/comp-NNN-<slug>/` at the repo root, with a companion interpretive page at `wiki/<slug>-computational.md` and an entry in `wiki/computational-experiments.md`. The experiment folder is the peer-reviewable artifact — any collaborator can clone and run `python3 analyze.py` to reproduce the outputs.
 
 **Key design decisions (established in comp-001, 2026-05-05):**
 - Scripts + inputs + outputs all committed together (outputs are version-controlled artifacts, not gitignored)
@@ -41,7 +41,7 @@ grep -o 'comp-[0-9]*' wiki/computational-experiments.md | sort | tail -1
 ### Step 2 — Create the experiment folder
 
 ```
-experiments/comp-NNN-<slug>/
+wiki/etc/experiments/comp-NNN-<slug>/
   analyze.py           # analysis script (stdlib only — no pip install)
   inputs/
     <protein>.fasta    # sequence input
@@ -119,7 +119,7 @@ Add a row to the "Analyses" table:
 | **Verdict** | **[RISK LEVEL]** — [one-sentence finding] |
 | **Key finding** | [what drives the verdict] |
 | **Informs** | [link to validation-experiments.md section] |
-| **Experiment folder** | [link to experiments/comp-NNN-<slug>/] |
+| **Experiment folder** | [link to wiki/etc/experiments/comp-NNN-<slug>/] |
 | **Interpretive wiki page** | [link to wiki/<slug>-computational.md] |
 | **Date** | YYYY-MM-DD |
 | **Status** | Complete |
@@ -162,18 +162,18 @@ In the relevant wet-lab experiment section, add a "Computational prior" subsecti
 **Computational prior (comp-NNN, YYYY-MM-DD):** [verdict sentence]. [Key numbers sentence]. 
 [Reframing sentence: "This reframes §X.Y from a feasibility gate to a confirmation experiment." 
 or "This does not change the priority framing — §X.Y remains a feasibility gate."]
-Links: [wiki/slug-computational.md], [experiments/comp-NNN-slug/]
+Links: [wiki/slug-computational.md], [wiki/etc/experiments/comp-NNN-slug/]
 ```
 
 ### Step 8 — Commit
 
-Stage: `experiments/comp-NNN-<slug>/` (entire folder) + `wiki/computational-experiments.md` + `wiki/<slug>-computational.md` + `wiki/validation-experiments.md` + `synthesis/queue/` (if annotating an action item).
+Stage: `wiki/etc/experiments/comp-NNN-<slug>/` (entire folder) + `wiki/computational-experiments.md` + `wiki/<slug>-computational.md` + `wiki/validation-experiments.md` + `synthesis/queue/` (if annotating an action item).
 
 Commit message format:
 ```
 wiki: comp-NNN <slug> — [one-line finding]
 
-- reproducible experiment at experiments/comp-NNN-<slug>/
+- reproducible experiment at wiki/etc/experiments/comp-NNN-<slug>/
 - [method in 1-2 lines]
 - [verdict + key numbers]
 - new wiki/computational-experiments.md entry + wiki/<slug>-computational.md
@@ -190,7 +190,7 @@ Do NOT use `[skip-wiki-sweep]` — these commits should trigger the sweep daemon
 
 These decisions were made during comp-001 (2026-05-05). Do not revisit without reason.
 
-1. **`experiments/` at repo root, not in `wiki/`** — keeps peer-reviewable artifacts separate from narrative. Contributors can find and run scripts without reading the wiki first.
+1. **`wiki/etc/experiments/` as the canonical home** (originally `experiments/` at repo root; relocated 2026-05-16 to render as a subfolder of the wiki tree on GitHub while remaining sweep-excluded) — keeps peer-reviewable artifacts separate from narrative. Contributors can find and run scripts via the wiki rendering, and the sweep daemon's Pass 2 corpus excludes the heavy artifact folder by default.
 
 2. **Outputs committed, not gitignored** — outputs are the peer-reviewable artifact. Changed outputs = discovered disagreement → raise as GitHub issue against `comp-NNN` folder.
 
@@ -208,7 +208,7 @@ These decisions were made during comp-001 (2026-05-05). Do not revisit without r
 
 ## Naming convention
 
-- **Folder:** `experiments/comp-NNN-<slug>/` — NNN is zero-padded 3 digits; slug is hyphenated lowercase describing the protein and question (e.g., `comp-001-uricase-shio-koji-protease-stability`)
+- **Folder:** `wiki/etc/experiments/comp-NNN-<slug>/` — NNN is zero-padded 3 digits; slug is hyphenated lowercase describing the protein and question (e.g., `comp-001-uricase-shio-koji-protease-stability`)
 - **Wiki page:** `wiki/<slug-without-comp-NNN-prefix>-computational.md` (e.g., `wiki/uricase-protease-stability-computational.md`)
 - **In prose:** "comp-001", "comp-002" — never "computational experiment #1"
 - **Sequence IDs:** Use UniProt accession in filenames (e.g., `Q00511.fasta`)

@@ -36,7 +36,7 @@ status: complete (v1; all three architectures GREEN under reference conditions; 
 
 # Intra-articular Uricase H₂O₂ Reaction-Diffusion Analysis (Computational, comp-035)
 
-> **Frozen analysis lives at [`../experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/`](../experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) — README + analyze.py + inputs/ + outputs/ all committed for reproducibility.**
+> **Frozen analysis lives at [`./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/`](./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) — README + analyze.py + inputs/ + outputs/ all committed for reproducibility.**
 > This wiki page is the interpretive layer; the analysis script is stdlib-only Python 3 and reproduces deterministically with RNG seed 35.
 
 ## The question
@@ -191,7 +191,7 @@ Per CLAUDE.md §"Evidence Levels", all in silico claims tagged as Mechanistic Ex
 ## Reproduction
 
 ```bash
-cd experiments/comp-035-ia-uricase-h2o2-reaction-diffusion
+cd etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion
 python3 analyze.py
 ```
 

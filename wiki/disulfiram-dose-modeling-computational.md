@@ -41,7 +41,7 @@ The [compounding-pharmacy track](./compounding-pharmacy-track.md) flagged disulf
 Empirical dose-response model anchored to canonical PK and primary-source IC50 data. Parent DSF Cmax = 1.0 μM at 250 mg PO (clinical literature, consistent with Lee 2018 UPLC-MS/MS); Me-DTC peak = 278 nM at 400 mg (Johansson 1989); linear scaling at sub-AUD doses; CYP-saturation correction above 1000 mg. **GSDMD blockade**: Hill (n=1) on parent DSF; conservative anchor 0.30 μM (Hu 2020 cell-free), optimistic anchor 0.02 μM (cellular preincub, covalent-aware). **NLRP3 palmitoylation**: Hill on parent DSF, EC50 10 μM (Xu 2024). **ALDH inhibition**: Hill on Me-DTC, EC50 104 nM, back-calibrated to Faiman 1989's 40%-ALDH / 110 μM-acetaldehyde DER hypotension threshold. **Verdict**: GREEN ≥50% GSDMD + ≤40% ALDH; YELLOW ≥30% + ≤50%; RED otherwise.
 
 ## Key results
-Full per-dose table at [`experiments/comp-027-disulfiram-dose-modeling/outputs/summary.md`](../experiments/comp-027-disulfiram-dose-modeling/outputs/summary.md). Headline:
+Full per-dose table at [`etc/experiments/comp-027-disulfiram-dose-modeling/outputs/summary.md`](./etc/experiments/comp-027-disulfiram-dose-modeling/outputs/summary.md). Headline:
 
 | Dose (mg/d) | DSF Cmax (μM) | Me-DTC (nM) | GSDMD block | ALDH inhib. | Verdict |
 |---|---|---|---|---|---|
@@ -63,4 +63,4 @@ Two independent layers of the dose-window thesis: (1) **PD separation** — GSDM
 This is a computational dose-finding prior, not a wet-lab gate. It reframes [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §Phase 2 follow-up #6 from "open question" to "answered with 100 mg/d ± formulation-tunable bounds." The wet-lab confirmation question becomes "does the predicted 75-125 mg/d window produce the predicted plasma concentrations + reduce gout-flare incidence over 3-6 month chronic dosing in N=10-20 patients?" — for a 503A-prescribing physician partner, not a feasibility-gate wet-lab. **Reframes 503A pathway from blocked-on-dose-question → unblocked, gated only on pharmacy + prescriber identification (still user-action-required).**
 
 ## Cross-references
-[Disulfiram (Antabuse)](./disulfiram.md) · [Compounding pharmacy track](./compounding-pharmacy-track.md) · [NLRP3 exploit map](./nlrp3-exploit-map.md) · [Computational experiments registry](./computational-experiments.md) · [Experiment folder](../experiments/comp-027-disulfiram-dose-modeling/)
+[Disulfiram (Antabuse)](./disulfiram.md) · [Compounding pharmacy track](./compounding-pharmacy-track.md) · [NLRP3 exploit map](./nlrp3-exploit-map.md) · [Computational experiments registry](./computational-experiments.md) · [Experiment folder](./etc/experiments/comp-027-disulfiram-dose-modeling/)

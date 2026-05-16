@@ -49,15 +49,15 @@ status: published
 
 # Upstream Complement Modulator Sweep — Brief-Scrubbed Verification Re-Run (comp-020)
 
-> **Frozen analysis archived to [`../experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md`](../experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md)** (302 lines).
+> **Frozen analysis archived to [`./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md`](./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md)** (302 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
-> at `experiments/comp-020-upstream-complement-verification-rerun/`.
+> at `etc/experiments/comp-020-upstream-complement-verification-rerun/`.
 
 **Plain-English summary first.** Open Enzyme is mapping every avenue to address gout. One of the seven bottlenecks the platform tracks is "complement priming" — when monosodium urate crystals appear in a joint, they activate the complement immune cascade, which generates C5a, which primes the NLRP3 inflammasome, which drives the gout flare's signature inflammation. That priming step is named CP0 in the platform. So far the platform's main intervention at CP0 is a protein-engineering thread (an engineered shortened version of the human DAF/CD55 receptor expressed in koji — see [comp-012](./daf-cd55-scr14-truncated-computational.md) and […]
 
 **Where the analysis lives:**
-- Full archived analysis: [`../experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md`](../experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md)
-- Experiment directory (inputs, scripts, outputs): [`../experiments/comp-020-upstream-complement-verification-rerun/`](../experiments/comp-020-upstream-complement-verification-rerun/)
+- Full archived analysis: [`./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md`](./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md)
+- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-020-upstream-complement-verification-rerun/`](./etc/experiments/comp-020-upstream-complement-verification-rerun/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

@@ -18,7 +18,7 @@ related:
   - gout-clinical-pipeline.md
   - nlrp3-inflammasome.md
 sources:
-  - "experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/ — Monte Carlo dose-AUC model, n=20,000, seed 33"
+  - "etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/ — Monte Carlo dose-AUC model, n=20,000, seed 33"
   - "UniProt P18510 (verified 2026-05-16 via rest.uniprot.org)"
   - "Kineret USPI; Yang 2003 anakinra PK; Granowitz 1992"
   - "Rowe et al. 2023 J Cyst Fibros (Translate Bio MRT5005 CF)"
@@ -60,4 +60,4 @@ Chassis-pending entry stays open. Discovery-engine handoff package (target valid
 
 ## Cross-references
 
-[comp-033 reproducible analysis](../experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/) | [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md) | [`etc/open-enzyme-vision.md` §10 "temporal stack"](./etc/open-enzyme-vision.md) | [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) | [`delivery-route-matrix.md`](./delivery-route-matrix.md)
+[comp-033 reproducible analysis](./etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/) | [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md) | [`etc/open-enzyme-vision.md` §10 "temporal stack"](./etc/open-enzyme-vision.md) | [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) | [`delivery-route-matrix.md`](./delivery-route-matrix.md)

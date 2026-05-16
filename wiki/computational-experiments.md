@@ -12,7 +12,7 @@ related:
 
 Tracking index for computational analyses in the Open Enzyme platform. Distinct from [`validation-experiments.md`](./validation-experiments.md) (wet-lab), these use structure prediction, sequence analysis, and simulation to generate evidence-based priors before committing wet-lab resources.
 
-**Convention:** Each analysis lives at `experiments/comp-NNN-<slug>/` at the repo root. The folder contains the script, inputs (with provenance), and raw outputs. This page is a tight index — detailed methodology, full key-finding lists, and Pass-3 review history live in the per-comp interpretive wiki stub (`wiki/<slug>-computational.md`) and the experiment folder.
+**Convention:** Each analysis lives at `wiki/etc/experiments/comp-NNN-<slug>/`. The folder contains the script, inputs (with provenance), and raw outputs. This page is a tight index — detailed methodology, full key-finding lists, and Pass-3 review history live in the per-comp interpretive wiki stub (`wiki/<slug>-computational.md`) and the experiment folder.
 
 **Peer review:** Any collaborator can clone the repo, run `python3 analyze.py` in the relevant folder, and reproduce the outputs. Disagreements should be filed as GitHub issues against the relevant `comp-NNN` folder.
 
@@ -35,7 +35,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [chassis-pending-interventions §6](./chassis-pending-interventions.md) · [gout-kill-chain-delivery-routes](./gout-kill-chain-delivery-routes.md) · [delivery-route-matrix](./delivery-route-matrix.md) · [engineered-koji-protocol](./engineered-koji-protocol.md)
 
-**Detail:** [interpretive](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) · [experiments/](../experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) · Complete v1
+**Detail:** [interpretive](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) · [experiments/](./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) · Complete v1
 
 ---
 
@@ -52,7 +52,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [validation-experiments §1.10](./validation-experiments.md) · [lactoferrin-protease-stability-computational](./lactoferrin-protease-stability-computational.md) · [etc/bio-ai-tools](./etc/bio-ai-tools.md) · [lactoferrin](./lactoferrin.md)
 
-**Detail:** [interpretive](./lactoferrin-linker-redesign-computational.md) · [experiments/](../experiments/comp-034-lactoferrin-linker-redesign/) · Complete pilot v1 (v2: real ProteinMPNN + full ESM2 + epitope screen queued)
+**Detail:** [interpretive](./lactoferrin-linker-redesign-computational.md) · [experiments/](./etc/experiments/comp-034-lactoferrin-linker-redesign/) · Complete pilot v1 (v2: real ProteinMPNN + full ESM2 + epitope screen queued)
 
 ---
 
@@ -69,7 +69,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [complement-c5a-gout §9.7](./complement-c5a-gout.md) · [validation-experiments §1.25](./validation-experiments.md) (optional co-treatment arm gated on α ≥ 0.5) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
 
-**Detail:** [interpretive](./combined-cp0-systems-model-computational.md) · [experiments/](../experiments/comp-029-combined-cp0-systems-model/) · Complete v1
+**Detail:** [interpretive](./combined-cp0-systems-model-computational.md) · [experiments/](./etc/experiments/comp-029-combined-cp0-systems-model/) · Complete v1
 
 ---
 
@@ -86,7 +86,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [validation-experiments §1.25](./validation-experiments.md) · [chaperone-orthogonal-stacking §3.5.2](./chaperone-orthogonal-stacking.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
 
-**Detail:** [interpretive](./daf-cd55-scr14-cassette-ranking-computational.md) · [experiments/](../experiments/comp-030-daf-cassette-ranking/) · Complete v1 (v2: real ESMFold on 40-strict tier when openfold unblocked)
+**Detail:** [interpretive](./daf-cd55-scr14-cassette-ranking-computational.md) · [experiments/](./etc/experiments/comp-030-daf-cassette-ranking/) · Complete v1 (v2: real ESMFold on 40-strict tier when openfold unblocked)
 
 ---
 
@@ -103,7 +103,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [validation-experiments §1.9](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md) · [koji-endgame-strain §3.4](./koji-endgame-strain.md) · [etc/autonomous-screening-methodology](./etc/autonomous-screening-methodology.md)
 
-**Detail:** [interpretive](./uricase-cassette-ranking-computational.md) · [experiments/](../experiments/comp-022-clockbase-uricase-cassette-ranking/) · v2 complete (v2.5 deferred until §1.9 wet-lab data lands)
+**Detail:** [interpretive](./uricase-cassette-ranking-computational.md) · [experiments/](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/) · v2 complete (v2.5 deferred until §1.9 wet-lab data lands)
 
 ---
 
@@ -120,7 +120,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md) · [koji-endgame-strain §1.9](./koji-endgame-strain.md) · [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) · [validation-experiments §1.9](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md)
 
-**Detail:** [interpretive](./cordycepin-cassette-burden-computational.md) · [experiments/](../experiments/comp-023-cns1-cns2-metabolic-burden/) · Complete v1 (v2 dynamic-FBA deprioritized 2026-05-16 — koji-cordycepin removed from active stack)
+**Detail:** [interpretive](./cordycepin-cassette-burden-computational.md) · [experiments/](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/) · Complete v1 (v2 dynamic-FBA deprioritized 2026-05-16 — koji-cordycepin removed from active stack)
 
 ---
 
@@ -139,7 +139,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [gout-action-guide](./gout-action-guide.md)
 
-**Detail:** [interpretive](./upstream-complement-modulator-sweep-computational.md) · [experiments/](../experiments/comp-018-upstream-complement-modulator-sweep/) · Phase 1 complete (Phase 2 multilingual + C1-INH + complestatin scopes queued). Brief contained user-framing bias; verification re-run is comp-020. See [retrospective](../operations/comp-018-vs-comp-020-retrospective.md).
+**Detail:** [interpretive](./upstream-complement-modulator-sweep-computational.md) · [experiments/](./etc/experiments/comp-018-upstream-complement-modulator-sweep/) · Phase 1 complete (Phase 2 multilingual + C1-INH + complestatin scopes queued). Brief contained user-framing bias; verification re-run is comp-020. See [retrospective](../operations/comp-018-vs-comp-020-retrospective.md).
 
 ---
 
@@ -157,7 +157,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
 
-**Detail:** [interpretive](./upstream-complement-verification-rerun-computational.md) · [experiments/](../experiments/comp-020-upstream-complement-verification-rerun/) · Phase 1 complete (Phase 2: CNKI/WanFang/J-STAGE + Helicteres replication + RA/MSU assay + comp-021 mapping queued)
+**Detail:** [interpretive](./upstream-complement-verification-rerun-computational.md) · [experiments/](./etc/experiments/comp-020-upstream-complement-verification-rerun/) · Phase 1 complete (Phase 2: CNKI/WanFang/J-STAGE + Helicteres replication + RA/MSU assay + comp-021 mapping queued)
 
 ---
 
@@ -173,7 +173,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [validation-experiments §1.10](./validation-experiments.md) — reframes from feasibility gate to confirmation experiment
 
-**Detail:** [interpretive](./uricase-protease-stability-computational.md) · [experiments/](../experiments/comp-001-uricase-shio-koji-protease-stability/) · Complete
+**Detail:** [interpretive](./uricase-protease-stability-computational.md) · [experiments/](./etc/experiments/comp-001-uricase-shio-koji-protease-stability/) · Complete
 
 ---
 
@@ -189,7 +189,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) — Engineered soluble complement regulators row
 
-**Detail:** [interpretive](./daf-cd55-protease-stability-computational.md) · [experiments/](../experiments/comp-006-daf-cd55-shio-koji-protease-stability/) · Complete
+**Detail:** [interpretive](./daf-cd55-protease-stability-computational.md) · [experiments/](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/) · Complete
 
 ---
 
@@ -206,7 +206,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [androgen-natural-modulation §10 H-AN-02](./androgen-natural-modulation.md) · [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) · [androgen-urate-axis](./androgen-urate-axis.md)
 
-**Detail:** [interpretive](./t-axis-adjuvant-urate-mapping-computational.md) · [experiments/](../experiments/comp-015-t-axis-adjuvant-urate-mapping/) · Complete v2
+**Detail:** [interpretive](./t-axis-adjuvant-urate-mapping-computational.md) · [experiments/](./etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/) · Complete v2
 
 ---
 
@@ -223,7 +223,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md) · [koji-endgame-strain](./koji-endgame-strain.md) · [cross-validation](./cross-validation.md)
 
-**Detail:** [interpretive](./t-abcg2-suppression-evidence-mining-computational.md) · [experiments/](../experiments/comp-016-t-abcg2-suppression-evidence-mining/) · Complete (full-text follow-up → comp-017)
+**Detail:** [interpretive](./t-abcg2-suppression-evidence-mining-computational.md) · [experiments/](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/) · Complete (full-text follow-up → comp-017)
 
 ---
 
@@ -240,7 +240,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [cross-validation Claim 1](./cross-validation.md) (rating 6/10 → 6.5/10) · [gut-lumen-sink](./gut-lumen-sink.md) · [abcg2-modulators §6](./abcg2-modulators.md) · [open-questions](./open-questions.md) Q1 · [personal-genome-protocol](./personal-genome-protocol.md) · [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md)
 
-**Detail:** [interpretive](./uricase-abcg2-genotype-stratification-computational.md) · [experiments/](../experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/) · Complete (prospective; awaits Phase 2b RCT validation)
+**Detail:** [interpretive](./uricase-abcg2-genotype-stratification-computational.md) · [experiments/](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/) · Complete (prospective; awaits Phase 2b RCT validation)
 
 ---
 
@@ -258,7 +258,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [hypotheses/H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) · [t-abcg2-suppression-evidence-mining-computational](./t-abcg2-suppression-evidence-mining-computational.md) · [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators §1](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md)
 
-**Detail:** [interpretive](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) · [experiments/](../experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/) · Complete (provisional; sandbox-blocked GTEx/HPA direct; Paperclip line-anchored re-run recommended)
+**Detail:** [interpretive](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) · [experiments/](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/) · Complete (provisional; sandbox-blocked GTEx/HPA direct; Paperclip line-anchored re-run recommended)
 
 ---
 
@@ -275,7 +275,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [complement-c5a-gout](./complement-c5a-gout.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [etc/open-source-platform](./etc/open-source-platform.md)
 
-**Detail:** [interpretive](./medicinal-mushroom-compound-mapping-computational.md) · [Phase 2 findings](../experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md) · [experiments/](../experiments/comp-014-medicinal-mushroom-compound-mapping/) · Phase 2 complete; Phase 3 in progress
+**Detail:** [interpretive](./medicinal-mushroom-compound-mapping-computational.md) · [Phase 2 findings](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md) · [experiments/](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/) · Phase 2 complete; Phase 3 in progress
 
 ---
 
@@ -292,7 +292,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [tcm-modern-rigor-intersection](./tcm-modern-rigor-intersection.md) — closes P2-2
 
-**Detail:** [interpretive](./tcm-gout-compound-triage-computational.md) · [experiments/](../experiments/comp-013-tcm-gout-compound-triage/) · Complete
+**Detail:** [interpretive](./tcm-gout-compound-triage-computational.md) · [experiments/](./etc/experiments/comp-013-tcm-gout-compound-triage/) · Complete
 
 ---
 
@@ -308,7 +308,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [complement-c5a-gout](./complement-c5a-gout.md) (CP0 status reframe) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) (new stub) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) (row updated 🟡→🔬)
 
-**Detail:** [interpretive](./daf-cd55-scr14-truncated-computational.md) · [experiments/](../experiments/comp-012-daf-cd55-scr14-truncated/) · Complete
+**Detail:** [interpretive](./daf-cd55-scr14-truncated-computational.md) · [experiments/](./etc/experiments/comp-012-daf-cd55-scr14-truncated/) · Complete
 
 ---
 
@@ -325,7 +325,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [uricase-variant-selection](./uricase-variant-selection.md) · [validation-experiments §1.9](./validation-experiments.md)
 
-**Detail:** [interpretive](./c-utilis-uricase-cassette-compatibility-computational.md) · [experiments/](../experiments/comp-011-c-utilis-uricase-cassette-compatibility/) · Complete
+**Detail:** [interpretive](./c-utilis-uricase-cassette-compatibility-computational.md) · [experiments/](./etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/) · Complete
 
 ---
 
@@ -342,7 +342,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [validation-experiments §1.9](./validation-experiments.md) — removes cassette architecture as pre-experiment concern
 
-**Detail:** [interpretive](./cassette-compatibility-computational.md) · [experiments/](../experiments/comp-010-cassette-compatibility/) · Complete
+**Detail:** [interpretive](./cassette-compatibility-computational.md) · [experiments/](./etc/experiments/comp-010-cassette-compatibility/) · Complete
 
 ---
 
@@ -358,7 +358,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [validation-experiments §1.22](./validation-experiments.md#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue) — top 3 advance to Stage 2
 
-**Detail:** [interpretive](./food-grade-hdaci-screen-computational.md) · [experiments/](../experiments/comp-007-food-grade-hdaci-screen/) · Complete
+**Detail:** [interpretive](./food-grade-hdaci-screen-computational.md) · [experiments/](./etc/experiments/comp-007-food-grade-hdaci-screen/) · Complete
 
 ---
 
@@ -375,7 +375,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [validation-experiments §1.10](./validation-experiments.md) — Lf arm remains feasibility gate (unlike uricase)
 
-**Detail:** [interpretive](./lactoferrin-protease-stability-computational.md) · [experiments/](../experiments/comp-005-lactoferrin-shio-koji-protease-stability/) · Complete
+**Detail:** [interpretive](./lactoferrin-protease-stability-computational.md) · [experiments/](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/) · Complete
 
 ---
 
@@ -391,7 +391,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Informs:** [validation-experiments §1.14](./validation-experiments.md) — shifts supplement arms from screening to quantification
 
-**Detail:** [interpretive](./supplement-abcg2-antagonism-computational.md) · [experiments/](../experiments/comp-004-supplement-abcg2-antagonism/) · Complete
+**Detail:** [interpretive](./supplement-abcg2-antagonism-computational.md) · [experiments/](./etc/experiments/comp-004-supplement-abcg2-antagonism/) · Complete
 
 ---
 
@@ -442,7 +442,7 @@ Layer secretion-pathway proteome-cost constraints on iWV1314 (Vongsangnak 2008):
 
 ## How to add a new analysis
 
-1. Create `experiments/comp-NNN-<slug>/` with `analyze.py`, `inputs/`, `outputs/`, `README.md`, `inputs/provenance.md`
+1. Create `etc/experiments/comp-NNN-<slug>/` with `analyze.py`, `inputs/`, `outputs/`, `README.md`, `inputs/provenance.md`
 2. Add an entry to the "Analyses" section above (compact format) or the "Planned Analyses" table
 3. Create `wiki/<slug>-computational.md` for the interpretive page
 4. Link from the relevant wet-lab experiment in `validation-experiments.md`

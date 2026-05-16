@@ -321,7 +321,7 @@ When multiple subagents are in flight, brief each on what files OTHER agents are
 - `wiki/modality-chokepoint-matrix.md` (peer-track scope-page agents edit per-modality sections)
 - `synthesis/queue/` (any agent can add an actioned annotation)
 - `wiki/validation-experiments.md` (experiment-creating agents add §X.Y entries)
-- `experiments/lib/protease_stability.py` (locked — orchestrators import only, never modify)
+- `wiki/etc/experiments/lib/protease_stability.py` (locked — orchestrators import only, never modify)
 
 If two agents will touch the same file, sequence them or have only one do the shared-file edits as carry-along.
 

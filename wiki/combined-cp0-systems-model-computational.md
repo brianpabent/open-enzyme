@@ -39,7 +39,7 @@ status: complete (v1; verdict YELLOW; gated on wet-lab α measurement from §1.2
 
 # Combined CP0 Systems Model — Dietary Rosmarinic Acid + Engineered DAF SCR1-4 (Computational, comp-029)
 
-> **Frozen analysis lives at [`../experiments/comp-029-combined-cp0-systems-model/`](../experiments/comp-029-combined-cp0-systems-model/) — README + analyze.py + inputs/ + outputs/ all committed for reproducibility.**
+> **Frozen analysis lives at [`./etc/experiments/comp-029-combined-cp0-systems-model/`](./etc/experiments/comp-029-combined-cp0-systems-model/) — README + analyze.py + inputs/ + outputs/ all committed for reproducibility.**
 > This wiki page is the interpretive layer; the analysis script is stdlib-only Python 3 and reproduces deterministically with RNG seed 29.
 
 ## The question

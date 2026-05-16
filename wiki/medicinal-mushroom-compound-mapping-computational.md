@@ -42,15 +42,15 @@ status: scoped — Phase 1 only
 
 # Medicinal Mushroom Compound × Chokepoint Mapping — Computational Analysis (comp-014)
 
-> **Frozen analysis archived to [`../experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md`](../experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md)** (248 lines).
+> **Frozen analysis archived to [`./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md)** (248 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
-> at `experiments/comp-014-medicinal-mushroom-compound-mapping/`.
+> at `etc/experiments/comp-014-medicinal-mushroom-compound-mapping/`.
 
 **Phase 1 (Scope) — Committed 2026-05-06.** Phases 2–6 are queued, not executed. This page documents the scope and the rationale for the multi-phase plan; it is NOT a results page. Per Open Enzyme convention, this page will be revised in place when each subsequent phase lands, with a status promotion (`scoped` → `in progress` → `complete`) tracked in the YAML frontmatter and the [`computational-experiments.md`](./computational-experiments.md) tracking index.
 
 **Where the analysis lives:**
-- Full archived analysis: [`../experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md`](../experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md)
-- Experiment directory (inputs, scripts, outputs): [`../experiments/comp-014-medicinal-mushroom-compound-mapping/`](../experiments/comp-014-medicinal-mushroom-compound-mapping/)
+- Full archived analysis: [`./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md)
+- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

@@ -143,7 +143,7 @@ Existing taxonomy before this template:
 - **Experiment protocols** (`wiki/validation-experiments.md` § entries) — experimental design with cost / timeline / readouts
 - **Scope pages** (`wiki/<modality-or-vector>-modality.md` / `<chassis>.md`) — peer-track exploration
 - **Hypothesis cards** (`wiki/hypotheses/H<NN>-*.md`) — falsification cards with pre-registered thresholds
-- **Computational experiment interpretive pages** (`wiki/<comp-NNN>-*.md`) — paired with `experiments/comp-NNN-*/` reproducible artifacts
+- **Computational experiment interpretive pages** (`wiki/<comp-NNN>-*.md`) — paired with `wiki/etc/experiments/comp-NNN-*/` reproducible artifacts
 
 The operational search artifact is a fifth document class — bottleneck-specific, decision-tree-structured, multi-region, with explicit primary-path naming. It lives in `operations/` rather than `wiki/` because it's transactional working state, not research content (per [`operations/README.md`](./README.md)).
 

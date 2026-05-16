@@ -39,15 +39,15 @@ status: complete (Phase 1)
 
 # Upstream Complement Modulator Sweep — Computational Analysis (comp-018)
 
-> **Frozen analysis archived to [`../experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md`](../experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md)** (336 lines).
+> **Frozen analysis archived to [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md)** (336 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
-> at `experiments/comp-018-upstream-complement-modulator-sweep/`.
+> at `etc/experiments/comp-018-upstream-complement-modulator-sweep/`.
 
 > **⚠️ Read this before propagating any finding from this page.** > > The brief that produced this experiment was contaminated by a contrived user-framing example ("if it's in rosemary I'll grow rosemary"), which biased the headline-promotion of rosmarinic acid as the singular Tier-1 candidate. **An independent brief-scrubbed verification re-run (comp-020)** ran 2026-05-08 and produced a meaningfully different ranking: three tied tier-1 candidates instead of one, with ***Helicteres* benzofuran lignans** (CH50 9/40 µM, single-paper anchor PMC6273495) as the highest-potency single hit in the corpus — beating rosmarinic acid by 4-20× on a matched assay. comp-020 also […]
 
 **Where the analysis lives:**
-- Full archived analysis: [`../experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md`](../experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md)
-- Experiment directory (inputs, scripts, outputs): [`../experiments/comp-018-upstream-complement-modulator-sweep/`](../experiments/comp-018-upstream-complement-modulator-sweep/)
+- Full archived analysis: [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md)
+- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

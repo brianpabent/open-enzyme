@@ -262,7 +262,7 @@ Synthesis of literature against H01's assumption stack:
 - **Assumption 3 (protease load, H01 only):** Disulfide load analysis confirms dual-cassette ER burden = 1.06× Huynh 2020 baseline (17 disulfides, all on Lf). Within demonstrated capacity. No change to assumption-3 evidence level.
 - **Uricase C-terminal SKL:** A potential PTS1 peroxisomal signal in the uricase sequence. Verify secretion in §1.9. If misrouted, append 3×Ala to mask. Pre-experiment design note, not a H01 assumption change.
 
-Full analysis: [`wiki/cassette-compatibility-computational.md`](../cassette-compatibility-computational.md) | [`experiments/comp-010-cassette-compatibility/`](../../experiments/comp-010-cassette-compatibility/)
+Full analysis: [`wiki/cassette-compatibility-computational.md`](../cassette-compatibility-computational.md) | [`wiki/etc/experiments/comp-010-cassette-compatibility/`](../etc/experiments/comp-010-cassette-compatibility/)
 
 ---
 

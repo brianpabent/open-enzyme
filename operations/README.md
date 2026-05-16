@@ -2,12 +2,12 @@
 
 **Operational / transactional content for the Open Enzyme project.** Public by default — same posture as the rest of this repo. Open Enzyme is open-source / radical-transparency by design (`wiki/open-source-platform.md`); the operational layer is no exception. Everything here is visible on GitHub for the same reason the wiki and experiments are: the project's value compounds when its working state is fully inspectable. Outreach context, project todos, lab partnership scoping, decision logs — all of it is fine to be public and arguably better that way (collaborators and future contributors get the full operating picture, not just the polished research surface).
 
-## How this differs from `wiki/` and `experiments/`
+## How this differs from `wiki/` and `wiki/etc/experiments/`
 
 The boundary is **epistemic, not visibility.** All three folders are public.
 
 - **`wiki/`** — research library. PhD-audience. Mechanism + evidence + chokepoint-mapped + evidence-tier-tagged. The substrate the sweep daemon operates on; the substrate external collaborators evaluate. Rigorous.
-- **`experiments/`** — reproducible comp-NNN computational artifacts. Peer-reviewable, scripts + inputs + outputs committed. The substrate any collaborator can clone and re-run.
+- **`wiki/etc/experiments/`** — reproducible comp-NNN computational artifacts. Peer-reviewable, scripts + inputs + outputs committed. The substrate any collaborator can clone and re-run.
 - **`operations/`** — transactional working state. Outreach context, todos, action items, decision logs. Public, but not held to the same evidence-tier-rigor bar as `wiki/` because it's not research content — it's the operating layer that surrounds the research.
 
 ## What lives here
@@ -23,7 +23,7 @@ The boundary is **epistemic, not visibility.** All three folders are public.
 The PII / hygiene filters that apply to the rest of the repo apply here too. Operational ≠ private; operational ≠ exempt-from-content-rules.
 
 - **Mechanism, evidence, or hypothesis content** → `wiki/`
-- **Reproducible computational analyses** → `experiments/comp-NNN-*/`
+- **Reproducible computational analyses** → `wiki/etc/experiments/comp-NNN-*/`
 - **Falsification cards** → `wiki/hypotheses/`
 - **Pre-registration / claim-tracking** → `wiki/hypotheses/` (with frozen-on-commit discipline)
 - **Personal medical content (specific lab values, clinical-decision data, PHI)** → private sibling repos per the umbrella `~/Documents/Claude/Projects/abent/CLAUDE.md` privacy boundary; never in this repo. Operational notes about *cadence* or *framework* are fine in the public wiki / operations; specific values are not.
@@ -36,11 +36,11 @@ The PII / hygiene filters that apply to the rest of the repo apply here too. Ope
 
 Drawn 2026-05-05 in response to a specific structural mistake: an operational outreach page (literal email draft + fee structures + "email Maruyama tomorrow morning" calendar plan) was initially placed in `wiki/`, blurring the line between research library and transactional working state. Brian's correction surfaced the actual reframe: the boundary is epistemic (research vs. operational), not visibility (public vs. private). Both layers stay public; both stay subject to PII / credential hygiene; but they answer different questions and serve different readers. Splitting the layers preserves the wiki's PhD-audience integrity while giving the operational working state a clean home.
 
-Same structural pattern as `experiments/` (created earlier when computational analyses needed peer-reviewable artifact homes distinct from the wiki narrative).
+Same structural pattern as `wiki/etc/experiments/` (created earlier when computational analyses needed peer-reviewable artifact homes distinct from the wiki narrative).
 
 ## How to add content here
 
-1. Decide it doesn't belong in `wiki/` (research) or `experiments/` (computational artifact). If unsure, default to `wiki/` and only move here if the content turns out to be transactional / outreach / todo-style.
+1. Decide it doesn't belong in `wiki/` (research) or `wiki/etc/experiments/` (computational artifact). If unsure, default to `wiki/` and only move here if the content turns out to be transactional / outreach / todo-style.
 2. Create the file with a clear, dated, scoped name (e.g., `ward-1995-lab-access.md`, `2026-05-05-self-experiment-supply-list.md`).
 3. Frontmatter is optional but recommended for operational pages — at minimum `title`, `date`, `status` (active / archived / done).
 4. Cross-link to relevant `wiki/` pages where the underlying research lives. Don't duplicate research content here.

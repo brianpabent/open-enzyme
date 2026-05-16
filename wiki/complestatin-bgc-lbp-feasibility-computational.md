@@ -33,7 +33,7 @@ status: complete
 
 ## BGC summary (grep-verified)
 
-48.7 kb (Chiu 2001) / 54.5 kb reconstituted (Park 2016); 16 ORFs; 7 NRPS modules (1 loading + 6 extension + TE) on ComA-D; tailoring = ComI/ComJ (P450 phenolic coupling), ComH (nonheme halogenase), Hmo (FMN oxidase), inferred OxyD β-hydroxylase; in-cluster Hpg pathway (HmaS/Hmo/HpgT/PD); heterologous-expression precedent = *S. lividans* TK24 only (phylum-internal); none in *E. coli*, none in *Bacteroides*. Full architecture + provenance in `experiments/comp-024-.../inputs/`.
+48.7 kb (Chiu 2001) / 54.5 kb reconstituted (Park 2016); 16 ORFs; 7 NRPS modules (1 loading + 6 extension + TE) on ComA-D; tailoring = ComI/ComJ (P450 phenolic coupling), ComH (nonheme halogenase), Hmo (FMN oxidase), inferred OxyD β-hydroxylase; in-cluster Hpg pathway (HmaS/Hmo/HpgT/PD); heterologous-expression precedent = *S. lividans* TK24 only (phylum-internal); none in *E. coli*, none in *Bacteroides*. Full architecture + provenance in `etc/experiments/comp-024-.../inputs/`.
 
 ## Method
 
