@@ -369,6 +369,18 @@ Gut health optimization: targeted probiotics, SIBO treatment (addressing co-occu
 
 This multi-vector approach reflects an engineering mindset: don't bet on a single point of intervention. Build redundancy into the system. If the uricase strain takes months to optimize, the NLRP3 stack provides relief now. If inflammasome suppression is partial, tissue repair peptides address what gets through.
 
+### Chronic prevention + pulsatile flare-abort — the temporal stack
+
+The multi-attack strategy above is largely **chronic prevention**: engineered koji lowers urate over weeks, the NLRP3 stack dampens priming over weeks-to-months, tissue-repair peptides act over weeks. None of it acts in the hours-to-days window of an active flare. Gout flares are explosive on a clock-time scale that nothing in the chronic stack matches.
+
+The honest platform-positioning fix is to name the **temporal complement** explicitly: chronic prevention + a pulsatile acute-flare-abort intervention covering the 12–72-hour flare window, on a separate chassis. The leading candidate is **inhaled mRNA-IL-1RA pulse therapy** — a lipid-nanoparticle-formulated mRNA encoding IL-1 receptor antagonist (anakinra-equivalent protein), delivered via vibrating-mesh nebulizer (POC) or dry-powder inhaler (eventual product). Lung surface area (~70 m²) provides high uptake; transient pulmonary expression matches the flare window almost exactly; mRNA-LNP pulmonary delivery is mature research-grade (CF, RSV programs). Detailed entry at [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md).
+
+**OE's role in this — discovery-engine output, not direct manufacturing.** OE is structurally not positioned to manufacture mRNA-LNP — that supply chain (Trilink, Aldevron, CordenPharma, Acuitas, Precision NanoSystems) and that regulatory pathway (FDA RNA platforms, IND-enabling tox, Phase 1/2/3) are pharma / CDMO territory. What OE contributes is upstream of all of that: target validation (why IL-1Ra and not anakinra, why pulmonary and not SC), construct-design priors (codon optimization, 5'/3' UTR choice for pulmonary expression duration, dose modeling), the economic argument (mRNA-LNP at scale is ~$5–20/dose vs. canakinumab at ~$300K/year), and partner identification (which existing inhaled-mRNA program — CF, RSV — has the closest forkable infrastructure). The same positioning as the [siRNA against URAT1 modality](./sirna-urat1-modality.md) and [intra-articular uricase ± catalase](./chassis-pending-interventions.md): OE surfaces the target; a pharma partner runs production and clinical.
+
+The cost split is large. The OE-side analysis ([comp-033](./computational-experiments.md)) is ~$0–50 in subagent runs. Research-grade animal POC is $50K–200K (partner / academic-collab tier). Full clinical development is $100M+ (pharma partner only). Commercial COGS at scale lands in the $25–200/year/patient range at 5–10 flares per patient per year — cost-competitive with allopurinol at retail, vastly cheaper than the canakinumab benchmark. This isn't "OE builds it"; it's "OE makes the target-validation case that a pharma partner can act on."
+
+The temporal complement is platform-level, not chassis-specific. Once the framing is named, it applies to other acute-flare-abort candidates too — local intra-articular uricase, inhaled NLRP3-cascade modulators, transient hepatic mRNA programs. Any chassis with a 12–72-hour expression window that hits an acute-flare chokepoint is a candidate for this slot.
+
 ---
 
 ## 11. Principles
