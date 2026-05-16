@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/etc/open-source-platform/">
       
       
+        <link rel="prev" href="../../cross-validation/">
+      
+      
+        <link rel="next" href="../../chassis-pending-interventions/">
       
       
         
@@ -287,8 +291,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -302,8 +308,6 @@
       
         
       
-        
-      
     
     
     
@@ -313,11 +317,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -338,7 +342,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -356,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../open-enzyme-vision.md" class="md-nav__link">
+      <a href="../open-enzyme-vision/" class="md-nav__link">
         
   
   
@@ -370,33 +374,12 @@
   </span>
   
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../synthesis/README.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
     
   
-    Platform Thesis & Synthesis
+  
+    <span class="md-status md-status--published"></span>
   
 
-    
-  </span>
-  
   
 
       </a>
@@ -444,10 +427,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../open-source-platform.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -463,6 +473,580 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-software-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Software Analogy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-architecture-koji-first-yeast-retained-for-specific-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Architecture — Koji-First, Yeast Retained for Specific Modules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-service-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Service Acceleration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-no-patents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. No Patents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gras-organisms-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. GRAS Organisms Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rigorous-but-accessible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Rigorous But Accessible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-community-validation-through-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Community Validation Through Replication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-open-substrate-for-ai-assisted-peer-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Open Substrate for AI-Assisted Peer Review
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Open Substrate for AI-Assisted Peer Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paperclip-literature-delta-sweep-decided-2026-05-05-do-not-integrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paperclip literature-delta sweep — DECIDED 2026-05-05: do not integrate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-model-synthesis-as-guard-against-epistemic-homogenization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-model synthesis as guard against epistemic homogenization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Variant-Agnostic Empirical Head-to-Head (when marginal cost is bounded and infrastructure is shared)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-operational-search-artifacts-as-a-first-class-document-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Operational Search Artifacts as a First-Class Document Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-not-medical-advice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Not Medical Advice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strain-repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strain Repository Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-workflow-for-strains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Workflow for Strains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub Workflow for Strains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-strain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create a Strain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fork-improve-a-strain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fork &amp; Improve a Strain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-validation-data-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Validation Data Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-strains-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Strains (Roadmap)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Strains (Roadmap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-foundation-strains-under-active-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1: Foundation Strains (Under Active Development)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-planned-strains-design-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2: Planned Strains (Design Phase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-future-strains-long-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3: Future Strains (Long-term)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-gates-from-idea-to-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Gates: From Idea to "Release"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Gates: From Idea to &#34;Release&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-alpha-design-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Alpha (Design Phase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha-laboratory-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alpha (Laboratory Phase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beta-small-scale-validation-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beta (Small-Scale Validation Phase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-approved-for-community-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release (Approved for Community Use)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-uricase-yeast-strain-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Uricase-Yeast Strain Card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-tools-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community Tools &amp; Infrastructure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Community Tools &amp; Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-strain-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Strain Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-discussion-forum-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Discussion Forum / Chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-community-biolab-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Community Biolab Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-manufacturing-sop-archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Manufacturing SOP Archive
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licensing-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licensing &amp; IP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-vision-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Vision in Action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-a-company-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not a Company (Yet)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions-reliability-of-community-fermentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions — Reliability of Community Fermentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Open Questions — Reliability of Community Fermentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-strain-stability-across-generations-mechanistic-extrapolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Strain Stability Across Generations (Mechanistic Extrapolation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reproducibility-across-users-mechanistic-extrapolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Reproducibility Across Users (Mechanistic Extrapolation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-contamination-mechanistic-extrapolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Contamination (Mechanistic Extrapolation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-regulatory-status-of-engineered-spore-distribution-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Regulatory Status of Engineered Spore Distribution (Open)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proposed-strain-stability-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposed Strain Stability Kit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposed Strain Stability Kit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cultural-mapping-tane-koji-as-master-koji-rice-as-working-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cultural mapping: tane-koji as master, koji rice as working batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#community-feedback-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community Feedback Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -510,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../team.md" class="md-nav__link">
+      <a href="../team/" class="md-nav__link">
         
   
   
@@ -1709,8 +2293,6 @@
       
         
       
-        
-      
     
     
     
@@ -2049,34 +2631,6 @@
     <span class="md-status md-status--working-note"></span>
   
 
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ward-1995-lab-access-global.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ward 1995 Lab Access — Global Landscape
-  
-
-    
-  </span>
-  
   
 
       </a>
@@ -3011,7 +3565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../practitioner-toolkit.md" class="md-nav__link">
+      <a href="../practitioner-toolkit/" class="md-nav__link">
         
   
   
@@ -3481,7 +4035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bio-ai-tools.md" class="md-nav__link">
+      <a href="../bio-ai-tools/" class="md-nav__link">
         
   
   
@@ -3509,7 +4063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai-bio-tools-playbook.md" class="md-nav__link">
+      <a href="../ai-bio-tools-playbook/" class="md-nav__link">
         
   
   
@@ -3522,6 +4076,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -3537,7 +4098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../paperclip-deep-dive.md" class="md-nav__link">
+      <a href="../paperclip-deep-dive/" class="md-nav__link">
         
   
   
@@ -3565,7 +4126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chembl-cross-check.md" class="md-nav__link">
+      <a href="../chembl-cross-check/" class="md-nav__link">
         
   
   
@@ -4792,7 +5353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../autonomous-screening-methodology.md" class="md-nav__link">
+      <a href="../autonomous-screening-methodology/" class="md-nav__link">
         
   
   
@@ -4820,7 +5381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../manual-literature-mining.md" class="md-nav__link">
+      <a href="../manual-literature-mining/" class="md-nav__link">
         
   
   
@@ -4833,6 +5394,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -4911,7 +5479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GRAPH.md" class="md-nav__link">
+      <a href="../GRAPH/" class="md-nav__link">
         
   
   
@@ -4939,7 +5507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../references.md" class="md-nav__link">
+      <a href="../references/" class="md-nav__link">
         
   
   
