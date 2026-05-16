@@ -417,37 +417,43 @@ Surfaced as 2026-05-13 sweep Connection 2 in `synthesis/done/2026-05-13-connecti
 
 ---
 
-## Static-rubric bias in Pass 2 + Pass 3 recommendations (added 2026-05-16)
+## "Recommend creating what already exists" bias in Pass 2 + Pass 3 (added 2026-05-16)
 
 **Status:** Architectural-bias observation. Not a bug per se — a pattern in synthesizer / reviewer recommendation generation that the walkthrough operator should de-prefer when it surfaces.
 
 ### The pattern
 
-Pass 2 and Pass 3 both have a tendency to recommend **adding a static documented rule / rubric / framework** when the underlying decision process is already implemented dynamically by the sweep daemon itself. This is documentation-for-documentation: the daemon already does what the documented rule would describe, and the static doc will drift from the live evaluator faster than the evaluator updates.
+Pass 2 and Pass 3 both have a tendency to **recommend creating something that already exists** — a documented rule the daemon already implements dynamically, a wet-lab experiment section already in validation-experiments.md, a comp-NNN already queued in computational-experiments.md, a cross-link the page already has. The recommendation reads as substantive ("add a rubric for X," "queue §2.7 to validation-experiments.md," "add a comp-NNN that does Y") but verifies as either documentation-for-documentation (daemon already does it) or staleness (artifact already added in an earlier sweep cycle / earlier walkthrough). Both shapes share a common root: the synthesizer / reviewer doesn't fully audit the current corpus state before recommending an addition.
 
-### Canonical case — 2026-05-16 walkthrough Item 6
+Two flavors of the same bias:
 
-Sweep `ebbce26` Contradiction 1 (chassis-pending list dilution risk) framed the issue as a "strategic design gap" requiring a "chassis triage rubric" — Pass 3 confirmed and tightened the framing to "chokepoint-first triage rule keyed to chokepoint leverage, evidence tier, cheapest first move, and chassis maturity."
+- **Static-rubric flavor.** Pass 2 / Pass 3 recommends documenting a decision framework / rubric / triage rule for a process the sweep daemon's Pass 2 already implements dynamically against the live corpus. Adding a static doc would be a snapshot of heuristics that drifts from the live evaluator faster than the evaluator updates.
+- **Stale-recommendation flavor.** Pass 2 recommends "add §X.Y to validation-experiments.md" or "queue comp-NNN" when §X.Y or the comp-NNN was already added in an earlier sweep cycle (typically 1–3 cycles ago). The recommendation is correct in spirit but the action is already done; the proposed addition would duplicate or shadow the existing entry.
+
+### Canonical cases — 2026-05-16 walkthrough Items 6 and 18
+
+**Item 6 (static-rubric flavor).** Sweep `ebbce26` Contradiction 1 (chassis-pending list dilution risk) framed the issue as a "strategic design gap" requiring a "chassis triage rubric" — Pass 3 confirmed and tightened the framing to "chokepoint-first triage rule keyed to chokepoint leverage, evidence tier, cheapest first move, and chassis maturity."
 
 The walkthrough operator pushed back: the daemon's Pass 2 already re-evaluates every chassis-pending entry against the current corpus state on every sweep, and the walkthrough operator's per-item decision IS the promote / park / falsify call. The same walkthrough (Items 1–5) produced concrete evidence of this mechanism working: PDB×disulfiram CP6 stack named (Item 1), CFTR-corrector Q141K chaperone promoted to comp-032 (Item 2), inhaled mRNA-IL-1RA temporal-complement framing landed in open-enzyme-vision.md + comp-033 (Item 4). None of these required a documented rubric to action.
 
-The synthesizer and reviewer both fell into a "name a rule and document it" frame. A static rubric there would have been:
+A static rubric there would have been documentation that re-derives what Pass 2 already does, a snapshot of heuristics that drifts from the live daemon's evaluation faster than the evaluator updates. Closure for Item 6 was a single-paragraph annotation in `chassis-pending-interventions.md` "How decisions actually get made — there's no static rubric, by design" — naming the dynamic mechanism explicitly so the page is self-documenting, but adding no rubric.
 
-- Documentation that re-derives what Pass 2 already does
-- A snapshot of heuristics that will drift from the live daemon's evaluation
-- Onboarding / audit benefits at a scale where they're not yet load-bearing for a one-operator project
+**Item 18 (stale-recommendation flavor).** Sweep `8653de9` Priority Action 1 recommended "Add `validation-experiments.md` §2.7 (Koji × *Cordyceps* co-formulation stability test) and §1.26 sixth-arm extension (engineered-koji cordycepin + GLPP) to the experiment queue." Pass 3 correctly flagged the staleness with `[GAP: tool-gap]`: both §2.7 and the §1.26 sixth-arm had been added in the 2026-05-14 / 2026-05-15 sweep cycle, 1–2 cycles before the Priority Action surfaced them as "to add." The recommendation's spirit was right (these are real experiments worth running, if the strategic call had been to pursue them); the recommendation's *action* — "add" — was wrong, because the action was already done. The walkthrough operator's outcome was opposite to the synthesizer's recommendation (strategic deprioritization of koji-cordycepin engineering meant marking both sections **Deprioritized** in-place), but the same false-positive add-recommendation pattern would have caused queue-duplication friction even under "execute as proposed" framing.
 
-The pushback is the right answer. Closure for Item 6 was a single-paragraph annotation in `chassis-pending-interventions.md` "How decisions actually get made — there's no static rubric, by design" — naming the dynamic mechanism explicitly so the page is self-documenting, but adding no rubric.
+The two cases share a root: **Pass 2 didn't verify against the live corpus before recommending creation.** In Item 6, the live mechanism (daemon Pass 2 dynamic re-evaluation) already implemented what the recommended documented rubric would describe; in Item 18, the live file (validation-experiments.md) already contained the recommended sections.
 
 ### Operational guidance for future walkthroughs
 
-When a Pass 2 / Pass 3 recommendation reads as "add a documented rule / framework / rubric for [decision type the daemon already makes]," the walkthrough operator should consider:
+When a Pass 2 / Pass 3 recommendation reads as "add X" — a documented rule, a wiki section, a wet-lab experiment, a comp-NNN, a cross-link — the walkthrough operator should run a two-step audit before accepting the recommendation:
 
-1. **Is this rule already implemented in the daemon's evaluation logic?** If yes, the static doc is at best a redundant mirror, at worst a drifting artifact. Default to: close with a short annotation naming the dynamic mechanism; skip the rubric.
-2. **Would the rule constrain decisions the daemon cannot currently surface?** Rare, but real — if the rule encodes a constraint the daemon's prompts don't enforce (e.g., regulatory / safety / privacy gates), the static doc has independent value. Action: add the rule AND update the relevant pass prompt so the daemon enforces it dynamically going forward.
-3. **Is the rule documenting a process across multiple operators or partner organizations?** Only useful at multi-operator scale. Defer until that scale arrives.
+1. **Does X already exist?** Grep the corpus for X's likely name / slug / section number. If yes, the recommendation is stale (the synthesizer didn't audit current state); close with "X already exists at <path>; recommendation reframed to <execute / deprioritize / consolidate>." This catches the stale-recommendation flavor.
+2. **Is X already implemented dynamically by the daemon itself?** If the recommendation is to *document* a decision process the daemon's Pass 2 / Pass 3 prompts already run, the static doc is a snapshot of heuristics that drifts from the live evaluator. Close with a single-paragraph "X is implemented as <daemon mechanism>, no static doc needed" annotation; skip the documented rule. This catches the static-rubric flavor.
 
-The most common case is (1). Default to "close with a dynamic-mechanism annotation, no rubric."
+When neither (1) nor (2) holds, the recommendation may be substantive — proceed to evaluate on its own merits.
+
+When (1) or (2) holds, **don't capture the observation as "telemetry for future consideration" without an action.** Either (a) the bias warrants a real edit to this section (action it now), or (b) it doesn't warrant capture at all. The middle ground of "log it as a deferred observation" is make-work that bloats annotations without producing downstream decisions.
+
+The most common case is (1) or (2). Default to "close with a verification-against-current-state annotation; skip the addition."
 
 ### Implication for the tool-gap vs. science-gap pilot
 
