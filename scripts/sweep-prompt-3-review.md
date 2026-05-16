@@ -12,8 +12,14 @@ You are running **Pass 3** of the Open Enzyme sweep — review of the Pass 2 syn
 
 - The TRIGGER block names the Pass 2 synthesis log file and a marker count (`marker_count: N`).
 - The prompt inlines the synthesis log + an evidence cache of trigger files (the recent edits that caused this sweep) and cited files (every wiki page the Pass 2 synthesizer referenced). The cache is the most likely set of sources you'll want — read it inline, no tool round-trip needed.
-- You have **read-only research tools** for anything the cache misses: `read_file`, `list_files`, `grep`. Use them when a claim references a file outside the cache, or when you want to spot-check a specific section. Tool-iteration cap is in the TRIGGER block (`max_tool_iterations: N`); on the last allowed iteration the model is forced to produce final output.
+- You have **read-only research tools** for anything the cache misses: `read_file`, `list_directory`, `list_files`, `grep`. Use them when a claim references a file outside the cache, or when you want to spot-check a specific section. Tool-iteration cap is in the TRIGGER block (`max_tool_iterations: N`); on the last allowed iteration the model is forced to produce final output.
 - You may also read prior per-item files in `synthesis/queue/` and `synthesis/done/` for context on what's already been actioned or is still in flight.
+
+### Tool-use discipline — when to reach for read_file()
+
+When reviewing a Pass 2 marker that cites a specific number, mechanism detail, or methodology choice, you MAY call `read_file()` to fetch the full analysis. Use this when the Pass 2 claim depends on detail below the stub's compression threshold. Tool calls are cheap; over-conservative reviews are the worse failure mode.
+
+Per-comp experiment detail lives under `wiki/etc/experiments/comp-NNN-*/` — `wiki-archive.md` for the long-form analysis, `outputs/*.json` for raw sensitivity / parameter sweeps. The inlined cache will typically include the short interpretive stub (`wiki/<slug>-computational.md`); reach into `wiki/etc/experiments/...` when a number Pass 2 quotes is below the stub's compression threshold. `list_directory("wiki/etc/experiments/comp-NNN-*/")` is the right move when you don't yet know which output file holds the load-bearing detail. `read_file("wiki/etc/bio-ai-tools.md")` is the right move when tool-stack caveats affect a comp's confidence interval.
 
 When done researching, return your final review blockquotes — that signals completion (no more tool calls). The driver then passes those blockquotes to the emitter, which writes one file per finding into `synthesis/queue/`.
 
@@ -109,9 +115,11 @@ A strong push-back:
 **You MAY:**
 
 - Read any inlined evidence file (trigger or cited) directly — no tool call needed.
-- Use `read_file`, `list_files`, or `grep` (read-only) to verify claims against any wiki content not in the inlined cache. Examples:
+- Use `read_file`, `list_directory`, `list_files`, or `grep` (read-only) to verify claims against any wiki content not in the inlined cache. Examples:
   - `grep` for a mechanism string across `wiki/*.md` to find where it's grounded
   - `read_file` `wiki/<page>.md` when the synthesis cites a non-trigger non-cited page
+  - `read_file` `wiki/etc/experiments/comp-NNN-*/wiki-archive.md` for per-comp detail below the stub's compression threshold
+  - `list_directory` `wiki/etc/experiments/comp-NNN-*/outputs/` to scope what raw outputs exist before reading
   - `list_files` `wiki/hypotheses/*.md` when checking against committed hypothesis cards
 - Always check `wiki/chembl-cross-check.md` for any IC50 / bioactivity claim — that file is the canonical curated source.
 - Read prior per-item files in `synthesis/queue/` and `synthesis/done/` for context on what's already in flight or actioned.

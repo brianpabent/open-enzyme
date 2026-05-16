@@ -88,7 +88,7 @@ Example (Push back with tool-gap attribution):
 
 ## Retrieval budget — bias toward MORE verification
 
-The inlined evidence cache (trigger files + cited files) is the warm cache. It doesn't cover everything. You have read-only tools (`read_file`, `list_files`, `grep`) and a 16-iteration cap. Use them.
+The inlined evidence cache (trigger files + cited files) is the warm cache. It doesn't cover everything. You have read-only tools (`read_file`, `list_directory`, `list_files`, `grep`) and a 16-iteration cap. Use them.
 
 Make a tool call when ANY of these apply:
 
@@ -97,6 +97,11 @@ Make a tool call when ANY of these apply:
 - The OVERLAP tag depends on whether some element appears elsewhere in the wiki — grep to confirm absence before tagging NOVEL or RESTATEMENT.
 - A factual claim names a specific number, residue, citation, or PMID that you haven't directly verified against the source.
 - The finding references a hypothesis card outside the inlined evidence — read it.
+- The Pass 2 claim depends on a number, sensitivity, or methodology choice from per-comp detail (`wiki/etc/experiments/comp-NNN-*/wiki-archive.md` or `outputs/*.json`). The compressed comp stubs in the corpus do not preserve detail below the stub's compression threshold — `read_file` the archive when the claim is load-bearing on that detail.
+
+### Tool-use discipline — when to reach for read_file()
+
+When reviewing a Pass 2 marker that cites a specific number, mechanism detail, or methodology choice, you MAY call `read_file()` to fetch the full analysis. Use this when the Pass 2 claim depends on detail below the stub's compression threshold. Tool calls are cheap; over-conservative reviews are the worse failure mode. `list_directory("wiki/etc/experiments/comp-NNN-*/")` is the right move when you don't yet know which output file holds the load-bearing detail.
 
 Do not stop after the first or second round. A 6-marker review with thorough verification typically takes 6–12 tool calls. Stopping at 2 rounds is under-verification, not efficiency. The cost of an extra `grep` is trivial; the cost of letting a synthesizer error propagate into a per-item file in `synthesis/queue/` is non-trivial.
 

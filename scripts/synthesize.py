@@ -44,9 +44,17 @@ import datetime
 import argparse
 import subprocess
 import tempfile
+import time
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(REPO_ROOT)
+
+# Tool-use iteration cap. Pass 2 is single-shot synthesis with optional
+# detail-fetch via read_file / list_directory. 20 reaches is generous; the
+# discipline in the prompt is "reach when needed," not "fetch everything."
+# On the last allowed iteration the loop force-finishes (tool_choice=none)
+# so the model emits its synthesis log even if it hadn't decided to stop.
+MAX_TOOL_ITERATIONS = 20
 
 # Files excluded from the corpus regardless of model.
 #
@@ -123,6 +131,129 @@ PRICING_USD_PER_MTOK = {
 }
 
 
+# Read-only research tools for Pass 2. Pass 2 is synthesis-only — it must
+# never edit any file. The tool surface exists so the synthesizer can fetch
+# detail from `wiki/etc/experiments/comp-NNN-*/` (per-comp wiki-archive +
+# outputs/ JSON), `wiki/etc/bio-ai-tools.md`, and other files outside the
+# pre-loaded corpus when synthesis genuinely needs the detail.
+TOOLS = [
+    {"type": "function", "function": {
+        "name": "read_file",
+        "description": (
+            "Read a file in the repository. Path is repo-relative. Use to "
+            "fetch detail behind a link in the loaded corpus when synthesis "
+            "needs it (e.g., per-comp experiment outputs, methodology files, "
+            "tool-stack caveats). Especially useful for "
+            "`wiki/etc/experiments/comp-NNN-*/wiki-archive.md` and "
+            "`wiki/etc/experiments/comp-NNN-*/outputs/*.json`."),
+        "parameters": {"type": "object", "properties": {
+            "path": {"type": "string",
+                     "description": "repo-relative path, e.g. wiki/etc/experiments/comp-029-combined-cp0-systems-model/wiki-archive.md"},
+        }, "required": ["path"]}}},
+    {"type": "function", "function": {
+        "name": "list_directory",
+        "description": (
+            "List files and subdirectories in a directory (repo-relative "
+            "path). Use to explore experiment-output folders before "
+            "reaching for a specific file."),
+        "parameters": {"type": "object", "properties": {
+            "path": {"type": "string", "description": "repo-relative directory path"},
+        }, "required": ["path"]}}},
+]
+
+
+def safe_path(rel):
+    """Resolve a repo-relative path; reject escapes and null bytes."""
+    if "\0" in rel:
+        raise ValueError(f"path {rel!r} contains null byte")
+    abs_path = os.path.realpath(os.path.join(REPO_ROOT, rel))
+    if not abs_path.startswith(REPO_ROOT + os.sep) and abs_path != REPO_ROOT:
+        raise ValueError(f"path {rel!r} escapes repo root")
+    return abs_path
+
+
+# Pre-move ↔ post-move path remapping for the experiments/ → wiki/etc/experiments/
+# reorg. Tool callers should use the POST-MOVE path per the prompt brief.
+# During the transition window where some comp folders still live at the
+# pre-move path, fall through to that path automatically. When the move
+# completes the fallback becomes dead code; safe to leave.
+_PATH_FALLBACK_PREFIXES = [
+    ("wiki/etc/experiments/", "experiments/"),
+]
+
+
+def _resolve_with_fallback(rel):
+    """Yield (abs_path, was_fallback) candidates for a repo-relative path.
+
+    Handles both `wiki/etc/experiments/comp-NNN-*/foo.md` (with subpath) and
+    `wiki/etc/experiments` (directory itself) — the latter strips the
+    trailing slash off the prefix when matching.
+    """
+    yield safe_path(rel), False
+    for post, pre in _PATH_FALLBACK_PREFIXES:
+        post_trimmed = post.rstrip("/")
+        pre_trimmed = pre.rstrip("/")
+        if rel.startswith(post):
+            fallback_rel = pre + rel[len(post):]
+        elif rel == post_trimmed:
+            fallback_rel = pre_trimmed
+        else:
+            continue
+        try:
+            yield safe_path(fallback_rel), True
+        except ValueError:
+            pass
+
+
+def tool_read_file(args):
+    rel = args["path"]
+    try:
+        for candidate, was_fallback in _resolve_with_fallback(rel):
+            if os.path.isfile(candidate):
+                size = os.path.getsize(candidate)
+                if was_fallback:
+                    print(f"  [read_file] {rel} → fallback to pre-move path ({size} bytes)",
+                          file=sys.stderr)
+                else:
+                    print(f"  [read_file] {rel} ({size} bytes)", file=sys.stderr)
+                return open(candidate).read()
+    except ValueError as e:
+        print(f"  [read_file] {rel} → ERROR: {e}", file=sys.stderr)
+        return f"ERROR: {e}"
+    print(f"  [read_file] {rel} → ERROR: file not found", file=sys.stderr)
+    return f"ERROR: file not found: {rel}"
+
+
+def tool_list_directory(args):
+    rel = args["path"]
+    try:
+        for candidate, was_fallback in _resolve_with_fallback(rel):
+            if os.path.isdir(candidate):
+                entries = sorted(os.listdir(candidate))
+                rendered = []
+                for e in entries:
+                    full = os.path.join(candidate, e)
+                    rendered.append(e + ("/" if os.path.isdir(full) else ""))
+                if was_fallback:
+                    print(f"  [list_directory] {rel} → fallback to pre-move path "
+                          f"({len(rendered)} entries)", file=sys.stderr)
+                else:
+                    print(f"  [list_directory] {rel} ({len(rendered)} entries)",
+                          file=sys.stderr)
+                return "\n".join(rendered) if rendered else "(empty directory)"
+    except ValueError as e:
+        print(f"  [list_directory] {rel} → ERROR: {e}", file=sys.stderr)
+        return f"ERROR: {e}"
+    print(f"  [list_directory] {rel} → ERROR: directory not found", file=sys.stderr)
+    return f"ERROR: directory not found: {rel}"
+
+
+TOOL_HANDLERS = {
+    "read_file":      tool_read_file,
+    "list_directory": tool_list_directory,
+}
+
+
 # OpenRouter returns the served model with cosmetic suffixes that don't
 # indicate a fallback:
 #   - Provider-routing variant: ':nitro', ':floor', ':online' (after colon)
@@ -172,6 +303,220 @@ def build_corpus():
         with open(p) as f:
             parts.append(f"\n\n=== {p} ===\n\n{f.read()}")
     return "".join(parts), paths
+
+
+def call_openrouter_raw(api_key, body):
+    """One OpenRouter chat-completions request with retries.
+
+    Returns the parsed-JSON response dict on success, exits non-zero on
+    hard failure. Mirrors the retry policy from the previous single-shot
+    path (originally inlined): transient curl-level errors retry with
+    10/30/60/120s backoff, and HTTP 200 with non-JSON or empty content
+    also retries (the OpenRouter `models` fallback array only kicks in
+    on a NEW request, not by re-trying the streamed-empty response in
+    place — see the comment trail above MAX_TOOL_ITERATIONS).
+    """
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as tf:
+        json.dump(body, tf)
+        body_path = tf.name
+
+    max_retries = 5
+    result = None
+    try:
+        for attempt in range(max_retries):
+            result = subprocess.run(
+                [
+                    "curl", "-sS", "--fail-with-body",
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    "-H", f"Authorization: Bearer {api_key}",
+                    "-H", "Content-Type: application/json",
+                    "-H", "HTTP-Referer: https://github.com/brianpabent/open-enzyme",
+                    "-H", "X-Title: Open Enzyme synthesis sweep",
+                    "-d", f"@{body_path}",
+                    "--max-time", "600",
+                ],
+                capture_output=True, text=True, timeout=620,
+            )
+
+            # Branch (a): curl-level failure. Existing transient-string check.
+            if result.returncode != 0:
+                combined = (result.stdout or "") + "\n" + (result.stderr or "")
+                transient = (
+                    result.returncode == 22
+                    or any(s in combined for s in (
+                        "429", "rate-limit", "rate limit", "temporarily",
+                        "502", "503", "504",
+                        "Connection reset", "Connection refused",
+                        "timed out", "timeout",
+                    ))
+                )
+                if not transient or attempt == max_retries - 1:
+                    print(f"curl failed (exit {result.returncode})", file=sys.stderr)
+                    print(f"stderr: {result.stderr.strip()}", file=sys.stderr)
+                    print(f"stdout: {result.stdout[:2000]}", file=sys.stderr)
+                    sys.exit(1)
+                backoff = [10, 30, 60, 120][attempt] if attempt < 4 else 120
+                print(f"  [retry {attempt+1}/{max_retries-1}] transient curl error, sleeping {backoff}s ...",
+                      file=sys.stderr, flush=True)
+                time.sleep(backoff)
+                continue
+
+            # Branch (b): curl succeeded (returncode 0). Validate body.
+            stdout = result.stdout or ""
+            try:
+                candidate = json.loads(stdout) if stdout.strip() else None
+            except json.JSONDecodeError:
+                candidate = None
+
+            # For tool-use loops, "content" can legitimately be empty when
+            # the response is a tool_calls turn. Validate the response shape
+            # rather than the content string here.
+            shape_ok = (
+                candidate is not None
+                and "choices" in candidate
+                and candidate["choices"]
+                and isinstance(candidate["choices"][0].get("message"), dict)
+            )
+            if shape_ok:
+                msg = candidate["choices"][0]["message"]
+                has_content = bool(msg.get("content"))
+                has_tool_calls = bool(msg.get("tool_calls"))
+                if has_content or has_tool_calls:
+                    return candidate
+
+            # Empty / malformed / no-content-and-no-tool-calls → retry.
+            if attempt == max_retries - 1:
+                if candidate is None:
+                    print(f"Non-JSON / empty response after {max_retries} attempts: {stdout[:2000]}",
+                          file=sys.stderr)
+                elif "choices" not in candidate:
+                    print(f"Unexpected response (no 'choices') after {max_retries} attempts: "
+                          f"{json.dumps(candidate, indent=2)[:2000]}", file=sys.stderr)
+                else:
+                    fr = candidate["choices"][0].get("finish_reason", "?")
+                    print(f"OpenRouter returned empty content+tool_calls after {max_retries} "
+                          f"attempts (finish_reason={fr!r}). "
+                          f"Full choice: {json.dumps(candidate['choices'][0], indent=2)[:1500]}",
+                          file=sys.stderr)
+                sys.exit(1)
+            backoff = [10, 30, 60, 120][attempt] if attempt < 4 else 120
+            reason = "non-JSON/empty body" if candidate is None else "empty content+tool_calls"
+            print(f"  [retry {attempt+1}/{max_retries-1}] HTTP 200 with {reason}, sleeping {backoff}s ...",
+                  file=sys.stderr, flush=True)
+            time.sleep(backoff)
+    finally:
+        os.unlink(body_path)
+
+
+def run_agentic_synthesis(api_key, model, initial_prompt, fallback_models,
+                          max_iterations, max_tokens):
+    """Drive Pass 2 as a bounded tool-use loop.
+
+    Pass 2 emits a single synthesis log. The loop runs until the model
+    returns content with no tool_calls (terminal); each intermediate turn
+    can call read_file / list_directory to fetch detail from outside the
+    pre-loaded corpus. On the last allowed iteration, tool_choice=none
+    forces the model to produce its synthesis log.
+
+    Returns (content, total_in_tokens, total_out_tokens, last_response).
+    `last_response` is used by the caller for the served-model and
+    canonical-slug logic that runs after this returns.
+
+    Backwards-compatibility: if the model never calls a tool (common case
+    when the inlined corpus is sufficient), this loop makes one API call
+    and returns identical results to the previous single-shot path.
+    """
+    messages = [{"role": "user", "content": initial_prompt}]
+    total_in = 0
+    total_out = 0
+    last_response = None
+    tool_calls_made = 0
+
+    for iteration in range(max_iterations + 1):
+        # On the last allowed iteration force a final answer (no more tools).
+        forcing_final = iteration == max_iterations
+
+        body = {
+            "model": model,
+            "messages": messages,
+            "tools": TOOLS,
+            "max_tokens": max_tokens,
+            "temperature": 0.7,
+        }
+        if fallback_models:
+            body["models"] = fallback_models
+        if forcing_final:
+            body["tool_choice"] = "none"
+            print(f"  [iter {iteration+1}/{max_iterations+1}] iteration cap reached; "
+                  f"forcing final synthesis (no more tool calls)", file=sys.stderr)
+
+        resp = call_openrouter_raw(api_key, body)
+        last_response = resp
+        choice = resp["choices"][0]
+        msg = choice.get("message", {}) or {}
+        usage = resp.get("usage", {}) or {}
+        total_in += usage.get("prompt_tokens", 0)
+        total_out += usage.get("completion_tokens", 0)
+
+        tool_calls = msg.get("tool_calls") or []
+        content = msg.get("content")
+
+        # Terminal: content with no tool_calls = final synthesis log.
+        if content and not tool_calls:
+            return content, total_in, total_out, resp
+
+        # Tool calls: execute each and append results, then continue.
+        if tool_calls:
+            messages.append({
+                "role": "assistant",
+                "content": content or "",
+                "tool_calls": tool_calls,
+            })
+            for tc in tool_calls:
+                fn = (tc.get("function") or {})
+                name = fn.get("name")
+                raw_args = fn.get("arguments") or "{}"
+                try:
+                    parsed = json.loads(raw_args)
+                except json.JSONDecodeError:
+                    result = f"ERROR: tool args not JSON: {raw_args[:200]}"
+                else:
+                    handler = TOOL_HANDLERS.get(name)
+                    if not handler:
+                        result = f"ERROR: unknown tool {name!r}"
+                    else:
+                        try:
+                            result = handler(parsed)
+                        except Exception as e:
+                            result = f"ERROR: {type(e).__name__}: {e}"
+                # Cap each tool result to keep the loop bounded.
+                if len(result) > 30_000:
+                    result = result[:30_000] + "\n... (truncated)"
+                messages.append({
+                    "role": "tool",
+                    "tool_call_id": tc.get("id", ""),
+                    "name": name or "",
+                    "content": result,
+                })
+                tool_calls_made += 1
+            print(f"  [iter {iteration+1}/{max_iterations+1}] {len(tool_calls)} tool call(s) processed "
+                  f"({tool_calls_made} cumulative)", file=sys.stderr)
+            continue
+
+        # Pathological: no content, no tool calls. Bail.
+        print(
+            f"OpenRouter returned no content and no tool calls "
+            f"(finish_reason={choice.get('finish_reason', '?')!r}). "
+            f"Full message: {json.dumps(msg, indent=2)[:1500]}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    # Loop exhausted without returning — shouldn't happen (forcing_final
+    # on the last iteration guarantees content). Defensive.
+    print(f"Pass 2 tool loop exhausted {max_iterations} iterations without final content",
+          file=sys.stderr)
+    sys.exit(1)
 
 
 def main():
@@ -280,163 +625,37 @@ def main():
     # Build request body. OpenRouter's `models` array provides automatic
     # provider-side fallback: if the primary model fails (429 throttle, null
     # content, upstream provider down), OpenRouter tries the next model in
-    # the array without code intervention. The python-side retry loop below
-    # still handles transient curl-level errors (network timeouts, etc.).
-    # When --model is overridden via CLI, no fallback is used (caller is
+    # the array without code intervention. The python-side retry loop in
+    # call_openrouter_raw still handles transient curl-level errors. When
+    # --model is overridden via CLI, no fallback is used (caller is
     # explicit about which model to test).
-    body = {
-        "model": args.model,
-        "messages": [{"role": "user", "content": full_prompt}],
-        "max_tokens": args.max_tokens,
-        "temperature": 0.7,
-    }
-    if args.model == DEFAULT_MODEL:
-        body["models"] = [args.model] + FALLBACK_MODELS
+    fallback_array = (
+        [args.model] + FALLBACK_MODELS if args.model == DEFAULT_MODEL else None
+    )
 
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as tf:
-        json.dump(body, tf)
-        body_path = tf.name
-
-    # Retry on transient upstream rate limits — V4-Pro routes through
-    # Together / SiliconFlow / DeepInfra and these provider-side throttles
-    # come and go. Backoff: 10s, 30s, 60s, 120s.
+    # Tool-use loop: Pass 2 is single-shot synthesis with optional detail
+    # fetch via read_file / list_directory. The model may call zero, one,
+    # or many tools before emitting its synthesis log. The loop terminates
+    # when the model returns content with no tool_calls. On the last
+    # allowed iteration, tool_choice=none forces a content response.
     #
-    # Two failure modes both trigger retry:
-    #   (a) curl-level errors (timeout, connection reset, 5xx surfaced via
-    #       --fail-with-body) — detected by returncode != 0 + transient string
-    #   (b) HTTP 200 OK with empty / non-JSON body — happens when the upstream
-    #       provider streams empty content under context-window pressure or
-    #       when OpenRouter returns 200 with an error envelope that's
-    #       structurally invalid. Without retry, this exits Pass 2 immediately
-    #       and the daemon never gets a chance to fall back to the next model
-    #       in the routing array (Gemini 2.5 Pro). Run 25938167555 (2026-05-15
-    #       merge of PR #11) hit exactly this — corpus near V4-Pro's 1M cap,
-    #       second attempt returned 200 + empty body, exited without retry.
-    import time as _time
-    max_retries = 5
-    result = None
-    resp = None
-    try:
-        for attempt in range(max_retries):
-            result = subprocess.run(
-                [
-                    "curl", "-sS", "--fail-with-body",
-                    "https://openrouter.ai/api/v1/chat/completions",
-                    "-H", f"Authorization: Bearer {api_key}",
-                    "-H", "Content-Type: application/json",
-                    "-H", "HTTP-Referer: https://github.com/brianpabent/open-enzyme",
-                    "-H", "X-Title: Open Enzyme synthesis sweep",
-                    "-d", f"@{body_path}",
-                    "--max-time", "600",
-                ],
-                capture_output=True, text=True, timeout=620,
-            )
+    # Behavior preservation note: a run where the model never calls a tool
+    # is functionally equivalent to the previous single-shot path — same
+    # request body, same response handling, same downstream emission. The
+    # tools surface is purely additive.
+    content, in_tok, out_tok, resp_meta = run_agentic_synthesis(
+        api_key=api_key,
+        model=args.model,
+        initial_prompt=full_prompt,
+        fallback_models=fallback_array,
+        max_iterations=MAX_TOOL_ITERATIONS,
+        max_tokens=args.max_tokens,
+    )
 
-            # Branch (a): curl-level failure. Existing transient-string check.
-            if result.returncode != 0:
-                # Transient detection across BOTH stdout and stderr. See
-                # sweep-1-propagate.py for the rationale (curl --fail-with-body
-                # writes HTTP status to stderr, response body to stdout; checking
-                # only stdout missed real 503s in run 25049501442).
-                combined = (result.stdout or "") + "\n" + (result.stderr or "")
-                transient = (
-                    result.returncode == 22
-                    or any(s in combined for s in (
-                        "429", "rate-limit", "rate limit", "temporarily",
-                        "502", "503", "504",
-                        "Connection reset", "Connection refused",
-                        "timed out", "timeout",
-                    ))
-                )
-                if not transient or attempt == max_retries - 1:
-                    break
-                backoff = [10, 30, 60, 120][attempt] if attempt < 4 else 120
-                print(f"  [retry {attempt+1}/{max_retries-1}] transient curl error, sleeping {backoff}s ...", file=sys.stderr, flush=True)
-                _time.sleep(backoff)
-                continue
-
-            # Branch (b): curl succeeded (returncode 0). Validate the body —
-            # empty / non-JSON / missing choices / empty content all count as
-            # retryable conditions because OpenRouter's fallback routing only
-            # kicks in on a NEW request, not by re-trying the streamed-empty
-            # response in place.
-            stdout = result.stdout or ""
-            try:
-                candidate = json.loads(stdout) if stdout.strip() else None
-            except json.JSONDecodeError:
-                candidate = None
-
-            content_ok = (
-                candidate is not None
-                and "choices" in candidate
-                and candidate["choices"]
-                and candidate["choices"][0].get("message", {}).get("content")
-            )
-            if content_ok:
-                resp = candidate
-                break
-
-            # Empty / malformed / no-content response — retry-able.
-            if attempt == max_retries - 1:
-                # Final attempt: surface the most informative error available.
-                if candidate is None:
-                    print(f"Non-JSON / empty response after {max_retries} attempts: {stdout[:2000]}", file=sys.stderr)
-                elif "choices" not in candidate:
-                    print(f"Unexpected response (no 'choices') after {max_retries} attempts: {json.dumps(candidate, indent=2)[:2000]}", file=sys.stderr)
-                else:
-                    finish_reason = candidate["choices"][0].get("finish_reason", "?")
-                    print(
-                        f"OpenRouter returned empty content after {max_retries} attempts "
-                        f"(finish_reason={finish_reason!r}). "
-                        f"Full choice: {json.dumps(candidate['choices'][0], indent=2)[:1500]}",
-                        file=sys.stderr,
-                    )
-                sys.exit(1)
-            backoff = [10, 30, 60, 120][attempt] if attempt < 4 else 120
-            reason = "non-JSON/empty body" if candidate is None else "empty content"
-            print(f"  [retry {attempt+1}/{max_retries-1}] HTTP 200 with {reason}, sleeping {backoff}s ...", file=sys.stderr, flush=True)
-            _time.sleep(backoff)
-    finally:
-        os.unlink(body_path)
-
-    # If we exited the loop without resp set, the only remaining path is a
-    # non-transient curl-level failure that broke out at line "if not transient
-    # or attempt == max_retries - 1: break".
-    if resp is None:
-        print(f"curl failed (exit {result.returncode})", file=sys.stderr)
-        print(f"stderr: {result.stderr.strip()}", file=sys.stderr)
-        print(f"stdout: {result.stdout[:2000]}", file=sys.stderr)
-        sys.exit(1)
-
-    choice = resp["choices"][0]
-    content = choice.get("message", {}).get("content")
-    finish_reason = choice.get("finish_reason", "?")
-    if not content:
-        print(
-            f"OpenRouter returned empty content (finish_reason={finish_reason!r}). "
-            f"Full choice: {json.dumps(choice, indent=2)[:1500]}",
-            file=sys.stderr,
-        )
-        # Common causes: provider streamed an error, content filter, truncation
-        # before any tokens. Exit non-zero so the workflow marks Pass 2 failed
-        # and Pass 3 is correctly skipped — better than writing garbage.
-        sys.exit(1)
-    usage = resp.get("usage", {})
-    in_tok = usage.get("prompt_tokens", 0)
-    out_tok = usage.get("completion_tokens", 0)
-
-    # OpenRouter returns the actual model that served the request in
-    # `resp["model"]`. Two cases can make it differ from args.model:
-    #   (1) Real fallback — primary model failed and OpenRouter's fallback
-    #       array routed to a different model. Canonical slug differs from
-    #       args.model's canonical slug.
-    #   (2) Alias expansion — same model, cosmetic suffix appended by
-    #       OpenRouter (provider-routing ':variant' or date-version
-    #       '-YYYYMMDD'). Canonical slugs match. Not a fallback.
-    # Compare canonical slugs (suffixes stripped) so alias expansion doesn't
-    # false-positive the flag. Catch 31 documented the original string-
-    # equality test as 100% false-positive across five spot-checked sweeps.
-    served_model_raw = resp.get("model", args.model)
+    # served_model_raw originates from the LAST response in the loop. The
+    # fallback-detection / pricing / frontmatter logic that follows is
+    # unchanged from the single-shot path.
+    served_model_raw = resp_meta.get("model", args.model)
     served_model = canonical_model_slug(served_model_raw)
     args_model_canonical = canonical_model_slug(args.model)
     fallback_used = served_model != args_model_canonical

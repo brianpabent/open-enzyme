@@ -91,11 +91,25 @@ TOOLS = [
     {"type": "function", "function": {
         "name": "read_file",
         "description": (
-            "Read a file in the repository. Use to verify claims in the Pass 2 "
-            "synthesis against primary wiki content, especially when a cited "
-            "file isn't in the inlined warm cache."),
+            "Read a file in the repository. Path is repo-relative. Use to "
+            "verify claims in the Pass 2 synthesis against primary content, "
+            "especially when a cited file isn't in the inlined warm cache. "
+            "Particularly useful for per-comp experiment detail under "
+            "`wiki/etc/experiments/comp-NNN-*/wiki-archive.md` and outputs/ "
+            "subfolders (these live outside the synthesis corpus)."),
         "parameters": {"type": "object", "properties": {
-            "path": {"type": "string", "description": "repo-relative path, e.g. wiki/abcg2-modulators.md"},
+            "path": {"type": "string",
+                     "description": "repo-relative path, e.g. wiki/abcg2-modulators.md or wiki/etc/experiments/comp-029-combined-cp0-systems-model/wiki-archive.md"},
+        }, "required": ["path"]}}},
+    {"type": "function", "function": {
+        "name": "list_directory",
+        "description": (
+            "List files and subdirectories in a directory (repo-relative "
+            "path). Use to explore experiment-output folders like "
+            "`wiki/etc/experiments/comp-NNN-*/outputs/` before reaching for "
+            "a specific file."),
+        "parameters": {"type": "object", "properties": {
+            "path": {"type": "string", "description": "repo-relative directory path"},
         }, "required": ["path"]}}},
     {"type": "function", "function": {
         "name": "list_files",
@@ -129,26 +143,105 @@ def read_api_key():
 
 
 def safe_path(rel):
+    # Reject paths with null bytes or shell metacharacters that should never
+    # appear in a repo-relative filename. (`glob`-style metacharacters like
+    # `*`/`?` are allowed because they're meaningful to tool_list_files'
+    # pattern arg — tool_read_file rejects them implicitly via os.path.exists.)
+    if "\0" in rel:
+        raise ValueError(f"path {rel!r} contains null byte")
     abs_path = os.path.realpath(os.path.join(REPO_ROOT, rel))
     if not abs_path.startswith(REPO_ROOT + os.sep) and abs_path != REPO_ROOT:
         raise ValueError(f"path {rel!r} escapes repo root")
     return abs_path
 
 
+# Pre-move ↔ post-move path remapping for the experiments/ → wiki/etc/experiments/
+# reorg. Tool callers should use the POST-MOVE path (`wiki/etc/experiments/...`)
+# per the prompt brief. During the transition window where some comp folders
+# still live at the pre-move path, fall through to that path automatically.
+# When the move completes the fallback becomes dead code; safe to leave.
+_PATH_FALLBACK_PREFIXES = [
+    ("wiki/etc/experiments/", "experiments/"),
+]
+
+
+def _resolve_with_fallback(rel):
+    """Yield (abs_path, was_fallback) candidates for a repo-relative path.
+
+    Always yields the requested path first. If the requested path is under a
+    known post-move prefix, also yields the pre-move equivalent as a
+    fallback. Handles both `wiki/etc/experiments/comp-NNN-*/foo.md` (subpath)
+    and `wiki/etc/experiments` (directory itself).
+    """
+    yield safe_path(rel), False
+    for post, pre in _PATH_FALLBACK_PREFIXES:
+        post_trimmed = post.rstrip("/")
+        pre_trimmed = pre.rstrip("/")
+        if rel.startswith(post):
+            fallback_rel = pre + rel[len(post):]
+        elif rel == post_trimmed:
+            fallback_rel = pre_trimmed
+        else:
+            continue
+        try:
+            yield safe_path(fallback_rel), True
+        except ValueError:
+            pass
+
+
 def tool_read_file(args):
+    rel = args["path"]
     try:
-        p = safe_path(args["path"])
+        for candidate, was_fallback in _resolve_with_fallback(rel):
+            if os.path.isfile(candidate):
+                size = os.path.getsize(candidate)
+                if was_fallback:
+                    print(f"  [read_file] {rel} → fallback to pre-move path ({size} bytes)",
+                          file=sys.stderr)
+                else:
+                    print(f"  [read_file] {rel} ({size} bytes)", file=sys.stderr)
+                return open(candidate).read()
     except ValueError as e:
+        print(f"  [read_file] {rel} → ERROR: {e}", file=sys.stderr)
         return f"ERROR: {e}"
-    if not os.path.exists(p):
-        return f"ERROR: file not found: {args['path']}"
-    return open(p).read()
+    print(f"  [read_file] {rel} → ERROR: file not found", file=sys.stderr)
+    return f"ERROR: file not found: {rel}"
 
 
 def tool_list_files(args):
     matches = glob.glob(os.path.join(REPO_ROOT, args["pattern"]), recursive=True)
     rels = sorted([os.path.relpath(m, REPO_ROOT) for m in matches])
     return "\n".join(rels) if rels else "(no matches)"
+
+
+def tool_list_directory(args):
+    """List files and subdirectories in a directory (repo-relative path).
+
+    Returns one entry per line; directories are suffixed with a trailing '/'.
+    Applies the same post-move → pre-move fallback as tool_read_file so the
+    tool works during the experiments/ → wiki/etc/experiments/ transition.
+    """
+    rel = args["path"]
+    try:
+        for candidate, was_fallback in _resolve_with_fallback(rel):
+            if os.path.isdir(candidate):
+                entries = sorted(os.listdir(candidate))
+                rendered = []
+                for e in entries:
+                    full = os.path.join(candidate, e)
+                    rendered.append(e + ("/" if os.path.isdir(full) else ""))
+                if was_fallback:
+                    print(f"  [list_directory] {rel} → fallback to pre-move path "
+                          f"({len(rendered)} entries)", file=sys.stderr)
+                else:
+                    print(f"  [list_directory] {rel} ({len(rendered)} entries)",
+                          file=sys.stderr)
+                return "\n".join(rendered) if rendered else "(empty directory)"
+    except ValueError as e:
+        print(f"  [list_directory] {rel} → ERROR: {e}", file=sys.stderr)
+        return f"ERROR: {e}"
+    print(f"  [list_directory] {rel} → ERROR: directory not found", file=sys.stderr)
+    return f"ERROR: directory not found: {rel}"
 
 
 def tool_grep(args):
@@ -173,9 +266,10 @@ def tool_grep(args):
 
 
 TOOL_HANDLERS = {
-    "read_file":  tool_read_file,
-    "list_files": tool_list_files,
-    "grep":       tool_grep,
+    "read_file":      tool_read_file,
+    "list_directory": tool_list_directory,
+    "list_files":     tool_list_files,
+    "grep":           tool_grep,
 }
 
 
