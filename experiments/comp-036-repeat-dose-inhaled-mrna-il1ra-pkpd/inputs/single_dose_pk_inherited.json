@@ -1,0 +1,71 @@
+{
+  "comment": "Single-dose PK parameters inherited from comp-033 Monte Carlo (n=20,000, seed 33). comp-036 builds repeat-dose accumulation kinetics + receptor-occupancy model on top of these single-dose priors WITHOUT re-deriving them. The 'translation efficiency mass ratio' parameter remains the dominant sensitivity driver (Spearman rho = +0.78 in comp-033). The brief for comp-036 instructs explicit inheritance of comp-033's uncertainty distributions and multi-dose math on top.",
+  "source": "experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/inputs/model_parameters.json and outputs/dose_auc_prediction.json",
+  "inherited_priors": {
+    "dose_range_mg_mrna_per_administration": {
+      "min": 4,
+      "max": 24,
+      "distribution": "log-uniform",
+      "anchor": "Translate Bio MRT5005 (8-24 mg) + Arcturus ARCT-032 (4-20 mg)"
+    },
+    "translation_efficiency_ng_protein_per_ug_mrna_delivered": {
+      "min": 1000,
+      "max": 50000,
+      "distribution": "log-uniform",
+      "central": 7000,
+      "dominant_sensitivity": true,
+      "spearman_rho_vs_single_dose_cmax": 0.781,
+      "anchor": "Pardi 2018 Nat Rev Drug Discov; Ogata 2022 CID; comp-033 corrected mass-ratio prior"
+    },
+    "lung_delivery_efficiency_fraction": {
+      "min": 0.10,
+      "max": 0.40,
+      "distribution": "uniform",
+      "anchor": "PARI eFlow vibrating-mesh nebulizer; Geller 2009"
+    },
+    "systemic_bioavailability_from_alveolar_fraction": {
+      "min": 0.10,
+      "max": 0.50,
+      "distribution": "uniform",
+      "anchor": "Patton & Byron 2007; 17 kDa non-glycosylated; Afrezza precedent"
+    },
+    "expression_duration_hours": {
+      "min": 24,
+      "max": 96,
+      "distribution": "uniform",
+      "comment": "Modified-nucleoside transient expression window; relevant for first-dose decay-into-trough kinetics"
+    },
+    "il1ra_systemic_clearance_per_hour": {
+      "min": 0.10,
+      "max": 0.25,
+      "distribution": "uniform",
+      "central": 0.173,
+      "anchor": "Kineret USPI t1/2 = 4h -> k = ln(2)/4 = 0.173 /h"
+    },
+    "plasma_volume_distribution_L": {
+      "min": 12,
+      "max": 25,
+      "distribution": "uniform",
+      "central": 17,
+      "anchor": "Anakinra PK; Kineret USPI"
+    }
+  },
+  "inherited_single_dose_outputs": {
+    "median_plasma_cmax_ug_per_ml": 0.0251,
+    "median_plasma_auc_24h_ug_h_per_ml": 0.455,
+    "p05_cmax_ug_per_ml": 0.0023,
+    "p95_cmax_ug_per_ml": 0.278,
+    "comment": "These are the comp-033 distribution outputs. comp-036 reproduces them as a sanity check on dose=1 (single administration) and then layers repeat-dose accumulation math on top."
+  },
+  "model_simplifications_inherited_from_comp_033": [
+    "Single-compartment PK; zero-order input during expression window; first-order elimination",
+    "Lung-expressed protein reaches plasma at the systemic-bioavailability fraction (alveolar interstitium kinetics not separately modeled)",
+    "Translation-efficiency parameter folds in all losses upstream of protein synthesis (LNP uncoating, endosomal escape, ribosome engagement, template degradation)",
+    "No saturation of cellular translation machinery at the 4-24 mg dose range"
+  ],
+  "v1_extensions_specific_to_comp_036": [
+    "Superposition principle for multi-dose: total plasma profile is sum of single-dose profiles offset by dosing interval. Holds when expression machinery is not saturated (true at 4-24 mg per dose).",
+    "Cumulative dose pharmacology assumed linear over the 1-14 day window — no LNP-induced tolerance, no anti-PEG buildup-driven clearance shift over this short window (the 'repeated dosing' literature for anti-PEG concerns weeks-to-months of exposure, not 3-14 day acute therapy).",
+    "Receptor-occupancy is computed using competitive antagonism math at instantaneous plasma IL-1Ra concentration. Receptor turnover (internalization + resynthesis) on the hour timescale is not separately modeled; for IL-1R1 on circulating cells this is reasonable per Sims & Smith 2010 reviews."
+  ]
+}

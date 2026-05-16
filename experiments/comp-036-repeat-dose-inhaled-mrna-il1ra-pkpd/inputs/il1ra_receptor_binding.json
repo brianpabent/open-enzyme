@@ -1,0 +1,55 @@
+{
+  "comment": "IL-1Ra binding affinity to IL-1R1 — the load-bearing reframe in comp-036. comp-033 used plasma Cmax-vs-anakinra-1.5-ug/mL as the decision gate; comp-036 uses receptor-occupancy fraction over the flare window. This file establishes the binding-kinetics anchors.",
+  "target_receptor": "IL-1R1 (Interleukin-1 receptor type I)",
+  "uniprot_il1r1": "P14778",
+  "il1ra_uniprot": "P18510",
+  "il1ra_mw_kda": 17.3,
+  "anakinra_form": "non-glycosylated recombinant E. coli; identical receptor-binding mode to natural IL-1Ra; trade name Kineret",
+  "il1ra_kd_to_il1r1": {
+    "central_estimate_nM": 1.0,
+    "range_nM": [0.1, 10.0],
+    "distribution_for_monte_carlo": "log-uniform",
+    "comment": "IL-1Ra binds IL-1R1 with 'affinity nearly equal to IL-1' per Arend 1990 J Clin Invest. Native IL-1 (alpha/beta) Kd to IL-1R1 is in the 0.1-1 nM range across studies (Sims & Smith 2010 Annu Rev Immunol; Schreuder 1997 Nature crystal structure 2.7 A). The binding is tight but in the nM regime, NOT picomolar. Critically: Arend 1990 demonstrated that competitive antagonism requires 10-100x molar excess of IL-1Ra over IL-1 for 50% biological inhibition. This is the key constraint — IL-1Ra is a competitive antagonist with similar affinity to agonist, so the receptor-occupancy bar for clinical efficacy is high. **comp-036 reframe-correction note: the comp-036 brief speculated KD ~50-100 pM; this was incorrect. The canonical literature places IL-1Ra-IL-1R1 KD at ~1 nM (range 0.1-10 nM), and the clinical-efficacy bar is not 80% occupancy in isolation but 80%+ occupancy that achieves competitive displacement of pathological IL-1beta from the receptor.**",
+    "source_primary": [
+      "Arend WP, Welgus HG, Thompson RC, Eisenberg SP. Biological properties of recombinant human monocyte-derived interleukin 1 receptor antagonist. J Clin Invest. 1990 May;85(5):1694-7. DOI: 10.1172/JCI114622. PMID 2139669. — Canonical IL-1Ra characterization. Recombinant 17 kDa IL-1Ra binds T lymphocyte / synovial / chondrocyte IL-1 receptors with 'affinity nearly equal to that of IL-1'. 50% inhibition of biological response requires 10-100x excess IL-1Ra over IL-1.",
+      "Eisenberg SP et al. Primary structure and functional expression from complementary DNA of a human interleukin-1 receptor antagonist. Nature. 1990 Jan 25;343(6256):341-6. DOI: 10.1038/343341a0. PMID 2137201. — Co-canonical IL-1Ra cloning paper.",
+      "Schreuder H et al. A new cytokine-receptor binding mode revealed by the crystal structure of the IL-1 receptor with an antagonist. Nature. 1997 Mar 13;386(6621):194-200. DOI: 10.1038/386194a0. PMID 9062194. — 2.7 A crystal of IL-1R1 ectodomain + IL-1Ra; all three Ig-like domains contact antagonist. The 'receptor trigger site' (domain 3) is NOT engaged by IL-1Ra, explaining antagonist behavior.",
+      "Vigers GP et al. Crystal structure of the type-I interleukin-1 receptor complexed with interleukin-1beta. Nature. 1997 Mar 13;386(6621):190-4. DOI: 10.1038/386190a0. PMID 9062193. — Companion structural paper, IL-1beta + IL-1R1 ectodomain at 2.5 A."
+    ],
+    "verification_status": "Verified at peer-reviewed primary-source tier (Nature 1997 crystal structures; Arend 1990 JCI canonical characterization). Specific Kd numerical value (1 nM central) is order-of-magnitude across the literature; wide log-uniform prior 0.1-10 nM honestly captures the experimental variability."
+  },
+  "competitive_antagonism_correction_factor": {
+    "value_excess_needed_for_50pct_inhibition": [10, 100],
+    "central": 30,
+    "distribution": "log-uniform",
+    "comment": "Arend 1990 demonstrated that IL-1Ra requires 10-100x molar excess over IL-1 to achieve 50% inhibition of IL-1-induced biological response. This is NOT a Kd discrepancy — it reflects (a) the very high receptor sensitivity to IL-1 (only ~10 receptors per cell needed to trigger signaling), (b) competitive displacement of high-affinity IL-1 from already-occupied receptors, and (c) IL-1 receptor accessory protein (IL-1RAcP) recruitment which stabilizes the IL-1-IL-1R1 complex but NOT the IL-1Ra-IL-1R1 complex. **This is the operative clinical-efficacy constraint, not raw receptor occupancy.** For ~95% inhibition of pathological IL-1beta signaling, ~95-99% receptor occupancy by IL-1Ra over the relevant time window is needed."
+  },
+  "clinically_efficacious_occupancy_threshold": {
+    "primary_threshold_pct": 95,
+    "comment_on_primary_threshold": "For competitive antagonism in vivo with the Arend 1990 30x-excess-needed factor, ~95% receptor occupancy by IL-1Ra over the flare window corresponds to ~95% inhibition of IL-1beta signaling. This is the clinical-efficacy bar that anakinra clears at 100 mg SC QD steady-state.",
+    "minimum_threshold_pct": 80,
+    "comment_on_minimum_threshold": "comp-036 brief specifies 80% sustained receptor occupancy as the GREEN gate. This is a clinically reasonable lower bound — at 80% IL-1Ra occupancy, with the competitive-antagonism math, ~80% suppression of IL-1beta signaling is plausible (less rigorous than the 95% bar but still therapeutically meaningful per anakinra clinical experience at trough). The decision rule uses BOTH thresholds: GREEN requires median 80% achievable AND uncertainty bounds excluding pure failure.",
+    "flare_window_hours": 72,
+    "comment_on_flare_window": "Acute gout flare typical natural duration: 24-72 hours of peak inflammation; symptoms resolve by 7-10 days untreated. Anakinra 100 mg/day x 5 days (Saag 2021 Phase II RCT) shaped around the 72h peak window. comp-036 uses 72h as the primary occupancy-coverage window."
+  },
+  "anakinra_steady_state_il1ra_concentration": {
+    "cmax_ng_per_ml": 1500,
+    "cmax_nM": 87,
+    "cmin_ng_per_ml": 50,
+    "cmin_nM": 2.9,
+    "comment": "Anakinra 100 mg SC QD steady-state: Cmax 1.5 ug/mL = 1500 ng/mL = ~87 nM (MW 17,300 Da). Cmin 50 ng/mL = ~2.9 nM. At Cmax: occupancy = 87/(87+1) = 98.9%. At Cmin: occupancy = 2.9/(2.9+1) = 74%. Mean over 24h cycle: ~85-90% receptor occupancy. This is the clinical reference for 'what works at the patient level' for anakinra in gout (Saag 2021 RCT validated 100 mg/day x 5 days)."
+  },
+  "il1r1_receptor_density_per_cell": {
+    "range_per_cell": [50, 5000],
+    "comment": "IL-1R1 expression varies enormously by cell type. T cells: ~50-500 receptors/cell. Synovial fibroblasts / chondrocytes: 1,000-10,000 receptors/cell (joint tissue is highly IL-1R1 expressing — relevant for gout flare site). Endothelial cells: ~500-5,000 receptors/cell. This number does NOT directly factor into the occupancy-vs-concentration model (because occupancy is concentration-dependent, not receptor-count-dependent for competitive antagonism), but informs the biology of WHERE IL-1Ra acts most strongly.",
+    "source": "Sims & Smith 2010 Annu Rev Immunol; multiple Scatchard analyses 1989-2000 era literature"
+  },
+  "primary_sources_summary": [
+    "Arend 1990 JCI (PMID 2139669, DOI 10.1172/JCI114622) — canonical IL-1Ra characterization; 10-100x excess needed for 50% biological inhibition",
+    "Eisenberg 1990 Nature (PMID 2137201, DOI 10.1038/343341a0) — IL-1Ra cloning",
+    "Schreuder 1997 Nature (PMID 9062194, DOI 10.1038/386194a0) — IL-1R1+IL-1Ra crystal at 2.7 A; mechanism of antagonism",
+    "Vigers 1997 Nature (PMID 9062193, DOI 10.1038/386190a0) — IL-1R1+IL-1beta crystal at 2.5 A; companion paper",
+    "Saag 2021 Arthritis Rheumatol (PMID 33605029, DOI 10.1002/art.41699) — Phase II RCT anakinra 100/200 mg x 5d for gout flare, non-inferior to triamcinolone 40 mg; 165 patients, 301 flares. Clinical efficacy anchor.",
+    "Pisaniello 2021 Arthritis Res Ther (PMID 33910619, DOI 10.1186/s13075-021-02416-y) — G-CAN review of gout flare therapy with CKD; supports anakinra/canakinumab use in renal impairment, where steroids+NSAIDs are problematic."
+  ]
+}

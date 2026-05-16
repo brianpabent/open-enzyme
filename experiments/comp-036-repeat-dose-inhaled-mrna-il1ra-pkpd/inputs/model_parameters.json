@@ -1,0 +1,58 @@
+{
+  "comment": "comp-036 Monte Carlo + decision-rule parameters. Builds on comp-033 single-dose distributions; adds repeat-dose accumulation math and receptor-occupancy calculation.",
+  "n_samples": 10000,
+  "rng_seed": 36,
+  "comment_on_n_samples": "10,000 per regimen-and-dose-count combination. The brief specifies >=10,000 samples. With 24 regimen-cells (8 QD + 8 BID + 8 loading-plus-maintenance) and shared single-dose sampling, total simulation effort is bounded.",
+  "time_grid": {
+    "t_start_hours": 0,
+    "t_end_hours": 168,
+    "dt_hours": 0.5,
+    "comment": "0.5h time step over 7 days. 336 time points. Sufficient for capturing 4h-half-life IL-1Ra trough kinetics."
+  },
+  "flare_occupancy_window_hours": [0, 72],
+  "comment_on_flare_window": "Acute gout flare peak inflammation is 24-72h; 0-72h captures the full window where IL-1 blockade is therapeutically meaningful.",
+  "occupancy_threshold_primary_pct": 80,
+  "occupancy_threshold_high_confidence_pct": 95,
+  "occupancy_threshold_lower_bound_p25_pct": 60,
+  "comment_on_thresholds": [
+    "Primary GREEN gate: median sustained occupancy >=80% over flare window (per brief)",
+    "Anakinra-comparator benchmark: ~85-90% mean occupancy at steady-state QD",
+    "Lower-bound: p25 occupancy >=60% — protects against catastrophic regimen failure in lower-prior-tail Monte Carlo iterations"
+  ],
+  "decision_rule": {
+    "GREEN_overall": "At least one of three regimens (QD/BID/Loading+Maint) achieves median 80%+ sustained occupancy over 0-72h flare window AND total dose count <=14 days AND p25 occupancy at the recommended regimen >=60%",
+    "YELLOW_overall": "Median 80%+ achievable but only with >14 days or >4 doses/day OR p25 stays in 40-60% range OR confidence bounds wide enough that the lower 5th percentile shows extended failure",
+    "RED_overall": "No regimen achieves median 80% sustained occupancy at clinically practical dose count; modality cannot be salvaged via repeat dosing; pivot to intra-articular or accept-sub-anakinra-with-cost-edge is needed"
+  },
+  "il1ra_kd_to_il1r1_nM_prior": {
+    "min": 0.1,
+    "max": 10.0,
+    "distribution": "log-uniform",
+    "central": 1.0,
+    "anchor": "Arend 1990 JCI; Schreuder 1997 Nature; Vigers 1997 Nature crystal structure tier"
+  },
+  "competitive_antagonism_excess_factor_prior": {
+    "min": 10,
+    "max": 100,
+    "distribution": "log-uniform",
+    "central": 30,
+    "comment": "Arend 1990: 10-100x excess IL-1Ra:IL-1 needed for 50% biological inhibition. Used in supplementary 'biological-inhibition-percent' calculation that translates raw receptor occupancy to functional IL-1 signaling suppression."
+  },
+  "sensitivity_inputs_to_track": [
+    "dose_mg_mrna",
+    "translation_eff_ng_per_ug",
+    "lung_delivery_frac",
+    "systemic_bioavail_frac",
+    "expression_duration_h",
+    "clearance_per_h",
+    "vd_L",
+    "kd_nM",
+    "excess_factor"
+  ],
+  "regimen_to_explore_n_doses": {
+    "comment": "For each regimen, the dose-count escalation explored. Smallest N where occupancy bar holds is the recommended N for that regimen.",
+    "QD_dose_counts": [1, 2, 3, 4, 5, 7, 10, 14],
+    "BID_dose_counts_doses_total": [2, 4, 6, 8, 10, 14, 20, 28],
+    "Loading_QD_maintenance_post_loading_counts": [0, 1, 2, 3, 4, 7, 10, 14]
+  }
+}

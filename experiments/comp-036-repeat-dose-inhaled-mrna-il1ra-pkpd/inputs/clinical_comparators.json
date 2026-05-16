@@ -1,0 +1,102 @@
+{
+  "comment": "Clinical comparator anchors for side-effect / cost / cumulative-burden framing in comp-036. Not used directly in the receptor-occupancy model; used in the comparator framing section of the result.",
+  "anakinra_sc_qd_for_gout_flare": {
+    "regimen": "100 mg SC once daily x 3-5 days (off-label) or 100 mg SC once daily x 5 days (Saag 2021 RCT)",
+    "validated_clinical_trial": "Saag KG et al. A Randomized, Phase II Study Evaluating the Efficacy and Safety of Anakinra in the Treatment of Gout Flares. Arthritis Rheumatol. 2021 Aug;73(8):1533-1542. DOI: 10.1002/art.41699. PMID 33605029. — 165 pts, 301 flares; anakinra 100 mg/day x 5 days non-inferior to triamcinolone 40 mg single injection.",
+    "per_flare_dose_count": 5,
+    "per_flare_dose_per_day": 1,
+    "side_effect_profile_acute": [
+      "Injection-site reactions: 71% in chronic anakinra (RA dosing). For 5-day flare therapy, rate is lower (~30-40% per study reports) but still common.",
+      "Modest infection risk during dosing window; minimal at 5-day acute exposure",
+      "Headache, nausea (uncommon, <5%)"
+    ],
+    "side_effect_profile_cumulative_per_year_at_5_flares": [
+      "5 flares x 5 days = 25 SC injections/year",
+      "Cumulative injection-site burden = real (patient adherence problem at flare onset; injection requires sterile technique and patient self-administration competence)",
+      "Anti-drug antibodies: ~3-5% develop neutralizing ADAs over chronic dosing (Saag 2021: ADAs did not affect efficacy at the 5-day flare-therapy regimen)",
+      "No characterized long-term toxicity at flare-only dosing pattern"
+    ],
+    "cost_per_flare_usd": [1500, 2500],
+    "annual_cost_5_flares_usd": [7500, 12500],
+    "comment_on_cost": "Anakinra retail / wholesale ~$300-500 per 100 mg dose at US specialty-pharmacy pricing. 5 doses/flare x 5 flares/year = ~$7,500-12,500. Substantially cheaper than canakinumab; substantially more expensive than prednisone."
+  },
+  "canakinumab_sc_single_dose": {
+    "regimen": "150 mg SC single dose per flare",
+    "indication": "FDA-approved for gout flare 2023",
+    "per_flare_dose_count": 1,
+    "per_flare_dose_per_day": 1,
+    "side_effect_profile_acute": [
+      "Injection-site reactions: ~5-10%",
+      "Modest infection risk; sustained exposure due to ~26-day half-life (vs anakinra ~4h) means risk window per dose is weeks not days",
+      "Hepatotoxicity rare"
+    ],
+    "side_effect_profile_cumulative_per_year_at_5_flares": [
+      "5 SC injections per year; minimal injection-site burden",
+      "Long half-life means immunosuppressive window covers ~3+ months/year cumulatively for a 5-flare patient — non-trivial infection risk over years",
+      "No characterized long-term toxicity at flare-only dosing"
+    ],
+    "cost_per_flare_usd": [18000, 23000],
+    "annual_cost_5_flares_usd": [90000, 115000],
+    "comment_on_cost": "Canakinumab list price ~$21,000 per 150 mg dose. The cost is the dominant reason it's reserved for refractory cases."
+  },
+  "prednisone_oral_taper": {
+    "regimen": "30-40 mg/day x 5 days, then taper 5-10 mg every 2-3 days over 7-10 additional days",
+    "indication": "Standard-of-care acute gout flare therapy (oral steroids)",
+    "per_flare_total_days": [12, 15],
+    "per_flare_cumulative_dose_mg": [200, 280],
+    "side_effect_profile_acute_per_flare": [
+      "Glucose elevation (especially in diabetics or pre-diabetics)",
+      "BP elevation, fluid retention",
+      "Mood disturbances (insomnia, anxiety, mood swings) - very common, ~30-50% report",
+      "Sleep disruption - very common at any dose >10 mg/day",
+      "Increased appetite, weight gain (transient at acute dose)",
+      "Immunosuppression (modest; 2-week course rarely catastrophic)"
+    ],
+    "side_effect_profile_cumulative_per_year_at_5_flares": [
+      "5 flares x ~240 mg cumulative = ~1,200 mg/year",
+      "Bone density loss: ~6-12 month cumulative steroid exposure starts to show bone effects; 5+ flares/year over multiple years -> measurable osteoporosis risk",
+      "Cataract risk: increased with cumulative >2 g lifetime prednisone-equivalent; gout patient with 30-yr disease may cross threshold",
+      "Glucose intolerance: cumulative exposure can convert pre-diabetic to diabetic; meaningful risk over years",
+      "Adrenal axis suppression: typically requires >2 weeks continuous; 12-15 day per flare with taper is borderline. Cumulative across many flares may cause adrenal-insufficiency physiology"
+    ],
+    "cost_per_flare_usd": [10, 30],
+    "annual_cost_5_flares_usd": [50, 150],
+    "comment_on_cost": "Generic prednisone is essentially free. Cost is in side-effects, not dollars."
+  },
+  "inhaled_mrna_il1ra_repeat_dose_projected": {
+    "regimen": "TBD by comp-036 — likely 1-2 nebulizer sessions per day x 3-5 days at 4-24 mg mRNA per session",
+    "indication": "Investigational; proof-of-concept route at Phase 0",
+    "side_effect_profile_acute_per_flare_anticipated": [
+      "Cough during nebulization (~30-40% per inhaled-mRNA-LNP trial precedent: Translate Bio MRT5005 CF, ReCode RCT2100)",
+      "Mild dyspnea / chest tightness (~10-15%)",
+      "Transient mucosal irritation",
+      "No injection-site reactions (advantage over anakinra/canakinumab SC)",
+      "No systemic glucocorticoid effects (advantage over prednisone)"
+    ],
+    "side_effect_profile_cumulative_per_year_at_5_flares_anticipated": [
+      "5 flares x 3-10 nebulizer sessions = 15-50 inhaled mRNA-LNP exposures/year",
+      "Anti-PEG antibody buildup: cumulative concern over years of repeat dosing; PEG-related immunogenicity well-characterized for LNP class; mRNA vaccine repeat-dose data (multiple boosters) suggests anti-PEG titers rise but accelerated-clearance has not crossed clinical threshold; for 15-50 inhaled exposures/year this is plausibly bounded but not zero risk",
+      "Anti-LNP / anti-mRNA innate immunity (TLR3/RIG-I activation by dsRNA contaminants): mitigated by m1Psi chemistry, but per-session innate activation may be detectable. Long-term repeated exposure risk unknown.",
+      "Alveolar irritation: low-grade chronic per-flare exposure unlikely to cause structural lung change at the projected dose count",
+      "No bone/cataract/adrenal burden",
+      "No glucose dysregulation"
+    ],
+    "cost_per_flare_usd": [10, 600],
+    "annual_cost_5_flares_usd": [50, 3000],
+    "comment_on_cost": "From comp-033 economic analysis. Low-end at COVID-vaccine-scale economics; high-end at specialty-inhaled small-batch pricing. Substantially cheaper than canakinumab across the range; comparable-to-cheaper than anakinra at central economics; only prednisone is meaningfully cheaper in pure-dollar terms."
+  },
+  "comparative_framing_per_flare": {
+    "comment": "Per-flare side-effect burden comparison. Subjective patient-experience axes are noted alongside objective clinical axes.",
+    "anakinra": "5 SC injections at flare onset (patient must self-inject with active joint pain); injection-site reactions common; minimal systemic side effects; good acute tolerability.",
+    "canakinumab": "1 SC injection by clinician at flare visit; injection-site reactions less common; sustained immunosuppressive window of weeks; minimal acute side effects; cost is the limit.",
+    "prednisone": "Daily oral tablets x 12-15 days; significant mood/sleep/glucose acute side effects; familiar drug; cheap; cumulative-over-years toxicity is the issue.",
+    "inhaled_mrna_repeat_dose_projected": "1-2 nebulizer sessions/day x 3-5 days; no injections; transient cough/mucosal irritation; no systemic glucocorticoid burden; cumulative anti-PEG/innate-immunity burden is the long-term unknown."
+  },
+  "comparative_framing_cumulative_over_years": {
+    "comment": "For a typical operator-profile patient (Brian, currently affected): 3-6 flares/year, 30+ year disease horizon. Cumulative burden axes that matter at year 5, year 10, year 20.",
+    "anakinra": "~50-150 cumulative SC injections/year/decade; ADAs may rise but typically don't drive efficacy loss at acute-only dosing; injection-site fatigue probable; no characterized severe long-term toxicity.",
+    "canakinumab": "~5-10 SC injections/year over decades; cumulative immunosuppressive windows ~3-12 months/year; long-term infection-risk profile not characterized at this duty cycle; cost is the practical limit.",
+    "prednisone": "~5 flares/year x ~240 mg = ~1,200 mg/year x 30 years = ~36 g cumulative prednisone. Crosses bone-density threshold (typically ~2-5 g cumulative) within 2-4 years; cataract threshold typically ~10 g cumulative; adrenal-axis suppression becomes physiology; this is the durable-toxicity profile the operator is currently accepting.",
+    "inhaled_mrna_repeat_dose_projected": "~15-50 inhaled mRNA-LNP exposures/year x decades = unknown cumulative anti-PEG/innate-immune profile; mRNA vaccine literature (multi-booster cohort tracking) is the closest proxy and suggests acceptable safety at 5+ exposures over 3 years; the inhaled-route and per-session-dose are larger than vaccine boosters, so direct extrapolation has uncertainty; **this is the load-bearing unknown that comp-036 cannot resolve and that wet-lab Phase 1 would need to address.**"
+  }
+}
