@@ -1,0 +1,43 @@
+{
+  "regulator": "DAF/CD55 SCR1-4 (engineered truncated construct, aa 35-285)",
+  "uniprot": "P08174",
+  "computational_feasibility": "comp-012 LOW protease risk; comp-030 cassette-ranking 720 protein-distinct candidates >80 pseudo-pLDDT (full distribution: mean=88.8 std=0.5)",
+  "intrinsic_c3_convertase_decay": {
+    "intrinsic_c4b2a_half_life_min_at_37C": 7.5,
+    "source": "Fischer E, Kazatchkine MD 1981 (PMC2186394, J Exp Med 153(7):1671-1681). Verbatim: 'prolongs the half-life of surface-bound C4b2a from 7.5 min to greater than 5 h' — the 7.5 min value is the unaccelerated/intrinsic half-life of the classical-pathway C3 convertase at 37°C.",
+    "evidence_tier": "In Vitro",
+    "verification": "Paperclip cat /papers/PMC2186394/content.lines L3 (abstract)."
+  },
+  "daf_decay_acceleration": {
+    "qualitative_description": "DAF accelerates dissociation of C2a from C4b2a and Bb from C3bBb; 'a large amount of C2a rapidly appeared in the supernatants and only a small amount of C2a remained on the cells' (Medof PMC2189641, 1987)",
+    "membrane_daf_effective_concentration_molecules_per_cell": 100,
+    "source_molecules_per_cell": "Medof MD, Kinoshita T, Nussenzweig V 1984 (PMC2187498) J Exp Med 160(5):1558-78. 'as few as 10(2) DAF molecules per cell profoundly inhibited the assembly of C3 and C5 convertases'.",
+    "evidence_tier": "In Vitro",
+    "verification": "Paperclip cat /papers/PMC2187498/content.lines L3 (abstract)."
+  },
+  "soluble_daf_in_synovial_fluid": {
+    "qualitative_presence": true,
+    "source": "Medof MD et al. 1987 (PMC2188295) J Exp Med 165(3):848-64. Verbatim: 'we detected soluble DAF antigen in plasma, tears, saliva, and urine, as well as in synovial and cerebrospinal fluids.'",
+    "evidence_tier": "In Vitro",
+    "verification": "Paperclip cat /papers/PMC2188295/content.lines L3 (abstract)."
+  },
+  "msu_surface_engagement": {
+    "wet_lab_unknown": true,
+    "rationale": "comp-012 explicitly: 'Whether the stalk-truncated SCR1-4 construct retains the ability to inhibit C3b deposition, accelerate CP/AP C3 convertase decay, or reduce C5a generation in a gut-lumen environment is a wet-lab question.' (comp-012 outputs/summary.md L143). DAF-on-MSU-crystal-surface accessibility is the load-bearing geometry unknown.",
+    "accessibility_priors_to_test": [
+      {"label": "low", "fraction_engaging_msu_convertase": 0.05, "rationale": "Conservative: most secreted DAF stays in fluid phase; MSU surface presents a hostile non-membrane substrate; engineered SCR1-4 lacks the GPI anchor that natively localises DAF to membranes."},
+      {"label": "medium", "fraction_engaging_msu_convertase": 0.20, "rationale": "Moderate: soluble DAF in synovial fluid is documented (Medof 1987) and intrinsically inhibits fluid-phase convertase formation; comparable to sCR1 which retains complement-regulatory activity without its membrane anchor."},
+      {"label": "high", "fraction_engaging_msu_convertase": 0.80, "rationale": "Optimistic: at high local concentrations, soluble SCR1-4 saturates surface convertases. Likely overestimates surface engagement since SCR1-4 lacks the membrane anchor that natively concentrates DAF."}
+    ]
+  },
+  "daf_effective_local_concentration_assumptions": {
+    "secreted_construct_concentration_nM_low": 10,
+    "secreted_construct_concentration_nM_high": 500,
+    "rationale": "Per comp-030 wet-lab pre-registered prediction (§1.25 in validation-experiments.md): ≥100 mg/L DAF SCR1-4 (~3 μM = 3000 nM) at the koji secretion stage if framework α-coefficients transfer. At synovial-fluid dilution (after gut/systemic delivery) the local concentration is much lower. Use 10-500 nM range as the active-flare effective concentration prior."
+  },
+  "msu_c3b_deposition_baseline": {
+    "source": "Khameneh HJ et al. 2017 PMC5253373 + Wessig 2022 PMC8924570 in vitro: MSU 20 mg/mL incubated 30 min at 37°C in human serum produces measurable C5a (nM range). Khameneh: in vivo murine i.p. 3 mg MSU produces C5a-dependent IL-1β and neutrophil recruitment.",
+    "C5a_generation_rate_in_vitro_nM_per_30min": "5-50 (order-of-magnitude estimate from Wessig 2022 Fig 3 + Khameneh 2017 Fig 6; absolute number depends on serum source and MSU load)",
+    "evidence_tier": "In Vitro (Wessig 2022) + Animal Model (Khameneh 2017)"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "compound": "rosmarinic acid",
+  "intake_scenarios": {
+    "dietary_typical": {
+      "description": "Typical dietary intake from rosemary/lemon balm/perilla seasoning",
+      "ra_mg_per_meal_low": 5,
+      "ra_mg_per_meal_high": 50,
+      "rationale": "Rosemary 1-2% RA by dry weight; lemon balm ~1%; perilla ~3%. A typical culinary serving (1-5 g dry herb) yields 5-50 mg RA. Source: comp-020 wiki-archive.md L148 (reviews PMC9143754, PMC8989115)."
+    },
+    "supplement_lemon_balm": {
+      "description": "Single 500 mg Melissa officinalis extract (lemon-balm-as-RA) standardized to RA",
+      "ra_mg_per_dose": 500,
+      "study": "Noguchi-Shinohara M et al. (cited in Kang 2021 PMC7828042 L14)",
+      "rationale": "Reference human study; fed/fasted state evaluated."
+    },
+    "supplement_perilla": {
+      "description": "Single Perilla frutescens extract (200 mg as RA) human single-dose",
+      "ra_mg_per_dose": 200,
+      "study": "Baba S et al. 2004 (PMID 15120569) Life Sci 75:165-78",
+      "human_plasma_cmax_free_nM": 20,
+      "human_plasma_cmax_conjugated_nM": 1200,
+      "tmax_h": 1.0,
+      "verification": "Quoted verbatim in Kang 2021 PMC7828042 L14: 'plasma concentrations of the parent rosmarinic acid and conjugated rosmarinic acid in human subjects were reported about 20 nM and 1200 nM, respectively, at 1 h after oral intake of the Perilla frutescens extract.'"
+    }
+  },
+  "rat_oral_bioavailability_absolute": {
+    "study": "Wang J et al. 2017 (RSC Adv 7:9057-63, DOI 10.1039/C6RA28237G), dose range 12.5-50 mg/kg in rats",
+    "F_low": 0.009,
+    "F_high": 0.017,
+    "verification": "Quoted verbatim in Kang 2021 PMC7828042 L14 + L59: 'In the dose range of 12.5-50 mg/kg, the absolute bioavailability of rosmarinic acid was 0.9-1.7% in rats, and their AUC did not show dose proportionality.'"
+  },
+  "plasma_protein_binding": {
+    "value_fraction_bound": 0.914,
+    "value_fraction_free": 0.086,
+    "source": "Kang 2021 PMC7828042 L25, L69; rat plasma; unpublished data referenced",
+    "implication": "Of total plasma RA, only ~8.6% is free and capable of binding C3 convertase."
+  },
+  "gut_luminal_concentration": {
+    "value_uM_range_low": 252,
+    "value_uM_range_high": 1100,
+    "dose_mg": 200,
+    "source": "Kang 2021 PMC7828042 L15: 'rosmarinic acid concentrations in the intestine following the oral administration of rosmarinic acid (200 mg) could be calculated as 252-1100 μM, which can plausibly induce drug interactions.'",
+    "implication": "At dietary-tier or supplement-tier oral doses, gut-luminal RA concentrations transiently reach the IC50 range (5-180 μM) and well exceed the C3b covalent IC50 (34 μM)."
+  },
+  "gi_stability_loss": {
+    "gastric_phase_recovery": 0.98,
+    "intestinal_phase_recovery_low": 0.69,
+    "intestinal_phase_recovery_high": 0.75,
+    "source": "Veras 2022 PMC9784852 L19; gastric stability >98%, intestinal phase recovery 69-75% due to alkali-pH instability",
+    "implication": "RA is reasonably stable through gastric transit; ~25-30% degraded by intestinal alkaline conditions; remainder available for gut-luminal complement interaction or absorption."
+  },
+  "modeling_choice": "For fluid-phase / systemic prediction, use the Baba 2004 human Cmax: free RA ~20 nM (= 0.020 μM), conjugated ~1200 nM at Tmax. Note: conjugated metabolites are NOT free RA; they are likely inactive at C3 convertase covalent modification (RA's mechanism requires the free catechol). For gut-luminal prediction, use the 252-1100 μM intestinal concentration range. The two scales are 4-5 orders of magnitude apart — confirming the wiki's claim that RA operates at different geometric scales (systemic vs. gut-luminal)."
+}

@@ -1,0 +1,8 @@
+{
+  "spearman_rank_correlations_alpha_medium": {
+    "ra_ic50_vs_combined": -0.6581682264200994,
+    "ra_concentration_vs_combined": 0.5523883138688275,
+    "daf_concentration_vs_combined": 0.47959016209865213
+  },
+  "interpretation": "At \u03b1=0.20 (medium DAF surface accessibility), gut-luminal [RA] is the dominant driver of combined output. DAF [DAF] is the second driver. IC50 spread contributes negatively as expected. Wet-lab measurement priority: (1) DAF SCR1-4 MSU-surface engagement fraction (currently 4-160\u00d7 prior spread); (2) the RA C3b deposition IC50 in an MSU-specific cell-free assay (currently 36\u00d7 prior spread)."
+}

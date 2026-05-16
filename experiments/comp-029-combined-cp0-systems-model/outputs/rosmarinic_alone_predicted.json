@@ -1,0 +1,40 @@
+{
+  "model": "RA C3 convertase inhibition (Hill n=1; IC50 log-uniform [5, 180] \u03bcM operative-mechanism)",
+  "regimes": {
+    "fluid_phase_systemic": {
+      "ra_concentration_uM_range": [
+        0.005,
+        0.1
+      ],
+      "rationale": "Free plasma RA Cmax ~20 nM (Baba 2004); log-uniform 5-100 nM around the central value.",
+      "summary": {
+        "label": "RA fluid-phase inhibition fraction",
+        "n": 50000,
+        "p5": 7.758280663836722e-05,
+        "p25": 0.0002807280050198825,
+        "median": 0.0007467019391284819,
+        "mean": 0.0016973762367002018,
+        "p75": 0.0019604693069297215,
+        "p95": 0.006919588745562875
+      }
+    },
+    "gut_luminal": {
+      "ra_concentration_uM_range": [
+        50.0,
+        1100.0
+      ],
+      "rationale": "Calculated intestinal RA concentration 252-1100 \u03bcM after 200 mg oral (Kang 2021); extended to 50 \u03bcM lower bound for dietary-tier (50 mg).",
+      "summary": {
+        "label": "RA gut-luminal inhibition fraction",
+        "n": 50000,
+        "p5": 0.43941784715097026,
+        "p25": 0.7427919088071474,
+        "median": 0.8863404483576162,
+        "mean": 0.8229115504185631,
+        "p75": 0.9543922422316319,
+        "p95": 0.9871344989143801
+      }
+    }
+  },
+  "dominant_uncertainty_driver": "Whether the systemic free-RA or the gut-luminal RA concentration is the operative regime for the gout-relevant C3 convertase inhibition. The systemic regime gives ~0% inhibition; the gut-luminal regime gives 70-95% inhibition during the post-meal transient. The fluid-phase free RA Cmax is ~1700\u00d7 below the central IC50 \u2014 at canonical dietary intake, systemic free-RA does NOT reach mechanistically active concentrations. The gut-luminal regime DOES reach mechanistic IC50 transiently after oral dose."
+}

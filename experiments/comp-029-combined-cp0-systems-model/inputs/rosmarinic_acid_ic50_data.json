@@ -1,0 +1,48 @@
+{
+  "compound": "rosmarinic acid",
+  "chembl_id": "CHEMBL165102",
+  "cas": "20283-92-5",
+  "mw_g_per_mol": 360.31,
+  "evidence_tier": "In Vitro",
+  "ic50_records": [
+    {
+      "source": "Sahu A, Rawal N, Pangburn MK 1999 (PMID 10353266) Biochem Pharmacol 57(12):1439-46",
+      "assay_format": "C3b covalent attachment to activated cells",
+      "ic50_uM": 34,
+      "mechanism": "covalent modification of activated C3b",
+      "verification": "WebSearch-snippet; primary paper full text not in Paperclip corpus (pre-PMC era). Cited in comp-020 experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md L25 as [PRIMARY-PAPER-CONFIRMATION-PENDING]. Number is consistent across comp-018/comp-020/complement-c5a-gout.md."
+    },
+    {
+      "source": "Sahu A, Rawal N, Pangburn MK 1999 (PMID 10353266) Biochem Pharmacol 57(12):1439-46",
+      "assay_format": "Classical pathway hemolytic (CP CH50-style)",
+      "ic50_uM": 180,
+      "mechanism": "downstream of C3b deposition step",
+      "verification": "Same as above; matched paper, different assay format."
+    },
+    {
+      "source": "Sahu A, Rawal N, Pangburn MK 1999 (PMID 10353266) Biochem Pharmacol 57(12):1439-46",
+      "assay_format": "Alternative pathway hemolytic (AP)",
+      "ic50_uM": 160,
+      "mechanism": "downstream of C3b deposition step",
+      "verification": "Same as above; matched paper, different assay format."
+    },
+    {
+      "source": "Sahu A, Rawal N, Pangburn MK 1999 (PMID 10353266) Biochem Pharmacol 57(12):1439-46",
+      "assay_format": "Direct C5 convertase inhibition (pre-assembled enzyme)",
+      "ic50_uM": 1500,
+      "mechanism": "RA does not act on assembled C5 convertase directly",
+      "verification": "Same as above; matched paper. Upper bound of the 44× spread Sahu paper reports across assay formats."
+    },
+    {
+      "source": "Englberger W et al. 1988 (PMID 3198307) Int J Immunopharmacol 10(7):729-37",
+      "assay_format": "Purified C3 convertase activity (optimal conditions)",
+      "ic50_uM_low": 5,
+      "ic50_uM_high": 10,
+      "ic50_uM": 7.5,
+      "mechanism": "C3 convertase inhibition",
+      "verification": "Cited in wiki/upstream-complement-modulator-sweep-computational.md L33 + complement-c5a-gout.md L58 + L624 as the lower-bound IC50. Abstract-tier; comp-018/comp-020 carry CITATION-CONFIRMED-VIA-WEBSEARCH-SNIPPET flag. Used here as the lower-bound (5-10 μM) of the assay-format spread."
+    }
+  ],
+  "uncertainty_summary": "44× assay-format spread (5 μM lower bound Englberger 1988 → 1500 μM upper bound Sahu 1999 C5 convertase direct). Operative-mechanism IC50 = 34 μM at the C3b deposition step (Sahu 1999). This is the load-bearing number for a fluid-phase + gut-luminal C3 convertase inhibition prediction.",
+  "modeling_choice": "IC50 distribution = log-uniform [5 μM, 180 μM] for the C3-convertase / C3b-deposition operative-mechanism range. Excludes 1500 μM C5-convertase-direct because that is mechanistically the wrong step. Central tendency = 34 μM (Sahu 1999 cell-based C3b deposition)."
+}

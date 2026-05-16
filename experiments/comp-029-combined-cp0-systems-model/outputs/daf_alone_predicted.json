@@ -1,0 +1,51 @@
+{
+  "model": "DAF SCR1-4 steady-state surface convertase decay acceleration",
+  "intrinsic_c4b2a_half_life_min": 7.5,
+  "max_acceleration_factor_cap": 20.0,
+  "daf_concentration_range_nM": [
+    10.0,
+    500.0
+  ],
+  "accessibility_priors": {
+    "low_5pct": {
+      "alpha": 0.05,
+      "summary": {
+        "label": "alpha=0.05",
+        "n": 50000,
+        "p5": 0.19305026124485405,
+        "p25": 0.34134566443014036,
+        "median": 0.5682170953956943,
+        "mean": 0.5477622790886898,
+        "p75": 0.7590031852832094,
+        "p95": 0.8527897055244069
+      }
+    },
+    "medium_20pct": {
+      "alpha": 0.2,
+      "summary": {
+        "label": "alpha=0.2",
+        "n": 50000,
+        "p5": 0.4825391953023783,
+        "p25": 0.6563427671374109,
+        "median": 0.8149550538028276,
+        "mean": 0.7666416787162597,
+        "p75": 0.8949935922284811,
+        "p95": 0.925580491904038
+      }
+    },
+    "high_80pct": {
+      "alpha": 0.8,
+      "summary": {
+        "label": "alpha=0.8",
+        "n": 50000,
+        "p5": 0.7645551399108269,
+        "p25": 0.8563763501444204,
+        "median": 0.9136591480615855,
+        "mean": 0.8902185172340229,
+        "p75": 0.937509178575666,
+        "p95": 0.945554044891562
+      }
+    }
+  },
+  "dominant_uncertainty_driver": "DAF SCR1-4 MSU-surface accessibility fraction (\u03b1). Going from \u03b1=0.05 (low) to \u03b1=0.80 (high) changes median decay fraction from ~0.03 to ~0.78 \u2014 a 26\u00d7 range. The accessibility prior is a wet-lab unknown (comp-012 Section: 'Whether the stalk-truncated SCR1-4 construct retains the ability to inhibit C3b deposition... is a wet-lab question')."
+}

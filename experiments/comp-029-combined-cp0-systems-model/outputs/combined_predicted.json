@@ -1,0 +1,175 @@
+{
+  "model": "Combined (multiplicative independent composition)",
+  "formula": "f_combined = 1 - (1 - f_RA) \u00d7 (1 - f_DAF)",
+  "ra_regime_used": "gut-luminal (the only regime where RA reaches mechanistically active concentrations)",
+  "per_accessibility_prior": {
+    "low_5pct": {
+      "alpha": 0.05,
+      "summary": {
+        "label": "combined alpha=0.05",
+        "n": 50000,
+        "p5": 0.7080106934378712,
+        "p25": 0.8951722730438308,
+        "median": 0.9560560376915366,
+        "mean": 0.9196311677874883,
+        "p75": 0.9833434844429739,
+        "p95": 0.9958080196696831
+      }
+    },
+    "medium_20pct": {
+      "alpha": 0.2,
+      "summary": {
+        "label": "combined alpha=0.2",
+        "n": 50000,
+        "p5": 0.8418158364160112,
+        "p25": 0.9483513206008116,
+        "median": 0.9788911330225486,
+        "mean": 0.9585319909463941,
+        "p75": 0.9921897140657465,
+        "p95": 0.9980398633660458
+      }
+    },
+    "high_80pct": {
+      "alpha": 0.8,
+      "summary": {
+        "label": "combined alpha=0.8",
+        "n": 50000,
+        "p5": 0.9318815582408038,
+        "p25": 0.9744439443324963,
+        "median": 0.9892031565724102,
+        "mean": 0.9805251461035163,
+        "p75": 0.9958220883328239,
+        "p95": 0.9988925748135178
+      }
+    }
+  },
+  "coupled_scenario_sensitivity": {
+    "low_5pct": {
+      "alpha": 0.05,
+      "summary": {
+        "label": "coupled alpha=0.05",
+        "n": 50000,
+        "p5": 0.7472202397520668,
+        "p25": 0.9351942138033026,
+        "median": 0.9863787317126049,
+        "mean": 0.9467411858790211,
+        "p75": 1.0,
+        "p95": 1.0
+      }
+    },
+    "medium_20pct": {
+      "alpha": 0.2,
+      "summary": {
+        "label": "coupled alpha=0.2",
+        "n": 50000,
+        "p5": 0.9093448304546002,
+        "p25": 0.9941050614582913,
+        "median": 1.0,
+        "mean": 0.9857205544736339,
+        "p75": 1.0,
+        "p95": 1.0
+      }
+    },
+    "high_80pct": {
+      "alpha": 0.8,
+      "summary": {
+        "label": "coupled alpha=0.8",
+        "n": 50000,
+        "p5": 1.0,
+        "p25": 1.0,
+        "median": 1.0,
+        "mean": 0.9993493461877591,
+        "p75": 1.0,
+        "p95": 1.0
+      }
+    }
+  },
+  "verdicts_per_accessibility_prior": {
+    "low_5pct": {
+      "alpha": 0.05,
+      "ra_alone_median": 0.8863432480783836,
+      "ra_alone_CI": [
+        0.368817249749651,
+        0.990516007732039
+      ],
+      "daf_alone_median": 0.5682201557206132,
+      "daf_alone_CI": [
+        0.1786459934392964,
+        0.8614709365087947
+      ],
+      "combined_median": 0.9560581548555895,
+      "combined_CI": [
+        0.6336467200637677,
+        0.9971836477000128
+      ],
+      "combined_to_better_singleton_ratio": 1.0786545245629724,
+      "ci_separated_vs_ra": false,
+      "ci_separated_vs_daf": false,
+      "verdict": "YELLOW"
+    },
+    "medium_20pct": {
+      "alpha": 0.2,
+      "ra_alone_median": 0.8863432480783836,
+      "ra_alone_CI": [
+        0.368817249749651,
+        0.990516007732039
+      ],
+      "daf_alone_median": 0.814960987684361,
+      "daf_alone_CI": [
+        0.4576841702378397,
+        0.927968466537644
+      ],
+      "combined_median": 0.9788917634966499,
+      "combined_CI": [
+        0.7927611170601299,
+        0.9986789908742696
+      ],
+      "combined_to_better_singleton_ratio": 1.1044161114995956,
+      "ci_separated_vs_ra": false,
+      "ci_separated_vs_daf": false,
+      "verdict": "YELLOW"
+    },
+    "high_80pct": {
+      "alpha": 0.8,
+      "ra_alone_median": 0.8863432480783836,
+      "ra_alone_CI": [
+        0.368817249749651,
+        0.990516007732039
+      ],
+      "daf_alone_median": 0.9136609757296154,
+      "daf_alone_CI": [
+        0.7500488768829957,
+        0.9461882088191927
+      ],
+      "combined_median": 0.9892031802588138,
+      "combined_CI": [
+        0.9092117382642385,
+        0.999231423808155
+      ],
+      "combined_to_better_singleton_ratio": 1.0826807826271372,
+      "ci_separated_vs_ra": false,
+      "ci_separated_vs_daf": false,
+      "verdict": "YELLOW"
+    }
+  },
+  "interaction_blocker_assessment": {
+    "blocker_found": false,
+    "candidates_evaluated": [
+      {
+        "candidate": "RA covalently inactivates DAF SCR1-4 via catechol/\u03b1,\u03b2-unsaturated ester",
+        "verdict": "no evidence",
+        "rationale": "RA's covalent target is activated C3b (Sahu 1999 mechanism: covalent attachment to activated C3b). The chemistry is electrophilic addition to nucleophilic acceptor sites on the deposited C3b. DAF SCR1-4 binds C3b via reversible CCP-domain protein-protein interaction; there is no published report of RA inactivating any CCP/SCR domain protein."
+      },
+      {
+        "candidate": "DAF SCR1-4 degraded under RA-bioavailable (gut-luminal) conditions",
+        "verdict": "no blocker",
+        "rationale": "comp-012 explicitly verified DAF SCR1-4 LOW protease risk in shio-koji and gut-luminal conditions. RA does not alter intestinal protease activity or pH in a way that would compromise DAF stability."
+      },
+      {
+        "candidate": "Competing substrate effects (RA + DAF compete for C3b binding)",
+        "verdict": "non-blocking",
+        "rationale": "RA covalently modifies C3b post-deposition; DAF accelerates dissociation of C2a/Bb from C3b. The two mechanisms operate on different C3b states and at different time points. They are mechanistically complementary, not competitive."
+      }
+    ]
+  }
+}

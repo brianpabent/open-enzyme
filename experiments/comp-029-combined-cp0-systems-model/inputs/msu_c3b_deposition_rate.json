@@ -1,0 +1,32 @@
+{
+  "system": "MSU crystal surface complement activation",
+  "primary_sources": [
+    {
+      "citation": "Wessig AK et al. 2022 PMC8924570 Sci Rep 12:4423",
+      "key_finding": "MSU lot 1 at 20 mg/mL + healthy human serum 30 min 37°C generates C4a + C3a + C5a; both natural IgM (~0.4 mg/mL polyclonal) and CRP (10-30 μg/mL) required for robust C5a production. In IgM/IgA/CRP-depleted serum, anaphylatoxin generation is largely abolished.",
+      "msu_concentration_mg_per_mL": 20,
+      "incubation_time_min": 30,
+      "evidence_tier": "In Vitro"
+    },
+    {
+      "citation": "Khameneh HJ et al. 2017 PMC5253373 Front Pharmacol 8:10",
+      "key_finding": "Murine i.p. 3 mg MSU crystals → C3a + C5a generation in peritoneal lavage at 6 h; C5aR1 antagonism (1 mg/kg) markedly reduces neutrophil recruitment and IL-1β at the site; effect is C3-/- dependent.",
+      "msu_dose_mg_ip": 3,
+      "evidence_tier": "Animal Model (murine peritonitis)"
+    }
+  ],
+  "secondary_sources_corpus": [
+    "Doherty M et al. 1983 PMID — MSU activates both classical and alternative pathways (cited by Khameneh)",
+    "Russell IJ, Mansen C, Kolb LM, Kolb WP 1982 PMID 6749358 — active C5 convertase forms on MSU surface (cited in OE corpus complement-c5a-gout.md)",
+    "Alberts A et al. 2020 PMC7156728 Sci Rep 10:6131 — CRP recognises MSU and recruits C1 + MASP1"
+  ],
+  "msu_surface_kinetics_model_assumptions": {
+    "C3b_deposition_rate_per_min_per_mg_msu": "model parameter (not directly measured); see analyze.py",
+    "rationale": "Wessig 2022 reports C5a at 30 min as readout; we model deposition as effective surface-convertase steady-state. The absolute rate doesn't drive the comp-029 verdict — what matters is the RELATIVE reduction by RA (fluid-phase inhibition of new convertase assembly) vs. DAF SCR1-4 (decay of already-deposited convertases)."
+  },
+  "msu_physiologic_concentration_in_gouty_joint": {
+    "qualitative": "Variable; aggregates of crystals + dispersed crystals in synovial fluid during acute flare",
+    "synovial_fluid_c5a_during_gout": "Doherty 1988 PMID 2833185 + Brodeur 1991 documented activated complement components in gout synovial fluid (cited in Khameneh 2017 L17). Quantitative C5a values not extracted here; only the qualitative presence + C5a-dependence of leukocyte recruitment.",
+    "evidence_tier": "In Vitro + Clinical (synovial-fluid sampling)"
+  }
+}
