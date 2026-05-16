@@ -1,0 +1,155 @@
+{
+  "fetch_date": "2026-05-07",
+  "claim_under_test": "Androgens (testosterone, DHT) directly suppress INTESTINAL ABCG2 expression at magnitudes consistent with a structural ceiling on the gut-lumen-sink platform efficacy in male/androgen-dominant patients.",
+  "aggregation": {
+    "n_studies_total": 17,
+    "by_direction": {
+      "SUPPORTS": [
+        "S01_Hoque2020",
+        "S08_Yahyaoui2008",
+        "S09_Halperin_Kuhns_2020_review",
+        "S14_Hak_Choi_2008_NHANES",
+        "S15_KNIGHT_ENIGI_transgender_meta",
+        "S16_Norwich_adolescent_boys"
+      ],
+      "SUPPORTS_STRONG": [
+        "S02_Sakamoto2018"
+      ],
+      "SUPPORTS_ASYMMETRIC": [
+        "S03_Yu2021"
+      ],
+      "CONTRADICTS": [
+        "S04_Klyushova2023",
+        "S10_Mossbrugger2008_intestinal_rat_full_scan"
+      ],
+      "MIXED": [
+        "S05_Tanaka2005",
+        "S13_Takiue2011",
+        "S17_Hoque_FASEB_male_only_phenotype_intestinal"
+      ],
+      "INDIRECT": [
+        "S06_Naud2008"
+      ],
+      "SUPPORTS_MECHANISTIC": [
+        "S07_Jeong2015"
+      ],
+      "NEUTRAL": [
+        "S11_Drozdzik2014_human_intestine"
+      ],
+      "TANGENTIAL": [
+        "S12_Hosoyamada2010"
+      ]
+    },
+    "by_tissue": {
+      "BOTH_INTESTINE_AND_KIDNEY": [
+        "S01_Hoque2020",
+        "S05_Tanaka2005",
+        "S06_Naud2008"
+      ],
+      "ENDPOINT_ONLY": [
+        "S02_Sakamoto2018",
+        "S08_Yahyaoui2008",
+        "S14_Hak_Choi_2008_NHANES",
+        "S15_KNIGHT_ENIGI_transgender_meta",
+        "S16_Norwich_adolescent_boys"
+      ],
+      "INTESTINE": [
+        "S03_Yu2021",
+        "S04_Klyushova2023",
+        "S10_Mossbrugger2008_intestinal_rat_full_scan",
+        "S11_Drozdzik2014_human_intestine"
+      ],
+      "CANCER_LINE": [
+        "S07_Jeong2015"
+      ],
+      "OTHER_OR_REVIEW": [
+        "S09_Halperin_Kuhns_2020_review",
+        "S17_Hoque_FASEB_male_only_phenotype_intestinal"
+      ],
+      "KIDNEY_ONLY": [
+        "S12_Hosoyamada2010",
+        "S13_Takiue2011"
+      ]
+    },
+    "by_evidence_tier": {
+      "Animal Model": [
+        "S01_Hoque2020",
+        "S05_Tanaka2005",
+        "S06_Naud2008",
+        "S10_Mossbrugger2008_intestinal_rat_full_scan",
+        "S12_Hosoyamada2010",
+        "S13_Takiue2011"
+      ],
+      "Clinical Trial (observational, not RCT)": [
+        "S02_Sakamoto2018"
+      ],
+      "Animal Model + In Vitro": [
+        "S03_Yu2021"
+      ],
+      "In Vitro (cell line)": [
+        "S04_Klyushova2023"
+      ],
+      "In Vitro (cancer cell line)": [
+        "S07_Jeong2015"
+      ],
+      "Clinical Trial (observational, prospective)": [
+        "S08_Yahyaoui2008"
+      ],
+      "Review": [
+        "S09_Halperin_Kuhns_2020_review"
+      ],
+      "Observational Human (proteomics)": [
+        "S11_Drozdzik2014_human_intestine"
+      ],
+      "Clinical (observational cohort)": [
+        "S14_Hak_Choi_2008_NHANES"
+      ],
+      "Clinical Trial (prospective observational)": [
+        "S15_KNIGHT_ENIGI_transgender_meta"
+      ],
+      "Clinical (observational longitudinal)": [
+        "S16_Norwich_adolescent_boys"
+      ],
+      "Animal Model (abstract-stage)": [
+        "S17_Hoque_FASEB_male_only_phenotype_intestinal"
+      ]
+    },
+    "load_bearing_intestinal_studies": [
+      "S01_Hoque2020",
+      "S03_Yu2021",
+      "S04_Klyushova2023"
+    ],
+    "load_bearing_for_renal_or_systemic_only": [
+      "S02_Sakamoto2018",
+      "S05_Tanaka2005",
+      "S06_Naud2008",
+      "S07_Jeong2015",
+      "S08_Yahyaoui2008",
+      "S09_Halperin_Kuhns_2020_review",
+      "S10_Mossbrugger2008_intestinal_rat_full_scan",
+      "S11_Drozdzik2014_human_intestine",
+      "S12_Hosoyamada2010",
+      "S13_Takiue2011",
+      "S14_Hak_Choi_2008_NHANES",
+      "S15_KNIGHT_ENIGI_transgender_meta",
+      "S16_Norwich_adolescent_boys",
+      "S17_Hoque_FASEB_male_only_phenotype_intestinal"
+    ]
+  },
+  "verdict": {
+    "verdict": "WEAK_UNCONFIRMED",
+    "direct_supports_T_suppresses_intestinal_ABCG2": [],
+    "direct_contradicts_T_suppresses_intestinal_ABCG2": [
+      "S04_Klyushova2023"
+    ],
+    "direct_intestinal_sex_dimorphism_studies": [
+      "S01_Hoque2020",
+      "S03_Yu2021",
+      "S04_Klyushova2023"
+    ],
+    "n_direct_supports_T_suppresses_intestinal_ABCG2": 0,
+    "n_direct_contradicts_T_suppresses_intestinal_ABCG2": 1,
+    "rationale": "Zero primary studies demonstrate androgen-driven suppression of intestinal ABCG2 directly (no castration\u2192intestinal-ABCG2-up, no T\u2192intestinal-ABCG2-down). Klyushova 2023 (Caco-2) shows the OPPOSITE direction in vitro. MacLean 2008 shows NO sex difference in healthy rat intestinal ABCG2 across all segments. The intestinal compartment IS sex-dimorphic in a urate-relevant manner (Hoque 2020 Q140K mouse, Yu 2021 estradiol-positive female mechanism), but the directional driver is ESTRADIOL POSITIVE on the female side, not ANDROGEN NEGATIVE on the male side. The platform-thesis 'structural ceiling from androgen-driven ABCG2 suppression' framing is not directly supported. The softer 'males lack the estradiol-driven intestinal ABCG2 upregulation females have' framing IS supported. These have different platform-design implications."
+  },
+  "summary_judgment": "WEAK / UNCONFIRMED \u2014 the SPECIFIC claim that androgens directly suppress intestinal ABCG2 is not supported by primary literature. The BROADER claim that intestinal ABCG2 is sex-dimorphic in a urate-relevant way IS supported. The mechanism appears to be ESTRADIOL POSITIVE in females rather than ANDROGEN NEGATIVE in males. The structural-ceiling argument needs to be SOFTENED but is not entirely wrong \u2014 it should be reframed as 'males lack the estradiol-driven intestinal ABCG2 induction that females have, so the gut-lumen-sink asymptote is lower in males than females' rather than 'androgens actively suppress intestinal ABCG2.'"
+}

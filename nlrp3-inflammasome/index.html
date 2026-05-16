@@ -360,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-enzyme-vision/" class="md-nav__link">
+      <a href="../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -373,13 +373,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -458,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-source-platform/" class="md-nav__link">
+      <a href="../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -4527,7 +4520,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -5077,9 +5070,10 @@
 <p><strong>Why It Matters:</strong> Even if inflammasome activation is incomplete, blocking IL-1β signaling at the receptor level stops the cascade from progressing to the clinical symptoms of a gout attack. (Source: nlrp3-exploit-map.md)</p>
 <p><strong>Exploits:</strong></p>
 <ul>
-<li>
-<p><strong>Anakinra (Kineret)</strong>: Recombinant IL-1 receptor antagonist (IL-1Ra). Competitive antagonist at IL-1R1 that blocks both IL-1β and IL-1α from binding. Single injection can abort a flare within hours. FDA-approved for RA and CAPS, used off-label for gout. Limitation: 100 mg daily subcutaneous injection, short half-life (~4–6 hours), expensive without insurance. Demonstrates that blocking IL-1 signaling is sufficient to stop a gout flare. (Source: nlrp3-exploit-map.md)</p>
-</li>
+<li><strong>Anakinra (Kineret)</strong>: Recombinant IL-1 receptor antagonist (IL-1Ra). Competitive antagonist at IL-1R1 that blocks both IL-1β and IL-1α from binding. Single injection can abort a flare within hours. FDA-approved for RA and CAPS, used off-label for gout. Limitation: 100 mg daily subcutaneous injection, short half-life (~4–6 hours), expensive without insurance. Demonstrates that blocking IL-1 signaling is sufficient to stop a gout flare. (Source: nlrp3-exploit-map.md)</li>
+</ul>
+<p><strong>Endogenous IL-1Ra biology — anakinra is recombinant human IL-1Ra, not a foreign molecule.</strong> Humans naturally produce IL-1Ra (~17 kDa, encoded by IL1RN, secreted primarily by macrophages and neutrophils as feedback brake on IL-1 signaling). Endogenous IL-1Ra competes with IL-1α and IL-1β for the same IL-1R1 receptor — when bound, it occupies the receptor without triggering downstream signaling. The IL-1β / IL-1Ra ratio determines net signaling: at homeostatic baseline, endogenous IL-1Ra is in ~100× molar excess over IL-1β, keeping signaling damped. Inflammatory states (gout flare, autoimmune, sepsis) tip the ratio by driving IL-1β production faster than IL-1Ra production, exceeding the endogenous brake. <strong>Therapeutic anakinra is the same protein the body makes, just at supplemental dose</strong> — that's why the safety profile is so clean (essentially zero immunogenicity, no ADCC/CDC off-target effects, simple competitive-antagonism mechanism). The "endogenous brake" framing is also why mRNA-encoded IL-1Ra (per <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §4</a>) is a cleaner payload choice than mRNA-encoded anti-IL-1β monoclonal antibody — IL-1Ra is small (no glycosylation, no disulfides, no heavy/light chain assembly), broader-mechanism (blocks IL-1α AND IL-1β at the same receptor), and immunogenicity-free as a recombinant version of an endogenous protein.</p>
+<ul>
 <li>
 <p><strong>Omega-3 SPMs</strong> (again): EPA → Resolvin E1 (RvE1), DHA → Resolvin D1/D2 (RvD1/D2), Protectin D1 (PD1), Maresin 1 (MaR1). These specialized pro-resolving mediators actively command neutrophils to stop infiltrating and promote macrophage phenotype switching from M1→M2. Not just suppression but active resolution signaling. Dose: 3–4g EPA+DHA daily, or pre-formed SPM supplement (SPM Active by Metagenics: 2 softgels daily standardized to 17-HDHA and 18-HEPE). (Source: nlrp3-exploit-map.md)</p>
 </li>
@@ -5088,6 +5082,9 @@
 </li>
 <li>
 <p><strong>EGCG</strong> (again): Suppresses IL-1β secretion from macrophages and reduces IL-1β-induced downstream signaling in target cells (chondrocytes, synoviocytes). (Source: nlrp3-exploit-map.md)</p>
+</li>
+<li>
+<p><strong>Inhaled mRNA-IL-1RA pulse (chassis-pending, pulmonary delivery)</strong>: Lipid-nanoparticle-formulated mRNA encoding IL-1 receptor antagonist, delivered via vibrating-mesh nebulizer (POC) or dry-powder inhaler (eventual product). Transient pulmonary epithelial expression of IL-1Ra over the 12–72-hour flare window matches the natural timeline of an acute gout flare. Mechanistically identical to anakinra at the receptor level — competitive IL-1R1 antagonism — but reframes the delivery: pulmonary self-administration replaces daily SC injection. Pulmonary mRNA-LNP delivery is mature research-grade in CF and RSV programs; OE's contribution is target validation + dose modeling + partner identification (not manufacturing). Cost-per-flare at scale projects to $25–200/year vs canakinumab at ~$300K/year. Detailed entry at <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §4</a>; computational prior queued as <a href="../computational-experiments/">comp-033</a>; platform-positioning context at <a href="../etc/open-enzyme-vision/"><code>open-enzyme-vision.md</code> §10 "Chronic prevention + pulsatile flare-abort"</a>. Acute-flare-abort track, complementary to chronic urate-lowering rather than competitive with it.</p>
 </li>
 </ul>
 <h3 id="chokepoint-5b-active-resolution-via-alxfpr2-specialized-pro-resolving-mediators">Chokepoint 5b: Active Resolution via ALX/FPR2 (Specialized Pro-Resolving Mediators)<a class="headerlink" href="#chokepoint-5b-active-resolution-via-alxfpr2-specialized-pro-resolving-mediators" title="Permanent link">&para;</a></h3>

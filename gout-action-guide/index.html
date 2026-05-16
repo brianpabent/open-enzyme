@@ -356,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-enzyme-vision/" class="md-nav__link">
+      <a href="../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -369,13 +369,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -454,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-source-platform/" class="md-nav__link">
+      <a href="../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -4220,7 +4213,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -4672,8 +4665,74 @@
 </ul>
 <h3 id="this-year-advanced">This year (advanced)<a class="headerlink" href="#this-year-advanced" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Get genotyped via clinical-grade testing</strong> — order ABCG2 Q141K (rs2231142), SLC2A9, URAT1 variants through a clinical-grade lab (e.g., via your rheumatologist or a direct-to-consumer clinical service that returns CLIA-grade results). Changes the stack design substantially. Consumer panels (23andMe, AncestryDNA, etc.) are not recommended here — the raw SNP data quality is uneven for the specific variants gout stack design depends on, and the terms-of-service surrounding consumer-genomics data ownership are worth reading before submitting. See <a href="../personal-genome-protocol/">personal-genome-protocol</a> for ordering paths.</li>
-<li><strong>Self-experiment with rigor</strong> — log SUA monthly, track flares, A/B test compounds. See <a href="../self-experiment-protocol/">self-experiment-protocol</a>.</li>
+<li><strong>Run the closed-loop n=1 pharmacogenomics workflow</strong> — genotype → variant-informed compound selection → home/community-biolab production → Tier 2 batch QC → calibrated dose → biomarker tracking. The canonical user-facing entry point is <a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a> — walks the five-step pipeline end-to-end with a Q141K worked example. The two prerequisite steps below feed into it.</li>
+<li><strong>Get genotyped via clinical-grade testing</strong> — order ABCG2 Q141K (rs2231142), SLC2A9, URAT1 variants through a clinical-grade lab (e.g., via your rheumatologist or a direct-to-consumer clinical service that returns CLIA-grade results). Changes the stack design substantially. Consumer panels (23andMe, AncestryDNA, etc.) are not recommended here — the raw SNP data quality is uneven for the specific variants gout stack design depends on, and the terms-of-service surrounding consumer-genomics data ownership are worth reading before submitting. See <a href="../personal-genome-protocol/">personal-genome-protocol</a> for ordering paths. The unified variant index at <a href="../gout-genetic-variants/"><code>gout-genetic-variants.md</code></a> is the canonical reference for which variants matter and what they do.</li>
+<li><strong>Self-experiment with rigor</strong> — log SUA monthly, track flares, A/B test compounds. See <a href="../self-experiment-protocol/">self-experiment-protocol</a>.
+<strong>Acute-flare-abort comparator table — choosing between prednisone / anakinra / canakinumab for an active flare.</strong> Per-flare and cumulative-over-years framing for someone with recurrent gout:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Mechanism</th>
+<th>Dosing for acute flare</th>
+<th>Acute side effects</th>
+<th>Cumulative burden (recurrent flares × decades)</th>
+<th>Cost per flare</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prednisone taper</strong></td>
+<td>Glucocorticoid receptor — system-wide</td>
+<td>30–40 mg/day × 5 days then taper over 7–10 days</td>
+<td>Glucose spike, BP rise, sleep disruption, mood changes, immunosuppression</td>
+<td><strong>Real, dose-dependent:</strong> bone loss / osteoporosis, cataracts, adrenal suppression, glucose intolerance, weight gain</td>
+<td>~$10–30 (generic)</td>
+<td>Any prescriber</td>
+</tr>
+<tr>
+<td><strong>Anakinra (Kineret) SC</strong></td>
+<td>IL-1R1 competitive antagonist (recombinant endogenous IL-1Ra)</td>
+<td>100 mg SC daily × 3 days, self-administered in thigh/abdomen</td>
+<td>Injection-site reactions (most common); modest infection-risk signal at 3-day acute use</td>
+<td><strong>Minimal known burden</strong> — anakinra is recombinant version of body's endogenous IL-1Ra; no bone / glucose / adrenal effects; long-term concern is only infection masking under chronic use (not relevant for 3-day acute use × few flares/yr)</td>
+<td>~$300/dose × 3 = ~$900</td>
+<td>Rheumatologist (off-label for gout)</td>
+</tr>
+<tr>
+<td><strong>Canakinumab (Ilaris) SC</strong></td>
+<td>Anti-IL-1β monoclonal</td>
+<td>150 mg single SC</td>
+<td>Same injection-site profile; longer half-life (~26 days) so chronic exposure window per dose</td>
+<td>Same as anakinra's mechanism (no steroid burden); ADAs possible with chronic use but rare</td>
+<td><strong>~$3,000/dose</strong> (FDA-approved for gout but cost barrier)</td>
+<td>Rheumatologist; insurance variable</td>
+</tr>
+<tr>
+<td><strong>Colchicine + NSAID</strong> (mild flares)</td>
+<td>Microtubule inhibition + COX</td>
+<td>1.2 mg colchicine + NSAID at flare onset</td>
+<td>GI (colchicine), GI bleed risk (NSAID), renal (NSAID)</td>
+<td>NSAID: real renal burden over years; colchicine: minimal at acute-use dose</td>
+<td>~$20–50</td>
+<td>OTC or any prescriber</td>
+</tr>
+<tr>
+<td><strong>Inhaled mRNA-IL-1RA</strong> <em>(future, 5–10 yr horizon)</em></td>
+<td>Same as anakinra — pulmonary mRNA expression of IL-1Ra</td>
+<td>Per <a href="../computational-experiments/">comp-036</a>: BID × 4–14 days reaches <strong>median 50–56% of flare window above 80% receptor occupancy</strong> (best regimen tested); doesn't match anakinra Cmax but partial-suppression may be clinically meaningful vs prednisone burden</td>
+<td>Pulmonary irritation; possible LNP innate immune activation; anti-PEG buildup over many lifetime exposures</td>
+<td>TBD; in principle cleaner than steroid burden; chronic-LNP-exposure question is open</td>
+<td>$25–200/flare projected</td>
+<td>Doesn't exist yet (partner-tier development)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The decision frame:</strong> if you flare 3–6× per year over decades, <strong>cumulative prednisone burden is the load-bearing concern</strong> (bone / glucose / mood / cataract effects compound). Anakinra SC is the cleanest acute-flare-abort option clinically available <em>today</em> — same chokepoint as canakinumab and inhaled mRNA, just SC route. Canakinumab has the longest half-life (one shot covers months) but cost is prohibitive without insurance. Colchicine + NSAID is the right tool for mild flares; inadequate for severe. The inhaled mRNA-IL-1RA route is on a 5–10 year development horizon (per <a href="../computational-experiments/">comp-033</a> + <a href="../computational-experiments/">comp-036</a>) and is what would change the economics if it lands — same mechanism as anakinra, much lower per-dose cost, different delivery format.</p>
+<ul>
+<li><strong>Anakinra (Kineret) SC for acute flare — bridge while inhaled-mRNA pulse doesn't exist yet.</strong> Off-label for acute gout flare, used in rheumatology practice when corticosteroids are contraindicated or undesirable (recurrent flares + steroid burden). <strong>Route: subcutaneous injection in thigh or abdomen, 100 mg/day × 3 days</strong> — same SC route as insulin, the patient self-administers with a prefilled syringe. <strong>NOT</strong> intra-articular (no needle into the gout joint itself; that's a totally different procedure used for IA corticosteroid injection or the chassis-pending IA uricase concept at <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §6</a>). Mechanism: recombinant IL-1 receptor antagonist (IL-1Ra) competitively blocks IL-1β signaling — aborts flare within hours via the same CP5a chokepoint as canakinumab, but daily SC dosing vs canakinumab's monthly SC + ~100× lower cost. Side-effect profile: injection-site reactions (most common), low infection-risk signal at the 3-day acute-use protocol (label cautions about TB / fungal infection are for chronic immunosuppression-tier use). Vs prednisone 30-40 mg/day × 2-week taper: anakinra is <strong>faster onset (hours vs days), narrower mechanism (single pathway block vs system-wide glucocorticoid receptor), cleaner cumulative side-effect burden over years of recurrent flares</strong> (no bone loss, no glucose intolerance, no adrenal suppression, no mood / sleep / BP effects). Cost: ~$300/dose, ~$900/flare for the 3-day protocol; insurance coverage variable for off-label use. Access: rheumatologist or forward-thinking internist willing to prescribe off-label. <strong>Bridge until the inhaled mRNA-IL-1RA modality exists</strong> (<a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §4</a>, 5–10 year development horizon per <a href="../computational-experiments/">comp-033</a> partner-tier analysis); anakinra is the same mechanism + same chokepoint, just SC delivery instead of pulmonary mRNA.</li>
 <li><strong>Compounding-pharmacy access (requires physician partner; not DIY)</strong> — a 503A compounding pharmacy can prepare custom formulations along two distinct tracks. <strong>(a) Discovery-engine repurposing candidates:</strong> drugs not currently used for gout but identified as hitting gout chokepoints. <strong>Disulfiram</strong> (CP6b GSDMD blockade) is the highest-priority candidate; 503A-eligible via Tier 2 (component of FDA-approved drug); off-label dose modeling queued as <a href="../computational-experiments/">comp-027</a>. Zileuton (CP6a 5-LOX), pentostatin (ADA), and lesinurad (URAT1, FDA-approved 2015, commercially withdrawn 2019 for business reasons — Tier 2 eligibility survives per 21 CFR 216.24) are all 503A-eligible via Tier 2 but have supplier-side bulk-API supply questions. <strong>(b) Custom-dose formulations of established gout drugs:</strong> allopurinol (pediatric/weight-based doses, liquid suspensions), colchicine (low-dose ER for prophylaxis, fixed-dose combos), probenecid (ER for QD dosing, combinations). These are 503A-eligible via Tier 1 (USP monograph) — no regulatory uncertainty; the question is whether a custom formulation clinically outperforms the commercial product. Full per-compound tier mapping at <a href="../compounding-pharmacy-track/"><code>compounding-pharmacy-track.md</code></a>. Path requires a rheumatology / functional-medicine prescriber.</li>
 </ul>
 <h3 id="future-open-enzyme-pipeline-none-shipping-yet-phase-0">Future (Open Enzyme pipeline — none shipping yet, Phase 0)<a class="headerlink" href="#future-open-enzyme-pipeline-none-shipping-yet-phase-0" title="Permanent link">&para;</a></h3>
@@ -4791,7 +4850,7 @@
 <ul>
 <li><a href="../supplements-stack/">Supplements stack catalog</a> — per-compound depth, dose, contraindications, drug interactions, stack-level antagonisms</li>
 <li><a href="../gout-pathophysiology/">Gout pathophysiology</a> — multi-track urate transporter coverage map; mechanisms behind the actions on this page</li>
-<li><a href="../open-enzyme-vision/">Open Enzyme vision</a> — the platform's broader thesis and pipeline</li>
+<li><a href="../etc/open-enzyme-vision/">Open Enzyme vision</a> — the platform's broader thesis and pipeline</li>
 <li><a href="../self-experiment-protocol/">Self-experiment protocol</a> — how to run rigorous n=1 on yourself</li>
 <li><a href="../personal-genome-protocol/">Personal genome protocol</a> — MinION-based pharmacogenomics + strain QC</li>
 <li><a href="../index.md">Research index</a> — full wiki dashboard with all concepts and primary research</li>

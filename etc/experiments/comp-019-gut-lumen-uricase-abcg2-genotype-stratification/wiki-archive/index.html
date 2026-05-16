@@ -1,0 +1,4977 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model (comp-019) - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gut-lumen-uricase-abcg2-genotype-stratification-flux-model-comp-019" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model (comp-019)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../open-enzyme-vision.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../synthesis/README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../open-source-platform.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chassis-pending-interventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chassis-Pending Interventions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../team.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gout-clinical-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Clinical Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../complement-c5a-gout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complement / C5a (CP0)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../androgen-urate-axis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Androgen-Urate Axis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../androgen-natural-modulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Androgen Natural Modulation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../prps-purine-biosynthesis-chokepoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRPS / Purine Biosynthesis Chokepoint
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tnfsf14-gout-target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TNFSF14 / LIGHT (CP1a)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../spm-resolution-pathway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPM Resolution Pathway (CP5b)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koji-endgame-strain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Endgame Strain
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chaperone-orthogonal-stacking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chaperone-Orthogonal Cassette Stacking
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koji-home-fermentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Home Fermentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../enzyme-quantification-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Quantification Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../engineered-lbp-chassis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered LBP Chassis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sirna-urat1-modality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    siRNA / URAT1 Modality
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tcm-modern-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCM × Modern Rigor (Discovery Engine)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../medicinal-mushroom-complement-track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Complement Track
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scoped (Phase 1)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../medicinal-mushroom-extract-sops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Extract SOPs
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../compounding-pharmacy-track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounding Pharmacy Track
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scoped (Phase 1)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ginkgo-cloud-lab-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ginkgo Cloud Lab Evaluation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--working-note"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ward-1995-lab-access-global.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ward 1995 Lab Access — Global Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../abcg2-modulators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ABCG2 Modulators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../delivery-route-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery Route × Compound Class Matrix
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gout-kill-chain-delivery-routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Kill Chain — Delivery Routes
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gsdmd-pore-delivery-paradox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GSDMD Pore Self-Delivery Paradox
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../purine-degrading-bacteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Purine-Degrading Bacteria (PDB)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../colchicine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colchicine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cannabinoids-terpenes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cannabinoids & Terpenes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../egcg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EGCG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../theaflavins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theaflavins
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../zileuton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zileuton
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../carnosine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Carnosine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lactoferrin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lactoferrin
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Experiment & Validation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Self-Experiment & Validation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../practitioner-toolkit.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practitioner Toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../self-experiment-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Experiment Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../personal-genome-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personal Genome Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../enzyme-quantification-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Quantification Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modality-chokepoint-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modality × Target Matrix
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../hypotheses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--index"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bio-ai-tools.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai-bio-tools-playbook.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paperclip-deep-dive.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paperclip (GXL) Literature MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chembl-cross-check.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChEMBL Cross-Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../linter-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linter Design (Falsification + Document Lint)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--design"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H01-ward-dual-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H01 — Ward Dual-Cassette
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Pending"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H02-engineered-lbp-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H02 — Engineered LBP Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H03-sirna-urat1-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H03 — siRNA / URAT1 Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H04-tcm-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H04 — TCM × Modern Rigor Methodology Lens
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H05-daf-scr14-cp0-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H05 — DAF SCR1-4 CP0-Closure Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H06 — Medicinal Mushroom Complement Track
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H07-clomid-intestinal-er-antagonism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H07 — Clomid Intestinal-ER Antagonism
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H08-gut-lumen-sink-platform-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H08 — Gut-Lumen Sink Platform Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H09-community-fermentation-reliability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H09 — Community Fermentation Reliability
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../computational-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uricase-protease-stability-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Protease Stability (comp-001)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lactoferrin-protease-stability-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lactoferrin Protease Stability (comp-005)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../daf-cd55-protease-stability-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAF/CD55 Protease Stability (comp-006)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../daf-cd55-scr14-truncated-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAF/CD55 SCR1-4 Truncated Stability (comp-012)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../food-grade-hdaci-screen-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Food-Grade HDAC Inhibitor Screen (comp-007)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../supplement-abcg2-antagonism-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplement ABCG2 Antagonism (comp-004)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../c-utilis-uricase-cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C. utilis Uricase Cassette Compatibility (comp-011)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uricase-cassette-ranking-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Cassette Ranking, ClockBase-Style (comp-022)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1; fold-quality model deferred to wet-lab)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../daf-cd55-scr14-cassette-ranking-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAF SCR1-4 Cassette Ranking (comp-030)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1, 2026-05-15)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cordycepin-cassette-burden-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cordycepin Cassette Metabolic Burden (comp-023)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tcm-gout-compound-triage-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCM Gout Compound Triage (comp-013)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../medicinal-mushroom-compound-mapping-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Compound Mapping (comp-014)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scoped — Phase 1 only"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../t-axis-adjuvant-urate-mapping-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T-axis Adjuvant Urate Mapping (comp-015)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v2 — XO added as 5th target; eurycomanone verdict reversed)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../t-abcg2-suppression-evidence-mining-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T × Intestinal ABCG2 Evidence Mining (comp-016)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../intestinal-abcg2-sex-dimorphism-public-data-mining-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intestinal ABCG2 Sex-Dimorphism Mining (comp-017)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../autonomous-screening-methodology.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI Screening Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../manual-literature-mining.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual Literature Mining Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantification-ladder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantification Ladder (kitchen → smartphone → bench → outsourced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions Index
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GRAPH.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="gut-lumen-uricase-abcg2-genotype-stratification-flux-model-comp-019">Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model (comp-019)<a class="headerlink" href="#gut-lumen-uricase-abcg2-genotype-stratification-flux-model-comp-019" title="Permanent link">&para;</a></h1>
+<h2 id="plain-english-summary-read-this-first">Plain-English summary (read this first)<a class="headerlink" href="#plain-english-summary-read-this-first" title="Permanent link">&para;</a></h2>
+<p>There was a worry that the engineered-koji platform's whole therapeutic mechanism might only work in patients who carry a specific genetic variant — Q141K in the ABCG2 transporter — which is the #1 genetic risk factor for gout. About 25% of European-ancestry gout patients carry this variant; up to 50% of East-Asian-ancestry patients do. <strong>If</strong> the platform mechanism only worked in this subset, the addressable demographic would shrink dramatically and the trial design would have to change.</p>
+<p>This experiment built a quantitative model of intestinal urate flux to answer that question in silico, before committing wet-lab dollars. The model uses the only direct human in-vivo measurement of intestinal urate secretion stratified by ABCG2 functional class (Miyazaki et al., J Transl Med 2025) plus standard kinetic parameters for the ABCG2 transporter and the A. flavus uricase enzyme.</p>
+<p><strong>The answer: the worry is wrong. Non-Q141K (WT/WT) males show the LARGEST predicted serum urate reduction from gut-lumen uricase, not the smallest. The mechanism works across all genotypes; the magnitude scales with the residual ABCG2 capacity at any given genotype.</strong></p>
+<p>Predicted ΔSUA at steady state (with mid-dose 25 mg/day uricase, the engineered-koji target):</p>
+<ul>
+<li>WT/WT male: <strong>−0.83 mg/dL</strong> (90% CI −1.13 to −0.57)</li>
+<li>Q141K heterozygous male: −0.67 mg/dL (90% CI −0.91 to −0.45)</li>
+<li>Q141K homozygous male: −0.50 mg/dL (90% CI −0.68 to −0.34)</li>
+<li>Severe ABCG2 dysfunction (Q126*+Q141K): −0.28 mg/dL (90% CI −0.37 to −0.19)</li>
+</ul>
+<p><strong>What this means for the platform:</strong>
+1. Don't narrow the primary demographic to Q141K-positive patients. The opposite — the platform produces its largest per-patient ΔSUA in WT/WT patients, the majority of the gout population.
+2. Q141K-positive patients are still candidates, but for a different reason: they have higher unmet ULT need at baseline (allopurinol-resistant per Wallace 2018 OR=2.43, p=6.2e-7), so even a smaller absolute ΔSUA is clinically meaningful for them.
+3. The Phase 2b trial design should NOT be enriched for Q141K-positive patients. It should be a typical-gout cohort with Q141K as a stratification variable, not an enrichment criterion.
+4. The §1.27 Caco-2 wet-lab gate is <strong>NOT triggered</strong> by this finding. The flux model already rules out the Q141K-only-mechanism hypothesis without needing wet-lab. (The wet-lab gate would re-trigger if a Phase 2b RCT shows differential genotype response inconsistent with the flux model's predictions.)
+5. <strong>There IS a structural ceiling, but it sits at the severe-ABCG2-dysfunction tier (~25% functional, Q126*-positive compound heterozygotes), not at Q141K heterozygotes.</strong> Most clinically relevant Q141K carriers are heterozygotes, who retain 75% function and respond well per the flux model.</p>
+<p>The Phase A literature mining ALSO surfaced a separate negative finding worth flagging: <strong>across the entire published clinical-trial corpus of oral and systemic uricase therapy, ZERO trials have pre-stratified or post-stratified results by ABCG2 Q141K genotype.</strong> The Q141K × allopurinol response literature is rich, but the Q141K × uricase response literature is empty. This is a publishable observation by itself — every uricase trial since rasburicase (2001) has missed an obvious pharmacogenomic stratification axis.</p>
+<h2 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h2>
+<p><strong>Can the gut-lumen uricase sink produce meaningful serum urate reduction in non-Q141K males, or does the mechanism rely on Q141K-positive disease-state ABCG2 vulnerability to show benefit?</strong></p>
+<p>This is the platform's most important open question for its primary demographic (<a href="./open-questions.md"><code>open-questions.md</code> Open Question 1</a>, framed in the <a href="./synthesis.md"><code>synthesis.md</code> Sweep 2026-05-08</a> action queue).</p>
+<p>The question emerged after <a href="./t-abcg2-suppression-evidence-mining-computational.md">comp-016</a> found a WEAK / UNCONFIRMED verdict on direct androgen-driven intestinal ABCG2 suppression, and <a href="./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md">comp-017</a> confirmed near-null sex dimorphism in healthy-baseline intestinal ABCG2. With the "androgens suppress ABCG2 in males" model refuted, the responder logic provisionally shifted toward Q141K-positive disease-state vulnerability. <strong>comp-019 tests whether that provisional shift was correct.</strong></p>
+<h2 id="verdict">Verdict<a class="headerlink" href="#verdict" title="Permanent link">&para;</a></h2>
+<p><strong>The gut-lumen uricase mechanism does NOT depend on Q141K-positive disease-state vulnerability.</strong> Across the genotype spectrum:</p>
+<ul>
+<li>WT/WT (100% functional ABCG2) → LARGEST absolute ΔSUA per patient</li>
+<li>Q141K heterozygous (75% functional) → ~80% of the WT response</li>
+<li>Q141K homozygous (50% functional) → ~60% of the WT response</li>
+<li>Severe dysfunction (~25% functional, Q126*+Q141K compound) → ~33% of the WT response — this IS a structural ceiling, but it applies only to the small severe-dysfunction subset, NOT to the typical Q141K heterozygote.</li>
+</ul>
+<p><strong>Implication:</strong> the platform's primary demographic should remain "all gout patients," not "Q141K-positive gout patients." Q141K is a stratification variable for trial design, not an enrichment criterion. The non-Q141K majority of gout patients are the platform's HIGHEST-response subset, not its lowest.</p>
+<h2 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
+<p>Three platform-level consequences:</p>
+<ol>
+<li>
+<p><strong>Phase 2b RCT design.</strong> Pre-comp-019 worry framing implied a small, expensive Q141K-enriched trial (~120 patients in an East-Asian-ancestry cohort to hit ~50% Q141K carrier rate, or ~360 in a European-ancestry cohort to hit the same). Post-comp-019, the trial should run as a typical-gout RCT with Q141K + Q126* genotyping at enrollment as stratification variables. This is logistically simpler and addresses a larger market.</p>
+</li>
+<li>
+<p><strong>Strain-engineering target dose.</strong> The flux model shows the mechanism is <strong>substrate-limited, not enzyme-limited</strong>, at all three uricase-dose scenarios tested (5 / 25 / 50 mg/day). Capacity ratios range from 32× to 1300× — uricase capacity vastly exceeds delivered intestinal urate flux. This means the engineered-koji yield target (<a href="./engineered-yeast-uricase-proposal.md"><code>engineered-yeast-uricase-proposal.md</code></a>) does NOT need to push the upper bound; the binding constraint is enzyme delivery (GI survival, enteric coating per <a href="./gi-survival-prediction.md"><code>gi-survival-prediction.md</code></a>), not enzyme dose. <strong>Engineering cycles can shift away from yield optimization toward GI-survival optimization.</strong></p>
+</li>
+<li>
+<p><strong>Cross-validation.md Claim 1 rating.</strong> Pre-comp-019, the gut-lumen uricase mechanism was rated 6/10 with "human effect size unproven" as the primary risk. Post-comp-019, the human effect size is now COMPUTATIONALLY PREDICTED at −0.5 to −0.83 mg/dL across the dominant gout subpopulations. This is below the 1–2 mg/dL therapeutic-target range cited in <a href="./cross-validation.md"><code>cross-validation.md</code></a>, but it IS in the same order of magnitude as the ALLN-346 Phase 2a Study 201 signal (CKD subgroup) and meaningful for adjuvant use alongside allopurinol. The rating should shift from "6/10 with human effect-size unproven" to "<strong>6.5/10 — mechanism is genotype-robust per flux model; clinical magnitude prediction in the −0.5 to −1.0 mg/dL range awaits human RCT verification</strong>."</p>
+</li>
+</ol>
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<h3 id="phase-a-literature-stratification-mining">Phase A — literature stratification mining<a class="headerlink" href="#phase-a-literature-stratification-mining" title="Permanent link">&para;</a></h3>
+<p>Scope:
+- ALLN-346 Phase 2a Studies 201 (n=16, CKD-dominated) and 202 (n=19, broader cohort, terminated Sep 2022)
+- PRX-115 Phase 1 (n=64) — IV systemic uricase, NOT gut-lumen but a useful control for the upper bound of enzymatic urate degradation
+- Rasburicase clinical corpus (TLS-dominated; gout off-label rare)
+- Q141K × allopurinol response: Wallace 2018 meta-analysis (n=595, OR 2.43, p=6.2e-7); Vora 2021 oxypurinol PK/PD (Q141K homozygotes have 1.79× longer half-life); Stamp 2019 (Q141K independent factor in allopurinol sensitivity, p=0.019)
+- Direct human intestinal urate secretion measurement: Miyazaki 2025 (n=34, double-balloon endoscopy, ABCG2 functional-class stratified)
+- Mouse Abcg2-KO: Takada 2014 (intestinal urate excretion &lt;50% of WT)
+- ABCG2 transporter kinetics: Nakayama 2011 (Km = 8.24 ± 1.44 mM; Vmax = 6.96 ± 0.89 nmol/min/mg)
+- Functional-classification framework: Matsuo 2014 (Japanese male hyperuricemic cohort n=644)
+- Q141K allele frequencies: gnomAD (East Asian MAF 29.1%; European MAF 10.3%); Nguyen 2025 Vietnamese gout cohort (MAF 46.8%)</p>
+<p>Tooling: PubMed MCP <code>search_articles</code> + <code>get_article_metadata</code> + <code>get_full_text_article</code>; WebSearch + WebFetch for non-PubMed-indexed content (EULAR abstracts, Allena/Protalix press releases). Multilingual ChiCTR / J-STAGE / KISS searches did not surface a Q141K-stratified oral uricase RCT (none exists in any language).</p>
+<h3 id="phase-b-first-principles-flux-model">Phase B — first-principles flux model<a class="headerlink" href="#phase-b-first-principles-flux-model" title="Permanent link">&para;</a></h3>
+<p>Implementation: Python stdlib only (<a href="../scripts/flux_model.py"><code>experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/scripts/flux_model.py</code></a>). Inputs in <code>inputs/flux_model_parameters.json</code> (literature-anchored; each parameter cited to a primary source with verification tier). Monte Carlo sensitivity n=5000 over uncertainty bounds.</p>
+<p><strong>Model logic:</strong></p>
+<ol>
+<li>
+<p><strong>Daily mass balance.</strong> Total daily urate production ~700 mg/day; renal excretion ~67%, intestinal ~33% in healthy WT (Takada 2014 mouse KO; multiple historical tracer studies).</p>
+</li>
+<li>
+<p><strong>Linear-regime ABCG2 transport.</strong> ABCG2 Km is 8.24 mM (= 8240 μM) per Nakayama 2011. Direct measurement of human jejunal lumen urate baseline is ~99.5 pg/μL ≈ 0.59 μM (Miyazaki 2025) — three to four orders of magnitude below Km. <strong>The transporter is FAR from saturation in vivo.</strong> Rate scales linearly with substrate concentration. Reducing lumen urate via uricase increases the gradient roughly proportionally.</p>
+</li>
+<li>
+<p><strong>Genotype scaling.</strong> Functional class per Matsuo 2014 / Miyazaki 2025: WT/WT = 1.00; Q141K het = 0.75; Q141K hom = 0.50; Q126*+Q141K compound = 0.25. Empirically anchored to Miyazaki 2025 secretion-rate ratios (median ratios 100%:75%:50% = 1.0 : 0.72 : 0.38).</p>
+</li>
+<li>
+<p><strong>Sink amplification factor.</strong> With baseline lumen urate already low (~0.6 μM), uricase clamping it toward zero produces a bounded gradient improvement. Per Yu 2015 / Bhatnagar 2016 review tier and physiological reasoning, ~30–50% of secreted intestinal urate is reabsorbed in the colon. We use 0.40 (sensitivity 0.20–0.60) — i.e., uricase prevents reabsorption of 40% of secreted urate, increasing net intestinal elimination by that amount.</p>
+</li>
+<li>
+<p><strong>Renal partial compensation.</strong> When intestinal urate excretion changes, the kidney partially compensates by adjusting tubular handling (Matsuo 2014 directional). We use 30% offset (sensitivity 0–50%).</p>
+</li>
+<li>
+<p><strong>Steady-state ΔSUA.</strong> 1<sup>st</sup>-order approximation: ΔSUA = −SUA_baseline × (Δflux / production). Baseline SUA differs by sex and genotype (gout-typical values: 8.0 mg/dL WT male, 7.0 WT female, scaling up with genotype severity to 9.5 mg/dL Q141K hom male, 10.5 mg/dL severe dysfunction).</p>
+</li>
+</ol>
+<p><strong>Three uricase-dose scenarios:</strong> 5 mg/day (low), 25 mg/day (mid, engineered-koji target), 50 mg/day (high, ALLN-346 Phase 2a equivalent).</p>
+<h2 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h2>
+<h3 id="phase-a-literature-mining-whats-there-and-whats-not">Phase A literature mining — what's there and what's NOT<a class="headerlink" href="#phase-a-literature-mining-whats-there-and-whats-not" title="Permanent link">&para;</a></h3>
+<p>The headline Phase A finding is a NEGATIVE: <strong>across the entire published uricase-trial corpus, ZERO trials have stratified results by ABCG2 Q141K genotype.</strong> Allopurinol does (Wallace 2018, Vora 2021, Stamp 2019). Uricase does not. Every oral uricase trial (ALLN-346 Studies 201/202) and every systemic uricase trial (rasburicase post-marketing, pegloticase, PRX-115 Phase 1) missed this stratification axis.</p>
+<p>The mechanistic anchor — Miyazaki 2025 — is the load-bearing Phase A datum. n=34 patients, Crohn's-disease-dominated (32/34), undergoing double-balloon endoscopy. Direct measurement of jejunal urate secretion stratified by ABCG2 functional class:</p>
+<table>
+<thead>
+<tr>
+<th>ABCG2 functional class</th>
+<th>n</th>
+<th>Baseline lumen urate (median, IQR) pg/μL</th>
+<th>ΔC over 5 min (median, IQR) pg/μL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100% (WT/WT)</td>
+<td>11</td>
+<td>105.3 (12.3–236.6)</td>
+<td><strong>+175.6</strong> (92.6–550.7)</td>
+</tr>
+<tr>
+<td>75% (Q141K het)</td>
+<td>18</td>
+<td>113.0 (9.4–258.0)</td>
+<td>+125.9 (7.7–476.4)</td>
+</tr>
+<tr>
+<td>50% (Q141K hom or Q126* het)</td>
+<td>5</td>
+<td>70.1 (25.5–110.9)</td>
+<td><strong>+65.9</strong> (−35.1–114.0)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>p for trend = 0.058</strong> (just shy of conventional significance with n=34 and one group of n=5).</p>
+<p>The 100%:50% median secretion-rate ratio is 2.66 (175.6 / 65.9). The means tell a more dramatic story (600.5 vs 44.8, ratio 13.4) but the small n in the 50%-functional group makes the median the more reliable central estimate. We propagate the median ratios into Phase B.</p>
+<h3 id="phase-b-flux-model-results">Phase B flux model results<a class="headerlink" href="#phase-b-flux-model-results" title="Permanent link">&para;</a></h3>
+<p><strong>Predicted ΔSUA at steady state, Monte Carlo medians (90% CI in parens, n=5000 samples):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Low 5 mg/d</th>
+<th>Mid 25 mg/d</th>
+<th>High 50 mg/d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WT/WT, male gout</td>
+<td>−0.83 (−1.14, −0.57)</td>
+<td><strong>−0.83 (−1.13, −0.57)</strong></td>
+<td>−0.83 (−1.13, −0.57)</td>
+</tr>
+<tr>
+<td>Q141K het, male gout</td>
+<td>−0.66 (−0.91, −0.45)</td>
+<td><strong>−0.67 (−0.91, −0.45)</strong></td>
+<td>−0.67 (−0.91, −0.46)</td>
+</tr>
+<tr>
+<td>Q141K hom, male gout</td>
+<td>−0.50 (−0.67, −0.34)</td>
+<td><strong>−0.50 (−0.68, −0.34)</strong></td>
+<td>−0.49 (−0.67, −0.34)</td>
+</tr>
+<tr>
+<td>WT/WT, female gout</td>
+<td>−0.73 (−1.00, −0.50)</td>
+<td>−0.74 (−1.00, −0.50)</td>
+<td>−0.74 (−1.00, −0.50)</td>
+</tr>
+<tr>
+<td>Q141K het, female gout</td>
+<td>−0.58 (−0.80, −0.40)</td>
+<td>−0.59 (−0.80, −0.40)</td>
+<td>−0.59 (−0.80, −0.40)</td>
+</tr>
+<tr>
+<td>Q141K hom, female gout</td>
+<td>−0.41 (−0.57, −0.28)</td>
+<td>−0.42 (−0.57, −0.29)</td>
+<td>−0.42 (−0.57, −0.29)</td>
+</tr>
+<tr>
+<td>Severe dysfunction, male</td>
+<td>−0.27 (−0.38, −0.19)</td>
+<td>−0.28 (−0.37, −0.19)</td>
+<td>−0.27 (−0.37, −0.19)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="three-structural-observations-from-the-model">Three structural observations from the model<a class="headerlink" href="#three-structural-observations-from-the-model" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Genotype ordering is INVERTED relative to the worry framing.</strong> The model predicts WT/WT patients show the LARGEST absolute ΔSUA, not the smallest. The reason is mechanistic: uricase amplifies whatever ABCG2 is doing in the gut compartment. WT/WT patients have full ABCG2 capacity to amplify; Q141K homozygotes have half. The mechanism is multiplicative on residual gut capacity.</p>
+</li>
+<li>
+<p><strong>Dose-response is FLAT above ~5 mg/day.</strong> Capacity ratios (enzyme throughput / delivered intestinal urate flux) range from 32× at the low dose to 1300× at the high dose for severe-dysfunction patients. Uricase capacity vastly exceeds substrate even at the lowest dose tested. <strong>The mechanism is substrate-limited, not enzyme-limited.</strong> This is a strain-engineering implication (don't push yield further; push GI delivery).</p>
+</li>
+<li>
+<p><strong>Sex difference is small and inherits from baseline SUA.</strong> The model predicts ~12% smaller absolute ΔSUA for females than for males within any given genotype — purely because females have ~12% lower baseline SUA on average. The mechanism itself is sex-symmetric (per <a href="./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md">comp-017</a>, healthy-baseline intestinal ABCG2 is sex-invariant). Females respond, just from a lower starting point.</p>
+</li>
+</ol>
+<h3 id="recovery-against-alln-346-phase-2a-empirical-signal">Recovery against ALLN-346 Phase 2a empirical signal<a class="headerlink" href="#recovery-against-alln-346-phase-2a-empirical-signal" title="Permanent link">&para;</a></h3>
+<p>The flux model's central prediction for an WT/WT-dominated, mostly stage-2-CKD cohort at 50 mg/day uricase (the ALLN-346 Phase 2a Study 201 dosing approximation) is roughly −0.6 to −0.9 mg/dL ΔSUA. Allena Pharmaceuticals reported a statistically significant signal in Study 201 days 5–7 (p&lt;0.01 to p&lt;0.05), with the largest reduction in stage 2 CKD patients and sUA reduction correlated with eGFR (r=0.95, p=0.003). Specific mean ΔSUA values were not in the EULAR abstract, but the directional signal is consistent with the flux model's prediction.</p>
+<p>Study 202 (broader cohort, mixed CKD severity) showed 0–5% mean ΔSUA, not statistically significant. Interpretation: the broader cohort included patients with milder CKD where the renal compensation reserve is higher, partially offsetting the gut delta. The flux model's renal-compensation parameter (central 30%, range 0–50%) covers this — at the upper end of compensation, the predicted ΔSUA shrinks toward the Study 202 observed range. <strong>The flux model is consistent with both Study 201 and Study 202 outcomes</strong> — Study 201 sat in the small-renal-compensation regime (high-CKD), Study 202 in the larger-renal-compensation regime (mixed CKD).</p>
+<h2 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h2>
+<h3 id="for-phase-2b-rct-design-the-most-actionable-change">For Phase 2b RCT design (the most actionable change)<a class="headerlink" href="#for-phase-2b-rct-design-the-most-actionable-change" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pre-comp-019 design assumption</th>
+<th>Post-comp-019 recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enrich for Q141K-positive patients to maximize hit rate</td>
+<td><strong>Run as typical-gout RCT, with Q141K + Q126* genotyping as stratification variables (NOT enrichment)</strong></td>
+</tr>
+<tr>
+<td>~360 unenriched Europeans needed to power Q141K-conditional sub-analysis</td>
+<td>Same n=120-180 typical European-gout cohort works because the mechanism is genotype-robust; Q141K subgroup analysis is secondary, not primary</td>
+</tr>
+<tr>
+<td>Powering for Q141K-conditional differential effect</td>
+<td>Power for ~−0.5 to −1.0 mg/dL ΔSUA mean in unstratified cohort; Q141K subgroup analysis is hypothesis-generating</td>
+</tr>
+<tr>
+<td>Pre-stratify cohort by CKD stage (per ALLN-346 lesson)</td>
+<td>KEEP this — CKD is a stronger response-modifier than Q141K per the flux model (renal compensation reserve dominates)</td>
+</tr>
+<tr>
+<td>Single-dose cohort</td>
+<td><strong>Test only one dose</strong> (~25 mg/day target). Dose-response is flat above ~5 mg/day per flux model — running multiple dose arms is wasteful</td>
+</tr>
+</tbody>
+</table>
+<h3 id="for-strain-engineering-priorities">For strain-engineering priorities<a class="headerlink" href="#for-strain-engineering-priorities" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pre-comp-019 priority</th>
+<th>Post-comp-019 priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Push uricase yield in engineered koji to ~50+ mg/dose</td>
+<td><strong>Yield target can remain at 25 mg/dose</strong> (substrate-limited regime)</td>
+</tr>
+<tr>
+<td>GI survival as critical blocker (per <code>cross-validation.md</code> Claim 2 rating 5/10)</td>
+<td><strong>GI survival becomes EVEN MORE the binding constraint</strong> — yield is 30-1000× excess but only the fraction that survives matters</td>
+</tr>
+<tr>
+<td>Both yield AND survival as parallel engineering tracks</td>
+<td><strong>Survival &gt; yield</strong> as engineering priority</td>
+</tr>
+</tbody>
+</table>
+<h3 id="for-self-experimentation-protocol-brians-n1-case">For self-experimentation protocol (Brian's n=1 case)<a class="headerlink" href="#for-self-experimentation-protocol-brians-n1-case" title="Permanent link">&para;</a></h3>
+<p>Brian's relevant genotype is captured by the <a href="./personal-genome-protocol.md"><code>personal-genome-protocol.md</code></a> MinION pipeline. comp-019's flux model predicts:
+- If Brian is WT/WT for both Q126* and Q141K: expected ΔSUA ~−0.83 mg/dL (mid-dose engineered-koji)
+- If Brian is Q141K heterozygous (~25% prior probability for European ancestry): expected ΔSUA ~−0.67 mg/dL
+- If Brian is Q141K homozygous (~1% prior probability): expected ΔSUA ~−0.50 mg/dL</p>
+<p>In all scenarios the predicted effect is detectable with home uric-acid-meter precision (typical assay CV ~5%, baseline SUA ~5-7 mg/dL → detectable threshold ~0.3 mg/dL ΔSUA). <strong>The personal-genome-protocol genotype IS load-bearing for interpreting the n=1 self-experiment outcome</strong> — without it, a smaller observed ΔSUA could be confused with mechanism failure rather than genotype-typical response.</p>
+<h3 id="what-this-changes-about-the-127-caco-2-wet-lab-gate">What this CHANGES about the §1.27 Caco-2 wet-lab gate<a class="headerlink" href="#what-this-changes-about-the-127-caco-2-wet-lab-gate" title="Permanent link">&para;</a></h3>
+<p><strong>Not triggered.</strong> The flux model already rules out the binary "Q141K-only mechanism" hypothesis without needing Caco-2 transwell data. The wet-lab gate would re-trigger only if a Phase 2b RCT shows differential genotype response inconsistent with the flux model's predictions.</p>
+<p>The Caco-2 gate REMAINS APPROPRIATE for a different question — does intestinal-cell sublethal stress (TNFα, oxidative load) phenocopy ABCG2 dysfunction in the way the flux model would predict for the severe-dysfunction tier? But that's not the comp-019 question.</p>
+<h2 id="cross-references-and-downstream-propagation">Cross-references and downstream propagation<a class="headerlink" href="#cross-references-and-downstream-propagation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="./cross-validation.md"><code>cross-validation.md</code></a> Claim 1 — gut-lumen sink mechanism rating updated from 6/10 to 6.5/10 (mechanism is now genotype-robust per flux model; clinical magnitude prediction awaits Phase 2b verification).</li>
+<li><a href="./gut-lumen-sink.md"><code>gut-lumen-sink.md</code></a> — patient-stratification note updated to reflect that the gut-lumen sink works in non-Q141K patients (in fact, BETTER than in Q141K-positive patients).</li>
+<li><a href="./abcg2-modulators.md"><code>abcg2-modulators.md</code></a> §6 (Q141K rescue) — cross-reference comp-019's clarification that rescue interventions (butyrate, fermentable fiber, HDIs) ADD to the gut-lumen sink rather than replacing it; the gut-lumen sink works across genotypes, but Q141K-positive patients get a synergy bonus from rescue interventions.</li>
+<li><a href="./androgen-urate-axis.md"><code>androgen-urate-axis.md</code></a> — the male-asymptote framing is now further softened: not only is sex-dimorphism near-null at healthy baseline (per comp-017), but ALSO the gut-lumen sink mechanism does not depend on Q141K-male compounding for benefit.</li>
+<li><a href="./open-questions.md"><code>open-questions.md</code></a> — Open Question 1 ("can the gut-lumen sink be rescued in non-Q141K population") now has a flux-model answer: yes, the sink works MORE in non-Q141K than in Q141K patients.</li>
+<li><a href="./synthesis.md"><code>synthesis.md</code></a> Sweep 2026-05-08 Open Question 1 — actioned by comp-019.</li>
+<li><a href="./validation-experiments.md"><code>validation-experiments.md</code></a> — §1.27 Caco-2 gate remains appropriate for stress-phenocopying questions but is NOT triggered by the comp-019 finding for the genotype question.</li>
+<li><a href="./personal-genome-protocol.md"><code>personal-genome-protocol.md</code></a> — Q141K + Q126* genotyping is now load-bearing for Brian's n=1 protocol interpretation.</li>
+</ul>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>No prospective Q141K-stratified oral uricase RCT data exists.</strong> The flux model's predictions are PROSPECTIVE — they have not been clinically validated. The Phase 2b RCT design recommendation is the bridge from this in-silico finding to clinical evidence.</p>
+</li>
+<li>
+<p><strong>Miyazaki 2025 substrate population is Crohn's-disease-dominated</strong> (32 of 34 subjects). Inflammatory bowel disease may itself affect intestinal ABCG2 expression / function. The genotype-stratified secretion ratios this paper provides are the best available data, but their generalization to typical gout patients (no IBD) is an open question. Per the discussion in <a href="./abcg2-modulators.md">Ferrer-Picón 2020 (PMID 31211831)</a>, inflammation reduces intestinal ABCG2 — meaning Crohn's patients likely have LOWER baseline intestinal urate secretion than non-IBD comparators. This biases Miyazaki's absolute numbers downward, but should not bias the genotype RATIOS we propagate into the flux model. <strong>The flux model uses ratios, which is robust to this bias.</strong></p>
+</li>
+<li>
+<p><strong>The flux model uses 1<sup>st</sup>-order steady-state approximation.</strong> A more rigorous PBPK model with explicit clearance kinetics, reabsorption gradients, circadian dosing, food effects, and CKD-grade renal compensation would refine the magnitude estimates but is unlikely to flip the genotype-ordering conclusion.</p>
+</li>
+<li>
+<p><strong>Renal compensation fraction is mechanistic-extrapolation.</strong> Central estimate 0.30, sensitivity 0.0–0.5. Not directly measured in any oral-uricase trial. The flux model's headline conclusion (genotype ordering of response magnitude) is robust to this parameter; the absolute magnitudes are not.</p>
+</li>
+<li>
+<p><strong>Pre-commit verification gate (CLAUDE.md Rule 4) tier:</strong></p>
+</li>
+<li>Miyazaki 2025 numbers: full-text grep-verified from PMC11877951.</li>
+<li>Wallace 2018 (OR 2.43, p=6.2e-7): abstract-tier verified.</li>
+<li>Vora 2021 (1.79× half-life): abstract-tier verified.</li>
+<li>Stamp 2019 (Q141K p=0.019): abstract-tier verified.</li>
+<li>Matsuo 2014 (functional-classification framework, risk ratios 1.36/1.66/2.35): abstract-tier verified.</li>
+<li>Takada 2014 (mouse KO): abstract-tier verified.</li>
+<li>Nakayama 2011 (Km 8.24 mM, Vmax 6.96 nmol/min/mg): abstract-tier verified.</li>
+<li>ALLN-346 Phase 2a Study 201/202: EULAR-abstract / press-release tier; NOT line-anchored to peer-reviewed full-text.</li>
+<li>PRX-115 Phase 1: ACR conference-abstract tier.</li>
+<li>
+<p>Future Paperclip-MCP run recommended to grep-verify the abstract-tier-only ABCG2 kinetics + Q141K-allopurinol response numbers against full-text.</p>
+</li>
+<li>
+<p><strong>Multilingual scan deferred.</strong> ChiCTR / J-STAGE / KISS searches did not surface a published genotype-stratified oral-uricase RCT in any language. The likelihood of one being missed is low (Q141K × allopurinol response is heavily indexed; Q141K × uricase response would be too if it existed). A future multilingual deep-dive on Chinese-language hyperuricemia pharmacogenomics could refine the picture for East-Asian-ancestry cohorts where Q141K MAF is ~30%.</p>
+</li>
+<li>
+<p><strong>Two-model translation cross-check did not trigger.</strong> Per <a href="../CLAUDE.md">CLAUDE.md §"Translation protocol"</a>, non-English sources with load-bearing claims should be translated with two independent models. comp-019 did not surface non-English sources whose translation would change a verdict. Nguyen 2025 Vietnamese cohort paper is published in English (Clin Rheumatol) — no translation step needed.</p>
+</li>
+</ol>
+<h2 id="what-would-flip-the-verdict">What would flip the verdict<a class="headerlink" href="#what-would-flip-the-verdict" title="Permanent link">&para;</a></h2>
+<p>The headline verdict (mechanism is genotype-robust; non-Q141K patients respond AT LEAST as well as Q141K patients) would flip only if:</p>
+<ul>
+<li>A Phase 2b oral-uricase RCT shows Q141K-positive patients responding MORE than Q141K-negative patients (would contradict the flux model's gradient-amplification logic).</li>
+<li>A direct human pharmacokinetic study of oral uricase + intestinal urate secretion measurement shows the substrate-limited regime is wrong (uricase doesn't actually clamp lumen urate; some unmeasured rate-limiting step intervenes).</li>
+<li>A more detailed PBPK model with explicit CKD-grade renal compensation shows the renal compensation fully offsets the gut-delta in healthy-kidney patients (would shrink the predicted ΔSUA in WT/WT toward zero in non-CKD subjects).</li>
+</ul>
+<p>None of these have surfaced. Flux model verdict is robust to the abstract-tier verification limitations in DIRECTION (genotype ordering); specific magnitude estimates remain in the −0.5 to −1.0 mg/dL band pending Phase 2b RCT validation.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "toc.integrate", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

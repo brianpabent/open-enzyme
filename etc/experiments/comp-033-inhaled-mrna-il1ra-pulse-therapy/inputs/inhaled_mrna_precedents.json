@@ -1,0 +1,82 @@
+{
+  "comment": "Published / disclosed inhaled mRNA-LNP programs used as expression-kinetics anchors. Numbers are dosing or expression durations reported in primary literature, IND filings, or company disclosures. Order-of-magnitude anchors for the dose-AUC model.",
+  "programs": [
+    {
+      "program": "Translate Bio MRT5005 (CFTR mRNA inhalation, CF)",
+      "now": "Acquired by Sanofi 2021; CF program wound down 2022 due to insufficient ppFEV1 improvement in Phase 1/2 SP201 — failure was protein-folding/abundance not delivery",
+      "device": "PARI eFlow vibrating-mesh nebulizer",
+      "single_dose_range_mg": [8, 24],
+      "doses_per_week": 1,
+      "duration_studied_weeks": 8,
+      "lesson_for_il1ra": "Vibrating-mesh nebulizer + mRNA-LNP can be repeat-dosed in CF patients for 8 weeks safely at 8-24 mg per administration. CFTR is membrane protein in epithelial cells; IL-1Ra is secreted soluble protein and a vastly easier folding target.",
+      "evidence_level": "Clinical Trial (Phase 1/2 NCT03375047)",
+      "source": "Rowe et al. 2023 J Cyst Fibros; ClinicalTrials.gov NCT03375047"
+    },
+    {
+      "program": "Arcturus LUNAR-CF / ARCT-032 (CFTR mRNA inhalation, CF)",
+      "status_2026": "Phase 2 ongoing; interim Phase 1 data showed dose-dependent CFTR mRNA expression in nasal epithelium",
+      "device": "Nebulizer",
+      "single_dose_range_mg": [4, 20],
+      "doses_per_week": 2,
+      "lesson_for_il1ra": "Second-generation inhaled mRNA-LNP program with disclosed nasal epithelial CFTR mRNA detection — direct evidence that inhaled mRNA reaches and translates in airway epithelium",
+      "evidence_level": "Clinical Trial (Phase 1/2)",
+      "source": "Arcturus disclosures 2024-2025"
+    },
+    {
+      "program": "ReCode Therapeutics RCT2100 (PCD, CFTR PCD program)",
+      "status_2026": "Phase 1 inhaled mRNA-LNP for primary ciliary dyskinesia (DNAI1 mRNA) and CFTR; SORT-LNP technology with lung tropism",
+      "device": "Nebulizer (SORT-LNP formulation)",
+      "lesson_for_il1ra": "SORT-LNP class adds organ-tropism beyond passive lung deposition; relevant for any next-generation inhaled mRNA program",
+      "evidence_level": "Clinical Trial (Phase 1)",
+      "source": "ReCode pipeline disclosures"
+    },
+    {
+      "program": "Ethris SNIM-RNA platform (chemically modified mRNA for inhalation)",
+      "status_2026": "Preclinical / partnership stage; AstraZeneca collaboration for pulmonary mRNA",
+      "lesson_for_il1ra": "Independent inhaled-mRNA chemistry track — chemically modified nucleosides for stability under nebulization shear",
+      "evidence_level": "Preclinical (animal model)",
+      "source": "Ethris-AstraZeneca 2018+ partnership"
+    },
+    {
+      "program": "Moderna respiratory mRNA pipeline (mRNA-1083, mRNA-1647 etc.)",
+      "status_2026": "Mostly IM for vaccines; mRNA-1083 (combined flu+COVID) Phase 3 2024-2025. Moderna has disclosed inhaled-LNP preclinical work but no clinical inhaled-mRNA program",
+      "lesson_for_il1ra": "Not directly an inhaled-mRNA precedent. LNP IP and manufacturing capacity relevant; pulmonary clinical track absent.",
+      "evidence_level": "Preclinical for inhaled; Clinical Trial for IM vaccines",
+      "source": "Moderna pipeline 2024 disclosures"
+    },
+    {
+      "program": "BioNTech respiratory mRNA",
+      "status_2026": "No disclosed inhaled-mRNA clinical program; vaccine focus IM",
+      "lesson_for_il1ra": "BioNTech's LNP+mRNA expertise is industry-leading but inhaled is not their current track",
+      "evidence_level": "n/a",
+      "source": "BioNTech pipeline disclosures"
+    }
+  ],
+  "lng_expression_anchors": {
+    "comment": "Published kinetic anchors used in the dose-AUC model. Sourced from preclinical inhaled mRNA-LNP studies and pulmonary protein expression literature.",
+    "alveolar_epithelial_translation_efficiency": {
+      "range_protein_ng_per_ug_mrna_delivered_to_lung": [1000, 50000],
+      "central_estimate": 7000,
+      "comment": "Mass ratio (protein produced / mRNA delivered) integrated over the 24-48h expression window. Each mRNA template translates many times before degradation; modified-nucleoside chemistry extends template life. BNT162b2 30 ug IM yields tens-to-hundreds of ug total spike production in tissue (mass ratio ~1-10x); inhaled mRNA-LNP in alveolar epithelium reaches comparable or higher local concentration. Wide log-uniform prior 1-50x to reflect cross-platform variability.",
+      "source": "Pardi et al. 2018 Nat Rev Drug Discov (review of mRNA therapeutics); Ogata 2022 Clin Infect Dis (BNT162b2 plasma protein detection); Patel 2019 ACS Nano (lung-localized mRNA-LNP); Cheng et al. 2020 Nat Nanotech (SORT-LNP organ targeting). Specific quantitative anchor for mass-ratio range is order-of-magnitude inference across these reports; primary-paper verification for the integrated mass-ratio is queued."
+    },
+    "expression_duration_hours_pulmonary": {
+      "range": [24, 96],
+      "central_estimate": 48,
+      "comment": "Pulmonary mRNA-LNP expression typically peaks 12-24h, decays by 48-72h with N1-methylpseudouridine; matches the 12-72h flare window almost exactly",
+      "source": "Karikó-Weissman chemistry + pulmonary precedents in CF mRNA programs"
+    },
+    "lung_delivery_efficiency_nebulizer": {
+      "range_fraction_dose_to_lower_airway": [0.10, 0.40],
+      "central_estimate": 0.20,
+      "comment": "Vibrating-mesh nebulizer typical lower-airway delivery 20-40% of nominal dose; particles <5 um. Variability driven by inhaler technique, particle-size distribution.",
+      "source": "PARI eFlow performance data; Geller 2009 Respir Care nebulizer efficiency review"
+    },
+    "systemic_bioavailability_protein_from_alveolus": {
+      "range_fraction": [0.10, 0.50],
+      "central_estimate": 0.25,
+      "comment": "Alveolar -> systemic protein transit for 10-30 kDa proteins; varies with FcRn-class transcytosis. IL-1Ra is non-glycosylated 17 kDa, no FcRn binding, so transit by paracellular + transcellular diffusion. Patton & Byron 2007 Nat Rev Drug Discov is the canonical reference.",
+      "source": "Patton & Byron 2007 Nat Rev Drug Discov; Afrezza inhaled insulin precedent"
+    }
+  }
+}

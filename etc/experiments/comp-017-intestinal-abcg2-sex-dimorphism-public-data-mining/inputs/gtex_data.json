@@ -1,0 +1,72 @@
+{
+  "source": "GTEx Portal (gtexportal.org) and published GTEx-derived sex-bias catalogs",
+  "fetch_date": "2026-05-07",
+  "sandbox_status": "BLOCKED — direct GTEx Portal queries return HTTP 403 (host_not_allowed at sandbox level); upstream portal also returns 403 to WebFetch user-agent. Bash curl returns 'host_not_allowed'.",
+  "fallback_evidence_tier": "secondary-literature meta-analysis level; not direct portal data",
+  "tissues_of_interest": [
+    "Small_Intestine_Terminal_Ileum",
+    "Colon_Transverse",
+    "Colon_Sigmoid",
+    "Esophagus_Mucosa",
+    "Stomach"
+  ],
+  "gene": {
+    "symbol": "ABCG2",
+    "ensembl_id": "ENSG00000118777",
+    "gencode_id_v8": "ENSG00000118777.13"
+  },
+  "raw_per_tissue_sex_stratified_TPM": null,
+  "_raw_data_status": "NOT EXTRACTED — sandbox-blocked. Reproduction note: the GTEx v8 median expression for ABCG2 across the 5 listed intestinal tissues is publicly viewable at https://gtexportal.org/home/gene/ABCG2 with the 'Sex' visualization toggle. This run could not reach that endpoint.",
+  "secondary_evidence_summary": [
+    {
+      "source": "Schärfe CPI et al. (2023) Nat Commun 14:7313 — 'Deciphering genetic causes for sex differences in human health through drug metabolism and transporter genes'",
+      "doi": "10.1038/s41467-023-35808-6",
+      "verified_facts": [
+        "ABCG2 is identified as having sex-differentiated genetic effects (SDEs) in this paper",
+        "ABCG2 is implicated in gout/urate via these SDEs",
+        "Specific intestinal-tissue log2FC magnitude NOT extracted at this verification tier (paper paywalled at sandbox level; publicly available abstract + figure-caption snippets do not include the per-tissue numbers)"
+      ]
+    },
+    {
+      "source": "Oliva M et al. (2020) Science 369:eaba3066 — 'The impact of sex on gene expression across human tissues' (GTEx v8 sex catalog)",
+      "doi": "10.1126/science.aba3066",
+      "verified_facts": [
+        "GTEx v8 catalog of sex differences across 44 tissues; 37% of all genes show sex-biased expression in at least one tissue",
+        "ABCG2 specific result: NOT extracted at this verification tier (PDF behind 403 in this sandbox)",
+        "Methodology: log2FC reported per tissue with FDR < 5% threshold"
+      ]
+    },
+    {
+      "source": "Halperin Kuhns VL & Woodward OM (2020) IJMS 21:4269 — 'Sex Differences in Urate Handling' review",
+      "doi": "10.3390/ijms21124269",
+      "pmid": "32560040",
+      "verified_facts": [
+        "ABCG2 had a stronger association with higher serum urate levels in males (GWAS-level)",
+        "SLC2A9 had a stronger association with lower serum urate levels in females (GWAS-level)",
+        "ER binding sites have been identified in the promoter region of ABCG2, implying ABCG2 can be transcriptionally regulated by estrogen",
+        "Mechanism framing: estrogen-positive on the female arm, NOT androgen-negative on the male arm"
+      ]
+    },
+    {
+      "source": "MacLean C et al. (2008) DMD 36:1249-54 — full intestinal scan, male+female Wistar rats",
+      "pmid": "18378562",
+      "verified_facts": [
+        "Han-Wistar rats, n undisclosed at snippet level (~3-4 per group typical for this design)",
+        "Method: Western blot + qRT-PCR for P-gp (ABCB1), BCRP (ABCG2), MRP2 (ABCC2)",
+        "Tissue: duodenum, jejunum, ileum, colon — complete 3-cm-segment intestinal scan",
+        "Result: NO SIGNIFICANT SEX DIFFERENCE in BCRP/ABCG2 expression along the entire intestinal length in healthy rats",
+        "Specific fold-change-vs-zero with CI: not extracted at this verification tier; null finding qualitatively robust"
+      ]
+    },
+    {
+      "source": "Tubic-Grozdanis M et al. (2020) Mol Pharm 17(11) — citing-paper context for MacLean 2008 + their own Wistar-rat data",
+      "doi": "10.1021/acs.molpharmaceut.0c00574",
+      "verified_facts": [
+        "Recapitulated MacLean's intestinal scan",
+        "Found ~35% higher P-glycoprotein protein in male jejunum and ileum (p<0.05) — i.e., a SEX DIFFERENCE for P-gp at modest magnitude",
+        "Did NOT report a similar effect for BCRP/ABCG2 — i.e., the null sex finding for ABCG2 in MacLean 2008 is REPLICATED in this group's Wistar work"
+      ]
+    }
+  ],
+  "qualitative_verdict_at_this_tier": "Direct GTEx-portal numbers are NOT in this dataset due to sandbox limits. Secondary literature is consistent with: (a) ABCG2 GWAS-level sex-bias in serum urate is real (males more affected), (b) tissue-level mRNA/protein sex difference in healthy intestinal tissue is small or null (MacLean 2008 + Tubic 2020 replication), (c) the mechanism is estrogen-positive (ER binding sites in ABCG2 promoter, Halperin Kuhns 2020) rather than androgen-negative."
+}

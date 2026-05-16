@@ -1,0 +1,44 @@
+{
+  "source": "Human Protein Atlas (proteinatlas.org)",
+  "fetch_date": "2026-05-07",
+  "sandbox_status": "BLOCKED — proteinatlas.org TLS cert validity issue + 403 to WebFetch user-agent",
+  "fallback_evidence_tier": "WebSearch result-snippet extraction",
+  "gene": {
+    "symbol": "ABCG2",
+    "ensembl_id": "ENSG00000118777",
+    "uniprot": "Q9UNQ0"
+  },
+  "verified_facts": [
+    {
+      "fact": "ABCG2 shows distinct luminal membrane expression in the intestine and seminal vesicle",
+      "source": "HPA tissue summary (https://www.proteinatlas.org/ENSG00000118777-ABCG2/tissue) — landing page caption extracted from search snippet"
+    },
+    {
+      "fact": "Bulk RNA-seq data is presented as normalized transcripts per million (nTPM) in relevant tissues; ABCG2 is quantified throughout the human small intestine, with expression showing a trend of increasing toward the lower small intestine",
+      "source": "HPA tissue page — extracted from search snippet"
+    },
+    {
+      "fact": "Maximal expression in the duodenum and a gradual decrease along the GI tract to the rectum (different reference; this is the older proteomic literature interpretation; HPA's own duodenum vs colon ranking may differ slightly)",
+      "source": "Drug efflux pump review text"
+    }
+  ],
+  "sex_stratified_protein_data_at_this_tier": {
+    "result": "NOT DIRECTLY EXTRACTED",
+    "explanation": "HPA's tissue page does not have a sex-stratified IHC visualization comparable to GTEx's sex-toggle. HPA-bulk-RNA-seq is sourced largely from GTEx + HPA's own RNA-seq cohort with mixed-sex donors. Per-tissue sex-stratified IHC scores for ABCG2 are NOT a standard HPA visualization output."
+  },
+  "interindividual_variability_at_this_tier": [
+    {
+      "fact": "Considerable 12-fold interindividual variability in BCRP protein levels has been reported in human duodenum",
+      "source": "Drug efflux pump review (BCRP intestinal expression)"
+    },
+    {
+      "fact": "1.8-fold to 78-fold interindividual variability in human intestinal ABCG2 mRNA reported across studies",
+      "source": "Drug efflux pump review (BCRP intestinal expression)"
+    }
+  ],
+  "interpretive_notes": [
+    "Interindividual variability swamps any plausible sex-bias signal at the protein level — 12-fold person-to-person variation in human duodenal BCRP protein means a 1.5× male-female fold-difference (the H07 sub-claim 1 'meaningful sex difference' threshold) would be a small effect within a much larger noise band. Detecting it requires large-cohort RNA-seq sex-stratified analysis (i.e., GTEx) rather than HPA's small-cohort IHC catalog.",
+    "Hepatic ABCG2 sex difference: explicitly null per Prasad 2013 (PMID 23280364): 'BCRP expression was not associated with age (7-70 years), sex, or mRNA expression' — this is the closest fully-quantified human-tissue sex-stratified ABCG2 protein dataset accessible at this tier."
+  ],
+  "qualitative_verdict_at_this_tier": "HPA does not directly resolve sex-stratified intestinal ABCG2 protein at the level needed. Available secondary evidence (Prasad 2013 hepatic, MacLean 2008 rat intestinal) is consistent with NULL sex-difference at baseline in healthy tissue."
+}

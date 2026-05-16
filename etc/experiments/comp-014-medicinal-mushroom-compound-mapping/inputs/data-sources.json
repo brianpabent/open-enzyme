@@ -1,0 +1,229 @@
+{
+  "_doc": "Data sources planned for comp-014 multi-database aggregation. Phase 1 (this commit) registers sources and access methods; Phase 2 executes the aggregation. Per Open Enzyme/CLAUDE.md global-multilingual-research rule, non-English-corpus sources are first-class — not 'language barrier' caveats.",
+  "_phase_1_status": "scope only — no DB calls executed in Phase 1; Phase 2a starts now",
+  "toxicity_reference_databases": {
+    "FDA_GRAS_Notice_Inventory": {
+      "url": "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory",
+      "use": "Inclusion list — fungal species with explicit FDA food-safety review."
+    },
+    "EFSA_QPS_list": {
+      "url": "https://www.efsa.europa.eu/en/topics/topic/qualified-presumption-safety-qps",
+      "use": "Inclusion list — biennially-updated EFSA Qualified Presumption of Safety microorganism list."
+    },
+    "WHO_Fungal_Priority_Pathogens_2022": {
+      "url": "https://www.who.int/publications/i/item/9789240060241",
+      "use": "Hard exclusion — 19 species causing serious human invasive disease."
+    },
+    "FDA_EFSA_Mycotoxin_DBs": {
+      "use": "Hard exclusion — mycotoxin-producing species (aflatoxin, ochratoxin, fumonisin, trichothecene, ergot, amatoxin)."
+    },
+    "DEA_Schedule_I_II": {
+      "url": "https://www.deadiversion.usdoj.gov/schedules",
+      "use": "Hard exclusion — controlled-substance-producing fungi (Psilocybe spp.)."
+    },
+    "ClinicalTrials_gov_WHO_ICTRP_ChiCTR": {
+      "use": "Inclusion list — any registered human clinical trial implies regulatory safety review preceded the trial."
+    },
+    "_full_filter_definition": "see toxicity-filter.json"
+  },
+  "translation_models_for_phase_5": {
+    "_principle": "Per Open Enzyme/CLAUDE.md §Translation protocol, two-model independent cross-check with inline disagreement annotations. Brian framing 2026-05-06: 'really cheap to use DeepSeek to read those papers' — confirmed: DeepSeek as Model B for Chinese sources is the cheap+native-fluency choice; same heterogeneity-guard pattern the wiki sweep daemon already uses (Pass 4 DeepSeek peer review).",
+    "Chinese_sources_CNKI_Wanfang": {
+      "model_a": "Claude Sonnet 4.6 (or Opus 4.7) — primary Western-trained substrate",
+      "model_b": "DeepSeek V4-Pro via OpenRouter — Chinese-vendor, native Mandarin fluency, ~$0.14/M tokens (vs. Claude $15-75/M).",
+      "cost_estimate": "~$0.05/paper at typical paper length; thousands of papers = couple hundred USD total — not a real gate."
+    },
+    "Japanese_sources_JSTAGE_CiNii": {
+      "model_a": "Claude Sonnet 4.6",
+      "model_b": "Gemini 2.5 Pro OR DeepSeek (DeepSeek reasonable Japanese fluency despite Chinese-vendor — the multi-vendor heterogeneity guard is what matters, not language-vendor exact match)"
+    },
+    "Korean_sources_KISS_RISS": {
+      "model_a": "Claude",
+      "model_b": "Gemini 2.5 Pro OR GPT-5 — no Korean-vendor frontier model in standard set; two competent Western-trained models acceptable per CLAUDE.md."
+    },
+    "openrouter_proxy": "All non-Anthropic models hit via OpenRouter (https://openrouter.ai) — same pattern wiki sweep daemon uses (per Open Enzyme/CLAUDE.md §sweep daemon)."
+  },
+  "compound_databases": {
+    "LOTUS": {
+      "url": "https://lotus.naturalproducts.net",
+      "api": "https://lotus.naturalproducts.net/api/search/simple",
+      "scope": "Open natural products with species-of-origin links. ~750K compound-organism pairs across all kingdoms. Filter to fungi (Kingdom=Fungi).",
+      "access": "Public REST API + bulk CSV/SDF dump on Zenodo (lotusnprod/lotus-data DOI 10.5281/zenodo.5794106).",
+      "expected_yield": "~30-80K fungal compound-species records; deduplicate by InChIKey.",
+      "license": "CC0",
+      "language": "English metadata, but species-of-origin coverage is global"
+    },
+    "NPAtlas": {
+      "url": "https://www.npatlas.org",
+      "api": "https://www.npatlas.org/api/v1/compounds",
+      "scope": "Microbial natural products (bacteria + fungi) with strong provenance. ~33K curated entries.",
+      "access": "Public REST API + bulk JSON download.",
+      "expected_yield": "~10-15K fungal compounds with literature provenance per record.",
+      "license": "CC-BY-4.0",
+      "language": "English curation"
+    },
+    "KNApSAcK": {
+      "url": "http://www.knapsackfamily.com/KNApSAcK_Family",
+      "scope": "Japanese-hosted comprehensive species-metabolite database. ~50K species, ~100K metabolites. Strong East-Asian-traditional-medicine coverage including fungi.",
+      "access": "Web interface + downloadable tab-delimited tables. No public REST API — scraping or bulk download required.",
+      "expected_yield": "Higher fungal coverage than Western DBs for East Asian medicinal species (e.g., Ganoderma, Wolfiporia, Antrodia).",
+      "license": "Academic use",
+      "language": "English + Japanese metadata"
+    },
+    "NPASS": {
+      "url": "http://bidd.group/NPASS",
+      "url_alternate": "http://bidd-group.org/NPASS",
+      "scope": "Natural Product Activity & Species Source DB. ~30K natural products with bioactivity data. China-hosted (NUS / Bidd group).",
+      "access": "Public web interface + bulk CSV download.",
+      "expected_yield": "Mid-thousands fungal compounds with quantitative bioactivity.",
+      "license": "Academic use",
+      "language": "English curation, broader Asian-source coverage than ChEMBL",
+      "phase_2_verification_needed": "URL drift flagged by Phase 1 peer review — bidd.group redirects historically inconsistent. Verify canonical entry point in Phase 2 before committing to this URL in any pull script."
+    },
+    "TCMSP": {
+      "url": "https://old.tcmsp-e.com/tcmsp.php",
+      "scope": "Traditional Chinese Medicine Systems Pharmacology DB. ~30K compounds from Chinese herbs/fungi with predicted targets and ADME.",
+      "access": "Web interface; bulk export historically inconsistent — may need scraping.",
+      "expected_yield": "Comprehensive coverage of TCM-relevant fungi (Ganoderma, Wolfiporia, Polyporus, Cordyceps, Tremella, Auricularia).",
+      "license": "Academic use",
+      "language": "English + Chinese"
+    },
+    "TCMID": {
+      "url": "http://www.megabionet.org/tcmid",
+      "scope": "Traditional Chinese Medicine Integrated Database. Compound-disease-target relations.",
+      "access": "Web + downloads. Status: maintenance has lapsed in some periods — verify availability before Phase 2.",
+      "language": "English + Chinese"
+    },
+    "TCM_Database_Taiwan": {
+      "url": "http://tcm.cmu.edu.tw",
+      "scope": "~32K compounds from Chinese herbs (China Medical University, Taiwan).",
+      "access": "Web interface, bulk download.",
+      "language": "English + Chinese"
+    },
+    "HIT": {
+      "url": "http://www.badd-cao.net:2345/hit2",
+      "url_alternate": "http://hit2.badd-cao.net",
+      "scope": "Herb Ingredient Targets database. Curated TCM ingredient → protein target mappings.",
+      "access": "Web interface.",
+      "expected_yield": "Critical for compounds outside ChEMBL; provides target hypotheses for fungal compounds with TCM literature but no Western pharma curation.",
+      "language": "English + Chinese",
+      "phase_2_verification_needed": "Phase 1 peer review flagged the port-2345 URL as suspect; HIT 2.0 is documented at hit2.badd-cao.net. Verify canonical entry point in Phase 2 before scraping."
+    },
+    "BATMAN-TCM": {
+      "url": "http://bionet.ncpsb.org.cn/batman-tcm",
+      "scope": "Bioinformatics Analysis Tool for Molecular mechANism of TCM. Predicts targets via similarity to known drugs.",
+      "access": "Web interface + tools.",
+      "language": "English + Chinese"
+    },
+    "COCONUT": {
+      "url": "https://coconut.naturalproducts.net",
+      "scope": "Aggregator of open natural product DBs (~700K compounds). Includes upstream LOTUS, NPAtlas, others.",
+      "access": "Public REST API + bulk SDF dump.",
+      "use_case": "Cross-validation / dedup against LOTUS+NPAtlas; not a primary source.",
+      "license": "CC0"
+    },
+    "MIBiG": {
+      "url": "https://mibig.secondarymetabolites.org",
+      "scope": "Minimum Information about a Biosynthetic Gene cluster. Curated BGC → product links. ~2.5K entries, fungal subset ~400.",
+      "access": "Public download (JSON).",
+      "use_case": "Genomic-encoded compound coverage including compounds we don't yet have isolation data for.",
+      "license": "Open"
+    },
+    "antiSMASH-DB": {
+      "url": "https://antismash-db.secondarymetabolites.org",
+      "scope": "Predicted BGCs from sequenced genomes including fungi. ~150K fungal BGCs.",
+      "access": "Public download.",
+      "use_case": "Predicted-compound space — for hypothesis generation about uncharacterized chemistry in less-studied fungal genomes."
+    },
+    "MycoCosm_JGI": {
+      "url": "https://mycocosm.jgi.doe.gov",
+      "scope": "JGI MycoCosm — canonical fungal genomes portal. ~2,000+ assembled fungal genomes with annotated secondary metabolism.",
+      "access": "Public web + bulk download (registration may be required for some downloads).",
+      "use_case": "**Upstream provenance for antiSMASH-DB and MIBiG entries** — without MycoCosm or NCBI RefSeq Fungi as the upstream genome source, predicted-BGC coverage for less-studied candidate species has no provenance back to the producing organism. Added Phase 1 review (peer reviewer flagged as largest source-list gap).",
+      "license": "Public"
+    },
+    "NCBI_RefSeq_Fungi": {
+      "url": "https://www.ncbi.nlm.nih.gov/refseq",
+      "scope": "NCBI RefSeq fungal genomes — backup genomic source for any candidate species not in MycoCosm.",
+      "access": "Public via standard NCBI tooling (Entrez, datasets).",
+      "use_case": "Phase 2c genome-coverage upstream provenance for candidate species; cross-check against MycoCosm; primary source for any species MycoCosm hasn't picked up."
+    }
+  },
+  "bioactivity_target_databases": {
+    "ChEMBL": {
+      "url": "https://www.ebi.ac.uk/chembl",
+      "scope": "European-hosted manually curated bioactivity DB. ~2M compounds, 1.5M assays. Western pharma-skewed.",
+      "access": "Public REST + Open Enzyme has MCP plugin (mcp__plugin_chembl_ChEMBL__get_bioactivity, etc.).",
+      "use_case": "Empirical IC50 / Ki / Kd against gout-relevant targets where curated.",
+      "limitation": "comp-013 surfaced ChEMBL coverage gap for TCM-specific phytochemicals — same gap likely applies to fungal compounds."
+    },
+    "PubChem_BioAssay": {
+      "url": "https://pubchem.ncbi.nlm.nih.gov",
+      "scope": "NIH bioassay corpus, broader than ChEMBL but less curated.",
+      "access": "Public REST API.",
+      "use_case": "Long-tail bioactivity coverage; cross-check against ChEMBL."
+    },
+    "HIT": "see compound_databases — also a target source",
+    "BATMAN-TCM": "see compound_databases — also a target predictor",
+    "SwissTargetPrediction": {
+      "url": "http://www.swisstargetprediction.ch",
+      "scope": "Similarity-based target prediction for compounds with known structure but no empirical target.",
+      "access": "Public web + API.",
+      "use_case": "Long-tail orphan-compound target hypotheses. Lower confidence — flag predictions explicitly vs. empirical bioactivity."
+    },
+    "STITCH": {
+      "url": "http://stitch.embl.de",
+      "scope": "Chemical-protein interactions, integrates multiple sources.",
+      "use_case": "Cross-source validation of target hypotheses."
+    }
+  },
+  "literature_corpora": {
+    "PubMed": {
+      "scope": "English-indexed biomedical literature, includes English-translated abstracts of many Asian papers.",
+      "access": "MCP plugin (mcp__plugin_pubmed_PubMed__search_articles)."
+    },
+    "CNKI": {
+      "url": "https://www.cnki.net",
+      "scope": "China National Knowledge Infrastructure. Canonical Chinese-language clinical and pharmacology corpus. The decades of Chinese-medicine clinical experience that ChEMBL/PubMed never see.",
+      "access": "Web interface; institutional subscription typically required for full text. Public abstract access varies.",
+      "use_case": "Phase 3 multilingual literature ingestion — read original-language papers per CLAUDE.md global-multilingual rule.",
+      "translation_protocol": "Per CLAUDE.md §Translation protocol — two-model independent cross-check (one Chinese-vendor model — DeepSeek or Qwen — + one Western model) with inline annotations on disagreement."
+    },
+    "Wanfang": {
+      "url": "http://www.wanfangdata.com.cn",
+      "scope": "Major Chinese academic database, complementary to CNKI.",
+      "access": "Web; institutional subscription.",
+      "translation_protocol": "Same two-model cross-check."
+    },
+    "J-STAGE": {
+      "url": "https://www.jstage.jst.go.jp",
+      "scope": "Japanese scientific journals — Kampo medicine, mycology, fungal natural products research.",
+      "access": "Public web, many open-access PDFs.",
+      "translation_protocol": "Two-model cross-check; ideally include a model with strong Japanese fluency."
+    },
+    "CiNii": {
+      "url": "https://cir.nii.ac.jp",
+      "scope": "Japanese academic database, includes fungal/Kampo research.",
+      "access": "Public web."
+    },
+    "KISS": {
+      "url": "https://kiss.kstudy.com",
+      "scope": "Korean Studies Information Service System. Korean-language pharmacology and ethnomycology.",
+      "access": "Web; institutional subscription.",
+      "translation_protocol": "Two-model cross-check including a Korean-fluent model."
+    },
+    "RISS": {
+      "url": "http://www.riss.kr",
+      "scope": "Research Information Sharing Service (Korea).",
+      "access": "Web."
+    }
+  },
+  "phase_plan_summary": {
+    "phase_1_scope": "This commit. Inventory sources, candidate species, chokepoint targets. No DB queries executed.",
+    "phase_2_breadth_aggregation": "Pull LOTUS + NPAtlas + KNApSAcK + NPASS + TCMSP + COCONUT. Dedup by InChIKey. Output: unified fungal compound × species table.",
+    "phase_3_target_mapping": "Empirical (ChEMBL + HIT + PubChem) → SwissTargetPrediction for orphans. Output: compound × target table with empirical/predicted flag.",
+    "phase_4_chokepoint_intersection": "Join compound × target × Open Enzyme chokepoints (chokepoint-targets.json). Output: ranked candidate list.",
+    "phase_5_multilingual_deep_dive": "For top 3-5 species flagged by Phase 4: ingest CNKI + J-STAGE primary literature with two-model translation cross-check. Compare Asian clinical evidence against the breadth-pass mechanism map.",
+    "phase_6_per_compound_triage": "comp-013-style IC50 occupancy analysis for top candidates. Verdicts: GUT-LUMINAL VIABLE / SYSTEMIC VIABLE / MECHANISM UNCLEAR / NON-VIABLE. Subset gets shio-koji protease stability comp-NNN follow-ups."
+  }
+}

@@ -360,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-enzyme-vision/" class="md-nav__link">
+      <a href="../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -373,13 +373,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -458,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-source-platform/" class="md-nav__link">
+      <a href="../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -1682,6 +1675,17 @@
     <span class="md-ellipsis">
       
         3.4 Protocol Sketch for the Gating Experiment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-cordycepin-third-cassette-slot-evaluated-and-deprioritized-2026-05-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Cordycepin third-cassette slot — evaluated and deprioritized (2026-05-16)
       
     </span>
   </a>
@@ -4629,7 +4633,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -5185,7 +5189,8 @@
 <h2 id="3-the-gating-feasibility-test-ward-1995-architecture-layering">3. The Gating Feasibility Test — Ward 1995 Architecture Layering<a class="headerlink" href="#3-the-gating-feasibility-test-ward-1995-architecture-layering" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><strong>Formalized as hypothesis H01</strong>: see <a href="../hypotheses/H01-ward-dual-cassette/">wiki/hypotheses/H01-ward-dual-cassette.md</a> for the Falsification Card, including the killshot menu ranked by information weight per dollar. The literature / patent landscape deep-dive (killshot 1 in that card — $0, 1 week, kill_pr 0.3 against a root assumption) is the recommended cheapest-first move before any wet-lab spend. See <a href="../linter-design/">linter-design.md</a> for the Falsification Card schema rationale.</p>
-<p><strong>Third-cassette slot design rule (added 2026-05-15):</strong> when extending the dual-cassette strain to three cassettes, <strong>the third slot is reserved for <em>cytosolic</em> payloads, not secreted ones.</strong> Per <a href="../chaperone-orthogonal-stacking/"><code>chaperone-orthogonal-stacking.md</code> §5.6</a> (Design escape — cytosolic third cassette), the framework's §5.5 triple-cassette pessimism (0.35–0.65 synergy range) applies to <em>secreted-only</em> triples (uricase + Lf + DAF SCR1-4); a cytosolic third cassette (cns1+cns2 cordycepin, carnS, panD, native ergothioneine biosynthesis) imposes <strong>zero PDI/ERO1 load</strong> and doesn't compete for chaperone capacity. <strong>Practical implication for the §1.9-extended endgame design:</strong> the third cassette slot goes to a cytosolic payload (cordycepin per comp-023 GREEN; or carnosine/panD); DAF SCR1-4 routes onto a separate strain or the engineered-LBP peer chassis. Formal feasibility gate: <a href="../computational-experiments/">comp-028</a> (two-orthogonal-models requirement: chaperone framework with explicit confidence bounds + iWV1314 FBA with dual-cassette baseline overlaid on the cytosolic third cassette). This rule generalizes — <strong>the practical stacking limit for the endgame strain is the count of <em>secreted</em> cassettes, not total cassette count.</strong> A four-cassette strain of uricase + lactoferrin (secreted) + cordycepin + ergothioneine biosynthesis (cytosolic) is, in principle, no harder on chaperone capacity than the dual-cassette baseline, pending comp-028's verdict.</p>
+<p><strong>Third-cassette slot design rule (added 2026-05-15; revised 2026-05-16 — cordycepin removed as candidate):</strong> when extending the dual-cassette strain to three cassettes, <strong>the third slot is reserved for <em>cytosolic</em> payloads, not secreted ones.</strong> Per <a href="../chaperone-orthogonal-stacking/"><code>chaperone-orthogonal-stacking.md</code> §5.6</a> (Design escape — cytosolic third cassette), the framework's §5.5 triple-cassette pessimism (0.35–0.65 synergy range) applies to <em>secreted-only</em> triples (uricase + Lf + DAF SCR1-4); a cytosolic third cassette (carnS, panD, native ergothioneine biosynthesis) imposes <strong>zero PDI/ERO1 load</strong> and doesn't compete for chaperone capacity. <strong>Active third-cassette candidates (post-2026-05-16):</strong> carnosine (carnS + panD per §2.5) for the androgen-dominant URAT1 axis, OR native ergothioneine biosynthesis for the CP1b ROS-scavenging arm. <strong>Cordycepin (cns1+cns2) was evaluated and deprioritized</strong> — see §3.5 "Cordycepin third-cassette slot — evaluated and deprioritized" below. The third-cassette slot design <em>rule</em> still holds; the <em>candidate list</em> shrank. <strong>The platform-level principle stands:</strong> the practical stacking limit for the endgame strain is the count of <em>secreted</em> cassettes, not total cassette count.</p>
+<p><strong>DAF SCR1-4 routing:</strong> DAF SCR1-4 routes onto a separate strain (per §1.25 wet-lab gate) or the engineered-LBP peer chassis; not as a third cassette in the endgame strain. The chaperone-load math for a uricase + Lf + DAF SCR1-4 secreted triple is the §5.5 0.35–0.65 synergy range that the design rule above is built to avoid.</p>
 <p><strong>Named uncertainty on the 0.35–0.65 prediction range</strong> (added 2026-05-15): the lower bound is driven by Lf's transferrin-lobe α coefficient = 2.5 (Notari 2023 in vitro oxidative refolding from a fully denatured state). In vivo ER-assisted co-translational folding with PDI acting on the nascent chain may be substantially faster, collapsing α toward ~1.0 and shifting the prediction upward into "augmentation-feasible." See <a href="../chaperone-orthogonal-stacking/"><code>chaperone-orthogonal-stacking.md</code> §8 item 6</a> for the framework's own caveat and <a href="../validation-experiments/">§1.9 Lf-alone arm</a> (paired with §1.25 DAF SCR1-4 under harmonized NSlD-ΔP10 / solid-state / matching-promoter conditions per §3.5.4) as the designed in-vivo-α resolver. Until the calibration set returns, treat the prediction range as the <em>bound on confidence,</em> not as the <em>point estimate to design against.</em></p>
 </blockquote>
 <p>This section answers the single question that decides whether the endgame strain is engineerable in its one-strain form. If it is, Year 2–3 koji development converges on this strain. If it isn't, the platform falls back to the two-strain co-ferment path (§4.1).</p>
@@ -5237,8 +5242,15 @@
 <li><strong>N-glycosylation sequon: ablate N191 (N191Q).</strong> The single predicted N-glycosylation sequon in uricase (NSS at position 191) is unlikely to be occupied in the native protein but adds residual chaperone-pathway load if it is. A single N191Q point mutation removes the sequon at zero design cost. (Mechanistic Extrapolation; source: uricase-cassette-ranking-computational.md §2)</li>
 </ol>
 <p><strong>comp-022 v2 concordance:</strong> 71 cassettes pass N-of-5 ≥ 4 (down from v1's 501); 4 cassettes pass the strict N-of-5 = 5 gate. The v1 top cluster (PamyB + amyB SP + 5'-softened + direct + PTS1-blocking + N191Q) survives v2 at 100% — all 4 v1 top-cluster members are in the v2 N-of-5 = 5 tier. ESM2 pseudo-pLDDT was used as the Tier 3 fold-quality proxy (ESMFold v1 fallback; openfold install blocked). ViennaRNA 2.7.2 replaced the v1 GC-clamp proxy. (Mechanistic Extrapolation; source: uricase-cassette-ranking-computational.md §9)</p>
-<p><strong>comp-023 cordycepin arm (2026-05-14):</strong> The cns1+cns2 cordycepin biosynthesis pathway is metabolic-burden-feasible at the Jeennor 2023 empirical titer (564 mg/L/day). FBA on the iWV1314 GEM predicts &lt;1% carbon-flux consumption, growth penalty +0.02% vs WT, and 100% kojic acid + ergothioneine yield headroom. The FBA breakpoint where cordycepin demand materially competes with growth is ~1,000× the empirical titer. Carnosine + panD third-cassette alternatives also GREEN. Three open follow-up gates remain: ADA competition (comp-025), dynamic FBA validation (comp-023 v2), and multi-cassette induction interference (comp-026). (Mechanistic Extrapolation; source: cordycepin-cassette-burden-computational.md)</p>
-<p><strong>Dual-axis feasibility of the §1.9-extended cordycepin arm (composition added 2026-05-15):</strong> the cordycepin arm has now cleared in silico pre-feasibility on <strong>both burden axes</strong> before any wet-lab commitment — comp-023 FBA GREEN on the metabolic axis (above) AND <a href="../chaperone-orthogonal-stacking/"><code>chaperone-orthogonal-stacking.md</code> §5.6</a> PDI/ERO1 load = 0 on the chaperone axis (cytosolic pathway; no signal peptide; no disulfide bonds). The two axes compose: PDI load for the triple cassette is dual-cassette baseline (uricase 0 + lactoferrin 24–40) + cytosolic third cassette (cordycepin 0) = 24–40 (unchanged from dual baseline), while metabolic burden is bounded at &lt;1% of carbon flux per comp-023. <strong>Formal three-axis gate (chaperone + FBA + regulatory architecture per comp-026) is <a href="../computational-experiments/">comp-028</a>, still pending.</strong> Once comp-028 returns GREEN, the §1.9 design can incorporate the cordycepin arm at marginal cost (~$1,500–2,500). The cytosolic-third-cassette pattern is also the platform-level design rule articulated in §3 above. (Mechanistic Extrapolation; sources: cordycepin-cassette-burden-computational.md + chaperone-orthogonal-stacking.md §5.6)</p>
+<h3 id="35-cordycepin-third-cassette-slot-evaluated-and-deprioritized-2026-05-16">3.5 Cordycepin third-cassette slot — evaluated and deprioritized (2026-05-16)<a class="headerlink" href="#35-cordycepin-third-cassette-slot-evaluated-and-deprioritized-2026-05-16" title="Permanent link">&para;</a></h3>
+<p><strong>Verdict: removed from active cassette stack.</strong> Strategic call during 2026-05-15 sweep walkthrough Item 7. The cns1+cns2 cordycepin pathway cleared the metabolic-burden gate cleanly, but the koji-cordycepin engineering effort was deprioritized for three reasons:</p>
+<p><strong>1. No novel chokepoint coverage.</strong> Cordycepin's chokepoint targets (URAT1 modulation per PMID 29422889; AMPK / mitochondrial NLRP3-priming dampening) are already covered by the <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track</code></a> via cultivation of <em>Cordyceps militaris</em> fruit bodies, which natively co-produce cordycepin with pentostatin at the co-evolved ratio. The endgame koji strain doesn't expand chokepoint coverage by adding cordycepin — it duplicates coverage available via a peer track at a different chassis.</p>
+<p><strong>2. Open dose-vs-achievable-titer gap.</strong> <a href="../cordycepin-cassette-burden-computational/">comp-023</a> verified metabolic feasibility (cell carries the cassette at Jeennor 2023's 564 mg/L/day single-cassette optimized titer), but did NOT analyze whether that titer translates to a therapeutic dose in realistic home-fermentation conditions on a multi-cassette strain (uricase + lactoferrin competing for cellular resources). Back-of-envelope at Jeennor's titer in a typical home batch (500g rice → 500–1000 mL fermentate over 2–4 days, divided over 7 days) lands at the LOW end of published nutraceutical doses (~70–280 mg/day vs 250–1500 mg/day target) — assuming optimal titer transfer to home conditions AND no multi-cassette penalty, both optimistic. The titer-to-therapeutic-dose conversion was treated as out-of-scope by comp-023 and never closed by subsequent analysis. <strong>"Metabolically feasible" was being implicitly conflated with "therapeutically achievable."</strong> Category error.</p>
+<p><strong>3. "Endgame strain = full coverage + simple" principle excludes it.</strong> The endgame strain criterion is: cassettes that deliver <em>novel</em> chokepoint coverage koji is uniquely positioned to provide (food-grade chassis, secreted-protein production, home-fermentation accessibility for proteins not otherwise easily obtained). Uricase and lactoferrin meet this criterion (no commercial supplement delivers a therapeutic uricase or oral lactoferrin dose with koji's protective matrix). Cordycepin does not — it's a $20–60/month supplement-shelf nutraceutical with native ADA-protection from cultivated <em>Cordyceps</em> extract.</p>
+<p><strong>Active koji endgame strain cassette stack (post-2026-05-16):</strong> <strong>uricase + lactoferrin</strong> (the secreted-protein dual) plus an optional cytosolic third cassette (carnosine via carnS+panD per §2.5, OR native ergothioneine biosynthesis) where the chaperone-load math supports it. <strong>DAF SCR1-4 remains a separate-strain or LBP-peer-chassis target</strong> per §1.25, not a third cassette in the endgame strain.</p>
+<p><strong>What survives from comp-023:</strong> the methodology validation — FBA on iWV1314 with cassette demands modeled as flux constraints works reliably for evaluating cytosolic-cassette burden. The framework is sound; the target was the issue. Future cytosolic-cassette candidates (carnosine, ergothioneine biosynthesis cassettes) can be evaluated against the same comp-023 framework when their wet-lab dose questions warrant.</p>
+<p><strong>What got dropped:</strong> comp-025 (ADA competition for cns1 substrate pool), comp-026 (multi-cassette induction interference for the uricase + Lf + cns1+cns2 design specifically), comp-023 v2 (dynamic FBA validation of the cordycepin scenario) — all marked Deprioritized in <a href="../computational-experiments/"><code>computational-experiments.md</code></a>. comp-028 (triple-cassette endgame strain feasibility) was reframed: the third-cassette slot was always design-space for cytosolic payloads in general, not cordycepin specifically.</p>
+<p><strong>Active cordycepin route in the platform:</strong> cultivation per <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a>. Users who want cordycepin add a commercial <em>Cordyceps</em> extract supplement; engineered koji is not the delivery vehicle.</p>
 <p><strong>Host strain.</strong> <em>A. oryzae</em> RIB40 (genome-sequenced reference; the strain underneath the Huang 2024 platform paper in <a href="../aspergillus-oryzae/">aspergillus-oryzae.md</a>) or NSAR1 (pyrG-deficient auxotrophic derivative, ideal for food-grade pyrG-complementation selection).</p>
 <p><strong>Updated host recommendation (post-H01 Killshot #1, 2026-05-05):</strong> The literature deep-dive surfaced two material upgrades to this default host choice — see <a href="../hypotheses/H01-ward-dual-cassette/">hypotheses/H01-ward-dual-cassette.md §"What this means for §1.9 wet-lab framing"</a> for full reasoning:
 - <strong>Protease-deletion is now default, not fallback.</strong> Huynh et al. 2020 (PMC7257131) showed wild-type RIB40 was inadequate for functional adalimumab antibody production; only the <strong>ten-protease-deletion strain (NSlD-ΔP10</strong>: ΔtppA ΔpepE ΔnptB ΔdppIV ΔdppV ΔalpA ΔpepA ΔAopepAa ΔAopepAd ΔcpI<strong>)</strong> reached the 39.7 mg/L titer. For the Lf side of the H01 dual cassette to clear the 500 mg/L threshold, starting from a comparable protease-knockout chassis is now the safer default. RIB40 should be reserved for the uricase-only Year 1 starting strain (§4.2 / engineered-koji-protocol.md §02-14) where titer requirements are lower and the protease load matters less.
@@ -5451,7 +5463,7 @@
 <li><a href="../uricase-variant-selection/">uricase-variant-selection.md</a> — the <em>A. flavus</em> vs. <em>C. utilis</em> source-gene analysis.</li>
 <li><a href="../aspergillus-oryzae/">aspergillus-oryzae.md</a> — native kojic acid + ergothioneine titer data.</li>
 <li><a href="../validation-experiments/">validation-experiments.md</a> — the consolidated experiment queue including the §3 feasibility test as Experiment 1.9.</li>
-<li><a href="../open-enzyme-vision/">open-enzyme-vision.md</a> — platform thesis; endgame strain is the Year 2–3 target.</li>
+<li><a href="../etc/open-enzyme-vision/">open-enzyme-vision.md</a> — platform thesis; endgame strain is the Year 2–3 target.</li>
 </ul>
 <hr />
 <p><em>Page owner: Brian Abent. Last structural review: 2026-04-24 (initial draft). Next review trigger: Ward 1995 feasibility test execution or any new </em>Aspergillus<em> multi-heterologous-protein paper.</em></p>

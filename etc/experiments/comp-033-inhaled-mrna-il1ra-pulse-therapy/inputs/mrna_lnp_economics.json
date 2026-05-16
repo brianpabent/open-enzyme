@@ -1,0 +1,49 @@
+{
+  "comment": "mRNA-LNP manufacturing economics anchored on COVID-vaccine-class scale and published mRNA-LNP COGS estimates. The economic comparison for the wiki page asks: at industrial scale, can cost-per-flare beat canakinumab?",
+  "mrna_lnp_cost_per_dose_at_scale": {
+    "scenario_high_volume_covid_class": {
+      "range_usd_per_dose": [2, 10],
+      "comment": "COVID-mRNA-vaccine class manufacturing at billions-of-doses scale; ~30 ug mRNA-LNP. Public ROI analyses by Moderna/Pfizer suggest ~$1-3 raw COGS, ~$5-10 fully-loaded.",
+      "source": "Whitaker 2022 Nature; Moderna SEC filings; Pfizer COVID vaccine SEC filings"
+    },
+    "scenario_specialty_inhaled_lower_volume": {
+      "range_usd_per_dose": [20, 100],
+      "comment": "Inhaled mRNA-LNP for niche indication (gout-flare-abort) at order-of-magnitude lower volume than COVID; PARI eFlow disposable consumables add cost; QC and stability testing add overhead",
+      "source": "Order-of-magnitude estimate from Translate Bio MRT5005 IND filings; standard CDMO pricing tables"
+    },
+    "single_flare_mrna_dose_assumed_mg": {
+      "range_mg": [4, 24],
+      "central_estimate": 12,
+      "comment": "Anchored on Translate Bio MRT5005 (8-24 mg) and Arcturus ARCT-032 (4-20 mg) precedents. Single-dose-per-flare assumption — full IL-1Ra coverage over 24-72h from one administration."
+    },
+    "mass_basis_cost_usd_per_mg_mrna_lnp_at_scale": {
+      "range": [0.1, 5.0],
+      "comment": "Covers spectrum from COVID-vaccine class (~$0.1/mg highly amortized) to specialty inhaled (~$5/mg). Anchored at scale.",
+      "source": "Cross-check across multiple COGS-analysis tables"
+    }
+  },
+  "cost_per_flare_scenarios": {
+    "comment": "Pre-calculated scenarios for the economic comparison. Final cost-per-flare = mass_per_dose * usd_per_mg.",
+    "low_estimate_high_scale": {
+      "mg_per_dose": 4,
+      "usd_per_mg": 0.5,
+      "usd_per_dose": 2,
+      "comment": "Aggressive scale assumption; small dose; lower-bound."
+    },
+    "central_estimate": {
+      "mg_per_dose": 12,
+      "usd_per_mg": 1.5,
+      "usd_per_dose": 18,
+      "comment": "Central economics assumption — specialty inhaled at moderate scale."
+    },
+    "high_estimate_low_scale": {
+      "mg_per_dose": 24,
+      "usd_per_mg": 5.0,
+      "usd_per_dose": 120,
+      "comment": "Conservative scale; high dose."
+    },
+    "annual_cost_at_5_flares": [10, 90, 600],
+    "annual_cost_at_10_flares": [20, 180, 1200],
+    "comment_on_canakinumab_comparison": "Even the high estimate ($120/dose x 10 flares = $1200/yr) is 50-250x cheaper than canakinumab ($105K-300K/yr). The cost ratio is dominated by mRNA-LNP manufacturing scaling, not by the specific dose-per-flare assumption."
+  }
+}

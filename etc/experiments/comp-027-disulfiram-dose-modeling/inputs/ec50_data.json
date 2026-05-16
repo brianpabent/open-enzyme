@@ -1,0 +1,49 @@
+{
+  "description": "GSDMD blockade EC50 anchors (cellular + cell-free) and NLRP3-pathway EC50 anchors for comparison. The ratio between cellular GSDMD-EC50 (Hu 2020) and cellular NLRP3-pathway-EC50 (Xu 2024) is load-bearing for the dose-window analysis.",
+  "fetch_date": "2026-05-16",
+
+  "primary_target": {
+    "name": "GSDMD pore formation (CP6b, pyroptotic exit)",
+    "mechanism": "Covalent modification of Cys191 on N-terminal GSDMD fragment, blocking oligomerization into membrane pores. Caspase-1-mediated GSDMD cleavage proceeds normally; only the pore-formation step is blocked.",
+    "cell_free_IC50_uM_liposome_assay": 0.30,
+    "cell_free_IC50_uM_low": 0.04,
+    "cell_free_IC50_uM_high": 0.30,
+    "cell_free_IC50_source": "Hu 2020 Nat Immunol, PMID 32367036, PMC7316630. Fluorogenic Tb3+ liposome leakage assay. IC50 = 0.3 μM for inhibiting wildtype GSDMD pore formation; 0.04-0.07 μM for inhibiting full-length GSDMD + caspase-11. C191A mutant IC50 ~8-fold higher (~2.4 μM), confirming Cys191 covalent mechanism.",
+    "cellular_IC50_uM_naive_addition": 0.5,
+    "cellular_IC50_uM_preincubation": 0.02,
+    "cellular_IC50_source": "Hu 2020 — preincubation IC50 for inhibiting cellular pyroptosis decreased 24-fold to ~0.02 μM (20 nM) after 1 hr pre-treatment, reflecting covalent target engagement kinetics. Naive single-addition cellular IC50 ~0.5 μM (estimated from inhibition curves)."
+  },
+
+  "secondary_target_upstream": {
+    "name": "NLRP3 inflammasome priming + assembly (CP2)",
+    "mechanism": "Disulfiram covalently modifies NLRP3 Cys126, preventing palmitoylation by zDHHC5/zDHHC7 and disrupting trans-Golgi-network localization. Upstream of GSDMD. Blocks ASC speck formation, caspase-1 maturation, IL-1β release.",
+    "cellular_IC50_uM_partial": 10,
+    "cellular_IC50_uM_complete": 30,
+    "source": "Xu, Pickard, Núñez 2024 Cell Rep, PMC11398858. LPS-primed BMDMs + ATP/nigericin/imiquimod stimulation, caspase-1 p20 + GSDMD cleavage + IL-1β ELISA readout. 10 μM partial inhibition; 30-50 μM complete inhibition; below 5 μM no observable NLRP3 effect.",
+    "in_vivo_dose_mouse_mg_per_kg": 50,
+    "in_vivo_route": "IP, 24h + 4h pre-LPS challenge",
+    "in_vivo_outcome": "Significant reduction in serum + peritoneal IL-1β in LPS, Salmonella, and MSU peritonitis models",
+    "in_vivo_source": "Xu 2024 — same paper"
+  },
+
+  "in_vivo_gout_rat": {
+    "study": "Asiri et al. 2025",
+    "source": "PMC12114764",
+    "model": "Potassium oxonate (250 mg/kg/d × 21d, IP) → MSU crystal sub-plantar injection → 9-day disulfiram treatment",
+    "doses_tested": [50],
+    "DSF_dose_mg_per_kg_PO": 50,
+    "outcomes": "Significant ↓paw swelling (p<0.05), ↓inflammation index (p<0.001), ↓serum urate (p<0.001), ↓IL-1β/TNF-α/IL-6 vs disease control. Combination DSF + allopurinol (10 mg/kg) > either monotherapy.",
+    "limitations_acknowledged_in_paper": "Single dose tested; no PK measurements; no dose-response; no XO or transporter assays; long-term safety not assessed.",
+    "human_equivalent_dose_mg_per_60kg": 480,
+    "HED_method": "Standard FDA allometric scaling, rat-to-human factor /6.2: 50 mg/kg ÷ 6.2 = 8.06 mg/kg × 60 kg = 484 mg. Within typical AUD dosing range (250-500 mg)."
+  },
+
+  "comparative_ranking_of_concentration_thresholds_uM": {
+    "GSDMD_cellular_preincub": 0.02,
+    "GSDMD_cellfree_liposome": 0.30,
+    "GSDMD_cellular_naive": 0.50,
+    "NLRP3_palmitoylation_partial": 10,
+    "NLRP3_palmitoylation_complete": 30,
+    "note": "GSDMD blockade requires plasma concentrations 50-1,500-fold lower than NLRP3-upstream blockade. This is the key opportunity for sub-AUD dosing: if 100-250 mg PO achieves plasma DSF ≥ 0.3 μM (which clinical PK suggests it does), GSDMD is engaged; NLRP3-palmitoylation pathway (much higher EC50) is NOT engaged at these doses; this leaves the GSDMD-distal effect dominant without simultaneous suppression of upstream inflammasome assembly (which has its own immunological cost-benefit profile)."
+  }
+}

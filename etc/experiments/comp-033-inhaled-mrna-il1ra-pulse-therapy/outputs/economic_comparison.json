@@ -1,0 +1,30 @@
+{
+  "comment": "Cost-per-flare comparison: inhaled mRNA-IL-1Ra at scale vs canakinumab.",
+  "inhaled_mrna_cost_per_flare_usd": {
+    "low_estimate_high_scale": 2,
+    "central_estimate": 18,
+    "high_estimate_low_scale": 120
+  },
+  "inhaled_mrna_annual_cost_usd": {
+    "scenarios_5_flares_per_year": [
+      10,
+      90,
+      600
+    ],
+    "scenarios_10_flares_per_year": [
+      20,
+      180,
+      1200
+    ]
+  },
+  "canakinumab_annual_cost_usd": {
+    "5_flares_per_year": 105000,
+    "max_annual": 300000
+  },
+  "cost_ratio_canakinumab_to_inhaled_mrna": {
+    "central_low": 583.0,
+    "central_high": 3333.0,
+    "interpretation": "At central inhaled-mRNA economics ($18-180/yr) the cost ratio vs canakinumab ($100K-300K/yr) is 500-3000x. Even the conservative high-cost low-scale inhaled scenario ($1200/yr at 10 flares) is 50-250x cheaper than canakinumab."
+  },
+  "vs_compounded_anakinra": "Anakinra itself is approximately $1500-3000/month off-label retail = $18-36K/year. Inhaled mRNA-IL-1Ra at scale beats this by another 100-1000x at high-volume scenario and remains competitive (or breaks even) at low-volume specialty pricing. The competitive economic case is strongest against canakinumab, but the case vs anakinra is patient-experience-driven (no SC injection at flare onset) rather than purely cost."
+}

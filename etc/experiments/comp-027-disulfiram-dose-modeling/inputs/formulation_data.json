@@ -1,0 +1,73 @@
+{
+  "description": "Formulation considerations for sub-AUD-dose disulfiram in a 503A compounding context. Anchored to the MINX-precedent ER-tablet protocol referenced in wiki/compounding-pharmacy-track.md.",
+  "fetch_date": "2026-05-16",
+
+  "current_commercial_formulation": {
+    "name": "Antabuse (disulfiram tablets)",
+    "strengths_mg": [250, 500],
+    "release_profile": "immediate_release",
+    "dissolution_USP_711_specification": "≥75% in 30 min (immediate-release oral solid)",
+    "limitations_for_sub_AUD_use": "Tablet splitting to 125 mg is patient-doable but content uniformity drops below USP <905> (RSD ≤ 6%). To 62.5 mg, splitting is impractical. ER is not commercial."
+  },
+
+  "compounding_formulation_options": [
+    {
+      "option": "low_dose_immediate_release_capsule",
+      "dose_strengths_mg": [25, 50, 62.5, 100, 125],
+      "matrix": "lactose / microcrystalline cellulose blend; gelatin capsule shell",
+      "release_profile": "immediate_release (same dissolution profile as commercial Antabuse)",
+      "PK_implication": "Maintains commercial Cmax/AUC scaling at fractional dose. Cmax at 125 mg ≈ 0.5× of 250 mg Cmax. Acceptable starting protocol.",
+      "complexity": "low — standard 503A capsule compounding (USP <795>); no formulation engineering needed",
+      "best_for": "initial dose-titration phase + patient-individualized starting doses"
+    },
+    {
+      "option": "extended_release_lipid_matrix_tablet",
+      "dose_strengths_mg": [50, 100, 125, 250],
+      "matrix": "glyceryl behenate (Compritol 888 ATO) + HPMC K100M; lipid-matrix design analogous to MINX 5 mg minoxidil ER",
+      "release_profile": "ER over 12-24 hr",
+      "PK_implication": "Reduces Cmax by ~50% while maintaining AUC. Sustains plasma DSF concentration in the 0.1-0.3 μM range (GSDMD-blockade plateau) without spiking into the 1-3 μM range (closer to NLRP3-palmitoylation IC50 territory). Could allow QD dosing of 125 mg/d with peak plasma below the cellular NLRP3 EC50 even at the highest end of inter-individual PK variability.",
+      "complexity": "medium — requires formulation engineering + dissolution testing per USP <711>; analogous to MINX protocol described in wiki/compounding-pharmacy-track.md §Formulation engineering",
+      "best_for": "long-term maintenance dosing in 503A-prescribed gout prophylaxis"
+    },
+    {
+      "option": "micronized_or_nanocrystalline_immediate_release",
+      "dose_strengths_mg": [25, 50, 100],
+      "matrix": "wet-milled disulfiram particles (<5 μm); dispersed in standard capsule",
+      "release_profile": "accelerated_dissolution_immediate_release",
+      "PK_implication": "Increases bioavailability via dissolution-rate enhancement (DSF aqueous solubility is poor, ~0.4 mg/L). Useful if dose-dependent fraction-absorbed shows under-absorption at low doses.",
+      "complexity": "medium — requires particle-size verification (laser diffraction); some 503A pharmacies have capability, many don't",
+      "best_for": "if low-dose IR shows unexpectedly low or variable absorption"
+    },
+    {
+      "option": "enteric_coated_capsule",
+      "dose_strengths_mg": [62.5, 125, 250],
+      "matrix": "standard capsule with HPMC-phthalate enteric coating; dissolves in duodenum not stomach",
+      "release_profile": "delayed_release",
+      "PK_implication": "Bypasses gastric environment. Limited benefit for DSF (which is acid-stable). May help with food-effect variability.",
+      "complexity": "low_medium",
+      "best_for": "patients with persistent GI side effects from immediate-release"
+    }
+  ],
+
+  "quality_control_requirements": {
+    "USP_711_dissolution": "required for ER formulations; specifies dissolution profile (typically 10-30%/2h, 40-60%/6h, ≥80%/12h for 12h ER)",
+    "USP_905_content_uniformity": "required for all compounded solid dosage forms; RSD ≤ 6%",
+    "USP_795_compounding_standards": "general framework — non-sterile compounding",
+    "USP_797_compounding_standards": "general framework — sterile (not relevant for oral disulfiram)",
+    "third_party_dissolution_lab": "compounding pharmacy may outsource; cost ~$500-1500 per formulation tested",
+    "long_term_stability": "DSF is hygroscopic and decomposes in heat/light; standard pharmaceutical handling adequate; beyond-use date (BUD) per USP <795> guidance"
+  },
+
+  "503A_practical_path": {
+    "phase_1": "low-dose IR capsule, 62.5 or 125 mg/day, titrated from 25 mg. Simplest 503A workflow.",
+    "phase_2": "ER lipid-matrix tablet at 100-125 mg/day. Requires formulation development + dissolution testing.",
+    "phase_3": "Sub-AUD ER tablet formalized as a stable repurposed-indication product — could shift to 503B outsourcing-facility production if patient volumes support it.",
+    "timeline_estimate": "Phase 1: weeks (existing 503A workflow). Phase 2: months (formulation development + dissolution testing). Phase 3: 1-2 years (regulatory + manufacturing scale)."
+  },
+
+  "compounding_pharmacy_candidates": {
+    "examples_mentioned_in_compounding_pharmacy_track_md": ["Empower Pharmacy", "Olympia Pharmacy"],
+    "selection_criteria": "track record with ER formulations + low-dose repurposed indications; willingness to develop new formulation profile; relationship with rheumatology / functional-medicine prescriber network",
+    "verification_status": "user_action_required — wiki/compounding-pharmacy-track.md §Open questions item 2 stays open"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "_source": "MIBiG BGC0000326 (isocomplestatin / complestatin) + Chiu HT et al. PNAS 2001;98(15):8548-53 PMID 11447274 'Molecular cloning and sequence analysis of the complestatin biosynthetic gene cluster'; PMC37473 full text; Park JW et al. ChemBioChem 2016;17(15):1442-7 PMID 27383040 (54.5 kb reconstituted cluster, heterologous expression in S. lividans TK24); fetched 2026-05-16",
+  "producer": "Streptomyces lavendulae (S. chartreusis AN1542 strain also produces complestatin family per Park 2016)",
+  "compound_class": "NRPS-derived cyclic glycopeptide-like; member of the vancomycin/teicoplanin/chloropeptin structural family",
+  "compound_target": "C1q / C4b binding; classical-pathway C3 convertase inhibition; also HIV-1 gp120/CD4 inhibition (incidental)",
+  "cluster_size_bp": 48700,
+  "cluster_size_bp_reconstituted": 54500,
+  "total_orfs": 16,
+  "nrps_genes": ["comA", "comB", "comC", "comD"],
+  "nrps_architecture": {
+    "loading_module_count": 1,
+    "extension_module_count": 6,
+    "total_modules": 7,
+    "terminal_thioesterase": true,
+    "module_substrates_predicted": [
+      "module_1_loading: 3,5-dichloro-4-hydroxyphenylglycine (Cl2-Hpg) OR Hpg loaded then chlorinated",
+      "module_2_extension: 4-hydroxyphenylglycine (Hpg)",
+      "module_3_extension: tyrosine (Tyr) — chlorinated post-assembly",
+      "module_4_extension: tryptophan (Trp)",
+      "module_5_extension: 4-hydroxyphenylglycine (Hpg) — chlorinated post-assembly",
+      "module_6_extension: beta-hydroxy-tyrosine (beta-OHTyr) — chlorinated post-assembly",
+      "module_7_extension: 3,5-dichloro-4-hydroxyphenylglycine (Cl2-Hpg)"
+    ]
+  },
+  "tailoring_enzymes": {
+    "p450_oxidative_phenolic_coupling": ["comI", "comJ"],
+    "halogenase_nonheme": ["comH"],
+    "ferredoxins": "present (electron transfer to P450s)",
+    "beta_hydroxylation_for_betaOHTyr": "OxyD-type P450 (inferred; canonical glycopeptide biosynthesis pattern, not all annotated by Chiu 2001)"
+  },
+  "non_proteinogenic_amino_acid_biosynthesis": {
+    "hpg_pathway": {
+      "genes_present_in_cluster": ["hmaS", "hmo", "hpgT", "pd"],
+      "function": "Tyr precursor → 4-hydroxyphenylpyruvate → 4-hydroxymandelate (HmaS) → 4-hydroxyphenylglyoxylate (Hmo) → L-Hpg (HpgT, uses Tyr as amino donor)",
+      "natively_supplied_in_E_coli": false,
+      "natively_supplied_in_Bacteroides": false,
+      "natively_supplied_in_Streptomyces": "yes (encoded within the cluster; ambient tyrosine pool sufficient)"
+    },
+    "dichlorination": {
+      "gene": "comH (nonheme halogenase)",
+      "substrate": "Tyr, Hpg, beta-OHTyr at positions 2, 5, 6",
+      "cofactor": "alpha-ketoglutarate + Fe(II) + Cl- + O2 (canonical nonheme Fe halogenase)",
+      "host_cofactor_compatibility": "Fe + alpha-KG ubiquitous; Cl- ubiquitous; molecular O2 required — incompatible with strict anaerobes"
+    }
+  },
+  "regulatory_and_transporter_genes": {
+    "transcriptional_regulator": "putative LuxR-family or similar (1 ORF)",
+    "abc_transporter": "comL (self-resistance / export)"
+  },
+  "heterologous_expression_demonstrated": {
+    "S_lividans_TK24": {
+      "status": "successful (Park 2016 PMID 27383040)",
+      "yield": "production confirmed; sub-mg/L typical for NRPS megaclusters without optimization",
+      "phylum_jump": "none (Actinomycetota → Actinomycetota)"
+    },
+    "E_coli": {
+      "status": "not reported for full complestatin cluster",
+      "general_NRPS_jump_difficulty": "high; requires Sfp-type PPTase coexpression, GC content mismatch (Streptomyces ~72% GC vs E. coli ~50% GC), oxygen-tolerant assembly OK"
+    },
+    "Bacteroides": {
+      "status": "not reported for any complestatin-class compound; no Bacteroides NRPS-megacluster heterologous expression precedent in the literature",
+      "general_NRPS_jump_difficulty": "very high; strict-to-facultative anaerobe, GC content mismatch (Streptomyces ~72% GC vs B. thetaiotaomicron ~43% GC), O2-dependent P450s and halogenase fundamentally incompatible with obligate anaerobe lifestyle"
+    }
+  },
+  "oxygen_dependence": {
+    "P450_oxidative_phenolic_coupling": "obligate O2 (cytochrome P450 monooxygenase)",
+    "nonheme_halogenase_comH": "obligate O2 (Fe/alpha-KG-dependent)",
+    "p_hydroxymandelate_oxidase_Hmo": "obligate O2 (FMN oxidase)",
+    "implication": "Without these tailoring steps, the linear peptide is produced but lacks the rigid crosslinked architecture required for high-affinity C1q/C4b binding. Complestatin without P450-mediated phenolic coupling is biologically inactive (Park 2016 demonstrated this with complestatin M55/S56 monocyclic deletion derivatives)."
+  },
+  "GC_content_source": "~72% (Streptomyces lavendulae typical for genus)",
+  "GC_content_E_coli_Nissle_1917": "~50.7%",
+  "GC_content_Bacteroides_thetaiotaomicron": "~42.8%"
+}

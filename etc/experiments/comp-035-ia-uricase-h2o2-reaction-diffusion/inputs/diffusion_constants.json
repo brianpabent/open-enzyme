@@ -1,0 +1,35 @@
+{
+  "h2o2_diffusion_aqueous_25C_m2_per_s": {
+    "central": 1.4e-9,
+    "lower": 1.1e-9,
+    "upper": 1.8e-9,
+    "comment": "H2O2 aqueous diffusion coefficient at 25 °C. van Stroe-Biezen et al 1993 Anal Chim Acta 273:553 reports 1.4 ± 0.05 x 10^-9 m^2/s in dilute aqueous buffer; biosensor literature converges on 1.1-1.8 x 10^-9 range. At 37 °C (joint temperature), Stokes-Einstein scaling boosts D by factor ~T_37/T_25 × (η_25/η_37) ≈ 1.27 (water viscosity 0.89 mPa·s at 25 °C → 0.69 mPa·s at 37 °C; T = 298 → 310 K).",
+    "source_class": "in_vitro_physical_chemistry"
+  },
+  "h2o2_diffusion_aqueous_37C_m2_per_s": {
+    "central": 1.78e-9,
+    "lower": 1.4e-9,
+    "upper": 2.3e-9,
+    "comment": "Scaled from 25 °C value using Stokes-Einstein with water viscosity ratio 0.89/0.69 = 1.29 and T ratio 310/298 = 1.04; combined factor ~1.34. Used as the 'free aqueous' reference for joint biology."
+  },
+  "h2o2_diffusion_synovial_fluid_37C_m2_per_s": {
+    "central": 1.0e-9,
+    "lower": 5.0e-10,
+    "upper": 1.7e-9,
+    "comment": "Synovial fluid is viscous due to hyaluronic acid (HA). Healthy synovial fluid η ~0.005-0.5 Pa·s depending on shear rate (Newtonian shear-thinning); gout joints have HA degradation and lower viscosity. For a small solute like H2O2 (MW 34), the relevant viscosity at the molecular scale is closer to water (HA does not retard small-solute diffusion much — pore-size of HA mesh ~100 nm >> H2O2 hydration shell). Conservative range: 0.5-1.7 x 10^-9 m^2/s. Central: 1.0 x 10^-9 m^2/s, slightly below aqueous to reflect HA tortuosity for small solutes.",
+    "source_class": "mechanistic_extrapolation",
+    "primary_source": "Estimated from aqueous D_H2O2 (van Stroe-Biezen 1993) corrected for HA mesh-size tortuosity per general porous-media diffusion theory (e.g., Renkin-Curry). NO direct measurement of D_H2O2 in synovial fluid is published; the in vivo answer is bounded between water and gel diffusion."
+  },
+  "h2o2_diffusion_in_oil_phase_m2_per_s": {
+    "central": 1.0e-10,
+    "lower": 3.0e-11,
+    "upper": 3.0e-10,
+    "comment": "H2O2 has very low partition into hydrophobic oil/squalene (logP H2O2 ≈ -1.4); even where it partitions, diffusion in squalene-like oils is ~10-100× slower than water. Used as the cross-droplet escape pathway for the Pickering architecture. The dominant escape pathway is interfacial release back into the aqueous phase, not transit through the oil."
+  },
+  "ratio_synovial_to_aqueous": {
+    "central": 0.56,
+    "lower": 0.30,
+    "upper": 0.95,
+    "comment": "Used as a single tortuosity factor τ applied to the aqueous D for sensitivity analysis."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "description": "Five urate-handling + T-axis targets to map four T-axis-active natural compounds against. **v2 (2026-05-07): added xanthine oxidase (XO) as 5th target after a parallel verification subagent on `wiki/androgen-natural-modulation.md` discovered eurycomanone is documented as an XO-active mechanism (PMID 31920654 / 34785103 — verification of those primary sources subsequently shows the eurycomanone mechanism is dominantly transporter modulation + purine-synthesis suppression rather than direct XO inhibition; that finding is preserved in the v2 literature_claims.json XO entries).** XO is the upstream urate-production enzyme — primary target for allopurinol/febuxostat and many TCM gout compounds (luteolin IC50 550 nM ChEMBL; quercetin/morin/myricetin per Mo 2007 PMID 17666819). Excluding XO from the v1 panel was the methodological gap that v2 closes. Two transporters (URAT1, ABCG2) are the dominant therapeutic-target axis for renal handling; OAT1 is the basolateral urate-secretion arm; SHBG is the testosterone-binding globulin (the SHBG-displacement claim was central to the original eurycomanone mechanism story, now partially deprecated). ChEMBL target IDs cited from comp-013 verified target panel where reused.",
+  "fetch_date": "2026-05-07",
+  "version": "v2 (XO added as 5th target)",
+  "v1_to_v2_change": "Added XO (CHEMBL1929, UniProt P47989, gene XDH) as 5th target. v1 4-target panel (URAT1/ABCG2/OAT1/SHBG) was systematically incomplete because XO — the upstream urate-production enzyme that allopurinol/febuxostat target and that classical TCM gout compounds (luteolin, astilbin, quercetin) modulate — was excluded. Trigger: parallel Sci-Hub-second-pass verification subagent on androgen-natural-modulation.md (2026-05-07) discovered the eurycomanone primary literature attaches XO mechanism to *Eurycoma longifolia* (PMID 31920654, 34785103) — though the actual mechanism per primary sources is transporter modulation + purine synthesis, not direct XO inhibition. Either way, XO belongs in the panel for any urate-axis adjuvant scan.",
+  "targets": [
+    {
+      "name": "URAT1",
+      "alias": "SLC22A12",
+      "chembl_id": "CHEMBL6120",
+      "chembl_id_source": "Verified via comp-013 inputs/targets.json (2026-05-06; cross-checked in comp-015 from re-used target panel). UniProt Q96S37 → ChEMBL target CHEMBL6120.",
+      "uniprot": "Q96S37",
+      "gene": "SLC22A12",
+      "function": "Apical urate reabsorption transporter in kidney proximal tubule; primary uricosuric drug target (probenecid, benzbromarone, lesinurad, dotinurad).",
+      "favorable_direction": "INHIBITOR (block reabsorption → lower SUA)",
+      "unfavorable_direction": "INDUCER (upregulate reabsorption → raise SUA — this is the T-driven phenotype to avoid)",
+      "site_for_concentration": "plasma → glomerular filtrate (kidney apical brush border accessed via filtered drug)"
+    },
+    {
+      "name": "ABCG2",
+      "alias": "BCRP",
+      "chembl_id": "CHEMBL5393",
+      "chembl_id_source": "Verified via comp-013/comp-014/comp-007 reused panel.",
+      "uniprot": "Q9UNQ0",
+      "gene": "ABCG2",
+      "function": "Apical urate secretion transporter; gut + kidney. Handles ~33% of total urate excretion via gut lumen sink. Q141K LoF polymorphism is the dominant gout-risk genetic variant.",
+      "favorable_direction": "INDUCER / non-INHIBITOR (preserve or enhance gut-luminal urate secretion)",
+      "unfavorable_direction": "INHIBITOR (block gut secretion → raise SUA — directly mimics Q141K phenotype)",
+      "site_for_concentration": "gut lumen (intestinal apical) AND plasma → kidney apical (dual site)"
+    },
+    {
+      "name": "OAT1",
+      "alias": "SLC22A6",
+      "chembl_id": "CHEMBL1641347",
+      "chembl_id_source": "Verified via comp-013 inputs/targets.json. UniProt Q4U2R8 → ChEMBL target CHEMBL1641347. Note: comp-013 used Q4U2R8 but canonical human OAT1 UniProt is Q4U2R8 (some databases list Q9UQ20 / Q4U2R8 as the same product) — the ChEMBL ID is what matters for bioactivity lookup and is unambiguous.",
+      "uniprot": "Q4U2R8",
+      "gene": "SLC22A6",
+      "function": "Basolateral organic anion transporter in kidney proximal tubule; uptakes urate from blood for secretion. Estrogen-upregulated (the canonical mechanism for premenopausal-female lower SUA).",
+      "favorable_direction": "INDUCER (upregulate → raise urate clearance → lower SUA)",
+      "unfavorable_direction": "INHIBITOR (block basolateral uptake → reduce secretion → raise SUA)",
+      "site_for_concentration": "plasma (basolateral side accessed from blood)"
+    },
+    {
+      "name": "SHBG",
+      "alias": "Sex hormone-binding globulin",
+      "chembl_id": "CHEMBL3286",
+      "chembl_id_source": "[NOT-DIRECTLY-VERIFIED-IN-CHEMBL — bound: CHEMBL3286 is the molecule_chembl_id for SHBG-related screening assays in ChEMBL. ChEMBL API blocked in this environment; UniProt P04278 → ChEMBL target ID widely reported as CHEMBL3286 in published SHBG-binder screens (Avvakumov, Hammond lab). Confirm when access restored.]",
+      "uniprot": "P04278",
+      "gene": "SHBG",
+      "function": "Plasma testosterone-binding globulin. ~98% of total T is SHBG-bound (inactive); raising free T via SHBG displacement is the mechanism eurycomanone, boron, and certain dietary factors are claimed to use. SHBG is NOT a urate transporter — included here as the proposed T-axis-mechanism target separate from the transporter axis.",
+      "favorable_direction": "DISPLACER (compete with T for binding → free T rises) — note this is FAVORABLE for T-elevation goal but the T-elevation arm is what drives the gout-UNFAVORABLE URAT1-upregulation downstream effect; SHBG displacement is a T-AXIS MECHANISM marker, not directly UA-relevant",
+      "unfavorable_direction": "n/a (SHBG is not a urate effector; included for mechanism transparency)",
+      "site_for_concentration": "plasma (circulating SHBG accessed by plasma-distributed compound)"
+    },
+    {
+      "name": "Xanthine Oxidase",
+      "alias": "XO / XDH",
+      "abbreviation": "XO",
+      "chembl_id": "CHEMBL1929",
+      "chembl_id_source": "Verified via comp-013 inputs/targets.json (2026-05-06) — the gout-relevant target panel uses CHEMBL1929 for XO with UniProt P47989. Allopurinol and febuxostat are the canonical clinical XO inhibitors. Luteolin (XO IC50 550 nM) and quercetin (XO IC50 sub-µM per Mo 2007 PMID 17666819) are well-curated natural-product XO inhibitors in ChEMBL.",
+      "uniprot": "P47989",
+      "alt_uniprot": "Q06278 (mouse XDH; often the substrate / orthologue used in animal-model XO assays)",
+      "gene": "XDH",
+      "function": "Catalyzes hypoxanthine → xanthine → uric acid (final two steps of purine catabolism). Primary urate-PRODUCTION target — allopurinol (~500 nM) and febuxostat (sub-nM) both inhibit XO. Distinct from the URAT1/ABCG2/OAT1 transporter axis, which handles urate AFTER it's produced. A compound that inhibits XO blocks urate production at the source — which is mechanism-orthogonal to transporter modulation, and is GOUT-FAVORABLE EVEN IF the same compound has unfavorable effects elsewhere on the urate-handling cascade. Many classical TCM gout compounds (luteolin, astilbin, quercetin, smilax glabra extracts) act primarily via XO. Adding XO to this panel was the v2 correction.",
+      "favorable_direction": "INHIBITOR (lowers urate production)",
+      "unfavorable_direction": "INDUCER (rare; would raise urate production — not a known mechanism for natural products)",
+      "site_for_concentration": "plasma",
+      "site_note": "XO is intracellular hepatic + intestinal-mucosal; the relevant achievable concentration is the systemic Cmax_plasma reaching hepatic XO. Luminal compounds do not reach intracellular XO without absorption — high luminal densities are NOT a meaningful exposure to XO. Use plasma Cmax for ratio computation."
+    }
+  ]
+}

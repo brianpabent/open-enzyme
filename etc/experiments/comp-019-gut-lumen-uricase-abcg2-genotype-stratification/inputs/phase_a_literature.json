@@ -1,0 +1,225 @@
+{
+  "_schema_note": "Phase A literature stratification mining records. Each record names primary source, what it shows, what it does NOT show (i.e. genotype stratification gap), and the verification tier per CLAUDE.md Rule 4.",
+
+  "miyazaki_2025": {
+    "citation": "Miyazaki R, Ohashi Y, Sakurai T, Iwamoto T, Ichida K, Saruta M (2025) First verification of human small intestinal uric acid secretion and effect of ABCG2 polymorphisms. J Transl Med 23:257. PMID 40033341. PMC11877951. doi:10.1186/s12967-025-06145-7",
+    "design": "Direct in-vivo measurement of jejunal urate secretion using double-balloon endoscopy in n=34 subjects (32 Crohn's disease, 2 simple ulcer, 2 obscure GI bleeding) stratified into three ABCG2 functional groups by genotype combinations of rs72552713 (Q126*) and rs2231142 (Q141K).",
+    "stratification": {
+      "100% functional ABCG2": {
+        "n": 11,
+        "definition": "WT/WT for both Q126* and Q141K",
+        "baseline_uric_pg_per_uL_median_IQR": "105.3 (12.3-236.6)",
+        "delta_C_5min_median_pg_per_uL_IQR": "+175.6 (92.6-550.7)",
+        "delta_C_5min_mean": 600.5
+      },
+      "75% functional ABCG2": {
+        "n": 18,
+        "definition": "Q141K heterozygous (WT for Q126*)",
+        "baseline_uric_pg_per_uL_median_IQR": "113.0 (9.4-258.0)",
+        "delta_C_5min_median_pg_per_uL_IQR": "+125.9 (7.7-476.4)",
+        "delta_C_5min_mean": 249.1
+      },
+      "50% functional ABCG2": {
+        "n": 5,
+        "definition": "Q141K homozygous OR Q126* heterozygous (one Q126* het + four Q141K hom listed in Table 1)",
+        "baseline_uric_pg_per_uL_median_IQR": "70.1 (25.5-110.9)",
+        "delta_C_5min_median_pg_per_uL_IQR": "+65.9 (-35.1-114.0)",
+        "delta_C_5min_mean": 44.8
+      }
+    },
+    "p_for_trend": 0.058,
+    "key_finding": "Direct measurement confirms ABCG2 functional class drives intestinal urate secretion rate. 100%-functional ABCG2 secretes ~13.4x as much urate per unit time as 50%-functional ABCG2 (mean comparison: 600.5 vs 44.8 pg/uL/5min). Median comparison is less stark (~2.7x).",
+    "load_bearing_for_comp019": "YES — this is the single most important quantitative input for the flux model. Provides the empirical denominator for genotype stratification.",
+    "limitations_per_authors": [
+      "Small sample size (n=34, only 5 in 50%-functional group)",
+      "Background factors (age, sex) not adjusted",
+      "Crohn's disease subjects may have intestinal-inflammation confounding",
+      "Double balloon prevented anorectal-side fluid traffic but not oral-side (small leak risk)"
+    ],
+    "verification_tier": "Full text retrieved via PMC (PMC11877951). Numbers grep-verified directly from full-text. Line-anchored citations available."
+  },
+
+  "wallace_2018_meta_analysis": {
+    "citation": "Wallace MC, Roberts RL, Nanavati P, Miner JN, Dalbeth N, Topless R, Merriman TR, Stamp LK (2018) Association between ABCG2 rs2231142 and poor response to allopurinol: replication and meta-analysis. Rheumatology (Oxford) 57(4):656-660. PMID 29342288. doi:10.1093/rheumatology/kex467",
+    "design": "Meta-analysis combining LASSO Long-term Allopurinol Safety Study (n=299) + Genetics of Gout in Aotearoa New Zealand (n=296) cohorts. Good response = sUA <6 mg/dl on allopurinol <=300 mg/day; poor response = sUA >=6 mg/dl despite allopurinol >300 mg/day.",
+    "key_finding_OR": 2.43,
+    "p_value": "6.2e-7",
+    "interpretation": "Q141K carriers have 2.43x odds of poor allopurinol response. Confirms Q141K-positive cohort is allopurinol-resistant — an indirect signal that the residual non-allopurinol-cleared urate burden in this group is the population most likely to benefit from a complementary mechanism (gut-lumen sink).",
+    "load_bearing_for_comp019": "PARTIAL — establishes that Q141K-positive gout patients have higher unmet ULT need at baseline but doesn't directly speak to whether oral uricase response is genotype-stratified.",
+    "verification_tier": "Abstract-level via PubMed. Numbers (OR 2.43, p 6.2e-7) verified from PubMed abstract."
+  },
+
+  "vora_2021_oxypurinol_pkpd": {
+    "citation": "Vora B, Brackman DJ, Zou L, Garcia-Cremades M, Sirota M, Savic RM, Giacomini KM (2021) Oxypurinol pharmacokinetics and pharmacodynamics in healthy volunteers: Influence of BCRP Q141K polymorphism and patient characteristics. Clin Transl Sci 14(4):1431-1443. PMID 33931953. PMC8301548. doi:10.1111/cts.12992",
+    "design": "Prospective clinical PK/PD (NCT02956278). Healthy volunteers, single oral 300 mg allopurinol + intensive blood sampling. Allopurinol Q141K-stratified PK/PD modeling + EHR analysis of clinical BCRP inhibitors and SUA.",
+    "key_findings": [
+      "Q141K homozygotes had 1.79x longer oxypurinol half-life (34.2 +/- 12.2 h vs 19.1 +/- 1.42 h)",
+      "Baseline SUA changed by 48.8% per 1 mg/dl change in serum creatinine",
+      "Patients on clinical BCRP inhibitors had higher SUA, phenocopying Q141K"
+    ],
+    "load_bearing_for_comp019": "PARTIAL — confirms Q141K alters drug PK and that BCRP inhibitor co-administration raises SUA, but doesn't measure intestinal uricase response stratification directly.",
+    "verification_tier": "Abstract-level. Numbers verified from PubMed abstract."
+  },
+
+  "stamp_2019_oxypurinol_minimum": {
+    "citation": "Stamp LK, Chapman PT, Barclay M, Horne A, Frampton C, Merriman TR, Wright DFB, Drake J, Dalbeth N (2019) Relationships Between Allopurinol Dose, Oxypurinol Concentration and Urate-Lowering Response. Clin Transl Sci 13(1):110-115. PMID 31444839. PMC6951452. doi:10.1111/cts.12686",
+    "design": "Sub-analysis of 24-month open RCT (ACTRN12611000845932), n=129. Receiver-operating-characteristic identification of minimum therapeutic oxypurinol concentration.",
+    "key_findings": [
+      "BMI (p=0.023), CrCL (p=0.037), ABCG2 Q141K (p=0.019), and SUA (p=0.004) all independently affect sensitivity to allopurinol",
+      "Minimum oxypurinol for sUA target ~104 umol/L; ROC AUC 0.65 (poor predictive accuracy)"
+    ],
+    "load_bearing_for_comp019": "PARTIAL — Q141K independently affects allopurinol sensitivity even after adjusting for renal function, supporting the view that Q141K's effect is partly extra-renal (gut). Indirect support for the flux-model hypothesis.",
+    "verification_tier": "Abstract-level."
+  },
+
+  "matsuo_2014_renal_overload": {
+    "citation": "Matsuo H, Takada T, Nakayama A, Shimizu T, Sakiyama M, Shimizu S, Chiba T, Nakashima H, Nakamura T, Takada Y, Sakurai Y, Hosoya T, Shinomiya N, Ichida K (2014) ABCG2 dysfunction increases the risk of renal overload hyperuricemia. Nucleosides Nucleotides Nucleic Acids 33(4-6):266-274. PMID 24940678. doi:10.1080/15257770.2013.866679",
+    "design": "Cohort of n=644 Japanese male hyperuricemic outpatients. ABCG2 functional class via genotype combinations of Q126* (rs72552713) + Q141K (rs2231142).",
+    "key_findings": [
+      "ABCG2 dysfunction INCREASES urinary urate excretion (UUE), p=3.6e-10 — counterintuitive but consistent with extra-renal (gut) failure shifting load to kidneys",
+      "Risk ratios for 'renal overload type' hyperuricemia: 1.36 (mild dysfunction), 1.66 (moderate), 2.35 (severe)",
+      "Q141K + Q126* genotype combinations define functional categories adopted by Miyazaki 2025"
+    ],
+    "load_bearing_for_comp019": "HIGH — establishes the Japanese functional-classification framework (100/75/50/25%) used in Miyazaki 2025; confirms extra-renal (gut) urate excretion is THE compartment Q141K impairs in vivo.",
+    "verification_tier": "Abstract-level. Numbers verified from PubMed abstract."
+  },
+
+  "takada_2014_mouse_knockout": {
+    "citation": "Takada T, Ichida K, Matsuo H, Nakayama A, Murakami K, Yamanashi Y, Kasuga H, Shinomiya N, Suzuki H (2014) ABCG2 dysfunction increases serum uric acid by decreased intestinal urate excretion. Nucleosides Nucleotides Nucleic Acids 33(4-6):275-281. PMID 24940679. doi:10.1080/15257770.2013.854902",
+    "design": "Abcg2-knockout mouse model. Direct measurement of urate flux through urine, bile, and intestinal lumen.",
+    "key_findings": [
+      "Mouse Abcg2 mediates urate transport (membrane vesicle assay)",
+      "In WT mice: renal pathway ~2/3 of total urate excretion; intestinal pathway ~1/3; biliary minor",
+      "In Abcg2-KO mice: renal urate excretion INCREASED (compensation); intestinal urate excretion <50% of WT; serum UA elevated"
+    ],
+    "load_bearing_for_comp019": "HIGH — establishes the canonical 2/3 renal vs 1/3 intestinal split and that ABCG2 LoF specifically reduces intestinal urate excretion (validates the mechanism Phase B models).",
+    "verification_tier": "Abstract-level."
+  },
+
+  "nakayama_2011_kinetics": {
+    "citation": "Nakayama A, Matsuo H, Takada T, Ichida K, Nakamura T, Ikebuchi Y, Ito K, Hosoya T, Kanai Y, Suzuki H, Shinomiya N (2011) ABCG2 is a high-capacity urate transporter and its genetic impairment increases serum uric acid levels in humans. Nucleosides Nucleotides Nucleic Acids 30(12):1091-1097. PMID 22132962. doi:10.1080/15257770.2011.633953",
+    "design": "Membrane vesicle ABCG2 transport assay + Japanese QTL n=739 cohort.",
+    "key_findings": {
+      "Km": "8.24 +/- 1.44 mM",
+      "Vmax": "6.96 +/- 0.89 nmol/min/mg protein",
+      "interpretation": "ABCG2 is a HIGH-CAPACITY urate exporter, retains function under physiological urate loading"
+    },
+    "load_bearing_for_comp019": "HIGH — provides the canonical ABCG2 transporter Km and Vmax for the flux model.",
+    "verification_tier": "Abstract-level. Numbers (Km 8.24 +/- 1.44 mM, Vmax 6.96 +/- 0.89 nmol/min/mg) verified from PubMed abstract."
+  },
+
+  "alln346_pierzynowska_2020_mouse": {
+    "citation": "Pierzynowska K, Deshpande A, Mosiichuk N, Terkeltaub R, Szczurek P, Salido E, Pierzynowski S, Grujic D (2020) Oral Treatment With an Engineered Uricase, ALLN-346, Reduces Hyperuricemia, and Uricosuria in Urate Oxidase-Deficient Mice. Front Med 7:569215. PMID 33330529. PMC7732547. doi:10.3389/fmed.2020.569215",
+    "design": "URKO (urate oxidase knockout) mouse model, n=55. 7-day and 19-day ALLN-346 oral therapy.",
+    "key_findings": [
+      "44% reduction in serum UA when ALLN-346 given with food over 24h",
+      "28% reduction when limited to 6h dosing window",
+      "FEUA normalized — i.e., the renal compensation reverts because gut is now handling the load",
+      "Notably: this mouse model is engineered URKO (no endogenous uricase) — so the mouse phenotype mimics the human urate-loading state without polymorphism stratification"
+    ],
+    "load_bearing_for_comp019": "MODERATE — establishes mechanism + magnitude of preclinical effect, but does NOT address Q141K stratification (mice don't have Q141K).",
+    "verification_tier": "Full text via PMC."
+  },
+
+  "alln346_phase_2a_human_study_201": {
+    "citation": "Allena Pharmaceuticals EULAR POS1157 abstract (2022) — Safety and efficacy of ALLN-346 oral enzyme therapy in patients with hyperuricemia and chronic kidney disease (CKD): Results of the Phase 2a Study 201",
+    "design": "Phase 2a Study 201, n=16 (11 Cohort A + 5 Cohort B), most stage 2 CKD. Randomized 2:1 ALLN-346:placebo, 5 capsules tid for 1 week, inpatient.",
+    "key_findings": [
+      "Statistically significant sUA reductions on days 5-7 (p<0.01 days 5-6, p<0.05 day 7)",
+      "Largest mean % reduction in stage 2 CKD; sUA reduction correlated with eGFR (r=0.95, p=0.003 in ALLN-346 group, no correlation in placebo)",
+      "No SAEs; no significant safety signals",
+      "**ABCG2 GENOTYPE STRATIFICATION NOT REPORTED**"
+    ],
+    "load_bearing_for_comp019": "HIGH (negative result for Phase A) — Study 201 demonstrates the mechanism works in a human cohort but does NOT stratify by Q141K. The eGFR-correlation finding hints that the responder population is the gut-loaded subset (CKD patients lose renal capacity, so gut compartment dominates), which OVERLAPS with the Q141K-vulnerability hypothesis but doesn't disambiguate it.",
+    "verification_tier": "EULAR abstract via WebSearch + Allena press release. Numbers (sample size 16, p values) consistent across multiple sources but NOT line-anchored to a peer-reviewed full-text paper."
+  },
+
+  "alln346_phase_2a_human_study_202": {
+    "citation": "Allena Pharmaceuticals (2022) corporate update — Study 202 Cohorts A (eGFR 60-89, n=7) + B (eGFR 30-59, n=12) outpatient 14-day study. Subsequently terminated September 2022 with only ~19 enrolled vs 17-site protocol.",
+    "design": "Phase 2a Study 202, broader cohort with milder CKD/no CKD (Cohort A) + stage 3 CKD (Cohort B). 2-week outpatient.",
+    "key_findings": [
+      "Mean % reduction in sUA at days 7 and 14: 0-5% in ALLN-346 arm vs +2 to +5% (increase) in placebo",
+      "**Not statistically significant vs placebo**",
+      "**ABCG2 GENOTYPE STRATIFICATION NOT REPORTED**"
+    ],
+    "load_bearing_for_comp019": "HIGH (negative result for Phase A) — Study 202 broadly failed to detect a significant effect in a less-CKD-burdened population. This is consistent with the hypothesis that the gut-lumen mechanism works best when (a) renal function is impaired, OR (b) the patient has a Q141K-positive genetic constraint shifting load to gut. Without ABCG2 stratification, can't separate these two explanations.",
+    "verification_tier": "Press-release tier (Allena Pharmaceuticals 2022). NOT peer-reviewed; the company subsequently wound down."
+  },
+
+  "prx115_phase_1": {
+    "citation": "Protalix BioTherapeutics (2024) — PRX-115 Phase 1 data presented at ACR Convergence 2024 late-breaking poster. Phase 2 'RELEASE' trial IND effective October 2025; topline expected H2 2027.",
+    "design": "Phase 1, n=64 (48 PRX-115 + 16 placebo). Single-dose IV PEGylated recombinant uricase (Candida-utilis-derived per Protalix pipeline).",
+    "key_findings": [
+      "Single dose rapidly reduced plasma urate at all dose levels",
+      "At highest dose, plasma urate <6.0 mg/dL for up to 12 weeks",
+      "Well-tolerated; AE rate similar to placebo (77.1% vs 81.3%)",
+      "**ABCG2 GENOTYPE STRATIFICATION NOT REPORTED**"
+    ],
+    "load_bearing_for_comp019": "LOW for the gut-lumen mechanism question (PRX-115 is IV/systemic, not gut-lumen) — but useful as a CONTROL: a systemic uricase that bypasses ABCG2 entirely and degrades urate in plasma directly. Effect size establishes the upper bound of what enzymatic urate degradation can achieve when transporter limits are removed.",
+    "verification_tier": "Conference-abstract + corporate press tier."
+  },
+
+  "rasburicase_clinical_corpus": {
+    "citation": "Rasburicase (Elitek) FDA 2001 approval; A. flavus uricase produced in S. cerevisiae; IV use for tumor lysis syndrome prophylaxis + treatment.",
+    "design": "Multiple Phase 3 + post-marketing surveillance studies, mostly tumor-lysis-syndrome (TLS) populations.",
+    "key_findings": [
+      "Reduces plasma uric acid >85% within 4h IV in TLS patients",
+      "Used off-label for refractory gout (small case series)",
+      "**No published RCT pre-stratifies rasburicase response by Q141K**",
+      "Allergic reactions (~5% incidence in repeated dosing) limit chronic use"
+    ],
+    "load_bearing_for_comp019": "LOW — IV systemic mechanism bypasses ABCG2; not informative for the gut-lumen question.",
+    "verification_tier": "FDA label + general clinical-pharmacology review tier."
+  },
+
+  "intestinal_lumen_urate_concentration": {
+    "physiological_baseline": {
+      "human_jejunum_baseline_per_miyazaki_2025_pg_per_uL": "Median 99.5 (IQR 10.1-194.0)",
+      "human_jejunum_after_5min_pg_per_uL": "Increased by median +119.9 across all subjects",
+      "unit_conversion_to_uM": "99.5 pg/uL = 99.5 ng/mL = 99.5 ug/L. Uric acid MW 168.11 g/mol -> 99.5 / 168.11 / 1000 = 0.59 uM. So baseline jejunal lumen urate is in the ~0.6 uM (sub-micromolar) range, NOT the 0.3 mM range stated in some review papers.",
+      "rat_jejunum_total_intestinal_juice_uric_acid_per_zhou_2017_PMID_29267361": "308.27 +/- 16.37 ug TOTAL across small intestinal juice (~2x serum total uric acid)",
+      "interpretation": "The platform's prior intestinal urate concentration estimate of ~0.3 mM (cited as 'rough value to verify' in the comp-019 brief) does NOT match Miyazaki 2025's direct human measurement, which is in the SUB-MICROMOLAR range. This is much lower than the ABCG2 Km of 8.24 mM, meaning ABCG2 operates well below saturation in vivo and intestinal urate handling is FLUX-LIMITED, not concentration-limited at the transporter."
+    },
+    "load_bearing_for_comp019": "VERY HIGH — this finding fundamentally reshapes the flux model. With baseline lumen urate << ABCG2 Km, the transporter operates linearly (rate proportional to substrate concentration). Adding luminal uricase pulls lumen [urate] toward zero, which approximately doubles the gradient driving ABCG2 secretion (sub-saturating regime).",
+    "verification_tier": "Direct full-text from Miyazaki 2025 PMC11877951 + abstract from Zhou 2017."
+  },
+
+  "uricase_kinetic_priors_for_phase_b": {
+    "a_flavus_uricase_km": {
+      "value_uM": "5-50 (consensus); cross-validation.md cites 2.1 mM (Biochemistry 1998); literature is variable depending on assay conditions",
+      "rasburicase_label_value_uM": "~25 uM (Sanofi label, Pichia-pastoris-produced equivalent)",
+      "_note": "The 0.089 uM value reported in some recent papers (Najjari 2022) appears to be in different reference state; 2.1 mM appears to be a wikipedia / older-Biochemistry citation that may conflate uricase with another peroxisomal enzyme. For the flux model we use Km ~25 uM, which is the regulatory-grade Sanofi rasburicase value, with sensitivity bounds 5-100 uM."
+    },
+    "a_flavus_uricase_specific_activity": {
+      "rasburicase_label_value": "8.3 U/mg (1 U = 1 umol urate/min at 37C, pH 8.5)",
+      "achievable_in_engineered_S_boulardii_per_ACS_synBio_2025": "365 umol/h/OD"
+    },
+    "verification_tier": "Multi-source mixed (FDA label + ACS Synth Bio 2025). The 25 uM Km and 8.3 U/mg specific activity are robust regulatory-grade values."
+  },
+
+  "q141k_allele_frequencies": {
+    "source": "gnomAD via Miyazaki 2025 + ALFA via Wallace 2018 + Cleophas 2017 review",
+    "east_asian_minor_allele_frequency": "29.1% (Allele Frequency Aggregator gnomAD ver 20230706150541)",
+    "other_asian_MAF": "32.2%",
+    "european_MAF": "10.3%",
+    "kinh_vietnamese_gout_cohort_per_nguyen_2025": "46.8% (vs 25% in healthy controls)",
+    "carrier_frequency_implications": {
+      "european_gout_carrier_estimate": "~20-25% (heterozygous + homozygous)",
+      "east_asian_gout_carrier_estimate": "~50-60%",
+      "rationale": "carrier_frequency = 1 - (1 - MAF)^2; for MAF 0.10 -> 19% carriers; MAF 0.30 -> 51% carriers"
+    },
+    "verification_tier": "Abstract + full-text quoted snippets."
+  },
+
+  "intestinal_urate_excretion_fraction": {
+    "canonical_value": "~33% of total daily urate elimination",
+    "sources_cited_consistently": [
+      "Takada 2014 mouse KO (Abcg2-KO mice -> 50% reduction in intestinal flux + serum UA elevation)",
+      "Sorensen 1962 / 1965 historical tracer studies (cited by Miyazaki 2025)",
+      "Multiple reviews including Cleophas 2017"
+    ],
+    "renal_fraction": "~67% of total daily urate elimination",
+    "load_bearing_for_comp019": "HIGH — sets the stake at risk in the gut compartment. If gut goes from 33% to ~16% (50%-functional ABCG2 per the Miyazaki gradient), the daily mass balance shifts and some compensatory renal uptick is needed, but the kidney's capacity is already constrained in many gout patients.",
+    "verification_tier": "Multi-source consensus + WebFetch verification of PMC8907525 review."
+  }
+}

@@ -358,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-enzyme-vision/" class="md-nav__link">
+      <a href="../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -371,13 +371,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -456,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-source-platform/" class="md-nav__link">
+      <a href="../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -4224,7 +4217,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -5386,6 +5379,12 @@
 <li>
 <p><strong>Should "upstream-CP0" be formally promoted to a new chokepoint class (CP-1, going further upstream) or kept as scope-expansion of CP0?</strong> comp-018 proposes scope-expansion (working term: "upstream-CP0") with the rationale that the priming chokepoint is unitary at the mechanism level (C5a generation) and subdividing CP0 into "downstream-CP0" (C5aR1 antagonism) vs "upstream-CP0" (everything proximal) reads cleanly within the existing framework. CP-1 would imply a fundamentally different priming mechanism, which isn't the case. Final naming decision is the user's; this question is queued until enough operational substance accumulates around CP0 to make the naming load-bearing. (Source: comp-018 §"Chokepoint-class naming proposal"; 2026-05-08 sweep Connection 2 / Item 2.)</p>
 </li>
+<li>
+<p><strong>What is the quantitative relationship between dietary rosmarinic acid intake (rosemary, lemon balm, spearmint, salvia, mentha) and gut-luminal + plasma rosmarinic acid concentrations?</strong> The load-bearing PK question for the dietary CP0 thread. comp-020 documented a <strong>44× IC50 spread</strong> across published assay formats (34 µM optimal per Englberger 1988 → 137–182 µM per Cimanga 1999 / Mu 2013); separately, human bioavailability data exists in Baba 2004 / Konishi 2005 / Nakazawa 1998 but the dietary-source → gut-luminal concentration → plasma Cmax chain is wide and incompletely characterized. Without a PK anchor, the "dietary CP0 coverage via rosmarinic acid" claim is mechanistically grounded but quantitatively unanchored. <strong>Partially consumed by comp-029 (2026-05-16):</strong> comp-029 used the IC50 distribution + bioavailability ranges with explicit uncertainty bounds, and the resulting YELLOW combined-CP0 verdict is partly attributable to the rosmarinic acid uncertainty (Spearman r = −0.658 for IC50 — the dominant sensitivity driver). comp-029 didn't resolve the open question; it consumed the uncertainty productively. <strong>Resolution path:</strong> human PK study of rosmarinic acid from dietary sources (single-dose, n=6–12, plasma + urine sampling over 24h) — proposed cost ~$15–25K. Partner / clinical-tier work, not OE-direct. Tightening comp-029's input range with measured PK data could flip the combined-CP0 verdict from YELLOW to GREEN. Until then, the dietary rosmarinic acid thread carries an explicit "PK unresolved" caveat per <a href="../complement-c5a-gout/"><code>complement-c5a-gout.md</code> §9.7</a> and <a href="../upstream-complement-verification-rerun-computational/"><code>upstream-complement-verification-rerun-computational.md</code></a>. (Source: 2026-05-15 sweep Open Question 1; comp-020 documents the 44× spread; comp-029 documents the YELLOW combined-CP0 verdict.)</p>
+</li>
+<li>
+<p><strong>Can the genotype-informed supplement quantification workflow be validated in a small multi-user pilot (N=5–10) before the larger H09 community-fermentation trial?</strong> The <a href="../genotype-informed-supplement-workflow/">genotype-informed-supplement-workflow</a> page (promoted from <code>self-experiment-protocol.md §12</code> on 2026-05-16) names the five-step closed-loop pipeline (genotype → variant-informed selection → produce/source → Tier 2 batch QC → calibrated dose → biomarker tracking) and is currently instantiated at n=1. <a href="../hypotheses/H09-community-fermentation-reliability/">H09 — Community Fermentation Reliability</a> explicitly depends on <strong>multi-user batch consistency</strong>, not single-user feasibility — so an N=5–10 pilot of the workflow itself, before any community-fermentation infrastructure is committed, would surface operational failure modes (user error in Tier 2 assays, batch CV exceeding the ±20% Tier 2 tolerance, genotype misclassification from consumer panels). Cost: ~$2,000–5,000 (genotyping + reagents + coordination). <strong>Practical constraints:</strong> real human-subjects work → IRB consideration (low-risk self-experimentation pilots may qualify for exemption, but multi-user data collection probably needs IRB review); recruitment (5–10 motivated participants willing to clinical-grade-genotype + run a stack + report biomarker data); coordination overhead. The <a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a> "Open follow-ups → Multi-user pilot validation" subsection already names this pilot as the natural next-step gate before H09. (Source: 2026-05-15 sweep Open Question 3; workflow page Phase 2 follow-up.)</p>
+</li>
 </ul>
 <h3 id="species-gap-and-translation">Species-gap and translation<a class="headerlink" href="#species-gap-and-translation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5517,7 +5516,7 @@
 - P2-5 Contamination-spike test (wild-strain spike, 5-generation tracking)
 - P2-6 Smartphone-camera colorimetric uric-acid assay validation
 - P2-11 Regulatory framework scoping pass (engineered-spore distribution path) — user-action-required (external consultant engagement)</p>
-<p><strong>Cross-references:</strong> <a href="../cross-validation/">cross-validation.md §Claim 5</a> (3/10 → 6/10 reframe), <a href="../open-source-platform/">open-source-platform.md §"Open Questions — Reliability of Community Fermentation"</a>, <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a>, <a href="../koji-endgame-strain/">koji-endgame-strain.md</a>, <a href="../self-experiment-protocol/">self-experiment-protocol.md</a> (Brian's n=1 home-fermentation data point), <a href="../operations/ward-1995-lab-access.md"><code>operations/ward-1995-lab-access.md</code></a> (note: at <code>operations/</code>, not <code>wiki/</code>), <code>synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md</code> (originating sweep item).</p>
+<p><strong>Cross-references:</strong> <a href="../cross-validation/">cross-validation.md §Claim 5</a> (3/10 → 6/10 reframe), <a href="../etc/open-source-platform/">open-source-platform.md §"Open Questions — Reliability of Community Fermentation"</a>, <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a>, <a href="../koji-endgame-strain/">koji-endgame-strain.md</a>, <a href="../self-experiment-protocol/">self-experiment-protocol.md</a> (Brian's n=1 home-fermentation data point), <a href="../operations/ward-1995-lab-access.md"><code>operations/ward-1995-lab-access.md</code></a> (note: at <code>operations/</code>, not <code>wiki/</code>), <code>synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md</code> (originating sweep item).</p>
 <h3 id="riskiest-assumption-1-does-the-gut-lumen-uricase-sink-produce-a-clinically-meaningful-sua-reduction-in-typical-non-ckd-gout-added-2026-05-15-the-platforms-1-load-bearing-scientific-bet-mechanism-side">Riskiest assumption #1 — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? <em>(added 2026-05-15, </em><em>the platform's #1 load-bearing scientific bet — mechanism side</em><em>)</em><a class="headerlink" href="#riskiest-assumption-1-does-the-gut-lumen-uricase-sink-produce-a-clinically-meaningful-sua-reduction-in-typical-non-ckd-gout-added-2026-05-15-the-platforms-1-load-bearing-scientific-bet-mechanism-side" title="Permanent link">&para;</a></h3>
 <p><strong>Falsification card committed:</strong> <a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/">H08 — Gut-Lumen Sink Platform Thesis</a> (stub, 2026-05-15). The full killshot menu, pre-committed thresholds, and assumption stack are queued as Phase 2 on the H08 card.</p>
 <p>The platform's load-bearing belief is that the gut-lumen sink produces a clinically meaningful SUA reduction in a typical (non-CKD) gout cohort, in the −0.5 to −1.0 mg/dL band predicted by the <a href="../uricase-abcg2-genotype-stratification-computational/">comp-019</a> flux model. The biology is sound (ABCG2 secretes ~33% of daily UA elimination into the gut lumen; comp-019's flux model is internally consistent against Miyazaki 2025 measurements) but the clinical-translation link is unvalidated:</p>
@@ -5568,7 +5567,7 @@
 <li><strong>P2-5 — Falsification card H02.</strong> Stub committed at <a href="../hypotheses/H02-engineered-lbp-thesis/"><code>hypotheses/H02-engineered-lbp-thesis.md</code></a>; full population queued.</li>
 <li><strong>P2-6 — Comparative chassis matrix for gout indication.</strong> <em>F. prausnitzii</em> vs. <em>Akkermansia</em> vs. <em>Bacteroides</em> vs. engineered <em>E. coli</em> Nissle — payload tractability, niche fit, engineering complexity.</li>
 </ul>
-<p>Phase 3 (content-triggered, not calendar-triggered): platform-framing reflection — does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Reflection note queued in <a href="../open-enzyme-vision/"><code>open-enzyme-vision.md</code></a>.</p>
+<p>Phase 3 (content-triggered, not calendar-triggered): platform-framing reflection — does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Reflection note queued in <a href="../etc/open-enzyme-vision/"><code>open-enzyme-vision.md</code></a>.</p>
 <h3 id="purine-degrading-bacteria-pdb-gut-as-independent-urate-disposal-organ-added-2026-05-15">Purine-Degrading Bacteria (PDB) — gut as independent urate disposal organ <em>(added 2026-05-15)</em><a class="headerlink" href="#purine-degrading-bacteria-pdb-gut-as-independent-urate-disposal-organ-added-2026-05-15" title="Permanent link">&para;</a></h3>
 <p>Full page: <a href="../purine-degrading-bacteria/">purine-degrading-bacteria.md</a>. The 2,8-dioxopurine pathway (Liu et al. 2023 Cell + 2025 Nat Microbiol) establishes ~15–25% of gut bacteria as a functionally distinct urate disposal system that evolved to compensate for hominid uricase loss. Engineered EcN with the full gene cluster (CBT2.0) achieved −63% plasma UA in hyperuricemic mice. Five priority follow-up threads:</p>
 <p><strong>PDB-Q1 — Quantitative SUA reduction from PDB restoration in humans with intact renal function.</strong> The FARMM study (n=30) had no statistical power to detect serum urate changes, and subjects had normal kidneys. What is the mg/dL effect in a typical gout patient? This number gates whether PDB restoration is "adjunctive to pharmacotherapy" or "potentially standalone." Required before designing any PDB clinical trial. No lit scan will resolve this — it requires a prospective study. Frame as a priority gap, not a computation. <em>(Human RCT or n-of-1 cohort; no current data)</em></p>
@@ -5623,9 +5622,9 @@
 <p>This is an <strong>active-search resource</strong>, not a static reference; expect updates as outreach lands. (source: ward-1995-lab-access-global.md)</p>
 <h3 id="community-fermentation-and-strain-stability">Community fermentation and strain stability<a class="headerlink" href="#community-fermentation-and-strain-stability" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Does engineered koji drift across generations of home propagation?</strong> Food-grade strains carry no antibiotic selection marker (correct for GRAS compliance), which removes the pressure that keeps the construct in the population. Chromosomal integration + redundant copies mitigate but don't eliminate. See <a href="../open-source-platform/">open-source-platform.md §Open Questions</a>.</li>
-<li><strong>Do 100 home fermenters of the same koji strain get consistent enzyme titers and NLRP3 activity?</strong> Home conditions ≠ lab conditions. Protocol robustness is the gating question for the decentralized vision. See <a href="../open-source-platform/">open-source-platform.md §Open Questions</a>, <a href="../synthesis/history/_pre-2026-05-08-archive.md">synthesis archive Open Question 3</a>.</li>
-<li><strong>Is distribution of engineered spores "drug manufacturing" (requires IND) or "research strain" (flexible)?</strong> Regulatory question with large downstream implications. See <a href="../open-source-platform/">open-source-platform.md §Open Questions</a>.</li>
+<li><strong>Does engineered koji drift across generations of home propagation?</strong> Food-grade strains carry no antibiotic selection marker (correct for GRAS compliance), which removes the pressure that keeps the construct in the population. Chromosomal integration + redundant copies mitigate but don't eliminate. See <a href="../etc/open-source-platform/">open-source-platform.md §Open Questions</a>.</li>
+<li><strong>Do 100 home fermenters of the same koji strain get consistent enzyme titers and NLRP3 activity?</strong> Home conditions ≠ lab conditions. Protocol robustness is the gating question for the decentralized vision. See <a href="../etc/open-source-platform/">open-source-platform.md §Open Questions</a>, <a href="../synthesis/history/_pre-2026-05-08-archive.md">synthesis archive Open Question 3</a>.</li>
+<li><strong>Is distribution of engineered spores "drug manufacturing" (requires IND) or "research strain" (flexible)?</strong> Regulatory question with large downstream implications. See <a href="../etc/open-source-platform/">open-source-platform.md §Open Questions</a>.</li>
 </ul>
 <h3 id="regulatory">Regulatory<a class="headerlink" href="#regulatory" title="Permanent link">&para;</a></h3>
 <ul>

@@ -1,0 +1,39 @@
+{
+  "description": "Dietary polyphenol supplements evaluated for ABCG2 (BCRP) inhibition at gut-lumen concentrations",
+  "compounds": [
+    {
+      "name": "Quercetin",
+      "chembl_id": "CHEMBL50",
+      "molecular_weight_g_mol": 302.24,
+      "typical_supplement_dose_mg": 500,
+      "bioavailability_fraction": 0.17,
+      "aqueous_solubility_mg_L": 7.0,
+      "intestinal_solubility_mg_L": 15.0,
+      "solubility_note": "Aqueous ~7 mg/L (pH 7); intestinal estimate ~15 mg/L accounting for bile salts and pH 6.5-7.0. Solubility is dose-limiting at supplement doses.",
+      "bioavailability_source": "Manach 2005, PMID 15640486 — mean bioavailability ~17% across studies"
+    },
+    {
+      "name": "EGCG",
+      "chembl_id": "CHEMBL297453",
+      "molecular_weight_g_mol": 458.37,
+      "typical_supplement_dose_mg": 400,
+      "bioavailability_fraction": 0.02,
+      "aqueous_solubility_mg_L": 500.0,
+      "intestinal_solubility_mg_L": 500.0,
+      "solubility_note": "EGCG is water-soluble; ~500 mg/L is conservative. Dose-limiting factor is bioavailability, not solubility.",
+      "bioavailability_source": "Literature consensus ~2%; absorbed mainly as glucuronide/sulfate conjugates",
+      "mechanism_note": "EGCG modulates ABCG2 via expression downregulation (mRNA/protein level, 24-72h), not acute transport inhibition. The IC50 occupancy framework does not apply. See ic50_data.json for details."
+    },
+    {
+      "name": "Curcumin",
+      "chembl_id": "CHEMBL140",
+      "molecular_weight_g_mol": 368.38,
+      "typical_supplement_dose_mg": 1000,
+      "bioavailability_fraction": 0.01,
+      "aqueous_solubility_mg_L": 0.6,
+      "intestinal_solubility_mg_L": 5.0,
+      "solubility_note": "Aqueous ~0.6 mg/L (virtually insoluble). In intestinal fluid with bile/lipids: ~2-8 mg/L; 5 mg/L used as central estimate. Solubility is the dominant dose-limiting constraint.",
+      "bioavailability_source": "Metzler 2012, PMID 22996406 — <1% systemic bioavailability; essentially all oral dose remains in gut lumen"
+    }
+  ]
+}

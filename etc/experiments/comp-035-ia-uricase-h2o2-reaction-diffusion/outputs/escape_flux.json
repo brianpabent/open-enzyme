@@ -1,0 +1,25 @@
+{
+  "pickering_escape_fraction_through_catalase_shell": {
+    "n": 20000,
+    "mean": 0.99173759545032,
+    "median": 0.9977301616860792,
+    "p5": 0.9616399064880604,
+    "p25": 0.9922616239888647,
+    "p75": 0.9993377523769119,
+    "p95": 0.9998711774346781,
+    "min": 0.7980415988782813,
+    "max": 0.9999755855316147
+  },
+  "fusion_total_escape_fraction_through_intra_and_bulk": {
+    "n": 20000,
+    "mean": 0.7181202591552966,
+    "median": 0.7645293981010395,
+    "p5": 0.4151514479855091,
+    "p25": 0.650751344301124,
+    "p75": 0.8239939406149561,
+    "p95": 0.8539645448545772,
+    "min": 0.30016488514654716,
+    "max": 0.8599962566524111
+  },
+  "free_NO_intramolecular_scavenging_so_only_bulk_capture": "Free coformulated has no intramolecular trap. The relevant 'escape' is the joint-volume bulk steady-state, reported in steady_state_h2o2.json."
+}

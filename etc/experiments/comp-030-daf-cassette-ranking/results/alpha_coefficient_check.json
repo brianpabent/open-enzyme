@@ -1,0 +1,35 @@
+{
+  "n_protein_distinct": 720,
+  "overall_pLDDT": {
+    "mean": 88.79206057460534,
+    "std": 0.4737237428798523,
+    "min": 87.64303284032005,
+    "max": 89.84509536198208,
+    "pct_above_75": 100.0,
+    "pct_above_80": 100.0
+  },
+  "direct_secretion_pLDDT": {
+    "mean": 88.81692412117171,
+    "std": 0.47762207052415906,
+    "min": 87.64303284032005,
+    "max": 89.84509536198208,
+    "n": 216
+  },
+  "glaA_fusion_pLDDT": {
+    "mean": 88.78140476893407,
+    "std": 0.4716421021616931,
+    "min": 87.64303284032005,
+    "max": 89.74705721650804,
+    "n": 504
+  },
+  "alpha_coefficient_check_verdict": "CORROBORATED: pLDDT broadly high; consistent with CCP/SCR fast-folding, alpha=0.3-0.6",
+  "framework_prior_alpha": {
+    "range": [
+      0.3,
+      0.6
+    ],
+    "central": 0.45,
+    "source": "Schmidt 2010 PMC2806952 (NMR/SAXS CCP rigid-unit)"
+  },
+  "interpretation": "High pLDDT (>80) broadly across candidates corroborates the CCP/SCR fast-folding hypothesis (alpha=0.3-0.6). Low pLDDT would suggest higher PDI engagement than Schmidt 2010 structural inference predicts. The direct vs. fusion class comparison tests whether the glaA carrier context degrades fold-quality of the CCP/SCR domains."
+}

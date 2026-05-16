@@ -1,0 +1,341 @@
+{
+  "comp_id": "comp-008",
+  "date": "2026-05-16",
+  "question": "Is F. prausnitzii A2-165 (= F. duncaniae) engineering-tractable for OE-relevant payloads, and which payloads rank highest by composite feasibility?",
+  "chassis": {
+    "name": "Faecalibacterium prausnitzii A2-165 (now F. duncaniae per Sakamoto 2022 IJSEM, doi:10.1099/ijsem.0.005379)",
+    "genome_gc_percent": 56.6,
+    "genome_size_mbp_range": "2.78 - 3.23",
+    "oxygen_tolerance": "Strict obligate anaerobe (dies under aerobic conditions within minutes; though oxygen-tolerance under riboflavin/cysteine conditions has been characterized \u2014 extracellular electron transfer via riboflavin)",
+    "transformation_protocol_established": false
+  },
+  "payload_evaluations": {
+    "butyrate_pathway_boost_BCoAT": {
+      "payload": "butyrate_pathway_boost_BCoAT",
+      "factor_scores": {
+        "cluster_size_tractability": 0.95,
+        "GC_content_codon_compatibility": 1.0,
+        "secretion_pathway_availability": 1.0,
+        "host_physiology_compatibility": 1.0,
+        "engineering_toolkit_maturity": 0.25,
+        "host_toxicity_risk": 0.75,
+        "heterologous_expression_precedent": 0.55,
+        "folding_complexity": 1.0
+      },
+      "factor_rationales": {
+        "cluster_size_tractability": "Single 448-aa ORF (1.3 kb). Native gene \u2014 option to chromosomally duplicate at native locus or supplement on plasmid.",
+        "GC_content_codon_compatibility": "NATIVE F. prausnitzii gene. CAI = 1.0 by definition. Zero codon-optimization cost.",
+        "secretion_pathway_availability": "Butyryl-CoA:acetate CoA-transferase is cytoplasmic. Product (butyrate) diffuses across cell membrane as a small molecule. No secretion engineering needed.",
+        "host_physiology_compatibility": "Native enzyme in native pathway in native host. No physiology mismatch. Anaerobic-pathway-anaerobic-host alignment is total.",
+        "engineering_toolkit_maturity": "Shared factor. Even for a native-payload boost, the cassette must still be integrated; transformation toolkit gap applies.",
+        "host_toxicity_risk": "Native overexpression risks fitness loss via diversion of acetate / acetyl-CoA from primary metabolism, especially if cassette is on a high-copy plasmid. Manageable via copy-number tuning / inducible promoter. Not host-toxic in the toxicity sense.",
+        "heterologous_expression_precedent": "Closely-related-chassis precedent: Clostridium tyrobutyricum, C. acetobutylicum butyrate-pathway boost via plasmid-based overexpression (biofuel literature, well-established). F. prausnitzii-specific precedent: zero. Motif maturity is high; species-level precedent is zero.",
+        "folding_complexity": "Native enzyme \u2014 folding in native cytoplasm is by definition the optimal case."
+      },
+      "factor_sensitivity_ranges": {
+        "cluster_size_tractability": {
+          "low": 0.9,
+          "high": 1.0
+        },
+        "GC_content_codon_compatibility": {
+          "low": 0.95,
+          "high": 1.0
+        },
+        "secretion_pathway_availability": {
+          "low": 0.95,
+          "high": 1.0
+        },
+        "host_physiology_compatibility": {
+          "low": 0.95,
+          "high": 1.0
+        },
+        "engineering_toolkit_maturity": {
+          "low": 0.15,
+          "high": 0.35
+        },
+        "host_toxicity_risk": {
+          "low": 0.65,
+          "high": 0.85
+        },
+        "heterologous_expression_precedent": {
+          "low": 0.4,
+          "high": 0.7
+        },
+        "folding_complexity": {
+          "low": 0.95,
+          "high": 1.0
+        }
+      },
+      "min_factor": "engineering_toolkit_maturity",
+      "min_factor_value": 0.25,
+      "geometric_mean": 0.748,
+      "geometric_mean_low": 0.641,
+      "geometric_mean_high": 0.822,
+      "verdict": "GREEN",
+      "verdict_low": "GREEN",
+      "verdict_high": "GREEN"
+    },
+    "scr1_truncation_SCR1to4": {
+      "payload": "scr1_truncation_SCR1to4",
+      "factor_scores": {
+        "cluster_size_tractability": 0.95,
+        "GC_content_codon_compatibility": 0.8,
+        "secretion_pathway_availability": 0.6,
+        "host_physiology_compatibility": 0.9,
+        "engineering_toolkit_maturity": 0.25,
+        "host_toxicity_risk": 0.9,
+        "heterologous_expression_precedent": 0.25,
+        "folding_complexity": 0.45
+      },
+      "factor_rationales": {
+        "cluster_size_tractability": "280 aa truncated construct (~840 bp). Trivially clonable.",
+        "GC_content_codon_compatibility": "Same human ~58% GC vs Fp 56.6%. Codon optimization moderate.",
+        "secretion_pathway_availability": "Sec-translocon present. Same caveat as lactoferrin re: disulfide-rich secretion. 8 disulfides in SCR1-4 \u2014 less than lactoferrin's 17 but still requires oxidative folding.",
+        "host_physiology_compatibility": "No O2 requirement. CR1 (a host complement regulator) is mechanistically inert to bacterial physiology \u2014 F. prausnitzii has no classical-pathway complement target.",
+        "engineering_toolkit_maturity": "Shared factor.",
+        "host_toxicity_risk": "CR1 is a host immune regulator; no bacterial target. Native serpins / complement regulators don't perturb commensal physiology.",
+        "heterologous_expression_precedent": "Zero precedent for soluble complement regulator in obligate anaerobe. comp-006/012 evaluated DAF SCR1-4 in koji (HIGH risk) \u2014 informs the parallel for LBP but doesn't establish a positive precedent.",
+        "folding_complexity": "8 disulfides require oxidative folding. Smaller magnitude than lactoferrin's 17 disulfides, but same fundamental anoxic-environment-folding question. SCR/sushi/CCP-fold proteins are tolerant of disulfide isomerization (more robust than serpin-fold lactoferrin) \u2014 slight upward adjustment vs. lactoferrin."
+      },
+      "factor_sensitivity_ranges": {
+        "cluster_size_tractability": {
+          "low": 0.9,
+          "high": 1.0
+        },
+        "GC_content_codon_compatibility": {
+          "low": 0.7,
+          "high": 0.9
+        },
+        "secretion_pathway_availability": {
+          "low": 0.45,
+          "high": 0.75
+        },
+        "host_physiology_compatibility": {
+          "low": 0.8,
+          "high": 0.95
+        },
+        "engineering_toolkit_maturity": {
+          "low": 0.15,
+          "high": 0.35
+        },
+        "host_toxicity_risk": {
+          "low": 0.8,
+          "high": 0.95
+        },
+        "heterologous_expression_precedent": {
+          "low": 0.15,
+          "high": 0.35
+        },
+        "folding_complexity": {
+          "low": 0.3,
+          "high": 0.6
+        }
+      },
+      "min_factor": "engineering_toolkit_maturity",
+      "min_factor_value": 0.25,
+      "geometric_mean": 0.565,
+      "geometric_mean_low": 0.433,
+      "geometric_mean_high": 0.678,
+      "verdict": "YELLOW",
+      "verdict_low": "YELLOW",
+      "verdict_high": "GREEN"
+    },
+    "lactoferrin_HumanFullLength": {
+      "payload": "lactoferrin_HumanFullLength",
+      "factor_scores": {
+        "cluster_size_tractability": 0.85,
+        "GC_content_codon_compatibility": 0.8,
+        "secretion_pathway_availability": 0.6,
+        "host_physiology_compatibility": 0.85,
+        "engineering_toolkit_maturity": 0.25,
+        "host_toxicity_risk": 0.7,
+        "heterologous_expression_precedent": 0.3,
+        "folding_complexity": 0.4
+      },
+      "factor_rationales": {
+        "cluster_size_tractability": "Single 691-aa mature ORF (~2.1 kb). Larger than uricase but well within single-vector range.",
+        "GC_content_codon_compatibility": "Human ~58% GC vs Fp 56.6% \u2014 only 1.4 percentage point mismatch. Best GC match of any payload in this set. Codon optimization still recommended for mammalian-table -> Firmicutes-table; ~$3-5K DNA synthesis.",
+        "secretion_pathway_availability": "Sec-translocon annotated; native MAM secretion proves the pathway functions. But heterologous-payload secretion titers from Fp never measured. 17 disulfides in mature lactoferrin require post-translocational oxidative folding \u2014 Bacillus / Firmicutes Sec pathway produces proteins to the cell exterior where disulfide bond formation occurs (e.g. DsbA/DsbB-class systems); native F. prausnitzii disulfide machinery less characterized.",
+        "host_physiology_compatibility": "No O2 dependence. Iron-sequestration function aligns with anaerobic-lumen physiology (anaerobic pathogens compete for iron). Minor risk: lactoferrin's iron-sequestration could starve F. prausnitzii itself, since Fp also requires iron \u2014 manage via inducible promoter or strain-engineered iron uptake.",
+        "engineering_toolkit_maturity": "Shared factor.",
+        "host_toxicity_risk": "Native lactoferrin doesn't kill F. prausnitzii in vivo (Fp and lactoferrin coexist in healthy gut). Heterologous overexpression risk is iron-starvation of the host, mitigatable with inducible promoter.",
+        "heterologous_expression_precedent": "Extensive precedent in non-anaerobe heterologous hosts (P. pastoris, A. niger, transgenic mammals). Zero precedent in obligate anaerobe. comp-005 evaluated koji chassis HIGH risk for stability \u2014 LBP track was framed precisely to address this.",
+        "folding_complexity": "MAJOR concern. 17 disulfides require oxidative folding. Gut lumen is anoxic \u2014 disulfide bond formation in anoxic environment requires alternative oxidant (e.g. periplasmic-equivalent space + heterologously expressed DsbA, or methodologically untested in obligate anaerobes). Disulfide-rich secreted protein expression in obligate anaerobes is essentially unprecedented."
+      },
+      "factor_sensitivity_ranges": {
+        "cluster_size_tractability": {
+          "low": 0.8,
+          "high": 0.9
+        },
+        "GC_content_codon_compatibility": {
+          "low": 0.7,
+          "high": 0.9
+        },
+        "secretion_pathway_availability": {
+          "low": 0.45,
+          "high": 0.75
+        },
+        "host_physiology_compatibility": {
+          "low": 0.75,
+          "high": 0.95
+        },
+        "engineering_toolkit_maturity": {
+          "low": 0.15,
+          "high": 0.35
+        },
+        "host_toxicity_risk": {
+          "low": 0.6,
+          "high": 0.8
+        },
+        "heterologous_expression_precedent": {
+          "low": 0.2,
+          "high": 0.4
+        },
+        "folding_complexity": {
+          "low": 0.3,
+          "high": 0.55
+        }
+      },
+      "min_factor": "engineering_toolkit_maturity",
+      "min_factor_value": 0.25,
+      "geometric_mean": 0.54,
+      "geometric_mean_low": 0.423,
+      "geometric_mean_high": 0.659,
+      "verdict": "YELLOW",
+      "verdict_low": "YELLOW",
+      "verdict_high": "GREEN"
+    },
+    "uricase_AspergillusFlavus": {
+      "payload": "uricase_AspergillusFlavus",
+      "factor_scores": {
+        "cluster_size_tractability": 0.95,
+        "GC_content_codon_compatibility": 0.7,
+        "secretion_pathway_availability": 1.0,
+        "host_physiology_compatibility": 0.1,
+        "engineering_toolkit_maturity": 0.25,
+        "host_toxicity_risk": 0.2,
+        "heterologous_expression_precedent": 0.2,
+        "folding_complexity": 0.85
+      },
+      "factor_rationales": {
+        "cluster_size_tractability": "Single 302-aa ORF (906 bp), trivial cluster size.",
+        "GC_content_codon_compatibility": "A. flavus CDS ~52% GC vs Fp 56.6%. Small GC mismatch, eukaryotic codon-table mismatch. Codon optimization moderate-cost (~$1-2K DNA synthesis).",
+        "secretion_pathway_availability": "Uricase is cytoplasmic/peroxisomal natively; functions intracellularly. No secretion engineering needed. But this raises the OPPOSITE problem: substrate (uric acid) must enter cell, product (allantoin) must exit.",
+        "host_physiology_compatibility": "DOMINANT BLOCKER. Uricase requires O2 as substrate. F. prausnitzii is a strict anaerobe in an anoxic colonic lumen. Heterologous H2O2 production from uricase activity ALSO toxic to the anaerobic host (H2O2 lethal to obligate anaerobes without catalase, which F. prausnitzii lacks).",
+        "engineering_toolkit_maturity": "Shared factor across payloads. No published F. prausnitzii transformation; closest precedent is Lachnospiraceae conjugation (Roseburia, E. rectale per Sheridan 2019/2020). Estimated 1-2 yr adaptation needed.",
+        "host_toxicity_risk": "Uricase produces stoichiometric H2O2 per uric acid molecule. F. prausnitzii lacks robust catalase; H2O2 destroys obligate anaerobes via [Fe-S] cluster damage. Adding heterologous catalase as a co-payload is engineerable but compounds the campaign.",
+        "heterologous_expression_precedent": "Zero precedent for uricase in obligate anaerobe. Rasburicase (S. cerevisiae expressing A. flavus uricase) is the canonical engineering precedent \u2014 aerobic / fermentation-batch context, fundamentally different physiology.",
+        "folding_complexity": "Cofactorless single-domain enzyme. No disulfides, no metals, no glycosylation. Folding in bacterial cytoplasm is well-precedented (Rasburicase in S. cerevisiae)."
+      },
+      "factor_sensitivity_ranges": {
+        "cluster_size_tractability": {
+          "low": 0.9,
+          "high": 1.0
+        },
+        "GC_content_codon_compatibility": {
+          "low": 0.6,
+          "high": 0.8
+        },
+        "secretion_pathway_availability": {
+          "low": 0.95,
+          "high": 1.0
+        },
+        "host_physiology_compatibility": {
+          "low": 0.05,
+          "high": 0.2
+        },
+        "engineering_toolkit_maturity": {
+          "low": 0.15,
+          "high": 0.35
+        },
+        "host_toxicity_risk": {
+          "low": 0.1,
+          "high": 0.35
+        },
+        "heterologous_expression_precedent": {
+          "low": 0.1,
+          "high": 0.3
+        },
+        "folding_complexity": {
+          "low": 0.75,
+          "high": 0.95
+        }
+      },
+      "min_factor": "host_physiology_compatibility",
+      "min_factor_value": 0.1,
+      "geometric_mean": 0.393,
+      "geometric_mean_low": 0.271,
+      "geometric_mean_high": 0.523,
+      "verdict": "YELLOW",
+      "verdict_low": "RED",
+      "verdict_high": "YELLOW"
+    }
+  },
+  "ranking": [
+    {
+      "payload": "butyrate_pathway_boost_BCoAT",
+      "score": 0.748,
+      "score_range": [
+        0.641,
+        0.822
+      ],
+      "verdict": "GREEN"
+    },
+    {
+      "payload": "scr1_truncation_SCR1to4",
+      "score": 0.565,
+      "score_range": [
+        0.433,
+        0.678
+      ],
+      "verdict": "YELLOW"
+    },
+    {
+      "payload": "lactoferrin_HumanFullLength",
+      "score": 0.54,
+      "score_range": [
+        0.423,
+        0.659
+      ],
+      "verdict": "YELLOW"
+    },
+    {
+      "payload": "uricase_AspergillusFlavus",
+      "score": 0.393,
+      "score_range": [
+        0.271,
+        0.523
+      ],
+      "verdict": "YELLOW"
+    }
+  ],
+  "verdict_thresholds": {
+    "GREEN": ">= 0.6",
+    "YELLOW": "0.3 - 0.6",
+    "RED": "< 0.3"
+  },
+  "scoring_method": "Eight feasibility factors per payload (0.0 catastrophic to 1.0 no obstacle). Geometric mean across factors. Geometric mean punishes any single very-low factor more than arithmetic mean \u2014 appropriate epistemology when every factor must succeed.",
+  "shared_blocker": "The engineering-toolkit-maturity factor applies to ALL payloads at value ~0.25 \u2014 F. prausnitzii has no published transformation protocol as of 2026-05. This is a FIXED FACILITY cost that gets paid once for any engineering campaign, not a per-payload cost. Conditional on the toolkit being established (an estimated 1-2 yr investment), the per-payload feasibility re-ranks differently \u2014 see summary.md 'Toolkit-conditional ranking' section.",
+  "toolkit_conditional_ranking": [
+    {
+      "payload": "butyrate_pathway_boost_BCoAT",
+      "non_toolkit_geometric_mean": 0.875,
+      "verdict": "GREEN"
+    },
+    {
+      "payload": "scr1_truncation_SCR1to4",
+      "non_toolkit_geometric_mean": 0.635,
+      "verdict": "GREEN"
+    },
+    {
+      "payload": "lactoferrin_HumanFullLength",
+      "non_toolkit_geometric_mean": 0.603,
+      "verdict": "GREEN"
+    },
+    {
+      "payload": "uricase_AspergillusFlavus",
+      "non_toolkit_geometric_mean": 0.419,
+      "verdict": "YELLOW"
+    }
+  ]
+}

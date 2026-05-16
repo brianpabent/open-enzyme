@@ -1,0 +1,77 @@
+{
+  "pickering_emulsion_liu_2025": {
+    "primary_source": "Liu Y, Gan J, Hu Z, Zhang Y, Yang B, Cao F, Zheng X. Enzymes assembled pickering emulsion as self-cascade bioreactor to reprogram inflammatory microenvironment for gouty arthritis therapy. J Nanobiotechnology 2025;24(1):51. PMID 41390400, DOI 10.1186/s12951-025-03901-1.",
+    "droplet_hydrodynamic_diameter_nm": {
+      "PECU_uri_cat_only": 309.7,
+      "PECU_D_with_mannose": 453.3,
+      "PEBR_with_MTX": 813.8,
+      "comment": "Three formulation tiers reported. PEBR (with mannose targeting + MTX in oil core) is the in vivo construct."
+    },
+    "interfacial_enzyme_density_per_um2": {
+      "uri": 5.17e10,
+      "cat": 3.80e10,
+      "total": 4.55e10,
+      "comment": "Quoted from Liu 2025 supplemental text: 'interfacial enzyme density of the PEBR has been calculated and supplemented as 4.55 × 10^? /µm², with the interfacial density of URI enzyme being 5.17 × 10^? /µm² and that of CAT enzyme being 3.80 × 10^? /µm²'. The full-text rendering swallowed the exponent superscript; geometric back-of-envelope sanity check assuming ~10 nm enzyme footprint: max ~10^4 enzymes/µm² (one enzyme per 100 nm²). So 5.17e10/µm² is two orders of magnitude too dense to be literal — this must be 5.17 x 10^10 /m² = 5.17 x 10^(-2) /µm². Reverse-engineering from total protein 2.39 mg/mL with URI:CAT 4:1, MW uricase 34 kDa, MW catalase 60 kDa: average enzyme density at the interface is ~10^3-10^4 enzymes/µm² for sub-µm droplets at this loading. WE FLAG THIS UNIT INTERPRETATION AS PARTIAL [UNVERIFIED] — the full text shows '5.17 × 10' followed by what is rendered without exponent (likely '4' through '10' in the original PDF). Use the back-of-envelope ~10^4 /µm² as the working number with explicit ±1 order of magnitude uncertainty in sensitivity analysis.",
+      "operating_density_per_um2": {
+        "central": 1.0e4,
+        "lower": 1.0e3,
+        "upper": 1.0e5,
+        "rationale": "Back-of-envelope reverse-engineered from absolute loading and droplet surface area; covers the order-of-magnitude unit ambiguity in Liu 2025."
+      }
+    },
+    "fret_donor_acceptor_distance_nm": {
+      "central": 8.0,
+      "upper": 10.0,
+      "comment": "Liu 2025 reports FRET efficiency >85%, indicating donor-acceptor distance <10 nm (Förster R0 for Cy3-Cy5 ≈ 5.4-6.0 nm; E>0.85 → r < R0 × (0.15/0.85)^(1/6) ≈ R0 × 0.72 ≈ 4-4.5 nm). The paper's <10 nm claim is conservative. Use 4-10 nm as the operating range."
+    },
+    "fret_donor_acceptor_distance_lower_nm": 4.0,
+    "absolute_loading_per_dose": {
+      "total_protein_concentration_mg_per_mL": 2.39,
+      "uri_mg": 0.92,
+      "cat_mg": 0.23,
+      "uri_to_cat_mass_ratio": 4.0,
+      "dose_volume_uL": 20,
+      "msu_concentration_in_dose_mg_per_mL": 25.0
+    },
+    "encapsulation_efficiency_mtx_percent": 80
+  },
+  "uricase_catalase_fusion_protein": {
+    "primary_source": "Schiavon O, Caliceti P, Ferruti P, Veronese FM. Bioconjugates with poly(N-acryloylmorpholine) and uricase, monoaspartylated uricase, and uricase-PEG fusion. Various early-2000s J Bioconjug Chem / J Biomater Sci Polym Ed papers describe uricase-PEG and uricase-catalase chemical conjugates. NO native genetic fusion of A. flavus uricase to a catalase has been published as a clinical or preclinical candidate; the architecture in the literature is largely chemical crosslinking or PEG-bridged constructs. We model the architecture as a flexible genetic fusion or short bifunctional crosslink with active-site separation 1-3 nm.",
+    "active_site_separation_nm": {
+      "central": 2.0,
+      "lower": 1.0,
+      "upper": 5.0,
+      "comment": "For a single fusion protein with uricase and catalase domains connected by a short linker (e.g., 15-20 aa flexible linker, end-to-end ~3-6 nm but folded geometry brings active sites closer; uricase active site is on tetramer face). Range 1-5 nm covers the design space."
+    },
+    "uri_to_cat_stoichiometry": {
+      "central": 1.0,
+      "comment": "1:1 in a genetic fusion (each uricase monomer fused to one catalase monomer). Alternative architectures (2:1 or 1:2) can shift this, but the 1:1 case is the canonical Schiavon class."
+    },
+    "effective_concentration_uM": {
+      "central": 10.0,
+      "lower": 1.0,
+      "upper": 100.0,
+      "comment": "Plausible IA delivered enzyme concentration after dilution into synovial fluid (~2-4 mL knee). 1-100 µM covers low-dose research to high-dose therapeutic regimes."
+    }
+  },
+  "free_co_formulated": {
+    "primary_source": "Schalkwijk J, van den Berg WB, van de Putte LB, Joosten LA. An experimental model for hydrogen peroxide-induced tissue damage. Effects of a single inflammatory mediator on (peri)articular tissues. Arthritis Rheum 1986;29(4):532-8. PMID 3707631. The 'rescue' geometry — intra-articular catalase administered to scavenge GOx-generated H2O2 — anchors the free-enzyme co-formulation case.",
+    "uri_concentration_uM": {
+      "central": 10.0,
+      "lower": 1.0,
+      "upper": 100.0,
+      "comment": "Same range as fusion case for fair comparison."
+    },
+    "cat_concentration_uM": {
+      "central": 10.0,
+      "lower": 1.0,
+      "upper": 100.0
+    },
+    "mean_inter_enzyme_spacing_nm": {
+      "comment": "Computed from concentration: for [E] in M, mean spacing d = (N_A × [E])^(-1/3). At 10 µM total enzyme: d ≈ (6.022e23 × 10e-6 × 1000)^(-1/3) m = ~55 nm. At 1 µM: ~120 nm. At 100 µM: ~25 nm.",
+      "central_at_10uM_total": 55.0,
+      "lower_at_100uM_total": 25.0,
+      "upper_at_1uM_total": 120.0
+    }
+  }
+}

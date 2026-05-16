@@ -1,0 +1,11 @@
+{
+  "description": "Reference parameters for the small intestine gut-lumen compartment relevant to ABCG2-mediated urate transport",
+  "small_intestine_lumen_volume_L": 0.25,
+  "volume_source": "Commonly cited reference value for fasted small intestinal fluid volume; Johnson 1997 GI physiology; 250 mL is the conservative (high) estimate — lower volume estimates (100-150 mL proximal SI) would increase effective concentration",
+  "ph_range": [6.5, 7.0],
+  "ph_source": "Proximal small intestine pH range; ABCG2 is expressed throughout SI with peak in duodenum/jejunum",
+  "transit_time_hours": 2.0,
+  "transit_note": "Small intestine transit ~2-4h; solubility-limited drugs reach peak concentration in proximal SI before dilution/transit",
+  "abcg2_expression_note": "ABCG2 highest in duodenum and proximal jejunum (apical surface). The 250 mL whole-SI estimate over-dilutes relative to the proximal compartment where ABCG2 density is highest — effective inhibition concentrations may be higher than model outputs suggest.",
+  "modeling_approach": "Effective dissolved concentration = min(dose-limited concentration, solubility cap). Risk ratio = effective concentration / IC50. Hill equation with n=1: fractional inhibition = ratio / (ratio + 1)."
+}

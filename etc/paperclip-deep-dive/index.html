@@ -356,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../open-enzyme-vision/" class="md-nav__link">
+      <a href="../../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -369,13 +369,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -454,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../open-source-platform/" class="md-nav__link">
+      <a href="../../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -4220,7 +4213,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -4859,7 +4852,7 @@
 </ul>
 <h3 id="2-sweep-daemon-integration-decided-2026-05-05-do-not-integrate">2. Sweep-daemon integration — DECIDED 2026-05-05: do not integrate<a class="headerlink" href="#2-sweep-daemon-integration-decided-2026-05-05-do-not-integrate" title="Permanent link">&para;</a></h3>
 <p><strong>Decision: do not wire Paperclip into the three-pass sweep daemon.</strong> The reliability finding above (<code>map</code> operator hallucinations) is disqualifying for any architecture that lands Paperclip-derived content into the wiki without a human in the loop.</p>
-<p>The original framing — Paperclip-augmented pass producing a "literature delta" surface for the synthesis stage — assumed the synthesis primitive (<code>map</code>) could be trusted to faithfully extract per-paper findings. The 2026-05-05 verification test invalidated that assumption: <code>map</code> produced load-bearing identity errors (wrong organisms, wrong gene names, fabricated kinetic numbers) on multiple papers in a single session. Wiring this into the sweep would inject a structured external hallucination source into a corpus designed for PhD-grade rigor, exactly the failure mode the multi-model synthesis architecture in <a href="../../open-source-platform/">open-source-platform.md</a> is meant to guard against.</p>
+<p>The original framing — Paperclip-augmented pass producing a "literature delta" surface for the synthesis stage — assumed the synthesis primitive (<code>map</code>) could be trusted to faithfully extract per-paper findings. The 2026-05-05 verification test invalidated that assumption: <code>map</code> produced load-bearing identity errors (wrong organisms, wrong gene names, fabricated kinetic numbers) on multiple papers in a single session. Wiring this into the sweep would inject a structured external hallucination source into a corpus designed for PhD-grade rigor, exactly the failure mode the multi-model synthesis architecture in <a href="../open-source-platform/">open-source-platform.md</a> is meant to guard against.</p>
 <p>The reopen condition: if GXL ships a verified upgrade of the <code>map</code> reader model and we re-run the verification test (uricase variant landscape is a clean repeatable probe; ~12 papers, multiple known-correct ground truths via abstract + grep) and it passes cleanly, revisit. Until then Paperclip remains a manual-research-only tool, used interactively with verification discipline, never embedded in an automated pipeline.</p>
 <p>The original "open platform decision" entry in <code>synthesis/</code> (architecture: synthesis/README.md) should be closed as resolved on the same date with this same outcome.</p>
 <h3 id="3-protein-engineering-support-via-arxiv-coverage">3. Protein-engineering support — via arXiv coverage<a class="headerlink" href="#3-protein-engineering-support-via-arxiv-coverage" title="Permanent link">&para;</a></h3>

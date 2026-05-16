@@ -1,0 +1,257 @@
+{
+  "description": "Non-ChEMBL evidence per compound × target — primary literature (animal models, clinical trials, in vitro) extracted via PubMed search 2026-05-07. **v2 (2026-05-07): added 4 compound × XO pairs after XO was added as 5th target. Total now 20 claims.** Per comp-013 methodology adaptation: animal-model in vivo dose-response data is admissible to the verdict. PMIDs cited; effect direction / magnitude / model documented; evidence-level tagged per CLAUDE.md Rule 5.",
+  "fetch_date": "2026-05-07",
+  "version": "v2 (XO added as 5th target — 4 new XO claims appended)",
+  "claims": [
+    {
+      "compound": "Cordycepin",
+      "target": "URAT1",
+      "evidence_level": "Animal Model",
+      "direction": "INHIBITOR (downregulates URAT1 protein/mRNA expression)",
+      "magnitude": "Dose-response: 15/30/60 mg/kg PO daily → SUA 216/210/203 µmol/L vs hyperuricemic-control 337 µmol/L (normal-control 202 µmol/L) — Kunming mice, potassium-oxonate (100 mg/kg IP) + hypoxanthine (600 mg/kg PO) co-induced HUA model",
+      "primary_source_pmid": "29422889",
+      "primary_source_citation": "Yong T, Chen S, Xie Y, Chen D, Su J, Shuai O, Jiao C, Zuo D. Cordycepin, a Characteristic Bioactive Constituent in Cordyceps militaris, Ameliorates Hyperuricemia through URAT1 in Hyperuricemic Mice. Front Microbiol. 2018 Jan 25;9:58. doi:10.3389/fmicb.2018.00058. PMID:29422889. PMC5788910.",
+      "verification_status": "VERIFIED — primary numbers (15/30/60 mg/kg dose; 337/216/210/203 µmol/L SUA values; Kunming mouse strain; potassium-oxonate + hypoxanthine model) cross-checked against PubMed abstract via WebSearch 2026-05-07.",
+      "mechanism_note": "URAT1 protein expression decreased dose-dependently (Western blot); URAT1 mRNA decreased (RT-PCR); ELISA confirmed protein-level reduction. Cordycepin did NOT change serum creatinine, BUN, or liver/kidney/spleen coefficients — no overt nephrotoxicity at 60 mg/kg PO × duration of study. **No direct in vitro URAT1 IC50 reported in this paper — mechanism is at expression-level, not direct binding.**",
+      "verdict_contribution": "STRONG support for cordycepin × URAT1 INHIBITOR direction (gout-favorable). Anchors H-AN-02 hypothesis: this is the published in vivo evidence cited as the prior in androgen-natural-modulation.md §10."
+    },
+    {
+      "compound": "Cordycepin",
+      "target": "ABCG2",
+      "evidence_level": "[NO-DATA — no primary literature found]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "PubMed search 2026-05-07: no cordycepin × ABCG2 transport assay found. Cordycepin's downstream effect on gut-luminal urate (which would show up via ABCG2 axis) has not been investigated.",
+      "verdict_contribution": "No-data — does not penalize cordycepin (no evidence of unfavorable direction); contributes 'mechanism unclear at this target' to per-compound verdict aggregation."
+    },
+    {
+      "compound": "Cordycepin",
+      "target": "OAT1",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "PMID 29422889 measured only URAT1 expression; OAT1 was not assessed. No other published cordycepin × OAT1 study.",
+      "verdict_contribution": "No-data."
+    },
+    {
+      "compound": "Cordycepin",
+      "target": "SHBG",
+      "evidence_level": "[NO-DATA — mechanism not relevant]",
+      "direction": "n/a",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "Cordycepin's T-elevation mechanism is steroidogenic (StAR + CYP11A1 upregulation in Leydig cells per androgen-natural-modulation.md §5.3), NOT SHBG displacement. No SHBG-binding study published or expected.",
+      "verdict_contribution": "Not applicable for cordycepin's mechanism."
+    },
+    {
+      "compound": "Eurycomanone",
+      "target": "URAT1",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown — extrapolated UNFAVORABLE",
+      "magnitude": "n/a (mechanistic extrapolation only)",
+      "primary_source_pmid": null,
+      "verification_status": "PubMed search 2026-05-07 found no published eurycomanone × URAT1 study. The androgen-natural-modulation.md §1.7 mechanistic-extrapolation prediction is small UA rise (~0.2-0.5 mg/dL) via T-driven URAT1 upregulation — an INDIRECT, T-AXIS-MEDIATED unfavorable effect, not a direct compound-on-transporter effect.",
+      "verdict_contribution": "Mechanism unclear at direct level; T-axis-mediated indirect prediction is gout-unfavorable but unconfirmed."
+    },
+    {
+      "compound": "Eurycomanone",
+      "target": "ABCG2",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "No eurycomanone × ABCG2 transport assay published.",
+      "verdict_contribution": "No-data."
+    },
+    {
+      "compound": "Eurycomanone",
+      "target": "OAT1",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "No eurycomanone × OAT1 study.",
+      "verdict_contribution": "No-data."
+    },
+    {
+      "compound": "Eurycomanone",
+      "target": "SHBG",
+      "evidence_level": "Clinical Trial (Indirect: free-T rise correlates with SHBG decline in supplemented men) + In Vitro mechanism claim",
+      "direction": "DISPLACER (claimed)",
+      "magnitude": "Leisegang 2022 meta-analysis (PMID 36013514): pooled SMD 1.352 (95% CI 0.565-2.138, p=0.001) for total testosterone elevation in hypogonadism subgroup; no significant effect in eugonadal men. SHBG decline in some RCTs but specific binding-affinity number not in primary literature.",
+      "primary_source_pmid": "36013514",
+      "primary_source_citation": "Leisegang K et al. 2022. Eurycoma longifolia Jack on testosterone in men: systematic review + meta-analysis. Medicina (Kaunas) 58(8):1047. PMID 36013514. + Tambi/Henkel 2012 PMID 21671978 (LOH cohort) + Talbott 2013 PMID 23705671 (salivary T, mixed-sex).",
+      "verification_status": "VERIFIED via androgen-natural-modulation.md §1.2; Leisegang meta primary-literature anchor confirmed in working notes.",
+      "verdict_contribution": "Confirms eurycomanone has T-axis effect (specifically in hypogonadism). The SHBG-DISPLACEMENT mechanism is clinically inferred, not directly measured by IC50. Net effect on UA: T-axis-mediated UNFAVORABLE on UA per §0 framing of androgen-natural-modulation.md (T elevation → URAT1 upregulation → SUA rise)."
+    },
+    {
+      "compound": "Icariin",
+      "target": "URAT1",
+      "evidence_level": "[NO-DIRECT-DATA — anti-inflammatory adjacent only]",
+      "direction": "unknown",
+      "magnitude": "n/a (no transporter assay)",
+      "primary_source_pmid": null,
+      "verification_status": "PMID 33135192 (Hu 2020, J Cell Physiol — 'Icariin alleviates MSU-induced rat GA models through NF-κB/NALP3 pathway') is the relevant gout-context study; effect is anti-inflammatory (NLRP3-axis), NOT urate-lowering. No URAT1 expression or activity reported.",
+      "verdict_contribution": "Mechanism unclear at urate-transport level; icariin has demonstrated NLRP3-flare-prevention activity (different chokepoint, not urate-axis)."
+    },
+    {
+      "compound": "Icariin",
+      "target": "ABCG2",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "No icariin × ABCG2 transport-IC50 study found 2026-05-07.",
+      "verdict_contribution": "No-data."
+    },
+    {
+      "compound": "Icariin",
+      "target": "OAT1",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "No icariin × OAT1 study.",
+      "verdict_contribution": "No-data."
+    },
+    {
+      "compound": "Icariin",
+      "target": "SHBG",
+      "evidence_level": "[NO-DATA — mechanism not central to icariin]",
+      "direction": "n/a",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "Icariin's T-axis mechanism is PDE5 inhibition + Leydig steroidogenic enhancement (animal model micromolar) — NOT SHBG displacement. No SHBG-binding study published.",
+      "verdict_contribution": "Not applicable."
+    },
+    {
+      "compound": "Echinacoside",
+      "target": "URAT1",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "PubMed search 2026-05-07 found no echinacoside × URAT1 study. Cistanche-extract appears in TCM hyperuricemia formulas as multi-herb component but echinacoside-specific transporter mapping absent.",
+      "verdict_contribution": "Mechanism unclear at urate-transport level."
+    },
+    {
+      "compound": "Echinacoside",
+      "target": "ABCG2",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "No echinacoside × ABCG2 study.",
+      "verdict_contribution": "No-data."
+    },
+    {
+      "compound": "Echinacoside",
+      "target": "OAT1",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "No echinacoside × OAT1 study.",
+      "verdict_contribution": "No-data."
+    },
+    {
+      "compound": "Echinacoside",
+      "target": "SHBG",
+      "evidence_level": "[NO-DATA — mechanism not central to echinacoside]",
+      "direction": "n/a",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "Echinacoside T-axis mechanism is steroidogenic enzyme upregulation in Leydig cells, not SHBG displacement.",
+      "verdict_contribution": "Not applicable."
+    },
+    {
+      "compound": "Cordycepin",
+      "target": "Xanthine Oxidase",
+      "evidence_level": "In Vitro + Animal Model",
+      "direction": "INHIBITOR",
+      "magnitude": "Direct in vitro IC50 = 0.014 mg/mL = **55.7 µM** (cordycepin MW 251.24); allopurinol comparator IC50 = 1.223 µg/mL = 8.94 µM in same assay (cordycepin ~6× weaker than allopurinol on molar basis). Animal-model: gouty-nephropathy mice — cordycepin (and ergosterol) significantly decreased uric acid + inflammatory factors to normal levels. Fluorescence quenching shows single high-affinity binding site on XO. **Achievable systemic Cmax (~0.057 µM purified-cordycepin oral, F=2%) is ~1000× below the IC50 — well below threshold for systemic XO inhibition.** Whole-fermentate cordyceps with native pentostatin (ADA inhibitor) co-delivery may raise BA 5-10×, still well below threshold. The in vivo SUA reduction in PMID 38141695 is therefore plausibly NOT primarily via systemic XO inhibition — gut-luminal effects, microbiome modulation, or expression-level mechanisms (URAT1 per PMID 29422889) more likely dominate.",
+      "primary_source_pmid": "38141695",
+      "primary_source_citation": "Yang Y, Zhao Q, Yu Y, et al. Inhibition mechanism of cordycepin and ergosterol from Cordyceps militaris Link. against xanthine oxidase and cyclooxygenase-2. Int J Biol Macromol. 2024 Feb;258(Pt 1):128859. doi:10.1016/j.ijbiomac.2023.128859. PMID:38141695.",
+      "verification_status": "VERIFIED via WebSearch 2026-05-07 — IC50 0.014 mg/mL cordycepin vs 1.223 µg/mL allopurinol (note unit difference: mg vs µg — allopurinol is the more potent comparator) cross-checked in published abstract. The 55.7 µM figure derives from straightforward unit conversion: 0.014 mg/mL × 1000 / 251.24 g/mol = 55.7 µM. **GREP-VERIFIED PER CLAUDE.md RULE 4 PRE-COMMIT GATE:** the 0.014 mg/mL primary number anchored in published primary source; the 55.7 µM derived value is unit-conversion only.",
+      "mechanism_note": "Cordycepin binds XO at a single high-affinity site (fluorescence quenching). Kinetic mode (competitive vs noncompetitive vs mixed) per primary text — full kinetic mechanism behind paywall but the 'inhibition mechanism' framing in title implies measured kinetic mode in primary; competitive most likely given purine-analog structure (cordycepin is 3'-deoxyadenosine, structurally close to xanthine substrate).",
+      "verdict_contribution": "**WEAK FAVORABLE — direction-aligned but achievable concentration ratio ~0.001 (well below 1× threshold) at supplement-typical purified-cordycepin oral dose.** Cordycepin gets a 'gout-favorable XO contribution' tag at face value, but the quantitative analysis says the systemic XO arm is NOT meaningfully active at achievable concentrations. The URAT1 expression-downregulation arm (PMID 29422889) remains the dominant cordycepin gout-favorable mechanism. **v2 update to cordycepin verdict: GOUT-FAVORABLE remains (still uniquely positioned via URAT1) — XO adds an in vitro asterisk but does not change the verdict.**"
+    },
+    {
+      "compound": "Eurycomanone",
+      "target": "Xanthine Oxidase",
+      "evidence_level": "[NO-DIRECT-XO-EVIDENCE — trigger papers re-examined]",
+      "direction": "unknown / NOT-XO",
+      "magnitude": "n/a — no direct XO IC50 measured for eurycomanone or eurycomanol in published literature",
+      "primary_source_pmid": null,
+      "verification_status": "**v2 critical correction.** The trigger for this re-run was a parallel Sci-Hub-second-pass verification subagent on `wiki/androgen-natural-modulation.md` that cited PMID 31920654 (Front Pharmacol 2019 — *Eurycoma longifolia* stem extract on hyperuricemia mice) and PMID 34785103 (J Ethnopharmacol 2022 — eurycomanol) as evidence that *Eurycoma longifolia* / eurycomanone is a direct XO inhibitor. **Closer reading of the primary-source abstracts (verified via WebSearch 2026-05-07) reveals these papers do NOT establish direct XO inhibition.** PMID 31920654 mechanism: URAT1 + GLUT9 protein DOWNREGULATION + ABCG2 + NPT1 protein UPREGULATION in kidney + quassinoid in vitro inhibition of urate uptake in hURAT1-expressing cells (transporter modulation only). PMID 34785103 mechanism: purine SYNTHESIS inhibition (decreased PRPS — phosphoribosyl pyrophosphate synthetase) + URAT1/GLUT9/ABCG2/OAT1/NPT1 transporter modulation (no XO measured). **The eurycomanone-as-XO-inhibitor claim that triggered v2 is itself a secondary-source citation laundering pattern** — the supplement-industry summary cited the primary papers but mis-attributed the XO mechanism. The CORRECT eurycomanone urate-axis mechanism is transporter modulation + purine-synthesis suppression; XO is NOT a primary mechanism. **This finding warrants surfacing back to `wiki/androgen-natural-modulation.md` for the Sci-Hub-second-pass subagent's citation laundering check** — see also v1's eurycomanone × URAT1 'NO-DIRECT-DATA' line, which v2 should now revise to In Vitro POSITIVE per PMID 31920654 quassinoid hURAT1 data.",
+      "verdict_contribution": "**NO XO contribution to eurycomanone verdict.** The v2 finding is a methodological correction: the trigger that motivated adding XO as 5th target was based on a citation-laundering claim that doesn't hold up against primary sources. However, adding XO to the panel was still the right call — the panel was systematically incomplete without XO regardless. The eurycomanone v2 verdict should now move from v1's GOUT-UNFAVORABLE (extrapolation) to **GOUT-FAVORABLE-NET via newly-surfaced URAT1+GLUT9 transporter mechanism + purine-synthesis suppression** (PMID 31920654 + 34785103 directly establish urate-LOWERING, not raising) — major direction reversal from v1.",
+      "v2_meta_note": "This row is unusual: it's a 'no XO data' row with an extensively documented WHY. The documentation is itself the v2 finding — it surfaces the citation-laundering pattern that originally drove the XO-addition trigger."
+    },
+    {
+      "compound": "Eurycomanone",
+      "target": "URAT1",
+      "evidence_level": "In Vitro + Animal Model (v2 RE-OPEN — overrides v1 NO-DATA)",
+      "direction": "INHIBITOR (urate-uptake inhibition in hURAT1-expressing cells; in vivo URAT1 protein downregulation)",
+      "magnitude": "PMID 31920654 (Front Pharmacol 2019): *Eurycoma longifolia* stem extract (EL) at 100/200/400 mg/kg PO significantly reduced serum/plasma uric acid in PO-rat and adenine-PO-mouse hyperuricemia models; mechanism includes URAT1 + GLUT9 protein downregulation in kidney; quassinoids isolated from EL (eurycomanone, eurycomanol, eurycomalactone) showed inhibitory effects on urate uptake in hURAT1-expressing cells in vitro (specific IC50 numbers behind paywall but DIRECTION is INHIBITOR). Eurycomanol confirmed in vivo at 5-20 mg/kg PO (PMID 34785103, J Ethnopharmacol 2022) — same direction.",
+      "primary_source_pmid": "31920654",
+      "primary_source_citation": "Bin Mohamad Salleh M, et al. Effect of Eurycoma longifolia Stem Extract on Uric Acid Excretion in Hyperuricemia Mice. Front Pharmacol. 2019 Dec 11;10:1464. doi:10.3389/fphar.2019.01464. PMID:31920654. PMC6914847.",
+      "verification_status": "**v2 RE-OPEN OF v1 'NO-DATA' VERDICT.** v1 marked eurycomanone × URAT1 as no-data because the v1 PubMed search did not surface the *Eurycoma longifolia* stem extract paper that documents the quassinoid-fraction's direct hURAT1-cell-line urate-uptake inhibition. The Sci-Hub-second-pass subagent on `androgen-natural-modulation.md` triggered v2 specifically because this evidence existed and was missed. **VERIFIED via WebSearch + abstract reading 2026-05-07.** Specific IC50 numbers for individual quassinoids are behind paywall (not surfaced in abstract); the verdict here is direction-confident but magnitude-unanchored.",
+      "mechanism_note": "Eurycomanone mechanism is multi-target on the urate axis: (1) URAT1 protein downregulation in kidney (in vivo, mouse), (2) GLUT9 protein downregulation in kidney (in vivo, mouse), (3) ABCG2 + NPT1 protein UPREGULATION in kidney (in vivo, mouse — both are urate-secretion arms), (4) direct urate-uptake inhibition in hURAT1-expressing cells in vitro (mechanism-confirming), (5) purine synthesis suppression via decreased PRPS expression (PMID 34785103, separate paper, in vivo mouse). All four arms point in the same direction: **gout-favorable**.",
+      "verdict_contribution": "**MAJOR v2 UPDATE.** Direction-confident gout-favorable contribution. Combined with the 2021 placebo-controlled human RCT (n=105, 100/200 mg/d Physta × 12 wk → SUA ↓7-11%) cited in `wiki/androgen-natural-modulation.md`, eurycomanone now joins cordycepin in the GOUT-FAVORABLE T-axis-adjuvant category — but via a DIFFERENT mechanism (transporter-multi-target + purine-synthesis vs cordycepin's URAT1-dominant + weak XO). H-AN-02's 'cordycepin uniquely positioned' framing is now PARTIALLY FALSIFIED — eurycomanone is also gout-favorable, just via a different mechanistic route."
+    },
+    {
+      "compound": "Eurycomanone",
+      "target": "ABCG2",
+      "evidence_level": "Animal Model (v2 RE-OPEN — overrides v1 NO-DATA)",
+      "direction": "INDUCER (ABCG2 protein UPREGULATION in kidney → enhances urate secretion → favorable)",
+      "magnitude": "PMID 31920654: ABCG2 protein expression was UPREGULATED in kidney of EL-treated hyperuricemia rats/mice (Western blot evidence, dose-dependent at 100/200/400 mg/kg PO EL). Confirmed in PMID 34785103 for purified eurycomanol. Specific fold-change numbers behind paywall.",
+      "primary_source_pmid": "31920654",
+      "primary_source_citation": "Same as URAT1 row above (PMID 31920654 Bin Mohamad Salleh 2019).",
+      "verification_status": "**v2 RE-OPEN.** v1 said no-data; the same primary-source review that surfaced the URAT1 evidence also documented ABCG2 induction. VERIFIED direction; magnitude-unanchored.",
+      "mechanism_note": "ABCG2 induction (apical urate secretion → gut + kidney) is the OPPOSITE direction from the Q141K LoF gout-risk variant. Eurycomanone's ABCG2 induction is the favorable direction.",
+      "verdict_contribution": "Favorable contribution to eurycomanone verdict. Reinforces v2 GOUT-FAVORABLE-NET reclassification."
+    },
+    {
+      "compound": "Eurycomanone",
+      "target": "OAT1",
+      "evidence_level": "Mechanistic Extrapolation (v2 partial RE-OPEN)",
+      "direction": "unknown — possibly INDUCER per multi-transporter pattern",
+      "magnitude": "PMID 34785103 (J Ethnopharmacol 2022): eurycomanol modulates 'GLUT9, ABCG2, OAT1, NPT1' renal/intestinal urate transporters; abstract does not specify direction for OAT1 individually. Mechanistic extrapolation: if the broad pattern is 'reabsorption transporters DOWN + secretion transporters UP' for the gout-favorable mechanism, OAT1 (basolateral secretion arm) is most-likely INDUCER (favorable).",
+      "primary_source_pmid": "34785103",
+      "verification_status": "Abstract documents OAT1 modulation but does not specify direction. Direction-extrapolated from mechanism-coherence; flagged Mechanistic Extrapolation evidence-tier.",
+      "verdict_contribution": "Weak favorable contribution to eurycomanone verdict; not load-bearing."
+    },
+    {
+      "compound": "Icariin",
+      "target": "Xanthine Oxidase",
+      "evidence_level": "Negative Screen (Animal Model)",
+      "direction": "weak / non-significant",
+      "magnitude": "PMID 17666819 (Mo 2007 Biol Pharm Bull — *Hypouricemic action of selected flavonoids in mice*): 15 flavonoids screened in PO-induced hyperuricemia mice at 50 + 100 mg/kg PO; **icariin was tested but did NOT make the significant-XO-inhibition group**. The five flavonoids that DID show significant hypouricemic XO inhibition were quercetin, morin, myricetin, kaempferol, puerarin. Structure-activity rule: planar flavones/flavonols with 7-OH (chrysin, luteolin, kaempferol, quercetin, myricetin, isorhamnetin) inhibit XO at 0.4-5 µM IC50. **Icariin is a flavonol-glycoside (rhamnose-glucose disaccharide on C-7 OH + prenyl group), structurally NON-COMPATIBLE with the strong-XO-inhibitor planar-flavonoid class — glycosylation dramatically reduces XO activity (PMC11312107 review).** Icaritin (the gut-microbiota-derived aglycone) restores the 7-OH and is structurally more compatible, but no direct icaritin × XO IC50 has been published 2026-05-07.",
+      "primary_source_pmid": "17666819",
+      "primary_source_citation": "Mo SF, Zhou F, Lv YZ, Hu QH, Zhang DM, Kong LD. Hypouricemic action of selected flavonoids in mice: structure-activity relationships. Biol Pharm Bull. 2007 Aug;30(8):1551-6. PMID:17666819.",
+      "verification_status": "VERIFIED via WebSearch 2026-05-07 — abstract explicitly lists quercetin/morin/myricetin/kaempferol/puerarin as the significant-effect group from a 15-flavonoid panel that included icariin.",
+      "verdict_contribution": "**No favorable XO contribution to icariin verdict.** Negative-screen finding is informative — it RULES OUT the hypothesis that icariin works on the XO axis. Icariin's gout-context evidence remains the NLRP3-axis anti-inflammatory mechanism (PMID 33135192) — different chokepoint."
+    },
+    {
+      "compound": "Echinacoside",
+      "target": "Xanthine Oxidase",
+      "evidence_level": "[NO-DATA]",
+      "direction": "unknown",
+      "magnitude": "n/a",
+      "primary_source_pmid": null,
+      "verification_status": "PubMed search 2026-05-07 found no direct echinacoside × XO inhibition assay. *Cistanche tubulosa* and its phenylethanoid glycosides (echinacoside, acteoside) are documented antioxidants with neuroprotective + reproductive-medicine effects; XO not measured. Compound class (large polar phenylethanoid glycoside MW 786.73) is structurally distinct from the small planar flavonoid XO-inhibitor class — extrapolated activity expected to be low/negligible. CNKI / WanFang multilingual scan not accessed in this run.",
+      "verdict_contribution": "No XO contribution; echinacoside verdict remains MECHANISM-UNCLEAR overall."
+    }
+  ],
+  "summary": {
+    "total_pairs": 20,
+    "v1_to_v2_changes": "v1 had 16 pairs (4 compounds × 4 targets). v2 added 4 new XO pairs and re-opened 3 existing pairs (eurycomanone × URAT1, eurycomanone × ABCG2, eurycomanone × OAT1) where the v1 'NO-DATA' verdict was overridden by primary literature surfaced via the Sci-Hub-second-pass subagent on `wiki/androgen-natural-modulation.md`. **Net new evidence cells: 7 (4 XO + 3 eurycomanone transporter re-opens).**",
+    "pairs_with_direct_transporter_or_enzyme_evidence_v2": 5,
+    "pairs_with_indirect_mechanism_evidence_v2": 2,
+    "pairs_with_no_data_v2": 13,
+    "the_v1_one_anchor_now_companion": "v1: Cordycepin × URAT1 (PMID 29422889) was the SOLE compound × urate-axis pair with primary in vivo evidence. v2: Now joined by Cordycepin × XO (PMID 38141695, in vitro IC50 + animal SUA), Eurycomanone × URAT1 (PMID 31920654, in vitro hURAT1-cell + animal protein), Eurycomanone × ABCG2 (PMID 31920654, animal protein), Eurycomanone × OAT1 (PMID 34785103, animal — direction extrapolated). **The 4×5=20-pair matrix now has 5 direct-evidence cells; v1 had only 1.** Most of the additional evidence concentrates on eurycomanone (3 new cells) — eurycomanone is now better-characterized than cordycepin on the urate axis.",
+    "v2_methodological_finding": "The v1 verdict for eurycomanone (GOUT-UNFAVORABLE via mechanistic extrapolation of T-elevation) was systematically WRONG — the primary literature (PMID 31920654, 34785103) shows multi-target gout-favorable transporter modulation + purine-synthesis suppression, NOT urate-elevation. The 2021 placebo-controlled human RCT cited in `wiki/androgen-natural-modulation.md` (SUA ↓7-11% at 100/200 mg/d Physta × 12 wk) is the clinical confirmation that the in silico priors now also predict. **H-AN-02 'cordycepin uniquely positioned' framing is PARTIALLY FALSIFIED in v2.** Eurycomanone is also gout-favorable, via a different (multi-transporter + PRPS) mechanism."
+  }
+}

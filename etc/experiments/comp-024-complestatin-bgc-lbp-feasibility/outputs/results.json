@@ -1,0 +1,99 @@
+{
+  "comp_id": "comp-024",
+  "date": "2026-05-16",
+  "bgc_summary": {
+    "compound_family": "NRPS-derived cyclic glycopeptide-like; member of the vancomycin/teicoplanin/chloropeptin structural family",
+    "producer": "Streptomyces lavendulae (S. chartreusis AN1542 strain also produces complestatin family per Park 2016)",
+    "cluster_size_bp": 48700,
+    "cluster_size_reconstituted_bp": 54500,
+    "total_orfs": 16,
+    "nrps_modules": 7,
+    "extension_modules": 6,
+    "p450_genes": [
+      "comI",
+      "comJ"
+    ],
+    "halogenase_genes": [
+      "comH"
+    ],
+    "hpg_biosynthesis_genes": [
+      "hmaS",
+      "hmo",
+      "hpgT",
+      "pd"
+    ]
+  },
+  "complestatin_feasibility": {
+    "E_coli_Nissle_1917": {
+      "factor_scores": {
+        "cluster_size_tractability": 0.55,
+        "GC_content_codon_compatibility": 0.65,
+        "non_canonical_amino_acid_precursor_supply": 0.75,
+        "PPTase_compatibility": 0.85,
+        "P450_redox_compatibility": 0.35,
+        "O2_dependence_vs_host_lifestyle": 0.3,
+        "engineering_toolkit_maturity": 0.9,
+        "heterologous_expression_precedent": 0.35,
+        "host_toxicity_self_resistance": 0.55
+      },
+      "min_factor": "O2_dependence_vs_host_lifestyle",
+      "min_factor_value": 0.3,
+      "geometric_mean": 0.544,
+      "verdict": "YELLOW"
+    },
+    "Bacteroides_thetaiotaomicron_VPI_5482": {
+      "factor_scores": {
+        "cluster_size_tractability": 0.3,
+        "GC_content_codon_compatibility": 0.45,
+        "non_canonical_amino_acid_precursor_supply": 0.55,
+        "PPTase_compatibility": 0.45,
+        "P450_redox_compatibility": 0.05,
+        "O2_dependence_vs_host_lifestyle": 0.05,
+        "engineering_toolkit_maturity": 0.45,
+        "heterologous_expression_precedent": 0.1,
+        "host_toxicity_self_resistance": 0.4
+      },
+      "min_factor": "P450_redox_compatibility",
+      "min_factor_value": 0.05,
+      "geometric_mean": 0.225,
+      "verdict": "RED"
+    }
+  },
+  "c1_inh_feasibility": {
+    "E_coli_Nissle_1917": {
+      "factor_scores": {
+        "cluster_size_tractability": 0.95,
+        "GC_content_codon_compatibility": 0.9,
+        "non_canonical_amino_acid_precursor_supply": 1.0,
+        "PPTase_compatibility": 1.0,
+        "P450_redox_compatibility": 1.0,
+        "O2_dependence_vs_host_lifestyle": 1.0,
+        "engineering_toolkit_maturity": 0.9,
+        "heterologous_expression_precedent": 0.65,
+        "host_toxicity_self_resistance": 0.85,
+        "luminal_protease_stability": 0.35,
+        "glycosylation_for_function": 0.4
+      },
+      "min_factor": "luminal_protease_stability",
+      "min_factor_value": 0.35,
+      "geometric_mean": 0.774,
+      "verdict": "GREEN"
+    }
+  },
+  "track_comparison": {
+    "best_complestatin_host": "E_coli_Nissle_1917",
+    "best_complestatin_score": 0.544,
+    "best_complestatin_verdict": "YELLOW",
+    "best_c1_inh_host": "E_coli_Nissle_1917",
+    "best_c1_inh_score": 0.774,
+    "best_c1_inh_verdict": "GREEN",
+    "more_tractable_next_payload": "C1-INH (LBP-luminal)",
+    "margin": 0.23
+  },
+  "verdict_thresholds": {
+    "GREEN": ">= 0.6",
+    "YELLOW": "0.3 - 0.6",
+    "RED": "< 0.3"
+  },
+  "scoring_method": "Nine feasibility factors per host (0.0 catastrophic to 1.0 no obstacle). Geometric mean across factors. Geometric mean is the right composition rule when every factor must succeed (multiplicative epistemology)."
+}

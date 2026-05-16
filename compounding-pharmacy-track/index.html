@@ -360,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-enzyme-vision/" class="md-nav__link">
+      <a href="../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -373,13 +373,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -458,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-source-platform/" class="md-nav__link">
+      <a href="../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -4451,7 +4444,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -4841,7 +4834,7 @@
 
 <h1 id="compounding-pharmacy-track-delivery-route-for-the-repurposing-surface">Compounding Pharmacy Track — Delivery Route for the Repurposing Surface<a class="headerlink" href="#compounding-pharmacy-track-delivery-route-for-the-repurposing-surface" title="Permanent link">&para;</a></h1>
 <h2 id="why-this-page-exists">Why this page exists<a class="headerlink" href="#why-this-page-exists" title="Permanent link">&para;</a></h2>
-<p>Open Enzyme's two parallel outputs (per <a href="../open-enzyme-vision/"><code>open-enzyme-vision.md</code></a> §1–2) are (1) a <strong>discovery engine</strong> for chokepoint-to-intervention mapping, and (2) an <strong>open-source strain library</strong> as one synthesis of that engine. The discovery engine produces, among other things, a <strong>repurposing surface</strong> — FDA-approved drugs that hit gout-relevant chokepoints but were never clinically tested for gout (canonical examples: <a href="../disulfiram/">disulfiram</a> at CP6b GSDMD, zileuton at CP6a 5-LOX, avacopan at CP0 C5aR1).</p>
+<p>Open Enzyme's two parallel outputs (per <a href="../etc/open-enzyme-vision/"><code>open-enzyme-vision.md</code></a> §1–2) are (1) a <strong>discovery engine</strong> for chokepoint-to-intervention mapping, and (2) an <strong>open-source strain library</strong> as one synthesis of that engine. The discovery engine produces, among other things, a <strong>repurposing surface</strong> — FDA-approved drugs that hit gout-relevant chokepoints but were never clinically tested for gout (canonical examples: <a href="../disulfiram/">disulfiram</a> at CP6b GSDMD, zileuton at CP6a 5-LOX, avacopan at CP0 C5aR1).</p>
 <p>The wiki has historically treated that repurposing surface as <strong>scientifically interesting but operationally orphaned</strong>: we identify a drug-chokepoint match, write it up, and move on. There is no canonical Open Enzyme path from "FDA-approved drug X hits gout chokepoint Y at off-label dose Z" to "patient can actually take it." That gap is exactly what the compounding pharmacy track closes.</p>
 <p><strong>The cleavage rule:</strong> Open Enzyme's compound catalog splits cleanly along a delivery-route axis:</p>
 <ul>
@@ -4942,8 +4935,14 @@
 <p><strong>1. Disulfiram (Antabuse) — CP6b GSDMD inhibitor.</strong>
 - 503A eligibility: Tier 2 (component of FDA-approved drug). FDA-approved 1951 for alcohol-use disorder; off-patent; bulk API widely available from compounding-pharmacy suppliers.
 - Gout-relevant evidence: <strong>In vitro</strong> — Hu et al. 2020 (<em>Nat Immunol</em>) — disulfiram directly inhibits gasdermin D pore formation, blocking IL-1β release downstream of NLRP3. No human gout trials.
-- Compounding play: <strong>Low-dose extended-release tablet</strong> (current Antabuse is 250–500 mg immediate-release for alcohol deterrence; the NLRP3-relevant dose is unknown but likely lower). Compounded ER formulation at sub-deterrent doses would allow exploring the GSDMD-inhibitor effect without the alcohol-flush mechanism dominating. See <a href="../disulfiram/"><code>disulfiram.md</code></a> for full mechanism and the "repurposing surface" framing.
-- Evidence level for the application: <strong>Mechanistic extrapolation + in vitro.</strong> Wet-lab gate before patient use.</p>
+- <strong>Dose modeling — <a href="../disulfiram-dose-modeling-computational/">comp-027</a> (2026-05-16) → YELLOW-leaning-GREEN.</strong> A narrow sub-AUD GSDMD-dominant dose window exists, centered on <strong>100 mg/day (range 75–125 mg/d)</strong>, where parent DSF Cmax (0.40 µM, 1.3× cell-free GSDMD IC50 of 0.30 µM per Hu 2020) engages pore-formation blockade while plasma Me-DTC peak (~70 nM) stays at or below the Faiman-1989 DER hypotension threshold (~70 nM at 40% ALDH inhibition). NLRP3-palmitoylation EC50 (Xu 2024, 10 µM) requires AUD-dose+ plasma — <strong>sub-AUD is selectively GSDMD-engaging, not pan-NLRP3-engaging</strong>. Sensitivity dominated by GSDMD EC50 anchor choice + parent DSF Cmax PK at 100 mg (single empirical HPLC measurement in N=3–5 volunteers would collapse this uncertainty).
+- Compounding play: <strong>two-phase protocol per comp-027 handoff.</strong>
+  - <em>Phase 1 — Dose-titration starter:</em> IR capsule, strengths 50/75/100/125 mg. Titration 50 → 100 mg/d over 14 days with weekly clinical check for incidental ethanol exposure.
+  - <em>Phase 2 — Chronic maintenance:</em> ER lipid-matrix tablet (glyceryl behenate + HPMC K100M), 100 mg QD. Cmax compression keeps ALDH inhibition below DER threshold while sustaining GSDMD covalent engagement.
+  - <em>Companion:</em> allopurinol 100–300 mg/d standard-of-care (Asiri 2025 rat MSU model showed allopurinol-disulfiram synergy).
+  - <em>Analytical:</em> USP &lt;711&gt; dissolution + USP &lt;905&gt; content uniformity required for ER formulation; outsource if pharmacy lacks in-house capability.
+- Drug-interaction landscape (sub-AUD): absolute contraindications stay (metronidazole, MAOIs — DER stacking). CYP-mediated PK interactions (warfarin, phenytoin, theophylline, alprazolam) become manageable with monitoring vs. avoidance at AUD dose. Incidental ethanol (kombucha, koji-fermented foods) tolerance improved but per-batch caution still warranted. <strong>Gout co-administration is clean</strong> (allopurinol synergistic; colchicine + low-dose corticosteroids stack without major DI).
+- Evidence level for the application: <strong>Mechanistic extrapolation + in vitro + in silico dose modeling.</strong> Per-patient HPLC-anchored dose-finding is the wet-lab gate before broader patient use.</p>
 <p><strong>2. Zileuton — CP6a 5-LOX inhibitor.</strong>
 - 503A eligibility: Tier 2 (component of FDA-approved drug Zyflo, 1996, asthma); off-patent. Bulk API availability is a supplier-side question, not a regulatory listing question — current Zyflo distribution is small enough that compounding-pharmacy supplier networks may not stock the API even though 503A eligibility is structurally clean.
 - Gout-relevant evidence: <strong>Mechanistic extrapolation + in vitro</strong> — 5-LOX produces LTB4, a neutrophil chemoattractant active in gout flares. Zileuton blocks 5-LOX. No gout clinical trials.
@@ -5060,7 +5059,7 @@
 <p>The AI-aided literature + patent landscape review (the MINX innovation) collapses formulation design from a months-long pharma-industry workflow to a days-long workflow accessible to a small team. <strong>This is the part of the track that scales with current AI tooling.</strong></p>
 <p>The verification step (dissolution testing per USP &lt;711&gt;, content uniformity per USP &lt;905&gt;) is non-negotiable and runs at the compounding pharmacy or a contract analytical lab. <strong>Without dissolution data, you don't know what you made.</strong></p>
 <h2 id="discovery-engine-integration">Discovery-engine integration<a class="headerlink" href="#discovery-engine-integration" title="Permanent link">&para;</a></h2>
-<p>The compounding pharmacy track is the natural delivery mechanism for OE's <strong>repurposing surface</strong> output. The discovery engine identifies FDA-approved drugs hitting gout-relevant chokepoints (see <a href="../open-enzyme-vision/"><code>open-enzyme-vision.md</code></a> §2.2 for the canonical framing). The current repurposing surface contains:</p>
+<p>The compounding pharmacy track is the natural delivery mechanism for OE's <strong>repurposing surface</strong> output. The discovery engine identifies FDA-approved drugs hitting gout-relevant chokepoints (see <a href="../etc/open-enzyme-vision/"><code>open-enzyme-vision.md</code></a> §2.2 for the canonical framing). The current repurposing surface contains:</p>
 <ul>
 <li><strong>Disulfiram</strong> (CP6b GSDMD) — approved for AUD; <a href="../disulfiram/"><code>disulfiram.md</code></a></li>
 <li><strong>Zileuton</strong> (CP6a 5-LOX) — approved for asthma</li>
@@ -5099,8 +5098,8 @@
 <p>The honest summary: compounding pharmacy expands OE's <em>delivery menu</em> without expanding OE's <em>evidence base</em>. The discovery engine still has to do the science; compounding just makes the science prescribable for the subset of compounds where the API already has FDA approval.</p>
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../open-enzyme-vision/">Open Enzyme vision</a> — §2.2 repurposing surface framing</li>
-<li><a href="../open-source-platform/"><code>open-source-platform.md</code> §External Service Acceleration</a> — names the productized-external-services pattern this page instantiates on the small-molecule / repurposing-surface side</li>
+<li><a href="../etc/open-enzyme-vision/">Open Enzyme vision</a> — §2.2 repurposing surface framing</li>
+<li><a href="../etc/open-source-platform/"><code>open-source-platform.md</code> §External Service Acceleration</a> — names the productized-external-services pattern this page instantiates on the small-molecule / repurposing-surface side</li>
 <li><a href="../ginkgo-cloud-lab-evaluation/">Ginkgo Cloud Lab evaluation</a> — the complementary external-service track on the strain-library / protein-validation side. Ginkgo answers "does the protein fold?"; compounding answers "can the small-molecule reach a patient?". Different sides of the platform, same pattern.</li>
 <li><a href="../modality-chokepoint-matrix/">Modality × Target Matrix</a> — small-molecule rows are the candidate cells for this track</li>
 <li><a href="../disulfiram/">Disulfiram</a> — canonical repurposing surface compound; the highest-priority compounding candidate currently in OE</li>

@@ -1,0 +1,91 @@
+{
+  "description": "Disulfiram + active-metabolite plasma PK parameters. Anchored to Lee 2018 (population PK in HIV trial, 500-2000 mg dosing), Johansson 1989 (single-dose 400 mg + Me-DTC kinetics + DER dose-titration in volunteers), Palatty 2011 (125 mg/day clinical use), and Faiman 1989 (DER acetaldehyde threshold).",
+  "fetch_date": "2026-05-16",
+
+  "compound": "disulfiram (DSF, parent)",
+  "molecular_weight_g_mol": 296.55,
+  "oral_bioavailability_fraction": 0.875,
+  "ba_source": "Lee 2018 PMC6379104 — '80-95% absorbed from GI tract'; midpoint 87.5% used as point estimate",
+  "ba_range_low_high": [0.80, 0.95],
+
+  "apparent_clearance_L_per_hr": 0.53,
+  "clearance_cv_percent": 36,
+  "clearance_source": "Lee 2018 PMC6379104 — DSF apparent CL/F = 0.53 L/hr, IIV 36%. Note: This is total clearance to all 4 measured metabolites; reflects rapid first-pass and reductive metabolism.",
+  "apparent_volume_distribution_L": 1.3,
+  "vd_source": "Lee 2018 — central compartment Vd ~1.3 L; widely distributed to kidney, pancreas, liver, GI per same paper text. NOTE: 1.3 L is fitting-compartment Vd, not true body Vd which is much larger; treat as scaling parameter for AUC, not as physiological volume.",
+  "absorption_rate_constant_per_hr": 0.08,
+  "absorption_source": "Lee 2018 — ka = 0.08 hr^-1 (slow absorption, reflects micronization-limited dissolution and food effect).",
+  "half_life_hr": 7,
+  "half_life_source": "Lee 2018 — estimated DSF t1/2 ~7 hr; >90% eliminated within 72 hr.",
+  "nonlinearity_threshold_mg": 1000,
+  "nonlinearity_note": "Lee 2018 — supra-proportional AUC increase above 1000 mg attributed to CYP2E1/3A4 saturation. Below 1000 mg dose, kinetics are approximately linear.",
+
+  "metabolite_active_for_GSDMD": "carbamathione + DETC-MeSO (DSF itself + reduced metabolite DDTC are the active GSDMD modifiers per Hu 2020)",
+  "metabolite_active_for_DER": "DDTC-Me (Me-DTC); per Faiman 1989 — most-potent ALDH inhibitor among DSF / DDTC / DDTC-Me, and the metabolite that scales DER severity",
+  "metabolite_separation_note": "GSDMD-relevant covalent activity comes primarily from DSF + reduced metabolites that retain the thiuram disulfide / dithiocarbamate motif (Hu 2020). DER comes primarily from Me-DTC (Yourick/Faiman 1989). The two activities are NOT fully separable at the metabolite level — DSF dose → DDTC → splits into reductive vs methylation/CYP3A4 paths. But the DOSE → MAX-EFFECT curves saturate at different concentrations, which is what creates the potential dose window.",
+
+  "single_dose_PK": [
+    {
+      "dose_mg": 125,
+      "ba_corrected_mg": 109,
+      "predicted_Cmax_DSF_uM": 0.20,
+      "predicted_Cmax_DSF_uM_low": 0.10,
+      "predicted_Cmax_DSF_uM_high": 0.40,
+      "predicted_AUC24_DSF_mg_hr_per_L": 206,
+      "Cmax_method": "Cmax ≈ F·D / (Vd·(1 + k_el/ka)) approximation, then refined with reported AUC scaling; uses CL=0.53 L/hr, Vd=1.3 L, ka=0.08 hr^-1, F=0.875. AT THIS LOW DOSE, kinetics fully linear.",
+      "evidence_tier": "Mechanistic_extrapolation_from_higher_dose_data",
+      "comment": "125 mg dose is clinically used (Palatty 2011 — 51 patients × 60 days, well-tolerated). Lee 2018 PK model extrapolated downward."
+    },
+    {
+      "dose_mg": 250,
+      "ba_corrected_mg": 219,
+      "predicted_Cmax_DSF_uM": 0.40,
+      "predicted_Cmax_DSF_uM_low": 0.20,
+      "predicted_Cmax_DSF_uM_high": 0.80,
+      "predicted_AUC24_DSF_mg_hr_per_L": 413,
+      "evidence_tier": "Indirect_clinical",
+      "comment": "Standard AUD daily maintenance dose. Linear extrapolation from Lee 2018."
+    },
+    {
+      "dose_mg": 500,
+      "ba_corrected_mg": 438,
+      "predicted_Cmax_DSF_uM": 0.80,
+      "predicted_Cmax_DSF_uM_low": 0.40,
+      "predicted_Cmax_DSF_uM_high": 1.6,
+      "predicted_AUC24_DSF_mg_hr_per_L": 825,
+      "observed_AUC72_mg_hr_per_L_summed_analytes": 3420,
+      "evidence_tier": "Clinical_Trial",
+      "comment": "Lee 2018 anchor dose. Observed AUC_72h_summed = 3420 mg·hr/L across 5 analytes. AUC of parent DSF alone is much lower."
+    },
+    {
+      "dose_mg": 1000,
+      "ba_corrected_mg": 875,
+      "predicted_Cmax_DSF_uM": 1.6,
+      "predicted_Cmax_DSF_uM_low": 0.8,
+      "predicted_Cmax_DSF_uM_high": 3.2,
+      "observed_AUC72_mg_hr_per_L_summed_analytes": 8942,
+      "evidence_tier": "Clinical_Trial",
+      "comment": "Lee 2018 anchor dose."
+    },
+    {
+      "dose_mg": 2000,
+      "ba_corrected_mg": 1750,
+      "predicted_Cmax_DSF_uM": 4.0,
+      "predicted_Cmax_DSF_uM_low": 2.0,
+      "predicted_Cmax_DSF_uM_high": 8.0,
+      "observed_AUC72_mg_hr_per_L_summed_analytes": 23834,
+      "evidence_tier": "Clinical_Trial",
+      "comment": "Lee 2018 anchor dose. Supra-proportional AUC due to CYP saturation; Cmax estimate widened to reflect IIV."
+    }
+  ],
+
+  "active_metabolite_DDTC_Me_PK": {
+    "name": "diethyldithiocarbamate methyl ester (Me-DTC, DDTC-Me)",
+    "role": "Primary alcohol-deterrent metabolite (Faiman 1989). Methylation of DDTC; CYP-bioactivated to MeSO further.",
+    "tmax_hr_after_400mg_DSF": 3.3,
+    "half_life_hr": 11.2,
+    "peak_plasma_at_400mg_DSF_nM": 278,
+    "source": "Johansson & Stankiewicz 1989, PMID 2551696",
+    "dose_scaling": "Mean steady-state plasma Me-DTC is proportional to oral DSF dose across 100-300 mg in volunteers per Johansson 1989; assume linear up to ~500 mg, then sub-linear above 1000 mg due to CYP saturation."
+  }
+}

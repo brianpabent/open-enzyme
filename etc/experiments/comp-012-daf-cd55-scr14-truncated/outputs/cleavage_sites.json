@@ -1,0 +1,283 @@
+{
+  "experiment": "comp-012",
+  "protein": "DAF/CD55 (complement decay-accelerating factor), Homo sapiens (P08174)",
+  "alphafold_model": "AF-P08174-F1-model_v6 (source; pLDDT subset to aa 35-285)",
+  "construct": "SCR1-4 only (aa 35-285; stalk aa 286-353 removed)",
+  "construct_length_aa": 251,
+  "conditions": {
+    "NaCl_pct": 17.5,
+    "NaCl_pct_range": [
+      15,
+      20
+    ],
+    "pH_range": [
+      4.5,
+      5.2
+    ],
+    "temperature_C": 22,
+    "duration_days": [
+      7,
+      14
+    ],
+    "notes": "Standard shio-koji: ~15-20% NaCl, RT ferment 7-14 days. pH driven by kojic acid and organic acids produced during initial koji growth."
+  },
+  "scr14_sequence_stats": {
+    "length": 251,
+    "mean_plddt": 96.7,
+    "min_plddt": 85.6,
+    "max_plddt": 98.7,
+    "pct_residues_above_80": 100.0,
+    "pct_residues_above_90": 98.8
+  },
+  "protease_results": {
+    "ALP": {
+      "full_name": "Alkaline protease (subtilisin-type, Alp/NpII)",
+      "total_recognition_sites": 157,
+      "exposed_sites": 0,
+      "partially_exposed_sites": 0,
+      "buried_sites": 157,
+      "salt_residual_activity_at_nacl": 0.188,
+      "ph_activity_factor": 1.0,
+      "effective_activity": 0.188,
+      "max_risk_score": 0.019,
+      "mean_risk_score_top5": 0.019,
+      "top_5_sites": [
+        {
+          "position": 3,
+          "P1": "G",
+          "P1_prime": "L",
+          "mean_plddt_window": 94.6,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.019,
+          "full_sequence_position": 37,
+          "region": "SCR1"
+        },
+        {
+          "position": 4,
+          "P1": "L",
+          "P1_prime": "P",
+          "mean_plddt_window": 94.8,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.019,
+          "full_sequence_position": 38,
+          "region": "SCR1"
+        },
+        {
+          "position": 8,
+          "P1": "V",
+          "P1_prime": "P",
+          "mean_plddt_window": 96.6,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.019,
+          "full_sequence_position": 42,
+          "region": "SCR1"
+        },
+        {
+          "position": 11,
+          "P1": "A",
+          "P1_prime": "Q",
+          "mean_plddt_window": 96.6,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.019,
+          "full_sequence_position": 45,
+          "region": "SCR1"
+        },
+        {
+          "position": 14,
+          "P1": "A",
+          "P1_prime": "L",
+          "mean_plddt_window": 94.4,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.188,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.188,
+          "risk_score": 0.019,
+          "full_sequence_position": 48,
+          "region": "SCR1"
+        }
+      ]
+    },
+    "NPr": {
+      "full_name": "Neutral metalloprotease (thermolysin-like, NpI)",
+      "total_recognition_sites": 60,
+      "exposed_sites": 0,
+      "partially_exposed_sites": 0,
+      "buried_sites": 60,
+      "salt_residual_activity_at_nacl": 0.388,
+      "ph_activity_factor": 1.0,
+      "effective_activity": 0.388,
+      "max_risk_score": 0.039,
+      "mean_risk_score_top5": 0.039,
+      "top_5_sites": [
+        {
+          "position": 3,
+          "P1": "G",
+          "P1_prime": "L",
+          "mean_plddt_window": 94.6,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.039,
+          "full_sequence_position": 37,
+          "region": "SCR1"
+        },
+        {
+          "position": 7,
+          "P1": "D",
+          "P1_prime": "V",
+          "mean_plddt_window": 96.3,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.039,
+          "full_sequence_position": 41,
+          "region": "SCR1"
+        },
+        {
+          "position": 10,
+          "P1": "N",
+          "P1_prime": "A",
+          "mean_plddt_window": 96.8,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.039,
+          "full_sequence_position": 44,
+          "region": "SCR1"
+        },
+        {
+          "position": 13,
+          "P1": "P",
+          "P1_prime": "A",
+          "mean_plddt_window": 95.3,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.039,
+          "full_sequence_position": 47,
+          "region": "SCR1"
+        },
+        {
+          "position": 14,
+          "P1": "A",
+          "P1_prime": "L",
+          "mean_plddt_window": 94.4,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.388,
+          "ph_activity_factor": 1.0,
+          "effective_protease_activity": 0.388,
+          "risk_score": 0.039,
+          "full_sequence_position": 48,
+          "region": "SCR1"
+        }
+      ]
+    },
+    "acid_protease": {
+      "full_name": "Acid protease (aspergillopepsin I)",
+      "total_recognition_sites": 25,
+      "exposed_sites": 0,
+      "partially_exposed_sites": 0,
+      "buried_sites": 25,
+      "salt_residual_activity_at_nacl": 0.65,
+      "ph_activity_factor": 0.3,
+      "effective_activity": 0.195,
+      "max_risk_score": 0.02,
+      "mean_risk_score_top5": 0.02,
+      "top_5_sites": [
+        {
+          "position": 7,
+          "P1": "D",
+          "P1_prime": "V",
+          "mean_plddt_window": 96.3,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.02,
+          "full_sequence_position": 41,
+          "region": "SCR1"
+        },
+        {
+          "position": 14,
+          "P1": "A",
+          "P1_prime": "L",
+          "mean_plddt_window": 94.4,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.02,
+          "full_sequence_position": 48,
+          "region": "SCR1"
+        },
+        {
+          "position": 26,
+          "P1": "V",
+          "P1_prime": "I",
+          "mean_plddt_window": 96.1,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.02,
+          "full_sequence_position": 60,
+          "region": "SCR1"
+        },
+        {
+          "position": 35,
+          "P1": "F",
+          "P1_prime": "V",
+          "mean_plddt_window": 93.3,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.02,
+          "full_sequence_position": 69,
+          "region": "SCR1"
+        },
+        {
+          "position": 45,
+          "P1": "V",
+          "P1_prime": "I",
+          "mean_plddt_window": 97.0,
+          "accessibility": "buried",
+          "salt_residual_activity": 0.65,
+          "ph_activity_factor": 0.3,
+          "effective_protease_activity": 0.195,
+          "risk_score": 0.02,
+          "full_sequence_position": 79,
+          "region": "SCR1"
+        }
+      ]
+    }
+  },
+  "verdict": "LOW",
+  "worst_score": 0.039,
+  "worst_protease": "NPr",
+  "comp006_reference": {
+    "full_ecto_verdict": "HIGH",
+    "full_ecto_worst_score": 0.388,
+    "full_ecto_worst_protease": "NPr",
+    "full_ecto_scope": "aa 35-353 (SCR1-4 + stalk)",
+    "stalk_exposed_sites_NPr": 9,
+    "stalk_exposed_sites_ALP": 48,
+    "stalk_exposed_sites_acid": 1
+  }
+}

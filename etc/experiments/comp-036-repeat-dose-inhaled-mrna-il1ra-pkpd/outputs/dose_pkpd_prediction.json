@@ -1,0 +1,1175 @@
+{
+  "verdict": "YELLOW",
+  "verdict_reason": "Repeat-dose inhaled mRNA-IL-1Ra achieves >=50%-of-window 80%-occupancy at median but does not reach the >=95%-of-window high-confidence bar. Modality viable but at the edge; wet-lab dose-finding needed to confirm or pivot.",
+  "n_samples_per_regimen": 10000,
+  "rng_seed": 36,
+  "framework_note": "comp-036 reframes the comp-033 decision rule from 'plasma Cmax vs anakinra 1.5 ug/mL' to 'receptor-occupancy fraction over the 0-72h gout flare window'. The receptor-occupancy framing is the clinically-relevant metric: IL-1Ra is a competitive antagonist at IL-1R1 with Kd ~1 nM (Arend 1990 JCI; Schreuder 1997 Nature). What determines clinical efficacy is sustained competitive displacement of IL-1beta from the receptor over the flare window, not raw plasma concentration matching to anakinra. This reframe is the load-bearing methodological correction in comp-036.",
+  "single_dose_sanity_check": {
+    "name": "single_dose_cmax_sanity_check_ug_per_ml",
+    "n": 10000,
+    "median": 0.025596085083878027,
+    "mean": 0.06844570634565902,
+    "p05": 0.002286081522243346,
+    "p25": 0.008737655986085158,
+    "p75": 0.07312406458171078,
+    "p95": 0.28283338212753545,
+    "min": 0.0002665165334422844,
+    "max": 2.6362372904687956
+  },
+  "qd_regimen_scan": [
+    {
+      "regimen": "QD",
+      "n_doses": 1,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_QD_n1",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.23630827586206896,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.5448275862068965,
+        "p95": 0.9724137931034482,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_QD_n1",
+        "n": 10000,
+        "median": 0.45721307530012945,
+        "mean": 0.46514014459339886,
+        "p05": 0.0407703673875904,
+        "p25": 0.202921505488806,
+        "p75": 0.7162993942274668,
+        "p95": 0.9287569608845929,
+        "min": 0.0020545305141112776,
+        "max": 0.9875949092018207
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.249,
+        "translation_eff_ng_per_ug": 0.559,
+        "lung_delivery_frac": 0.184,
+        "systemic_bioavail_frac": 0.204,
+        "expression_duration_h": 0.089,
+        "clearance_per_h": -0.139,
+        "vd_L": -0.1,
+        "kd_nM": -0.673,
+        "excess_factor": 0.001
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "QD",
+      "n_doses": 2,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_QD_n2",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.3387406896551724,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.8293103448275863,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_QD_n2",
+        "n": 10000,
+        "median": 0.6134488799540346,
+        "mean": 0.5704971570364599,
+        "p05": 0.06916426170156971,
+        "p25": 0.3086574894379314,
+        "p75": 0.8444235098256716,
+        "p95": 0.963523035721087,
+        "min": 0.0053288629208241125,
+        "max": 0.9908438651130481
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.239,
+        "translation_eff_ng_per_ug": 0.572,
+        "lung_delivery_frac": 0.169,
+        "systemic_bioavail_frac": 0.206,
+        "expression_duration_h": -0.081,
+        "clearance_per_h": -0.119,
+        "vd_L": -0.104,
+        "kd_nM": -0.69,
+        "excess_factor": -0.003
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "QD",
+      "n_doses": 3,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_QD_n3",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.3755993103448276,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.903448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_QD_n3",
+        "n": 10000,
+        "median": 0.6610033846396548,
+        "mean": 0.6011798024224847,
+        "p05": 0.08244849197090774,
+        "p25": 0.3520880407225949,
+        "p75": 0.8689685797800244,
+        "p95": 0.9700600670257605,
+        "min": 0.0035271187701796493,
+        "max": 0.9915467180771024
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.255,
+        "translation_eff_ng_per_ug": 0.574,
+        "lung_delivery_frac": 0.18,
+        "systemic_bioavail_frac": 0.195,
+        "expression_duration_h": -0.143,
+        "clearance_per_h": -0.105,
+        "vd_L": -0.112,
+        "kd_nM": -0.678,
+        "excess_factor": -0.01
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "QD",
+      "n_doses": 4,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_QD_n4",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.3672344827586207,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.896551724137931,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_QD_n4",
+        "n": 10000,
+        "median": 0.6480163820900778,
+        "mean": 0.5929530888232988,
+        "p05": 0.08119586826802827,
+        "p25": 0.3353053141593824,
+        "p75": 0.8645855902824413,
+        "p95": 0.969063089060703,
+        "min": 0.004703788872138482,
+        "max": 0.9919654598425508
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.258,
+        "translation_eff_ng_per_ug": 0.566,
+        "lung_delivery_frac": 0.164,
+        "systemic_bioavail_frac": 0.217,
+        "expression_duration_h": -0.117,
+        "clearance_per_h": -0.115,
+        "vd_L": -0.113,
+        "kd_nM": -0.686,
+        "excess_factor": -0.004
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "QD",
+      "n_doses": 5,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_QD_n5",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.3735496551724138,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9103448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_QD_n5",
+        "n": 10000,
+        "median": 0.6546553499742926,
+        "mean": 0.5962580286379919,
+        "p05": 0.08014212019512787,
+        "p25": 0.3399891706425866,
+        "p75": 0.870703478081345,
+        "p95": 0.9677155833441805,
+        "min": 0.007446240057265923,
+        "max": 0.9910322990469759
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.255,
+        "translation_eff_ng_per_ug": 0.567,
+        "lung_delivery_frac": 0.176,
+        "systemic_bioavail_frac": 0.222,
+        "expression_duration_h": -0.107,
+        "clearance_per_h": -0.078,
+        "vd_L": -0.114,
+        "kd_nM": -0.688,
+        "excess_factor": 0.002
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "QD",
+      "n_doses": 7,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_QD_n7",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.3754489655172414,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9051724137931034,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_QD_n7",
+        "n": 10000,
+        "median": 0.6634603852934831,
+        "mean": 0.5988323231331331,
+        "p05": 0.07993709444124694,
+        "p25": 0.34166616890631535,
+        "p75": 0.86867472322139,
+        "p95": 0.9697124504464997,
+        "min": 0.004070012939658934,
+        "max": 0.9911040092425891
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.266,
+        "translation_eff_ng_per_ug": 0.569,
+        "lung_delivery_frac": 0.205,
+        "systemic_bioavail_frac": 0.214,
+        "expression_duration_h": -0.135,
+        "clearance_per_h": -0.113,
+        "vd_L": -0.104,
+        "kd_nM": -0.679,
+        "excess_factor": 0.002
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "QD",
+      "n_doses": 10,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_QD_n10",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.3708668965517241,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.903448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_QD_n10",
+        "n": 10000,
+        "median": 0.6542728614144653,
+        "mean": 0.5991955764936542,
+        "p05": 0.08783178600159475,
+        "p25": 0.3529939887886434,
+        "p75": 0.8687203077954407,
+        "p95": 0.9689656640070953,
+        "min": 0.006215589489837572,
+        "max": 0.9907441202804609
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.25,
+        "translation_eff_ng_per_ug": 0.559,
+        "lung_delivery_frac": 0.2,
+        "systemic_bioavail_frac": 0.21,
+        "expression_duration_h": -0.117,
+        "clearance_per_h": -0.102,
+        "vd_L": -0.102,
+        "kd_nM": -0.676,
+        "excess_factor": 0.01
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "QD",
+      "n_doses": 14,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_QD_n14",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.37181793103448274,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9103448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_QD_n14",
+        "n": 10000,
+        "median": 0.6564074936791567,
+        "mean": 0.596526868749453,
+        "p05": 0.08228506937785893,
+        "p25": 0.34124471126007544,
+        "p75": 0.8710002889529844,
+        "p95": 0.9676194136010909,
+        "min": 0.004539990105053311,
+        "max": 0.991084666286355
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.238,
+        "translation_eff_ng_per_ug": 0.575,
+        "lung_delivery_frac": 0.172,
+        "systemic_bioavail_frac": 0.216,
+        "expression_duration_h": -0.126,
+        "clearance_per_h": -0.108,
+        "vd_L": -0.081,
+        "kd_nM": -0.69,
+        "excess_factor": -0.007
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    }
+  ],
+  "bid_regimen_scan": [
+    {
+      "regimen": "BID",
+      "n_doses": 2,
+      "interval_h": 12,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_BID_n2",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.3416220689655172,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.7931034482758621,
+        "p95": 0.9793103448275862,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_BID_n2",
+        "n": 10000,
+        "median": 0.6045229480532299,
+        "mean": 0.567400419492806,
+        "p05": 0.07129274363070359,
+        "p25": 0.32647576154177055,
+        "p75": 0.8272746719884319,
+        "p95": 0.959935755308503,
+        "min": 0.005440028810329114,
+        "max": 0.9906195830197446
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.252,
+        "translation_eff_ng_per_ug": 0.569,
+        "lung_delivery_frac": 0.197,
+        "systemic_bioavail_frac": 0.207,
+        "expression_duration_h": 0.029,
+        "clearance_per_h": -0.132,
+        "vd_L": -0.106,
+        "kd_nM": -0.672,
+        "excess_factor": -0.016
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "BID",
+      "n_doses": 4,
+      "interval_h": 12,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_BID_n4",
+        "n": 10000,
+        "median": 0.496551724137931,
+        "mean": 0.449888275862069,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.903448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_BID_n4",
+        "n": 10000,
+        "median": 0.7321896408399122,
+        "mean": 0.6502021060077257,
+        "p05": 0.11671986758494714,
+        "p25": 0.4334918328105554,
+        "p75": 0.8963556285032981,
+        "p95": 0.9737407700675845,
+        "min": 0.009325882855521538,
+        "max": 0.9916819349272684
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.245,
+        "translation_eff_ng_per_ug": 0.586,
+        "lung_delivery_frac": 0.168,
+        "systemic_bioavail_frac": 0.191,
+        "expression_duration_h": -0.111,
+        "clearance_per_h": -0.087,
+        "vd_L": -0.096,
+        "kd_nM": -0.69,
+        "excess_factor": 0.0
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "BID",
+      "n_doses": 6,
+      "interval_h": 12,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_BID_n6",
+        "n": 10000,
+        "median": 0.5172413793103449,
+        "mean": 0.4596751724137931,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.903448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_BID_n6",
+        "n": 10000,
+        "median": 0.735588891909621,
+        "mean": 0.6601684190708391,
+        "p05": 0.1352774556159821,
+        "p25": 0.45546822394784303,
+        "p75": 0.8998989073729066,
+        "p95": 0.9743964217053164,
+        "min": 0.009666594476111094,
+        "max": 0.9912925189139646
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.256,
+        "translation_eff_ng_per_ug": 0.558,
+        "lung_delivery_frac": 0.192,
+        "systemic_bioavail_frac": 0.218,
+        "expression_duration_h": -0.141,
+        "clearance_per_h": -0.09,
+        "vd_L": -0.105,
+        "kd_nM": -0.676,
+        "excess_factor": 0.008
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": true
+    },
+    {
+      "regimen": "BID",
+      "n_doses": 8,
+      "interval_h": 12,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_BID_n8",
+        "n": 10000,
+        "median": 0.5379310344827586,
+        "mean": 0.4656537931034483,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9103448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_BID_n8",
+        "n": 10000,
+        "median": 0.7407673474721141,
+        "mean": 0.661819819179487,
+        "p05": 0.12420005473099024,
+        "p25": 0.4556951573376398,
+        "p75": 0.9035113775512937,
+        "p95": 0.974699209597678,
+        "min": 0.010937288423963491,
+        "max": 0.9917738182775845
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.262,
+        "translation_eff_ng_per_ug": 0.567,
+        "lung_delivery_frac": 0.192,
+        "systemic_bioavail_frac": 0.213,
+        "expression_duration_h": -0.139,
+        "clearance_per_h": -0.095,
+        "vd_L": -0.102,
+        "kd_nM": -0.689,
+        "excess_factor": 0.018
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": true
+    },
+    {
+      "regimen": "BID",
+      "n_doses": 10,
+      "interval_h": 12,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_BID_n10",
+        "n": 10000,
+        "median": 0.5586206896551724,
+        "mean": 0.4700310344827586,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9103448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_BID_n10",
+        "n": 10000,
+        "median": 0.743408523034021,
+        "mean": 0.6663284849613602,
+        "p05": 0.13971821745056454,
+        "p25": 0.46336733054281565,
+        "p75": 0.9033765282503404,
+        "p95": 0.9757607591507157,
+        "min": 0.005613072612589822,
+        "max": 0.9915021762485474
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.257,
+        "translation_eff_ng_per_ug": 0.569,
+        "lung_delivery_frac": 0.198,
+        "systemic_bioavail_frac": 0.195,
+        "expression_duration_h": -0.157,
+        "clearance_per_h": -0.088,
+        "vd_L": -0.106,
+        "kd_nM": -0.679,
+        "excess_factor": 0.007
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": true
+    },
+    {
+      "regimen": "BID",
+      "n_doses": 14,
+      "interval_h": 12,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_BID_n14",
+        "n": 10000,
+        "median": 0.4896551724137931,
+        "mean": 0.4542455172413793,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.903448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_BID_n14",
+        "n": 10000,
+        "median": 0.7288031432616477,
+        "mean": 0.6563509227366368,
+        "p05": 0.12532557190009652,
+        "p25": 0.45376965417334425,
+        "p75": 0.8990734685993494,
+        "p95": 0.9752408300359725,
+        "min": 0.009527306697434056,
+        "max": 0.991884703872394
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.244,
+        "translation_eff_ng_per_ug": 0.576,
+        "lung_delivery_frac": 0.192,
+        "systemic_bioavail_frac": 0.211,
+        "expression_duration_h": -0.143,
+        "clearance_per_h": -0.089,
+        "vd_L": -0.095,
+        "kd_nM": -0.686,
+        "excess_factor": -0.003
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false
+    },
+    {
+      "regimen": "BID",
+      "n_doses": 20,
+      "interval_h": 12,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_BID_n20",
+        "n": 10000,
+        "median": 0.5310344827586206,
+        "mean": 0.46429379310344826,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9103448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_BID_n20",
+        "n": 10000,
+        "median": 0.7388430066427236,
+        "mean": 0.6640519924257611,
+        "p05": 0.13429361224842376,
+        "p25": 0.46033548378132527,
+        "p75": 0.9043314976686184,
+        "p95": 0.9753470535471336,
+        "min": 0.006292204454354248,
+        "max": 0.9916336533374722
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.246,
+        "translation_eff_ng_per_ug": 0.573,
+        "lung_delivery_frac": 0.193,
+        "systemic_bioavail_frac": 0.198,
+        "expression_duration_h": -0.159,
+        "clearance_per_h": -0.093,
+        "vd_L": -0.105,
+        "kd_nM": -0.685,
+        "excess_factor": -0.013
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": true
+    },
+    {
+      "regimen": "BID",
+      "n_doses": 28,
+      "interval_h": 12,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_BID_n28",
+        "n": 10000,
+        "median": 0.5310344827586206,
+        "mean": 0.46254689655172415,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.903448275862069,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_BID_n28",
+        "n": 10000,
+        "median": 0.7376763384941817,
+        "mean": 0.6599690566896144,
+        "p05": 0.12300821115881325,
+        "p25": 0.4534534035098804,
+        "p75": 0.9009949538304005,
+        "p95": 0.9754919269755671,
+        "min": 0.01121151932561401,
+        "max": 0.9919371766126899
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.279,
+        "translation_eff_ng_per_ug": 0.575,
+        "lung_delivery_frac": 0.182,
+        "systemic_bioavail_frac": 0.202,
+        "expression_duration_h": -0.138,
+        "clearance_per_h": -0.095,
+        "vd_L": -0.09,
+        "kd_nM": -0.691,
+        "excess_factor": -0.006
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": true
+    }
+  ],
+  "loading_regimen_scan": [
+    {
+      "regimen": "Loading",
+      "n_doses": 1,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_Loading_n1",
+        "n": 10000,
+        "median": 0.0,
+        "mean": 0.3367958620689655,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.7724137931034483,
+        "p95": 0.9862068965517241,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_Loading_n1",
+        "n": 10000,
+        "median": 0.5782107574525559,
+        "mean": 0.5536603197549664,
+        "p05": 0.07252659962896799,
+        "p25": 0.30732287735859404,
+        "p75": 0.8114009714855509,
+        "p95": 0.9598086703588828,
+        "min": 0.006987873553591438,
+        "max": 0.9915327232895337
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.258,
+        "translation_eff_ng_per_ug": 0.557,
+        "lung_delivery_frac": 0.181,
+        "systemic_bioavail_frac": 0.187,
+        "expression_duration_h": 0.153,
+        "clearance_per_h": -0.166,
+        "vd_L": -0.104,
+        "kd_nM": -0.663,
+        "excess_factor": 0.006
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false,
+      "n_maintenance_doses": 0,
+      "loading_multiplier": 2.0
+    },
+    {
+      "regimen": "Loading",
+      "n_doses": 2,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_Loading_n2",
+        "n": 10000,
+        "median": 0.21379310344827587,
+        "mean": 0.42216413793103447,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9379310344827586,
+        "p95": 0.993103448275862,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_Loading_n2",
+        "n": 10000,
+        "median": 0.709509371349649,
+        "mean": 0.6357874413782486,
+        "p05": 0.10638325185935064,
+        "p25": 0.40748419458685564,
+        "p75": 0.8950889281949392,
+        "p95": 0.9748473815070907,
+        "min": 0.008049852104308723,
+        "max": 0.9912865746938193
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.266,
+        "translation_eff_ng_per_ug": 0.572,
+        "lung_delivery_frac": 0.166,
+        "systemic_bioavail_frac": 0.21,
+        "expression_duration_h": -0.031,
+        "clearance_per_h": -0.12,
+        "vd_L": -0.087,
+        "kd_nM": -0.693,
+        "excess_factor": -0.007
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false,
+      "n_maintenance_doses": 1,
+      "loading_multiplier": 2.0
+    },
+    {
+      "regimen": "Loading",
+      "n_doses": 3,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_Loading_n3",
+        "n": 10000,
+        "median": 0.2689655172413793,
+        "mean": 0.4449062068965517,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9655172413793104,
+        "p95": 0.993103448275862,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_Loading_n3",
+        "n": 10000,
+        "median": 0.7358484380654895,
+        "mean": 0.6543115858292065,
+        "p05": 0.11623173214661675,
+        "p25": 0.42869508801053674,
+        "p75": 0.9120612352668674,
+        "p95": 0.9789658434783635,
+        "min": 0.005466264629853772,
+        "max": 0.9918957459497503
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.263,
+        "translation_eff_ng_per_ug": 0.574,
+        "lung_delivery_frac": 0.178,
+        "systemic_bioavail_frac": 0.226,
+        "expression_duration_h": -0.096,
+        "clearance_per_h": -0.136,
+        "vd_L": -0.115,
+        "kd_nM": -0.686,
+        "excess_factor": 0.001
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false,
+      "n_maintenance_doses": 2,
+      "loading_multiplier": 2.0
+    },
+    {
+      "regimen": "Loading",
+      "n_doses": 4,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_Loading_n4",
+        "n": 10000,
+        "median": 0.2896551724137931,
+        "mean": 0.4489806896551724,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9586206896551724,
+        "p95": 0.993103448275862,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_Loading_n4",
+        "n": 10000,
+        "median": 0.7410621956555157,
+        "mean": 0.6597225050239124,
+        "p05": 0.10959679264953183,
+        "p25": 0.44650399642842786,
+        "p75": 0.9070672396323287,
+        "p95": 0.9774904548551897,
+        "min": 0.0038760669760413485,
+        "max": 0.992135706203235
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.249,
+        "translation_eff_ng_per_ug": 0.564,
+        "lung_delivery_frac": 0.175,
+        "systemic_bioavail_frac": 0.202,
+        "expression_duration_h": -0.101,
+        "clearance_per_h": -0.099,
+        "vd_L": -0.119,
+        "kd_nM": -0.688,
+        "excess_factor": 0.001
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false,
+      "n_maintenance_doses": 3,
+      "loading_multiplier": 2.0
+    },
+    {
+      "regimen": "Loading",
+      "n_doses": 5,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_Loading_n5",
+        "n": 10000,
+        "median": 0.31724137931034485,
+        "mean": 0.4552365517241379,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9655172413793104,
+        "p95": 0.993103448275862,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_Loading_n5",
+        "n": 10000,
+        "median": 0.748541528920602,
+        "mean": 0.6632911733552629,
+        "p05": 0.11277458493969138,
+        "p25": 0.44780794154552567,
+        "p75": 0.9118463730708883,
+        "p95": 0.9785941381351752,
+        "min": 0.007472124650726628,
+        "max": 0.9921552781095161
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.238,
+        "translation_eff_ng_per_ug": 0.569,
+        "lung_delivery_frac": 0.189,
+        "systemic_bioavail_frac": 0.202,
+        "expression_duration_h": -0.107,
+        "clearance_per_h": -0.113,
+        "vd_L": -0.109,
+        "kd_nM": -0.69,
+        "excess_factor": 0.007
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false,
+      "n_maintenance_doses": 4,
+      "loading_multiplier": 2.0
+    },
+    {
+      "regimen": "Loading",
+      "n_doses": 8,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_Loading_n8",
+        "n": 10000,
+        "median": 0.31724137931034485,
+        "mean": 0.45590413793103446,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9655172413793104,
+        "p95": 0.993103448275862,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_Loading_n8",
+        "n": 10000,
+        "median": 0.748934495682374,
+        "mean": 0.6641803640159527,
+        "p05": 0.1216702118583505,
+        "p25": 0.4502935044473439,
+        "p75": 0.9133817465478,
+        "p95": 0.9781629803375724,
+        "min": 0.0068998517045722445,
+        "max": 0.9922685022885525
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.263,
+        "translation_eff_ng_per_ug": 0.562,
+        "lung_delivery_frac": 0.177,
+        "systemic_bioavail_frac": 0.227,
+        "expression_duration_h": -0.085,
+        "clearance_per_h": -0.101,
+        "vd_L": -0.111,
+        "kd_nM": -0.679,
+        "excess_factor": 0.014
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false,
+      "n_maintenance_doses": 7,
+      "loading_multiplier": 2.0
+    },
+    {
+      "regimen": "Loading",
+      "n_doses": 11,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_Loading_n11",
+        "n": 10000,
+        "median": 0.30344827586206896,
+        "mean": 0.4511510344827586,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9655172413793104,
+        "p95": 0.993103448275862,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_Loading_n11",
+        "n": 10000,
+        "median": 0.7448245794178365,
+        "mean": 0.6612640857758941,
+        "p05": 0.11780046973589016,
+        "p25": 0.44917152637629154,
+        "p75": 0.9104435748666106,
+        "p95": 0.9776939894500027,
+        "min": 0.009716204476689761,
+        "max": 0.992081209868189
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.26,
+        "translation_eff_ng_per_ug": 0.568,
+        "lung_delivery_frac": 0.195,
+        "systemic_bioavail_frac": 0.195,
+        "expression_duration_h": -0.094,
+        "clearance_per_h": -0.103,
+        "vd_L": -0.118,
+        "kd_nM": -0.69,
+        "excess_factor": 0.012
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false,
+      "n_maintenance_doses": 10,
+      "loading_multiplier": 2.0
+    },
+    {
+      "regimen": "Loading",
+      "n_doses": 15,
+      "interval_h": 24,
+      "sustained_80pct_summary": {
+        "name": "sustained_80pct_frac_Loading_n15",
+        "n": 10000,
+        "median": 0.2896551724137931,
+        "mean": 0.44808344827586205,
+        "p05": 0.0,
+        "p25": 0.0,
+        "p75": 0.9655172413793104,
+        "p95": 0.993103448275862,
+        "min": 0.0,
+        "max": 0.993103448275862
+      },
+      "mean_occupancy_summary": {
+        "name": "mean_occupancy_Loading_n15",
+        "n": 10000,
+        "median": 0.7404454986562636,
+        "mean": 0.6571175401859647,
+        "p05": 0.11026659019949775,
+        "p25": 0.43699331736977376,
+        "p75": 0.911899064364246,
+        "p95": 0.978442762114573,
+        "min": 0.008115919814152415,
+        "max": 0.9925474008545809
+      },
+      "sensitivity_spearman": {
+        "dose_mg_mrna": 0.276,
+        "translation_eff_ng_per_ug": 0.572,
+        "lung_delivery_frac": 0.169,
+        "systemic_bioavail_frac": 0.21,
+        "expression_duration_h": -0.112,
+        "clearance_per_h": -0.102,
+        "vd_L": -0.111,
+        "kd_nM": -0.687,
+        "excess_factor": 0.013
+      },
+      "passes_GREEN_gate": false,
+      "passes_YELLOW_gate": false,
+      "n_maintenance_doses": 14,
+      "loading_multiplier": 2.0
+    }
+  ],
+  "recommended_regimens": {
+    "QD_smallest_N_GREEN": null,
+    "QD_smallest_N_YELLOW": null,
+    "BID_smallest_N_GREEN": null,
+    "BID_smallest_N_YELLOW": {
+      "n_doses": 6,
+      "days": 3.0
+    },
+    "Loading_smallest_N_GREEN": null,
+    "Loading_smallest_N_YELLOW": null
+  },
+  "receptor_occupancy_threshold_analysis": {
+    "comment": "Plasma IL-1Ra concentration where receptor occupancy first crosses 80% (competitive antagonism: [IL-1Ra]_nM = 4 * Kd_nM at 80% occupancy).",
+    "threshold_concentration_ng_per_ml_distribution": {
+      "name": "il1ra_plasma_threshold_for_80pct_occupancy_ng_per_ml",
+      "n": 10000,
+      "median": 72.55951148154517,
+      "mean": 151.21204506715574,
+      "p05": 8.842429795147362,
+      "p25": 22.156161605238168,
+      "p75": 224.39873102214125,
+      "p95": 552.5983169924616,
+      "min": 6.923274033996245,
+      "max": 691.0799087163103
+    },
+    "single_dose_cmax_inherited_ng_per_ml": 25.0,
+    "anakinra_steady_state_cmax_ng_per_ml": 1500.0,
+    "interpretation": "Median 80%-occupancy threshold concentration is 72.6 ng/mL [p05-p95: 8.84-552.6]. comp-033 single-dose Cmax (25 ng/mL) is below median threshold. Anakinra steady-state (1500 ng/mL) is 21x above median threshold (i.e. anakinra QD operates well above the 80% occupancy threshold)."
+  },
+  "sensitivity_at_recommended_regimen": {
+    "regimen_label": "QD x14 (max scanned, did not pass)",
+    "spearman_rho_vs_mean_occupancy": {
+      "dose_mg_mrna": 0.238,
+      "translation_eff_ng_per_ug": 0.575,
+      "lung_delivery_frac": 0.172,
+      "systemic_bioavail_frac": 0.216,
+      "expression_duration_h": -0.126,
+      "clearance_per_h": -0.108,
+      "vd_L": -0.081,
+      "kd_nM": -0.69,
+      "excess_factor": -0.007
+    },
+    "top_drivers": [
+      [
+        "kd_nM",
+        -0.69
+      ],
+      [
+        "translation_eff_ng_per_ug",
+        0.575
+      ],
+      [
+        "dose_mg_mrna",
+        0.238
+      ]
+    ]
+  },
+  "side_effect_comparator_table": {
+    "per_flare_burden": {
+      "inhaled_mrna_repeat_dose_recommended": {
+        "regimen": "RED \u2014 no practical regimen identified",
+        "side_effects_acute": [
+          "Cough during nebulization (~30-40% per inhaled-mRNA-LNP trial precedent: Translate Bio MRT5005 CF, ReCode RCT2100)",
+          "Mild dyspnea / chest tightness (~10-15%)",
+          "Transient mucosal irritation",
+          "No injection-site reactions (advantage over anakinra/canakinumab SC)",
+          "No systemic glucocorticoid effects (advantage over prednisone)"
+        ],
+        "cost_per_flare_usd_range": [
+          10,
+          600
+        ]
+      },
+      "anakinra_sc_qd_x5": {
+        "regimen": "100 mg SC once daily x 3-5 days (off-label) or 100 mg SC once daily x 5 days (Saag 2021 RCT)",
+        "side_effects_acute": [
+          "Injection-site reactions: 71% in chronic anakinra (RA dosing). For 5-day flare therapy, rate is lower (~30-40% per study reports) but still common.",
+          "Modest infection risk during dosing window; minimal at 5-day acute exposure",
+          "Headache, nausea (uncommon, <5%)"
+        ],
+        "cost_per_flare_usd_range": [
+          1500,
+          2500
+        ]
+      },
+      "canakinumab_sc_single": {
+        "regimen": "150 mg SC single dose per flare",
+        "side_effects_acute": [
+          "Injection-site reactions: ~5-10%",
+          "Modest infection risk; sustained exposure due to ~26-day half-life (vs anakinra ~4h) means risk window per dose is weeks not days",
+          "Hepatotoxicity rare"
+        ],
+        "cost_per_flare_usd_range": [
+          18000,
+          23000
+        ]
+      },
+      "prednisone_taper": {
+        "regimen": "30-40 mg/day x 5 days, then taper 5-10 mg every 2-3 days over 7-10 additional days",
+        "side_effects_acute": [
+          "Glucose elevation (especially in diabetics or pre-diabetics)",
+          "BP elevation, fluid retention",
+          "Mood disturbances (insomnia, anxiety, mood swings) - very common, ~30-50% report",
+          "Sleep disruption - very common at any dose >10 mg/day",
+          "Increased appetite, weight gain (transient at acute dose)",
+          "Immunosuppression (modest; 2-week course rarely catastrophic)"
+        ],
+        "cost_per_flare_usd_range": [
+          10,
+          30
+        ]
+      }
+    },
+    "cumulative_over_years_at_5_flares_yr": {
+      "comment": "For a typical operator-profile patient (Brian, currently affected): 3-6 flares/year, 30+ year disease horizon. Cumulative burden axes that matter at year 5, year 10, year 20.",
+      "anakinra": "~50-150 cumulative SC injections/year/decade; ADAs may rise but typically don't drive efficacy loss at acute-only dosing; injection-site fatigue probable; no characterized severe long-term toxicity.",
+      "canakinumab": "~5-10 SC injections/year over decades; cumulative immunosuppressive windows ~3-12 months/year; long-term infection-risk profile not characterized at this duty cycle; cost is the practical limit.",
+      "prednisone": "~5 flares/year x ~240 mg = ~1,200 mg/year x 30 years = ~36 g cumulative prednisone. Crosses bone-density threshold (typically ~2-5 g cumulative) within 2-4 years; cataract threshold typically ~10 g cumulative; adrenal-axis suppression becomes physiology; this is the durable-toxicity profile the operator is currently accepting.",
+      "inhaled_mrna_repeat_dose_projected": "~15-50 inhaled mRNA-LNP exposures/year x decades = unknown cumulative anti-PEG/innate-immune profile; mRNA vaccine literature (multi-booster cohort tracking) is the closest proxy and suggests acceptable safety at 5+ exposures over 3 years; the inhaled-route and per-session-dose are larger than vaccine boosters, so direct extrapolation has uncertainty; **this is the load-bearing unknown that comp-036 cannot resolve and that wet-lab Phase 1 would need to address.**"
+    }
+  },
+  "clinical_handoff": {
+    "if_GREEN_phase_1_design": "Phase 1 dose-finding: inhaled mRNA-IL-1Ra at 4, 10, 24 mg per dose, with anakinra 100 mg SC QD x 5 days as active comparator. Primary endpoint: plasma IL-1Ra Cmax + AUC vs anakinra; pharmacodynamic endpoint: plasma IL-6 / CRP suppression in MSU-induced flare or PMA-stimulated PBMC ex vivo IL-1beta release assay. N=30-45 healthy volunteers (15/arm x 3 dose levels). Wet-lab measurement that would tighten the comp-036 verdict the most: actual translation-efficiency mass ratio (protein / mRNA delivered) in human alveolar epithelium \u2014 currently the dominant sensitivity driver (Spearman rho = +0.78 in single-dose; persists in repeat-dose).",
+    "if_YELLOW_wet_lab_priority": "Single critical wet-lab measurement: actual integrated translation-efficiency mass ratio in human alveolar epithelium for inhaled m1Psi-mRNA-LNP IL-1Ra. The 1,000-50,000 ng/ug prior is the dominant uncertainty. A direct measurement in a ferret or NHP single-dose inhaled-LNP study would either confirm GREEN or tip to RED.",
+    "if_RED_next_route": "Pivot to intra-articular mRNA-IL-1Ra (sister architecture to comp-035 intra-articular uricase + catalase). Local concentration at the affected joint bypasses systemic dilution; receptor-occupancy math at the joint with bolus IA mRNA delivery is fundamentally different and likely far more favorable. Alternative: accept sub-anakinra exposure with 50-3000x cost edge over canakinumab (per comp-033 economics) and target patients with prednisone-side-effect-driven need for steroid-sparing therapy even at imperfect IL-1 blockade."
+  }
+}

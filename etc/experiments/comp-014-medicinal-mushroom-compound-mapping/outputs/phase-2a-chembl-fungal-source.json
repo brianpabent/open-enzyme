@@ -1,0 +1,257 @@
+{
+  "_meta": {
+    "date": "2026-05-06",
+    "phase": "2a",
+    "method": "ChEMBL bioactivity sweep filtered to fungal-source compounds. Two-pass approach: (1) bulk bioactivity pulls per chokepoint target (top 200 records by IC50) to inventory named compounds, (2) targeted compound→all-targets queries for known fungal natural products to surface chokepoint hits not captured in the top-200 cut. Confidence assignments use ChEMBL's `natural_product` flag + literature-confirmed biosynthetic-source organism.",
+    "tools_used": [
+      "mcp__plugin_chembl_ChEMBL__target_search",
+      "mcp__plugin_chembl_ChEMBL__compound_search",
+      "mcp__plugin_chembl_ChEMBL__get_bioactivity"
+    ],
+    "operator": "Claude Opus 4.7 subagent (comp-014 Phase 2a)"
+  },
+  "_summary": {
+    "targets_queried": 19,
+    "targets_with_chembl_id": 18,
+    "targets_no_chembl_record": ["TXNIP — no curated single-protein ChEMBL target"],
+    "fungal_compounds_with_chokepoint_hits": 4,
+    "compound_target_pairs": 5,
+    "headline_findings": [
+      "FUMITREMORGIN C (Aspergillus fumigatus) → ABCG2 IC50 = 800 nM (pChEMBL 6.10) — sub-μM, canonical ABCG2 reference inhibitor in the literature",
+      "MYCOPHENOLIC ACID (Penicillium brevicompactum) → PPARγ partial agonist, low-potency (Kd ≈ 110 μM, flagged 'Outside typical range')",
+      "LOVASTATIN (Aspergillus terreus / Pleurotus ostreatus / Monascus ruber / red yeast rice) → HDAC6 IC50 = 16.3 μM (pChEMBL 4.79); also weak PPARγ Potency 50 μM",
+      "C5aR1 returned ZERO fungal-source hits (corroborates validation-experiments §1.21 — no validated natural-product C5aR1 antagonists in ChEMBL)",
+      "URAT1, GLUT9, NLRP3, IL-1β, TNF, Caspase-1, ASC, OAT1/3/4, KEAP1, Lp-PLA2, PDI returned no fungal-source compound hits in top-200 IC50 records OR direct compound→target queries for the canonical fungal natural products tested"
+    ]
+  },
+  "by_target": {
+    "URAT1": {
+      "chembl_id": "CHEMBL6120",
+      "uniprot": "Q96S37",
+      "total_records_top200_pull": 200,
+      "named_compounds_top200": ["BENZBROMARONE", "VERINURAD", "SHR-4640", "MORIN", "BENZARONE", "PF-05089771", "LESINURAD", "FENOFIBRIC ACID", "PROBENECID", "SULFINPYRAZONE", "FENOFIBRATE"],
+      "fungal_compounds": [],
+      "notes": "Top hits are all synthetic uricosurics or plant flavonoids (morin from Maclura pomifera). No ChEMBL records of fungal-source compounds against URAT1 in the IC50 top-200 OR in direct compound→target probes for lovastatin / mycophenolic acid / cordycepin / griseofulvin / fumitremorgin / mevastatin."
+    },
+    "GLUT9": {
+      "chembl_id": "CHEMBL2052034",
+      "uniprot": "Q9NRM0",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "ChEMBL bioactivity coverage for GLUT9 is sparse (recently characterized urate transporter; structure solved 2024). No fungal compounds queried surfaced here. Most GLUT9 modulators in the literature are flavonoid/synthetic chemotype."
+    },
+    "ABCG2": {
+      "chembl_id": "CHEMBL5393",
+      "uniprot": "Q9UNQ0",
+      "total_records_top200_pull": 200,
+      "named_compounds_top200_first10": ["ELACRIDAR", "RETUSIN", "AYANIN", "TARIQUIDAR", "BOERAVINONE G", "GEFITINIB", "PENDULETIN", "3,5,6,7,8,3',4'-HEPTAMETHOXYFLAVONE", "CHRYSIN", "BOERAVINONE H"],
+      "fungal_compounds": [
+        {
+          "compound_chembl_id": "CHEMBL410316",
+          "compound_name": "FUMITREMORGIN (C)",
+          "natural_product_flag": true,
+          "source_organism": "Aspergillus fumigatus",
+          "potency": {
+            "type": "IC50",
+            "value_nM": 800,
+            "pchembl": 6.10,
+            "assay_chembl_id": "CHEMBL1694230",
+            "assay_description": "Inhibition of ABCG2 expressed in human NCI-H460 cells assessed as inhibition of PhA accumulation",
+            "reference": "J Nat Prod 2011",
+            "additional_data": "Multiple records 11000 nM (>) to 800 nM (=); used as canonical ABCG2 reference inhibitor in mitoxantrone efflux assays (Rabindran et al. and many follow-ups, e.g. Bioorg Med Chem 2008, 2010, 2011; J Med Chem 2005, 2009)"
+          },
+          "confidence": "high — ChEMBL `natural_product:true`; well-documented Aspergillus fumigatus indolyl diketopiperazine; FTC is the historical pharmacological tool compound for ABCG2 / BCRP discrimination from MDR1; multiple independent labs across 2005–2011"
+        },
+        {
+          "compound_chembl_id": "CHEMBL1089971",
+          "compound_name": "CYCLOTRYPROSTATIN A (12,13-dihydroxyfumitremorgin C)",
+          "natural_product_flag": true,
+          "source_organism": "Aspergillus fumigatus",
+          "potency": {
+            "type": "no chokepoint hit",
+            "note": "15 records total, none against ABCG2 in ChEMBL. Activity profile is antitrypanosomal + antifungal MIC. Listed here for completeness as a fumitremorgin congener."
+          },
+          "confidence": "medium — confirmed fungal NP, but chokepoint relevance not in ChEMBL; could be tested but no literature precedent"
+        }
+      ],
+      "notes": "FUMITREMORGIN C is the standout fungal-source ABCG2 hit and the highest-leverage finding from this entire sweep. The ABCG2 top-200 also contains many flavonoids/methylated-flavonoids (chrysin, retusin, ayanin, kaempferol, apigenin, genistein, quercetin, nobiletin, sinensetin, tangeretin, etc.) — predominantly plant-source but some have fungal endophyte production routes. Strict fungal-source only counts FTC."
+    },
+    "Xanthine_Oxidase": {
+      "chembl_id": "CHEMBL1929",
+      "uniprot": "P47989",
+      "total_records_top200_pull": 200,
+      "named_compounds_top200": ["FEBUXOSTAT", "ALLOPURINOL", "LUTEOLIN", "BROUSSOCHALCONE A", "APIGENIN", "CHRYSIN", "BROPIRIMINE", "KAEMPFEROL", "ISOQUERCETIN", "GALANGIN", "MYRICETIN", "ISORHAMNETIN", "QUERCETIN", "BAICALEIN", "FISETIN", "ARTEMINORIN C", "OMBUINE", "ESCULETIN", "MORIN"],
+      "fungal_compounds": [],
+      "notes": "All top hits are synthetic (febuxostat/allopurinol/bropirimine) or plant-derived flavonoids. No fungal compounds surfaced in IC50 top-200, and direct probes of lovastatin/cordycepin/mycophenolic acid/fumitremorgin against XO returned zero ChEMBL records. Some Ganoderma triterpenoids have been reported as XO inhibitors in the Chinese-language literature but are not in ChEMBL."
+    },
+    "NLRP3": {
+      "chembl_id": "CHEMBL1741208",
+      "uniprot": "Q96P20",
+      "total_records_top200_pull": 200,
+      "named_compounds_top200": ["TRICLOCARBAN", "CLIOXANIDE", "ISOLIQUIRITIGENIN", "CLOMIPHENE", "ALAPROCLATE HYDROCHLORIDE", "4'-METHOXYFLAVONE", "APIGENIN", "GLYBURIDE"],
+      "fungal_compounds": [],
+      "notes": "Very thin ChEMBL coverage for NLRP3 (only 8 named compounds with potency data) — most NLRP3 inhibitor work is in non-ChEMBL-curated mechanism literature (MCC950/CRID3, OLT1177, oridonin). No fungal-source NLRP3 hits in ChEMBL."
+    },
+    "ASC_PYCARD": {
+      "chembl_id": "CHEMBL6067324",
+      "uniprot": "Q9ULZ3",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "ASC has minimal ChEMBL coverage (recent target ID, structural characterization 2014+). No fungal hits."
+    },
+    "Caspase-1": {
+      "chembl_id": "CHEMBL4801",
+      "uniprot": "P29466",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "ChEMBL coverage for caspase-1 is dominated by synthetic peptidomimetic VX-765 / pralnacasan / Z-VAD-FMK chemotypes. No fungal-source small molecules surfaced."
+    },
+    "IL-1beta": {
+      "chembl_id": "CHEMBL1909490",
+      "uniprot": "P01584",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "Direct IL-1β small-molecule modulator chemistry is sparse; canakinumab/anakinra/rilonacept are biologics and not in ChEMBL bioactivity. No fungal hits."
+    },
+    "TNFalpha": {
+      "chembl_id": "CHEMBL1825",
+      "uniprot": "P01375",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "No fungal hits. TNF small-molecule space is dominated by SPD-304-class direct inhibitors and synthetic IKK / NF-κB pathway compounds; no fungal-NP records surfaced."
+    },
+    "C5aR1": {
+      "chembl_id": "CHEMBL2373",
+      "uniprot": "P21730",
+      "total_records_top200_pull": 200,
+      "named_compounds_top200": ["ISHKDMQLGR (peptide)", "AMINOQUINURIDE"],
+      "fungal_compounds": [],
+      "notes": "STRATEGIC NEGATIVE: ChEMBL has only 2 named compounds against C5aR1 (one peptide, one synthetic small molecule), and neither is fungal-derived. This corroborates validation-experiments.md §1.21 conclusion that there are no validated natural-product C5aR1 antagonists. C5aR1 looks like a pharmacochemistry-only target — fungal compounds are unlikely to provide a hit. Implication: do NOT spend wet-lab time screening mushroom extracts against C5aR1."
+    },
+    "Lp-PLA2": {
+      "chembl_id": "CHEMBL3514",
+      "uniprot": "Q13093",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "Lp-PLA2 ChEMBL coverage is dominated by darapladib-class synthetic chemistry. No fungal hits."
+    },
+    "HDAC6": {
+      "chembl_id": "CHEMBL1865",
+      "uniprot": "Q9UBN7",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [
+        {
+          "compound_chembl_id": "CHEMBL503",
+          "compound_name": "LOVASTATIN",
+          "natural_product_flag": true,
+          "source_organism": "Aspergillus terreus / Pleurotus ostreatus / Monascus ruber",
+          "potency": {
+            "type": "IC50",
+            "value_nM": 16285,
+            "pchembl": 4.79,
+            "assay_chembl_id": "CHEMBL2351235",
+            "assay_description": "Inhibition of recombinant HDAC6 (unknown origin) after 10 mins by fluorimetric analysis",
+            "reference": "J Med Chem 2013 (replicated in 2015 and 2016 follow-ups)"
+          },
+          "confidence": "high (fungal source) but LOW POTENCY — pChEMBL 4.79 is mid-μM, well below drug-like cutoff. Lovastatin is overwhelmingly used as an HMG-CoA reductase inhibitor; the HDAC6 activity is a documented off-target rather than a primary mechanism. Mevastatin (CHEMBL54440, Penicillium citrinum) was tested in the same assay with no inhibition (-19% / -7% — i.e., inactive)."
+        }
+      ],
+      "notes": "Trichostatin A and Romidepsin (FK228) are KNOWN HDAC modulators but are bacterial (Streptomyces hygroscopicus / Chromobacterium violaceum) — NOT fungal. Excluded per scope."
+    },
+    "PPARgamma": {
+      "chembl_id": "CHEMBL235",
+      "uniprot": "P37231",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [
+        {
+          "compound_chembl_id": "CHEMBL866",
+          "compound_name": "MYCOPHENOLIC ACID",
+          "natural_product_flag": true,
+          "source_organism": "Penicillium brevicompactum",
+          "potency": {
+            "type": "Kd / Activity",
+            "kd_nM": 110000,
+            "kd_flag": "Outside typical range — Bioorg Med Chem Lett 2007 binding assay; treated as low-confidence",
+            "additional_data": "Antagonist activity at pioglitazone-stimulated PPARγ transcriptional activity in U2OS cells at 1 μM (Active); also activates PPARγ transcriptional activity in U2OS at 0.01–1 μM (Active); 74% inhibition of [14C]acetate uptake in 3T3-L1 cells at 2 μM",
+            "reference": "Bioorg Med Chem Lett 2007"
+          },
+          "confidence": "medium — well-confirmed fungal NP, real PPARγ functional activity in cells, but Kd is outside typical range and the dose-response pattern (antagonist of pioglitazone-stimulated activity AND independent activator) suggests partial/biased agonism. Probably more useful as mechanism probe than therapeutic."
+        },
+        {
+          "compound_chembl_id": "CHEMBL503",
+          "compound_name": "LOVASTATIN",
+          "natural_product_flag": true,
+          "source_organism": "Aspergillus terreus",
+          "potency": {
+            "type": "Potency",
+            "value_nM": 50118.7,
+            "pchembl": null,
+            "assay_chembl_id": "CHEMBL1794510",
+            "assay_description": "PUBCHEM_BIOASSAY: qHTS assay for small molecule antagonists of PPARγ signaling",
+            "activity_comment": "inconclusive",
+            "reference": "PubChem qHTS"
+          },
+          "confidence": "low — PubChem qHTS hit at 50 μM with 'inconclusive' annotation; not a meaningful PPARγ ligand"
+        }
+      ],
+      "notes": "PPARγ is a promiscuous orphan-class lipid receptor that binds many fatty acids and natural products at low affinity. The fungal hits here are real but weak (Kd > 100 μM). Could be a chassis for synergy mapping but unlikely to be a primary lead."
+    },
+    "KEAP1": {
+      "chembl_id": "CHEMBL2069156",
+      "uniprot": "Q14145",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "KEAP1 ChEMBL chemistry is dominated by synthetic Nrf2-pathway activators and KEAP1-Nrf2 PPI inhibitors. Sulforaphane / curcumin / dimethyl fumarate are plant/synthetic, not fungal. No fungal hits."
+    },
+    "OAT1": {
+      "chembl_id": "CHEMBL1641347",
+      "uniprot": "Q4U2R8",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "OAT1/3/4 chemistry in ChEMBL is dominated by uricosurics and probenecid-class synthetic compounds. No fungal hits."
+    },
+    "OAT3": {
+      "chembl_id": "CHEMBL1641348",
+      "uniprot": "Q8TCC7",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "Same as OAT1."
+    },
+    "OAT4": {
+      "chembl_id": "CHEMBL2073677",
+      "uniprot": "Q9NSA0",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "Same as OAT1; minimal ChEMBL coverage overall."
+    },
+    "TXNIP": {
+      "chembl_id": null,
+      "uniprot": "Q9H3M7",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "No curated single-protein ChEMBL target found for TXNIP. TXNIP modulator chemistry is small and predominantly synthetic (e.g. SRI-37330). Skipped."
+    },
+    "PDI_P4HB": {
+      "chembl_id": "CHEMBL5422",
+      "uniprot": "P07237",
+      "total_records_top200_pull": null,
+      "fungal_compounds": [],
+      "notes": "PDI ChEMBL chemistry is dominated by synthetic disulfide-targeted electrophiles (e.g. CCF642, RB-11-ca). No fungal hits."
+    }
+  },
+  "summary_table_compound_target": [
+    {"compound": "FUMITREMORGIN C", "compound_chembl_id": "CHEMBL410316", "fungal_source": "Aspergillus fumigatus", "chokepoint": "ABCG2", "chokepoint_chembl_id": "CHEMBL5393", "best_potency": "IC50 = 800 nM (pChEMBL 6.10)", "tier": "TIER 1 — drug-like potency, canonical reference inhibitor"},
+    {"compound": "MYCOPHENOLIC ACID", "compound_chembl_id": "CHEMBL866", "fungal_source": "Penicillium brevicompactum", "chokepoint": "PPARγ", "chokepoint_chembl_id": "CHEMBL235", "best_potency": "functional activity at 1 μM (cell-based, Active); Kd ≈ 110 μM (out-of-range)", "tier": "TIER 3 — real but weak; useful as mechanism probe"},
+    {"compound": "LOVASTATIN", "compound_chembl_id": "CHEMBL503", "fungal_source": "Aspergillus terreus / Pleurotus ostreatus", "chokepoint": "HDAC6", "chokepoint_chembl_id": "CHEMBL1865", "best_potency": "IC50 = 16.3 μM (pChEMBL 4.79)", "tier": "TIER 3 — off-target activity, low potency"},
+    {"compound": "LOVASTATIN", "compound_chembl_id": "CHEMBL503", "fungal_source": "Aspergillus terreus / Pleurotus ostreatus", "chokepoint": "PPARγ", "chokepoint_chembl_id": "CHEMBL235", "best_potency": "Potency = 50 μM (qHTS, inconclusive)", "tier": "TIER 4 — likely artifact, not actionable"},
+    {"compound": "29-HYDROXYPOLYPORENIC ACID C", "compound_chembl_id": "CHEMBL2203610", "fungal_source": "Polyporus sp. (lanostane triterpenoid)", "chokepoint": "(none — DU-145 cytotoxicity only)", "chokepoint_chembl_id": null, "best_potency": "DU-145 IC50 49.7 μM", "tier": "no chokepoint match"}
+  ],
+  "limitations": [
+    "ChEMBL source-organism field is sparsely populated: many fungal compounds will be missed because the bioactivity record doesn't cross-reference back to the compound's biosynthetic source. We mitigated this by using the compound-level `natural_product:true` flag plus literature-known fungal source organisms, but the ground truth is whatever ChEMBL's curators have entered.",
+    "Western-pharma curation bias: ChEMBL inherits PubMed/patent-indexed Western chemistry. TCM-source mushroom compounds (Ganoderma triterpenoids, Inonotus polysaccharide-bound xanthines, Cordyceps adenosines beyond cordycepin, Hericium erinaceus terpenoids, polyporus polysaccharopeptides) are underrepresented or absent. Phase 2b (LOTUS) and 2c (PubMed/CNKI/J-STAGE multilingual lit scan) should fill this gap.",
+    "ChEMBL bioactivity coverage is heavily biased toward enzyme-class and GPCR-class targets; transporters (URAT1, GLUT9, OAT1/3/4, ABCG2 except for the well-curated FTC reference) and protein-protein interactors (NLRP3 / ASC / Caspase-1 / KEAP1 / TXNIP) have shallow ChEMBL records. Lack of fungal hits against these targets is partly a coverage artifact, not necessarily a true biological null.",
+    "We tested only the canonical fungal natural products available in ChEMBL by name (lovastatin, mevastatin, mycophenolic acid, griseofulvin, cordycepin, fumitremorgin C, cyclotryprostatin A, polyporenic acid C). Mushroom-specific compound classes that ChEMBL does NOT have as named molecules — ganoderic acids A/B/C/D, ganoderiol, lucidenic acids, ergosterol, ergosta-7,22-dien-3β-ol, hericenones C–H, erinacines A/B/C, inotodiol, betulinic acid (CHEMBL269277, also has plant sources), pachymic acid, eburicoic acid, polysaccharide-K (PSK), eritadenine, terreusinone, aspulvinones, orsellinic acid — were searched and confirmed absent from ChEMBL. These need to be picked up by Phase 2b LOTUS pull.",
+    "The ABCG2 IC50 of 800 nM for fumitremorgin C is from a single primary source (J Nat Prod 2011) using a PhA accumulation assay; other ABCG2 assays in ChEMBL report higher values (>11 μM) or non-IC50 metrics. The 800 nM number is the most cited literature value but should be checked against the original Rabindran/Allen primary characterization (J Biol Chem 2000 / Cancer Res 2000) which is the source typically credited for FTC's ABCG2 specificity.",
+    "ABCG2 sweep contains many flavonoid / methylated-flavonoid hits (chrysin, kaempferol, apigenin, genistein, quercetin, retusin, ayanin, nobiletin, sinensetin, tangeretin, boeravinones, calycopterones, pinostrobin) — these are predominantly plant-derived but some have fungal endophyte production routes. We did not attempt to disambiguate per-compound; if the project later wants 'plant + fungal endophyte' rather than strict 'fungal only,' this list expands ~10×. Same caveat applies to the XO sweep flavonoid set."
+  ]
+}

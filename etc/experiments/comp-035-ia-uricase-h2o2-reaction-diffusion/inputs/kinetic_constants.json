@@ -1,0 +1,60 @@
+{
+  "uricase_a_flavus": {
+    "kcat_per_s": {
+      "central": 13.0,
+      "lower": 8.0,
+      "upper": 20.0,
+      "comment": "kcat for recombinant A. flavus uricase (rasburicase scaffold). The canonical operating range across published preparations is ~8-20 s^-1 per active site; central ~13 s^-1. PASylated and PEGylated variants modulate this. Brenda entry EC 1.7.3.3 cluster.",
+      "source_class": "in_vitro_biochemistry"
+    },
+    "Km_urate_M": {
+      "central": 3.0e-5,
+      "lower": 1.5e-5,
+      "upper": 5.0e-5,
+      "comment": "Km for urate, range 15-50 µM across A. flavus and related fungal uricases. Operates near or above saturation in tophi-rich joint environments (urate locally millimolar at MSU surface).",
+      "source_class": "in_vitro_biochemistry"
+    },
+    "subunit_mass_kDa": 34.0,
+    "active_sites_per_tetramer": 4
+  },
+  "catalase_bovine_liver": {
+    "kcat_per_s": {
+      "central": 4.0e7,
+      "lower": 1.0e7,
+      "upper": 1.0e8,
+      "comment": "Catalase is among the fastest known enzymes; turnover ~10^7-10^8 H2O2/s per heme/subunit. Standard textbook value ~4 x 10^7 s^-1 for bovine liver catalase (BLC) under physiologic O2 / pH 7 conditions. Tetramer has 4 active sites.",
+      "source_class": "in_vitro_biochemistry"
+    },
+    "Km_h2o2_M": {
+      "central": 1.1,
+      "lower": 0.025,
+      "upper": 1.5,
+      "comment": "Reported Km is high (effectively unsaturable at synovial-relevant µM concentrations); range 25 mM - 1.5 M depending on assay. Catalase operates strictly in the linear (first-order) regime for [H2O2] << Km — k_eff = kcat/Km × [E]. Some authors report apparent Km ~25-100 mM for the first-order step.",
+      "source_class": "in_vitro_biochemistry"
+    },
+    "kcat_over_km_per_M_per_s": {
+      "central": 4.0e7,
+      "lower": 1.0e7,
+      "upper": 4.0e8,
+      "comment": "Specificity constant for catalase at low [H2O2]. Range comes from kcat/Km with kcat ~10^7-10^8 and Km ~0.025-1 M. Central estimate ~4 x 10^7 M^-1 s^-1 (Chance / standard catalase literature).",
+      "source_class": "in_vitro_biochemistry"
+    },
+    "subunit_mass_kDa": 60.0,
+    "active_sites_per_tetramer": 4
+  },
+  "stoichiometry": {
+    "uricase_reaction": "urate + O2 + H2O -> 5-hydroxyisourate + H2O2 -> allantoin + CO2 + H2O2",
+    "h2o2_per_urate": 1.0,
+    "catalase_reaction": "2 H2O2 -> 2 H2O + O2",
+    "h2o2_per_catalase_turnover": 2.0
+  },
+  "liu_2025_pebr_measured": {
+    "uri_specific_activity_immobilized_U_per_mg": 3.53,
+    "cat_specific_activity_immobilized_U_per_mg": 0.58,
+    "uri_specific_activity_free_U_per_mg": 2.35,
+    "cat_specific_activity_free_U_per_mg": 0.123,
+    "comment": "Liu 2025 J Nanobiotechnology PMID 41390400 measured specific activities. NOTE: 1 U URI conventionally = 1 µmol urate/min; 1 U catalase conventionally = 1 µmol H2O2 decomposed/min. So the immobilized CAT specific activity of 0.58 U/mg corresponds to only ~0.58 µmol H2O2/min/mg, which is roughly 10^4-fold below the bovine-liver-catalase canonical specific activity (~10^4 U/mg). This is the well-known commercial-catalase assay convention (sometimes 1 U = 1 mmol H2O2/min or other definitions) — without the explicit unit definition in the paper, treat as a relative comparison only and use the canonical catalase kcat for the diffusion model.",
+    "source_class": "in_vitro_biochemistry",
+    "primary_source": "Liu et al, J Nanobiotechnology 2025;24(1):51, PMID 41390400, DOI 10.1186/s12951-025-03901-1"
+  }
+}

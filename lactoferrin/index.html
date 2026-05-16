@@ -360,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-enzyme-vision/" class="md-nav__link">
+      <a href="../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -373,13 +373,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -458,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-source-platform/" class="md-nav__link">
+      <a href="../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -4950,7 +4943,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -5946,9 +5939,17 @@
 <p><strong>Does Lf affect joint-resident synovial macrophages differently than tissue-resident colonic macrophages?</strong> Joint-resident macrophages are a partially distinct lineage with different receptor expression profiles. All existing mechanistic data (Zhao 2020, Habib 2023, Shan 2026, He 2023) is from non-synovial tissues. A synovial-fluid macrophage isolation + Lf dose-response + MSU challenge would directly test the gout-context mechanism.</p>
 </li>
 <li>
-<p><strong>RFdiffusion + ProteinMPNN tool-stack integration for variant design</strong> <em>(added 2026-05-15)</em>. Lactoferrin variant design — lactoferricin / lactoferrampin peptide-only constructs per #7 above, host-optimized glycosylation variants per #3, or apo-form-stabilized variants per #4 — is a <strong>redesign</strong> problem. Per the BioDesignBench-validated tool stack (Kim &amp; Romero 2026; see <a href="../etc/bio-ai-tools/"><code>etc/bio-ai-tools.md</code> §BioDesignBench</a>), the canonical computational tools for structure-conditioned sequence redesign are <strong>RFdiffusion</strong> and <strong>ProteinMPNN</strong>, neither of which is currently in OE's stack. Both are available via the <strong>protein-design-mcp</strong> package (<a href="https://github.com/jasonkim8652/protein-design-mcp">github.com/jasonkim8652/protein-design-mcp</a>, MIT licence, Docker images). <strong>Fires when:</strong> any of #3, #4, or #7 above moves from question to scope-able computational experiment, OR when the koji-Lf production gate (#2) returns a folding or stability problem that the current ESM2 + Boltz-2 stack can't resolve. Until then, dormant. <strong>Phase 2 integration tasks (if triggered):</strong> (a) deploy protein-design-mcp as a sibling MCP server; (b) re-run candidate variants through RFdiffusion + ProteinMPNN + AlphaFold3 for multi-method concordance per <a href="../etc/autonomous-screening-methodology/"><code>etc/autonomous-screening-methodology.md</code> §"BioDesignBench evaluation-depth audit"</a>.</p>
+<p><strong>RFdiffusion + ProteinMPNN tool-stack integration for variant design</strong> <em>(added 2026-05-15; status updated 2026-05-16)</em>. Lactoferrin variant design — lactoferricin / lactoferrampin peptide-only constructs per #7 above, host-optimized glycosylation variants per #3, apo-form-stabilized variants per #4, or <strong>protease-resistant inter-lobe linker variants</strong> (the koji-shio production gate question per comp-005) — is a <strong>redesign</strong> problem. Per the BioDesignBench-validated tool stack (Kim &amp; Romero 2026; see <a href="../etc/bio-ai-tools/"><code>etc/bio-ai-tools.md</code> §BioDesignBench</a>), the canonical computational tools for structure-conditioned sequence redesign are <strong>RFdiffusion</strong> and <strong>ProteinMPNN</strong>, both available via the <strong>protein-design-mcp</strong> package (<a href="https://github.com/jasonkim8652/protein-design-mcp">github.com/jasonkim8652/protein-design-mcp</a>, MIT licence, Docker images).</p>
 </li>
 </ol>
+<p><strong>Current tool-stack status (post-2026-05-15 install per <a href="../etc/bio-ai-tools/"><code>etc/bio-ai-tools.md</code></a> A1):</strong>
+- <strong>ProteinMPNN</strong> — installed locally, CPU-mode functional. Sequence-design and optimization tools (<code>design_sequence</code>, <code>optimize_sequence</code>) are available. Slow on CPU but workable for small-to-medium redesign tasks (loops, linkers, single-domain variants).
+- <strong>RFdiffusion</strong> — pending GPU access (A4 task: Apple Silicon MPS port spec'd; or Modal cloud GPU fallback A2). De novo structure-generation tools (<code>design_binder</code>, <code>design_fold</code>, <code>generate_backbone</code>) blocked until then.
+- <strong>PyRosetta-backed scoring</strong> — blocked pending UW export-control license review (email queued 2026-05-15).
+- <strong>Boltz-2-backed structure prediction via the same MCP</strong> — blocked by torch-version conflict with RFdiffusion (separate-venv resolution pending).</p>
+<p>The CPU-functional ProteinMPNN subset is sufficient for sequence-design-only redesign tasks where the starting structure is known (lactoferrin has multiple PDB structures: 1BLF bovine apo, 1B0L human apo, 1LFG human holo). Structure-redesign tasks (de novo loops, novel folds) require RFdiffusion and remain blocked.</p>
+<p><strong>Pilot in flight (2026-05-16):</strong> comp-034 (inter-lobe linker redesign for shio-koji protease resistance) is the first concrete use case for the newly installed tool stack — exercises ProteinMPNN against the comp-005 cleavage-site outputs and the comp-022 / comp-030 multi-metric concordance pattern. Outputs feed <code>validation-experiments.md §1.10</code> if any candidate passes the multi-metric gate.</p>
+<p><strong>Fires-when conditions for additional variant-design pilots:</strong> any of #3 (glycosylation comparison), #4 (apo vs holo), or #7 (lactoferricin / lactoferrampin) moves from open question to scope-able computational experiment; OR a §1.10 wet-lab result returns a stability problem the comp-034 linker redesign doesn't cover. Until then, the additional pilots remain dormant — the tool-stack readiness no longer gates them.</p>
 <hr />
 <h2 id="13-sources">13. Sources<a class="headerlink" href="#13-sources" title="Permanent link">&para;</a></h2>
 <p>Principal primary references, grouped by topic. Full DOIs where available per PubMed.</p>

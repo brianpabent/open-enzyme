@@ -1,0 +1,53 @@
+{
+  "experiment_id": "comp-022 v2",
+  "date": "2026-05-14",
+  "v1_shortlist_size_n4_ge_3": 501,
+  "v1_strict_size_n4_eq_4": 45,
+  "v2_shortlist_size_n5_ge_4": 71,
+  "v2_strict_size_n5_eq_5": 4,
+  "v2_cutoffs_on_shortlist_cohort": {
+    "mfe_top20_cutoff_kcal_per_mol": -16.4,
+    "esm_pseudo_pLDDT_top20_cutoff": 87.53
+  },
+  "v1_cutoffs_on_full_cohort": {
+    "cai_top20_cutoff": 0.9147366825161103,
+    "mrna_5p_top20_cutoff": 0.7333333333333334,
+    "chaperone_load_top20_cutoff": 0.25,
+    "promoter_sp_prior_top20_cutoff": 0.782
+  },
+  "v2_concordance_distribution": {
+    "5": 4,
+    "4": 67,
+    "3": 203,
+    "2": 227
+  },
+  "v1_top_cluster_survival": {
+    "cluster_definition": "PamyB + (SPamyB or SPamyB_pro) + 5p_softened + (direct_3xAla_pts1blk or direct_his6_pts1ok) + nglyc_ablated",
+    "cassettes_in_v1_shortlist_matching_cluster": 4,
+    "cassettes_in_v2_shortlist_matching_cluster": 4,
+    "survival_pct": 100.0
+  },
+  "v1_promoted_v2_rejected_on_fold_quality": 380,
+  "viennarna_mfe_vs_v1_proxy_correlation": {
+    "spearman_rho_per_codon_sp_pair": 0.24113701961251952,
+    "pearson_r_per_codon_sp_pair": 0.22736779036562893,
+    "n_pairs": 52,
+    "interpretation": "Positive Spearman rho means v1 proxy and ViennaRNA MFE agree on rank order: higher rho = v1 proxy was a good stand-in. Low/negative rho = v1 proxy was misranking cassettes, and the v2 rerank materially changes the call."
+  },
+  "esm_pll_pseudo_pLDDT_distribution_on_shortlist": {
+    "min": 50.0,
+    "max": 90.0,
+    "mean": 78.76233532934131
+  },
+  "mfe_distribution_on_shortlist_kcal_per_mol": {
+    "min": -28.3,
+    "max": -12.3,
+    "mean": -19.701596806387226
+  },
+  "fallbacks_owned": [
+    "ESM2 pseudo-likelihood used in place of real ESMFold v1 pLDDT (openfold install was blocked by the auto-mode classifier as 'code from external'; brief explicitly authorized this fallback). Pseudo-pLDDT scale [50,90] is a presentational rescaling of raw mean log-prob; top20 flags use the rank-preserving order.",
+    "ViennaRNA MFE computed over a 150-nt window (61-nt generic A-rich 5'UTR + signal peptide ORF + first 30 codons of uricase). 5'UTR is held constant across cassettes since v1 promoter variants don't model UTR sequence differences.",
+    "Quintile cutoffs for ESM and MFE computed on the 501-cassette v1 shortlist cohort (not the 43,200-cohort) because v2 retrofits only score the v1 survivors. This is the correct interpretive frame: v2 is a tighter gate on v1 promotion, not a re-enumeration.",
+    "MPS unavailable on this Python 3.13 + torch 2.12 stack (torch.backends.mps.is_built() = True but torch.backends.mps.is_available() = False); fell back to CPU. ESM2 inference still completed all 106 sequences in ~70 seconds at 8 threads."
+  ]
+}

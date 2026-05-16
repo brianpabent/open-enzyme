@@ -356,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../open-enzyme-vision/" class="md-nav__link">
+      <a href="../../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -369,13 +369,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -454,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../open-source-platform/" class="md-nav__link">
+      <a href="../../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -4220,7 +4213,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -5602,7 +5595,7 @@
 </tbody>
 </table>
 <p><strong>Deployment decisions captured:</strong>
-- <strong>A1 (CPU-mode local install)</strong> — done 2026-05-15. Covers DAF SCR1-4 + lactoferrin redesign without RFdiffusion. ProteinMPNN slow on CPU but functional.
+- <strong>A1 (CPU-mode local install)</strong> — done 2026-05-15. Covers DAF SCR1-4 + lactoferrin redesign without RFdiffusion. ProteinMPNN slow on CPU but functional. <strong>Caveat surfaced by comp-034 (2026-05-16):</strong> the <code>protein_design_mcp</code> package loads correctly but <code>design_sequence</code> / <code>optimize_sequence</code> shell out to external ProteinMPNN scripts at <code>$PROTEINMPNN_PATH</code> (default <code>/opt/ProteinMPNN</code>), which were <strong>not present</strong> at run time — the auto-mode classifier blocked the upstream <code>git clone</code> during comp-034's first real use. comp-034 worked around this with a transparent substitute sampler (RNG-seeded, documented in <code>./experiments/comp-034-lactoferrin-linker-redesign/inputs/provenance.md</code>) and produced a valid candidate shortlist, but <strong>a single-command genuine-ProteinMPNN rerun is recommended before any comp-034 candidate identity gets committed to wet-lab gene-synthesis spend.</strong> Unblock: clone <code>https://github.com/dauparas/ProteinMPNN</code> into <code>/opt/ProteinMPNN</code> (or set <code>$PROTEINMPNN_PATH</code> to a different writable path) — ~5-min dependency install when whoever next does protein design has unblocked auto-mode permissions or runs the clone manually.
 - <strong>A2 (Modal cloud GPU)</strong> — not pursued. Fallback option if RFdiffusion becomes load-bearing before A4 lands.
 - <strong>A4 (Apple Silicon MPS port)</strong> — backlogged at <a href="../../abent-family-health/brian/open-enzyme-backlog.md"><code>abent-family-health/brian/open-enzyme-backlog.md</code></a> §"Next up → In-silico." YaoYinYing's fork has a working MPS branch (~13 min/design vs. ~30–60s on NVIDIA); SE3-Transformer NVTX/DGL surgery + Mac-native build. Spec session planned for tonight or tomorrow.</p>
 <p><strong>Ghcr.io Docker image pull failed during setup</strong> with <code>unauthorized</code> error (the public image at <code>ghcr.io/jasonkim8652/protein-design-mcp:latest</code> is apparently access-gated). Local Python path used instead. If Modal cloud deployment becomes the right move (A2), the Modal proxy entry point is <code>protein-design-mcp-modal</code>.</p>

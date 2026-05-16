@@ -360,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-enzyme-vision/" class="md-nav__link">
+      <a href="../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -373,13 +373,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -458,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-source-platform/" class="md-nav__link">
+      <a href="../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -2397,6 +2390,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="The Q141K rescue mechanism — a separate axis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pharmacological-chaperone-route-orthogonal-small-molecule-rescue-added-2026-05-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pharmacological-chaperone route — orthogonal small-molecule rescue (added 2026-05-16)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4572,7 +4582,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -5137,9 +5147,28 @@
 </ol>
 <p>This is mechanistically a stronger lever in Q141K carriers than wild-type carriers. Predicted but untested: <strong>Q141K + fiber → larger UA reduction than wild-type + fiber.</strong></p>
 <p>A pharmacogenomic-stratified RCT of fermentable fiber (or sodium butyrate enteric capsules) on serum UA, stratified by Q141K genotype, would either confirm or falsify this prediction. Cost-effective experiment for the platform's "differential responder" question.</p>
+<p><strong>Concentration-gap caveat (added 2026-05-16):</strong> The HDAC-rescue mechanism is in vitro-anchored at 1–5 mM butyrate (Basseville 2012). Whether endogenous colonic butyrate flux ever reaches HDAC-inhibitory concentrations <em>at the enterocyte nucleus</em> — after the mucus-layer + epithelial-surface gradient drop from luminal butyrate — is empirically open. Full framing at <a href="../purine-degrading-bacteria/"><code>purine-degrading-bacteria.md</code> §"Concentration gap"</a>. Wet-lab resolution: <a href="../validation-experiments/"><code>validation-experiments.md §1.14</code> butyrate dose-response arm</a> — Caco-2 transwell, basolateral butyrate at five concentrations bracketing 0.05–5 mM in both WT and Q141K cells, dual readouts (trafficking + urate efflux). Until the dose-response runs, treat the in vivo Q141K rescue magnitude as <em>mechanistically supported, quantitatively unverified</em>.</p>
 <p><strong>Genotype-source framing — clinical, not consumer.</strong> The trial must generate its own genotype data at enrollment via a CLIA-certified clinical PCR assay for rs2231142 (Quest, LabCorp, or equivalent single-SNP genotyping; ~$40–80 per patient at clinical-lab pricing). Consumer-grade genotype exports (23andMe, Ancestry, etc.) are explicitly excluded as the data source — not as a personal-preference call but for trial-design rigor: reproducibility, documented assay performance, sample-chain-of-custody, and CLIA-grade QA are all preconditions for a publishable pharmacogenomic stratification. The trial framing is therefore agnostic at recruitment (no presumed prior genotype knowledge); patients are screened, genotyped on-site, and assigned to arms by the trial's own assay.</p>
 <p><strong>Population-frequency caveat for trial design.</strong> Q141K allele frequency varies substantially by ancestry — published GWAS report ~30–50% in East Asian gout cohorts but only ~10–15% in European-ancestry cohorts (some series lower). The "30–50% of gout patients" figure is correct for an East-Asian-majority cohort but overstates the carrier fraction in a European-American sample. A pharmacogenomic fiber trial should pre-specify population and powering — and, given that Q141K homozygotes are predicted to show the largest effect size, including a homozygous arm (where feasible) gives the cleanest signal-to-noise even at modest n. This framing is not "fiber for everyone with gout" — it's <strong>dual-action butyrate as a personalized intervention for Q141K-positive gout patients, with effect size scaling by allele dose</strong>.</p>
 <p>The clinical-genotyping cost is also self-justifying against the alternative non-stratified design. In a European-ancestry cohort with carrier frequency ~10–15%, a non-stratified RCT looking for the same Q141K-conditional effect size would need roughly 3× the n to power the differential response (the Q141K-positive subset's signal is diluted by the wild-type majority). At ~$40–80/patient, on-site genotyping that lets the trial run with ~120 enriched patients instead of ~360 unstratified is a clear win — and is anyway required to identify Q141K homozygotes (~5–25% of carriers depending on population) for the homozygous arm. See <a href="../androgen-urate-axis/"><code>androgen-urate-axis.md</code></a> for the male-demographic ceiling that interacts with this stratification, and <a href="../supplements-stack/"><code>supplements-stack.md</code></a> for ABCG2-inhibitor counter-indications that should be exclusion criteria at enrollment.</p>
+<h3 id="pharmacological-chaperone-route-orthogonal-small-molecule-rescue-added-2026-05-16">Pharmacological-chaperone route — orthogonal small-molecule rescue (added 2026-05-16)<a class="headerlink" href="#pharmacological-chaperone-route-orthogonal-small-molecule-rescue-added-2026-05-16" title="Permanent link">&para;</a></h3>
+<p>The HDAC/butyrate rescue above is one of two distinct mechanistic strategies for Q141K. The other is a <strong>pharmacological chaperone</strong> — a small molecule that physically binds the misfolded Q141K protein and stabilizes its native conformation long enough for ER quality control to release it to the apical membrane. The class precedent is overwhelming: CFTR correctors (ivacaftor / tezacaftor / elexacaftor) rescue the ΔF508 CFTR variant via exactly this mechanism, and CFTR is in the same ATP-binding-cassette (ABC) transporter superfamily as ABCG2 (same fold, same general design problem). No published program has applied this chemistry to ABCG2 Q141K specifically.</p>
+<p>This route is mechanistically orthogonal to the butyrate / HDAC track: a chaperone restores native folding <em>directly</em>, without needing microbiome-mediated HDAC inhibition or PPARγ-mediated transcriptional induction of a wild-type allele. Implications:</p>
+<ul>
+<li>Works in Q141K homozygotes (no wild-type allele to induce — HDI rescue still applies, but PPARγ induction does not).</li>
+<li>Independent of gut-microbiome state (no dependence on fiber intake, SCFA production capacity, or PDB colonization).</li>
+<li>Daily-pill modality via compounding pharmacy if a hit is found among FDA-approved molecules (off-label / 503A) — see <a href="../compounding-pharmacy-track/"><code>compounding-pharmacy-track.md</code></a>.</li>
+<li>Stacks additively with the HDI rescue (different mechanism, same target outcome).</li>
+</ul>
+<p>The full chassis-pending entry is at <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §7 "Pharmacological chaperones for ABCG2 Q141K folding rescue"</a>. The cheapest first move — AlphaFold Q141K structure + virtual screen of FDA-approved molecules — was completed as <strong><a href="../abcg2-q141k-chaperone-screen-computational/">comp-032</a> 2026-05-16: GREEN</strong>. All four CFTR-corrector positive controls ranked in the top 11% of a 134-molecule curated library; the FDA-approved drug surface is NOT empty for ABCG2 Q141K chaperone candidates. <strong>Top wet-lab-priority candidates</strong> (ranked by composite score):</p>
+<ol>
+<li><strong>Lumacaftor</strong> (Tier 2, CFTR corrector) — strongest mechanistic prior; same ABC superfamily; on-patent for CF (Vertex), navigate patent landscape for off-label 503A</li>
+<li><strong>Tafamidis</strong> (Tier 2, TTR tetramer stabilizer) — aromatic-acid stabilizer at hydrophobic interface; misfolded-state selective</li>
+<li><strong>Ursodiol / UDCA</strong> (<strong>Tier 1</strong>, bile acid chaperone) — broad ER-stress chaperone via ATF6/Hsp70; F508del-CFTR rescue precedent; off-patent USP/NF monograph</li>
+<li><strong>Diflunisal</strong> (<strong>Tier 1, lowest-friction first call</strong> — off-patent NSAID with USP/NF monograph + off-label ATTR-stabilization precedent) — anionic at pH 7.4, strongest electrostatic match for Q141K +1 pocket</li>
+<li><strong>TUDCA</strong> (Tier 2, bile acid chaperone) — CNS-penetrant; F508del-CFTR + ALS-clinical-trial precedent</li>
+</ol>
+<p>The Q141K folding-rescue thesis stands; pivot to AI-aided novel binder design (RFdiffusion) is NOT triggered. Next move: per-hit cell-based Q141K trafficking-rescue assay on the top 3-5 candidates in a Caco-2 Q141K-transfected line (sister to the §1.14 butyrate dose-response arm — same Caco-2 infrastructure, marginal cost ~$500–1,500 for the chaperone-class screen on top of the existing factorial). Compounding-pharmacy partner conversation can lead with diflunisal as the Tier-1 off-patent low-friction first call.</p>
 <hr />
 <h2 id="tissue-selectivity-matters">Tissue selectivity matters<a class="headerlink" href="#tissue-selectivity-matters" title="Permanent link">&para;</a></h2>
 <p>ABCG2 is expressed at multiple barrier sites with different physiological roles:</p>

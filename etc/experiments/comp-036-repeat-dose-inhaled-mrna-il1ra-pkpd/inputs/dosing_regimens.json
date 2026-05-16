@@ -1,0 +1,38 @@
+{
+  "comment": "Three dosing regimens compared in comp-036 to find the minimum-N-doses that achieves the receptor-occupancy bar over the 72h gout flare window.",
+  "flare_window_hours": 72,
+  "total_simulation_hours": 168,
+  "comment_on_simulation_hours": "168 hours = 7 days. Captures the full flare window plus run-off after dosing stops, so trailing occupancy decline is visible in plots.",
+  "regimens": {
+    "A_qd": {
+      "name": "Once-daily (QD)",
+      "interval_hours": 24,
+      "dose_count_options": [1, 2, 3, 4, 5, 7, 10, 14],
+      "comment": "Simplest patient adherence. Each administration is one nebulizer session. Find smallest N where >=80% sustained occupancy over 0-72h holds at median and at p25."
+    },
+    "B_bid": {
+      "name": "Twice-daily (BID)",
+      "interval_hours": 12,
+      "dose_count_options": [2, 4, 6, 8, 10, 14, 20, 28],
+      "comment": "Better trough coverage. Common in acute infectious/inflammatory therapy. Find smallest N (= N_days x 2) where >=80% sustained occupancy over 0-72h holds."
+    },
+    "C_loading_plus_maintenance": {
+      "name": "Loading dose + QD maintenance",
+      "loading_dose_multiplier": 2.0,
+      "interval_hours": 24,
+      "dose_count_options_post_loading": [0, 1, 2, 3, 4, 7, 10, 14],
+      "comment": "Double-dose at hour 0, then standard maintenance doses every 24h. Loading-dose strategy commonly used to reach steady state faster; particularly relevant for acute therapy where the first 0-24h matters most. Total mRNA exposure = (1 + N_maintenance) x base dose for cost/safety accounting; the '2x loading' multiplier is on dose not on inhaler-session-count."
+    }
+  },
+  "dose_per_administration_default_mg": 10,
+  "comment_on_dose_per_administration": "Central dose used for the regimen-comparison simulations. Within the comp-033 range (4-24 mg). Each Monte Carlo iteration samples a dose from log-uniform [4, 24] mg; the regimen-comparison ranking is robust across this range because superposition holds.",
+  "lung_irritation_threshold_doses_per_day": 4,
+  "comment_on_lung_irritation": "Soft constraint, not a hard gate. Inhaled-LNP human tolerance data (Translate Bio MRT5005 CF trial reported transient cough in 30-40% of patients; ReCode RCT2100 similar) suggests >4x daily nebulizer sessions is impractical at home. QID (every 6h) and Q3H regimens are mechanically possible but not patient-feasible.",
+  "max_total_days_for_acute_therapy": 14,
+  "comment_on_max_days": "Hard upper bound for acute-flare therapy. Anakinra (off-label) typically 3-5 days. Saag 2021 RCT used 5 days. Pred taper is 7-10 days inclusive of taper. Anything >14 days starts looking like chronic therapy not acute-flare-abort, which is a different value proposition.",
+  "decision_rule_for_each_regimen": {
+    "GREEN_per_regimen": "median occupancy >= 80% sustained over 0-72h flare window AND p25 occupancy >= 60% (confidence bounds clear of catastrophic failure) AND dose count and frequency are clinically practical (<=14 days, <=4 doses/day)",
+    "YELLOW_per_regimen": "median occupancy 60-80% sustained OR median >=80% only achievable at >14 days OR >4 doses/day",
+    "RED_per_regimen": "median occupancy <60% sustained at maximum-practical regimen"
+  }
+}

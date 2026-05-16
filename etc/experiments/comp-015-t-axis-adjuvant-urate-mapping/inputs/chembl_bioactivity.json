@@ -1,0 +1,189 @@
+{
+  "description": "ChEMBL bioactivity records for the 20 compound × target pairs (4 compounds × 5 targets — v2 added XO). ChEMBL REST API was BLOCKED in this analysis environment (HTTP 403 from www.ebi.ac.uk and pubchem.ncbi.nlm.nih.gov for both raw urllib and WebFetch — 'Host not in allowlist'). The records below are populated as: (a) [API-BLOCKED-INFERRED] entries for compounds with very-likely-empty ChEMBL coverage (eurycomanone, echinacoside — sparse natural-product transporter curation per comp-013 finding 5/9 had zero records); (b) [API-BLOCKED-WORKING-ID] for compounds with known cited ChEMBL IDs (cordycepin, icariin, icaritin) where the molecule_chembl_id is anchored from published references but the raw bioactivity table cannot be fetched in this run; (c) for the v2 XO column, the cordycepin entry includes a direct in vitro IC50 anchored from PMID 38141695 (Int J Biol Macromol 2024) — IC50 = 0.014 mg/mL = 55.7 µM (MW 251.24); fluorescence-quenching binding evidence + animal-model SUA reduction in gouty nephropathy mice. Per comp-013 methodology adaptation: when ChEMBL is sparse, animal/clinical literature claims (literature_claims.json) drive verdicts.",
+  "version": "v2 (XO added as 5th target)",
+  "fetch_date": "2026-05-07",
+  "fetch_status": "ChEMBL REST API + PubChem REST API + WebFetch all returned 403/host-not-allowlisted in this run. Treat all entries below as ChEMBL-pending until reprocessed with API access. The verdict logic is robust to this gap: ChEMBL absence routes the verdict to literature_claims.json + concentration_estimates.json, exactly as comp-013 (where 5/9 compounds had no ChEMBL records).",
+  "entries": [
+    {
+      "compound": "Cordycepin",
+      "compound_chembl_id": "CHEMBL474958",
+      "target_data": [
+        {
+          "target": "URAT1",
+          "target_chembl_id": "CHEMBL6120",
+          "ic50_nM": null,
+          "ic50_qualitative": "[API-BLOCKED — likely empty]: PMID 29422889 reports in vivo activity (mouse SUA 337→203 µmol/L at 60 mg/kg PO) via URAT1 protein/mRNA downregulation by Western blot + RT-PCR + ELISA, but does not report a direct in vitro URAT1 IC50 in HEK293-SLC22A12 or oocyte assay. ChEMBL is unlikely to contain a curated URAT1 IC50 for cordycepin. See literature_claims.json for the in vivo evidence.",
+          "evidence_level": "ChEMBL-presumed-empty"
+        },
+        {
+          "target": "ABCG2",
+          "target_chembl_id": "CHEMBL5393",
+          "ic50_nM": null,
+          "ic50_qualitative": "[API-BLOCKED — likely empty]: No published cordycepin × ABCG2 transport assay found in PubMed search 2026-05-07. ChEMBL likely empty.",
+          "evidence_level": "ChEMBL-presumed-empty"
+        },
+        {
+          "target": "OAT1",
+          "target_chembl_id": "CHEMBL1641347",
+          "ic50_nM": null,
+          "ic50_qualitative": "[API-BLOCKED — likely empty]: No published cordycepin × OAT1 transport assay found 2026-05-07. The PMID 29422889 study did not test OAT1 expression.",
+          "evidence_level": "ChEMBL-presumed-empty"
+        },
+        {
+          "target": "SHBG",
+          "target_chembl_id": "CHEMBL3286",
+          "ic50_nM": null,
+          "ic50_qualitative": "[API-BLOCKED — likely empty]: No published cordycepin × SHBG binding study found. Cordycepin's T-elevation mechanism is steroidogenic (StAR/CYP11A1 upregulation in Leydig cells), NOT SHBG displacement.",
+          "evidence_level": "ChEMBL-presumed-empty"
+        },
+        {
+          "target": "Xanthine Oxidase",
+          "target_chembl_id": "CHEMBL1929",
+          "ic50_nM": 55700,
+          "ic50_qualitative": "**v2 — direct in vitro IC50 anchored from PMID 38141695 (Int J Biol Macromol 2024 — 'Inhibition mechanism of cordycepin and ergosterol from Cordyceps militaris Link. against xanthine oxidase and cyclooxygenase-2')**. IC50 = 0.014 mg/mL = 55.7 µM (cordycepin MW 251.24). Comparator allopurinol IC50 = 1.223 µg/mL = 8.94 µM in same assay; ergosterol IC50 = 0.015 mg/mL = 37.8 µM (ergosterol MW 396.65). Cordycepin XO inhibition is real but ~6× weaker than allopurinol on a molar basis. Mechanism: fluorescence-quenching shows single high-affinity binding site on XO; mixed-type or competitive kinetics (full kinetic mode in primary text behind paywall). Animal-model SUA reduction confirmed in mice with gouty nephropathy. **This is NOT a ChEMBL-curated record — it's a published primary-literature IC50 we're surfacing in v2 because the v1 panel didn't include XO and so this number was never sought.**",
+          "evidence_level": "Published-IC50-not-yet-ChEMBL-curated",
+          "primary_source_pmid": "38141695",
+          "primary_source_citation": "Yang Y, Zhao Q, Yu Y, et al. Inhibition mechanism of cordycepin and ergosterol from Cordyceps militaris Link. against xanthine oxidase and cyclooxygenase-2. Int J Biol Macromol. 2024 Feb;258(Pt 1):128859. doi:10.1016/j.ijbiomac.2023.128859. PMID:38141695."
+        }
+      ]
+    },
+    {
+      "compound": "Eurycomanone",
+      "compound_chembl_id": null,
+      "target_data": [
+        {
+          "target": "URAT1",
+          "target_chembl_id": "CHEMBL6120",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD-FOR-COMPOUND — eurycomanone not curated in ChEMBL. No published eurycomanone × URAT1 study.",
+          "evidence_level": "ChEMBL-empty"
+        },
+        {
+          "target": "ABCG2",
+          "target_chembl_id": "CHEMBL5393",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD-FOR-COMPOUND]. No published eurycomanone × ABCG2 transport assay.",
+          "evidence_level": "ChEMBL-empty"
+        },
+        {
+          "target": "OAT1",
+          "target_chembl_id": "CHEMBL1641347",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD-FOR-COMPOUND]. No published eurycomanone × OAT1 study.",
+          "evidence_level": "ChEMBL-empty"
+        },
+        {
+          "target": "SHBG",
+          "target_chembl_id": "CHEMBL3286",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD-FOR-COMPOUND but mechanism extensively claimed in tongkat-ali primary literature]: SHBG-displacement is the most-cited eurycomanone mechanism (FRIM Malaysia + Henkel/Talbott corpus), but a direct ChEMBL bioactivity record is unlikely. Most claims rest on indirect evidence (free-T rise correlates with SHBG decline in supplemented men) rather than direct SHBG-binding IC50. See literature_claims.json. PMID 36013514 (Leisegang 2022 meta) supports T-elevation in hypogonadism subgroup but does not establish direct SHBG binding affinity.",
+          "evidence_level": "ChEMBL-empty"
+        },
+        {
+          "target": "Xanthine Oxidase",
+          "target_chembl_id": "CHEMBL1929",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD-FOR-COMPOUND, NO-DIRECT-XO-IC50-IN-LITERATURE]. **v2 finding (correction of trigger):** the parallel Sci-Hub-second-pass verification subagent on `wiki/androgen-natural-modulation.md` cited PMID 31920654 (Frontiers Pharmacol 2019, *Eurycoma longifolia* stem extract) and PMID 34785103 (J Ethnopharmacol 2022, eurycomanol) as evidence that *Eurycoma longifolia* / eurycomanone is an XO inhibitor. **Closer reading of the primary sources reveals these papers do NOT establish direct XO inhibition by eurycomanone or eurycomanol.** PMID 31920654 abstract: mechanism is URAT1 + GLUT9 protein DOWNREGULATION + ABCG2 + NPT1 protein UPREGULATION in kidney + quassinoid in vitro inhibition of urate uptake in hURAT1-expressing cells (transporter modulation, not XO). PMID 34785103 abstract: mechanism is purine SYNTHESIS inhibition (decreased PRPS — phosphoribosyl pyrophosphate synthetase) + URAT1/GLUT9/ABCG2/OAT1/NPT1 transporter modulation (not XO). The eurycomanone-as-XO-inhibitor claim that triggered v2 is itself a secondary-source citation laundering pattern — the supplement-industry summary cited the primary papers but mis-attributed XO mechanism. **The CORRECT eurycomanone urate mechanism is transporter modulation + purine-synthesis inhibition; XO is NOT a primary mechanism for eurycomanone.** This is itself a substantive v2 finding. The XO IC50 cell remains empty for eurycomanone.",
+          "evidence_level": "ChEMBL-empty / no-direct-XO-evidence",
+          "v2_correction_note": "The PMID 31920654 / 34785103 trigger papers cited in the v2 brief do NOT establish XO inhibition for eurycomanone — they establish transporter modulation + purine-synthesis suppression. v2 surfaces this as a correction to the secondary-source citation laundering pattern.",
+          "primary_sources_examined": [
+            "PMID 31920654 (Front Pharmacol 2019) — establishes URAT1/GLUT9/ABCG2/NPT1 transporter modulation; NOT XO",
+            "PMID 34785103 (J Ethnopharmacol 2022) — establishes purine synthesis (PRPS) suppression + transporter modulation; NOT XO"
+          ]
+        }
+      ]
+    },
+    {
+      "compound": "Icariin",
+      "compound_chembl_id": "CHEMBL448739",
+      "target_data": [
+        {
+          "target": "URAT1",
+          "target_chembl_id": "CHEMBL6120",
+          "ic50_nM": null,
+          "ic50_qualitative": "[API-BLOCKED — likely empty]: No published icariin × URAT1 IC50. PMID 33135192 (Hu 2020) studied icariin in MSU-induced gouty arthritis rat model, but reported NF-κB/NALP3 (NLRP3) inhibition — anti-inflammatory mechanism, NOT urate transport.",
+          "evidence_level": "ChEMBL-presumed-empty"
+        },
+        {
+          "target": "ABCG2",
+          "target_chembl_id": "CHEMBL5393",
+          "ic50_nM": null,
+          "ic50_qualitative": "[API-BLOCKED — likely empty]: No published icariin × ABCG2 transport-IC50 study found 2026-05-07. Some flavonol glycosides are weak ABCG2 modulators (general class behavior), but icariin specifically not characterized.",
+          "evidence_level": "ChEMBL-presumed-empty"
+        },
+        {
+          "target": "OAT1",
+          "target_chembl_id": "CHEMBL1641347",
+          "ic50_nM": null,
+          "ic50_qualitative": "[API-BLOCKED — likely empty]: No published icariin × OAT1 study.",
+          "evidence_level": "ChEMBL-presumed-empty"
+        },
+        {
+          "target": "SHBG",
+          "target_chembl_id": "CHEMBL3286",
+          "ic50_nM": null,
+          "ic50_qualitative": "[API-BLOCKED — likely empty]: Icariin's T-axis mechanism is PDE5 inhibition + Leydig steroidogenic enhancement, NOT SHBG displacement. No SHBG-binding study found.",
+          "evidence_level": "ChEMBL-presumed-empty"
+        },
+        {
+          "target": "Xanthine Oxidase",
+          "target_chembl_id": "CHEMBL1929",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-DIRECT-XO-IC50-FOR-ICARIIN-PARENT, ICARITIN-AGLYCONE-NOT-DIRECTLY-MEASURED]. PMID 17666819 (Mo 2007 Biol Pharm Bull — 'Hypouricemic action of selected flavonoids in mice: structure-activity relationships') screened 15 flavonoids in mice; **icariin was NOT among the 5 flavonoids that showed significant hypouricemic XO inhibition** (those were quercetin, morin, myricetin, kaempferol, and puerarin at 50/100 mg/kg PO). **Glycosylation dramatically reduces flavonoid XO activity** (PMC11312107 / PMID review); icariin's flavonol-glycoside structure (the rhamnose-glucose disaccharide on the C-7 OH and the prenyl group) is NOT the planar 7-OH flavone/flavonol motif that the strong XO-inhibitor flavonoids share (e.g., kaempferol IC50 0.4-5 µM range). **Icaritin** (the gut-microbiota-derived aglycone) has a 7-OH and a more planar structure but no direct XO IC50 has been published 2026-05-07. Provisional verdict: icariin parent has no meaningful XO inhibition; icaritin aglycone is structurally compatible with XO inhibition class but unmeasured.",
+          "evidence_level": "Negative-screen-implies-no-meaningful-activity (Mo 2007)",
+          "primary_source_pmid": "17666819",
+          "primary_source_citation": "Mo SF, Zhou F, Lv YZ, Hu QH, Zhang DM, Kong LD. Hypouricemic action of selected flavonoids in mice: structure-activity relationships. Biol Pharm Bull. 2007 Aug;30(8):1551-6. PMID:17666819. — 15 flavonoids screened including icariin; significant hypouricemic XO-mediated effects were observed only for quercetin, morin, myricetin, kaempferol, puerarin (at 50/100 mg/kg PO mice). Icariin tested but did not make significant-effect group."
+        }
+      ]
+    },
+    {
+      "compound": "Echinacoside",
+      "compound_chembl_id": null,
+      "target_data": [
+        {
+          "target": "URAT1",
+          "target_chembl_id": "CHEMBL6120",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD-FOR-COMPOUND]. No published echinacoside × URAT1 study.",
+          "evidence_level": "ChEMBL-empty"
+        },
+        {
+          "target": "ABCG2",
+          "target_chembl_id": "CHEMBL5393",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD-FOR-COMPOUND]. No published echinacoside × ABCG2 transport study.",
+          "evidence_level": "ChEMBL-empty"
+        },
+        {
+          "target": "OAT1",
+          "target_chembl_id": "CHEMBL1641347",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD-FOR-COMPOUND]. No published echinacoside × OAT1 study.",
+          "evidence_level": "ChEMBL-empty"
+        },
+        {
+          "target": "SHBG",
+          "target_chembl_id": "CHEMBL3286",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD-FOR-COMPOUND]. Echinacoside T-axis mechanism is steroidogenic enzyme upregulation in Leydig cells — not SHBG displacement.",
+          "evidence_level": "ChEMBL-empty"
+        },
+        {
+          "target": "Xanthine Oxidase",
+          "target_chembl_id": "CHEMBL1929",
+          "ic50_nM": null,
+          "ic50_qualitative": "[NO-CHEMBL-RECORD, NO-PRIMARY-DIRECT-XO-IC50]. PubMed search 2026-05-07 found no direct echinacoside × XO inhibition IC50 study. *Cistanche tubulosa* and its phenylethanoid glycosides (echinacoside, acteoside) are documented as antioxidants and have neuroprotective + reproductive-medicine effects, but no published study has measured their XO inhibitory activity directly. The compound class (large polar phenylethanoid glycosides, MW 786.73) is structurally distinct from the small planar flavonoid XO inhibitors (kaempferol/quercetin) — extrapolated activity is expected to be low. Provisional: no meaningful XO mechanism.",
+          "evidence_level": "ChEMBL-empty / no-direct-evidence"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_pairs": 20,
+    "pairs_with_chembl_ic50": 0,
+    "pairs_with_published_ic50_not_chembl_curated": 1,
+    "pairs_chembl_empty_or_blocked": 19,
+    "v2_xo_addition_summary": "Adding XO as 5th target adds 4 new compound × XO pairs. Of these 4: 1 has a published direct in vitro IC50 (cordycepin × XO 55.7 µM PMID 38141695); 1 has a negative-screen literature finding (icariin × XO not in significant-XO-inhibitor group, Mo 2007 PMID 17666819); 2 have no direct evidence (eurycomanone — primary literature attributes mechanism to transporter+purine-synthesis NOT XO; echinacoside — no direct study). The cordycepin XO IC50 of 55.7 µM is at-or-near the achievable systemic Cmax range (~0.057 µM purified-cordycepin oral), giving achievable/IC50 ratio ~0.001 — BELOW THRESHOLD for systemic XO inhibition. Whole-fermentate Cordyceps with pentostatin co-delivery could plausibly raise this 5-10× but still well below threshold. Cordycepin is therefore NOT a meaningful systemic XO inhibitor at supplement doses, despite the in vitro activity — this is a quantitative finding from the v2 ratio analysis.",
+    "interpretation": "ChEMBL coverage of natural-product activity is essentially zero for these four compounds at the five targets. This matches the comp-013 finding (5 of 9 TCM compounds had no ChEMBL records at any gout-relevant target). The verdict logic must therefore lean on literature_claims.json (in vivo animal/clinical evidence) + concentration_estimates.json (achievable plasma/gut concentration vs. mechanism plausibility). If the orchestrator can restore ChEMBL API access, re-fetch these 20 pairs and update; the analyze.py output will regenerate. **Per-pair note for v2:** the cordycepin × XO IC50 from PMID 38141695 may not yet be in ChEMBL even with API access (Int J Biol Macromol 2024 publication; ChEMBL curation lag ~12-24 months)."
+  }
+}

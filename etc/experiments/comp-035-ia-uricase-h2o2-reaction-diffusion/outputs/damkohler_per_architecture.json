@@ -1,0 +1,73 @@
+{
+  "pickering_Da_shell": {
+    "n": 20000,
+    "mean": 0.017117707233149957,
+    "median": 0.0045482802363564345,
+    "p5": 0.00025767279244069035,
+    "p25": 0.0013252266126873653,
+    "p75": 0.015577219645956621,
+    "p95": 0.07925573659771297,
+    "min": 4.882993023514042e-05,
+    "max": 0.4861203831472903
+  },
+  "pickering_escape_fraction": {
+    "n": 20000,
+    "mean": 0.99173759545032,
+    "median": 0.9977301616860792,
+    "p5": 0.9616399064880604,
+    "p25": 0.9922616239888647,
+    "p75": 0.9993377523769119,
+    "p95": 0.9998711774346781,
+    "min": 0.7980415988782813,
+    "max": 0.9999755855316147
+  },
+  "fusion_P_capture_intra": {
+    "n": 20000,
+    "mean": 0.28187974084470335,
+    "median": 0.23547060189896052,
+    "p5": 0.14603545514542277,
+    "p25": 0.1760060593850438,
+    "p75": 0.349248655698876,
+    "p95": 0.5848485520144908,
+    "min": 0.14000374334758897,
+    "max": 0.6998351148534528
+  },
+  "fusion_bulk_capture_length_um": {
+    "n": 20000,
+    "mean": 0.8666221215595243,
+    "median": 0.6040397654104899,
+    "p5": 0.1406719405697266,
+    "p25": 0.3222887356590619,
+    "p75": 1.1340796566249496,
+    "p95": 2.5332492458543916,
+    "min": 0.061066203926303145,
+    "max": 6.100299799901526
+  },
+  "free_Da_joint_scale": {
+    "n": 20000,
+    "mean": 556864417.787079,
+    "median": 133646592.08108506,
+    "p5": 6752281.015531223,
+    "p25": 38108316.51788572,
+    "p75": 497222905.99905825,
+    "p95": 2608377276.598527,
+    "min": 779054.7265080936,
+    "max": 16204677374.472963
+  },
+  "free_capture_length_um": {
+    "n": 20000,
+    "mean": 0.8654183869280043,
+    "median": 0.5991720108075416,
+    "p5": 0.14154270357145435,
+    "p25": 0.31754352817911147,
+    "p75": 1.1196676796936371,
+    "p95": 2.5643140502522597,
+    "min": 0.059297046618938434,
+    "max": 5.712266124930022
+  },
+  "interpretation": {
+    "pickering": "Pickering Da_shell measures catalase shell scavenging rate vs H2O2 diffusion across the shell thickness. Da >> 1 means H2O2 is destroyed before crossing the shell \u2014 architecture closes the gap.",
+    "fusion": "Fusion P_capture_intra is the Smoluchowski first-passage probability that H2O2 generated at the uricase active site is captured by the intramolecular catalase domain before escape to bulk. P_capture > 0.5 means most H2O2 is captured locally.",
+    "free": "Free-coformulated Da_joint compares bulk catalase capture rate over the joint volume vs diffusion across joint radius. Da >> 1 means catalase captures H2O2 before it diffuses to the tissue boundary."
+  }
+}

@@ -1,0 +1,733 @@
+{
+  "_meta": {
+    "date": "2026-05-06",
+    "phase": "4 (v2 — chokepoint key canonicalization, plant-origin filter expanded)",
+    "method": "Combined Phase 2a/2c/3a evidence with toxicity filter, plant-origin discount, mechanism-diversity bonus.",
+    "total_candidates_evaluated": 42,
+    "excluded_by_toxicity_filter": 2,
+    "ranked_after_dedup": 36
+  },
+  "_excluded_candidates": [
+    {
+      "compound": "FUMITREMORGIN (C)",
+      "chokepoint": "ABCG2",
+      "reason": "EXCLUDED (Aspergillus fumigatus)",
+      "source": "ChEMBL (Phase 2a)"
+    },
+    {
+      "compound": "CYCLOTRYPROSTATIN A (12,13-dihydroxyfumitremorgin C)",
+      "chokepoint": "ABCG2",
+      "reason": "EXCLUDED (Aspergillus fumigatus)",
+      "source": "ChEMBL (Phase 2a)"
+    }
+  ],
+  "ranked_candidates": [
+    {
+      "compound": "LOVASTATIN",
+      "chokepoint": "HDAC6",
+      "producer_organism": "Aspergillus terreus / Pleurotus ostreatus / Monascus ruber",
+      "producer_status": "pharmacopoeia/medicinal (Aspergillus terreus / Pleurotus ostreatus / Monascus ruber)",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 2,
+      "potency": {
+        "type": "IC50",
+        "value_nM": 16285,
+        "pchembl": 4.79,
+        "assay_chembl_id": "CHEMBL2351235",
+        "assay_description": "Inhibition of recombinant HDAC6 (unknown origin) after 10 mins by fluorimetric analysis",
+        "reference": "J Med Chem 2013 (replicated in 2015 and 2016 follow-ups)"
+      },
+      "potency_score": 1,
+      "producer_score": 1,
+      "source": "ChEMBL (Phase 2a)",
+      "reference": "J Med Chem 2013 (replicated in 2015 and 2016 follow-ups)",
+      "total_score": 6,
+      "mechanism_diversity": 2
+    },
+    {
+      "compound": "LOVASTATIN",
+      "chokepoint": "PPARgamma",
+      "producer_organism": "Aspergillus terreus",
+      "producer_status": "pharmacopoeia/medicinal (Aspergillus terreus)",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 2,
+      "potency": {
+        "type": "Potency",
+        "value_nM": 50118.7,
+        "pchembl": null,
+        "assay_chembl_id": "CHEMBL1794510",
+        "assay_description": "PUBCHEM_BIOASSAY: qHTS assay for small molecule antagonists of PPARγ signaling",
+        "activity_comment": "inconclusive",
+        "reference": "PubChem qHTS"
+      },
+      "potency_score": 1,
+      "producer_score": 1,
+      "source": "ChEMBL (Phase 2a)",
+      "reference": "PubChem qHTS",
+      "total_score": 6,
+      "mechanism_diversity": 2
+    },
+    {
+      "compound": "2,4-dihydroxybenzoic acid methyl ester (DAE)",
+      "chokepoint": "XO",
+      "producer_organism": "Ganoderma applanatum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma applanatum)",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "DAE (Ganoderma applanatum) reduces serum uric acid in mice from 407 to 134 µmol/L via dual XOD inhibition and URAT1 down-regulation — DUAL-CHOKEPOINT hit, in vivo, structurally allopurinol-like."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 35750011 (2022)",
+      "reference": "PMID 35750011: Hypouricemic effect of 2,4-dihydroxybenzoic acid methyl ester in hyperuricemic mice through inhibiting XOD and down-regu",
+      "finding": "DAE (Ganoderma applanatum) reduces serum uric acid in mice from 407 to 134 µmol/L via dual XOD inhibition and URAT1 down-regulation — DUAL-CHOKEPOINT hit, in vivo, structurally allopurinol-like.",
+      "total_score": 6,
+      "mechanism_diversity": 2
+    },
+    {
+      "compound": "2,4-dihydroxybenzoic acid methyl ester (DAE)",
+      "chokepoint": "URAT1",
+      "producer_organism": "Ganoderma applanatum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma applanatum)",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "Same DAE entry — also down-regulates URAT1 (this is the load-bearing dual-chokepoint hit)."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 35750011 (2022)",
+      "reference": "PMID 35750011: Hypouricemic effect of 2,4-dihydroxybenzoic acid methyl ester in hyperuricemic mice through inhibiting XOD and down-regu",
+      "finding": "Same DAE entry — also down-regulates URAT1 (this is the load-bearing dual-chokepoint hit).",
+      "total_score": 6,
+      "mechanism_diversity": 2
+    },
+    {
+      "compound": "Cordyceps sinensis preparations",
+      "chokepoint": "urate_axis_general",
+      "producer_organism": "Cordyceps sinensis",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps sinensis)",
+      "evidence_level": "CLINICAL — Cochrane systematic review of RCTs",
+      "evidence_score": 5,
+      "potency": {
+        "finding": "CLINICAL EVIDENCE: 5 RCTs (n=447) showed Cordyceps reduces hyperuricemia, hyperlipidemia, hyperglycemia, liver injury vs azathioprine in transplant patients. Quality unclear but clinical-grade evidence exists."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 26457607 (2015)",
+      "reference": "PMID 26457607: Cordyceps sinensis (a traditional Chinese medicine) for kidney transplant recipients.",
+      "finding": "CLINICAL EVIDENCE: 5 RCTs (n=447) showed Cordyceps reduces hyperuricemia, hyperlipidemia, hyperglycemia, liver injury vs azathioprine in transplant patients. Quality unclear but clinical-grade evidence exists.",
+      "total_score": 6,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "Cordyceps sinensis (natural + fermented)",
+      "chokepoint": "urate_axis_general",
+      "producer_organism": "Cordyceps sinensis",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps sinensis)",
+      "evidence_level": "CLINICAL — meta-analysis of 9 RCTs",
+      "evidence_score": 5,
+      "potency": {
+        "finding": "CLINICAL: 9 RCTs (mostly Chinese, including CNKI sources). Cordyceps + cyclosporine A reduces hyperuricemia and CNI nephrotoxicity. Concrete clinical evidence for hyperuricemia indication."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 28137532 (2016)",
+      "reference": "PMID 28137532: Efficacy of Cordyceps sinensis as an adjunctive treatment in kidney transplant patients: A systematic-review and meta-an",
+      "finding": "CLINICAL: 9 RCTs (mostly Chinese, including CNKI sources). Cordyceps + cyclosporine A reduces hyperuricemia and CNI nephrotoxicity. Concrete clinical evidence for hyperuricemia indication.",
+      "total_score": 6,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "bois d,arc",
+      "chokepoint": "URAT1",
+      "producer_organism": "[query-hint] Ganoderma, [query-hint] Ganoderma lucidum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma) [PLANT-ORIGIN — accumulated by mushroom not biosynthesized]",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 0,
+      "potency": {
+        "standard_type": "IC50",
+        "value": 2000,
+        "units": "nM",
+        "pchembl": 5.7
+      },
+      "potency_score": 2,
+      "producer_score": 1,
+      "source": "LOTUS × ChEMBL (Phase 3a)",
+      "reference": "ChEMBL CHEMBL28626 → CHEMBL6120",
+      "plant_origin_flag": true,
+      "total_score": 6,
+      "mechanism_diversity": 3
+    },
+    {
+      "compound": "5,8-dihydroxy-10-methoxy-2-methylbenzo[h]chromen-4-one",
+      "chokepoint": "ABCG2",
+      "producer_organism": "[query-hint] Aspergillus niger",
+      "producer_status": "GRAS/QPS (Aspergillus niger)",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 2,
+      "potency": {
+        "standard_type": "IC50",
+        "value": 12800,
+        "units": "nM",
+        "pchembl": 4.89
+      },
+      "potency_score": 1,
+      "producer_score": 2,
+      "source": "LOTUS × ChEMBL (Phase 3a)",
+      "reference": "ChEMBL CHEMBL454794 → CHEMBL5393",
+      "plant_origin_flag": false,
+      "total_score": 5,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "bois d,arc",
+      "chokepoint": "ABCG2",
+      "producer_organism": "[query-hint] Ganoderma, [query-hint] Ganoderma lucidum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma) [PLANT-ORIGIN — accumulated by mushroom not biosynthesized]",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 0,
+      "potency": {
+        "standard_type": "IC50",
+        "value": 21000,
+        "units": "nM",
+        "pchembl": 4.68
+      },
+      "potency_score": 1,
+      "producer_score": 1,
+      "source": "LOTUS × ChEMBL (Phase 3a)",
+      "reference": "ChEMBL CHEMBL28626 → CHEMBL5393",
+      "plant_origin_flag": true,
+      "total_score": 5,
+      "mechanism_diversity": 3
+    },
+    {
+      "compound": "bois d,arc",
+      "chokepoint": "XO",
+      "producer_organism": "[query-hint] Ganoderma, [query-hint] Ganoderma lucidum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma) [PLANT-ORIGIN — accumulated by mushroom not biosynthesized]",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 0,
+      "potency": {
+        "standard_type": "IC50",
+        "value": 10100,
+        "units": "nM",
+        "pchembl": 5
+      },
+      "potency_score": 1,
+      "producer_score": 1,
+      "source": "LOTUS × ChEMBL (Phase 3a)",
+      "reference": "ChEMBL CHEMBL28626 → CHEMBL1929",
+      "plant_origin_flag": true,
+      "total_score": 5,
+      "mechanism_diversity": 3
+    },
+    {
+      "compound": "davallialactone",
+      "chokepoint": "XO",
+      "producer_organism": "Sanghuangporus vaninii (Phellinus / Sanghuang)",
+      "producer_status": "pharmacopoeia/medicinal (Sanghuangporus vaninii (Phellinus / Sanghuang))",
+      "evidence_level": "in vitro + animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "Davallialactone isolated from S. vaninii at 97.7% purity exhibits mixed XO inhibition with IC50 = 90.07 µM."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 36801789 (2023)",
+      "reference": "PMID 36801789: Anti-gout activity and the interaction mechanisms between Sanghuangporus vaninii active components and xanthine oxidase.",
+      "finding": "Davallialactone isolated from S. vaninii at 97.7% purity exhibits mixed XO inhibition with IC50 = 90.07 µM.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "2,5-dihydroxyacetophenone (DHAP)",
+      "chokepoint": "XO",
+      "producer_organism": "Cordyceps spp.",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps spp.)",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "DHAP from Cordyceps reduces SUA, inhibits hepatic XOD, computationally screened against XO active site."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 29735945 (2018)",
+      "reference": "PMID 29735945: Hypouricemic Effect of 2,5-Dihydroxyacetophenone, a Computational Screened Bioactive Compound from [Cordyceps], on Hyper",
+      "finding": "DHAP from Cordyceps reduces SUA, inhibits hepatic XOD, computationally screened against XO active site.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "cordycepin",
+      "chokepoint": "URAT1",
+      "producer_organism": "Cordyceps militaris (cordycepin = 3'-deoxyadenosine)",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps militaris (cordycepin = 3'-deoxyadenosine))",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "Cordycepin lowers SUA from 337 to 203 µmol/L via URAT1 modulation — direct URAT1 chokepoint hit, dose-response, mouse model."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 29422889 (2018)",
+      "reference": "PMID 29422889: Cordycepin, a Characteristic Bioactive Constituent in [Cordyceps], Ameliorates Hyperuricemia through URAT1 in Hyperurice",
+      "finding": "Cordycepin lowers SUA from 337 to 203 µmol/L via URAT1 modulation — direct URAT1 chokepoint hit, dose-response, mouse model.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "ethanol extract (mixed)",
+      "chokepoint": "URAT1",
+      "producer_organism": "Sanghuangporus vaninii",
+      "producer_status": "pharmacopoeia/medicinal (Sanghuangporus vaninii)",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "S. vaninii ethanol extract regulates uric acid transporters (URAT1/GLUT9/OAT1/ABCG2 family) — extract-level evidence; component-level identification still needed."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 37279627 (2023)",
+      "reference": "PMID 37279627: Sanghuangporus vaninii ethanol extract alleviates hyperuricemic renal injury by regulating the uric acid transporters an",
+      "finding": "S. vaninii ethanol extract regulates uric acid transporters (URAT1/GLUT9/OAT1/ABCG2 family) — extract-level evidence; component-level identification still needed.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "AMC-BFE (mixed extract)",
+      "chokepoint": "URAT1",
+      "producer_organism": "Cordyceps militaris (co-fermented with Astragalus)",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps militaris (co-fermented with Astragalus))",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "AMC-BFE downregulates URAT1 + GLUT9, alters ABCG2, activates PPARα — multi-chokepoint extract; LC-MS/MS profile shows isoflavone aglycones, nucleosides, polyols. URAT1 + ABCG2 + PPARα triple-leverage."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 41905012 (2026)",
+      "reference": "PMID 41905012: Biotransformation-derived metabolites from Astragalus membranaceus and Cordyceps militaris alleviate hyperuricemia via m",
+      "finding": "AMC-BFE downregulates URAT1 + GLUT9, alters ABCG2, activates PPARα — multi-chokepoint extract; LC-MS/MS profile shows isoflavone aglycones, nucleosides, polyols. URAT1 + ABCG2 + PPARα triple-leverage.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "FZ formula (mixed); Poria cocos contribution unspecified",
+      "chokepoint": "ABCG2",
+      "producer_organism": "Poria cocos (component of FZ formula — Wolfiporia extensa, sclerotium-forming fungus)",
+      "producer_status": "pharmacopoeia/medicinal (Poria cocos (component of FZ formula — Wolfiporia extensa, sclerotium-forming fungus))",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "FZ formula modulates ABCG2/GLUT9/OAT1 expression and suppresses NLRP3 inflammasome in HUA mice. Poria cocos is the only fungal ingredient. Hits ABCG2 + NLRP3 simultaneously — multi-chokepoint TCM formula."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 37788785 (2023)",
+      "reference": "PMID 37788785: Fuling-Zexie formula attenuates hyperuricemia-induced nephropathy and inhibits JAK2/STAT3 signaling and NLRP3 inflammaso",
+      "finding": "FZ formula modulates ABCG2/GLUT9/OAT1 expression and suppresses NLRP3 inflammasome in HUA mice. Poria cocos is the only fungal ingredient. Hits ABCG2 + NLRP3 simultaneously — multi-chokepoint TCM formula.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "FZ formula",
+      "chokepoint": "NLRP3",
+      "producer_organism": "Poria cocos (in FZ formula)",
+      "producer_status": "pharmacopoeia/medicinal (Poria cocos (in FZ formula))",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "Suppresses NLRP3 + ASC + cleaved-caspase-1 in HUA-nephropathy mouse model."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 37788785 (2023)",
+      "reference": "PMID 37788785: Fuling-Zexie formula attenuates hyperuricemia-induced nephropathy and inhibits JAK2/STAT3 signaling and NLRP3 inflammaso",
+      "finding": "Suppresses NLRP3 + ASC + cleaved-caspase-1 in HUA-nephropathy mouse model.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "exopolysaccharides (EPS)",
+      "chokepoint": "NLRP3",
+      "producer_organism": "Ganoderma lucidum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma lucidum)",
+      "evidence_level": "animal + in vitro",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "DIRECTIONALITY CAVEAT: G. lucidum EPS ACTIVATE (not inhibit) NLRP3 via dectin-1/Syk/NF-κB — protective in cryptococcosis but counterproductive for gout. Critical for downstream framing — Ganoderma polysaccharides are NLRP3 activators in some contexts."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 40450627 (2025)",
+      "reference": "PMID 40450627: Exopolysaccharides of Ganoderma lucidum Activate the NLRP3 Inflammasome, Modulating Phagocytes and the Response of Mice ",
+      "finding": "DIRECTIONALITY CAVEAT: G. lucidum EPS ACTIVATE (not inhibit) NLRP3 via dectin-1/Syk/NF-κB — protective in cryptococcosis but counterproductive for gout. Critical for downstream framing — Ganoderma polysaccharides are NLRP3 activators in some contexts.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "S-GLSP (mixed: 42 compounds — flavonoids, alkaloids, terpenoids, saccharides)",
+      "chokepoint": "NLRP3",
+      "producer_organism": "Ganoderma lucidum (spore powder, sporoderm-removed)",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma lucidum (spore powder, sporoderm-removed))",
+      "evidence_level": "animal + in vitro",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "S-GLSP INHIBITS NLRP3 in AD model — opposite directionality from PMID 40450627. Spore powder (broken-shell, lipid+terpene-rich) ≠ EPS (β-glucan). Suggests cell-wall vs spore-extract pharmacology diverges — important for compound-level Phase 5 design."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 41378217 (2025)",
+      "reference": "PMID 41378217: Sporoderm-removed ganoderma lucidum spore powder (S-GLSP) alleviates neuroinflammation injury by regulating microglial p",
+      "finding": "S-GLSP INHIBITS NLRP3 in AD model — opposite directionality from PMID 40450627. Spore powder (broken-shell, lipid+terpene-rich) ≠ EPS (β-glucan). Suggests cell-wall vs spore-extract pharmacology diverges — important for compound-level Phase 5 design.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "GLE extract (mixed)",
+      "chokepoint": "NLRP3",
+      "producer_organism": "Ganoderma lucidum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma lucidum)",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "GLE represses microglial NLRP3 in Parkinson model. Confirms G. lucidum extracts inhibit NLRP3 in CNS contexts."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 36145248 (2022)",
+      "reference": "PMID 36145248: [Ganoderma lucidum extract] Modulates Inflammatory Responses following 1-Methyl-4-Phenyl-1,2,3,6-Tetrahydropyridine (MPT",
+      "finding": "GLE represses microglial NLRP3 in Parkinson model. Confirms G. lucidum extracts inhibit NLRP3 in CNS contexts.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "GLP (β-glucan)",
+      "chokepoint": "NLRP3",
+      "producer_organism": "Ganoderma lucidum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma lucidum)",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "GLP inhibits NLRP3 in cognitive-dysfunction model. Note: this β-glucan INHIBITS NLRP3 here, contradicting PMID 40450627's EPS finding — context-dependent. Phase 5 must distinguish polysaccharide structures."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 39522844 (2024)",
+      "reference": "PMID 39522844: Ganoderma lucidum polysaccharide alleviates cognitive dysfunction by inhibiting neuroinflammation via NLRP3/NF-κB signal",
+      "finding": "GLP inhibits NLRP3 in cognitive-dysfunction model. Note: this β-glucan INHIBITS NLRP3 here, contradicting PMID 40450627's EPS finding — context-dependent. Phase 5 must distinguish polysaccharide structures.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "GLPS polysaccharides",
+      "chokepoint": "NLRP3",
+      "producer_organism": "Ganoderma lucidum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma lucidum)",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "GLPS suppresses NLRP3/ASC/caspase-1 in CCl4 liver injury."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 30673679 (2019)",
+      "reference": "PMID 30673679: Anti-Inflammatory and Hepatoprotective Effects of Ganoderma lucidum Polysaccharides against Carbon Tetrachloride-Induced",
+      "finding": "GLPS suppresses NLRP3/ASC/caspase-1 in CCl4 liver injury.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "GM (mycelium powder), GP (extracellular polysaccharide)",
+      "chokepoint": "urate_axis_general",
+      "producer_organism": "Ganoderma lucidum (mycelium + EPS)",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma lucidum (mycelium + EPS))",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "GM at 200-400 mg/kg lowers serum UA from 5.56 to 4.45 mg/dL, downregulates hepatic XOD activity. GP improves renal function (BUN, ALT). Direct anti-hyperuricemia evidence for G. lucidum culture products."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 35736485 (2022)",
+      "reference": "PMID 35736485: Hypouricemic Effect of Submerged Culture of [Ganoderma] in Potassium Oxonate-Induced Hyperuricemic Rats.",
+      "finding": "GM at 200-400 mg/kg lowers serum UA from 5.56 to 4.45 mg/dL, downregulates hepatic XOD activity. GP improves renal function (BUN, ALT). Direct anti-hyperuricemia evidence for G. lucidum culture products.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "GLPP (polysaccharide-peptide)",
+      "chokepoint": "urate_axis_general",
+      "producer_organism": "Ganoderma lucidum",
+      "producer_status": "pharmacopoeia/medicinal (Ganoderma lucidum)",
+      "evidence_level": "animal + in vitro",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "GLPP reduces blood UA up to 40.6% in HUA mice via ADA inhibition + GLUT9 down + OAT1 up. Hits THREE chokepoints: ADA, GLUT9, OAT1. Adenosine deaminase as a fungal-druggable target is novel for our chokepoint map."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 36385640 (2022)",
+      "reference": "PMID 36385640: [Ganoderma lucidum] polysaccharide peptide alleviates hyperuricemia by regulating adenosine deaminase and urate transpor",
+      "finding": "GLPP reduces blood UA up to 40.6% in HUA mice via ADA inhibition + GLUT9 down + OAT1 up. Hits THREE chokepoints: ADA, GLUT9, OAT1. Adenosine deaminase as a fungal-druggable target is novel for our chokepoint map.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "fruiting body extract (FBCC)",
+      "chokepoint": "urate_axis_general",
+      "producer_organism": "Cordyceps chanhua",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps chanhua)",
+      "evidence_level": "animal (acute HUA mice + chronic gout rats)",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "FBCC reduces SUA + suppresses XOD + reduces renal tubulointerstitial damage in chronic gout rats. Strong chronic-gout evidence."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 37560890 (2023)",
+      "reference": "PMID 37560890: Antihyperuricemic and Renal Protective Effect of Cordyceps chanhua (Ascomycetes) Fruiting Bodies in Acute Hyperuricemia ",
+      "finding": "FBCC reduces SUA + suppresses XOD + reduces renal tubulointerstitial damage in chronic gout rats. Strong chronic-gout evidence.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "cordycepin (CME = aqueous extract)",
+      "chokepoint": "urate_axis_general",
+      "producer_organism": "Cordyceps militaris",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps militaris)",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "CME inhibits XO + reduces purine precursor availability + modulates gut microbiota. Cordycepin's anti-HUA effect comparable to whole CME."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 39024793 (2024)",
+      "reference": "PMID 39024793: Amelioration of hyperuricemia by cordycepin and Cordyceps militaris aqueous extract in mice via modulating gut microbiot",
+      "finding": "CME inhibits XO + reduces purine precursor availability + modulates gut microbiota. Cordycepin's anti-HUA effect comparable to whole CME.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "CS-CC mixed (14 compounds identified)",
+      "chokepoint": "urate_axis_general",
+      "producer_organism": "Cordyceps cicadae",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps cicadae)",
+      "evidence_level": "animal + in vitro",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "CS-CC restores PINK1-mediated mitophagy + reduces renal fibrosis in HUA nephropathy. Mitophagy as a NEW chokepoint — not in our current Open Enzyme map."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 40334761 (2025)",
+      "reference": "PMID 40334761: Clerodendranthus spicatus-Cordyceps cicadae regulates mitophagy and protects renal tubular epithelial cells from hyperur",
+      "finding": "CS-CC restores PINK1-mediated mitophagy + reduces renal fibrosis in HUA nephropathy. Mitophagy as a NEW chokepoint — not in our current Open Enzyme map.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "AMC-BFE — isoflavone aglycones, nucleosides",
+      "chokepoint": "PPARG",
+      "producer_organism": "Cordyceps militaris (co-fermented with Astragalus)",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps militaris (co-fermented with Astragalus))",
+      "evidence_level": "animal",
+      "evidence_score": 3,
+      "potency": {
+        "finding": "Activates hepatic PPARα signaling pathway alongside URAT1/GLUT9/ABCG2 effects. Same paper as URAT1 entry — multi-chokepoint extract."
+      },
+      "potency_score": 0,
+      "producer_score": 1,
+      "source": "PubMed 41905012 (2026)",
+      "reference": "PMID 41905012: Biotransformation-derived metabolites from Astragalus membranaceus and Cordyceps militaris alleviate hyperuricemia via m",
+      "finding": "Activates hepatic PPARα signaling pathway alongside URAT1/GLUT9/ABCG2 effects. Same paper as URAT1 entry — multi-chokepoint extract.",
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "5,8-dihydroxy-6-methoxy-2-methylbenzo[g]chromen-4-one",
+      "chokepoint": "ABCG2",
+      "producer_organism": "[query-hint] Aspergillus niger",
+      "producer_status": "GRAS/QPS (Aspergillus niger)",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 2,
+      "potency": {
+        "standard_type": "IC50",
+        "value": null,
+        "units": null,
+        "pchembl": null
+      },
+      "potency_score": 0,
+      "producer_score": 2,
+      "source": "LOTUS × ChEMBL (Phase 3a)",
+      "reference": "ChEMBL CHEMBL252106 → CHEMBL5393",
+      "plant_origin_flag": false,
+      "total_score": 4,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "quercetin",
+      "chokepoint": "ABCG2",
+      "producer_organism": "[query-hint] Agaricus",
+      "producer_status": "grey-zone (Agaricus) [PLANT-ORIGIN — accumulated by mushroom not biosynthesized]",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 0,
+      "potency": {
+        "standard_type": "IC50",
+        "value": 6900,
+        "units": "nM",
+        "pchembl": 5.16
+      },
+      "potency_score": 2,
+      "producer_score": 0,
+      "source": "LOTUS × ChEMBL (Phase 3a)",
+      "reference": "ChEMBL CHEMBL50 → CHEMBL5393",
+      "plant_origin_flag": true,
+      "total_score": 4,
+      "mechanism_diversity": 2
+    },
+    {
+      "compound": "quercetin",
+      "chokepoint": "XO",
+      "producer_organism": "[query-hint] Agaricus",
+      "producer_status": "grey-zone (Agaricus) [PLANT-ORIGIN — accumulated by mushroom not biosynthesized]",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 0,
+      "potency": {
+        "standard_type": "IC50",
+        "value": 3000,
+        "units": "nM",
+        "pchembl": 5.52
+      },
+      "potency_score": 2,
+      "producer_score": 0,
+      "source": "LOTUS × ChEMBL (Phase 3a)",
+      "reference": "ChEMBL CHEMBL50 → CHEMBL1929",
+      "plant_origin_flag": true,
+      "total_score": 4,
+      "mechanism_diversity": 2
+    },
+    {
+      "compound": "genistein",
+      "chokepoint": "ABCG2",
+      "producer_organism": "[query-hint] Cordyceps sinensis, [query-hint] Ophiocordyceps",
+      "producer_status": "pharmacopoeia/medicinal (Cordyceps sinensis) [PLANT-ORIGIN — accumulated by mushroom not biosynthesized]",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 0,
+      "potency": {
+        "standard_type": "IC50",
+        "value": 6900,
+        "units": "nM",
+        "pchembl": 5.16
+      },
+      "potency_score": 2,
+      "producer_score": 1,
+      "source": "LOTUS × ChEMBL (Phase 3a)",
+      "reference": "ChEMBL CHEMBL44 → CHEMBL5393",
+      "plant_origin_flag": true,
+      "total_score": 3,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "MYCOPHENOLIC ACID",
+      "chokepoint": "PPARgamma",
+      "producer_organism": "Penicillium brevicompactum",
+      "producer_status": "grey-zone (Penicillium brevicompactum)",
+      "evidence_level": "in_vitro_biochem",
+      "evidence_score": 2,
+      "potency": {
+        "type": "Kd / Activity",
+        "kd_nM": 110000,
+        "kd_flag": "Outside typical range — Bioorg Med Chem Lett 2007 binding assay; treated as low-confidence",
+        "additional_data": "Antagonist activity at pioglitazone-stimulated PPARγ transcriptional activity in U2OS cells at 1 μM (Active); also activates PPARγ transcriptional activity in U2OS at 0.01–1 μM (Active); 74% inhibition of [14C]acetate uptake in 3T3-L1 cells at 2 μM",
+        "reference": "Bioorg Med Chem Lett 2007"
+      },
+      "potency_score": 0,
+      "producer_score": 0,
+      "source": "ChEMBL (Phase 2a)",
+      "reference": "Bioorg Med Chem Lett 2007",
+      "total_score": 2,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "β-glucans, sulfated polysaccharides",
+      "chokepoint": "NLRP3",
+      "producer_organism": "multiple (G. lucidum, Lentinus edodes)",
+      "producer_status": "grey-zone (multiple (G. lucidum, Lentinus edodes))",
+      "evidence_level": "review (mechanistic)",
+      "evidence_score": 1,
+      "potency": {
+        "finding": "Review: β-glucan triple-helix conformation activates macrophage receptors. NLRP3 engagement is structure-dependent (MW, branching, sulfation). Supports our directionality-caveat finding above."
+      },
+      "potency_score": 0,
+      "producer_score": 0,
+      "source": "PubMed 40592243 (2025)",
+      "reference": "PMID 40592243: Structural basis of immunomodulation by edible fungal polysaccharides: From molecular characteristics to action mechanis",
+      "finding": "Review: β-glucan triple-helix conformation activates macrophage receptors. NLRP3 engagement is structure-dependent (MW, branching, sulfation). Supports our directionality-caveat finding above.",
+      "total_score": 1,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "polysaccharides",
+      "chokepoint": "NLRP3",
+      "producer_organism": "multiple",
+      "producer_status": "grey-zone (multiple)",
+      "evidence_level": "review",
+      "evidence_score": 1,
+      "potency": {
+        "finding": "Review of fungal polysaccharide regulation of NF-κB / Nrf2 / NLRP3 in liver disease — confirms multi-species hepatic NLRP3 modulation."
+      },
+      "potency_score": 0,
+      "producer_score": 0,
+      "source": "PubMed 41302443 (2025)",
+      "reference": "PMID 41302443: Fungal Polysaccharides as Modulators of Molecular Pathways in Liver Health.",
+      "finding": "Review of fungal polysaccharide regulation of NF-κB / Nrf2 / NLRP3 in liver disease — confirms multi-species hepatic NLRP3 modulation.",
+      "total_score": 1,
+      "mechanism_diversity": 1
+    },
+    {
+      "compound": "β-glucans",
+      "chokepoint": "C5aR1",
+      "producer_organism": "multiple medicinal mushrooms",
+      "producer_status": "grey-zone (multiple medicinal mushrooms)",
+      "evidence_level": "review",
+      "evidence_score": 1,
+      "potency": {
+        "finding": "DIRECTIONALITY: mushroom β-glucans ACTIVATE complement (via CR3/iC3b opsonization) — opposite of inhibition. Same pattern as NLRP3 directionality issue: fungal cell-wall β-glucans are immune ACTIVATORS, not antagonists. C5aR1 antagonist program will need synthetic-route compounds, not whole-mushroom polysaccharides."
+      },
+      "potency_score": 0,
+      "producer_score": 0,
+      "source": "PubMed 17895634 (2007)",
+      "reference": "PMID 17895634: Effects of beta-glucans on the immune system.",
+      "finding": "DIRECTIONALITY: mushroom β-glucans ACTIVATE complement (via CR3/iC3b opsonization) — opposite of inhibition. Same pattern as NLRP3 directionality issue: fungal cell-wall β-glucans are immune ACTIVATORS, not antagonists. C5aR1 antagonist program will need synthetic-route compounds, not whole-mushroom",
+      "total_score": 1,
+      "mechanism_diversity": 1
+    }
+  ],
+  "high_signal_findings_from_pubmed": [
+    "DUAL-CHOKEPOINT HIT: Ganoderma applanatum 2,4-DAE (PMID 35750011) inhibits BOTH XOD and URAT1 in mouse model — structurally allopurinol-like, in vivo SUA reduction from 407 to 134 µmol/L. This is the strongest single-compound finding from the breadth scan.",
+    "CORDYCEPIN AS DIRECT URAT1 MODULATOR: Cordyceps militaris cordycepin (PMID 29422889) — dose-response in mice, SUA 337→203 µmol/L, mechanism proven via ELISA/RT-PCR/WB. Already a well-characterized molecule (3'-deoxyadenosine) with established pharmacology.",
+    "CLINICAL-LEVEL EVIDENCE: Cordyceps sinensis has TWO meta-analyses (PMIDs 26457607 Cochrane + 28137532) of RCTs in transplant patients showing hyperuricemia reduction. Highest evidence-tier finding in the entire scan — clinical, not preclinical.",
+    "MULTI-CHOKEPOINT EXTRACT: AMC-BFE (Cordyceps militaris × Astragalus biotransformation, PMID 41905012, 2026) hits URAT1 + GLUT9 + ABCG2 + PPARα simultaneously. Bidirectional fermentation enriches isoflavone aglycones — koji-relevant biotransformation strategy comparator.",
+    "ABCG2 + NLRP3 SIMULTANEOUS HIT: Poria cocos in Fuling-Zexie formula (PMID 37788785) modulates ABCG2/GLUT9/OAT1 + suppresses NLRP3/ASC/cleaved-caspase-1. Poria is the only fungal ingredient — needs decomposition to identify which compound class drives which axis.",
+    "POLYSACCHARIDE DIRECTIONALITY PROBLEM: G. lucidum exopolysaccharides ACTIVATE NLRP3 in cryptococcosis (PMID 40450627, beneficial) but G. lucidum spore powder INHIBITS NLRP3 in Alzheimer (PMID 41378217). β-Glucan structure (MW, branching, sulfation, triple-helix conformation) determines directionality (PMID 40592243 review). Critical for Phase 5: spore powder ≠ EPS ≠ fruiting-body β-glucan. Cell-wall vs cytoplasmic vs lipid-fraction extracts have OPPOSITE NLRP3 effects.",
+    "C5aR1 PLATFORM GAP CONFIRMED (per validation-experiments.md §1.21): NO direct fungal antagonist of C5aR1 surfaced in PubMed scan. β-glucans ACTIVATE complement (CR3/iC3b opsonization, PMID 17895634) — opposite of inhibition. Complement-NLRP3 crosstalk review (PMID 41983141) confirms the mechanistic synergy rationale but identifies no natural fungal small-molecule antagonist. Phase 5 C5aR1 work will need synthetic-derivative or non-fungal-source approaches; whole-mushroom polysaccharide programs will not fill this gap.",
+    "NOVEL CHOKEPOINT — MITOPHAGY: Cordyceps cicadae regulates PINK1-mediated mitophagy in HUA nephropathy (PMID 40334761). Not in current Open Enzyme chokepoint map — worth surfacing to validation-experiments.md as a new candidate.",
+    "NOVEL CHOKEPOINT — ADENOSINE DEAMINASE (ADA): Ganoderma lucidum GLPP polysaccharide-peptide inhibits ADA (PMID 36385640). ADA upstream of XO — earlier intervention point. Worth adding to chokepoint map.",
+    "Sanghuangporus vaninii davallialactone (PMID 36801789): XO IC50 = 90 µM. Fruiting-body XO inhibitor at characterized purity (97.7%). Mid-tier potency (allopurinol IC50 ~7 µM) but novel scaffold.",
+    "MULTILINGUAL CATCH-NET: PubMed indexed extensive Chinese-author primary research (Shandong U, Peking U, Northwest A&F, Shanghai Academy, Guangdong CM University). The TCM × hyperuricemia search (PMID 38907332, 39176260, etc.) confirms the 'Chinese-language clinical evidence is real' framing — do not gate on Western evidence alone.",
+    "Lp-PLA2 (15 hits total) and HDAC6 (155 hits total): essentially zero direct fungal hits on these chokepoints. Phase 5 will need ChEMBL/LOTUS querying or structural prediction work — PubMed primary literature is empty.",
+    "Trametes versicolor / PSK: only 2 hits total, neither NLRP3-focused. PSK is well-characterized as immune adjuvant in Japan, but PubMed primary research on PSK × NLRP3 is essentially absent. Phase 5 may need direct screening.",
+    "Pleurotus ostreatus / oyster mushroom: 189 hits dominated by lovastatin/cholesterol. Statin axis is real (Pleurotus produces lovastatin natively) but does not map to our XO/URAT1/NLRP3/C5aR1 chokepoints. Off-target for current scope."
+  ],
+  "phase_5_recommendations_from_pubmed": [
+    "Top 3 compounds for Phase 5 deep-dive: (1) Ganoderma applanatum 2,4-DAE (dual XO+URAT1, PMID 35750011); (2) Cordyceps militaris cordycepin (URAT1 + already characterized as 3'-deoxyadenosine, PMID 29422889 + clinical track via Cordyceps sinensis); (3) Sanghuangporus vaninii davallialactone (novel XO scaffold, PMID 36801789).",
+    "Multi-chokepoint extract for whole-organism modeling: AMC-BFE Cordyceps × Astragalus biotransformation (PMID 41905012) — shows what fungal solid-state fermentation can produce.",
+    "Polysaccharide work needs structural specification: triple-helix β-glucan vs sulfated β-glucan vs spore-derived terpenoid mix produce OPPOSITE NLRP3 effects. Phase 5 must specify polysaccharide structure before claiming inflammasome modulation.",
+    "Add ADA and PINK1/mitophagy to Open Enzyme chokepoint map (validation-experiments.md) — both surfaced as fungal-druggable in this scan but absent from current map.",
+    "C5aR1 platform-gap: scan confirms PubMed primary fungal literature has no antagonist. Either accept gap or pivot to chemical synthesis route or non-fungal source for that chokepoint."
+  ]
+}

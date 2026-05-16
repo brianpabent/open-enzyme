@@ -1,0 +1,42 @@
+{
+  "verdict_distributions": {
+    "pickering_joint_bulk": {
+      "GREEN": 1.0
+    },
+    "pickering_local_at_droplet": {
+      "GREEN": 1.0
+    },
+    "fusion_joint_bulk": {
+      "GREEN": 1.0
+    },
+    "free_joint_bulk": {
+      "GREEN": 0.96585,
+      "YELLOW": 0.0341,
+      "RED": 5e-05
+    }
+  },
+  "headline_verdict_median": {
+    "pickering": "GREEN",
+    "fusion": "GREEN",
+    "free": "GREEN"
+  },
+  "decision_rule": {
+    "GREEN_upper_uM": 10.0,
+    "YELLOW_upper_uM": 100.0,
+    "logic": "GREEN: median predicted [H2O2] at joint-tissue boundary < GREEN_upper; YELLOW: median in [GREEN_upper, YELLOW_upper); RED: median \u2265 YELLOW_upper."
+  },
+  "ranking_lowest_to_highest_h2o2": [
+    [
+      "fusion",
+      0.033836983512820225
+    ],
+    [
+      "free_co_formulated",
+      0.19075177006929828
+    ],
+    [
+      "pickering",
+      0.19116783506932736
+    ]
+  ]
+}

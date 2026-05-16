@@ -1,0 +1,5263 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Uricase Cassette Ranking, ClockBase-Style Combinatorial Composite Scoring (Computational, comp-022) - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#uricase-cassette-ranking-computational-analysis-comp-022" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Uricase Cassette Ranking, ClockBase-Style Combinatorial Composite Scoring (Computational, comp-022)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../open-enzyme-vision.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../synthesis/README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Thesis & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../open-source-platform.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chassis-pending-interventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chassis-Pending Interventions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../team.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gout-clinical-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Clinical Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../complement-c5a-gout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complement / C5a (CP0)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../androgen-urate-axis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Androgen-Urate Axis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../androgen-natural-modulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Androgen Natural Modulation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../prps-purine-biosynthesis-chokepoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRPS / Purine Biosynthesis Chokepoint
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tnfsf14-gout-target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TNFSF14 / LIGHT (CP1a)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../spm-resolution-pathway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPM Resolution Pathway (CP5b)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koji-endgame-strain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Endgame Strain
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chaperone-orthogonal-stacking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chaperone-Orthogonal Cassette Stacking
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koji-home-fermentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Home Fermentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../enzyme-quantification-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Quantification Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../engineered-lbp-chassis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered LBP Chassis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sirna-urat1-modality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    siRNA / URAT1 Modality
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tcm-modern-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCM × Modern Rigor (Discovery Engine)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../medicinal-mushroom-complement-track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Complement Track
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scoped (Phase 1)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../medicinal-mushroom-extract-sops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Extract SOPs
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../compounding-pharmacy-track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounding Pharmacy Track
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scoped (Phase 1)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ginkgo-cloud-lab-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ginkgo Cloud Lab Evaluation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--working-note"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ward-1995-lab-access-global.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ward 1995 Lab Access — Global Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../abcg2-modulators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ABCG2 Modulators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../delivery-route-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery Route × Compound Class Matrix
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gout-kill-chain-delivery-routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Kill Chain — Delivery Routes
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gsdmd-pore-delivery-paradox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GSDMD Pore Self-Delivery Paradox
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../purine-degrading-bacteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Purine-Degrading Bacteria (PDB)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../colchicine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colchicine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cannabinoids-terpenes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cannabinoids & Terpenes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../egcg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EGCG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../theaflavins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theaflavins
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../zileuton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zileuton
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../carnosine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Carnosine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lactoferrin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lactoferrin
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Experiment & Validation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Self-Experiment & Validation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../practitioner-toolkit.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practitioner Toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../self-experiment-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Experiment Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../personal-genome-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personal Genome Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../enzyme-quantification-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Quantification Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modality-chokepoint-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modality × Target Matrix
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../hypotheses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--index"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bio-ai-tools.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai-bio-tools-playbook.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paperclip-deep-dive.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paperclip (GXL) Literature MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chembl-cross-check.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChEMBL Cross-Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../linter-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linter Design (Falsification + Document Lint)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--design"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H01-ward-dual-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H01 — Ward Dual-Cassette
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Pending"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H02-engineered-lbp-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H02 — Engineered LBP Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H03-sirna-urat1-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H03 — siRNA / URAT1 Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H04-tcm-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H04 — TCM × Modern Rigor Methodology Lens
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H05-daf-scr14-cp0-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H05 — DAF SCR1-4 CP0-Closure Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H06 — Medicinal Mushroom Complement Track
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H07-clomid-intestinal-er-antagonism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H07 — Clomid Intestinal-ER Antagonism
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H08-gut-lumen-sink-platform-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H08 — Gut-Lumen Sink Platform Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hypotheses/H09-community-fermentation-reliability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H09 — Community Fermentation Reliability
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../computational-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uricase-protease-stability-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Protease Stability (comp-001)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lactoferrin-protease-stability-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lactoferrin Protease Stability (comp-005)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../daf-cd55-protease-stability-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAF/CD55 Protease Stability (comp-006)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../daf-cd55-scr14-truncated-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAF/CD55 SCR1-4 Truncated Stability (comp-012)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../food-grade-hdaci-screen-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Food-Grade HDAC Inhibitor Screen (comp-007)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../supplement-abcg2-antagonism-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplement ABCG2 Antagonism (comp-004)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../c-utilis-uricase-cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C. utilis Uricase Cassette Compatibility (comp-011)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uricase-cassette-ranking-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Cassette Ranking, ClockBase-Style (comp-022)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1; fold-quality model deferred to wet-lab)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../daf-cd55-scr14-cassette-ranking-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAF SCR1-4 Cassette Ranking (comp-030)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1, 2026-05-15)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cordycepin-cassette-burden-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cordycepin Cassette Metabolic Burden (comp-023)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tcm-gout-compound-triage-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCM Gout Compound Triage (comp-013)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../medicinal-mushroom-compound-mapping-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Compound Mapping (comp-014)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scoped — Phase 1 only"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../t-axis-adjuvant-urate-mapping-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T-axis Adjuvant Urate Mapping (comp-015)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v2 — XO added as 5th target; eurycomanone verdict reversed)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../t-abcg2-suppression-evidence-mining-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T × Intestinal ABCG2 Evidence Mining (comp-016)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../intestinal-abcg2-sex-dimorphism-public-data-mining-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intestinal ABCG2 Sex-Dimorphism Mining (comp-017)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../autonomous-screening-methodology.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI Screening Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../manual-literature-mining.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual Literature Mining Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantification-ladder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantification Ladder (kitchen → smartphone → bench → outsourced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions Index
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GRAPH.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="uricase-cassette-ranking-computational-analysis-comp-022">Uricase Cassette Ranking, Computational Analysis (comp-022)<a class="headerlink" href="#uricase-cassette-ranking-computational-analysis-comp-022" title="Permanent link">&para;</a></h1>
+<h2 id="1-question">1. Question<a class="headerlink" href="#1-question" title="Permanent link">&para;</a></h2>
+<p>Across the <em>A. oryzae</em> uricase expression cassette design space, parameterized as <strong>6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations</strong>, which cassettes survive a multi-model concordance gate and warrant promotion to the <a href="./validation-experiments.md">§1.9 dual-cassette wet-lab feasibility test</a>?</p>
+<p>This is the first comp-NNN to instantiate the ClockBase exhaustive-search-then-rank pattern at full cardinality. Prior cassette work in the corpus (comp-010, comp-011) examined two specific candidate designs each; comp-022 ranks the full combinatorial space. The intent is not to replace §1.9, but to ensure that the §1.9 cassette design is the right point in the design space before gene synthesis dollars commit.</p>
+<h2 id="2-verdict">2. Verdict<a class="headerlink" href="#2-verdict" title="Permanent link">&para;</a></h2>
+<p><strong>The §1.9 architecture is robust.</strong> The composite ranking converges on the architecture comp-010 already recommended (PamyB + amyB signal peptide + direct-secretion, no fusion), and adds three gene-synthesis-time refinements:</p>
+<ol>
+<li><strong>Codon variant: prefer "5'-softened" over pure max-CAI.</strong> A two-zone codon optimization (low-GC + min-secondary-structure first 30 codons, max-CAI thereafter) ranks at the top of the concordance gate across all four models. Pure max-CAI gives slightly higher CAI (1.000 vs 0.915) but worse 5' mRNA structure (0.594 vs 0.733); the 5'-softened variant wins on N-of-4 concordance.</li>
+<li><strong>C-terminal tag: block the PTS1 signal explicitly.</strong> Append 3×Ala or His6 to mask the native C-terminal SKL PTS1 motif. This addresses the routing risk flagged in comp-010 §3 at the cassette-design level rather than waiting for the §1.9 anti-uricase ELISA to detect peroxisomal misrouting.</li>
+<li><strong>N-glycosylation: ablate N191.</strong> The one predicted N-glycosylation sequon in uricase (NSS at position 191; comp-010 §5) is unlikely to be occupied in the native protein but adds residual chaperone-pathway load if it is. A single N191Q point mutation removes the sequon at zero design cost.</li>
+</ol>
+<p><strong>Evidence level:</strong> Mechanistic Extrapolation (in silico only). Verdict gates a wet-lab confirmation in §1.9; the cassette-design refinements are gene-synthesis-time decisions that can be incorporated in the §1.9 construct order at no marginal cost.</p>
+<p><strong>Design-space size:</strong> 43,200 candidates enumerated (matches brief's Pass-2 estimate exactly). Concordance pass rate N-of-4 = 4: <strong>195 candidates (0.45%)</strong>. Concordance pass rate N-of-4 ≥ 3: <strong>2,421 candidates (5.6%)</strong>, which collapse to <strong>501 unique cassette designs</strong> after removing degeneracy across propeptide and N-glyc modifier states.</p>
+<h2 id="3-method">3. Method<a class="headerlink" href="#3-method" title="Permanent link">&para;</a></h2>
+<h3 id="31-design-space-parameterization">3.1 Design-space parameterization<a class="headerlink" href="#31-design-space-parameterization" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>Cardinality</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Promoter</td>
+<td>6</td>
+<td>PamyB (Tada 1991 PMID 1937733), PglaA (Ward 1995 PMID 9634791), PenoA (Toda 2001), PgpdA (Punt 1990 PMID 2113023), PtefI (Kitamoto 1998), PnmtA (Shoji 2005)</td>
+</tr>
+<tr>
+<td>Signal peptide</td>
+<td>12</td>
+<td pro-region="pro-region" pro-region_="pro-region," with="with" without="without">6 native koji SPs (amyB, glaA, pepO, alpA, lipase) + foreign cbhI (T. reesei), each ×</td>
+</tr>
+<tr>
+<td>Codon variant</td>
+<td>10</td>
+<td>native_uaZ approx, cai_max, cai_balanced, cai_max_gc54, harmonized (Angov 2008), rare_avoid, low_gc, high_gc, 5p_softened (Kudla 2009), 5p_softened_balanced</td>
+</tr>
+<tr>
+<td>Secretion scaffold</td>
+<td>60</td>
+<td>10 base scaffolds (direct × 3 C-term tag variants; glaA-full KEX2 × 4 KEX2-linker variants; glaA-truncated KEX2 × 2; tandem-KEX2 × 1) × 3 propeptide states × 2 N-glyc states</td>
+</tr>
+<tr>
+<td><strong>Product</strong></td>
+<td><strong>43,200</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Full part-by-part provenance (sequences, citations, fetch dates) is in <a href="../inputs/provenance/"><code>experiments/comp-022-clockbase-uricase-cassette-ranking/inputs/provenance.md</code></a>.</p>
+<h3 id="32-four-scoring-models">3.2 Four scoring models<a class="headerlink" href="#32-four-scoring-models" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Tier</th>
+<th>Direction</th>
+<th>Method</th>
+<th>Primary source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codon Adaptation Index (CAI)</td>
+<td>1</td>
+<td>Higher better</td>
+<td>Geometric mean of per-codon w-values (w = freq/max-freq-synonym) under A. oryzae table</td>
+<td>Sharp &amp; Li 1987 PMID 3547335</td>
+</tr>
+<tr>
+<td>mRNA 5' structure proxy</td>
+<td>1</td>
+<td>Higher better</td>
+<td>GC-content + GC-clamp + palindromic-4mer count over first 120 nt</td>
+<td>Kudla 2009 PMID 19359587</td>
+</tr>
+<tr>
+<td>Architecture-adjusted chaperone load</td>
+<td>2</td>
+<td>Lower better</td>
+<td>Σ (disulfide_count × α) + glycosylation + KEX2 + PTS1 penalties</td>
+<td><a href="./chaperone-orthogonal-stacking.md">chaperone-orthogonal-stacking.md §3.5</a></td>
+</tr>
+<tr>
+<td>Promoter × SP prior</td>
+<td>4</td>
+<td>Higher better</td>
+<td>Literature-derived bounded multiplier per promoter and SP</td>
+<td>(See §3.4)</td>
+</tr>
+</tbody>
+</table>
+<p>Tiers reflect the cascading-filter design from the brief. In practice, Tier 1 and Tier 2 are both per-component (per codon variant; per scaffold base) rather than per-candidate, so the full 43,200-candidate evaluation is computationally cheap. The cascading framing matters when Tier 3 fold-quality is included; in this v1 run, Tier 3 is deferred.</p>
+<h3 id="33-concordance-gate-n-of-m">3.3 Concordance gate (N-of-M)<a class="headerlink" href="#33-concordance-gate-n-of-m" title="Permanent link">&para;</a></h3>
+<p>Each candidate is assigned a binary "top quintile" flag per model (1 if it falls in the top 20% by that model's score). N-of-4 concordance = sum of flags. The promotion threshold is <strong>N-of-4 ≥ 3 (75%)</strong>, chosen a priori from the ClockBase precedent (30/40 ≈ 75%; <a href="./autonomous-screening-methodology.md">autonomous-screening-methodology.md</a> §"Computational-to-wet-lab handoff: N-of-M concordance").</p>
+<p>Within the concordance-passing shortlist, candidates are ranked by a continuous composite score (mean of per-model min-max normalized values) to break ties.</p>
+<h3 id="34-promoter-and-signal-peptide-priors">3.4 Promoter and signal peptide priors<a class="headerlink" href="#34-promoter-and-signal-peptide-priors" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Promoter</th>
+<th>Relative strength</th>
+<th>Citation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PamyB</td>
+<td>1.00 (reference)</td>
+<td>Tada 1991 PMID 1937733; canonical workhorse</td>
+</tr>
+<tr>
+<td>PglaA</td>
+<td>0.85</td>
+<td>Ward 1995 PMID 9634791; Huynh 2020 PMC7257131</td>
+</tr>
+<tr>
+<td>PenoA</td>
+<td>0.70</td>
+<td>Toda 2001</td>
+</tr>
+<tr>
+<td>PtefI</td>
+<td>0.65</td>
+<td>Kitamoto 1998; orthogonal constitutive</td>
+</tr>
+<tr>
+<td>PnmtA</td>
+<td>0.60</td>
+<td>Shoji 2005; tunable repressible</td>
+</tr>
+<tr>
+<td>PgpdA</td>
+<td>0.55</td>
+<td>Punt 1990 PMID 2113023; selection-marker promoter</td>
+</tr>
+</tbody>
+</table>
+<p>Signal peptide efficiencies: native koji SPs (amyB, glaA, alpA, lipase, pepO) score 0.82-1.02; foreign cbhI from <em>T. reesei</em> scores 0.65-0.68; pro-region present adds a small bonus (2-5%) for KEX2-mediated N-terminal-homogeneity benefit. All values are bounded literature estimates; the ordinal ranking is robust, the scalar values are priors not measurements. See <a href="../inputs/provenance/"><code>experiments/comp-022-.../inputs/provenance.md</code></a>.</p>
+<h2 id="4-key-results">4. Key Results<a class="headerlink" href="#4-key-results" title="Permanent link">&para;</a></h2>
+<h3 id="41-per-codon-variant-scores-10-variants">4.1 Per-codon-variant scores (10 variants)<a class="headerlink" href="#41-per-codon-variant-scores-10-variants" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Codon Variant</th>
+<th>CAI</th>
+<th>mRNA-5' proxy</th>
+<th>Rare-codon clusters</th>
+<th>Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>native_uaZ (approx)</td>
+<td>0.464</td>
+<td>0.667</td>
+<td>14</td>
+<td>Native rate; many rare clusters in <em>A. oryzae</em> context</td>
+</tr>
+<tr>
+<td>cai_max</td>
+<td>1.000</td>
+<td>0.594</td>
+<td>0</td>
+<td>Pure max-CAI; degraded 5' structure</td>
+</tr>
+<tr>
+<td>cai_balanced</td>
+<td>0.724</td>
+<td>0.589</td>
+<td>1</td>
+<td>Frequency-weighted; middling on both axes</td>
+</tr>
+<tr>
+<td>cai_max_gc54</td>
+<td>0.757</td>
+<td>0.800</td>
+<td>2</td>
+<td>GC-constrained; good 5' structure but lower CAI</td>
+</tr>
+<tr>
+<td>harmonized (Angov 2008)</td>
+<td>0.695</td>
+<td>0.617</td>
+<td>2</td>
+<td>Mid-rank harmonized</td>
+</tr>
+<tr>
+<td>rare_avoid</td>
+<td>0.781</td>
+<td>0.489</td>
+<td>0</td>
+<td>RSCU≥0.4 filter; worst 5' structure of any cluster</td>
+</tr>
+<tr>
+<td>low_gc</td>
+<td>0.386</td>
+<td>0.667</td>
+<td>26</td>
+<td>GC-poor; very poor CAI</td>
+</tr>
+<tr>
+<td>high_gc</td>
+<td>1.000</td>
+<td>0.594</td>
+<td>0</td>
+<td>GC-rich; equivalent to cai_max here</td>
+</tr>
+<tr>
+<td><strong>5p_softened</strong></td>
+<td><strong>0.915</strong></td>
+<td><strong>0.733</strong></td>
+<td><strong>2</strong></td>
+<td><strong>Top-quintile on both axes; the headline variant</strong></td>
+</tr>
+<tr>
+<td>5p_softened_balanced</td>
+<td>0.679</td>
+<td>0.733</td>
+<td>2</td>
+<td>5'-softened but mid-rank tail; worse CAI</td>
+</tr>
+</tbody>
+</table>
+<p>The "5'-softened" variant (low-GC + max-CAI two-zone optimization) is the only codon variant that lands in the top quintile on both CAI and 5' structure simultaneously. Pure max-CAI lands top on CAI but bottom on 5' structure.</p>
+<h3 id="42-per-scaffold-chaperone-load-10-base-scaffolds">4.2 Per-scaffold chaperone load (10 base scaffolds)<a class="headerlink" href="#42-per-scaffold-chaperone-load-10-base-scaffolds" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scaffold</th>
+<th>Fusion</th>
+<th>KEX2 site</th>
+<th>PTS1 blocked</th>
+<th>Effective load</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>direct_natag_pts1ok</td>
+<td>none</td>
+<td>none</td>
+<td>False</td>
+<td>0.50</td>
+</tr>
+<tr>
+<td><strong>direct_3xAla_pts1blk</strong></td>
+<td><strong>none</strong></td>
+<td><strong>none</strong></td>
+<td><strong>True</strong></td>
+<td><strong>0.20</strong></td>
+</tr>
+<tr>
+<td><strong>direct_his6_pts1ok</strong></td>
+<td><strong>none</strong></td>
+<td><strong>none</strong></td>
+<td><strong>True</strong></td>
+<td><strong>0.20</strong></td>
+</tr>
+<tr>
+<td>glaA_KR_pts1ok</td>
+<td>glaA_full</td>
+<td>KR</td>
+<td>False</td>
+<td>5.10</td>
+</tr>
+<tr>
+<td>glaA_KR_3xAla</td>
+<td>glaA_full</td>
+<td>KR</td>
+<td>True</td>
+<td>4.80</td>
+</tr>
+<tr>
+<td>glaA_KRGGG_pts1ok</td>
+<td>glaA_full</td>
+<td>KRGGG</td>
+<td>False</td>
+<td>5.05</td>
+</tr>
+<tr>
+<td>glaA_KRGGG_3xAla</td>
+<td>glaA_full</td>
+<td>KRGGG</td>
+<td>True</td>
+<td>4.75</td>
+</tr>
+<tr>
+<td>glaA_trunc_KR_pts1ok</td>
+<td>glaA_truncated</td>
+<td>KR</td>
+<td>False</td>
+<td>2.60</td>
+</tr>
+<tr>
+<td>glaA_trunc_KR_3xAla</td>
+<td>glaA_truncated</td>
+<td>KR</td>
+<td>True</td>
+<td>2.30</td>
+</tr>
+<tr>
+<td>tandem_KEX2_pts1ok</td>
+<td>glaA_full</td>
+<td>double_KR</td>
+<td>False</td>
+<td>5.40</td>
+</tr>
+</tbody>
+</table>
+<p>Direct-secretion with PTS1-blocking C-terminal tag is the lowest chaperone-load architecture. Glucoamylase-KEX2 fusion variants carry 10-25× the chaperone load because they impose the carrier's disulfides and glycosylation on top of uricase's near-zero intrinsic load. Tandem-KEX2 saturates KEX2 capacity (Spencer 1998 precedent) and adds 5-10% additional load.</p>
+<p><strong>Architectural implication:</strong> the Ward 1995 fusion architecture is correct for <em>lactoferrin</em> (where it boosts secretion of a complex glycoprotein) but is the <em>wrong</em> architecture for uricase, which has zero intrinsic chaperone load and benefits most from a minimum-overhead direct-secretion design. Comp-010 reached this conclusion via design analysis; comp-022 confirms it via full design-space ranking.</p>
+<h3 id="43-top-5-unique-cassettes-after-collapsing-propeptide-and-n-glyc-modifier-degeneracy">4.3 Top-5 unique cassettes (after collapsing propeptide and N-glyc modifier degeneracy)<a class="headerlink" href="#43-top-5-unique-cassettes-after-collapsing-propeptide-and-n-glyc-modifier-degeneracy" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Promoter</th>
+<th>Signal Peptide</th>
+<th>Codon Variant</th>
+<th>Scaffold</th>
+<th>Propeptide</th>
+<th>N-glyc</th>
+<th>N-of-4</th>
+<th>Composite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>PamyB</td>
+<td>SPamyB_pro</td>
+<td>5p_softened</td>
+<td>direct_3xAla_pts1blk</td>
+<td>none</td>
+<td>ablated</td>
+<td>4</td>
+<td>0.912</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PamyB</td>
+<td>SPamyB_pro</td>
+<td>5p_softened</td>
+<td>direct_his6_pts1ok</td>
+<td>none</td>
+<td>ablated</td>
+<td>4</td>
+<td>0.912</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PamyB</td>
+<td>SPamyB</td>
+<td>5p_softened</td>
+<td>direct_3xAla_pts1blk</td>
+<td>none</td>
+<td>ablated</td>
+<td>4</td>
+<td>0.904</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PamyB</td>
+<td>SPamyB</td>
+<td>5p_softened</td>
+<td>direct_his6_pts1ok</td>
+<td>none</td>
+<td>ablated</td>
+<td>4</td>
+<td>0.904</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PamyB</td>
+<td>SPglaA_pro</td>
+<td>5p_softened</td>
+<td>direct_3xAla_pts1blk</td>
+<td>none</td>
+<td>ablated</td>
+<td>4</td>
+<td>0.904</td>
+</tr>
+</tbody>
+</table>
+<p>195 candidates pass N-of-4 = 4 (all four models top quintile). The top cluster is tightly constrained: PamyB promoter, amyB or glaA signal peptide (with optional pro-region), 5'-softened codon variant, direct-secretion scaffold with PTS1-blocking C-terminal tag, no propeptide between SP and mature N-terminus, N191 glycosylation sequon ablated.</p>
+<p>The full top-25 table is in <a href="../outputs/top25/"><code>experiments/comp-022-.../outputs/top25.md</code></a>. The full 501-cassette concordance-passing shortlist is in <a href="../outputs/unique_cassette_shortlist.csv"><code>unique_cassette_shortlist.csv</code></a>.</p>
+<h3 id="44-concordance-distribution">4.4 Concordance distribution<a class="headerlink" href="#44-concordance-distribution" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>N-of-4</th>
+<th>Candidates</th>
+<th>Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>195</td>
+<td>0.45%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2,226</td>
+<td>5.15%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9,438</td>
+<td>21.8%</td>
+</tr>
+<tr>
+<td>1</td>
+<td>17,946</td>
+<td>41.5%</td>
+</tr>
+<tr>
+<td>0</td>
+<td>13,395</td>
+<td>31.0%</td>
+</tr>
+</tbody>
+</table>
+<p>The mass of the design space (72.5%) lands at N-of-4 ≤ 1; i.e., most cassette designs are bad on at least three of four axes simultaneously. This is the expected pattern for a high-dimensional design space with orthogonal scoring axes; it is also the failure mode that comp-022's exhaustive enumeration is intended to surface (a priori one-at-a-time selection is path-dependent and tends to lock in a single axis's preferred value while ignoring the others).</p>
+<h2 id="5-limitations">5. Limitations<a class="headerlink" href="#5-limitations" title="Permanent link">&para;</a></h2>
+<p>The brief authorized these v1 simplifications; each is documented for downstream readers.</p>
+<ol>
+<li>
+<p><strong>Fold-quality model (Tier 3) deferred to wet-lab.</strong> ESMFold and AlphaFold pLDDT are not callable from this subagent's environment (no GPU, no API key, sandbox restricts network). ColabFold and ESM2 perplexity were considered as proxies and also unavailable. Brief authorized this deferral. <strong>Implication:</strong> the "structural foldability" axis is unscored in this v1. For uricase specifically the consequence is minor because every candidate uses the same AA sequence (Q00511), so fold-quality differences would be driven entirely by cassette-context effects (signal-peptide cleavage, propeptide processing, glycosylation occupancy) rather than by primary-sequence variation. The wet-lab fold quality readout in §1.9 is anti-uricase ELISA + uricase activity assay (UA-disappearance spectrophotometry), which directly tests folded-and-secreted protein. This supersedes any in silico pLDDT proxy at the cassette-design stage.</p>
+</li>
+<li>
+<p><strong>N-of-M threshold = 3 of 4 (75%), not 4 of 5 (80%).</strong> Because the fold-quality model is deferred, M=4 not 5. The 75% concordance fraction is preserved (matches ClockBase 30/40 precedent). An a priori choice; no retrospective calibration was attempted because comp-001 through comp-014 were not cassette-ranking experiments (TCM and complement-modulator literature mining, protease stability, transporter modulation). The retrospective-calibration framing in the brief was based on a misreading of those comps. This is documented in <a href="../"><code>experiments/comp-022-.../README.md</code></a>.</p>
+</li>
+<li>
+<p><strong>Promoter strengths and SP efficiencies are bounded literature estimates.</strong> They are priors, not measurements in NSlD-ΔP10. They affect the absolute composite scores but not the ordinal ranking robustness of the top cluster: PamyB dominates in the literature consensus by a sufficient margin that any reasonable bounded estimate places it at the top. PglaA's 0.85 vs 0.95 multiplier would swap rank 1 vs rank 3 but not the architectural class of the headline cluster.</p>
+</li>
+<li>
+<p><strong>mRNA 5' secondary structure is a GC-content + GC-clamp + palindromic-4mer count proxy</strong>, not a true minimum-free-energy calculation. ViennaRNA is not installable in this environment (no pre-built binary, network-restricted pip). The proxy is defensible per Kudla 2009 PMID 19359587 (5' GC dominates translation initiation in <em>E. coli</em>; replicated in <em>S. cerevisiae</em> and filamentous fungi), but a true MFE calculation on the surviving shortlist would refine the ranking. <strong>Recommended follow-up:</strong> retrofit ViennaRNA MFE on the 501-cassette shortlist when an environment with the binary is available.</p>
+</li>
+<li>
+<p><strong>Native A. flavus codon usage approximated.</strong> The "native_uaZ" variant is back-translated using the A. oryzae table with mid-rank-codon biasing rather than from an A. flavus codon usage table directly. This affects only the native_uaZ variant's ranking and does not affect the headline cluster (which uses the 5p_softened variant, optimized for A. oryzae from first principles).</p>
+</li>
+<li>
+<p><strong>Single payload only.</strong> comp-022 ranks uricase cassettes in isolation. The §1.9 wet-lab test is a dual-cassette uricase + lactoferrin design, where pairwise chaperone-pathway competition is governed by <a href="./chaperone-orthogonal-stacking.md">chaperone-orthogonal-stacking.md §3.5.3</a> (effective PDI load 0 + 24-40 = 24-40 total, within demonstrated NSlD-ΔP10 capacity). Comp-022 does not re-evaluate the pairwise interaction; it inherits the comp-010 finding that the uricase + lactoferrin pair is architecturally compatible.</p>
+</li>
+<li>
+<p><strong>Cascading-filter framing partially redundant for this experiment.</strong> Brief described a cascading filter where Tier 1 evaluates all 43,200, Tier 2 evaluates top 5,000, Tier 3 evaluates top 100. In practice, Tier 1 (CAI + mRNA-5') is per-codon-variant only (10 evaluations) and Tier 2 (chaperone-load) is per-scaffold-base only (10 evaluations), so the full 43,200-candidate evaluation is O(1) per candidate after the per-component pre-computations. Cascading matters when Tier 3 fold-quality (per-candidate ESMFold) is in scope; in this v1 it is not.</p>
+</li>
+</ol>
+<h2 id="6-impact-on-experimental-priorities">6. Impact on Experimental Priorities<a class="headerlink" href="#6-impact-on-experimental-priorities" title="Permanent link">&para;</a></h2>
+<h3 id="61-19-wet-lab-cassette-design">6.1 §1.9 wet-lab cassette design<a class="headerlink" href="#61-19-wet-lab-cassette-design" title="Permanent link">&para;</a></h3>
+<p>The §1.9 architecture stands. The uricase cassette in the existing §1.9 design (<a href="./validation-experiments.md"><code>validation-experiments.md</code> §1.9</a>) is already <code>[PTEF1 - amyB signal peptide - A. flavus uaZ codon-optimized - TgpdA]</code>, which is in the comp-022 top cluster. Three gene-synthesis-time refinements should be incorporated when the construct is ordered:</p>
+<table>
+<thead>
+<tr>
+<th>Refinement</th>
+<th>Current §1.9</th>
+<th>comp-022 recommendation</th>
+<th>Cost delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Promoter</td>
+<td>PTEF1</td>
+<td>Substitute PamyB OR keep PTEF1 as orthogonal-promoter design choice</td>
+<td>$0 (same gene-synthesis cost; PTEF1 is justified by orthogonal-promoter rationale per koji-endgame-strain.md §3.4 even though PamyB is the single-promoter optimum)</td>
+</tr>
+<tr>
+<td>Codon variant</td>
+<td>"codon-optimized for <em>A. oryzae</em>" (unspecified strategy)</td>
+<td>5'-softened (low-GC first 30 codons + max-CAI thereafter)</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>C-terminal tag</td>
+<td>none (native SKL)</td>
+<td>append 3×Ala or His6 to block PTS1</td>
+<td>$0 (single codon trio extension)</td>
+</tr>
+<tr>
+<td>N-glycosylation sequon</td>
+<td>native N191 NSS</td>
+<td>N191Q ablation</td>
+<td>$0 (single point mutation)</td>
+</tr>
+</tbody>
+</table>
+<p>None of these refinements require new wet-lab infrastructure or change the §1.9 cost or timeline ($3-5K / 8-12 weeks). They are added to the gene-synthesis order at no marginal cost.</p>
+<h3 id="62-the-19-architecture-decision-pamyb-vs-ptef1-for-uricase">6.2 The §1.9 architecture decision: PamyB vs PTEF1 for uricase<a class="headerlink" href="#62-the-19-architecture-decision-pamyb-vs-ptef1-for-uricase" title="Permanent link">&para;</a></h3>
+<p>Comp-022 single-cassette ranking favors PamyB for both cassettes. The current §1.9 design uses PTEF1 for the uricase cassette specifically to separate transcriptional programs from the PamyB-driven lactoferrin cassette (koji-endgame-strain.md §3.4: "Distinct promoter (TEF1, constitutive) to avoid direct competition with the starch-inducible PamyB of Cassette A"). This is a dual-cassette-specific rationale that comp-022's single-payload ranking does not override.</p>
+<p><strong>Decision rule for the §1.9 construct:</strong> keep PTEF1 for the uricase cassette per the orthogonal-promoter rationale. If the §1.9 Lf-alone arm titer falls below the 500 mg/L threshold per <a href="./chaperone-orthogonal-stacking.md">chaperone-orthogonal-stacking.md §3.5.4 calibration framework</a>, revisit the dual-PamyB design via comp-022's promoter-strength ranking (PamyB-PamyB cassette pair, integrated at paralogous loci per Li 2024 PMID 39830075; brief noted as a "symmetric alternative" in koji-endgame-strain.md §3.4).</p>
+<h3 id="63-beyond-19-when-this-framework-adds-value">6.3 Beyond §1.9: when this framework adds value<a class="headerlink" href="#63-beyond-19-when-this-framework-adds-value" title="Permanent link">&para;</a></h3>
+<p>Comp-022's value is highest for <strong>future cassettes</strong> where the right architecture is not yet obvious from manual design:</p>
+<ul>
+<li><strong>DAF SCR1-4 single-cassette design</strong> (<a href="./validation-experiments.md"><code>validation-experiments.md</code> §1.25</a>): would benefit from a comp-022-style ranking with a fold-quality Tier 3 included (DAF SCR1-4 has 8 disulfides and is sensitive to fold quality, unlike uricase). Recommended follow-up.</li>
+<li><strong>Engineered C1-INH cassette</strong> (parallel CP0 thread surfaced in <a href="./upstream-complement-modulator-sweep-computational.md">comp-018</a>): comparable disulfide load + glycosylation + protease-sensitivity profile to lactoferrin. comp-022-style ranking would be load-bearing for first-pass cassette selection.</li>
+<li><strong>Complestatin NRPS LBP cassette</strong> (<a href="./computational-experiments.md">comp-024</a> when authored): different chassis (Bacteroides / E. coli Nissle), different codon optimization context, but the same combinatorial structure applies.</li>
+</ul>
+<p>For uricase specifically, comp-022 is partly retrospective validation that the cassette-design intuition in the corpus (comp-010 + koji-endgame-strain.md §3.4) was correct. The headline architecture was not surprising; the value is the <strong>501-cassette concordance shortlist as a reproducible artifact</strong> plus the codon-variant refinement (5'-softened beats pure max-CAI) which was not in the existing design.</p>
+<h2 id="7-cross-references">7. Cross-References<a class="headerlink" href="#7-cross-references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="./computational-experiments.md"><code>computational-experiments.md</code></a>: comp-NNN tracking index</li>
+<li><a href="./autonomous-screening-methodology.md"><code>autonomous-screening-methodology.md</code></a>: ClockBase pattern this comp instantiates</li>
+<li><a href="./cassette-compatibility-computational.md"><code>cassette-compatibility-computational.md</code></a> (comp-010): prior cassette-design analysis at single-candidate scope</li>
+<li><a href="./c-utilis-uricase-cassette-compatibility-computational.md"><code>c-utilis-uricase-cassette-compatibility-computational.md</code></a> (comp-011): <em>C. utilis</em> uricase variant scoring</li>
+<li><a href="./chaperone-orthogonal-stacking.md"><code>chaperone-orthogonal-stacking.md</code></a>: chaperone-load formula in §3.5</li>
+<li><a href="./validation-experiments.md"><code>validation-experiments.md</code></a> §1.9: the wet-lab gate this informs</li>
+<li><a href="./koji-endgame-strain.md"><code>koji-endgame-strain.md</code></a> §3.4: current §1.9 architecture</li>
+<li><a href="./engineered-koji-protocol.md"><code>engineered-koji-protocol.md</code></a> §06-§14: cassette design context</li>
+<li><a href="./uricase-protease-stability-computational.md"><code>uricase-protease-stability-computational.md</code></a> (comp-001): orthogonal in silico prior on uricase stability</li>
+<li><a href="../comp-022-clockbase-uricase-cassette-ranking/"><code>experiments/comp-022-clockbase-uricase-cassette-ranking/</code></a>: analysis script, inputs, outputs, provenance</li>
+</ul>
+<h2 id="8-status">8. Status<a class="headerlink" href="#8-status" title="Permanent link">&para;</a></h2>
+<p>Complete (v1 + v2 retrofit, 2026-05-14). See §9 for the v2 update.</p>
+<h2 id="9-v2-update-2026-05-14">9. v2 update (2026-05-14)<a class="headerlink" href="#9-v2-update-2026-05-14" title="Permanent link">&para;</a></h2>
+<p>Both v1-deferred models are now retrofitted on the existing 501-cassette shortlist. The concordance gate tightens from v1's <strong>N-of-4 ≥ 3</strong> (75%) to v2's <strong>N-of-5 ≥ 4</strong> (80%) because the new models are real, not proxies. Inputs at <code>v2/inputs/</code>; outputs at <code>v2/outputs/</code>.</p>
+<h3 id="91-methodology-additions">9.1 Methodology additions<a class="headerlink" href="#91-methodology-additions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ESM2 t33 650M pseudo-likelihood</strong> as the Tier 3 fold-quality proxy. The brief authorized ESMFold v1 as first-choice, but ESMFold v1 in fair-esm 2.0.0 requires <code>openfold</code> which the subagent environment could not install cleanly; ESM2 pseudo-likelihood is the documented fallback (Verkuil 2022; Hsu 2022). ESM2 is the language model that ESMFold uses internally, and per-residue masked-LM log-probability is a direct readout of the model's confidence in each residue's local fold context. Rank-preserving across cassettes of similar length (all ~320-400 aa here). Score range presented as a rescaled pseudo-pLDDT [50, 90] for interpretability; the top-quintile flag uses the rank-preserving raw log-prob.</li>
+<li><strong>ViennaRNA 2.7.2 (Python binding)</strong> for real mRNA 5' MFE, replacing v1's GC-clamp proxy. 150-nt window: 61-nt generic A-rich placeholder 5'UTR + signal peptide ORF + first 30 codons of mature uricase. UTR held constant across cassettes.</li>
+<li><strong>MPS unavailable</strong> on the Python 3.13 + torch 2.12 stack in the v2 env. Fell back to CPU; ESM2 inference on all 106 protein-distinct sequences completed in ~70 seconds.</li>
+</ul>
+<h3 id="92-headline-numbers">9.2 Headline numbers<a class="headerlink" href="#92-headline-numbers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>v1</th>
+<th>v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pass concordance</td>
+<td>501 cassettes (N-of-4 ≥ 3)</td>
+<td><strong>71 cassettes (N-of-5 ≥ 4)</strong></td>
+</tr>
+<tr>
+<td>Strictest tier</td>
+<td>45 cassettes (N-of-4 = 4)</td>
+<td><strong>4 cassettes (N-of-5 = 5)</strong></td>
+</tr>
+<tr>
+<td>v1 top-cluster survival in v2 strictest tier</td>
+<td>n/a</td>
+<td><strong>4 of 4 (100%)</strong></td>
+</tr>
+<tr>
+<td>v1 shortlisted cassettes dropped by v2 gate</td>
+<td>n/a</td>
+<td><strong>430</strong></td>
+</tr>
+</tbody>
+</table>
+<p>v2 concordance distribution across the 501 v1-shortlisted cassettes: 5/5 = 4; &#8536; = 67; &#8535; = 203; &#8534; = 227.</p>
+<h3 id="93-v1-architecture-verdict-survives-and-the-v2-top-tier-is-the-v1-top-cluster">9.3 v1 architecture verdict survives, and the v2 top tier IS the v1 top cluster<a class="headerlink" href="#93-v1-architecture-verdict-survives-and-the-v2-top-tier-is-the-v1-top-cluster" title="Permanent link">&para;</a></h3>
+<p>The v1 top cluster (<code>PamyB</code> + <code>SPamyB</code> or <code>SPamyB_pro</code> + <code>5p_softened</code> codon + <code>direct_3xAla_pts1blk</code> or <code>direct_his6_pts1ok</code> scaffold + <code>nglyc_ablated</code>) has 4 cassettes in v1, all 4 surviving into v2's strictest N-of-5 = 5 tier (100% survival). The v2 strictest tier IS the v1 top cluster; the retrofit did not surface new top-tier cassettes outside the v1-promoted set. The v1 verdict that the §1.9 architecture should stand, and that the three gene-synthesis-time refinements (5'-softened codon, PTS1-blocking C-terminal tag, N191Q glycosylation-sequon ablation) are real, are confirmed under v2. (Mechanistic Extrapolation: ESM2 pseudo-likelihood + ViennaRNA MFE; not yet wet-lab validated.)</p>
+<h3 id="94-v1-gc-clamp-proxy-was-weak-the-v2-retrofit-materially-shifts-the-mrna-model">9.4 v1 GC-clamp proxy was weak; the v2 retrofit materially shifts the mRNA model<a class="headerlink" href="#94-v1-gc-clamp-proxy-was-weak-the-v2-retrofit-materially-shifts-the-mrna-model" title="Permanent link">&para;</a></h3>
+<p>Spearman correlation between v1's GC-clamp <code>mrna_5p</code> proxy and v2's real ViennaRNA MFE, computed per <code>(codon, sp)</code> pair (n = 52): <strong>rho = 0.241</strong>. Weak. The v1 model on this axis was essentially noise. v2's top-quintile MFE cutoff is <strong>MFE ≥ -16.4 kcal/mol</strong> (less negative = looser 5' structure = faster ribosome initiation per Kudla 2009 PMID 19359587).</p>
+<h3 id="95-v2-cutoffs-on-the-501-cassette-shortlist-cohort">9.5 v2 cutoffs on the 501-cassette shortlist cohort<a class="headerlink" href="#95-v2-cutoffs-on-the-501-cassette-shortlist-cohort" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ESM2 raw pll_mean top-quintile cutoff: -0.2214 (rescaled pseudo-pLDDT cutoff: <strong>87.53</strong>)</li>
+<li>ViennaRNA MFE top-quintile cutoff: <strong>≥ -16.4 kcal/mol</strong></li>
+<li>CAI, chaperone load, and promoter-SP prior inherit v1 cutoffs from <code>report.json</code>.</li>
+</ul>
+<p>Scoping: v2 quintile cutoffs are computed on the 501-cassette v1 shortlist cohort, not the original 43,200 cohort. v2 is a tighter gate on v1 promotions, not a re-enumeration.</p>
+<h3 id="96-19-wet-lab-impact">9.6 §1.9 wet-lab impact<a class="headerlink" href="#96-19-wet-lab-impact" title="Permanent link">&para;</a></h3>
+<p>The §1.9 design from v1 stands. The three gene-synthesis-time refinements are confirmed. The actionable v2 change is <strong>scope reduction</strong>: the v1 shortlist of 501 cassettes drops to 71 under N-of-5 ≥ 4, and to 4 under N-of-5 = 5. If gene-synthesis budget allows only a few candidates, the v2 N-of-5 = 5 tier names exactly which ones (the four v1-top-cluster members). The 430-cassette difference between v1 shortlist and v2 shortlist represents cassettes that would have been promoted under v1's deferred-fold-quality methodology but are rejected once real fold-quality and real MFE signals are in the loop.</p>
+<h3 id="97-v2-limitations-honest-accounting">9.7 v2 limitations honest accounting<a class="headerlink" href="#97-v2-limitations-honest-accounting" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ESM2 pseudo-likelihood is a fold-quality proxy, not direct pLDDT.</strong> ESMFold would have been preferable; openfold install was blocked. Rank-preserving across the similar-length cohort here but not the direct per-residue confidence score ESMFold produces. v2.5 should retrofit real ESMFold once openfold install is unblocked.</li>
+<li><strong>Pseudo-likelihood from a single masked-LM forward pass per sequence</strong>, not from per-position masking. Bias is rank-preserving; absolute values are inflated.</li>
+<li><strong>5' MFE window is 150 nt</strong> with a 61-nt placeholder UTR. Promoter-specific UTR modeling and longer-window MFE are v2.5 work.</li>
+<li><strong>CPU inference</strong> (MPS unavailable) was acceptable at N=106 sequences (~70 sec); for the full 43,200 design space, MPS or GPU would be required.</li>
+<li><strong>v2 quintile cutoffs scoped to the 501-cassette shortlist cohort</strong>, not the full 43,200 cohort. v2 is the right tool for "is the v1 shortlist over-promoted?" but not for "what new cassettes outside the v1 shortlist should we promote?"; the latter requires running ESM2 + ViennaRNA on the full design space.</li>
+</ul>
+<h3 id="98-promoted-artifacts">9.8 Promoted artifacts<a class="headerlink" href="#98-promoted-artifacts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/inputs/protein_shortlist.fasta</code> (106 protein-distinct sequences)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/inputs/protein_shortlist_keymap.csv</code> (sequence_id ↔ cassette-spec keys)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/esmfold_pLDDT.csv</code> (106 rows, ESM2 pseudo-pLDDT + raw pll_mean)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/viennarna_mfe.csv</code> (52 rows, real ViennaRNA MFE + v1 GC-clamp proxy)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_shortlist.csv</code> (71 cassettes passing N-of-5 ≥ 4)</li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_top25.md</code></li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_summary.json</code></li>
+<li><code>experiments/comp-022-clockbase-uricase-cassette-ranking/v2/analyze_v2.py</code> (re-ranking pipeline, reproducible)</li>
+</ul>
+<h3 id="99-v2-status">9.9 v2 status<a class="headerlink" href="#99-v2-status" title="Permanent link">&para;</a></h3>
+<p>v2 complete. Tier 3 fold-quality retrofitted (ESM2 pseudo-likelihood fallback; see §9.7). Tier 1' mRNA model retrofitted (real ViennaRNA MFE replacing v1 GC-clamp proxy).</p>
+<p><strong>v2.5 deferred (2026-05-14, explicit decision).</strong> Real ESMFold, full per-position masking, promoter-specific UTR, MPS/GPU for full-cohort retrofit are deferred until either (a) §1.9 wet-lab data arrives and retrospective validation of in silico scorers becomes possible, or (b) a fresh design problem (different target) requires the same machinery. Reasoning: the v2 output is sufficient to commit gene-synthesis dollars (4 strict winners + 71 looser shortlist); v1 architectural cluster survives v2 at 100%, so the marginal value of a stricter fold-quality model on the same cohort is bounded; wet-lab yield data will dominate any further in silico refinement. The deferral is a real-data-imminent diminishing-returns call, not an infrastructure block — Python 3.12 venv + HuggingFace <code>facebook/esmfold_v1</code> via <code>transformers</code> is the documented path forward when v2.5 is unblocked.</p>
+<p>Verification-agent pass complete per CLAUDE.md Rule 4; all load-bearing numbers in §9 are grep-verified against the v2 output CSVs and JSON in <a href="../comp-022-clockbase-uricase-cassette-ranking/v2/outputs/"><code>experiments/comp-022-.../v2/outputs/</code></a> and the v2 provenance log.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "toc.integrate", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

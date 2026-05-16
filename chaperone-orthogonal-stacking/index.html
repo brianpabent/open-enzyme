@@ -360,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-enzyme-vision/" class="md-nav__link">
+      <a href="../open-enzyme-vision.md" class="md-nav__link">
         
   
   
@@ -373,13 +373,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -458,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-source-platform/" class="md-nav__link">
+      <a href="../open-source-platform.md" class="md-nav__link">
         
   
   
@@ -4645,7 +4638,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1)"></span>
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
   
 
   
@@ -5780,6 +5773,7 @@ $$</p>
 </ul>
 <p>The platform-design implication is meaningful: <strong>the practical stacking limit for the koji endgame strain is the count of <em>secreted</em> cassettes, not the total cassette count.</strong> A four-cassette strain of uricase (secreted) + lactoferrin (secreted) + cordycepin (cytosolic) + ergothioneine biosynthesis (cytosolic, native enhancement) is, in principle, no harder on chaperone capacity than the two-cassette dual-cassette baseline — provided each cytosolic cassette's metabolic burden is verified separately under FBA.</p>
 <p>This generalization is itself a candidate for codification once comp-028 returns and the pattern is empirically anchored.</p>
+<p>Operationally applied at <a href="../koji-endgame-strain/"><code>koji-endgame-strain.md</code> §3 "Third-cassette slot design rule"</a> where the cytosolic-vs-secreted distinction gates which payloads route to the endgame strain vs. a separate-strain / LBP-peer-chassis. The framework's rule is independent of which specific payloads are currently active — payload selection is a strategy decision, the cytosolic-vs-secreted framing is a structural design rule.</p>
 <hr />
 <h2 id="6-the-falsifiable-test-pairwise-expression-matrix">6. The Falsifiable Test — Pairwise Expression Matrix<a class="headerlink" href="#6-the-falsifiable-test-pairwise-expression-matrix" title="Permanent link">&para;</a></h2>
 <p>The framework is testable. Construction of a pairwise expression matrix on a small set of representative substrates would either validate or falsify the predicted synergy coefficients.</p>

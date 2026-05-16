@@ -1,0 +1,65 @@
+{
+  "description": "Bundled drug-interaction landscape for sub-AUD dose disulfiram in a gout-management context. Categorized by (1) DER-stacking, (2) CYP-mediated PK, (3) gout-specific co-medications, (4) ethanol-stacking from incidental sources.",
+  "fetch_date": "2026-05-16",
+  "source_primary": "wiki/disulfiram.md §Expanded Contraindications and Drug Interactions (synthesized from supplements-stack.md 2026-04-26)",
+
+  "DER_stacking_agents": [
+    {"agent": "metronidazole", "mechanism": "Independent ALDH inhibitor; additive DER risk", "severity": "high", "advice": "absolute contraindication"},
+    {"agent": "tinidazole", "mechanism": "Same class as metronidazole", "severity": "high", "advice": "absolute contraindication"},
+    {"agent": "cefoperazone", "mechanism": "Methyltetrazolethiol side chain inhibits ALDH", "severity": "moderate", "advice": "avoid"},
+    {"agent": "griseofulvin", "mechanism": "Disulfiram-like reaction reported", "severity": "moderate", "advice": "avoid"},
+    {"agent": "isoniazid", "mechanism": "MAO interaction + hepatic stress; ALDH effect minor", "severity": "moderate", "advice": "avoid; especially CNS toxicity additive"},
+    {"agent": "MAOIs (phenelzine, tranylcypromine)", "mechanism": "Catecholamine handling overlap", "severity": "moderate-high", "advice": "avoid"}
+  ],
+
+  "CYP_PK_interactions": [
+    {"agent": "warfarin", "DSF_effect": "inhibits CYP2C9/3A4 → ↑INR", "severity": "moderate", "advice": "INR monitoring; potentially safer at sub-AUD doses but still requires monitoring"},
+    {"agent": "phenytoin", "DSF_effect": "inhibits CYP2C9 → toxicity", "severity": "moderate", "advice": "monitor phenytoin levels"},
+    {"agent": "theophylline", "DSF_effect": "inhibits CYP1A2 → ↑levels", "severity": "moderate", "advice": "dose adjustment + level monitoring"},
+    {"agent": "caffeine high-dose", "DSF_effect": "inhibits CYP1A2 → ↑caffeine half-life", "severity": "low_to_moderate", "advice": "patient awareness; reduce intake"},
+    {"agent": "alprazolam / midazolam", "DSF_effect": "inhibits CYP3A4 → sedation", "severity": "moderate", "advice": "dose adjustment"},
+    {"agent": "acetaminophen high dose", "DSF_effect": "competing hepatic stress; CYP2E1 inhibition by DSF actually protects against APAP-mediated hepatotox in animal models", "severity": "complex", "advice": "low-dose APAP probably acceptable; avoid high-dose chronic APAP"}
+  ],
+
+  "gout_pharmacology_co_administration": [
+    {
+      "agent": "allopurinol",
+      "interaction": "no_negative_PK_interaction; synergistic_anti_inflammatory_pharmacodynamic_in_rat_gout_model",
+      "evidence": "Asiri 2025 PMC12114764 — ALP 10 mg/kg + DSF 50 mg/kg PO daily × 9d superior to either monotherapy across paw swelling, IL-1β, TNF-α, IL-6, serum urate, renal markers in PO+MSU rat gout model",
+      "advice": "highest-priority companion in a 503A protocol — fills the urate-axis arm that GSDMD-only blockade leaves untouched"
+    },
+    {
+      "agent": "colchicine",
+      "interaction": "no_documented_PK_interaction; both_have_GI_side_effects",
+      "evidence": "wiki/colchicine.md — clinical-grade CP6 prophylaxis at 0.6 mg/d; no DI reports with DSF",
+      "advice": "acceptable co-administration; monitor GI tolerance"
+    },
+    {
+      "agent": "probenecid",
+      "interaction": "theoretical_OAT_competition; not_clinically_documented",
+      "evidence": "DDC metabolites partially renally excreted; probenecid is OAT-substrate inhibitor",
+      "advice": "no specific guidance; standard monitoring sufficient"
+    },
+    {
+      "agent": "NSAIDs (ibuprofen, naproxen, indomethacin)",
+      "interaction": "additive_hepatic_renal_stress",
+      "evidence": "standard pharmacology",
+      "advice": "acceptable for acute flare; avoid chronic stacking"
+    },
+    {
+      "agent": "low-dose corticosteroids (prednisone <10 mg/d)",
+      "interaction": "no_specific_DI",
+      "evidence": "standard clinical use",
+      "advice": "acceptable co-administration"
+    }
+  ],
+
+  "ethanol_stacking_from_incidental_sources": [
+    {"source": "kombucha", "ethanol_content_pct_vv": 0.5, "advice_at_AUD_dose": "absolute_avoid", "advice_at_subAUD_dose": "avoid_at_least_during_titration; per_batch_risk"},
+    {"source": "fermented_foods_koji_amazake", "ethanol_content_pct_vv": "0.1-3", "advice_at_AUD_dose": "test_batch; avoid_high", "advice_at_subAUD_dose": "test_batch_with_ethanol_strips; avoid_>0.5%"},
+    {"source": "alcohol_in_mouthwash_OTC_preps", "ethanol_content_pct_vv": "5-25", "advice_at_AUD_dose": "avoid", "advice_at_subAUD_dose": "use_alcohol_free_alternatives"},
+    {"source": "IV_or_oral_medications_with_ethanol_vehicle", "advice_at_AUD_dose": "screen_carefully", "advice_at_subAUD_dose": "screen_carefully_but_low_residual_risk"}
+  ],
+
+  "summary_for_503A_protocol": "At sub-AUD doses (62.5-125 mg/d), the high-severity DI items remain absolute contraindications (metronidazole, MAOIs). Mid-severity items become manageable with monitoring rather than avoidance. The gout-pharmacology co-administration profile is favorable — allopurinol synergy is documented in a rat gout model, colchicine and low-dose corticosteroids stack without major interaction. Incidental ethanol stacking risk is reduced but not eliminated."
+}

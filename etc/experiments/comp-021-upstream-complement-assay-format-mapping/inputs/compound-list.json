@@ -1,0 +1,154 @@
+{
+  "scope": "Upstream-complement natural-product / dietary / heparin-class modulators from comp-018 + comp-020 + comp-029 corpus. Each entry carries the surface (where it appears in the OE corpus) and the comp-021-relevant question (whether assay-format stratification collapses or preserves the published IC50 spread).",
+  "compounds": [
+    {
+      "name": "rosmarinic acid",
+      "abbrev": "RA",
+      "chembl_id": "CHEMBL165102",
+      "cas": "20283-92-5",
+      "mw_g_per_mol": 360.31,
+      "class": "phenolic acid (polyphenol)",
+      "comp_021_role": "PRIMARY — the 44× spread that motivated comp-021. Operative IC50 prior in comp-029 is log-uniform [5, 180] µM.",
+      "surfaces_in_corpus": ["comp-018 Tier 1", "comp-020 C3 convertase lead", "comp-029 dietary-CP0 arm"]
+    },
+    {
+      "name": "luteolin",
+      "chembl_id": "CHEMBL156",
+      "cas": "491-70-3",
+      "mw_g_per_mol": 286.24,
+      "class": "flavonoid (flavone)",
+      "comp_021_role": "Multi-mechanism (XO 550 nM, URAT1, complement CH50 190 µM). Stratification asks: does the C3-convertase IC50 hold across assay formats, or is the Zhang & Chen 2008 number assay-specific?",
+      "surfaces_in_corpus": ["comp-013 XO + URAT1", "comp-018 Tier 2", "comp-020 mid-tier", "luteolin-rich foods discussion"]
+    },
+    {
+      "name": "tiliroside",
+      "cas": "20316-62-5",
+      "mw_g_per_mol": 594.52,
+      "class": "flavonoid glycoside (kaempferol-3-O-β-D-(6\"-trans-p-coumaroyl)glucoside)",
+      "comp_021_role": "Single-source IC50 (Jung 1998 PMID 9821813); no replication anchor. Stratification asks: is the 54 µM CP-convertase number assay-anchor-only?",
+      "surfaces_in_corpus": ["comp-018 Tier 2"]
+    },
+    {
+      "name": "Bupleurum smithii polysaccharides",
+      "abbrev": "BPs",
+      "class": "anti-complementary polysaccharide (heterogeneous MW)",
+      "comp_021_role": "Pan-pathway active across hemolytic CH50/AP50 AND C3c-ELISA-LP. Same compound class measured in two independent assay formats with the same Fudan group — high-quality cross-format anchor.",
+      "surfaces_in_corpus": ["comp-018 Tier 2 lectin pathway", "comp-020 lectin pathway"]
+    },
+    {
+      "name": "Bupleurum chinense polysaccharides",
+      "abbrev": "BCPs",
+      "class": "anti-complementary polysaccharide (heterogeneous MW)",
+      "comp_021_role": "Same as BPs; comparison-anchor pair within the same lab.",
+      "surfaces_in_corpus": ["comp-018 Tier 2 lectin pathway", "comp-020 lectin pathway"]
+    },
+    {
+      "name": "falcarindiol",
+      "cas": "225110-25-8",
+      "mw_g_per_mol": 260.37,
+      "class": "polyacetylene (C17 fatty alcohol)",
+      "comp_021_role": "Single-source IC50 (Chung 2011 PMID 21520473); single-format only. Limited cross-stratification possible.",
+      "surfaces_in_corpus": ["comp-018 Tier 2"]
+    },
+    {
+      "name": "ganoderic acid Sz",
+      "class": "lanostane triterpene",
+      "comp_021_role": "Seo 2009 PMID 20091270; single primary paper; ergosterol comparator in the same paper. Stratification cross-checks the same lab's same-assay-format pair.",
+      "surfaces_in_corpus": ["comp-014 medicinal mushroom mapping", "comp-018 Tier 2", "comp-020 fungal natural products"]
+    },
+    {
+      "name": "ergosterol",
+      "cas": "57-87-4",
+      "mw_g_per_mol": 396.65,
+      "class": "fungal sterol",
+      "comp_021_role": "Paired with ganoderic acid Sz in Seo 2009. Useful as a within-paper control for assay sensitivity.",
+      "surfaces_in_corpus": ["comp-014", "comp-018 Tier 2", "comp-020 fungal natural products"]
+    },
+    {
+      "name": "quercetin",
+      "chembl_id": "CHEMBL50",
+      "cas": "117-39-5",
+      "mw_g_per_mol": 302.24,
+      "class": "flavonoid (flavonol)",
+      "comp_021_role": "Mid-tier hemolytic activity in Zhang & Chen 2008; gut-microbiome-deglycosylated to active form. Stratification asks: does the deglycosylated active form behave differently at MSU-relevant assay formats?",
+      "surfaces_in_corpus": ["comp-018 Tier 2", "comp-020 mid-tier"]
+    },
+    {
+      "name": "3,5-dicaffeoylquinic acid",
+      "abbrev": "3,5-diCQA",
+      "cas": "2450-53-5",
+      "mw_g_per_mol": 516.45,
+      "class": "phenolic acid (caffeoylquinic ester)",
+      "comp_021_role": "Cimanga 1999 PMID 17260306 reports <10 µM at C1 component step. Critical assay-format anchor for the RA discrepancy (Cimanga's lab is the same source that reports RA at 137-182 µM).",
+      "surfaces_in_corpus": ["comp-018 Tier 2"]
+    },
+    {
+      "name": "K-76 / K-76-COOH",
+      "class": "sesquiterpene (Stachybotrys; toxic parent — semi-synthetic only)",
+      "comp_021_role": "C5 inhibitor; comp-018 listed but flagged as semi-synthetic only. Stratification limited (single-source assay format, narrow comparator set).",
+      "surfaces_in_corpus": ["comp-018 Tier 2"]
+    },
+    {
+      "name": "complestatin",
+      "class": "bacterial NRPS-derived peptide (Streptomyces)",
+      "comp_021_role": "Comp-018 surfaced as bacterial NRPS class. Qualitative activity only in BGC-disruption study; no IC50 in matched assay format.",
+      "surfaces_in_corpus": ["comp-018 Tier 2 — LBP-payload-class anchor"]
+    },
+    {
+      "name": "(7S,8R)-dihydrodehydrodiconiferyl alcohol",
+      "abbrev": "DDA (Helicteres compound 5)",
+      "class": "benzofuran lignan",
+      "comp_021_role": "Most-potent CH50 in surveyed corpus (9 µM); single-paper anchor Yin 2016 PMC6273495. Stratification: only one assay format published → cannot collapse uncertainty. Surface for the replication imperative (comp-020 §5.4 follow-up #3).",
+      "surfaces_in_corpus": ["comp-020 top tier"]
+    },
+    {
+      "name": "machicendonal",
+      "abbrev": "MAC (Helicteres compound 4)",
+      "class": "benzofuran lignan",
+      "comp_021_role": "Pair-anchor to DDA in Yin 2016; same paper, same assay format. Within-paper cross-check.",
+      "surfaces_in_corpus": ["comp-020 top tier"]
+    },
+    {
+      "name": "ANW (Ascophyllum nodosum fucoidan)",
+      "class": "sulfated marine polysaccharide",
+      "comp_021_role": "Top-tier hemolytic CP per Jin 2015 PMC4728500 (0.98 µg/mL). Stratification asks whether the same compound class would behave similarly under ELISA-CP vs. hemolytic-CP.",
+      "surfaces_in_corpus": ["comp-020 marine polysaccharide top tier"]
+    },
+    {
+      "name": "SC (Acaudina molpadioides polysaccharide)",
+      "class": "sea cucumber polysaccharide (linear, sulfated)",
+      "comp_021_role": "Tied with ANW at hemolytic-CP top tier. Within-paper comparator.",
+      "surfaces_in_corpus": ["comp-020 marine polysaccharide top tier"]
+    },
+    {
+      "name": "SJW-3 (Saccharina japonica sulfated galactofucan)",
+      "class": "sulfated marine polysaccharide (anion-exchange purified)",
+      "comp_021_role": "Second tier marine polysaccharide; same Jin 2015 paper / assay format. Within-paper comparator.",
+      "surfaces_in_corpus": ["comp-020 marine polysaccharide second tier"]
+    },
+    {
+      "name": "unfractionated heparin",
+      "class": "sulfated GAG (~15 kDa)",
+      "comp_021_role": "**Best cross-assay-format anchor in the entire scope** — published across hemolytic-CP, WieLISA-CP, WieLISA-AP, WieLISA-LP, Ficolin-3 LP, AND MASP-2 C4-cleavage in matched Talsma 2020 paradigm. Use heparin's published 50× spread to calibrate which spread comes from format vs. biology.",
+      "surfaces_in_corpus": ["comp-020 lectin pathway", "Zhang & Chen 2008 positive control", "Yin 2016 positive control", "Talsma 2020 PMC7212410 anchor paper"]
+    },
+    {
+      "name": "heparin octasaccharide",
+      "class": "8-mer heparin fragment (Org32100)",
+      "comp_021_role": "LP-selective; same Talsma 2020 paper. Tests the LP-selectivity hypothesis.",
+      "surfaces_in_corpus": ["comp-020 LP-selective"]
+    },
+    {
+      "name": "heparin hexasaccharide",
+      "class": "6-mer heparin fragment (Org32101)",
+      "comp_021_role": "LP-selective; same Talsma 2020 paper.",
+      "surfaces_in_corpus": ["comp-020 LP-selective"]
+    },
+    {
+      "name": "heparin tetrasaccharide",
+      "class": "4-mer heparin fragment (Org32102)",
+      "comp_021_role": "LP-selective at WieLISA but much weaker at ficolin-3 LP and MASP-2 C4-cleavage — within-paper format-driven spread.",
+      "surfaces_in_corpus": ["comp-020 LP-selective"]
+    }
+  ]
+}

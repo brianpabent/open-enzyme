@@ -1,0 +1,35 @@
+{
+  "model_geometry": {
+    "fluid_phase_compartment": {
+      "description": "Plasma + gut-luminal fluid where rosmarinic acid encounters nascent C3 convertase assemblies BEFORE they deposit on MSU surface",
+      "relevant_ra_concentration_uM": "free systemic 0.020 (Baba 2004 Cmax) OR gut-luminal 252-1100 (Kang 2021)",
+      "relevant_target": "fluid-phase + nascent C3 convertase / activated C3b"
+    },
+    "msu_surface_compartment": {
+      "description": "Already-deposited C3b + assembled C3 convertase on MSU crystal surface within synovial fluid",
+      "relevant_daf_concentration_nM": "10-500 (model prior, synovial effective concentration after delivery)",
+      "relevant_target": "surface-bound C3 convertase awaiting decay-acceleration"
+    }
+  },
+  "compartment_coupling": {
+    "scenario_independent": "Fluid-phase RA inhibition does NOT reduce surface-deposited convertase decay rate (DAF acts on already-assembled enzymes; RA acts on convertase assembly step). Effects are mechanism-independent and compose multiplicatively on REMAINING active fraction.",
+    "scenario_coupled": "Fluid-phase RA inhibition reduces NEW convertase assembly on the surface (fewer convertases deposit → fewer for DAF to act on). DAF effect is therefore PROPORTIONALLY LARGER on the residual surface-deposited enzymes. Effects compose super-additively but only on initial deposition burst.",
+    "default_assumption": "Mostly independent at steady-state (active flare). Surface convertases self-amplify locally via tickover; RA's contribution is to the systemic + gut-luminal C3b deposition substrate pool, not directly to the surface tickover loop. Default: COMPOSE MULTIPLICATIVELY on residual fractions.",
+    "sensitivity_check": "Run both independent + coupled scenarios; report both."
+  },
+  "decision_rule_thresholds": {
+    "GREEN_median_singleton_ratio": 1.5,
+    "GREEN_CI_separation_required": true,
+    "rationale": "Per parent brief: combined median ≥ 1.5× the better singleton AND 95% CI of combined doesn't overlap 95% CI of either singleton"
+  },
+  "monte_carlo_settings": {
+    "n_draws": 50000,
+    "rng_seed": 29
+  },
+  "evidence_tier_labels": {
+    "model_outputs": "Mechanistic Extrapolation (in silico systems composition over published In Vitro kinetic constants)",
+    "input_ic50": "In Vitro (Sahu 1999, Englberger 1988)",
+    "input_bioavailability": "Clinical Trial (Baba 2004 human single-dose) + Animal Model (Wang 2017 rat oral PK)",
+    "input_daf_kinetics": "In Vitro (Fischer 1981 surface-bound C4b2a; Medof 1984 cell-incorporated DAF)"
+  }
+}

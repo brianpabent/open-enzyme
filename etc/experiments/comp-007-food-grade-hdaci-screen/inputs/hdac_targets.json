@@ -1,0 +1,46 @@
+{
+  "description": "HDAC target metadata for comp-007. HDAC1/2/3 are the class I isoforms relevant to Q141K-ABCG2 trafficking rescue via HSF1/Hsp90 pathway (Basseville 2012, PMID 22472121). HDAC6 is the off-target (class IIb, cytoplasmic; tubulin deacetylase; associated with pan-HDAC cardiotoxicity when inhibited by vorinostat/romidepsin).",
+  "fetch_date": "2026-05-05",
+  "targets": [
+    {
+      "name": "HDAC1",
+      "gene_symbol": "HDAC1",
+      "chembl_id": "CHEMBL325",
+      "uniprot": "Q13547",
+      "hdac_class": "Class I",
+      "localization": "Nuclear",
+      "role_in_q141k_rescue": "PRIMARY TARGET — class I nuclear HDAC; inhibition activates HSF1 → Hsp90 upregulation → chaperone-assisted folding of Q141K ABCG2 NBD2 → trafficking to apical membrane. Basseville 2012 PMID 22472121.",
+      "cardiotoxicity_risk": "Low when inhibited alone; risk arises from HDAC6 co-inhibition"
+    },
+    {
+      "name": "HDAC2",
+      "gene_symbol": "HDAC2",
+      "chembl_id": "CHEMBL1937",
+      "uniprot": "Q92769",
+      "hdac_class": "Class I",
+      "localization": "Nuclear",
+      "role_in_q141k_rescue": "PRIMARY TARGET — class I nuclear HDAC; same pathway as HDAC1. Co-inhibited by butyrate (benchmark). Basseville 2012.",
+      "cardiotoxicity_risk": "Low when inhibited alone"
+    },
+    {
+      "name": "HDAC3",
+      "gene_symbol": "HDAC3",
+      "chembl_id": "CHEMBL1829",
+      "uniprot": "O15379",
+      "hdac_class": "Class I",
+      "localization": "Nuclear",
+      "role_in_q141k_rescue": "PRIMARY TARGET — class I nuclear HDAC; same pathway. HDAC3 most potently inhibited by butyrate (IC50 9 uM vs 12/16 uM for HDAC2/1; ChEMBL CHEMBL1671826, ACS Med Chem Lett 2011).",
+      "cardiotoxicity_risk": "Low when inhibited alone"
+    },
+    {
+      "name": "HDAC6",
+      "gene_symbol": "HDAC6",
+      "chembl_id": "CHEMBL1865",
+      "uniprot": "Q9UBN7",
+      "hdac_class": "Class IIb",
+      "localization": "Cytoplasmic",
+      "role_in_q141k_rescue": "OFF-TARGET — cytoplasmic tubulin deacetylase; inhibition causes actin/microtubule dysregulation, cardiac ion-channel effects. Pan-HDAC inhibitors (vorinostat, romidepsin) hit HDAC6 → cardiotoxicity. A food-grade HDACi that avoids HDAC6 is safer for chronic oral use.",
+      "cardiotoxicity_risk": "HIGH — primary driver of pan-HDAC cardiotoxicity; should NOT be inhibited by Stage 2 candidates"
+    }
+  ]
+}
