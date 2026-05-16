@@ -233,6 +233,14 @@ An entry migrates off this page when its chassis is selected. Two outflows:
 
 If an entry is **falsified** (chokepoint-fit turns out to be wrong, or mechanism doesn't survive scrutiny), it migrates to a falsification card or gets removed with a closure note. Falsification is OK; quiet filtering is not.
 
+### How decisions actually get made — there's no static rubric, by design
+
+There is intentionally **no static "promote / park / falsify" rubric** on this page (or anywhere else). The decision mechanism is the wiki sweep daemon's Pass 2 (synthesizer), which re-evaluates every entry against the current corpus state on every sweep cycle. When new information lands that would shift an entry's status — a new comp-NNN output, a new wet-lab result, a new published clinical-trial readout, a new chokepoint analysis — the next sweep surfaces it as a Connection / Contradiction / Experiment / Open Question / Priority Action. The walkthrough operator then makes the actual promote / park / falsify call per-item, with each call grounded in the corpus state at that moment.
+
+A static rubric here would be a snapshot of heuristics that drifts from the live evaluator. Items 1–5 of the 2026-05-15 sweep walkthrough are concrete evidence the mechanism works as designed: the daemon surfaced promotion-worthy recommendations (PDB×disulfiram CP6 stack, CFTR-corrector Q141K chaperone, inhaled mRNA-IL-1RA temporal complement) from chassis-pending entries; the walkthrough operator decided per-item; the actions shipped without anyone ever consulting a documented rubric. The dynamic process IS the rubric implementation.
+
+This is why "park" and "falsify" don't appear as named statuses in the entries above — the page records *interventions and their current chassis-question state*, not *decisions about resource allocation*. Decisions live in walkthrough closure annotations (`synthesis/done/`) and in the canonical wiki pages that come out of promotions. The chassis-pending page is the index of the open chokepoint-fit-without-chassis state, not the decision log.
+
 ## Maintenance
 
 - Updated on any walk-synthesis closure where a finding hits a chokepoint but lacks a chassis (see closure question in `.claude/skills/walk-synthesis/SKILL.md`).

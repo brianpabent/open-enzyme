@@ -417,6 +417,48 @@ Surfaced as 2026-05-13 sweep Connection 2 in `synthesis/done/2026-05-13-connecti
 
 ---
 
+## Static-rubric bias in Pass 2 + Pass 3 recommendations (added 2026-05-16)
+
+**Status:** Architectural-bias observation. Not a bug per se — a pattern in synthesizer / reviewer recommendation generation that the walkthrough operator should de-prefer when it surfaces.
+
+### The pattern
+
+Pass 2 and Pass 3 both have a tendency to recommend **adding a static documented rule / rubric / framework** when the underlying decision process is already implemented dynamically by the sweep daemon itself. This is documentation-for-documentation: the daemon already does what the documented rule would describe, and the static doc will drift from the live evaluator faster than the evaluator updates.
+
+### Canonical case — 2026-05-16 walkthrough Item 6
+
+Sweep `ebbce26` Contradiction 1 (chassis-pending list dilution risk) framed the issue as a "strategic design gap" requiring a "chassis triage rubric" — Pass 3 confirmed and tightened the framing to "chokepoint-first triage rule keyed to chokepoint leverage, evidence tier, cheapest first move, and chassis maturity."
+
+The walkthrough operator pushed back: the daemon's Pass 2 already re-evaluates every chassis-pending entry against the current corpus state on every sweep, and the walkthrough operator's per-item decision IS the promote / park / falsify call. The same walkthrough (Items 1–5) produced concrete evidence of this mechanism working: PDB×disulfiram CP6 stack named (Item 1), CFTR-corrector Q141K chaperone promoted to comp-032 (Item 2), inhaled mRNA-IL-1RA temporal-complement framing landed in open-enzyme-vision.md + comp-033 (Item 4). None of these required a documented rubric to action.
+
+The synthesizer and reviewer both fell into a "name a rule and document it" frame. A static rubric there would have been:
+
+- Documentation that re-derives what Pass 2 already does
+- A snapshot of heuristics that will drift from the live daemon's evaluation
+- Onboarding / audit benefits at a scale where they're not yet load-bearing for a one-operator project
+
+The pushback is the right answer. Closure for Item 6 was a single-paragraph annotation in `chassis-pending-interventions.md` "How decisions actually get made — there's no static rubric, by design" — naming the dynamic mechanism explicitly so the page is self-documenting, but adding no rubric.
+
+### Operational guidance for future walkthroughs
+
+When a Pass 2 / Pass 3 recommendation reads as "add a documented rule / framework / rubric for [decision type the daemon already makes]," the walkthrough operator should consider:
+
+1. **Is this rule already implemented in the daemon's evaluation logic?** If yes, the static doc is at best a redundant mirror, at worst a drifting artifact. Default to: close with a short annotation naming the dynamic mechanism; skip the rubric.
+2. **Would the rule constrain decisions the daemon cannot currently surface?** Rare, but real — if the rule encodes a constraint the daemon's prompts don't enforce (e.g., regulatory / safety / privacy gates), the static doc has independent value. Action: add the rule AND update the relevant pass prompt so the daemon enforces it dynamically going forward.
+3. **Is the rule documenting a process across multiple operators or partner organizations?** Only useful at multi-operator scale. Defer until that scale arrives.
+
+The most common case is (1). Default to "close with a dynamic-mechanism annotation, no rubric."
+
+### Implication for the tool-gap vs. science-gap pilot
+
+This bias is orthogonal to the tool-gap / science-gap decomposition (above) but interacts with it: a Pass 3 review that says "tool-gap, add a rubric" is doubly suspect — tool-gap because the synthesizer's framing was off, AND rubric-bias because the proposed fix is documentation-for-documentation. Future Pass 3 prompt iterations could add a check: "before recommending a documented rubric / framework, verify the recommendation isn't just re-describing existing daemon behavior."
+
+### Origin
+
+2026-05-16 walkthrough Item 6. Closure annotation at `synthesis/done/2026-05-15-contradiction-1-the-chassis-pending-intervention-list-risks-diluting-the.md`.
+
+---
+
 ## Pass 3 trigger-file awareness gap (added 2026-05-16)
 
 **Status:** Architecture gap named. Prompt-engineering fix queued as an "Open improvements" follow-up below; not yet implemented.
