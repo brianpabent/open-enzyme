@@ -417,6 +417,85 @@ Surfaced as 2026-05-13 sweep Connection 2 in `synthesis/done/2026-05-13-connecti
 
 ---
 
+## Pass 3 trigger-file awareness gap (added 2026-05-16)
+
+**Status:** Architecture gap named. Prompt-engineering fix queued as an "Open improvements" follow-up below; not yet implemented.
+
+### The failure mode
+
+Pass 3's review discipline relies on grep-based verification: when Pass 2 cites a section or claim ("`bio-ai-tools.md §BioDesignBench` closes this tool gap"), Pass 3 greps the corpus for the citation and either confirms or pushes back based on what the grep returns. **This breaks when the trigger commit itself contains the load-bearing content.**
+
+Concretely: Pass 3 today doesn't know which file(s) triggered the sweep. It sees the Pass 2 output and the corpus state, but it doesn't receive the *trigger-commit diff* as context. So when Pass 2 cites brand-new content that was added in the same commit that fired the daemon, Pass 3's grep operates as if the corpus state is stable and treats the new content as either invisible (false-negative grep) or just-another-page-that-might-have-been-there-yesterday. The reviewer can't distinguish *"Pass 2 hallucinated a section that doesn't exist"* from *"Pass 2 saw a brand-new section that was just added, which I also have access to but my grep missed."*
+
+### Canonical case — 2026-05-16 walkthrough Item 5
+
+The sweep on commit `ebbce26` was triggered by changes to `wiki/etc/bio-ai-tools.md` that added the §BioDesignBench section (~75 lines, including the protein-design-mcp install record and the explicit "RFdiffusion + ProteinMPNN NOT currently in OE stack — gap to investigate for DAF SCR1-4 + lactoferrin redesign work" framing). Pass 2 correctly synthesized a connection between this new content and `lactoferrin.md §12 #13` (which was added in the same commit and explicitly named the same tool gap).
+
+Pass 3's review:
+
+> "The central page-reading claim is wrong: ... a direct grep of `wiki/etc/*.md` also returned no matches for 'BioDesignBench' or 'protein-design-mcp,' contradicting the claim that `bio-ai-tools.md §BioDesignBench` closes this tool gap via that package."
+
+The grep claim is empirically wrong against the trigger-commit state — both terms are in the file at lines 752 and 810+. The Pass 3 reviewer either (a) actually ran the grep but got a false-negative because of path semantics or timing, or (b) didn't actually run the grep and reported a hallucinated empty result, or (c) ran the grep before the trigger-commit changes had landed in its view of the corpus. All three failure modes share a common root: **the reviewer lacks structural awareness of which content is new in this sweep cycle.**
+
+Had Pass 3 received trigger-commit context — *"this sweep was triggered by changes to `wiki/etc/bio-ai-tools.md` (+75 lines, new §BioDesignBench section) and `wiki/lactoferrin.md` (+1 line in §12, #13 added)"* — the review would have read very differently:
+
+> "Verdict: **Confirmed, prioritize.** This connection is grounded in newly-added content in `wiki/etc/bio-ai-tools.md`'s §BioDesignBench (added in the trigger commit itself). Pass 2's claim that RFdiffusion + ProteinMPNN were 'absent from OE's stack' is accurate as of immediately before the trigger commit; the same commit added the gap-identification text AND the A1 (CPU-mode) install record. State changed within the trigger commit. Action: reconcile `lactoferrin.md §12 #13` (still describes the pre-install state) against `bio-ai-tools.md` A1's post-install state."
+
+That's the **opposite verdict** from what Pass 3 actually produced. The pushback was a false-negative caused by trigger-blindness, not a real biology / plumbing disagreement.
+
+### Implication for the tool-gap vs. science-gap pilot
+
+This failure mode interacts with the tool-gap / science-gap pilot above: a trigger-blind Pass 3 will systematically over-emit `Push back / tool-gap` for legitimate cross-references between newly-added content. The pilot's signal-density metric (≥30% clean attribution) is contaminated by these false-negatives. The trigger-awareness fix is a prerequisite for clean evaluation of the tool-gap pilot — without it, the pilot's promote/abandon gates are testing the wrong thing.
+
+### Proposed fix
+
+The orchestrator script (`scripts/sweep-3-review.py` or its caller) should compute the trigger-commit diff and pass it to the Pass 3 prompt as explicit context:
+
+```
+TRIGGER CONTEXT:
+The following files were modified in the commit(s) that triggered this sweep cycle:
+
+- wiki/etc/bio-ai-tools.md: +75 lines (new §BioDesignBench section, A1 install record, ...)
+- wiki/lactoferrin.md: +1 line in §12 (#13 added)
+
+Pass 2 connections referencing content in newly-added sections of these files are
+legitimate cross-references, NOT hallucinations. When verifying such claims, you have
+two valid actions:
+
+  (a) Grep the post-trigger corpus state — the new content is there; if your grep
+      doesn't find it, your grep is wrong, not the corpus.
+  (b) Treat the Pass 2 claim as confirmed against the trigger diff itself.
+
+Do NOT mark a Pass 2 connection as "Push back / page-reading claim is wrong" solely
+on the basis of a grep result that contradicts the trigger diff. If your grep
+disagrees with the trigger diff, the trigger diff wins.
+```
+
+Implementation surface:
+1. `scripts/sweep-3-review.py` — compute `git diff <triggering-commit>~..<triggering-commit> -- wiki/*.md` and inject summary into the Pass 3 prompt's context. Same for the GPT-5.5 variant.
+2. `scripts/sweep-prompt-3-review.md` + `scripts/sweep-prompt-3-review-gpt55.md` — add a "Trigger context" section near the top of the prompt with the instructions above.
+3. Pass 4 (DeepSeek) prompt when implemented — mirror the same trigger-awareness pattern.
+
+This is **not a structural redesign of Pass 3**; it's a prompt-engineering fix that gives Pass 3 the context it's currently missing. The cost is small (~500 tokens of context per sweep) and the benefit is eliminating an entire class of false-negative reviews.
+
+### Why this matters beyond one item
+
+The sweep daemon's value proposition is that it catches inconsistencies that humans miss. When the daemon itself emits false-negative review verdicts on legitimate connections, the walkthrough operator has to manually adjudicate, which:
+
+1. Reverses the daemon's value (the human is doing the verification the daemon was supposed to do)
+2. Erodes trust in Pass 3 verdicts (operators learn to treat Push-back as "maybe Pass 3 is wrong")
+3. Creates a systematic blind spot specifically for **brand-new content** — exactly the content most likely to contain load-bearing platform updates worth catching
+
+The fix is cheap; the cost of not fixing it scales with how often the daemon emits Push-back verdicts on trigger-content connections (which is unbounded — every sweep is a candidate).
+
+### Open improvements queue
+
+Items in this section are concrete prompt/orchestrator changes that have been named but not yet implemented. Track here so they're visible when anyone next touches sweep architecture.
+
+- **[2026-05-16] Pass 3 trigger-file awareness** — implement the orchestrator change + prompt update described above. Estimated effort: ~1 hour of script work + prompt iteration; can be done as a follow-up walkthrough item when scheduled. The 2026-05-16 walkthrough Item 5 case is the canonical empirical example for the implementation PR description.
+
+---
+
 ## Cross-references
 
 - The Alma project's hooks-and-skills pattern is the explicit precedent (Brian, 2026-04-28). Same structural insight: conventions that are checked don't drift; conventions that depend on memory always do, eventually.
