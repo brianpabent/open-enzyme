@@ -17,3 +17,18 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Promote `self-experiment-protocol.md` §12 from a section to a dedicated wiki page (`wiki/genotype-informed-supplement-workflow.md`) that serves as the user-facing entry point for the closed-loop pipeline. Cross-link from `gout-action-guide.md`'s "This year (advanced)" sections, `personal-genome-protocol.md`, and each track-specific assay page. The workflow is specified; what's missing is a single canonical surface that a new user can follow end-to-end.
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The workflow is correctly identified as a practical closed loop: `self-experiment-protocol.md` §12 explicitly composes genotype-informed selection, Tier 2 batch QC, calibrated dosing, and biomarker tracking, while `quantification-ladder.md` defines the calibrate-once-at-Tier-3 / track-batches-cheap operating model. Tool check confirms `wiki/genotype-informed-supplement-workflow.md` does not yet exist, so promoting §12 to a standalone page is a real discoverability action rather than a duplicate-file edit.
+
+---
+
+## ✓ Actioned 2026-05-16
+
+Promoted `self-experiment-protocol.md §12` to standalone page `wiki/genotype-informed-supplement-workflow.md` with full content lift + standalone reframing (page-level intro replacing "added 2026-05-15 to §12" framing). Workflow detail: five-step closed-loop pipeline (genotype → selection → produce/source → Tier 2 batch QC → calibrated dose → biomarker tracking) with the Q141K butyrate-emphasis worked example. Added an "H09 dependency" note explicitly stating the workflow shape survives if H09 fails (genotype-informed selection + dose calibration + biomarker tracking still work; the home-production step routes through commercial supplements instead).
+
+- [`wiki/genotype-informed-supplement-workflow.md`](../../wiki/genotype-informed-supplement-workflow.md) — new standalone page (~190 lines)
+- [`wiki/self-experiment-protocol.md` §12](../../wiki/self-experiment-protocol.md) — content replaced with 3-line pointer to new page
+- [`wiki/personal-genome-protocol.md`](../../wiki/personal-genome-protocol.md) §"See also" — promoted workflow to first / boldface entry; characterized as "canonical user-facing closed-loop pipeline; the promoted version of §12"
+- [`wiki/quantification-ladder.md`](../../wiki/quantification-ladder.md) §"See also" — promoted workflow to first / boldface entry; characterized as the workflow that uses this ladder as its steps 3–4
+- [`wiki/gout-action-guide.md`](../../wiki/gout-action-guide.md) "This year (advanced)" — new lead bullet pointing at the workflow as the user-facing entry point; existing genotyping + self-experiment bullets framed as prerequisites
+- [`index.md`](../../index.md) Core Pathology & Targets — new listing for the workflow
+
+Cluster-closure: closes with Item 21 (Priority Action 2) via the same promotion action. Pointer maintained in each.

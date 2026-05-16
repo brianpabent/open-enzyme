@@ -129,8 +129,9 @@ This is not optional for Phase 1+ wet work. The hardware investment is both pers
 
 ## See also
 
-- [`self-experiment-protocol.md`](./self-experiment-protocol.md) — biomarker monitoring framework; **see §12 "Genotype-informed supplement quantification workflow"** for the closed-loop n=1 pharmacogenomics composition (genotype → compound selection → home production → Tier 2 batch QC → calibrated dose → biomarker tracking)
-- [`quantification-ladder.md`](./quantification-ladder.md) — home / community-biolab Tier 2 assay framework that turns supplement dose from fixed-input to verified variable; composes with this page per `self-experiment-protocol.md` §12
+- **[`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) — canonical user-facing closed-loop n=1 pharmacogenomics pipeline.** Step 1 of that workflow is this page's variant-informed compound selection. The promoted version of `self-experiment-protocol.md` §12.
+- [`self-experiment-protocol.md`](./self-experiment-protocol.md) — biomarker monitoring framework that the workflow's step 5 uses for the readout layer
+- [`quantification-ladder.md`](./quantification-ladder.md) — home / community-biolab Tier 2 assay framework that turns supplement dose from fixed-input to verified variable (workflow steps 3–4)
 - [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) — koji enzyme activity quantification (Tier 2/3)
 - [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) — Tier 2 assay SOPs for cordycepin, ergothioneine, GLPP
 - [`abcg2-modulators.md`](./abcg2-modulators.md) — pharmacological levers on ABCG2; PPARγ induction via butyrate; HDAC-inhibitor rescue of Q141K

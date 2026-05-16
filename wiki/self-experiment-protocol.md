@@ -279,49 +279,10 @@ Lower-cost subject-specific assays that supplement the standard four-biomarker p
 
 ---
 
-## 12. Genotype-informed supplement quantification workflow (added 2026-05-15)
+## 12. Genotype-informed supplement quantification workflow
 
-The wiki has two operational clusters that are currently disconnected on the user-facing surface:
+**Promoted to standalone page 2026-05-16.** The five-step workflow composing genotype-informed selection + home/community-biolab batch QC + biomarker tracking now lives at [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md). That page is the user-facing canonical surface for the closed-loop n=1 pharmacogenomics pipeline.
 
-- [`personal-genome-protocol.md`](./personal-genome-protocol.md) — **genotype-informed compound selection.** Clinical-grade genotyping (via rheumatologist or CLIA-grade direct-to-consumer service; consumer panels like 23andMe / AncestryDNA are not recommended per [`gout-action-guide.md`](./gout-action-guide.md) Default-path "This year (advanced)") → ABCG2 Q141K, SLC2A9, URAT1, NLRP3 promoter, IL-1β regulatory variants → variant-specific compound preferences.
-- [`quantification-ladder.md`](./quantification-ladder.md) + [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) + [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) — **home / community-biolab quantification.** Tier 2 colorimetric or absorbance-based assays that let a subject verify *how much* of a compound is actually in a given batch (cordycepin via diazo-coupling, ergothioneine via Ellman's, total polysaccharide via phenol-sulfuric, etc.), turning "I took some supplement" into "I took N mg of compound X."
+This protocol page focuses on the per-subject self-experiment mechanics (§1–§11 above) — daily log, biomarker tracking, intervention scheduling. The genotype-informed-workflow page focuses on the cross-component pipeline that those mechanics participate in.
 
-The §1–§11 protocols above treat supplement dose / form / timing as a **fixed input variable**. The quantification ladder turns it into a **verified variable**. The personal-genome-protocol turns the compound selection itself into a **genotype-informed variable**. Composing the two gives a closed-loop n=1 pharmacogenomics workflow:
-
-> **genotype → compound selection → home or community-biolab production → Tier 2 batch QC → calibrated dose → biomarker tracking → adjust**
-
-This workflow isn't named anywhere else in the wiki. This section names it.
-
-### 12.1 The five-step workflow
-
-For each intervention the subject considers:
-
-1. **Genotype-inform the selection** ([`personal-genome-protocol.md`](./personal-genome-protocol.md) §"Gout-specific pharmacogenomic query list"). Specific variants change the compound priority — e.g., ABCG2 Q141K → butyrate emphasis (HDAC trafficking rescue per [`abcg2-modulators.md`](./abcg2-modulators.md)); URAT1 gain-of-function variants → cordycepin > eurycomanone per [comp-015 v2](./t-axis-adjuvant-urate-mapping-computational.md); NLRP3 gain-of-function variants → upweight CP6 (oridonin, BHB) over CP1–CP4.
-2. **Source or produce the compound** at home or via community biolab per [`engineered-koji-protocol.md`](./engineered-koji-protocol.md) (for enzyme cassettes), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) (for cordycepin / GLPP / ergothioneine native-compound mushrooms), or commercial supplement purchase. Note batch / lot / source in the §7 daily log.
-3. **Tier 2 batch QC via the quantification ladder.** Use the matched assay from [`quantification-ladder.md`](./quantification-ladder.md): cordycepin via diazo-coupling colorimetric, ergothioneine via Ellman's, total polysaccharide via phenol-sulfuric, uricase activity via 293 nm UV absorbance, etc. Output: a per-batch potency number (mg of compound per gram of dried product, or activity units per gram). Calibrate once at Tier 3 (vendor or community-biolab analytical assay) if available; track each subsequent batch at Tier 2 against the Tier 3 anchor.
-4. **Calibrate dose against the batch potency.** A batch that returns 50% of the expected potency means the subject takes 2× the gram weight to hit the same calibrated dose — or notes the silent underdosing and tracks it as a confound in §7. Without this step, batch variation produces invisible noise in the biomarker readout.
-5. **Track biomarkers per §3–§4.** The quantification ladder closes the dosing variable, so any biomarker movement is attributable to dose × biology, not dose × batch-variation × biology. Adjust the intervention based on the result.
-
-### 12.2 Worked example — Q141K-positive carrier, butyrate-emphasis stack
-
-A subject genotyped via a clinical-grade panel returns **ABCG2 Q141K heterozygous** (rs2231142 C/A). Per [`abcg2-modulators.md`](./abcg2-modulators.md), butyrate is the dual-mechanism lever for this genotype (PPARγ-driven ABCG2 induction in WT + HDAC-inhibitor trafficking rescue for the Q141K variant). Standard supplement-stack recommendations elevate butyrate via fermentable-fiber-rich diet + targeted butyrate-producing probiotics or direct butyrate-ester supplementation.
-
-**Workflow application:**
-
-1. **Genotype:** Q141K heterozygous, confirmed via clinical lab (not 23andMe).
-2. **Selection:** Butyrate-emphasis stack — fermentable-fiber dietary baseline (resistant starch, inulin, RS2-type sources) + optional direct sodium butyrate supplementation.
-3. **Source:** Resistant starch from a known source (e.g., Bob's Red Mill unmodified potato starch, a documented RS2 source); sodium butyrate from a documented supplement vendor with reported potency.
-4. **Tier 2 batch QC:** Indirect readout — stool SCFA panel (butyrate + acetate + propionate) at week 4 of intervention vs. baseline. This is a *biomarker* of effective butyrate delivery, not a direct quantification of the supplement potency — but it's the available Tier 2 surface for the workflow. Direct quantification would require GC-MS of the supplement → defer to a Tier 3 lab if precision matters.
-5. **Track biomarkers:** Serum UA quarterly + the standard four-biomarker panel per §4. Predicted effect from [comp-019](./uricase-abcg2-genotype-stratification-computational.md): WT/WT non-Q141K cohort sees larger ΔSUA than Q141K heterozygotes under the substrate-limited gut-lumen uricase regime; for Q141K-positive subjects, the rescue mechanism (HDAC inhibition) is the dominant lever and the per-patient response can be larger if it activates. Track UA trajectory at 3-month intervals.
-
-**What this example does NOT claim:**
-- It does NOT claim that butyrate alone produces clinically meaningful ΔSUA — that's gated by [H08 — Gut-Lumen Sink Platform Thesis](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) and the absence of a typical-gout Phase 2b RCT.
-- It does NOT claim that the SCFA readout is mechanistically equivalent to a direct butyrate-supplement potency assay — it's an indirect proxy.
-- It DOES illustrate the workflow shape: every link in the chain is verified rather than assumed.
-
-### 12.3 Open follow-ups
-
-- **Tier 3 anchor library.** A growing list of compound-specific Tier 3 vendor or community-biolab anchors (GC-MS / HPLC / spectrophotometric) that the Tier 2 home assays calibrate against. Currently scattered across [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md), [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md), [`quantification-ladder.md`](./quantification-ladder.md); worth consolidating into a single anchor table once enough Tier 3 entries land.
-- **Workflow validation under H09.** The §12 workflow assumes home / community-biolab production at therapeutic doses, which is exactly what [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) is testing. If H09 dies, §12 reshapes — the genotype-informed selection still works, but the home-production step routes through commercial supplement vendors with verified potency rather than home fermentation.
-
-**Cross-references:** [`personal-genome-protocol.md`](./personal-genome-protocol.md), [`quantification-ladder.md`](./quantification-ladder.md), [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md), [`abcg2-modulators.md`](./abcg2-modulators.md), [`t-axis-adjuvant-urate-mapping-computational.md`](./t-axis-adjuvant-urate-mapping-computational.md), [`gout-action-guide.md`](./gout-action-guide.md), [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md), [H09](./hypotheses/H09-community-fermentation-reliability.md).
+When walking a new intervention end-to-end, follow [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) for the workflow shape; come back here for the biomarker-tracking detail.
