@@ -425,7 +425,7 @@ Phase 3 reflection (shared with LBP track and rolled into the same Strategic Ref
 
 ### Ward 1995 §1.9 — global lab-access landscape
 
-The [Ward 1995 §1.9 Lab Access — Global Landscape](./ward-1995-lab-access-global.md) scope page (committed 2026-05-05) maps parallel options for executing [validation-experiments.md §1.9](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) across Japan, China, and Europe. Key findings:
+The [Ward 1995 §1.9 Lab Access — Global Landscape](./ward-1995-lab-access-global.md) scope page (committed 2026-05-05) maps parallel options for executing [validation-experiments.md §1.9](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate-1-priority-gate) across Japan, China, and Europe. Key findings:
 
 - **NSlD-ΔP10 (the ten-protease-deletion chassis required for H01 Killshot #1) is not deposited in any public culture collection.** The Maruyama lab at the University of Tokyo is the only verified source. (source: ward-1995-lab-access-global.md)
 - **Single most actionable lead:** Jun-ichi Maruyama (amarujun@mail.ecc.u-tokyo.ac.jp), University of Tokyo, origin lab for NSlD-ΔP10. Draft email included in the scope page.
