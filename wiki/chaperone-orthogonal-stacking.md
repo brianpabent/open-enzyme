@@ -451,6 +451,8 @@ The platform-design implication is meaningful: **the practical stacking limit fo
 
 This generalization is itself a candidate for codification once comp-028 returns and the pattern is empirically anchored.
 
+Operationally applied at [`koji-endgame-strain.md` §3 "Third-cassette slot design rule"](./koji-endgame-strain.md) where the cytosolic-vs-secreted distinction gates which payloads route to the endgame strain vs. a separate-strain / LBP-peer-chassis. The framework's rule is independent of which specific payloads are currently active — payload selection is a strategy decision, the cytosolic-vs-secreted framing is a structural design rule.
+
 ---
 
 ## 6. The Falsifiable Test — Pairwise Expression Matrix

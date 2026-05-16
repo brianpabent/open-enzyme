@@ -17,3 +17,19 @@ overlap_tag: RESTATEMENT
    - *Suggested Action:* Codify the rule as a named design principle in `koji-endgame-strain.md` §3 (the third-cassette slot design rule is already there; elevate it to a standalone callout box) and cross-reference from `chaperone-orthogonal-stacking.md` §5.6. Add a "Payload class decision tree" to `engineered-koji-protocol.md` that asks "secreted or cytosolic?" as the first branching question for any new cassette candidate. The comp-028 triple-cassette feasibility gate (queued in `computational-experiments.md` Planned Analyses) will provide the formal three-axis validation (chaperone + FBA + regulatory architecture) that either confirms or qualifies the rule.
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: RESTATEMENT]` The design rule is correct and already first-class in the corpus: `chaperone-orthogonal-stacking.md` §5.6 states that cytosolic third cassettes bypass the secreted-stacking bottleneck, and `koji-endgame-strain.md` §3 names the third-cassette slot rule for cytosolic payloads. The requested “secreted-cassette count, not total cassette count” callout is sensible, but the scientific content is already present.
+
+---
+
+## ✓ Actioned 2026-05-16
+
+Closed as already-actioned. The "secreted-cassette count, not total cassette count" platform-level design rule is stated in two places in the corpus:
+
+- [`chaperone-orthogonal-stacking.md` §5.6 "Generalization — cytosolic payloads as a strategic design lever"](../../wiki/chaperone-orthogonal-stacking.md) — framework-level statement of the rule with cytosolic / secreted payload classification
+- [`koji-endgame-strain.md` §3 "Third-cassette slot design rule"](../../wiki/koji-endgame-strain.md) — strain-design application of the rule (post-Item-7 candidate list = carnosine + ergothioneine biosynthesis; cordycepin removed as active candidate but the rule itself unchanged)
+
+Single edit: added cross-reference from §5.6 → koji-endgame-strain.md §3, with explicit framing that the framework's rule is independent of which specific payloads are currently active (payload selection = strategy decision; cytosolic-vs-secreted framing = structural design rule). This is the right boundary — the framework page carries framework, the strain-design page carries strategy.
+
+**Skipped per the "don't recommend creating what already exists" discipline (SWEEP-ARCHITECTURE.md):**
+- Standalone callout box upgrade in koji-endgame-strain.md §3 — the rule is stated clearly enough in the existing paragraph; promoting to a callout is documentation-shape-tweaking with no information gain
+- "Payload class decision tree" in engineered-koji-protocol.md — a new decision tool that re-derives the secreted-vs-cytosolic decision already named in §5.6 + §3
+- New platform-positioning section — nothing to position that isn't already positioned
