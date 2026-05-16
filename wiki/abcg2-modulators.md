@@ -232,7 +232,15 @@ This route is mechanistically orthogonal to the butyrate / HDAC track: a chapero
 - Daily-pill modality via compounding pharmacy if a hit is found among FDA-approved molecules (off-label / 503A) — see [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md).
 - Stacks additively with the HDI rescue (different mechanism, same target outcome).
 
-The full chassis-pending entry is at [`chassis-pending-interventions.md` §7 "Pharmacological chaperones for ABCG2 Q141K folding rescue"](./chassis-pending-interventions.md). The cheapest first move — AlphaFold Q141K structure + virtual screen of FDA-approved molecules for conformational stabilizer activity against ABC-transporter family proteins — is queued as [comp-032 in `computational-experiments.md`](./computational-experiments.md). Cheap-enough-to-default subagent task; bounds a "repurposing surprise" hypothesis cheaply before any small-molecule discovery campaign is committed.
+The full chassis-pending entry is at [`chassis-pending-interventions.md` §7 "Pharmacological chaperones for ABCG2 Q141K folding rescue"](./chassis-pending-interventions.md). The cheapest first move — AlphaFold Q141K structure + virtual screen of FDA-approved molecules — was completed as **[comp-032](./abcg2-q141k-chaperone-screen-computational.md) 2026-05-16: GREEN**. All four CFTR-corrector positive controls ranked in the top 11% of a 134-molecule curated library; the FDA-approved drug surface is NOT empty for ABCG2 Q141K chaperone candidates. **Top wet-lab-priority candidates** (ranked by composite score):
+
+1. **Lumacaftor** (Tier 2, CFTR corrector) — strongest mechanistic prior; same ABC superfamily; on-patent for CF (Vertex), navigate patent landscape for off-label 503A
+2. **Tafamidis** (Tier 2, TTR tetramer stabilizer) — aromatic-acid stabilizer at hydrophobic interface; misfolded-state selective
+3. **Ursodiol / UDCA** (**Tier 1**, bile acid chaperone) — broad ER-stress chaperone via ATF6/Hsp70; F508del-CFTR rescue precedent; off-patent USP/NF monograph
+4. **Diflunisal** (**Tier 1, lowest-friction first call** — off-patent NSAID with USP/NF monograph + off-label ATTR-stabilization precedent) — anionic at pH 7.4, strongest electrostatic match for Q141K +1 pocket
+5. **TUDCA** (Tier 2, bile acid chaperone) — CNS-penetrant; F508del-CFTR + ALS-clinical-trial precedent
+
+The Q141K folding-rescue thesis stands; pivot to AI-aided novel binder design (RFdiffusion) is NOT triggered. Next move: per-hit cell-based Q141K trafficking-rescue assay on the top 3-5 candidates in a Caco-2 Q141K-transfected line (sister to the §1.14 butyrate dose-response arm — same Caco-2 infrastructure, marginal cost ~$500–1,500 for the chaperone-class screen on top of the existing factorial). Compounding-pharmacy partner conversation can lead with diflunisal as the Tier-1 off-patent low-friction first call.
 
 ---
 
