@@ -219,6 +219,19 @@ A pharmacogenomic-stratified RCT of fermentable fiber (or sodium butyrate enteri
 
 The clinical-genotyping cost is also self-justifying against the alternative non-stratified design. In a European-ancestry cohort with carrier frequency ~10–15%, a non-stratified RCT looking for the same Q141K-conditional effect size would need roughly 3× the n to power the differential response (the Q141K-positive subset's signal is diluted by the wild-type majority). At ~$40–80/patient, on-site genotyping that lets the trial run with ~120 enriched patients instead of ~360 unstratified is a clear win — and is anyway required to identify Q141K homozygotes (~5–25% of carriers depending on population) for the homozygous arm. See [`androgen-urate-axis.md`](./androgen-urate-axis.md) for the male-demographic ceiling that interacts with this stratification, and [`supplements-stack.md`](./supplements-stack.md) for ABCG2-inhibitor counter-indications that should be exclusion criteria at enrollment.
 
+### Pharmacological-chaperone route — orthogonal small-molecule rescue (added 2026-05-16)
+
+The HDAC/butyrate rescue above is one of two distinct mechanistic strategies for Q141K. The other is a **pharmacological chaperone** — a small molecule that physically binds the misfolded Q141K protein and stabilizes its native conformation long enough for ER quality control to release it to the apical membrane. The class precedent is overwhelming: CFTR correctors (ivacaftor / tezacaftor / elexacaftor) rescue the ΔF508 CFTR variant via exactly this mechanism, and CFTR is in the same ATP-binding-cassette (ABC) transporter superfamily as ABCG2 (same fold, same general design problem). No published program has applied this chemistry to ABCG2 Q141K specifically.
+
+This route is mechanistically orthogonal to the butyrate / HDAC track: a chaperone restores native folding *directly*, without needing microbiome-mediated HDAC inhibition or PPARγ-mediated transcriptional induction of a wild-type allele. Implications:
+
+- Works in Q141K homozygotes (no wild-type allele to induce — HDI rescue still applies, but PPARγ induction does not).
+- Independent of gut-microbiome state (no dependence on fiber intake, SCFA production capacity, or PDB colonization).
+- Daily-pill modality via compounding pharmacy if a hit is found among FDA-approved molecules (off-label / 503A) — see [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md).
+- Stacks additively with the HDI rescue (different mechanism, same target outcome).
+
+The full chassis-pending entry is at [`chassis-pending-interventions.md` §7 "Pharmacological chaperones for ABCG2 Q141K folding rescue"](./chassis-pending-interventions.md). The cheapest first move — AlphaFold Q141K structure + virtual screen of FDA-approved molecules for conformational stabilizer activity against ABC-transporter family proteins — is queued as [comp-032 in `computational-experiments.md`](./computational-experiments.md). Cheap-enough-to-default subagent task; bounds a "repurposing surprise" hypothesis cheaply before any small-molecule discovery campaign is committed.
+
 ---
 
 ## Tissue selectivity matters
