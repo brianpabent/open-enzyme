@@ -17,3 +17,19 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Prioritize comp-029 (combined CP0 systems model) ahead of other medium-priority computational experiments, since it gates whether the combined strategy is worth wet-lab spend. If comp-029 returns GREEN, add a rosmarinic-acid co-treatment arm to `validation-experiments.md` §1.25 at marginal cost (~$500–1,000). The combined strategy also needs a named home in the wiki — either a new "Combined CP0 Intervention Strategy" section in `complement-c5a-gout.md` or a dedicated hypothesis stub (H10).
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` This is a valid CP0 composition: `complement-c5a-gout.md` §9.7 explicitly frames rosmarinic acid as upstream C3-convertase inhibition with a 44× IC50 assay-format caveat, and DAF SCR1-4 as engineered surface decay acceleration tied to H05 and comp-012. The important part is the sequencing discipline: comp-029 should bound the combined-effect range before the rosmarinic-acid co-treatment arm is added to the DAF wet-lab screen.
+
+---
+
+## ✓ Actioned 2026-05-16
+
+Substantive content already in place across §9.7 / comp-029 brief / §1.25 wet-lab gate; this Connection's actionable lever was the operator decision on whether to spawn comp-029. Operator said spawn.
+
+**comp-029 spawned as background Opus subagent** following the `new-comp-experiment` skill discipline. Brief: two orthogonal models (rosmarinic acid C3-convertase inhibition with 44× IC50 uncertainty distribution + DAF SCR1-4 decay-accelerator kinetics across explicit surface-accessibility priors) cross-multiplied at typical post-meal + active-flare conditions, with confidence bounds throughout. Pass 3 softening discipline baked in (combined-coverage is the *outcome*, not the *input*). Decision rule: GREEN if combined CI clears either singleton CI; YELLOW if overlap; RED if interaction blocker surfaces.
+
+Auto-appended review-task as walkthrough **Item 25 — Review comp-029 output** per skill Section 4 background-subagent rule. The subagent's output will be reviewed at its natural walkthrough turn, not when its notification arrives.
+
+**Remaining gated work (NOT actioned today; all conditional on comp-029 outcome):**
+- Item 15 (Experiment 3, wet-lab gate "Combined CP0 coverage assay: rosmarinic acid + DAF SCR1-4 in zymosan-activation C5a-generation model") — walks separately when its turn comes; the wet-lab addition to §1.25 gates on comp-029 GREEN.
+- H10 hypothesis stub deferred — H-cards are most valuable once there's a concrete prediction to falsify. Revisit after comp-029 returns.
+
+No wiki content changes in this commit (§9.7 already comprehensive; comp-029 row stays in Planned Analyses until the subagent moves it). The substantive output is the spawned subagent + Item 25.
