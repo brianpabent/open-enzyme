@@ -227,6 +227,16 @@ Three threads in the literature collapse into one mechanism stack for the most c
 
 This narrative belongs at this prominence because the three constituent threads were previously scattered across three different wiki pages without being collapsed into one mechanism story. The clean version: **gut PDB + diet adequacy = endogenous genotype-targeted therapy for ~3–15% of the gout population, no engineered intervention required.**
 
+#### Concentration gap — does endogenous colonic butyrate actually reach the HDAC-rescue threshold? (open, added 2026-05-16)
+
+The "natural genotype-targeted therapy" framing above is mechanistically elegant but **quantitatively unanchored.** Basseville 2012 (PMID 22472121) demonstrated HDAC-mediated Q141K trafficking rescue at **1–5 mM butyrate in cell culture**, applied directly to the culture medium where it reaches the cells freely. Physiological colonic butyrate concentrations in humans on a high-fiber diet are ~5–20 mM in the lumen — but they **drop steeply across the mucus layer and epithelial surface**, with crypt-base concentrations potentially an order of magnitude lower than luminal. The HDAC enzymes that act on ABCG2 trafficking (HDAC1, HDAC2, HDAC3) reside in the enterocyte nucleus — well past the mucus-epithelial barrier from the luminal butyrate pool.
+
+Whether endogenous PDB flux can achieve HDAC-inhibitory concentrations *at the enterocyte nucleus* — where the rescue mechanism actually has to act — is open. The "PDB → butyrate → HDAC inhibition → Q141K rescue" mechanism stack is in vitro-anchored; the in vivo translation depends on a concentration gradient nobody in the corpus has quantified.
+
+**Wet-lab resolution path: [`validation-experiments.md` §1.14](./validation-experiments.md) butyrate dose-response arm.** A Caco-2 transwell with butyrate applied basolaterally across a concentration range (covering ~0.05–5 mM) in both WT and Q141K-transfected cells, with dual readouts (ABCG2 surface expression + functional urate efflux), maps the minimum concentration needed for HDAC-mediated trafficking rescue. Per Pass 3 tightening (2026-05-16 sweep walkthrough Item 12): the dual readout is non-optional because **WT butyrate response is PPARγ-mediated transcriptional induction** while **Q141K rescue is HDAC-mediated trafficking restoration** — different mechanisms, different readouts, both need to be measured to disentangle the rescue from the induction signal.
+
+Until the dose-response runs, treat the PDB-butyrate-Q141K stack as a **mechanistically supported but quantitatively unverified intervention** in the corpus. It still belongs at this prominence because the mechanism story is coherent, the in vitro data is solid, and the rescue magnitude (when it activates) is large. But the Q141K-positive patient who is "selenium-replete, fiber-fed" with intact PDB function may or may not reach the HDAC-inhibitory threshold at the enterocyte nucleus — that's the empirically open question.
+
 ---
 
 ## The Alistipes indistinctus / Hippuric Acid / ABCG2 Axis
