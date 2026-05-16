@@ -128,8 +128,16 @@ SECTION_HEADER_RE = re.compile(
     re.MULTILINE,
 )
 
-NUMBERED_ITEM_RE = re.compile(r"^(\d+)\.\s+\*\*", re.MULTILINE)
+# Matches numbered items in two formats observed across Pass 2 model versions:
+#   Old: "N. **Bolded title**..."         (Gemini 2.5 Pro pre-2026-05-16)
+#   New: "### N. Sentence-cased title..." (Gemini 2.5 Pro 2026-05-16+, observed
+#        under the A2 tool-use-enabled regime — format drift from the prompt)
+# The captured group is the item number in either case.
+NUMBERED_ITEM_RE = re.compile(r"^(?:###\s+)?(\d+)\.\s+(?:\*\*|[A-Z])", re.MULTILINE)
 HEADLINE_RE = re.compile(r"\*\*([^*]+(?:\*[^*]+)*)\*\*", re.DOTALL)
+# Fallback headline extractor for the H3-numbered format ("### N. Title.") —
+# captures the title text up to the first period or end of line.
+HEADLINE_H3_RE = re.compile(r"^###\s+\d+\.\s+(.+?)(?:\.\s*$|\s*$)", re.MULTILINE)
 VERDICT_RE = re.compile(r"Pass 3 review\s*[—-]\s*([A-Za-z][A-Za-z\- ,]+?)(?:\.|`|$)")
 OVERLAP_RE = re.compile(r"\[OVERLAP:\s*([A-Z]+(?:-[A-Z0-9]+)*)\]|\[DUPLICATE-OF-(\d+)\]")
 
@@ -267,10 +275,17 @@ def extract_items_from_section(section_body: str, type_slug: str) -> list[dict]:
 
 
 def extract_headline(content: str, type_slug: str, fallback_index: int) -> str:
-    """Extract headline per spec §5.4."""
+    """Extract headline per spec §5.4. Handles two Pass-2 formats:
+      - Old: "N. **Bolded title**..."         (pre-2026-05-16)
+      - New: "### N. Sentence-cased title."   (Gemini 2.5 Pro 2026-05-16+ drift
+             under the A2 tool-use-enabled regime)"""
     if type_slug in NUMBERED_SECTIONS:
-        # Match `N. **headline**` — first complete bold span after the number
+        # Old format first: `N. **headline**`
         m = re.search(r"^\d+\.\s+\*\*(.+?)\*\*", content, re.MULTILINE | re.DOTALL)
+        if m:
+            return m.group(1).strip()
+        # New H3 format fallback: `### N. Title.`
+        m = HEADLINE_H3_RE.search(content)
         if m:
             return m.group(1).strip()
     elif type_slug in SINGLE_PARAGRAPH_SECTIONS:
