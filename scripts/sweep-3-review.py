@@ -273,7 +273,7 @@ TOOL_HANDLERS = {
 }
 
 
-def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000):
+def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000, max_trigger_inline=30):
     """Inline trigger + cited files. Trigger files are the cause of the
     sweep; cited_files are everything Pass 2 referenced in its synthesis.
     Both go into the warm cache so the reviewer doesn't need a tool
@@ -283,16 +283,32 @@ def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000):
     ≈ 350K tokens. Pass 3 is agentic — the model can run up to 16 tool
     round-trips, each shipping the entire accumulated message history
     back to the model. A single round-trip with one wiki-file read +
-    intermediate reasoning consumes ~50-100K tokens. The cumulative-size
-    guard in run_agentic_review (CUMULATIVE_CHAR_BUDGET = 900K tokens)
-    force-finishes before Opus's 1M cap, so in practice the effective max
-    iters is bounded by cumulative cost: 350K initial + ~75K per round
-    ≈ 7-10 rounds before the guard fires. The 16-iter ceiling is a
-    safety net against runaway loops, not the binding constraint —
-    cumulative budget is. Bumped 8 → 16 (2026-05-07) after the
-    abc8de9 run hit the 8-iter cap before producing final output.
-    Trigger files always inline (skipping a triggering file breaks the
-    review's premise); cited files inline until budget, then are skipped
+    intermediate reasoning consumes ~50-100K tokens.
+
+    max_trigger_inline: cap on the number of trigger files inlined into
+    the warm cache. Default 30. Surfaced 2026-05-16 after the Subagent-B
+    reorg push delivered 238 trigger files (mostly pure-rename file moves
+    via `git mv experiments → wiki/etc/experiments`). The prior design
+    force-inlined every trigger file (skipping a trigger breaks the
+    review's premise), but that premise breaks down when the trigger
+    set is dominated by file-move events with no content change. With
+    Pass 3's read_file() tool-use (added 2026-05-16 by A2), trigger
+    files beyond the cap are listed in the skipped block and Pass 3
+    can tool-fetch them on demand. Triggers within the cap still inline.
+    Triggers are sorted by file size ascending before the cap so small
+    "metadata-touch" triggers (rename-only YAML frontmatter ripples, etc.)
+    get priority over large content files that are more likely the
+    actual subject of the sweep — and small triggers are more likely
+    to fit within the char_budget anyway.
+
+    The cumulative-size guard in run_agentic_review (CUMULATIVE_CHAR_BUDGET
+    = 900K tokens) force-finishes before Opus's 1M cap, so in practice the
+    effective max iters is bounded by cumulative cost: 350K initial +
+    ~75K per round ≈ 7-10 rounds before the guard fires. The 16-iter
+    ceiling is a safety net against runaway loops, not the binding
+    constraint — cumulative budget is. Bumped 8 → 16 (2026-05-07) after
+    the abc8de9 run hit the 8-iter cap before producing final output.
+    Cited files are best-effort: inline until budget, then are skipped
     with a notice (the model can still tool-fetch them).
 
     Returns (concatenated_text, included_list, skipped_list).
@@ -306,27 +322,46 @@ def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000):
     included = []
     skipped = []
     used_chars = 0
-    # Trigger files always inline — skipping a trigger breaks the premise
-    # of the review (you're reviewing changes triggered by these files).
-    # Cited files are best-effort: inline until budget, then skip.
-    for label, paths, force in (
-        ("trigger", trigger_files, True),
-        ("cited", cited_files, False),
+
+    # Sort trigger files by size ascending. Small triggers (often pure
+    # renames / YAML frontmatter ripples) get inlined first if budget
+    # allows. Large content files that are the likely sweep subject get
+    # priority within the char_budget. With max_trigger_inline cap,
+    # overflow triggers go to skipped + tool-fetched.
+    def _size_or_inf(p):
+        try:
+            return os.path.getsize(p)
+        except OSError:
+            return float("inf")
+
+    trigger_by_size = sorted(trigger_files, key=_size_or_inf)
+    n_trigger_inlined = 0
+
+    # Trigger files inline first (subject to char_budget AND count cap),
+    # then cited files fill remaining budget.
+    for label, paths in (
+        ("trigger", trigger_by_size),
+        ("cited", cited_files),
     ):
         for p in paths:
             if p in seen or not os.path.exists(p):
                 continue
             seen.add(p)
+            if label == "trigger" and n_trigger_inlined >= max_trigger_inline:
+                skipped.append((p, label, f"trigger count cap ({n_trigger_inlined}/{max_trigger_inline} inlined; tool-fetch via read_file)"))
+                continue
             with open(p) as f:
                 content = f.read()
             entry = f"\n\n=== {p} ({label}) ===\n\n{content}"
             entry_chars = len(entry)
-            if not force and used_chars + entry_chars > char_budget:
+            if used_chars + entry_chars > char_budget:
                 skipped.append((p, label, f"budget ({used_chars:,} + {entry_chars:,} chars > {char_budget:,} cap)"))
                 continue
             parts.append(entry)
             included.append((p, label))
             used_chars += entry_chars
+            if label == "trigger":
+                n_trigger_inlined += 1
     return "".join(parts), included, skipped
 
 
