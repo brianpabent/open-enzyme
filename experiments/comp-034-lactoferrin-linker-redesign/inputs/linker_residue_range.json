@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "target": "Human lactoferrin (UniProt P02788) inter-lobe linker",
+    "fetch_date": "2026-05-16",
+    "primary_authority": "UniProt P02788 (TRFL_HUMAN), entry version 268, sequence version 6"
+  },
+  "linker_definition": {
+    "uniprot_numbering": {
+      "start": 353,
+      "end": 363,
+      "length": 11,
+      "sequence_wt": "SEEEVAARRAR"
+    },
+    "mature_protein_numbering": {
+      "start": 334,
+      "end": 344,
+      "length": 11,
+      "offset_from_uniprot": -19,
+      "_note": "Mature protein begins at UniProt position 20 after signal-peptide cleavage; subtract 19 to convert UniProt → mature."
+    },
+    "flanking_anchors": {
+      "n_lobe_last_residue_uniprot": 352,
+      "c_lobe_first_residue_uniprot": 364,
+      "n_lobe_last_residue_aa": "K",
+      "c_lobe_first_residue_aa": "V"
+    }
+  },
+  "boundary_justification": {
+    "primary_source": "UniProt P02788 FT DOMAIN annotations: N-lobe DOMAIN 25..352, C-lobe DOMAIN 364..695. Residues 353-363 are the inter-domain gap.",
+    "structural_corroboration": "PDB 1B0L (diferric hLf, 2.2 Å) shows residues 353-363 as a structured α-helix/turn segment bridging the two globular lobes. AlphaFold AF-P02788-F1 per-residue pLDDT for this segment is 93-98 (well-folded), NOT the disordered loop the brief's framing implies.",
+    "structural_observation_caveat": "AF pLDDT 93-98 for 353-363 contradicts the 'flexible loop' framing in wiki/lactoferrin.md §3.1 (which cites the lobe-lobe linker as a short α-helical linker). The wiki and PDB are correct — the WT linker is a STRUCTURED helix segment. The protease-resistance question is therefore not 'this loop is flexible and gets cleaved' but rather 'this exposed helix presents Arg/Lys/Ala/Val residues to bulk solvent at the inter-lobe groove, and is therefore preferentially targeted by ALP subtilisin in the koji environment.' Comp-005 confirms: 0 exposed ALP cleavage sites land in the mature-protein linker region directly (the 3 ALP exposed sites are all in surface loops elsewhere). The redesign rationale therefore shifts to PRECAUTIONARY: if any koji-environment partial unfolding occurs, the inter-lobe linker is the most plausible protease-presentation site because (a) it is geometrically exposed, (b) it contains 5 ALP-preferred residues out of 11, and (c) the RRAR cluster is a known subtilisin/trypsin-like recognition motif."
+  },
+  "wt_residue_composition": {
+    "SEEEVAARRAR": {
+      "S": [353],
+      "E": [354, 355, 356],
+      "V": [357],
+      "A": [358, 359, 362],
+      "R": [360, 361, 363]
+    }
+  },
+  "alp_preferred_residue_hits_in_wt": {
+    "P1_preferred_alp": ["L","F","Y","A","V","I","M","W","K","R","G","T","S"],
+    "wt_p1_matches_count": 11,
+    "wt_p1_matches_positions": [353, 357, 358, 359, 360, 361, 362, 363],
+    "_note": "S (Ser at 353), V (Val at 357), A (Ala at 358-359, 362), R (Arg at 360-361, 363) all match ALP P1 preference. Of the 11 residues, only the 3 Glu residues (354, 355, 356) are NOT in the ALP-preferred P1 set. The linker is highly enriched in ALP-cleavable residues."
+  },
+  "design_constraints": {
+    "preserve_flanking": "Residues 352 (K, end of N-lobe) and 364 (V, start of C-lobe) are FIXED — they anchor the lobe-lobe geometry.",
+    "preserve_length": "Length=11 residues kept constant. Length changes would shift C-lobe registry relative to N-lobe and disrupt the iron-binding geometry inherited from PDB 1B0L.",
+    "avoid_p1_preferred_for_proteases": "Strongly discourage L, F, Y, A, V, I, M, W, K, R, G, T, S at most positions (ALP P1) and L, F, I, V, M, A at the residue AFTER any potential cleavage point (NPr P1') AND F, L, Y, A, V, I as either P1 or P1' (acid protease).",
+    "permitted_aa_pool_preferred": ["E", "D", "N", "Q", "H", "P"],
+    "_pool_rationale": "E and D are negatively charged and not in any koji-protease preferred P1; N and Q are polar uncharged; H is mildly basic but not in ALP P1; P (proline) breaks any extended chain and inhibits cleavage at P1-P1' due to its imino structure. P is the strongest single-residue protease blocker known."
+  }
+}
