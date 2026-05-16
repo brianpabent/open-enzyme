@@ -203,7 +203,7 @@ For Open Enzyme: the cardiovascular signal is mechanistically consistent with th
 | Therapeutic index | Narrow (~3–5×) | Wide (food consumption) |
 | Cost | Generic, low | Ingredient cost only at scale |
 
-These are **complementary, not competing**. The Open Enzyme platform thesis explicitly positions engineered koji as **adjunct to allopurinol, not monotherapy replacement** (see [`open-enzyme-vision.md`](open-enzyme-vision.md)). The same logic applies to colchicine: even an effective continuous CP1a-targeted koji adjunct would not eliminate the need for acute flare rescue, because:
+These are **complementary, not competing**. The Open Enzyme platform thesis explicitly positions engineered koji as **adjunct to allopurinol, not monotherapy replacement** (see [`open-enzyme-vision.md`](etc/open-enzyme-vision.md)). The same logic applies to colchicine: even an effective continuous CP1a-targeted koji adjunct would not eliminate the need for acute flare rescue, because:
 
 1. CP1a suppression reduces priming, not crystal deposition or established flares
 2. Acute flares may still occur during ULT initiation (urate mobilization)
@@ -223,7 +223,7 @@ Plausibly testable hypothesis for the project: **engineered-koji prophylaxis on 
 - Mechanism context: [`nlrp3-inflammasome.md`](nlrp3-inflammasome.md), [`nlrp3-exploit-map.md`](nlrp3-exploit-map.md) (CP2, CP3)
 - Gout standard-of-care context: [`gout-deep-dive.md`](gout-deep-dive.md), [`gout-pathophysiology.md`](gout-pathophysiology.md)
 - Clinical pipeline comparator: [`gout-clinical-pipeline.md`](gout-clinical-pipeline.md)
-- Platform thesis: [`open-enzyme-vision.md`](open-enzyme-vision.md), [`engineered-koji-protocol.md`](engineered-koji-protocol.md)
+- Platform thesis: [`open-enzyme-vision.md`](etc/open-enzyme-vision.md), [`engineered-koji-protocol.md`](engineered-koji-protocol.md)
 - **Compounding pharmacy delivery route:** [`compounding-pharmacy-track.md`](compounding-pharmacy-track.md) — colchicine is a candidate for custom-dose compounding (pediatric/weight-based doses, liquid suspensions, fixed-dose combinations with allopurinol). (source: compounding-pharmacy-track.md)
 - Concept graph node: [`etc/GRAPH.md`](GRAPH.md) — should add edge `colchicine → CP3 (ASC speck block)` and `colchicine → CP2 (P2X7 inhibition)`
 

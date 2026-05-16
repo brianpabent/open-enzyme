@@ -271,7 +271,7 @@ Any future Phase 1/2 CRISPR-uricase trial protocol must include:
 3. **Flare endpoints alongside UA endpoints** as primary outcomes, not just secondary safety signals.
 4. **Stratification by tophus burden at baseline** — patients with extensive tophaceous gout may need 18–24+ months of prophylaxis vs. 3–6 months for those without visible deposits.
 
-### Implication for the [Open Enzyme](./open-enzyme-vision.md) platform
+### Implication for the [Open Enzyme](./etc/open-enzyme-vision.md) platform
 
 This positions the project's NLRP3 supplement-stack and engineered-koji work as **directly relevant to gene-therapy translation**, not just as a parallel track. Even if CRISPR-uricase advances to clinical use, the NLRP3 prophylaxis arm has a defined role in the post-therapy bridge — extending the platform's relevance into a regulatory pathway it doesn't directly enter.
 

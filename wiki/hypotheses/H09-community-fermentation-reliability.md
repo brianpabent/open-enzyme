@@ -16,12 +16,12 @@ tags:
   - riskiest-assumption
 related:
   - ../cross-validation.md
-  - ../open-source-platform.md
+  - ../etc/open-source-platform.md
   - ../engineered-koji-protocol.md
   - ../engineered-yeast-uricase-proposal.md
   - ../koji-endgame-strain.md
   - ../self-experiment-protocol.md
-  - ../open-enzyme-vision.md
+  - ../etc/open-enzyme-vision.md
   - ../validation-experiments.md
   - ../open-questions.md
   - ../../operations/ward-1995-lab-access.md
@@ -38,7 +38,7 @@ sources:
 
 # H09 — Community Fermentation Reliability (Stub)
 
-> **Stub status.** Committed at stub-level on 2026-05-15 to register the platform's #2 load-bearing scientific bet in the falsification-card directory and force the "what would kill this thesis" framing onto [`cross-validation.md` §Claim 5](../cross-validation.md) and [`open-source-platform.md` §"Open Questions — Reliability of Community Fermentation"](../open-source-platform.md). Full population (assumption stack, killshot menu, pre-committed thresholds, kill switches, failure-mode coverage map) is queued as Phase 2 — see "Open Follow-Ups" at the bottom of this file.
+> **Stub status.** Committed at stub-level on 2026-05-15 to register the platform's #2 load-bearing scientific bet in the falsification-card directory and force the "what would kill this thesis" framing onto [`cross-validation.md` §Claim 5](../cross-validation.md) and [`open-source-platform.md` §"Open Questions — Reliability of Community Fermentation"](../etc/open-source-platform.md). Full population (assumption stack, killshot menu, pre-committed thresholds, kill switches, failure-mode coverage map) is queued as Phase 2 — see "Open Follow-Ups" at the bottom of this file.
 >
 > Identified as the platform's **#2 riskiest assumption** in the 2026-05-13 sweep (`synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md`) with Pass 3 verdict "Push back" — the push-back was on a few citation paths (corrected here), not on the substantive claim. Sister card to [H08 — Gut-Lumen Sink Platform Thesis](./H08-gut-lumen-sink-platform-thesis.md): H08 is the *mechanism* risk (does the gut-lumen sink produce clinically meaningful SUA reduction?); H09 is the *delivery/production* risk (even if the mechanism works, can it be reliably home- and community-fermented at therapeutic doses?). Both must survive for the platform's accessibility thesis to hold.
 >
@@ -168,12 +168,12 @@ Tracked across the 6 follow-up surfaces per the walk-synthesis skill §5:
 ## Cross-References
 
 - [cross-validation.md §Claim 5](../cross-validation.md) — "As Easy as Sourdough" home-production thesis; 3/10 as stated, 6/10 reframed as Community-BioLab + Home-Fermentation; the canonical anchor this H09 card formalizes
-- [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](../open-source-platform.md) — strain stability, reproducibility, contamination, regulatory framework with mitigation sketches
+- [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](../etc/open-source-platform.md) — strain stability, reproducibility, contamination, regulatory framework with mitigation sketches
 - [engineered-koji-protocol.md](../engineered-koji-protocol.md) — the production protocol this card argues for the reliability of
 - [engineered-yeast-uricase-proposal.md §2](../engineered-yeast-uricase-proposal.md) — chromosomal integration vs. plasmid expression argument
 - [koji-endgame-strain.md](../koji-endgame-strain.md) — the multi-cassette engineered strain whose community-fermentation reliability this card tests
 - [self-experiment-protocol.md](../self-experiment-protocol.md) — Brian's n=1 home fermentation as the first informal community-trial data point
-- [open-enzyme-vision.md](../open-enzyme-vision.md) — platform vision that depends on H09 holding
+- [open-enzyme-vision.md](../etc/open-enzyme-vision.md) — platform vision that depends on H09 holding
 - [validation-experiments.md](../validation-experiments.md) — wet-lab home for the production-reliability protocols queued in P2-2 through P2-5
 - [`operations/ward-1995-lab-access.md`](../../operations/ward-1995-lab-access.md) — lab-access path that enables central QC infrastructure for the community-fermentation pilot (note: this file lives at `operations/`, not `wiki/` — Pass 2's path was wrong)
 - [open-questions.md](../open-questions.md) — meta-index entry for the residual open questions on this thesis

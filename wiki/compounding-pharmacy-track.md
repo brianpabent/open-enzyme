@@ -13,8 +13,8 @@ tags:
   - scope-page
   - first-principles
 related:
-  - open-enzyme-vision.md
-  - open-source-platform.md
+  - etc/open-enzyme-vision.md
+  - etc/open-source-platform.md
   - modality-chokepoint-matrix.md
   - engineered-koji-protocol.md
   - engineered-lbp-chassis.md
@@ -38,7 +38,7 @@ status: scoped (Phase 1)
 
 ## Why this page exists
 
-Open Enzyme's two parallel outputs (per [`open-enzyme-vision.md`](./open-enzyme-vision.md) §1–2) are (1) a **discovery engine** for chokepoint-to-intervention mapping, and (2) an **open-source strain library** as one synthesis of that engine. The discovery engine produces, among other things, a **repurposing surface** — FDA-approved drugs that hit gout-relevant chokepoints but were never clinically tested for gout (canonical examples: [disulfiram](./disulfiram.md) at CP6b GSDMD, zileuton at CP6a 5-LOX, avacopan at CP0 C5aR1).
+Open Enzyme's two parallel outputs (per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §1–2) are (1) a **discovery engine** for chokepoint-to-intervention mapping, and (2) an **open-source strain library** as one synthesis of that engine. The discovery engine produces, among other things, a **repurposing surface** — FDA-approved drugs that hit gout-relevant chokepoints but were never clinically tested for gout (canonical examples: [disulfiram](./disulfiram.md) at CP6b GSDMD, zileuton at CP6a 5-LOX, avacopan at CP0 C5aR1).
 
 The wiki has historically treated that repurposing surface as **scientifically interesting but operationally orphaned**: we identify a drug-chokepoint match, write it up, and move on. There is no canonical Open Enzyme path from "FDA-approved drug X hits gout chokepoint Y at off-label dose Z" to "patient can actually take it." That gap is exactly what the compounding pharmacy track closes.
 
@@ -201,7 +201,7 @@ The verification step (dissolution testing per USP <711>, content uniformity per
 
 ## Discovery-engine integration
 
-The compounding pharmacy track is the natural delivery mechanism for OE's **repurposing surface** output. The discovery engine identifies FDA-approved drugs hitting gout-relevant chokepoints (see [`open-enzyme-vision.md`](./open-enzyme-vision.md) §2.2 for the canonical framing). The current repurposing surface contains:
+The compounding pharmacy track is the natural delivery mechanism for OE's **repurposing surface** output. The discovery engine identifies FDA-approved drugs hitting gout-relevant chokepoints (see [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 for the canonical framing). The current repurposing surface contains:
 
 - **Disulfiram** (CP6b GSDMD) — approved for AUD; [`disulfiram.md`](./disulfiram.md)
 - **Zileuton** (CP6a 5-LOX) — approved for asthma
@@ -244,8 +244,8 @@ The honest summary: compounding pharmacy expands OE's *delivery menu* without ex
 
 ## Related
 
-- [Open Enzyme vision](./open-enzyme-vision.md) — §2.2 repurposing surface framing
-- [`open-source-platform.md` §External Service Acceleration](./open-source-platform.md) — names the productized-external-services pattern this page instantiates on the small-molecule / repurposing-surface side
+- [Open Enzyme vision](./etc/open-enzyme-vision.md) — §2.2 repurposing surface framing
+- [`open-source-platform.md` §External Service Acceleration](./etc/open-source-platform.md) — names the productized-external-services pattern this page instantiates on the small-molecule / repurposing-surface side
 - [Ginkgo Cloud Lab evaluation](./ginkgo-cloud-lab-evaluation.md) — the complementary external-service track on the strain-library / protein-validation side. Ginkgo answers "does the protein fold?"; compounding answers "can the small-molecule reach a patient?". Different sides of the platform, same pattern.
 - [Modality × Target Matrix](./modality-chokepoint-matrix.md) — small-molecule rows are the candidate cells for this track
 - [Disulfiram](./disulfiram.md) — canonical repurposing surface compound; the highest-priority compounding candidate currently in OE

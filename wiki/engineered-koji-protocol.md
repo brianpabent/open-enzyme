@@ -17,7 +17,7 @@ Research & Engineering Protocol
 |
 Brian Abent
 
-Part of the [Open Enzyme](open-enzyme-vision.md) project — the platform vision this protocol feeds into.
+Part of the [Open Enzyme](etc/open-enzyme-vision.md) project — the platform vision this protocol feeds into.
 
 ## 01 The Vision
 
@@ -768,7 +768,7 @@ This repositions the project into **two clear tracks**:
 - **Track A (Lynn, today):** Wild-type *A. oryzae* koji as a DIY digestive enzyme source. Replace pills with fermented rice. This works *now*.
 - **Track B (Brian, engineering required):** Engineered koji with the uaZ uricase gene—the dual-purpose strain described in this document. This is the stretch goal that makes koji a platform, not just a supplement replacement.
 
-See the full platform vision: [Open Enzyme Vision](open-enzyme-vision.md).
+See the full platform vision: [Open Enzyme Vision](etc/open-enzyme-vision.md).
 
 ### Hybrid Strategy
 
@@ -1002,7 +1002,7 @@ The submerged-culture path is de-risked. **The open question is whether the Ward
 
 - [spm-resolution-pathway.md](./spm-resolution-pathway.md) — CP5b resolution biology, lactoferrin as indirect ALX/FPR2 modulator, full literature upgrade note (Section 5).
 - [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) — CP5b chokepoint position; lactoferrin as first food-grade candidate.
-- [open-enzyme-vision.md](./open-enzyme-vision.md) — platform thesis; lactoferrin added the resolution leg the platform was missing.
+- [open-enzyme-vision.md](./etc/open-enzyme-vision.md) — platform thesis; lactoferrin added the resolution leg the platform was missing.
 - [validation-experiments.md](./validation-experiments.md) — Phase A feasibility experiment entry.
 
 (sources: Ward 1992 PMID 1368268, Ward 1995 PMID 9634791, Sun 1999 PMID 10089347, spm-resolution-pathway.md, synthesis archive 2026-04-24 Pass 2 Connection 4)
@@ -1126,9 +1126,9 @@ Brian & Lynn Abent · April 2026
 
 ### Open Enzyme Research Library
 
-This document is part of the [Open Enzyme](open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
+This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
 
-- [Open Enzyme Vision & Roadmap](open-enzyme-vision.md)
+- [Open Enzyme Vision & Roadmap](etc/open-enzyme-vision.md)
 - [Gout Deep Dive Research](gout-deep-dive.md)
 - [Enzyme Deficit Deep Dive](enzyme-deficit-deep-dive.md)
 - [NLRP3 Inflammasome Exploit Map](nlrp3-exploit-map.md)
@@ -1147,5 +1147,5 @@ This document is part of the [Open Enzyme](open-enzyme-vision.md) project — an
 - [Blood-Brain Barrier Exploits](blood-barrier-exploits.md)
 - [NLRP3 Exploit Map](nlrp3-exploit-map.md)
 - [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md)
-- [Open Enzyme Vision](open-enzyme-vision.md)
+- [Open Enzyme Vision](etc/open-enzyme-vision.md)
 - [AI/Bio Tools Playbook](ai-bio-tools-playbook.md)

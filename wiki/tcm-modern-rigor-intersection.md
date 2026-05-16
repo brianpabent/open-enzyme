@@ -24,7 +24,7 @@ related:
   - nlrp3-inhibitor-screen.md
   - engineered-lbp-chassis.md
   - sirna-urat1-modality.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
   - open-questions.md
   - ../synthesis/README.md
   - hypotheses/H04-tcm-rigor-intersection.md
@@ -47,7 +47,7 @@ status: scope-page
 
 The wiki already contains compounds with TCM lineage — but it doesn't name the lineage as a first-class organizing principle. **Oridonin** (`oridonin.md`) is from *Rabdosia rubescens* (冬凌草). **Berberine** (referenced across `nlrp3-inflammasome.md`, `supplements-stack.md`) is from *Coptis chinensis* (黄连). **EGCG** (`egcg.md`) is green tea (绿茶). **Theaflavins** (`theaflavins.md`) are black-tea oxidation products. **Curcumin** (multiple pages) is turmeric (姜黄), TCM-Ayurveda crossover. **Resveratrol** (`nlrp3-inhibitor-screen.md`, others) is from *Polygonum cuspidatum* (虎杖, Hu Zhang). All of these are part of TCM materia medica with documented historical use; the wiki treats them as modern bioactive small molecules without naming where the empirical signal originally came from.
 
-This page makes the lineage explicit — and frames it as a **discovery-engine output** the platform contributes mechanistic clarity to (per [`open-enzyme-vision.md`](./open-enzyme-vision.md) §2.2 two-output architecture: discovery engine + strain library). Open Enzyme's contribution is the methodology + chokepoint-mapped compound analysis + ChEMBL cross-check + falsification card discipline. Partner companies, supplement formulators, clinical researchers, or open-source recipe contributors take findings forward.
+This page makes the lineage explicit — and frames it as a **discovery-engine output** the platform contributes mechanistic clarity to (per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 two-output architecture: discovery engine + strain library). Open Enzyme's contribution is the methodology + chokepoint-mapped compound analysis + ChEMBL cross-check + falsification card discipline. Partner companies, supplement formulators, clinical researchers, or open-source recipe contributors take findings forward.
 
 The reframe matters because **TCM is the largest empirical dataset in human history.** Two-thousand-plus years of observation × millions of patient-trial-equivalents = an enormous prior. Modern mechanistic biology lets us re-derive what was real signal vs. confounded noise. This is **not "alternative medicine"** — it's mining a vast empirical dataset with modern tools.
 
@@ -238,7 +238,7 @@ Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked
 - [`gut-lumen-sink.md`](./gut-lumen-sink.md) — the gut-luminal mechanism thesis that fits TCM bioavailability honestly (rule #3)
 - [`oridonin.md`](./oridonin.md), [`egcg.md`](./egcg.md), [`theaflavins.md`](./theaflavins.md), [`supplements-stack.md`](./supplements-stack.md), [`nlrp3-inhibitor-screen.md`](./nlrp3-inhibitor-screen.md) — existing wiki pages on TCM-lineage compounds
 - [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — sister peer-track scope pages under chase-every-avenue
-- [`open-enzyme-vision.md`](./open-enzyme-vision.md) §2.2 — discovery-engine output / repurposing surface
+- [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 — discovery-engine output / repurposing surface
 - [`open-questions.md`](./open-questions.md) — meta-index where the TCM Phase 2 follow-ups will be tracked
 - [`computational-experiments.md`](./computational-experiments.md) — **comp-013** (Phase 2 P2-2 closed 2026-05-06) Analyses table
 - [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) — **comp-013 interpretive page** (per-compound triage verdicts, methodology adaptation notes, cross-cutting findings)

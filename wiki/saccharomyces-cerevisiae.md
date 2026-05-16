@@ -8,12 +8,12 @@ aliases:
 related:
   - uricase
   - aspergillus-oryzae
-  - open-enzyme-vision
+  - etc/open-enzyme-vision
   - engineered-yeast-uricase-proposal
   - delivery-formats
 sources:
   - engineered-yeast-uricase-proposal.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
   - gout-deep-dive.md
   - nlrp3-exploit-map.md
 ---
@@ -22,7 +22,7 @@ sources:
 
 ## Overview
 
-*Saccharomyces cerevisiae* is the most genetically tractable eukaryotic organism on Earth, with GRAS (Generally Recognized As Safe) status from the FDA and a millennia-long history of safe use in baking and brewing. It holds unparalleled advantages for rapid development of engineered therapeutic enzyme producers: a mature toolkit of characterized promoters, selectable markers, transformation protocols, and expression systems. Critically, the exact gene-host combination of *Aspergillus flavus* uricase expressed in *S. cerevisiae* forms the basis of **rasburicase (Elitek/Fasturtec)**, the FDA-approved intravenous uricase drug used since 2002. This means the proof-of-concept already exists as an approved pharmaceutical. The novel contribution of the [[open-enzyme-vision|Open Enzyme project]] is repurposing this same gene-host combination for oral, food-based delivery rather than IV administration. (Source: engineered-yeast-uricase-proposal.md, open-enzyme-vision.md)
+*Saccharomyces cerevisiae* is the most genetically tractable eukaryotic organism on Earth, with GRAS (Generally Recognized As Safe) status from the FDA and a millennia-long history of safe use in baking and brewing. It holds unparalleled advantages for rapid development of engineered therapeutic enzyme producers: a mature toolkit of characterized promoters, selectable markers, transformation protocols, and expression systems. Critically, the exact gene-host combination of *Aspergillus flavus* uricase expressed in *S. cerevisiae* forms the basis of **rasburicase (Elitek/Fasturtec)**, the FDA-approved intravenous uricase drug used since 2002. This means the proof-of-concept already exists as an approved pharmaceutical. The novel contribution of the [[open-enzyme-vision|Open Enzyme project]] is repurposing this same gene-host combination for oral, food-based delivery rather than IV administration. (Source: engineered-yeast-uricase-proposal.md, etc/open-enzyme-vision.md)
 
 ## GRAS Status and Food Safety
 
@@ -259,7 +259,7 @@ The 2025 *S. boulardii* group's reported 365 μmol/h/OD suggests more efficient 
 
 ## Platform Positioning — Koji-First, Yeast Retained for Specific Modules
 
-The Open Enzyme platform is **koji-first** (*A. oryzae* as primary host) for the therapeutic stack, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized or more likely to succeed. This is an empirical, not ideological, distinction. (source: open-enzyme-vision.md, §4)
+The Open Enzyme platform is **koji-first** (*A. oryzae* as primary host) for the therapeutic stack, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized or more likely to succeed. This is an empirical, not ideological, distinction. (source: etc/open-enzyme-vision.md, §4)
 
 **When yeast is the right choice:**
 - Tetrameric proteins where the rasburicase precedent (13% of total cellular protein in *S. cerevisiae*) is directly applicable
@@ -272,7 +272,7 @@ The Open Enzyme platform is **koji-first** (*A. oryzae* as primary host) for the
 - Multi-enzyme products where native lipase/protease/amylase production is needed alongside engineered targets
 - Home-fermentation formats where solid-state rice fermentation is simpler than liquid culture
 
-(source: open-enzyme-vision.md, §4)
+(source: etc/open-enzyme-vision.md, §4)
 
 ## Comparison to Aspergillus oryzae
 
@@ -287,7 +287,7 @@ The Open Enzyme platform is **koji-first** (*A. oryzae* as primary host) for the
 | **Therapeutic credibility** | Very high (rasburicase precedent) | Very high (GRAS, ancient safety history) |
 | **Strategic role** | Retained for specific modules (tetrameric proteins, ursolic acid, carnosine) | **Primary platform** (koji-first) |
 
-For the [Open Enzyme platform](./open-enzyme-vision.md), *A. oryzae* is the **primary host** (koji-first) because of the dual-enzyme advantage (uricase + native digestive enzymes), secretion capacity advantage (~10×), and simpler home fermentation. *S. cerevisiae* is retained for specific modules where the yeast expression path is better characterized or where koji expression fails or yields are inadequate. (source: open-enzyme-vision.md, §4; engineered-yeast-uricase-proposal.md)
+For the [Open Enzyme platform](./etc/open-enzyme-vision.md), *A. oryzae* is the **primary host** (koji-first) because of the dual-enzyme advantage (uricase + native digestive enzymes), secretion capacity advantage (~10×), and simpler home fermentation. *S. cerevisiae* is retained for specific modules where the yeast expression path is better characterized or where koji expression fails or yields are inadequate. (source: etc/open-enzyme-vision.md, §4; engineered-yeast-uricase-proposal.md)
 
 ## Immunogenicity Considerations
 
@@ -352,5 +352,5 @@ See [[ai-analysis/04-codon-optimization-expression-cassette|04 — Codon Optimiz
 ## References
 
 - Source: engineered-yeast-uricase-proposal.md — Detailed technical proposal, dosing math, delivery format analysis, validation experiments
-- Source: open-enzyme-vision.md — Platform vision and strategic positioning
+- Source: etc/open-enzyme-vision.md — Platform vision and strategic positioning
 - Source: gout-deep-dive.md — Uric acid biology and treatment context

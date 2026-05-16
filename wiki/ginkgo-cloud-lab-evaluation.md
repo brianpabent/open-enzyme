@@ -202,6 +202,6 @@ No clinical, animal, or in vitro evidence is generated on this page. The recomme
 
 ## Related
 
-- [`open-source-platform.md` §External Service Acceleration](./open-source-platform.md) — names the productized-external-services pattern this page instantiates on the strain-library side.
+- [`open-source-platform.md` §External Service Acceleration](./etc/open-source-platform.md) — names the productized-external-services pattern this page instantiates on the strain-library side.
 - [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) — the complementary external-service track on the small-molecule / repurposing-surface side. Ginkgo answers "does the protein fold?"; compounding answers "can the small-molecule reach a patient?". Different sides of the platform, same pattern.
 - [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) — the academic-collaboration wet-lab path; Ginkgo's $39 pre-gate sits *upstream* of this path, not in competition with it.

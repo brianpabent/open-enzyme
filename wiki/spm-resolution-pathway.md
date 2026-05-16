@@ -30,7 +30,7 @@ related:
   - lactoferrin.md
   - self-experiment-protocol.md
   - open-questions.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
 sources:
   - "Zaninelli TH, Fattori V, Saraiva-Santos T, et al. Br J Pharmacol 2022;179(18):4500-4515 (PMID: 35716378)"
   - "Jiang H, Song D, Zhou X, et al. Mol Med 2023;29(1):158 (PMID: 37996809)"

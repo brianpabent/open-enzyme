@@ -345,7 +345,7 @@ This reinforces: gout susceptibility isn't just about urate levels—it's about 
 - **Solution #1:** [[engineered-yeast-uricase]] and [[engineered-koji-protocol]] address the root genetic deficit by providing active uricase
 - **Solution #2:** [[nlrp3-inflammasome]] suppression stack and [[supplements-stack]] target the inflammatory cascade to prevent flares while uricase is being optimized
 
-The multi-attack strategy (Source: open-enzyme-vision.md, §9):
+The multi-attack strategy (Source: etc/open-enzyme-vision.md, §9):
 1. **Remove the cause:** Engineered yeast degrading uric acid
 2. **Defuse the bomb:** NLRP3 inflammasome suppression stack
 3. **Heal the damage:** Peptides for tissue repair (BPC-157, TB-500)

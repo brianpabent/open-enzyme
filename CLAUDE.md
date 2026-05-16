@@ -267,7 +267,7 @@ Treat the wiki sweep, every literature scan, every subagent research task, and e
 
 #### Translation protocol (two-model independent cross-check + inline disagreement annotations)
 
-When ingesting non-English source material, **translate with two independent models** (different vendors, ideally different training pipelines) and produce an annotated translation that surfaces disagreements rather than collapsing them. Same multi-vendor cross-check discipline the wiki sweep daemon already uses (Pass 1 Propagate + Pass 2 Synthesize + Pass 3 Review across DeepSeek / DeepSeek-or-Gemini / OpenAI per `wiki/open-source-platform.md` §"Multi-model synthesis as guard against epistemic homogenization"). Translation has the same homogenization risk; the same heterogeneity guard applies.
+When ingesting non-English source material, **translate with two independent models** (different vendors, ideally different training pipelines) and produce an annotated translation that surfaces disagreements rather than collapsing them. Same multi-vendor cross-check discipline the wiki sweep daemon already uses (Pass 1 Propagate + Pass 2 Synthesize + Pass 3 Review across DeepSeek / DeepSeek-or-Gemini / OpenAI per `wiki/etc/open-source-platform.md` §"Multi-model synthesis as guard against epistemic homogenization"). Translation has the same homogenization risk; the same heterogeneity guard applies.
 
 **Operational pattern:**
 

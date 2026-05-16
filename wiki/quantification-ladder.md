@@ -5,7 +5,7 @@ tags: [methodology, quality, open-source, distributed-rigor, sop, infrastructure
 related:
   - enzyme-quantification-protocol.md
   - medicinal-mushroom-extract-sops.md
-  - open-source-platform.md
+  - etc/open-source-platform.md
 ---
 
 # Quantification Ladder
@@ -54,4 +54,4 @@ The ladder also catches a specific class of failure: dose-vs-product-content mis
 - **[`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md)**: closed-loop n=1 pharmacogenomics workflow that composes this ladder (steps 3–4: Tier 2 batch QC + calibrated dose) with genotype-informed compound selection and biomarker tracking. The user-facing entry point that walks the whole pipeline end-to-end.
 - [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md): canonical first instantiation; koji digestive enzymes (lipase, amylase, protease).
 - [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-6: second instantiation; cordycepin, EGT, GLPP.
-- [`open-source-platform.md`](./open-source-platform.md): platform-level quality methodologies; this ladder is one of them.
+- [`open-source-platform.md`](./etc/open-source-platform.md): platform-level quality methodologies; this ladder is one of them.

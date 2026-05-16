@@ -21,8 +21,8 @@ related:
   - gout-clinical-pipeline.md
   - gsdmd-pore-delivery-paradox.md
   - purine-degrading-bacteria.md
-  - open-enzyme-vision.md
-  - open-source-platform.md
+  - etc/open-enzyme-vision.md
+  - etc/open-source-platform.md
 sources:
   - "2026-05-15 conversation: 'are we exploring all available delivery mechanisms, or do we have blinders because of the oral koji chassis?'"
   - "Existing wiki coverage: uricase.md §Hydrogen Peroxide Byproduct; engineered-koji-protocol.md §The Hydrogen Peroxide Question; aspergillus-oryzae.md §Hydrogen Peroxide Byproduct Management; bpc-157.md §Delivery Routes; peptide-gout-addendum.md §Delivery Routes and Bioavailability; compounding-pharmacy-track.md"

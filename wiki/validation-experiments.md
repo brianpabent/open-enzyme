@@ -1,8 +1,8 @@
 ---
 title: Validation Experiments
 aliases: [experiments, validation, testing phases]
-related: [engineered-yeast-uricase-proposal, engineered-koji-protocol, open-source-platform, supplements-stack]
-sources: [engineered-yeast-uricase-proposal.md, engineered-koji-protocol.md, open-enzyme-vision.md, nlrp3-exploit-map.md, gout-deep-dive.md]
+related: [engineered-yeast-uricase-proposal, engineered-koji-protocol, etc/open-source-platform, supplements-stack]
+sources: [engineered-yeast-uricase-proposal.md, engineered-koji-protocol.md, etc/open-enzyme-vision.md, nlrp3-exploit-map.md, gout-deep-dive.md]
 ---
 
 # Validation Experiments
@@ -53,7 +53,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§1.18](#118-native-koji-enzyme-sgf-survival--free-extract-vs-whole-biomass-2-arm) | Native koji enzyme SGF (free extract vs. whole biomass) | In Vitro | $300–500 | 2 | Proposed | [koji-home-fermentation](./koji-home-fermentation.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md) |
 | [§1.19](#119-methodological-standard--rodent-cellular-ic50-translation-caveat) | Methodology — rodent cellular IC50 translation caveat | Standing | $0 | ongoing | Standing | [chembl-cross-check](./etc/chembl-cross-check.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md) |
 | [§1.20](#120-lactoferrin--egcg-cp1a-super-additivity-assay-thp-1-macrophage-23-dose-matrix) | Lactoferrin + EGCG CP1a super-additivity (THP-1 2×3 matrix) — **gated on §1.9** | In Vitro | $1,500 | 3–4 | Proposed | [lactoferrin](./lactoferrin.md), [egcg](./egcg.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [koji-endgame-strain](./koji-endgame-strain.md) |
-| [§1.21](#121-natural-product-c5ar1-antagonist-screening--computational-pass-closes-the-cp0-fermentable-coverage-question) | Natural-product C5aR1 antagonist screen (CP0 fermentable-coverage question) | Computational | $0 | 0.5 | **Closed (negative, 2026-04-27)** | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [open-enzyme-vision](./open-enzyme-vision.md) |
+| [§1.21](#121-natural-product-c5ar1-antagonist-screening--computational-pass-closes-the-cp0-fermentable-coverage-question) | Natural-product C5aR1 antagonist screen (CP0 fermentable-coverage question) | Computational | $0 | 0.5 | **Closed (negative, 2026-04-27)** | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [open-enzyme-vision](./etc/open-enzyme-vision.md) |
 | [§1.22](#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue) | Gut-selective food-grade HDAC inhibitor screen for Q141K-ABCG2 trafficking rescue | In Vitro | $5,000–8,000 | 8–10 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [supplements-stack](./supplements-stack.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.23](#123-androgen--msu--nlrp3-in-macrophages--tiered-mechanistic-protocol) | Androgen × MSU × NLRP3 macrophage tiered protocol (T1 THP-1 / T2 PBMC / T3 mouse air-pouch) — fills literature gap | In Vitro | $5–10K (T1); $105–160K (full cascade) | 6–8 (T1); ~12 mo (full) | Proposed | [androgen-urate-axis](./androgen-urate-axis.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 | [§1.24](#124-carnosine-co-expression-validation-in-a-oryzae-koji-endgame-optional-third-cassette) | Carnosine co-expression in *A. oryzae* (koji endgame optional third cassette) | In Vitro | $1,500–2,500 | 4–6 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [carnosine](./carnosine.md), [androgen-urate-axis](./androgen-urate-axis.md) |
@@ -62,11 +62,11 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§2.3](#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model) | Engineered koji EPI model | Animal | $6,000–10,000 | 8–10 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md) |
 | [§2.4](#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model) | NLRP3 inhibition in MSU arthritis model | Animal | $10,000–15,000 | 10–12 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [gout-deep-dive](./gout-deep-dive.md), [supplements-stack](./supplements-stack.md) |
 | [§2.5](#25-pulse-probiotic-validation-in-hyperuricemic-mice) | PULSE probiotic validation (hyperuricemic mice) | Animal | $5,000–8,000 | 8 | Proposed | [gout-deep-dive](./gout-deep-dive.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [gut-lumen-sink](./gut-lumen-sink.md) |
-| [§3.1](#31-brian-engineered-yeast-uricase--serum-uric-acid--flare-tracking) | Brian: engineered yeast uricase tracking | Human | $200–400 | 20 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md) |
-| [§3.2](#32-brian-nlrp3-inflammasome-suppression-stack--biomarker-panel) | Brian: NLRP3 suppression stack biomarker panel | Human | $700–1,400 | 20 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md) |
-| [§3.3](#33-lynn-wild-type-koji-digestive-enzyme-supplementation) | Lynn: wild-type koji digestive enzyme trial | Human | $600–1,000 | 12 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md), [koji-home-fermentation](./koji-home-fermentation.md) |
-| [§3.4](#34-joint-trial-engineered-koji-both-users) | Joint trial: engineered koji (both users) | Human | $300–500 | 14 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md) |
-| [§3.5](#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension) | Long-term flare prevention (Brian, 6-mo extension) | Human | $400–600 | 26 | Proposed | [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md), [gout-deep-dive](./gout-deep-dive.md) |
+| [§3.1](#31-brian-engineered-yeast-uricase--serum-uric-acid--flare-tracking) | Brian: engineered yeast uricase tracking | Human | $200–400 | 20 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./etc/open-enzyme-vision.md) |
+| [§3.2](#32-brian-nlrp3-inflammasome-suppression-stack--biomarker-panel) | Brian: NLRP3 suppression stack biomarker panel | Human | $700–1,400 | 20 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./etc/open-enzyme-vision.md) |
+| [§3.3](#33-lynn-wild-type-koji-digestive-enzyme-supplementation) | Lynn: wild-type koji digestive enzyme trial | Human | $600–1,000 | 12 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./etc/open-enzyme-vision.md), [koji-home-fermentation](./koji-home-fermentation.md) |
+| [§3.4](#34-joint-trial-engineered-koji-both-users) | Joint trial: engineered koji (both users) | Human | $300–500 | 14 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [open-enzyme-vision](./etc/open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md) |
+| [§3.5](#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension) | Long-term flare prevention (Brian, 6-mo extension) | Human | $400–600 | 26 | Proposed | [open-enzyme-vision](./etc/open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md), [gout-deep-dive](./gout-deep-dive.md) |
 | [§3.6](#36-brian-urinary-ltb4-assay--validating-quercetins-5-lox-cp6a-mechanism-in-vivo) | Brian: urinary LTB4 (quercetin CP6a in vivo) | Human | $150–300 | 12 | Proposed | [self-experiment-protocol](./self-experiment-protocol.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [synthesis/](../synthesis/README.md) |
 | [§3.7](#37-brian-serum-c5a-baseline--week-12--validating-cp0-complement-priming-status) | Brian: serum C5a baseline + week 12 (CP0) | Human | $300–400 | 12 | Proposed | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 | [§3.8](#38-brian-dha-vs-epa-split-omega-3-crossover--resolving-the-gout-specific-spm-precursor-question) | Brian: DHA vs. EPA omega-3 crossover | Human | $550–700 | 9 | Proposed | [spm-resolution-pathway](./spm-resolution-pathway.md), [supplements-stack](./supplements-stack.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [self-experiment-protocol](./self-experiment-protocol.md) |
@@ -825,9 +825,9 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Status**: Closed (negative result, 2026-04-27) | **Cost**: $0 | **Weeks**: 0.5 | **Phase**: 1 (computational, complete)
 
-**Affected wiki**: [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) (CP0), [open-enzyme-vision](./open-enzyme-vision.md) (CP0 gap statement).
+**Affected wiki**: [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) (CP0), [open-enzyme-vision](./etc/open-enzyme-vision.md) (CP0 gap statement).
 
-**What it tests:** The Open Enzyme platform has a structural gap at **CP0** — the complement-priming chokepoint where MSU crystals → classical-pathway activation → C5a → C5aR1 binding on neutrophils/macrophages → non-transcriptional NLRP3 priming. CP0 is the upstream-most chokepoint in the gout cascade, and the engineered koji / yeast / supplements stack has zero coverage at this step (see [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9 for the full gap analysis and [`open-enzyme-vision.md`](./open-enzyme-vision.md) "CP0 gap — honest acknowledgment"). Avacopan (Tavneos, FDA-approved 2021 for ANCA vasculitis, oral C5aR1 allosteric antagonist) is the pharma adjunct here — and it is a synthetic small molecule, not a natural-product analog. This experiment runs a fast, free computational scan to either (a) surface a natural-product C5aR1 antagonist worth wet-lab triage — opening a fermentable lead at CP0 — or (b) definitively close the door on natural-product CP0 coverage and lock in "CP0 requires a pharma adjunct" as the platform thesis. The hit-rate prior was low: known C5aR1 antagonists are dominated by synthetic constrained peptides (PMX-53 series, JPE-1375) and synthetic small-molecule allosterics (avacopan, NDT-9513727, JNJ-27141491); the binding pocket is not a typical plant-secondary-metabolite scaffold target. Negative result was the expected and operationally useful outcome.
+**What it tests:** The Open Enzyme platform has a structural gap at **CP0** — the complement-priming chokepoint where MSU crystals → classical-pathway activation → C5a → C5aR1 binding on neutrophils/macrophages → non-transcriptional NLRP3 priming. CP0 is the upstream-most chokepoint in the gout cascade, and the engineered koji / yeast / supplements stack has zero coverage at this step (see [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9 for the full gap analysis and [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) "CP0 gap — honest acknowledgment"). Avacopan (Tavneos, FDA-approved 2021 for ANCA vasculitis, oral C5aR1 allosteric antagonist) is the pharma adjunct here — and it is a synthetic small molecule, not a natural-product analog. This experiment runs a fast, free computational scan to either (a) surface a natural-product C5aR1 antagonist worth wet-lab triage — opening a fermentable lead at CP0 — or (b) definitively close the door on natural-product CP0 coverage and lock in "CP0 requires a pharma adjunct" as the platform thesis. The hit-rate prior was low: known C5aR1 antagonists are dominated by synthetic constrained peptides (PMX-53 series, JPE-1375) and synthetic small-molecule allosterics (avacopan, NDT-9513727, JNJ-27141491); the binding pocket is not a typical plant-secondary-metabolite scaffold target. Negative result was the expected and operationally useful outcome.
 
 **Proposed in:** `synthesis/` (architecture: synthesis/README.md) 2026-04-24 sweep (25-file v1.2 batch), Connection #2 + Proposed Experiment #3. Run on 2026-04-27.
 
@@ -859,7 +859,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Re-open conditions:** (a) a new ChEMBL release (v35+) curates a sub-μM natural-product C5aR1 antagonist with primary-literature wet-lab confirmation; (b) a primary-literature paper reports a fermentable C5aR1 antagonist with functional cell-based or in vivo evidence; (c) avacopan loses regulatory or supply availability, raising the value of even weak fermentable backups; (d) the Shaikh & Siu 2016 group (or an independent group) publishes the long-promised in vitro validation of acteoside on C5aR1-expressing cells. Until one of these triggers, the CP0 question stays closed and the platform thesis stays "Open Enzyme covers crystal elimination upstream of CP0 + downstream chokepoints CP1–CP6; avacopan covers CP0 itself."
 
-**Cross-references:** [complement-c5a-gout.md](./complement-c5a-gout.md) §9 (CP0 platform gap) + §10 (natural-product modulator literature); [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) (CP0 chokepoint); [open-enzyme-vision.md](./open-enzyme-vision.md) ("CP0 gap — honest acknowledgment"); [synthesis/](../synthesis/README.md) 2026-04-24 Connection #2 + Proposed Experiment #3. Source: ChEMBL CHEMBL2373 (April 2026); Open Targets ENSG00000197405; Shaikh F, Siu SWI. *Med Chem Res* 25:1564–1573 (2016, PMID 27499603); Mishra et al. *J Biomol Struct Dyn* 2020 (PMID 32131707).
+**Cross-references:** [complement-c5a-gout.md](./complement-c5a-gout.md) §9 (CP0 platform gap) + §10 (natural-product modulator literature); [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) (CP0 chokepoint); [open-enzyme-vision.md](./etc/open-enzyme-vision.md) ("CP0 gap — honest acknowledgment"); [synthesis/](../synthesis/README.md) 2026-04-24 Connection #2 + Proposed Experiment #3. Source: ChEMBL CHEMBL2373 (April 2026); Open Targets ENSG00000197405; Shaikh F, Siu SWI. *Med Chem Res* 25:1564–1573 (2016, PMID 27499603); Mishra et al. *J Biomol Struct Dyn* 2020 (PMID 32131707).
 
 ---
 
@@ -1507,11 +1507,11 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Status**: Proposed | **Cost**: $200–400 | **Weeks**: 20 | **Phase**: 3
 
-**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md)
+**Affected wiki**: [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./etc/open-enzyme-vision.md)
 
 **What it tests:** Does daily oral engineered yeast reduce serum uric acid and gout flare frequency in the primary user?
 
-**Proposed in:** engineered-yeast-uricase-proposal.md (§5), open-enzyme-vision.md (§8)
+**Proposed in:** engineered-yeast-uricase-proposal.md (§5), etc/open-enzyme-vision.md (§8)
 
 **Protocol:**
 - Brian (primary user with gout) takes engineered yeast supplement daily
@@ -1543,11 +1543,11 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Status**: Proposed | **Cost**: $700–1,400 | **Weeks**: 20 | **Phase**: 3
 
-**Affected wiki**: [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md)
+**Affected wiki**: [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./etc/open-enzyme-vision.md)
 
 **What it tests:** Does the multi-compound NLRP3 stack reduce inflammatory markers and flare severity?
 
-**Proposed in:** nlrp3-exploit-map.md, open-enzyme-vision.md (§9)
+**Proposed in:** nlrp3-exploit-map.md, etc/open-enzyme-vision.md (§9)
 
 **Protocol:**
 - Brian takes NLRP3 suppression stack (BHB/exogenous ketones + KPV nasal spray + BPC-157 nasal spray + sulforaphane + oridonin + omega-3 + NAC, dosed per [[supplements-stack]])
@@ -1581,11 +1581,11 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Status**: In Progress (PERT-timing phase active 2026-04-19 → present) | **Cost**: $600–1,000 | **Weeks**: 12 | **Phase**: 3
 
-**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./open-enzyme-vision.md), [koji-home-fermentation](./koji-home-fermentation.md), [digestive-enzyme-optimization](./digestive-enzyme-optimization.md)
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./etc/open-enzyme-vision.md), [koji-home-fermentation](./koji-home-fermentation.md), [digestive-enzyme-optimization](./digestive-enzyme-optimization.md)
 
 **What it tests:** Does traditional koji effectively supplement digestive enzymes in EPI/SIBO?
 
-**Proposed in:** engineered-koji-protocol.md, open-enzyme-vision.md (§4); practical protocol in [koji-home-fermentation.md](./koji-home-fermentation.md) (koji-kin → koji rice → shio-koji / amazake). (source: koji-home-fermentation.md)
+**Proposed in:** engineered-koji-protocol.md, etc/open-enzyme-vision.md (§4); practical protocol in [koji-home-fermentation.md](./koji-home-fermentation.md) (koji-kin → koji rice → shio-koji / amazake). (source: koji-home-fermentation.md)
 
 **Interim findings — PERT-timing sub-experiment (2026-04-19 → present, ~30 meals tracked):**
 A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FIP lipase per capsule) dose and timing has been running in parallel. **Evidence level: Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only.** (source: digestive-enzyme-optimization.md)
@@ -1629,11 +1629,11 @@ A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FI
 
 **Status**: Proposed | **Cost**: $300–500 | **Weeks**: 14 | **Phase**: 3
 
-**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md)
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [open-enzyme-vision](./etc/open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md)
 
 **What it tests:** Does engineered koji providing both digestive enzymes and uricase work as a dual-purpose therapeutic food?
 
-**Proposed in:** engineered-koji-protocol.md, open-enzyme-vision.md (§4, dual-enzyme vision)
+**Proposed in:** engineered-koji-protocol.md, etc/open-enzyme-vision.md (§4, dual-enzyme vision)
 
 **Protocol:**
 - Both Brian and Lynn take engineered koji daily for 12 weeks
@@ -1669,11 +1669,11 @@ A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FI
 
 **Status**: Proposed | **Cost**: $400–600 | **Weeks**: 26 | **Phase**: 3
 
-**Affected wiki**: [open-enzyme-vision](./open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md), [gout-deep-dive](./gout-deep-dive.md)
+**Affected wiki**: [open-enzyme-vision](./etc/open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md), [gout-deep-dive](./gout-deep-dive.md)
 
 **What it tests:** Does uricase supplementation provide sustained reduction in gout flares?
 
-**Proposed in:** open-enzyme-vision.md (§8)
+**Proposed in:** etc/open-enzyme-vision.md (§8)
 
 **Protocol:**
 - After Phase 3.1 completes successfully, continue engineered yeast supplementation for additional 6 months
@@ -1850,7 +1850,7 @@ A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FI
 
 **Status**: Proposed | **Cost**: ~$50 | **Weeks**: 0.1 per run (single 2-hour session); ~4 wk gap between baseline and post-intervention | **Phase**: 3
 
-**Affected wiki**: [fructose-connection](./fructose-connection.md), [self-experiment-protocol](./self-experiment-protocol.md), [synthesis/](../synthesis/README.md), [open-enzyme-vision](./open-enzyme-vision.md)
+**Affected wiki**: [fructose-connection](./fructose-connection.md), [self-experiment-protocol](./self-experiment-protocol.md), [synthesis/](../synthesis/README.md), [open-enzyme-vision](./etc/open-enzyme-vision.md)
 
 **What it tests:** Whether engineered uricase is active in the gut in real-time, using a fructose bolus as a predictable acute UA challenge. Per [fructose-connection.md](./fructose-connection.md), oral fructose loads generate a serum UA spike within 60–120 min via the unregulated KHK pathway. A blunted post-fructose UA spike after starting koji therapy directly validates uricase action in the gut — without waiting weeks for baseline UA to drift on chronic monitoring.
 

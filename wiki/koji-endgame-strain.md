@@ -23,7 +23,7 @@ related:
   - uricase-variant-selection.md
   - aspergillus-oryzae.md
   - nlrp3-exploit-map.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
   - validation-experiments.md
   - complement-c5a-gout.md
   - spm-resolution-pathway.md
@@ -490,7 +490,7 @@ Related Open Enzyme pages providing upstream context:
 - [uricase-variant-selection.md](./uricase-variant-selection.md) — the *A. flavus* vs. *C. utilis* source-gene analysis.
 - [aspergillus-oryzae.md](./aspergillus-oryzae.md) — native kojic acid + ergothioneine titer data.
 - [validation-experiments.md](./validation-experiments.md) — the consolidated experiment queue including the §3 feasibility test as Experiment 1.9.
-- [open-enzyme-vision.md](./open-enzyme-vision.md) — platform thesis; endgame strain is the Year 2–3 target.
+- [open-enzyme-vision.md](./etc/open-enzyme-vision.md) — platform thesis; endgame strain is the Year 2–3 target.
 
 ---
 

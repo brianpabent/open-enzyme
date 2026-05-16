@@ -374,7 +374,7 @@ A. oryzae produces multiple protease classes with distinct pH optima:
 
 **n=1 PERT-timing findings (household self-experiment, ongoing 2026-04-19 → present):**
 
-The project's EPI persona (Lynn — see [open-enzyme-vision.md](./open-enzyme-vision.md)) is running a structured self-experiment on BoulderBio dose and timing. Early findings (3 weeks of daily logs, ~30 meals tracked):
+The project's EPI persona (Lynn — see [open-enzyme-vision.md](./etc/open-enzyme-vision.md)) is running a structured self-experiment on BoulderBio dose and timing. Early findings (3 weeks of daily logs, ~30 meals tracked):
 
 | Variant | Protocol | Outcome |
 |---|---|---|

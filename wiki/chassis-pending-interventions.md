@@ -12,8 +12,8 @@ related:
   - modality-chokepoint-matrix.md
   - delivery-route-matrix.md
   - gout-kill-chain-delivery-routes.md
-  - open-enzyme-vision.md
-  - open-source-platform.md
+  - etc/open-enzyme-vision.md
+  - etc/open-source-platform.md
   - purine-degrading-bacteria.md
   - sirna-urat1-modality.md
   - engineered-lbp-chassis.md

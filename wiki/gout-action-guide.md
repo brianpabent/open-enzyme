@@ -5,7 +5,7 @@ tags: ["application-surface", "patient-guide", "gout", "stack-design", "decision
 related:
   - supplements-stack.md
   - gout-pathophysiology.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
   - self-experiment-protocol.md
   - personal-genome-protocol.md
 status: application-surface
@@ -202,7 +202,7 @@ See [synthesis/strategic-reflections/](../synthesis/strategic-reflections/) for 
 
 - [Supplements stack catalog](./supplements-stack.md) — per-compound depth, dose, contraindications, drug interactions, stack-level antagonisms
 - [Gout pathophysiology](./gout-pathophysiology.md) — multi-track urate transporter coverage map; mechanisms behind the actions on this page
-- [Open Enzyme vision](./open-enzyme-vision.md) — the platform's broader thesis and pipeline
+- [Open Enzyme vision](./etc/open-enzyme-vision.md) — the platform's broader thesis and pipeline
 - [Self-experiment protocol](./self-experiment-protocol.md) — how to run rigorous n=1 on yourself
 - [Personal genome protocol](./personal-genome-protocol.md) — MinION-based pharmacogenomics + strain QC
 - [Research index](../index.md) — full wiki dashboard with all concepts and primary research

@@ -15,7 +15,7 @@ related:
 sources:
   - enzyme-deficit-deep-dive.md
   - engineered-koji-protocol.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
 ---
 
 # Digestive Enzymes & Enzyme Insufficiency (EPI)
@@ -184,7 +184,7 @@ Traditional koji, fermented on steamed rice for 36–48 hours at 30°C, produces
 
 These are the same enzymes in commercial supplements — just produced at home rather than in an industrial bioreactor.
 
-**(Source: open-enzyme-vision.md)** — "Wild-type *Aspergillus oryzae* (koji). No genetic engineering needed. Traditional koji grown on steamed rice already produces lipase, protease, and amylase at therapeutically relevant levels. This is the simplest possible entry point — a food that has been consumed for over a millennium, produced with equipment available in any kitchen, providing the same enzymes that patients with exocrine pancreatic insufficiency currently buy as pharmaceutical supplements."
+**(Source: etc/open-enzyme-vision.md)** — "Wild-type *Aspergillus oryzae* (koji). No genetic engineering needed. Traditional koji grown on steamed rice already produces lipase, protease, and amylase at therapeutically relevant levels. This is the simplest possible entry point — a food that has been consumed for over a millennium, produced with equipment available in any kitchen, providing the same enzymes that patients with exocrine pancreatic insufficiency currently buy as pharmaceutical supplements."
 
 **Key limitation for fat malabsorption EPI:** Lipase activity of wild-type *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains — likely the limiting digestive-enzyme axis for fat malabsorption phenotype EPI. Quantitative comparison of shio-koji lipase activity (units/g) vs. commercial PERT (Creon, Zenpep) units per pill has not yet been done. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
 

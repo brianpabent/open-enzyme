@@ -7,7 +7,7 @@ related:
   - ../../wiki/engineered-lbp-chassis.md
   - ../../wiki/sirna-urat1-modality.md
   - ../../wiki/tcm-modern-rigor-intersection.md
-  - ../../wiki/open-enzyme-vision.md
+  - ../../wiki/etc/open-enzyme-vision.md
 ---
 
 # Open Enzyme platform-framing reframe
@@ -30,7 +30,7 @@ After both peer-track Phase 2 queues accumulate substance:
 - **siRNA / URAT1 track P2-1 through P2-6** — kidney-tropic conjugate chemistry + commercial + regulatory lit scans; comp-009; H03 full; vs. pozdeutinurad comparative
 - **TCM track P2-1, P2-3 through P2-6** — P2-2 closed by comp-013 2026-05-06; remaining are classical formula lit scans + Smilax deep-dive + Si Miao San decomposition + H04 full + bioavailability characterization
 
-Reflection note pre-positioned in [`open-enzyme-vision.md` §4](../../wiki/open-enzyme-vision.md).
+Reflection note pre-positioned in [`open-enzyme-vision.md` §4](../../wiki/etc/open-enzyme-vision.md).
 
 ## Outcome
 

@@ -8,7 +8,7 @@ related:
   - ../linter-design.md
   - ai-bio-tools-playbook.md
   - ../chaperone-orthogonal-stacking.md
-  - ../open-source-platform.md
+  - ./open-source-platform.md
 sources:
   - "Ying K, Tyshkovskiy A, Gladyshev VN et al. Autonomous AI Agents Discover Aging Interventions from Millions of Molecular Profiles. bioRxiv 2023.02.28.530532v3 (current version posted late 2025 / early 2026)"
   - "PMC ID PMC12667862; PubMed PMID 41332661"
@@ -84,7 +84,7 @@ For comp-NNN: don't rank purely on AlphaFold confidence or purely on codon adapt
 - mRNA structure metrics (RNAfold accessibility, codon usage)
 - Host-toxicity proxies (where applicable)
 
-**Disagreement across orthogonal models = uncertainty signal.** This connects to the multi-vendor / multi-model heterogeneity discipline established in [CLAUDE.md §"Multi-model synthesis as guard against epistemic homogenization"](../CLAUDE.md) and [`open-source-platform.md`](../open-source-platform.md). ClockBase's >40 aging clocks is the same idea at scale.
+**Disagreement across orthogonal models = uncertainty signal.** This connects to the multi-vendor / multi-model heterogeneity discipline established in [CLAUDE.md §"Multi-model synthesis as guard against epistemic homogenization"](../CLAUDE.md) and [`open-source-platform.md`](./open-source-platform.md). ClockBase's >40 aging clocks is the same idea at scale.
 
 ### 3. Hypothesis-then-verify pattern (mirrors the pre-commit grep-verify gate)
 
@@ -163,5 +163,5 @@ The audit reaffirms that the N-of-M concordance pattern this page advocates IS t
 - [`manual-literature-mining.md`](./manual-literature-mining.md) — five-rule discipline for safe LLM literature use
 - [`linter-design.md`](../linter-design.md) — falsification-card + document-lint architecture
 - [`ai-bio-tools-playbook.md`](./ai-bio-tools-playbook.md) — computational stack
-- [`open-source-platform.md`](../open-source-platform.md) — multi-vendor heterogeneity guard discipline
+- [`open-source-platform.md`](./open-source-platform.md) — multi-vendor heterogeneity guard discipline
 - [`practitioner-toolkit.md`](./practitioner-toolkit.md) — section umbrella (self-experiments + DIY-bio + rigor disciplines)

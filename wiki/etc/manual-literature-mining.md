@@ -11,7 +11,7 @@ tags:
 related:
   - paperclip-deep-dive.md
   - bio-ai-tools.md
-  - ../open-source-platform.md
+  - ./open-source-platform.md
   - chembl-cross-check.md
   - CLAUDE.md
 sources:
@@ -198,5 +198,5 @@ These are questions whose primary-literature grounding would meaningfully advanc
 - [`paperclip-deep-dive.md`](./paperclip-deep-dive.md) — full Paperclip MCP capability + limitation audit (the upstream documentation this page operationalizes for OE)
 - [`bio-ai-tools.md`](./bio-ai-tools.md) — broader AI-tool landscape for biology research
 - [`chembl-cross-check.md`](./chembl-cross-check.md) — sister discipline for ChEMBL bioactivity verification
-- [`open-source-platform.md`](../open-source-platform.md) §"Multi-model synthesis as guard against epistemic homogenization" — the broader epistemic-rigor framework this protocol fits within
+- [`open-source-platform.md`](./open-source-platform.md) §"Multi-model synthesis as guard against epistemic homogenization" — the broader epistemic-rigor framework this protocol fits within
 - [`CLAUDE.md`](../CLAUDE.md) §"Global-multilingual research by default" + §"Translation protocol" — the multilingual + cross-vendor disciplines that combine with this protocol for non-English Paperclip-adjacent work

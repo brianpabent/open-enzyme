@@ -51,7 +51,7 @@ A kidney-tropic siRNA conjugate targeting URAT1 (SLC22A12) mRNA is a viable long
 
 The thesis is **gated on the maturation of kidney-tropic conjugate delivery chemistry** — none of the four current research-class approaches (megalin-binding peptide conjugates, CDP nanoparticles, kidney-cortex-selective LNPs, aptamer-siRNA chimeras) has reached first-in-human for any indication. The "viable" claim is therefore conditional: viable *if* kidney-tropic delivery chemistry converges within 3–5 years; deferred indefinitely *if* it does not.
 
-This vector is positioned as a **discovery-engine output** (per [`open-enzyme-vision.md`](../open-enzyme-vision.md) §2.2), not a strain-library output. The thesis is that Open Enzyme contributes mechanistic clarity, target validation, and design rationale — partner companies, academic groups, or future spinouts execute the development.
+This vector is positioned as a **discovery-engine output** (per [`open-enzyme-vision.md`](../etc/open-enzyme-vision.md) §2.2), not a strain-library output. The thesis is that Open Enzyme contributes mechanistic clarity, target validation, and design rationale — partner companies, academic groups, or future spinouts execute the development.
 
 ---
 
@@ -110,7 +110,7 @@ To be populated. Anticipated relevant failure modes from [linter-design.md](../l
 - [gout-pathophysiology.md](../gout-pathophysiology.md) §"URAT1 (SLC22A12) — THE REABSORPTION VILLAIN" — URAT1 mechanism background
 - [androgen-urate-axis.md](../androgen-urate-axis.md) — testosterone effects on URAT1 (the hormone-axis interaction siRNA bypasses)
 - [engineered-lbp-chassis.md](../engineered-lbp-chassis.md) — sister peer-track exploration vector (commercial-pharma, durable-colonization angle)
-- [open-enzyme-vision.md](../open-enzyme-vision.md) §2.2 (discovery-engine outputs / repurposing surface)
+- [open-enzyme-vision.md](../etc/open-enzyme-vision.md) §2.2 (discovery-engine outputs / repurposing surface)
 - [open-questions.md](../open-questions.md) — meta-index entry
 - [linter-design.md](../linter-design.md) — schema for the Falsification Card format
 - [H01-ward-dual-cassette.md](./H01-ward-dual-cassette.md) — sibling falsification card for the koji chassis

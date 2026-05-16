@@ -32,8 +32,8 @@ related:
   - supplements-stack.md
   - self-experiment-protocol.md
   - cross-validation.md
-  - open-enzyme-vision.md
-  - open-source-platform.md
+  - etc/open-enzyme-vision.md
+  - etc/open-source-platform.md
   - modality-chokepoint-matrix.md
   - abcg2-modulators.md
   - androgen-urate-axis.md
@@ -304,7 +304,7 @@ The corpus offers strong mitigation sketches (chromosomal integration, first-bat
 - P2-6 Smartphone-camera colorimetric uric-acid assay validation
 - P2-11 Regulatory framework scoping pass (engineered-spore distribution path) — user-action-required (external consultant engagement)
 
-**Cross-references:** [cross-validation.md §Claim 5](./cross-validation.md) (3/10 → 6/10 reframe), [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](./open-source-platform.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-endgame-strain.md](./koji-endgame-strain.md), [self-experiment-protocol.md](./self-experiment-protocol.md) (Brian's n=1 home-fermentation data point), [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) (note: at `operations/`, not `wiki/`), `synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md` (originating sweep item).
+**Cross-references:** [cross-validation.md §Claim 5](./cross-validation.md) (3/10 → 6/10 reframe), [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](./etc/open-source-platform.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-endgame-strain.md](./koji-endgame-strain.md), [self-experiment-protocol.md](./self-experiment-protocol.md) (Brian's n=1 home-fermentation data point), [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) (note: at `operations/`, not `wiki/`), `synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md` (originating sweep item).
 
 ### Riskiest assumption #1 — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? *(added 2026-05-15, **the platform's #1 load-bearing scientific bet — mechanism side**)*
 
@@ -363,7 +363,7 @@ The [Engineered LBP Chassis](./engineered-lbp-chassis.md) page (committed 2026-0
 - **P2-5 — Falsification card H02.** Stub committed at [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md); full population queued.
 - **P2-6 — Comparative chassis matrix for gout indication.** *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* vs. engineered *E. coli* Nissle — payload tractability, niche fit, engineering complexity.
 
-Phase 3 (content-triggered, not calendar-triggered): platform-framing reflection — does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Reflection note queued in [`open-enzyme-vision.md`](./open-enzyme-vision.md).
+Phase 3 (content-triggered, not calendar-triggered): platform-framing reflection — does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Reflection note queued in [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md).
 
 ### Purine-Degrading Bacteria (PDB) — gut as independent urate disposal organ *(added 2026-05-15)*
 
@@ -436,9 +436,9 @@ This is an **active-search resource**, not a static reference; expect updates as
 
 ### Community fermentation and strain stability
 
-- **Does engineered koji drift across generations of home propagation?** Food-grade strains carry no antibiotic selection marker (correct for GRAS compliance), which removes the pressure that keeps the construct in the population. Chromosomal integration + redundant copies mitigate but don't eliminate. See [open-source-platform.md §Open Questions](./open-source-platform.md).
-- **Do 100 home fermenters of the same koji strain get consistent enzyme titers and NLRP3 activity?** Home conditions ≠ lab conditions. Protocol robustness is the gating question for the decentralized vision. See [open-source-platform.md §Open Questions](./open-source-platform.md), [synthesis archive Open Question 3](../synthesis/history/_pre-2026-05-08-archive.md).
-- **Is distribution of engineered spores "drug manufacturing" (requires IND) or "research strain" (flexible)?** Regulatory question with large downstream implications. See [open-source-platform.md §Open Questions](./open-source-platform.md).
+- **Does engineered koji drift across generations of home propagation?** Food-grade strains carry no antibiotic selection marker (correct for GRAS compliance), which removes the pressure that keeps the construct in the population. Chromosomal integration + redundant copies mitigate but don't eliminate. See [open-source-platform.md §Open Questions](./etc/open-source-platform.md).
+- **Do 100 home fermenters of the same koji strain get consistent enzyme titers and NLRP3 activity?** Home conditions ≠ lab conditions. Protocol robustness is the gating question for the decentralized vision. See [open-source-platform.md §Open Questions](./etc/open-source-platform.md), [synthesis archive Open Question 3](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Is distribution of engineered spores "drug manufacturing" (requires IND) or "research strain" (flexible)?** Regulatory question with large downstream implications. See [open-source-platform.md §Open Questions](./etc/open-source-platform.md).
 
 ### Regulatory
 

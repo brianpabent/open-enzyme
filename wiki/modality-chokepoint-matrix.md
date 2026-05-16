@@ -15,8 +15,8 @@ related:
   - abcg2-modulators.md
   - open-questions.md
   - ../synthesis/README.md
-  - open-source-platform.md
-  - open-enzyme-vision.md
+  - etc/open-source-platform.md
+  - etc/open-enzyme-vision.md
   - gout-pathophysiology.md
   - medicinal-mushroom-compound-mapping-computational.md
   - delivery-route-matrix.md
@@ -343,8 +343,8 @@ The cells where 🟡 marks the genuinely novel exploration space, ordered by lev
 - [`synthesis/`](../synthesis/README.md) — action queue; expect new connections to surface here when the sweep daemon reads this page
 - [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) — the chokepoint map this matrix sits orthogonal to
 - [`abcg2-modulators.md`](./abcg2-modulators.md), [`androgen-urate-axis.md`](./androgen-urate-axis.md), [`gut-lumen-sink.md`](./gut-lumen-sink.md) — the transporter-biology trio that grounds the renal and gut columns
-- [`open-source-platform.md`](./open-source-platform.md) — platform-strategy positioning; this matrix supports its "we explore all angles" claim
-- [`open-enzyme-vision.md`](./open-enzyme-vision.md) — top-level mission statement that the matrix operationalizes
+- [`open-source-platform.md`](./etc/open-source-platform.md) — platform-strategy positioning; this matrix supports its "we explore all angles" claim
+- [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) — top-level mission statement that the matrix operationalizes
 
 ## Maintenance
 

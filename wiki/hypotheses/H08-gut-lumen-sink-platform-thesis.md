@@ -17,7 +17,7 @@ related:
   - ../uricase.md
   - ../cross-validation.md
   - ../uricase-abcg2-genotype-stratification-computational.md
-  - ../open-enzyme-vision.md
+  - ../etc/open-enzyme-vision.md
   - ../validation-experiments.md
   - ../open-questions.md
   - ./H01-ward-dual-cassette.md
@@ -167,7 +167,7 @@ Tracked across the 6 follow-up surfaces per the walk-synthesis skill §5:
 - [uricase.md](../uricase.md) — enzyme-level page; carries the same mechanistic claim
 - [cross-validation.md](../cross-validation.md) §Claim 1 — feasibility rating 6.5/10 and the explicit "core scientific bet" framing
 - [uricase-abcg2-genotype-stratification-computational.md](../uricase-abcg2-genotype-stratification-computational.md) — comp-019, the flux model anchoring the magnitude predictions
-- [open-enzyme-vision.md](../open-enzyme-vision.md) — platform-level framing
+- [open-enzyme-vision.md](../etc/open-enzyme-vision.md) — platform-level framing
 - [validation-experiments.md](../validation-experiments.md) — wet-lab and self-experiment dependencies
 - [self-experiment-protocol.md](../self-experiment-protocol.md) — n=1 framework
 - [open-questions.md](../open-questions.md) — meta-index entry for the residual open questions on this thesis

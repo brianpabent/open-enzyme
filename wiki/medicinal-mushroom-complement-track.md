@@ -11,8 +11,8 @@ tags:
   - scope-page
   - first-principles
 related:
-  - open-enzyme-vision.md
-  - open-source-platform.md
+  - etc/open-enzyme-vision.md
+  - etc/open-source-platform.md
   - modality-chokepoint-matrix.md
   - engineered-lbp-chassis.md
   - sirna-urat1-modality.md
@@ -130,7 +130,7 @@ For compounds that have both a cultivation route and a koji-engineering route �
 | ***C. militaris* GYS60** cultivation (PMID 33463932) | 7,883 mg/L | Liquid submerged fermentation | Mature industrial process; established CROs | $1–2K outsourced |
 | **Engineered *A. oryzae* cns1+cns2** (Jeennor 2023, PMID 38071331) | 564 mg/L/day | Solid-state koji | One paper, novel | $2–4K outsourced; in-house requires separate setup |
 
-**Why not parallel head-to-head (Principle 6 carve-out):** [Platform Principle 6 — variant-agnostic empirical head-to-head](./open-source-platform.md) says default to parallel testing when literature is split AND marginal cost is bounded by shared infrastructure. The cordycepin case fails the second precondition: cultivation requires liquid submerged bioreactor, koji-engineering requires solid-state trays — different fermentation infrastructure, different downstream purification, different QA. Sequential cultivation-first is the right call: GYS60's 7,883 mg/L is mature and reproducible; koji-engineering at 564 mg/L/day (~14× lower per unit time) is one paper. The chassis-coherence appeal of "everything in koji" is real but not load-bearing for a small-molecule supplement — cordycepin's structure doesn't care which organism made it.
+**Why not parallel head-to-head (Principle 6 carve-out):** [Platform Principle 6 — variant-agnostic empirical head-to-head](./etc/open-source-platform.md) says default to parallel testing when literature is split AND marginal cost is bounded by shared infrastructure. The cordycepin case fails the second precondition: cultivation requires liquid submerged bioreactor, koji-engineering requires solid-state trays — different fermentation infrastructure, different downstream purification, different QA. Sequential cultivation-first is the right call: GYS60's 7,883 mg/L is mature and reproducible; koji-engineering at 564 mg/L/day (~14× lower per unit time) is one paper. The chassis-coherence appeal of "everything in koji" is real but not load-bearing for a small-molecule supplement — cordycepin's structure doesn't care which organism made it.
 
 **Supply check.** Even at high-end therapeutic dosing (~500 mg/day pure cordycepin — see Phase 7 follow-up #7 for verification queue), 1 L of GYS60 broth = ~16 daily doses. A modest 1,000-L run = ~44 person-years of supply. Neither route is supply-constrained for this product class; the decision is cost, reproducibility, and CRO availability — not throughput.
 
@@ -213,8 +213,8 @@ This is a real platform advantage, not just a cultivation-feasibility advantage.
 
 ## Cross-references
 
-- [`open-enzyme-vision.md`](./open-enzyme-vision.md) — top-level mission this expands
-- [`open-source-platform.md`](./open-source-platform.md) — platform-strategy positioning; Phase 7 reinforces "explore every avenue" claim
+- [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) — top-level mission this expands
+- [`open-source-platform.md`](./etc/open-source-platform.md) — platform-strategy positioning; Phase 7 reinforces "explore every avenue" claim
 - [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — canonical chokepoint inventory; Phase 7 follow-up #6 adds new row
 - [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — sister peer-track scope pages
 - [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) — comp-014 (the parent computational analysis that generated the Phase 7 candidate list)

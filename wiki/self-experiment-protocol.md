@@ -3,7 +3,7 @@ title: "Self-Experiment Protocol"
 date: 2026-04-25
 tags: ["self-experiment", "n-of-1", "safety", "monitoring", "open-enzyme", "protocol"]
 related:
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
   - cross-validation.md
   - validation-experiments.md
 sources:

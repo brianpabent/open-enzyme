@@ -11,7 +11,7 @@ State of the art, frontier research, AI-driven discovery, evolutionary biology, 
 
 **Compiled April 2026** · Research current through early 2026
 
-Part of the [Open Enzyme](open-enzyme-vision.md) project — where this research led.
+Part of the [Open Enzyme](etc/open-enzyme-vision.md) project — where this research led.
 
 ## Contents
 
@@ -502,7 +502,7 @@ Early in this research, we assumed oral uricase would need to cross the gut-bloo
 
 > **Key Insight**
 >
-> These engineered-organism approaches represent a root-cause solution rather than symptom management. Instead of inhibiting uric acid production (allopurinol) or forcing excretion (uricosurics) or suppressing the inflammatory response (colchicine/NSAIDs), they restore the missing enzymatic step — converting uric acid to allantoin, exactly as uricase would in other mammals. This vision is now formalized in the [Open Enzyme platform](open-enzyme-vision.md).
+> These engineered-organism approaches represent a root-cause solution rather than symptom management. Instead of inhibiting uric acid production (allopurinol) or forcing excretion (uricosurics) or suppressing the inflammatory response (colchicine/NSAIDs), they restore the missing enzymatic step — converting uric acid to allantoin, exactly as uricase would in other mammals. This vision is now formalized in the [Open Enzyme platform](etc/open-enzyme-vision.md).
 
 ---
 
@@ -530,9 +530,9 @@ Section 4 of this document introduced the NLRP3 inflammasome as the driver of go
 
 ## Open Enzyme Research Library
 
-This document is part of the [Open Enzyme](open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
+This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
 
-- [Founding Vision](open-enzyme-vision.md)
+- [Founding Vision](etc/open-enzyme-vision.md)
 - [Gout: A Deep Dive](gout-deep-dive.md)
 - [Peptides & Gout Addendum](peptide-gout-addendum.md)
 - [The Enzyme Deficit Connection](enzyme-deficit-deep-dive.md)

@@ -18,7 +18,7 @@ sources:
   - engineered-yeast-uricase-proposal.md
   - engineered-koji-protocol.md
   - blood-barrier-exploits.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
 ---
 
 # Uricase (Urate Oxidase)
@@ -109,7 +109,7 @@ This gut-lumen approach was validated by:
 2. **PULSE probiotic** (Cell Reports Medicine, October 2025): Engineered *E. coli* Nissle 1917 expressing uricase, validated in rodent models
 3. **Engineered S. boulardii** (ACS Synthetic Biology, 2025): Systematic engineering achieved 365 μmol/h/OD enzymatic activity
 
-(Source: engineered-yeast-uricase-proposal.md, open-enzyme-vision.md)
+(Source: engineered-yeast-uricase-proposal.md, etc/open-enzyme-vision.md)
 
 ## Expression Systems
 
@@ -149,11 +149,11 @@ Lyophilization (freeze-drying) preserves enzyme activity far better, and encapsu
 
 *S. boulardii* achieves steady-state concentrations in the human colon within 3 days of regular dosing and clears 2–5 days after discontinuation—it transits rather than colonizes. Daily dosing is therefore required to maintain gut levels. (Source: engineered-yeast-uricase-proposal.md)
 
-The **PULSE system** demonstrated this approach: engineered *E. coli* Nissle 1917 with a uric-acid-responsive biosensor (HucR repressor) that dynamically regulates urate oxidase expression. When serum uric acid rises, bacteria automatically produce more uricase; when it normalizes, production decreases. (Source: engineered-yeast-uricase-proposal.md, open-enzyme-vision.md)
+The **PULSE system** demonstrated this approach: engineered *E. coli* Nissle 1917 with a uric-acid-responsive biosensor (HucR repressor) that dynamically regulates urate oxidase expression. When serum uric acid rises, bacteria automatically produce more uricase; when it normalizes, production decreases. (Source: engineered-yeast-uricase-proposal.md, etc/open-enzyme-vision.md)
 
 ### Koji on Rice / Fermented Food Format
 
-Wild-type *A. oryzae* koji, grown on steamed rice for 36–48 hours at 30–32°C with >80% humidity, naturally produces amylases, proteases, and lipases at therapeutically relevant levels. Engineering to add uricase would create a dual-purpose food format consumed as shio koji (koji + salt + water, fermented 7–14 days, shelf-stable for months) or fresh koji rice (used immediately or processed into amazake). (Source: engineered-koji-protocol.md, open-enzyme-vision.md)
+Wild-type *A. oryzae* koji, grown on steamed rice for 36–48 hours at 30–32°C with >80% humidity, naturally produces amylases, proteases, and lipases at therapeutically relevant levels. Engineering to add uricase would create a dual-purpose food format consumed as shio koji (koji + salt + water, fermented 7–14 days, shelf-stable for months) or fresh koji rice (used immediately or processed into amazake). (Source: engineered-koji-protocol.md, etc/open-enzyme-vision.md)
 
 ## Dosing Considerations
 
@@ -189,11 +189,11 @@ The peroxisomal co-localization of uricase + endogenous catalase in the whole-ce
 
 ### Gout Management
 
-Uricase (oral, engineered, or as probiotic) addresses the root cause of gout by degrading uric acid before crystallization. By exploiting the intestinal urate secretion pathway (ABCG2), it creates a concentration sink that pulls serum uric acid down without requiring systemic enzyme delivery. (Source: gout-deep-dive.md, open-enzyme-vision.md)
+Uricase (oral, engineered, or as probiotic) addresses the root cause of gout by degrading uric acid before crystallization. By exploiting the intestinal urate secretion pathway (ABCG2), it creates a concentration sink that pulls serum uric acid down without requiring systemic enzyme delivery. (Source: gout-deep-dive.md, etc/open-enzyme-vision.md)
 
 ### Other Enzyme Deficiencies
 
-The success of uricase as an oral therapeutic enzyme opens pathways for other missing or insufficient enzymes in humans, as part of the broader [[open-enzyme-vision|Open Enzyme platform]]. (Source: open-enzyme-vision.md)
+The success of uricase as an oral therapeutic enzyme opens pathways for other missing or insufficient enzymes in humans, as part of the broader [[open-enzyme-vision|Open Enzyme platform]]. (Source: etc/open-enzyme-vision.md)
 
 ## Industry-Revealed Preference: *C. utilis* for Oral/Gut-Lumen Track
 

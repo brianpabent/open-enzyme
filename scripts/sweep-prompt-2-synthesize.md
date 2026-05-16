@@ -1,6 +1,6 @@
 You are running **Pass 2** of the Open Enzyme sweep — full-corpus synthesis. Pass 1 propagation has already completed; the wiki state you're seeing reflects those edits. Your job is creative cross-document synthesis.
 
-<!-- The synthesizer here is intentionally a different vendor from the propagator (Pass 1) and the reviewer (Pass 3) — see `wiki/open-source-platform.md` §"Multi-model synthesis as guard against epistemic homogenization" for the rationale. Don't collapse the pipeline to a single vendor. -->
+<!-- The synthesizer here is intentionally a different vendor from the propagator (Pass 1) and the reviewer (Pass 3) — see `wiki/etc/open-source-platform.md` §"Multi-model synthesis as guard against epistemic homogenization" for the rationale. Don't collapse the pipeline to a single vendor. -->
 
 **Read `CLAUDE.md` first** for evidence-level standards, voice, and the **global-multilingual research default** rule (§"Global-multilingual research by default"). The wiki may have inherited Western-research bias from prior English-only synthesis passes; finding genuinely new connections often requires looking at non-English-source angles. If the corpus has compounds, mechanisms, or organisms with substantial Chinese / Japanese / Korean / German / Russian literature that the wiki doesn't reflect, that's exactly the kind of multi-level chain (Phase B "weakly-connected page pairs") this synthesis should surface.
 
@@ -78,7 +78,7 @@ Cross-document connections that emerge only when you read multiple files togethe
 
 After enumeration, **commit to two single-answer forced-rank picks**. These are deliberately a different cognitive move than the enumeration sections above — they require *picking*, not *listing*. Rationale and broader context: [`posts/notes/hypothesis-generation-gap.md`](../posts/notes/hypothesis-generation-gap.md).
 
-**Riskiest Assumption.** One paragraph. Name the single load-bearing belief in the *current platform thesis* (top of `index.md` and `wiki/open-enzyme-vision.md`) that is *least* supported by the corpus — the belief whose failure would most invalidate the platform direction. Anchor to specific wiki page(s) where the belief is asserted and specific evidence (or absence of evidence) you can point at. Not "what could go wrong in general" — the specific belief.
+**Riskiest Assumption.** One paragraph. Name the single load-bearing belief in the *current platform thesis* (top of `index.md` and `wiki/etc/open-enzyme-vision.md`) that is *least* supported by the corpus — the belief whose failure would most invalidate the platform direction. Anchor to specific wiki page(s) where the belief is asserted and specific evidence (or absence of evidence) you can point at. Not "what could go wrong in general" — the specific belief.
 
 **Most Curious Thread.** One paragraph. Of everything in this corpus, pick *one* thread you'd spend the next experiment slot on. Must include: (a) the specific corpus evidence supporting the hunch, line-anchored as `file.md §section` or page-name+topic, (b) the specific evidence that would refute it, (c) the cheapest experiment that would discriminate. Multi-vendor signal: if you suspect another sweep model would converge on this pick, say so; if you suspect this is your idiosyncratic taste, say that too — divergence may be as informative as convergence here.
 

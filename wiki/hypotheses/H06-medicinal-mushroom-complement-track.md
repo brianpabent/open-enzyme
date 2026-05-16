@@ -18,8 +18,8 @@ related:
   - ../engineered-lbp-chassis.md
   - ../sirna-urat1-modality.md
   - ../modality-chokepoint-matrix.md
-  - ../open-source-platform.md
-  - ../open-enzyme-vision.md
+  - ../etc/open-source-platform.md
+  - ../etc/open-enzyme-vision.md
   - ./H02-engineered-lbp-thesis.md
   - ./H03-sirna-urat1-thesis.md
   - ./H05-daf-scr14-cp0-thesis.md

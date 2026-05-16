@@ -6,7 +6,7 @@ aliases:
 related:
   - open-enzyme-vision
 sources:
-  - ../open-enzyme-vision.md
+  - ./open-enzyme-vision.md
 ---
 
 # Open Enzyme Team
@@ -171,7 +171,7 @@ Each role owns a critical domain (safety, efficacy, microbiome, translation), ma
 
 ## Related Concepts
 
-- [Open Enzyme: Founding Vision](../open-enzyme-vision.md) — The project Brian is building
+- [Open Enzyme: Founding Vision](./open-enzyme-vision.md) — The project Brian is building
 
 ## Key Insight
 

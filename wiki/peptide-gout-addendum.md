@@ -528,9 +528,9 @@ Don't let the elegance of the mechanism convince you the outcome is guaranteed. 
 
 ## Open Enzyme Research Library
 
-This document is part of the [Open Enzyme](open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
+This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
 
-- [Founding Vision](open-enzyme-vision.md)
+- [Founding Vision](etc/open-enzyme-vision.md)
 - [Gout: A Deep Dive](gout-deep-dive.md)
 - [Peptides & Gout Addendum](peptide-gout-addendum.md)
 - [The Enzyme Deficit Connection](enzyme-deficit-deep-dive.md)

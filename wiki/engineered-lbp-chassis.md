@@ -18,7 +18,7 @@ related:
   - koji-endgame-strain.md
   - abcg2-modulators.md
   - open-questions.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
   - ../synthesis/README.md
   - hypotheses/H02-engineered-lbp-thesis.md
 sources:
@@ -157,7 +157,7 @@ The known active-program landscape, to be filled in by the Phase 2 commercial li
 
 **The two tracks serve different patient populations and intervention philosophies.** The koji track serves the broader market (mild-to-moderate gout, dietary management, prevention, EPI applications). The LBP track serves the high-severity / Q141K / refractory-gout subset where pharmaceutical-grade durability and genotype-specific coverage is worth the cost-and-distribution overhead.
 
-A future strategic question (Phase 3): does the LBP track justify expanding Open Enzyme's project framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Tracked in [Open Follow-Ups](#open-follow-ups) and queued in [`open-enzyme-vision.md`](./open-enzyme-vision.md).
+A future strategic question (Phase 3): does the LBP track justify expanding Open Enzyme's project framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Tracked in [Open Follow-Ups](#open-follow-ups) and queued in [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md).
 
 ---
 
@@ -193,9 +193,9 @@ These are the queued deep-dive items that will populate this page over the comin
 - [`abcg2-modulators.md`](./abcg2-modulators.md) — butyrate dual-action mechanism, Q141K rescue, PPARγ pathway
 - [`open-questions.md`](./open-questions.md) — meta-index where the Phase 2 follow-ups are also tracked
 - [`computational-experiments.md`](./computational-experiments.md) — comp-008 (Phase 2 P2-4) is queued in the Planned Analyses table
-- [`open-enzyme-vision.md`](./open-enzyme-vision.md) — platform mission framing; the Phase 3 reflection note lives here
+- [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) — platform mission framing; the Phase 3 reflection note lives here
 - [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) — comp-007; validated butyrate's HDAC isoform profile
 - [`daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md) — comp-006; the koji chassis HIGH-risk verdict for soluble complement regulators is one of the structural arguments for an LBP-chassis alternative
 - [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md) — falsification card stub
 - [`synthesis/`](../synthesis/README.md) 2026-05-05 Open Question #3 — the originating action
-- [`open-source-platform.md` §"6. Variant-Agnostic Empirical Head-to-Head"](./open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared) — the principle that governs comp-011's parallel-uricase-variant approach; **explicitly does NOT apply to the *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* chassis-choice decision** because cost-structure preconditions don't match (different anaerobic-bioreactor runs per chassis, different payload-integration toolkits per organism). Sequential testing — lower-cost-candidate-first, gated on result — is the right pattern for the LBP chassis selection.
+- [`open-source-platform.md` §"6. Variant-Agnostic Empirical Head-to-Head"](./etc/open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared) — the principle that governs comp-011's parallel-uricase-variant approach; **explicitly does NOT apply to the *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* chassis-choice decision** because cost-structure preconditions don't match (different anaerobic-bioreactor runs per chassis, different payload-integration toolkits per organism). Sequential testing — lower-cost-candidate-first, gated on result — is the right pattern for the LBP chassis selection.

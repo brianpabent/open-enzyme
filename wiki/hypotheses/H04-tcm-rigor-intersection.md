@@ -19,7 +19,7 @@ related:
   - ../etc/chembl-cross-check.md
   - ../engineered-lbp-chassis.md
   - ../sirna-urat1-modality.md
-  - ../open-enzyme-vision.md
+  - ../etc/open-enzyme-vision.md
   - ../open-questions.md
   - ./H01-ward-dual-cassette.md
   - ./H02-engineered-lbp-thesis.md

@@ -25,7 +25,7 @@ related:
   - gout-deep-dive.md
   - gout-clinical-pipeline.md
   - tnfsf14-gout-target.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
   - spm-resolution-pathway.md
   - supplements-stack.md
   - self-experiment-protocol.md
@@ -416,7 +416,7 @@ This is the actionable section: what exists, how it works, cost and access, and 
 
 ### 7.1 Avacopan (Tavneos, Amgen formerly ChemoCentryx) — the obvious gout repurposing candidate
 
-**Repurposing surface origin:** Avacopan is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are zileuton (CP6a 5-LOX, FDA-approved for asthma) and disulfiram (CP6b GSDMD, FDA-approved for alcohol use disorder). See [open-enzyme-vision.md §2.2](./open-enzyme-vision.md) for the full repurposing surface framing. (source: open-enzyme-vision.md)
+**Repurposing surface origin:** Avacopan is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are zileuton (CP6a 5-LOX, FDA-approved for asthma) and disulfiram (CP6b GSDMD, FDA-approved for alcohol use disorder). See [open-enzyme-vision.md §2.2](./etc/open-enzyme-vision.md) for the full repurposing surface framing. (source: etc/open-enzyme-vision.md)
 
 **Mechanism:** Oral small-molecule C5aR1 **allosteric antagonist** (Liu 2018 structure confirms allosteric binding). Selective for C5aR1 over C5aR2. ChEMBL [CHEMBL3989871](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989871). ATC L04AJ05.
 

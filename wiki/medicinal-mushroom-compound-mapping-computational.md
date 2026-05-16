@@ -29,8 +29,8 @@ related:
   - complement-c5a-gout.md
   - abcg2-modulators.md
   - etc/manual-literature-mining.md
-  - open-source-platform.md
-  - open-enzyme-vision.md
+  - etc/open-source-platform.md
+  - etc/open-enzyme-vision.md
 sources:
   - "Brian framing 2026-05-06: 'pull in all of the known compounds from as many species as possible and then map that to our chokepoints... whether that's directly in the body or, who knows, something else like helping disulfides'"
   - "Open Enzyme/CLAUDE.md §Global-multilingual research by default — corpus must include CNKI, Wanfang, J-STAGE, KISS — non-English sources are not 'language barrier'"

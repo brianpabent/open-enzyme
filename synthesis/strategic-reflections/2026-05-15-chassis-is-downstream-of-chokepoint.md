@@ -8,7 +8,7 @@ related:
   - ../../wiki/chassis-pending-interventions.md
   - ../../wiki/modality-chokepoint-matrix.md
   - ../../wiki/delivery-route-matrix.md
-  - ../../wiki/open-enzyme-vision.md
+  - ../../wiki/etc/open-enzyme-vision.md
   - ../../wiki/engineered-lbp-chassis.md
   - ../../wiki/sirna-urat1-modality.md
   - ../../wiki/purine-degrading-bacteria.md

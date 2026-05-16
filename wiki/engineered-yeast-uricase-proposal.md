@@ -22,7 +22,7 @@ A Research Proposal for Proof-of-Concept Collaboration
 **Date:** April 2026
 **Status:** Proposal for expert review — requesting guidance, not endorsement
 **Circulated to (potential collaborators):** Role 1 (Gut Microbiome / Gnotobiotic Animal Core), Role 2 (Pharma Translation / NF-κB & intestinal signaling), Role 3 (Innate Immune Safety / TLR signaling) — see [`etc/team.md`](./etc/team.md) for the full role descriptions.
-This proposal is part of the [Open Enzyme](open-enzyme-vision.md) project — an open-source therapeutic enzyme platform. The yeast track is the fastest path to a working uricase producer.
+This proposal is part of the [Open Enzyme](etc/open-enzyme-vision.md) project — an open-source therapeutic enzyme platform. The yeast track is the fastest path to a working uricase producer.
 Evidence levels used throughout:
 Established Peer-reviewed, replicated
 Supported Published data, limited studies
@@ -227,7 +227,7 @@ The synthesis queue entry ran the same calculation with slightly different inter
 
 **Interpretation.** Yeast intracellular expression is scientifically sound — the rasburicase precedent (Established) confirms the gene-host combination works at pharmaceutical scale. The problem is *format*, not biology. At clinical enzyme doses, the yeast mass required to act as a daily food product is implausible for anything short of a highly concentrated, lyophilized, and encapsulated preparation — which starts to look more like a pharmaceutical than a fermented food. Koji, by contrast, delivers the same enzyme mass from a portion that resembles a normal food serving.
 
-**Bottom line.** Yeast intracellular expression is scientifically sound but mass-impractical as a daily food product. Koji is dose-advantaged on scaling grounds and probably the right primary platform for oral delivery. This is consistent with the koji-first framing already adopted in [open-enzyme-vision.md](./open-enzyme-vision.md) §3, and the yeast track is best understood as: (a) a rapid bench platform for construct validation, (b) a path to a concentrated powder/capsule product for the subset of patients who can't tolerate koji, or (c) the *S. boulardii* probiotic route where the dose is set by colonization, not by food mass.
+**Bottom line.** Yeast intracellular expression is scientifically sound but mass-impractical as a daily food product. Koji is dose-advantaged on scaling grounds and probably the right primary platform for oral delivery. This is consistent with the koji-first framing already adopted in [open-enzyme-vision.md](./etc/open-enzyme-vision.md) §3, and the yeast track is best understood as: (a) a rapid bench platform for construct validation, (b) a path to a concentrated powder/capsule product for the subset of patients who can't tolerate koji, or (c) the *S. boulardii* probiotic route where the dose is set by colonization, not by food mass.
 
 ## 6. Open Scientific Questions
 These are framed as questions for specific experts, but each one includes a path to an answer.
@@ -468,8 +468,8 @@ For detailed calculations, variant structural models, and GI transit simulation 
 - **Allena Pharmaceuticals Inc.** (2020). US Patent Application 2020/0071681 A1: "Recombinant uricase enzyme" (published application; sequence source cited by Frontiers 2020 ALLN-346 paper). [patents.google.com/patent/US20200071681A1](https://patents.google.com/patent/US20200071681A1/en)
 Prepared April 2026. This document represents a good-faith research synthesis by a non-scientist. Corrections, challenges, and "you're wrong about X" are all welcome — that's the point.
 ### Open Enzyme Research Library
-This document is part of the [Open Enzyme](open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
-[Open Enzyme Vision & Roadmap](open-enzyme-vision.md)
+This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
+[Open Enzyme Vision & Roadmap](etc/open-enzyme-vision.md)
 [Gout Deep Dive Research](gout-deep-dive.md)
 [Enzyme Deficit Deep Dive](enzyme-deficit-deep-dive.md)
 [NLRP3 Inflammasome Exploit Map](nlrp3-exploit-map.md)

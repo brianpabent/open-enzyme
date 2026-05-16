@@ -19,7 +19,7 @@ related:
   - androgen-urate-axis.md
   - engineered-lbp-chassis.md
   - open-questions.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
   - ../synthesis/README.md
   - hypotheses/H03-sirna-urat1-thesis.md
 sources:
@@ -43,7 +43,7 @@ status: scope-page
 
 The mission framing (per Brian's 2026-05-05 reframe): *Open Enzyme is a research project to solve gout via every available modality, fully open. The koji chassis is its first and primary chassis expression — but it is not the entire mission.* This page is the second peer-track exploration vector developed under that reframe, alongside [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) (which formalized engineered Live Biotherapeutic Products as a peer track for the gut-resident butyrate / colonization vector).
 
-**This vector is fundamentally non-fermentable.** Kidney-tropic siRNA biologics require synthetic oligonucleotide chemistry, conjugate or LNP formulation, IV / subcutaneous delivery, and the FDA biologic regulatory pathway. There is no microbial chassis that produces a kidney-tropic siRNA conjugate. This vector therefore lives in the **discovery-engine output** half of Open Enzyme's two-output architecture (per [`open-enzyme-vision.md`](./open-enzyme-vision.md) §2.2 "The repurposing surface" — non-microbial mechanism candidates the platform identifies but does not itself manufacture). Parallel to how zileuton, disulfiram, and avacopan appear in the OE corpus as repurposing candidates (small-molecule pharma drugs the platform recommends but does not engineer), siRNA against URAT1 is positioned as a *discovery-engine output* the platform scopes, characterizes, and publishes — for partner companies, academic groups, or future spinouts to actually develop.
+**This vector is fundamentally non-fermentable.** Kidney-tropic siRNA biologics require synthetic oligonucleotide chemistry, conjugate or LNP formulation, IV / subcutaneous delivery, and the FDA biologic regulatory pathway. There is no microbial chassis that produces a kidney-tropic siRNA conjugate. This vector therefore lives in the **discovery-engine output** half of Open Enzyme's two-output architecture (per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 "The repurposing surface" — non-microbial mechanism candidates the platform identifies but does not itself manufacture). Parallel to how zileuton, disulfiram, and avacopan appear in the OE corpus as repurposing candidates (small-molecule pharma drugs the platform recommends but does not engineer), siRNA against URAT1 is positioned as a *discovery-engine output* the platform scopes, characterizes, and publishes — for partner companies, academic groups, or future spinouts to actually develop.
 
 ---
 
@@ -109,7 +109,7 @@ This is the same logic as engineered LBPs (peer-track to koji) — both modaliti
 
 ## Position in the Open Enzyme platform — discovery-engine output
 
-Per [`open-enzyme-vision.md`](./open-enzyme-vision.md) §2.2 ("The repurposing surface"), Open Enzyme operates on a two-output architecture:
+Per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 ("The repurposing surface"), Open Enzyme operates on a two-output architecture:
 
 1. **The discovery engine** — chokepoint-based methodology for mapping every vector that causes, treats, or mitigates a target disease. Outputs include the cascade maps, the chokepoint inventory, and the *repurposing surface* (FDA-approved drugs that hit relevant chokepoints but were never clinically tested for the target disease, e.g., zileuton for 5-LOX, disulfiram for NLRP3, avacopan for C5aR1).
 2. **The open-source strain library** — engineered koji / yeast strains the platform itself manufactures and distributes. The koji endgame strain ([`koji-endgame-strain.md`](./koji-endgame-strain.md)) is the canonical example.
@@ -170,9 +170,9 @@ Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked
 - [`gout-pathophysiology.md`](./gout-pathophysiology.md) §"URAT1 (SLC22A12) — THE REABSORPTION VILLAIN" — URAT1 mechanism background; ~90% urate reabsorption stat
 - [`androgen-urate-axis.md`](./androgen-urate-axis.md) — testosterone effects on URAT1 (the hormone-axis interaction siRNA bypasses)
 - [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) — sister peer-track exploration vector (commercial-pharma, durable-colonization angle); same chase-every-avenue framing under the broader gout-solving mission
-- [`open-enzyme-vision.md`](./open-enzyme-vision.md) §2.2 (repurposing surface / discovery-engine outputs); §4 (Phase 3 platform-framing reflection note)
+- [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 (repurposing surface / discovery-engine outputs); §4 (Phase 3 platform-framing reflection note)
 - [`open-questions.md`](./open-questions.md) §"Engineered LBP chassis" parallel; siRNA / URAT1 entry to be added in same section pattern
 - [`computational-experiments.md`](./computational-experiments.md) Planned Analyses — comp-009 entry
 - [`hypotheses/H03-sirna-urat1-thesis.md`](./hypotheses/H03-sirna-urat1-thesis.md) — falsification card stub
 - [`synthesis/`](../synthesis/README.md) 2026-05-05 Priority Action #3 — the originating action; Strategic Reflections Queue entry
-- [`open-source-platform.md` §"6. Variant-Agnostic Empirical Head-to-Head"](./open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared) — the principle that governs comp-011's parallel-uricase-variant approach; **explicitly does NOT apply to siRNA conjugate-chemistry decisions** (GalNAc-analog vs. peptide vs. kidney-tropic LNP) because per-candidate cost is in the $10K+ range — synthetic oligonucleotide chemistry, conjugate formulation, and animal biodistribution work each cost orders of magnitude more than the comp-011 gene-synthesis case. Literature pre-selection burden is justified here; parallel testing is reserved for candidates the literature genuinely cannot rank.
+- [`open-source-platform.md` §"6. Variant-Agnostic Empirical Head-to-Head"](./etc/open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared) — the principle that governs comp-011's parallel-uricase-variant approach; **explicitly does NOT apply to siRNA conjugate-chemistry decisions** (GalNAc-analog vs. peptide vs. kidney-tropic LNP) because per-candidate cost is in the $10K+ range — synthetic oligonucleotide chemistry, conjugate formulation, and animal biodistribution work each cost orders of magnitude more than the comp-011 gene-synthesis case. Literature pre-selection burden is justified here; parallel testing is reserved for candidates the literature genuinely cannot rank.

@@ -30,7 +30,7 @@ related:
   - nlrp3-exploit-map.md
   - nlrp3-inflammasome.md
   - engineered-koji-protocol.md
-  - open-enzyme-vision.md
+  - etc/open-enzyme-vision.md
   - carnosine.md
   - gout-deep-dive.md
   - supplements-stack.md

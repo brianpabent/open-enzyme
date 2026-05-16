@@ -417,7 +417,7 @@ This research document directly led to two detailed protocols for engineered-org
 
 **For Lynn — wild-type koji is already the solution** (see [Engineered Koji Protocol](engineered-koji-protocol.md)): Here's the insight that emerged later: *A. oryzae* (koji) doesn't *need* engineering to help Lynn. It already produces the exact digestive enzymes she's buying in supplement form — proteases, lipases, amylases. The supplement industry IS industrial koji fermentation, just rebranded. Growing koji at home and consuming it as shio koji or fresh amazake is already enzyme supplementation. The engineering is only needed for the uricase addition (Brian's part).
 
-> **The Convergence Point:** The dual-purpose vision: an engineered koji strain that produces both enhanced digestive enzymes (for Lynn) and uricase (for Brian) — a single organism serving both enzyme deficits. The [Engineered Koji Protocol](engineered-koji-protocol.md) details this as a stretch goal. Meanwhile, the yeast track moves forward independently as the more validated path for uricase. Both approaches are now part of the [Open Enzyme](open-enzyme-vision.md) platform vision.
+> **The Convergence Point:** The dual-purpose vision: an engineered koji strain that produces both enhanced digestive enzymes (for Lynn) and uricase (for Brian) — a single organism serving both enzyme deficits. The [Engineered Koji Protocol](engineered-koji-protocol.md) details this as a stretch goal. Meanwhile, the yeast track moves forward independently as the more validated path for uricase. Both approaches are now part of the [Open Enzyme](etc/open-enzyme-vision.md) platform vision.
 
 ---
 
@@ -497,9 +497,9 @@ Here's where the research meets the kitchen table. What can Brian and Lynn actua
 
 ## Open Enzyme Research Library
 
-This document is part of the [Open Enzyme](open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
+This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
 
-- [Founding Vision](open-enzyme-vision.md)
+- [Founding Vision](etc/open-enzyme-vision.md)
 - [Gout: A Deep Dive](gout-deep-dive.md)
 - [Peptides & Gout Addendum](peptide-gout-addendum.md)
 - [The Enzyme Deficit Connection](enzyme-deficit-deep-dive.md)

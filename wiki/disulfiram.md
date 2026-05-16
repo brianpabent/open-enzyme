@@ -21,7 +21,7 @@ sources:
 
 This represents one of the most accessible, underrated, and economically efficient gout interventions available today.
 
-**Repurposing surface origin:** Disulfiram is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are zileuton (CP6a 5-LOX, FDA-approved for asthma) and avacopan (CP0 C5aR1, FDA-approved for ANCA vasculitis). See [open-enzyme-vision.md §2.2](./open-enzyme-vision.md) for the full repurposing surface framing. (source: open-enzyme-vision.md)
+**Repurposing surface origin:** Disulfiram is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are zileuton (CP6a 5-LOX, FDA-approved for asthma) and avacopan (CP0 C5aR1, FDA-approved for ANCA vasculitis). See [open-enzyme-vision.md §2.2](./etc/open-enzyme-vision.md) for the full repurposing surface framing. (source: etc/open-enzyme-vision.md)
 
 **Compounding pharmacy delivery route:** Disulfiram is the highest-priority candidate on the [compounding pharmacy track](./compounding-pharmacy-track.md) — FDA-approved, off-patent, bulk API available, and the only barrier between the patient and a useful low-dose extended-release formulation is "no one has commercialized this specific formulation for gout." A compounded low-dose ER disulfiram tablet at sub-deterrent doses would allow exploring the GSDMD-inhibitor effect without the alcohol-flush mechanism dominating. (source: compounding-pharmacy-track.md)
 
