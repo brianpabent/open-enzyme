@@ -1,0 +1,92 @@
+{
+  "low_CAT_dose_1uM": {
+    "pickering_C_joint_uM": 0.3150536282037849,
+    "fusion_C_joint_uM": 0.05127106740294752,
+    "free_C_joint_uM": 3.155142609412154,
+    "verdicts": {
+      "pickering": "GREEN",
+      "fusion": "GREEN",
+      "free": "GREEN"
+    }
+  },
+  "high_dose_100uM": {
+    "pickering_C_joint_uM": 0.3150536282037849,
+    "fusion_C_joint_uM": 0.05127423979826032,
+    "free_C_joint_uM": 0.31553378337390964,
+    "verdicts": {
+      "pickering": "GREEN",
+      "fusion": "GREEN",
+      "free": "GREEN"
+    }
+  },
+  "high_urate_5mM": {
+    "pickering_C_joint_uM": 0.3225698181410522,
+    "fusion_C_joint_uM": 0.052497186803119274,
+    "free_C_joint_uM": 0.3230596110961186,
+    "verdicts": {
+      "pickering": "GREEN",
+      "fusion": "GREEN",
+      "free": "GREEN"
+    }
+  },
+  "low_urate_0.1mM": {
+    "pickering_C_joint_uM": 0.2496194131153065,
+    "fusion_C_joint_uM": 0.04062474609533691,
+    "free_C_joint_uM": 0.24999843750976558,
+    "verdicts": {
+      "pickering": "GREEN",
+      "fusion": "GREEN",
+      "free": "GREEN"
+    }
+  },
+  "low_clearance_0.001": {
+    "pickering_C_joint_uM": 0.3151091039529213,
+    "fusion_C_joint_uM": 0.051274239798260325,
+    "free_C_joint_uM": 0.3155337833739097,
+    "verdicts": {
+      "pickering": "GREEN",
+      "fusion": "GREEN",
+      "free": "GREEN"
+    }
+  },
+  "high_kcat_URI_20": {
+    "pickering_C_joint_uM": 0.4846978895442844,
+    "fusion_C_joint_uM": 0.07888300212686777,
+    "free_C_joint_uM": 0.48543385924226323,
+    "verdicts": {
+      "pickering": "GREEN",
+      "fusion": "GREEN",
+      "free": "GREEN"
+    }
+  },
+  "low_kcat_over_km_CAT_1e7": {
+    "pickering_C_joint_uM": 1.2607302048905584,
+    "fusion_C_joint_uM": 0.2050919600796388,
+    "free_C_joint_uM": 1.262104369720854,
+    "verdicts": {
+      "pickering": "GREEN",
+      "fusion": "GREEN",
+      "free": "GREEN"
+    }
+  },
+  "small_joint_MTP1_0.3mL": {
+    "pickering_C_joint_uM": 0.3151091039529213,
+    "fusion_C_joint_uM": 0.051273951382464066,
+    "free_C_joint_uM": 0.3155320085074711,
+    "verdicts": {
+      "pickering": "GREEN",
+      "fusion": "GREEN",
+      "free": "GREEN"
+    }
+  },
+  "uneven_free_URI_100uM_CAT_1uM": {
+    "pickering_C_joint_uM": 0.3150536282037849,
+    "fusion_C_joint_uM": 0.051273951382464066,
+    "free_C_joint_uM": 31.551426094121545,
+    "verdicts": {
+      "pickering": "GREEN",
+      "fusion": "GREEN",
+      "free": "YELLOW"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schalkwijk_1986": {
+    "primary_source": "Schalkwijk J, van den Berg WB, van de Putte LB, Joosten LA. Arthritis Rheum 1986;29(4):532-8. PMID 3707631. DOI 10.1002/art.1780290411.",
+    "model": "Glucose oxidase (cationized for joint retention) injected intra-articularly into mouse knee. Uses endogenous glucose to produce H2O2 in situ. Co-administered catalase rescues. The canonical IA-H2O2 damage model.",
+    "key_limitation": "Reports injected GOx DOSE (units of enzyme) and qualitative damage outcomes (proteoglycan synthesis inhibition, chondrocyte death, vascular leak via 125I-albumin). DOES NOT report the steady-state in-joint [H2O2] that those doses produced. The conversion from GOx units to local H2O2 concentration requires knowing endogenous glucose availability, GOx kcat, scavenging by endogenous catalase / GPx, and clearance — none of which are reported in the paper. So this is a load-bearing dose-effect anchor but NOT a steady-state concentration anchor.",
+    "documented_damage": "Chondrocyte proteoglycan synthesis severely inhibited; periarticular infiltration; chondrocyte death; subchondral erosions; muscle necrosis; vascular leak (99mTc uptake + 125I-albumin)"
+  },
+  "in_vitro_chondrocyte_threshold_uM": {
+    "presumptively_safe": {
+      "upper": 10.0,
+      "comment": "Sub-10 µM bolus H2O2 is generally tolerated by chondrocyte cultures without significant apoptosis on short (1-4 hour) exposures. Multiple in vitro studies use 1-10 µM as a 'physiologic / signaling' regime."
+    },
+    "gray_band": {
+      "lower": 10.0,
+      "upper": 100.0,
+      "comment": "10-100 µM range produces variable in vitro outcomes (oxidative stress signaling, partial apoptosis, ECM remodeling) depending on duration and antioxidant context. This is the unmodeled regime for in vivo synovial tissue."
+    },
+    "documented_toxic": {
+      "lower": 100.0,
+      "comment": "Bolus 100 µM - 2 mM H2O2 reliably induces chondrocyte apoptosis, mitochondrial dysfunction, NF-κB activation, and ECM degradation in chondrocyte cultures within hours. The canonical 'oxidative challenge' regime."
+    },
+    "source_class": "in_vitro_cell_culture",
+    "primary_sources_class": "Multiple in vitro studies on primary human and articular chondrocytes use bolus H2O2 in the 50 µM - 2 mM range to induce apoptosis. Representative range from chondrocyte oxidative stress literature (PubMed search 'chondrocyte hydrogen peroxide apoptosis' returns 26+ studies in this band)."
+  },
+  "synovial_tissue_threshold_derived_uM": {
+    "GREEN_below_uM": {
+      "central": 10.0,
+      "lower": 5.0,
+      "upper": 20.0,
+      "comment": "Derived safe-threshold band. Steady-state [H2O2] below ~10 µM is presumptively tolerable based on (a) in vitro chondrocyte tolerance at sub-10 µM bolus, (b) endogenous basal synovial H2O2 from neutrophil / mitochondrial sources is in this range physiologically, (c) catalase- and GPx-mediated scavenging in synovial cells can maintain low-µM steady state."
+    },
+    "RED_above_uM": {
+      "central": 100.0,
+      "lower": 50.0,
+      "upper": 200.0,
+      "comment": "Steady-state [H2O2] above ~100 µM is presumptively damaging based on Schalkwijk + in vitro chondrocyte apoptosis evidence. The bolus-to-steady-state conversion is uncertain — a sustained 100 µM steady state is likely more damaging than a transient 100 µM bolus."
+    },
+    "YELLOW_gray_band_uM": {
+      "lower": 10.0,
+      "upper": 100.0,
+      "comment": "Unmodeled. In vivo response in this band depends on duration, host antioxidant status, presence of MSU crystals (which themselves drive oxidative stress), and individual susceptibility."
+    },
+    "evidence_level": "Mechanistic Extrapolation — synthesizes Schalkwijk 1986 dose-damage anchor (PMID 3707631) with bolus in vitro chondrocyte data; no published steady-state [H2O2] toxicity curve in synovial tissue exists."
+  },
+  "endogenous_synovial_h2o2_baseline_uM": {
+    "central": 1.0,
+    "lower": 0.1,
+    "upper": 5.0,
+    "comment": "Basal extracellular H2O2 in normal tissues is sub-µM to low-µM; synovial fluid in inflamed joints (gout flare) may reach higher steady state from neutrophil oxidative burst. Used as a sanity-check anchor — any IA uricase architecture that adds <1 µM steady-state H2O2 above baseline is well within the physiologic envelope."
+  }
+}

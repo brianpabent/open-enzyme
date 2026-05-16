@@ -1,0 +1,56 @@
+{
+  "human_knee": {
+    "synovial_fluid_volume_mL": {
+      "central": 3.0,
+      "lower": 0.5,
+      "upper": 4.0,
+      "comment": "Normal human knee synovial fluid volume 0.5-4 mL; inflamed gout knee can be 10-50 mL with effusion. Use 2-4 mL as the 'after IA injection mixing' default. Range covers small joints (MTP first joint typical gout flare site: 0.1-1 mL) to large knee effusions."
+    },
+    "joint_capsule_surface_area_cm2": {
+      "central": 100.0,
+      "lower": 30.0,
+      "upper": 200.0,
+      "comment": "Approximate inner-capsule surface area for human knee; smaller joints (MTP1, MCP) scale down ~10×."
+    },
+    "cartilage_thickness_mm": {
+      "central": 2.5,
+      "lower": 1.5,
+      "upper": 4.0,
+      "comment": "Human knee articular cartilage thickness range; relevant for the diffusion distance from synovial fluid to chondrocytes."
+    }
+  },
+  "mtp1_joint_first_metatarsophalangeal": {
+    "synovial_fluid_volume_mL": {
+      "central": 0.3,
+      "lower": 0.1,
+      "upper": 1.0,
+      "comment": "First MTP joint — the canonical gout flare site (podagra). Smaller volume than knee; higher concentration of injected enzyme dose."
+    },
+    "joint_capsule_surface_area_cm2": {
+      "central": 8.0,
+      "lower": 3.0,
+      "upper": 15.0
+    },
+    "cartilage_thickness_mm": {
+      "central": 1.0,
+      "lower": 0.5,
+      "upper": 1.5
+    }
+  },
+  "urate_substrate_concentration_at_msu_surface_mM": {
+    "central": 1.0,
+    "lower": 0.5,
+    "upper": 5.0,
+    "comment": "Plasma urate in hyperuricemia: 0.4-0.7 mM. Synovial fluid urate: similar 0.4-0.7 mM. AT the MSU crystal surface, urate is at thermodynamic saturation/supersaturation; the local mass-transfer-limited concentration available to a uricase at the crystal-solution interface is approximately at saturation (~0.4-0.6 mM at 37 °C, pH 7.4) since the crystal acts as an infinite reservoir while it persists. Sustained uricase action can deplete the bulk synovial fluid urate down to sub-saturation, but local-to-crystal concentration remains saturated. For comp-035, use the local-saturation concentration as the URATE input driving H2O2 production at the architecture site. Range 0.5-5 mM covers solution depletion (low end) to high tophi-density crystal cluster (high end, where multiple crystals supply substrate)."
+  },
+  "joint_clearance_h2o2_rate_per_s": {
+    "central": 0.01,
+    "lower": 0.001,
+    "upper": 0.05,
+    "comment": "First-order rate constant for joint-fluid H2O2 clearance from endogenous sources (lymphatic drainage, endogenous catalase / glutathione peroxidase / peroxiredoxins in synoviocytes, vascular uptake). Estimated; not directly measured for H2O2. The intrinsic synovial-clearance half-life of small solutes is hours-to-days, but H2O2 has additional enzymatic destruction pathways. Range covers slow joint clearance (0.001/s = 700 s half-life) to fast endogenous-enzymatic clearance (0.05/s = 14 s half-life). This is treated as a background sink in the diffusion model — IA-injected catalase architectures must reduce [H2O2] BELOW the threshold ON TOP OF the endogenous clearance, not on its own."
+  },
+  "joint_temperature_C": {
+    "central": 37.0,
+    "comment": "Inflamed gouty joint may be slightly warmer (38-39 °C); use 37 °C as the baseline."
+  }
+}
