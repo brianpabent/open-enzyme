@@ -67,6 +67,7 @@ nav:
     - Gout Pathophysiology: gout-pathophysiology.md
     - Gout Deep Dive: gout-deep-dive.md
     - Gout Clinical Pipeline: gout-clinical-pipeline.md
+    - Gout Genetic Variants — Unified Index: gout-genetic-variants.md
     - Complement / C5a (CP0): complement-c5a-gout.md
     - Androgen-Urate Axis: androgen-urate-axis.md
     - Androgen Natural Modulation: androgen-natural-modulation.md
@@ -137,6 +138,8 @@ nav:
 
   - Self-Experiment & Validation:
     - Practitioner Toolkit: practitioner-toolkit.md
+    - Gout Action Guide: gout-action-guide.md
+    - Genotype-Informed Supplement Workflow: genotype-informed-supplement-workflow.md
     - SIBO: sibo.md
     - Supplements Stack: supplements-stack.md
     - Self-Experiment Protocol: self-experiment-protocol.md
@@ -173,6 +176,14 @@ nav:
     - Uricase Cassette Ranking, ClockBase-Style (comp-022): uricase-cassette-ranking-computational.md
     - DAF SCR1-4 Cassette Ranking (comp-030): daf-cd55-scr14-cassette-ranking-computational.md
     - Cordycepin Cassette Metabolic Burden (comp-023): cordycepin-cassette-burden-computational.md
+    - Disulfiram Dose Modeling (comp-027): disulfiram-dose-modeling-computational.md
+    - Dual-Chassis EcN PDB + Uricase (comp-031): dual-chassis-ecn-pdb-uricase-computational.md
+    - ABCG2 Q141K Chaperone Screen (comp-032): abcg2-q141k-chaperone-screen-computational.md
+    - Inhaled mRNA-IL-1RA Pulse (comp-033): inhaled-mrna-il1ra-pulse-computational.md
+    - Repeat-Dose Inhaled mRNA-IL-1RA (comp-036): repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md
+    - Lactoferrin Linker Redesign (comp-034): lactoferrin-linker-redesign-computational.md
+    - IA Uricase H₂O₂ Reaction-Diffusion (comp-035): intra-articular-uricase-h2o2-reaction-diffusion-computational.md
+    - Combined CP0 Systems Model (comp-029): combined-cp0-systems-model-computational.md
     - TCM Gout Compound Triage (comp-013): tcm-gout-compound-triage-computational.md
     - Medicinal Mushroom Compound Mapping (comp-014): medicinal-mushroom-compound-mapping-computational.md
     - T-axis Adjuvant Urate Mapping (comp-015): t-axis-adjuvant-urate-mapping-computational.md

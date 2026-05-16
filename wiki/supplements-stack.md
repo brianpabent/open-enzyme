@@ -774,7 +774,7 @@ Compounds and approaches that are viable near-term but require medical discussio
 
 **Population context:** Broad applicability for GSDMD mechanism, but **the absolute alcohol contraindication is the dominant population filter**. Patients who consume alcohol in any form (including some mouthwashes, OTC cold preparations, kombucha, or fermented foods with residual ethanol) cannot use disulfiram safely. Patients with hepatic dysfunction: dose-reduced or contraindicated. Pregnancy: contraindicated. Older adults: increased CNS side effects.
 
-**Dosing range:** 250 mg once daily (standard for alcohol use disorder; off-label for gout)
+**Dosing range:** 250 mg once daily (standard for alcohol use disorder; off-label for gout). **Sub-AUD GSDMD-dominant window per [comp-027](./disulfiram-dose-modeling-computational.md) (2026-05-16, YELLOW-leaning-GREEN): 100 mg/day (range 75–125 mg/d)** — at this dose, parent DSF Cmax (0.40 µM) engages GSDMD pore-formation blockade at 1.3× cell-free IC50 while plasma Me-DTC peak (~70 nM) stays at or below the DER hypotension threshold. Two-phase compounding protocol: IR capsule 50→100 mg/d titration over 14 days, then ER lipid-matrix 100 mg QD chronic. (Mechanistic Extrapolation + In Silico; source: disulfiram-dose-modeling-computational.md)
 
 **Key advantage:** FDA-approved for 70+ years, well-tolerated in alcohol-abstinent patients, ~$30/month
 
