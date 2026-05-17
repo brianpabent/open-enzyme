@@ -105,6 +105,9 @@ graph TB
         O3["ROS Burst (non-transcriptional priming)"]
         O4["Avacopan (C5aR1 antagonist, FDA ANCA)"]
         O5["S100A8/A9 DAMP (2025 flare driver)"]
+        O6["C1-INH (SERPING1) — EcN-LBP luminal CP0 candidate"]
+        O7["DAF SCR1-4 — koji-secreted CP0 candidate"]
+        O8["Houttuynia cordata polysaccharides — dietary CP0 (comp-018 Phase 2)"]
     end
 
     subgraph Resolution["ACTIVE RESOLUTION (CP5b — NEW)"]
@@ -186,6 +189,7 @@ graph TB
         DE29["comp-035 IA Uricase H₂O₂ Reaction-Diffusion — GREEN across all 3 architectures"]
         DE30["comp-029 Combined CP0 Systems Model — YELLOW; RA gut-luminal + DAF SCR1-4"]
         DE31["comp-033/036 Inhaled mRNA-IL-1RA — RED single-dose / YELLOW repeat-dose"]
+        DE32["comp-037 C1-INH Protease Stability + Glycosylation in EcN — MODERATE (kinetic-competition gated)"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -397,6 +401,13 @@ graph TB
     O3 -->|"primes NLRP3 (non-transcriptional)"| C2
     O4 -.->|"inhibits (pharma adjunct)"| O2
     O5 -->|"DAMP amplifies NF-κB priming"| Q2
+    %% Two-chassis CP0 architecture (comp-037 + comp-012, 2026-05-17)
+    O6 -->|"inhibits C1r/C1s/MASP-2 at classical/lectin entry"| O1
+    O7 -->|"accelerates decay of C3/C5 convertases at MSU surface"| O1
+    O6 -->|"expressed in EcN LBP (MODERATE, kinetic-competition gated)"| O1
+    O7 -->|"expressed in A. oryzae koji (LOW protease risk, wet-lab gated)"| O1
+    %% Houttuynia cordata polysaccharides — dietary CP0 (comp-018 Phase 2, 2026-05-17)
+    O8 -->|"multi-target C2+C4+C5, CH50 79-318 µg/mL"| O1
 
     %% CP1a — TNFSF14 (LIGHT) amplifier (Round 1 work)
     Q1 -->|"amplifies via HVEM"| Q2
@@ -632,6 +643,9 @@ graph TB
     %% comp-033/036 inhaled mRNA-IL-1RA (source: inhaled-mrna-il1ra-pulse-computational.md, repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md)
     DE31 -->|"RED single-dose; YELLOW repeat-dose at corrected Kd 0.1-10 nM"| DE25
     DE31 -->|"prednisone-displacement reframe: partial occupancy × cleaner side-effect profile"| DE22
+    %% comp-037 C1-INH protease stability + glycosylation feasibility (2026-05-17)
+    DE32 -->|"MODERATE — LOW strictly-degradative, GREEN glycosylation, RCL kinetic-competition gated"| O6
+    DE32 -->|"substantiates two-chassis CP0 architecture (C1-INH EcN + DAF SCR1-4 koji)"| O7
     %% Chassis-pending interventions (source: chassis-pending-interventions.md)
     DE25 -->|"operationalizes chokepoint-first chassis-second discipline"| DE2
     DE25 -->|"PDB / siRNA-URAT1 / engineered-LBP / mRNA-IL-1RA / IA-uricase entries"| DE7
