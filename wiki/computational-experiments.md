@@ -73,6 +73,108 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
+### comp-036 — Repeat-Dose Inhaled mRNA-IL-1Ra PK/PD (Receptor-Occupancy Framing) — YELLOW (2026-05-16)
+
+**Question:** Does multi-administration inhaled mRNA-IL-1Ra dosing achieve clinically-meaningful sustained IL-1R1 receptor occupancy over the 72h acute gout flare window — how many doses, at what frequency, with what confidence bounds?
+
+**Verdict:** **YELLOW.** Repeat dosing partially salvages comp-033's RED single-dose Cmax verdict, but the high-confidence GREEN bar (median 95% of the 0-72h flare window above 80% receptor occupancy AND p25 ≥ 50%) is NOT reached by any of three regimens tested (QD ×1–14, BID ×2–28, Loading 2× + QD-maintenance ×0–14). Modality viable but at the edge — wet-lab dose-finding needed.
+
+**Key findings:**
+- Reframe from plasma Cmax-vs-anakinra (comp-033) to receptor-occupancy fraction over the 0–72h gout flare window — the clinically-relevant metric for a competitive antagonist. 80%-occupancy plasma threshold: median 73 ng/mL (p05–p95: 9–553).
+- Kd_nM is now the #1 sensitivity driver (Spearman ρ = −0.69), surfacing previously-implicit uncertainty. IL-1Ra-IL-1R1 Kd ~1 nM (Arend 1990 JCI, range 0.1–10 nM).
+- comp-033 RED single-dose verdict does not close the modality; repeat-dose receptor-occupancy is the right gate going forward.
+
+**Informs:** [chassis-pending-interventions §4](./chassis-pending-interventions.md) · [inhaled-mrna-il1ra-pulse-computational](./inhaled-mrna-il1ra-pulse-computational.md) · [etc/open-enzyme-vision §10](./etc/open-enzyme-vision.md)
+
+**Detail:** [interpretive](./repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md) · [experiments/](./etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/) · Complete v1
+
+---
+
+### comp-033 — Inhaled mRNA-IL-1Ra Pulse Therapy Dose Modeling — RED on systemic anakinra-equivalent (2026-05-16)
+
+**Question:** Does dose modeling show pulmonary IL-1Ra expression can plausibly reach anakinra-equivalent therapeutic exposure at currently-feasible inhaled-mRNA doses (4–24 mg per administration), and which inhaled-mRNA programs / CDMOs are forkable partners?
+
+**Verdict:** **RED on the systemic-anakinra-equivalent gate.** Median predicted plasma Cmax 0.025 µg/mL = 1/60th anakinra (1.5 µg/mL); only p95 (0.28 µg/mL) approaches anakinra-trough (0.05 µg/mL). Reverse-dose calc: ~195 mg mRNA per administration to reach 0.5 µg/mL median; ~585 mg for full anakinra benchmark — both 8–25× the highest disclosed inhaled-mRNA clinical dose (24 mg, Translate Bio MRT5005). Verdict does NOT close the modality — comp-036 reframed to receptor-occupancy and pulls it back to YELLOW.
+
+**Key findings:**
+- Dose-feasibility gap is the load-bearing finding; current inhaled-mRNA platforms are 1–2 orders below what plasma-Cmax-equivalence would require.
+- Three honest paths forward: (a) repeat dosing (→ comp-036), (b) reframe to local-pulmonary IL-1Ra exposure for inflammation-of-lung indications, (c) different target where lower Cmax suffices.
+- Partner-ID surface: Translate Bio (now Sanofi), Moderna, Arcturus, Ethris — none currently aimed at IL-1Ra; chassis-pending §4 stays active as a temporal-stack platform-positioning entry.
+
+**Informs:** [chassis-pending-interventions §4](./chassis-pending-interventions.md) · [etc/open-enzyme-vision §10](./etc/open-enzyme-vision.md) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [delivery-route-matrix](./delivery-route-matrix.md) · [repeat-dose-inhaled-mrna-il1ra-pkpd-computational](./repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md) (comp-036 reframe)
+
+**Detail:** [interpretive](./inhaled-mrna-il1ra-pulse-computational.md) · [experiments/](./etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/) · Complete v1
+
+---
+
+### comp-032 — ABCG2 Q141K Pharmacological-Chaperone Virtual Screen — GREEN (2026-05-16)
+
+**Question:** Is there an FDA-approved small molecule that binds ABCG2 Q141K's nucleotide-binding domain (NBD) and could rescue trafficking, or does the FDA-approved drug surface lack chaperone-active hits — requiring novel chemistry?
+
+**Verdict:** **GREEN.** Shortlist of 10 candidates passes the four-gate filter (composite ≥ 0.75, chaperone-compatible drug class, 503A-eligible-or-chaperone-class, oral bioavailable). All four CFTR-corrector positive controls (lumacaftor, tezacaftor, ivacaftor, elexacaftor) rank in the top 11% of the 134-molecule library, all above the highest-scoring decoy.
+
+**Key findings:**
+- Three mechanistically-distinct chemistry classes pass with composite ≥ 0.85: CFTR correctors (lumacaftor top hit, 1.000; same ABC superfamily); tetramer/aggregate stabilizers (tafamidis, diflunisal — anionic aromatics matching Q141K's +1 pocket); bile-acid chemical chaperones (ursodiol, TUDCA — Hsp70 axis, F508del-CFTR rescue precedent).
+- Heuristic independently re-elevates sodium butyrate + vorinostat — the HDAC-class Q141K rescuers the wiki already names (Basseville 2012). Independent corroboration.
+- Next step: real-docking re-screen (AutoDock Vina) on top 10 + targeted HEK293-Q141K trafficking assay. Do NOT pivot to novel-binder design — the repurposing surface is empirically non-empty.
+
+**Informs:** [chassis-pending-interventions §7](./chassis-pending-interventions.md) (promotes placeholder comp-NNN to comp-032) · [abcg2-modulators](./abcg2-modulators.md) §"Pharmacological-chaperone route" · [compounding-pharmacy-track](./compounding-pharmacy-track.md)
+
+**Detail:** [interpretive](./abcg2-q141k-chaperone-screen-computational.md) · [experiments/](./etc/experiments/comp-032-abcg2-q141k-chaperone-screen/) · Complete v1
+
+---
+
+### comp-031 — Dual-chassis EcN PDB + Uricase Additive SUA Prediction — YELLOW (2026-05-16)
+
+**Question:** Does a dual-chassis stack of engineered EcN expressing the 2,8-dioxopurine PDB cluster (CBT2.0, Li 2025 PMID 41070194) co-administered with a PULSE-style luminal uricase deliver additive SUA reduction beyond either arm alone? Does PDB-derived butyrate compound with the gut-lumen uricase sink via ABCG2 induction / Q141K trafficking rescue?
+
+**Verdict:** **YELLOW (provisional)** — combined > either arm but well below naive sum. Two urate-consumption arms compete for scarce luminal urate substrate (per comp-019 substrate-limited regime); PDB pathway adds INDEPENDENT mechanism via butyrate → PPARγ ABCG2 induction (WT alleles) + butyrate → HDAC Q141K trafficking rescue. **Combined ΔSUA: −1.8 to −1.9 mg/dL across genotypes** (90% CI roughly −2.2 to −1.3). Additive bump over PDB-alone: ~−0.1 to −0.2 mg/dL.
+
+**Key findings:**
+- Engineering handoff: route PDB and uricase to **separate strains, not a dual-cassette EcN.** Substrate competition means single-chassis dual-cassette engineering gains ~nothing in additional SUA reduction relative to two co-administered strains. Avoids 8-gene PDB cluster + uricase coordinated-expression complexity.
+- Largest genotype-stratified additive bump in Q141K-hom (HDAC trafficking-rescue axis is alleles-specific).
+- Independent of comp-019 single-chassis verdict; complements rather than supersedes.
+
+**Informs:** [chassis-pending-interventions](./chassis-pending-interventions.md) §"Multi-chassis stacks" M1 · [purine-degrading-bacteria](./purine-degrading-bacteria.md) · [uricase-abcg2-genotype-stratification-computational](./uricase-abcg2-genotype-stratification-computational.md) (comp-019 anchor)
+
+**Detail:** [interpretive](./dual-chassis-ecn-pdb-uricase-computational.md) · [experiments/](./etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/) · Complete v1
+
+---
+
+### comp-027 — Disulfiram Dose Modeling for GSDMD Blockade vs DER Ceiling — YELLOW-leaning-GREEN (2026-05-16)
+
+**Question:** Is there a sub-AUD oral disulfiram dose window where plasma DSF engages GSDMD (CP6b pyroptotic-exit block) at a therapeutically meaningful level while plasma Me-DTC stays below the ALDH-inhibition threshold driving the disulfiram-ethanol reaction (DER)?
+
+**Verdict:** **YELLOW-leaning-GREEN** — narrow sub-AUD window exists around **75–125 mg/day**, centered on 100 mg/day. At 100 mg/d: ~57% GSDMD blockade (DSF Cmax ~0.4 µM) at ~40% ALDH inhibition (Me-DTC ~70 nM, right at Faiman DER hypotension threshold). Below 50 mg/d, GSDMD blockade drops <40%; above 125 mg/d, ALDH inhibition crosses DER threshold. Strict-GREEN at 100 mg/d under conservative cell-free EC50 anchor; cellular-preincub anchor extends GREEN down to 50 mg/d. Gates the 503A compounding-pharmacy disulfiram pathway.
+
+**Key findings:**
+- Sub-AUD DSF is a **selective GSDMD inhibitor**, not a pan-NLRP3 inhibitor — the NLRP3-palmitoylation pathway (Xu 2024, 10 µM EC50) is NOT engaged at any sub-AUD dose.
+- DER threshold is the load-bearing ceiling; alcohol-abstention requirement is a compliance question for the 503A protocol.
+- Two EC50 anchors (cell-free vs cellular-preincub) bracket the GREEN window; cellular-preincub captures covalent-accumulation kinetics and is the more defensible anchor for chronic dosing.
+
+**Informs:** [compounding-pharmacy-track §6](./compounding-pharmacy-track.md) · [disulfiram](./disulfiram.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) CP6b
+
+**Detail:** [interpretive](./disulfiram-dose-modeling-computational.md) · [experiments/](./etc/experiments/comp-027-disulfiram-dose-modeling/) · Complete v1
+
+---
+
+### comp-024 — Complestatin-Family BGC LBP-Chassis Feasibility — RED for LBP framing; C1-INH parallel GREEN-provisional (2026-05-16)
+
+**Question:** Is the complestatin-family NRPS biosynthetic gene cluster heterologous-expression-tractable in an engineered LBP chassis (*E. coli* Nissle 1917, *Bacteroides thetaiotaomicron*) as the next CP0 (complement priming) engineering payload?
+
+**Verdict:** **RED for the LBP-track framing.** Best host EcN YELLOW 0.544; *Bacteroides* RED 0.225. Dominant blocker: O₂-dependent tailoring chemistry (ComI/ComJ P450 oxidative phenolic coupling + ComH nonheme halogenase + Hmo FMN oxidase) fundamentally incompatible with colonic-anaerobic-resident lifestyle. Without P450-mediated phenolic coupling, the linear peptide lacks the rigid crosslinked architecture that gives complestatin its C1q/C4b affinity (Park 2016 M55/S56 deletions inactive). **C1-INH (LBP-luminal) parallel thread scores GREEN-provisional 0.774 on EcN** — recommended as next CP0 LBP payload instead (→ promoted to comp-037).
+
+**Key findings:**
+- Complestatin stays in scope as **aerobic-fermentation production candidate** (Streptomyces-class manufacturing), NOT LBP-track payload.
+- Bacterial NRPS BGC + O₂-dependent tailoring + anaerobic chassis is a load-bearing incompatibility worth surfacing as a general design rule.
+- Comp-024's recommendation (promote C1-INH to real comp-NNN) is the origin of comp-037.
+
+**Informs:** [complement-c5a-gout §9.8](./complement-c5a-gout.md) · [engineered-lbp-chassis](./engineered-lbp-chassis.md) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md)
+
+**Detail:** [interpretive](./complestatin-bgc-lbp-feasibility-computational.md) · [experiments/](./etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/) · Complete v1
+
+---
+
 ### comp-030 — ClockBase Combinatorial Ranking of A. oryzae DAF SCR1-4 Cassettes — §1.25 baseline confirmed (2026-05-15)
 
 **Question:** Across the DAF SCR1-4 cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate; does the §1.25 baseline (PamyB + amyB SP + direct) survive, and does the ESM2 pLDDT distribution corroborate α = 0.3–0.6 for CCP/SCR fold?
@@ -406,18 +508,19 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-011 TCM~~ | Reassigned 2026-05-05; TCM ChEMBL cross-check landed as comp-013 | — | ✓ Done as comp-013 |
 | comp-021 | Compound × upstream-complement chokepoint × matched-assay-format mapping (resolves RA 44× spread) | [upstream-complement-verification-rerun-computational](./upstream-complement-verification-rerun-computational.md) | Low (parked) |
 | ~~comp-022~~ | Completed 2026-05-14 — see Analyses above | — | ✓ Done |
-| comp-024 | Complestatin-family BGC heterologous expression feasibility in engineered-LBP chassis | [engineered-lbp-chassis](./engineered-lbp-chassis.md) Phase 2 | Medium |
+| ~~comp-024~~ | Completed 2026-05-16 — RED for LBP framing; C1-INH parallel GREEN-provisional → promoted to comp-037. See Analyses above | — | ✓ Done |
 | comp-023 | Promoted to Analyses 2026-05-14 (GREEN) | — | ✓ Done |
 | ~~comp-022 v2~~ | Completed 2026-05-14 — see comp-022 Status above | — | ✓ Done |
 | ~~comp-023 v2~~ | Deprioritized 2026-05-16 — koji-cordycepin removed from active stack ([koji-endgame-strain §3.5](./koji-endgame-strain.md)) | — | Closed |
 | ~~comp-025~~ | Deprioritized 2026-05-16 — koji-cordycepin removed; cultivation-route cordycepin inherits native ADA-inhibitor pairing | — | Closed |
 | ~~comp-026~~ | Deprioritized 2026-05-16 — multi-cassette induction interference moot for cordycepin; re-openable for future cytosolic third-cassette candidate | — | Closed |
-| comp-027 | Disulfiram dose modeling for GSDMD-blockade vs alcohol-deterrent ceiling (CP6b; 503A pathway gate) | [compounding-pharmacy-track](./compounding-pharmacy-track.md) §6 · [disulfiram](./disulfiram.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) CP6b | Medium-High |
+| ~~comp-027~~ | Completed 2026-05-16 — YELLOW-leaning-GREEN (sub-AUD window 75–125 mg/d). See Analyses above | — | ✓ Done |
 | ~~comp-030~~ | Completed 2026-05-15 — see Analyses above | — | ✓ Done |
 | ~~comp-029~~ | Completed 2026-05-16 — YELLOW; see Analyses above | — | ✓ Done |
-| comp-031 | Dual-chassis EcN PDB + uricase additive SUA prediction (CP6 multi-chassis stack) | [purine-degrading-bacteria](./purine-degrading-bacteria.md) · [chassis-pending-interventions](./chassis-pending-interventions.md) M1 | Medium |
-| comp-032 | Pharmacological-chaperone virtual screen against ABCG2 Q141K. Promotes the placeholder "comp-NNN" in [`chassis-pending-interventions.md §7`](./chassis-pending-interventions.md) ("Pharmacological chaperones for ABCG2 Q141K folding rescue") to a concrete numbered comp. Approach: (a) AlphaFold structure of wild-type ABCG2 + AlphaFold structure of Q141K mutant — compare to surface the misfolded NBD region as a binding pocket of interest; (b) virtual screen of the FDA-approved drug set (DrugBank / ChEMBL approved-drugs subset, ~3,000–5,000 molecules) against the Q141K NBD pocket using AutoDock Vina or DiffDock, with positive controls drawn from the CFTR-corrector class (ivacaftor / tezacaftor / elexacaftor) and from documented ABC-transporter-binding compounds; (c) rank-order hits by binding-pose stability + drug-class diversity; (d) cross-check top 20 against known PK / safety profile + 503A bulk-API availability for the compounding-pharmacy delivery route. Outcome: a defensible shortlist of 0–10 repurposing candidates worth a per-hit cell-based Q141K trafficking-rescue assay, or a defensible empty-shortlist verdict that the FDA-approved drug surface lacks chaperone-active hits for Q141K and any chaperone campaign would need novel chemistry (informs the next-step decision: empty shortlist → drop the repurposing-surface thesis for this target, pivot to AI-aided novel binder design per RFdiffusion; non-empty → compounding-pharmacy partner conversation). | [`chassis-pending-interventions.md` §7](./chassis-pending-interventions.md) (promotes the placeholder comp-NNN); [`abcg2-modulators.md`](./abcg2-modulators.md) §"Pharmacological-chaperone route" (the orthogonal rescue mechanism); [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) (delivery route if a hit lands); [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) and [`abcg2-modulators.md`](./abcg2-modulators.md) §"Q141K rescue mechanism" (the HDAC/butyrate rescue track this is orthogonal to) | Medium (cheap subagent task; bounds a "repurposing surprise" hypothesis cheaply; non-blocking for any other track) |
-| comp-033 | Inhaled mRNA-IL-1RA pulse therapy — target validation, dose modeling, pharma-partner identification | [open-enzyme-vision §10](./etc/open-enzyme-vision.md) · [chassis-pending-interventions §4](./chassis-pending-interventions.md) | Medium-High |
+| ~~comp-031~~ | Completed 2026-05-16 — YELLOW; combined ΔSUA −1.8 to −1.9 mg/dL; separate-strain handoff. See Analyses above | — | ✓ Done |
+| ~~comp-032~~ | Completed 2026-05-16 — GREEN; 10-candidate FDA-approved shortlist; lumacaftor top hit. See Analyses above | — | ✓ Done |
+| ~~comp-033~~ | Completed 2026-05-16 — RED single-dose Cmax-equivalent; reframed in comp-036 (YELLOW receptor-occupancy). See Analyses above | — | ✓ Done |
+| ~~comp-036~~ | Completed 2026-05-16 — YELLOW repeat-dose receptor-occupancy framing; salvages comp-033 RED. See Analyses above | — | ✓ Done |
 | comp-037 | **C1-INH (SERPING1, UniProt P05155) protease-stability + glycosylation feasibility in EcN-luminal-secreted format.** Same pipeline as comp-006 / comp-012 (DAF/CD55 protease-stability cascade). Gates the two-chassis two-node CP0 architecture surfaced 2026-05-16: C1-INH (LBP-luminal, classical/lectin entry) + DAF SCR1-4 (koji-secreted, surface convertase decay). If GREEN → promote C1-INH-on-EcN as sister CP0 candidate to H05 (DAF). If RED → C1-INH drops from the LBP payload candidate list. Cost: $0, ~1 week. | [complement-c5a-gout §9.8](./complement-c5a-gout.md) · [complestatin-bgc-lbp-feasibility-computational](./complestatin-bgc-lbp-feasibility-computational.md) (comp-024 GREEN-provisional anchor) · [engineered-lbp-chassis](./engineered-lbp-chassis.md) | High (cheapest CP0 next move per 2026-05-16 sweep) |
 | ~~comp-028~~ | Reframed and deprioritized 2026-05-16 — cordycepin-arm moot; general design-escape question non-load-bearing today; re-openable for future cytosolic third-cassette candidate | — | Closed |
 
