@@ -60,4 +60,5 @@ status: published
 **Where the analysis lives:**
 - Full archived analysis: [`./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md`](./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-020-upstream-complement-verification-rerun/`](./etc/experiments/comp-020-upstream-complement-verification-rerun/)
+- **Helicteres benzofuran lignan replication track (comp-018 Phase 2, 2026-05-17):** [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json) — replication INCONCLUSIVE / ANCHOR-STILL-SINGLE; independent wet-lab replication recommended
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
