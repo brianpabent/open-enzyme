@@ -1,0 +1,111 @@
+{
+  "_source": "MEROPS database release 12.4; Olsen & Ovaa 2013 (OmpT); Krojer 2008 (DegP); standard pancreatic protease specificities from Schechter & Berger 1967 / Polgar 2005 reviews. Colonic-lumen protease panel reflects the operationally relevant environment for an EcN-secreted luminal therapeutic: bacterial-host proteases (OmpT, DegP) at the cell surface / on lysis; pancreatic proteases (trypsin, chymotrypsin, elastase) reaching the colon at residual activity after small-intestine activity. Colonic pH ~6-7, no salt inhibition, bile-acid exposure present but not modeled as protease-activity modifier.",
+  "_notes": "Specificity encoded as P1 (residue before cut) and P1_prime (residue after cut). Lists are the preferred amino acids at each position. Empty list means 'any'. Endo-protease = cleaves within chain; exo = N/C-terminal only. The protease_specificities.json key name 'shio_koji_conditions' is retained from the shared library (lib/protease_stability.py) for backward compatibility — values here describe colonic-lumen conditions, NOT shio-koji conditions. The 'NaCl_pct' field is used by the lib's salt-inhibition interpolation; for the colonic environment we hold all proteases at near-physiological NaCl (~0.15 M ≈ 0.9% w/v) where salt inhibition is negligible. The 'ph_activity_at_shio_koji' field name is similarly retained from the lib and is read as 'pH activity factor at the modeled environment' here.",
+  "proteases": {
+    "trypsin": {
+      "full_name": "Pancreatic trypsin (bovine/human, residual colonic activity)",
+      "merops_id": "S01.151",
+      "family": "Chymotrypsin clan (serine protease)",
+      "type": "endo",
+      "optimal_pH": [7.5, 8.5],
+      "active_pH_range": [6.0, 9.5],
+      "ph_activity_at_shio_koji": 0.6,
+      "_ph_note": "Colonic pH ~6-7 is at the lower edge of active range. Activity factor 0.6 reflects partial activity (Polgar 2005; Northrop 1932 pH-activity curve). Trypsin retains substantial activity through the colon despite optimal pH being higher.",
+      "P1_preferred": ["K", "R"],
+      "P1_prime_preferred": [],
+      "_p1_prime_note": "Trypsin disfavors Pro at P1' but accepts most others. Modeled here as 'any' for the P1/P1' framework; downstream interpretation should consider that K-P and R-P bonds resist cleavage (Keil 1992).",
+      "notes": "Dominant pancreatic protease reaching the colon. Strict P1 = K/R preference. Active in the colonic-lumen environment at reduced but meaningful activity.",
+      "salt_inhibition": {
+        "NaCl_10pct_residual_activity": 1.0,
+        "NaCl_15pct_residual_activity": 1.0,
+        "NaCl_20pct_residual_activity": 1.0,
+        "source": "Trypsin is essentially unaffected by physiological-range NaCl. Held at 1.0 across the lib's salt-inhibition interpolation range — colonic NaCl (~0.15 M) is not a meaningful inhibitor."
+      }
+    },
+    "chymotrypsin": {
+      "full_name": "Pancreatic chymotrypsin (bovine/human, residual colonic activity)",
+      "merops_id": "S01.001",
+      "family": "Chymotrypsin clan (serine protease)",
+      "type": "endo",
+      "optimal_pH": [7.5, 8.5],
+      "active_pH_range": [6.0, 9.5],
+      "ph_activity_at_shio_koji": 0.6,
+      "_ph_note": "Same pH curve as trypsin (Polgar 2005). 0.6 at colonic pH ~6-7.",
+      "P1_preferred": ["F", "W", "Y", "L", "M"],
+      "P1_prime_preferred": [],
+      "notes": "Pancreatic chymotrypsin. P1 = aromatic / bulky hydrophobic (F/W/Y) primary; L/M secondary. Active in colonic lumen at residual activity. Reactive-bond-region of serpins (RCL) typically presents an exposed hydrophobic stretch — load-bearing for C1-INH because R466-T467 reactive site is bracketed by RCL hydrophobics F455/F458/F462.",
+      "salt_inhibition": {
+        "NaCl_10pct_residual_activity": 1.0,
+        "NaCl_15pct_residual_activity": 1.0,
+        "NaCl_20pct_residual_activity": 1.0,
+        "source": "Chymotrypsin is not meaningfully salt-inhibited at physiological range. Held at 1.0."
+      }
+    },
+    "elastase": {
+      "full_name": "Pancreatic elastase (human PRSS2 / elastase-2A, residual colonic activity)",
+      "merops_id": "S01.153",
+      "family": "Chymotrypsin clan (serine protease)",
+      "type": "endo",
+      "optimal_pH": [8.0, 9.0],
+      "active_pH_range": [6.5, 10.0],
+      "ph_activity_at_shio_koji": 0.5,
+      "_ph_note": "Pancreatic elastase is more pH-sensitive than trypsin / chymotrypsin; activity at colonic pH ~6-7 is ~0.4-0.5 of optimal (Largman 1976).",
+      "P1_preferred": ["A", "V", "G", "S", "L", "I", "T"],
+      "P1_prime_preferred": [],
+      "notes": "Pancreatic elastase. Broad small-aliphatic P1 preference. Active in colonic lumen at reduced activity. Mucin-like O-glycosylated stalks rich in A/T/S are nominally elastase-vulnerable on backbone-sequence grounds — but heavy O-glycosylation in vivo shields these. In an EcN expression context, O-glycosylation is absent (bacteria don't O-glycosylate the way eukaryotes do), so this region is exposed to elastase on the polypeptide backbone.",
+      "salt_inhibition": {
+        "NaCl_10pct_residual_activity": 1.0,
+        "NaCl_15pct_residual_activity": 1.0,
+        "NaCl_20pct_residual_activity": 1.0,
+        "source": "Not meaningfully salt-inhibited at physiological range."
+      }
+    },
+    "OmpT": {
+      "full_name": "E. coli outer membrane protease OmpT (omptin family)",
+      "merops_id": "A26.001",
+      "family": "Omptin (aspartyl-class outer-membrane endopeptidase)",
+      "type": "endo",
+      "optimal_pH": [6.0, 7.5],
+      "active_pH_range": [5.0, 9.0],
+      "ph_activity_at_shio_koji": 1.0,
+      "_ph_note": "OmpT is most active near neutral pH; colonic pH 6-7 is squarely in optimal range. Activity factor 1.0.",
+      "P1_preferred": ["K", "R"],
+      "P1_prime_preferred": ["K", "R"],
+      "notes": "EcN outer-membrane protease. Strong preference for di-basic K-K / K-R / R-R / R-K cleavage sites at P1-P1' (Dekker 2001 PMID 11226160; Hwang 2007 PMID 17263510). On a secreted heterologous protein that traverses the outer membrane during export, OmpT can cleave at any exposed basic-basic pair. Critically relevant for serpins: the reactive-center-loop region is often basic-rich and exposed. C1-INH RCL has R466-T467 reactive site — no di-basic motif there, but the full sequence should be scanned for di-basic risk. OmpT is also active on shed/lysed cell-surface fragments in the colonic lumen.",
+      "salt_inhibition": {
+        "NaCl_10pct_residual_activity": 1.0,
+        "NaCl_15pct_residual_activity": 1.0,
+        "NaCl_20pct_residual_activity": 1.0,
+        "source": "OmpT is membrane-embedded and not meaningfully NaCl-inhibited; held at 1.0."
+      }
+    },
+    "DegP": {
+      "full_name": "E. coli periplasmic protease DegP / HtrA",
+      "merops_id": "S01.273",
+      "family": "Chymotrypsin clan (serine protease, HtrA / DegP subfamily)",
+      "type": "endo",
+      "optimal_pH": [7.0, 8.0],
+      "active_pH_range": [6.0, 9.0],
+      "ph_activity_at_shio_koji": 0.8,
+      "_ph_note": "DegP is most active at slightly alkaline pH but retains substantial activity at colonic pH. Activity factor 0.8 (Krojer 2008 PMID 18261546).",
+      "P1_preferred": ["V", "I", "L", "F", "Y", "A"],
+      "P1_prime_preferred": [],
+      "notes": "Periplasmic chaperone-protease. Activated by stress / misfolded substrates. For a heterologous secreted protein that traverses the EcN periplasm en route to extracellular release, DegP is the primary periplasmic quality-control protease. Broad P1 preference for hydrophobic residues. Cleaves unfolded / misfolded chains preferentially over folded — pLDDT-based accessibility weighting is the right scoring axis. The 8 O-linked sites in the mucin-like region (aa 47-96, all in the bacterially-unglycosylated polypeptide) form a disordered hydrophobic-rich stretch directly relevant to DegP susceptibility.",
+      "salt_inhibition": {
+        "NaCl_10pct_residual_activity": 1.0,
+        "NaCl_15pct_residual_activity": 1.0,
+        "NaCl_20pct_residual_activity": 1.0,
+        "source": "Not meaningfully NaCl-inhibited at physiological range."
+      }
+    }
+  },
+  "shio_koji_conditions": {
+    "NaCl_pct": 0.9,
+    "NaCl_pct_range": [0.7, 1.2],
+    "pH_range": [6.0, 7.0],
+    "temperature_C": 37,
+    "duration_days": [1, 7],
+    "_label": "Colonic-lumen conditions (label name 'shio_koji_conditions' retained for shared-lib compatibility — see _notes at top of file).",
+    "notes": "Operationally relevant environment for EcN-secreted luminal C1-INH: colonic lumen, pH 6-7, 37°C, physiological NaCl (~0.15 M ≈ 0.9% w/v, well below the lib's 10-20% interpolation range — salt inhibition is therefore essentially absent). Bile-acid exposure is present in vivo but not modeled here as a protease-activity modifier; the assumption is that bile-acid effects are at most second-order relative to direct protease cleavage. Residence time on the order of 1-7 days bracketed by colonic transit time (~24-48 h for mass passage, longer for niche-resident bacteria like EcN)."
+  }
+}

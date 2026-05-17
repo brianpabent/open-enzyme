@@ -22,6 +22,26 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
+### comp-037 — C1-INH (SERPING1) Protease Stability + Glycosylation Feasibility in EcN-Luminal Format — MODERATE (kinetic-competition gated) (2026-05-17)
+
+**Question:** Will human C1-INH (UniProt P05155) survive luminal-secreted expression in engineered *E. coli* Nissle 1917, and is the loss of N-glycosylation a hard block? Closes the C1-INH-on-EcN side of the two-chassis CP0 architecture surfaced 2026-05-16 (C1-INH on LBP-luminal + DAF SCR1-4 on koji-secreted).
+
+**Verdict:** **MODERATE — kinetic-competition gated.** Strictly-degradative protease risk on the folded serpin body is **LOW (0.1)**. The by-design exposed reactive-center loop (RCL, R466-T467 cleavage by C1s) gives a 0.8 score that reflects the inhibitor *mechanism*, not body degradation. The remaining decision is a wet-lab kinetic question: k_C1s_engagement vs k_DegP_RCL_cleavage on the recombinant construct. **Glycosylation feasibility GREEN** for the serpin-core construct (aa 123–500) in luminal topology — N-glycans not required for catalytic suicide-substrate mechanism; plasma half-life concern is moot for a gut-luminal therapeutic; EcN's lack of N-glycosylation is not a hard block.
+
+**Key findings:**
+- **Disulfide count grep-verified against UniProt FT DISULFID: exactly 2 disulfides** (C123-C428, C130-C205) on SV=2 entry. Casual literature sometimes quotes higher counts; the canonical entry has 2. This is the same class of check the DAF SCR1-4 incident (CLAUDE.md Rule 4) exists to enforce.
+- **Engineering recommendation: serpin-core construct aa 123–500.** Truncation starts at C123 (first canonical disulfide cysteine; pLDDT > 80 from this position onward); eliminates two boundary-artifact elastase sites (G120-S121, S121-F122).
+- **Brief-supplied glycosylation positions did not all align with UniProt features.** Subagent corrected to verified positions: N-glycans at 25, 69, 81, 238, 253, 272-variant, 352 + O-glycans at 47, 48, 64, 71, 83, 88, 92, 96 (mucin-like domain). The mucin-like O-glycan domain (residues ~1–122) is what gets truncated — its function (serum half-life extension via O-glycan shield) is irrelevant for luminal topology.
+- Protease panel: DegP P1 V/I/L/F/Y/A (Krojer 2008), OmpT di-basic (Dekker 2001), pancreatic trypsin/chymotrypsin/elastase. Colonic pH 6–7 (Fallingborg 1999) is within DegP active range — load-bearing assumption.
+- Glycosylation cross-reference: Bos 1998 (PMID 9799502) + Stavenhagen 2018 (PMID 29381136) — ~26 kDa of glycan on ~52 kDa polypeptide; Liu 2004 (PMID 15039314) — N-deglycosylated C1-INH retains inhibitor function (this is the load-bearing precedent for the GREEN glyco verdict).
+- Substantiates comp-024's GREEN-provisional 0.774 EcN prior for C1-INH at higher resolution.
+
+**Informs:** [complement-c5a-gout §9.8](./complement-c5a-gout.md) · [complestatin-bgc-lbp-feasibility-computational](./complestatin-bgc-lbp-feasibility-computational.md) (comp-024 anchor) · [engineered-lbp-chassis](./engineered-lbp-chassis.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) (sister-thread DAF SCR1-4 on koji) · [upstream-complement-modulator-sweep-computational](./upstream-complement-modulator-sweep-computational.md) Phase 2 (engineering-literature anchors Bos 2003, Liu 2004, Ruconest 2014)
+
+**Detail:** [interpretive](./c1-inh-protease-stability-ecn-computational.md) · [experiments/](./etc/experiments/comp-037-c1-inh-protease-stability-ecn/) · Complete v1 (wet-lab kinetic-competition assay is the next gate; engineering construct = serpin-core aa 123–500)
+
+---
+
 ### comp-035 — Intra-articular Uricase H₂O₂ Reaction-Diffusion (3 Architectures) — GREEN (2026-05-16)
 
 **Question:** Across Pickering emulsion / uricase-catalase fusion / free co-formulated catalase, does steady-state [H₂O₂] at the synovial-tissue boundary stay below the <10 µM presumptive-safe threshold?
@@ -523,7 +543,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-032~~ | Completed 2026-05-16 — GREEN; 10-candidate FDA-approved shortlist; lumacaftor top hit. See Analyses above | — | ✓ Done |
 | ~~comp-033~~ | Completed 2026-05-16 — RED single-dose Cmax-equivalent; reframed in comp-036 (YELLOW receptor-occupancy). See Analyses above | — | ✓ Done |
 | ~~comp-036~~ | Completed 2026-05-16 — YELLOW repeat-dose receptor-occupancy framing; salvages comp-033 RED. See Analyses above | — | ✓ Done |
-| comp-037 | **C1-INH (SERPING1, UniProt P05155) protease-stability + glycosylation feasibility in EcN-luminal-secreted format.** Same pipeline as comp-006 / comp-012 (DAF/CD55 protease-stability cascade). Gates the two-chassis two-node CP0 architecture surfaced 2026-05-16: C1-INH (LBP-luminal, classical/lectin entry) + DAF SCR1-4 (koji-secreted, surface convertase decay). If GREEN → promote C1-INH-on-EcN as sister CP0 candidate to H05 (DAF). If RED → C1-INH drops from the LBP payload candidate list. Cost: $0, ~1 week. | [complement-c5a-gout §9.8](./complement-c5a-gout.md) · [complestatin-bgc-lbp-feasibility-computational](./complestatin-bgc-lbp-feasibility-computational.md) (comp-024 GREEN-provisional anchor) · [engineered-lbp-chassis](./engineered-lbp-chassis.md) | High (cheapest CP0 next move per 2026-05-16 sweep) |
+| ~~comp-037~~ | Completed 2026-05-17 — MODERATE (kinetic-competition gated); glyco GREEN for serpin-core aa 123–500 in luminal topology. See Analyses above | — | ✓ Done |
 | ~~comp-028~~ | Reframed and deprioritized 2026-05-16 — cordycepin-arm moot; general design-escape question non-load-bearing today; re-openable for future cytosolic third-cassette candidate | — | Closed |
 
 ---
