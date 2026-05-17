@@ -319,7 +319,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 ### 1.9 Ward 1995 Dual-Cassette Feasibility Test (Koji Endgame Strain Gate) — #1 priority gate
 
-**Status**: Proposed | **Cost**: $3,000–5,000 | **Weeks**: 8–12 | **Phase**: 1
+**Status**: Proposed | **Cost**: $5,265–8,065 (updated 2026-05-17 with Plasmidsaurus QC pipeline + RNA-Seq host-stress readout) | **Weeks**: 8–12 | **Phase**: 1
 
 **Affected wiki**: [koji-endgame-strain](./koji-endgame-strain.md), [lactoferrin](./lactoferrin.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [uricase-variant-selection](./uricase-variant-selection.md)
 
@@ -354,7 +354,26 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 This is a free byproduct of the §1.9 readout — no additional fermentation cost, only the Lf-alone strain construction (which is already a prerequisite for the dual-cassette construction sequence per "Transformation" above: Cassette A first → confirm hLf expression → transform Cassette B). The Lf-alone titer was previously reported only as part of the construct-validation step; this addendum elevates it to a load-bearing platform readout.
 
-**Estimated cost:** $3,000–5,000 — gene synthesis for two codon-optimized cassettes (~$600–1,000), cloning and transformation reagents ($500–1,000), fermentation consumables ($200–400), ELISA + Western antibodies ($800–1,200), metabolite assay reagents ($500–800), CRO or academic lab time if outsourced ($1,000–2,000 per batch).
+**Plasmidsaurus QC pipeline (added 2026-05-17):** apply the canonical [§05 Plasmidsaurus QC pipeline](./engineered-koji-protocol.md#step-5-strain-qc-infrastructure-plasmidsaurus-pipeline-for-plasmid--transformant--strain-verification) across the §1.9 build:
+- **Pre-transformation:** Whole Plasmid Sequencing of both cassette plasmids before any transformation work ($15 × 2 = **$30**, 1 day). Catches construct errors before the $500–1,000 cloning/transformation reagent spend.
+- **Post-transformation clone screening (Cassette A round):** Genotyping Analysis on 6–10 hLf-alone transformants to pick clean on-target integrants before committing to Western screening ($30 × 8 = **$240**, 1–2 days).
+- **Post-transformation clone screening (Cassette B round):** Genotyping Analysis on 6–10 dual-cassette transformants ($30 × 8 = **$240**, 1–2 days). Same logic — screen on integration cleanliness before fermentation panel.
+- **Junction PCR sequencing (both rounds):** Amplicon Sequencing on 2–4 junction PCRs per integration ($15 × 6 = **$90**, next-day).
+- **Final platform-strain release:** Whole Genome Sequencing on the validated dual-cassette strain (Eukaryotic tier for *A. oryzae*, $250 + $15 DNA extraction = **$265**, 3–6 days). This is the "publish-grade" sequence for the open-source-strain-library release.
+
+**Plasmidsaurus QC pipeline subtotal: ~$865, ~15% of the §1.9 envelope.** Replaces piecemeal Sanger + multiple junction PCRs + qPCR copy-number — the qPCR copy-number assay can be retained as a sanity check or replaced entirely by Whole Genome Sequencing readout from the final-strain step.
+
+**Host-stress transcriptome readout via Plasmidsaurus RNA-Seq (added 2026-05-17):** the planned readout panel covers known native metabolites (kojic acid, ergothioneine) via HPLC/LC-MS but does not assay genome-wide host stress — UPR activation, secretory-pathway saturation, broader biosynthesis-transcript collapse — which is the empirical signal most directly relevant to chaperone-orthogonal-stacking α-coefficient calibration ([`chaperone-orthogonal-stacking.md` §3.5.4](./chaperone-orthogonal-stacking.md), [`combined-cp0-systems-model-computational.md`](./combined-cp0-systems-model-computational.md) comp-029). Plasmidsaurus launched an Illumina-based RNA-Seq service in 2026 priced at $50/sample academic / $80/sample industry, ~3-day turnaround, 10M deduplicated 3' end counting reads from 300 ng purified RNA, with interactive volcano + functional-enrichment outputs. Proposed addendum panel: 4 conditions (WT NSlD-ΔP10, lactoferrin-alone arm, uricase-alone, dual-cassette) × 3 biological replicates = 12 samples = ~$600 academic. Add ~$200 for RNA-extraction reagents (TRIzol or RNeasy) — koji is fungal and Plasmidsaurus does not accept fungal cells directly, only purified RNA at ≥10 ng/μL — total adder ~$800, ~15% of the §1.9 envelope.
+
+| α-signature in transcriptome | Implication for chaperone framework |
+|---|---|
+| UPR target genes (hac1, bipA, pdiA, ero1) elevated in dual-cassette by <2× vs Lf-alone | α ≥ 0.8 (near-additive); framework predicts dual-PDI stacking scales well |
+| UPR targets elevated 2–5× | α ≈ 0.4–0.6 (intermediate); third PDI-loaded cassette (DAF SCR1-4) needs conservative framing |
+| UPR targets elevated >5× OR ergothioneine biosynthesis transcripts (egt1, egt2) collapsed >50% | α < 0.4 (saturating); strain compromised, two-strain co-fermentation fallback (§4.1 koji-endgame-strain.md) becomes more attractive regardless of titer outcome |
+
+**Technology caveat:** Plasmidsaurus RNA-Seq is short-read Illumina 3' end counting — good for differential expression and transcript abundance, **not capable of** cryptic-splicing detection, transcript-isoform analysis, or read-through detection. If a load-bearing splicing question emerges post-§1.9 (e.g., heterologous ORF showing antibody-positive Western but no activity), a long-read cDNA service (Oxford Nanopore PromethION, separate vendor) is the right diagnostic — Plasmidsaurus does not currently offer this. The whole-plasmid / whole-genome sequencing line items in [`engineered-koji-protocol.md`](./engineered-koji-protocol.md) §05 are a distinct Plasmidsaurus product and remain unchanged.
+
+**Estimated cost:** $5,265–8,065 — gene synthesis for two codon-optimized cassettes (~$600–1,000), cloning and transformation reagents ($500–1,000), fermentation consumables ($200–400), ELISA + Western antibodies ($800–1,200), metabolite assay reagents ($500–800), Plasmidsaurus QC pipeline (plasmid + amplicon + genotyping + whole-genome, ~$865), Plasmidsaurus RNA-Seq 12-sample panel + extraction reagents ($800), CRO or academic lab time if outsourced ($1,000–2,000 per batch).
 
 **Estimated timeline:** 8–12 weeks — 2–3 weeks gene synthesis + construct assembly, 2–3 weeks sequential transformation + clonal screening, 1–2 weeks parallel fermentation (solid-state + submerged), 2–3 weeks full assay suite + write-up.
 
@@ -405,7 +424,9 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
   - Lane 4: **Aggressive `EEEEPAAPPAP`** (multi-proline, 55% WT identity, comp-034 4-of-5, predicted −43% cleavage)
   Readout: same SDS-PAGE + anti-Lf Western + iron-binding ELISA as the WT lane, run at day 0 / day 7 / day 14. Outcome: maps comp-034's in silico predictions to wet-lab protease resistance + bilobal-cleavage product pattern. Marginal cost +$1.5–3K (gene synthesis for 3 variants at typical custom-synthesis pricing; reagent costs amortized into the existing §1.10 panel). **Caveat per comp-034 Status field:** the comp-034 pilot used a transparent substitute sampler in place of ProteinMPNN external scripts (auto-mode classifier blocked the `/opt/ProteinMPNN` clone during the run); a single-command ProteinMPNN-rerun verifying the candidate identities is a cheap pre-gene-synthesis check that should run before this arm spends gene-synthesis dollars. See [`etc/bio-ai-tools.md`](./etc/bio-ai-tools.md) A1 install record for the ProteinMPNN status.
 
-**Estimated cost:** $2,100–4,100 (post-2026-05-16 linker-variant arm adder) — uricase activity assay reagents ($100–200), lactoferrin iron-binding assay reagents ($50–100), SDS-PAGE / Western antibodies for both proteins ($300–500), bovine lactoferrin standard ($50), shio-koji ingredients ($20–50), CD spectroscopy if outsourced ($100–200), comp-034 linker-variant gene synthesis ($1,500–3,000 for 3 variants).
+**Microbial-purity readout via Plasmidsaurus 16S Amplification (added 2026-05-17):** the 7–14 day room-temperature shio-koji ferment in 15–20% NaCl is a contamination-permissive format — salt-tolerant *Tetragenococcus*, *Halomonas*, and various *Staphylococcus* species can colonize the matrix and confound the proteolysis readout (any drop in heterologous protein band could reflect contaminant proteases, not *A. oryzae* native proteases). A cheap microbial-purity check at the day 0 / day 7 / day 14 time-course points uses Plasmidsaurus's 16S Amplification & Sequencing product: **$45/sample standard tier (5K Nanopore long-reads, full-length 16S → species-level resolution), +$15 per sample for in-house DNA extraction from raw ferment, 1 business day turnaround.** Three time-course points across both the engineered + WT control matrices = 6 samples = **~$360 total** (well under 10% of the §1.10 envelope). Output: taxonomic-composition stacked-bar across the time course. Interpretation: dominant *A. oryzae* signal at day 0 (any other taxa <5% relative abundance), watch for any taxon climbing >10% relative abundance by day 14. If a contaminant climbs, the proteolysis readout for that arm needs to be re-interpreted with the contaminant's known protease profile in mind.
+
+**Estimated cost:** $2,460–4,460 (post-2026-05-17 16S purity adder; post-2026-05-16 linker-variant arm) — uricase activity assay reagents ($100–200), lactoferrin iron-binding assay reagents ($50–100), SDS-PAGE / Western antibodies for both proteins ($300–500), bovine lactoferrin standard ($50), shio-koji ingredients ($20–50), CD spectroscopy if outsourced ($100–200), comp-034 linker-variant gene synthesis ($1,500–3,000 for 3 variants), Plasmidsaurus 16S microbial-purity panel (~$360).
 
 **Estimated timeline:** 3–4 weeks — parallel with the active fermentation. Day-by-day sampling continues over the 14-day window; assay batches at days 0/3/7/10/14 are ~2 days each.
 
@@ -968,7 +989,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 ### 1.25 DAF/CD55 SCR1-4 Truncated Single-Cassette Expression in *A. oryzae* (CP0 Engineering Candidate Wet-Lab Gate)
 
-**Status**: Proposed | **Cost**: $3,500–5,500 (two-arm RIB40 + NSlD-ΔP10; re-scoped 2026-05-16) | **Weeks**: 6–8 | **Phase**: 1
+**Status**: Proposed | **Cost**: $4,445–6,745 (two-arm RIB40 + NSlD-ΔP10; re-scoped 2026-05-16; Plasmidsaurus QC pipeline added 2026-05-17) | **Weeks**: 6–8 | **Phase**: 1
 
 **Affected wiki**: [daf-cd55-scr14-truncated-computational](./daf-cd55-scr14-truncated-computational.md), [hypotheses/H05-daf-scr14-cp0-thesis](./hypotheses/H05-daf-scr14-cp0-thesis.md), [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md), [koji-endgame-strain](./koji-endgame-strain.md), [complement-c5a-gout](./complement-c5a-gout.md), [modality-chokepoint-matrix](./modality-chokepoint-matrix.md)
 
@@ -1006,7 +1027,15 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
   - **CCP-regulatory activity assay:** zymosan-activation assay measuring C5a generation in human serum + purified recombinant DAF SCR1-4 vs. control (heat-denatured DAF SCR1-4 + buffer-only). Target: ≥30% C5a-generation inhibition vs. control at therapeutically-plausible DAF concentration (rough target ~1-10 μg/mL based on literature soluble DAF activity ranges). This is the H05 third wet-lab unknown — does SCR1-4 retain complement-regulatory activity without the stalk?
   - **Native metabolite profile** (carryover check): kojic acid titer (HPLC) + ergothioneine titer (LC-MS) — confirm WT baseline preserved within 30% on the engineered strain (i.e., the heterologous DAF cassette doesn't perturb the native koji metabolite chorus that contributes to the CP1a + CP1b coverage per `koji-endgame-strain.md` §1).
 
-**Estimated cost ($2,500-4,000 breakdown):**
+**Plasmidsaurus QC pipeline (added 2026-05-17):** apply the canonical [§05 Plasmidsaurus QC pipeline](./engineered-koji-protocol.md#step-5-strain-qc-infrastructure-plasmidsaurus-pipeline-for-plasmid--transformant--strain-verification) across both arms (RIB40 + NSlD-ΔP10):
+- **Pre-transformation:** Whole Plasmid Sequencing of the single DAF SCR1-4 cassette plasmid ($15 × 1 = **$15**, 1 day).
+- **Post-transformation clone screening (per arm):** Genotyping Analysis on 6–10 transformants per arm to pick clean on-target integrants ($30 × 8 × 2 arms = **$480**, 1–2 days each).
+- **Junction PCR sequencing (per arm):** Amplicon Sequencing on 2–4 junction PCRs per integration ($15 × 4 × 2 arms = **$120**, next-day each).
+- **Final platform-strain release (per arm):** Whole Genome Sequencing on each validated arm strain (Eukaryotic tier, $250 + $15 extraction = $265 × 2 = **$530**, 3–6 days each). Both arms get publish-grade sequences for the open-source-strain-library release since the dual-arm framework-calibration role means both are platform-relevant outputs.
+
+**Plasmidsaurus QC pipeline subtotal: ~$1,145, ~25–35% of the §1.25 envelope.** Higher fraction than §1.9 because §1.25 has two parallel arms (mandatory per the 2026-05-16 re-scope) each requiring its own full QC pass.
+
+**Estimated cost ($4,445-6,745 breakdown, updated 2026-05-17):**
 - Codon-optimized gene synthesis: $300-500
 - Cloning + transformation reagents: $400-600
 - Fermentation consumables: $200-300
@@ -1014,6 +1043,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - ELISA reagents + Western consumables: $500-700
 - Mass spec analysis (outsourced to core facility): $300-500
 - Zymosan + complement activity assay reagents: $200-400
+- Plasmidsaurus QC pipeline (both arms: plasmid + amplicon + genotyping + whole-genome): ~$1,145
 - CRO or academic lab time if outsourced: $1,000-2,000 (otherwise embedded in lab partnership)
 
 **Estimated timeline (6-8 weeks breakdown):**
