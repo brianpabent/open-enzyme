@@ -25,3 +25,9 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Queue a comp-NNN for C1-INH (SERPING1) protease-stability + glycosylation feasibility in EcN-luminal-secreted format, with the comp-006/comp-012 pipeline as template. If GREEN → promote C1-INH (LBP-luminal) as the sister CP0 candidate to H05 (DAF SCR1-4, koji-secreted) and document the two-chassis two-node CP0 architecture in `complement-c5a-gout.md` §9.7 alongside the existing combined-CP0-coverage hypothesis. Cross-reference `chassis-pending-interventions.md` §"Pending entries to triage" where C1-INH is already named as an unscoped entry.
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The two-node CP0 composition is sound: `complestatin-bgc-lbp-feasibility-computational.md` explicitly drops complestatin for LBP and promotes C1-INH-on-EcN as GREEN-provisional 0.774, while `hypotheses/H05-daf-scr14-cp0-thesis.md` already frames DAF SCR1-4 as a koji-secreted CP0 candidate and calls C1-INH a sister hypothesis. The novelty is the architecture-level composition — C1-INH at classical/lectin entry plus DAF at convertase decay, across independent chassis — not either regulator alone. Queueing a SERPING1 protease/glycosylation feasibility comp is the right cheap gate before wet-lab commitment.
+
+---
+
+**WALKED 2026-05-16 — Closed (architecture named in §9.8, comp queued).**
+
+Same thread as Priority Action #2 + Experiment #1. Both walked together: §9.8 added to `wiki/complement-c5a-gout.md` naming the two-chassis architecture; comp-037 queued in `wiki/computational-experiments.md`.

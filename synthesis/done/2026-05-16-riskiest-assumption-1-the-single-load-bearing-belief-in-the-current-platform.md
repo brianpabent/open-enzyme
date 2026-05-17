@@ -19,3 +19,9 @@ The calibration set (§1.9 + §1.25 under harmonized NSlD-ΔP10 / solid-state / 
 See [`chaperone-orthogonal-stacking.md` §8 item 6](./chaperone-orthogonal-stacking.md) for the framework's own caveat; §3.5.4 for the calibration-set design; §5.5 for the triple-cassette prediction the α coefficients drive.
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` This is a good riskiest-assumption call. `chaperone-orthogonal-stacking.md` makes the α coefficients load-bearing for lactoferrin, DAF SCR1-4, and triple-cassette routing, and it explicitly warns that the transferrin-lobe coefficient is derived from in vitro oxidative refolding rather than *A. oryzae* ER-assisted folding. Since those coefficients drive whether DAF stays separate, whether cytosolic-only third-cassette rules hold, and whether the endgame strain can remain single-organism, the calibration set is not a bookkeeping issue; it is a platform architecture gate.
+
+---
+
+**WALKED 2026-05-16 — Closed (calibration set elevated to platform gate).**
+
+Same thread as Priority Action #1. The riskiest-assumption verdict named the chaperone-framework α coefficients as the single least-supported load-bearing belief; the calibration set (§1.9 + §1.25 under harmonized conditions) is the experimental resolver. Today's walk re-scoped §1.25 to mandatory two-arm (RIB40 + NSlD-ΔP10) and rewrote the queue-table-header "#1 priority gate" to name the framework calibration as the gating experiment. The framework's own caveat (§8 item 6 in chaperone-orthogonal-stacking.md) remains the canonical statement of the uncertainty; nothing in the framework page needed editing — the resolution lives at the wet-lab gate, which is now correctly scoped.
