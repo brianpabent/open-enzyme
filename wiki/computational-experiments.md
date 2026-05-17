@@ -246,7 +246,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-018 — Upstream Complement Modulator Sweep — Phase 1 complete (2026-05-08)
+### comp-018 — Upstream Complement Modulator Sweep — Phase 1 + Phase 2 complete (2026-05-17)
 
 **Question:** Across all compound classes, which compounds have documented activity at upstream complement cascade nodes proximal to C5a generation, and which are gout-platform-relevant?
 
