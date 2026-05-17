@@ -1833,13 +1833,41 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-strain-qc-infrastructure-genome-sequencing-for-integration-verification-off-target-screening" class="md-nav__link">
+  <a href="#step-5-strain-qc-infrastructure-plasmidsaurus-pipeline-for-plasmid-transformant-strain-verification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Strain QC Infrastructure (genome sequencing for integration verification + off-target screening)
+        Step 5: Strain QC Infrastructure (Plasmidsaurus pipeline for plasmid → transformant → strain verification)
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Strain QC Infrastructure (Plasmidsaurus pipeline for plasmid → transformant → strain verification)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plasmidsaurus-qc-pipeline-canonical-reference-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plasmidsaurus QC pipeline — canonical reference table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-house-minion-as-long-term-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-house MinION as long-term alternative
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -6723,11 +6751,96 @@ Brian Abent</p>
 <li><strong>Western blot:</strong> If you can source an anti-uricase antibody (or anti-His tag if you added one), this confirms identity. Not strictly necessary if the activity assay is positive.</li>
 <li><strong>RT-qPCR:</strong> Measure uaZ mRNA levels relative to a housekeeping gene. Useful for comparing expression across different transformants/conditions.</li>
 </ul>
-<h3 id="step-5-strain-qc-infrastructure-genome-sequencing-for-integration-verification-off-target-screening">Step 5: Strain QC Infrastructure (genome sequencing for integration verification + off-target screening)<a class="headerlink" href="#step-5-strain-qc-infrastructure-genome-sequencing-for-integration-verification-off-target-screening" title="Permanent link">&para;</a></h3>
-<p>For any strain that progresses past the activity-assay stage (i.e., a real platform candidate, not just a screen hit), the next-tier verification is <strong>whole-genome sequencing</strong> to confirm: (a) the cassette is integrated where it was meant to be (not at an off-target locus), (b) there are no unintended secondary integrations or large indels elsewhere, &copy; plasmid sequence is what was designed, and (d) the strain genome can be published as proof-of-construct alongside the strain release per the open-source-strain-library thesis.</p>
-<p>The hardware/wetware/pipeline for this overlaps <strong>completely</strong> with the personal-genome MinION setup documented in <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a>. Same MinION + Dorado basecaller + Flye/Clair3 variant-calling pipeline that sequences a human genome handles strain-genome assembly + variant verification + plasmid validation. <strong>One amortized hardware investment, two outputs.</strong> This is a deliberate dual-use property of the platform's infrastructure choices.</p>
-<p><strong>Cost note (calibrated 2026-05-08):</strong> the MinION at-home buildout is ~$5,000 all-in (device + supporting wet-lab equipment + GPU laptop), plus ~$1,000/run for flow cell + reagents at usable read depth. Per-strain genome sequencing once the buildout exists is in the ~$300–500 range (single flow cell amortized across multiple strains is feasible — a MinION flow cell can multiplex ~12-24 microbial genomes per run depending on read depth target). Until the strain pipeline reaches Phase 1+ wet work and a real strain QC need exists, the cost-justification rests entirely on the personal-genome use case (see <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a> §"Tier table" — not imminent for Brian as of 2026-05-08). A contributor with the hardware joining the project would change the calculus immediately.</p>
-<p><strong>Alternative for Phase 0 / pre-buildout:</strong> outsourced strain genome sequencing via commercial CRO (Plasmidsaurus, Eurofins, etc.) at ~$50–200 per strain for plasmid + integration site verification. Cheaper per-strain when N is small; in-house MinION wins on cost amortization once N gets large enough or when a contributor's hardware investment becomes platform infrastructure.</p>
+<h3 id="step-5-strain-qc-infrastructure-plasmidsaurus-pipeline-for-plasmid-transformant-strain-verification">Step 5: Strain QC Infrastructure (Plasmidsaurus pipeline for plasmid → transformant → strain verification)<a class="headerlink" href="#step-5-strain-qc-infrastructure-plasmidsaurus-pipeline-for-plasmid-transformant-strain-verification" title="Permanent link">&para;</a></h3>
+<p>For any strain that progresses past the activity-assay stage (i.e., a real platform candidate, not just a screen hit), the verification stack covers four distinct questions, each with a different right tool. As of 2026-05-17 the cost-disrupted vendor across all four is Plasmidsaurus (commercial CRO; Nanopore long-read on most products, Illumina short-read on RNA-Seq and Shotgun Metagenomics). This subsection is the <strong>canonical pricing/applicability table</strong> referenced from <a href="../validation-experiments/"><code>validation-experiments.md</code></a> §1.9, §1.10, §1.25.</p>
+<h4 id="plasmidsaurus-qc-pipeline-canonical-reference-table">Plasmidsaurus QC pipeline — canonical reference table<a class="headerlink" href="#plasmidsaurus-qc-pipeline-canonical-reference-table" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Gate question</th>
+<th>Product</th>
+<th>Tech</th>
+<th>Pricing (2026-05)</th>
+<th>Turnaround</th>
+<th>OE applicability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Did my plasmid get built right before I spend transformation $?"</td>
+<td><strong>Whole Plasmid Sequencing</strong></td>
+<td>Nanopore long-read</td>
+<td><strong>$15</strong> (≤25 kb) / $30 (Big, 25–125 kb) / $60 (Huge, 125–300 kb). ZeroPrep $20: ship liquid culture, agar-plate colony, or resuspended colony — no miniprep</td>
+<td>1 business day</td>
+<td><strong>Every gene-synthesis order + every cloning step.</strong> Run before any transformation that spends ≥$500. Sequence the actual ordered plasmid even though Twist ships sequence-verified — catches downstream-handling errors.</td>
+</tr>
+<tr>
+<td>"I PCR'd a region — does the DNA actually say what I designed?"</td>
+<td><strong>Amplicon Sequencing (Linear/PCR)</strong></td>
+<td>Nanopore long-read</td>
+<td><strong>$15</strong> (Linear/PCR, next-day) / $30 (Premium PCR, for mixed populations)</td>
+<td>Next day</td>
+<td>Junction-PCR readout for integration confirmation. Replaces Sanger of PCR products at the same price but full-length. The PCR step in <code>Step 2: PCR Verification</code> above currently calls for agarose-gel size confirmation only; for any junction PCR where sequence matters (not just "did it amplify"), Amplicon-Seq the band instead of running Sanger separately.</td>
+</tr>
+<tr>
+<td>"Of the 6–10 antibiotic-resistant transformants I picked, which have clean on-target integration vs off-target events vs multi-copy chaos?"</td>
+<td><strong>Genotyping Analysis [Beta]</strong></td>
+<td>Nanopore long-read, phased variant calling</td>
+<td><strong>$30</strong> (3K reads) / $60 (6K) / $120 (12K). Detects all alleles ≥5% frequency</td>
+<td>1–2 days</td>
+<td><strong>Replaces multiple junction PCRs + Sanger</strong> as the screen between transformation and Western. Run after the agarose-gel size confirmation in Step 2, before the activity assay in Step 3. Saves you from running activity assays on transformants that turn out to have off-target integration.</td>
+</tr>
+<tr>
+<td>"The validated platform strain — sequence the whole genome for off-target screening, integration mapping, and open-source-strain-library release"</td>
+<td><strong>Whole Genome Sequencing</strong></td>
+<td>Nanopore long-read (+ optional Illumina hybrid polish)</td>
+<td>Bacterial <strong>$90</strong> standard / $105 Big (7–12 Mb) / $165 hybrid; <strong>Yeast $150</strong> standard (≤20 Mb, 2 days) / $290 hybrid; <strong>Eukaryotic $250</strong> (cell-wall organisms incl. <em>A. oryzae</em>, 3–6 days). +$15 for in-house DNA extraction from cell pellets</td>
+<td>1–6 days depending on tier</td>
+<td>The "publish-grade" verification for any strain entering the open-source library. <em>A. oryzae</em> uses the Eukaryotic tier ($250); engineered EcN (LBP chassis) and engineered <em>S. cerevisiae</em> use Bacterial / Yeast tiers respectively.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Per-strain cumulative QC cost (Phase 0, outsourced):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Strain build step</th>
+<th>Tool</th>
+<th>Per-instance cost</th>
+<th>Typical N per build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plasmid construct verification</td>
+<td>Whole Plasmid</td>
+<td>$15–60</td>
+<td>1–3 plasmids per cassette × 1–3 cassettes</td>
+</tr>
+<tr>
+<td>Junction PCR sequencing (integration confirmation)</td>
+<td>Amplicon (Linear/PCR)</td>
+<td>$15</td>
+<td>2–4 junctions per integration site</td>
+</tr>
+<tr>
+<td>Transformant clone screening</td>
+<td>Genotyping Analysis</td>
+<td>$30</td>
+<td>6–10 clones per transformation</td>
+</tr>
+<tr>
+<td>Final platform-strain release sequencing</td>
+<td>Whole Genome (Eukaryotic for koji)</td>
+<td>$250</td>
+<td>1 per validated strain</td>
+</tr>
+</tbody>
+</table>
+<p>For a typical single-cassette koji build (one plasmid + one transformation + ~8 candidate clones screened + one final strain release): <strong>~$15 + $30 + $240 + $250 = ~$535 in outsourced sequencing across the entire build.</strong> For the §1.9 dual-cassette build with two transformations: roughly <strong>$700–900 across the full pipeline</strong>.</p>
+<h4 id="in-house-minion-as-long-term-alternative">In-house MinION as long-term alternative<a class="headerlink" href="#in-house-minion-as-long-term-alternative" title="Permanent link">&para;</a></h4>
+<p>The hardware/wetware/pipeline for the Plasmidsaurus QC pipeline overlaps <strong>completely</strong> with the personal-genome MinION setup documented in <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a>. Same MinION + Dorado basecaller + Flye/Clair3 variant-calling pipeline that sequences a human genome handles strain-genome assembly + variant verification + plasmid validation. <strong>One amortized hardware investment, two outputs.</strong> This is a deliberate dual-use property of the platform's infrastructure choices.</p>
+<p><strong>Cost note (calibrated 2026-05-08):</strong> the MinION at-home buildout is ~$5,000 all-in (device + supporting wet-lab equipment + GPU laptop), plus ~$1,000/run for flow cell + reagents at usable read depth. Per-strain genome sequencing once the buildout exists is in the ~$300–500 range (single flow cell amortized across multiple strains is feasible — a MinION flow cell can multiplex ~12-24 microbial genomes per run depending on read depth target). <strong>The Plasmidsaurus pricing above means in-house MinION crosses the breakeven only when N gets large enough or when a contributor's hardware investment becomes platform infrastructure.</strong> For Phase 0 strain builds (N ≈ 1–5 per year), outsource to Plasmidsaurus. For Phase 1+ with sustained throughput (or a contributor donating MinION time), in-house wins. As of 2026-05-17 the Phase 0 default is outsourced — <code>personal-genome-protocol.md</code> §"Tier table" remains the relevant cost-justification document for any standalone MinION buildout.</p>
 <h3 id="how-much-uricase-per-gram-of-koji">How Much Uricase Per Gram of Koji?<a class="headerlink" href="#how-much-uricase-per-gram-of-koji" title="Permanent link">&para;</a></h3>
 <p>Literature on heterologous protein expression in <em>A. oryzae</em> reports yields of <strong>1–10 g/L</strong> for well-expressed secreted proteins (e.g., lipase, glucoamylase). These are industrial fermentation numbers. For a koji solid-state fermentation, yields are typically reported as mg protein per gram dry substrate.</p>
 <p>Conservative estimate for uricase expression under PamyB on rice: <strong>0.5–5 mg uricase per gram dry koji</strong>. This is the range we'll use for dosing calculations in Section 8.</p>
