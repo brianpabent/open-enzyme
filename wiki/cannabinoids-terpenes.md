@@ -306,6 +306,26 @@ No direct combination studies. CBD (P2X7 upstream) and oridonin (covalent NACHT 
 
 ---
 
+## 4a. Acute-Flare Topical CBD+THC Protocol *(new clinical surface, 2026-05-17)*
+
+A specific clinical protocol for acute gout flare that sits atop the mechanism evidence in §1–2: **topical 1:1 CBD:THC (high-mg/oz formulation) applied to the affected joint, plus ice cycling.** (source: gout-action-guide.md)
+
+**Mechanism chain:**
+- CB2 receptor activation on synovial macrophages and infiltrating neutrophils suppresses NLRP3 inflammasome assembly and reduces IL-1β release (CB2 → NLRP3/ASC suppression — same downstream chokepoint CP2 as colchicine, reached via a different receptor; see §1 CBG + §2 beta-caryophyllene for the MSU-model evidence base)
+- Topical TRPV1 desensitization plus cooling (ice / menthol → TRPM8 agonist) adds thermoreceptor-mediated pain reduction at the site
+- Beta-caryophyllene (CB2-selective agonist; MSU gout model, §2) and CBG (NLRP3 in CIA model, §1) provide the direct inflammasome-suppression evidence
+- Ice cycling: 10–15 min ice → apply topical → ice again 30–60 min later
+
+**Clinical positioning:**
+- For recurrent-flare patients with significant cumulative steroid burden, this protocol may reduce or replace the need for prednisone dose escalation during a step-down rebound
+- For more severe presentations or systemic effect, oral or inhaled THC:CBD adds systemic CB1/CB2 activation
+- **Evidence level:** In Vitro / Animal Model for the mechanism (see §1 and §2 for per-compound evidence); direct human gout-flare RCT evidence absent; mechanistic + indirect evidence base stands on the per-compound data in this page
+- **Access:** Cannabis is jurisdiction-dependent and requires medical-program access in many places
+
+**Where it fits in the cannabinoid stack framework (§7):** this is a *different use case* from the chronic NLRP3-suppression stack — acute flare management leveraging CB2's fast-onset neutrophil suppression and TRP-mediated analgesia, not long-term inflammasome priming prevention. The oral chronic-suppression stack (beta-caryophyllene, limonene) and the topical acute-flare stack are complementary rather than alternatives. (source: gout-action-guide.md)
+
+---
+
 ## 5. Digestive Health and EPI Relevance
 
 **CBG is the strongest gut candidate:**

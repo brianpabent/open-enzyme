@@ -136,7 +136,7 @@ BHB's strength is immediate NLRP3 suppression during the crystal-dissolution pha
 > **Standardized safety profile (source: supplements-stack.md, 2026-04-26):** The following section consolidates contraindications, drug interactions, and dose-dependent risk from the supplements catalog.
 
 **Contraindications:**
-- Active gout flare (transient UA rise from ketosis; see dose-dependent risk below)
+- **Active gout flare — transient UA rise from ketosis compounding the flare (added 2026-05-17, source: gout-action-guide.md):** Ketone bodies and urate compete for renal MCT/URAT1 reabsorption; transient ketotic UA rise of 5–10% is documented and can compound the flare. This is distinct from the "paradox resolved" framing for BHB (which applies to *prophylactic* NLRP3 suppression when UA levels are controlled, not to acute flare where the ketosis-driven UA spike adds to the inflammatory substrate). The correct clinical framing is: BHB/ketosis is a prophylactic NLRP3 tool for intercritical periods, NOT a rescue intervention during an active flare. If a flare is active or prodromal, suspend ketosis + exogenous ketone supplementation until the flare resolves. Once UA is normalized (typically 1–2 weeks post-flare), BHB's NLRP3 suppression can resume as prophylaxis. Intermittent fasting also raises UA transiently and should be suspended during a flare. See [gout-action-guide.md §"Active flare"](./gout-action-guide.md) for the full acute-flare protocol. (source: gout-action-guide.md)
 - T1DM without close glucose monitoring (ketoacidosis risk distinct from physiological ketosis)
 - Pregnancy (insufficient data on exogenous ketone safety)
 - Severe hepatic disease (impaired ketone metabolism)
@@ -173,8 +173,8 @@ BHB's strength is immediate NLRP3 suppression during the crystal-dissolution pha
 ### Supplementation Protocol
 
 - **Daily suppression:** 5–10g BHB salt in morning, elevates BHB 0.5–1 mM for 4–6 hours
-- **Acute flare support:** 10–15g BHB salt at onset, repeat every 6–8 hours
-- **Combined approach:** 24h fast (endogenous BHB) + BHB salt on high-risk days
+- **Do NOT use during an active flare** — the transient UA spike from ketone-urate competition compounds the flare. Suspend BHB/ketosis until the flare resolves (1–2 weeks). (source: gout-action-guide.md)
+- **Combined approach:** 24h fast (endogenous BHB) + BHB salt on high-risk days (intercritical periods only; not during active flare)
 
 ## Related Concepts
 
