@@ -85,6 +85,9 @@ graph TB
         J4["Gasdermin D Block"]
         J5["Colchicine — CP2 P2X7 + CP3 ASC speck"]
         J6["Colchicine — ULT-initiation prophylaxis + CV repositioning (Lodoco FDA 2023)"]
+        J7["Anakinra SC — off-label gout acute flare (IL-1R1 antagonist, same CP5a as canakinumab, ~$900/flare)"]
+        J8["Topical CBD+THC 1:1 — CB2 NLRP3 suppression + TRPV1 analgesia (adjunct, jurisdiction-dependent)"]
+        J9["BHB/Ketosis — contraindicated during active flare (transient UA rise compounds flare)"]
     end
 
     subgraph Parallel_Path["PARALLEL FLARE PATHWAYS (CP6a)"]
@@ -187,8 +190,8 @@ graph TB
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
         MT1["Ganoderma lucidum / lingzhi — GLPP polysaccharide-peptide"]
-        MT2["Cordyceps militaris — cordycepin + native pentostatin ADA-inhibitor"]
-        MT3["Pleurotus citrinopileatus — ergothioneine (7.0 mg/g DW)"]
+        MT2["Cordyceps militaris — cordycepin + native pentostatin ADA-inhibitor pairing"]
+        MT3["Pleurotus citrinopileatus — ergothioneine (7.0 mg/g DW, highest fungal producer)"]
         MT4["Lentinula edodes / shiitake — eritadenine"]
         MT5["Hericium erinaceus / lion's mane — erinacines"]
         MT6["Trametes versicolor / turkey tail — PSK/PSP"]
@@ -197,8 +200,6 @@ graph TB
         MT9["H06 — track viability falsification card (stub)"]
         MT10["Extract Characterization SOPs — GLPP / cordycepin / EGT"]
     end
-
-    subgraph PRPS_arm["PRPS / PURINE BIOSYNTHESIS CHOKEPOINT (NEW)"]
         PR1["PRPS — phosphoribosyl pyrophosphate synthetase"]
         PR2["PRPP — central purine/pyrimidine substrate"]
         PR3["De novo purine biosynthesis"]
@@ -256,18 +257,6 @@ graph TB
         CH10["Cross-class helper combinations (Pichia, 6.5-8.7×) — highest-leverage capacity expansion"]
         CH11["Per-architecture PDI residence time (α coefficients) — CCP 0.3-0.6, Ig-like 1.0, transferrin-lobe 1.5-2.5"]
         CH12["DAF SCR1-4 single-cassette routing — triple-cassette synergy 0.35-0.65 below 0.6 decision gate"]
-    end
-
-    subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7, NEW)"]
-        MT1["Ganoderma lucidum / lingzhi — GLPP polysaccharide-peptide"]
-        MT2["Cordyceps militaris — cordycepin + native pentostatin ADA-inhibitor pairing"]
-        MT3["Pleurotus citrinopileatus — ergothioneine (7.0 mg/g DW, highest fungal producer)"]
-        MT4["Lentinula edodes / shiitake — eritadenine"]
-        MT5["Hericium erinaceus / lion's mane — erinacines"]
-        MT6["Trametes versicolor / turkey tail — PSK/PSP"]
-        MT7["Inonotus obliquus / chaga — inotodiol"]
-        MT8["H06 — Medicinal Mushroom Complement Track viability (stub)"]
-        MT9["Medicinal Mushroom Extract SOPs — GLPP / cordycepin / EGT characterization"]
     end
 
     subgraph EnzymeQC["ENZYME QUANTIFICATION (NEW)"]
@@ -359,6 +348,15 @@ graph TB
     %% and ULT-initiation prophylaxis role (source: colchicine.md)
     J6 -->|"ULT-initiation prophylaxis prevents dissolution flares"| C5
     J6 -->|"CV repositioning — NLRP3 suppression reduces plaque instability"| C2
+    %% Anakinra SC for acute gout flare (source: gout-action-guide.md, gout-clinical-pipeline.md)
+    J7 -->|"IL-1R1 antagonist (CP5a); off-label gout protocol 100 mg/d × 3d SC"| C4
+    J7 -->|"faster onset (hours vs days), cleaner cumulative burden vs prednisone"| C5
+    %% Topical CBD+THC for acute flare (source: gout-action-guide.md, cannabinoids-terpenes.md)
+    J8 -->|"CB2-mediated NLRP3 suppression (CP2/CP3)"| C2
+    J8 -->|"TRPV1 desensitization + cooling → pain reduction"| C5
+    %% BHB contraindicated during active flare (source: gout-action-guide.md, bhb-ketones.md)
+    J9 -->|"transient UA rise 5-10% via MCT/URAT1 competition → compounds flare"| C5
+    J9 -.->|"only prophylactic NLRP3 use during intercritical periods; suspend during flare"| K1
     
     %% Metabolic modulation
     K1 --> K2

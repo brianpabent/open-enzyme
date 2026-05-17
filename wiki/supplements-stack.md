@@ -1021,6 +1021,7 @@ These become available as Open Enzyme [[engineered-yeast-uricase]] and [[enginee
 **PRN (As Needed During Prodrome of Flare):**
 - Disulfiram (250 mg daily × 7–14 days) — if flare symptoms appear
 - Consider BPC-157 IM injection or intensify nasal spray dosing
+- **Topical CBD+THC (1:1 ratio, high-mg/oz) + ice cycling** — apply to affected joint; ice 10–15 min → apply topical → ice again 30–60 min later. CB2-mediated NLRP3 suppression + TRPV1 desensitization. Jurisdiction-dependent. (In Vitro/Animal Model mechanism; direct gout-flare RCT absent. source: gout-action-guide.md, cannabinoids-terpenes.md)
 
 ---
 

@@ -142,7 +142,9 @@ Duration: 3–6 months, or until serum UA stably <6.0 mg/dL with no flares for a
 | **Colchicine** | Targeted NLRP3 mechanism; cheap; oral; well-validated | Narrow TI; CYP3A4/P-gp drug interactions; GI side effects; renal/hepatic adjustments |
 | **NSAIDs** (indomethacin, naproxen) | Fast; cheap; no special metabolism | GI bleeding; CV risk; renal toxicity; alcohol synergy |
 | **Prednisone** (short taper) | Fast; effective when started late; no renal/hepatic concern | Cumulative steroid effects; rebound flare risk; glucose dysregulation; bone density loss with repeated use |
+| **Anakinra SC** (off-label) | Fastest onset (hours); narrow mechanism (IL-1R1 only); no steroid burden; clean cumulative profile over years of recurrent flares | SC injection; ~$900/flare; requires rheumatologist prescription; off-label for gout |
 | **IL-1 biologics** (anakinra, canakinumab) | Most targeted (downstream IL-1R); abort flare in hours | Expensive; SC/IV; immunosuppressive; canakinumab FDA-approved for gout Aug 2023, see [gout-clinical-pipeline.md](gout-clinical-pipeline.md) |
+| **Topical CBD+THC** (adjunct) | Non-systemic; CB2-mediated NLRP3 suppression + TRPV1 analgesia; no steroid burden | Jurisdiction-dependent; direct human gout-flare RCT absent; adjunct only, not monotherapy |
 
 Real-world choice often comes down to patient comorbidities and concomitant medications. Colchicine is "first-line in textbooks" but frequently displaced by **prednisone in patients on multiple medications** because the colchicine drug-interaction surface is large (any CYP3A4/P-gp modulator is a concern), while prednisone has a different and often more tractable interaction profile.
 

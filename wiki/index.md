@@ -42,21 +42,17 @@ One engineered *Aspergillus oryzae* koji strain expressing uricase + NLRP3 inhib
 
 ---
 
-## New This Week (2026-05-07)
+## New This Week (2026-05-17)
 
-This week's sweep was a propagation pass — seven trigger files, seven affected pages updated. The major changes:
+This sweep propagated three clinical-surface findings from trigger files into the research wiki:
 
-**LF disulfide count correction (17→16) propagated across four pages.** Notari 2023 (PMC10465537) explicitly states 16 disulfides for human lactoferrin. The correction flows through [koji-endgame-strain.md](koji-endgame-strain.md), [lactoferrin.md](lactoferrin.md), [cassette-compatibility-computational.md](cassette-compatibility-computational.md), and [aspergillus-oryzae.md](aspergillus-oryzae.md). The architecture-adjusted effective PDI load for LF is 24–40 (16 disulfides × transferrin-lobe α = 1.5–2.5), substantially higher than the bulk count suggests. (source: chaperone-orthogonal-stacking.md §3.5, §10.2)
+**BHB active-flare contraindication** propagated to `nlrp3-exploit-map.md` — the "ketosis paradox resolved" framing (BHB suppresses NLRP3 while uricase handles UA) is correct for prophylaxis, but BHB/ketosis is NOT a rescue intervention during active flare. Transient ketotic UA rise of 5–10% can compound the flare. Suspend ketosis + intermittent fasting during active flares; resume after 1–2 weeks. (source: gout-action-guide.md)
 
-**Chaperone-orthogonal stacking framework refined with per-architecture PDI residence time coefficients.** Three fold architectures scored: CCP/SCR sushi (α = 0.3–0.6), Ig-like (α = 1.0 reference), transferrin-lobe (α = 1.5–2.5). The triple-cassette prediction (uricase + Lf + DAF SCR1-4) revised from 0.45–0.70 to **0.35–0.65 (central 0.45–0.55)** — firmly below the 0.6 decision gate. DAF SCR1-4 routed to separate-strain or LBP-chassis peer track. (source: chaperone-orthogonal-stacking.md §3.5, §5.5)
+**Anakinra SC for acute gout flare** propagated to `nlrp3-exploit-map.md` CP5a section and `colchicine.md` comparison table — 100 mg/day × 3 days SC in thigh/abdomen off-label for gout. Same IL-1R1 chokepoint as canakinumab but ~100× cheaper (~$900/flare) with cleaner cumulative burden vs prednisone over decades of recurrent flares. Faster onset than prednisone, narrower mechanism, none of the bone/glucose/adrenal/mood effects. (source: gout-action-guide.md, gout-clinical-pipeline.md)
 
-**DAF/CD55 SCR1-4 single-cassette wet-lab gate formalized** as [validation-experiments.md §1.25](validation-experiments.md). $2.5–4K, 6–8 weeks. Tests expression, correct disulfide folding (8 disulfides, corrected from 12 per UniProt P08174), and CCP-regulatory activity in *A. oryzae*. (source: validation-experiments.md §1.25, daf-cd55-scr14-truncated-computational.md §1.5)
+**Topical CBD+THC acute-flare protocol** propagated to `nlrp3-exploit-map.md`, `supplements-stack.md`, and `GRAPH.md` — 1:1 CBD:THC (high-mg/oz) applied to affected joint + ice cycling. CB2-mediated NLRP3 suppression + TRPV1 desensitization. For recurrent-flare patients with cumulative steroid burden, may reduce prednisone need. Jurisdiction-dependent. (source: cannabinoids-terpenes.md, gout-action-guide.md)
 
-**Medicinal mushroom complement track expanded.** *P. citrinopileatus* (golden oyster) confirmed as highest fungal EGT producer at 7.0 mg/g DW (vs. *P. ostreatus* at 2.4 mg/g). Cordycepin koji-engineering route documented (cns1+cns2 in *A. oryzae* at 564 mg/L/day per Jeennor 2023 PMID 38071331) — sequential cultivation-first default with koji-engineering as documented contingency. GLPP+cordycepin synergy wet-lab gate refined to 4-arm comparison with the natural *C. militaris* pentostatin ADA-inhibitor pairing. Phase 7-4b follow-up (koji × mushroom additivity arm) queued. (source: medicinal-mushroom-complement-track.md, medicinal-mushroom-extract-sops.md)
-
-**Multi-track urate transporter coverage map** added to [gout-pathophysiology.md](gout-pathophysiology.md). Engineered koji, medicinal mushroom, and TCM × rigor tracks collectively cover URAT1, GLUT9, ABCG2, OAT1/OAT3, and xanthine oxidase — emergent designed-coverage, not planned. (source: gout-pathophysiology.md §"Multi-track urate transporter coverage")
-
-**Concept graph updated** with new chaperone subsystem nodes (per-architecture α coefficients, DAF SCR1-4 single-cassette routing) and LF disulfide count correction. (source: GRAPH.md)
+**Plasmidsaurus QC pipeline** and **consumer SNP data-quality gap** already well cross-referenced in `validation-experiments.md`, `personal-genome-protocol.md`, and `genotype-informed-supplement-workflow.md` — no propagation needed. (source: engineered-koji-protocol.md, gout-action-guide.md)
 
 ---
 
