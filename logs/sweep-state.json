@@ -1,24 +1,20 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "943312a3be7e8aae66a7d45737caa1c9d322be5f",
-    "timestamp": "2026-05-16T20:54:43Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-16-91acf49.md",
-    "review_commit": "943312a3be7e8aae66a7d45737caa1c9d322be5f",
+    "commit": "e1df41facee1017316a578ec0e573e06c4d3fde8",
+    "timestamp": "2026-05-17T17:24:10Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-17-768d99c.md",
+    "review_commit": "e1df41facee1017316a578ec0e573e06c4d3fde8",
     "trigger_files": [
-      "wiki/abcg2-modulators.md",
-      "wiki/complement-c5a-gout.md",
-      "wiki/computational-experiments.md",
+      "wiki/bhb-ketones.md",
+      "wiki/cannabinoids-terpenes.md",
       "wiki/engineered-koji-protocol.md",
-      "wiki/etc/open-enzyme-vision.md",
-      "wiki/gut-lumen-sink.md",
-      "wiki/koji-endgame-strain.md",
-      "wiki/lactoferrin.md",
-      "wiki/open-questions.md",
-      "wiki/spm-resolution-pathway.md",
+      "wiki/gout-action-guide.md",
+      "wiki/gout-clinical-pipeline.md",
+      "wiki/personal-genome-protocol.md",
       "wiki/validation-experiments.md"
     ],
-    "run_id": "25972015802"
+    "run_id": "25996776786"
   },
   "recent_runs": [
     {
@@ -191,6 +187,15 @@
       "failed_phase": null,
       "trigger_paths_count": 11,
       "synthesis_log": "logs/v4-synthesis-2026-05-16-91acf49.md"
+    },
+    {
+      "run_id": "25996776786",
+      "trigger": "push",
+      "completed_at": "2026-05-17T17:24:10Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 7,
+      "synthesis_log": "logs/v4-synthesis-2026-05-17-768d99c.md"
     }
   ]
 }
