@@ -386,20 +386,23 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping — Phase 2 ran (2026-05-06)
+### comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping — Phase 3 complete (2026-05-17)
 
 **Question:** Across all known characterized fungal natural products (globally, not Western pharma only), which compounds map onto OE chokepoints, and which fungal species are highest-leverage producers?
 
-**Verdict:** **PHASE 2 RAN.** ChEMBL sweep + LOTUS pull (6,798 unique fungal compounds, 55 species) + PubMed scan (14 high-signal hits). Highest-leverage: *Ganoderma applanatum* 2,4-DAE shows in vivo dual XO + URAT1 SUA reduction 407→134 µmol/L (Fitoterapia 2022).
+**Verdict:** **PHASE 3 COMPLETE.** 9,778 unified fungal compounds (LOTUS 6,798 + NPAtlas 4,535 + KNApSAcK 20 InChIKey-resolved; NPASS / TCMSP / HIT unreachable from sandbox — documented gap). 24 chokepoint targets queried via ChEMBL; **323 (compound × chokepoint) empirical hits across 12 chokepoints**; 177 / 9,778 compounds (1.81%) have ≥1 hit. Highest-potency: **Ganoderic acid H × TNFα Kd = 2.45 nM** (pChEMBL 8.61, CHEMBL1922178, *Ganoderma lucidum*); **Berkeleyamides A/D × CASP1 IC50 = 330 / 610 nM** (*Penicillium*); **Quercetin × ABCG2 EC50 = 30 nM** (*Agaricus*); **Ellagic acid × OAT1 IC50 = 270 nM** (*Penicillium* / *Phellinus*).
 
 **Key findings:**
-- C5aR1 platform-gap (§1.21) confirmed empirically — zero direct fungal antagonists in either ChEMBL or PubMed.
-- ChEMBL coverage of canonical mushroom compounds near-zero; CLAUDE.md global-multilingual warning empirically validated.
-- Two new chokepoint candidates surfaced: ADA (purine catabolism) and PINK1/mitophagy (NLRP3-priming-adjacent).
+- *Ganoderma* triterpenoid scaffold (ganoderic acids H/D and stereoisomers) emerges as highest-potency direct-binding hit at TNFα, **on top of** the Phase 2 *G. applanatum* 2,4-DAE urate-axis finding — two distinct chokepoint axes, both worth pursuing. *Ganoderma* spp. earn closer look.
+- **Berkeleyamides / Berkeleyones** (Penicillium): first fungal natural products with direct sub-µM CASP1 and low-µM IL-1β hits — opens an inflammasome-effector-axis fungal candidate beyond the polysaccharide-priming literature comp-014 Phase 1 + Phase 2 emphasized.
+- **Target-orphan rate 98.19%** — SwissTargetPrediction predicted-target layer is the next load-bearing step; sandbox-blocked here, deferred to re-run. 9,601 compounds with zero empirical chokepoint hits.
+- **12 of 24 chokepoints have ZERO fungal-source ChEMBL hits**: NLRP3, ASC, GLUT9, C5aR1, Lp-PLA2, KEAP1, OAT4, PINK1, PDI, PDIA3, TXN, TXNIP. Confirms the comp-013 / comp-020 ChEMBL-Western-pharma-bias finding empirically for fungal-source NPs.
+- Multi-chokepoint compounds surfaced: morin (4 chokepoints: ABCG2, CASP1, URAT1, XO); genistein (4: ABCG2, CASP1, PPARG, XO). Both plant-origin flavonoids in mushroom substrate — not biosynthesis attribution.
+- Phase 2 partial: 3 of 6 planned compound DBs reachable (LOTUS, NPAtlas, KNApSAcK partial); NPASS / TCMSP / HIT all sandbox-blocked. ChEMBL primary-source pre-commit grep-verify gate applied on top-2 load-bearing potency claims.
 
-**Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [complement-c5a-gout](./complement-c5a-gout.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [etc/open-source-platform](./etc/open-source-platform.md)
+**Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [complement-c5a-gout](./complement-c5a-gout.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [etc/open-source-platform](./etc/open-source-platform.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) (Berkeleyamides → CASP1 effector axis) · [abcg2-modulators](./abcg2-modulators.md) (Quercetin × ABCG2 30 nM)
 
-**Detail:** [interpretive](./medicinal-mushroom-compound-mapping-computational.md) · [Phase 2 findings](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md) · [experiments/](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/) · Phase 2 complete; Phase 3 in progress
+**Detail:** [interpretive](./medicinal-mushroom-compound-mapping-computational.md) · [Phase 3 target-mapping summary](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-target-mapping-summary.md) · [Phase 2 findings](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md) · [experiments/](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/) · Phase 3 complete; Phase 2 partial (3 of 6 DBs); Phase 5 multilingual deep-dive + Phase 6 triage queued (SwissTargetPrediction layer is the load-bearing next step)
 
 ---
 
