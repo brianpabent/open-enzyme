@@ -4621,6 +4621,31 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Compound Mapping (comp-014)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4638,12 +4663,97 @@
     
   
   
-    <span class="md-status md-status--scoped — Phase 1 only"></span>
+    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
   
 
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phase-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-unified-table-whats-in-whats-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 unified table — what's in / what's out
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-database-coverage-gap-npass-tcmsp-hit-swisstargetprediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 database-coverage gap (NPASS / TCMSP / HIT / SwissTargetPrediction)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-target-mapping-headline-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — target mapping headline findings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-implications-for-phase-2-narrative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 implications for Phase 2 narrative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-analysis-lives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the analysis lives
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4972,11 +5082,140 @@ Computational analyses are write-once artifacts; the daemon does not need to re-
 them on every sweep, so the long content lives next to the experiment that produced it
 at <code>etc/experiments/comp-014-medicinal-mushroom-compound-mapping/</code>.</p>
 </blockquote>
-<p><strong>Phase 1 (Scope) — Committed 2026-05-06.</strong> Phases 2–6 are queued, not executed. This page documents the scope and the rationale for the multi-phase plan; it is NOT a results page. Per Open Enzyme convention, this page will be revised in place when each subsequent phase lands, with a status promotion (<code>scoped</code> → <code>in progress</code> → <code>complete</code>) tracked in the YAML frontmatter and the <a href="../computational-experiments/"><code>computational-experiments.md</code></a> tracking index.</p>
-<p><strong>Where the analysis lives:</strong>
-- Full archived analysis: <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive/"><code>./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md</code></a>
-- Experiment directory (inputs, scripts, outputs): <a href="./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/"><code>./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/</code></a>
-- Computational experiments index: <a href="../computational-experiments/"><code>computational-experiments.md</code></a></p>
+<h2 id="phase-status">Phase status<a class="headerlink" href="#phase-status" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>What ran</th>
+<th>When</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Scope: chokepoint targets, anchor species, toxicity filter, data-source inventory, multilingual literature plan</td>
+<td>2026-05-06</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Breadth aggregation across LOTUS + NPAtlas + KNApSAcK (NPASS / TCMSP / HIT unreachable from sandbox — documented gap with re-run plan)</td>
+<td>2026-05-06 + 2026-05-17</td>
+<td><strong>Partial</strong> (3 of 6 planned DBs pulled)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Target mapping: ChEMBL <code>activity.json</code> per chokepoint UniProt → InChIKey intersection across 24 chokepoint targets, 26,830 unique ChEMBL molecules resolved, 323 (compound × chokepoint) empirical hits</td>
+<td>2026-05-17</td>
+<td><strong>Complete</strong> for ChEMBL-empirical; SwissTargetPrediction prediction layer NOT RUN (sandbox-blocked, deferred)</td>
+</tr>
+<tr>
+<td>4 (v2)</td>
+<td>Re-run chokepoint intersection on the unified compound table (9,778 compounds vs. the LOTUS-only 6,798 from Phase 2b)</td>
+<td>2026-05-17</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Multilingual literature deep-dive (CNKI / Wanfang / J-STAGE / KISS with two-model translation cross-check) per Phase 4 chokepoint-hit species</td>
+<td>—</td>
+<td>Queued</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Per-compound triage (comp-013-style IC50 occupancy + composite scoring) on Phase 4 candidates</td>
+<td>—</td>
+<td>Queued</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phase-2-unified-table-whats-in-whats-out">Phase 2 unified table — what's in / what's out<a class="headerlink" href="#phase-2-unified-table-whats-in-whats-out" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Total unique compounds (deduped by InChIKey):</strong> 9,778 (up from LOTUS-only 6,798)</li>
+<li><strong>By source:</strong> LOTUS 6,798 · NPAtlas 4,535 · KNApSAcK 20 (InChIKey-resolved subset of 398 raw records; PubChem InChIKey resolution wall-time-capped at 60 s per run)</li>
+<li><strong>Toxicity-pass:</strong> 9,747 compounds (after FDA GRAS / EFSA QPS / pharmacopoeia / clinical-trial inclusion + WHO 2022 / mycotoxin / Schedule I/II exclusion per <code>inputs/toxicity-filter.json</code>)</li>
+<li><strong>Hard-excluded:</strong> 31 compounds (mostly <em>Aspergillus fumigatus</em> + <em>Stachybotrys chartarum</em> + <em>Penicillium expansum</em> mycotoxin producers)</li>
+<li><strong>Anchor-species sanity check:</strong> all 18 anchor species from <code>inputs/phase-5-anchor-species.json</code> resolve in the unified table (passed)</li>
+</ul>
+<h2 id="phase-2-database-coverage-gap-npass-tcmsp-hit-swisstargetprediction">Phase 2 database-coverage gap (NPASS / TCMSP / HIT / SwissTargetPrediction)<a class="headerlink" href="#phase-2-database-coverage-gap-npass-tcmsp-hit-swisstargetprediction" title="Permanent link">&para;</a></h2>
+<p>Three East-Asian-hosted compound DBs and the SwissTargetPrediction prediction service were <strong>not</strong> reachable from the comp-014 execution sandbox on 2026-05-17:</p>
+<table>
+<thead>
+<tr>
+<th>DB</th>
+<th>Endpoint probed</th>
+<th>Status</th>
+<th>Re-run plan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NPASS</td>
+<td><code>bidd.group/NPASS/</code></td>
+<td>200 once, then <code>000</code> (intermittent)</td>
+<td>Retry from non-sandboxed environment; prefer bulk-CSV download (<code>NPASSv2.0_download_naturalProducts*.txt</code>)</td>
+</tr>
+<tr>
+<td>TCMSP</td>
+<td><code>old.tcmsp-e.com/tcmsp.php</code></td>
+<td>502 Bad Gateway; alternate hosts unreachable</td>
+<td>Retry via BATMAN-TCM-2 endpoints (TCMSP folded into BATMAN-TCM-2) or Mendeley Data bulk archive</td>
+</tr>
+<tr>
+<td>HIT</td>
+<td><code>hit2.badd-cao.net</code> and <code>badd-cao.net</code></td>
+<td>000 timeout (both)</td>
+<td>Download HIT 2.0 Excel file per upstream paper PMID 35136829</td>
+</tr>
+<tr>
+<td>SwissTargetPrediction</td>
+<td><code>swisstargetprediction.ch</code> POST endpoint</td>
+<td>Not verified accessible from sandbox</td>
+<td>Batch the target-orphan compound subset (~98% of the table) through POST API in connected environment</td>
+</tr>
+</tbody>
+</table>
+<p>The LOTUS-only Phase 2 outputs are not wrong, just incomplete. The unified table here is LOTUS + NPAtlas + KNApSAcK. The East-Asian-DB gap is documented and slated for re-run; do not over-interpret the absence of NPASS/TCMSP/HIT-only compounds as "no evidence."</p>
+<h2 id="phase-3-target-mapping-headline-findings">Phase 3 — target mapping headline findings<a class="headerlink" href="#phase-3-target-mapping-headline-findings" title="Permanent link">&para;</a></h2>
+<p><strong>323 empirical (compound × chokepoint) hits</strong> across 24 chokepoint targets, after toxicity filter. Coverage:</p>
+<ul>
+<li>Compounds with ≥1 empirical chokepoint hit: <strong>177 of 9,778 (1.81%)</strong></li>
+<li>Target-orphan compounds (no ChEMBL activity at any of the 24 chokepoints): <strong>9,601 (98.19%)</strong> — Phase 3 SwissTargetPrediction layer is the load-bearing next step for closing this gap</li>
+<li>Empty chokepoints (zero ChEMBL fungal-compound hits in this corpus): GLUT9, NLRP3, ASC, C5aR1, Lp-PLA2, KEAP1, OAT4, PINK1, PDI, PDIA3, TXN, TXNIP — twelve of 24 chokepoints have no fungal-source small molecule in ChEMBL with measurable activity at the target</li>
+</ul>
+<p><strong>Top empirical findings (potency-ranked, toxicity-pass only):</strong></p>
+<ol>
+<li><strong>Ganoderic acid H</strong> / <em>Ganoderma lucidum</em> — <strong>TNFα Kd = 2.45 nM</strong> (pChEMBL 8.61, ChEMBL1922178, 2014). The highest-potency single-compound × chokepoint hit in the entire breadth pass. Multiple stereoisomer / numbered-position variants of the same scaffold cluster at this Kd. <em>Ganoderic acid D</em> hits TNFα at Kd 8.39 nM (pChEMBL 8.08).</li>
+<li><strong>Berkeleyamides A and D</strong> / <em>Penicillium</em> — <strong>CASP1 IC50 = 330 / 610 nM</strong> (pChEMBL 6.48 / 6.21, ChEMBL466565 / CHEMBL466747, 2008). The highest-potency direct caspase-1 fungal natural-product hits — distinct from the inflammasome-priming literature, this is direct effector-caspase inhibition.</li>
+<li><strong>Berkeleyones A / B / C</strong> / <em>Penicillium</em> — <strong>IL-1β IC50 = 2.7 / 3.7 / 37.8 μM</strong> (pChEMBL 5.57-4.42, 2011). Modest potency but a direct IL-1β fungal-source hit.</li>
+<li><strong>Quercetin</strong> / <em>Agaricus</em> — <strong>ABCG2 EC50 = 30 nM</strong> (pChEMBL 7.52, ChEMBL50, 2018). Plant-origin flavonoid that accumulates in mushroom substrates; the most-potent ABCG2 hit in the corpus.</li>
+<li><strong>Ellagic acid</strong> / <em>Penicillium</em> / <em>Phellinus</em> — <strong>OAT1 IC50 = 270 nM</strong> (pChEMBL 6.57, 2005). Fungal-source organic anion transporter modulator.</li>
+</ol>
+<p><strong>Multi-chokepoint compounds</strong> (≥2 chokepoints hit, suggesting platform-level rather than single-target mechanism):</p>
+<ul>
+<li><strong>bois d'arc / morin</strong> (ChEMBL28626, <em>Ganoderma</em>): 4 chokepoints — ABCG2, CASP1, URAT1, XO</li>
+<li><strong>genistein</strong> (ChEMBL44, <em>Cordyceps sinensis</em>, <em>Ophiocordyceps</em>): 4 chokepoints — ABCG2, CASP1, PPARG, XO</li>
+<li><strong>Quercetin</strong> (ChEMBL50, <em>Agaricus</em>): 2 chokepoints — ABCG2, XO</li>
+<li><strong>Daidzein</strong> (<em>Hericium</em>, <em>Cordyceps sinensis</em>): 2 chokepoints — NRF2, XO</li>
+<li><strong>Disulfiram</strong> (<em>Coprinopsis</em>): 2 chokepoints — CASP1, NRF2</li>
+</ul>
+<p>The "fungal-source" attribution for plant-origin flavonoids (quercetin, genistein, daidzein) reflects accumulation in mushroom substrates rather than fungal biosynthesis; see Phase 4 caveats.</p>
+<h2 id="phase-3-implications-for-phase-2-narrative">Phase 3 implications for Phase 2 narrative<a class="headerlink" href="#phase-3-implications-for-phase-2-narrative" title="Permanent link">&para;</a></h2>
+<p>The Phase 2 LOTUS-only headline — Ganoderma applanatum 2,4-DAE as "strongest single-compound finding" — was correct as far as the LOTUS × PubMed pull went, but the unified ChEMBL intersection surfaces a <strong>substantially higher-potency direct hit</strong>: ganoderic acid H at TNFα Kd 2.45 nM. The 2,4-DAE finding is a (different, animal-model in vivo) Ganoderma applanatum hit at the urate axis (XO + URAT1); ganoderic acid H is a Ganoderma lucidum direct-binding finding at the cytokine axis (TNFα). Both belong in the candidate set; the breadth pass argues for taking <em>Ganoderma</em> triterpenoids more seriously across two distinct chokepoint axes, not just one.</p>
+<p>The Phase 2 cordycepin → URAT1 finding (PMID 29422889, animal model) is preserved — ChEMBL has no direct cordycepin × URAT1 record. PubMed-derived in-vivo animal-model evidence and ChEMBL-derived in-vitro biochemical-assay evidence are complementary, not redundant.</p>
+<h2 id="where-the-analysis-lives">Where the analysis lives<a class="headerlink" href="#where-the-analysis-lives" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Phase 3 reproducibility script: <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/phase_3_target_mapping.py"><code>./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/phase_3_target_mapping.py</code></a></li>
+<li>Phase 2 unified table: <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json"><code>./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json</code></a> + <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-summary/">summary</a></li>
+<li>Phase 3 compound × target table: <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-compound-x-target.json"><code>phase-3-compound-x-target.json</code></a> + <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-target-mapping-summary/">summary</a></li>
+<li>Phase 4 v2 intersection (re-run on unified table): <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-chokepoint-intersection-v2.json"><code>phase-4-chokepoint-intersection-v2.json</code></a></li>
+<li>Earlier Phase 2 findings (LOTUS-only, 2026-05-06): <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS/"><code>PHASE-2-FINDINGS.md</code></a></li>
+<li>Full archived analysis: <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive/"><code>wiki-archive.md</code></a></li>
+<li>Experiment directory (inputs, scripts, outputs): <a href="./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/"><code>./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/</code></a></li>
+<li>Computational experiments index: <a href="../computational-experiments/"><code>computational-experiments.md</code></a></li>
+</ul>
 
 
 

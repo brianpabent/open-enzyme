@@ -45,6 +45,10 @@
          <lastmod>2026-05-17</lastmod>
     </url>
     <url>
+         <loc>https://brianpabent.github.io/open-enzyme/c1-inh-protease-stability-ecn-computational/</loc>
+         <lastmod>2026-05-17</lastmod>
+    </url>
+    <url>
          <loc>https://brianpabent.github.io/open-enzyme/cannabinoids-terpenes/</loc>
          <lastmod>2026-05-17</lastmod>
     </url>
@@ -685,6 +689,10 @@
          <lastmod>2026-05-17</lastmod>
     </url>
     <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-summary/</loc>
+         <lastmod>2026-05-17</lastmod>
+    </url>
+    <url>
          <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2a-chembl-fungal-source/</loc>
          <lastmod>2026-05-17</lastmod>
     </url>
@@ -698,6 +706,10 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-fungal-chokepoint-hits/</loc>
+         <lastmod>2026-05-17</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-target-mapping-summary/</loc>
          <lastmod>2026-05-17</lastmod>
     </url>
     <url>
@@ -810,6 +822,18 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-018-upstream-complement-modulator-sweep/outputs/scope-summary/</loc>
+         <lastmod>2026-05-17</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature/</loc>
+         <lastmod>2026-05-17</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-multilingual-findings/</loc>
+         <lastmod>2026-05-17</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-summary/</loc>
          <lastmod>2026-05-17</lastmod>
     </url>
     <url>
@@ -1050,6 +1074,18 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/summary/</loc>
+         <lastmod>2026-05-17</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-037-c1-inh-protease-stability-ecn/</loc>
+         <lastmod>2026-05-17</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-037-c1-inh-protease-stability-ecn/inputs/provenance/</loc>
+         <lastmod>2026-05-17</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-037-c1-inh-protease-stability-ecn/outputs/summary/</loc>
          <lastmod>2026-05-17</lastmod>
     </url>
     <url>

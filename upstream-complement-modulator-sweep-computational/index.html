@@ -4623,7 +4623,7 @@
     
   
   
-    <span class="md-status md-status--scoped — Phase 1 only"></span>
+    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
   
 
   
@@ -4960,7 +4960,84 @@ at <code>etc/experiments/comp-018-upstream-complement-modulator-sweep/</code>.</
 <p><strong>Where the analysis lives:</strong>
 - Full archived analysis: <a href="../etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive/"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md</code></a>
 - Experiment directory (inputs, scripts, outputs): <a href="./etc/experiments/comp-018-upstream-complement-modulator-sweep/"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/</code></a>
+- <strong>Phase 2 multilingual + Helicteres replication + C1-INH engineering literature:</strong> <a href="./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/</code></a>
 - Computational experiments index: <a href="../computational-experiments/"><code>computational-experiments.md</code></a></p>
+<hr />
+<h2 id="phase-2-multilingual-helicteres-replication-c1-inh-engineering-literature-2026-05-17">Phase 2 — Multilingual + Helicteres Replication + C1-INH Engineering Literature (2026-05-17)<a class="headerlink" href="#phase-2-multilingual-helicteres-replication-c1-inh-engineering-literature-2026-05-17" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Phase 2 deliverables live in <a href="./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/</code></a>.</strong> The Phase 1 contamination warning above remains in force; Phase 2 is additive, not a replacement.</p>
+</blockquote>
+<h3 id="headline-finding">Headline finding<a class="headerlink" href="#headline-finding" title="Permanent link">&para;</a></h3>
+<p>Phase 2 confirms the comp-020 tier-1 ranking holds at the small-molecule level (rosmarinic acid + luteolin + Helicteres benzofuran lignans tied), surfaces a new <strong>orthogonal tier-1 candidate Phase 1 missed entirely — Houttuynia cordata polysaccharides</strong> (Chinese / Japanese / Korean / Vietnamese dietary herb, CH50 79-318 µg/mL across crude + purified fractions, multi-target C2 + C4 + C5, multiple in vivo precedents), and grounds the C1-INH parallel engineering thread on three load-bearing literature anchors:</p>
+<ul>
+<li><strong>Bos 2003 (<a href="https://pubmed.ncbi.nlm.nih.gov/12758149/">PMID 12758149</a>, <a href="https://doi.org/10.1016/s1570-9639(03)00107-9">doi:10.1016/s1570-9639(03)00107-9</a>)</strong> — Pichia pastoris yields 30-180 mg/L active rhC1-INH with same inhibitory capacity as plasma C1-INH despite different N-glycosylation. Direct precedent that yeast (Ascomycota) chassis is sufficient for active C1-INH production → koji thread plausible.</li>
+<li><strong>Liu 2004 (<a href="https://pubmed.ncbi.nlm.nih.gov/15039314/">PMID 15039314</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC375168/">PMC375168</a>, <a href="https://doi.org/10.1128/IAI.72.4.1946-1955.2004">doi:10.1128/IAI.72.4.1946-1955.2004</a>)</strong> — N-deglycosylated C1-INH RETAINS protease-inhibitor function (C1s complex formation) but LOSES LPS-binding endotoxin protection. For OE platform CP0 use case (MSU-driven complement priming), protease-inhibitor function is load-bearing → major risk reduction for non-mammalian (koji, LBP) chassis with different or absent N-glycan.</li>
+<li><strong>Cancian 2015 (<a href="https://pubmed.ncbi.nlm.nih.gov/26106828/">PMID 26106828</a>, <a href="https://doi.org/10.1097/ACI.0000000000000186">doi:10.1097/ACI.0000000000000186</a>)</strong> — Ruconest (conestat alfa, transgenic rabbit milk, non-human glycosylation) FDA-approved 2014 for HAE. Establishes regulatory precedent that FDA accepts recombinant C1-INH with non-human glycosylation provided protease-inhibitor function is demonstrated.</li>
+</ul>
+<h3 id="new-tier-1-ranking-phase-2-final">New tier-1 ranking (Phase 2 final)<a class="headerlink" href="#new-tier-1-ranking-phase-2-final" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Compound class</th>
+<th>Lead candidate</th>
+<th>Potency</th>
+<th>Dietary access</th>
+<th>Anchor status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1a</td>
+<td>Phenolic acid</td>
+<td>Rosmarinic acid</td>
+<td>C3b 34 µM; CP 137-180 µM; bell-shape</td>
+<td>FDA GRAS rosemary / lemon balm / spearmint</td>
+<td>Multi-anchor</td>
+</tr>
+<tr>
+<td>1b</td>
+<td>Flavone (multi-mechanism)</td>
+<td>Luteolin</td>
+<td>CH50 190 µM (CP), AP50 170 µM</td>
+<td>Dietary (parsley, celery, honeysuckle)</td>
+<td>Multi-anchor across XO + URAT1 + CP</td>
+</tr>
+<tr>
+<td>1c</td>
+<td>Benzofuran sesquilignan glucoside</td>
+<td>Helicteres compound 5</td>
+<td>CH50 9 µM (highest single-compound potency)</td>
+<td>Not dietary; tropical Sterculiaceae</td>
+<td>SINGLE-ANCHOR — replication INCONCLUSIVE per Phase 2 (<a href="../etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json</code></a>)</td>
+</tr>
+<tr>
+<td><strong>1d (NEW)</strong></td>
+<td>Pectic polysaccharide multi-target</td>
+<td><strong>Houttuynia cordata polysaccharide class</strong></td>
+<td>CH50 79-318 µg/mL across crude + purified</td>
+<td>Widely dietary in Southeast Asia (鱼腥草 / どくだみ)</td>
+<td>Multi-anchor (3+ Chen Daofeng group papers)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="helicteres-replication-outcome">Helicteres replication outcome<a class="headerlink" href="#helicteres-replication-outcome" title="Permanent link">&para;</a></h3>
+<p>INCONCLUSIVE / ANCHOR-STILL-SINGLE. Phase 2 found no independent group has reproduced the Yin 2016 (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273495/">PMC6273495</a>, <a href="https://doi.org/10.3390/molecules21111506">doi:10.3390/molecules21111506</a>) CH50 9/40 µM benzofuran lignan finding on a matched assay format. The Helicteres angustifolia genus has substantial cancer + antifibrotic + triterpene pharmacology literature but the upstream-complement angle is isolated to the single Yin 2016 paper. Structurally-adjacent benzofuran lignans (Styrax japonica egonol <a href="https://pubmed.ncbi.nlm.nih.gov/15643559/">PMID 15643559</a>, CP IC50 33 µM per Min 2004) are 3.7× weaker — possibly real exceptional pharmacology, possibly assay-format artifact. <strong>Independent wet-lab replication on a different laboratory's CH50 protocol remains the load-bearing risk-closure step. Full structured analysis at <a href="../etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json</code></a>.</strong></p>
+<h3 id="multilingual-citation-gap-reframing">Multilingual-citation gap reframing<a class="headerlink" href="#multilingual-citation-gap-reframing" title="Permanent link">&para;</a></h3>
+<p>Phase 1 §10 listed "language barrier" as a limitation. <strong>Phase 2 reframes this:</strong> the upstream-complement natural product subfield is overwhelmingly Chinese-group (Chen Daofeng / Fudan, 14+ papers post-1999) and Japanese-group (Yamada / Kiyohara / Kitasato, 13+ papers since 1985) dominated, but these groups publish 80-95% in English-language journals (Planta Med, Carbohydr Res, Acta Pharm Sin B, Int J Biol Macromol, Phytomedicine). The actual barriers operational in Phase 1 were:</p>
+<ol>
+<li><strong>Citation-network insularity</strong> — the Chen / Yamada matched-assay anti-complementary CH50/AP50 hemolytic discipline is a self-contained methodology stream that doesn't get heavily cited outside its immediate field</li>
+<li><strong>Topic-discovery framing</strong> — traditional Chinese / Japanese terminology framings ("heat-clearing," "toxin-eliminating," 鱼腥草 vs Houttuynia cordata vs "anti-complementary polysaccharide") don't map cleanly to Western pharma mechanism-name queries</li>
+<li><strong>Source-journal weighting</strong> — Zhongguo Zhong Yao Za Zhi and Acta Pharm Sin B are PubMed-indexed but underweighted in Web of Science impact-factor rankings</li>
+</ol>
+<p><strong>Implication for OE platform:</strong> the CLAUDE.md "global-multilingual research by default" rule operates correctly. The operational discipline is to query by traditional-formula-name + species-name + traditional-pathology-framing in addition to mechanism-name. <strong>A "C3 convertase inhibitor" query misses Houttuynia; a "Houttuynia cordata anti-complementary" query catches it.</strong> Mechanism-name is the wrong starting point for non-Western literature.</p>
+<h3 id="phase-2-status">Phase 2 status<a class="headerlink" href="#phase-2-status" title="Permanent link">&para;</a></h3>
+<p><strong>Phase 2 complete — 2026-05-17.</strong> Files:
+- <a href="../etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-multilingual-findings/"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-multilingual-findings.md</code></a> — Tier &frac12;/3 candidates surfaced from non-English-corpus + Chinese-group + Japanese-group English-corpus
+- <a href="../etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json</code></a> — Helicteres benzofuran lignan replication attempt + verdict + recommendation
+- <a href="../etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature/"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md</code></a> — C1-INH heterologous expression literature thread + top-3 anchors for comp-037
+- <a href="../etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-summary/"><code>./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-summary.md</code></a> — synthesis + new tier-1 ranking + comp-037 inputs</p>
+<p><strong>Open follow-ups:</strong> Independent wet-lab Helicteres replication; Houttuynia in vitro replication on OE protocol; comp-037 commit with explicit reference to Bos 2003 + Liu 2004 + Cancian 2015; Phase 3 multilingual extension for other mechanism classes; DeepSeek V4-Pro translation cross-check for 4 Chinese-language Phase 2 sources flagged <code>[TRANSLATION-SINGLE-MODEL]</code>.</p>
 
 
 

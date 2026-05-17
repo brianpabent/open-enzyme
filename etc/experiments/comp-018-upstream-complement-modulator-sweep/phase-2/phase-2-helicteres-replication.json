@@ -1,0 +1,126 @@
+{
+  "track": "comp-018 Phase 2 — Helicteres benzofuran lignan replication attempt",
+  "date": "2026-05-17",
+  "objective": "Independent replication or refutation of Yin et al. 2016 (PMC6273495) finding that Helicteres angustifolia benzofuran lignans inhibit complement at CH50 9 µM (compound 5) and 40 µM (compound 4) — the highest-potency single-compound anchor in the comp-020 verification re-run.",
+  "anchor_paper": {
+    "title": "Anti-Complementary Components of Helicteres angustifolia",
+    "authors": "Yin X, Lu Y, Cheng ZH, Chen DF",
+    "journal": "Molecules",
+    "year": 2016,
+    "volume_issue_pages": "21(11):1506",
+    "pmid": "27834928",
+    "pmc_id": "PMC6273495",
+    "doi": "10.3390/molecules21111506",
+    "source_language": "English",
+    "group_affiliation": "Fudan University, School of Pharmacy (Chen Daofeng lab)",
+    "assay_format": "Sheep erythrocyte CH50 (classical pathway) + rabbit erythrocyte AP50 (alternative pathway) hemolytic assays",
+    "key_findings": [
+      {
+        "compound_id": "compound_5",
+        "compound_name": "Hedyotol-D 7''-O-β-D-glucopyranoside",
+        "class": "Sesquilignan glucoside (benzofuran-containing)",
+        "CH50_mM": 0.009,
+        "CH50_uM": 9,
+        "CH50_uncertainty_mM": 0.002,
+        "AP50_mM": 0.021,
+        "AP50_uM": 21,
+        "AP50_uncertainty_mM": 0.003,
+        "cascade_targets_blocked": ["C1q", "C2", "C3", "C9"],
+        "verification_status": "primary-paper-full-text-grep-verified (PMC6273495 metadata + abstract)"
+      },
+      {
+        "compound_id": "compound_4",
+        "compound_name": "Machicendonal",
+        "class": "Benzofuran lignan",
+        "CH50_mM": 0.040,
+        "CH50_uM": 40,
+        "CH50_uncertainty_mM": 0.009,
+        "AP50_mM": 0.105,
+        "AP50_uM": 105,
+        "AP50_uncertainty_mM": 0.015,
+        "cascade_targets_blocked": ["C1q", "C2", "C3", "C4", "C5", "C9"],
+        "verification_status": "primary-paper-full-text-grep-verified (PMC6273495 metadata + abstract)"
+      }
+    ]
+  },
+  "replication_search_methodology": {
+    "databases_queried": [
+      "PubMed (English-language indexing)",
+      "Paperclip MCP (PMC + bioRxiv + medRxiv + arXiv full-text)",
+      "PubMed Chinese-language paper search (Helicteres + Chinese-author keywords)",
+      "PubMed Japanese-author search (J-STAGE-indexed Japanese pharmacology)",
+      "Cross-citation of Chen Daofeng group corpus (14+ anti-complementary papers post-1999)"
+    ],
+    "search_terms_used": [
+      "Helicteres isora complement",
+      "Helicteres angustifolia complement",
+      "benzofuran lignan anticomplement",
+      "Helicteres lignan complement inhibitor PMC",
+      "Helicteres angustifolia Chinese traditional medicine pharmacology"
+    ],
+    "primary_finding": "No independent group (outside the Chen Daofeng lab) has reproduced the CH50 9 µM / 40 µM benzofuran lignan finding on a matched assay format.",
+    "context_observations": [
+      {
+        "observation": "Helicteres angustifolia has substantial anticancer pharmacology literature",
+        "papers": [
+          {"pmid": "27010955", "doi": "10.1371/journal.pone.0152017", "finding": "Aqueous root extract anticancer activity (Li K et al. PLoS One 2016) — University of Tsukuba + Chinese Academy of Medical Sciences. No complement assay performed."},
+          {"pmid": "26087229", "doi": "10.1016/j.jep.2015.06.007", "finding": "ARE vs ERE root extract anticancer IC50 62-127 µg/mL on cell lines (Li K et al. J Ethnopharmacol 2015) — same University of Tsukuba group. No complement assay."},
+          {"pmid": "23010154", "doi": "10.1016/j.fitote.2012.09.016", "finding": "Pregnane derivatives + quinolone alkaloid from H. angustifolia (Wang GC et al. Fitoterapia 2012) — Jinan University. Anti-proliferation only, no complement."},
+          {"pmid": "22967666", "doi": "10.1016/j.jep.2012.08.018", "finding": "Methyl helicterate antifibrotic in CCl4 rat model (Huang Q et al. J Ethnopharmacol 2012) — Guangxi TCM University. No complement assay."}
+        ],
+        "implication": "Helicteres angustifolia is well-studied for cancer + fibrosis but the upstream-complement angle is isolated to the single Yin 2016 paper. The genus is recognized; the specific mechanism finding is not replicated."
+      },
+      {
+        "observation": "Structurally-adjacent benzofuran-containing natural products HAVE been studied for anti-complementary activity, with much weaker potency",
+        "papers": [
+          {"pmid": "15643559", "doi": "10.1055/s-2004-835853", "finding": "Styrax japonica norlignans (egonol, styraxlignolide A, masutakeside I) — IC50 33-166 µM. Source: Min BS et al. Planta Med 2004 (Korean Research Institute of Bioscience and Biotechnology). All benzofuran-containing scaffolds active at higher µM than Helicteres compound 5's 9 µM."}
+        ],
+        "implication": "The 4-20× potency advantage of Helicteres compound 5 (CH50 9 µM) over structurally-related benzofuran-lignans in matched assay formats (33-166 µM) is a load-bearing claim that depends on a single laboratory's data. Could be a real and exceptional pharmacology finding, or could reflect assay-format / extraction-protocol differences. Cannot distinguish without independent wet-lab replication."
+      },
+      {
+        "observation": "The Chen Daofeng group's body of work uses a self-consistent matched-assay protocol",
+        "context": "14+ anti-complementary natural product papers post-1999 use sheep erythrocyte CH50 + rabbit erythrocyte AP50 hemolytic format with C1q/C2/C3/C4/C5/C9 cascade-target identification using depleted-sera complementation. The Helicteres finding falls within the matched-assay envelope of this body of work.",
+        "implication": "The internal consistency strengthens the Yin 2016 finding's credibility within the matched-assay protocol family, but does not address the cross-laboratory replication risk."
+      }
+    ]
+  },
+  "replication_status": "INCONCLUSIVE / ANCHOR-STILL-SINGLE",
+  "verdict_detail": {
+    "evidence_FOR_finding_being_real": [
+      "Primary paper full-text reads cleanly; no obvious methodology red flags",
+      "Internal consistency with 14+ Chen Daofeng group papers using matched assay format (1999-2025)",
+      "Compound class (benzofuran lignan, sesquilignan glucoside) has reported anti-complement activity in independent group (Min 2004 Styrax japonica, 33-166 µM)",
+      "Multiple cascade targets (C1q, C2, C3, C4, C5, C9) — consistent with broad complement-system interaction rather than narrow off-target effect"
+    ],
+    "evidence_AGAINST_or_calling_for_caution": [
+      "No independent laboratory replication outside Fudan University",
+      "Helicteres angustifolia is well-studied for other indications (cancer, fibrosis) but the upstream-complement angle is isolated to Yin 2016",
+      "4-20× potency advantage over structurally-related benzofuran lignans is a large effect size — could reflect either true exceptional pharmacology or assay-format / extraction-protocol differences",
+      "Single laboratory + single assay protocol + single timepoint = high vulnerability to undetected systematic bias"
+    ]
+  },
+  "recommendation_for_platform": {
+    "priority": "HIGH",
+    "action": "Independent wet-lab replication on a DIFFERENT laboratory's CH50 protocol before any wet-lab-gate downstream depends on the Helicteres lignan finding. Wet-lab replication should:",
+    "specific_steps": [
+      "Use commercially-available standards where possible (hedyotol-D-7''-O-β-D-glucopyranoside is NOT commercially available; would need synthesis or extraction from Helicteres angustifolia material per Yin 2016 protocol)",
+      "Use SHEEP erythrocyte CH50 + RABBIT erythrocyte AP50 with a different sheep-serum source than Chen group's batch",
+      "Run with both rosmarinic acid (positive control, well-characterized 34-180 µM IC50 spread) AND luteolin (190 µM CH50) as positive-control comparators on the SAME assay run as the Helicteres compound",
+      "Test the Styrax japonica egonol (PMID 15643559, IC50 33 µM) as a structurally-similar positive control to verify the assay format detects benzofuran lignan activity at expected ranges",
+      "If the assay format detects egonol at expected IC50 but Helicteres compound 5 at >50 µM (i.e., NOT the 9 µM Yin reports), the discrepancy is assay-format-induced and the Yin finding is a single-protocol artifact",
+      "If the assay format detects Helicteres compound 5 at 9-20 µM and egonol at 33-50 µM, the Yin finding replicates and Helicteres benzofuran lignans become a CONFIRMED tier-1 platform candidate"
+    ],
+    "cost_estimate": "Mid-range in vitro CH50 / AP50 assay panel: $2000-5000 in reagents + ~2 weeks wet-lab calendar time. Plant material extraction adds $500-1000. Synthesis of compound 5 from hedyotol-D scaffold: ~$5000-10000 if outsourced; comparable in-house with skilled organic chemist time."
+  },
+  "alternative_path": {
+    "label": "Use Styrax japonica egonol as drop-in replacement candidate",
+    "rationale": "If Helicteres compound 5 is hard to source for wet-lab replication, Styrax japonica egonol (PMID 15643559, [doi:10.1055/s-2004-835853](https://doi.org/10.1055/s-2004-835853)) is a chemically-related benzofuran lignan with reported CP IC50 33 µM (Min 2004, Korean Research Institute of Bioscience and Biotechnology — independent of Fudan group). Egonol is more readily sourced from Styrax benzoin material. Testing egonol gives platform-relevant data on the benzofuran-lignan chemical class without depending on the single-paper Helicteres anchor.",
+    "drawback": "Egonol's 33 µM IC50 is 3.7× weaker than Helicteres compound 5's 9 µM — if egonol confirms but Helicteres remains untested, the platform learns about the chemical class but not the specific high-potency lead."
+  },
+  "cross_references": {
+    "phase_2_multilingual_findings": "./phase-2-multilingual-findings.md",
+    "comp_020_verification_rerun": "../../comp-020-upstream-complement-verification-rerun/wiki-archive.md",
+    "comp_018_phase_1_archive": "../wiki-archive.md",
+    "operations_retrospective": "../../../../operations/comp-018-vs-comp-020-retrospective.md"
+  }
+}
