@@ -31,3 +31,19 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Strengthen `koji-endgame-strain.md` §2.5 (carnosine) to explicitly name the convergence of the three design threads above and to frame carnosine as the default third cassette post-cordycepin-deprioritization. Run the §1.24 carnosine co-expression validation experiment (carnS + panD in A. oryzae koji, ≥500 mg/L gate) before further iteration on alternative third-cassette candidates. Document the cross-track redundancy (cordycepin via cultivation, astilbin via TCM) as a resilience feature, not a duplication — any patient who can't use koji-carnosine has two alternative routes to the same URAT1 mechanism.
 
 > **Pass 3 review — Partial.** `[OVERLAP: EXTENSION]` `[GAP: tool-gap]` The carnosine recommendation is mostly supported: `koji-endgame-strain.md` §2.5 calls carnosine the highest-priority optional third cassette, explicitly notes cytosolic CarnS + panD avoids secretion-pathway burden, and cites predicted weighted synergy ≥0.85. But the corpus is internally inconsistent after the cordycepin deprioritization: `cordycepin-cassette-burden-computational.md` says the active post-2026-05-16 koji cassette stack is “uricase + lactoferrin + DAF SCR1-4,” whereas `koji-endgame-strain.md` routes DAF separately and reserves the optional third-cassette logic for carnosine. The action should first reconcile that DAF-vs-carnosine third-cassette inconsistency, then elevate carnosine as the default cytosolic optional module.
+
+---
+
+**WALKED 2026-05-19 — Closed (deferred per Brian's sequencing call — 3rd-cassette decisions gate on §1.9 dual-cassette validation).**
+
+**Brian's 2026-05-19 walkthrough call:** "idk if we want to worry about third cassette until we know we can do a dual cassette." Sharp sequencing point — §1.9 (Ward 1995 dual-cassette feasibility test: uricase + lactoferrin) is the #1 priority gate. Until that returns positive, the 3rd-cassette discussion is premature. If dual-cassette doesn't validate, no 3rd-cassette decision matters; if it does validate, the carnosine-vs-DAF question gets re-asked with empirical α-coefficient calibration data instead of in silico estimates.
+
+Pass 3's flagged DAF-vs-carnosine inconsistency in cordycepin-cassette-burden-computational.md is real but parking-lot — same logic. The right time to reconcile is post-§1.9, when the platform has empirical data to anchor the 3rd-cassette decision rather than re-litigating in silico ranges.
+
+Not actioned:
+- ✗ No wiki edits to cordycepin-cassette-burden-computational.md (inconsistency parked until §1.9 data)
+- ✗ No wiki edits to koji-endgame-strain.md §2.5 (carnosine stays as "optional cytosolic candidate," NOT elevated to "default 3rd cassette" yet)
+
+When the parking-lot inconsistency gets revisited: probably after §1.9 returns. The relevant decision context:
+- IF §1.9 dual-cassette (uricase + Lf) succeeds at >500 mg/L Lf → 3rd-cassette question becomes live → carnosine-vs-DAF re-asked with empirical α data
+- IF §1.9 dual-cassette fails → 3rd-cassette question is moot; carnosine + DAF both route to alternate chassis (LBP for carnosine? DAF stays separate-strain)

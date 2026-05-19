@@ -56,3 +56,22 @@ Sources cited:
 - wiki/hypotheses/H02-engineered-lbp-thesis.md
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The C1-INH curious-thread choice is well supported by the corpus. comp-024 explicitly demotes complestatin for LBP, promotes C1-INH-on-EcN as GREEN-provisional 0.774, and identifies protease stability plus glycosylation as the dominant unresolved axis; `complement-c5a-gout.md` also lists C1-INH as a protective fluid-phase complement regulator at the relevant upstream node. This is exactly the kind of chokepoint-first, chassis-pending intervention that should survive review: CP0 fit is strong, chassis remains open, and the next gate is a cheap computational falsification step before wet-lab spend.
+
+---
+
+**WALKED 2026-05-19 — Closed (already actioned — comp-037 ran 2026-05-17 → MODERATE verdict).**
+
+The daemon's "next experiment slot" pick was already executed between this curious-thread (2026-05-16) and the 2026-05-19 walkthrough. **comp-037 ran 2026-05-17** and returned **MODERATE (kinetic-competition gated)**:
+- Strictly-degradative serpin-body protease risk: **LOW (0.1)** after mucin truncation (aa 123-500 construct)
+- Reactive-center loop (RCL R466-T467): **RED (0.8)** — reflects inhibitor mechanism (suicide-substrate), not body degradation
+- Glycosylation feasibility: **GREEN** for luminal topology
+
+The two-chassis CP0 architecture (C1-INH on EcN-LBP + DAF SCR1-4 on koji) is now substantiated at the computational-gate level. Remaining wet-lab gate: RCL kinetic-competition assay (does C1s/C1r/MASP-2 productively engage RCL before DegP/elastase cleaves it unproductively?).
+
+Already in the wiki via:
+- [`chassis-pending-interventions.md` §6.5 / §9.8](../../wiki/chassis-pending-interventions.md) — two-chassis architecture documentation
+- [`c1-inh-protease-stability-ecn-computational.md`](../../wiki/c1-inh-protease-stability-ecn-computational.md) — comp-037 page
+- [`complement-c5a-gout.md` §9.8](../../wiki/complement-c5a-gout.md) — two-chassis two-node CP0 coverage architecture
+- Cluster C-serpin walkthrough (2026-05-19) — added provisional serpin α coefficient (0.5–1.5) to `chaperone-orthogonal-stacking.md` §3.5.2 + §3.5.3
+
+This is a clean instance of the daemon's "most-curious-thread" actually being the next-step recommendation that the platform executed on schedule.
