@@ -598,6 +598,30 @@ A GitHub repository (per strain, under the Open Enzyme organization) for ferment
 
 ---
 
+## Open Questions — Substrate as Engineering Lever (queued 2026-05-19)
+
+Surfaced during the 2026-05-19 sweep-walkthrough (Cluster J3.3, Brian's first-principles reframe). The synthesis daemon flagged substrate variability as a **QC documentation discipline** (substrate-accumulated compounds need substrate-lot tracking — see [`medicinal-mushroom-extract-sops.md`](../medicinal-mushroom-extract-sops.md) §"Substrate-accumulated vs biosynthesized"). The deeper, untapped question is the inverse: **substrate is potentially a deliberate engineering lever, not just a documented confound.**
+
+**The four production mechanisms substrate engineering can exploit:**
+
+1. **Passive accumulation** — substrate compound X passes through, accumulates in mycelium (plant flavonoids from oak sawdust; substrate-accumulated bioavailable compounds the platform's distributed users could deliberately enrich).
+2. **Biotransformation** — fungal enzymes modify substrate compounds (deglycosylation, hydroxylation, methylation). Substrate choice determines what's available for biotransformation.
+3. **Substrate induction** — substrate composition triggers expression of fungal biosynthetic gene clusters (BGCs). Carbon-source / nitrogen-source / mineral effects on secondary metabolism. The most engineering-relevant mechanism — induction CAN switch on silent BGCs that aren't expressed under standard cultivation.
+4. **Precursor feeding** — deliberate addition of biosynthetic precursors to shift compound profile (methionine → ergothioneine; aromatic amino acids → indole alkaloids; etc.).
+
+**Why this matters for the platform specifically:** substrate is the variable distributed open-source users can most easily change — they aren't engineering strains, they're growing on what they buy or find. If substrate composition is a real engineering lever, it's the **most accessible optimization axis** for the open-source / democratized accessibility thesis. It compounds with strain engineering rather than competing with it.
+
+**Universal application across the platform's tracks:**
+- **Medicinal-mushroom-complement track** ([`medicinal-mushroom-complement-track.md`](../medicinal-mushroom-complement-track.md)) — primary application: cordycepin × substrate for *C. militaris*, ganoderic acid × substrate for *G. lucidum*, ergothioneine × substrate sulfur availability for *Pleurotus*.
+- **Engineered koji track** ([`engineered-koji-protocol.md`](../engineered-koji-protocol.md), [`koji-home-fermentation.md`](../koji-home-fermentation.md)) — rice cultivar effects on kojic acid + ergothioneine; carbon-source effects on heterologous cassette expression.
+- **Future LBP/EcN tracks** — defined-media substrate optimization for engineered LBPs.
+
+**Status:** Lit scan firing during 2026-05-19 walkthrough — output to `logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`. Status promotes from "queued open question" to "named platform discipline" if the lit scan returns substantial yield-effect or profile-effect data across the platform's candidate species.
+
+**Decision gate for elevation to named principle:** if the lit scan shows ≥2× yield effects or new-compound-class effects (e.g., substrate-induced BGC expression that switches on silent secondary metabolites) for ≥2 candidate species, "Substrate Engineering" earns a place in the Platform Principles list (currently 1–8 above). If the lit scan shows only marginal effects (<2× yield, no profile shifts), the discipline stays at the documentation-level encoded in `medicinal-mushroom-extract-sops.md`.
+
+---
+
 *This platform is a living system. As [[validation-experiments]] advance and community contributions grow, this document will evolve. The core principle remains: open source, GRAS organisms, community validation, no patents.*
 
 *Fork freely. Replicate fearlessly. Share everything.*

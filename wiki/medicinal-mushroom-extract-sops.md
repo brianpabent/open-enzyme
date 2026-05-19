@@ -115,6 +115,31 @@ The SOPs above (SOP-1 GLPP, SOP-2 cordycepin, SOP-3 EGT) are written at **Tier 3
 
 **Why this matters operationally:** without the tiered framework, every batch would need full Tier 3 HPLC (cost-prohibitive at scale and impossible for distributed open-source contributors without HPLC access). With it, Tier 3 is invoked once per protocol revision; Tier 2 handles batch consistency cheaply; Tier 1 keeps end-user dosing tied to verified content. Same discipline that lets the koji track work as a home-fermentation project rather than a CRO-only project.
 
+### Substrate-accumulated vs biosynthesized — origin-of-compound discipline (added 2026-05-19)
+
+Not all compounds detected in a mushroom extract are produced by the fungus. **Substrate-accumulated compounds** pass through from the cultivation substrate (e.g., plant flavonoids from oak sawdust) and concentrate in mycelium without being biosynthesized by fungal metabolism. **Biosynthesized compounds** are produced by the fungal genome's secondary-metabolite biosynthetic gene clusters (BGCs). The two have fundamentally different batch-variability profiles:
+
+| Compound | Origin | Dominant batch-variance source |
+|---|---|---|
+| **Cordycepin** (*C. militaris*) | Biosynthesized (cns1+cns2 BGC) | Strain genetics + fermentation conditions |
+| **Ergothioneine** (*Pleurotus* / koji) | Biosynthesized (egtBCD pathway) | Strain genetics + substrate sulfur availability |
+| **GLPP** (*G. lucidum*) | Biosynthesized (mycelium-specific polysaccharide-peptide) | Strain genetics + cultivation stage |
+| **Kojic acid** (*A. oryzae*) | Biosynthesized | Strain genetics + carbon source |
+| **Quercetin, genistein, daidzein, morin** (in mushroom extracts) | **Substrate-accumulated** (plant flavonoids passed through) | **Substrate lot + source** (oak sawdust species, geographic origin) |
+| **Various polyphenols** (in mushroom extracts grown on hardwood) | Often substrate-accumulated | Substrate lot + source |
+
+**QC implication:** for substrate-accumulated compounds, **substrate lot variation — not strain genetics — dominates batch-to-batch variability.** The Tier 2 colorimetric assay will detect a shifted quercetin batch but cannot distinguish "strain drift" from "substrate lot change" as the root cause. For H06 falsification-card Dimension 2 (characterization protocol robustness, ±15% inter-operator), substrate-accumulated origin must be a documented variable, not an invisible confound.
+
+**Required documentation fields (cultivation data sheet):**
+- **Substrate species / source** (e.g., oak species, sawdust grade, lot number, geographic origin, supplier)
+- **Substrate lot identifier** (vendor lot, harvest date, treatment history)
+- **Substrate composition characterization** (if available — lignin content, ash content, mineral profile, any vendor analytical certificate)
+- **Substrate-accumulated vs biosynthesized origin tag** (per the table above; applies on a per-compound basis)
+
+For compounds tagged "substrate-accumulated," the Tier 2 batch QC reading must be paired with substrate-lot documentation to be interpretable. A Tier 2 reading showing 20% drop in quercetin content is uninformative without knowing whether the substrate lot also changed.
+
+**See also:** the "substrate as engineering lever" question (`etc/open-source-platform.md` §"Open Questions — Substrate as Engineering Lever") explores the inverse direction — whether substrate composition can be *deliberately tuned* to enhance compound production or shift the bioavailable compound profile. The documentation discipline above is the prerequisite QC anchor for any substrate-engineering experiment.
+
 **Cross-reference to [§"Reality check — current consumer-grade fruiting-body extracts deliver sub-therapeutic cordycepin doses"](./medicinal-mushroom-complement-track.md):** the tiered framework is *also* the discipline that catches dose-vs-product-content mismatches like the Real Mushrooms Cordyceps-M case (3-4 mg cordycepin per 1 g serving at 0.4% content). A Tier 2 colorimetric check on a commercial extract would surface this mismatch before it became a "URAT1 layer" recommendation. Anyone evaluating a commercial mushroom extract for therapeutic-dose targeting should run the Tier 2 check (or insist on the manufacturer's published HPLC content) before downstream reasoning depends on the active-compound dose.
 
 ### SOP-5 — Strain Banking + ITS Authentication

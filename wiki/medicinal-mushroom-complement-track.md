@@ -109,6 +109,30 @@ Subset of the comp-014 Phase 5 anchor list, prioritized by:
 
 The medicinal-mushroom-complement track is **species-additive to comp-014's anchor list, not separate** — the same well-studied species, evaluated through a different lens (cultivation feasibility + native-compound consumption rather than engineering-chassis suitability).
 
+### Ascomycete secondary metabolites (provisional, mycotoxin-screening required) — added 2026-05-19
+
+The track's candidate species above are all basidiomycetes. comp-014 Phase 3 surfaced a different fungal phylum — **ascomycetes** (same phylum as koji *A. oryzae*) — as producing direct caspase-1 (CASP1) inhibitors at sub-μM potency, a chokepoint coverage the basidiomycete corpus lacks.
+
+**Lead chemistry — Berkeleyamides from *Penicillium*:**
+
+- **Berkeleyamide A** — direct CASP1 IC50 = 330 nM (pChEMBL 6.48; comp-014 Phase 3)
+- **Berkeleyamide D** — direct CASP1 IC50 = 610 nM (pChEMBL 6.21)
+- **Berkeleyones A/B/C** — IL-1β IC50 = 2.7 / 3.7 / 37.8 μM
+- Original discovery: environmental *Penicillium* isolates (Stierle et al., ~2008/2011, Berkeley Pit Lake acid-mine-drainage isolates)
+
+**Food-grade *Penicillium* species worth investigating:** *P. camemberti* (Camembert / Brie ripening) and *P. roqueforti* (Roquefort / Stilton blue cheese ripening). Both GRAS. The wet-lab and literature questions: (a) do they produce the Berkeleyamide chemotype under cheese-fermentation conditions, or is the BGC silenced / absent? (b) does substrate composition affect production (substrate-induction angle, see "Substrate as engineering lever" question)?
+
+**Why this matters for the platform:**
+- *Penicillium* is phylogenetically adjacent to koji *A. oryzae* (both ascomycetes) — BGC heterologous transfer to engineered koji is structurally easier than basidiomycete → ascomycete transfer.
+- P. camemberti / P. roqueforti are already food-grade cheese-fermentation organisms — cultivation UX is real and accessible.
+- Direct CASP1 inhibition is a chokepoint the basidiomycete medicinal-mushroom track currently lacks.
+
+**⚠️ Mycotoxin-screening prerequisite:** ascomycete secondary-metabolite exploration rapidly converges on mycotoxin risk (aflatoxin, ochratoxin, patulin, citrinin, PR-toxin, roquefortine — many *Penicillium* and *Aspergillus* species produce these). The basidiomycete medicinal mushrooms are mycotoxin-safe by comparison. Any *Penicillium* extract candidate must clear species-authentication + mycotoxin-screening QC before downstream characterization.
+
+**Status: chassis-pending discovery note, not a committed track.** Status promotes if (a) lit scan (2026-05-19 sweep-walkthrough J2 follow-up) shows the Berkeleyamide chemotype is plausibly present in food-grade *Penicillium* species, AND (b) wet-lab assay (food-grade *Penicillium* extract CASP1 inhibition, ~$500-1,000) confirms production under cheese-fermentation substrate conditions. If negative on either gate, the finding remains a comp-014 curiosity rather than a platform candidate.
+
+See [`logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md`](../logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md) for the lit scan; [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) Phase 3 for the comp-014 anchor data.
+
 ### Cultivation method comparison (Phase 7 follow-up)
 
 Three home-feasibility levels:

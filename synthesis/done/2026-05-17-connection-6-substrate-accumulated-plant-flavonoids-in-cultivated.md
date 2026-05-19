@@ -17,3 +17,19 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a "Substrate-accumulated vs. biosynthesized" annotation column to the medicinal-mushroom-extract-sops.md SOP-6 tier table. For quercetin, genistein, daidzein, morin entries: note "substrate-accumulated — substrate lot documentation required for batch QC." Add "substrate source + lot" as a required field in the cultivation data sheet (analogous to the "extract source, batch ID, lot" fields already in SOP-6's operational pattern). No new assay needed — this is documentation discipline, not analytical chemistry.
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` comp-014 Phase 3 explicitly flags quercetin, genistein, daidzein, and morin as plant-origin flavonoids attributed to fungi through substrate accumulation rather than fungal biosynthesis, and `medicinal-mushroom-extract-sops.md` currently treats SOP-6 quantification as compound-specific without a substrate-origin field. The QC implication follows: if the analyte is substrate-accumulated, substrate lot and source can dominate batch variance even when the fungal strain is unchanged. Add the annotation column and substrate-lot field; this is low-cost documentation discipline with real falsification-card relevance.
+
+---
+
+**WALKED 2026-05-19 — Closed (substrate-origin discipline encoded + platform-level question elevated to first-principles investigation).**
+
+**Brian's 2026-05-19 walkthrough reframe** flipped this from a documentation-QC problem to a first-principles question worth investigating: *if we're growing something, can we get more or better compounds by changing the substrate?* The daemon stopped at "substrate is a confound to document"; Brian's framing names the inverse — substrate as a deliberate engineering lever. This was the noteworthy insight of the walkthrough.
+
+Actioned:
+- ✓ Added "Substrate-accumulated vs biosynthesized — origin-of-compound discipline" subsection to `medicinal-mushroom-extract-sops.md` (after SOP-6). Documents the origin distinction per-compound (cordycepin/EGT/GLPP/kojic acid biosynthesized vs quercetin/genistein/daidzein/morin substrate-accumulated), QC implications, and required cultivation-data-sheet fields (substrate species/source/lot/composition).
+- ✓ Added new "Open Questions — Substrate as Engineering Lever (queued 2026-05-19)" section to `etc/open-source-platform.md`. Documents the four production mechanisms substrate engineering can exploit (passive accumulation, biotransformation, substrate induction of silent BGCs, precursor feeding), why this is platform-level (universal to mushroom/koji/future LBP tracks), and the elevation-to-named-principle decision gate (≥2× yield effects OR new-compound-class effects in ≥2 candidate species).
+- 🔄 Substrate-engineering lit-scan subagent firing in background. Targets: cordycepin × substrate, ganoderic acid × substrate, ergothioneine × substrate sulfur/methionine, lentinan × substrate, hericenones × substrate, PSK/PSP × substrate, Penicillium metabolites × cheese substrate. Multilingual scope (J-STAGE, CNKI). Output → `logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`.
+
+The documentation discipline (per Pass 3) is the prerequisite QC anchor for any substrate-engineering experiment. Both directions are now active: substrate-as-documentation discipline encoded in the SOP page; substrate-as-engineering-lever queued for investigation in the platform page.
+
+Also closes:
+- 2026-05-17 priority-action-3 (Add substrate-accumulated vs biosynthesized annotation to SOP-6).
