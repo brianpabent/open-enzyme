@@ -74,7 +74,7 @@ Phase 2 confirms the comp-020 tier-1 ranking holds at the small-molecule level (
 | 1a | Phenolic acid | Rosmarinic acid | C3b 34 µM; CP 137-180 µM; bell-shape | FDA GRAS rosemary / lemon balm / spearmint | Multi-anchor |
 | 1b | Flavone (multi-mechanism) | Luteolin | CH50 190 µM (CP), AP50 170 µM | Dietary (parsley, celery, honeysuckle) | Multi-anchor across XO + URAT1 + CP |
 | 1c | Benzofuran sesquilignan glucoside | Helicteres compound 5 | CH50 9 µM (highest single-compound potency) | Not dietary; tropical Sterculiaceae | SINGLE-ANCHOR — replication INCONCLUSIVE per Phase 2 ([`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json)) |
-| **1d (NEW)** | Pectic polysaccharide multi-target | **Houttuynia cordata polysaccharide class** | CH50 79-318 µg/mL across crude + purified | Widely dietary in Southeast Asia (鱼腥草 / どくだみ) | Multi-anchor (3+ Chen Daofeng group papers) |
+| **1d (NEW; DUAL-CHOKEPOINT, upgraded 2026-05-19)** | Pectic polysaccharide multi-target | **Houttuynia cordata polysaccharide class (HCP / HCPM)** | CH50 79-318 µg/mL across crude + purified (CP0); intestinal NLRP3↓ + tight junction↑ + TLR4-MD2 direct binding (CP1) | Widely dietary in Southeast Asia (鱼腥草 / どくだみ / diếp cá) | Multi-anchor: 3+ Chen Daofeng group papers (CP0) + Li 2025 [PMC12254813](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12254813/) (dual CP0+CP1) + Yu 2026 [PMC12937656](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12937656/) (TLR4 docking) + Cheng 2014 [PMC7112369](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7112369/) (structure-dependent caveat) |
 
 ### Helicteres replication outcome
 
