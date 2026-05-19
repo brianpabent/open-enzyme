@@ -17,3 +17,9 @@ overlap_tag: RESTATEMENT
    - *Suggested Action:* Prioritize the `validation-experiments.md` §1.14 butyrate dose-response arm (WT + Q141K Caco-2, 5 concentrations bracketing 0.05–5 mM, dual readout: ABCG2 surface expression + functional urate efflux). This is the single experiment that resolves whether the endogenous-PDB thesis holds or whether engineered butyrate delivery is required. Cost ~$500–1,500 as an add-on to the existing §1.14 factorial; no new infrastructure.
 
 > **Pass 3 review — Push back.** `[OVERLAP: RESTATEMENT]` `[GAP: tool-gap]` The science and experiment priority are right, but the novelty claim is false: `purine-degrading-bacteria.md` already has a first-class section titled “Q141K + PDB-butyrate + HDAC: a natural genotype-targeted therapy” and explicitly states that “Q141K + butyrate + gut-lumen uricase is a triple-mechanism intervention.” `validation-experiments.md` §1.14 already contains the WT/Q141K Caco-2 butyrate dose-response arm with 0.05–5 mM and dual trafficking/urate-efflux readouts. Keep the prioritization; remove the claim that the three-way composition is unnamed.
+
+---
+
+**WALKED 2026-05-19 — Closed (duplicate of [[2026-05-16-priority-action-1-execute-the-caco-2-butyrate-dose-response-arm-in-validation]]).**
+
+Same thread as the canonical item — prioritize the Caco-2 §1.14 butyrate dose-response. Pass 3's "novelty claim false" verdict already established that the triple-mechanism composition is named in `purine-degrading-bacteria.md`. Full closure context in the canonical entry.

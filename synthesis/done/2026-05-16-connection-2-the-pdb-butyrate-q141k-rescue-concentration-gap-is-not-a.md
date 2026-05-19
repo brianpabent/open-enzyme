@@ -23,3 +23,9 @@ overlap_tag: RESTATEMENT
    - *Suggested Action:* No new action — the §1.14 butyrate dose-response arm already added on 2026-05-16 directly resolves this. The re-frame changes how the corpus *describes* the gap: move from "concentration gap — contradiction" language to "concentration-gap — testable prediction with a defined wet-lab resolution path" in `purine-degrading-bacteria.md` §"Concentration gap" and `abcg2-modulators.md` §6. The dual-readout discipline (WT PPARγ vs Q141K HDAC) should propagate to both pages when the butyrate dose-response arm is described.
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: RESTATEMENT]` The reframe is correct, but it is now already first-class in the corpus: `purine-degrading-bacteria.md` names the “Concentration gap,” cites Basseville 2012’s 1–5 mM butyrate rescue anchor, and points to `validation-experiments.md` §1.14 with WT/Q141K dual readouts to disentangle PPARγ induction from HDAC-mediated trafficking rescue. `abcg2-modulators.md` carries the same concentration-gap caveat and resolution path. The finding is therefore a valid restatement of the current wiki position rather than a new contradiction resolution.
+
+---
+
+**WALKED 2026-05-19 — Closed (duplicate of [[2026-05-16-priority-action-1-execute-the-caco-2-butyrate-dose-response-arm-in-validation]]).**
+
+Same thread as the canonical item — the concentration-gap reframe is already in both `purine-degrading-bacteria.md` and `abcg2-modulators.md`. Full closure context in the canonical entry.

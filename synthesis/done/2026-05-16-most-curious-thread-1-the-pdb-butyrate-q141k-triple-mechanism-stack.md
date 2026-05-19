@@ -138,3 +138,9 @@ Sources cited:
 - wiki/lactoferrin.md
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: RESTATEMENT]` The thread is scientifically coherent, but it is already a first-class mechanism in `purine-degrading-bacteria.md`, including the “natural genotype-targeted therapy” framing and the concentration-gap caveat. The right takeaway is not novelty but prioritization: the §1.14 Caco-2 butyrate dose-response decides whether PDB-derived butyrate can reach the Q141K HDAC-rescue threshold at the enterocyte nucleus, or whether engineered butyrate delivery must route to the LBP/chassis-pending track.
+
+---
+
+**WALKED 2026-05-19 — Closed (duplicate of [[2026-05-16-priority-action-1-execute-the-caco-2-butyrate-dose-response-arm-in-validation]]).**
+
+Same thread, "most-curious" framing. The "gene-therapy-by-microbiome" tagline phrasing was checked against `purine-degrading-bacteria.md` line 221, which already carries the canonical framing ("endogenous gut bacteria producing the molecule that fixes their genetic variant... genotype-targeted gene-trafficking rescue for the #1 gout GWAS variant") — the wiki's phrasing is more precise than the daemon's coinage. No tagline extraction needed. Full closure context in the canonical entry.
