@@ -1,15 +1,15 @@
 ---
 title: Bio AI Tools
-aliases: [AI-tools, AI-bio, GPT-Rosalind, Amazon-Bio-Discovery, Anthropic-Coefficient, computational-biology, protein-language-models, open-source-bio-AI]
+aliases: [AI-tools, AI-bio, GPT-Rosalind, Amazon-Bio-Discovery, Anthropic-Coefficient, Hugging-Science, computational-biology, protein-language-models, open-source-bio-AI]
 related: [engineered-yeast-uricase, engineered-koji-protocol, validation-experiments, uricase, nlrp3-inflammasome, paperclip-deep-dive]
-sources: [ai-bio-tools-playbook.md, paperclip-deep-dive.md]
+sources: [ai-bio-tools-playbook.md, paperclip-deep-dive.md, "Hugging Science: https://huggingscience.co/llms.txt"]
 ---
 
 # Bio AI Tools
 
 ## Overview
 
-Three major commercial AI biology tools launched in April 2026 that can accelerate Open Enzyme: **GPT-Rosalind** (OpenAI), **Amazon Bio Discovery**, and **Anthropic's Coefficient Bio acquisition**. However, Rosalind requires institutional access and Bio Discovery costs $486/month. A robust ecosystem of **open source protein AI tools** — including ESM-2, AlphaFold/ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, and others — is freely available and covers most of the computational biology workflow. These open source tools are the project's primary computational toolkit. This document covers all three tiers: commercial, open source, and free web tools.
+Three major commercial AI biology tools launched in April 2026 that can accelerate Open Enzyme: **GPT-Rosalind** (OpenAI), **Amazon Bio Discovery**, and **Anthropic's Coefficient Bio acquisition**. However, Rosalind requires institutional access and Bio Discovery costs $486/month. A robust ecosystem of **open source protein AI tools** — including ESM-2, AlphaFold/ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, and others — is freely available and covers most of the computational biology workflow. **Hugging Science** adds a fourth layer: a machine-readable discovery index for open AI-for-science datasets, models, benchmarks, and blog posts. These open resources are the project's primary computational toolkit. This document covers commercial platforms, open-source models, resource indexes, and free web tools.
 
 ---
 
@@ -57,7 +57,23 @@ These tools are freely available and cover the core computational biology workfl
 
 **Colab Pro ($10/month):** Adds Boltz-2, RFdiffusion2, DiffDock for complex prediction, de novo design, and docking.
 
-See [ai-bio-tools-playbook.md](../docs/ai-bio-tools-playbook.md) §Part 01b for full details, hardware requirements, and mapping to project prompts.
+See [ai-bio-tools-playbook.md](./ai-bio-tools-playbook.md) §Part 01b for full details, hardware requirements, and mapping to project prompts.
+
+---
+
+## Hugging Science Resource Index
+
+[Hugging Science](https://huggingscience.co/) is a curated Hugging Face AI-for-science index with machine-readable topic files and an [`/llms.txt`](https://huggingscience.co/llms.txt) catalog. It is useful before launching a comp-NNN because it answers: "Does an open dataset, model, or benchmark already exist for this question?"
+
+Highest-priority Open Enzyme leads from the 2026-05-19 scan:
+
+- **OpenADMET / CYP / PXR models** — safety-side screen for compounding candidates, supplement-stack compounds, and repurposing hits.
+- **SAIR / AQAffinity / CoLiPRI / TxGemma / Eve Bio** — second-opinion layer for protein-ligand affinity, drug-target activity, and ABCG2 Q141K chaperone follow-up.
+- **Ginkgo DRUG-seq, Tahoe-100M, X-Atlas, Perturb-Sapiens, STACK / TEDDY** — perturbation-expression resources for ABCG2 regulation and complement-regulator upregulation questions.
+- **Evo-2, Nucleotide Transformer, AlphaGenome, PromoterGPT, ChatNT** — sequence / promoter / genomic-model leads for cassette-design review.
+- **ThermoGFN-IF, ESM-2, OpenFold3, Boltz, RFdiffusion / ProteinMPNN guides** — enzyme-engineering leads for uricase stability, lactoferrin linker redesign, and DAF SCR1-4 folding.
+
+Treat catalog entries as **capability leads**, not evidence. Any model output must still pass license review, benchmark-fit review, reproducibility checks, and the normal pre-commit grep-verify gate before it becomes load-bearing in the wiki.
 
 ---
 

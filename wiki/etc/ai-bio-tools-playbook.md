@@ -11,7 +11,14 @@ tags:
   - GPT-Rosalind
   - Amazon Bio Discovery
   - Anthropic
+  - Hugging Science
+  - OpenADMET
+  - Genomics Foundation Models
 status: published
+sources:
+  - "Hugging Science resource index: https://huggingscience.co/llms.txt"
+  - "Hugging Science biology topic file: https://huggingscience.co/topics/biology.md"
+  - "Hugging Science chemistry topic file: https://huggingscience.co/topics/chemistry.md"
 ---
 
 # Bio AI Tools Playbook
@@ -114,6 +121,37 @@ Anthropic paid $400M in stock — roughly $40M per person — because this team 
 **What This Means for Claude:** Expect Claude to gain specialized biological reasoning capabilities — particularly around protein design, drug discovery, and clinical trial planning. The Coefficient team's Biogen/Roivant experience means Claude's bio capabilities will be grounded in real pharma workflows, not just academic benchmarks.
 
 > **Note:** Timeline speculation: Based on the pattern (Life Sciences in Oct, Healthcare in Jan, Coefficient acquired in Apr), expect Claude-native biological reasoning features by Q3-Q4 2026. This could mean protein structure tools built directly into Claude, similar to how Rosalind works but integrated into the Claude ecosystem you're already using for the Open Enzyme project. For now, Claude with the Life Sciences connectors (Benchling, PubMed) is your best Anthropic-side tool.
+
+---
+
+### Hugging Science (Hugging Face AI-for-science index)
+
+**Hugging Face • resource index surfaced 2026-05-19**
+
+[Hugging Science](https://huggingscience.co/) is not one model. It is a curated, machine-readable index of open AI-for-science datasets, models, benchmarks, and blog posts across biology, chemistry, medicine, genomics, scientific reasoning, materials, physics, and related fields. The operationally useful feature is that the site exposes topic markdown files and an [`/llms.txt`](https://huggingscience.co/llms.txt) index, so an agent can query the catalog directly instead of hand-browsing the Hugging Face Hub.
+
+**Open Enzyme relevance:** this is a capability-discovery layer. Use it when an open question needs "what open model or dataset exists for this axis?" before launching a comp-NNN or wet-lab spend. Treat catalog entries as leads, not validated OE evidence.
+
+High-priority OE mappings:
+
+| OE question class | Hugging Science capability to inspect first | Why it matters |
+|---|---|---|
+| FDA-approved repurposing / target overlap | Eve Bio drug-target activity, TxGemma, AQAffinity, SAIR, CoLiPRI | Second-pass screen for compounding-pharmacy candidates, ABCG2 Q141K chaperones, C5aR1 / NLRP3 small-molecule gaps. |
+| ADMET / drug-drug interaction risk | OpenADMET challenge data, CYP inhibition model, PXR activation model, MIST toxicity / side-effect / BBB models | Fast safety triage for disulfiram, zileuton, supplement-stack compounds, and any newly surfaced repurposing hit. |
+| Host-cell expression perturbation | Ginkgo DRUG-seq, Tahoe-100M / Tahoe-x1, X-Atlas, Perturb-Sapiens, STACK / TEDDY | Could address expression-modulation questions such as ABCG2 regulation, complement-regulator upregulation, and compound-driven transcriptomic effects before ordering assays. |
+| Cassette / promoter / sequence design | Evo-2, Nucleotide Transformer, AlphaGenome, PromoterGPT, ChatNT | Candidate second-opinion layer for promoter / 5' UTR / coding-sequence design. Stronger for human and broad genomic contexts than for *A. oryzae*-specific expression until benchmarked. |
+| Protein / enzyme engineering | ESM-2, OpenFold3, Boltz / AQAffinity, ThermoGFN-IF, RFdiffusion / ProteinMPNN-related guides | Follow-up layer for uricase acid stability, lactoferrin linker redesign, DAF SCR1-4 folding, and enzyme thermostability hypotheses. |
+| Agent benchmark discipline | FutureHouse Lab-Bench / BixBench, BioMysteryBench, ChemBench | Useful for evaluating whether an agent workflow is competent at lab-protocol and scientific-reasoning tasks before trusting it with comp-NNN authoring. |
+
+**Immediate triage queue (no new wiki page yet):**
+
+1. **OpenADMET / CYP / PXR pass on compounding candidates.** Run disulfiram, zileuton, colchicine custom-dose candidates, and top supplement-stack compounds through the open ADMET models as a safety-side screen. Output belongs in [`compounding-pharmacy-track.md`](../compounding-pharmacy-track.md) or the relevant compound pages, not here.
+2. **SAIR / AQAffinity / CoLiPRI second opinion for comp-032.** Re-score the ABCG2 Q141K pharmacological-chaperone shortlist against protein-ligand structure / affinity models before wet-lab trafficking assay spend.
+3. **Perturbation-atlas query for ABCG2 and complement-regulator expression.** Search Ginkgo / Tahoe / X-Atlas style resources for compounds that upregulate ABCG2, DAF/CD55, Factor H, CD59, clusterin, or CR1 in epithelial / immune-relevant contexts.
+4. **ThermoGFN-IF / ESM-2 follow-up on uricase stability.** Compare whether the existing OPT-1 / SB-1 uricase engineering set is supported by newer thermostability-directed protein design priors.
+5. **Hugging Science sweep before new comp-NNN briefs.** Add a brief step: query `/llms.txt` and the relevant topic file for open datasets/models before deciding that a question needs a bespoke analysis.
+
+**Limitations:** Hugging Science is a curated index, not a validation authority. Every resource still needs license review, benchmark fit review, local reproducibility check, and the normal Open Enzyme pre-commit grep-verify gate before a model output becomes load-bearing evidence.
 
 ---
 
@@ -981,6 +1019,7 @@ This is not a coincidence you can take advantage of. This is the reason the proj
 | Codex Life Sciences Plugin | Available in Codex (GitHub) | Free, available now to all GPT-5.4 users |
 | Amazon Bio Discovery | aws.amazon.com/biodiscovery | Early access, $486/mo or free trial (5 experiments) |
 | Claude for Life Sciences | anthropic.com | Available now (Benchling, PubMed connectors) |
+| Hugging Science | huggingscience.co/llms.txt | Free curated index of open AI-for-science resources |
 
 **Open Source (Available Now):**
 
