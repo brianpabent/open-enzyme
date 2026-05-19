@@ -38,3 +38,9 @@ Sources cited:
 - wiki/etc/open-source-platform.md
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: EXTENSION]` The curiosity pick is well-grounded as a mechanism-composition hypothesis: `colchicine.md` supports CP2/CP3 systemic colchicine via P2X7 and microtubules, while `cannabinoids-terpenes.md` and `gout-action-guide.md` support topical CBD:THC as local CB2/TRPV1 adjunct with no direct human gout-flare RCT. The combination remains speculative and should stay framed as a dual-route hypothesis requiring logs or prospective n=1 testing, but it is not already named as a formal combined protocol in the wiki.
+
+---
+
+**WALKED 2026-05-19 — Closed (duplicate of [[2026-05-17-connection-2-colchicine-cp2-cp3-tubulin-topical-cbd-thc-cb2-nlrp3-as-a]]).**
+
+Same dual-route mechanism-composition pick. Combined protocols formalized during walkthrough as Protocol A (colchicine + topical CBD:THC) and Protocol B (prednisone + topical + inhaled cannabis + ice, with Brian's n=1 anchor). Full closure context in the canonical entry.

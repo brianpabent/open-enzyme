@@ -101,6 +101,8 @@ Colchicine sits at CP2 (P2X7) and CP3 (ASC speck), but the practical question fo
 
 **The stacking logic differs per pair; a one-size answer is unlikely.** Anyone layering colchicine with other CP2/CP3 modulators should ask, per pair, whether the second compound hits an *upstream* node (additive) or the same node (redundant). See [`nlrp3-exploit-map.md`](nlrp3-exploit-map.md) for the chokepoint topology.
 
+**Topical CBD:THC at CB2 — the cleanest dual-receptor adjunct (added 2026-05-19, Cluster I1 walkthrough).** Topical 1:1 CBD:THC applied to the affected joint hits CP2 NLRP3 conformational suppression via **CB2 GPCR activation on synovial macrophages** — a completely different molecular mechanism than colchicine's β-tubulin binding, reaching the same chokepoint. The two arms are mechanism-non-redundant at CP2: colchicine acts intracellularly via cytoskeleton disruption, CBD:THC acts via plasma-membrane Gαi-coupled receptor signaling. Plus the topical route provides joint-site concentration that oral colchicine can't match. This composes a **dual-receptor, dual-route** acute-flare protocol — formalized as Protocol A in [`gout-action-guide.md` §"Combined-route flare protocols"](./gout-action-guide.md). See [`cannabinoids-terpenes.md`](./cannabinoids-terpenes.md) §1–2 (per-cannabinoid mechanism), §4a (topical protocol details), and §"Brian's n=1 observation" (real-subject layered-flare-interrupt anchor). Evidence: colchicine arm is Clinical Trial (AGREE trial); CBD:THC arm is In Vitro / Animal Model; combination is Speculative.
+
 ### 3.4 Other immunomodulatory effects
 
 - **Neutrophil chemotaxis**: microtubule-dependent migration to inflamed joints is impaired. Crystal-loaded neutrophils still arrive but fewer of them.

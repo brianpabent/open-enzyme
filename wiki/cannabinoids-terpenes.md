@@ -324,6 +324,35 @@ A specific clinical protocol for acute gout flare that sits atop the mechanism e
 
 **Where it fits in the cannabinoid stack framework (§7):** this is a *different use case* from the chronic NLRP3-suppression stack — acute flare management leveraging CB2's fast-onset neutrophil suppression and TRP-mediated analgesia, not long-term inflammasome priming prevention. The oral chronic-suppression stack (beta-caryophyllene, limonene) and the topical acute-flare stack are complementary rather than alternatives. (source: gout-action-guide.md)
 
+### Brian's n=1 observation — four-route layered flare-interrupt (added 2026-05-19)
+
+**Subject:** Brian (gout-prone, on existing prednisone taper at time of observation).
+
+**Trigger:** Disc-golf overexertion → prodromal flare rebound. Standard protocol would have been to taper back up on prednisone.
+
+**Intervention used instead (layered on top of existing prednisone):**
+- **Ice cycling** at affected joint
+- **Topical 1:1 CBD:THC** applied per §4a protocol above
+- **Inhaled cannabis** (whole-flower combustion)
+
+**Outcome (subjective, self-reported):**
+- Pain resolved within ~1 hour of intervention onset
+- No recurrence overnight; slept through the night uninterrupted
+- Next day: returned to baseline pain level or slightly below
+- Continued topical use over subsequent days with sustained effect
+
+**Mechanism interpretation (Mechanistic Extrapolation):** four-route layered convergence on NLRP3 via independent receptor pathways and delivery compartments:
+- Prednisone → systemic glucocorticoid receptor → NLRP3 / IL-1β / NOS2 / ACOD1 transrepression at CP1+CP2 (per H2 lit scan 2026-05-19 — GR signaling controls MSU-driven inflammasome activation directly per Diaz-Jimenez 2026 PMC12862736, and GR's anti-inflammatory effect is *timing-dependent*: requires LPS priming first, which the prodromal flare provides)
+- Topical CBD:THC → local CB2 → CP2 (transdermal local on synovial macrophages)
+- Inhaled cannabis → systemic CB1/CB2 → CP2 (systemic compartment, distinct from topical)
+- Ice → TRPM8 nociceptive blunting + tissue temperature drop + cold-induced anti-inflammatory effect (peripheral local)
+
+**Epistemic tier:** **n=1, uncontrolled, single observation, multi-intervention (cannot isolate component contributions).** Mechanism-composition story is plausible per the per-arm evidence in §1–4 of this page + the GR-mechanism documentation in [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) §Glucocorticoid Receptor Signaling, but the n=1 observation is **hypothesis-generating, not confirmatory**. Reasons it might be misleading: regression to mean, placebo effect, natural flare-rebound resolution timing, prednisone alone sufficient. A prospective n=1 A/B test (consecutive flares treated with prednisone-only vs. four-route protocol) would discriminate; the layered design currently doesn't isolate the cannabinoid arms' marginal contribution.
+
+**Why document this as n=1 anyway:** the platform's self-experiment protocol epistemic discipline ([`self-experiment-protocol.md`](./self-experiment-protocol.md)) explicitly accommodates n=1 observations with appropriate tier tags. The discipline is to log them, not skip them — single observations in a flare-prone subject with mechanism-aligned interventions are hypothesis-generating data, not noise. Future flare events in the same subject will compound this baseline; n=1 → n=several is the path to characterizing whether the protocol is durably effective.
+
+**Cross-references:** [`gout-action-guide.md` §"Combined-route flare protocols"](./gout-action-guide.md) Protocol B (the formalized version of this n=1 observation); [`nlrp3-exploit-map.md` §"Glucocorticoid Receptor (GR) Signaling"](./nlrp3-exploit-map.md) (the prednisone arm's mechanism documentation); [`logs/cortisol-fasting-glucocorticoid-inflammasome-lit-scan-2026-05-19.md`](../logs/cortisol-fasting-glucocorticoid-inflammasome-lit-scan-2026-05-19.md) (the H2 lit scan that established the GR / NLRP3 / MSU mechanism in vivo).
+
 ---
 
 ## 5. Digestive Health and EPI Relevance

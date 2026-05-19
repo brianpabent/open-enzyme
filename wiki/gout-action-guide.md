@@ -148,6 +148,24 @@ You are in pain right now. **Standard medical care is the priority** — colchic
 - **Avoid:** ketogenic states, intermittent fasting, alcohol, organ meats, high-fructose foods. All transiently raise UA and can extend the flare.
 - **Avoid BHB / exogenous ketones during a flare.** Ketosis competes with urate for renal MCT/URAT1 reabsorption — transient UA rise of 5–10% is documented and can compound the flare. **However, note (2026-05-19):** during an *untreated* active flare, the body's HPA axis is already engaged — 24h UFC rises ~58% above interval baseline, driving cortisol-mediated urate excretion that *lowers* serum UA via URAT1 downregulation + XOR induction (Zhang 2023, PMC9989260). So serum UA dynamics during an *untreated* flare are complex: inflammation-driven UA excretion ↓ SUA, ketone competition ↑ SUA, net direction depends on which effect dominates. The conservative recommendation (suspend BHB/ketosis during flare) remains right because the variance is high and adding a known UA-elevating intervention to an unstable system is risky. See [cortisol-fasting-glucocorticoid-inflammasome-lit-scan-2026-05-19](../logs/cortisol-fasting-glucocorticoid-inflammasome-lit-scan-2026-05-19.md) for the full evidence map.
 
+### Combined-route flare protocols — mechanism-non-redundant stacking (added 2026-05-19)
+
+Two named combined protocols for active flare. Both leverage **mechanism-non-redundant convergence on NLRP3** through independent receptor pathways and delivery compartments. *[Speculative; mechanism-composition logic, no human gout RCT for either combination as named.]*
+
+**Protocol A — Colchicine + topical CBD:THC (for users on colchicine).** Two independent receptor pathways reaching the same chokepoint:
+- **Oral colchicine** (1.2 mg + 0.6 mg at 1 hour per AGREE trial) → β-tubulin binding → CP3 ASC speck blockade + CP2 P2X7 pore inhibition (intracellular, systemic)
+- **Topical 1:1 CBD:THC** on affected joint → CB2 GPCR on synovial macrophages → CP2 NLRP3 conformational suppression (plasma-membrane, local)
+- The two arms hit CP2 via completely different molecular mechanisms (tubulin/P2X7 vs. CB2 Gαi-coupled signaling) and reach the joint via different compartments (oral systemic vs. transdermal local). Mechanism-non-redundant. Not a replacement for either arm alone; a layered acute-flare strategy. See [`colchicine.md`](./colchicine.md) §3.3.1 and [`cannabinoids-terpenes.md`](./cannabinoids-terpenes.md) §4a for the per-arm mechanism details.
+
+**Protocol B — Prednisone + topical CBD:THC + inhaled cannabinoid + ice (four-route layered, n=1 anchor).** Brian's actual protocol used during a 2026-05 prodromal rebound after disc-golf overexertion. Mechanism layering:
+- **Prednisone** (on existing taper) → systemic glucocorticoid receptor activation → NLRP3, IL-1β, NOS2, ACOD1 transrepression at CP1+CP2 (timing-aligned: per H2 lit scan [`logs/cortisol-fasting-glucocorticoid-inflammasome-lit-scan-2026-05-19.md`](../logs/cortisol-fasting-glucocorticoid-inflammasome-lit-scan-2026-05-19.md), GR works AFTER LPS priming, which is exactly the prodromal / mid-flare window)
+- **Topical CBD:THC** → local CB2 → CP2 (transdermal local)
+- **Inhaled cannabis** → systemic CB1/CB2 → CP2 (systemic) — different compartment than topical
+- **Ice cycling** → TRPM8 nociceptive blunting + tissue temperature drop + cold-induced anti-inflammatory effect (local)
+- Three layered interventions converging on CP1+CP2 via three distinct cellular compartments + one peripheral nociceptive intervention. See [`cannabinoids-terpenes.md`](./cannabinoids-terpenes.md) §4a for the n=1 observation anchor.
+
+**Which protocol fits which user:** Protocol A is for users already on colchicine with no contraindications (renal function adequate, no statin/macrolide/cyclosporine drug-interaction surface). Protocol B is for users on prednisone (acute or taper) where the colchicine drug-interaction surface is unacceptable or where colchicine isn't part of the regimen. Both are layered onto whatever urate-lowering therapy is in place; both target acute-flare inflammation, not chronic hyperuricemia.
+
 ### Once the flare resolves (1–2 weeks)
 
 - Return to maintenance stack from the path that fits your situation.
