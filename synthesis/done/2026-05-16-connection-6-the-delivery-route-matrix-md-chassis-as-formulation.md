@@ -1,0 +1,31 @@
+---
+type: connection
+sweep_date: 2026-05-16
+sweep_sha: 91acf49
+section_index: 6
+global_index: 6
+pass3_verdict: Confirmed, prioritize
+overlap_tag: EXTENSION
+---
+
+# The delivery-route-matrix.md "chassis-as-formulation" argument for whole-cell oral delivery of uricase (peroxisomal catalase co-localization solves H₂O₂ housekeeping) has an unrecognized sister argument for intra-articular uricase: the Pickering emulsion architecture's bulk-phase catalase scavenging is mathematically equivalent to free co-formulated catalase at the same total dose.
+
+6. **The delivery-route-matrix.md "chassis-as-formulation" argument for whole-cell oral delivery of uricase (peroxisomal catalase co-localization solves H₂O₂ housekeeping) has an unrecognized sister argument for intra-articular uricase: the Pickering emulsion architecture's bulk-phase catalase scavenging is mathematically equivalent to free co-formulated catalase at the same total dose.** *Supported.* `[CHAIN-DEPTH: 2]` `[PHASE-A-MATCH: partial]`
+   - *Documents Connected:* `delivery-route-matrix.md`, `intra-articular-uricase-h2o2-reaction-diffusion-computational.md`, `chassis-pending-interventions.md`, `engineered-koji-protocol.md`
+   - *Page-pair linkage:* `delivery-route-matrix.md` §"Chassis-as-formulation" argues that the whole-cell oral koji chassis solves H₂O₂ housekeeping via peroxisomal uricase-catalase co-localization. `intra-articular-uricase-h2o2-reaction-diffusion-computational.md` (comp-035) independently demonstrates that for intra-articular delivery, the Pickering emulsion's FRET-confirmed <10 nm proximity is NOT the safety mechanism — bulk-phase catalase scavenging across all dispersed droplets dominates. Both pages make the same architectural argument from different directions: **total catalase capacity at the site of H₂O₂ generation is the load-bearing safety variable, not residue-level proximity.** The oral chassis achieves this via peroxisomal co-localization; the IA chassis achieves this via bulk-phase catalase from dispersed droplets. The underlying principle — "catalase capacity, not proximity, drives H₂O₂ safety" — is a cross-chassis design rule that neither page names as such.
+   - *Why It Matters:* This is a platform-level engineering principle that generalizes across delivery routes. Any future uricase delivery format (rectal suppository, inhaled, transdermal) can be evaluated against the same criterion: does the format deliver sufficient catalase capacity to the site of H₂O₂ generation? The specific mechanism (peroxisomal co-localization, co-formulation, fusion protein, bulk-phase scavenging) is an implementation detail; the design rule is the invariant. Codifying this as a named principle would accelerate chassis selection for any new uricase delivery route by making the H₂O₂ safety question answerable from first principles rather than requiring per-format reaction-diffusion modeling.
+   - *Suggested Action:* Add a "Catalase capacity principle" subsection to `delivery-route-matrix.md` §"Chassis-as-formulation" that explicitly states: "For any uricase delivery format, H₂O₂ safety is determined by total catalase capacity at the site of generation, not by residue-level proximity. The specific mechanism (peroxisomal co-localization, co-formulation, fusion protein, bulk-phase scavenging) is an implementation detail. Evaluate new formats against this criterion before committing to reaction-diffusion modeling." Cross-reference comp-035 as the quantitative anchor.
+
+> **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` This is a correct cross-chassis engineering rule. `engineered-koji-protocol.md` and `delivery-route-matrix.md` frame whole-cell oral koji as solving uricase H₂O₂ housekeeping via endogenous catalase, while comp-035 shows that intra-articular Pickering/fusion/free-catalase architectures all stay GREEN because total catalase capacity dominates and FRET-scale proximity is not the safety mechanism. Codifying “catalase capacity, not residue-level proximity” as a route-agnostic uricase safety principle is a practical design decision, not just a synthesis flourish.
+
+---
+
+**WALKED 2026-05-19 — Closed (Catalase capacity principle named as platform discipline in delivery-route-matrix.md §"Chassis-as-formulation").**
+
+Actioned:
+- ✓ Added new "Catalase capacity principle — route-agnostic H₂O₂ safety design rule" subsection to `delivery-route-matrix.md` §"Chassis-as-formulation". Names the principle explicitly: H₂O₂ safety is determined by total catalase capacity at the site of H₂O₂ generation, not by residue-level proximity. The specific mechanism (peroxisomal co-localization, co-formulation, fusion protein, bulk-phase scavenging from dispersed droplets) is an implementation detail.
+- ✓ Documents the four delivery-route applications: rectal suppository (co-loaded catalase or live-organism intrinsic), inhaled/pulmonary (does NOT rescue — alveolar tissue catalase capacity insufficient), transdermal (capacity-profile-driven), future fusion-protein formats (uricase-catalase chimera guarantees proportional stoichiometry).
+- ✓ Net implication: evaluate new uricase delivery formats by computing local catalase capacity vs local H₂O₂ flux ratio BEFORE committing to format engineering. Catalase preparation quality + in vivo stability + proportional dosing are first-order variables; geometric arrangement is secondary.
+- ✓ Cross-references: comp-035 (quantitative anchor), chassis-pending-interventions.md §6 (IA uricase implementation), engineered-koji-protocol.md (oral chassis intrinsic catalase capacity), gout-kill-chain-delivery-routes.md (route map).
+
+**Same architectural-surfacing pattern** as the closed-loop pharmacogenomics pipeline naming (B3, etc/open-source-platform.md), Platform Principle 9 substrate engineering (J3.3), and the chokepoint coverage completeness audit (I2, nlrp3-exploit-map.md). Four named platform-architecture surfacings in this walkthrough alone — the platform keeps surfacing existing-but-unnamed architecture during the per-cluster walk.
