@@ -1,31 +1,33 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "e1df41facee1017316a578ec0e573e06c4d3fde8",
-    "timestamp": "2026-05-17T17:24:10Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-17-768d99c.md",
-    "review_commit": "e1df41facee1017316a578ec0e573e06c4d3fde8",
+    "commit": "deef00c7264778c88a2993d3c953d176f2173a7e",
+    "timestamp": "2026-05-19T14:20:37Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-19-a2990bd.md",
+    "review_commit": "deef00c7264778c88a2993d3c953d176f2173a7e",
     "trigger_files": [
-      "wiki/bhb-ketones.md",
-      "wiki/cannabinoids-terpenes.md",
-      "wiki/engineered-koji-protocol.md",
-      "wiki/gout-action-guide.md",
-      "wiki/gout-clinical-pipeline.md",
-      "wiki/personal-genome-protocol.md",
-      "wiki/validation-experiments.md"
+      "wiki/c1-inh-protease-stability-ecn-computational.md",
+      "wiki/complement-c5a-gout.md",
+      "wiki/computational-experiments.md",
+      "wiki/engineered-lbp-chassis.md",
+      "wiki/etc/GRAPH.md",
+      "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-summary.md",
+      "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-target-mapping-summary.md",
+      "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md",
+      "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-multilingual-findings.md",
+      "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-summary.md",
+      "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/README.md",
+      "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/inputs/provenance.md",
+      "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/outputs/summary.md",
+      "wiki/medicinal-mushroom-compound-mapping-computational.md",
+      "wiki/modality-chokepoint-matrix.md",
+      "wiki/nlrp3-exploit-map.md",
+      "wiki/upstream-complement-modulator-sweep-computational.md",
+      "wiki/upstream-complement-verification-rerun-computational.md"
     ],
-    "run_id": "25996776786"
+    "run_id": "26102550008"
   },
   "recent_runs": [
-    {
-      "run_id": "25387724226",
-      "trigger": "push",
-      "completed_at": "2026-05-05T16:22:04Z",
-      "outcome": "success",
-      "failed_phase": null,
-      "trigger_paths_count": 10,
-      "synthesis_log": "logs/v4-synthesis-2026-05-05-734bf51.md"
-    },
     {
       "run_id": "25389796548",
       "trigger": "push",
@@ -196,6 +198,15 @@
       "failed_phase": null,
       "trigger_paths_count": 7,
       "synthesis_log": "logs/v4-synthesis-2026-05-17-768d99c.md"
+    },
+    {
+      "run_id": "26102550008",
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-05-19T14:20:37Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 18,
+      "synthesis_log": "logs/v4-synthesis-2026-05-19-a2990bd.md"
     }
   ]
 }
