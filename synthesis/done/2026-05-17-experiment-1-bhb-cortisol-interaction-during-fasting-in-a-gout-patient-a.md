@@ -17,3 +17,9 @@ overlap_tag: EXTENSION
    - *Decides:* Whether the cortisol arm of the fasting response needs to be incorporated into the BHB prophylactic-vs-acute-flare clinical integration framework. If cortisol and UA peaks are temporally separated (cortisol early, UA late), the fasting-flare risk profile is more nuanced than the current binary contraindication suggests.
 
 > **Pass 3 review — Partial.** `[OVERLAP: EXTENSION]` `[GAP: science-gap]` The experiment is cheap and biologically interesting, but its decision logic overinterprets timing correlations: if salivary cortisol peaks before a UASure-measured UA peak during a 24-hour fast, that does not establish that fasting is less flare-risky in "high-cortisol responders." At most it would generate a within-subject time-course for BHB, UA, and cortisol under standardized fasting conditions; any claim about masked flare risk or steroid-rebound biology needs a separate literature anchor and repeat observations.
+
+---
+
+**WALKED 2026-05-19 — Closed (duplicate of [[2026-05-17-connection-7-bhb-s-cp1-cp3-coverage-the-cortisol-fasting-stress-axis-an]]).**
+
+Same n=1 BHB+UA+cortisol fasting time-course experiment. Per Brian's 2026-05-19 walkthrough reframe (rejecting Pass 3's circular "not documented" pushback), the experiment is documented as Brian-self-executable at his discretion rather than dismissed. Pass 3's caution about narrow timing-correlation interpretation is valid for narrow decision-claims but doesn't disqualify the data generation against literature priors. Full closure context in the canonical entry, including the lit scan firing in parallel.

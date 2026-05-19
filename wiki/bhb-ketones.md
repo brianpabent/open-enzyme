@@ -67,19 +67,21 @@ Published research has confirmed BHB works through **direct NLRP3 binding and co
 
 **(Source: nlrp3-exploit-map.md)** — "Importantly: BHB's effects are NOT dependent on AMPK, autophagy, ROS reduction, or any of the usual fasting pathways. It's a direct inhibitory effect on NLRP3 assembly. And it doesn't need to be metabolized to work — it acts directly as a signaling molecule."
 
-## The Uric Acid Paradox: Resolved
+## The Uric Acid Paradox: Resolved (During Intercritical Periods)
 
 There is an old clinical concern that ketosis **raises serum uric acid** in the short term. This is true: ketone bodies compete with uric acid for renal excretion (the URAT1 transporter handles both). In gout patients without other interventions, ketosis can trigger flares.
 
 **However — and this is critical — BHB simultaneously suppresses the inflammatory response to crystals.**
 
-The paradox resolves if you combine BHB with [[engineered-uricase|uricase or other uric acid-lowering therapy]]:
+The paradox resolves **for prophylaxis** if you combine BHB with [[engineered-uricase|uricase or other uric acid-lowering therapy]]:
 
 1. Uricase (engineered koji, yeast, or pegloticase) eliminates uric acid systemically or in the gut
 2. BHB (via fasting/ketosis/supplements) suppresses NLRP3 response to any remaining crystals
-3. Net result: all NLRP3 suppression benefit, no uric acid penalty
+3. Net result during intercritical periods: NLRP3 suppression dominates the transient UA rise — net-beneficial as a prophylactic tool
 
-**(Source: nlrp3-exploit-map.md)** — "There's an old concern that ketosis raises uric acid. This is true short-term: ketone bodies compete with uric acid for renal excretion. But BHB simultaneously suppresses the inflammatory response to crystals. With the engineered koji handling uric acid levels, ketosis becomes pure upside — all NLRP3 suppression, no uric acid penalty."
+**Temporal boundary — active flare is the exception.** During a flare or prodrome, the 5–10% transient ketotic UA spike compounds the inflammatory substrate; ketosis/exogenous ketones should be suspended until the flare resolves (typically 1–2 weeks post-flare). See §"Contraindications" below and [gout-action-guide.md §"Active flare"](./gout-action-guide.md) for the full clinical framing. The "purely beneficial" framing applies to *prophylaxis*, not to *rescue during active flares*.
+
+**(Source: nlrp3-exploit-map.md, harmonized 2026-05-19)** — the exploit map's CP2 BHB entry now carries matching temporal-boundary language.
 
 ## Endogenous vs. Exogenous
 

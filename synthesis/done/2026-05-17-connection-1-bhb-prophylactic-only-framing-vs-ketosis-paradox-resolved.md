@@ -18,3 +18,17 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a `⚠️ Active-flare contraindication` callout to `nlrp3-exploit-map.md` CP2 entry (BHB section), cross-referencing `gout-action-guide.md` §"Active flare," and soften the "ketosis paradox resolved" language to explicitly name the prophylaxis-only temporal boundary. The fix is a single sentence addition to the exploit map.
 
 > **Pass 3 review — Push back.** `[OVERLAP: EXTENSION]` `[GAP: tool-gap]` The clinical-boundary concern is real, but the synthesizer's factual premise is stale: `nlrp3-exploit-map.md` already contains an explicit `⚠️ Active-flare contraindication` callout stating that BHB/ketosis is prophylactic only, that ketone bodies and urate compete for renal MCT/URAT1 handling, and that the transient ketotic UA rise of 5–10% can compound an active flare. The residual gap is narrower: the later "Ketosis Paradox Resolved" / "purely beneficial" language still needs softening, but a reader of the current exploit map alone would not miss the active-flare warning.
+
+---
+
+**WALKED 2026-05-19 — Closed (stale wording harmonized in nlrp3-exploit-map.md + bhb-ketones.md).**
+
+Actioned:
+- ✓ Softened stale "pure upside" language at `nlrp3-exploit-map.md` line 144: added "during intercritical periods (prophylaxis)" temporal qualifier + explicit active-flare-exception sentence + cross-references to `bhb-ketones.md` §"Contraindications" and `gout-action-guide.md` §"Active flare".
+- ✓ Softened stale "ketosis paradox resolved" / "purely beneficial" language at `nlrp3-exploit-map.md` line 448: same temporal qualifier + active-flare contraindication note.
+- ✓ Softened `bhb-ketones.md` §"The Uric Acid Paradox: Resolved" section header to "Resolved (During Intercritical Periods)"; body now explicitly distinguishes prophylaxis (net-beneficial) from active-flare (suspend) with cross-references to the existing Contraindications section.
+- The active-flare contraindication callout that Pass 3 flagged as already present is left intact; this commit only addresses the older "pure upside" wording that Pass 3 narrowed the action to.
+
+Also closes:
+- 2026-05-17 contradiction-1 (same temporal-boundary harmonization)
+- 2026-05-17 open-question-3 (platform-convention question: research-map language should carry clinical temporal boundaries — resolved by harmonizing both pages with the temporal qualifier).
