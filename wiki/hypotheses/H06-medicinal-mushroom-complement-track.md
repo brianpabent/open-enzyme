@@ -100,6 +100,8 @@ To be populated when H06 is upgraded from stub to full card. Will follow the H01
 
 To be populated when full-card. Conceptually similar to other peer-track stubs.
 
+**Refined kill criterion (added 2026-05-19):** if rigorous head-to-head testing (per [SOP-2 HPLC + SOP-6 protocols](../medicinal-mushroom-extract-sops.md)) reveals that the *Phellinus igniarius* / *Sanghuangporus vaninii* NLRP3-axis mechanism cannot be reproduced in standardized extract preparations within 2× of published animal-model effect sizes, **AND** if lentinan-style "explicitly tested negative at MSU" findings emerge for ≥2 other 2026-05-19 traditional-name re-scan-positive species, the cultivation track is downgraded from peer-track to "general adaptogen supplementation, no specific anti-gout claim." Failure-pattern is *reproducibility*, not mechanism truth — the underlying NLRP3 biology may still be intact, but the cultivation→extract→characterization pipeline fails to translate it consistently. Empirical anchor: [`logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md`](../../logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md).
+
 ---
 
 ## Cross-references
