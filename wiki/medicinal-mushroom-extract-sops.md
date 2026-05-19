@@ -142,6 +142,44 @@ For compounds tagged "substrate-accumulated," the Tier 2 batch QC reading must b
 
 **Cross-reference to [§"Reality check — current consumer-grade fruiting-body extracts deliver sub-therapeutic cordycepin doses"](./medicinal-mushroom-complement-track.md):** the tiered framework is *also* the discipline that catches dose-vs-product-content mismatches like the Real Mushrooms Cordyceps-M case (3-4 mg cordycepin per 1 g serving at 0.4% content). A Tier 2 colorimetric check on a commercial extract would surface this mismatch before it became a "URAT1 layer" recommendation. Anyone evaluating a commercial mushroom extract for therapeutic-dose targeting should run the Tier 2 check (or insist on the manufacturer's published HPLC content) before downstream reasoning depends on the active-compound dose.
 
+### SOP-7 — Substrate Engineering Protocol Matrix (added 2026-05-19)
+
+**Status:** Draft, primary-literature-anchored. Ready for self-experimentation Tier 1+2; Tier 3 HPLC validation queued per candidate species + reagent pair.
+
+The substrate engineering lit scan ([`logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`](../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md)) surfaced quantitative effect-size anchors for substrate-level interventions across the medicinal-mushroom-complement track. This SOP captures the recipe table for distributed contributors. See also Platform Principle 9 in [`etc/open-source-platform.md`](./etc/open-source-platform.md) for the platform-level discipline.
+
+**Protocol matrix (per compound × species):**
+
+| Target Compound | Species | Substrate Intervention | Expected Magnitude | Format | Primary Source |
+|---|---|---|---|---|---|
+| Cordycepin | *C. militaris* | L-alanine 12 g/L in PDA + light cycle | 3× | Solid PDA | Yu 2024 PMC11698586 |
+| Cordycepin | *C. militaris* | Corn steep liquor hydrolysate 1.5 g/L + peptone 3.5 g/L | 4.83× | Submerged liquid | Chang 2024 PMC10931215 |
+| Cordycepin | *C. militaris* | Oleic acid substrate supplementation | 1.5–3× (51–202% boost) | Solid or liquid | Turk 2022 PMC9627333 |
+| Cordycepin | *C. militaris* | Insect substrate (*Allomyrina dichotoma*, oleic-rich) vs. silkworm pupae | 34× | Solid | Turk 2022 |
+| Ganoderic acids | *G. lucidum* | Microcrystalline cellulose 1.5% added at day 3 | +85.96% | Submerged liquid | Hu 2017 PMC5395960 |
+| Ganoderic acids | *G. lucidum* | D-galactose 0.5% added at day 3 | +63.9% | Submerged liquid | Hu 2017 |
+| Ganoderic acids | *G. lucidum* | Wood-log vs. substitute substrate | 1.2× total; 2.19× lucidenic acids (profile shift) | Solid | Luo 2024 PMC10879320 |
+| Ergothioneine | Multiple species (*Ganoderma*, *Lentinula*, *Pleurotus*) | L-methionine 2 mM in mycelial culture | 1.7–3.1× | Submerged liquid | Lee 2009 PMC3749454 |
+| Ergothioneine | *Pleurotus* | L-cysteine | 1.7× | Liquid | Lee 2009 |
+| Betulinic acid | *I. obliquus* | Oleic acid 1.0 g/L | 8.57× mycelial, 3.02× broth | Submerged liquid | Lou 2021 PMC8066064 |
+| Betulinic acid | *I. obliquus* | Fungal elicitor (*A. niger* preparation, 45 mg/L) | 6.7–146% (different stages) | Submerged liquid | Lou 2021 |
+| Betulinic acid | *I. obliquus* | Oleic acid + fungal elicitor combination | 22.2× mycelial, 4.05× total | Submerged liquid | Lou 2021 |
+| Betulinic acid (host-tree pathway) | *I. obliquus* | *Alnus incana* vs. *Betula pendula* host | 4–30× | Wild + cultivated | Drenkhan 2022 PMC9496626 |
+| Erinacine C | *H. erinaceus* | Complex media (barley malt + oatmeal) vs. minimal media | ~100× | Submerged liquid mycelium | Doar 2025 PMC11969743 |
+| Yield only | *P. ostreatus* | Nucleoside combination (UCG, A'C'G') | +35% fruit body | Solid sawdust | Tang 2025 PMC12299871 |
+| Yield only | *H. erinaceus* | Optimized straw formula (rice straw + corn cob + wheat bran) | 89% biological efficiency | Solid | Lu 2024 PMC11671258 |
+
+**Operational discipline (per SOP-6 four-tier framework):**
+
+1. **Tier 1 (kitchen)** — purchase pharmacy-grade reagent (methionine, alanine — amino acid supplements; microcrystalline cellulose — fiber supplement; D-galactose — milk sugar; nucleosides — GRAS supplements). Substrate kit + reagent → grow following primary-source protocol → consume.
+2. **Tier 2 (smartphone colorimetry)** — track batch-to-batch consistency against the Tier-3-anchored reference batch. Per SOP-6: Ellman's reagent for EGT, phenol-sulfuric for total polysaccharide, UV 260 nm for nucleoside abundance.
+3. **Tier 3 (bench HPLC)** — quantify a reference batch per protocol per species per reagent pair. Effect-size verification against the published primary-source magnitude.
+4. **Tier 4 (regulatory)** — outsourced GMP for any clinical-grade application.
+
+**Calibrate-once-per-protocol-revision discipline:** a Tier-3 batch quantification per reagent pair × species establishes the absolute effect size for THIS strain × THIS cultivation setup. Subsequent batches track at Tier 2.
+
+**Strain-magnitude caveat:** substrate-engineering effects are directionally generalizable across strains but magnitude-variable. The primary-source effect size (e.g., "3× cordycepin from alanine") should be expected to vary 2–5× across strain backgrounds. Tier-3 anchor per strain × protocol revision is non-negotiable for any application-relevant claim.
+
 ### SOP-5 — Strain Banking + ITS Authentication
 
 **Cross-reference:** Phase 7-1a outlined the ITS-PCR authentication protocol (Cao 2012 *Ganoderma*-specific primers); applies to all medicinal mushroom strains used for Open Enzyme protocols.

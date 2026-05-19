@@ -1232,6 +1232,44 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 ---
 
+### 1.29 Cordycepin × Pentostatin × Substrate Matrix (added 2026-05-19, source: substrate-engineering lit scan)
+
+**Status:** Proposed | **Cost:** ~$2,500–4,000 (4 cultivation arms × HPLC quantification) | **Weeks:** 8–12 | **Phase:** 1
+
+**Affected wiki:** [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Substrate engineering as the most-accessible cultivation lever" (the Platform Principle 9 anchor); [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-2 (cordycepin + pentostatin HPLC quantification — directly extensible to this experiment); [§SOP-7](./medicinal-mushroom-extract-sops.md) (substrate-engineering protocol matrix this validates).
+
+**What it tests:** How substrate composition modulates the **cordycepin × pentostatin ratio** in *C. militaris* fermentate. The Xia 2017 BGC co-production finding (PMID 29056419) is established — cordycepin and pentostatin come from the same biosynthetic gene cluster — but no primary paper measures the pentostatin:cordycepin ratio under different substrate conditions. **This experiment resolves the whole-fermentate-vs-purified clinical positioning gap** that has been open in the wiki.
+
+**Why this matters platform-wide:** the natural ADA-inhibitor pairing (pentostatin co-produced with cordycepin in fermented *C. militaris*) is the safeguard against cordycepin deamination that purified cordycepin lacks (per `medicinal-mushroom-complement-track.md` §"Combined / synergy candidates" Phase 6 thesis). If substrate composition shifts the pentostatin:cordycepin ratio, this changes:
+- **Whole-fermentate dose-effectiveness** (high-pentostatin batches deliver more durable cordycepin)
+- **Clinical positioning** (whole-fermentate vs. purified cordycepin + separate pentostatin)
+- **Substrate selection for distributed cultivators** (which substrate gives the optimal natural ratio)
+
+**Protocol — four-arm substrate matrix:**
+
+- **Arm A: L-alanine 12 g/L** in PDA (Yu 2024 PMC11698586 protocol; expected 3× cordycepin via Cns2/Cns3 upregulation — pentostatin response unknown)
+- **Arm B: Corn steep liquor hydrolysate 1.5 g/L + peptone 3.5 g/L** (Chang 2024 PMC10931215 protocol; expected 4.83× cordycepin — pentostatin response unknown)
+- **Arm C: Oleic acid 1.0 g/L substrate supplementation** (Turk 2022 PMC9627333 mechanism; expected 1.5–3× cordycepin via fatty-acid-driven Cns1/Cns2 upregulation — pentostatin response unknown)
+- **Arm D: Standard rice-grain solid-state baseline** (reference batch; published cordycepin:pentostatin ratio anchor)
+
+Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; harvest at peak cordycepin (~14d for liquid, ~28d for solid); ethanolic extraction; **SOP-2 HPLC-UV quantification** of both cordycepin (3'-deoxyadenosine, λmax 260 nm) and pentostatin (2'-deoxycoformycin, λmax 282 nm) against pure reference standards.
+
+**Decision rules:**
+- If pentostatin:cordycepin ratio **stays stable across substrates** (within ±20% of reference): the natural ADA-inhibitor pairing is substrate-robust; whole-fermentate positioning remains the canonical platform path independent of substrate optimization. Substrate choice optimizes for cordycepin yield alone.
+- If pentostatin:cordycepin ratio **shifts substantially (>2×) across substrates**: substrate selection becomes a **second engineering lever** — distributed cultivators optimize jointly for cordycepin yield AND pentostatin-protective ratio. New SOP guidance required.
+- If pentostatin **drops disproportionately** under cordycepin-boosting substrates: the high-cordycepin yields come at the cost of the natural ADA-inhibitor safeguard, weakening the whole-fermentate positioning. Purified cordycepin + separate pentostatin becomes the cleaner clinical default.
+
+**Success criteria:**
+- All four arms yield detectable cordycepin (≥50 mg/L liquid or ≥0.5 mg/g DW solid) and pentostatin (≥1 mg/L liquid or ≥0.05 mg/g DW solid).
+- HPLC quantification reproducibility ±15% across triplicate runs per arm.
+- Reference batch (Arm D) cordycepin and pentostatin levels are within published range (per Kontogiannatos 2021 PMC8621325 cordycepin range 30–8570 mg/L liquid / 0.6–77.4 mg/g DW; Xia 2017 pentostatin co-production anchor).
+
+**Dependencies:** SOP-2 HPLC infrastructure (cordycepin + pentostatin reference standards from Sigma C3394 + Cayman 10009152); *C. militaris* working strain with ITS-verified provenance (per SOP-5).
+
+**Cross-references:** [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" (Phase 6 whole-fermentate vs. purified-cordycepin positioning); [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-2 (HPLC infrastructure) + §SOP-7 (substrate-engineering protocol matrix); [`logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`](../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md) (the lit scan that surfaced this gap).
+
+---
+
 ## Phase 2: Animal Model Validation
 
 ### 2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii

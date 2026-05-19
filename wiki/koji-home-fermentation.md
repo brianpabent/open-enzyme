@@ -61,6 +61,8 @@ You only buy koji-kin once per ~15 kg of rice you plan to inoculate. Stage 1 pro
 
 For digestive-enzyme purposes, **short-grain white rice is the highest-yield substrate** — most starch surface area for amylase, fewest physical barriers to mycelium colonization, sweetest result.
 
+> **Substrate engineering principles cross-apply (added 2026-05-19, source: substrate-engineering-mushroom-cultivation-lit-scan).** The substrate-engineering lit scan ([`logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`](../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md)) identified four mechanisms — passive accumulation, biotransformation, BGC induction, precursor feeding — all operative in *A. oryzae* / koji. Carbon-source choice (rice vs. soy vs. mixed grain) and nitrogen-source choice modulate secondary-metabolite expression in koji the same way they do in basidiomycete medicinal mushrooms. The 2 mM methionine supplementation that delivers 1.7–3.1× ergothioneine in *Ganoderma* / *Pleurotus* is also documented to enhance ergothioneine in *A. oryzae* per Lee 2009 ([PMC3749454](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749454/)). See **Platform Principle 9** ([`etc/open-source-platform.md`](../etc/open-source-platform.md)) for the platform-level discipline and [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-7 for the protocol matrix.
+
 ### Procedure
 
 1. **Soak rice 6–12 h** in cold water. Drain.

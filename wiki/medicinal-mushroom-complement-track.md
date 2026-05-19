@@ -82,6 +82,30 @@ The fourth track is **the lightest engineering effort and the most accessible UX
 - ~~**Engineered koji cordycepin (cns1+cns2) + whole-fermentate *C. militaris* (native pentostatin)**~~ *— added 2026-05-15, deprioritized 2026-05-16.* This cross-chassis "patch" was an attempt to install pentostatin protection for the koji-engineered cordycepin route. With koji-cordycepin engineering deprioritized (no novel chokepoint coverage + open dose-vs-titer gap + commercially available alternative), the cross-chassis patch is moot. The cultivation route already delivers cordycepin + pentostatin together at the natural ratio. See [`koji-endgame-strain.md` §3.5](./koji-endgame-strain.md).
 - **Engineered koji uricase + GLPP supplement** — koji handles bulk urate degradation in gut lumen; GLPP modulates ADA upstream + GLUT9/OAT1 transporters for renal-side support. Cleanest cross-track synergy (engineering + cultivation).
 
+## Substrate engineering as the most-accessible cultivation lever (added 2026-05-19)
+
+Substrate composition is not just a documentation concern — it is a deliberate engineering variable with documented effect sizes from 1.2× (yield aggregate) up to 100× (specific compound profile shifts within a class) and 22× (combined precursor + induction). This finding emerged from the 2026-05-19 substrate-engineering lit scan ([`logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`](../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md)). The synthesis daemon's prior framing ("substrate accumulation creates a QC documentation discipline") under-claimed the empirical literature by ~10×.
+
+**Four mechanisms operate, each with primary-literature anchors:**
+
+1. **Passive accumulation** — substrate compounds traverse mycelium (plant flavonoids in oak substrate; tree-host polyphenols in *I. obliquus* conks — *Alnus incana* conks have 4–30× higher betulinic acid than *Betula pendula* per Drenkhan 2022 [PMC9496626](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9496626/)).
+
+2. **Biotransformation** — fungal enzymes modify substrate compounds (betulin → betulinic acid in *I. obliquus*; lentinan biosynthesis from substrate cellulose).
+
+3. **Substrate induction of biosynthetic gene clusters** — substrate components act as transcriptional signals. Microcrystalline cellulose 1.5% delivers +85.96% ganoderic acid via HMGR/SQS/LAS upregulation (HMGR up 3.5–4.3×; Hu 2017 [PMC5395960](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5395960/)). Oleic acid upregulates Cns1/Cns2 in *C. militaris*, delivering 34× cordycepin difference between *A. dichotoma* and *B. mori* insect substrates (Turk 2022 [PMC9627333](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9627333/)).
+
+4. **Precursor feeding** — direct addition of biosynthetic precursors. 12 g/L alanine → 3× cordycepin via Cns2/Cns3 upregulation (Yu 2024 [PMC11698586](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11698586/)); 2 mM methionine → 1.7–3.1× ergothioneine across multiple species (Lee 2009 [PMC3749454](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749454/)).
+
+**Critical finding: substrate engineering shifts compound PROFILE, not just yield.** Wood-log vs. substitute-substrate *G. lucidum* produces measurably different triterpenoid spectra — substitute-grown fruiting bodies show 13.5× higher ganosporelactone B and 10× higher ganoderol A, while wood-log fruiting bodies show 2.19× higher total lucidenic acids (Luo 2024 [PMC10879320](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10879320/)). *Hericium* minimal vs. complex liquid media shifts erinacine C ↔ erinacine Q ratios by ~100× **even when *eri* gene transcript levels don't change** (Doar 2025 [PMC11969743](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11969743/)) — a post-transcriptional substrate-driven compound-profile shift.
+
+**Operational implication for distributed contributors:** substrate engineering is **the lightest-effort, highest-leverage modality** — every load-bearing reagent (methionine, alanine, oleic acid, microcrystalline cellulose, D-galactose, corn steep liquor, casein hydrolysate, nucleosides) is GRAS food-grade and available at consumer pharmacy / grocery retail for $20–50/kg. This compounds with strain selection rather than competing with it. The discipline is target-compound-anchored: a substrate protocol without paired Tier-2/Tier-3 characterization (per [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6 and the new SOP-7 protocol matrix) is non-falsifiable.
+
+**Platform-principle elevation (2026-05-19):** this finding promoted from "queued open question" to named **Platform Principle 9** in [`etc/open-source-platform.md`](./etc/open-source-platform.md). Strain engineering needs academic infrastructure; substrate engineering can be executed from a kitchen. It is the cleanest fit yet between the platform's distributed-accessibility thesis and a primary engineering mechanism.
+
+**Falsifiable wet-lab priority surfaced by the lit scan:** cordycepin × pentostatin ratio under varied substrate conditions (alanine vs CSLH vs insect substrate vs oleic combinations) — directly extensible from SOP-2 HPLC. Queued as [§1.29 in `validation-experiments.md`](./validation-experiments.md) (added 2026-05-19). Resolves the whole-fermentate-vs-purified clinical positioning gap that has been open in the wiki.
+
+---
+
 ## Scope (Phase 1)
 
 ### Candidate species
@@ -109,29 +133,28 @@ Subset of the comp-014 Phase 5 anchor list, prioritized by:
 
 The medicinal-mushroom-complement track is **species-additive to comp-014's anchor list, not separate** — the same well-studied species, evaluated through a different lens (cultivation feasibility + native-compound consumption rather than engineering-chassis suitability).
 
-### Ascomycete secondary metabolites (provisional, mycotoxin-screening required) — added 2026-05-19
+### Ascomycete secondary metabolites — Talaromyces, not Penicillium (identity-corrected 2026-05-19) — chassis-pending discovery note
 
-The track's candidate species above are all basidiomycetes. comp-014 Phase 3 surfaced a different fungal phylum — **ascomycetes** (same phylum as koji *A. oryzae*) — as producing direct caspase-1 (CASP1) inhibitors at sub-μM potency, a chokepoint coverage the basidiomycete corpus lacks.
+The track's candidate species above are all basidiomycetes. comp-014 Phase 3 surfaced direct caspase-1 (CASP1) inhibitors at sub-μM potency from "Penicillium" — a chokepoint coverage the basidiomycete corpus lacks. The 2026-05-19 lit scan ([`logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md`](../logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md)) **materially revised the framing**:
 
-**Lead chemistry — Berkeleyamides from *Penicillium*:**
+**Identity correction:** The original Berkeleyamide-producing strain (Stierle 2008, "*P. rubrum*" Berkeley Pit isolate) has been **reclassified to *Talaromyces amestolkiae*** — a different genus from the cheese-ripening *Penicillium* species (P. camemberti / P. roqueforti). Berkeleyamides A/D (CASP1 IC50 330/610 nM via comp-014 pChEMBL anchors 6.48/6.21) are *Talaromyces* chemistry, not *Penicillium* chemistry. (The reclassification is inferred from secondary sources — Yilmaz 2014 + WebSearch hits; primary-source confirmation via Hoody 2026 [PMC13150583] recommended before any downstream commitment.)
 
-- **Berkeleyamide A** — direct CASP1 IC50 = 330 nM (pChEMBL 6.48; comp-014 Phase 3)
-- **Berkeleyamide D** — direct CASP1 IC50 = 610 nM (pChEMBL 6.21)
-- **Berkeleyones A/B/C** — IL-1β IC50 = 2.7 / 3.7 / 37.8 μM
-- Original discovery: environmental *Penicillium* isolates (Stierle et al., ~2008/2011, Berkeley Pit Lake acid-mine-drainage isolates)
+**Why the food-grade Penicillium framing was misdirected (three independent reasons):**
 
-**Food-grade *Penicillium* species worth investigating:** *P. camemberti* (Camembert / Brie ripening) and *P. roqueforti* (Roquefort / Stilton blue cheese ripening). Both GRAS. The wet-lab and literature questions: (a) do they produce the Berkeleyamide chemotype under cheese-fermentation conditions, or is the BGC silenced / absent? (b) does substrate composition affect production (substrate-induction angle, see "Substrate as engineering lever" question)?
+1. **Wrong genus.** P. camemberti / P. roqueforti are in genus *Penicillium* proper, taxonomically distinct from *Talaromyces*.
+2. **Wrong direction of effect.** The closest food-grade *Penicillium* "anti-inflammatory" candidate — mycophenolic acid — is **pro-NLRP3, not anti** (Huang 2018 [PMC6032679](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6032679/): MPA synergizes with LPS to activate the inflammasome at 5–75 μM). A wet-lab assay seeing "CASP1 modulation" in cheese-strain extracts would risk reading MPA as a positive when it's the opposite direction.
+3. **Wrong genome.** Domesticated cheese *P. roqueforti* strains have **actively-degraded toxin BGCs** (Crequer 2024 [PMC11605963](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11605963/) — frameshift in PR-toxin ORF, deletion in mpaC). Substrate-induction cannot unlock what's been mutated out. The 2023 canonical BGC review for *P. roqueforti* (Chávez [PMC10144355](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10144355/)) enumerates the entire chemotype (andrastins, MPA, roquefortines, PR-toxin, eremofortins, isofumigaclavines, festuclavine, annullatins) — Berkeleyamide / Berkeleyone **are absent from the genome**, not just unexpressed.
 
-**Why this matters for the platform:**
-- *Penicillium* is phylogenetically adjacent to koji *A. oryzae* (both ascomycetes) — BGC heterologous transfer to engineered koji is structurally easier than basidiomycete → ascomycete transfer.
-- P. camemberti / P. roqueforti are already food-grade cheese-fermentation organisms — cultivation UX is real and accessible.
-- Direct CASP1 inhibition is a chokepoint the basidiomycete medicinal-mushroom track currently lacks.
+**Corrected platform-relevant path — computational first, wet-lab only if signal:**
 
-**⚠️ Mycotoxin-screening prerequisite:** ascomycete secondary-metabolite exploration rapidly converges on mycotoxin risk (aflatoxin, ochratoxin, patulin, citrinin, PR-toxin, roquefortine — many *Penicillium* and *Aspergillus* species produce these). The basidiomycete medicinal mushrooms are mycotoxin-safe by comparison. Any *Penicillium* extract candidate must clear species-authentication + mycotoxin-screening QC before downstream characterization.
+1. **antiSMASH genome scan** ($0, ~3hr compute) of P. roqueforti / P. camemberti / P. rubens for NRPS-PKS hybrid BGCs matching the Berkeleyamide architecture (NRPS amide-bond-forming + meroterpenoid backbone). If no homologs found, the cryptic-Berkeleyamide hypothesis is falsified for cheese strains at zero cost.
+2. **Pull *Talaromyces amestolkiae* BGC** if available — Stierle group at U. Montana may have deposited assembly (FAC-NGS data per Cryptic Biosynthesis paper [PMC8574098](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8574098/)). Reach out via JGI MycoCosm or direct email.
+3. **If antiSMASH returns plausible homologs in cheese strains** → wet-lab assay becomes platform-relevant. Defensible budget with mycotoxin pre-screen (LC-MS) + CASP1 enzymatic assay + orthogonal cytotoxicity is **$5–15K** (not the originally-scoped $500–1,000 — that figure assumed direct testing without disambiguation infrastructure).
+4. **If antiSMASH returns nothing in cheese strains but *T. amestolkiae* has a clean BGC** → the platform-relevant question shifts entirely to **engineering the Berkeleyamide BGC into the koji chassis** (A. oryzae heterologous host, which already supports andrastin-type meroterpenoid assembly per Matsuda et al. 2013 cited in [PMC5418334](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5418334/)). This is a much cleaner play than coaxing cheese strains to express foreign chemistry.
 
-**Status: chassis-pending discovery note, not a committed track.** Status promotes if (a) lit scan (2026-05-19 sweep-walkthrough J2 follow-up) shows the Berkeleyamide chemotype is plausibly present in food-grade *Penicillium* species, AND (b) wet-lab assay (food-grade *Penicillium* extract CASP1 inhibition, ~$500-1,000) confirms production under cheese-fermentation substrate conditions. If negative on either gate, the finding remains a comp-014 curiosity rather than a platform candidate.
+**Status: chassis-pending discovery note with computational gates.** No wet-lab commitment until antiSMASH signal materializes. The identity correction is the main load-bearing update: any future BGC-mining work must target *Talaromyces amestolkiae*, not cheese-ripening *Penicillium*. comp-014 Phase 3's "Penicillium" attribution should also be corrected to "Talaromyces amestolkiae" in any future re-render of that page.
 
-See [`logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md`](../logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md) for the lit scan; [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) Phase 3 for the comp-014 anchor data.
+See [`logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md`](../logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md) for the full lit scan.
 
 ### Cultivation method comparison (Phase 7 follow-up)
 
