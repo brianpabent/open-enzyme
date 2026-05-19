@@ -21,3 +21,9 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The accessibility audit is high-leverage because `gout-action-guide.md` already makes anakinra SC clinically specific — 100 mg/day × 3 days, thigh/abdomen route, about $900/flare, rheumatologist/off-label access — but explicitly leaves insurance coverage and prescriber willingness variable. A $0 phone/literature/forum audit would convert a mechanism-grounded recommendation into an actionable access pathway, which should change how the action guide is used.
+
+---
+
+**WALKED 2026-05-19 — Closed (duplicate of [[2026-05-17-open-question-2-what-is-the-real-world-accessibility-of-off-label-anakinra]]).**
+
+Same audit, framed as experiment-card. Brian's scope-tightening (insurance + prescriber-willingness OUT, patient-experience IN) applied to the subagent brief during walkthrough. Full closure context in the canonical entry.
