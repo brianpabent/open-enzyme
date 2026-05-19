@@ -18,3 +18,16 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a "Consumer SNP data-quality caveat" section to `gout-genetic-variants.md` §"How to test — testing tiers at a glance" and replace the per-page warnings in `gout-action-guide.md` and `personal-genome-protocol.md` with a one-line cross-reference. The canonical statement lives in the variant index; the other pages link to it.
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: EXTENSION]` The warning is genuinely repeated across surfaces: `gout-action-guide.md` says consumer panels are not recommended for gout stack design, `personal-genome-protocol.md` names the data-quality gap for ABCG2 Q141K, SLC2A9, SLC22A12, and HLA-B*58:01, and `gout-genetic-variants.md` says consumer SNP arrays are personal-exploration only and not clinical-grade. Promoting a single canonical caveat in `gout-genetic-variants.md` is a maintenance improvement and a clearer quality-discipline pattern.
+
+---
+
+**WALKED 2026-05-19 — Closed (consumer SNP caveat canonicalized in `gout-genetic-variants.md`; per-page warnings replaced with cross-references).**
+
+Actioned:
+- ✓ Added canonical "Consumer SNP data-quality caveat — canonical statement" subsection to `wiki/gout-genetic-variants.md` §"How to test — testing tiers at a glance". Documents three reasons (uneven raw SNP data quality for gout-relevant variants, HLA typing weakness, data-governance risks) and a right-tools-in-order-of-clinical-decision-grade table.
+- ✓ Replaced the per-page warning in `wiki/gout-action-guide.md` "This year (advanced)" with a one-line cross-reference to the canonical caveat.
+- ✓ Replaced the per-page warning in `wiki/personal-genome-protocol.md` §"Why this isn't 23andMe" with a one-line cross-reference to the canonical caveat.
+- The warning now lives in one place; updates to consumer-SNP-quality discipline propagate from the variant index outward.
+
+Also closes:
+- 2026-05-17 priority-action-2 (same canonicalization, action-card form).

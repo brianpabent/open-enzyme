@@ -164,6 +164,7 @@ Variants here modulate how much pro-IL-1β is available for the inflammasome to 
 | **rs4986790 (TLR4 p.Asp299Gly, D299G)** | TLR4 (chr9q33) | Inflammasome priming (TLR4 → NF-κB) | Missense; G allele reduces LPS-responsive TLR4 signaling in some in-vitro assays — could in principle dampen NF-κB priming of pro-IL-1β. Direction in gout context is **mechanistically ambiguous** (less priming might reduce flares, but TLR4 also has roles in clearance) | T allele MAF ~5–10% in European-ancestry; lower in East Asian; ~10% in some African-ancestry cohorts | **In Vitro + GWAS — Clinical Trial** (mixed for gout specifically) | Inflammasome-priming-axis stratifier; relevant to the [complement-c5a-gout track](./complement-c5a-gout.md) and the [TNFSF14 priming amplifier](./tnfsf14-gout-target.md) | [complement-c5a-gout.md](./complement-c5a-gout.md), [tnfsf14-gout-target.md](./tnfsf14-gout-target.md) |
 | **rs4986791 (TLR4 p.Thr399Ile, T399I)** | TLR4 (chr9q33) | Inflammasome priming | Missense often co-inherited with D299G in European-ancestry populations | Common haplotype with D299G | **In Vitro + GWAS — Clinical Trial** | Same priming-axis role | [complement-c5a-gout.md](./complement-c5a-gout.md) |
 | **MyD88 variants** | MYD88 (chr3p22) | Inflammasome priming (TLR-axis adapter) | Common variants modest; rare gain-of-function variants (e.g., p.Leu265Pro) drive activated B-cell lymphoma — not gout-relevant | Common common variants; rare oncogenic GoF | **Mechanistic Extrapolation** for direct gout role | Included for catalogue completeness; not a near-term OE intervention target | — |
+| **CFH Y402H (rs1061170, p.Tyr402His)** | CFH (chr1q31) | Complement-mediated inflammasome priming (alternative-pathway dysregulation → ↑ C5a → ↑ NLRP3 priming via CP1a) | Missense reducing CFH's inhibition of alternative-pathway complement activation; drives ~30–50% of age-related macular degeneration risk; less well-characterized in gout but mechanistically implicated in complement-amplified MSU response | C allele ~30–40% in European-ancestry, ~7–10% in East Asian, lower in African-ancestry (variable across cohorts) | **Clinical Trial** (AMD phenotype, GWAS-replicated); **Mechanistic Extrapolation** (gout-severity link via C5a-NLRP3 priming) | **Predicted stratification (Speculative):** CFH Y402H carriers should benefit MORE from dietary CP0 blockade (rosmarinic acid at C3 convertase, luteolin at C2/C4/C5, Houttuynia cordata polysaccharides) than wild-type — same mechanistic logic as Q141K × butyrate / ABCG2 rescue. **Empirically untested as of 2026-05-19** — biobank-mining task fired during the 2026-05-19 walkthrough (CFH × dietary flavonoid intake × incident gout in UK Biobank or equivalent CFH-genotyped cohort); see `logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md` for findings. | [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3, [upstream-complement-modulator-sweep-computational.md](./upstream-complement-modulator-sweep-computational.md) |
 
 ---
 
@@ -209,6 +210,25 @@ The Tin et al. 2019 *Nature Genetics* meta-analysis (PMID 31578528, ~1M particip
 | **Targeted gout panel** (where offered) | Curated ABCG2 + SLC2A9 + SLC22A12 + NLRP3 + HLA-B + GCKR | Variable; not yet standard of care | Useful when commercially available; depends on local lab offerings |
 
 **Key practical note.** For most gout-relevant downstream work, the highest-value single test is the **HLA-B\*58:01 pre-allopurinol screen in East Asian / Han Chinese / Korean / Thai ancestry patients** — ACR 2020 strong recommendation, single-test cost, prevents life-threatening SCAR. The Q141K (rs2231142) clinical PCR is the next-highest-value if pharmacogenomic stratification of butyrate / fiber / HDI interventions is being considered (per [`abcg2-modulators.md` §6](./abcg2-modulators.md) RCT design).
+
+### Consumer SNP data-quality caveat — canonical statement
+
+**Consumer SNP arrays (23andMe, AncestryDNA, MyHeritage, etc.) are NOT recommended for any gout-stack-design or precision-pharmacogenomics decision.** Reasons:
+
+1. **Uneven raw SNP data quality for the variants gout stack design depends on** — ABCG2 Q141K (rs2231142), SLC2A9 / GLUT9 variants, SLC22A12 / URAT1 variants (including W258X rs121907892), HLA-B\*58:01 typing, CFH Y402H (rs1061170). Consumer chips are optimized for common-variant genome-wide imputation, not for the specific pharmacogenetic loci where a miscall changes a clinical decision.
+2. **HLA typing is particularly weak on consumer arrays.** HLA-B\*58:01 confirmation for allopurinol prescribing decisions must be done via CLIA-certified clinical PCR or sequencing — never trust a consumer-array imputed HLA call for a prescribing decision that could result in Stevens-Johnson syndrome.
+3. **Terms-of-service and data-governance risks** (23andMe 2023 credential-stuffing breach, 2024-25 financial wobble + sale uncertainty, GSK pharma partnership monetizing user data without per-user compensation) compound the technical reasons not to route clinical decisions through consumer panels.
+
+**The right tools, in order of clinical-decision-grade:**
+
+| Use case | Right tool | Approximate cost |
+|---|---|---|
+| Single named variant (Q141K, HLA-B\*58:01 typing, CFH Y402H, individual URAT1 variants) | CLIA-certified clinical PCR ordered via rheumatologist or direct-to-consumer clinical service | $40–150 per SNP / typing |
+| Rare-variant catalogue (Lesch-Nyhan, PRPS1 superactivity, RHUC1, NLRP3 CAPS, full SLC22A12 series) | CLIA-certified whole exome (WES) | $300–1,000 |
+| Complete catalogue + regulatory + structural | Physician-routed CLIA whole-genome sequencing (WGS) | $1,000–3,000 |
+| Personal exploration only (ancestry, broad traits, gout *interest* but not gout *decisions*) | Consumer SNP array | $100–200 |
+
+**This caveat is the canonical statement.** Other wiki pages ([`gout-action-guide.md`](./gout-action-guide.md), [`personal-genome-protocol.md`](./personal-genome-protocol.md), [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md)) cross-reference this section rather than repeat the warning. Updates to consumer-SNP-quality discipline land here first; downstream pages link to it.
 
 ---
 

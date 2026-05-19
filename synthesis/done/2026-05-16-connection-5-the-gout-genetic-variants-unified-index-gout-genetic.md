@@ -17,3 +17,9 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Queue a multilingual lit scan subagent task: "For ABCG2 Q141K (rs2231142), URAT1 W258X (rs121907892), and HLA-B*58:01, retrieve allele frequencies and gout-association effect sizes from CNKI, WanFang, J-STAGE, and CiNii. Update `gout-genetic-variants.md` Category 1 and Category 6 tables with East Asian population-specific data. Flag any intervention-response data (e.g., Q141K-stratified allopurinol response in Japanese cohorts) not currently in the corpus." Cost: $0, ~1–2 hours subagent time. This is the single highest-leverage multilingual task in the current corpus.
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The population-coverage gap is material: `gout-genetic-variants.md` carries the Q141K ancestry-frequency gradient and HLA-B*58:01 pharmacogenetic relevance, while `CLAUDE.md` explicitly requires CNKI/WanFang/J-STAGE/CiNii-style multilingual source ingestion by default. A targeted East Asian gout-cohort scan is directly actionable and should change genotype-frequency tables, trial-power assumptions, and HLA-B*58:01/allopurinol-routing guidance if it finds cohort-specific effect sizes.
+
+---
+
+**WALKED 2026-05-19 — Closed (duplicate of [[2026-05-16-priority-action-2-queue-a-multilingual-east-asian-gout-cohort-lit-scan]] — Cluster A2 in the 2026-05-19 walkthrough).**
+
+Same multilingual lit scan task as Cluster A2. Subagent executed during walkthrough; 9 wiki edits propagated to `gout-genetic-variants.md` (Categories 1 + 6 + Open Questions) and 1 dose-ceiling subsection to `sirna-urat1-modality.md`. Headline finding: Q141K is a replicated allopurinol-failure stratifier (Wen 2018 OR 2.43, Roberts 2017 p=8×10⁻¹¹) but NOT a febuxostat stratifier — inverts the global standard-of-care default for the largest single gout-genotype subgroup (≥50% of Han Chinese gout patients). Full closure context in the A2 canonical entry.

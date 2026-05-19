@@ -136,6 +136,20 @@ A growing list of compound-specific Tier 3 anchors (GC-MS / HPLC / spectrophotom
 
 The workflow has been instantiated at n=1. The natural next-step gate is an N=5–10 multi-user pilot that validates the workflow under realistic user-variability conditions before the larger H09 community-fermentation trial. Tracked as walkthrough Item 20 (open-question-3 in the 2026-05-15 sweep batch).
 
+### Tier 2 assay gap for microbiome-derived metabolites
+
+The Q141K worked example above uses **stool SCFA panel** as the Tier 2 batch QC step for butyrate delivery (step 4). The SCFA panel verifies **downstream exposure** (was butyrate present in stool?) but is NOT a **direct potency measurement** of the supplement input (how much butyrate was actually delivered, at what tissue site, in what concentration?). The quantification ladder's "calibrate once at Tier 3, track batches at Tier 2" discipline (per [`quantification-ladder.md`](./quantification-ladder.md)) breaks for microbiome-derived metabolites because there's no Tier 2 home assay for butyrate (or any SCFA) that's well-calibrated against a Tier 3 GC-MS anchor at the relevant biological concentration.
+
+**This is a known methodology gap, not a workflow failure.** It applies to any future intervention relying on microbiome-derived metabolites (SCFAs, bile acids, indoles, lactate, etc.). Three candidate Tier 2 paths worth investigating:
+
+1. **Colorimetric** — does a butyrate-specific colorimetric reagent exist at hobbyist-lab affordability? (Most SCFA assays require derivatization + GC-MS.)
+2. **Enzymatic** — could an enzyme-coupled assay (e.g., acetyl-CoA synthetase-coupled NADH readout) be miniaturized for Tier 2?
+3. **Breath hydrogen proxy** — a hydrogen breath test correlates loosely with colonic fermentation activity; could it be calibrated as a *change-in-butyrate-production* proxy rather than an absolute butyrate concentration?
+
+None of these are validated as of 2026-05-19. **A validated Tier 2 butyrate proxy would strengthen the workflow not just for Q141K but for any future microbiome-metabolite intervention** — and is queued as an open methodology question for the platform's quantification-ladder track.
+
+Tracked from 2026-05-19 sweep-walkthrough Cluster B1.
+
 ## Cross-references
 
 - [`self-experiment-protocol.md`](./self-experiment-protocol.md) — parent self-experiment framework (§3–§4 biomarker tracking, §7 daily log); §12 now points here for the workflow detail

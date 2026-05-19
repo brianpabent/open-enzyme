@@ -67,6 +67,28 @@ The pattern transfers. Future peer tracks plausibly anchor on productized servic
 
 ---
 
+## Operational Architecture — Closed-Loop Pharmacogenomics Pipeline
+
+Five wiki pages compose a complete closed-loop pipeline that turns a generic supplement intervention into a verified, genotype-stratified, dose-calibrated, biomarker-tracked n=1 experiment. The pipeline is the **operational instantiation** of Principle 3 (rigorous but accessible) — every link is documented, achievable at home or via community biolab, and verified rather than assumed:
+
+> **genotype → compound selection → home or community-biolab production → Tier 2 batch QC → calibrated dose → biomarker tracking → adjust**
+
+| Step | Canonical wiki page | What it does |
+|---|---|---|
+| 1. Entry point | [`gout-action-guide.md`](../gout-action-guide.md) | User-facing entry; routes advanced users to the pipeline |
+| 2. Variant identification | [`personal-genome-protocol.md`](../personal-genome-protocol.md) | Clinical-grade genotyping; variant-informed compound priorities (Q141K → butyrate emphasis; URAT1 variants → cordycepin vs eurycomanone; HLA-B\*58:01 → exclude allopurinol) |
+| 3. Five-step operationalization | [`genotype-informed-supplement-workflow.md`](../genotype-informed-supplement-workflow.md) | Closed-loop n=1 pharmacogenomics pipeline: genotype → produce/source → Tier 2 batch QC → calibrated dose → biomarker tracking |
+| 4. Assay framework | [`quantification-ladder.md`](../quantification-ladder.md) | Tier 1 (kitchen colorimetric) / Tier 2 (smartphone) / Tier 3 (GC-MS / HPLC) / Tier 4 (outsourced) framework; calibrate-once-at-Tier-3, track-batches-at-Tier-2 discipline |
+| 5. Biomarker + halt criteria | [`self-experiment-protocol.md`](../self-experiment-protocol.md) | Four-biomarker panel, serum UA quarterly, red-flag halt criteria, daily log |
+
+**Why naming this matters.** Each of the five pages is rigorous independently, but without a named architecture the pipeline structure is invisible to a new reader — they encounter five disconnected pages instead of one operational backbone. The closed-loop framing makes it explicit that the platform's "open-source, democratized, rigorous" thesis isn't aspirational; it's a five-step pipeline with every step verifiable at home or community-biolab scale. The variant-index ([`gout-genetic-variants.md`](../gout-genetic-variants.md)) and the production-route SOPs ([`engineered-koji-protocol.md`](../engineered-koji-protocol.md), [`medicinal-mushroom-extract-sops.md`](../medicinal-mushroom-extract-sops.md), [`enzyme-quantification-protocol.md`](../enzyme-quantification-protocol.md)) are the reference layers feeding into steps 1, 2, and 4.
+
+**What this is NOT.** This is an *architectural surfacing* — naming a pattern that already operates — not a new scientific claim. It composes existing wiki pages into a named pipeline so the platform-level accessibility thesis becomes visible at the platform-overview layer rather than buried in the per-page details.
+
+(source: 2026-05-19 sweep-walkthrough Cluster B3; underlying connection between the five pages predates the naming.)
+
+---
+
 ## Platform Principles
 
 ### 1. No Patents

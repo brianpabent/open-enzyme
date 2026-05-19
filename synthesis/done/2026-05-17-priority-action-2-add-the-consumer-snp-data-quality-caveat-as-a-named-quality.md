@@ -17,3 +17,9 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The canonicalization action is correct and operationally valuable: `gout-action-guide.md`, `personal-genome-protocol.md`, and `gout-genetic-variants.md` all warn against using consumer SNP arrays for trial-grade gout pharmacogenetics, with clinical-grade CLIA PCR/WGS as the intended source. Centralizing the caveat in the variant index and linking outward reduces drift in a safety-relevant quality rule.
+
+---
+
+**WALKED 2026-05-19 — Closed (duplicate of [[2026-05-17-connection-6-consumer-snp-data-quality-gap-propagates-consistently]]).**
+
+Same canonicalization task, action-card form. Consumer SNP caveat canonicalized in `gout-genetic-variants.md` during walkthrough; per-page warnings in gout-action-guide.md and personal-genome-protocol.md replaced with cross-references. Full closure context in the canonical entry.

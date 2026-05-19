@@ -18,3 +18,12 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a "Platform architecture — the closed-loop pharmacogenomics pipeline" subsection to `etc/open-source-platform.md` that names these five pages as a coherent pipeline and explains why the five-link chain matters for the platform's accessibility thesis. This is a strategic-positioning move, not a research finding — it makes visible something that already works but isn't named as working.
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: EXTENSION]` The five-step chain is real and already operationally named in `genotype-informed-supplement-workflow.md` as genotype → compound selection → production/source → Tier 2 batch QC → calibrated dose → biomarker tracking, with `gout-action-guide.md` routing advanced users there and `personal-genome-protocol.md`, `quantification-ladder.md`, and `self-experiment-protocol.md` supplying the upstream and downstream pieces. The proposed `etc/open-source-platform.md` addition is an architectural surfacing move, not a new science claim, and is justified because the platform page currently discusses open-source infrastructure without naming this closed-loop pharmacogenomics workflow as a platform backbone.
+
+---
+
+**WALKED 2026-05-19 — Closed (closed-loop pipeline named as platform architecture in `etc/open-source-platform.md`).**
+
+Actioned:
+- ✓ Added new "Operational Architecture — Closed-Loop Pharmacogenomics Pipeline" section to `wiki/etc/open-source-platform.md` (between External Service Acceleration and Platform Principles). Names the five-page chain: (1) `gout-action-guide.md` entry → (2) `personal-genome-protocol.md` variant ID → (3) `genotype-informed-supplement-workflow.md` operationalization → (4) `quantification-ladder.md` assay framework → (5) `self-experiment-protocol.md` biomarker + halt criteria. Explicitly framed as operational instantiation of Principle 3 (rigorous but accessible).
+- ✓ Cross-referenced from the new section to `gout-genetic-variants.md` and the production-route SOPs as reference layers feeding into steps 1, 2, and 4.
+- ✓ Explicitly framed as "architectural surfacing — naming a pattern that already operates" rather than a new scientific claim, per Pass 3's framing.
