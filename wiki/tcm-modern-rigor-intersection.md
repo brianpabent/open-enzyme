@@ -134,6 +134,24 @@ Per [`linter-design.md`](./linter-design.md) and the existing H01 / H02 / H03 ca
 
 H04 stub at [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md) is the meta-card for the lens itself; specific compound or formula claims would get H05+ as they emerge.
 
+### 7. Query-framing discipline — traditional-name FIRST, mechanism-name SECOND (added 2026-05-19)
+
+**For non-Western-medicine compound discovery, query by traditional-formula-name + species-name + traditional-pathology-framing IN ADDITION TO mechanism-name.** Mechanism-name is the wrong starting point for non-Western literature — it silently filters out the traditional-name-anchored papers that the Western citation network underweights.
+
+**The canonical worked example (comp-018 Phase 2, 2026-05-16):** what looked like a "language barrier" preventing discovery of *Houttuynia cordata*'s complement-inhibitory activity was actually a query-framing mismatch. Chen Daofeng / Yamada-Kiyohara research groups publish 80–95% in English-language journals — language wasn't the gate. The actual gate: a "C3 convertase inhibitor" query missed Houttuynia, while a "*Houttuynia cordata* anti-complementary" query catches it directly. The real barriers were **citation-network insularity + traditional-name vs mechanism-name query framing + source-journal impact-factor underweighting** — three failure modes that all get rolled up into "language barrier" framings but are operationally different.
+
+**Why this is its own discipline, not a sub-point of §2 (ChEMBL cross-check):** ChEMBL is curated bioactivity data; the query-framing discipline is about *what literature you read before consulting ChEMBL*. ChEMBL undercoverage (documented in comp-013 TCM gout, comp-014 medicinal mushrooms, comp-018 upstream complement, comp-020 verification re-run) reflects what's been curated; traditional-name-anchored papers that never made it into ChEMBL's curation pipeline are invisible to mechanism-name search regardless of language. The query-framing discipline closes a different gap than ChEMBL cross-check.
+
+**Cross-mechanism generalization (Pass 3 confirmed, Cluster M walkthrough):**
+
+- **URAT1 inhibitors:** "URAT1 inhibitor natural product" misses *Smilax glabra* formulations; "Si Miao San 四妙散 hyperuricemia" catches them.
+- **XO inhibitors:** "XO inhibitor flavonoid" misses many curcuminoids; "Jiang Huang 姜黄 xanthine oxidase" (turmeric) catches them.
+- **NLRP3 inhibitors:** "NLRP3 inhibitor natural product" misses *G. lucidum* spore-powder evidence; "Lingzhi 灵芝 anti-inflammatory mechanism" catches it.
+
+**Operational pattern for lit-scan briefings:** include traditional-formula-name + species-name + traditional-pathology-framing query variants when the compound class has non-Western traditional-use literature. The CLAUDE.md global-multilingual rule (§"Global-multilingual research by default" → "Query-framing discipline") now encodes this as a project-wide convention.
+
+**Cross-reference:** [`CLAUDE.md` §"Global-multilingual research by default"](../CLAUDE.md) (Query-framing discipline bullet); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) Phase 2 (the comp-018 finding that surfaced the discipline).
+
 ---
 
 ## Candidate compounds with classical gout indication
