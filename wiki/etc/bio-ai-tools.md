@@ -35,6 +35,41 @@ These tools are freely available and cover the core computational biology workfl
 - **RFdiffusion2 (Baker Lab)** — De novo enzyme design from active site geometry alone. Designed enzymes with catalytic efficiency up to 53,000 M⁻¹s⁻¹. BSD license. Phase 2 tool for designing acid-stable uricase scaffolds. ([GitHub](https://github.com/RosettaCommons/RFdiffusion2))
 - **ProteinMPNN (Baker Lab)** — Designs amino acid sequences that fold into target structures. MIT license. Essential companion to RFdiffusion2. ([GitHub](https://github.com/dauparas/ProteinMPNN))
 
+### Protease-vulnerability-to-redesign workflow (added 2026-05-19, named platform pattern)
+
+**The first concrete computational-design-to-wet-lab pipeline use case in the OE corpus** is comp-005 → comp-034 → `validation-experiments.md §1.10` for the lactoferrin inter-lobe linker. The pattern generalizes; this section names it as a reusable platform template.
+
+**The four-step pattern:**
+
+1. **Vulnerability identification (comp-005-style).** Run shio-koji protease-stability analysis on the candidate secreted payload — predict cleavage sites for the three koji proteases (ALP alkaline-protease, NPr neutral-protease, acid-protease) using literature-anchored cleavage-site rules. Identify the exposed regions with the highest predicted cleavage-site density. Output: a ranked list of vulnerability targets.
+
+2. **Vulnerability classification — structural-mandatory vs structural-removable.** For each vulnerability target, ask: is this region a **structured-mandatory connector** (must stay because it links functional domains) or a **removable spacer** (can be truncated without losing function)? The two classes get different design strategies:
+   - **Structured-mandatory connector** → redesign-in-place (proline substitution, sequence optimization within the geometric constraint). Example: lactoferrin inter-lobe linker (aa 353–363, structured α-helix, AF pLDDT 95.6).
+   - **Removable spacer** → truncate entirely. Example: DAF SCR1-4 Ser/Thr stalk (aa 286–353, disordered, GPI-anchor spacer with no SCR-regulatory function — per [comp-012](../daf-cd55-scr14-truncated-computational.md)).
+   - **⚠ Failure mode worth naming:** conflating these two classes is the Pass 2 daemon error caught in the 2026-05-19 Cluster E walkthrough — surface-level "exposed protease-accessible region" pattern-matching glossed the structural-functional distinction and proposed proline-substitution for DAF's stalk, which is the wrong design strategy. The discipline: always check whether the linker is mandatory or removable before applying a redesign strategy.
+
+3. **Redesign (comp-034-style).** For structured-mandatory linkers: run ProteinMPNN-based or substitute-sampler-based sequence redesign on the linker positions, scored against ≥5 orthogonal metrics:
+   - **Predicted cleavage score** (count × per-site probability across the three koji proteases; lower = better)
+   - **Fold quality** (ESM2 pseudo-pLDDT or AF2 pLDDT; higher = better)
+   - **Codon compatibility** (CAI for *A. oryzae*; higher = better)
+   - **Loop flexibility** (rigidity proxy; lower = better for the rigidify-in-place goal)
+   - **Identity to WT** (Hamming distance; higher = more conservative)
+   - Use N-of-5 ≥ 3 GREEN threshold for candidate gating. Output: a ranked candidate list with conservative / primary / aggressive tiers.
+
+4. **Wet-lab arm (validation-experiments §-style).** Promote 3 candidates (conservative + primary + aggressive) to a parallel-arm wet-lab expression test. The platform's standard cost: ~$1.5–3K for gene synthesis + transformation + initial titer measurement. Calibrate against WT control.
+
+**Pattern validation status (2026-05-19):** the pattern is documented but only one concrete instance (comp-005 → comp-034 → §1.10 for lactoferrin) has been completed; wet-lab validation pending. Status promotes from "pattern proposal" to "platform-validated workflow" after §1.10 returns and the wet-lab results either confirm or revise the GREEN candidate ranking.
+
+**ProteinMPNN install caveat (2026-05-19):** comp-034 used a transparent substitute sampler because `/opt/ProteinMPNN` was not present at run time. A genuine ProteinMPNN rerun is queued as the E2 subagent task in the 2026-05-19 walkthrough (output → `logs/proteinmpnn-comp-034-rerun-2026-05-19.md`). After install, this section's step-3 procedure should reference the install path for future cassettes.
+
+**When to apply this workflow:**
+
+- Adding a new secreted protein payload to the koji platform (uricase variants, lactoferrin, DAF SCR1-4, C1-INH if routed to secreted format, future fusion proteins, future therapeutic peptides ≥3 kDa with structured architecture).
+- When a shio-koji protease-stability analysis (comp-005-style) flags a structured-mandatory linker as a MODERATE/HIGH risk vulnerability.
+- Skip when the vulnerability is a removable spacer (truncate is the answer; see comp-012 / DAF for the worked example).
+
+**Cross-references:** [`lactoferrin.md` §12 item 13](../lactoferrin.md) (worked example); [`lactoferrin-linker-redesign-computational.md`](../lactoferrin-linker-redesign-computational.md) (comp-034 stub); [`lactoferrin-protease-stability-computational.md`](../lactoferrin-protease-stability-computational.md) (comp-005 vulnerability identification); [`daf-cd55-scr14-truncated-computational.md`](../daf-cd55-scr14-truncated-computational.md) (comp-012 — the removable-spacer counterexample worth knowing).
+
 ### Stability & Variant Effect Prediction
 
 - **SPURS** — State-of-the-art ΔΔG prediction for mutations. Directly answers "will this mutation make the enzyme more or less stable?" ([GitHub](https://github.com/mj-hwang/SPURS))

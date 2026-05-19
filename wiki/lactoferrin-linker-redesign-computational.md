@@ -69,3 +69,24 @@ with genuine ProteinMPNN when the repo is installed is a single-command rerun.
 required — comp-034 expands the [`validation-experiments.md §1.10`](./validation-experiments.md) lactoferrin arm from a single-variant feasibility test into a multi-variant
 ranked design study (recommended plate: WT control + V357P conservative + DEEDPANPQAH
 aggressive).
+
+---
+
+## Open follow-up — does the proline-rigidification strategy generalize? (added 2026-05-19, Cluster E walkthrough)
+
+**The valid generalization question:** does the proline-rigidification design logic applied to lactoferrin's inter-lobe linker generalize to **other secreted OE payloads with structured-mandatory-connector-type linker vulnerabilities**?
+
+**Definition of the right candidate class** (the generalization domain):
+- (a) The linker is **short and structured** (high pLDDT, ordered secondary structure).
+- (b) It **cannot be removed** without breaking the protein's function (it connects two essential domains).
+- (c) It shows **protease vulnerability** in koji proteomics (high predicted cleavage-site density).
+- (d) The host's proteolytic environment (shio-koji or equivalent) is the production format.
+
+**Examples of candidate cases worth watching as the platform's payload pipeline grows:**
+- Multi-domain fusion proteins with short structured connectors
+- Therapeutic peptides ≥3 kDa with structured architecture
+- Future siRNA-protein conjugates if the linker is structured
+
+**⚠ DAF SCR1-4 is NOT the right exemplar (Pass 3 2026-05-17 correction, ratified 2026-05-19 Cluster E walkthrough).** The original 2026-05-16 sweep proposed DAF SCR1-4 inter-SCR linkers as the generalization test. Pass 3 correctly pushed back: comp-012 says stalk truncation (aa 286–353 removal) eliminates 100% of exposed sites; the SCR1-4 core is LOW protease risk after truncation; the short inter-SCR linkers are NOT identified as remaining protease-liability targets. **DAF is solved by truncation, not by linker rigidification — fundamentally the opposite design strategy.** The daemon's Pass 2 conflation of "exposed protease-accessible region" between Lf's structured-mandatory linker (aa 353–363) and DAF's disordered-removable stalk (aa 286–353) is a documented Pass 2 failure mode — surface-level pattern-matching without structural-detail check. See [`etc/bio-ai-tools.md` §"Protease-vulnerability-to-redesign workflow"](./etc/bio-ai-tools.md) step 2 ("vulnerability classification — structural-mandatory vs structural-removable") for the discipline that catches this class of error.
+
+**Status:** open question dormant until a new secreted payload candidate emerges with a structured-mandatory-connector vulnerability profile. Then the comp-005 → comp-034-style workflow re-fires on that target. Cluster J3's substrate engineering platform principle may surface relevant candidates (substrate-engineering reagents that boost cordycepin or ergothioneine could indirectly require structural redesign for new fungal payloads).
