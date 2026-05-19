@@ -112,6 +112,30 @@ The Phase 2 LOTUS-only headline — Ganoderma applanatum 2,4-DAE as "strongest s
 
 The Phase 2 cordycepin → URAT1 finding (PMID 29422889, animal model) is preserved — ChEMBL has no direct cordycepin × URAT1 record. PubMed-derived in-vivo animal-model evidence and ChEMBL-derived in-vitro biochemical-assay evidence are complementary, not redundant.
 
+## Phase 3 NLRP3 "empty chokepoint" reversal — 2026-05-19 traditional-name re-scan
+
+**Material correction to the Phase 3 ChEMBL UniProt-join verdict.** The Phase 3 intersection declared NLRP3 + ASC + Caspase-1 as **"empty chokepoints" in fungi** based on absent ChEMBL pure-compound activity entries. The [2026-05-19 mushroom traditional-name × NLRP3 re-scan](../logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md) revised this verdict:
+
+- **≥18 fungal sub-form × NLRP3-axis papers** exist in PubMed under species-name + traditional-pathology framing
+- **≥5 at the gout indication itself** (MSU + HUA rodent models)
+- Strongest single-species fit: ***Phellinus igniarius* (桑黄)** — covers XO + NLRP3 + URAT1 + bile-acid axes simultaneously across 4 independent papers
+- ***Cordyceps militaris*** (Wang 2023) puts NLRP3 — not URAT1 alone — as the primary anti-MSU mechanism head-to-head
+- ***Antrodia camphorata*** Antcin-H is an NLRP3-selective triterpenoid; ***Ganoderma lucidum*** S-GLSP (sporoderm-removed spore powder) and GLP4 (TBK1-binding pentapeptide) are distinct sub-fractions from the GLPP / triterpenoid bulk that hit the NLRP3 axis through different routes
+- Falsifying counter-finding: lentinan (*L. edodes*) was tested on MSU-arthritis and came back **negative on NLRP3** — shiitake stays on AIM2 + eritadenine cardiovascular axes
+
+**The NLRP3 chokepoint is not fungal-empty; it was query-framing-empty.** Phase 3's "empty" verdict reflected the limitation of seeding from ChEMBL pure-compound activity columns rather than from species-name + traditional-pathology PubMed framing — exactly the query-framing diagnosis the [comp-018 Phase 2 upstream-complement-modulator sweep](./upstream-complement-modulator-sweep-computational.md) surfaced for the CP0 chokepoint. The pattern generalizes from complement (CP0) to NLRP3 (CP2-CP4), and is now expected to recur across other chokepoints unless seed-list construction is upgraded. See the [2026-05-19 query-framing retrospective audit](../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) for the broader audit and methodology fix.
+
+## Phase 3 ABCG2 retroactive addition — Poria cocos (2026-05-19)
+
+**Phase 4 v3 retroactive addition to the ABCG2 chokepoint hit list:** ***Wolfiporia cocos* (茯苓 Fu Ling)** — Sun 2021 *Front Pharmacol* PMID 33651969. Hyperuricemic mouse model: both ethanol and water extracts significantly elevated intestinal ABCG2 mRNA + protein; **water extract effect magnitude exceeded benzbromarone positive control** (p < 0.01). Missed by Phase 3 ChEMBL UniProt-join because Poria triterpenes are outside ChEMBL's curated activity table. The mechanism is empirically uncharacterized (could be transcriptional / chaperone-class trafficking rescue / class I HDAC inhibition — none tested). Poria cocos is a canonical ingredient of Si Miao San (already in comp-013) but was implicitly included via the formula citation, not separately spawned as a compound source — the formula-completeness gap. See [`abcg2-modulators.md` §"Tier 2 — Solid mechanism, modest evidence"](./abcg2-modulators.md) for the full entry. (Animal Model; source: mushroom-hdac6-q141k-rescan-2026-05-19.md)
+
+## Phase 5a (partial) executed 2026-05-19 — NLRP3 axis only
+
+The Phase 5 multilingual deep-dive was queued but never executed as a full chokepoint sweep. The 2026-05-19 traditional-name re-scan is a **scope-limited partial Phase 5** — NLRP3 axis only:
+
+- **Phase 5a (partial) executed 2026-05-19** — NLRP3 / IL-1β / Caspase-1 / ASC traditional-name deep-dive resolved per [`logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md`](../logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md). The ChEMBL "empty chokepoint" verdict was query-framing-driven, not biology-driven. New medicinal-mushroom-complement-track species: *Phellinus igniarius*, *Sanghuangporus vaninii*, *Inonotus hispidus*, *Antrodia camphorata*. Falsifying finding: lentinan MSU-negative; shiitake stays on AIM2 / cardiovascular axes, not NLRP3.
+- **Phase 5b (queued)** — same traditional-name discipline applied to remaining chokepoints (URAT1, ABCG2, OAT1/OAT3, XO, GLUT9, C5aR1, DAF/CD55, Lp-PLA2, HDAC6, PPARG, Nrf2/KEAP1, PDI/PDIA3/TXN/TXNIP/GLRX). Estimated 8–12 additional species-level promotions if pattern from Phase 5a holds. ABCG2 partial: Poria cocos added retroactively this scan.
+
 ## Where the analysis lives
 
 - Phase 3 reproducibility script: [`./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/phase_3_target_mapping.py`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/phase_3_target_mapping.py)
