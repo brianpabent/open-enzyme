@@ -17,3 +17,18 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Extend the chaperone framework's α-coefficient table (§3.5.2) to include a provisional serpin row with a bounded estimate (plausible range 0.5–1.5 based on the 2-disulfide / ~48 kDa / metastable-fold profile, explicitly flagged as uncalibrated). Queue as a standing note that the serpin α coefficient needs experimental calibration before any C1-INH-on-secreted-chassis design decision. Cross-reference from c1-inh-protease-stability-ecn-computational.md to chaperone-orthogonal-stacking.md §3.5.2.
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The gap is real: `chaperone-orthogonal-stacking.md` defines α coefficients for CCP/SCR, Ig-like, and transferrin-lobe folds, and §8’s generalization caveat explicitly names “C1-INH serpin” as a fold class not covered by the calibration set. comp-037 makes that omission load-bearing by elevating C1-INH-on-EcN to MODERATE with LOW strictly-degradative serpin-body risk and GREEN glycosylation feasibility, leaving RCL kinetic competition as the wet-lab gate. A provisional serpin α row is justified if it is labeled uncalibrated and linked to the C1-INH RCL / metastable-serpin-fold uncertainty.
+
+---
+
+**WALKED 2026-05-19 — Closed (provisional serpin row added to chaperone-orthogonal-stacking.md §3.5.2 + §3.5.3; lit scan subagent firing for refinement).**
+
+Actioned:
+- ✓ Added provisional serpin row to `chaperone-orthogonal-stacking.md` §3.5.2: archetype = C1-INH (SERPING1), α1-antitrypsin (SERPINA1), antithrombin III (SERPINC1); α = 0.5–1.5 (PROVISIONAL — uncalibrated); basis = low disulfide counts (C1-INH 2; α1-antitrypsin 0; antithrombin III 3) keep raw PDI load light, but the metastable native fold with RCL undergoing dramatic β-sheet insertion may engage BiP/calnexin/PDI differently than any calibrated class — particularly because misfolded serpins polymerize and trigger UPR.
+- ✓ Added C1-INH (SERPING1, P05155) row to §3.5.3 effective PDI load table: 2 disulfides × 0.5–1.5 α = **1.0–3.0 effective PDI load (PROVISIONAL)**.
+- ✓ Both rows flagged with [NUMBER UNVERIFIED — provisional bound from structural/disulfide-count profile only] and reference to the running lit-scan log (`logs/serpin-fold-alpha-coefficient-lit-scan-2026-05-19.md`).
+- 🔄 Lit-scan subagent firing in background: target proteins α1-antitrypsin / antithrombin III / C1-INH / PAI-1 / ovalbumin folding kinetics (ER retention time, BiP/PDI engagement, cooperative vs hierarchical folding, metastable-fold chaperone interaction). Output → `logs/serpin-fold-alpha-coefficient-lit-scan-2026-05-19.md`. Same pattern as Cluster A2: subagent reports findings → Brian propagates refined bound into framework if literature supports tighter range.
+
+Cross-reference deferred to subagent return: `c1-inh-protease-stability-ecn-computational.md` will get an explicit pointer to chaperone-orthogonal-stacking.md §3.5.2 in the same propagation pass that absorbs the subagent's findings — so both edits land coherently in one batch.
+
+Also closes:
+- 2026-05-17 open-question-1 (same lit-scan question framed as open question).

@@ -17,3 +17,9 @@ overlap_tag: RESTATEMENT
 ---
 
 > **Pass 3 review — Partial.** `[OVERLAP: RESTATEMENT]` `[GAP: tool-gap]` The open question is valid because `chaperone-orthogonal-stacking.md` §3.5.4 already says §1.9 + §1.25 only calibrate α if host/format/promoter/titer units are harmonized, and it names NSlD-ΔP10 as the preferred single-host condition. The problem is again file-state plumbing: `validation-experiments.md` contains no grep-visible §1.25 / DAF / SCR1 protocol, so “RIB40 default vs NSlD optional” is sourced to the chaperone framework’s table, not to an actual validation protocol in that file. The open question should include a first step to create or locate the formal §1.25 protocol before deciding how to deconflict it.
+
+---
+
+**WALKED 2026-05-19 — Closed (already resolved — same root state as [[2026-05-16-contradiction-1-the-chaperone-orthogonal-stacking-framework-s-coefficient]]).**
+
+Same concern as the paired contradiction-1: 2026-05-19 walkthrough grep confirmed §1.25 exists in `validation-experiments.md` line 990, the NSlD-ΔP10 arm is mandatory (line 1000), and the two-arm RIB40 + NSlD-ΔP10 design (lines 1016-1017) is encoded under harmonized solid-state shio-koji format and matching-promoter conditions as §1.9. Pass 3's grep was anchor-format mismatch; the underlying concern is moot. Calibration set is fully specified; gates on wet-lab budget.
