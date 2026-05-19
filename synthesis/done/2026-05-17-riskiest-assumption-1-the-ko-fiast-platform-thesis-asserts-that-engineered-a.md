@@ -17,3 +17,12 @@ The ko-fiast platform thesis asserts that engineered *A. oryzae* koji can be rel
 ---
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` This is the right riskiest-assumption call: `engineered-koji-protocol.md`'s Plasmidsaurus pipeline can answer build-time identity for plasmid, junction, clone, and final genome for roughly $535 in a typical single-cassette build, but H09 explicitly says community fermentation still lacks direct evidence for cross-user CV <30%, construct retention ≥95% at generation 5, and contamination <5%. The proposed multi-user pilot is the correct gate because sequencing a validated starting strain does not prove stability or dose reliability across kitchens.
+
+---
+
+**WALKED 2026-05-19 — Closed (P2-2 multi-user pilot already queued in H09; gates on wet-lab budget).**
+
+Actioned:
+- ✓ Verified `wiki/hypotheses/H09-community-fermentation-reliability.md` line 147 already queues P2-2: "Multi-user community-fermentation pilot trial design (N=5–10, single strain, central QC) | Foreground subagent + protocol authoring | Queued". The riskiest-assumption call is correctly encoded; the experiment exists in H09 Phase 2 Open Follow-Ups.
+- Status: experiment design queued; gates on wet-lab budget allocation (~$2,000–5,000 in genotyping + reagents, 4–8 weeks). Same pattern as Cluster A1 — synthesis-level discipline is complete; remaining gate is budget-allocation, tracked in H09 Phase 2 table.
+- Plasmidsaurus QC ($535/strain) closes the *build-time* strain-verification gap separately (`engineered-koji-protocol.md` §05); P2-2 specifically tests the *propagation-stability across kitchens* gap that Plasmidsaurus cannot answer.
