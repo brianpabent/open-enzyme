@@ -485,6 +485,26 @@ Cross-link with [complement-c5a-gout.md](./complement-c5a-gout.md):
 
 This is a mechanistically elegant closed loop. It also predicts that **CP0 blockade (avacopan) and CP5b enhancement (SPMs) are complementary, not redundant** — avacopan blocks the incoming signal, SPMs accelerate the outgoing resolution. A combination should be additive.
 
+#### Falsifiable prediction — serum C5a decline slope stratified by omega-3 index (added 2026-05-19, Cluster G1 walkthrough)
+
+If the SPM → aggNET → C5a-degradation loop is real and load-bearing in human gout flare resolution, then **serum C5a should decline during flare resolution faster in DHA-loaded subjects (blood omega-3 index ≥8%) than in DHA-deficient subjects (omega-3 index <4%)**. The aggNET formation requires adequate SPM substrate availability, which is gated on omega-3 index — so the decline slope should track the subject's DHA loading state.
+
+**Operational test (cheap n=1, add-on to existing self-experiment protocols):**
+
+1. Measure serum C5a at **flare onset** (within 24 h of flare beginning) — captures peak C5a.
+2. Measure serum C5a at **flare resolution** (when pain has subsided, typically 7–14 days post-onset) — captures the post-resolution level.
+3. Compute the decline slope: (onset C5a − resolution C5a) / days.
+4. Pair with concurrent blood omega-3 index (EPA + DHA % of total RBC fatty acids; standard ~$50 add-on to lipid panel via OmegaQuant or equivalent).
+5. Across multiple flare events (n=several over months/years), correlate slope with omega-3 index. Prediction: steeper slope (faster C5a clearance) in DHA-loaded events.
+
+**Pre-analytics matter** (per [`self-experiment-protocol.md` §4](./self-experiment-protocol.md)): cold-chain EDTA, spun within 30 min, –80 °C storage — warm transit generates spurious C5a in vitro. The onset draw is the timing-critical sample; resolution draw is loose in the 7–14 day window.
+
+**Platform implication if the prediction holds:** CP0 coverage shifts from **"pharma-only" (avacopan ~$150K/year)** to **"dietary + pharma" (omega-3 SPMs ~$30/month dietary plus avacopan for refractory cases)**. This would be a substantive reframe of the platform's most expensive coverage gap. The cost asymmetry alone makes the prediction worth testing aggressively.
+
+**What this prediction is NOT** (epistemic discipline): it's a **mechanism-level prediction**, not a clinical-effect-size prediction. Even if confirmed, the dietary SPM arm doesn't replace avacopan for refractory cases — it potentially shifts the *first-line* coverage class from pharma-only to dietary-plus-pharma. Validation requires demonstrating the slope difference is real AND large enough to be clinically meaningful (e.g., flare duration shortened by ≥30%, peak IL-1β attenuated, recurrent-flare frequency reduced — all downstream of the C5a slope but not directly inferrable from it).
+
+**Cross-references:** [`self-experiment-protocol.md` §4 C5a section](./self-experiment-protocol.md) for the protocol mechanics; [`complement-c5a-gout.md` §3.1](./complement-c5a-gout.md) for the C5a half-life kinetics that bound the slope-measurement window.
+
 ### 7.4 The SPM / aggNET context switch
 
 One unresolved question: what determines whether NETs spread (tissue damage) vs. aggregate (resolution)? The Schauer 2014 data points to neutrophil density as a major determinant, but SPM signaling is almost certainly another. In vitro, SPMs promote aggregation in cell-density-dependent assays, but the molecular switch is not fully characterized. This is an open mechanistic question (§13 #6).

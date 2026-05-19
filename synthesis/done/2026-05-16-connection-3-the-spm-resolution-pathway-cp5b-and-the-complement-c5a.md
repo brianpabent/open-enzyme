@@ -17,3 +17,15 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a specific prediction to `spm-resolution-pathway.md` §7.3: "If SPMs promote aggNET-mediated C5a degradation, then serum C5a should decline during flare resolution in DHA-loaded subjects but not in DHA-deficient subjects." Add a contingent analysis to `self-experiment-protocol.md` §3.7: if C5a is measured at flare onset AND at resolution (not just baseline + week 12), compute the C5a decline slope and correlate with omega-3 index. No additional cost — just an analysis plan on existing data.
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: EXTENSION]` The cross-talk is real: `spm-resolution-pathway.md` §7.3 already names the CP0 → CP6a → CP5b loop and says aggNET-mediated C5a degradation reduces further CP0 priming, while `complement-c5a-gout.md` cites Cumpelik 2016 on C5a-mediated priming and resolution. The new element is operational: adding flare-resolution C5a slope analysis stratified by omega-3 index is a testable prediction not already built into `self-experiment-protocol.md`, which currently carries C5a as a baseline/week-12 CP0 marker.
+
+---
+
+**WALKED 2026-05-19 — Closed (falsifiable prediction operationalized in spm-resolution-pathway.md §7.3 + self-experiment-protocol.md C5a row).**
+
+Actioned:
+- ✓ Added "Falsifiable prediction — serum C5a decline slope stratified by omega-3 index" subsection to `spm-resolution-pathway.md` §7.3. Documents the operational test (4-step protocol: onset C5a → resolution C5a → compute slope → correlate with omega-3 index), the platform implication (CP0 coverage shifts from "pharma-only" to "dietary + pharma" if confirmed), and the epistemic discipline (mechanism-level prediction, not a clinical-effect-size claim — even if confirmed, the dietary arm doesn't replace avacopan for refractory cases, it shifts the first-line coverage class).
+- ✓ Added optional flare-trajectory addition to `self-experiment-protocol.md` C5a row: measure C5a at flare onset + resolution, pair with omega-3 index, compute decline slope. ~$100-200/flare added lab cost; doesn't change intervention protocol.
+- Self-experiment relevance flagged to Brian: this is testable in his own protocol on his next flare event. He's flagged he's "open to the self-experiment but doesn't know what flare-resolution C5a measurement is" — the explanation given in walkthrough was: standard 0-24h onset draw + 7-14d resolution draw, pair with omega-3 index from OmegaQuant or equivalent, ~$50-100/draw plus venipuncture cost.
+
+Also closes:
+- 2026-05-16 experiment-3 (Serum C5a decline-slope analysis during flare resolution, stratified by omega-3 index — the experiment-card form of the same operational test).

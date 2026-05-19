@@ -17,3 +17,14 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a brief "C1-INH + dietary rosmarinic acid" composition note to complement-c5a-gout.md as a third combined-CP0 strategy (alongside §9.7 and §9.8), with the explicit caveat that both components have unresolved wet-lab gates (C1-INH: RCL kinetic competition assay; rosmarinic acid: 44× assay-format IC50 spread per comp-020 + gut-luminal PK unresolved per comp-029). Do NOT queue a comp-NNN for this composition until at least one component's gate clears — the combined prediction would inherit both uncertainties multiplicatively. Track as a dormant composition.
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: EXTENSION]` The composition is real and not already named: `complement-c5a-gout.md` §9.7 covers rosmarinic acid + DAF SCR1-4, while §9.8 covers C1-INH + DAF SCR1-4, but neither composes C1-INH with dietary rosmarinic acid. The mechanistic layering is coherent — C1-INH blocks classical/lectin entry at C1r/C1s/MASP-2, while rosmarinic acid acts downstream on C3b / convertase biology — but both arms are gated hard: comp-037 leaves C1-INH at RCL kinetic-competition risk, and comp-029 reframes rosmarinic acid as gut-luminal-transient rather than systemic CP0 coverage. Dormant composition note is the right action; do not promote to a new comp until one component’s wet-lab gate clears.
+
+---
+
+**WALKED 2026-05-19 — Closed (§9.9 dormant composition added to complement-c5a-gout.md, gated on either component arm's wet-lab gate clearing).**
+
+Actioned:
+- ✓ Added new §9.9 "Dormant composition — C1-INH (LBP-luminal) + dietary rosmarinic acid" section to `complement-c5a-gout.md` (between §9.8 two-chassis architecture and §10 natural-product modulators). Names the third combined-CP0 strategy alongside §9.7 (rosmarinic + DAF) and §9.8 (C1-INH + DAF).
+- ✓ Mechanism layering documented: C1-INH blocks classical/lectin entry (C1r/C1s/MASP-2 → no C4b2a convertase); rosmarinic acid blocks one step downstream (covalent C3b modification → no C3 convertase). Two cascade nodes, two delivery substrates (engineered LBP + dietary herb).
+- ✓ Pass 3's "dormant" discipline encoded: explicit reactivation conditions documented (IF C1-INH RCL kinetic-competition assay clears OR rosmarinic acid gut-luminal PK clears → arm is de-risked → combined prediction becomes worth a comp-NNN). Multiplicative-uncertainty rationale stated. No asserted synergy; no clinical effect-size prediction.
+
+Closes the composition as a documented architecture option without committing wet-lab budget — the dormant framing is the right epistemic tier given both arms' unresolved gates.

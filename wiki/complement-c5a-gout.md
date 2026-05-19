@@ -684,6 +684,32 @@ A second combined-CP0 strategy, distinct from §9.7's dietary + engineered compo
 
 **Cross-references:** [`complestatin-bgc-lbp-feasibility-computational.md`](./complestatin-bgc-lbp-feasibility-computational.md) (comp-024 GREEN-provisional C1-INH), [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) (LBP chassis peer track), [`daf-cd55-scr14-truncated-computational.md`](./daf-cd55-scr14-truncated-computational.md) (comp-012 DAF feasibility), [H05 — DAF SCR1-4 CP0 thesis](./hypotheses/H05-daf-scr14-cp0-thesis.md), [`chassis-pending-interventions.md`](./chassis-pending-interventions.md) (where C1-INH was previously named as an unscoped entry), [`validation-experiments.md` §1.25](./validation-experiments.md) (DAF SCR1-4 wet-lab gate).
 
+### 9.9 Dormant composition — C1-INH (LBP-luminal) + dietary rosmarinic acid (added 2026-05-19, Cluster G2 walkthrough)
+
+A third combined-CP0 strategy sits between §9.7 (dietary + engineered surface-decay) and §9.8 (engineered + engineered entry + surface-decay): **engineered C1-INH on EcN-LBP + dietary rosmarinic acid (no DAF SCR1-4).** Mechanism layering at two distinct cascade nodes:
+
+- **C1-INH (engineered, EcN-LBP)** blocks **classical and lectin pathway ENTRY** — inactivates C1r / C1s / MASP-2 *before* C4b2a convertase formation. Per comp-037 the serpin-body protease risk is LOW after mucin truncation; remaining wet-lab gate is the RCL kinetic-competition assay (does C1s productively engage RCL before DegP/elastase cleaves it unproductively?).
+- **Rosmarinic acid (dietary, no engineering)** acts one step DOWNSTREAM — covalent C3b modification + C3 convertase inhibition. Per comp-018/020/029 the wet-lab status is gated on the 44× assay-format IC50 spread + gut-luminal PK uncertainty (whether the orally-bioavailable fraction reaches the relevant tissue compartment in active form).
+
+**Cascade-architecture logic:** C1-INH prevents convertase formation at the classical/lectin entry point. Whatever C3b deposits anyway (via alternative-pathway tick-over or incomplete C1-INH coverage) gets blocked by dietary rosmarinic acid at the convertase-assembly step. **Two independent failure modes, two independent cascade nodes, one dietary + one engineered.** This composition has been hiding in plain sight because §9.7 paired rosmarinic acid with DAF (downstream surface-decay) and §9.8 paired C1-INH with DAF (downstream surface-decay); neither swapped DAF out for the dietary thread directly.
+
+**Why it's a DORMANT composition (not promoted to active comp-NNN):**
+
+Both component arms have unresolved wet-lab gates. The combined prediction would inherit BOTH uncertainties multiplicatively — meaning even a coherent mechanism story can't translate to a confident effect-size claim until at least one arm's gate clears. The discipline: **do NOT queue a comp-NNN for this composition until one component's wet-lab gate returns positive data.**
+
+**Reactivation conditions:**
+
+- IF C1-INH RCL kinetic-competition assay returns positive → C1-INH arm de-risked → the rosmarinic-acid + C1-INH combined prediction becomes worth a comp-NNN.
+- IF rosmarinic acid gut-luminal PK (comp-029-style) returns adequate tissue exposure → rosmarinic-acid arm de-risked → same.
+- IF BOTH arms clear individually → the combined prediction becomes a wet-lab gate at validation-experiments §-tier in its own right.
+
+**What this section does NOT claim** (Pass 3 epistemic discipline):
+- No asserted synergy between C1-INH and rosmarinic acid arms.
+- No clinical effect-size prediction — both arms' individual effect sizes remain wet-lab-unanchored.
+- This is mechanism-level cascade-architecture coverage, NOT a wet-lab-validated composition.
+
+**Cross-references:** §9.7 (rosmarinic acid + DAF SCR1-4); §9.8 (C1-INH + DAF SCR1-4); [`c1-inh-protease-stability-ecn-computational.md`](./c1-inh-protease-stability-ecn-computational.md) (comp-037 C1-INH gate); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 rosmarinic acid screen); [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) (comp-020 rerun); rosmarinic-acid gut-luminal PK reframe per comp-029.
+
 ---
 
 ## 10. Natural-Product Modulators — What the Literature Actually Shows
