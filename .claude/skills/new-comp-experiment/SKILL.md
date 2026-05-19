@@ -62,6 +62,34 @@ Key constraints on `analyze.py`:
 
 The analysis should composite multiple protective/risk factors rather than a single variable. For protease stability analyses: structural accessibility + protease specificity + condition corrections (salt, pH, temperature).
 
+**Query-framing discipline for natural-product / TCM / Kampo-adjacent scans (added 2026-05-19).** If the experiment seeds compound lists from PubMed / ChEMBL / Reaxys / SciFinder against natural-product / botanical / fungal subfields, the seed query MUST include *multiple* framings, not just Western mechanism-name. Mechanism-name-only seeding has now empirically missed entire classes of evidence in comp-013 (TCM gout), comp-014 (medicinal mushrooms × NLRP3), and comp-018 (complement modulators) — see [`logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md`](../../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) for the canonical retrospective.
+
+**Minimum seed-query matrix for natural-product scans:**
+
+| Frame | Example query terms |
+|---|---|
+| Western mechanism-name | `<target>` + `<compound-class>` (e.g., "ABCG2 flavonoid") |
+| Species-name + original-language name | scientific binomial + Chinese / Japanese / Korean characters (e.g., `Phellinus igniarius` AND `桑黄`) |
+| Traditional formula composition | classical formula name + cardinal-herb composition (e.g., `Si Miao San`, `Bai Hu Jia Gui Zhi Tang`) |
+| Traditional pathology term | original-language pathology framing (e.g., `痛风`, `痹证`, `湿热痹`) |
+
+**Operational artifact:** save the actual queries used to `inputs/query-strategy.json` (or `inputs/queries.json`) inside the experiment folder. Format:
+
+```json
+{
+  "scope": "<one-line description of the compound-class + target scope>",
+  "framings": [
+    {"type": "mechanism", "queries": ["..."], "rationale": "..."},
+    {"type": "species", "queries": ["..."], "rationale": "..."},
+    {"type": "traditional_formula", "queries": ["..."], "rationale": "..."},
+    {"type": "traditional_pathology", "queries": ["..."], "rationale": "..."}
+  ],
+  "deferred_framings": [{"type": "...", "rationale": "why this framing was not run this pass"}]
+}
+```
+
+This artifact lets a future re-scan (Phase 5b-style continuation) detect query-framing gaps mechanically rather than rediscovering them through a closure-annotation audit. **If your scope is purely Western pharma / biologic / synthetic-chemistry**, document that explicitly in `query-strategy.json` with `"natural_product_scope": false` so the discipline doesn't apply spuriously.
+
 **Risk score pattern for protease/stability analyses:**
 ```python
 risk_score = accessibility_score * effective_condition_factor
