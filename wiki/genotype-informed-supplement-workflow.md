@@ -146,9 +146,9 @@ The Q141K worked example above uses **stool SCFA panel** as the Tier 2 batch QC 
 2. **Enzymatic** — could an enzyme-coupled assay (e.g., acetyl-CoA synthetase-coupled NADH readout) be miniaturized for Tier 2?
 3. **Breath hydrogen proxy** — a hydrogen breath test correlates loosely with colonic fermentation activity; could it be calibrated as a *change-in-butyrate-production* proxy rather than an absolute butyrate concentration?
 
-None of these are validated as of 2026-05-19. **A validated Tier 2 butyrate proxy would strengthen the workflow not just for Q141K but for any future microbiome-metabolite intervention** — and is queued as an open methodology question for the platform's quantification-ladder track.
+comp-038 (2026-05-20) ran the first desk audit and returned **YELLOW**: no ready-to-adopt simple/home colorimetric or breath-based butyrate assay surfaced. HPLC-UV is plausible for engineered-strain / culture-supernatant work, and electrochemical fecal SCFA profiling is a promising stool-specific future direction, but both require full-text/protocol review and paired GC-MS validation before adoption. **A validated Tier 2 butyrate proxy would still strengthen the workflow not just for Q141K but for any future microbiome-metabolite intervention**; comp-038 narrows the next step to a focused Tier 2-vs-GC-MS validation, not a broad assay hunt. See [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md).
 
-Tracked from 2026-05-19 sweep-walkthrough Cluster B1.
+Tracked from 2026-05-19 sweep-walkthrough Cluster B1; first computational prior completed as comp-038 on 2026-05-20.
 
 ## Cross-references
 

@@ -21,7 +21,7 @@ sources:
 
 Two independent groups (FutureHouse / Robin and Google DeepMind / Gemini for Science) shipped converging multi-agent architectures for literature-grounded scientific discovery within weeks of each other (Robin: Nature 2026-05-13 accepted; Gemini for Science: Google I/O 2026-05-19). The patterns they document — N-trajectory consensus, LLM-judged pairwise tournament, concise/deep lit-search tier split, full disease→mechanism→assay→candidate cycle — are all directly applicable to OE's existing comp-NNN workflow and to the literature-bound chokepoints currently classed as "wet-lab gated."
 
-This document captures the methodology changes worth adopting, the tooling decisions worth making (or deferring), and the first validation instance — **comp-038 tier-2-butyrate-assay-audit** — which tests whether an agentic literature-synthesis cycle can resolve a documented OE assay-infrastructure gap at <$20 spend.
+This document captures the methodology changes worth adopting, the tooling decisions worth making (or deferring), and the first validation instance — **comp-038 tier-2-butyrate-assay-audit** — which tests whether an agentic literature-synthesis cycle can resolve a documented OE assay-infrastructure gap without defaulting to extra API spend when Codex can perform the GPT-5.5 synthesis role in-session.
 
 The parallel strategic reflection ([`../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md`](../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md)) names six OE stuck items that may be eligible for re-classification from "wet-lab gated" to "agentic-search candidate." This operations doc handles the *methodology and tooling*. The reflection handles the *what gets re-classed*.
 
@@ -110,18 +110,18 @@ Robin demonstrated this end-to-end on dry AMD: "dry age-related macular degenera
 
 **Cost:** ~$10-20/cycle at Robin's published configuration. Cheap enough to run as a default first step on any committed track.
 
-**Engineering footprint:** Aviary + PaperQA2 directly, OR a custom orchestration over Claude/Opus + Open Targets + PubMed. The FutureHouse code is open-source; forking is faster than rebuilding.
+**Engineering footprint:** For comp-038, start with a lightweight OE-native runner rather than adopting Aviary up front. When Codex runs it locally, Codex performs the GPT-5.5 synthesis / judge role from a committed source packet; OpenRouter is reserved for explicit external-vendor roles such as DeepSeek query critique, Opus review, or two-model translation. Revisit Aviary only if repeated agentic-search comps create enough orchestration burden to justify a framework.
 
 ## Tooling adoption decisions
 
 Four explicit decisions. Each names go / no-go / wait + revisit-trigger.
 
-### 1. Fork Aviary for OE's first Robin-cycle? **Provisional yes, behind comp-038 validation.**
+### 1. Fork Aviary for OE's first Robin-cycle? **No for comp-038; revisit after validation.**
 
 - **What:** FutureHouse open-sourced the Aviary framework that Robin uses. Forking-and-modifying is faster than rebuilding the multi-agent orchestration from scratch.
-- **Decision:** Use Aviary for **comp-038** (the first OE Robin-cycle) as a methodology test. If the fit is clean — i.e., Aviary's literature-search agents work against OE-relevant corpora (PubMed + patent databases + Chinese/Japanese sources via CNKI / J-STAGE), and the orchestration extends cleanly to OE's pairwise-tournament structure — adopt it as standard for future Robin-cycles.
-- **Risk:** Aviary is built around FutureHouse's specific model stack (OpenAI o4-mini for synthesis, Claude 3.7 Sonnet as judge). OE may want to swap in Claude 4.6 or Opus 4.7 or Gemini Deep Think; the swap may or may not be clean.
-- **Revisit trigger:** comp-038 completion. If Aviary fork was painful, document the friction in the comp-038 README and reconsider for the next cycle.
+- **Decision:** Do **not** use Aviary for comp-038. Use a small OE-native runner that preserves the methodological primitives without framework adoption. Default local path: fetch source snapshots, write a Codex packet, and have the current Codex/GPT-5.5 session perform N=5 synthesis trajectories and source-evidence gating. Optional paid path: use OpenRouter only when a second vendor is intentionally needed.
+- **Risk:** A custom runner may underbuild retrieval ergonomics compared with PaperQA2 / Aviary, especially for full-text acquisition and citation-graph traversal.
+- **Revisit trigger:** comp-038 completion. If the OE-native runner spends too much effort on generic orchestration or retrieval plumbing, revisit Aviary / PaperQA2 for the next agentic-literature-synthesis comp.
 
 ### 2. Benchmark Gemini 3 Deep Think on enzyme/mechanism reasoning? **Yes, scheduled as separate eval.**
 
@@ -194,17 +194,17 @@ For N <= 6 candidates: full pairwise (15 comparisons). For N > 6: Swiss-style (e
 
 **Scaffold:** [`wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/`](../wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/)
 
-**Status:** Scaffolded in this PR (inputs/ + README); analyze.py and run deferred to after methodology review.
+**Status:** Runner scaffolded and run in this PR (`analyze.py`, shared `agentic_lit_synthesis.py`, inputs/ + committed outputs). The completed comp-038 pass used Codex synthesis from `outputs/codex-synthesis-packet.md` and made no OpenRouter model calls.
 
 **Methodology questions to resolve before running:**
 
-1. Does `analyze.py` for an agentic-search experiment fit the existing comp-NNN stdlib-only constraint? Almost certainly no — the script needs to call LLM APIs and possibly PubMed E-utilities. The constraint should be relaxed for the agentic-literature-synthesis sub-type, with reproducibility achieved via committed query-strategy.json + model versions + dated PubMed snapshots instead of stdlib-only determinism.
+1. Does `analyze.py` for an agentic-search experiment fit the existing comp-NNN stdlib-only constraint? Yes at the dependency layer: the comp-038 runner uses only Python stdlib plus shared OE helpers. The default live path fetches source snapshots and writes a Codex synthesis packet with no model API calls. The explicit `--run-openrouter` path can call external models over HTTPS, so reproducibility for that path is achieved via committed query-strategy.json + model-config.json + response IDs + dated snapshots rather than deterministic local computation.
 
-2. What's the consensus methodology? Proposed: N=5 parallel trajectories, each running the full search→rank→verdict pipeline; consensus selection on Tier 2 candidate assays (only assays surfaced by >=3 of 5 trajectories are reported); pairwise tournament across the consensus set for final ranking.
+2. What's the consensus methodology? Implemented: N=5 Codex/GPT-5.5 in-session synthesis trajectories over the committed PubMed snapshot and query plan; consensus-style collapse on Tier 2 candidate assays; source-evidence gating prevents GREEN verdicts from PubMed abstracts alone. DeepSeek / Opus roles remain optional external checks when the cost is justified.
 
-3. What's the budget ceiling? Proposed: $25 total ($5 × 5 trajectories), hard-capped in the script. Robin's published per-cycle cost ($10.76) is the precedent.
+3. What's the budget ceiling? Default Codex-run path: $0 incremental OpenRouter spend. Optional `--run-openrouter` path: $25 ceiling. Robin's published per-cycle cost ($10.76) is the precedent for paid external runs, not a reason to spend when the local Codex subscription can do the synthesis seat.
 
-**Decision criterion for the methodology test:** If comp-038 produces a defensible Tier 2 assay recommendation under $25, in under 90 minutes wall clock, with consensus statistics that any reader can audit — the agentic-literature-synthesis sub-type is adopted as standard for OE comp-NNN. If it fails any of those, document the failure mode and decide whether to iterate or abandon the sub-type.
+**Decision criterion for the methodology test:** If comp-038 produces a defensible Tier 2 assay recommendation without unnecessary model spend, in under 90 minutes wall clock, with source snapshots and consensus-style reasoning that any reader can audit — the agentic-literature-synthesis sub-type is adopted as a candidate OE comp-NNN pattern. If it fails any of those, document the failure mode and decide whether to iterate or abandon the sub-type.
 
 ## Open evaluation experiments
 
@@ -221,15 +221,15 @@ Described in Tooling Decision #2 above. Concrete steps:
 
 Estimated cost: $50-100 + half-day Brian time (+ optional external reviewer).
 
-### Eval 2 — Aviary fit for OE corpora
+### Eval 2 — OE-native runner vs Aviary fit
 
 During comp-038 run, log:
 
-- Did Aviary's literature-search agents reach OE-relevant non-English corpora (CNKI, J-STAGE, KISS)? If not, document the gap and consider building OE-specific data-source plugins.
-- Did the model-stack swap (Robin's o4-mini + Claude 3.7 Sonnet → OE's preferred stack) require code changes or just config?
-- Where did the orchestration friction show up? (Tournament structure, consensus aggregation, output formatting)
+- Did the OE-native runner spend too much code on generic orchestration / retrieval plumbing that Aviary or PaperQA2 would already solve?
+- Did the cost-aware role split work as config: Codex/GPT-5.5 in-session by default, OpenRouter only for explicit external-vendor checks?
+- Where did the orchestration friction show up? (full-text retrieval, consensus aggregation, pairwise ranking, output formatting)
 
-Deliverable: a comp-038 retrospective section in the README documenting Aviary-fit findings.
+Deliverable: a comp-038 retrospective section in the README documenting whether to keep the OE-native runner or adopt Aviary / PaperQA2 for the next agentic-literature-synthesis comp.
 
 ## What this is NOT
 
@@ -237,9 +237,9 @@ Honest delineation, in the spirit of operations/README.md's "caveats are the rec
 
 - **Not a claim that Robin/Gemini-for-Science replace wet lab.** Robin's own paper is honest: humans selected 5 of 30 candidates to test, swapped pHrodo beads for ROS, used ARPE-19 instead of suggested primary cells, ran the LDH cytotoxicity assay. "Semi-autonomous" is the right framing. The pattern shifts priors and triages. It doesn't run experiments.
 - **Not a claim that OE's stuck list dissolves under agentic search.** Some items genuinely need wet lab (SGF protein stability under actual shio-koji conditions; ABCG2 Q141K trafficking assay in real cells). The reflection at [`../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md`](../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md) names which items are eligible for re-classification and which aren't.
-- **Not a methodology victory before comp-038 runs.** The proposed comp-NNN sub-type extension is provisional pending comp-038's result. If comp-038 produces a bad assay recommendation, or burns through budget without converging, the extension does not land.
+- **Not a blanket methodology victory from one run.** The proposed comp-NNN sub-type extension remains provisional after comp-038. If follow-up review finds the recommendation weak, or if future instances burn budget without converging, the extension does not land as standard practice.
 - **Not a claim that any one of these models is "better."** The Deep Think bench is the empirical question. Until that runs, no model claim in this document is load-bearing.
-- **Not a commitment to fork Aviary if the friction is high.** The Aviary decision is conditioned on comp-038 going cleanly. If the integration burns more than a day of friction, OE writes its own orchestration over the proven primitives (PaperQA2 for retrieval, pairwise tournament for ranking) rather than carrying FutureHouse's specific architecture.
+- **Not a commitment to fork Aviary.** comp-038 deliberately starts with an OE-native runner. If that runner proves brittle or spends too much effort on generic retrieval/orchestration, Aviary / PaperQA2 gets revisited for the next cycle.
 
 ## Cross-references
 

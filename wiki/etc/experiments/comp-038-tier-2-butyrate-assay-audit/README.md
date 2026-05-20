@@ -1,6 +1,6 @@
 # comp-038 — Tier 2 Butyrate Assay Audit (agentic literature synthesis)
 
-**Status:** Scaffolded 2026-05-20. analyze.py and run deferred pending methodology review.
+**Status:** Completed first pass 2026-05-20. Codex packet generation is the default live path; this run used Codex/GPT-5.5 in-session synthesis and made no OpenRouter model calls.
 
 **Sub-type:** agentic-literature-synthesis (proposed comp-NNN extension; see [`operations/agentic-science-adoption.md`](../../../../operations/agentic-science-adoption.md))
 
@@ -15,26 +15,30 @@ Is there a Tier 2 butyrate quantification assay (colorimetric, enzymatic, or bre
 - Pure literature-synthesis task. No wet lab required for the desk audit itself.
 - Cleanest possible first validation of the proposed agentic-literature-synthesis comp-NNN sub-type (per [`operations/agentic-science-adoption.md`](../../../../operations/agentic-science-adoption.md) Pattern 4 / comp-038 scaffold section).
 
-## Methodology — proposed, pending review
+## Methodology
 
-This is the first agentic-literature-synthesis comp-NNN; the methodology is itself part of what's under review in this PR. Proposed shape:
+This is the first agentic-literature-synthesis comp-NNN; the methodology is itself part of what's under review in this PR. First-pass shape:
 
-1. **Search corpus.** PubMed + PMC + Google Scholar + Google Patents + Espacenet. Optional extension to CNKI / J-STAGE if initial Aviary-fit testing supports it (per Tooling Decision #1 in `operations/agentic-science-adoption.md`).
+1. **Search corpus.** PubMed E-utilities snapshot for Stage 1 discovery, plus targeted vendor/protocol review for obvious kit false positives. PMC / DOI full text, Google Scholar, Google Patents, and Espacenet remain follow-up sources before any GREEN wet-lab recommendation. CNKI / J-STAGE are deferred for this butyrate-assay scope unless Stage 1 returns are sparse.
 2. **Query strategy.** See [`inputs/query-strategy.json`](./inputs/query-strategy.json). Multi-framing per the new-comp-experiment skill's natural-product/microbiome discipline — assay-class framing AND validation-against-GC-MS framing AND application-context (clinical / animal / cell culture / fermentation breath-monitoring).
-3. **N-trajectory consensus.** N=5 parallel trajectories. Each runs the full search → candidate-extraction → ranking pipeline independently. Only assays surfaced by ≥3 of 5 trajectories advance to the final tournament.
-4. **Pairwise-tournament ranking.** Full pairwise over the consensus set (typically ≤6 candidates), judged on (a) validation-against-GC-MS evidence quality, (b) cost / accessibility / kit availability, (c) sample-prep complexity, (d) dynamic range coverage of physiologically-relevant butyrate concentrations (10 µM – 100 mM lumenal; ~1-10 µM serum).
-5. **Output:** `outputs/summary.md` — human-readable verdict with top-3 ranked assays, per-assay justification, consensus-statistics block ("identified in K of N trajectories"), limitations, and decision criterion for which assay to validate in OE's first wet-lab Tier 3 GC-MS comparison.
-6. **Budget ceiling:** $25 total (hard-capped in `analyze.py`). Wall clock target: <90 min.
-7. **Reproducibility artifacts:** model versions + temperatures + prompts + dated PubMed snapshot IDs committed under `inputs/`. The reproducibility standard is NOT stdlib-only-determinism (which doesn't apply to LLM-driven analyses); it's *fully-documented inputs* + *consensus statistics* + *budget-capped runtime*.
+3. **PubMed source snapshot.** The live run queries PubMed E-utilities for every committed search string and writes `outputs/pubmed-snapshot.json` with PMID/title/abstract metadata. This is discovery metadata, not full-text verification.
+4. **Local-curl source retrieval for firewall-sensitive domains.** Shared helper [`wiki/etc/experiments/lib/agentic_lit_synthesis.py`](../lib/agentic_lit_synthesis.py) includes `local_curl_fetch()` for CNKI / WanFang / J-STAGE / KISS-style sources that must be fetched from Brian's laptop network path rather than model-vendor egress. It is allowlist-gated and writes a provenance sidecar.
+5. **Two-model translation for non-English sources.** If non-English source text is ingested, call `translate_source_two_model()` from the shared helper. It runs two independent models from different vendors (DeepSeek + GPT-5.5 for Chinese by default, with Opus as referee) and emits inline `[TRANSLATION-DISAGREEMENT]` annotations where nuance affects mechanism, dose, evidence tier, statistics, route, or scientific hedging.
+6. **Role-split model stack.** See [`inputs/model-config.json`](./inputs/model-config.json). When Codex runs this experiment, Codex/GPT-5.5 performs the primary synthesis in-session from `outputs/codex-synthesis-packet.md` to avoid unnecessary OpenRouter spend. External OpenRouter roles (DeepSeek query critique, Opus judge / verifier, two-model translation) are opt-in when a second vendor is worth the marginal cost.
+7. **N-trajectory consensus.** N=5 synthesis trajectories. In this run the trajectories were performed by Codex in-session over the same source packet, then collapsed into ranked candidates. The output labels this honestly rather than pretending five paid model calls occurred.
+8. **Pairwise-style ranking.** Candidates were judged on (a) validation-against-GC-MS evidence quality, (b) cost / accessibility / kit availability, (c) sample-prep complexity, (d) dynamic range / matrix fit, and (e) OE relevance for stool and culture-supernatant work.
+9. **Output:** `outputs/summary.md` — human-readable verdict with ranked assays, per-assay justification, limitations, and decision criterion for which assay to validate in OE's first wet-lab Tier 3 GC-MS comparison.
+10. **Budget ceiling:** $0 incremental OpenRouter spend for the normal Codex-driven path. Optional paid external calls require the explicit `python3 analyze.py --run-openrouter` flag and must be reviewed against the config ceiling before use.
+11. **Reproducibility artifacts:** model versions + temperatures + prompts + dated PubMed snapshot IDs committed under `inputs/` / `outputs/`. The reproducibility standard is NOT stdlib-only-determinism (which doesn't apply to LLM-driven analyses); it's *fully-documented inputs* + *consensus statistics* + *explicit cost controls*.
 
-## Methodology questions to resolve before running
+## Methodology decisions from the first run
 
-These are open. See `operations/agentic-science-adoption.md` for full discussion. Resolved decisions land here.
+See `operations/agentic-science-adoption.md` for full discussion.
 
-1. **Aviary fork vs custom orchestration?** Provisional: try Aviary first. If integration friction exceeds one day, fall back to a Claude+PaperQA2 custom orchestration over the proven primitives.
-2. **Which model in the synthesis seat?** Claude Opus 4.7 (default for OE narrative work), or test Gemini 3 Deep Think on this specific task? Decision: use Opus 4.7 by default; bench Deep Think in a separate eval (Open Eval #1 in operations doc).
-3. **Which model in the judge seat?** Robin uses Claude 3.7 Sonnet. OE proposed default: Claude Sonnet 4.6.
-4. **Search-corpus inclusion of CNKI / J-STAGE for this specific question?** Probably no — butyrate assay literature is predominantly Western analytical chemistry, not natural-product / TCM. Skip for comp-038; revisit if Stage 1 results are sparse.
+1. **Aviary fork vs custom orchestration?** Decision for comp-038: start with a lightweight OE-native runner using shared helpers in `wiki/etc/experiments/lib/agentic_lit_synthesis.py`. Revisit Aviary only if this pattern becomes repeated enough to justify framework adoption.
+2. **Which model in the synthesis seat?** Default when Codex is driving: Codex/GPT-5.5 in-session, using `outputs/codex-synthesis-packet.md`. OpenRouter GPT-5.5 is available only through explicit `--run-openrouter`.
+3. **Which model in the judge seat?** Default for optional paid external review: Opus via OpenRouter (`anthropic/claude-opus-4.7`, overridable with `COMP038_JUDGE_MODEL`). Skip unless independent external judgment is worth the spend.
+4. **Search-corpus inclusion of CNKI / J-STAGE for this specific question?** Deferred — butyrate assay literature is predominantly analytical chemistry, not natural-product / TCM. Revisit only if full-text/vendor follow-up remains sparse.
 
 ## File index
 
@@ -43,20 +47,42 @@ comp-038-tier-2-butyrate-assay-audit/
 ├── README.md                    # this file
 ├── inputs/
 │   ├── query-strategy.json      # search queries per Tier-2-assay framing
-│   └── provenance.md            # planned sources + fetch-dates
+│   ├── model-config.json        # non-secret model-role config
+│   └── provenance.md            # planned sources + frozen run provenance
 ├── outputs/
-│   └── .gitkeep                 # placeholder; results land here after run
-└── (analyze.py — DEFERRED; written after methodology review sign-off)
+│   ├── codex-synthesis-packet.md
+│   ├── pubmed-snapshot.json
+│   ├── results.json
+│   └── summary.md
+└── analyze.py                   # dry-run by default; --prepare-codex fetches sources; --run-openrouter spends budget
 ```
 
-## How to reproduce (after analyze.py is written)
+## How to reproduce
 
-Will be: `python3 analyze.py` from this folder, with appropriate API key environment variables for the chosen model stack (Claude / OpenAI / Gemini). Outputs land in `outputs/` deterministically given the same inputs/ + model versions + random seed.
+Dry-run artifact check:
+
+```bash
+python3 analyze.py
+```
+
+Prepare source packet for Codex synthesis without model API spend:
+
+```bash
+python3 analyze.py --prepare-codex
+```
+
+Optional paid OpenRouter run:
+
+```bash
+python3 analyze.py --run-openrouter
+```
+
+The OpenRouter path expects `OPENROUTER_API_KEY` in the repo-root `.env` (gitignored) or shell environment. Model role defaults live in `inputs/model-config.json` and can be overridden with `COMP038_QUERY_MODEL`, `COMP038_SYNTHESIS_MODEL`, `COMP038_JUDGE_MODEL`, and `COMP038_VERIFIER_MODEL`.
 
 ## Wiki cross-references
 
-- Interpretive page: **DEFERRED** — to be created at `wiki/tier-2-butyrate-assay-audit-computational.md` after the run, per the new-comp-experiment skill's Step 6.
-- Tracking index entry: **DEFERRED** — to be added to `wiki/computational-experiments.md` Planned Analyses (or Analyses, post-run) table after methodology sign-off.
+- Interpretive page: [`wiki/tier-2-butyrate-assay-audit-computational.md`](../../../tier-2-butyrate-assay-audit-computational.md)
+- Tracking index entry: [`wiki/computational-experiments.md`](../../../computational-experiments.md) comp-038
 - Informs: [`wiki/genotype-informed-supplement-workflow.md`](../../../genotype-informed-supplement-workflow.md) Tier 2 assay gap; [`wiki/quantification-ladder.md`](../../../quantification-ladder.md) microbiome-derived metabolites open gap; [`wiki/purine-degrading-bacteria.md`](../../../purine-degrading-bacteria.md) butyrate-at-enterocyte-nucleus concentration gap.
 - Validation-experiments anchor: [`wiki/validation-experiments.md`](../../../validation-experiments.md) §1.14 (butyrate dose-response arm — the Tier 3 GC-MS anchor against which Tier 2 candidates would be validated).
 

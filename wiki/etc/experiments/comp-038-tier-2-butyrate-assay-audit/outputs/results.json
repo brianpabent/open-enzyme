@@ -1,0 +1,451 @@
+{
+  "run": {
+    "timestamp_utc": "2026-05-20T15:09:12+00:00",
+    "mode": "codex_synthesis_from_packet",
+    "no_openrouter_model_calls": true,
+    "source_packet": "outputs/codex-synthesis-packet.md",
+    "pubmed_snapshot": "outputs/pubmed-snapshot.json",
+    "pubmed_records": 74,
+    "queries": 27,
+    "model_role_note": "Primary synthesis performed in-session by Codex/GPT-5.5-equivalent role to avoid unnecessary OpenRouter spend.",
+    "models": {
+      "query_strategist": "codex/gpt-5.5-in-session",
+      "synthesis": "codex/gpt-5.5-in-session",
+      "judge": "codex/gpt-5.5-in-session",
+      "verifier": "codex/gpt-5.5-in-session"
+    },
+    "input_sha256": {
+      "query_strategy": "8abcc1b32acd8bcf2aae06105d9474d389e8c68771892a9e980925005ee87ec2",
+      "model_config": "5803b0d82bd2b6f666471d5d99a38b76aca448f4839fc2ec006a976f681f8fb9"
+    },
+    "openrouter_policy": "Default Codex path makes no OpenRouter model calls; *_openrouter roles require explicit --run-openrouter."
+  },
+  "query_strategy_scope": "Identify Tier 2 butyrate quantification assays (colorimetric / enzymatic / breath-hydrogen proxy / other low-cost intermediate methods) that can be validated against Tier 3 GC-MS reference. Microbiome-derived butyrate quantification in stool, blood, breath, and culture-supernatant matrices.",
+  "query_critique": {
+    "coverage_verdict": "adequate_for_first_pass_with_vendor_followup_gap",
+    "notes": "PubMed coverage was adequate to reject breath proxy and generic FFA kits and to surface HPLC-UV/electrochemical candidates. Vendor/protocol search remains necessary before wet-lab adoption because commercial kit validation rarely appears in PubMed."
+  },
+  "trajectory_outputs": [
+    {
+      "trajectory": 1,
+      "lens": "commercial colorimetric / kit landscape",
+      "candidate_assays": [
+        {
+          "assay_name": "Generic free-fatty-acid colorimetric/fluorometric kits",
+          "assay_class": "colorimetric",
+          "matrix_compatibility": [
+            "serum",
+            "plasma",
+            "culture"
+          ],
+          "why_candidate": "Obvious low-cost kit class, but vendor protocol for Abcam ab65341 explicitly excludes acetic, propionic, and butyric acids.",
+          "required_evidence_before_verdict": [
+            "Vendor protocol showing SCFA/butyrate standard curve",
+            "Spike-recovery in stool/culture matrix",
+            "GC-MS cross-validation"
+          ],
+          "suggested_queries": [
+            "butyric acid assay kit colorimetric GC-MS validation",
+            "free fatty acid assay kit butyric acid short chain fatty acid"
+          ],
+          "likely_limitations": [
+            "Medium/long-chain FFA chemistry does not transfer to SCFAs",
+            "Palmitate-standard kits can generate false confidence"
+          ],
+          "provisional_gc_ms_validation_status": "unvalidated"
+        },
+        {
+          "assay_name": "Butyric-acid / SCFA ELISA kits",
+          "assay_class": "colorimetric",
+          "matrix_compatibility": [
+            "serum",
+            "plasma",
+            "tissue homogenate"
+          ],
+          "why_candidate": "Vendor pages exist claiming butyric acid or SCFA ELISA, but the PubMed/vendor scan did not surface GC-MS validation or stool/culture matrix validation.",
+          "required_evidence_before_verdict": [
+            "Protocol and antibody specificity data",
+            "Spike-recovery against sodium butyrate",
+            "GC-MS comparison in intended matrix"
+          ],
+          "suggested_queries": [
+            "butyric acid ELISA GC-MS validation",
+            "SCFA ELISA specificity butyrate acetate propionate"
+          ],
+          "likely_limitations": [
+            "Small-molecule ELISA specificity may not distinguish SCFA species reliably",
+            "No PubMed validation surfaced"
+          ],
+          "provisional_gc_ms_validation_status": "unknown"
+        }
+      ],
+      "red_flags": [
+        "Commercial kit search returns many FFA/ketone false positives, not true butyrate quantification."
+      ],
+      "trajectory_notes": "No plug-and-play colorimetric butyrate kit cleared the evidence bar."
+    },
+    {
+      "trajectory": 2,
+      "lens": "analytical chemistry / culture supernatant",
+      "candidate_assays": [
+        {
+          "assay_name": "HPLC-UV SCFA + lactate assay for bacterial culture supernatants",
+          "assay_class": "other",
+          "matrix_compatibility": [
+            "culture"
+          ],
+          "why_candidate": "PMID 23542733 reports HPLC-UV quantification of four SCFAs plus lactic acid in in vitro fermentation supernatants, with matrix-matched calibration range 0.5-50 mM and correlation/goodness-of-fit metrics in abstract.",
+          "required_evidence_before_verdict": [
+            "Full-text method extraction",
+            "Butyrate-specific precision/recovery table",
+            "Cross-check vs GC-MS or internal GC-MS validation on OE samples"
+          ],
+          "suggested_queries": [
+            "HPLC UV short chain fatty acids fermentation supernatant butyrate validation",
+            "PMID 23542733 butyrate HPLC UV full text"
+          ],
+          "likely_limitations": [
+            "Requires HPLC, not home assay",
+            "Culture-supernatant focused; stool and serum matrix not established",
+            "UV at 210 nm is non-selective"
+          ],
+          "provisional_gc_ms_validation_status": "partial"
+        },
+        {
+          "assay_name": "Thermally induced rapid esterification + VFA quantification",
+          "assay_class": "other",
+          "matrix_compatibility": [
+            "aqueous",
+            "culture"
+          ],
+          "why_candidate": "PMID 28649044 reports reliable VFA quantification in aqueous phase and states derivatization/VFAME approach is more reliable than conventional colorimetric method.",
+          "required_evidence_before_verdict": [
+            "Full-text method and instrument requirement",
+            "Butyrate calibration / recovery",
+            "Matrix fit for stool/culture",
+            "Determine whether readout still requires GC"
+          ],
+          "suggested_queries": [
+            "volatile fatty acid methyl ester rapid esterification butyrate quantification aqueous phase"
+          ],
+          "likely_limitations": [
+            "Likely not Tier 2 if GC instrumentation remains required",
+            "Aqueous environmental matrix, not stool/serum"
+          ],
+          "provisional_gc_ms_validation_status": "partial"
+        }
+      ],
+      "red_flags": [
+        "HPLC/derivatization methods are cheaper than GC-MS only in some settings; they are not home/field assays."
+      ],
+      "trajectory_notes": "Best near-term lab candidate is HPLC-UV for culture supernatants, not stool/home testing."
+    },
+    {
+      "trajectory": 3,
+      "lens": "breath and indirect fermentation proxies",
+      "candidate_assays": [
+        {
+          "assay_name": "Breath hydrogen / methane fermentation proxy",
+          "assay_class": "breath-hydrogen",
+          "matrix_compatibility": [
+            "breath"
+          ],
+          "why_candidate": "Breath hydrogen/methane papers support these gases as markers of colonic fermentation, but not as butyrate-specific quantitative measures.",
+          "required_evidence_before_verdict": [
+            "Direct correlation of breath H2/CH4 with stool or serum butyrate across interventions",
+            "Butyrate-specific rather than total-fermentation validation"
+          ],
+          "suggested_queries": [
+            "breath hydrogen stool butyrate correlation",
+            "lactulose breath test butyrate short chain fatty acid correlation"
+          ],
+          "likely_limitations": [
+            "Hydrogen/methane reflect total fermentation and transit/microbiome gas handling",
+            "Methane non-producer status confounds signal",
+            "Not species-specific for acetate/propionate/butyrate"
+          ],
+          "provisional_gc_ms_validation_status": "unvalidated"
+        },
+        {
+          "assay_name": "Exhaled breath condensate SCFA assay",
+          "assay_class": "breath-hydrogen",
+          "matrix_compatibility": [
+            "breath"
+          ],
+          "why_candidate": "PMID 41082646 tested SCFAs in exhaled breath condensate using validated GC-MS and found oral SCFA-induced serum increases were not observed in EBC, arguing against EBC as systemic/gut butyrate proxy.",
+          "required_evidence_before_verdict": [
+            "Full text confirms lack of correlation and matrix handling"
+          ],
+          "suggested_queries": [
+            "exhaled breath condensate short chain fatty acids serum butyrate correlation"
+          ],
+          "likely_limitations": [
+            "Respiratory matrix may reflect local lung microbiota more than gut fermentation"
+          ],
+          "provisional_gc_ms_validation_status": "unvalidated"
+        }
+      ],
+      "red_flags": [
+        "Breath can be a fermentation/adherence proxy, not a butyrate quantification assay."
+      ],
+      "trajectory_notes": "Breath path should not be used as Tier 2 butyrate quantification."
+    },
+    {
+      "trajectory": 4,
+      "lens": "biosensor / point-of-care",
+      "candidate_assays": [
+        {
+          "assay_name": "Electrochemical fecal SCFA profiling with ANN deconvolution",
+          "assay_class": "electrochemical",
+          "matrix_compatibility": [
+            "stool"
+          ],
+          "why_candidate": "PMID 42041444 reports rapid electrochemical profiling of fecal SCFAs using esterification/dissociation fingerprints and ANN-based signal decoupling, including butyrate prediction as an auxiliary input.",
+          "required_evidence_before_verdict": [
+            "Full-text performance metrics for butyrate specifically",
+            "Reference method used for training/validation",
+            "External validation in independent fecal samples",
+            "Hardware/protocol reproducibility"
+          ],
+          "suggested_queries": [
+            "Rapid Electrochemical Profiling Fecal Short-Chain Fatty Acids butyrate ANN validation",
+            "PMID 42041444 butyrate fecal electrochemical full text"
+          ],
+          "likely_limitations": [
+            "Emerging research platform, not commercial kit",
+            "ML calibration may not transfer across stool matrices without retraining",
+            "Needs GC-MS cross-validation before OE adoption"
+          ],
+          "provisional_gc_ms_validation_status": "partial"
+        },
+        {
+          "assay_name": "3-hydroxybutyrate electrochemical / colorimetric biosensors",
+          "assay_class": "electrochemical",
+          "matrix_compatibility": [
+            "serum",
+            "blood"
+          ],
+          "why_candidate": "Search returns BHB/3-HB sensors, but these quantify ketone bodies, not microbial butyrate.",
+          "required_evidence_before_verdict": [
+            "None; reject as wrong analyte unless chemically re-engineered"
+          ],
+          "suggested_queries": [
+            "butyrate not beta hydroxybutyrate biosensor"
+          ],
+          "likely_limitations": [
+            "Analyte mismatch"
+          ],
+          "provisional_gc_ms_validation_status": "unvalidated"
+        }
+      ],
+      "red_flags": [
+        "BHB / 3-hydroxybutyrate results are false positives for this scope."
+      ],
+      "trajectory_notes": "Electrochemical fecal SCFA profiling is the most interesting future Tier 2 direction."
+    },
+    {
+      "trajectory": 5,
+      "lens": "OE decision / matrix fit",
+      "candidate_assays": [
+        {
+          "assay_name": "Culture-supernatant HPLC-UV as OE Tier 2-lab assay",
+          "assay_class": "other",
+          "matrix_compatibility": [
+            "culture"
+          ],
+          "why_candidate": "For engineered LBP / in vitro fermentation work, mM-range culture supernatants match the HPLC-UV method range better than serum/stool matrices.",
+          "required_evidence_before_verdict": [
+            "OE spike-recovery with sodium butyrate in culture medium",
+            "Paired GC-MS on same samples",
+            "LOD/LOQ below expected engineered-strain output"
+          ],
+          "suggested_queries": [
+            "butyrate culture supernatant HPLC UV validation 0.5 50 mM"
+          ],
+          "likely_limitations": [
+            "Not user-facing or home assay",
+            "Instrument access required"
+          ],
+          "provisional_gc_ms_validation_status": "partial"
+        },
+        {
+          "assay_name": "Outsourced GC-MS / GC-MS kit as Tier 3 anchor",
+          "assay_class": "other",
+          "matrix_compatibility": [
+            "stool",
+            "serum",
+            "culture"
+          ],
+          "why_candidate": "Not a Tier 2 solution, but the search confirms GC-MS remains the reference anchor; Sigma/Shimadzu-style workflows and services exist for SCFA panels.",
+          "required_evidence_before_verdict": [
+            "Vendor quote and matrix list",
+            "Sample handling protocol",
+            "Replicate precision"
+          ],
+          "suggested_queries": [
+            "SCFA GC-MS service stool butyrate culture supernatant",
+            "Short Chain Fatty Acids Kit GC-MS Sigma"
+          ],
+          "likely_limitations": [
+            "Does not close the low-cost/home gap",
+            "Useful as validation anchor only"
+          ],
+          "provisional_gc_ms_validation_status": "validated"
+        }
+      ],
+      "red_flags": [
+        "The platform gap is not one assay; it splits by matrix: culture is easier than stool/serum."
+      ],
+      "trajectory_notes": "Adopt a two-step path: HPLC-UV/electrochemical candidates as Tier 2 candidates, GC-MS as validation anchor."
+    }
+  ],
+  "consensus_candidates": [
+    {
+      "key": "hplc uv culture supernatant scfa",
+      "assay_name": "HPLC-UV SCFA + lactate assay for bacterial culture supernatants",
+      "assay_class": "other",
+      "trajectories": [
+        2,
+        5
+      ],
+      "consensus_count": 2,
+      "note": "Surfaced strongly in analytical/matrix-fit trajectories but below the formal 3/5 threshold because only one trajectory focused on culture-supernatant lab methods."
+    },
+    {
+      "key": "electrochemical fecal scfa profiling ann",
+      "assay_name": "Electrochemical fecal SCFA profiling with ANN deconvolution",
+      "assay_class": "electrochemical",
+      "trajectories": [
+        4,
+        5
+      ],
+      "consensus_count": 2,
+      "note": "Most promising stool-specific Tier 2 direction, but emerging and not ready-to-adopt."
+    },
+    {
+      "key": "breath hydrogen methane proxy",
+      "assay_name": "Breath hydrogen / methane fermentation proxy",
+      "assay_class": "breath-hydrogen",
+      "trajectories": [
+        3,
+        5
+      ],
+      "consensus_count": 2,
+      "note": "Consistently rejected as butyrate-specific quantification."
+    },
+    {
+      "key": "free fatty acid colorimetric kits",
+      "assay_name": "Generic free-fatty-acid colorimetric/fluorometric kits",
+      "assay_class": "colorimetric",
+      "trajectories": [
+        1,
+        5
+      ],
+      "consensus_count": 2,
+      "note": "Obvious kit class, but vendor protocol excludes SCFAs including butyric acid."
+    }
+  ],
+  "ranked_candidates": [
+    {
+      "rank": 1,
+      "assay_name": "HPLC-UV SCFA + lactate assay for bacterial culture supernatants",
+      "assay_class": "other / Tier 2-lab",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "rationale": "Best near-term assay for OE culture-supernatant / engineered-strain work. Abstract reports mM-range calibration compatible with fermentation supernatants, but it is not stool/home and needs full-text method extraction plus paired GC-MS validation.",
+      "must_verify_before_wet_lab": [
+        "Full text PMID 23542733",
+        "Butyrate-specific recovery/precision",
+        "OE culture-medium spike recovery",
+        "Paired GC-MS on same samples"
+      ]
+    },
+    {
+      "rank": 2,
+      "assay_name": "Electrochemical fecal SCFA profiling with ANN deconvolution",
+      "assay_class": "electrochemical / emerging Tier 2-stool",
+      "verdict": "YELLOW",
+      "confidence": "low-medium",
+      "rationale": "Most promising stool-specific Tier 2 direction from the PubMed snapshot. It appears designed for fecal SCFA profiling and includes butyrate, but it is a 2026 research platform requiring full-text review and independent validation before adoption.",
+      "must_verify_before_wet_lab": [
+        "Full text PMID 42041444",
+        "Reference-method correlation for butyrate specifically",
+        "External fecal validation",
+        "Protocol/hardware reproducibility"
+      ]
+    },
+    {
+      "rank": 3,
+      "assay_name": "Butyric-acid / SCFA ELISA kits",
+      "assay_class": "colorimetric / immunoassay",
+      "verdict": "RED-provisional",
+      "confidence": "low",
+      "rationale": "Vendor pages exist, but no PubMed/GC-MS validation surfaced and small-molecule SCFA specificity is a major concern. Treat as false-positive-prone until protocol and spike-recovery data exist.",
+      "must_verify_before_wet_lab": [
+        "Protocol",
+        "Specificity vs acetate/propionate/isobutyrate",
+        "Spike recovery in stool/culture",
+        "GC-MS comparison"
+      ]
+    },
+    {
+      "rank": 4,
+      "assay_name": "Breath hydrogen / methane fermentation proxy",
+      "assay_class": "breath-hydrogen",
+      "verdict": "RED",
+      "confidence": "high",
+      "rationale": "Useful as broad colonic-fermentation or transit/adherence proxy, but not butyrate-specific. EBC SCFA evidence also argues respiratory SCFA matrices do not track systemic SCFA increases.",
+      "must_verify_before_wet_lab": [
+        "Only reconsider if a direct breath-gas-to-butyrate validation paper is found"
+      ]
+    },
+    {
+      "rank": 5,
+      "assay_name": "Generic free-fatty-acid colorimetric/fluorometric kits",
+      "assay_class": "colorimetric",
+      "verdict": "RED",
+      "confidence": "high",
+      "rationale": "Abcam ab65341, representative of this class, explicitly says the kit is not designed for acetic, propionic, or butyric acid. Do not use palmitate-standard FFA kits as butyrate assays.",
+      "must_verify_before_wet_lab": [
+        "Reject unless a vendor produces a butyrate/SCFA-specific protocol and validation"
+      ]
+    }
+  ],
+  "overall_verdict": "YELLOW",
+  "verdict_rationale": "A ready-to-adopt simple/home colorimetric or breath-based butyrate assay did not surface. Two plausible Tier 2 candidates exist: HPLC-UV for culture supernatants and an emerging electrochemical fecal SCFA platform. Both require full-text/protocol review and paired GC-MS validation before OE adoption.",
+  "limitations": [
+    "This pass used PubMed title/abstract metadata plus targeted vendor/web checks; full text has not yet been extracted for key candidates.",
+    "Google Scholar / patents / Espacenet were not exhaustively harvested into machine-readable artifacts in this pass.",
+    "Commercial butyric-acid ELISA pages were not treated as validated evidence without protocol specificity and GC-MS comparison.",
+    "No non-English corpus pass was run because comp-038 is analytical-chemistry scoped and Stage 1 was not sparse; this can be revisited if needed.",
+    "Consensus threshold was interpreted qualitatively because the five trajectories were performed by Codex in-session rather than independent paid model calls."
+  ],
+  "recommended_next_step": "Do a focused full-text/protocol verification pass on PMID 23542733 and PMID 42041444, plus vendor protocol audit for any butyric-acid/SCFA ELISA claims. Design a small paired validation: sodium-butyrate spike/recovery and 10-20 real samples measured by candidate Tier 2 method plus GC-MS.",
+  "evidence_sources": [
+    {
+      "id": "PMID 23542733",
+      "title": "HPLC-UV method for four SCFAs and lactic acid in in vitro fermentation",
+      "role": "culture-supernatant Tier 2 candidate"
+    },
+    {
+      "id": "PMID 42041444",
+      "title": "Rapid electrochemical profiling of fecal SCFAs",
+      "role": "emerging stool Tier 2 candidate"
+    },
+    {
+      "id": "PMID 41082646",
+      "title": "EBC SCFAs do not track systemic SCFA increases",
+      "role": "breath/respiratory proxy caution"
+    },
+    {
+      "id": "PMID 1486849 / 8049636 / 21712835 / 27276436 / 41952402",
+      "title": "Breath H2/CH4 fermentation proxy literature",
+      "role": "reject butyrate-specific quantification"
+    },
+    {
+      "id": "Abcam ab65341 protocol v17a",
+      "title": "Free Fatty Acid Assay Kit excludes acetic, propionic, butyric acid",
+      "role": "reject generic FFA colorimetric kits"
+    }
+  ]
+}

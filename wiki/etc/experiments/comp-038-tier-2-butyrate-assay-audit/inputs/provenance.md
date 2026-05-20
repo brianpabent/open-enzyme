@@ -1,8 +1,8 @@
 # comp-038 — Provenance and Planned Sources
 
-This document tracks the literature sources and search corpora that comp-038's `analyze.py` will query when it runs. It is filled in *now* with the planned sources and *frozen on run* with the actual dated snapshots / API endpoints / version IDs that were used.
+This document tracks the literature sources and search corpora that comp-038's `analyze.py` queried when it ran. It preserves both the planned corpus and the actual frozen run artifacts.
 
-**Status:** Planning (not yet frozen). To be re-stamped to "Frozen YYYY-MM-DD" when `analyze.py` first executes.
+**Status:** Frozen 2026-05-20 for the Codex source-packet run. PubMed snapshot: `outputs/pubmed-snapshot.json` (`2026-05-20T15:06:05+00:00`, 27 queries, 74 records). Codex synthesis output: `outputs/results.json` + `outputs/summary.md` (`2026-05-20T15:09:12+00:00`). No OpenRouter model calls were made for the completed run.
 
 ## Search corpora (planned)
 
@@ -10,8 +10,8 @@ This document tracks the literature sources and search corpora that comp-038's `
 
 | Source | Endpoint / Access | Search type | Notes |
 |---|---|---|---|
-| PubMed | NCBI E-utilities API | Full-text indexed search | Primary corpus for analytical chemistry literature |
-| PMC | NCBI PMC Open Access subset | Full-text retrieval | Used for verbatim quotes and methodology details |
+| PubMed | NCBI E-utilities API | Title / abstract / citation search | Primary discovery corpus for analytical chemistry literature; PMID hits require separate full-text retrieval before assay-method verdicts. |
+| PMC | NCBI PMC Open Access subset | Full-text retrieval for PMID-linked open-access articles | Used for methods-table details, verbatim quotes, and validation-protocol extraction when full text is available. |
 | Google Scholar | Web search (paginated) | Citation-graph + grey literature | Catches preprints and conference proceedings PubMed misses |
 | Google Patents | patents.google.com | Patent landscape for commercial kits | Vendor IP filings often disclose validation data not in journals |
 
@@ -32,20 +32,46 @@ This document tracks the literature sources and search corpora that comp-038's `
 | KISS (Korean) | Same reason as CNKI. |
 | ChiCTR / J-RCT trial registries | Out of scope; this experiment is about analytical assays, not clinical trials. |
 
-## Model stack (planned — frozen on run)
+## Firewall-sensitive source retrieval
+
+Some Chinese and East Asian academic domains may only be reachable through Brian's local laptop network path because the firewall allowlist applies locally, while model/web-fetch tools may egress from vendor infrastructure. For those sources, use `experiments/lib/agentic_lit_synthesis.py::local_curl_fetch()` rather than model-side fetch. The helper:
+
+- shells out to local `curl` from the laptop;
+- only allows explicitly allowlisted academic host suffixes (`cnki.net`, `cnki.com.cn`, `wanfangdata.com.cn`, `wanfang.com.cn`, `cqvip.com`, `sinomed.ac.cn`, `chictr.org.cn`, `medresman.org`, `nstl.gov.cn`, `chinaxiv.org`, `jst.go.jp`, `nii.ac.jp`, `kci.go.kr`, `riss.kr`, etc.);
+- writes the fetched body plus a `.provenance.json` sidecar recording URL, timestamp, method = `local_curl`, network_path = `local_machine`, return code, and effective URL;
+- never sends the fetched source through a model unless a later analysis step explicitly includes a bounded excerpt / extracted metadata.
+
+This is not currently expected to be needed for comp-038's butyrate-assay scope, but it is part of the shared agentic-literature-synthesis workflow so future non-English corpus passes do not reinvent the firewall workaround.
+
+## Non-English translation protocol
+
+If a non-English source becomes relevant, the run must use the two-model independent translation protocol from `experiments/lib/agentic_lit_synthesis.py::translate_source_two_model()` before any source-derived claim enters `outputs/summary.md` or a wiki page.
+
+Operational requirements:
+
+- Use two independent models from different vendors / training pipelines.
+- For Chinese sources, include a native-language-strong model by default (`deepseek/deepseek-chat` in `model-config.json`) plus a second independent model (`openai/gpt-5.5` by default).
+- Do not choose a single "winning" translation when the models disagree.
+- The annotated translation must preserve science-relevant disagreements inline with `{Model A: "..." | Model B: "..."}`.
+- Add `[TRANSLATION-DISAGREEMENT]` when disagreement affects evidence tier, mechanism mapping, dose, route, units, statistics, sample size, study design, or scientific hedging (`inhibits` vs `modulates` vs `may`).
+- Commit both raw model translations and the annotated referee output under `outputs/` so future readers can audit the disagreement.
+
+This matches the repo-wide translation rule in `CLAUDE.md` and is part of the shared agentic-literature-synthesis workflow, even though comp-038 currently defers CNKI / J-STAGE / KISS unless Stage 1 is sparse.
+
+## Model stack (frozen on run)
 
 | Seat | Model | Provider | Temperature | Notes |
 |---|---|---|---|---|
-| Synthesis / candidate-extraction | claude-opus-4-7 OR Claude Opus 4.7 (whichever id is current on run date) | Anthropic | 0.3 | OE default for literature synthesis; provides the per-trajectory verdict and candidate list. |
-| Pairwise judge | claude-sonnet-4-6 | Anthropic | 0.0 | Pairwise comparison judge; lower temp for ranking stability. |
-| Consensus aggregator | claude-haiku-4-5 | Anthropic | 0.0 | Combines N=5 trajectory outputs; lowest-cost model for the determinism-heavy aggregation step. |
-| Optional bench (separate eval) | gemini-3-deep-think | Google | 0.3 | Bench eval only — not in production comp-038 run. See operations doc Open Eval #1. |
+| Query strategist / blind-spot critic | Codex/GPT-5.5 in-session | Codex subscription | n/a | In-session query-strategy critique; no paid external call. |
+| Synthesis / candidate-extraction | Codex/GPT-5.5 in-session | Codex subscription | n/a | N=5 synthesis trajectories from `outputs/codex-synthesis-packet.md`; no OpenRouter model calls. |
+| Pairwise judge | Codex/GPT-5.5 in-session | Codex subscription | n/a | Pairwise-style ranking and overclaim detection in the same Codex run. |
+| Verifier / limitations reviewer | Codex source-evidence gate | Codex subscription | n/a | No GREEN verdict from abstracts alone. |
 
-To be **frozen on run** by appending: model_id (full string), inference_date (UTC), and SHA of the prompt files in `analyze.py` at runtime.
+Optional external roles remain configured in [`model-config.json`](./model-config.json) under `*_openrouter` keys and are used only with the explicit `python3 analyze.py --run-openrouter` path. `OPENROUTER_API_KEY` is read from the repo-root `.env` (gitignored) or shell environment only for explicit OpenRouter paths and is never written to outputs.
 
 ## Date-snapshot discipline
 
-All PubMed E-utilities queries embed `&mindate=` and `&maxdate=` to anchor the search to a literature snapshot date (defaulting to the run date). The resulting PMID list is committed to `outputs/pmids-by-trajectory.json` so a re-run on the same snapshot reproduces.
+All PubMed E-utilities queries are committed as a dated snapshot in `outputs/pubmed-snapshot.json`; a re-run on a later date may diverge as PubMed changes. For candidate assays, the next pass must attempt full-text retrieval via PMC, DOI / publisher pages, institutional access, or vendor protocol PDFs before assigning any final GREEN verdict; PubMed abstracts alone are insufficient for load-bearing method-validation claims.
 
 Google Scholar and Google Patents lack the same date-anchor support; for those sources, the comp-038 output records the access date and the first 100 results returned at that date. A re-run a year later may diverge as the index changes; that divergence is documented honestly in the limitations section of the output.
 
@@ -55,7 +81,7 @@ This experiment is in the proposed **agentic-literature-synthesis** comp-NNN sub
 
 - **Inputs are fully documented:** query-strategy.json (frozen on run), provenance.md (this file, frozen on run with actual sources used), model versions (frozen on run).
 - **Consensus statistics are reported:** N=5 trajectory outputs are committed to `outputs/`; consensus selection logic is documented; "surfaced by K of N trajectories" appears in the final report.
-- **Budget is hard-capped:** $25 maximum in `analyze.py`. Runs that hit the cap report partial results honestly rather than continuing.
+- **Budget is explicit:** the default Codex packet path has no OpenRouter model spend. The optional `--run-openrouter` path has a $25 review ceiling in the config and should be used only when external-vendor roles are intentional.
 - **Date is recorded:** every external retrieval has a fetch-date.
 
 A re-run on the same date with the same inputs SHOULD produce equivalent results (modulo LLM stochasticity bounded by the N=5 consensus). A re-run on a later date with refreshed PubMed/Scholar/Patents corpora MAY produce different results, and that's a feature: the comp-038 readout has a freshness expiration encoded in the dated snapshots.

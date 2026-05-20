@@ -32,8 +32,8 @@ Getting the re-classification right is the entire point of this reflection. Re-c
 
 - **Not "agentic search replaces wet lab."** Robin's own paper is explicit: "semi-autonomous" is the honest abstract framing; "first AI system to autonomously discover" in the conclusion is overclaim. Humans selected 5 of 30 candidates to test, swapped reagents, picked the cell line, ran the cytotoxicity assay. The pattern shifts priors and triages. It doesn't run experiments.
 - **Not "every stuck item is agentic-search-eligible."** Wet-lab work that requires actual cells, actual fermentation conditions, actual in-vivo response — those don't move. The shio-koji protease-stability question for engineered uricase / lactoferrin under genuine 7-14-day high-salt conditions is wet-lab. The SGF survival test is wet-lab. The ABCG2 Q141K trafficking assay in epithelial transwells is wet-lab.
-- **Not "comp-NNN replaces all the above wet-lab work."** Computational priors before wet lab is the existing OE thesis ([`open-source-platform.md`](../../wiki/open-source-platform.md) Platform Principles). The reflection adds a *sub-type* of comp-NNN (agentic-literature-synthesis) for the items where the prior IS the literature itself, not a structural simulation. Both sub-types continue to inform — not replace — wet lab.
-- **Not "adopt FutureHouse/Google's exact stack."** The methodology patterns (N-trajectory consensus, pairwise tournament, concise/deep tier split, full Robin-cycle) are independently adoptable. Aviary fork is conditional on comp-038 fit. Deep Think is conditional on the mechanism-reasoning bench. The stack is reviewed; the patterns are adopted.
+- **Not "comp-NNN replaces all the above wet-lab work."** Computational priors before wet lab is the existing OE thesis ([`open-source-platform.md`](../../wiki/etc/open-source-platform.md) Platform Principles). The reflection adds a *sub-type* of comp-NNN (agentic-literature-synthesis) for the items where the prior IS the literature itself, not a structural simulation. Both sub-types continue to inform — not replace — wet lab.
+- **Not "adopt FutureHouse/Google's exact stack."** The methodology patterns (N-trajectory consensus, pairwise tournament, concise/deep tier split, full Robin-cycle) are independently adoptable. comp-038 starts with a lightweight OE-native runner: Codex/GPT-5.5 does the local synthesis role when Codex runs it, and OpenRouter is opt-in for external-vendor checks. Aviary remains a revisit option if that runner proves brittle. Deep Think is conditional on the mechanism-reasoning bench. The stack is reviewed; the patterns are adopted.
 
 ## Six unstick candidates — proposed re-classifications
 
@@ -44,10 +44,10 @@ These are **proposals**, not decisions. Brian reviews and signs off per item, or
 ### 1. Tier 2 butyrate assay discovery — **re-class: agentic-search**
 
 - **Currently:** Listed as $0 desk audit in [synthesis queue open-question-2](../queue/2026-05-20-open-question-2-is-there-a-tier2-butyrate-assay-colorimetric-enzymatic-or.md); Pass 3 confirmed prioritize. Blocks every microbiome-derived intervention downstream.
-- **Proposed:** comp-038, agentic-literature-synthesis sub-type, Aviary-fork OR Claude+PaperQA2 stack, N=5 trajectories, pairwise-tournament ranking of candidate assays against Tier 3 GC-MS validation criteria.
+- **Proposed:** comp-038, agentic-literature-synthesis sub-type, lightweight OE-native role split. Default Codex-run path: source snapshots → Codex/GPT-5.5 N=5 synthesis trajectories → Codex source-evidence gate. Optional paid path: DeepSeek query critique / Opus review through OpenRouter only when a second vendor is worth the marginal cost. Candidates are ranked against Tier 3 GC-MS validation criteria.
 - **Rationale:** Pure literature task. Cleanest possible test of the Robin-cycle methodology. Already named as $0 desk audit; we're just making the audit reproducible and structured.
-- **Cost:** $25 ceiling per `operations/agentic-science-adoption.md` #comp-038 scaffold. Wall clock <90 min.
-- **Prerequisite:** Methodology review of the comp-038 scaffold in this PR; analyze.py written after Aviary-fit decision. (This PR.)
+- **Cost:** $0 incremental OpenRouter spend for the Codex-run path; $25 ceiling only for explicit external-vendor checks. Wall clock <90 min.
+- **Prerequisite:** Methodology review of the comp-038 runner scaffold in this PR; Codex-run source-packet synthesis before any optional paid external review. (This PR.)
 
 ### 2. East Asian Q141K × dietary-fiber RCT gap — **re-class: agentic-search**
 
@@ -113,13 +113,13 @@ Four artifacts land in the same commit batch as this reflection:
 1. **This file** — the strategic reflection capturing the six unstick proposals.
 2. **[`../../operations/agentic-science-adoption.md`](../../operations/agentic-science-adoption.md)** — the operations-layer methodology and tooling captures.
 3. **[`../../wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/`](../../wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/)** — first validation instance scaffold (analyze.py + run deferred).
-4. **(deferred to follow-up PR after methodology review)** — updates to `operations/README.md` index, `operations/todos.md` action items, `wiki/computational-experiments.md` Planned Analyses table, and `.claude/skills/new-comp-experiment/SKILL.md` sub-type extension.
+4. **(partially deferred to follow-up PR after methodology review)** — `wiki/computational-experiments.md` reserves comp-038 now to prevent number reuse; updates to `operations/README.md` index, `operations/todos.md` action items, and `.claude/skills/new-comp-experiment/SKILL.md` sub-type extension remain deferred until methodology sign-off.
 
 Resolution requires:
 
 - comp-038 runs and produces a readout (success or failure mode documented).
 - Brian reviews the six unstick proposals (this file's main content) and signs off / sends back / re-orders per item.
-- The methodology decisions in operations doc are committed (Aviary fork yes/no; Deep Think bench scheduled; Science Skills wait/no-wait; AlphaEvolve defer/adopt) or revised.
+- The methodology decisions in operations doc are committed (OE-native runner vs Aviary revisit trigger; Deep Think bench scheduled; Science Skills wait/no-wait; AlphaEvolve defer/adopt) or revised.
 
 ## Cross-reference
 
