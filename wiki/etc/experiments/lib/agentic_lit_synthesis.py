@@ -104,6 +104,289 @@ def safe_filename(text, max_len=120):
     return (cleaned or "fetch")[:max_len]
 
 
+LANGUAGE_NATIVE_QUERY_RULES = {
+    "zh": {
+        "label": "Chinese",
+        "sources": ["CNKI", "WanFang", "CQVIP", "SinoMed", "ChiCTR", "NSTL"],
+        "required_frames": [
+            "mechanism_native",
+            "species_original_language",
+            "traditional_formula",
+            "traditional_pathology",
+        ],
+        "mechanism_terms": {
+            "URAT1": ["URAT1", "尿酸盐转运蛋白1", "尿酸转运体1", "SLC22A12"],
+            "ABCG2": ["ABCG2", "乳腺癌耐药蛋白", "尿酸排泄"],
+            "XO": ["黄嘌呤氧化酶", "XOD", "XO"],
+            "NLRP3": ["NLRP3炎症小体", "NLRP3 炎症小体", "白细胞介素1β"],
+            "complement": ["补体", "抗补体", "C3转化酶", "C5a"],
+            "butyrate": ["丁酸", "短链脂肪酸", "SCFA"],
+            "HDAC": ["组蛋白去乙酰化酶", "HDAC", "HDAC6"],
+        },
+        "pathology_terms": {
+            "gout": ["痛风", "高尿酸血症", "痹证", "湿热痹"],
+            "hyperuricemia": ["高尿酸血症", "痛风"],
+            "inflammation": ["炎症", "抗炎", "炎症小体"],
+            "complement": ["补体激活", "抗补体"],
+            "microbiome": ["肠道菌群", "肠道微生物", "代谢物"],
+        },
+        "example_formulas": ["四妙散", "白虎加桂枝汤", "乌梅丸", "藿香正气"],
+    },
+    "ja": {
+        "label": "Japanese",
+        "sources": ["J-STAGE", "CiNii", "J-GLOBAL", "J-RCT"],
+        "required_frames": [
+            "mechanism_native",
+            "species_original_language",
+            "traditional_formula",
+            "traditional_pathology",
+        ],
+        "mechanism_terms": {
+            "URAT1": ["URAT1", "尿酸トランスポーター", "SLC22A12"],
+            "ABCG2": ["ABCG2", "BCRP", "尿酸排泄"],
+            "XO": ["キサンチンオキシダーゼ", "キサンチン酸化酵素"],
+            "NLRP3": ["NLRP3インフラマソーム", "IL-1β"],
+            "complement": ["補体", "抗補体", "C3転換酵素", "C5a"],
+            "butyrate": ["酪酸", "短鎖脂肪酸"],
+            "HDAC": ["ヒストン脱アセチル化酵素", "HDAC", "HDAC6"],
+        },
+        "pathology_terms": {
+            "gout": ["痛風", "高尿酸血症"],
+            "hyperuricemia": ["高尿酸血症", "痛風"],
+            "inflammation": ["炎症", "抗炎症"],
+            "complement": ["補体活性化", "抗補体"],
+            "microbiome": ["腸内細菌叢", "腸内細菌", "代謝物"],
+        },
+        "example_formulas": ["防風通聖散", "越婢加朮湯", "桂枝茯苓丸"],
+    },
+    "ko": {
+        "label": "Korean",
+        "sources": ["KISS", "RISS", "DBpia", "KoreaScience", "KCI"],
+        "required_frames": [
+            "mechanism_native",
+            "species_original_language",
+            "traditional_formula",
+            "traditional_pathology",
+        ],
+        "mechanism_terms": {
+            "URAT1": ["URAT1", "요산 수송체", "SLC22A12"],
+            "ABCG2": ["ABCG2", "BCRP", "요산 배설"],
+            "XO": ["잔틴 산화효소", "xanthine oxidase"],
+            "NLRP3": ["NLRP3 인플라마좀", "IL-1β"],
+            "complement": ["보체", "항보체", "C3 전환효소", "C5a"],
+            "butyrate": ["부티르산", "단쇄지방산"],
+            "HDAC": ["히스톤 탈아세틸화효소", "HDAC", "HDAC6"],
+        },
+        "pathology_terms": {
+            "gout": ["통풍", "고요산혈증"],
+            "hyperuricemia": ["고요산혈증", "통풍"],
+            "inflammation": ["염증", "항염증"],
+            "complement": ["보체 활성화", "항보체"],
+            "microbiome": ["장내미생물", "장내 세균", "대사체"],
+        },
+        "example_formulas": ["사묘산", "방풍통성산"],
+    },
+}
+
+
+def _as_list(value):
+    if value is None:
+        return []
+    if isinstance(value, (list, tuple)):
+        return [str(item) for item in value if str(item).strip()]
+    return [str(value)] if str(value).strip() else []
+
+
+def _dedupe_keep_order(values):
+    seen = set()
+    output = []
+    for value in values:
+        key = value.strip()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        output.append(key)
+    return output
+
+
+def native_terms(language, mechanisms=None, pathologies=None):
+    """Return native-language mechanism/pathology terms for a scan."""
+    rules = LANGUAGE_NATIVE_QUERY_RULES[language]
+    mechanism_terms = []
+    for mechanism in _as_list(mechanisms):
+        mechanism_terms.extend(rules["mechanism_terms"].get(mechanism, [mechanism]))
+    pathology_terms = []
+    for pathology in _as_list(pathologies):
+        pathology_terms.extend(rules["pathology_terms"].get(pathology, [pathology]))
+    return {
+        "mechanisms": _dedupe_keep_order(mechanism_terms),
+        "pathologies": _dedupe_keep_order(pathology_terms),
+    }
+
+
+def build_language_native_query_plan(
+    scope,
+    mechanisms=None,
+    species=None,
+    formulas=None,
+    pathologies=None,
+    languages=("zh", "ja", "ko"),
+    western_queries=None,
+):
+    """
+    Build query framings for non-English lit scans using native-language terms.
+
+    This codifies the 2026-05-19 query-framing discipline:
+    mechanism-name-only English queries are insufficient for TCM / Kampo /
+    Korean medicine / medicinal-mushroom domains. Search by native mechanism
+    term + original-language species/formula/pathology frames.
+    """
+    framings = []
+    if western_queries:
+        framings.append({
+            "type": "western_mechanism",
+            "language": "en",
+            "queries": _dedupe_keep_order(_as_list(western_queries)),
+            "rationale": "Western/PubMed mechanism-name frame; retained as one frame, not the whole scan.",
+        })
+
+    for language in languages:
+        rules = LANGUAGE_NATIVE_QUERY_RULES[language]
+        terms = native_terms(language, mechanisms=mechanisms, pathologies=pathologies)
+        mechanism_terms = terms["mechanisms"] or _as_list(mechanisms)
+        pathology_terms = terms["pathologies"] or _as_list(pathologies)
+
+        mechanism_queries = []
+        for mechanism in mechanism_terms:
+            if pathology_terms:
+                mechanism_queries.extend(f"{mechanism} {pathology}" for pathology in pathology_terms)
+            else:
+                mechanism_queries.append(mechanism)
+        framings.append({
+            "type": "mechanism_native",
+            "language": language,
+            "sources": rules["sources"],
+            "queries": _dedupe_keep_order(mechanism_queries),
+            "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary.",
+        })
+
+        species_queries = []
+        for item in _as_list(species):
+            if mechanism_terms:
+                species_queries.extend(f"{item} {mechanism}" for mechanism in mechanism_terms[:3])
+            if pathology_terms:
+                species_queries.extend(f"{item} {pathology}" for pathology in pathology_terms[:3])
+            if not mechanism_terms and not pathology_terms:
+                species_queries.append(item)
+        if species_queries:
+            framings.append({
+                "type": "species_original_language",
+                "language": language,
+                "sources": rules["sources"],
+                "queries": _dedupe_keep_order(species_queries),
+                "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss.",
+            })
+
+        formula_queries = []
+        for formula in _as_list(formulas):
+            if pathology_terms:
+                formula_queries.extend(f"{formula} {pathology}" for pathology in pathology_terms[:4])
+            if mechanism_terms:
+                formula_queries.extend(f"{formula} {mechanism}" for mechanism in mechanism_terms[:3])
+            if not pathology_terms and not mechanism_terms:
+                formula_queries.append(formula)
+        if formula_queries:
+            framings.append({
+                "type": "traditional_formula",
+                "language": language,
+                "sources": rules["sources"],
+                "queries": _dedupe_keep_order(formula_queries),
+                "rationale": "Formula-name anchoring catches clinical and materia-medica papers not indexed by target mechanism.",
+            })
+
+        if pathology_terms:
+            framings.append({
+                "type": "traditional_pathology",
+                "language": language,
+                "sources": rules["sources"],
+                "queries": _dedupe_keep_order(pathology_terms),
+                "rationale": "Original pathology framing catches papers that do not use Western mechanism labels.",
+            })
+
+    return {
+        "scope": scope,
+        "natural_product_scope": True,
+        "query_framing_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+        "created_at_utc": utc_now_iso(),
+        "framings": framings,
+        "notes": [
+            "Do not treat zero hits from English mechanism queries as evidence of absence in non-English corpora.",
+            "Fetch firewall-sensitive East Asian sources through local_curl_fetch(), not hosted model/web fetch.",
+            "Translate load-bearing non-English source text with translate_source_two_model().",
+        ],
+    }
+
+
+def audit_query_strategy_language_framing(query_strategy, languages=("zh", "ja", "ko")):
+    """
+    Check whether a query-strategy artifact includes native-language frames.
+
+    Returns a machine-readable audit that comp runners can fail on, warn on, or
+    commit as provenance. Set natural_product_scope=false in the strategy when
+    the rule does not apply.
+    """
+    if query_strategy.get("natural_product_scope") is False:
+        return {
+            "verdict": "not_applicable",
+            "reason": "query_strategy declares natural_product_scope=false",
+            "missing": [],
+        }
+
+    framings = query_strategy.get("framings", [])
+    framing_types = {framing.get("type") for framing in framings}
+    queries_by_language = {language: [] for language in languages}
+    for framing in framings:
+        language = framing.get("language")
+        if language in queries_by_language:
+            queries_by_language[language].extend(framing.get("queries", []))
+
+    missing = []
+    required_types = {
+        "mechanism_native",
+        "species_original_language",
+        "traditional_formula",
+        "traditional_pathology",
+    }
+    missing_types = sorted(required_types - framing_types)
+    for framing_type in missing_types:
+        missing.append({
+            "type": "missing_framing",
+            "framing": framing_type,
+            "note": "Natural-product / traditional-medicine scans need this frame unless explicitly out of scope.",
+        })
+
+    cjk_pattern = re.compile(r"[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]")
+    for language, queries in queries_by_language.items():
+        if not queries:
+            missing.append({
+                "type": "missing_language_queries",
+                "language": language,
+                "note": "No query strings tagged for this language.",
+            })
+        elif not any(cjk_pattern.search(query) for query in queries):
+            missing.append({
+                "type": "missing_original_script",
+                "language": language,
+                "note": "Queries exist but do not include Chinese/Japanese/Korean script terms.",
+            })
+
+    return {
+        "verdict": "needs_revision" if missing else "adequate",
+        "missing": missing,
+        "required_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+    }
+
+
 def extract_json_object(text):
     """
     Parse a JSON object from a model response.

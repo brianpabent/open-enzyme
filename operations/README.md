@@ -1,6 +1,6 @@
 # operations/
 
-**Operational / transactional content for the Open Enzyme project.** Public by default — same posture as the rest of this repo. Open Enzyme is open-source / radical-transparency by design (`wiki/open-source-platform.md`); the operational layer is no exception. Everything here is visible on GitHub for the same reason the wiki and experiments are: the project's value compounds when its working state is fully inspectable. Outreach context, project todos, lab partnership scoping, decision logs — all of it is fine to be public and arguably better that way (collaborators and future contributors get the full operating picture, not just the polished research surface).
+**Operational / transactional content for the Open Enzyme project.** Public by default — same posture as the rest of this repo. Open Enzyme is open-source / radical-transparency by design (`wiki/etc/open-source-platform.md`); the operational layer is no exception. Everything here is visible on GitHub for the same reason the wiki and experiments are: the project's value compounds when its working state is fully inspectable. Outreach context, project todos, lab partnership scoping, decision logs — all of it is fine to be public and arguably better that way (collaborators and future contributors get the full operating picture, not just the polished research surface).
 
 ## How this differs from `wiki/` and `wiki/etc/experiments/`
 
@@ -48,7 +48,8 @@ Same structural pattern as `wiki/etc/experiments/` (created earlier when computa
 ## Index
 
 - [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) — global lab-access landscape for §1.9 Ward 1995 dual-cassette feasibility test (active outreach in flight). Canonical instance of the operational search artifact document class (see template below).
-- [`operational-search-template.md`](./operational-search-template.md) — reusable structure + when-to-use criteria + required sections for any project bottleneck that is resource-acquisition rather than scientific question. Future peer-track scope pages requiring specialized resources should instantiate this template. See also [`open-source-platform.md` §"7. Operational Search Artifacts as a First-Class Document Class"](../wiki/open-source-platform.md) for the platform-level framing.
+- [`global-lit-scan-gap-audit-2026-05-20.md`](./global-lit-scan-gap-audit-2026-05-20.md) — audit + priority queue for re-running global literature scans after discovering China firewall blocks and native-language query-framing failures.
+- [`operational-search-template.md`](./operational-search-template.md) — reusable structure + when-to-use criteria + required sections for any project bottleneck that is resource-acquisition rather than scientific question. Future peer-track scope pages requiring specialized resources should instantiate this template. See also [`open-source-platform.md` §"7. Operational Search Artifacts as a First-Class Document Class"](../wiki/etc/open-source-platform.md) for the platform-level framing.
 - [`todos.md`](./todos.md) — active operational todos across the project
 - [`notable-moments.md`](./notable-moments.md) — append-only log of project moments worth external communication (blog posts, LinkedIn posts, talks). Translated for non-scientific human readers.
 
