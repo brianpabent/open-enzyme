@@ -37,6 +37,8 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 - [`outputs/p0-1-cnki-lead-abstract-records-2026-05-20.json`](./outputs/p0-1-cnki-lead-abstract-records-2026-05-20.json) - parsed abstract/keyword records for the nine highest-priority CNKI leads.
 - [`outputs/p0-1-cnki-deepseek-counterread-2026-05-20.json`](./outputs/p0-1-cnki-deepseek-counterread-2026-05-20.json) - native-Chinese DeepSeek counter-read over the parsed abstract records.
 - [`outputs/p0-1-cnki-two-model-source-read-2026-05-20.md`](./outputs/p0-1-cnki-two-model-source-read-2026-05-20.md) - Codex/GPT-5.5 plus DeepSeek conservative source-read summary.
+- [`outputs/p0-1-cordyceps-biotech-source-read-2026-05-20.md`](./outputs/p0-1-cordyceps-biotech-source-read-2026-05-20.md) - publisher-page read of the priority *C. militaris* water-extract rat paper; promotes this one from abstract lead to Animal Model wiki-update candidate.
+- [`outputs/p0-1-cordyceps-biotech-deepseek-counterread-2026-05-20.json`](./outputs/p0-1-cordyceps-biotech-deepseek-counterread-2026-05-20.json) - native-Chinese counter-read for the publisher-page source facts.
 - `outputs/retrieval-probes-raw/` - raw HTML/provenance files. Provenance records when a fetch used local curl and whether insecure TLS was required.
 
 ## Retrieval Findings

@@ -22,6 +22,8 @@ Alternative routes should be checked before paying CNKI per-page fees. For the p
 
 - `Effect and Mechanism of Cordyceps militaris Extract on Lowering Uric Acid in Hyperuricemia Rats` - [Biotechnology Bulletin publisher page](https://biotech.aiijournal.com/CN/10.13560/j.cnki.biotech.bull.1985.2024-0379)
 
+The publisher-page read is now captured in `p0-1-cordyceps-biotech-source-read-2026-05-20.md`. It supports a cautious wiki update as **Animal Model** evidence for whole *C. militaris* water extract in hyperuricemia rats, not human evidence and not an MSU-flare model.
+
 CNKI records:
 
 1. `Effect and Mechanism of Cordyceps militaris Extract on Lowering Uric Acid in Hyperuricemia Rats` - [CNKI Overseas](https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CyrYCiF-YxoIDQk7aZfTn4UoXjxU5pAz5UXuaMgf0skSD5b_zZks7HF4jxJHIClW-Y6rpye1KwjQUJDVH-1ITCfdPf9LgWIgZb82QxFPFVpaynreUIiSLGTVRYxYRSfRtvFFM-2Q2IY8_oN--5k0S9IXLElrjkvBklvDksrNt4aQ==&uniplatform=OVERSEA&language=EN)

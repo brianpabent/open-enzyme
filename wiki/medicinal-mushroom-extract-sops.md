@@ -58,6 +58,8 @@ A chemistry collaborator joining the project (one of the three actively-recruiti
 
 **Source material:** *C. militaris* fruiting body or mycelium from cultivated source (top-yield strain GYS60 per Phase 7-1b, or commercial cultivation kit for home-cultivation track).
 
+**Phase 5b source-read anchor (2026-05-20):** Xiong 2024 *Biotechnology Bulletin* reports a whole *C. militaris* water extract active in potassium-oxonate + yeast-paste hyperuricemia rats; the visible publisher-page composition includes 35.86% polysaccharides, 27.05% protein, 0.21% phenolics, and 0.83% cordycepin. SOP-2 should therefore quantify cordycepin without collapsing the biological result into cordycepin alone; total polysaccharide/protein and, where feasible, pentostatin remain part of the batch-release fingerprint.
+
 **Planned method (Wang 2014 with Xia 2017 cluster diagnostic ratio):**
 1. Aqueous extraction of dried biomass, 80°C, 1 hr
 2. C18 SPE cleanup

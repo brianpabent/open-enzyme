@@ -1,0 +1,33 @@
+{
+  "created_at_utc": "2026-05-20T17:44:51.649Z",
+  "role": "native_chinese_counter_read",
+  "model_requested": "deepseek/deepseek-chat",
+  "model_returned": "deepseek/deepseek-chat-v3",
+  "response_id": "gen-1779299074-a4uw9AMGYnkbs3YZTCyx",
+  "source_url": "https://biotech.aiijournal.com/CN/10.13560/j.cnki.biotech.bull.1985.2024-0379",
+  "source_basis": "Publisher page visible text: metadata, bilingual abstract, tables, figure captions, references",
+  "text": "```json\n{\n  \"evidence_tier\": \"Tier 2\",\n  \"load_bearing_claims\": [\n    \"C. militaris water extract reduces serum uric acid in hyperuricemia rats.\",\n    \"Mechanism involves downregulation of renal URAT1 and GLUT9, upregulation of OAT1 and ABCG2, and inhibition of hepatic XOD activity.\",\n    \"Extract increases gut microbiota diversity and maintains intestinal microecology.\"\n  ],\n  \"translation_wording_nuances\": [\n    \"English caption for Fig 6 appears mistranslated; Chinese caption correctly identifies liver XOD activity and liver HE.\",\n    \"Keywords specify 'water extract', indicating the study used whole extract rather than purified cordycepin.\"\n  ],\n  \"sufficient_for_wiki_update\": true,\n  \"notes\": [\n    \"Study uses whole water extract, not purified cordycepin.\",\n    \"Supports NLRP3/MSU claims through IHC and mRNA data.\",\n    \"Dose/magnitude are source-visible: 0.5 g/(kg*d) was most effective, reducing UA from 281.62 umol/L to 93.27 umol/L.\",\n    \"Extract composition includes cordycepin at 0.83%, among other nucleosides and amino acids.\"\n  ]\n}\n```",
+  "raw_usage": {
+    "prompt_tokens": 1077,
+    "completion_tokens": 279,
+    "total_tokens": 1356,
+    "cost": 0.00059295,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00059295,
+      "upstream_inference_prompt_cost": 0.00034464,
+      "upstream_inference_completions_cost": 0.00024831
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}
