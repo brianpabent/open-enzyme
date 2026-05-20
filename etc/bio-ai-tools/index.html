@@ -3368,6 +3368,8 @@
       
         
       
+        
+      
     
     
     
@@ -3550,6 +3552,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#protease-vulnerability-to-redesign-workflow-added-2026-05-19-named-platform-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protease-vulnerability-to-redesign workflow (added 2026-05-19, named platform pattern)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#stability-variant-effect-prediction" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3595,6 +3608,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hugging-science-resource-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hugging Science Resource Index
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5488,6 +5512,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5867,7 +5926,7 @@
 
 <h1 id="bio-ai-tools">Bio AI Tools<a class="headerlink" href="#bio-ai-tools" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Three major commercial AI biology tools launched in April 2026 that can accelerate Open Enzyme: <strong>GPT-Rosalind</strong> (OpenAI), <strong>Amazon Bio Discovery</strong>, and <strong>Anthropic's Coefficient Bio acquisition</strong>. However, Rosalind requires institutional access and Bio Discovery costs $486/month. A robust ecosystem of <strong>open source protein AI tools</strong> — including ESM-2, AlphaFold/ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, and others — is freely available and covers most of the computational biology workflow. These open source tools are the project's primary computational toolkit. This document covers all three tiers: commercial, open source, and free web tools.</p>
+<p>Three major commercial AI biology tools launched in April 2026 that can accelerate Open Enzyme: <strong>GPT-Rosalind</strong> (OpenAI), <strong>Amazon Bio Discovery</strong>, and <strong>Anthropic's Coefficient Bio acquisition</strong>. However, Rosalind requires institutional access and Bio Discovery costs $486/month. A robust ecosystem of <strong>open source protein AI tools</strong> — including ESM-2, AlphaFold/ColabFold, Boltz-2, RFdiffusion2, ProteinMPNN, and others — is freely available and covers most of the computational biology workflow. <strong>Hugging Science</strong> adds a fourth layer: a machine-readable discovery index for open AI-for-science datasets, models, benchmarks, and blog posts. These open resources are the project's primary computational toolkit. This document covers commercial platforms, open-source models, resource indexes, and free web tools.</p>
 <hr />
 <h2 id="open-source-protein-ai-tools-available-now">Open Source Protein AI Tools (Available Now)<a class="headerlink" href="#open-source-protein-ai-tools-available-now" title="Permanent link">&para;</a></h2>
 <p>These tools are freely available and cover the core computational biology workflow for Open Enzyme. Many are the same models that power commercial platforms like Bio Discovery under the hood.</p>
@@ -5889,6 +5948,45 @@
 <li><strong>RFdiffusion2 (Baker Lab)</strong> — De novo enzyme design from active site geometry alone. Designed enzymes with catalytic efficiency up to 53,000 M⁻¹s⁻¹. BSD license. Phase 2 tool for designing acid-stable uricase scaffolds. (<a href="https://github.com/RosettaCommons/RFdiffusion2">GitHub</a>)</li>
 <li><strong>ProteinMPNN (Baker Lab)</strong> — Designs amino acid sequences that fold into target structures. MIT license. Essential companion to RFdiffusion2. (<a href="https://github.com/dauparas/ProteinMPNN">GitHub</a>)</li>
 </ul>
+<h3 id="protease-vulnerability-to-redesign-workflow-added-2026-05-19-named-platform-pattern">Protease-vulnerability-to-redesign workflow (added 2026-05-19, named platform pattern)<a class="headerlink" href="#protease-vulnerability-to-redesign-workflow-added-2026-05-19-named-platform-pattern" title="Permanent link">&para;</a></h3>
+<p><strong>The first concrete computational-design-to-wet-lab pipeline use case in the OE corpus</strong> is comp-005 → comp-034 → <code>validation-experiments.md §1.10</code> for the lactoferrin inter-lobe linker. The pattern generalizes; this section names it as a reusable platform template.</p>
+<p><strong>The four-step pattern:</strong></p>
+<ol>
+<li>
+<p><strong>Vulnerability identification (comp-005-style).</strong> Run shio-koji protease-stability analysis on the candidate secreted payload — predict cleavage sites for the three koji proteases (ALP alkaline-protease, NPr neutral-protease, acid-protease) using literature-anchored cleavage-site rules. Identify the exposed regions with the highest predicted cleavage-site density. Output: a ranked list of vulnerability targets.</p>
+</li>
+<li>
+<p><strong>Vulnerability classification — structural-mandatory vs structural-removable.</strong> For each vulnerability target, ask: is this region a <strong>structured-mandatory connector</strong> (must stay because it links functional domains) or a <strong>removable spacer</strong> (can be truncated without losing function)? The two classes get different design strategies:</p>
+</li>
+<li><strong>Structured-mandatory connector</strong> → redesign-in-place (proline substitution, sequence optimization within the geometric constraint). Example: lactoferrin inter-lobe linker (aa 353–363, structured α-helix, AF pLDDT 95.6).</li>
+<li><strong>Removable spacer</strong> → truncate entirely. Example: DAF SCR1-4 Ser/Thr stalk (aa 286–353, disordered, GPI-anchor spacer with no SCR-regulatory function — per <a href="../../daf-cd55-scr14-truncated-computational/">comp-012</a>).</li>
+<li>
+<p><strong>⚠ Failure mode worth naming:</strong> conflating these two classes is the Pass 2 daemon error caught in the 2026-05-19 Cluster E walkthrough — surface-level "exposed protease-accessible region" pattern-matching glossed the structural-functional distinction and proposed proline-substitution for DAF's stalk, which is the wrong design strategy. The discipline: always check whether the linker is mandatory or removable before applying a redesign strategy.</p>
+</li>
+<li>
+<p><strong>Redesign (comp-034-style).</strong> For structured-mandatory linkers: run ProteinMPNN-based or substitute-sampler-based sequence redesign on the linker positions, scored against ≥5 orthogonal metrics:</p>
+</li>
+<li><strong>Predicted cleavage score</strong> (count × per-site probability across the three koji proteases; lower = better)</li>
+<li><strong>Fold quality</strong> (ESM2 pseudo-pLDDT or AF2 pLDDT; higher = better)</li>
+<li><strong>Codon compatibility</strong> (CAI for <em>A. oryzae</em>; higher = better)</li>
+<li><strong>Loop flexibility</strong> (rigidity proxy; lower = better for the rigidify-in-place goal)</li>
+<li><strong>Identity to WT</strong> (Hamming distance; higher = more conservative)</li>
+<li>
+<p>Use N-of-5 ≥ 3 GREEN threshold for candidate gating. Output: a ranked candidate list with conservative / primary / aggressive tiers.</p>
+</li>
+<li>
+<p><strong>Wet-lab arm (validation-experiments §-style).</strong> Promote 3 candidates (conservative + primary + aggressive) to a parallel-arm wet-lab expression test. The platform's standard cost: ~$1.5–3K for gene synthesis + transformation + initial titer measurement. Calibrate against WT control.</p>
+</li>
+</ol>
+<p><strong>Pattern validation status (2026-05-19):</strong> the pattern is documented but only one concrete instance (comp-005 → comp-034 → §1.10 for lactoferrin) has been completed; wet-lab validation pending. Status promotes from "pattern proposal" to "platform-validated workflow" after §1.10 returns and the wet-lab results either confirm or revise the GREEN candidate ranking.</p>
+<p><strong>ProteinMPNN install RESOLVED 2026-05-19 (E2 walkthrough rerun complete).</strong> ProteinMPNN cloned to <code>tools/ProteinMPNN/</code> (repo-local — sandbox blocked <code>/opt/</code> and <code>~/tools/</code>). Smoke test passed; lactoferrin sampling runs ~52 s/pool on CPU. <strong>Headline rerun finding:</strong> the substitute sampler's 15 GREEN candidates are NOT artifacts (mean MPNN log-likelihood 2.74 GREEN vs 3.74 FAIL — clean separation). Genuine MPNN additionally identified 3 STRICT (5-of-5) candidates the substitute missed: <code>NEEEQQQEEEQ</code>, <code>NEEEEQQEQEQ</code>, <code>NEEEEEQEQEQ</code> — all 10.4× cleavage reduction vs WT. §1.10 wet-lab arm validated for gene synthesis with NEEEQQQEEEQ as the aggressive arm. <strong>Install note 2026-05-19:</strong> the subagent's <code>tools/ProteinMPNN/</code> clone was sandbox-ephemeral and did not persist. <strong>For durable <code>/opt/ProteinMPNN</code> install outside the sandbox:</strong> <code>git clone https://github.com/dauparas/ProteinMPNN /opt/ProteinMPNN</code> (PyTorch 2.12 + NumPy 2.4 already on system; smoke-test via <code>examples/submit_example_1.sh</code>). The 2026-05-19 rerun artifacts persisted in <code>wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/</code> even though the install location didn't. Full report: <a href="../../logs/proteinmpnn-comp-034-rerun-2026-05-19.md"><code>logs/proteinmpnn-comp-034-rerun-2026-05-19.md</code></a>.</p>
+<p><strong>When to apply this workflow:</strong></p>
+<ul>
+<li>Adding a new secreted protein payload to the koji platform (uricase variants, lactoferrin, DAF SCR1-4, C1-INH if routed to secreted format, future fusion proteins, future therapeutic peptides ≥3 kDa with structured architecture).</li>
+<li>When a shio-koji protease-stability analysis (comp-005-style) flags a structured-mandatory linker as a MODERATE/HIGH risk vulnerability.</li>
+<li>Skip when the vulnerability is a removable spacer (truncate is the answer; see comp-012 / DAF for the worked example).</li>
+</ul>
+<p><strong>Cross-references:</strong> <a href="../../lactoferrin/"><code>lactoferrin.md</code> §12 item 13</a> (worked example); <a href="../../lactoferrin-linker-redesign-computational/"><code>lactoferrin-linker-redesign-computational.md</code></a> (comp-034 stub); <a href="../../lactoferrin-protease-stability-computational/"><code>lactoferrin-protease-stability-computational.md</code></a> (comp-005 vulnerability identification); <a href="../../daf-cd55-scr14-truncated-computational/"><code>daf-cd55-scr14-truncated-computational.md</code></a> (comp-012 — the removable-spacer counterexample worth knowing).</p>
 <h3 id="stability-variant-effect-prediction">Stability &amp; Variant Effect Prediction<a class="headerlink" href="#stability-variant-effect-prediction" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>SPURS</strong> — State-of-the-art ΔΔG prediction for mutations. Directly answers "will this mutation make the enzyme more or less stable?" (<a href="https://github.com/mj-hwang/SPURS">GitHub</a>)</li>
@@ -5908,7 +6006,19 @@
 <h3 id="practical-setup">Practical Setup<a class="headerlink" href="#practical-setup" title="Permanent link">&para;</a></h3>
 <p><strong>Free tier (Google Colab):</strong> ColabFold + ESM-2 + CodonTransformer + SPURS/RaSP = covers variant selection, codon optimization, and stability screening at zero cost.</p>
 <p><strong>Colab Pro ($10/month):</strong> Adds Boltz-2, RFdiffusion2, DiffDock for complex prediction, de novo design, and docking.</p>
-<p>See <a href="../docs/ai-bio-tools-playbook.md">ai-bio-tools-playbook.md</a> §Part 01b for full details, hardware requirements, and mapping to project prompts.</p>
+<p>See <a href="../ai-bio-tools-playbook/">ai-bio-tools-playbook.md</a> §Part 01b for full details, hardware requirements, and mapping to project prompts.</p>
+<hr />
+<h2 id="hugging-science-resource-index">Hugging Science Resource Index<a class="headerlink" href="#hugging-science-resource-index" title="Permanent link">&para;</a></h2>
+<p><a href="https://huggingscience.co/">Hugging Science</a> is a curated Hugging Face AI-for-science index with machine-readable topic files and an <a href="https://huggingscience.co/llms.txt"><code>/llms.txt</code></a> catalog. It is useful before launching a comp-NNN because it answers: "Does an open dataset, model, or benchmark already exist for this question?"</p>
+<p>Highest-priority Open Enzyme leads from the 2026-05-19 scan:</p>
+<ul>
+<li><strong>OpenADMET / CYP / PXR models</strong> — safety-side screen for compounding candidates, supplement-stack compounds, and repurposing hits.</li>
+<li><strong>SAIR / AQAffinity / CoLiPRI / TxGemma / Eve Bio</strong> — second-opinion layer for protein-ligand affinity, drug-target activity, and ABCG2 Q141K chaperone follow-up.</li>
+<li><strong>Ginkgo DRUG-seq, Tahoe-100M, X-Atlas, Perturb-Sapiens, STACK / TEDDY</strong> — perturbation-expression resources for ABCG2 regulation and complement-regulator upregulation questions.</li>
+<li><strong>Evo-2, Nucleotide Transformer, AlphaGenome, PromoterGPT, ChatNT</strong> — sequence / promoter / genomic-model leads for cassette-design review.</li>
+<li><strong>ThermoGFN-IF, ESM-2, OpenFold3, Boltz, RFdiffusion / ProteinMPNN guides</strong> — enzyme-engineering leads for uricase stability, lactoferrin linker redesign, and DAF SCR1-4 folding.</li>
+</ul>
+<p>Treat catalog entries as <strong>capability leads</strong>, not evidence. Any model output must still pass license review, benchmark-fit review, reproducibility checks, and the normal pre-commit grep-verify gate before it becomes load-bearing in the wiki.</p>
 <hr />
 <h2 id="gpt-rosalind-openai">GPT-Rosalind (OpenAI)<a class="headerlink" href="#gpt-rosalind-openai" title="Permanent link">&para;</a></h2>
 <h3 id="what-it-is">What It Is<a class="headerlink" href="#what-it-is" title="Permanent link">&para;</a></h3>

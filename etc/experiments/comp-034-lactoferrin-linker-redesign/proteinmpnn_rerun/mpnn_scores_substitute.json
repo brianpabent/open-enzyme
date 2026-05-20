@@ -1,0 +1,747 @@
+{
+  "_meta": {
+    "score_interpretation": "score is -log P of the design positions; lower = more preferred by ProteinMPNN"
+  },
+  "results": [
+    {
+      "fasta_idx": 73,
+      "source": "MPNN_unconstrained_GREEN",
+      "linker": "SAEEIAAREAT",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 1.0432145595550537,
+      "mpnn_global_score": 1.3745901584625244
+    },
+    {
+      "fasta_idx": 74,
+      "source": "MPNN_unconstrained_GREEN",
+      "linker": "SDAEIAARQAT",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 1.0873109102249146,
+      "mpnn_global_score": 1.3484303951263428
+    },
+    {
+      "fasta_idx": 72,
+      "source": "MPNN_unconstrained_GREEN",
+      "linker": "SAEEIAAREET",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 1.1266300678253174,
+      "mpnn_global_score": 1.3756771087646484
+    },
+    {
+      "fasta_idx": 70,
+      "source": "MPNN_unconstrained_GREEN",
+      "linker": "SDEEIAAREQT",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 1.169865608215332,
+      "mpnn_global_score": 1.3650844097137451
+    },
+    {
+      "fasta_idx": 71,
+      "source": "MPNN_unconstrained_GREEN",
+      "linker": "SDEEIAAQQAT",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 1.2193033695220947,
+      "mpnn_global_score": 1.3594324588775635
+    },
+    {
+      "fasta_idx": 1,
+      "source": "substitute",
+      "linker": "SEEEVAARRAR",
+      "cid": "0",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 1.4320251941680908,
+      "mpnn_global_score": 1.3916689157485962
+    },
+    {
+      "fasta_idx": 3,
+      "source": "substitute",
+      "linker": "SEEEPAARRAR",
+      "cid": "2",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 1.759276270866394,
+      "mpnn_global_score": 1.3790959119796753
+    },
+    {
+      "fasta_idx": 2,
+      "source": "substitute",
+      "linker": "EEEEVAARRAR",
+      "cid": "1",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 1.828913927078247,
+      "mpnn_global_score": 1.3934239149093628
+    },
+    {
+      "fasta_idx": 12,
+      "source": "substitute",
+      "linker": "SEEEVAAPPAR",
+      "cid": "11",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "4",
+      "mpnn_score": 2.0545084476470947,
+      "mpnn_global_score": 1.3830888271331787
+    },
+    {
+      "fasta_idx": 67,
+      "source": "MPNN_constrained_GREEN",
+      "linker": "NEEEQQQQQQQ",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 2.1350603103637695,
+      "mpnn_global_score": 1.3909025192260742
+    },
+    {
+      "fasta_idx": 65,
+      "source": "MPNN_constrained_GREEN",
+      "linker": "NEEEQQQQQEQ",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 2.147494316101074,
+      "mpnn_global_score": 1.3905394077301025
+    },
+    {
+      "fasta_idx": 66,
+      "source": "MPNN_constrained_GREEN",
+      "linker": "NEEEQQQQEEQ",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 2.176342248916626,
+      "mpnn_global_score": 1.403205156326294
+    },
+    {
+      "fasta_idx": 68,
+      "source": "MPNN_constrained_GREEN",
+      "linker": "NEEEQQQQEQQ",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 2.2098162174224854,
+      "mpnn_global_score": 1.383945345878601
+    },
+    {
+      "fasta_idx": 61,
+      "source": "MPNN_constrained_STRICT",
+      "linker": "NEEEQQQEEEQ",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 2.2526421546936035,
+      "mpnn_global_score": 1.3886401653289795
+    },
+    {
+      "fasta_idx": 69,
+      "source": "MPNN_constrained_GREEN",
+      "linker": "NEEEQQQEQEQ",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 2.2539432048797607,
+      "mpnn_global_score": 1.3955111503601074
+    },
+    {
+      "fasta_idx": 4,
+      "source": "substitute",
+      "linker": "EEEEPAARRAR",
+      "cid": "3",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "4",
+      "mpnn_score": 2.263176202774048,
+      "mpnn_global_score": 1.396769404411316
+    },
+    {
+      "fasta_idx": 62,
+      "source": "MPNN_constrained_STRICT",
+      "linker": "NEEEEQQEQEQ",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 2.265157461166382,
+      "mpnn_global_score": 1.4067376852035522
+    },
+    {
+      "fasta_idx": 9,
+      "source": "substitute",
+      "linker": "EEEEEEEEEEE",
+      "cid": "8",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 2.37825608253479,
+      "mpnn_global_score": 1.3859220743179321
+    },
+    {
+      "fasta_idx": 64,
+      "source": "MPNN_constrained_GREEN",
+      "linker": "NEEEQEEQDQQ",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 2.3968515396118164,
+      "mpnn_global_score": 1.391116738319397
+    },
+    {
+      "fasta_idx": 63,
+      "source": "MPNN_constrained_STRICT",
+      "linker": "NEEEEEQEQEQ",
+      "cid": "None",
+      "substitute_tier": "None",
+      "substitute_n_pass": "None",
+      "mpnn_score": 2.4116249084472656,
+      "mpnn_global_score": 1.398044466972351
+    },
+    {
+      "fasta_idx": 13,
+      "source": "substitute",
+      "linker": "SEEEVAAPPPR",
+      "cid": "12",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "4",
+      "mpnn_score": 2.4391093254089355,
+      "mpnn_global_score": 1.40876042842865
+    },
+    {
+      "fasta_idx": 23,
+      "source": "substitute",
+      "linker": "EEEQPQEQRHR",
+      "cid": "22",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 2.8861045837402344,
+      "mpnn_global_score": 1.4049994945526123
+    },
+    {
+      "fasta_idx": 47,
+      "source": "substitute",
+      "linker": "SEPEVNEQPNP",
+      "cid": "46",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 2.9260895252227783,
+      "mpnn_global_score": 1.4058576822280884
+    },
+    {
+      "fasta_idx": 33,
+      "source": "substitute",
+      "linker": "SHPPVDHDQEQ",
+      "cid": "32",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 2.9696390628814697,
+      "mpnn_global_score": 1.4073333740234375
+    },
+    {
+      "fasta_idx": 15,
+      "source": "substitute",
+      "linker": "PEEEPPAEQED",
+      "cid": "14",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 3.0825729370117188,
+      "mpnn_global_score": 1.4055534601211548
+    },
+    {
+      "fasta_idx": 19,
+      "source": "substitute",
+      "linker": "EEEEPQQDNAP",
+      "cid": "18",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 3.1113245487213135,
+      "mpnn_global_score": 1.3974019289016724
+    },
+    {
+      "fasta_idx": 54,
+      "source": "substitute",
+      "linker": "PEDEVHENPQP",
+      "cid": "53",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.2917320728302,
+      "mpnn_global_score": 1.4083898067474365
+    },
+    {
+      "fasta_idx": 6,
+      "source": "substitute",
+      "linker": "PEEEPAAPPAP",
+      "cid": "5",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 3.295822858810425,
+      "mpnn_global_score": 1.412205457687378
+    },
+    {
+      "fasta_idx": 24,
+      "source": "substitute",
+      "linker": "PEHQHNPEQQR",
+      "cid": "23",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.3064565658569336,
+      "mpnn_global_score": 1.4216816425323486
+    },
+    {
+      "fasta_idx": 22,
+      "source": "substitute",
+      "linker": "QEENNHAQDAH",
+      "cid": "21",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 3.324978828430176,
+      "mpnn_global_score": 1.419883131980896
+    },
+    {
+      "fasta_idx": 34,
+      "source": "substitute",
+      "linker": "SEHNQAAHPDN",
+      "cid": "33",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 3.3275697231292725,
+      "mpnn_global_score": 1.413172960281372
+    },
+    {
+      "fasta_idx": 46,
+      "source": "substitute",
+      "linker": "DEEDPANPQAH",
+      "cid": "45",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 3.329761266708374,
+      "mpnn_global_score": 1.4083691835403442
+    },
+    {
+      "fasta_idx": 32,
+      "source": "substitute",
+      "linker": "NENDNNAQPHE",
+      "cid": "31",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.409985303878784,
+      "mpnn_global_score": 1.4173551797866821
+    },
+    {
+      "fasta_idx": 35,
+      "source": "substitute",
+      "linker": "SQNHEHHPDAE",
+      "cid": "34",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.4172980785369873,
+      "mpnn_global_score": 1.4127439260482788
+    },
+    {
+      "fasta_idx": 11,
+      "source": "substitute",
+      "linker": "EEEEVPPPRPR",
+      "cid": "10",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "3",
+      "mpnn_score": 3.423105001449585,
+      "mpnn_global_score": 1.4061367511749268
+    },
+    {
+      "fasta_idx": 8,
+      "source": "substitute",
+      "linker": "DEEDEHHQNPE",
+      "cid": "7",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.424445867538452,
+      "mpnn_global_score": 1.408798336982727
+    },
+    {
+      "fasta_idx": 21,
+      "source": "substitute",
+      "linker": "DEDEDAPNPQR",
+      "cid": "20",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.4627678394317627,
+      "mpnn_global_score": 1.4276342391967773
+    },
+    {
+      "fasta_idx": 5,
+      "source": "substitute",
+      "linker": "EEEEPAAPPAP",
+      "cid": "4",
+      "substitute_tier": "GREEN",
+      "substitute_n_pass": "4",
+      "mpnn_score": 3.4664833545684814,
+      "mpnn_global_score": 1.414149522781372
+    },
+    {
+      "fasta_idx": 57,
+      "source": "substitute",
+      "linker": "NDNEDPPEQHQ",
+      "cid": "56",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.478902578353882,
+      "mpnn_global_score": 1.4250988960266113
+    },
+    {
+      "fasta_idx": 49,
+      "source": "substitute",
+      "linker": "QEQDNPPDNQQ",
+      "cid": "48",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.5198769569396973,
+      "mpnn_global_score": 1.411312222480774
+    },
+    {
+      "fasta_idx": 51,
+      "source": "substitute",
+      "linker": "QQQNQDHRPDE",
+      "cid": "50",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.5286011695861816,
+      "mpnn_global_score": 1.3991352319717407
+    },
+    {
+      "fasta_idx": 7,
+      "source": "substitute",
+      "linker": "EEEENNHQDPP",
+      "cid": "6",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.5776124000549316,
+      "mpnn_global_score": 1.4014347791671753
+    },
+    {
+      "fasta_idx": 29,
+      "source": "substitute",
+      "linker": "DEDQDDEPDAP",
+      "cid": "28",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.605802297592163,
+      "mpnn_global_score": 1.4211866855621338
+    },
+    {
+      "fasta_idx": 36,
+      "source": "substitute",
+      "linker": "DQQEDANPPNH",
+      "cid": "35",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.6221954822540283,
+      "mpnn_global_score": 1.4389110803604126
+    },
+    {
+      "fasta_idx": 18,
+      "source": "substitute",
+      "linker": "SDNHPPQPEDN",
+      "cid": "17",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.639141321182251,
+      "mpnn_global_score": 1.4134783744812012
+    },
+    {
+      "fasta_idx": 48,
+      "source": "substitute",
+      "linker": "HDQEPEAHPPH",
+      "cid": "47",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.687976598739624,
+      "mpnn_global_score": 1.424699306488037
+    },
+    {
+      "fasta_idx": 26,
+      "source": "substitute",
+      "linker": "HHNENEAPPDE",
+      "cid": "25",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.6882545948028564,
+      "mpnn_global_score": 1.425552248954773
+    },
+    {
+      "fasta_idx": 40,
+      "source": "substitute",
+      "linker": "EENEPPDPNHR",
+      "cid": "39",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.6970338821411133,
+      "mpnn_global_score": 1.4244518280029297
+    },
+    {
+      "fasta_idx": 14,
+      "source": "substitute",
+      "linker": "DEDEDNHQDPP",
+      "cid": "13",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.727903127670288,
+      "mpnn_global_score": 1.4119045734405518
+    },
+    {
+      "fasta_idx": 56,
+      "source": "substitute",
+      "linker": "PNEEPPQPNEN",
+      "cid": "55",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.7636618614196777,
+      "mpnn_global_score": 1.4102963209152222
+    },
+    {
+      "fasta_idx": 28,
+      "source": "substitute",
+      "linker": "PDENPDNRPQH",
+      "cid": "27",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.7696549892425537,
+      "mpnn_global_score": 1.4276411533355713
+    },
+    {
+      "fasta_idx": 50,
+      "source": "substitute",
+      "linker": "NEDPPAPNHEN",
+      "cid": "49",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.7837774753570557,
+      "mpnn_global_score": 1.4307571649551392
+    },
+    {
+      "fasta_idx": 44,
+      "source": "substitute",
+      "linker": "SPPQPEPNRPP",
+      "cid": "43",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "0",
+      "mpnn_score": 3.794717311859131,
+      "mpnn_global_score": 1.4114960432052612
+    },
+    {
+      "fasta_idx": 59,
+      "source": "substitute",
+      "linker": "PPDHHPDDQEN",
+      "cid": "58",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.8199923038482666,
+      "mpnn_global_score": 1.426661491394043
+    },
+    {
+      "fasta_idx": 52,
+      "source": "substitute",
+      "linker": "HQDHPPDDENH",
+      "cid": "51",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.8227005004882812,
+      "mpnn_global_score": 1.4047085046768188
+    },
+    {
+      "fasta_idx": 42,
+      "source": "substitute",
+      "linker": "EEPPQPHDDNR",
+      "cid": "41",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.8360471725463867,
+      "mpnn_global_score": 1.4292190074920654
+    },
+    {
+      "fasta_idx": 43,
+      "source": "substitute",
+      "linker": "PPHENEPRQPD",
+      "cid": "42",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "0",
+      "mpnn_score": 3.8376259803771973,
+      "mpnn_global_score": 1.4045943021774292
+    },
+    {
+      "fasta_idx": 60,
+      "source": "substitute",
+      "linker": "PDENDPEQHEP",
+      "cid": "59",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.8761160373687744,
+      "mpnn_global_score": 1.4187870025634766
+    },
+    {
+      "fasta_idx": 25,
+      "source": "substitute",
+      "linker": "PENEVPNPPEP",
+      "cid": "24",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "0",
+      "mpnn_score": 3.877047538757324,
+      "mpnn_global_score": 1.4217673540115356
+    },
+    {
+      "fasta_idx": 31,
+      "source": "substitute",
+      "linker": "ENDNPPAEQNP",
+      "cid": "30",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.8839194774627686,
+      "mpnn_global_score": 1.4226837158203125
+    },
+    {
+      "fasta_idx": 58,
+      "source": "substitute",
+      "linker": "DDPQPPHQENP",
+      "cid": "57",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.903653621673584,
+      "mpnn_global_score": 1.4121825695037842
+    },
+    {
+      "fasta_idx": 37,
+      "source": "substitute",
+      "linker": "HPEHNQPNNPE",
+      "cid": "36",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.9618337154388428,
+      "mpnn_global_score": 1.4375921487808228
+    },
+    {
+      "fasta_idx": 38,
+      "source": "substitute",
+      "linker": "QPPEDNAPPND",
+      "cid": "37",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 3.9734046459198,
+      "mpnn_global_score": 1.4175934791564941
+    },
+    {
+      "fasta_idx": 41,
+      "source": "substitute",
+      "linker": "PEDEEPPDPHQ",
+      "cid": "40",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 3.9988176822662354,
+      "mpnn_global_score": 1.4200432300567627
+    },
+    {
+      "fasta_idx": 16,
+      "source": "substitute",
+      "linker": "HEEQHDPPEPP",
+      "cid": "15",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 4.007676601409912,
+      "mpnn_global_score": 1.4172296524047852
+    },
+    {
+      "fasta_idx": 30,
+      "source": "substitute",
+      "linker": "EEQEDAHHPPD",
+      "cid": "29",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 4.016538619995117,
+      "mpnn_global_score": 1.4152195453643799
+    },
+    {
+      "fasta_idx": 45,
+      "source": "substitute",
+      "linker": "PEHEPPDPQNP",
+      "cid": "44",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 4.033487796783447,
+      "mpnn_global_score": 1.416672706604004
+    },
+    {
+      "fasta_idx": 20,
+      "source": "substitute",
+      "linker": "PEHEQAPHPPH",
+      "cid": "19",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 4.066586017608643,
+      "mpnn_global_score": 1.4244916439056396
+    },
+    {
+      "fasta_idx": 53,
+      "source": "substitute",
+      "linker": "PEDQDPHNPEP",
+      "cid": "52",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 4.086990833282471,
+      "mpnn_global_score": 1.4126821756362915
+    },
+    {
+      "fasta_idx": 27,
+      "source": "substitute",
+      "linker": "PPENEPPEHHN",
+      "cid": "26",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 4.09230899810791,
+      "mpnn_global_score": 1.4247342348098755
+    },
+    {
+      "fasta_idx": 55,
+      "source": "substitute",
+      "linker": "PPNPVPPQPHR",
+      "cid": "54",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "0",
+      "mpnn_score": 4.110249996185303,
+      "mpnn_global_score": 1.4037911891937256
+    },
+    {
+      "fasta_idx": 17,
+      "source": "substitute",
+      "linker": "NEPDEEPPHPH",
+      "cid": "16",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "2",
+      "mpnn_score": 4.14811897277832,
+      "mpnn_global_score": 1.422245979309082
+    },
+    {
+      "fasta_idx": 39,
+      "source": "substitute",
+      "linker": "PQQPPEPNPAD",
+      "cid": "38",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "0",
+      "mpnn_score": 4.269461154937744,
+      "mpnn_global_score": 1.4224143028259277
+    },
+    {
+      "fasta_idx": 10,
+      "source": "substitute",
+      "linker": "PPPPPPPPPPP",
+      "cid": "9",
+      "substitute_tier": "FAIL",
+      "substitute_n_pass": "1",
+      "mpnn_score": 5.13638162612915,
+      "mpnn_global_score": 1.4395208358764648
+    }
+  ]
+}

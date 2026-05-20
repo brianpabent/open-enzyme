@@ -1866,6 +1866,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#per-question-platform-selection-plasmidsaurus-vs-minion-decision-matrix-added-2026-05-19-cluster-n-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-question platform selection — Plasmidsaurus vs MinION decision matrix (added 2026-05-19, Cluster N walkthrough)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4785,6 +4796,8 @@
       
         
       
+        
+      
     
     
     
@@ -5994,6 +6007,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -6841,6 +6889,68 @@ Brian Abent</p>
 <h4 id="in-house-minion-as-long-term-alternative">In-house MinION as long-term alternative<a class="headerlink" href="#in-house-minion-as-long-term-alternative" title="Permanent link">&para;</a></h4>
 <p>The hardware/wetware/pipeline for the Plasmidsaurus QC pipeline overlaps <strong>completely</strong> with the personal-genome MinION setup documented in <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a>. Same MinION + Dorado basecaller + Flye/Clair3 variant-calling pipeline that sequences a human genome handles strain-genome assembly + variant verification + plasmid validation. <strong>One amortized hardware investment, two outputs.</strong> This is a deliberate dual-use property of the platform's infrastructure choices.</p>
 <p><strong>Cost note (calibrated 2026-05-08):</strong> the MinION at-home buildout is ~$5,000 all-in (device + supporting wet-lab equipment + GPU laptop), plus ~$1,000/run for flow cell + reagents at usable read depth. Per-strain genome sequencing once the buildout exists is in the ~$300–500 range (single flow cell amortized across multiple strains is feasible — a MinION flow cell can multiplex ~12-24 microbial genomes per run depending on read depth target). <strong>The Plasmidsaurus pricing above means in-house MinION crosses the breakeven only when N gets large enough or when a contributor's hardware investment becomes platform infrastructure.</strong> For Phase 0 strain builds (N ≈ 1–5 per year), outsource to Plasmidsaurus. For Phase 1+ with sustained throughput (or a contributor donating MinION time), in-house wins. As of 2026-05-17 the Phase 0 default is outsourced — <code>personal-genome-protocol.md</code> §"Tier table" remains the relevant cost-justification document for any standalone MinION buildout.</p>
+<h4 id="per-question-platform-selection-plasmidsaurus-vs-minion-decision-matrix-added-2026-05-19-cluster-n-walkthrough">Per-question platform selection — Plasmidsaurus vs MinION decision matrix (added 2026-05-19, Cluster N walkthrough)<a class="headerlink" href="#per-question-platform-selection-plasmidsaurus-vs-minion-decision-matrix-added-2026-05-19-cluster-n-walkthrough" title="Permanent link">&para;</a></h4>
+<p>Both platforms answer overlapping "is the DNA what I designed?" questions but at different cost/turnaround/N-scale points. This table maps each QC question to the preferred platform under current pricing:</p>
+<table>
+<thead>
+<tr>
+<th>QC question</th>
+<th>Preferred platform</th>
+<th>Cost</th>
+<th>Turnaround</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pre-transformation plasmid verification</strong> (whole plasmid sequencing)</td>
+<td><strong>Plasmidsaurus</strong></td>
+<td>$15/plasmid</td>
+<td>Next-day</td>
+<td>No MinION equivalent at this price; outsourced is dramatically cheaper than a flow cell</td>
+</tr>
+<tr>
+<td><strong>Junction PCR amplicon verification</strong> (cassette insertion site)</td>
+<td><strong>Plasmidsaurus</strong></td>
+<td>$15/amplicon</td>
+<td>Next-day</td>
+<td>Same cost-asymmetry as plasmid sequencing</td>
+</tr>
+<tr>
+<td><strong>Transformant clone screening</strong> (N = 5–20 colonies, identity check)</td>
+<td><strong>Plasmidsaurus</strong> Genotyping Analysis</td>
+<td>$30/clone (multiplexed)</td>
+<td>1–2 days</td>
+<td>MinION needs full library prep per clone; doesn't scale at this N</td>
+</tr>
+<tr>
+<td><strong>Multi-strain WGS</strong> (N &gt; 12 microbial genomes, e.g., transformant panel finalization)</td>
+<td><strong>MinION</strong></td>
+<td>~$500/strain when amortized across 12–24 strains/flow cell</td>
+<td>~3 days</td>
+<td>MinION's per-strain cost-at-scale wins at N &gt; 12; flow cell amortization is the cost edge</td>
+</tr>
+<tr>
+<td><strong>Final genome release</strong> (production-strain provenance + full assembly)</td>
+<td><strong>MinION</strong> (if buildout exists) OR <strong>Plasmidsaurus WGS</strong> ($250 + extraction)</td>
+<td>$250–500 depending on platform</td>
+<td>3–7 days</td>
+<td>Either platform produces release-grade; choice depends on local infrastructure</td>
+</tr>
+<tr>
+<td><strong>Personal-genome buildout (dual-use)</strong></td>
+<td><strong>MinION</strong></td>
+<td>Buildout amortizes across strain QC + personal pharmacogenomics</td>
+<td>Per-run</td>
+<td>The dual-use pattern: ~$5K hardware investment doubles as personal-genome infrastructure per <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a> Tier 5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Operational pattern:</strong>
+- <strong>Phase 0 (N = 1–5 strains/year):</strong> outsource everything to Plasmidsaurus. Lowest infrastructure burden, fastest per-question turnaround, cleanest decision criteria.
+- <strong>Phase 1+ (N ≥ 12 strains/year OR contributor donates MinION time):</strong> Plasmidsaurus for pre-transformation (plasmid + amplicon + clone screening) + MinION for multi-strain WGS finalization. Hybrid pattern uses each platform's cost-edge.
+- <strong>Dual-use unlock:</strong> if a contributor has a MinION buildout for personal-genome use, the strain-QC layer comes free (~$1K/flow cell × 12–24 strains/flow cell). This is the platform-infrastructure-sharing pattern named in <a href="../etc/open-source-platform/"><code>etc/open-source-platform.md</code></a>.</p>
+<p><strong>Cross-reference:</strong> <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a> for MinION buildout cost-justification + sequencing tiers; <a href="../validation-experiments/"><code>validation-experiments.md</code></a> §1.9 + §1.10 + §1.25 for the specific Plasmidsaurus QC adds documented per-experiment.</p>
 <h3 id="how-much-uricase-per-gram-of-koji">How Much Uricase Per Gram of Koji?<a class="headerlink" href="#how-much-uricase-per-gram-of-koji" title="Permanent link">&para;</a></h3>
 <p>Literature on heterologous protein expression in <em>A. oryzae</em> reports yields of <strong>1–10 g/L</strong> for well-expressed secreted proteins (e.g., lipase, glucoamylase). These are industrial fermentation numbers. For a koji solid-state fermentation, yields are typically reported as mg protein per gram dry substrate.</p>
 <p>Conservative estimate for uricase expression under PamyB on rice: <strong>0.5–5 mg uricase per gram dry koji</strong>. This is the range we'll use for dosing calculations in Section 8.</p>

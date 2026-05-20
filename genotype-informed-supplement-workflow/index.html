@@ -3250,6 +3250,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tier-2-assay-gap-for-microbiome-derived-metabolites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 assay gap for microbiome-derived metabolites
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3506,6 +3517,8 @@
       
         
           
+        
+      
         
       
         
@@ -4797,6 +4810,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5248,6 +5296,16 @@
 <p>A growing list of compound-specific Tier 3 anchors (GC-MS / HPLC / spectrophotometric vendor or community-biolab assays) that the Tier 2 home assays calibrate against. Currently scattered across <a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code></a>, <a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a>, and <a href="../quantification-ladder/"><code>quantification-ladder.md</code></a>. Consolidating into a single anchor table is queued for when enough Tier 3 entries land — premature today; ~6+ entries justifies the index.</p>
 <h3 id="multi-user-pilot-validation">Multi-user pilot validation<a class="headerlink" href="#multi-user-pilot-validation" title="Permanent link">&para;</a></h3>
 <p>The workflow has been instantiated at n=1. The natural next-step gate is an N=5–10 multi-user pilot that validates the workflow under realistic user-variability conditions before the larger H09 community-fermentation trial. Tracked as walkthrough Item 20 (open-question-3 in the 2026-05-15 sweep batch).</p>
+<h3 id="tier-2-assay-gap-for-microbiome-derived-metabolites">Tier 2 assay gap for microbiome-derived metabolites<a class="headerlink" href="#tier-2-assay-gap-for-microbiome-derived-metabolites" title="Permanent link">&para;</a></h3>
+<p>The Q141K worked example above uses <strong>stool SCFA panel</strong> as the Tier 2 batch QC step for butyrate delivery (step 4). The SCFA panel verifies <strong>downstream exposure</strong> (was butyrate present in stool?) but is NOT a <strong>direct potency measurement</strong> of the supplement input (how much butyrate was actually delivered, at what tissue site, in what concentration?). The quantification ladder's "calibrate once at Tier 3, track batches at Tier 2" discipline (per <a href="../quantification-ladder/"><code>quantification-ladder.md</code></a>) breaks for microbiome-derived metabolites because there's no Tier 2 home assay for butyrate (or any SCFA) that's well-calibrated against a Tier 3 GC-MS anchor at the relevant biological concentration.</p>
+<p><strong>This is a known methodology gap, not a workflow failure.</strong> It applies to any future intervention relying on microbiome-derived metabolites (SCFAs, bile acids, indoles, lactate, etc.). Three candidate Tier 2 paths worth investigating:</p>
+<ol>
+<li><strong>Colorimetric</strong> — does a butyrate-specific colorimetric reagent exist at hobbyist-lab affordability? (Most SCFA assays require derivatization + GC-MS.)</li>
+<li><strong>Enzymatic</strong> — could an enzyme-coupled assay (e.g., acetyl-CoA synthetase-coupled NADH readout) be miniaturized for Tier 2?</li>
+<li><strong>Breath hydrogen proxy</strong> — a hydrogen breath test correlates loosely with colonic fermentation activity; could it be calibrated as a <em>change-in-butyrate-production</em> proxy rather than an absolute butyrate concentration?</li>
+</ol>
+<p>None of these are validated as of 2026-05-19. <strong>A validated Tier 2 butyrate proxy would strengthen the workflow not just for Q141K but for any future microbiome-metabolite intervention</strong> — and is queued as an open methodology question for the platform's quantification-ladder track.</p>
+<p>Tracked from 2026-05-19 sweep-walkthrough Cluster B1.</p>
 <h2 id="cross-references">Cross-references<a class="headerlink" href="#cross-references" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../self-experiment-protocol/"><code>self-experiment-protocol.md</code></a> — parent self-experiment framework (§3–§4 biomarker tracking, §7 daily log); §12 now points here for the workflow detail</li>

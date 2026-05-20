@@ -2473,6 +2473,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Chassis-as-formulation — the silent advantage of oral whole-cell delivery for protein enzymes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#catalase-capacity-principle-route-agnostic-h2o2-safety-design-rule-added-2026-05-19-cluster-f3-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catalase capacity principle — route-agnostic H₂O₂ safety design rule (added 2026-05-19, Cluster F3 walkthrough)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3567,6 +3584,8 @@
       
         
           
+        
+      
         
       
         
@@ -4858,6 +4877,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5514,6 +5568,24 @@
 </ol>
 <p><strong>Implication for OE platform thesis:</strong> the whole-cell oral chassis is doing more than chassis-economics work. It's solving a real biochemistry problem (H2O2 housekeeping for an oxidase enzyme) that <strong>every alternative format has to re-solve through formulation engineering.</strong> This is a non-obvious advantage that doesn't show up when the comparison is framed as "oral koji vs IV rasburicase" on cost alone. The catalase co-localization is <em>intrinsic</em> to the chassis and <em>acquired</em> to any other format.</p>
 <p>It is also a <em>transferable</em> concept: any oxidase or peroxidase-byproduct-generating enzyme considered for OE production (D-amino acid oxidase, monoamine oxidases, etc.) would inherit the same co-localized catalase housekeeping if expressed in the same chassis. The chassis is generic; the housekeeping is generic.</p>
+<h3 id="catalase-capacity-principle-route-agnostic-h2o2-safety-design-rule-added-2026-05-19-cluster-f3-walkthrough">Catalase capacity principle — route-agnostic H₂O₂ safety design rule (added 2026-05-19, Cluster F3 walkthrough)<a class="headerlink" href="#catalase-capacity-principle-route-agnostic-h2o2-safety-design-rule-added-2026-05-19-cluster-f3-walkthrough" title="Permanent link">&para;</a></h3>
+<p><strong>For any uricase delivery format, H₂O₂ safety is determined by total catalase capacity at the site of H₂O₂ generation, not by residue-level proximity. The specific mechanism (peroxisomal co-localization, co-formulation, fusion protein, bulk-phase scavenging from dispersed droplets) is an implementation detail.</strong></p>
+<p>This principle generalizes across delivery routes — the same architectural argument the oral whole-cell chassis makes via peroxisomal co-localization (above) is independently validated for intra-articular delivery by <a href="../intra-articular-uricase-h2o2-reaction-diffusion-computational/">comp-035</a> (Pickering emulsion's FRET-confirmed &lt;10 nm proximity is NOT the safety mechanism; <strong>bulk-phase catalase scavenging from catalase distributed across all dispersed droplets dominates</strong> — mathematically equivalent to free co-formulated catalase at the same total dose). Both routes solve the same biochemistry problem through different mechanisms; both depend on the same load-bearing variable.</p>
+<p><strong>The route-agnostic safety criterion:</strong></p>
+<blockquote>
+<p>Does the format deliver sufficient catalase capacity to the site of H₂O₂ generation, given the catalase kcat/Km and the format's catalase loading + retention profile?</p>
+</blockquote>
+<p>If yes → H₂O₂ safety is in hand regardless of geometric arrangement. If no → no proximity engineering rescues a fundamentally under-catalased format.</p>
+<p><strong>Catalase kcat/Km is the dominant sensitivity driver</strong> across the three IA architectures comp-035 modeled (Spearman r = −0.95 to −0.97). Production economics + in vivo stability + proportional dosing of catalase are first-order chassis-selection variables; the residue-level co-localization geometry is a secondary detail.</p>
+<p><strong>Evaluating new uricase delivery formats against this principle:</strong></p>
+<ul>
+<li><strong>Rectal suppository</strong> (distal-colon depot per Row 1 / §Open exploration questions #2): does the formulation include co-loaded catalase at proportional dose? If the format is a live engineered organism, peroxisomal co-localization is intrinsic; if it's a purified-enzyme format, co-formulated catalase or a uricase-catalase fusion (Schiavon / Veronese class) is needed at proportional total capacity.</li>
+<li><strong>Inhaled / pulmonary uricase</strong>: H₂O₂ generation in alveolar tissue is contraindicated (Row 3 / §Recombinant proteins). The catalase capacity principle would require alveolar-resident catalase activity to scavenge H₂O₂ before oxidative damage to surfactant-producing epithelium — endogenous lung catalase is not abundant. The principle does NOT rescue this format; the inhaled/pulmonary uricase route remains contraindicated by the lung-tissue catalase-capacity profile, not by proximity considerations.</li>
+<li><strong>Transdermal uricase</strong> (if MW limit could be solved by future delivery tech): same question — does the skin tissue at the application site have sufficient catalase capacity for the H₂O₂ flux at the intended uricase loading?</li>
+<li><strong>Future fusion-protein formats</strong> (uricase-catalase chimera per <a href="../intra-articular-uricase-h2o2-reaction-diffusion-computational/">comp-036 future work hooks</a>): the fusion guarantees proportional stoichiometry in vivo, addressing the catalase-capacity principle's most failure-prone variable.</li>
+</ul>
+<p><strong>Net implication:</strong> evaluate new uricase delivery formats by computing the local catalase capacity (kcat × [catalase] × residence time) vs. the local H₂O₂ flux (uricase activity × [urate]) at the intended site. If the ratio comfortably clears the safety threshold (&lt;10 µM steady-state [H₂O₂] per comp-035), commit to format engineering. If it doesn't, no formulation-engineering ingenuity rescues a fundamentally under-catalased design.</p>
+<p><strong>Cross-references:</strong> <a href="../intra-articular-uricase-h2o2-reaction-diffusion-computational/"><code>intra-articular-uricase-h2o2-reaction-diffusion-computational.md</code></a> (comp-035 quantitative anchor); <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §6</a> (IA uricase implementation); <a href="../engineered-koji-protocol/"><code>engineered-koji-protocol.md</code> §"The Hydrogen Peroxide Question — and why the chassis solves it for free"</a> (oral chassis's intrinsic catalase capacity); <a href="../gout-kill-chain-delivery-routes/"><code>gout-kill-chain-delivery-routes.md</code></a> (route map). Same architectural-surfacing pattern as the closed-loop pharmacogenomics pipeline (<code>etc/open-source-platform.md</code>), Platform Principle 9 substrate engineering, and the chokepoint coverage completeness audit (<code>nlrp3-exploit-map.md</code>) — make visible what the platform already operates but hasn't named.</p>
 <hr />
 <h2 id="why-sc-uricase-doesnt-work-even-with-catalase-co-formulation-even-with-tolerogenic-np">Why SC uricase doesn't work (even with catalase co-formulation, even with tolerogenic NP)<a class="headerlink" href="#why-sc-uricase-doesnt-work-even-with-catalase-co-formulation-even-with-tolerogenic-np" title="Permanent link">&para;</a></h2>
 <p>A 2026-05-15 conversation surfaced the obvious-to-ask-but-not-obvious-to-answer question: could uricase be delivered SC? Brief answer: no, for layered reasons that compound and that are not solved by adding components.</p>

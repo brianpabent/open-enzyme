@@ -2092,6 +2092,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#substrate-accumulated-vs-biosynthesized-origin-of-compound-discipline-added-2026-05-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Substrate-accumulated vs biosynthesized — origin-of-compound discipline (added 2026-05-19)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sop-7-substrate-engineering-protocol-matrix-added-2026-05-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOP-7 — Substrate Engineering Protocol Matrix (added 2026-05-19)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sop-5-strain-banking-its-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3538,6 +3560,8 @@
       
         
       
+        
+      
     
     
     
@@ -4747,6 +4771,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5223,7 +5282,213 @@
 <li><strong>Tier 4 outsourced</strong> — only invoked if regulatory submission requires it. Adds GLP/GMP overhead but uses the same analytical chemistry as Tier 3.</li>
 </ol>
 <p><strong>Why this matters operationally:</strong> without the tiered framework, every batch would need full Tier 3 HPLC (cost-prohibitive at scale and impossible for distributed open-source contributors without HPLC access). With it, Tier 3 is invoked once per protocol revision; Tier 2 handles batch consistency cheaply; Tier 1 keeps end-user dosing tied to verified content. Same discipline that lets the koji track work as a home-fermentation project rather than a CRO-only project.</p>
+<h3 id="substrate-accumulated-vs-biosynthesized-origin-of-compound-discipline-added-2026-05-19">Substrate-accumulated vs biosynthesized — origin-of-compound discipline (added 2026-05-19)<a class="headerlink" href="#substrate-accumulated-vs-biosynthesized-origin-of-compound-discipline-added-2026-05-19" title="Permanent link">&para;</a></h3>
+<p>Not all compounds detected in a mushroom extract are produced by the fungus. <strong>Substrate-accumulated compounds</strong> pass through from the cultivation substrate (e.g., plant flavonoids from oak sawdust) and concentrate in mycelium without being biosynthesized by fungal metabolism. <strong>Biosynthesized compounds</strong> are produced by the fungal genome's secondary-metabolite biosynthetic gene clusters (BGCs). The two have fundamentally different batch-variability profiles:</p>
+<table>
+<thead>
+<tr>
+<th>Compound</th>
+<th>Origin</th>
+<th>Dominant batch-variance source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cordycepin</strong> (<em>C. militaris</em>)</td>
+<td>Biosynthesized (cns1+cns2 BGC)</td>
+<td>Strain genetics + fermentation conditions</td>
+</tr>
+<tr>
+<td><strong>Ergothioneine</strong> (<em>Pleurotus</em> / koji)</td>
+<td>Biosynthesized (egtBCD pathway)</td>
+<td>Strain genetics + substrate sulfur availability</td>
+</tr>
+<tr>
+<td><strong>GLPP</strong> (<em>G. lucidum</em>)</td>
+<td>Biosynthesized (mycelium-specific polysaccharide-peptide)</td>
+<td>Strain genetics + cultivation stage</td>
+</tr>
+<tr>
+<td><strong>Kojic acid</strong> (<em>A. oryzae</em>)</td>
+<td>Biosynthesized</td>
+<td>Strain genetics + carbon source</td>
+</tr>
+<tr>
+<td><strong>Quercetin, genistein, daidzein, morin</strong> (in mushroom extracts)</td>
+<td><strong>Substrate-accumulated</strong> (plant flavonoids passed through)</td>
+<td><strong>Substrate lot + source</strong> (oak sawdust species, geographic origin)</td>
+</tr>
+<tr>
+<td><strong>Various polyphenols</strong> (in mushroom extracts grown on hardwood)</td>
+<td>Often substrate-accumulated</td>
+<td>Substrate lot + source</td>
+</tr>
+</tbody>
+</table>
+<p><strong>QC implication:</strong> for substrate-accumulated compounds, <strong>substrate lot variation — not strain genetics — dominates batch-to-batch variability.</strong> The Tier 2 colorimetric assay will detect a shifted quercetin batch but cannot distinguish "strain drift" from "substrate lot change" as the root cause. For H06 falsification-card Dimension 2 (characterization protocol robustness, ±15% inter-operator), substrate-accumulated origin must be a documented variable, not an invisible confound.</p>
+<p><strong>Required documentation fields (cultivation data sheet):</strong>
+- <strong>Substrate species / source</strong> (e.g., oak species, sawdust grade, lot number, geographic origin, supplier)
+- <strong>Substrate lot identifier</strong> (vendor lot, harvest date, treatment history)
+- <strong>Substrate composition characterization</strong> (if available — lignin content, ash content, mineral profile, any vendor analytical certificate)
+- <strong>Substrate-accumulated vs biosynthesized origin tag</strong> (per the table above; applies on a per-compound basis)</p>
+<p>For compounds tagged "substrate-accumulated," the Tier 2 batch QC reading must be paired with substrate-lot documentation to be interpretable. A Tier 2 reading showing 20% drop in quercetin content is uninformative without knowing whether the substrate lot also changed.</p>
+<p><strong>See also:</strong> the "substrate as engineering lever" question (<code>etc/open-source-platform.md</code> §"Open Questions — Substrate as Engineering Lever") explores the inverse direction — whether substrate composition can be <em>deliberately tuned</em> to enhance compound production or shift the bioavailable compound profile. The documentation discipline above is the prerequisite QC anchor for any substrate-engineering experiment.</p>
 <p><strong>Cross-reference to <a href="../medicinal-mushroom-complement-track/">§"Reality check — current consumer-grade fruiting-body extracts deliver sub-therapeutic cordycepin doses"</a>:</strong> the tiered framework is <em>also</em> the discipline that catches dose-vs-product-content mismatches like the Real Mushrooms Cordyceps-M case (3-4 mg cordycepin per 1 g serving at 0.4% content). A Tier 2 colorimetric check on a commercial extract would surface this mismatch before it became a "URAT1 layer" recommendation. Anyone evaluating a commercial mushroom extract for therapeutic-dose targeting should run the Tier 2 check (or insist on the manufacturer's published HPLC content) before downstream reasoning depends on the active-compound dose.</p>
+<h3 id="sop-7-substrate-engineering-protocol-matrix-added-2026-05-19">SOP-7 — Substrate Engineering Protocol Matrix (added 2026-05-19)<a class="headerlink" href="#sop-7-substrate-engineering-protocol-matrix-added-2026-05-19" title="Permanent link">&para;</a></h3>
+<p><strong>Status:</strong> Draft, primary-literature-anchored. Ready for self-experimentation Tier 1+2; Tier 3 HPLC validation queued per candidate species + reagent pair.</p>
+<p>The substrate engineering lit scan (<a href="../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md"><code>logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md</code></a>) surfaced quantitative effect-size anchors for substrate-level interventions across the medicinal-mushroom-complement track. This SOP captures the recipe table for distributed contributors. See also Platform Principle 9 in <a href="../etc/open-source-platform/"><code>etc/open-source-platform.md</code></a> for the platform-level discipline.</p>
+<p><strong>Protocol matrix (per compound × species):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Target Compound</th>
+<th>Species</th>
+<th>Substrate Intervention</th>
+<th>Expected Magnitude</th>
+<th>Format</th>
+<th>Primary Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cordycepin</td>
+<td><em>C. militaris</em></td>
+<td>L-alanine 12 g/L in PDA + light cycle</td>
+<td>3×</td>
+<td>Solid PDA</td>
+<td>Yu 2024 PMC11698586</td>
+</tr>
+<tr>
+<td>Cordycepin</td>
+<td><em>C. militaris</em></td>
+<td>Corn steep liquor hydrolysate 1.5 g/L + peptone 3.5 g/L</td>
+<td>4.83×</td>
+<td>Submerged liquid</td>
+<td>Chang 2024 PMC10931215</td>
+</tr>
+<tr>
+<td>Cordycepin</td>
+<td><em>C. militaris</em></td>
+<td>Oleic acid substrate supplementation</td>
+<td>1.5–3× (51–202% boost)</td>
+<td>Solid or liquid</td>
+<td>Turk 2022 PMC9627333</td>
+</tr>
+<tr>
+<td>Cordycepin</td>
+<td><em>C. militaris</em></td>
+<td>Insect substrate (<em>Allomyrina dichotoma</em>, oleic-rich) vs. silkworm pupae</td>
+<td>34×</td>
+<td>Solid</td>
+<td>Turk 2022</td>
+</tr>
+<tr>
+<td>Ganoderic acids</td>
+<td><em>G. lucidum</em></td>
+<td>Microcrystalline cellulose 1.5% added at day 3</td>
+<td>+85.96%</td>
+<td>Submerged liquid</td>
+<td>Hu 2017 PMC5395960</td>
+</tr>
+<tr>
+<td>Ganoderic acids</td>
+<td><em>G. lucidum</em></td>
+<td>D-galactose 0.5% added at day 3</td>
+<td>+63.9%</td>
+<td>Submerged liquid</td>
+<td>Hu 2017</td>
+</tr>
+<tr>
+<td>Ganoderic acids</td>
+<td><em>G. lucidum</em></td>
+<td>Wood-log vs. substitute substrate</td>
+<td>1.2× total; 2.19× lucidenic acids (profile shift)</td>
+<td>Solid</td>
+<td>Luo 2024 PMC10879320</td>
+</tr>
+<tr>
+<td>Ergothioneine</td>
+<td>Multiple species (<em>Ganoderma</em>, <em>Lentinula</em>, <em>Pleurotus</em>)</td>
+<td>L-methionine 2 mM in mycelial culture</td>
+<td>1.7–3.1×</td>
+<td>Submerged liquid</td>
+<td>Lee 2009 PMC3749454</td>
+</tr>
+<tr>
+<td>Ergothioneine</td>
+<td><em>Pleurotus</em></td>
+<td>L-cysteine</td>
+<td>1.7×</td>
+<td>Liquid</td>
+<td>Lee 2009</td>
+</tr>
+<tr>
+<td>Betulinic acid</td>
+<td><em>I. obliquus</em></td>
+<td>Oleic acid 1.0 g/L</td>
+<td>8.57× mycelial, 3.02× broth</td>
+<td>Submerged liquid</td>
+<td>Lou 2021 PMC8066064</td>
+</tr>
+<tr>
+<td>Betulinic acid</td>
+<td><em>I. obliquus</em></td>
+<td>Fungal elicitor (<em>A. niger</em> preparation, 45 mg/L)</td>
+<td>6.7–146% (different stages)</td>
+<td>Submerged liquid</td>
+<td>Lou 2021</td>
+</tr>
+<tr>
+<td>Betulinic acid</td>
+<td><em>I. obliquus</em></td>
+<td>Oleic acid + fungal elicitor combination</td>
+<td>22.2× mycelial, 4.05× total</td>
+<td>Submerged liquid</td>
+<td>Lou 2021</td>
+</tr>
+<tr>
+<td>Betulinic acid (host-tree pathway)</td>
+<td><em>I. obliquus</em></td>
+<td><em>Alnus incana</em> vs. <em>Betula pendula</em> host</td>
+<td>4–30×</td>
+<td>Wild + cultivated</td>
+<td>Drenkhan 2022 PMC9496626</td>
+</tr>
+<tr>
+<td>Erinacine C</td>
+<td><em>H. erinaceus</em></td>
+<td>Complex media (barley malt + oatmeal) vs. minimal media</td>
+<td>~100×</td>
+<td>Submerged liquid mycelium</td>
+<td>Doar 2025 PMC11969743</td>
+</tr>
+<tr>
+<td>Yield only</td>
+<td><em>P. ostreatus</em></td>
+<td>Nucleoside combination (UCG, A'C'G')</td>
+<td>+35% fruit body</td>
+<td>Solid sawdust</td>
+<td>Tang 2025 PMC12299871</td>
+</tr>
+<tr>
+<td>Yield only</td>
+<td><em>H. erinaceus</em></td>
+<td>Optimized straw formula (rice straw + corn cob + wheat bran)</td>
+<td>89% biological efficiency</td>
+<td>Solid</td>
+<td>Lu 2024 PMC11671258</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Operational discipline (per SOP-6 four-tier framework):</strong></p>
+<ol>
+<li><strong>Tier 1 (kitchen)</strong> — purchase pharmacy-grade reagent (methionine, alanine — amino acid supplements; microcrystalline cellulose — fiber supplement; D-galactose — milk sugar; nucleosides — GRAS supplements). Substrate kit + reagent → grow following primary-source protocol → consume.</li>
+<li><strong>Tier 2 (smartphone colorimetry)</strong> — track batch-to-batch consistency against the Tier-3-anchored reference batch. Per SOP-6: Ellman's reagent for EGT, phenol-sulfuric for total polysaccharide, UV 260 nm for nucleoside abundance.</li>
+<li><strong>Tier 3 (bench HPLC)</strong> — quantify a reference batch per protocol per species per reagent pair. Effect-size verification against the published primary-source magnitude.</li>
+<li><strong>Tier 4 (regulatory)</strong> — outsourced GMP for any clinical-grade application.</li>
+</ol>
+<p><strong>Calibrate-once-per-protocol-revision discipline:</strong> a Tier-3 batch quantification per reagent pair × species establishes the absolute effect size for THIS strain × THIS cultivation setup. Subsequent batches track at Tier 2.</p>
+<p><strong>Strain-magnitude caveat:</strong> substrate-engineering effects are directionally generalizable across strains but magnitude-variable. The primary-source effect size (e.g., "3× cordycepin from alanine") should be expected to vary 2–5× across strain backgrounds. Tier-3 anchor per strain × protocol revision is non-negotiable for any application-relevant claim.</p>
 <h3 id="sop-5-strain-banking-its-authentication">SOP-5 — Strain Banking + ITS Authentication<a class="headerlink" href="#sop-5-strain-banking-its-authentication" title="Permanent link">&para;</a></h3>
 <p><strong>Cross-reference:</strong> Phase 7-1a outlined the ITS-PCR authentication protocol (Cao 2012 <em>Ganoderma</em>-specific primers); applies to all medicinal mushroom strains used for Open Enzyme protocols.</p>
 <p><strong>Planned method:</strong>

@@ -2049,6 +2049,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#7-query-framing-discipline-traditional-name-first-mechanism-name-second-added-2026-05-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Query-framing discipline — traditional-name FIRST, mechanism-name SECOND (added 2026-05-19)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3610,6 +3621,8 @@
       
         
       
+        
+      
     
     
     
@@ -4819,6 +4832,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5307,6 +5355,18 @@
 <h3 id="6-falsification-card-per-major-claim">6. Falsification card per major claim<a class="headerlink" href="#6-falsification-card-per-major-claim" title="Permanent link">&para;</a></h3>
 <p>Per <a href="../linter-design/"><code>linter-design.md</code></a> and the existing H01 / H02 / H03 cards, any TCM-derived claim that becomes load-bearing for a platform decision (e.g., "Smilax glabra is a viable koji-payload candidate," or "Si Miao San as adjunct to allopurinol shows additive UA reduction") gets a falsification card with assumption stack + killshot menu + pre-committed thresholds. <strong>The bar:</strong> TCM-source compounds get the same falsification discipline as engineered enzymes. No epistemic carve-out for "but it's traditional."</p>
 <p>H04 stub at <a href="../hypotheses/H04-tcm-rigor-intersection/"><code>hypotheses/H04-tcm-rigor-intersection.md</code></a> is the meta-card for the lens itself; specific compound or formula claims would get H05+ as they emerge.</p>
+<h3 id="7-query-framing-discipline-traditional-name-first-mechanism-name-second-added-2026-05-19">7. Query-framing discipline — traditional-name FIRST, mechanism-name SECOND (added 2026-05-19)<a class="headerlink" href="#7-query-framing-discipline-traditional-name-first-mechanism-name-second-added-2026-05-19" title="Permanent link">&para;</a></h3>
+<p><strong>For non-Western-medicine compound discovery, query by traditional-formula-name + species-name + traditional-pathology-framing IN ADDITION TO mechanism-name.</strong> Mechanism-name is the wrong starting point for non-Western literature — it silently filters out the traditional-name-anchored papers that the Western citation network underweights.</p>
+<p><strong>The canonical worked example (comp-018 Phase 2, 2026-05-16):</strong> what looked like a "language barrier" preventing discovery of <em>Houttuynia cordata</em>'s complement-inhibitory activity was actually a query-framing mismatch. Chen Daofeng / Yamada-Kiyohara research groups publish 80–95% in English-language journals — language wasn't the gate. The actual gate: a "C3 convertase inhibitor" query missed Houttuynia, while a "<em>Houttuynia cordata</em> anti-complementary" query catches it directly. The real barriers were <strong>citation-network insularity + traditional-name vs mechanism-name query framing + source-journal impact-factor underweighting</strong> — three failure modes that all get rolled up into "language barrier" framings but are operationally different.</p>
+<p><strong>Why this is its own discipline, not a sub-point of §2 (ChEMBL cross-check):</strong> ChEMBL is curated bioactivity data; the query-framing discipline is about <em>what literature you read before consulting ChEMBL</em>. ChEMBL undercoverage (documented in comp-013 TCM gout, comp-014 medicinal mushrooms, comp-018 upstream complement, comp-020 verification re-run) reflects what's been curated; traditional-name-anchored papers that never made it into ChEMBL's curation pipeline are invisible to mechanism-name search regardless of language. The query-framing discipline closes a different gap than ChEMBL cross-check.</p>
+<p><strong>Cross-mechanism generalization (Pass 3 confirmed, Cluster M walkthrough):</strong></p>
+<ul>
+<li><strong>URAT1 inhibitors:</strong> "URAT1 inhibitor natural product" misses <em>Smilax glabra</em> formulations; "Si Miao San 四妙散 hyperuricemia" catches them.</li>
+<li><strong>XO inhibitors:</strong> "XO inhibitor flavonoid" misses many curcuminoids; "Jiang Huang 姜黄 xanthine oxidase" (turmeric) catches them.</li>
+<li><strong>NLRP3 inhibitors:</strong> "NLRP3 inhibitor natural product" misses <em>G. lucidum</em> spore-powder evidence; "Lingzhi 灵芝 anti-inflammatory mechanism" catches it.</li>
+</ul>
+<p><strong>Operational pattern for lit-scan briefings:</strong> include traditional-formula-name + species-name + traditional-pathology-framing query variants when the compound class has non-Western traditional-use literature. The CLAUDE.md global-multilingual rule (§"Global-multilingual research by default" → "Query-framing discipline") now encodes this as a project-wide convention.</p>
+<p><strong>Cross-reference:</strong> <a href="../CLAUDE.md"><code>CLAUDE.md</code> §"Global-multilingual research by default"</a> (Query-framing discipline bullet); <a href="../upstream-complement-modulator-sweep-computational/"><code>upstream-complement-modulator-sweep-computational.md</code></a> Phase 2 (the comp-018 finding that surfaced the discipline).</p>
 <hr />
 <h2 id="candidate-compounds-with-classical-gout-indication">Candidate compounds with classical gout indication<a class="headerlink" href="#candidate-compounds-with-classical-gout-indication" title="Permanent link">&para;</a></h2>
 <p>Compounds explicitly named in classical TCM materia medica for gout-like presentations (痛风 tongfeng, 痹证 Bi syndrome with hot/damp character, 高尿酸血症 hyperuricemia in modernized parlance). The "wiki status" column shows what the corpus already covers vs. what's a genuine gap.</p>

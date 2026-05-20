@@ -3368,6 +3368,8 @@
       
         
       
+        
+      
     
     
     
@@ -4577,6 +4579,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -4970,6 +5007,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#query-framing-for-non-western-compound-classes-added-2026-05-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query-framing for non-Western compound classes (added 2026-05-19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#when-paperclip-is-the-wrong-tool" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5314,6 +5362,21 @@
 <li><strong>Si Miao San and related TCM gout formulas</strong> — modern Chinese clinical evidence. Per the global-multilingual default (<a href="../CLAUDE.md">CLAUDE.md</a> §"Global-multilingual research by default"), search Chinese-language sources directly via CNKI / WanFang / ChiCTR, not just PubMed-indexed translations. Informs the TCM × rigor track (<a href="../../tcm-modern-rigor-intersection/">tcm-modern-rigor-intersection.md</a>) Phase 2 P2-1.</li>
 <li><strong>NSlD-ΔP10 strain availability outside the Maruyama lab</strong> — verify the <code>operations/ward-1995-lab-access.md</code> finding that the strain isn't in any public repository by direct catalog query at JCM, NBRC, CGMCC, CBS-KNAW, ATCC, FGSC.</li>
 </ol>
+<h2 id="query-framing-for-non-western-compound-classes-added-2026-05-19">Query-framing for non-Western compound classes (added 2026-05-19)<a class="headerlink" href="#query-framing-for-non-western-compound-classes-added-2026-05-19" title="Permanent link">&para;</a></h2>
+<p>The 2026-05-19 traditional-name re-scan (<a href="../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md"><code>logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md</code></a>) closed three independent gaps that mechanism-name-only seeding had silently propagated through the corpus: comp-013 missed mangiferin / Zhi Mu + the Coix four-transporter mechanism + the Plantago acteoside/apigenin attribution; comp-014 declared NLRP3 + Caspase-1 + ASC as "empty chokepoints in fungi" when species-name + traditional-pathology framing surfaces ≥18 PubMed papers including ≥5 at the gout indication; the comp-014 ABCG2 hit list missed Poria cocos despite Sun 2021 PMID 33651969 showing Animal Model magnitude exceeding benzbromarone.</p>
+<p><strong>Discipline:</strong> for any compound-class scan touching natural products, TCM, Kampo, Ayurveda, or other non-Western traditional medicine subfields, <strong>seed queries from multiple framings, not just mechanism-name</strong>:</p>
+<ol>
+<li><strong>Mechanism-name query</strong> (the default Western frame): <code>&lt;target&gt;</code> + <code>&lt;compound-class&gt;</code> (e.g., "ABCG2 flavonoid", "XO inhibitor anthraquinone"). Catches the Western-curated database overlap.</li>
+<li><strong>Species-name query</strong>: scientific binomial + traditional name in original language (e.g., <code>Phellinus igniarius</code> AND <code>桑黄</code>; <code>Wolfiporia cocos</code> AND <code>茯苓</code>). Catches the species-anchored evidence regardless of which target the paper frames around.</li>
+<li><strong>Traditional-formula-name query</strong>: classical formula composition (e.g., <code>Si Miao San</code> AND component herbs; <code>Bai Hu Jia Gui Zhi Tang</code> AND <code>mangiferin</code>). Catches formula-level RCT evidence + the cardinal-herb attribution chain.</li>
+<li><strong>Traditional-pathology-term query</strong>: the original-language pathology framing (e.g., <code>痛风</code>, <code>痹证</code>, <code>湿热痹</code>, <code>消渴</code>). Catches indication-anchored evidence where the paper doesn't index against a Western target column.</li>
+</ol>
+<p><strong>When to use which:</strong> if a Pass 1 or comp-NNN scan returns "empty" for a fungal / botanical chokepoint after a mechanism-name-only query, treat this as a <strong>candidate for query-framing re-scan</strong>, not a confirmed empty chokepoint. The recovery rate from the 2026-05-19 audit was substantial — multiple "empty" verdicts were reversed by species-name + traditional-pathology re-seeding.</p>
+<p><strong>Pre-commit gate interaction:</strong> query-framing failures and the pre-commit grep-verify gate (§"Pre-commit verification gate" above) target different error modes. The pre-commit gate catches <em>fabricated or wrong numbers inside a single paper's claims</em>. Query-framing catches <em>whole subfields of evidence the search never surfaced</em>. A well-verified claim from a query-framing-incomplete scan can still mislead — the absence in the scan output isn't an absence in the literature. Apply both disciplines independently.</p>
+<p><strong>Cross-references:</strong>
+- <a href="../../scripts/sweep-prompt-2-synthesize.md"><code>scripts/sweep-prompt-2-synthesize.md</code></a> §"Query-framing discipline" — the Pass 2 prompt-level codification of this discipline
+- <a href="../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md"><code>logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md</code></a> — canonical retrospective with the empirical recovery rate
+- <a href="../../CLAUDE.md"><code>CLAUDE.md</code></a> §"Global-multilingual research by default" — the upstream discipline this operationalizes</p>
 <h2 id="when-paperclip-is-the-wrong-tool">When Paperclip is the wrong tool<a class="headerlink" href="#when-paperclip-is-the-wrong-tool" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>For ChEMBL bioactivity data</strong> — use the ChEMBL MCP directly. Paperclip's index is paper-level; ChEMBL is target-and-compound-level with curated quantitative bioactivity. See <a href="../chembl-cross-check/"><code>chembl-cross-check.md</code></a> for the cross-check discipline.</li>

@@ -1,0 +1,1507 @@
+{
+  "_meta": {
+    "wt_linker": "SEEEVAARRAR",
+    "linker_residues_uniprot": "353-363",
+    "concordance": "N-of-5 >= 3 (GREEN) / = 5 (STRICT)"
+  },
+  "constrained_pool": {
+    "n_total": 61,
+    "wt_n_pass": 3,
+    "green": [
+      {
+        "candidate_id": 6,
+        "is_wt": false,
+        "linker_sequence": "NEEEQEEQDQQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.4289,
+        "mpnn_global_score": 1.3934,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.71,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 13,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQEEEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.2933,
+        "mpnn_global_score": 1.4029,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.726,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      },
+      {
+        "candidate_id": 21,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQQQEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.1615,
+        "mpnn_global_score": 1.3911,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 18.832,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 23,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQEEEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.1863,
+        "mpnn_global_score": 1.4057,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.726,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      },
+      {
+        "candidate_id": 28,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQQEEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.2191,
+        "mpnn_global_score": 1.4114,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.274,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 30,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQQQQQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.0794,
+        "mpnn_global_score": 1.3865,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 18.4,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 33,
+        "is_wt": false,
+        "linker_sequence": "NEEEEQQEQEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.3018,
+        "mpnn_global_score": 1.4138,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.726,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      },
+      {
+        "candidate_id": 35,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQQEQQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.1128,
+        "mpnn_global_score": 1.3867,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 18.832,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 40,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQEQEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.2894,
+        "mpnn_global_score": 1.4058,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.274,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 43,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQEEEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.2731,
+        "mpnn_global_score": 1.3931,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.726,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      },
+      {
+        "candidate_id": 47,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQQEEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.2497,
+        "mpnn_global_score": 1.3969,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.274,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 50,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQQEQQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.1839,
+        "mpnn_global_score": 1.3866,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 18.832,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 51,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQQQQQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.0761,
+        "mpnn_global_score": 1.3788,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 18.4,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 54,
+        "is_wt": false,
+        "linker_sequence": "NEEEEEQEQEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.3452,
+        "mpnn_global_score": 1.4056,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 20.189,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      },
+      {
+        "candidate_id": 56,
+        "is_wt": false,
+        "linker_sequence": "NEEEEEQQNQQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.2978,
+        "mpnn_global_score": 1.3915,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.233,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 27,
+        "is_wt": false,
+        "linker_sequence": "NDEEQEEEEQQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.4261,
+        "mpnn_global_score": 1.3945,
+        "mpnn_seq_recovery": 0.1818,
+        "esm2_pseudo_plddt": 93.55,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 20.173,
+        "linker_loop_plddt": 80.61,
+        "seq_similarity_to_wt": 0.182,
+        "metric_passes": {
+          "esm2_pseudo_plddt": false,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": false
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 39,
+        "is_wt": false,
+        "linker_sequence": "NDEEEEQQEEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.3323,
+        "mpnn_global_score": 1.4132,
+        "mpnn_seq_recovery": 0.1818,
+        "esm2_pseudo_plddt": 93.55,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 20.173,
+        "linker_loop_plddt": 80.61,
+        "seq_similarity_to_wt": 0.182,
+        "metric_passes": {
+          "esm2_pseudo_plddt": false,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": false
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 36,
+        "is_wt": false,
+        "linker_sequence": "NEEEQEEEEEE",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.2936,
+        "mpnn_global_score": 1.3952,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.059,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.059,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0.02
+          },
+          "n_sites_in_linker": 2
+        },
+        "cai_a_oryzae": 21.148,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 52,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQEDEE",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.3007,
+        "mpnn_global_score": 1.407,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.059,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.059,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0.02
+          },
+          "n_sites_in_linker": 2
+        },
+        "cai_a_oryzae": 20.173,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 0,
+        "is_wt": true,
+        "linker_sequence": "SEEEVAARRAR",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": null,
+        "mpnn_global_score": null,
+        "mpnn_seq_recovery": 1.0,
+        "esm2_pseudo_plddt": 95.01,
+        "linker_cleavage_score": 0.407,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.407,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.195,
+            "acid_protease": 0.06
+          },
+          "n_sites_in_linker": 16
+        },
+        "cai_a_oryzae": 20.713,
+        "linker_loop_plddt": 95.61,
+        "seq_similarity_to_wt": 1.0,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": false,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      }
+    ],
+    "strict": [
+      {
+        "candidate_id": 13,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQEEEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.2933,
+        "mpnn_global_score": 1.4029,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.726,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      },
+      {
+        "candidate_id": 23,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQEEEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.1863,
+        "mpnn_global_score": 1.4057,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.726,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      },
+      {
+        "candidate_id": 33,
+        "is_wt": false,
+        "linker_sequence": "NEEEEQQEQEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.3018,
+        "mpnn_global_score": 1.4138,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.726,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      },
+      {
+        "candidate_id": 43,
+        "is_wt": false,
+        "linker_sequence": "NEEEQQQEEEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.2731,
+        "mpnn_global_score": 1.3931,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 19.726,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      },
+      {
+        "candidate_id": 54,
+        "is_wt": false,
+        "linker_sequence": "NEEEEEQEQEQ",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 2.3452,
+        "mpnn_global_score": 1.4056,
+        "mpnn_seq_recovery": 0.2727,
+        "esm2_pseudo_plddt": 93.69,
+        "linker_cleavage_score": 0.039,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.039,
+          "per_protease": {
+            "ALP": 0,
+            "NPr": 0.039,
+            "acid_protease": 0
+          },
+          "n_sites_in_linker": 1
+        },
+        "cai_a_oryzae": 20.189,
+        "linker_loop_plddt": 81.11,
+        "seq_similarity_to_wt": 0.273,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 5,
+        "tier": "STRICT"
+      }
+    ]
+  },
+  "unconstrained_pool": {
+    "n_total": 61,
+    "wt_n_pass": 2,
+    "green": [
+      {
+        "candidate_id": 15,
+        "is_wt": false,
+        "linker_sequence": "SDEEIAAREQT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.1048,
+        "mpnn_global_score": 1.383,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.22,
+        "linker_cleavage_score": 0.33,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.33,
+          "per_protease": {
+            "ALP": 0.114,
+            "NPr": 0.156,
+            "acid_protease": 0.06
+          },
+          "n_sites_in_linker": 13
+        },
+        "cai_a_oryzae": 21.661,
+        "linker_loop_plddt": 88.61,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 51,
+        "is_wt": false,
+        "linker_sequence": "SDEEIAAQQAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.1612,
+        "mpnn_global_score": 1.3647,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.22,
+        "linker_cleavage_score": 0.369,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.369,
+          "per_protease": {
+            "ALP": 0.114,
+            "NPr": 0.195,
+            "acid_protease": 0.06
+          },
+          "n_sites_in_linker": 14
+        },
+        "cai_a_oryzae": 22.442,
+        "linker_loop_plddt": 88.61,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 4,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 3,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAREET",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0723,
+        "mpnn_global_score": 1.361,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.2,
+        "linker_cleavage_score": 0.388,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.388,
+          "per_protease": {
+            "ALP": 0.133,
+            "NPr": 0.195,
+            "acid_protease": 0.06
+          },
+          "n_sites_in_linker": 15
+        },
+        "cai_a_oryzae": 22.676,
+        "linker_loop_plddt": 87.11,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": false,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 33,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAREET",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.1073,
+        "mpnn_global_score": 1.3953,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.2,
+        "linker_cleavage_score": 0.388,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.388,
+          "per_protease": {
+            "ALP": 0.133,
+            "NPr": 0.195,
+            "acid_protease": 0.06
+          },
+          "n_sites_in_linker": 15
+        },
+        "cai_a_oryzae": 22.676,
+        "linker_loop_plddt": 87.11,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": false,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 42,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAREET",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.111,
+        "mpnn_global_score": 1.3676,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.2,
+        "linker_cleavage_score": 0.388,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.388,
+          "per_protease": {
+            "ALP": 0.133,
+            "NPr": 0.195,
+            "acid_protease": 0.06
+          },
+          "n_sites_in_linker": 15
+        },
+        "cai_a_oryzae": 22.676,
+        "linker_loop_plddt": 87.11,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": false,
+          "linker_cleavage_score": true,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 4,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAREAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0593,
+        "mpnn_global_score": 1.3878,
+        "mpnn_seq_recovery": 0.6364,
+        "esm2_pseudo_plddt": 94.36,
+        "linker_cleavage_score": 0.466,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.466,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.08
+          },
+          "n_sites_in_linker": 18
+        },
+        "cai_a_oryzae": 23.174,
+        "linker_loop_plddt": 89.11,
+        "seq_similarity_to_wt": 0.636,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 22,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAREAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0286,
+        "mpnn_global_score": 1.3765,
+        "mpnn_seq_recovery": 0.6364,
+        "esm2_pseudo_plddt": 94.36,
+        "linker_cleavage_score": 0.466,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.466,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.08
+          },
+          "n_sites_in_linker": 18
+        },
+        "cai_a_oryzae": 23.174,
+        "linker_loop_plddt": 89.11,
+        "seq_similarity_to_wt": 0.636,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 49,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAREAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0828,
+        "mpnn_global_score": 1.3721,
+        "mpnn_seq_recovery": 0.6364,
+        "esm2_pseudo_plddt": 94.36,
+        "linker_cleavage_score": 0.466,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.466,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.08
+          },
+          "n_sites_in_linker": 18
+        },
+        "cai_a_oryzae": 23.174,
+        "linker_loop_plddt": 89.11,
+        "seq_similarity_to_wt": 0.636,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 52,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAREAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0303,
+        "mpnn_global_score": 1.3873,
+        "mpnn_seq_recovery": 0.6364,
+        "esm2_pseudo_plddt": 94.36,
+        "linker_cleavage_score": 0.466,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.466,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.08
+          },
+          "n_sites_in_linker": 18
+        },
+        "cai_a_oryzae": 23.174,
+        "linker_loop_plddt": 89.11,
+        "seq_similarity_to_wt": 0.636,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 38,
+        "is_wt": false,
+        "linker_sequence": "SDAEIAARQAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0526,
+        "mpnn_global_score": 1.3868,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.22,
+        "linker_cleavage_score": 0.466,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.466,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.08
+          },
+          "n_sites_in_linker": 18
+        },
+        "cai_a_oryzae": 22.624,
+        "linker_loop_plddt": 88.61,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 7,
+        "is_wt": false,
+        "linker_sequence": "SDAEIAARDAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 0.9835,
+        "mpnn_global_score": 1.3716,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.22,
+        "linker_cleavage_score": 0.486,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.486,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.1
+          },
+          "n_sites_in_linker": 19
+        },
+        "cai_a_oryzae": 23.136,
+        "linker_loop_plddt": 88.61,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 11,
+        "is_wt": false,
+        "linker_sequence": "SDAEIAAREAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0288,
+        "mpnn_global_score": 1.3793,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.22,
+        "linker_cleavage_score": 0.486,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.486,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.1
+          },
+          "n_sites_in_linker": 19
+        },
+        "cai_a_oryzae": 23.155,
+        "linker_loop_plddt": 88.61,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 18,
+        "is_wt": false,
+        "linker_sequence": "SDAEIAARDAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 0.9968,
+        "mpnn_global_score": 1.3853,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.22,
+        "linker_cleavage_score": 0.486,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.486,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.1
+          },
+          "n_sites_in_linker": 19
+        },
+        "cai_a_oryzae": 23.136,
+        "linker_loop_plddt": 88.61,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 19,
+        "is_wt": false,
+        "linker_sequence": "SDAEIAAREAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.012,
+        "mpnn_global_score": 1.3852,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.22,
+        "linker_cleavage_score": 0.486,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.486,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.1
+          },
+          "n_sites_in_linker": 19
+        },
+        "cai_a_oryzae": 23.155,
+        "linker_loop_plddt": 88.61,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 47,
+        "is_wt": false,
+        "linker_sequence": "SDAEIAAREAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0245,
+        "mpnn_global_score": 1.3779,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.22,
+        "linker_cleavage_score": 0.486,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.486,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.234,
+            "acid_protease": 0.1
+          },
+          "n_sites_in_linker": 19
+        },
+        "cai_a_oryzae": 23.155,
+        "linker_loop_plddt": 88.61,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 6,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAAEAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0646,
+        "mpnn_global_score": 1.3723,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.2,
+        "linker_cleavage_score": 0.525,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.525,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.273,
+            "acid_protease": 0.1
+          },
+          "n_sites_in_linker": 20
+        },
+        "cai_a_oryzae": 24.573,
+        "linker_loop_plddt": 87.11,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": false,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 24,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAAEAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0557,
+        "mpnn_global_score": 1.3883,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.2,
+        "linker_cleavage_score": 0.525,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.525,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.273,
+            "acid_protease": 0.1
+          },
+          "n_sites_in_linker": 20
+        },
+        "cai_a_oryzae": 24.573,
+        "linker_loop_plddt": 87.11,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": false,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 59,
+        "is_wt": false,
+        "linker_sequence": "SAEEIAAAEAT",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0713,
+        "mpnn_global_score": 1.3753,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.2,
+        "linker_cleavage_score": 0.525,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.525,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.273,
+            "acid_protease": 0.1
+          },
+          "n_sites_in_linker": 20
+        },
+        "cai_a_oryzae": 24.573,
+        "linker_loop_plddt": 87.11,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": false,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 29,
+        "is_wt": false,
+        "linker_sequence": "SDAEIAAADAR",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0342,
+        "mpnn_global_score": 1.3786,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.22,
+        "linker_cleavage_score": 0.545,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.545,
+          "per_protease": {
+            "ALP": 0.152,
+            "NPr": 0.273,
+            "acid_protease": 0.12
+          },
+          "n_sites_in_linker": 21
+        },
+        "cai_a_oryzae": 23.626,
+        "linker_loop_plddt": 88.61,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": true,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": false,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      },
+      {
+        "candidate_id": 41,
+        "is_wt": false,
+        "linker_sequence": "SAAEIAAAEAR",
+        "linker_uniprot_residues": "353-363",
+        "linker_mature_residues": "334-344",
+        "mpnn_score": 1.0961,
+        "mpnn_global_score": 1.3631,
+        "mpnn_seq_recovery": 0.5455,
+        "esm2_pseudo_plddt": 94.2,
+        "linker_cleavage_score": 0.603,
+        "linker_cleavage_breakdown": {
+          "total_score": 0.603,
+          "per_protease": {
+            "ALP": 0.171,
+            "NPr": 0.312,
+            "acid_protease": 0.12
+          },
+          "n_sites_in_linker": 23
+        },
+        "cai_a_oryzae": 24.185,
+        "linker_loop_plddt": 87.11,
+        "seq_similarity_to_wt": 0.545,
+        "metric_passes": {
+          "esm2_pseudo_plddt": false,
+          "linker_cleavage_score": false,
+          "cai_a_oryzae": true,
+          "linker_loop_plddt": true,
+          "seq_similarity_to_wt": true
+        },
+        "n_pass": 3,
+        "tier": "GREEN"
+      }
+    ],
+    "strict": []
+  }
+}

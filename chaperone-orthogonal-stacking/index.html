@@ -3787,6 +3787,8 @@
       
         
       
+        
+      
     
     
     
@@ -4996,6 +4998,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5542,6 +5579,12 @@
 <td><strong>1.5 – 2.5</strong></td>
 <td>Hierarchical folding from molten globule; only 4 of 32 cysteines seed the cascade rapidly; remaining 28 cysteines fold slowly over tens of minutes; prolonged PDI engagement required to avoid incorrect pairing among 16 disulfides. Primary source: Notari 2023 (PMC10465537); Wally &amp; Buchanan 2007 (PMC2547852). [NUMBER PARTIALLY UNVERIFIED — no published PDI kcat for LF; coefficient derived from the 28-vs-4 cysteine kinetic hierarchy as a proxy for prolonged PDI residence.]</td>
 </tr>
+<tr>
+<td><strong>Serpin (metastable RCL-driven)</strong></td>
+<td>C1-INH (SERPING1), α1-antitrypsin (SERPINA1), antithrombin III (SERPINC1)</td>
+<td><strong>0.5 – 1.5</strong> (PROVISIONAL — uncalibrated)</td>
+<td>Low disulfide counts (C1-INH 2; α1-antitrypsin 0; antithrombin III 3) keep raw PDI load light, but the metastable native fold with a reactive-center loop undergoing dramatic β-sheet insertion may engage BiP/calnexin/PDI differently than any calibrated class — particularly because misfolded serpins polymerize and trigger UPR (α1-antitrypsin Z-variant disease anchor). Added 2026-05-19 after comp-037 substantiated C1-INH as a viable EcN-LBP payload (<a href="../c1-inh-protease-stability-ecn-computational/"><code>c1-inh-protease-stability-ecn-computational.md</code></a>); per §8 item 6 the framework explicitly flagged "C1-INH serpin" as a fold class not covered by the calibration set. <strong>Bound is provisional pending the 2026-05-19 lit scan of α1-antitrypsin / antithrombin III / C1-INH folding kinetics (<code>logs/serpin-fold-alpha-coefficient-lit-scan-2026-05-19.md</code>); downstream koji-specific calibration requires a dedicated wet-lab measurement if C1-INH is ever routed to a secreted chassis.</strong> [NUMBER UNVERIFIED — provisional bound from structural/disulfide-count profile only.]</td>
+</tr>
 </tbody>
 </table>
 <p><strong>Effective PDI load formula (architecture-adjusted):</strong></p>
@@ -5582,6 +5625,13 @@
 <td>CCP/SCR sushi</td>
 <td>0.3 – 0.6</td>
 <td><strong>2.4 – 4.8</strong></td>
+</tr>
+<tr>
+<td>C1-INH (SERPING1, P05155)</td>
+<td>2</td>
+<td>Serpin (metastable RCL-driven)</td>
+<td>0.5 – 1.5 (PROVISIONAL)</td>
+<td><strong>1.0 – 3.0</strong></td>
 </tr>
 <tr>
 <td>Adalimumab HC+LC (reference)</td>

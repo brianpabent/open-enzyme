@@ -3731,6 +3731,8 @@
       
         
       
+        
+      
     
     
     
@@ -4940,6 +4942,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5458,6 +5495,14 @@
 <p><strong>Probiotic delivery of AhR-active microbes</strong>
 - <strong>Mechanism:</strong> specific <em>Lactobacillus reuteri</em> strains, <em>L. plantarum</em>, and others produce indole-3-aldehyde (a potent AhR agonist) from dietary tryptophan.
 - <strong>Evidence:</strong> <strong>Mechanistic Extrapolation.</strong> Direct urate endpoint untested for probiotic strain selection. Worth investigating.</p>
+<p><strong><em>Poria cocos</em> / <em>Wolfiporia cocos</em> (茯苓 Fu Ling) — mechanism unidentified, in-vivo evidence robust</strong>
+- <strong>Mechanism:</strong> Empirically uncharacterized. Could be transcriptional (PPARγ / HNF4α / AhR / Nrf2 — none tested), chaperone-class trafficking rescue (analogous to UDCA / TUDCA per comp-032), or class I HDAC inhibition (no HDAC isoform was tested). The unidentified mechanism is itself the highest-leverage open question.
+- <strong>Anchoring evidence:</strong> Sun et al. 2021, <em>Front Pharmacol</em> (PMID 33651969). Hyperuricemic mouse model. Both ethanol and water extracts significantly elevated intestinal ABCG2 mRNA + protein. Water extract effect magnitude <strong>exceeded benzbromarone positive control</strong> (p &lt; 0.01). Concurrent UA-lowering via XO inhibition + renal protection. <strong>Animal Model.</strong>
+- <strong>Five computationally predicted bioactives</strong> (PubChem CIDs 267, 277, 13824, 15730, 5759) docked to ABCG2; in vitro validation not yet performed. Pachymic acid mentioned only as HPLC reference standard, not implicated as active agent.
+- <strong>Traditional context:</strong> Poria cocos is a canonical ingredient of Si Miao San (the gout-indicated TCM formula already surveyed by comp-013) and Wu Ling San (the canonical urinary-tract / fluid-metabolism formula). Per comp-013's <code>inputs/compounds.json</code>, Poria cocos was implicitly included via the Si Miao San source citation but NOT separately spawned as a compound source — exactly the formula-completeness gap flagged in the 2026-05-19 query-framing retrospective audit.
+- <strong>Practical lever:</strong> Poria cocos extract is widely available as a TCM supplement (5-15g daily of decoction or 1-3g of standardized extract is the canonical dose range). Mechanism uncertainty makes off-label dosing for ABCG2 induction premature.
+- <strong>Tissue selectivity:</strong> Not characterized.
+- <strong>Next move:</strong> Caco-2 transwell assay (sister to §1.14 butyrate dose-response arm) — pachymic acid + polyporenic acid C + dehydroeburicoic acid panel against ABCG2 expression + Q141K trafficking. Marginal cost &lt;$2K on existing infrastructure. <strong>High platform-relevance: closes the mechanism question on a TCM-grade compound that already has robust in-vivo HUA evidence.</strong></p>
 <h3 id="tier-3-pharmacological-grade-levers">Tier 3 — Pharmacological-grade levers<a class="headerlink" href="#tier-3-pharmacological-grade-levers" title="Permanent link">&para;</a></h3>
 <p><strong>Fenofibrate (PPARα/γ + direct uricosuric effect)</strong>
 - <strong>Mechanism:</strong> PPARγ activation contributes to gut ABCG2 induction; the larger effect is direct URAT1 inhibition (uricosuric, lowers serum UA via increased renal excretion).

@@ -3669,6 +3669,8 @@
       
         
       
+        
+      
     
     
     
@@ -4878,6 +4880,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5419,6 +5456,9 @@
 <ul>
 <li><strong>Anakinra (Kineret)</strong>: Recombinant IL-1 receptor antagonist (IL-1Ra). Competitive antagonist at IL-1R1 that blocks both IL-1β and IL-1α from binding. Single injection can abort a flare within hours. FDA-approved for RA and CAPS, used off-label for gout. Limitation: 100 mg daily subcutaneous injection, short half-life (~4–6 hours), expensive without insurance. Demonstrates that blocking IL-1 signaling is sufficient to stop a gout flare. (Source: nlrp3-exploit-map.md)</li>
 </ul>
+<p><strong>Acute-flare protocol (added 2026-05-19, source: gout-action-guide.md):</strong> <strong>100 mg SC daily × 3 days, self-administered in thigh/abdomen</strong> (NOT intra-articular). Single injection can abort a flare within hours; the 3-day regimen handles the full flare window. <strong>Cost: ~$300/dose × 3 = ~$900/flare</strong> at retail (insurance-variable; cost is the practical access gate, not prescriber willingness). <strong>Access: rheumatologist off-label</strong> — finding a prescriber for an off-label indication is solved by cost-of-care budget; the gate is the patient's willingness to pay $900/flare without insurance coverage.</p>
+<p><strong>The cumulative-burden framing (load-bearing for recurrent-flare patients):</strong> if a patient flares 3–6× per year over 30 years, prednisone's cumulative steroid burden (bone loss, cataracts, adrenal suppression, glucose intolerance, mood/sleep/BP effects) compounds substantially. Anakinra has <strong>minimal known cumulative burden</strong> — it's recombinant endogenous IL-1Ra (the body's own protein), no bone/glucose/adrenal effects; long-term concern is only infection masking under chronic use (not relevant for 3-day acute use × few flares/year). For recurrent-flare patients with significant lifetime steroid burden, anakinra is the cleanest acute-flare-abort option <em>clinically available today</em>.</p>
+<p><strong>Strategic position within the platform:</strong> anakinra is the <strong>near-term bridge</strong> while the <a href="../chassis-pending-interventions/">inhaled mRNA-IL-1RA pulse</a> (per <a href="../chassis-pending-interventions/">chassis-pending-interventions.md §4</a>, <a href="../computational-experiments/">comp-033</a> + <a href="../computational-experiments/">comp-036</a>) develops on a 5–10 year horizon. Same mechanism (IL-1R1 competitive antagonism), same chokepoint (CP5a), different delivery route. The inhaled-mRNA route changes the economics (50–3,000× cheaper per flare than canakinumab) and the access path (self-administered pulmonary vs SC injection) but the underlying receptor-blockade biology is identical. Anakinra SC fills the gap between "today's prednisone-burden patient experience" and "tomorrow's inhaled mRNA-IL-1RA." See <a href="../gout-action-guide/">gout-action-guide.md §"Active flare"</a> for the acute-flare-abort comparator table.</p>
 <p><strong>Endogenous IL-1Ra biology — anakinra is recombinant human IL-1Ra, not a foreign molecule.</strong> Humans naturally produce IL-1Ra (~17 kDa, encoded by IL1RN, secreted primarily by macrophages and neutrophils as feedback brake on IL-1 signaling). Endogenous IL-1Ra competes with IL-1α and IL-1β for the same IL-1R1 receptor — when bound, it occupies the receptor without triggering downstream signaling. The IL-1β / IL-1Ra ratio determines net signaling: at homeostatic baseline, endogenous IL-1Ra is in ~100× molar excess over IL-1β, keeping signaling damped. Inflammatory states (gout flare, autoimmune, sepsis) tip the ratio by driving IL-1β production faster than IL-1Ra production, exceeding the endogenous brake. <strong>Therapeutic anakinra is the same protein the body makes, just at supplemental dose</strong> — that's why the safety profile is so clean (essentially zero immunogenicity, no ADCC/CDC off-target effects, simple competitive-antagonism mechanism). The "endogenous brake" framing is also why mRNA-encoded IL-1Ra (per <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §4</a>) is a cleaner payload choice than mRNA-encoded anti-IL-1β monoclonal antibody — IL-1Ra is small (no glycosylation, no disulfides, no heavy/light chain assembly), broader-mechanism (blocks IL-1α AND IL-1β at the same receptor), and immunogenicity-free as a recombinant version of an endogenous protein.</p>
 <ul>
 <li>
@@ -5431,7 +5471,7 @@
 <p><strong>EGCG</strong> (again): Suppresses IL-1β secretion from macrophages and reduces IL-1β-induced downstream signaling in target cells (chondrocytes, synoviocytes). (Source: nlrp3-exploit-map.md)</p>
 </li>
 <li>
-<p><strong>Inhaled mRNA-IL-1RA pulse (chassis-pending, pulmonary delivery)</strong>: Lipid-nanoparticle-formulated mRNA encoding IL-1 receptor antagonist, delivered via vibrating-mesh nebulizer (POC) or dry-powder inhaler (eventual product). Transient pulmonary epithelial expression of IL-1Ra over the 12–72-hour flare window matches the natural timeline of an acute gout flare. Mechanistically identical to anakinra at the receptor level — competitive IL-1R1 antagonism — but reframes the delivery: pulmonary self-administration replaces daily SC injection. Pulmonary mRNA-LNP delivery is mature research-grade in CF and RSV programs; OE's contribution is target validation + dose modeling + partner identification (not manufacturing). Cost-per-flare at scale projects to $25–200/year vs canakinumab at ~$300K/year. Detailed entry at <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §4</a>; computational prior queued as <a href="../computational-experiments/">comp-033</a>; platform-positioning context at <a href="../etc/open-enzyme-vision/"><code>open-enzyme-vision.md</code> §10 "Chronic prevention + pulsatile flare-abort"</a>. Acute-flare-abort track, complementary to chronic urate-lowering rather than competitive with it.</p>
+<p><strong>Inhaled mRNA-IL-1RA pulse (chassis-pending, pulmonary delivery)</strong>: Lipid-nanoparticle-formulated mRNA encoding IL-1 receptor antagonist, delivered via vibrating-mesh nebulizer (POC) or dry-powder inhaler (eventual product). Transient pulmonary epithelial expression of IL-1Ra over the 12–72-hour flare window matches the natural timeline of an acute gout flare. Mechanistically identical to anakinra at the receptor level — competitive IL-1R1 antagonism — but reframes the delivery: pulmonary self-administration replaces daily SC injection. Pulmonary mRNA-LNP delivery is mature research-grade in CF and RSV programs; OE's contribution is target validation + dose modeling + partner identification (not manufacturing). <strong>PK/PD reframe (added 2026-05-19, comp-036 walkthrough):</strong> <a href="../computational-experiments/">comp-033</a> (single-dose) was RED at 2% of anakinra Cmax, but <a href="../computational-experiments/">comp-036</a> (repeat-dose PK/PD) is YELLOW — BID × 4–28 doses reaches <strong>median 50–56% of the 0–72 h flare window above 80% receptor occupancy</strong>. The right clinical comparison is NOT "matches anakinra Cmax" (no) but <strong>"meaningfully better than prednisone over decades of recurrent flares?"</strong> — Prednisone delivers full symptom suppression with cumulative steroid burden (bone loss, cataracts, adrenal suppression, glucose intolerance) compounding across 3–6 flares/year × 30 years; inhaled mRNA delivers partial occupancy with negligible cumulative burden (chronic LNP exposure lifetime is the open safety question). Cost edge per flare: <strong>$2–120/flare</strong> (comp-033) or <strong>$10–600/flare</strong> (comp-036) vs canakinumab <strong>$18,000–23,000/flare</strong> → <strong>50–3,000× cost edge per flare</strong>. Detailed entry at <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §4</a>; platform-positioning context at <a href="../etc/open-enzyme-vision/"><code>open-enzyme-vision.md</code> §10 "Chronic prevention + pulsatile flare-abort"</a>; comparator table at <a href="../gout-action-guide/"><code>gout-action-guide.md</code> §"Active flare"</a>. Acute-flare-abort track, complementary to chronic urate-lowering rather than competitive with it.</p>
 </li>
 </ul>
 <h3 id="chokepoint-5b-active-resolution-via-alxfpr2-specialized-pro-resolving-mediators">Chokepoint 5b: Active Resolution via ALX/FPR2 (Specialized Pro-Resolving Mediators)<a class="headerlink" href="#chokepoint-5b-active-resolution-via-alxfpr2-specialized-pro-resolving-mediators" title="Permanent link">&para;</a></h3>

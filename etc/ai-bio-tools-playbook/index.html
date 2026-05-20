@@ -3368,6 +3368,8 @@
       
         
       
+        
+      
     
     
     
@@ -3619,6 +3621,17 @@
     <span class="md-ellipsis">
       
         Anthropic / Coefficient Bio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hugging-science-hugging-face-ai-for-science-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hugging Science (Hugging Face AI-for-science index)
       
     </span>
   </a>
@@ -5475,6 +5488,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5971,6 +6019,62 @@
 <blockquote>
 <p><strong>Note:</strong> Timeline speculation: Based on the pattern (Life Sciences in Oct, Healthcare in Jan, Coefficient acquired in Apr), expect Claude-native biological reasoning features by Q3-Q4 2026. This could mean protein structure tools built directly into Claude, similar to how Rosalind works but integrated into the Claude ecosystem you're already using for the Open Enzyme project. For now, Claude with the Life Sciences connectors (Benchling, PubMed) is your best Anthropic-side tool.</p>
 </blockquote>
+<hr />
+<h3 id="hugging-science-hugging-face-ai-for-science-index">Hugging Science (Hugging Face AI-for-science index)<a class="headerlink" href="#hugging-science-hugging-face-ai-for-science-index" title="Permanent link">&para;</a></h3>
+<p><strong>Hugging Face • resource index surfaced 2026-05-19</strong></p>
+<p><a href="https://huggingscience.co/">Hugging Science</a> is not one model. It is a curated, machine-readable index of open AI-for-science datasets, models, benchmarks, and blog posts across biology, chemistry, medicine, genomics, scientific reasoning, materials, physics, and related fields. The operationally useful feature is that the site exposes topic markdown files and an <a href="https://huggingscience.co/llms.txt"><code>/llms.txt</code></a> index, so an agent can query the catalog directly instead of hand-browsing the Hugging Face Hub.</p>
+<p><strong>Open Enzyme relevance:</strong> this is a capability-discovery layer. Use it when an open question needs "what open model or dataset exists for this axis?" before launching a comp-NNN or wet-lab spend. Treat catalog entries as leads, not validated OE evidence.</p>
+<p>High-priority OE mappings:</p>
+<table>
+<thead>
+<tr>
+<th>OE question class</th>
+<th>Hugging Science capability to inspect first</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FDA-approved repurposing / target overlap</td>
+<td>Eve Bio drug-target activity, TxGemma, AQAffinity, SAIR, CoLiPRI</td>
+<td>Second-pass screen for compounding-pharmacy candidates, ABCG2 Q141K chaperones, C5aR1 / NLRP3 small-molecule gaps.</td>
+</tr>
+<tr>
+<td>ADMET / drug-drug interaction risk</td>
+<td>OpenADMET challenge data, CYP inhibition model, PXR activation model, MIST toxicity / side-effect / BBB models</td>
+<td>Fast safety triage for disulfiram, zileuton, supplement-stack compounds, and any newly surfaced repurposing hit.</td>
+</tr>
+<tr>
+<td>Host-cell expression perturbation</td>
+<td>Ginkgo DRUG-seq, Tahoe-100M / Tahoe-x1, X-Atlas, Perturb-Sapiens, STACK / TEDDY</td>
+<td>Could address expression-modulation questions such as ABCG2 regulation, complement-regulator upregulation, and compound-driven transcriptomic effects before ordering assays.</td>
+</tr>
+<tr>
+<td>Cassette / promoter / sequence design</td>
+<td>Evo-2, Nucleotide Transformer, AlphaGenome, PromoterGPT, ChatNT</td>
+<td>Candidate second-opinion layer for promoter / 5' UTR / coding-sequence design. Stronger for human and broad genomic contexts than for <em>A. oryzae</em>-specific expression until benchmarked.</td>
+</tr>
+<tr>
+<td>Protein / enzyme engineering</td>
+<td>ESM-2, OpenFold3, Boltz / AQAffinity, ThermoGFN-IF, RFdiffusion / ProteinMPNN-related guides</td>
+<td>Follow-up layer for uricase acid stability, lactoferrin linker redesign, DAF SCR1-4 folding, and enzyme thermostability hypotheses.</td>
+</tr>
+<tr>
+<td>Agent benchmark discipline</td>
+<td>FutureHouse Lab-Bench / BixBench, BioMysteryBench, ChemBench</td>
+<td>Useful for evaluating whether an agent workflow is competent at lab-protocol and scientific-reasoning tasks before trusting it with comp-NNN authoring.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Immediate triage queue (no new wiki page yet):</strong></p>
+<ol>
+<li><strong>OpenADMET / CYP / PXR pass on compounding candidates.</strong> Run disulfiram, zileuton, colchicine custom-dose candidates, and top supplement-stack compounds through the open ADMET models as a safety-side screen. Output belongs in <a href="../../compounding-pharmacy-track/"><code>compounding-pharmacy-track.md</code></a> or the relevant compound pages, not here.</li>
+<li><strong>SAIR / AQAffinity / CoLiPRI second opinion for comp-032.</strong> Re-score the ABCG2 Q141K pharmacological-chaperone shortlist against protein-ligand structure / affinity models before wet-lab trafficking assay spend.</li>
+<li><strong>Perturbation-atlas query for ABCG2 and complement-regulator expression.</strong> Search Ginkgo / Tahoe / X-Atlas style resources for compounds that upregulate ABCG2, DAF/CD55, Factor H, CD59, clusterin, or CR1 in epithelial / immune-relevant contexts.</li>
+<li><strong>ThermoGFN-IF / ESM-2 follow-up on uricase stability.</strong> Compare whether the existing OPT-1 / SB-1 uricase engineering set is supported by newer thermostability-directed protein design priors.</li>
+<li><strong>Hugging Science sweep before new comp-NNN briefs.</strong> Add a brief step: query <code>/llms.txt</code> and the relevant topic file for open datasets/models before deciding that a question needs a bespoke analysis.</li>
+</ol>
+<p><strong>Limitations:</strong> Hugging Science is a curated index, not a validation authority. Every resource still needs license review, benchmark fit review, local reproducibility check, and the normal Open Enzyme pre-commit grep-verify gate before a model output becomes load-bearing evidence.</p>
 <hr />
 <h2 id="part-01b-open-source-protein-ai-tools-available-now">Part 01b — Open Source Protein AI Tools (Available Now)<a class="headerlink" href="#part-01b-open-source-protein-ai-tools-available-now" title="Permanent link">&para;</a></h2>
 <p>The commercial tools above are impressive, but Rosalind requires institutional access and Bio Discovery costs $486/month. The good news: there's a mature ecosystem of open source protein AI tools that you can run today, for free, on Google Colab or a local GPU. Several of these are the actual models that power platforms like Bio Discovery under the hood. For a citizen science project on a $1,200 budget, these are not fallbacks — they're your primary computational toolkit.</p>
@@ -6784,6 +6888,11 @@
 <td>Claude for Life Sciences</td>
 <td>anthropic.com</td>
 <td>Available now (Benchling, PubMed connectors)</td>
+</tr>
+<tr>
+<td>Hugging Science</td>
+<td>huggingscience.co/llms.txt</td>
+<td>Free curated index of open AI-for-science resources</td>
 </tr>
 </tbody>
 </table>

@@ -3368,6 +3368,8 @@
       
         
       
+        
+      
     
     
     
@@ -4708,6 +4710,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5127,6 +5164,7 @@
 <hr />
 <h2 id="failure-modes-probed-placeholder-to-be-populated-in-phase-2-p2-5">Failure Modes Probed (placeholder — to be populated in Phase 2 P2-5)<a class="headerlink" href="#failure-modes-probed-placeholder-to-be-populated-in-phase-2-p2-5" title="Permanent link">&para;</a></h2>
 <p>To be populated. Anticipated relevant failure modes from <a href="../../linter-design/">linter-design.md</a> §5: published-literature-gap, training-distribution bias (Western-research bias in the corpus), evidence-tier inflation (overstating "Animal Model" claims as "Supported" because TCM has long traditional use), the alternative-medicine-washing failure mode (modern-language dressing without underlying rigor — rule #6's discipline is the guard).</p>
+<p><strong>Partial closure on the ChEMBL-coverage-gap failure mode (added 2026-05-19).</strong> comp-013's original ChEMBL cross-check returned "5/9 compounds had no ChEMBL data" — the falsification card flagged this as a methodology-limit failure (ChEMBL coverage too sparse for TCM-relevant compounds to support rule #2). The 2026-05-19 traditional-name + traditional-formula re-scan (<a href="../../logs/urat1-classical-formula-rescan-2026-05-19.md">URAT1 rescan</a>, <a href="../../logs/xo-classical-formula-rescan-2026-05-19.md">XO rescan</a>) <strong>partially closes this failure mode</strong>: mangiferin (CHEMBL3611008), apigenin (well-cataloged), acteoside (curated) are all in ChEMBL — the gap wasn't database coverage, it was <strong>seed-list construction at the herb level rather than the formula + marker level</strong>. The methodology fix is the 4-framing query matrix codified in <a href="../../etc/manual-literature-mining/"><code>manual-literature-mining.md</code> §"Query-framing for non-Western compound classes"</a>. Rule #2 (ChEMBL cross-checked) survives intact; rule needing reinforcement is <em>seed-list construction discipline</em> upstream of rule #2.</p>
 <hr />
 <h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
 <p><strong>Stub.</strong> No killshot executed. No assumption stack pre-registered. Full hypothesis card is queued as Phase 2 P2-5 — see <a href="../../tcm-modern-rigor-intersection/#open-follow-ups">tcm-modern-rigor-intersection.md § Open Follow-Ups</a>.</p>

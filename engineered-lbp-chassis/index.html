@@ -1968,6 +1968,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comp-008-payload-ranking-strategic-narrowing-added-2026-05-19-cluster-n-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comp-008 payload ranking — strategic narrowing (added 2026-05-19, Cluster N walkthrough)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-plausible-payloads-phase-2-to-scope" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3593,6 +3604,8 @@
       
         
       
+        
+      
     
     
     
@@ -4802,6 +4815,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5221,12 +5269,60 @@
 <p>This is <strong>genotype-agnostic coverage</strong> — a rare property. Most ABCG2-relevant interventions either work for WT (PPARγ inducers) or for Q141K (HDAC inhibitors), but not both. A live colonic strain producing butyrate continuously hits both populations simultaneously.</p>
 <p>The ranking work in <a href="../food-grade-hdaci-screen-computational/"><code>food-grade-hdaci-screen-computational.md</code></a> (comp-007, 2026-05-05) further validates butyrate's profile: it is the only food-grade HDAC inhibitor with biochemical IC50 data for all four relevant HDAC isoforms (HDAC&frac12;/3/6), and its 167× class-I-over-HDAC6 selectivity puts it ahead of every screened alternative. The challenge with butyrate is <strong>continuous gut-luminal availability</strong> — orally dosed butyrate is rapidly absorbed in the small intestine and does not reach the colon. A colonically-resident butyrate producer solves the bioavailability problem at the dose-frequency level.</p>
 <hr />
+<h2 id="comp-008-payload-ranking-strategic-narrowing-added-2026-05-19-cluster-n-walkthrough">comp-008 payload ranking — strategic narrowing (added 2026-05-19, Cluster N walkthrough)<a class="headerlink" href="#comp-008-payload-ranking-strategic-narrowing-added-2026-05-19-cluster-n-walkthrough" title="Permanent link">&para;</a></h2>
+<p>The 2026-05-16 <a href="../f-prausnitzii-heterologous-expression-computational/">F. prausnitzii heterologous expression feasibility analysis</a> (comp-008) ranked four candidate payloads with explicit composite scores + limiting factors. The ranking sharpens the LBP-chassis strategy decisively:</p>
+<table>
+<thead>
+<tr>
+<th>Payload</th>
+<th>comp-008 composite</th>
+<th>Verdict</th>
+<th>Limiting factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Butyrate-pathway boost (native BCoAT)</strong></td>
+<td><strong>0.748</strong></td>
+<td><strong>GREEN</strong> (only)</td>
+<td>CAI = 1.0 (native gene), no secretion, no folding burden, native pathway alignment. <strong>Toolkit-conditional score 0.875</strong> if engineering toolkit gap closes</td>
+</tr>
+<tr>
+<td>sCR1 SCR1-4 truncation</td>
+<td>0.565</td>
+<td>YELLOW</td>
+<td>Engineering toolkit maturity + anoxic-environment disulfide folding</td>
+</tr>
+<tr>
+<td>Human lactoferrin</td>
+<td>0.540</td>
+<td>YELLOW</td>
+<td>Same bottleneck pattern as sCR1</td>
+</tr>
+<tr>
+<td><strong><em>A. flavus</em> uricase</strong></td>
+<td><strong>0.393</strong></td>
+<td><strong>YELLOW-toward-RED</strong></td>
+<td><strong>Chemistry can't run</strong> — uricase uses O₂ as substrate; <em>F. prausnitzii</em> is an obligate anaerobe in an anoxic colonic lumen. Even with a perfect engineering toolkit, the enzyme's catalytic requirement is incompatible with the host's physiology</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Strategic implications (load-bearing for LBP-chassis track direction):</strong></p>
+<ol>
+<li><strong>Stop considering uricase for <em>Fp</em></strong> — route to EcN (facultative anaerobe, has O₂ in periplasm) or koji (aerobic chassis already established) instead. The 0.393 score isn't a near-miss; it's a fundamental enzyme-host chemistry mismatch.</li>
+<li><strong>Focus <em>Fp</em> on butyrate boost as the near-term campaign</strong> — only GREEN payload, native gene/native pathway, lowest engineering complexity. Butyrate at the obligate-anaerobe colonic-luminal compartment is the cleanest gut-lumen-sink amplification path the platform has.</li>
+<li><strong>Defer lactoferrin / sCR1 to after the engineering toolkit matures</strong> — both YELLOW with the toolkit gap + anoxic disulfide folding as gating constraints. Worth revisiting when <em>Fp</em> genetic tools advance (Sheridan 2019 <em>Lachnospiraceae</em> conjugation precedent may transfer).</li>
+</ol>
+<p><strong>Structural codon advantage (partially offsets toolkit penalty):</strong> human-payload codon profile (~58% GC) vs <em>Fp</em> (56.6% GC) = only 1.4 pp mismatch, <strong>best of any chassis in the LBP track.</strong> If the toolkit gap closes, <em>Fp</em>'s codon-compatibility advantage makes it the preferred chassis for complex mammalian payloads.</p>
+<p><strong>Queued follow-up: P2-6 comparative chassis matrix.</strong> Fp should be benchmarked for butyrate boost against <em>E. coli</em> Nissle (facultative anaerobe, mature toolkit, already used in PULSE) — the engineering-toolkit penalty of 0.25 across all <em>Fp</em> payloads may make EcN the faster path even for butyrate, despite <em>Fp</em>'s natively higher butyrate titers.</p>
+<hr />
 <h2 id="other-plausible-payloads-phase-2-to-scope">Other plausible payloads (Phase 2 to scope)<a class="headerlink" href="#other-plausible-payloads-phase-2-to-scope" title="Permanent link">&para;</a></h2>
 <p>Beyond a butyrate-pathway boost, the LBP chassis class plausibly supports:</p>
 <ul>
 <li><strong>Heterologous uricase</strong> (replicating the koji chassis function in a colonically-resident format — possibly a more direct route than rasburicase-class IV biologics for refractory gout)</li>
 <li><strong>Lactoferrin</strong> (TNFα-cycle relief — the Open Enzyme endgame strain's CP1a/CP4/CP6b/CP5b coverage molecule)</li>
 <li><strong>Soluble complement regulators (sCR1, Factor H, DAF/CD55)</strong> — the CP0 platform gap, see <a href="../daf-cd55-protease-stability-computational/">comp-006</a> for the koji-feasibility analysis (HIGH risk, stalk-driven; an LBP chassis avoids the koji protease environment entirely)</li>
+<li><strong>C1-INH (SERPING1) — CP0 classical/lectin entry blocker.</strong> <a href="../c1-inh-protease-stability-ecn-computational/">comp-037</a> (2026-05-17) returned <strong>MODERATE (kinetic-competition gated)</strong> for C1-INH expressed as a secreted LBP-luminal payload in EcN. Serpin-core construct (aa 123–500, mucin-truncated): strictly-degradative protease risk LOW (0.1), glycosylation feasibility GREEN for luminal topology, remaining risk is RCL kinetic competition (k_C1s_engagement vs k_DegP_RCL_cleavage). Substantiates the two-chassis CP0 architecture (C1-INH on EcN-LBP + DAF SCR1-4 on koji). (Mechanistic Extrapolation; source: c1-inh-protease-stability-ecn-computational.md)</li>
 <li><strong>IL-22 secretion</strong> (gut barrier repair — already in clinical development as engineered E. coli Nissle by Synlogic-adjacent programs)</li>
 <li><strong>Carnosine</strong> (URAT1 / GLUT9 modulation — see <a href="../carnosine/"><code>carnosine.md</code></a> and <a href="../koji-endgame-strain/"><code>koji-endgame-strain.md</code> §2.5</a>)</li>
 </ul>

@@ -3368,6 +3368,8 @@
       
         
       
+        
+      
     
     
     
@@ -4577,6 +4579,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5226,6 +5263,9 @@
         O3["ROS Burst (non-transcriptional priming)"]
         O4["Avacopan (C5aR1 antagonist, FDA ANCA)"]
         O5["S100A8/A9 DAMP (2025 flare driver)"]
+        O6["C1-INH (SERPING1) — EcN-LBP luminal CP0 candidate"]
+        O7["DAF SCR1-4 — koji-secreted CP0 candidate"]
+        O8["Houttuynia cordata polysaccharides — dietary CP0 (comp-018 Phase 2)"]
     end
 
     subgraph Resolution["ACTIVE RESOLUTION (CP5b — NEW)"]
@@ -5307,6 +5347,7 @@
         DE29["comp-035 IA Uricase H₂O₂ Reaction-Diffusion — GREEN across all 3 architectures"]
         DE30["comp-029 Combined CP0 Systems Model — YELLOW; RA gut-luminal + DAF SCR1-4"]
         DE31["comp-033/036 Inhaled mRNA-IL-1RA — RED single-dose / YELLOW repeat-dose"]
+        DE32["comp-037 C1-INH Protease Stability + Glycosylation in EcN — MODERATE (kinetic-competition gated)"]
     end
 
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
@@ -5518,6 +5559,13 @@
     O3 --&gt;|"primes NLRP3 (non-transcriptional)"| C2
     O4 -.-&gt;|"inhibits (pharma adjunct)"| O2
     O5 --&gt;|"DAMP amplifies NF-κB priming"| Q2
+    %% Two-chassis CP0 architecture (comp-037 + comp-012, 2026-05-17)
+    O6 --&gt;|"inhibits C1r/C1s/MASP-2 at classical/lectin entry"| O1
+    O7 --&gt;|"accelerates decay of C3/C5 convertases at MSU surface"| O1
+    O6 --&gt;|"expressed in EcN LBP (MODERATE, kinetic-competition gated)"| O1
+    O7 --&gt;|"expressed in A. oryzae koji (LOW protease risk, wet-lab gated)"| O1
+    %% Houttuynia cordata polysaccharides — dietary CP0 (comp-018 Phase 2, 2026-05-17)
+    O8 --&gt;|"multi-target C2+C4+C5, CH50 79-318 µg/mL"| O1
 
     %% CP1a — TNFSF14 (LIGHT) amplifier (Round 1 work)
     Q1 --&gt;|"amplifies via HVEM"| Q2
@@ -5753,6 +5801,9 @@
     %% comp-033/036 inhaled mRNA-IL-1RA (source: inhaled-mrna-il1ra-pulse-computational.md, repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md)
     DE31 --&gt;|"RED single-dose; YELLOW repeat-dose at corrected Kd 0.1-10 nM"| DE25
     DE31 --&gt;|"prednisone-displacement reframe: partial occupancy × cleaner side-effect profile"| DE22
+    %% comp-037 C1-INH protease stability + glycosylation feasibility (2026-05-17)
+    DE32 --&gt;|"MODERATE — LOW strictly-degradative, GREEN glycosylation, RCL kinetic-competition gated"| O6
+    DE32 --&gt;|"substantiates two-chassis CP0 architecture (C1-INH EcN + DAF SCR1-4 koji)"| O7
     %% Chassis-pending interventions (source: chassis-pending-interventions.md)
     DE25 --&gt;|"operationalizes chokepoint-first chassis-second discipline"| DE2
     DE25 --&gt;|"PDB / siRNA-URAT1 / engineered-LBP / mRNA-IL-1RA / IA-uricase entries"| DE7

@@ -3368,6 +3368,8 @@
       
         
       
+        
+      
     
     
     
@@ -4577,6 +4579,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tcm-gout-compound-triage-computational/" class="md-nav__link">
         
   
@@ -5277,6 +5314,7 @@
 <h3 id="4-autonomy-boundary-ranking-not-validation">4. Autonomy boundary = ranking, not validation<a class="headerlink" href="#4-autonomy-boundary-ranking-not-validation" title="Permanent link">&para;</a></h3>
 <p>Useful prior: keep the AI on the <strong>"produce ranked shortlist + provenance + composite score"</strong> side of the boundary; humans (or an explicit gating ritual) make the wet-lab commit. Don't oversell autonomy.</p>
 <p>This connects to the existing comp-NNN gating ritual: comp-NNN produces a verdict (LOW / MODERATE / HIGH / VERY HIGH risk + composite score + explicit limitations), and the human-driven §1.9 / §1.10 gating tests are the autonomy boundary. The shape is right; the discipline of explicitly naming the boundary is what's worth importing.</p>
+<p><strong>Physical-execution counterpart surfaced 2026-05-19: Picolab.</strong> ClockBase is prior art for autonomous ranking over existing data; <a href="https://github.com/OmkarKovvali/picolab_v2">Picolab v2</a> is early open-source prior art for the other half of the loop: cheap, tube-scale physical execution. The repo wraps a repurposed 3D-printer gantry with a G-code motion planner, calibration layer, camera-assisted agent workspace, and operator-approved execution. For OE methodology, the lesson is not "closed-loop validation is solved"; it is narrower and useful: a lower-cost automation layer could make serial dilution, colorimetric assay setup, and post-step camera verification less operator-variable. The autonomy boundary should remain explicit: AI may propose and preview actions; hardware execution stays gated; biological interpretation and wet-lab commit decisions stay human-reviewed until the assay itself is validated. (Engineering prior art; source: Picolab v2 repository; see <a href="../practitioner-toolkit/"><code>practitioner-toolkit.md</code></a> DIY Capability Builds)</p>
 <h3 id="5-computational-to-wet-lab-handoff-n-of-m-concordance">5. Computational-to-wet-lab handoff: N-of-M concordance<a class="headerlink" href="#5-computational-to-wet-lab-handoff-n-of-m-concordance" title="Permanent link">&para;</a></h3>
 <p>ClockBase's confidence calibration was <strong>cohort-level concordance across many aging clocks</strong> — if 30+ of 40 clocks agree, green light.</p>
 <p>Translates to comp-NNN as: <strong>require N-of-M concordance across orthogonal scoring models before promoting to wet lab.</strong> For Open Enzyme: don't promote a strain-engineering candidate to wet-lab spend on a single high-confidence model output; require concordance across folding + secretion + codon + scaffold models. Concordance threshold is calibration-dependent (ClockBase ~30/40 = 75%; OE's smaller orthogonal-model set likely needs ~&#8536; = 80% or higher).</p>
@@ -5382,6 +5420,7 @@
 <li><strong>Map ClockBase's verification-agent pattern onto comp-NNN.</strong> Concrete proposal: every comp-NNN run produces a primary-output report + a verification-pass report (independent agent re-checks load-bearing numbers vs. UniProt / ChEMBL / AlphaFold). The DAF SCR1-4 incident (2026-05-06) is the canonical case showing why this is needed.</li>
 <li><strong>N-of-M concordance threshold calibration.</strong> What's the right threshold for promoting comp-NNN candidates to wet lab? ClockBase uses ~30/40 (75%); we likely need &#8536; (80%) or higher for our smaller orthogonal-model set. Pin via retrospective analysis of comp-001 through comp-014 verdicts.</li>
 <li><strong>Multi-vendor LLM agent orchestration.</strong> ClockBase appears to use a single LLM across sub-agents. Per OE's multi-model heterogeneity discipline, comp-NNN should consider using different LLMs for hypothesis-generation vs. verification (e.g., Claude generates hypotheses, DeepSeek verifies; or Gemini ranks, Claude reviews).</li>
+<li><strong>Map Picolab-style physical execution onto OE assay loops.</strong> Concrete proposal: identify the first non-sterile, tube-scale protocol where low-cost liquid handling would reduce operator variance without introducing safety risk. Leading candidates: serial dilution practice, smartphone colorimetry standard curves, p-NPP lipase setup, DNS amylase setup, or benign dye controls before any biological sample handling.</li>
 <li><strong>Surface ouabain as a senolytic-class entry on the modality matrix?</strong> Tangential to gout-NLRP3 directly, but the ouabain-as-senolytic mechanism intersects with NLRP3 priming (cellular senescence → SASP → IL-1β). Decision: not a chase target for Open Enzyme, but worth a one-line note on the modality-chokepoint matrix for completeness.</li>
 </ul>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
