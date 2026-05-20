@@ -28,6 +28,8 @@ The 2014 *C. militaris* powder human record remains manual-retrieval-only. Free-
 
 The 2025 *Sanghuangporus vaninii* / `Journal of Jilin Agricultural University` CNKI record also remains abstract-only. Its English/MT abstract's "compared with the allopurinol group" wording is quarantined until the Chinese full text is read. However, a free-route search surfaced open-access source-readable *S. vaninii* papers that are promotion-grade at the Animal Model level: Hua 2023 *Biomedicine & Pharmacotherapy* (SHEE in potassium-oxonate + adenine HUA renal-injury mice, transporter-expression effects) and Sun 2022 *Nutrients* (SV/IH in YEP/OXO HUA mice plus MSU-induced acute gouty arthritis rats). Source-read state is captured in `p0-1-sanghuang-source-read-2026-05-20.md`.
 
+The 2025 Phellinus TFPI CNKI record remains abstract-only for the transporter mRNA/protein mismatch. However, a free-route search surfaced an open-access English TFPI paper in *Heliyon* (Chen 2023, DOI `10.1016/j.heliyon.2023.e12979`, PMCID `PMC9938467`) that is promotion-grade for HUA / uric-acid-nephropathy Animal Model plus HK-2 renal-cell evidence: serum UA 105.0 to 82.3 micromol/L and Cr 44.30 to 33.37 micromol/L at 450 mg/kg TFPI, liver XOD 48.91 to 44.09 U/g prot, and HK-2 MSU-cell TLR4/NLRP3 suppression with ABCG2 protein upregulation. Source-read state is captured in `p0-1-phellinus-tfpi-source-read-2026-05-20.md`. Do not use this open paper to resolve the 2025 CNKI OAT1/ABCG2/URAT1 mRNA-versus-protein nuance; keep that record full-text-needed.
+
 CNKI records:
 
 1. `Effect and Mechanism of Cordyceps militaris Extract on Lowering Uric Acid in Hyperuricemia Rats` - [CNKI Overseas](https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CyrYCiF-YxoIDQk7aZfTn4UoXjxU5pAz5UXuaMgf0skSD5b_zZks7HF4jxJHIClW-Y6rpye1KwjQUJDVH-1ITCfdPf9LgWIgZb82QxFPFVpaynreUIiSLGTVRYxYRSfRtvFFM-2Q2IY8_oN--5k0S9IXLElrjkvBklvDksrNt4aQ==&uniplatform=OVERSEA&language=EN)
@@ -79,7 +81,7 @@ No direct model-vs-model disagreement changed the top-line ranking. The disagree
 1. Retrieve/read full text for 2024 Cordyceps militaris extract in HUA rats.
 2. Retrieve/read full text for 2014 Cordyceps militaris powder in 22 hyperuricemia patients, focused on design, dose, population, endpoint definition, and control/comparator absence.
 3. Keep the 2025 *Sanghuangporus vaninii* CNKI record in manual-retrieval status for comparator wording, but use the open-access Hua 2023 / Sun 2022 papers as the current Sanghuang Animal Model source-read anchors.
-4. Retrieve/read full text for 2025 Phellinus TFPI, focused on transporter protein/mRNA interpretation and whether NLRP3/MSU claims are cellular-only.
+4. Keep the 2025 Phellinus TFPI CNKI record in manual-retrieval status for transporter protein/mRNA interpretation and whether the newer NLRP3/MSU claims are cellular-only; use Chen 2023 *Heliyon* as the current Phellinus TFPI Animal Model / HK-2 renal-cell source-read anchor.
 5. Retrieve/read full text for 2024 Ganoderma aqueous extract, focused on kidney urate increase and renal markers.
 6. Treat 2023 GLPP conference and 2023 Phellinus inhibitor-isolation records as follow-up mechanistic/fractionation leads unless full text is easy to access.
 
