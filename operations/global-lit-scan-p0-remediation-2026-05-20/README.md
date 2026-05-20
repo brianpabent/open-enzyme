@@ -17,7 +17,7 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 
 | Item | Question | Current status | Next action |
 |---|---|---|---|
-| P0-1 | Medicinal mushroom / comp-014 Phase 5b rescue scan | CNKI Overseas rerun complete; Ganoderma, Sanghuang/Phellinus, and Cordyceps militaris urate leads recovered | Two-model reading of lead articles before wiki evidence update |
+| P0-1 | Medicinal mushroom / comp-014 Phase 5b rescue scan | CNKI Overseas rerun and abstract-level two-model read complete; Cordyceps militaris and Sanghuang/Phellinus are the strongest recovered urate leads | Retrieve/read full text for priority Cordyceps and Sanghuang/Phellinus records before wiki evidence update |
 | P0-2 | East Asian gout genetics: ABCG2 Q141K, HLA-B*58:01, URAT1/W258X | Query plan adequate; J-STAGE local-curl route has strong immediate yield; CNKI Overseas route corrected | Run first deep dive here |
 | P0-3 | TCM gout formula re-scan | Query plan adequate; WanFang reachable but SPA extraction unresolved; CNKI Overseas route corrected; Baidu captcha | Needs CNKI/WanFang result extraction before evidence update |
 | P0-4 | NLRP3 x Lingzhi/Yun Zhi/Maitake immunomodulation | Query plan adequate; J-STAGE returns fungal beta-glucan immunology reviews; RISS route reachable; CNKI Overseas route corrected | Run after P0-2, with explicit "not gout-specific yet" guardrail |
@@ -34,6 +34,9 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 - [`outputs/p0-1-cnki-overseas-rerun-2026-05-20.json`](./outputs/p0-1-cnki-overseas-rerun-2026-05-20.json) - focused P0-1 CNKI Overseas query counts and top result records.
 - [`outputs/p0-1-cnki-lead-articles-2026-05-20.json`](./outputs/p0-1-cnki-lead-articles-2026-05-20.json) - fetched article-page provenance for high-signal P0-1 lead records.
 - [`outputs/p0-1-cnki-rerun-summary-2026-05-20.md`](./outputs/p0-1-cnki-rerun-summary-2026-05-20.md) - human-readable P0-1 rerun summary and next-read list.
+- [`outputs/p0-1-cnki-lead-abstract-records-2026-05-20.json`](./outputs/p0-1-cnki-lead-abstract-records-2026-05-20.json) - parsed abstract/keyword records for the nine highest-priority CNKI leads.
+- [`outputs/p0-1-cnki-deepseek-counterread-2026-05-20.json`](./outputs/p0-1-cnki-deepseek-counterread-2026-05-20.json) - native-Chinese DeepSeek counter-read over the parsed abstract records.
+- [`outputs/p0-1-cnki-two-model-source-read-2026-05-20.md`](./outputs/p0-1-cnki-two-model-source-read-2026-05-20.md) - Codex/GPT-5.5 plus DeepSeek conservative source-read summary.
 - `outputs/retrieval-probes-raw/` - raw HTML/provenance files. Provenance records when a fetch used local curl and whether insecure TLS was required.
 
 ## Retrieval Findings
@@ -51,7 +54,9 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 
 **CNKI AI may be a useful triage surface, not a citable source.** CNKI Overseas advertises [`CNKI AI`](https://oversea.cnki.net/index/second/cnkiai/en/homepage.html) as an AI research tool over CNKI's 380 million-paper corpus, with multilingual Q&A/translation, traceable answers, paper snapshots, citation generation, and a `Try It Now` entrypoint at `https://ai.oversea.cnki.net/inds/aigc?sysid=4&lang=en`. This is operationally noteworthy because it may expose a CNKI-native discovery path for Chinese literature that ordinary static curl does not. Treat it as a lead generator only: any CNKI AI answer must be traced back to original CNKI records/full text and then read with the two-model translation protocol before it can affect wiki evidence tiers.
 
-**P0-1 CNKI rerun is now positive.** The corrected CNKI route plus direct `/kns8s/brief/grid` extraction recovered meaningful medicinal-mushroom urate leads. Focused query counts included `灵芝 多糖肽 分离纯化` (39), `灵芝 高尿酸血症` (7), `桑黄 高尿酸血症` (28), `桑黄 黄嘌呤氧化酶` (10), `蛹虫草 高尿酸血症` (12), and cultivation/substrate queries `菌草 灵芝 栽培` (95) / `菌草 灵芝 多糖` (86). Treat this as a discovery-positive result that needs source reading, not as a final evidence-tier change.
+**P0-1 CNKI rerun is now positive.** The corrected CNKI route plus direct `/kns8s/brief/grid` extraction recovered meaningful medicinal-mushroom urate leads. Focused query counts included `灵芝 多糖肽 分离纯化` (39), `灵芝 高尿酸血症` (7), `桑黄 高尿酸血症` (28), `桑黄 黄嘌呤氧化酶` (10), `蛹虫草 高尿酸血症` (12), and cultivation/substrate queries `菌草 灵芝 栽培` (95) / `菌草 灵芝 多糖` (86). A Codex/GPT-5.5 plus DeepSeek abstract-level read ranks Cordyceps militaris first, Sanghuang/Phellinus second, and Ganoderma third for follow-up. Treat this as a discovery-positive result that needs full-text reading, not as a final evidence-tier change.
+
+**CNKI full text is not yet script-retrievable from curl.** Article detail pages expose HTML/PDF/CAJ order links, but local curl against those order endpoints redirects to CNKI Overseas login pages. The P0-1 two-model pass is therefore an abstract-level source read. Any wiki evidence-tier update still requires full text, preferably obtained through browser/manual CNKI access or another legitimate full-text route, then read with two independent models.
 
 **Baidu/Baidu Scholar is not usable through simple curl.** Baidu redirects to `百度安全验证` captcha pages. Treat Baidu as manual/browser-only unless a compliant API/source route is identified.
 

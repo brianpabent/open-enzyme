@@ -1,0 +1,293 @@
+{
+  "created_at": "2026-05-20T16:59:47.251Z",
+  "records": [
+    {
+      "title": "Effects of Ganoderma lucidum Aqueous Extract on Uric Acid Level and Renal Function of Rats with Hyperuricemia",
+      "source": "Acta Edulis Fungi",
+      "publication_date": "2024-09-24",
+      "doi": "10.16488/j.cnki.1005-9873.2024.05.011",
+      "files": [
+        {
+          "kind": "HTML Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effects_of_Ganoderma_lucidum_Aqueous_Extract_on_Uric_Acid_Level_and_Renal_Functi_HTML_Reading_ed95aff9f770.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effects_of_Ganoderma_lucidum_Aqueous_Extract_on_Uric_Acid_Level_and_Renal_Functi_HTML_Reading_ed95aff9f770.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0K3BwhoTN6KIM69d%252B8l7WJfZU5Jv%252Bad9x9HdrK5liZziaL6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%252F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%252BgEcSihWyT%252FG87uwauxftBx02tVIsV6N7laGLwDrbN2Aapw4v%252FFRHe11bHnEf37JQljAvbVy4bRiDUO%252FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "Original Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effects_of_Ganoderma_lucidum_Aqueous_Extract_on_Uric_Acid_Level_and_Renal_Functi_Original_Reading_c140503298fc.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effects_of_Ganoderma_lucidum_Aqueous_Extract_on_Uric_Acid_Level_and_Renal_Functi_Original_Reading_c140503298fc.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0K3BwhoTN6KIM69d%252B8l7WJfZV9PiPR84xOiRdlW1cHO9Tbi9VqGRvU9Wt%252FNNXK2WCeZjr7C894tvO6YOYHK%252FxbW35Ty4NWPQW7DsbkwrQYomW8SgiQLqznc3gLIMwiN%252BzE1igPlZ%252BhLXR05RtC2QtnlB7gMBBgAaYUV1nWmSJJKGd07gMN9gqnn9Ld7Ja0Eva0%252B%252BrquYEQWT2Y%252B3fdzG5D5RGGyt7Ta2JwSfVLqEwfrkN3KAUBlVIsgcb0E8u%252FYkCK%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "English HTML (MT)",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effects_of_Ganoderma_lucidum_Aqueous_Extract_on_Uric_Acid_Level_and_Renal_Functi_English_HTML_MT__bcc2534ec64a.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effects_of_Ganoderma_lucidum_Aqueous_Extract_on_Uric_Acid_Level_and_Renal_Functi_English_HTML_MT__bcc2534ec64a.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=OVERSEA&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DUEijbwcZe%252BogYZkxTH5yJqwoaf6n047VYDxGB2eXAlhW7pQVLn3KVJ4y05RKHFcz0yBtpRSA9FURsfR1mUbU1nKDqqLstXn56IP%252FwOjM7rcWTx2GNTlgDpbCt%252F5Duh7RJGLYwOrc2ELEb92Ay3K2qBvofhcoHmrUEjfSKClKz8mjMjihuk0RbGMYT80RIRMool2eyyT712YPLjpAbLEI5hMCKp1Bpukai2nIjo1bWTjTuFqh64dLQIRnAF7thglEtXMDPUCzZNW9WBHnXhsS7A%253D%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "PDF",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effects_of_Ganoderma_lucidum_Aqueous_Extract_on_Uric_Acid_Level_and_Renal_Functi_PDF_b61c581af0e0.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effects_of_Ganoderma_lucidum_Aqueous_Extract_on_Uric_Acid_Level_and_Renal_Functi_PDF_b61c581af0e0.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0K3BwhoTN6KIM69d%252B8l7WJfR1wggF3UQ1knMOeJrynJ4Z7b5mY%252FmsIpB5E%252FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%252B8LhM%252BfEqYWvBGm18f9oV%252B%252Bf%252FPSCFwTjaLsqqffnP7SR%252Fg40lxqrpi1U1Ur3EdYX1YAUV%252Fk2Y2mclgouPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%252F%252BTJIZmBG1xNo0%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "title": "灵芝 多糖肽通过调节腺苷脱氨酶和 尿酸 转运蛋白减轻 高尿酸血症",
+      "source": "第十二届药用真菌学术研讨会论文集",
+      "publication_date": "2023-10-21",
+      "doi": "10.26914/c.cnkihy.2023.043351",
+      "files": [
+        {
+          "kind": "HTML Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/灵芝_多糖肽通过调节腺苷脱氨酶和_尿酸_转运蛋白减轻_高尿酸血症_HTML_Reading_2b1111cdbc6f.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/灵芝_多糖肽通过调节腺苷脱氨酶和_尿酸_转运蛋白减轻_高尿酸血症_HTML_Reading_2b1111cdbc6f.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3D%252BIQfYJ9xGGMgrydkE9rX0UhqNjxajcb0llJZB%252BDeEruMU4sEIbsx4c6bUXnX9wHULsUjZT8DPsMjS9XQW6Br5l7Xm9rpnIH0MWuRSgHI2dSSv%252FU4mDA6DF6GXkiA4TPabv9zWnzCul16VyIBJdUGQGyQtztZ%252B5fLNmJYqXR0ke6rdkPqCBMJ%252FtxPz%252BiI32dwUCsiG4pnZRdxWt5ota32E8OPmof4AXK7tidV%252FTmquzYhdMcu40tZSx43Jsf47z2K1i9HNeMjyLPbM3N%252FozPYmYCAdffI1l%252Bwt%252FLIWnPedQedOx89pqwCZVRJ09PS4dTX%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "Original Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/灵芝_多糖肽通过调节腺苷脱氨酶和_尿酸_转运蛋白减轻_高尿酸血症_Original_Reading_2cc47b4664c5.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/灵芝_多糖肽通过调节腺苷脱氨酶和_尿酸_转运蛋白减轻_高尿酸血症_Original_Reading_2cc47b4664c5.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3D%252BIQfYJ9xGGMgrydkE9rX0UhqNjxajcb0llJZB%252BDeEruMU4sEIbsx4c6bUXnX9wHULsUjZT8DPsMjS9XQW6Br5l7Xm9rpnIH0MWuRSgHI2dQLzgqzRZWetuxZU%252FU3Zhdz%252Bn7BQMQp1IjbaMnhMm0vkNYNSUSmxYMZTzoRFSUI4sT6XyHXaQfIG3mFkCakmas2I0dxff8z9krelEPQ1ga5%252F8Z6lPKikc303Bhfqbw%252FFSz5kVJrrHKtQT8zh9BaCPzHsNReFueNZx80t8cPgmR%252B%252BQUI3UIpuXtov7y9cl%252F1YQ9TYZvirLO%252B7BEJjjbrMvpp%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "PDF",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/灵芝_多糖肽通过调节腺苷脱氨酶和_尿酸_转运蛋白减轻_高尿酸血症_PDF_6a5a8167f609.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/灵芝_多糖肽通过调节腺苷脱氨酶和_尿酸_转运蛋白减轻_高尿酸血症_PDF_6a5a8167f609.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3D%252BIQfYJ9xGGMgrydkE9rX0UhqNjxajcb0llJZB%252BDeEruMU4sEIbsx4c6bUXnX9wHULsUjZT8DPsMjS9XQW6Br5l7Xm9rpnIH0MWuRSgHI2dS%252FpiMov8GoingO%252BHGd4p%252BkUH5IqT4%252BJs%252FSniJcT4npNP1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%252BgEcSihWyT%252FG87uwauxftBx02tVIumj5JpSekz5YRLnXe4oYVrk3opAFXYm%252BxilztejETIVy4bRiDUO%252FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "title": "Study on the Mechanism of Anti-inflammatory and Lowering Uric Acid Effect by Total Flavonoids of Phellinus Igniarius in Vitro Based on Network Pharmacology",
+      "source": "Chinese Journal of Modern Applied Pharmacy",
+      "publication_date": "2025-02-15",
+      "doi": "10.13748/j.cnki.issn1007-7693.20232488",
+      "files": [
+        {
+          "kind": "Original Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Study_on_the_Mechanism_of_Anti_inflammatory_and_Lowering_Uric_Acid_Effect_by_Tot_Original_Reading_02561a55664b.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Study_on_the_Mechanism_of_Anti_inflammatory_and_Lowering_Uric_Acid_Effect_by_Tot_Original_Reading_02561a55664b.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdog%252BHL%252FGFrGhKahW4YGMC%252BSxhAjTTUpvemFOLib1kBGgj33RqIqYFNL1EZPFgSJj%252Fnbi9VqGRvU9Wt%252FNNXK2WCeZjr7C894tvO6YOYHK%252FxbW35Ty4NWPQW7DsbkwrQYomW8SgiQLqznc3gLIMwiN%252BzE1igPlZ%252BhLXR05RtC2QtnlMRLw29KMeIcs3arl6ALuXZ07gMN9gqnn9Ld7Ja0Eva0%252B%252BrquYEQWT2Y%252B3fdzG5D5RGGyt7Ta2JwSfVLqEwfrkN3KAUBlVIsgcb0E8u%252FYkCK%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "PDF",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Study_on_the_Mechanism_of_Anti_inflammatory_and_Lowering_Uric_Acid_Effect_by_Tot_PDF_7608a42a4464.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Study_on_the_Mechanism_of_Anti_inflammatory_and_Lowering_Uric_Acid_Effect_by_Tot_PDF_7608a42a4464.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdog%252BHL%252FGFrGhKahW4YGMC%252BSxhAjTTUpvemFOLib1kBGgqkuHhmBxEQzKDdtdeMIf0t7b5mY%252FmsIpB5E%252FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%252B8LhM%252BfEqYWvBGm18f9oV%252B%252Bf%252FPSCFwTjaLsqqffnP7SR%252Fg40lxqrpi1U1UqVX%252FL8baXWeg1fBYQlQ3dmPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%252F%252BTJIZmBG1xNo0%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "title": "Rapid identification by UPLC-Q-TOF-MS of the chemical composition of Sanghuangporus vaninii alcohol extract from poplar and its urate-lowering activity and nephroprotective effect",
+      "source": "Journal of Jilin Agricultural University",
+      "publication_date": "2025-01-20 11:56",
+      "doi": "10.13327/j.jjlau.2025.0048",
+      "files": [
+        {
+          "kind": "HTML Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Rapid_identification_by_UPLC_Q_TOF_MS_of_the_chemical_composition_of_Sanghuangpo_HTML_Reading_5fe6826f7689.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Rapid_identification_by_UPLC_Q_TOF_MS_of_the_chemical_composition_of_Sanghuangpo_HTML_Reading_5fe6826f7689.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvptZFPGzz32xXYww99gr5E1iRrp%252BIpfT0%252B4%252F%252BdNMKUkXfRV4ub%252F8TarCsFUpt9gXTARbyAPh7bNcdU0hDRAIgLCOhQ%252FdQlGhf27cmUY4mvFw%252BOnoTFIfY%252F2SwjfB05b4u35Ty4NWPQW7DsbkwrQYomW8SgiQLqznc3gLIMwiN%252BzE1igPlZ%252BhLXR05RtC2QtnlIWg2IEGv6A5E4dGjUTWQSR07gMN9gqnn9Ld7Ja0Eva0%252B%252BrquYEQWT2Y%252B3fdzG5D5RGGyt7Ta2JwSfVLqEwfrkN3KAUBlVIsgcb0E8u%252FYkCK%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "Original Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Rapid_identification_by_UPLC_Q_TOF_MS_of_the_chemical_composition_of_Sanghuangpo_Original_Reading_76c91d4404a5.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Rapid_identification_by_UPLC_Q_TOF_MS_of_the_chemical_composition_of_Sanghuangpo_Original_Reading_76c91d4404a5.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvptZFPGzz32xXYww99gr5E1iRrp%252BIpfT0%252B4%252F%252BdNMKUkXfRV4ub%252F8TarCsFUpt9gXTELQlTNnz8QA6WmsTNctUB9MzZWlMph9uYCAdD7dBNl1Tx9iFkWJMKeDp8pM33mgWloI06JeZj3AHASLOphhm2qG0ijNqVoNzldE1orryXW9cWb5TCAXW1ngI2SSaijhlHaocwO%252FPZTdJjaJr5o0PGJa9C1UCCEZT7StY81edvHYIHJYE2rgQQC%252FNe0jOCw%252F26JCPG%252Fydti3ObkO2TEaRn0%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "English HTML (MT)",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Rapid_identification_by_UPLC_Q_TOF_MS_of_the_chemical_composition_of_Sanghuangpo_English_HTML_MT__601c52aa1ea6.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Rapid_identification_by_UPLC_Q_TOF_MS_of_the_chemical_composition_of_Sanghuangpo_English_HTML_MT__601c52aa1ea6.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=OVERSEA&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DUEijbwcZe%252BogYZkxTH5yJm4Un59Y8BbZAy3gezCh657WmdTdA9ISdWYnvERaHAqQNWrBIVy2hSczwoTEHHwQ4fHYRkvhHBTJr9C0eNwZf46sMKqkXudlt0d0qVdstQ2rHqm%252FnaWPi6v1i826Cf%252BcBsFR4gKlEEz6D5%252BPy00VVi6oG9A30MlbTM2F8Gj2tO%252FKdZrbijBWmyqk4c9yHAf7Qw9IvMyhPdiiPHmZeKCxNSBZu0ehtJBbjmWHBDrToeyH69%252Bm944nvjEgFZelmm9%252Fug%253D%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "PDF",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Rapid_identification_by_UPLC_Q_TOF_MS_of_the_chemical_composition_of_Sanghuangpo_PDF_5591589df87a.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Rapid_identification_by_UPLC_Q_TOF_MS_of_the_chemical_composition_of_Sanghuangpo_PDF_5591589df87a.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvptZFPGzz32xXYww99gr5E1iRrp%252BIpfT0%252B4%252F%252BdNMKUkXfRV4ub%252F8TarCsFUpt9gXTBgD0NH%252BH7UTYyGxq8l3gIzw7Umt9nDzwy31%252BirqzzeUOXd9VWRdK41te2p4b3E6n6oOMvbIz%252F8JB7CmX1oUvsrsO1C4tPxjzCjSLMbQy%252Fq2Th%252FywteSqP1CRbfYd0IkRWt%252FvRvBGFvcib27Gg%252F9cD6NGkHRRtg%252FyMn4t0%252FZxM1j04yMPQOAQIAgbT2uMsIDuifB6QxOYUyIR8PMoF5%252F7cs%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "title": "Screening,separation and mass spectrometry analysis of xanthine oxidase inhibitors in Phellinus igniarius",
+      "source": "China Food Additives",
+      "publication_date": "2023-12-19 08:45",
+      "doi": "10.19804/j.issn1006-2513.2023.12.002",
+      "files": [
+        {
+          "kind": "HTML Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Screening_separation_and_mass_spectrometry_analysis_of_xanthine_oxidase_inhibito_HTML_Reading_ce7e76819503.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Screening_separation_and_mass_spectrometry_analysis_of_xanthine_oxidase_inhibito_HTML_Reading_ce7e76819503.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0Kxjlu9T40cGXICyr7aDASFfuwpazjdyQSunlCpusGiQGL6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%252F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%252BgEcSihWyT%252FG87uwauxftBx02tVDJpAMxiGVAIz4M4jWmCngG0tp4BX1ZH0xXlQJ3eq9BMVy4bRiDUO%252FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "Original Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Screening_separation_and_mass_spectrometry_analysis_of_xanthine_oxidase_inhibito_Original_Reading_81eb12a06936.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Screening_separation_and_mass_spectrometry_analysis_of_xanthine_oxidase_inhibito_Original_Reading_81eb12a06936.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0Kxjlu9T40cGXICyr7aDASFegiaWhUmgo6yHg9GFM9iKPbi9VqGRvU9Wt%252FNNXK2WCeZjr7C894tvO6YOYHK%252FxbW35Ty4NWPQW7DsbkwrQYomW8SgiQLqznc3gLIMwiN%252BzE1igPlZ%252BhLXR05RtC2QtnlBoa4PMT0nUfvVnVmwVsVaJ07gMN9gqnn9Ld7Ja0Eva0%252B%252BrquYEQWT2Y%252B3fdzG5D5RGGyt7Ta2JwSfVLqEwfrkN3KAUBlVIsgcb0E8u%252FYkCK%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "PDF",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Screening_separation_and_mass_spectrometry_analysis_of_xanthine_oxidase_inhibito_PDF_5cd9a9905d1d.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Screening_separation_and_mass_spectrometry_analysis_of_xanthine_oxidase_inhibito_PDF_5cd9a9905d1d.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0Kxjlu9T40cGXICyr7aDASFV6xOFHWRwlVQhHcJPsQkV57b5mY%252FmsIpB5E%252FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%252B8LhM%252BfEqYWvBGm18f9oV%252B%252Bf%252FPSCFwTjaLsqqffnP7SR%252Fg40lxqrpi1U1UiaMjvuciFvamG3jFpCez7aPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%252F%252BTJIZmBG1xNo0%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "title": "Effect and Mechanism of Cordyceps militaris Extract on Lowering Uric Acid in Hyperuricemia Rats",
+      "source": "Biotechnology Bulletin",
+      "publication_date": "2024-09-26 15:05",
+      "doi": "10.13560/j.cnki.biotech.bull.1985.2024-0379",
+      "files": [
+        {
+          "kind": "HTML Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effect_and_Mechanism_of_Cordyceps_militaris_Extract_on_Lowering_Uric_Acid_in_Hyp_HTML_Reading_9c79bcc09cf8.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effect_and_Mechanism_of_Cordyceps_militaris_Extract_on_Lowering_Uric_Acid_in_Hyp_HTML_Reading_9c79bcc09cf8.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdog%252BHL%252FGFrGhKahW4YGMC%252BSBU4NSX%252BwpuV1Wo2g2b9XuQ9gUAykTSTJoK3a1liIzMeL6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%252F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%252BgEcSihWyT%252FG87uwauxftBx02tVF9lPVa3K2QgI0lFZ0d1eBMP3U6TIdYn%252BXXdpAd4cL0TVy4bRiDUO%252FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "Original Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effect_and_Mechanism_of_Cordyceps_militaris_Extract_on_Lowering_Uric_Acid_in_Hyp_Original_Reading_b42229a9936f.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effect_and_Mechanism_of_Cordyceps_militaris_Extract_on_Lowering_Uric_Acid_in_Hyp_Original_Reading_b42229a9936f.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdog%252BHL%252FGFrGhKahW4YGMC%252BSBU4NSX%252BwpuV1Wo2g2b9XuWX3IKkNM99CRmMRWt54M6zbi9VqGRvU9Wt%252FNNXK2WCeZjr7C894tvO6YOYHK%252FxbW35Ty4NWPQW7DsbkwrQYomW8SgiQLqznc3gLIMwiN%252BzE1igPlZ%252BhLXR05RtC2QtnlCoeo0NDN6bW%252B7JxiHFKwpl07gMN9gqnn9Ld7Ja0Eva0%252B%252BrquYEQWT2Y%252B3fdzG5D5RGGyt7Ta2JwSfVLqEwfrkN3KAUBlVIsgcb0E8u%252FYkCK%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "English HTML (MT)",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effect_and_Mechanism_of_Cordyceps_militaris_Extract_on_Lowering_Uric_Acid_in_Hyp_English_HTML_MT__5fbaf891f9ee.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effect_and_Mechanism_of_Cordyceps_militaris_Extract_on_Lowering_Uric_Acid_in_Hyp_English_HTML_MT__5fbaf891f9ee.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=OVERSEA&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DUEijbwcZe%252BogYZkxTH5yJqwoaf6n047VYDxGB2eXAlh8lYDTPbed8X4n%252FWVtufR9juUmvCGmOCmjBda7wGAvLrxS8UWJa2h1FFz3Xx5BOAQWTx2GNTlgDpbCt%252F5Duh7RJGLYwOrc2ELEb92Ay3K2qBvofhcoHmrUEjfSKClKz8mjMjihuk0RbGMYT80RIRMool2eyyT712YPLjpAbLEI5hMCKp1Bpukai2nIjo1bWTjTuFqh64dLQIRnAF7thglEMSlVCCf78DvzWJ3aNdLdHQ%253D%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "PDF",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effect_and_Mechanism_of_Cordyceps_militaris_Extract_on_Lowering_Uric_Acid_in_Hyp_PDF_1267aadff28b.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Effect_and_Mechanism_of_Cordyceps_militaris_Extract_on_Lowering_Uric_Acid_in_Hyp_PDF_1267aadff28b.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdog%252BHL%252FGFrGhKahW4YGMC%252BSBU4NSX%252BwpuV1Wo2g2b9Xufev2caWb2Ya9d1ggF6yf0t7b5mY%252FmsIpB5E%252FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%252B8LhM%252BfEqYWvBGm18f9oV%252B%252Bf%252FPSCFwTjaLsqqffnP7SR%252Fg40lxqrpi1U1UpTbvLTHVNlkdAyPFERwcdqPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%252F%252BTJIZmBG1xNo0%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "title": "Analysis of metabolite components of Cordyceps militaris and their effects on hyperuricemia",
+      "source": "Mycosystema",
+      "publication_date": "2020-09-15 17:09",
+      "doi": "10.13346/j.mycosystema.200133",
+      "files": [
+        {
+          "kind": "HTML Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Analysis_of_metabolite_components_of_Cordyceps_militaris_and_their_effects_on_hy_HTML_Reading_6fed95070719.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Analysis_of_metabolite_components_of_Cordyceps_militaris_and_their_effects_on_hy_HTML_Reading_6fed95070719.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdoabmU4NncMetQGnHwQAYvkTa1m7PuivLtUrxL4sOqRMXGYf1Y%252FoXludSbvHSAue3aL6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%252F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%252BgEcSihWyT%252FG87uwauxftBx02tVBZrQVloK86ykYbOrIHwqFCH7KSIWvXdyvdDOXyhFsnyVy4bRiDUO%252FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "Original Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Analysis_of_metabolite_components_of_Cordyceps_militaris_and_their_effects_on_hy_Original_Reading_893ebb6e3437.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Analysis_of_metabolite_components_of_Cordyceps_militaris_and_their_effects_on_hy_Original_Reading_893ebb6e3437.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdoabmU4NncMetQGnHwQAYvkTa1m7PuivLtUrxL4sOqRMYLH9KboeNMKulNz4Ufz06rbi9VqGRvU9Wt%252FNNXK2WCeZjr7C894tvO6YOYHK%252FxbW35Ty4NWPQW7DsbkwrQYomW8SgiQLqznc3gLIMwiN%252BzE1igPlZ%252BhLXR05RtC2QtnlO8%252FQy7NI53jMTbrUtULTMV07gMN9gqnn9Ld7Ja0Eva0%252B%252BrquYEQWT2Y%252B3fdzG5D5RGGyt7Ta2JwSfVLqEwfrkN3KAUBlVIsgcb0E8u%252FYkCK%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "PDF",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Analysis_of_metabolite_components_of_Cordyceps_militaris_and_their_effects_on_hy_PDF_0663567e3071.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Analysis_of_metabolite_components_of_Cordyceps_militaris_and_their_effects_on_hy_PDF_0663567e3071.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdoabmU4NncMetQGnHwQAYvkTa1m7PuivLtUrxL4sOqRMfaaMkWjunAFxKVw3qjQfEN7b5mY%252FmsIpB5E%252FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%252B8LhM%252BfEqYWvBGm18f9oV%252B%252Bf%252FPSCFwTjaLsqqffnP7SR%252Fg40lxqrpi1U1Uv0VBsoGlB%252BdWW7DSlaeBPyPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%252F%252BTJIZmBG1xNo0%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "title": "Study on the Cordyceps militaris for lowering uric acid of patients with hyperuricemia",
+      "source": "Lishizhen Medicine and Materia Medica Research",
+      "publication_date": "2014-10-20",
+      "doi": "",
+      "files": [
+        {
+          "kind": "Original Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Study_on_the_Cordyceps_militaris_for_lowering_uric_acid_of_patients_with_hyperur_Original_Reading_e2891c883a1c.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Study_on_the_Cordyceps_militaris_for_lowering_uric_acid_of_patients_with_hyperur_Original_Reading_e2891c883a1c.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbviYQIQN2c8y26CiHTDvq5z%252FXcAnP8r1CXQr3sOk9lHqSRVkAoJjzAR15C2ARXcx%252BPU2aZtTZrdCbp5WQeWQZUFm96ALiqxAdguwT1Naz%252BHyVwddxEU3rL3oTHoiWc6PitFK57xT%252B8LhM%252BfEqYWvBGm18f9oV%252B%252Bf%252FPSCFwTjaLsqqffnP7SR%252Fg40lxqrpi1U1Uuy0AkEN348ed3QeyRxfeCGPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%252F%252BTJIZmBG1xNo0%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "PDF",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Study_on_the_Cordyceps_militaris_for_lowering_uric_acid_of_patients_with_hyperur_PDF_2afdd3c856e4.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/Study_on_the_Cordyceps_militaris_for_lowering_uric_acid_of_patients_with_hyperur_PDF_2afdd3c856e4.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbviYQIQN2c8y26CiHTDvq5z%252FXcAnP8r1CXQr3sOk9lHqSRVkAoJjzAR15C2ARXcx%252BPUhzd8s2jum9gLeKVlrgXbUYz7hIz%252Bm4gioz%252Fd0uFLWAKNpqZ87Xp6tkLK6WMt2WI6t2Q%252BoIEwn%252B3E%252FP6IjfZ3BQKyIbimdlF3Fa3mi1rfYTw4%252Bah%252FgBcru2J1X9Oaq7NqEY6zkrD2Xm6h0f%252FzTgaRPWL0c14yPIs9szc3%252BjM9iZgIB198jWX7C38shac951B507Hz2mrAJlVEnT09Lh1Nc%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "title": "蛹虫草 防治高尿酸血症的实验研究",
+      "source": "Chinese Traditional Patent Medicine",
+      "publication_date": "2013-08-20",
+      "doi": "",
+      "files": [
+        {
+          "kind": "Original Reading",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/蛹虫草_防治高尿酸血症的实验研究_Original_Reading_1c245331ec3d.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/蛹虫草_防治高尿酸血症的实验研究_Original_Reading_1c245331ec3d.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvokpLOUUJPHC2d9DPmPSkO%252FXcAnP8r1CXQr3sOk9lHqSl3h52C93jtGyZTZq%252BqOMxyki9JuBhbz4yVKsdO4cxoC96ALiqxAdguwT1Naz%252BHyVwddxEU3rL3oTHoiWc6PitFK57xT%252B8LhM%252BfEqYWvBGm18f9oV%252B%252Bf%252FPSCFwTjaLsqqffnP7SR%252Fg40lxqrpi1U1UpeQNSncaFP9z5uB4AQPMOyPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%252F%252BTJIZmBG1xNo0%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        },
+        {
+          "kind": "PDF",
+          "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/蛹虫草_防治高尿酸血症的实验研究_PDF_35e86f5e3889.body",
+          "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/fulltext-probes/蛹虫草_防治高尿酸血症的实验研究_PDF_35e86f5e3889.provenance.json",
+          "bytes": 53817,
+          "stdout": "200 text/html https://o.oversea.cnki.net/newOverseaLogin/overseasLogin.html?platform=nxgp&returnUrl=https%3A%2F%2Fo.oversea.cnki.net%2Fbarnew%2Fdownload%2Forder%3Fid%3DPmp%252F5es3RB81cmauPwpbvokpLOUUJPHC2d9DPmPSkO%252FXcAnP8r1CXQr3sOk9lHqSl3h52C93jtGyZTZq%252BqOMx4b09mW2TMRrS4yLqAqdEpcYz7hIz%252Bm4gioz%252Fd0uFLWAKNpqZ87Xp6tkLK6WMt2WI6t2Q%252BoIEwn%252B3E%252FP6IjfZ3BQKyIbimdlF3Fa3mi1rfYTw4%252Bah%252FgBcru2J1X9Oaq7Nq%252Bna93%252FH0pgJx7NpMRX6%252BbWL0c14yPIs9szc3%252BjM9iZgIB198jWX7C38shac951B507Hz2mrAJlVEnT09Lh1Nc%253D%26source%3D%26isMobile%3Dfalse%26returnUrl%3D%26loginNum%3D1%26showpage%3D1&AppendUID=0&ForceReLogin=0&lang=en-US",
+          "returncode": 0
+        }
+      ]
+    }
+  ]
+}
