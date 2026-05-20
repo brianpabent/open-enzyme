@@ -1,0 +1,315 @@
+<div id="briefBox"><div><div class="toolbar">
+    <div id="countPageDiv" class="result-con-r">
+        <span class="pagerTitleCell"><span>Total:</span>
+            <em>11</em>
+            <span>articles</span>
+        </span>
+
+        
+
+    </div>
+    <!--法律法规的条目用classid判断是否要隐藏(初始化隐藏)，后面的js还会处理法律条目的隐藏，避免使用classid这个值造成的影响-->
+    <div class="toolbar-col">
+        
+            <div class="checkcount">
+                <label class="checkAll">
+                    <input type="checkbox" name="selectCheckbox" id="selectCheckAll1"
+                           onclick="$(this).filenameClick()">All</input></label>
+                <span>Selected</span>
+                <em title="Click to view the selected literature" id="selectCount" name="selectCount">0</em>
+                <a href="javascript:$(this).filenameClear();">Clear</a>
+            </div>
+            <ul class="dropdown-analysis-btns" id="batchOpsBox">
+                
+                <li>
+                    <a href="javascript:void(0)">Export and Analysis</a><i class="icon-d"></i>
+                    <ul>
+                        <li class="export">
+                            <a href="javascript:void(0)">Export Reference</a>
+                            <i class="icon-r"></i>
+                            <ul class="secondUl">
+                                <li><a href="javascript:void(0)" exporttype="GBTREFER">GB/T 7714-2015 Citation</a>
+                                </li>
+                                
+                                <li><a href="javascript:void(0)" exporttype="REFER">CAJ-CD Citation</a></li>
+                                <li><a href="javascript:void(0)" exporttype="MLA">MLA</a></li>
+                                <li><a href="javascript:void(0)" exporttype="APA">APA</a></li>
+                                <li><a href="javascript:void(0)" exporttype="NEW">Novelty Search(citation format)</a></li>
+                                <li><a href="javascript:void(0)" exporttype="newdefine">Novelty Search(self-defined)</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="Refworks">Refworks</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="EndNote">EndNote</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="NoteExpress">NoteExpress</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="NodeFirst">NoteFirst</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="BibTex">BibTex</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="selfDefine">Self-defined</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="analysisLi">
+                            <a href="javascript:void(0)">Visual Analysis</a><i class="icon-r"></i>
+                            <ul class="secondUl">
+                                <li id="anisys_select"><a href="javascript:void(0)">
+                                    Analysis of Selected Results
+                                    (<span>0</span>)</a></li>
+                                <li id="anisys_all"><a href="javascript:void(0)">Analysis of All Search Results</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="aiExport">
+                            <a href="javascript:void(0)">AI Summary</a>
+                        </li>
+                        
+<!--                        <li id="chaXin">-->
+<!--                            <a href="https://chaxin.cnki.net/" th:text="#{M_Export_科技查新}" target="_blank"></a>-->
+<!--                        </li>-->
+                    </ul>
+                </li>
+                
+                
+            </ul>
+        
+        <ul class="change-list" id="DivDisplayMode">
+            
+            <li title="detail"
+                data-obj="result-piclist"
+                data-mode="custommode"><i class="icon-detail"></i></li>
+            
+            
+
+            <li title="list"
+                data-obj="result-table-list"
+                data-mode="listmode" class="active"><i class="icon-table"></i></li>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+        </ul>
+        <div class="statistic">
+            <div id="id_grid_display_num" class="page-show-count"><span>Records/Page</span>
+                <div class="sort" id="perPageDiv">
+                    <div class="sort-default">
+                        <span>20</span>
+                        <i class="icon icon-sort"></i>
+                    </div>
+                    <ul class="sort-list" style="display: none;">
+                        <li data-val="10"><a href="javascript:void(0);">10</a>
+                        </li>
+                        <li data-val="20" class="cur"><a href="javascript:void(0);">20</a>
+                        </li>
+                        <li data-val="50"><a href="javascript:void(0);">50</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="order-group" id="sortList">
+            <span>Sort：</span>
+            <ul class=" DESC  order" id="orderList">
+                <li id="FFD"
+                    value="FFD"
+
+                    title="Only valid within 8 million records" data-sort="FFD" data-onlydesc="DESC" data-defaults="false">Relevance</li>
+                <li class="DESC cur"
+                    id="PT"
+                    value="PT"
+
+                    title="Only valid within 8 million records" data-sort="PT" data-onlydesc="BOTH" data-defaults="true">Publication Date</li>
+                <li id="CF"
+                    value="CF"
+
+                    title="Only valid within 8 million records" data-sort="CF" data-onlydesc="BOTH" data-defaults="false">Cites</li>
+                <li id="DFR"
+                    value="DFR"
+
+                    title="Only valid within 8 million records" data-sort="DFR" data-onlydesc="BOTH" data-defaults="false">Downloads</li>
+                <li id="ZH"
+                    value="ZH"
+
+                    title="Only valid within 8 million records" data-sort="ZH" data-onlydesc="DESC" data-defaults="false">Overall</li>
+            </ul>
+        </div>
+    </div>
+    <input type="hidden" id="RecSysAPI" value="https://recsys.oversea.cnki.net/RCDService"/>
+    <input type="hidden" value="https://login.cnki.net" id="hidLoginUrl">
+    <input type="hidden" value="https://aiplus.cnki.net/cnki-ai-api/aiplus/v1/summary/cross.html" id="hidAiExportUrl">
+    <div id="modalBoxAiExport1" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="prompt-wrap">
+                <span class="prompt-icon"></span>
+                <p class="text">AI文献综述是专为文献调研场景设计的AI增值服务，请登录个人账号使用。</p>
+            </div>
+            <div class="content-text">AI 文献综述可根据您选择的文献，一键生成内容丰富、层次清晰、分析深入的高质量文献综述，助力您高效挖掘研究价值，深度洞察学术前沿。</div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">登录个人账号使用</span>
+        </div>
+    </div>
+</div>
+    <div id="modalBoxAiExport2" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="prompt-wrap">
+                <span class="prompt-icon"></span>
+                <p class="text">AI文献综述是专为文献调研场景设计的AI增值服务，按次计费。</p>
+            </div>
+            <div class="content-text">AI 文献综述可根据您选择的文献，一键生成内容丰富、层次清晰、分析深入的高质量文献综述，助力您高效挖掘研究价值，深度洞察学术前沿。</div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">开始生成综述</span>
+        </div>
+    </div>
+</div>
+    <div id="modalBoxAiExport3" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="content-text">AI 文献综述可根据您选择的文献，一键生成内容丰富、层次清晰、分析深入的高质量文献综述，助力您高效挖掘研究价值，深度洞察学术前沿。</div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">开始生成综述</span>
+        </div>
+    </div>
+</div>
+    <div id="modalBoxAiExport4" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="prompt-wrap">
+                <span class="prompt-icon"></span>
+                <p class="text"><span id="layer-select">您选择的3篇文献为专利、年鉴与标准，</span>这些内容暂不支持生成综述，系统将自动过滤。</p>
+            </div>
+            <div class="content-prompt">可选文献类型：期刊文献（中文、外文）、博士论文、硕士论文、会议论文（国际、国内）、重要报纸。</div>
+            <div class="filter-wx">
+                <p class="title">过滤文献：</p>
+                <div class="content" id="layer-prompt">
+                    <p class="filter-item">[图书] AI 提示工程实战</p>
+                    <p class="filter-item">[标准] AI 提示工程实战战战战战战战战战战战战战战战战战战战</p>
+                    <p class="filter-item">[标准] AI 提示工程实战战战战战战战战战战战战战战战战战战战</p>
+                    <p class="filter-item">[标准] AI 提示工程实战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战</p>
+                </div>
+            </div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">继续生成文献综述</span>
+        </div>
+    </div>
+</div>
+    <div id="modalBoxAiExport5" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="prompt-wrap">
+                <span class="prompt-icon"></span>
+                <p class="text"><span id="layer-allselect">生成综述最多支持50篇文献(博硕士论文1篇按2篇计)，您已选50篇，请删减。</span></p>
+            </div>
+            <div class="description-text">
+                <p class="title">选文说明：</p>
+                <div class="content">
+                    <p class="desc-item"><span class="num">1.</span>可选文献篇数：最多50篇文献（其中博硕士学位论文选1篇按2篇计数）；</p>
+                    <p class="desc-item"><span class="num">2.</span>可选文献类型：期刊论文（中文、外文）、博士论文、硕士论文、会议论文（国内、国外）、重要报纸；</p>
+                    <p class="desc-item"><span class="num">3.</span>综述生成说明：系统将基于中文文献的全文、外文期刊的摘要信息生成文献综述。</p>
+                </div>
+            </div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">我知道了</span>
+        </div>
+    </div>
+</div>
+</div>
+
+</div><div><!DOCTYPE html>
+<html lang="en">
+<div id="main-content" method="post" name="gridTableForm">
+    <div id="gridTable" class="search-result">
+        <div>
+            <!--从配置获取的模板内容-->
+            <div><div><table class="result-table-list"><thead><tr><td class="empty"></td><th>Title</th><th>Author</th><th>Source</th><th>Publication Date</th><th>Database</th><th>Cites</th><th>Downloads</th><th>Options</th></tr></thead><tbody><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQ8PC3rMl_GWyb4L2wtZGptwneWrfo0YJU2eWl-PcvsuAMi10m8MSiKPdqj9ewg7V"onclick="$(this).filenameClick()" aria-label="CookieName">1</input></td><td class="name" isTranlate="true" textId="TI"><a target="_blank" class="fz14"href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWad2TseNT2rQAQFTW81gpyl24EatJJQhExoePaZaH-wbHLsXJGupPddVyOOTWVYtcl34QprZEDLDKuysvf7g_MmndpNh4nF6meejESSWqMA9Wws2BtKh1WxEaOXtFd1fH8GbxYU7n57QiFvl7DkEfeib5pg2vjVpoicD7MxR7Jo2KaG67bE1qn8&amp;uniplatform=OVERSEA&amp;language=EN">Research on the Chinese Medicine Formula Jinqian Xuduan Decoction for Reducing Uric Acid and Treating Gout</a><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>王寒飞</label></div></td><td class="source"><span>Chinese Doctoral Dissertations Full-text Database</span><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --></td><td class="date">2025-06-01</td><td class="data"><span>Doctoral Dissertations</span></td><td class="quote"></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>388</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlKN5CkuYorBUrbpgZjHnJ20h9%2F3QSIipCFMD5QN56ZcK2htgX0foL%2FiuKxDnwVJ0Ja0cFQSGzEa9F7E5Cof1zvmrGCFU%2FaSVtvunRXinwr%2BxsluG%2F%2Bfm8sD8gciM6IZM3TCHTwmLrv3yeu3pGlg%2B9M%2B1KBSNZjyz0s6dAPw6XWSKb8hu9WqONZubh%2B1A0a2bNczqEI8XWU2elB03jpqAqQu1%2BxmuORblI1NP3hKI013vabSfn7vfUHRCN4%2FsrSWJqQdbSaZKvySRRHlDqDd2cdj&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-read" target="online_open"href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlKN5CkuYorBUrbpgZjHnJ20h9%2F3QSIipCFMD5QN56ZcK2htgX0foL%2FiuKxDnwVJ0JZ6FpwXDBSQj9M3u4cvol3M3RkugKuSsyk7RDZqDzXb07v9cbg6fvx4W%2BjBjxjEHVzJrTzQ27CYD1jDvfsMhVxtSTeHrVbaFzRmL0ek2UhhA6%2F8dwJn%2Fdp4AVBDaNjFRieR5GWuYm1575ld%2BpTwPqfkySeFz0PszBWFEtDQ1zufKQ05XmmAJgnv%2FPx5RCpooWmfKnufvMkD2inKzYZ%2FOez7&amp;language=EN" title="Read Original"><i></i><b>Read Original</b></a><a class="icon-collect" title="Favorite" data-dbname="CDFD" data-filename="1025815878.nh"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQ8PC3rMl_GWyb4L2wtZGptwneWrfo0YJU2eWl-PcvsuAMi10m8MSiKPdqj9ewg7V&amp;mimetype=PDF&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJybMMV4ZP2U2kcz4ijdkxCsViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK"onclick="$(this).filenameClick()" aria-label="CookieName">2</input></td><td class="name" isTranlate="true" textId="TI"><a class="fz14" target='_blank'href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWad2TseNT2rQAQFTW81gpylkmEprIP5_uz3u2XBVU5aynfMdSIaOxvbOmpNKWdbt_Vra01QLn5zRpXMRzx_SX-vdyVb6ANKAYFwowb4cNCAsy_HB2nKRh1KOeP4TlgjFOU2hmAL_jGt5bA04r5O50FzoWtA3KKD29C7hXJRlU9C-Q==&amp;uniplatform=OVERSEA&amp;language=EN">Study on the Pharmacodynamic Substances of Simiao Wan for Treatment of Hyperuricemia and Gout Based on Disease and Syndrome Model</a><B class="cMarkSign">Chinese Full Text</B><B class="cMarkSign">English Full Text (MT)</B><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>曾永长;梁少瑜;吴俊洪;徐丹丹;刘常青;何康;金宇;吴正治</label></div></td><td class="source"><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --><p><a target="_blank" href="https://oversea.cnki.net/knavi/detail?p=cOadEZaRI6iVOjJxpKvuw-xb0ht3F4VS2lf0OujXVPIRBvsDBLGXsVlafIkxdVr7TfzCQhJC0QJvyn_TRsw4Di3wTJeXFGdQhTcjZKVdhs0=&amp;uniplatform=OVERSEA&amp;language=EN">Traditional Chinese Drug Research and Clinical Pharmacology</a></p></td><td class="date">2024-08-21</td><td class="data"><span>Journals</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWad2TseNT2rQAQFTW81gpylkmEprIP5_uz3u2XBVU5aynfMdSIaOxvbOmpNKWdbt_Vra01QLn5zRpXMRzx_SX-vdyVb6ANKAYFwowb4cNCAsy_HB2nKRh1KOeP4TlgjFOU2hmAL_jGt5bA04r5O50FzoWtA3KKD29C7hXJRlU9C-Q==&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">14</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>1191</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0KQ9jtvg1QeTyHDIHCGnJMJ%2BXy8zkNH9eZA6sxpldz9C17b5mY%2FmsIpB5E%2FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%2B8LhM%2BfEqYWvBGm18f9oV%2B%2Bf%2FPSCFwTjaLsqqffnP7SR%2Fg40lxqrpi1U1Ut8fUuBwGret0frCqLXWBPiPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%2F%2BTJIZmBG1xNo0%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-html"href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0KQ9jtvg1QeTyHDIHCGnJMJ6eSM4MYPu%2BNY088Dg2eEo2L6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%2F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%2BgEcSihWyT%2FG87uwauxftBx02tVGbhNMMs88sAFaWLdMenYqv8SFAV5WQPSnsuffR4a0cgVy4bRiDUO%2FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ&amp;language=EN"target='_blank' title="HTML Reading"><i></i><b>HTML Reading</b></a><a class="icon-collect" title="Favorite" data-dbname="CJFQ" data-filename="ZYXY202408004"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJybMMV4ZP2U2kcz4ijdkxCsViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&amp;mimetype=XML&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnkHr2B0aKpfRywXUoAcNq99wneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ"onclick="$(this).filenameClick()" aria-label="CookieName">3</input></td><td class="name" isTranlate="true" textId="TI"><a target="_blank" class="fz14"href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYWNx2fB6Dl2vNjgPvnUwfs31oNoqajNK5vN3x1uLQEgNGQSRdqVPYxYvyAbZUpCQO9HU9kdNjfsN0gdNfUIts1F355I1MLSaZZThKoofKNouwKYbSpTwT4DfWsy1z3W8In6WIrd0s4QVxA1V1HbRAN6x9_TfCRy50UXiVLJxkBCkBzSHrof6UG&amp;uniplatform=OVERSEA&amp;language=EN">基于文献循证的<font color='red'>痛风</font>中医用药规律探究及蠲痹历节清方对部分尿酸转运蛋白的影响</a><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>郭张浩</label></div></td><td class="source"><span>Chinese Doctoral Dissertations Full-text Database</span><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --></td><td class="date">2024-06-01</td><td class="data"><span>Doctoral Dissertations</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYWNx2fB6Dl2vNjgPvnUwfs31oNoqajNK5vN3x1uLQEgNGQSRdqVPYxYvyAbZUpCQO9HU9kdNjfsN0gdNfUIts1F355I1MLSaZZThKoofKNouwKYbSpTwT4DfWsy1z3W8In6WIrd0s4QVxA1V1HbRAN6x9_TfCRy50UXiVLJxkBCkBzSHrof6UG&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">1</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>406</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlIho6CT7hQ9BHSkHc%2BpKoV8h9%2F3QSIipCFMD5QN56ZcK%2BPY%2BqpUY5Fsn54X7jtumQC0cFQSGzEa9F7E5Cof1zvmrGCFU%2FaSVtvunRXinwr%2BxsluG%2F%2Bfm8sD8gciM6IZM3TCHTwmLrv3yeu3pGlg%2B9M%2B1KBSNZjyz0s6dAPw6XWSKb8hu9WqONZubh%2B1A0a2bNcO6uTdFRAwGi2sLNK9fySO1%2BxmuORblI1NP3hKI013vabSfn7vfUHRCN4%2FsrSWJqQdbSaZKvySRRHlDqDd2cdj&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-read" target="online_open"href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlIho6CT7hQ9BHSkHc%2BpKoV8h9%2F3QSIipCFMD5QN56ZcK%2BPY%2BqpUY5Fsn54X7jtumQB6FpwXDBSQj9M3u4cvol3M3RkugKuSsyk7RDZqDzXb07v9cbg6fvx4W%2BjBjxjEHVzJrTzQ27CYD1jDvfsMhVxtSTeHrVbaFzRmL0ek2UhhA6%2F8dwJn%2Fdp4AVBDaNjFRielHqeA8jo5HhcHigaWN4ijySeFz0PszBWFEtDQ1zufKQ05XmmAJgnv%2FPx5RCpooWmfKnufvMkD2inKzYZ%2FOez7&amp;language=EN" title="Read Original"><i></i><b>Read Original</b></a><a class="icon-collect" title="Favorite" data-dbname="CDFD" data-filename="1024794116.nh"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnkHr2B0aKpfRywXUoAcNq99wneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&amp;mimetype=PDF&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJyNMI4q3XdD61ih2bvJxzdIViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK"onclick="$(this).filenameClick()" aria-label="CookieName">4</input></td><td class="name" isTranlate="true" textId="TI"><a class="fz14" target='_blank'href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYWNx2fB6Dl2vNjgPvnUwfsudvwncvLgGtLdBZ0wpfT2Zq6b5Fa6loog2DDKSymHkXgP5aKSnPZfjxFwcZpYX31zbqd-kgMZd3m6tyaQNDuREZGScRYCpVd1acBRnD1iEpTND66o8zmFIQHnvkYv36po5hU9IU1Q9Yx8xMabQi2Pw==&amp;uniplatform=OVERSEA&amp;language=EN">Renal Protective Mechanism of Traditional Chinese Medicine Regulating Uric Acid Transporters in Gouty Nephropathy</a><B class="cMarkSign">Chinese Full Text</B><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>李慧娟;刘德敏;蒋玲雪;宝文萍;魏丹霞</label></div></td><td class="source"><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --><p><a target="_blank" href="https://oversea.cnki.net/knavi/detail?p=cOadEZaRI6j0yl9uFB5tZhdtLVt4xtf3QBAt3_E7eeVv13KpcyFvrOWMFK70bMgHtuyF_b3hT56wGFqo3KVj5fGWJICC6J8feH6XVD0EyCo=&amp;uniplatform=OVERSEA&amp;language=EN">Information on Traditional Chinese Medicine</a></p></td><td class="date">2024-03-27 09:44</td><td class="data"><span>Journals</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYWNx2fB6Dl2vNjgPvnUwfsudvwncvLgGtLdBZ0wpfT2Zq6b5Fa6loog2DDKSymHkXgP5aKSnPZfjxFwcZpYX31zbqd-kgMZd3m6tyaQNDuREZGScRYCpVd1acBRnD1iEpTND66o8zmFIQHnvkYv36po5hU9IU1Q9Yx8xMabQi2Pw==&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">11</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>572</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0KMNQ6U22edfiqJB9zWwLVWaCaK8IHkWczYjMeI3%2BRkYt7b5mY%2FmsIpB5E%2FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%2B8LhM%2BfEqYWvBGm18f9oV%2B%2Bf%2FPSCFwTjaLsqqffnP7SR%2Fg40lxqrpi1U1Uu69QVSrX%2F7cBPE7MXEhrgCPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%2F%2BTJIZmBG1xNo0%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-html"href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0KMNQ6U22edfiqJB9zWwLVWa91sLdB8fxkXhkeTDSXhceL6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%2F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%2BgEcSihWyT%2FG87uwauxftBx02tVGbhNMMs88sAFaWLdMenYqvWSxfsCqnFkjX4v1m3f%2FGkVy4bRiDUO%2FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ&amp;language=EN"target='_blank' title="HTML Reading"><i></i><b>HTML Reading</b></a><a class="icon-collect" title="Favorite" data-dbname="CJFQ" data-filename="ZYXN202405002"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJyNMI4q3XdD61ih2bvJxzdIViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&amp;mimetype=XML&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnOdfKX1-01q7UAocn_FpH6dwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ"onclick="$(this).filenameClick()" aria-label="CookieName">5</input></td><td class="name" isTranlate="true" textId="TI"><a target="_blank" class="fz14"href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYWNx2fB6Dl2vNjgPvnUwfs31oNoqajNK5vN3x1uLQEgNh5mKIppqHsJKOdPHJJYh19Ecz94Ov1naf-1Zq93czMhHxC2LAu-EqDQ0v4YXgTIhUEZqga5dvEvcd1Z-0Fa-n6TPHiS1NYmZBLyOnInmj-6VsNEuxIaIJ-gDXYgXh1FpTP60QR3c7a&amp;uniplatform=OVERSEA&amp;language=EN"><font color='red'>痛风</font>鼠与高尿酸血症猕猴模型构建和机制研究</a><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>王继伟</label></div></td><td class="source"><span>Chinese Doctoral Dissertations Full-text Database</span><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --></td><td class="date">2024-03-01</td><td class="data"><span>Doctoral Dissertations</span></td><td class="quote"></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>493</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlIho6CT7hQ9BHSkHc%2BpKoV8h9%2F3QSIipCFMD5QN56ZcK6CG2f5yngSPkxQIST3TAaa0cFQSGzEa9F7E5Cof1zvmrGCFU%2FaSVtvunRXinwr%2BxsluG%2F%2Bfm8sD8gciM6IZM3TCHTwmLrv3yeu3pGlg%2B9M%2B1KBSNZjyz0s6dAPw6XWSKb8hu9WqONZubh%2B1A0a2bNcO6uTdFRAwGi2sLNK9fySO1%2BxmuORblI1NP3hKI013vabSfn7vfUHRCN4%2FsrSWJqQdbSaZKvySRRHlDqDd2cdj&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-read" target="online_open"href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlIho6CT7hQ9BHSkHc%2BpKoV8h9%2F3QSIipCFMD5QN56ZcK6CG2f5yngSPkxQIST3TAaZ6FpwXDBSQj9M3u4cvol3M3RkugKuSsyk7RDZqDzXb07v9cbg6fvx4W%2BjBjxjEHVzJrTzQ27CYD1jDvfsMhVxtSTeHrVbaFzRmL0ek2UhhA6%2F8dwJn%2Fdp4AVBDaNjFRielHqeA8jo5HhcHigaWN4ijySeFz0PszBWFEtDQ1zufKQ05XmmAJgnv%2FPx5RCpooWmfKnufvMkD2inKzYZ%2FOez7&amp;language=EN" title="Read Original"><i></i><b>Read Original</b></a><a class="icon-collect" title="Favorite" data-dbname="CDFD" data-filename="1024779439.nh"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnOdfKX1-01q7UAocn_FpH6dwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&amp;mimetype=PDF&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiexEp2twaI3WVrgpiYxD9C66S4VNypUxvhUvBYldUtrPViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK"onclick="$(this).filenameClick()" aria-label="CookieName">6</input></td><td class="name" isTranlate="true" textId="TI"><a class="fz14" target='_blank'href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa52k_Nk4kpXfb5P2eG70jsSnUtEYnLmrZxtN1fElFM4Lactyb_8-WICOT8An7jTcI-vpaO3MPUR6VtyZAEiLUGPz_HjVglmdlMxGCFSAHBNF-IHp9sEeCJKiEx958axTVMc-ONUxx89VcpS_6uZTOv4m5c6ZS3tEHWAYlgokygiw==&amp;uniplatform=OVERSEA&amp;language=EN">Research progress on treatment of gouty with traditional Chinese medicine</a><B class="cMarkSign">Chinese Full Text</B><B class="cMarkSign">English Full Text (MT)</B><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>刘维;吴沅皞;卡玉秀;王爱华;樊一桦;丁久力;顾庆香;林芳芳;岳青云;陈婌娟;张淑敏;陆航</label></div></td><td class="source"><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --><p><a target="_blank" href="https://oversea.cnki.net/knavi/detail?p=cOadEZaRI6h9qBJALvdVUqqC7L-0Gl_DKpj5FJ8s3LZEXioPGI3r5duMAHgfCpjXFLO0vP-tdADEGQUl5IGBr-kXhmjUZoddq2AQhADWdd4=&amp;uniplatform=OVERSEA&amp;language=EN">Chinese Traditional and Herbal Drugs</a></p></td><td class="date">2023-12-05</td><td class="data"><span>Journals</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa52k_Nk4kpXfb5P2eG70jsSnUtEYnLmrZxtN1fElFM4Lactyb_8-WICOT8An7jTcI-vpaO3MPUR6VtyZAEiLUGPz_HjVglmdlMxGCFSAHBNF-IHp9sEeCJKiEx958axTVMc-ONUxx89VcpS_6uZTOv4m5c6ZS3tEHWAYlgokygiw==&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">31</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>3650</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0K%2FWxDvi%2F%2FkDz88an4Bfqe0DmaJNMUmqjRYTKoWlKsJhp7b5mY%2FmsIpB5E%2FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%2B8LhM%2BfEqYWvBGm18f9oV%2B%2Bf%2FPSCFwTjaLsqqffnP7SR%2Fg40lxqrpi1U1Ugk3VKqy6qhEtOhTt%2Bs77FGPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%2F%2BTJIZmBG1xNo0%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-html"href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrCpOSDrTKNGQdBiFAHwa0K%2FWxDvi%2F%2FkDz88an4Bfqe0IIlJyU9bLxPWQ4gB4QAJ26L6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%2F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%2BgEcSihWyT%2FG87uwauxftBx02tVGbhNMMs88sAFaWLdMenYqv3lyNtmTFNTl0ofYhQNfq2Vy4bRiDUO%2FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ&amp;language=EN"target='_blank' title="HTML Reading"><i></i><b>HTML Reading</b></a><a class="icon-collect" title="Favorite" data-dbname="CJFQ" data-filename="ZCYO202323034"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiexEp2twaI3WVrgpiYxD9C66S4VNypUxvhUvBYldUtrPViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&amp;mimetype=XML&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn4pxEKH2Tjn8vXkCScNssjtwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ"onclick="$(this).filenameClick()" aria-label="CookieName">7</input></td><td class="name" isTranlate="true" textId="TI"><a target="_blank" class="fz14"href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa52k_Nk4kpXfb5P2eG70jsVMO_rqVGSZPg-nO7szpJg_Z7rtxz57JzZECKzGM_CCElROYvGgmLSM9fGmd8JuxIdwJ_On66NYlhuuuYMteXHb_lB3XtetBUoC0NXKzRofqq8_csnPrBap2VwAgxI5ZnucJzlu8hpipdKFt-wF901qQFw-ma7J8y&amp;uniplatform=OVERSEA&amp;language=EN">The Effect of QingreLishi Prescriptions on Intestinal Flora of Gout and to Explore the Mechanism of Lowering Uric Acid by HuShenTongFengTai</a><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>谢静静</label></div></td><td class="source"><span>Chinese Doctoral Dissertations Full-text Database</span><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --></td><td class="date">2023-12-01</td><td class="data"><span>Doctoral Dissertations</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa52k_Nk4kpXfb5P2eG70jsVMO_rqVGSZPg-nO7szpJg_Z7rtxz57JzZECKzGM_CCElROYvGgmLSM9fGmd8JuxIdwJ_On66NYlhuuuYMteXHb_lB3XtetBUoC0NXKzRofqq8_csnPrBap2VwAgxI5ZnucJzlu8hpipdKFt-wF901qQFw-ma7J8y&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">1</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>949</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlIho6CT7hQ9BHSkHc%2BpKoV8h9%2F3QSIipCFMD5QN56ZcK6xt0h4GQryZlgxObm0f8zm0cFQSGzEa9F7E5Cof1zvmrGCFU%2FaSVtvunRXinwr%2BxsluG%2F%2Bfm8sD8gciM6IZM3TCHTwmLrv3yeu3pGlg%2B9M%2B1KBSNZjyz0s6dAPw6XWSKb8hu9WqONZubh%2B1A0a2bNeePRUwEkXIy4guYtxdLJq%2F1%2BxmuORblI1NP3hKI013vabSfn7vfUHRCN4%2FsrSWJqQdbSaZKvySRRHlDqDd2cdj&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-read" target="online_open"href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlIho6CT7hQ9BHSkHc%2BpKoV8h9%2F3QSIipCFMD5QN56ZcK6xt0h4GQryZlgxObm0f8zl6FpwXDBSQj9M3u4cvol3M3RkugKuSsyk7RDZqDzXb07v9cbg6fvx4W%2BjBjxjEHVzJrTzQ27CYD1jDvfsMhVxtSTeHrVbaFzRmL0ek2UhhA6%2F8dwJn%2Fdp4AVBDaNjFRiedacC3fzXURXtoIyNz%2FK4DySeFz0PszBWFEtDQ1zufKQ05XmmAJgnv%2FPx5RCpooWmfKnufvMkD2inKzYZ%2FOez7&amp;language=EN" title="Read Original"><i></i><b>Read Original</b></a><a class="icon-collect" title="Favorite" data-dbname="CDFD" data-filename="1024011224.nh"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn4pxEKH2Tjn8vXkCScNssjtwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&amp;mimetype=PDF&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidqAh8-3rpDPxYFwktUHL-3GXWbjIZ3_ee14hCflLGGbK3tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK"onclick="$(this).filenameClick()" aria-label="CookieName">8</input></td><td class="name" isTranlate="true" textId="TI"><a class="fz14" target='_blank'href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa52k_Nk4kpXfb5P2eG70jsSnUtEYnLmrY0bTJNcWKQ_Px61p_CaRvrsqa1y0QhBWnSilBfzd7Mf_gOWIPsMgYWpU1QN7igUSeYiFbSEW_e3B7MjYfz-VH_CyEazbVmLatvyYXoxTf8VsJ0qTk6-Wk6Ms3OeSUL2_f3ShwkYfB9KQ==&amp;uniplatform=OVERSEA&amp;language=EN">Research progress of traditional Chinese medicine in improving hyperuricemia by regulating uric acid transporter</a><B class="cMarkSign">Chinese Full Text</B><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>辛家东;高建东</label></div></td><td class="source"><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --><p><a target="_blank" href="https://oversea.cnki.net/knavi/detail?p=cOadEZaRI6h9qBJALvdVUqqC7L-0Gl_DKpj5FJ8s3LZEXioPGI3r5duMAHgfCpjXyS12NIDSq88aE0lImOIc_fIE0-JK4y8Co3DDmiH-5J0=&amp;uniplatform=OVERSEA&amp;language=EN">Shanghai Journal of Traditional Chinese Medicine</a></p></td><td class="date">2023-02-10</td><td class="data"><span>Journals</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa52k_Nk4kpXfb5P2eG70jsSnUtEYnLmrY0bTJNcWKQ_Px61p_CaRvrsqa1y0QhBWnSilBfzd7Mf_gOWIPsMgYWpU1QN7igUSeYiFbSEW_e3B7MjYfz-VH_CyEazbVmLatvyYXoxTf8VsJ0qTk6-Wk6Ms3OeSUL2_f3ShwkYfB9KQ==&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">6</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>1261</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdpfnxH0ifbNup32DgGqxCY8vKqLTPzW3DaDGU62TMQwKYfS37NBj31kZ1wpLx35YaF7b5mY%2FmsIpB5E%2FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%2B8LhM%2BfEqYWvBGm18f9oV%2B%2Bf%2FPSCFwTjaLsqqffnP7SR%2Fg40lxqrpi1U1Ugk3VKqy6qhEtOhTt%2Bs77FGPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%2F%2BTJIZmBG1xNo0%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-html"href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdpfnxH0ifbNup32DgGqxCY8vKqLTPzW3DaDGU62TMQwKbM1nfHMbB8k47osfWeQGPOL6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%2F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%2BgEcSihWyT%2FG87uwauxftBx02tVGbhNMMs88sAFaWLdMenYqv3lyNtmTFNTl0ofYhQNfq2Vy4bRiDUO%2FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ&amp;language=EN"target='_blank' title="HTML Reading"><i></i><b>HTML Reading</b></a><a class="icon-collect" title="Favorite" data-dbname="CJFQ" data-filename="SHZZ202302002"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidqAh8-3rpDPxYFwktUHL-3GXWbjIZ3_ee14hCflLGGbK3tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&amp;mimetype=XML&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2xTMHs2lFRrncuWR1Q6FsMXBvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK"onclick="$(this).filenameClick()" aria-label="CookieName">9</input></td><td class="name" isTranlate="true" textId="TI"><a class="fz14" target='_blank'href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ_L_ByuaNS3D1Xh7dW5Ag7yaz1MLYlLGOEV4L7cn8SdDSg41nQLgexNkybOw7SO5bwMMjeL_TJQkzGfV508AAnGwmNn-VOS6jJM8diSH5YG2O7oNDFdFWDDhTahTfzOZFvlbbgmkXd29t6vKFxLFN5b8-YmZBuEEAcrxnxh7JBMQ==&amp;uniplatform=OVERSEA&amp;language=EN">Research Progress on Application and Mechanism of Traditional Chinese Medicine in Gout</a><B class="cMarkSign">Chinese Full Text</B><B class="cMarkSign">English Full Text (MT)</B><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>魏蔼玲;袁明昊;刘娟汝;刘红梅;叶强;刘雨诗;张存艳;李美凤;郭力</label></div></td><td class="source"><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --><p><a target="_blank" href="https://oversea.cnki.net/knavi/detail?p=cOadEZaRI6jFBQYtcMjvHyWcNO7PpFhtCkD2O9RK_Q777-6iOULw3btibZgVZUi1nB0bHcgIjBbtHHHPlJCTaf2nGlarnCODY-AqMk1CiDw=&amp;uniplatform=OVERSEA&amp;language=EN">Chinese Journal of Experimental Traditional Medical Formulae</a></p></td><td class="date">2020-07-29 17:17</td><td class="data"><span>Journals</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ_L_ByuaNS3D1Xh7dW5Ag7yaz1MLYlLGOEV4L7cn8SdDSg41nQLgexNkybOw7SO5bwMMjeL_TJQkzGfV508AAnGwmNn-VOS6jJM8diSH5YG2O7oNDFdFWDDhTahTfzOZFvlbbgmkXd29t6vKFxLFN5b8-YmZBuEEAcrxnxh7JBMQ==&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">45</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>3243</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdq%2F0vXAQuV35Z0QgBQiDxeFMKa90HNqv2A37tBfl2ps4Nf8TkIUOcD529eVba77qdp7b5mY%2FmsIpB5E%2FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%2B8LhM%2BfEqYWvBGm18f9oV%2B%2Bf%2FPSCFwTjaLsqqffnP7SR%2Fg40lxqrpi1U1UjCCP1vaamlDfqMmeoCluHmPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%2F%2BTJIZmBG1xNo0%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-html"href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdq%2F0vXAQuV35Z0QgBQiDxeFMKa90HNqv2A37tBfl2ps4IbTXp1wM9DovU0ZBsp%2BrT2L6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%2F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%2BgEcSihWyT%2FG87uwauxftBx02tVGbhNMMs88sAFaWLdMenYqvbSWs0%2FwrH1xP5vi022OrUVy4bRiDUO%2FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ&amp;language=EN"target='_blank' title="HTML Reading"><i></i><b>HTML Reading</b></a><a class="icon-collect" title="Favorite" data-dbname="CJFQ" data-filename="ZSFX202019032"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2xTMHs2lFRrncuWR1Q6FsMXBvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK&amp;mimetype=XML&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJyDAFQtXrHAigTujAoq-JxnjVphw7qS8TD5hUBzNQ_xqN3KAUBlVIsgcb0E8u_YkCK"onclick="$(this).filenameClick()" aria-label="CookieName">10</input></td><td class="name" isTranlate="true" textId="TI"><a class="fz14" target='_blank'href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ_L_ByuaNS3D1Xh7dW5Ag7yaz1MLYlLGNT1s5yJEIvJKI9LGqdQWFnHTB2xlRIIEOy79bfEgKxnGwbMDyFDiMwH_MrbYhGg6Sgh0BLqfVrlZ5_PUcubQa8eHVYeyWv409YlVIKapF8oEZp1rXwgavOroV553CGHtPa89TpEAypww==&amp;uniplatform=OVERSEA&amp;language=EN">Research Progress on Molecular Mechanisms of Gout and Treatment of Traditional Chinese Medicine</a><B class="cMarkSign">Chinese Full Text</B><B class="cMarkSign">English Full Text (MT)</B><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>史亚夫;姚雪莲;黄小方;关志宇;朱继孝</label></div></td><td class="source"><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --><p><a target="_blank" href="https://oversea.cnki.net/knavi/detail?p=cOadEZaRI6jFBQYtcMjvHyWcNO7PpFhtCkD2O9RK_Q777-6iOULw3btibZgVZUi1L5B7UbGn_wDp9XUlIGDo0Ji1PhLP9MbK5lGRAHhEtF0=&amp;uniplatform=OVERSEA&amp;language=EN">Traditional Chinese Drug Research & Clinical Pharmacology</a></p></td><td class="date">2018-09-25</td><td class="data"><span>Journals</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ_L_ByuaNS3D1Xh7dW5Ag7yaz1MLYlLGNT1s5yJEIvJKI9LGqdQWFnHTB2xlRIIEOy79bfEgKxnGwbMDyFDiMwH_MrbYhGg6Sgh0BLqfVrlZ5_PUcubQa8eHVYeyWv409YlVIKapF8oEZp1rXwgavOroV553CGHtPa89TpEAypww==&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">35</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>2015</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdr8Oro5np6zCgMPEkkGtsVyQ9jtvg1QeTyHDIHCGnJMJ%2F8S0P%2FHvDWZfKMcz9O8oCx7b5mY%2FmsIpB5E%2FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%2B8LhM%2BfEqYWvBGm18f9oV%2B%2Bf%2FPSCFwTjaLsqqffnP7SR%2Fg40lxqrpi1U1UjCCP1vaamlDfqMmeoCluHmPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%2F%2BTJIZmBG1xNo0%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-html"href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdr8Oro5np6zCgMPEkkGtsVyQ9jtvg1QeTyHDIHCGnJMJ7cFZB1c37lZ3pe2u7UN92OL6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%2F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%2BgEcSihWyT%2FG87uwauxftBx02tVGbhNMMs88sAFaWLdMenYqvbSWs0%2FwrH1xP5vi022OrUVy4bRiDUO%2FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ&amp;language=EN"target='_blank' title="HTML Reading"><i></i><b>HTML Reading</b></a><a class="icon-collect" title="Favorite" data-dbname="CJFQ" data-filename="ZYXY201805024"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJyDAFQtXrHAigTujAoq-JxnjVphw7qS8TD5hUBzNQ_xqN3KAUBlVIsgcb0E8u_YkCK&amp;mimetype=XML&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiefwEYVvLYGCpZvRDYE6ERAmZ80oVBefpsjTiR8ktSyUzGXpRHA7l92WBScTaOddNt3KAUBlVIsgcb0E8u_YkCK"onclick="$(this).filenameClick()" aria-label="CookieName">11</input></td><td class="name" isTranlate="true" textId="TI"><a class="fz14" target='_blank'href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ_L_ByuaNS3D1Xh7dW5Ag7yaz1MLYlLGPyNFMYTKZeyeRqI6Oz-UBlTnoAjPH9-qqXvPehnPkOzG2txUpgJ1IVIZ3WLTGTD_OUYRlbP7zlwnjNjEj-pD4T7OISfizC8U6Q6CuUOOUliLG2bCh7TxVxm1rtw2UxMaDT4DWQObBu9w==&amp;uniplatform=OVERSEA&amp;language=EN"><font color='red'>中药复方</font>治疗高尿酸血症的基础研究进展</a><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>李玲玉;丁珊;彭江云</label></div></td><td class="source"><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --><p><a target="_blank" href="https://oversea.cnki.net/knavi/detail?p=cOadEZaRI6jFBQYtcMjvHyWcNO7PpFhtCkD2O9RK_Q777-6iOULw3btibZgVZUi17cqb0TO6OYNbBxJ416g9VepBY4osn2i-_kMtf60oklA=&amp;uniplatform=OVERSEA&amp;language=EN">Rheumatism and Arthritis</a></p></td><td class="date">2017-10-28</td><td class="data"><span>Journals</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ_L_ByuaNS3D1Xh7dW5Ag7yaz1MLYlLGPyNFMYTKZeyeRqI6Oz-UBlTnoAjPH9-qqXvPehnPkOzG2txUpgJ1IVIZ3WLTGTD_OUYRlbP7zlwnjNjEj-pD4T7OISfizC8U6Q6CuUOOUliLG2bCh7TxVxm1rtw2UxMaDT4DWQObBu9w==&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">11</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>806</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrW9Dxwo9CoI56K2dqg5k52I9C4F90ptfIRf5WwBmvIgX7Djp7uO3nfkuJQe6hv10t7b5mY%2FmsIpB5E%2FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%2B8LhM%2BfEqYWvBGm18f9oV%2B%2Bf%2FPSCFwTjaLsqqffnP7SR%2Fg40lxqrpi1U1UjCCP1vaamlDfqMmeoCluHmPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%2F%2BTJIZmBG1xNo0%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-html"href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6KdrW9Dxwo9CoI56K2dqg5k52I9C4F90ptfIRf5WwBmvIgejdrq3WgpvUJZePu8mSc0aL6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%2F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%2BgEcSihWyT%2FG87uwauxftBx02tVGbhNMMs88sAFaWLdMenYqvbSWs0%2FwrH1xP5vi022OrUVy4bRiDUO%2FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ&amp;language=EN"target='_blank' title="HTML Reading"><i></i><b>HTML Reading</b></a><a class="icon-collect" title="Favorite" data-dbname="CJFQ" data-filename="FSBG201710020"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiefwEYVvLYGCpZvRDYE6ERAmZ80oVBefpsjTiR8ktSyUzGXpRHA7l92WBScTaOddNt3KAUBlVIsgcb0E8u_YkCK&amp;mimetype=XML&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr></tbody></table></div></div>
+
+        </div>
+    </div>
+
+    <!-- 分页-->
+    
+</div>
+
+
+
+
+
+
+</html></div><input id="errorMsgHid" type="hidden" value="R0DPFOXP"> <input id="briefRequest" type="hidden" value="{&quot;queryJson&quot;:&quot;{\&quot;resource\&quot;:\&quot;CROSSDB\&quot;,\&quot;classid\&quot;:\&quot;R0DPFOXP\&quot;,\&quot;exScope\&quot;:\&quot;1\&quot;,\&quot;view\&quot;:null,\&quot;searchType\&quot;:2,\&quot;searchFrom\&quot;:1,\&quot;select\&quot;:\&quot;AB,TI,DOI,OA,CNTI,TB,DFR,OPY,LINK,LY,MTTI,LM,LAN,BKC,BH,KY,PTC,PFR,STATUSC,IT,ISA,WXBSM,PT,NPM,BID,DB,ENAU,ST,CF,BKN,WWW,ENAF,PM,VENDOR,PY,FN,TAG,FTP,ENTI,CDR,CNST,PAGEC,ENLY,ENST,DBR,AU,LLDWDM,JENTI,SYS_AF,SYS_AFC,SYS_AU,SYS_AUC,SYS_AUF,SYS_AUFC,SYS_AUTHORMETA,SYS_BRC,SYS_CAU,SYS_CLJ,SYS_CLS,SYS_CO,SYS_CONTENTS,SYS_CSCD,SYS_CSI,SYS_CTC,SYS_DTC,SYS_EI,SYS_ENAU,SYS_FN,SYS_FTP,SYS_FU,SYS_FUC,SYS_HX,SYS_JU,SYS_KY,SYS_LY,SYS_LYC,SYS_NPM,SYS_PY,SYS_QI,SYS_REFBH,SYS_SCI,SYS_ST,SYS_STI,SYS_TAG,SYS_YE,SYS_专辑代码,SYS_英文关键词,SYS_英文论文关键词\&quot;,\&quot;aggr\&quot;:null,\&quot;rlang\&quot;:\&quot;CHINESE\&quot;,\&quot;pageNum\&quot;:null,\&quot;pageSize\&quot;:null,\&quot;sort\&quot;:null,\&quot;sortType\&quot;:null,\&quot;fx\&quot;:null,\&quot;expands\&quot;:{},\&quot;kuaKuCode\&quot;:\&quot;ON8XK5WL,B7ZYGRCM,BT8YKI4I,TBRPZP83,I8IOAWAD,HT3U9UVL,BHWTLLXZ,SZU0GLDC,IAF5Y951\&quot;,\&quot;qnode\&quot;:{\&quot;qgroup\&quot;:[{\&quot;key\&quot;:\&quot;Subject\&quot;,\&quot;title\&quot;:\&quot;\&quot;,\&quot;logic\&quot;:\&quot;AND\&quot;,\&quot;items\&quot;:[{\&quot;logic\&quot;:\&quot;AND\&quot;,\&quot;operator\&quot;:\&quot;TOPRANK\&quot;,\&quot;field\&quot;:\&quot;SU\&quot;,\&quot;value\&quot;:\&quot;中药复方 痛风 URAT1\&quot;,\&quot;value2\&quot;:null,\&quot;title\&quot;:\&quot;Subject\&quot;}],\&quot;childItems\&quot;:[]}]},\&quot;Products\&quot;:\&quot;CJFQ,CAPJ,CJTL,CDFD,CMFD,CPFD,IPFD,CCND,CCGB,SCSF,SCHF,SCSD,SNAD,CCJD,CJFN\&quot;}&quot;,&quot;classid&quot;:&quot;R0DPFOXP&quot;,&quot;resLang&quot;:&quot;CHINESE&quot;,&quot;resource&quot;:&quot;CROSSDB&quot;,&quot;kuakuCode&quot;:&quot;ON8XK5WL,B7ZYGRCM,BT8YKI4I,TBRPZP83,I8IOAWAD,HT3U9UVL,BHWTLLXZ,SZU0GLDC,IAF5Y951&quot;,&quot;pageNum&quot;:1,&quot;turnpage&quot;:null,&quot;pageSize&quot;:20,&quot;dstyle&quot;:&quot;listmode&quot;,&quot;sortField&quot;:&quot;PT&quot;,&quot;sentenceSearch&quot;:false,&quot;sortType&quot;:&quot;DESC&quot;,&quot;boolSearch&quot;:true,&quot;boolSortSearch&quot;:false,&quot;productStr&quot;:&quot;ON8XK5WL,B7ZYGRCM,HNXQ58ZR,RJS22WAT,BT8YKI4I,48VMO652,XL02BDJN,TBRPZP83,I8IOAWAD,HT3U9UVL,HL17GJRY,93TPH0PF,G86PCZM9,BHWTLLXZ,SZU0GLDC,IAF5Y951,&quot;,&quot;productStrNumber&quot;:&quot;{\&quot;CJTL\&quot;:\&quot;0\&quot;,\&quot;CDFD\&quot;:\&quot;4\&quot;,\&quot;CCGB\&quot;:\&quot;0\&quot;,\&quot;SCSF\&quot;:\&quot;0\&quot;,\&quot;CCJD\&quot;:\&quot;0\&quot;,\&quot;CAPJ\&quot;:\&quot;0\&quot;,\&quot;IPFD\&quot;:\&quot;0\&quot;,\&quot;SCSD\&quot;:\&quot;0\&quot;,\&quot;SCHF\&quot;:\&quot;0\&quot;,\&quot;CCND\&quot;:\&quot;0\&quot;,\&quot;CJFQ\&quot;:\&quot;7\&quot;,\&quot;CJFN\&quot;:\&quot;0\&quot;,\&quot;CPFD\&quot;:\&quot;0\&quot;,\&quot;CMFD\&quot;:\&quot;0\&quot;,\&quot;SNAD\&quot;:\&quot;0\&quot;}&quot;,&quot;aside&quot;:&quot;Subject：中药复方 痛风 URAT1&quot;,&quot;searchFrom&quot;:&quot;search range:ALL&quot;,&quot;start&quot;:1,&quot;size&quot;:20,&quot;manageId&quot;:null}">  <input id="curPageHid" type="hidden" value="1"> <input id="totalCnt" type="hidden" value="11"> <input id="isSortHid" type="hidden" value="false"> <input id="pathAnalysisHid" type="hidden" value="https://oversea.cnki.net/kvisual8/"> <input id="hidGroupCount" type="hidden" value="{&quot;CJTL&quot;:&quot;0&quot;,&quot;CDFD&quot;:&quot;4&quot;,&quot;CCGB&quot;:&quot;0&quot;,&quot;SCSF&quot;:&quot;0&quot;,&quot;CCJD&quot;:&quot;0&quot;,&quot;CAPJ&quot;:&quot;0&quot;,&quot;IPFD&quot;:&quot;0&quot;,&quot;SCSD&quot;:&quot;0&quot;,&quot;SCHF&quot;:&quot;0&quot;,&quot;CCND&quot;:&quot;0&quot;,&quot;CJFQ&quot;:&quot;7&quot;,&quot;CJFN&quot;:&quot;0&quot;,&quot;CPFD&quot;:&quot;0&quot;,&quot;CMFD&quot;:&quot;0&quot;,&quot;SNAD&quot;:&quot;0&quot;}"> <input id="hidTurnPage" type="hidden" value="8Kf6r96aVUubfe4hUZXU-w!!"><input type="hidden" id="freeLogoData" value="wyCsKVqrup-RSy_odCYMFJYCgpW8RNf6a1xXDiNB0_oj4ePJ4O6j2J3ME4MYpPouW7U4b2rTIxEW8gKYzVR6oURfxpeXz_9KRuNtAVVqsQDo9ZYxorxeyPCg-VYx8h_C5pZKUgxbt_Q9_lD1yq8ofYDUW9FdQ1AiWk1W6idt83eS4rAEE61G3hux_x-shRYqhf1WM7vTrR_Gy8rx6ojJFg==,wyCsKVqrup_zeVRbdzwtaFaW6ju1iE_ouz5CpJOk73nloifmmKzzeUNeca-N29WGErDZInbDwGsWCKxQuadpzIt2T8QzBdtAraw3GxCEwVf6epBCPg7PMQvQ2IyYAwsH811sZbPrOoVnAk_HTflwzVLjYlrwCLz9G98w2sdTn5edyUn0eiGUmLJse-n6_tsLVyUJo9eFHuLnu8hJOeGHkAJCuKbpwGZHJS47S-Fxaeu0LXdGP6lgr2N6RDlEDctPCDRr4IT92xxuBwcVGsahM-6QBv6O5iBjGyxVtTXPMG-JAwIfy-MaEI-s-2CU0Da5wm1u5ZpcVFdazc9WUj4Xn0luhS9NYjkp0Uq9xTL_s-G-eNmJMMOl583N3M0IMq2mvBCPxN3azhOzxeJ8jc2O-tz-qpfzA5xsTJ-MKR4Ea4S7wbBw7sT128iqxU1my41rvzGmNn337V7ibi-H4zPUTwTJQkBKrH6ErnbBtBfUoCaqBc9NQjUfTNP04F7uZdqL348C0K1yEq5kIYc2sCRqdEU_rRlGuJXsFDbDy8IMAdzNzTgbgQYixzppctwdbhkIDzASyf2DIiU8mWHoBaTy_HS278kNckZyMiI0iR23ZLBi7PwWEslqBLtwqsQGCvFH1YUyxJeitp0HISILnbhd30n2NF5EAMxGKZjFeW8b5YbLkYXZn8VSguLiWJB9UvwJUnUbT5kO4_ysb1H0NXhSfcWLRIc60xxfGdnEgnYwgh4Kb9WZ5UE04zsd7J-7XI2ytKZBNP4_uEikEKe6zO1ufXOsQQsjUs9FnOEXZ2ebkt7aX2gM7ePv5Q==,wyCsKVqrup9AZOR4uO2uNCNVpsIGhv6oVbLBaxXQTDeYi-UcLuFhr8OH4xuWlSw4nChiG7tH95BHbY4Yd2NZKVsKM-_XZYuuWtDmu7pBYwRtqyw2z4M_Xt1zNIrw1A-DlQntRRduKX1ANuB56L5bIOsFBjJZPweQPEx386VLUMAE9eGtM4H4yu16PDIFLT7xdSS7j3Mn-S8TrSvxAzSSVg==,wyCsKVqrup9xGzOPIFkU0ukohxOPIBqKHB3YVoEWqJUDyW5e0kokhsJCkzTHFo5pkQUJKhxW8Wme0RUHx3fbyNV5ewBHgxkQ1PSkuB1ej0cW1yWZ1ErHb4h34Mb5lVJBz_uzrHeH2W33Od-4I5F7R8Ndxoe4dEJFiMdnEGGA89OXcbHC3OuMcxADrktF-7KqrDI_0agtVVYLGv-d8Chm8GUWsv8qYM3xxBotV6x3OH92vApXN7YoI__ZaJ4P4cWf0V8sUDDgnt2zNuY-a4WWFU-T_zJ6mGQx1FgjPHpB7jdHHSg-z1Ieo2J2PCw8sWdmzw-drPsFern7XyG03WNNBK7026Mdoo8tpzOVScbozmsJWw321IkzKeEUHTLj7za_Iax2majrljNyO9aBKpgSePx3bCwNo1N--gxcdSHrfN4Hb-QKzM0xEeUFpoVh9nirFn7MsfRXrMx_BKqxm2OhVA==,wyCsKVqrup91XSgJl-fIAqW2IFaFMjENKc0zazRCM2k3kERtOO5qhOLwpXh4gx_viBAj0H7pUNUUKzzle4Ir9qDKUAMfFYE6TWmhFWP44rAovWfyYqWRyNB3pryI22tLD5-ILTUsN6E1Qx-71XlXSlx1hhtknL2kVkz06-UXjd96UY5I7X0YQnh1bCEYxJBgPK7v4n6hk9G63tnMlqwCTg==,wyCsKVqrup9zw7_BPrHu602CkLja4D0c0EYf1FAOjHnf6WMTceNzFgDM-HNt8sbysWU1X8uFK-bOJa8l91FTbH0GVVrMPUVici8YgOald2AtB0jku9Oi2NASu9eqHGHpYvOhId6s1XWaNo9PAhJ_0FJ5_qTNVLZ00QrbX2qcnlIJKIP_9Jkqlt7e9EXeKs6IKs2f-kKv-RqKBcCxfnGoLyZVXYxfNQEraQl9LhBkvxigyXi5cp1pYL0KvdzgMsq64xdi4ebHy3qkhHESrGC0Vf6loUiXIvBZDfB7XsPycHaTYA2Y2orYNo7ioaT7vC-DFihS-gqcKSD2ij9mse-ID98dea25qIIm9B19_Cf3YFbr6OEmlIPMl4CvvQpWhAF_NCY9Vgj1He02juuteCeNF9mxV0VzBhxzPWCAErfSU-n2HbpanX6_71RuYMjyFQvszRsuYieJcl3lPcFOcXipwiXwelc5R-xsAhyoD5Y-8WHsoZYJdwgfVYvH1yB9IfxVvAFFg7uM601shOd_vVvVObwiLPombhfZkHIo56XJmbqS7JFoiv-MtkHDp16mGlD_osIyJUsS3ZuujzUhHlOCMq3f3wKaIj42jMB57CTxWgufGZ5m6mZifapq1XBuVNBjmmBJb8SX2DJAxsbfFVnNQVdWsF_YhIqream1LbGMwi5xm8a7dQbTtG9OzSffqI-mviTq61JcMFZ2SYbnQgrMh7nQit_Md441W6WJhs-QgoCRN64hS2eiBRKAi1zS1HYS,wyCsKVqrup-c0AKN4MhFMWtaB-93ytIR_EGzu7ixIC9E9N18aeHPJH37xt9Ob2UY6sxo3OKW8AFupGm5_vi603lno3ZiwzUrVi-rDcKzEkJJv6OXWjj5_b5eTqT2PHlFX4I8rUdorqNr-5_zXyfRc7Dst5XcyXrFrxi0GMky5B1bsuMG2tXt7yTBpsE1FkM9v1x4FjF44f4hEUZeEi3O2Q==,wyCsKVqrup-x2oehkqGw25cGi0Aji-rcwC9J3NdMhHvn3EvKGLSeERnxto0xYf3DGmfni0sKs2t2Qs-v9ScspY0L72XhntkZIx5IRrefSsmJMbmRwyiXkKPmaQHNaJXyfaKwV6sAUDlynGvBLENsdpAgWIrVvHUxnkeARi_VrkwVCAQiqzKZDMRJ8SyRW4CFAzI-IaiforKFMPLyp1docqZ0P0NM1SjqcbyrJBDNTYvGCRmMbTlaSWk63JLJQWf10VnZX_G0hOBdgU9GrvSttv40QpDK21YoQy3ee8QKkyncJrVji686NvvTjtZeGMrazxMDiDjuZUlumipEuJRvLJ_PvwDDO56G0fZ5q3mTHMNKWa5BpxlRuvV2kjesj6lB8EB_IOZYCNXcvsylPXiaZLEoWnmakbWv2sTO4z3hjONHchg1yMGn834kGJn_MonwFn2NwvirpfVUmFNl02OUIIn927SxOAaEOa3gLcUHRUKU3IKgR9iHd8V8T-iX7iEkUbsD7AcqDBZGZPekRqYTdhfyCXGyBTWAuEwfl5pjPq_4qCMh_aDN-LaON0FtQBzB0TgQglMQ09awj1LYzZbqfllZH1mANnbw,wyCsKVqrup-NjJLpyk0g_pZN4e7Kwc8A1vSpmnzqz38mp45O5IqIYniydM7Prq7es1MXTINTzxpy9RyYhR8yCljEcREvnUrcaIFbSjh7jyHexL0U-7aB7-U5GYlLGT1_EmBlcPPrGssnmzYZU09G59NldsGxv0O2JK-07wYehWcuDvdWNHsGZSuo5gtxQljfvTbp4ASQWfdrT_btYHmb94_vjG_IlA_vMWez7Oz3r1XkVxp18mdDCoc0a-nJQSYrOOAvctj3P1F9EdFjeQYrzdOifDUiFDiqBxgM22dNcXcMMTjIpFaOVs0sW75tvX-pmGWKS3vC3kNt0iITHrzGHyWUEsCcsYLgYSifq4si_mDF5FzDdFbw91zh_XGQ5A7fJFSZX7KR-R2Ealm0BSwY6FuJQjxh9bWanaxWv4bDsL_FzTLKXV-bjLW12nploVd6uR--X49Hu4x6lk9xb0xg0pidt0HVF_lbQrKltQE80WCAdLFaNJ6vc6FEobl--v4sA6gHAqMYbyfsNHY7Jq8WpC9Ks4BqYrlj8oN5kM1KpBkucMilZ8JCC0OD-O2jEiqkjPV7gdwlbeLeZPyoPBxGdHIOWKTYTx2h,wyCsKVqrup_bPmHRUXRKKjg3bmJzycduEOvQuca5lj9xePt7Ov11OqKF3GgE8F-C0prLv6hhmsrUkI3BzgMxMi1nVYWR2Wq97eSbqIvDRLd85mqdZWQrfR8HupZnrMI3M_BNZET7hX0co25Sxksxt1_rmAFttF6XWFugUx5kvtp-mG-UdkQqOBu5X2XGjxKmU2gq9t_X4oXarXJ2rn5c9NQwKOeGepPmOk13YAOYBgshto7el50NlKBiRjClNTpkiq7OINqX2_KOaQIM6pAq1J79CngsrRAMr000hs9U7HyBv9DlFddMfU7rRhkKVApMvv9j2MjpQPWz-Ts1cDCCJLXNKN0PfalD6cFWZQgXiuWrazMJWZgVSFdaTkd-DxBhXGMbjh6m6GokXD_b5Gy5ziXor4zcsed2r6zMFaGhXeaNREj6gs-D10-J--8iks9b1nu72-n6Wzg0sgawQBNhvFo7ADpLzg-HKn_J7pk17_Y2gJ585uQus2MNdwKLz3n3eACN0sRERg2OAjE0qOgo0FdYbMhm1LZbHVcUW3FggDTy26IqpgzvQg==,wyCsKVqrup-fXUMT0EI0GDsBDnlYpYetbDje5RNwFzk9_YyRw3XK9JTxQWclAcVO_T4iPOMU6sQCWF9aO5M4Mo_P_WUweKQ1scRsqt7ULFS6wecK5MeTsX-lENQ75q4hQpbX_vg1zCU3RCpqabvJ4csHafh25tB-yEOChb5QySGFQA4-B01cMI1LIZIR6ml1sSRm7yJkRMmpK4OADl01im0fpEgsaQ-TPs4T8fiWcfg="> <input type="hidden" id="isFreeLogoEnable" value="false"><input type="hidden" id="hidDocprev2" value="https://oversea.cnki.net/docpre/v2/api/inner/multi-statusex"> <input type="hidden" id="hidGetFolder" value="https://kns.cnki.net/restapi/aipower-doc-api/v1/session/muti/getsession"> <input type="hidden" id="hidAddFolder" value="https://kns.cnki.net/restapi/aipower-doc-api/v1/session/muti/add"> <input type="hidden" id="hidAddFile" value="https://kns.cnki.net/restapi/aipower-doc-api/v1/session/muti/addbysid"> <input type="hidden" id="hidCnkiStudy" value="https://ai.cnki.net/study"></div>

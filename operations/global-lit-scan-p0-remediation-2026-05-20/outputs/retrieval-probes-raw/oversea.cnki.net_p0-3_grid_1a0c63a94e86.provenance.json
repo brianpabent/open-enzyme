@@ -1,0 +1,14 @@
+{
+  "url": "https://oversea.cnki.net/kns8s/brief/grid",
+  "referer": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%99%BD%E8%99%8E%E5%8A%A0%E6%A1%82%E6%9E%9D%E6%B1%A4%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+  "query": "白虎加桂枝汤 痛风",
+  "category": "formula_baihu_guizhi",
+  "fetched_at_utc": "2026-05-20T18:29:11+00:00",
+  "method": "local_curl_post_cnki_brief_grid_browser_captured_shape",
+  "network_path": "local_machine",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "200 text/html;charset=UTF-8 https://oversea.cnki.net/kns8s/brief/grid",
+  "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_1a0c63a94e86.html",
+  "query_json_shape": "browser-captured OVERSEA CROSSDB Subject SU TOPRANK, Rlang=CHINESE"
+}

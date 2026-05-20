@@ -1,0 +1,2523 @@
+{
+  "created_at_utc": "2026-05-20T18:30:07+00:00",
+  "scope": "P0-3 TCM gout formula rescan CNKI Overseas rerun",
+  "method": "Browser-captured CNKI Overseas /kns8s/brief/grid POST shape replayed with local curl; parse first page result table. Discovery only, not evidence-tier promotion.",
+  "queries": [
+    {
+      "category": "formula_si_miao_san",
+      "query": "四妙散 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9B%9B%E5%A6%99%E6%95%A3%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_10b67458c902.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_10b67458c902.provenance.json",
+      "total": 424,
+      "top_records": [
+        {
+          "title": "Research on the Mechanism of Si Miao Powder in Treating Gout Based on Network Pharmacology and Molecular Dynamics",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYVDF4l4OziN-4sRPl0zOkzwfE-JiVe7Hg-qAsxksrwe8Aq2aHeAJKDy56NR6hwbIMr-NRNFhVgkKOd4FAX71SFucKoRP1tCRg4uVRjGkCHXxZcFDKUiQj2okCqBZNHDKaACP4ztTJYGCQ0T-nmhR1-rplRigLb253Qp1lqq7qrtg==&uniplatform=OVERSEA&language=EN",
+          "authors": "王露盈;丁一航;戴铮泽;康天伦;谭超;陈孟炼;孟苗苗;侯秀娟",
+          "source": "Progress in Modern Biomedicine",
+          "publication_date": "2026-04-15",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "29",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgichqtnI8KCXV2EUM1SmllIunqrTyMl-Zj8qKzhngLdzyonDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "肢体经络疾病验案二则",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZtGkPCBqyGD9Hd_Hl-JXJKChJDV7CSmJNUD55uQ2VUKmsl0TC-ivpCw9kvTUbRR87aYBw3Mbt0FCCAEXXMAkuvxBA74-2aXFOd6IfX9tg1A-JKiO-UHBYVPWJ-f8EG0Y9jJCuyfT_Mv0uxgD3KhjA0LoVtxT5T5OqY7jRo9bPXPw==&uniplatform=OVERSEA&language=EN",
+          "authors": "朱宇轩;李亚妤",
+          "source": "中国乡村医药",
+          "publication_date": "2026-04-01",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "15",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic6MbZ9w2ZTktP9LWKQWRlJi30gmwfosHmHFioN3KxkponDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effects of acupuncture combined with modified Simiao powder in treatment of patients with gouty arthritis of damp-heat accumulation type",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZtGkPCBqyGD9Hd_Hl-JXJKChJDV7CSmJMNXATJAVXYVCp3ARxEPzMdoacDf3VqDYCD0JOogNDi_f-hpshXZ3Q9jV4H5P8-pC_WBra3FW33rqpICp0SjfWBkblCtpHtObtgtiUbqXecvbWDIMf3np4HTmXIpSEO5rMALvds5is1nA==&uniplatform=OVERSEA&language=EN",
+          "authors": "宁静",
+          "source": "Medical Journal of Chinese People's Health",
+          "publication_date": "2026-02-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "55",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicqoYJnMtnS-NNnpiGwVAfFShmBp0fR8Bc_nQan3ZyeGyuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research on the Mechanism of Simiao Powder in Improving Renal Fibrosis in Hyperuricemic Rats Based on the NOX4/TGF-β/Smads Signaling Pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZtGkPCBqyGD9Hd_Hl-JXJK5OlOJZX2gy3JiEmH-NXuW3jHTWBWkbtnJkccvCdkkK2I7o3mO1eXhZfmZZnM3fsP9vF_PLxOBMxDPUZ2lWuwxXTA3eIBtjULp_Z65z74w6cgTk3a93RRugHm__8PnBLX-Na8rNG5Ok-GJHecIfs19A==&uniplatform=OVERSEA&language=EN",
+          "authors": "李佳;李佳韵;王絮;肇起巍;白长川;杨潇",
+          "source": "Chinese Archives of Traditional Chinese Medicine",
+          "publication_date": "2026-02-09 11:14",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "418",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicZ_CtYnuxduewAwhD5Qh2G8A8Jwj24xl17JFv_px7TcP15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "四妙散加减方治疗高尿酸血症的效果及对患者实验室指标的影响",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb7aKjIf-PaFyxwyBU45ZJLE9d-deVd5Z8fNMo-PtTKOMHurWQWd5zvpL1TOlsTCndO6nMowChUvHTG1cVN0dxVF5-nPSt3xcmbmhllWTmhxMppQx2s-BrBFxmb1RgeKjDibL9OkbelggZmbK981O4j7OvDaEPvl5hEdI5m06NGVg==&uniplatform=OVERSEA&language=EN",
+          "authors": "张曼丽;邹均;王成金;田连由;司盼盼;董平高",
+          "source": "基层医学论坛",
+          "publication_date": "2025-12-30",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "97",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifyni6XX51zFAgDZYW2pz2wgfn063_eukbOd3A5HmuOaCuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Efficacy of Simiao Powder Combined with Shangke Huangshui Medicated Gauze for Acute Gouty Arthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb7aKjIf-PaFyxwyBU45ZJLE9d-deVd5Z-v6PMOLPcr6kvFOjhPCD-GfKt0Vuj8rRQGJ-SYYhFfPBBdQOqt6ROEe6SFetScp9VvGvtlpNgK0r9WY-csG7qZ3J-JjaoR2iZKZ_Q1n4ANVO7PF3A2_9jb6JgbP3G0JZsfPB2CyQwxug==&uniplatform=OVERSEA&language=EN",
+          "authors": "冯国开;林建辉;黄文杰;劳永锵",
+          "source": "World Journal of Integrated Traditional and Western Medicine",
+          "publication_date": "2025-12-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "158",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicCmnqsCKbzxiiki33RjiSeaJEgWzR0wOTbNbwn_JjguCuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "探讨加味四妙散在湿热痹阻型痛风治疗中的临床疗效与作用机制",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb7aKjIf-PaFyxwyBU45ZJLE9d-deVd5Z_Kbyrgvxr6YP7LginTRAtXFgOgn41ggb7azMyh1RpEJl6dGl1R0l8_B0w5CxQtkrMVd4teIvUUn8AxmBsumI64cUAJHR9heGGBpmGwAzX6frzhlqYiHv5kbLFJKmVJdiKsIT8DJvT9cw==&uniplatform=OVERSEA&language=EN",
+          "authors": "宋宁;杨永兵;黄伟;李娟;余娟",
+          "source": "Inner Mongolia Journal of Traditional Chinese Medicine",
+          "publication_date": "2025-11-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "85",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie0rXXWCVdG-cGEwcGVXBYU-0D4OT7_Z9B2SIdxgbh3uiuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Application effect of oral administration of modified Simiao powder combined with intraoperative sodium bicarbonate solution irrigation in wound healing after gouty tophi resection surgery",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb7aKjIf-PaFyxwyBU45ZJLE9d-deVd5Z90mtV-WDsjr9MzJ4ME6oTvNXcZY9SGFXvsGRFnZoON2EK4tY8cepMU8Umb0PzVx5gGFiPaDZPZ0mftUXbHj7n_5sIuh6yXvOWv3QMgUb_6nTMXImwszxzoIFmSTudG4ZU7DQil6Uc5Hw==&uniplatform=OVERSEA&language=EN",
+          "authors": "钟群华;王志相;赖崇荣",
+          "source": "Tianjin Pharmacy",
+          "publication_date": "2025-11-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "28",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicPZEpxMCx-Tn357X5ZL8J5aSzfWWw0lPYw3NTcbqdgNyuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effect and Mechanisms of Ermiao Formula Analogs and Their Active Components in Treating Dampness-heat Type Gouty Arthritis: A Review",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ9oEsLEYDdcLy8NKO0Sn60nnqcfQWXIEL119dQV4v6QZnoRv6Ylxvxvdza6qbFGgsVBcqYnrBzXEahjJ6y-3Av6z_t4ZGvxxeWJaBYpoWxj8hAM0ZIimeqPuopc9n0fcte_cCybBjOUTbxHYxaar22ZJZkJRhQvZZ_XthUTQFKJQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "赵雪萍;张欣雅;杨乐;孙野;孙鑫;孙晖;张啟萌;闫广利;王喜军",
+          "source": "Chinese Journal of Experimental Traditional Medical Formulae",
+          "publication_date": "2025-11-24 11:58",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "923",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2x2re4Gem5dP19n7xpoqXMEyuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "DENG Yihui's experience in treating acute gouty arthritis with the Shengjiang Simiao Powder",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ9oEsLEYDdcLy8NKO0Sn60nnqcfQWXIEK0QrMcu8gNXewdvuUfhHIssgODFnaQbgPZdOwUGq4uRfsz0XnmC3lEwFYcRrWDRgDTtxBo-rw0mveUiDs1OjCgsGcIgJKPhZqoQGJjCmjiLQX6ziCp6msDnGr_qf_jMOAVdHIXDFR3Ag==&uniplatform=OVERSEA&language=EN",
+          "authors": "陈彦灵;吴琴;衣云昊;周雯颖;张盟舸;黄睿瑜;邓奕辉",
+          "source": "Journal of Hunan University of Chinese Medicine",
+          "publication_date": "2025-11-17 15:20",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "220",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieTC8tWhw1LL37C7mu7lZK1KRHZ8xWVPVohtMXEf46qGA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "formula_si_miao_san",
+      "query": "四妙散 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9B%9B%E5%A6%99%E6%95%A3%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_ca1df82d0f5e.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_ca1df82d0f5e.provenance.json",
+      "total": 69,
+      "top_records": [
+        {
+          "title": "Research on the Mechanism of Simiao Powder in Improving Renal Fibrosis in Hyperuricemic Rats Based on the NOX4/TGF-β/Smads Signaling Pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ71oaTA1GX-_aqwrigjFhnc-G9ajf715a63Wx5vTosVJ0TMBU9LGntreGV_Bg3NFwoQpEJdPTc-6JxvsARbqGYDFW3qRMT78JSz1kLGPKhDEqgMhl7AxJjL8LIhAJDyepkacXpBjv21us7VTOblKYsDceHCUJTmPoV43O7fgHwxA==&uniplatform=OVERSEA&language=EN",
+          "authors": "李佳;李佳韵;王絮;肇起巍;白长川;杨潇",
+          "source": "Chinese Archives of Traditional Chinese Medicine",
+          "publication_date": "2026-02-09 11:14",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "418",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicZ_CtYnuxduewAwhD5Qh2G8A8Jwj24xl17JFv_px7TcP15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "四妙散加减方治疗高尿酸血症的效果及对患者实验室指标的影响",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ71oaTA1GX-_aqwrigjFhnPM1m-yemuItGbmAgBIU8K1hoS-VHXwlPbEvJ8p4HUngbC80NgMYpoHk8y7bqbdMiv4xgfSvOdWCnX3f16-VT4Fa7gXpDUzuriEs4X0A6fE0pEb8wfJAf4bPp21xI9KLy9AONltKUIR97lbvM8kxIPA==&uniplatform=OVERSEA&language=EN",
+          "authors": "张曼丽;邹均;王成金;田连由;司盼盼;董平高",
+          "source": "基层医学论坛",
+          "publication_date": "2025-12-30",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "97",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifyni6XX51zFAgDZYW2pz2wgfn063_eukbOd3A5HmuOaCuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Study on Modified Simiao Powder Combined with Bixie Shenshi Decoction for Damp-Heat Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYkxAkWh9f_xGXndI3GYUw_fygOYat7a7i4_SqrIG_IYmensvYnSOev8MiL31XoCidiLH9Xi0_5N_i-NshixCWi3YCpuVKgABTAy2VavVcce2RsydrLAVmn8IHZZt3HlcbvlgSs2TlX4DPEQK8Cm5LMvxLGJpW5arMM8UwNJo-3RA==&uniplatform=OVERSEA&language=EN",
+          "authors": "肖小斌;袁伟;吕凤玲",
+          "source": "Jiangxi Journal of Traditional Chinese Medicine",
+          "publication_date": "2025-10-15",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "211",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifZrUUrujae3bhJx9rcVnC6Kk2mDWHNozYHzUEmJ4Y5jw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Review of the Clinical Application and Mechanism of Simiao Powder and Its Modified Formulas in Reducing Blood Uric Acid",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYkxAkWh9f_xGXndI3GYUw_fygOYat7a7ioTHwRcy3W-DzNXbUuaUvb24lHLjq5A4at0sKgusylTBjn6rWYYA3bOV0lZDf1q5Vop9tPRWozHFKdt803r3OheECctWakkgLBl_A7RNBJTIcrKd8nAh78mXPH7C5-P9E4iE0A88SF8g==&uniplatform=OVERSEA&language=EN",
+          "authors": "丁紫璇;姚重华;潘新",
+          "source": "Jiangsu Journal of Traditional Chinese Medicine",
+          "publication_date": "2025-08-07 10:41",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "518",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie_9-BHJspaKVKVKzb1h0dXgSb3UTsq7N8t_vL4Ds3tOA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Study on the Effect of Probiotic Fermentation on the Changes of Active Components of Traditional Chinese Medicine and Its Effect on Reducing Uric Acid",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYkxAkWh9f_xGXndI3GYUw_bOnWwk_YrDFaJRfVUq7BQCRfOYuOahZ0r7YmXI6oF5XujBRB5KBGyrdADRJaliyATcM7AxHVJfNgJGIneEyrD4q-sSEEDJYiMGpfNWdLYYFlKWFnauh6aknc0tE7FYCDROYE3ItCKEUxZAlUJynFcVAdASRB-whn&uniplatform=OVERSEA&language=EN",
+          "authors": "张滋雨",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-15",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "1894",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnz9bUWYAO1suSebsSNWajRxMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "中药贴敷穴位对慢性肾脏病3～5期合并高尿酸血症患者血尿酸及血肌酐改善的效果分析",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYkxAkWh9f_xGXndI3GYUw_fygOYat7a7i7I_C_UsLjMaqVz8bxH6zckci7VhbreYQZQt8k39VfhmGU81xp-5lMZwQs53Ss4i6yLnuLAJrKY4YP_5qrEOCMl6HUWq13pJw5dbl_YGjHcCcKyhYRS2ce2docmSFrlkBR-LDmsRE3zA==&uniplatform=OVERSEA&language=EN",
+          "authors": "闵敏;李芳芳;俞华",
+          "source": "贵州医药",
+          "publication_date": "2025-04-14",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "209",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifayTb4REf7Qq3GP456gVczYNCkOSesCL9tzTlu789f2A6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Study of Study of Acupuncture Back Yu Acupoint Combined with Si Miao San Jiawei Fang in the Treatment of Damp Heat Internal Resistance Type 2 Diabets Mellitus Complicated with Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZF4Zt2QSLkXcYTPYC1GiUl398y8PK5dzsmUaFCDktnOI0Bvy6LzzZCTu0qksvCATsz4y4-5dmCoYHn6FKByQ-958qoeJWLWX9fOscjIbbise9bqnkXZXNwayIKfQoMkUnwwcLNH1f0vCGUHSW_EV2KwGZhO28tysQB3aek2UfO-G2Z1D-7KlJZ&uniplatform=OVERSEA&language=EN",
+          "authors": "赵陈婷",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-03-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "124",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnFhca0Xm5AeV-ix9-b8sVNBMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Analysis on Medication Rules and Mechanism of Action of Traditional Chinese Medicine of Gout Treatment based on Data Mining and Network Pharmacology",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZF4Zt2QSLkXcYTPYC1GiUl0m1X_QMie_Bct6XrCShLoJdtplcyfQlqSVwLQw1wc3tubaPmfYRCnKb1YKlW51I6RcGVWbrx2EYgikoNMLaWugYflP5zmJC3kbiJP-4bVy31bvGlC3Znn6kIxadhuqJGjhIJJVXzsRBtKQbFxymm4w==&uniplatform=OVERSEA&language=EN",
+          "authors": "姜梦君;包文辉;高晟",
+          "source": "Chinese Pharmaceutical Affairs",
+          "publication_date": "2024-10-20",
+          "database": "Journals",
+          "cites_text": "4",
+          "downloads_text": "909",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifBnW1y7HWanbrDpdv-jIKnD_nnfE4uJbED9g1-4qRrfliqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "从湿、痰、瘀分期辨治痛风撷要",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZF4Zt2QSLkXcYTPYC1GiUl0m1X_QMie_C2thWVzM22PstfIjWjLcjT0ct6kmAc3XTk7jVFvmXuIZhsYyt-3DJA7eI86Ql8S-w-tyCNwfFje-iILZSp0DuiKKB7HNFfU-V-Nv1B4CtZkSI0sE7E2EfRW8FV5P9erMjdY6Fe13i2cQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "陈爽;王宝娟",
+          "source": "Jiangsu Journal of Traditional Chinese Medicine",
+          "publication_date": "2024-06-05",
+          "database": "Journals",
+          "cites_text": "3",
+          "downloads_text": "429",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie_9-BHJspaKVKVKzb1h0dXP1iZXNXKckzfFNuQ_W7irliqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "探讨加味四妙散治疗急性痛风性节炎大鼠模型及对TLR4、NLRP3表达的影响",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbidcgo5klSHhbzup5fU7V2HkydTD_Ec73n6fPFPQwsx8mKCfhC7eZFCQfVjo_Ecvvvi6Fnech7zoPa5heBQK-4af59c-XPPW0ptSPi9aVMeSSBu7QbC6atToXzJgCPS_QAnaJZ38e_HPbWztTSMnDM6_g7k3MmN3dopItgVrzriV8QtNvN3QvC&uniplatform=OVERSEA&language=EN",
+          "authors": "付朝江",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "100",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnmXvm0BnYHrKAX6ggPpUCzhMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "formula_si_miao_san",
+      "query": "四妙散 URAT1",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9B%9B%E5%A6%99%E6%95%A3%20URAT1&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_a61d84e43fc4.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_a61d84e43fc4.provenance.json",
+      "total": 4,
+      "top_records": [
+        {
+          "title": "Review of the Clinical Application and Mechanism of Simiao Powder and Its Modified Formulas in Reducing Blood Uric Acid",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZl4gyXVSTLNaYZbB-JbM03_UEbSWhXdLGntkZ58HQBtQnOqonjvjNeXzfP6DYl8uiQ8qfbF7j2roMSSWePxLzFwaaWZVidkwXRIfoSIRMxaofALoa9-bsAdtmRxYPkTHoRTImqjD3zqN7OB5i7_OPwebzhhWDwaL1JWniA9djDUQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "丁紫璇;姚重华;潘新",
+          "source": "Jiangsu Journal of Traditional Chinese Medicine",
+          "publication_date": "2025-08-07 10:41",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "518",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie_9-BHJspaKVKVKzb1h0dXgSb3UTsq7N8t_vL4Ds3tOA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Interventional Study on the Effects of Simiao San on Lithogenic Factors in Patients with Dampness-Heat in Lower Jiao Syndrome-Associated Uric Acid Stones:A Gut Microbiota-Based Approach",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbXQYJDdUQ_4zFXe2xkQ_QNS3Yv3f5Jz3Qf9YbCd2OdPJf4Sj9opD2MlILy3wojyozbfo0tAbKK-PBG0VDbhKMwxP_GAoYpE6BB9mTBTBlWJ2GiZQLPMIO-owZJfKxJonLQZ4hklXJE2ClnK8x1DhMz_Ev4aNhOSsH3IcURyBXhSt3SGJps4OP6&uniplatform=OVERSEA&language=EN",
+          "authors": "张玉红",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-03-12",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "62",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnOv_jwA8pWtXmVr-ppxw8WhMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Effect of Simiao Modified Formula in Rats with Hyperuricemia and Expression in Uric Acid Transporter",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbXQYJDdUQ_4zFXe2xkQ_QN2XIuC7-6Ubu8T-0NaRr7JOHFFGa6NpoDNKWsHEcYTI25NmrglNQ0uWOJ9TkQPH3ls1vDor3wxT6oUkxfhpgyA9EKS4EBjm9Li8kJLZ8gkEy_qGUS_t-BUnfU3wcw80WShE6gMeBnqdgO5AKVZj0mDg==&uniplatform=OVERSEA&language=EN",
+          "authors": "梁少瑜;曾永长;俞励平;李仲秋;罗焕敏;吴正治",
+          "source": "Journal of Chinese Medicinal Materials",
+          "publication_date": "2016-12-27 10:29",
+          "database": "Journals",
+          "cites_text": "24",
+          "downloads_text": "579",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicAxdDHGtK3rc4mCJcSageRIRSvjhQMaSpg498rgh_lBjGXpRHA7l92WBScTaOddNt3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effects of Si MiaoSanJia WeiFang on the expression of human UAT and URAT1 transporter genes in HK-2 cells",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZSr90BosnazGobY9PeU9BfmTbnJq9W_bt8qReDQqicj0qt4PwWF3gbpJLOg7ELOlCZH1JACQn2w-bd8TnPWUAsEJOBF7iB4uZM2_QLTdviGBTB4xrXRUCDf0SVkGAUktLn4fbBADeIfT4ZGlMCnDcXiptQ77XbIUNgKYY1lM7APw==&uniplatform=OVERSEA&language=EN",
+          "authors": "王华杰;张国华;邹震;范秀珍",
+          "source": "Chinese Journal of Clinical Pharmacology and Therapeutics",
+          "publication_date": "2010-09-26",
+          "database": "Journals",
+          "cites_text": "19",
+          "downloads_text": "485",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieXLidXPa2ttcpYbt64vFzMwKv3MvS6WoeWLRR9kHg2LmrtKmTjIDl_B2HwwrqmBJA!&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "formula_si_miao_san",
+      "query": "四妙散 尿酸转运体1",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9B%9B%E5%A6%99%E6%95%A3%20%E5%B0%BF%E9%85%B8%E8%BD%AC%E8%BF%90%E4%BD%931&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_515f9b5ab3da.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_515f9b5ab3da.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "formula_si_miao_san",
+      "query": "四妙散 湿热痹",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9B%9B%E5%A6%99%E6%95%A3%20%E6%B9%BF%E7%83%AD%E7%97%B9&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_2e2308e31096.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_2e2308e31096.provenance.json",
+      "total": 49,
+      "top_records": [
+        {
+          "title": "Medication Patterns in Zhong Guangling's Treatment of Knee Arthralgia with Damp-Heat Obstruction Syndrome:A Data Mining-Based Analysis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaxzClVe0AKGMB9KEuCTBOAQGUnd-iHA0kEnfLb8i5YxuxEXnkMtzH9fnjbVF-xusZ2qQ8nZVyoDOars8KoeCIBdWrPrYO48h5wcYNpsGnVpQjNtLca4ht76xx2A0NnN-MuUyia10taPFfigPRIgzKc6EqBZh61054fxz5pSYSvwg==&uniplatform=OVERSEA&language=EN",
+          "authors": "张怡;崔文鹤;侯蕾",
+          "source": "Journal of Guangzhou University of Traditional Chinese Medicine",
+          "publication_date": "2026-02-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "91",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidAso8SLFecb13lX3XfkxC4Qs9G9QtF3uMYF2ZwhP5ylyuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "探讨加味四妙散在湿热痹阻型痛风治疗中的临床疗效与作用机制",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaxzClVe0AKGMB9KEuCTBOAQGUnd-iHA0l5AW_4VTUldbh1UqNZUrl9Vnt1puOSS0b24BXupfeXLa9_c2R1tI7X3gjqMecUrxryM17NTKdkb21F4ilJKP2vemQga6ZCVsxyU5xSghWfu-kpMlaJZFoPasu8BAYq8q5-hbc2EhwSBQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "宋宁;杨永兵;黄伟;李娟;余娟",
+          "source": "Inner Mongolia Journal of Traditional Chinese Medicine",
+          "publication_date": "2025-11-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "85",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie0rXXWCVdG-cGEwcGVXBYU-0D4OT7_Z9B2SIdxgbh3uiuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "加味四妙散干预湿热痹阻型膝骨关节炎疗效观察",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYg3UH-UVLGfXo4Ig2i2V-Iz-RvjiVtSs07FfSFjmPfqyxGuT4ZuCFY-as-QLzvYitoZyKryqG2A0D4cxycGUkWb4GGR-wkrcTDHoI7eFwizrb3_jwA1ybGyT-STH_WyXj3OPggVj_3OHRj-FW2bQTeAg31jT5x3kl1KChLulp7dg==&uniplatform=OVERSEA&language=EN",
+          "authors": "胡继开;段建辉",
+          "source": "Hubei Journal of Traditional Chinese Medicine",
+          "publication_date": "2025-09-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "136",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidyeOyLVXGm_fTH8GV51aLXvyfzsFBHw3vdLhL6Cp2ZIw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Effect of Modified Simiao Powder Combined with Laser Therapy in the Treatment of Acute Gouty Arthritis of Damp-heat Obstruction Type",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYg3UH-UVLGfXo4Ig2i2V-Iz-RvjiVtSs110ssk2siMh9Cu3_Wi6ShiUNhRv5qsCk_ojGMRlZPA33PUG7rt1qku0QjjydzzoSUDxpLdKd9HHludiUT_KMbbhYP2fnNX6-jw2ubuhdND5DMgcNwndsG16xdxrgmoL6oWtqHRhIC49w==&uniplatform=OVERSEA&language=EN",
+          "authors": "高彩霞;汤喜红;强建红;冯彦飞;杨小杰;李彦琴;李珂",
+          "source": "Journal of Chinese and Foreign Medicine and Pharmacy Research",
+          "publication_date": "2025-08-30",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "2",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicm_GfMALuIfhw2-xnpIQD3fUpBdEaq6u_jKUU0tndiUInDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Potential targets and mechanisms of Simiao San in intervening rheumatoid arthritis through network pharmacology and animal experiments",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYg3UH-UVLGfXo4Ig2i2V-Iz-RvjiVtSs37yDc5SvN_5HJuqsUMpJiK7TzwA8OBDeTfewiSaggbSQX7Q5ucGhi47yVNUsB9-5x89WpANJOZaZ50PxPUl5Rf7XdG0kWSqOQ5NXXun60kvJDHGPMPRIKMab7hhs64pMWOJ6YZjnkruw==&uniplatform=OVERSEA&language=EN",
+          "authors": "孙钰禾;蒋海旭;许杰;张红林;赵子涵;陆清怡",
+          "source": "Journal of Beijing University of Traditional Chinese Medicine",
+          "publication_date": "2025-07-10 09:00",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "1108",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicQIfojEqwfIvsXiVF4Vbeue1J9j0lbA1Y72l9QzJlkSQ6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "The Study of the Treatment of Postoperative Pain in Lumbar Spinal Stenosis with Modified Si Miao San",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaRXiO7OSspa6vdqvEmynXopxfE-0AY9wjHJi25SVsBEElQ9vs7jfppLhGDmiJ0mpLwH7eSX4teUT_phGNY5I9iVosaTp_T_qYtGzqKLi3PiX28lDHAnFT8tdkEvI_D6AKhfbbE2k6nJTTVuJBf9KefRd9pSIYV_U0yM5_tarNuVA==&uniplatform=OVERSEA&language=EN",
+          "authors": "李建港",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "9",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnTiFvLUw9FH4JqhGMciQO_azmk86Ae9E2cPcJxemcPVeX8H-zThafoXFu3hRPWoVX&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "加味四妙散联合糖皮质激素对小儿腹型过敏性紫癜湿热痹阻证的影响",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaRXiO7OSspa6vdqvEmynXohZf2dpy1oO8CDIDb_o0hJR4IyuI0bxfR8Iqo_oEOkkI_02FKNhmdTai8FTK7HFDCD_dQaqLCrNUBjLQektez34G8fhFXh9iKZr94cJV0k30i_Uf3rOiGlspy6xOAQwz1Js0K0e6nLZX7OcBV_pLGag==&uniplatform=OVERSEA&language=EN",
+          "authors": "高天雪;魏明杰;黄书丽;郭庆寅;张晓艳;杨姣",
+          "source": "Traditional Chinese Medicinal Research",
+          "publication_date": "2025-04-10",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "141",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifKiB1lVpOf3lUmWXccZiiiocMw0nk_J4vnwVc2oAHGRw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Efficacy Observation of Modified Simiao Powder in the Treatment of Knee Osteoarthritis with Damp-Heat Obstruction Pattern",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaRXiO7OSspa6vdqvEmynXopxfE-0AY9wjHJi25SVsBEErAd6HhBjCsGORfpmTxW_7HJMOswP-NA-lQ48doNE2_TavfBsX3oN9rEMBD8AduJ1_rKYLaHub2fz8Znm_-vLXu4Yjj_a_I0aLj1EcEKx7UPQS8F17XChmCzDndMuRWV5snbeRg65vs&uniplatform=OVERSEA&language=EN",
+          "authors": "狄裕申",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-03-12",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "191",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnUJXbyHHYZ6Sn0WiaadH__hMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Study on the Mechanism of Exosomal miRNA Regulation by Si-Miao-San in Intervening Knee Osteoarthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaRXiO7OSspa6vdqvEmynXohZf2dpy1oO8v5M_qLJ-ZazzupymDnFl34-iXLP0ERgUjyK79j2dd9nT0coNZ4nvifLeqw71T4GybXzFTUCjh4vUJ3BEJboyxKH05E3J-wHhseK9-1InrtNLqWRDtAIfW_LixhO1_DP-mZV9KPbeNBA==&uniplatform=OVERSEA&language=EN",
+          "authors": "伍搏宇;杨雷;齐新宇;简功辉;陈培;卢国樑;熊辉",
+          "source": "Modernization of Traditional Chinese Medicine and Materia Medica-World Science and Technology",
+          "publication_date": "2024-12-26 18:40",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "604",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie4Z4vWLo-nGR1CUaoYIOhyStG6no5zugRmAoBHmmjT-g6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Influence of Modified Wonderfully Effective Four Powder on Inflammatory Factors and Correlation Analysis in Damp-Heat Stagnation Type Chronic Gouty Arthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaCUjSDEE3PWOqmTW8Muh5BflMLnd3jpYm4kdt-B_Zwjb7oANoWO-d3yv9hPY4aZkvD9OCuLJHytoqgNWpbAGZrYtXvJouY3HR9SKaTK2i-397nW6nalueTUgrE0S1mXjaJVrNE1c5UTkEe1vVquCxmh6IhJHRiqFveDB-Wb54mmg==&uniplatform=OVERSEA&language=EN",
+          "authors": "杜明瑞;赵哲;李秦;李华燕;王鑫;崔炎",
+          "source": "Information on Traditional Chinese Medicine",
+          "publication_date": "2024-05-27 10:34",
+          "database": "Journals",
+          "cites_text": "14",
+          "downloads_text": "577",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJygQsX4elh7jIvnq5vyP5RKliqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "formula_baihu_guizhi",
+      "query": "白虎加桂枝汤 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%99%BD%E8%99%8E%E5%8A%A0%E6%A1%82%E6%9E%9D%E6%B1%A4%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_1a0c63a94e86.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_1a0c63a94e86.provenance.json",
+      "total": 73,
+      "top_records": [
+        {
+          "title": "白虎加桂枝汤治疗急诊痛风的临床效果",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY0epTaRTDh_HWs58CJlNdmZh_rwvYxp2XghNgXPzpYI_EznIdwPaQxbtnYDJRO8KkD2oOlbSCZg8O5jRjy_ClzcQOr98v6gtHCQyrtyfuvbgLzhHsMsip3shcz0sMogBsrklnVELJ_tlzFF5nhRlf5cDMBkLWHDFzwRWAkgF0dNg==&uniplatform=OVERSEA&language=EN",
+          "authors": "张芬芬",
+          "source": "Inner Mongolia Journal of Traditional Chinese Medicine",
+          "publication_date": "2025-01-28",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "131",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie0rXXWCVdG-cGEwcGVXBYUkkg49vRnZdlilBbeSH0Qqw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress on the Treatment of Acute Gouty Arthritis with Baihu plus Guizhi Decoction",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZQ_IKt25pbkhKO3XJcPtbQHApYKYmFjsf2XWLr1_cpRpqXmKjLSKQKKENFS2SYzwA2pt_85zAqHsq2s7m2TTLfXfvzsjcl831hIG7Ayn8-vt5i75G0MqctJyOjtLCYVzhlD0mXTd82NaLmW1EbcQcAYu7d7icp4TUKApRe1fqaQw==&uniplatform=OVERSEA&language=EN",
+          "authors": "付晓晖;王玲;莫成荣",
+          "source": "Medical Innovation of China",
+          "publication_date": "2024-12-25",
+          "database": "Journals",
+          "cites_text": "5",
+          "downloads_text": "466",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicAxdDHGtK3rc4mCJcSageRzZkwVLQJ_-XmEDEQHFYoLw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Exploring the Etiology and Pathogenesis of Gout,and the Clinical Application of Prescriptions for it in Synopsis of the Golden Chamber",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZQ_IKt25pbkhKO3XJcPtbQHApYKYmFjsf1ubIR38nOkWq010nh2CYa3bh0hNFvRKdXyxMFN5_uxxDTrh7GQNB1iOpgPcMf-KR18Z4VcgpPOprYtn5eOuFW8ZRiLRv6RlRkcGBHeA5XH7YK5-EHyvIxz3a_ETyFK0Ko-ubBH6Ai_w==&uniplatform=OVERSEA&language=EN",
+          "authors": "李华燕;杜明瑞",
+          "source": "Rheumatism and Arthritis",
+          "publication_date": "2023-12-28",
+          "database": "Journals",
+          "cites_text": "10",
+          "downloads_text": "934",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiefwEYVvLYGCpZvRDYE6ERAlZExj-1FXOUlmwMJZHsGmFiqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "白虎加桂枝汤治疗对痛风患者血清炎症因子、血尿酸水平的影响",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZQ_IKt25pbkhKO3XJcPtbQHApYKYmFjsfr3glwpgJeuz91scGOb_Yr5Z5kHK0_5uK0LZ7DOtFcFDM_drY1e9LEpgwQuVOxKT7LaIniOOgjTZTQxkct77jdfrW1CZwIFEERr1DPU5YeHvGaBk2c6ciexDBmXPbP1KYxsXJYW2PIvQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "张驰",
+          "source": "Inner Mongolia Journal of Traditional Chinese Medicine",
+          "publication_date": "2023-06-28",
+          "database": "Journals",
+          "cites_text": "6",
+          "downloads_text": "231",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie0rXXWCVdG-cGEwcGVXBYUeN14G3otZVQXAqUZNnv2Ha3tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effects of Baihu Plus Guizhi Decoction(白虎加桂枝汤) on TLRs and NALP3 Signaling Pathways in Rats with Acute Gouty Arthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYZNJ2gJ51z285ipcm9SU_LyfHOTS0A9uDcyJ0eHHgpZ8Ew8Wo0DuN00GiHBG3kRl03uAmXc_pyr3-jn9oeK7ExF2u_Oxaa5n1lhgwsAioyi56dxO7E7BKu6iZJWaTrBfwdMv3QHdSfdV8eM9eBSVAL24aWt0pNlRoG-J4FuhEIXA==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘广宇;徐西林;李志刚;王春龙",
+          "source": "Chinese Archives of Traditional Chinese Medicine",
+          "publication_date": "2023-05-18 11:12",
+          "database": "Journals",
+          "cites_text": "13",
+          "downloads_text": "768",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicZ_CtYnuxduewAwhD5Qh2GkzcxSPrXlk2sYnhBNm_gpq3tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "白虎加桂枝汤合小承气汤加减治疗痛风一则",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYZNJ2gJ51z285ipcm9SU_LyfHOTS0A9uDCf4OiaLqc_6g3NeaR2h7SxT-EVBBMnQ8UIuPOJYti5irV5koBY5bahdhKNqZHDEBdEIHRqhlVDYgu8MrsfGClR4sPV6OpWX49GuTNm8lSIbOK95ONXgRZUlgAh3hFA4RsjUn609sZLw==&uniplatform=OVERSEA&language=EN",
+          "authors": "黄慧军;何灵芝;曹煜",
+          "source": "中国乡村医药",
+          "publication_date": "2023-04-15",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "200",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic6MbZ9w2ZTktP9LWKQWRlJ9ApHjPpd6rfGI5rus_40k63tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "苯溴马隆片联合白虎加桂枝汤治疗痛风性关节炎临床观察",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYZNJ2gJ51z285ipcm9SU_LyfHOTS0A9uAlnw3uCtr5kIkQAEx9jcxzEbRVPtPjzd0b1V7ud0A-90eTvJOuzSJd_nNYjdI7itYmtL0QLkNi2OUTEUTWRUYj8KxuMO2U0NYUjL6hzUZx-YU4zYwiJVpqEUKEBnCckJbZn5Em38Dg4w==&uniplatform=OVERSEA&language=EN",
+          "authors": "白雪琴;敬胜伟;元永金;马万里",
+          "source": "Scientific & Technical Information of Gansu",
+          "publication_date": "2023-03-25",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "151",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieqAWLMyuV5mFkjPY9ZNA5P8jHgPT0KzXrXPvUnPGGfx63tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Observation on Baihu Guizhi Decoction Combined with Shuangbai Powder in Treating Gouty Arthritis of Dampness-heat Obstruction Type in Acute Exacerbation",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaKHesf2ZJeFwmzP0cSiHgp_N48jsGoh1bei7juE3krrw5rTSvIh8NBMBK3yfoMCQ96252FmWXuvMcNxHZ2DwA08J7KKVYGYJtEKn2Bfa_djFrVNbRkg20wjQwWDXRBPPRe4LPluGmJinu23BDKlH3JR9Kq0BMNRl-PYu5neykhYw==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘金明;邓六香",
+          "source": "Chinese Medicine Modern Distance Education of China",
+          "publication_date": "2022-11-10",
+          "database": "Journals",
+          "cites_text": "6",
+          "downloads_text": "262",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieGjNQaYw6ybYFIG3sismdoVDAQ6nPf2utbGj5UIfLhWa3tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Study on Baihu and Guizhi Tang Combined with Etoricoxib for Acute Gouty Arthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaKHesf2ZJeFwmzP0cSiHgp_N48jsGoh1ZOAX9gWXeVCKE4YKZC5Zi7s3jF26RdlS7P8JiPzTBlugbwEjSsnwZXGpf0kVzXlfkI90hHGl4Qfb6d-LahvQRlOKRWeevp8Dw3NAfI_dPp9qoDJ4gjc-ea9fZBE-wROBjQgVmAyaYrpA==&uniplatform=OVERSEA&language=EN",
+          "authors": "杨鑫;谢旦红;徐杰",
+          "source": "New Chinese Medicine",
+          "publication_date": "2022-11-10",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "402",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicc1JT_BcS-nutUkzvDO9uutdjH_41ehrMIIW3Av6GsThvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Efficacy observation of modifed Baihu plus Guizhi decoction on acute gouty arthritis of wind-dampness stagnant heat type",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaKHesf2ZJeFwmzP0cSiHgp_N48jsGoh1ZSxklOnlibZ5o2I8m_VZjWHz9gDnCPUjc9DLUsZ0p-muybv6qbJCxD-K5mBe1aDJjAgSCGaXotFnxrDXAuUuMtXmuJL7qf1-abqcH_GNn9xfL48DuiRYd3XFN3lgqlpTxPgVioycyQ9w==&uniplatform=OVERSEA&language=EN",
+          "authors": "孟庆红;李东书;刘兰霞",
+          "source": "Chinese Journal of Modern Drug Application",
+          "publication_date": "2022-10-10",
+          "database": "Journals",
+          "cites_text": "7",
+          "downloads_text": "249",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidF6OBGBSGzNAQCtwmQsHhpMlYOa2qYzcW7L8TCqoZ4BRvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "formula_baihu_guizhi",
+      "query": "白虎加桂枝汤 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%99%BD%E8%99%8E%E5%8A%A0%E6%A1%82%E6%9E%9D%E6%B1%A4%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_1847e558c9bc.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_1847e558c9bc.provenance.json",
+      "total": 8,
+      "top_records": [
+        {
+          "title": "苯溴马隆片联合白虎加桂枝汤治疗痛风性关节炎临床观察",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYGqSuNOpHhzXKVERJ6KWXbuCcOzyRPmGgZIu9qAy59JlOnvw3gIEvTJBr4_r4in44S83N-uFmcTJMODGhLYMUmqsxk8lvNGWzesYQjx6ky5X1SmR1qr_gqMRUvFC5nrgY4nLmhAswwivgDJJ6xWW-1hyQq9STzUVuUzLp3XCDA4Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "白雪琴;敬胜伟;元永金;马万里",
+          "source": "Scientific & Technical Information of Gansu",
+          "publication_date": "2023-03-25",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "151",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieqAWLMyuV5mFkjPY9ZNA5P8jHgPT0KzXrXPvUnPGGfx63tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress of Classical Chinese Medicine Prescriptions in Treating Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWanLWmCGz_OmWCBW-WeC0THr4glmNHFjiDEDXXm-w_yGc-dMuqsnfXPZf7-tBOeXMemFBwdIO5GdvVfwgW1jhllWllOu391Y-vOCylxK_RgEy7uBA1HqIE3cV95Uod7Czjd6NEtGIQlmAH4LJwRVa0fr03lCQcMwVL7z8SLP9Ybuw==&uniplatform=OVERSEA&language=EN",
+          "authors": "郎吉瑞;曾瑾;陈世龙;李莉;弋静;袁天敏;尹竹君;赵军宁",
+          "source": "Pharmacology and Clinics of Chinese Materia Medica",
+          "publication_date": "2021-12-08 08:25",
+          "database": "Journals",
+          "cites_text": "40",
+          "downloads_text": "5091",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifKiB1lVpOf3lUmWXccZiii0YqPI-KJmqQkEFzozVhEy63tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Therapeutic Effect and Mechanism of Baihu and Guizhi Decoction Combined with Benbromarone in the Treatment of Hyperuricemia with Acute Gouty Arthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ0PYKe6RmNGLGmxE4Yrd2kA6LGaB0MXSkcV6_g8lKJLJpO0am-d6bRbogAZ7O-Q5bPkOdrZ8g4P4aUj4YIaC1jauCkYKRDlomJmjKFVXqW08v-ohfZgsEiLp1qSGccxIX24tPef3e_kF-wcPzG2sBCMNvjIJW6RM9AUG0AZduooQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "林晓烁;尹辛成;徐光勋;徐向东;郭飒",
+          "source": "World Journal of Integrated Traditional and Western Medicine",
+          "publication_date": "2021-04-28",
+          "database": "Journals",
+          "cites_text": "57",
+          "downloads_text": "581",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicCmnqsCKbzxiiki33RjiSeMuIKL4FxbVkdSjjT5pJt0BcJFnCXWEvXwdDhbxhTw8J3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Anti-inflammatory mechanism of Baihu Jiaguizhi Decoction on hyperuricemia and acute gouty arthritis in rats",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ0PYKe6RmNGLGmxE4Yrd2kA6LGaB0MXSkmAsSma6XdlsYTX14jE7wFIfbZGdKeG7DR76tg5gd-Dt_n1EftKpDLz6ixISZdp6bk2gYIez6UBFClPM9bxCDhaPeHUzFMrDt30VC16biUoIzv0U0yQqyvfVd1DBTL7E4lZTrFXvPm4g==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘伟伟;刘秋玉;周子正;史丽强;甘静;杨雨竹;管鑫;高建东",
+          "source": "China Journal of Traditional Chinese Medicine and Pharmacy",
+          "publication_date": "2019-05-01",
+          "database": "Journals",
+          "cites_text": "83",
+          "downloads_text": "1421",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidyypRUVQSlIQJv0NjapVVVIcSwRor1x6A_HD-a8fLJN6Lqpt-UE7qLGJpZtSTKj2x3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress in the Treatment of Gout by Classical Prescriptions",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ0PYKe6RmNGLGmxE4Yrd2kA6LGaB0MXSmGYypzEODg197kT2ztls8xZK9s4ZdODs2uKonoBzzUpksVmtMUcyeqcN-veRNAnSSze--sV147MLE3yjTbKBlWSA5NBXjxRivGD_ua7sHIB7r1XjsWOJmvuXEgWxlXAwa8OL-RfiMPJQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "谢庆;韩智云;冮顺奎",
+          "source": "Rheumatism and Arthritis",
+          "publication_date": "2018-08-28",
+          "database": "Journals",
+          "cites_text": "9",
+          "downloads_text": "1070",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiefwEYVvLYGCpZvRDYE6ERALDj9ViWLyAYaKmVg6UXGojVphw7qS8TD5hUBzNQ_xqN3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "高尿酸血中症的医治疗",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ0PYKe6RmNGLGmxE4Yrd2kgBEQpbNcGxaBOaYlU1dIGRORykffgT2u4xllQm8DKz8lOiyA3YggeZzE7zyrxC8JnSBtrSmeQjFOEzzIxRxMy6vJIe0l8HH5Hrqe4cFG2zDRfiEawy9m6WDUrBRX5S5o7zqCI9e4gUimQgK8NEE1nQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "吴丹",
+          "source": "Family Medicine",
+          "publication_date": "2018-06-15",
+          "database": "Magazines",
+          "cites_text": "",
+          "downloads_text": "28",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=BIXc9s0YhSIO6ELAvT3bjAM1UHjV0uMR_icN4IXwgif-bQBfuE1kF_KQats3az59bKACWumqZebc-Jo5t8jV19RtMwlPU0FmA8CSpzQnRK13KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "从经方论治痛风的思路概述",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYt-Qp4jV-rMFVDwAi_xkJlw7peKMBLrEiKHAFkJwKwXqluobKBam3Ve_EU413kdEvSH2VM9OUUzkewV-7D6sp9GwEiZJxMvyiA_CBxgHMM86I2IbFg3M_ftnA_7yphJ9JSPkOUIE7JlpHFR5D_JXFcsLM1xxqVl4igWKhj6jiUcg==&uniplatform=OVERSEA&language=EN",
+          "authors": "张瑞冬;秦铮然;唐晓颇;田君明",
+          "source": "Journal of Guangxi Traditional Chinese Medical University",
+          "publication_date": "2010-12-15",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "631",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidEnCSeH4-14IHqE7_TOBaTedrVh67fKTIFAEuiQGSRpmrtKmTjIDl_B2HwwrqmBJA!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "痛风病因及其辨证论治",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYt-Qp4jV-rMFVDwAi_xkJlw7peKMBLrEggclFusRbR7FHG6Q-7AZp9saEDxP9d6Qt0HM08AQl8-p88idMKQuLc3a6lAuFXJXAtIa6bLtoxTdZbLPL-VCJFY-_aynsa3299IURtRTf2Aux8Nx0tJt_lUDQLxQ88Hng7cUFBlfx9NQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "滕英华",
+          "source": "Journal of Practical Traditional Chinese Internal Medicine",
+          "publication_date": "2008-07-25",
+          "database": "Journals",
+          "cites_text": "36",
+          "downloads_text": "577",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgif4RjYb4LK8IbK2eKNU7qEs1vRNj4BIf9Fpe7aCqqO3R17xnyxdieM6gbPREN4Zfe4!&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "formula_baihu_guizhi",
+      "query": "白虎加桂枝汤 URAT1",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%99%BD%E8%99%8E%E5%8A%A0%E6%A1%82%E6%9E%9D%E6%B1%A4%20URAT1&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_2ac489163cf1.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_2ac489163cf1.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "formula_wu_mei_wan",
+      "query": "乌梅丸 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%B9%8C%E6%A2%85%E4%B8%B8%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_f21bfe823e93.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_f21bfe823e93.provenance.json",
+      "total": 3,
+      "top_records": [
+        {
+          "title": "五运六气理论指导下治疗左心衰继发痛风验案1则",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZFvnDV4taRx9BNVd_LYCX6XtGBy8NDZ7CMkJZWK1FUIFunrTiSDQNrlj-lBgspknrr9c-bSYW5WOzWOzK_K5cEzyKEzCg9AzuKs5B1nBaXB9WhoxdpgfyLAemFqkrDmf2uFAApwPtOHqSRy2Wd8MnPBDGdyLyV0sliQXRiAZh1EQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "代君;时晋泰;姜红菊",
+          "source": "World Latest Medicine Information",
+          "publication_date": "2019-04-12",
+          "database": "Journals",
+          "cites_text": "3",
+          "downloads_text": "434",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicJJx5sYzuAPxizeH-CY-om9vHTkD2RrCXrynvAecOtfaLqpt-UE7qLGJpZtSTKj2x3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "痛风每作历节治",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbVdPNcsX4nISyzHRDUmu5KZyNua9-KgX0uXU2Fe8AoBt5KB0Ue1tI6uV2mDl9y1CkKylc9s-g0y6JfcQS0Wy7IOeGdodbuiCFYwUAo8Xls1plJ7hBjOKX-m3Hz95JME0RWFMno_6jaOS1CrnJ2h7R9DFPID-S1RBAo5hzjH1Lb2Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "陈国权",
+          "source": "Global Traditional Chinese Medicine",
+          "publication_date": "2017-05-06",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "314",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiemTUe7h1ophIt0gGw9ialuHuUCCJp8xQycLfoZQYHC7TGXpRHA7l92WBScTaOddNt3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "乌梅丸的再认识与临床应用",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbVdPNcsX4nISyzHRDUmu5KZyNua9-KgX0siQOeIsL5Ju0XPszmRNwTk0T7kubhoJpbahHeMbVzNO6CxmF1uo2GlswHNPlVx8TRalUUAFKhb72xWA4sZW_C3gcboOHnfxzKirwr39FkJCxvbIy43_S8pb5nBij1alHxaBEDrzPzww==&uniplatform=OVERSEA&language=EN",
+          "authors": "黄永凯;王晓红",
+          "source": "Journal of New Chinese Medicine",
+          "publication_date": "2017-01-05",
+          "database": "Journals",
+          "cites_text": "6",
+          "downloads_text": "762",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicc1JT_BcS-nutUkzvDO9uuUtZsa-7I-btT1PcYGPde5jGXpRHA7l92WBScTaOddNt3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "formula_wu_mei_wan",
+      "query": "乌梅丸 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%B9%8C%E6%A2%85%E4%B8%B8%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_97e5060270a6.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_97e5060270a6.provenance.json",
+      "total": 1,
+      "top_records": [
+        {
+          "title": "中药名方(加减)在糖尿病及其并发症的新应用",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYQQdUZHedXp43Pyo2X2ZxgGhkiYZVhtWkHiwzzKU4Pyc3EtXeyXxNyL1S20nwQmtJLmDscDb6dMHbFMNzETg749krDZPMGUXSyVF3aAab_ho0beQd9J8yRf3_WQQDnK7GEF2-B04wTCakRfQl-NXg-l8EWbb1rwQF29vAZvxslJQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "鲍继春;施雯宇;黄东梅",
+          "source": "Strait Pharmaceutical Journal",
+          "publication_date": "2008-07-15",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "245",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidfyS27G61A3b5U6arXzndp492LA1GJJch9SLjx2bB8C17xnyxdieM6gbPREN4Zfe4!&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_smilax",
+      "query": "土茯苓 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9C%9F%E8%8C%AF%E8%8B%93%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_690deeee9dfa.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_690deeee9dfa.provenance.json",
+      "total": 610,
+      "top_records": [
+        {
+          "title": "Exploring the medication patterns of traditional Chinese medicine prescriptions for gouty arthritis based on data mining",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYrj4I7dBdW4bs9ufB_sX7TttkVYyU-kvYS_ljhVErEN7_f0GUCggX-S4gJseVm9CeR2ohMD1UZfHmU0lWRXxNP3TFXI03n5qdCQfmi9NJK2irWppDHZPux2Vxoe7tWc9WSHpglqqTgDzeonpqnDg6vCGtdewqqZo_iOdhkg6z0dQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "何婷婷;丁梦珍;张玉慧",
+          "source": "Clinical Journal of Chinese Medicine",
+          "publication_date": "2026-04-14 15:45",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "200",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgif_0pCax5XXeczg2yRIdyAGxQ2u6kDVa5z1BC80UxTZ-InDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Liu Min's Experience in Treating Gout from the Perspective of Shaoyin Yang Deficiency as the Root Cause",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa_q4yUQHbC0L9E3G_Z8LiUHjvEslvQtZl9276BY_VvRSOqMyQbk-o1yfrMYHCyYVQQVToK1qsWZlRrQXszKaGan-bx5SyXkdVqB9zafvW8LwocH_MZGtJ_JR8-JbhiSF5O9X8XGYNU_80mqDXm4JJA0ILH1_dGKDHToM57IjzSnQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "邓茜;王文静;宋高峰;张婉瑜;刘敏",
+          "source": "Journal of Guangzhou University of Traditional Chinese Medicine",
+          "publication_date": "2026-03-18",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "84",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidAso8SLFecb13lX3XfkxC4ugtsCPQYUdruu70gvBBtQSuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Analysis of the clinical effect of modified Qingre Qushi Tongluo Prescription for the treatment of acute gouty arthritis of damp heat accumulation type",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa_q4yUQHbC0L9E3G_Z8LiUHjvEslvQtZmrAuVlWVJ6-lmQUJTq6-zIvU2dS8NmsNo4tm74X3mE5gZKOcnbhReQeUUOWHbQDCFzLHKXILdaj-D7bQCHZ3coS-o1BtzKspfrFhUvN6TfShAvTzqdTt3sqEUsFTBQpRJss-IB7Aa0Gg==&uniplatform=OVERSEA&language=EN",
+          "authors": "梁志刚",
+          "source": "China Practical Medicine",
+          "publication_date": "2026-03-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "9",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiccXPzYt7aaAsigb3tRdQ8fLoIMQLCWwA84ebrGbCpTZYnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress on Multi-target Mechanism and Clinical Application of Smilax glabra in Hyperuricemia and Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa_q4yUQHbC0L9E3G_Z8LiU04PGI41rpsl-samMqPD-P7lyttIFMNoDBOtNmHbfG2JN_IJykK8cj6u7y5YupzQn9yqmb90545Eajv6PF-Msy33t1-cKuh_bK3nWsBioAXF8lXqPeEH8mEhDn1qpB__hJdmUEM3nijc-IdWgm3Rt-Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "李昕泽;黄焱旭;陈子龙;陈璐璐;马瑜瑾;张岩钊;王婉瑩;常建颖;赵寒冰;马乔博;郭淑萍;刘传鑫;姜宏卫",
+          "source": "Modernization of Traditional Chinese Medicine and Materia Medica-World Science and Technology",
+          "publication_date": "2026-03-04 08:29",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "921",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgie4Z4vWLo-nGR1CUaoYIOhyxU6-y0F7Ydu9ERYZG2Y0Of15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "HU Yinqi's experience of treating gout by stages from \"dampness turbidity\" \"heat toxin\" and \"phlegm stasis\"",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaOef_MemQ3URhmNfSGP5n84QglKwPJ2uE2v-kN6wu0SFKhWqzzSTkuWOFcsL1kTVPWKtNaJsKTh6DmiWDtuJXUFESghe72gv9PEX3YMxfMNvalB5ByLXAmug4F99Wg1FMQo2PvtCjoI0usL-TaZv8QocswTPy_JqrVCX-72hBLIw==&uniplatform=OVERSEA&language=EN",
+          "authors": "王天鸽;聂静;刘燊仡",
+          "source": "Beijing Journal of Traditional Chinese Medicine",
+          "publication_date": "2026-02-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "28",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgid7462MT-q0tjU88uzpx4U9Tb6BofoAxhr-iIj6DfnHaonDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Introduction to CHEN Hong's Experience in Stage-Specific Treatment of Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaOef_MemQ3URhmNfSGP5n84QglKwPJ2uFXccuJlaKmFj-8UZRtj7U5NvhoHN_KTvr66fW-b6najSwHXxrZBfMJ9dDt7PLhKdnp_no1mn9eigtlEfzFh4h03gD55zivBdX02q0YmvEkDiZvDkYIVXU4PQM_5KJTk6nwZsFhvBD3aQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "吴思瑶;黄桂琼;陈洪",
+          "source": "New Chinese Medicine",
+          "publication_date": "2025-12-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "74",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicc1JT_BcS-nutUkzvDO9uueHr2ThRk9X7P2vmzSo5RHyuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Mechanism of Smilacis Glabrae Rhizoma in treatment of gouty arthritis based on network pharmacology and molecular docking",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaOef_MemQ3URhmNfSGP5n84QglKwPJ2uFsAVK82VVy1T9MlYHP8jdheq797VOKyjrP-QTMTIFW_dAjtmKUTTGQQdiEKcHvJTPKrcomSupqROyO0wkhE9fKDM2ve8HRHdW7RNE05pz-B1wU2bGdA1nuKHPOd1mywKqnM1CxTjHyUg==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘泽霖;申意伟;李冀;朱嘉民;任天琦;刘晓宇",
+          "source": "Drugs & Clinic",
+          "publication_date": "2025-11-26",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "517",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidTAquK0J1_1ae8A7V721CTZbjKoEHjUnApX1qYLeEJwg6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Qualitative Analysis of Chemical Components and Establishment of Multi-component Quantitative Analysis Method of Tongfeng Qingli Mixture Based on UPLC-MS",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb1RoHaC9yd8bhB3fGKV9Sloe8B9DlulR0hKKAeIn7CekbeOAM97s3o2ABGgfwWWrvuQ94F49RX6kqvmLmXU6-pG7Ik_yPKEgKwV-z-8nnEDXDlu_qnHz4NirPtGLAZyFHKIQtwQAVTVuKs3tkGX6Zh5S3fnXK1eHA9IX9IvqbDOA==&uniplatform=OVERSEA&language=EN",
+          "authors": "吴薛丽;杨雅;刘军;郭盛;段金廒",
+          "source": "Modern Chinese Medicine",
+          "publication_date": "2025-11-20 19:37",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "520",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicwdWjDakzOxoife5T7d5xlDyVYJTYRlco5Ftc_HclxxSuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Study on the clinical medication rules of Chinese herbal medicine for chronic gouty arthritis based on data mining",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb1RoHaC9yd8bhB3fGKV9Sloe8B9DlulR0ZeIwk70b0sgONN1ZpfsYH7iRhUjcVR5DcbDiOBIc_dsKKCfED1uuQ-w-67IKLtQ0RYtQ4ON9uze3-6SLKVwN4Rnc62cTYlVEfJ3z7CRSJf8Ahu6edrTnbh00Kbssgde8ED6X-eOd0ZA==&uniplatform=OVERSEA&language=EN",
+          "authors": "吴金栋;陈群;欧余航;吴云丹;陈鹏;肖艳;郭洁梅;蔡晶;苏友新",
+          "source": "Journal of Li-shizhen Traditional Chinese Medicine",
+          "publication_date": "2025-09-15",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "1072",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieqtCXyRX_FlU3xFYe4bKhw2-Oe965JXChi4aqE-Cr_8w6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "广东省名中医吴社泉治疗痛风性关节炎用药规律分析",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb1RoHaC9yd8bhB3fGKV9Sloe8B9DlulR05GfMR_X7xwd0VODq0OwGmUjZkRv1oRJ8afMqAIPqwNXJzB-MlcABasrsm2K7gvsmJu0h7SB8tdiMfuBp4dU6QV8HsM_WNFA1aDfcvGn3Uve1DXF7l0hCTZj6jnu_BuepA608lC1vMEQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "黄小芬;张晓娟;王丽君;吴社泉",
+          "source": "Doctor",
+          "publication_date": "2025-09-05",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "94",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgict-9f6T6BjCHJX7hRUSOXqnBQAYtrCFDeR7Cpyk2iqqw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_smilax",
+      "query": "土茯苓 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9C%9F%E8%8C%AF%E8%8B%93%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_a37f43ccfdb9.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_a37f43ccfdb9.provenance.json",
+      "total": 477,
+      "top_records": [
+        {
+          "title": "Medication regularity and mechanisms of Jin Qian Cao-containing decoctions in treatment hyperuricemia: a study based on data mining and network pharmacology",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZKQg5E71pzuSEZa-RHqpImGEWZi9ZZr6mvTNGf4HiuvIZwSVhSN8sP_NEROQKoZRHuYf78Res3TgSJddJD4vHcNcXMXc_KKOHSbsAc7-814MLcDySXkRo4HpyWUX0SsrfSNbc9a663t40CIXyhvVkxoHSQLJIEd-RLEa8YVc9ItQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "罗培宽;曾昊天;王龙珠;王怡;冉云;闫秀川",
+          "source": "Clinical Journal of Chinese Medicine",
+          "publication_date": "2026-05-09 09:18",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "126",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgif_0pCax5XXeczg2yRIdyAGCJREw-0S9juyAHPDJS2ya_15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Theoretical Basis and Clinical Reflection on the Treatment of Hyperuricemia from the Perspective of the Spleen and Stomach",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa28YZ9nCkFFQvA6JpTFreuVr54CvNFRh9YWR2xf9kPyXoXTCDSZHT026fzuBOV11aayxF5Q51MyyaqvMcVMXI131Cbv3XcSx2ADjWiPL6Jje9CH3mn1cbLcZUNwMEe13Hfvnd85b3xQANgJMsLPTEiO6_M3OSZuhfkBDrfdhrgig==&uniplatform=OVERSEA&language=EN",
+          "authors": "田东昌;黄业放;钟月婷;黄宾",
+          "source": "China's Naturopathy",
+          "publication_date": "2026-04-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "48",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie4rKnAAyAbOBHvsZuiZ-FFzvVgv8rs4IvSmLfAXszN0onDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Advances in reno-protective effects of traditional Chinese medicine in the treatment of hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa28YZ9nCkFFQvA6JpTFreuVr54CvNFRh8g6ij1u5APhrNODd2xE0tVZcBfqQ-PqATxN61lLDM0xEeAmXBbirkwESJm7HeW0CM6Hi8Dz7JCBGIt8CgIHjwaovo1wp01cP86M5lWdvCdy3ybpLft8nSvlNzUPlc7Q1N8vgp1LpklAg==&uniplatform=OVERSEA&language=EN",
+          "authors": "周小婷;段禹;李星源;刘琴;刘爱军",
+          "source": "Journal of Pharmaceutical Practice and Service",
+          "publication_date": "2026-04-24",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "162",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgif69OtnXokF_8b1Vje2EZ8wODGR2jIZsiJJz6qKIFYpBonDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "A Study on Dynamic Differentiated Treatment Strategies for HUA Based on the Law of \"Temporal and Spatial Evolution of Pathogenesis\"",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa28YZ9nCkFFQvA6JpTFreuBCuO9G4jbXz-7hg17fPxK_s50YETy4yxB98e6Y4l-VY-JdAVU70_EtI1r541WlxCfeOVCcTVUMNSuc3puBMVrZs_RLIRqp0DhBIvSUF_q4nw5S6ed7SICibRYpP1mbWaRm-jpUq5HLnQhAi82ywM1w==&uniplatform=OVERSEA&language=EN",
+          "authors": "樊中瑶;胡瑞帆;李卫强",
+          "source": "Journal of Practical Traditional Chinese Internal Medicine",
+          "publication_date": "2026-03-05 09:52",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "179",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgif4RjYb4LK8IbK2eKNU7qEsELu3hyY_0THKIdQjLLyT6P15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress on Multi-target Mechanism and Clinical Application of Smilax glabra in Hyperuricemia and Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY3nF5cbwVm9GST0gftl9T0Sp9o30WInbkeXi6LkmP9V-UuGv93ppB2ub_ww8YoGNMV6lfI6YZ5Eytc_KXknnbY7yuoCPOUzekv0wNZtHjmKdji5sVdBdgNuQ39nIUBDF2DIWDAs9_d5g0_1RjLj8XTgxAfBFtZ2ZHW_0ZQ9tf-Rg==&uniplatform=OVERSEA&language=EN",
+          "authors": "李昕泽;黄焱旭;陈子龙;陈璐璐;马瑜瑾;张岩钊;王婉瑩;常建颖;赵寒冰;马乔博;郭淑萍;刘传鑫;姜宏卫",
+          "source": "Modernization of Traditional Chinese Medicine and Materia Medica-World Science and Technology",
+          "publication_date": "2026-03-04 08:29",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "921",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgie4Z4vWLo-nGR1CUaoYIOhyxU6-y0F7Ydu9ERYZG2Y0Of15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Investigating mechanism of Shengqing Jiangzhuo Granules in ameliorating chronic functional constipation(dampness obstruction and Qi stagnation pattern) with associated hyperuricemia based on the gut-microbiota-barrier axis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY3nF5cbwVm9GST0gftl9T0Sp9o30WInbkGQjKfOt9DHaLgEi_kBLKKajJ4eoB4ONs7hW5knkd3mubsGYwQmJNnMq1M4yAtqTCvSIvTf4FpvXCHPZVs6NRHkiLZfmy3x1HSEi_7hla3fW3uAYaPbGD6tTUG-uOVR9iNGxTvbd1c-A==&uniplatform=OVERSEA&language=EN",
+          "authors": "杨怡新;肖自青;马兆臣;胥明珠;卢倩雯;林雅;王萍;许海玉;白长川;张彦琼",
+          "source": "China Journal of Chinese Materia Medica",
+          "publication_date": "2026-02-10 09:19",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "436",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicumTG-JPXnK1AuPfTyntnelnnHVn472xXrs_IE7z93-P15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "基于“浊邪害清”理论探讨高尿酸血症相关心房颤动的发病机制及中医诊疗",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY3nF5cbwVm9GST0gftl9T0v6aKiJFycJBp3pQs0-bBVY4NEkmcuMgrUblPZoCdjbk3TUuTenPogoaehHL1BASqscuOf4NrQDwHKGxGVt6L2gSPhnf8WhWAFiwo_aIwjRsd6S_Xz8ihtxh_c_k_WZ6E6ikYrSsgCQIraZNKAb9LLw==&uniplatform=OVERSEA&language=EN",
+          "authors": "黄观明;王菁菁;楚扬;伍锋;刘浩琪;崔海明",
+          "source": "Guiding Journal of Traditional Chinese Medicine and Pharmacy",
+          "publication_date": "2026-01-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "212",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieTC8tWhw1LL37C7mu7lZK1Px2QCWbt02NfJsc3nW0alyuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Exploring the prescription principles and mechanisms of TCM compound prescription for treating hyperuricemia based on data mining and experimental validation",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYKv8kCtitikExMfewe4lBHJafU69eO6EmhcgjGcXdUeOjmSavvGyfUX0Uzh-D6_r5BAUw9_tlyYXuao7Klz_3YuT3hP5A3FALDdWZJlXWXV4udfJWTv4NuybBuaPPsy4TqLzMAR7SE8qGgDFLvRWPRzccGjtcHkSv_SoYYELNRPw==&uniplatform=OVERSEA&language=EN",
+          "authors": "阳晶晶;朱丛旭;刘武超男;陈彦灵;邓奕辉",
+          "source": "Journal of Li-shizhen Traditional Chinese Medicine",
+          "publication_date": "2026-01-14 09:18",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "571",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgieqtCXyRX_FlU3xFYe4bKhwk44RQ5aUZHPcxfE_eh2Ebf15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research Progress of Chinese Medicines in the Prevention and Treatment of Hyperuricaemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYKv8kCtitikExMfewe4lBHFazq1dhyrxL_5QlJCU4-BQCgGYHrtDxLaS3xZ1TgLS2b4dUSjZjr8MeEqGhO36ltfO3PypON51F-JTet4mr0Exr2k1eUanMLBT8PKMkH2OrztZxGj46m2FsgkBoIq_TK8Wrx-NZEVkxcbsh4NdxiEQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "朱永良",
+          "source": "Journal of Xiangyang Polytechnic",
+          "publication_date": "2025-12-20",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "341",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicu8EO_4KYnJDwIm2UiHQB7mxgqpK7efpKFQvjq126rpiuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Mechanism of Smilacis Glabrae Rhizoma in treating hyperuricemia due to dampness-heat through the AMPK/PGC-1α/PPARγ/ABCG2 pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYKv8kCtitikExMfewe4lBHFazq1dhyrxLULY0e8MOPz87sFW20vHx5pUVWHLlIXRHdkwXMC0MrkPNKOnReGbS0PPY0hcrGMpRavZXXWT-_xjFp4Wzu0hgjCm9zhfTtFWtFPdcPxP1FBSUSnPhJuqCkI7bFhl3b_W5hWGU2TEcDkQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "欧丽娜;孟玲飞;任玉霞;李亚楠;杨阳;白冰涛;黎寒香;杜景霞",
+          "source": "Natural Product Research and Development",
+          "publication_date": "2025-12-19 12:14",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "658",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifC5XJ30DHKBYXgAUMZDfsta37BDnLSNs3nZ9E-wB0dBCuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_smilax",
+      "query": "土茯苓 URAT1",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9C%9F%E8%8C%AF%E8%8B%93%20URAT1&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_ac8177832cf6.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_ac8177832cf6.provenance.json",
+      "total": 24,
+      "top_records": [
+        {
+          "title": "Research Progress on Multi-target Mechanism and Clinical Application of Smilax glabra in Hyperuricemia and Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbmudRI5PpZUcQ9PNJzAJ3v6SQYxc6CIWrBmmCL70FL0YN-xT8NaRAtD16xruwo9-IVkzZLteRykBJyx-uDFOsR0h2YR2cmLnoVh-DD0BzNp6lXEEEj7FmBSr67ljRGqI1IznrAp_CfSZT3oeAz1aVTZoWbFok3oOaRKujd5GJl2Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "李昕泽;黄焱旭;陈子龙;陈璐璐;马瑜瑾;张岩钊;王婉瑩;常建颖;赵寒冰;马乔博;郭淑萍;刘传鑫;姜宏卫",
+          "source": "Modernization of Traditional Chinese Medicine and Materia Medica-World Science and Technology",
+          "publication_date": "2026-03-04 08:29",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "921",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgie4Z4vWLo-nGR1CUaoYIOhyxU6-y0F7Ydu9ERYZG2Y0Of15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Exploring the prescription principles and mechanisms of TCM compound prescription for treating hyperuricemia based on data mining and experimental validation",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYIXwecc5k2uqP0CC3vFmtLMetDo6PJDvvldYuJcQLZKms2Ri-QGElRsmedOxuJin1etdaPYtL2Fv4X0ZumB4QQYebT6WJ88ZDfsVem4KhdRRTXZYTBCTbErGMfzmaIyyJx1hCza2yYpRWN675JFQzW4C2YxhNbphxvVDWoHhwFFw==&uniplatform=OVERSEA&language=EN",
+          "authors": "阳晶晶;朱丛旭;刘武超男;陈彦灵;邓奕辉",
+          "source": "Journal of Li-shizhen Traditional Chinese Medicine",
+          "publication_date": "2026-01-14 09:18",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "571",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgieqtCXyRX_FlU3xFYe4bKhwk44RQ5aUZHPcxfE_eh2Ebf15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Mechanism of Smilacis Glabrae Rhizoma in treating hyperuricemia due to dampness-heat through the AMPK/PGC-1α/PPARγ/ABCG2 pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYIXwecc5k2uqP0CC3vFmtLAYBR92ClI0dE5D2n3XOtuqDbXeXCH2NQDv5GNTjrfkGkjumYMEz72wDaw6uN3Mj11yECLKRa5DWNbo0xF6C8YOaCo4KSFmlXT5bmM-sOBRLU-zWnTqTTnuRRRXZXiMPCei-xTfowcW02mqtu2Ay_dQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "欧丽娜;孟玲飞;任玉霞;李亚楠;杨阳;白冰涛;黎寒香;杜景霞",
+          "source": "Natural Product Research and Development",
+          "publication_date": "2025-12-19 12:14",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "658",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifC5XJ30DHKBYXgAUMZDfsta37BDnLSNs3nZ9E-wB0dBCuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "土茯苓及其活性成分防治痛风性关节炎研究进展",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYIXwecc5k2uqP0CC3vFmtLAYBR92ClI0c2yaLkc4P_uf8s36hHgJOId-Bmnf5tlVunBz12KqQARpekHgvdzGzjFFpRZvUqMQLRK1hnKLoNYm_xujSONFJSr_zfo7ZLlwwJt-z1aVyuHZWw8783eSRVOtvbAqNzF-FHWEDH6niSxQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "李天润;杨振国",
+          "source": "Guangming Journal of Chinese Medicine",
+          "publication_date": "2025-07-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "206",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgice4e7qtpdsnJTu7iu3r-EUKQkgHVh5jsfbYnke7QC-VA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research on the Chinese Medicine Formula Jinqian Xuduan Decoction for Reducing Uric Acid and Treating Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYrq3eipSjEaxCjJ925-82jbg00REMhD2FPHUw4qkQ35AmX3SGzB9BRZOdWzyTioYaR2fqsnAVbqhiqUJct0G98OgZo6LpDIRlmTXZccjC9t9LXm1xgYsfGIe7HUp4GadStJGJPZn0nOMqRI04s7BTPOsejnLJ0H7OIRcv1NtMD-6aka9hbn6XI&uniplatform=OVERSEA&language=EN",
+          "authors": "王寒飞",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "",
+          "downloads_text": "388",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQ8PC3rMl_GWyb4L2wtZGptwneWrfo0YJU2eWl-PcvsuAMi10m8MSiKPdqj9ewg7V&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Evaluation of the Efficacy of Tongmai Turbidity Decoction in the Intervention of Hyperuricemia and Its Effect on Uric Acid Transporter in Rat Model of Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYrq3eipSjEaxCjJ925-82jRlAujJoKcGqTCca04uEQqOH8Ee8zrJ60b6SX4EEKGCXh7LsRNiAnpGWsXB5t6UGZ-jLYCWLeISBbMzSr2Y_ooN1nRjqL35cqXDEg6--ocslsqE30KU1bPGBxkNoJoMZk6cTWLQLSexaK8VqP1LnHP7zHwaUIYEpo&uniplatform=OVERSEA&language=EN",
+          "authors": "孙尧尧",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-05-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "98",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnNjKwEBnSihUpKVwjunPQl7qTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Study on the effect and mechanism of Glabrous greenbrier rhizome, Chicory and Medical cyathula root on reducing blood uric acid in hyperuricemia mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYrq3eipSjEaxCjJ925-82j30xta555LHKrJ0_vCswBw5d9eabZHPGoYM6PP9MLt921PC-o49X9tiBAc-zPvLuwIPUUxp_xhmlvIWOZcBSNkOC921xgpbczOJUcV78azvbntu97qk8vo7---np60JtRTJMdHpUv9v8kiIeQMzT4zw==&uniplatform=OVERSEA&language=EN",
+          "authors": "王聪慧;曹亚茹;王淳;张建军;王林元",
+          "source": "Global Traditional Chinese Medicine",
+          "publication_date": "2025-04-01 16:32",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "1375",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiemTUe7h1ophIt0gGw9ialuY99tq2M_oPzqTaieJUP3fA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "土茯苓醇提物及不同提取部位改善高尿酸血症的作用研究",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYYIFq5vGFXYK9YmxtzLOU7te5inl2y4FNe2faIi2Zo2r2MBpk5NMcq96kfG-SKz2myFkisP9jxgI11_qJjkDjC_Nyhj-Nh-jrASGNliBx4748DeFl8YodW86whgmyE4SYeOe_7_5TTgwZ73KioNTxa9Ur32q7-rGKROk8eUY7U708eEOlxw0sW&uniplatform=OVERSEA&language=EN",
+          "authors": "何维维",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-06-01",
+          "database": "Master's Theses",
+          "cites_text": "1",
+          "downloads_text": "629",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmntI4hRTg9fEYBE5YnM8frQBMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Study on the Effect of Four Chinese Herbal Compositions on Improving Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYYIFq5vGFXYK9YmxtzLOU7te5inl2y4FNe2faIi2Zo2j5GEszif30VH7EdOnhwgoDg3PqJgadPb7_YrnS9iUE0vaxogl_p_9X1PIFs4tblr5oQ71y1ArqyrRaE4EvmFte5bxZwBUDzk0XYR28NqlcJi1HiIB4xojawb6zkhVKYyWSshabViznH&uniplatform=OVERSEA&language=EN",
+          "authors": "周远卓",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "410",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnIvQV14G4zMB1we817aTNoBMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Molecular Docking Investigation on Effective Ingredients Targeting URAT1 in Three Prescription",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYYIFq5vGFXYK9YmxtzLOU7CBfhNONZJzFVEhrVxGmk1qovWVP542E7nhMSQ_dDxCm_mr2mbPpyYHFVgHUrOhJHGPIWQFmyp8pu7YSabGPQWiq2s7iwXYxv1ZPb6BwtFRQHV9Nc1900GrIHGp0dOuFX5QIf4LHWADTFOJ60wAeNCA==&uniplatform=OVERSEA&language=EN",
+          "authors": "王卫京;杨乾栩;曾仲大",
+          "source": "Biological Chemical Engineering",
+          "publication_date": "2024-04-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "159",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicnoLOotcK3xxEYuJP_7eqGXzxjmbDBxCVcNaKHXPal91iqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_jianghuang",
+      "query": "姜黄 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%A7%9C%E9%BB%84%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_779a247c0703.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_779a247c0703.provenance.json",
+      "total": 34,
+      "top_records": [
+        {
+          "title": "Mechanism of action of turmeric on gout based on network pharmacology",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZbwVifLBij9eTj7sb_7V5vA9OQxEQDaU-XqKWM6Gz0wu1o6dDt5BbbsrlxGP4N2dXnQwbo5FEZlpn0gc_ktFBLVg7Z9ZSfE5uJJUhvp6UjTkgfWOMypAM3Y6i5E1-Vtp58vdEV6Envi1o6ughFvJTf87qWvjAV438Yt7lWCOachQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "安景铄",
+          "source": "Shanxi Medical Journal",
+          "publication_date": "2026-01-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "168",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieLRHuPf5GY9YiDm_nTpGU3Qi9bkB50E2kmUyqqNForxiuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Anti-inflammatory effects of turmeric in acute gouty arthritis mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYUrfNYUQMSVEis8S_oRDDiC7jomMVsqJ9nsL8vaL_-iOgCScYHOfSVeaybXuh3E4n9-HKzQ_BfdIkBgnCDCVZZb0gHzMZBuWpNH7O7byLfF1seRgASc6s8awpuskuUKTP-pB5g749AD0WQ3kaFW2QneIC3pDfzsYaxv5fYIavG0w==&uniplatform=OVERSEA&language=EN",
+          "authors": "蔡聪艺;张玲玲;张文州;黄幼霞",
+          "source": "China Food Additives",
+          "publication_date": "2025-08-19 09:47",
+          "database": "Journals",
+          "cites_text": "3",
+          "downloads_text": "683",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidx98yFcQ14r-8U6p5JzI_sdnTbXGlJu9xC2aI9IsB_gw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Study on the Treatment of Acute Gouty Arthritis of the Damp-Heat Accumulation Type with Modified Ruyi Jinhua Powder Combined with Etoricoxib",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYUrfNYUQMSVEis8S_oRDDiLIfVnwQUtdBB6H5BCYtICjuSopneidOHKc-pNRlqVc9cjtYaVDdDavs1SucuP5akMiop6uC9QJtPDy6Vn7SweAfFcDw3MXxVW_myN7MXModA7j-SQy67Y0a0hv82lmLeB3-2TWl9DgZo_JQq6qa8GH9eBkXmL6Hg&uniplatform=OVERSEA&language=EN",
+          "authors": "文永昌",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-08-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "386",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnsDojqjlsNK6BMMJA0eYdt7qTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Curcumin Alleviates Hyperuricemia and Gouty Arthritis by Regulating the ROS/NEK7-NLRP3 Signaling Pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYeJyN3Ie1XcDsMcAY2HUDFBS3klvpoUoNIhY8R8dO5tcSwakVjB9LX_TJntIV9Pzw4fZJwyRNfP8eA_b1MMtvCEBhI1gGiQ7h5u_WsemNMCQmArZvktw9S40DOFynZLAphunvWD9kRwTIB693ZrNIiuFkeUyQ2Ft9sxvTTlUTY2FrFvwjbAUZE&uniplatform=OVERSEA&language=EN",
+          "authors": "赵正天",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-04",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "175",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnI84jfaxk2hauV84DPIege7qTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Study on the Treatment of Gouty Arthritis With-A Self-Formulated Traditional Chinese Medicine Formula Targeting IL-1β",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYeJyN3Ie1XcDsMcAY2HUDFBS3klvpoUoNIhY8R8dO5tUrJnAuQ1L3337up5KJp1uRI9uL0LJGfsbodUaLD7D4KXDa8o2bGPV0B4VCuW7mrsgUz2Ir8_KPg6-g4yp5sGTWSFXd1TkNuMcQrNVaNkPoBLwe19nzChKe0sXkTPYrw77POPCcG4vfQ&uniplatform=OVERSEA&language=EN",
+          "authors": "陈振东",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "192",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnefZVbOo-nDwalZxi7kN5x7qTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Based on Data Mining,the Law and Experience Summary of Professor Li Ji's Medication for the Treatment of Gout Syndrome Differentiation Were Discussed",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYeJyN3Ie1XcDsMcAY2HUDFBS3klvpoUoNIhY8R8dO5tSrgNAJG7oK9aVtbpvWcDESXSl0714aUyIbCxgPxODHioEMMwzw_17hbboc0im6V8Pn4-iGfWMQs1PQ9WshkPm_gTB2ebaktNnXAvwlJvDmn87sGqmTADoRjxIN11LhxTzIvFkXjL1aw&uniplatform=OVERSEA&language=EN",
+          "authors": "王天浩",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "80",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnqlrxp_w3EsuuMqhk27SUmRMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Curcuma Modulatory Effects on Gouty Arthritis Inflammatory Response and Its Mitophagy Mechanism Study",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY0m9dqpszZlAsKTqIAyQV37o1VLDW0QVllL-9jSAAHRcYB_FYy_OdQGoCi-8CRGtQFivkslbLOXooA019kUmPn75kaUsqobHnXhy1NYW_FyYCD9TVUq_WAY_zWQZ84UhgNDtrLak1YvoItrZxiJNB-QqJ3xG4soYeXtPzsCVqiRKVsJu0xUVv5&uniplatform=OVERSEA&language=EN",
+          "authors": "王艺璇",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-03-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "49",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnxj0rHCGDSzxSDZLhj_KMtrqTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "A review on Chinese medicine in the treatment of gout based on network pharmacology",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY0m9dqpszZlAsKTqIAyQV33E8sOfCmzt3tDkiS2mjXoTxhI99jKV2MAOuU9BTaCFO2OG84vlbQjRcS6N8crGhRqZUpV9Wt6j9Imo8aPtQnn3y8HCHUH3XkYMzFFQqK7X0MNU3wAiDCPddNzKp53B4rcSQDAPo41r3HlREiPCPq0A==&uniplatform=OVERSEA&language=EN",
+          "authors": "顾庆香;刘维;樊一桦;丁久力;岳青云;林芳芳",
+          "source": "Clinical Journal of Chinese Medicine",
+          "publication_date": "2024-11-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "377",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgif_0pCax5XXeczg2yRIdyAGx3ZNW4wLH5tf8VENPZ23vA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress of Traditional Chinese Medicine and Its Active Ingredients in Regulating NF-κB Signaling Pathway in Treatment of Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY0m9dqpszZlAsKTqIAyQV33E8sOfCmzt3tDkiS2mjXoQPFZ-zXOtVceUoSDPKQW-LOZYmVTfeTVvVjPSJTGbRVYYPk9v9Em06VKmwj20qA_vwPg2uHuhqV2prYhVNUjWiHPxKJloR3ytepv9glVPZvQJK2CP_uY5gWuROIQJV85Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "马宏武;谢兴文;李宁;李鼎鹏;赵永利;黄委委;程渊;袁可馨",
+          "source": "Chinese Archives of Traditional Chinese Medicine",
+          "publication_date": "2024-10-12 15:13",
+          "database": "Journals",
+          "cites_text": "4",
+          "downloads_text": "1584",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicZ_CtYnuxduewAwhD5Qh2GP0cgMFbg-3nR2PB4JNRYeA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress of Anti-Gout Dual-Target Inhibitors",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZcwlWO9hNi6Es3lpXH6Htdd3rFeSeZlhsM27IvSXzRfO99mG8ugjwX0d4IMUzmmzO14w--WMa5fml_IeBox6siB4hyWMBAq9M2fbm9YHJ7D8CM0vB9dh_-6pCPLY3S0w6WT-tP62NUK3LvFkZrxC1Ov9zBU9XHfYMWjeLlWfFfrg==&uniplatform=OVERSEA&language=EN",
+          "authors": "黄冬倩;郑明;束福;李诗健;刘根炎",
+          "source": "Chemistry & Bioengineering",
+          "publication_date": "2024-06-07",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "372",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie8H7Eyyn50eHxRHTKNPmHo-hddc_o8r6VxAHpV34iQwViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_jianghuang",
+      "query": "姜黄 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%A7%9C%E9%BB%84%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_b2d5428c0349.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_b2d5428c0349.provenance.json",
+      "total": 50,
+      "top_records": [
+        {
+          "title": "PROGRESS ON THE PATHOGENESIS OF PLATEAU HYPERURICEMIA AND NUTRITIONAL INTERVENTION",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbvCCmKr1OPFI6HUEwLN0o5Nech7JkEXtpGp6XlctZ_xPJZNcLAl8Cpc9FgRokIZ3aJFP1ywSG7iV86ZDEo7g9T-2Waqqkfhtt9F8sSUL7EN9BZj3V9yuX7Ipnj9cYZ0CLT-tAn_UN-kjVcjXIkYtEMN5i3rJdXUtBybuShXEXBTg==&uniplatform=OVERSEA&language=EN",
+          "authors": "吕飞;白晨;张予弦;孙铁强;侯丽雪;虞立霞",
+          "source": "Acta Nutrimenta Sinica",
+          "publication_date": "2026-03-31 08:04",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "317",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgieriwFfg7j02nI5a3aXVU71TQTIeFL0EQ9ol2vBDbH5ff15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "岳仁宋教授应用“挽精逐浊”法治疗高尿酸血症合并胰岛素抵抗经验",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYkpRhROspkIfu2Z1cxtZQ71hOjqkB-xX56TnpKMxcVX7IXZNc6NIX9HPktNAt7QvEjkjpOcZLyQV98RU1akTMxir3NhXe0ZYq7bZN8_2YWE3LGg_1ei0k9uDVZrghdSR-qGoypYiSkcsAxLOiG1cpQ0K6cTfeFmTfLPTgkRvmmGQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "杨彩虹;张利;岳仁宋;张博荀",
+          "source": "Modern Journal of Integrated Traditional Chinese and Western Medicine",
+          "publication_date": "2026-02-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "17",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidTbOilBw8RLuNke5IqDGWgiZ1JS5VbtNKb6ovtcoSPLInDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "参苣通消膏对无症状高尿酸血症患者SUA、ICAM-1及GLUT9的影响",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYkpRhROspkIfu2Z1cxtZQ71hOjqkB-xX5FnRP8jJPb0UFYTCmG6EaR3HHkl9suWnJSFVkTiw2Jnh4FVspg7W6yVoW7BCaoUeyFLQB0KcrQQ8t8XKGeVcRSdBIM8B8V_BgLvgPOzdaiC8v7hE9PPSq78KSq7duNjkpTke-jQNlXVw==&uniplatform=OVERSEA&language=EN",
+          "authors": "赵宇;曲龙;陈晶;韩德强;贾维刚",
+          "source": "Heilongjiang Journal of Traditional Chinese Medicine",
+          "publication_date": "2025-10-15",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "1",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicEYH-f8KNIeA5dqm2knLryh04BpzEEdWs_T1GUaObe1YnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "A review on the prevention and treatment of hyperuricemia in traditional Chinese medicine",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYkpRhROspkIfu2Z1cxtZQ71hOjqkB-xX6H4KbKpUS-jHWy9SkyZJ2bI9jQk5eoqjq4KxoeaYxfF6Nm2R_cggGVtXByiMoirI62lrUD2xhANn7w_bZ_IIMbjOaMZutiFMg0Qu5Z0n2BGVbkq5CLierGlJ12SJOo0Cm94mR2uV8Ctg==&uniplatform=OVERSEA&language=EN",
+          "authors": "郭松涛;邓德强",
+          "source": "Clinical Journal of Chinese Medicine",
+          "publication_date": "2025-09-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "475",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgif_0pCax5XXeczg2yRIdyAG9NBGGDbrzLHa4ymkC_5bySuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Curcumin Alleviates Hyperuricemia and Gouty Arthritis by Regulating the ROS/NEK7-NLRP3 Signaling Pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYkpRhROspkIfu2Z1cxtZQ7sirfH8Fjfku23Ts6qYEcsyCCJa8jmB6dCesj8kdSPQ1_lbZopNdT62a014rTWBKXADcbU7gst1azDIvHJ5ot-J2IfOJ_JRrHtWkBMFBK3kar0-n6roGVt9mKBmi_bS2WvySmZ2REuhqeaFb3aLxTAXiW3xs6RyIm&uniplatform=OVERSEA&language=EN",
+          "authors": "赵正天",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-04",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "175",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnI84jfaxk2hauV84DPIege7qTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "A Study on the Effect and Mechanism of Clove on Hyperuricemia and Hyperuricemia-Induced Kidney Injury in Mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWax7-choOlje4xG21WyutbLIGrqs9G_tMeQPhzGFr_FT6FTJoQ8BzQ4C72GyEe5DJaK8GXLEJHvUPOHBniqkk5XfMQDbs76wePpkirgpl3i3boVdmgqJDr_FVAeLB7hPgYdzQC6zN2Zk3sACqrlk0UZhJGydg2AaupN8LBj2jsRBxikqJaSFFTd&uniplatform=OVERSEA&language=EN",
+          "authors": "汪芳",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "890",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnmxLLfvVWg_xjM1v5Gu0IXxMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research on the Ingredients and Mechanisms of Food Raw Materials with Uric Acid Lowering Effects",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWax7-choOlje4xG21WyutbLhV0X0qwdOWwSgeZr82ajuB1iZRI_qcdZuiWd9d3JAlHfOv6r_zftr100Wy2qK8k9PBPEkcb3h_5oFCASEtBUeHLuF7s4LAQeBqcVc5gTL3T-_GgLuRR4OBlS55HK1cfpNi7bP-oWHUFUZ5vUWJQThw==&uniplatform=OVERSEA&language=EN",
+          "authors": "蒋丽;张文慧;马丽霞;欧阳瑞文",
+          "source": "Modern Food",
+          "publication_date": "2024-09-15",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "896",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieFIhUeI0JL327DbOC1OFJIKp9MusEcuC8s7zPFN4lI7FiqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Key Genes and Traditional Chinese Medicine Prediction Based on Hyperuricemia with Ischemic Stroke Based on Bioinformatics",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWax7-choOlje4xG21WyutbLhV0X0qwdOWy2XApmWqzBhgO3RLoF-cR04OcZevoL8okBBM9FONqGiZmyzbzzV1P8t6_7O0LQc0CZ07e0MuWDDyMI_NYY5bUuAe4ovMhx-VNTbLCdP_NTHg752pkklJdVfqgbzhG3UkmSFr-VsJ2S3A==&uniplatform=OVERSEA&language=EN",
+          "authors": "李玉珩;佟颖",
+          "source": "Inner Mongolia Medical Journal",
+          "publication_date": "2024-08-31",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "236",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgietyoG3Gh1sWsmeBLtrPTuQGBe_GDAWr4VOz4VBC9_gR1iqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Experience of Professor Tong Anrong in the Treatment of Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZUj0Pm9JkhsCjEr4Js6qc2vqXW9rrFQCi-n1FBUsozm-xbA2L_BKv8YW5SCGq5ArK7zKf6N2VWZxzkkKnR95At-8H9ABQjDAzNRzzW0nvKVXakagZT9bJmsPmRq97Sk1BNgfPIqoOBf0RQSJpdgzx9idus1zDaU6RrNGeidaf60w==&uniplatform=OVERSEA&language=EN",
+          "authors": "张婷;童安荣",
+          "source": "Chinese Journal of Ethnomedicine and Ethnopharmacy",
+          "publication_date": "2024-07-15",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "226",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicYmxOYRRRGoz0GDNGmLClH8nC-MXdEO5dPVsw7xVe1xViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Progress in the study of dietary supplements for the adjunctive treatment of hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZUj0Pm9JkhsCjEr4Js6qc2vqXW9rrFQCh8dLhwlKlp7gsYmdC65WIg78TYlatAXY4Wp2CBkqrZkeGA8m-0JY7ohyi4em1SrkrzYN96mPK-mRF0l2mlwfKQYhhMSPIsPm_9c21zJ3wUMtAL0Y6S8PFHM0v9njok4QV9HUdqgoLQ5w==&uniplatform=OVERSEA&language=EN",
+          "authors": "吴逢霖;张家硕;江雪;秦树存;薛雅卓;刘伯言",
+          "source": "Chinese Journal of Geriatric Care",
+          "publication_date": "2024-06-25",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "633",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidATHXiOlKxvL2QTkTZwXAluRp4c3OH4YkssxDdv7dBW1iqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_jianghuang",
+      "query": "姜黄 黄嘌呤氧化酶",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%A7%9C%E9%BB%84%20%E9%BB%84%E5%98%8C%E5%91%A4%E6%B0%A7%E5%8C%96%E9%85%B6&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_09cdad177cba.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_09cdad177cba.provenance.json",
+      "total": 21,
+      "top_records": [
+        {
+          "title": "Study on the Inhibition of Phloretin and Phloridzin on Xanthine Oxidase and the Construction and in vitro Digestion of Its Nano-Delivery System",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ9xEBKlttMgp-DT95BAJxmMt8fw6YU27n0PewYOLTwNOihG_JF6iXKDsRVoiLCk0qhUO05k9ZPwotOQxsGgZz0pBY89_iN-fdotW6O2KwtjJrN1MQce30ZB-IgIVImezgPTvd3N-LyCyAnk8ddtLNy0-p5KL6F1bhIF1097gEe6fY51rR7c_vj&uniplatform=OVERSEA&language=EN",
+          "authors": "文佳奇",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-05",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "261",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnVEpUO2ne8HQvJMhqPWDD8bqTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Curcumin Alleviates Hyperuricemia and Gouty Arthritis by Regulating the ROS/NEK7-NLRP3 Signaling Pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb4eYpPgyfJa-eVUBf0qMM4P9gw_CNZWWoEMD-rbj5MoWQ8Yw-Wua5gP40Vb4kEtE8V5FGntcIwA-b5CPlAYu98r7cOLXWJ4W1jENrSCb28I55J4w8VDL0yPhPsRmitKXNK2Zb3PBna3GHbWvOue8KanR1rRLRh5wD8PFXfc2Favdsizg5iN5aY&uniplatform=OVERSEA&language=EN",
+          "authors": "赵正天",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-04",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "175",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnI84jfaxk2hauV84DPIege7qTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Development of Luteolin/Apigenin Dual Delivery Oral Liquid and Its Synergistic Inhibitory Effect on Xanthine Oxidase",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb4eYpPgyfJa-eVUBf0qMM4P9gw_CNZWWoEMD-rbj5ModZxK7L4sIHSMbSzizxKwNzgXqP0dpSEQ7lTxH9sJv98nLEeRj6ehLzcE5un75XnecO1ODoLaW7azuv5M1ZY-UxjDRy75iTfUwW8wVZpDN3MzezAnhI9ndFfh7WYKb6iJIcA3DAAH__J&uniplatform=OVERSEA&language=EN",
+          "authors": "黄淑琪",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-05-21",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "145",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnLBnPuodeZ5lF7A4WagV9LLqTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "The Effect and Mechanism of Aerobic Exercise Combination of Curcumin on Renal Uric Acid Excretion in High Purine Diet Rats",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb4eYpPgyfJa-eVUBf0qMM4WkK5uy2Zk0yNwd2yE43DGmXRUfbahgujdZSXpkoK_x26oY7r1gaA78u-RNU9EWMbCYJxZjQQIjdLu46wEzigsXzFnkrtxpslmxNLEPQkSybVUTVzDx9ZotulyZ9oejVmeGieQDr_tHHsM1FS_dFWmZLOM7Goh_E5&uniplatform=OVERSEA&language=EN",
+          "authors": "蒋中业",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2023-06-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "",
+          "downloads_text": "42",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnS0AZDYS0wOwEooTa2f02UtwneWrfo0YJU2eWl-PcvsuAMi10m8MSiKPdqj9ewg7V&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research Progress of Edible Traditional Chinese Medicines for Prevention and Treatment of Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb4eYpPgyfJa-eVUBf0qMM413gYuaysDGO3TyDaa9Mm4hh9xL4B4qkTeA9Q5-kFYD3q2DijbuKAfuDKSEjmxSpDaoq6mKNb1Ixq10QUpjgXkkFzZhEKc2Z6GMQUcdPh6M8R6HZYbmwSS1hOF3QCtXFE8ObbexG6dfOs3mSefLEB-w==&uniplatform=OVERSEA&language=EN",
+          "authors": "林娜;王筑山;廖兴江;王永林;廖尚高",
+          "source": "Food and Drug",
+          "publication_date": "2022-03-20",
+          "database": "Journals",
+          "cites_text": "6",
+          "downloads_text": "2637",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieqRHgbkxJa51-NJ-2ABmnUvqtXjGluJOpcVJ07KHiWnxvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research progress on treatment of gout by xanthine oxidase inhibitor in traditional Chinese medicine",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY0YZAlhMzMqelDncEim9-Iv-UrqGCGlBeVAZ_Bg3z6kphjWfQ-HaDNanImZxbxGqfDbg6XHNSAFqqoebXAMVNTfc2I_YqZ4U_WRd5i8kz2NFPfTGIWYOXG7F_ZtyJ88BKyT8YXmVpeohDjxgv5AUOF9dhaYatcZkyOGSfoyzHn-g==&uniplatform=OVERSEA&language=EN",
+          "authors": "王爱华;金玥;吴越;成学飞;田秋红;谢清;刘维",
+          "source": "Tianjin Journal of Traditional Chinese Medicine",
+          "publication_date": "2019-12-12",
+          "database": "Journals",
+          "cites_text": "72",
+          "downloads_text": "2970",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidgrlL4IsF-FakvRcl4Lj1f_cd8IiXMX9Wf5_hp3DLfuRvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effect of Curcumin on Lowering Uric Acid and Protection of Liver and Kidney in Hyperuricemia Mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY0YZAlhMzMqelDncEim9-Iv-UrqGCGlBc__8ywWy7W8k51kd88QzmoLXTT72zQaPYr1IwHWotHj1syhl5YfBNdEKz5AYTCi_me0G7LOhxYdx9JQQxsqvdAs93Ph3flBSSOPE3pnXVHqYvBWzr5yK0qhgEzHP9sDztMz7WB9fpxPg==&uniplatform=OVERSEA&language=EN",
+          "authors": "沈淇;杜先华;裴超颖;陈勇儿;朱梦珍",
+          "source": "Science and Technology of Food Industry",
+          "publication_date": "2019-10-16 15:44",
+          "database": "Journals",
+          "cites_text": "26",
+          "downloads_text": "1659",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic0ldrxfWm7D0oHv7BY5C1vSRRTq5JuSDkugfPmzfV9k3-s4n4jlL7XQKLOuexh_op3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Antioxidant Effects in Mice of Curcumin Extracts from Two Curcuma Medicinal Plants",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY0YZAlhMzMqelDncEim9-Iv-UrqGCGlBeHv3joFMJzr8JGsLTzY5t3WLePE0W1dsCD7Unfh0QleTPIIN7Gd9m8nwkFtrYWSuZ7V75gT1cJpop2Cut1ZZjXbgZb8ghxQeU8l8LAXHSjmK-ePzIJfbFMjPud2ynDNqcBaCdjaUFpug==&uniplatform=OVERSEA&language=EN",
+          "authors": "延琪瑶;闫朝阳;王浩峰;童珊珊;邓家彬;杨瑞武",
+          "source": "Genomics and Applied Biology",
+          "publication_date": "2019-03-15 15:50",
+          "database": "Journals",
+          "cites_text": "10",
+          "downloads_text": "523",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifPLcaX_Y4wXxsdz5c-1o7Pxod-26Sxh-3JP-9QVt8xaH-s4n4jlL7XQKLOuexh_op3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "中药姜黄中黄嘌呤氧化酶抑制剂的超滤质谱筛选研究",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYXEJQcH1Yfrqmss_iV7F6CldV1hw0b2YDPSH_r03P6ctERIt-RAhKtP8YCXd_zpI9MbQJF66z8PJmuyhUBmTAVjsWfmMLYNE-kmCtc8i8S7jXH-ih_uksE8V619udwQy_9B_4ADD_mPjguqCDwwQwuT2ZjsI3fN7bPJRasaFZVVXVve_3-1BSw&uniplatform=OVERSEA&language=EN",
+          "authors": "陈丽娜;王强;刘春明",
+          "source": "第三届全国质谱分析学术报告会摘要集-分会场4：质谱在医药研究中的应用",
+          "publication_date": "2017-12-09",
+          "database": "China Conferences",
+          "cites_text": "10",
+          "downloads_text": "329",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Cepas2vDv1UfxKriHl_KOREioDQGUYyP45GzgsBWMKX8LDGH3olE2pujvp2Jx5X9jr7H-16funuN21ujjeLRL6aHqcM5j5jnQu7zZAyA8K3QSLUWSiqiD46cvaMRNbac&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effects of corn oligo-peptides and curcumin on antialcoholism in mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaIqMsJ8SSpZK1gD7yTFxOIugymyfURwpaRDaEuiSobBcXHDoKifEFWoGZoVcUrSY-iv3u09lCS32u8F-WYWwepvUPsWdLbiagqitDwb1jJmI7ZGif-PpHee-0GLbFnP__t3culnRhEn47ZdI7EJiatYQRbx20PlqEDtbOJs_OITw==&uniplatform=OVERSEA&language=EN",
+          "authors": "潘兴昌;曾瑜;刘文颖;马永庆;曹珂璐;张立实",
+          "source": "Food and Fermentation Industries",
+          "publication_date": "2016-09-29 16:59",
+          "database": "Journals",
+          "cites_text": "21",
+          "downloads_text": "1321",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicSyApNLceydRQHmpKszAcUH34e-6baRi5L1scsVm2PbDGXpRHA7l92WBScTaOddNt3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_zhimu",
+      "query": "知母 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%9F%A5%E6%AF%8D%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_cceebd523b70.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_cceebd523b70.provenance.json",
+      "total": 243,
+      "top_records": [
+        {
+          "title": "Exploring the medication patterns of traditional Chinese medicine prescriptions for gouty arthritis based on data mining",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaUeHV6EAYmSrBfMvvRaL1t-Z_FK2M4MbWywXXb5ZywGZtlTuZQ5VSMTlUt_4ZQ8vprnbobXXqqwOpxHePKz7FGi7-JnJ-BGO041AznUj4KB1SYbky6-ywaPRG0DZuzswQGUanJlyo_C_MigEyB-KwCsmg8fWZLOtPzbTLVUZLIAw==&uniplatform=OVERSEA&language=EN",
+          "authors": "何婷婷;丁梦珍;张玉慧",
+          "source": "Clinical Journal of Chinese Medicine",
+          "publication_date": "2026-04-14 15:45",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "200",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgif_0pCax5XXeczg2yRIdyAGxQ2u6kDVa5z1BC80UxTZ-InDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "桂枝芍药知母汤联合塞来昔布治疗急性痛风性关节炎的效果",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaJDMHxSRkrXd_dNbixnbXczXcpm-G_0qwwVVbANAqxZPOahSosx4ipQlzSbdQn7UnUo1lrFTPvZCCvNyK2Vb5YM1mFfcoQ9t3W5yZYle22y2iXU_H2kamt9eeuogftoBZaq7oXYbf9FS7wZmYd_hQ_yMYtSRTbzb8W89lbReAltg==&uniplatform=OVERSEA&language=EN",
+          "authors": "金黎滨;金心怡",
+          "source": "The Journal of Medical Theory and Practice",
+          "publication_date": "2026-03-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "172",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifyni6XX51zFAgDZYW2pz2wr_sNBeJFvVe8vCoo4TmkjCuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Efficacy of Guizhi Shaoyao Zhimu decoction in treating chronic gouty arthritis with wind-cold-dampness arthralgia syndrome",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaJDMHxSRkrXd_dNbixnbXczXcpm-G_0qwiqsNY6Pjkm8KTFoa7BC2_kwZ6ffPDMEHj7caIw46MynAAWIXirQphpxsrzyBBdbyvfutKRvuICtnEnmHwNzsKzX9bPJlmyOy-ojNTWYqhdiadRYfu4AEfzAfHWi_Xvgg00OefGfV9JQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "张永康;曹烨民;梁志强;彭林峰;王御震;赵诚;赵志国",
+          "source": "Chinese Journal of Surgery of Integrated Traditional and Western Medicine",
+          "publication_date": "2026-03-05 11:04",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "181",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicumTG-JPXnK1AuPfTyntneR09d0iFjd_gkSC32L90ugInDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress of Animal Experiment on Traditional Chinese Medicine in the Treatment of Gouty Arthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaJDMHxSRkrXd_dNbixnbXczXcpm-G_0qyK2x4CTN5Ukuu6O7yGDQu9oUTMG2V8AXleNbZe-k8P2GJPdqlqpXf_f36kYUL8ebpzjg0DFdn6lGAvU6i6-GcBVYZ6ohZK-Ly1CCrJNzICCTr86-ewj5hg2shiSBzi_5pBZpj6wYg-wA==&uniplatform=OVERSEA&language=EN",
+          "authors": "吴新梅;周旋;庞学丰",
+          "source": "Chinese Medicine Modern Distance Education of China",
+          "publication_date": "2026-02-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "15",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieGjNQaYw6ybYFIG3sismdou_sCZUXGzTyweh27tEQnuInDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Guizhi Shaoyao Zhimu Decoction Combined with Warming Needle Moxibustion in the Treatment of Acute Gouty Arthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZeMyzuXsMlbIOwK4zRIdg3l5NPXzWioZTgOMmxO38H6tHFYY6ttsbFYgCxkoL1gg0VxY3oeXidJLNmrxGX6fHQ3KDwVX_7F6M7nb3jwsghcawuiExsipcHON2a2BMhRPNKpg0N5XLQj5adIYVRaIFFC0mGVxFh9zbuosqKpH52Pw==&uniplatform=OVERSEA&language=EN",
+          "authors": "程静;熊冲;叶小青",
+          "source": "Chinese Medicine Modern Distance Education of China",
+          "publication_date": "2025-08-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "77",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieGjNQaYw6ybYFIG3sismdo5-0ZrI_RyzQY_eTThPfEXQ6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "The Mechanism of Action and Clinical Research Progress of Gui-zhi Shao-yao Zhi-mu Decoction Against Rheumatic Disease",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZeMyzuXsMlbIOwK4zRIdg3yw2TIaVzNnLcDOz5gEo5lTjSW-cCnO2vpLuE5b9qzCsA_09yWbZkCMpVRJH_swgNnprp7TtGWrzqFSIhWs_KZzW9VKK-YUkkY3kijiKZWcMGaLirfVpAtY7oozYPr8HvUqpGCjFM-YlEjzQXNeodkg==&uniplatform=OVERSEA&language=EN",
+          "authors": "周雪琴;赵志娜;王炳森;武上雯;李桓;李松伟",
+          "source": "Chinese Archives of Traditional Chinese Medicine",
+          "publication_date": "2025-07-10 12:14",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "871",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicZ_CtYnuxduewAwhD5Qh2GdleeDgzc9hSS0LFMzYlaFf15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Study on the Treatment of Gouty Arthritis With-A Self-Formulated Traditional Chinese Medicine Formula Targeting IL-1β",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZeMyzuXsMlbIOwK4zRIdg3jOc_4PhTLEHClht4lRDETnrJwn4HQF3EiK75GEHSo7Nsbq1cqkxDVtKvQiP2Dd5-hcM3Gctts0rE_wf71pOuF-qB3CZcNmBHlRN0Zluc-W97VQSpSAjKDziddM6PHuAe_byPsNdMK4lsl5HXKzcVln1bGHVM_Vvg&uniplatform=OVERSEA&language=EN",
+          "authors": "陈振东",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "192",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnefZVbOo-nDwalZxi7kN5x7qTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Based on 206 Patients,the Medication Rules and Experience Summary of Professor Du Likun in the Treatment of Hyperuricemia Were Discussed",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY5aXHGtSYjWKpoZt_ozqZ5P0yyQDdKOdjDkUeSKEq1uXIiRcCVxRuWKmbaS4B0pa-d5CSySSixO0ZWS9D4-FYfGB1EamacGmYUBqMlCY12xTcsGim3z6Uc0U7AL4PfQwDDEtw_le3F01G0wDiA39JSQzCjMKIIobybPVqQM1f-j5ZrkHisc1Q6&uniplatform=OVERSEA&language=EN",
+          "authors": "段嘉琪",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "82",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnxO3vXGlJovu8-LIAsGqDeBMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Retrospective Analysis of Medication Patterns in 188 Patients with Gout Combined with Hyperlipidemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY5aXHGtSYjWKpoZt_ozqZ5P0yyQDdKOdjDkUeSKEq1uX5Umi4STHgsaphHySjHytO6AzpO5wEYdpndqPxZmdEsRrd_EsL2XDgZtBoITnjDUr18-5IFSKViR4WaQ82bsPpgNiy3yb7KKzvVsfq9SfOL_fwkHXVOoYB2N9NtC5yiYCDptF4RDjzi&uniplatform=OVERSEA&language=EN",
+          "authors": "刘常越",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "121",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnvYVLbrwX6ed8WZoOiV4c3BMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Clinical Observation of the Efficacy of Bloodletting Therapy Comnbined with Medicational Cupping in the Treatment of Gouty Arthritis of the First Metatarsophalangeal Joint",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY5aXHGtSYjWKpoZt_ozqZ5P0yyQDdKOdjDkUeSKEq1uROJLtreeLbmR6tV0MjgqZgODhMfXd6goanr_GwTnRcv7cTCW7teOjwoOjeVMAckV80W71mDdrySScQXEwPHyg_KRfixrueQjQc8vfPKSQv18uPDAhhlgYMyhJOHmN9B4_9mey0fuk8I&uniplatform=OVERSEA&language=EN",
+          "authors": "张羽茜",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "60",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnvtUK0qZoxzcAv2uBkRSEchMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_zhimu",
+      "query": "知母 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%9F%A5%E6%AF%8D%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_3293270493f0.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_3293270493f0.provenance.json",
+      "total": 67,
+      "top_records": [
+        {
+          "title": "Exploring Chinese Medicinal Treatment Patterns and Mechanisms for Hyperuricemia Based on Real-World Data and Network Pharmacology Approach",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZPdt_t17iXU5xPhMwLkhnGCcJkzTOUHrfURQtAh234x1VrUdDQiZIzU7XL9Uras9agmuknhs3_JRaPcMdpA_23E-QJYcXzdpmRIABNrBoSDfgV7Ihxz7iWjrW1Q8q0zVbgPaZAzlqb1npbd6-qPQzz6mDvudt0S6eFkbJJXVj69A==&uniplatform=OVERSEA&language=EN",
+          "authors": "金珈竹;崔丹阳;马小霞;韩旭;郭洪涛;喻金龙;张磊;姜淼",
+          "source": "Henan Traditional Chinese Medicine",
+          "publication_date": "2025-06-04",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "476",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieTC8tWhw1LL37C7mu7lZK1tRuJXHXGc8wX7bUrnKpMjw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Clinical Observation on the Therapeutic Effection of Cao Guo Jiang Zhuo Decoction in Treating Hyperuricemia of the Type with Accumulated Dampness and Heat",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZPdt_t17iXU5xPhMwLkhnGGjT2ZDSyxmM6H498wku2cMeUE4MjBqnX4w7MFe5wvjYECYuUMx9dV049ZEgKgXPdpD_iSdjLPKRPPEeMdPcVsBftUWtx0hJMwAhuZb_TJx_S9MnxPbt3z4k1yU37dmD7wE2PyVneKV_S_IxRem_ZONi4XemDhc2h&uniplatform=OVERSEA&language=EN",
+          "authors": "杨子政",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "204",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnx2QED8qzleFXt-XfwfbjnRMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Based on 206 Patients,the Medication Rules and Experience Summary of Professor Du Likun in the Treatment of Hyperuricemia Were Discussed",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZPdt_t17iXU5xPhMwLkhnGGjT2ZDSyxmM6H498wku2cAwbijXWh4kbEMSkecDm1vtK5O2ONm8CR62otgHFpIS5X28jrnse7ROF8jeK0zoP-453257XeCTO-AcBOUgiFNEMjnGdp1Xws-_yqec9DwKO_due8btGLdh4zUidlRB-rqT_Gx76V6GK&uniplatform=OVERSEA&language=EN",
+          "authors": "段嘉琪",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "82",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnxO3vXGlJovu8-LIAsGqDeBMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Regularity of Formulae and Treatment Mechanisms of Traditional Chinese Medicine for Hyperuricemia Based on Real-World Research",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbB7KZmddklSav6z2diPa1srFzlVmItoqqTjHmictuejpvJIfjFoyioLbVu2na2HoZ6vaYHbCZjmlk-zwjcqO4YfqhNzQ_aBPCxYgJLvImIKOTELoH6gZK_Nyi3CBd8etED1p9BKa8X2oPnrZteZdhetqSVBw312COlNv9O1-tnxffYf-3vZgA0&uniplatform=OVERSEA&language=EN",
+          "authors": "金珈竹",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-05-26",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "117",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmndz-7l5BSTbPQWJQIB1WuxrqTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Exploring TCM Medication Patterns and Mechanisms in Hyperuricemia with Hypertension through Data Mining and Network Pharmacology",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbB7KZmddklSav6z2diPa1srFzlVmItoqqTjHmictuejtpV0FeNHykiXMvWTqAcQjaLmzjvD0WbbFlgyDbBWMNQusYvwWgZjuf6-_igVcqEahYymACuNUVv_XA3cLJiqgWGDEvzFuJ_9z515zamSC2_0Iju616Y9SGD54EtozY5Rvb4BmE7nVa4&uniplatform=OVERSEA&language=EN",
+          "authors": "窦雨鑫",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-03-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "133",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn7w4Eo1wQXLgjeHk0pViBaxMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "自拟二术散内服外敷治疗高尿酸血症合并骨关节炎验案",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbB7KZmddklSav6z2diPa1sOIk4fBPaSl70ecPGLa0KuqqU0Mb_MuQMsF2nPiftZ3iOE-4-CEH0ZRyjL4hX8-e1ncMsgBX_PMcq2a4ll40XYhd86PTEk7iqGpFjfmUU5uMTkAGUdxLSh8PKqI_wDzPAeet3agSWYDD4MDXMBV50PQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "陈子安;李旱雨",
+          "source": "Zhejiang Journal of Traditional Chinese Medicine",
+          "publication_date": "2024-08-16",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "98",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieJPifEgppc4WNVfZBdAsOrlwU9iKPf-rCMa6d4tcTjRliqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Study on Medication Rules for Treating Hyperuricemia with Chinese Herbal Compounds Based on the National Patent Database",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbB7KZmddklSav6z2diPa1sOIk4fBPaSl5ZOS3V7ahXSBLQ7jzihWq1zlpIwu5mDOKe3yeTqcxYxt2DyTzQQQkdMQb0LIclIonnY9rciXUg8k2NZBFKpq7PHiidLrG4zM17BshzGQwHT5DMrfbxbmCQq1k49bjlANsXJfXG0Hh2Pg==&uniplatform=OVERSEA&language=EN",
+          "authors": "温莉珍;肖婷;沈燕珊;梁莎碧",
+          "source": "Strait Pharmaceutical Journal",
+          "publication_date": "2024-06-15",
+          "database": "Journals",
+          "cites_text": "3",
+          "downloads_text": "415",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidfyS27G61A3b5U6arXzndprlZrpWJQnsqH-atk97Mc2liqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Study on the Efficacy and Mechanism of Paidusan on Hyperuricacidemia by Fermentation Preparation Based on Network Pharmacology",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYtqFblMfs2ippcFLQ0y0MTOzeEheun6IIZkZT2884AhvH3sP_DaC8GWRZ-DYelscXx04FfF4H0DjhV0lG2QOuOA0sOUoiwaiJWDEzUtb4jJme9rgmDP-e1HDT5KBdUqd4nWLxR6DFgpGwbNqn5TPpPMgdUeXaGkBhux4HlSlYs12fGfWRXNIs8&uniplatform=OVERSEA&language=EN",
+          "authors": "吴桐",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-06-15",
+          "database": "Master's Theses",
+          "cites_text": "4",
+          "downloads_text": "1816",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnjqZG1xC5qPfxDCIKnD-20BMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "The Influence of Type 2 Diabetes Mellitus on Gout Attack of Hyperuricemia and the Analysis of Professor Zhang Ning's Medication Rule in Treating Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYtqFblMfs2ippcFLQ0y0MTOzeEheun6IIZkZT2884Ahn57dC0AX9Dh5vc3Fd5tsJS3_Xj9A0qc2_33HyA5Zn3HwzuiCVjtmjlggY5Nd-kkt4cx9BeQ-sUAE_6VWg3GmFWsa0EKnNRV4qQoHC9uP_yZUOGFsSKsWemk22IO3BaTBd4hJ7IeWxwu&uniplatform=OVERSEA&language=EN",
+          "authors": "李心怡",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-06-06",
+          "database": "Master's Theses",
+          "cites_text": "2",
+          "downloads_text": "443",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnDZd4Vn0k-CED2GhdJtvuYhMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "The Clinical Research of Clear Stomach and Drain Turbidity Pills on Hyperuricemia in Children",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYtqFblMfs2ippcFLQ0y0MTOzeEheun6IIZkZT2884Ahhm_MTBHl6q3VsFBEpwI1Wtx7RZuO-Rec2CV1CVuLaba811rYM4GfKHdh7BkedXshYZe2fVRTHfA10fProxyQoE0Oacvk9IhULNq72EUIeAI2rhBxaPEp0hcEvgxDAqA3JE63cLfeEpj&uniplatform=OVERSEA&language=EN",
+          "authors": "刘滇",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "141",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnfT9d3oz-nqd6KF7bRJVP-BMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_huangbai",
+      "query": "黄柏 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E9%BB%84%E6%9F%8F%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_1ba6f27cdb92.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_1ba6f27cdb92.provenance.json",
+      "total": 630,
+      "top_records": [
+        {
+          "title": "杨昆鹏主任中医师治疗急性期痛风性关节炎的经验",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbdHgg84rABY0URl05BGp-i_-RFlkmg8KTx6r61ypy9mt-jkm7f6BkVR6u9Rtt55fyuWYjneYm7bxJhZNNGsDkPbjzSQlAZc3SMXMK75D_AZOZ5j8oavwcj-fQS6aw9tfe8m-0rEsQFUF56LwZUhIv0kfajnJmnUWmr0wSnQK_C7g==&uniplatform=OVERSEA&language=EN",
+          "authors": "杨涛;惠小苏;梁海松;杨昆鹏",
+          "source": "Journal of Emergency in Traditional Chinese Medicine",
+          "publication_date": "2026-04-15",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "17",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicPBOgtndygdUP4QVA0qEM7zNg8o_QoriMJ6z9pNkV01YnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research on the Mechanism of Si Miao Powder in Treating Gout Based on Network Pharmacology and Molecular Dynamics",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbdHgg84rABY0URl05BGp-i_-RFlkmg8KSktAFdYsmVMLrqjoV8pVG_jIn-gm1YxeQcf8PP5ej4HtTwZhgPeAvhK6SVSA7o161NY5rgH30wR6E1IZQeuqlEJaF7xWflOF4dHc4VdaSC7E8hRd3JjeVQJ-oF9ND_O6Zo2ndoWsI5Sg==&uniplatform=OVERSEA&language=EN",
+          "authors": "王露盈;丁一航;戴铮泽;康天伦;谭超;陈孟炼;孟苗苗;侯秀娟",
+          "source": "Progress in Modern Biomedicine",
+          "publication_date": "2026-04-15",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "29",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgichqtnI8KCXV2EUM1SmllIunqrTyMl-Zj8qKzhngLdzyonDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Exploring the medication patterns of traditional Chinese medicine prescriptions for gouty arthritis based on data mining",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaOGL_JkNGf3f1_qr08TDxp0YtSEJ03l0mAQBnVkEe1dwCDLft1CSpYHAMAPpq8vTmmRbnnr3MY2kYEKSGZNcXLx787pNMutcDXxdH584mRr0RxmJNTFHYv08LH01oqFA41BbwMBp-3_3svNzs--9t7HzInByYm7k20_AWs77LKaQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "何婷婷;丁梦珍;张玉慧",
+          "source": "Clinical Journal of Chinese Medicine",
+          "publication_date": "2026-04-14 15:45",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "200",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgif_0pCax5XXeczg2yRIdyAGxQ2u6kDVa5z1BC80UxTZ-InDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "春季多痛风 外治可止痛",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaOGL_JkNGf3f1_qr08TDxpQU4CS6BUBb00RZjvtXpQJj7s_xD_P1b6e8iVfFZ-f0tSgBBZaWQ40g_AOPgVgxinNbgzzazI-dlm9mXx_dlR6RNApDzTDWwlhQmMl4W5EZrvnmRqm1Oyg4n6DWMs74EwVzOzJWVZoW2iN3ak7U_4ww==&uniplatform=OVERSEA&language=EN",
+          "authors": "胡献国",
+          "source": "农村百事通",
+          "publication_date": "2026-03-05",
+          "database": "Magazines",
+          "cites_text": "",
+          "downloads_text": "2",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=BIXc9s0YhSIO6ELAvT3bjAM1UHjV0uMR_icN4IXwgie-UyE8VrDr6CUK0DP888R9W1nvcAQBe-XzZ3sFbIFcY9ctIktp0zacoCjse3pzLR4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "中医药治疗痛风性肾病的研究进展",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaSEiAC-2utVyZG7hXiNtehgAWwoxOpHNjTlEfYpWzUg9UtA2FB6PI-5eDZqyRH9z6rUXt2fSEsWQv1xDxBNIV4FOweLeuKkgNfrLAZSpnRvqnEvM5pxJL1IXU2bLR5FEyiCtGmXF8pbzI7-P_Lk9l7F1KsEPB-lvSg4GoCppcgxA==&uniplatform=OVERSEA&language=EN",
+          "authors": "李雁丹;杜臣斌;杨琴;李莎;罗艳",
+          "source": "Yunnan Journal of Traditional Chinese Medicine and Materia Medica",
+          "publication_date": "2025-12-15",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "497",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiekrK12CZcZUMYuw9xDE4iXgSb3UTsq7N8t_vL4Ds3tOCuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effect and Mechanisms of Ermiao Formula Analogs and Their Active Components in Treating Dampness-heat Type Gouty Arthritis: A Review",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaSEiAC-2utVyZG7hXiNtehgAWwoxOpHNiqdPHVDs717YyupiCzUJJcXqkhTBy18OdK8B6nArr56j6NQg70lqCOwg--ynlO5F6mA2rqFuek4aWflB8sxCO2MwFXf4DwXASzsf-h4NIO2P2-xLjJ6ulX-NADJCqSwi6Q0DbQC3HRNg==&uniplatform=OVERSEA&language=EN",
+          "authors": "赵雪萍;张欣雅;杨乐;孙野;孙鑫;孙晖;张啟萌;闫广利;王喜军",
+          "source": "Chinese Journal of Experimental Traditional Medical Formulae",
+          "publication_date": "2025-11-24 11:58",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "923",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2x2re4Gem5dP19n7xpoqXMEyuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Qualitative Analysis of Chemical Components and Establishment of Multi-component Quantitative Analysis Method of Tongfeng Qingli Mixture Based on UPLC-MS",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZulUZ0qbNlQyM6DyoAmWu2n6gOHqxRVLVTytMl3nFX7ucpBE50yvbLe7R1gphRwldJsXYg8hrKjKvYNvVTPqgzONC9tePUhjBjMZUw7dJCFuzFb7NjtCLrx616LSHS87iClDALB6iolRgVWh2UKftQgEbY7wbctxHNtLF6GBjVNg==&uniplatform=OVERSEA&language=EN",
+          "authors": "吴薛丽;杨雅;刘军;郭盛;段金廒",
+          "source": "Modern Chinese Medicine",
+          "publication_date": "2025-11-20 19:37",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "520",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicwdWjDakzOxoife5T7d5xlDyVYJTYRlco5Ftc_HclxxSuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research on the Mechanism of Shangzhongxia Tongyong Gout Formula in Treating Rheumatic Immune Diseases",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZulUZ0qbNlQyM6DyoAmWu2n6gOHqxRVLU7f1aFDqYnFgMjJmBS5QI22DcYA7aVVq9X7kdayrncVlDecn2c9gXOo9jwcJDOHNFAVCqtEAQCZDY0gEMKDAmbUGfWBt1BSBshbDlbYjJZ7RXNIzMfVkbPN4w0dMmrx_Pu12qxSNGl4A==&uniplatform=OVERSEA&language=EN",
+          "authors": "曲嵩霖;刘寨华;袁颍超;孙旭升;李岩;杨莹;曹洪欣",
+          "source": "Journal of Basic Chinese Medicine",
+          "publication_date": "2025-11-20 19:03",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "295",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicPBOgtndygdUP4QVA0qEM7k90ECA--iq1ZIsUOFoWZyiuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research on the Quality Standards for Yi Medicine Ziling Tongfeng Capsules",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZulUZ0qbNlQyM6DyoAmWu2n6gOHqxRVLUjO7yo2N-Nvr4RaWjeYpWx7at9HOsdV2BYexFtmg_JHP1Ii3u-CoJhYt1UgjNSkDluyQvwCQlFP_SO4uivsz5eNoBl6dd_b-Gxr7zMSLVOvbLm0jWrK_koy5CoFWgQPBfGPBuENP3EOg==&uniplatform=OVERSEA&language=EN",
+          "authors": "杨宁;何春荣;王敏;刘晓梅;李海艳;周发帅;钱碟;杨阳",
+          "source": "Chinese Journal of Ethnomedicine and Ethnopharmacy",
+          "publication_date": "2025-11-15",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "128",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicYmxOYRRRGoz0GDNGmLClHYIVphvOwUyyCcz0Dn9ZKzyuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "中医外治法防治痛风的研究概况",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaCWXXgi3yoJLkTiZ6rAhYPJkRoc6jEWKAUaD8L_BKo9dsgWy9q1Vcv0bO0gQyO6vQ0dCzdlRlyPV1LStbS1L9nzH1dWusXALI6m2qzYb705EZ1naB103zC0T7YCrmSgYHqScPTwza4EdBzu8CTJBf38hSw1FWBpl-tdRhwOE3deQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "曾三金;陈冰冰;钱和;张晓宇;解静;黄梓越;谢招虎",
+          "source": "Zhejiang Journal of Integrated Traditional Chinese and Western Medicine",
+          "publication_date": "2025-10-17",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "462",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieJPifEgppc4WNVfZBdAsOrxJ37MUN-yHoFyAj56Ij5HA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "herb_huangbai",
+      "query": "黄柏 URAT1",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E9%BB%84%E6%9F%8F%20URAT1&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_e789d4a7335b.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_e789d4a7335b.provenance.json",
+      "total": 8,
+      "top_records": [
+        {
+          "title": "Research on the Chinese Medicine Formula Jinqian Xuduan Decoction for Reducing Uric Acid and Treating Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZr5Ct2kWaQfwAU43De15l455u1lZcXObJgqK8cjzyehnfGqJ_ZkbpJ0FOwlzb7AWsrxrmNJyetqATEoiEHEIr3Xkqz01ouz3cuf9xybh9H9IAvbpI1kPGDscHdIFNeYzQPBAFuRYrjPvxoThZOhRMc8mhku-8v_wcY5BeymI8CNHr2lUYDQEMK&uniplatform=OVERSEA&language=EN",
+          "authors": "王寒飞",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "",
+          "downloads_text": "388",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQ8PC3rMl_GWyb4L2wtZGptwneWrfo0YJU2eWl-PcvsuAMi10m8MSiKPdqj9ewg7V&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Exploring the Mechanism and Experimental Verification of Traditional Chinese Medicine in Treating Gouty Nephropathy Based on Data Mining and Network Pharmacology",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZr5Ct2kWaQfwAU43De15l4eq84vu6Kychk2v9k5xxwqrPbwktpVQD8oMAXmZqjK3RYfO4SdQOMqZ24TsZ0iVYTI6PlcAeJVl2ucMKN5PgX7pvr5GB8Hs23eRkNPBKFUUWomCVdGLd2oK4oR4bJlWJBTFMRe2AQXyugwvvM4VdtMAPPKYTdfzx8&uniplatform=OVERSEA&language=EN",
+          "authors": "江培妍",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "483",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnR-P6Acm9dFF3d5Kbi6h7zhMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Evaluation of the Efficacy of Tongmai Turbidity Decoction in the Intervention of Hyperuricemia and Its Effect on Uric Acid Transporter in Rat Model of Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZr5Ct2kWaQfwAU43De15l4eq84vu6Kychk2v9k5xxwqkCravTEKrNw5GUEb7kaHvtvU1Dk2sdiypCZIGNJ2JhxR0ZLSAshGHEQDiIO2B8JA1GlE-_mg4nzIty2JacQ-_9ecKzUKxt3-PI2Z2dp_8GIbQve6-mqueCnQ8brn7d2G4Vj1mBXx7Xf&uniplatform=OVERSEA&language=EN",
+          "authors": "孙尧尧",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-05-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "98",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnNjKwEBnSihUpKVwjunPQl7qTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Study on the Pharmacodynamic Substances of Simiao Wan for Treatment of Hyperuricemia and Gout Based on Disease and Syndrome Model",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbr7T_GMMp_lHCJbDSOp_bacCxochkm1KkCsrA7kQinJec2NgcN5wUwt-Rz_e706Y1US0XI5lTG0LIj2wNu0HTAkyA_KhAzzzBPHPFfyXJ6t-Dvtk931-sKxWWNRGXdBMZgRFw9BI9OVl5i5Fzw9jehVVtZ66uMrmMi2ufmtJsyLg==&uniplatform=OVERSEA&language=EN",
+          "authors": "曾永长;梁少瑜;吴俊洪;徐丹丹;刘常青;何康;金宇;吴正治",
+          "source": "Traditional Chinese Drug Research and Clinical Pharmacology",
+          "publication_date": "2024-08-21",
+          "database": "Journals",
+          "cites_text": "14",
+          "downloads_text": "1191",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJybMMV4ZP2U2kcz4ijdkxCsViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "基于文献循证的痛风中医用药规律探究及蠲痹历节清方对部分尿酸转运蛋白的影响",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbr7T_GMMp_lHCJbDSOp_baXPtLbSa8rsJdtnWfrI8qSYhaIa0qEvQVhiUSqJd79mfzYguCltC6H50WoP37KkENnQtQp__az6W4AyqaiqHhVQ9BdQ5zLXYUa-OQgy2yTOP4vM-7ct91_i4daO3vo6TiN-t7RBWxQ6Qqlb5nGjlTPdpIbY7z5FPw&uniplatform=OVERSEA&language=EN",
+          "authors": "郭张浩",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2024-06-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "1",
+          "downloads_text": "406",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnkHr2B0aKpfRywXUoAcNq99wneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Study on the Fermentation Product of Probiotic Bacteria in Si-Miao Pill and Its Efficacy in Improving Uric Acid Nephropathy",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbr7T_GMMp_lHCJbDSOp_ba9IjZWmisW_HzY6bcWARd0R1DeLeDu7JxjCwRcPXzlFWybsZT5ZwNL3SvATphzNa2Hoj45y8XV0jF3KYf0BnlUAJT7eiC-3TmVDFwgL-dfYj4DIGaULa27FHewC8YdjCN-N-E7LpCSzK09OrOU9rJEyZXrlO-x5ji&uniplatform=OVERSEA&language=EN",
+          "authors": "罗光应",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-05-01",
+          "database": "Master's Theses",
+          "cites_text": "6",
+          "downloads_text": "1079",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn8U_E7j7CV_Nq7sHgZeLRExMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Effect of Biling Qutong Recipe on Serum URAT1,HK2 and IL-1βin Patients with Diabetes and Gout the Impact of Joint Pathology on Model Rats",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYEr-E795FbpxJTV2pL24Az0F4qL6t5s3hzs-xf-oNyf0YUY-EVIYk9Ia9roOoKOodApFA1ffDap-SKTcrSiD6HRIWlgBUqftOnG26J_TJlBGm9EcyXao4ot1wxV4wHlLjlYFjBVqYwjghOuVOANH7M5W4MjXqkz9klTxu6XlsCYbfYbmGdUDGZ&uniplatform=OVERSEA&language=EN",
+          "authors": "陈明月",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-03-01",
+          "database": "Master's Theses",
+          "cites_text": "1",
+          "downloads_text": "109",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnCBSNy32HntNBIEkwLSmethMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Pharmacological Effect of Phellodendri Chinensis Cortex and Active Components on Gout: A Review",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYEr-E795FbpxJTV2pL24AzLlCG1d1X87SafEczsLf8e8iC9DB7mls3B8XeMidxttxmJ_GTYGL94oI-MxfT1IeoIwRpxx83P3ywfUz5DooH7506ei11Sgki3yDZVASNAoPv1gEn8xL5EPmy5vHt7zVf9F56gAygGV81wU0ZS28T1A==&uniplatform=OVERSEA&language=EN",
+          "authors": "李敏;全云云;王婷;李莉;曾瑾;赵军宁;毛九州;唐杨帆;尹竹君",
+          "source": "Chinese Journal of Experimental Traditional Medical Formulae",
+          "publication_date": "2023-09-20 12:01",
+          "database": "Journals",
+          "cites_text": "68",
+          "downloads_text": "2147",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2x0NhAGqC1qEY0SNlWea7z6ViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "mechanism_formula",
+      "query": "中药复方 痛风 URAT1",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%B8%AD%E8%8D%AF%E5%A4%8D%E6%96%B9%20%E7%97%9B%E9%A3%8E%20URAT1&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_0e7eb81c7404.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_0e7eb81c7404.provenance.json",
+      "total": 11,
+      "top_records": [
+        {
+          "title": "Research on the Chinese Medicine Formula Jinqian Xuduan Decoction for Reducing Uric Acid and Treating Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWad2TseNT2rQAQFTW81gpyl24EatJJQhExoePaZaH-wbHLsXJGupPddVyOOTWVYtcl34QprZEDLDKuysvf7g_MmndpNh4nF6meejESSWqMA9Wws2BtKh1WxEaOXtFd1fH8GbxYU7n57QiFvl7DkEfeib5pg2vjVpoicD7MxR7Jo2KaG67bE1qn8&uniplatform=OVERSEA&language=EN",
+          "authors": "王寒飞",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "",
+          "downloads_text": "388",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQ8PC3rMl_GWyb4L2wtZGptwneWrfo0YJU2eWl-PcvsuAMi10m8MSiKPdqj9ewg7V&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Study on the Pharmacodynamic Substances of Simiao Wan for Treatment of Hyperuricemia and Gout Based on Disease and Syndrome Model",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWad2TseNT2rQAQFTW81gpylkmEprIP5_uz3u2XBVU5aynfMdSIaOxvbOmpNKWdbt_Vra01QLn5zRpXMRzx_SX-vdyVb6ANKAYFwowb4cNCAsy_HB2nKRh1KOeP4TlgjFOU2hmAL_jGt5bA04r5O50FzoWtA3KKD29C7hXJRlU9C-Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "曾永长;梁少瑜;吴俊洪;徐丹丹;刘常青;何康;金宇;吴正治",
+          "source": "Traditional Chinese Drug Research and Clinical Pharmacology",
+          "publication_date": "2024-08-21",
+          "database": "Journals",
+          "cites_text": "14",
+          "downloads_text": "1191",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJybMMV4ZP2U2kcz4ijdkxCsViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "基于文献循证的痛风中医用药规律探究及蠲痹历节清方对部分尿酸转运蛋白的影响",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYWNx2fB6Dl2vNjgPvnUwfs31oNoqajNK5vN3x1uLQEgNGQSRdqVPYxYvyAbZUpCQO9HU9kdNjfsN0gdNfUIts1F355I1MLSaZZThKoofKNouwKYbSpTwT4DfWsy1z3W8In6WIrd0s4QVxA1V1HbRAN6x9_TfCRy50UXiVLJxkBCkBzSHrof6UG&uniplatform=OVERSEA&language=EN",
+          "authors": "郭张浩",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2024-06-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "1",
+          "downloads_text": "406",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnkHr2B0aKpfRywXUoAcNq99wneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Renal Protective Mechanism of Traditional Chinese Medicine Regulating Uric Acid Transporters in Gouty Nephropathy",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYWNx2fB6Dl2vNjgPvnUwfsudvwncvLgGtLdBZ0wpfT2Zq6b5Fa6loog2DDKSymHkXgP5aKSnPZfjxFwcZpYX31zbqd-kgMZd3m6tyaQNDuREZGScRYCpVd1acBRnD1iEpTND66o8zmFIQHnvkYv36po5hU9IU1Q9Yx8xMabQi2Pw==&uniplatform=OVERSEA&language=EN",
+          "authors": "李慧娟;刘德敏;蒋玲雪;宝文萍;魏丹霞",
+          "source": "Information on Traditional Chinese Medicine",
+          "publication_date": "2024-03-27 09:44",
+          "database": "Journals",
+          "cites_text": "11",
+          "downloads_text": "572",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJyNMI4q3XdD61ih2bvJxzdIViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "痛风鼠与高尿酸血症猕猴模型构建和机制研究",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYWNx2fB6Dl2vNjgPvnUwfs31oNoqajNK5vN3x1uLQEgNh5mKIppqHsJKOdPHJJYh19Ecz94Ov1naf-1Zq93czMhHxC2LAu-EqDQ0v4YXgTIhUEZqga5dvEvcd1Z-0Fa-n6TPHiS1NYmZBLyOnInmj-6VsNEuxIaIJ-gDXYgXh1FpTP60QR3c7a&uniplatform=OVERSEA&language=EN",
+          "authors": "王继伟",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2024-03-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "",
+          "downloads_text": "493",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnOdfKX1-01q7UAocn_FpH6dwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research progress on treatment of gouty with traditional Chinese medicine",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa52k_Nk4kpXfb5P2eG70jsSnUtEYnLmrZxtN1fElFM4Lactyb_8-WICOT8An7jTcI-vpaO3MPUR6VtyZAEiLUGPz_HjVglmdlMxGCFSAHBNF-IHp9sEeCJKiEx958axTVMc-ONUxx89VcpS_6uZTOv4m5c6ZS3tEHWAYlgokygiw==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘维;吴沅皞;卡玉秀;王爱华;樊一桦;丁久力;顾庆香;林芳芳;岳青云;陈婌娟;张淑敏;陆航",
+          "source": "Chinese Traditional and Herbal Drugs",
+          "publication_date": "2023-12-05",
+          "database": "Journals",
+          "cites_text": "31",
+          "downloads_text": "3650",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiexEp2twaI3WVrgpiYxD9C66S4VNypUxvhUvBYldUtrPViqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "The Effect of QingreLishi Prescriptions on Intestinal Flora of Gout and to Explore the Mechanism of Lowering Uric Acid by HuShenTongFengTai",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa52k_Nk4kpXfb5P2eG70jsVMO_rqVGSZPg-nO7szpJg_Z7rtxz57JzZECKzGM_CCElROYvGgmLSM9fGmd8JuxIdwJ_On66NYlhuuuYMteXHb_lB3XtetBUoC0NXKzRofqq8_csnPrBap2VwAgxI5ZnucJzlu8hpipdKFt-wF901qQFw-ma7J8y&uniplatform=OVERSEA&language=EN",
+          "authors": "谢静静",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2023-12-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "1",
+          "downloads_text": "949",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn4pxEKH2Tjn8vXkCScNssjtwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research progress of traditional Chinese medicine in improving hyperuricemia by regulating uric acid transporter",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa52k_Nk4kpXfb5P2eG70jsSnUtEYnLmrY0bTJNcWKQ_Px61p_CaRvrsqa1y0QhBWnSilBfzd7Mf_gOWIPsMgYWpU1QN7igUSeYiFbSEW_e3B7MjYfz-VH_CyEazbVmLatvyYXoxTf8VsJ0qTk6-Wk6Ms3OeSUL2_f3ShwkYfB9KQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "辛家东;高建东",
+          "source": "Shanghai Journal of Traditional Chinese Medicine",
+          "publication_date": "2023-02-10",
+          "database": "Journals",
+          "cites_text": "6",
+          "downloads_text": "1261",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidqAh8-3rpDPxYFwktUHL-3GXWbjIZ3_ee14hCflLGGbK3tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress on Application and Mechanism of Traditional Chinese Medicine in Gout",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ_L_ByuaNS3D1Xh7dW5Ag7yaz1MLYlLGOEV4L7cn8SdDSg41nQLgexNkybOw7SO5bwMMjeL_TJQkzGfV508AAnGwmNn-VOS6jJM8diSH5YG2O7oNDFdFWDDhTahTfzOZFvlbbgmkXd29t6vKFxLFN5b8-YmZBuEEAcrxnxh7JBMQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "魏蔼玲;袁明昊;刘娟汝;刘红梅;叶强;刘雨诗;张存艳;李美凤;郭力",
+          "source": "Chinese Journal of Experimental Traditional Medical Formulae",
+          "publication_date": "2020-07-29 17:17",
+          "database": "Journals",
+          "cites_text": "45",
+          "downloads_text": "3243",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2xTMHs2lFRrncuWR1Q6FsMXBvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research Progress on Molecular Mechanisms of Gout and Treatment of Traditional Chinese Medicine",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZ_L_ByuaNS3D1Xh7dW5Ag7yaz1MLYlLGNT1s5yJEIvJKI9LGqdQWFnHTB2xlRIIEOy79bfEgKxnGwbMDyFDiMwH_MrbYhGg6Sgh0BLqfVrlZ5_PUcubQa8eHVYeyWv409YlVIKapF8oEZp1rXwgavOroV553CGHtPa89TpEAypww==&uniplatform=OVERSEA&language=EN",
+          "authors": "史亚夫;姚雪莲;黄小方;关志宇;朱继孝",
+          "source": "Traditional Chinese Drug Research & Clinical Pharmacology",
+          "publication_date": "2018-09-25",
+          "database": "Journals",
+          "cites_text": "35",
+          "downloads_text": "2015",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic5GVUwpRTwGN-Nl8iafvJyDAFQtXrHAigTujAoq-JxnjVphw7qS8TD5hUBzNQ_xqN3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "mechanism_formula",
+      "query": "中药复方 高尿酸血症 黄嘌呤氧化酶",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%B8%AD%E8%8D%AF%E5%A4%8D%E6%96%B9%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87%20%E9%BB%84%E5%98%8C%E5%91%A4%E6%B0%A7%E5%8C%96%E9%85%B6&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_a527363f2e89.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-3_grid_a527363f2e89.provenance.json",
+      "total": 63,
+      "top_records": [
+        {
+          "title": "健脾祛湿中药对高尿酸血症患者肠道菌群作用机制的研究进展",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbe152EOYYMyODu-pbC8dibdaqZL9nYNP18xkOH031aUSZ9u64JRNRzE-zKi4TruxKb8HWN-CByb2LvsZrol2_VAntXud5t9SYvjd1eHoSEqQN4UT67D_DpCuNAa3SiZtMWnS58HaBP_7KgXkTmxKZWSJsMJ-GlX8835OdcXn_AKQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "檀琦;金亮",
+          "source": "Inner Mongolia Journal of Traditional Chinese Medicine",
+          "publication_date": "2025-10-28",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "250",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie0rXXWCVdG-cGEwcGVXBYUjivOx6aXlBHuf35izbvANg6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Study on the Effect of Probiotic Fermentation on the Changes of Active Components of Traditional Chinese Medicine and Its Effect on Reducing Uric Acid",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbe152EOYYMyODu-pbC8dibtudjCXkzjtNJwGFd1r1hsgcKqFTjD-fSM8yoJnr2awvbHUis6wQYq8S9NI9Kdq_MiwjLma9gas7jJbEL3rCFC6Tw9cWi6yk7x9y_yPVJGKWiXGUZTFeKwNyIyZvHyM4sJX3U2zLM-2Qd11mLPvmu16qcq4NFqtLx&uniplatform=OVERSEA&language=EN",
+          "authors": "张滋雨",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-15",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "1894",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnz9bUWYAO1suSebsSNWajRxMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "The Mechanisms of Soy Isoflavones and Daidzein on Alleviating Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbhJE1oNtI_RqC6Uyvb67lRpIrEP3MiY0B6n6sfHUc6PFFwjpIIf2xevh43X8Tz9_wLqrkBIPPq1AkoNs2vrLuuR6NyYCye4FDZLGw8ztIAwwrVKsaxEqwepmCcJwcpA039KYka17tym0C0REnwQknXB8is4udpf5v7akW83_-fAskWtCEoYCoF&uniplatform=OVERSEA&language=EN",
+          "authors": "朱子成",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "349",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnpEQN0SsDA4xdCQYdBBOxubqTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Regularity of Formulae and Treatment Mechanisms of Traditional Chinese Medicine for Hyperuricemia Based on Real-World Research",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbhJE1oNtI_RqC6Uyvb67lRpIrEP3MiY0B6n6sfHUc6PEQoYbPfgBKy92O4zJveOslBKO4v7w2OwZgUOcD3wGNwYgBTK585eRMlkeSH9lwsdeuQhxNF5r7UaQWdBznIPpnGdOF8ukp3Go_fWdi3rN3i9vBoenNI_ipuCaRTMc5lu1JJJQlMRRDB&uniplatform=OVERSEA&language=EN",
+          "authors": "金珈竹",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-05-26",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "117",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmndz-7l5BSTbPQWJQIB1WuxrqTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Association between gut microbiota and hyperuricemia: insights into innovative therapeutic strategies",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbhJE1oNtI_RqC6Uyvb67lRsGeuGThGtUPy_nO36IGZgbzZXwSOCnIrGGB_VX5hQYqSB7Bv5DDz4R0_BfDWXqBlTkm8CtTpAAkEKMYsRmtPBNaNIRWKqzxIqYk2OXUpnwqMX7VDg9lWMRd2AUeZ2znK8DX6iK6O1mwUJOwJIa9Jkg==&uniplatform=OVERSEA&language=EN",
+          "authors": "张书娟;刘晓秋;钟宇新;付钰",
+          "source": "Chinese Journal of Biotechnology",
+          "publication_date": "2025-04-11 10:10",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "2116",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic4uvkOh-EevnBY_GEVFBweNKw8Xm-Amv98isOuEXIxtg6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Exploring TCM Medication Patterns and Mechanisms in Hyperuricemia with Hypertension through Data Mining and Network Pharmacology",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbrbNhwTgr-mdBdImZ9E-Hvfp05ectQTQsu0zasLKPrQHVsUEbaXpFaTfb037itNpmjNQjsF-4QiFxHDsi-GnjXl50sMB8FXtILajw3g5TWXDjILdXymOGCqqTw69EncJjLqVKdS7o-a3LHcSGL-6QggrOX8AzhvMUx03hOKDNC8YjZiV9R5fYL&uniplatform=OVERSEA&language=EN",
+          "authors": "窦雨鑫",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-03-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "133",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn7w4Eo1wQXLgjeHk0pViBaxMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Clinical Observation on the Treatment of Hyperuricemia of the Type with Internal Accumulation of Dampness and Heat by Self-Designed Formula for Reducing Uric Acid",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbrbNhwTgr-mdBdImZ9E-Hvfp05ectQTQsu0zasLKPrQPOTZSsFL3q4j2zyFyK-r3XppGJ0iRcOPgtYiaa5nxvmOdq-Wt3rkKgSd9ccYMW40i0_A9ogx4lt6ShuNO1VIvbsy3cIFjZB5_dC9vLWh-TJYaQQbpNhWd-wu1TVSACtXq9iaM0NlCEK&uniplatform=OVERSEA&language=EN",
+          "authors": "陈文英",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-03-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "95",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnGzt9PFjemPDnp12bBa6hrRMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Effect of Liqingtong Granules on Dampness-heat Intrinsic Hyperuricemia Model Induced by Yeast Extract",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbrbNhwTgr-mdBdImZ9E-HvHtGFdRvp3PiyRRFRLUQmsnLIV8Si1twE1wOcz01-AN25unoNIlPtJLJeipUTwBAfNn3aQ3eGyPc3AdAyk5LdUPMgRJCMcv3zqW74YZYJFWiDNJpXzM30ecBCVmmKfVIsdKHHFQNDJ9KTVCPdbYqhuA==&uniplatform=OVERSEA&language=EN",
+          "authors": "南海鹏;王林元;邸松蕊;王聪慧;刘金莲;陈彦;余淑惠;王淳;张建军",
+          "source": "World Chinese Medicine",
+          "publication_date": "2024-11-25",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "274",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicCmnqsCKbzxiiki33RjiSeptr4nBpQDtQbW7YykBwDAw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "A review on the mechanism of action of spleen invigorating and dampness removing traditional Chinese medicine on intestinal flora in patients with hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY4PApePcbskg-6hbk5FiTnI3LB_4xMc0_P7MvWuqWMi-34qMnzcXBOqIhuTRJI6kHxSYdp-i_JQBE-XvnrwzzVl1efUoABSHly6ktsXhcu5qmLdsPJfalU3u3fRWoF2Q6l1LG9e_72NqoEVL6eoS1TNv67sRfI4KqfzXVPkJhjiQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "李柳;霍晶晶;于世家",
+          "source": "Clinical Journal of Chinese Medicine",
+          "publication_date": "2024-10-28 15:50",
+          "database": "Journals",
+          "cites_text": "4",
+          "downloads_text": "901",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgif_0pCax5XXeczg2yRIdyAGDOE-bglGlMYnzQ72_six9Q6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Progress of Research on the Prevention and Treatment of Gout and Hyperuricemia with Traditional Chinese Medicine",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWY4PApePcbskg-6hbk5FiTnI3LB_4xMc0-OeTUkcPqEabaz-wCUnY4LDim0wo1AzwXwMhfzpR4I4mry7_SXRQmeunzIO5zji6HImtmCu1Cm_mZXdAFRMaV-47ATrCkOOTVx7DYLwtUn5hG9tIGhMbgWrHq8yuXb-3Sek0Eu7svy3w==&uniplatform=OVERSEA&language=EN",
+          "authors": "杜少鹏;刘维",
+          "source": "Western Journal of Traditional Chinese Medicine",
+          "publication_date": "2024-07-15",
+          "database": "Journals",
+          "cites_text": "16",
+          "downloads_text": "1620",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidEnCSeH4-14IHqE7_TOBaTebjHk4Urnos3AUmgxXcftFiqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    }
+  ]
+}
