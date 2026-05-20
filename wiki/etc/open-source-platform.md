@@ -67,6 +67,28 @@ The pattern transfers. Future peer tracks plausibly anchor on productized servic
 
 ---
 
+## Operational Architecture — Closed-Loop Pharmacogenomics Pipeline
+
+Five wiki pages compose a complete closed-loop pipeline that turns a generic supplement intervention into a verified, genotype-stratified, dose-calibrated, biomarker-tracked n=1 experiment. The pipeline is the **operational instantiation** of Principle 3 (rigorous but accessible) — every link is documented, achievable at home or via community biolab, and verified rather than assumed:
+
+> **genotype → compound selection → home or community-biolab production → Tier 2 batch QC → calibrated dose → biomarker tracking → adjust**
+
+| Step | Canonical wiki page | What it does |
+|---|---|---|
+| 1. Entry point | [`gout-action-guide.md`](../gout-action-guide.md) | User-facing entry; routes advanced users to the pipeline |
+| 2. Variant identification | [`personal-genome-protocol.md`](../personal-genome-protocol.md) | Clinical-grade genotyping; variant-informed compound priorities (Q141K → butyrate emphasis; URAT1 variants → cordycepin vs eurycomanone; HLA-B\*58:01 → exclude allopurinol) |
+| 3. Five-step operationalization | [`genotype-informed-supplement-workflow.md`](../genotype-informed-supplement-workflow.md) | Closed-loop n=1 pharmacogenomics pipeline: genotype → produce/source → Tier 2 batch QC → calibrated dose → biomarker tracking |
+| 4. Assay framework | [`quantification-ladder.md`](../quantification-ladder.md) | Tier 1 (kitchen colorimetric) / Tier 2 (smartphone) / Tier 3 (GC-MS / HPLC) / Tier 4 (outsourced) framework; calibrate-once-at-Tier-3, track-batches-at-Tier-2 discipline |
+| 5. Biomarker + halt criteria | [`self-experiment-protocol.md`](../self-experiment-protocol.md) | Four-biomarker panel, serum UA quarterly, red-flag halt criteria, daily log |
+
+**Why naming this matters.** Each of the five pages is rigorous independently, but without a named architecture the pipeline structure is invisible to a new reader — they encounter five disconnected pages instead of one operational backbone. The closed-loop framing makes it explicit that the platform's "open-source, democratized, rigorous" thesis isn't aspirational; it's a five-step pipeline with every step verifiable at home or community-biolab scale. The variant-index ([`gout-genetic-variants.md`](../gout-genetic-variants.md)) and the production-route SOPs ([`engineered-koji-protocol.md`](../engineered-koji-protocol.md), [`medicinal-mushroom-extract-sops.md`](../medicinal-mushroom-extract-sops.md), [`enzyme-quantification-protocol.md`](../enzyme-quantification-protocol.md)) are the reference layers feeding into steps 1, 2, and 4.
+
+**What this is NOT.** This is an *architectural surfacing* — naming a pattern that already operates — not a new scientific claim. It composes existing wiki pages into a named pipeline so the platform-level accessibility thesis becomes visible at the platform-overview layer rather than buried in the per-page details.
+
+(source: 2026-05-19 sweep-walkthrough Cluster B3; underlying connection between the five pages predates the naming.)
+
+---
+
 ## Platform Principles
 
 ### 1. No Patents
@@ -184,6 +206,34 @@ This principle was added 2026-05-06 from the 2026-05-05 sweep's Sweep B Connecti
 This is citizen science, self-experimentation, and open knowledge sharing. We document what we build, what we observe, and what the published literature supports. We do not prescribe, diagnose, or claim to cure.
 
 (Source: open-enzyme-vision.md, §10)
+
+### 9. Substrate Engineering as a First-Class Engineering Variable (added 2026-05-19, promoted from queued open question)
+
+**Substrate composition is a first-class engineering lever for distributed cultivation of medicinal fungi and koji, complementary to but distinct from strain engineering.** Treat substrate as a tunable input — not a fixed agricultural-economy default — with documented effect sizes from 1.2× (yield aggregate) up to **100× (specific compound profile shift)** and **22× (combined precursor + induction)** anchored in primary literature.
+
+**Three classes of substrate intervention** apply across the medicinal-mushroom-complement track AND the engineered koji track:
+
+1. **Precursor feeding** — methionine (1.7–3.1× ergothioneine across multiple species, Lee 2009 PMC3749454), alanine (3× cordycepin in *C. militaris*, Yu 2024 PMC11698586), oleic acid (8.57× betulinic acid in *I. obliquus*, Lou 2021 PMC8066064), nucleosides (cordycepin precursors).
+2. **BGC induction signals** — microcrystalline cellulose 1.5% (+85.96% ganoderic acids, Hu 2017 PMC5395960), D-galactose 0.5% (+63.9% GA), fungal elicitor preparations.
+3. **Host-tree / carbon-source / nitrogen-source selection** — wood-log vs. substitute (13.5× ganosporelactone B profile shift in *G. lucidum*, Luo 2024 PMC10879320); insect substrate composition (34× cordycepin difference, Turk 2022 PMC9627333); rice cultivar effects in koji.
+
+**The discipline is target-compound-anchored:** a substrate protocol without paired Tier-2/Tier-3 quantification (per [`medicinal-mushroom-extract-sops.md`](../medicinal-mushroom-extract-sops.md) SOP-6 + SOP-7) is non-falsifiable. The four-tier framework treats Tier-3 HPLC as the calibration anchor, Tier-2 colorimetry as batch tracking, Tier-1 kitchen-grade as consumption-side; this same discipline applies to substrate-engineering experiments.
+
+**Why this is platform-level (universal across tracks):**
+
+- **Medicinal-mushroom-complement track** ([`medicinal-mushroom-complement-track.md`](../medicinal-mushroom-complement-track.md) §"Substrate engineering as the most-accessible cultivation lever") — primary application: cordycepin × substrate for *C. militaris*, ganoderic acid × substrate for *G. lucidum*, ergothioneine × substrate sulfur availability for *Pleurotus*.
+- **Engineered koji track** ([`engineered-koji-protocol.md`](../engineered-koji-protocol.md), [`koji-home-fermentation.md`](../koji-home-fermentation.md)) — rice cultivar effects on kojic acid + ergothioneine; carbon-source effects on heterologous cassette expression.
+- **Future LBP/EcN tracks** — defined-media substrate optimization for engineered LBPs.
+
+**Operational pattern for distributed contributors:**
+
+> (i) start with a published Tier-3-anchored protocol from primary literature, (ii) apply per-batch Tier-2 colorimetric tracking against the published reference batch, (iii) escalate to Tier-3 HPLC re-quantification if Tier-2 reads outside ±20% of the published reference.
+
+**Why this earns its own principle (vs. being a sub-bullet of strain engineering):** strain engineering requires academic infrastructure — transformation protocols, selection markers, sequencing-based QC, biosafety review. **Substrate engineering can be executed from a kitchen** using GRAS food-grade reagents at consumer pharmacy / grocery retail for $20–50/kg. It is the cleanest fit yet between OE's distributed-accessibility thesis and a primary engineering mechanism — accessible to every contributor, with documented effect sizes that compete with strain-engineering interventions.
+
+**Genealogy:** queued as an open question on 2026-05-19 morning during Cluster J3 walkthrough; promoted to named Principle the same day after the substrate-engineering lit scan ([`logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`](../../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md)) crossed the pre-committed decision gate (≥2× yield effects OR new-compound-class effects in ≥2 candidate species). Empirical literature blew past the gate across multiple species.
+
+(Source: substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md; promoted from §"Open Questions — Substrate as Engineering Lever" below.)
 
 ---
 
@@ -573,6 +623,34 @@ For the engineered-strain platform, adopting this terminology makes the safety r
 A GitHub repository (per strain, under the Open Enzyme organization) for fermentation logs — user-uploaded titers, conditions, and outcomes. Over hundreds of batches, patterns emerge: which rice cultivars consistently underperform, which ambient temperatures tank titers, how titer correlates with generation number. This turns community reproducers into a distributed QA system. It also provides the evidence base for revising the "never backslop past generation N" guidance as empirical data replaces extrapolation.
 
 **None of these mitigations are fully validated as of Phase 0.** They are engineering sketches, not SOPs. The first real test will come during Phase 2 community replication, and the protocols above will be revised (probably substantially) based on what the first dozen community batches actually look like.
+
+---
+
+## Open Questions — Substrate as Engineering Lever — PROMOTED to Principle 9 (2026-05-19)
+
+> **Promotion note:** This section was the genealogy for what is now Platform Principle 9 (above). The lit scan landed the same day this question was queued and crossed the decision gate (≥2× yield / new-compound-class effects in ≥2 species — actual literature: 1.2× to 100× across 8+ species). The detailed content below is preserved for reference; the named-discipline framing lives in Principle 9.
+
+## Open Questions — Substrate as Engineering Lever (original queued 2026-05-19, genealogy)
+
+Surfaced during the 2026-05-19 sweep-walkthrough (Cluster J3.3, Brian's first-principles reframe). The synthesis daemon flagged substrate variability as a **QC documentation discipline** (substrate-accumulated compounds need substrate-lot tracking — see [`medicinal-mushroom-extract-sops.md`](../medicinal-mushroom-extract-sops.md) §"Substrate-accumulated vs biosynthesized"). The deeper, untapped question is the inverse: **substrate is potentially a deliberate engineering lever, not just a documented confound.**
+
+**The four production mechanisms substrate engineering can exploit:**
+
+1. **Passive accumulation** — substrate compound X passes through, accumulates in mycelium (plant flavonoids from oak sawdust; substrate-accumulated bioavailable compounds the platform's distributed users could deliberately enrich).
+2. **Biotransformation** — fungal enzymes modify substrate compounds (deglycosylation, hydroxylation, methylation). Substrate choice determines what's available for biotransformation.
+3. **Substrate induction** — substrate composition triggers expression of fungal biosynthetic gene clusters (BGCs). Carbon-source / nitrogen-source / mineral effects on secondary metabolism. The most engineering-relevant mechanism — induction CAN switch on silent BGCs that aren't expressed under standard cultivation.
+4. **Precursor feeding** — deliberate addition of biosynthetic precursors to shift compound profile (methionine → ergothioneine; aromatic amino acids → indole alkaloids; etc.).
+
+**Why this matters for the platform specifically:** substrate is the variable distributed open-source users can most easily change — they aren't engineering strains, they're growing on what they buy or find. If substrate composition is a real engineering lever, it's the **most accessible optimization axis** for the open-source / democratized accessibility thesis. It compounds with strain engineering rather than competing with it.
+
+**Universal application across the platform's tracks:**
+- **Medicinal-mushroom-complement track** ([`medicinal-mushroom-complement-track.md`](../medicinal-mushroom-complement-track.md)) — primary application: cordycepin × substrate for *C. militaris*, ganoderic acid × substrate for *G. lucidum*, ergothioneine × substrate sulfur availability for *Pleurotus*.
+- **Engineered koji track** ([`engineered-koji-protocol.md`](../engineered-koji-protocol.md), [`koji-home-fermentation.md`](../koji-home-fermentation.md)) — rice cultivar effects on kojic acid + ergothioneine; carbon-source effects on heterologous cassette expression.
+- **Future LBP/EcN tracks** — defined-media substrate optimization for engineered LBPs.
+
+**Status:** Lit scan firing during 2026-05-19 walkthrough — output to `logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`. Status promotes from "queued open question" to "named platform discipline" if the lit scan returns substantial yield-effect or profile-effect data across the platform's candidate species.
+
+**Decision gate for elevation to named principle:** if the lit scan shows ≥2× yield effects or new-compound-class effects (e.g., substrate-induced BGC expression that switches on silent secondary metabolites) for ≥2 candidate species, "Substrate Engineering" earns a place in the Platform Principles list (currently 1–8 above). If the lit scan shows only marginal effects (<2× yield, no profile shifts), the discipline stays at the documentation-level encoded in `medicinal-mushroom-extract-sops.md`.
 
 ---
 

@@ -184,6 +184,31 @@ This is a positive argument for whole-cell oral delivery, not just a safety reas
 
 It is also a *transferable* concept: any oxidase or peroxidase-byproduct-generating enzyme considered for OE production (D-amino acid oxidase, monoamine oxidases, etc.) would inherit the same co-localized catalase housekeeping if expressed in the same chassis. The chassis is generic; the housekeeping is generic.
 
+### Catalase capacity principle — route-agnostic H₂O₂ safety design rule (added 2026-05-19, Cluster F3 walkthrough)
+
+**For any uricase delivery format, H₂O₂ safety is determined by total catalase capacity at the site of H₂O₂ generation, not by residue-level proximity. The specific mechanism (peroxisomal co-localization, co-formulation, fusion protein, bulk-phase scavenging from dispersed droplets) is an implementation detail.**
+
+This principle generalizes across delivery routes — the same architectural argument the oral whole-cell chassis makes via peroxisomal co-localization (above) is independently validated for intra-articular delivery by [comp-035](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) (Pickering emulsion's FRET-confirmed <10 nm proximity is NOT the safety mechanism; **bulk-phase catalase scavenging from catalase distributed across all dispersed droplets dominates** — mathematically equivalent to free co-formulated catalase at the same total dose). Both routes solve the same biochemistry problem through different mechanisms; both depend on the same load-bearing variable.
+
+**The route-agnostic safety criterion:**
+
+> Does the format deliver sufficient catalase capacity to the site of H₂O₂ generation, given the catalase kcat/Km and the format's catalase loading + retention profile?
+
+If yes → H₂O₂ safety is in hand regardless of geometric arrangement. If no → no proximity engineering rescues a fundamentally under-catalased format.
+
+**Catalase kcat/Km is the dominant sensitivity driver** across the three IA architectures comp-035 modeled (Spearman r = −0.95 to −0.97). Production economics + in vivo stability + proportional dosing of catalase are first-order chassis-selection variables; the residue-level co-localization geometry is a secondary detail.
+
+**Evaluating new uricase delivery formats against this principle:**
+
+- **Rectal suppository** (distal-colon depot per Row 1 / §Open exploration questions #2): does the formulation include co-loaded catalase at proportional dose? If the format is a live engineered organism, peroxisomal co-localization is intrinsic; if it's a purified-enzyme format, co-formulated catalase or a uricase-catalase fusion (Schiavon / Veronese class) is needed at proportional total capacity.
+- **Inhaled / pulmonary uricase**: H₂O₂ generation in alveolar tissue is contraindicated (Row 3 / §Recombinant proteins). The catalase capacity principle would require alveolar-resident catalase activity to scavenge H₂O₂ before oxidative damage to surfactant-producing epithelium — endogenous lung catalase is not abundant. The principle does NOT rescue this format; the inhaled/pulmonary uricase route remains contraindicated by the lung-tissue catalase-capacity profile, not by proximity considerations.
+- **Transdermal uricase** (if MW limit could be solved by future delivery tech): same question — does the skin tissue at the application site have sufficient catalase capacity for the H₂O₂ flux at the intended uricase loading?
+- **Future fusion-protein formats** (uricase-catalase chimera per [comp-036 future work hooks](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md)): the fusion guarantees proportional stoichiometry in vivo, addressing the catalase-capacity principle's most failure-prone variable.
+
+**Net implication:** evaluate new uricase delivery formats by computing the local catalase capacity (kcat × [catalase] × residence time) vs. the local H₂O₂ flux (uricase activity × [urate]) at the intended site. If the ratio comfortably clears the safety threshold (<10 µM steady-state [H₂O₂] per comp-035), commit to format engineering. If it doesn't, no formulation-engineering ingenuity rescues a fundamentally under-catalased design.
+
+**Cross-references:** [`intra-articular-uricase-h2o2-reaction-diffusion-computational.md`](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) (comp-035 quantitative anchor); [`chassis-pending-interventions.md` §6](./chassis-pending-interventions.md) (IA uricase implementation); [`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question — and why the chassis solves it for free"](./engineered-koji-protocol.md) (oral chassis's intrinsic catalase capacity); [`gout-kill-chain-delivery-routes.md`](./gout-kill-chain-delivery-routes.md) (route map). Same architectural-surfacing pattern as the closed-loop pharmacogenomics pipeline (`etc/open-source-platform.md`), Platform Principle 9 substrate engineering, and the chokepoint coverage completeness audit (`nlrp3-exploit-map.md`) — make visible what the platform already operates but hasn't named.
+
 ---
 
 ## Why SC uricase doesn't work (even with catalase co-formulation, even with tolerogenic NP)

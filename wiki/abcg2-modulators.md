@@ -167,6 +167,15 @@ Ranked roughly by evidence + safety + tissue selectivity:
 - **Mechanism:** specific *Lactobacillus reuteri* strains, *L. plantarum*, and others produce indole-3-aldehyde (a potent AhR agonist) from dietary tryptophan.
 - **Evidence:** **Mechanistic Extrapolation.** Direct urate endpoint untested for probiotic strain selection. Worth investigating.
 
+***Poria cocos* / *Wolfiporia cocos* (茯苓 Fu Ling) — mechanism unidentified, in-vivo evidence robust**
+- **Mechanism:** Empirically uncharacterized. Could be transcriptional (PPARγ / HNF4α / AhR / Nrf2 — none tested), chaperone-class trafficking rescue (analogous to UDCA / TUDCA per comp-032), or class I HDAC inhibition (no HDAC isoform was tested). The unidentified mechanism is itself the highest-leverage open question.
+- **Anchoring evidence:** Sun et al. 2021, *Front Pharmacol* (PMID 33651969). Hyperuricemic mouse model. Both ethanol and water extracts significantly elevated intestinal ABCG2 mRNA + protein. Water extract effect magnitude **exceeded benzbromarone positive control** (p < 0.01). Concurrent UA-lowering via XO inhibition + renal protection. **Animal Model.**
+- **Five computationally predicted bioactives** (PubChem CIDs 267, 277, 13824, 15730, 5759) docked to ABCG2; in vitro validation not yet performed. Pachymic acid mentioned only as HPLC reference standard, not implicated as active agent.
+- **Traditional context:** Poria cocos is a canonical ingredient of Si Miao San (the gout-indicated TCM formula already surveyed by comp-013) and Wu Ling San (the canonical urinary-tract / fluid-metabolism formula). Per comp-013's `inputs/compounds.json`, Poria cocos was implicitly included via the Si Miao San source citation but NOT separately spawned as a compound source — exactly the formula-completeness gap flagged in the 2026-05-19 query-framing retrospective audit.
+- **Practical lever:** Poria cocos extract is widely available as a TCM supplement (5-15g daily of decoction or 1-3g of standardized extract is the canonical dose range). Mechanism uncertainty makes off-label dosing for ABCG2 induction premature.
+- **Tissue selectivity:** Not characterized.
+- **Next move:** Caco-2 transwell assay (sister to §1.14 butyrate dose-response arm) — pachymic acid + polyporenic acid C + dehydroeburicoic acid panel against ABCG2 expression + Q141K trafficking. Marginal cost <$2K on existing infrastructure. **High platform-relevance: closes the mechanism question on a TCM-grade compound that already has robust in-vivo HUA evidence.**
+
 ### Tier 3 — Pharmacological-grade levers
 
 **Fenofibrate (PPARα/γ + direct uricosuric effect)**

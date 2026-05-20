@@ -332,6 +332,26 @@ The hardware/wetware/pipeline for the Plasmidsaurus QC pipeline overlaps **compl
 
 **Cost note (calibrated 2026-05-08):** the MinION at-home buildout is ~$5,000 all-in (device + supporting wet-lab equipment + GPU laptop), plus ~$1,000/run for flow cell + reagents at usable read depth. Per-strain genome sequencing once the buildout exists is in the ~$300–500 range (single flow cell amortized across multiple strains is feasible — a MinION flow cell can multiplex ~12-24 microbial genomes per run depending on read depth target). **The Plasmidsaurus pricing above means in-house MinION crosses the breakeven only when N gets large enough or when a contributor's hardware investment becomes platform infrastructure.** For Phase 0 strain builds (N ≈ 1–5 per year), outsource to Plasmidsaurus. For Phase 1+ with sustained throughput (or a contributor donating MinION time), in-house wins. As of 2026-05-17 the Phase 0 default is outsourced — `personal-genome-protocol.md` §"Tier table" remains the relevant cost-justification document for any standalone MinION buildout.
 
+#### Per-question platform selection — Plasmidsaurus vs MinION decision matrix (added 2026-05-19, Cluster N walkthrough)
+
+Both platforms answer overlapping "is the DNA what I designed?" questions but at different cost/turnaround/N-scale points. This table maps each QC question to the preferred platform under current pricing:
+
+| QC question | Preferred platform | Cost | Turnaround | Why |
+|---|---|---|---|---|
+| **Pre-transformation plasmid verification** (whole plasmid sequencing) | **Plasmidsaurus** | $15/plasmid | Next-day | No MinION equivalent at this price; outsourced is dramatically cheaper than a flow cell |
+| **Junction PCR amplicon verification** (cassette insertion site) | **Plasmidsaurus** | $15/amplicon | Next-day | Same cost-asymmetry as plasmid sequencing |
+| **Transformant clone screening** (N = 5–20 colonies, identity check) | **Plasmidsaurus** Genotyping Analysis | $30/clone (multiplexed) | 1–2 days | MinION needs full library prep per clone; doesn't scale at this N |
+| **Multi-strain WGS** (N > 12 microbial genomes, e.g., transformant panel finalization) | **MinION** | ~$500/strain when amortized across 12–24 strains/flow cell | ~3 days | MinION's per-strain cost-at-scale wins at N > 12; flow cell amortization is the cost edge |
+| **Final genome release** (production-strain provenance + full assembly) | **MinION** (if buildout exists) OR **Plasmidsaurus WGS** ($250 + extraction) | $250–500 depending on platform | 3–7 days | Either platform produces release-grade; choice depends on local infrastructure |
+| **Personal-genome buildout (dual-use)** | **MinION** | Buildout amortizes across strain QC + personal pharmacogenomics | Per-run | The dual-use pattern: ~$5K hardware investment doubles as personal-genome infrastructure per [`personal-genome-protocol.md`](./personal-genome-protocol.md) Tier 5 |
+
+**Operational pattern:**
+- **Phase 0 (N = 1–5 strains/year):** outsource everything to Plasmidsaurus. Lowest infrastructure burden, fastest per-question turnaround, cleanest decision criteria.
+- **Phase 1+ (N ≥ 12 strains/year OR contributor donates MinION time):** Plasmidsaurus for pre-transformation (plasmid + amplicon + clone screening) + MinION for multi-strain WGS finalization. Hybrid pattern uses each platform's cost-edge.
+- **Dual-use unlock:** if a contributor has a MinION buildout for personal-genome use, the strain-QC layer comes free (~$1K/flow cell × 12–24 strains/flow cell). This is the platform-infrastructure-sharing pattern named in [`etc/open-source-platform.md`](./etc/open-source-platform.md).
+
+**Cross-reference:** [`personal-genome-protocol.md`](./personal-genome-protocol.md) for MinION buildout cost-justification + sequencing tiers; [`validation-experiments.md`](./validation-experiments.md) §1.9 + §1.10 + §1.25 for the specific Plasmidsaurus QC adds documented per-experiment.
+
 ### How Much Uricase Per Gram of Koji?
 
 Literature on heterologous protein expression in *A. oryzae* reports yields of **1–10 g/L** for well-expressed secreted proteins (e.g., lipase, glucoamylase). These are industrial fermentation numbers. For a koji solid-state fermentation, yields are typically reported as mg protein per gram dry substrate.

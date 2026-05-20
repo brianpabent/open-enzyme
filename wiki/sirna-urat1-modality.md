@@ -65,6 +65,8 @@ Additional advantages over small-molecule URAT1 inhibitors:
 - **Adherence:** quarterly subcutaneous injection vs. daily-pill compliance burden.
 - **Sex-hormone interaction:** siRNA knockdown is hormone-independent, so it would work as well in clomid / TRT / endogenous-T-elevated patients (where URAT1 is upregulated) as in baseline patients. This is the same advantage the LBP butyrate vector has over koji-delivered uricase: it's genotype- and hormone-axis-agnostic.
 
+**Dose-ceiling constraint from W258X homozygote phenotype.** The human-genetic safety case for partial URAT1 knockdown rests on W258X heterozygotes (no clinical disease at ~2.5% Japanese / 1.4% Korean allele frequency per multilingual scan 2026-05-19; see [`gout-genetic-variants.md` §"URAT1 W258X"](./gout-genetic-variants.md)). W258X homozygotes have a clean knockout phenotype: serum uric acid 0.75 mg/dL (Sakiyama 2021 PMID 34440216, n=30,685 Japanese males) — ~12% of population mean — with a documented but unquantified lifetime exercise-induced acute kidney injury risk. **Implication: target ≤50% knockdown ceiling to avoid recapitulating homozygote-equivalent phenotype under exercise stress.** This is a load-bearing dosage constraint that should be encoded in any siRNA dose-finding study design.
+
 ---
 
 ## The hard part: kidney-tropic delivery

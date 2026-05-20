@@ -6,6 +6,7 @@ related:
   - enzyme-quantification-protocol.md
   - medicinal-mushroom-extract-sops.md
   - etc/open-source-platform.md
+  - etc/practitioner-toolkit.md
 ---
 
 # Quantification Ladder
@@ -35,6 +36,8 @@ This page is the **canonical definition** of the framework. Track-specific insta
 Without the tiered framework, every batch would need a full Tier 3 instrumented assay. That is cost-prohibitive at scale and impossible for distributed open-source contributors without lab access. With it, Tier 3 is invoked once per protocol revision; Tier 2 handles batch consistency cheaply; Tier 1 keeps end-user dosing tied to verified content. This is the same discipline that lets the koji track work as a home-fermentation project rather than a CRO-only project, and that lets the medicinal mushroom track ship characterized compounds without an HPLC in every contributor's basement.
 
 The ladder also catches a specific class of failure: dose-vs-product-content mismatches. If a commercial extract is marketed at one content level but a Tier 2 colorimetric check shows another, the discrepancy surfaces before downstream therapeutic-dose reasoning depends on the marketed number. See [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Reality check" for the Real Mushrooms Cordyceps-M case (3–4 mg cordycepin per 1 g serving at 0.4% content, surfaced by tier-discipline thinking).
+
+**Low-cost automation add-on (Picolab prior art, 2026-05-19).** The ladder's main reproducibility bottleneck is often not assay chemistry; it is operator variation in serial dilution, mixing, transfer order, and image timing. [Picolab v2](https://github.com/OmkarKovvali/picolab_v2) shows an open-source, non-production pattern for reducing that variance at tube scale: repurposed printer gantry, syringe actuation, G-code planning, camera snapshots, and operator-approved action execution. Treat this as optional method infrastructure for Tier 2/3 development, not as evidence that OE assays are automated or validated. First OE use should be benign dye/standard-curve work before any biological material. (Engineering prior art; source: Picolab v2 repository; see [`practitioner-toolkit.md`](./etc/practitioner-toolkit.md))
 
 ## Instantiations
 

@@ -138,6 +138,20 @@ The strong version names the file, names the section, quotes the subsection titl
 
 ---
 
+## Epistemic-gate checks (added 2026-05-19)
+
+These four checks shift detection of failure modes upstream that the human-walkthrough gate previously caught alone. Run each check as part of forming your verdict on each Pass 2 item. Empirical exemplars in [`logs/pass-3-failure-mode-retrospective-2026-05-19.md`](../logs/pass-3-failure-mode-retrospective-2026-05-19.md).
+
+**1. Circular-reasoning check.** If your Push-back verdict relies on "no documented X exists" or "the proposed mechanism is not in the literature," **stop and ask**: does Pass 2's connection REQUIRE investigation precisely BECAUSE it's not documented? (Umbrella CLAUDE.md §"Curiosity and First-Principles Framing": absence-of-prior-documentation is a cue to investigate, not a reason to dismiss.) "Not documented → don't investigate" is **circular reasoning** if the connection itself is the proposal to investigate. State explicitly whether the connection is (a) **factually wrong against existing literature** (legitimate Push-back), or (b) **speculative and uninvestigated** (legitimate as open question or cheap experiment — `Confirm` or `Partial`, NOT `Push back`). Empirical case: 2026-05-19 H2 — Pass 3 push-back "DAF SCR1-4 + chaperone-stack open question" cited "no documented" as the dismissal reason. The walkthrough overruled and fired a lit scan instead.
+
+**2. First-principles upgrade check.** When confirming a Pass 2 recommendation framed as "documentation discipline," "QC anchor," "annotation column," "track separately in inventory," **ask whether the underlying question is actually a first-principles engineering / mechanism question being miniaturized into bookkeeping**. Substrate composition becoming an engineering lever (rather than a contamination-tracking column) is the canonical case (J3, 2026-05-19). If the question rewrites as a 10× engineering lever, **flag the under-claim explicitly** rather than confirming the documentation-only framing.
+
+**3. Scope platform-relevance audit.** When confirming an audit / experiment / open-question with multiple sub-questions (e.g., 4-bullet open question, multi-arm protocol), **evaluate each sub-question against platform relevance separately**. "Cost of intervention," "individual prescriber willingness," "insurance coverage" are typically **operational-variability questions, not platform-research questions** — these belong in patient-facing decision aids, not in the research wiki. "Patient-reported clinical experience," "biomarker timeline," "mechanism-relevant kinetics" are platform-research. Empirical case: 2026-05-19 L2 — Pass 3 confirmed all 4 anakinra sub-questions; walkthrough scope-tightened (insurance + prescriber-willingness out of platform scope).
+
+**4. Operational-improvement axis.** A Pass 2 recommendation can score **"novelty: low / operational improvement: high"** and still warrant **`Confirm` with priority weight**, not `Partial`. Deduplication, stale-divergence prevention, single-source-of-truth consolidation, sweep-architecture fixes — these aren't novel findings, but they reduce systemic friction and shift detection upstream. Don't soften operational improvements to `Partial` just because they restate something documented elsewhere; weight by leverage on the daemon + walkthrough surface, not just by novelty against the wiki corpus.
+
+---
+
 ## Inputs (TRIGGER block)
 
 The TRIGGER block names the Pass 2 synthesis log path and `marker_count: N`. The prompt below this divider inlines the synthesis log + an evidence cache (trigger files + cited files). The cache is the warm starting point; the tools fetch what the cache misses.

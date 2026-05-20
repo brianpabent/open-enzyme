@@ -82,6 +82,30 @@ The fourth track is **the lightest engineering effort and the most accessible UX
 - ~~**Engineered koji cordycepin (cns1+cns2) + whole-fermentate *C. militaris* (native pentostatin)**~~ *— added 2026-05-15, deprioritized 2026-05-16.* This cross-chassis "patch" was an attempt to install pentostatin protection for the koji-engineered cordycepin route. With koji-cordycepin engineering deprioritized (no novel chokepoint coverage + open dose-vs-titer gap + commercially available alternative), the cross-chassis patch is moot. The cultivation route already delivers cordycepin + pentostatin together at the natural ratio. See [`koji-endgame-strain.md` §3.5](./koji-endgame-strain.md).
 - **Engineered koji uricase + GLPP supplement** — koji handles bulk urate degradation in gut lumen; GLPP modulates ADA upstream + GLUT9/OAT1 transporters for renal-side support. Cleanest cross-track synergy (engineering + cultivation).
 
+## Substrate engineering as the most-accessible cultivation lever (added 2026-05-19)
+
+Substrate composition is not just a documentation concern — it is a deliberate engineering variable with documented effect sizes from 1.2× (yield aggregate) up to 100× (specific compound profile shifts within a class) and 22× (combined precursor + induction). This finding emerged from the 2026-05-19 substrate-engineering lit scan ([`logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`](../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md)). The synthesis daemon's prior framing ("substrate accumulation creates a QC documentation discipline") under-claimed the empirical literature by ~10×.
+
+**Four mechanisms operate, each with primary-literature anchors:**
+
+1. **Passive accumulation** — substrate compounds traverse mycelium (plant flavonoids in oak substrate; tree-host polyphenols in *I. obliquus* conks — *Alnus incana* conks have 4–30× higher betulinic acid than *Betula pendula* per Drenkhan 2022 [PMC9496626](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9496626/)).
+
+2. **Biotransformation** — fungal enzymes modify substrate compounds (betulin → betulinic acid in *I. obliquus*; lentinan biosynthesis from substrate cellulose).
+
+3. **Substrate induction of biosynthetic gene clusters** — substrate components act as transcriptional signals. Microcrystalline cellulose 1.5% delivers +85.96% ganoderic acid via HMGR/SQS/LAS upregulation (HMGR up 3.5–4.3×; Hu 2017 [PMC5395960](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5395960/)). Oleic acid upregulates Cns1/Cns2 in *C. militaris*, delivering 34× cordycepin difference between *A. dichotoma* and *B. mori* insect substrates (Turk 2022 [PMC9627333](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9627333/)).
+
+4. **Precursor feeding** — direct addition of biosynthetic precursors. 12 g/L alanine → 3× cordycepin via Cns2/Cns3 upregulation (Yu 2024 [PMC11698586](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11698586/)); 2 mM methionine → 1.7–3.1× ergothioneine across multiple species (Lee 2009 [PMC3749454](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3749454/)).
+
+**Critical finding: substrate engineering shifts compound PROFILE, not just yield.** Wood-log vs. substitute-substrate *G. lucidum* produces measurably different triterpenoid spectra — substitute-grown fruiting bodies show 13.5× higher ganosporelactone B and 10× higher ganoderol A, while wood-log fruiting bodies show 2.19× higher total lucidenic acids (Luo 2024 [PMC10879320](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10879320/)). *Hericium* minimal vs. complex liquid media shifts erinacine C ↔ erinacine Q ratios by ~100× **even when *eri* gene transcript levels don't change** (Doar 2025 [PMC11969743](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11969743/)) — a post-transcriptional substrate-driven compound-profile shift.
+
+**Operational implication for distributed contributors:** substrate engineering is **the lightest-effort, highest-leverage modality** — every load-bearing reagent (methionine, alanine, oleic acid, microcrystalline cellulose, D-galactose, corn steep liquor, casein hydrolysate, nucleosides) is GRAS food-grade and available at consumer pharmacy / grocery retail for $20–50/kg. This compounds with strain selection rather than competing with it. The discipline is target-compound-anchored: a substrate protocol without paired Tier-2/Tier-3 characterization (per [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6 and the new SOP-7 protocol matrix) is non-falsifiable.
+
+**Platform-principle elevation (2026-05-19):** this finding promoted from "queued open question" to named **Platform Principle 9** in [`etc/open-source-platform.md`](./etc/open-source-platform.md). Strain engineering needs academic infrastructure; substrate engineering can be executed from a kitchen. It is the cleanest fit yet between the platform's distributed-accessibility thesis and a primary engineering mechanism.
+
+**Falsifiable wet-lab priority surfaced by the lit scan:** cordycepin × pentostatin ratio under varied substrate conditions (alanine vs CSLH vs insect substrate vs oleic combinations) — directly extensible from SOP-2 HPLC. Queued as [§1.29 in `validation-experiments.md`](./validation-experiments.md) (added 2026-05-19). Resolves the whole-fermentate-vs-purified clinical positioning gap that has been open in the wiki.
+
+---
+
 ## Scope (Phase 1)
 
 ### Candidate species
@@ -94,8 +118,12 @@ Subset of the comp-014 Phase 5 anchor list, prioritized by:
 
 | Species | Common name | Top compounds | Cultivation UX | Regulatory |
 |---|---|---|---|---|
-| *Ganoderma lucidum* | reishi / lingzhi | GLPP, ganoderic acids (400+), ergosterol | Solid-state on hardwood; commercial mycelium kits widely available; 6-12 months for fruiting body | GRAS supplement |
-| *Cordyceps militaris* | cultivated cordyceps | cordycepin, polysaccharides, ergosterol peroxide | Liquid fermentation OR solid-state on brown rice; 4-8 weeks home cycle; commercial kits available | GRAS supplement |
+| *Ganoderma lucidum* | reishi / lingzhi | GLPP, ganoderic acids (400+), ergosterol; **S-GLSP** (sporoderm-removed spore powder, distinct NLRP3-axis effect); **GLP4** (pentapeptide, direct TBK1-binding, distinct from triterpenoid + polysaccharide fractions) — refinements added 2026-05-19 traditional-name rescan | Solid-state on hardwood; commercial mycelium kits widely available; 6-12 months for fruiting body | GRAS supplement |
+| *Cordyceps militaris* | cultivated cordyceps | cordycepin, polysaccharides, ergosterol peroxide; **head-to-head NLRP3 dominance per Wang 2023** (NLRP3-axis primary mechanism for anti-MSU effect, not URAT1 alone — surfaced by 2026-05-19 traditional-name rescan) | Liquid fermentation OR solid-state on brown rice; 4-8 weeks home cycle; commercial kits available | GRAS supplement |
+| *Phellinus igniarius* | sang huang / 桑黄 | total polyphenols (XO + NLRP3 axis); SH-P-1-1 polysaccharide (gut microbiome); PPI polysaccharide (bile acid + hepatic XO); TFPI flavonoids (URAT1) — **strongest single-species fit for gout-indication coverage across 4 independent papers; 2026-05-19 traditional-name rescan** | Solid-state on hardwood (preferred birch / poplar); commercial mycelium kits available; 6-12 months for fruiting body; **cultivated extract matches wild extract** per Zhou 2022 — directly addresses wild-supply bottleneck | Supplement |
+| *Sanghuangporus vaninii* | yellow-brown sanghuang (modern split from *P. baumii*) | PSH acidic polysaccharide (MW 5.25 × 10⁴ Da); MSU + HUA active | Liquid submerged fermentation optimized (Huang 2024); commercial extract available | Supplement |
+| *Inonotus hispidus* | shaggy bracket | whole extract anti-HUA + anti-MSU-arthritis | Hardwood substrate; commercially less developed | Supplement |
+| *Antrodia camphorata* | niu chang zhi / 牛樟芝 | Antcin-H (NLRP3-selective triterpenoid); ACP polysaccharide; Taiwan-endemic | Liquid submerged fermentation; specialty supply | Supplement (Taiwan-regulated) |
 | ***P. citrinopileatus*** | golden oyster | **ergothioneine (highest fungal producer — 7.0 mg/g DW)**, β-glucans | Same straw / sawdust substrate as P. ostreatus; commercially less common than oyster but kits available | GRAS food |
 | *Pleurotus ostreatus* | oyster mushroom | ergothioneine (2.4 mg/g DW — was originally claimed as highest, corrected by Phase 7-1c scan), lovastatin (190-342 mg/kg DW), pleuran | **Easiest home cultivation** — straw / coffee grounds / sawdust substrate; 4-6 weeks; widely sold consumer kits | GRAS food |
 | *P. djamor* | pink oyster | β-glucans (43% DW — highest in genus) | Same as P. ostreatus | GRAS food |
@@ -108,6 +136,29 @@ Subset of the comp-014 Phase 5 anchor list, prioritized by:
 | *Aspergillus oryzae* (koji) | koji | ergothioneine (secondary), kojic acid, secreted enzymes | Already documented in `koji-home-fermentation.md` | GRAS food |
 
 The medicinal-mushroom-complement track is **species-additive to comp-014's anchor list, not separate** — the same well-studied species, evaluated through a different lens (cultivation feasibility + native-compound consumption rather than engineering-chassis suitability).
+
+### Ascomycete secondary metabolites — Talaromyces, not Penicillium (identity-corrected 2026-05-19) — chassis-pending discovery note
+
+The track's candidate species above are all basidiomycetes. comp-014 Phase 3 surfaced direct caspase-1 (CASP1) inhibitors at sub-μM potency from "Penicillium" — a chokepoint coverage the basidiomycete corpus lacks. The 2026-05-19 lit scan ([`logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md`](../logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md)) **materially revised the framing**:
+
+**Identity correction:** The original Berkeleyamide-producing strain (Stierle 2008, "*P. rubrum*" Berkeley Pit isolate) has been **reclassified to *Talaromyces amestolkiae*** — a different genus from the cheese-ripening *Penicillium* species (P. camemberti / P. roqueforti). Berkeleyamides A/D (CASP1 IC50 330/610 nM via comp-014 pChEMBL anchors 6.48/6.21) are *Talaromyces* chemistry, not *Penicillium* chemistry. (The reclassification is inferred from secondary sources — Yilmaz 2014 + WebSearch hits; primary-source confirmation via Hoody 2026 [PMC13150583] recommended before any downstream commitment.)
+
+**Why the food-grade Penicillium framing was misdirected (three independent reasons):**
+
+1. **Wrong genus.** P. camemberti / P. roqueforti are in genus *Penicillium* proper, taxonomically distinct from *Talaromyces*.
+2. **Wrong direction of effect.** The closest food-grade *Penicillium* "anti-inflammatory" candidate — mycophenolic acid — is **pro-NLRP3, not anti** (Huang 2018 [PMC6032679](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6032679/): MPA synergizes with LPS to activate the inflammasome at 5–75 μM). A wet-lab assay seeing "CASP1 modulation" in cheese-strain extracts would risk reading MPA as a positive when it's the opposite direction.
+3. **Wrong genome.** Domesticated cheese *P. roqueforti* strains have **actively-degraded toxin BGCs** (Crequer 2024 [PMC11605963](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11605963/) — frameshift in PR-toxin ORF, deletion in mpaC). Substrate-induction cannot unlock what's been mutated out. The 2023 canonical BGC review for *P. roqueforti* (Chávez [PMC10144355](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10144355/)) enumerates the entire chemotype (andrastins, MPA, roquefortines, PR-toxin, eremofortins, isofumigaclavines, festuclavine, annullatins) — Berkeleyamide / Berkeleyone **are absent from the genome**, not just unexpressed.
+
+**Corrected platform-relevant path — computational first, wet-lab only if signal:**
+
+1. **antiSMASH genome scan** ($0, ~3hr compute) of P. roqueforti / P. camemberti / P. rubens for NRPS-PKS hybrid BGCs matching the Berkeleyamide architecture (NRPS amide-bond-forming + meroterpenoid backbone). If no homologs found, the cryptic-Berkeleyamide hypothesis is falsified for cheese strains at zero cost.
+2. **Pull *Talaromyces amestolkiae* BGC** if available — Stierle group at U. Montana may have deposited assembly (FAC-NGS data per Cryptic Biosynthesis paper [PMC8574098](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8574098/)). Reach out via JGI MycoCosm or direct email.
+3. **If antiSMASH returns plausible homologs in cheese strains** → wet-lab assay becomes platform-relevant. Defensible budget with mycotoxin pre-screen (LC-MS) + CASP1 enzymatic assay + orthogonal cytotoxicity is **$5–15K** (not the originally-scoped $500–1,000 — that figure assumed direct testing without disambiguation infrastructure).
+4. **If antiSMASH returns nothing in cheese strains but *T. amestolkiae* has a clean BGC** → the platform-relevant question shifts entirely to **engineering the Berkeleyamide BGC into the koji chassis** (A. oryzae heterologous host, which already supports andrastin-type meroterpenoid assembly per Matsuda et al. 2013 cited in [PMC5418334](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5418334/)). This is a much cleaner play than coaxing cheese strains to express foreign chemistry.
+
+**Status: chassis-pending discovery note with computational gates.** No wet-lab commitment until antiSMASH signal materializes. The identity correction is the main load-bearing update: any future BGC-mining work must target *Talaromyces amestolkiae*, not cheese-ripening *Penicillium*. comp-014 Phase 3's "Penicillium" attribution should also be corrected to "Talaromyces amestolkiae" in any future re-render of that page.
+
+See [`logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md`](../logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md) for the full lit scan.
 
 ### Cultivation method comparison (Phase 7 follow-up)
 
@@ -175,6 +226,12 @@ Per comp-014 Phase 5 ([medicinal-mushroom-compound-mapping-computational.md](./m
 **Why this matters for consumer products:** a generic "reishi extract 1000mg" capsule is opaque about which polysaccharide fraction it contains. EPS-dominant preparations and spore-powder/GLPP-dominant preparations are functionally different products at the NLRP3 axis, and a gout patient can inadvertently *worsen* inflammation by picking the wrong fraction. The dual-decoction extraction protocol in [SOP-1](./medicinal-mushroom-extract-sops.md) is specifically designed to enrich for the GLPP fraction, not whole-extract β-glucan; this is part of why "compound content uncharacterized" (#2 above) is load-bearing rather than cosmetic.
 
 **Propagation discipline:** when reishi / GLPP enters [`supplements-stack.md`](./supplements-stack.md) as a catalog entry, OR enters [`gout-action-guide.md`](./gout-action-guide.md) as a specific recommendation, this caveat must travel with it. Currently neither catalog mentions reishi specifically, so no propagation-gap exists today — but the manual `fresh-stack.py` discipline (see [`synthesis/strategic-reflections/`](../synthesis/strategic-reflections/)) will need to flag this as a known caveat-with-the-compound entry when promotion eventually fires.
+
+**Two species-level corrections from 2026-05-19 traditional-name rescan ([`logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md`](../logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md)):**
+
+1. **Lentinan (*L. edodes*) — AIM2 not NLRP3.** Earlier comp-014 framing implicitly grouped lentinan in the "mushroom β-glucan NLRP3 modulator" bucket. The 2026-05-19 species-anchored re-read found explicit MSU-arthritis testing of lentinan that came back **negative on the NLRP3 axis** — shiitake's primary anti-inflammatory contribution travels via the AIM2 inflammasome and cardiovascular eritadenine, not via NLRP3 at MSU-relevant tiers. Lentinan stays on the AIM2 axis for any inflammation framing; it is **not** a candidate for NLRP3-chokepoint coverage. Falsifying finding — preserve directional accuracy.
+
+2. **PSK (*T. versicolor*) activates NLRP3 — wrong direction for gout.** PSK is an approved drug in Japan (cancer adjuvant) where NLRP3 *activation* is therapeutically desired. For a gout indication, this is the opposite direction. Consumer "turkey tail" extract products vary widely in PSK content; standardized PSK is contraindicated for gout. Add to the structure-dependent β-glucan directionality discussion above — like *G. lucidum* EPS, PSK is a "wrong-direction" mushroom polysaccharide for the gout / NLRP3 axis.
 
 ## Seven Phase 7 follow-ups queued
 

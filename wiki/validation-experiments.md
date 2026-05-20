@@ -421,8 +421,9 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
   - Lane 1: WT lactoferrin (`SEEEVAARRAR` linker, residues 353–363 / mature 334–344) — baseline / positive control
   - Lane 2: **Primary candidate `EEEEPAARRAR`** (S353E + V357P, 2 substitutions, 82% WT identity, comp-034 4-of-5 metrics, predicted −29% protease cleavage)
   - Lane 3: **Minimum-change `SEEEPAARRAR`** (true single V357P, 91% WT identity, comp-034 3-of-5, predicted −24% cleavage)
-  - Lane 4: **Aggressive `EEEEPAAPPAP`** (multi-proline, 55% WT identity, comp-034 4-of-5, predicted −43% cleavage)
-  Readout: same SDS-PAGE + anti-Lf Western + iron-binding ELISA as the WT lane, run at day 0 / day 7 / day 14. Outcome: maps comp-034's in silico predictions to wet-lab protease resistance + bilobal-cleavage product pattern. Marginal cost +$1.5–3K (gene synthesis for 3 variants at typical custom-synthesis pricing; reagent costs amortized into the existing §1.10 panel). **Caveat per comp-034 Status field:** the comp-034 pilot used a transparent substitute sampler in place of ProteinMPNN external scripts (auto-mode classifier blocked the `/opt/ProteinMPNN` clone during the run); a single-command ProteinMPNN-rerun verifying the candidate identities is a cheap pre-gene-synthesis check that should run before this arm spends gene-synthesis dollars. See [`etc/bio-ai-tools.md`](./etc/bio-ai-tools.md) A1 install record for the ProteinMPNN status.
+  - Lane 4: **MPNN-native STRICT `NEEEQQQEEEQ`** (multi-substitution, 5-of-5 metrics simultaneously, **10.4× cleavage reduction vs WT** — 0.039 vs 0.407). Identified by the 2026-05-19 genuine ProteinMPNN rerun (E2 walkthrough); the substitute sampler never proposed this candidate. **Swapped in for the originally-planned `EEEEPAAPPAP` aggressive arm** because NEEEQQQEEEQ dominates on all five metrics.
+
+  Readout: same SDS-PAGE + anti-Lf Western + iron-binding ELISA as the WT lane, run at day 0 / day 7 / day 14. Outcome: maps comp-034's in silico predictions to wet-lab protease resistance + bilobal-cleavage product pattern. Marginal cost +$1.5–3K (gene synthesis for 3 variants at typical custom-synthesis pricing; reagent costs amortized into the existing §1.10 panel). **comp-034 substitute-sampler caveat RESOLVED 2026-05-19:** genuine ProteinMPNN rerun (E2 walkthrough; install at `tools/ProteinMPNN/`) validated that the substitute sampler's 15 GREEN candidates are NOT artifacts (mean MPNN log-likelihood 2.74 GREEN vs 3.74 FAIL — clean separation). Substitute sampler's proline-bias + WT-mix-in heuristic was a coarse but functional proxy for what ProteinMPNN encodes structurally. Genuine MPNN additionally found 3 STRICT (5-of-5) candidates the substitute sampler missed: NEEEQQQEEEQ (Lane 4), NEEEEQQEQEQ, NEEEEEQEQEQ — all 10.4× cleavage reduction. Full rerun report: [`logs/proteinmpnn-comp-034-rerun-2026-05-19.md`](../logs/proteinmpnn-comp-034-rerun-2026-05-19.md). See also [`etc/bio-ai-tools.md` §"Protease-vulnerability-to-redesign workflow"](./etc/bio-ai-tools.md) for the generalizable workflow pattern.
 
 **Microbial-purity readout via Plasmidsaurus 16S Amplification (added 2026-05-17):** the 7–14 day room-temperature shio-koji ferment in 15–20% NaCl is a contamination-permissive format — salt-tolerant *Tetragenococcus*, *Halomonas*, and various *Staphylococcus* species can colonize the matrix and confound the proteolysis readout (any drop in heterologous protein band could reflect contaminant proteases, not *A. oryzae* native proteases). A cheap microbial-purity check at the day 0 / day 7 / day 14 time-course points uses Plasmidsaurus's 16S Amplification & Sequencing product: **$45/sample standard tier (5K Nanopore long-reads, full-length 16S → species-level resolution), +$15 per sample for in-house DNA extraction from raw ferment, 1 business day turnaround.** Three time-course points across both the engineered + WT control matrices = 6 samples = **~$360 total** (well under 10% of the §1.10 envelope). Output: taxonomic-composition stacked-bar across the time course. Interpretation: dominant *A. oryzae* signal at day 0 (any other taxa <5% relative abundance), watch for any taxon climbing >10% relative abundance by day 14. If a contaminant climbs, the proteolysis readout for that arm needs to be re-interpreted with the contaminant's known protease profile in mind.
 
@@ -1229,6 +1230,44 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 4. The validation is on pure cordycepin reference standard. Real-world extract performance (cordycepin in a *C. militaris* fermentate matrix) is a separate downstream question — typically the next experiment after a clean reference-standard validation.
 
 **Cross-references:** [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6 (the speculative-marked SOP this experiment validates); [`quantification-ladder.md`](./quantification-ladder.md) (Tier-2 framework); [`self-experiment-protocol.md`](./self-experiment-protocol.md) §12 (genotype-informed-supplement-quantification workflow); [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) (comp-023 engineering thread); [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" (cordycepin-bearing co-products); [§2.7](./validation-experiments.md) (sister Tier 2 assay — ADA-challenge stability test for engineered-koji + cultivated-*Cordyceps* co-formulation).
+
+---
+
+### 1.29 Cordycepin × Pentostatin × Substrate Matrix (added 2026-05-19, source: substrate-engineering lit scan)
+
+**Status:** Proposed | **Cost:** ~$2,500–4,000 (4 cultivation arms × HPLC quantification) | **Weeks:** 8–12 | **Phase:** 1
+
+**Affected wiki:** [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Substrate engineering as the most-accessible cultivation lever" (the Platform Principle 9 anchor); [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-2 (cordycepin + pentostatin HPLC quantification — directly extensible to this experiment); [§SOP-7](./medicinal-mushroom-extract-sops.md) (substrate-engineering protocol matrix this validates).
+
+**What it tests:** How substrate composition modulates the **cordycepin × pentostatin ratio** in *C. militaris* fermentate. The Xia 2017 BGC co-production finding (PMID 29056419) is established — cordycepin and pentostatin come from the same biosynthetic gene cluster — but no primary paper measures the pentostatin:cordycepin ratio under different substrate conditions. **This experiment resolves the whole-fermentate-vs-purified clinical positioning gap** that has been open in the wiki.
+
+**Why this matters platform-wide:** the natural ADA-inhibitor pairing (pentostatin co-produced with cordycepin in fermented *C. militaris*) is the safeguard against cordycepin deamination that purified cordycepin lacks (per `medicinal-mushroom-complement-track.md` §"Combined / synergy candidates" Phase 6 thesis). If substrate composition shifts the pentostatin:cordycepin ratio, this changes:
+- **Whole-fermentate dose-effectiveness** (high-pentostatin batches deliver more durable cordycepin)
+- **Clinical positioning** (whole-fermentate vs. purified cordycepin + separate pentostatin)
+- **Substrate selection for distributed cultivators** (which substrate gives the optimal natural ratio)
+
+**Protocol — four-arm substrate matrix:**
+
+- **Arm A: L-alanine 12 g/L** in PDA (Yu 2024 PMC11698586 protocol; expected 3× cordycepin via Cns2/Cns3 upregulation — pentostatin response unknown)
+- **Arm B: Corn steep liquor hydrolysate 1.5 g/L + peptone 3.5 g/L** (Chang 2024 PMC10931215 protocol; expected 4.83× cordycepin — pentostatin response unknown)
+- **Arm C: Oleic acid 1.0 g/L substrate supplementation** (Turk 2022 PMC9627333 mechanism; expected 1.5–3× cordycepin via fatty-acid-driven Cns1/Cns2 upregulation — pentostatin response unknown)
+- **Arm D: Standard rice-grain solid-state baseline** (reference batch; published cordycepin:pentostatin ratio anchor)
+
+Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; harvest at peak cordycepin (~14d for liquid, ~28d for solid); ethanolic extraction; **SOP-2 HPLC-UV quantification** of both cordycepin (3'-deoxyadenosine, λmax 260 nm) and pentostatin (2'-deoxycoformycin, λmax 282 nm) against pure reference standards.
+
+**Decision rules:**
+- If pentostatin:cordycepin ratio **stays stable across substrates** (within ±20% of reference): the natural ADA-inhibitor pairing is substrate-robust; whole-fermentate positioning remains the canonical platform path independent of substrate optimization. Substrate choice optimizes for cordycepin yield alone.
+- If pentostatin:cordycepin ratio **shifts substantially (>2×) across substrates**: substrate selection becomes a **second engineering lever** — distributed cultivators optimize jointly for cordycepin yield AND pentostatin-protective ratio. New SOP guidance required.
+- If pentostatin **drops disproportionately** under cordycepin-boosting substrates: the high-cordycepin yields come at the cost of the natural ADA-inhibitor safeguard, weakening the whole-fermentate positioning. Purified cordycepin + separate pentostatin becomes the cleaner clinical default.
+
+**Success criteria:**
+- All four arms yield detectable cordycepin (≥50 mg/L liquid or ≥0.5 mg/g DW solid) and pentostatin (≥1 mg/L liquid or ≥0.05 mg/g DW solid).
+- HPLC quantification reproducibility ±15% across triplicate runs per arm.
+- Reference batch (Arm D) cordycepin and pentostatin levels are within published range (per Kontogiannatos 2021 PMC8621325 cordycepin range 30–8570 mg/L liquid / 0.6–77.4 mg/g DW; Xia 2017 pentostatin co-production anchor).
+
+**Dependencies:** SOP-2 HPLC infrastructure (cordycepin + pentostatin reference standards from Sigma C3394 + Cayman 10009152); *C. militaris* working strain with ITS-verified provenance (per SOP-5).
+
+**Cross-references:** [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" (Phase 6 whole-fermentate vs. purified-cordycepin positioning); [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-2 (HPLC infrastructure) + §SOP-7 (substrate-engineering protocol matrix); [`logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`](../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md) (the lit scan that surfaced this gap).
 
 ---
 

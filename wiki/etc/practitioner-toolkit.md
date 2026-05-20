@@ -9,7 +9,9 @@ related:
   - ../enzyme-quantification-protocol.md
   - manual-literature-mining.md
   - autonomous-screening-methodology.md
-sources: []
+  - ../quantification-ladder.md
+sources:
+  - "Picolab v2 GitHub repository: https://github.com/OmkarKovvali/picolab_v2"
 ---
 
 # Practitioner Toolkit
@@ -38,6 +40,7 @@ Kitchen-table / minimal-equipment procedures. Several of these double as platfor
 - **[`enzyme-quantification-protocol.md`](../enzyme-quantification-protocol.md)** — tiered methods for measuring amylase / protease / lipase activity (kitchen → smartphone colorimetry → community-college bench → outsourced contract assay).
 - **[`engineered-koji-protocol.md`](../engineered-koji-protocol.md)** — engineering-stage protocol for *A. oryzae* multi-enzyme fermentation; bridges DIY-bio capability into platform engineering.
 - **[`medicinal-mushroom-extract-sops.md`](../medicinal-mushroom-extract-sops.md)** — planned extract characterization SOPs (GLPP, cordycepin, ergothioneine); operator-independent reproducibility tolerances.
+- **Low-cost liquid-handling automation (Picolab prior art, 2026-05-19).** [Picolab v2](https://github.com/OmkarKovvali/picolab_v2) is an MIT-licensed prototype that repurposes an Ender-style printer gantry into a syringe liquid handler with a FastAPI backend, React dashboard, G-code motion planner, calibration store, camera-assisted OpenAI agent workspace, and operator approval gate before hardware execution. For Open Enzyme, this belongs in the capability-build lane: plausible infrastructure for repeatable tube-scale colorimetric assays, serial dilutions, and [`quantification-ladder.md`](../quantification-ladder.md) Tier 2/3 method development. It is not a sterile, clinical, or production liquid handler. Dedicated page threshold: create `low-cost-lab-automation.md` only after there is OE-specific analysis of bill of materials, positional/volume accuracy, contamination controls, assay compatibility, and first automatable protocols. (Engineering prior art; source: Picolab v2 repository)
 - **Sequencing capability** (sub-bucket of [`personal-genome-protocol.md`](../personal-genome-protocol.md)) — MinION + Dorado + Flye / Clair3 pipeline for personal genome AND CRISPR integration verification, off-target indel screening, plasmid validation, released-strain genome QC.
 
 ## Rigor Disciplines (cross-cutting)
@@ -63,7 +66,7 @@ Methodology that applies to **all** research modes — wet-lab, computational, l
 - **Promote to a `wiki/practitioner-toolkit/` subfolder?** Currently 2 LIVE pages in Self-Experiments, 4–5 in DIY Capability Builds, 6 cross-linked in Rigor Disciplines. Promote when the LIVE count exceeds ~10 and the flat structure becomes unwieldy.
 - **Pharmacogenomic priors → self-experiment monitoring.** Should findings from `personal-genome-protocol.md` feed `self-experiment-protocol.md` as priors? (e.g., "ABCG2 Q141K homozygote → blunted allopurinol response → adjust biomarker monitoring cadence.") Likely yes; integration not yet drafted.
 - **Compound self-trial sub-bucket.** Once the first compound self-trial protocol is written, add a sub-bucket inside Self-Experiments. Candidates from the existing wiki: BHB / ketogenic-state, butyrate, theaflavins, KPV, BPC-157.
-- **DIY-bio capability gaps.** What's missing? Likely candidates: home tissue culture (Caco-2 / HepG2 for permeability + HDAC activity assays); home Western blot equivalent (smartphone-based dot blot? lateral flow strip protocol?); home ELISA equivalent for IL-1β / hs-CRP. Each would unlock a tier of comp-NNN follow-ups.
+- **DIY-bio capability gaps.** What's missing? Likely candidates: home tissue culture (Caco-2 / HepG2 for permeability + HDAC activity assays); home Western blot equivalent (smartphone-based dot blot? lateral flow strip protocol?); home ELISA equivalent for IL-1β / hs-CRP; low-cost liquid-handling automation that can make serial dilutions and colorimetric assay setup operator-independent. Each would unlock a tier of comp-NNN follow-ups.
 
 ## Why this section exists
 

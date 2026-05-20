@@ -9,6 +9,7 @@ related:
   - ai-bio-tools-playbook.md
   - ../chaperone-orthogonal-stacking.md
   - ./open-source-platform.md
+  - practitioner-toolkit.md
 sources:
   - "Ying K, Tyshkovskiy A, Gladyshev VN et al. Autonomous AI Agents Discover Aging Interventions from Millions of Molecular Profiles. bioRxiv 2023.02.28.530532v3 (current version posted late 2025 / early 2026)"
   - "PMC ID PMC12667862; PubMed PMID 41332661"
@@ -102,6 +103,8 @@ Useful prior: keep the AI on the **"produce ranked shortlist + provenance + comp
 
 This connects to the existing comp-NNN gating ritual: comp-NNN produces a verdict (LOW / MODERATE / HIGH / VERY HIGH risk + composite score + explicit limitations), and the human-driven §1.9 / §1.10 gating tests are the autonomy boundary. The shape is right; the discipline of explicitly naming the boundary is what's worth importing.
 
+**Physical-execution counterpart surfaced 2026-05-19: Picolab.** ClockBase is prior art for autonomous ranking over existing data; [Picolab v2](https://github.com/OmkarKovvali/picolab_v2) is early open-source prior art for the other half of the loop: cheap, tube-scale physical execution. The repo wraps a repurposed 3D-printer gantry with a G-code motion planner, calibration layer, camera-assisted agent workspace, and operator-approved execution. For OE methodology, the lesson is not "closed-loop validation is solved"; it is narrower and useful: a lower-cost automation layer could make serial dilution, colorimetric assay setup, and post-step camera verification less operator-variable. The autonomy boundary should remain explicit: AI may propose and preview actions; hardware execution stays gated; biological interpretation and wet-lab commit decisions stay human-reviewed until the assay itself is validated. (Engineering prior art; source: Picolab v2 repository; see [`practitioner-toolkit.md`](./practitioner-toolkit.md) DIY Capability Builds)
+
 ### 5. Computational-to-wet-lab handoff: N-of-M concordance
 
 ClockBase's confidence calibration was **cohort-level concordance across many aging clocks** — if 30+ of 40 clocks agree, green light.
@@ -155,6 +158,7 @@ The audit reaffirms that the N-of-M concordance pattern this page advocates IS t
 - **Map ClockBase's verification-agent pattern onto comp-NNN.** Concrete proposal: every comp-NNN run produces a primary-output report + a verification-pass report (independent agent re-checks load-bearing numbers vs. UniProt / ChEMBL / AlphaFold). The DAF SCR1-4 incident (2026-05-06) is the canonical case showing why this is needed.
 - **N-of-M concordance threshold calibration.** What's the right threshold for promoting comp-NNN candidates to wet lab? ClockBase uses ~30/40 (75%); we likely need 4/5 (80%) or higher for our smaller orthogonal-model set. Pin via retrospective analysis of comp-001 through comp-014 verdicts.
 - **Multi-vendor LLM agent orchestration.** ClockBase appears to use a single LLM across sub-agents. Per OE's multi-model heterogeneity discipline, comp-NNN should consider using different LLMs for hypothesis-generation vs. verification (e.g., Claude generates hypotheses, DeepSeek verifies; or Gemini ranks, Claude reviews).
+- **Map Picolab-style physical execution onto OE assay loops.** Concrete proposal: identify the first non-sterile, tube-scale protocol where low-cost liquid handling would reduce operator variance without introducing safety risk. Leading candidates: serial dilution practice, smartphone colorimetry standard curves, p-NPP lipase setup, DNS amylase setup, or benign dye controls before any biological sample handling.
 - **Surface ouabain as a senolytic-class entry on the modality matrix?** Tangential to gout-NLRP3 directly, but the ouabain-as-senolytic mechanism intersects with NLRP3 priming (cellular senescence → SASP → IL-1β). Decision: not a chase target for Open Enzyme, but worth a one-line note on the modality-chokepoint matrix for completeness.
 
 ## See also

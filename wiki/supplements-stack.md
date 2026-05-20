@@ -266,6 +266,26 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 ---
 
+### Houttuynia cordata Polysaccharide (HCP / HCPM / 鱼腥草 / どくだみ) — Dual-Chokepoint Candidate (added 2026-05-19)
+
+**Category:** Dietary polysaccharide / Multi-chokepoint (CP0 + CP1) / Research-stage
+
+HCP is the first dietary polysaccharide in the OE corpus with documented activity at both the upstream-complement chokepoint (**CP0**: CH50 79-318 µg/mL across crude + purified fractions, multi-target C2 + C4 + C5; comp-018 Phase 2 anchor) and the NLRP3-priming chokepoint (**CP1**: intestinal tight junction restoration + NLRP3/caspase-1/IL-1β suppression in vivo; TLR4-MD2 direct binding via molecular docking + TAK-242 antagonist rescue; Treg/Th17 rebalance via gut-lung axis). The mechanism is structurally and receptor-class-distinct from mushroom β-glucans (which engage Dectin-1) — HCP engages TLR4 partial-agonism / hormetic competitive antagonism in disease-context inflammation.
+
+**Best-anchored preparation:** 19.1 kDa homogeneous HCPM fraction (Chen Daofeng / Lishuang Zhou, Fudan University). Crude HCP and the 60 kDa HCP-2 homogalacturonan fraction have different (and sometimes opposite) directional effects — see Consumer-product caveat below.
+
+**Primary evidence:** Li et al. 2025 *Acta Pharm Sin B* ([PMC12254813](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12254813/), H1N1+MRSA coinfection mouse — single-paper dual CP0+CP1 demonstration, MCC950 rescue confirms NLRP3 on the mechanistic path); Yu et al. 2026 *Biomedicines* ([PMC12937656](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12937656/), TLR4-MD2 direct binding via docking + antagonist rescue); Chen et al. 2019 *Chin J Nat Med* ([PMC7128561](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7128561/), gut barrier + microbiota modulation). Evidence tier: **Animal Model + In Vitro** for dual-mechanism; **Mechanistic Extrapolation** for gout-specific MSU activity (no MSU peritonitis study located).
+
+**Consumer-product caveat — structure-dependent activity (critical):** like medicinal-mushroom β-glucans (per [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Consumer-product caveat"), HCP activity is **structure-dependent.** Purified 60 kDa homogalacturonan HCP-2 fraction is **pro-inflammatory** on naïve human PBMCs in vitro (Cheng 2014 [PMC7112369](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7112369/)) via TLR4. The in vivo anti-inflammatory phenotype emerges in the context of pre-existing inflammation (LPS challenge, viral coinfection). **Commercial Houttuynia capsules with undisclosed polysaccharide-fraction composition cannot be assumed equivalent to the Chen group HCPM preparation.** Dosing on naïve baseline may trigger transient pro-inflammatory cytokine secretion before context-shifting to anti-inflammatory in inflamed-state physiology.
+
+**Dietary access:** Houttuynia leaves are consumed widely in China (鱼腥草, "fishy-smelling herb"), Japan (どくだみ, dokudami), Korea, and Vietnam (diếp cá). Whole-plant preparations are common in TCM (清热解毒 heat-clearing toxin-eliminating formulae). No commercial purified-HCPM product currently available — getting the Chen group's HCPM fraction would require sourcing from a research-grade supplier or replicating the purification protocol.
+
+**Untested in MSU-NLRP3 (gout-specific) model — mechanistic extrapolation only.** Wet-lab MSU peritonitis test is the obvious next step.
+
+**Cross-references:** [complement-c5a-gout.md §9.7](./complement-c5a-gout.md) (CP0 mechanism + CP1 extension), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) §CP1 (Houttuynia entry), [upstream-complement-modulator-sweep-computational.md](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2 Tier 1d), [`logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md`](../logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md).
+
+---
+
 ### Oridonin (Rabdosia rubescens Extract)
 
 **Category:** Natural Compound / NLRP3 Inhibitor (direct, curated in ChEMBL)

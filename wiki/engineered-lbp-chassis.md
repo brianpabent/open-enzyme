@@ -95,6 +95,29 @@ The ranking work in [`food-grade-hdaci-screen-computational.md`](./food-grade-hd
 
 ---
 
+## comp-008 payload ranking — strategic narrowing (added 2026-05-19, Cluster N walkthrough)
+
+The 2026-05-16 [F. prausnitzii heterologous expression feasibility analysis](./f-prausnitzii-heterologous-expression-computational.md) (comp-008) ranked four candidate payloads with explicit composite scores + limiting factors. The ranking sharpens the LBP-chassis strategy decisively:
+
+| Payload | comp-008 composite | Verdict | Limiting factor |
+|---|---|---|---|
+| **Butyrate-pathway boost (native BCoAT)** | **0.748** | **GREEN** (only) | CAI = 1.0 (native gene), no secretion, no folding burden, native pathway alignment. **Toolkit-conditional score 0.875** if engineering toolkit gap closes |
+| sCR1 SCR1-4 truncation | 0.565 | YELLOW | Engineering toolkit maturity + anoxic-environment disulfide folding |
+| Human lactoferrin | 0.540 | YELLOW | Same bottleneck pattern as sCR1 |
+| ***A. flavus* uricase** | **0.393** | **YELLOW-toward-RED** | **Chemistry can't run** — uricase uses O₂ as substrate; *F. prausnitzii* is an obligate anaerobe in an anoxic colonic lumen. Even with a perfect engineering toolkit, the enzyme's catalytic requirement is incompatible with the host's physiology |
+
+**Strategic implications (load-bearing for LBP-chassis track direction):**
+
+1. **Stop considering uricase for *Fp*** — route to EcN (facultative anaerobe, has O₂ in periplasm) or koji (aerobic chassis already established) instead. The 0.393 score isn't a near-miss; it's a fundamental enzyme-host chemistry mismatch.
+2. **Focus *Fp* on butyrate boost as the near-term campaign** — only GREEN payload, native gene/native pathway, lowest engineering complexity. Butyrate at the obligate-anaerobe colonic-luminal compartment is the cleanest gut-lumen-sink amplification path the platform has.
+3. **Defer lactoferrin / sCR1 to after the engineering toolkit matures** — both YELLOW with the toolkit gap + anoxic disulfide folding as gating constraints. Worth revisiting when *Fp* genetic tools advance (Sheridan 2019 *Lachnospiraceae* conjugation precedent may transfer).
+
+**Structural codon advantage (partially offsets toolkit penalty):** human-payload codon profile (~58% GC) vs *Fp* (56.6% GC) = only 1.4 pp mismatch, **best of any chassis in the LBP track.** If the toolkit gap closes, *Fp*'s codon-compatibility advantage makes it the preferred chassis for complex mammalian payloads.
+
+**Queued follow-up: P2-6 comparative chassis matrix.** Fp should be benchmarked for butyrate boost against *E. coli* Nissle (facultative anaerobe, mature toolkit, already used in PULSE) — the engineering-toolkit penalty of 0.25 across all *Fp* payloads may make EcN the faster path even for butyrate, despite *Fp*'s natively higher butyrate titers.
+
+---
+
 ## Other plausible payloads (Phase 2 to scope)
 
 Beyond a butyrate-pathway boost, the LBP chassis class plausibly supports:

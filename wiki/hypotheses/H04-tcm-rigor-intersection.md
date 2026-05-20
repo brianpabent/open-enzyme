@@ -89,6 +89,8 @@ To be defined when the killshot menu is populated. Anticipated structure follows
 
 To be populated. Anticipated relevant failure modes from [linter-design.md](../linter-design.md) §5: published-literature-gap, training-distribution bias (Western-research bias in the corpus), evidence-tier inflation (overstating "Animal Model" claims as "Supported" because TCM has long traditional use), the alternative-medicine-washing failure mode (modern-language dressing without underlying rigor — rule #6's discipline is the guard).
 
+**Partial closure on the ChEMBL-coverage-gap failure mode (added 2026-05-19).** comp-013's original ChEMBL cross-check returned "5/9 compounds had no ChEMBL data" — the falsification card flagged this as a methodology-limit failure (ChEMBL coverage too sparse for TCM-relevant compounds to support rule #2). The 2026-05-19 traditional-name + traditional-formula re-scan ([URAT1 rescan](../../logs/urat1-classical-formula-rescan-2026-05-19.md), [XO rescan](../../logs/xo-classical-formula-rescan-2026-05-19.md)) **partially closes this failure mode**: mangiferin (CHEMBL3611008), apigenin (well-cataloged), acteoside (curated) are all in ChEMBL — the gap wasn't database coverage, it was **seed-list construction at the herb level rather than the formula + marker level**. The methodology fix is the 4-framing query matrix codified in [`manual-literature-mining.md` §"Query-framing for non-Western compound classes"](../etc/manual-literature-mining.md). Rule #2 (ChEMBL cross-checked) survives intact; rule needing reinforcement is *seed-list construction discipline* upstream of rule #2.
+
 ---
 
 ## Status
