@@ -17,10 +17,10 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 
 | Item | Question | Current status | Next action |
 |---|---|---|---|
-| P0-1 | Medicinal mushroom / comp-014 Phase 5b rescue scan | Query plan adequate; J-STAGE exact `霊芝 高尿酸血症` probe weak; WanFang reachable but SPA extraction unresolved; CNKI search blocked | Re-run through WanFang extraction or authenticated/browser CNKI path before treating as negative |
-| P0-2 | East Asian gout genetics: ABCG2 Q141K, HLA-B*58:01, URAT1/W258X | Query plan adequate; J-STAGE local-curl route has strong immediate yield | Run first deep dive here |
-| P0-3 | TCM gout formula re-scan | Query plan adequate; WanFang reachable but SPA extraction unresolved; CNKI search blocked; Baidu captcha | Needs China-source access workaround before evidence update |
-| P0-4 | NLRP3 x Lingzhi/Yun Zhi/Maitake immunomodulation | Query plan adequate; J-STAGE returns fungal beta-glucan immunology reviews; RISS route reachable | Run after P0-2, with explicit "not gout-specific yet" guardrail |
+| P0-1 | Medicinal mushroom / comp-014 Phase 5b rescue scan | Query plan adequate; J-STAGE exact `霊芝 高尿酸血症` probe weak; WanFang reachable but SPA extraction unresolved; CNKI Overseas route corrected | Re-run through CNKI/WanFang extraction before treating as negative |
+| P0-2 | East Asian gout genetics: ABCG2 Q141K, HLA-B*58:01, URAT1/W258X | Query plan adequate; J-STAGE local-curl route has strong immediate yield; CNKI Overseas route corrected | Run first deep dive here |
+| P0-3 | TCM gout formula re-scan | Query plan adequate; WanFang reachable but SPA extraction unresolved; CNKI Overseas route corrected; Baidu captcha | Needs CNKI/WanFang result extraction before evidence update |
+| P0-4 | NLRP3 x Lingzhi/Yun Zhi/Maitake immunomodulation | Query plan adequate; J-STAGE returns fungal beta-glucan immunology reviews; RISS route reachable; CNKI Overseas route corrected | Run after P0-2, with explicit "not gout-specific yet" guardrail |
 
 ## Artifacts
 
@@ -30,6 +30,7 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 - [`inputs/p0-4-nlrp3-mushroom-immunomodulation-query-plan.json`](./inputs/p0-4-nlrp3-mushroom-immunomodulation-query-plan.json)
 - [`outputs/retrieval-probes.json`](./outputs/retrieval-probes.json) - source reachability probes via local curl.
 - [`outputs/jstage-extracted-results.json`](./outputs/jstage-extracted-results.json) - parsed J-STAGE search/article metadata from the successful probes.
+- [`outputs/cnki-oversea-route-correction.json`](./outputs/cnki-oversea-route-correction.json) - corrected CNKI Overseas route probes after `kns.cnki.net` / `www.cnki.net` cert mismatch diagnosis.
 - `outputs/retrieval-probes-raw/` - raw HTML/provenance files. Provenance records when a fetch used local curl and whether insecure TLS was required.
 
 ## Retrieval Findings
@@ -43,7 +44,7 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 
 **WanFang is reachable but not yet extractable.** Local curl returns HTTP 200 for WanFang search pages, but the fetched HTML appears to be an application shell and does not contain query terms or result records. Next remediation is an API/browser extraction path, not more static curl.
 
-**CNKI search is still not solved.** `kns.cnki.net` search URLs fail TLS hostname validation through normal curl and return HTTP 418 even when retried with explicit insecure TLS. Provenance files capture this. `allow_insecure_tls` exists only to document and test that specific failure mode; it is not a scientific-data retrieval success path.
+**CNKI route corrected.** The original `kns.cnki.net` / `www.cnki.net` probes were the wrong path from this network: those hosts CNAME through `oversea.cnki.net.eo.dnse2.com` and present a non-CNKI `*.cdn.myqcloud.com` certificate, then return HTTP 418 when TLS verification is bypassed. The valid-cert entrypoint is [`https://cnki.net/index/`](https://cnki.net/index/), whose page source points search to `https://oversea.cnki.net/kns8s/defaultresult/index?kw=...`. Re-running the four CNKI probes through `oversea.cnki.net` returns HTTP 200 and includes the query terms in the HTML. Result records are still loaded into `#ModuleSearchResult` via JavaScript/API, so the remaining task is result extraction, not domain reachability.
 
 **Baidu/Baidu Scholar is not usable through simple curl.** Baidu redirects to `百度安全验证` captcha pages. Treat Baidu as manual/browser-only unless a compliant API/source route is identified.
 

@@ -1,0 +1,58 @@
+{
+  "created_at_utc": "2026-05-20T16:43:00+00:00",
+  "finding": "cnki.net/index and oversea.cnki.net are the valid-cert CNKI Overseas route; www.cnki.net, kns.cnki.net, search.cnki.com.cn, and scholar.cnki.net CNAME to an edge that presents a non-CNKI *.cdn.myqcloud.com certificate from this network path.",
+  "probes": [
+    {
+      "item": "P0-1",
+      "source": "CNKI Overseas",
+      "query": "灵芝 多糖肽 分离纯化",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20%E5%A4%9A%E7%B3%96%E8%82%BD%20%E5%88%86%E7%A6%BB%E7%BA%AF%E5%8C%96",
+      "status": "fetched",
+      "http_write_out": "200 text/html;charset=UTF-8 https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20%E5%A4%9A%E7%B3%96%E8%82%BD%20%E5%88%86%E7%A6%BB%E7%BA%AF%E5%8C%96",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_5d454b759dd9.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_5d454b759dd9.provenance.json",
+      "bytes": 54547,
+      "query_term_hits_in_html": 3,
+      "notes": "Corrected route discovered 2026-05-20: use oversea.cnki.net, not kns.cnki.net/www.cnki.net CNAME path that presents a Tencent CDN cert mismatch."
+    },
+    {
+      "item": "P0-2",
+      "source": "CNKI Overseas",
+      "query": "ABCG2 Q141K 痛风",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=ABCG2%20Q141K%20%E7%97%9B%E9%A3%8E",
+      "status": "fetched",
+      "http_write_out": "200 text/html;charset=UTF-8 https://oversea.cnki.net/kns8s/defaultresult/index?kw=ABCG2%20Q141K%20%E7%97%9B%E9%A3%8E",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_9767284496ca.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_9767284496ca.provenance.json",
+      "bytes": 54536,
+      "query_term_hits_in_html": 3,
+      "notes": "Corrected route discovered 2026-05-20: use oversea.cnki.net, not kns.cnki.net/www.cnki.net CNAME path that presents a Tencent CDN cert mismatch."
+    },
+    {
+      "item": "P0-3",
+      "source": "CNKI Overseas",
+      "query": "四妙散 高尿酸血症 URAT1",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9B%9B%E5%A6%99%E6%95%A3%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87%20URAT1",
+      "status": "fetched",
+      "http_write_out": "200 text/html;charset=UTF-8 https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%9B%9B%E5%A6%99%E6%95%A3%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87%20URAT1",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_3f7dcc27fcba.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_3f7dcc27fcba.provenance.json",
+      "bytes": 54549,
+      "query_term_hits_in_html": 3,
+      "notes": "Corrected route discovered 2026-05-20: use oversea.cnki.net, not kns.cnki.net/www.cnki.net CNAME path that presents a Tencent CDN cert mismatch."
+    },
+    {
+      "item": "P0-4",
+      "source": "CNKI Overseas",
+      "query": "灵芝孢子粉 NLRP3 炎症小体",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%AD%A2%E5%AD%90%E7%B2%89%20NLRP3%20%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93",
+      "status": "fetched",
+      "http_write_out": "200 text/html;charset=UTF-8 https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%AD%A2%E5%AD%90%E7%B2%89%20NLRP3%20%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_5fe7e40f56f9.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_5fe7e40f56f9.provenance.json",
+      "bytes": 54552,
+      "query_term_hits_in_html": 3,
+      "notes": "Corrected route discovered 2026-05-20: use oversea.cnki.net, not kns.cnki.net/www.cnki.net CNAME path that presents a Tencent CDN cert mismatch."
+    }
+  ]
+}
