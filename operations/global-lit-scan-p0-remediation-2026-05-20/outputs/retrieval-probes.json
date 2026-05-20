@@ -1,0 +1,150 @@
+{
+  "created_at_utc": "2026-05-20T15:37:53+00:00",
+  "updated_at_utc": "2026-05-20T15:39:01+00:00",
+  "probes": [
+    {
+      "item": "P0-1",
+      "source": "CNKI",
+      "query": "灵芝 多糖肽 分离纯化",
+      "url": "https://kns.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20%E5%A4%9A%E7%B3%96%E8%82%BD%20%E5%88%86%E7%A6%BB%E7%BA%AF%E5%8C%96",
+      "status": "failed_even_with_insecure_tls",
+      "error": "curl failed for https://kns.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20%E5%A4%9A%E7%B3%96%E8%82%BD%20%E5%88%86%E7%A6%BB%E7%BA%AF%E5%8C%96; provenance written to operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/kns.cnki.net_kns8s_defaultresult_index_5d454b759dd9.provenance.json"
+    },
+    {
+      "item": "P0-1",
+      "source": "WanFang",
+      "query": "菌草 灵芝 栽培",
+      "url": "https://s.wanfangdata.com.cn/paper?q=%E8%8F%8C%E8%8D%89%20%E7%81%B5%E8%8A%9D%20%E6%A0%BD%E5%9F%B9",
+      "status": "fetched",
+      "http_write_out": "200 text/html https://s.wanfangdata.com.cn/paper?q=%E8%8F%8C%E8%8D%89%20%E7%81%B5%E8%8A%9D%20%E6%A0%BD%E5%9F%B9",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/s.wanfangdata.com.cn_paper_df8f80d5f848.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/s.wanfangdata.com.cn_paper_df8f80d5f848.provenance.json",
+      "bytes": 170396,
+      "title": "万方数据知识服务平台",
+      "query_term_hits_in_html": 0,
+      "notes": "Fetched with local curl so firewall-whitelisted Chinese / Asian academic domains use the laptop network path, not model-vendor egress."
+    },
+    {
+      "item": "P0-1",
+      "source": "J-STAGE",
+      "query": "霊芝 高尿酸血症",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E9%9C%8A%E8%8A%9D%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87",
+      "status": "fetched",
+      "http_write_out": "200 text/html;charset=utf-8 https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E9%9C%8A%E8%8A%9D%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_ja_a9dabfd220fe.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_ja_a9dabfd220fe.provenance.json",
+      "bytes": 66003,
+      "title": "詳細検索結果",
+      "query_term_hits_in_html": 0,
+      "notes": "Fetched with local curl so firewall-whitelisted Chinese / Asian academic domains use the laptop network path, not model-vendor egress."
+    },
+    {
+      "item": "P0-2",
+      "source": "CNKI",
+      "query": "ABCG2 Q141K 痛风",
+      "url": "https://kns.cnki.net/kns8s/defaultresult/index?kw=ABCG2%20Q141K%20%E7%97%9B%E9%A3%8E",
+      "status": "failed_even_with_insecure_tls",
+      "error": "curl failed for https://kns.cnki.net/kns8s/defaultresult/index?kw=ABCG2%20Q141K%20%E7%97%9B%E9%A3%8E; provenance written to operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/kns.cnki.net_kns8s_defaultresult_index_9767284496ca.provenance.json"
+    },
+    {
+      "item": "P0-2",
+      "source": "WanFang",
+      "query": "HLA-B*58:01 别嘌醇 严重皮肤不良反应",
+      "url": "https://s.wanfangdata.com.cn/paper?q=HLA-B%2A58%3A01%20%E5%88%AB%E5%98%8C%E9%86%87%20%E4%B8%A5%E9%87%8D%E7%9A%AE%E8%82%A4%E4%B8%8D%E8%89%AF%E5%8F%8D%E5%BA%94",
+      "status": "fetched",
+      "http_write_out": "200 text/html https://s.wanfangdata.com.cn/paper?q=HLA-B%2A58%3A01%20%E5%88%AB%E5%98%8C%E9%86%87%20%E4%B8%A5%E9%87%8D%E7%9A%AE%E8%82%A4%E4%B8%8D%E8%89%AF%E5%8F%8D%E5%BA%94",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/s.wanfangdata.com.cn_paper_254ac0f3a320.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/s.wanfangdata.com.cn_paper_254ac0f3a320.provenance.json",
+      "bytes": 170396,
+      "title": "万方数据知识服务平台",
+      "query_term_hits_in_html": 0,
+      "notes": "Fetched with local curl so firewall-whitelisted Chinese / Asian academic domains use the laptop network path, not model-vendor egress."
+    },
+    {
+      "item": "P0-2",
+      "source": "J-STAGE",
+      "query": "URAT1 W258X 痛風",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=URAT1%20W258X%20%E7%97%9B%E9%A2%A8",
+      "status": "fetched",
+      "http_write_out": "200 text/html;charset=utf-8 https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=URAT1%20W258X%20%E7%97%9B%E9%A2%A8",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_ja_0e8cced71202.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_ja_0e8cced71202.provenance.json",
+      "bytes": 129271,
+      "title": "詳細検索結果",
+      "query_term_hits_in_html": 53,
+      "notes": "Fetched with local curl so firewall-whitelisted Chinese / Asian academic domains use the laptop network path, not model-vendor egress."
+    },
+    {
+      "item": "P0-3",
+      "source": "CNKI",
+      "query": "四妙散 高尿酸血症 URAT1",
+      "url": "https://kns.cnki.net/kns8s/defaultresult/index?kw=%E5%9B%9B%E5%A6%99%E6%95%A3%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87%20URAT1",
+      "status": "failed_even_with_insecure_tls",
+      "error": "curl failed for https://kns.cnki.net/kns8s/defaultresult/index?kw=%E5%9B%9B%E5%A6%99%E6%95%A3%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87%20URAT1; provenance written to operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/kns.cnki.net_kns8s_defaultresult_index_3f7dcc27fcba.provenance.json"
+    },
+    {
+      "item": "P0-3",
+      "source": "WanFang",
+      "query": "白虎加桂枝汤 痛风",
+      "url": "https://s.wanfangdata.com.cn/paper?q=%E7%99%BD%E8%99%8E%E5%8A%A0%E6%A1%82%E6%9E%9D%E6%B1%A4%20%E7%97%9B%E9%A3%8E",
+      "status": "fetched",
+      "http_write_out": "200 text/html https://s.wanfangdata.com.cn/paper?q=%E7%99%BD%E8%99%8E%E5%8A%A0%E6%A1%82%E6%9E%9D%E6%B1%A4%20%E7%97%9B%E9%A3%8E",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/s.wanfangdata.com.cn_paper_d08dc37f47ee.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/s.wanfangdata.com.cn_paper_d08dc37f47ee.provenance.json",
+      "bytes": 170396,
+      "title": "万方数据知识服务平台",
+      "query_term_hits_in_html": 0,
+      "notes": "Fetched with local curl so firewall-whitelisted Chinese / Asian academic domains use the laptop network path, not model-vendor egress."
+    },
+    {
+      "item": "P0-3",
+      "source": "Baidu",
+      "query": "土茯苓 高尿酸血症",
+      "url": "https://www.baidu.com/s?wd=%E5%9C%9F%E8%8C%AF%E8%8B%93%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87",
+      "status": "fetched",
+      "http_write_out": "200 text/html https://wappass.baidu.com/static/captcha/tuxing_v2.html?&logid=11513217956579687912&ak=c27bbc89afca0463650ac9bde68ebe06&backurl=https%3A%2F%2Fwww.baidu.com%2Fs%3Fwd%3D%25E5%259C%259F%25E8%258C%25AF%25E8%258B%2593%2520%25E9%25AB%2598%25E5%25B0%25BF%25E9%2585%25B8%25E8%25A1%2580%25E7%2597%2587&ext=x9G9QDmMXq%2FNo87gjGO0P%2BP3JkGWSiaTf4iyTpah%2BeMmQTcmpWyo3%2FdfvHZy90eGUgqUK9LXd1cIlztrhMwiv5LGqKWhTZD8Q7xZpGkscD6lBiiij27rLhSp84MbPVpj&signature=e89a84369935e6fd6f26f3e1cab9a9b0&timestamp=1779291464",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.baidu.com_s_9c26894488bb.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.baidu.com_s_9c26894488bb.provenance.json",
+      "bytes": 1488,
+      "title": "百度安全验证",
+      "query_term_hits_in_html": 0,
+      "notes": "Fetched with local curl so firewall-whitelisted Chinese / Asian academic domains use the laptop network path, not model-vendor egress."
+    },
+    {
+      "item": "P0-4",
+      "source": "CNKI",
+      "query": "灵芝孢子粉 NLRP3 炎症小体",
+      "url": "https://kns.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%AD%A2%E5%AD%90%E7%B2%89%20NLRP3%20%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93",
+      "status": "failed_even_with_insecure_tls",
+      "error": "curl failed for https://kns.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%AD%A2%E5%AD%90%E7%B2%89%20NLRP3%20%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93; provenance written to operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/kns.cnki.net_kns8s_defaultresult_index_5fe7e40f56f9.provenance.json"
+    },
+    {
+      "item": "P0-4",
+      "source": "J-STAGE",
+      "query": "マイタケ グリフォラン 炎症",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E3%83%9E%E3%82%A4%E3%82%BF%E3%82%B1%20%E3%82%B0%E3%83%AA%E3%83%95%E3%82%A9%E3%83%A9%E3%83%B3%20%E7%82%8E%E7%97%87",
+      "status": "fetched",
+      "http_write_out": "200 text/html;charset=utf-8 https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E3%83%9E%E3%82%A4%E3%82%BF%E3%82%B1%20%E3%82%B0%E3%83%AA%E3%83%95%E3%82%A9%E3%83%A9%E3%83%B3%20%E7%82%8E%E7%97%87",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_ja_711487daf162.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_ja_711487daf162.provenance.json",
+      "bytes": 70830,
+      "title": "詳細検索結果",
+      "query_term_hits_in_html": 0,
+      "notes": "Fetched with local curl so firewall-whitelisted Chinese / Asian academic domains use the laptop network path, not model-vendor egress."
+    },
+    {
+      "item": "P0-4",
+      "source": "RISS",
+      "query": "운지버섯 NLRP3",
+      "url": "https://www.riss.kr/search/Search.do?query=%EC%9A%B4%EC%A7%80%EB%B2%84%EC%84%AF%20NLRP3",
+      "status": "fetched",
+      "http_write_out": "200 text/html; charset=utf-8 https://www.riss.kr/search/Search.do?query=%EC%9A%B4%EC%A7%80%EB%B2%84%EC%84%AF%20NLRP3",
+      "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.riss.kr_search_Search.do_ad81e0e2efbd.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.riss.kr_search_Search.do_ad81e0e2efbd.provenance.json",
+      "bytes": 175226,
+      "title": "RISS 검색 - 통합검색",
+      "query_term_hits_in_html": 24,
+      "notes": "Fetched with local curl so firewall-whitelisted Chinese / Asian academic domains use the laptop network path, not model-vendor egress."
+    }
+  ]
+}

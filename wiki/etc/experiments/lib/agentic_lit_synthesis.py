@@ -232,6 +232,8 @@ def build_language_native_query_plan(
     pathologies=None,
     languages=("zh", "ja", "ko"),
     western_queries=None,
+    natural_product_scope=True,
+    required_frames=None,
 ):
     """
     Build query framings for non-English lit scans using native-language terms.
@@ -315,8 +317,9 @@ def build_language_native_query_plan(
 
     return {
         "scope": scope,
-        "natural_product_scope": True,
+        "natural_product_scope": natural_product_scope,
         "query_framing_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+        "required_query_frames": _dedupe_keep_order(required_frames or LANGUAGE_NATIVE_QUERY_RULES["zh"]["required_frames"]),
         "created_at_utc": utc_now_iso(),
         "framings": framings,
         "notes": [
@@ -351,12 +354,10 @@ def audit_query_strategy_language_framing(query_strategy, languages=("zh", "ja",
             queries_by_language[language].extend(framing.get("queries", []))
 
     missing = []
-    required_types = {
-        "mechanism_native",
-        "species_original_language",
-        "traditional_formula",
-        "traditional_pathology",
-    }
+    required_types = set(query_strategy.get(
+        "required_query_frames",
+        LANGUAGE_NATIVE_QUERY_RULES["zh"]["required_frames"],
+    ))
     missing_types = sorted(required_types - framing_types)
     for framing_type in missing_types:
         missing.append({
@@ -485,7 +486,7 @@ def host_allowed_for_local_curl(hostname, allowed_suffixes=None):
     return False
 
 
-def local_curl_fetch(url, output_dir, allowed_suffixes=None, timeout_seconds=90):
+def local_curl_fetch(url, output_dir, allowed_suffixes=None, timeout_seconds=90, allow_insecure_tls=False):
     """
     Fetch a URL via the local machine's curl binary and write provenance.
 
@@ -503,7 +504,11 @@ def local_curl_fetch(url, output_dir, allowed_suffixes=None, timeout_seconds=90)
 
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    stem = safe_filename(f"{parsed.netloc}{parsed.path}") or "fetch"
+    query_hash = ""
+    if parsed.query:
+        import hashlib
+        query_hash = "_" + hashlib.sha256(parsed.query.encode("utf-8")).hexdigest()[:12]
+    stem = safe_filename(f"{parsed.netloc}{parsed.path}{query_hash}") or "fetch"
     body_path = output_dir / f"{stem}.html"
     meta_path = output_dir / f"{stem}.provenance.json"
 
@@ -523,6 +528,8 @@ def local_curl_fetch(url, output_dir, allowed_suffixes=None, timeout_seconds=90)
         "%{http_code} %{content_type} %{url_effective}",
         url,
     ]
+    if allow_insecure_tls:
+        cmd.insert(1, "--insecure")
     completed = subprocess.run(cmd, capture_output=True, text=True, check=False)
     provenance = {
         "url": url,
@@ -532,6 +539,7 @@ def local_curl_fetch(url, output_dir, allowed_suffixes=None, timeout_seconds=90)
         "hostname": parsed.hostname,
         "allowed_suffixes": list(allowed_suffixes or DEFAULT_LOCAL_CURL_ALLOWED_SUFFIXES),
         "returncode": completed.returncode,
+        "allow_insecure_tls": allow_insecure_tls,
         "stdout": completed.stdout.strip(),
         "stderr": completed.stderr.strip(),
         "body_path": str(body_path),

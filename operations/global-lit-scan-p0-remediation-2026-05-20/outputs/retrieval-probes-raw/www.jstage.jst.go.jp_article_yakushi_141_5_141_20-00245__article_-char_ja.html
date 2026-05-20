@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<head>
+
+
+
+<!-- 2.3.9 -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="J-STAGE">
+<meta name="citation_journal_title" content="YAKUGAKU ZASSHI" />
+<meta name="citation_journal_abbrev" content="薬学雑誌" />
+<meta name="citation_journal_abbrev" content="YAKUGAKU ZASSHI" />
+<meta name="citation_publisher" content="公益社団法人 日本薬学会" />
+<meta name="citation_author" content="大野 尚仁" />
+<meta name="citation_author_institution" content="東京薬科大学" />
+<meta name="citation_title" content="真菌βグルカンと生体防御" />
+<meta name="citation_publication_date" content="2021/05/01" />
+<meta name="citation_online_date" content="2021/05/01" />
+<meta name="citation_volume" content="141" />
+<meta name="citation_issue" content="5" />
+<meta name="citation_firstpage" content="711" />
+<meta name="citation_lastpage" content="730" />
+<meta name="citation_doi" content="10.1248/yakushi.20-00245" />
+<meta name="citation_fulltext_world_readable" content="" />
+<meta name="citation_pdf_url" content="https://www.jstage.jst.go.jp/article/yakushi/141/5/141_20-00245/_pdf" />
+<meta name="citation_issn" content="0031-6903" />
+<meta name="citation_issn" content="1347-5231" />
+<meta name="citation_language" content="ja" />
+<meta name="citation_keywords" content="fungus" />
+<meta name="citation_keywords" content="cell wall" />
+<meta name="citation_keywords" content="β-glucan" />
+<meta name="citation_keywords" content="pathogen associated molecular pattern" />
+<meta name="citation_keywords" content="dectin-1" />
+<meta name="citation_keywords" content="antibody" />
+<meta name="citation_reference" content="1) Whittaker R. H., Science, 163, 150-160 (1969)." />
+<meta name="citation_reference" content="2) Bartnicki-Garcia S., Annu. Rev. Microbiol., 22, 87-108 (1968)." />
+<meta name="citation_reference" content="3) De Vuyst L., Harth H., Van Kerrebroeck S., Leroy F., Int. J. Food Microbiol., 239, 26-34 (2016)." />
+<meta name="citation_reference" content="4) Pajot H. F., Delgado O. D., de Figueroa L. I., Fariña J. I., Antonie Van Leeuwenhoek, 99, 443-456 (2011)." />
+<meta name="citation_reference" content="5) May T. W., IMA Fungus, 8, 189-203 (2017)." />
+<meta name="citation_reference" content="6) Hibbett D. S., Blackwell M., James T. Y., Spatafora J. W., Taylor J. W., Vilgalys R., IMA Fungus, 9, 291-298 (2018)." />
+<meta name="citation_reference" content="7) Wingfield M. J., De Beer Z. W., Slippers B., Wingfield B. D., Groenewald J. Z., Lombard L., Crous P. W., Mol. Plant Pathol., 13, 604-613 (2012)." />
+<meta name="citation_reference" content="8) Klis F. M., Mol P., Hellingwerf K., Brul S., FEMS Microbiol. Rev., 26, 239-256 (2002)." />
+<meta name="citation_reference" content="9) De Groot P. W., Ram A. F., Klis F. M., Fungal Genet. Biol., 42, 657-675 (2005)." />
+<meta name="citation_reference" content="10) Reese A. J., Yoneda A., Breger J. A., Beauvais A., Liu H., Griffith C. L., Bose I., Kim M. J., Skau C., Yang S., Sefko J. A., Osumi M., Latge J. P., Mylonakis E., Doering T. L., Mol. Microbiol., 63, 1385-1398 (2007)." />
+<meta name="citation_reference" content="11) Reiss E., Huppert M., Cherniak R., Curr. Top. Med. Mycol., 1, 172-207 (1985)." />
+<meta name="citation_reference" content="12) Munro S., FEBS Lett., 498, 223-227 (2001)." />
+<meta name="citation_reference" content="13) Shinohara H., Nagi-Miura N., Ishibashi K., Adachi Y., Ishida-Okawara A., Oharaseki T., Takahashi K., Naoe S., Suzuki K., Ohno N., Biol. Pharm. Bull., 29, 1854-1861 (2006)." />
+<meta name="citation_reference" content="14) Miyabe C., Miyabe Y., Bricio-Moreno L., Lian J., Rahimi R. A., Miura N. N., Ohno N., Iwakura Y., Kawakami T., Luster A. D., J. Clin. Invest., 130, 3610-3624 (2019)." />
+<meta name="citation_reference" content="15) Hirata N., Ishibashi K., Sato W., Nagi-Miura N., Adachi Y., Ohta S., Ohno N., Immunopharmacol. Immunotoxicol., 35, 594-604 (2013)." />
+<meta name="citation_reference" content="16) Douglas C. M., D&apos;Ippolito J. A., Shei G. J., Meinz M., Onishi J., Marrinan J. A., Li W., Abruzzo G. K., Flattery A., Bartizal K., Mitchell A., Kurtz M. B., Antimicrob. Agents Chemother., 41, 2471-2479 (1997)." />
+<meta name="citation_reference" content="17) Almeida I. C., Neville D. C., Mehlert A., Treumann A., Ferguson M. A., Previato J. O., Travassos L. R., Glycobiology, 6, 507-515 (1996)." />
+<meta name="citation_reference" content="18) Nakamata K., Kurita T., Bhuiyan M. S., Sato K., Noda Y., Yoda K., J. Biol. Chem., 282, 34315-34324 (2007)." />
+<meta name="citation_reference" content="19) He X., Li S., Kaminskyj S. G., Mol. Microbiol., 91, 579-595 (2014)." />
+<meta name="citation_reference" content="20) He X., Li S., Kaminskyj S. G. W., Med. Mycol., 56, 645-648 (2018)." />
+<meta name="citation_reference" content="21) Reese A. J., Doering T. L., Mol. Microbiol., 50, 1401-1409 (2003)." />
+<meta name="citation_reference" content="22) Taborda C. P., Buccheri R., Benard G., Duarte-Neto A. N., Nosanchuk J. D., Travassos L. R., Curr. Top. Med. Chem., 18, 1333-1348 (2018)." />
+<meta name="citation_reference" content="23) Hole C. R., Lam W. C., Upadhya R., Lodge J. K., mBio, 11, e03373-19 (2020)." />
+<meta name="citation_reference" content="24) Lam W. C., Upadhya R., Specht C. A., Ragsdale A. E., Hole C. R., Levitz S. M., Lodge J. K., mSphere, 4, e00644-19 (2019)." />
+<meta name="citation_reference" content="25) Upadhya R., Baker L. G., Lam W. C., Specht C. A., Donlin M. J., Lodge J. K., mBio, 9, e02087-18 (2018)." />
+<meta name="citation_reference" content="26) Sanz A. B., García R., Rodríguez-Peña J. M., Arroyo J., J. Fungi (Basel), 4, 1 (2018)." />
+<meta name="citation_reference" content="27) Philip B., Levin D. E., Mol. Cell. Biol., 21, 271-280 (2001)." />
+<meta name="citation_reference" content="28) Rodríguez-Peña J. M., García R., Nombela C., Arroyo J., Yeast, 27, 495-502 (2010)." />
+<meta name="citation_reference" content="29) Tada R., Nagi-Miura N., Adachi Y., Ohno N., Microb. Pathog., 44, 379-388 (2008)." />
+<meta name="citation_reference" content="30) Ishibashi K., Miura N. N., Adachi Y., Tamura H., Tanaka S., Ohno N., FEMS Immunol. Med. Microbiol., 42, 155-166 (2004)." />
+<meta name="citation_reference" content="31) Ohno N., Suzuki I., Oikawa S., Sato K., Miyazaki T., Yadomae T., Chem. Pharm. Bull., 32, 1142-1151 (1984)." />
+<meta name="citation_reference" content="32) Ohno N., Suzuki I., Yadomae T., Chem. Pharm. Bull., 34, 1362-1365 (1986)." />
+<meta name="citation_reference" content="33) Ohno N., Miura T., Saito K., Nishijima M., Miyazaki T., Yadomae T., Chem. Pharm. Bull., 40, 2215-2218 (1992)." />
+<meta name="citation_reference" content="34) Mimura H., Ohno N., Suzuki I., Yadomae T., Chem. Pharm. Bull., 33, 5096-5099 (1985)." />
+<meta name="citation_reference" content="35) Ohno N., Miura N. N., Nakajima M., Yadomae T., Biol. Pharm. Bull., 23, 866-872 (2000)." />
+<meta name="citation_reference" content="36) Ohno N., Furukawa M., Miura N. N., Adachi Y., Motoi M., Yadomae T., Biol. Pharm. Bull., 24, 820-828 (2001)." />
+<meta name="citation_reference" content="37) Ohno N., Iino K., Takeyama T., Suzuki I., Sato K., Oikawa S., Miyazaki T., Yadomae T., Chem. Pharm. Bull., 33, 3395-3401 (1985)." />
+<meta name="citation_reference" content="38) Iino K., Ohno N., Suzuki I., Sato K., Oikawa S., Yadomae T., Chem. Pharm. Bull., 33, 4950-4956 (1985)." />
+<meta name="citation_reference" content="39) Adachi Y., Ohno N., Ohsawa M., Sato K., Oikawa S., Yadomae T., Chem. Pharm. Bull., 37, 1838-1843 (1989)." />
+<meta name="citation_reference" content="40) Ohno N., Adachi Y., Suzuki I., Sato K., Oikawa S., Yadomae T., Chem. Pharm. Bull., 34, 1709-1715 (1986)." />
+<meta name="citation_reference" content="41) Shinohara H., Ohno N., Yadomae T., Chem. Pharm. Bull., 36, 819-823 (1988)." />
+<meta name="citation_reference" content="42) Ishimoto Y., Ishibashi K. I., Yamanaka D., Adachi Y., Ito H., Igami K., Miyazaki T., Ohno N., Int. J. Med. Mushrooms, 19, 1-16 (2017)." />
+<meta name="citation_reference" content="43) Hida S., Nagi-Miura N., Adachi Y., Ohno N., Microbiol. Immunol., 50, 453-461 (2006)." />
+<meta name="citation_reference" content="44) Sugawara T., Takahashi S., Osumi M., Ohno N., Carbohydr. Res., 339, 2255-2265 (2004)." />
+<meta name="citation_reference" content="45) Ohno N., Uchiyama M., Tsuzuki A., Tokunaka K., Miura N. N., Adachi Y., Aizawa M. W., Tamura H., Tanaka S., Yadomae T., Carbohydr. Res., 316, 161-172 (1999)." />
+<meta name="citation_reference" content="46) Miura N. N., Adachi Y., Yadomae T., Tamura H., Tanaka S., Ohno N., Microbiol. Immunol., 47, 173-182 (2003)." />
+<meta name="citation_reference" content="47) Suzuki T., Ohno N., Ohshima Y., Yadomae T., FEMS Immunol. Med. Microbiol., 21, 223-230 (1998)." />
+<meta name="citation_reference" content="48) Adachi Y., Ohno N., Ohsawa M., Oikawa S., Yadomae T., Chem. Pharm. Bull., 38, 477-481 (1990)." />
+<meta name="citation_reference" content="49) Ishimoto Y., Ishibashi K. I., Yamanaka D., Adachi Y., Kanzaki K., Okita K., Iwakura Y., Ohno N., Int. J. Biol. Macromol., 104, 367-376 (2017)." />
+<meta name="citation_reference" content="50) Ishimoto Y., Ishibashi K. I., Yamanaka D., Adachi Y., Kanzaki K., Iwakura Y., Ohno N., Int. J. Biol. Macromol., 107, 2269-2278 (2018)." />
+<meta name="citation_reference" content="51) Tanaka H., Kawai T., Adachi Y., Ohno N., Takahashi T., Chem. Commun. (Camb.), 46, 8249-8251 (2010)." />
+<meta name="citation_reference" content="52) Tada R., Nagi-Miura N., Adachi Y., Ohno N., Chem. Pharm. Bull., 55, 992-995 (2007)." />
+<meta name="citation_reference" content="53) Tada R., Harada T., Nagi-Miura N., Adachi Y., Nakajima M., Yadomae T., Ohno N., Carbohydr. Res., 342, 2611-2618 (2007)." />
+<meta name="citation_reference" content="54) Tada R., Tanioka A., Iwasawa H., Hatashima K., Shoji Y., Ishibashi K., Adachi Y., Yamazaki M., Tsubaki K., Ohno N., Glycoconj. J., 25, 851-861 (2008)." />
+<meta name="citation_reference" content="55) Tada R., Adachi Y., Ishibashi K., Ohno N., Carbohydr. Res., 344, 400-404 (2009)." />
+<meta name="citation_reference" content="56) Tada R., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 14, 339-345 (2012)." />
+<meta name="citation_reference" content="57) Ohno N., Yadomae T., Carbohydr. Res., 159, 293-302 (1987)." />
+<meta name="citation_reference" content="58) Suda M., Ohno N., Adachi Y., Yadomae T., Carbohydr. Res., 270, 107-113 (1995)." />
+<meta name="citation_reference" content="59) Ohno N., Ohsawa M., Sato K., Oikawa S., Yadomae T., Chem. Pharm. Bull., 35, 2585-2588 (1987)." />
+<meta name="citation_reference" content="60) Ishibashi K., Morita M., Motoi M., Liu Y., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 15, 115-126 (2013)." />
+<meta name="citation_reference" content="61) Inoue K., Takano H., Oda T., Yanagisawa R., Tamura H., Ohno N., Adachi Y., Ishibashi K., Yoshikawa T., Int. J. Immunopathol. Pharmacol., 20, 499-508 (2007)." />
+<meta name="citation_reference" content="62) Suzuki T., Ohno N., Saito K., Yadomae T., J. Pharmacobiodyn., 15, 277-285 (1992)." />
+<meta name="citation_reference" content="63) Ohno N., Suzuki T., Saito K., Yadomae T., J. Pharmacobiodyn., 13, 525-532 (1990)." />
+<meta name="citation_reference" content="64) Ariizumi K., Shen G. L., Shikano S., Xu S., Ritter R. 3rd, Kumamoto T., Edelbaum D., Morita A., Bergstresser P. R., Takashima A., J. Biol. Chem., 275, 20157-20167 (2000)." />
+<meta name="citation_reference" content="65) Brown G. D., Taylor P. R., Reid D. M., Willment J. A., Williams D. L., Martinez-Pomares L., Wong S. Y., Gordon S., J. Exp. Med., 196, 407-412 (2002)." />
+<meta name="citation_reference" content="66) Yokota K., Takashima A., Bergstresser P. R., Ariizumi K., Gene, 272, 51-60 (2001)." />
+<meta name="citation_reference" content="67) Taylor P. R., Brown G. D., Reid D. M., Willment J. A., Martinez-Pomares L., Gordon S., Wong S. Y., J. Immunol., 169, 3876-3882 (2002)." />
+<meta name="citation_reference" content="68) Adachi Y., Ishii T., Ikeda Y., Hoshino A., Tamura H., Aketagawa J., Tanaka S., Ohno N., Infect. Immun., 72, 4159-4171 (2004)." />
+<meta name="citation_reference" content="69) del Pilar Jiménez-A M., Viriyakosol S., Walls L., Datta S. K., Kirkland T., Heinsbroek S. E., Brown G., Fierer J., Genes Immun., 9, 338-348 (2008)." />
+<meta name="citation_reference" content="70) Brown J., O&apos;Callaghan C. A., Marshall A. S., Gilbert R. J., Siebold C., Gordon S., Brown G. D., Jones E. Y., Protein Sci., 16, 1042-1052 (2007)." />
+<meta name="citation_reference" content="71) Harada T., Kawaminami H., Miura N. N., Adachi Y., Nakajima M., Yadomae T., Ohno N., J. Interferon Cytokine Res., 26, 235-247 (2006)." />
+<meta name="citation_reference" content="72) Harada T., Miura N. N., Adachi Y., Nakajima M., Yadomae T., Ohno N., J. Interferon Cytokine Res., 28, 477-486 (2008)." />
+<meta name="citation_reference" content="73) Hida T. H., Kawaminami H., Ishibashi K., Miura N. N., Adachi Y., Yadomae T., Ohno N., Microbiol. Immunol., 53, 391-402 (2009)." />
+<meta name="citation_reference" content="74) Harada T., Miura N. N., Adachi Y., Nakajima M., Yadomae T., Ohno N., J. Interferon Cytokine Res., 22, 1227-1239 (2002)." />
+<meta name="citation_reference" content="75) Harada T., Miura N. N., Adachi Y., Nakajima M., Yadomae T., Ohno N., J. Interferon Cytokine Res., 24, 478-489 (2004)." />
+<meta name="citation_reference" content="76) Saijo S., Fujikado N., Furuta T., Chung S. H., Kotaki H., Seki K., Sudo K., Akira S., Adachi Y., Ohno N., Kinjo T., Nakamura K., Kawakami K., Iwakura Y., Nat. Immunol., 8, 39-46 (2007)." />
+<meta name="citation_reference" content="77) Usluogullari B., Gumus I., Gunduz E., Kaygusuz I., Simavli S., Acar M., Oznur M., Gunduz M., Kafali H., Mol. Biol. Rep., 41, 6763-6768 (2014)." />
+<meta name="citation_reference" content="78) Patin E. C., Thompson A., Orr S. J., Semin. Cell Dev. Biol., 89, 24-33 (2019)." />
+<meta name="citation_reference" content="79) Dulal H. P., Adachi Y., Ohno N., Yamaguchi Y., Glycobiology, 28, 612-623 (2018)." />
+<meta name="citation_reference" content="80) Shibata A., Hida T. H., Ishibashi K., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 14, 257-269 (2012)." />
+<meta name="citation_reference" content="81) Tanaka H., Kawai T., Adachi Y., Hanashima S., Yamaguchi Y., Ohno N., Takahashi T., Bioorg. Med. Chem., 20, 3898-3914 (2012)." />
+<meta name="citation_reference" content="82) Ishibashi K., Fukazawa R., Miura N. N., Adachi Y., Ogawa S., Ohno N., Clin. Exp. Immunol., 177, 161-167 (2014)." />
+<meta name="citation_reference" content="83) Ishibashi K., Morita M., Motoi M., Liu Y., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 15, 115-126 (2013)." />
+<meta name="citation_reference" content="84) Ishibashi K., Yoshida M., Nakabayashi I., Yoshikawa N., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 13, 101-107 (2011)." />
+<meta name="citation_reference" content="85) Ishibashi K., Dogasaki C., Motoi M., Miura N., Adachi Y., Ohno N., Jpn. J. Med. Mycol., 51, 99-107 (2010)." />
+<meta name="citation_reference" content="86) Yoshida M., Ishibashi K., Hida S., Yoshikawa N., Nakabayashi I., Akashi M., Watanabe T., Tomiyasu T., Ohno N., Clin. Rheumatol., 28, 565-571 (2009)." />
+<meta name="citation_reference" content="87) Ishibashi K., Yoshida M., Nakabayashi I., Shinohara H., Miura N. N., Adachi Y., Ohno N., FEMS Immunol. Med. Microbiol., 44, 99-109 (2005)." />
+<meta name="citation_reference" content="88) Ohno N., Emori Y., Yadomae T., Saito K., Masuda A., Oikawa S., Carbohydr. Res., 207, 311-318 (1990)." />
+<meta name="citation_reference" content="89) Nagi N., Ohno N., Adachi Y., Aketagawa J., Tamura H., Shibata Y., Tanaka S., Yadomae T., Biol. Pharm. Bull., 16, 822-828 (1993)." />
+<meta name="citation_reference" content="90) Uchiyama M., Ohno N., Miura N. N., Adachi Y., Aizawa M. W., Tamura H., Tanaka S., Yadomae T., FEMS Immunol. Med. Microbiol., 24, 411-420 (1999)." />
+<meta name="citation_reference" content="91) Kurihara K., Miura N. N., Uchiyama M., Ohno N., Adachi Y., Aizawa M., Tamura H., Tanaka S., Yadomae T., FEMS Immunol. Med. Microbiol., 29, 69-76 (2000)." />
+<meta name="citation_reference" content="92) Nagi-Miura N., Shingo Y., Kurihara K., Adachi Y., Suzuki K., Ohno N., Biol. Pharm. Bull., 30, 1354-1357 (2007)." />
+<meta name="citation_reference" content="93) Ohno N., Microbiol. Immunol., 47, 479-490 (2003)." />
+<meta name="citation_reference" content="94) Ohno N., Cardiovasc. Hematol. Agents Med. Chem., 6, 44-52 (2008)." />
+<meta name="citation_reference" content="95) Nakamura A., Okigaki M., Miura N., Suzuki C., Ohno N., Kametani F., Hamaoka K., Clin. Immunol., 153, 64-72 (2014)." />
+<meta name="citation_reference" content="96) Takahashi K., Oharaseki T., Yokouchi Y., Miura N. N., Ohno N., Okawara A. I., Murata H., Naoe S., Suzuki K., Mod. Rheumatol., 20, 160-167 (2010)." />
+<meta name="citation_reference" content="97) Martinez H. G., Quinones M. P., Jimenez F., Estrada C., Clark K. M., Suzuki K., Miura N., Ohno N., Ahuja S. K., Ahuja S. S., BMC Immunol., 13, 56 (2012)." />
+<meta name="citation_reference" content="98) Miura N. N., Ohno N., Adachi Y., Yadomae T., Chem. Pharm. Bull., 44, 2137-2141 (1996)." />
+<meta name="citation_reference" content="99) Miura N. N., Miura T., Ohno N., Adachi Y., Watanabe M., Tamura H., Tanaka S., Yadomae T., FEMS Immunol. Med. Microbiol., 21, 123-129 (1998)." />
+<meta name="citation_reference" content="100) Adachi Y., Ishii M., Kanno T., Tetsui J., Ishibashi K. I., Yamanaka D., Miura N., Ohno N.., Int. J. Mol. Sci., 20, 3498 (2019)." />
+<meta name="citation_reference" content="101) Yamanaka D., Takatsu K., Kimura M., Swamydas M., Ohnishi H., Umeyama T., Oyama F., Lionakis M. S., Ohno N., J. Biol. Chem., 295, 5362-5376 (2020)." />
+<meta name="citation_reference" content="102) Takahashi H., Ohno N., Adachi Y., Yadomae T., FEMS Immunol. Med. Microbiol., 31, 1-14 (2001)." />
+<meta name="citation_reference" content="103) Yoshioka S., Ohno N., Miura T., Adachi Y., Yadomae T., FEMS Immunol. Med. Microbiol., 21, 171-179 (1998)." />
+<meta name="citation_reference" content="104) Nameda S., Miura N. N., Adachi Y., Ohno N., Biol. Pharm. Bull., 30, 2312-2316 (2007)." />
+<meta name="citation_reference" content="105) Nameda S., Miura N. N., Adachi Y., Ohno N., Microbiol. Immunol., 51, 851-859 (2007)." />
+<meta name="citation_reference" content="106) Saito M., Nameda S., Miura N. N., Adachi Y., Ohno N., Microb. Pathog., 44, 402-409 (2008)." />
+<meta name="citation_reference" content="107) Saito M., Nameda S., Miura N. N., Adachi Y., Ohno N., J. Immunotoxicol., 6, 42-48 (2009)." />
+<meta name="citation_reference" content="108) Hida S., Nagi-Miura N., Adachi Y., Ohno N., Biol. Pharm. Bull., 29, 1300-1303 (2006)." />
+<meta name="citation_reference" content="109) Hida S., Miura N. N., Adachi Y., Ohno N., Biol. Pharm. Bull., 30, 1589-1592 (2007)." />
+<meta name="citation_reference" content="110) Inoue K., Takano H., Koike E., Yanagisawa R., Oda T., Tamura H., Adachi Y., Ishibashi K., Ohno N., Respir. Res., 10, 68 (2009)." />
+<meta name="citation_reference" content="111) Inoue K., Koike E., Yanagisawa R., Adachi Y., Ishibashi K., Ohno N., Takano H., Int. J. Immunopathol. Pharmacol., 22, 287-297 (2009)." />
+<meta name="citation_reference" content="112) Ohno N., Iino K., Suzuki I., Oikawa S., Sato K., Miyazaki T., Yadomae T., Chem. Pharm. Bull., 33, 1181-1186 (1985)." />
+<meta name="citation_reference" content="113) Ohno N., Saito K., Nemoto J., Kaneko S., Adachi Y., Nishijima M., Miyazaki T., Yadomae T., Biol. Pharm. Bull., 16, 414-419 (1993)." />
+<meta name="citation_reference" content="114) Saito K., Nishijima M., Ohno N., Yadomae T., Miyazaki T., Chem. Pharm. Bull., 40, 261-263 (1992)." />
+<meta name="citation_reference" content="115) Kurachi K., Ohno N., Yadomae T., Chem. Pharm. Bull., 38, 2527-2531 (1990)." />
+<meta name="citation_reference" content="116) Takeyama T., Suzuki I., Ohno N., Oikawa S., Sato K., Ohsawa M., Yadomae T., J. Pharmacobiodyn., 10, 644-651 (1987)." />
+<meta name="citation_reference" content="117) Tsuzuki A., Tateishi T., Ohno N., Adachi Y., Yadomae T., Biosci. Biotechnol. Biochem., 63, 104-110 (1999)." />
+<meta name="citation_reference" content="118) Tateishi T., Ohno N., Adachi Y., Yadomae T., Biosci. Biotechnol. Biochem., 61, 1548-1553 (1997)." />
+<meta name="citation_reference" content="119) Suzuki T., Ohno N., Chiba N., Miura N. N., Adachi Y., Yadomae T., J. Pharm. Pharmacol., 48, 1243-1248 (1996)." />
+<meta name="citation_reference" content="120) Adachi Y., Suzuki Y., Ohno N., Yadomae T., Biol. Pharm. Bull., 21, 974-977 (1998)." />
+<meta name="citation_reference" content="121) Ohno N., Hashimoto T., Adachi Y., Yadomae T., Immunol. Lett., 53, 157-163 (1996)." />
+<meta name="citation_reference" content="122) Hashimoto T., Ohno N., Adachi Y., Yadomae T., Biol. Pharm. Bull., 20, 1006-1009 (1997)." />
+<meta name="citation_reference" content="123) Hashimoto T., Ohno N., Adachi Y., Yadomae T., FEMS Immunol. Med. Microbiol., 19, 131-135 (1997)." />
+<meta name="citation_reference" content="124) Ishibashi K., Miura N. N., Adachi Y., Ogura N., Tamura H., Tanaka S., Ohno N., Int. Immunopharmacol., 2, 1109-1122 (2002)." />
+<meta name="citation_reference" content="125) Minari J., Mochizuki S., Matsuzaki T., Adachi Y., Ohno N., Sakurai K., Bioconjug. Chem., 22, 9-15 (2011)." />
+<meta name="citation_reference" content="126) Zhang Q., Ichimaru N., Higuchi S., Cai S., Hou J., Fujino M., Nonomura N., Kobayashi M., Ando H., Uno A., Sakurai K., Mochizuki S., Adachi Y., Ohno N., Zou H., Xu J., Li X. K., Takahara S., Gene Ther., 22, 217-226 (2015)." />
+<meta name="citation_reference" content="127) Suda M., Ohno N., Adachi Y., Yadomae T., J. Pharmacobiodyn., 15, 417-426 (1992)." />
+<meta name="citation_reference" content="128) Schreiber R. D., Old L. J., Smyth M. J.., Science, 331, 1565-1570 (2011)." />
+<meta name="citation_reference" content="129) Suzuki I., Hashimoto K., Ohno N., Tanaka H., Yadomae T., Int. J. Immunopharmacol., 11, 761-769 (1989)." />
+<meta name="citation_reference" content="130) Ohno N., Kurachi K., Yadomae T., J. Pharmacobiodyn., 10, 478-486 (1987)." />
+<meta name="citation_reference" content="131) Sakurai T., Hashimoto K., Suzuki I., Ohno N., Oikawa S., Masuda A., Yadomae T., Int. J. Immunopharmacol., 14, 821-830 (1992)." />
+<meta name="citation_reference" content="132) Hashimoto K., Suzuki I., Yadomae T., Int. J. Immunopharmacol., 13., 437-442 (1991)." />
+<meta name="citation_reference" content="133) Suzuki I., Sakurai T., Hashimoto K., Oikawa S., Masuda A., Ohsawa M., Yadomae T., Chem. Pharm. Bull., 39, 1606-1608 (1991)." />
+<meta name="citation_reference" content="134) Hida T. H., Kawaminami H., Ishibashi K., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 15, 525-538 (2013)." />
+<meta name="citation_reference" content="135) Sato W., Ishibashi K. I., Yamanaka D., Adachi Y., Ohno N., Med. Mycol. J., 58, E47-E62 (2017)." />
+<meta name="dc.identifier" content="10.1248/yakushi.20-00245" />
+<meta name="journal_code" content="yakushi" />
+<meta name="journal_title" content="YAKUGAKU ZASSHI" />
+<meta name="journal_abbrev" content="薬学雑誌" />
+<meta name="publisher" content="公益社団法人 日本薬学会" />
+<meta name="authors" content="大野 尚仁" />
+<meta name="authors_institutions" content="東京薬科大学" />
+<meta name="title" content="真菌βグルカンと生体防御" />
+<meta name="publication_date" content="2021/05/01" />
+<meta name="online_date" content="2021/05/01" />
+<meta name="volume" content="141" />
+<meta name="issue" content="5" />
+<meta name="firstpage" content="711" />
+<meta name="lastpage" content="730" />
+<meta name="doi" content="10.1248/yakushi.20-00245" />
+<meta name="fulltext_world_readable" content="" />
+<meta name="pdf_url" content="https://www.jstage.jst.go.jp/article/yakushi/141/5/141_20-00245/_pdf" />
+<meta name="print_issn" content="0031-6903" />
+<meta name="online_issn" content="1347-5231" />
+<meta name="issn_l" content="0031-6903" />
+<meta name="language" content="ja" />
+<meta name="keywords" content="fungus" />
+<meta name="keywords" content="cell wall" />
+<meta name="keywords" content="β-glucan" />
+<meta name="keywords" content="pathogen associated molecular pattern" />
+<meta name="keywords" content="dectin-1" />
+<meta name="keywords" content="antibody" />
+<meta name="references" content="1) Whittaker R. H., Science, 163, 150-160 (1969)." />
+<meta name="references" content="2) Bartnicki-Garcia S., Annu. Rev. Microbiol., 22, 87-108 (1968)." />
+<meta name="references" content="3) De Vuyst L., Harth H., Van Kerrebroeck S., Leroy F., Int. J. Food Microbiol., 239, 26-34 (2016)." />
+<meta name="references" content="4) Pajot H. F., Delgado O. D., de Figueroa L. I., Fariña J. I., Antonie Van Leeuwenhoek, 99, 443-456 (2011)." />
+<meta name="references" content="5) May T. W., IMA Fungus, 8, 189-203 (2017)." />
+<meta name="references" content="6) Hibbett D. S., Blackwell M., James T. Y., Spatafora J. W., Taylor J. W., Vilgalys R., IMA Fungus, 9, 291-298 (2018)." />
+<meta name="references" content="7) Wingfield M. J., De Beer Z. W., Slippers B., Wingfield B. D., Groenewald J. Z., Lombard L., Crous P. W., Mol. Plant Pathol., 13, 604-613 (2012)." />
+<meta name="references" content="8) Klis F. M., Mol P., Hellingwerf K., Brul S., FEMS Microbiol. Rev., 26, 239-256 (2002)." />
+<meta name="references" content="9) De Groot P. W., Ram A. F., Klis F. M., Fungal Genet. Biol., 42, 657-675 (2005)." />
+<meta name="references" content="10) Reese A. J., Yoneda A., Breger J. A., Beauvais A., Liu H., Griffith C. L., Bose I., Kim M. J., Skau C., Yang S., Sefko J. A., Osumi M., Latge J. P., Mylonakis E., Doering T. L., Mol. Microbiol., 63, 1385-1398 (2007)." />
+<meta name="references" content="11) Reiss E., Huppert M., Cherniak R., Curr. Top. Med. Mycol., 1, 172-207 (1985)." />
+<meta name="references" content="12) Munro S., FEBS Lett., 498, 223-227 (2001)." />
+<meta name="references" content="13) Shinohara H., Nagi-Miura N., Ishibashi K., Adachi Y., Ishida-Okawara A., Oharaseki T., Takahashi K., Naoe S., Suzuki K., Ohno N., Biol. Pharm. Bull., 29, 1854-1861 (2006)." />
+<meta name="references" content="14) Miyabe C., Miyabe Y., Bricio-Moreno L., Lian J., Rahimi R. A., Miura N. N., Ohno N., Iwakura Y., Kawakami T., Luster A. D., J. Clin. Invest., 130, 3610-3624 (2019)." />
+<meta name="references" content="15) Hirata N., Ishibashi K., Sato W., Nagi-Miura N., Adachi Y., Ohta S., Ohno N., Immunopharmacol. Immunotoxicol., 35, 594-604 (2013)." />
+<meta name="references" content="16) Douglas C. M., D&apos;Ippolito J. A., Shei G. J., Meinz M., Onishi J., Marrinan J. A., Li W., Abruzzo G. K., Flattery A., Bartizal K., Mitchell A., Kurtz M. B., Antimicrob. Agents Chemother., 41, 2471-2479 (1997)." />
+<meta name="references" content="17) Almeida I. C., Neville D. C., Mehlert A., Treumann A., Ferguson M. A., Previato J. O., Travassos L. R., Glycobiology, 6, 507-515 (1996)." />
+<meta name="references" content="18) Nakamata K., Kurita T., Bhuiyan M. S., Sato K., Noda Y., Yoda K., J. Biol. Chem., 282, 34315-34324 (2007)." />
+<meta name="references" content="19) He X., Li S., Kaminskyj S. G., Mol. Microbiol., 91, 579-595 (2014)." />
+<meta name="references" content="20) He X., Li S., Kaminskyj S. G. W., Med. Mycol., 56, 645-648 (2018)." />
+<meta name="references" content="21) Reese A. J., Doering T. L., Mol. Microbiol., 50, 1401-1409 (2003)." />
+<meta name="references" content="22) Taborda C. P., Buccheri R., Benard G., Duarte-Neto A. N., Nosanchuk J. D., Travassos L. R., Curr. Top. Med. Chem., 18, 1333-1348 (2018)." />
+<meta name="references" content="23) Hole C. R., Lam W. C., Upadhya R., Lodge J. K., mBio, 11, e03373-19 (2020)." />
+<meta name="references" content="24) Lam W. C., Upadhya R., Specht C. A., Ragsdale A. E., Hole C. R., Levitz S. M., Lodge J. K., mSphere, 4, e00644-19 (2019)." />
+<meta name="references" content="25) Upadhya R., Baker L. G., Lam W. C., Specht C. A., Donlin M. J., Lodge J. K., mBio, 9, e02087-18 (2018)." />
+<meta name="references" content="26) Sanz A. B., García R., Rodríguez-Peña J. M., Arroyo J., J. Fungi (Basel), 4, 1 (2018)." />
+<meta name="references" content="27) Philip B., Levin D. E., Mol. Cell. Biol., 21, 271-280 (2001)." />
+<meta name="references" content="28) Rodríguez-Peña J. M., García R., Nombela C., Arroyo J., Yeast, 27, 495-502 (2010)." />
+<meta name="references" content="29) Tada R., Nagi-Miura N., Adachi Y., Ohno N., Microb. Pathog., 44, 379-388 (2008)." />
+<meta name="references" content="30) Ishibashi K., Miura N. N., Adachi Y., Tamura H., Tanaka S., Ohno N., FEMS Immunol. Med. Microbiol., 42, 155-166 (2004)." />
+<meta name="references" content="31) Ohno N., Suzuki I., Oikawa S., Sato K., Miyazaki T., Yadomae T., Chem. Pharm. Bull., 32, 1142-1151 (1984)." />
+<meta name="references" content="32) Ohno N., Suzuki I., Yadomae T., Chem. Pharm. Bull., 34, 1362-1365 (1986)." />
+<meta name="references" content="33) Ohno N., Miura T., Saito K., Nishijima M., Miyazaki T., Yadomae T., Chem. Pharm. Bull., 40, 2215-2218 (1992)." />
+<meta name="references" content="34) Mimura H., Ohno N., Suzuki I., Yadomae T., Chem. Pharm. Bull., 33, 5096-5099 (1985)." />
+<meta name="references" content="35) Ohno N., Miura N. N., Nakajima M., Yadomae T., Biol. Pharm. Bull., 23, 866-872 (2000)." />
+<meta name="references" content="36) Ohno N., Furukawa M., Miura N. N., Adachi Y., Motoi M., Yadomae T., Biol. Pharm. Bull., 24, 820-828 (2001)." />
+<meta name="references" content="37) Ohno N., Iino K., Takeyama T., Suzuki I., Sato K., Oikawa S., Miyazaki T., Yadomae T., Chem. Pharm. Bull., 33, 3395-3401 (1985)." />
+<meta name="references" content="38) Iino K., Ohno N., Suzuki I., Sato K., Oikawa S., Yadomae T., Chem. Pharm. Bull., 33, 4950-4956 (1985)." />
+<meta name="references" content="39) Adachi Y., Ohno N., Ohsawa M., Sato K., Oikawa S., Yadomae T., Chem. Pharm. Bull., 37, 1838-1843 (1989)." />
+<meta name="references" content="40) Ohno N., Adachi Y., Suzuki I., Sato K., Oikawa S., Yadomae T., Chem. Pharm. Bull., 34, 1709-1715 (1986)." />
+<meta name="references" content="41) Shinohara H., Ohno N., Yadomae T., Chem. Pharm. Bull., 36, 819-823 (1988)." />
+<meta name="references" content="42) Ishimoto Y., Ishibashi K. I., Yamanaka D., Adachi Y., Ito H., Igami K., Miyazaki T., Ohno N., Int. J. Med. Mushrooms, 19, 1-16 (2017)." />
+<meta name="references" content="43) Hida S., Nagi-Miura N., Adachi Y., Ohno N., Microbiol. Immunol., 50, 453-461 (2006)." />
+<meta name="references" content="44) Sugawara T., Takahashi S., Osumi M., Ohno N., Carbohydr. Res., 339, 2255-2265 (2004)." />
+<meta name="references" content="45) Ohno N., Uchiyama M., Tsuzuki A., Tokunaka K., Miura N. N., Adachi Y., Aizawa M. W., Tamura H., Tanaka S., Yadomae T., Carbohydr. Res., 316, 161-172 (1999)." />
+<meta name="references" content="46) Miura N. N., Adachi Y., Yadomae T., Tamura H., Tanaka S., Ohno N., Microbiol. Immunol., 47, 173-182 (2003)." />
+<meta name="references" content="47) Suzuki T., Ohno N., Ohshima Y., Yadomae T., FEMS Immunol. Med. Microbiol., 21, 223-230 (1998)." />
+<meta name="references" content="48) Adachi Y., Ohno N., Ohsawa M., Oikawa S., Yadomae T., Chem. Pharm. Bull., 38, 477-481 (1990)." />
+<meta name="references" content="49) Ishimoto Y., Ishibashi K. I., Yamanaka D., Adachi Y., Kanzaki K., Okita K., Iwakura Y., Ohno N., Int. J. Biol. Macromol., 104, 367-376 (2017)." />
+<meta name="references" content="50) Ishimoto Y., Ishibashi K. I., Yamanaka D., Adachi Y., Kanzaki K., Iwakura Y., Ohno N., Int. J. Biol. Macromol., 107, 2269-2278 (2018)." />
+<meta name="references" content="51) Tanaka H., Kawai T., Adachi Y., Ohno N., Takahashi T., Chem. Commun. (Camb.), 46, 8249-8251 (2010)." />
+<meta name="references" content="52) Tada R., Nagi-Miura N., Adachi Y., Ohno N., Chem. Pharm. Bull., 55, 992-995 (2007)." />
+<meta name="references" content="53) Tada R., Harada T., Nagi-Miura N., Adachi Y., Nakajima M., Yadomae T., Ohno N., Carbohydr. Res., 342, 2611-2618 (2007)." />
+<meta name="references" content="54) Tada R., Tanioka A., Iwasawa H., Hatashima K., Shoji Y., Ishibashi K., Adachi Y., Yamazaki M., Tsubaki K., Ohno N., Glycoconj. J., 25, 851-861 (2008)." />
+<meta name="references" content="55) Tada R., Adachi Y., Ishibashi K., Ohno N., Carbohydr. Res., 344, 400-404 (2009)." />
+<meta name="references" content="56) Tada R., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 14, 339-345 (2012)." />
+<meta name="references" content="57) Ohno N., Yadomae T., Carbohydr. Res., 159, 293-302 (1987)." />
+<meta name="references" content="58) Suda M., Ohno N., Adachi Y., Yadomae T., Carbohydr. Res., 270, 107-113 (1995)." />
+<meta name="references" content="59) Ohno N., Ohsawa M., Sato K., Oikawa S., Yadomae T., Chem. Pharm. Bull., 35, 2585-2588 (1987)." />
+<meta name="references" content="60) Ishibashi K., Morita M., Motoi M., Liu Y., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 15, 115-126 (2013)." />
+<meta name="references" content="61) Inoue K., Takano H., Oda T., Yanagisawa R., Tamura H., Ohno N., Adachi Y., Ishibashi K., Yoshikawa T., Int. J. Immunopathol. Pharmacol., 20, 499-508 (2007)." />
+<meta name="references" content="62) Suzuki T., Ohno N., Saito K., Yadomae T., J. Pharmacobiodyn., 15, 277-285 (1992)." />
+<meta name="references" content="63) Ohno N., Suzuki T., Saito K., Yadomae T., J. Pharmacobiodyn., 13, 525-532 (1990)." />
+<meta name="references" content="64) Ariizumi K., Shen G. L., Shikano S., Xu S., Ritter R. 3rd, Kumamoto T., Edelbaum D., Morita A., Bergstresser P. R., Takashima A., J. Biol. Chem., 275, 20157-20167 (2000)." />
+<meta name="references" content="65) Brown G. D., Taylor P. R., Reid D. M., Willment J. A., Williams D. L., Martinez-Pomares L., Wong S. Y., Gordon S., J. Exp. Med., 196, 407-412 (2002)." />
+<meta name="references" content="66) Yokota K., Takashima A., Bergstresser P. R., Ariizumi K., Gene, 272, 51-60 (2001)." />
+<meta name="references" content="67) Taylor P. R., Brown G. D., Reid D. M., Willment J. A., Martinez-Pomares L., Gordon S., Wong S. Y., J. Immunol., 169, 3876-3882 (2002)." />
+<meta name="references" content="68) Adachi Y., Ishii T., Ikeda Y., Hoshino A., Tamura H., Aketagawa J., Tanaka S., Ohno N., Infect. Immun., 72, 4159-4171 (2004)." />
+<meta name="references" content="69) del Pilar Jiménez-A M., Viriyakosol S., Walls L., Datta S. K., Kirkland T., Heinsbroek S. E., Brown G., Fierer J., Genes Immun., 9, 338-348 (2008)." />
+<meta name="references" content="70) Brown J., O&apos;Callaghan C. A., Marshall A. S., Gilbert R. J., Siebold C., Gordon S., Brown G. D., Jones E. Y., Protein Sci., 16, 1042-1052 (2007)." />
+<meta name="references" content="71) Harada T., Kawaminami H., Miura N. N., Adachi Y., Nakajima M., Yadomae T., Ohno N., J. Interferon Cytokine Res., 26, 235-247 (2006)." />
+<meta name="references" content="72) Harada T., Miura N. N., Adachi Y., Nakajima M., Yadomae T., Ohno N., J. Interferon Cytokine Res., 28, 477-486 (2008)." />
+<meta name="references" content="73) Hida T. H., Kawaminami H., Ishibashi K., Miura N. N., Adachi Y., Yadomae T., Ohno N., Microbiol. Immunol., 53, 391-402 (2009)." />
+<meta name="references" content="74) Harada T., Miura N. N., Adachi Y., Nakajima M., Yadomae T., Ohno N., J. Interferon Cytokine Res., 22, 1227-1239 (2002)." />
+<meta name="references" content="75) Harada T., Miura N. N., Adachi Y., Nakajima M., Yadomae T., Ohno N., J. Interferon Cytokine Res., 24, 478-489 (2004)." />
+<meta name="references" content="76) Saijo S., Fujikado N., Furuta T., Chung S. H., Kotaki H., Seki K., Sudo K., Akira S., Adachi Y., Ohno N., Kinjo T., Nakamura K., Kawakami K., Iwakura Y., Nat. Immunol., 8, 39-46 (2007)." />
+<meta name="references" content="77) Usluogullari B., Gumus I., Gunduz E., Kaygusuz I., Simavli S., Acar M., Oznur M., Gunduz M., Kafali H., Mol. Biol. Rep., 41, 6763-6768 (2014)." />
+<meta name="references" content="78) Patin E. C., Thompson A., Orr S. J., Semin. Cell Dev. Biol., 89, 24-33 (2019)." />
+<meta name="references" content="79) Dulal H. P., Adachi Y., Ohno N., Yamaguchi Y., Glycobiology, 28, 612-623 (2018)." />
+<meta name="references" content="80) Shibata A., Hida T. H., Ishibashi K., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 14, 257-269 (2012)." />
+<meta name="references" content="81) Tanaka H., Kawai T., Adachi Y., Hanashima S., Yamaguchi Y., Ohno N., Takahashi T., Bioorg. Med. Chem., 20, 3898-3914 (2012)." />
+<meta name="references" content="82) Ishibashi K., Fukazawa R., Miura N. N., Adachi Y., Ogawa S., Ohno N., Clin. Exp. Immunol., 177, 161-167 (2014)." />
+<meta name="references" content="83) Ishibashi K., Morita M., Motoi M., Liu Y., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 15, 115-126 (2013)." />
+<meta name="references" content="84) Ishibashi K., Yoshida M., Nakabayashi I., Yoshikawa N., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 13, 101-107 (2011)." />
+<meta name="references" content="85) Ishibashi K., Dogasaki C., Motoi M., Miura N., Adachi Y., Ohno N., Jpn. J. Med. Mycol., 51, 99-107 (2010)." />
+<meta name="references" content="86) Yoshida M., Ishibashi K., Hida S., Yoshikawa N., Nakabayashi I., Akashi M., Watanabe T., Tomiyasu T., Ohno N., Clin. Rheumatol., 28, 565-571 (2009)." />
+<meta name="references" content="87) Ishibashi K., Yoshida M., Nakabayashi I., Shinohara H., Miura N. N., Adachi Y., Ohno N., FEMS Immunol. Med. Microbiol., 44, 99-109 (2005)." />
+<meta name="references" content="88) Ohno N., Emori Y., Yadomae T., Saito K., Masuda A., Oikawa S., Carbohydr. Res., 207, 311-318 (1990)." />
+<meta name="references" content="89) Nagi N., Ohno N., Adachi Y., Aketagawa J., Tamura H., Shibata Y., Tanaka S., Yadomae T., Biol. Pharm. Bull., 16, 822-828 (1993)." />
+<meta name="references" content="90) Uchiyama M., Ohno N., Miura N. N., Adachi Y., Aizawa M. W., Tamura H., Tanaka S., Yadomae T., FEMS Immunol. Med. Microbiol., 24, 411-420 (1999)." />
+<meta name="references" content="91) Kurihara K., Miura N. N., Uchiyama M., Ohno N., Adachi Y., Aizawa M., Tamura H., Tanaka S., Yadomae T., FEMS Immunol. Med. Microbiol., 29, 69-76 (2000)." />
+<meta name="references" content="92) Nagi-Miura N., Shingo Y., Kurihara K., Adachi Y., Suzuki K., Ohno N., Biol. Pharm. Bull., 30, 1354-1357 (2007)." />
+<meta name="references" content="93) Ohno N., Microbiol. Immunol., 47, 479-490 (2003)." />
+<meta name="references" content="94) Ohno N., Cardiovasc. Hematol. Agents Med. Chem., 6, 44-52 (2008)." />
+<meta name="references" content="95) Nakamura A., Okigaki M., Miura N., Suzuki C., Ohno N., Kametani F., Hamaoka K., Clin. Immunol., 153, 64-72 (2014)." />
+<meta name="references" content="96) Takahashi K., Oharaseki T., Yokouchi Y., Miura N. N., Ohno N., Okawara A. I., Murata H., Naoe S., Suzuki K., Mod. Rheumatol., 20, 160-167 (2010)." />
+<meta name="references" content="97) Martinez H. G., Quinones M. P., Jimenez F., Estrada C., Clark K. M., Suzuki K., Miura N., Ohno N., Ahuja S. K., Ahuja S. S., BMC Immunol., 13, 56 (2012)." />
+<meta name="references" content="98) Miura N. N., Ohno N., Adachi Y., Yadomae T., Chem. Pharm. Bull., 44, 2137-2141 (1996)." />
+<meta name="references" content="99) Miura N. N., Miura T., Ohno N., Adachi Y., Watanabe M., Tamura H., Tanaka S., Yadomae T., FEMS Immunol. Med. Microbiol., 21, 123-129 (1998)." />
+<meta name="references" content="100) Adachi Y., Ishii M., Kanno T., Tetsui J., Ishibashi K. I., Yamanaka D., Miura N., Ohno N.., Int. J. Mol. Sci., 20, 3498 (2019)." />
+<meta name="references" content="101) Yamanaka D., Takatsu K., Kimura M., Swamydas M., Ohnishi H., Umeyama T., Oyama F., Lionakis M. S., Ohno N., J. Biol. Chem., 295, 5362-5376 (2020)." />
+<meta name="references" content="102) Takahashi H., Ohno N., Adachi Y., Yadomae T., FEMS Immunol. Med. Microbiol., 31, 1-14 (2001)." />
+<meta name="references" content="103) Yoshioka S., Ohno N., Miura T., Adachi Y., Yadomae T., FEMS Immunol. Med. Microbiol., 21, 171-179 (1998)." />
+<meta name="references" content="104) Nameda S., Miura N. N., Adachi Y., Ohno N., Biol. Pharm. Bull., 30, 2312-2316 (2007)." />
+<meta name="references" content="105) Nameda S., Miura N. N., Adachi Y., Ohno N., Microbiol. Immunol., 51, 851-859 (2007)." />
+<meta name="references" content="106) Saito M., Nameda S., Miura N. N., Adachi Y., Ohno N., Microb. Pathog., 44, 402-409 (2008)." />
+<meta name="references" content="107) Saito M., Nameda S., Miura N. N., Adachi Y., Ohno N., J. Immunotoxicol., 6, 42-48 (2009)." />
+<meta name="references" content="108) Hida S., Nagi-Miura N., Adachi Y., Ohno N., Biol. Pharm. Bull., 29, 1300-1303 (2006)." />
+<meta name="references" content="109) Hida S., Miura N. N., Adachi Y., Ohno N., Biol. Pharm. Bull., 30, 1589-1592 (2007)." />
+<meta name="references" content="110) Inoue K., Takano H., Koike E., Yanagisawa R., Oda T., Tamura H., Adachi Y., Ishibashi K., Ohno N., Respir. Res., 10, 68 (2009)." />
+<meta name="references" content="111) Inoue K., Koike E., Yanagisawa R., Adachi Y., Ishibashi K., Ohno N., Takano H., Int. J. Immunopathol. Pharmacol., 22, 287-297 (2009)." />
+<meta name="references" content="112) Ohno N., Iino K., Suzuki I., Oikawa S., Sato K., Miyazaki T., Yadomae T., Chem. Pharm. Bull., 33, 1181-1186 (1985)." />
+<meta name="references" content="113) Ohno N., Saito K., Nemoto J., Kaneko S., Adachi Y., Nishijima M., Miyazaki T., Yadomae T., Biol. Pharm. Bull., 16, 414-419 (1993)." />
+<meta name="references" content="114) Saito K., Nishijima M., Ohno N., Yadomae T., Miyazaki T., Chem. Pharm. Bull., 40, 261-263 (1992)." />
+<meta name="references" content="115) Kurachi K., Ohno N., Yadomae T., Chem. Pharm. Bull., 38, 2527-2531 (1990)." />
+<meta name="references" content="116) Takeyama T., Suzuki I., Ohno N., Oikawa S., Sato K., Ohsawa M., Yadomae T., J. Pharmacobiodyn., 10, 644-651 (1987)." />
+<meta name="references" content="117) Tsuzuki A., Tateishi T., Ohno N., Adachi Y., Yadomae T., Biosci. Biotechnol. Biochem., 63, 104-110 (1999)." />
+<meta name="references" content="118) Tateishi T., Ohno N., Adachi Y., Yadomae T., Biosci. Biotechnol. Biochem., 61, 1548-1553 (1997)." />
+<meta name="references" content="119) Suzuki T., Ohno N., Chiba N., Miura N. N., Adachi Y., Yadomae T., J. Pharm. Pharmacol., 48, 1243-1248 (1996)." />
+<meta name="references" content="120) Adachi Y., Suzuki Y., Ohno N., Yadomae T., Biol. Pharm. Bull., 21, 974-977 (1998)." />
+<meta name="references" content="121) Ohno N., Hashimoto T., Adachi Y., Yadomae T., Immunol. Lett., 53, 157-163 (1996)." />
+<meta name="references" content="122) Hashimoto T., Ohno N., Adachi Y., Yadomae T., Biol. Pharm. Bull., 20, 1006-1009 (1997)." />
+<meta name="references" content="123) Hashimoto T., Ohno N., Adachi Y., Yadomae T., FEMS Immunol. Med. Microbiol., 19, 131-135 (1997)." />
+<meta name="references" content="124) Ishibashi K., Miura N. N., Adachi Y., Ogura N., Tamura H., Tanaka S., Ohno N., Int. Immunopharmacol., 2, 1109-1122 (2002)." />
+<meta name="references" content="125) Minari J., Mochizuki S., Matsuzaki T., Adachi Y., Ohno N., Sakurai K., Bioconjug. Chem., 22, 9-15 (2011)." />
+<meta name="references" content="126) Zhang Q., Ichimaru N., Higuchi S., Cai S., Hou J., Fujino M., Nonomura N., Kobayashi M., Ando H., Uno A., Sakurai K., Mochizuki S., Adachi Y., Ohno N., Zou H., Xu J., Li X. K., Takahara S., Gene Ther., 22, 217-226 (2015)." />
+<meta name="references" content="127) Suda M., Ohno N., Adachi Y., Yadomae T., J. Pharmacobiodyn., 15, 417-426 (1992)." />
+<meta name="references" content="128) Schreiber R. D., Old L. J., Smyth M. J.., Science, 331, 1565-1570 (2011)." />
+<meta name="references" content="129) Suzuki I., Hashimoto K., Ohno N., Tanaka H., Yadomae T., Int. J. Immunopharmacol., 11, 761-769 (1989)." />
+<meta name="references" content="130) Ohno N., Kurachi K., Yadomae T., J. Pharmacobiodyn., 10, 478-486 (1987)." />
+<meta name="references" content="131) Sakurai T., Hashimoto K., Suzuki I., Ohno N., Oikawa S., Masuda A., Yadomae T., Int. J. Immunopharmacol., 14, 821-830 (1992)." />
+<meta name="references" content="132) Hashimoto K., Suzuki I., Yadomae T., Int. J. Immunopharmacol., 13., 437-442 (1991)." />
+<meta name="references" content="133) Suzuki I., Sakurai T., Hashimoto K., Oikawa S., Masuda A., Ohsawa M., Yadomae T., Chem. Pharm. Bull., 39, 1606-1608 (1991)." />
+<meta name="references" content="134) Hida T. H., Kawaminami H., Ishibashi K., Miura N. N., Adachi Y., Ohno N., Int. J. Med. Mushrooms, 15, 525-538 (2013)." />
+<meta name="references" content="135) Sato W., Ishibashi K. I., Yamanaka D., Adachi Y., Ohno N., Med. Mycol. J., 58, E47-E62 (2017)." />
+<meta name="access_control" content="フリー" />
+<meta name="copyright" content="2021 The Pharmaceutical Society of Japan" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@jstage_ej" />
+<meta name="og:url" content="https://www.jstage.jst.go.jp/article/yakushi/141/5/141_20-00245/_article/-char/ja" />
+<meta name="og:title" content="真菌&beta;グルカンと生体防御" />
+<meta name="og:description" content="Fungi are eukaryotic microorganisms that show complex life cycles, including both anamorph and teleomorph stages. Beta-1,3-1,6-glucans (BGs) are major &hellip;" />
+<meta name="og:site_name" content="J-STAGE" />
+<meta name="og:image" content="https://www.jstage.jst.go.jp/html/images/common/SNS/J-STAGE_logo_sns.png" />
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<title>真菌βグルカンと生体防御</title>
+<link rel="stylesheet" href="/web/css/bootstrap3-wysiwyg5-color.css" />
+<link rel="stylesheet" href="/web/css/bootstrap3-wysiwyg5.css" />
+<link rel="stylesheet" href="/web/css/ranking.css?rn=2.3.9" />
+
+<link rel="stylesheet" href="/web/css/bootstrap.min.css" />
+
+<link rel="stylesheet" href="/web/css/style.css?rn=2.3.9"/>
+<link rel="stylesheet" href="/web/css/common-elements-style.css?rn=2.3.9" />
+<link rel="stylesheet" href="/web/css/jquery.treefilter.css" />
+<link rel="stylesheet" href="/web/css/jplayer.blue.monday.css" />
+<link rel="stylesheet" href="/web/css/main.css?rn=2.3.9" />
+
+<link rel="stylesheet" media="print" href="/web/css/print.css" />
+
+<!--[if lt IE 9]>
+
+<script src="/web/js/html5shiv.min.js"></script>
+<script src="/web/js/respond.min.js"></script>
+<![endif]-->
+<style type="text/css">
+<!--
+.navbar-default .navbar-nav>li>a {
+		color: #093963;
+		font-size: 13px!important;
+}
+.navbar-default .navbar-nav>li>a:hover ,
+.navbar-default .navbar-nav>li>a:focus {
+		color: #fff;
+		font-size: 13px!important;
+	background-color: #4679ac !important;
+}
+@media (max-width: 991px) {
+.navbar-default .navbar-nav > li > a {
+		clear: both;
+		color: #fff;
+		outline: 0 none;
+		width: 250px;
+}
+.navbar-default .navbar-nav .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .dropdown-menu > li > a:focus {
+		background: #444 none repeat scroll 0 0 !important;
+		color: #fff !important;
+}
+}
+.navbar-default .navbar-nav>li>a.referencemode {
+		color: #888888;
+}
+.navbar-default .navbar-nav>li>a.referencemode:hover ,
+.navbar-default .navbar-nav>li>a.referencemode:focus {
+		color: #888888;
+		background-color: transparent !important;
+}
+b {
+	font-weight: bold;
+}
+i {
+	font-style: italic;
+}
+// -->
+</style>
+</head>
+	<body class="body-offcanvas addition-pages">
+
+	
+
+
+<!-- HEADER :: START -->
+<span class="noprint">
+<header class="clearfix">
+	<!-- NAVIGATION :: START -->
+	<nav class="navbar navbar-default navbar-fixed-top ep-nav-shadow " >
+
+						
+		<div class="container">
+			<button type="button" class="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas" style="float:left;"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span> </button>
+			<!-- RIGHT NAV SEARCH :: BEGIN -->
+			<div class="search-nav-block dropdown">
+				<a href="javascript:;" class=""  data-toggle="collapse" data-target="#Search_nav"><i class="search-nav-icon"></i></a>
+			</div>
+			<!-- RIGHT NAV SEARCH :: END -->
+			<!-- LOGO :: START -->
+			<a class="navbar-brand ms-logowrap hm-logo-padding" href="https://www.jstage.jst.go.jp/browse/-char/ja">
+				<img src="/web/images/J-STAGE_logo_A3.png" alt=""  style="margin-top:6px;" />
+			</a>
+			<!-- LOGO :: END -->
+			<!-- HAMBURGER LEFT TO RIGHT SLIDE :: START -->
+			<div class="offcanvas-left-wrap register-offcanvas-left-wrap">
+								<div class="navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-fade" role="navigation" id="js-bootstrap-offcanvas">
+					<div class="offcanvas-left-wrap">
+						<div class="navbar-header">
+							<a class="navbar-brand jst-homelink" href="https://www.jstage.jst.go.jp/browse/-char/ja">J-STAGE home</a>
+							<button type="button" class="navbar-toggle offcanvas-toggle pull-right" data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas" style="float:left;"> <img src="/web/images/edit-profile/icon-close-menu.png" alt=""></button>
+						</div>
+						<div class="offcanvas-nav-wrap">
+							<ul class="nav navbar-nav">
+																<li class="dropdown reponsive-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">資料・記事を探す<b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+										<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+										<li><a href="/journal/list/-char/ja">資料を探す：資料タイトルから</a></li>
+										<li><a href="/journal/fields/-char/ja">資料を探す：分野から</a></li>
+										<li><a href="/journal/publisher/-char/ja">資料を探す：発行機関から</a></li>
+										<li><a href="/search/global/_search/-char/ja">記事を探す</a></li>
+										<li><a href="https://jstagedata.jst.go.jp/" target="_blank" rel="noopener noreferrer">データを探す(J-STAGE Data) <img src="/web/images/information-tab2/bg-arrow-white.png" width="13" height="10" alt=""></a></li>
+									</ul>
+								</li>
+																<li class="dropdown reponsive-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">J-STAGEについて <b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+										<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageOverview/-char/ja">J-STAGEの概要</a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageServices/TAB1/-char/ja">各種サービス・機能</a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/PublicDataAboutJstage/-char/ja">公開データ</a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/TermsAndPolicies/ForIndividuals/-char/ja">利用規約・ポリシー</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/ForPublishers/TAB1/-char/ja">新規登載の申し込み</a></li>									</ul>
+								</li>
+
+																<li class="dropdown reponsive-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ニュース&PR  <b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+										<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB1/Current/Page1/-char/ja">お知らせ一覧</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB5/Page1/-char/ja">リリースノート</a></li> 										<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB2/Page1/-char/ja">メンテナンス情報</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB4/Page1/-char/ja">イベント情報</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB3/Page1/-char/ja">J-STAGEニュース</a></li> 										<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB6/Page1/-char/ja">特集コンテンツ </a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB7/Page1/-char/ja">各種広報媒体 </a></li>
+									</ul>
+								</li>
+																<li class="dropdown reponsive-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">サポート  <b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+										<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/InformationForSocieties/TAB1/-char/ja">J-STAGE登載機関用コンテンツ</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/GuidelineAndManuals/TAB1/-char/ja">登載ガイドライン・マニュアル</a></li> 										<li><a href="https://www.jstage.jst.go.jp/static/pages/ForReaders/-char/ja">閲覧者向けヘルプ</a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/RecommendedEnvironment/-char/ja">動作確認済みブラウザ</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/FAQs/TAB2/-char/ja">FAQ</a></li> 										<li><a href="https://www.jstage.jst.go.jp/static/pages/Contact/-char/ja">お問い合わせ </a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/Sitemap/-char/ja">サイトマップ </a></li>
+									</ul>
+								</li>
+																													<li class="reponsive-menu">
+												<a href="/mylogin/-char/ja?sourceurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Farticle%2Fyakushi%2F141%2F5%2F141_20-00245%2F_article%2F-char%2Fja">サインイン</a>
+										</li>
+																		<li class="reponsive-menu">
+											<li class="reponsive-menu"><a href="/cart/list/-char/ja?backurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Farticle%2Fyakushi%2F141%2F5%2F141_20-00245%2F_article%2F-char%2Fja" class="" >カート <img src="/web/images/edit-profile/icon-cart.png" alt=""></a>
+									</li>
+								<li class="dropdown reponsive-menu">
+																		<a href="#" class="dropdown-toggle" data-toggle="dropdown"> JA  <img src="/web/images/edit-profile/icon-lang.png" alt=""> <b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+									<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+										<li><a href="javascript:;" onclick="doChangeLang('en')">English</a></li>
+										<li><a href="javascript:;" onclick="doChangeLang('ja')">日本語</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+								<ul class="nav navbar-nav offcanvas-left-display-none">
+										<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">資料・記事を探す<b class="caret"></b></a>
+						<ul class="dropdown-menu ep-dropdown-menu">
+							<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+							<li><a href="/journal/list/-char/ja">資料を探す：資料タイトルから</a></li>
+							<li><a href="/journal/fields/-char/ja">資料を探す：分野から</a></li>
+							<li><a href="/journal/publisher/-char/ja">資料を探す：発行機関から</a></li>
+							<li><a href="/search/global/_search/-char/ja">記事を探す</a></li>
+							<li><a href="https://jstagedata.jst.go.jp/" target="_blank" rel="noopener noreferrer">データを探す(J-STAGE Data) <img src="/web/images/information-tab2/bg-arrow.png" width="13" height="10" alt=""></a></li>
+						</ul>
+					</li>
+										<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">J-STAGEについて <b class="caret"></b></a>
+						<ul class="dropdown-menu ep-dropdown-menu">
+							<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageOverview/-char/ja">J-STAGEの概要</a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageServices/TAB1/-char/ja">各種サービス・機能</a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/PublicDataAboutJstage/-char/ja">公開データ</a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/TermsAndPolicies/ForIndividuals/-char/ja">利用規約・ポリシー</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/ForPublishers/TAB1/-char/ja">新規登載の申し込み</a></li>						</ul>
+					</li>
+										<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ニュース&PR  <b class="caret"></b></a>
+						<ul class="dropdown-menu ep-dropdown-menu">
+							<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB1/Current/Page1/-char/ja">お知らせ一覧</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB5/Page1/-char/ja">リリースノート</a></li> 							<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB2/Page1/-char/ja">メンテナンス情報</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB4/Page1/-char/ja">イベント情報</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB3/Page1/-char/ja">J-STAGEニュース</a></li> 							<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB6/Page1/-char/ja">特集コンテンツ </a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB7/Page1/-char/ja">各種広報媒体 </a></li>
+						</ul>
+					</li>
+										<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">サポート  <b class="caret"></b></a>
+						<ul class="dropdown-menu ep-dropdown-menu">
+							<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/InformationForSocieties/TAB1/-char/ja">J-STAGE登載機関用コンテンツ</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/GuidelineAndManuals/TAB1/-char/ja">登載ガイドライン・マニュアル</a></li> 							<li><a href="https://www.jstage.jst.go.jp/static/pages/ForReaders/-char/ja">閲覧者向けヘルプ</a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/RecommendedEnvironment/-char/ja">動作確認済みブラウザ</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/FAQs/TAB2/-char/ja">FAQ</a></li> 							<li><a href="https://www.jstage.jst.go.jp/static/pages/Contact/-char/ja">お問い合わせ </a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/Sitemap/-char/ja">サイトマップ </a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- HAMBURGER LEFT TO RIGHT SLIDE :: END -->
+			<div class="offcanvas-right-wrap register-offcanvas-right-wrap">
+				<ul class="nav navbar-nav">
+												<li class="">
+								<a href="/mylogin/-char/ja?sourceurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Farticle%2Fyakushi%2F141%2F5%2F141_20-00245%2F_article%2F-char%2Fja" class="" >サインイン  </a>
+						</li>
+										<li class="">
+							<li class=""><a href="/cart/list/-char/ja?backurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Farticle%2Fyakushi%2F141%2F5%2F141_20-00245%2F_article%2F-char%2Fja" class="" >カート </a>
+					</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ JA 					<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu ep-dropdown-menu" style="min-width: 80px;">
+						<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""></span></li>
+						<li><a href="javascript:;" onclick="doChangeLang('en')">English</a></li>
+						<li><a href="javascript:;" onclick="doChangeLang('ja')">日本語</a></li>
+					</ul>
+				</li>
+				</ul>
+			</div>
+			<!-- RIGHT NAV SEARCH DROPDOWN :: BEGIN -->
+			<ul class="dropdown-menu collapse ep-dropdown-menu search-dropdown-menu" id="Search_nav" style="max-width: 300px;">
+				<li style="background:none !important;"><span class="topnav-dropdown-icon"></span></li>
+				<li>
+					<div class="col-md-24 edit-profile-form-control">
+						<form action="/result/journal/-char/ja" method="get">
+						<div class="input-group">
+							<input name="globalSearchKey" type="text" class="form-control search-nav-input" placeholder="J-STAGE上のすべてのジャーナルを検索">
+							<span class="input-group-btn search-btn">
+							<button class="btn btn-default" type="submit"><i class="search-nav-icon"></i></button>
+							</span>
+						</div><!-- /input-group -->
+						<a href="https://www.jstage.jst.go.jp/search/global/_search/-char/ja" class="advanced-search-link">詳細検索</a>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<!-- RIGHT NAV SEARCH DROPDOWN :: END -->
+
+			<div class="clearfix"></div>
+		</div>
+	</nav>
+	<!-- NAVIGATION :: END -->
+</header>
+</span>
+<!-- HEADER :: END -->
+
+
+
+
+
+
+<!-- JOURNAL INTRODUCTION :: START -->
+<div id="page-content">
+	<div id="journal-header-compact" class="secondlevel-tabnavigation-detail colorscheme02-normal">
+		<div class="container">
+			<div class="flt-left" style="width:100%; position:relative;">
+				<div class="journal-name">YAKUGAKU ZASSHI</div>
+
+										<div id="journal-right-infosection" class="col-sm-6" style="padding-top:15px;">
+						<div class="fs-12">
+								Online ISSN : 1347-5231<br>
+								Print ISSN : 0031-6903<br>
+								ISSN-L : 0031-6903
+						</div>
+					</div>
+				<div class="journal-tags-clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- JOURNAL INTRODUCTION :: END -->
+
+<!-- SECOND LEVEL TAB NAVIGATION :: START -->
+<div class="colorscheme02-normal">
+	<div class="container">
+		<div id="second-level-nav-tabs">
+			<ul class="nav nav-tabs">
+				<li ><a href="https://www.jstage.jst.go.jp/browse/yakushi/-char/ja">資料トップ</a></li>
+				<li ><a href="https://www.jstage.jst.go.jp/browse/yakushi/list/-char/ja">巻号一覧</a></li>
+				<li ><a href="https://www.jstage.jst.go.jp/browse/yakushi/_contents/journal-featured-articles/-char/ja">おすすめ記事</a></li>
+				<li ><a href="https://www.jstage.jst.go.jp/browse/yakushi/_pubinfo/-char/ja">この資料について</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- SECOND LEVEL TAB NAVIGATION :: END --><div class="container">
+	<div class="row">
+		<div class="col-md-24">
+					
+	<!-- BREDCRUMBS :: START -->
+		<ul class="global-breadcrumbs">
+			<li><a href="https://www.jstage.jst.go.jp/browse/-char/ja">J-STAGEトップ</a></li>
+			<li>/</li>
+			<li><a href="https://www.jstage.jst.go.jp/browse/yakushi/-char/ja">YAKUGAKU ZASSHI</a></li>
+			<li> / </li>
+			<li><a href='https://www.jstage.jst.go.jp/browse/yakushi/141/5/_contents/-char/ja'>141 巻 (2021) 5 号</a></li><li> / </li><li>書誌</li>
+		</ul>
+<div class="clearfix"></div>	<!-- BREDCRUMBS :: END -->		</div>
+	</div>
+	<div class="row">
+		<!-- LEFT SECTION :: START -->
+		<div class="col-md-18">
+			<!-- #163を追加-->
+			<div class="top-margin-2x bottom-margin-2x"></div>
+			<div class="global-article-subtitle">総説</div>
+			<div class="global-article-title">真菌βグルカンと生体防御</div>
+			<div class="global-article-inner-title"></div>
+			<div class="global-authors-name-tags">         	<!--
+						
+					--><a name = "authorNmlist" id="authorNmList"></a><!--
+
+
+
+									--><a href="https://www.jstage.jst.go.jp/search/global/_search/-char/ja?item=8&word=%E5%A4%A7%E9%87%8E+%E5%B0%9A%E4%BB%81" class="customTooltip" title="大野 尚仁, 東京薬科大学"><span>大野 尚仁</span></a><!--
+	-->
+
+
+
+			<div class="accordion_container">
+				<div class="accordion_head plus-icn"name="authInfo" id="authInfo">著者情報</div>
+				<div class="accordion_body new_accordion_body_style" style="display: none;">
+					<ul class="accodion_body_ul">
+						<li>
+							<span style="font-size:1.1em">大野 尚仁</span>
+														<p class="accordion_affilinfo">
+									東京薬科大学
+							</p>
+						</li>
+											</ul>
+				</div>
+			</div>
+			<div class="corr-auth-sapopup-wrap" id="saPopup" style="display:none">
+				<div class="corr-auth-sapopup-overlay" id="saWindow"></div>
+				<div class="corr-auth-sapopup-inner">
+					<div class="corr-auth-sapopup-cont">
+						<div class="sapopup-title"><h4>責任著者(Corresponding author)</h4></div>
+
+							<div class="subject-list subject-sapopup-list" >
+								<div class="corr-auth-subject-li">
+									<div class="corr-auth-subject-item" id="corrAuthMailContainer" style="display:none">
+										<span class="fa fa-envelope outlook-share-icn"></span>
+										<a id="corrAuthMail" class="bluelink-style"></a>
+									</div>
+								</div>
+							</div>
+
+							<div class="subject-list subject-sapopup-list" >
+								<div class="corr-auth-subject-li">
+									<div class="corr-auth-subject-item" id="corrAuthOrcidContainer" style="display:none">
+										<img src="/web/images/id-logo.jpg" class="id-logo" alt="ORCID" />
+										<a target="_blank" rel="noopener noreferrer" id="corrAuthOrcid" class="bluelink-style"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+</div>
+			<div class="global-para">	キーワード:
+
+		<a href="/search/global/_search/-char/ja?item=5&word=fungus" class="bluelink-style">fungus</a>,
+
+		<a href="/search/global/_search/-char/ja?item=5&word=cell+wall" class="bluelink-style">cell wall</a>,
+
+		<a href="/search/global/_search/-char/ja?item=5&word=%CE%B2-glucan" class="bluelink-style">β-glucan</a>,
+
+		<a href="/search/global/_search/-char/ja?item=5&word=pathogen+associated+molecular+pattern" class="bluelink-style">pathogen associated molecular pattern</a>,
+
+		<a href="/search/global/_search/-char/ja?item=5&word=dectin-1" class="bluelink-style">dectin-1</a>,
+
+		<a href="/search/global/_search/-char/ja?item=5&word=antibody" class="bluelink-style">antibody</a>
+</div>
+			<div class="global-tags"><span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+		<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+
+
+
+</div>
+			<p class="global-para">	2021 年
+ 141 巻
+		5 号
+		p. 711-730
+</p>
+
+				<div class="articleoverview-doi-wrap" id="fig-doi">	<span class="doi-icn">DOI</span>
+	<a href="https://doi.org/10.1248/yakushi.20-00245" class="bluelink-style" style="word-break:break-all">https://doi.org/10.1248/yakushi.20-00245</a>
+</div>
+				<div class="articleoverview-doi-wrap"></div>
+			<div class="top-margin-2x bottom-margin-2x"></div>
+<div class="accordion_container">
+	<div class="accordion_head plus-icn">詳細</div>
+	<div class="accordion_body new_accordion_body_style" style="display: none;">
+		<ul class="accodion_body_ul accodion_detail">
+			<li>
+				<span class="accodion_lic">発行日: 2021/05/01</span>
+				<span class="accodion_lic">受付日: 2020/11/25</span>
+				<span class="accodion_lic">J-STAGE公開日: 2021/05/01</span>
+				<span class="accodion_lic">受理日: -</span>
+				<span class="accodion_lic">
+						早期公開日: -
+				</span>
+				<span class="accodion_lic">改訂日: -</span>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+		<!-- LEFT SECTION :: END -->
+		<!-- RIGHT SECTION :: START -->
+		<div class="col-md-6 print-non-disp">
+
+
+
+
+
+
+
+<div id="third-level-navigation">
+				<a href="https://www.jstage.jst.go.jp/article/yakushi/141/5/141_20-00245/_pdf/-char/ja" class="thirdlevel-pdf-btn">
+					PDFをダウンロード  <span class="download-file-size">(887K)</span>
+				</a>
+			<span class="third-level-nav-divider"></span>
+	<div class="third-level-sublinks">
+		<span class="heading">メタデータをダウンロード</span>
+			<span class="fa fa-file-o"></span><a href="https://www.jstage.jst.go.jp/AF06S010ShoshJkuDld?sryCd=yakushi&noVol=141&noIssue=5&kijiCd=141_20-00245&kijiLangKrke=ja&kijiToolIdHkwtsh=AT0072&request_locale=JA">RIS形式</a>
+			<p class="notice_mess">(EndNote、Reference Manager、ProCite、RefWorksとの互換性あり)</p>
+			<div class="clearfix"> </div>
+			<span class="fa fa-file-o"></span><a href="https://www.jstage.jst.go.jp/AF06S010ShoshJkuDld?sryCd=yakushi&noVol=141&noIssue=5&kijiCd=141_20-00245&kijiLangKrke=ja&kijiToolIdHkwtsh=AT0073&request_locale=JA">BIB TEX形式</a>
+			<p class="notice_mess">(BibDesk、LaTeXとの互換性あり)</p>
+			<div class="clearfix"> </div>
+		<span class="fa fa-file-o"></span> <a href="javascript:void(0);" onclick="downloadText('https://www.jstage.jst.go.jp/article/yakushi/141/5/141_20-00245/_article/-char/ja'.replace('&amp;amp;','&'))">テキスト</a>
+	<div class="clearfix"> </div>
+
+		<a href="https://www.jstage.jst.go.jp/static/pages/HowToDownload/-char/ja" class="download-help-link bluelink-style">メタデータのダウンロード方法</a>
+	</div>
+
+	<a href="https://www.jstage.jst.go.jp/browse/yakushi/_pubinfo/-char/ja#information" class="thirdlevel-links">発行機関連絡先</a>
+	<span class="third-level-nav-divider"></span>
+</div>
+		</div>
+		<!-- RIGHT SECTION :: END -->
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- ARTICLE OVERVIEW  INTRODUCTION :: END -->
+
+<!-- ARTICLE OVERVIEW :: START -->
+<div class="clearfix container">
+	<!-- LEFT STICKY SIDEBAR :: START -->
+	<div id="sticky-sidebar" class="print-non-disp">
+		<div class="section-title-14">記事の概要</div>
+		<!-- ARTICLE OVERVIEW LINKS :: START -->
+		<nav id="article-overiew-section-links">
+<nav id="article-overiew-section-links">
+	<ul id="article-overiew-section-list">
+			<li> <a href="#article-overiew-abstract-wrap" onClick="menueAnime('Abstract')" title="抄録" class="customTooltip">抄録</a></li>
+			<li><a href="#article-overiew-references-wrap" onClick="menueAnime('References')" title="引用文献" class="customTooltip">引用文献 (135)</a></li>
+		<li id="author-info-navi"><a href="#author-information-wrap" onClick="menueAnime('information')" title="著者関連情報" class="customTooltip ">著者関連情報</a></li>
+				<li><a href="#citedby-wrap" onClick="menueAnime('Cited')" title="被引用文献" class="customTooltip ">被引用文献 (3)</a></li>
+	</ul>
+</nav>
+		</nav>
+		<!-- ARTICLE OVERVIEW LINKS :: END -->
+		<!-- SHARING ICONS :: SMALL SET :: START -->
+		<div id="sticky-sidebar-shareicons">
+<div class="section-title-noborder-14">共有する</div>
+<ul class="global-share-x-icons-list">
+<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoi.org%2F10.1248%2Fyakushi.20-00245" target="_blank" rel="noopener noreferrer"><span class="fa fa-facebook facebook-share-icn"></span></a></li>
+<li><a href="http://twitter.com/share?url=https%3A%2F%2Fdoi.org%2F10.1248%2Fyakushi.20-00245&text=J-STAGE+Articles+-+%E7%9C%9F%E8%8F%8C%CE%B2%E3%82%B0%E3%83%AB%E3%82%AB%E3%83%B3%E3%81%A8%E7%94%9F%E4%BD%93%E9%98%B2%E5%BE%A1" target="_blank" rel="noopener noreferrer"><span class="twitter-share-icn" style="background:#000000;display:inline-block;font-size:20px;"><img src="/web/images/logo-white.png" width="16" height="16" alt="X"></img></span></a></li>
+<li><a href="mailto:?body=YAKUGAKU%20ZASSHI%0A%0A%E7%9C%9F%E8%8F%8C%CE%B2%E3%82%B0%E3%83%AB%E3%82%AB%E3%83%B3%E3%81%A8%E7%94%9F%E4%BD%93%E9%98%B2%E5%BE%A1%0A%0Ahttps%3A%2F%2Fdoi.org%2F10.1248%2Fyakushi.20-00245%0A"> <span class="fa fa-envelope outlook-share-icn"></span></a></li>
+<li><a href="http://www.mendeley.com/import/?doi=10.1248/yakushi.20-00245" target="_blank" rel="noopener noreferrer"><span class="mendeley-share-icn"><img src="/web/images/mendeley-share-icon.png" width="32" height="32" alt=""/>&nbsp;</span></a></li>
+</ul>
+		</div>
+		<!-- SHARING ICONS :: SMALL SET :: END -->
+	</div>
+	<!-- LEFT STICKY SIDEBAR :: END -->
+
+	<!-- RIGHT NON-STICKY SIDEBAR :: START -->
+	<div class="non-sticky-content">
+		<div id="non-sticky-content-leftsection">
+			<div id="article-overiew-abstract-wrap">
+			<!-- INNER SECTION :: START -->
+<div class="section-title-18">抄録</div>
+<div class="global-para-14">
+<p>Fungi are eukaryotic microorganisms that show complex life cycles, including both anamorph and teleomorph stages. Beta-1,3-1,6-glucans (BGs) are major cell wall components in fungi. BGs are also found in a soluble form and are secreted by fungal cells. Studies of fungal BGs extensively expanded from 1960 to 1990 due to their applications in cancer immunotherapy. However, progress in this field slowed down due to the low efficacy of such therapies. In the early 21st century, the discovery of C-type lectin receptors significantly enhanced the molecular understanding of innate immunity. Moreover, pathogen-associated molecular patterns (PAMPs) and pattern recognition receptors (PRRs) were also discovered. Soon, dectin-1 was identified as the PRR of BGs, whereas BGs were established as PAMPs. Then, studies on fungal BGs focused on their participation in the development of deep-seated mycoses and on their role as a source of functional foods. Fungal BGs may have numerous and complex linkages, making it difficult to systematize them even at the primary structure level. Moreover, elucidating the structure of BGs is largely hindered by the multiplicity of genes involved in cell wall biosynthesis, including those for BGs, and by fungal diversity. The present review mainly focused on the characteristics of fungal BGs from the viewpoint of structure and immunological activities.</p>
+</div>
+<div style="text-align:center;">
+</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+
+			<!-- INNER SECTION :: START -->
+			<div id="datarepo-wrap"></div>
+			<input type="hidden" id="figshareArticleSearchUrl" value="https://api.figshare.com/v2/articles">
+			<!-- INNER SECTION :: END -->
+
+			<!-- INNER SECTION :: START -->
+			<div id="article-overiew-references-wrap">
+				<div class="section-title-18" style="display:none;">引用文献 (135)</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div id="article-overiew-related-wrap">
+				<div class="section-title-18" style="display:none;">関連文献 (0)</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div id="figures-tables-wrap">
+				<div class="section-title-noborder-18" style="display:none;">図 (0)</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div id="author-information-wrap" style="">
+				<div id="author_info_main">
+					<div id="author_info_title" class="section-title-18" onClick="getAuthorList(this)">
+					<img src="/web/images/data-services/J-GLOBAL.jpg" alt="" class="jglobal_img">
+					<span id="author_info_label">著者関連情報</span></div>
+					<div class="accordion_container">
+						<div id="author_info_status"></div>
+						<div id="author_info_contents"></div>
+					</div>
+				</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div id="supplimentary-materials-wrap">
+				<div class="section-title-18" style="display:none;">電子付録 (0)</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div id="resultsanddiscussion-wrap">
+				<div class="section-title-18" style="display:none;">成果一覧 ()</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div id="citedby-wrap">
+				<div class="section-title-18" style="display:none;">被引用文献 (3)</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div id="jstage-external-links">
+			</div>
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div class="section-divider">
+<div class="grey-txt-color fontsize12">
+ &copy; 	2021 The Pharmaceutical Society of Japan
+</div>
+	<div class="grey-txt-color fontsize12 margintop10">
+	
+
+		</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div id="article-navigation-links" class="print-non-disp">
+<a href="https://www.jstage.jst.go.jp/article/yakushi/141/5/141_20-00235/_article/-char/ja" class="next-icon colorscheme02-lighter">前の記事</a>
+<a href="https://www.jstage.jst.go.jp/article/yakushi/141/5/141_20-00203/_article/-char/ja" class="previous-icon colorscheme02-lighter">次の記事</a>
+<div class="clearfix"> </div>			</div>
+			<!-- INNER SECTION :: END -->
+		</div>
+		<div id="non-sticky-content-rightsection" class="print-non-disp">
+			<!-- INNER SECTION :: START -->
+<div class="section-divider">
+	<div class="section-title-14">お気に入り & アラート</div>
+	<ul class="star-list-style">
+				<li><a href = "javascript:;" class = "add-favorites-articles" value= "1">お気に入りに追加</a></li>
+				<li><a href = "javascript:;" class = "add-favorites-articles" value= "4">追加情報アラート</a></li>
+				<li><a href =" javascript:;" class = "add-favorites-articles" value= "2">被引用アラート</a></li>
+				<li><a href = "javascript:;" class = "add-favorites-articles" value= "3">認証解除アラート</a></li>
+	</ul>
+</div>
+<form action = "/fav/articles/_insert/-char/ja" method = "get" id = "favorites-articles" name = "favorites-articles"></form>
+<form action = "/fav/title/_insert/-char/ja" method = "get" id = "favorites-titles" name = "favorites-titles"></form>
+<input type="hidden" name="sryCd" value="yakushi">
+<input type="hidden" name="noVol" value="141">
+<input type="hidden" name="noIssue" value="5">
+<input type="hidden" name="kijiCd" value="141_20-00245">
+			<!-- INNER SECTION :: END -->
+			<!-- INNER SECTION :: START -->
+			<div id="related_articles_main">
+				<div id="related_articles_title" class="section-title-14">
+					<span onclick="getArticleJGID(this)" style="cursor: pointer;">
+						<img src="/web/images/data-services/J-GLOBAL.jpg" alt="" class="jglobal_img_side">
+						<div id="related_articles_label">
+							<span style="display:inline-block; vertical-align:middle;">関連記事</span>
+							<span id="glyphiconmenu" class="glyphicon glyphicon-menu-right"style="display:inline; vertical-align:middle;"></span>
+						</div>
+					</span>
+				</div>
+				<div class="accordion_container">
+					<div id="related_articles_status"></div>
+					<div id="related_articles_contents"></div>
+				</div>
+			</div>
+			<!-- INNER SECTION :: END -->
+			<div class="clearfix"></div>
+			<br>
+			<!-- ALTMETRIC WRAPPER :: END -->
+			<div class="clearfix"></div>
+			<!-- INNER SECTION :: START -->
+<div class="section-title-14">閲覧履歴</div>
+<ul class="common-list-style">
+</ul>			<!-- INNER SECTION :: END -->
+			<div class="clearfix"></div>
+			<!-- INNER SECTION :: START -->
+				<!-- INNER SECTION :: START -->
+<div class='section-divider'>
+<div class='section-title-14'>前身誌</div>
+<p class='right-section-para'><a href='https://www.jstage.jst.go.jp/browse/yakushi1881/-char/ja'>藥學雜誌</a></p>
+<p class='right-section-para'><a href='https://www.jstage.jst.go.jp/browse/yakushi1944a/-char/ja'>薬学雑誌. 甲號</a></p>
+<p class='right-section-para'><a href='https://www.jstage.jst.go.jp/browse/yakushi1944b/-char/ja'>薬学雑誌. 乙号</a></p>
+</div>
+<!-- INNER SECTION :: END -->
+
+			<!-- INNER SECTION :: END -->
+			<div class="clearfix"></div>
+			<!-- SHARING ICONS :: BIG SET :: START -->
+
+<div class="sticky-sidebar-shareicons-rightsection top-margin-2x">
+	<div id="socialmedia-share-plugins" class="colorscheme02-lighter">
+		<div class="sectionheading">このページを共有する</div>
+		<ul class="share-icons-list">
+		<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoi.org%2F10.1248%2Fyakushi.20-00245" target="_blank" rel="noopener noreferrer"><span class="fa fa-facebook facebook-share-icn"></span></a></li>
+		<li><a href="http://twitter.com/share?url=https%3A%2F%2Fdoi.org%2F10.1248%2Fyakushi.20-00245&text=J-STAGE+Articles+-+%E7%9C%9F%E8%8F%8C%CE%B2%E3%82%B0%E3%83%AB%E3%82%AB%E3%83%B3%E3%81%A8%E7%94%9F%E4%BD%93%E9%98%B2%E5%BE%A1" target="_blank" rel="noopener noreferrer"><span class="twitter-share-icn" style="background:#000000;display:inline-block;font-size:28px;"><img src="/web/images/logo-white.png" width="20" height="20" alt="X"></img></span></a></li>
+		<li><a href="mailto:?body=YAKUGAKU%20ZASSHI%0A%0A%E7%9C%9F%E8%8F%8C%CE%B2%E3%82%B0%E3%83%AB%E3%82%AB%E3%83%B3%E3%81%A8%E7%94%9F%E4%BD%93%E9%98%B2%E5%BE%A1%0A%0Ahttps%3A%2F%2Fdoi.org%2F10.1248%2Fyakushi.20-00245%0A"> <span class="fa fa-envelope outlook-share-icn"></span></a></li>
+		<li><a href="http://www.mendeley.com/import/?doi=10.1248/yakushi.20-00245" target="_blank" rel="noopener noreferrer"><span class="mendeley-share-icn"><img src="/web/images/mendeley-share-icon.png" width="32" height="32" alt=""/>&nbsp;</span></a></li>
+		</ul>
+	</div>
+</div>
+			<!-- SHARING ICONS :: BIG SET :: END -->
+		</div>
+		<!-- RIGHT NON-STICKY SIDEBAR :: END -->
+	</div>
+</div>
+<!-- ARTICLE OVERVIEW :: END -->
+<div class="clearfix"></div>
+
+<!-- MODAL POPUP :: START -->
+<!-- MODAL POPUP :: END -->
+
+
+
+<!-- FOOTER :: START -->
+<span class="noprint">
+<footer class="footer-style2">
+<div id="footer-strip" class="colorscheme02-lighter">
+	<div class="container">
+		編集・発行 公益社団法人日本薬学会
+		<br>
+		制作・登載者 株式会社国際文献社
+	</div>
+</div>
+<div class="footer-wrap print-non-disp">
+	<a href="#0" class="take-on-top1">Top</a>
+	<div class="container">
+		<div class="footer-link-section">
+						<div class="footer-link-heading">資料・記事を探す</div>
+			<ul class="footer-link-list">
+				<li><a href="/journal/list/-char/ja">資料を探す：資料タイトルから</a></li>
+				<li><a href="/journal/fields/-char/ja">資料を探す：分野から</a></li>
+				<li><a href="/journal/publisher/-char/ja">資料を探す：発行機関から</a></li>
+				<li><a href="/search/global/_search/-char/ja">記事を探す</a></li>
+				<li><a href="https://jstagedata.jst.go.jp/" target="_blank" rel="noopener noreferrer">データを探す(J-STAGE Data) <img src="/web/images/information-tab2/bg-arrow-white.png" width="13" height="10" alt=""></a></li>
+			</ul>
+		</div>
+
+		<div class="footer-link-section">
+						<div class="footer-link-heading">J-STAGEについて</div>
+			<ul class="footer-link-list">
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageOverview/-char/ja">J-STAGEの概要</a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageServices/TAB1/-char/ja">各種サービス・機能</a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/PublicDataAboutJstage/-char/ja">公開データ</a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/TermsAndPolicies/ForIndividuals/-char/ja">利用規約・ポリシー</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/ForPublishers/TAB1/-char/ja">新規登載の申し込み</a></li>			</ul>
+		</div>
+		<div class="footer-link-section">
+						<div class="footer-link-heading">ニュース&PR</div>
+			<ul class="footer-link-list">
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB1/Current/Page1/-char/ja">お知らせ一覧</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB5/Page1/-char/ja">リリースノート</a></li> 				<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB2/Page1/-char/ja">メンテナンス情報</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB4/Page1/-char/ja">イベント情報</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB3/Page1/-char/ja">J-STAGEニュース</a></li> 				<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB6/Page1/-char/ja">特集コンテンツ </a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB7/Page1/-char/ja">各種広報媒体 </a></li>
+			</ul>
+		</div>
+		<div class="footer-link-section">
+						<div class="footer-link-heading">サポート</div>
+			<ul class="footer-link-list">
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/InformationForSocieties/TAB1/-char/ja">J-STAGE登載機関用コンテンツ</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/GuidelineAndManuals/TAB1/-char/ja">登載ガイドライン・マニュアル</a></li> 				<li><a href="https://www.jstage.jst.go.jp/static/pages/ForReaders/-char/ja">閲覧者向けヘルプ</a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/RecommendedEnvironment/-char/ja">動作確認済みブラウザ</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/FAQs/TAB2/-char/ja">FAQ</a></li> 				<li><a href="https://www.jstage.jst.go.jp/static/pages/Contact/-char/ja">お問い合わせ </a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/Sitemap/-char/ja">サイトマップ </a></li>
+			</ul>
+		</div>
+
+		<div class="clearfix"></div>
+				<div class="clearfix"></div>
+	</div>
+</div>
+</footer>
+</span>
+<!-- FOOTER :: END -->
+<!-- FEEDBACK BUTTON :: START -->
+<span class="noprint print-non-disp">
+<div id="right-feedback-btn"><a href="https://form2.jst.go.jp/s/jstage-feedback-ja" target="_blank" rel="noopener noreferrer">feedback</a></div>
+</span>
+<!-- FEEDBACK BUTTON :: END -->
+<!-- TAKE ME TO TOP :: START -->
+<a href="#0" class="take-on-top" style="z-index:inherit">Top</a>
+<!-- TAKE ME TO TOP :: END -->
+
+<!-- STICKY REGISTER TO J-STAGE HERE :: START -->
+<div id="sticky-register-to-j-stage" class="sticky-register-to-j-stage print-non-disp" style="display:none;">
+<span class="noprint">
+<a href="javascript:;" class="sticky-register-to-j-stage-close" onclick="registerStickyClose();"><i class="fa fa-times-circle-o"></i></a>
+</span>
+<h3 class="register-for-free"><nobr>J-STAGEへの登録はこちら（無料）</nobr></h3>
+<a href="/myregister/-char/ja" class="sticky-register-btn">登録</a>
+<p class="register-for-already">すでにアカウントをお持ちの場合　サインインは<a href="/mylogin/-char/ja?sourceurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Farticle%2Fyakushi%2F141%2F5%2F141_20-00245%2F_article%2F-char%2Fja">こちら</a></p>
+</div>
+<!-- STICKY REGISTER TO J-STAGE HERE :: END -->
+<script src="/web/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below) -->
+<script src="/web/js/bootstrap.js"></script>
+
+<script src="/web/js/bootstrap.offcanvas.min.js"></script>
+
+<script src="/web/js/bootstrap-tabdrop.min.js"></script>
+
+<script src="/web/js/modernizr.js"></script>
+
+	<script src="/web/js/jquery.hc-sticky.min.js"></script>
+
+<script src="/web/js/jquery.touchSwipe.min.js"></script>
+
+<script src="/web/js/jquery.advancedSlider.min.js"></script>
+
+<script src="/web/js/jquery-navtoselect.min.js?rn=2.3.9"></script>
+
+<script src="/web/js/jquery.treefilter.min.js"></script>
+
+<script src="/web/js/jquery.jplayer.min.js"></script>
+
+<script src="/web/js/jquery.coolfieldset.min.js"></script>
+
+<script src="/web/js/select2.full.min.js"></script>
+
+<script src="/web/js/prettify.min.js"></script>
+
+<script src="/web/js/common.js?rn=2.3.9"></script>
+
+<script src="/web/js/tableHeadFixe.min.js"></script>
+
+<script src="/web/js/validation.js?rn=2.3.9"></script>
+
+
+<script src="/web/js/jquery.hc-sticky.min.js"></script>
+<script src="/web/js/jglobal_related_article_api.js?rn=2.3.9"></script>
+<script src="/web/js/jglobal_author_info_api.js?rn=2.3.9"></script>
+
+<script type="text/javascript" src="https://widgets.figshare.com/static/figshare.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=MML_HTMLorMML"></script>
+
+
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<script src="/web/js/new_plugin/slick/slick.js"></script>
+<script src="/web/js/new_plugin/slick/slick.min.js"></script>
+<script src="/web/js/favoriteAlerts.js"></script>
+<script src="/web/js/downloadText.js"></script>
+<script src="/web/js/articleHome_getArticleMenu.js?rn=2.3.9"></script>
+<link rel="stylesheet" href="/web/css/lity.css" />
+<script src="/web/js/lity.js"></script>
+
+<script>
+$(document).ready(function () {
+if(('localStorage' in window) && (window.localStorage !== null)) {
+	if(localStorage.getItem('C.regsticky') != 'off'){
+	$('#sticky-register-to-j-stage').show();
+	}
+}
+$('.dropdown-toggle').on('click', function(E) {
+	$(this).find('.glyphicon').toggleClass("glyphicon-chevron-up");
+	$(this).find('.glyphicon').toggleClass("glyphicon-chevron-down");
+});
+$('[data-toggle="tooltip"]').tooltip({});
+$('.warningtooltip').tooltip();
+
+
+	var header = 0;
+	if ($('.navbar-fixed-top').length) {
+		header = $('.navbar-fixed-top').eq(0).outerHeight();
+	}
+	$('#sticky-sidebar').hcSticky({
+		responsive: true,
+		followScroll: false,
+		top:header + pheader + 5
+	});
+
+		$('#targetLink').click(function(){
+		var rrkskMlAdrs = $('#targetLink').attr('href');
+		rrkskMlAdrs = rrkskMlAdrs.replace('(at)','@');
+		$('#targetLink').attr('href', rrkskMlAdrs);
+	});
+
+		$('#corrAuthMail').click(function(){
+		var rrkskMlAdrs = $('#corrAuthMail').attr('href');
+		rrkskMlAdrs = rrkskMlAdrs.replace('(at)','@');
+		$('#corrAuthMail').attr('href', rrkskMlAdrs);
+	});
+
+		$('.licensedescription').find('a').each(function() {
+		$(this).attr('target', '_blank');
+		$(this).attr('rel', 'noopener noreferrer');
+	});
+
+		$('#saWindow').click(function(){
+		$('#saPopup').attr('style', 'display:none;');
+	});
+
+	window.setTimeout( related_articles_invoke('','10.1248/yakushi.20-00245','true','ja'), 100 );
+	window.setTimeout( author_info_invoke('','10.1248/yakushi.20-00245','true','true','true','false','ja'), 100 );
+
+
+});
+$(".journal-volume-dd").select2( {width: 'resolve'});
+$(".journal-issue-dd").select2();
+$('#facetsearch-header').facetsearch();
+$('.facetsearch-subheader').facetsearch();
+$(window).load(function(){
+	$('.collapseall-icon').hide();
+	$('.vol-link').click(function(e){
+		e.stopPropagation();
+	});
+	$('.expandall-icon').click(function(){
+		$(this).addClass('expand-inactive');
+		$('.collapseall-icon').removeClass('collapse-inactive')
+		$('.inner-content').slideDown();
+		$('.content').each(function(index, element) {
+			$(this).find('.expand').removeClass('collapse1');
+		});
+		$('.collapseall-icon').show();
+		$('.expandall-icon').hide();
+		$('.show_abstract').hide();
+		$('.hide_abstract').show();
+	});
+	$('.collapseall-icon').addClass('collapse-inactive');
+	$('.collapseall-icon').click(function(){
+		$(this).addClass('collapse-inactive');
+		$('.expandall-icon').removeClass('expand-inactive');
+		$('.inner-content').slideUp();
+		$('.content').each(function(index, element) {
+			$(this).find('.expand').addClass('collapse1');
+		});
+		$('.expandall-icon').show();
+		$('.collapseall-icon').hide();
+		$('.show_abstract').show();
+		$('.hide_abstract').hide();
+	});
+	$('.inner-content').hide();
+	$(".expand a").click(function (e) {
+		e.preventDefault();
+		$(this).parent().toggleClass('collapse1');
+		$(this).closest('.content').find('.inner-content').slideToggle().toggleClass('datapanel_opend');
+		if(!$(this).closest('.content').find('.inner-content').hasClass("datapanel_opend")){
+			$('div.collapseall-icon').removeClass('collapse-inactive');
+		} else {
+			$('div.collapseall-icon').addClass('collapse-inactive');
+		}
+
+		$(this).find('.show_abstract').toggle();
+		$(this).find('.hide_abstract').toggle();
+
+	});
+});
+$(".journal-volume-dd").select2();
+$(".journal-issue-dd").select2();
+$(".searchresults-noofpages-dropdown").select2({
+	minimumResultsForSearch: Infinity
+});
+$(".search-browse-volissue-tabs a").click(function(event) {
+	event.preventDefault();
+	$(this).parent().addClass("current");
+	$(this).parent().siblings().removeClass("current");
+	var tab = $(this).attr("href");
+	$(".searchbrowse-volissue-tab-content").not(tab).css("display", "none");
+	$(tab).fadeIn();
+});
+$('.inner-content .abstract').each(function(){
+	if ($(this).height() < 120) {
+		$(this).find('.full-abstract').hide();
+	}
+});
+
+if ( document.getElementById("selectedVol") != null ) {
+	var pos = $("#selectedVol").position();
+	$(".faceted-search-scrollwrap").scrollTop((pos.top - 50));
+}
+var ddd = [
+];
+$("#selectVol").bind("change", function() {
+	var selectVol = $(":selected").val();
+	if (selectVol == "") {
+		$("#selectIssue").attr("disabled", "disabled");
+	} else {
+		var disabledAttr = $("#selectIssue").attr("disabled");
+		if (typeof disabledAttr !== "undefined") {
+			$("#selectIssue").removeAttr("disabled");
+		}
+	}
+	$("#selectIssue").children().remove();
+	$('#selectIssue').append($('<option>').html("").val(""));
+	if (selectVol != "") {
+		for (var idx in ddd) {
+			var noVol = ddd[idx].noVol;
+			if (noVol == selectVol) {
+				var noIssueArry = ddd[idx].noIssue;
+				for (i = 0; i < noIssueArry.length; i++) {
+						$('#selectIssue').append($('<option>').html(noIssueArry[i] + "").val(noIssueArry[i]));
+				}
+				break;
+			}
+		}
+	}
+	$("#selectIssue").select2();
+});
+$("#mobileSelectVol").bind("change", function() {
+	var selectVol = $("#mobileSelectVol option:selected").val();
+	if (selectVol == "") {
+		$("#mobileSelectIssue").attr("disabled", "disabled");
+	} else {
+		var disabledAttr = $("#mobileSelectIssue").attr("disabled");
+		if (typeof disabledAttr !== "undefined") {
+			$("#mobileSelectIssue").removeAttr("disabled");
+		}
+	}
+	$("#mobileSelectIssue").children().remove();
+	$('#mobileSelectIssue').append($('<option>').html("").val(""));
+	if (selectVol != "") {
+		for (var idx in ddd) {
+			var noVol = ddd[idx].noVol;
+			if (noVol == selectVol) {
+				var noIssueArry = ddd[idx].noIssue;
+				for (i = 0; i < noIssueArry.length; i++) {
+						$('#mobileSelectIssue').append($('<option>').html(noIssueArry[i] + "").val(noIssueArry[i]));
+				}
+				break;
+			}
+		}
+	}
+	$("#mobileSelectIssue").select2();
+});
+$("#goBtn").bind("click", function() {
+	var noVol = $("#selectVol").val();
+	var noIssue = $("#selectIssue").val();
+	var pageInput = $('#pageInput').val();
+	if (pageInput === undefined) {
+		pageInput = null;
+	}
+	return clickGoBtn("1", noVol, noIssue, pageInput);
+});
+$("#mobileGoBtn").bind("click", function() {
+	var noVol = $("#mobileSelectVol").val();
+	var noIssue = $("#mobileSelectIssue").val();
+	var pageInput = $('#mobilePageInput').val();
+	if (pageInput === undefined) {
+		pageInput = null;
+	}
+	return clickGoBtn("2", noVol, noIssue, pageInput);
+});
+$(window).load(function(){
+	try {
+		var issueList1 = '';
+		var issueOptions = jQuery('#selectIssue').children();
+		if (issueOptions.length > 1) {
+			for ( var i=1; i<issueOptions.length; i++ ){
+				issueList1 = issueList1 + issueOptions.eq(i).val();
+			}
+		}
+		var selectVol = $("#selectVol").val();
+		var selectIssue = $("#selectIssue").val();
+		if (selectVol != "") {
+			for (var idx in ddd) {
+				var noVol = ddd[idx].noVol;
+				if (noVol == selectVol) {
+					var issueList2 = '';
+					var noIssueArry = ddd[idx].noIssue;
+					for (i = 0; i < noIssueArry.length; i++) {
+						issueList2 = issueList2 + noIssueArry[i];
+					}
+					if (issueList1 != issueList2) {
+						$("#selectVol").trigger("change");
+						$("#mobileSelectVol").trigger("change");
+					}
+				}
+			}
+		}
+	} catch (e) {console.log("Exception : " + e);}
+});
+$(window).unload(function(){});
+function pressEnter4GoBtn() {
+	if (window.event.keyCode == 13) {
+		$('#goBtn').trigger("click");
+	}
+}
+function pressEnter4MobileGoBtn() {
+	if (window.event.keyCode == 13) {
+		$('#mobileGoBtn').trigger("click");
+	}
+}
+function clickGoBtn(mode, noVol, noIssue, pageInput) {
+	if (mode == "1") {
+		$("#pageMessage01").css("display", "none");
+		$("#pageMessage02").css("display", "none");
+		$("#pageMessage03").css("display", "none");
+	} else if (mode == "2") {
+		$("#mobilePageMessage01").css("display", "none");
+		$("#mobilePageMessage02").css("display", "none");
+		$("#mobilePageMessage03").css("display", "none");
+	}
+	try {
+
+		if ((noVol == null || noVol == "") && (noIssue == null || noIssue == "")){
+				noVol = "146";
+				noIssue = "5"
+		}
+
+		if (noIssue == null || noIssue == ""){
+			noIssue = "0"
+		}
+
+		if (pageInput == null || pageInput == "") {
+			var url = getUrl(noVol, noIssue);
+			url = url.replace('repXXX', noVol);
+			url = url.replace('repYYY', noIssue);
+			document.location.href = url;
+			return;
+		}
+		if (noVol == null) {
+			if (mode == "1") {
+				$("#pageMessage01").css("display", "block");
+			} else if (mode == "2") {
+				$("#mobilePageMessage01").css("display", "block");
+			}
+			return;
+		}
+		var jsonUrl = 'https://www.jstage.jst.go.jp/pageSearch/yakushi/repXXX/repYYY/repZZZ';
+		jsonUrl = jsonUrl.replace('repXXX', noVol);
+		jsonUrl = jsonUrl.replace('repYYY', noIssue);
+		jsonUrl = jsonUrl.replace('repZZZ', pageInput);
+		$.ajax({
+			cache: false,
+			type: 'GET',
+			url: jsonUrl,
+			dataType: 'json',
+			contentType:'application/json',
+			success: function(json) {
+				var errorCd = json.errorCd;
+				var redirectSryCd = json.redirectSryCd;
+				var redirectNoVol = json.redirectNoVol;
+				var redirectNoIssue = json.redirectNoIssue;
+				var redirectCdArticle = json.redirectCdArticle;
+				if (
+						"0" == errorCd
+						&& redirectSryCd != null && redirectSryCd != ''
+						&& redirectNoVol != null && redirectNoVol != ''
+						&& redirectNoIssue != null && redirectNoIssue != ''
+						&& redirectCdArticle != null && redirectCdArticle != ''
+				) {
+					var shosiUrl = 'https://www.jstage.jst.go.jp/article/yakushi/repXXX/repYYY/repZZZ/_article/-char/ja';
+					var urls = shosiUrl.match('(http.+/article/)([0-9a-z]+)(/repXXX.+)');
+					if(urls.length == 4){
+						shosiUrl = urls[1];
+						shosiUrl += redirectSryCd;
+						shosiUrl += urls[3];
+					}
+					shosiUrl = shosiUrl.replace('repXXX', redirectNoVol);
+					shosiUrl = shosiUrl.replace('repYYY', redirectNoIssue);
+					shosiUrl = shosiUrl.replace('repZZZ', redirectCdArticle);
+					document.location.href = shosiUrl;
+					return true;
+				} else if ("1" == errorCd) {
+					if (mode == "1") {
+						$("#pageMessage02").css("display", "block");
+					} else if (mode == "2") {
+						$("#mobilePageMessage02").css("display", "block");
+					}
+				} else if ("2" == errorCd) {
+					if (mode == "1") {
+						$("#pageMessage03").css("display", "block");
+					} else if (mode == "2") {
+						$("#mobilePageMessage03").css("display", "block");
+					}
+				}
+			}
+		});
+	} catch (e) {
+	}
+	return false;
+}
+function getUrl(noVol, noIssue) {
+	return 'https://www.jstage.jst.go.jp/browse/yakushi/repXXX/repYYY/_contents/-char/ja';
+}
+
+var pheader = 0;
+var header = 0;
+if ($('.navbar-fixed-top').length) {
+	header = $('.navbar-fixed-top').eq(0).outerHeight();
+}
+var adjustHeight = header + pheader - 10;
+function menueAnime(title) {
+	var position = '';
+	switch (title){
+		case 'Abstract':
+			position = $('#article-overiew-abstract-wrap').offset().top - adjustHeight;
+			break;
+		case 'Datarepo':
+			position = $('#datarepo-wrap').offset().top - adjustHeight;
+			break;
+		case 'Manuscript':
+			position = $('#manuscript-wrap').offset().top - adjustHeight;
+			break;
+		case 'References':
+			position = $('#article-overiew-references-wrap').offset().top - adjustHeight;
+			break;
+		case 'Relations':
+			position = $('#article-overiew-related-wrap').offset().top - adjustHeight;
+			break;
+		case 'Figures':
+			position = $('#figures-tables-wrap').offset().top - adjustHeight;
+			break;
+		case 'Results':
+			position = $('#resultsanddiscussion-wrap').offset().top - adjustHeight;
+			break;
+		case 'information':
+			position = $('#author-information-wrap').offset().top - adjustHeight;
+			break;
+		case 'Supplementary':
+			position = $('#supplimentary-materials-wrap').offset().top - adjustHeight;
+			break;
+		case 'Cited':
+			position = $('#citedby-wrap').offset().top - adjustHeight;
+			break;
+		case 'External':
+			position = $('#jstage-external-links').offset().top - adjustHeight;
+			break;
+	}
+	$('html, body').animate({scrollTop: position}, 1100);
+	return false;
+}
+
+function authorContributionAnime(anchor) {
+	var position = '';
+	switch (anchor) {
+		case 'authorContribution':
+			$('#authInfo').next('.accordion_body').slideDown(300);
+			$('#authInfo').removeClass('plus-icn');
+			$('#authInfo').addClass('minus-icn');
+			position = $('#authorContribution').offset().top - adjustHeight - 15;
+			break;
+		case 'authorNmList':
+			position = $('#authorNmList').offset().top - adjustHeight - 15;
+			break;
+	}
+	$('html, body').animate({scrollTop: position}, 1100);
+	return false;
+}
+
+function corrAuthPopupClick(mail,orcid){
+
+	if (!mail) {
+		$('#corrAuthMailContainer').attr('style', 'display:none;');
+	} else {
+		$('#corrAuthMailContainer').attr('style', 'block');
+		$('#corrAuthMail').text(mail);
+		var mailAt = mail.replace('@','(at)')
+		$('#corrAuthMail').attr('href','mailto:' + mailAt);
+	}
+
+	if (!orcid) {
+		$('#corrAuthOrcidContainer').attr('style', 'display:none;');
+	} else {
+		$('#corrAuthOrcidContainer').attr('style', 'block');
+		$('#corrAuthOrcid').attr('href',orcid)
+		$('#corrAuthOrcid').text(orcid);
+	}
+
+	$('#saPopup').attr('style', 'block');
+}
+
+function callAjax(tabId, callback, errorCallback, last) {
+	var jsonUrl = 'https://www.jstage.jst.go.jp/article/yakushi/141/5/141_20-00245/_article/_tab/-char/ja?cdstat=&amp;amp;nologrec=';
+	var revision = '';
+	jsonUrl += '&tabId=' + tabId;
+	if(revision != null){
+		jsonUrl += '&revision=' + revision;
+	}
+	jsonUrl = jsonUrl.replace('&amp;amp;','&');
+	if (!last) {
+		$.ajax({
+			cache: false,
+			type: 'GET',
+			url: jsonUrl,
+			dataType: 'html',
+			contentType:'text/html',
+			success: callback,
+			error: errorCallback,
+			complete : function() {
+				$('.loading-view').remove();
+			}
+		});
+	} else {
+		$.ajax({
+			cache: false,
+			type: 'GET',
+			url: jsonUrl,
+			dataType: 'html',
+			contentType:'text/html',
+			success: callback,
+			error: errorCallback,
+			complete : function() {
+				$('.loading-view').remove();
+			}
+		});
+	}
+}
+
+function createCallBack(idx) {
+	if (idx >= ajaxCall.length) {
+		return null;
+	}
+	var callback = function(data) {
+		if (ajaxCall[idx].outerDivId === '') {
+			$('#' + ajaxCall[idx].innerDivId).append(data);
+		} else {
+			var spritHtml = data.split('@@@');
+			var str = '#' + ajaxCall[idx].innerDivId
+			$('#' + ajaxCall[idx].innerDivId).append(spritHtml[0]);
+			if (ajaxCall[idx].outerDivId == 'supplimentary-materials-modal') {
+				$.getScript("/web/js/jquery.jplayer.min.js");
+				dnsFlkApply();
+			}
+		}
+
+		if (ajaxCall[idx].doPreparationForJPlayer === true) {
+			dnsFlkApply();
+		}
+
+		replaceLicenseErrorBtn();
+		addReferenceModeTooltipHandler('#' + ajaxCall[idx].innerDivId);
+
+		idx++;
+		if (idx < ajaxCall.length) {
+			if (idx == ajaxCall.length - 1) {
+				callAjax(ajaxCall[idx].tabId, createCallBack(idx), createErrorCallback(idx), true);
+			} else {
+				callAjax(ajaxCall[idx].tabId, createCallBack(idx), createErrorCallback(idx), false);
+			}
+		}
+	}
+	return callback;
+}
+
+function createErrorCallback(idx) {
+	var errorCallback = function(data) {
+		var errorMsg = '<div>データが取得できませんでした。</div>';
+		if (ajaxCall[idx].outerDivId === '') {
+			$('#' + ajaxCall[idx].innerDivId).after(errorMsg);
+		} else {
+			$('#' + ajaxCall[idx].innerDivId).after(errorMsg);
+			if (ajaxCall[idx].outerDivId == 'supplimentary-materials-modal') {
+				$.getScript("/web/js/jquery.jplayer.min.js");
+				dnsFlkApply();
+			}
+		}
+
+		if (ajaxCall[idx].doPreparationForJPlayer === true) {
+			dnsFlkApply();
+		}
+
+		idx++;
+		if (idx < ajaxCall.length) {
+			if (idx == ajaxCall.length - 1) {
+				callAjax(ajaxCall[idx].tabId, createCallBack(idx), createErrorCallback(idx), true);
+			} else {
+				callAjax(ajaxCall[idx].tabId, createCallBack(idx), createErrorCallback(idx), false);
+			}
+		}
+	}
+	return errorCallback;
+}
+
+var ajaxFlg = true;
+var zhyoLbl = '0';
+var inYuBnknLbl = '135';
+var knrnkjLbl = '0';
+var hinYuBnknLbl = '3';
+var dnsFrkLbl = '0';
+var seikLstLbl = '';
+var datarepoLbl = '0';
+var searching = '<div class = "loading-view"style="text-align: center;"><img src="/web/images/new_update/ajax-loader.gif" alt=""></div>'
+var ajaxCall = [];
+if (zhyoLbl !== null && zhyoLbl !== '' && zhyoLbl !== '0') {
+	$('#figures-tables-wrap').find('.section-title-noborder-18').css('display', 'block');
+	$('#figures-tables-wrap').append(searching);
+	ajaxCall.push({
+		'tabId' : 'ZHYO',
+		'innerDivId' : 'figures-tables-wrap',
+		'outerDivId' : '',
+		'doPreparationForJPlayer' : true
+	});
+}
+if (inYuBnknLbl !== null && inYuBnknLbl !== '' && inYuBnknLbl !== '0') {
+	$('#article-overiew-references-wrap').find('.section-title-18').css('display', 'block');
+	$('#article-overiew-references-wrap').append(searching);
+	ajaxCall.push({
+		'tabId' : 'INYUBNKN',
+		'innerDivId' : 'article-overiew-references-wrap',
+		'outerDivId' : ''
+	});
+}
+
+if (knrnkjLbl !== null && knrnkjLbl !== '' && knrnkjLbl !== '0') {
+	$('#article-overiew-related-wrap').find('.section-title-18').css('display', 'block');
+	$('#article-overiew-related-wrap').append(searching);
+	ajaxCall.push({
+		'tabId' : 'KNRNKJ',
+		'innerDivId' : 'article-overiew-related-wrap',
+		'outerDivId' : ''
+	});
+}
+
+if (hinYuBnknLbl !== null && hinYuBnknLbl !== '' && hinYuBnknLbl !== '0') {
+	$('#citedby-wrap').find('.section-title-18').css('display', 'block');
+	if(hinYuBnknLbl !== 'n/a'){
+	$('#citedby-wrap').append(searching);
+	ajaxCall.push({
+		'tabId' : 'HINYUBNKN',
+		'innerDivId' : 'citedby-wrap',
+		'outerDivId' : ''
+	});
+	}
+}
+
+if (dnsFrkLbl !== null && dnsFrkLbl !== '' &&  dnsFrkLbl !== '0') {
+	$('#supplimentary-materials-wrap').find('.section-title-18').css('display', 'block');
+	$('#supplimentary-materials-wrap').append(searching);
+	ajaxCall.push({
+		'tabId' : 'DNSFRK',
+		'innerDivId' : 'supplimentary-materials-wrap',
+		'outerDivId' : 'supplimentary-materials-modal'
+	});
+}
+
+if (seikLstLbl !== null && seikLstLbl !== '' && seikLstLbl !== '0') {
+	$('#resultsanddiscussion-wrap').find('.section-title-18').css('display', 'block');
+	$('#resultsanddiscussion-wrap').append(searching);
+	ajaxCall.push({
+		'tabId' : 'SEIKLST',
+		'innerDivId' : 'resultsanddiscussion-wrap',
+		'outerDivId' : ''
+	});
+}
+
+if (datarepoLbl !== null && datarepoLbl !== '' && datarepoLbl != '0') {
+	$('#datarepo-wrap').find('.section-title-18').css('display', 'block');
+	$('#datarepo-wrap').append(searching);
+	ajaxCall.push({
+		'tabId' : 'DATAREPO',
+		'innerDivId' : 'datarepo-wrap',
+		'outerDivId' : ''
+	});
+}
+
+switch (ajaxCall.length) {
+	case 0:
+		break;
+	case 1:
+		callAjax(ajaxCall[0].tabId, createCallBack(0), createErrorCallback(0), true);
+		break;
+	default:
+		callAjax(ajaxCall[0].tabId, createCallBack(0), createErrorCallback(0), false);
+		break;
+}
+
+function dnsFlkApply(){
+	$('[id^=jp_container_]').each(function () {
+		var vid= this.id;
+		var result = vid.split( '_' );
+		var no = result[result.length-1];
+
+		var target_player = '#jquery_jplayer_' + no;
+		var container = '#jp_container_' + no;
+		var source = '#jp_source_' + no;
+		if ($(target_player)) {
+			var sourcename = $(source).val();
+			$(target_player).jPlayer({
+				ready: function () {
+					$(this).jPlayer('setMedia', {
+						m4v: sourcename
+					});
+				},
+				play: function() { // To avoid both jPlayers playing together.
+					$(this).jPlayer('pauseOthers');
+				},
+				errorAlerts: false,
+				cssSelectorAncestor: container,
+				swfPath: '/pub/lib/raspberry/jplayer/swf/',
+				supplied: 'm4a,m4v,mp4'
+			});
+		}
+	});
+}
+
+$(function () {
+    $('div.altmetric-embed').on('altmetric:show', function () {
+        $('#altmetric-widget').find('a').attr({
+        	'target': '_blank',
+        	'rel': 'noopener noreferrer'
+        })
+    });
+});
+
+
+	window.setTimeout( set_jglobalApikey_authorinformation('JDEkcmFzbXVzbGUkYmhyak4xSXJxbGVKbDN1YXNXZkdYMQ=='),100);
+	window.setTimeout( set_jglobalApikey_relatedarticle('JDEkcmFzbXVzbGUkYmhyak4xSXJxbGVKbDN1YXNXZkdYMQ=='),100);
+
+
+function registerStickyClose(){
+	$("#sticky-register-to-j-stage").hide();
+	if(('localStorage' in window) && (window.localStorage !== null)) {
+		localStorage.setItem('C.regsticky', 'off');
+	}
+}
+function doChangeLang(langKind){
+
+	if (typeof changeLang == "function")  {
+				changeLang(langKind);
+		return;
+
+	} else {
+				var encStr = "";
+		if(langKind == "ja") {
+			encStr = "https%3A%2F%2Fwww.jstage.jst.go.jp%2Farticle%2Fyakushi%2F141%2F5%2F141_20-00245%2F_article%2F-char%2Fja";
+		} else {
+			encStr = "https%3A%2F%2Fwww.jstage.jst.go.jp%2Farticle%2Fyakushi%2F141%2F5%2F141_20-00245%2F_article%2F-char%2Fen";
+		}
+		location.href = decodeURIComponent(encStr);
+		return;
+	}
+}
+function hBack(){
+		var ans;
+		var ref = document.referrer;
+		re = new RegExp(location.hostname,"i");
+		if(ref.match(re)){
+				ans = false;
+		}else{
+				ans = true
+		}
+		if(!ans){
+			history.back();
+		} else {
+			location.href = "https://www.jstage.jst.go.jp/browse/-char/ja";
+		}
+}
+</script>
+</body>
+</html>

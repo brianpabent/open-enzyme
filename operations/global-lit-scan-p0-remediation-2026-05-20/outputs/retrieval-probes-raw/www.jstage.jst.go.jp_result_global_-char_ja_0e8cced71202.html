@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<head>
+
+
+
+<!-- 2.3.9 -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="">
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<title>詳細検索結果</title>
+<link rel="stylesheet" href="/web/css/bootstrap3-wysiwyg5-color.css" />
+<link rel="stylesheet" href="/web/css/bootstrap3-wysiwyg5.css" />
+<link rel="stylesheet" href="/web/css/ranking.css?rn=2.3.9" />
+
+<link rel="stylesheet" href="/web/css/bootstrap.min.css" />
+
+<link rel="stylesheet" href="/web/css/style.css?rn=2.3.9"/>
+<link rel="stylesheet" href="/web/css/common-elements-style.css?rn=2.3.9" />
+<link rel="stylesheet" href="/web/css/jquery.treefilter.css" />
+<link rel="stylesheet" href="/web/css/jplayer.blue.monday.css" />
+<link rel="stylesheet" href="/web/css/main.css?rn=2.3.9" />
+
+<link rel="stylesheet" media="print" href="/web/css/print.css" />
+
+<!--[if lt IE 9]>
+
+<script src="/web/js/html5shiv.min.js"></script>
+<script src="/web/js/respond.min.js"></script>
+<![endif]-->
+<style type="text/css">
+<!--
+.navbar-default .navbar-nav>li>a {
+		color: #093963;
+		font-size: 13px!important;
+}
+.navbar-default .navbar-nav>li>a:hover ,
+.navbar-default .navbar-nav>li>a:focus {
+		color: #fff;
+		font-size: 13px!important;
+	background-color: #4679ac !important;
+}
+@media (max-width: 991px) {
+.navbar-default .navbar-nav > li > a {
+		clear: both;
+		color: #fff;
+		outline: 0 none;
+		width: 250px;
+}
+.navbar-default .navbar-nav .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .dropdown-menu > li > a:focus {
+		background: #444 none repeat scroll 0 0 !important;
+		color: #fff !important;
+}
+}
+.navbar-default .navbar-nav>li>a.referencemode {
+		color: #888888;
+}
+.navbar-default .navbar-nav>li>a.referencemode:hover ,
+.navbar-default .navbar-nav>li>a.referencemode:focus {
+		color: #888888;
+		background-color: transparent !important;
+}
+b {
+	font-weight: bold;
+}
+i {
+	font-style: italic;
+}
+// -->
+</style>
+</head>
+	<body class="body-offcanvas addition-pages">
+
+	
+
+
+<!-- HEADER :: START -->
+<span class="noprint">
+<header class="clearfix">
+	<!-- NAVIGATION :: START -->
+	<nav class="navbar navbar-default navbar-fixed-top ep-nav-shadow " >
+
+						
+		<div class="container">
+			<button type="button" class="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas" style="float:left;"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span> </button>
+			<!-- RIGHT NAV SEARCH :: BEGIN -->
+			<div class="search-nav-block dropdown">
+				<a href="javascript:;" class=""  data-toggle="collapse" data-target="#Search_nav"><i class="search-nav-icon"></i></a>
+			</div>
+			<!-- RIGHT NAV SEARCH :: END -->
+			<!-- LOGO :: START -->
+			<a class="navbar-brand ms-logowrap hm-logo-padding" href="https://www.jstage.jst.go.jp/browse/-char/ja">
+				<img src="/web/images/J-STAGE_logo_A3.png" alt=""  style="margin-top:6px;" />
+			</a>
+			<!-- LOGO :: END -->
+			<!-- HAMBURGER LEFT TO RIGHT SLIDE :: START -->
+			<div class="offcanvas-left-wrap register-offcanvas-left-wrap">
+								<div class="navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-fade" role="navigation" id="js-bootstrap-offcanvas">
+					<div class="offcanvas-left-wrap">
+						<div class="navbar-header">
+							<a class="navbar-brand jst-homelink" href="https://www.jstage.jst.go.jp/browse/-char/ja">J-STAGE home</a>
+							<button type="button" class="navbar-toggle offcanvas-toggle pull-right" data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas" style="float:left;"> <img src="/web/images/edit-profile/icon-close-menu.png" alt=""></button>
+						</div>
+						<div class="offcanvas-nav-wrap">
+							<ul class="nav navbar-nav">
+																<li class="dropdown reponsive-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">資料・記事を探す<b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+										<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+										<li><a href="/journal/list/-char/ja">資料を探す：資料タイトルから</a></li>
+										<li><a href="/journal/fields/-char/ja">資料を探す：分野から</a></li>
+										<li><a href="/journal/publisher/-char/ja">資料を探す：発行機関から</a></li>
+										<li><a href="/search/global/_search/-char/ja">記事を探す</a></li>
+										<li><a href="https://jstagedata.jst.go.jp/" target="_blank" rel="noopener noreferrer">データを探す(J-STAGE Data) <img src="/web/images/information-tab2/bg-arrow-white.png" width="13" height="10" alt=""></a></li>
+									</ul>
+								</li>
+																<li class="dropdown reponsive-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">J-STAGEについて <b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+										<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageOverview/-char/ja">J-STAGEの概要</a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageServices/TAB1/-char/ja">各種サービス・機能</a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/PublicDataAboutJstage/-char/ja">公開データ</a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/TermsAndPolicies/ForIndividuals/-char/ja">利用規約・ポリシー</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/ForPublishers/TAB1/-char/ja">新規登載の申し込み</a></li>									</ul>
+								</li>
+
+																<li class="dropdown reponsive-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ニュース&PR  <b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+										<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB1/Current/Page1/-char/ja">お知らせ一覧</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB5/Page1/-char/ja">リリースノート</a></li> 										<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB2/Page1/-char/ja">メンテナンス情報</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB4/Page1/-char/ja">イベント情報</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB3/Page1/-char/ja">J-STAGEニュース</a></li> 										<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB6/Page1/-char/ja">特集コンテンツ </a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB7/Page1/-char/ja">各種広報媒体 </a></li>
+									</ul>
+								</li>
+																<li class="dropdown reponsive-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">サポート  <b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+										<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/InformationForSocieties/TAB1/-char/ja">J-STAGE登載機関用コンテンツ</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/GuidelineAndManuals/TAB1/-char/ja">登載ガイドライン・マニュアル</a></li> 										<li><a href="https://www.jstage.jst.go.jp/static/pages/ForReaders/-char/ja">閲覧者向けヘルプ</a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/RecommendedEnvironment/-char/ja">動作確認済みブラウザ</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/FAQs/TAB2/-char/ja">FAQ</a></li> 										<li><a href="https://www.jstage.jst.go.jp/static/pages/Contact/-char/ja">お問い合わせ </a></li>
+										<li><a href="https://www.jstage.jst.go.jp/static/pages/Sitemap/-char/ja">サイトマップ </a></li>
+									</ul>
+								</li>
+																													<li class="reponsive-menu">
+												<a href="/mylogin/-char/ja?sourceurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Fresult%2Fglobal%2F-char%2Fja%3FglobalSearchKey%3DURAT1%2BW258X%2B%25E7%2597%259B%25E9%25A2%25A8%26bglobalSearch%3Dtrue">サインイン</a>
+										</li>
+																		<li class="reponsive-menu">
+											<li class="reponsive-menu"><a href="/cart/list/-char/ja?backurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Fresult%2Fglobal%2F-char%2Fja%3FglobalSearchKey%3DURAT1%2BW258X%2B%25E7%2597%259B%25E9%25A2%25A8%26bglobalSearch%3Dtrue" class="" >カート <img src="/web/images/edit-profile/icon-cart.png" alt=""></a>
+									</li>
+								<li class="dropdown reponsive-menu">
+																		<a href="#" class="dropdown-toggle" data-toggle="dropdown"> JA  <img src="/web/images/edit-profile/icon-lang.png" alt=""> <b class="caret"></b></a>
+									<ul class="dropdown-menu ep-dropdown-menu">
+									<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+										<li><a href="javascript:;" onclick="doChangeLang('en')">English</a></li>
+										<li><a href="javascript:;" onclick="doChangeLang('ja')">日本語</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+								<ul class="nav navbar-nav offcanvas-left-display-none">
+										<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">資料・記事を探す<b class="caret"></b></a>
+						<ul class="dropdown-menu ep-dropdown-menu">
+							<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+							<li><a href="/journal/list/-char/ja">資料を探す：資料タイトルから</a></li>
+							<li><a href="/journal/fields/-char/ja">資料を探す：分野から</a></li>
+							<li><a href="/journal/publisher/-char/ja">資料を探す：発行機関から</a></li>
+							<li><a href="/search/global/_search/-char/ja">記事を探す</a></li>
+							<li><a href="https://jstagedata.jst.go.jp/" target="_blank" rel="noopener noreferrer">データを探す(J-STAGE Data) <img src="/web/images/information-tab2/bg-arrow.png" width="13" height="10" alt=""></a></li>
+						</ul>
+					</li>
+										<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">J-STAGEについて <b class="caret"></b></a>
+						<ul class="dropdown-menu ep-dropdown-menu">
+							<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageOverview/-char/ja">J-STAGEの概要</a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageServices/TAB1/-char/ja">各種サービス・機能</a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/PublicDataAboutJstage/-char/ja">公開データ</a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/TermsAndPolicies/ForIndividuals/-char/ja">利用規約・ポリシー</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/ForPublishers/TAB1/-char/ja">新規登載の申し込み</a></li>						</ul>
+					</li>
+										<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ニュース&PR  <b class="caret"></b></a>
+						<ul class="dropdown-menu ep-dropdown-menu">
+							<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB1/Current/Page1/-char/ja">お知らせ一覧</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB5/Page1/-char/ja">リリースノート</a></li> 							<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB2/Page1/-char/ja">メンテナンス情報</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB4/Page1/-char/ja">イベント情報</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB3/Page1/-char/ja">J-STAGEニュース</a></li> 							<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB6/Page1/-char/ja">特集コンテンツ </a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB7/Page1/-char/ja">各種広報媒体 </a></li>
+						</ul>
+					</li>
+										<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">サポート  <b class="caret"></b></a>
+						<ul class="dropdown-menu ep-dropdown-menu">
+							<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""/></span></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/InformationForSocieties/TAB1/-char/ja">J-STAGE登載機関用コンテンツ</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/GuidelineAndManuals/TAB1/-char/ja">登載ガイドライン・マニュアル</a></li> 							<li><a href="https://www.jstage.jst.go.jp/static/pages/ForReaders/-char/ja">閲覧者向けヘルプ</a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/RecommendedEnvironment/-char/ja">動作確認済みブラウザ</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/FAQs/TAB2/-char/ja">FAQ</a></li> 							<li><a href="https://www.jstage.jst.go.jp/static/pages/Contact/-char/ja">お問い合わせ </a></li>
+							<li><a href="https://www.jstage.jst.go.jp/static/pages/Sitemap/-char/ja">サイトマップ </a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- HAMBURGER LEFT TO RIGHT SLIDE :: END -->
+			<div class="offcanvas-right-wrap register-offcanvas-right-wrap">
+				<ul class="nav navbar-nav">
+												<li class="">
+								<a href="/mylogin/-char/ja?sourceurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Fresult%2Fglobal%2F-char%2Fja%3FglobalSearchKey%3DURAT1%2BW258X%2B%25E7%2597%259B%25E9%25A2%25A8%26bglobalSearch%3Dtrue" class="" >サインイン  </a>
+						</li>
+										<li class="">
+							<li class=""><a href="/cart/list/-char/ja?backurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Fresult%2Fglobal%2F-char%2Fja%3FglobalSearchKey%3DURAT1%2BW258X%2B%25E7%2597%259B%25E9%25A2%25A8%26bglobalSearch%3Dtrue" class="" >カート </a>
+					</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ JA 					<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu ep-dropdown-menu" style="min-width: 80px;">
+						<li style="background:none !important;"><span class="topnav-dropdown-icon"><img src="/web/images/top-nav-dropdown-arrow.png" width="18" height="10" alt=""></span></li>
+						<li><a href="javascript:;" onclick="doChangeLang('en')">English</a></li>
+						<li><a href="javascript:;" onclick="doChangeLang('ja')">日本語</a></li>
+					</ul>
+				</li>
+				</ul>
+			</div>
+			<!-- RIGHT NAV SEARCH DROPDOWN :: BEGIN -->
+			<ul class="dropdown-menu collapse ep-dropdown-menu search-dropdown-menu" id="Search_nav" style="max-width: 300px;">
+				<li style="background:none !important;"><span class="topnav-dropdown-icon"></span></li>
+				<li>
+					<div class="col-md-24 edit-profile-form-control">
+						<form action="/result/journal/-char/ja" method="get">
+						<div class="input-group">
+							<input name="globalSearchKey" type="text" class="form-control search-nav-input" placeholder="J-STAGE上のすべてのジャーナルを検索">
+							<span class="input-group-btn search-btn">
+							<button class="btn btn-default" type="submit"><i class="search-nav-icon"></i></button>
+							</span>
+						</div><!-- /input-group -->
+						<a href="https://www.jstage.jst.go.jp/search/global/_search/-char/ja" class="advanced-search-link">詳細検索</a>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<!-- RIGHT NAV SEARCH DROPDOWN :: END -->
+
+			<div class="clearfix"></div>
+		</div>
+	</nav>
+	<!-- NAVIGATION :: END -->
+</header>
+</span>
+<!-- HEADER :: END -->
+
+
+<!-- SEARCH HEADER :: START -->
+<div id="page-content">
+	<div id="journal-header-compact" class="colorscheme-global-dark-normal">
+		<div class="container">
+			<div class="flt-left" style="width:100%; position:relative;">
+				<div class="journal-name">詳細検索結果</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- SEARCH HEADER :: END -->
+
+
+<!-- GLOBAL SEARCH RESULTS INTRODUCTION :: START -->
+<div id="searchbrowse-topbox-wrap" class="colorscheme-global-dark-lighter">
+		<div class="container">
+				<div class="row">
+						<div class="col-md-24 print-non-disp">
+								<!-- BREDCRUMBS :: START -->
+<!-- BREDCRUMBS :: START -->
+	<ul class="global-breadcrumbs">
+		<li><a href="https://www.jstage.jst.go.jp/browse/-char/ja">J-STAGEトップ</a></li>
+		<li>/</li>
+		<li>検索結果</li>
+	</ul>
+<!-- BREDCRUMBS :: END -->
+								<!-- BREDCRUMBS :: END -->
+								<div class="clearfix"></div>
+								<!-- SEARCH BOX :: START -->
+								<div id="search-browser-boxwrap">
+<div class="search-form-wrap">
+		<form action="https://www.jstage.jst.go.jp/result/global/-char/ja" method="get" id="searchForm" name="searchForm">
+				<input type="search" placeholder="J-STAGE上のすべてのジャーナルを検索" class="search-input " name="globalSearchKey" value="URAT1 W258X &#30171;&#39080;">
+				<input type="submit" title="Search" value="検索" class="search-button">
+		</form>
+		<div class="form-error-msg">
+				<div id="pageMessage01" class="errorMsg" style="display: none  ;color:red">検索条件に該当する記事が見つかりません。</div>
+				<div id="pageMessage02" class="errorMsg" style="display: none  ;color:red">キーワードを入力してください</div>
+		</div>
+		<div class="form-advance-search"><a href="https://www.jstage.jst.go.jp/search/global/_search/-char/ja">すべての検索条件をリセット</a></div>
+</div>
+<div class="clearfix"></div>
+								</div>
+								<!-- SEARCH BOX :: END -->
+						</div>
+				</div>
+		</div>
+</div>
+<!-- GLOBAL SEARCH RESULTS INTRODUCTION :: END -->
+<!-- GLOBAL SEARCH RESULTS :: START -->
+<form  action="https://www.jstage.jst.go.jp/result/global/-char/ja"  method="get" id="searchResultForm" name="searchResultForm">
+		<input type="hidden" name="fromPage" id="fromPage" value="/search/global/_search/-char/ja"/>
+		<input type="hidden" name="freeText" id="freeText" value="URAT1 W258X &#30171;&#39080;"/>
+		<input type="hidden" name="item1" id="item1" value=""/>
+		<input type="hidden" name="word1" id="word1" value=""/>
+		<input type="hidden" name="cond1" id="cond1" value=""/>
+		<input type="hidden" name="notCond1" id="notCond1" value=""/>
+		<input type="hidden" name="item2" id="item2" value=""/>
+		<input type="hidden" name="word2" id="word2" value=""/>
+		<input type="hidden" name="cond2" id="cond2" value=""/>
+		<input type="hidden" name="notCond2" id="notCond2" value=""/>
+		<input type="hidden" name="item3" id="item3" value=""/>
+		<input type="hidden" name="word3" id="word3" value=""/>
+		<input type="hidden" name="cond3" id="cond3" value=""/>
+		<input type="hidden" name="notCond3" id="notCond3" value=""/>
+		<input type="hidden" name="item4" id="item4" value=""/>
+		<input type="hidden" name="word4" id="word4" value=""/>
+		<input type="hidden" name="notCond4" id="notCond4" value=""/>
+		<input type="hidden" name="count" id="count" value=""/>
+		<input type="hidden" name="from"  id="from"  value="0"/>
+		<input type="hidden" name="order"  id="order"  value=""/>
+		<input type="hidden" name="type"  id="type"  value=""/>
+		<input type="hidden" name="license"  id="license"  value=""/>
+		<input type="hidden" name="attribute"  id="attribute"  value=""/>
+		<input type="hidden" name="languageType"  id="languageType"  value=""/>
+		<input type="hidden" name="option"  id="option"  value=""/>
+		<input type="hidden" name="yearfrom"  id="yearfrom"  value=""/>
+		<input type="hidden" name="yearto"  id="yearto"  value=""/>
+		<input type="hidden" name="category"  id="category"  value=""/>
+		<input type="hidden" name="cdjournal"  id="cdjournal"  value=""/>
+		<input type="hidden" name="favorite" id="favorite" value="">
+		<input type="hidden" name="translate" id="translate" value="">
+		<input type="hidden" name="bglobalSearch" id="bglobalSearch" value="false">
+		<div class="container">
+				<div class="row">
+						<!-- LEFT SECTION :: START -->
+						<div class="col-md-6 print-non-disp">
+								<div id="searchbrowse-leftsection">
+										<div id="faceted-search-wrap">
+												<div id="facetsearch-header" class="search-header-sticker">
+														<span class="facetsearch-header-link colorscheme-global-dark-light">検索フィルタ</span>
+														<a class="facetsearch-resetall colorscheme-global-dark-light" onClick="resetAllFilters()">すべての検索フィルターをリセットする</a>
+														<div class="facetsearch-content-wrap">
+																<!-- 資料種別フィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">資料種別</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="srySybt" id="srySybt1" value="100"
+																										onchange="doChangeFilter()">
+																								<label for="srySybt1" class="checkbox">ジャーナル
+																												(4,746)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="srySybt" id="srySybt2" value="200"
+																										onchange="doChangeFilter()">
+																								<label for="srySybt2" class="checkbox">会議録・要旨集
+																												(106)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="srySybt" id="srySybt3" value="400"
+																										onchange="doChangeFilter()">
+																								<label for="srySybt3" class="checkbox">研究報告書・技術報告書
+																												(19)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="srySybt" id="srySybt4" value="500"
+																										onchange="doChangeFilter()">
+																								<label for="srySybt4" class="checkbox">解説誌・一般情報誌
+																												(32)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="srySybt" id="srySybt5" value="600"
+																												disabled
+																										onchange="doChangeFilter()">
+																								<label for="srySybt5" class="checkbox">その他
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('srySybt')">リセット</a>
+																		</div>
+																</div>
+																<!-- 資料種別フィルター :: END -->
+																<!-- 査読有無フィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">査読有無</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="kjnSdkUm" id="kjnSdkUm1" value="1"
+																										onchange="doChangeFilter()">
+																								<label for="kjnSdkUm1" class="checkbox">査読あり
+																												(2,456)
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('kjnSdkUm')">リセット</a>
+																		</div>
+																</div>
+																<!-- 査読有無フィルター :: END -->
+																<!-- 記事属性フィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">記事属性</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="kijiZksi" id="kijiZksi1" value="1"
+																										onchange="doChangeFilter()">
+																								<label for="kijiZksi1" class="checkbox">新着
+																												(18)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="kijiZksi" id="kijiZksi2" value="2"
+																												disabled
+																										onchange="doChangeFilter()">
+																								<label for="kijiZksi2" class="checkbox">早期公開
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="kijiZksi" id="kijiZksi3" value="3"
+																										onchange="doChangeFilter()">
+																								<label for="kijiZksi3" class="checkbox">本文（HTML形式）
+																												(55)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="kijiZksi" id="kijiZksi4" value="5"
+																										onchange="doChangeFilter()">
+																								<label for="kijiZksi4" class="checkbox">電子付録
+																												(9)
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('kijiZksi')">リセット</a>
+																		</div>
+																</div>
+																<!-- 記事属性フィルター :: END -->
+																<!-- 認証種別フィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">認証</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="nnshuSybt" id="nnshuSybt1" value="1"
+																										onchange="doChangeFilter()">
+																								<label for="nnshuSybt1" class="checkbox">フリー
+																												(4,562)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="nnshuSybt" id="nnshuSybt2" value="2"
+																										onchange="doChangeFilter()">
+																								<label for="nnshuSybt2" class="checkbox">オープンアクセス
+																												(91)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="nnshuSybt" id="nnshuSybt3" value="3"
+																										onchange="doChangeFilter()">
+																								<label for="nnshuSybt3" class="checkbox">認証あり
+																												(341)
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('nnshuSybt')">リセット</a>
+																		</div>
+																</div>
+																<!-- 認証種別フィルター :: END -->
+																<!-- 資料名フィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">資料名</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="srynm" id="srynm1" value="&#30171;&#39080;&#12392;&#26680;&#37240;&#20195;&#35613;"
+																										onchange="doChangeFilter()">
+																								<label for="srynm1" class="checkbox">痛風と核酸代謝
+																												(267)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="srynm" id="srynm2" value="&#26085;&#26412;&#20869;&#31185;&#23398;&#20250;&#38609;&#35468;"
+																										onchange="doChangeFilter()">
+																								<label for="srynm2" class="checkbox">日本内科学会雑誌
+																												(255)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="srynm" id="srynm3" value="&#26085;&#26412;&#33102;&#33235;&#23398;&#20250;&#35468;"
+																										onchange="doChangeFilter()">
+																								<label for="srynm3" class="checkbox">日本腎臓学会誌
+																												(169)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="srynm" id="srynm4" value="&#23615;&#37240;"
+																										onchange="doChangeFilter()">
+																								<label for="srynm4" class="checkbox">尿酸
+																												(130)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="srynm" id="srynm5" value="&#25972;&#24418;&#22806;&#31185;&#12392;&#28797;&#23475;&#22806;&#31185;"
+																										onchange="doChangeFilter()">
+																								<label for="srynm5" class="checkbox">整形外科と災害外科
+																												(125)
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('srynm')">リセット</a>
+																		</div>
+																</div>
+																<!-- 資料名フィルター :: END -->
+																<!-- 分野フィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">分野</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																				<div class="search-subheading">ライフ系</div>
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="bnyaShbnr" id="bnyaShbnr1" value="030100"
+																										onchange="doChangeFilter()">
+																								<label for="bnyaShbnr1" class="checkbox">生物学・生命科学・基礎医学
+																												(2,265)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="bnyaShbnr" id="bnyaShbnr2" value="035100"
+																										onchange="doChangeFilter()">
+																								<label for="bnyaShbnr2" class="checkbox">農学・食品科学
+																												(1,165)
+																								</label>
+																						</li>
+																				</ul>
+																				<div class="search-subheading">医学・保健衛生系</div>
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="bnyaShbnr" id="bnyaShbnr3" value="051100"
+																										onchange="doChangeFilter()">
+																								<label for="bnyaShbnr3" class="checkbox">臨床医学
+																												(3,412)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="bnyaShbnr" id="bnyaShbnr4" value="050100"
+																										onchange="doChangeFilter()">
+																								<label for="bnyaShbnr4" class="checkbox">一般医学・社会医学・看護学
+																												(2,695)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="bnyaShbnr" id="bnyaShbnr5" value="054100"
+																										onchange="doChangeFilter()">
+																								<label for="bnyaShbnr5" class="checkbox">薬学
+																												(1,237)
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('bnyaShbnr')">リセット</a>
+																		</div>
+																</div>
+																<!-- 分野フィルター :: END -->
+																<!-- 著者フィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">著者</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="chshnm" id="chshnm1" value="&#24066;&#30000; &#20844;&#32654;"
+																										onchange="doChangeFilter()">
+																								<label for="chshnm1" class="checkbox">市田 公美
+																												(52)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="chshnm" id="chshnm2" value="&#23665;&#20013; &#23551;"
+																										onchange="doChangeFilter()">
+																								<label for="chshnm2" class="checkbox">山中 寿
+																												(48)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="chshnm" id="chshnm3" value="&#37772;&#35895; &#30452;&#20043;"
+																										onchange="doChangeFilter()">
+																								<label for="chshnm3" class="checkbox">鎌谷 直之
+																												(46)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="chshnm" id="chshnm4" value="&#26575;&#23822; &#31118;&#22827;"
+																										onchange="doChangeFilter()">
+																								<label for="chshnm4" class="checkbox">柏崎 禎夫
+																												(40)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="chshnm" id="chshnm5" value="&#32048;&#35895; &#40845;&#30007;"
+																										onchange="doChangeFilter()">
+																								<label for="chshnm5" class="checkbox">細谷 龍男
+																												(37)
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('chshnm')">リセット</a>
+																		</div>
+																</div>
+																<!-- 著者フィルター :: END -->
+																<!-- 発行年フィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">発行年</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="hkkuYy" id="hkkuYy1" value="2016"
+																										onchange="doChangeFilter()">
+																								<label for="hkkuYy1" class="checkbox">2016 年
+																												(125)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="hkkuYy" id="hkkuYy2" value="2018"
+																										onchange="doChangeFilter()">
+																								<label for="hkkuYy2" class="checkbox">2018 年
+																												(125)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="hkkuYy" id="hkkuYy3" value="2013"
+																										onchange="doChangeFilter()">
+																								<label for="hkkuYy3" class="checkbox">2013 年
+																												(124)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="hkkuYy" id="hkkuYy4" value="2021"
+																										onchange="doChangeFilter()">
+																								<label for="hkkuYy4" class="checkbox">2021 年
+																												(112)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="hkkuYy" id="hkkuYy5" value="2015"
+																										onchange="doChangeFilter()">
+																								<label for="hkkuYy5" class="checkbox">2015 年
+																												(109)
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('hkkuYy')">リセット</a>
+																		</div>
+																</div>
+																<!-- 発行年フィルター :: END -->
+																<!-- ライセンスフィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">ライセンス</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="licenseCd" id="licenseCd1" value="01"
+																										onchange="doChangeFilter()">
+																								<label for="licenseCd1" class="checkbox">表示(CC BY)
+																												(1)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="licenseCd" id="licenseCd2" value="02"
+																										onchange="doChangeFilter()">
+																								<label for="licenseCd2" class="checkbox">表示-継承(CC BY-SA)
+																												(3)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="licenseCd" id="licenseCd3" value="03"
+																												disabled
+																										onchange="doChangeFilter()">
+																								<label for="licenseCd3" class="checkbox">表示-改変禁止(CC BY-ND)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="licenseCd" id="licenseCd4" value="04"
+																										onchange="doChangeFilter()">
+																								<label for="licenseCd4" class="checkbox">表示-非営利(CC BY-NC)
+																												(62)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="licenseCd" id="licenseCd5" value="05"
+																										onchange="doChangeFilter()">
+																								<label for="licenseCd5" class="checkbox">表示-非営利-継承(CC BY-NC-SA)
+																												(42)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="licenseCd" id="licenseCd6" value="06"
+																										onchange="doChangeFilter()">
+																								<label for="licenseCd6" class="checkbox">表示-非営利-改変禁止(CC BY-NC-ND)
+																												(72)
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="licenseCd" id="licenseCd7" value="99"
+																												disabled
+																										onchange="doChangeFilter()">
+																								<label for="licenseCd7" class="checkbox">その他
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('licenseCd')">リセット</a>
+																		</div>
+																</div>
+																<!-- ライセンスフィルター :: END -->
+																<!-- データリポジトリフィルター :: START -->
+																<div class="facetsearch-subheader">
+																		<span class="facetsearch-subheader-link facetsearch-global-subheader-activebg">データリポジトリ</span>
+																		<div class="facetsearch-content-innerwrap colorscheme-global-dark-lighter md">
+																			<label>外部データリポジトリの登録がある記事を絞り込むことができます。</label>
+																				<ul>
+																						<li>
+																								<input type="checkbox" name="dataRepo" id="dataRepo1" value="1"
+																												disabled
+																										onchange="doChangeFilter()">
+																								<label for="dataRepo1" class="checkbox">J-STAGE Data
+																								</label>
+																						</li>
+																						<li>
+																								<input type="checkbox" name="dataRepo" id="dataRepo2" value="2"
+																												disabled
+																										onchange="doChangeFilter()">
+																								<label for="dataRepo2" class="checkbox">その他
+																								</label>
+																						</li>
+																				</ul>
+																				<a class="facetsearch-reset" onClick="resetFilters('dataRepo')">リセット</a>
+																		</div>
+																</div>
+																<!-- データリポジトリフィルター :: END -->
+														</div>
+												</div>
+										</div>
+								</div>
+						</div>
+						<!-- LEFT SECTION :: END -->
+						<!-- RIGHT SECTION :: START -->
+						<div class="col-md-18">
+								<div id="searchbrowse-rightsection">
+										<!-- SEARCH :: FILTERS :: START -->
+										<div id="search-filters-wrap" class="colorscheme-global-dark-lighter" style="height:auto;overflow:hidden">
+											<div style="float:right;">
+													<a class="bluelink-style print-non-disp" style=" padding-right: 20px" onClick="addfavorite('/fav/search/_insert/-char/ja')">お気に入り検索に追加</a>
+											</div>
+											<div style="float:left; margin-right:3px">
+												<span>以下の条件での結果を表示する: </span>
+												<a href="/search/global/_search/-char/ja?freeText=URAT1+W258X+%E7%97%9B%E9%A2%A8&amp;" class="bluelink-style print-non-disp" style="padding-left: 10px">検索条件を変更</a>
+												<br>
+													<span class="conditional-parameter">クエリ検索:</span> <span class="search-parameter">URAT1 W258X &#30171;&#39080;</span><br>
+											</div>
+										</div>
+										<div id="search-results-infobar">
+												<div class="search-resultsinfo-leftsection"> 4,903件中 1-20の結果を表示しています</div>
+												<div class="search-resultsinfo-rightsection">
+														<div class="search-abtract-btnwrap print-non-disp">
+															<a href="javascript:void(0);" class="collapseall-icon arrow" style="display:none;" title="すべての抄録を非表示にする">すべての抄録を非表示にする</a>
+															<a href="javascript:void(0);" class="expandall-icon arrow" title="すべての抄録を表示する">すべての抄録を表示する</a> </div>
+														<div class="clearfix"></div>
+												</div>
+												<div class="clearfix"></div>
+												<ul id="sorting-list">
+														<li>
+																<label class="sortbylabel flt-left"> 並べ替え</label>
+														</li>
+														<li>
+																<div class="sortby-dropdown">
+																		<select name="sortby" class="searchresults-sortyby-dropdown flt-left" tabindex="0">
+																			<option value="1" selected >ヒット率</option>
+																			<option value="5" >発行日[新しい順]</option>
+																			<option value="6" >発行日[古い順]</option>
+																			<option value="2" >公開日[新しい順]</option>
+																			<option value="3" >公開日[古い順]</option>
+																			<option value="4" >資料名順</option>
+																		</select>
+																		<b class="caret dropdown-caret"></b>
+																</div>
+														</li>
+												</ul>
+										</div>
+										<div class="clearfix"></div>
+
+										<!-- SEARCH :: FILTERS :: END -->
+										<!-- SEARCH :: PAGINATION MOBILE :: START -->
+										<div id="search-pagination-wrap-top" style="padding-left: 0px; padding-right: 0px;">
+												<div class="inner colorscheme-global-dark-lighter print-non-disp">
+														<div class="search-pagination-left">
+<ul class="search-pagination-list">
+<li class="inactive-page">|<</li><li class="inactive-page"><</li><li class="active-page">1</li><li><a href="/result/global/-char/ja?from=20" class="defaultstyle" onClick="paging(20); return false;">2</a></li><li><a href="/result/global/-char/ja?from=40" class="defaultstyle" onClick="paging(40); return false;">3</a></li><li><a href="/result/global/-char/ja?from=60" class="defaultstyle" onClick="paging(60); return false;">4</a></li><li><a href="/result/global/-char/ja?from=80" class="defaultstyle" onClick="paging(80); return false;">5</a></li><li><a href="/result/global/-char/ja?from=100" class="defaultstyle" onClick="paging(100); return false;">6</a></li><li><a href="/result/global/-char/ja?from=120" class="defaultstyle" onClick="paging(120); return false;">7</a></li><li><a class="defaultstyle" onClick="paging(20)">></a></li><li><a class="defaultstyle" onClick="paging(1980)">>|</a></li></ul>
+</div>
+
+													<div class="search-pagination-right">
+														<ul class="pagination-no-list">
+															<li>
+																<label class="sortbylabel flt-left"> 表示</label>
+															</li>
+															<li>
+																<div class="pagination-dd">
+																	<select name="showRecodsH" class="searchresults-noofpages-dropdown flt-left" tabindex="0" onchange="doChangeShowRecords(this.value)">
+																		<option value="10" >10</option>
+																		<option value="20"  selected >20</option>
+																		<option value="50" >50</option>
+																	</select>
+																	<b class="caret dropdown-caret"></b>
+																</div>
+															</li>
+															<li>
+																<label class="sortbylabel flt-left">件</label>
+															</li>
+														</ul>
+													</div>
+														<div class="clearfix"></div>
+												</div>
+										</div>
+										<!-- SEARCH :: PAGINATION MOBILE :: END -->
+										<div class="clearfix"></div>
+										<!-- SEARCH RESULTS :: START -->
+												<div id="search-resultslist-wrap">
+														<ul class="search-resultslisting">
+																<!-- LIST -->
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/jjpn/22/2/22_2_147/_article/-char/ja" class="bluelink-style customTooltip" title="腎性低尿酸血症における運動後急性腎不全の発症機序に関する考察" >腎性低尿酸血症における運動後急性腎不全の発症機序に関する考察</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="武輪 鈴子, 谷口 奈穂, 田中 幸代, 中野 崇秀, 蓮井 正史, 金子 一成, 野津 寛大">
+																		武輪 鈴子, 谷口 奈穂, 田中 幸代, 中野 崇秀, 蓮井 正史, 金子 一成, 野津 寛大
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/jjpn/-char/ja" class="bluelink-style" >日本小児腎臓病学会雑誌</a> <br>
+
+																				2009年
+																			22 巻
+																				2 号
+																				147-151
+																				<br>
+																					発行日: 2009/11/15<br>
+																				公開日: 2010/05/31<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.3165/jjpn.22.147" class="bluelink-style">https://doi.org/10.3165/jjpn.22.147</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																								<a href="javascript:void(0);"><span class="show_abstract">抄録を表示する</span><span class="hide_abstract">抄録を非表示にする</span></a>
+																				</div>
+																		</div>
+																		<div class="inner-content abstract wrap-break-word" style="overflow: hidden; max-height: 10em;">
+																			　腎性低尿酸血症は，human urate transporter<div class='search-highlight'>1</div>の異常により低尿酸血症をきたす疾患で，運動後急性腎不全の合併が多い。その発症機序について二つの仮説，すなわち「急性尿酸腎症説」および「活性酸素関与説」が提唱されているが，詳細は不明である。<br>　本論文では，腎性低尿酸血症の患者において運動後急性腎不全の合併しやすい理由を過去の文献を参考に考察するとともに，筆者らが経験した腎性低尿酸血症患児において，運動負荷の上で酸化ストレス度と抗酸化力を測定した結果を紹介した。患児は対照成人と同様，運動負荷直後から酸化ストレス度の上昇を示したが，抗酸化力は対照成人と異なり，運動負荷後，急激に低下した。すなわち対照に比して運動負荷時の酸化ストレス増大に見合う抗酸化力を有していないことが示唆された。以上より，酸化ストレス急増時の抗酸化力の相対的不足が腎性低尿酸血症における運動後急性腎不全発症に関与しているものと思われた。
+																			<a href="javascript:void(0);" class="bluelink-style fontsize12 full-abstract"><div class="print-non-disp">抄録全体を表示</div></a>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/jjpn/22/2/22_2_147/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (80K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/naika/95/5/95_5_894/_article/-char/ja" class="bluelink-style customTooltip" title="6. 低尿酸血症" >6. 低尿酸血症</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="市田 公美, 細谷 龍男">
+																		市田 公美, 細谷 龍男
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/naika/-char/ja" class="bluelink-style" >日本内科学会雑誌</a> <br>
+
+																				2006年
+																			95 巻
+																				5 号
+																				894-898
+																				<br>
+																					発行日: 2006/05/10<br>
+																				公開日: 2009/03/27<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.2169/naika.95.894" class="bluelink-style">https://doi.org/10.2169/naika.95.894</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																								<a href="javascript:void(0);"><span class="show_abstract">抄録を表示する</span><span class="hide_abstract">抄録を非表示にする</span></a>
+																				</div>
+																		</div>
+																		<div class="inner-content abstract wrap-break-word" style="overflow: hidden; max-height: 10em;">
+																			低尿酸血症は産生低下型と排泄亢進型に分類される. 二次性を除く排泄亢進型低尿酸血症として, 腎性低尿酸血症が最も多い. 日本人に多く, 合併症として, 尿路結石と運動後急性腎不全がある. 腎性低尿酸血症の多くは, <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>の欠損による. <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>は, 尿細管の管腔側膜に局在し, 尿酸の再吸収に働いている. 日本人の腎性低尿酸血症の原因は, <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>をコードする遺伝子<i>SLC22A12</i> の変異<div class='search-highlight'>W</div><div class='search-highlight'>258</div> Stopが最も多い.
+																			<a href="javascript:void(0);" class="bluelink-style fontsize12 full-abstract"><div class="print-non-disp">抄録全体を表示</div></a>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/naika/95/5/95_5_894/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (1006K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/41/1/41_143/_article/-char/ja" class="bluelink-style customTooltip" title="<b><i>URAT1/SLC22A12</i>遺伝子の機能消失型変異が血清尿酸値および痛風・高尿酸血症の発症に与える影響 </b>" ><b><i><div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>/SLC22A12</i>遺伝子の機能消失型変異が血清尿酸値および<div class='search-highlight'>痛風</div>・高尿酸血症の発症に与える影響 </b></a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="崎山 真幸, 松尾 洋孝, 清水 聖子, 中山 昌喜, 東野 俊英, 高田 龍平, 市田 公美, 大山 博司, 清水 徹, 四ノ宮 成祥">
+																		崎山 真幸, 松尾 洋孝, 清水 聖子, 中山 昌喜, 東野 俊英, 高田 龍平, 市田 公美, 大山 博司, 清水 徹, 四ノ宮 成祥
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2017年
+																			41 巻
+																				1 号
+																				143-
+																				<br>
+																					発行日: 2017/07/25<br>
+																				公開日: 2017/07/25<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.41.143" class="bluelink-style">https://doi.org/10.6032/gnam.41.143</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/41/1/41_143/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (321K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/34/2/34_159/_article/-char/ja" class="bluelink-style customTooltip" title="痛風の病因遺伝子" ><div class='search-highlight'>痛風</div>の病因遺伝子</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="松尾 洋孝">
+																		松尾 洋孝
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2010年
+																			34 巻
+																				2 号
+																				159-169
+																				<br>
+																					発行日: 2010年<br>
+																				公開日: 2015/04/01<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.34.159" class="bluelink-style">https://doi.org/10.6032/gnam.34.159</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/34/2/34_159/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (1746K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam1999/28/2/28_115/_article/-char/ja" class="bluelink-style customTooltip" title="腎性低尿酸血症3例における尿酸トランスポーター(URAT1)遺伝子異常の解析" >腎性低尿酸血症3例における尿酸トランスポーター(<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>)遺伝子異常の解析</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="吉岡 徹朗, 向山 政志, 横井 秀基, 永江 徹也, 澤井 一智, 越川 真男, 菅波 孝祥, 中尾 一和">
+																		吉岡 徹朗, 向山 政志, 横井 秀基, 永江 徹也, 澤井 一智, 越川 真男, 菅波 孝祥, 中尾 一和
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam1999/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2004年
+																			28 巻
+																				2 号
+																				115-120
+																				<br>
+																					発行日: 2004年<br>
+																				公開日: 2012/11/27<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam1999.28.2_115" class="bluelink-style">https://doi.org/10.6032/gnam1999.28.2_115</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam1999/28/2/28_115/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (3183K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/42/Supplement/42_suppl-26/_article/-char/ja" class="bluelink-style customTooltip" title="<b>腎性低尿酸血症の病態</b>" ><b>腎性低尿酸血症の病態</b></a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="日本痛風・核酸代謝学会">
+																		日本<div class='search-highlight'>痛風</div>・核酸代謝学会
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2018年
+																			42 巻
+																				Supplement 号
+																				suppl-26-suppl-30
+																				<br>
+																					発行日: 2018/07/25<br>
+																				公開日: 2018/08/06<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.42.suppl-26" class="bluelink-style">https://doi.org/10.6032/gnam.42.suppl-26</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/42/Supplement/42_suppl-26/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (1655K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/33/2/33_213/_article/-char/ja" class="bluelink-style customTooltip" title="低尿酸血症の分子メカニズム（Urat1ノックアウトマウスの作出と検討）" >低尿酸血症の分子メカニズム（<div class='search-highlight'>Urat</div><div class='search-highlight'>1</div>ノックアウトマウスの作出と検討）</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="細山田 真">
+																		細山田 真
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2009年
+																			33 巻
+																				2 号
+																				213-
+																				<br>
+																					発行日: 2009年<br>
+																				公開日: 2015/04/01<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.33.213" class="bluelink-style">https://doi.org/10.6032/gnam.33.213</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/33/2/33_213/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (519K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/40/2/40_137/_article/-char/ja" class="bluelink-style customTooltip" title="<b>Molecular mechanism of urate-lowering effects of anserine nitrate</b>" ><b>Molecular mechanism of urate-lowering effects of anserine nitrate</b></a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="Yusuke Otsuka, Yuta Ohno, Asuka Morita, Naoyuki Otani, Promsuk Jutabha, Motoshi Ouchi, Shuichi Tsuruoka, Naohiko Anzai">
+																		Yusuke Otsuka, Yuta Ohno, Asuka Morita, Naoyuki Otani, Promsuk Jutabha, Motoshi Ouchi, Shuichi Tsuruoka, Naohiko Anzai
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2016年
+																			40 巻
+																				2 号
+																				137-143
+																				<br>
+																					発行日: 2016/12/20<br>
+																				公開日: 2016/12/20<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.40.137" class="bluelink-style">https://doi.org/10.6032/gnam.40.137</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																								<a href="javascript:void(0);"><span class="show_abstract">抄録を表示する</span><span class="hide_abstract">抄録を非表示にする</span></a>
+																				</div>
+																		</div>
+																		<div class="inner-content abstract wrap-break-word" style="overflow: hidden; max-height: 10em;">
+																			<p>Recently, anserine (beta-alanyl-3-methyl-L histidine), one of the dipeptides, was reported to lower the serum uric acid level in humans. This level in humans is regulated by the balance between urinary excretion mediated by renal tubular transporters in the kidney and enzymatic production mainly in the liver xanthine oxidase (XO). The mechanism of anserine lowering the serum uric acid level is still unknown, so we investigated it by examining whether anserine inhibits urate excretion or production. To analyze the uricosuric action, we performed a [<sup>14</sup>C]urate uptake experiment in human embryonic kidney cells stably expressing human urate transporter <div class='search-highlight'>1</div> (HEK293- <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>) or mock (HEK293-mock) cells with 10 mM of the following substrates: beta-alanine, <div class='search-highlight'>1</div>-methylL-histidine, 3-methyl-L-histidine, carnosine (betaalanyl-L-histidine), and anserine nitrate. Because only anserine nitrate was commercially available and there was a report that sodium nitrate injected intracellularly increased urate uptake mediated by <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>, we also examined the effect of sodium nitrate on urate uptake via <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>. Next, we carried out a XO activity assay to analyze the inhibitory effect on urate production with 10 mM of substrates, as previously mentioned. In the uptake experiment, anserine nitrate and sodium nitrate markedly inhibited urate uptake mediated by <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>. 3-Methyl-L-histidine and carnosine showed weak inhibitory effects. Beta-alanine and <div class='search-highlight'>1</div>-methylL-histidine did not show inhibitory effects. In the XO activity assay, anserine nitrate markedly inhibited XO activity and its IC50 was 6.45 ± <div class='search-highlight'>1</div>.57 mM. 3-MethylL-histidine and carnosine showed weak inhibitory effects. Beta-alanine, <div class='search-highlight'>1</div>-methyl-L-histidine, and sodium nitrate did not show inhibitory effects. Although the effect of anserine nitrate on <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div> was unsettled, it showed a marked inhibitory effect on XO activity. This suggests that the effect of anserine to lower the serum urate level in humans is partly due to the inhibition of urate production by XO activity.</p>
+																			<a href="javascript:void(0);" class="bluelink-style fontsize12 full-abstract"><div class="print-non-disp">抄録全体を表示</div></a>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/40/2/40_137/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (914K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/yakushi/144/6/144_23-00217/_article/-char/ja" class="bluelink-style customTooltip" title="尿酸代謝・尿酸トランスポーターと尿酸異常症" >尿酸代謝・尿酸トランスポーターと尿酸異常症</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="市田 公美">
+																		市田 公美
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/yakushi/-char/ja" class="bluelink-style" >YAKUGAKU ZASSHI</a> <br>
+
+																				2024年
+																			144 巻
+																				6 号
+																				659-674
+																				<br>
+																					発行日: 2024/06/01<br>
+																				公開日: 2024/06/01<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.1248/yakushi.23-00217" class="bluelink-style">https://doi.org/10.1248/yakushi.23-00217</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																		<span class="tags-wrap fulltext-tag-style" title="HTML">HTML</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																								<a href="javascript:void(0);"><span class="show_abstract">抄録を表示する</span><span class="hide_abstract">抄録を非表示にする</span></a>
+																				</div>
+																		</div>
+																		<div class="inner-content abstract wrap-break-word" style="overflow: hidden; max-height: 10em;">
+																			<p>Serum urate levels are determined by the balance between uric acid production and uric acid excretion capacity from the kidneys and intestinal tract. Dysuricemia, including hyperuricemia and hypouricemia, develops when the balance shifts towards an increase or a decrease in the uric acid pool. Hyperuricemia is mostly a multifactorial genetic disorder involving several disease susceptibility genes and environmental factors. Hypouricemia, on the other hand, is caused by genetic abnormalities. The main genes involved in dysuricemia are xanthine oxidoreductase, an enzyme that produces uric acid, and the urate transporters urate transporter <div class='search-highlight'>1</div>/solute carrier family 22 member 12 (<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>/SLC22A12), glucose transporter 9/solute carrier family 2 member 9 (GLUT9/SLC2A9) and ATP binding cassette subfamily G member 2 (ABCG2). Deficiency of xanthine oxidoreductase results in xanthinuria, a rare disease with marked hypouricemia. Xanthinuria can be due to a single deficiency of xanthine oxidoreductase or in combination with aldehyde oxidase deficiency as well. The latter is caused by a deficiency in molybdenum cofactor sulfurase, which is responsible for adding sulphur atoms to the molybdenum cofactor required for xanthine oxidoreductase and aldehyde oxidase to exert their action. <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>/SLC22A12 and GLUT9/SLC2A9 are involved in urate reabsorption and their deficiency leads to renal hypouricemia, a condition that is common in Japanese due to <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>/SLC22A12 deficiency. On the other hand, ABCG2 is involved in the secretion of urate, and many Japanese have single nucleotide polymorphisms that result in its reduced function, leading to hyperuricemia. In particular, severe dysfunction of ABCG2 leads to hyperuricemia with reduced extrarenal excretion.</p>
+																			<a href="javascript:void(0);" class="bluelink-style fontsize12 full-abstract"><div class="print-non-disp">抄録全体を表示</div></a>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/yakushi/144/6/144_23-00217/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (1262K)
+																					</span>
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/yakushi/144/6/144_23-00217/_html/-char/ja" class="bluelink-style" >HTML形式で全画面表示</a>
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/33/1/33_77/_article/-char/ja" class="bluelink-style customTooltip" title="腎性低尿酸血症の新規病因遺伝子glucose transporter 9（GLUT9）の同定" >腎性低尿酸血症の新規病因遺伝子glucose transporter 9（GLUT9）の同定</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="松尾 洋孝, 中山 昌喜, 金井 好克, 四ノ宮 成祥">
+																		松尾 洋孝, 中山 昌喜, 金井 好克, 四ノ宮 成祥
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2009年
+																			33 巻
+																				1 号
+																				77-
+																				<br>
+																					発行日: 2009年<br>
+																				公開日: 2015/04/01<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.33.77" class="bluelink-style">https://doi.org/10.6032/gnam.33.77</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/33/1/33_77/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (520K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/33/2/33_216/_article/-char/ja" class="bluelink-style customTooltip" title="運動後急性腎不全（ALPE）と腎性低尿酸血症" >運動後急性腎不全（ALPE）と腎性低尿酸血症</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="石川 勲">
+																		石川 勲
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2009年
+																			33 巻
+																				2 号
+																				216-
+																				<br>
+																					発行日: 2009年<br>
+																				公開日: 2015/04/01<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.33.216" class="bluelink-style">https://doi.org/10.6032/gnam.33.216</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/33/2/33_216/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (519K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/naika/101/4/101_1027/_article/-char/ja" class="bluelink-style customTooltip" title="2．尿酸代謝異常をめぐる新たな展望" >2．尿酸代謝異常をめぐる新たな展望</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="益崎 裕章, 屋比久 浩市, 山川 研">
+																		益崎 裕章, 屋比久 浩市, 山川 研
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/naika/-char/ja" class="bluelink-style" >日本内科学会雑誌</a> <br>
+
+																				2012年
+																			101 巻
+																				4 号
+																				1027-1033
+																				<br>
+																					発行日: 2012年<br>
+																				公開日: 2013/05/10<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.2169/naika.101.1027" class="bluelink-style">https://doi.org/10.2169/naika.101.1027</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																								<a href="javascript:void(0);"><span class="show_abstract">抄録を表示する</span><span class="hide_abstract">抄録を非表示にする</span></a>
+																				</div>
+																		</div>
+																		<div class="inner-content abstract wrap-break-word" style="overflow: hidden; max-height: 10em;">
+																			高尿酸血症は<div class='search-highlight'>痛風</div>関節症，<div class='search-highlight'>痛風</div>結節，尿路結石症，<div class='search-highlight'>痛風</div>腎に代表される尿酸塩沈着症を引き起こす．一方，肥満症・メタボリックシンドロームには無症候性高尿酸血症が高頻度に随伴する．<div class='search-highlight'>痛風</div>発作，関節炎予防のための尿酸値管理という従来の枠組みを超えて，生活習慣病・慢性腎臓病に伴う高尿酸血症が心血管疾患や脳卒中などの血管イベントのリスクを増大させ，脂肪組織や血管の組織機能障害を誘導する可能性が注目されている．<br>
+																			<a href="javascript:void(0);" class="bluelink-style fontsize12 full-abstract"><div class="print-non-disp">抄録全体を表示</div></a>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/naika/101/4/101_1027/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (385K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/41/2/41_211/_article/-char/ja" class="bluelink-style customTooltip" title="<b>腎性低尿酸血症1型モデルマウスの作出と最適化</b>" ><b>腎性低尿酸血症<div class='search-highlight'>1</div>型モデルマウスの作出と最適化</b></a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="細山田 真">
+																		細山田 真
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2017年
+																			41 巻
+																				2 号
+																				211-
+																				<br>
+																					発行日: 2017/12/20<br>
+																				公開日: 2017/12/20<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.41.211" class="bluelink-style">https://doi.org/10.6032/gnam.41.211</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/41/2/41_211/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (715K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/34/2/34_171/_article/-char/ja" class="bluelink-style customTooltip" title="尿酸トランスポーターURAT1トランスジェニックマウスにおける尿酸の体内動態" >尿酸トランスポーター<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>トランスジェニックマウスにおける尿酸の体内動態</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="塚田 愛, 木村 徹, Jutabha Promsuk, 安西 尚彦, 市田 公美, 櫻井 裕之">
+																		塚田 愛, 木村 徹, Jutabha Promsuk, 安西 尚彦, 市田 公美, 櫻井 裕之
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2010年
+																			34 巻
+																				2 号
+																				171-178
+																				<br>
+																					発行日: 2010年<br>
+																				公開日: 2015/04/01<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.34.171" class="bluelink-style">https://doi.org/10.6032/gnam.34.171</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																								<a href="javascript:void(0);"><span class="show_abstract">抄録を表示する</span><span class="hide_abstract">抄録を非表示にする</span></a>
+																				</div>
+																		</div>
+																		<div class="inner-content abstract wrap-break-word" style="overflow: hidden; max-height: 10em;">
+																			尿酸はヒトにおけるプリン体の最終代謝産物であり，主に腎臓から排泄される．腎臓での尿酸の排泄亢進や排泄低下によって腎性低尿酸血症や高尿酸血症が引き起こされるため，腎臓での尿酸輸送を理解することは臨床的に重要である．尿酸トランスポーター<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>は，腎臓近位尿細管管腔側において尿酸再吸収を行う分子である．この<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>は尿酸降下薬の作用点であり，また遺伝子変異により腎性低尿酸血症をきたす．よって<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>は血中尿酸値に大きく影響を及ぼす因子であると考えられるが，その発現が尿酸値や他の尿酸トランスポーターにどのような影響を及ぼすのか明らかになっていない．そこで，<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>トランスジェニック（Tg）マウスを用いて，尿酸値測定およびマイクロアレイと定量PCRによる遺伝子発現変化の解析を行った．<br>RT-PCRの結果から，<I><div class='search-highlight'>Urat1</I></div> mRNAが腎臓特異的に発現しており，Tgマウスでは野生型と比べて発現量の上昇が見られた．ウエスタンブロットおよび免疫組織染色により，導入したHA-mURAT<div class='search-highlight'>1</div>タンパク質が腎臓の近位尿細管管腔側に発現していることを確認した．以上の結果から，導入したHA-mURAT<div class='search-highlight'>1</div>がすでに報告されているmURAT<div class='search-highlight'>1</div>と同様の発現分布を示し，<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>が過剰発現していることを確認できた．そこで，このマウスをモデルとして解析を行った．血中および尿中尿酸値を測定した結果，どちらの尿酸値にも変化が見られなかった．マイクロアレイおよび定量PCRにて検討した結果，<div class='search-highlight'>Urat</div><div class='search-highlight'>1</div>遺伝子はTgマウスにおいて発現が有意に増加していたが，他の尿酸トランスポーターや尿酸代謝酵素の遺伝子の発現量に変化は見られなかった．以上の結果より，<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>過剰発現は，マウス生体内での尿酸動態および他の尿酸トランスポーターや尿酸代謝酵素の遺伝子発現に大きな影響を及ぼさないことが示された．
+																			<a href="javascript:void(0);" class="bluelink-style fontsize12 full-abstract"><div class="print-non-disp">抄録全体を表示</div></a>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/34/2/34_171/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (1144K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/41/2/41_214/_article/-char/ja" class="bluelink-style customTooltip" title="<b>教科書的記載その2（病態と検査・診断）</b>" ><b>教科書的記載その2（病態と検査・診断）</b></a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="松尾 洋孝">
+																		松尾 洋孝
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2017年
+																			41 巻
+																				2 号
+																				214-
+																				<br>
+																					発行日: 2017/12/20<br>
+																				公開日: 2017/12/20<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.41.214" class="bluelink-style">https://doi.org/10.6032/gnam.41.214</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/41/2/41_214/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (717K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/34/2/34_145/_article/-char/ja" class="bluelink-style customTooltip" title="運動後急性腎不全（ALPE）" >運動後急性腎不全（ALPE）</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="石川 勲">
+																		石川 勲
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2010年
+																			34 巻
+																				2 号
+																				145-157
+																				<br>
+																					発行日: 2010年<br>
+																				公開日: 2015/04/01<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.34.145" class="bluelink-style">https://doi.org/10.6032/gnam.34.145</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																								<a href="javascript:void(0);"><span class="show_abstract">抄録を表示する</span><span class="hide_abstract">抄録を非表示にする</span></a>
+																				</div>
+																		</div>
+																		<div class="inner-content abstract wrap-break-word" style="overflow: hidden; max-height: 10em;">
+																			運動後急性腎不全とは，「短距離を全力疾走するなど無酸素運動後に，強い背腰痛を伴って発症する非ミオグロビン尿性の急性腎不全」をいう．したがって，従来から知られている，マラソンなど有酸素運動後に発生するミオグロビン尿性急性腎不全（Exertional rhabdomyolysis with acute renal failure）とは異なるものである．またこの「運動後急性腎不全」は症状の特徴から ALPE（Acute renal failure with severe Loin pain and Patchy renal ischemia after anaerobic Exercise）とも呼ばれるので，著者らは「運動後急性腎不全（ALPE）」と記載することを提唱している．<br>運動後急性腎不全（ALPE）は患者の98％が男性で，年齢の中央値は19歳（IQR：16〜26）と，主に若い男性に発生する．典型例は，運動会や体育祭で200m走を複数回全力疾走し，その数時間後に，強い背腰痛，嘔気・嘔吐を訴えて，夜間救急外来を受診するというものである．しかし強い痛みから尿路結石と診断されることが多く，血清クレアチニンを測定しないと，急性腎不全の診断がつかない．また多くは非乏尿性急性腎不全で，尿の色に変化はなく，褐色尿も認めない．血清CK値は基準値内か高くても9倍以内である．221例の集計によると受診時の血清クレアチニン（中央値）4.0mg／dl，最高値（中央値）5.6mg／dlで，大部分は保存的治療で回復しているが，23%の症例では血液透析が必要になる．また報告例の58%が腎性低尿酸血症患者であり，腎性低尿酸血症は，この運動後急性腎不全（ALPE）の発生リスクとして最も重要なものである．発生機序についてはまだ解明されていない．しかし著者らは，delayed CT（造影24-48時後の単純CT）で，両腎に楔形の造影剤残存がみられることから，無酸素運動によって筋肉から何らかの腎血管攣縮因子が発生し作用するからという仮説を考えている．一方，腎性低尿酸血症患者に起こりやすい理由としては，急性尿酸腎症が起こるから，あるいは低尿酸血症で活性酸素消去系がうまく働かないから，さらには尿酸トランスポートの異常からなど，種々の説がある．
+																			<a href="javascript:void(0);" class="bluelink-style fontsize12 full-abstract"><div class="print-non-disp">抄録全体を表示</div></a>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/34/2/34_145/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (2638K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/41/1/41_120/_article/-char/ja" class="bluelink-style customTooltip" title="<b>低尿酸血症に伴った運動後の急性腎障害の一例</b>" ><b>低尿酸血症に伴った運動後の急性腎障害の一例</b></a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="内田 大介, 長岡 可楠子, 古澤 彩美, 村澤 昌, 河原崎 宏雄">
+																		内田 大介, 長岡 可楠子, 古澤 彩美, 村澤 昌, 河原崎 宏雄
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2017年
+																			41 巻
+																				1 号
+																				120-121
+																				<br>
+																					発行日: 2017/07/25<br>
+																				公開日: 2017/07/25<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.41.120" class="bluelink-style">https://doi.org/10.6032/gnam.41.120</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/41/1/41_120/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (929K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/40/2/40_163/_article/-char/ja" class="bluelink-style customTooltip" title="<b>尿酸トランスポーターと腎障害</b>" ><b>尿酸トランスポーターと腎障害</b></a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="市田 公美">
+																		市田 公美
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2016年
+																			40 巻
+																				2 号
+																				163-
+																				<br>
+																					発行日: 2016/12/20<br>
+																				公開日: 2016/12/20<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.40.163" class="bluelink-style">https://doi.org/10.6032/gnam.40.163</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/40/2/40_163/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (696K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnamtsunyo/46/1/46_29/_article/-char/ja" class="bluelink-style customTooltip" title="新規尿酸排泄促進薬（ドチヌラド）の使用経験" >新規尿酸排泄促進薬（ドチヌラド）の使用経験</a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="大山 博司, 大山 恵子, 諸見里 仁, 田淵 大貴, 藤森 新">
+																		大山 博司, 大山 恵子, 諸見里 仁, 田淵 大貴, 藤森 新
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnamtsunyo/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と尿酸・核酸</a> <br>
+
+																				2022年
+																			46 巻
+																				1 号
+																				29-36
+																				<br>
+																					発行日: 2022/07/25<br>
+																				公開日: 2022/07/25<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.14867/gnamtsunyo.46.1_29" class="bluelink-style">https://doi.org/10.14867/gnamtsunyo.46.1_29</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																								<a href="javascript:void(0);"><span class="show_abstract">抄録を表示する</span><span class="hide_abstract">抄録を非表示にする</span></a>
+																				</div>
+																		</div>
+																		<div class="inner-content abstract wrap-break-word" style="overflow: hidden; max-height: 10em;">
+																			<p>尿酸排泄促進薬は尿酸トランスポーター（urate transporter <div class='search-highlight'>1</div>: <div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>）を阻害することで尿中尿酸排泄を増加させて尿酸降下作用を発揮する．尿酸排泄促進薬のプロベネシドとベンズブロマロンは<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>の他にも尿酸輸送に関与するトランスポーターを阻害するが，これらの薬剤に比較して他のトランスポーターに影響することなく特異的に<div class='search-highlight'>URAT</div><div class='search-highlight'>1</div>の阻害作用を発揮するドチヌラドが臨床現場で使用されるようになった．当クリニックに通院し，2021年<div class='search-highlight'>1</div>月から9月までに尿酸降下薬としてドチヌラドが投与された<div class='search-highlight'>痛風</div>・高尿酸血症患者の中で血清尿酸値6mg/dL以下を達成できている患者108例を新規投与例とし，同期間にベンズブロマロンがドチヌラドに変更された113例を変更例として，ドチヌラドの尿酸コントロール状況について後方視的に検討した．治療目標値である血清尿酸値6mg/dL以下の達成には投与前の血清尿酸値が高値であるほど高用量の投与が必要であったが，投与量0.5mgで44例（40.7%），<div class='search-highlight'>1</div>mgで40例（37.0%），2mgで17例（15.7%），3mgで6例（5.6%），4mgで<div class='search-highlight'>1</div>例（0.9%）が6mg/dL以下を達成できており，8割近くが<div class='search-highlight'>1</div>mg以内で目標値が達成されていた．変更例では変更前の血清尿酸値5.7±<div class='search-highlight'>1</div>.2mg/dLが変更後は5.4±<div class='search-highlight'>1</div>.0mg/dLに有意に低下し，腎機能低下例（eGFR＜60mL/min/<div class='search-highlight'>1.73m<sup>2</sup></div>）でも5.9±<div class='search-highlight'>1</div>.2mg/dLから5.5±<div class='search-highlight'>1</div>.<div class='search-highlight'>1</div>mg/dLに有意に低下していた．ドチヌラドはベンズブロマロンより尿酸低下作用は幾分強力であり，その作用は腎機能低下例においてより強力であると考えられた．</p>
+																			<a href="javascript:void(0);" class="bluelink-style fontsize12 full-abstract"><div class="print-non-disp">抄録全体を表示</div></a>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnamtsunyo/46/1/46_29/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (718K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+																<li>
+																<div class="searchlist-title">
+																		<a href="https://www.jstage.jst.go.jp/article/gnam/39/2/39_165/_article/-char/ja" class="bluelink-style customTooltip" title="<b>腎性低尿酸血症</b>" ><b>腎性低尿酸血症</b></a>
+																</div>
+																<div class="searchlist-authortags customTooltip" title="市田 公美">
+																		市田 公美
+																</div>
+																<div class="searchlist-additional-info">
+																		<a href="https://www.jstage.jst.go.jp/browse/gnam/-char/ja" class="bluelink-style" ><div class='search-highlight'>痛風</div>と核酸代謝</a> <br>
+
+																				2015年
+																			39 巻
+																				2 号
+																				165-
+																				<br>
+																					発行日: 2015/12/20<br>
+																				公開日: 2015/12/20<br>
+																</div>
+																<div class="result-doi-wrap">
+																	<span class="doi-icn">DOI</span>
+																	<a href="https://doi.org/10.6032/gnam.39.165" class="bluelink-style">https://doi.org/10.6032/gnam.39.165</a>
+																</div>
+																<div class="global-tags">
+																		<span class="tags-wrap original-tag-style" title="ジャーナル">ジャーナル</span>
+																				<span class="tags-wrap freeaccess-tag-style" title="フリー">フリー</span>
+																</div>
+																<div class="showabstractbox content">
+																		<div class="showabstractbox-header">
+																				<div class="expand collapse1">
+																				</div>
+																		</div>
+																		<div class="lft">
+																					<span>
+																							<a href="https://www.jstage.jst.go.jp/article/gnam/39/2/39_165/_pdf/-char/ja" class="bluelink-style">PDF形式でダウンロード</a> (382K)
+																					</span>
+																			</div>
+																</div>
+																</li>
+														</ul>
+												<div class="clearfix"></div>
+										</div>
+										<!-- SEARCH RESULTS :: END -->
+										<div class="clearfix"></div>
+										<!-- SEARCH PAGINATION :: START -->
+										<div id="search-pagination-wrap-bottom">
+												<div class="inner colorscheme-global-dark-lighter print-non-disp">
+													<div class="search-pagination-left">
+<ul class="search-pagination-list">
+<li class="inactive-page">|<</li><li class="inactive-page"><</li><li class="active-page">1</li><li><a href="/result/global/-char/ja?from=20" class="defaultstyle" onClick="paging(20); return false;">2</a></li><li><a href="/result/global/-char/ja?from=40" class="defaultstyle" onClick="paging(40); return false;">3</a></li><li><a href="/result/global/-char/ja?from=60" class="defaultstyle" onClick="paging(60); return false;">4</a></li><li><a href="/result/global/-char/ja?from=80" class="defaultstyle" onClick="paging(80); return false;">5</a></li><li><a href="/result/global/-char/ja?from=100" class="defaultstyle" onClick="paging(100); return false;">6</a></li><li><a href="/result/global/-char/ja?from=120" class="defaultstyle" onClick="paging(120); return false;">7</a></li><li><a class="defaultstyle" onClick="paging(20)">></a></li><li><a class="defaultstyle" onClick="paging(1980)">>|</a></li></ul>
+</div>
+
+														<div class="search-pagination-right">
+																<ul class="pagination-no-list">
+																		<li><label class="sortbylabel flt-left"> 表示</label></li>
+																		<li>
+																		<div class="pagination-dd">
+																				<select name="showRecords" class="searchresults-sortyby-dropdown flt-left searchresults-noofpages-dropdown" tabindex="0" onchange="doChangeShowRecords(this.value)">
+																						<option value="10" >10</option>
+																						<option value="20"  selected >20</option>
+																						<option value="50" >50</option>
+																				</select>
+																		</div>
+																		</li>
+																		<li><label class="sortbylabel flt-left">件</label></li>
+																</ul>
+														</div>
+														<div class="clearfix"></div>
+												</div>
+										</div>
+										<!-- SEARCH PAGINATION :: END -->
+								</div>
+						</div>
+						<!-- RIGHT SECTION :: END -->
+						<div class="clearfix"></div>
+				</div>
+		</div>
+</form>
+<!-- GLOBAL SEARCH RESULTS :: END -->
+<div class="clearfix"></div>
+<!-- FOOTER :: START -->
+<span class="noprint">
+<footer class="footer-style2">
+<div class="footer-wrap print-non-disp">
+	<a href="#0" class="take-on-top1">Top</a>
+	<div class="container">
+		<div class="footer-link-section">
+						<div class="footer-link-heading">資料・記事を探す</div>
+			<ul class="footer-link-list">
+				<li><a href="/journal/list/-char/ja">資料を探す：資料タイトルから</a></li>
+				<li><a href="/journal/fields/-char/ja">資料を探す：分野から</a></li>
+				<li><a href="/journal/publisher/-char/ja">資料を探す：発行機関から</a></li>
+				<li><a href="/search/global/_search/-char/ja">記事を探す</a></li>
+				<li><a href="https://jstagedata.jst.go.jp/" target="_blank" rel="noopener noreferrer">データを探す(J-STAGE Data) <img src="/web/images/information-tab2/bg-arrow-white.png" width="13" height="10" alt=""></a></li>
+			</ul>
+		</div>
+
+		<div class="footer-link-section">
+						<div class="footer-link-heading">J-STAGEについて</div>
+			<ul class="footer-link-list">
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageOverview/-char/ja">J-STAGEの概要</a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/JstageServices/TAB1/-char/ja">各種サービス・機能</a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/PublicDataAboutJstage/-char/ja">公開データ</a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/TermsAndPolicies/ForIndividuals/-char/ja">利用規約・ポリシー</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/ForPublishers/TAB1/-char/ja">新規登載の申し込み</a></li>			</ul>
+		</div>
+		<div class="footer-link-section">
+						<div class="footer-link-heading">ニュース&PR</div>
+			<ul class="footer-link-list">
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB1/Current/Page1/-char/ja">お知らせ一覧</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB5/Page1/-char/ja">リリースノート</a></li> 				<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB2/Page1/-char/ja">メンテナンス情報</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB4/Page1/-char/ja">イベント情報</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB3/Page1/-char/ja">J-STAGEニュース</a></li> 				<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB6/Page1/-char/ja">特集コンテンツ </a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/News/TAB7/Page1/-char/ja">各種広報媒体 </a></li>
+			</ul>
+		</div>
+		<div class="footer-link-section">
+						<div class="footer-link-heading">サポート</div>
+			<ul class="footer-link-list">
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/InformationForSocieties/TAB1/-char/ja">J-STAGE登載機関用コンテンツ</a></li>  <li><a href="https://www.jstage.jst.go.jp/static/pages/GuidelineAndManuals/TAB1/-char/ja">登載ガイドライン・マニュアル</a></li> 				<li><a href="https://www.jstage.jst.go.jp/static/pages/ForReaders/-char/ja">閲覧者向けヘルプ</a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/RecommendedEnvironment/-char/ja">動作確認済みブラウザ</a></li>
+ <li><a href="https://www.jstage.jst.go.jp/static/pages/FAQs/TAB2/-char/ja">FAQ</a></li> 				<li><a href="https://www.jstage.jst.go.jp/static/pages/Contact/-char/ja">お問い合わせ </a></li>
+				<li><a href="https://www.jstage.jst.go.jp/static/pages/Sitemap/-char/ja">サイトマップ </a></li>
+			</ul>
+		</div>
+
+		<div class="clearfix"></div>
+				<div class="clearfix"></div>
+	</div>
+</div>
+</footer>
+</span>
+<!-- FOOTER :: END -->
+<!-- FEEDBACK BUTTON :: START -->
+<span class="noprint print-non-disp">
+<div id="right-feedback-btn"><a href="https://form2.jst.go.jp/s/jstage-feedback-ja" target="_blank" rel="noopener noreferrer">feedback</a></div>
+</span>
+<!-- FEEDBACK BUTTON :: END -->
+<!-- TAKE ME TO TOP :: START -->
+<a href="#0" class="take-on-top" style="z-index:inherit">Top</a>
+<!-- TAKE ME TO TOP :: END -->
+
+<!-- STICKY REGISTER TO J-STAGE HERE :: START -->
+<div id="sticky-register-to-j-stage" class="sticky-register-to-j-stage print-non-disp" style="display:none;">
+<span class="noprint">
+<a href="javascript:;" class="sticky-register-to-j-stage-close" onclick="registerStickyClose();"><i class="fa fa-times-circle-o"></i></a>
+</span>
+<h3 class="register-for-free"><nobr>J-STAGEへの登録はこちら（無料）</nobr></h3>
+<a href="/myregister/-char/ja" class="sticky-register-btn">登録</a>
+<p class="register-for-already">すでにアカウントをお持ちの場合　サインインは<a href="/mylogin/-char/ja?sourceurl=https%3A%2F%2Fwww.jstage.jst.go.jp%2Fresult%2Fglobal%2F-char%2Fja%3FglobalSearchKey%3DURAT1%2BW258X%2B%25E7%2597%259B%25E9%25A2%25A8%26bglobalSearch%3Dtrue">こちら</a></p>
+</div>
+<!-- STICKY REGISTER TO J-STAGE HERE :: END -->
+<script src="/web/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below) -->
+<script src="/web/js/bootstrap.js"></script>
+
+<script src="/web/js/bootstrap.offcanvas.min.js"></script>
+
+<script src="/web/js/bootstrap-tabdrop.min.js"></script>
+
+<script src="/web/js/modernizr.js"></script>
+
+	<script src="/web/js/jquery.hc-sticky.min.js"></script>
+
+<script src="/web/js/jquery.touchSwipe.min.js"></script>
+
+<script src="/web/js/jquery.advancedSlider.min.js"></script>
+
+<script src="/web/js/jquery-navtoselect.min.js?rn=2.3.9"></script>
+
+<script src="/web/js/jquery.treefilter.min.js"></script>
+
+<script src="/web/js/jquery.jplayer.min.js"></script>
+
+<script src="/web/js/jquery.coolfieldset.min.js"></script>
+
+<script src="/web/js/select2.full.min.js"></script>
+
+<script src="/web/js/prettify.min.js"></script>
+
+<script src="/web/js/common.js?rn=2.3.9"></script>
+
+<script src="/web/js/tableHeadFixe.min.js"></script>
+
+<script src="/web/js/validation.js?rn=2.3.9"></script>
+
+<script src="/web/js/global-serch-result.js?rn=2.3.9"></script>
+<script>
+$(document).ready(function () {
+if(('localStorage' in window) && (window.localStorage !== null)) {
+	if(localStorage.getItem('C.regsticky') != 'off'){
+	$('#sticky-register-to-j-stage').show();
+	}
+}
+$('.dropdown-toggle').on('click', function(E) {
+	$(this).find('.glyphicon').toggleClass("glyphicon-chevron-up");
+	$(this).find('.glyphicon').toggleClass("glyphicon-chevron-down");
+});
+$('[data-toggle="tooltip"]').tooltip({});
+$('.warningtooltip').tooltip();
+
+});
+$(".journal-volume-dd").select2( {width: 'resolve'});
+$(".journal-issue-dd").select2();
+$('#facetsearch-header').facetsearch();
+$('.facetsearch-subheader').facetsearch();
+$(window).load(function(){
+	$('.collapseall-icon').hide();
+	$('.vol-link').click(function(e){
+		e.stopPropagation();
+	});
+	$('.expandall-icon').click(function(){
+		$(this).addClass('expand-inactive');
+		$('.collapseall-icon').removeClass('collapse-inactive')
+		$('.inner-content').slideDown();
+		$('.content').each(function(index, element) {
+			$(this).find('.expand').removeClass('collapse1');
+		});
+		$('.collapseall-icon').show();
+		$('.expandall-icon').hide();
+		$('.show_abstract').hide();
+		$('.hide_abstract').show();
+	});
+	$('.collapseall-icon').addClass('collapse-inactive');
+	$('.collapseall-icon').click(function(){
+		$(this).addClass('collapse-inactive');
+		$('.expandall-icon').removeClass('expand-inactive');
+		$('.inner-content').slideUp();
+		$('.content').each(function(index, element) {
+			$(this).find('.expand').addClass('collapse1');
+		});
+		$('.expandall-icon').show();
+		$('.collapseall-icon').hide();
+		$('.show_abstract').show();
+		$('.hide_abstract').hide();
+	});
+	$('.inner-content').hide();
+	$(".expand a").click(function (e) {
+		e.preventDefault();
+		$(this).parent().toggleClass('collapse1');
+		$(this).closest('.content').find('.inner-content').slideToggle().toggleClass('datapanel_opend');
+		if(!$(this).closest('.content').find('.inner-content').hasClass("datapanel_opend")){
+			$('div.collapseall-icon').removeClass('collapse-inactive');
+		} else {
+			$('div.collapseall-icon').addClass('collapse-inactive');
+		}
+
+		$(this).find('.show_abstract').toggle();
+		$(this).find('.hide_abstract').toggle();
+
+	});
+});
+$(".journal-volume-dd").select2();
+$(".journal-issue-dd").select2();
+$(".searchresults-noofpages-dropdown").select2({
+	minimumResultsForSearch: Infinity
+});
+$(".search-browse-volissue-tabs a").click(function(event) {
+	event.preventDefault();
+	$(this).parent().addClass("current");
+	$(this).parent().siblings().removeClass("current");
+	var tab = $(this).attr("href");
+	$(".searchbrowse-volissue-tab-content").not(tab).css("display", "none");
+	$(tab).fadeIn();
+});
+$('.inner-content .abstract').each(function(){
+	if ($(this).height() < 120) {
+		$(this).find('.full-abstract').hide();
+	}
+});
+
+if ( document.getElementById("selectedVol") != null ) {
+	var pos = $("#selectedVol").position();
+	$(".faceted-search-scrollwrap").scrollTop((pos.top - 50));
+}
+var ddd = [
+];
+$("#selectVol").bind("change", function() {
+	var selectVol = $(":selected").val();
+	if (selectVol == "") {
+		$("#selectIssue").attr("disabled", "disabled");
+	} else {
+		var disabledAttr = $("#selectIssue").attr("disabled");
+		if (typeof disabledAttr !== "undefined") {
+			$("#selectIssue").removeAttr("disabled");
+		}
+	}
+	$("#selectIssue").children().remove();
+	$('#selectIssue').append($('<option>').html("号").val(""));
+	if (selectVol != "") {
+		for (var idx in ddd) {
+			var noVol = ddd[idx].noVol;
+			if (noVol == selectVol) {
+				var noIssueArry = ddd[idx].noIssue;
+				for (i = 0; i < noIssueArry.length; i++) {
+						$('#selectIssue').append($('<option>').html(noIssueArry[i] + "号").val(noIssueArry[i]));
+				}
+				break;
+			}
+		}
+	}
+	$("#selectIssue").select2();
+});
+$("#mobileSelectVol").bind("change", function() {
+	var selectVol = $("#mobileSelectVol option:selected").val();
+	if (selectVol == "") {
+		$("#mobileSelectIssue").attr("disabled", "disabled");
+	} else {
+		var disabledAttr = $("#mobileSelectIssue").attr("disabled");
+		if (typeof disabledAttr !== "undefined") {
+			$("#mobileSelectIssue").removeAttr("disabled");
+		}
+	}
+	$("#mobileSelectIssue").children().remove();
+	$('#mobileSelectIssue').append($('<option>').html("号").val(""));
+	if (selectVol != "") {
+		for (var idx in ddd) {
+			var noVol = ddd[idx].noVol;
+			if (noVol == selectVol) {
+				var noIssueArry = ddd[idx].noIssue;
+				for (i = 0; i < noIssueArry.length; i++) {
+						$('#mobileSelectIssue').append($('<option>').html(noIssueArry[i] + "号").val(noIssueArry[i]));
+				}
+				break;
+			}
+		}
+	}
+	$("#mobileSelectIssue").select2();
+});
+$("#goBtn").bind("click", function() {
+	var noVol = $("#selectVol").val();
+	var noIssue = $("#selectIssue").val();
+	var pageInput = $('#pageInput').val();
+	if (pageInput === undefined) {
+		pageInput = null;
+	}
+	return clickGoBtn("1", noVol, noIssue, pageInput);
+});
+$("#mobileGoBtn").bind("click", function() {
+	var noVol = $("#mobileSelectVol").val();
+	var noIssue = $("#mobileSelectIssue").val();
+	var pageInput = $('#mobilePageInput').val();
+	if (pageInput === undefined) {
+		pageInput = null;
+	}
+	return clickGoBtn("2", noVol, noIssue, pageInput);
+});
+$(window).load(function(){
+	try {
+		var issueList1 = '';
+		var issueOptions = jQuery('#selectIssue').children();
+		if (issueOptions.length > 1) {
+			for ( var i=1; i<issueOptions.length; i++ ){
+				issueList1 = issueList1 + issueOptions.eq(i).val();
+			}
+		}
+		var selectVol = $("#selectVol").val();
+		var selectIssue = $("#selectIssue").val();
+		if (selectVol != "") {
+			for (var idx in ddd) {
+				var noVol = ddd[idx].noVol;
+				if (noVol == selectVol) {
+					var issueList2 = '';
+					var noIssueArry = ddd[idx].noIssue;
+					for (i = 0; i < noIssueArry.length; i++) {
+						issueList2 = issueList2 + noIssueArry[i];
+					}
+					if (issueList1 != issueList2) {
+						$("#selectVol").trigger("change");
+						$("#mobileSelectVol").trigger("change");
+					}
+				}
+			}
+		}
+	} catch (e) {console.log("Exception : " + e);}
+});
+$(window).unload(function(){});
+function pressEnter4GoBtn() {
+	if (window.event.keyCode == 13) {
+		$('#goBtn').trigger("click");
+	}
+}
+function pressEnter4MobileGoBtn() {
+	if (window.event.keyCode == 13) {
+		$('#mobileGoBtn').trigger("click");
+	}
+}
+function clickGoBtn(mode, noVol, noIssue, pageInput) {
+	if (mode == "1") {
+		$("#pageMessage01").css("display", "none");
+		$("#pageMessage02").css("display", "none");
+		$("#pageMessage03").css("display", "none");
+	} else if (mode == "2") {
+		$("#mobilePageMessage01").css("display", "none");
+		$("#mobilePageMessage02").css("display", "none");
+		$("#mobilePageMessage03").css("display", "none");
+	}
+	try {
+
+		if ((noVol == null || noVol == "") && (noIssue == null || noIssue == "")){
+				noVol = "";
+				noIssue = ""
+		}
+
+		if (noIssue == null || noIssue == ""){
+			noIssue = "0"
+		}
+
+		if (pageInput == null || pageInput == "") {
+			var url = getUrl(noVol, noIssue);
+			url = url.replace('repXXX', noVol);
+			url = url.replace('repYYY', noIssue);
+			document.location.href = url;
+			return;
+		}
+		if (noVol == null) {
+			if (mode == "1") {
+				$("#pageMessage01").css("display", "block");
+			} else if (mode == "2") {
+				$("#mobilePageMessage01").css("display", "block");
+			}
+			return;
+		}
+		var jsonUrl = 'https://www.jstage.jst.go.jp/pageSearch/null/repXXX/repYYY/repZZZ';
+		jsonUrl = jsonUrl.replace('repXXX', noVol);
+		jsonUrl = jsonUrl.replace('repYYY', noIssue);
+		jsonUrl = jsonUrl.replace('repZZZ', pageInput);
+		$.ajax({
+			cache: false,
+			type: 'GET',
+			url: jsonUrl,
+			dataType: 'json',
+			contentType:'application/json',
+			success: function(json) {
+				var errorCd = json.errorCd;
+				var redirectSryCd = json.redirectSryCd;
+				var redirectNoVol = json.redirectNoVol;
+				var redirectNoIssue = json.redirectNoIssue;
+				var redirectCdArticle = json.redirectCdArticle;
+				if (
+						"0" == errorCd
+						&& redirectSryCd != null && redirectSryCd != ''
+						&& redirectNoVol != null && redirectNoVol != ''
+						&& redirectNoIssue != null && redirectNoIssue != ''
+						&& redirectCdArticle != null && redirectCdArticle != ''
+				) {
+					var shosiUrl = 'https://www.jstage.jst.go.jp/article/repXXX/repYYY/repZZZ/_article/-char/ja';
+					var urls = shosiUrl.match('(http.+/article/)([0-9a-z]+)(/repXXX.+)');
+					if(urls.length == 4){
+						shosiUrl = urls[1];
+						shosiUrl += redirectSryCd;
+						shosiUrl += urls[3];
+					}
+					shosiUrl = shosiUrl.replace('repXXX', redirectNoVol);
+					shosiUrl = shosiUrl.replace('repYYY', redirectNoIssue);
+					shosiUrl = shosiUrl.replace('repZZZ', redirectCdArticle);
+					document.location.href = shosiUrl;
+					return true;
+				} else if ("1" == errorCd) {
+					if (mode == "1") {
+						$("#pageMessage02").css("display", "block");
+					} else if (mode == "2") {
+						$("#mobilePageMessage02").css("display", "block");
+					}
+				} else if ("2" == errorCd) {
+					if (mode == "1") {
+						$("#pageMessage03").css("display", "block");
+					} else if (mode == "2") {
+						$("#mobilePageMessage03").css("display", "block");
+					}
+				}
+			}
+		});
+	} catch (e) {
+	}
+	return false;
+}
+function getUrl(noVol, noIssue) {
+	return 'https://www.jstage.jst.go.jp/browse/repXXX/repYYY/_contents/-char/ja';
+}
+function registerStickyClose(){
+	$("#sticky-register-to-j-stage").hide();
+	if(('localStorage' in window) && (window.localStorage !== null)) {
+		localStorage.setItem('C.regsticky', 'off');
+	}
+}
+function doChangeLang(langKind){
+
+	if (typeof changeLang == "function")  {
+				changeLang(langKind);
+		return;
+
+	} else {
+				var encStr = "";
+		if(langKind == "ja") {
+			encStr = "https%3A%2F%2Fwww.jstage.jst.go.jp%2Fresult%2Fglobal%2F-char%2Fja%3FglobalSearchKey%3DURAT1%2BW258X%2B%25E7%2597%259B%25E9%25A2%25A8%26bglobalSearch%3Dtrue";
+		} else {
+			encStr = "https%3A%2F%2Fwww.jstage.jst.go.jp%2Fresult%2Fglobal%2F-char%2Fen%3FglobalSearchKey%3DURAT1%2BW258X%2B%25E7%2597%259B%25E9%25A2%25A8%26bglobalSearch%3Dtrue";
+		}
+		location.href = decodeURIComponent(encStr);
+		return;
+	}
+}
+function hBack(){
+		var ans;
+		var ref = document.referrer;
+		re = new RegExp(location.hostname,"i");
+		if(ref.match(re)){
+				ans = false;
+		}else{
+				ans = true
+		}
+		if(!ans){
+			history.back();
+		} else {
+			location.href = "https://www.jstage.jst.go.jp/browse/-char/ja";
+		}
+}
+</script>
+</body>
+</html>

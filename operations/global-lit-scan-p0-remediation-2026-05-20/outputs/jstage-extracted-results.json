@@ -1,0 +1,186 @@
+{
+  "created_at_utc": "2026-05-20T15:42:59+00:00",
+  "method": "Parsed local-curl-fetched J-STAGE search/article HTML with lightweight metadata extraction; no translation claims made here.",
+  "search_results": [
+    {
+      "item": "P0-2",
+      "query": "URAT1 W258X 痛風",
+      "source_file": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_ja_0e8cced71202.html",
+      "result_count_text": "4,903件中 1-20の結果を表示しています",
+      "top_results": [
+        {
+          "title": "腎性低尿酸血症における運動後急性腎不全の発症機序に関する考察",
+          "url": "https://www.jstage.jst.go.jp/article/jjpn/22/2/22_2_147/_article/-char/ja"
+        },
+        {
+          "title": "6. 低尿酸血症",
+          "url": "https://www.jstage.jst.go.jp/article/naika/95/5/95_5_894/_article/-char/ja"
+        },
+        {
+          "title": "URAT1/SLC22A12遺伝子の機能消失型変異が血清尿酸値および痛風・高尿酸血症の発症に与える影響",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/41/1/41_143/_article/-char/ja"
+        },
+        {
+          "title": "痛風の病因遺伝子",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/34/2/34_159/_article/-char/ja"
+        },
+        {
+          "title": "腎性低尿酸血症3例における尿酸トランスポーター(URAT1)遺伝子異常の解析",
+          "url": "https://www.jstage.jst.go.jp/article/gnam1999/28/2/28_115/_article/-char/ja"
+        },
+        {
+          "title": "腎性低尿酸血症の病態",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/42/Supplement/42_suppl-26/_article/-char/ja"
+        },
+        {
+          "title": "低尿酸血症の分子メカニズム（Urat1ノックアウトマウスの作出と検討）",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/33/2/33_213/_article/-char/ja"
+        },
+        {
+          "title": "Molecular mechanism of urate-lowering effects of anserine nitrate",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/40/2/40_137/_article/-char/ja"
+        },
+        {
+          "title": "尿酸代謝・尿酸トランスポーターと尿酸異常症",
+          "url": "https://www.jstage.jst.go.jp/article/yakushi/144/6/144_23-00217/_article/-char/ja"
+        },
+        {
+          "title": "腎性低尿酸血症の新規病因遺伝子glucose transporter 9（GLUT9）の同定",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/33/1/33_77/_article/-char/ja"
+        },
+        {
+          "title": "運動後急性腎不全（ALPE）と腎性低尿酸血症",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/33/2/33_216/_article/-char/ja"
+        },
+        {
+          "title": "2．尿酸代謝異常をめぐる新たな展望",
+          "url": "https://www.jstage.jst.go.jp/article/naika/101/4/101_1027/_article/-char/ja"
+        },
+        {
+          "title": "腎性低尿酸血症1型モデルマウスの作出と最適化",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/41/2/41_211/_article/-char/ja"
+        },
+        {
+          "title": "尿酸トランスポーターURAT1トランスジェニックマウスにおける尿酸の体内動態",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/34/2/34_171/_article/-char/ja"
+        },
+        {
+          "title": "教科書的記載その2（病態と検査・診断）",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/41/2/41_214/_article/-char/ja"
+        },
+        {
+          "title": "運動後急性腎不全（ALPE）",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/34/2/34_145/_article/-char/ja"
+        },
+        {
+          "title": "低尿酸血症に伴った運動後の急性腎障害の一例",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/41/1/41_120/_article/-char/ja"
+        },
+        {
+          "title": "尿酸トランスポーターと腎障害",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/40/2/40_163/_article/-char/ja"
+        },
+        {
+          "title": "新規尿酸排泄促進薬（ドチヌラド）の使用経験",
+          "url": "https://www.jstage.jst.go.jp/article/gnamtsunyo/46/1/46_29/_article/-char/ja"
+        },
+        {
+          "title": "腎性低尿酸血症",
+          "url": "https://www.jstage.jst.go.jp/article/gnam/39/2/39_165/_article/-char/ja"
+        }
+      ]
+    },
+    {
+      "item": "P0-4",
+      "query": "マイタケ グリフォラン 炎症",
+      "source_file": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_ja_711487daf162.html",
+      "result_count_text": "2件中 1-2の結果を表示しています",
+      "top_results": [
+        {
+          "title": "真菌β-1,3-グルカンの構造と生物活性",
+          "url": "https://www.jstage.jst.go.jp/article/yakushi1947/120/5/120_5_413/_article/-char/ja"
+        },
+        {
+          "title": "真菌βグルカンと生体防御",
+          "url": "https://www.jstage.jst.go.jp/article/yakushi/141/5/141_20-00245/_article/-char/ja"
+        }
+      ]
+    },
+    {
+      "item": "P0-1",
+      "query": "霊芝 高尿酸血症",
+      "source_file": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_ja_a9dabfd220fe.html",
+      "result_count_text": "2件中 1-2の結果を表示しています",
+      "top_results": [
+        {
+          "title": "平成17年度における酒類の研究業績",
+          "url": "https://www.jstage.jst.go.jp/article/jbrewsocjapan1988/101/4/101_4_220/_article/-char/ja"
+        },
+        {
+          "title": "第39回日本糖尿病学会年次学術集会 一般演題",
+          "url": "https://www.jstage.jst.go.jp/article/tonyobyo1958/39/sppl1/39_sppl1_159/_article/-char/ja"
+        }
+      ]
+    }
+  ],
+  "article_details": [
+    {
+      "item": "P0-2",
+      "source_file": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_article_gnam_41_1_41_143__article_-char_ja.html",
+      "title": "URAT1/SLC22A12遺伝子の機能消失型変異が血清尿酸値および痛風・高尿酸血症の発症に与える影響",
+      "journal": "痛風と核酸代謝",
+      "doi": "10.6032/gnam.41.143",
+      "publication_date": "2017/07/25",
+      "keywords": [],
+      "abstract": null,
+      "relevance_note": "Directly relevant Japanese urate-transporter/gout genetics record surfaced by the P0-2 native query."
+    },
+    {
+      "item": "P0-2",
+      "source_file": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_article_gnam1999_28_2_28_115__article_-char_ja.html",
+      "title": "腎性低尿酸血症3例における尿酸トランスポーター(URAT1)遺伝子異常の解析",
+      "journal": "痛風と核酸代謝",
+      "doi": "10.6032/gnam1999.28.2_115",
+      "publication_date": "2004",
+      "keywords": [],
+      "abstract": null,
+      "relevance_note": "URAT1 renal hypouricemia genetics record; useful for variant/function context rather than gout risk alone."
+    },
+    {
+      "item": "P0-4",
+      "source_file": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_article_yakushi1947_120_5_120_5_413__article_-char_ja.html",
+      "title": "真菌β-1,3-グルカンの構造と生物活性",
+      "journal": "YAKUGAKU ZASSHI",
+      "doi": "10.1248/yakushi1947.120.5_413",
+      "publication_date": "2000/05/01",
+      "keywords": [
+        "β-glucan",
+        "immunopharmacology",
+        "allergy",
+        "fungi",
+        "antitumor activity",
+        "conformation"
+      ],
+      "abstract": "This paper summarizes the structure, biological activities, signaling, and metabolic degradation of fungal β-1, 3-glucans. Fungal β-glucans exist both soluble and particulate forms. Conformation of the soluble β-glucan was classified into three groups : triple helix, single helix and random coil. Fungal β-1, 3-glucans exhibit a variety of biological and immuno-pharmacological activities, and the significance of these activities is dependent on the structure, such as solubility in water, molecular weight, degree of branching, and conformation. Many of the activities, such as nitrogen oxide synthesis of macrophage and limulus factor G activation, were dependent on the conformation, but some of the others were independent, such as interferon-γ and colony stimulating factor syntheses. These activities are beneficial and pharmacologically useful, while some strongly related to allergic and inflammatory adverse reactions. It should be noted that the β-glucans, once administered into the body, remain mainly in the liver and spleen for a very long period of time. The activity, at least in part, is maintained during these periods. The biochemical mechanisms of the β-glucan, especially in soluble form, mediating biological activity was still not clearly demonstrated.",
+      "relevance_note": "Fungal beta-glucan structure/activity review surfaced by maitake/grifolan inflammation query."
+    },
+    {
+      "item": "P0-4",
+      "source_file": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_article_yakushi_141_5_141_20-00245__article_-char_ja.html",
+      "title": "真菌βグルカンと生体防御",
+      "journal": "YAKUGAKU ZASSHI",
+      "doi": "10.1248/yakushi.20-00245",
+      "publication_date": "2021/05/01",
+      "keywords": [
+        "fungus",
+        "cell wall",
+        "β-glucan",
+        "pathogen associated molecular pattern",
+        "dectin-1",
+        "antibody"
+      ],
+      "abstract": "Fungi are eukaryotic microorganisms that show complex life cycles, including both anamorph and teleomorph stages. Beta-1,3-1,6-glucans (BGs) are major cell wall components in fungi. BGs are also found in a soluble form and are secreted by fungal cells. Studies of fungal BGs extensively expanded from 1960 to 1990 due to their applications in cancer immunotherapy. However, progress in this field slowed down due to the low efficacy of such therapies. In the early 21st century, the discovery of C-type lectin receptors significantly enhanced the molecular understanding of innate immunity. Moreover, pathogen-associated molecular patterns (PAMPs) and pattern recognition receptors (PRRs) were also discovered. Soon, dectin-1 was identified as the PRR of BGs, whereas BGs were established as PAMPs. Then, studies on fungal BGs focused on their participation in the development of deep-seated mycoses and on their role as a source of functional foods. Fungal BGs may have numerous and complex linkages, making it difficult to systematize them even at the primary structure level. Moreover, elucidating the structure of BGs is largely hindered by the multiplicity of genes involved in cell wall biosynthesis, including those for BGs, and by fungal diversity. The present review mainly focused on the characteristics of fungal BGs from the viewpoint of structure and immunological activities.",
+      "relevance_note": "Fungal beta-glucan innate-immunity review; relevant to mushroom immunomodulation mechanism background, not yet gout-specific."
+    }
+  ]
+}

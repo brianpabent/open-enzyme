@@ -1,0 +1,173 @@
+{
+  "scope": "P0-2 East Asian gout genetics: ABCG2 Q141K, HLA-B*58:01, URAT1 W258X allele frequency, gout association, allopurinol safety, and intervention response",
+  "natural_product_scope": true,
+  "query_framing_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+  "required_query_frames": [
+    "mechanism_native",
+    "traditional_pathology"
+  ],
+  "created_at_utc": "2026-05-20T15:36:38+00:00",
+  "framings": [
+    {
+      "type": "western_mechanism",
+      "language": "en",
+      "queries": [
+        "ABCG2 Q141K East Asian gout rs2231142",
+        "HLA-B*58:01 allopurinol severe cutaneous adverse reactions Han Chinese Korean",
+        "URAT1 W258X Japanese Korean gout"
+      ],
+      "rationale": "Western/PubMed mechanism-name frame; retained as one frame, not the whole scan."
+    },
+    {
+      "type": "mechanism_native",
+      "language": "zh",
+      "sources": [
+        "CNKI",
+        "WanFang",
+        "CQVIP",
+        "SinoMed",
+        "ChiCTR",
+        "NSTL"
+      ],
+      "queries": [
+        "ABCG2 痛风",
+        "ABCG2 高尿酸血症",
+        "ABCG2 痹证",
+        "ABCG2 湿热痹",
+        "乳腺癌耐药蛋白 痛风",
+        "乳腺癌耐药蛋白 高尿酸血症",
+        "乳腺癌耐药蛋白 痹证",
+        "乳腺癌耐药蛋白 湿热痹",
+        "尿酸排泄 痛风",
+        "尿酸排泄 高尿酸血症",
+        "尿酸排泄 痹证",
+        "尿酸排泄 湿热痹",
+        "URAT1 痛风",
+        "URAT1 高尿酸血症",
+        "URAT1 痹证",
+        "URAT1 湿热痹",
+        "尿酸盐转运蛋白1 痛风",
+        "尿酸盐转运蛋白1 高尿酸血症",
+        "尿酸盐转运蛋白1 痹证",
+        "尿酸盐转运蛋白1 湿热痹",
+        "尿酸转运体1 痛风",
+        "尿酸转运体1 高尿酸血症",
+        "尿酸转运体1 痹证",
+        "尿酸转运体1 湿热痹",
+        "SLC22A12 痛风",
+        "SLC22A12 高尿酸血症",
+        "SLC22A12 痹证",
+        "SLC22A12 湿热痹"
+      ],
+      "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary."
+    },
+    {
+      "type": "traditional_pathology",
+      "language": "zh",
+      "sources": [
+        "CNKI",
+        "WanFang",
+        "CQVIP",
+        "SinoMed",
+        "ChiCTR",
+        "NSTL"
+      ],
+      "queries": [
+        "痛风",
+        "高尿酸血症",
+        "痹证",
+        "湿热痹"
+      ],
+      "rationale": "Original pathology framing catches papers that do not use Western mechanism labels."
+    },
+    {
+      "type": "mechanism_native",
+      "language": "ja",
+      "sources": [
+        "J-STAGE",
+        "CiNii",
+        "J-GLOBAL",
+        "J-RCT"
+      ],
+      "queries": [
+        "ABCG2 痛風",
+        "ABCG2 高尿酸血症",
+        "BCRP 痛風",
+        "BCRP 高尿酸血症",
+        "尿酸排泄 痛風",
+        "尿酸排泄 高尿酸血症",
+        "URAT1 痛風",
+        "URAT1 高尿酸血症",
+        "尿酸トランスポーター 痛風",
+        "尿酸トランスポーター 高尿酸血症",
+        "SLC22A12 痛風",
+        "SLC22A12 高尿酸血症"
+      ],
+      "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary."
+    },
+    {
+      "type": "traditional_pathology",
+      "language": "ja",
+      "sources": [
+        "J-STAGE",
+        "CiNii",
+        "J-GLOBAL",
+        "J-RCT"
+      ],
+      "queries": [
+        "痛風",
+        "高尿酸血症"
+      ],
+      "rationale": "Original pathology framing catches papers that do not use Western mechanism labels."
+    },
+    {
+      "type": "mechanism_native",
+      "language": "ko",
+      "sources": [
+        "KISS",
+        "RISS",
+        "DBpia",
+        "KoreaScience",
+        "KCI"
+      ],
+      "queries": [
+        "ABCG2 통풍",
+        "ABCG2 고요산혈증",
+        "BCRP 통풍",
+        "BCRP 고요산혈증",
+        "요산 배설 통풍",
+        "요산 배설 고요산혈증",
+        "URAT1 통풍",
+        "URAT1 고요산혈증",
+        "요산 수송체 통풍",
+        "요산 수송체 고요산혈증",
+        "SLC22A12 통풍",
+        "SLC22A12 고요산혈증"
+      ],
+      "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary."
+    },
+    {
+      "type": "traditional_pathology",
+      "language": "ko",
+      "sources": [
+        "KISS",
+        "RISS",
+        "DBpia",
+        "KoreaScience",
+        "KCI"
+      ],
+      "queries": [
+        "통풍",
+        "고요산혈증"
+      ],
+      "rationale": "Original pathology framing catches papers that do not use Western mechanism labels."
+    }
+  ],
+  "notes": [
+    "Do not treat zero hits from English mechanism queries as evidence of absence in non-English corpora.",
+    "Fetch firewall-sensitive East Asian sources through local_curl_fetch(), not hosted model/web fetch.",
+    "Translate load-bearing non-English source text with translate_source_two_model().",
+    "Cohort-genetics scans do not require species/formula frames; native mechanism/pathology frames are the load-bearing query mapping."
+  ],
+  "cohort_genetics_scope": true
+}
