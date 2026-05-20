@@ -18,6 +18,8 @@ audience: "Anyone arriving with 'I have gout, what do I do?' — patients, pract
 
 > **Not medical advice.** Open Enzyme is Phase 0 (Research & Design). None of the engineered-strain interventions on this page are FDA-approved or clinically available. Everything in the "today / this month / this year" sections is over-the-counter or dietary; even so, work with a physician on anything that interacts with your medications or comorbidities. The point of this page is to translate research findings into actionable starting points, not to replace clinical care.
 
+> **Looking for a patient-friendly companion?** [**gout.care**](https://gout.care) translates this material for people living with gout — same chokepoint thinking, less wiki-jargon. This page stays here as the rigorous version; gout.care is the warmer one. Cross-reference either way.
+
 ---
 
 ## Step 1 — Identify your situation

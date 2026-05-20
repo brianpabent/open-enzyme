@@ -7,6 +7,8 @@ Open source library of engineered, food-grade microbial strains producing therap
 ---
 
 > **Have gout? Want to know what to do?** → Read **[`gout-action-guide.md`](wiki/gout-action-guide.md)** first. It's the situation-first entry surface (today / this month / this year, by patient situation) that translates the research wiki below into action. The dashboard, synthesis queue, and concept index on the rest of this page are research-facing.
+>
+> **Prefer a patient-friendly companion site?** → [**gout.care**](https://gout.care) is the patient-facing translation of this research — same chokepoint thinking, written for people living with gout rather than the PhD-research audience.
 
 ---
 
