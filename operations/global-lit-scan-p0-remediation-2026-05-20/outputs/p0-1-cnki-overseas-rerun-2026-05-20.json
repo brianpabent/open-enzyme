@@ -1,0 +1,1156 @@
+{
+  "created_at_utc": "2026-05-20T16:51:57+00:00",
+  "scope": "P0-1 comp-014 medicinal mushroom Phase 5b focused CNKI Overseas rerun",
+  "method": "GET CNKI Overseas query page for cookies, POST equivalent QueryJson to /kns8s/brief/grid, parse first page result table. Counts are CNKI UI totals; records are discovery leads, not evidence-tier claims.",
+  "queries": [
+    {
+      "category": "source_fractionation",
+      "query": "灵芝 多糖肽 分离纯化",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20%E5%A4%9A%E7%B3%96%E8%82%BD%20%E5%88%86%E7%A6%BB%E7%BA%AF%E5%8C%96",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_bb4cae42cc8d.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_bb4cae42cc8d.provenance.json",
+      "total": 39,
+      "top_records": [
+        {
+          "title": "Purification， structural characterization and anti-aging and stress activities of Ganoderma lucidum polysaccharides from different sources",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-Bs8BAnLu1CgTB1rsw0ypPnYwWpirCnr1aP2CdF5PfaGf1zYHkHIfQIaKaoLmUlJg9tgcnczuh4F5b-SzkKV2uht5yyXB3oxOf5yTVD5HXTB6M_eX1lb5IYmRzrTW4_YwCYrnFCpdDClAUPQY_WLqHHSc-sXK-qPjjBcwopvjQPSQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "马慧秀;戴德慧;胡小康;陈贵才;胡伟莲",
+          "source": "Journal of Chinese Institute of Food Science and Technology",
+          "publication_date": "2025-03-12 19:03",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "2104",
+          "flags": [
+            "Online First",
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Isolation, purification, structural characterization and antioxidant activity of Ganoderma lucidum polysaccharides",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-DrxLEAj9anc_Csn66bWR0cmQ1CsZSrsC676NZJJp-Ynu1Q1zmGmRhuF0UYO5yN-RpMT9ML_vXpa4DYt5pXBk1vs4cy86kVL65q7Ormw5xaa_aCm8QQJKsg7zeusKZKjfJAodKYYtxH8dL-bm6L4fSj19HAnIYjeGswIBuOPlfTyw==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘丹;任洪飞;逄梦玉;隋昕怡;杜秀菊",
+          "source": "Cereals & Oils",
+          "publication_date": "2025-03-10",
+          "database": "Journals",
+          "cites_text": "4",
+          "downloads_text": "2165",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research Advances in Extraction Methods and Quantitative Analysis of Ganoderma Polysaccharides",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-DrxLEAj9anc_Csn66bWR0cmQ1CsZSrsC6FQVTr9BFdwFdOqMyKUEZutar5085jgzNUtCvM1pdkw1YyvCorrVEbEnOFI-BedXWspm_Fj40ElSOYRjHs9QNnt1heZbDQjuH6v3DdPGuk6A5ndlcBe-M_pKHPzZEX9xjOpd4ayF3yAA==&uniplatform=OVERSEA&language=EN",
+          "authors": "袁堃;吴子威;赵娜娜;王海明",
+          "source": "Journal of Fungal Research",
+          "publication_date": "2025-01-06 13:56",
+          "database": "Journals",
+          "cites_text": "3",
+          "downloads_text": "3559",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research Progress on Chemistry of Ganoderma Polysaccharides",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-DrxLEAj9anc_Csn66bWR0cmQ1CsZSrsC6FQVTr9BFdwEIdxgHZ6QMa2vR7KksUQpi3ui4nS-vTnfyu9_SSGTwvjhlC_DpC04crbXBWuqZdFjgOopBNDUWVUM1KWk-QOcV8UZZfqC8lXD_ILT420eu7e6mTZwo-xWLXqZkbSGAvTQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "林树钱;王赛贞;王联福;林冬梅",
+          "source": "Journal of Fungal Research",
+          "publication_date": "2024-01-10 10:45",
+          "database": "Journals",
+          "cites_text": "18",
+          "downloads_text": "2503",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "A review of extraction and purification method of triterpenes and polysaccharides from Ganoderma lucidum",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-Abk1oPGYcqerOT6hfWlIhmjBh62-4PNvAM9hzsuay_iqRfnclQTufISMlqgUuLAA_gjGYeAyliLGQJb0D_1a0bQ1GkCm3u1G79OoeJvuNGKNPCZf1iZ5O5GV1CuKXEHSmL_HuXgRkrzElOkmsKvPALBE-9HfbDBzfnbHUs03VoeA==&uniplatform=OVERSEA&language=EN",
+          "authors": "李敏敏;张兰迎;赵翠敏;熊永星;吴倩倩;赵岑",
+          "source": "Edible Fungi",
+          "publication_date": "2023-09-19",
+          "database": "Journals",
+          "cites_text": "14",
+          "downloads_text": "3347",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Extraction, Purification, Structural Characterization and Antioxidant Activity of Polysaccharides from the Fruiting Body of Guanxian Ganoderma lucidum",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-Abk1oPGYcqerOT6hfWlIhmjBh62-4PNvD1g_FJfWjkwifOuAo9SYBH1PVvqurGl9OWGp7t98LCyncU-4z3k5K9wqZ1dXG7kBmw5epA--WaPxkYPY0gVZd3rEHV5NPO5eNufsxFg2LxFVBPpAe8cRb5GbEOsSRTnsgad-7n_oxG0w==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘养山;张景;任洪飞;逄梦玉;隋昕怡;杜秀菊",
+          "source": "Science and Technology of Food Industry",
+          "publication_date": "2022-11-29 17:29",
+          "database": "Journals",
+          "cites_text": "25",
+          "downloads_text": "1649",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Study on marker components and biological activity of Ganoderma lucidum fruiting bodies",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BFB-T_loz9Gct1xy55dMNb94w8mDC8ktmVDrG3c6Wio0E94mU_8nTGgAA_Ik2swFUPQz_5F8c58Pk3Nbn8oFuOADSTT2QIPhWzzvgFjZM4NPNG2B1V9aXJgz_ZH8j8KknsaN4o77cqhmjvXdrwB9WxK2bRI1jh38sMshyRP-fEzg==&uniplatform=OVERSEA&language=EN",
+          "authors": "林冬梅;罗虹建;马昂;王赛贞;林树钱;杨宝学;林占熺;王联福",
+          "source": "Lishizhen Medicine and Materia Medica Research",
+          "publication_date": "2022-07-20",
+          "database": "Journals",
+          "cites_text": "3",
+          "downloads_text": "737",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Isolation of polysaccharides from Arenaria kansuensis and evaluation of immunological activity",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BFB-T_loz9Gct1xy55dMNb94w8mDC8ktkQkWetrfiV8IQZWUx13Lmkpm906Xmtn9h5ohhWcIRIof4NUS6kiaKeOcohSeAC3PFTZmdZMfBdDMSElRX_pedha2rHprjZjGl35InX2nuRBbCB81NAWYvZj4QtdNq0Cg4H1UFz-pnvqA==&uniplatform=OVERSEA&language=EN",
+          "authors": "连紫宛;李占强;张海燕;刘瑞欣;陈辛玲;王刚",
+          "source": "Natural Product Research and Development",
+          "publication_date": "2019-03-08 14:40",
+          "database": "Journals",
+          "cites_text": "21",
+          "downloads_text": "1287",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "gout_urate",
+      "query": "灵芝 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_5b7b8faf34e8.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_5b7b8faf34e8.provenance.json",
+      "total": 7,
+      "top_records": [
+        {
+          "title": "Reevaluating the Purine Controversy and Health Effects of Edible Mushroom: Multidimensional Regulatory Mechanisms in Hyperuricemia and Gout Risk Management",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-ABBYy0rqaQJzNAe40q3ngbZ64VAKjG7awoka4NVva76_l1VjcxQhtasfahDCvdCiifojHupHsPEqS6THyo6Chl-Dh7Zl90CwCFBq7TC_EQdwa1AZTkdI-RRv12Nttl8d5oJP9oJaCOr5I1cIw8XN3tCrJdw9en6m5OJ3m93qIwYQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "周锫;潘易;华蓉;杨宁;何容;苟学磊;陈正启;孙达锋",
+          "source": "Food Science",
+          "publication_date": "2025-10-24 09:22",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "433",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research Progress of Medicinal and Edible Herbs against Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AUV-0z3lXKgJkU8KBlGy-lm690oAHlbBJ0bigZ2MSX_PUScc6I_IXk11_O9lIGrjHXkhBIZHF0-aISNaguVZRhuMTsXGpABIsC6AInOSL0f6bZJGvbrND7jYd5CcIS7w_Yvr7C3bEXY-JJAjpZgKocTyBh7mGSRMNuoDkH-ytPig==&uniplatform=OVERSEA&language=EN",
+          "authors": "单义民;石莹莹;左文青;杨强;王喆;陆世广",
+          "source": "The Food Industry",
+          "publication_date": "2024-11-20",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "1471",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Effects of Ganoderma lucidum Aqueous Extract on Uric Acid Level and Renal Function of Rats with Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AUV-0z3lXKgJkU8KBlGy-lm690oAHlbBLAVWksGRhz6qTclTLoY-Gxe8r0LdJzo46avAL4h-lPkT5OvnZPXJd7Bc_zrNK4e8Cjr2SWT9xOPovF9eFST4ptUZRciJGVmw3USvemafJAXfMhpD84FOGede-sdTm9i_x02-qs-VO8MQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘朋;刘利平;熊心怡;冯杰;张劲松;汪雯翰;刘艳芳",
+          "source": "Acta Edulis Fungi",
+          "publication_date": "2024-09-24",
+          "database": "Journals",
+          "cites_text": "3",
+          "downloads_text": "1343",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "灵芝 多糖肽通过调节腺苷脱氨酶和 尿酸 转运蛋白减轻 高尿酸血症",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-DXTOfRQnJizbk6GAwEWnacUBVMdOPRJn4G_YgikeMqgyogXet0_nvS2rOYlivNpyaqzc8-qAx0GODnlNl__FPlk6Pf6fdqoa3ioWhaVInzJE6z-Ky9JRfitRfLwUjSHypQuxbdB7Ds6Z7i_2bU3q4yFpGA8X9RG1COUteIw-iWa6cpChHvssct&uniplatform=OVERSEA&language=EN",
+          "authors": "林思梅;杨宝学",
+          "source": "第十二届药用真菌学术研讨会论文集",
+          "publication_date": "2023-10-21",
+          "database": "China Conferences",
+          "cites_text": "8",
+          "downloads_text": "420",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Study on the application effect of comprehensive prevention and treatment technology in the prevention and treatment of gout and hyperuricemia patients",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AZgJyZ69W7HRemel1isRYQzL2_GVuWsqZq7Cdhj5j-8zKyiEBzhmr6wObJE6JEoSqdzmv7BrliNC2G_EqOnPUhR2CURg0ZVGn4OJWglFGmh3iHwpaP7fkueuHqcju5r0WIQU-evLfGyM6aVAUljwtSPBccKcyyVW9cDC5GUVXELw==&uniplatform=OVERSEA&language=EN",
+          "authors": "俞钟明;陈剑;孙培芳;王鑫;孙佳颖;岳丽霞;汪佳佳",
+          "source": "China Modern Doctor",
+          "publication_date": "2021-11-18",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "187",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Clinical Experience of Professor ZHANG Jianyong in Treating Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AZgJyZ69W7HRemel1isRYQzL2_GVuWsqalbsgKZssZbToxNNhVQ85ao6COBowuBXI1FWF4-ppJCiKYtmCuzITZryP8YFAe0PEOmc-hTZNDlqWRErIGGdj_tQrtm35Y1u099hPZwD5xEub5gqWpyLeL35d9eFb_pBxjS6EoNE4M5Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "张金焕;张剑勇",
+          "source": "Shandong Journal of Traditional Chinese Medicine",
+          "publication_date": "2020-04-01",
+          "database": "Journals",
+          "cites_text": "19",
+          "downloads_text": "814",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "gout_urate",
+      "query": "灵芝 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20%E7%97%9B%E9%A3%8E",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_8e6e9a44ea01.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_8e6e9a44ea01.provenance.json",
+      "total": 6,
+      "top_records": [
+        {
+          "title": "Analysis on Medicine Law of Professor Kuang Huitao in Treating Gout Based on Data Mining Method",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BR0-qQnMcRHcb75h31L-GKbb5N6fTuH3YH6LFF_zAkltbxBs6_kYB1kjl9sy5k9HNksfRfnG5z3GacGBXgUgolWrmpvM6cJwOVPB3NZ9Hj6eiMhkH0g-C1KHeLxC_CSZuVD4LY84NfUd4cGFub91qYn1V9o_G21jtf1_9H1B1FRw==&uniplatform=OVERSEA&language=EN",
+          "authors": "吴彬才;杨柳;王莘智;吴鑫;旷惠桃",
+          "source": "Journal of Hunan University of Chinese Medicine",
+          "publication_date": "2017-05-19 07:00",
+          "database": "Journals",
+          "cites_text": "23",
+          "downloads_text": "504",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "痛风 经方风之消",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BR0-qQnMcRHcb75h31L-GKxVV2zaq7m2YIhEYyZ0SC5p22B-b9An7pjogV_eF22llnNFnkOkA6CMnaYgEv41DPyJ0kN3POsCWgPvKoYeLnt4M_zpaAFC_gGAQiF_VdcG3sEgJgCJFiQqzfeRHKsmLMYnK8631dnPTGWpRAi9fT1w==&uniplatform=OVERSEA&language=EN",
+          "authors": "潘辉",
+          "source": "开卷有益(求医问药)",
+          "publication_date": "2014-11-02",
+          "database": "Magazines",
+          "cites_text": "",
+          "downloads_text": "87",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "《养生三记》作者答读者问(十四)",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BR0-qQnMcRHcb75h31L-GKxVV2zaq7m2ZVKrlUT7DKMBUHw8dgtAp3qcBB0057b1yVtYFv_e6E5b6Rte5u3jtmydGOahsgS6SMzbFCJDCHUWkeAhBLkxR2QEKbtWJcuGMwojt5zPidqlcGU73dzjtqHikvRPS54d9wZSbVKObg2g==&uniplatform=OVERSEA&language=EN",
+          "authors": "",
+          "source": "求医问药",
+          "publication_date": "2012-10-15",
+          "database": "Magazines",
+          "cites_text": "",
+          "downloads_text": "11",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "xo",
+      "query": "灵芝 黄嘌呤氧化酶",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20%E9%BB%84%E5%98%8C%E5%91%A4%E6%B0%A7%E5%8C%96%E9%85%B6",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_b37b1de245b5.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_b37b1de245b5.provenance.json",
+      "total": 13,
+      "top_records": [
+        {
+          "title": "Effects of Ganoderma lucidum Aqueous Extract on Uric Acid Level and Renal Function of Rats with Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BAD-LFNd6vd8DM-CE8v1LYymN5MwmmwylCOFixOJKVN2us4RmREcw__1MWUKY4mWAhnj7OmE7WuyzCdAF845ZwQxEiwhgjQjC-ocezc6hdqnTMQ-huzVr_1mfyGFIoLl7p3evNBj26q8UuFnJQMII-mpg9ka6KwxweZ_klOuWVMw==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘朋;刘利平;熊心怡;冯杰;张劲松;汪雯翰;刘艳芳",
+          "source": "Acta Edulis Fungi",
+          "publication_date": "2024-09-24",
+          "database": "Journals",
+          "cites_text": "3",
+          "downloads_text": "1343",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Changes of reactive oxygen species content and related metabolic enzyme activities in the fruiting body of Ganoderma lingzhi under high oxygen condition",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CZRcbK9ReCm7QYEXcByS1wFn0kWMjxfdv6DMTaIbypVi7Pu5XVTUqHXk37lMIE1hyZ4XoHwZrjSccTq51haPsB0pvuEUI1UFHTXvMQcqIrIQTCgKVnclskO1V6p38CmRphMFe5wkSVNWy5sp9MJ_1GSPe2_ek9E_g6tEz59ZAPqw==&uniplatform=OVERSEA&language=EN",
+          "authors": "张志伟;李月月;何杜鹃;周化斌;杨海龙",
+          "source": "Mycosystema",
+          "publication_date": "2019-12-16 09:37",
+          "database": "Journals",
+          "cites_text": "21",
+          "downloads_text": "534",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Intervention Effect of Ganoderma Lucidum Spores on the Changes of XOD,MPO and SDH in the Testis Tissue of NIDDM Rats",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CZRcbK9ReCm7QYEXcByS1wFn0kWMjxfds5hkRAgTdJ-HYsp7bAFm-L0NwzxlPPDutHnIM1Nlx6Lc3LM7gcUW3bBJmP9Aklb33NvkdR82ozSAtn4woedrmeda9KWwRhbTnWEQbVHyCSZEAeJrMNweo2V2Vaq9JG55IE6XU29Eh5eQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "王淑秋;秦文波;康玉明;马小茹;刘蕾;刘君星;张婷;张波;梁衍峰;王芳芳",
+          "source": "National Journal of Andrology",
+          "publication_date": "2008-09-20",
+          "database": "Journals",
+          "cites_text": "5",
+          "downloads_text": "356",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Intervention Effects of Ganoderma Lucidum Spores on change of XOD,MPO and SDH in mitochondrium in the testiculus of NIDDM Rats",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BqDJ1W4IXEYhwiwl4JKQ_InjBBf-MptRfQlMr3xjVtDhKvjCXPONVGeTGgmyu8R36XVMw4pE-rLyuFShd5dly6HG8rmuHwY-wN4ryQEQtRKyeksB1x9UlVTVOUQroay9128LMxVPFIPeBs_Q5v21AIIU5PhQD4sQEdGSXdmhrSzQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "王淑秋;秦文波;康玉明;马小茹;梁衍峰;王芳芳",
+          "source": "Proceeding of the 12th National Conference on Stereology & Image Analysis",
+          "publication_date": "2008-09-01",
+          "database": "China Conferences",
+          "cites_text": "",
+          "downloads_text": "69",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Effect of ganoderma lucidum polysaccharides on activity of NADPH oxidase in aortas of DOCA salt hypertensive rats",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BVDBfNvwVm51gqbprZVPevNJ4N1Yk-xRvcMlI3re-oMJhcMYn2N1wsx2HBjGh514PUxkaGLahFQ2NNaGH4IBu_tfh_xs_Nx6yP4pbiHBr7Xr9m5tlTaoj1v0hIkUzqqgYm2ez9-7TYBmzSm4kaRpQ8wfDBzgmTB58ZxRg8F5-b9w==&uniplatform=OVERSEA&language=EN",
+          "authors": "胡太平;蔡尤彪",
+          "source": "Journal of Community Medicine",
+          "publication_date": "2007-07-08",
+          "database": "Journals",
+          "cites_text": "24",
+          "downloads_text": "393",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Effects of Lei Zhen Zi Health-Care Capsule on Antioxidation and Preventing DNA Damage Caused by Hydroxyl Radical",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AH_xtLp7IvqGDr3EwSe8tXS3NUAXGHRVYgzYCZ9OaPAFn_Gtt3qhZ9c78H9DUcLnU769ThuRHa_c7q_AO8irwLAboupk-SBp1xOtqCq0PSFyyfUE6I3B57ic5TYbvRA-1Vy7eiWOnp4lEI5jvrjT9RF0REJF0SR-xJc-6mkDQmkA==&uniplatform=OVERSEA&language=EN",
+          "authors": "翟万银,朱振勤,陈季武,王云丹,赵子寅,胡天喜",
+          "source": "Chinese Journal of Luminescence",
+          "publication_date": "2002-04-30",
+          "database": "Journals",
+          "cites_text": "4",
+          "downloads_text": "99",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "formula_fraction",
+      "query": "灵芝孢子粉 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%AD%A2%E5%AD%90%E7%B2%89%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_1c1da5b63ae6.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_1c1da5b63ae6.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "formula_fraction",
+      "query": "灵芝孢子粉 NLRP3 炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%AD%A2%E5%AD%90%E7%B2%89%20NLRP3%20%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_b1e045fdbe74.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_b1e045fdbe74.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "sanghuang_urate",
+      "query": "桑黄 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%A1%91%E9%BB%84%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_a87e074f4d82.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_a87e074f4d82.provenance.json",
+      "total": 28,
+      "top_records": [
+        {
+          "title": "Advances in reno-protective effects of traditional Chinese medicine in the treatment of hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CokjzSq7zuMK9yJ7zNLX1Rt9liy0cBXjFG1n-q9vEaEo3eXzwp97-HqtyY67FA0ysOJmXyiRU0-2PdwNo_dhMFZKPxs2GKdoyyMMOi5_qgMpLeAaognMN_Tyb86dYVT0I3BNTgjOrK-H0nW8SfgeKphLLs-NvmKQu8y_i-G7BrTw==&uniplatform=OVERSEA&language=EN",
+          "authors": "周小婷;段禹;李星源;刘琴;刘爱军",
+          "source": "Journal of Pharmaceutical Practice and Service",
+          "publication_date": "2026-04-24",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "162",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Reevaluating the Purine Controversy and Health Effects of Edible Mushroom: Multidimensional Regulatory Mechanisms in Hyperuricemia and Gout Risk Management",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CxEIgznYyGXy3B68UTufVF0NJyO8zeJZ1lC5QWVp9582rWpSo9LN5ErxozxEsIAZ7OBqMeHEVfDPY3_qPFJPq2QAnVuZaRg-93MIqwWm9GlDhb_mmd0okZo2wSHml_UeGvbYdJn5yhEfP1sDllvx6KE57qi6mB91Y8YGoK9PcdJA==&uniplatform=OVERSEA&language=EN",
+          "authors": "周锫;潘易;华蓉;杨宁;何容;苟学磊;陈正启;孙达锋",
+          "source": "Food Science",
+          "publication_date": "2025-10-24 09:22",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "433",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Study on the Mechanism of Anti-inflammatory and Lowering Uric Acid Effect by Total Flavonoids of Phellinus Igniarius in Vitro Based on Network Pharmacology",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-ApuU8cmHNU8r26TctfD1UxkamAi4H0cxLWgYsLSsyam5rVD8hOEKCiCA8SZuVxm-HYZ6Vns_GVmSyx1OBjJrV0Eu0eAe4c23DpzYdS15B-G-XTcFUhooAsjT_mrDofnXuh9OA4qsyiijTT37Z8vUVDiqI4LB5iiJPQwE-_t6fwIg==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘舟琴;吕梦泠;厉莹玮;蒋晨磊;陆红",
+          "source": "Chinese Journal of Modern Applied Pharmacy",
+          "publication_date": "2025-02-15",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "717",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Rapid identification by UPLC-Q-TOF-MS of the chemical composition of Sanghuangporus vaninii alcohol extract from poplar and its urate-lowering activity and nephroprotective effect",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-ApuU8cmHNU8r26TctfD1UxD-f5uR__773Cfp9yOlVY4lcolxC9GH3vCMFzCrBp8NvdOy7fMxa1aXxtOxThn--PHnZxSBqExrhAsjXMM4RHy4fVYJ_zwwKrLSWLpVS0DjlO2m7ei1HDyJHVBvO5LLnnYP1TTapQOO1JntLxnPD4OQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘桐彰;姜雯雯;李月茹",
+          "source": "Journal of Jilin Agricultural University",
+          "publication_date": "2025-01-20 11:56",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "953",
+          "flags": [
+            "Online First",
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research Progress on the Mechanisms by Which Natural Active Ingredients from Edible and Medicinal Fungi Regulate Uric Acid Metabolism",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-ApuU8cmHNU8r26TctfD1UxkamAi4H0cxK3vVIMb9QaDeLjrxZPdEQCatWBj-eRnb507_cY-U5-Vw9BhVcF30Jw6FR5Qr3-PfjnYWGoPTxbHwzzGlMzxI5bfdZaFvslvRGhxX4LyEF6FXZpBdTiUIJU2_SleDu3Z4Ke9aWNCc8-Jw==&uniplatform=OVERSEA&language=EN",
+          "authors": "文静;殷朝敏;范秀芝;史德芳;姚芬;于巍;高虹",
+          "source": "Food Science",
+          "publication_date": "2024-11-27 16:19",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "1368",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Ameliorating Effects of Free Phenolic Extract of Inonotus hispidus on Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BnVOqhVJOJ8MKxTmR-39uWaAXjLufBzfJDd1AvTBTCXTDCtXioJEhHZpAtTG3RUjZDDwnjWHvQ_iKQN-OZzYvlpNUTQQsPFe_m9vV2rf5Ur237cmRbqMEIW0b93ecKcGSFkxn0APkEtSV_QGPLd5h2rexpVwWCqZXCT0SX6h4Drg==&uniplatform=OVERSEA&language=EN",
+          "authors": "林均蕙;赵克芳;廖森泰;庞道睿;邹宇晓",
+          "source": "Modern Food Science and Technology",
+          "publication_date": "2024-06-18 11:40",
+          "database": "Journals",
+          "cites_text": "4",
+          "downloads_text": "431",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "祖国传统医学对 高尿酸血症 的研究进展",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-B6uxIUw_OXgU6zitq4JWHcRrGRXLddBq8qG9T1KIBflOHSuyKh1EYUF6FcNLqzOmWLK_qUJzbKDOcAY-sOkGiTqq8vYE_6PZW6gtuyY5nvh6SW9D-M1r-0XmMm7Z8OXQOx-TbOWKDnOjMpxEAX4MR2p4qU6-GAd2ePEZ_P_3hALQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "冯钰容;武忠",
+          "source": "Journal of Youjiang Medical University for Nationalities",
+          "publication_date": "2022-10-30",
+          "database": "Journals",
+          "cites_text": "5",
+          "downloads_text": "618",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "桑黄 发酵产物多糖对 高尿酸血症 小鼠的治疗作用",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-A7CfBiC84obuZxIJGquO-LIg4tjYIc_QgkXMS1xuTnrA9OyxKLWLnbXbFl9-I4RzSpbd3cqUJr3WxzO6aDelE6j9xiCQdjgf5VB3imE5BV2y7TEBomGIcY6f3B7xMi0pgdnPcbNfWQFV4-9hBGzuumqtT3o0pxb_5kSvvB3PoU2w==&uniplatform=OVERSEA&language=EN",
+          "authors": "李小欢;步洪石;王佳;隋欣彤;董欣;王淑敏;王欢",
+          "source": "Chinese Traditional Patent Medicine",
+          "publication_date": "2022-05-19 10:43",
+          "database": "Journals",
+          "cites_text": "10",
+          "downloads_text": "1110",
+          "flags": [
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "sanghuang_xo",
+      "query": "桑黄 黄嘌呤氧化酶",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%A1%91%E9%BB%84%20%E9%BB%84%E5%98%8C%E5%91%A4%E6%B0%A7%E5%8C%96%E9%85%B6",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_d0bdecd44570.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_d0bdecd44570.provenance.json",
+      "total": 10,
+      "top_records": [
+        {
+          "title": "Extraction of Active Substances from Inonotus hispidus and Inhibitory Effects on Xanthine Oxidase",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BrKRUPxvK5ll2O4k9HUUC7kIMdbyOl1nGWvvLJ51RGkhtBo6aDnpJo3Kr0SfDaAA2AppZOasOll-tqk_3Av_6IY9JiBuiOh0cG4HjOYlFgUAuMOj5giKZ3AyVu7vRvhvAkCLbYpc6AJ7Y8nb2fYE8dZIjPEIbwv2m62ic3UJRyAg==&uniplatform=OVERSEA&language=EN",
+          "authors": "陈子慧;蔡斯乔;文欣妍;黄梓芮;刘斌;曾峰",
+          "source": "Modern Food Science and Technology",
+          "publication_date": "2026-01-14 16:01",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "331",
+          "flags": [
+            "Online First",
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Rapid identification by UPLC-Q-TOF-MS of the chemical composition of Sanghuangporus vaninii alcohol extract from poplar and its urate-lowering activity and nephroprotective effect",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BrKRUPxvK5ll2O4k9HUUC7kIMdbyOl1nGS5oWFlIlfU8tSDY7xTQeoTIxPBx6_UEgpUS4qKXI0zHYC6UxYcdOJV5csIGQHP8Zt11m_SpHlCfNcoDs_6u8g8hR3Qbr_ex15I1wclP1FO2ed4kvJHmGodKrZ61gLv2RQdfHtQGL0pA==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘桐彰;姜雯雯;李月茹",
+          "source": "Journal of Jilin Agricultural University",
+          "publication_date": "2025-01-20 11:56",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "953",
+          "flags": [
+            "Online First",
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Chemical constituents and bioactivities of solid fermented products from Sanghuangporus vaninni",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BrKRUPxvK5ll2O4k9HUUC74a-mtrR6YKr5xe21QZwatSh8uT2icOU0QIeM-Vu_HY2N2IU8ZiIG3ICYFzabVH3q72BSWmwTwcY407SS_R5nlRYkjJ_jSAXs6S6KgfWDKXyDh1SIrLN7kUoRP5aeo3nC1R2VQOZ5ThjvDuUOHlIkVw==&uniplatform=OVERSEA&language=EN",
+          "authors": "吴椰;高鹤萍;毛燕妍;黄明慧;徐帮;邹坤;刘呈雄;汪蕾",
+          "source": "Natural Product Research and Development",
+          "publication_date": "2024-03-12 14:52",
+          "database": "Journals",
+          "cites_text": "6",
+          "downloads_text": "854",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Screening,separation and mass spectrometry analysis of xanthine oxidase inhibitors in Phellinus igniarius",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AbqQTLh8593bKaAnrn2ytw4nm5_5VZsEKyHUnW2GjcJys6xSCq5hRjpNb8Bu7kL47HduXWQe4Lj1u7zXrUE0FHi-AnPxR1Z17_KaHo17jt7uKyQg_KNC8KSYawmDT4tIPqXM_p8OpJiC_uhZCYdHWISg8C-zmw4NmeaHSdS8nnSg==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘震;侯万超;牛华周;云浩程;刘春明;李赛男;张语迟",
+          "source": "China Food Additives",
+          "publication_date": "2023-12-19 08:45",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "744",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "杨树 桑黄 功能活性挖掘及其降尿酸机制研究",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AbqQTLh8593bKaAnrn2ytw7vsm7dK9LP_ysBjcenvFSpyXmEm8T3e11ZUJ8fe8qP8_QB-YIRRK0tUtqgTydgctSdPFvgCBC4apim3o9G_sH8kuptp8Ss9DaQ7E-23CI639aRq1Chev150DQYKbUvL8ZURl8_CMAW7fXtaMox5wdTbJQuVqiQOg&uniplatform=OVERSEA&language=EN",
+          "authors": "殷朝敏;李雨鸿;范秀芝;姚芬;史德芳;高虹",
+          "source": "第十二届药用真菌学术研讨会论文集",
+          "publication_date": "2023-10-21",
+          "database": "China Conferences",
+          "cites_text": "",
+          "downloads_text": "285",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Study on uric acid-lowering activity of Sanghuangporus sanghuang",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-A_HLNs3m_4mlQ3KPUJ99j9DM2pwq8jX0Lmg_xCeixz2xt1L2RgoC7VkWh8asHX4Nu_GM6J_KNDgOp_zwegROkS4FNX76l708URDilXVCBEJohbBC8EeQ3__3R-GertM0oxcp1u05idxQQ3SR8ROjet7_kM7BkHeDKTw2HcJLm81Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "赵克芳;肖阳;邢东旭;黎尔纳;杨琼;邹宇晓;庞道睿;廖森泰",
+          "source": "Food and Fermentation Industries",
+          "publication_date": "2023-06-12 10:18",
+          "database": "Journals",
+          "cites_text": "14",
+          "downloads_text": "1130",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "桑黄 发酵产物多糖对高尿酸血症小鼠的治疗作用",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CTPM7NS1jQ0WQeqDfXuvLIclfeXxdg_waQoIar82JwanbNhLWyKQPqpseEhSeanvG8oQ7KzYApHNIPxOQlXCzmN3Rn3b_V8lVn5rcTyvjngLHso-uleMyTcEifRqzRlBZqKZ7njQsvEOOfqNqzjjTU44Ee39cguYcziIhKLIBQJw==&uniplatform=OVERSEA&language=EN",
+          "authors": "李小欢;步洪石;王佳;隋欣彤;董欣;王淑敏;王欢",
+          "source": "Chinese Traditional Patent Medicine",
+          "publication_date": "2022-05-19 10:43",
+          "database": "Journals",
+          "cites_text": "10",
+          "downloads_text": "1110",
+          "flags": [
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "露珍带来福音——杨学歧先生利用原生态生物药食两用纪实",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CTPM7NS1jQ0WQeqDfXuvLIclfeXxdg_waxHfqPH9rzwp-DpYCRdgRFXr18SZGfNP7-nnDH7L9g_LTQZ-0ISs3VZ2Ve0DynIUl1cz3FaPMcZSRDNJ6es_3hiTwDwdqFdJaJRZgG4dJ1LRa9rLLS8Cay092fvDZqiwrGyTUHRq0IHA==&uniplatform=OVERSEA&language=EN",
+          "authors": "",
+          "source": "China Fruit & Vegetable",
+          "publication_date": "2007-07-20",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "124",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "cordyceps_urate",
+      "query": "蛹虫草 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%9B%B9%E8%99%AB%E8%8D%89%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_835d76fb806e.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_835d76fb806e.provenance.json",
+      "total": 12,
+      "top_records": [
+        {
+          "title": "Reevaluating the Purine Controversy and Health Effects of Edible Mushroom: Multidimensional Regulatory Mechanisms in Hyperuricemia and Gout Risk Management",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BJgfJ38sWpWwCrRhhCyrLe-L00baPv2R4IqLzxBPhmieRBEcxfhHMpS_Y7ftk8czLFaIqUnK9PjMacaf5JC4XAXAPynM79l9igYFGpXC3aAeifnFKe8e-9A7zP35jdRaJ3KCGTdeFwQAIGykgcZ6zFKrelmGZdd4foXaq9jFQeKg==&uniplatform=OVERSEA&language=EN",
+          "authors": "周锫;潘易;华蓉;杨宁;何容;苟学磊;陈正启;孙达锋",
+          "source": "Food Science",
+          "publication_date": "2025-10-24 09:22",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "433",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research Progress on the Mechanisms by Which Natural Active Ingredients from Edible and Medicinal Fungi Regulate Uric Acid Metabolism",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BJgfJ38sWpWwCrRhhCyrLe-L00baPv2R4IqLzxBPhmieur07Ooax5V7bXc4JSpOlx3HUD50A179Qv0RRv5FjQcP08AZ0lrW_F9NeWRTeOHDsi6xev727Fh27LpWW5F2qqn2nlgZpxFWToSUkZCdbEeFEAVw_JWVGbvaK0AY-NTVA==&uniplatform=OVERSEA&language=EN",
+          "authors": "文静;殷朝敏;范秀芝;史德芳;姚芬;于巍;高虹",
+          "source": "Food Science",
+          "publication_date": "2024-11-27 16:19",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "1368",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Effect and Mechanism of Cordyceps militaris Extract on Lowering Uric Acid in Hyperuricemia Rats",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CyrYCiF-YxoIDQk7aZfTn4UoXjxU5pAz5UXuaMgf0skSD5b_zZks7HF4jxJHIClW-Y6rpye1KwjQUJDVH-1ITCfdPf9LgWIgZb82QxFPFVpaynreUIiSLGTVRYxYRSfRtvFFM-2Q2IY8_oN--5k0S9IXLElrjkvBklvDksrNt4aQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "熊心怡;刘利平;冯杰;张劲松;李德顺;刘朋;刘艳芳",
+          "source": "Biotechnology Bulletin",
+          "publication_date": "2024-09-26 15:05",
+          "database": "Journals",
+          "cites_text": "7",
+          "downloads_text": "1452",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Analysis of metabolite components of Cordyceps militaris and their effects on hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CyrYCiF-YxoIDQk7aZfTn4UoXjxU5pAz7FtYgE_A1LXLArrgr9nl4l4ikjI0OK4KXIXkGgOgumGvgquYQtfhi6ouWTXay6k8dIY5RTz0s9Iu2SBdCocwQpR0JiuPdulgwV_K5C7Z4LxeZjVbb0JFVP9piNVwmWpRCMhYU8DqmtzQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "都兴范;孟楠;李亚洁;温志新;米锐;孙永欣",
+          "source": "Mycosystema",
+          "publication_date": "2020-09-15 17:09",
+          "database": "Journals",
+          "cites_text": "5",
+          "downloads_text": "670",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Effects of Selenium-Rich Cordyceps militaris on Hyperuricemic Mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-By8POoOMDyvXD45hePVzBk4ujVK0F_wDWBsrQSspsyB-UA-N1gXb-SysGJ4m_7Y_VAEgt4ysZECilP5Y0Pqr5oNgjiIbSrWS0eLW1sKL9qCzH-15LRi49kimAgZOKTk8wN4JHjGvjFayBGA5HvuXsameYRQOrjD3NXRBxGlGnKkg==&uniplatform=OVERSEA&language=EN",
+          "authors": "谭许朋;梁慧嘉;恽昊;杨永善;焦春伟;谢意珍",
+          "source": "Acta Edulis Fungi",
+          "publication_date": "2018-09-15",
+          "database": "Journals",
+          "cites_text": "4",
+          "downloads_text": "584",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research of Therapeutic Effects of Nourishing Kidney Traditional Chinese Medicine on Hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-By8POoOMDyvXD45hePVzBk4ujVK0F_wDUwjae-Rcxv-6FIsMo_P5U1rFUCaghmvm8cyEXVAtzMsJi35fmPolqywBXbAJ6pusuhxb2oqwnu7tp8QJxNpdvXpo6a-witatfxsl8_PGNPEdkqSSPHoVQrgpm29nbZLTo12miAsnoVuw==&uniplatform=OVERSEA&language=EN",
+          "authors": "温少诗;王涛",
+          "source": "Journal of Liaoning University of Traditional Chinese Medicine",
+          "publication_date": "2018-07-31 16:24",
+          "database": "Journals",
+          "cites_text": "20",
+          "downloads_text": "836",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Effects of Paecilomyces hepiali Mycelia on Hyperuricemia Mice Induced byPotassium Oxonate and Hypoxanthine",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-By8POoOMDyvXD45hePVzBk4ujVK0F_wDWBsrQSspsyB99in1mbQcDQvJrkMWKJtc8RFj8u6OljXkydttG1fbqktPEGcQKUHQ6jWUNGL34XYVINrif_L8TS_D40teaq-Zpjq-S5x-d4TcpdDi5sifYySRz5sF7cCdbruZLtktoHGw==&uniplatform=OVERSEA&language=EN",
+          "authors": "马诗经;梁慧嘉;焦春伟;张命龙;谢意珍;李崇;杨咏善;陈家明",
+          "source": "Acta Edulis Fungi",
+          "publication_date": "2018-03-15",
+          "database": "Journals",
+          "cites_text": "6",
+          "downloads_text": "311",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "高尿酸血症 中医药治疗进展",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BdLJjjJqur1TUvKec4aZp_i1WPtI90i-oWZLfwuhrd9KdLQTJAXwnhkMtSCXcS61zT4n6nQ_QnBOoVmOUPQdBfimD38bH3uoPJeYgYaVreAg4KzZ1oNeIO6I-au3oJjnyy7jeo0LwYbJ8yDmyHAeCo7ccGseHfybGvR9xHovx7BA==&uniplatform=OVERSEA&language=EN",
+          "authors": "耿露源;王守富",
+          "source": "Traditional Chinese Medicinal Research",
+          "publication_date": "2017-02-10",
+          "database": "Journals",
+          "cites_text": "14",
+          "downloads_text": "1006",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "cordyceps_gout",
+      "query": "蛹虫草 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%9B%B9%E8%99%AB%E8%8D%89%20%E7%97%9B%E9%A3%8E",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_4ffee98b5414.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_4ffee98b5414.provenance.json",
+      "total": 7,
+      "top_records": [
+        {
+          "title": "具有调节尿酸功能的食用菌研究及创新应用",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-A8Rbleu7QJJZL2u33nBCyzDiKOGokbjbgZtwMF0VCppUs_w3dBW2sl2SVNU819izJSb4H64hFZcXaudHA_aOMFCQRGRKCNblawf-JG86xBWn5AtZRZVZcq1ihBf5X3HKPn3woBpjzcKWm_Ems5jxSk28-pvs6El_kqNZBxppFETldxuibxZ9oP&uniplatform=OVERSEA&language=EN",
+          "authors": "雍天乔;卓丽君;胡惠萍",
+          "source": "中国菌物学会2025年学术年会论文摘要——食用真菌",
+          "publication_date": "2025-08-15",
+          "database": "China Conferences",
+          "cites_text": "",
+          "downloads_text": "41",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research Progress on the Mechanisms by Which Natural Active Ingredients from Edible and Medicinal Fungi Regulate Uric Acid Metabolism",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-A-RbGrOo_nffOWL6dIg278hNoTf64Z0XXg3POGvj_xHrZdtLDWZao8fiaM7ri3W61w7mTSZytdjd4raSSTff1Y61FKMgJgXrjHwXp_l_R4tlASf20pA6Ut2DHn4zlkDsfkWpgxkZo0gHSaD5Fosv6J8kcIYTeZgDwAFEvfKH3Slw==&uniplatform=OVERSEA&language=EN",
+          "authors": "文静;殷朝敏;范秀芝;史德芳;姚芬;于巍;高虹",
+          "source": "Food Science",
+          "publication_date": "2024-11-27 16:19",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "1368",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Study on the Cordyceps militaris for lowering uric acid of patients with hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BGqgfXYjMImcM2E7wCFdPUGJfK3rH2VB2k17289dORkaAYb7T72V6X58bEzU8Svn1YVA46cu6M18OuXdW3DmBEB_SLZq5449Q3SJ_k3St8lLDanA0jEXw9dyft2YI_pPXJKRex5kEgpk8P40-aF48uyIlqZJwE8W7ChefXNCW62w==&uniplatform=OVERSEA&language=EN",
+          "authors": "尹艳艳;吴萍萍;朱宝君;龚成;黄儒强",
+          "source": "Lishizhen Medicine and Materia Medica Research",
+          "publication_date": "2014-10-20",
+          "database": "Journals",
+          "cites_text": "9",
+          "downloads_text": "426",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "蛹虫草 防治高尿酸血症的实验研究",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BGqgfXYjMImcM2E7wCFdPUGJfK3rH2VB3KU1KWcXzt4qWijz-dULwDFClSt8MNK1jAnGPeMRFEXBfyjGrAeZ67sMGXPkUIIzGDmDsXqfHuzsdZqCMptLiG6zv60zFCAxD37sAiKc635LZ4hSSwjLUiNd7DPYZjwUqEdfI8hihF2w==&uniplatform=OVERSEA&language=EN",
+          "authors": "胡芳;汪鋆植;於洪建;刘丹;刘莹;张泽生",
+          "source": "Chinese Traditional Patent Medicine",
+          "publication_date": "2013-08-20",
+          "database": "Journals",
+          "cites_text": "16",
+          "downloads_text": "604",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "cordyceps_xo",
+      "query": "蛹虫草 黄嘌呤氧化酶",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%9B%B9%E8%99%AB%E8%8D%89%20%E9%BB%84%E5%98%8C%E5%91%A4%E6%B0%A7%E5%8C%96%E9%85%B6",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_279f87c8b9b7.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_279f87c8b9b7.provenance.json",
+      "total": 8,
+      "top_records": [
+        {
+          "title": "Inhibition of Xanthine Oxidase by Extracts of Eight Common Edible Medicinal Materials",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CzORpOrDCY8cbKsbF1vLffwbNpiIjvr0YE9liTSlHcsKXyxg80cpaoVxo9G4w6E6RUn2XwFeDPH7kESUYKMq5Uxt87g260JAyZPO7p9p7CuCeRgOsBP6EVVeqrI1fZ0q1hu9kVtLjlj2wQDu-rNvwAeN2evFIxfgDHfzMjPdbcLQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "董浩;罗柔萱;李莹莹;冼燕萍;梁明;白卫东;曾晓房",
+          "source": "Food Research and Development",
+          "publication_date": "2025-12-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "317",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Analysis of metabolite components of Cordyceps militaris and their effects on hyperuricemia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-B7ngGPFloeJT0jPGfaNCdIrXAvjlThr32RoDRboyney5oSYLcM2Do5-uJp3_Y_lEhDc9Bu1s1fpL-sHDR7rxApRn_JQCNoyon3ZxocOgN0T0B29xYiXvt1XDgA3mKg09idgAlLrgVhXnt4kwZ25qFhKIEuQzA1VMhi2P3rFHVwkw==&uniplatform=OVERSEA&language=EN",
+          "authors": "都兴范;孟楠;李亚洁;温志新;米锐;孙永欣",
+          "source": "Mycosystema",
+          "publication_date": "2020-09-15 17:09",
+          "database": "Journals",
+          "cites_text": "5",
+          "downloads_text": "670",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "The anti-yperuricemia effects of some edible traditional Chinese herbs",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BbNfmMkkcglxcUaYC2ZM5Hi4V8IaRkW15fiOjModmQ6ZKaMfNoqb_rMq8Yy4AgOA2DZO6ZQ4ueKjVsji2qkcUniflOmTx9wGgBYAjMlSMnhPIuhBwQPcQrowHNU1T-Cz0U_yNxXov2RO_G40NUB-xFPQ8rllLOm-ELFqyz91ccig==&uniplatform=OVERSEA&language=EN",
+          "authors": "申启荣;王江录;余宙;范青生",
+          "source": "Journal of Nanchang University(Natural Science)",
+          "publication_date": "2015-04-25",
+          "database": "Journals",
+          "cites_text": "18",
+          "downloads_text": "1514",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "蛹虫草 防治高尿酸血症的实验研究",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BbNfmMkkcglxcUaYC2ZM5Hi4V8IaRkW15V2g-Xg922VrQZLkm3kgp3MoP8-7awruAhljpmqMQwLsj5YBYKOeXuNw0OEoEL4TvPrzhiYkwnwHjnBU4sYvecQBC0arkTOYi3-OKwL03yy8VrvPFiDUhc1bh0cuDhJOAhax7psonPUA==&uniplatform=OVERSEA&language=EN",
+          "authors": "胡芳;汪鋆植;於洪建;刘丹;刘莹;张泽生",
+          "source": "Chinese Traditional Patent Medicine",
+          "publication_date": "2013-08-20",
+          "database": "Journals",
+          "cites_text": "16",
+          "downloads_text": "604",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "trametes_psp",
+      "query": "云芝多糖肽 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%E8%82%BD%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_2f316bbaecb2.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_2f316bbaecb2.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "trametes_psp",
+      "query": "云芝多糖肽 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%E8%82%BD%20%E7%97%9B%E9%A3%8E",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_c1ce1143b2f7.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_c1ce1143b2f7.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "trametes_psp",
+      "query": "云芝多糖肽 NLRP3",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%E8%82%BD%20NLRP3",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_d448137608f5.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_d448137608f5.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "maitake",
+      "query": "舞茸 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%88%9E%E8%8C%B8%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_46227c465e4a.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_46227c465e4a.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "juncao",
+      "query": "菌草 灵芝 栽培",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%8F%8C%E8%8D%89%20%E7%81%B5%E8%8A%9D%20%E6%A0%BD%E5%9F%B9",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_6dbce6341d54.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_6dbce6341d54.provenance.json",
+      "total": 95,
+      "top_records": [
+        {
+          "title": "Research Progress on Growth Conditions and New Cultivation Substrates of Ganoderma",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-DqIaL00RKSV8RzNEVyJWFMgOtwdLBuA8aLFQ2i_oSThjyORMKysP0vTrqvFjkUvWpBam2o6Fz9L36HHER0L97aUkqYMDnJAD3Vakot6b2YhMIJWzmeYoq4MXOvZNQ-lP5iTRddqNoaw10Kp1HbSRcadV0yOMbgKFtYZPmr4XZSCQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "齐红志;王会锋;燕照玲;段俊枝;刘点;赵霞",
+          "source": "Northern Horticulture",
+          "publication_date": "2025-10-31 07:00",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "608",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "宁夏石嘴山市 菌草栽培 鹿角 灵芝 技术",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-DqIaL00RKSV8RzNEVyJWFMgOtwdLBuA8Y1SUVGZ5jssF2EErKkiWVOY07JCi3DyxA7-F72r_kIJjM4OyB0IwkzWuLGwN-zzhA12y8YrhsYaUHI5BV8bv6WrwpSGkBq3LUe71-M5pU1waSUan5ZcIOKB3tEZqhzQ3cjU0wChIbHHQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "马伟;罗彪远;李泽芳;张小花;杜鸿鹄;严孟文",
+          "source": "Agricultural Engineering Technology",
+          "publication_date": "2025-10-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "19",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Optimization of Growth conditions for High-Yield Cultivation of Antler Ganoderma lucidum Using Juncao Grass",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-Co1vZiWS07x6jjh5kURVJwmjx68Z9kVqAqfPaDqc-g2RDikbh20f7GRhPg0nTcWfGuz4Wee8ncyQv3H8V3lHy8RrSL8y5IwcX_cYyXnFQh6mVSh_l1HQiJbIxuBaWOWaz5yi5yiSIOwIpCBcRUlAhebCQ8OS6WYFWq75QfEIfvAA==&uniplatform=OVERSEA&language=EN",
+          "authors": "林兴生;苏日柏;罗礼泉;黄智新;林治亭;钟思钦;田乐乐;林占森;林冬梅;林占熺",
+          "source": "Southern Horticulture",
+          "publication_date": "2025-09-20",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "100",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Juncao Farm-Construction of an Integrated Production System for Microbial Agriculture",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-Co1vZiWS07x6jjh5kURVJwmjx68Z9kVqBqtNvoTs-Fp_vdR7ZnV--zH_9gkSxpx4ea0IS4zIMCH4NiSDKLgrRmcdluRFswxWoLUnIzSq2gU4DTk0c6X-YqPsGSGiyULBA0gCyY-iW5sri30B9o3LxY9d8KsMFK1vgZgFI3ZKDPdg==&uniplatform=OVERSEA&language=EN",
+          "authors": "包兴胜;刘平山;王志明;刘欣;车建美;郑雪芳;王阶平;吴仁烨;刘波",
+          "source": "Chinese Agricultural Science Bulletin",
+          "publication_date": "2025-02-15",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "133",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "药用 灵芝 育种 栽培 及品质研究进展",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CqiYbz4VJeiMFojNY_UQ8WUXCECekZXULM53wDWWYptNYZwfU0imHyo_MVYboRW9pAW65Fo0sugEr6DRxSN8K6YQFbhqeziWvlvIoyd-OlM-Cy0vaIdXTHeCgJJmxWKqazgB64Dmqi4BsFQXbfgfI2gZ6-hS7Dcks_pY4-xgBAMA==&uniplatform=OVERSEA&language=EN",
+          "authors": "赵霞;王会锋;杨豫龙;刘点;梁慧珍;赵家欣",
+          "source": "Rural Science and Technology",
+          "publication_date": "2024-08-25",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "387",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "草珊瑚木屑联合巨 菌草 在提高食用菌产量与品质中的应用、培养基及其制备方法和应用",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CqiYbz4VJeiMFojNY_UQ8WPmVmeSuqMkYwnNgimrJcOrsM8vrx6y_xPilfmLkuuirVGQYKEOmIeFyaRzxC987UfEi4C9fzJY1itQuOo11AZhrB8BbOO8XR2bi5mdCETRzErBucv6sWBc0gETgySgTqNdg3ffQqmGCxuwrSczyE0w==&uniplatform=OVERSEA&language=EN",
+          "authors": "陆湘云;唐璇;刘晓星;霍秀娟;潘莉;左文明;邓莉杰;刘涛;韩美丽",
+          "source": "1",
+          "publication_date": "2024-08-16",
+          "database": "Achievements",
+          "cites_text": "",
+          "downloads_text": "1",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Experiment on the effects of three formulas on the mycelial growth of Ganoderma oregonense",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CqiYbz4VJeiMFojNY_UQ8WUXCECekZXUKMiCLA_UXGCYk1XMM0t9ymg_pmlS2Y3B0L86jFm4zNjUYMvoKrk7RWo0ADt_2iXQk_0bwWN_2lXQ7Mi-eGL5gKQVvLjZ0wJXj8y6w4ZAjcs6YhV7VCT4T1o-gql23S2otCnMZ9ETAzoA==&uniplatform=OVERSEA&language=EN",
+          "authors": "范诗琪;王栎硕;刘思嘉;敬勇;万怡昕;周扬",
+          "source": "South China Agriculture",
+          "publication_date": "2024-08-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "275",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Effect of Combination of Bauhinia Variegata L Sawdust and Pennisetum Giganteum Chips on the Growth of Two Edible Fungi",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CwIhzBWvUmYdh76HcjAiUBtL2F9onzdNQNLkAsBQ4KjH7mditUM7g2D4AnTNLvH5Ex0Ou9cOab0Wiw9h1WcsXG0p-OBQzfJV6Ltxl6fiW3f8e-d2s1hJojbPAI91_DRp6Yu-eZJPhVwnmYjV5XfyEBBoTIB_AAyxIbnVW5JSKcCQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘晓星;左文明;农东红;陈广财;唐璇;韩美丽;陆荣生",
+          "source": "Tropical Agricultural Engineering",
+          "publication_date": "2024-04-26",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "168",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    },
+    {
+      "category": "juncao",
+      "query": "菌草 灵芝 多糖",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%8F%8C%E8%8D%89%20%E7%81%B5%E8%8A%9D%20%E5%A4%9A%E7%B3%96",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_e5354e6f1cc4.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-1_grid_e5354e6f1cc4.provenance.json",
+      "total": 86,
+      "top_records": [
+        {
+          "title": "Optimization of ultrasonic-assisted water extraction process of compound Juncao Ganoderma lucidum health tea and its immunomodulation function evaluation",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AxJsK29Mhp64RaFj8pFSGVaVhMF64YemoylLLiJv78on2vmApz-9I9fLEFpTxQcvkkVE9xDuKkgjG_zOUatZpL72WlJpS0QJ3MEQ_U2xhYEIVBlzC--RZuV-_PedCbIKI1Ieh0eeD8u_OlLwlRN31L902tr0qZkNoMBot1v4cJKA==&uniplatform=OVERSEA&language=EN",
+          "authors": "张桂清;杨宇森;梁志豪;王星晨;罗海凌;姚俊新;刘斌;林占熺;钟路生",
+          "source": "Journal of Anhui University(Natural Science Edition)",
+          "publication_date": "2026-03-15",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "99",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research Progress on Growth Conditions and New Cultivation Substrates of Ganoderma",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AxJsK29Mhp64RaFj8pFSGVaVhMF64Yemo8oh4CubK6yqeg0lAkjyTkP_3yloS9p97wBpu1RWY58SUHTkWmxsJim0ek-NBUMOO4z7njNISxttFQpQ6dpKLb-NX3AVNYLWLlT1zGDuNla7-VW10_GIASeEfK7gxH2-AAvm5BssnQLA==&uniplatform=OVERSEA&language=EN",
+          "authors": "齐红志;王会锋;燕照玲;段俊枝;刘点;赵霞",
+          "source": "Northern Horticulture",
+          "publication_date": "2025-10-31 07:00",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "608",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "宁夏石嘴山市 菌草 栽培鹿角 灵芝 技术",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-AxJsK29Mhp64RaFj8pFSGVaVhMF64Yemq1XnC7IXZn0viJ0sT9QFZqMQXPoYsLDr8LT9k_fKTIZE_I_21hHd0CJviBphuq-rZGraRRvzAoxcJcMpRbsj7fTgqHW5PsCIwiorLajVBYaLhFowhhDnckbYV23xPg0hwYNQ80WxBa3A==&uniplatform=OVERSEA&language=EN",
+          "authors": "马伟;罗彪远;李泽芳;张小花;杜鸿鹄;严孟文",
+          "source": "Agricultural Engineering Technology",
+          "publication_date": "2025-10-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "19",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research on water extraction process of compound Juncao Ganoderma lucidum granules and the formulation of quality standard",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-DwK_0pJg12ByCBttbZdGluv8-SUnxaof4iuQirZ25Xsafbgh__HNf33xGYyVAdw_coTJaxbosxlmK0RjEcVml9macXrSCOdLDBFGrB1BwfqrcMddwBaZJTXjruOsS7n3vOzITL8pU_CFuA1_kJ7ksr1mIOTnHSaInYcIvSof0kaQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "张桂清;梁志豪;刘青;吴小平;罗海凌;姚俊新;刘斌;林占熺;江书松",
+          "source": "Journal of Shaanxi Normal University(Natural Science Edition)",
+          "publication_date": "2025-03-13 17:21",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "649",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "药用 灵芝 育种栽培及品质研究进展",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-DwK_0pJg12ByCBttbZdGluv8-SUnxaof7GFXC8KmfFA_SUsDX1nKpk1SM5tOFDMurIutTcxfIWGx7ns4NvlmisoU7JgcZBdt4y1hLM5kmzKybiIWwln_3jt7hwhSFJru1z4HRJsBB9-woWD3lKZI0RMncRSGRu_JwSPpI2SB5JfQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "赵霞;王会锋;杨豫龙;刘点;梁慧珍;赵家欣",
+          "source": "Rural Science and Technology",
+          "publication_date": "2024-08-25",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "387",
+          "flags": [],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Effect of Combination of Bauhinia Variegata L Sawdust and Pennisetum Giganteum Chips on the Growth of Two Edible Fungi",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-DwK_0pJg12ByCBttbZdGluv8-SUnxaof62Kp5R8Ck83UzgAIuM99y4Y5vxCUrrZUO_3mdiuY7JEf6P-JYx8XREyC0BH_wAbDldGkyJVpuqY0SX3tF_EGZXGRwKxG5TeYcZdWom5uxMkBTawzDOmeCD14UTXiSe06clneHcd6hgiw==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘晓星;左文明;农东红;陈广财;唐璇;韩美丽;陆荣生",
+          "source": "Tropical Agricultural Engineering",
+          "publication_date": "2024-04-26",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "168",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Effects of Juncao Ganoderma lucidum polysaccharide peptide on growth performance, blood biochemical indexes and immune function of Minxinan black rabbits",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-D6Ykx7ZYhOEtqiWyGct5gY-f_X4zMXbd78zPjcwNdnqcxHXYBTg26KlQhtQucwpbi_rfF6RK0zzLM7pXVun4LFGo-q-TzDAxvxU3PKuGGtXM_EFRxrHArZJ64UNyhWjKOnxebLoDdYoioR6MbDWRvGPYt25lsexp3pPAOkXDBfFw==&uniplatform=OVERSEA&language=EN",
+          "authors": "覃娟清;杜志坚;张富;秦莉雯;郭宇康;刘庆华",
+          "source": "Journal of Northwest A & F University(Natural Science Edition)",
+          "publication_date": "2023-09-18 12:12",
+          "database": "Journals",
+          "cites_text": "10",
+          "downloads_text": "285",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": null
+        },
+        {
+          "title": "Research progress of Cenchrus fungigraminus substitute cultivation of edible and medicinal fungi and its application prospect in Ganzi Prefecture",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-D6Ykx7ZYhOEtqiWyGct5gY-f_X4zMXbd5c0jrV3L9yHqi7tuNnR8SUHdvp3XEyR2XBMK0wy229RMQhS0kVnf5XArqMB887bhcYAiZpwtGaIJQvf1V7Cc8gS8Q-8FSoS7cbm8ocxALWrCNZOYPDf6rPnwqjjlCvBgCzBnQ7t8Qp9g==&uniplatform=OVERSEA&language=EN",
+          "authors": "李平轩;孟小萍;黄从飞;成俊蓉;谢菊香;邓帅龙;宋思梦",
+          "source": "South China Agriculture",
+          "publication_date": "2023-02-10",
+          "database": "Journals",
+          "cites_text": "5",
+          "downloads_text": "356",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": null
+        }
+      ]
+    }
+  ]
+}
