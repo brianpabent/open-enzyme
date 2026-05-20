@@ -3979,6 +3979,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#comp-038-tier-2-butyrate-assay-audit-yellow-2026-05-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comp-038 — Tier 2 Butyrate Assay Audit — YELLOW (2026-05-20)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#comp-037-c1-inh-serping1-protease-stability-glycosylation-feasibility-in-ecn-luminal-format-moderate-kinetic-competition-gated-2026-05-17" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5442,6 +5453,19 @@
 <p><strong>Relationship to wet-lab experiments:</strong> Computational analyses inform priors; they shift confidence before a wet-lab experiment runs, and help interpret results after. They do not replace wet-lab validation.</p>
 <hr />
 <h2 id="analyses">Analyses<a class="headerlink" href="#analyses" title="Permanent link">&para;</a></h2>
+<h3 id="comp-038-tier-2-butyrate-assay-audit-yellow-2026-05-20">comp-038 — Tier 2 Butyrate Assay Audit — YELLOW (2026-05-20)<a class="headerlink" href="#comp-038-tier-2-butyrate-assay-audit-yellow-2026-05-20" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> Is there a Tier 2 butyrate quantification assay (colorimetric, enzymatic, breath-proxy, electrochemical, or other low-cost intermediate method) that can be validated against Tier 3 GC-MS for stool, serum, breath, or culture-supernatant matrices?</p>
+<p><strong>Verdict:</strong> <strong>YELLOW.</strong> No ready-to-adopt simple/home colorimetric or breath-based butyrate assay surfaced. Two plausible Tier 2 candidates surfaced: HPLC-UV SCFA + lactate assay for culture-supernatant / engineered-strain work, and electrochemical fecal SCFA profiling with ANN deconvolution as an emerging stool-specific direction. Both require full-text/protocol review and paired GC-MS validation before OE adoption.</p>
+<p><strong>Key findings:</strong>
+- PubMed snapshot: 27 queries / 74 records; source snapshot committed at <code>outputs/pubmed-snapshot.json</code>.
+- HPLC-UV for bacterial culture supernatants is the best near-term Tier 2-lab candidate (PMID 23542733), but still needs full text, butyrate-specific precision/recovery extraction, OE spike recovery, and paired GC-MS.
+- Electrochemical fecal SCFA profiling is the most promising stool-specific future Tier 2 direction (PMID 42041444), but remains research-platform grade.
+- Breath H2/CH4 is useful as a broad fermentation/adherence proxy, not butyrate-specific quantification.
+- Generic free-fatty-acid colorimetric kits are a false-friend class; representative protocol excludes acetic, propionic, and butyric acid.
+- Completed with Codex/GPT-5.5 in-session synthesis from a committed source packet; no OpenRouter model calls were made.</p>
+<p><strong>Informs:</strong> <a href="../quantification-ladder/">quantification-ladder</a> · <a href="../genotype-informed-supplement-workflow/">genotype-informed-supplement-workflow</a> · <a href="../validation-experiments/#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy">validation-experiments §1.14</a> · <a href="../purine-degrading-bacteria/">purine-degrading-bacteria</a></p>
+<p><strong>Detail:</strong> <a href="../tier-2-butyrate-assay-audit-computational/">interpretive</a> · <a href="./etc/experiments/comp-038-tier-2-butyrate-assay-audit/">experiments/</a> · Complete first pass (next gate: full-text/protocol verification + small paired Tier 2 vs GC-MS validation)</p>
+<hr />
 <h3 id="comp-037-c1-inh-serping1-protease-stability-glycosylation-feasibility-in-ecn-luminal-format-moderate-kinetic-competition-gated-2026-05-17">comp-037 — C1-INH (SERPING1) Protease Stability + Glycosylation Feasibility in EcN-Luminal Format — MODERATE (kinetic-competition gated) (2026-05-17)<a class="headerlink" href="#comp-037-c1-inh-serping1-protease-stability-glycosylation-feasibility-in-ecn-luminal-format-moderate-kinetic-competition-gated-2026-05-17" title="Permanent link">&para;</a></h3>
 <p><strong>Question:</strong> Will human C1-INH (UniProt P05155) survive luminal-secreted expression in engineered <em>E. coli</em> Nissle 1917, and is the loss of N-glycosylation a hard block? Closes the C1-INH-on-EcN side of the two-chassis CP0 architecture surfaced 2026-05-16 (C1-INH on LBP-luminal + DAF SCR1-4 on koji-secreted).</p>
 <p><strong>Verdict:</strong> <strong>MODERATE — kinetic-competition gated.</strong> Strictly-degradative protease risk on the folded serpin body is <strong>LOW (0.1)</strong>. The by-design exposed reactive-center loop (RCL, R466-T467 cleavage by C1s) gives a 0.8 score that reflects the inhibitor <em>mechanism</em>, not body degradation. The remaining decision is a wet-lab kinetic question: k_C1s_engagement vs k_DegP_RCL_cleavage on the recombinant construct. <strong>Glycosylation feasibility GREEN</strong> for the serpin-core construct (aa 123–500) in luminal topology — N-glycans not required for catalytic suicide-substrate mechanism; plasma half-life concern is moot for a gut-luminal therapeutic; EcN's lack of N-glycosylation is not a hard block.</p>
@@ -5873,6 +5897,12 @@
 <tr>
 <td>~~comp-037~~</td>
 <td>Completed 2026-05-17 — MODERATE (kinetic-competition gated); glyco GREEN for serpin-core aa 123–500 in luminal topology. See Analyses above</td>
+<td>—</td>
+<td>✓ Done</td>
+</tr>
+<tr>
+<td>~~comp-038~~</td>
+<td>Completed 2026-05-20 — YELLOW; HPLC-UV culture-supernatant candidate + electrochemical fecal SCFA future direction; no home/colorimetric butyrate assay ready. See Analyses above</td>
 <td>—</td>
 <td>✓ Done</td>
 </tr>

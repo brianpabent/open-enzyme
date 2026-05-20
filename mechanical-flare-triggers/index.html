@@ -1,0 +1,5243 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source library of food-grade engineered microbial strains producing therapeutic enzymes">
+      
+      
+      
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/mechanical-flare-triggers/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Mechanical Flare Triggers — Open Questions - Open Enzyme</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mechanical-flare-triggers-open-questions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Enzyme" class="md-header__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Enzyme
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mechanical Flare Triggers — Open Questions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Enzyme" class="md-nav__button md-logo" aria-label="Open Enzyme" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Enzyme
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brianpabent/open-enzyme" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    brianpabent/open-enzyme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision & Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision & Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/open-enzyme-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Enzyme Vision
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Validation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/open-source-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chassis-pending-interventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chassis-Pending Interventions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout & Uricase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gout & Uricase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-pathophysiology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Pathophysiology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-clinical-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Clinical Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-genetic-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Genetic Variants — Unified Index
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complement-c5a-gout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complement / C5a (CP0)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../androgen-urate-axis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Androgen-Urate Axis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../androgen-natural-modulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Androgen Natural Modulation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prps-purine-biosynthesis-chokepoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRPS / Purine Biosynthesis Chokepoint
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-variant-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Variant Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gi-survival-prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GI Survival Prediction
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--analysis"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protein-engineering-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Engineering Strategy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codon-optimization-expression-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codon Optimization & Expression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-yeast-uricase-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Yeast Uricase Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crispr-uricase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRISPR Uricase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 & Inflammation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLRP3 & Inflammation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inflammasome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inflammasome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-exploit-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Exploit Map
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlrp3-inhibitor-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLRP3 Inhibitor Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tnfsf14-gout-target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TNFSF14 / LIGHT (CP1a)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spm-resolution-pathway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPM Resolution Pathway (CP5b)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji & Digestive Enzymes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Koji & Digestive Enzymes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzymes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzymes & EPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-deficit-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Deficit Deep Dive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-koji-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered Koji Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-endgame-strain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Endgame Strain
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chaperone-orthogonal-stacking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chaperone-Orthogonal Cassette Stacking
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-construct-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Construct Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digestive-enzyme-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digestive Enzyme Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../koji-home-fermentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Koji Home Fermentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-quantification-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Quantification Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organisms & Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organisms & Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saccharomyces-cerevisiae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saccharomyces cerevisiae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspergillus-oryzae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspergillus oryzae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineered-lbp-chassis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineered LBP Chassis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sirna-urat1-modality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    siRNA / URAT1 Modality
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcm-modern-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCM × Modern Rigor (Discovery Engine)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scope-page"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medicinal-mushroom-complement-track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Complement Track
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scoped (Phase 1)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medicinal-mushroom-extract-sops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Extract SOPs
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compounding-pharmacy-track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounding Pharmacy Track
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--scoped (Phase 1)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ginkgo-cloud-lab-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ginkgo Cloud Lab Evaluation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--working-note"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Barrier
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delivery & Barrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gut-lumen-sink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gut-Lumen Sink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abcg2-modulators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ABCG2 Modulators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blood-barrier-exploits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blood Barrier Exploits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delivery-route-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery Route × Compound Class Matrix
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-kill-chain-delivery-routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Kill Chain — Delivery Routes
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gsdmd-pore-delivery-paradox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GSDMD Pore Self-Delivery Paradox
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../purine-degrading-bacteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Purine-Degrading Bacteria (PDB)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fructose-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fructose Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compounds & Peptides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compounds & Peptides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bpc-157/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BPC-157
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpv-peptide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KPV Tripeptide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bhb-ketones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BHB / Ketones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oridonin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oridonin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colchicine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colchicine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cannabinoids-terpenes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cannabinoids & Terpenes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../egcg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EGCG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theaflavins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theaflavins
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zileuton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zileuton
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carnosine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Carnosine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lactoferrin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lactoferrin
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peptide-gout-addendum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Peptide Gout Addendum
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Experiment & Validation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Self-Experiment & Validation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/practitioner-toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practitioner Toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gout-action-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gout Action Guide
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--application-surface"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../genotype-informed-supplement-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Genotype-Informed Supplement Workflow
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sibo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplements-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplements Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-experiment-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Experiment Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../personal-genome-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personal Genome Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enzyme-quantification-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enzyme Quantification Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modality-chokepoint-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modality × Target Matrix
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../hypotheses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Reference
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--index"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/bio-ai-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/ai-bio-tools-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Bio Tools Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/paperclip-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paperclip (GXL) Literature MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/chembl-cross-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChEMBL Cross-Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linter-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linter Design (Falsification + Document Lint)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--design"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H01-ward-dual-cassette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H01 — Ward Dual-Cassette
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Pending"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H02-engineered-lbp-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H02 — Engineered LBP Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H03-sirna-urat1-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H03 — siRNA / URAT1 Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H04-tcm-rigor-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H04 — TCM × Modern Rigor Methodology Lens
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H05-daf-scr14-cp0-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H05 — DAF SCR1-4 CP0-Closure Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H06 — Medicinal Mushroom Complement Track
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H07-clomid-intestinal-er-antagonism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H07 — Clomid Intestinal-ER Antagonism
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H08 — Gut-Lumen Sink Platform Thesis
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypotheses/H09-community-fermentation-reliability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H09 — Community Fermentation Reliability
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../computational-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-protease-stability-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Protease Stability (comp-001)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lactoferrin-protease-stability-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lactoferrin Protease Stability (comp-005)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../daf-cd55-protease-stability-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAF/CD55 Protease Stability (comp-006)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../daf-cd55-scr14-truncated-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAF/CD55 SCR1-4 Truncated Stability (comp-012)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../food-grade-hdaci-screen-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Food-Grade HDAC Inhibitor Screen (comp-007)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplement-abcg2-antagonism-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplement ABCG2 Antagonism (comp-004)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cassette Compatibility — Dual-Cassette Koji Endgame (comp-010)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c-utilis-uricase-cassette-compatibility-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C. utilis Uricase Cassette Compatibility (comp-011)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uricase-cassette-ranking-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uricase Cassette Ranking, ClockBase-Style (comp-022)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1; fold-quality model deferred to wet-lab)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../daf-cd55-scr14-cassette-ranking-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAF SCR1-4 Cassette Ranking (comp-030)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1, 2026-05-15)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cordycepin-cassette-burden-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cordycepin Cassette Metabolic Burden (comp-023)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disulfiram-dose-modeling-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disulfiram Dose Modeling (comp-027)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dual-chassis-ecn-pdb-uricase-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dual-Chassis EcN PDB + Uricase (comp-031)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abcg2-q141k-chaperone-screen-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ABCG2 Q141K Chaperone Screen (comp-032)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inhaled-mrna-il1ra-pulse-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inhaled mRNA-IL-1RA Pulse (comp-033)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repeat-dose-inhaled-mrna-il1ra-pkpd-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repeat-Dose Inhaled mRNA-IL-1RA (comp-036)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lactoferrin-linker-redesign-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lactoferrin Linker Redesign (comp-034)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (pilot v1, 2026-05-16)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intra-articular-uricase-h2o2-reaction-diffusion-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IA Uricase H₂O₂ Reaction-Diffusion (comp-035)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combined-cp0-systems-model-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combined CP0 Systems Model (comp-029)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1; verdict YELLOW; gated on wet-lab α measurement from §1.25)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c1-inh-protease-stability-ecn-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C1-INH Protease Stability + Glycosylation in EcN (comp-037)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcm-gout-compound-triage-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCM Gout Compound Triage (comp-013)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medicinal-mushroom-compound-mapping-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medicinal Mushroom Compound Mapping (comp-014)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t-axis-adjuvant-urate-mapping-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T-axis Adjuvant Urate Mapping (comp-015)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v2 — XO added as 5th target; eurycomanone verdict reversed)"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t-abcg2-suppression-evidence-mining-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T × Intestinal ABCG2 Evidence Mining (comp-016)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intestinal-abcg2-sex-dimorphism-public-data-mining-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intestinal ABCG2 Sex-Dimorphism Mining (comp-017)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--archived-to-experiments"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/autonomous-screening-methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI Screening Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/manual-literature-mining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual Literature Mining Protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantification-ladder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantification Ladder (kitchen → smartphone → bench → outsourced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions Index
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/GRAPH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mechanical-flare-triggers-open-questions">Mechanical Flare Triggers — Open Questions<a class="headerlink" href="#mechanical-flare-triggers-open-questions" title="Permanent link">&para;</a></h1>
+<p><strong>Status: open question. This page does not advance a confident claim. It enumerates a research gap.</strong></p>
+<p>The gout literature extensively characterizes (a) hyperuricemia → MSU crystal formation and (b) MSU crystals → NLRP3 inflammasome → IL-1β → acute flare. The middle step — <em>what triggers an already-deposited subclinical crystal bed to become inflammatory on a given day</em> — is poorly characterized for the mechanical-use axis specifically. The strongest primary in vitro source on mechanical effects on MSU crystallization is from 1975 (Wilcox &amp; Khalaf). The clinical evidence is mixed, with structural methodology limitations that may bias the field's reading. The mechanism is biologically coherent. None of it is settled.</p>
+<p>This page maps what is known, what is unknown, why the unknown is hard to study, and what experiments would close the gap.</p>
+<h2 id="the-candidate-mechanism-sketched-not-established">The candidate mechanism (sketched, not established)<a class="headerlink" href="#the-candidate-mechanism-sketched-not-established" title="Permanent link">&para;</a></h2>
+<p>Subclinical MSU deposits accumulate in cartilage, synovium, and tendon sheaths in hyperuricemic individuals years before any clinical flare. Dual-energy CT and ultrasound (double-contour sign) show this in many asymptomatic patients. The standing question is not when crystals form, but what makes today the flare day.</p>
+<p>A mechanically-mediated trigger axis would look like this:</p>
+<ol>
+<li>
+<p><strong>Crystal shedding under load.</strong> Shear, impact, or repeated load on a joint physically dislodges MSU crystals from synovial surfaces, cartilage, or small tophi into the synovial space. <em>Mechanistic extrapolation. See open question 1 — no direct in vitro experiment combines MSU-laden cartilage with cyclic load and a free-crystal supernatant readout.</em></p>
+</li>
+<li>
+<p><strong>Mechanotransduction priming.</strong> Compression activates Piezo1 in chondrocytes / synoviocytes → NF-κB → pro-IL-1β + NLRP3 transcription (signal 1 of the two-signal NLRP3 model). <em>In Vitro + Animal Model in osteoarthritis contexts. Not directly tested in gout / MSU contexts. Counterevidenced by Bougault 2012, which showed NLRP3-knockout cartilage explants still exhibit load-induced matrix breakdown — so the Piezo1 → NLRP3 story is not universal.</em></p>
+</li>
+<li>
+<p><strong>DAMP release from microtrauma.</strong> Mechanical injury releases ATP, HMGB1, and free uric acid from damaged cells, providing additional priming signals to local macrophages. <em>Mechanistic extrapolation from general DAMP biology; not specifically tested in a gout context.</em></p>
+</li>
+<li>
+<p><strong>Overnight effusion concentration.</strong> Mechanical priming occurs during the day; Simkin's model of overnight synovial-effusion resolution (water leaves the joint faster than urate during sleep) concentrates the primed synovium → transient supersaturation → crystallization or amplified inflammasome activation manifesting on waking. <em>Hypothetical synthesis of Simkin's overnight-effusion model + mechanical priming. Not directly tested.</em></p>
+</li>
+<li>
+<p><strong>Metabolic overload via exertion / fatigue (劳累).</strong> Sustained exertion or fatigue depletes systemic urate-handling capacity, proposed mechanism: organ-function fatigue → impaired urate excretion → transient hyperuricemia → crystal nucleation or local supersaturation. <em>Mechanistic framing surfaced from TCM 痹证 (Bi-syndrome) chapter (中医内科学); </em><em>empirically the strongest of the activity-related candidates</em><em>, with Li XD et al. 2012 (n=1,713, Shandong Medical Journal, verified primary) showing </em><em>劳累 (fatigue/overwork) at 19.3% — the most common identifiable trigger after diet and alcohol</em><em>, vs pure trauma (外伤) at only 0.35%. The empirical asymmetry between 劳累 (19%) and 外伤 (0.35%) in the same primary cohort argues that whatever is happening with activity-preceded flares is more likely fatigue/metabolic-mediated than mechanical-impact-mediated. </em><em>Distinct from the mechanical-shedding hypothesis but compatible with it</em><em> — both mechanisms could contribute. The modern-physiology testable equivalent: does sustained exertion measurably impair renal urate clearance in gout patients during/after activity, on a timescale that matches the flare-onset window?</em></p>
+</li>
+</ol>
+<p>The five components are individually plausible. Their relative contribution is now partially constrained by the Li XD 2012 primary data: the empirical weight in self-reported activity-preceded flares points toward #5 (metabolic-overload) over #1 (mechanical shedding) — but neither is directly mechanistically tested at the kinetic level.</p>
+<h2 id="what-the-population-evidence-does-and-does-not-show">What the population evidence does — and does not — show<a class="headerlink" href="#what-the-population-evidence-does-and-does-not-show" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Source</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.9% of patients attribute most-recent flare to "injury or excess activity"; 6.9% to "more than usual physical activity"; 62.6% report no identifiable trigger</td>
+<td>Abhishek 2017 (n=550; PMC5638318) <strong>Clinical / cross-sectional</strong></td>
+<td>Low self-reported attribution — but see structural blind spot below</td>
+</tr>
+<tr>
+<td>Nocturnal flare onset OR 2.36 (midnight–8 AM vs 8 AM–4 PM)</td>
+<td>Choi 2015 (n=724, 1433 flares; PMC4360969) <strong>Clinical / case-crossover</strong></td>
+<td>Most flares manifest overnight, when no one is actively loading any joint</td>
+</tr>
+<tr>
+<td>Post-spine-surgery flare rate 43.8%, predictors are Hb drop / smoking / ULT discontinuation; flares hit knee (66%) and ankle (51%), 0% at the operated spine</td>
+<td>Chen K-J 2022 (n=128; PMC9267449) <strong>Clinical / retrospective</strong></td>
+<td>Post-op flares are systemic-perturbation-driven, not mechanical-at-the-operated-joint</td>
+</tr>
+<tr>
+<td>Chronic physical activity reduces flare frequency; TLR2 downregulation on neutrophils</td>
+<td>Jablonski 2020 (PMC7529261) <strong>Animal Model + Clinical observational</strong></td>
+<td>Regular activity is anti-inflammatory in gout, not provocative</td>
+</tr>
+<tr>
+<td>Cyclic compression of cartilage explants drives matrix breakdown independent of NLRP3 / IL-1RI</td>
+<td>Bougault 2012 (PMID 22933232) <strong>Animal Model + In Vitro</strong></td>
+<td>The Piezo1/NLRP3 mechanotransduction story is not universal — load-induced cartilage damage has NLRP3-independent paths</td>
+</tr>
+<tr>
+<td>Mechanical shock accelerates MSU nucleation in vitro</td>
+<td>Wilcox &amp; Khalaf 1975 (PMID 242279) <strong>In Vitro</strong></td>
+<td>Foundational primary source — still the best the field has on this specific question, fifty years later</td>
+</tr>
+<tr>
+<td>Arthroscopic debridement of gouty knees → 10% acute flare within 48h</td>
+<td>Ma W-J 2024 (PMID 39104066; Chinese) <strong>Clinical / retrospective n=235</strong></td>
+<td>Direct intraoperative mechanical disruption of a deposited crystal bed does precipitate flares — the closest available clinical analog to a clean mechanical-trigger event</td>
+</tr>
+<tr>
+<td>Trigger frequencies in n=1,713 Qingdao acute-flare cohort: 高嘌呤饮食 (high-purine diet) 839 (49.0%); 饮酒 (alcohol) 768 (44.8%); 无明显诱因 (no identifiable trigger) 410 (23.9%); <strong>劳累 (fatigue/overwork) 330 (19.3%)</strong>; 受寒 (cold exposure) 142 (8.3%); 高脂饮食 (high-fat diet) 101 (5.9%); 情绪波动 (emotional fluctuation) 56 (3.3%); <strong>外伤及感染 (trauma + infection, grouped) 6 (0.35%)</strong>. Gender ranking (among identifiable triggers): males — high-purine diet / alcohol / <strong>劳累</strong>; females — high-purine diet / <strong>劳累</strong> / cold exposure</td>
+<td>Li XD, Miao ZM, Liu YH, Cheng XY, Liu L, Li CG. 2012. 山东医药 (<em>Shandong Medical Journal</em>). <strong>Clinical / case-series, n=1,713.</strong> <strong>Primary abstract verified via cqvip 2026-05-20.</strong> Translation cross-check on key category: 劳累 = {Model A: "fatigue/overwork — broad, includes physical exertion + mental exhaustion + sleep deprivation" | Model B: "physical tiredness from sustained activity"} — agreement that 劳累 is broader than English "strenuous exercise"; primary paper does NOT break out exercise specifically</td>
+<td><strong>Two corrections to the prior secondary-citation summary</strong>: (1) the category is 劳累 (fatigue/overwork), NOT 剧烈运动 (strenuous exercise) — semantically important because 劳累 maps to candidate mechanism #5 (metabolic-overload), not to mechanical-shedding. (2) Gender ranking was wrong in secondaries: 劳累 is <strong>#3 in males but #2 in females</strong>, not #3 in both. <strong>Substantive finding</strong>: pure trauma (外伤) was only 0.35% — even rarer than Abhishek 2017's 4.9% Western self-attribution. The Chinese primary data REINFORCES that pure mechanical impact is rarely the self-reported proximal trigger, but the broader fatigue/overwork category (19.3%) is substantially higher than any Western category. Supports candidate mechanism #5 (metabolic overload) over candidates #1-4 (mechanical)</td>
+</tr>
+</tbody>
+</table>
+<p>Taken at face value, the population data argues <em>against</em> mechanical use being a dominant flare trigger. The next section names a structural limitation in the methodology behind several of these findings that the face-value reading does not weigh.</p>
+<h2 id="a-limitation-in-the-trigger-attribution-methodology-documented-across-two-designs">A limitation in the trigger-attribution methodology — documented across two designs<a class="headerlink" href="#a-limitation-in-the-trigger-attribution-methodology-documented-across-two-designs" title="Permanent link">&para;</a></h2>
+<p>Two trigger-study designs were instrument-checked for this page. Both have known structural limitations on detecting habitual-activity inputs, via different mechanisms.</p>
+<p><strong>Design 1 — Deviation-framed self-report (Abhishek 2017; instrument confirmed via Methods section).</strong> Two-arm questionnaire:</p>
+<ol>
+<li><em>An open-ended question</em> — "identify all factors that triggered their acute gout attacks" — allowing spontaneous reporting.</li>
+<li><em>Pre-specified checklist items framed as deviations from baseline</em> — "undertaking <em>more than usual</em> physical activity," "<em>greater than usual</em> intake of red-meats," "drinking <em>less than usual</em> non-alcoholic liquids" — over the 1–2 days preceding the most-recent flare.</li>
+</ol>
+<p>Each arm has a different relationship to habitual-activity triggers:</p>
+<ul>
+<li>The <strong>deviation-framed checklist items</strong> explicitly ask about acute change. A patient with a stable daily activity pattern would honestly answer "no" to "more than usual physical activity" even if their daily activity is a contributing input. This arm is, by construction, biased toward detecting acute perturbations rather than chronic exposures.</li>
+<li>The <strong>open-ended question</strong> does not structurally exclude habitual inputs — a patient could volunteer "my daily run" spontaneously. The limitation here is cognitive: people often don't identify invariant inputs as causes in their own causal models. How strong this effect is in the gout context is not measurable from the published reports.</li>
+</ul>
+<p><strong>Design 2 — Case-crossover (Yang 2019; design confirmed via Methods, non-vaccination question wording not reproduced in published Methods).</strong> Within-subject comparison of exposure during a 2-day hazard window preceding flare versus 2-day control windows collected every 3 months while flare-free. Case-crossover designs have a well-established structural limitation: <strong>invariant exposures cancel by within-subject comparison.</strong> A patient who engages in the same activity daily would report it equally in both hazard and control windows; the design assigns it zero contribution to the odds ratio by construction. Acute changes are what case-crossover is built to detect; habitual exposures are what it is built to filter out.</p>
+<p>Consequence across both designs: the published trigger-attribution numbers are weighted toward acute perturbations and structurally underweight chronic-activity contributions. The magnitude of the underweighting is not directly knowable from the data. (Flynn 2015's 71%-trigger-reported figure refers to food triggers only — the instrument did not ask about activity / exercise / injury, so it does not inform this question either direction.)</p>
+<p>In cohort studies of chronic activity (Jablonski 2020 and similar), high-activity cohorts are confounded with metabolic-health correlates (lower urate, less alcohol, better hydration), and any flares they experience may be attributed to non-activity inputs because activity is invariant. The protective effect of chronic activity may be partly real (TLR2 downregulation is a plausible mechanism) and partly artifact of confounding. Stratified re-analysis would clarify this — see open question 4.</p>
+<p><strong>Reading "low self-attribution" as equivalent to "not a trigger" conflates absence of attribution with absence of contribution.</strong> That conflation is a known limitation of both deviation-framed self-report and case-crossover designs, for different structural reasons. It warrants explicit acknowledgement when interpreting the trigger-attribution literature. It does not, by itself, establish that mechanical use <em>is</em> a major trigger — only that the existing data is weaker evidence on that question than the face-value numbers suggest.</p>
+<h2 id="what-the-nocturnal-predominance-finding-might-actually-mean">What the nocturnal-predominance finding might actually mean<a class="headerlink" href="#what-the-nocturnal-predominance-finding-might-actually-mean" title="Permanent link">&para;</a></h2>
+<p>Choi 2015's OR 2.36 for overnight flare onset has been read as counterevidence to mechanical triggers — flares happen at night when no one is loading anything, therefore mechanical use cannot be the proximal trigger.</p>
+<p>An alternative reading: <strong>daytime mechanical use is the priming / shedding signal; the symptom threshold is crossed overnight as inflammation builds plus Simkin's overnight-effusion-resolution concentrates the already-primed synovium.</strong> Use is the spark; overnight is the smoke.</p>
+<p>The two hypotheses (mechanical-trigger vs nocturnal-onset) have been treated as competing in the literature. They may be the same phenomenon viewed from different windows.</p>
+<p><strong>No published study has done the time-lag analysis</strong> — i.e., what was the patient doing in the 6 / 12 / 24 / 48 hours preceding the flare onset, stratified by activity intensity and affected joint? This is testable and has not been tested. See open question 2.</p>
+<h2 id="open-questions">Open questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h2>
+<p><strong>1. Crystal shedding from MSU-laden cartilage under cyclic load.</strong> Has any group performed the direct experiment: MSU-laden cartilage explant + cyclic compression + supernatant assay for free crystals (polarized light microscopy or particle counter) and IL-1β / IL-1Ra ratio? Current literature scan: no. This is the cleanest in vitro experiment that would close the central mechanistic question, and the protocols exist (Bougault 2012 cyclic-compression apparatus, standard MSU-loading techniques). The missing step is combining the two.</p>
+<p><strong>2. Time-lag distribution from mechanical exposure to flare onset.</strong> Among patients who experience a flare within 24–48h of an identifiable high-intensity joint-loading event, what is the median lag, how does it cluster by joint, load type, and pre-existing crystal burden (DECT-quantified)? No prospective study with this design has been published. This is what would settle whether the nocturnal-predominance and mechanical-trigger findings are the same phenomenon or independent.</p>
+<p><strong>3. First-MTPJ predilection partitioning.</strong> The competing explanations for first-MTPJ podagra predominance — lower peripheral temperature → reduced solubility; peak gait loading; OA co-localization; Simkin overnight effusion — are treated as parallel candidates in the review literature without disentangling them experimentally. <em>Note: the widely-cited "first MTPJ is the most-loaded peripheral joint at toe-off" claim does not have a primary biomechanics citation surfaced in this scan; the number is itself</em> <strong>[UNVERIFIED]</strong>. <em>The "29–32°C peripheral joint temperature" figure is also widely cited via secondary review without a primary measurement source surfaced —</em> <strong>[UNVERIFIED]</strong>.</p>
+<p><strong>4. Habitual-activity confound in cohort studies.</strong> Does the "chronic activity is anti-inflammatory in gout" finding survive controlling for the metabolic-health confounders that correlate with activity levels (serum urate, BMI, alcohol intake, hydration markers)? A stratified re-analysis of existing cohort data would clarify whether activity per se is protective or whether the apparent protection is the metabolic-correlate halo.</p>
+<p><strong>5. Pulsed prophylaxis for anticipated mechanical events.</strong> Is there clinical benefit to colchicine (or other NLRP3-axis prophylaxis) administered before an anticipated high-load event — a tournament, a long hike, a planned orthopedic procedure — versus continuous prophylaxis? No RCT has been done. Chen K-J 2022's predictive model for spine-surgery flares is the closest existing work, but it recommends prophylaxis on the basis of systemic risk markers (smoking, Hb), not anticipated mechanical exposure.</p>
+<p><strong>6. Phenotype heterogeneity.</strong> Are there gout subpopulations who are high-mechanical-responders (the 4–7% who self-attribute) versus low-mechanical-responders, and do they differ in baseline crystal burden, cartilage condition, or genetic markers (e.g., ALPK1 variants implicated in mechanically-induced NLRP3 activation in OA)? No published stratification.</p>
+<p><strong>7. Metabolic-overload mechanism testability.</strong> The TCM-derived candidate mechanism #5 — exertion → organ-function fatigue → impaired urate excretion → transient local supersaturation — has not been tested in modern kinetic terms. Does sustained exertion measurably impair renal urate clearance in gout patients during the post-activity window in which flares occur? Serial spot urinary urate / creatinine ratios across an exertion-then-rest period in DECT-confirmed gout patients would directly address this. The mechanism would be testable without requiring TCM ontology buy-in — just as a renal-clearance kinetic question.</p>
+<h2 id="experimental-designs-that-would-close-the-gaps">Experimental designs that would close the gaps<a class="headerlink" href="#experimental-designs-that-would-close-the-gaps" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Design</th>
+<th>Complexity</th>
+<th>Iteration risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1 — Crystal shedding under load</td>
+<td>MSU-loaded human articular cartilage explants (cadaveric or arthroplasty waste), cyclic compression in a bioreactor (matching Bougault 2012 protocols), supernatant assayed for free MSU crystals, IL-1β, IL-1Ra, ATP, HMGB1 at multiple time points</td>
+<td>Medium</td>
+<td>Low — explant + cyclic compression protocols are established; the MSU-loading step is the novelty</td>
+</tr>
+<tr>
+<td>Q2 — Time-lag distribution</td>
+<td>Recruit gout patients with documented MSU deposits (DECT-confirmed); daily activity logging with joint-specific load proxies (step count + intensity + sport tags); patient-reported flare onset with hour granularity; target n ≈ 50 patients × 12 months</td>
+<td>Medium</td>
+<td>Medium — requires patient adherence to logging; mitigated by smartphone-based passive activity capture</td>
+</tr>
+<tr>
+<td>Q5 — Pulsed prophylaxis RCT</td>
+<td>Patients with ≥2 flares/year and an identifiable recurring high-load activity; randomize to single-dose colchicine 2h pre-activity vs placebo; primary endpoint: flare incidence within 48h of indexed activities</td>
+<td>High</td>
+<td>Medium — requires a patient population with predictable activity exposure; recruitment is the main risk</td>
+</tr>
+</tbody>
+</table>
+<p>Q3, Q4, and Q6 are secondary analyses of existing data plus targeted re-imaging studies; they don't require new trial infrastructure.</p>
+<h2 id="what-this-page-does-not-claim">What this page does NOT claim<a class="headerlink" href="#what-this-page-does-not-claim" title="Permanent link">&para;</a></h2>
+<ul>
+<li>That mechanical use is the dominant flare trigger.</li>
+<li>That mechanical use is not a major flare trigger.</li>
+<li>That a particular mechanism (shedding vs mechanotransduction vs DAMP-priming vs effusion-concentration) is correct.</li>
+<li>That the existing trigger-attribution literature is wrong — only that it has a known methodology blind spot that should be acknowledged when interpreting the data.</li>
+</ul>
+<h2 id="what-this-page-does-claim">What this page DOES claim<a class="headerlink" href="#what-this-page-does-claim" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The mechanistic substrate for mechanical triggering is biologically coherent and partially supported by in vitro and animal-model work in related contexts (OA).</li>
+<li>The strongest primary in vitro source on mechanical effects on MSU crystallization is from 1975. The field has not revisited it with modern methods.</li>
+<li>Deviation-framed self-report items (e.g., "more than usual physical activity") cannot, by construction, detect habitual-activity contributions; open-ended self-report items can, but rely on patient insight into their own causal model. The Abhishek 2017 instrument uses both. Whether the resulting attribution numbers materially underweight habitual-activity inputs is not directly measurable from the published data.</li>
+<li>The nocturnal-flare-predominance finding and the mechanical-trigger hypothesis are not necessarily competing explanations.</li>
+<li>Several testable open questions exist and have not been addressed in the published literature.</li>
+</ul>
+<p>This is a research-gap page. The opportunity is open.</p>
+<h2 id="implications-for-the-open-enzyme-platform">Implications for the Open Enzyme platform<a class="headerlink" href="#implications-for-the-open-enzyme-platform" title="Permanent link">&para;</a></h2>
+<p>If mechanical use turns out to be a major flare trigger axis — particularly for high-activity patients — the therapeutic posture shifts:</p>
+<ul>
+<li><strong>Uricase ULT alone may not eliminate flares short-term</strong>, even at well-controlled serum urate, until the existing crystal bed dissolves (months to years). The mechanical-trigger axis would add weight to combination therapy with NLRP3 prophylaxis during the crystal-dissolution window, which the platform already designs for (see <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a>).</li>
+<li><strong>Pulsed / on-demand NLRP3 blockade pegged to anticipated mechanical exposure</strong> becomes a candidate therapeutic strategy distinct from continuous prophylaxis. Relevant for the mRNA-IL-1Ra payload work referenced in <a href="../chassis-pending-interventions/">chassis-pending-interventions.md</a> — short-duration coverage timed to high-load events may be a cleaner use case than daily baseline coverage.</li>
+</ul>
+<p>These are downstream implications conditional on the open questions resolving in favor of mechanical triggering. They are not load-bearing claims for the platform until the upstream evidence is in.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Wilcox WR, Khalaf AA. <em>Nucleation of monosodium urate crystals.</em> Ann Rheum Dis. 1975;34(4):332–339. PMID 242279. <strong>In Vitro.</strong> (Foundational primary source on mechanical effects on MSU nucleation.)</li>
+<li>Choi HK et al. <em>Nocturnal Risk of Gout Attacks.</em> Arthritis Rheumatol. 2015;67(2):555–562. PMC4360969. <strong>Clinical / case-crossover, n=724.</strong></li>
+<li>Abhishek A et al. <em>Triggers of acute attacks of gout, does age of gout onset matter?</em> PLoS One. 2017;12(10):e0186096. PMC5638318. <strong>Clinical / cross-sectional, n=550.</strong></li>
+<li>Chen K-J et al. <em>Risk Factors for Postsurgical Gout Flares after Thoracolumbar Spine Surgeries.</em> J Clin Med. 2022;11(13):3749. PMC9267449. <strong>Clinical / retrospective, n=128.</strong></li>
+<li>Bougault C et al. <em>Stress-induced cartilage degradation does not depend on the NLRP3 inflammasome.</em> Arthritis Rheum. 2012;64(12):3972–3981. PMID 22933232. <strong>Animal Model + In Vitro.</strong></li>
+<li>Jablonski K et al. <em>Physical activity prevents acute inflammation in a gout model by downregulation of TLR2 on circulating neutrophils.</em> PLoS One. 2020;15(9):e0237520. PMC7529261. <strong>Animal Model + Clinical observational.</strong></li>
+<li>Ma W-J et al. <em>Beware of misdiagnosis and incorrect treatment of acute gout flare and postoperative infections after arthroscopic surgery for knee gouty arthritis.</em> Zhongguo Gu Shang. 2024. PMID 39104066. <strong>Clinical / retrospective, n=235.</strong> (Chinese-language original; English abstract on PubMed. No translation disagreement on load-bearing claims — the PubMed English abstract carries the n, timing, and event data.)</li>
+<li>Yang Y et al. <em>Risk of gout flares after vaccination: a prospective case-crossover study.</em> Ann Rheum Dis. 2019. PMC7184318. <strong>Clinical / case-crossover, n=517.</strong> Used here to characterize the structural limitations of case-crossover designs on detecting habitual-activity triggers. Non-vaccination trigger question wording is not reproduced in the published Methods.</li>
+<li>Flynn TJ et al. <em>Positive association of tomato consumption with serum urate: support for tomato consumption as an anecdotal trigger of gout flares.</em> BMC Musculoskelet Disord. 2015;16:196. PMC4541734. <strong>Clinical / cross-sectional, n=2051.</strong> Cited here only to note scope: the instrument asks "Do certain foods/drinks trigger your gout?" — food triggers only, no activity / exercise / injury question — so this study does not inform the mechanical-trigger question either direction.</li>
+<li>Li XD, Miao ZM, Liu YH, Cheng XY, Liu L, Li CG. <em>1713例痛风急性发作诱因分析</em> [Analysis of Trigger Factors in 1,713 Cases of Acute Gout Flares]. 山东医药 [Shandong Medical Journal]. 2012. <strong>Clinical / case-series, n=1,713 (Qingdao cohort).</strong> Senior author Li Changgui (李长贵), Affiliated Hospital of Qingdao University. Cited 13× per Google Scholar. Chinese-language only; not PubMed-indexed. <strong>Primary abstract verified via cqvip 2026-05-20.</strong> Verbatim Chinese abstract (objective/methods/results/conclusion structure): 目的分析痛风急性发作的诱因。方法根据不同年龄、尿酸水平及性别,对1 713例痛风急性发作的诱因进行分析比较。结果诱因为高嘌呤饮食839例、饮酒768例、受寒142例、劳累330例、情绪波动56例、高脂饮食101例、外伤及感染6例,无明显诱因410例。≥50岁者高嘌呤饮食、≥40岁者饮酒在各诱因中所占比例明显低于&lt;30岁者(P&lt;0.05);尿酸≥480μmol/L者高嘌呤饮食、尿酸≥420μmol/L者饮酒在各诱因中所占比例明显高于&lt;300μmol/L者(P&lt;0.05);明确的诱因中,男性高嘌呤饮食、饮酒和劳累居前3位,女性高嘌呤饮食、劳累和受寒居前3位。结论痛风急性发作的诱因包括高嘌呤饮食、饮酒、受寒、劳累、情绪波动、高脂饮食、外伤及感染等,其中最重要的诱因为高嘌呤饮食和饮酒,且存在一定的性别、年龄及尿酸水平差异。 Keywords (关键词): 痛风 (gout), 关节病 (arthropathy), 嘌呤饮食 (purine diet), 饮酒 (alcohol consumption), 诱发因素 (triggers). Translation cross-check applied per project protocol on category boundaries: 劳累 (fatigue/overwork) is semantically broader than 剧烈运动 (strenuous exercise) and the primary paper does NOT use the latter — secondary clinical-education venues conflated the two. Trauma (外伤) is grouped with infection at 6 cases total (0.35%).</li>
+<li><em>Zhongyi Neikexue</em> (中医内科学) — standard TCM internal medicine textbook, 痹病 (Bi-disease) chapter. Names 劳累 (exertion/fatigue), 外伤 (trauma), and meteorological factors as discrete contributing triggers for 痹证, with metabolic-overload mechanism framing (organ-function depletion → 湿浊 / damp-turbid accumulation → joint obstruction). <strong>TCM textbook / Mechanistic framing.</strong> Source for candidate mechanism #5.</li>
+<li>Chhana A, Lee G, Dalbeth N. <em>Factors influencing the crystallization of monosodium urate: a systematic literature review.</em> BMC Musculoskelet Disord. 2015;16:296. PMC4606994. <strong>Review.</strong></li>
+<li>Roddy E. <em>Revisiting the pathogenesis of podagra: why does gout target the foot?</em> J Foot Ankle Res. 2011;4:13. PMC3117776. <strong>Review.</strong></li>
+</ul>
+<p><em>Mechanotransduction references for the Piezo1 → NLRP3 axis in OA contexts (Cao 2026; Chen S. 2025; Liu 2022) surfaced in the lit scan and informed the candidate-mechanism section above. Their specific PMIDs and DOIs are pending verification against primary source before being cited individually here; the page does not depend on their specific citations for any load-bearing claim.</em></p>
+<h2 id="scan-limitations">Scan limitations<a class="headerlink" href="#scan-limitations" title="Permanent link">&para;</a></h2>
+<p>The multilingual scan covered Western (PubMed, Europe PMC, paperclip) + Chinese (mechanism-framed queries + traditional-pathology-framed queries via TCM Bi-syndrome ontology and Kampo) + Japanese (J-STAGE, CiNii) + Korean (KoreaMed Synapse) + German (DGRh guidelines, indexed PubMed) + Russian (PubMed) literatures, with two-pass query framing (mechanism-name + traditional-pathology variants) and translation cross-checks on load-bearing Japanese / Chinese passages.</p>
+<p>Remaining limitations after that coverage:</p>
+<ul>
+<li><strong>Li XD et al. 2012 primary abstract retrieved and verified 2026-05-20</strong> via cqvip from a network with China-region hosts allowlisted. Translation cross-check applied per project protocol. Two corrections to prior secondary-source summary documented inline above. <strong>CNKI / WanFang / ChinaXiv full-article PDFs still gated</strong> at the application layer (subscription / institutional auth) even with network reachability restored — but the abstract carried the load-bearing trigger-frequency table, so the page does not currently depend on full-PDF retrieval.</li>
+<li><strong>No primary biomechanics paper quantifying first-MTPJ peak loading vs other joints was surfaced</strong> in any language; the claim is consistently asserted in podiatry reviews but the primary citation chain has not been verified. <strong>[UNVERIFIED]</strong> as flagged inline.</li>
+<li><strong>Peripheral-joint temperature (~29–32°C)</strong> widely cited via secondary reviews in all languages scanned; primary measurement source not surfaced. <strong>[UNVERIFIED]</strong> as flagged inline.</li>
+<li><strong>Korean Bi-syndrome trigger ontology</strong> incompletely covered — Dongui Bogam analysis paper (jikm.or.kr) timed out on full-text retrieval.</li>
+<li><strong>Kampo trigger-frequency cohort studies</strong> not found in Japanese-language literature; possibly do not exist (Kampo is syndrome-pattern-based, not trigger-epidemiology-based).</li>
+<li><strong>No primary in vitro study</strong> combining MSU-laden cartilage + cyclic compression + supernatant readout was surfaced in any language. The mechanism-native gap (open question #1) holds across all literatures scanned.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "toc.integrate", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

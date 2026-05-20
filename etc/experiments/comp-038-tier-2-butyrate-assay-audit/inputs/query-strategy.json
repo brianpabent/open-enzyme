@@ -1,0 +1,121 @@
+{
+  "scope": "Identify Tier 2 butyrate quantification assays (colorimetric / enzymatic / breath-hydrogen proxy / other low-cost intermediate methods) that can be validated against Tier 3 GC-MS reference. Microbiome-derived butyrate quantification in stool, blood, breath, and culture-supernatant matrices.",
+  "natural_product_scope": false,
+  "target_concentration_ranges": {
+    "lumenal_butyrate": "10 uM to 100 mM (physiological gut range)",
+    "serum_butyrate": "~1 to 10 uM (fasting and post-prandial human)",
+    "culture_supernatant": "100 uM to 50 mM (in vitro fermentation)",
+    "breath_hydrogen_proxy": "5 to 200 ppm (clinical breath-test range)"
+  },
+  "framings": [
+    {
+      "type": "assay-class-colorimetric",
+      "queries": [
+        "butyrate colorimetric assay validation GC-MS",
+        "short chain fatty acid colorimetric quantification",
+        "SCFA enzyme coupled colorimetric assay",
+        "butyrate ester hydrolysis colorimetric"
+      ],
+      "rationale": "Colorimetric is the cheapest Tier 2 path; if a kit exists with published GC-MS validation it's the obvious first candidate."
+    },
+    {
+      "type": "assay-class-enzymatic",
+      "queries": [
+        "butyrate kinase enzymatic assay quantification",
+        "acyl-CoA synthetase butyrate enzymatic measurement",
+        "NADH coupled butyrate assay",
+        "butyryl-CoA dehydrogenase activity butyrate quantification"
+      ],
+      "rationale": "Enzymatic assays (NADH-readout, kinase-coupled) are standard Tier 2 path for fatty acid quantification in clinical chemistry; precedent exists for acetate, lactate, etc."
+    },
+    {
+      "type": "assay-class-breath-hydrogen-proxy",
+      "queries": [
+        "breath hydrogen butyrate fermentation correlation",
+        "lactulose breath test SCFA production proxy",
+        "breath methane hydrogen colonic fermentation marker",
+        "breath gas chromatography volatile fatty acids"
+      ],
+      "rationale": "Breath-hydrogen is established clinical proxy for colonic carbohydrate fermentation; the question is whether the correlation to specifically-butyrate (vs total SCFA / acetate / propionate) has been validated."
+    },
+    {
+      "type": "assay-class-electrochemical-biosensor",
+      "queries": [
+        "butyrate biosensor electrochemical quantification",
+        "SCFA microbial biosensor butyrate detection",
+        "butyrate ion-selective electrode validation"
+      ],
+      "rationale": "Electrochemical and biosensor approaches are an emerging Tier 2 path; worth surveying even if Tier 2 readiness is unclear."
+    },
+    {
+      "type": "validation-against-GC-MS",
+      "queries": [
+        "butyrate assay GC-MS comparison validation method correlation",
+        "short chain fatty acid kit GC-MS cross-validation",
+        "stool butyrate method comparison reference standard"
+      ],
+      "rationale": "The Tier 2 / Tier 3 bridge is the load-bearing criterion. Any candidate assay must have published GC-MS cross-validation (or such a study must be feasible) to count as a valid Tier 2 home for OE."
+    },
+    {
+      "type": "application-context-stool",
+      "queries": [
+        "stool butyrate quantification clinical assay home test",
+        "fecal SCFA self-administered measurement",
+        "point-of-care SCFA stool analysis"
+      ],
+      "rationale": "OE's likely Tier 2 use cases are stool-matrix (microbiome interventions) and culture-supernatant (engineered LBP characterization). Stool-specific literature may surface kits not visible in generic SCFA searches."
+    },
+    {
+      "type": "application-context-culture",
+      "queries": [
+        "in vitro fermentation butyrate quantification culture supernatant",
+        "engineered probiotic SCFA production assay",
+        "Faecalibacterium prausnitzii butyrate yield measurement"
+      ],
+      "rationale": "Specifically for engineered LBP / Faecalibacterium / Roseburia chassis characterization. Culture-supernatant matrices are simpler than stool and may have different optimal Tier 2 paths."
+    },
+    {
+      "type": "commercial-kit-landscape",
+      "queries": [
+        "butyrate assay kit commercial Sigma Megazyme Cayman Cell Biolabs",
+        "short chain fatty acid quantification kit catalog",
+        "butyrate ELISA available commercial"
+      ],
+      "rationale": "A direct vendor/catalog scan complements the academic literature search. If a commercial kit with documented validation exists, it's the practical answer."
+    }
+  ],
+  "deferred_framings": [
+    {
+      "type": "natural-product / non-English-corpus",
+      "rationale": "Butyrate-assay literature is predominantly Western analytical chemistry. CNKI / J-STAGE / KISS scan is unlikely to surface novel Tier 2 candidates and is deferred unless Stage 1 returns are sparse."
+    },
+    {
+      "type": "mass-spec-alternatives (non-GC-MS)",
+      "rationale": "LC-MS, UPLC-MS, and capillary electrophoresis-MS are Tier 3 alternatives to GC-MS but do not lower the cost ladder. Deferred; the Tier 2 question is about NON-mass-spec methods specifically."
+    }
+  ],
+  "output_format_expected": {
+    "top_candidate_assays": "ranked list (1-5) via pairwise tournament across N=5 consensus trajectories",
+    "per_candidate_fields": [
+      "assay_name",
+      "assay_class (colorimetric / enzymatic / breath-hydrogen / electrochemical / other)",
+      "commercial_availability (kit / lab-built / both)",
+      "cost_per_sample_estimate_usd",
+      "GC_MS_validation_status (validated / partial / unvalidated)",
+      "published_correlation_coefficient_with_GC_MS",
+      "dynamic_range_butyrate",
+      "matrix_compatibility (stool / serum / culture / breath)",
+      "sample_prep_complexity (low / medium / high)",
+      "key_publications (PMIDs)",
+      "limitations_and_caveats",
+      "consensus_statistic (N trajectories that surfaced this candidate)"
+    ],
+    "verdict": "GREEN (validated Tier 2 path exists, ready to adopt) / YELLOW (candidate exists but GC-MS validation is partial; OE-internal validation study required) / RED (no Tier 2 candidate with sufficient evidence; wet-lab development is the only path)"
+  },
+  "provenance": {
+    "created": "2026-05-20",
+    "created_by": "comp-038 scaffold (Claude on branch claude/review-gemini-science-PpAlm)",
+    "methodology_reference": "operations/agentic-science-adoption.md — comp-038 scaffold section",
+    "frozen_for_run": false
+  }
+}
