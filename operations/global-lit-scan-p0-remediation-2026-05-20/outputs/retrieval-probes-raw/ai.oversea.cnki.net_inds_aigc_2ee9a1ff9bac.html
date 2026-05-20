@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><meta http-equiv=X-Content-Type-Options content=nosniff><meta http-equiv=X-XSS-Protection content="1; mode=block"><script type=text/javascript src=./static/config/betasmart.config.js></script><script type=text/javascript src=./static/plugin/jquery/jquery-3.6.4.js></script><script type=text/javascript>(function() {
+        const lang = (new URL(window.location.href).searchParams.get('lang') || '').trim().toLowerCase()
+        const script = document.createElement('script');
+        if (lang === 'en') {
+          script.src = 'https://track.oversea.cnki.net/collect/quote/encnkiai';
+        } else {
+          script.src = 'https://track.oversea.cnki.net/collect/quote/chncnkiai';
+        }
+        document.head.appendChild(script);
+      })()</script><link href=urtpui~app-f09b28c8.css rel=stylesheet><link href=elementui~app-5b290d43.css rel=stylesheet><link href=vendors~app-bbaf0ff7.css rel=stylesheet><link href=app-f5e10c28.css rel=stylesheet></head><body><div id=default_loginDiv class=layui-row><script id=toploginoversea data="platform=overseaai&style=2&placeid=default_loginDiv&laylocate=right&mustjf=1"></script><script type=text/javascript>function LoginSucess(data) {
+      if (!data || !data.Uid || data.Uid == "undefined") {
+        return;
+      }
+      startTimer()
+      isShowEquity && isShowEquity(data.Uid) // 登录以后弹一次权益 具体是否弹出接口内决定
+    }
+    function Ecp_LogoutOptr(data) {
+      sessionStorage.removeItem('infoCompleted')
+      sessionStorage.removeItem('isFirstShowDialog')
+      location.href=location.href;
+    }
+
+    function startTimer () {
+      function myStopFunction () {
+        clearInterval(myVar)
+      }
+      var resetLoginCss = function () {
+        var defaultLoginDiv = document.getElementById('default_loginDiv')
+        if (document.getElementById('default_loginDiv').children.length > 3) {
+          var headerRight = document.getElementsByClassName('header_right')[0]
+          var widthValue = defaultLoginDiv.offsetWidth + headerRight.children[1].offsetWidth
+          headerRight.style.marginRight = widthValue + 'px'
+          myStopFunction()
+        }
+      }
+      var myVar = setInterval(function () { resetLoginCss() }, 100)
+    }
+
+    var loginJudge = setInterval(function () { initUserInfoBtn() }, 100)
+    function initUserInfoBtn () {
+      if($("#jf_login_bkname").length > 0 && $('#jf_login_bkname').is(':visible')){
+          $("#jf_login_bkname").unbind("click").bind("click", function () {
+          $('.userinfo').toggle();
+          clearInterval(loginJudge)
+        });
+      }
+      if($("#jf_login_bkname2").length > 0 && $('#jf_login_bkname2').is(':visible')){
+          $("#jf_login_bkname2").unbind("click").bind("click", function () {
+          $('.userinfo').toggle();
+          clearInterval(loginJudge)
+        });
+      }
+    }</script><style>[class*=aigc_page_v2] .aside .aside_bottom .undatetip-box{
+        display:none
+    }
+    .overseaNav #Ecp_top_login_layer{
+      position: fixed;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%,-50%);
+    }</style></div><div id=app></div><div id=__droplist class=dictlist style="display: none;"></div><div id=warning style=display:none><div>您当前浏览器版本过低，建议使用谷歌浏览器 <a href=http://www.google.com target=_blank>Chrome</a></div><div>Your current browser version is too low, it is recommended to use Google Chrome <a href=http://www.google.com target=_blank>Chrome</a></div></div><script type=text/javascript>function aigcSaveLog (opsModule, opsFunction, opsAction, opsData, opsRelation) {
+    //日志记录
+    var data = {
+      "m": opsModule,//模块名称
+      "f": opsFunction,//功能名称
+      "a": opsAction,//操作名称
+      "d": opsData,//操作界面数据
+      "r": opsRelation//操作关联数据
+    };
+    typeof (CANGJIE) !== "undefined" && CANGJIE.log(data);
+  }
+  /*设置cnkismart用户信息补全js*/
+  function setUserInfoDialogJS () {
+    var url = new URL(window.location.href);
+    var params = new URLSearchParams(url.search);
+    var lang = params.get('lang');
+    const script = document.createElement('script');
+    var srcUrl = lang === 'en' ? 'https://o.oversea.cnki.net/userInfoDialog/js/dialogen.js' : 'https://o.oversea.cnki.net/userInfoDialog/js/dialogcn.js'
+    script.src = srcUrl;
+    document.head.appendChild(script);
+  }
+  setUserInfoDialogJS()</script><script type=text/javascript src=static/js/echarts.f0e8b604e9c0a456de16.js></script><script type=text/javascript src=static/js/urtpaesencrypt.255add395753e53234da.js></script><script type=text/javascript src=static/js/urtpjs.6c1195761712e0da44a5.js></script><script type=text/javascript src=static/js/htmldocxjs.83a7558a11d0b5fe5a71.js></script><script type=text/javascript src=static/js/html2canvas.5c8ae8871d21fead699c.js></script><script type=text/javascript src=static/js/jspdf.41fbc0ec51230f21ef76.js></script><script type=text/javascript src=static/js/unorm.4ad9a63782f2f4381a04.js></script><script type=text/javascript src=static/js/vue.4669580592f51c45aec9.js></script><script type=text/javascript src=static/js/urtpui~app.30f2324a0753c1a4270c.js></script><script type=text/javascript src=static/js/elementui~app.35bc98657dead3590810.js></script><script type=text/javascript src=static/js/vendors~app.b4a17be2b40870cba779.js></script><script type=text/javascript src=static/js/app.c7842e1887d645152f4b.js></script></body></html>
