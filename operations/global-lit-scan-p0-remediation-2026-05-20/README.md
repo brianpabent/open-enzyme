@@ -39,6 +39,8 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 - [`outputs/p0-1-cnki-two-model-source-read-2026-05-20.md`](./outputs/p0-1-cnki-two-model-source-read-2026-05-20.md) - Codex/GPT-5.5 plus DeepSeek conservative source-read summary.
 - [`outputs/p0-1-cordyceps-biotech-source-read-2026-05-20.md`](./outputs/p0-1-cordyceps-biotech-source-read-2026-05-20.md) - publisher-page read of the priority *C. militaris* water-extract rat paper; promotes this one from abstract lead to Animal Model wiki-update candidate.
 - [`outputs/p0-1-cordyceps-biotech-deepseek-counterread-2026-05-20.json`](./outputs/p0-1-cordyceps-biotech-deepseek-counterread-2026-05-20.json) - native-Chinese counter-read for the publisher-page source facts.
+- [`outputs/p0-1-cordyceps-human-2014-retrieval-note-2026-05-20.md`](./outputs/p0-1-cordyceps-human-2014-retrieval-note-2026-05-20.md) - retrieval note for the 22-patient *C. militaris* powder record; free-route searches were cold, so it remains manual/CNKI full-text-needed and should not be promoted from abstract alone.
+- [`outputs/p0-1-sanghuang-source-read-2026-05-20.md`](./outputs/p0-1-sanghuang-source-read-2026-05-20.md) - source read for open-access *Sanghuangporus vaninii* HUA renal-injury and MSU-gout rodent papers; promotes Sanghuang from CNKI abstract lead to Animal Model wiki-update candidate while quarantining the unresolved 2025 CNKI allopurinol-comparator ambiguity.
 - `outputs/retrieval-probes-raw/` - raw HTML/provenance files. Provenance records when a fetch used local curl and whether insecure TLS was required.
 
 ## Retrieval Findings
