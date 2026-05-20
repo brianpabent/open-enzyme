@@ -192,6 +192,13 @@ graph TB
         DE32["comp-037 C1-INH Protease Stability + Glycosylation in EcN — MODERATE (kinetic-competition gated)"]
     end
 
+    subgraph PlatformArch["PLATFORM ARCHITECTURE (NEW)"]
+        PA1["Catalase Capacity Principle — route-agnostic H₂O₂ safety (delivery-route-matrix)"]
+        PA2["Substrate Engineering Principle 9 — first-class eng. lever (open-source-platform)"]
+        PA3["Closed-Loop Pharmacogenomics Pipeline — genotype→selection→QC→dose→track (open-source-platform)"]
+        PA4["Protease-Vulnerability-to-Redesign Workflow — 4-step pattern (lactoferrin, DAF)"]
+    end
+
     subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
         MT1["Ganoderma lucidum / lingzhi — GLPP polysaccharide-peptide"]
         MT2["Cordyceps militaris — cordycepin + native pentostatin ADA-inhibitor pairing"]
@@ -675,6 +682,17 @@ graph TB
     EQ6 -->|"canonical 4-tier framework instantiated by"| EQ1
     EQ6 -->|"canonical 4-tier framework instantiated by"| MT9
     EQ7 -->|"smartphone photometry bridges kitchen to bench for"| EQ1
+
+    %% Platform architecture — route-agnostic principles (source: delivery-route-matrix.md, open-source-platform.md)
+    PA1 -->|"catalase kcat/Km is dominant safety driver for ALL uricase delivery formats"| DE29
+    PA1 -->|"generalizes chassis-as-formulation advantage across all routes"| KE1
+    PA2 -->|"universal across mushroom + koji + LBP tracks; 1.2x-100x yield effects"| MT1
+    PA2 -->|"substrate is most-accessible optimization axis for distributed production"| MT3
+    PA2 -->|"substrate engineering track overlaps with"| KE5
+    PA3 -->|"genotype -> compound selection -> home/community-biolab production -> Tier 2 QC -> dose -> track"| AM4
+    PA3 -->|"operational instantiation of rigorous-but-accessible principle"| DE17
+    PA4 -->|"comp-005->comp-034->section1.10 pattern for structured-mandatory linkers"| KE3
+    PA4 -->|"classify vulnerability as structural-mandatory vs structural-removable"| CH12
 
     %% Cannabinoid/terpene relationships
     M1 -->|"P2X7/NF-kB"| C2
