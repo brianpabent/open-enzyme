@@ -1,0 +1,122 @@
+{
+  "openrouter": {
+    "api_key_env": "OPENROUTER_API_KEY",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+    "secret_location": "repo-root .env (gitignored) or shell environment"
+  },
+  "roles": {
+    "query_strategist": {
+      "model": "codex/gpt-5.5-in-session",
+      "temperature": null,
+      "notes": "Default when Codex runs the experiment locally; no OpenRouter call."
+    },
+    "synthesis": {
+      "model": "codex/gpt-5.5-in-session",
+      "temperature": null,
+      "notes": "Primary synthesis role is performed by the current Codex session from outputs/codex-synthesis-packet.md."
+    },
+    "judge": {
+      "model": "codex/gpt-5.5-in-session",
+      "temperature": null,
+      "notes": "Default judge/limitations pass when Codex is driving the run."
+    },
+    "verifier": {
+      "model": "codex/gpt-5.5-in-session",
+      "temperature": null,
+      "notes": "Default source-evidence gate when Codex is driving the run."
+    },
+    "query_strategist_openrouter": {
+      "env": "COMP038_QUERY_MODEL",
+      "model": "deepseek/deepseek-chat",
+      "temperature": 0.2
+    },
+    "synthesis_openrouter": {
+      "env": "COMP038_SYNTHESIS_MODEL",
+      "model": "openai/gpt-5.5",
+      "temperature": 0.35
+    },
+    "judge_openrouter": {
+      "env": "COMP038_JUDGE_MODEL",
+      "model": "anthropic/claude-opus-4.7",
+      "temperature": 0.0
+    },
+    "verifier_openrouter": {
+      "env": "COMP038_VERIFIER_MODEL",
+      "model": "anthropic/claude-opus-4.7",
+      "temperature": 0.0
+    }
+  },
+  "run": {
+    "trajectories": 5,
+    "consensus_threshold": 3,
+    "budget_usd": 25,
+    "max_candidates_for_full_pairwise": 6,
+    "pubmed_retmax_per_query": 10,
+    "final_green_requires_full_text_or_protocol_evidence": true
+  },
+  "translation": {
+    "protocol": "two independent models from different vendors; preserve science-relevant disagreements inline rather than choosing one winner",
+    "pairs": {
+      "zh": {
+        "model_a": {
+          "env": "COMP038_TRANSLATION_ZH_MODEL_A",
+          "model": "deepseek/deepseek-chat",
+          "temperature": 0.0
+        },
+        "model_b": {
+          "env": "COMP038_TRANSLATION_ZH_MODEL_B",
+          "model": "openai/gpt-5.5",
+          "temperature": 0.0
+        },
+        "referee": {
+          "env": "COMP038_TRANSLATION_REFEREE_MODEL",
+          "model": "anthropic/claude-opus-4.7",
+          "temperature": 0.0
+        }
+      },
+      "ja": {
+        "model_a": {
+          "env": "COMP038_TRANSLATION_JA_MODEL_A",
+          "model": "anthropic/claude-opus-4.7",
+          "temperature": 0.0
+        },
+        "model_b": {
+          "env": "COMP038_TRANSLATION_JA_MODEL_B",
+          "model": "openai/gpt-5.5",
+          "temperature": 0.0
+        },
+        "referee": {
+          "env": "COMP038_TRANSLATION_REFEREE_MODEL",
+          "model": "anthropic/claude-opus-4.7",
+          "temperature": 0.0
+        }
+      },
+      "default": {
+        "model_a": {
+          "env": "COMP038_TRANSLATION_MODEL_A",
+          "model": "openai/gpt-5.5",
+          "temperature": 0.0
+        },
+        "model_b": {
+          "env": "COMP038_TRANSLATION_MODEL_B",
+          "model": "anthropic/claude-opus-4.7",
+          "temperature": 0.0
+        },
+        "referee": {
+          "env": "COMP038_TRANSLATION_REFEREE_MODEL",
+          "model": "anthropic/claude-opus-4.7",
+          "temperature": 0.0
+        }
+      }
+    }
+  },
+  "provenance": {
+    "created": "2026-05-20",
+    "notes": [
+      "Model names are non-secret and may be overridden by environment variables.",
+      "OPENROUTER_API_KEY must never be committed.",
+      "Default Codex roles make local runs use Brian's existing Codex/OpenAI subscription rather than OpenRouter spend.",
+      "The *_openrouter roles are opt-in only and are used by analyze.py only with --run-openrouter."
+    ]
+  }
+}

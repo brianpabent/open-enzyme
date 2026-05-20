@@ -22,6 +22,26 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
+### comp-038 — Tier 2 Butyrate Assay Audit — YELLOW (2026-05-20)
+
+**Question:** Is there a Tier 2 butyrate quantification assay (colorimetric, enzymatic, breath-proxy, electrochemical, or other low-cost intermediate method) that can be validated against Tier 3 GC-MS for stool, serum, breath, or culture-supernatant matrices?
+
+**Verdict:** **YELLOW.** No ready-to-adopt simple/home colorimetric or breath-based butyrate assay surfaced. Two plausible Tier 2 candidates surfaced: HPLC-UV SCFA + lactate assay for culture-supernatant / engineered-strain work, and electrochemical fecal SCFA profiling with ANN deconvolution as an emerging stool-specific direction. Both require full-text/protocol review and paired GC-MS validation before OE adoption.
+
+**Key findings:**
+- PubMed snapshot: 27 queries / 74 records; source snapshot committed at `outputs/pubmed-snapshot.json`.
+- HPLC-UV for bacterial culture supernatants is the best near-term Tier 2-lab candidate (PMID 23542733), but still needs full text, butyrate-specific precision/recovery extraction, OE spike recovery, and paired GC-MS.
+- Electrochemical fecal SCFA profiling is the most promising stool-specific future Tier 2 direction (PMID 42041444), but remains research-platform grade.
+- Breath H2/CH4 is useful as a broad fermentation/adherence proxy, not butyrate-specific quantification.
+- Generic free-fatty-acid colorimetric kits are a false-friend class; representative protocol excludes acetic, propionic, and butyric acid.
+- Completed with Codex/GPT-5.5 in-session synthesis from a committed source packet; no OpenRouter model calls were made.
+
+**Informs:** [quantification-ladder](./quantification-ladder.md) · [genotype-informed-supplement-workflow](./genotype-informed-supplement-workflow.md) · [validation-experiments §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy) · [purine-degrading-bacteria](./purine-degrading-bacteria.md)
+
+**Detail:** [interpretive](./tier-2-butyrate-assay-audit-computational.md) · [experiments/](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/) · Complete first pass (next gate: full-text/protocol verification + small paired Tier 2 vs GC-MS validation)
+
+---
+
 ### comp-037 — C1-INH (SERPING1) Protease Stability + Glycosylation Feasibility in EcN-Luminal Format — MODERATE (kinetic-competition gated) (2026-05-17)
 
 **Question:** Will human C1-INH (UniProt P05155) survive luminal-secreted expression in engineered *E. coli* Nissle 1917, and is the loss of N-glycosylation a hard block? Closes the C1-INH-on-EcN side of the two-chassis CP0 architecture surfaced 2026-05-16 (C1-INH on LBP-luminal + DAF SCR1-4 on koji-secreted).
@@ -547,6 +567,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-033~~ | Completed 2026-05-16 — RED single-dose Cmax-equivalent; reframed in comp-036 (YELLOW receptor-occupancy). See Analyses above | — | ✓ Done |
 | ~~comp-036~~ | Completed 2026-05-16 — YELLOW repeat-dose receptor-occupancy framing; salvages comp-033 RED. See Analyses above | — | ✓ Done |
 | ~~comp-037~~ | Completed 2026-05-17 — MODERATE (kinetic-competition gated); glyco GREEN for serpin-core aa 123–500 in luminal topology. See Analyses above | — | ✓ Done |
+| ~~comp-038~~ | Completed 2026-05-20 — YELLOW; HPLC-UV culture-supernatant candidate + electrochemical fecal SCFA future direction; no home/colorimetric butyrate assay ready. See Analyses above | — | ✓ Done |
 | ~~comp-028~~ | Reframed and deprioritized 2026-05-16 — cordycepin-arm moot; general design-escape question non-load-bearing today; re-openable for future cytosolic third-cassette candidate | — | Closed |
 
 ---
