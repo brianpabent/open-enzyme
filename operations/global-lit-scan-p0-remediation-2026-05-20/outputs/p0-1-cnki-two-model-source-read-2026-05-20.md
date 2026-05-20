@@ -18,6 +18,12 @@ Source artifacts:
 
 Use these CNKI Overseas article pages as the starting point for browser/manual full-text retrieval. On the article page, try the `HTML Reading`, `Original Reading`, `PDF`, or `CAJ` actions while logged in through whatever CNKI access route works locally.
 
+Alternative routes should be checked before paying CNKI per-page fees. For the priority Cordyceps paper, the publisher/JATS page is available outside CNKI:
+
+- `Effect and Mechanism of Cordyceps militaris Extract on Lowering Uric Acid in Hyperuricemia Rats` - [Biotechnology Bulletin publisher page](https://biotech.aiijournal.com/CN/10.13560/j.cnki.biotech.bull.1985.2024-0379)
+
+CNKI records:
+
 1. `Effect and Mechanism of Cordyceps militaris Extract on Lowering Uric Acid in Hyperuricemia Rats` - [CNKI Overseas](https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-CyrYCiF-YxoIDQk7aZfTn4UoXjxU5pAz5UXuaMgf0skSD5b_zZks7HF4jxJHIClW-Y6rpye1KwjQUJDVH-1ITCfdPf9LgWIgZb82QxFPFVpaynreUIiSLGTVRYxYRSfRtvFFM-2Q2IY8_oN--5k0S9IXLElrjkvBklvDksrNt4aQ==&uniplatform=OVERSEA&language=EN)
 2. `Study on the Cordyceps militaris for lowering uric acid of patients with hyperuricemia` - [CNKI Overseas](https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-BGqgfXYjMImcM2E7wCFdPUGJfK3rH2VB2k17289dORkaAYb7T72V6X58bEzU8Svn1YVA46cu6M18OuXdW3DmBEB_SLZq5449Q3SJ_k3St8lLDanA0jEXw9dyft2YI_pPXJKRex5kEgpk8P40-aF48uyIlqZJwE8W7ChefXNCW62w==&uniplatform=OVERSEA&language=EN)
 3. `Rapid identification by UPLC-Q-TOF-MS of the chemical composition of Sanghuangporus vaninii alcohol extract from poplar and its urate-lowering activity and nephroprotective effect` - [CNKI Overseas](https://oversea.cnki.net/kcms2/article/abstract?v=g8n7TwuHW-ApuU8cmHNU8r26TctfD1UxD-f5uR__773Cfp9yOlVY4lcolxC9GH3vCMFzCrBp8NvdOy7fMxa1aXxtOxThn--PHnZxSBqExrhAsjXMM4RHy4fVYJ_zwwKrLSWLpVS0DjlO2m7ei1HDyJHVBvO5LLnnYP1TTapQOO1JntLxnPD4OQ==&uniplatform=OVERSEA&language=EN)
