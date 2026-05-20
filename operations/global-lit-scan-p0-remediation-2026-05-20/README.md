@@ -18,7 +18,7 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 | Item | Question | Current status | Next action |
 |---|---|---|---|
 | P0-1 | Medicinal mushroom / comp-014 Phase 5b rescue scan | CNKI Overseas rerun and abstract-level two-model read complete; Cordyceps militaris and Sanghuang/Phellinus are the strongest recovered urate leads | Retrieve/read full text for priority Cordyceps and Sanghuang/Phellinus records before wiki evidence update |
-| P0-2 | East Asian gout genetics: ABCG2 Q141K, HLA-B*58:01, URAT1/W258X | Query plan adequate; J-STAGE local-curl route has strong immediate yield; CNKI Overseas route corrected | Run first deep dive here |
+| P0-2 | East Asian gout genetics: ABCG2 Q141K, HLA-B*58:01, URAT1/W258X | J-STAGE local-curl deep dive complete with Codex/GPT-5.5 + DeepSeek two-model read; wiki updates promoted for URAT1, ABCG2, and HLA-B*58:01 wording | Next optional pass: Korean/Chinese cohort-specific confirmation if trial-site selection becomes active |
 | P0-3 | TCM gout formula re-scan | Query plan adequate; WanFang reachable but SPA extraction unresolved; CNKI Overseas route corrected; Baidu captcha | Needs CNKI/WanFang result extraction before evidence update |
 | P0-4 | NLRP3 x Lingzhi/Yun Zhi/Maitake immunomodulation | Query plan adequate; J-STAGE returns fungal beta-glucan immunology reviews; RISS route reachable; CNKI Overseas route corrected | Run after P0-2, with explicit "not gout-specific yet" guardrail |
 
@@ -43,6 +43,8 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 - [`outputs/p0-1-sanghuang-source-read-2026-05-20.md`](./outputs/p0-1-sanghuang-source-read-2026-05-20.md) - source read for open-access *Sanghuangporus vaninii* HUA renal-injury and MSU-gout rodent papers; promotes Sanghuang from CNKI abstract lead to Animal Model wiki-update candidate while quarantining the unresolved 2025 CNKI allopurinol-comparator ambiguity.
 - [`outputs/p0-1-phellinus-tfpi-source-read-2026-05-20.md`](./outputs/p0-1-phellinus-tfpi-source-read-2026-05-20.md) - source read for open-access *Phellinus igniarius* TFPI HUA / uric-acid-nephropathy paper; promotes TFPI as Animal Model plus renal HK-2-cell evidence while leaving the 2025 CNKI transporter mRNA/protein mismatch quarantined.
 - [`outputs/p0-1-ganoderma-aqueous-2024-retrieval-note-2026-05-20.md`](./outputs/p0-1-ganoderma-aqueous-2024-retrieval-note-2026-05-20.md) - retrieval note for the 2024 *G. lucidum* aqueous-extract rat/cell record; publisher/CNKI metadata are visible, but full text was not retrieved and the abstract-level kidney-urate increase remains a hard non-promotion caveat.
+- [`outputs/p0-2-east-asian-gout-genetics-source-read-2026-05-20.md`](./outputs/p0-2-east-asian-gout-genetics-source-read-2026-05-20.md) - source read for Japanese URAT1/SLC22A12, ABCG2, and HLA-B*58:01 guidance; promotes corrected URAT1 W258X/R90H protective evidence, ABCG2 Q141K frequency/function calibration, and ACR-vs-CPIC wording.
+- [`outputs/p0-2-jstage-deepseek-counterread-2026-05-20.json`](./outputs/p0-2-jstage-deepseek-counterread-2026-05-20.json) - DeepSeek independent Japanese counter-read for the P0-2 J-STAGE excerpts.
 - `outputs/retrieval-probes-raw/` - raw HTML/provenance files. Provenance records when a fetch used local curl and whether insecure TLS was required.
 
 ## Retrieval Findings
@@ -68,4 +70,4 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 
 ## Decision
 
-Run P0-2 first. It has a working retrieval path, directly relevant native-language hits, and likely affects the OE gout genetics / trial-stratification understanding more immediately than the mushroom and TCM scans. Use two independent model readings for any Japanese source text that changes a scientific conclusion, and annotate translation disagreements inline rather than collapsing them.
+P0-2 first-pass complete. The J-STAGE local-curl path is operational, and the two-model read produced promotion-grade updates for `wiki/gout-genetic-variants.md` and `wiki/sirna-urat1-modality.md`. Continue next with either P0-3 TCM formula extraction (highest unresolved source-route problem) or P0-4 mushroom immunomodulation (cleaner J-STAGE/RISS path but less directly gout-specific).
