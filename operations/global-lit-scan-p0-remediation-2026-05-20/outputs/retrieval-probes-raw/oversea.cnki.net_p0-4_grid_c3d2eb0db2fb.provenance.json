@@ -1,0 +1,12 @@
+{
+  "url": "https://oversea.cnki.net/kns8s/brief/grid",
+  "query": "香菇多糖 NLRP3",
+  "category": "lentinan_nlrp3_comparator",
+  "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E9%A6%99%E8%8F%87%E5%A4%9A%E7%B3%96%20NLRP3&uniplatform=OVERSEA&language=EN",
+  "fetched_at_utc": "2026-05-20T18:39:49.737886+00:00",
+  "curl_returncode": 0,
+  "stdout": "200 text/html;charset=UTF-8 https://oversea.cnki.net/kns8s/brief/grid",
+  "stderr": "",
+  "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_c3d2eb0db2fb.html",
+  "query_json_shape": "browser-captured OVERSEA CROSSDB Subject SU TOPRANK, Rlang=CHINESE"
+}

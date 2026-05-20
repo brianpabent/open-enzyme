@@ -1,0 +1,315 @@
+<div id="briefBox"><div><div class="toolbar">
+    <div id="countPageDiv" class="result-con-r">
+        <span class="pagerTitleCell"><span>Total:</span>
+            <em>4</em>
+            <span>articles</span>
+        </span>
+
+
+
+    </div>
+    <!--法律法规的条目用classid判断是否要隐藏(初始化隐藏)，后面的js还会处理法律条目的隐藏，避免使用classid这个值造成的影响-->
+    <div class="toolbar-col">
+
+            <div class="checkcount">
+                <label class="checkAll">
+                    <input type="checkbox" name="selectCheckbox" id="selectCheckAll1"
+                           onclick="$(this).filenameClick()">All</input></label>
+                <span>Selected</span>
+                <em title="Click to view the selected literature" id="selectCount" name="selectCount">0</em>
+                <a href="javascript:$(this).filenameClear();">Clear</a>
+            </div>
+            <ul class="dropdown-analysis-btns" id="batchOpsBox">
+
+                <li>
+                    <a href="javascript:void(0)">Export and Analysis</a><i class="icon-d"></i>
+                    <ul>
+                        <li class="export">
+                            <a href="javascript:void(0)">Export Reference</a>
+                            <i class="icon-r"></i>
+                            <ul class="secondUl">
+                                <li><a href="javascript:void(0)" exporttype="GBTREFER">GB/T 7714-2015 Citation</a>
+                                </li>
+
+                                <li><a href="javascript:void(0)" exporttype="REFER">CAJ-CD Citation</a></li>
+                                <li><a href="javascript:void(0)" exporttype="MLA">MLA</a></li>
+                                <li><a href="javascript:void(0)" exporttype="APA">APA</a></li>
+                                <li><a href="javascript:void(0)" exporttype="NEW">Novelty Search(citation format)</a></li>
+                                <li><a href="javascript:void(0)" exporttype="newdefine">Novelty Search(self-defined)</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="Refworks">Refworks</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="EndNote">EndNote</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="NoteExpress">NoteExpress</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="NodeFirst">NoteFirst</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="BibTex">BibTex</a>
+                                </li>
+                                <li><a href="javascript:void(0)" exporttype="selfDefine">Self-defined</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="analysisLi">
+                            <a href="javascript:void(0)">Visual Analysis</a><i class="icon-r"></i>
+                            <ul class="secondUl">
+                                <li id="anisys_select"><a href="javascript:void(0)">
+                                    Analysis of Selected Results
+                                    (<span>0</span>)</a></li>
+                                <li id="anisys_all"><a href="javascript:void(0)">Analysis of All Search Results</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="aiExport">
+                            <a href="javascript:void(0)">AI Summary</a>
+                        </li>
+
+<!--                        <li id="chaXin">-->
+<!--                            <a href="https://chaxin.cnki.net/" th:text="#{M_Export_科技查新}" target="_blank"></a>-->
+<!--                        </li>-->
+                    </ul>
+                </li>
+
+
+            </ul>
+
+        <ul class="change-list" id="DivDisplayMode">
+
+            <li title="detail"
+                data-obj="result-piclist"
+                data-mode="custommode"><i class="icon-detail"></i></li>
+
+
+
+            <li title="list"
+                data-obj="result-table-list"
+                data-mode="listmode" class="active"><i class="icon-table"></i></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+        <div class="statistic">
+            <div id="id_grid_display_num" class="page-show-count"><span>Records/Page</span>
+                <div class="sort" id="perPageDiv">
+                    <div class="sort-default">
+                        <span>20</span>
+                        <i class="icon icon-sort"></i>
+                    </div>
+                    <ul class="sort-list" style="display: none;">
+                        <li data-val="10"><a href="javascript:void(0);">10</a>
+                        </li>
+                        <li data-val="20" class="cur"><a href="javascript:void(0);">20</a>
+                        </li>
+                        <li data-val="50"><a href="javascript:void(0);">50</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="order-group" id="sortList">
+            <span>Sort：</span>
+            <ul class=" DESC  order" id="orderList">
+                <li id="FFD"
+                    value="FFD"
+
+                    title="Only valid within 8 million records" data-sort="FFD" data-onlydesc="DESC" data-defaults="false">Relevance</li>
+                <li class="DESC cur"
+                    id="PT"
+                    value="PT"
+
+                    title="Only valid within 8 million records" data-sort="PT" data-onlydesc="BOTH" data-defaults="true">Publication Date</li>
+                <li id="CF"
+                    value="CF"
+
+                    title="Only valid within 8 million records" data-sort="CF" data-onlydesc="BOTH" data-defaults="false">Cites</li>
+                <li id="DFR"
+                    value="DFR"
+
+                    title="Only valid within 8 million records" data-sort="DFR" data-onlydesc="BOTH" data-defaults="false">Downloads</li>
+                <li id="ZH"
+                    value="ZH"
+
+                    title="Only valid within 8 million records" data-sort="ZH" data-onlydesc="DESC" data-defaults="false">Overall</li>
+            </ul>
+        </div>
+    </div>
+    <input type="hidden" id="RecSysAPI" value="https://recsys.oversea.cnki.net/RCDService"/>
+    <input type="hidden" value="https://login.cnki.net" id="hidLoginUrl">
+    <input type="hidden" value="https://aiplus.cnki.net/cnki-ai-api/aiplus/v1/summary/cross.html" id="hidAiExportUrl">
+    <div id="modalBoxAiExport1" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="prompt-wrap">
+                <span class="prompt-icon"></span>
+                <p class="text">AI文献综述是专为文献调研场景设计的AI增值服务，请登录个人账号使用。</p>
+            </div>
+            <div class="content-text">AI 文献综述可根据您选择的文献，一键生成内容丰富、层次清晰、分析深入的高质量文献综述，助力您高效挖掘研究价值，深度洞察学术前沿。</div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">登录个人账号使用</span>
+        </div>
+    </div>
+</div>
+    <div id="modalBoxAiExport2" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="prompt-wrap">
+                <span class="prompt-icon"></span>
+                <p class="text">AI文献综述是专为文献调研场景设计的AI增值服务，按次计费。</p>
+            </div>
+            <div class="content-text">AI 文献综述可根据您选择的文献，一键生成内容丰富、层次清晰、分析深入的高质量文献综述，助力您高效挖掘研究价值，深度洞察学术前沿。</div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">开始生成综述</span>
+        </div>
+    </div>
+</div>
+    <div id="modalBoxAiExport3" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="content-text">AI 文献综述可根据您选择的文献，一键生成内容丰富、层次清晰、分析深入的高质量文献综述，助力您高效挖掘研究价值，深度洞察学术前沿。</div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">开始生成综述</span>
+        </div>
+    </div>
+</div>
+    <div id="modalBoxAiExport4" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="prompt-wrap">
+                <span class="prompt-icon"></span>
+                <p class="text"><span id="layer-select">您选择的3篇文献为专利、年鉴与标准，</span>这些内容暂不支持生成综述，系统将自动过滤。</p>
+            </div>
+            <div class="content-prompt">可选文献类型：期刊文献（中文、外文）、博士论文、硕士论文、会议论文（国际、国内）、重要报纸。</div>
+            <div class="filter-wx">
+                <p class="title">过滤文献：</p>
+                <div class="content" id="layer-prompt">
+                    <p class="filter-item">[图书] AI 提示工程实战</p>
+                    <p class="filter-item">[标准] AI 提示工程实战战战战战战战战战战战战战战战战战战战</p>
+                    <p class="filter-item">[标准] AI 提示工程实战战战战战战战战战战战战战战战战战战战</p>
+                    <p class="filter-item">[标准] AI 提示工程实战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战战</p>
+                </div>
+            </div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">继续生成文献综述</span>
+        </div>
+    </div>
+</div>
+    <div id="modalBoxAiExport5" style="display:none;">
+    <div class="layer-mask"></div>
+    <div class="layerwxzs" id="layer-wxzs">
+        <div class="layer-title-wrap">
+            <div class="layer-title"></div>
+            <span class="icon icon-close">×</span>
+        </div>
+        <div class="layer-wrap">
+            <div class="label-wrap">
+                <div class="label-item">更专业</div>
+                <div class="label-item">更全面</div>
+                <div class="label-item">更深入</div>
+                <div class="label-item">更系统</div>
+            </div>
+            <div class="prompt-wrap">
+                <span class="prompt-icon"></span>
+                <p class="text"><span id="layer-allselect">生成综述最多支持50篇文献(博硕士论文1篇按2篇计)，您已选50篇，请删减。</span></p>
+            </div>
+            <div class="description-text">
+                <p class="title">选文说明：</p>
+                <div class="content">
+                    <p class="desc-item"><span class="num">1.</span>可选文献篇数：最多50篇文献（其中博硕士学位论文选1篇按2篇计数）；</p>
+                    <p class="desc-item"><span class="num">2.</span>可选文献类型：期刊论文（中文、外文）、博士论文、硕士论文、会议论文（国内、国外）、重要报纸；</p>
+                    <p class="desc-item"><span class="num">3.</span>综述生成说明：系统将基于中文文献的全文、外文期刊的摘要信息生成文献综述。</p>
+                </div>
+            </div>
+        </div>
+        <div class="btn-wrap">
+            <!-- 按钮共四种提示，注意区分 -->
+            <span class="wxzs-btn">我知道了</span>
+        </div>
+    </div>
+</div>
+</div>
+
+</div><div><!DOCTYPE html>
+<html lang="en">
+<div id="main-content" method="post" name="gridTableForm">
+    <div id="gridTable" class="search-result">
+        <div>
+            <!--从配置获取的模板内容-->
+            <div><div><table class="result-table-list"><thead><tr><td class="empty"></td><th>Title</th><th>Author</th><th>Source</th><th>Publication Date</th><th>Database</th><th>Cites</th><th>Downloads</th><th>Options</th></tr></thead><tbody><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifnKj9PQHJFcX8rqiBxrcPHsrmTi6ME9dPGiJcxx7d1W4nDa1x0Roidi_RcpyaNH-4!"onclick="$(this).filenameClick()" aria-label="CookieName">1</input></td><td class="name" isTranlate="true" textId="TI"><a class="fz14" target='_blank'href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa6OgkURO4SN-jgA00-vjgr-E6OAYTIp0rYoCDZerMBb2vGRITimtcdfv3r_wKsBW9bfUttNgbpJqFYbzgCe5aCAVM2hLrHbjp1nfPuoxbVoPxZucOtjRr43Ya7KcB5fQuwomzt3TxMsWczWnX0zjQBsK3ttVR3HC2YcdprOSHq0Q==&amp;uniplatform=OVERSEA&amp;language=EN">Molecular mechanisms of the regulation of <font color='red'>NLRP3</font> inflammasome-mediated pyroptosis by active components of traditional Chinese medicine for maintaining immune homeostasis</a><B class="cMarkSign">Chinese Full Text</B><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>黄嘉欣;曾丽蓉</label></div></td><td class="source"><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --><p><a target="_blank" href="https://oversea.cnki.net/knavi/detail?p=cOadEZaRI6jUebbB21sRo6Ki8KxbKLZfPcbjLwEvS-RcBm9yeCsOC5X7RZ77R4A8O0zERyxjnMB-LyaR4nKiIaEIrjiRxiQgA7_BUfGAr1U=&amp;uniplatform=OVERSEA&amp;language=EN">Chemistry of Life</a></p></td><td class="date">2026-02-10 14:31</td><td class="data"><span>Journals</span></td><td class="quote"></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>118</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvjMKNSQwBIl4wRdJzL0QEWzXcAnP8r1CXQr3sOk9lHqSdiav7iET7Mq4oVfDguQr%2BgNfkmWr1JoASWrBaJVDDG4Yz7hIz%2Bm4gioz%2Fd0uFLWAKNpqZ87Xp6tkLK6WMt2WI6t2Q%2BoIEwn%2B3E%2FP6IjfZ3BQKyIbimdlF3Fa3mi1rfYTFDHlan2Ny521QRZ3WxJ1LV9FujRJvB6rGz%2BRtk1JQWPWL0c14yPIs9szc3%2BjM9iZgIB198jWX7C38shac951B507Hz2mrAJlVEnT09Lh1Nc%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-html"href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvjMKNSQwBIl4wRdJzL0QEWzXcAnP8r1CXQr3sOk9lHqSdiav7iET7Mq4oVfDguQr%2Bss0BGBRaVrsWi8nNpOGFQ2KYUMOo8J8xduABzFUNW8cwchwR2FN4KCUBRwOPEA0KFoI06JeZj3AHASLOphhm2qG0ijNqVoNzldE1orryXW9cWb5TCAXW1ngI2SSaijhlPDCgeGKu1uNRBTe%2FwJNOaFa9C1UCCEZT7StY81edvHYIHJYE2rgQQC%2FNe0jOCw%2F26JCPG%2Fydti3ObkO2TEaRn0%3D&amp;language=EN"target='_blank' title="HTML Reading"><i></i><b>HTML Reading</b></a><a class="icon-collect" title="Favorite" data-dbname="CJFQ" data-filename="SMHX202602001"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifnKj9PQHJFcX8rqiBxrcPHsrmTi6ME9dPGiJcxx7d1W4nDa1x0Roidi_RcpyaNH-4!&amp;mimetype=XML&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2xq0UTkTF-TWASB0GCmPfZ3xvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK"onclick="$(this).filenameClick()" aria-label="CookieName">2</input></td><td class="name" isTranlate="true" textId="TI"><a class="fz14" target='_blank'href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa6OgkURO4SN-jgA00-vjgr-E6OAYTIp0qV1qVvVZeK8pvtHmOie7lYim16ZYet1V_pqTc9dSp9pdfDUVDRQsyisCpjHQZ7RJuALJJOd7IBqgBQhjPrzGW-CGAoB8Po7XROxZLGbCBopCh3IHKmHojumKJsdi0-V5fOB6ZTqmYy7A==&amp;uniplatform=OVERSEA&amp;language=EN">Effect of <font color='red'>NLRP3</font> Inflammasomes on Development of Diabetes Mellitus and Its Complications and Chinese Medicine Intervention via <font color='red'>NLRP3</font>:A Review</a><B class="cMarkSign">Chinese Full Text</B><B class="cMarkSign">English Full Text (MT)</B><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>苗晋鑫;彭孟凡;任伟宏;苗明三</label></div></td><td class="source"><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --><p><a target="_blank" href="https://oversea.cnki.net/knavi/detail?p=cOadEZaRI6jUebbB21sRo6Ki8KxbKLZfPcbjLwEvS-RcBm9yeCsOC5X7RZ77R4A8xgMy4xu8DFYmQkXVbsYCX4gmETNFdV5vuEZ2RlNm5Ec=&amp;uniplatform=OVERSEA&amp;language=EN">Chinese Journal of Experimental Traditional Medical Formulae</a></p></td><td class="date">2022-06-08 07:00</td><td class="data"><span>Journals</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa6OgkURO4SN-jgA00-vjgr-E6OAYTIp0qV1qVvVZeK8pvtHmOie7lYim16ZYet1V_pqTc9dSp9pdfDUVDRQsyisCpjHQZ7RJuALJJOd7IBqgBQhjPrzGW-CGAoB8Po7XROxZLGbCBopCh3IHKmHojumKJsdi0-V5fOB6ZTqmYy7A==&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">18</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>1185</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdq%2F0vXAQuV35Z0QgBQiDxeFMKa90HNqv2A37tBfl2ps4AFgbiuO%2BufETHKwLuVHSr17b5mY%2FmsIpB5E%2FKF94iQVwddxEU3rL3oTHoiWc6PitFK57xT%2B8LhM%2BfEqYWvBGm18f9oV%2B%2Bf%2FPSCFwTjaLsqqffnP7SR%2Fg40lxqrpi1U1Uv95%2Bslt7GbvkPlPIHFzAbOPrNqMJKpFPk2AUb0HByGXEwIqnUGm6RqLaciOjVtZOHtr09vED%2F%2BTJIZmBG1xNo0%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-html"href="https://o.oversea.cnki.net/barnew/download/order?id=Pmp%2F5es3RB81cmauPwpbvsPMJcfwHgIZAnUyOJG6Kdq%2F0vXAQuV35Z0QgBQiDxeFMKa90HNqv2A37tBfl2ps4I%2BVXnLlTCpLnI8F%2BOvobM2L6pUY4deTV2VvozAOFIpRZPJZEQefXW1RVS3a1v8jK%2F1BfoaD1y1Qo7XRFd7QjHq6VESuuAaDdD4jX3%2BgEcSihWyT%2FG87uwauxftBx02tVMS4A7YlHRtFPWDo1PN%2BHCmkFBwij2iKyC8T97PI9gdAVy4bRiDUO%2FDsgACyyKGm7gH2PnPNjJFfKb39JoumyqbIQKshz2c1JEFBP7B97GnQ&amp;language=EN"target='_blank' title="HTML Reading"><i></i><b>HTML Reading</b></a><a class="icon-collect" title="Favorite" data-dbname="CJFQ" data-filename="ZSFX202216032"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2xq0UTkTF-TWASB0GCmPfZ3xvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK&amp;mimetype=XML&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQBaMguijXMBxcvP38bl-CNwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ"onclick="$(this).filenameClick()" aria-label="CookieName">3</input></td><td class="name" isTranlate="true" textId="TI"><a target="_blank" class="fz14"href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa6OgkURO4SN-jgA00-vjgrRWnar3cybRa-9S22YkPADJtE9Zx9Gcm8xJuLx1p4D20R-B9L2o7XE8-fQgWhMdKcPWbLEsG5vHLHr7CfcEBmHncMak0D4KUhHEIKa8UQyBnbxcPa4hLHRW93kPnIGjeJZeG77JnpIO-l3oiRVXooLLQEXFMGS9cH&amp;uniplatform=OVERSEA&amp;language=EN">The Antidepressant Mechanism of Ganoderic Acid A via Regulation of FXR Receptor and <font color='red'>NLRP3</font> Inflammasome</a><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>李浩然</label></div></td><td class="source"><span>Chinese Doctoral Dissertations Full-text Database</span><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --></td><td class="date">2022-05-01</td><td class="data"><span>Doctoral Dissertations</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa6OgkURO4SN-jgA00-vjgrRWnar3cybRa-9S22YkPADJtE9Zx9Gcm8xJuLx1p4D20R-B9L2o7XE8-fQgWhMdKcPWbLEsG5vHLHr7CfcEBmHncMak0D4KUhHEIKa8UQyBnbxcPa4hLHRW93kPnIGjeJZeG77JnpIO-l3oiRVXooLLQEXFMGS9cH&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">2</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>323</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlIho6CT7hQ9BHSkHc%2BpKoV8h9%2F3QSIipCFMD5QN56ZcKy3O2AWK4Jv9GeXpfYzwosa0cFQSGzEa9F7E5Cof1zvmrGCFU%2FaSVtvunRXinwr%2BxsluG%2F%2Bfm8sD8gciM6IZM3TCHTwmLrv3yeu3pGlg%2B9M%2B1KBSNZjyz0s6dAPw6XWSKRFIIZX9L1du0K8CAe8%2BuhbK3%2F%2FWE0smiHtbCUITH5dh1%2BxmuORblI1NP3hKI013vabSfn7vfUHRCN4%2FsrSWJqQdbSaZKvySRRHlDqDd2cdj&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-read" target="online_open"href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDhxX4g1l54SIOvNwzzBG%2FlIho6CT7hQ9BHSkHc%2BpKoV8h9%2F3QSIipCFMD5QN56ZcKy3O2AWK4Jv9GeXpfYzwosZ6FpwXDBSQj9M3u4cvol3M3RkugKuSsyk7RDZqDzXb07v9cbg6fvx4W%2BjBjxjEHVzJrTzQ27CYD1jDvfsMhVxtSTeHrVbaFzRmL0ek2UhhAxC%2BgTlxY38AT7S0hq9ZucDtGJ7kHPu2oqX2n3cUElWhySeFz0PszBWFEtDQ1zufKQ05XmmAJgnv%2FPx5RCpooWmfKnufvMkD2inKzYZ%2FOez7&amp;language=EN" title="Read Original"><i></i><b>Read Original</b></a><a class="icon-collect" title="Favorite" data-dbname="CDFD" data-filename="1022057001.nh"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQBaMguijXMBxcvP38bl-CNwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&amp;mimetype=PDF&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr><tr><td class="seq"><input class="cbItem" type="checkbox" data-cur="1" name="CookieName"value="RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn4Wf2bWvjoiRrfOQFp7Fe5hFl849V_KNsQ5Jnf-N0sGvPhQCRo5kYiP4eWkONp9c2"onclick="$(this).filenameClick()" aria-label="CookieName">4</input></td><td class="name" isTranlate="true" textId="TI"><a target="_blank" class="fz14"href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZbx15YRzsNHFpHZBelRtqMcbwuA96H4jnJ9yVD2-WMOg2WKFELVzy0Kem2bMIrwt8f-EO2bCez54FDb2cohq4wCXagh4Kmsw7lUuRUlDwIIlUGeC-prJMUmizLILvn0xKhab8s58C_ChUHNuOALKZIYe_nQHV0Yu34PRt98EJSLWif2nN5SJKz&amp;uniplatform=OVERSEA&amp;language=EN">Mechanism of Ganoderma Lucidum Polysaccharide Regulating Dectin-1 Receptor and Inhibiting NF-κB/<font color='red'>NLRP3</font> Inflammasome Signaling-mediated Remyelination</a><i class="freeIdent is-hide" title="Free" style="display: none;">免费</i><!-- <p class="name-mt" th:if="${!#strings.isEmpty(article.getMetadata().get('MTTI'))}" th:utext="#{Translate}+${article.getMetadata().get('MTTI')}"> </p>--></td><td class='author'><div class="authorinfo"><label>韩丽</label></div></td><td class="source"><span>Chinese Master's Theses Full-text Database</span><!-- 会议 表名是 IPFDTEMP 或者 IPFDPREP 的跳转knavi不加链接 --></td><td class="date">2022-05-01</td><td class="data"><span>Master's Theses</span></td><td class="quote"><span><a class="quoteCnt" href="https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZbx15YRzsNHFpHZBelRtqMcbwuA96H4jnJ9yVD2-WMOg2WKFELVzy0Kem2bMIrwt8f-EO2bCez54FDb2cohq4wCXagh4Kmsw7lUuRUlDwIIlUGeC-prJMUmizLILvn0xKhab8s58C_ChUHNuOALKZIYe_nQHV0Yu34PRt98EJSLWif2nN5SJKz&amp;uniplatform=OVERSEA&amp;language=EN&amp;anchor=citnet" target="_blank">5</a></span></td><td class="download"><div><a class="downloadCnt"href='javascript:void(0);'>343</a></div></td><td class="operat"><a href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDilyGh6M%2Foyu76w0rLQaKySenUHRCsFFkXZ%2BFtXfa%2BO3VkTBStnvQmcAhRPkKHDP3EDxJlVUmJzYT%2FVDBCzpLH4il80vbNomKFjMOhCCNkgbRL5TrvbD%2FzoXbHrAua2D%2FEYqVQU7m4DA0dixYqmPrAZ1%2Fe4MWtQzJtQ29M3Xdc4hITTsdsyfyUlAJ6iHGie1nAvRbA%2FTpJpanAh%2FjthKyYCLsQ5RHPdYnn%2BvflKXUwusezoJilMVxj%2BX26EuSI3qVgKHAa0nQDb4mHHpE%2BplP0g%3D&amp;language=EN" target="_blank"class="downloadlink icon-notlogged" title="Downloads"><i></i><b>Downloads</b></a><a class="icon-read" target="online_open"href="https://o.oversea.cnki.net/barnew/download/order?id=%2BbbrIbe6iiYA%2BvD8dQ0EDilyGh6M%2Foyu76w0rLQaKySenUHRCsFFkXZ%2BFtXfa%2BO3VkTBStnvQmcAhRPkKHDP3EDxJlVUmJzYT%2FVDBCzpLH7cU5DNpzsJBExlSG2DYJiyOKcEuiGBHYRrSZfqbgWXfAqrBqCZ4JEfMxq%2B%2BqHy9SIJlHhTb2cp3rnxs%2Btf%2FgURogCXv%2FPx9WtSPjUbLtL8nCDG3Py6J%2F5YRCvNWRbGS%2BdcGicHtvRgRutLEMwEqc%2BMh8y8OSbAO8ROsSAIbOILIa3nbIt3eE4nk4iXBjN59fs7zSBE%2FIluqRJn4aZREMLs&amp;language=EN" title="Read Original"><i></i><b>Read Original</b></a><a class="icon-collect" title="Favorite" data-dbname="CMFD" data-filename="1022057009.nh"><i></i></a><a class="icon-quote" title="Citation"href="javascript:void(0)"><i></i></a><a class="icon-airead" target="_blank"href="https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn4Wf2bWvjoiRrfOQFp7Fe5hFl849V_KNsQ5Jnf-N0sGvPhQCRo5kYiP4eWkONp9c2&amp;mimetype=PDF&amp;language=EN" title="CNKI AI Reading"><i></i><b>CNKI AI Reading</b></a></td></tr></tbody></table></div></div>
+
+        </div>
+    </div>
+
+    <!-- 分页-->
+
+</div>
+
+
+
+
+
+
+</html></div><input id="errorMsgHid" type="hidden" value="R0DPFOXP"> <input id="briefRequest" type="hidden" value="{&quot;queryJson&quot;:&quot;{\&quot;resource\&quot;:\&quot;CROSSDB\&quot;,\&quot;classid\&quot;:\&quot;R0DPFOXP\&quot;,\&quot;exScope\&quot;:\&quot;1\&quot;,\&quot;view\&quot;:null,\&quot;searchType\&quot;:2,\&quot;searchFrom\&quot;:1,\&quot;select\&quot;:\&quot;AB,TI,DOI,OA,CNTI,TB,DFR,OPY,LINK,LY,MTTI,LM,LAN,BKC,BH,KY,PTC,PFR,STATUSC,IT,ISA,WXBSM,PT,NPM,BID,DB,ENAU,ST,CF,BKN,WWW,ENAF,PM,VENDOR,PY,FN,TAG,FTP,ENTI,CDR,CNST,PAGEC,ENLY,ENST,DBR,AU,LLDWDM,JENTI,SYS_AF,SYS_AFC,SYS_AU,SYS_AUC,SYS_AUF,SYS_AUFC,SYS_AUTHORMETA,SYS_BRC,SYS_CAU,SYS_CLJ,SYS_CLS,SYS_CO,SYS_CONTENTS,SYS_CSCD,SYS_CSI,SYS_CTC,SYS_DTC,SYS_EI,SYS_ENAU,SYS_FN,SYS_FTP,SYS_FU,SYS_FUC,SYS_HX,SYS_JU,SYS_KY,SYS_LY,SYS_LYC,SYS_NPM,SYS_PY,SYS_QI,SYS_REFBH,SYS_SCI,SYS_ST,SYS_STI,SYS_TAG,SYS_YE,SYS_专辑代码,SYS_英文关键词,SYS_英文论文关键词\&quot;,\&quot;aggr\&quot;:null,\&quot;rlang\&quot;:\&quot;CHINESE\&quot;,\&quot;pageNum\&quot;:null,\&quot;pageSize\&quot;:null,\&quot;sort\&quot;:null,\&quot;sortType\&quot;:null,\&quot;fx\&quot;:null,\&quot;expands\&quot;:{},\&quot;kuaKuCode\&quot;:\&quot;ON8XK5WL,B7ZYGRCM,BT8YKI4I,TBRPZP83,I8IOAWAD,HT3U9UVL,BHWTLLXZ,SZU0GLDC,IAF5Y951\&quot;,\&quot;qnode\&quot;:{\&quot;qgroup\&quot;:[{\&quot;key\&quot;:\&quot;Subject\&quot;,\&quot;title\&quot;:\&quot;\&quot;,\&quot;logic\&quot;:\&quot;AND\&quot;,\&quot;items\&quot;:[{\&quot;logic\&quot;:\&quot;AND\&quot;,\&quot;operator\&quot;:\&quot;TOPRANK\&quot;,\&quot;field\&quot;:\&quot;SU\&quot;,\&quot;value\&quot;:\&quot;灵芝多糖 NLRP3炎症小体\&quot;,\&quot;value2\&quot;:null,\&quot;title\&quot;:\&quot;Subject\&quot;}],\&quot;childItems\&quot;:[]}]},\&quot;Products\&quot;:\&quot;CJFQ,CAPJ,CJTL,CDFD,CMFD,CPFD,IPFD,CCND,CCGB,SCSF,SCHF,SCSD,SNAD,CCJD,CJFN\&quot;}&quot;,&quot;classid&quot;:&quot;R0DPFOXP&quot;,&quot;resLang&quot;:&quot;CHINESE&quot;,&quot;resource&quot;:&quot;CROSSDB&quot;,&quot;kuakuCode&quot;:&quot;ON8XK5WL,B7ZYGRCM,BT8YKI4I,TBRPZP83,I8IOAWAD,HT3U9UVL,BHWTLLXZ,SZU0GLDC,IAF5Y951&quot;,&quot;pageNum&quot;:1,&quot;turnpage&quot;:&quot;&quot;,&quot;pageSize&quot;:20,&quot;dstyle&quot;:&quot;listmode&quot;,&quot;sortField&quot;:&quot;PT&quot;,&quot;sentenceSearch&quot;:false,&quot;sortType&quot;:&quot;DESC&quot;,&quot;boolSearch&quot;:true,&quot;boolSortSearch&quot;:false,&quot;productStr&quot;:&quot;ON8XK5WL,B7ZYGRCM,HNXQ58ZR,RJS22WAT,BT8YKI4I,48VMO652,XL02BDJN,TBRPZP83,I8IOAWAD,HT3U9UVL,HL17GJRY,93TPH0PF,G86PCZM9,BHWTLLXZ,SZU0GLDC,IAF5Y951,&quot;,&quot;productStrNumber&quot;:&quot;{\&quot;CJTL\&quot;:\&quot;0\&quot;,\&quot;CDFD\&quot;:\&quot;1\&quot;,\&quot;CCGB\&quot;:\&quot;0\&quot;,\&quot;SCSF\&quot;:\&quot;0\&quot;,\&quot;CCJD\&quot;:\&quot;0\&quot;,\&quot;CAPJ\&quot;:\&quot;0\&quot;,\&quot;IPFD\&quot;:\&quot;0\&quot;,\&quot;SCSD\&quot;:\&quot;0\&quot;,\&quot;SCHF\&quot;:\&quot;0\&quot;,\&quot;CCND\&quot;:\&quot;0\&quot;,\&quot;CJFQ\&quot;:\&quot;2\&quot;,\&quot;CJFN\&quot;:\&quot;0\&quot;,\&quot;CPFD\&quot;:\&quot;0\&quot;,\&quot;CMFD\&quot;:\&quot;1\&quot;,\&quot;SNAD\&quot;:\&quot;0\&quot;}&quot;,&quot;aside&quot;:&quot;Subject：灵芝多糖 NLRP3炎症小体&quot;,&quot;searchFrom&quot;:&quot;search range:ALL&quot;,&quot;start&quot;:1,&quot;size&quot;:20,&quot;manageId&quot;:null}">  <input id="curPageHid" type="hidden" value="1"> <input id="totalCnt" type="hidden" value="4"> <input id="isSortHid" type="hidden" value="false"> <input id="pathAnalysisHid" type="hidden" value="https://oversea.cnki.net/kvisual8/"> <input id="hidGroupCount" type="hidden" value="{&quot;CJTL&quot;:&quot;0&quot;,&quot;CDFD&quot;:&quot;1&quot;,&quot;CCGB&quot;:&quot;0&quot;,&quot;SCSF&quot;:&quot;0&quot;,&quot;CCJD&quot;:&quot;0&quot;,&quot;CAPJ&quot;:&quot;0&quot;,&quot;IPFD&quot;:&quot;0&quot;,&quot;SCSD&quot;:&quot;0&quot;,&quot;SCHF&quot;:&quot;0&quot;,&quot;CCND&quot;:&quot;0&quot;,&quot;CJFQ&quot;:&quot;2&quot;,&quot;CJFN&quot;:&quot;0&quot;,&quot;CPFD&quot;:&quot;0&quot;,&quot;CMFD&quot;:&quot;1&quot;,&quot;SNAD&quot;:&quot;0&quot;}"> <input id="hidTurnPage" type="hidden" value="8Kf6r96aVUubfe4hUZXU-w!!"><input type="hidden" id="freeLogoData" value="wyCsKVqrup8xZVUiDBib6SGsvXm9I8vj8gMKYnieaWv2YJybXhrtjQLMAPEmI6hCliH_0kkx4386jsaDpVtgx8C0fTN95vmnuZ5mirIeoXvQdB-AeBnC473VjAPAXoaY3ORRCvF6dIq_-EBDnAFoa51PmAmp5BMxj1OsoMiJsIOGORBWrXbh1eZPAG9ZSOqwCY_q1yKBFFPXNeKia3Ta1cUEF8DQRKE1vvYn7QDkaeqGrZnZO9P1HZJ1klEz4iIpCADUxfS4FUIicgUphXGmsw9ErNjdEMJqtFDAyTml5Bbl1TByz4ygZd8uenqg6JBZlklCgvDDshNhQww37edZmG2YW6Z5Jw6j6SP43HYkt0Ex4hzny2c_U41K87ahcCYP5y1sJj8ZVR77fz2yH068xii_zji0VTnXSa3kBxjRhezUYtlESYFtjfe_iCDRiFgSPp84N2ZDDGzXzXntfwH9Bg==,wyCsKVqrup-NjJLpyk0g_nr1rZ0BajPhGYGjQi2sCNTf5lHZebQx7Bc9HXFocUUjzsRzOhTSVJGuH57eS2Zf_zoa5F2HgNEyzyK6R7VmDwiOK9nMJ6ozeT1MQUd4mfzEqqm77PFgdCPxCuv5Y1tP-NruZUm3N8IS7EkBi6fNFe8pZZuHbaIQVGHfddOrNmB0ZYFj7j8RWlzf9tukQDerYd7yyHkgl6pEvZ--bpaTO99ApaAfeXJmTpft33d0crJE4jyKhVD4XunVJ4SNJDYLVTsHONZZmy60Cx1_AB71m1SeSstNoUmlaHQGzaQ8dsL1o-SQnk8MQ9bPP1Iy2cMMSEgkCOSymtgoXwhwaQeQKWc5sMoplxeSP57aic_A5FYgLp-hDWRDwXrXkdgvoH16N20H87pjS374,wyCsKVqrup8lU_2sbafE3n9Foibp_8hMJ9ctTeP2tfi-C6dLxA6lchR3y2Vq0uei39tsKeDGXiBKozjXPKKZP8HwCco-J99XDaSPdkMMTIP6XCec8cYvDwkcjUETOZ6uGrP3ZO-k7m0jFowM42QgRgFKRyv5u2lOfcRGPtqXei9QCjMKnxDn2WtXAZaF0dTJ2Tvyho_6BFV_VojOFjG83w==,wyCsKVqrup8lU_2sbafE3iC-uE2o2Yv7S3PSFh-ijdugjy2vBSZb-3-qLKjlUYtZlpkPLFFvt-NN0oTsK4BHCiXg5q-DcBPHyjbJmx-dZqB_1x3TQMpC8wYHZ5wk1QPmsEurHkGVv6l3Rz74ztIAknHztscHr5nK3RV_ugADOpx1hUmlzG0ue2BaQAN5YBOvVt1YtmQ7v3E="> <input type="hidden" id="isFreeLogoEnable" value="false"><input type="hidden" id="hidDocprev2" value="https://oversea.cnki.net/docpre/v2/api/inner/multi-statusex"> <input type="hidden" id="hidGetFolder" value="https://kns.cnki.net/restapi/aipower-doc-api/v1/session/muti/getsession"> <input type="hidden" id="hidAddFolder" value="https://kns.cnki.net/restapi/aipower-doc-api/v1/session/muti/add"> <input type="hidden" id="hidAddFile" value="https://kns.cnki.net/restapi/aipower-doc-api/v1/session/muti/addbysid"> <input type="hidden" id="hidCnkiStudy" value="https://ai.cnki.net/study"></div>

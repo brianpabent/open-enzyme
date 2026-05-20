@@ -1,0 +1,12 @@
+{
+  "url": "https://oversea.cnki.net/kns8s/brief/grid",
+  "query": "灰树花 NLRP3炎症小体",
+  "category": "maitake_huishuhua_nlrp3",
+  "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B0%E6%A0%91%E8%8A%B1%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+  "fetched_at_utc": "2026-05-20T18:36:59.149268+00:00",
+  "curl_returncode": 0,
+  "stdout": "200 text/html;charset=UTF-8 https://oversea.cnki.net/kns8s/brief/grid",
+  "stderr": "",
+  "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_e56518ae04cb.html",
+  "query_json_shape": "browser-captured OVERSEA CROSSDB Subject SU TOPRANK, Rlang=CHINESE"
+}

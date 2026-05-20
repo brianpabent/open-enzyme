@@ -1,0 +1,1693 @@
+{
+  "created_at_utc": "2026-05-20T18:37:27.509217+00:00",
+  "scope": "P0-4 NLRP3 mushroom immunomodulation: Lingzhi spore powder, Yun Zhi PSP/PSK, Maitake/Grifola, fungal polysaccharide NLRP3/IL-1 beta/gout frames",
+  "method": "Browser-captured CNKI Overseas /kns8s/brief/grid POST shape replayed with local curl; parse first page result table. Discovery only, not evidence-tier promotion. A focused correction pass added fraction/common-name terms after exact species/product+mechanism queries returned mostly zero or noisy results.",
+  "query_plan_correction": "Added 灰树花 as the Chinese common-name frame for maitake/Grifola frondosa; 舞茸/マイタケ are Japanese framings and under-fit CNKI Chinese subject search.",
+  "queries": [
+    {
+      "category": "lingzhi_spore_nlrp3",
+      "query": "灵芝孢子粉 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%AD%A2%E5%AD%90%E7%B2%89%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_961444620f1d.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_961444620f1d.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "lingzhi_spore_il1b",
+      "query": "灵芝孢子粉 白细胞介素1β",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%AD%A2%E5%AD%90%E7%B2%89%20%E7%99%BD%E7%BB%86%E8%83%9E%E4%BB%8B%E7%B4%A01%CE%B2&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_1dbb13be5651.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_1dbb13be5651.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "lingzhi_spore_gout",
+      "query": "灵芝孢子粉 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%AD%A2%E5%AD%90%E7%B2%89%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_c1913b4a79fb.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_c1913b4a79fb.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "lingzhi_nlrp3",
+      "query": "灵芝 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_89b66378ca61.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_89b66378ca61.provenance.json",
+      "total": 9,
+      "top_records": [
+        {
+          "title": "Molecular mechanisms of the regulation of NLRP3 inflammasome-mediated pyroptosis by active components of traditional Chinese medicine for maintaining immune homeostasis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaNTacdOaoYJAM1dSKQ3amC6ZzceGPpQKS1Uk06BYIlI7X8oOjsDn-O-RVItCfZ2tiJNn_MdEWuR4lPCmUJx0ISGIYHehT73QXq0gAGjKxuHtWrNC9Os7xzvjavyr9qSYVLNiZVKfVe8RKt22cl_bTBD88WnmmFIRJwKXq7L3VEqg==&uniplatform=OVERSEA&language=EN",
+          "authors": "黄嘉欣;曾丽蓉",
+          "source": "Chemistry of Life",
+          "publication_date": "2026-02-10 14:31",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "118",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifnKj9PQHJFcX8rqiBxrcPHsrmTi6ME9dPGiJcxx7d1W4nDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "灵芝肽GLP4通过调节精氨酸生物合成并抑制NLRP3炎症小体激活减轻心肌缺血/再灌注炎症反应",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaNTacdOaoYJAM1dSKQ3amCNkYrVVOPQhHRqGuqku0DZvoM68pPeCtXwOoensnHgT5QieiSAckpzx5li_rRi5DtzwL6pORzL9Ez1Lsw0TdIDNV1SpOqCJeGdACQ7lhO4wQZUOE2KbOyOLSnMSXYlAiMW4o4XmX-ereK9GjqDRb2rhsqZc-aUdoR&uniplatform=OVERSEA&language=EN",
+          "authors": "王浩锦;黄萍;刘高强",
+          "source": "中国菌物学会2025年学术年会论文摘要——学生组",
+          "publication_date": "2025-08-15",
+          "database": "China Conferences",
+          "cites_text": "",
+          "downloads_text": "59",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Cepas2vDv1UfxKriHl_KOREioDQGUYyP45GzgsBWMKX8LDGH3olE2pujvp2Jx5X9yJFNwRngaa8hRGKkxsIXfaaHqcM5j5jnQu7zZAyA8K25bzGfkxoMx_T51wxMfqfc&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research Progress of TCM Intervention of NLRP3 Inflammasome in Treatment of Intervertebral Disc Degeneration",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZIl628-V4A0PmRtm57WdZPbRchmvBPTRZwJcdC7c_m99vagow8ZPxJInoU8JNVdbIIeYy__u3vWFNQZ5YBrdLEk0Y-n-ALfhOSpfxC0S6l8MAfVN24c8PfrG7uJL4KAbJOn5MJ8NfxpVhQE8JPtYW0SOQocs8_tk025CwUKC57Ww==&uniplatform=OVERSEA&language=EN",
+          "authors": "邵文鹤;王想福;陈伟国;赵恒;张万乾;谢芋涛;陶瑜晶;任毅;杨建霞;杨鹏程",
+          "source": "Acta Chinese Medicine",
+          "publication_date": "2024-09-12 14:03",
+          "database": "Journals",
+          "cites_text": "3",
+          "downloads_text": "475",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieTC8tWhw1LL37C7mu7lZK12_2HKB0quJaVzwVfRhXEaA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "朱世荣",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "443",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnlnXMpMFZkLZycms4BXcq0BMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "黄萍",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2024-05-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "2",
+          "downloads_text": "330",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQ1snADAh97LRp9PbHvOJI9wneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "颜如玉",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-05-01",
+          "database": "Master's Theses",
+          "cites_text": "3",
+          "downloads_text": "604",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnzObqjZ5suz7L7bvOUqk8rxFl849V_KNsQ5Jnf-N0sGvI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Chinese Medicine Intervenes in NLRP3 Inflammasome in Treatment of Bone and Joint Diseases: A Review",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYOOfcDBMsCgZJuYWLsIZHQbeaUfBMcXimsrQrQPTZH05r8R8Xr7AACm3GuhTexbiUKUQYBb0IaKXnU3bLeg50JoLWpo91nR0GlrIhFMbjXjrzmOXNdZFEv_L23xtiI34UiEtEKuOaVRhCGx8cNNv8sbUbllGNe-WNpXPq51w6NPw==&uniplatform=OVERSEA&language=EN",
+          "authors": "张团庄;宋渊;何志军;刘涛;吕汐妍;魏晓涛;沈稼轩;梁旭东;朱克玉;乔靖",
+          "source": "Chinese Journal of Experimental Traditional Medical Formulae",
+          "publication_date": "2023-02-13 16:43",
+          "database": "Journals",
+          "cites_text": "19",
+          "downloads_text": "1307",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2xeyqRvPz4z-ztoz49bstI4q3tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "李浩然",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2022-05-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "2",
+          "downloads_text": "323",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQBaMguijXMBxcvP38bl-CNwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "韩丽",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2022-05-01",
+          "database": "Master's Theses",
+          "cites_text": "5",
+          "downloads_text": "343",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn4Wf2bWvjoiRrfOQFp7Fe5hFl849V_KNsQ5Jnf-N0sGvPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "lingzhi_hua_nlrp3",
+      "query": "灵芝 高尿酸血症 NLRP3",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87%20NLRP3&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_465eed23d1ab.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_465eed23d1ab.provenance.json",
+      "total": 1,
+      "top_records": [
+        {
+          "title": "Reevaluating the Purine Controversy and Health Effects of Edible Mushroom: Multidimensional Regulatory Mechanisms in Hyperuricemia and Gout Risk Management",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbEYRhXvsxXDgXt9zzNYhy8-vY5bNR6KTi4XcVjmYmtRH2-yd4HPn5hThvaVE3ei8Bjjl_4PmaxOIYAL8XRWoxp8y9i4bm2tFJ9Ir-0DIKE0DWih-3ZGBpywjiMtq-IczUAIEre1U_g77gAdJquFl05mEOOPhARYNPkmSbH0FpznQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "周锫;潘易;华蓉;杨宁;何容;苟学磊;陈正启;孙达锋",
+          "source": "Food Science",
+          "publication_date": "2025-10-24 09:22",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "433",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgic0ldrxfWm7D0oHv7BY5C1vr0PDclHHnQQ1zbIdPXsGkSuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "yunzhi_psp_nlrp3",
+      "query": "云芝多糖肽 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%E8%82%BD%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_371685662e14.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_371685662e14.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "yunzhi_psp_il1b",
+      "query": "云芝多糖肽 白细胞介素1β",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%E8%82%BD%20%E7%99%BD%E7%BB%86%E8%83%9E%E4%BB%8B%E7%B4%A01%CE%B2&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_24fc04103334.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_24fc04103334.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "yunzhi_psp_gout",
+      "query": "云芝多糖肽 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%E8%82%BD%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_c1ce1143b2f7.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_c1ce1143b2f7.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "yunzhi_nlrp3",
+      "query": "云芝 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_fcbba90407ca.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_fcbba90407ca.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "psp_nlrp3",
+      "query": "PSP NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=PSP%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_317a0051c370.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_317a0051c370.provenance.json",
+      "total": 2346,
+      "top_records": [
+        {
+          "title": "Research progress in role and molecular mechanisms of NLRP3 inflammasome in HIV/AIDS",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYBfbicA94caNUXT676ov_uKpWKLf1QNwsSWvIi8LTwq_4qfHXDSHtNw-MbjB246oV4sw4HWX6-2nKN3dWpYNUKF9SrByZLj8fSyct90ZIMN9lqmRPlfPLOA3-bBVSpOkqZsfGHd2IhubJ0pntGRFl3WJqZD7Twwax1UMHCJnyUSg==&uniplatform=OVERSEA&language=EN",
+          "authors": "李玉杰;徐立然;徐芙蓉;马秀霞;邱荃;岳静宇",
+          "source": "Chinese Journal of Nosocomiology",
+          "publication_date": "2026-05-19 18:48",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "2",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicLL4xKfEPrqnfvoh4EewJ0S7BMOVHQ1U4s5a7RnD_ae_15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "The Mechanism of Danlou Tablets in Improving Myocardial Ischemia via the NLRP3 Inflammasome-autophagy Pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYgGF7h7N39lSzQNMlC9JkyEv0ZA6G39gYffPTTRZrNMyC0Ryb6sBtwZQRZi07DY19RIyJf-ZPuu4chDF-kjh1GhH41o2uNgY6EaBtqh93TbVOeDEfaG7SIqQITU8iw79EQ7g9BpZRRCF7Dybi03N1S6zZqjIRifpek01UsVRpSSA==&uniplatform=OVERSEA&language=EN",
+          "authors": "高婷婷;范静;魏晓秋;杨柏松",
+          "source": "Chinese Journal of Integrative Medicine on Cardio-Cerebrovascular Disease",
+          "publication_date": "2026-05-19 16:28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "1",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgifKiB1lVpOf3lUmWXccZiii6SlWRaCK4B7fTN_npq7mcP15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research progress on multidimensional regulatory network and targeted therapy of NLRP3 inflammasome in anxiety disorders",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYgGF7h7N39lSzQNMlC9Jky78KUSrtqtd51NST0qYY7fTbpNaCJWixLJ63zu0O55PwcOVeEs29I1jich0NJQYkfITyW77oOU2Cs4BnfibSCW3YErMVaQEDe-S5sFmwItvdKQt1matnL8FhA_DtFv2Rat-g7tWJhg10jfrN1PSGvEg==&uniplatform=OVERSEA&language=EN",
+          "authors": "马佳玮;任燕",
+          "source": "Journal of Neuroscience and Mental Health",
+          "publication_date": "2026-05-19",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifJlIwgpOJseIOo89dxzJfwC97A_WtFHb-JdgRaR16EPonDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Astilbin inhibits pancreatic stellate cell activation via the NLRP3 inflammasome",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWavfWD_be6lKIlHvXnZYAArKcRUMmhcb4ZH_mFT6AcpwN8hOC81aQTZ5oL5bGlUTjE3YvViqB7teJ5y1K4FlSvddWdNJStcHjqm4Iiy2W38cU3Q1BBpFPytWdfFQCxtfrkEYekWhPBWRy5hoqPkbKa07uwfAUiiWo8cj-Tc9L1YiQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "崔立华;李棣华;张兰秋;陈明;李彩霞",
+          "source": "Chinese Journal of Surgery of Integrated Traditional and Western Medicine",
+          "publication_date": "2026-05-14 14:13",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "12",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicumTG-JPXnK1AuPfTyntnegFow_V7dLRHXNsmwK1fQHP15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Antidepressant effects of Xiaoyao Powder （逍遥散） through the Hippocampal NLRP3 inflammasome pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWavfWD_be6lKIlHvXnZYAArXxeRselrRAYJa5g4gLHZvZ7SJwD9B93vxIpyp-q45M62lrQRqP3uB_YDGiOTMZ0-rWu7T-VcBrxHOfvrswqkdEzVZ3SaqHmGhHQNNOo1yyNPpZ5e3RmB3eueAJPctvpii-cQKmoefeqkQ0ktNzwgHw==&uniplatform=OVERSEA&language=EN",
+          "authors": "朱文俊;袁艿君;汤曼诗;唐自豪;佘楷杰;黄敏仪;马庆宇;陈家旭",
+          "source": "Journal of Li-shizhen Traditional Chinese Medicine",
+          "publication_date": "2026-05-11 18:19",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "99",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieqtCXyRX_FlU3xFYe4bKhwX4RlAp5DiPzSMpPDq-IRdInDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Exploration of TCM Mechanisms， Diagnosis and Treatment of NLRP3 Inflammasome in Heart Failure Complicated with Anxiety and Depression Based on the \"Xuqi Kenang\" Theory",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWavfWD_be6lKIlHvXnZYAArKcRUMmhcb4aaYTkVp41kRHdx765rbIZJDVlfA55ID_gIrvonj5TtoWaL31ejT5uAjnwkPH9DlHGfoWgVrxNPTjeVdrSGTiGahgQdlz_DmQ--ec305XhIWzOTp_lgxPEqZZSGLwQ2LSyk2GXI2qtQYg==&uniplatform=OVERSEA&language=EN",
+          "authors": "戴敏;曾凡玉;李霞;易凤姣;冯君",
+          "source": "Acta Chinese Medicine",
+          "publication_date": "2026-05-11 15:22",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "46",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgieTC8tWhw1LL37C7mu7lZK1dY_Q0jFc1VoyF_gOinZ4sP15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Transcranial Direct Current Stimulation Alleviates Endometriosis-Associated Pain by Inhibiting NLRP3 Inflammasome Activation",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWavfWD_be6lKIlHvXnZYAArKcRUMmhcb4bbvcaP7R0rPp44Dz6o9LPtmlTa4cOBLkvPQ9l5YDeOPfm37QXzzha54c0jiUTxWkFiMCxhh4wdndECHeKDu4OwVNt7hyxCvReGLDxEUP_UddNirDohbgh32nLl5DpNNMl42UcncD4FxA==&uniplatform=OVERSEA&language=EN",
+          "authors": "郑萍;赵立明;张雪芳;顾彬;尤爱虹;郎景和;冷金花;刘崇东",
+          "source": "Journal of International Obstetrics and Gynecology",
+          "publication_date": "2026-05-11 13:37",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "12",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgidZTw1drnZjBW55NBPlgFtk836bHUuu3A1XCoXmuEECJf15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research progress on mechanism of traditional Chinese medicine regulating NLRP3 inflammasome in preventing and treating \"inflammation-cancer\" transformation of inflammatory bowel disease",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbwB26lhDEXDyrIW0Mq4kYjzWsyVuJDd-kSSm_0wPqX8HqZGBtF0CZc0bfFkUh4uy5TA_uWua3LJIhKUt-QbiQqH0iSJFs87H9tq6bCVsmnqy-14YzCxUyhA0fVXh81Tn_fczSevJmwCd7chyJma3C8bdvC93bYsk-lYk1MbhY7Pg==&uniplatform=OVERSEA&language=EN",
+          "authors": "马丽;张丽娜;李生财;万斌;李彦龙",
+          "source": "Shanghai Journal of Traditional Chinese Medicine",
+          "publication_date": "2026-05-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "24",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidqAh8-3rpDPxYFwktUHL-3lTNQbOBauV13mYRjG9sJ7YnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Protective mechanism of α7nAChR activated by formononetin on NLRP3/NLRC4 inflammasomes against atherosclerosis macrophages",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbwB26lhDEXDyrIW0Mq4kYjy5BiwlHffiDBT4vT4vv7_Kgd0jYc8AQiPWw80J8rih-WMZ_3LE004Gv7i-Th6whvMvIH154zLbbf7UBLNtgilpK7U1jfQvePiNFu2QUo1pJTd_YW5PdCfNLNpaMmpzsiD_9WpMf9ApbS1VsV2wouYg==&uniplatform=OVERSEA&language=EN",
+          "authors": "邱玥;李世容;王文秀;唐梅;张敏;曹丽平;何前松",
+          "source": "Chinese Pharmacological Bulletin",
+          "publication_date": "2026-05-09 15:22",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "58",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgifhhYxpGAy_YrNUiJx1wrEGhw27hAMksESKML8ZVyPxvf15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Synthesis and NLRP3 inflammasome-inhibiting activity of novel substituted ester derivatives",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbwB26lhDEXDyrIW0Mq4kYjy5BiwlHffiB6hWMkXfuN0QWtPlMbM_1dUZ4eI5wNBplCgPMwpD_3encayzDLZra9FE7p68luk1HFyKRfOd6fy6CoMP2wtBGx3NcWCKjPxMWEWe-KwyuHWnaVpc9zTWaHAnIrhBNhBCWSqdy0g91tDg==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘敬龙;熊鑫;李洵平;闵真立;白敦耀",
+          "source": "Central South Pharmacy",
+          "publication_date": "2026-05-08 18:42",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "31",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgidxnGW3kR35CJyiZo6A3xejdb7tQfcDWrgVKBGw5IvLA_15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Inhibitory Effect of Volatile Oil of Amomi Fructus on NLRP3 Inflammasome Activation in Mice with Ulcerative Colitis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZSmsyFNwLuVWxEO1m86pjKWfXWAa_cLlKNTojoOPPk5Nwz914nTux716WE_Z9D1re7vdNN4hm_C65GC4oZKQ_yY60RzOCeH2itDL34e85L5-FSWV6xG2g1CLo6v1Ck6amWRPKWlsem67yAdKv8cqS0qwIzPMVOTK226y6h5ivUEQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "杜真聪;王天義;王晶瑢;章凤;毛晓健;王亭",
+          "source": "Journal of Chinese Medicinal Materials",
+          "publication_date": "2026-05-06 17:14",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "149",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicAxdDHGtK3rc4mCJcSageRjcC6N8FOzgI-Vh4l6u6HLv15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Experimental study on the regulation of Finerenone on atrial fibrillation susceptibility in diabetic rats by the NLRP3 inflammasome signaling pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZSmsyFNwLuVWxEO1m86pjKJlqVeP3omi7rd7Yvi_qAvtd100tXZ8yuTFW_bwwkkZcAHiEyXUvurw7Np1Ko9FPcdDZz2s48RH7zRJU-7qhPoGp8ErMSAtjlf18TlV-quP9ikG1NTv9jdxXEedPxALP29_0m3i7LBQfQPzWCdLGCAw==&uniplatform=OVERSEA&language=EN",
+          "authors": "蒙远雁;李烁;蒋智渊;钟国强",
+          "source": "Journal of Frontiers of Medicine",
+          "publication_date": "2026-05-05",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "14",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieHGDFd6Dy9NmS21or5QA2AF_U1f5b3Gde15wLfARTbVYnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Adiponectin alleviates high glucose-induced retinal angiogenesis by inhibiting NLRP3 inflammasome",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZSmsyFNwLuVWxEO1m86pjKJlqVeP3omi7EXwX0r0yNcPLDuQk7ze4ii73i4WLb_GMY-ELWBLexuIbtPdr1BJrdgehKm3qCGlUbIF30cfHj00X0neoTPyGUwSAQkSa4qiZuuEl0bPwNr4horhWnYkosWm2xPuXlRmUYI-ymmsDtGA==&uniplatform=OVERSEA&language=EN",
+          "authors": "张勇;王小娣;张艺馨;姚国敏",
+          "source": "International Eye Science",
+          "publication_date": "2026-04-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "13",
+          "flags": [
+            "English Full text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidwwCQWDG1DgG2HCXRTztimRyWR5isuoafD97C_zuBQKYnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Protective mechanism of lycium barbarum polysaccharide against pyroptosis in APP/PS1 mice via modulating the NLRP3 inflammasome",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb0AN-7heoqC0_iHeSl7k3GLu3b-VVTED2jGcuO57t3LD2ZSBroqmnMuw58m0YFpTLbLaAt1ChYLt7eA53Y3Kteqp7opYJRWEuzGC99mgAT-2SVUz5-TsOATtmSt7l1duUc6DhcsUgbEeFAwiJ5e4kZc9zKaJj-VPZ30ifbgyg97A==&uniplatform=OVERSEA&language=EN",
+          "authors": "贾思玮;郭敏芳;代慧敏;陈佳媛;王记委;孟涛;马存根;尉杰忠",
+          "source": "Medical Journal of Chinese People's Liberation Army",
+          "publication_date": "2026-04-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "8",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidZy8TH8-nZCvPVrYCnk-QZUes5_hge1q9ZJNGVEENkionDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Fostamatinib Inhibits the NLRP3 Inflammasome in Microglia and Improves Symptoms in Vascular Dementia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb0AN-7heoqC0_iHeSl7k3GLu3b-VVTED3Cuxjo7MxihOnAAIsH1MPFUB_gK_FQUl_WDPkLrjvtvocV7ERmSa59wNib953OFRb657do_I47_gMuyYj-zbslQXz9baVZGsl338zpj6LSTd1aD5jNIkQ_MKNr7U8ibBaPyseSwTFIgw==&uniplatform=OVERSEA&language=EN",
+          "authors": "邓钊红;王亚芳;何佳怡;田代实;王伟;胥瑾;秦川",
+          "source": "Neural Injury and Functional Reconstruction",
+          "publication_date": "2026-04-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "65",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifma2WQHztyTvlNvkE63y6q4v6iTzUr99Y3pRicqcTG6YnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Exploration of the \"dual heart\" effect mechanism of Danlou tablets based on mitochondrial autophagy NLRP3 inflammasome pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb0AN-7heoqC0_iHeSl7k3GLu3b-VVTED2YvGc6n7u3rooReeDob2f94CGgZ22pTpEYR0fGVc9X5PWgDgkVvBxrqkyXfDyAEVYw0JiB3vBw2qvPU93R98yzU3nA9JzVL6_eepW6RjSfMCjjkUAFjrZpgB8Uk6jRGeoMZAZg87hGSQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "高婷婷;范静;尹诗萌;杨柏松",
+          "source": "Journal of Shenyang Pharmaceutical University",
+          "publication_date": "2026-04-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "21",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiexjp1Vw3W-mH92QPWnfQOvKL9lcgVrxPdBZMSFeWKowYnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Low intensity pulsed ultrasound mediates S100A8/A9 to regulate the activation of NLRP3 inflammasome to improve sarcopenia in aged mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbJa0L24zCElh1MyrTSUmSvFDtnd0XwotX3plJmabNfEP0BOPS45B4XcrHODP0vn_M1w4AaZ2nfOEik3oLzg3dr0NzPjdW1mPMret2kBlV1RIj4lcC9H-kUl5paUuH2kEu2C3JAT7_34q9Q14NlAsjaJu0m3XST3iIk0a8g0VE1Mw==&uniplatform=OVERSEA&language=EN",
+          "authors": "徐剑;马雨佳;李丹;甘露",
+          "source": "Progress of Anatomical Sciences",
+          "publication_date": "2026-04-21 11:40",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "37",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicxmVhfiL1icLYaHQBiSAhqxOF7pFiYU8wW7kfRnhh_Y_15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research advances in the modulation of NLRP3 inflammasome by traditional Chinese medicine for lung cancer therapy",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbJa0L24zCElh1MyrTSUmSvFDtnd0XwotUHCYzd27iKn7A0449rX2377u-kqp516khsMuLzuYzeQmuJujbnaww2oIfF_nRsXINpUzdqhEYQWH-BkiUWVM1a7hkNbrDqbJRkXeiMR9KqA68yF345WLy7VQToiQZWM6ZC1l-rlWq4uQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "任德祥;夏小军;雷旭东;郑红刚",
+          "source": "Natural Product Research and Development",
+          "publication_date": "2026-04-20 10:18",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "182",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgifC5XJ30DHKBYXgAUMZDfstsyo2ltAJwZlRkTGPxxJ0Mf15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effect of methotrexate on serum NLRP3 inflammasome and pyroptosis-related proteins in patients with rheumatoid arthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbJa0L24zCElh1MyrTSUmSvSOKhHdevWBUZpiSwppswwZq3DKbMXJ3qXqBfKre5_RWpYsse2FMNxruCpvL6IBV5uMZr4ITkecfTloU91JODDu57yh-3bGFqbY4HPg_VX9Iv0LrcH9D1TZcGNCinw5HvlEMbZcsvusyBu32cVrdNhw==&uniplatform=OVERSEA&language=EN",
+          "authors": "周毅;胡广冰;邓丽青",
+          "source": "Clinical Medicine",
+          "publication_date": "2026-04-20",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "46",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifgGsnr7oabLeuvIEqfj7PL6O-g-rpHuWG0832tuPF9mYnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research progress on TCM regulating the NLRP3 inflammasome in treatment of diabetic atherosclerosis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZk_AcgEgto0FAqjtlfhWQZ9GmyqrnjStNJMFNRKmcxktiAXTqlSOV4_Wg7AzW2uDinaPlSy1Qvcreg1w8KnbykIWPM3yVOgtTjpmmDTnD_e6DMzZCnbv44uoNOCU0i3KTZIOTMGy9M4YcWlH43oh1DB_S41dmG6l_m6ZnqTleFmg==&uniplatform=OVERSEA&language=EN",
+          "authors": "牛少龙;孙云朝;王建民;赵家宁;张字源;张欣;马泽宁;吕延林;张青",
+          "source": "Journal of Hubei University of Chinese Medicine",
+          "publication_date": "2026-04-20",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "39",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgied4aPQin7QrYEMceXQ5XFI9sEZOL3WSNYtmkvbU3M6honDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "psk_nlrp3",
+      "query": "PSK NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=PSK%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_de17ac6ece78.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_de17ac6ece78.provenance.json",
+      "total": 2346,
+      "top_records": [
+        {
+          "title": "Research progress in role and molecular mechanisms of NLRP3 inflammasome in HIV/AIDS",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZn4hw7GK7gT5CAKF4WmgNzV5RU1Unw_qHLRT1fg2oiIOteLy_RKO68M9UmTieg-xFdUW3yca33WL1kPW2xPwAXMym1YQXBmo_JiprhOG5i2S8KhTdVGErfRo2lkr46fYVqRof6568E06hyyn7wx-pk9o4AoGFNzlUSQbPNatvQHA==&uniplatform=OVERSEA&language=EN",
+          "authors": "李玉杰;徐立然;徐芙蓉;马秀霞;邱荃;岳静宇",
+          "source": "Chinese Journal of Nosocomiology",
+          "publication_date": "2026-05-19 18:48",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "2",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicLL4xKfEPrqnfvoh4EewJ0S7BMOVHQ1U4s5a7RnD_ae_15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "The Mechanism of Danlou Tablets in Improving Myocardial Ischemia via the NLRP3 Inflammasome-autophagy Pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaopuO92r7Q-BDiN3xAGIBkxnse3_2IyLK8gHllKE6bZv8m1GEApiECfMh4CipNVsSOHySpqP1VLTq_jCn-1KGN-se3bykUR8EsX8ZhMs8cv_dNp3Vtp7c_piYuypQ2fhEFkMnDj3EsKLYyOEn_PkXzasM7qYYBCuMJA-JsKVy8tg==&uniplatform=OVERSEA&language=EN",
+          "authors": "高婷婷;范静;魏晓秋;杨柏松",
+          "source": "Chinese Journal of Integrative Medicine on Cardio-Cerebrovascular Disease",
+          "publication_date": "2026-05-19 16:28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "1",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgifKiB1lVpOf3lUmWXccZiii6SlWRaCK4B7fTN_npq7mcP15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research progress on multidimensional regulatory network and targeted therapy of NLRP3 inflammasome in anxiety disorders",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaopuO92r7Q-BDiN3xAGIBkB8-pJKR-TU5lB3lFe5iQZ9x1PDjUHp9grrZOq-3T7VKpFjYj6iNwT7dI6rSftk1lxCFosz7hQtPAqUEayEOANWIChvdz9VWv9XSX_8mqs0hCPNT1E_wHwplcp2FokFlXuYyVFoQ-kTsXqi1apAnYqA==&uniplatform=OVERSEA&language=EN",
+          "authors": "马佳玮;任燕",
+          "source": "Journal of Neuroscience and Mental Health",
+          "publication_date": "2026-05-19",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifJlIwgpOJseIOo89dxzJfwC97A_WtFHb-JdgRaR16EPonDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Astilbin inhibits pancreatic stellate cell activation via the NLRP3 inflammasome",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaopuO92r7Q-BDiN3xAGIBkxnse3_2IyLIhWTxomkUezAM97LSsiamLStJmsrx_z-VGY2Yrhblm09eoRljhcpvyWEAazfFL6EmQ9_rl5g41jDDbxx0xA-MaIxtWMst6_I2n1GZKsDaobx2TlFr-wC22JQrtT9tEQ25NmO_OfS6skg==&uniplatform=OVERSEA&language=EN",
+          "authors": "崔立华;李棣华;张兰秋;陈明;李彩霞",
+          "source": "Chinese Journal of Surgery of Integrated Traditional and Western Medicine",
+          "publication_date": "2026-05-14 14:13",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "12",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicumTG-JPXnK1AuPfTyntnegFow_V7dLRHXNsmwK1fQHP15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Antidepressant effects of Xiaoyao Powder （逍遥散） through the Hippocampal NLRP3 inflammasome pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbyUANjv_lbGWbtSa79JKIQ94ojfhg_Hdv_9hzcmT7c8MRpTeh3ybr2nnfYe8wCwFLAwlo3LQtE2Wkio_DZ8K0I4wEzlI_CVxPfK8S9BYN0QagpCeCb9aOaPnx9KT-jVfTkG7j7rohQHmCAAVZxq9M3x46SeM4ePivKaihMO3XYJA==&uniplatform=OVERSEA&language=EN",
+          "authors": "朱文俊;袁艿君;汤曼诗;唐自豪;佘楷杰;黄敏仪;马庆宇;陈家旭",
+          "source": "Journal of Li-shizhen Traditional Chinese Medicine",
+          "publication_date": "2026-05-11 18:19",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "99",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieqtCXyRX_FlU3xFYe4bKhwX4RlAp5DiPzSMpPDq-IRdInDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Exploration of TCM Mechanisms， Diagnosis and Treatment of NLRP3 Inflammasome in Heart Failure Complicated with Anxiety and Depression Based on the \"Xuqi Kenang\" Theory",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbyUANjv_lbGWbtSa79JKIQb-k4wuIxZvWZGvGKhEz6kROEX-sYpY5Ml9J0tizcArbalVl9a74Hfj0fZwNyHvWYxbq0IfVmHiI3r30wf3vdqAb2bUP9nPgcguECNOTwXm7LomMrvrBeSPO0Z5bz8sAuD_-LSOwTGYAWjdNB9cWdmQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "戴敏;曾凡玉;李霞;易凤姣;冯君",
+          "source": "Acta Chinese Medicine",
+          "publication_date": "2026-05-11 15:22",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "46",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgieTC8tWhw1LL37C7mu7lZK1dY_Q0jFc1VoyF_gOinZ4sP15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Transcranial Direct Current Stimulation Alleviates Endometriosis-Associated Pain by Inhibiting NLRP3 Inflammasome Activation",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbyUANjv_lbGWbtSa79JKIQb-k4wuIxZvUHBDtucvRtirTnPhpkSlFN3aTNvcowYfK2QEPEisjNgcpGkC-O9b-ZeK_GiOAFcIYLufv_M23sPTFz8icA4rxr7X49O8ukWLX5GAcxep5PZJuTRWb1HFyoMXIXpuut0926QbHMsjfFvw==&uniplatform=OVERSEA&language=EN",
+          "authors": "郑萍;赵立明;张雪芳;顾彬;尤爱虹;郎景和;冷金花;刘崇东",
+          "source": "Journal of International Obstetrics and Gynecology",
+          "publication_date": "2026-05-11 13:37",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "12",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgidZTw1drnZjBW55NBPlgFtk836bHUuu3A1XCoXmuEECJf15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Research progress on mechanism of traditional Chinese medicine regulating NLRP3 inflammasome in preventing and treating \"inflammation-cancer\" transformation of inflammatory bowel disease",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZyq7UHTOHyFjguPHJBRri77K-ksKdAGxWImQl5x533QUgTb1vE_deqoz0-5aEvn8ZFSi84qusRuOCf_tYs1Eem0jxXGHQU4v8Ir7D7MK5y3hcZmou0rygWVjIi75U3zD7kuMP7utuToQYXQcPlITxnnhQhBHI98dVg3Ab5vEO7aQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "马丽;张丽娜;李生财;万斌;李彦龙",
+          "source": "Shanghai Journal of Traditional Chinese Medicine",
+          "publication_date": "2026-05-10",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "24",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidqAh8-3rpDPxYFwktUHL-3lTNQbOBauV13mYRjG9sJ7YnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Protective mechanism of α7nAChR activated by formononetin on NLRP3/NLRC4 inflammasomes against atherosclerosis macrophages",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZyq7UHTOHyFjguPHJBRri7QSEBX8pkw10RFtHp86VGKYgm_SGm3Y65wZpBbLnWkhOSVvdEc2u3F_y3_Gx-kjRn7vCV8SLejIEA7zh863vnLcl5aW3MJbF78FCnrmMLsSPiv3KnoFI3fekcvm2DmfUf8i29Xzo4e1-7A2h9g6-QpA==&uniplatform=OVERSEA&language=EN",
+          "authors": "邱玥;李世容;王文秀;唐梅;张敏;曹丽平;何前松",
+          "source": "Chinese Pharmacological Bulletin",
+          "publication_date": "2026-05-09 15:22",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "58",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgifhhYxpGAy_YrNUiJx1wrEGhw27hAMksESKML8ZVyPxvf15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Synthesis and NLRP3 inflammasome-inhibiting activity of novel substituted ester derivatives",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZyq7UHTOHyFjguPHJBRri7QSEBX8pkw126WF31tdrHLQjdut77AJdxICroOA9-ULphVMgJusx2YMJYQXi2NebNor4phjGvSE2ykqAZT7iloXNacPa6m75KTrbhbz1qYNAS2EOqR3fRQVpLs9JYeXrBRNHgykf4-L1QCsB6HvYgiw==&uniplatform=OVERSEA&language=EN",
+          "authors": "刘敬龙;熊鑫;李洵平;闵真立;白敦耀",
+          "source": "Central South Pharmacy",
+          "publication_date": "2026-05-08 18:42",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "31",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgidxnGW3kR35CJyiZo6A3xejdb7tQfcDWrgVKBGw5IvLA_15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Inhibitory Effect of Volatile Oil of Amomi Fructus on NLRP3 Inflammasome Activation in Mice with Ulcerative Colitis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWabZ-LhTKQWUQ5j7WSz8Rh7TvJOCzVhVzvTm7dH2tGhqTQd11nVdcMbIfnTidT6fz6GXhoqi5VCeHYfJgr5gx8uwONCbym2XAc6rCWSOzj2AmWYWqXB6P6PJi0Yky9EmbstJvEmyEezAiAbZTFIk6sg-vzZbA8KyUmPUeWP4P0SqQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "杜真聪;王天義;王晶瑢;章凤;毛晓健;王亭",
+          "source": "Journal of Chinese Medicinal Materials",
+          "publication_date": "2026-05-06 17:14",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "149",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicAxdDHGtK3rc4mCJcSageRjcC6N8FOzgI-Vh4l6u6HLv15U4RVk_tCm67MCfzPBes!&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Experimental study on the regulation of Finerenone on atrial fibrillation susceptibility in diabetic rats by the NLRP3 inflammasome signaling pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWabZ-LhTKQWUQ5j7WSz8Rh7cHue35lt6J_Z7EXhoVdj_Ga1hQCQZ4q5e_sMAIdxAg9eQyJGH3xuSgGS0cs6pr1Am7OKaQA4Bm0TuaoHj2cH3HvYhUHAcNw6zjKs15fHgXfBfb-LzaKNpfydBxwoj0fwNdhqBwLynmsl0yeGBKX88Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "蒙远雁;李烁;蒋智渊;钟国强",
+          "source": "Journal of Frontiers of Medicine",
+          "publication_date": "2026-05-05",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "14",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieHGDFd6Dy9NmS21or5QA2AF_U1f5b3Gde15wLfARTbVYnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Adiponectin alleviates high glucose-induced retinal angiogenesis by inhibiting NLRP3 inflammasome",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWabZ-LhTKQWUQ5j7WSz8Rh7cHue35lt6J9GIEniOGbv95DO-HdvGKu6cDSzYhrfneG5GPuXTTg0nJSsVkKfZcPecTNvNmWAjLD76Ja5NOf295rVH7BrjNOelG8vA5t8YnvynQ7qzLGJLdcG-3rpOeko65zUyhuFUnJ_l96YK3JTzA==&uniplatform=OVERSEA&language=EN",
+          "authors": "张勇;王小娣;张艺馨;姚国敏",
+          "source": "International Eye Science",
+          "publication_date": "2026-04-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "13",
+          "flags": [
+            "English Full text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidwwCQWDG1DgG2HCXRTztimRyWR5isuoafD97C_zuBQKYnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Protective mechanism of lycium barbarum polysaccharide against pyroptosis in APP/PS1 mice via modulating the NLRP3 inflammasome",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb0bC9Y4pIUmCPBEcfnNHAHjRl1rZ8N_CuksgO_Vey4vJtvhdOxwNjfGJjjYupaQvuEZt57rWddT-pIYBQXP3Z6aYjofn0AEggf-yKcfH0sINCYx543Wp_ZY-B7dyr1HJ_mHvi7DdRdOWias1XMISb7EkPxqEuzwHiGPK4zQSu8FA==&uniplatform=OVERSEA&language=EN",
+          "authors": "贾思玮;郭敏芳;代慧敏;陈佳媛;王记委;孟涛;马存根;尉杰忠",
+          "source": "Medical Journal of Chinese People's Liberation Army",
+          "publication_date": "2026-04-28",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "8",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidZy8TH8-nZCvPVrYCnk-QZUes5_hge1q9ZJNGVEENkionDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Fostamatinib Inhibits the NLRP3 Inflammasome in Microglia and Improves Symptoms in Vascular Dementia",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb0bC9Y4pIUmCPBEcfnNHAHjRl1rZ8N_CsSuW5h0LcepnNstTETEtLlUnIaVTteldOz_m-apNVo3ynxFvP1H9VAXR2YA_yJsJjHC9SFrpM3mMmnM_Gstyn8O4-i-2Mg5XhCZY9Ibh4nI0-71o0Lc0RUy1bCbYn1VZw1NiIJYd1tHw==&uniplatform=OVERSEA&language=EN",
+          "authors": "邓钊红;王亚芳;何佳怡;田代实;王伟;胥瑾;秦川",
+          "source": "Neural Injury and Functional Reconstruction",
+          "publication_date": "2026-04-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "65",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifma2WQHztyTvlNvkE63y6q4v6iTzUr99Y3pRicqcTG6YnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Exploration of the \"dual heart\" effect mechanism of Danlou tablets based on mitochondrial autophagy NLRP3 inflammasome pathway",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb0bC9Y4pIUmCPBEcfnNHAHjRl1rZ8N_Cv_Dho3PDXwhqmDwFqUes7X90i6i8HhPLJA4D6iiDCjKK-EA-WpUaz2oSZ2UNej1fkLw_GA50b6f0SraGt_j53nZr_G-lSLagVz8vsd3Nl-v9iCFX6mbTYWHphrqvR7EI91r28LzqKmVA==&uniplatform=OVERSEA&language=EN",
+          "authors": "高婷婷;范静;尹诗萌;杨柏松",
+          "source": "Journal of Shenyang Pharmaceutical University",
+          "publication_date": "2026-04-25",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "21",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgiexjp1Vw3W-mH92QPWnfQOvKL9lcgVrxPdBZMSFeWKowYnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Low intensity pulsed ultrasound mediates S100A8/A9 to regulate the activation of NLRP3 inflammasome to improve sarcopenia in aged mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb0bC9Y4pIUmCPBEcfnNHAHlfoit5b9IGRarJexF9ZTnXT-wCZRye9bVLoqTw1vd3OM7Tb5HLXgqOxOVvyKZsU0g3g4a00B1d2uzQrTrP_Mo_MoGaCVroLIbfYT7HMUv9pKD8Ki765ZIgrvVBp5YvvuotcdxLWGQG9mZLhWHLFFDw==&uniplatform=OVERSEA&language=EN",
+          "authors": "徐剑;马雨佳;李丹;甘露",
+          "source": "Progress of Anatomical Sciences",
+          "publication_date": "2026-04-21 11:40",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "37",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgicxmVhfiL1icLYaHQBiSAhqxOF7pFiYU8wW7kfRnhh_Y_15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research advances in the modulation of NLRP3 inflammasome by traditional Chinese medicine for lung cancer therapy",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbbfzS4FoTWCZZjIsy1iiHgyNZSGNEiE-rBR61ZFwGfNd3k5EaWwpI6_fHLRVzz3ho44yzgXGWoW_V2h4eNN1lUpBQzpqR16DgZWu_VU7cnqjAatVGdzMfDGjfnl7Xj1_EqaiqFVzQyNc245m_Z7vwEEklTaujCL-C1AltR4aaiPQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "任德祥;夏小军;雷旭东;郑红刚",
+          "source": "Natural Product Research and Development",
+          "publication_date": "2026-04-20 10:18",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "182",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=kd9kqNkOM8Xyu_MccKCQ5AM1UHjV0uMR_icN4IXwgifC5XJ30DHKBYXgAUMZDfstsyo2ltAJwZlRkTGPxxJ0Mf15U4RVk_tCm67MCfzPBes!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effect of methotrexate on serum NLRP3 inflammasome and pyroptosis-related proteins in patients with rheumatoid arthritis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbbfzS4FoTWCZZjIsy1iiHgv3PDPuRgGhVpPBd1oZgwUgVObi22hjkplTLExyiepqoDAYFEzNgudjrz1ZyBepYurhtuIu27wp624KIWVXRSK2YX0LS8425qbY1EK1wz_sMntI4xV63nqi7pFPvVWR8Nv_NTd7yRTdNmkzxcm-t8nA==&uniplatform=OVERSEA&language=EN",
+          "authors": "周毅;胡广冰;邓丽青",
+          "source": "Clinical Medicine",
+          "publication_date": "2026-04-20",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "46",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifgGsnr7oabLeuvIEqfj7PL6O-g-rpHuWG0832tuPF9mYnDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research progress on TCM regulating the NLRP3 inflammasome in treatment of diabetic atherosclerosis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbbfzS4FoTWCZZjIsy1iiHgv3PDPuRgGhWKeUEjPMP2QZgY9BFruAMYVjF8gAQNHKmpfhncDIx-0miWcumInemoYnsnNbh22T_vWyBOzoBU82eC9iEpq37rJvNYP0bCrZda3ljpnuwlesgQYVNi8sn9EP6XHdcZUp909o_tzcabPg==&uniplatform=OVERSEA&language=EN",
+          "authors": "牛少龙;孙云朝;王建民;赵家宁;张字源;张欣;马泽宁;吕延林;张青",
+          "source": "Journal of Hubei University of Chinese Medicine",
+          "publication_date": "2026-04-20",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "39",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgied4aPQin7QrYEMceXQ5XFI9sEZOL3WSNYtmkvbU3M6honDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "maitake_huishuhua_nlrp3",
+      "query": "灰树花 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B0%E6%A0%91%E8%8A%B1%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_e56518ae04cb.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_e56518ae04cb.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "maitake_huishuhua_il1b",
+      "query": "灰树花 白细胞介素1β",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B0%E6%A0%91%E8%8A%B1%20%E7%99%BD%E7%BB%86%E8%83%9E%E4%BB%8B%E7%B4%A01%CE%B2&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_a073dc8c70c6.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_a073dc8c70c6.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "maitake_huishuhua_gout",
+      "query": "灰树花 痛风",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B0%E6%A0%91%E8%8A%B1%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_4b36f318499a.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_4b36f318499a.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "maitake_wurong_nlrp3",
+      "query": "舞茸 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%88%9E%E8%8C%B8%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_a0a4d7fb281d.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_a0a4d7fb281d.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "grifola_nlrp3",
+      "query": "Grifola frondosa NLRP3 炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=Grifola%20frondosa%20NLRP3%20%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_b3e12fc5b003.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_b3e12fc5b003.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "fungal_polysaccharide_nlrp3",
+      "query": "真菌多糖 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%9C%9F%E8%8F%8C%E5%A4%9A%E7%B3%96%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_1257568f5901.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_1257568f5901.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "beta_glucan_nlrp3",
+      "query": "β葡聚糖 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%CE%B2%E8%91%A1%E8%81%9A%E7%B3%96%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_d4aba8682671.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_d4aba8682671.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "fungal_polysaccharide_gout_nlrp3",
+      "query": "菌物多糖 痛风 NLRP3",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%8F%8C%E7%89%A9%E5%A4%9A%E7%B3%96%20%E7%97%9B%E9%A3%8E%20NLRP3&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_eca21105ab96.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_eca21105ab96.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "lingzhi_polysaccharide_nlrp3",
+      "query": "灵芝多糖 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E5%A4%9A%E7%B3%96%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_851d2b17dc17.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_851d2b17dc17.provenance.json",
+      "total": 4,
+      "top_records": [
+        {
+          "title": "Molecular mechanisms of the regulation of NLRP3 inflammasome-mediated pyroptosis by active components of traditional Chinese medicine for maintaining immune homeostasis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa6OgkURO4SN-jgA00-vjgr-E6OAYTIp0rYoCDZerMBb2vGRITimtcdfv3r_wKsBW9bfUttNgbpJqFYbzgCe5aCAVM2hLrHbjp1nfPuoxbVoPxZucOtjRr43Ya7KcB5fQuwomzt3TxMsWczWnX0zjQBsK3ttVR3HC2YcdprOSHq0Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "黄嘉欣;曾丽蓉",
+          "source": "Chemistry of Life",
+          "publication_date": "2026-02-10 14:31",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "118",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifnKj9PQHJFcX8rqiBxrcPHsrmTi6ME9dPGiJcxx7d1W4nDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effect of NLRP3 Inflammasomes on Development of Diabetes Mellitus and Its Complications and Chinese Medicine Intervention via NLRP3:A Review",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWa6OgkURO4SN-jgA00-vjgr-E6OAYTIp0qV1qVvVZeK8pvtHmOie7lYim16ZYet1V_pqTc9dSp9pdfDUVDRQsyisCpjHQZ7RJuALJJOd7IBqgBQhjPrzGW-CGAoB8Po7XROxZLGbCBopCh3IHKmHojumKJsdi0-V5fOB6ZTqmYy7A==&uniplatform=OVERSEA&language=EN",
+          "authors": "苗晋鑫;彭孟凡;任伟宏;苗明三",
+          "source": "Chinese Journal of Experimental Traditional Medical Formulae",
+          "publication_date": "2022-06-08 07:00",
+          "database": "Journals",
+          "cites_text": "18",
+          "downloads_text": "1185",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgidmXc9uVKoucKfioUf1ZQ2xq0UTkTF-TWASB0GCmPfZ3xvU-zPPyvLbKFuSpmggmKp3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "李浩然",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2022-05-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "2",
+          "downloads_text": "323",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQBaMguijXMBxcvP38bl-CNwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "韩丽",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2022-05-01",
+          "database": "Master's Theses",
+          "cites_text": "5",
+          "downloads_text": "343",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn4Wf2bWvjoiRrfOQFp7Fe5hFl849V_KNsQ5Jnf-N0sGvPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "lingzhi_peptide_nlrp3",
+      "query": "灵芝肽 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E8%82%BD%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_0b44edc65053.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_0b44edc65053.provenance.json",
+      "total": 4,
+      "top_records": [
+        {
+          "title": "灵芝肽GLP4通过调节精氨酸生物合成并抑制NLRP3炎症小体激活减轻心肌缺血/再灌注炎症反应",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWagvrAyx0tg1UicLXKbr8RG0fqEyGy3CyY3WDsDdIDowTK5B9ZbOl-Y_K-qjmUnV8HrUdwznYhbCfuVwpvgwhJDseLqWjsq7FRus5pya4tE7VfzTd1E19oqLRpeHTnSWTy2xLVTLyQ5rGd4-WQDqHkHMHD2td27RmT1c5YmPbNo0i6D0v-RzarW&uniplatform=OVERSEA&language=EN",
+          "authors": "王浩锦;黄萍;刘高强",
+          "source": "中国菌物学会2025年学术年会论文摘要——学生组",
+          "publication_date": "2025-08-15",
+          "database": "China Conferences",
+          "cites_text": "",
+          "downloads_text": "59",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Cepas2vDv1UfxKriHl_KOREioDQGUYyP45GzgsBWMKX8LDGH3olE2pujvp2Jx5X9yJFNwRngaa8hRGKkxsIXfaaHqcM5j5jnQu7zZAyA8K25bzGfkxoMx_T51wxMfqfc&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "颜如玉",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-05-01",
+          "database": "Master's Theses",
+          "cites_text": "3",
+          "downloads_text": "604",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnzObqjZ5suz7L7bvOUqk8rxFl849V_KNsQ5Jnf-N0sGvI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "李浩然",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2022-05-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "2",
+          "downloads_text": "323",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQBaMguijXMBxcvP38bl-CNwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "韩丽",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2022-05-01",
+          "database": "Master's Theses",
+          "cites_text": "5",
+          "downloads_text": "343",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn4Wf2bWvjoiRrfOQFp7Fe5hFl849V_KNsQ5Jnf-N0sGvPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "lingzhi_triterpene_nlrp3",
+      "query": "灵芝三萜 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E4%B8%89%E8%90%9C%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_3925a306cc6a.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_3925a306cc6a.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "lingzhi_glp4_nlrp3",
+      "query": "灵芝肽 GLP4 NLRP3",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B5%E8%8A%9D%E8%82%BD%20GLP4%20NLRP3&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_f1e7d05f0955.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_f1e7d05f0955.provenance.json",
+      "total": 2,
+      "top_records": [
+        {
+          "title": "灵芝肽GLP4通过调节精氨酸生物合成并抑制NLRP3炎症小体激活减轻心肌缺血/再灌注炎症反应",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYSS4n5ppTcdLMD5pWFFKh6O_AiM5jybt24qEIRk5NX9G91JY4c_Ymco7sGsZh9i_cDaLTlv2ygt0_47hiRDkIPLw5t9HGgeEoOw-mzHN-gQ3gkcGjN2jC5r0BkrsbM3Gz41GO054rxkWGyxdMPi0sDgN2RWjoeSnZsUPM3xV3NxyNKFu69NdFJ&uniplatform=OVERSEA&language=EN",
+          "authors": "王浩锦;黄萍;刘高强",
+          "source": "中国菌物学会2025年学术年会论文摘要——学生组",
+          "publication_date": "2025-08-15",
+          "database": "China Conferences",
+          "cites_text": "",
+          "downloads_text": "59",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Cepas2vDv1UfxKriHl_KOREioDQGUYyP45GzgsBWMKX8LDGH3olE2pujvp2Jx5X9yJFNwRngaa8hRGKkxsIXfaaHqcM5j5jnQu7zZAyA8K25bzGfkxoMx_T51wxMfqfc&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "黄萍",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2024-05-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "2",
+          "downloads_text": "330",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnQ1snADAh97LRp9PbHvOJI9wneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "yunzhi_polysaccharide_nlrp3",
+      "query": "云芝多糖 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_7aba69fd74f6.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_7aba69fd74f6.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "yunzhi_polysaccharide_inflammasome",
+      "query": "云芝多糖 炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%20%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_61d433d8c991.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_61d433d8c991.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "yunzhi_psp_antiinflammatory",
+      "query": "云芝多糖肽 抗炎",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%E8%82%BD%20%E6%8A%97%E7%82%8E&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_30d5834fc1ed.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_30d5834fc1ed.provenance.json",
+      "total": 1,
+      "top_records": [
+        {
+          "title": "云芝多糖协同抗癌活性肽抗肿瘤的实验研究",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYY3D7jTSrHxyPiTWmq4wz152lBhN8i-_aYIbwya6RiXUl2qNIb2UhjMRCNdm0n_4gO4W1Vs6N31JNgE7-_665Ab1Uiw8cj9nwErJYrmDF4qcd2mTmu81VjzwW-bc_K0TgnhiWlVu403IeKEgjtZw1uHRbHqVsNNj0WcNTPKU33nw==&uniplatform=OVERSEA&language=EN",
+          "authors": "郑文艳",
+          "source": "Nei Mongol Journal of Traditional Chinese Medicine",
+          "publication_date": "2004-04-20",
+          "database": "Journals",
+          "cites_text": "7",
+          "downloads_text": "328",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie0rXXWCVdG-cGEwcGVXBYUVZ_yfRq2gMuluMVSgVO3GiNYuDfZaBS3u2IemJLq4fo!&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "yunzhi_psp_il1b_latin",
+      "query": "云芝多糖肽 IL-1β",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E4%BA%91%E8%8A%9D%E5%A4%9A%E7%B3%96%E8%82%BD%20IL-1%CE%B2&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_966c024a2fe1.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_966c024a2fe1.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "maitake_polysaccharide_nlrp3",
+      "query": "灰树花多糖 NLRP3炎症小体",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B0%E6%A0%91%E8%8A%B1%E5%A4%9A%E7%B3%96%20NLRP3%E7%82%8E%E7%97%87%E5%B0%8F%E4%BD%93&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_b5cb644dcdfc.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_b5cb644dcdfc.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "maitake_polysaccharide_inflammation",
+      "query": "灰树花多糖 炎症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B0%E6%A0%91%E8%8A%B1%E5%A4%9A%E7%B3%96%20%E7%82%8E%E7%97%87&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_5c599cdd8c53.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_5c599cdd8c53.provenance.json",
+      "total": 37,
+      "top_records": [
+        {
+          "title": "",
+          "url": "",
+          "authors": "杜晗",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-05-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "223",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnBO9fCYgh_8HqS42Q36bxhhMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Effect of polysaccharides from Grifola frondosa on gastrointestinal flora and oxidative damage in rats with gastric ulcers",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWaWpIZ1Zml_vtFt_okKFHatBradmU_bnkgWJ33iVVF69MgrDzpyeYSlMX5Im2nTcYmeU65V0paNWHzGNVUaoPzGQjtt2iP30beZSIZFsAyAej6yzlY6DDjEZ-_5cFnUxCvEpcLlQlxivWzAw793bKQa7qlvh9Qox4gSduFo_UdP4w==&uniplatform=OVERSEA&language=EN",
+          "authors": "王锐杰;李璐璐;刘勇华",
+          "source": "Journal of Medical Forum",
+          "publication_date": "2025-02-15",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "298",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgid4YQjBkV2CX1gU3yO6xXv-O4qiCTvP5_tnC8wQh_nDRg6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "灰树花多糖提取、结构及生物活性研究概述",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbeF8aQ517kSpl8sw0xr2PzTCMSq0ALNoxCRD6yRv8XcN-2qDuDzLuOpbThXOX6yF9K6zIXV4U31icKSkeLnt8urmw2ZgtVLUUOn0URcdZq08DEsuSko0xnyJlaFgoeaiwaJ041Roxaujhz2UmeiuCUpM_iX1KAbMUpLMR952IR4g==&uniplatform=OVERSEA&language=EN",
+          "authors": "马传贵;隋欣;王如良;张志秀",
+          "source": "Edible Fungi",
+          "publication_date": "2025-01-23",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "603",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicbWE99nL1d3o3uIy8FQHYBVbAgnxLYKXvr6mZF0buE-A6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Current situation and prospect of research on bioactivity and mechanism of Grifolia frondose polysaccharide",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbeF8aQ517kSpl8sw0xr2PzTCMSq0ALNoyR_-drgs5zdF0Klb5hj6hGsRi_PN_6t-MBTaaSPtLb5a8AL6rtJasR4FcLxSJ1ca-ssDK4kVMqp2qt2a9NXiGs4XGftHTTK7Od2Ye_EH3IiSgx6sDgcHAqlQXb-_X8VmttFF8RTLee2Q==&uniplatform=OVERSEA&language=EN",
+          "authors": "龚凤萍;张应香;钟思志;竹玮;段庆虎;冉忠萍;黄冬丽;范家慧",
+          "source": "China Cucurbits and Vegetables",
+          "publication_date": "2024-12-12 09:22",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "711",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieQ9q1QBGYlK8eLJEesnk40206e5qKDtIkwWASmrWaWZA6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Research progress on functional components and biological activities of Grifola frondosa",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZFMi7nmlXL5c7lV0xb_soR3TndAJOLIG2gqMC2qUG64ejTyiu1ijMHAaeOr0IvmzcTb2yaO_1rMzxHYMxxavb_aMHPYmqEJ4wMjnA4iMfg4JUyecRpGql64dbUC_TCMvyIDmqKsR0jYcKR-keW9tZUfw0ajilkBHudZhMV18aasQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "郑越;杜涓;刘娜;安晓萍;王园;齐景伟",
+          "source": "China Feed",
+          "publication_date": "2024-07-17 15:08",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "803",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieRjvN4Q6JNfg5sQbJkNmLyS_DxFehF2DJX96V1zVFDYliqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "胡嘉芮",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-05-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "372",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnzdM6iYaR8y-DcdHkUMDLjBMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "汪玲",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-05-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "233",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnWYY57mMRs9wS7z9SNJNi5RMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "江守发",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-05-01",
+          "database": "Master's Theses",
+          "cites_text": "1",
+          "downloads_text": "378",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnBV8hZUMuZz6G9qXHWUX_GRMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "袁丹丹",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-05-01",
+          "database": "Master's Theses",
+          "cites_text": "2",
+          "downloads_text": "288",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn3H_TD8fvg8DxQ0OrS1wdYBMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "刘东明",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-05-01",
+          "database": "Master's Theses",
+          "cites_text": "1",
+          "downloads_text": "650",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn9nonRhJiBelH2GlKcFPH9xMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "刘继菊",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-04-25",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "94",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnvDWwwqfcn3ewYrkkFFjxLhMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Facilitated synthesis of Grifola frondosa polysaccharides and their palliative effect on alcoholic gastric injury",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYl_nrQY5kmo4Y-YVYxNM8D5BERk4Dnz4SCSLBnUWquaO3vlhN-uSQ-XUgfHnXbsKhDkhxYUB8V3q6o25arxYX_VFPG1eHpgS5rJVubqAgkUtWiMHNE_HeXZ1xJDra7sbAPoWErjGnn7Xc9P1pUehUjyYm5GQcMF2V_FB9jPI4MyA==&uniplatform=OVERSEA&language=EN",
+          "authors": "袁丹丹;吴天祥;江守发;汪玲;林瑶",
+          "source": "Journal of Food Safety & Quality",
+          "publication_date": "2024-03-25",
+          "database": "Journals",
+          "cites_text": "6",
+          "downloads_text": "566",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgid5j_oi1Xs2McznNyAyK2F1926aB5dP0MfMoXspRRjxbFiqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "张佳惠",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-11-01",
+          "database": "Master's Theses",
+          "cites_text": "12",
+          "downloads_text": "666",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn4QwczSXdZkXOVm83RDJISxMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "灰树花多糖通过调节氧化应激和慢性炎症对PCOS大鼠卵巢纤维化的改善作用",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYl_nrQY5kmo4Y-YVYxNM8DIVk-qWHRPQ8Vk24OBPTM-gwxylacw_ZtSW_u9vEZZweJxvoGhYRA3dNxA6RrpEdqkL-6T1uQoRswTVaCi4lLIKfeT2WAlm6CZmjfLFS-OFXphAGHRuX8w1nFO4y2ysAIUEEGDvqGuuqeTzijQdu42Mgo7nGC6SLf&uniplatform=OVERSEA&language=EN",
+          "authors": "种超杰;吴亚琪;董哲文;李婉萤;钟淑媚;王子娴;宋家乐;周燕园",
+          "source": "第十四届亚洲营养大会摘要集--基础营养研究",
+          "publication_date": "2023-09-14",
+          "database": "International Conferences",
+          "cites_text": "",
+          "downloads_text": "141",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=_G59CS0ekqlrtal0okC4OxEioDQGUYyP45GzgsBWMKX8LDGH3olE2pujvp2Jx5X9h_QZ0u_jn6aRh5t3qI7eeyQliOq0kpmcoLlzCp0rpEtlz-EF2VhH1EgZ5r-96xBW&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "何袁",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-06-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "419",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnFADvr8B_LzOpWzE0uix0ihMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "周雅频",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-06-01",
+          "database": "Master's Theses",
+          "cites_text": "1",
+          "downloads_text": "455",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnZXctb5fRoNB4DMWl4kdbIxMQcTim95WbQcQvyZY8W5vI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "李凤兰",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-06-01",
+          "database": "Master's Theses",
+          "cites_text": "2",
+          "downloads_text": "366",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnO4xYA3exxgbhRSHf2e6eExFl849V_KNsQ5Jnf-N0sGvI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "邓代霞",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-06-01",
+          "database": "Master's Theses",
+          "cites_text": "9",
+          "downloads_text": "562",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn2YaPuk5d6GxDL5FO0ocTMxFl849V_KNsQ5Jnf-N0sGvI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "种超杰",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-06-01",
+          "database": "Master's Theses",
+          "cites_text": "2",
+          "downloads_text": "369",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnG43kKOFnsYcHr2QjRWsndRFl849V_KNsQ5Jnf-N0sGvI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "倪继民",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-05-18",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "58",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnmuU7dX-HcRUZzGoikrPXO7qTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "maitake_beta_glucan_inflammation",
+      "query": "灰树花 β葡聚糖 炎症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B0%E6%A0%91%E8%8A%B1%20%CE%B2%E8%91%A1%E8%81%9A%E7%B3%96%20%E7%82%8E%E7%97%87&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_828b23ef7ddc.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_828b23ef7ddc.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "maitake_hua",
+      "query": "灰树花 高尿酸血症",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B0%E6%A0%91%E8%8A%B1%20%E9%AB%98%E5%B0%BF%E9%85%B8%E8%A1%80%E7%97%87&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_52d4b3d26cc4.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_52d4b3d26cc4.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "fungal_beta_glucan_nlrp3",
+      "query": "真菌β葡聚糖 NLRP3",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%9C%9F%E8%8F%8C%CE%B2%E8%91%A1%E8%81%9A%E7%B3%96%20NLRP3&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_829f71b1d00e.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_829f71b1d00e.provenance.json",
+      "total": null,
+      "top_records": []
+    },
+    {
+      "category": "beta_hyphen_glucan_nlrp3",
+      "query": "β-葡聚糖 NLRP3",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%CE%B2-%E8%91%A1%E8%81%9A%E7%B3%96%20NLRP3&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_135ae77643d6.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_135ae77643d6.provenance.json",
+      "total": 14,
+      "top_records": [
+        {
+          "title": "Research Advances in the Structure Feature and Immunomodulatory Mechanisms of Ganoderma lucidum Polysaccharides",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWauoxCc-t4v6t9eO96pqAs8DPQiU96Z62msMXfMtjbx0pbK3wBLgZZmR0RtZ141T-1hPAFpZTQDso_3s62BPUCdTZ5ngjTfvPlHUsg6Yzc3N2gUb_QhScomop5S2VkupAPsF8CZX7HSpxkPpQOArB6-ZaMsdog5knnBYigJ8pLuIA==&uniplatform=OVERSEA&language=EN",
+          "authors": "冯翠萍;荣伟雅;魏欣;蒋逸鸣;常明昌;曹谨玲;云少君;程菲儿;赵文霏;李永;赵莉",
+          "source": "Journal of Shanxi Agricultural Sciences",
+          "publication_date": "2026-03-25 15:19",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "465",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgie8yri1ERap68nw8WD78-AnsrmTi6ME9dPGiJcxx7d1W4nDa1x0Roidi_RcpyaNH-4!&mimetype=XML&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "赵钰航",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-03-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "17",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnHDn8bhnp6kAIGtYjKHuubrqTg40WRJ4AXnIPAl1vH-jI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "王镱洁",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2024-05-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "90",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmntQxll2ak9yjch0jTZIVXCBMQcTim95WbQcQvyZY8W5vPhQCRo5kYiP4eWkONp9c2&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "何树燕",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2024-03-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "",
+          "downloads_text": "117",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnCqCaMYSYWt1IyiEFqWzmQNwneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "酵母β-葡聚糖对高脂饮食诱导的结肠炎的改善作用及相关机制研究",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWYsXfRSSmmJdZFWzIJJFx45C6hnnBHydzy1S-cN-ESyLqSHJIx0ROpjS405zpAMt92tKbu_gCZMn0l_uHqrGltc25wchMsCajmX4EYMwaOZ9kU_9v66FPxQxEJ8op_CzBOmQsYTRXU-oYE5P8ve4rym3LDIU_2XYS3BMM-cWWt5EGggJXyTpTre&uniplatform=OVERSEA&language=EN",
+          "authors": "孙运红;莫小杏;沈丽慧;张彦;程瑞洁;刘烈刚",
+          "source": "第十四届亚洲营养大会摘要集--食物与营养",
+          "publication_date": "2023-09-14",
+          "database": "International Conferences",
+          "cites_text": "",
+          "downloads_text": "179",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=_G59CS0ekqlrtal0okC4OxEioDQGUYyP45GzgsBWMKX8LDGH3olE2pujvp2Jx5X9bz6H5QAYerK31_d_PKxHdyQliOq0kpmcoLlzCp0rpEtlz-EF2VhH1EgZ5r-96xBW&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "李盼盼",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-06-01",
+          "database": "Master's Theses",
+          "cites_text": "3",
+          "downloads_text": "384",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmncAn5p2DIIOfVQy-r58wqfBFl849V_KNsQ5Jnf-N0sGvI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "张棋炜",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2023-04-05",
+          "database": "Doctoral Dissertations",
+          "cites_text": "2",
+          "downloads_text": "959",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn29l4vvgcp2sOZ5_bn9qQRNwneWrfo0YJU2eWl-PcvssdIJfnwo9P-8t7MR_kUeJc&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "朱佳",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2022-05-01",
+          "database": "Master's Theses",
+          "cites_text": "4",
+          "downloads_text": "1845",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnLQ-RwUtymBm7u7r7Gycqrt-PbckLiJKYEIy_-V_5f6bI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "于春微",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2021-06-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "24",
+          "downloads_text": "2353",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnCTQHqmjagVaa6OlkTGZiG9wneWrfo0YJU2eWl-Pcvst1xZbWUUTK5iIMRom8DLxm&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "黄锦涛",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2021-05-26",
+          "database": "Master's Theses",
+          "cites_text": "2",
+          "downloads_text": "507",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmncwqemUwdbMG3gLGIeUfa5agR0PBUzSTmBzLmbQF9ZHvI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Effect of berberine hydrochloride on cell wall integrity of Candida albicans hypha",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb-0C9B_KILC_cMvviVwWzAiyAItItShcIzke8b2Y5FwxEsRSF3-DzvQpuJ0BYtDNR5pZ3r_JddE704yLvT1pBAvfBtxtlnWzHhWS1CpfFvOxMhEOhaGGImQGKybrojPfSaEa-OzrxXAmK9_Z-QC_rRa6AA3AaK37D1KqR2GaEuSw==&uniplatform=OVERSEA&language=EN",
+          "authors": "杨玉;王亚东;王艳;徐志庆;吴大强;汪天明;邵菁;汪长中",
+          "source": "China Journal of Chinese Materia Medica",
+          "publication_date": "2020-09-10 13:53",
+          "database": "Journals",
+          "cites_text": "19",
+          "downloads_text": "702",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicumTG-JPXnK1AuPfTyntne8wS4q_KEgmuRo9oUBTlJ3hcJFnCXWEvXwdDhbxhTw8J3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "乔燕",
+          "source": "Chinese Doctoral Dissertations Full-text Database",
+          "publication_date": "2020-09-01",
+          "database": "Doctoral Dissertations",
+          "cites_text": "1",
+          "downloads_text": "292",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=eQD7iSfLfq3gVvjewcWhV4dDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn7kW6rFtiWmbVScPA32Zcd9wneWrfo0YJU2eWl-Pcvsv035vwP9NiK0Drw-b4p-fQ&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "杨玉",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2020-03-21",
+          "database": "Master's Theses",
+          "cites_text": "3",
+          "downloads_text": "356",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn-qPXFMufW7Zs9fcOG1nrjmxc0mMpJ4zM9cw0rLyMgU7I1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Immunoregulatory effects of β-glucan in dendritic cells",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWb-l1EPlJMCRCfC3Fm-ws_UWx582QowTkNFXzza_toGVenzIaVArW5lwBkAqJFhteh3H6EYfxBs933iGthqPhvai4xVs_1k2u25ipnq_NVHnwAGyjxLCoDiT8Ni549mEwccan7JQr8aM9gNGq849D_oDWfd74JNzIyWRtWe6vA-hQ==&uniplatform=OVERSEA&language=EN",
+          "authors": "路毓峰;常晖;张巍;闫会敏",
+          "source": "Chinese Journal of Food Hygiene",
+          "publication_date": "2015-09-30",
+          "database": "Journals",
+          "cites_text": "1",
+          "downloads_text": "429",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgifX-epWT32lR3kYSzVnIUjIXhLJzchxhU19f5x1buB225743cnqaA9eAJ9i6ME4Uj13KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    },
+    {
+      "category": "lentinan_nlrp3_comparator",
+      "query": "香菇多糖 NLRP3",
+      "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E9%A6%99%E8%8F%87%E5%A4%9A%E7%B3%96%20NLRP3&uniplatform=OVERSEA&language=EN",
+      "grid_body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_c3d2eb0db2fb.html",
+      "provenance_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_c3d2eb0db2fb.provenance.json",
+      "total": 8,
+      "top_records": [
+        {
+          "title": "Advances in Natural Products against Tumors by Modulating NLRP3-mediated Pyroptosis",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbWpqNIyURTFRYze-jzHHFciUSbpXWNelG9zMySvk7GIlp9iNtzAbLC114pvV1eYYaOJ8LYn1uc2PT2j_6Ckc4r2zbuFjRvrEZcoDMxCEUNppyzMKU2iBvQ3ocMDz433qpn__mgUtq8OZSVB68phrwPjNuO5YMsJLWMCiO6Y29iqw==&uniplatform=OVERSEA&language=EN",
+          "authors": "赫名扬;王成志;杨振耀;许宇飞;李东东;刘培民",
+          "source": "World Chinese Medicine",
+          "publication_date": "2025-05-19 15:04",
+          "database": "Journals",
+          "cites_text": "",
+          "downloads_text": "307",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicCmnqsCKbzxiiki33RjiSeUTgoFAHJxshTLEckawJ7Tw6c3WW7qTe3koRylZhzBMR3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "毛一同",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2025-05-01",
+          "database": "Master's Theses",
+          "cites_text": "",
+          "downloads_text": "6",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn5MRN7Yc-7jCMFRAvPlELUazmk86Ae9E2cPcJxemcPVeX8H-zThafoXFu3hRPWoVX&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Effects of lentinan on atherosclerotic plaque formation and AMPK signaling pathway in ApoE-/- mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbWpqNIyURTFRYze-jzHHFciUSbpXWNelHL9iuU8fRoQGgCECVe6_yHrn9AKEDhC49xJmrcj0f1AA5Z8p8lAdSjELKH808YMM7dB1Jt0Tjh39fHC0cE3QAmkYWOv_h58_aWKkSE43DhmoRFjkcIKHKQ0nQ55xLBmLaUiZ_j4FCWRg==&uniplatform=OVERSEA&language=EN",
+          "authors": "郑学斌;黄玉艳",
+          "source": "Chinese Journal of Immunology",
+          "publication_date": "2024-07-20",
+          "database": "Journals",
+          "cites_text": "2",
+          "downloads_text": "462",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgienB84pG-O0SCJmTf7gTMCXp0ObM1Xk193t0gOL_NbMW1iqCPJLFwH2BlC2ozHIHgx3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "梅雪迎",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-05-01",
+          "database": "Master's Theses",
+          "cites_text": "3",
+          "downloads_text": "420",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmn7ymTC5FhNUDJ4ejJ8RtouhFl849V_KNsQ5Jnf-N0sGvI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "",
+          "url": "",
+          "authors": "刘承英",
+          "source": "Chinese Master's Theses Full-text Database",
+          "publication_date": "2023-05-01",
+          "database": "Master's Theses",
+          "cites_text": "3",
+          "downloads_text": "531",
+          "flags": [],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=RGa7mrESpptToOMuMXTtLIdDpABOkPy0aETAVZfzihwm4iM4UTsUTJq-th3gskmnG3BTz6CTPcfyLbtw_6eKXhFl849V_KNsQ5Jnf-N0sGvI1ZqBdCn8bJxRuFKgHA9D&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Antagonism of Lentinan on sodium arsenite induced hepatotoxicity in mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWbrVSaKP9Kb-6NBkKXzwKmZts6b_qJvk7iuhkhIRMIlmRYiG7bzOXY2fJy3HWQN5iHgkZYBLVGDB01okn3AKbTF74jd-IRGUOa928QbJTQY4XKsEb2v1n1ap__K-GWNUTbAMiXmgIzkHzhi-24agXZ_lbTYnoHakLWIMQvKkGz_qyKObVwlxoce&uniplatform=OVERSEA&language=EN",
+          "authors": "杨渊;宋爽;刘永莲;刘春燕",
+          "source": "中国毒理学会第十次全国毒理学大会论文集",
+          "publication_date": "2023-04-08",
+          "database": "China Conferences",
+          "cites_text": "",
+          "downloads_text": "100",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Cepas2vDv1UfxKriHl_KOREioDQGUYyP45GzgsBWMKX8LDGH3olE2pujvp2Jx5X9jjfUJKdVU7N-u4d4YChV-6aHqcM5j5jnQu7zZAyA8K1rRnFZaTqO-t1K-rwPsKwu&mimetype=PDF&language=EN"
+        },
+        {
+          "title": "Antagonism of Lentinan on sodium arsenite induced hepatotoxicity in mice",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZIHYz62G1tH0T56FrxOV9OdOExPqIjXbm4u3iF4LjT3pAI2Qz6jAguzq4-OkLozXApU2uEpCR_r6bnVsHEbYGOZjrPyIPgGC_o4yARS6W0SInuNT2xBPeS253ptUSWI574VnsSYXJCz1MVRg8wkdiukOQOaA1mdqSmDi3kI6VPQw==&uniplatform=OVERSEA&language=EN",
+          "authors": "杨渊;宋爽;刘永莲;刘春燕",
+          "source": "Journal of Public Health and Preventive Medicine",
+          "publication_date": "2023-01-11",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "342",
+          "flags": [
+            "Chinese Full Text"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicp_2jtqwHC7G28czqcblK4iSp-U8llME-DzUEs58aSVK3tX2onnTexasLcgF4O3JF3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        },
+        {
+          "title": "Effects of Lentinan on Jejunal Cell Death Signaling Pathway Related Gene Expression of Piglets Challenged with Lipopolysaccharide",
+          "url": "https://oversea.cnki.net/kcms2/article/abstract?v=bKzrHQijxWZIHYz62G1tH0T56FrxOV9OdOExPqIjXbnMHOFL-5Wswzhs5nMI8TDVPA3Ggh7Vbc3BrHNrk6FKma1BHCcOR8Ai7SArE9kafHMEITL7XWEpoi02e8gUDKCpAMhRXsTNU3tyctqCp2EHiH9V7_x_683a9Hl212BN01y9TpIbFnfupA==&uniplatform=OVERSEA&language=EN",
+          "authors": "梁天增;汪龙梅;余程;王秀英;刘玉兰;朱惠玲",
+          "source": "Chinese Journal of Animal Nutrition",
+          "publication_date": "2019-11-11 11:34",
+          "database": "Journals",
+          "cites_text": "8",
+          "downloads_text": "365",
+          "flags": [
+            "Chinese Full Text",
+            "English Full Text (MT)"
+          ],
+          "cnki_ai_reading_url": "https://oversea.cnki.net/openlink/aigc?cid=Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgieNAHYwWnPJ77xyM-z-Qq99n9LW8SpSYD1mUrISr0aZln-s4n4jlL7XQKLOuexh_op3KAUBlVIsgcb0E8u_YkCK&mimetype=XML&language=EN"
+        }
+      ]
+    }
+  ],
+  "updated_at_utc": "2026-05-20T18:39:50.543361+00:00"
+}

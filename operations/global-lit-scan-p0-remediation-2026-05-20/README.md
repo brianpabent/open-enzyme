@@ -20,7 +20,7 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 | P0-1 | Medicinal mushroom / comp-014 Phase 5b rescue scan | CNKI Overseas rerun and abstract-level two-model read complete; Cordyceps militaris and Sanghuang/Phellinus are the strongest recovered urate leads | Retrieve/read full text for priority Cordyceps and Sanghuang/Phellinus records before wiki evidence update |
 | P0-2 | East Asian gout genetics: ABCG2 Q141K, HLA-B*58:01, URAT1/W258X | J-STAGE local-curl deep dive complete with Codex/GPT-5.5 + DeepSeek two-model read; wiki updates promoted for URAT1, ABCG2, and HLA-B*58:01 wording | Next optional pass: Korean/Chinese cohort-specific confirmation if trial-site selection becomes active |
 | P0-3 | TCM gout formula re-scan | CNKI Overseas rerun complete via browser-captured `/brief/grid` POST shape; strongly discovery-positive for Simiao, Baihu+Guizhi, Smilax/Tu Fu Ling, turmeric/curcumin | Retrieve/read priority full texts before evidence-tier promotion |
-| P0-4 | NLRP3 x Lingzhi/Yun Zhi/Maitake immunomodulation | Query plan adequate; J-STAGE returns fungal beta-glucan immunology reviews; RISS route reachable; CNKI Overseas route corrected | Run after P0-2, with explicit "not gout-specific yet" guardrail |
+| P0-4 | NLRP3 x Lingzhi/Yun Zhi/Maitake immunomodulation | CNKI Overseas rerun complete; discovery-mixed, with Lingzhi/Ganoderma NLRP3 background and one mushroom-HUA/gout review lead, but weak Yun Zhi/PSP/PSK and Maitake gout-specific signal | Source-map the 2025 edible-mushroom HUA/gout review and 2026 Ganoderma polysaccharide immunomodulation review before any wiki evidence-tier change |
 
 ## Artifacts
 
@@ -47,6 +47,8 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 - [`outputs/p0-2-jstage-deepseek-counterread-2026-05-20.json`](./outputs/p0-2-jstage-deepseek-counterread-2026-05-20.json) - DeepSeek independent Japanese counter-read for the P0-2 J-STAGE excerpts.
 - [`outputs/p0-3-cnki-overseas-rerun-2026-05-20.json`](./outputs/p0-3-cnki-overseas-rerun-2026-05-20.json) - focused P0-3 CNKI Overseas query counts and first-page records for TCM gout formula/species/pathology frames.
 - [`outputs/p0-3-cnki-rerun-summary-2026-05-20.md`](./outputs/p0-3-cnki-rerun-summary-2026-05-20.md) - human-readable P0-3 rerun summary, highest-priority full-text reads, and non-promotion caveats.
+- [`outputs/p0-4-cnki-overseas-rerun-2026-05-20.json`](./outputs/p0-4-cnki-overseas-rerun-2026-05-20.json) - focused P0-4 CNKI Overseas query counts and first-page records for mushroom/NLRP3/fungal-polysaccharide frames.
+- [`outputs/p0-4-cnki-rerun-summary-2026-05-20.md`](./outputs/p0-4-cnki-rerun-summary-2026-05-20.md) - human-readable P0-4 rerun summary, query-framing corrections, and non-promotion caveats.
 - `outputs/retrieval-probes-raw/` - raw HTML/provenance files. Provenance records when a fetch used local curl and whether insecure TLS was required.
 
 ## Retrieval Findings
@@ -68,10 +70,12 @@ The goal here is not to write new wiki claims yet. This pass creates query plans
 
 **P0-3 CNKI formula rerun is strongly positive.** Browser-capturing CNKI Overseas' `/brief/grid` request shape made the TCM formula scan extractable through local `curl`. Native formula/species/pathology queries recovered dense gout/HUA corpora: `四妙散 痛风` (424), `四妙散 高尿酸血症` (69), `四妙散 URAT1` (4 high-signal direct transporter records), `白虎加桂枝汤 痛风` (73), `土茯苓 痛风` (610), `土茯苓 高尿酸血症` (477), `土茯苓 URAT1` (24), and `姜黄 黄嘌呤氧化酶` (21). Highest-priority full-text reads are Simiao/URAT1 transporter papers (2010 HK-2, 2016 hyperuricemic rats), Simiao Wan pharmacodynamic substances (2024), Smilax glabra AMPK/PGC-1α/PPARγ/ABCG2 (2025), Baihu+Guizhi TLR/NALP3 rat work (2023/2019), and Jinqian Xuduan Decoction URAT1 thesis work (2025). Treat this as discovery-positive only until full-text two-model reads complete.
 
+**P0-4 CNKI mushroom/NLRP3 rerun is discovery-mixed.** The same local-curl `/brief/grid` route recovered a real Lingzhi/Ganoderma NLRP3/polysaccharide/peptide background corpus: `灵芝 NLRP3炎症小体` (9), `灵芝多糖 NLRP3炎症小体` (4), `灵芝肽 NLRP3炎症小体` (4), and `灵芝 高尿酸血症 NLRP3` (1). It did not recover strong CNKI evidence for spore-powder-specific, Yun Zhi/PSP/PSK-specific, or Maitake/Grifola gout/HUA/NLRP3 claims. `PSP NLRP3炎症小体` and `PSK NLRP3炎症小体` each returned 2346 generic NLRP3 records, but the top records were not PSP/PSK papers, so treat that as abbreviation noise. The key query correction is that maitake should be searched as `灰树花` in Chinese CNKI, but even that yielded broad inflammation/bioactivity background (`灰树花多糖 炎症`, 37) rather than gout-specific evidence.
+
 **CNKI full text is not yet script-retrievable from curl.** Article detail pages expose HTML/PDF/CAJ order links, but local curl against those order endpoints redirects to CNKI Overseas login pages. The P0-1 two-model pass is therefore an abstract-level source read. Any wiki evidence-tier update still requires full text, preferably obtained through browser/manual CNKI access or another legitimate full-text route, then read with two independent models.
 
 **Baidu/Baidu Scholar is not usable through simple curl.** Baidu redirects to `百度安全验证` captcha pages. Treat Baidu as manual/browser-only unless a compliant API/source route is identified.
 
 ## Decision
 
-P0-2 and P0-3 first passes are complete. Continue next with either P0-3 full-text acquisition for the priority TCM records or P0-4 mushroom immunomodulation (cleaner J-STAGE/RISS path but less directly gout-specific).
+P0-2, P0-3, and P0-4 first passes are complete. Continue next with full-text acquisition/source-map reads for the priority P0-3 TCM records and the P0-4 edible-mushroom HUA/gout review before making additional wiki evidence-tier changes.

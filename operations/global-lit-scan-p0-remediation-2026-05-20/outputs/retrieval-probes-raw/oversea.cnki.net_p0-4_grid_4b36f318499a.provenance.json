@@ -1,0 +1,12 @@
+{
+  "url": "https://oversea.cnki.net/kns8s/brief/grid",
+  "query": "灰树花 痛风",
+  "category": "maitake_huishuhua_gout",
+  "search_url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%81%B0%E6%A0%91%E8%8A%B1%20%E7%97%9B%E9%A3%8E&uniplatform=OVERSEA&language=EN",
+  "fetched_at_utc": "2026-05-20T18:37:07.153638+00:00",
+  "curl_returncode": 0,
+  "stdout": "200 text/html;charset=UTF-8 https://oversea.cnki.net/kns8s/brief/grid",
+  "stderr": "",
+  "body_path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/retrieval-probes-raw/oversea.cnki.net_p0-4_grid_4b36f318499a.html",
+  "query_json_shape": "browser-captured OVERSEA CROSSDB Subject SU TOPRANK, Rlang=CHINESE"
+}
