@@ -1945,7 +1945,7 @@ A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FI
   - No published gout efficacy trials; this is a genuine off-label novelty.
   - Safety profile: liver enzyme elevation is the primary monitoring concern (~2% patients); monthly LFTs for the first 3 months standard.
   - Duration: 12 weeks, consistent with the existing self-experiment window.
-- **Phase 2: Baseline documentation.** Brian's colchicine-era flare frequency (available from existing medication history). 4-week pre-zileuton observation window if feasible.
+- **Phase 2: Baseline documentation.** Pre-zileuton flare frequency from Brian's self-experiment-protocol flare log; 4-week pre-zileuton observation window if feasible.
 - **Phase 3: Zileuton 1200 mg BID × 12 weeks.** Continue base supplement stack (including quercetin — zileuton does not contraindicate quercetin and any additive effect is informative).
 - Biomarkers:
   - **Urinary LTB4** at baseline and week 12 (from 3.6 — direct pharmacodynamic confirmation)
@@ -1964,7 +1964,7 @@ A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FI
 
 **Success criteria:**
 - **Urinary LTB4 ≥50% reduction at week 12** (confirms pharmacodynamic engagement — zileuton's on-target effect)
-- **Flare frequency reduced ≥50% vs. colchicine-era baseline** (clinical efficacy signal)
+- **Flare frequency reduced ≥50% vs. pre-zileuton observation baseline** (clinical efficacy signal)
 - **LFTs remain within normal range throughout** (safety)
 - **Negative result (no flare reduction despite LTB4 drop)** is also informative: suggests LTB4/neutrophil-chemotaxis is not rate-limiting for Brian's flare biology, and colchicine's mechanism (microtubule → chemotaxis) is doing more work than expected.
 
