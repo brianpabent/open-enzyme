@@ -15,3 +15,13 @@ The chaperone‑orthogonal stacking framework’s α‑coefficients — the tran
 Citable pages: `chaperone-orthogonal-stacking.md` §3.5.2 (coefficient derivation), §3.5.4 (calibration set design), §8 item 6 (framework’s own calibration‑uncertainty caveat); `koji-endgame-strain.md` §3.3 (capacity‑vs‑titer benchmark ambiguity).
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: RESTATEMENT]` The riskiest-assumption call is correct and should be elevated: `chaperone-orthogonal-stacking.md` §3.5.2 explicitly gives the transferrin-lobe α = 1.5–2.5 and CCP/SCR α = 0.3–0.6 ranges, and the `validation-experiments.md` queue now makes the §1.9 + §1.25 paired calibration set the co-#1 platform gate. Those coefficients drive DAF routing, triple-cassette feasibility, and the single-strain endgame thesis, while the page itself flags their non-koji calibration uncertainty. This is a genuine architecture-risk item, not a bookkeeping concern.
+
+---
+
+## ✓ Actioned 2026-05-21 (known-restatement closure, no new work)
+
+**This is the same α-coefficient riskiest-assumption that has appeared in multiple recent sweeps.** Already self-disclosed at [`chaperone-orthogonal-stacking.md`](../../wiki/chaperone-orthogonal-stacking.md) §8 item 6 ("the architecture-adjusted synergy coefficients are more differentiated than the bulk-count model but carry the same calibration uncertainty"); resolution gate already specified at [`validation-experiments.md`](../../wiki/validation-experiments.md) §1.9 + §1.25 paired calibration set under harmonised NSlD-ΔP10 / solid-state / matching-promoter conditions; the gate is the co-#1 platform-blocker.
+
+The platform is wet-lab-blocked on resolving the coefficients, not awareness-blocked. Re-surfacing this in every sweep is wasted attention. No new evidence in this sweep changes the calibration; closing as a known-restatement per the new [[feedback-no-riskiest-assumption-regurgitation]] discipline.
+
+**Structural follow-up:** the Pass 2 sweep prompt at `scripts/sweep-prompt-2-synthesize.md` will be updated post-walk (before push) to skip restatements of riskiest-assumption items already in `synthesis/done/` history, OR tag them `[KNOWN-RESTATEMENT]` for fast-close. Stops the regurgitation upstream.
