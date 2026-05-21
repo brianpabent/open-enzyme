@@ -724,6 +724,104 @@ Return JSON only:
     }
 
 
+def counterread_source_single_model(
+    client,
+    source_text,
+    language,
+    source_id,
+    config,
+    output_dir,
+    target_language="English",
+    model_b_role="model_b",
+):
+    """
+    Single-model counterread variant of the Open Enzyme translation cross-check.
+
+    The caller (typically a Claude subagent invoked through the user's Claude
+    subscription) IS Model A — it produces its own reading of the source
+    natively, in-context, without invoking OpenRouter for that half. This
+    function performs ONLY the Model B counterread through OpenRouter.
+
+    The caller is also the referee — after receiving this function's return
+    value, the caller compares its own in-context reading against the raw
+    Model B output and writes the annotated cross-check itself (with inline
+    {Model A: "..." | Model B: "..."} disagreement annotations and
+    [TRANSLATION-DISAGREEMENT] tags for load-bearing differences).
+
+    Cost rationale: Brian's Claude subscription is a fixed cost; OpenRouter
+    spend is incremental per token. Running both halves of the two-model
+    protocol through OpenRouter doubles the marginal spend for zero gain
+    when a Claude subagent is already executing the run. See
+    memory/feedback_subagent_as_model_a.md and CLAUDE.md
+    §"Translation protocol".
+
+    Sibling of translate_source_two_model(), which runs BOTH halves through
+    OpenRouter and is retained only for non-interactive pipelines where no
+    subagent is available to play the Model A role.
+
+    Returns dict with the counterread artifact path and the raw Model B text.
+    """
+    pair = translation_models_for_language(config, language)
+    if model_b_role not in pair:
+        raise KeyError(
+            f"counterread_source_single_model: model role {model_b_role!r} "
+            f"not present in translation pair for language {language!r}"
+        )
+    role = pair[model_b_role]
+    model = _model_name_from_role(role)
+
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    base = safe_filename(source_id)
+
+    system = (
+        "You are translating scientific source material for Open Enzyme. "
+        "Preserve scientific nuance, hedging, units, dose route, statistics, "
+        "mechanism language, and study-design details. Do not summarize."
+    )
+    user = (
+        f"Translate this {language} scientific text into {target_language}. "
+        "Return the translation only, preserving paragraph structure.\n\n"
+        f"SOURCE_ID: {source_id}\n\n{source_text}"
+    )
+
+    response = client.chat(
+        model,
+        [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+        temperature=role.get("temperature", 0.0),
+        max_tokens=role.get("max_tokens", 6000),
+    )
+
+    artifact = {
+        "source_id": source_id,
+        "language": language,
+        "created_at_utc": utc_now_iso(),
+        "protocol": "single_model_counterread_subagent_is_model_a",
+        "model_b": {
+            "role": model_b_role,
+            "model": response["model"],
+            "response_id": response["response_id"],
+            "text": response["text"],
+        },
+        "note": (
+            "Model A's reading is produced by the calling subagent in-context "
+            "and is NOT stored in this artifact. The subagent produces the "
+            "annotated cross-check separately, comparing its own reading "
+            "against model_b.text per the inline-disagreement protocol."
+        ),
+    }
+    artifact_path = output_dir / f"{base}.counterread.json"
+    write_json(artifact_path, artifact)
+    return {
+        "artifact_path": str(artifact_path),
+        "model_b_model": response["model"],
+        "model_b_text": response["text"],
+    }
+
+
 def _urlopen_json(url, params, timeout=60):
     query = urllib.parse.urlencode(params)
     full_url = f"{url}?{query}"

@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/complement-c5a-gout/">
       
       
-        <link rel="prev" href="../gout-genetic-variants/">
+        <link rel="prev" href="../mechanical-flare-triggers/">
       
       
         <link rel="next" href="../androgen-urate-axis/">
@@ -560,6 +560,8 @@
       
         
       
+        
+      
     
     
     
@@ -714,6 +716,41 @@
   
   
     <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanical-flare-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanical Flare Triggers — Open Questions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--open-question"></span>
   
 
   
@@ -4365,6 +4402,8 @@
       
         
       
+        
+      
     
     
     
@@ -5679,6 +5718,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../tier-2-butyrate-assay-audit-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tier 2 Butyrate Assay Audit (comp-038)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../t-axis-adjuvant-urate-mapping-computational/" class="md-nav__link">
         
   
@@ -6341,7 +6408,24 @@
 <li><strong>Chew 2014 AREDS Report #38</strong> (PMID 24974817, n=1,237): null result — no significant CFH × treatment interaction. The literature is heterogeneous.</li>
 </ul>
 <p>The mechanism interpretation that may rescue the OE prediction: AREDS-zinc and DHA work <em>through</em> complement regulation that requires functional CFH (Vavvas 2018 attributes the GTG2 paradox to zinc-induced complement inactivation requiring CFH-CRP bridging, which CFH 402H performs poorly). Rosmarinic acid / luteolin / Houttuynia work by <em>direct</em> convertase inhibition or polysaccharide-mediated CP/LBP blockade — neither requires functional CFH. The dissociation is mechanistically plausible but empirically untested.</p>
+<p><strong>Comp-039 (2026-05-21) elevates the dissociation from plausibility to per-candidate classification.</strong> <a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">comp-039</a> ran two-model independent cross-check (Claude Opus 4.7 = Model A, DeepSeek <code>deepseek/deepseek-chat-v3</code> = Model B) over the four top upstream-CP0 candidates. <strong>All four classified CFH-independent</strong> with mechanism-site justification:</p>
+<ul>
+<li><strong>Rosmarinic acid (High confidence):</strong> Sahu 1999 (PMID 10353266) localizes covalent attachment to the <strong>nascent C3b α'-chain thioester (Cys988)</strong>, structurally distant from CFH's CCP6-8 CRP/GAG-binding surface. IC50 = 34 μM. Mechanism quenches nascent C3b <em>before</em> surface deposition; CFH regulates already-deposited C3b — downstream of where rosmarinic acid acts.</li>
+<li><strong>Luteolin (Medium confidence):</strong> Zhang 2008 (PMID 18400428 / PMC7126446) matched CP and AP hemolytic IC50 (0.19 vs 0.17 mM) is <strong>inconsistent with a CFH-competitive mechanism</strong> — CFH is AP-specific; competition would predict AP-selectivity. Multi-mode confound for the UKB cross-tab — luteolin additionally has XO IC50 550 nM and URAT1 expression downregulation (CFH-orthogonal entirely).</li>
+<li><strong>Houttuynia cordata polysaccharide (HCP/HCPM/CHCP) (High confidence):</strong> Lu 2018 (PMID 29719782 / PMC5925397) depletion-rescue maps targets to <strong>C3 + C4 cleavage</strong> (C3-depleted serum rescue 9.29 ± 1.69%, C4-depleted 12.34 ± 1.39%, C5-depleted 44.54 ± 3.92%). <strong>CFH is AP-specific and does NOT regulate C4</strong> — C4 binding is mechanistically incompatible with CFH-dependence. TLR4-MD2 binding mode (Yu 2026 PMC12937656) is entirely upstream of complement. Three orthogonal lines converge.</li>
+<li><strong>Helicteres benzofuran lignans (Medium, replication-bounded):</strong> Yin 2016 (PMID 27834928 / PMC6273495) depletion-rescue identifies compound 5 targets as C1q + C2 + C3 + C9 (CH50 9 μM / AP50 21 μM). CP &gt; AP potency is inconsistent with CFH-competitive mechanism. Confidence bounded by <a href="../upstream-complement-modulator-sweep-computational/">comp-018 Phase 2 INCONCLUSIVE replication of Yin 2016</a>.</li>
+</ul>
+<p><strong>Two-model agreement on classification (all four candidates CFH-independent), preserved disagreement on prediction strength</strong> (Model A predicts negative direction — carriers benefit MORE because Y402H baseline severity amplifies absolute effect size; Model B predicts null — mechanism independence implies genotype indifference). Both reject the AMD-paradox direction (carriers worse). UKB cross-tab specification pre-specifies both with separate falsification thresholds; a positive (carriers worse) result refutes both and forces retiring the upstream-CP0-bypass hypothesis. Total OpenRouter spend for comp-039: $0.0022 (Model B counter-reads only; Claude subagent was Model A natively per <code>memory/feedback_subagent_as_model_a.md</code>).</p>
 <p><strong>Biobank feasibility:</strong> the cross-tabulation (UK Biobank CFH rs1061170 × dietary polyphenol intake × incident gout M10.x) is technically straightforward — rs1061170 is on the standard Axiom array; gout outcomes + Oxford WebQ dietary recall + Phenol-Explorer-derived polyphenol intake are all standard fields with published precedent (Yokose 2024 Rheumatology for gout × diet UKB methodology; Bondonno 2025 Nature Food for flavonoid-diversity × outcome UKB methodology). OE does not currently hold a UK Biobank application; the practical paths are (a) collaboration with existing gout-GWAS groups (Merriman/Otago, Major-Wrigley/Auckland, Choi/MGH) who already have UKB access and gout-extraction pipelines, ~3-month timeline, $0 OE cost; (b) AoU Researcher Workbench credentialing for a parallel direction-check in a smaller cohort with better African-American representation, ~2-4 weeks; &copy; primary UKB application, ~6-12 months + £3-9K. Full mining report: <a href="../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md"><code>logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md</code></a>.</p>
+<p><strong>Comp-039 (2026-05-21) per-candidate cross-tab specification.</strong> The candidate-stratified UKB ask (specific, falsifiable, mechanism-grounded) replaces a generic "any-polyphenol × CFH" query:</p>
+<ul>
+<li><strong>Lead query (highest-power tractable cross-tab):</strong> rs1061170 × Phenol-Explorer-derived rosmarinic-acid intake quartiles × incident gout M10.x in UKB participants without prior gout at baseline (target n ≈ 450K). Pre-specify <strong>both</strong> negative-direction (Model A) and null-direction (Model B) tests with separate falsification thresholds. AMD-paradox direction (HR &gt; 1.5 in carriers × high-intake vs non-carriers × high-intake, p&lt;0.05) refutes the upstream-CP0-bypass hypothesis and forces retiring rosmarinic acid from the CP0 stack.</li>
+<li><strong>Secondary:</strong> rs1061170 × Apiaceae-family intake × incident gout (luteolin proxy; better than total-flavonoid sums), with <strong>24h-urate intermediate-phenotype readout</strong> in the biochemistry subset to dissociate the complement mode from the XO + URAT1 urate-axis modes.</li>
+<li><strong>Tertiary:</strong> rs1061170 × dietary CFH-bypass diversity score × incident gout (composite over rosemary / lemon balm / perilla / celery / parsley intake, generalizing Bondonno 2025 Nature Food methodology).</li>
+<li><strong>Operational deferrals:</strong> HCP/Houttuynia cross-tab not UKB-actionable (rare in UK dietary corpus) → defer to East Asian cohorts (KoGES, China Kadoorie Biobank, Singapore Chinese Health Study); <a href="../computational-experiments/">comp-041 queued</a> to scan East Asian cohort feasibility. Helicteres not actionable in any biobank yet (non-dietary + comp-018 Phase 2 replication required first).</li>
+<li><strong>Wet-lab definitive test:</strong> <a href="../computational-experiments/">comp-040 queued</a>, blocked on OE wet-lab access — CFH-depleted-serum MSU-crystal complement-activation assay for rosmarinic acid, luteolin, and HCP. Retained suppression in CFH-depleted serum confirms CFH-independence; loss of suppression refutes.</li>
+<li><strong>Confound considerations for collaborators:</strong> (a) CFH 402H × hypertension interaction (Volcik 2008 ARIC) and CFH 402HH × elevated CRP (Hecker 2023) require adjustment for BMI, baseline CRP, eGFR, hypertension; (b) Mediterranean-diet-pattern correlation with rosmarinic-acid-rich foods needs adjustment; &copy; effect-direction differences across ancestries (Volcik 2008) suggest ancestry-stratified rather than pooled analysis.</li>
+</ul>
 <h3 id="64-gout-phenotype-heterogeneity-does-complement-differ-by-subtype">6.4 Gout phenotype heterogeneity — does complement differ by subtype?<a class="headerlink" href="#64-gout-phenotype-heterogeneity-does-complement-differ-by-subtype" title="Permanent link">&para;</a></h3>
 <p>Clinical phenotypes of gout that might have distinct complement profiles:</p>
 <table>

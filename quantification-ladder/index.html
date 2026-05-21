@@ -558,6 +558,8 @@
       
         
       
+        
+      
     
     
     
@@ -712,6 +714,41 @@
   
   
     <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanical-flare-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanical Flare Triggers — Open Questions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--open-question"></span>
   
 
   
@@ -3370,6 +3407,8 @@
       
         
       
+        
+      
     
     
     
@@ -4684,6 +4723,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../tier-2-butyrate-assay-audit-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tier 2 Butyrate Assay Audit (comp-038)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../t-axis-adjuvant-urate-mapping-computational/" class="md-nav__link">
         
   
@@ -5160,8 +5227,9 @@
 <li><strong>Koji digestive enzyme quantification.</strong> <a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a>. Lipase (olive-oil titration → p-NPP smartphone → spectrophotometer p-NPP or pH-stat → outsourced HUT or USP units). Amylase (starch-iodine clearance → DNS reducing-sugar smartphone → bench DNS or Bernfeld → outsourced). Protease (gelatin liquefaction or skim-milk plate → ninhydrin or azocasein smartphone → bench azocasein or pH-stat → outsourced).</li>
 <li><strong>Medicinal mushroom extract characterization.</strong> <a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code></a> §SOP-6. Cordycepin (visual dosing-by-ratio → speculative diazo Tier 2 pending verification, UV 260 nm fallback → HPLC SOP-2 → outsourced GMP-HPLC). EGT (visual → DTNB Ellman's thiol smartphone → HILIC-HPLC SOP-3 → outsourced). GLPP (visual + mass-balance → phenol-sulfuric total-polysaccharide smartphone → SEC-MALS SOP-1 → outsourced).</li>
 <li><strong>Microbiome-derived butyrate / SCFA quantification.</strong> <a href="../tier-2-butyrate-assay-audit-computational/"><code>tier-2-butyrate-assay-audit-computational.md</code></a> (comp-038) found no ready-to-adopt home/colorimetric butyrate Tier 2 assay. Current path: GC-MS remains the Tier 3 anchor; HPLC-UV is a plausible Tier 2-lab candidate for culture supernatants after spike-recovery + GC-MS validation; electrochemical fecal SCFA profiling is a promising stool-specific future direction, not production-ready.</li>
-<li><strong>Future tracks.</strong> TCM compound triage (per <a href="../tcm-modern-rigor-intersection/"><code>tcm-modern-rigor-intersection.md</code></a>) and siRNA / URAT1 modality (per <a href="../sirna-urat1-modality/"><code>sirna-urat1-modality.md</code></a>) inherit the framework as new compound classes are added.</li>
 </ul>
+<p><strong>Structural gap — extends beyond butyrate to all microbiome-derived metabolites (added 2026-05-21).</strong> The Tier 2 absence is not a butyrate-specific inconvenience; it is a class-level methodology bottleneck for every intervention whose active molecule is produced <em>in situ</em> by gut bacteria. The same dose-verification problem applies to: <strong>other SCFAs</strong> (propionate, acetate — same GC-MS Tier 3 path, same Tier 2 absence); <strong>secondary bile acids</strong> (lithocholic acid, deoxycholic acid — Tier 3 is LC-MS/MS, no validated Tier 2 colorimetric or enzymatic surface); <strong>microbial indoles</strong> (indole-3-propionate, indole-3-aldehyde, AhR ligand class — Tier 3 is LC-MS/MS, Tier 2 absent); <strong>TMAO</strong> (Tier 3 LC-MS/MS, Tier 2 absent). The personalised-medicine pipeline can verify the <em>precursor</em> was administered (fiber, resistant starch, probiotic strain, dietary tryptophan), but cannot verify that the downstream metabolite reached the target tissue at the intended concentration — the dose remains an unverified variable, indistinguishable from mechanism-failure noise. Closing this gap for even <em>one</em> metabolite class with a validated Tier 2 proxy unlocks the QC loop for every future microbiome-metabolite intervention. comp-038's "Next Step" — focused full-text/protocol verification on PMID 23542733 and PMID 42041444 + paired sodium-butyrate spike/recovery against GC-MS — is the cheapest path to that proof-of-concept for the SCFA sub-class; analogous desk audits + paired-validation designs would be needed per other metabolite class.
+- <strong>Future tracks.</strong> TCM compound triage (per <a href="../tcm-modern-rigor-intersection/"><code>tcm-modern-rigor-intersection.md</code></a>) and siRNA / URAT1 modality (per <a href="../sirna-urat1-modality/"><code>sirna-urat1-modality.md</code></a>) inherit the framework as new compound classes are added.</p>
 <h2 id="discipline-notes">Discipline notes<a class="headerlink" href="#discipline-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Single source of truth for tier definitions.</strong> This page. Tier-specific assay details live in the instantiation pages; the abstract framework definition stays here. Reason: two parallel definitions diverge over time. The 2026-05-14 walkthrough caught the early drift between <code>enzyme-quantification-protocol.md</code> and <code>medicinal-mushroom-extract-sops.md</code> SOP-6 and consolidated them here.</li>

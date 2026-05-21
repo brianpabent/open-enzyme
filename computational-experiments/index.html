@@ -558,6 +558,8 @@
       
         
       
+        
+      
     
     
     
@@ -712,6 +714,41 @@
   
   
     <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanical-flare-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanical Flare Triggers — Open Questions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--open-question"></span>
   
 
   
@@ -3370,6 +3407,8 @@
       
         
       
+        
+      
     
     
     
@@ -3977,6 +4016,17 @@
   
     <nav class="md-nav" aria-label="Analyses">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comp-039-cfh-dependence-mechanism-dissociation-of-dietary-upstream-cp0-candidates-cfh-independent-rosmarinic-acid-high-luteolin-medium-hcphcpmchcp-high-helicteres-medium-replication-bounded-2026-05-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comp-039 — CFH-dependence mechanism-dissociation of dietary upstream-CP0 candidates — CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded) (2026-05-21)
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#comp-038-tier-2-butyrate-assay-audit-yellow-2026-05-20" class="md-nav__link">
@@ -5139,6 +5189,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../tier-2-butyrate-assay-audit-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tier 2 Butyrate Assay Audit (comp-038)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../t-axis-adjuvant-urate-mapping-computational/" class="md-nav__link">
         
   
@@ -5453,6 +5531,19 @@
 <p><strong>Relationship to wet-lab experiments:</strong> Computational analyses inform priors; they shift confidence before a wet-lab experiment runs, and help interpret results after. They do not replace wet-lab validation.</p>
 <hr />
 <h2 id="analyses">Analyses<a class="headerlink" href="#analyses" title="Permanent link">&para;</a></h2>
+<h3 id="comp-039-cfh-dependence-mechanism-dissociation-of-dietary-upstream-cp0-candidates-cfh-independent-rosmarinic-acid-high-luteolin-medium-hcphcpmchcp-high-helicteres-medium-replication-bounded-2026-05-21">comp-039 — CFH-dependence mechanism-dissociation of dietary upstream-CP0 candidates — CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded) (2026-05-21)<a class="headerlink" href="#comp-039-cfh-dependence-mechanism-dissociation-of-dietary-upstream-cp0-candidates-cfh-independent-rosmarinic-acid-high-luteolin-medium-hcphcpmchcp-high-helicteres-medium-replication-bounded-2026-05-21" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> For each top upstream-CP0 candidate from comp-018 / comp-020 — rosmarinic acid, luteolin, <em>Houttuynia cordata</em> polysaccharide (HCP / HCPM / CHCP), <em>Helicteres</em> benzofuran lignans — does the candidate's anti-complement mechanism <em>require</em> functional CFH (and therefore lose efficacy in Y402H carriers, AMD-paradox-style), or does it work <em>upstream of</em> CFH (so Y402H carriers retain the benefit)? Generates the per-candidate prediction the UKB collaboration (Merriman/Otago, Major-Wrigley/Auckland, Choi/MGH) needs to run candidate-stratified cross-tabs rather than a generic "any-polyphenol × CFH" query.</p>
+<p><strong>Verdict:</strong> <strong>All four candidates classified CFH-INDEPENDENT.</strong> Rosmarinic acid (High confidence) — Sahu 1999 binds nascent C3b α'-chain thioester (Cys988) upstream of where CFH acts. Luteolin (Medium confidence) — broad CP+AP inhibition with mechanism site under-resolved; matched CP/AP IC50 inconsistent with CFH-competitive mechanism. HCP / HCPM / CHCP (High confidence) — Lu 2018 + Tian 2014 depletion-rescue maps targets to C3 + C4 + partial C5; C4 specificity is mechanistically incompatible with CFH-dependence (CFH is AP-specific). Helicteres benzofuran lignans (Medium confidence, bounded by comp-018 Phase 2 INCONCLUSIVE replication of Yin 2016) — multi-target on C1q + C2 + C3 + C4 + C9, structurally orthogonal to CFH's CCP6-8 binding surface.</p>
+<p><strong>Key findings:</strong>
+- Two-model independent cross-check (Claude Opus 4.7 = Model A; DeepSeek <code>deepseek/deepseek-chat-v3</code> = Model B): both models AGREE on classification for all four candidates.
+- Two-model DISAGREEMENT on predicted Y402H × candidate × incident-gout direction: Model A predicts negative direction (effect ≥ in carriers, because Y402H baseline severity amplifies absolute effect size); Model B predicts null (mechanism independence implies genotype indifference). Both reject the AMD-paradox direction (carriers worse). For UKB cross-tab, both predictions need separate falsification thresholds.
+- CFH Y402 structural footprint grep-verified: Sushi/CCP 7 = aa 387-444 of UniProt P08603. The four candidates' binding sites all map to upstream complement nodes (C3 thioester, C3 itself, classical-pathway C2 + C4 + C1q), not the CCP6-8 CRP/GAG-binding surface.
+- Recommended lead UKB cross-tab: rs1061170 × Phenol-Explorer-derived rosmarinic-acid intake × incident gout M10.x. Secondary: rs1061170 × Apiaceae-family intake × incident gout (luteolin proxy + 24h-urate intermediate readout). HCP cross-tab deferred to East Asian cohorts (KoGES / CKB / Singapore Chinese Health Study). Helicteres not actionable until comp-018 Phase 2 replication closes.
+- Total OpenRouter spend: ~$0.0022 (Model B counter-reads × 4 candidates).
+- New follow-ups surfaced: comp-040 (proposed) — wet-lab CFH-depleted-serum MSU-crystal assay as definitive falsification test; comp-041 (proposed) — East Asian cohort feasibility scan for Houttuynia × CFH cross-tab.</p>
+<p><strong>Informs:</strong> <a href="../gout-genetic-variants/">gout-genetic-variants.md</a> Category 5 CFH row · <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> §6.3 · <a href="../upstream-complement-modulator-sweep-computational/">upstream-complement-modulator-sweep-computational.md</a> · <a href="../upstream-complement-verification-rerun-computational/">upstream-complement-verification-rerun-computational.md</a> · <a href="../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md">logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md</a></p>
+<p><strong>Detail:</strong> <a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">interpretive</a> · operations workspace: <a href="../operations/cfh-mechanism-dissociation-2026-05-21/"><code>operations/cfh-mechanism-dissociation-2026-05-21/</code></a> · Complete first pass (next gate: UKB collaboration ask + comp-040 wet-lab depletion assay)</p>
+<hr />
 <h3 id="comp-038-tier-2-butyrate-assay-audit-yellow-2026-05-20">comp-038 — Tier 2 Butyrate Assay Audit — YELLOW (2026-05-20)<a class="headerlink" href="#comp-038-tier-2-butyrate-assay-audit-yellow-2026-05-20" title="Permanent link">&para;</a></h3>
 <p><strong>Question:</strong> Is there a Tier 2 butyrate quantification assay (colorimetric, enzymatic, breath-proxy, electrochemical, or other low-cost intermediate method) that can be validated against Tier 3 GC-MS for stool, serum, breath, or culture-supernatant matrices?</p>
 <p><strong>Verdict:</strong> <strong>YELLOW.</strong> No ready-to-adopt simple/home colorimetric or breath-based butyrate assay surfaced. Two plausible Tier 2 candidates surfaced: HPLC-UV SCFA + lactate assay for culture-supernatant / engineered-strain work, and electrochemical fecal SCFA profiling with ANN deconvolution as an emerging stool-specific direction. Both require full-text/protocol review and paired GC-MS validation before OE adoption.</p>
@@ -5905,6 +5996,24 @@
 <td>Completed 2026-05-20 — YELLOW; HPLC-UV culture-supernatant candidate + electrochemical fecal SCFA future direction; no home/colorimetric butyrate assay ready. See Analyses above</td>
 <td>—</td>
 <td>✓ Done</td>
+</tr>
+<tr>
+<td>~~comp-039~~</td>
+<td>Completed 2026-05-21 — All four upstream-CP0 candidates classified CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded). See Analyses above</td>
+<td>—</td>
+<td>✓ Done</td>
+</tr>
+<tr>
+<td>comp-040</td>
+<td>Wet-lab in-vitro CFH-depleted-serum MSU-crystal complement-activation assay — definitive falsification test of comp-039 CFH-independence classification for rosmarinic acid, luteolin, and HCP. Surfaced by <a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">comp-039</a> §7. <strong>Sequenced downstream of <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.30</a></strong> for HCP specifically — comp-040 only fires if §1.30 prioritization screen returns positive. (Other candidates — rosmarinic acid, luteolin — could fire comp-040 independent of §1.30 since they have their own analogous prioritization gates.)</td>
+<td><a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">comp-039</a>, <a href="../validation-experiments/">validation-experiments.md §1.30</a>, <a href="../gout-genetic-variants/">gout-genetic-variants.md</a> Category 5, <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> §6.3</td>
+<td>Blocked (OE wet-lab access; relevant to lab-partner conversations)</td>
+</tr>
+<tr>
+<td>comp-041</td>
+<td>East Asian cohort feasibility scan for Houttuynia × rs1061170 × incident gout cross-tab — KoGES, China Kadoorie Biobank, Singapore Chinese Health Study. Parallels the 2026-05-19 UKB feasibility analysis but for the Houttuynia-tractable population (HCP exposure captured; Y402H allele frequency ~5-6%). Surfaced by <a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">comp-039</a> §5 + §7.</td>
+<td><a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">comp-039</a>, <a href="../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md">logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md</a></td>
+<td>Queueable (opens when East Asian collaboration channel becomes available)</td>
 </tr>
 <tr>
 <td>~~comp-028~~</td>

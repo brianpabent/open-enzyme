@@ -558,6 +558,8 @@
       
         
       
+        
+      
     
     
     
@@ -712,6 +714,41 @@
   
   
     <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanical-flare-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanical Flare Triggers — Open Questions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--open-question"></span>
   
 
   
@@ -3365,6 +3402,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#13-acute-flare-stack-sub-experiment-protocol-c-prospective-n1-added-2026-05-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Acute-flare stack sub-experiment — Protocol C, prospective n=1 (added 2026-05-21)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3521,6 +3569,8 @@
       
         
           
+        
+      
         
       
         
@@ -4919,6 +4969,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../tier-2-butyrate-assay-audit-computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tier 2 Butyrate Assay Audit (comp-038)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../t-axis-adjuvant-urate-mapping-computational/" class="md-nav__link">
         
   
@@ -5533,6 +5611,71 @@
 <p><strong>Promoted to standalone page 2026-05-16.</strong> The five-step workflow composing genotype-informed selection + home/community-biolab batch QC + biomarker tracking now lives at <a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a>. That page is the user-facing canonical surface for the closed-loop n=1 pharmacogenomics pipeline.</p>
 <p>This protocol page focuses on the per-subject self-experiment mechanics (§1–§11 above) — daily log, biomarker tracking, intervention scheduling. The genotype-informed-workflow page focuses on the cross-component pipeline that those mechanics participate in.</p>
 <p>When walking a new intervention end-to-end, follow <a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a> for the workflow shape; come back here for the biomarker-tracking detail.</p>
+<hr />
+<h2 id="13-acute-flare-stack-sub-experiment-protocol-c-prospective-n1-added-2026-05-21">13. Acute-flare stack sub-experiment — Protocol C, prospective n=1 <em>(added 2026-05-21)</em><a class="headerlink" href="#13-acute-flare-stack-sub-experiment-protocol-c-prospective-n1-added-2026-05-21" title="Permanent link">&para;</a></h2>
+<p><strong>Scope.</strong> Prospective n=1 evaluation of the Protocol C triple-mechanism acute-flare stack from <a href="../gout-action-guide/"><code>gout-action-guide.md</code> §"Combined-route flare protocols"</a> — colchicine + topical CBD:THC + DHA-emphasis omega-3. The combination has not been tested in any human RCT and is tagged Speculative. The point of running it as a structured n=1 across multiple flares is to <strong>separate timing and endpoints by mechanism arm</strong> rather than collapsing into one "flare better" composite signal — the three arms operate on different time scales and different chokepoints, and pooling them obscures which arm is doing the work.</p>
+<p><strong>When relevant.</strong> Subject has recurrent gout flares (≥3 per year), is already on colchicine (no statin / macrolide / cyclosporine / severe renal contraindication), maintains a chronic DHA-emphasis omega-3 dose with a measured blood omega-3 index ≥ 8% (the DHA-SPM arm is gated on chronic loading state; acute loading during a flare does not rescue an inadequate baseline), and has medical-cannabis access for the topical 1:1 CBD:THC arm.</p>
+<p><strong>Pre-flare baseline (panel before the next flare event).</strong>
+- Serum omega-3 index (DHA + EPA % of total RBC fatty acids) — target ≥ 8%
+- Serum hs-CRP (baseline inflammatory tone)
+- Serum urate (chronic level — should already be tracked per §4)
+- 24h-urine urate if available</p>
+<p><strong>During the flare (Protocol C timing per <code>gout-action-guide.md</code> Protocol C):</strong>
+- <strong>t = 0:</strong> Oral colchicine 1.2 mg + topical 1:1 CBD:THC on affected joint + ice cycle 10–15 min
+- <strong>t = +1 h:</strong> Oral colchicine 0.6 mg + re-apply topical CBD:THC + ice cycle 30–60 min
+- <strong>Throughout:</strong> Continue chronic DHA-emphasis omega-3 at the standing dose (no acute load — baseline is the gating variable)
+- <strong>At onset (t = 0–6 h) — draw 1:</strong> Serum C5a, hs-CRP, IL-1β if available. <em>This is the resolution-slope anchor — without an onset C5a value, the wind-down slope is unmeasurable.</em></p>
+<p><strong>Mechanism-separated endpoints — pick by which arm you want to evaluate.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Arm</th>
+<th>Endpoint</th>
+<th>Measurement windows</th>
+<th>What a positive signal looks like</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Colchicine (suppression, systemic)</td>
+<td>Joint pain (VAS 0–10), joint circumference (cm), patient global flare-severity (VAS 0–10)</td>
+<td>6 h, 24 h, 48 h, 72 h</td>
+<td>AGREE-style ≥50% pain reduction by 24 h</td>
+</tr>
+<tr>
+<td>Topical CBD:THC (suppression, local)</td>
+<td>Local joint pain at the application site (VAS 0–10)</td>
+<td>30 min, 1 h, 2 h, 4 h (rapid topical-onset window — separate from systemic colchicine timing)</td>
+<td>Local pain drop within 30–120 min, before systemic colchicine kinetics would predict</td>
+</tr>
+<tr>
+<td>DHA SPM (resolution-class, systemic)</td>
+<td>Serum C5a slope days 3–7 (resolution phase per <a href="../spm-resolution-pathway/"><code>spm-resolution-pathway.md</code> §7.3</a>); serum 17-HDHA / 14-HDHA on LC-MS/MS lipidomic panel if accessible</td>
+<td>Onset draw (t = 0–6 h), resolution draws day 3, day 5, day 7</td>
+<td>Steeper C5a decline slope (faster ng/L per day) in DHA-loaded events vs. omega-3-deficient comparator events (within-subject across flares)</td>
+</tr>
+<tr>
+<td>Composite resolution</td>
+<td>Flare duration to &lt; 2/10 pain (days from onset)</td>
+<td>Daily VAS log</td>
+<td>Shorter than personal baseline median flare duration</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cadence and within-subject control.</strong> A single flare event is one data point per arm. Useful inference requires <strong>n = several flares per arm-state combination</strong> — ideally the subject can compare events where:
+- Omega-3 index was ≥ 8% (DHA arm "active") vs. &lt; 4% (DHA arm "inactive") at flare onset
+- Topical CBD:THC was applied vs. omitted (controlling for jurisdictional access)
+- Colchicine was used at full AGREE dosing vs. partial / late</p>
+<p>Logging discipline (per §5 symptom diary) is the load-bearing variable here — without dated per-arm logs across flares, the mechanism-separated endpoints collapse back into the "flare better" composite.</p>
+<p><strong>What you can conclude.</strong>
+- <strong>Per-arm directional signal:</strong> Does <em>your</em> local pain drop on the topical CBD:THC arm timing window? Does <em>your</em> C5a slope steepen in DHA-loaded events? Does <em>your</em> composite flare duration shorten on Protocol C vs. prior single-arm protocols?
+- <strong>Within-subject mechanism-class evidence:</strong> Is the resolution-class arm doing distinct work from the suppression-class arms in your own data, or is the composite signal entirely explained by the suppression arms?</p>
+<p><strong>What you cannot conclude.</strong>
+- Cannot generalize to other subjects (n=1, uncontrolled, unblinded).
+- Cannot substitute for a future formal Protocol C RCT — that's where population-level claims get established.
+- Cannot disentangle a non-DHA arm of the SPM mechanism from a DHA-specific effect (the n=1 omega-3-index comparison is correlational across the subject's flare history).</p>
+<p><strong>Evidence level:</strong> Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only for personal protocol decisions. Generates hypotheses; does not establish efficacy.</p>
+<p><strong>Cross-references:</strong> <a href="../gout-action-guide/"><code>gout-action-guide.md</code> §"Combined-route flare protocols" Protocol C</a> (the protocol composition canonical surface); <a href="../spm-resolution-pathway/"><code>spm-resolution-pathway.md</code> §7.3</a> (the C5a-decline-slope falsifiable prediction this n=1 partially tests); <a href="../colchicine/"><code>colchicine.md</code> §3.3.1</a> (colchicine arm mechanism + AGREE dosing); <a href="../cannabinoids-terpenes/"><code>cannabinoids-terpenes.md</code> §4a</a> (topical CBD:THC arm mechanism + Brian's n=1 layered-flare-interrupt anchor); <a href="../complement-c5a-gout/"><code>complement-c5a-gout.md</code> §3.1</a> (C5a half-life kinetics bounding the slope-measurement window).</p>
 
 
 
