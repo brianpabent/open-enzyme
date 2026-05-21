@@ -90,6 +90,18 @@ After enumeration, **commit to two single-answer forced-rank picks**. These are 
 
 **Riskiest Assumption.** One paragraph. Name the single load-bearing belief in the *current platform thesis* (top of `index.md` and `wiki/etc/open-enzyme-vision.md`) that is *least* supported by the corpus — the belief whose failure would most invalidate the platform direction. Anchor to specific wiki page(s) where the belief is asserted and specific evidence (or absence of evidence) you can point at. Not "what could go wrong in general" — the specific belief.
 
+**Dedup discipline — riskiest assumption (added 2026-05-21).** Before committing to a pick, **grep `synthesis/done/` for recently-surfaced riskiest-assumption items** (e.g., `ls synthesis/done/ | grep riskiest-assumption | tail -5`). The α-coefficient calibration gap (transferrin-lobe α 1.5–2.5 / CCP-SCR α 0.3–0.6 from `chaperone-orthogonal-stacking.md`) is the canonical case — it has been surfaced in multiple sweeps, is self-disclosed at §8 item 6 of its source page, AND has a documented resolution gate at `validation-experiments.md` §1.9 + §1.25. The user is wet-lab-blocked on resolving it, not awareness-blocked. **Re-emitting the same already-gated belief every sweep is wasted attention and burns user trust.**
+
+Decision tree before producing the section:
+
+1. **If your top candidate is a restatement of a riskiest-assumption surfaced within the last ~3 sweeps** (check `synthesis/done/*riskiest-assumption*.md` filenames + Pass 2 logs in `synthesis/history/` if needed) AND that prior item has a documented resolution gate in `validation-experiments.md`, `chaperone-orthogonal-stacking.md` §8, or analogous self-disclosed-limitation surface: **do NOT lead with the restatement.** Instead:
+   - **Preferred:** pick the *second-most-load-bearing belief* that has NOT been recently surfaced. Especially favor beliefs introduced by recent wiki additions or recent comp-NNN runs (check `git log --since="<last-sweep-date>" wiki/` for fresh material).
+   - **Fallback (only if no genuinely different candidate exists):** tag the restatement with `[KNOWN-RESTATEMENT]` after the section header so walkthrough discipline can fast-close it without a full re-review cycle.
+2. **If recent content (new wiki pages or comp-NNN since last sweep) introduces a new load-bearing belief without a resolution gate**, that is the preferred riskiest-assumption pick. New + ungated > old + gated. The riskiest-assumption section's value is surfacing what the user *doesn't already know*, not reminding them what they've already documented.
+3. **The α-coefficient gap is fast-close territory.** If you've genuinely run the analysis and the α-coefficient gap is still the most-load-bearing ungated belief in the corpus AND there is no fresher candidate, that itself is a signal — but use the `[KNOWN-RESTATEMENT]` tag explicitly so the walkthrough knows. Do not pretend it's a fresh finding.
+
+This discipline applies specifically to the Riskiest Assumption forced-rank section. Connections / Contradictions / Open Questions / Priority Actions retain the "bias toward inclusion" framing from Phase A — composing two known items is still novel synthesis even if both individual items are documented.
+
 **Most Curious Thread.** One paragraph. Of everything in this corpus, pick *one* thread you'd spend the next experiment slot on. Must include: (a) the specific corpus evidence supporting the hunch, line-anchored as `file.md §section` or page-name+topic, (b) the specific evidence that would refute it, (c) the cheapest experiment that would discriminate. Multi-vendor signal: if you suspect another sweep model would converge on this pick, say so; if you suspect this is your idiosyncratic taste, say that too — divergence may be as informative as convergence here.
 
 These are corpus-anchored take commitments, the take-equivalent of the project's pre-commit grep-verify gate (CLAUDE.md Rule 4): just as load-bearing numbers must be grep-verifiable against a primary source before they ship, load-bearing *takes* must be grep-anchorable against specific corpus locations before they ship. Don't hand-wave; point at lines.
@@ -155,9 +167,9 @@ Also include a `[PHASE-A-MATCH: <yes/no/partial>]` tag — your honest self-asse
 
    {{PEER-REVIEW}}
 
-## Riskiest Assumption
+## Riskiest Assumption[ — KNOWN-RESTATEMENT if applicable per dedup discipline]
 
-(One paragraph. Single load-bearing belief in the current platform thesis that is least supported by the corpus. Anchor to specific wiki page(s) and specific evidence or absence of evidence. See "Forced-rank close" above.)
+(One paragraph. Single load-bearing belief in the current platform thesis that is least supported by the corpus. Anchor to specific wiki page(s) and specific evidence or absence of evidence. See "Forced-rank close" above. **Apply the dedup discipline** — if this is a restatement of a recently-surfaced already-gated riskiest assumption (canonical case: chaperone-orthogonal α-coefficient calibration gap), either pick a fresher belief OR tag the section header with `— KNOWN-RESTATEMENT` so walkthrough can fast-close.)
 
 {{PEER-REVIEW}}
 
