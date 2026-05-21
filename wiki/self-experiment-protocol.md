@@ -286,3 +286,52 @@ Lower-cost subject-specific assays that supplement the standard four-biomarker p
 This protocol page focuses on the per-subject self-experiment mechanics (§1–§11 above) — daily log, biomarker tracking, intervention scheduling. The genotype-informed-workflow page focuses on the cross-component pipeline that those mechanics participate in.
 
 When walking a new intervention end-to-end, follow [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) for the workflow shape; come back here for the biomarker-tracking detail.
+
+---
+
+## 13. Acute-flare stack sub-experiment — Protocol C, prospective n=1 *(added 2026-05-21)*
+
+**Scope.** Prospective n=1 evaluation of the Protocol C triple-mechanism acute-flare stack from [`gout-action-guide.md` §"Combined-route flare protocols"](./gout-action-guide.md) — colchicine + topical CBD:THC + DHA-emphasis omega-3. The combination has not been tested in any human RCT and is tagged Speculative. The point of running it as a structured n=1 across multiple flares is to **separate timing and endpoints by mechanism arm** rather than collapsing into one "flare better" composite signal — the three arms operate on different time scales and different chokepoints, and pooling them obscures which arm is doing the work.
+
+**When relevant.** Subject has recurrent gout flares (≥3 per year), is already on colchicine (no statin / macrolide / cyclosporine / severe renal contraindication), maintains a chronic DHA-emphasis omega-3 dose with a measured blood omega-3 index ≥ 8% (the DHA-SPM arm is gated on chronic loading state; acute loading during a flare does not rescue an inadequate baseline), and has medical-cannabis access for the topical 1:1 CBD:THC arm.
+
+**Pre-flare baseline (panel before the next flare event).**
+- Serum omega-3 index (DHA + EPA % of total RBC fatty acids) — target ≥ 8%
+- Serum hs-CRP (baseline inflammatory tone)
+- Serum urate (chronic level — should already be tracked per §4)
+- 24h-urine urate if available
+
+**During the flare (Protocol C timing per `gout-action-guide.md` Protocol C):**
+- **t = 0:** Oral colchicine 1.2 mg + topical 1:1 CBD:THC on affected joint + ice cycle 10–15 min
+- **t = +1 h:** Oral colchicine 0.6 mg + re-apply topical CBD:THC + ice cycle 30–60 min
+- **Throughout:** Continue chronic DHA-emphasis omega-3 at the standing dose (no acute load — baseline is the gating variable)
+- **At onset (t = 0–6 h) — draw 1:** Serum C5a, hs-CRP, IL-1β if available. *This is the resolution-slope anchor — without an onset C5a value, the wind-down slope is unmeasurable.*
+
+**Mechanism-separated endpoints — pick by which arm you want to evaluate.**
+
+| Arm | Endpoint | Measurement windows | What a positive signal looks like |
+|---|---|---|---|
+| Colchicine (suppression, systemic) | Joint pain (VAS 0–10), joint circumference (cm), patient global flare-severity (VAS 0–10) | 6 h, 24 h, 48 h, 72 h | AGREE-style ≥50% pain reduction by 24 h |
+| Topical CBD:THC (suppression, local) | Local joint pain at the application site (VAS 0–10) | 30 min, 1 h, 2 h, 4 h (rapid topical-onset window — separate from systemic colchicine timing) | Local pain drop within 30–120 min, before systemic colchicine kinetics would predict |
+| DHA SPM (resolution-class, systemic) | Serum C5a slope days 3–7 (resolution phase per [`spm-resolution-pathway.md` §7.3](./spm-resolution-pathway.md)); serum 17-HDHA / 14-HDHA on LC-MS/MS lipidomic panel if accessible | Onset draw (t = 0–6 h), resolution draws day 3, day 5, day 7 | Steeper C5a decline slope (faster ng/L per day) in DHA-loaded events vs. omega-3-deficient comparator events (within-subject across flares) |
+| Composite resolution | Flare duration to < 2/10 pain (days from onset) | Daily VAS log | Shorter than personal baseline median flare duration |
+
+**Cadence and within-subject control.** A single flare event is one data point per arm. Useful inference requires **n = several flares per arm-state combination** — ideally the subject can compare events where:
+- Omega-3 index was ≥ 8% (DHA arm "active") vs. < 4% (DHA arm "inactive") at flare onset
+- Topical CBD:THC was applied vs. omitted (controlling for jurisdictional access)
+- Colchicine was used at full AGREE dosing vs. partial / late
+
+Logging discipline (per §5 symptom diary) is the load-bearing variable here — without dated per-arm logs across flares, the mechanism-separated endpoints collapse back into the "flare better" composite.
+
+**What you can conclude.**
+- **Per-arm directional signal:** Does *your* local pain drop on the topical CBD:THC arm timing window? Does *your* C5a slope steepen in DHA-loaded events? Does *your* composite flare duration shorten on Protocol C vs. prior single-arm protocols?
+- **Within-subject mechanism-class evidence:** Is the resolution-class arm doing distinct work from the suppression-class arms in your own data, or is the composite signal entirely explained by the suppression arms?
+
+**What you cannot conclude.**
+- Cannot generalize to other subjects (n=1, uncontrolled, unblinded).
+- Cannot substitute for a future formal Protocol C RCT — that's where population-level claims get established.
+- Cannot disentangle a non-DHA arm of the SPM mechanism from a DHA-specific effect (the n=1 omega-3-index comparison is correlational across the subject's flare history).
+
+**Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only for personal protocol decisions. Generates hypotheses; does not establish efficacy.
+
+**Cross-references:** [`gout-action-guide.md` §"Combined-route flare protocols" Protocol C](./gout-action-guide.md) (the protocol composition canonical surface); [`spm-resolution-pathway.md` §7.3](./spm-resolution-pathway.md) (the C5a-decline-slope falsifiable prediction this n=1 partially tests); [`colchicine.md` §3.3.1](./colchicine.md) (colchicine arm mechanism + AGREE dosing); [`cannabinoids-terpenes.md` §4a](./cannabinoids-terpenes.md) (topical CBD:THC arm mechanism + Brian's n=1 layered-flare-interrupt anchor); [`complement-c5a-gout.md` §3.1](./complement-c5a-gout.md) (C5a half-life kinetics bounding the slope-measurement window).
