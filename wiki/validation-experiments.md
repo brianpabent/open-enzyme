@@ -1235,15 +1235,15 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 ---
 
-### 1.30 Houttuynia cordata polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages (added 2026-05-21, source: comp-039 + sweep walkthrough Item 9)
+### 1.30 Houttuynia cordata polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages — prioritization screen (added 2026-05-21, refined per external critique 2026-05-21)
 
-**Status:** Proposed | **Cost:** ~$2,000–3,000 (CRO macrophage assay) | **Weeks:** 4–6 | **Phase:** 1
+**Status:** Proposed | **Cost:** ~$1,500–2,500 (CRO macrophage assay; reduced from $2,000–3,000 after dropping complement-axis readouts) | **Weeks:** 4–6 | **Phase:** 1
 
-**Affected wiki:** [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9.7 (HCP/HCPM as Tier 1d dual-chokepoint candidate); [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) §CP1 (Houttuynia entry); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2); [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.3 (comp-039 HCP CFH-independence classification); [`supplements-stack.md`](./supplements-stack.md) (Houttuynia catalog entry).
+**Scope discipline: this is a prioritization screen, NOT a mechanism-confirmation assay.** The single question it answers is: *does any form of Houttuynia suppress MSU-induced IL-1β in THP-1 macrophages, and does purification vs. commercial sourcing matter?* Mechanism-specific work (CP0 complement-axis, CFH-dependence) is sequenced downstream in [comp-040](./computational-experiments.md) only if §1.30 returns a positive signal. Per the anti-pattern: do not try to make one cheap assay answer six scientific questions simultaneously.
 
-**What it tests:** Whether *Houttuynia cordata* polysaccharide's documented CP0 complement-inhibitory + CP1 NLRP3-suppressive activities translate to a gout-relevant cell model — and whether the structure-dependent activity (purified Chen-group fractions vs. generic commercial extracts) creates a consumer-product equivalence gap parallel to the mushroom β-glucan structure-dependence already documented for *Ganoderma lucidum*.
+**Affected wiki:** [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9.7 (HCP/HCPM as Tier 1d dual-chokepoint candidate); [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) §CP1 (Houttuynia entry); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2); [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.3 (comp-039 HCP CFH-independence classification — sequenced after §1.30); [`supplements-stack.md`](./supplements-stack.md) (Houttuynia catalog entry).
 
-**Why this matters:** Houttuynia is the corpus's first dual-CP0+CP1 dietary candidate and one of the most-cited "most curious thread" picks of recent sweeps. comp-039 (2026-05-21) classified HCP/HCPM/CHCP as **CFH-independent (High confidence)** based on Lu 2018 depletion-rescue (C3 + C4 cleavage targeting; C4 mechanistically incompatible with CFH-dependence). That confirms the mechanism-site classification but does NOT replace the gout-cell-model gate. Cheng 2014 (PMC7112369) documents structure-dependent directionality — purified 60 kDa HCP-2 is pro-inflammatory on naïve PBMCs while the anti-inflammatory phenotype appears in disease-context inflammation — so a generic "Houttuynia extract" capsule cannot be assumed equivalent to the Chen-group HCPM preparation.
+**Why this matters:** Houttuynia is the corpus's first dual-CP0+CP1 dietary candidate. comp-039 classified HCP/HCPM/CHCP as CFH-independent on mechanism-site grounds, but cell-model translation is a separate question. Cheng 2014 (PMC7112369) documents structure-dependent directionality — purified 60 kDa HCP-2 is pro-inflammatory on naïve PBMCs while the anti-inflammatory phenotype appears in disease-context inflammation — so a generic "Houttuynia extract" capsule cannot be assumed equivalent to the Chen-group HCPM preparation without direct comparison.
 
 **Proposed in:** [synthesis/done/2026-05-20-experiment-2-msustimulated-thp1-macrophage-assay-of-houttuynia-cordata.md](../synthesis/done/2026-05-20-experiment-2-msustimulated-thp1-macrophage-assay-of-houttuynia-cordata.md).
 
@@ -1253,19 +1253,20 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - **Arm B: Crude HCP** — boiled-water extract of *Houttuynia cordata* whole-herb (the home-preparation reference, parallels mushroom β-glucan crude vs. purified comparison).
 - **Arm C: Commercial Houttuynia capsule extract** — three brands (consumer-product representative; tests product-equivalence directly).
 
-Each arm: dose-response (1, 10, 100, 1000 μg/mL) in MSU-stimulated THP-1 macrophages (1 × 10⁶/well, LPS pre-prime 100 ng/mL × 3 hr, MSU challenge 100 μg/mL × 6 hr). Vehicle-only and nigericin (NLRP3 activator) controls.
+Each arm: **three log-spaced doses (10, 100, 1000 μg/mL)** in MSU-stimulated THP-1 macrophages (1 × 10⁶/well, LPS pre-prime 100 ng/mL × 3 hr, MSU challenge 100 μg/mL × 6 hr). Vehicle-only and nigericin (NLRP3 activator) controls.
 
-**Readouts:**
-- IL-1β supernatant ELISA (primary endpoint; CP3/CP4 NLRP3 axis readout)
-- IL-6 supernatant ELISA (secondary; broader inflammatory readout)
-- C3a / sC5b-9 supernatant (complement-axis readout — tests whether the CP0 mechanism is operative in the macrophage model)
-- Cell viability (CCK-8 or MTT — confirms results aren't confounded by cytotoxicity at high doses)
+**Readouts (narrow):**
+- **IL-1β supernatant ELISA** — primary endpoint. NLRP3-axis output; the signature gout-inflammation signal.
+- **IL-6 supernatant ELISA** — secondary; broader inflammatory readout. Cheap technical-fail safeguard.
+- **Cell viability (CCK-8 or MTT)** — confounder check. Required to interpret null results (cytotoxicity at high doses can masquerade as "no effect").
+
+**Dropped vs. earlier draft:** C3a + sC5b-9 readouts removed. THP-1 macrophages don't reproduce serum complement biology cleanly — a positive complement signal could be "the CP0 mechanism translates" OR "local-macrophage complement leaked" OR "assay format artifact," indistinguishable. The CP0 mechanism question is answered in [comp-040](./computational-experiments.md) (CFH-depleted serum + MSU) where the full complement cascade is operative.
 
 **Decision rules:**
-- If **HCPM suppresses IL-1β ≥50% at ≤100 μg/mL AND commercial extracts fail to match** within ≥10× dose range: Houttuynia confirmed as platform's first dual-CP0+CP1 dietary candidate, with explicit consumer-product caveat — Chen-group preparation specifically, NOT generic capsules. Promote from "mechanism-supported, gout-untested" to "gout-relevant macrophage validated, human RCT pending."
-- If **all three arms suppress IL-1β equivalently**: consumer-product equivalence holds; commercial capsules are an acceptable proxy. Promote to dietary-stack recommendation.
-- If **none of the three arms suppress IL-1β**: the CP0 + CP1 mechanism does not translate to the macrophage model; Houttuynia stays at mechanism-supported but is deprioritized as a gout intervention. Retire from active candidate stack.
-- If **crude HCP performs ≥ HCPM**: the purification step is not load-bearing; home-preparation is acceptable; consumer-extract testing remains the next gate.
+- If **HCPM suppresses IL-1β ≥50% at ≤100 μg/mL AND commercial extracts fail to match** within ≥10× dose range: Houttuynia confirmed as gout-relevant in cell model with consumer-product caveat. Promote to "gout-relevant macrophage validated; human RCT pending." **Fire [comp-040](./computational-experiments.md) next** for CFH-independence mechanism confirmation.
+- If **all three arms suppress IL-1β equivalently**: consumer-product equivalence holds (within these 3 brands). Promote to dietary-stack recommendation. **Fire [comp-040](./computational-experiments.md) next**.
+- If **none of the three arms suppress IL-1β**: the mechanism does not translate to the macrophage model. **Deprioritize Houttuynia**; do NOT proceed to comp-040 — the mechanism work is wasted if cell-model translation fails.
+- If **crude HCP performs ≥ HCPM**: purification step not load-bearing; home-preparation acceptable; consumer-extract gate remains. **Fire [comp-040](./computational-experiments.md) next** for mechanism confirmation.
 
 **Success criteria:**
 - Detectable IL-1β baseline in MSU-stimulated vehicle controls (≥500 pg/mL by ELISA standard curve).
@@ -1274,7 +1275,15 @@ Each arm: dose-response (1, 10, 100, 1000 μg/mL) in MSU-stimulated THP-1 macrop
 
 **Dependencies:** CRO with THP-1 macrophage NLRP3 assay capability (Cellular Technology Limited, Eurofins Discovery, several specialty rheumatology contract labs). HCPM sourcing is the operational bottleneck — direct collaboration request to Chen Daofeng / Fudan would be the cleanest path; in-house preparation following Lu 2018 protocol is the fallback. Commercial-capsule arm: three brands of "Houttuynia cordata" extract from US/EU supplement marketplaces (any with documented standardization claims).
 
-**Cross-references:** [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.3 (comp-039 HCP CFH-independence + falsification test priority); [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9.7 (HCP/HCPM Tier 1d dual-chokepoint candidate); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2 HCP discovery); [`logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md`](../logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md).
+**Sequential gate logic** (this assay's position in the Houttuynia validation cascade):
+
+| Gate | Question | Cost | Fires if... |
+|---|---|---|---|
+| **§1.30 (this assay)** | Does Houttuynia suppress MSU-induced IL-1β in a gout-relevant cell model, and does sourcing matter? | $1.5–2.5K | Always (prioritization screen) |
+| **comp-040** | Is the CFH-independence classification correct? (mechanism confirmation) | Similar order | Only if §1.30 returns positive on at least one arm |
+| **Future human n=1 / cohort work** | Does Houttuynia matter for gout in humans? | TBD | Only if comp-040 confirms mechanism + bioavailability is plausible |
+
+**Cross-references:** [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.3 (comp-039 HCP CFH-independence — mechanism-side analysis sequenced downstream); [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9.7 (HCP/HCPM Tier 1d dual-chokepoint candidate); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2 HCP discovery); [`logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md`](../logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md).
 
 ---
 
