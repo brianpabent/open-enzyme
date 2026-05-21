@@ -19,3 +19,13 @@ overlap_tag: RESTATEMENT
    - *Suggested Action:* Codify “Substrate composition as a cross‑track engineering variable” as a permanent section in `etc/open-source-platform.md` (promote Platform Principle 9 from the scope page to the platform‑principles document). Cross‑link the SOP‑7 protocol matrix, the methionine‑for‑ergothioneine finding, and the cordycepin‑×‑pentostatin‑ratio experiment as canonical examples.
 
 > **Pass 3 review — Push back.** `[OVERLAP: RESTATEMENT]` `[GAP: tool-gap]` The claim that “no platform-level document treats substrate as a unified engineering lever” is wrong. Tool-verified `etc/open-source-platform.md` already contains Platform Principle 9, “Substrate Engineering as a First-Class Engineering Variable,” and `medicinal-mushroom-extract-sops.md` already has SOP-7 with the substrate-intervention matrix; `koji-home-fermentation.md` also cross-applies the substrate-engineering mechanisms to *A. oryzae*. The underlying substrate-engineering thesis is correct, but the proposed codification has already happened.
+
+---
+
+## ✓ Actioned 2026-05-21 (closure note)
+
+Already canonical in [`wiki/etc/open-source-platform.md`](../../wiki/etc/open-source-platform.md) §"9. Substrate Engineering as a First-Class Engineering Variable (added 2026-05-19, promoted from queued open question)" (line 210). Three intervention classes documented with primary-literature effect sizes: precursor feeding (Lee 2009 methionine → 1.7–3.1× ergothioneine PMC3749454, Yu 2024 alanine → 3× cordycepin PMC11698586, Lou 2021 oleic acid → 8.57× betulinic acid PMC8066064), BGC induction signals (Hu 2017 microcrystalline cellulose 1.5% → +85.96% ganoderic acids PMC5395960, D-galactose), and biotransformation.
+
+Cross-link hygiene already in place: [`medicinal-mushroom-extract-sops.md`](../../wiki/medicinal-mushroom-extract-sops.md) §SOP-7 (line 147) cross-links to Platform Principle 9; [`koji-home-fermentation.md`](../../wiki/koji-home-fermentation.md) (line 64) cross-applies the substrate-engineering mechanisms to *A. oryzae* and cross-links to Platform Principle 9 + SOP-7. The cross-track lever framing Pass 2 wanted is the explicit framing of Platform Principle 9.
+
+No new wiki work needed. Pass 2 misread the corpus state; the codification already happened during the 2026-05-19 sweep walkthrough.
