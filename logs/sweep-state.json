@@ -1,41 +1,24 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "4b347c057a882513079fe69a581a569a1d7df32e",
-    "timestamp": "2026-05-21T14:34:30Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-21-6437cb4.md",
-    "review_commit": "4b347c057a882513079fe69a581a569a1d7df32e",
+    "commit": "e587aa162efd83b6ac80645c3a1f8407e218a9dc",
+    "timestamp": "2026-05-21T16:46:17Z",
+    "synthesis_log": "logs/v4-synthesis-2026-05-21-3edb643.md",
+    "review_commit": "e587aa162efd83b6ac80645c3a1f8407e218a9dc",
     "trigger_files": [
+      "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
+      "wiki/complement-c5a-gout.md",
       "wiki/computational-experiments.md",
-      "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/README.md",
-      "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/provenance.md",
-      "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/codex-synthesis-packet.md",
-      "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/summary.md",
-      "wiki/genotype-informed-supplement-workflow.md",
+      "wiki/gout-action-guide.md",
       "wiki/gout-genetic-variants.md",
-      "wiki/mechanical-flare-triggers.md",
-      "wiki/medicinal-mushroom-complement-track.md",
-      "wiki/medicinal-mushroom-compound-mapping-computational.md",
-      "wiki/medicinal-mushroom-extract-sops.md",
-      "wiki/modality-chokepoint-matrix.md",
+      "wiki/nlrp3-exploit-map.md",
       "wiki/quantification-ladder.md",
-      "wiki/sirna-urat1-modality.md",
-      "wiki/tcm-gout-compound-triage-computational.md",
-      "wiki/tier-2-butyrate-assay-audit-computational.md",
+      "wiki/self-experiment-protocol.md",
       "wiki/validation-experiments.md"
     ],
-    "run_id": "26231610660"
+    "run_id": "26238519489"
   },
   "recent_runs": [
-    {
-      "run_id": "25405186920",
-      "trigger": "workflow_dispatch",
-      "completed_at": "2026-05-05T22:17:04Z",
-      "outcome": "success",
-      "failed_phase": null,
-      "trigger_paths_count": 14,
-      "synthesis_log": "logs/v4-synthesis-2026-05-05-487fad3.md"
-    },
     {
       "run_id": "25406390196",
       "trigger": "push",
@@ -206,6 +189,15 @@
       "failed_phase": null,
       "trigger_paths_count": 17,
       "synthesis_log": "logs/v4-synthesis-2026-05-21-6437cb4.md"
+    },
+    {
+      "run_id": "26238519489",
+      "trigger": "push",
+      "completed_at": "2026-05-21T16:46:17Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 9,
+      "synthesis_log": "logs/v4-synthesis-2026-05-21-3edb643.md"
     }
   ]
 }
