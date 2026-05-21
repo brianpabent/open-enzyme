@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Search-CNKI</title>
+    
+    
+        <link rel="stylesheet"
+              href="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/oversea/en/css_min/kindex.min.css">
+        <link rel="stylesheet"
+              href="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/oversea/en/css_min/public.min.css">
+        <link rel="stylesheet"
+              href="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/oversea/en/css_min/layout.min.css">
+<!--        <link rel="stylesheet"-->
+<!--              th:href="${@pageHtmlOutUrlProperties.getPicCacheUrl()+'/'+@viewServices.cssPrefix()+'/css_min/layer.min.css'}">-->
+        <link rel="stylesheet"
+              href="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/oversea/en/css_min/templatecommon.min.css">
+        <link rel="stylesheet"
+              href="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/oversea/en/css_min/imglist_top.min.css">
+    
+    <script type="text/javascript" src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/common/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        var APPPATH = "\/kns8s";
+        var PICCACHEURL = "https:\/\/piccache.oversea.cnki.net\/kdn\/nxgp\/kns8\/20260325v2";
+        var UNIPLATFORM = "OVERSEA";
+        var LANGUAGE = "EN";
+    </script>
+    <meta charset="UTF-8">
+    
+</head>
+<body>
+<div id="ModuleHeader">
+  <header>
+    <script type="text/javascript"
+            src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/common/jquery-3.7.1.min.js"></script>
+    <input type="hidden" id="RecSysAPI" value="https://recsys.oversea.cnki.net/RCDService"/>
+    <input type="hidden" id="ScholarAPI" value="https://scholar.cnki.net/api/detail/url/"/>
+    <input id="versionid" type="hidden" value="">
+    <input type="hidden" value="/restapi/usercenter-api/v1/" id="userCenterUrl">
+    <input type="hidden" value="https://t.oversea.cnki.net/wanproxy/" id="wanProxyUrl">
+    <input type="hidden" value="/openapi/usercenter-api/v1/" id="userCenterUrlV2">
+    <input type="hidden" value="36c8848550a147f18be0746277febbbf" id="restApiToken">
+    <input type="hidden" value="36583a2e-653b-45d0-a66a-fb7762c5810e" id="restApiClientId">
+    <input id="applogid" type="hidden" value="https://t.oversea.cnki.net/applog/front">
+    <input type="hidden" id="persionsets">
+    
+    
+        <script type="text/javascript"
+                src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/min/message.en.min.js"></script>
+        <script type="text/javascript" src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/min/header.v3.min.js"></script>
+        <script type="text/javascript"
+                src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/min/crypto-js.min.js"></script>
+    
+    <script type="text/javascript"
+            src="https://piccache.oversea.cnki.net/kdn/nxgp/head/20260120v1/loginhead/loginhead.js">
+    </script>
+    <script type="text/javascript">
+        FUNCTION_LOGINHEAD.load("header");
+    </script>
+</header>
+</div>
+
+<div class="module-main">
+    <div id="ModuleSearch">
+        <div><!DOCTYPE html>
+<html lang="en">
+<div class="search-box">
+    <div class="content">
+        <div class="search-left">
+
+            <!--data-classify-->
+        </div>
+        <!--search-left-->
+        <div class="search-main">
+            <div class="input-box">
+                <div class="sort reopt">
+                    <div class="sort-default">
+                        <span>主题</span>
+                        <i class="icon-sort"></i>
+                        <input type="hidden" id="postfield">
+                        <input type="hidden" id="selectfield" value="SU" korder="SU" data-opt="TOPRANK">
+                        <input type="hidden" id="advSearchUrl"
+                               value="/AdvSearch">
+                        <input type="hidden" id="defaultSearchUrl"
+                               value="/search">
+                        <input type="hidden" id="aiUrl"
+                               value="https://ai.oversea.cnki.net/inds/aigc?sysid=4&amp;lang=en">
+                    </div>
+
+                    <!-- 检索项-->
+                    <div class="sort-list" style="display: none;">
+
+                    </div>
+
+                </div>
+                <!--sort-->
+                <span class="btn-clear">×</span>
+                <input id="txt_search" class="search-input" type="text" autocomplete="off"
+                       placeholder=" "
+                       maxlength="100" data-checkedcode="" data-authorcode="" data-authorunit=""
+                       data-field="" value="山芝麻 补体"
+                       searchword="" aria-label=" ">
+                <a class="btn-cleartext" href="javascript:void(0)" title="#"></a>
+
+                <input class="search-btn" type="button" value="">
+                <a class="csmart"  aria-label="CNKI SMART" onclick="window.open($('#aiUrl').val()+($('#txt_search').val()?'&w='+encodeURIComponent($('#txt_search').val()):''));return false;">
+                    <img src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/oversea/en/images/btn-ai.svg"  alt="CNKI SMART">
+                </a>
+                
+
+                <div class="droplist recommend-info is-hide" style="display: none;">
+                    <ul></ul>
+                    <div class="search-page">
+                        <a class="but-l">&lt;</a>
+                        <b>1</b> / <em>10</em>
+                        <a class="but-r">&gt;</a>
+                    </div>
+                </div>
+            </div>
+            <a class="btn-result-search disableclick" href="javascript:void(0)">Search in Result</a>
+            <a id="searchset" class="btn-search-set" onclick="searchSet()">Search Options</a>
+        </div>
+        <!--search-main-->
+
+
+    </div>
+</div>
+<input type="hidden" id="hidRecommendApi" value="https://t.oversea.cnki.net/sug">
+<input type="hidden" id="hidKnaviApi" value="https://t.cnki.net/publication-api/v1/navi">
+</div>
+        <div><!DOCTYPE html>
+<html lang="en">
+<div class="top-doctype">
+    <div class="content">
+        <input type="hidden" id="isscdb" value="0">
+        <input type="hidden" id="classid" value="R0DPFOXP">
+        <input type="hidden" id="resource" value="CROSSDB">
+        <input type="hidden" id="rlang" value="CHINESE">
+        <input type="hidden" id="ilr" value="0">
+        <input type="hidden" id="displayMode" value="listmode">
+        <div class="all-box cur zk-zh">
+            <a data-id="all"
+               class="all" name="classify" href="javascript:void(0)" classid="R0DPFOXP" resource="CROSSDB" data-showbtn="true" data-lang="Both" isDefault="true" data-en="WWJD,IPFD,WWPD,SOSD" data-chs="CJFQ,CAPJ,ZHYX,CJTL,CDFD,CMFD,CPFD,IPFD,CCND,CCGB,SCSF,SCHF,SCSD,SNAD,CCJD,CJFN" searchable="true" supportAdv="true"
+            ><span>ALL</span><em></em></a>
+            <div class="switch-ChEn">
+                <a class="ch" data-val="Chinese">Chinese</a>
+                <a class="en" data-val="Foreign">Other Languages</a>
+            </div>
+            <input type="hidden" id="CheckedDB" value="ON8XK5WL,B7ZYGRCM,BT8YKI4I,TBRPZP83,I8IOAWAD,HT3U9UVL,BHWTLLXZ,SZU0GLDC,IAF5Y951" data-htime="1779369071210">
+        </div>
+
+        <ul class="doctype-menus keji">
+            
+                <li>
+                    
+                    <a href="javascript:void(0)" name="classify" classid="ON8XK5WL" resource="JOURNAL" data-showbtn="true" data-lang="Both" isDefault="false" data-en="WWJD" data-chs="CJFQ,CAPJ,ZHYX,CJTL" searchable="true" supportAdv="true">
+                        <span>Academic Journals</span><em></em></a>
+                </li>
+
+                
+
+                
+            
+                
+
+                
+
+                <li class="haschild ">
+                    
+                    <a href='javascript:void(0)' name="classify" classid="B7ZYGRCM" resource="DISSERTATION" data-showbtn="false" isDefault="false" data-lang="Chinese" data-chs="CDFD,CMFD" searchable="true" supportAdv="true">
+                        <span>Theses &amp; Dissertations</span><em></em></a>
+                    <ul>
+                        <li class="is-hide">
+                            <a href="javascript:void(0)" name="classify" classid="B7ZYGRCM" resource="DISSERTATION" data-showbtn="false" isDefault="false" data-lang="Chinese" data-chs="CDFD,CMFD" searchable="true" supportAdv="true">
+                                <span>Theses &amp; Dissertations</span><em></em></a>
+                        </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="HNXQ58ZR" resource="DISSERTATION" data-showbtn="false" prcode="B7ZYGRCM" isDefault="false" data-lang="Chinese" data-chs="CDFD" searchable="true" supportAdv="true">
+                                    <span>Doctoral Dissertations</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="RJS22WAT" resource="DISSERTATION" data-showbtn="false" prcode="B7ZYGRCM" isDefault="false" data-lang="Chinese" data-chs="CMFD" searchable="true" supportAdv="true">
+                                    <span>Master&#39;s Theses</span><em></em></a>
+                            </li>
+                        
+
+                    </ul>
+                </li>
+            
+                
+
+                
+
+                <li class="haschild ">
+                    
+                    <a href='javascript:void(0)' name="classify" classid="BT8YKI4I" resource="CONFERENCE" data-showbtn="true" isDefault="false" data-lang="Both" data-en="IPFD,WWPD" data-chs="CPFD,IPFD" searchable="true" supportAdv="true">
+                        <span>Conferences</span><em></em></a>
+                    <ul>
+                        <li class="is-hide">
+                            <a href="javascript:void(0)" name="classify" classid="BT8YKI4I" resource="CONFERENCE" data-showbtn="true" isDefault="false" data-lang="Both" data-en="IPFD,WWPD" data-chs="CPFD,IPFD" searchable="true" supportAdv="true">
+                                <span>Conferences</span><em></em></a>
+                        </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="48VMO652" resource="CONFERENCE" data-showbtn="false" prcode="BT8YKI4I" isDefault="false" data-lang="Chinese" data-chs="CPFD" searchable="true" supportAdv="true">
+                                    <span>China Conferences</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="XL02BDJN" resource="CONFERENCE" data-showbtn="false" prcode="BT8YKI4I" isDefault="false" data-lang="Both" data-en="IPFD" data-chs="IPFD" searchable="true" supportAdv="true">
+                                    <span>International Conferences</span><em></em></a>
+                            </li>
+                        
+
+                    </ul>
+                </li>
+            
+                <li>
+                    
+                    <a href="javascript:void(0)" name="classify" classid="TBRPZP83" resource="NEWSPAPER" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CCND" searchable="true" supportAdv="true">
+                        <span>Newspapers</span><em></em></a>
+                </li>
+
+                
+
+                
+            
+                <li>
+                    
+                    <a href="javascript:void(0)" name="classify" classid="4SCRTXA2" resource="ALMANAC" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CYFD" searchable="true" supportAdv="true">
+                        <span>Yearbooks</span><em></em></a>
+                </li>
+
+                
+
+                
+            
+                <li>
+                    
+                    <a href="javascript:void(0)" name="classify" classid="I8IOAWAD" resource="BOOK" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CCGB" searchable="true" supportAdv="true">
+                        <span>Books</span><em></em></a>
+                </li>
+
+                
+
+                
+            
+                
+
+                
+
+                <li class="haschild ">
+                    
+                    <a href='javascript:void(0)' name="classify" classid="O9PLHSSP" resource="PATENT" data-showbtn="false" isDefault="false" data-lang="Both" data-en="SOPD" data-chs="SCPD" searchable="true" supportAdv="true">
+                        <span>Patents</span><em></em></a>
+                    <ul>
+                        <li class="is-hide">
+                            <a href="javascript:void(0)" name="classify" classid="O9PLHSSP" resource="PATENT" data-showbtn="false" isDefault="false" data-lang="Both" data-en="SOPD" data-chs="SCPD" searchable="true" supportAdv="true">
+                                <span>Patents</span><em></em></a>
+                        </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="0RV3BA95" resource="PATENT" data-showbtn="false" prcode="O9PLHSSP" isDefault="false" data-lang="Chinese" data-chs="SCPD" searchable="true" supportAdv="true">
+                                    <span>China Patent</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="FA78L6HV" resource="PATENT" data-showbtn="false" prcode="O9PLHSSP" isDefault="false" data-lang="Foreign" data-en="SOPD" searchable="true" supportAdv="true">
+                                    <span>Overseas Patent</span><em></em></a>
+                            </li>
+                        
+
+                    </ul>
+                </li>
+            
+                
+
+                
+
+                <li class="haschild ">
+                    
+                    <a href='javascript:void(0)' name="classify" classid="HT3U9UVL" resource="STANDARD" data-showbtn="false" isDefault="false" data-lang="Both" data-en="SOSD" data-chs="SCSF,SCHF,SCSD" searchable="true" supportAdv="true">
+                        <span>Standards</span><em></em></a>
+                    <ul>
+                        <li class="is-hide">
+                            <a href="javascript:void(0)" name="classify" classid="HT3U9UVL" resource="STANDARD" data-showbtn="false" isDefault="false" data-lang="Both" data-en="SOSD" data-chs="SCSF,SCHF,SCSD" searchable="true" supportAdv="true">
+                                <span>Standards</span><em></em></a>
+                        </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="HL17GJRY" resource="STANDARD" data-showbtn="false" prcode="HT3U9UVL" isDefault="false" data-lang="Chinese" data-chs="SCSF" searchable="true" supportAdv="true">
+                                    <span>National Standard</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="93TPH0PF" resource="STANDARD" data-showbtn="false" prcode="HT3U9UVL" isDefault="false" data-lang="Chinese" data-chs="SCHF" searchable="true" supportAdv="true">
+                                    <span>Industrial Standard</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="G86PCZM9" resource="STANDARD" data-showbtn="false" prcode="HT3U9UVL" isDefault="false" data-lang="Both" data-en="SOSD" data-chs="SCSD" searchable="true" supportAdv="true">
+                                    <span>Standard Bibliography</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                <a href="https://r.cnki.net/inds/advsearch?sysid=102" target="_blank" classid="512Q21U6" data-showbtn="false" isDefault="false" searchable="false" supportAdv="false">
+                                    <span>Corporate Standard</span><em></em>
+                                </a>
+                                
+                            </li>
+                        
+
+                    </ul>
+                </li>
+            
+                <li class="is-last">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="BHWTLLXZ" resource="ACHIEVEMENTS" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="SNAD" searchable="true" supportAdv="true">
+                        <span>Achievements</span><em></em></a>
+                </li>
+
+                <li class="is-bottom is-hide">
+                    <a href='javascript:void(0)' name="classify" classid="BHWTLLXZ" resource="ACHIEVEMENTS" data-showbtn="false" isDefault="false" data-lang="Chinese" data-chs="SNAD" searchable="true">
+                        <span>Achievements</span><em></em></a>
+                    
+                </li>
+
+                
+            
+                <li class="is-bottom">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="SZU0GLDC" resource="JOURNAL" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CCJD" searchable="true" supportAdv="true">
+                        <span>Monographic Serials</span><em></em></a>
+                </li>
+
+                
+
+                
+            
+                <li class="is-bottom">
+                    <a href="https://gongjushu.oversea.cnki.net/"
+                       target="_blank" classid="XR3FZ9IJ" data-showbtn="false" isDefault="false" searchable="false" supportAdv="false">
+                        <span>Reference Books</span><em></em>
+                    </a>
+                    
+                </li>
+
+                
+
+                
+            
+                <li class="is-bottom">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="IAF5Y951" resource="JOURNAL" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CJFN" searchable="true" supportAdv="true">
+                        <span>Magazines</span><em></em></a>
+                </li>
+
+                
+
+                
+            
+            
+                <li style="display: none">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="ON8XK5WL" resource="JOURNAL" data-showbtn="true" data-lang="Both" isDefault="false" data-en="WWJD" data-chs="CJFQ,CAPJ,ZHYX,CJTL" searchable="true" supportAdv="true">
+                        <span>Academic Journals</span><em></em></a>
+                </li>
+                
+            
+                
+                <li class="haschild " style="display: none">
+                    <a href='javascript:void(0)' name="classify" classid="B7ZYGRCM" resource="DISSERTATION" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CDFD,CMFD" searchable="true" supportAdv="true">
+                        <span>Theses &amp; Dissertations</span><em></em></a>
+                    <ul>
+                        <li class="is-hide">
+                            <a href="javascript:void(0)" name="classify" classid="B7ZYGRCM" resource="DISSERTATION" data-showbtn="false" isDefault="false" data-lang="Chinese" data-chs="CDFD,CMFD" searchable="true" supportAdv="true">
+                                <span>Theses &amp; Dissertations</span><em></em></a>
+                        </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="HNXQ58ZR" resource="DISSERTATION" data-showbtn="false" prcode="B7ZYGRCM" isDefault="false" data-lang="Chinese" data-chs="CDFD" searchable="true" supportAdv="true">
+                                    <span>Doctoral Dissertations</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="RJS22WAT" resource="DISSERTATION" data-showbtn="false" prcode="B7ZYGRCM" isDefault="false" data-lang="Chinese" data-chs="CMFD" searchable="true" supportAdv="true">
+                                    <span>Master&#39;s Theses</span><em></em></a>
+                            </li>
+                        
+
+                    </ul>
+                </li>
+            
+                
+                <li class="haschild " style="display: none">
+                    <a href='javascript:void(0)' name="classify" classid="BT8YKI4I" resource="CONFERENCE" data-showbtn="true" data-lang="Both" isDefault="false" data-en="IPFD,WWPD" data-chs="CPFD,IPFD" searchable="true" supportAdv="true">
+                        <span>Conferences</span><em></em></a>
+                    <ul>
+                        <li class="is-hide">
+                            <a href="javascript:void(0)" name="classify" classid="BT8YKI4I" resource="CONFERENCE" data-showbtn="true" isDefault="false" data-lang="Both" data-en="IPFD,WWPD" data-chs="CPFD,IPFD" searchable="true" supportAdv="true">
+                                <span>Conferences</span><em></em></a>
+                        </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="48VMO652" resource="CONFERENCE" data-showbtn="false" prcode="BT8YKI4I" isDefault="false" data-lang="Chinese" data-chs="CPFD" searchable="true" supportAdv="true">
+                                    <span>China Conferences</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="XL02BDJN" resource="CONFERENCE" data-showbtn="false" prcode="BT8YKI4I" isDefault="false" data-lang="Both" data-en="IPFD" data-chs="IPFD" searchable="true" supportAdv="true">
+                                    <span>International Conferences</span><em></em></a>
+                            </li>
+                        
+
+                    </ul>
+                </li>
+            
+                <li style="display: none">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="TBRPZP83" resource="NEWSPAPER" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CCND" searchable="true" supportAdv="true">
+                        <span>Newspapers</span><em></em></a>
+                </li>
+                
+            
+                <li style="display: none">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="4SCRTXA2" resource="ALMANAC" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CYFD" searchable="true" supportAdv="true">
+                        <span>Yearbooks</span><em></em></a>
+                </li>
+                
+            
+                <li style="display: none">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="I8IOAWAD" resource="BOOK" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CCGB" searchable="true" supportAdv="true">
+                        <span>Books</span><em></em></a>
+                </li>
+                
+            
+                
+                <li class="haschild " style="display: none">
+                    <a href='javascript:void(0)' name="classify" classid="O9PLHSSP" resource="PATENT" data-showbtn="false" data-lang="Both" isDefault="false" data-en="SOPD" data-chs="SCPD" searchable="true" supportAdv="true">
+                        <span>Patents</span><em></em></a>
+                    <ul>
+                        <li class="is-hide">
+                            <a href="javascript:void(0)" name="classify" classid="O9PLHSSP" resource="PATENT" data-showbtn="false" isDefault="false" data-lang="Both" data-en="SOPD" data-chs="SCPD" searchable="true" supportAdv="true">
+                                <span>Patents</span><em></em></a>
+                        </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="0RV3BA95" resource="PATENT" data-showbtn="false" prcode="O9PLHSSP" isDefault="false" data-lang="Chinese" data-chs="SCPD" searchable="true" supportAdv="true">
+                                    <span>China Patent</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="FA78L6HV" resource="PATENT" data-showbtn="false" prcode="O9PLHSSP" isDefault="false" data-lang="Foreign" data-en="SOPD" searchable="true" supportAdv="true">
+                                    <span>Overseas Patent</span><em></em></a>
+                            </li>
+                        
+
+                    </ul>
+                </li>
+            
+                
+                <li class="haschild " style="display: none">
+                    <a href='javascript:void(0)' name="classify" classid="HT3U9UVL" resource="STANDARD" data-showbtn="false" data-lang="Both" isDefault="false" data-en="SOSD" data-chs="SCSF,SCHF,SCSD" searchable="true" supportAdv="true">
+                        <span>Standards</span><em></em></a>
+                    <ul>
+                        <li class="is-hide">
+                            <a href="javascript:void(0)" name="classify" classid="HT3U9UVL" resource="STANDARD" data-showbtn="false" isDefault="false" data-lang="Both" data-en="SOSD" data-chs="SCSF,SCHF,SCSD" searchable="true" supportAdv="true">
+                                <span>Standards</span><em></em></a>
+                        </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="HL17GJRY" resource="STANDARD" data-showbtn="false" prcode="HT3U9UVL" isDefault="false" data-lang="Chinese" data-chs="SCSF" searchable="true" supportAdv="true">
+                                    <span>National Standard</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="93TPH0PF" resource="STANDARD" data-showbtn="false" prcode="HT3U9UVL" isDefault="false" data-lang="Chinese" data-chs="SCHF" searchable="true" supportAdv="true">
+                                    <span>Industrial Standard</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a href='javascript:void(0)' name="classify" classid="G86PCZM9" resource="STANDARD" data-showbtn="false" prcode="HT3U9UVL" isDefault="false" data-lang="Both" data-en="SOSD" data-chs="SCSD" searchable="true" supportAdv="true">
+                                    <span>Standard Bibliography</span><em></em></a>
+                            </li>
+                        
+                            <li>
+                                <a href="https://r.cnki.net/inds/advsearch?sysid=102" target="_blank" classid="512Q21U6" data-showbtn="false" isDefault="false" searchable="false" supportAdv="false">
+                                    <span>Corporate Standard</span><em></em>
+                                </a>
+                                
+                            </li>
+                        
+
+                    </ul>
+                </li>
+            
+                <li class="is-last" style="display: none">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="BHWTLLXZ" resource="ACHIEVEMENTS" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="SNAD" searchable="true" supportAdv="true">
+                        <span>Achievements</span><em></em></a>
+                </li>
+                
+            
+                <li class="is-bottom" style="display: none">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="SZU0GLDC" resource="JOURNAL" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CCJD" searchable="true" supportAdv="true">
+                        <span>Monographic Serials</span><em></em></a>
+                </li>
+                
+            
+                <li class="is-bottom" style="display: none">
+                    <a href="https://gongjushu.oversea.cnki.net/"
+                       target="_blank" classid="XR3FZ9IJ" data-showbtn="false" isDefault="false" searchable="false" supportAdv="false">
+                        <span>Reference Books</span><em></em>
+                    </a>
+                    
+                </li>
+                
+            
+                <li class="is-bottom" style="display: none">
+                    
+                    <a href="javascript:void(0)" name="classify" classid="IAF5Y951" resource="JOURNAL" data-showbtn="false" data-lang="Chinese" isDefault="false" data-chs="CJFN" searchable="true" supportAdv="true">
+                        <span>Magazines</span><em></em></a>
+                </li>
+                
+            
+        </ul>
+
+        <a id="more" class="btn-crossDb-search" href="javascript:void(0);" title="More Resources">
+            <i></i>
+        </a>
+    </div>
+    <input type="hidden" id="hidRecommendApi" value="https://t.oversea.cnki.net/sug">
+    
+    
+        <script type="text/javascript" src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/min/common.min.js"></script>
+        <script type="text/javascript" src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/min/cnkisug.min.js"></script>
+        <script type="text/javascript" src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/min/kns.common.min.js"></script>
+        <script type="text/javascript" src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/min/kns.brief.min.js"></script>
+        <script type="text/javascript" src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/min/dblistnew.index.min.js"></script>
+    
+
+</div></div>
+        
+    </div>
+    <div class="module-wrap-content wrap-content is-filter-off">
+
+        <div class="module-wrap-aside w256">
+            <div id="gcts" style="display:none">
+                <div class="title"><b title="" class="noorders"></b><i class="icon icon-arrow"></i></div>
+                <div class="gcts-wrap">
+                    <ul class="gcts-content">
+                    </ul>
+                    <p class="gcts-more"><span>更多</span></p>
+                </div>
+                <input type="hidden" id="gctsIsbns" value=""/>
+                <input type="hidden" id="libsMore"/>
+                <input type="hidden" id="libsUrl" value=""/>
+                <input type="hidden" id="libsList" value=""/>
+            </div>
+            <div id="ModuleGroupFilter">
+                <!-- 分组结果的占位模板-->
+<div class="sidebar-filter">
+    <a class="icon-arrow-filter" style="display:none;"><i></i></a>
+<!--    <div class="kjsk">-->
+<!--        <dl>-->
+<!--            <dt id="btnKjSkTab" class="subtit sidedh-bar">-->
+<!--                <a class="" onclick="clickKjSkTab(this)"-->
+<!--                   style="height:35px;width: 48%;border:1px #eee solid;margin: 1px;"-->
+<!--                   value="kj">Sci &amp; Tech</a>-->
+<!--                <a class="" onclick="clickKjSkTab(this)"-->
+<!--                   style="height:35px;width: 48%;border:1px #eee solid;margin: 1px;"-->
+<!--                   value="sk">Humanity &amp; Social</a>-->
+<!--            </dt>-->
+<!--        </dl>-->
+<!--    </div>-->
+    <div id="divGroup" class="sidebar-filter-sort js-condition js-single"></div>
+    <!-- 广告加载阻塞页面，删除，需要改成js异步加载 -->
+    
+    <input type="hidden" id="isGroup" value="false"></input>
+</div>
+
+            </div>
+        </div>
+        <div class="module-wrap-aside main">
+            <!--检索条件-->
+            <div class="result-con-l" style="display:none">
+                <div class="search-his-tip">
+                    <span class="tip-range">Search Range：</span>
+                    <b class="range">总库</b>
+                    <span class="conditions"></span>
+                    <a class="tiphide" style="display: none">×</a>
+                    <input type="hidden" id="scdbfield" value=""/>
+                </div>
+                <a class="btn-subscribe js-haslogin" id="btnSubscribe" href="javascript:void(0)">Subject Customization</a>
+                <a class="btn-search-his" href="javascript:void(0)">Search History</a>
+            </div>
+            <!--检索结果展示-->
+            <div id="ModuleSearchResult"></div>
+            <div id="ModuleRelatedWord">
+                <div class="relevant">
+                    <!DOCTYPE html>
+<html lang="en">
+<ul class="bottom-commend-list">
+    <li class="rlv-word">
+
+    </li>
+</ul>
+</html>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="moduleWrapType" value="3"/>
+
+    <div id="modalBox" style="display:none;">
+    <div class="mask"></div>
+    <div class="visPop">
+        <a href="javascript:void(0);" class="close">X</a>
+        <div class="vpSide">
+            <div class="vpsHd">
+                <label aria-label="#"></label>
+            </div>
+            <div class="vpsBd">
+                <div class="reco">
+                    <div class="item">
+                        <label>Database：</label><span id="item_database">English Articles</span>
+                    </div>
+                    <div class="item">
+                        <label>Search query:</label><span id="item_query">Title</span>
+                    </div>
+                    <div class="item">
+                        <label>Distributed Term:</label><span id="item_group">Title</span>
+                    </div>
+                </div>
+                <div class="vpSideShow">
+                    <a href="javascript:void(0);" class="vpsHideBar">&lt;&lt;</a>
+                </div>
+                <div class="filt">
+                    <div class="dispNum">
+                        Display Amount:
+                        <span class="sel_cnt"></span></div>
+                    <div class="choose"></div>
+                </div>
+                <div class="cont hidden">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="vpSideHide">
+            <a href="javascript:void(0);" class="vpsHideBar"><label aria-label="#"></label><i>&gt;&gt;</i></a>
+        </div>
+        <div class="vpMain">
+            <div id="chartbox" class="vpChart"></div>
+            <p class="disc" style="display:none;"><label>Note:</label><span class="sp_desc"></span></p>
+            <div class="visual-row">
+                <input id="txtStartYear" type="text" value="" onkeyup="setDateKeyUp(event)"/> <label>——</label> <input
+                    id="txtEndYear" type="text" value="" onkeyup="setDateKeyUp(event)"/> <a id="btnFilterYear"
+                                                                                            href="javascript:void(0)"
+                                                                                            onclick="setDateItem(this,function () {$('#modalBox').find('.close').click();});">Filter</a>
+            </div>
+
+        </div>
+        <script>
+            var version = GetQueryStringByName("version")||$("#versionid").val();
+            if (version && version.toLowerCase() == "kns7") {
+                $("#modalBox .vpMain .visual-row").empty();
+            }
+        </script>
+    </div>
+</div>
+    
+    
+        <script type="text/javascript"
+                src="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/scripts/min/defaultsearchindex.index.min.js"></script>
+        <script type="text/javascript">
+            //异步加载工具组件
+            loadScript(APPPATH + '/scripts/min/visual.min.js', null);
+        </script>
+    
+</div>
+
+<!--年鉴已对比放入公共模板，防止单个模板的样式影响已对比样式-->
+
+    <link rel="stylesheet" href="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/oversea/en/css/cyfd/normalize.css">
+    <link rel="stylesheet" href="https://piccache.oversea.cnki.net/kdn/nxgp/kns8/20260325v2/oversea/en/css/cyfd/compare_template.css">
+    <div id="fixed_right" style="width: 20px;display: none">
+    <span class="open close">》</span>
+    <div id="compare_box" style="display: none">
+        <div class="compare_box_content">
+            <div class="number_illustrate flex">
+                <div>已选<span class="num">0</span>篇文献</div>
+                <span class="delete">清空</span>
+            </div>
+            <div id="compare_main">
+                <div class="tab">
+                    <span class="active">默认</span>
+                </div>
+                <div class="compare_content">
+                    <div class="tab_content">
+
+                    </div>
+
+                </div>
+                <div class="delete-ceng" style="display:none"></div>
+                <div class="is-delete-div" style="display:none" >
+                    <div class="is-delete-tip">提示</div>
+                    <div class="is-delete-halder">
+                        <span class="is-delete-content">是否删除全部文献？</span>
+                        <div class="btn-delete-wrap">
+                            <span class="btn commit">确认</span>
+                            <span class="btn cancel">取消</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="button">
+            <button id="compare">开始对比</button>
+        </div>
+    </div>
+    <div>
+        <input type="hidden" id="userCenterUrl" value="/restapi/usercenter-api/v1/">
+        <input type="hidden" value="/openapi/usercenter-api/v1/" id="userCenterUrlV2">
+        <input type="hidden" id="comparePageUrl" value="https://kns.cnki.net/reader/compareListRead?f1={0}&amp;f2={1}">
+        <input type="hidden" id="checkedLi" >
+    </div>
+</div>
+<script>
+    var checkCompareFn = [];
+</script>
+
+<div id="ModuleFooter">
+  <footer><!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript"
+        src="https://oversea.cnki.net/index/support/footer/foot.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        backTop();
+
+    })
+    /*功能：返回顶部
+       * 说明：页面较长，滚动到大于1000px时，会显示“返回顶部”按钮
+       * */
+    function backTop() {
+        backBtn = $(".back-top");
+        var y = 100;
+        $(window).on("load scroll", function () {//滚动页面时
+            if ($(window).scrollTop() > y) backBtn.show();
+            else backBtn.hide();
+        });
+        backBtn.click(function () {//当点击跳转链接后，回到页面顶部位置
+            $('body,html').animate({scrollTop: 0}, 500);
+            return false;
+        });
+    }
+
+    if(true){
+        loadScript(APPPATH +'/scripts/min/collect.min.js',null);
+    }else{
+        loadScript(APPPATH +'/scripts/common/collect.js',null);
+    }
+
+    if(UNIPLATFORM=='OVERSEA'){
+        loadScript("https://v88.live800.com/live800/chatClient/monitor.js?jid=2632204061&companyID=1573360&configID=18446&delayload=1",null);
+        //&codeType=custom&ss=1
+        loadScript("https://v88.live800.com/live800/chatClient/floatButton.js?jid=2632204061&companyID=1573360&configID=18445&delayload=1",null);
+    }
+
+</script>
+</footer>
+
+</div>
+
+<!DOCTYPE html>
+<html>
+<div class="setmodule" id="searchsetdiv">
+    <!-- 检索设置 start -->
+    <dl class="setup">
+        <dt>Search Range</dt>
+        <dd class="setdoctype">
+            <input type="hidden" id="defaultProducts" value="[&quot;ON8XK5WL&quot;,&quot;B7ZYGRCM&quot;,&quot;BT8YKI4I&quot;,&quot;TBRPZP83&quot;,&quot;I8IOAWAD&quot;,&quot;HT3U9UVL&quot;,&quot;BHWTLLXZ&quot;,&quot;SZU0GLDC&quot;,&quot;IAF5Y951&quot;]">
+            <ul class="haschecked-list" data-listidx="0">
+                
+                    <li data-id="ON8XK5WL">
+                        <div class="item">Academic Journals</div>
+                        <i class="icon-del"></i></li>
+                
+                    <li data-id="B7ZYGRCM">
+                        <div class="item">Theses &amp; Dissertations</div>
+                        <i class="icon-del"></i></li>
+                
+                    <li data-id="BT8YKI4I">
+                        <div class="item">Conferences</div>
+                        <i class="icon-del"></i></li>
+                
+                    <li data-id="TBRPZP83">
+                        <div class="item">Newspapers</div>
+                        <i class="icon-del"></i></li>
+                
+                    
+                
+                    <li data-id="I8IOAWAD">
+                        <div class="item">Books</div>
+                        <i class="icon-del"></i></li>
+                
+                    
+                
+                    <li data-id="HT3U9UVL">
+                        <div class="item">Standards</div>
+                        <i class="icon-del"></i></li>
+                
+                    <li data-id="BHWTLLXZ">
+                        <div class="item">Achievements</div>
+                        <i class="icon-del"></i></li>
+                
+                    <li data-id="SZU0GLDC">
+                        <div class="item">Monographic Serials</div>
+                        <i class="icon-del"></i></li>
+                
+                    
+                
+                    <li data-id="IAF5Y951">
+                        <div class="item">Magazines</div>
+                        <i class="icon-del"></i></li>
+                
+            </ul>
+            <a class="add-doctype" href="javascript:void(0)"><i>+</i></a>
+            <ul class="doctype-list" style="display: none;">
+                
+                    <li id="ON8XK5WL" class="selected" classid="ON8XK5WL" resource="JOURNAL" searchable="true">
+                        <span>Academic Journals</span>
+                        <a href="javascript:void(0)">Selected</a>
+                        
+                    </li>
+                
+                    <li id="B7ZYGRCM" class="selected" classid="B7ZYGRCM" resource="DISSERTATION" searchable="true">
+                        <span>Theses &amp; Dissertations</span>
+                        <a href="javascript:void(0)">Selected</a>
+                        
+                    </li>
+                
+                    <li id="BT8YKI4I" class="selected" classid="BT8YKI4I" resource="CONFERENCE" searchable="true">
+                        <span>Conferences</span>
+                        <a href="javascript:void(0)">Selected</a>
+                        
+                    </li>
+                
+                    <li id="TBRPZP83" class="selected" classid="TBRPZP83" resource="NEWSPAPER" searchable="true">
+                        <span>Newspapers</span>
+                        <a href="javascript:void(0)">Selected</a>
+                        
+                    </li>
+                
+                    <li id="4SCRTXA2" classid="4SCRTXA2" resource="ALMANAC" searchable="true">
+                        <span>Yearbooks</span>
+                        
+                        <a href="javascript:void(0)">add </a>
+                    </li>
+                
+                    <li id="I8IOAWAD" class="selected" classid="I8IOAWAD" resource="BOOK" searchable="true">
+                        <span>Books</span>
+                        <a href="javascript:void(0)">Selected</a>
+                        
+                    </li>
+                
+                    <li id="O9PLHSSP" classid="O9PLHSSP" resource="PATENT" searchable="true">
+                        <span>Patents</span>
+                        
+                        <a href="javascript:void(0)">add </a>
+                    </li>
+                
+                    <li id="HT3U9UVL" class="selected" classid="HT3U9UVL" resource="STANDARD" searchable="true">
+                        <span>Standards</span>
+                        <a href="javascript:void(0)">Selected</a>
+                        
+                    </li>
+                
+                    <li id="BHWTLLXZ" class="selected" classid="BHWTLLXZ" resource="ACHIEVEMENTS" searchable="true">
+                        <span>Achievements</span>
+                        <a href="javascript:void(0)">Selected</a>
+                        
+                    </li>
+                
+                    <li id="SZU0GLDC" class="selected" classid="SZU0GLDC" resource="JOURNAL" searchable="true">
+                        <span>Monographic Serials</span>
+                        <a href="javascript:void(0)">Selected</a>
+                        
+                    </li>
+                
+                    
+                
+                    <li id="IAF5Y951" class="selected" classid="IAF5Y951" resource="JOURNAL" searchable="true">
+                        <span>Magazines</span>
+                        <a href="javascript:void(0)">Selected</a>
+                        
+                    </li>
+                
+            </ul>
+            <div class="clear"></div>
+        </dd>
+
+        <dt>Search Results</dt>
+        <dd class="dsorder">
+            <b class="tit">Default sort:</b>
+            <label isdefault="0">
+                
+                <input type="radio" name="order" value="FFD"
+                       id="FFD">Relevance</input>
+            </label><label class="on" isdefault="1">
+                <input checked="" type="radio" name="order" value="PT"
+                       id="PT">Publication Date</input>
+                
+            </label><label isdefault="0">
+                
+                <input type="radio" name="order" value="CF"
+                       id="CF">Cites</input>
+            </label><label isdefault="0">
+                
+                <input type="radio" name="order" value="DFR"
+                       id="DFR">Downloads</input>
+            </label><label isdefault="0">
+                
+                <input type="radio" name="order" value="ZH"
+                       id="ZH">Overall</input>
+            </label>
+        </dd>
+        <dd class="dmaxgroup">
+            <b class="tit">GroupMaxNum:</b>
+            <label class="on"><input type="radio" checked="" name="group" value="20">20</label>
+            <label><input type="radio" name="group" value="50">50</label>
+            <label><input type="radio" name="group" value="100">100</label>
+        </dd>
+        <dd class="dSearchFold">
+            <b class="tit">Automatic folding of search area:</b>
+            <label class="on" >
+                <input type="radio" checked="" name="fold" value="true">
+                Yes
+            </label>
+            <label>
+                <input type="radio" name="fold" value="false">
+                No
+            </label>
+        </dd>
+        <dd class="drlang">
+            <b class="tit">Default Resource Language:</b>
+            <label><input type="radio"  name="lang" value="BOTH">ALL</input></label>
+            <label class="on" isdefault="1"><input type="radio" checked="" name="lang"  value="CHINESE">Chinese</input></label>
+            <label><input type="radio" name="lang"  value="FOREIGN">Foreign</input></label>
+        </dd>
+    </dl>
+
+    <script type="text/javascript">
+
+    </script>
+
+    <div class="btn-box">
+        <a href="javascript:void(0);" id="ctrl-s">Save Settings</a>
+        <a href="javascript:void(0);" id="ctrl-z">Restore Settings</a>
+    </div>
+    <!-- 检索设置 end-->
+
+
+</div><!-- setmodule -->
+</html>
+
+
+<input type="hidden" value="https://oversea.cnki.net/dm8" id="hidDocumentManageUrl">
+<input type="hidden" value="https://oversea.cnki.net/dm8/API/GetExport" id="hidQuoteUrl">
+<input type="hidden" value="/restapi/usercenter-api/v1/" id="krs">
+<input type="hidden" value="/openapi/usercenter-api/v1/" id="userCenterUrlV2">
+<input type="hidden" value="OVERSEA" id="uniplatform">
+<input type="hidden" value=""
+       id="hidPatentAppraisalUrl">
+<input type="hidden" value=""
+       id="hidPatentPanoramalUrl">
+<input type="hidden" value=""
+       id="hidPatentCompetitionUrl">
+<input type="hidden" value=""
+       id="hidPatentRegionUrl">
+<input type="hidden" value=""
+       id="hidPatentCompanyUrl">
+<input type="hidden" value=""
+       id="hidStandardQualityUrl">
+<input id="userapiHead" type="hidden" value="http://sso.oversea.cnki.net/UserApi/">
+<input type="hidden" value="EN" id="language">
+
+
+<input type="hidden" id="RecommAPI" name="RecommAPI" value="">
+
+
+
+<!--<th:block th:if="${@pageHtmlOutUrlProperties.hasPicCacheUrl()}">
+  <script type="text/javascript"
+          th:src="${@pageHtmlOutUrlProperties.getPicCacheUrl()+'/scripts/min/layout.index.min.js'}"></script>
+</th:block>-->
+<script>
+  (function ($) {
+    $.clientIdInit = function () {
+      var LocalStorageKey = "fingerprintId";
+      var clientID = $.cookie("Ecp_ClientId");
+      if (clientID === undefined || clientID === "" || clientID == null || clientID === 'null') {
+        getFingerprint();
+      } else {
+        //如果当天已发送过浏览器指纹id，则退出
+        if (getLocalStorageWithExpire(LocalStorageKey)) {
+          return;
+        }
+        getFingerprint();
+      }
+
+      function getFingerprint() {
+        //等待 FingerprintJS 初始化  指纹1
+        var dynamicPath = "https:\/\/piccache.oversea.cnki.net\/kdn\/nxgp\/kns8\/20260325v2\/scripts\/common\/pf.js";
+        var fpPromise = import(dynamicPath).then((FingerprintJS) =>
+            FingerprintJS.load()
+        );
+        // 获取指纹1
+        fpPromise
+            .then(fp => fp.get())
+            .then(result => {
+              // getClientId(result.visitorId);
+              saveFingerLog(result.visitorId)
+            });
+
+        function getClientId(fingerprintId) {
+          var getUrl = recSysAPI.getRecSysAPIURL() + "/api/UtilityOpenApi/GenerateClientID?fingerprint=" + fingerprintId + "&platform=" + $.getUniplatform();
+          $.ajax({
+            type: "GET",
+            url: getUrl,
+            success: function (result) {
+              if (result.Success) {
+                $.cookie('Ecp_ClientId', result.Data, {expires: 400, path: '/', domain: '.cnki.net'})
+              } else {
+                console.log(result.Message)
+              }
+            },
+            error: function (xmlHttpRequest, textStatus, errorThrown) {
+
+            }
+          });
+
+        }
+
+        //发送日志
+        function saveFingerLog(fingerprintId) {
+          if (getLocalStorageWithExpire(LocalStorageKey)) {
+            return;
+          }
+          var param = {
+            "broRes": window.screen.width + "*" + window.screen.height
+          }
+          var paramHead = {
+            "visitorId": fingerprintId
+          }
+          var url = $("#applogid").val() + "/browser";
+          if ($("#applogid").val()) {
+            $.ajax({
+              url: url,
+              type: "POST",
+              contentType: "application/json",
+              headers: paramHead,
+              data: JSON.stringify(param),
+              success: function (result) {
+                setLocalStorageCurrentDay(LocalStorageKey, fingerprintId);
+                console.log(result);
+              },
+              error: function (e) {
+                console.log(e);
+              }
+            });
+          }
+
+        }
+      }
+
+      //存储localstorage到当天24点
+      function setLocalStorageCurrentDay(key, value) {
+        // 获取当前日期
+        var now = new Date();
+        // 创建一个新的日期对象，设置为今天的日期，时间部分设置为23:59:59
+        var endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+        // 计算今天结束与当前时间的毫秒差
+        var millisecondsUntilEndOfDay = endOfDay.getTime() - now.getTime();
+        setLocalStorageWithExpire(key, value, millisecondsUntilEndOfDay);
+      }
+
+      function setLocalStorageWithExpire(key, value, ttl) {
+        var now = new Date().getTime();
+
+        // 创建一个对象来保存值和过期时间
+        var item = {
+          value: value,
+          expiry: now + ttl,
+        };
+        localStorage.setItem(key, JSON.stringify(item));
+      }
+
+      function getLocalStorageWithExpire(key) {
+        var itemStr = localStorage.getItem(key);
+
+        // 如果没有该项或者已经过期，返回null
+        if (!itemStr) {
+          return null;
+        }
+        var item = JSON.parse(itemStr);
+        var now = new Date().getTime();
+
+        // 检查是否过期
+        if (now > item.expiry) {
+          localStorage.removeItem(key);
+          return null;
+        }
+        return item.value;
+      }
+
+      return clientID;
+    }
+  })(jQuery)
+  //初始化clientid及指纹
+  $.clientIdInit();
+  if(true){
+      loadScript(APPPATH +'/scripts/min/layout.index.min.js',null);
+  }
+</script>
+</body>
+</html>

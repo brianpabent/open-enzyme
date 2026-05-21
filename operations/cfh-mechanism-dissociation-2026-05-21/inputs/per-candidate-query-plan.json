@@ -1,0 +1,886 @@
+{
+  "helicteres_benzofuran_lignans": {
+    "audit": {
+      "missing": [
+        {
+          "framing": "traditional_formula",
+          "note": "Natural-product / traditional-medicine scans need this frame unless explicitly out of scope.",
+          "type": "missing_framing"
+        }
+      ],
+      "required_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+      "verdict": "needs_revision"
+    },
+    "candidate": "helicteres_benzofuran_lignans",
+    "plan": {
+      "created_at_utc": "2026-05-21T13:10:25+00:00",
+      "framings": [
+        {
+          "language": "en",
+          "queries": [
+            "Helicteres angustifolia anticomplementary",
+            "Helicteres benzofuran lignan C1q",
+            "Helicteres compound 5 dihydrodehydrodiconiferyl",
+            "Helicteres machicendonal CH50",
+            "Yin 2016 Helicteres complement",
+            "benzofuran lignan complement factor H",
+            "benzofuran lignan C3 convertase",
+            "Sterculiaceae anticomplementary lignan"
+          ],
+          "rationale": "Western/PubMed mechanism-name frame; retained as one frame, not the whole scan.",
+          "type": "western_mechanism"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+            "\u8865\u4f53 \u6297\u8865\u4f53",
+            "\u8865\u4f53 \u708e\u75c7",
+            "\u8865\u4f53 \u6297\u708e",
+            "\u8865\u4f53 \u708e\u75c7\u5c0f\u4f53",
+            "\u6297\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+            "\u6297\u8865\u4f53 \u6297\u8865\u4f53",
+            "\u6297\u8865\u4f53 \u708e\u75c7",
+            "\u6297\u8865\u4f53 \u6297\u708e",
+            "\u6297\u8865\u4f53 \u708e\u75c7\u5c0f\u4f53",
+            "C3\u8f6c\u5316\u9176 \u8865\u4f53\u6fc0\u6d3b",
+            "C3\u8f6c\u5316\u9176 \u6297\u8865\u4f53",
+            "C3\u8f6c\u5316\u9176 \u708e\u75c7",
+            "C3\u8f6c\u5316\u9176 \u6297\u708e",
+            "C3\u8f6c\u5316\u9176 \u708e\u75c7\u5c0f\u4f53",
+            "C5a \u8865\u4f53\u6fc0\u6d3b",
+            "C5a \u6297\u8865\u4f53",
+            "C5a \u708e\u75c7",
+            "C5a \u6297\u708e",
+            "C5a \u708e\u75c7\u5c0f\u4f53"
+          ],
+          "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "mechanism_native"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u5c71\u829d\u9ebb \u8865\u4f53",
+            "\u5c71\u829d\u9ebb \u6297\u8865\u4f53",
+            "\u5c71\u829d\u9ebb C3\u8f6c\u5316\u9176",
+            "\u5c71\u829d\u9ebb \u8865\u4f53\u6fc0\u6d3b",
+            "\u5c71\u829d\u9ebb \u708e\u75c7",
+            "Helicteres angustifolia \u8865\u4f53",
+            "Helicteres angustifolia \u6297\u8865\u4f53",
+            "Helicteres angustifolia C3\u8f6c\u5316\u9176",
+            "Helicteres angustifolia \u8865\u4f53\u6fc0\u6d3b",
+            "Helicteres angustifolia \u708e\u75c7"
+          ],
+          "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "species_original_language"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u8865\u4f53\u6fc0\u6d3b",
+            "\u6297\u8865\u4f53",
+            "\u708e\u75c7",
+            "\u6297\u708e",
+            "\u708e\u75c7\u5c0f\u4f53"
+          ],
+          "rationale": "Original pathology framing catches papers that do not use Western mechanism labels.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "traditional_pathology"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u88dc\u4f53 \u6297\u88dc\u4f53",
+            "\u88dc\u4f53 \u708e\u75c7",
+            "\u88dc\u4f53 \u6297\u708e\u75c7",
+            "\u6297\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u6297\u88dc\u4f53 \u6297\u88dc\u4f53",
+            "\u6297\u88dc\u4f53 \u708e\u75c7",
+            "\u6297\u88dc\u4f53 \u6297\u708e\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "C3\u8ee2\u63db\u9175\u7d20 \u6297\u88dc\u4f53",
+            "C3\u8ee2\u63db\u9175\u7d20 \u708e\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u6297\u708e\u75c7",
+            "C5a \u88dc\u4f53\u6d3b\u6027\u5316",
+            "C5a \u6297\u88dc\u4f53",
+            "C5a \u708e\u75c7",
+            "C5a \u6297\u708e\u75c7"
+          ],
+          "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "mechanism_native"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u5c71\u829d\u9ebb \u88dc\u4f53",
+            "\u5c71\u829d\u9ebb \u6297\u88dc\u4f53",
+            "\u5c71\u829d\u9ebb C3\u8ee2\u63db\u9175\u7d20",
+            "\u5c71\u829d\u9ebb \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u5c71\u829d\u9ebb \u708e\u75c7",
+            "Helicteres angustifolia \u88dc\u4f53",
+            "Helicteres angustifolia \u6297\u88dc\u4f53",
+            "Helicteres angustifolia C3\u8ee2\u63db\u9175\u7d20",
+            "Helicteres angustifolia \u88dc\u4f53\u6d3b\u6027\u5316",
+            "Helicteres angustifolia \u708e\u75c7"
+          ],
+          "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "species_original_language"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u6297\u88dc\u4f53",
+            "\u708e\u75c7",
+            "\u6297\u708e\u75c7"
+          ],
+          "rationale": "Original pathology framing catches papers that do not use Western mechanism labels.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "traditional_pathology"
+        }
+      ],
+      "natural_product_scope": true,
+      "notes": [
+        "Do not treat zero hits from English mechanism queries as evidence of absence in non-English corpora.",
+        "Fetch firewall-sensitive East Asian sources through local_curl_fetch(), not hosted model/web fetch.",
+        "Translate load-bearing non-English source text with translate_source_two_model()."
+      ],
+      "query_framing_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+      "required_query_frames": [
+        "mechanism_native",
+        "species_original_language",
+        "traditional_formula",
+        "traditional_pathology"
+      ],
+      "scope": "comp-039 CFH-dependence classification of Helicteres angustifolia benzofuran sesquilignans (machicendonal compound 4; dihydrodehydrodiconiferyl alcohol compound 5). Anchored on Yin 2016 PMC6273495 (CH50 9 / 40 \u03bcM). Single-paper finding."
+    }
+  },
+  "houttuynia_cordata_polysaccharide": {
+    "audit": {
+      "missing": [
+        {
+          "framing": "traditional_formula",
+          "note": "Natural-product / traditional-medicine scans need this frame unless explicitly out of scope.",
+          "type": "missing_framing"
+        }
+      ],
+      "required_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+      "verdict": "needs_revision"
+    },
+    "candidate": "houttuynia_cordata_polysaccharide",
+    "plan": {
+      "created_at_utc": "2026-05-21T13:10:25+00:00",
+      "framings": [
+        {
+          "language": "en",
+          "queries": [
+            "Houttuynia cordata polysaccharide complement",
+            "Houttuynia anticomplementary polysaccharide",
+            "Houttuynia C2 C4 binding",
+            "Houttuynia C3 convertase",
+            "Houttuynia complement factor H",
+            "Houttuynia TLR4 MD-2 polysaccharide",
+            "HCP HCPM anticomplementary",
+            "Chen Daofeng Houttuynia anticomplementary",
+            "Houttuynia gout hyperuricemia polysaccharide",
+            "Houttuynia NLRP3 inflammasome polysaccharide"
+          ],
+          "rationale": "Western/PubMed mechanism-name frame; retained as one frame, not the whole scan.",
+          "type": "western_mechanism"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+            "\u8865\u4f53 \u6297\u8865\u4f53",
+            "\u8865\u4f53 \u708e\u75c7",
+            "\u8865\u4f53 \u6297\u708e",
+            "\u8865\u4f53 \u708e\u75c7\u5c0f\u4f53",
+            "\u6297\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+            "\u6297\u8865\u4f53 \u6297\u8865\u4f53",
+            "\u6297\u8865\u4f53 \u708e\u75c7",
+            "\u6297\u8865\u4f53 \u6297\u708e",
+            "\u6297\u8865\u4f53 \u708e\u75c7\u5c0f\u4f53",
+            "C3\u8f6c\u5316\u9176 \u8865\u4f53\u6fc0\u6d3b",
+            "C3\u8f6c\u5316\u9176 \u6297\u8865\u4f53",
+            "C3\u8f6c\u5316\u9176 \u708e\u75c7",
+            "C3\u8f6c\u5316\u9176 \u6297\u708e",
+            "C3\u8f6c\u5316\u9176 \u708e\u75c7\u5c0f\u4f53",
+            "C5a \u8865\u4f53\u6fc0\u6d3b",
+            "C5a \u6297\u8865\u4f53",
+            "C5a \u708e\u75c7",
+            "C5a \u6297\u708e",
+            "C5a \u708e\u75c7\u5c0f\u4f53"
+          ],
+          "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "mechanism_native"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u9c7c\u8165\u8349 \u8865\u4f53",
+            "\u9c7c\u8165\u8349 \u6297\u8865\u4f53",
+            "\u9c7c\u8165\u8349 C3\u8f6c\u5316\u9176",
+            "\u9c7c\u8165\u8349 \u8865\u4f53\u6fc0\u6d3b",
+            "\u9c7c\u8165\u8349 \u708e\u75c7",
+            "\u857a\u83dc \u8865\u4f53",
+            "\u857a\u83dc \u6297\u8865\u4f53",
+            "\u857a\u83dc C3\u8f6c\u5316\u9176",
+            "\u857a\u83dc \u8865\u4f53\u6fc0\u6d3b",
+            "\u857a\u83dc \u708e\u75c7",
+            "\u3069\u304f\u3060\u307f \u8865\u4f53",
+            "\u3069\u304f\u3060\u307f \u6297\u8865\u4f53",
+            "\u3069\u304f\u3060\u307f C3\u8f6c\u5316\u9176",
+            "\u3069\u304f\u3060\u307f \u8865\u4f53\u6fc0\u6d3b",
+            "\u3069\u304f\u3060\u307f \u708e\u75c7"
+          ],
+          "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "species_original_language"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u8865\u4f53\u6fc0\u6d3b",
+            "\u6297\u8865\u4f53",
+            "\u708e\u75c7",
+            "\u6297\u708e",
+            "\u708e\u75c7\u5c0f\u4f53"
+          ],
+          "rationale": "Original pathology framing catches papers that do not use Western mechanism labels.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "traditional_pathology"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u88dc\u4f53 \u6297\u88dc\u4f53",
+            "\u88dc\u4f53 \u708e\u75c7",
+            "\u88dc\u4f53 \u6297\u708e\u75c7",
+            "\u6297\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u6297\u88dc\u4f53 \u6297\u88dc\u4f53",
+            "\u6297\u88dc\u4f53 \u708e\u75c7",
+            "\u6297\u88dc\u4f53 \u6297\u708e\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "C3\u8ee2\u63db\u9175\u7d20 \u6297\u88dc\u4f53",
+            "C3\u8ee2\u63db\u9175\u7d20 \u708e\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u6297\u708e\u75c7",
+            "C5a \u88dc\u4f53\u6d3b\u6027\u5316",
+            "C5a \u6297\u88dc\u4f53",
+            "C5a \u708e\u75c7",
+            "C5a \u6297\u708e\u75c7"
+          ],
+          "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "mechanism_native"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u9c7c\u8165\u8349 \u88dc\u4f53",
+            "\u9c7c\u8165\u8349 \u6297\u88dc\u4f53",
+            "\u9c7c\u8165\u8349 C3\u8ee2\u63db\u9175\u7d20",
+            "\u9c7c\u8165\u8349 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u9c7c\u8165\u8349 \u708e\u75c7",
+            "\u857a\u83dc \u88dc\u4f53",
+            "\u857a\u83dc \u6297\u88dc\u4f53",
+            "\u857a\u83dc C3\u8ee2\u63db\u9175\u7d20",
+            "\u857a\u83dc \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u857a\u83dc \u708e\u75c7",
+            "\u3069\u304f\u3060\u307f \u88dc\u4f53",
+            "\u3069\u304f\u3060\u307f \u6297\u88dc\u4f53",
+            "\u3069\u304f\u3060\u307f C3\u8ee2\u63db\u9175\u7d20",
+            "\u3069\u304f\u3060\u307f \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u3069\u304f\u3060\u307f \u708e\u75c7"
+          ],
+          "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "species_original_language"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u6297\u88dc\u4f53",
+            "\u708e\u75c7",
+            "\u6297\u708e\u75c7"
+          ],
+          "rationale": "Original pathology framing catches papers that do not use Western mechanism labels.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "traditional_pathology"
+        }
+      ],
+      "natural_product_scope": true,
+      "notes": [
+        "Do not treat zero hits from English mechanism queries as evidence of absence in non-English corpora.",
+        "Fetch firewall-sensitive East Asian sources through local_curl_fetch(), not hosted model/web fetch.",
+        "Translate load-bearing non-English source text with translate_source_two_model()."
+      ],
+      "query_framing_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+      "required_query_frames": [
+        "mechanism_native",
+        "species_original_language",
+        "traditional_formula",
+        "traditional_pathology"
+      ],
+      "scope": "comp-039 CFH-dependence classification of Houttuynia cordata polysaccharide (HCP/HCPM): binding-site / multi-target evidence relative to CFH CCP6-8. Anchored on Chen Daofeng / Fudan papers, Li 2025 PMC12254813, Yu 2026 PMC12937656, Cheng 2014 PMC7112369."
+    }
+  },
+  "luteolin": {
+    "audit": {
+      "missing": [
+        {
+          "framing": "traditional_formula",
+          "note": "Natural-product / traditional-medicine scans need this frame unless explicitly out of scope.",
+          "type": "missing_framing"
+        }
+      ],
+      "required_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+      "verdict": "needs_revision"
+    },
+    "candidate": "luteolin",
+    "plan": {
+      "created_at_utc": "2026-05-21T13:10:25+00:00",
+      "framings": [
+        {
+          "language": "en",
+          "queries": [
+            "luteolin C3 convertase",
+            "luteolin C3b binding",
+            "luteolin complement factor H",
+            "luteolin CFH binding",
+            "luteolin alternative pathway complement",
+            "luteolin classical pathway complement CH50",
+            "luteolin C5 convertase",
+            "luteolin C1q binding",
+            "flavonoid complement factor H displacement",
+            "flavonoid C3b binding site"
+          ],
+          "rationale": "Western/PubMed mechanism-name frame; retained as one frame, not the whole scan.",
+          "type": "western_mechanism"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+            "\u8865\u4f53 \u6297\u8865\u4f53",
+            "\u8865\u4f53 \u708e\u75c7",
+            "\u8865\u4f53 \u6297\u708e",
+            "\u8865\u4f53 \u708e\u75c7\u5c0f\u4f53",
+            "\u8865\u4f53 \u75db\u98ce",
+            "\u8865\u4f53 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "\u8865\u4f53 \u75f9\u8bc1",
+            "\u8865\u4f53 \u6e7f\u70ed\u75f9",
+            "\u6297\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+            "\u6297\u8865\u4f53 \u6297\u8865\u4f53",
+            "\u6297\u8865\u4f53 \u708e\u75c7",
+            "\u6297\u8865\u4f53 \u6297\u708e",
+            "\u6297\u8865\u4f53 \u708e\u75c7\u5c0f\u4f53",
+            "\u6297\u8865\u4f53 \u75db\u98ce",
+            "\u6297\u8865\u4f53 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "\u6297\u8865\u4f53 \u75f9\u8bc1",
+            "\u6297\u8865\u4f53 \u6e7f\u70ed\u75f9",
+            "C3\u8f6c\u5316\u9176 \u8865\u4f53\u6fc0\u6d3b",
+            "C3\u8f6c\u5316\u9176 \u6297\u8865\u4f53",
+            "C3\u8f6c\u5316\u9176 \u708e\u75c7",
+            "C3\u8f6c\u5316\u9176 \u6297\u708e",
+            "C3\u8f6c\u5316\u9176 \u708e\u75c7\u5c0f\u4f53",
+            "C3\u8f6c\u5316\u9176 \u75db\u98ce",
+            "C3\u8f6c\u5316\u9176 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "C3\u8f6c\u5316\u9176 \u75f9\u8bc1",
+            "C3\u8f6c\u5316\u9176 \u6e7f\u70ed\u75f9",
+            "C5a \u8865\u4f53\u6fc0\u6d3b",
+            "C5a \u6297\u8865\u4f53",
+            "C5a \u708e\u75c7",
+            "C5a \u6297\u708e",
+            "C5a \u708e\u75c7\u5c0f\u4f53",
+            "C5a \u75db\u98ce",
+            "C5a \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "C5a \u75f9\u8bc1",
+            "C5a \u6e7f\u70ed\u75f9"
+          ],
+          "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "mechanism_native"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u6728\u7280\u8349 \u8865\u4f53",
+            "\u6728\u7280\u8349 \u6297\u8865\u4f53",
+            "\u6728\u7280\u8349 C3\u8f6c\u5316\u9176",
+            "\u6728\u7280\u8349 \u8865\u4f53\u6fc0\u6d3b",
+            "\u6728\u7280\u8349 \u708e\u75c7",
+            "\u82e6\u5730\u80c6 \u8865\u4f53",
+            "\u82e6\u5730\u80c6 \u6297\u8865\u4f53",
+            "\u82e6\u5730\u80c6 C3\u8f6c\u5316\u9176",
+            "\u82e6\u5730\u80c6 \u8865\u4f53\u6fc0\u6d3b",
+            "\u82e6\u5730\u80c6 \u708e\u75c7",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 \u8865\u4f53",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 \u6297\u8865\u4f53",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 C3\u8f6c\u5316\u9176",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 \u8865\u4f53\u6fc0\u6d3b",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 \u708e\u75c7"
+          ],
+          "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "species_original_language"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u8865\u4f53\u6fc0\u6d3b",
+            "\u6297\u8865\u4f53",
+            "\u708e\u75c7",
+            "\u6297\u708e",
+            "\u708e\u75c7\u5c0f\u4f53",
+            "\u75db\u98ce",
+            "\u9ad8\u5c3f\u9178\u8840\u75c7",
+            "\u75f9\u8bc1",
+            "\u6e7f\u70ed\u75f9"
+          ],
+          "rationale": "Original pathology framing catches papers that do not use Western mechanism labels.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "traditional_pathology"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u88dc\u4f53 \u6297\u88dc\u4f53",
+            "\u88dc\u4f53 \u708e\u75c7",
+            "\u88dc\u4f53 \u6297\u708e\u75c7",
+            "\u88dc\u4f53 \u75db\u98a8",
+            "\u88dc\u4f53 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "\u6297\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u6297\u88dc\u4f53 \u6297\u88dc\u4f53",
+            "\u6297\u88dc\u4f53 \u708e\u75c7",
+            "\u6297\u88dc\u4f53 \u6297\u708e\u75c7",
+            "\u6297\u88dc\u4f53 \u75db\u98a8",
+            "\u6297\u88dc\u4f53 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "C3\u8ee2\u63db\u9175\u7d20 \u6297\u88dc\u4f53",
+            "C3\u8ee2\u63db\u9175\u7d20 \u708e\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u6297\u708e\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u75db\u98a8",
+            "C3\u8ee2\u63db\u9175\u7d20 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "C5a \u88dc\u4f53\u6d3b\u6027\u5316",
+            "C5a \u6297\u88dc\u4f53",
+            "C5a \u708e\u75c7",
+            "C5a \u6297\u708e\u75c7",
+            "C5a \u75db\u98a8",
+            "C5a \u9ad8\u5c3f\u9178\u8840\u75c7"
+          ],
+          "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "mechanism_native"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u6728\u7280\u8349 \u88dc\u4f53",
+            "\u6728\u7280\u8349 \u6297\u88dc\u4f53",
+            "\u6728\u7280\u8349 C3\u8ee2\u63db\u9175\u7d20",
+            "\u6728\u7280\u8349 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u6728\u7280\u8349 \u708e\u75c7",
+            "\u82e6\u5730\u80c6 \u88dc\u4f53",
+            "\u82e6\u5730\u80c6 \u6297\u88dc\u4f53",
+            "\u82e6\u5730\u80c6 C3\u8ee2\u63db\u9175\u7d20",
+            "\u82e6\u5730\u80c6 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u82e6\u5730\u80c6 \u708e\u75c7",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 \u88dc\u4f53",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 \u6297\u88dc\u4f53",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 C3\u8ee2\u63db\u9175\u7d20",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u30eb\u30c6\u30aa\u30ea\u30f3 \u708e\u75c7"
+          ],
+          "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "species_original_language"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u6297\u88dc\u4f53",
+            "\u708e\u75c7",
+            "\u6297\u708e\u75c7",
+            "\u75db\u98a8",
+            "\u9ad8\u5c3f\u9178\u8840\u75c7"
+          ],
+          "rationale": "Original pathology framing catches papers that do not use Western mechanism labels.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "traditional_pathology"
+        }
+      ],
+      "natural_product_scope": true,
+      "notes": [
+        "Do not treat zero hits from English mechanism queries as evidence of absence in non-English corpora.",
+        "Fetch firewall-sensitive East Asian sources through local_curl_fetch(), not hosted model/web fetch.",
+        "Translate load-bearing non-English source text with translate_source_two_model()."
+      ],
+      "query_framing_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+      "required_query_frames": [
+        "mechanism_native",
+        "species_original_language",
+        "traditional_formula",
+        "traditional_pathology"
+      ],
+      "scope": "comp-039 CFH-dependence classification of luteolin: binding-site evidence relative to CFH CCP6-8 Y402H footprint. Anchored on Zhang & Chen 2008 (PMC7126446) CH50 0.19 mM / AP50 0.17 mM."
+    }
+  },
+  "rosmarinic_acid": {
+    "audit": {
+      "missing": [
+        {
+          "framing": "traditional_formula",
+          "note": "Natural-product / traditional-medicine scans need this frame unless explicitly out of scope.",
+          "type": "missing_framing"
+        }
+      ],
+      "required_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+      "verdict": "needs_revision"
+    },
+    "candidate": "rosmarinic_acid",
+    "plan": {
+      "created_at_utc": "2026-05-21T13:10:25+00:00",
+      "framings": [
+        {
+          "language": "en",
+          "queries": [
+            "rosmarinic acid C3 convertase",
+            "rosmarinic acid C3b covalent",
+            "rosmarinic acid complement factor H",
+            "rosmarinic acid CFH binding",
+            "rosmarinic acid alternative pathway complement",
+            "rosmarinic acid classical pathway complement",
+            "rosmarinic acid C5 convertase",
+            "Sahu Pangburn rosmarinic C3b",
+            "Englberger rosmarinic C3 convertase",
+            "Peake rosmarinic C5 convertase"
+          ],
+          "rationale": "Western/PubMed mechanism-name frame; retained as one frame, not the whole scan.",
+          "type": "western_mechanism"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+            "\u8865\u4f53 \u6297\u8865\u4f53",
+            "\u8865\u4f53 \u708e\u75c7",
+            "\u8865\u4f53 \u6297\u708e",
+            "\u8865\u4f53 \u708e\u75c7\u5c0f\u4f53",
+            "\u8865\u4f53 \u75db\u98ce",
+            "\u8865\u4f53 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "\u8865\u4f53 \u75f9\u8bc1",
+            "\u8865\u4f53 \u6e7f\u70ed\u75f9",
+            "\u6297\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+            "\u6297\u8865\u4f53 \u6297\u8865\u4f53",
+            "\u6297\u8865\u4f53 \u708e\u75c7",
+            "\u6297\u8865\u4f53 \u6297\u708e",
+            "\u6297\u8865\u4f53 \u708e\u75c7\u5c0f\u4f53",
+            "\u6297\u8865\u4f53 \u75db\u98ce",
+            "\u6297\u8865\u4f53 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "\u6297\u8865\u4f53 \u75f9\u8bc1",
+            "\u6297\u8865\u4f53 \u6e7f\u70ed\u75f9",
+            "C3\u8f6c\u5316\u9176 \u8865\u4f53\u6fc0\u6d3b",
+            "C3\u8f6c\u5316\u9176 \u6297\u8865\u4f53",
+            "C3\u8f6c\u5316\u9176 \u708e\u75c7",
+            "C3\u8f6c\u5316\u9176 \u6297\u708e",
+            "C3\u8f6c\u5316\u9176 \u708e\u75c7\u5c0f\u4f53",
+            "C3\u8f6c\u5316\u9176 \u75db\u98ce",
+            "C3\u8f6c\u5316\u9176 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "C3\u8f6c\u5316\u9176 \u75f9\u8bc1",
+            "C3\u8f6c\u5316\u9176 \u6e7f\u70ed\u75f9",
+            "C5a \u8865\u4f53\u6fc0\u6d3b",
+            "C5a \u6297\u8865\u4f53",
+            "C5a \u708e\u75c7",
+            "C5a \u6297\u708e",
+            "C5a \u708e\u75c7\u5c0f\u4f53",
+            "C5a \u75db\u98ce",
+            "C5a \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "C5a \u75f9\u8bc1",
+            "C5a \u6e7f\u70ed\u75f9"
+          ],
+          "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "mechanism_native"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u8ff7\u8fed\u9999 \u8865\u4f53",
+            "\u8ff7\u8fed\u9999 \u6297\u8865\u4f53",
+            "\u8ff7\u8fed\u9999 C3\u8f6c\u5316\u9176",
+            "\u8ff7\u8fed\u9999 \u8865\u4f53\u6fc0\u6d3b",
+            "\u8ff7\u8fed\u9999 \u708e\u75c7",
+            "\u7d2b\u82cf \u8865\u4f53",
+            "\u7d2b\u82cf \u6297\u8865\u4f53",
+            "\u7d2b\u82cf C3\u8f6c\u5316\u9176",
+            "\u7d2b\u82cf \u8865\u4f53\u6fc0\u6d3b",
+            "\u7d2b\u82cf \u708e\u75c7",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc \u8865\u4f53",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc \u6297\u8865\u4f53",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc C3\u8f6c\u5316\u9176",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc \u8865\u4f53\u6fc0\u6d3b",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc \u708e\u75c7"
+          ],
+          "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "species_original_language"
+        },
+        {
+          "language": "zh",
+          "queries": [
+            "\u8865\u4f53\u6fc0\u6d3b",
+            "\u6297\u8865\u4f53",
+            "\u708e\u75c7",
+            "\u6297\u708e",
+            "\u708e\u75c7\u5c0f\u4f53",
+            "\u75db\u98ce",
+            "\u9ad8\u5c3f\u9178\u8840\u75c7",
+            "\u75f9\u8bc1",
+            "\u6e7f\u70ed\u75f9"
+          ],
+          "rationale": "Original pathology framing catches papers that do not use Western mechanism labels.",
+          "sources": [
+            "CNKI",
+            "WanFang",
+            "CQVIP",
+            "SinoMed",
+            "ChiCTR",
+            "NSTL"
+          ],
+          "type": "traditional_pathology"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u88dc\u4f53 \u6297\u88dc\u4f53",
+            "\u88dc\u4f53 \u708e\u75c7",
+            "\u88dc\u4f53 \u6297\u708e\u75c7",
+            "\u88dc\u4f53 \u75db\u98a8",
+            "\u88dc\u4f53 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "\u6297\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u6297\u88dc\u4f53 \u6297\u88dc\u4f53",
+            "\u6297\u88dc\u4f53 \u708e\u75c7",
+            "\u6297\u88dc\u4f53 \u6297\u708e\u75c7",
+            "\u6297\u88dc\u4f53 \u75db\u98a8",
+            "\u6297\u88dc\u4f53 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "C3\u8ee2\u63db\u9175\u7d20 \u6297\u88dc\u4f53",
+            "C3\u8ee2\u63db\u9175\u7d20 \u708e\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u6297\u708e\u75c7",
+            "C3\u8ee2\u63db\u9175\u7d20 \u75db\u98a8",
+            "C3\u8ee2\u63db\u9175\u7d20 \u9ad8\u5c3f\u9178\u8840\u75c7",
+            "C5a \u88dc\u4f53\u6d3b\u6027\u5316",
+            "C5a \u6297\u88dc\u4f53",
+            "C5a \u708e\u75c7",
+            "C5a \u6297\u708e\u75c7",
+            "C5a \u75db\u98a8",
+            "C5a \u9ad8\u5c3f\u9178\u8840\u75c7"
+          ],
+          "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "mechanism_native"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u8ff7\u8fed\u9999 \u88dc\u4f53",
+            "\u8ff7\u8fed\u9999 \u6297\u88dc\u4f53",
+            "\u8ff7\u8fed\u9999 C3\u8ee2\u63db\u9175\u7d20",
+            "\u8ff7\u8fed\u9999 \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u8ff7\u8fed\u9999 \u708e\u75c7",
+            "\u7d2b\u82cf \u88dc\u4f53",
+            "\u7d2b\u82cf \u6297\u88dc\u4f53",
+            "\u7d2b\u82cf C3\u8ee2\u63db\u9175\u7d20",
+            "\u7d2b\u82cf \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u7d2b\u82cf \u708e\u75c7",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc \u88dc\u4f53",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc \u6297\u88dc\u4f53",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc C3\u8ee2\u63db\u9175\u7d20",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc \u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u30ed\u30fc\u30ba\u30de\u30ea\u30fc \u708e\u75c7"
+          ],
+          "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "species_original_language"
+        },
+        {
+          "language": "ja",
+          "queries": [
+            "\u88dc\u4f53\u6d3b\u6027\u5316",
+            "\u6297\u88dc\u4f53",
+            "\u708e\u75c7",
+            "\u6297\u708e\u75c7",
+            "\u75db\u98a8",
+            "\u9ad8\u5c3f\u9178\u8840\u75c7"
+          ],
+          "rationale": "Original pathology framing catches papers that do not use Western mechanism labels.",
+          "sources": [
+            "J-STAGE",
+            "CiNii",
+            "J-GLOBAL",
+            "J-RCT"
+          ],
+          "type": "traditional_pathology"
+        }
+      ],
+      "natural_product_scope": true,
+      "notes": [
+        "Do not treat zero hits from English mechanism queries as evidence of absence in non-English corpora.",
+        "Fetch firewall-sensitive East Asian sources through local_curl_fetch(), not hosted model/web fetch.",
+        "Translate load-bearing non-English source text with translate_source_two_model()."
+      ],
+      "query_framing_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+      "required_query_frames": [
+        "mechanism_native",
+        "species_original_language",
+        "traditional_formula",
+        "traditional_pathology"
+      ],
+      "scope": "comp-039 CFH-dependence classification of rosmarinic acid: binding-site evidence relative to CFH CCP6-8 Y402H footprint. Anchored on Sahu 1999 (C3b covalent IC50 34 \u03bcM), Englberger 1988 (C3 convertase IC50 5-10 \u03bcM), Peake 1991 (C5 convertase 1500 \u03bcM)."
+    }
+  }
+}

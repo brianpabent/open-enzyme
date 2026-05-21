@@ -1,0 +1,761 @@
+{
+  "created_at_utc": "2026-05-21T13:21:07+00:00",
+  "probes": [
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_e85a6af9b095.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_25d6e81acae1.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_c744dd8fe54a.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u708e\u75c7",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_7221f5b6923e.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u6297\u708e",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E6%8A%97%E7%82%8E"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_93e3a15c6ff2.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u5c71\u829d\u9ebb \u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%B1%B1%E8%8A%9D%E9%BA%BB%20%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_64ea14c494a8.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u5c71\u829d\u9ebb \u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%B1%B1%E8%8A%9D%E9%BA%BB%20%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_ed726b875122.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u5c71\u829d\u9ebb C3\u8f6c\u5316\u9176",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%B1%B1%E8%8A%9D%E9%BA%BB%20C3%E8%BD%AC%E5%8C%96%E9%85%B6"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_b8cc47b22331.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u5c71\u829d\u9ebb \u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E5%B1%B1%E8%8A%9D%E9%BA%BB%20%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_6de48acfd811.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_885b8e2fe93c.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_2cb411aefde9.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u708e\u75c7",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_77c5d038d8f0.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6297\u708e",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%8A%97%E7%82%8E"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_bbc99355a958.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E8%A3%9C%E4%BD%93%E6%B4%BB%E6%80%A7%E5%8C%96"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_4b24952aceac.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_9d98c0eccd25.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u708e\u75c7",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_667f60f95b74.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u5c71\u829d\u9ebb \u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E5%B1%B1%E8%8A%9D%E9%BA%BB%20%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_b5c1ab1ae343.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u5c71\u829d\u9ebb \u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E5%B1%B1%E8%8A%9D%E9%BA%BB%20%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_74b3896f5076.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u5c71\u829d\u9ebb C3\u8ee2\u63db\u9175\u7d20",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E5%B1%B1%E8%8A%9D%E9%BA%BB%20C3%E8%BB%A2%E6%8F%9B%E9%85%B5%E7%B4%A0"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_222b9487a107.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53\u6d3b\u6027\u5316",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%E6%B4%BB%E6%80%A7%E5%8C%96"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_59bcdc0712cc.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_2433ddf8d408.html",
+      "candidate": "helicteres_benzofuran_lignans",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u708e\u75c7",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_e85a6af9b095.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_25d6e81acae1.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_c744dd8fe54a.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u708e\u75c7",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_7221f5b6923e.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u6297\u708e",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E6%8A%97%E7%82%8E"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_5728d5492db2.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u9c7c\u8165\u8349 \u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E9%B1%BC%E8%85%A5%E8%8D%89%20%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_eff24ba8f4b5.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u9c7c\u8165\u8349 \u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E9%B1%BC%E8%85%A5%E8%8D%89%20%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_1ed265dbe80b.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u9c7c\u8165\u8349 C3\u8f6c\u5316\u9176",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E9%B1%BC%E8%85%A5%E8%8D%89%20C3%E8%BD%AC%E5%8C%96%E9%85%B6"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_79cee4701b8a.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u9c7c\u8165\u8349 \u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E9%B1%BC%E8%85%A5%E8%8D%89%20%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_6de48acfd811.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_885b8e2fe93c.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_2cb411aefde9.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u708e\u75c7",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_77c5d038d8f0.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6297\u708e",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%8A%97%E7%82%8E"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_bbc99355a958.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E8%A3%9C%E4%BD%93%E6%B4%BB%E6%80%A7%E5%8C%96"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_4b24952aceac.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_9d98c0eccd25.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u708e\u75c7",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_5b275c6e9562.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u9c7c\u8165\u8349 \u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E9%B1%BC%E8%85%A5%E8%8D%89%20%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_c706c4847c6e.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u9c7c\u8165\u8349 \u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E9%B1%BC%E8%85%A5%E8%8D%89%20%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_be8e75336710.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u9c7c\u8165\u8349 C3\u8ee2\u63db\u9175\u7d20",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E9%B1%BC%E8%85%A5%E8%8D%89%20C3%E8%BB%A2%E6%8F%9B%E9%85%B5%E7%B4%A0"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_222b9487a107.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53\u6d3b\u6027\u5316",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%E6%B4%BB%E6%80%A7%E5%8C%96"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_59bcdc0712cc.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_2433ddf8d408.html",
+      "candidate": "houttuynia_cordata_polysaccharide",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u708e\u75c7",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_e85a6af9b095.html",
+      "candidate": "luteolin",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_25d6e81acae1.html",
+      "candidate": "luteolin",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_c744dd8fe54a.html",
+      "candidate": "luteolin",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u708e\u75c7",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_7221f5b6923e.html",
+      "candidate": "luteolin",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u6297\u708e",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E6%8A%97%E7%82%8E"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_d24444ca8a8b.html",
+      "candidate": "luteolin",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6728\u7280\u8349 \u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%9C%A8%E7%8A%80%E8%8D%89%20%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_1cd2caea8af4.html",
+      "candidate": "luteolin",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6728\u7280\u8349 \u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%9C%A8%E7%8A%80%E8%8D%89%20%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_9db8a3a8b274.html",
+      "candidate": "luteolin",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6728\u7280\u8349 C3\u8f6c\u5316\u9176",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%9C%A8%E7%8A%80%E8%8D%89%20C3%E8%BD%AC%E5%8C%96%E9%85%B6"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_c3241e186c1a.html",
+      "candidate": "luteolin",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6728\u7280\u8349 \u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%9C%A8%E7%8A%80%E8%8D%89%20%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_6de48acfd811.html",
+      "candidate": "luteolin",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_885b8e2fe93c.html",
+      "candidate": "luteolin",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_2cb411aefde9.html",
+      "candidate": "luteolin",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u708e\u75c7",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_77c5d038d8f0.html",
+      "candidate": "luteolin",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6297\u708e",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%8A%97%E7%82%8E"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_bbc99355a958.html",
+      "candidate": "luteolin",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E8%A3%9C%E4%BD%93%E6%B4%BB%E6%80%A7%E5%8C%96"
+    },
+    {
+      "candidate": "luteolin",
+      "error": "curl failed for https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E6%8A%97%E8%A3%9C%E4%BD%93; provenance written to /Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_4b24952aceac.provenance.json",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": false,
+      "query": "\u88dc\u4f53 \u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "candidate": "luteolin",
+      "error": "curl failed for https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E7%82%8E%E7%97%87; provenance written to /Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_9d98c0eccd25.provenance.json",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": false,
+      "query": "\u88dc\u4f53 \u708e\u75c7",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E7%82%8E%E7%97%87"
+    },
+    {
+      "candidate": "luteolin",
+      "error": "curl failed for https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E6%9C%A8%E7%8A%80%E8%8D%89%20%E8%A3%9C%E4%BD%93; provenance written to /Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_460269fed757.provenance.json",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": false,
+      "query": "\u6728\u7280\u8349 \u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E6%9C%A8%E7%8A%80%E8%8D%89%20%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_fb00767d70f7.html",
+      "candidate": "luteolin",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u6728\u7280\u8349 \u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E6%9C%A8%E7%8A%80%E8%8D%89%20%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_99e5b9f13b94.html",
+      "candidate": "luteolin",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u6728\u7280\u8349 C3\u8ee2\u63db\u9175\u7d20",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E6%9C%A8%E7%8A%80%E8%8D%89%20C3%E8%BB%A2%E6%8F%9B%E9%85%B5%E7%B4%A0"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_222b9487a107.html",
+      "candidate": "luteolin",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53\u6d3b\u6027\u5316",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%E6%B4%BB%E6%80%A7%E5%8C%96"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_59bcdc0712cc.html",
+      "candidate": "luteolin",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_2433ddf8d408.html",
+      "candidate": "luteolin",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u708e\u75c7",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_e85a6af9b095.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_25d6e81acae1.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_c744dd8fe54a.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u708e\u75c7",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_7221f5b6923e.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "mechanism_native",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53 \u6297\u708e",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%20%E6%8A%97%E7%82%8E"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_3135513f9017.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8ff7\u8fed\u9999 \u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%BF%B7%E8%BF%AD%E9%A6%99%20%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_b0b9826f09c1.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8ff7\u8fed\u9999 \u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%BF%B7%E8%BF%AD%E9%A6%99%20%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_5f62c000d124.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8ff7\u8fed\u9999 C3\u8f6c\u5316\u9176",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%BF%B7%E8%BF%AD%E9%A6%99%20C3%E8%BD%AC%E5%8C%96%E9%85%B6"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_905d9a4b89ba.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "species_original_language",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8ff7\u8fed\u9999 \u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%BF%B7%E8%BF%AD%E9%A6%99%20%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_6de48acfd811.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u8865\u4f53\u6fc0\u6d3b",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E8%A1%A5%E4%BD%93%E6%BF%80%E6%B4%BB"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_885b8e2fe93c.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6297\u8865\u4f53",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%8A%97%E8%A1%A5%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_2cb411aefde9.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u708e\u75c7",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/oversea.cnki.net_kns8s_defaultresult_index_77c5d038d8f0.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "traditional_pathology",
+      "language": "zh",
+      "ok": true,
+      "query": "\u6297\u708e",
+      "url": "https://oversea.cnki.net/kns8s/defaultresult/index?kw=%E6%8A%97%E7%82%8E"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_bbc99355a958.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u88dc\u4f53\u6d3b\u6027\u5316",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E8%A3%9C%E4%BD%93%E6%B4%BB%E6%80%A7%E5%8C%96"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_4b24952aceac.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_9d98c0eccd25.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "mechanism_native",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53 \u708e\u75c7",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%20%E7%82%8E%E7%97%87"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_42f240ff1be0.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u8ff7\u8fed\u9999 \u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%BF%B7%E8%BF%AD%E9%A6%99%20%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_344215fbba52.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u8ff7\u8fed\u9999 \u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%BF%B7%E8%BF%AD%E9%A6%99%20%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_ddb16ff5b4cc.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "species_original_language",
+      "language": "ja",
+      "ok": true,
+      "query": "\u8ff7\u8fed\u9999 C3\u8ee2\u63db\u9175\u7d20",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%BF%B7%E8%BF%AD%E9%A6%99%20C3%E8%BB%A2%E6%8F%9B%E9%85%B5%E7%B4%A0"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_222b9487a107.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u88dc\u4f53\u6d3b\u6027\u5316",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E8%A3%9C%E4%BD%93%E6%B4%BB%E6%80%A7%E5%8C%96"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_59bcdc0712cc.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u6297\u88dc\u4f53",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E6%8A%97%E8%A3%9C%E4%BD%93"
+    },
+    {
+      "body_path": "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/cfh-mechanism-dissociation-2026-05-21/outputs/retrieval-probes-raw/www.jstage.jst.go.jp_result_global_-char_en_2433ddf8d408.html",
+      "candidate": "rosmarinic_acid",
+      "framing": "traditional_pathology",
+      "language": "ja",
+      "ok": true,
+      "query": "\u708e\u75c7",
+      "url": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E7%82%8E%E7%97%87"
+    }
+  ]
+}

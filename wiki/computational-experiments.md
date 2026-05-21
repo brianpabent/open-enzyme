@@ -22,6 +22,26 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
+### comp-039 — CFH-dependence mechanism-dissociation of dietary upstream-CP0 candidates — CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded) (2026-05-21)
+
+**Question:** For each top upstream-CP0 candidate from comp-018 / comp-020 — rosmarinic acid, luteolin, *Houttuynia cordata* polysaccharide (HCP / HCPM / CHCP), *Helicteres* benzofuran lignans — does the candidate's anti-complement mechanism *require* functional CFH (and therefore lose efficacy in Y402H carriers, AMD-paradox-style), or does it work *upstream of* CFH (so Y402H carriers retain the benefit)? Generates the per-candidate prediction the UKB collaboration (Merriman/Otago, Major-Wrigley/Auckland, Choi/MGH) needs to run candidate-stratified cross-tabs rather than a generic "any-polyphenol × CFH" query.
+
+**Verdict:** **All four candidates classified CFH-INDEPENDENT.** Rosmarinic acid (High confidence) — Sahu 1999 binds nascent C3b α'-chain thioester (Cys988) upstream of where CFH acts. Luteolin (Medium confidence) — broad CP+AP inhibition with mechanism site under-resolved; matched CP/AP IC50 inconsistent with CFH-competitive mechanism. HCP / HCPM / CHCP (High confidence) — Lu 2018 + Tian 2014 depletion-rescue maps targets to C3 + C4 + partial C5; C4 specificity is mechanistically incompatible with CFH-dependence (CFH is AP-specific). Helicteres benzofuran lignans (Medium confidence, bounded by comp-018 Phase 2 INCONCLUSIVE replication of Yin 2016) — multi-target on C1q + C2 + C3 + C4 + C9, structurally orthogonal to CFH's CCP6-8 binding surface.
+
+**Key findings:**
+- Two-model independent cross-check (Claude Opus 4.7 = Model A; DeepSeek `deepseek/deepseek-chat-v3` = Model B): both models AGREE on classification for all four candidates.
+- Two-model DISAGREEMENT on predicted Y402H × candidate × incident-gout direction: Model A predicts negative direction (effect ≥ in carriers, because Y402H baseline severity amplifies absolute effect size); Model B predicts null (mechanism independence implies genotype indifference). Both reject the AMD-paradox direction (carriers worse). For UKB cross-tab, both predictions need separate falsification thresholds.
+- CFH Y402 structural footprint grep-verified: Sushi/CCP 7 = aa 387-444 of UniProt P08603. The four candidates' binding sites all map to upstream complement nodes (C3 thioester, C3 itself, classical-pathway C2 + C4 + C1q), not the CCP6-8 CRP/GAG-binding surface.
+- Recommended lead UKB cross-tab: rs1061170 × Phenol-Explorer-derived rosmarinic-acid intake × incident gout M10.x. Secondary: rs1061170 × Apiaceae-family intake × incident gout (luteolin proxy + 24h-urate intermediate readout). HCP cross-tab deferred to East Asian cohorts (KoGES / CKB / Singapore Chinese Health Study). Helicteres not actionable until comp-018 Phase 2 replication closes.
+- Total OpenRouter spend: ~$0.0022 (Model B counter-reads × 4 candidates).
+- New follow-ups surfaced: comp-040 (proposed) — wet-lab CFH-depleted-serum MSU-crystal assay as definitive falsification test; comp-041 (proposed) — East Asian cohort feasibility scan for Houttuynia × CFH cross-tab.
+
+**Informs:** [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5 CFH row · [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 · [upstream-complement-modulator-sweep-computational.md](./upstream-complement-modulator-sweep-computational.md) · [upstream-complement-verification-rerun-computational.md](./upstream-complement-verification-rerun-computational.md) · [logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md)
+
+**Detail:** [interpretive](./cfh-mechanism-dissociation-cp0-candidates-computational.md) · operations workspace: [`operations/cfh-mechanism-dissociation-2026-05-21/`](../operations/cfh-mechanism-dissociation-2026-05-21/) · Complete first pass (next gate: UKB collaboration ask + comp-040 wet-lab depletion assay)
+
+---
+
 ### comp-038 — Tier 2 Butyrate Assay Audit — YELLOW (2026-05-20)
 
 **Question:** Is there a Tier 2 butyrate quantification assay (colorimetric, enzymatic, breath-proxy, electrochemical, or other low-cost intermediate method) that can be validated against Tier 3 GC-MS for stool, serum, breath, or culture-supernatant matrices?
@@ -568,6 +588,9 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-036~~ | Completed 2026-05-16 — YELLOW repeat-dose receptor-occupancy framing; salvages comp-033 RED. See Analyses above | — | ✓ Done |
 | ~~comp-037~~ | Completed 2026-05-17 — MODERATE (kinetic-competition gated); glyco GREEN for serpin-core aa 123–500 in luminal topology. See Analyses above | — | ✓ Done |
 | ~~comp-038~~ | Completed 2026-05-20 — YELLOW; HPLC-UV culture-supernatant candidate + electrochemical fecal SCFA future direction; no home/colorimetric butyrate assay ready. See Analyses above | — | ✓ Done |
+| ~~comp-039~~ | Completed 2026-05-21 — All four upstream-CP0 candidates classified CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded). See Analyses above | — | ✓ Done |
+| comp-040 | Wet-lab in-vitro CFH-depleted-serum MSU-crystal complement-activation assay — definitive falsification test of comp-039 CFH-independence classification for rosmarinic acid, luteolin, and HCP. Surfaced by [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §7. | [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5, [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 | Blocked (OE wet-lab access; relevant to lab-partner conversations) |
+| comp-041 | East Asian cohort feasibility scan for Houttuynia × rs1061170 × incident gout cross-tab — KoGES, China Kadoorie Biobank, Singapore Chinese Health Study. Parallels the 2026-05-19 UKB feasibility analysis but for the Houttuynia-tractable population (HCP exposure captured; Y402H allele frequency ~5-6%). Surfaced by [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §5 + §7. | [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md) | Queueable (opens when East Asian collaboration channel becomes available) |
 | ~~comp-028~~ | Reframed and deprioritized 2026-05-16 — cordycepin-arm moot; general design-escape question non-load-bearing today; re-openable for future cytosolic third-cassette candidate | — | Closed |
 
 ---

@@ -1,0 +1,32 @@
+{
+  "candidate": "luteolin",
+  "created_at_utc": "2026-05-21T13:31:58+00:00",
+  "model_requested": "deepseek/deepseek-chat",
+  "model_returned": "deepseek/deepseek-chat-v3",
+  "raw_usage": {
+    "completion_tokens": 177,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.0005305,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.0002301,
+      "upstream_inference_cost": 0.0005305,
+      "upstream_inference_prompt_cost": 0.0003004
+    },
+    "is_byok": false,
+    "prompt_tokens": 751,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 928
+  },
+  "response_id": "gen-1779370312-9kpxiPwyDT4N5S2vaHx1",
+  "role": "native_chinese_counter_read_model_b",
+  "text": "```json\n{\n  \"classification\": \"CFH-independent\",\n  \"confidence\": \"Medium\",\n  \"predicted_y402h_direction\": \"null\",\n  \"key_binding_site_evidence\": \"No specific complement-cascade target identified for luteolin; CFH/Factor H not mentioned in primary sources. Activity attributed to 4'-OH on flavonoid B-ring, suggesting a non-CFH-dependent mechanism.\",\n  \"agreement_with_model_a\": \"agree\",\n  \"disagreements\": [],\n  \"load_bearing_uncertainties\": [\"Mechanism site ambiguity; no direct evidence of luteolin's interaction with CFH or other complement components.\"],\n  \"recommended_falsification_test\": \"Perform in vitro assays with CFH-depleted serum to confirm CFH-independence of luteolin's anticomplementary activity.\"\n}\n```"
+}

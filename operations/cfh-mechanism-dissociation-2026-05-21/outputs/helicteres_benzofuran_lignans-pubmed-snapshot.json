@@ -1,0 +1,156 @@
+{
+  "candidate": "helicteres_benzofuran_lignans",
+  "created_at_utc": "2026-05-21T13:13:30+00:00",
+  "fetched_at_utc": "2026-05-21T13:13:30+00:00",
+  "limitations": [
+    "PubMed snapshot contains title/abstract/citation metadata only.",
+    "Final GREEN verdicts require full text, protocol PDFs, vendor validation docs, or method-comparison data."
+  ],
+  "query_results": [
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "27834928"
+      ],
+      "query": "Helicteres angustifolia anticomplementary"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [],
+      "query": "Helicteres benzofuran lignan C1q"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "30413192"
+      ],
+      "query": "Helicteres compound 5 dihydrodehydrodiconiferyl"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "27834928",
+        "6903148",
+        "30630320",
+        "31864740",
+        "7471891"
+      ],
+      "query": "Helicteres machicendonal CH50"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "27834928",
+        "27294517"
+      ],
+      "query": "Yin 2016 Helicteres complement"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [],
+      "query": "benzofuran lignan complement factor H"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [],
+      "query": "benzofuran lignan C3 convertase"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "27834928"
+      ],
+      "query": "Sterculiaceae anticomplementary lignan"
+    }
+  ],
+  "records": [
+    {
+      "abstract": "Recent researches on long noncoding RNAs (lncRNAs) have expanded our horizon of gene regulation and the cellular complexity. However, the number, characteristics and expression patterns of lncRNAs remain poorly characterized and how these lncRNAs biogenesis are regulated in response to drought stress in cotton are still largely unclear. In the study, using a reproducibility-based RNA-sequencing and bioinformatics strategy to analyze the lncRNAs of 9 samples under three different environment stresses (control, drought stress and re-watering, three replications), we totally identified 10,820 lncRNAs of high-confidence through five strict steps filtration, of which 9,989 were lincRNAs, 153 were inronic lncRNAs, 678 were anti-sense lncRNAs. Coding function analysis showed 6,470 lncRNAs may have the ability to code proteins. Small RNAs precursor analysis revealed that 196 lncRNAs may be the precursors to small RNAs, most of which (35.7%, 70) were miRNAs. Expression patterns analysis showed that most of lncRNAs were expressed at a low level and most inronic lncRNAs (75.95%) had a consistent expression pattern with their adjacent protein-coding genes. Further analysis of transcriptome data uncovered that lncRNAs XLOC_063105 and XLOC_115463 probably function in regulating two adjacent coding genes CotAD_37096 and CotAD_12502, respectively. Investigations of the content of plant hormones and proteomics analysis under drought stress also complemented the prediction. We analyzed the characteristics and the expression patterns of lncRNAs under drought stress and re-watering treatment, and found lncRNAs may be likely to involve in regulating plant hormones pathway in response to drought stress.",
+      "doi": "10.1371/journal.pone.0156723",
+      "journal": "PloS one",
+      "matched_queries": [
+        "Yin 2016 Helicteres complement"
+      ],
+      "pmid": "27294517",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27294517/",
+      "title": "Genome-Wide Analysis of Long Noncoding RNAs and Their Responses to Drought Stress in Cotton (Gossypium hirsutum L.).",
+      "year": "2016"
+    },
+    {
+      "abstract": "A first phenalenon derivative with an acetyl side chain at C-8, 8-acetyl-9-hydroxy-3-methoxy-7-methyl-1-phenalenon (compound 1), and a pair of new sesquilignan epimers at C-7\u2033 of hedyotol C and hedyotol D analogs, hedyotol C 7\u2033-O-\u03b2-d-glucopyranoside (compound 2) and hedyotol D 7\u2033-O-\u03b2-d-glucopyranoside (compound 3) were isolated from the aerial parts of Helicteres angustifolia together with nine known compounds (4-12). Their structures were elucidated on the basis of spectroscopic methods, including mass spectroscopy, and 1D and 2D nuclear magnetic resonance. Eleven isolates exhibited anti-complementary activity. In particular, compounds 4 and 5 exhibited potent anti-complementary activities against the classical and alternative pathways with CH50 values of 0.040 \u00b1 0.009 and 0.009 \u00b1 0.002 mM, and AP50 values of 0.105 \u00b1 0.015 and 0.021 \u00b1 0.003 mM, respectively. The targets of compounds 4 and 5 in the complement activation cascade were also identified. In conclusion, the anti-complementary components of H. angustifolia possessed chemical diversity and consisted mostly of flavonoids and lignans in this study.",
+      "doi": "10.3390/molecules21111506",
+      "journal": "Molecules (Basel, Switzerland)",
+      "matched_queries": [
+        "Helicteres angustifolia anticomplementary",
+        "Helicteres machicendonal CH50",
+        "Yin 2016 Helicteres complement",
+        "Sterculiaceae anticomplementary lignan"
+      ],
+      "pmid": "27834928",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27834928/",
+      "title": "Anti-Complementary Components of Helicteres angustifolia.",
+      "year": "2016"
+    },
+    {
+      "abstract": "Brachychiton rupestris and Brachychiton discolor (Malvaceae) are ornamental trees native to Australia. Some members of Brachychiton and its highly related genus, Sterculia, are employed in traditional medicine for itching, dermatitis and other skin diseases. However, scientific studies on these two genera are scarce. Aiming to reveal the scientific basis of the folk medicinal use of these plants, the cytotoxicity, anti-inflammatory and anti-allergic activities of Brachychiton rupestris and Brachychiton discolor leaves extracts and fractions were evaluated. Also, phytochemical investigation of B. rupestris was performed to identify the compounds exerting the biological effect.\nExtracts as well as fractions of Brachychiton rupestris and Brachychiton discolor were tested for their cytotoxicity versus hepatoma HepG2, lung A549, and breast MDA-MB-231 cancer cell lines. Assessment of the anti-allergic activity was done using degranulation assay in RBL-2H3 mast cells. Anti-inflammatory effect was tested by measuring the suppression of superoxide anion production as well as elastase release in fMLF/CB-induced human neutrophils. Phytochemical investigation of the n-hexane, dichloromethane and ethyl acetate fractions of B. rupestris was done using different chromatographic and spectroscopic techniques.\nThe tested samples showed no cytotoxicity towards the tested cell lines. The nonpolar fractions of both B. rupestris and B. discolor showed potent anti-allergic potency by inhibiting the release of \u03b2-hexosaminidase. The dichloromethane fraction of both species exhibited the highest anti-inflammatory activity by suppressing superoxide anion generation and elastase release with IC50 values of 2.99 and 1.98\u00a0\u03bcg/mL, respectively for B. rupestris, and 0.78 and 1.57\u00a0\u03bcg/mL, respectively for B. discolor. Phytochemical investigation of various fractions of B. rupestris resulted in the isolation of \u03b2-amyrin acetate (1), \u03b2-sitosterol (2) and stigmasterol (3) from the n-hexane fraction. Scopoletin (4) and \u03b2-sitosterol-3-O-\u03b2-D-glucoside (5) were obtained from the dichloromethane fraction. Dihydrodehydrodiconiferyl alcohol 4-O-\u03b2-D-glucoside (6) and dihydrodehydrodiconiferyl alcohol 9-O-\u03b2-D-glucoside (7) were separated from the ethyl acetate fraction. Scopoletin (4) showed anti-allergic and anti-inflammatory activity.\nIt was concluded that the nonpolar fractions of both Brachychiton species exhibited anti-allergic and anti-inflammatory activities.",
+      "doi": "10.1186/s12906-018-2359-6",
+      "journal": "BMC complementary and alternative medicine",
+      "matched_queries": [
+        "Helicteres compound 5 dihydrodehydrodiconiferyl"
+      ],
+      "pmid": "30413192",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30413192/",
+      "title": "Study of the anti-allergic and anti-inflammatory activity of Brachychiton rupestris and Brachychiton discolor leaves (Malvaceae) using in vitro models.",
+      "year": "2018"
+    },
+    {
+      "abstract": "Materials for modern wound-management are a very broad and heterogeneous group. One of the most important representatives is natural materials, or more precisely polysaccharides isolated from various plants and animals. With the increasing resistance of pathogens to established antimicrobial agents, there is also an attempt to discover new mechanisms of the effects of these materials. Gum karaya (GK) is a very promising representative of the natural polysaccharides group and, since it is obtained from Sterculia urens as resin, it is also possible to assume its certain antimicrobial activity.\nThe antimicrobial potential of GK and chitosan (Ch) has been tested on several preselected strains to match the real epidemiological situation of the agents of infectious complications in the field of burned wounds. Tested strains included representatives of gram-positive and gram-negative bacteria as well as selected yeasts. Methicillin susceptible Staphylococcus aureus CCM 4223 (ATCC 29213), methicillin resistant Staphylococcus aureus CCM 4750 (ATCC 43300), Klebsiella pneumoniae CCM 4985 (ATCC 700603), Candida albicans CCM 8261 (ATCC 90028), Pseudomonas aeruginosa CCM 3955 (ATCC 27853) were obtained from the Czech Collection of Microorganisms. Pseudomonas aeruginosa FF 1, Pseudomonas aeruginosa FF 2 and Pseudomonas aeruginosa FF 3 (all multi-resistant clinical strains), Staphylococcus epidermidis A 013, Staphylococcus epidermidis A 117, and Candida parapsilosis BC 11 were obtained from the Collection of Microorganisms at the St. Annes University Hospital, Brno. Antimicrobial tests were performed using the disk diffusion test methodology. Another set of antimicrobial tests was obtained by measuring the growth curves.\nBacteriostatic activity testing showed 1% GK concentration and both 1% and 0.5% chitosan concentration effective against all pathogens tested. The combination of GK50/Ch50 in concentrations of 1% and 0.5% had similar or better effect. Lower concentrations of the combined material are poorly effective against tested strains. Bactericidal activity testing has not produced positive results, except for Candida spp., where only a partial effect of GK50/Ch50 was observed at 1% concentration. In the growth curve test, the efficiency of both GK alone and chitosan was found to be significantly higher in gram-positive bacteria compared to gram-negative ones. In the case of this experiment, only a one-tenth concentration was used compared to the disk diffusion test concentration. This results correspond with the data from the bacteriostatic activity testing.\nThis is the first publication that attempts to comprehensively define the potential for GK antimicrobial activity and also the possible potentiation of this activity with the use of chitosan. Further experiments are needed to extend the antimicrobial efficiency to gram-negative bacteria.",
+      "doi": "",
+      "journal": "Epidemiologie, mikrobiologie, imunologie : casopis Spolecnosti pro epidemiologii a mikrobiologii Ceske lekarske spolecnosti J.E. Purkyne",
+      "matched_queries": [
+        "Helicteres machicendonal CH50"
+      ],
+      "pmid": "30630320",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30630320/",
+      "title": "Antimicrobial effect of novel hydrogel matrix based on natural polysaccharide Sterculia urens.",
+      "year": "2018"
+    },
+    {
+      "abstract": "The aim of this study was to test the effect of replacing soybean hulls with different doses of cocoa husk (CH) on milk production traits and the hematological profile of dairy ewes. Twenty-four mid-lactating Sarda dairy ewes were allotted to 3 homogeneous experimental groups (8 animals per group divided into 4 pens). Each group received a total mixed ration as a basal diet and a supplement that differed among groups. The first group was supplemented with 100 g of soybean hulls/d per head (SBH group). In the second group, soybean hulls were replaced with 50 g of CH/d (CH50 group). In the third group, soybean hulls were replaced with 100 g of CH/d per head (CH100 group). The study lasted 8 wk, with 3 wk of adaptation and 5 wk for the experimental period. The replacement of soybean hulls with 50 and 100 g of CH/d did not affect dry matter intake, milk production, and milk coagulation properties. Milk fat, protein, casein, and somatic cell count concentration and curd-firming time showed a significant interaction between treatment and sampling date. During the experiment, the somatic cell counts were lower in both the CH50 and CH100 groups than in the SBH group. Most of the hematological parameters were not affected by treatments except for basophiles, which were significantly higher in the SBH group than in the CH50 and CH100 groups. In conclusion, CH can be substituted for soybean hulls in the diet of dairy sheep without adverse effects on milk production or apparent negative effects on animal health conditions.",
+      "doi": "10.3168/jds.2019-17550",
+      "journal": "Journal of dairy science",
+      "matched_queries": [
+        "Helicteres machicendonal CH50"
+      ],
+      "pmid": "31864740",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31864740/",
+      "title": "Short communication: Cocoa husks can effectively replace soybean hulls in dairy sheep diets-Effects on milk production traits and hematological parameters.",
+      "year": "2020"
+    },
+    {
+      "abstract": "Extracts of cotton dust were tested for their ability to activate the alternative complement pathway in fresh normal human serum (NHS). Alternative pathway activation was determined by a haemolytic assay utilizing glutathione-sensitized human erythrocytes, consumption of alternative pathway components in terms of alternative pathway CH50 units and an immunoelectrophoretic assay to detect split products of activation of factor B. All assays were performed under conditions that have been shown to block the initial steps of classical pathway activation but permit activation of the alternative complement pathway. Results demonstrate that the cotton dust extracts could consume alternative complement pathway proteins in a dose-response manner. The complement activating factor is probably endotoxin since a cotton dust extract obtained by an extraction method for endotoxin yielded the greatest activity.",
+      "doi": "10.1111/j.1365-2222.1980.tb02111.x",
+      "journal": "Clinical allergy",
+      "matched_queries": [
+        "Helicteres machicendonal CH50"
+      ],
+      "pmid": "6903148",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/6903148/",
+      "title": "Activation of the alternative complement pathway by extracts of cotton dust.",
+      "year": "1980"
+    },
+    {
+      "abstract": "Cotton grown in Stoneville, Mississippi and harvested by three different methods was examined for anticomplementary activity in human serum in vivo. Subjects exposed to cotton dust in a model cardroom for six hours showed changes in C3c and CH50 after exposure to closed boll harvested, bract removed cotton dust when compared with a group of normal, unexposed controls. Decreases in C3c, :C4, and C3A were associated with decreases in FEV1 after exposure to closed boll harvested bract intact cotton dust. The data from this preliminary study suggest in vivo associations between inhalation of cotton dusts and complement which appear to be independent of endotoxin contamination. These findings suggest a relationship between cotton dust inhalation and complement-mediated respiratory impairment.",
+      "doi": "10.1378/chest.79.4_supplement.53s",
+      "journal": "Chest",
+      "matched_queries": [
+        "Helicteres machicendonal CH50"
+      ],
+      "pmid": "7471891",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7471891/",
+      "title": "Cotton dust and complement in vivo.",
+      "year": "1981"
+    }
+  ],
+  "retmax_per_query": 6
+}

@@ -1,0 +1,32 @@
+{
+  "candidate": "helicteres_benzofuran_lignans",
+  "created_at_utc": "2026-05-21T13:32:19+00:00",
+  "model_requested": "deepseek/deepseek-chat",
+  "model_returned": "deepseek/deepseek-chat-v3",
+  "raw_usage": {
+    "completion_tokens": 232,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.0004852,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.00020648,
+      "upstream_inference_cost": 0.0004852,
+      "upstream_inference_prompt_cost": 0.00027872
+    },
+    "is_byok": false,
+    "prompt_tokens": 871,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 1103
+  },
+  "response_id": "gen-1779370331-9oCDxjwrG1ldb18UrMnI",
+  "role": "native_chinese_counter_read_model_b",
+  "text": "```json\n{\n  \"classification\": \"CFH-independent\",\n  \"confidence\": \"High\",\n  \"predicted_y402h_direction\": \"null\",\n  \"key_binding_site_evidence\": \"Compound 4 (machicendonal) acts on C1q, C2, C3, C4, and C9, while compound 5 (dihydrodehydrodiconiferyl alcohol) interacts with C1q, C2, C3, and C9. CFH does not regulate C1q, C2, C4, or C9, and its binding site (CCP6-8) is structurally orthogonal to the multi-target lignan pattern.\",\n  \"agreement_with_model_a\": \"agree\",\n  \"disagreements\": [],\n  \"load_bearing_uncertainties\": [\"Replication status is inconclusive, and no independent group has reproduced the CH50 findings on a matched assay format.\"],\n  \"recommended_falsification_test\": \"Perform a CFH-depletion assay to confirm the CFH-independence of the anti-complement mechanism.\"\n}\n```"
+}

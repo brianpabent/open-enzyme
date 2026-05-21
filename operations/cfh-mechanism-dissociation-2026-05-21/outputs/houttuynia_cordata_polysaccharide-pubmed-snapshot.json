@@ -1,0 +1,243 @@
+{
+  "candidate": "houttuynia_cordata_polysaccharide",
+  "created_at_utc": "2026-05-21T13:15:50+00:00",
+  "fetched_at_utc": "2026-05-21T13:15:50+00:00",
+  "limitations": [
+    "PubMed snapshot contains title/abstract/citation metadata only.",
+    "Final GREEN verdicts require full text, protocol PDFs, vendor validation docs, or method-comparison data."
+  ],
+  "query_results": [
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "40654358",
+        "36252625",
+        "31250410",
+        "26190353",
+        "23126186",
+        "29719782"
+      ],
+      "query": "Houttuynia cordata polysaccharide complement"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "36252625",
+        "29192453",
+        "31250410",
+        "29719782",
+        "23126186"
+      ],
+      "query": "Houttuynia anticomplementary polysaccharide"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [],
+      "query": "Houttuynia C2 C4 binding"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [],
+      "query": "Houttuynia C3 convertase"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [],
+      "query": "Houttuynia complement factor H"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "41751332"
+      ],
+      "query": "Houttuynia TLR4 MD-2 polysaccharide"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [],
+      "query": "HCP HCPM anticomplementary"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "36252625",
+        "24423008",
+        "31250410",
+        "29192453",
+        "18400428",
+        "29719782"
+      ],
+      "query": "Chen Daofeng Houttuynia anticomplementary"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [],
+      "query": "Houttuynia gout hyperuricemia polysaccharide"
+    },
+    {
+      "framing": "western_mechanism",
+      "pmids": [
+        "40654358",
+        "41520240",
+        "37413910"
+      ],
+      "query": "Houttuynia NLRP3 inflammasome polysaccharide"
+    }
+  ],
+  "records": [
+    {
+      "abstract": "To elucidate the anticomplementary principles of a Chinese multiherb remedy used for the treatment and prevention of SARS, which contains five ingredients of Herba Houttuyniae, Flos Chrysanthemi Indici, Herba Artemisiae Scopariae, Herba Eupatorii and Fructus Tsaoko.\nThe anticomplementary activity was evaluated from hemolytic assays through the classical pathway (CP) and the alternative pathway (AP) of complement system in vitro. Compounds were isolated using bioactivity-guided fractionation and tested in vitro for their complement-inhibiting properties on the CP and AP. HPLC-DAD-ESI-MS was used to assign the isolated compounds in the five ingredient herbs.\n15 compounds, including chlorogenic acid (1), rutin (2), hyperoside (3), p-hydroxyacephenone (4), scopoletin (5), quercitrin (6) (3R,4R,6S)-3,6-dihydroxy-1-menthene (7), acaciin (8), scoparone (9), luteolin (10), quercetin (11), apigenin (12), acacetin (13), aristolactam (14), and apigenin-7,4'-dimethyl ether (15) were isolated and identified. Nine flavonoids (2, 3, 6, 8, 10-13, 15) were found to show inhibitory effects towards the CP and AP of complement system, luteolin (10) was the most potent with the CH50 and AP50 values of 0.19 and 0.17 mM. The bioactive flavonoids were mainly derived from Herba Houttuyniae, Flos Chrysanthemi Indici and Herba Artemisiae Scopariae.\nA Chinese multiherb remedy used for the treatment and prevention of SARS has robust inhibitory effect on complement system through the CP and AP, and its anticomplementary activity could be attributed to the flavonoids present in some ingredient herbs. Luteolin could be a potential anticomplementary agent.",
+      "doi": "10.1016/j.jep.2008.02.012",
+      "journal": "Journal of ethnopharmacology",
+      "matched_queries": [
+        "Chen Daofeng Houttuynia anticomplementary"
+      ],
+      "pmid": "18400428",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18400428/",
+      "title": "Anticomplementary principles of a Chinese multiherb remedy for the treatment and prevention of SARS.",
+      "year": "2008"
+    },
+    {
+      "abstract": "To establish and optimize the preparation procedures of the anti-complementary polysaccharides from Houttuynia cordata.\nBased on the yield and anti-complementary activity in vitro, the conditions of extraction and alcohol precipitating process were optimized by orthogonal tests. The optimal condition of deproteinization was determined according to the results of protein removed and polysaccharide maintained. The best decoloring method was also optimized by orthogonal experimental design.\nThe optimized preparation procedures were given as follows: extract the coarse powder 3 times with 50 times volume of water at 90 degrees C for 2 hours every time, combine the extracts and concentrate appropriately, equivalent to 0.12 g of H. cordata per milliliter. Add 4 times volume of 90% ethanol to the extract, allow to stand for 24 hours to precipitate totally, filter and the precipitate was successfully washed with anhydrous alcohol, acetone and anhydrous ether. Resolve the residue with water, add trichloroacetic acid (TCA) to a concentration of 20% to remove protein. Decoloration was at a concentration of 3% with activated carbon at pH 3.0, 50 degrees C for 50 min. The above procedures above were tested 3 times, resulting in the average yield of polysaccharides at 4.03% (RSD 0.96%), the average concentrations of polysaccharides and protein at 80.97% (RSD 1.5%) and 2.02% (RSD 2.3%), and average CH50 at 0.079 g x L-(-1) (RSD 3.6%).\nThe established and optimized procedures are repeatable and reliable to prepare the anti-complementary polysaccharides with high quality and activity from H. cordata.",
+      "doi": "",
+      "journal": "Zhongguo Zhong yao za zhi = Zhongguo zhongyao zazhi = China journal of Chinese materia medica",
+      "matched_queries": [
+        "Houttuynia cordata polysaccharide complement",
+        "Houttuynia anticomplementary polysaccharide"
+      ],
+      "pmid": "23126186",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23126186/",
+      "title": "[Preparation procedures of anti-complementary polysaccharides from Houttuynia cordata].",
+      "year": "2012"
+    },
+    {
+      "abstract": "Activity-guided fractionation for complement inhibitors led to the isolation of 23 known compounds from Houttuynia cordata Thunb. Seven flavonoids, two alkaloids, one coumarin and two phenols showed anti-complementary activity. Preliminary inhibitory mechanism of four flavonoids, including quercitrin, afzelin, isoquercitrin and quercetin in the complement activation cascade were examined for the first time. The results indicated that the target components of flavonols are different from those of flavonosides, and the glycoside moieties may be necessary to block C3 and C4 components.",
+      "doi": "10.1080/14786419.2013.869693",
+      "journal": "Natural product research",
+      "matched_queries": [
+        "Chen Daofeng Houttuynia anticomplementary"
+      ],
+      "pmid": "24423008",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24423008/",
+      "title": "Anti-complementary constituents of Houttuynia cordata and their targets in complement activation cascade.",
+      "year": "2014"
+    },
+    {
+      "abstract": "Houttuynia cordata (HC) has been used as a folk therapy to treat pulmonary infections. This study aimed to determine the role and mechanism of action of polysaccharides isolated from HC (HCP) in lipopolysaccharide (LPS)-induced ALI in the mice.\nLPS was delivered by the intratracheal route to Balb/c mice 2h before HCP (40, 80 and 160mg/kg) administration.\nThe number of total cells, protein and tumor necrosis factor-\u03b1 (TNF-\u03b1) concentrations in bronchoalveolar lavage fluid, the wet/dry weight ratio (w/d) of lungs and pulmonary pathology of each mouse were analyzed, it was found that HCP significantly alleviated ALI induced by LPS. Moreover, in lungs of mice, it was found that the infiltration of inflammatory cells, the expression of Toll-like receptor 4 and complement deposition were significantly decreased by HCP treatment. In vitro assays showed that C5a, a complement activation product, induced significant macrophage migration and treatment with HCP prevented it. The in vitro results also proved that LPS increased nitric oxide and pro-inflammatory cytokines (TNF-\u03b1, interleukin-6, and interleukin-1\u03b2) production, and HCP antagonized these effects of LPS. It was also found that HCP alone augmented secretion of some pro-inflammatory cytokines.\nThese results indicate that HCP may alleviate LPS induced lung inflammatory injury, which may be associated with its inhibitory effect on the over activation of complement and macrophages. This suggests a potential role to treat ALI.",
+      "doi": "10.1016/j.jep.2015.07.015",
+      "journal": "Journal of ethnopharmacology",
+      "matched_queries": [
+        "Houttuynia cordata polysaccharide complement"
+      ],
+      "pmid": "26190353",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26190353/",
+      "title": "Houttuyniacordata Thunb. polysaccharides ameliorates lipopolysaccharide-induced acute lung injury in mice.",
+      "year": "2015"
+    },
+    {
+      "abstract": "An Affi-Prep Polymyxin column was combined with a Phenyl Sepharose column and a Sephacryl S-300 column, respectively, to remove the lipopolysaccharides(LPS) in the anti-complementary crude polysaccharides of Houttuynia Herba. The contents of LPS in the polysaccharides were determined by chromogenic tachypleus amebocyte lysate(TAL)method during the procedure of purifying. The anti-complementary activities of the polysaccharides were also compared before and after the removal of LPS. Less remanent LPS was detected after purified using Penyl Sepharose combined with polymyxin column, with the clearance rate of 42.85%. All the columns had no effect on the anti-complementary activity of the polysaccharides. Penyl Sepharose combined with polymyxin column would be sound for LPS removal of the anti-complementary polysaccharides without reducing their bioactivity.",
+      "doi": "10.19540/j.cnki.cjcmm.20170728.011",
+      "journal": "Zhongguo Zhong yao za zhi = Zhongguo zhongyao zazhi = China journal of Chinese materia medica",
+      "matched_queries": [
+        "Houttuynia anticomplementary polysaccharide",
+        "Chen Daofeng Houttuynia anticomplementary"
+      ],
+      "pmid": "29192453",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29192453/",
+      "title": "[Removal of lipopolysaccharides from anti-complementary crude polysaccharides of Houttuynia Herba].",
+      "year": "2017"
+    },
+    {
+      "abstract": "Houttuynia cordata Thunb. is a traditional herb used for clearing heat and eliminating toxins, and has also been used for the treatment of severe acute respiratory syndrome (SARS). In vitro, the crude H. cordata polysaccharides (CHCP) exhibited potent anti-complementary activity through both the classical and alternative pathways by acting on components C3 and C4 of the complement system without interfering with the coagulation system. This study was to investigate the preventive effects of CHCP on acute lung injury (ALI) induced by hemorrhagic shock plus lipopolysaccharide (LPS) instillation (two-hit) and LPS-induced fever in rats. CHCP significantly attenuated pulmonary injury in the \"two-hit\" ALI model by reducing pulmonary edema and protein exudation in bronchoalveolar lavage fluid (BALF). In addition, it reduced the deposit of complement activation products in the lung and improved oxidant-antioxidant imbalance. Moreover, CHCP administration inhibited fever in rats, reduced the number of leukocytes and restored serum complement levels. The inhibition on the inappropriate activation of complement system by CHCP may play an important role in its beneficial effects on inflammatory diseases. The anti-complementary polysaccharides are likely to be among the key substances for the heat-clearing function of H. cordata.",
+      "doi": "10.1016/j.apsb.2017.11.003",
+      "journal": "Acta pharmaceutica Sinica. B",
+      "matched_queries": [
+        "Houttuynia cordata polysaccharide complement",
+        "Houttuynia anticomplementary polysaccharide",
+        "Chen Daofeng Houttuynia anticomplementary"
+      ],
+      "pmid": "29719782",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29719782/",
+      "title": "Beneficial effects of Houttuynia cordata polysaccharides on \"two-hit\" acute lung injury and endotoxic fever in rats associated with anti-complementary activities.",
+      "year": "2018"
+    },
+    {
+      "abstract": "In previous studies, crude Houttuynia cordata polysaccharides showed beneficial effects on acute lung injury in vivo, a syndrome in which anti-complementary activities played an important role. Anti-complementary activity-guided fractionation of H. cordata polysaccharides led to the isolation of two highly branched homogeneous polysaccharides, HC-PS1 and HC-PS3, with a molecular weight of 274\u200a530 and 216\u200a384\u2009Da, respectively. The polysaccharides were purified by chromatography on DEAE-cellulose and Superdex columns. Their structural characterization was performed by IR, GC-MS, methylation, NMR, and SEM analysis. Both HC-PS1 and HC-PS3 are composed of eight types of monosaccharides, including rhamnose, arabinose, mannose, glucose, glucuronic acid, galactose, galacturonic acid, and xylose. The main linkages of the sugar residues in HC-PS1 include terminal Rhap, terminal and 1,5-linked Araf; 1,3,6-linked and 1,4,6-linked Manp; terminal, 1,4-linked, 1,3-linked, 1,3,6-linked and 1,4,6-linked and 1,3,4,6-linked Glcp; and terminal, 1,4-linked and 1,6-linked Galp. The main monosaccharide linkages in HC-PS3 are similar to that of HC-PS1, except the additional 1,3,4-linked Manp and the absence of 1,3,6-linked Glcp. HC-PS1 and HC-PS3 were found to inhibit complement activation through both the classical and alternative pathways with 50% inhibition concentrations of 0.272\u200a-\u200a0.318\u2009mg/mL without interfering with the coagulation system. Preliminary mechanism studies indicated that both HC-PS1 and HC-PS3 inhibited the activation of the complement system by interacting with C2, C4, and C5. The results suggest that HC-PS1 and HC-PS3 could be valuable for the treatment of diseases associated with the excessive activation of the complement system.",
+      "doi": "10.1055/a-0955-7841",
+      "journal": "Planta medica",
+      "matched_queries": [
+        "Houttuynia cordata polysaccharide complement",
+        "Houttuynia anticomplementary polysaccharide",
+        "Chen Daofeng Houttuynia anticomplementary"
+      ],
+      "pmid": "31250410",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31250410/",
+      "title": "Structural Characterization and Anti-complementary Activities of Two Polysaccharides from Houttuynia cordata.",
+      "year": "2019"
+    },
+    {
+      "abstract": "Previous studies showed that crude Houttuynia cordata polysaccharides (CHCP) exerted therapeutic effects on acute lung injury induced by influenza A virus (IAV) in mice. Here, an acidic heteropolysaccharide from H. cordata, named HCPM (Mw, 19.1\u00a0kDa), was obtained directly from CHCP using sequential ultrafiltration membrane columns. The backbone of HCPM was consisted of 1, 3, 6-\u03b2-Manp, 1, 4-\u03b1-GalpA, 1, 2-\u03b1-Rhap, and 1, 2, 4-\u03b1-Rhap, with main branches of glucan, arabinan, and galactan substituted at C-3 of 1, 3, 6-\u03b2-Manp or C-4 of 1, 2, 4-\u03b1-Rhap. The structural information was further validated by oligosaccharide sequencing analysis using UPLC-ESI-MS. Furthermore, HCPM exhibited a potent anti-complementary activity with CH50 value of 254.1\u00a0\u00b1\u00a07.8\u00a0\u03bcg/mL in vitro and significantly attenuated IAV-induced lung and gut injuries in vivo by inhibiting viral replication, reducing inflammatory responses, and suppressing complement overactivation. These results suggested that HCPM might be a key H. cordata substance for pulmonary infection treatment.",
+      "doi": "10.1016/j.ijbiomac.2022.10.027",
+      "journal": "International journal of biological macromolecules",
+      "matched_queries": [
+        "Houttuynia cordata polysaccharide complement",
+        "Houttuynia anticomplementary polysaccharide",
+        "Chen Daofeng Houttuynia anticomplementary"
+      ],
+      "pmid": "36252625",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36252625/",
+      "title": "Ultrafiltration isolation, structure and effects on H1N1-induced acute lung injury of a heteropolysaccharide from Houttuynia cordata.",
+      "year": "2022"
+    },
+    {
+      "abstract": "Houttuynia cordata is an herbal compound that grows in China and exhibits anti-inflammatory, antiviral, and antioxidant properties. Additionally, pyroptosis is mediated by the activated NOD-like receptor family pyrin domain-containing 3 (NLRP3) inflammasome after stimulation by various inflammatory factors in asthma.\nTo investigate the effect of sodium houttuyfonate on NLRP3 inflammasome-related pyroptosis and Th1/Th2 immune imbalance in asthma.\nAsthmatic mice model were made, sodium houttuyfonate was injected intraperitoneally to treat the asthmatic mice. Airway reactivity, cell classification and counting in the bronchoalveolar lavage fluid were measured. Hematoxylin-eosin and periodic acid-Schiff staining were used to analyze airway inflammation and mucus hypersecretion. Beas-2b cells were cultured, LPS, NLRP3 antagonist (Mcc950) and sodium houttuyfonate were used to intervene the Beas-2b cells, NLRP3, ASC, caspase-1, GSDMD, IL-1\u03b2, and IL-18 expression in the lung tissue and cells were analyzed using immunohistochemistry and western blot, while qRT- PCR was performed to analyze the mRNA contents in the pulmonary and the cells, respectively. Th1 and Th2 cytokines (IL-4 and IFN-\u03b3) were detected with ELISA and the proportions of Th1 and Th2 in splenocyte were detected by flow cytometry.\nAirway reactivity decreased in sodium houttuyfonate group when compared with asthmatic group mice. In the BALF, the numbers of leukocytes, eosinophils, neutrophils, lymphocytes, and macrophages were significantly lower in sodium houttuyfonate group mice than in asthmatic group mice. The proportion of TH1/TH2 cells in spleen cells and IFN-\u03b3 /IL-4 in plasma increased in sodium houttuyfonate treatment group when compared with asthma group. Immunohistochemistry, western blot and RT-PCR showed that the expressions of NLRP3, ASC, caspase-1, GSDMD, IL-1\u03b2 and IL-18 were decreased in the lung tissue of mice after treated with sodium houttuyfonate when compared with those in the asthma group. However, sodium houttuyfonate combined with dexamethasone induced a stronger effect on NLRP3-related pyroptosis and Th1/Th2 immune imbalance compared to sodium houttuyfonate or dexamethasone alone. Beas-2b cells were cultured in vitro, sodium houttuyfonate can alleviate LPS-induced ASC, casepase-1, GSDMD, IL-18 and IL-1\u03b2 increasing, especially in SH (10\u00a0\u03bcg/ml) treated group, but the effect less than Mcc950.\nSodium houttuyfonate can alleviated NLRP3-related pyroptosis and Th1/Th2 immune imbalance to reduce asthma airway inflammation and airway reactivity.",
+      "doi": "10.1016/j.molimm.2023.06.013",
+      "journal": "Molecular immunology",
+      "matched_queries": [
+        "Houttuynia NLRP3 inflammasome polysaccharide"
+      ],
+      "pmid": "37413910",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37413910/",
+      "title": "Sodium houttuyfonate plays a protective role in the asthmatic airway by alleviating the NLRP3-related pyroptosis and Th1/Th2 immune imbalance.",
+      "year": "2023"
+    },
+    {
+      "abstract": "The coinfection of respiratory viruses and bacteria is a major cause of morbidity and mortality worldwide, despite the development of vaccines and powerful antibiotics. As a macromolecule that is difficult to absorb in the gastrointestinal tract, a homogeneous polysaccharide from Houttuynia cordata (HCPM) has been reported to exhibit anti-complement properties and alleviate influenza A virus (H1N1)-induced lung injury; however, the effects of HCPM without in vitro antiviral and antibacterial activities on more complicated pulmonary diseases resulting from viral-bacterial coinfection remains unclear. This study established a representative coinfection murine pneumonia model infected with H1N1 (0.2 LD50) and methicillin-resistant Staphylococcus aureus (MRSA, 107 CFU). HCPM significantly improved survival rate and weight loss, and ameliorated gut-lung damage and inflammatory cytokine production. Interestingly, the therapeutic effect of HCPM on intestinal damage preceded that in the lungs. Mechanistically, HCPM inhibited the overactivation of the intestinal complement (C3a and C5a) and suppressed the activation of the NLR family pyrin domain-containing 3 (NLRP3) pathway, which contributes to the regulation of the Treg/Th17 cell balance in the gut-lung axis. The results indicate the beneficial effects of an anti-complement polysaccharide against viral-bacterial coinfection pneumonia by modulating crosstalk between multiple immune regulatory networks.",
+      "doi": "10.1016/j.apsb.2025.04.008",
+      "journal": "Acta pharmaceutica Sinica. B",
+      "matched_queries": [
+        "Houttuynia cordata polysaccharide complement",
+        "Houttuynia NLRP3 inflammasome polysaccharide"
+      ],
+      "pmid": "40654358",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40654358/",
+      "title": "An anti-complement homogeneous polysaccharide from Houttuynia cordata ameliorates acute pneumonia with H1N1 and MRSA coinfection through rectifying Treg/Th17 imbalance in the gut-lung axis and NLRP3 inflammasome activation.",
+      "year": "2025"
+    },
+    {
+      "abstract": "The lung and gut were a pair of related organ systems, and the study aimed to investigate the lung protection of Houttuynia cordata Thunb. essential oil (HEO) on gut-lung crosstalk in lipopolysaccharide-induced acute lung injury (ALI) rats. Animal results showed that HEO performed lung protection by alleviating lung histopathological changes. Moreover, gut-lung interaction was shown during HEO-exerted lung protection, evidenced by overlap between lung and gut on correcting inflammatory profile through suppressing serum IL-1\u03b2 and TLR4/NF-\u03baB p65 signaling, suggesting that the intestine could behave as a \"social\" capacity to protect distal lung via gut-lung interaction. Furthermore, HEO was demonstrated to strengthen the intestinal barrier by elevating Zonula occludens-1 and inhibiting NLRP3 inflammasome through interfering with mitochondria-endoplasmic reticulum contacts through decreasing mitofusin 2, and its intestinal protection was also confirmed in cell experiments. Subsequently, 16S rRNA sequencing revealed that HEO significantly restored gut microbiota dysbiosis and increased short-chain fatty acids, which was in parallel with attenuation of metabolic abnormalities via UPLC-Q-TOF/MS-based serum metabolomics. Metabolomic analysis suggested that tryptophan metabolism was identified to be one of the critical pathways in gut-lung communication, which could be traced to Bacteroides and Lactobacillus in ALI rats exposed to HEO, concluding that lung protection of HEO could be driven by microbiota-gut-lung axis.",
+      "doi": "10.1111/1750-3841.70858",
+      "journal": "Journal of food science",
+      "matched_queries": [
+        "Houttuynia NLRP3 inflammasome polysaccharide"
+      ],
+      "pmid": "41520240",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41520240/",
+      "title": "Microbiota-Gut-Lung Axis Involvement With Lung Protection of Houttuynia cordata Thunb. Essential Oil In Vivo, Confirmed by 16S rRNA Sequencing Combined With UPLC-Q-TOF/MS-Based Serum Metabolomics.",
+      "year": "2026"
+    },
+    {
+      "abstract": "Background: Hepatic ischemia-reperfusion injury (HIRI) is a major complication in liver surgery with limited therapeutic options. Houttuynia cordata polysaccharide (HCP), a key bioactive component of the traditional anti-inflammatory herb, has demonstrated immunomodulatory potential, but its effect on HIRI remains unclear. Methods: A murine model of 70% hepatic ischemia for 60 min followed by reperfusion was established. Mice were administered low-dose (50 mg/kg) or high-dose (100 mg/kg) HCP or the positive control N-acetylcysteine (150 mg/kg). Liver injury was assessed by serum ALT/AST levels, histopathology, oxidative stress markers, and inflammatory cytokines. Macrophage polarization and the TLR4/NF-\u03baB pathway were analyzed using flow cytometry, qPCR, and Western blot. The TLR4 inhibitor TAK-242 was used for reverse validation, and molecular docking was performed to predict HCP binding to the TLR4/MD-2 complex. Results: HCP significantly attenuated HIRI-induced liver injury, as shown by reduced ALT/AST, improved histopathological scores, decreased MDA, increased SOD, and lower TNF-\u03b1 and IL-6 levels. Mechanistically, HCP promoted a shift from M1 to M2 macrophage polarization, with increased CD206+ cells and Arg-1/IL-10 expression and decreased CD86+ cells and iNOS/IL-1\u03b2 expression. HCP also suppressed TLR4/MyD88/NF-\u03baB pathway activation, inhibiting NF-\u03baB p65 phosphorylation and nuclear translocation. These protective effects were largely reversed by TAK-242 in vivo and in vitro. Molecular docking indicated stable binding between HCP and TLR4/MD-2. Conclusions: HCP protects against HIRI by targeting TLR4 to inhibit NF-\u03baB signaling, thereby reprogramming macrophage polarization toward the M2 phenotype and alleviating inflammation and oxidative stress. These findings highlight HCP as a promising natural agent for HIRI intervention.",
+      "doi": "10.3390/biomedicines14020433",
+      "journal": "Biomedicines",
+      "matched_queries": [
+        "Houttuynia TLR4 MD-2 polysaccharide"
+      ],
+      "pmid": "41751332",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41751332/",
+      "title": "Houttuynia cordata Polysaccharide Alleviates Hepatic Ischemia-Reperfusion Injury by Regulating Macrophage Polarization via Inhibiting the TLR4/NF-\u03baB Signaling Pathway.",
+      "year": "2026"
+    }
+  ],
+  "retmax_per_query": 6
+}
