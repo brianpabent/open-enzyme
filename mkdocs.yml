@@ -67,6 +67,7 @@ nav:
     - Gout Deep Dive: gout-deep-dive.md
     - Gout Clinical Pipeline: gout-clinical-pipeline.md
     - Gout Genetic Variants — Unified Index: gout-genetic-variants.md
+    - Mechanical Flare Triggers — Open Questions: mechanical-flare-triggers.md
     - Complement / C5a (CP0): complement-c5a-gout.md
     - Androgen-Urate Axis: androgen-urate-axis.md
     - Androgen Natural Modulation: androgen-natural-modulation.md
@@ -185,6 +186,7 @@ nav:
     - C1-INH Protease Stability + Glycosylation in EcN (comp-037): c1-inh-protease-stability-ecn-computational.md
     - TCM Gout Compound Triage (comp-013): tcm-gout-compound-triage-computational.md
     - Medicinal Mushroom Compound Mapping (comp-014): medicinal-mushroom-compound-mapping-computational.md
+    - Tier 2 Butyrate Assay Audit (comp-038): tier-2-butyrate-assay-audit-computational.md
     - T-axis Adjuvant Urate Mapping (comp-015): t-axis-adjuvant-urate-mapping-computational.md
     - T × Intestinal ABCG2 Evidence Mining (comp-016): t-abcg2-suppression-evidence-mining-computational.md
     - Intestinal ABCG2 Sex-Dimorphism Mining (comp-017): intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md

@@ -211,6 +211,7 @@ graph TB
         MT9["H06 — track viability falsification card (stub)"]
         MT10["Extract Characterization SOPs — GLPP / cordycepin / EGT"]
     end
+        subgraph PRPS_arm["PRPS / PURINE BIOSYNTHESIS CHOKEPOINT (NEW)"]
         PR1["PRPS — phosphoribosyl pyrophosphate synthetase"]
         PR2["PRPP — central purine/pyrimidine substrate"]
         PR3["De novo purine biosynthesis"]
@@ -268,6 +269,13 @@ graph TB
         CH10["Cross-class helper combinations (Pichia, 6.5-8.7×) — highest-leverage capacity expansion"]
         CH11["Per-architecture PDI residence time (α coefficients) — CCP 0.3-0.6, Ig-like 1.0, transferrin-lobe 1.5-2.5"]
         CH12["DAF SCR1-4 single-cassette routing — triple-cassette synergy 0.35-0.65 below 0.6 decision gate"]
+    end
+
+    subgraph SelfExperiment["SELF-EXPERIMENT & VALIDATION (NEW)"]
+        SE1["Mechanical Flare Triggers — 5 candidate mechanisms, Li XD 2012 Qingdao n=1713"]
+        SE2["劳累 (fatigue/overwork) 19.3% vs 外伤 (trauma) 0.35%"]
+        SE3["comp-038 Tier 2 Butyrate Assay Audit — YELLOW; HPLC-UV best candidate"]
+        SE4["Quantification Ladder — Tier 2 butyrate gap (stool/serum/home)"]
     end
 
     subgraph EnzymeQC["ENZYME QUANTIFICATION (NEW)"]
@@ -705,6 +713,14 @@ graph TB
     M5 -->|"Nrf2 + TLR4 suppression — MSU rat 50 mg/kg"| C2
     M5 -->|"NF-kB priming block"| C1
 
+    %% Self-experiment and validation — new (source: mechanical-flare-triggers.md, tier-2-butyrate-assay-audit-computational.md)
+    SE1 -->|"Li XD 2012: 劳累 19.3% → metabolic overload model"| C5
+    SE2 -->|"empirically stronger than trauma/mechanical-shedding"| SE1
+    SE3 -->|"culture-supernatant Tier 2: HPLC-UV vs GC-MS validation needed"| EQ6
+    SE3 -->|"stool/serum/home butyrate gap unresolved"| AM1
+    SE3 -->|"informs 1.14 butyrate dose-response arm"| AM4
+    SE4 -->|"no validated home Tier 2 butyrate assay — GC-MS remains anchor"| EQ6
+
     %% Styling
     style Core fill:#ffe6e6
     style Problem fill:#fff0e6
@@ -731,6 +747,7 @@ graph TB
     style Chaperones fill:#e6f0ff
     style MushroomTrack fill:#f5e6ff
     style EnzymeQC fill:#e6fff5
+    style SelfExperiment fill:#e6f0ff
 ```
 
 ## Key Pathway Descriptions

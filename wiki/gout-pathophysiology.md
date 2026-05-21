@@ -142,6 +142,8 @@ But here's the thing: **crystallization isn't immediate or inevitable.** Many pe
 - **Mechanical stress:** Trauma or movement increases risk
 - **Nucleation sites:** Existing crystals seed new crystal growth
 
+**Open question — what triggers deposited crystal beds to flare?** The five-mechanism research-gap page at [`mechanical-flare-triggers.md`](./mechanical-flare-triggers.md) maps what's known and unknown about the mechanical-use / exertion / fatigue axis as a flare trigger. Empirically, 劳累 (fatigue/overwork) at 19.3% in the Li XD 2012 Qingdao n=1,713 cohort far exceeds 外伤 (trauma) at 0.35% — suggesting metabolic-overload over mechanical-shedding. The gap in trigger-attribution methodology and four testable experimental designs are documented there. (source: mechanical-flare-triggers.md)
+
 (Source: gout-deep-dive.md, §1)
 
 ---
