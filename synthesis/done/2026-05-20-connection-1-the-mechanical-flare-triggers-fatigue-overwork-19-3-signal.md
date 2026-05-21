@@ -18,3 +18,17 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Replace or supplement the §3.10 fructose challenge with a two-phase exertion-challenge test (no colchicine cover → colchicine cover), using the same meter and the same self-experiment infrastructure. Pre-register the prediction from `mechanical-flare-triggers.md`: if UA is unchanged but a flare occurs, the dominant mechanism is mechanical (candidates #1–4); if UA rises and a flare follows, the dominant mechanism is metabolic-overload (candidate #5, the TCM 劳累 model). This is the cheapest single experiment that discriminates between the two classes of explanation for the single most common non-dietary flare trigger in the Li XD 2012 cohort.
 
 > **Pass 3 review — Partial.** `[OVERLAP: EXTENSION]` `[GAP: science-gap]` The proposed exertion challenge is a good, cheap way to interrogate the `mechanical-flare-triggers.md` candidate #5 axis, and the Li XD 2012 signal is correctly quoted: 劳累 330/1,713 = 19.3%, while 外伤及感染 is 6/1,713 = 0.35%. The overclaim is that serum UA alone cleanly separates metabolic overload from mechanical mechanisms; the page’s own open question #7 specifies serial spot urinary urate/creatinine ratios to test renal-clearance impairment, and unchanged serum UA does not exclude local synovial supersaturation or delayed clearance effects. Keep this as a supplement to §3.10, not a replacement for the fructose challenge, which `validation-experiments.md §3.10` correctly frames as an acute uricase-efficacy readout.
+
+---
+
+## ✓ Actioned 2026-05-21
+
+**Allopurinol-hallucination correction.** Pass 2's reasoning chain hinged on "Brian is on allopurinol" — a hallucinated premise grounded in a stripped conditional at [`gout-clinical-pipeline.md`](../../wiki/gout-clinical-pipeline.md) line 95 ("if Brian is on one"). Brian is NOT on allopurinol; the "fructose challenge is wrong probe because XO is already inhibited" framing collapses. Both §3.10 fructose challenge AND §3.11 exertion challenge test different mechanisms; both have independent value; both run.
+
+**§3.11 landed** at [`validation-experiments.md`](../../wiki/validation-experiments.md) — single-phase exertion challenge test (30 min weighted walking, default bout) with paired serum UA + urinary urate/Cr sampling. Pass 3 augments incorporated: hydration standardization, urinary urate/Cr as direct renal-clearance test (not just serum UA "blunt proxy"), pre-registered safety stopping rule (≥6 month hold after any provoked flare), interpretive caveat preserving the distinction between metabolic-overload (mechanism #5) and mechanical (#1-4) trigger classes.
+
+**Deferred future variants noted in §3.11:** colchicine cover (gated on med access — Brian has never had colchicine, also corrected this walk); topical CBD:THC cover as Protocol C n=1 sub-experiment per [`self-experiment-protocol.md` §13](../../wiki/self-experiment-protocol.md).
+
+**Cross-link added** to [`mechanical-flare-triggers.md`](../../wiki/mechanical-flare-triggers.md) §"Open question 7" pointing at §3.11 as the n=1 self-experiment form of the modern-physiology testable equivalent named there.
+
+Pairs with [Item 6 closure](./2026-05-20-experiment-1-exertion-challenge-test-two-phase-no-colchicine-cover.md), [Item 9 closure](./2026-05-20-open-question-2-the-mechanical-flare-triggers-page-identifies-five.md), [Item 12 closure](./2026-05-20-priority-action-2-add-an-exertion-challenge-test-3-11-to-validation.md).

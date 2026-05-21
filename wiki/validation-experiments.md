@@ -73,6 +73,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§3.8](#38-brian-dha-vs-epa-split-omega-3-crossover-resolving-the-gout-specific-spm-precursor-question) | Brian: DHA vs. EPA omega-3 crossover | Human | $550–700 | 9 | Proposed | [spm-resolution-pathway](./spm-resolution-pathway.md), [supplements-stack](./supplements-stack.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 | [§3.9](#39-brian-zileuton-off-label-trial-pharma-grade-cp6a-inhibition-in-flare-prevention-protocol) | Brian: zileuton off-label CP6a trial | Human | ~$500 | 16 | Proposed | [zileuton](./zileuton.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 | [§3.10](#310-brian-fructose-challenge-test-as-acute-n1-uricase-efficacy-readout) | Brian: fructose challenge test (acute n=1 uricase readout) | Human | ~$50 | 0.1 + 4 wk gap | Proposed | [fructose-connection](./fructose-connection.md), [self-experiment-protocol](./self-experiment-protocol.md), [synthesis/](../synthesis/README.md) |
+| [§3.11](#311-brian-exertion-challenge-test-mechanical-vs-metabolic-trigger-discrimination-n1) | Brian: exertion challenge test (mechanical vs. metabolic trigger discrimination, n=1) | Human | ~$50–80 | 0.25 per run; n=several over months | Proposed | [mechanical-flare-triggers](./mechanical-flare-triggers.md), [self-experiment-protocol](./self-experiment-protocol.md), [synthesis/](../synthesis/README.md) |
 
 ---
 
@@ -2009,6 +2010,79 @@ A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FI
 - Recent flares within 4 weeks change baseline UA dynamics — defer until 4+ weeks post-flare.
 
 **Cross-references:** [synthesis/](../synthesis/README.md) 2026-04-27 Proposed Experiment #1; [fructose-connection.md](./fructose-connection.md); [self-experiment-protocol.md](./self-experiment-protocol.md).
+
+---
+
+### 3.11 Brian: Exertion Challenge Test (Mechanical vs. Metabolic Trigger Discrimination, n=1)
+
+**Status**: Proposed | **Cost**: ~$50–80 per run (UASure strips + urinary urate/Cr) | **Weeks**: 0.25 per run (~6h observation + 72h flare-log); n=several runs over months | **Phase**: 3
+
+**Affected wiki**: [mechanical-flare-triggers](./mechanical-flare-triggers.md), [self-experiment-protocol](./self-experiment-protocol.md), [fructose-connection](./fructose-connection.md), [synthesis/](../synthesis/README.md)
+
+**What it tests:** Whether exertion/fatigue triggers Brian's flares via **metabolic-overload** (mechanism #5 in [`mechanical-flare-triggers.md`](./mechanical-flare-triggers.md) — sustained exertion → impaired urate clearance → transient supersaturation) or via the **mechanical mechanisms** (#1–4: shedding / mechanotransduction / DAMP / effusion). This is the cheapest n=1 protocol that empirically discriminates between the two classes of explanation for the single most common non-dietary flare trigger in the Li XD 2012 Qingdao n=1,713 cohort (劳累 / fatigue-overwork at **19.3%** of self-reported flare triggers — #3 after high-purine diet and alcohol, and more common than cold + emotion + trauma combined).
+
+**Distinct from §3.10 (NOT a replacement):** §3.10 fructose challenge tests acute uricase efficacy via the PRPS / XO → urate pathway (sugar bolus → UA spike → does the spike blunt after koji therapy starts). §3.11 exertion challenge tests whether physical exertion triggers flares via the metabolic-overload or mechanical route. Different questions; complementary; run both. Pass 2 originally proposed replacing §3.10 with §3.11 based on a hallucinated premise (assumed Brian was on allopurinol — he isn't); both probes test independent mechanisms and have independent value.
+
+**Proposed in:** [`synthesis/`](../synthesis/README.md) 2026-05-20 Connection 1 + Experiment 1 + Open Question 2 + Priority Action 2 (sweep on commit `6437cb4`). Walkthrough 2026-05-21 narrowed Pass 2's two-phase ± colchicine-cover design to single-phase based on Brian's medication access (Brian has never been on colchicine — Pass 2 hallucinated this premise from `validation-experiments.md` §3.7's incorrect "colchicine-era baseline" language, since corrected). Colchicine cover deferred as future variant (see "Deferred extensions" below).
+
+**Protocol — single-phase mechanism discrimination:**
+
+- **Subject:** Brian (n=1).
+- **Pre-exertion conditions:** 2-hour rested baseline. **Hydration standardized** (500 mL water on waking, no other fluids during the 6-hour observation window — matches §3.10 discipline; Pass 3 augment notes hydration confounds both serum UA AND urinary urate/Cr, so standardization is load-bearing).
+- **Exertion bout:** **30 minutes weighted walking** (default — low equipment overhead, replicable, joint-loading without high cardio confound). Default load: 20–25 lb in a backpack; steady moderate pace; same route across runs. Alternative bouts (stationary cycling at defined wattage; structured joint-loading protocol) acceptable but the SAME bout must be used across runs for within-subject reproducibility.
+- **Sampling — serum UA** (UASure home meter, duplicate readings per timepoint per §3.10 discipline):
+  - t = 0 (immediately pre-exertion)
+  - t = +30 min post (immediately at exertion end)
+  - t = +60 min
+  - t = +90 min
+  - t = +120 min
+- **Sampling — urinary urate/creatinine ratios** (Pass 3 augment — directly addresses the renal-clearance question, not just serum UA which is a "blunt proxy"):
+  - Spot urinary urate/Cr at t = 0, immediately post, +60 min, +120 min
+  - Dipstick (Quantofix Urate + Creatinine, ~$1/test) OR Quest/LabCorp send-out if dipstick accuracy insufficient
+- **Symptom tracking:** Joint pain scores (VAS 0–10) for any previously-flared joints at 6 / 12 / 24 / 48 / 72 hours. Continue flare-log monitoring per [`self-experiment-protocol.md`](./self-experiment-protocol.md) §5.
+- **Run cadence:** n=several runs over months, runs spaced by ≥4 weeks. Within-subject statistical signal requires multiple runs to characterize variance.
+
+**Pre-registered predictions (commit to interpretation BEFORE running):**
+
+| Observed pattern | Interpretation |
+|---|---|
+| Serum UA rises (Δ ≥ 0.5 mg/dL) AND urinary urate/Cr drops (impaired clearance) AND a flare follows within 72h | **Mechanism #5 supported** (metabolic-overload — TCM 劳累 model in modern kinetic terms) |
+| Serum UA unchanged AND urinary urate/Cr unchanged AND a flare follows within 72h | **Mechanisms #1–4 supported** (mechanical — shedding / mechanotransduction / DAMP / effusion, NOT via systemic urate kinetics) |
+| Serum UA rises but no flare | Threshold not crossed this run; additional runs needed to characterize the UA→flare relationship at this bout intensity |
+| No UA change, no flare across ≥3 consecutive runs | Exertion at this bout intensity is NOT a personal trigger for Brian (different from 19.3% of Qingdao cohort) — mechanism question becomes academic in Brian's case |
+| Mixed (UA dynamics + flare pattern point different directions) | Document and continue running to build within-subject distribution |
+
+**Safety / stopping rule (Pass 3 augment):**
+
+- If Phase 1 provokes a clear flare (pain ≥ 4/10 at any flared joint within 72h), **hold further exertion-challenge runs for ≥6 months** to avoid cumulative flare burden. The experiment's value is in within-subject pattern, not in repeated provocation.
+- If 3 consecutive runs show no flare, conclude exertion at this bout intensity is not Brian's personal trigger; mechanism question moot.
+
+**Estimated cost:** ~$50–80 per run = UASure strips (10 readings × $1.50) + urinary urate/Cr dipsticks (~$30) OR Quest send-out (~$40).
+
+**Estimated timeline:** ~6-hour observation window per run; ~72h flare-log monitoring window; runs spaced ≥4 weeks.
+
+**Dependencies:** UASure meter + strips (existing infrastructure from §3.10). Urine collection cup + Quantofix dipsticks OR Quest/LabCorp send-out arrangement.
+
+**Success criteria:**
+
+- **Validates mechanism #5 (metabolic-overload):** post-exertion serum UA rises ≥ 0.5 mg/dL AND urinary urate/Cr drops AND a flare follows within 72h. Across ≥2 runs to confirm.
+- **Validates mechanisms #1–4 (mechanical):** serum UA unchanged AND urinary urate/Cr unchanged AND a flare follows within 72h. Across ≥2 runs to confirm.
+- **Negative provocation across ≥3 runs:** exertion at this bout intensity is not Brian's personal trigger; mechanism question moot.
+
+**Caveats and confounds:**
+
+- UASure CV ~10–15% — duplicate readings + ≥ 0.5 mg/dL effect-size threshold helps separate signal from noise (parallel to §3.10 discipline).
+- Hydration confounds both serum UA AND urinary urate/Cr — strict water standardization is load-bearing.
+- Recent flares within 4 weeks change baseline UA dynamics — defer runs until 4+ weeks post-flare.
+- Brian's clomid taper is in flight; testosterone changes affect both UA and inflammation tone. Schedule runs to bracket OR sit firmly inside one phase of that taper.
+- **Per Pass 3 augment:** serum UA alone is a "blunt proxy" for the renal-clearance question; urinary urate/Cr is the direct test that [`mechanical-flare-triggers.md` §"Open question 7"](./mechanical-flare-triggers.md) names. Both together strengthen the mechanism call.
+
+**Deferred future variants (gated on access):**
+
+- **Phase 2 — colchicine cover.** If Brian gains colchicine access (rheumatologist referral), repeat the same bout with AGREE-style colchicine pre-dosing. Tests whether NLRP3-axis blockade prevents the exertion-triggered flare. Per Pass 3 caveat: colchicine is a "broad neutrophil/microtubule perturbation" not a "clean NLRP3-specific isolation" — interpretive caveat preserved.
+- **Topical CBD:THC cover.** Brian-accessible NLRP3-blockade variant (CB2 GPCR per [`cannabinoids-terpenes.md` §4a](./cannabinoids-terpenes.md)): apply pre-exertion to historically-flaring joint. Could be a separate sub-experiment under the Protocol C n=1 framework at [`self-experiment-protocol.md` §13](./self-experiment-protocol.md) rather than a sub-arm of §3.11 (scope discipline: one experiment, one decision).
+
+**Cross-references:** [`mechanical-flare-triggers.md` §"Experimental designs that would close the gaps" item 7](./mechanical-flare-triggers.md) (the modern-physiology testable equivalent — this §3.11 is its n=1 self-experiment form); [`fructose-connection.md`](./fructose-connection.md); [`self-experiment-protocol.md`](./self-experiment-protocol.md) §5 (flare-log integration); [`validation-experiments.md` §3.10](./validation-experiments.md) (fructose challenge — complementary, NOT replaced).
 
 ---
 
