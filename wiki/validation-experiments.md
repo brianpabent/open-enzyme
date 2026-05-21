@@ -1235,6 +1235,49 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 ---
 
+### 1.30 Houttuynia cordata polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages (added 2026-05-21, source: comp-039 + sweep walkthrough Item 9)
+
+**Status:** Proposed | **Cost:** ~$2,000–3,000 (CRO macrophage assay) | **Weeks:** 4–6 | **Phase:** 1
+
+**Affected wiki:** [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9.7 (HCP/HCPM as Tier 1d dual-chokepoint candidate); [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) §CP1 (Houttuynia entry); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2); [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.3 (comp-039 HCP CFH-independence classification); [`supplements-stack.md`](./supplements-stack.md) (Houttuynia catalog entry).
+
+**What it tests:** Whether *Houttuynia cordata* polysaccharide's documented CP0 complement-inhibitory + CP1 NLRP3-suppressive activities translate to a gout-relevant cell model — and whether the structure-dependent activity (purified Chen-group fractions vs. generic commercial extracts) creates a consumer-product equivalence gap parallel to the mushroom β-glucan structure-dependence already documented for *Ganoderma lucidum*.
+
+**Why this matters:** Houttuynia is the corpus's first dual-CP0+CP1 dietary candidate and one of the most-cited "most curious thread" picks of recent sweeps. comp-039 (2026-05-21) classified HCP/HCPM/CHCP as **CFH-independent (High confidence)** based on Lu 2018 depletion-rescue (C3 + C4 cleavage targeting; C4 mechanistically incompatible with CFH-dependence). That confirms the mechanism-site classification but does NOT replace the gout-cell-model gate. Cheng 2014 (PMC7112369) documents structure-dependent directionality — purified 60 kDa HCP-2 is pro-inflammatory on naïve PBMCs while the anti-inflammatory phenotype appears in disease-context inflammation — so a generic "Houttuynia extract" capsule cannot be assumed equivalent to the Chen-group HCPM preparation.
+
+**Proposed in:** [synthesis/done/2026-05-20-experiment-2-msustimulated-thp1-macrophage-assay-of-houttuynia-cordata.md](../synthesis/done/2026-05-20-experiment-2-msustimulated-thp1-macrophage-assay-of-houttuynia-cordata.md).
+
+**Protocol — three-arm fraction comparison:**
+
+- **Arm A: HCPM (19.1 kDa Fudan fraction)** — gold-standard purified preparation per Lu 2018 (PMC5925397). Sourcing: direct request to Chen Daofeng / Fudan group OR independent preparation following the Lu 2018 protocol (ethanol precipitation + DEAE-Sepharose ion-exchange + Sephadex G-100 size-exclusion).
+- **Arm B: Crude HCP** — boiled-water extract of *Houttuynia cordata* whole-herb (the home-preparation reference, parallels mushroom β-glucan crude vs. purified comparison).
+- **Arm C: Commercial Houttuynia capsule extract** — three brands (consumer-product representative; tests product-equivalence directly).
+
+Each arm: dose-response (1, 10, 100, 1000 μg/mL) in MSU-stimulated THP-1 macrophages (1 × 10⁶/well, LPS pre-prime 100 ng/mL × 3 hr, MSU challenge 100 μg/mL × 6 hr). Vehicle-only and nigericin (NLRP3 activator) controls.
+
+**Readouts:**
+- IL-1β supernatant ELISA (primary endpoint; CP3/CP4 NLRP3 axis readout)
+- IL-6 supernatant ELISA (secondary; broader inflammatory readout)
+- C3a / sC5b-9 supernatant (complement-axis readout — tests whether the CP0 mechanism is operative in the macrophage model)
+- Cell viability (CCK-8 or MTT — confirms results aren't confounded by cytotoxicity at high doses)
+
+**Decision rules:**
+- If **HCPM suppresses IL-1β ≥50% at ≤100 μg/mL AND commercial extracts fail to match** within ≥10× dose range: Houttuynia confirmed as platform's first dual-CP0+CP1 dietary candidate, with explicit consumer-product caveat — Chen-group preparation specifically, NOT generic capsules. Promote from "mechanism-supported, gout-untested" to "gout-relevant macrophage validated, human RCT pending."
+- If **all three arms suppress IL-1β equivalently**: consumer-product equivalence holds; commercial capsules are an acceptable proxy. Promote to dietary-stack recommendation.
+- If **none of the three arms suppress IL-1β**: the CP0 + CP1 mechanism does not translate to the macrophage model; Houttuynia stays at mechanism-supported but is deprioritized as a gout intervention. Retire from active candidate stack.
+- If **crude HCP performs ≥ HCPM**: the purification step is not load-bearing; home-preparation is acceptable; consumer-extract testing remains the next gate.
+
+**Success criteria:**
+- Detectable IL-1β baseline in MSU-stimulated vehicle controls (≥500 pg/mL by ELISA standard curve).
+- Nigericin positive control reaches ≥3× MSU IL-1β (confirms NLRP3 axis intact).
+- All three Houttuynia arms tested at full dose-response with cell viability ≥85% throughout.
+
+**Dependencies:** CRO with THP-1 macrophage NLRP3 assay capability (Cellular Technology Limited, Eurofins Discovery, several specialty rheumatology contract labs). HCPM sourcing is the operational bottleneck — direct collaboration request to Chen Daofeng / Fudan would be the cleanest path; in-house preparation following Lu 2018 protocol is the fallback. Commercial-capsule arm: three brands of "Houttuynia cordata" extract from US/EU supplement marketplaces (any with documented standardization claims).
+
+**Cross-references:** [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.3 (comp-039 HCP CFH-independence + falsification test priority); [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9.7 (HCP/HCPM Tier 1d dual-chokepoint candidate); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2 HCP discovery); [`logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md`](../logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md).
+
+---
+
 ### 1.29 Cordycepin × Pentostatin × Substrate Matrix (added 2026-05-19, source: substrate-engineering lit scan)
 
 **Status:** Proposed | **Cost:** ~$2,500–4,000 (4 cultivation arms × HPLC quantification) | **Weeks:** 8–12 | **Phase:** 1
