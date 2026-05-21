@@ -20,6 +20,10 @@ related:
   - gout-pathophysiology.md
   - nlrp3-exploit-map.md
   - nlrp3-inflammasome.md
+  - gout-action-guide.md
+  - self-experiment-protocol.md
+  - spm-resolution-pathway.md
+  - cannabinoids-terpenes.md
   - etc/GRAPH.md
 sources:
   - "Misawa et al. 2013 — Microtubule-driven spatial arrangement of mitochondria promotes activation of the NLRP3 inflammasome — *Nat Immunol* 14:454–460 (PMID 23502856)"
@@ -102,6 +106,8 @@ Colchicine sits at CP2 (P2X7) and CP3 (ASC speck), but the practical question fo
 **The stacking logic differs per pair; a one-size answer is unlikely.** Anyone layering colchicine with other CP2/CP3 modulators should ask, per pair, whether the second compound hits an *upstream* node (additive) or the same node (redundant). See [`nlrp3-exploit-map.md`](nlrp3-exploit-map.md) for the chokepoint topology.
 
 **Topical CBD:THC at CB2 — the cleanest dual-receptor adjunct (added 2026-05-19, Cluster I1 walkthrough).** Topical 1:1 CBD:THC applied to the affected joint hits CP2 NLRP3 conformational suppression via **CB2 GPCR activation on synovial macrophages** — a completely different molecular mechanism than colchicine's β-tubulin binding, reaching the same chokepoint. The two arms are mechanism-non-redundant at CP2: colchicine acts intracellularly via cytoskeleton disruption, CBD:THC acts via plasma-membrane Gαi-coupled receptor signaling. Plus the topical route provides joint-site concentration that oral colchicine can't match. This composes a **dual-receptor, dual-route** acute-flare protocol — formalized as Protocol A in [`gout-action-guide.md` §"Combined-route flare protocols"](./gout-action-guide.md). See [`cannabinoids-terpenes.md`](./cannabinoids-terpenes.md) §1–2 (per-cannabinoid mechanism), §4a (topical protocol details), and §"Brian's n=1 observation" (real-subject layered-flare-interrupt anchor). Evidence: colchicine arm is Clinical Trial (AGREE trial); CBD:THC arm is In Vitro / Animal Model; combination is Speculative.
+
+**Protocol C — Triple-mechanism (colchicine + topical CBD:THC + DHA SPM resolution arm):** a named composition crossing two mechanism *classes* — suppression (colchicine + CBD:THC) and active resolution (DHA-emphasis omega-3 → RvD1/MaR1 SPMs). Formalized at [`gout-action-guide.md` §"Combined-route flare protocols"](./gout-action-guide.md) Protocol C and [`self-experiment-protocol.md` §13](./self-experiment-protocol.md) (prospective n=1). Colchicine hits CP3 + CP2 (β-tubulin/P2X7), CBD:THC hits CP2 (CB2), DHA SPMs hit CP5b (ALX/FPR2 + LGR6 active resolution). The DHA resolution arm is gated on chronic omega-3 index ≥8% and produces a falsifiable mechanism signature — accelerated serum C5a decline during the resolution phase per [`spm-resolution-pathway.md` §7.3](./spm-resolution-pathway.md). Evidence: all three arms have per-arm mechanism evidence; combination as named is Speculative. (source: gout-action-guide.md, self-experiment-protocol.md)
 
 ### 3.4 Other immunomodulatory effects
 

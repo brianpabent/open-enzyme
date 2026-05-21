@@ -108,6 +108,7 @@ graph TB
         O6["C1-INH (SERPING1) — EcN-LBP luminal CP0 candidate"]
         O7["DAF SCR1-4 — koji-secreted CP0 candidate"]
         O8["Houttuynia cordata polysaccharides — dietary CP0 (comp-018 Phase 2)"]
+        O9["CFH Y402H (rs1061170) — alt-pathway amplification; dietary-CP0 stratification"]
     end
 
     subgraph Resolution["ACTIVE RESOLUTION (CP5b — NEW)"]
@@ -190,6 +191,7 @@ graph TB
         DE30["comp-029 Combined CP0 Systems Model — YELLOW; RA gut-luminal + DAF SCR1-4"]
         DE31["comp-033/036 Inhaled mRNA-IL-1RA — RED single-dose / YELLOW repeat-dose"]
         DE32["comp-037 C1-INH Protease Stability + Glycosylation in EcN — MODERATE (kinetic-competition gated)"]
+        DE33["comp-039 CFH-Dependence Mechanism-Dissociation of Dietary CP0 Candidates — CFH-INDEPENDENT (all 4)"]
     end
 
     subgraph PlatformArch["PLATFORM ARCHITECTURE (NEW)"]
@@ -423,6 +425,9 @@ graph TB
     O7 -->|"expressed in A. oryzae koji (LOW protease risk, wet-lab gated)"| O1
     %% Houttuynia cordata polysaccharides — dietary CP0 (comp-018 Phase 2, 2026-05-17)
     O8 -->|"multi-target C2+C4+C5, CH50 79-318 µg/mL"| O1
+    %% CFH Y402H — dietary-CP0 stratification prediction (comp-039, 2026-05-21)
+    O9 -->|"Y402H weakens CFH → more unregulated surface C3b → ↑ CP0 priming"| O1
+    O9 -.->|"dietary CP0 bypasses CFH-dependence per comp-039 → carriers benefit more or equally"| O8
 
     %% CP1a — TNFSF14 (LIGHT) amplifier (Round 1 work)
     Q1 -->|"amplifies via HVEM"| Q2
@@ -661,6 +666,10 @@ graph TB
     %% comp-037 C1-INH protease stability + glycosylation feasibility (2026-05-17)
     DE32 -->|"MODERATE — LOW strictly-degradative, GREEN glycosylation, RCL kinetic-competition gated"| O6
     DE32 -->|"substantiates two-chassis CP0 architecture (C1-INH EcN + DAF SCR1-4 koji)"| O7
+    %% comp-039 CFH-dependence mechanism-dissociation (source: cfh-mechanism-dissociation-cp0-candidates-computational.md, 2026-05-21)
+    DE33 -->|"all 4 CP0 candidates CFH-independent; rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium"| O1
+    DE33 -->|"UKB cross-tab: rs1061170 × rosmarinic-acid intake × incident gout M10.x; HCP deferred to East Asian cohorts"| DE17
+    DE33 -->|"comp-040 wet-lab CFH-depleted serum MSU assay queued; comp-041 East Asian cohort feasibility queued"| DE2
     %% Chassis-pending interventions (source: chassis-pending-interventions.md)
     DE25 -->|"operationalizes chokepoint-first chassis-second discipline"| DE2
     DE25 -->|"PDB / siRNA-URAT1 / engineered-LBP / mRNA-IL-1RA / IA-uricase entries"| DE7

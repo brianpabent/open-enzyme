@@ -11,6 +11,10 @@ related:
   - gout-deep-dive.md
   - oridonin.md
   - bhb-ketones.md
+  - gout-action-guide.md
+  - self-experiment-protocol.md
+  - colchicine.md
+  - spm-resolution-pathway.md
 sources:
   - "Liu et al., J Nat Prod. 2020;83(6):2025-2029. PMID: 32374168"
   - "Inflammation Research 2024;73(3):521-535 (CBD NLRP3 review)"

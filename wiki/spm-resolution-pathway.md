@@ -29,6 +29,8 @@ related:
   - supplements-stack.md
   - lactoferrin.md
   - self-experiment-protocol.md
+  - gout-action-guide.md
+  - colchicine.md
   - open-questions.md
   - etc/open-enzyme-vision.md
 sources:

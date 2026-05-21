@@ -18,6 +18,8 @@ tags:
 related:
   - computational-experiments.md
   - complement-c5a-gout.md
+  - cfh-mechanism-dissociation-cp0-candidates-computational.md
+  - gout-genetic-variants.md
   - daf-cd55-scr14-truncated-computational.md
   - hypotheses/H05-daf-scr14-cp0-thesis.md
   - medicinal-mushroom-compound-mapping-computational.md

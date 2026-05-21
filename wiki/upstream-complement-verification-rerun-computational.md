@@ -28,6 +28,8 @@ tags:
 related:
   - complement-c5a-gout.md
   - daf-cd55-scr14-truncated-computational.md
+  - cfh-mechanism-dissociation-cp0-candidates-computational.md
+  - gout-genetic-variants.md
   - medicinal-mushroom-compound-mapping-computational.md
   - tcm-gout-compound-triage-computational.md
   - validation-experiments.md
