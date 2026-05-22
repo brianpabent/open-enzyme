@@ -5406,13 +5406,15 @@
 <p><strong>Status:</strong> Draft, primary-literature-anchored. Ready for self-experimentation Tier 1+2; Tier 3 HPLC validation queued per candidate species + reagent pair.</p>
 <p>The substrate engineering lit scan (<a href="../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md"><code>logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md</code></a>) surfaced quantitative effect-size anchors for substrate-level interventions across the medicinal-mushroom-complement track. This SOP captures the recipe table for distributed contributors. See also Platform Principle 9 in <a href="../etc/open-source-platform/"><code>etc/open-source-platform.md</code></a> for the platform-level discipline.</p>
 <p><strong>Protocol matrix (per compound × species):</strong></p>
+<p><strong>Column discipline (added 2026-05-22 per sweep 2026-05-20 Open Question #3 + Priority Action #5):</strong> the matrix now separates <strong>Expected Magnitude</strong> (absolute yield change for the named target compound) from <strong>Profile Shift</strong> (direction + magnitude of within-class compound-ratio changes). The distinction prevents the "more biomass / shifted away from target" failure mode that pure yield reporting masks. For rows where primary literature does NOT report sibling-compound ratios, the Profile Shift column is "Not characterized" — this is itself useful information about which experimental designs need a follow-up Tier 3 profile-quantification pass.</p>
 <table>
 <thead>
 <tr>
 <th>Target Compound</th>
 <th>Species</th>
 <th>Substrate Intervention</th>
-<th>Expected Magnitude</th>
+<th>Expected Magnitude (yield)</th>
+<th>Profile Shift (top 2–4 sibling compounds)</th>
 <th>Format</th>
 <th>Primary Source</th>
 </tr>
@@ -5423,6 +5425,7 @@
 <td><em>C. militaris</em></td>
 <td>L-alanine 12 g/L in PDA + light cycle</td>
 <td>3×</td>
+<td>Pentostatin ratio not reported</td>
 <td>Solid PDA</td>
 <td>Yu 2024 PMC11698586</td>
 </tr>
@@ -5431,6 +5434,7 @@
 <td><em>C. militaris</em></td>
 <td>Corn steep liquor hydrolysate 1.5 g/L + peptone 3.5 g/L</td>
 <td>4.83×</td>
+<td>Pentostatin ratio not reported</td>
 <td>Submerged liquid</td>
 <td>Chang 2024 PMC10931215</td>
 </tr>
@@ -5439,6 +5443,7 @@
 <td><em>C. militaris</em></td>
 <td>Oleic acid substrate supplementation</td>
 <td>1.5–3× (51–202% boost)</td>
+<td>Pentostatin ratio not reported</td>
 <td>Solid or liquid</td>
 <td>Turk 2022 PMC9627333</td>
 </tr>
@@ -5447,6 +5452,7 @@
 <td><em>C. militaris</em></td>
 <td>Insect substrate (<em>Allomyrina dichotoma</em>, oleic-rich) vs. silkworm pupae</td>
 <td>34×</td>
+<td><strong>Pentostatin co-product ratio unknown — load-bearing gap for <code>cordyceps-militaris.md</code> discovery work; large cordycepin yield without pentostatin data leaves the cordycepin/pentostatin ratio uncalibrated</strong></td>
 <td>Solid</td>
 <td>Turk 2022</td>
 </tr>
@@ -5454,7 +5460,8 @@
 <td>Ganoderic acids</td>
 <td><em>G. lucidum</em></td>
 <td>Microcrystalline cellulose 1.5% added at day 3</td>
-<td>+85.96%</td>
+<td>+85.96% (total triterpenoids)</td>
+<td>Not characterized at compound-level (Hu 2017 reports total triterpenoid yield; lucidenic acid vs ganoderic acid sub-classes not separated)</td>
 <td>Submerged liquid</td>
 <td>Hu 2017 PMC5395960</td>
 </tr>
@@ -5462,7 +5469,8 @@
 <td>Ganoderic acids</td>
 <td><em>G. lucidum</em></td>
 <td>D-galactose 0.5% added at day 3</td>
-<td>+63.9%</td>
+<td>+63.9% (total triterpenoids)</td>
+<td>Not characterized at compound-level</td>
 <td>Submerged liquid</td>
 <td>Hu 2017</td>
 </tr>
@@ -5470,7 +5478,8 @@
 <td>Ganoderic acids</td>
 <td><em>G. lucidum</em></td>
 <td>Wood-log vs. substitute substrate</td>
-<td>1.2× total; 2.19× lucidenic acids (profile shift)</td>
+<td>1.2× total</td>
+<td><strong>Ganosporelactone B 13.5× UP + lucidenic acids 2.19× UP on wood-log — directional shift toward less-oxidized triterpenoid sub-class; ganoderic acid A trend not separately quantified</strong></td>
 <td>Solid</td>
 <td>Luo 2024 PMC10879320</td>
 </tr>
@@ -5478,7 +5487,8 @@
 <td>Ergothioneine</td>
 <td>Multiple species (<em>Ganoderma</em>, <em>Lentinula</em>, <em>Pleurotus</em>)</td>
 <td>L-methionine 2 mM in mycelial culture</td>
-<td>1.7–3.1×</td>
+<td>1.7–3.1× EGT</td>
+<td>EGT-specific (Tier 3 anchor); sibling thiols (glutathione, ovothiol A, hercynine biosynthesis precursor) not co-quantified — Lee 2009 measured EGT alone</td>
 <td>Submerged liquid</td>
 <td>Lee 2009 PMC3749454</td>
 </tr>
@@ -5486,7 +5496,8 @@
 <td>Ergothioneine</td>
 <td><em>Pleurotus</em></td>
 <td>L-cysteine</td>
-<td>1.7×</td>
+<td>1.7× EGT</td>
+<td>Same sibling-thiol gap as above</td>
 <td>Liquid</td>
 <td>Lee 2009</td>
 </tr>
@@ -5495,6 +5506,7 @@
 <td><em>I. obliquus</em></td>
 <td>Oleic acid 1.0 g/L</td>
 <td>8.57× mycelial, 3.02× broth</td>
+<td>Betulin (biosynthetic precursor) + lupeol ratios not reported</td>
 <td>Submerged liquid</td>
 <td>Lou 2021 PMC8066064</td>
 </tr>
@@ -5503,6 +5515,7 @@
 <td><em>I. obliquus</em></td>
 <td>Fungal elicitor (<em>A. niger</em> preparation, 45 mg/L)</td>
 <td>6.7–146% (different stages)</td>
+<td>Betulin + lupeol ratios not reported</td>
 <td>Submerged liquid</td>
 <td>Lou 2021</td>
 </tr>
@@ -5511,6 +5524,7 @@
 <td><em>I. obliquus</em></td>
 <td>Oleic acid + fungal elicitor combination</td>
 <td>22.2× mycelial, 4.05× total</td>
+<td>Betulin + lupeol ratios not reported</td>
 <td>Submerged liquid</td>
 <td>Lou 2021</td>
 </tr>
@@ -5519,6 +5533,7 @@
 <td><em>I. obliquus</em></td>
 <td><em>Alnus incana</em> vs. <em>Betula pendula</em> host</td>
 <td>4–30×</td>
+<td>Not characterized at compound-level — host-tree effect on inotodiol / fuscoporic acid / phelligridin co-metabolites unreported</td>
 <td>Wild + cultivated</td>
 <td>Drenkhan 2022 PMC9496626</td>
 </tr>
@@ -5526,7 +5541,8 @@
 <td>Erinacine C</td>
 <td><em>H. erinaceus</em></td>
 <td>Complex media (barley malt + oatmeal) vs. minimal media</td>
-<td>~100×</td>
+<td>~100× (vs minimal-media baseline)</td>
+<td><strong>Erinacine C ↑↑ / Erinacine Q ↓↓ — ratio inversion. Doar 2025 found the erinacine C:Q ratio shifts ~100× toward C-dominant on complex media despite no change in <em>eri</em> gene-cluster transcript level → post-transcriptional, substrate-driven profile shift, NOT yield-only.</strong> This is the canonical "yield-only reporting masks a profile inversion" example — minimal-media batches would have low erinacine C and high erinacine Q; complex-media batches invert the ratio.</td>
 <td>Submerged liquid mycelium</td>
 <td>Doar 2025 PMC11969743</td>
 </tr>
@@ -5535,6 +5551,7 @@
 <td><em>P. ostreatus</em></td>
 <td>Nucleoside combination (UCG, A'C'G')</td>
 <td>+35% fruit body</td>
+<td>Not characterized — fruit-body biomass increase without compound-class profiling</td>
 <td>Solid sawdust</td>
 <td>Tang 2025 PMC12299871</td>
 </tr>
@@ -5543,6 +5560,7 @@
 <td><em>H. erinaceus</em></td>
 <td>Optimized straw formula (rice straw + corn cob + wheat bran)</td>
 <td>89% biological efficiency</td>
+<td>Not characterized — total yield optimization without erinacine compound-profiling</td>
 <td>Solid</td>
 <td>Lu 2024 PMC11671258</td>
 </tr>

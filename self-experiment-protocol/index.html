@@ -3270,6 +3270,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#home-testable-formats-for-self-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Home-testable formats for self-monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5442,7 +5453,7 @@
 <td><strong>CP0</strong> — complement priming (MSU → C1/CRP → C5 convertase → C5a)</td>
 <td>Active complement-driven priming; the upstream non-transcriptional "Signal 1" the stack does not currently cover (see <a href="../complement-c5a-gout/">complement-c5a-gout.md §11</a>)</td>
 <td>Complement priming is not the rate-limiter for this flare phenotype</td>
-<td>Persistently elevated C5a + clinical flares despite stack → discuss <a href="../complement-c5a-gout/">avacopan</a> (FDA-approved C5aR1 antagonist) with prescriber. Pre-analytics matter: cold-chain EDTA, spun within 30 min, –80 °C — warm transit generates spurious C5a in vitro. <strong>Optional flare-trajectory addition (added 2026-05-19, source: spm-resolution-pathway.md §7.3 falsifiable prediction):</strong> measure C5a at flare onset (within 24 h) AND at flare resolution (7–14 days post-onset). Compute decline slope = (onset − resolution) / days. Pair with concurrent blood omega-3 index (EPA + DHA % of total RBC fatty acids; OmegaQuant or equivalent). Per the SPM → aggNET → C5a-degradation loop, decline slope should be steeper in DHA-loaded subjects (omega-3 index ≥8%) than DHA-deficient subjects (omega-3 index &lt;4%) — falsifiable prediction that converts SPM/omega-3 supplementation from generic anti-inflammatory framing into a CP0-coverage hypothesis testable on existing flare events. Adds ~$100–200/flare in lab cost (two extra C5a draws); doesn't change the intervention protocol.</td>
+<td>Persistently elevated C5a + clinical flares despite stack → discuss <a href="../complement-c5a-gout/">avacopan</a> (FDA-approved C5aR1 antagonist) with prescriber. Pre-analytics matter: cold-chain EDTA, spun within 30 min, –80 °C — warm transit generates spurious C5a in vitro. <strong>Optional flare-trajectory addition (added 2026-05-19, source: spm-resolution-pathway.md §7.3 falsifiable prediction):</strong> measure C5a at flare onset (within 24 h) AND at flare resolution (7–14 days post-onset). Compute decline slope = (onset − resolution) / days. <strong>Pair with event-linked blood omega-3 index</strong> (EPA + DHA % of total RBC fatty acids; home dried-blood-spot kit or venous-draw assay) — "event-linked" means the omega-3 index is drawn close enough in time to each flare event to be informative about loading state at the time of that flare, not a stale months-old baseline. Per the SPM → aggNET → C5a-degradation loop, decline slope should be steeper in DHA-loaded subjects (omega-3 index ≥8%) than DHA-deficient subjects (omega-3 index &lt;4%). <strong>CFH Y402H stratification (added 2026-05-22):</strong> if the subject is a CFH Y402H carrier (one or two copies of rs1061170 risk allele), the C5a-slope prediction acquires additional interpretive weight — Factor H regulates the alternative complement pathway that amplifies C5a on MSU crystals, and the variant weakens this regulation. The DHA → SPM → aggNET → C5a-degradation loop is mechanistically positioned to bypass CFH-dependent regulation (operating on already-released C5a rather than upstream of it), so CFH 402H carriers loaded on DHA should show steeper resolution slopes than CFH 402H carriers DHA-deficient — and steeper than CFH wild-type carriers under either DHA state, IF the bypass mechanism is real. See <a href="../cfh-mechanism-dissociation-cp0-candidates-computational/"><code>cfh-mechanism-dissociation-cp0-candidates-computational.md</code></a> §3.1–3.2 for the genotype-stratified prediction and <a href="../gout-genetic-variants/"><code>gout-genetic-variants.md</code></a> Category 5 for the CFH variant background. CFH genotype is a one-shot test; obtain from consumer-array raw data or single-SNP clinical PCR before the first flare event being scored. Adds ~$100–200/flare in lab cost (two extra C5a draws) + ~$50 home omega-3 DBS or venous add-on; doesn't change the intervention protocol.</td>
 </tr>
 <tr>
 <td>Urinary LTE4</td>
@@ -5476,6 +5487,64 @@
 <li><strong>If a flare occurs AND the standard panel returns ambiguous on the resolution axis</strong> (specifically: plasma SPMs borderline + urinary LTE4 borderline + hs-CRP elevated, with no clear bottleneck pattern from the four rules above) → add a citH3 + cfDNA + MPO-DNA complex panel at the next post-flare draw (~$200–400 specialty lab). Reads out the free-vs-aggregated NET ratio — distinguishes a resolution-competent flare (cytokines being sequestered into aggNETs) from a resolution-stuck flare (free NETs amplifying inflammation), per the aggNET vs. free-NET framing in <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md v1.2</a> (Schauer 2014, PMID 24784231; In Vitro + Animal Model for the framing, Mechanistic Extrapolation for the resolution-competence interpretation) and the upstream SPM driver of aggNET formation in <a href="../spm-resolution-pathway/">spm-resolution-pathway.md §5</a>. Don't run routinely; the existing SPM panel covers the resolution axis indirectly under most circumstances — citH3/cfDNA is the <em>consequence</em> readout where SPMs are the <em>signal</em>, and the marginal information rarely justifies the cost. (V4-Pro 2026-04-25 peer-review flagged routine NET panels as "impractical for n=1"; this contingent rule keeps the option available without burning $200–400/flare on routine cases.)</li>
 </ul>
 <p><strong>Cross-references:</strong> <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> (canonical chokepoint definitions, v1.2; aggNET vs. free-NET framing), <a href="../complement-c5a-gout/">complement-c5a-gout.md</a> (CP0 biomarker handling and avacopan), <a href="../spm-resolution-pathway/">spm-resolution-pathway.md</a> (CP5b SPM panel methodology, RvE1/LTE4 ratio, §5 SPM-driven NET resolution), <a href="../zileuton/">zileuton.md</a> (urinary LTE4 as 5-LOX PD readout).</p>
+<h3 id="home-testable-formats-for-self-monitoring">Home-testable formats for self-monitoring<a class="headerlink" href="#home-testable-formats-for-self-monitoring" title="Permanent link">&para;</a></h3>
+<p>Several of the markers tracked under this protocol have validated home-test or consumer-accessible formats. Where one exists, it lowers the friction of event-linked sampling (e.g., omega-3 index at each flare onset rather than a stale months-old baseline) and avoids the appointment-scheduling overhead of every venous draw. Format choice should be driven by analytical fitness for the marker, not just convenience — capillary fingerstick chemistries underperform venous serum for some analytes — but for the markers below, the home format is well-validated against the lab gold standard.</p>
+<table>
+<thead>
+<tr>
+<th>Marker</th>
+<th>Home/consumer format</th>
+<th>Lab-only format</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Serum uric acid</strong></td>
+<td>Fingerstick capillary UA meter (multiple devices on market; calibrated against reference materials per ISO 15197 for blood-glucose meters — UA meters use the same generic capillary-blood electrochemistry platform)</td>
+<td>Venous serum UA panel (Quest / LabCorp / equivalent)</td>
+<td>Capillary reads typically ~0.3–0.7 mg/dL lower than venous (literature variable, device-dependent). The <strong>Δ-over-time</strong> is the load-bearing signal — absolute capillary readings should be calibrated against one venous-paired draw to pin the offset for the specific meter. Suitable for daily / weekly home tracking; the venous draw remains canonical for clinical decision-making.</td>
+</tr>
+<tr>
+<td><strong>Omega-3 index</strong> (DHA + EPA % of total RBC fatty acids)</td>
+<td>Mail-in dried-blood-spot finger-stick kit (~$50, ~2 wk turnaround)</td>
+<td>Venous draw → RBC fatty-acid profile (gas chromatography)</td>
+<td>The DBS format reports the same metric (RBC EPA + DHA percentage) as the lab venous panel and is well-validated against it for the standard reporting target (≥ 8%). The home format makes <strong>event-linked sampling</strong> practical — finger-stick at flare onset doesn't require a phlebotomy appointment.</td>
+</tr>
+<tr>
+<td><strong>CFH Y402H genotype</strong> (rs1061170)</td>
+<td>Consumer-array raw-data lookup (23andMe, AncestryDNA, MyHeritage all report this SNP on their standard arrays) OR direct-to-consumer single-SNP PCR (~$30–60)</td>
+<td>Clinical PCR via Quest / LabCorp ("CFH Y402H polymorphism" code)</td>
+<td><strong>One-shot test</strong> — genotype doesn't change. If consumer-array data is already on file, raw-data lookup is the lowest-friction path. The risk allele is C (rs1061170 C; the variant is also called CFH H402 vs. wild-type Y402).</td>
+</tr>
+<tr>
+<td><strong>Serum C5a (+ desArg)</strong></td>
+<td>None — venous draw only</td>
+<td>Quest send-out, specialty labs</td>
+<td>No validated home format. Pre-analytics are strict (cold-chain EDTA, spun within 30 min, –80 °C); warm transit generates spurious C5a in vitro. Reserve for flare-onset and resolution-window venous draws.</td>
+</tr>
+<tr>
+<td><strong>Urinary LTE4</strong></td>
+<td>None — clinical specialty</td>
+<td>ARUP / specialty lab on urine specimen</td>
+<td>Specialty send-out. Not home-testable.</td>
+</tr>
+<tr>
+<td><strong>Plasma SPMs (RvD1, MaR1)</strong></td>
+<td>None — research-grade only</td>
+<td>Research LC-MS/MS lipidomic panels (limited commercial availability)</td>
+<td>Not routinely available outside research lab partnerships.</td>
+</tr>
+<tr>
+<td><strong>hs-CRP</strong></td>
+<td>Some at-home immunoassay strips exist but accuracy in the &lt;3 mg/L range (the clinically relevant CV-risk range) is poor</td>
+<td>Venous serum hsCRP via Quest / LabCorp</td>
+<td>Stick to venous for CV-risk-level interpretation; home strips can read directionally for "elevated vs not."</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Operational implication.</strong> When designing a protocol arm where the marker has a home-testable format, prefer it for the <strong>between-event sampling cadence</strong> (track the trajectory cheaply) and reserve venous draws for the <strong>anchor measurements</strong> (calibrate-once, clinical-decision-quality, regulatory-grade). For markers with no home format (C5a, urinary LTE4, plasma SPMs), all measurements must be venous/specialty and the sampling cadence is necessarily sparser.</p>
+<p><strong>This subsection deliberately names formats, not brands.</strong> Specific products change; format taxonomy is stable. Subjects executing this protocol in their own personal monitoring should add brand-specific pointers (which meter, which DBS vendor, which clinical-PCR code) in their private monitoring documentation, not in this generic protocol.</p>
 <hr />
 <h2 id="5-symptom-diary">5. Symptom diary<a class="headerlink" href="#5-symptom-diary" title="Permanent link">&para;</a></h2>
 <p>Daily, low-friction entries. Pick fields relevant to what you're testing. Common scales:</p>
@@ -5616,10 +5685,11 @@
 <p><strong>Scope.</strong> Prospective n=1 evaluation of the Protocol C triple-mechanism acute-flare stack from <a href="../gout-action-guide/"><code>gout-action-guide.md</code> §"Combined-route flare protocols"</a> — colchicine + topical CBD:THC + DHA-emphasis omega-3. The combination has not been tested in any human RCT and is tagged Speculative. The point of running it as a structured n=1 across multiple flares is to <strong>separate timing and endpoints by mechanism arm</strong> rather than collapsing into one "flare better" composite signal — the three arms operate on different time scales and different chokepoints, and pooling them obscures which arm is doing the work.</p>
 <p><strong>When relevant.</strong> Subject has recurrent gout flares (≥3 per year), is already on colchicine (no statin / macrolide / cyclosporine / severe renal contraindication), maintains a chronic DHA-emphasis omega-3 dose with a measured blood omega-3 index ≥ 8% (the DHA-SPM arm is gated on chronic loading state; acute loading during a flare does not rescue an inadequate baseline), and has medical-cannabis access for the topical 1:1 CBD:THC arm.</p>
 <p><strong>Pre-flare baseline (panel before the next flare event).</strong>
-- Serum omega-3 index (DHA + EPA % of total RBC fatty acids) — target ≥ 8%
+- Serum omega-3 index (DHA + EPA % of total RBC fatty acids) — target ≥ 8%. <strong>Event-linked requirement (added 2026-05-22):</strong> measure within the ~2–4 weeks before each flare event being scored, not a stale months-old baseline. Omega-3 index reflects RBC fatty-acid composition with a ~120-day RBC lifespan, so a measurement taken &gt;3 months before a flare may misrepresent the loading state at the flare. Home dried-blood-spot kits make this practical without an additional venipuncture per event.
 - Serum hs-CRP (baseline inflammatory tone)
 - Serum urate (chronic level — should already be tracked per §4)
-- 24h-urine urate if available</p>
+- 24h-urine urate if available
+- <strong>CFH Y402H genotype</strong> (rs1061170) if not already known. One-shot test (consumer-array raw data lookup OR single-SNP clinical PCR). CFH genotype stratifies the interpretation of the C5a-decline-slope endpoint in the during-flare panel below — see §4 C5a row "CFH Y402H stratification" note and <a href="../cfh-mechanism-dissociation-cp0-candidates-computational/"><code>cfh-mechanism-dissociation-cp0-candidates-computational.md</code></a> §3.1–3.2.</p>
 <p><strong>During the flare (Protocol C timing per <code>gout-action-guide.md</code> Protocol C):</strong>
 - <strong>t = 0:</strong> Oral colchicine 1.2 mg + topical 1:1 CBD:THC on affected joint + ice cycle 10–15 min
 - <strong>t = +1 h:</strong> Oral colchicine 0.6 mg + re-apply topical CBD:THC + ice cycle 30–60 min
