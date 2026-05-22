@@ -18,3 +18,13 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a second worked example to `genotype-informed-supplement-workflow.md` — genotype-informed ergothioneine emphasis (e.g., OCTN1/SLC22A4 variant carrier → elevated dietary EGT priority) → home cultivation of *P. citrinopileatus* on methionine-supplemented substrate per SOP-7 → Tier 2 Ellman's reagent batch QC against a Tier 3 HILIC-HPLC anchor → calibrated EGT dose → serum EGT or urinary 8-oxodG biomarker tracking. This is structurally identical to the existing Q141K worked example but uses home cultivation + substrate engineering instead of supplement purchase + SCFA proxy. It makes visible what the corpus already contains: the medicinal-mushroom track is not a separate peer track from the quantification workflow — it's a different *production route* feeding the same *five-step pipeline*.
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The workflow bridge is correct and operationally useful: `genotype-informed-supplement-workflow.md` already defines the five-step genotype → source/produce → Tier 2 QC → calibrated dose → biomarker loop, while `medicinal-mushroom-extract-sops.md` SOP-7 separately documents substrate engineering levers such as 2 mM L-methionine causing 1.7–3.1× EGT increases. Pass 2 adds a real missing composition: distributed substrate engineering as a production route inside the same quantified workflow, with Tier 2 Ellman/DTNB EGT tracking against a Tier 3 HILIC-HPLC anchor. The OCTN1/SLC22A4 carrier worked example is chassis-pending / personalization-pending, not out of scope.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Second worked example added** to `genotype-informed-supplement-workflow.md` 2026-05-22 — OCTN1/SLC22A4 variant carrier × substrate-engineered ergothioneine cultivation. Operationalizes the substrate-engineering finding (SOP-7 methionine 2 mM → 1.7–3.1× EGT) as a first-class production route in the five-step workflow. Distributed-contributor execution path: pharmacy-grade methionine + commercial *P. citrinopileatus* grow kit + DTNB Tier 2 colorimetry + Tier 3 HILIC-HPLC anchor + serum EGT / urinary 8-oxodG biomarker tracking. Total cost ~$500, time 8–12 weeks.
+
+The example serves three converging purposes (per Cluster 3 walkthrough): (a) the substrate-engineering bridge from Connection #3, (b) the Priority Action #1 second worked example, (c) the Riskiest Assumption #1 EGT dry-run operationalization. Three items closed together.
+
+Pre-pilot single-subject anchor note added to the "Multi-user pilot validation" follow-up subsection — sequenced before the N=5–10 multi-user pilot. Closure complete.

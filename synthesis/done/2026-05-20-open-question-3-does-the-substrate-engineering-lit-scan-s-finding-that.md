@@ -17,3 +17,18 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: EXTENSION]` The profile-shift column is the right documentation upgrade. `medicinal-mushroom-extract-sops.md` SOP-7 already records some profile-shift language in single cells—e.g., *G. lucidum* wood-log vs substitute substrate lists “2.19× lucidenic acids (profile shift)” and *Hericium* complex vs minimal media lists ~100× erinacine C—but the table lacks a dedicated field that distinguishes yield increase from compound-ratio inversion. Making profile direction explicit prevents a real distributed-cultivation failure mode: increasing total yield while shifting away from the target molecule.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Profile-shift column added** to `medicinal-mushroom-extract-sops.md` SOP-7 protocol matrix 2026-05-22. New column header is "Profile Shift (top 2–4 sibling compounds)" sitting between "Expected Magnitude (yield)" and "Format." Per-row content:
+
+- **Doar 2025 Hericium row** — explicitly flagged as the canonical "yield-only reporting masks a profile inversion" example: erinacine C ↑↑ / erinacine Q ↓↓ ratio shift ~100× on complex media despite no change in *eri* gene-cluster transcript level. Post-transcriptional substrate-driven shift.
+- **Luo 2024 Ganoderma wood-log row** — ganosporelactone B 13.5× UP + lucidenic acids 2.19× UP on wood-log → directional shift toward less-oxidized triterpenoid sub-class (pulled out of the "Expected Magnitude" column where it was mixed with the 1.2× total-yield number).
+- **Turk 2022 insect-substrate row** — flagged as load-bearing gap: pentostatin co-product ratio unknown despite the 34× cordycepin yield boost (relevant for `cordyceps-militaris.md` discovery work).
+- **All other rows** — "Not characterized" with specific notes about what's missing (e.g., Lee 2009 EGT rows note sibling thiols glutathione + ovothiol A + hercynine not co-quantified).
+
+New "Column discipline" preamble explains the separation: Expected Magnitude = absolute yield change for target compound; Profile Shift = within-class ratio direction + magnitude. Prevents the "more biomass / wrong compound" failure mode.
+
+Closure complete.

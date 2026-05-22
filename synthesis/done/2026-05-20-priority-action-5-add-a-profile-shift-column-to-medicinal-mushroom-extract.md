@@ -17,3 +17,11 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The proposed SOP-7 profile-shift column is correct and actionable. The current SOP-7 matrix mixes yield changes and profile changes in one “Expected Magnitude” field, even though the page itself gives profile-sensitive examples: Luo 2024 wood-log vs substitute *G. lucidum* shifts ganosporelactone B and lucidenic acids, Doar 2025 shifts *Hericium* erinacine C/Q by ~100×, and Turk 2022 gives a 34× cordycepin substrate effect while leaving the pentostatin ratio unknown. A dedicated column will prevent false equivalence between “more biomass / more total class” and “more of the intended active.”
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Same action as Open Question #3** above — Profile-shift column added to `medicinal-mushroom-extract-sops.md` SOP-7 protocol matrix 2026-05-22. See `2026-05-20-open-question-3-...md` actioned annotation for the detailed change log.
+
+No separate action needed — this priority-action item IS the action form of Open Question #3.

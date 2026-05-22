@@ -152,24 +152,26 @@ The substrate engineering lit scan ([`logs/substrate-engineering-mushroom-cultiv
 
 **Protocol matrix (per compound × species):**
 
-| Target Compound | Species | Substrate Intervention | Expected Magnitude | Format | Primary Source |
-|---|---|---|---|---|---|
-| Cordycepin | *C. militaris* | L-alanine 12 g/L in PDA + light cycle | 3× | Solid PDA | Yu 2024 PMC11698586 |
-| Cordycepin | *C. militaris* | Corn steep liquor hydrolysate 1.5 g/L + peptone 3.5 g/L | 4.83× | Submerged liquid | Chang 2024 PMC10931215 |
-| Cordycepin | *C. militaris* | Oleic acid substrate supplementation | 1.5–3× (51–202% boost) | Solid or liquid | Turk 2022 PMC9627333 |
-| Cordycepin | *C. militaris* | Insect substrate (*Allomyrina dichotoma*, oleic-rich) vs. silkworm pupae | 34× | Solid | Turk 2022 |
-| Ganoderic acids | *G. lucidum* | Microcrystalline cellulose 1.5% added at day 3 | +85.96% | Submerged liquid | Hu 2017 PMC5395960 |
-| Ganoderic acids | *G. lucidum* | D-galactose 0.5% added at day 3 | +63.9% | Submerged liquid | Hu 2017 |
-| Ganoderic acids | *G. lucidum* | Wood-log vs. substitute substrate | 1.2× total; 2.19× lucidenic acids (profile shift) | Solid | Luo 2024 PMC10879320 |
-| Ergothioneine | Multiple species (*Ganoderma*, *Lentinula*, *Pleurotus*) | L-methionine 2 mM in mycelial culture | 1.7–3.1× | Submerged liquid | Lee 2009 PMC3749454 |
-| Ergothioneine | *Pleurotus* | L-cysteine | 1.7× | Liquid | Lee 2009 |
-| Betulinic acid | *I. obliquus* | Oleic acid 1.0 g/L | 8.57× mycelial, 3.02× broth | Submerged liquid | Lou 2021 PMC8066064 |
-| Betulinic acid | *I. obliquus* | Fungal elicitor (*A. niger* preparation, 45 mg/L) | 6.7–146% (different stages) | Submerged liquid | Lou 2021 |
-| Betulinic acid | *I. obliquus* | Oleic acid + fungal elicitor combination | 22.2× mycelial, 4.05× total | Submerged liquid | Lou 2021 |
-| Betulinic acid (host-tree pathway) | *I. obliquus* | *Alnus incana* vs. *Betula pendula* host | 4–30× | Wild + cultivated | Drenkhan 2022 PMC9496626 |
-| Erinacine C | *H. erinaceus* | Complex media (barley malt + oatmeal) vs. minimal media | ~100× | Submerged liquid mycelium | Doar 2025 PMC11969743 |
-| Yield only | *P. ostreatus* | Nucleoside combination (UCG, A'C'G') | +35% fruit body | Solid sawdust | Tang 2025 PMC12299871 |
-| Yield only | *H. erinaceus* | Optimized straw formula (rice straw + corn cob + wheat bran) | 89% biological efficiency | Solid | Lu 2024 PMC11671258 |
+**Column discipline (added 2026-05-22 per sweep 2026-05-20 Open Question #3 + Priority Action #5):** the matrix now separates **Expected Magnitude** (absolute yield change for the named target compound) from **Profile Shift** (direction + magnitude of within-class compound-ratio changes). The distinction prevents the "more biomass / shifted away from target" failure mode that pure yield reporting masks. For rows where primary literature does NOT report sibling-compound ratios, the Profile Shift column is "Not characterized" — this is itself useful information about which experimental designs need a follow-up Tier 3 profile-quantification pass.
+
+| Target Compound | Species | Substrate Intervention | Expected Magnitude (yield) | Profile Shift (top 2–4 sibling compounds) | Format | Primary Source |
+|---|---|---|---|---|---|---|
+| Cordycepin | *C. militaris* | L-alanine 12 g/L in PDA + light cycle | 3× | Pentostatin ratio not reported | Solid PDA | Yu 2024 PMC11698586 |
+| Cordycepin | *C. militaris* | Corn steep liquor hydrolysate 1.5 g/L + peptone 3.5 g/L | 4.83× | Pentostatin ratio not reported | Submerged liquid | Chang 2024 PMC10931215 |
+| Cordycepin | *C. militaris* | Oleic acid substrate supplementation | 1.5–3× (51–202% boost) | Pentostatin ratio not reported | Solid or liquid | Turk 2022 PMC9627333 |
+| Cordycepin | *C. militaris* | Insect substrate (*Allomyrina dichotoma*, oleic-rich) vs. silkworm pupae | 34× | **Pentostatin co-product ratio unknown — load-bearing gap for `cordyceps-militaris.md` discovery work; large cordycepin yield without pentostatin data leaves the cordycepin/pentostatin ratio uncalibrated** | Solid | Turk 2022 |
+| Ganoderic acids | *G. lucidum* | Microcrystalline cellulose 1.5% added at day 3 | +85.96% (total triterpenoids) | Not characterized at compound-level (Hu 2017 reports total triterpenoid yield; lucidenic acid vs ganoderic acid sub-classes not separated) | Submerged liquid | Hu 2017 PMC5395960 |
+| Ganoderic acids | *G. lucidum* | D-galactose 0.5% added at day 3 | +63.9% (total triterpenoids) | Not characterized at compound-level | Submerged liquid | Hu 2017 |
+| Ganoderic acids | *G. lucidum* | Wood-log vs. substitute substrate | 1.2× total | **Ganosporelactone B 13.5× UP + lucidenic acids 2.19× UP on wood-log — directional shift toward less-oxidized triterpenoid sub-class; ganoderic acid A trend not separately quantified** | Solid | Luo 2024 PMC10879320 |
+| Ergothioneine | Multiple species (*Ganoderma*, *Lentinula*, *Pleurotus*) | L-methionine 2 mM in mycelial culture | 1.7–3.1× EGT | EGT-specific (Tier 3 anchor); sibling thiols (glutathione, ovothiol A, hercynine biosynthesis precursor) not co-quantified — Lee 2009 measured EGT alone | Submerged liquid | Lee 2009 PMC3749454 |
+| Ergothioneine | *Pleurotus* | L-cysteine | 1.7× EGT | Same sibling-thiol gap as above | Liquid | Lee 2009 |
+| Betulinic acid | *I. obliquus* | Oleic acid 1.0 g/L | 8.57× mycelial, 3.02× broth | Betulin (biosynthetic precursor) + lupeol ratios not reported | Submerged liquid | Lou 2021 PMC8066064 |
+| Betulinic acid | *I. obliquus* | Fungal elicitor (*A. niger* preparation, 45 mg/L) | 6.7–146% (different stages) | Betulin + lupeol ratios not reported | Submerged liquid | Lou 2021 |
+| Betulinic acid | *I. obliquus* | Oleic acid + fungal elicitor combination | 22.2× mycelial, 4.05× total | Betulin + lupeol ratios not reported | Submerged liquid | Lou 2021 |
+| Betulinic acid (host-tree pathway) | *I. obliquus* | *Alnus incana* vs. *Betula pendula* host | 4–30× | Not characterized at compound-level — host-tree effect on inotodiol / fuscoporic acid / phelligridin co-metabolites unreported | Wild + cultivated | Drenkhan 2022 PMC9496626 |
+| Erinacine C | *H. erinaceus* | Complex media (barley malt + oatmeal) vs. minimal media | ~100× (vs minimal-media baseline) | **Erinacine C ↑↑ / Erinacine Q ↓↓ — ratio inversion. Doar 2025 found the erinacine C:Q ratio shifts ~100× toward C-dominant on complex media despite no change in *eri* gene-cluster transcript level → post-transcriptional, substrate-driven profile shift, NOT yield-only.** This is the canonical "yield-only reporting masks a profile inversion" example — minimal-media batches would have low erinacine C and high erinacine Q; complex-media batches invert the ratio. | Submerged liquid mycelium | Doar 2025 PMC11969743 |
+| Yield only | *P. ostreatus* | Nucleoside combination (UCG, A'C'G') | +35% fruit body | Not characterized — fruit-body biomass increase without compound-class profiling | Solid sawdust | Tang 2025 PMC12299871 |
+| Yield only | *H. erinaceus* | Optimized straw formula (rice straw + corn cob + wheat bran) | 89% biological efficiency | Not characterized — total yield optimization without erinacine compound-profiling | Solid | Lu 2024 PMC11671258 |
 
 **Operational discipline (per SOP-6 four-tier framework):**
 

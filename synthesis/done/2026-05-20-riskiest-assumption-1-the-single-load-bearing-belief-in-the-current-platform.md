@@ -19,3 +19,15 @@ The single load-bearing belief in the current platform thesis that is least supp
 ---
 
 > **Pass 3 review — Partial.** `[OVERLAP: EXTENSION]` `[GAP: tool-gap]` The core risk is right: the closed-loop workflow is specified more than it is field-validated, and the Q141K butyrate example is the weakest possible flagship because comp-038 leaves input-side butyrate potency unmeasured. But the statement that the workflow has been instantiated at n=1 for “zero interventions” conflicts with `genotype-informed-supplement-workflow.md`, which explicitly says the workflow “has been instantiated at n=1” before calling for an N=5–10 multi-user pilot. Keep the ergothioneine dry run as a strong near-term validation, but revise the factual framing to “no multi-user / no fully documented end-to-end published execution,” not “zero n=1 instantiation.”
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**EGT dry-run operationalized as second worked example** (per Connection #3 + Priority Action #1 above — same action collapses the three items). The OCTN1/SLC22A4 × substrate-engineered ergothioneine cultivation worked example added to `genotype-informed-supplement-workflow.md` 2026-05-22 IS the EGT dry-run this Riskiest Assumption proposed. Cost ~$500, time 8–12 weeks, every Tier 2 piece pre-validated (DTNB colorimetry), Tier 3 HILIC-HPLC anchor exists, OCTN1 variant genotypable via consumer-array raw data lookup.
+
+**Pass 3's factual correction implemented:** the "Multi-user pilot validation" follow-up section now includes a new "Pre-pilot single-subject anchor" paragraph that distinguishes "workflow instantiated at n=1 in pieces" (already true) from "no subject has executed the FULL five-step pipeline end-to-end with documented Tier 2 batch QC + Tier 3 anchor + biomarker readout published in one place" (the actual gap). The framing is "no fully documented end-to-end published execution," not "zero n=1 instantiation" — exactly Pass 3's recommended revision.
+
+**Per `memory/feedback_no_riskiest_assumption_regurgitation.md`:** the multi-user pilot question already exists at `open-questions.md` (line 159 in the Compound-Specific Questions section). No duplicate Open Question entry created. The Riskiest Assumption framing is absorbed into the existing pilot question + the new OCTN1/EGT worked example carrying the operational anchor.
+
+Closure complete.
