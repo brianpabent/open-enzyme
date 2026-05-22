@@ -17,3 +17,11 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The promotion is justified: `quantification-ladder.md` explicitly names a structural methodology gap for all microbiome-derived metabolites, and `tier-2-butyrate-assay-audit-computational.md` narrows the next move to HPLC-UV / electrochemical candidates plus paired GC-MS validation. Keeping this as a closing note under the ladder undersells its platform impact, because the gap gates PDB butyrate, prebiotic SCFA strategies, secondary bile-acid / indole interventions, and future microbiome-derived metabolite tracks. Make it a named Platform / Strategic open question.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Same action as Connection #3** above — class-level Tier 2 gap promoted to named Platform / Strategic Open Question in `open-questions.md` 2026-05-22. See `2026-05-21-connection-3-...md` actioned annotation for the detailed change log.
+
+No separate action needed — this priority-action item IS the action form of Connection #3.

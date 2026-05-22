@@ -22,3 +22,17 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The critique is accurate: `genotype-informed-supplement-workflow.md` explicitly says the Q141K example uses a stool SCFA panel as an indirect biomarker of butyrate delivery, not a direct supplement-potency assay, and comp-038’s YELLOW verdict confirms no ready home/colorimetric butyrate assay exists. Pass 2 correctly sharpens the operational consequence: this breaks input-side “calibrate once at Tier 3, track batches at Tier 2” for butyrate specifically, even if the workflow architecture remains sound. The recommended guidance—vendor potency documentation, one-time Tier 3 GC-MS, or cautious interpretation of negative stool SCFA results—is directly actionable.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Q141K worked example updated** in `genotype-informed-supplement-workflow.md` 2026-05-22. Step 4 now explicitly labels the stool SCFA panel as "exposure-proxy tier, NOT input-verification tier" with the rationale (every other compound class in the workflow has a Tier 2 assay that verifies input directly; butyrate doesn't, per comp-038 YELLOW). The three practical user guidance options Pass 2 recommended are now in the worked example verbatim:
+
+- (a) Vendor with published third-party potency verification (COA, recent + lot-matched)
+- (b) One-time Tier 3 GC-MS anchor on a single batch (~$80–150)
+- (c) Accept exposure-proxy limitation explicitly with cautious interpretation of negative results
+
+Also added: an "Anchor / DOES NOT claim" reframe — the step-4 limitation is documented honestly in the example's claim list rather than buried in a downstream methodology section. Workflow architecture remains sound; only the butyrate-input-verification piece is acknowledged as gapped.
+
+Closure complete.

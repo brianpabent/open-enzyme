@@ -17,3 +17,20 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Elevate the "class-level gap" paragraph from `quantification-ladder.md` closing note to a named Open Question in `open-questions.md` under the Platform / Strategic section, with the explicit framing that this gates PDB, dietary CP0, prebiotic, and all future microbiome-metabolite interventions. The comp-038 "Next Step" — focused full-text/protocol verification on the HPLC-UV and electrochemical candidates paired with sodium-butyrate spike/recovery against GC-MS — is the cheapest path to a proof-of-concept that the gap is closable for at least one metabolite class.
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The class-level Tier 2 gap is real: `quantification-ladder.md` now explicitly says the butyrate assay absence extends to SCFAs, secondary bile acids, microbial indoles, and TMAO, and `tier-2-butyrate-assay-audit-computational.md` returns YELLOW with no ready-to-adopt home/colorimetric butyrate assay. The synthesizer adds the right operational move by routing this from a buried methodology note to a named platform open question, because it gates PDB, prebiotic, Houttuynia microbiome-processing, and future microbiome-metabolite interventions. This is low novelty but high operational leverage; prioritize the promotion to `open-questions.md`.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Class-level Tier 2 gap promoted to named Platform / Strategic Open Question** in `open-questions.md` 2026-05-22. Full entry titled "Class-level Tier 2 assay gap for microbiome-derived metabolites" with:
+
+- The class-level framing (silently gates PDB, Houttuynia microbiome arm, prebiotic fiber, future secondary-bile-acid / microbial-indole / TMAO tracks — none has a validated Tier 2 proxy)
+- Why this is platform-level not butyrate-specific (every gut-microbiome intervention shares the same unverified-variable problem)
+- Operational consequence for the Q141K worked example (cross-references the same-day workflow update)
+- Cheapest path to closing the gap (comp-038's HPLC-UV + electrochemical next-step recommendation, paired with sodium-butyrate spike/recovery against GC-MS)
+- Three Phase 2 follow-ups: P2-1 comp-038 next-step, P2-2 multi-operator round-robin when Tier 2 candidate exists, P2-3 secondary-bile-acid extension
+- Fires-when condition (any dependent intervention track reaches a clinical-decision point requiring dose verification)
+
+Closing-note paragraph in `quantification-ladder.md` updated 2026-05-22 to cross-reference the promoted Open Question (Pass 3's "route from buried methodology note to a named platform open question" is implemented).
+
+Closure complete.

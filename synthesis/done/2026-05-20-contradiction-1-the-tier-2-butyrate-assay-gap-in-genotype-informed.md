@@ -17,3 +17,17 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Augment.** `[OVERLAP: EXTENSION]` The compound uncertainty is real: a Q141K-positive subject using butyrate, then flaring after exertion, cannot distinguish supplement underdosing from exertion-driven urate-load failure or a purely mechanical flare using the current workflow, because comp-038 leaves butyrate input potency unresolved and `mechanical-flare-triggers.md` leaves exertion kinetics unresolved. Add the page’s own renal-clearance readout—serial spot urinary urate/creatinine ratios—to the proposed exertion test; serum UA and pain logs alone will under-resolve candidate #5. This is not a biological contradiction, but it is a real n=1 attribution failure mode.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Compound uncertainty documented in both directions** 2026-05-22.
+
+In `genotype-informed-supplement-workflow.md`: the Q141K worked example now includes a "**Compound uncertainty: butyrate × exertion trigger**" sub-block that names the four-way attribution problem ((a) butyrate intervention failing, (b) butyrate dose wrong but unverifiable, (c) exertion-trigger mechanism is mechanical rather than metabolic-overload, (d) regression to the mean) and the three discriminators ((i) Tier 2 butyrate assay → closes b, (ii) exertion-challenge with serial spot urinary urate/Cr → closes c, (iii) n-of-many cohort → closes d). The cross-reference points to `mechanical-flare-triggers.md` §"Candidate mechanism #5."
+
+In `mechanical-flare-triggers.md`: §Open question 7 (metabolic-overload mechanism testability) gets a new "**Compound uncertainty with the Q141K butyrate worked example**" sub-block reciprocating the cross-reference. The page's existing exertion-challenge protocol with serial spot urinary urate/Cr ratios (already added to `validation-experiments.md` §3.11) is now explicitly framed as the discriminator that disambiguates the metabolic-overload mechanism from mechanical shedding in this compound-uncertainty case.
+
+**On Pass 3's "add the page's own renal-clearance readout to the proposed exertion test":** this was already present in the page (line 99 — "Serial spot urinary urate / creatinine ratios across an exertion-then-rest period") and in `validation-experiments.md` §3.11 (n=1 self-experiment form landed 2026-05-21). What was missing was the cross-link to the Q141K worked example, which is now added in both directions.
+
+Closure complete.
