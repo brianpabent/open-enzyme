@@ -21,3 +21,16 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Partial.** `[OVERLAP: EXTENSION]` `[GAP: science-gap]` The suggested AoU elevation is directionally right, but the “UKB is powered for the wrong population” phrasing overstates the contradiction: UK Biobank remains well-powered for the European-ancestry CFH 402H signal, while the problem is that African-ancestry parity in CFH frequency plus Volcik 2008 effect-direction heterogeneity make a UKB-only result insufficient for generalization. `gout-genetic-variants.md` and `complement-c5a-gout.md` both document African frequency parity (~35–37%) and Volcik’s white-vs-African-American difference, and the 2026-05-19 biobank report identifies AoU as a lower-friction cohort with better African-American representation. The action should be “AoU co-primary for cross-ancestry direction-check,” not “UKB is the wrong population.”
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Comp-039 §5 updated** 2026-05-22 with the corrected framing per Pass 3 — "AoU co-primary for cross-ancestry direction-check," not "UKB is the wrong population." Specific updates:
+
+- Section title changed: "Recommended UK Biobank collaboration ask" → "Recommended biobank collaboration ask — UK Biobank + All of Us as co-primary"
+- New preamble paragraph documenting the 2026-05-22 update: ancestry parity (~35–37% African vs ~36–39% European), Volcik 2008 ARIC effect-direction heterogeneity, AoU's better African-American representation + lower credentialing friction (~2–4 weeks, free)
+- New "Co-primary cohort allocation (UKB ↔ AoU)" sub-block specifying: UKB primary for European-ancestry signal (highest absolute power), AoU co-primary for African-American direction-check (load-bearing falsification gate for cross-ancestry generalization), cross-cohort integration rule (separate per-ancestry reporting first; ancestry-stratified meta only if direction agrees; per-ancestry result terminates the cross-tab if direction differs)
+- Confound considerations revised: the ancestry-effect-direction heterogeneity from Volcik 2008 is now framed as the rationale for the AoU co-primary design rather than as a within-cohort stratification problem
+
+The reframe is exactly what Pass 3 asked for. UKB stays well-powered for the European signal; AoU is the cross-ancestry direction-check counterpart. No "wrong population" framing.

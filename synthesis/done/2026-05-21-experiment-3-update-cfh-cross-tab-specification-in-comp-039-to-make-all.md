@@ -17,3 +17,11 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The AoU co-primary update should be made: `cfh-mechanism-dissociation-cp0-candidates-computational.md` §5 currently leads with UKB, while `gout-genetic-variants.md` Category 5 and `complement-c5a-gout.md` §6.3 document that CFH Y402H frequency is comparable in African and European populations and that Volcik 2008 found ancestry-specific effect-direction differences. The 2026-05-19 biobank report also identifies AoU as lower-friction and better for African-American representation. This is a practical study-design correction with real interpretability consequences.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Comp-039 §5 updated** 2026-05-22 — same action as Contradiction #1 above. UKB ↔ AoU co-primary cohort allocation, cross-cohort integration rule, revised confound considerations. See `2026-05-21-contradiction-1-cfh-y402h-allele-frequency-parity-...md` actioned annotation for the detailed change log.
+
+No separate action needed — this experiment item IS the action form of Contradiction #1.

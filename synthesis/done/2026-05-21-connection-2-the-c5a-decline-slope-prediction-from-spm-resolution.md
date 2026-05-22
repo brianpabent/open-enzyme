@@ -17,3 +17,23 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a one-sentence annotation to `self-experiment-protocol.md` §13 linking the C5a decline-slope endpoint to the CFH genotype context — "if the subject is CFH 402H-positive, the C5a-slope prediction from `spm-resolution-pathway.md` §7.3 is the falsifiable test of whether DHA SPMs provide genotype-informed CP0 coverage." Add concurrent omega-3 index to the §13 pre-flare baseline panel. The CFH genotype can be obtained through the clinical-grade genotyping path already documented in `gout-genetic-variants.md`.
 
 > **Pass 3 review — Partial.** `[OVERLAP: EXTENSION]` `[GAP: tool-gap]` The CFH × DHA-SPM × C5a-slope bridge is a useful new composition, but the “missing omega-3 index” framing is partly wrong: `self-experiment-protocol.md` already includes an optional flare-trajectory addition in the C5a biomarker row that says to pair onset/resolution C5a with concurrent blood omega-3 index, and §13 already lists “Serum omega-3 index” in the Protocol C pre-flare baseline panel. What is genuinely missing is the CFH-specific annotation and perhaps a per-flare requirement that omega-3 index be measured close enough to each C5a slope event to avoid stale baseline inference. Keep the CFH-stratified hypothesis, but revise the action from “add omega-3 index” to “tighten §13 to require event-linked omega-3 index and annotate the CFH 402H interpretation.”
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**§4 C5a row + §13 pre-flare baseline updated** in `self-experiment-protocol.md` 2026-05-22 per Pass 3's narrower-action guidance. Specific updates:
+
+**§4 C5a row:**
+- Tightened "Pair with concurrent blood omega-3 index" → "Pair with event-linked blood omega-3 index" with explicit definition: drawn close enough in time to each flare event to be informative about loading state at that flare, not a stale months-old baseline
+- Genericized "OmegaQuant or equivalent" → "home dried-blood-spot kit or venous-draw assay" (no-brands-in-public-wiki preference)
+- Added "CFH Y402H stratification (added 2026-05-22)" block — full mechanistic exposition of the bridge between SPM resolution pathway, CFH genotype, and the C5a-slope endpoint. Predicts steeper resolution slope in CFH 402H carriers loaded on DHA than CFH 402H carriers DHA-deficient, AND than CFH wild-type under either DHA state, IF the bypass mechanism is real. Cross-refs `cfh-mechanism-dissociation-cp0-candidates-computational.md` §3.1–3.2 and `gout-genetic-variants.md` Category 5
+- Added incremental cost note ($50 home omega-3 DBS or venous add-on on top of the $100–200/flare C5a draws)
+
+**§13 pre-flare baseline:**
+- Existing "Serum omega-3 index" line tightened with event-linked timing requirement (within ~2–4 weeks before each flare event scored, not a stale baseline) and home DBS path mention
+- Added new "CFH Y402H genotype (rs1061170)" line — one-shot test (consumer raw-data lookup OR clinical PCR), stratifies interpretation of the C5a-decline-slope endpoint
+
+**Plus §4 "Home-testable formats for self-monitoring" subsection added** — generic table covering UA fingerstick, omega-3 DBS, CFH genotype consumer-PCR, C5a venous-only, etc. Format-not-brand discipline. Subjects are directed to put brand-specific pointers in private monitoring documentation.
+
+The CFH × DHA-SPM × C5a-slope three-way composition is now visible at the protocol level, with the genotype as the stratifier and the event-linked omega-3 index + paired onset/resolution C5a as the falsifiable measurement.

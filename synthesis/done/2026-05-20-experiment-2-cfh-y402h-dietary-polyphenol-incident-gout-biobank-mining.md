@@ -17,3 +17,13 @@ overlap_tag: RESTATEMENT
 ---
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: RESTATEMENT]` The biobank feasibility assessment is well grounded but not new: `gout-genetic-variants.md` already states the CFH Y402H × dietary CP0 prediction, flags the AMD counter-evidence, and lays out UK Biobank / AoU / collaboration paths; `complement-c5a-gout.md` open question #5 repeats the CFH rs1061170 × dietary polyphenol × incident gout design. Still, this is a legitimate low-cost next action, and the proposed output report would convert an already-documented hypothesis into an executable analysis plan.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Closure (superseded):** The UK-Biobank-only feasibility framing in this item was superseded the next sweep by 2026-05-21 Contradiction #1 + Proposed Experiment #3, which correctly elevated All of Us to co-primary with UKB (CFH 402H allele-frequency parity ~35–37% African vs ~36–39% European + Volcik 2008 ARIC effect-direction heterogeneity).
+
+**Comp-039 §5 updated** 2026-05-22 with the UKB ↔ AoU co-primary cohort allocation, cross-cohort integration rule (separate per-ancestry reporting first; meta only if direction agrees), and revised confound considerations. The "$0 desk-research feasibility assessment" framing collapses into the comp-039 §5 specification itself — there's no separate `logs/cfh-y402h-dietary-cp0-biobank-mining-<date>.md` report to write; the executable analysis plan IS comp-039 §5.
+
+Closed without a separate experiment record.

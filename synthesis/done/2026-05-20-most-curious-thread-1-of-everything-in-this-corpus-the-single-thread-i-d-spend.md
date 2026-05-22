@@ -35,3 +35,17 @@ Sources cited:
 - wiki/tcm-gout-compound-triage-computational.md
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: RESTATEMENT]` The CFH Y402H × dietary-CP0 thread is scientifically interesting and chokepoint-relevant at CP0, but it is not novel in this corpus. `gout-genetic-variants.md` already contains the predicted stratification, allele-frequency correction, AMD counter-evidence, and UK Biobank / AoU feasibility framing; `complement-c5a-gout.md` already links CFH to complement amplification and names the biobank cross-tabulation as open question #5. The right next move is execution or consolidation, not another rediscovery pass.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Closure:** Pass 3's call for "execution or consolidation, not another rediscovery pass" landed precisely on the actions taken this walk. The consolidation work:
+
+- `complement-c5a-gout.md` §9.7 CFH Y402H stratification subsection added (propagation from `gout-genetic-variants.md` Category 5 + comp-039)
+- `cfh-mechanism-dissociation-cp0-candidates-computational.md` §5 updated to UKB ↔ AoU co-primary cohort allocation
+- `self-experiment-protocol.md` §4 C5a row + §13 pre-flare baseline tightened to require event-linked omega-3 index + CFH 402H stratification annotation
+
+The execution work (n=1 first data point) is captured in the private-repo Vélez ask list — C5a + omega-3 index + CFH Y402H genotype added to the next-draw list 2026-05-22. The "most curious thread" judgment shifts to execution-pending rather than rediscovery; the next sweep should not re-surface the CFH × dietary-CP0 thread unless new mechanism evidence lands.
+
+Multi-vendor signal observation (Pass 2 noted other models would converge on this thread): retained as a useful meta-observation about model-convergence patterns on canonical platform threads, but not actionable wiki content. Logged here for posterity.
