@@ -17,3 +17,15 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add a "Houttuynia + PDB butyrate" row to `gout-pathophysiology.md` multi-track coverage map as a **non-koji, dietary + engineered composition** — distinct from the koji + cultivated-mushroom stacks already there. This makes the coverage map legible as a three-pronged strategy (koji enzymes + medicinal mushrooms + dietary-herb-with-engineered-LBP) rather than a two-pronged one. Queue a spec document for what a combined Houttuynia + PDB-EcN n=1 protocol would look like — Houttuynia is already in the self-experiment protocol's ex vivo monitoring surface (§1.30 prioritization screen), and PDB is chassis-pending; the combined protocol becomes relevant when both arms clear their individual gates.
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The composition is valid and chokepoint-fit is strong: Houttuynia is already documented as dual CP0+CP1 via complement C2/C4/C5 activity plus TLR4/MD-2/NLRP3 suppression (`complement-c5a-gout.md` §9.7; `nlrp3-exploit-map.md` CP1), while PDB-derived butyrate is a urate-disposal/ABCG2 lever through PPARγ induction and Q141K HDAC-trafficking rescue (`purine-degrading-bacteria.md` “SCFA Downstream Effects”; `abcg2-modulators.md` §Q141K rescue). This is not a koji-only intervention, but it hits documented chokepoints and belongs in chassis-pending / multi-track architecture rather than being filtered out by chassis. Add the `gout-pathophysiology.md` row and keep the combined n=1 protocol explicitly gated on each arm clearing its individual validation path.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Dietary + engineered LBP composition added** to `gout-pathophysiology.md` 2026-05-22 as a new sub-section §"Dietary + engineered LBP composition — distinct architecture, chassis-pending" under the multi-track urate transporter coverage map. Implemented per Pass 3's "Add the row and keep combined protocol gated on individual arms" guidance.
+
+Structured as a dedicated sub-section rather than a row in the existing three-track table because the chassis architecture differs (neither arm uses koji / medicinal mushroom / TCM compound infrastructure). New chokepoint-coverage table shows Houttuynia's CP0 (complement multi-target C2+C4+C5) + CP1 (TLR4-MD2 partial agonism, NLRP3 dampening) + downstream NLRP3 suppression columns, paired with PDB butyrate's ABCG2 (PPARγ + HDAC trafficking rescue) + NLRP3 (HDAC inhibition) columns. The composition logic spells out: independent receptor classes, independent chassis, additive by construction.
+
+Combined n=1 protocol explicitly dormant until both arms clear individual validation gates (Houttuynia §1.30 prioritization screen + PDB engineered EcN chassis maturation). The PDB arm is routed as chassis-pending rather than treated as a non-koji scope problem, per Pass 3.
+
+Closure complete.

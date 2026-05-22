@@ -21,3 +21,17 @@ overlap_tag: EXTENSION
 ---
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: EXTENSION]` The bracketing claim is sound: `cannabinoids-terpenes.md` documents Brian’s n=1 four-route layered flare interrupt as prednisone + topical CBD:THC + inhaled cannabis + ice, while `complement-c5a-gout.md` §9.9 explicitly labels C1-INH + rosmarinic acid as a dormant dietary + engineered CP0 composition gated on component wet-lab data. Framing these as suppression-dominant versus entry/blockade-dominant CP0 strategies is a useful synthesis across pages, not a restatement. The suggested cross-reference costs nothing and improves the CP0 design-space map.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Bidirectional CP0 intervention-surface bracketing cross-references added** 2026-05-22:
+
+- `cannabinoids-terpenes.md` §"Brian's n=1 observation — four-route layered flare-interrupt": new paragraph framing the four-route protocol (prednisone + topical CBD:THC + inhaled cannabis + ice) as the **suppression-class extreme** of the CP0 intervention surface. Identifies the dormant C1-INH + rosmarinic acid composition at `complement-c5a-gout.md` §9.9 as the **blockade-class extreme** at the opposite end. Notes that the platform's CP0 strategy is currently entirely suppression-class (Protocols A/B/C) with zero active resolution-class CP0 coverage.
+
+- `complement-c5a-gout.md` §9.9 "Dormant composition — C1-INH (LBP-luminal) + dietary rosmarinic acid": reciprocal paragraph framing the §9.9 composition as the **blockade-class extreme** of the CP0 intervention surface, with `cannabinoids-terpenes.md` §"Brian's n=1 observation" identified as the **suppression-class extreme**. Notes that making the bracketing visible sharpens the CP0 research agenda — the gap is not "do we have CP0 coverage at all" but "do we have causal-prevention CP0 coverage" (no, gated on the §9.9 dormant arms).
+
+Cross-references updated in both pages' cross-reference lists. Pass 3's "documentation hygiene with useful mechanism consequences" implemented.
+
+Closure complete.

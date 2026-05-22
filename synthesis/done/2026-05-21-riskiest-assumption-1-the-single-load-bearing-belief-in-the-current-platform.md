@@ -23,3 +23,20 @@ This belief is anchored to `complement-c5a-gout.md` §9.7 (the combined CP0 stra
 ---
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` This is the right riskiest-assumption call: `combined-cp0-systems-model-computational.md` shows rosmarinic acid’s plausible CP0 effect is gut-luminal rather than systemic, `cfh-mechanism-dissociation-cp0-candidates-computational.md` §6 names bioavailability as a limitation for all four candidates, and `complement-c5a-gout.md` §9.7 explicitly preserves the rosmarinic-acid assay-format and PK caveats. The platform has stronger mechanistic evidence for CFH-independence than for dietary exposure actually reaching the relevant complement compartment. Prioritize PK / gut-luminal complement-readout validation before further expanding the dietary CP0 stack.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Riskiest Assumption #3 added** to `open-questions.md` Platform / Strategic section 2026-05-22, sitting alongside RA #1 (gut-lumen sink mechanism, mechanism side) and RA #2 (community fermentation reliability, production side). RA #3 covers the dietary-CP0 PK side — whether dietary doses of rosmarinic acid, luteolin, Houttuynia, and Helicteres reach gut-luminal concentrations sufficient to meaningfully suppress complement at C3 convertase / C4 / C5 nodes.
+
+Entry structure mirrors RA #1 + RA #2:
+
+- **Anchored against existing corpus content** — comp-029 gut-luminal-transient reframe (rosmarinic acid systemic ~0% inhibition at free plasma Cmax 20 nM, ~1,700× below central IC50 — leverage is gut-luminal post-meal window only); comp-039 §6 bioavailability limitation across all four candidates; complement-c5a-gout.md §9.7 IC50 spread + tissue occupancy caveats. Per Pass 3, these were named but not promoted to platform-level riskiest-assumption status.
+- **Provisional alive/killed thresholds** — Alive: at least one candidate produces measured gut-luminal concentration ≥ IC50 lower bound in a fed-state human study AND biobank cross-tab supports CFH-independence prediction. Killed: none of the four reach IC50 lower bound within an order of magnitude AND biobank returns null/AMD-paradox direction.
+- **Four Phase 2 follow-ups:** P2-1 stable-isotope tracer feasibility scan; P2-2 gut-luminal complement-activity readout as functional proxy; P2-3 gate further dietary CP0 candidate expansion on at least one PK anchor; P2-4 re-anchor §9.9 dormant composition gate.
+- **Comparison table** with RA #1 + RA #2 explaining why all three are non-redundant.
+
+Pass 3's "Prioritize PK / gut-luminal complement-readout validation before further expanding the dietary CP0 stack" is implemented as P2-3 (operational gate on candidate expansion). The §9.9 dormant composition's reactivation conditions are now strengthened — RA #3 closure is the cheaper of the two reactivation paths.
+
+Closure complete.

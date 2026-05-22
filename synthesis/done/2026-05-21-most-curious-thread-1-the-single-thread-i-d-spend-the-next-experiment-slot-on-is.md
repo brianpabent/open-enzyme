@@ -47,3 +47,18 @@ overlap_tag: EXTENSION
 - wiki/gout-pathophysiology.md
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` Houttuynia is a defensible “most curious” pick because it hits documented CP0 and CP1 nodes, has multi-anchor primary evidence in `complement-c5a-gout.md` §9.7 / `nlrp3-exploit-map.md` CP1, and has a cheap discriminating assay already specified in `validation-experiments.md` §1.30. The synthesizer correctly treats the structure-dependent directionality caveat as productive uncertainty rather than a reason to dismiss the candidate. The next action is execution of §1.30, with commercial-extract equivalence and viability controls treated as load-bearing.
+
+---
+
+## ✓ Actioned 2026-05-22
+
+**Closure — execution gate, not protocol gap:** Houttuynia §1.30 prioritization screen is canonical in `validation-experiments.md` §1.30 (three-arm THP-1 MSU prioritization screen — HCPM purified, crude HCP, commercial capsule extract — at 10/100/1000 µg/mL with IL-1β ELISA primary readout, CCK-8/MTT viability control). Pass 3 confirmed this is the right next experiment and that the action is **execution**, not protocol design.
+
+Execution dependencies are:
+- **HCPM sourcing** — purified HCPM (~19.1 kDa fraction per Chen Daofeng / Fudan group's published preparation) is the gating step. Commercial purified-HCPM availability is unknown; sourcing from the Fudan group via collaboration or via independent purification from crude HCP is the operational path.
+- **CRO selection** — THP-1 MSU IL-1β prioritization screens are standard immunology CRO work; ~$1,500–2,500 / 4–6 weeks per the §1.30 cost estimate.
+- **Dietary-PK question is separate** — see RA #3 in `open-questions.md` (added same day). The §1.30 macrophage assay validates Houttuynia's MECHANISM at the cellular level; it doesn't validate whether dietary intake produces equivalent gut-luminal concentrations. Both gates needed for the dietary-CP0 thesis.
+
+Most curious thread judgment stands — Houttuynia remains the single highest-leverage next experiment slot. Execution path now also gated on RA #3 PK validation if the §1.30 screen returns positive (otherwise mechanism without dietary translation).
+
+Closure complete.
