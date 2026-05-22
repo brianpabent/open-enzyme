@@ -30,6 +30,10 @@ related:
   - intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md
   - chassis-pending-interventions.md
   - fructose-connection.md
+  - genotype-informed-supplement-workflow.md
+  - cfh-mechanism-dissociation-cp0-candidates-computational.md
+  - complement-c5a-gout.md
+  - medicinal-mushroom-complement-track.md
 sources:
   - "Tin et al. 2019 — Nature Genetics meta-analysis (~1M participants, 351 loci, PMID 31578528)"
   - "Major et al. 2018 — Nat Rev Rheumatol genetics-of-gout review (PMID 30262909)"
@@ -268,7 +272,12 @@ These are the gaps the OE corpus has noted but does not yet have evidence depth 
 - [sirna-urat1-modality.md](./sirna-urat1-modality.md) — URAT1 LoF (RHUC1) as the human-genetic anchor for URAT1-targeted siRNA
 - [chassis-pending-interventions.md](./chassis-pending-interventions.md) — pharmacological-chaperone class for Q141K (§7)
 - [gout-clinical-pipeline.md](./gout-clinical-pipeline.md) — current drug pipeline; informs which variants are clinically actionable now
+- [genotype-informed-supplement-workflow.md](./genotype-informed-supplement-workflow.md) §"Pattern library" — reusable variant → pathway vulnerability → bypass intervention pattern instantiated by Q141K × butyrate, OCTN1 × EGT, and CFH Y402H × dietary CP0 candidates
+- [cfh-mechanism-dissociation-cp0-candidates-computational.md](./cfh-mechanism-dissociation-cp0-candidates-computational.md) — comp-039 per-candidate CFH-independence classification with UKB ↔ AoU biobank cross-tab specification
+- [complement-c5a-gout.md](./complement-c5a-gout.md) §9.7 — CFH Y402H stratification context within the dietary CP0 strategy
+- [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) — OCTN1 / SLC22A4 variant context for ergothioneine prioritization
 
 ---
 
 *Index page; no inline mechanism deep-dives. Variant-specific mechanisms, rescue strategies, and intervention design belong on the canonical wiki pages linked in the "Canonical wiki page" column of each table.*
+*Downstream stratification analyses: use the [Pattern library](./genotype-informed-supplement-workflow.md) (variant → pathway vulnerability → bypass intervention) as the reusable template when adding new genotype-informed workflows.*
