@@ -25,7 +25,6 @@ Guidelines for any Claude or AI system working on this project. This document en
 All research — long-form primary research docs and shorter synthesized concept pages — lives here side by side. Source of truth. The sweep daemon updates these as new findings land.
 
 - `synthesis/queue/` — Per-item daemon-emitted action queue (one file per Connection / Contradiction / Experiment / Open Question / Priority Action). **Walkthrough closes items by appending closure annotation + `git mv` to `synthesis/done/`.** Inbox-zero is automatic when queue/ is empty. See [`synthesis/README.md`](./synthesis/README.md) for the full directory architecture (queue/, done/, history/, strategic-reflections/).
-- `wiki/GRAPH.md` — Mermaid diagram of all concept relationships.
 - `wiki/[concept].md` — Individual wiki pages. Long-form research (e.g. `gout-deep-dive.md`, `engineered-koji-protocol.md`) and shorter concept pages (`uricase.md`, `nlrp3-inflammasome.md`) are both here. Organize by topic, not by length.
 
 Prefer standard markdown links (`[text](./path.md)`) over `[[wiki-links]]` in any file expected to be shared externally — GitHub only renders the standard form.
@@ -55,7 +54,6 @@ When new information emerges (new research, evidence, design decision), re-evalu
 Example: If a new NLRP3 inhibitor is discovered, update:
 - wiki/nlrp3-exploit-map.md (primary research)
 - wiki/nlrp3-inflammasome.md (concept page)
-- wiki/GRAPH.md (if mechanism adds new nodes/edges)
 - index.md (if adding new concept page, or if it shifts the platform thesis)
 
 ### 2. Adding New Research
@@ -65,14 +63,12 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 2. Include frontmatter: `title`, `date`, `tags` (and `related`, `sources` if you have them)
 3. Write with evidence levels (see Rule 5 below)
 4. Update all relevant wiki pages and `index.md`
-5. Update `wiki/GRAPH.md` if adding new nodes or relationships
-6. Prefer standard markdown links (`[text](./path.md)`); `[[wiki-links]]` also work in Obsidian but don't render on GitHub
+5. Prefer standard markdown links (`[text](./path.md)`); `[[wiki-links]]` also work in Obsidian but don't render on GitHub
 
 **Example:** If adding a page on "Off-Target Enzyme Activity":
 - Create `wiki/off-target-assessment.md`
 - Link it from `wiki/nlrp3-inflammasome.md` under "Related"
 - Update `index.md` with the new concept (new section if needed)
-- Update `wiki/GRAPH.md` to show off-target effects as downstream of enzyme engineering
 
 ### 3. Writing Style
 
@@ -133,11 +129,6 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 - Keep the dashboard (platform thesis, synthesis queue, cheapest experiments) at the top.
 - Keep the concept/research index below, with one-line descriptions.
 
-**In wiki/GRAPH.md:**
-- Update Mermaid diagram whenever concepts or relationships change.
-- Ensure all nodes appear in at least one subgraph.
-- Label edges with relationship type (e.g., "produces", "inhibits", "activates").
-
 ### 7. The HTML Files Are Published Versions
 
 - **Do not edit *.html files.** They are the formatted public versions.
@@ -168,7 +159,7 @@ Most of this runs automatically via the sweep daemon — when you save a file un
 ### When new data emerges:
 
 1. **Determine scope:** Which concepts or mechanisms does this affect?
-   - Example: "New data on BHB + NLRP3" → affects `wiki/nlrp3-exploit-map.md`, `wiki/bhb-ketones.md`, `wiki/GRAPH.md`
+   - Example: "New data on BHB + NLRP3" → affects `wiki/nlrp3-exploit-map.md`, `wiki/bhb-ketones.md`
 
 2. **Update the relevant wiki page(s):**
    - Add new content or revise existing claims inline with evidence level and inline provenance (`(source: <filename>)`)
@@ -176,11 +167,7 @@ Most of this runs automatically via the sweep daemon — when you save a file un
 
 3. **Update `index.md`** if a new page was created or the platform thesis shifted.
 
-4. **Update `wiki/GRAPH.md`:**
-   - Add/modify nodes and edges in Mermaid diagram
-   - Ensure relationships are labeled
-
-5. **Verify consistency:**
+4. **Verify consistency:**
    - Check cross-references resolve
    - Verify evidence levels are tagged throughout
 
@@ -200,7 +187,6 @@ Most of this runs automatically via the sweep daemon — when you save a file un
    - `index.md` (add to the appropriate section)
    - `wiki/nlrp3-inflammasome.md` (add to related concepts)
    - `wiki/nlrp3-exploit-map.md` if it fits the exploit map
-   - `wiki/GRAPH.md` (add node + edges to NLRP3 and relevant pathways)
 
 ### Task: Revise a mechanism based on new data
 
@@ -208,14 +194,12 @@ Most of this runs automatically via the sweep daemon — when you save a file un
 2. Update evidence level tags and citations
 3. Re-read all wiki pages that reference this mechanism
 4. Update wiki pages with new understanding
-5. Check `wiki/GRAPH.md` for any edge changes
 
 ### Task: Ensure a new page is discoverable
 
 1. Add to `index.md` with one-line description
 2. Link from related wiki pages using standard markdown links
-3. Add to `wiki/GRAPH.md` if it introduces a new concept or relationship
-4. Include YAML frontmatter with `title`, `date`, `tags` (and `related`, `sources` when applicable)
+3. Include YAML frontmatter with `title`, `date`, `tags` (and `related`, `sources` when applicable)
 
 ---
 
@@ -234,7 +218,6 @@ Most of this runs automatically via the sweep daemon — when you save a file un
 1. **What's the evidence level?** (Clinical, animal, in vitro, mechanistic)
 2. **Does this affect multiple wiki pages?** (Trigger doc sweep rule)
 3. **Are there new concepts?** (Trigger new wiki page creation)
-4. **Are there new relationships?** (Update `wiki/GRAPH.md`)
 5. **Are assumptions/limitations stated clearly?** (Maintain rigor)
 6. **Is it PhD-audience appropriate?** (No marketing, honest about unknowns)
 

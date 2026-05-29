@@ -9,7 +9,6 @@ You are running **Pass 1** of the Open Enzyme sweep — propagation only. The TR
 ## Knowledge-base layout (read-and-write)
 
 - `wiki/*.md` — research library. Edit these.
-- `wiki/GRAPH.md` — Mermaid concept graph. Update when concepts/relationships change.
 - `wiki/hypotheses/*.md` — committed hypothesis cards (see `wiki/linter-design.md`). Read for context; don't edit unless trigger explicitly affects a hypothesis card.
 - `index.md` (repo root) — dashboard. Update when new wiki page is created or thesis shifts.
 - `mkdocs.yml` — published-site nav. Update when a new wiki page is created (per Pass 1 step 4 below).
@@ -27,18 +26,27 @@ You are running **Pass 1** of the Open Enzyme sweep — propagation only. The TR
 
 2. **Build an impact list.** Grep across `wiki/` for the concept names, compounds, organisms, and mechanisms in the trigger file(s). List every affected page before editing.
 
-3. **Update each affected `wiki/*.md` page:**
-   - **Dedup before inserting.** Before adding any new heading, subsection, or standalone paragraph, check whether semantically equivalent content already exists in the target page. Heuristics for "semantically equivalent": same heading text (case-insensitive), same opening sentence, or content that paraphrases the same claim with the same cross-references. If you find an existing equivalent:
-     - **If it's missing the source attribution** that this propagation pass would add → modify in place: append `(source: <trigger-filename>)` to the existing content. Do not insert a parallel copy.
-     - **If it already has source attribution and the trigger adds genuinely new information** → merge the new information into the existing subsection. Do not insert a parallel copy.
-     - **If it already has source attribution and the trigger adds nothing new** → skip this insertion entirely. The propagation is already done.
-     - **Only insert a fresh subsection when no equivalent exists.** Recurrent propagation across multiple sweeps is the most common cause of duplication; the dedup check is the guard.
-   - Inline rewrite of contradicted claims; don't append "see also" footnotes
-   - Tag every new or revised claim with evidence level: `(Clinical Trial)`, `(Animal Model)`, `(In Vitro)`, `(Mechanistic Extrapolation)`
-   - Inline provenance: `(source: <trigger-filename>)`
-   - If the trigger contradicts existing content and resolution is ambiguous, flag inline — do NOT silently overwrite:
+3. **Propagate by LINK, not by copy — the core Pass-1 discipline.** A finding has ONE canonical home: the trigger file, or the established concept / primary-research page for that mechanism. Write the full exposition there *once*; on every *other* affected page, add a one-line pointer + link, **not** a copied exposition block.
+
+   *Why this is the default (load-bearing):* propagate-by-copy was the documented cause of ~47K tokens of cross-page restatement and the 2026-05-22 Pass-2 context overflow — the daemon was inflating the very corpus it then had to synthesize. Linking instead of copying is what keeps the corpus from self-inflating. (Rationale: `operations/corpus-unblock-propagate-by-link-2026-05-29/`.)
+
+   For each affected page, determine its relationship to the finding:
+
+   **a. The canonical page for the finding** (usually the trigger file itself): ensure the full exposition lives here, with evidence level + inline provenance.
+
+   **b. A related, non-canonical page the finding touches — default to a pointer:**
+   - Add a **one-line pointer + link** carrying only the minimal local delta needed for context — e.g.,
+     `Theaflavins also down-regulate URAT1/GLUT9 (see [theaflavins](./theaflavins.md) for mechanism + evidence).`
+     Tag the claim with its evidence level. Do **not** copy the mechanism/exposition block.
+   - **Dedup guard (still applies).** If an equivalent pointer/claim already exists: if it lacks `(source: <trigger-filename>)`, append it in place; if it already has provenance and the trigger adds nothing new, skip; **never insert a parallel copy.**
+   - **When a full copy IS justified — the only two exceptions:** (i) a load-bearing number the local page's own reasoning/calculation directly depends on (copy the number, still link for context); or (ii) the finding has no other canonical home — in which case make *this* page canonical and link the others to it. Absent (i) or (ii), link, don't copy.
+
+   **Common to both:**
+   - Tag every new or revised claim with evidence level: `(Clinical Trial)`, `(Animal Model)`, `(In Vitro)`, `(Mechanistic Extrapolation)`.
+   - Inline provenance on new content: `(source: <trigger-filename>)`.
+   - Inline-rewrite contradicted claims (don't leave a stale claim and a correction side by side). If resolution is ambiguous, flag inline — do NOT silently overwrite:
      `> ⚠️ CONTRADICTION: <page A says X; trigger says Y — needs resolution>`
-   - Standard markdown links `[text](./path.md)`, not `[[wiki-links]]`
+   - Standard markdown links `[text](./path.md)`, not `[[wiki-links]]`.
 
 4. **Create new wiki pages** if a trigger file introduces a concept not yet in `wiki/`:
    - YAML frontmatter (`title`, `date`, `tags`, optionally `related`, `sources`)
@@ -46,23 +54,9 @@ You are running **Pass 1** of the Open Enzyme sweep — propagation only. The TR
    - Add an entry to `index.md` under the corresponding section
    - Without these two, the page renders as orphaned
 
-5. **Update `wiki/GRAPH.md`** for new concepts/relationships. Add Mermaid nodes/edges; label edge types (produces / inhibits / activates / requires / synergizes / degrades). **No HTML in node labels** (breaks Obsidian).
+5. **Update `index.md`** if a new wiki page was created or if a meaningful status shift happened (platform thesis, cheapest-experiments). Conservative — don't rewrite the dashboard for small changes. `index.md` is the in-repo dashboard; `mkdocs.yml` nav is the published-site sidebar. Both need updating when a new page lands.
 
-6. **Update `index.md`** if a new wiki page was created or if a meaningful status shift happened (platform thesis, cheapest-experiments). Conservative — don't rewrite the dashboard for small changes. `index.md` is the in-repo dashboard; `mkdocs.yml` nav is the published-site sidebar. Both need updating when a new page lands.
-
-7. **Err toward more updates, not fewer.** If uncertain whether a page is affected, update it.
-
----
-
-## Tooling
-
-If you modified `wiki/GRAPH.md`, run:
-
-```
-python3 scripts/lint-mermaid.py wiki/GRAPH.md
-```
-
-This auto-fixes Obsidian-incompatible Mermaid syntax.
+6. **Err toward more COVERAGE, not more copy.** If uncertain whether a page is affected, add the pointer-link (per step 3). Breadth of cross-referencing is good; duplicated exposition is not.
 
 ---
 

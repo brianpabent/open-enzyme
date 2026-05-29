@@ -204,7 +204,6 @@ These are the long-form research documents that the shorter concept pages above 
 ## Cross-Analysis & Synthesis
 
 - **[Synthesis (current)](synthesis/README.md)** — Cross-doc connections, contradictions, and proposed experiments. **The action queue lives at [`synthesis/queue/`](synthesis/queue/)** — one file per finding emitted by the daemon's Pass 3. Walkthrough closes items by appending closure annotation + `git mv` to [`synthesis/done/`](synthesis/done/). Inbox-zero is automatic when queue/ is empty.
-- **[Concept Graph](wiki/GRAPH.md)** — Mermaid diagram of all concept relationships (produces / inhibits / activates / requires / synergizes / degrades)
 
 ### Engineering & Design (deep dives)
 

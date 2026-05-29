@@ -60,7 +60,7 @@ All research lives in `wiki/` — long-form primary documents and shorter synthe
 [BPC-157](wiki/bpc-157.md) · [KPV Tripeptide](wiki/kpv-peptide.md) · [BHB / Ketones](wiki/bhb-ketones.md) · [Oridonin](wiki/oridonin.md) · [Disulfiram](wiki/disulfiram.md)
 
 **Synthesis & Graph:**
-[Synthesis queue](synthesis/queue/) — per-item action queue (cross-doc connections, contradictions, proposed experiments); architecture at [`synthesis/README.md`](synthesis/README.md) · [GRAPH.md](wiki/GRAPH.md) — Mermaid concept graph
+[Synthesis queue](synthesis/queue/) — per-item action queue (cross-doc connections, contradictions, proposed experiments); architecture at [`synthesis/README.md`](synthesis/README.md)
 
 ---
 

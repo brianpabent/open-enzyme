@@ -1,5 +1,7 @@
 # Open Enzyme Concept Graph
 
+> **⚠️ ARCHIVED — no longer maintained (2026-05-29).** Graph-maintenance was retired from the sweep daemon and `CLAUDE.md`: the diagram was never used in practice and is too large to render legibly. This file is frozen as a historical artifact; the sweep no longer updates it. Concept relationships are now carried inline in the wiki pages and their cross-links. Rationale: `operations/corpus-unblock-propagate-by-link-2026-05-29/`.
+
 A visual map of how all Open Enzyme research domains relate to each other. Use the interactive diagram below to understand dependencies, synergies, and the full therapeutic stack.
 
 ## Interactive Concept Map
