@@ -35,6 +35,17 @@ Read the corpus correctly (identified the ABCG2 gut-sink thesis, Q141K/butyrate-
 3. **A/B/C are not obviated — their role shifts from "emergency unblock" to "quality + cost + durability":** dedup (A) lowers Grok's per-run input cost and improves synthesis signal; propagate-by-link (B) bends the growth curve so even 2M doesn't get eaten; guard fixes (C) would have hard-failed Scout's pay-for-nothing empty-output instead of silently charging.
 4. **Scout:** park as an alternate-provider probe; do not rely on the default (Groq) route.
 
+## Agentic daemon-equivalent confirmation (Codex round-2 #2 follow-up) — EXECUTED 2026-05-29
+
+The first-pass screen above was single-shot. Per Codex #2, Grok was re-run through the **real daemon Pass-2 harness** — `scripts/synthesize.py --commit-sha HEAD --model x-ai/grok-4.20` — which exercises the agentic tool loop and near-cap growth that is the actual failure mode. Required C1 first (add Grok's 2M cap to `CONTEXT_WINDOW_TOKENS`, else the pre-flight rejects).
+
+**Result: PASS.**
+- `in=934,289  out=7,624  cost=$1.1869  exit 0`, no fallback (`reviewer_fallback_used: False`).
+- **Cited 70 wiki files via the `read_file` tool** — spanning `wiki/etc/` pages, all 9 hypothesis cards (H01–H09), and comp-NNN pages across the corpus. Confirms tool support + multi-turn context accumulation work, and that 934K prompt + tool growth stays comfortably under the 2M window.
+- Output (`logs/v4-synthesis-2026-05-29-HEAD.md`) is a correctly-formatted Pass-2 synthesis following the daemon's own conventions (New Connections with `[CHAIN-DEPTH]`/`[PHASE-A-MATCH]` markers, Contradictions, Experiments, Open Questions, Priority Actions, Riskiest Assumption, Sources cited).
+
+**Conclusion:** Grok 4.20 is validated as Pass-2 primary on *both* the quality screen and the agentic daemon-equivalent run. The routing switch (§D8) is unblocked.
+
 ## Reproduce
 
 ```bash

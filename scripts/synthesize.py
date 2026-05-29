@@ -111,12 +111,18 @@ FALLBACK_MODELS = ["google/gemini-2.5-pro"]
 # so we never silently swap to a model that can't accept the corpus.
 # Update when adding model options or when providers expand context windows.
 CONTEXT_WINDOW_TOKENS = {
-    "google/gemini-2.5-pro":      2_000_000,
-    "google/gemini-2.5-flash":    2_000_000,
+    # CAUTION: these are the *live OpenRouter route* caps, not the vendor's
+    # headline spec. 2026-05-29: corrected Gemini 2.5 Pro from 2_000_000 (vendor
+    # spec) to 1_048_576 (the cap the route actually enforced — the stale 2M
+    # constant defeated this guard and let the 2026-05-22..24 overflows through).
+    "google/gemini-2.5-pro":      1_048_576,
+    "google/gemini-2.5-flash":    1_048_576,
     "deepseek/deepseek-v4-pro":   1_000_000,
     "deepseek/deepseek-v4-flash":   200_000,
     "anthropic/claude-opus-4-7":  1_000_000,
     "openai/gpt-5":                 400_000,
+    "x-ai/grok-4.20":             2_000_000,   # eval candidate (2026-05-29)
+    "meta-llama/llama-4-scout":  10_000_000,   # spec window; default route (Groq) does not generate at ~1M input — see eval-results.md
 }
 
 # OpenRouter pricing per Mtok (input, output) — used for cost reporting.
@@ -128,6 +134,8 @@ PRICING_USD_PER_MTOK = {
     "deepseek/deepseek-v4-flash": (0.14, 0.28),
     "anthropic/claude-opus-4-7":  (15.00, 75.00),
     "openai/gpt-5":               (2.50, 10.00),
+    "x-ai/grok-4.20":             (1.25, 2.50),
+    "meta-llama/llama-4-scout":   (0.08, 0.30),
 }
 
 
@@ -354,6 +362,20 @@ def call_openrouter_raw(api_key, body):
             # Branch (a): curl-level failure. Existing transient-string check.
             if result.returncode != 0:
                 combined = (result.stdout or "") + "\n" + (result.stderr or "")
+                # C2 (2026-05-29): a context-length 400 is NOT transient —
+                # retrying re-sends the same oversized request (the 2026-05-22..24
+                # failures burned 4 retries this way). Hard-fail immediately with
+                # an actionable message before the transient check can catch it.
+                if any(s in combined for s in (
+                    "maximum context length", "requested about",
+                    "context_length_exceeded", "context length",
+                )):
+                    print("FATAL: Pass-2 request exceeds the model's context window "
+                          "(context-length 400 — non-transient).", file=sys.stderr)
+                    print("  Trim the corpus (EXCLUDE / archive) or route Pass 2 to a "
+                          "larger-context model. Not retrying.", file=sys.stderr)
+                    print(f"  Provider response: {combined.strip()[:1500]}", file=sys.stderr)
+                    sys.exit(2)
                 transient = (
                     result.returncode == 22  # HTTP error per --fail-with-body
                     # curl exit codes for transport-level transient failures.
@@ -653,15 +675,23 @@ def main():
     candidate_caps = [CONTEXT_WINDOW_TOKENS.get(m, 200_000) for m in candidate_models]
     primary_cap = candidate_caps[0]
     largest_cap = max(candidate_caps)
-    # 90% of primary cap = warn (fallback path may still work)
-    # 90% of largest cap = hard refuse (no model can accept this)
-    if prompt_token_estimate > int(0.90 * largest_cap):
-        print(f"FATAL: estimate {prompt_token_estimate:,} tokens exceeds 90% of the largest available context "
-              f"({largest_cap:,} tokens across models {candidate_models}). Trim corpus via EXCLUDE or split sweep.",
+    # C3 (2026-05-29): budget the FULL request, not just the prompt. Pass 2 is
+    # agentic — it reads more files via tools as it runs (observed ~61K growth
+    # on run 26362921474, 956K→1,017K), and reserves output tokens. The old
+    # "90% of cap" heuristic under-counted this and let the overflow through.
+    AGENTIC_GROWTH_ALLOWANCE = 80_000  # observed ~61K tool-read growth + margin
+    projected_request = prompt_token_estimate + args.max_tokens + AGENTIC_GROWTH_ALLOWANCE
+    print(f"Projected full request: ~{projected_request:,} tokens "
+          f"(prompt {prompt_token_estimate:,} + output {args.max_tokens:,} + agentic-growth {AGENTIC_GROWTH_ALLOWANCE:,}). "
+          f"primary {args.model} cap {primary_cap:,}; largest available {largest_cap:,}.",
+          file=sys.stderr)
+    if projected_request > largest_cap:
+        print(f"FATAL: projected request ~{projected_request:,} tokens exceeds the largest available context "
+              f"({largest_cap:,} across {candidate_models}). Trim corpus via EXCLUDE/archive or route to a larger-context model.",
               file=sys.stderr)
         sys.exit(2)
-    if prompt_token_estimate > int(0.90 * primary_cap):
-        print(f"WARNING: estimate {prompt_token_estimate:,} tokens approaches primary {args.model}'s {primary_cap:,} cap. "
+    if projected_request > primary_cap:
+        print(f"WARNING: projected request ~{projected_request:,} tokens exceeds primary {args.model} cap {primary_cap:,}. "
               f"Likely fallback to {FALLBACK_MODELS[0] if FALLBACK_MODELS else '(no fallback)'}.",
               file=sys.stderr)
 
