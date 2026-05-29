@@ -100,7 +100,7 @@ And the wild-type background carries urate-active chemistry:
 
 **The honest counterweight — do not overstate this.** There is **no published whole-duckweed-extract study showing it lowers serum urate, inhibits XO in vivo, or modulates NLRP3** (genuine negative across all languages searched). The urate link is *mechanistic extrapolation* via isolated flavonoids, not demonstrated duckweed efficacy. The classical 浮萍 indications are wind-heat dispersal, rash eruption, and **diuresis (利尿)** — adjacent to the diuretic anti-gout formula class (五苓散 Wu Ling San) but not a urate measurement. The TCM-function bridge is suggestive, not load-bearing.
 
-**Why it still matters for chassis selection:** *if* a duckweed-uricase construct were built, it would not be a bare enzyme vehicle — the chassis background is plausibly mildly hypouricemic on its own. That is a potential built-in synergy **no yeast/koji chassis offers**. It is an option-value argument, tagged extrapolation, not a current claim.
+**Why it still matters for chassis selection:** *if* a duckweed-uricase construct were built, it would not be a bare enzyme vehicle — the chassis background is plausibly mildly hypouricemic on its own. That is a potential built-in synergy **no yeast/koji chassis offers**. It is an option-value argument, tagged extrapolation, not a current claim. (Should we then *engineer* the luteolin up rather than express uricase? No — see [§Boost the native compound, or express a new one?](#boost-the-native-compound-or-express-a-new-one-a-reusable-chassis-lens). The luteolin rides along as a cultivation-tunable adjunct; uricase is the therapeutic.)
 
 ---
 
@@ -171,6 +171,28 @@ Duckweed earns **"chassis on the map / characterize and watch,"** not a pivot.
 ## Open white space worth noting
 
 **No plant-made uricase exists in the literature.** Yet urate oxidase is *natively peroxisomal in plants* (e.g., *Arabidopsis*) — the enzyme folds and functions in plant cells; primates simply lost the gene. Duckweed has expressed other heterologous enzymes (aprotinin; endoglucanase E1 ~0.24% TSP; β-glucuronidase 0.28–1.43% TSP), so heterologous enzyme expression is established. A duckweed uricase has simply never been attempted — and it is OE's lead target. This is genuine open territory, flagged here, not a committed work item.
+
+---
+
+## Boost the native compound, or express a new one? (a reusable chassis lens)
+
+A natural question once the native-luteolin background surfaces: would it be *easier* to engineer duckweed to make **more luteolin** than to express a heterologous **uricase**? The honest answer is "it depends" — but the dependency is not primarily molecular-biology labor. It resolves on two axes that generalize to any "native compound vs heterologous protein" chassis decision.
+
+**Axis 1 — engineering predictability (modest edge to the heterologous protein).** A heterologous enzyme like uricase is *one gene*: add a cassette, select on a marker, screen for protein — the route duckweed has already walked for β-glucuronidase, endoglucanase, antibodies, and hGH (609 mg/L). Boosting a *native* secondary metabolite means pushing more carbon through an existing, homeostatically-regulated network. Luteolin sits at the end of a 6–7-enzyme branch (Phe → PAL/C4H/4CL → chalcone synthase → flavone synthase → F3′H → luteolin) off general phenylpropanoid metabolism. Overexpressing one step usually just relocates the bottleneck; *meaningful* gains typically require multi-gene overexpression + an MYB/bHLH transcription-factor master switch + knockdown of competing branches (other flavonols, the C-glycoside pool that already sequesters much of the flux as vitexin/orientin, lignin) — and you cannot *select* for "more luteolin," you have to *measure* it (LC-MS). The naive one-gene version of the native route is easy but usually disappointing; the version that moves the needle is a larger campaign than the single transgene.
+
+**Axis 2 — does the mechanism match the delivery mode? (decisive edge to uricase).** This is the part that should lead.
+- **Uricase acts in the gut lumen** — degrading luminal urate catalytically, dose-linearly, no absorption required. That is exactly what an edible organism delivers well. *The mechanism matches the delivery mode.* (Proven OE thesis — ALLN-346, PULSE.)
+- **Luteolin's urate mechanism wants the bloodstream** — XO that matters for urate is largely hepatic, and the URAT1/GLUT9 effects are renal; both require *systemic absorption*. Oral flavonoid bioavailability is poor (extensive gut/hepatic glucuronidation + sulfation; low solubility), and much of duckweed's flavonoid is already glycosylated. *The mechanism fights the delivery mode* — it leans on precisely the weakness of eating plant biomass.
+
+So even before counting effort, uricase plays to duckweed's strength (luminal action) and luteolin plays to its weakness (needs absorption). And the luteolin route carries a **potency-plus-dose ceiling** uricase does not: ~2.6× weaker per molecule than allopurinol is the small problem; the absolute exposure achievable from edible biomass vs a 300 mg potent oral drug is the large one.
+
+**The non-obvious corollary — for the native compound, transgenics is the *expensive* lever, not the first one.** If more luteolin were wanted, two cheaper levers come first and neither touches the genome:
+1. **Strain screening** — flavonoid content varies widely across *Lemna*/*Spirodela* accessions; "sequence them all, pick a champion" surfaces a naturally high-luteolin line for free.
+2. **Cultivation elicitation** — luteolin/apigenin are UV-protective pigments; UV-B, nutrient stress, and light regime reliably upregulate flavonoid biosynthesis (often multiples) with zero engineering. This is OE's Substrate Engineering lever (Principle 9, [`etc/open-source-platform.md`](./etc/open-source-platform.md)) applied to a chassis. *No equivalent free lever exists for a heterologous protein — you cannot grow your way to uricase.*
+
+**Where this lands for duckweed.** The two routes are not competing. The elegant composition: **express uricase (high-ceiling therapeutic that fits luminal delivery) and grow it under flavonoid-eliciting conditions so the native luteolin rides along as a free adjunct** — strain + cultivation, no luteolin engineering. Luteolin was always option-value, not a standalone therapeutic. And the genuinely cheapest first move remains DW-3 below: *measure whether wild-type duckweed at an edible dose moves urate at all* before committing to any engineering on either axis.
+
+**The reusable rule (generalizes beyond duckweed):** when a chassis natively makes a relevant compound, don't default to "engineer more of it." Ask first (a) *does the compound's mechanism match the chassis's delivery mode?* — if it needs systemic exposure and the chassis is an edible gut-luminal vehicle, the native compound is structurally disadvantaged regardless of titer; and (b) *can strain selection + cultivation elicitation deliver the boost without touching the genome?* — for a native secondary metabolite the answer is often yes, and that is categorically less work than either a heterologous transgene or a serious pathway-engineering campaign.
 
 ---
 
