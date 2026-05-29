@@ -11,8 +11,11 @@ name: Wiki Sweep (Hybrid)
 #       Reads ALL of wiki/, finds cross-document connections, outputs raw
 #       synthesis to logs/v4-synthesis-<date>-<sha>.md.
 #       scripts/sweep-prompt-2-synthesize.md.
-#       Currently DeepSeek V4-Pro primary (cost + speed) with Gemini 2.5 Pro
-#       fallback (large context, fires when V4-Pro flakes — not uncommon).
+#       Model = $SYNTHESIZER_MODEL (workflow env, single source of truth).
+#       2026-05-29: Grok 4.20 (2M context) primary with Gemini 2.5 Pro
+#       fallback. Moved off DeepSeek V4-Pro (1M) after the corpus crossed ~1M
+#       tokens and overflowed it on every run 2026-05-22..24. Eval +
+#       rationale: operations/corpus-unblock-propagate-by-link-2026-05-29/.
 #
 #   Pass 3 — Review (small input, critique)
 #       Reads the Pass 2 synthesis log, writes interleaved review (synthesizer
@@ -74,6 +77,15 @@ on:
 concurrency:
   group: wiki-sweep
   cancel-in-progress: false
+
+# Single source of truth for the Pass-2 synthesizer model. Referenced by the
+# Pass-2 `--model`, the Pass-3 `--synthesizer` metadata, and both commit
+# messages so the recorded synthesizer can never drift from what actually ran.
+# (Before 2026-05-29 these were independently hard-coded as "Gemini 2.5 Pro"
+# while Pass 2 silently ran synthesize.py's DEFAULT_MODEL — a persistent
+# mislabel. See operations/corpus-unblock-propagate-by-link-2026-05-29/.)
+env:
+  SYNTHESIZER_MODEL: "x-ai/grok-4.20"
 
 jobs:
   # ============================================================================
@@ -276,7 +288,7 @@ jobs:
           exit 1
 
   # ============================================================================
-  # PASS 2 — Gemini 2.5 Pro synthesis (full corpus)
+  # PASS 2 — Synthesis (full corpus) — model = $SYNTHESIZER_MODEL (Grok 4.20)
   # ============================================================================
   synthesize:
     name: "Pass 2 — Synthesize"
@@ -324,7 +336,8 @@ jobs:
             --commit-sha "${{ github.sha }}" \
             --trigger-files "$TRIGGER_LIST" \
             --propagated-files "$PROPAGATED_LIST" \
-            --diff-base "${{ needs.propagate.outputs.diff_base }}")
+            --diff-base "${{ needs.propagate.outputs.diff_base }}" \
+            --model "$SYNTHESIZER_MODEL")
 
           if [[ -z "$SYNTHESIS_LOG" || ! -f "$SYNTHESIS_LOG" ]]; then
             echo "Pass 2 synthesis produced no output file"
@@ -336,7 +349,7 @@ jobs:
           echo "had_synthesis=true"           >> "$GITHUB_OUTPUT"
 
           git add "$SYNTHESIS_LOG"
-          git commit -m "sweep-2-synthesize: Gemini 2.5 Pro raw synthesis → $SYNTHESIS_LOG [skip-wiki-sweep]"
+          git commit -m "sweep-2-synthesize: ${SYNTHESIZER_MODEL} raw synthesis → $SYNTHESIS_LOG [skip-wiki-sweep]"
           # Rebase-and-retry push. Pass 2 is long-running ($0.65/run, 2-9
           # minutes) so concurrent commits to main are common. Without this,
           # Pass 2's synthesis output gets generated, committed locally, then
@@ -467,7 +480,7 @@ jobs:
             --sweep-date "$SWEEP_DATE" \
             --diff-base "$DIFF_BASE" \
             --trigger-files "$(echo "$TRIGGER_FILES" | tr '\n' ',' | sed 's/,$//')" \
-            --synthesizer "google/gemini-2.5-pro" \
+            --synthesizer "$SYNTHESIZER_MODEL" \
             --reviewer "$REVIEWER_MODEL"
 
           # Stage emitted files first, THEN check diff. The emitter writes NEW files
@@ -481,7 +494,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "sweep-3-review: ${REVIEWER_MODEL} review of Gemini 2.5 Pro synthesis → synthesis/queue/ + synthesis/history/ [skip-wiki-sweep]"
+          git commit -m "sweep-3-review: ${REVIEWER_MODEL} review of ${SYNTHESIZER_MODEL} synthesis → synthesis/queue/ + synthesis/history/ [skip-wiki-sweep]"
           REVIEW_COMMIT=$(git rev-parse HEAD)
           echo "Pass 3 review commit: $REVIEW_COMMIT"
 

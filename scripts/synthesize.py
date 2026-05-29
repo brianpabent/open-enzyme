@@ -104,7 +104,14 @@ EXCLUDE = set()
 # Always verify a model's context window against the current corpus size
 # before swapping primaries. See CONTEXT_WINDOW_TOKENS below for the
 # explicit guard table.
-DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
+# 2026-05-29: switched Pass-2 primary DeepSeek V4-Pro (1M) → Grok 4.20 (2M)
+# after the corpus crossed ~1M tokens and overflowed DeepSeek on every run
+# 2026-05-22..24. Grok validated on a full agentic Pass-2 run (934K in, $1.19,
+# 70 files cited via tools). Gemini 2.5 Pro kept as different-vendor fallback
+# (heterogeneity guard). The workflow passes --model "$SYNTHESIZER_MODEL"
+# explicitly; this default keeps CLI/manual runs consistent + enables the
+# fallback array (which only engages when args.model == DEFAULT_MODEL).
+DEFAULT_MODEL = "x-ai/grok-4.20"
 FALLBACK_MODELS = ["google/gemini-2.5-pro"]
 
 # Context window per model (tokens). Used by the size-fit guard at startup
