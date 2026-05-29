@@ -528,7 +528,7 @@ In rough priority order for Open Enzyme's research agenda:
 **Current tool-stack status (post-2026-05-15 install per [`etc/bio-ai-tools.md`](./etc/bio-ai-tools.md) A1):**
 - **ProteinMPNN** — installed locally, CPU-mode functional. Sequence-design and optimization tools (`design_sequence`, `optimize_sequence`) are available. Slow on CPU but workable for small-to-medium redesign tasks (loops, linkers, single-domain variants).
 - **RFdiffusion** — pending GPU access (A4 task: Apple Silicon MPS port spec'd; or Modal cloud GPU fallback A2). De novo structure-generation tools (`design_binder`, `design_fold`, `generate_backbone`) blocked until then.
-- **PyRosetta-backed scoring** — blocked pending UW export-control license review (email queued 2026-05-15).
+- **PyRosetta-backed scoring** — ✅ **unblocked 2026-05-29.** UW updated its academic Rosetta/PyRosetta licensing; `pyrosetta 2026.3` installed credential-free (non-commercial license), end-to-end `rosetta_score` verified. The `rosetta_*` energy-scoring leg of the N-of-M concordance gate is now live (commercial use would require a separate paid UW license).
 - **Boltz-2-backed structure prediction via the same MCP** — blocked by torch-version conflict with RFdiffusion (separate-venv resolution pending).
 
 The CPU-functional ProteinMPNN subset is sufficient for sequence-design-only redesign tasks where the starting structure is known (lactoferrin has multiple PDB structures: 1BLF bovine apo, 1B0L human apo, 1LFG human holo). Structure-redesign tasks (de novo loops, novel folds) require RFdiffusion and remain blocked.

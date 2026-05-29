@@ -218,8 +218,8 @@ Most of this runs automatically via the sweep daemon — when you save a file un
 1. **What's the evidence level?** (Clinical, animal, in vitro, mechanistic)
 2. **Does this affect multiple wiki pages?** (Trigger doc sweep rule)
 3. **Are there new concepts?** (Trigger new wiki page creation)
-5. **Are assumptions/limitations stated clearly?** (Maintain rigor)
-6. **Is it PhD-audience appropriate?** (No marketing, honest about unknowns)
+4. **Are assumptions/limitations stated clearly?** (Maintain rigor)
+5. **Is it PhD-audience appropriate?** (No marketing, honest about unknowns)
 
 ---
 
