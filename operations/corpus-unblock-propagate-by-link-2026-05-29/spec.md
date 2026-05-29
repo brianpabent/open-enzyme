@@ -17,8 +17,9 @@ This spec covers three workstreams to be done together on one branch:
 - **Workstream A — Corpus unblock (immediate):** deduplicate cross-page restatement and archive the append-heavy `validation-experiments.md`, bringing the Pass 2 prompt back under existing model caps without changing model routing or building sharded synthesis.
 - **Workstream B — Propagate-by-link (durable):** change Pass 1's propagation discipline so new findings are written *once* on a canonical page and *linked* from related pages, instead of copied. This stops the corpus self-inflating at the source.
 - **Workstream C — Daemon-guard hardening (added in Codex review):** small `synthesize.py` fixes so an overflow fails loudly/pre-flight (no 4× retry on a context-length 400) and the cap guard can't be defeated by a stale constant. (§4b)
+- **Workstream D — Pass-2 model evaluation (Brian opt-in 2026-05-29):** eval large-context models (`llama-4-scout` 10M / ~16× cheaper; `grok-4.20` 2M) for Pass 2. Potentially the cheapest unblock of all — a window that dwarfs the corpus relaxes the hard fit-gate to a one-constant change. Eval-gated, keeps a different-vendor fallback. (§4c)
 
-Sharded synthesis (the larger rebuild) is explicitly **out of scope** and demoted to a fallback only if B proves insufficient.
+Sharded synthesis (the larger rebuild) is explicitly **out of scope** and demoted to a fallback only if both B and a large-context model prove insufficient.
 
 ---
 
@@ -76,7 +77,7 @@ A corpus-wide provenance scan (paragraphs carrying `(Source: <other-wiki-page>.m
 
 ### Non-goals (explicitly out of scope)
 - **Sharded / hierarchical synthesis** — deferred; only revisited if B proves insufficient against future growth.
-- **Model-routing changes** (e.g., routing Pass 2 to a 2M-context model) — not needed if A succeeds; avoided because routing has a documented mistake history (`synthesize.py` comments). *Note (Codex review #4):* `x-ai/grok-4.20` is currently listed on OpenRouter at a 2M context window and is a plausible **emergency** 2M route — but only after a real API probe through the daemon's OpenRouter path, and it must **not** substitute for Workstream B's durable fix. Kept out of scope here; logged as a fallback option.
+- ~~**Model-routing changes**~~ — **now IN scope as an evaluation** (Brian opt-in 2026-05-29) → **Workstream D**. Candidates: `x-ai/grok-4.20` (2M) and `meta-llama/llama-4-scout` (10M, ~16× cheaper). Still avoided: a *blind* routing switch — the change is eval-gated, preserves a different-vendor fallback (heterogeneity guard), and does **not** substitute for Workstream B (a bigger window removes the hard ceiling but unbounded corpus growth still degrades synthesis quality + cost).
 - **Editing existing `wiki/etc/**` reference/methodology pages, `reference/*`, `*.html`.** *Clarification (Codex review #6):* the sole permitted `wiki/etc/` write is **creating** the new `wiki/etc/validation-experiments-archive.md` in A3. No existing `wiki/etc/` page is edited.
 - **Re-architecting Pass 2 or Pass 3.** (Workstream C touches only Pass-2 *guard* logic — cap constants, 400-classification, pre-flight budget — not the synthesis design.)
 
@@ -151,10 +152,7 @@ Change the propagation discipline so that, when propagating a finding to a page 
 
 ### B3. Implementation
 - **Primary change:** rewrite step 3 of `scripts/sweep-prompt-1-propagate.md` to encode B2 — replace "insert a fresh subsection" default with "link to canonical + minimal delta" default; add an explicit canonical-ownership determination step; redefine when a full copy is permitted; keep the existing cross-sweep dedup guard. Also soften the existing "don't append 'see also' footnotes" / "err toward more updates" lines, which currently push toward copy-over-link.
-- **GRAPH handling — decision-gated (Open Q #5, per Codex review #5).** The Pass-1 prompt references `wiki/GRAPH.md` (stale; it's at `wiki/etc/GRAPH.md` post-reorg). Two options:
-  - **(a) Keep + fix:** correct the path to `wiki/etc/GRAPH.md`, verify the `lint-mermaid.py` path, keep graph-maintenance instructions.
-  - **(b) Retire (reviewer-recommended):** Brian reportedly never uses the graph and the rendered Mermaid is too small to read. Remove graph-update requirements from `scripts/sweep-prompt-1-propagate.md` **and** `CLAUDE.md`; demote/remove the public links in `index.md` / `README.md`; keep `wiki/etc/GRAPH.md` as an archived artifact (or delete). This also removes per-sweep graph-churn work.
-  - **Default pending Brian's ruling: (b).** Either way `wiki/etc/GRAPH.md` is already corpus-excluded, so neither affects the token math.
+- **GRAPH handling — DECIDED (Brian 2026-05-29): RETIRE.** Remove graph-maintenance from `scripts/sweep-prompt-1-propagate.md` (delete step 5 + the `lint-mermaid.py` tooling block + the `wiki/GRAPH.md` read/write references) **and** from `CLAUDE.md` (the Doc Sweep Rule examples + the GRAPH-update task steps). Demote/remove the public links in `index.md` and `README.md`. Keep `wiki/etc/GRAPH.md` as a frozen archived artifact (do not delete history; just stop maintaining it — add a one-line "ARCHIVED, no longer maintained 2026-05-29" header). Removes recurring per-sweep graph-churn work. Already corpus-excluded, so no token-math effect.
 - **Optional guardrail (Open Q #2):** add a check in `scripts/sweep-1-propagate.py` (or a post-pass lint) that flags when a propagation commit adds more than N lines (proposed N≈8) of new prose to a *non-canonical* page, as a soft signal of copy-instead-of-link. Advisory (log) by default; blocking later.
 - **No change** to Pass 2 / Pass 3 synthesis design or model routing. (Pass-2 *guard* fixes live in Workstream C.)
 
@@ -183,11 +181,46 @@ Make the pre-flight gate (line ~653) compare `estimated_corpus + reserved_output
 
 ---
 
+## 4c. Workstream D — Pass-2 model evaluation (Brian opt-in, 2026-05-29)
+
+Brian opted into evaluating large-context models for Pass 2. This is the potential *cheapest* unblock: a model whose window dwarfs the corpus removes the hard fit-ceiling with a one-constant change, and lets A/B/C proceed as quality/cost hygiene rather than emergency surgery.
+
+### D1. Candidates (from OpenRouter, 2026-05-29)
+| Model | Context | $/M in | $/M out | Notes |
+|---|---|---|---|---|
+| `meta-llama/llama-4-scout` | **10M** | **$0.08** | **$0.30** | MoE 17B-active/109B, multimodal, 12 langs. ~16× cheaper input than DeepSeek. 10M holds the corpus for *years*. **Risk: depth** — 17B-active may fit-but-flatten the multi-level synthesis (cf. the documented "Flash too shallow" finding in `synthesize.py`). |
+| `x-ai/grok-4.20` | **2M** | $1.25 | $2.50 | Reasoning model, "lowest hallucination" + strong agentic tool-calling (Pass 2 is agentic). 2M = comfortable headroom. Mid-cost. |
+| `x-ai/grok-4.20` Multi-Agent | 2M | $2 | $6 | Parallel-agent deep-research variant — likely overkill for synthesis; note as a *future Pass-2 architecture* curiosity, not this eval's target. |
+| `deepseek/deepseek-v4-pro` (incumbent primary) | 1.0M | $0.435 | $0.87 | Baseline; currently overflows. |
+| `google/gemini-2.5-pro` (incumbent fallback) | 1.048M (live route) | $1.25 | $5.00 | Baseline. |
+
+### D2. The honest crux — *fit ≠ synthesize-well*
+A model accepting 1M tokens is not the same as one that **synthesizes** well across 1M tokens. Two failure modes the eval must probe, not assume away:
+- **Depth:** does it produce the multi-level cross-corpus connections Pass 2 exists for, or shallow summary? (Scout is the high-risk case.)
+- **Lost-in-the-middle:** long-context models degrade on detail buried mid-context. Advertised window ≠ usable fidelity at that window.
+
+### D3. Method
+- Use `scripts/fresh-synthesis.py --model <X>` (purpose-built: "benchmark new long-context models against the corpus," per its docstring) against the **current full corpus** — no daemon, no markers.
+- Run each candidate; capture the synthesis log + cost + latency + whether it completed the agentic tool loop.
+- **Quality judging:** independent-model rating (a *different* vendor than the candidate, to avoid self-grading) + Brian spot-check, scored against the last good DeepSeek synthesis (`logs/v4-synthesis-2026-05-21-3edb643.md`) as baseline, on: depth of cross-corpus connections, factual correctness, evidence-tier discipline, hallucination rate.
+- **Lost-in-the-middle probe:** confirm each candidate's synthesis references findings from pages located in the *middle* of the corpus ordering, not just head/tail.
+
+### D4. Decision output
+- Pick Pass-2 **primary + a different-vendor fallback** (preserve the heterogeneity guard — CLAUDE.md §"Multi-model synthesis as guard against epistemic homogenization"; don't collapse to a single vendor).
+- Feed the chosen caps into **C1** (`CONTEXT_WINDOW_TOKENS`).
+- **If a big-context model wins, §A5's hard ≤850K *fit* gate relaxes to a *quality/cost* target** — A/B still done (redundant corpus = worse synthesis + higher per-token cost even inside a 10M window), but without merge-blocking urgency.
+
+### D5. Cost
+~$5–15 total for the eval runs (a few full-corpus syntheses). Negligible.
+
+---
+
 ## 5. Execution plan
 
 1. **Single branch:** `corpus-unblock-propagate-by-link` (already created).
 2. **Order of work:**
-   - **C first** (guard hardening) — so that if any later step still leaves the corpus too big, the daemon fails *loudly and pre-flight* instead of burning 21 min + 4 retries. Cheap insurance for the rest of the work.
+   - **D first (model eval)** — it gates everything: if a 10M/2M model passes the quality bar, the §A5 hard fit-gate relaxes and the whole batch loses its time pressure. Highest information per dollar (~$5–15), so run it before committing to the aggressive trim targets.
+   - **C next** (guard hardening) — so that if any later step still leaves the corpus too big, the daemon fails *loudly and pre-flight* instead of burning 21 min + 4 retries. Cheap insurance.
    - **B next** (rewrite Pass-1 prompt) — so the dedup in A demonstrates the target end-state and we don't immediately re-pollute.
    - **A2 per-page audits** (subagent reads) → then A1+A2 trims, A3 archive, A4 contradiction fixes.
    - Re-run the token-count + provenance scans locally to confirm §4.5 / §A5 target met **before** any push.
@@ -229,9 +262,10 @@ Make the pre-flight gate (line ~653) compare `estimated_corpus + reserved_output
 2. **B3 guardrail:** enforce propagate-by-link in code (blocking lint in `sweep-1-propagate.py`) or rely on the prompt brief alone? (Proposed: prompt brief now; advisory log-only lint; revisit blocking later.)
 3. **A2 aggressiveness:** how hard to trim the next-tier derivative pages — to a strict 1-line-recap, or allow a short paragraph where it aids readability? (Proposed: short recap allowed, ≤3 sentences.)
 4. **Canonical-owner ties:** for concepts with two plausible canonical homes (e.g., uricase exposition split across `uricase.md` / `engineered-yeast-uricase-proposal.md` / `crispr-uricase.md`), who owns what? Needs a one-time ownership map (could be a small table in this spec after A2 audits).
-5. **GRAPH retirement (Codex #5):** keep + fix the path (option a), or retire graph-maintenance entirely (option b — reviewer-recommended, Brian reportedly never uses it)? Affects `CLAUDE.md`, `sweep-prompt-1`, `index.md`, `README.md`. **Needs Brian's ruling.** (Proposed: b.)
-6. **C1 approach:** hard-code corrected route caps, or add a live model-cap probe? (Proposed: hard-code now — simplest, no extra API call per run — and note the probe as a later robustness upgrade.)
-7. **DeepSeek-primary headroom:** if the reductions land low (~68K) and full-request stays ~873K corpus → ~963K request (over DeepSeek's 1.0M but under Gemini's 1.048M), is "succeeds via Gemini fallback, primary always overflows" acceptable for now, or is getting under the DeepSeek primary a hard requirement? (Proposed: acceptable short-term with a flag; B should bend the growth curve regardless.)
+5. ~~**GRAPH retirement**~~ — **DECIDED 2026-05-29: retire** (Brian). See B3.
+6. **C1 approach:** hard-code corrected route caps, or add a live model-cap probe? (Proposed: hard-code now — simplest, no extra API call per run — and note the probe as a later robustness upgrade. Will fold the Workstream-D winner's cap in here.)
+7. **DeepSeek-primary headroom:** *largely superseded by Workstream D.* If the eval picks a 2M/10M model, this is moot (huge headroom). If we stay on DeepSeek/Gemini and reductions land low, is "succeeds via Gemini fallback, primary overflows" acceptable short-term? (Proposed: acceptable with a flag; resolve via D.)
+8. **Eval timing:** run Workstream D **now** (before finalizing the rest of the build, since it reorders priorities), or fold into the post-alignment build phase? (Brian to confirm — see closing question.)
 
 ---
 
@@ -310,3 +344,13 @@ All 7 findings verified and incorporated. Two code claims (#2, #3) were checked 
 7. **Provenance scan reproducibility** → the three scan scripts (`provenance_scan.py`, `dup_scan.py`, `overlap_scan.py`) committed under `operations/.../scripts/`; §9 placeholders replaced with real paths.
 
 New decisions surfaced for Brian: Open Q #5 (GRAPH retire — needs ruling), #6 (cap-fix vs probe), #7 (is Gemini-fallback-only acceptable if reductions land low). Scope grew by one workstream (C, daemon-guard hardening); still no sharding, no synthesis-design or routing changes.
+
+---
+
+### 2026-05-29 — Brian rulings (round 1)
+
+1. **GRAPH → retire** (Open Q #5 decided). B3 + acceptance updated; removes graph-maintenance from Pass-1 prompt, `CLAUDE.md`, `index.md`, `README.md`; `wiki/etc/GRAPH.md` frozen as archived artifact.
+2. **Model eval is now in scope → Workstream D added (§4c).** Brian wants to eval `x-ai/grok-4.20` (2M, confirmed via OpenRouter screenshot) and `meta-llama/llama-4-scout` (**10M context, $0.08/$0.30 in/out — ~16× cheaper input than DeepSeek**). Reframes the whole effort: a large-context model could be the cheapest unblock (one-constant change), relaxing §A5's hard fit-gate. Eval-gated (fit ≠ synthesize-well; depth + lost-in-the-middle must be probed), keeps a different-vendor fallback per the heterogeneity guard.
+3. Sequencing changed: **D runs first** (gates priorities). §2 model-routing non-goal updated to "eval in scope, blind switch still out."
+
+Remaining open Qs default unless Brian overrides: #1 (archive closed §3.X only), #2 (prompt-brief + advisory lint), #3 (≤3-sentence recaps), #4 (owner-map after A2), #6 (hard-code caps + fold D winner), #7 (superseded by D). New #8: run D now vs in build phase — awaiting Brian.
