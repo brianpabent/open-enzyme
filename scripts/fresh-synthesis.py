@@ -112,8 +112,11 @@ EXCLUDE = {
     "wiki/references.md",
     "wiki/ai-bio-tools-playbook.md",
 }
+# Includes synthesis/queue/*.md so the prompt's "queue is included" claim is
+# truthful and the model can do a real differential vs the daemon's last output.
+# (Codex round-2 #2: the prompt claimed queue inclusion the code didn't deliver.)
 wiki_files = [p for p in sorted(
-    glob.glob("wiki/*.md") + glob.glob("wiki/hypotheses/*.md")
+    glob.glob("wiki/*.md") + glob.glob("wiki/hypotheses/*.md") + glob.glob("synthesis/queue/*.md")
 ) if p not in EXCLUDE]
 corpus_parts = []
 for path in wiki_files:

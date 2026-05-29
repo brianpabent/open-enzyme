@@ -3,8 +3,8 @@
 **Date:** 2026-05-29
 **Branch:** `corpus-unblock-propagate-by-link`
 **Author:** Brian + Claude (Opus 4.8)
-**Status:** DRAFT v2 — Codex spec-review incorporated (see §10); pending Brian alignment on Open Questions §7 before implementation
-**Reviewers:** (1) external model reviews *this spec* before work begins ✓ Codex round 1 done; (2) independent model reviews *the implemented work* before merge.
+**Status:** DRAFT v4 — Codex round 2 incorporated + Workstream D eval executed (see §10, §4c). Pending Brian alignment before implementation.
+**Reviewers:** (1) external model reviews *this spec* — ✓ Codex rounds 1 & 2 done; (2) independent model reviews *the implemented work* before merge.
 
 ---
 
@@ -134,7 +134,8 @@ The gate is **not** "initial corpus < cap" — it must budget the whole request:
 - Current initial corpus: ~911K (`wiki/*.md` proxy) / ~956K (daemon's own est. incl. `wiki/hypotheses/*.md`).
 - Reduction: A1+A2 dedup (~28–33K) + A3 archive (~40–50K) = **~68–83K** → **initial corpus ~873–888K (proxy) / ~873–888K daemon-est.**
 - **Full-request projection:** ~885K corpus + ~61K agentic growth + 32K output ≈ **~978K**. That clears the **Gemini fallback (1.048M)** with ~70K headroom but is **uncomfortably close to DeepSeek primary (1.000M)** (~22K headroom).
-- **Therefore the acceptance bar is: daemon-estimated initial corpus ≤ ~850K**, giving full-request ≈ ~943K and ~57K headroom under DeepSeek primary. If A1+A2+A3 land at the high end of the reduction range (~83K) we hit this; if they land low (~68K) we are ~873K and rely on the Gemini fallback. **The merge gate (§5.4) re-measures the real `build_corpus()` output + a +90K request-overhead allowance and blocks merge if the projected request exceeds 1.000M.** If we cannot get under DeepSeek's 1.0M, the daemon still succeeds via Gemini fallback (≤1.048M) — acceptable, but flag it so the primary isn't silently always-overflowing.
+- **Correction (Codex round-2 #1):** the planned trim range does **not** reliably hit a ≤850K bar. From the daemon estimate (~956K), even the high-end ~83K reduction lands ~873K; with the ~93K request overhead (~61K agentic + 32K output) that projects **~966K full request** — clears Gemini fallback (1.048M) comfortably, clears DeepSeek primary (1.000M) only by ~34K (and *fails* it if reductions land low ~68K → ~981K). So: **the A-workstream trims reliably clear the Gemini fallback; clearing the DeepSeek primary is marginal and not guaranteed.**
+- **SUPERSEDED by the Workstream-D eval (§4c, executed 2026-05-29).** Grok 4.20 (2M window) synthesized the **current untrimmed 928K corpus** successfully. If Pass-2 primary moves to Grok, the DeepSeek-1.0M fit-gate stops being binding — the corpus has ~1M tokens of headroom *today*, and the A5 bar relaxes from a hard fit-requirement to a quality/cost target. The merge gate (§5.4) then guards the *chosen route's* cap, not DeepSeek's.
 
 ---
 
@@ -212,6 +213,26 @@ A model accepting 1M tokens is not the same as one that **synthesizes** well acr
 
 ### D5. Cost
 ~$5–15 total for the eval runs (a few full-corpus syntheses). Negligible.
+
+### D6. Eval results (EXECUTED 2026-05-29 — full writeup: `eval-results.md`)
+| Model | Ingested 928–995K corpus? | Output | Cost | Verdict |
+|---|---|---|---|---|
+| `meta-llama/llama-4-scout` (10M) | ✅ 994,599 tok | ❌ **0 output / null content** | $0.08 input *wasted* | **FAIL on default route (served by Groq); pays for input, generates nothing at ~1M input.** Advertised 10M ≠ usable. Parked as alternate-provider probe. |
+| `x-ai/grok-4.20` (2M) | ✅ 928,755 tok | ✅ 4,854 tok, structured | **$1.17** | **VIABLE Pass-2 primary.** Deep synthesis; caught a real lactoferrin-CP5b overclaim (Fu 2025 PMID 40589746 = combination formulation); lost-in-the-middle PASSED. ~1M growth headroom. |
+
+**Net:** Grok 4.20 works at the *current untrimmed* corpus — the cheapest validated unblock. Scout's cheap-huge promise did not survive the provider route.
+
+### D7. Eval limitations & required follow-up (Codex round-2 #2)
+The eval was run via `scripts/fresh-synthesis.py`, which is **single-shot, non-agentic** — so it is a **first-pass quality screen**, NOT a reproduction of the daemon's actual Pass-2 failure mode (agentic tool loop, `MAX_TOOL_ITERATIONS=20`, near-cap request growth). Two specific gaps:
+- It does **not** exercise tool support / multi-turn context accumulation — the exact dynamic that grew the failing request from 956K → 1,017K.
+- **Bug found:** `fresh-synthesis.py`'s prompt claims `synthesis/queue/` is included, but the code only globs `wiki/*.md` + `wiki/hypotheses/*.md` (no queue). So Grok's **"Differential Analysis vs the daemon" section was produced against absent content and is unreliable.** The corpus-synthesis quality signal (depth, overclaim catch, breadth) stands; the differential section does not.
+- **Required before flipping the daemon to Grok:** (1) fix the queue-inclusion mismatch in `fresh-synthesis.py` (glob `synthesis/queue/*.md` or drop the claim); (2) run a **daemon-equivalent agentic eval** through `scripts/synthesize.py` (real Pass-2 prompt + tool loop) to confirm Grok handles tool use and near-cap growth.
+
+### D8. Pass-2 routing-switch implementation surface (Codex round-2 #3)
+"One-constant change" was wrong. Switching Pass-2 primary to Grok touches a coordinated set — **and surfaces a pre-existing mislabel that must be fixed regardless:**
+- **Pre-existing bug:** the workflow already runs `deepseek/deepseek-v4-pro` for Pass 2 (`wiki-sweep.yml` line 248) but *labels everything Gemini* — step title "Gemini 2.5 Pro synthesis" (279), commit "Gemini 2.5 Pro raw synthesis" (339), and Pass-3 metadata `--synthesizer "google/gemini-2.5-pro"` (470). **The recorded synthesizer is wrong today.**
+- **Switch surface:** `synthesize.py` `DEFAULT_MODEL` + fallback `models` array + `CONTEXT_WINDOW_TOKENS` (C1) + `PRICING`; `wiki-sweep.yml` Pass-2 `--model` (248), step label (279), commit message (339); Pass-3 `--synthesizer` metadata (470) + commit message (484); any downstream log/review-prompt model-name assumptions. Make the synthesizer name a single workflow variable so it can't drift again.
+- Preserve the heterogeneity guard: Grok primary + a **different-vendor** fallback (Gemini now; DeepSeek re-added once A/B trim under its 1.0M cap).
 
 ---
 
@@ -354,3 +375,31 @@ New decisions surfaced for Brian: Open Q #5 (GRAPH retire — needs ruling), #6 
 3. Sequencing changed: **D runs first** (gates priorities). §2 model-routing non-goal updated to "eval in scope, blind switch still out."
 
 Remaining open Qs default unless Brian overrides: #1 (archive closed §3.X only), #2 (prompt-brief + advisory lint), #3 (≤3-sentence recaps), #4 (owner-map after A2), #6 (hard-code caps + fold D winner), #7 (superseded by D). New #8: run D now vs in build phase — awaiting Brian.
+
+---
+
+### 2026-05-29 — Codex re-review of v3
+
+**Reviewer:** Codex (GPT-5)
+
+**Status:** v3 is substantially stronger, but three implementation risks remain before build.
+
+1. **A5 token math still overstates whether A1+A2+A3 can satisfy the DeepSeek-primary gate.** Starting from the daemon estimate (`~956K`), even the high-end planned reduction (`~83K`) lands around `~873K`, not the stated `≤850K` bar. With the spec's own full-request overhead (`~61K` agentic growth + `32K` output = `~93K`), that projects `~966K` full request, not `~943K`. The gate concept is correct; the prose should say the current trim range likely clears Gemini fallback and may clear DeepSeek only with additional reduction or a Workstream-D route change.
+
+2. **Workstream D's proposed `fresh-synthesis.py` eval is not representative of daemon Pass 2.** The spec says to capture whether each candidate completes the "agentic tool loop," but `scripts/fresh-synthesis.py` currently makes a single non-tool chat request. It also tells the model `synthesis/queue/` is included, while the code only globs `wiki/*.md` + `wiki/hypotheses/*.md` (no queue content). This means the Grok/Scout eval can test large-context full-corpus synthesis quality, but it does **not** validate the exact daemon failure mode: near-cap agentic tool-use growth, tool support, and multi-turn context accumulation. Either adjust the spec language to call this a first-pass quality screen, or eval candidates through `scripts/synthesize.py` / a daemon-equivalent harness.
+
+3. **"One-constant change" understates a Pass-2 model-routing switch.** If Workstream D selects Grok or Scout, implementation needs more than adding the cap: update `DEFAULT_MODEL`, `FALLBACK_MODELS`, pricing/caps, workflow labels/commit messages, Pass-3 emitter metadata (`--synthesizer` is currently hard-coded as Gemini in `.github/workflows/wiki-sweep.yml`), and any model-name assumptions in downstream logs/review prompts. Otherwise the daemon may run the new model while recording the old synthesizer.
+
+---
+
+### 2026-05-29 — Disposition of Codex round 2 + eval outcome (Claude, Opus 4.8)
+
+All 3 round-2 findings verified (both code claims confirmed against source) and incorporated:
+
+1. **A5 math overstated DeepSeek clearance** → §A5 corrected: trims reliably clear the Gemini fallback, clear the DeepSeek primary only marginally (and not if reductions land low). **Then superseded by the eval:** Grok 4.20 synthesizes the *current untrimmed* 928K corpus, so the DeepSeek fit-gate stops being binding if Pass-2 moves to Grok.
+2. **fresh-synthesis.py not daemon-representative** → §D7 added: eval relabeled a *first-pass quality screen*; the single-shot tool-less run doesn't exercise the agentic near-cap growth that is the real failure mode. **Confirmed bug:** the prompt claims `synthesis/queue/` is included but the code globs only `wiki/*.md` + `hypotheses/` — so the Grok "differential vs daemon" section is unreliable (corpus-quality signal stands). Required follow-ups: fix the queue mismatch + run a daemon-equivalent agentic eval via `synthesize.py` before flipping the daemon.
+3. **Routing switch is multi-surface** → §D8 added enumerating the full surface; **surfaced a pre-existing mislabel** — Pass 2 already runs DeepSeek but the workflow labels/commits/`--synthesizer` metadata all say Gemini (lines 248 vs 279/339/470). Must fix regardless of the switch; recommend a single workflow variable for the synthesizer name.
+
+Code fix applied now (D7 item 1): `fresh-synthesis.py` now globs `synthesis/queue/*.md` so its prompt claim is truthful.
+
+**Eval outcome (§D6):** Grok 4.20 = viable Pass-2 primary ($1.17/run, works at current corpus, lost-in-the-middle passed, caught a real overclaim). Llama 4 Scout = fails on the default Groq route (ingests, charges, returns nothing). Strategy shift: **Grok-primary is the lead unblock path; A/B/C become quality/cost/durability** rather than emergency surgery — pending the daemon-equivalent agentic confirmation in D7.
