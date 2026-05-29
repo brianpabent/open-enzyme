@@ -61,6 +61,18 @@ PRICING_USD_PER_MTOK = {
     "anthropic/claude-3-opus":    (15.00, 75.00),
     "google/gemini-2.5-pro":      (1.25, 5.00),
     "openai/gpt-5":               (2.50, 10.00),
+    "x-ai/grok-4.20":             (1.25, 2.50),
+    "meta-llama/llama-4-scout":   (0.08, 0.30),
+}
+
+# Context-window caps (total request budget) per model, for the pre-call
+# overflow guard. Large-context models (Scout 10M, Grok 2M) make the old hard
+# 900K guard obsolete — gate against the actual route cap instead.
+CONTEXT_CAP_TOKENS = {
+    "deepseek/deepseek-v4-pro":   1_000_000,
+    "google/gemini-2.5-pro":      1_048_576,   # live OpenRouter route (not 2M)
+    "x-ai/grok-4.20":             2_000_000,
+    "meta-llama/llama-4-scout":  10_000_000,
 }
 
 # --- Argparse -------------------------------------------------------------------
@@ -177,9 +189,14 @@ prompt_token_estimate = prompt_chars // 4
 print(f"Corpus: {len(wiki_files)} files, {corpus_chars:,} chars, ~{corpus_token_estimate:,} tokens (estimate)")
 print(f"Total prompt: {prompt_chars:,} chars, ~{prompt_token_estimate:,} tokens (estimate)")
 
-# Sanity check — V4-Pro context is 1,048,576 tokens
-if prompt_token_estimate > 900_000:
-    sys.exit(f"Prompt estimate {prompt_token_estimate:,} tokens — too close to 1M ceiling. Trim corpus.")
+# Model-aware overflow guard: gate against the chosen model's actual context cap
+# (request = prompt + reserved output), with a 20K safety margin.
+_cap = CONTEXT_CAP_TOKENS.get(args.model, 1_000_000)
+if prompt_token_estimate + args.max_tokens > _cap - 20_000:
+    sys.exit(
+        f"Prompt estimate {prompt_token_estimate:,} + {args.max_tokens:,} output "
+        f"exceeds {args.model} cap {_cap:,} (20K margin). Trim corpus or pick a larger-context model."
+    )
 
 # --- Call OpenRouter via curl (avoids Python's macOS SSL cert quirk) -----------
 print(f"\nCalling {args.model} via OpenRouter ...")
