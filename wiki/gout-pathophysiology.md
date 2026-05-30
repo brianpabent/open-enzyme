@@ -152,7 +152,7 @@ But here's the thing: **crystallization isn't immediate or inevitable.** Many pe
 
 - **Temperature:** Cooler joints like the big toe crystallize first (why gout often starts in the foot)
 - **pH:** Lower pH favors crystallization
-- **Mechanical stress:** Trauma or movement increases risk
+- **Mechanical stress:** Trauma or movement increases risk. See [`mechanical-flare-triggers.md`](./mechanical-flare-triggers.md) for the five-mechanism research-gap page and the Li XD 2012 n=1,713 Qingdao cohort data on exertion/fatigue as trigger axis. (source: mechanical-flare-triggers.md)
 - **Nucleation sites:** Existing crystals seed new crystal growth
 
 **Open question — what triggers deposited crystal beds to flare?** The five-mechanism research-gap page at [`mechanical-flare-triggers.md`](./mechanical-flare-triggers.md) maps what's known and unknown about the mechanical-use / exertion / fatigue axis as a flare trigger. Empirically, 劳累 (fatigue/overwork) at 19.3% in the Li XD 2012 Qingdao n=1,713 cohort far exceeds 外伤 (trauma) at 0.35% — suggesting metabolic-overload over mechanical-shedding. The gap in trigger-attribution methodology and four testable experimental designs are documented there. (source: mechanical-flare-triggers.md)

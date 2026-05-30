@@ -60,6 +60,7 @@ nav:
     - Cross-Validation: cross-validation.md
     - Open Source Platform: etc/open-source-platform.md
     - Chassis-Pending Interventions: chassis-pending-interventions.md
+    - Duckweed Aquatic-Sibling Chassis: duckweed-aquatic-chassis.md
     - Team: etc/team.md
 
   - Gout & Uricase:
@@ -184,6 +185,7 @@ nav:
     - IA Uricase H₂O₂ Reaction-Diffusion (comp-035): intra-articular-uricase-h2o2-reaction-diffusion-computational.md
     - Combined CP0 Systems Model (comp-029): combined-cp0-systems-model-computational.md
     - C1-INH Protease Stability + Glycosylation in EcN (comp-037): c1-inh-protease-stability-ecn-computational.md
+    - CFH-Dependence Mechanism-Dissociation of CP0 Candidates (comp-039): cfh-mechanism-dissociation-cp0-candidates-computational.md
     - TCM Gout Compound Triage (comp-013): tcm-gout-compound-triage-computational.md
     - Medicinal Mushroom Compound Mapping (comp-014): medicinal-mushroom-compound-mapping-computational.md
     - Tier 2 Butyrate Assay Audit (comp-038): tier-2-butyrate-assay-audit-computational.md
