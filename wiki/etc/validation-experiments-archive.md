@@ -224,7 +224,7 @@ sources: [validation-experiments.md]
 
 **Status**: Proposed | **Cost**: $150–300 | **Weeks**: 12 | **Phase**: 3
 
-**Affected wiki**: [self-experiment-protocol](../self-experiment-protocol.md), [nlrp3-exploit-map](../nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](../nlrp3-inhibitor-screen.md), [synthesis/](../synthesis/README.md)
+**Affected wiki**: [self-experiment-protocol](../self-experiment-protocol.md), [nlrp3-exploit-map](../nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](../nlrp3-inhibitor-screen.md), [synthesis/](../../synthesis/README.md)
 
 **What it tests:** Does the current supplement stack suppress 5-LOX/LTB4 activity in vivo in Brian specifically? This directly validates quercetin's CP6a mechanism (5-LOX IC50 = 300 nM from ChEMBL, now the stack's most potent curated 5-LOX activity) as the operative mechanism — rather than its weaker NF-κB/NLRP3 effects that currently dominate the stack rationale.
 
@@ -372,7 +372,7 @@ sources: [validation-experiments.md]
 
 **Status**: Proposed | **Cost**: ~$50 | **Weeks**: 0.1 per run (single 2-hour session); ~4 wk gap between baseline and post-intervention | **Phase**: 3
 
-**Affected wiki**: [fructose-connection](../fructose-connection.md), [self-experiment-protocol](../self-experiment-protocol.md), [synthesis/](../synthesis/README.md), [open-enzyme-vision](./open-enzyme-vision.md)
+**Affected wiki**: [fructose-connection](../fructose-connection.md), [self-experiment-protocol](../self-experiment-protocol.md), [synthesis/](../../synthesis/README.md), [open-enzyme-vision](./open-enzyme-vision.md)
 
 **What it tests:** Whether engineered uricase is active in the gut in real-time, using a fructose bolus as a predictable acute UA challenge. Per [fructose-connection.md](../fructose-connection.md), oral fructose loads generate a serum UA spike within 60–120 min via the unregulated KHK pathway. A blunted post-fructose UA spike after starting koji therapy directly validates uricase action in the gut — without waiting weeks for baseline UA to drift on chronic monitoring.
 
@@ -404,7 +404,7 @@ sources: [validation-experiments.md]
 - Hydration status confounds UA: standardize water intake (e.g., 500 mL on waking, no other fluids during the 2-hour window).
 - Recent flares within 4 weeks change baseline UA dynamics — defer until 4+ weeks post-flare.
 
-**Cross-references:** [synthesis/](../synthesis/README.md) 2026-04-27 Proposed Experiment #1; [fructose-connection.md](../fructose-connection.md); [self-experiment-protocol.md](../self-experiment-protocol.md).
+**Cross-references:** [synthesis/](../../synthesis/README.md) 2026-04-27 Proposed Experiment #1; [fructose-connection.md](../fructose-connection.md); [self-experiment-protocol.md](../self-experiment-protocol.md).
 
 ---
 
@@ -412,13 +412,13 @@ sources: [validation-experiments.md]
 
 **Status**: Proposed | **Cost**: ~$50–80 per run (UASure strips + urinary urate/Cr) | **Weeks**: 0.25 per run (~6h observation + 72h flare-log); n=several runs over months | **Phase**: 3
 
-**Affected wiki**: [mechanical-flare-triggers](../mechanical-flare-triggers.md), [self-experiment-protocol](../self-experiment-protocol.md), [fructose-connection](../fructose-connection.md), [synthesis/](../synthesis/README.md)
+**Affected wiki**: [mechanical-flare-triggers](../mechanical-flare-triggers.md), [self-experiment-protocol](../self-experiment-protocol.md), [fructose-connection](../fructose-connection.md), [synthesis/](../../synthesis/README.md)
 
 **What it tests:** Whether exertion/fatigue triggers Brian's flares via **metabolic-overload** (mechanism #5 in [`mechanical-flare-triggers.md`](../mechanical-flare-triggers.md) — sustained exertion → impaired urate clearance → transient supersaturation) or via the **mechanical mechanisms** (#1–4: shedding / mechanotransduction / DAMP / effusion). This is the cheapest n=1 protocol that empirically discriminates between the two classes of explanation for the single most common non-dietary flare trigger in the Li XD 2012 Qingdao n=1,713 cohort (劳累 / fatigue-overwork at **19.3%** of self-reported flare triggers — #3 after high-purine diet and alcohol, and more common than cold + emotion + trauma combined).
 
 **Distinct from §3.10 (NOT a replacement):** §3.10 fructose challenge tests acute uricase efficacy via the PRPS / XO → urate pathway (sugar bolus → UA spike → does the spike blunt after koji therapy starts). §3.11 exertion challenge tests whether physical exertion triggers flares via the metabolic-overload or mechanical route. Different questions; complementary; run both. Pass 2 originally proposed replacing §3.10 with §3.11 based on a hallucinated premise (assumed Brian was on allopurinol — he isn't); both probes test independent mechanisms and have independent value.
 
-**Proposed in:** [`synthesis/`](../synthesis/README.md) 2026-05-20 Connection 1 + Experiment 1 + Open Question 2 + Priority Action 2 (sweep on commit `6437cb4`). Walkthrough 2026-05-21 narrowed Pass 2's two-phase ± colchicine-cover design to single-phase based on Brian's medication access (Brian has never been on colchicine — Pass 2 hallucinated this premise from `validation-experiments.md` §3.7's incorrect "colchicine-era baseline" language, since corrected). Colchicine cover deferred as future variant (see "Deferred extensions" below).
+**Proposed in:** [`synthesis/`](../../synthesis/README.md) 2026-05-20 Connection 1 + Experiment 1 + Open Question 2 + Priority Action 2 (sweep on commit `6437cb4`). Walkthrough 2026-05-21 narrowed Pass 2's two-phase ± colchicine-cover design to single-phase based on Brian's medication access (Brian has never been on colchicine — Pass 2 hallucinated this premise from `validation-experiments.md` §3.7's incorrect "colchicine-era baseline" language, since corrected). Colchicine cover deferred as future variant (see "Deferred extensions" below).
 
 **Protocol — single-phase mechanism discrimination:**
 

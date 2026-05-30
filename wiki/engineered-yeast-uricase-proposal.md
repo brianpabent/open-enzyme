@@ -83,6 +83,7 @@ Perhaps most directly relevant to this proposal: a team systematically engineere
 > **Key finding**
 >
 > Three independent groups — using three different organisms (*C. utilis* enzyme alone, engineered *E. coli*, engineered *S. boulardii*) — have demonstrated that degrading uric acid in the gut lumen can reduce systemic urate levels. The mechanism is validated. The engineering details are what need optimization.
+<a id="why-yeast"></a>
 2. Why *Saccharomyces cerevisiae*
 GRAS Status and Genetic Tractability Established
 *S. cerevisiae* holds "Generally Recognized as Safe" (GRAS) status from the FDA. It is the most genetically tractable eukaryotic organism on the planet, with decades of tool development for heterologous protein expression. There are well-established expression platforms, extensive libraries of characterized promoters, and multiple selectable marker systems.
@@ -103,7 +104,7 @@ Secretion (using signal peptides like the α-mating factor prepro sequence) woul
 **Cost:** ~$500–1,000 (gene synthesis + basic reagents)
 **Time:** 2–3 weeks (including transformation and assays)
 **Who:** Any molecular biology lab with yeast experience
-## 3. Gene Construct Design
+## 3. Gene Construct Design <a id="construct"></a>
 ### Source Gene Selection
 Several uricase genes have been expressed recombinantly. Here is an honest comparison:
 | Source | Expression in Yeast | Specific Activity | Key Properties | Notes |
@@ -130,7 +131,7 @@ The hybrid GAL7/ADH2 promoter used in the original rasburicase work is inducible
 ### Selectable Markers and Integration
 For lab-stage work, standard auxotrophic markers (URA3, LEU2, HIS3) or dominant markers (kanMX, conferring G418 resistance) are all appropriate. For a food product, the final construct should ideally be marker-free or use only food-safe markers. CRISPR/Cas9-based integration can achieve markerless insertion, which is important for eventual regulatory considerations.
 The 2025 *S. boulardii* work identified specific high-expression chromosomal integration loci in that strain,[[11]](#ref11) which would be directly applicable since *S. boulardii* is genomically a *S. cerevisiae* variant.
-## 4. Delivery Formats — Honest Assessment
+## 4. Delivery Formats — Honest Assessment <a id="delivery"></a>
 Not all formats are created equal. For each, I've tried to be honest about whether therapeutically meaningful uricase delivery is realistic.
 ### a. Beer
 > **The elephant in the room**
@@ -178,7 +179,7 @@ Therapeutic credibility:  Moderate-High (proven concept, processing questions)
 Use both engineered *A. oryzae* (koji) and engineered *S. cerevisiae* in a sequential fermentation: koji produces amylases + uricase during the saccharification stage, then yeast continues uricase production during the alcoholic (or non-alcoholic) fermentation. Two organisms, potentially two different uricase genes, producing enzyme across both fermentation stages.
 This is the most complex format but also the most interesting for a food product — amazake is a traditional Japanese fermented rice beverage with existing consumer acceptance. See §8 for more on the koji track.
 Therapeutic credibility:  Moderate (interesting but adds complexity)
-## 5. The Dosing Question
+## 5. The Dosing Question <a id="dosing"></a>
 What Activity Level Is Needed? Open
 This is the central feasibility question. Let me lay out the reasoning quantitatively, while being transparent about the assumptions.
 **The uric acid budget:** A typical adult produces ~600–900 mg of uric acid per day. Roughly 200–300 mg is eliminated via the intestine. For a gout patient with serum urate of ~9 mg/dL (a common level on no therapy), reducing this to below 6 mg/dL (the therapeutic target) requires eliminating roughly 200–400 mg of additional uric acid per day — the amount that would otherwise accumulate.
@@ -229,7 +230,7 @@ The synthesis queue entry ran the same calculation with slightly different inter
 
 **Bottom line.** Yeast intracellular expression is scientifically sound but mass-impractical as a daily food product. Koji is dose-advantaged on scaling grounds and probably the right primary platform for oral delivery. This is consistent with the koji-first framing already adopted in [open-enzyme-vision.md](./etc/open-enzyme-vision.md) §3, and the yeast track is best understood as: (a) a rapid bench platform for construct validation, (b) a path to a concentrated powder/capsule product for the subset of patients who can't tolerate koji, or (c) the *S. boulardii* probiotic route where the dose is set by colonization, not by food mass.
 
-## 6. Open Scientific Questions
+## 6. Open Scientific Questions <a id="questions"></a>
 These are framed as questions for specific experts, but each one includes a path to an answer.
 ### For Role 1 — Gut Microbiome / Gnotobiotic Models *(actively recruiting)*
 > **Q1: Colonization vs. transit for engineered S. boulardii**
