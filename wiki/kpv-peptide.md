@@ -74,7 +74,7 @@ Approximately one-third of uric acid excretion happens through the gut. If KPV r
 
 **(Source: peptide-gout-addendum.md)** — "Zero peptides on this list have been tested in a human clinical trial for gout. All claims are based on animal models and mechanistic extrapolation from shared inflammatory pathways."
 
-However, the pharmaceutical industry's validation of the target is notable: dapansutrile (direct NLRP3 inhibitor) and firsekibart (anti-IL-1β antibody) are both in Phase 3 trials specifically for gout, suggesting the NLRP3 inflammasome is indeed the correct target.
+However, the pharmaceutical industry's validation of the target is notable: dapansutrile (direct NLRP3 inhibitor) completed a Phase 2a proof-of-concept trial in gout (PMID 33005902) and firsekibart (anti-IL-1β antibody) has been tested in gout, suggesting the NLRP3 inflammasome is indeed the correct target.
 
 ## Comparison to Other Peptides
 

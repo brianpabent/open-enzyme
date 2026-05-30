@@ -83,7 +83,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 - **[Gut-Lumen Sink](wiki/gut-lumen-sink.md)** — ABCG2 pathway; ~1/3 of UA excretion; the insight that systemic absorption isn't needed; ALLN-346, PULSE probiotic
 - **[ABCG2 Modulators](wiki/abcg2-modulators.md)** — Pharmacological levers on the gut urate sink: PPARγ-mediated induction via butyrate (DASH RCT shows 0.25–0.73 mg/dL UA reduction); HDAC-inhibitor rescue of the Q141K polymorphism (the #1 gout-causing ABCG2 variant); the supplement-stack contradiction (curcumin/quercetin/EGCG as functional inhibitors); CKD failure caveat
-- **[Blood Barrier](wiki/blood-barrier.md)** — Every delivery route evaluated; why systemic delivery is hard; why gut-lumen wins
+- **[Blood Barrier](wiki/blood-barrier.md)** — Framing/decision layer: why gut-lumen delivery wins, when systemic matters, oral tolerance
 
 ## Gene Therapy
 
@@ -194,7 +194,7 @@ These are the long-form research documents that the shorter concept pages above 
 - **[Engineered Yeast Uricase Proposal](wiki/engineered-yeast-uricase-proposal.md)** — *S. cerevisiae* uricase engineering
 - **[Engineered Koji Protocol](wiki/engineered-koji-protocol.md)** — *A. oryzae* multi-enzyme fermentation
 - **[NLRP3 Exploit Map](wiki/nlrp3-exploit-map.md)** — NLRP3 inhibition strategies (oridonin, disulfiram, peptides)
-- **[Blood Barrier Exploits](wiki/blood-barrier-exploits.md)** — Intestinal barrier biology and optimization
+- **[Blood Barrier Exploits](wiki/blood-barrier-exploits.md)** — Canonical 14-route catalog: every delivery route evaluated, barrier biology + optimization
 - **[AI Bio Tools Playbook](wiki/etc/ai-bio-tools-playbook.md)** — Computational strain design, optimization, and tool access (includes Codex Life Sciences plugin setup and Hugging Science triage for open datasets/models)
 - **[Ginkgo Cloud Lab Evaluation](wiki/ginkgo-cloud-lab-evaluation.md)** — Wet-lab partner evaluation. EstiMate sales-bot probe (2026-05-12) surfaced $39/protein cell-free expression validation + $24/sample 96-construct strain-engineering quote. Cell-free is a real fail-fast pre-gate for uricase (E. coli-lysate-compatible fold); weak for DAF/CD55 SCR1-4 (glycoprotein, disulfide-rich). Strain-engineering quote treated as lead-magnet teaser pending real service request. Complements the community-college / grad-student path (different gates).
 - **[Peptide Gout Addendum](wiki/peptide-gout-addendum.md)** — BPC-157, KPV, immunomodulatory peptides

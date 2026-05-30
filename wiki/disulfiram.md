@@ -85,7 +85,7 @@ This is the most cost-effective intervention in the entire gout pharmacopeia:
 | **Colchicine** | Microtubule/inflammasome | ~$120–250 |
 | **Allopurinol** | Xanthine oxidase inhibitor | ~$12–50 |
 | **Pegloticase (IV)** | Recombinant uricase | ~$100,000+ per course |
-| **Dapansutrile** (Phase 3) | NLRP3 inhibitor | Unknown (likely $200–500/month) |
+| **Dapansutrile** (Phase 2a, gout) | NLRP3 inhibitor | Unknown (likely $200–500/month) |
 | **Canakinumab** | Anti-IL-1β monoclonal | ~$300,000/year (uninsured) |
 
 Disulfiram is not only effective but **extraordinarily affordable**, placing it in the same price tier as current standard-of-care flare prevention.
@@ -152,7 +152,7 @@ Disulfiram requires a prescription. Access strategies:
 | **Disulfiram** | 6b (GSDMD pore) | Approved (Rx) | Widely available | ~$30/month | 70+ years |
 | **Zileuton** | 6a (5-LOX/LTB4) | Approved (Rx, asthma) | Available; off-label in gout | ~$50/month generic | 30+ years (asthma) |
 | **DMF** | 6b (GSDMD) | Approved (MS) | Requires MS diagnosis | High | 15+ years (MS) |
-| **Dapansutrile** | 2 (NLRP3) | Phase 3 clinical | Investigational | Unknown | <5 years |
+| **Dapansutrile** | 2 (NLRP3) | Phase 2a (gout, completed) | Investigational | Unknown | <5 years |
 | **Oridonin** | 1, 2 | Natural/research | Preclinical | ~$30/month | Unknown human data |
 | **Colchicine** | 3 (ASC/microtubule) | Approved (Rx) | Standard of care | ~$20/month | 50+ years |
 
@@ -180,7 +180,7 @@ Disulfiram provides a simple, affordable, well-tolerated entry point to the NLRP
 - [[nlrp3-inflammasome|NLRP3 Inflammasome]] — The general pathway
 - [[gasdermin-d|Gasdermin D]] — The specific target
 - [[gout|Gout Flare Cascade]] — The disease mechanism
-- [[dapansutrile|Dapansutrile (OLT1177)]] — The Phase 3 NLRP3 inhibitor
+- [[dapansutrile|Dapansutrile (OLT1177)]] — NLRP3 inhibitor; Phase 2a completed in gout (PMID 33005902)
 
 ## Key Insight
 
