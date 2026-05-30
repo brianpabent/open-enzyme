@@ -26,7 +26,7 @@ date: 2026-04-25
 description: One-line summary of what triggered the propagation.
 before_sha: <full SHA where the trigger file has landed but propagation has not>
 trigger_files: wiki/foo.md, wiki/bar.md
-expected_targets: wiki/baz.md, wiki/qux.md, wiki/GRAPH.md
+expected_targets: wiki/baz.md, wiki/qux.md
 golden_diff_sha: <full SHA of the actual production propagation commit>
 ---
 ```

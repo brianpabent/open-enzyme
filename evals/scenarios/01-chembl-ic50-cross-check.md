@@ -4,7 +4,7 @@ date: 2026-04-25
 description: ChEMBL IC50 cross-check appendix on the inhibitor-screen page should propagate two-tier potency framing, species-gap caveats, and pathway-modulator vs direct-inhibitor distinctions across the rest of the wiki.
 before_sha: c55ec09331283079fde836a65a02c8c0b9993c35
 trigger_files: wiki/nlrp3-inhibitor-screen.md
-expected_targets: wiki/oridonin.md, wiki/nlrp3-exploit-map.md, wiki/nlrp3-inflammasome.md, wiki/supplements-stack.md, wiki/cannabinoids-terpenes.md, wiki/gout-clinical-pipeline.md, wiki/GRAPH.md
+expected_targets: wiki/oridonin.md, wiki/nlrp3-exploit-map.md, wiki/nlrp3-inflammasome.md, wiki/supplements-stack.md, wiki/cannabinoids-terpenes.md, wiki/gout-clinical-pipeline.md
 golden_diff_sha: 9d09dcbad8992fbd1416f4034e86302001d80f7b
 ---
 
@@ -32,5 +32,4 @@ ranking tables (`supplements-stack.md`, `nlrp3-inhibitor-screen.md` itself
 is already the source — should not be re-edited), the related compound
 class page (`cannabinoids-terpenes.md` for beta-caryophyllene), the
 clinical pipeline page (`gout-clinical-pipeline.md` for the dapansutrile
-caveat), and the graph (`GRAPH.md` to reflect two-tier labeling). It
-should NOT touch `wiki/synthesis.md` (Pass 2's job).
+caveat). It should NOT touch `wiki/synthesis.md` (Pass 2's job).
