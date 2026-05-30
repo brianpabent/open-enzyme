@@ -457,16 +457,25 @@ jobs:
           # The reviewer also has on-demand Read tool access for files
           # neither set covers (see scripts/sweep-3-review.py).
           REVIEWS_FILE="$(mktemp --suffix=.txt)"
-          python3 scripts/sweep-3-review.py \
-            --synthesis-log "$SYNTHESIS_LOG" \
-            --commit-sha "${{ github.sha }}" \
-            --diff-base "$DIFF_BASE" \
-            --trigger-files "$TRIGGER_FILES" \
-            --cited-files "$CITED_FILES" \
-            --marker-count "$ITEM_COUNT" \
-            --model "$REVIEWER_MODEL" \
-            --prompt-file "$REVIEWER_PROMPT" \
-            > "$REVIEWS_FILE"
+          if [ "${ITEM_COUNT:-0}" -eq 0 ]; then
+            # Drift-guard no-op: Pass 2 found nothing new (0 structural items).
+            # Skip the GPT-5.5 call entirely and signal the emitter to record a
+            # no-op history + advance the cursor. (No LLM dependency on the
+            # no-op path; saves a Pass-3 call on every empty sweep.)
+            echo "Pass 2 was a drift-guard no-op (0 items) — skipping GPT-5.5 review."
+            echo "NO_MARKERS" > "$REVIEWS_FILE"
+          else
+            python3 scripts/sweep-3-review.py \
+              --synthesis-log "$SYNTHESIS_LOG" \
+              --commit-sha "${{ github.sha }}" \
+              --diff-base "$DIFF_BASE" \
+              --trigger-files "$TRIGGER_FILES" \
+              --cited-files "$CITED_FILES" \
+              --marker-count "$ITEM_COUNT" \
+              --model "$REVIEWER_MODEL" \
+              --prompt-file "$REVIEWER_PROMPT" \
+              > "$REVIEWS_FILE"
+          fi
 
           # Run the per-item emitter — Pass 2 content preserved verbatim
           # --sweep-date: ISO date of the trigger commit in UTC per spec §5.1.

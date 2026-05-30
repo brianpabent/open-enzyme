@@ -511,7 +511,13 @@ def flatten_pass2_items(pass2_body: str) -> tuple[list[dict], int]:
     """
     sections = parse_pass2_sections(pass2_body)
     if not sections:
-        sys.exit("No recognized section headers in Pass 2 body. Aborting.")
+        # No recognized sections = a drift-guard NO-OP synthesis (Pass 2 found
+        # nothing new and emitted a short "No new synthesis" status instead of
+        # the standard sections). This is valid, not corrupt — return zero items.
+        # --count-items then prints 0, Pass 3 emits NO_MARKERS, and the emitter
+        # takes the no-op-history path. (Before 2026-05-30 this sys.exit'd and
+        # failed Pass 3 on every no-op sweep.)
+        return [], 0
     all_items: list[dict] = []
     global_index = 0
     headline_extraction_failures = 0
