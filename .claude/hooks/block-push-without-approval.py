@@ -27,20 +27,28 @@ treated long-running auto-mode sessions as license to push without asking,
 which violates the walk-synthesis skill's per-batch-confirmation discipline.
 This hook is the structural backstop.
 
-Authorization:
-  - Brian runs the command himself in his terminal (always works)
-  - Brian gives verbal authorization in conversation ("push", "ship it",
-    "let's push", etc.) — Claude then adds the `CLAUDE_PUSH_AUTHORIZED=1`
-    prefix on Brian's behalf. The prefix exists so Claude can pass through
-    explicit verbal authorization; it is NOT a literal string Brian has to
-    type. The honor system: Claude only adds the prefix when Brian has
-    actually authorized the push in this turn.
-  - Brian sets `CLAUDE_PUSH_AUTHORIZED=1` in his Claude Code shell
-    environment (grants session-level authorization; use sparingly)
+Authorization (in order of precedence):
+  - Already-authorized fast path → allow silently (exit 0): Brian set
+    `CLAUDE_PUSH_AUTHORIZED=1` in his shell env, OR the command carries the
+    inline prefix (e.g. Brian typed it in a terminal). Either skips the prompt.
+  - Otherwise, a daemon-firing push returns an "ask" permission decision →
+    Claude Code surfaces an APPROVAL PROMPT that Brian can approve from
+    anywhere, INCLUDING remote control. This is the fix for the 2026-05-29
+    bug: the hook previously hard-blocked (exit 2) with the prefix as the only
+    escape, but a separate auto-mode classifier rejects Claude adding that
+    prefix as a self-grant — leaving remote-control authorization with NO
+    working path. An "ask" decision is the approvable path the gate always
+    should have used. The protection is unchanged (daemon pushes still require
+    Brian's explicit OK); only the mechanism changed from un-clearable-block
+    to approve-prompt.
 
 Exit semantics (Claude Code hook convention):
-  0 → allow (command not push-class, OR doesn't fire daemon, OR authorized)
-  2 → block; stderr message is shown to Claude/user
+  - exit 0 with no output → allow (not push-class, OR doesn't fire daemon,
+    OR already-authorized via env/prefix)
+  - exit 0 with {permissionDecision: "ask"} JSON → Claude Code prompts Brian
+    to approve/deny (the remote-control-approvable gate)
+  We deliberately no longer use exit 2 (hard block) for the daemon gate — that
+  was the un-approvable path that broke remote-control authorization.
 
 See:
   - .claude/skills/walk-synthesis/SKILL.md §7.2 (push at end of batch)
@@ -174,6 +182,25 @@ def get_daemon_triggering_files() -> list[str]:
     return daemon_triggering
 
 
+def ask(reason: str) -> None:
+    """Emit a PreToolUse 'ask' permission decision and exit 0.
+
+    Claude Code surfaces this as an interactive approval prompt — which Brian
+    can approve from a terminal OR from remote control. Replaces the old
+    exit-2 hard block, whose only escape (the CLAUDE_PUSH_AUTHORIZED=1 prefix)
+    the auto-mode classifier rejects as a self-grant, leaving no
+    remote-control-approvable path (the 2026-05-29 bug).
+    """
+    print(json.dumps({
+        "hookSpecificOutput": {
+            "hookEventName": "PreToolUse",
+            "permissionDecision": "ask",
+            "permissionDecisionReason": reason,
+        }
+    }))
+    sys.exit(0)
+
+
 def main() -> None:
     try:
         payload = json.load(sys.stdin)
@@ -193,20 +220,10 @@ def main() -> None:
     if WORKFLOW_RUN_WIKI_SWEEP_RE.search(command):
         if is_authorized(command):
             sys.exit(0)
-        print(
-            f"BLOCKED: `gh workflow run wiki-sweep` always triggers the daemon\n"
-            f"(~$0.65 + ~9-12 min) and Brian wants to be present for daemon\n"
-            f"runs he didn't initiate. If Brian explicitly authorized this in\n"
-            f"conversation, re-run with the prefix on his behalf:\n"
-            f"\n"
-            f"  CLAUDE_PUSH_AUTHORIZED=1 {command}\n"
-            f"\n"
-            f"Honor system — only add the prefix when Brian actually said to\n"
-            f"fire the daemon this turn. Otherwise ask first, or use the\n"
-            f"/sweep-catchup skill which Brian invokes himself.\n",
-            file=sys.stderr,
+        ask(
+            "`gh workflow run wiki-sweep` triggers the wiki-sweep daemon "
+            "(~$0.65 + ~9-12 min). Approve to run it, or deny to cancel."
         )
-        sys.exit(2)
 
     # Check #2: git push that would fire the daemon
     if GIT_PUSH_RE.search(command):
@@ -222,36 +239,16 @@ def main() -> None:
             # I think is wiki. Other things don't really matter."
             sys.exit(0)
 
-        # Push WOULD fire the daemon. Block.
-        files_preview = "\n  ".join(triggering[:10])
-        if len(triggering) > 10:
-            files_preview += f"\n  (+{len(triggering) - 10} more)"
-        print(
-            f"BLOCKED: `git push` would fire the wiki-sweep daemon (~$0.65 +\n"
-            f"~9-12 min) because {len(triggering)} unpushed commit(s) on main\n"
-            f"touch daemon-triggering wiki paths:\n"
-            f"\n"
-            f"  {files_preview}\n"
-            f"\n"
-            f"Per the walk-synthesis skill §7.2 + the 2026-05-06 incident,\n"
-            f"Claude needs explicit authorization from Brian before firing the\n"
-            f"daemon. If Brian already said push / ship it / let's go in this\n"
-            f"turn, that IS the authorization — Claude should re-run with the\n"
-            f"`CLAUDE_PUSH_AUTHORIZED=1` prefix on Brian's behalf:\n"
-            f"\n"
-            f"  CLAUDE_PUSH_AUTHORIZED=1 {command}\n"
-            f"\n"
-            f"The prefix is the pass-through mechanism, not a literal string\n"
-            f"Brian has to type. Honor system: only add it when Brian has\n"
-            f"actually authorized the push in this turn. If Brian has NOT\n"
-            f"said to push, ask first — don't add the prefix unilaterally.\n"
-            f"\n"
-            f"Pushes touching only scripts/, operations/, .claude/, logs/, etc.\n"
-            f"are allowed without authorization — only wiki-changes-that-would-\n"
-            f"fire-the-daemon are gated.\n",
-            file=sys.stderr,
+        # Push WOULD fire the daemon. Surface an approval prompt (approvable
+        # from terminal OR remote control) rather than a hard block.
+        files_preview = ", ".join(triggering[:6])
+        if len(triggering) > 6:
+            files_preview += f" (+{len(triggering) - 6} more)"
+        ask(
+            f"This `git push` fires the wiki-sweep daemon (~$0.65 + ~9-12 min): "
+            f"{len(triggering)} unpushed commit(s) on main touch wiki/**.md "
+            f"[{files_preview}]. Approve to push + fire the daemon, or deny to hold."
         )
-        sys.exit(2)
 
     # Not a publish-class command we gate
     sys.exit(0)
