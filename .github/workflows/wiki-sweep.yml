@@ -410,16 +410,21 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Count markers in Pass 2 synthesis
+      - name: Count items in Pass 2 synthesis
         id: count
         env:
           SYNTHESIS_LOG: ${{ needs.synthesize.outputs.synthesis_log }}
         run: |
           set -euo pipefail
-          MARKER_COUNT=$(grep -c '{{PEER-REVIEW}}' "$SYNTHESIS_LOG" || true)
-          MARKER_COUNT=${MARKER_COUNT:-0}
-          echo "Found $MARKER_COUNT {{PEER-REVIEW}} markers in Pass 2 synthesis"
-          echo "marker_count=$MARKER_COUNT" >> "$GITHUB_OUTPUT"
+          # Count STRUCTURAL items, not {{PEER-REVIEW}} markers. Markers are
+          # cosmetic hints the synthesizer may drop/dup (2026-05-30: Grok emitted
+          # 9 markers for 14 items); items are identified structurally and Pass 3
+          # reviews each one in order. This is the single source of truth for the
+          # review count (synthesis-emit-files.py owns the parser).
+          ITEM_COUNT=$(python3 scripts/synthesis-emit-files.py --count-items --synthesis-log "$SYNTHESIS_LOG")
+          ITEM_COUNT=${ITEM_COUNT:-0}
+          echo "Pass 2 synthesis has $ITEM_COUNT structural items to review"
+          echo "item_count=$ITEM_COUNT" >> "$GITHUB_OUTPUT"
 
       - name: Run Pass 3 review
         env:
@@ -436,7 +441,7 @@ jobs:
           TRIGGER_FILES:     ${{ needs.propagate.outputs.trigger_files }}
           CITED_FILES:       ${{ needs.synthesize.outputs.cited_files }}
           DIFF_BASE:         ${{ needs.propagate.outputs.diff_base }}
-          MARKER_COUNT:      ${{ steps.count.outputs.marker_count }}
+          ITEM_COUNT:        ${{ steps.count.outputs.item_count }}
         run: |
           set -euo pipefail
           git config user.name  "github-actions[bot]"
@@ -458,7 +463,7 @@ jobs:
             --diff-base "$DIFF_BASE" \
             --trigger-files "$TRIGGER_FILES" \
             --cited-files "$CITED_FILES" \
-            --marker-count "$MARKER_COUNT" \
+            --marker-count "$ITEM_COUNT" \
             --model "$REVIEWER_MODEL" \
             --prompt-file "$REVIEWER_PROMPT" \
             > "$REVIEWS_FILE"

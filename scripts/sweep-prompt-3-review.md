@@ -10,7 +10,7 @@ You are running **Pass 3** of the Open Enzyme sweep — review of the Pass 2 syn
 
 ## Inputs
 
-- The TRIGGER block names the Pass 2 synthesis log file and a marker count (`marker_count: N`).
+- The TRIGGER block names the Pass 2 synthesis log file and an item count (`item_count: N` — the number of structural items: each numbered finding + the two single-paragraph sections). Markers are cosmetic and may be missing; review by item.
 - The prompt inlines the synthesis log + an evidence cache of trigger files (the recent edits that caused this sweep) and cited files (every wiki page the Pass 2 synthesizer referenced). The cache is the most likely set of sources you'll want — read it inline, no tool round-trip needed.
 - You have **read-only research tools** for anything the cache misses: `read_file`, `list_directory`, `list_files`, `grep`. Use them when a claim references a file outside the cache, or when you want to spot-check a specific section. Tool-iteration cap is in the TRIGGER block (`max_tool_iterations: N`); on the last allowed iteration the model is forced to produce final output.
 - You may also read prior per-item files in `synthesis/queue/` and `synthesis/done/` for context on what's already been actioned or is still in flight.
@@ -29,7 +29,7 @@ When done researching, return your final review blockquotes — that signals com
 
 Output **exactly N review blockquotes**, in the order the Pass 2 synthesizer's items appear in the log. Separate each blockquote with a literal `<<<NEXT>>>` line (on its own line, no extra characters).
 
-**Do NOT** produce any other text — no preamble, no closing notes, no merged document, no commentary. The merge script counts blockquotes by counting `<<<NEXT>>>` separators and bails if the count doesn't match marker_count.
+**Do NOT** produce any other text — no preamble, no closing notes, no merged document, no commentary. The merge script counts blockquotes by counting `<<<NEXT>>>` separators and bails if the count doesn't match the item count.
 
 ### Format of each blockquote
 
@@ -144,11 +144,11 @@ These four checks shift detection of failure modes upstream that the human-walkt
 
 ## Marker count discipline
 
-The TRIGGER block tells you `marker_count: N`. Output exactly **N** blockquotes separated by **N-1** `<<<NEXT>>>` lines (one between each pair).
+The TRIGGER block tells you `item_count: N` (the number of structural items: each numbered finding + the two single-paragraph sections). Output exactly **N** blockquotes, in document order, separated by **N-1** `<<<NEXT>>>` lines (one between each pair). Review every item regardless of whether Pass 2 emitted a `{{PEER-REVIEW}}` marker for it — markers are cosmetic.
 
 Mathematical: 5 blockquotes have 4 `<<<NEXT>>>` separators between them.
 
-If the Pass 2 synthesizer's log has zero markers (drift-guard no-op output), output a single line:
+If the Pass 2 synthesizer's log has zero reviewable items (drift-guard no-op output), output a single line:
 
 ```
 NO_MARKERS
@@ -161,7 +161,7 @@ The emitter reads `NO_MARKERS` and skips per-item file emission, recording a "no
 ## Process
 
 1. Read the Pass 2 synthesis log (path in TRIGGER block).
-2. Count `{{PEER-REVIEW}}` markers — verify it matches `marker_count` from the TRIGGER. If mismatch, output `MARKER_COUNT_MISMATCH` and exit (the emitter handles the failure).
+2. Identify the structural items (each numbered finding + the two single-paragraph sections), in document order — `item_count` in the TRIGGER is how many. Do NOT count or rely on `{{PEER-REVIEW}}` markers; the synthesizer may drop or merge them. Review every item.
 3. For each marker (in order), read the Pass 2 item above it and verify-or-critique. Spot-check claims by reading cited wiki pages where useful.
 4. Generate review blockquotes, separated by `<<<NEXT>>>`.
 5. Output them. That's it. The emitter handles the rest.

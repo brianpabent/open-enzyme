@@ -218,59 +218,32 @@ def extract_items_from_section(section_body: str, type_slug: str) -> list[dict]:
             start = m.start()
             end = item_starts[i + 1].start() if i + 1 < len(item_starts) else len(section_body)
             content = section_body[start:end]
-            is_last_item = (i + 1 == len(item_starts))
-            # Item should contain exactly one marker
-            marker_count = content.count(MARKER)
-            if marker_count == 0:
-                # Pass 2 (Gemini) routinely truncates mid-output on this workload —
-                # 3 of 5 historical logs and the 2026-05-09 dfd05a0 run all had a
-                # final item cut off mid-prose with no marker emitted. Treat the
-                # LAST item with no marker as truncation: drop it with a warning
-                # and proceed with the items that DO have markers. A mid-section
-                # missing marker (i.e. not the last item) is real corruption — fail.
-                if is_last_item:
-                    print(
-                        f"WARNING: Item {type_slug} #{index_str} has no {MARKER} marker — "
-                        f"likely Pass 2 truncation. Dropping this item and continuing.",
-                        file=sys.stderr,
-                    )
-                    truncation_drops.append({"type_slug": type_slug, "index": int(index_str)})
-                    continue
-                sys.exit(
-                    f"Item {type_slug} #{index_str} has no {MARKER} marker, and is not "
-                    f"the last item in the section. This indicates real corruption "
-                    f"(not just trailing truncation). Pass 2 prompt requires one marker per item."
-                )
-            if marker_count > 1:
-                sys.exit(
-                    f"Item {type_slug} #{index_str} has {marker_count} {MARKER} markers. "
-                    f"Pass 2 prompt requires exactly one."
-                )
+            # {{PEER-REVIEW}} markers are COSMETIC hints, not load-bearing.
+            # Items are identified purely structurally (the numbered-item regex
+            # bounds each item by the next item's start), and Pass-3 reviews map
+            # to items positionally in main(). A synthesizer that omits, dups,
+            # or misplaces a marker therefore can no longer break the sweep.
+            # (2026-05-30: Grok dropped the markers in one whole section while
+            # writing every item + all following sections correctly; the old
+            # "one marker per item or abort" tripwire hard-failed the run on a
+            # purely formatting gap. Pass 2 reads ~1M tokens and synthesizes —
+            # marker discipline shouldn't be load-bearing; Pass 3 associates
+            # its reviews with items by structure, not by Pass 2's delimiters.)
             items.append({
                 "index": int(index_str),
                 "content": content.strip(),
             })
     elif type_slug in SINGLE_PARAGRAPH_SECTIONS:
-        # Whole section between header and first marker is one item.
-        marker_pos = section_body.find(MARKER)
-        if marker_pos == -1:
-            # Same truncation-tolerance reasoning as above — riskiest-assumption
-            # and most-curious-thread sections come AFTER the numbered sections,
-            # so a missing marker here typically means Pass 2 truncated before
-            # writing it. Drop the section with a warning rather than fail-fast.
-            print(
-                f"WARNING: Single-paragraph section {type_slug} has no {MARKER} marker — "
-                f"likely Pass 2 truncation. Dropping this section and continuing.",
-                file=sys.stderr,
-            )
-            truncation_drops.append({"type_slug": type_slug, "index": 1})
-            return items, truncation_drops
-        # Include content through the marker (so the item body retains the marker
-        # location for the substitution step). End-of-item is end of section body.
-        items.append({
-            "index": 1,
-            "content": section_body.strip(),
-        })
+        # Whole section body is one item. The {{PEER-REVIEW}} marker, if present,
+        # is a cosmetic hint — we keep the whole body regardless (markers are
+        # non-load-bearing, same rationale as the numbered-section block above).
+        # Only a genuinely empty section (header with no prose) yields no item.
+        body = section_body.strip()
+        if body:
+            items.append({
+                "index": 1,
+                "content": body,
+            })
     return items, truncation_drops
 
 
@@ -528,15 +501,57 @@ def emit_no_op_history(
     return path
 
 
+def flatten_pass2_items(pass2_body: str) -> tuple[list[dict], int]:
+    """Parse the Pass-2 body into an ordered list of items (markers ignored —
+    items are identified structurally). Returns (all_items, headline_failures).
+
+    This is the single source of truth for "how many items are in this
+    synthesis" — used both by --count-items (to tell Pass 3 how many reviews to
+    produce) and by the emit path (to map reviews → items positionally).
+    """
+    sections = parse_pass2_sections(pass2_body)
+    if not sections:
+        sys.exit("No recognized section headers in Pass 2 body. Aborting.")
+    all_items: list[dict] = []
+    global_index = 0
+    headline_extraction_failures = 0
+    for section_text, type_slug in [(sections.get(t), t) for t in [
+        "connection", "contradiction", "experiment",
+        "open-question", "priority-action",
+        "riskiest-assumption", "most-curious-thread",
+    ]]:
+        if section_text is None:
+            continue
+        section_items, _section_drops = extract_items_from_section(section_text, type_slug)
+        for item in section_items:
+            global_index += 1
+            headline = extract_headline(item["content"], type_slug, global_index)
+            if headline.startswith("unnamed-item-"):
+                headline_extraction_failures += 1
+            all_items.append({
+                "global_index": global_index,
+                "section_index": item["index"],
+                "type_slug": type_slug,
+                "headline": headline,
+                "content": item["content"],
+            })
+    return all_items, headline_extraction_failures
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--synthesis-log", required=True,
                         help="Path to Pass 2 synthesizer log file")
-    parser.add_argument("--reviews-file", required=True,
+    parser.add_argument("--count-items", action="store_true",
+                        help="Parse the Pass-2 log, print the structural item count "
+                             "(markers ignored), and exit. The workflow uses this to "
+                             "tell Pass 3 how many items to review. Only --synthesis-log "
+                             "is required in this mode.")
+    parser.add_argument("--reviews-file", default=None,
                         help="Path to Pass 3 reviewer output (text with <<<NEXT>>> separators, "
-                             "or NO_MARKERS / MARKER_COUNT_MISMATCH)")
-    parser.add_argument("--commit-sha", required=True,
-                        help="Sweep commit SHA (full or short)")
+                             "or NO_MARKERS / MARKER_COUNT_MISMATCH). Required in emit mode.")
+    parser.add_argument("--commit-sha", default="",
+                        help="Sweep commit SHA (full or short). Required in emit mode.")
     parser.add_argument("--diff-base", default="",
                         help="Last sweep commit SHA")
     parser.add_argument("--trigger-files", default="",
@@ -569,6 +584,20 @@ def main():
     pass2_text = pass2_path.read_text()
     _fm, pass2_body = strip_frontmatter(pass2_text)
 
+    # --- Count-items mode: print structural item count and exit --------------
+    # The workflow uses this to tell Pass 3 how many items to review, decoupled
+    # from however many {{PEER-REVIEW}} markers the synthesizer happened to emit.
+    if args.count_items:
+        items_for_count, _ = flatten_pass2_items(pass2_body)
+        print(len(items_for_count))
+        return
+
+    # Emit mode needs the Pass 3 reviews + a commit SHA.
+    if not args.reviews_file:
+        sys.exit("--reviews-file is required in emit mode (omit it only with --count-items).")
+    if not args.commit_sha:
+        sys.exit("--commit-sha is required in emit mode.")
+
     # --- Read Pass 3 reviews -------------------------------------------------
     reviews_raw = Path(args.reviews_file).read_text().strip()
 
@@ -589,38 +618,8 @@ def main():
         print(f"No-op sweep recorded at {path}")
         return
 
-    # --- Parse Pass 2 sections + items ---------------------------------------
-    sections = parse_pass2_sections(pass2_body)
-    if not sections:
-        sys.exit("No recognized section headers in Pass 2 body. Aborting.")
-
-    # Flatten into ordered list of items (preserving Pass 2 marker order)
-    all_items = []
-    all_truncation_drops = []
-    global_index = 0
-    headline_extraction_failures = 0
-    for section_text, type_slug in [(sections.get(t), t) for t in [
-        "connection", "contradiction", "experiment",
-        "open-question", "priority-action",
-        "riskiest-assumption", "most-curious-thread",
-    ]]:
-        if section_text is None:
-            continue
-        section_items, section_drops = extract_items_from_section(section_text, type_slug)
-        all_truncation_drops.extend(section_drops)
-        for item in section_items:
-            global_index += 1
-            headline = extract_headline(item["content"], type_slug, global_index)
-            if headline.startswith("unnamed-item-"):
-                headline_extraction_failures += 1
-            all_items.append({
-                "global_index": global_index,
-                "section_index": item["index"],
-                "type_slug": type_slug,
-                "headline": headline,
-                "content": item["content"],
-            })
-
+    # --- Parse Pass 2 sections + items (structural; markers ignored) ---------
+    all_items, headline_extraction_failures = flatten_pass2_items(pass2_body)
     if not all_items:
         sys.exit("No items parsed from Pass 2 body. Aborting.")
 
@@ -630,19 +629,18 @@ def main():
             f"(>50% threshold). Pass 2 format may have drifted. Aborting."
         )
 
-    # --- Validate Pass 2 ↔ Pass 3 marker count ------------------------------
-    pass2_marker_count = pass2_body.count(MARKER)
-    if pass2_marker_count != len(all_items):
-        sys.exit(
-            f"Internal inconsistency: parsed {len(all_items)} items but Pass 2 has "
-            f"{pass2_marker_count} {MARKER} markers. Parser is wrong. Aborting."
-        )
-
+    # --- Validate Pass 3 review count against the structural ITEM count ------
+    # (2026-05-30) Markers are no longer used for counting — items are
+    # identified structurally and reviews map to them positionally. The only
+    # invariant is: Pass 3 emits exactly one <<<NEXT>>>-separated review per
+    # item, in document order. A synthesizer dropping/duplicating a marker no
+    # longer aborts the sweep; only a genuine Pass-3 review-count mismatch does.
     reviews = [r.strip() for r in reviews_raw.split(SEPARATOR) if r.strip()]
-    if len(reviews) != pass2_marker_count:
+    if len(reviews) != len(all_items):
         sys.exit(
-            f"Marker/review count mismatch — Pass 2 has {pass2_marker_count} {MARKER} markers, "
-            f"Pass 3 provided {len(reviews)} reviews. Investigate."
+            f"Review/item count mismatch — Pass 2 has {len(all_items)} items, "
+            f"Pass 3 provided {len(reviews)} reviews. Pass 3 must emit one review "
+            f"per item, in document order (see sweep-prompt-3-review*.md)."
         )
 
     # --- Parse Pass 3 verdicts + build (type_slug, section_index) → filename map ---
@@ -710,7 +708,8 @@ def main():
         args.reviewer,
         args.synthesis_log,
         emitted_records,
-        all_truncation_drops,
+        [],  # truncation_drops: obsolete — structural item parsing never drops items
+             # (markers are cosmetic; a truncated trailing item is still parsed, not dropped)
     )
 
     print(f"Emitted {len(emitted_records)} items to {queue_dir}")

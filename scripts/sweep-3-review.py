@@ -464,8 +464,8 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
                 "role": "user",
                 "content": (
                     "Research phase complete. Output the review blockquotes "
-                    "now, separated by `<<<NEXT>>>` markers (one per Pass 2 "
-                    "marker, in order). Do not request more tools. Begin "
+                    "now, separated by `<<<NEXT>>>` lines (one per item, in "
+                    "document order). Do not request more tools. Begin "
                     "your response with `> **Claude review —`."
                 ),
             }]
@@ -673,7 +673,7 @@ def main():
         + "\n\n---\n\n"
         + f"TRIGGER: Pass 3 review at {timestamp}.\n"
         + f"  synthesis_log:    {args.synthesis_log}\n"
-        + f"  marker_count:     {args.marker_count}\n"
+        + f"  item_count:       {args.marker_count}\n"
         + f"  diff_base:        {args.diff_base or 'unknown'}\n"
         + f"  commit_sha:       {args.commit_sha}\n"
         + f"  trigger files (caused this sweep):\n{trigger_list}\n"
