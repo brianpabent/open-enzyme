@@ -106,7 +106,19 @@ def site_plddt(plddt, pos, seq_len, window=3):
 def classify_accessibility(mean_plddt,
                             buried_threshold=PLDDT_BURIED,
                             partial_threshold=PLDDT_PARTIAL):
-    """Classify a residue window as buried / partially_exposed / exposed."""
+    """Classify a residue window as buried / partially_exposed / exposed.
+
+    ⚠ CAVEAT (flagged 2026-05-30, comp-034 rosetta_concordance): this uses pLDDT
+    as a PROXY for solvent accessibility — high pLDDT => assumed buried. pLDDT is a
+    CONFIDENCE score, not burial: a confidently-predicted, solvent-EXPOSED helix
+    scores 90+ and is mis-classified "buried" (0.1x risk). On the lactoferrin
+    inter-lobe linker (pLDDT 93-98) this under-counted real cleavage risk ~10x —
+    real SASA showed 8/11 residues exposed, 0 buried. For load-bearing accessibility
+    judgments prefer real SASA (e.g. PyRosetta SasaCalc, Tien 2013 relative) plus a
+    secondary-structure conformation gate (proteases need an extended substrate; a
+    helix resists). See comp-034/rosetta_concordance/README.md §"Method 2". This
+    proxy affects comp-001/005/006/012/037, which all use this model.
+    """
     if mean_plddt >= buried_threshold:
         return "buried"
     elif mean_plddt >= partial_threshold:

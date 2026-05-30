@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "experiment": "comp-034 Rosetta concordance leg",
+    "method": "relaxed-neighborhood torsion-space ddG (ref2015) + DSSP helix retention",
+    "NOT": "gold-standard cartesian_ddg; concordance vote only",
+    "pdb": "AF-P02788-F1-model_v6.pdb",
+    "linker": "353-363 SEEEVAARRAR",
+    "nbr_cutoff_A": 8.0,
+    "ntraj": 3,
+    "base_seed": 11000,
+    "pyrosetta": "PyRosetta4.Release.python313.m1 2026.03+releasequarterly.5e498f1409c68ade56c8ce5842bf79e1b02e8db4"
+  },
+  "results": {
+    "WT_SEEEVAARRAR": {
+      "linker_seq": "SEEEVAARRAR",
+      "mutations": [],
+      "abs_score_mean_REU": -1198.34,
+      "abs_score_sd_REU": 5.08,
+      "n_traj": 3,
+      "linker_ss": "LHHHHHHHHHL",
+      "linker_helix_frac": 0.818,
+      "ddG_vs_WT_REU": 0.0
+    },
+    "V357P_SEEEPAARRAR": {
+      "linker_seq": "SEEEPAARRAR",
+      "mutations": [
+        "V357P"
+      ],
+      "abs_score_mean_REU": -1167.81,
+      "abs_score_sd_REU": 8.62,
+      "n_traj": 3,
+      "linker_ss": "LLHHHHHHHHL",
+      "linker_helix_frac": 0.727,
+      "ddG_vs_WT_REU": 30.53
+    },
+    "S353E_V357P_EEEEPAARRAR": {
+      "linker_seq": "EEEEPAARRAR",
+      "mutations": [
+        "S353E",
+        "V357P"
+      ],
+      "abs_score_mean_REU": -1131.83,
+      "abs_score_sd_REU": 31.83,
+      "n_traj": 3,
+      "linker_ss": "LLHHHHHHHHL",
+      "linker_helix_frac": 0.727,
+      "ddG_vs_WT_REU": 66.51
+    },
+    "MPNN_NEEEQQQEEEQ": {
+      "linker_seq": "NEEEQQQEEEQ",
+      "mutations": [
+        "S353N",
+        "V357Q",
+        "A358Q",
+        "A359Q",
+        "R360E",
+        "R361E",
+        "A362E",
+        "R363Q"
+      ],
+      "abs_score_mean_REU": -1171.36,
+      "abs_score_sd_REU": 37.11,
+      "n_traj": 3,
+      "linker_ss": "LHHHHHHHHHL",
+      "linker_helix_frac": 0.818,
+      "ddG_vs_WT_REU": 26.98
+    },
+    "MPNN_NEEEQEEQDQQ": {
+      "linker_seq": "NEEEQEEQDQQ",
+      "mutations": [
+        "S353N",
+        "V357Q",
+        "A358E",
+        "A359E",
+        "R360Q",
+        "R361D",
+        "A362Q",
+        "R363Q"
+      ],
+      "abs_score_mean_REU": -1148.24,
+      "abs_score_sd_REU": 21.05,
+      "n_traj": 3,
+      "linker_ss": "LHHHHHHHHHL",
+      "linker_helix_frac": 0.818,
+      "ddG_vs_WT_REU": 50.1
+    },
+    "AGGR_PRO_EEEEPAAPPAP": {
+      "linker_seq": "EEEEPAAPPAP",
+      "mutations": [
+        "S353E",
+        "V357P",
+        "R360P",
+        "R361P",
+        "R363P"
+      ],
+      "abs_score_mean_REU": -1117.4,
+      "abs_score_sd_REU": 25.24,
+      "n_traj": 3,
+      "linker_ss": "LLLHHHLLLLL",
+      "linker_helix_frac": 0.273,
+      "ddG_vs_WT_REU": 80.94
+    }
+  }
+}
