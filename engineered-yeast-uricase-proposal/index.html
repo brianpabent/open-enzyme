@@ -5596,6 +5596,7 @@ Perhaps most directly relevant to this proposal: a team systematically engineere
 <blockquote>
 <p><strong>Key finding</strong></p>
 <p>Three independent groups — using three different organisms (<em>C. utilis</em> enzyme alone, engineered <em>E. coli</em>, engineered <em>S. boulardii</em>) — have demonstrated that degrading uric acid in the gut lumen can reduce systemic urate levels. The mechanism is validated. The engineering details are what need optimization.
+<a id="why-yeast"></a>
 2. Why <em>Saccharomyces cerevisiae</em>
 GRAS Status and Genetic Tractability Established
 <em>S. cerevisiae</em> holds "Generally Recognized as Safe" (GRAS) status from the FDA. It is the most genetically tractable eukaryotic organism on the planet, with decades of tool development for heterologous protein expression. There are well-established expression platforms, extensive libraries of characterized promoters, and multiple selectable marker systems.</p>
@@ -5617,7 +5618,7 @@ Secretion (using signal peptides like the α-mating factor prepro sequence) woul
 <strong>Time:</strong> 2–3 weeks (including transformation and assays)
 <strong>Who:</strong> Any molecular biology lab with yeast experience</p>
 </blockquote>
-<h2 id="3-gene-construct-design">3. Gene Construct Design<a class="headerlink" href="#3-gene-construct-design" title="Permanent link">&para;</a></h2>
+<h2 id="3-gene-construct-design">3. Gene Construct Design <a id="construct"></a><a class="headerlink" href="#3-gene-construct-design" title="Permanent link">&para;</a></h2>
 <h3 id="source-gene-selection">Source Gene Selection<a class="headerlink" href="#source-gene-selection" title="Permanent link">&para;</a></h3>
 <p>Several uricase genes have been expressed recombinantly. Here is an honest comparison:
 | Source | Expression in Yeast | Specific Activity | Key Properties | Notes |
@@ -5645,7 +5646,7 @@ The hybrid GAL7/ADH2 promoter used in the original rasburicase work is inducible
 <h3 id="selectable-markers-and-integration">Selectable Markers and Integration<a class="headerlink" href="#selectable-markers-and-integration" title="Permanent link">&para;</a></h3>
 <p>For lab-stage work, standard auxotrophic markers (URA3, LEU2, HIS3) or dominant markers (kanMX, conferring G418 resistance) are all appropriate. For a food product, the final construct should ideally be marker-free or use only food-safe markers. CRISPR/Cas9-based integration can achieve markerless insertion, which is important for eventual regulatory considerations.
 The 2025 <em>S. boulardii</em> work identified specific high-expression chromosomal integration loci in that strain,<a href="#ref11">[11]</a> which would be directly applicable since <em>S. boulardii</em> is genomically a <em>S. cerevisiae</em> variant.</p>
-<h2 id="4-delivery-formats-honest-assessment">4. Delivery Formats — Honest Assessment<a class="headerlink" href="#4-delivery-formats-honest-assessment" title="Permanent link">&para;</a></h2>
+<h2 id="4-delivery-formats-honest-assessment">4. Delivery Formats — Honest Assessment <a id="delivery"></a><a class="headerlink" href="#4-delivery-formats-honest-assessment" title="Permanent link">&para;</a></h2>
 <p>Not all formats are created equal. For each, I've tried to be honest about whether therapeutically meaningful uricase delivery is realistic.</p>
 <h3 id="a-beer">a. Beer<a class="headerlink" href="#a-beer" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -5693,7 +5694,7 @@ Therapeutic credibility:  Moderate-High (proven concept, processing questions)</
 <p>Use both engineered <em>A. oryzae</em> (koji) and engineered <em>S. cerevisiae</em> in a sequential fermentation: koji produces amylases + uricase during the saccharification stage, then yeast continues uricase production during the alcoholic (or non-alcoholic) fermentation. Two organisms, potentially two different uricase genes, producing enzyme across both fermentation stages.
 This is the most complex format but also the most interesting for a food product — amazake is a traditional Japanese fermented rice beverage with existing consumer acceptance. See §8 for more on the koji track.
 Therapeutic credibility:  Moderate (interesting but adds complexity)</p>
-<h2 id="5-the-dosing-question">5. The Dosing Question<a class="headerlink" href="#5-the-dosing-question" title="Permanent link">&para;</a></h2>
+<h2 id="5-the-dosing-question">5. The Dosing Question <a id="dosing"></a><a class="headerlink" href="#5-the-dosing-question" title="Permanent link">&para;</a></h2>
 <p>What Activity Level Is Needed? Open
 This is the central feasibility question. Let me lay out the reasoning quantitatively, while being transparent about the assumptions.
 <strong>The uric acid budget:</strong> A typical adult produces ~600–900 mg of uric acid per day. Roughly 200–300 mg is eliminated via the intestine. For a gout patient with serum urate of ~9 mg/dL (a common level on no therapy), reducing this to below 6 mg/dL (the therapeutic target) requires eliminating roughly 200–400 mg of additional uric acid per day — the amount that would otherwise accumulate.
@@ -5737,7 +5738,7 @@ The <em>S. boulardii</em> group's reported activity of 365 μmol/h/OD<a href="#r
 <p>10–15 g of dry koji as a daily food is realistic — it's in the same mass range as a Creon pancreatic enzyme dose, and orders of magnitude smaller than the yeast mass required for the same enzyme output.</p>
 <p><strong>Interpretation.</strong> Yeast intracellular expression is scientifically sound — the rasburicase precedent (Established) confirms the gene-host combination works at pharmaceutical scale. The problem is <em>format</em>, not biology. At clinical enzyme doses, the yeast mass required to act as a daily food product is implausible for anything short of a highly concentrated, lyophilized, and encapsulated preparation — which starts to look more like a pharmaceutical than a fermented food. Koji, by contrast, delivers the same enzyme mass from a portion that resembles a normal food serving.</p>
 <p><strong>Bottom line.</strong> Yeast intracellular expression is scientifically sound but mass-impractical as a daily food product. Koji is dose-advantaged on scaling grounds and probably the right primary platform for oral delivery. This is consistent with the koji-first framing already adopted in <a href="../etc/open-enzyme-vision/">open-enzyme-vision.md</a> §3, and the yeast track is best understood as: (a) a rapid bench platform for construct validation, (b) a path to a concentrated powder/capsule product for the subset of patients who can't tolerate koji, or &copy; the <em>S. boulardii</em> probiotic route where the dose is set by colonization, not by food mass.</p>
-<h2 id="6-open-scientific-questions">6. Open Scientific Questions<a class="headerlink" href="#6-open-scientific-questions" title="Permanent link">&para;</a></h2>
+<h2 id="6-open-scientific-questions">6. Open Scientific Questions <a id="questions"></a><a class="headerlink" href="#6-open-scientific-questions" title="Permanent link">&para;</a></h2>
 <p>These are framed as questions for specific experts, but each one includes a path to an answer.</p>
 <h3 id="for-role-1-gut-microbiome-gnotobiotic-models-actively-recruiting">For Role 1 — Gut Microbiome / Gnotobiotic Models <em>(actively recruiting)</em><a class="headerlink" href="#for-role-1-gut-microbiome-gnotobiotic-models-actively-recruiting" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -6376,7 +6377,7 @@ Estimated cost to achieve high-confidence proof-of-concept (Phases 0–3 with va
 <li><strong>Matsuo, H. et al.</strong> (2014). ABCG2 dysfunction increases serum uric acid by decreased intestinal urate excretion. <em>Nucleosides, Nucleotides and Nucleic Acids</em>, 33(4-6), 275–281. <a href="https://pubmed.ncbi.nlm.nih.gov/24940679/">PMID: 24940679</a></li>
 <li><strong>Hosomi, A. et al.</strong> (2012). Extra-Renal Elimination of Uric Acid via Intestinal Efflux Transporter BCRP/ABCG2. <em>PLOS ONE</em>, 7(2), e30456. <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0030456">doi:10.1371/journal.pone.0030456</a></li>
 <li><strong>Ichida, K. et al.</strong> (2012). Decreased extra-renal urate excretion is a common cause of hyperuricemia. <em>Nature Communications</em>, 3, 764. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8268734/">Related review: PMC8268734</a></li>
-<li><strong>Hershfield, M.S. et al.</strong> (2020). Oral Treatment With an Engineered Uricase, ALLN-346, Reduces Hyperuricemia and Uricosuria in Urate Oxidase-Deficient Mice. <em>Frontiers in Medicine</em>, 7, 569215. <a href="https://pubmed.ncbi.nlm.nih.gov/33330529/">PMID: 33330529</a></li>
+<li><strong>Pierzynowska, K. et al.</strong> (2020). Oral Treatment With an Engineered Uricase, ALLN-346, Reduces Hyperuricemia and Uricosuria in Urate Oxidase-Deficient Mice. <em>Frontiers in Medicine</em>, 7, 569215. <a href="https://pubmed.ncbi.nlm.nih.gov/33330529/">PMID: 33330529</a>. Full author list: K. Pierzynowska, A. Deshpande, N. Mosiichuk, R. Terkeltaub, P. Szczurek, E. Salido, S. Pierzynowski, D. Grujic.</li>
 <li><strong>Allena Pharmaceuticals.</strong> (2022). Clinical and Corporate Update — Phase 2a Study 201 results. <a href="https://ir.allenapharma.com/news-releases/news-release-details/allena-pharmaceuticals-provides-clinical-and-corporate-update">Press release, January 4, 2022</a></li>
 <li><strong>Allena Pharmaceuticals.</strong> (2022). Phase 2a Study 202 enrollment completion and update. <a href="https://www.globenewswire.com/news-release/2022/07/19/2481757/0/en/Allena-Pharmaceuticals-Announces-Completion-of-Enrollment-of-Cohorts-A-and-B-of-ALLN-346-Phase-2a-Study-202-in-Patients-with-Gout-and-Stages-2-and-3-Chronic-Kidney-Disease.html">Press release, July 19, 2022</a></li>
 <li><strong>Designer probiotic-based living drugs for uric acid homeostasis control in hyperuricemic mice and rats.</strong> (2025). <em>Cell Reports Medicine</em>, S2666-3791(25)00452-5. <a href="https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(25)00452-5">doi:10.1016/j.xcrm.2025.102052</a></li>

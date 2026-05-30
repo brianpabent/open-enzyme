@@ -721,56 +721,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The Biology of Gout — Why It Happens">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-purine-metabolism-uric-acid-production" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Purine Metabolism → Uric Acid Production
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-renal-handling-the-excretion-bottleneck" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Renal Handling — The Excretion Bottleneck
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-crystallization-when-chemistry-becomes-pathology" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Crystallization — When Chemistry Becomes Pathology
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-the-inflammatory-cascade-nlrp3-and-the-flare" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: The Inflammatory Cascade — NLRP3 and the Flare
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -5864,71 +5814,12 @@ status: published</p>
 </ol>
 <hr />
 <h2 id="the-biology-of-gout-why-it-happens">The Biology of Gout — Why It Happens<a class="headerlink" href="#the-biology-of-gout-why-it-happens" title="Permanent link">&para;</a></h2>
-<p>Gout is the clinical endpoint of a multi-step biochemical cascade. Understanding each step matters because each step is a potential therapeutic target. Here's the chain:</p>
-<h3 id="step-1-purine-metabolism-uric-acid-production">Step 1: Purine Metabolism → Uric Acid Production<a class="headerlink" href="#step-1-purine-metabolism-uric-acid-production" title="Permanent link">&para;</a></h3>
-<p>Every cell in your body contains DNA and RNA built from purine bases (adenine and guanine). When cells turn over, or when you eat purine-rich foods (organ meats, shellfish, beer), those purines are metabolized. The final step is catalyzed by the enzyme <strong>xanthine oxidase (XO)</strong>, which converts hypoxanthine → xanthine → uric acid. This is where drugs like allopurinol and febuxostat intervene — they inhibit XO to reduce uric acid production at the source.</p>
-<pre class="mermaid"><code>graph TD
-    A["Purines (from DNA/RNA/food)"] --&gt;|adenosine deaminase, nucleotidases| B["Hypoxanthine"]
-    B --&gt;|Xanthine Oxidase (XO)| C["Xanthine"]
-    C --&gt;|Xanthine Oxidase (XO)| D["Uric Acid"]
-    D --&gt;|Uricase| E["Allantoin (soluble, easily excreted)"]
-    F["⚠️ MISSING in humans — pseudogene"] -.-&gt; D
-    G["allopurinol/febuxostat block here"] -.-&gt; B</code></pre>
-<p>The critical point: in most mammals, uric acid isn't the end of the line. An enzyme called <strong>uricase</strong> (urate oxidase) converts uric acid into allantoin, which is far more soluble and easily excreted by the kidneys. Humans, great apes, and some other primates lost the functional uricase gene roughly 15–20 million years ago. We are stuck at the uric acid step. This is the root cause of gout.</p>
-<h3 id="step-2-renal-handling-the-excretion-bottleneck">Step 2: Renal Handling — The Excretion Bottleneck<a class="headerlink" href="#step-2-renal-handling-the-excretion-bottleneck" title="Permanent link">&para;</a></h3>
-<p>About 70% of daily uric acid elimination happens through the kidneys. The proximal tubule of the kidney engages in a complex dance of filtration, reabsorption, and secretion involving multiple transporter proteins. The key players:</p>
-<table>
-<thead>
-<tr>
-<th>Transporter</th>
-<th>Gene</th>
-<th>Role</th>
-<th>Drug Target Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>URAT1</strong></td>
-<td>SLC22A12</td>
-<td>Reabsorbs uric acid from tubular lumen back into blood. The primary villain — reabsorbs ~90% of filtered urate.</td>
-<td>Major target. Probenecid, lesinurad, pozdeutinurad, dotinurad all inhibit URAT1.</td>
-</tr>
-<tr>
-<td><strong>GLUT9</strong></td>
-<td>SLC2A9</td>
-<td>Basolateral exit transporter; moves uric acid from tubular cells into blood. Also handles fructose.</td>
-<td>Genetic variants have enormous effect on urate levels. Under-explored as drug target.</td>
-</tr>
-<tr>
-<td><strong>ABCG2</strong></td>
-<td>ABCG2</td>
-<td>Secretes uric acid into both gut lumen and renal tubule. Loss-of-function variants are the #1 genetic risk for gout.</td>
-<td>Enhancing ABCG2 activity is a potential novel approach — nobody's doing it yet.</td>
-</tr>
-<tr>
-<td><strong>OAT1/OAT3</strong></td>
-<td>SLC22A6/8</td>
-<td>Basolateral uptake of urate from blood into tubular cells for secretion.</td>
-<td>Modulated by some existing uricosurics.</td>
-</tr>
-<tr>
-<td><strong>NPT1/NPT4</strong></td>
-<td>SLC17A&#8531;</td>
-<td>Apical secretion of urate into tubular lumen.</td>
-<td>Emerging targets.</td>
-</tr>
-</tbody>
-</table>
-<p>Gout is, at its core, a <em>kidney transporter problem</em>. Most gout patients (~90%) are "under-excretors" — their kidneys reabsorb too much uric acid. Only ~10% are true "over-producers." This distinction matters enormously for treatment strategy.</p>
-<h3 id="step-3-crystallization-when-chemistry-becomes-pathology">Step 3: Crystallization — When Chemistry Becomes Pathology<a class="headerlink" href="#step-3-crystallization-when-chemistry-becomes-pathology" title="Permanent link">&para;</a></h3>
-<p>When serum urate exceeds ~6.8 mg/dL (its saturation point at physiological pH and temperature), monosodium urate (MSU) crystals can form and deposit in joints, tendons, and surrounding tissues. But here's the thing: crystallization isn't immediate or inevitable. Many people have hyperuricemia for years — even decades — without a single gout attack. Local factors like temperature (cooler joints like the big toe crystallize first), pH, mechanical stress, and the presence of nucleation sites all influence when and where crystals form.</p>
-<h3 id="step-4-the-inflammatory-cascade-nlrp3-and-the-flare">Step 4: The Inflammatory Cascade — NLRP3 and the Flare<a class="headerlink" href="#step-4-the-inflammatory-cascade-nlrp3-and-the-flare" title="Permanent link">&para;</a></h3>
-<p>MSU crystals are the match. The NLRP3 inflammasome is the gasoline. When tissue-resident macrophages encounter MSU crystals, the crystals are phagocytosed (engulfed). Inside the cell, crystals damage the lysosomal membrane, causing potassium efflux and reactive oxygen species generation. This triggers assembly of the <strong>NLRP3 inflammasome</strong> — a massive intracellular protein complex consisting of the NLRP3 sensor protein, the adaptor ASC, and pro-caspase-1.</p>
-<p>Once assembled, caspase-1 activates, which cleaves pro-IL-1β into active <strong>IL-1β</strong> — the master cytokine of the gout flare. IL-1β triggers neutrophil recruitment, vasodilation, pain signaling, and the full inflammatory storm. It also activates NF-κB signaling, creating a positive feedback loop.</p>
-<p>This is why gout flares are so explosively painful — the NLRP3 inflammasome is one of the most potent inflammatory amplifiers in the innate immune system. It evolved to respond to danger signals from pathogens. MSU crystals hijack that system.</p>
+<p>Gout is the clinical endpoint of a multi-step biochemical cascade. Understanding each step matters because each step is a potential therapeutic target.</p>
 <blockquote>
 <p><strong>Key Insight:</strong> There are fundamentally two ways to "solve" gout: (1) prevent uric acid from ever reaching crystallization levels, or (2) prevent the immune system from recognizing MSU crystals as a threat. Current medicine focuses almost entirely on #1. Approach #2 — inflammasome modulation — is just now entering clinical trials and could be transformative for patients who can't tolerate or don't respond to urate-lowering therapy.</p>
 </blockquote>
+<p>In brief, the chain runs: purines (from cell turnover or diet) are catabolized by <strong>xanthine oxidase</strong> to <strong>uric acid</strong>, which — because humans lost the uricase gene ~15–20 million years ago — accumulates rather than being converted to soluble allantoin. About 70% of urate is cleared renally and ~&#8531; via the gut, governed by transporters (URAT1, GLUT9, ABCG2, OAT&#8531;); ~90% of gout patients are "under-excretors." When serum urate exceeds its ~6.8 mg/dL saturation point, <strong>monosodium urate (MSU) crystals</strong> deposit in joints. Macrophages phagocytose those crystals, triggering the <strong>NLRP3 inflammasome</strong> → caspase-1 → <strong>IL-1β</strong> release — the explosive inflammatory storm of a flare.</p>
+<p><strong>Full mechanism cascade with evidence tags, transporter table, and chokepoint mapping:</strong> <a href="../gout-pathophysiology/">Gout Pathophysiology</a>.</p>
 <hr />
 <h2 id="current-treatment-landscape">Current Treatment Landscape<a class="headerlink" href="#current-treatment-landscape" title="Permanent link">&para;</a></h2>
 <h3 id="acute-flare-management">Acute Flare Management<a class="headerlink" href="#acute-flare-management" title="Permanent link">&para;</a></h3>
@@ -6231,7 +6122,7 @@ status: published</p>
 <p><strong>TB-500</strong> (Thymosin Beta-4) blocks NF-κB nuclear translocation and accelerates tissue repair. Best suited for recovery from chronic gout damage rather than acute flare prevention.</p>
 <blockquote>
 <p><strong>Evidence Level</strong></p>
-<p>Zero peptides on this list have been tested in a human clinical trial for gout. All claims are based on animal models and mechanistic extrapolation from shared inflammatory pathways. The pharmaceutical industry validates the targets — dapansutrile (NLRP3 inhibitor) and firsekibart (anti-IL-1β) are in Phase 3 for gout — but the peptides themselves remain unproven for this indication.</p>
+<p>Zero peptides on this list have been tested in a human clinical trial for gout. All claims are based on animal models and mechanistic extrapolation from shared inflammatory pathways. The pharmaceutical industry validates the targets — firsekibart (anti-IL-1β) is in Phase 3 for gout and dapansutrile (NLRP3 inhibitor) completed a Phase 2a gout trial — but the peptides themselves remain unproven for this indication.</p>
 </blockquote>
 <hr />
 <h2 id="engineered-organisms-koji-yeast-and-living-factories">Engineered Organisms — Koji, Yeast, and Living Factories<a class="headerlink" href="#engineered-organisms-koji-yeast-and-living-factories" title="Permanent link">&para;</a></h2>
@@ -6249,7 +6140,7 @@ status: published</p>
 </blockquote>
 <hr />
 <h2 id="the-nlrp3-chokepoint-framework">The NLRP3 Chokepoint Framework<a class="headerlink" href="#the-nlrp3-chokepoint-framework" title="Permanent link">&para;</a></h2>
-<p>Section 4 of this document introduced the NLRP3 inflammasome as the driver of gout flares. Subsequent research mapped the full cascade into <strong>seven discrete chokepoints with labeled sub-branches</strong> (v1.2 restructure, 2026-04-24) — each a potential intervention target. The complete analysis is in the <a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a>, but here's the framework:</p>
+<p>The <a href="#the-biology-of-gout--why-it-happens">biology recap above</a> (full cascade: <a href="../gout-pathophysiology/">Gout Pathophysiology</a>) introduced the NLRP3 inflammasome as the driver of gout flares. Subsequent research mapped the full cascade into <strong>seven discrete chokepoints with labeled sub-branches</strong> (v1.2 restructure, 2026-04-24) — each a potential intervention target. The complete analysis is in the <a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a>, but here's the framework:</p>
 <p><strong>Chokepoint 0 (NEW):</strong> Crystal-triggered priming via complement C5a (blocked by avacopan — FDA C5aR1 antagonist; honest stack gap — no fermentable option) (source: complement-c5a-gout.md)
 <strong>Chokepoint 1:</strong> NF-κB priming — split into <strong>CP1a</strong> (NF-κB transcriptional, including TNFSF14/LIGHT amplifier; blocked by KPV, oridonin, sulforaphane, BHB, EGCG) and <strong>CP1b</strong> (non-transcriptional C5a→ROS priming)
 <strong>Chokepoint 2:</strong> NLRP3 conformational activation, P2X7/P2X2-mediated K⁺ efflux (blocked by dapansutrile, MCC950, BHB, colchicine via P2X7)

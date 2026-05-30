@@ -2324,67 +2324,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="14 Theoretical Routes Across the Barrier (For Reference)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#paracellular-routes-between-cells" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Paracellular Routes (Between Cells)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transcellular-routes-through-cells" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Transcellular Routes (Through Cells)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gut-resident-microbe-strategies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gut-Resident Microbe Strategies
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nanoparticle-routes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Nanoparticle Routes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lymphatic-and-advanced-routes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lymphatic and Advanced Routes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -5414,20 +5353,8 @@
 <h2 id="the-challenge-why-large-proteins-struggle-across-the-intestinal-epithelium">The Challenge: Why Large Proteins Struggle Across the Intestinal Epithelium<a class="headerlink" href="#the-challenge-why-large-proteins-struggle-across-the-intestinal-epithelium" title="Permanent link">&para;</a></h2>
 <p>The intestinal epithelium is a formidable barrier protecting the bloodstream from the hostile gut lumen. For a 135 kDa protein like [[uricase|uricase]], crossing this barrier is like trying to move a delivery truck through a security checkpoint designed for pedestrians.</p>
 <h3 id="the-barriers-multiple-defenses">The Barrier's Multiple Defenses<a class="headerlink" href="#the-barriers-multiple-defenses" title="Permanent link">&para;</a></h3>
-<p><strong>Structural Barriers:</strong>
-- <strong>Tight junctions</strong> between epithelial cells limit paracellular passage to molecules &lt;600 Da (daltons)
-- <strong>Single-cell-thick epithelium</strong> forces large molecules to either squeeze between cells or cross transcellularly
-- <strong>Mucus layer</strong> (100–800 μm thick) is hostile to large molecules and rich in proteases</p>
-<p><strong>Chemical Barriers:</strong>
-- <strong>Acidic pH</strong> in the stomach (2–3) denatures many proteins immediately
-- <strong>Proteases</strong> throughout the GI tract: pepsin in stomach, trypsin/chymotrypsin in small intestine, brush border peptidases
-- <strong>Bile salts</strong> can denature proteins and solubilize membranes
-- <strong>Oxidative environment</strong> with reactive oxygen species</p>
-<p><strong>Biological Barriers:</strong>
-- <strong>Macrophages</strong> in gut-associated lymphoid tissue (GALT) perform antigen sampling
-- <strong>Lysosomes</strong> inside epithelial cells degrade internalized proteins
-- <strong>First-pass hepatic metabolism</strong> clears absorbed molecules before systemic circulation</p>
-<p>(Source: blood-barrier-exploits.md)</p>
+<p>The barrier stacks structural defenses (tight junctions limiting paracellular passage to &lt;600 Da, single-cell-thick epithelium, a 100–800 μm mucus layer), chemical defenses (acidic gastric pH, GI proteases, bile salts), and biological defenses (GALT antigen sampling, epithelial lysosomes, first-pass hepatic metabolism). Together they make a 135 kDa protein's transit from lumen to blood extremely unlikely without active assistance.</p>
+<p>Full barrier biology: <a href="../blood-barrier-exploits/">Pen-Testing the Gut-Blood Barrier</a>.</p>
 <h2 id="the-paradigm-shift-why-crossing-the-barrier-isnt-necessary">The Paradigm Shift: Why Crossing the Barrier Isn't Necessary<a class="headerlink" href="#the-paradigm-shift-why-crossing-the-barrier-isnt-necessary" title="Permanent link">&para;</a></h2>
 <p><strong>Critical Insight:</strong> Recent validation of the [[gut-lumen-sink|gut-lumen sink strategy]] (ALLN-346, PULSE probiotic, engineered <em>S. boulardii</em>) reveals that <strong>systemic enzyme absorption isn't required for therapeutic effect.</strong></p>
 <p>Approximately one-third of daily uric acid elimination occurs via intestinal secretion through the ABCG2 transporter. By placing active [[uricase|uricase]] in the intestinal lumen, the enzyme:</p>
@@ -5440,24 +5367,8 @@
 <p><strong>Result:</strong> Serum uric acid drops without the enzyme ever entering the bloodstream.</p>
 <p>This reframes the barrier-crossing problem: it becomes an optimization bonus, not a requirement. (Source: blood-barrier-exploits.md, engineered-yeast-uricase-proposal.md)</p>
 <h2 id="14-theoretical-routes-across-the-barrier-for-reference">14 Theoretical Routes Across the Barrier (For Reference)<a class="headerlink" href="#14-theoretical-routes-across-the-barrier-for-reference" title="Permanent link">&para;</a></h2>
-<p>The blood-barrier-exploits.md document catalogs 14 exploitable vulnerabilities in the gut-blood barrier. While these remain scientifically interesting, most are unnecessary for the [[open-enzyme-vision|Open Enzyme]] project's initial goals. Listed here for completeness:</p>
-<h3 id="paracellular-routes-between-cells">Paracellular Routes (Between Cells)<a class="headerlink" href="#paracellular-routes-between-cells" title="Permanent link">&para;</a></h3>
-<p><strong>1. SNAC (Sodium Salcaprozate):</strong> Co-formulation in oral semaglutide (Rybelsus). Fluidizes epithelial cell membranes, enabling transcellular passage of monomeric peptides (~4 kDa). Uricase monomer (~34 kDa) is 8x larger; questionable if this scales. Expected bioavailability: ~1%. (Source: blood-barrier-exploits.md)</p>
-<p><strong>2. Sodium Caprate (C10):</strong> Medium-chain fatty acid that chelates calcium from tight junction proteins, physically opening paracellular gaps to 20–50 nm. Large enough for uricase particles. Window: 1–2 hours. Concentration: 10–13 mM. Expected bioavailability: 1–5%. (Source: blood-barrier-exploits.md)</p>
-<p><strong>3. Chitosan:</strong> Positively-charged polysaccharide that disrupts tight junction proteins (ZO-1, occludin). Works best at acidic pH. Enhancement: 15–20x for insulin-sized peptides. Expected bioavailability: 2–5%. (Source: blood-barrier-exploits.md)</p>
-<p><strong>4. Zonula Occludens Toxin Fragments (ZOT):</strong> Larazotide acetate (AT-1001) made it to Phase 3 trials for celiac disease. Reversibly disassembles tight junctions. Expected bioavailability: 2–5%. (Source: blood-barrier-exploits.md)</p>
-<h3 id="transcellular-routes-through-cells">Transcellular Routes (Through Cells)<a class="headerlink" href="#transcellular-routes-through-cells" title="Permanent link">&para;</a></h3>
-<p><strong>5. FcRn Receptor Hijacking:</strong> The neonatal Fc receptor naturally transports ~150 kDa IgG across intestinal epithelium. Fc-fusion proteins can exploit this. Uricase-Fc fusion (~84 kDa monomer + Fc) is in the sweet spot. Fc domain rescues from lysosomal degradation. Expected bioavailability: 2–10%. Precedent: FSH-Fc, EPO-Fc, insulin-Fc all show enhanced oral bioavailability. (Source: blood-barrier-exploits.md)</p>
-<p><strong>6. M Cell Targeting:</strong> Specialized "microfold" cells in Peyer's patches actively transcytose particles. Nanoparticles (200–500 nm) coated with M cell targeting ligands (UEA-1 lectin, RGD peptides, Claudin-4 targeting peptides) are endocytosed and transcytosed in 10–20 minutes. Lymphatic bypass of hepatic first-pass possible. Expected bioavailability: 2–8%. (Source: blood-barrier-exploits.md)</p>
-<h3 id="gut-resident-microbe-strategies">Gut-Resident Microbe Strategies<a class="headerlink" href="#gut-resident-microbe-strategies" title="Permanent link">&para;</a></h3>
-<p><strong>7. Probiotic Gene Therapy:</strong> Engineer bacteria to produce uricase or promote endogenous uric acid degradation locally. PULSE probiotic demonstrates this works. Expected bioavailability: N/A (lumen-based). (Source: blood-barrier-exploits.md)</p>
-<h3 id="nanoparticle-routes">Nanoparticle Routes<a class="headerlink" href="#nanoparticle-routes" title="Permanent link">&para;</a></h3>
-<p><strong>8–10. Nanoparticle Encapsulation (PLGA, Liposomes, Lipid Nanoparticles):</strong> Encapsulate uricase in biodegradable or liposomal nanoparticles. Particles can be coated with targeting ligands or PEG for stealth. Some routes include PLGA nanoparticles for enhanced cellular uptake and endosomal escape. Expected bioavailability: 2–10% depending on formulation. (Source: blood-barrier-exploits.md)</p>
-<h3 id="lymphatic-and-advanced-routes">Lymphatic and Advanced Routes<a class="headerlink" href="#lymphatic-and-advanced-routes" title="Permanent link">&para;</a></h3>
-<p><strong>11. Bacterial Outer Membrane Vesicles (OMVs):</strong> Natural nanoparticles shed by gram-negative bacteria. Can be engineered to produce uricase and display targeting epitopes. Bypass hepatic first-pass via lymphatic drainage. (Source: blood-barrier-exploits.md)</p>
-<p><strong>12. Exosome Engineering:</strong> Mammalian exosomes (30–150 nm) engineered to carry protein cargo. Can be targeted via surface modifications. Expected bioavailability: 2–10%. (Source: blood-barrier-exploits.md)</p>
-<p><strong>13. Sublingual and Nasal Delivery:</strong> Bypass GI degradation entirely. Sublingual mucosa and nasal epithelium highly vascularized; direct absorption into systemic circulation. Already proven for peptides (e.g., BPC-157 nasal spray). Expected bioavailability: 30–60%. (Source: blood-barrier-exploits.md)</p>
-<p><strong>14. Microneedle Patches:</strong> Transdermal delivery of lyophilized enzyme via microneedles that breach stratum corneum. Experimental but promising for peptides and proteins. Expected bioavailability: 50–100% (bypasses GI tract). (Source: blood-barrier-exploits.md)</p>
+<p>If barrier crossing ever becomes necessary, <a href="../blood-barrier-exploits/">Pen-Testing the Gut-Blood Barrier</a> catalogs 14 exploitable routes with mechanisms, expected bioavailability, and precedents. They span paracellular permeation enhancers (SNAC, C10, chitosan, ZOT), transcellular receptor hijacking (FcRn, M cell targeting), microbe- and vesicle-based delivery (probiotic gene therapy, OMVs, exosomes, nanoparticles), and mucosal/transdermal routes that bypass the GI tract entirely (sublingual, nasal, microneedle). Expected bioavailabilities run from ~1% for the hardest GI-paracellular cases up to 50–100% for the GI-bypassing routes.</p>
+<p>For the [[open-enzyme-vision|Open Enzyme]] project's initial goals these remain scientifically interesting but unnecessary — see "When Systemic Delivery Becomes Relevant" below for the conditions that would change that.</p>
 <h2 id="why-lumen-based-delivery-wins-for-now">Why Lumen-Based Delivery Wins (For Now)<a class="headerlink" href="#why-lumen-based-delivery-wins-for-now" title="Permanent link">&para;</a></h2>
 <h3 id="simplicity">Simplicity<a class="headerlink" href="#simplicity" title="Permanent link">&para;</a></h3>
 <ul>

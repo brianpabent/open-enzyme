@@ -52,7 +52,7 @@ for q in "${QUERIES[@]}"; do
     continue
   fi
   curl -sS --max-time 60 -G \
-    -H "User-Agent: OpenEnzymeResearchBot/1.0 (brian@headsupresults.com)" \
+    -H "User-Agent: OpenEnzymeResearchBot/1.0 (brian.abent@gmail.com)" \
     -H "Accept: application/json" \
     --data-urlencode "query=$q" \
     --data-urlencode "limit=200" \

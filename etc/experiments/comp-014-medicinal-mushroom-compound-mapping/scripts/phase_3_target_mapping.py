@@ -157,7 +157,7 @@ def http_get(url, expect_json=True, retries=2):
         try:
             req = urllib.request.Request(
                 url,
-                headers={"User-Agent": "comp-014/phase-3 (research; brian@headsupresults.com)"},
+                headers={"User-Agent": "comp-014/phase-3 (research; brian.abent@gmail.com)"},
             )
             ctx = _SSL_CTX
             try:
@@ -232,7 +232,7 @@ def pull_npatlas_genus(genus):
                     url,
                     data=b"",
                     headers={
-                        "User-Agent": "comp-014/phase-3 (research; brian@headsupresults.com)",
+                        "User-Agent": "comp-014/phase-3 (research; brian.abent@gmail.com)",
                         "Accept": "application/json",
                     },
                     method="POST",
