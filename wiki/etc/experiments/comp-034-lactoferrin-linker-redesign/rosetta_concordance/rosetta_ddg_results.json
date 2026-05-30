@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "experiment": "comp-034 Rosetta concordance leg",
+    "method": "relaxed-neighborhood torsion-space ddG (ref2015) + DSSP helix retention",
+    "NOT": "gold-standard cartesian_ddg; concordance vote only",
+    "pdb": "AF-P02788-F1-model_v6.pdb",
+    "linker": "353-363 SEEEVAARRAR",
+    "nbr_cutoff_A": 8.0,
+    "ntraj": 1,
+    "base_seed": 11000,
+    "pyrosetta": "PyRosetta4.Release.python313.m1 2026.03+releasequarterly.5e498f1409c68ade56c8ce5842bf79e1b02e8db4"
+  },
+  "results": {
+    "WT_SEEEVAARRAR": {
+      "linker_seq": "SEEEVAARRAR",
+      "mutations": [],
+      "min_score_REU": -736.76,
+      "mean_best3_REU": -736.76,
+      "mean_REU": -736.76,
+      "sd_REU": 0.0,
+      "all_scores_REU": [
+        -736.76
+      ],
+      "n_traj": 1,
+      "linker_ss_at_min": "LHHHHHHHHHL",
+      "linker_helix_frac_at_min": 0.818,
+      "linker_helix_frac_modal": 0.818,
+      "ddG_min_REU": 0.0,
+      "ddG_mean_REU": 0.0
+    },
+    "V357P_SEEEPAARRAR": {
+      "linker_seq": "SEEEPAARRAR",
+      "mutations": [
+        "V357P"
+      ],
+      "min_score_REU": -651.48,
+      "mean_best3_REU": -651.48,
+      "mean_REU": -651.48,
+      "sd_REU": 0.0,
+      "all_scores_REU": [
+        -651.48
+      ],
+      "n_traj": 1,
+      "linker_ss_at_min": "LLHHHHHHHHL",
+      "linker_helix_frac_at_min": 0.727,
+      "linker_helix_frac_modal": 0.727,
+      "ddG_min_REU": 85.28,
+      "ddG_mean_REU": 85.28
+    }
+  }
+}
