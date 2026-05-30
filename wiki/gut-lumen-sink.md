@@ -119,13 +119,7 @@ By placing uricase in the intestinal lumen:
 
 ### Barrier Crossing Is Hard
 
-The intestinal epithelium is a formidable barrier to large proteins:
-- **Tight junctions** limit paracellular passage to molecules <600 Da
-- **Proteases** in the GI tract and epithelial cells degrade proteins
-- **pH gradient** ranges from acidic stomach (pH 2–3) to neutral small intestine (pH 7)
-- **Mucus layer** is hostile to large molecules
-
-A 135 kDa protein (uricase tetramer) must survive this gauntlet to reach systemic circulation. Success rates for oral peptides are in the 1–10% bioavailability range at best. (Source: blood-barrier-exploits.md)
+The intestinal epithelium is a formidable barrier to large proteins (tight junctions limit paracellular passage to <600 Da; proteases, the pH gradient, and the mucus layer all degrade or exclude a 135 kDa uricase tetramer; oral-protein bioavailability tops out at ~1–10%). The full barrier biology and the 14 candidate systemic-crossing routes are owned by [blood-barrier-exploits.md](./blood-barrier-exploits.md). The gut-lumen sink sidesteps this barrier entirely. (Source: blood-barrier-exploits.md)
 
 ### Lumen-Based Degradation Is Elegant
 

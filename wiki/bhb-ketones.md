@@ -23,49 +23,11 @@ sources:
 
 > **Species-gap caveat (methodological standard, 2026-04-23)**: Rodent cellular IC50 values for NLRP3 inhibitors routinely diverge from human cellular IC50 by up to 3 orders of magnitude. Example: dapansutrile IC50 = 1 nM in mouse J774A.1 cells vs. 1,000 nM (1 μM) in human MDM cells under LPS+nigericin stimulation (ChEMBL v34, 2026-04-23). Every rodent-derived IC50 in this document should be read with that translation uncertainty in mind — mouse efficacy is still the best preclinical gout predictor we have, but dose translation requires a species-bridging measurement (e.g., a human THP-1 IC50) before making dosing claims. (source: chembl-cross-check.md)
 
-## Unique Mechanism: Direct NLRP3 Inhibition
+## Mechanism: Multi-Chokepoint Direct NLRP3 Inhibition
 
-Unlike compounds that work through upstream inflammatory pathways, BHB directly modulates NLRP3 assembly itself. This is remarkable because BHB's anti-inflammatory effect is **NOT dependent on:**
-- AMPK activation
-- Autophagy enhancement
-- ROS (reactive oxygen species) reduction
-- Any known fasting or metabolic pathway
+BHB is a *specific* NLRP3 inflammasome inhibitor (not a general anti-inflammatory) that acts directly as a signaling molecule on inflammasome assembly — **independent of** AMPK, autophagy, ROS reduction, or any fasting/metabolic pathway. It hits three chokepoints from one metabolite: CP1 (NF-κB priming block), CP2 (potassium-efflux block + ASC-speck reduction), and CP4 (caspase-1 suppression). In rats on a ketogenic diet, gout flares were significantly reduced. The full mechanism, the Nature Medicine primary source, and the chokepoint map are owned by [nlrp3-exploit-map.md](./nlrp3-exploit-map.md). (Source: nlrp3-exploit-map.md)
 
-Instead, BHB acts as a direct signaling molecule on the inflammasome itself.
-
-**(Source: nlrp3-exploit-map.md)** — "BHB — the ketone body your liver makes during fasting or ketosis — is a specific NLRP3 inflammasome inhibitor. Not a general anti-inflammatory. It targets NLRP3 specifically, and it works against urate crystals directly... BHB deactivates neutrophil NLRP3 inflammasome specifically — and neutrophils are the primary effector cells in gout flares."
-
-## Multi-Chokepoint Inhibition
-
-### Chokepoint 1: NF-κB Priming
-
-BHB prevents the Signal 1 priming step by blocking NF-κB activation and suppression of pro-inflammatory gene transcription.
-
-### Chokepoint 2: NLRP3 Conformational Activation
-
-BHB prevents **potassium efflux** — a critical trigger for NLRP3 assembly. When MSU crystals are phagocytosed, they rupture lysosomes, causing intracellular K⁺ efflux. This K⁺ depletion is one of the canonical signals for NLRP3 oligomerization. BHB blocks this signaling event directly.
-
-BHB also **reduces ASC speck formation**, preventing the physical assembly of the inflammasome platform.
-
-**Overlap note:** CBD, CBC, and THCV also suppress K⁺ efflux via P2X7 receptor block (CBD reduces nigericin-induced K⁺ efflux ~13% at 10 μM in THP-1 monocytes; In Vitro, Liu et al., *J Nat Prod* 2020). P2X7 sits upstream of K⁺ efflux and is canonically the signal-2 trigger. Stacking a P2X7-blocking cannabinoid on top of BHB hits the same chokepoint from a slightly different angle — likely diminishing returns rather than additive. For additive CP2 coverage, a mechanistically distinct inhibitor (oridonin at Cys279, beta-caryophyllene via CB2/NLRP3 direct docking) is a better layering choice than another K⁺-efflux blocker. See [Cannabinoids & Terpenes](./cannabinoids-terpenes.md). (source: cannabinoids-terpenes.md)
-
-### Chokepoint 4: Caspase-1 Suppression
-
-BHB reduces caspase-1 activation downstream of inflammasome assembly, providing a third layer of suppression.
-
-**(Source: nlrp3-exploit-map.md)** — "BHB prevents potassium efflux and reduces ASC speck formation. It blocks both the priming step (CP1) and the assembly step (CP2). In rats on a ketogenic diet, gout flares were significantly reduced."
-
-## Clinical Evidence
-
-### Rat Gout Models
-
-Rats on a ketogenic diet showed **significantly reduced gout flare frequency and severity** compared to controls on standard diet. The effect was specific to diet-induced ketosis and urate crystal-induced flares.
-
-### Mechanism Specificity
-
-Published research has confirmed BHB works through **direct NLRP3 binding and conformational effects**, not through metabolic byproducts or secondary pathways.
-
-**(Source: nlrp3-exploit-map.md)** — "Importantly: BHB's effects are NOT dependent on AMPK, autophagy, ROS reduction, or any of the usual fasting pathways. It's a direct inhibitory effect on NLRP3 assembly. And it doesn't need to be metabolized to work — it acts directly as a signaling molecule."
+**Overlap note (CP2 layering):** CBD, CBC, and THCV also suppress K⁺ efflux via P2X7 receptor block (CBD reduces nigericin-induced K⁺ efflux ~13% at 10 μM in THP-1 monocytes; In Vitro, Liu et al., *J Nat Prod* 2020). P2X7 sits upstream of K⁺ efflux. Stacking a P2X7-blocking cannabinoid on top of BHB hits the same chokepoint from a slightly different angle — likely diminishing returns rather than additive. For additive CP2 coverage, a mechanistically distinct inhibitor (oridonin at Cys279, beta-caryophyllene via CB2/NLRP3 direct docking) is a better layering choice than another K⁺-efflux blocker. See [Cannabinoids & Terpenes](./cannabinoids-terpenes.md). (source: cannabinoids-terpenes.md)
 
 ## The Uric Acid Paradox: Resolved (During Intercritical Periods)
 
@@ -131,9 +93,7 @@ Exogenous BHB does not provide the full metabolic benefits of fasting (autophagy
 
 ## Integration with Open Enzyme Strategy
 
-BHB's strength is immediate NLRP3 suppression during the crystal-dissolution phase. When [[engineered-koji|engineered koji]] or [[engineered-yeast|engineered yeast]] begins dissolving existing MSU crystals, crystal shedding can trigger acute flares. BHB (via fasting or supplementation) provides prophylactic inflammasome suppression during this high-risk period.
-
-**(Source: nlrp3-exploit-map.md)** — "The crystal dissolution danger window: When uric acid-lowering therapy (including koji-uricase) starts dissolving existing MSU crystal deposits, the crystals temporarily become smaller with more surface area, and crystal shedding from tophi can trigger acute flares. This is why the NLRP3 stack isn't just a bridge — it's essential during the crystal dissolution phase."
+BHB's strength is immediate NLRP3 suppression during the **crystal-dissolution danger window** — when engineered koji/yeast uricase begins dissolving existing MSU deposits, crystal shedding from tophi can transiently trigger acute flares, making prophylactic inflammasome suppression essential rather than merely a bridge. The full danger-window framing is owned by [nlrp3-exploit-map.md](./nlrp3-exploit-map.md). (Source: nlrp3-exploit-map.md)
 
 ## Contraindications, Drug Interactions, and Dose-Dependent Risk
 

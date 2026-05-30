@@ -143,58 +143,7 @@ For a food-grade therapeutic organism, pyrG is strongly preferred. (Source: engi
 
 ## Fermentation: Growing Koji on Rice
 
-Traditional koji fermentation is ancient and reproducible. The biological parameters are well-characterized.
-
-### Koji-kin vs. Koji Rice — The Critical Distinction
-
-A common source of confusion in home fermentation: **koji-kin** and **koji rice** are different things. (source: koji-home-fermentation.md)
-
-| Term | What it is | What it looks like | Use |
-|---|---|---|---|
-| **Koji-kin** (種麹, *tane-koji*) | Dried *Aspergillus* spore inoculum on a small carrier (typically rice flour) | Pink/purple foil packet, fine pinkish-tan powder | **Starting material.** A pinch inoculates ~1 kg of cooked rice. |
-| **Koji rice** (麹, *kōji*) | Cooked rice that has been inoculated with koji-kin and fully colonized by mycelium over 42–48 h | Whole rice grains covered in white fuzzy mycelium, sweet/floral smell | **Working enzyme substrate.** This is what's called for in shio-koji / amazake / miso recipes. |
-
-You only buy koji-kin once per ~15 kg of rice you plan to inoculate. The two-stage process is: (1) koji-kin + steamed rice → koji rice (42–48 h at 32–40°C); (2) koji rice → finished product (shio-koji, amazake, miso). (source: koji-home-fermentation.md)
-
-### Standard Protocol
-
-**Temperature:** 30–32°C (optimal range; can tolerate 25–35°C)
-
-**Humidity:** >80% (critical; dry conditions inhibit growth)
-
-**Substrate:** Steamed white rice (short-grain preferred; koji ferments evenly)
-
-**Duration:** 36–48 hours
-
-**Setup:** 
-- Spread steamed rice in a shallow layer on a clean surface (bamboo mat, cloth, or perforated pan)
-- Inoculate with koji spores (either a prepared culture or spores saved from a prior batch)
-- Cover lightly to maintain humidity while allowing air circulation
-- Temperature control via incubator, oven with pilot light, or room heater
-
-**Turning schedule (手入れ):** Koji rice requires mixing at intervals to distribute heat and moisture. (source: koji-home-fermentation.md)
-- **~15–20 h after inoculation (1st turning):** Rice should be warm to the touch, faint sweet smell. Break up clumps, mix gently, re-wrap. Target temp: 37–39°C.
-- **~24 h (2nd turning):** White mycelium visible. Mix again. Target: 38–40°C.
-- **~36 h (3rd turning):** Mycelium dense and white, sweet/floral smell ("chestnut" / "popcorn" notes). Target: 37–40°C.
-
-**Endpoint:**
-- Koji is ready when the rice grains are bound together by white mycelium (fungal threads)
-- A pleasant fruity/sweet aroma develops (from enzymatic activity)
-- Grains appear coated with white growth but individual grains still visible (not mushy)
-- Should NOT smell of ammonia, alcohol, or be greenish (= contamination, discard)
-
-**Yield:** From ~500g steamed rice, you'll produce ~600–700g of koji (wet weight). The enzyme concentration is ready for immediate use. (Source: engineered-koji-protocol.md)
-
-### Troubleshooting
-
-| Problem | Likely cause | Fix |
-|---|---|---|
-| No mycelium growth | Temperature too low; rice too wet/dry; expired koji-kin | Check thermometer; rice should be al dente; replace starter |
-| Green/black/pink patches (not white) | Contamination (Penicillium, bacteria) | Discard. Improve sanitation, lower temp |
-| Ammonia smell | Over-fermented (>50 h, too warm) | Discard or use immediately for shio-koji (salt will mask it) |
-| Yeasty/alcohol smell | Wild yeast competition; rice too wet | Discard; reduce moisture next batch |
-
-(source: koji-home-fermentation.md)
+Traditional koji fermentation is ancient, reproducible, and well-characterized. In brief: koji-kin (種麹, *tane-koji* — the dried spore inoculum, the starting material) is mixed into steamed short-grain white rice and held at 30–32°C / >80% humidity for 36–48 h with periodic turning (手入れ) to manage heat and moisture, yielding koji rice (麹, *kōji* — the working enzyme substrate). The koji-kin-vs-koji-rice distinction, the full turning schedule, endpoint criteria, and a contamination troubleshooting table are canonical in [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline the engineered strain must outperform.
 
 ### Enzymatic Activity Output
 
@@ -256,39 +205,12 @@ Rough estimate: 50–100 mg of uricase per liter of koji culture, or ~5–10 mg 
 
 ## Delivery Formats for Therapeutic Koji
 
-For a complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), see [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform for EPI applications. (source: koji-home-fermentation.md)
+The wild-type format recipes — fresh koji, shio-koji (salt/water ratios, marinade use), amazake-style beverage, and dried powder, with shelf lives and the shio-koji "highest-leverage for EPI" pre-digestion argument — are canonical in [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline the engineered strain must outperform for EPI applications. The engineered-strain-specific constraints layered on top of those formats:
 
-### Fresh Koji on Rice
-- Consumed immediately after 36–48 hour fermentation
-- Highest enzyme activity (fresh)
-- Consumed as-is or processed into amazake (sweet rice drink)
-- Shelf-stable for days at room temperature; refrigerate for longer storage
+- **Uricase heat sensitivity governs format choice.** *A. flavus* uricase loses activity above 40°C, so conventional heat drying (50–60°C) destroys it; **lyophilization** (with trehalose or maltodextrin lyoprotectant) is required for a dried-powder uricase format. Amazake's 55–60°C hold is near uricase denaturation temperature — expect some uricase activity loss in a beverage format, though digestive enzymes (amylase, protease) are more heat-stable. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+- **Capsule format:** size 00 capsules (~500 mg each), shelf-stable months refrigerated or frozen.
 
-### Shio Koji (Salted Koji)
-- Mix fresh koji rice + salt (~30% by weight of koji) + water (~125% by weight of koji) (source: koji-home-fermentation.md)
-- Ferment 7–14 days at room temperature, stirring daily; blend smooth when rice grains have softened
-- Develops complex umami flavor, becomes paste-like
-- Shelf-stable 6+ months refrigerated
-- Can be consumed spoonfuls at a time or used as a marinade (5–10% by weight on protein, 30 min to 24 h)
-- Traditional Japanese preservation format; **highest-leverage application for EPI** because proteases pre-digest protein in the marinade phase before food reaches the eater (Mechanistic Extrapolation; source: koji-home-fermentation.md)
-
-### Dried Koji Powder
-- Enzyme stability after drying is critical
-- **Conventional heat drying (50–60°C)** destroys uricase activity; *A. flavus* uricase loses activity above 40°C
-- **Lyophilization (freeze-drying)** preserves enzyme activity far better
-- Trehalose or maltodextrin as lyoprotectant during freeze-drying
-- Capsule format (size 00 capsules: ~500 mg each)
-- Shelf-stable for months refrigerated or frozen
-
-### Fermented Beverage (Amazake-Style)
-- Blend fresh koji with water, hold at **55–60°C for 8–10 hours** (yogurt maker, slow cooker on warm, sous vide, or thermos) — α-amylase converts rice starch to maltose and glucose (source: koji-home-fermentation.md)
-- Heat briefly to 80°C to deactivate enzymes before refrigerating (otherwise wild yeast takes over)
-- Sweet rice drink, naturally sweet from starch breakdown; refrigerated shelf life ~10 days
-- Koji with uricase provides enzyme in drinkable format; note that 55–60°C is near uricase denaturation temperature — some uricase activity loss expected; digestive enzymes (amylase, protease) are more heat-stable (Mechanistic Extrapolation; source: koji-home-fermentation.md)
-- Consumed as beverage 100–200 mL warm before meals as digestive aid
-- Shelf-stable if refrigerated
-
-(Source: engineered-koji-protocol.md, engineered-yeast-uricase-proposal.md)
+(Source: engineered-koji-protocol.md, engineered-yeast-uricase-proposal.md, koji-home-fermentation.md)
 
 ## Hydrogen Peroxide Byproduct Management
 
@@ -324,15 +246,7 @@ The peroxisomal co-localization of uricase + endogenous catalase is the basis fo
 
 ## Yellow vs. White vs. Black Koji for Home Use
 
-For EPI / digestive-enzyme home use, the choice of koji strain matters. (source: koji-home-fermentation.md)
-
-| Strain | Species | Strengths | Best for |
-|---|---|---|---|
-| **Yellow koji** | *Aspergillus oryzae* | Highest amylase + standard protease; sweetest amazake; most documentation | **Default choice for digestive-enzyme home use.** Sake, sweet miso, amazake, shio-koji. |
-| **White koji** | *A. luchuensis* var. *kawachii* | High citric acid (anti-contamination in warm climates); good amylase | Shochu, awamori, sour-leaning miso. Tangier shio-koji. |
-| **Black koji** | *A. luchuensis* var. *awamori* | Highest citric acid; robust in hot/humid conditions | Awamori (Okinawan distillate); rare in DIY use |
-
-**Recommendation for EPI / home-PERT-alternative use case:** Yellow koji (*A. oryzae*) is the better-fit default — highest amylase and standard protease, sweetest amazake, most documentation. White koji is functional but tangier and has slightly lower diastatic power. If white koji is on hand, use it first to learn the process, then switch to yellow when restocking. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+For EPI / digestive-enzyme home use, yellow koji (*A. oryzae*) is the default — highest amylase and standard protease, sweetest amazake, most documentation. White koji (*A. luchuensis* var. *kawachii*) is functional but tangier with slightly lower diastatic power; black koji (*A. luchuensis* var. *awamori*) is rare in DIY use. The full strain-comparison table and sourcing notes are canonical in [Koji Home Fermentation §strain selection](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
 
 **Key limitation for fat malabsorption EPI:** Lipase activity of *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains — likely the limiting digestive-enzyme axis for fat malabsorption phenotype EPI. This is an open question requiring quantitative comparison vs. commercial PERT (Creon, Zenpep). (source: koji-home-fermentation.md)
 

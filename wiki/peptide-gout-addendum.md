@@ -63,81 +63,19 @@ The one you're already using. A 15-amino-acid peptide derived from human gastric
 
 **[Mostly Preclinical]**
 
-### Mechanism of Action
+### Mechanism of Action — Gout-Axis Summary
 
-BPC-157 operates through at least four major molecular systems. It's not a single-pathway drug — it's more like a systems-level modulator, which is part of why it's hard to study cleanly and also why it shows effects across so many different injury types.
+BPC-157 is a systems-level modulator rather than a single-pathway drug. Four mechanisms matter for the gout argument: selective nitric-oxide modulation (stabilizes protective eNOS via Cav-1, suppresses inflammatory iNOS), VEGFR-2-driven angiogenesis and tissue repair, broad anti-inflammatory cytokine suppression (TNF-α, IL-6, IL-1β in animal models), and — the most underappreciated link for gout — gut barrier repair. **The gout-axis hook:** approximately one-third of uric acid excretion happens through the gut via intestinal uricolysis, so a compound that restores the gut barrier could theoretically support that excretion pathway (healthier gut → better intestinal uricolysis → lower serum urate). No study has put BPC-157 in a dish with macrophages and MSU crystals, so the NLRP3 connection is inference, not demonstrated.
 
-#### 1. Nitric Oxide System — The Big One
+Full mechanism (eNOS/iNOS detail, Cav-1 cascade, growth-factor/FAK-paxillin pathways, the NLRP3-question caveat, gut-healing evidence): [BPC-157](./bpc-157.md).
 
-BPC-157 modulates the nitric oxide (NO) system in a nuanced way that's genuinely interesting. It **stabilizes endothelial nitric oxide synthase (eNOS)** — the "good" version that promotes vasodilation, blood flow, and tissue healing — while **suppressing inducible NOS (iNOS)**, the version that ramps up during inflammation and produces toxic levels of NO that contribute to tissue damage.
+### Delivery & Safety
 
-Mechanistically, BPC-157 stimulates Caveolin-1 (Cav-1) phosphorylation, which releases eNOS from its inhibitory binding to Cav-1. This activates the Src-Caveolin-1-eNOS pathway, increasing protective NO production. The downstream effect: better blood flow to injured tissue, reduced edema, and an environment that favors repair over destruction.
-
-```mermaid
-graph LR
-    A["BPC-157"] --> B["Cav-1 phosphorylation"]
-    B --> C["eNOS released from Cav-1"]
-    C --> D["↑ eNOS activity"]
-    D --> E["↑ protective NO"]
-    
-    A --> F["↓ iNOS expression"]
-    F --> G["↓ inflammatory NO + peroxynitrite"]
-    
-    style D fill:#90EE90
-    style G fill:#FFB6C6
-```
-
-**Gout relevance:** During a flare, iNOS goes through the roof in the affected joint. The toxic NO and peroxynitrite it generates cause oxidative damage and amplify inflammation. An agent that can selectively suppress iNOS while maintaining eNOS-dependent blood flow is doing something colchicine doesn't do. That said — this is mechanistic reasoning from animal models, not gout-specific clinical evidence.
-
-#### 2. Growth Factor Modulation & Angiogenesis
-
-BPC-157 upregulates VEGFR-2 (vascular endothelial growth factor receptor 2), which doesn't mean it makes tumors grow — it means it promotes the formation of new blood vessels in injured tissue. It increases receptor density rather than flooding the system with VEGF itself, which is a more controlled form of angiogenic signaling.
-
-It also upregulates growth hormone receptor expression, activates the FAK-paxillin pathway (critical for cell migration and adhesion), and promotes the Akt-eNOS phosphorylation cascade. All of these converge on tissue repair.
-
-**Gout relevance:** Chronic gout causes real structural damage — cartilage erosion, bone damage from tophi, and synovial tissue destruction. A compound that accelerates vascularization and tissue repair could help with recovery between flares, but this is speculative extrapolation, not demonstrated in gouty joints.
-
-#### 3. Anti-Inflammatory Pathways
-
-BPC-157 reduces pro-inflammatory cytokines (TNF-α, IL-6, IL-1β) in various animal models of inflammation and injury. Multiple studies show reduced inflammatory cell infiltration, lower myeloperoxidase (MPO) activity (a marker of neutrophil involvement — exactly what drives gout pain), and reduced oxidative stress markers.
-
-> **Key Insight:** The NLRP3 Question
->
-> Here's where we need to be honest. There is no published study that directly tests BPC-157's effect on NLRP3 inflammasome activation, either generally or in the context of MSU crystal-induced inflammation specifically. The anti-inflammatory effects are well-documented in animal models, and they *indirectly* suggest NLRP3 involvement (because reducing IL-1β and neutrophil recruitment are downstream of NLRP3), but nobody has put BPC-157 in a dish with macrophages and MSU crystals and measured inflammasome assembly. That study hasn't been done.
->
-> What we can say: BPC-157 reduces the same cytokines (IL-1β, TNF-α) that NLRP3 activation produces. It reduces oxidative stress (ROS are a key NLRP3 trigger). And it suppresses iNOS, whose products can activate NLRP3. So the mechanistic argument is reasonable — but it's an inference, not a proven pathway.
-
-#### 4. Gut Healing — The Indirect Gout Connection
-
-This is actually where BPC-157 might matter most for gout, and most people miss it entirely.
-
-BPC-157 was originally studied for its gastroprotective effects — it's literally derived from a protein found in human gastric juice. In animal models, it repairs gastric ulcers, heals NSAID-induced gut damage, restores intestinal tight junctions (the "leaky gut" connection), reduces mucosal inflammation, and protects against alcohol-induced intestinal damage.
-
-Why does this matter for gout? Because approximately **one-third of uric acid excretion happens through the gut** via intestinal uricolysis. Gut bacteria (particularly those expressing uricase-like enzymes) break down uric acid in the intestinal lumen. If your gut barrier is compromised, if mucosal inflammation is reducing bacterial diversity, or if the intestinal epithelium isn't functioning well — you're potentially impairing a significant excretion pathway.
-
-BPC-157's ability to restore gut barrier integrity, reduce intestinal inflammation, and protect the gut lining could theoretically support the gut's contribution to uric acid elimination. No one has studied this directly (BPC-157's effect on intestinal uric acid handling), but the logic chain is sound: healthier gut → healthier microbiome → better intestinal uricolysis → lower serum uric acid.
-
-### Delivery Routes: Nasal Spray vs. The Alternatives
-
-Since you're using nasal spray, here's the bioavailability picture:
-
-| Route | Bioavailability | Details |
-|-------|-----------------|---------|
-| **Subcutaneous Injection** | >80% | Gold standard. Peak plasma in 15-30 min. Bypasses all degradation barriers. Best for systemic effects and musculoskeletal targets. |
-| **Nasal Spray** | 30-50% | Avoids first-pass liver metabolism. Good systemic delivery without needles. May need higher doses to match injection levels. Good balance of convenience and efficacy. |
-| **Oral (Standard)** | ~3% | Most gets destroyed by stomach acid and enzymes. BUT — for gut-specific effects (healing, barrier repair), this is actually ideal. The peptide acts locally before it's degraded. |
+Bioavailability runs ~>80% subcutaneous, 30–50% nasal, ~3% oral (but oral is ideal for *local* gut action). Human safety data is razor-thin — one 2-person IV pilot (Lee & Burgess 2025, up to 20 mg, well tolerated) plus extensive reassuring rodent data; pro-angiogenic, so a theoretical caution in active malignancy. Full route table + safety profile: [BPC-157](./bpc-157.md).
 
 > **Route Strategy for Gout Specifically**
 >
 > Your nasal spray is giving you decent systemic anti-inflammatory coverage. But if the gut-uric acid excretion angle interests you, there's an argument for *also* taking oral BPC-157 — not for systemic bioavailability (which is terrible orally) but for direct local action on the gut lining. Some protocols run nasal/injectable for systemic + oral for gut simultaneously.
-
-### Safety Profile
-
-A 2025 pilot study (Lee & Burgess) gave two healthy adults IV BPC-157 infusions up to 20mg — well tolerated, no adverse events. But that's literally two people. The animal safety data is extensive and reassuring — no toxicity, no organ damage, no mutagenicity in standard panels across hundreds of rodent studies. But the human data is razor-thin.
-
-Known considerations: BPC-157 is pro-angiogenic (promotes blood vessel growth), which raises theoretical concerns for anyone with active cancer or a history of certain cancers. It may affect blood pressure through NO modulation. And because it promotes growth factor signaling, some clinicians caution against use during active infections where you don't want to "feed" the proliferative environment.
-
-For gout specifically, one concern worth noting: BPC-157's growth-promoting properties are generally seen as beneficial, but if there's active tophaceous gout with significant crystal deposits, we genuinely don't know whether promoting tissue remodeling around tophi is helpful or neutral. Nobody's studied it.
 
 ---
 
@@ -217,43 +155,17 @@ KPV hits both of the key inflammatory pathways in gout — and it hits them hard
 
 Alpha-melanocyte-stimulating hormone (α-MSH) is one of the body's own anti-inflammatory neuropeptides. It's powerfully anti-inflammatory, but it also causes skin darkening (melanogenesis) and activates multiple melanocortin receptors with various side effects. KPV isolates the anti-inflammatory activity of α-MSH's C-terminal tripeptide *without* the melanocortin receptor activation. It's a cleaner signal.
 
-### Dual Pathway Inhibition
+### Dual Pathway Inhibition — Why It's Interesting for Gout
 
-#### 1. NF-κB Pathway — The Priming Signal
+KPV is the one peptide here that hits *both* of gout's key inflammatory pathways: it suppresses NF-κB (signal 1, the priming step that transcribes pro-IL-1β and NLRP3 itself) *and* directly inhibits NLRP3 inflammasome assembly (signal 2, the trigger). The entire gout flare cascade runs through NLRP3 → Caspase-1 → IL-1β → neutrophil recruitment, so a single molecule attacking both the priming and activation steps mirrors colchicine + anakinra in one compound. That dual-block is the reason KPV's mechanistic case for gout is the strongest on this list.
 
-Nanomolar concentrations of KPV inhibit NF-κB activation. This is "signal 1" in NLRP3 inflammasome priming — without NF-κB-driven transcription, cells produce less pro-IL-1β and less NLRP3 protein. KPV also inhibits MAP kinase inflammatory signaling and reduces pro-inflammatory cytokine secretion broadly.
-
-#### 2. NLRP3 Inflammasome — The Trigger
-
-KPV has been shown to directly inhibit NLRP3 inflammasome activation in immune cells. This means it's not just reducing the fuel (pro-IL-1β) — it's interfering with the ignition system itself.
-
-```mermaid
-graph LR
-    A["KPV"] --> B["Signal 1 Block"]
-    B --> C["↓ NF-κB"]
-    C --> D["↓ pro-IL-1β + ↓ NLRP3 protein"]
-    
-    A --> E["Signal 2 Block"]
-    E --> F["↓ NLRP3 assembly"]
-    F --> G["↓ Caspase-1 activation"]
-    
-    D --> H["Net: less IL-1β produced and activated"]
-    G --> H
-    H --> I["Reduced flare intensity"]
-    
-    style H fill:#fff9c4
-    style I fill:#c8e6c9
-```
-
-This dual-block mechanism is genuinely compelling for gout. The entire gout flare cascade runs through NLRP3 → Caspase-1 → IL-1β → neutrophil recruitment. KPV attacks both the priming step (NF-κB) and the activation step (NLRP3 assembly). That's the same general strategy as colchicine (disrupts inflammasome assembly) combined with anakinra (blocks IL-1), in a single molecule.
+Full dual-pathway mechanism (IκB-α stabilization, PepT1-mediated uptake avoiding melanocortin side effects, signal-1/signal-2 detail) plus the (CKPV)₂ urate-crystal-reversal evidence: [KPV](./kpv-peptide.md).
 
 ### Gut Anti-Inflammatory Effects
 
-Here's the second reason KPV is interesting for gout. In animal models of colitis (DSS-induced and TNBS-induced), orally administered KPV significantly reduced intestinal inflammation: reduced weight loss, decreased colonic myeloperoxidase activity, and markedly decreased histological signs of inflammation and pro-inflammatory cytokine mRNA levels.
+The second reason KPV is interesting for gout is the gut-uric-acid axis: KPV reduces intestinal inflammation (demonstrated in colitis models) and reaches gut tissue orally via the PepT1 transporter, so by supporting a healthier gut environment it could improve conditions for intestinal uricolysis — the gut's third of uric acid excretion — *while* delivering systemic NLRP3 inhibition. That dual reach (flare mechanism + an excretion pathway) is what sets it apart.
 
-KPV enters intestinal epithelial cells and immune cells via the PepT1 transporter — the same peptide transporter that handles dietary di- and tripeptides. This gives it direct access to the gut immune system.
-
-**The gout connection:** Remember the gut-uric acid axis. If KPV reduces intestinal inflammation and supports a healthier gut environment, it could improve the conditions for intestinal uricolysis — the gut's contribution to uric acid excretion. Combined with its systemic NLRP3 inhibition, KPV potentially addresses both the flare mechanism *and* one of the excretion pathways.
+PepT1 uptake detail, DSS/TNBS colitis data, and dosing/route considerations: [KPV](./kpv-peptide.md).
 
 > **Could KPV Be More Targeted for Gout Than BPC-157?**
 >
@@ -266,10 +178,6 @@ KPV enters intestinal epithelial cells and immune cells via the PepT1 transporte
 ### Gut Health, SIBO, and the Shared Inflammatory Pathway
 
 KPV's gut anti-inflammatory properties are especially relevant beyond gout. The same NLRP3 inflammasome pathway that drives gout flares is a central driver of intestinal inflammation — including the chronic low-grade inflammation associated with **SIBO (Small Intestinal Bacterial Overgrowth)**. This creates a direct connection to Lynn's digestive situation (see [The Enzyme Deficit Connection](enzyme-deficit-deep-dive.md)): SIBO damages the brush-border enzymes, worsens enzyme insufficiency, and drives the same inflammatory pathways that KPV targets. A compound that calms intestinal NLRP3 activation could theoretically help both gout (by supporting intestinal uric acid excretion) and digestive insufficiency (by reducing the inflammation that damages enzyme-producing tissue).
-
-### Delivery & Dosing Considerations
-
-KPV is typically administered orally (for gut effects) or subcutaneously (for systemic anti-inflammatory effects). Its small size (just 3 amino acids) gives it an advantage over larger peptides for oral absorption — it's transported by PepT1 and is resistant to significant enzymatic degradation. Some protocols use both routes simultaneously: oral for gut healing and sub-Q for systemic NLRP3 suppression.
 
 ---
 
@@ -377,11 +285,13 @@ The gout relevance is indirect but real: ANP increases renal blood flow and glom
 
 **Dapansutrile** • Small molecule NLRP3 inhibitor • Not a peptide • Oral β-sulfonyl nitrile
 
-**[Phase II Data]**
+**[Phase 2a — completed, no further gout trial registered]**
 
-Technically not a peptide, but worth including because it's the most advanced *direct* NLRP3 inflammasome inhibitor in clinical development for gout. Dapansutrile selectively inhibits the NLRP3 inflammasome and has shown a ~35% reduction in activated caspase-1 levels in studies.
+Technically not a peptide, but worth including because it's the most advanced *direct* NLRP3 inflammasome inhibitor that has been clinically tested for gout. Dapansutrile selectively inhibits the NLRP3 inflammasome and has shown a ~35% reduction in activated caspase-1 levels in studies.
 
-This is what a purpose-built gout anti-inflammatory looks like — it goes directly after the molecular target (NLRP3) rather than working through upstream or parallel pathways like the peptides discussed above. Phase II trials are underway. If it works as hoped, it could eventually complement or replace colchicine for flare prevention.
+This is what a purpose-built gout anti-inflammatory looks like — it goes directly after the molecular target (NLRP3) rather than working through upstream or parallel pathways like the peptides discussed above. Its single gout trial was an open-label **phase 2a** proof-of-concept (N=34, *Lancet Rheumatol* 2020, PMID 33005902), which showed 52–68% target-joint-pain reduction at day 3. **No Phase 2b or Phase 3 gout trial is registered** as of April 2026 — Olatec's later active programs moved to heart failure and COVID-19, so its gout development appears stalled rather than advancing. See [NLRP3 Exploit Map](nlrp3-exploit-map.md) for the full pipeline status and the 1,000× mouse-vs-human cellular-potency caveat.
+
+> **Phase number note:** an earlier version of this addendum (and some sibling pages) described dapansutrile as "Phase II" or "Phase 3" for gout. The primary source (PMID 33005902) is explicitly a **phase 2a** trial, and it is the only registered dapansutrile gout trial — there is no Phase 2b/3 in gout. The "Phase 3" framing on other pages refers to non-gout indications and should not be read as gout-stage.
 
 Worth keeping on your radar not as something you'd take now, but as context for where the field is heading. The fact that pharma is investing in direct NLRP3 inhibitors for gout validates the entire thesis that the inflammasome is *the* target.
 
@@ -489,7 +399,7 @@ This section is the most important one. Peptides generate enormous enthusiasm in
 
 ### Where the Logic Is Strongest
 
-The NLRP3 inflammasome is *definitively* the driver of gout flares. This isn't disputed — it's textbook immunology at this point. And the pharmaceutical industry agrees: dapansutrile (a direct NLRP3 inhibitor) is in Phase II trials specifically for gout, and IL-1 inhibitors (canakinumab, anakinra) are already used for refractory gout.
+The NLRP3 inflammasome is *definitively* the driver of gout flares. This isn't disputed — it's textbook immunology at this point. And the pharmaceutical industry agrees: dapansutrile (a direct NLRP3 inhibitor) was tested in a phase 2a gout trial (PMID 33005902), and IL-1 inhibitors (canakinumab, anakinra) are already used for refractory gout.
 
 So when KPV shows NLRP3 inflammasome inhibition in immune cells, that's not a stretch — it's targeting a validated pathway. The gap is: does it work at physiological concentrations in a human joint during an actual flare? We don't know. But the target is right.
 

@@ -29,25 +29,11 @@ Uricase (EC 1.7.3.3), also called urate oxidase, is the enzyme that catalyzes th
 
 ## Evolutionary Loss
 
-The uricase gene was lost independently in at least two primate lineages (great apes and lesser apes) and was inactivated approximately 15–20 million years ago during the Miocene epoch. This was not a neutral loss—molecular clock analysis and genetic evidence suggest it was **selected for**, conferring a survival advantage to ancestral primates. (Source: gout-deep-dive.md)
-
-### The Fructose-Fat Storage Hypothesis
-
-The most compelling theory, championed by researcher Richard Johnson, argues that losing uricase enabled Miocene ancestors to more efficiently convert fructose into fat stores during periods of seasonal fruit scarcity. Uric acid amplifies fructokinase activity and inhibits AMPK, promoting de novo lipogenesis from fructose. With an intact uricase enzyme, uric acid would be rapidly cleared, weakening this fat-storage signal. The 2025 CRISPR study by the Gaucher lab at Georgia State directly confirmed this: liver cells with restored uricase did not accumulate fat when exposed to fructose, while unedited cells did. (Source: gout-deep-dive.md, enzyme-deficit-deep-dive.md)
-
-### Alternative Hypotheses
-
-**The Antioxidant Hypothesis:** Uric acid accounts for roughly 50–60% of the antioxidant capacity of human blood plasma. Higher serum urate levels may have provided neuroprotection, supporting the evolution of larger, longer-lived brains. Humans and great apes have the highest serum urate levels and the largest brains (relative to body size) among primates. (Source: gout-deep-dive.md)
-
-**The Blood Pressure Hypothesis:** Uric acid promotes sodium retention and stimulates the renin-angiotensin system, both of which raise blood pressure. In ancestral environments with very low dietary sodium, this may have been necessary to maintain adequate blood pressure. (Source: gout-deep-dive.md)
+The functional uricase gene (UOX) was inactivated ~15–20 million years ago and is now a pseudogene (nonsense mutations at codons 33 and 187 plus an aberrant splice site) — a loss that appears to have been positively selected. Three non-exclusive selective rationales (fructose-fat storage, antioxidant/neuroprotection, blood-pressure maintenance) are reviewed in depth, with the Gaucher-lab 2025 CRISPR confirmation of the fructose-lipogenesis link, in [gout-deep-dive.md §"Evolutionary Loss"](./gout-deep-dive.md) and [gout-pathophysiology.md](./gout-pathophysiology.md). The therapeutic upshot: because urate retains beneficial antioxidant roles, the optimal target is "below crystallization threshold," not "as low as possible."
 
 ## The Missing Enzyme Problem
 
-The absence of a functional uricase gene is the root cause of gout in humans. Without uricase, uric acid accumulates in the bloodstream. When serum urate exceeds approximately 6.8 mg/dL (the saturation point at physiological pH and temperature), monosodium urate (MSU) crystals can form and deposit in joints, tendons, and surrounding tissues. (Source: gout-deep-dive.md)
-
-### Systemic Levels
-
-Humans maintain serum uric acid levels of 3.5–7.2 mg/dL, whereas most mammals with functional uricase run below 2 mg/dL. (Source: engineered-yeast-uricase-proposal.md)
+The absence of a functional uricase is the root cause of gout: humans maintain serum uric acid at 3.5–7.2 mg/dL (vs. <2 mg/dL in uricase-positive mammals), and above the ~6.8 mg/dL saturation point monosodium urate (MSU) crystals deposit in joints and tissues. Full pathophysiology — purine catabolism, transporter network, the under-excretor phenotype, NLRP3 → IL-1β flare cascade — is in [gout-pathophysiology.md](./gout-pathophysiology.md) and [gout-deep-dive.md](./gout-deep-dive.md). (Source: engineered-yeast-uricase-proposal.md, gout-deep-dive.md)
 
 ## Molecular Characteristics
 
@@ -99,17 +85,7 @@ Two systemic IV uricase programs are currently in clinical development, both pur
 
 ## The Gut-Lumen Insight
 
-A critical breakthrough in uricase strategy: the enzyme does not require systemic absorption to be effective. Approximately **one-third of daily uric acid elimination occurs through the intestines**, primarily mediated by the ABCG2 transporter expressed on the apical membrane of intestinal epithelial cells. By placing uricase in the intestinal lumen, it creates a "concentration sink" that pulls additional uric acid from the blood across the epithelium. (Source: engineered-yeast-uricase-proposal.md, blood-barrier-exploits.md)
-
-> **Patient-stratification note (reframed 2026-05-08 per [comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model):** The gut-lumen uricase mechanism is **genotype-robust** — WT/WT (non-Q141K) patients show the LARGEST predicted ΔSUA (−0.83 mg/dL at 25 mg/day mid-dose, 90% CI −1.13 to −0.57), Q141K homozygotes the smallest among typical-genotype patients (−0.50 mg/dL). Mechanism is multiplicative on residual ABCG2 capacity. The platform's primary demographic should remain "all gout patients," not be narrowed to Q141K-positive carriers. The flux model also predicts **substrate-limited regime** at all uricase doses tested (capacity ratios 32–1300×) — the binding engineering constraint is GI-survival, not enzyme yield. (Mechanistic Extrapolation — in silico; source: uricase-abcg2-genotype-stratification-computational.md) Countervailing lever: fermentable fiber → butyrate → PPARγ → ABCG2 induction; Q141K-positive patients additionally benefit from butyrate's HDAC-inhibitor-mediated trafficking rescue of the variant. See [abcg2-modulators.md](./abcg2-modulators.md) for the full regulatory landscape and [androgen-urate-axis.md](./androgen-urate-axis.md) for the sex-hormone mechanism (reframed per [comp-016](./t-abcg2-suppression-evidence-mining-computational.md): intestinal ABCG2 sex-dimorphism is driven by absent estradiol-positive signaling in males, not active androgen-driven suppression).
-
-This gut-lumen approach was validated by:
-
-1. **ALLN-346** (engineered oral uricase with good GI survival)
-2. **PULSE probiotic** (Cell Reports Medicine, October 2025): Engineered *E. coli* Nissle 1917 expressing uricase, validated in rodent models
-3. **Engineered S. boulardii** (ACS Synthetic Biology, 2025): Systematic engineering achieved 365 μmol/h/OD enzymatic activity
-
-(Source: engineered-yeast-uricase-proposal.md, etc/open-enzyme-vision.md)
+Uricase does not require systemic absorption to be effective: ~1/3 of daily urate elimination is intestinal (via apical ABCG2), so lumen-resident uricase creates a "concentration sink" that pulls serum urate across the epithelium without barrier crossing. This is the platform's core delivery thesis — the full mechanism, the three independent validating systems (ALLN-346, PULSE probiotic, engineered *S. boulardii* at 365 μmol/h/OD), and the comp-019 genotype-stratification reframing (gut-lumen uricase is genotype-robust; WT/WT patients show the *largest* predicted ΔSUA; engineering constraint is GI-survival, not enzyme yield) are owned by [gut-lumen-sink.md](./gut-lumen-sink.md). See also [abcg2-modulators.md](./abcg2-modulators.md) for the regulatory landscape and [androgen-urate-axis.md](./androgen-urate-axis.md) for the sex-hormone mechanism. (Source: engineered-yeast-uricase-proposal.md, gut-lumen-sink.md)
 
 ## Expression Systems
 
@@ -189,7 +165,7 @@ The peroxisomal co-localization of uricase + endogenous catalase in the whole-ce
 
 ### Gout Management
 
-Uricase (oral, engineered, or as probiotic) addresses the root cause of gout by degrading uric acid before crystallization. By exploiting the intestinal urate secretion pathway (ABCG2), it creates a concentration sink that pulls serum uric acid down without requiring systemic enzyme delivery. (Source: gout-deep-dive.md, etc/open-enzyme-vision.md)
+Uricase (oral, engineered, or probiotic) addresses the root cause of gout by degrading urate before crystallization, exploiting the ABCG2 intestinal secretion pathway — see [gut-lumen-sink.md](./gut-lumen-sink.md). (Source: gout-deep-dive.md, etc/open-enzyme-vision.md)
 
 ### Other Enzyme Deficiencies
 

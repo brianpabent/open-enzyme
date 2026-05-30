@@ -39,7 +39,7 @@ PRPS is regulated by allosteric feedback from IMP and ADP/GDP. Conditions that d
 
 The first natural-product PRPS modulator documented in the OE corpus is **eurycomanol** from *Eurycoma longifolia* (tongkat ali), which suppresses PRPS-driven purine biosynthesis in vitro (PMID 34785103). Tongkat ali Physta also shows SUA ↓7–11% in a 2021 placebo-controlled human RCT (n=105). See [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) for the full chokepoint scope page and [androgen-natural-modulation.md](./androgen-natural-modulation.md) §1 for the tongkat ali entry. (In Vitro + Clinical Trial; source: prps-purine-biosynthesis-chokepoint.md, androgen-natural-modulation.md)
 
-(Source: gout-deep-dive.md, §1; prps-purine-biosynthesis-chokepoint.md)
+(Source: prps-purine-biosynthesis-chokepoint.md)
 
 ### ADA (Adenosine Deaminase) — Purine Catabolism Chokepoint Candidate
 
@@ -65,8 +65,6 @@ In most mammals, uric acid isn't the end of the line. An enzyme called **uricase
 
 We are stuck at the uric acid step. **This is the root cause of gout.**
 
-(Source: gout-deep-dive.md, §1)
-
 ---
 
 ## Step 2: Renal Handling — The Excretion Bottleneck
@@ -91,7 +89,7 @@ Approximately **70% of daily uric acid elimination happens through the kidneys**
 
 This gut-lumen pathway is the mechanistic foundation for [[engineered-yeast-uricase]] and [[engineered-koji-protocol]] — if you place active uricase in the gut, it degrades uric acid present there, creating a "sink" that pulls additional uric acid from the serum.
 
-(Source: gout-deep-dive.md, §1; engineered-yeast-uricase-proposal.md, §1)
+(Source: engineered-yeast-uricase-proposal.md, §1)
 
 ### The Under-Excretor Problem
 
@@ -100,8 +98,6 @@ This gut-lumen pathway is the mechanistic foundation for [[engineered-yeast-uric
 This distinction matters enormously for treatment strategy:
 - Under-excretors: benefit from URAT1 inhibitors, uricosurics, enhanced ABCG2, or gut-lumen degradation
 - Over-producers: benefit from XO inhibitors (allopurinol, febuxostat)
-
-(Source: gout-deep-dive.md, §2)
 
 ### Multi-track urate transporter coverage (added 2026-05-06)
 
@@ -161,8 +157,6 @@ But here's the thing: **crystallization isn't immediate or inevitable.** Many pe
 
 **Open question — what triggers deposited crystal beds to flare?** The five-mechanism research-gap page at [`mechanical-flare-triggers.md`](./mechanical-flare-triggers.md) maps what's known and unknown about the mechanical-use / exertion / fatigue axis as a flare trigger. Empirically, 劳累 (fatigue/overwork) at 19.3% in the Li XD 2012 Qingdao n=1,713 cohort far exceeds 外伤 (trauma) at 0.35% — suggesting metabolic-overload over mechanical-shedding. The gap in trigger-attribution methodology and four testable experimental designs are documented there. (source: mechanical-flare-triggers.md)
 
-(Source: gout-deep-dive.md, §1)
-
 ---
 
 ## Step 4: The Inflammatory Cascade — NLRP3 and the Flare
@@ -202,7 +196,7 @@ MASSIVE INFLAMMATORY STORM:
   - NF-κB positive feedback loop
 ```
 
-(Source: gout-deep-dive.md, §1; nlrp3-exploit-map.md, §1)
+(Source: nlrp3-exploit-map.md, §1)
 
 ### Why Gout Flares Are So Explosively Painful
 
@@ -210,13 +204,11 @@ The NLRP3 inflammasome is one of the most potent inflammatory amplifiers in the 
 
 IL-1β is a master cytokine—one molecule has cascading effects across the entire immune system. A single flare can recruit thousands of neutrophils and trigger systemic inflammatory mediators.
 
-(Source: gout-deep-dive.md, §1)
-
 ---
 
 ## Current Treatment Landscape
 
-### Acute Flare Management
+The full treatment landscape — acute-flare management (NSAIDs, corticosteroids, IL-1 inhibitors), urate-lowering therapy (allopurinol, febuxostat, probenecid, pegloticase), and the drug-by-drug tradeoffs — lives at [gout-deep-dive.md §Current Treatment Landscape](./gout-deep-dive.md#current-treatment-landscape). Only the mechanism-relevant chokepoint mapping for **colchicine** is retained here, because it maps directly onto the NLRP3 cascade above.
 
 **Colchicine** (first-line) — see [colchicine.md](./colchicine.md) for the full dossier
 - Inhibits microtubule polymerization → prevents microtubule-mediated ASC transport to NLRP3 (CP3 block)
@@ -226,46 +218,6 @@ IL-1β is a master cytokine—one molecule has cascading effects across the enti
 - Cardiovascular repositioning: COLCOT (23% CV event reduction) and LoDoCo2 (31% reduction) led to FDA approval of Lodoco 0.5 mg for atherosclerotic CVD, June 2023 (Clinical Trial)
 - **ULT-initiation prophylaxis:** ACR 2020 guideline recommends concurrent colchicine 0.5–0.6 mg once or twice daily for 3–6 months when starting allopurinol/febuxostat, to prevent mobilization flares as tophaceous urate dissolves. Duration keyed to stable serum UA <6.0 mg/dL with no flares for ≥3 months. Same dissolution-flare bridge applies to CRISPR-uricase gene therapy — see [crispr-uricase.md](./crispr-uricase.md) for the post-therapy prophylaxis protocol. (Clinical Trial — guideline; source: colchicine.md)
 - Problem: Narrow therapeutic index (~3–5×); CYP3A4/P-gp interaction surface (macrolides, azoles, calcineurin inhibitors); renal/hepatic dose adjustment required
-
-**NSAIDs** (indomethacin, naproxen)
-- Reduce inflammation and pain
-- Problem: GI bleeding risk, cardiovascular risk, renal toxicity
-
-**Corticosteroids** (prednisone)
-- Typically 30–40 mg tapering over 7–10 days
-- Fast-acting and effective
-- Problem: Cumulative side effects (bone loss, metabolic disruption, rebound flare on discontinuation)
-
-**IL-1 Inhibitors** (anakinra, canakinumab)
-- Off-label for refractory acute gout
-- Directly block IL-1β signaling
-- Problem: Expensive, immunosuppressive
-
-(Source: gout-deep-dive.md, §2)
-
-### Urate-Lowering Therapy (ULT)
-
-**Allopurinol** (XO inhibitor, approved 1966)
-- Cheap, effective for many
-- Requires dose titration
-- Problem: Rare but potentially fatal hypersensitivity reaction (HLA-B*5801 associated)
-- Many patients don't reach target urate levels
-
-**Febuxostat** (XO inhibitor, approved 2009)
-- More potent than allopurinol, no renal dose adjustment needed
-- Problem: CARES trial raised cardiovascular mortality concerns (somewhat controversial)
-
-**Probenecid** (uricosuric, URAT1 inhibitor)
-- Increases renal uric acid excretion
-- Problem: Requires adequate kidney function, increases kidney stone risk, fallen out of favor
-
-**Pegloticase** (pegylated recombinant uricase, IV)
-- Nuclear option for severe, refractory, tophaceous gout
-- Enzymatically converts uric acid to allantoin
-- Dramatically effective: tophi dissolve, urate levels plummet
-- Problem: ~40–50% develop anti-drug antibodies; treatment failure from immunogenicity
-
-(Source: gout-deep-dive.md, §2)
 
 ### Why There's No Cure
 
@@ -284,24 +236,7 @@ Stop treatment, and uric acid climbs right back up.
 
 ## The Clinical Pipeline (2026)
 
-The gout pipeline is more active now than it's been in decades:
-
-| Drug | Mechanism | Phase | Status |
-|---|---|---|---|
-| **Pozdeutinurad (AR882)** | Next-gen selective URAT1 inhibitor | Phase 3 | REDUCE 1 & 2 pivotal trials fully enrolled. NDA planned 2026. |
-| **SEL-212** | Pegylated ***C. utilis* uricase** (pegadricase) + rapamycin nanoparticles (prevents immunogenicity) — Sands 2022 *Nat Commun* PMID 35022448 | Phase 3 | DISSOLVE I & II completed. 46–56% response rates. Superior to pegloticase. |
-| **Firsekibart (Genakumab)** | Anti-IL-1β monoclonal antibody | Phase 3 | Reduced new flare risk by 90% at 12 weeks, 87% at 24 weeks. |
-| **Dapansutrile (OLT1177)** | Oral selective NLRP3 inflammasome inhibitor | Phase 2a only | 2020 Phase 2a (N=34): 52–68% pain reduction. **No Phase 2b/3 in gout registered as of April 2026 — gout development appears stalled.** (source: gout-clinical-pipeline.md) |
-| **Dotinurad (URECE)** | Selective URAT1 inhibitor | Approved (Asia) | Approved in Japan, China, Thailand, Philippines. |
-| **HNW005** | Dual NLRP3 + URAT1 inhibitor | Preclinical | Single molecule hitting both inflammation and uric acid. IL-1β IC50 = 1.7 μM. |
-| **Canakinumab (Ilaris)** | Anti-IL-1β monoclonal antibody | **FDA approved Aug 2023 for gout** | First biologic formally indicated for gout in the US. (source: gout-clinical-pipeline.md) |
-| **PRX-115 (RELEASE)** | Pegylated recombinant uricase ± methotrexate, IV | Phase 2 (recruiting) | Protalix; NCT07280156 started Dec 2025, N=150. **The new systemic-uricase competitor.** (source: gout-clinical-pipeline.md) |
-| **SSS11** | Pegylated *Candida utilis* uricase, IV | Phase 1 | Shenyang Sunshine; NCT06629376. First clinical *C. utilis* uricase. (source: gout-clinical-pipeline.md) |
-| **ALLN-346** | Engineered oral *C. utilis* uricase (gut-lumen) | **Discontinued** | Phase 2a CKD trial NCT04987294 terminated September 2022 (19/200 enrolled). (source: gout-clinical-pipeline.md) |
-
-**Key insight:** The paradigm shift is toward **dual-mechanism approaches**—targeting both uric acid levels AND inflammation simultaneously. (Source: gout-deep-dive.md, §3)
-
-**Pipeline reality check (2026-04-23):** The most consequential 2022–2025 changes for Open Enzyme's positioning: (1) ALLN-346 (gut-lumen uricase) was terminated September 2022 — the gut-lumen-uricase clinical precedent has gone dormant; (2) dapansutrile gout development has not progressed past Phase 2a despite the 2020 signal; (3) canakinumab finally got FDA approval for gout (August 2023); (4) PRX-115 (Protalix Phase 2 RELEASE, started Dec 2025) is the new systemic-uricase contender. **No active program in any phase targets the gut-lumen-uricase angle Open Enzyme pursues.** See [gout-clinical-pipeline.md](gout-clinical-pipeline.md) for the full snapshot. (source: gout-clinical-pipeline.md)
+The gout pipeline is more active now than it's been in decades, with a paradigm shift toward **dual-mechanism approaches** that target both uric acid levels and inflammation. The full drug-by-drug pipeline table and the Open-Enzyme-positioning reality check live at [gout-deep-dive.md §The Clinical Pipeline](./gout-deep-dive.md#the-clinical-pipeline--whats-coming) and the dedicated [gout-clinical-pipeline.md](./gout-clinical-pipeline.md). The mechanism-relevant takeaway for this page: no active program in any phase targets the gut-lumen-uricase angle Open Enzyme pursues. (source: gout-clinical-pipeline.md)
 
 ---
 
@@ -315,24 +250,7 @@ A meta-analysis of over **one million participants** identified **351 loci** ass
 
 ### The Three Transporter Genes
 
-Three genes dominate the genetic architecture of hyperuricemia and gout:
-
-**ABCG2** (chromosome 4) — THE STRONGEST ASSOCIATION
-- The common Q141K variant (rs2231142, ~10% European, ~30% East Asian)
-- Reduces ABCG2 transport function by ~50%
-- Means less uric acid secretion into gut and kidney
-- 2025 UK Biobank GWAS: most significant association at rs2199936 in ABCG2 (p = 1.75 × 10⁻⁹⁷)
-
-**GLUT9** (SLC2A9, chromosome 4) — SECOND STRONGEST
-- rs58656183 (p = 5.52 × 10⁻⁹⁰)
-- Largest per-allele effect on serum urate of ANY known locus
-- Transports BOTH urate and fructose (the link between [[fructose-connection]] and gout)
-
-**URAT1** (SLC22A12, chromosome 11) — THE REABSORPTION VILLAIN
-- Loss-of-function variants PROTECT against gout (and cause renal hypouricemia)
-- Gain-of-function or regulatory variants increase gout risk
-
-(Source: gout-deep-dive.md, §4)
+The same three transporter genes that dominate the genetic architecture of gout — **ABCG2** (strongest association; Q141K rs2231142, ~50% function loss), **GLUT9/SLC2A9** (second-strongest; largest per-allele urate effect; also transports fructose), and **URAT1/SLC22A12** (the reabsorption villain) — are detailed with their roles and drug-target status in the [Step 2 transporter table](#step-2-renal-handling--the-excretion-bottleneck) above. The variant-by-variant catalogue (alleles, effect sizes, evidence tiers) lives at [`gout-genetic-variants.md`](./gout-genetic-variants.md).
 
 ### Beyond Transporters
 

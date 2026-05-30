@@ -170,9 +170,7 @@ Primary EPI therapy is enzymatic replacement — pancrelipase (Creon, Zenpep) or
 
 Here is where the [[open-enzyme-vision|Open Enzyme]] project offers an immediate practical solution: **wild-type koji (A. oryzae) already produces the exact digestive enzymes Lynn needs.**
 
-For a complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), see [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform, and it provides the practical starting point for n=1 / household EPI trials. (source: koji-home-fermentation.md)
-
-> **Key terminology note:** Koji-kin (種麹, *tane-koji*) is the dried spore inoculum — the starting material. Koji rice (麹, *kōji*) is the cooked rice fully colonized by mycelium after 42–48 h — the working enzyme substrate used in shio-koji, amazake, and miso recipes. These are distinct; most online recipes assume you know which one you have. (source: koji-home-fermentation.md)
+For a complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), including the koji-kin-vs-koji-rice terminology distinction, see [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform, and it provides the practical starting point for n=1 / household EPI trials. (source: koji-home-fermentation.md)
 
 ### Why Koji Works
 
@@ -190,17 +188,13 @@ These are the same enzymes in commercial supplements — just produced at home r
 
 ### Therapeutic Formats
 
-**Fresh koji:** Highest enzyme activity, but short shelf life (2–3 days refrigerated)
+The wild-type home formats — fresh koji, shio-koji, amazake, and dried powder, with salt/water ratios, incubation times, and shelf lives — are canonical in [Koji Home Fermentation](./koji-home-fermentation.md). The EPI-relevant takeaways:
 
-**Shio koji** (salt koji): Rice koji blended with salt (~30% by weight of koji) and water (~125% by weight of koji), fermented 7–14 days at room temperature, stirring daily. The salt preserves the enzymes while creating a stable condiment. Blend smooth when rice grains have softened. Shelf life 6+ months refrigerated. **Highest-leverage application for EPI** — proteases pre-digest protein in the marinade phase (5–10% by weight on protein, 30 min to 24 h), reducing pancreatic protease demand at the table. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+- **Shio koji is the highest-leverage application for EPI** because its proteases pre-digest protein in the marinade phase (5–10% by weight on protein, 30 min to 24 h), reducing pancreatic protease demand at the table before food reaches the eater. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
+- **Amazake** carries active amylase if it hasn't been heat-pasteurized — fresh amazake with a starchy meal contributes amylase activity directly; its 55–60°C hold is optimal for amylase but inactivates more heat-sensitive enzymes. (source: koji-home-fermentation.md)
+- **Fresh koji** has the highest enzyme activity but short shelf life; **dried powder** (dried <45°C, encapsulated) preserves activity for months.
 
 **(Source: enzyme-deficit-deep-dive.md)** — "Shio koji (塩麹) — rice koji blended with salt and water, fermented 7–14 days at room temperature. The salt (typically 12–13% by weight) halts the mold's growth but doesn't destroy the enzymes... When you marinate chicken in shio koji, you're watching proteases tenderize the meat in real time."
-
-**Amazake** (sweet sake): Rice koji mixed with cooked rice and water at 60°C, incubated at **55–60°C for 8–10 hours** (yogurt maker, slow cooker on warm, sous vide, or thermos). The temperature is optimal for amylase (starch→sugar conversion) but too high for other enzymes. Heat briefly to 80°C to deactivate enzymes before refrigerating. Refrigerated shelf life ~10 days. (source: koji-home-fermentation.md)
-
-**(Source: enzyme-deficit-deep-dive.md)** — "As an enzyme delivery vehicle, amazake is interesting because the amylase in it is still active if it hasn't been heat-pasteurized. Fresh amazake consumed with a starchy meal would contribute amylase activity directly."
-
-**Dried koji powder:** Koji dried at low temperature (<45°C) and ground to powder. Can be encapsulated or mixed into food. Preserves enzyme activity for months.
 
 ### Gastric Survival Caveat
 
