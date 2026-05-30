@@ -183,7 +183,7 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 
 ### Quercetin
 
-- **Does quercetin's 300 nM ChEMBL 5-LOX IC50 translate to cellular neutrophil-chemotaxis block in a gout-relevant assay?** This is what the zileuton head-to-head would resolve. See [synthesis archive 2026-04-23 Proposed Experiment #4](../synthesis/history/_pre-2026-05-08-archive.md), [validation-experiments.md §3.9](./validation-experiments.md).
+- **Does quercetin's 300 nM ChEMBL 5-LOX IC50 translate to cellular neutrophil-chemotaxis block in a gout-relevant assay?** This is what the zileuton head-to-head would resolve. See [synthesis archive 2026-04-23 Proposed Experiment #4](../synthesis/history/_pre-2026-05-08-archive.md), [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
 - **Is quercetin + Boswellia (AKBA) redundant at 5-LOX, or complementary at IKKβ + 5-LOX?** Depends on AKBA's 5-LOX IC50 and whether the two compounds bind at the same site. ChEMBL query pending. See [synthesis archive 2026-04-23 Connection 5](../synthesis/history/_pre-2026-05-08-archive.md).
 
 ### BHB / Ketones
@@ -209,7 +209,7 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 
 ### Zileuton
 
-- **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout = natural population to query. *(2026-04-24 Pass 2 — new addition.)* See [synthesis archive 2026-04-24 Open Questions](../synthesis/history/_pre-2026-05-08-archive.md), [validation-experiments.md §3.9](./validation-experiments.md).
+- **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout = natural population to query. *(2026-04-24 Pass 2 — new addition.)* See [synthesis archive 2026-04-24 Open Questions](../synthesis/history/_pre-2026-05-08-archive.md), [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
 - **What's the theory of action beyond 5-LOX?** Any secondary effects (redox, cytokine-modulation, neutrophil-direct) that could be advantageous or detrimental in gout context? Dossier in progress.
 
 ### Tier-4 inhibitor screen — missed gout-model data *(largely closed 2026-04-23 + 2026-05-05; one residual gap)*
@@ -524,12 +524,12 @@ Questions about biomarker interpretation, red-flag thresholds, and microbiome im
 
 ### Biomarker design
 
-- **Does the self-experiment protocol need CP0 and CP5b biomarkers to be mechanistically interpretable?** hs-CRP alone can't distinguish quercetin (CP6a) effects from BHB (CP2) effects. *(2026-04-24 Pass 2 — new addition.)* See [self-experiment-protocol.md](./self-experiment-protocol.md), [validation-experiments.md §3.6, 3.7](./validation-experiments.md).
-- **What's the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1)?** Does it differ from the cardiovascular-optimized ratio? *(2026-04-24 Pass 2 — new addition.)* See [spm-resolution-pathway.md](./spm-resolution-pathway.md), [validation-experiments.md §3.8](./validation-experiments.md).
+- **Does the self-experiment protocol need CP0 and CP5b biomarkers to be mechanistically interpretable?** hs-CRP alone can't distinguish quercetin (CP6a) effects from BHB (CP2) effects. *(2026-04-24 Pass 2 — new addition.)* See [self-experiment-protocol.md](./self-experiment-protocol.md), [validation-experiments-archive.md §3.6, 3.7](./etc/validation-experiments-archive.md).
+- **What's the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1)?** Does it differ from the cardiovascular-optimized ratio? *(2026-04-24 Pass 2 — new addition.)* See [spm-resolution-pathway.md](./spm-resolution-pathway.md), [validation-experiments-archive.md §3.8](./etc/validation-experiments-archive.md).
 
 ### Red-flag thresholds
 
-- **What LFT elevation threshold triggers zileuton discontinuation?** Zyflo label guidance exists (AST/ALT >3× ULN); Brian-specific thresholds for the off-label protocol should match. See [validation-experiments.md §3.9](./validation-experiments.md).
+- **What LFT elevation threshold triggers zileuton discontinuation?** Zyflo label guidance exists (AST/ALT >3× ULN); Brian-specific thresholds for the off-label protocol should match. See [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
 - **What biomarkers signal microbiome disruption vs. acceptable variation?** Alpha diversity drop threshold, specific pathobiont expansion (e.g., *Clostridium difficile*, *Enterococcus*), inflammatory markers (fecal calprotectin). See [cross-validation.md](./cross-validation.md).
 - **Is BCP dose-scaling from 100-400 mg/kg rat MSU to 50-200 mg/day supplement safe to extrapolate upward?** If supplement is 20-50× under-dosed, bumping the dose has unknown off-target profile in humans. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
 
@@ -545,13 +545,13 @@ These are the five open questions Brian annotated during the 2026-04-24 synthesi
 
 1. **Is complement activation (C5a) necessary or sufficient for MSU-triggered NLRP3 priming in clinical gout flares, or is TLR4/LPS still dominant in real patients?** The Cumpelik/Khameneh evidence is animal model + in vitro; human C5a-priming dominance remains to be confirmed in vivo. — see [complement-c5a-gout.md](./complement-c5a-gout.md), [NLRP3 / Gout Biology §Priming](#priming-and-upstream-signals) above.
 
-2. **What is the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1), and does this differ from the cardiovascular-optimized ratio?** The 2026-04-24 pass found direct MSU gout animal-model evidence is entirely DHA-derived, contradicting the cardiovascular-biased EPA-dominant recommendation currently in `supplements-stack.md`. — see [spm-resolution-pathway.md](./spm-resolution-pathway.md), [validation-experiments.md §3.8](./validation-experiments.md), [Safety / Self-Experiment §Biomarker design](#biomarker-design) above.
+2. **What is the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1), and does this differ from the cardiovascular-optimized ratio?** The 2026-04-24 pass found direct MSU gout animal-model evidence is entirely DHA-derived, contradicting the cardiovascular-biased EPA-dominant recommendation currently in `supplements-stack.md`. — see [spm-resolution-pathway.md](./spm-resolution-pathway.md), [validation-experiments-archive.md §3.8](./etc/validation-experiments-archive.md), [Safety / Self-Experiment §Biomarker design](#biomarker-design) above.
 
 3. **Can lactoferrin be expressed in *A. oryzae* at therapeutically relevant titers in solid-state rice fermentation?** *P. pastoris* 3.5 g/L submerged and *A. awamori* >2 g/L submerged (Ward 1995, PMID 9634791) are both demonstrated; solid-state koji is the missing data point. *(2026-04-24 literature check upgraded this from "speculative Year 5+" to "near-term Year 2-3 with a defined feasibility experiment.")* — see [engineered-koji-protocol.md §16](./engineered-koji-protocol.md), [spm-resolution-pathway.md §5](./spm-resolution-pathway.md), [Compound-specific §Lactoferrin](#lactoferrin) above.
 
 4. **Is TNFSF14/LIGHT elevation a universal feature of gout flares or a patient subtype? Would a TNFSF14 biomarker identify responders to EGCG or CERC-002 better than generic hs-CRP?** — see [tnfsf14-gout-target.md](./tnfsf14-gout-target.md), [NLRP3 / Gout Biology §Priming](#priming-and-upstream-signals) above.
 
-5. **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout are the natural population to query for retrospective signal. — see [validation-experiments.md §3.9](./validation-experiments.md), [Compound-specific §Zileuton](#zileuton) above.
+5. **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout are the natural population to query for retrospective signal. — see [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md), [Compound-specific §Zileuton](#zileuton) above.
 
 ---
 

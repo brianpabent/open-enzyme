@@ -349,7 +349,7 @@ This section calibrates risk framing. The endgame strain and the starting strain
 
 **Expected titer.** 40–80 mg uricase per gram dry koji ([engineered-koji-protocol.md](./engineered-koji-protocol.md) §06, AI-analysis section), matching ALLN-346 clinical dosing at 10–15 g/day.
 
-**Year 1 deliverable.** A validated uricase-expressing *A. oryzae* strain with published transformation + fermentation SOP, ready for self-experiment testing (per [validation-experiments.md](./validation-experiments.md) §3.1) and eventual collaborator / CRO production. This is the shippable intermediate whether or not the endgame strain succeeds.
+**Year 1 deliverable.** A validated uricase-expressing *A. oryzae* strain with published transformation + fermentation SOP, ready for self-experiment testing (per [validation-experiments-archive.md](./etc/validation-experiments-archive.md) §3.1) and eventual collaborator / CRO production. This is the shippable intermediate whether or not the endgame strain succeeds.
 
 ### 6.2 Endgame Strain (Year 2–3)
 
@@ -412,7 +412,7 @@ In the endgame-strain world (Year 2–3 if §3 passes), the n=1 tests the full f
 - C5a: diagnostic for whether the CP0 coverage gap (non-MSU complement sources) is operative or whether trigger-elimination is sufficient.
 - Urinary LTE4: diagnostic for CP6a — *not* covered by the strain, so if LTE4 stays elevated despite the full endgame strain, that's confirmatory evidence the stack needs quercetin/AKBA or zileuton to close CP6a.
 
-The 6-month extension protocol ([validation-experiments.md](./validation-experiments.md) §3.5) is the natural slot for an endgame-strain self-test. Worth earmarking as a target now so the biomarker panel and timing align once the strain is available.
+The 6-month extension protocol ([validation-experiments-archive.md](./etc/validation-experiments-archive.md) §3.5) is the natural slot for an endgame-strain self-test. Worth earmarking as a target now so the biomarker panel and timing align once the strain is available.
 
 ### 8.2 Collaborator Pitch
 

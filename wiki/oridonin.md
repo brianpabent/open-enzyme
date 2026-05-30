@@ -189,7 +189,7 @@ Oridonin + beta-caryophyllene is a third mechanistically distinct combination wo
 
 ## Key Insight
 
-**Oridonin bridges traditional medicine and modern immunology.** It is a specific, covalent NLRP3 inhibitor with a well-characterized mechanism, available immediately at low cost, with the advantage of centuries of traditional use and the safety history of Rabdosia preparations. Unlike MCC950 (which caused hepatotoxicity) and unlike dapansutrile (which is still in Phase 3), oridonin is available now and targets exactly the same molecular vulnerability (NLRP3 Cys279) that pharmaceutical programs have identified.
+**Oridonin bridges traditional medicine and modern immunology.** It is a specific, covalent NLRP3 inhibitor with a well-characterized mechanism, available immediately at low cost, with the advantage of centuries of traditional use and the safety history of Rabdosia preparations. Unlike MCC950 (which caused hepatotoxicity) and unlike dapansutrile (which stalled at Phase 2a in gout — no Phase 2b/3 registered, PMID 33005902), oridonin is available now and targets exactly the same molecular vulnerability (NLRP3 Cys279) that pharmaceutical programs have identified.
 
 The limitation is the absence of gout-specific clinical trials, but the mechanistic case is as strong as it is for any other NLRP3 inhibitor.
 

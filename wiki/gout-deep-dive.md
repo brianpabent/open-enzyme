@@ -440,7 +440,7 @@ Research peptides gaining traction in the biohacking world have genuine — if u
 
 > **Evidence Level**
 >
-> Zero peptides on this list have been tested in a human clinical trial for gout. All claims are based on animal models and mechanistic extrapolation from shared inflammatory pathways. The pharmaceutical industry validates the targets — dapansutrile (NLRP3 inhibitor) and firsekibart (anti-IL-1β) are in Phase 3 for gout — but the peptides themselves remain unproven for this indication.
+> Zero peptides on this list have been tested in a human clinical trial for gout. All claims are based on animal models and mechanistic extrapolation from shared inflammatory pathways. The pharmaceutical industry validates the targets — firsekibart (anti-IL-1β) is in Phase 3 for gout and dapansutrile (NLRP3 inhibitor) completed a Phase 2a gout trial — but the peptides themselves remain unproven for this indication.
 
 ---
 

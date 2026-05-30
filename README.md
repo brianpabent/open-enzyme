@@ -59,7 +59,7 @@ All research lives in `wiki/` — long-form primary documents and shorter synthe
 **Compounds:**
 [BPC-157](wiki/bpc-157.md) · [KPV Tripeptide](wiki/kpv-peptide.md) · [BHB / Ketones](wiki/bhb-ketones.md) · [Oridonin](wiki/oridonin.md) · [Disulfiram](wiki/disulfiram.md)
 
-**Synthesis & Graph:**
+**Synthesis:**
 [Synthesis queue](synthesis/queue/) — per-item action queue (cross-doc connections, contradictions, proposed experiments); architecture at [`synthesis/README.md`](synthesis/README.md)
 
 ---

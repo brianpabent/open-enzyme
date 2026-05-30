@@ -375,7 +375,7 @@ def call_openrouter_raw(api_key, body):
                 # an actionable message before the transient check can catch it.
                 if any(s in combined for s in (
                     "maximum context length", "requested about",
-                    "context_length_exceeded", "context length",
+                    "context_length_exceeded",
                 )):
                     print("FATAL: Pass-2 request exceeds the model's context window "
                           "(context-length 400 — non-transient).", file=sys.stderr)
