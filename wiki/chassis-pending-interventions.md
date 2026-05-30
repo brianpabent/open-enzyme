@@ -227,6 +227,24 @@ All three clear the 10 µM safe threshold by 5–50× margin under reference con
 
 ---
 
+### 8. Duckweed (Lemnaceae) — aquatic-sibling chassis class
+
+**Intervention.** Duckweed (*Lemna* / *Spirodela* / *Wolffia*) as an edible, photosynthetic biomanufacturing chassis where the organism is simultaneously the factory and the oral delivery vehicle — the aquatic structural sibling of the koji thesis. Distinctive adds koji lacks: a photosynthetic feedstock (light + CO₂ + waste N/P, no sugar), tractable human-like N-glycosylation (Cox 2006 *Lemna* mAb, up to 50× ADCC vs CHO), and a documented multi-decade edible-vaccine track record. Notable adjacency: the lead bioreactor species *Spirodela polyrhiza* is botanically the TCM herb 浮萍/紫萍 and natively produces luteolin (XO inhibitor, IC₅₀ 4.79 µM) — a possible built-in hypouricemic background (extrapolation; no whole-duckweed urate study exists).
+
+**Chokepoint(s) hit.** Depends on payload. Strongest *proven* fit is the oral/mucosal delivery axis (factory = delivery vehicle, demonstrated in vivo: 100% protection chicken IBV edible vaccine, *Plant Biotechnol J* 2025; 63.3% RPS fish *LamB*, *Front Immunol* 2020). Option value at CP6 (a duckweed-expressed uricase — never attempted; urate oxidase is natively peroxisomal in plants, so plausible) and any future systemic/injectable enzyme needing human glycans.
+
+**Evidence level.** Animal Model (oral vaccines in chickens/fish/mice); In Vitro (recombinant titers — hGH 609 mg/L secreted; glyco-engineering); Commercial (food/feed lane only — Plantible *Lemna* protein 2025, EU novel-food approval; **zero** marketed duckweed *biologic*). Duckweed→urate = Mechanistic Extrapolation via isolated flavonoids.
+
+**Why not koji (for the lead target).** For gut-luminal uricase, koji/yeast win: glyco-control is irrelevant in the lumen (duckweed's flagship advantage buys nothing), stable duckweed lines take ~11–13 weeks vs days–weeks for yeast/koji, and rasburicase + the Georgia-State CRISPR-yeast benchmark give koji a host-familiarity head start. Duckweed's advantages cash out in *adjacent* territory (injectable biologics, mucosal vaccines, lowest-cost global-access protein), not the lead.
+
+**Candidate chassis.** *S. polyrhiza* (genomics anchor, 158 Mb low-methylation genome), *L. minor* (Biolex pharma-precedent), *W. australiana* (minimalist-chassis frontier). No consensus "champion" strain yet — the *Trends* 2026 Opinion's core recommendation is to converge on one.
+
+**Cheapest first move.** DW-1/DW-2 lit-scan + in-silico expression-feasibility prior for uricase in *S. polyrhiza* ($0, ~1–2 wks) before any wet-lab. Full follow-up table in [`duckweed-aquatic-chassis.md`](./duckweed-aquatic-chassis.md) §Open follow-ups.
+
+**Cross-reference.** [`duckweed-aquatic-chassis.md`](./duckweed-aquatic-chassis.md) is the canonical scope page. Sibling peer-track: [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md).
+
+---
+
 ## Multi-chassis stacks (compositions across existing entries)
 
 Compositions where two interventions on *different* chassis hit complementary chokepoints and stack additively without competing for the same production / delivery resource. These are not chassis-pending entries themselves — both arms have selected chassis — but the *composition* is worth surfacing here because the same chassis-is-downstream-of-chokepoint discipline applies: don't filter a stack as "off-platform" just because one arm doesn't live in the koji track.

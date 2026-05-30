@@ -194,6 +194,7 @@ graph TB
         DE31["comp-033/036 Inhaled mRNA-IL-1RA — RED single-dose / YELLOW repeat-dose"]
         DE32["comp-037 C1-INH Protease Stability + Glycosylation in EcN — MODERATE (kinetic-competition gated)"]
         DE33["comp-039 CFH-Dependence Mechanism-Dissociation of Dietary CP0 Candidates — CFH-INDEPENDENT (all 4)"]
+        DE34["Duckweed Aquatic-Sibling Chassis — edible factory+delivery vehicle; glyco-engineerable; oral-vaccine proven in vivo; koji wins lead target"]
     end
 
     subgraph PlatformArch["PLATFORM ARCHITECTURE (NEW)"]
@@ -675,6 +676,8 @@ graph TB
     %% Chassis-pending interventions (source: chassis-pending-interventions.md)
     DE25 -->|"operationalizes chokepoint-first chassis-second discipline"| DE2
     DE25 -->|"PDB / siRNA-URAT1 / engineered-LBP / mRNA-IL-1RA / IA-uricase entries"| DE7
+    DE25 -->|"duckweed logged as chassis-class entry (peer-track scope page)"| DE34
+    DE34 -->|"aquatic sibling of factory=delivery-vehicle thesis; adjacency not pivot"| F11
 
     %% Medicinal mushroom complement track (source: medicinal-mushroom-complement-track.md)
     MT1 -->|"ADA + GLUT9 + OAT1 — 40.6% UA reduction HUA mice"| B1
