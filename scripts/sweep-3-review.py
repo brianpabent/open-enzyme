@@ -466,7 +466,7 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
                     "Research phase complete. Output the review blockquotes "
                     "now, separated by `<<<NEXT>>>` lines (one per item, in "
                     "document order). Do not request more tools. Begin "
-                    "your response with `> **Claude review —`."
+                    "your response with `> **Pass 3 review —`."
                 ),
             }]
 
