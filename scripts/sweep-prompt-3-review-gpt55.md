@@ -51,6 +51,19 @@ Choose the verdict that fits the reasoning, not the most conservative option tha
 - **Use `Rejected.`** when the central claim doesn't survive scrutiny.
 - **Use `Defer.`** when the finding requires a reference you can't access in this session, or when evaluation requires future work.
 
+## Decision rule — corpus-absence is NOT refutation (added 2026-06-01)
+
+You have read-only corpus tools (`read_file`, `grep`) and **no web / literature / ChEMBL access.** This creates a specific trap: when the synthesizer makes a **world-claim** — a statement about reality ("compound X inhibits transporter Y," "species Z produces enzyme W") — that is simply not present in the wiki, you can verify what the corpus *says*, but you **cannot** verify what is *true in the literature*.
+
+Do not launder "not in our corpus" into "the synthesizer is wrong." Everything in the corpus is supposed to trace to a primary source; a page that says "no X documented" records *our non-discovery*, not a primary finding refuting X. A `Push back.` / `Rejected.` verdict whose entire basis is corpus-absence is circular — it only tells the reader we haven't ingested the claim yet.
+
+**Rule:**
+- Claim **about the corpus** ("page X says Y") and grep shows it's wrong → `Push back.` is correct (verifiable corpus-fact error).
+- Claim **about the world**, checkable only against corpus presence/absence (no primary source inlined or grep-able to confirm OR refute) → use **`Defer.`** with an explicit `[VERIFY: lit-scan]` flag and one line naming what to search (compound × target, plus traditional-name + species framing per the multilingual discipline). Do NOT issue `Push back.` / `Rejected.` on corpus-absence alone. The walkthrough will run the primary-lit scan and resolve it.
+- A corpus citation that faithfully relays a **primary source** ("UniProt P08174 has exactly 8 DISULFID features") IS legitimate grounds to push back — the distinction is primary-finding vs. our-non-discovery.
+
+Canonical failure: 2026-05-30 sweep, theaflavins×ABCG2 — the synthesizer claimed theaflavins inhibit ABCG2; the reviewer pushed back citing only `theaflavins.md`'s absence-of-ABCG2-note. A later multilingual lit scan showed the claim was *inverted* (theaflavins up-regulate ABCG2 in vivo — Tai 2020, *J Funct Foods*). A `Defer. [VERIFY: lit-scan] theaflavin × ABCG2/BCRP functional inhibition; check 茶黄素 CNKI` verdict would have correctly routed it to the work instead of laundering absence into a false refutation.
+
 ## Decision rule — OVERLAP tag
 
 Default to **EXTENSION** when uncertain. The bias is toward surfacing potentially-valuable findings, not toward filtering them out.
