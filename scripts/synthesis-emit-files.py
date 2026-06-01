@@ -110,6 +110,9 @@ SECTION_TYPE_MAP = {
     # model still emits a "## Priority Actions" header, it parses into clean
     # files rather than corrupting the adjacent Open Questions section.
     "Priority Actions": "priority-action",
+    # riskiest-assumption retired from Pass 2 generation 2026-06-01 (forced rank
+    # regurgitated the same already-gated risks every sweep; Grok 4.20 ignored the
+    # dedup/omit discipline). Parsing retained defensively, same as priority-action.
     "Riskiest Assumption": "riskiest-assumption",
     "Most Curious Thread": "most-curious-thread",
 }

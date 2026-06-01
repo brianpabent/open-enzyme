@@ -10,7 +10,7 @@ You are running **Pass 3** of the Open Enzyme sweep — review of the Pass 2 syn
 
 ## Inputs
 
-- The TRIGGER block names the Pass 2 synthesis log file and an item count (`item_count: N` — the number of structural items: each numbered finding + the two single-paragraph sections). Markers are cosmetic and may be missing; review by item.
+- The TRIGGER block names the Pass 2 synthesis log file and an item count (`item_count: N` — the number of structural items: each numbered finding + the one single-paragraph section (Most Curious Thread; Riskiest Assumption retired 2026-06-01)). Markers are cosmetic and may be missing; review by item.
 - The prompt inlines the synthesis log + an evidence cache of trigger files (the recent edits that caused this sweep) and cited files (every wiki page the Pass 2 synthesizer referenced). The cache is the most likely set of sources you'll want — read it inline, no tool round-trip needed.
 - You have **read-only research tools** for anything the cache misses: `read_file`, `list_directory`, `list_files`, `grep`. Use them when a claim references a file outside the cache, or when you want to spot-check a specific section. Tool-iteration cap is in the TRIGGER block (`max_tool_iterations: N`); on the last allowed iteration the model is forced to produce final output.
 - You may also read prior per-item files in `synthesis/queue/` and `synthesis/done/` for context on what's already been actioned or is still in flight.
@@ -146,7 +146,7 @@ These four checks shift detection of failure modes upstream that the human-walkt
 
 ## Marker count discipline
 
-The TRIGGER block tells you `item_count: N` (the number of structural items: each numbered finding + the two single-paragraph sections). Output exactly **N** blockquotes, in document order, separated by **N-1** `<<<NEXT>>>` lines (one between each pair). Review every item regardless of whether Pass 2 emitted a `{{PEER-REVIEW}}` marker for it — markers are cosmetic.
+The TRIGGER block tells you `item_count: N` (the number of structural items: each numbered finding + the one single-paragraph section (Most Curious Thread; Riskiest Assumption retired 2026-06-01)). Output exactly **N** blockquotes, in document order, separated by **N-1** `<<<NEXT>>>` lines (one between each pair). Review every item regardless of whether Pass 2 emitted a `{{PEER-REVIEW}}` marker for it — markers are cosmetic.
 
 Mathematical: 5 blockquotes have 4 `<<<NEXT>>>` separators between them.
 
@@ -163,7 +163,7 @@ The emitter reads `NO_MARKERS` and skips per-item file emission, recording a "no
 ## Process
 
 1. Read the Pass 2 synthesis log (path in TRIGGER block).
-2. Identify the structural items (each numbered finding + the two single-paragraph sections), in document order — `item_count` in the TRIGGER is how many. Do NOT count or rely on `{{PEER-REVIEW}}` markers; the synthesizer may drop or merge them. Review every item.
+2. Identify the structural items (each numbered finding + the one single-paragraph section (Most Curious Thread; Riskiest Assumption retired 2026-06-01)), in document order — `item_count` in the TRIGGER is how many. Do NOT count or rely on `{{PEER-REVIEW}}` markers; the synthesizer may drop or merge them. Review every item.
 3. For each marker (in order), read the Pass 2 item above it and verify-or-critique. Spot-check claims by reading cited wiki pages where useful.
 4. Generate review blockquotes, separated by `<<<NEXT>>>`.
 5. Output them. That's it. The emitter handles the rest.

@@ -84,24 +84,11 @@ When surfacing platform-level patterns or candidate compounds in natural-product
 
 ---
 
-## Forced-rank close (Riskiest Assumption + Most Curious Thread)
+## Forced-rank close (Most Curious Thread)
 
-After enumeration, **commit to two single-answer forced-rank picks**. These are deliberately a different cognitive move than the enumeration sections above — they require *picking*, not *listing*. Rationale and broader context: [`posts/notes/hypothesis-generation-gap.md`](../posts/notes/hypothesis-generation-gap.md).
+After enumeration, **commit to one single-answer forced-rank pick**. This is deliberately a different cognitive move than the enumeration sections above — it requires *picking*, not *listing*. Rationale and broader context: [`posts/notes/hypothesis-generation-gap.md`](../posts/notes/hypothesis-generation-gap.md).
 
-**Riskiest Assumption.** One paragraph. Name the single load-bearing belief in the *current platform thesis* (top of `index.md` and `wiki/etc/open-enzyme-vision.md`) that is *least* supported by the corpus — the belief whose failure would most invalidate the platform direction. Anchor to specific wiki page(s) where the belief is asserted and specific evidence (or absence of evidence) you can point at. Not "what could go wrong in general" — the specific belief.
-
-**Dedup discipline — riskiest assumption (added 2026-05-21).** Before committing to a pick, **grep `synthesis/done/` for recently-surfaced riskiest-assumption items** (e.g., `ls synthesis/done/ | grep riskiest-assumption | tail -5`). The α-coefficient calibration gap (transferrin-lobe α 1.5–2.5 / CCP-SCR α 0.3–0.6 from `chaperone-orthogonal-stacking.md`) is the canonical case — it has been surfaced in multiple sweeps, is self-disclosed at §8 item 6 of its source page, AND has a documented resolution gate at `validation-experiments.md` §1.9 + §1.25. The user is wet-lab-blocked on resolving it, not awareness-blocked. **Re-emitting the same already-gated belief every sweep is a cascade of wasted attention** — Pass 2 tokens to write, Pass 3 tokens to review, walkthrough tokens to brief, human brain cycles to walk past it.
-
-Decision tree before producing the section:
-
-1. **Grep restatement check.** Check `synthesis/done/*riskiest-assumption*.md` filenames + recent Pass 2 logs in `synthesis/history/` to see if your top candidate is a restatement of a recently-surfaced (within ~3 sweeps) riskiest assumption.
-2. **If fresh** — your candidate is genuinely new or hasn't been surfaced recently: emit the section as usual.
-3. **If restatement but with a positive new-vector argument** — recent wiki content (new comp-NNN, new validation-experiments entry, new chassis-pending question, new wiki page) materially shifts the calibration of the standing belief OR makes it relevant to a different downstream decision: emit the section, with the new-vector argument **named explicitly in the first sentence** — e.g., "this revives the α-coefficient gap because [specific corpus pointer to what shifted, e.g., comp-042 introduces a triple-cassette compound where the worst-case α coefficient changes the routing decision]." Restatements without a positive new-angle argument do **NOT** earn surfacing.
-4. **Otherwise — restatement with no new vector: OMIT the Riskiest Assumption section entirely from your output.** Do not emit a tagged restatement. Do not emit an "I considered the α-coefficient gap and decided not to surface it" paragraph. Just leave the section out. The walkthrough discipline reads section absence as "no new signal" and skips it; `synthesis-emit-files.py` will not produce a queue item (the section-header regex won't match), and Pass 3 will have nothing to review. **The honest output when nothing fresh outranks the standing canonical risk is nothing.**
-
-Bias toward fresh content: especially favor beliefs introduced by recent wiki additions or recent comp-NNN runs (`git log --since="<last-sweep-date>" wiki/` is the cheapest fresh-content check). New ungated beliefs > old gated ones. The Riskiest Assumption section's value is surfacing what the user *doesn't already know*, not reminding them what they've already documented.
-
-This discipline applies specifically to the Riskiest Assumption forced-rank section. Connections / Contradictions / Open Questions retain the "bias toward inclusion" framing from Phase A — composing two known items is still novel synthesis even if both individual items are documented.
+> **Riskiest Assumption retired 2026-06-01.** This was a second forced-rank pick. In practice the forced rank guaranteed regurgitation: once the real platform risks are documented + gated (canonical case: the chaperone-orthogonal α-coefficient calibration gap, and the H08 gut-lumen-sink thesis), forcing a "riskiest assumption" every sweep just re-surfaced the same already-gated belief — wasting Pass 2 tokens to write, Pass 3 to review, and walkthrough cycles to walk past. A 2026-05-21 dedup discipline ("OMIT if restatement") mitigated this for the then-current Pass 2 model but the Grok 4.20 synthesizer does not reliably honor section-omission instructions, so the section was removed outright (same rationale + treatment as the Priority Actions retirement). Genuinely new platform risks still surface — as Connections, Contradictions, or Open Questions, which capture risk without a forced single-pick. **Do not emit a Riskiest Assumption section.**
 
 **Most Curious Thread.** One paragraph. Of everything in this corpus, pick *one* thread you'd spend the next experiment slot on. Must include: (a) the specific corpus evidence supporting the hunch, line-anchored as `file.md §section` or page-name+topic, (b) the specific evidence that would refute it, (c) the cheapest experiment that would discriminate. Multi-vendor signal: if you suspect another sweep model would converge on this pick, say so; if you suspect this is your idiosyncratic taste, say that too — divergence may be as informative as convergence here.
 
@@ -162,12 +149,6 @@ Also include a `[PHASE-A-MATCH: <yes/no/partial>]` tag — your honest self-asse
 
    {{PEER-REVIEW}}
 
-## Riskiest Assumption
-
-(One paragraph. Single load-bearing belief in the current platform thesis that is least supported by the corpus. Anchor to specific wiki page(s) and specific evidence or absence of evidence. See "Forced-rank close" above. **Apply the dedup discipline** — if this is a restatement of a recently-surfaced already-gated riskiest assumption (canonical case: chaperone-orthogonal α-coefficient calibration gap) and you cannot positively argue a new vector/angle, **OMIT this section entirely** — do not emit the header, do not emit a "no new signal" paragraph, just leave the section out of your output. If you DO surface a restatement-with-new-angle, name the new-vector argument explicitly in the first sentence.)
-
-{{PEER-REVIEW}}
-
 ## Most Curious Thread
 
 (One paragraph. The single thread you'd spend the next experiment slot on. Must include: corpus evidence supporting, corpus evidence that would refute, cheapest discriminating experiment. Flag whether convergent or idiosyncratic. See "Forced-rank close" above.)
@@ -178,7 +159,7 @@ Also include a `[PHASE-A-MATCH: <yes/no/partial>]` tag — your honest self-asse
 ### Marker discipline
 
 - One `{{PEER-REVIEW}}` per numbered item. Not at section headers, not at sub-bullets.
-- For the **forced-rank sections** (Riskiest Assumption, Most Curious Thread), one `{{PEER-REVIEW}}` marker per section, placed after the single paragraph. These sections are not numbered lists — they are single-answer commitments.
+- For the **forced-rank section** (Most Curious Thread), one `{{PEER-REVIEW}}` marker, placed after the single paragraph. This section is not a numbered list — it is a single-answer commitment.
 - Place on its own line, separated from the item content above by a blank line.
 - The marker text is exactly `{{PEER-REVIEW}}` (case-sensitive, double curly braces, no spaces inside).
 - If you produce a "no new synthesis" no-op output (drift guard), you do not need any markers — the no-op block has nothing to review.
@@ -234,4 +215,5 @@ If you produced a no-synthesis output (drift guard triggered), still commit the 
 - **Evidence-level tags** on every claim.
 - **Inline provenance** — PMID or `(source: <wiki-filename>)`.
 - **No verdict on V4-vs-Claude.** That's Pass 3's role. Just produce your synthesis cleanly.
-- **Do NOT emit a "Priority Actions" section** (retired 2026-06-01). In practice it restated already-found content as "to do" — the canonical failure was recommending "add X" when X already existed (see `SWEEP-ARCHITECTURE.md` Item 18 stale-recommendation case). Actionable findings already live inside Connections (with a *Suggested Action*) and Proposed Experiments; a separate priority-action list duplicated those without adding signal. Sections are now: New Connections → Contradictions → Proposed Experiments → Open Questions → Riskiest Assumption → Most Curious Thread.
+- **Do NOT emit a "Priority Actions" section** (retired 2026-06-01). In practice it restated already-found content as "to do" — the canonical failure was recommending "add X" when X already existed (see `SWEEP-ARCHITECTURE.md` Item 18 stale-recommendation case). Actionable findings already live inside Connections (with a *Suggested Action*) and Proposed Experiments; a separate priority-action list duplicated those without adding signal.
+- **Do NOT emit a "Riskiest Assumption" section** (retired 2026-06-01 — see "Forced-rank close" above for the full rationale). The forced rank guaranteed regurgitation of the same already-gated risks every sweep; genuinely new risks surface via Connections / Contradictions / Open Questions. Sections are now: New Connections → Contradictions → Proposed Experiments → Open Questions → Most Curious Thread.
