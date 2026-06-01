@@ -11,7 +11,7 @@ Purpose: use the new repo-local Reactome tool to audit Open Enzyme's pathway-hea
 
 This is an operational task list, not a research page. Mechanism claims belong in `wiki/` only after the pre-commit verification gate.
 
-Closeout: completed 2026-06-01. Results live in [`reactome-audit-results-2026-06-01.md`](./reactome-audit-results-2026-06-01.md); durable generated outputs live in [`reference/generated/reactome/2026-06-01-open-enzyme-audit/`](../reference/generated/reactome/2026-06-01-open-enzyme-audit/).
+Closeout: completed 2026-06-01. Results live in [`reactome-audit-results-2026-06-01.md`](./reactome-audit-results-2026-06-01.md); durable generated outputs live in [`reference/generated/reactome/2026-06-01-open-enzyme-audit/`](../../reference/generated/reactome/2026-06-01-open-enzyme-audit/).
 
 ## Working Protocol
 
@@ -246,7 +246,7 @@ After the pathway audits, run no-hit or context-only searches for candidate mole
 Done means:
 
 - For each candidate, classify Reactome status.
-- Add true candidates to `operations/reactome-contribution-nlrp3.md` or create a new contribution dossier for non-NLRP3 pathways.
+- Add true candidates to `reactome-contribution-nlrp3.md` or create a new contribution dossier for non-NLRP3 pathways.
 - Do not create Reactome contribution claims from no-hit search alone; inspect target event regulation first.
 
 ## Tracking Table

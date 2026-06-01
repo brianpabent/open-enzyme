@@ -2,7 +2,7 @@
 
 Generated: 2026-06-01
 
-These files support `operations/reactome-nlrp3-curator-packet-2026-06-01.md`.
+These files support `operations/reactome/reactome-nlrp3-curator-packet-2026-06-01.md`.
 
 ## Reactome Target Events
 

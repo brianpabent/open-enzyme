@@ -13,7 +13,7 @@ Purpose: provide a curator-facing, conservative submission packet for possible u
 
 Send the email in [`reactome-nlrp3-email-to-send-2026-06-01.md`](./reactome-nlrp3-email-to-send-2026-06-01.md) to `help@reactome.org`.
 
-Do **not** attach the raw files in `reference/generated/reactome/2026-06-01-nlrp3-curator-packet/` on first contact. Those files are internal provenance: Reactome query outputs and PubChem registry pulls that let us reproduce the audit.
+Do **not** attach the raw files in `../../reference/generated/reactome/2026-06-01-nlrp3-curator-packet/` on first contact. Those files are internal provenance: Reactome query outputs and PubChem registry pulls that let us reproduce the audit.
 
 If you want to include an attachment, attach or paste [`reactome-nlrp3-supporting-detail-2026-06-01.md`](./reactome-nlrp3-supporting-detail-2026-06-01.md). That file is external-facing and contains no local file references.
 
@@ -31,7 +31,7 @@ Durable local provenance:
 
 - Reactome audit: [`reactome-audit-results-2026-06-01.md`](./reactome-audit-results-2026-06-01.md)
 - Existing corrected working note: [`reactome-contribution-nlrp3.md`](./reactome-contribution-nlrp3.md)
-- Generated Reactome target-event pulls: [`reference/generated/reactome/2026-06-01-nlrp3-curator-packet/`](../reference/generated/reactome/2026-06-01-nlrp3-curator-packet/)
+- Generated Reactome target-event pulls: [`reference/generated/reactome/2026-06-01-nlrp3-curator-packet/`](../../reference/generated/reactome/2026-06-01-nlrp3-curator-packet/)
 
 ## Sendable Email Draft
 
@@ -67,7 +67,7 @@ Brian Abent
 - CAS: `28957-04-2`
 - ChEBI: `CHEBI:138236`
 - ChEMBL: `CHEMBL1164920`
-- PubChem registry pull: `reference/generated/reactome/2026-06-01-nlrp3-curator-packet/pubchem-oridonin-registry.json`
+- PubChem registry pull: `../../reference/generated/reactome/2026-06-01-nlrp3-curator-packet/pubchem-oridonin-registry.json`
 
 **Primary source**
 
@@ -95,7 +95,7 @@ Brian Abent
 - CAS: `53902-12-8`
 - ChEBI: `CHEBI:77572`
 - ChEMBL: `CHEMBL415324`
-- PubChem registry pull: `reference/generated/reactome/2026-06-01-nlrp3-curator-packet/pubchem-tranilast-registry.json`
+- PubChem registry pull: `../../reference/generated/reactome/2026-06-01-nlrp3-curator-packet/pubchem-tranilast-registry.json`
 
 **Primary source**
 
@@ -121,8 +121,8 @@ Brian Abent
 - Names: beta-hydroxybutyrate; 3-hydroxybutyrate; D-beta-hydroxybutyrate, depending on curator entity choice.
 - Existing Reactome metabolism event: `R-HSA-73920` — "D-beta hydroxybutyrate+NAD+ <=> acetoacetate+NADH+H+".
 - PubChem registry pulls:
-  - `reference/generated/reactome/2026-06-01-nlrp3-curator-packet/pubchem-3-hydroxybutyrate-registry.json`
-  - `reference/generated/reactome/2026-06-01-nlrp3-curator-packet/pubchem-beta-hydroxybutyrate-registry.json`
+  - `../../reference/generated/reactome/2026-06-01-nlrp3-curator-packet/pubchem-3-hydroxybutyrate-registry.json`
+  - `../../reference/generated/reactome/2026-06-01-nlrp3-curator-packet/pubchem-beta-hydroxybutyrate-registry.json`
 - Identifier note: PubChem name resolution returned related but not identical records for "3-hydroxybutyrate" (`CID 3541112`, `CHEBI:37054`) and "beta-hydroxybutyrate" (`CID 441`, `CHEBI:20067`). Reactome curators should choose the entity consistent with existing Reactome ketone-body modeling.
 
 **Primary source**

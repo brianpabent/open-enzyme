@@ -9,7 +9,7 @@ tags: [reactome, pathway-audit, operations, contribution]
 
 Purpose: close the 2026-06-01 Reactome burndown by recording what the repo-local Reactome tool adds to the Open Enzyme corpus, where the wiki should use Reactome as a pathway backbone, and which contribution ideas are real enough to pursue.
 
-Durable generated provenance: [`reference/generated/reactome/2026-06-01-open-enzyme-audit/`](../reference/generated/reactome/2026-06-01-open-enzyme-audit/).
+Durable generated provenance: [`reference/generated/reactome/2026-06-01-open-enzyme-audit/`](../../reference/generated/reactome/2026-06-01-open-enzyme-audit/).
 
 ## Executive Verdict
 
