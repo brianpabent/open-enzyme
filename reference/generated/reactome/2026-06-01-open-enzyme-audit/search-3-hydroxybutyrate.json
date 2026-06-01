@@ -1,0 +1,570 @@
+{
+  "results": [
+    {
+      "entries": [
+        {
+          "dbId": "433678",
+          "stId": "R-ALL-433678",
+          "id": "R-ALL-433678",
+          "name": "bHBA",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "<span class=\"highlighting\" >3-hydroxybutyrate</span>",
+          "referenceIdentifier": "37054",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:37054",
+          "disease": false
+        },
+        {
+          "dbId": "433685",
+          "stId": "R-ALL-433685",
+          "id": "R-ALL-433685",
+          "name": "bHBA",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "<span class=\"highlighting\" >3-hydroxybutyrate</span>",
+          "referenceIdentifier": "37054",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:37054",
+          "disease": false
+        },
+        {
+          "dbId": "880041",
+          "stId": "R-ALL-880041",
+          "id": "R-ALL-880041",
+          "name": "HBUT",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "4-hydroxybutyrate",
+          "referenceIdentifier": "16724",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:16724",
+          "disease": false
+        },
+        {
+          "dbId": "5696461",
+          "stId": "R-ALL-5696461",
+          "id": "R-ALL-5696461",
+          "name": "3HBA",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "(R)-3-hydroxybutyrate",
+          "referenceIdentifier": "10983",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:10983",
+          "disease": false
+        },
+        {
+          "dbId": "73911",
+          "stId": "R-ALL-73911",
+          "id": "R-ALL-73911",
+          "name": "bHBA",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "(R)-3-hydroxybutyric acid",
+          "referenceIdentifier": "17066",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:17066",
+          "disease": false
+        }
+      ],
+      "typeName": "Chemical Compound",
+      "entriesCount": 5,
+      "rowCount": 5
+    },
+    {
+      "entries": [
+        {
+          "dbId": "73920",
+          "stId": "R-HSA-73920",
+          "id": "R-HSA-73920",
+          "name": "D-beta <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "D-beta-<span class=\"highlighting\" >hydroxybutyrate</span> dehydrogenase tetramer (BDH1) in the mitochondrial matrix catalyzes the reversible reaction of D-beta <span class=\"highlighting\" >hydroxybutyrate</span> and NAD+ to form acetoacetate and NADH + H+ (Marks et al. 1992).",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "880033",
+          "stId": "R-HSA-880033",
+          "id": "R-HSA-880033",
+          "name": "2-oxoglutarate + 4-<span class=\"highlighting\" >hydroxybutyrate</span> <=> (R)-2-hydroxyglutarate + succinate semialdehyde",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "ADHFE1 catalyzes the reversible reaction of 2-oxoglutarate and 4-<span class=\"highlighting\" >hydroxybutyrate</span> to form (R)-2-hydroxyglutarate and succinate semialdehyde (Struys et al. 2005). The localization of human ADHFE1 to the mitochondrial matrix is inferred from the location determined experimentally for its rat homolog (Kaufman et al. 1988).",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "880002",
+          "stId": "R-HSA-880002",
+          "id": "R-HSA-880002",
+          "name": "(R)-2-hydroxyglutarate + succinate semialdehyde <=> 2-oxoglutarate + 4-<span class=\"highlighting\" >hydroxybutyrate</span>",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "ADHFE1 catalyzes the reversible reaction of (R)-2-hydroxyglutarate and succinate semialdehyde to form 2-oxoglutarate and 4-<span class=\"highlighting\" >hydroxybutyrate</span> (Struys et al. 2005). The localization of human ADHFE1 to the mitochondrial matrix is inferred from the location determined experimentally for its rat homolog (Kaufman et al. 1988).",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9988579",
+          "stId": "R-MMU-73920",
+          "id": "R-MMU-73920",
+          "name": "D-beta <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10107873",
+          "stId": "R-RNO-73920",
+          "id": "R-RNO-73920",
+          "name": "D-beta <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10230574",
+          "stId": "R-CFA-73920",
+          "id": "R-CFA-73920",
+          "name": "D-beta <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10337079",
+          "stId": "R-BTA-73920",
+          "id": "R-BTA-73920",
+          "name": "D-beta <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10451164",
+          "stId": "R-SSC-73920",
+          "id": "R-SSC-73920",
+          "name": "D-beta <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10563622",
+          "stId": "R-DRE-73920",
+          "id": "R-DRE-73920",
+          "name": "D-beta <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Danio rerio"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10735735",
+          "stId": "R-GGA-73920",
+          "id": "R-GGA-73920",
+          "name": "D-beta <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Gallus gallus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Reaction",
+      "entriesCount": 57,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "73922",
+          "stId": "R-HSA-73922",
+          "id": "R-HSA-73922",
+          "name": "BDH1",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "BDH1",
+          "referenceIdentifier": "Q02338",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/Q02338",
+          "disease": false
+        },
+        {
+          "dbId": "5696459",
+          "stId": "R-HSA-5696459",
+          "id": "R-HSA-5696459",
+          "name": "BDH2",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "BDH2",
+          "referenceIdentifier": "Q9BUT1",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/Q9BUT1",
+          "disease": false
+        }
+      ],
+      "typeName": "Protein",
+      "entriesCount": 2,
+      "rowCount": 2
+    },
+    {
+      "entries": [
+        {
+          "dbId": "74280",
+          "stId": "R-HSA-74280",
+          "id": "R-HSA-74280",
+          "name": "BDH1 tetramer",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Complex",
+      "entriesCount": 1,
+      "rowCount": 1
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9915355",
+          "stId": "R-HSA-9915355",
+          "id": "R-HSA-9915355",
+          "name": "Beta-ketothiolase deficiency",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "ACAT1 is a mitochondrial enzyme that plays a role in metabolism of ketone bodies and isoleucine catabolism (Fukao et al, 1991; Haapalainen et al, 2007; reviewed in Fukao et al, 2019). As part of isoleucine catabolism in the mitochondria, ACAT1 catalyzes the thiolytic degradation of alpha-methylacetoacetyl-CoA to propionyl-CoA and acetyl-CoA (Fukao et al, 1991; Happalainen et al, 2007). Mutations in ACAT1 that affect protein stability and enzymatic activity are associated with beta-ketothiolase deficiency, also known as alpha-methylacetoacetic aciduria, an inborn error of metabolism that is identified by the presence of isoleucine intermediate metabolites in bodily fluids (Daum et al, 1973; Schutgens et al, 1982; Fukao et al, 1991; Fukao et al, 1992; Wakazono et al, 1995; Fukao et al, 1998; Sakurai et al, 2007; reviewed in Korman, 2006; Fukao et al, 2019). Neonatal onset is rare and most affected individuals present between 6 and 18 months with metabolic acidosis, lethargy, vomiting and sometimes coma (reviewed in Korman, 2006). As with other disorders of branched-chain metabolism, there is not a direct correlation between genotype and severity of phenotypic presentation (reviewed in Korman, 2006).",
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": true
+        },
+        {
+          "dbId": "77108",
+          "stId": "R-HSA-77108",
+          "id": "R-HSA-77108",
+          "name": "Utilization of Ketone Bodies",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "The levels of acetone in ketone bodies are much lower than those of acetoacetic acid and beta-hydroxybutyric acid. Acetone cannot be converted back to acetyl-CoA, and is excreted in urine, or breathed out through the lungs. Extrahepatic tissues utilize ketone bodies by converting the beta-<span class=\"highlighting\" >hydroxybutyrate</span> successively to acetoacetate, acetoacetatyl-CoA, finally to acetyl-CoA (Sass 2011).",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "880009",
+          "stId": "R-HSA-880009",
+          "id": "R-HSA-880009",
+          "name": "Interconversion of 2-oxoglutarate and 2-hydroxyglutarate",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "The two stereoisomers of 2-hydroxyglutarate are normally converted to 2-oxoglutarate in the mitochondrial matrix, and can then be metabolized by the citric acid cycle. The physiological sources of 2-hydroxyglutarate have not been established although plausible hypotheses are that it is generated by lysine breakdown or as a byproduct of delta-aminolevulinate metabolism. The stereoisomers are oxidized to 2-oxoglutarate in FAD-dependent reactions catalyzed by the enzymes D2HGDH (specific for R(-)-2-hydroxyglutarate) and L2HGDH (specific for S(-)-2-hydroxyglutarate). An inherited deficiency in either enzyme is associated with accumulation of 2-hydroxyglutarate and variable neurological symptoms. R(-)-2-hydroxyglutarate also reacts reversibly with succinate semialdehyde to form 4-<span class=\"highlighting\" >hydroxybutyrate</span> and 2-oxoglutarate, catalyzed by ADHFE1. No deficiencies of this enzyme have been found in patients with elevated 2-hydroxyglutarate levels (Struys 2006).",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "71064",
+          "stId": "R-HSA-71064",
+          "id": "R-HSA-71064",
+          "name": "Lysine catabolism",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "In humans, most catabolism of L-lysine normally proceeds via a sequence of seven reactions which feeds into the pathway for fatty acid catabolism. In the first two reactions, catalyzed by a single enzyme complex, lysine is combined with alpha-ketoglutarate to form saccharopine, which in turn is cleaved and oxidized to yield glutamate and alpha-ketoadipic semialdehyde. The latter molecule is further oxidized to alpha-ketoadipate. Alpha-ketoadipate is oxidatively decarboxylated by the alpha-ketoglutarate dehydrogenase complex (the same enzyme complex responsible for the conversion of alpha-ketoglutarate to succinyl-CoA in the citric acid cycle), yielding glutaryl-CoA. Glutaryl-CoA is converted to crotonyl-CoA, crotonyl-CoA is converted to beta-hydroxybutyryl-CoA, and beta-hydroxybutyryl-CoA is converted to acetoacetyl-CoA. The products of lysine catabolism are thus exclusively ketogenic; i.e., under starvation conditions they can be used for the synthesis of ketone bodies, beta-<span class=\"highlighting\" >hydroxybutyrate</span> and acetoacetate, but not for the net synthesis of glucose (Cox 2001; Goodman and Freeman 2001).",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "74182",
+          "stId": "R-HSA-74182",
+          "id": "R-HSA-74182",
+          "name": "Ketone body metabolism",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Acetoacetate, beta-<span class=\"highlighting\" >hydroxybutyrate</span>, and acetone collectively are called ketone bodies. The first two are synthesized from acetyl-CoA, in the mitochondria of liver cells; acetone is formed by spontaneous decarboxylation of acetoacetate. Ketone body synthesis in liver is effectively irreversible because the enzyme that catalyzes the conversion of acetoacetate to acetoacetyl-CoA is not present in liver cells.<P>Ketone bodies, unlike fatty acids and triglycerides, are water-soluble. They are exported from the liver, and are taken up by other tissues, notably brain and skeletal and cardiac muscle. There, they are broken down to acetyl-CoA which is oxidized via the TCA cycle to yield energy. In a normal person, this pathway of ketone body synthesis and utilization is most active during extended periods of fasting. Under these conditions, mobilization and breakdown of stored fatty acids generates abundant acetyl-CoA acetyl-CoA in liver cells for synthesis of ketone bodies, and their utilization in other tissues minimizes the demand of these tissues for glucose (Sass 2011).",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "77111",
+          "stId": "R-HSA-77111",
+          "id": "R-HSA-77111",
+          "name": "Synthesis of Ketone Bodies",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "In a healthy, well-nourished individual, the production of ketone bodies occurs at a relatively low rate. During periods of normal physiological responses to carbohydrate shortages, the liver increases the production of ketone bodies from acetyl-CoA generated from fatty acid oxidation. This allows heart and skeletal muscle to use ketone bodies as the primary source of energy, thereby preserving the limited glucose supply for use in brain tissue.<p>In untreated <i>diabetes mellitus</i>, a huge buildup of ketone bodies occurs due to an increase in fatty acid oxidation. The production of ketone bodies exceeds the ability of peripheral tissues to oxidize them, and results in lowering the pH of blood.  Blood acidification is dangerous, chiefly as it impairs the ability of hemoglobin to bind oxygen.<p>Ketone body synthesis proceeds via the synthesis of ccetoacetic acid in three steps from acetyl CoA, followed by the reduction of acetoacetic acid to beta-<span class=\"highlighting\" >hydroxybutyrate</span>. In the body, these reactions occur in the mitochondria of liver cells (Sass 2011).",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "5619070",
+          "stId": "R-HSA-5619070",
+          "id": "R-HSA-5619070",
+          "name": "Defective SLC16A1 causes symptomatic deficiency in lactate transport (SDLT)",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Four members of the SLC16A gene family encode classical monocarboxylate transporters MCT1-4. Widely expressed, they all function as proton-dependent transporters of monocarboxylic acids such as lactate and pyruvate and ketone bodies such as acetacetate and beta-<span class=\"highlighting\" >hydroxybutyrate</span>. These processes are crucial in the regulation of energy metabolism and acid-base homeostasis.<br><br>SLC16A1 encodes MCT1, a ubiquitiously expressed protein. Heterozygous defects in SLC16A1 were found in patients with symptomatic deficiency in lactate transport (SDLT aka erythrocyte lactate transporter defect; MIM:245340), resulting in an acidic intracellular environment and muscle degeneration with the release of myoglobin and creatine kinase (Merezhinskaya et al. 2000). This defect could compromise extreme performance in otherwise healthy individuals.<br><br>SLC16A1 is essential for lactate transport in muscle cells. It is also highly enriched in astrocytes and oligodendroglia, neuroglia that support, insulate and provide energy metabolites to axons. Oligodendroglia dysfunction can lead to axon degeneration in several diseases. The cause is unknown but disruption of SLC16A1 transporter produces axon damage and neuron loss in animal and cell culture models. In humans, this transporter is reduced in patients with amyotrophic lateral sclerosis (Lee et al. 2012).<br><br>In cancer cells, a common change is the upregulation of glycolysis. The anti-cancer drug candidate 3-bromopyruvate (3-BrPA) can inhibit glycolysis through its uptake into cancer cells via SLC16A1 so it is the main determinant of 3-BrPA sensitivity in these cells (Birsoy et al. 2013).",
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": true
+        }
+      ],
+      "typeName": "Pathway",
+      "entriesCount": 7,
+      "rowCount": 7
+    }
+  ],
+  "rowCount": 25,
+  "numberOfGroups": 5,
+  "numberOfMatches": 72
+}

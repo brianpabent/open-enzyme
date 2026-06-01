@@ -142,6 +142,8 @@ Baveye et al. 2000 (*Infect Immun* 68:6519-6525; PMID 11083760; [DOI](https://do
 
 Lf does not appear to bind TLR4 directly, but modifies TLR4 signaling by (a) binding lipid A (§4.4), (b) binding CD14 (§3.3), and (c) possibly modulating MD-2 / MyD88 scaffolds downstream. The net effect is **LPS priming suppression**, which matters for CP1a (NF-κB transcriptional priming) in the gout exploit map. In gout, complement C5a is the dominant priming signal (not LPS — see [complement-c5a-gout.md](./complement-c5a-gout.md)), but TLR4-LPS priming is still relevant in metabolic-syndrome and leaky-gut gout phenotypes where chronic low-grade endotoxemia feeds CP1a.
 
+> **Reactome graph anchor (2026-06-01):** TLR4 signaling is represented by `R-HSA-166016` Toll Like Receptor 4 cascade and `R-HSA-166166` MyD88-independent TLR4 cascade. Stress-response adjacency relevant to lactoferrin stack logic includes `R-HSA-9755511` KEAP1-NFE2L2 pathway, `R-HSA-9818749` NFE2L2 gene expression, `R-HSA-9612973` autophagy, and `R-HSA-5205647` mitophagy. These are pathway anchors only; lactoferrin-specific regulation remains primary-literature evidence. (Pathway anchor; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
+
 ### 3.5 Nucleolin (Surface-Localized)
 
 Surface nucleolin is an atypical Lf receptor on activated macrophages, some endothelia, and tumor cells. It mediates Lf endocytosis and has been linked to Lf's anti-tumor and anti-angiogenic effects (part of the rationale for talactoferrin development in NSCLC — §9). Gout-relevance is speculative at best.

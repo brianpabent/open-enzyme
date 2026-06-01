@@ -1,0 +1,1251 @@
+{
+  "results": [
+    {
+      "entries": [
+        {
+          "dbId": "158296",
+          "stId": "R-HSA-158296",
+          "id": "R-HSA-158296",
+          "name": "<span class=\"highlighting\" >SERPING1</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": false
+        },
+        {
+          "dbId": "139868",
+          "stId": "R-HSA-139868",
+          "id": "R-HSA-139868",
+          "name": "<span class=\"highlighting\" >SERPING1</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "platelet alpha granule lumen"
+          ],
+          "compartmentAccession": [
+            "0031093"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": false
+        },
+        {
+          "dbId": "9650418",
+          "stId": "R-HSA-9650418",
+          "id": "R-HSA-9650418",
+          "name": "<span class=\"highlighting\" >SERPING1</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": false
+        },
+        {
+          "dbId": "9651387",
+          "stId": "R-HSA-9651387",
+          "id": "R-HSA-9651387",
+          "name": "<span class=\"highlighting\" >SERPING1</span> S318*",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": true
+        },
+        {
+          "dbId": "9650355",
+          "stId": "R-HSA-9650355",
+          "id": "R-HSA-9650355",
+          "name": "<span class=\"highlighting\" >SERPING1</span> Y496*",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": true
+        },
+        {
+          "dbId": "9650555",
+          "stId": "R-HSA-9650555",
+          "id": "R-HSA-9650555",
+          "name": "<span class=\"highlighting\" >SERPING1</span> R494*",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": true
+        },
+        {
+          "dbId": "9650472",
+          "stId": "R-HSA-9650472",
+          "id": "R-HSA-9650472",
+          "name": "<span class=\"highlighting\" >SERPING1</span> G184_P228del",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": true
+        },
+        {
+          "dbId": "9651390",
+          "stId": "R-HSA-9651390",
+          "id": "R-HSA-9651390",
+          "name": "<span class=\"highlighting\" >SERPING1</span> I196N",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": true
+        },
+        {
+          "dbId": "9650527",
+          "stId": "R-HSA-9650527",
+          "id": "R-HSA-9650527",
+          "name": "<span class=\"highlighting\" >SERPING1</span> G184E",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": true
+        },
+        {
+          "dbId": "9650545",
+          "stId": "R-HSA-9650545",
+          "id": "R-HSA-9650545",
+          "name": "<span class=\"highlighting\" >SERPING1</span> N291H",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >SERPING1</span>",
+          "referenceIdentifier": "P05155",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P05155",
+          "disease": true
+        }
+      ],
+      "typeName": "Protein",
+      "entriesCount": 139,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9650473",
+          "stId": "R-HSA-9650473",
+          "id": "R-HSA-9650473",
+          "name": "<span class=\"highlighting\" >SERPING1</span> is secreted",
+          "type": "Reaction",
+          "exactType": "omitted",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "The plasma protease C1-inhibitor (C1INH, encoded by the <span class=\"highlighting\" >SERPING1</span> gene) like all extracellular serine proteinase inhibitors (serpins) is secreted via the endoplasmic reticulum (ER)-Golgi pathway (Pan S et al. 2011). C1INH (<span class=\"highlighting\" >SERPING1</span>) is produced mainly in hepatocytes, reaching in healthy individuals a plasma concentration of 0.21\u20130.39 g/l (Prandini MH et al. 1986; Wouters D et al. 2008). <span class=\"highlighting\" >SERPING1</span> can be produced and secreted from other cell types like peripheral blood monocytes, fibroblasts, endothelial cells, and platelets  (Katz Y & Strunk RC 1989; Schmaier AH et al., 1985; Schmaier AH et al. 1989; Schmaier AH et al., 1993; Prada AE et al. 1998). C1INH is highly glycosylated plasma protein, bearing both N- and O-glycans (Stavenhagen K et al. 2018). C1INH (<span class=\"highlighting\" >SERPING1</span>) belongs to the serine protease inhibitor (serpin) superfamily of structurally similar but functionally diverse proteins that use a conformational change to inhibit target enzymes (Silverman GA et al. 2001; Gettins PG 2002; Law RH et al. 2006). Serpins are globular proteins with a conserved structure of 7- 9 \u03b1-helices and 3 \u03b2-pleated sheets and a protruding reactive center loop (RCL) (Silverman GA et al. 2001; Gettins PG 2002; Law RH et al. 2006; Sanrattana W et al. 2019). In native serpins, the RCL, located outside the tertiary core of the serpin, forms a flexible stretch of approximately 20 amino acids, which provides structural flexibility in a solvent-exposed environment. They act on their target proteases by means of a suicide-substrate mechanism involving the cleavage of the RCL and its insertion into \u03b2-sheet A (Gettins PG 2002; Pan S et al. 2011; Khan MS et al. 2011). As a result, conformational changes take place in the serpins that ultimately trap and inactivate the targeted protease (Gettins PG 2002; Pan S et al. 2011; Khan MS et al. 2011; Sanrattana W et al. 2019). Serpins are conformationally labile and many of the disease-linked mutations of serpins result in misfolding or in formation of inactive, pathogenic polymers (Law RH et al. 2006). Under normal physiological conditions, C1INH inhibits the activated forms of the serine proteases involved in the complement pathway (C1r and C1s), the contact system (FXIIa, FXIa, and plasma kallikrein) as well as fibrinolytic proteases such as plasmin, tPA, and uPA (Sim et al. 1979; Arlaud et al. 1979; Kaplan AP & Ghebrehiwet B 2010).",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005788",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10212276",
+          "stId": "R-RNO-9650473",
+          "id": "R-RNO-9650473",
+          "name": "<span class=\"highlighting\" >SERPING1</span> is secreted",
+          "type": "Reaction",
+          "exactType": "omitted",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005788",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10089200",
+          "stId": "R-MMU-9650473",
+          "id": "R-MMU-9650473",
+          "name": "<span class=\"highlighting\" >SERPING1</span> is secreted",
+          "type": "Reaction",
+          "exactType": "omitted",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005788",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10319654",
+          "stId": "R-CFA-9650473",
+          "id": "R-CFA-9650473",
+          "name": "<span class=\"highlighting\" >SERPING1</span> is secreted",
+          "type": "Reaction",
+          "exactType": "omitted",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005788",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10433386",
+          "stId": "R-BTA-9650473",
+          "id": "R-BTA-9650473",
+          "name": "<span class=\"highlighting\" >SERPING1</span> is secreted",
+          "type": "Reaction",
+          "exactType": "omitted",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005788",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10546491",
+          "stId": "R-SSC-9650473",
+          "id": "R-SSC-9650473",
+          "name": "<span class=\"highlighting\" >SERPING1</span> is secreted",
+          "type": "Reaction",
+          "exactType": "omitted",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005788",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10903958",
+          "stId": "R-DME-9650473",
+          "id": "R-DME-9650473",
+          "name": "<span class=\"highlighting\" >SERPING1</span> is secreted",
+          "type": "Reaction",
+          "exactType": "omitted",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005788",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10988132",
+          "stId": "R-CEL-9650473",
+          "id": "R-CEL-9650473",
+          "name": "<span class=\"highlighting\" >SERPING1</span> is secreted",
+          "type": "Reaction",
+          "exactType": "omitted",
+          "species": [
+            "Caenorhabditis elegans"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005788",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9650447",
+          "stId": "R-HSA-9650447",
+          "id": "R-HSA-9650447",
+          "name": "<span class=\"highlighting\" >SERPING1</span> variant is not secreted",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "C1-esterase inhibitor (serpin G1, C1-INH, <span class=\"highlighting\" >SERPING1</span>) is a 105 kDa protease inhibitor which belongs to the serine protease inhibitor (serpin) super family of structurally similar but functionally diverse proteins that use a conformational change to inhibit target enzymes (Silverman GA et al. 2001; Gettins PG 2002; Law RH et al. 2006; Khan MS et al. 2011). <span class=\"highlighting\" >SERPING1</span> inhibits the proteases of the complement system, C1r, C1s and MASP2 by forming stable and enzymatically inactive complexes (Arlaud GJ et al. 1979, Sim RB et al. 1979). Besides complement regulation, <span class=\"highlighting\" >SERPING1</span> controls vascular permeability by inactivating factor XIa (FXIa), FXIIa and plasma kallikrein, the proteases of the contact system involved in bradykinin generation (Schreiber AD et al. 1973; Ravindran S et al. 2004; Kaplan AP & Joseph K 2016). Serpins, including <span class=\"highlighting\" >SERPING1</span>, are conformationally labile and many of the disease-linked variants of serpins result in misfolding or in formation of pathogenic, inactive polymers (Law RH et al. 2006; Khan MS et al. 2011; Haslund D ET AL. 2019). Defective <span class=\"highlighting\" >SERPING1</span> (C1 inhibitor deficiency) results in excessive enzyme activity and is linked to hereditary angioedema (HAE), an autosomal dominant disease characterized by recurrent episodes of localized edema of the skin or of the mucosa of the gastrointestinal tract or upper airway (Carugati A et al. 2001; Suffritti C et al. 2014: Zuraw BL & Christiansen SC 2016; Kaplan AP & Joseph K 2016). The edema formation is primarily caused by a transient increased bradykinin release and increased permeability at the level of the postcapillary venule due to uncontrolled activation of the coagulation factor XII (FXII)-dependent kallikrein kinin system (Bossi F et al. 2009; Kaplan AP 2010; Suffritti C et al. 2014: Zuraw BL & Christiansen SC 2016). Although activation of complement does not produce a vasoactive peptide that could be considered to be pathogenic in HAE, the absence of functional <span class=\"highlighting\" >SERPING1</span> causes uncontrolled C1 complex activity with breakdown of C4 and C2 components of complement, which are the natural substrates of C1s. Thus 95 percent of patients with HAE have a low C4 level which allows for rapid diagnosis of HAE caused by defective <span class=\"highlighting\" >SERPING1</span> even if a family history of swelling is not present (Kaplan AP & Joseph K 2016). Based on the relative levels of functional and antigenic <span class=\"highlighting\" >SERPING1</span> (C1-INH), two types of HAE with SERPING1deficiency have traditionally been described. In type I (\u00b1 85% of HAE patients with SERPING1deficiency), defective expression of one allele results in low antigenic and functional levels of C1 inhibitor protein. It has been suggested that in patients with type I HAE the disease-linked variants of <span class=\"highlighting\" >SERPING1</span> may cause reduced plasma levels of functional <span class=\"highlighting\" >SERPING1</span> by negatively affecting synthesis, intracellular transport, or secretion of the normal <span class=\"highlighting\" >SERPING1</span>(C1-INH) protein (Kramer J et al. 1993; Verpy E et al. 1993; Ernst SC et al. 1996; Haslund D et al. 2019). Further, in a subset of patients with type I HAE, defective <span class=\"highlighting\" >SERPING1</span> variants interacted with wildtype (wt) <span class=\"highlighting\" >SERPING1</span> in a dominant-negative manner and formed intracellular <span class=\"highlighting\" >SERPING1</span> aggregates (Haslund D et al. 2019). These aggregates lead to a reduction in the levels of secreted functional <span class=\"highlighting\" >SERPING1</span>. Importantly, in patient-derived fibroblasts, the administration of wild-type <span class=\"highlighting\" >SERPING1</span> gene was able to restore the levels of secreted <span class=\"highlighting\" >SERPING1</span> (C1-INH) protein, suggesting that dominant-negative disease mechanisms can be overcome by gene supplementation (Haslund D et al. 2019). In type II (\u00b115% of HAE patients), levels of functional <span class=\"highlighting\" >SERPING1</span> protein are low, but <span class=\"highlighting\" >SERPING1</span> antigen levels are normal because of the presence of a dysfunctional variant. This classification has however been challenged by observations of intermediary HAE types, that can arise, when a small amount of dysfunctional <span class=\"highlighting\" >SERPING1</span> is present in the blood stream (Eldering E et al. 1995; Verpy E et al. 1995; Madsen DE et al. 2014).<p>This Reactome event describes defective cellular secretion of <span class=\"highlighting\" >SERPING1</span> variants expressed from alleles identified mostly in patients with HAE type I.",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "disease": true
+        },
+        {
+          "dbId": "158399",
+          "stId": "R-HSA-158399",
+          "id": "R-HSA-158399",
+          "name": "kallikrein binds <span class=\"highlighting\" >SERPING1</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Activated plasma kallikrein binds to the plasma protease C1 inhibitor (C1INH, encoded by the <span class=\"highlighting\" >SERPING1</span> gene) (Bock SC et al., 1986), forming a stable and enzymatically inactive complex. This reaction appears to be the major means by which plasma kallikrein is inactivated (plasma kallikrein can also be inactivated by binding to \u03b12-macroglobulin) (Harpel PC et al., 1985; Ratnoff OD et al,. 1969; Schapira M et al., 1981). The relative contributions of C1INH and \u03b12-macroglobulin to kallikrein inhibition vary among studies (Schapira M et al., 1981; Harpel PC et al., 1985).",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Reaction",
+      "entriesCount": 35,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "10837808",
+          "stId": "R-DME-158296-18",
+          "id": "R-DME-158296-18",
+          "name": "Homologues of <span class=\"highlighting\" >SERPING1</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10940353",
+          "stId": "R-CEL-158296-10",
+          "id": "R-CEL-158296-10",
+          "name": "Homologues of <span class=\"highlighting\" >SERPING1</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Caenorhabditis elegans"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10855213",
+          "stId": "R-DME-139868-18",
+          "id": "R-DME-139868-18",
+          "name": "Homologues of <span class=\"highlighting\" >SERPING1</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "platelet alpha granule lumen"
+          ],
+          "compartmentAccession": [
+            "0031093"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10940154",
+          "stId": "R-CEL-139868-10",
+          "id": "R-CEL-139868-10",
+          "name": "Homologues of <span class=\"highlighting\" >SERPING1</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Caenorhabditis elegans"
+          ],
+          "compartmentNames": [
+            "platelet alpha granule lumen"
+          ],
+          "compartmentAccession": [
+            "0031093"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10988130",
+          "stId": "R-CEL-9650418-10",
+          "id": "R-CEL-9650418-10",
+          "name": "Homologues of <span class=\"highlighting\" >SERPING1</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Caenorhabditis elegans"
+          ],
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10903956",
+          "stId": "R-DME-9650418-18",
+          "id": "R-DME-9650418-18",
+          "name": "Homologues of <span class=\"highlighting\" >SERPING1</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9650455",
+          "stId": "R-HSA-9650455",
+          "id": "R-HSA-9650455",
+          "name": "Non-secretable <span class=\"highlighting\" >SERPING1</span> variants",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "disease": true
+        },
+        {
+          "dbId": "9650491",
+          "stId": "R-HSA-9650491",
+          "id": "R-HSA-9650491",
+          "name": "HAE type 2-causing <span class=\"highlighting\" >SERPING1</span> variants ",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "disease": true
+        }
+      ],
+      "typeName": "Set",
+      "entriesCount": 8,
+      "rowCount": 8
+    },
+    {
+      "entries": [
+        {
+          "dbId": "10805771",
+          "stId": "R-GGA-158296",
+          "id": "R-GGA-158296",
+          "name": "Ghost homologue of <span class=\"highlighting\" >SERPING1</span>",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Gallus gallus"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Genes and Transcripts",
+      "entriesCount": 1,
+      "rowCount": 1
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9657689",
+          "stId": "R-HSA-9657689",
+          "id": "R-HSA-9657689",
+          "name": "Defective <span class=\"highlighting\" >SERPING1</span> causes hereditary angioedema",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "The reciprocal activation is initiated when zymogen factor XII (F12 or FXII) binds to a negatively charged surface, which induces FXII autoactivation. Activated FXII (FXIIa) converts prekallikrein (PK) to kallikrein, which proteolytically liberates bradykinin from high molecular weight kininogen (HK) (Renne T 2012; Renne T et al. 2012; Maas C et al. 2011). Kallikrein also activates FXII to produce more FXIIa (initially). FXIIa and kallikrein reciprocally activate their zymogens and thus generate a positive feedback loop. In the presence of sufficient amounts of active enzyme, FXIIa also generates active factor XI (FXIa) to potentiate the intrinsic coagulation pathway. All of these enzymatic steps are normally inhibited by C1-esterase inhibitor (C1-INH, encoded by the <span class=\"highlighting\" >SERPING1</span> gene).<p>Binding of the proinflammatory peptide hormone bradykinin to the bradykinin B2 receptor (B2R) activates various proinflammatory signaling pathways that increase vascular permeability and fluid efflux. An excessive formation of bradykinin due to uncontrolled activation of the coagulation factor XII (FXII)-dependent kallikrein-kinin system causes increased vascular permeability at the level of the postcapillary venule and results in hereditary angioedema (HAE) (Bossi F et al. 2009; Kaplan AP 2010; Suffritti C et al. 2014: Zuraw BL & Christiansen SC 2016). HAE is a rare life-threatening inherited edema disorder that is characterized by recurrent episodes of localized edema of the skin or of the mucosa of the gastrointestinal tract or upper airway. Angioedema initiated by bradykinin is usually associated with <span class=\"highlighting\" >SERPING1</span> (C1-INH) deficiency. Thus, a major role of <span class=\"highlighting\" >SERPING1</span> (C1-INH) is to prevent the development of excessive vascular permeability. More rarely, HAE occurs in individuals with normal <span class=\"highlighting\" >SERPING1</span> activity, linked to mutations in other proteins, including FXII, plasminogen, and angiopoietin (Magerl M et al. 2017; Zuraw BL 2018; Ivanov I et al. 2019). Patients with HAE are heterozygous for deficiency of <span class=\"highlighting\" >SERPING1</span>.The disease, therefore, has an autosomal dominant inheritance and may result from lack of expression of <span class=\"highlighting\" >SERPING1</span> from one allele (type 1 HAE) or from expression of a nonfunctional <span class=\"highlighting\" >SERPING1</span> protein (type 2 HAE). This classification has however been challenged by observations of intermediary HAE types, that can arise, when small amounts of dysfunctional <span class=\"highlighting\" >SERPING1</span> is present in the blood stream (Eldering E et al. 1995; Verpy E et al. 1995; Madsen DE et al. 2014).",
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": true
+        },
+        {
+          "dbId": "9657688",
+          "stId": "R-HSA-9657688",
+          "id": "R-HSA-9657688",
+          "name": "Defective factor XII causes hereditary angioedema",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Hereditary angioedema (HAE) is a rare life-threatening inherited edema disorder that is characterized by recurrent episodes of localized edema of the skin or of the mucosa of the gastrointestinal tract or upper airway. The edema formation in patients with HAE is primarily caused by a transient increased bradykinin release from high molecular weight kininogen (HK) due to uncontrolled activation of the coagulation factor XII (FXII)-dependent kallikrein kinin system (KKS) (Bossi F et al. 2009; Kaplan AP 2010; Suffritti C et al. 2014: Zuraw BL & Christiansen SC 2016). Angioedema initiated by bradykinin is usually associated with <span class=\"highlighting\" >SERPING1</span> (C1-INH) deficiency. <span class=\"highlighting\" >SERPING1</span> is the major regulator of the contact system. More rarely, HAE occurs in individuals with normal <span class=\"highlighting\" >SERPING1</span> activity, and has been linked to mutations in other proteins, including FXII, plasminogen, and angiopoietin (Magerl M et al. 2017; Zuraw BL 2018; Ivanov I et al. 2019). Substitution of threonine 328 by either a lysine or an arginine residue (T328K or T328R) in the FXII proline-rich region has been identified in several families with HAE and normal <span class=\"highlighting\" >SERPING1</span>. FXII T328K or T328R variants change protein glycosylation and introduce a new site that is sensitive to enzymatic cleavage by fibrinolytic and coagulation proteases such as plasmin, thrombin, or FXIa (de Maat S et al. 2016; Ivanov I et al. 2019). The intrinsic capacity of the truncated form of FXII (329-615) (also known as \u03b4FXII) to convert prekallikrein to kallikrein is greater than that of FXII leading to more kallikrein generated early during reciprocal activation (Ivanov I et al. 2019). Second, FXII (329-615) is a better kallikrein substrate than is FXII. The accelerated kallikrein/FXII activation with truncated FXII (329-615) appears to overwhelm the regulatory function of <span class=\"highlighting\" >SERPING1</span> at normal plasma levels leading to uncontrolled bradykinin formation (de Maat S et al. 2016; Ivanov I et al. 2019). Binding of the proinflammatory peptide hormone bradykinin to the bradykinin B2 receptor (B2R) activates various proinflammatory signaling pathways that increase vascular permeability and fluid efflux. An excessive formation of bradykinin due to uncontrolled activation of FXII-dependent KKS causes increased vascular permeability at the level of the postcapillary venule and results in HAE (Zuraw BL & Christiansen SC 2016; de Maat S et al. 2016; Ivanov I et al. 2019). ",
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": true
+        },
+        {
+          "dbId": "9855719",
+          "stId": "R-HSA-9855719",
+          "id": "R-HSA-9855719",
+          "name": "Regulation of FXIIa and plasma kallikrein activity",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Activated factor XIIa and plasma kallikrein coordinate inflammatory signaling pathways, complement activation, coagulation, and fibrinolysis (reviewed by Renne T et al., 2012; Maas C & Renne T, 2018; Schmaier AH, 2016). This system is tightly regulated by several proteins, including plasma protease C1 inhibitor (C1INH, encoded by the <span class=\"highlighting\" >SERPING1</span> gene), alpha-2-macroglobulin (encoded by the A2M gene), and heparin-binding glycoprotein (HRG), which prevent overactivation of contact activation system and plasma kallikrein-kinin system and protect against pathological thrombotic and inflammatory conditions (Pixley RA et al., 1985; Harpel PC et al., 1985; MacQuarrie JL et al., 2011). C1INH and alpha-2-macroglobulin are the major plasma protease inhibitors of plasma kallikrein accounting for 42 and 48% inhibition, respectively (Schapira M et al., 1981), although their relative contributions vary among studies (Schapira M et al., 1981; Harpel et al., 1985). C1INH (<span class=\"highlighting\" >SERPING1</span>) is the predominant inhibitor of FXIIa, accounting for 92% plasma FXIIa inhibition (Pixley RA et al., 1985). ",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "9946127",
+          "stId": "R-HSA-9946127",
+          "id": "R-HSA-9946127",
+          "name": "Defects of contact activation system and kallikrein-kinin system ",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "The contact activation system (CAS) is a plasma serine protease cascade, which involves surface-induced interactions among factor XII (FXII or Hageman factor), prekallikrein (PK), and kininogen (high molecular weight kininogen, HMWK) in response to various stimuli such as tissue injury, toxic compounds, or microbial infection. Activated components of CAS coordinate inflammatory signaling pathways, complement activation, coagulation and fibrinolysis (reviewed by Renne T et al., 2012; Maas C & Renne T., 2018; Schmaier AH 2016; Long AT et al., 2016; Shamanaev A, Litvak M et al., 2023; Motta G et al., 2023).<p>Abnormal activation of FXII is implicated in the pathogenesis of various diseases including hereditary angioedema (HAE) and Alzheimer\u2019s disease (AD), though the mechanisms and consequences differ.<p>In HAE, uncontrolled activation of FXII-dependent kallikrein-kinin system (KKS) and excessive release of bradykinin from HMWK is usually associated with defective function of <span class=\"highlighting\" >SERPING1</span> (C1-INH), a major regulator of the contact system (Suffritti C et al. 2014). More rarely, HAE occurs in individuals with normal <span class=\"highlighting\" >SERPING1</span> activity, and has been linked to mutations in other proteins, including FXII (Cichon S et al. 2006; Magerl M et al. 2017; Zuraw BL & Christiansen SC 2016; Ivanov I et al. 2019). The proinflammatory byradykinin causes vasodilation and increased vascular permeability at the level of the post capillary venule, resulting in angioedema (Bossi F et al. 2009; Kaplan AP 2010; Suffritti C et al. 2014).<p>In AD patients, aggregated amyloid beta (A\u03b2) peptides provide a negatively charged surface that facilitates the binding and activation of factor XII (FXII) (Joseph K et al., 1999; Bergamaschini L et al., 2001; Zamolodchikov D et al., 2015). Enhanced FXII activation and downstream effects on the kallikrein-kinin system contribute to vascular dysfunction, prothrombotic state, neuroinflammation, and cognitive decline associated with AD pathology (Zamolodchikov D et al., 2015, 2016; Chen ZL et al., 2023; reviewed by Kaplan AP et al., 2024). Both PK and FXIIa are recognized as upstream triggers of the coagulation system. However, the clinical significance of these factors in thrombosis and hemorrhage is not fully understood. Blockade of the contact activation system (CAS) results in prolonged coagulation times in the activated partial thromboplastin time (aPTT) assay. Nevertheless, the absence of thrombotic or hemostatic abnormalities in individuals with genetic deficiencies of PK or FXII suggests that the CAS plays a minimal role in physiological coagulation (M\u00fcller F et al., 2011). However, it may contribute to thrombus formation under pathological conditions (Zamolodchikov D et al., 2016).<p>Genetic variants are named following Human Genome Variation Society (HGVS) nomenclature with sequence numbering starting from the first methionine of the protein as +1 (Goodeve AC et al.2011).\n",
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": true,
+          "disease": true
+        }
+      ],
+      "typeName": "Pathway",
+      "entriesCount": 4,
+      "rowCount": 4
+    },
+    {
+      "entries": [
+        {
+          "dbId": "E9PK97",
+          "stId": "E9PK97",
+          "id": "E9PK97",
+          "name": "E9PK97",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "E9PK97",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/E9PK97/entry"
+        }
+      ],
+      "typeName": "Interactor",
+      "entriesCount": 1,
+      "rowCount": 1
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9653851",
+          "stId": "R-HSA-9653851",
+          "id": "R-HSA-9653851",
+          "name": "<span class=\"highlighting\" >SERPING1</span>:factor XIa:GPIb:GPIX:GPV ",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10546530",
+          "stId": "R-SSC-9653851",
+          "id": "R-SSC-9653851",
+          "name": "<span class=\"highlighting\" >SERPING1</span>:factor XIa:GPIb:GPIX:GPV ",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10089242",
+          "stId": "R-MMU-9653851",
+          "id": "R-MMU-9653851",
+          "name": "<span class=\"highlighting\" >SERPING1</span>:factor XIa:GPIb:GPIX:GPV ",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10212318",
+          "stId": "R-RNO-9653851",
+          "id": "R-RNO-9653851",
+          "name": "<span class=\"highlighting\" >SERPING1</span>:factor XIa:GPIb:GPIX:GPV ",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10433430",
+          "stId": "R-BTA-9653851",
+          "id": "R-BTA-9653851",
+          "name": "<span class=\"highlighting\" >SERPING1</span>:factor XIa:GPIb:GPIX:GPV ",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Complex",
+      "entriesCount": 5,
+      "rowCount": 5
+    },
+    {
+      "entries": [
+        {
+          "dbId": "014351",
+          "stId": "R-ICO-014351",
+          "id": "R-ICO-014351",
+          "name": "<span class=\"highlighting\" >SERPING1</span>",
+          "type": "Icon",
+          "exactType": "Icon",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Plasma protease C1 inhibitor.",
+          "iconName": "SERPING1",
+          "iconCategories": [
+            "protein"
+          ],
+          "iconCuratorName": "Veronica Shamovsky",
+          "iconCuratorOrcidId": "0000-0002-2187-2241",
+          "iconDesignerName": "Cristoffer Sevilla",
+          "iconDesignerUrl": "https://graphsolutions.co.uk",
+          "iconReferences": [
+            "P05155",
+            "UNIPROT:P05155"
+          ],
+          "iconPhysicalEntities": [
+            {
+              "stId": "R-HSA-9650418",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-158296",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 [extracellular region]"
+            },
+            {
+              "stId": "uniprot:P05155",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1",
+              "compartments": "null",
+              "displayName": "SERPING1 [null]"
+            },
+            {
+              "stId": "R-HSA-139868",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1",
+              "compartments": "platelet alpha granule lumen",
+              "displayName": "SERPING1 [platelet alpha granule lumen]"
+            },
+            {
+              "stId": "R-HSA-9651435",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 A2_M53del",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 A2_M53del [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650569",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 A456E",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 A456E [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9650554",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 A458T",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 A458T [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9650402",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 A458V",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 A458V [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9651433",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 D84_T138del",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 D84_T138del [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9651381",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 F225*",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 F225* [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650538",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 F236S",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 F236S [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650472",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 G184_P228del",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 G184_P228del [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650527",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 G184E",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 G184E [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650424",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 G184R",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 G184R [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9651385",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 G345R",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 G345R [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650548",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 G493E",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 G493E [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650561",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 G493R",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 G493R [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9651390",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 I196N",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 I196N [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650446",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 I462S",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 I462S [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9650574",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 L177P",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 L177P [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9651434",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 L273del",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 L273del [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9651448",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 L481P",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 L481P [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9651451",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 L481R",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 L481R [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650545",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 N291H",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 N291H [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650563",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 P476L",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 P476L [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650330",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 P489R",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 P489R [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650544",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 P498R",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 P498R [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650568",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 P498S",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 P498S [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9651424",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 Q338*",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 Q338* [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650547",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 Q474*",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 Q474* [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650410",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 Q484*",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 Q484* [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650511",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 R400C",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 R400C [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650553",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 R466C",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 R466C [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9650560",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 R466H",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 R466H [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9650436",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 R466L",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 R466L [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9650572",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 R466S",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 R466S [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9650555",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 R494*",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 R494* [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650362",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 S170P",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 S170P [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650522",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 S280_P282del",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 S280_P282del [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9651387",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 S318*",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 S318* [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9651423",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 S36Ffs*21",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 S36Ffs*21 [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650346",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 T189N",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 T189N [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650562",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 T467P",
+              "compartments": "extracellular region",
+              "displayName": "SERPING1 T467P [extracellular region]"
+            },
+            {
+              "stId": "R-HSA-9650415",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 V288E",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 V288E [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650331",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 V473M",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 V473M [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650502",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 W482*",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 W482* [endoplasmic reticulum lumen]"
+            },
+            {
+              "stId": "R-HSA-9650355",
+              "type": "ReferenceGeneProduct",
+              "name": "SERPING1 Y496*",
+              "compartments": "endoplasmic reticulum lumen",
+              "displayName": "SERPING1 Y496* [endoplasmic reticulum lumen]"
+            }
+          ],
+          "iconEhlds": [
+            "R-HSA-9651496",
+            "R-HSA-9946127"
+          ],
+          "icon": true
+        }
+      ],
+      "typeName": "Icon",
+      "entriesCount": 1,
+      "rowCount": 1
+    }
+  ],
+  "rowCount": 40,
+  "numberOfGroups": 8,
+  "numberOfMatches": 194
+}

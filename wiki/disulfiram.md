@@ -47,6 +47,8 @@ Critically, disulfiram allows GSDMD cleavage by caspase-1 to proceed normally �
 
 **(Source: nlrp3-exploit-map.md)** — "The elegance: disulfiram still allows IL-1β and GSDMD processing (caspase-1 can still cleave them) but abrogates pore formation. No pores = IL-1β stays trapped inside the cell. No pores = no pyroptosis = no inflammatory amplification from cell death."
 
+> **Reactome graph anchor (2026-06-01):** Disulfiram/GSDMD is already modeled by Reactome as `R-HSA-9693324` ("Disulfiram covalently modifies Cys191 in GSDMD") within the broader pyroptosis pathway `R-HSA-5620971`. Dimethyl fumarate modification of the same GSDMD cysteine is also modeled as `R-HSA-9716258`. This is useful pathway anchoring, but it means disulfiram is not a Reactome contribution gap. (Pathway anchor; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
+
 ### Alternative Modifications
 
 Other compounds target the same Cys191 vulnerability:

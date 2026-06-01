@@ -1,0 +1,748 @@
+[
+  {
+    "dbId": 109470,
+    "displayName": "(d)GMP or (d)IMP + H2O => (d)G or (d)I + orthophosphate (NT5C)",
+    "stId": "R-HSA-109470",
+    "stIdVersion": "R-HSA-109470.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "(d)GMP or (d)IMP + H2O => (d)G or (d)I + orthophosphate (NT5C)",
+      "GMP + H2O => guanosine + phosphate",
+      "dGMP + H2O => 2'-deoxyguanosine + phosphate",
+      "IMP + H2O => inosine + phosphate",
+      "dIMP + H2O => 2'-deoxyinosine + phosphate"
+    ],
+    "releaseDate": "2004-07-06",
+    "speciesName": "Homo sapiens",
+    "eventOf": [
+      {
+        "dbId": 74259,
+        "displayName": "Purine catabolism",
+        "stId": "R-HSA-74259",
+        "stIdVersion": "R-HSA-74259.8",
+        "isInDisease": false,
+        "isInferred": false,
+        "maxDepth": 3,
+        "name": [
+          "Purine catabolism"
+        ],
+        "releaseDate": "2004-07-06",
+        "releaseStatus": "UPDATED",
+        "speciesName": "Homo sapiens",
+        "hasDiagram": false,
+        "hasEHLD": false,
+        "lastUpdatedDate": "2021-12-08",
+        "hasEvent": [
+          {
+            "dbId": 109278,
+            "displayName": "NT5E:Zn2+ hydrolyses AMP,dAMP,GMP, IMP",
+            "stId": "R-HSA-109278",
+            "stIdVersion": "R-HSA-109278.5",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "NT5E:Zn2+ hydrolyses AMP,dAMP,GMP, IMP",
+              "AMP + H2O => adenosine + phosphate",
+              "dAMP + H2O => 2'-deoxyadenosine + phosphate",
+              "GMP + H2O => guanosine + phosphate",
+              "IMP + H2O => inosine + phosphate"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 74248,
+            "displayName": "(d)GMP or (d)IMP + H2O => (2'-deoxy)guanosine or (2'-deoxy)inosine + orthophosphate (NT5C2)",
+            "stId": "R-HSA-74248",
+            "stIdVersion": "R-HSA-74248.6",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "(d)GMP or (d)IMP + H2O => (2'-deoxy)guanosine or (2'-deoxy)inosine + orthophosphate (NT5C2)",
+              "GMP + H2O => guanosine + phosphate",
+              "dGMP + H2O => 2'-deoxyguanosine + phosphate",
+              "IMP + H2O => inosine + phosphate",
+              "dIMP + H2O => 2'-deoxyinosine + phosphate"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 109415,
+            "displayName": "AMP + H2O => adenosine + orthophosphate [NT5C1B]",
+            "stId": "R-HSA-109415",
+            "stIdVersion": "R-HSA-109415.5",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "AMP + H2O => adenosine + orthophosphate [NT5C1B]",
+              "AMP + H2O => adenosine + phosphate"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 109387,
+            "displayName": "(2'-deoxy)purine nucleoside 5'-monophosphate + H2O => (2'-deoxy)purine nucleoside + orthophosphate [NT5C1A]",
+            "stId": "R-HSA-109387",
+            "stIdVersion": "R-HSA-109387.7",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "(2'-deoxy)purine nucleoside 5'-monophosphate + H2O => (2'-deoxy)purine nucleoside + orthophosphate [NT5C1A]",
+              "AMP + H2O => adenosine + phosphate",
+              "dAMP + H2O => 2'-deoxyadenosine + phosphate",
+              "GMP + H2O => guanosine + phosphate",
+              "dGMP + H2O => 2'-deoxyguanosine + phosphate",
+              "IMP + H2O => inosine + phosphate",
+              "dIMP + H2O => 2'-deoxyinosine + phosphate"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          109470,
+          {
+            "dbId": 8953339,
+            "displayName": "DNPH1 hydrolyses dGMP",
+            "stId": "R-HSA-8953339",
+            "stIdVersion": "R-HSA-8953339.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "DNPH1 hydrolyses dGMP",
+              "dGMP + H2O => 2-deoxy-D-ribose 5-phosphate + guanine"
+            ],
+            "releaseDate": "2017-03-27",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "isChimeric": false,
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 74249,
+            "displayName": "PNP catalyzes the conversion of (deoxy)guanosine to guanine and (deoxy)ribose",
+            "stId": "R-HSA-74249",
+            "stIdVersion": "R-HSA-74249.7",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "PNP catalyzes the conversion of (deoxy)guanosine to guanine and (deoxy)ribose",
+              "guanosine + phosphate => alpha-D-ribose 1-phosphate + guanine",
+              "2'-deoxyguanosine + phosphate => 2-deoxy-alpha-D-ribose 1-phosphate + guanine"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 74242,
+            "displayName": "PNP catalyzes the conversion of (deoxy)inosine to hypoxanthine and (deoxy)ribose",
+            "stId": "R-HSA-74242",
+            "stIdVersion": "R-HSA-74242.7",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "PNP catalyzes the conversion of (deoxy)inosine to hypoxanthine and (deoxy)ribose",
+              "inosine + phosphate => alpha-D-ribose 1-phosphate + hypoxanthine",
+              "2'-deoxyinosine + phosphate => 2-deoxy-alpha-D-ribose 1-phosphate + hypoxanthine"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 74255,
+            "displayName": "Guanine + H2O => Xanthine + NH4+",
+            "stId": "R-HSA-74255",
+            "stIdVersion": "R-HSA-74255.8",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "Guanine + H2O => Xanthine + NH4+",
+              "guanine + H2O + H(+) => xanthine + NH4(+)"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 74247,
+            "displayName": "XDH oxidizes hypoxanthine to form xanthine",
+            "stId": "R-HSA-74247",
+            "stIdVersion": "R-HSA-74247.7",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "XDH oxidizes hypoxanthine to form xanthine",
+              "hypoxanthine + O2 + H2O => xanthine + H2O2"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9727347,
+            "displayName": "XDH dehydrogenates hypoxanthine to form xanthine",
+            "stId": "R-HSA-9727347",
+            "stIdVersion": "R-HSA-9727347.4",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "XDH dehydrogenates hypoxanthine to form xanthine",
+              "hypoxanthine + NAD(+) + H2O => xanthine + NADH + H(+)"
+            ],
+            "releaseDate": "2021-06-09",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "isChimeric": false,
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 74258,
+            "displayName": "XDH oxidizes xanthine to form urate",
+            "stId": "R-HSA-74258",
+            "stIdVersion": "R-HSA-74258.6",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "XDH oxidizes xanthine to form urate",
+              "xanthine + O2 + H2O => urate + H2O2"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9727349,
+            "displayName": "XDH dehydrogenates xanthine to form urate",
+            "stId": "R-HSA-9727349",
+            "stIdVersion": "R-HSA-9727349.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "XDH dehydrogenates xanthine to form urate",
+              "xanthine + NAD(+) + H2O => urate + NADH + H(+)"
+            ],
+            "releaseDate": "2021-06-09",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "isChimeric": false,
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 2393930,
+            "displayName": "Phosphate bond hydrolysis by NUDT proteins",
+            "stId": "R-HSA-2393930",
+            "stIdVersion": "R-HSA-2393930.8",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 2,
+            "name": [
+              "Phosphate bond hydrolysis by NUDT proteins"
+            ],
+            "releaseDate": "2012-12-04",
+            "releaseStatus": "UPDATED",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "doi": "10.3180/REACT_150237.1",
+            "hasDiagram": false,
+            "hasEHLD": false,
+            "lastUpdatedDate": "2021-09-15",
+            "schemaClass": "Pathway",
+            "className": "Pathway"
+          },
+          {
+            "dbId": 2509827,
+            "displayName": "ITPA hydrolyses ITP to IMP",
+            "stId": "R-HSA-2509827",
+            "stIdVersion": "R-HSA-2509827.7",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "ITPA hydrolyses ITP to IMP",
+              "ITP + H2O => IMP + diphosphate + H(+)"
+            ],
+            "releaseDate": "2012-12-04",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "isChimeric": false,
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 2509831,
+            "displayName": "ITPA hydrolyses XTP to XMP",
+            "stId": "R-HSA-2509831",
+            "stIdVersion": "R-HSA-2509831.6",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "ITPA hydrolyses XTP to XMP",
+              "XTP + H2O => XMP + PPi"
+            ],
+            "releaseDate": "2012-12-04",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "isChimeric": false,
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 2509838,
+            "displayName": "ITPA hydrolyses dITP to dIMP",
+            "stId": "R-HSA-2509838",
+            "stIdVersion": "R-HSA-2509838.7",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "ITPA hydrolyses dITP to dIMP",
+              "dITP + H2O => dIMP + diphosphate + H(+)"
+            ],
+            "releaseDate": "2012-12-04",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              74259
+            ],
+            "isChimeric": false,
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          }
+        ],
+        "schemaClass": "Pathway",
+        "className": "Pathway"
+      }
+    ],
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  109278,
+  74258,
+  8953339,
+  2393930,
+  {
+    "dbId": 2509816,
+    "displayName": "NUDT16 hydrolyses IDP to IMP",
+    "stId": "R-HSA-2509816",
+    "stIdVersion": "R-HSA-2509816.7",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT16 hydrolyses IDP to IMP",
+      "IDP + H2O => IMP + phosphate + H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2395965,
+    "displayName": "NUDT18 hydrolyses 8-oxo-dADP to 8-oxo-dAMP",
+    "stId": "R-HSA-2395965",
+    "stIdVersion": "R-HSA-2395965.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT18 hydrolyses 8-oxo-dADP to 8-oxo-dAMP",
+      "8-oxo-dADP + H2O => 8-oxo-dAMP + phosphate + H(+)"
+    ],
+    "releaseDate": "2012-06-12",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2395869,
+    "displayName": "NUDT15 hydrolyses 8-oxo-dGTP to 8-oxo-dGMP",
+    "stId": "R-HSA-2395869",
+    "stIdVersion": "R-HSA-2395869.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT15 hydrolyses 8-oxo-dGTP to 8-oxo-dGMP",
+      "8-oxo-dGTP + H2O => 8-oxo-dGMP + diphosphate + H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2393939,
+    "displayName": "Cytosolic NUDT5 hydrolyses ADP-ribose to R5P and AMP",
+    "stId": "R-HSA-2393939",
+    "stIdVersion": "R-HSA-2393939.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Cytosolic NUDT5 hydrolyses ADP-ribose to R5P and AMP",
+      "ADP-D-ribose + H2O => D-ribose 5-phosphate + AMP + 2 H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "releaseStatus": "UPDATED",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9731590,
+    "displayName": "NUDT1 hydrolyzes O6-methyl-dGTP to O6-methyl-dGMP",
+    "stId": "R-HSA-9731590",
+    "stIdVersion": "R-HSA-9731590.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT1 hydrolyzes O6-methyl-dGTP to O6-methyl-dGMP",
+      "O(6)-methyl-dGTP + H2O => O(6)-methyl-dGMP + diphosphate + H(+)"
+    ],
+    "releaseDate": "2021-09-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2395818,
+    "displayName": "NUDT1 hydrolyses 2-oxo-dATP to 2-oxo-dAMP",
+    "stId": "R-HSA-2395818",
+    "stIdVersion": "R-HSA-2395818.7",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT1 hydrolyses 2-oxo-dATP to 2-oxo-dAMP",
+      "2-oxo-dATP + H2O => 2-oxo-dAMP + diphosphate + H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2395849,
+    "displayName": "NUDT1 hydrolyses 8-oxo-dGTP to 8-oxo-dGMP",
+    "stId": "R-HSA-2395849",
+    "stIdVersion": "R-HSA-2395849.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT1 hydrolyses 8-oxo-dGTP to 8-oxo-dGMP",
+      "8-oxo-dGTP + H2O => 8-oxo-dGMP + diphosphate + H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9731613,
+    "displayName": "NUDT1 hydrolyzes N6-methyl-dATP to N6-methyl-dAMP",
+    "stId": "R-HSA-9731613",
+    "stIdVersion": "R-HSA-9731613.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT1 hydrolyzes N6-methyl-dATP to N6-methyl-dAMP",
+      "N(6)-methyl-dATP + H2O => N(6)-methyl-dAMP + diphosphate + H(+)"
+    ],
+    "releaseDate": "2021-09-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9731228,
+    "displayName": "NUDT1 hydrolyses 8-oxo-dATP to 8-oxo-dAMP",
+    "stId": "R-HSA-9731228",
+    "stIdVersion": "R-HSA-9731228.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT1 hydrolyses 8-oxo-dATP to 8-oxo-dAMP",
+      "8-oxo-dATP + H2O => 8-oxo-dAMP + diphosphate + H(+)"
+    ],
+    "releaseDate": "2021-09-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 5696049,
+    "displayName": "ADPRM hydrolyses ADP-ribose to R5P and AMP",
+    "stId": "R-HSA-5696049",
+    "stIdVersion": "R-HSA-5696049.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "ADPRM hydrolyses ADP-ribose to R5P and AMP",
+      "ADP-D-ribose + H2O => D-ribose 5-phosphate + AMP + 2 H(+)"
+    ],
+    "releaseDate": "2015-09-22",
+    "releaseStatus": "UPDATED",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2509793,
+    "displayName": "NUDT16 hydrolyses dIDP to dIMP",
+    "stId": "R-HSA-2509793",
+    "stIdVersion": "R-HSA-2509793.7",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT16 hydrolyses dIDP to dIMP",
+      "dIDP + H2O => dIMP + phosphate + H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2393954,
+    "displayName": "Mitochondrial NUDT9 hydrolyses ADP-ribose to R5P and AMP",
+    "stId": "R-HSA-2393954",
+    "stIdVersion": "R-HSA-2393954.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Mitochondrial NUDT9 hydrolyses ADP-ribose to R5P and AMP",
+      "ADP-D-ribose + H2O => D-ribose 5-phosphate + AMP + 2 H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "releaseStatus": "UPDATED",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2395873,
+    "displayName": "NUDT18 hydrolyses 8-oxo-GDP to 8-oxo-GMP",
+    "stId": "R-HSA-2395873",
+    "stIdVersion": "R-HSA-2395873.7",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT18 hydrolyses 8-oxo-GDP to 8-oxo-GMP",
+      "8-oxo-GDP + H2O => 8-oxo-GMP + phosphate + H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9731632,
+    "displayName": "NUDT1 hydrolyzes N6-methyl-ATP to N6-methyl-AMP",
+    "stId": "R-HSA-9731632",
+    "stIdVersion": "R-HSA-9731632.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT1 hydrolyzes N6-methyl-ATP to N6-methyl-AMP",
+      "N(6)-methyl-ATP + H2O => N(6)-methyl-AMP + diphosphate + H(+)"
+    ],
+    "releaseDate": "2021-09-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2395872,
+    "displayName": "NUDT1 hydrolyses 2-oxo-ATP to 2-oxo-AMP",
+    "stId": "R-HSA-2395872",
+    "stIdVersion": "R-HSA-2395872.7",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT1 hydrolyses 2-oxo-ATP to 2-oxo-AMP",
+      "2-oxo-ATP + H2O => 2-oxo-AMP + diphosphate + H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2395879,
+    "displayName": "NUDT18 hydrolyses 8-oxo-dGDP to 8-oxo-dGMP",
+    "stId": "R-HSA-2395879",
+    "stIdVersion": "R-HSA-2395879.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT18 hydrolyses 8-oxo-dGDP to 8-oxo-dGMP",
+      "8-oxo-dGDP + H2O => 8-oxo-dGMP + phosphate + H(+)"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2395876,
+    "displayName": "NUDT15 hydrolyses 8-oxo-dGDP to 8-oxo-dGMP",
+    "stId": "R-HSA-2395876",
+    "stIdVersion": "R-HSA-2395876.7",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NUDT15 hydrolyses 8-oxo-dGDP to 8-oxo-dGMP",
+      "8-oxo-dGDP + H2O => 8-oxo-dGMP + phosphate + H(+)"
+    ],
+    "releaseDate": "2012-06-12",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  74255,
+  109387,
+  74248,
+  2509838,
+  74249,
+  9727347,
+  74247,
+  109415,
+  2509827,
+  74242,
+  2509831,
+  9727349
+]

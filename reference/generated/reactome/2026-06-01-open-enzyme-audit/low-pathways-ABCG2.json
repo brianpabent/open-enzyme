@@ -1,0 +1,156 @@
+[
+  {
+    "dbId": 1660661,
+    "displayName": "Sphingolipid de novo biosynthesis",
+    "stId": "R-HSA-1660661",
+    "stIdVersion": "R-HSA-1660661.12",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Sphingolipid de novo biosynthesis"
+    ],
+    "releaseDate": "2011-12-06",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2023-09-13",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 189451,
+    "displayName": "Heme biosynthesis",
+    "stId": "R-HSA-189451",
+    "stIdVersion": "R-HSA-189451.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Heme biosynthesis"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-189451.5",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2019-12-10",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 917937,
+    "displayName": "Iron uptake and transport",
+    "stId": "R-HSA-917937",
+    "stIdVersion": "R-HSA-917937.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Iron uptake and transport"
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-917937.6",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2021-03-24",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 2161517,
+    "displayName": "Abacavir transmembrane transport",
+    "stId": "R-HSA-2161517",
+    "stIdVersion": "R-HSA-2161517.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Abacavir transmembrane transport"
+    ],
+    "releaseDate": "2012-06-12",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9753281,
+    "displayName": "Paracetamol ADME",
+    "stId": "R-HSA-9753281",
+    "stIdVersion": "R-HSA-9753281.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Paracetamol ADME",
+      "Acetaminophen ADME",
+      "APAP ADME"
+    ],
+    "releaseDate": "2021-12-08",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-9753281.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 189483,
+    "displayName": "Heme degradation",
+    "stId": "R-HSA-189483",
+    "stIdVersion": "R-HSA-189483.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Heme degradation"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2020-12-07",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9818032,
+    "displayName": "NFE2L2 regulating MDR associated enzymes",
+    "stId": "R-HSA-9818032",
+    "stIdVersion": "R-HSA-9818032.1",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "NFE2L2 regulating MDR associated enzymes"
+    ],
+    "releaseDate": "2023-09-13",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9725554,
+    "displayName": "Differentiation of Keratinocytes in Interfollicular Epidermis in Mammalian Skin",
+    "stId": "R-HSA-9725554",
+    "stIdVersion": "R-HSA-9725554.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Differentiation of Keratinocytes in Interfollicular Epidermis in Mammalian Skin"
+    ],
+    "releaseDate": "2024-03-27",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-9725554.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "schemaClass": "CellLineagePath",
+    "className": "CellLineagePath"
+  }
+]

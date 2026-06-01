@@ -1,0 +1,171 @@
+{
+  "results": [
+    {
+      "entries": [
+        {
+          "dbId": "3296413",
+          "stId": "R-ALL-3296413",
+          "id": "R-ALL-3296413",
+          "name": "<span class=\"highlighting\" >Colchicine</span>",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "<span class=\"highlighting\" >colchicine</span>",
+          "referenceIdentifier": "23359",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:23359",
+          "disease": false
+        }
+      ],
+      "typeName": "Chemical Compound",
+      "entriesCount": 1,
+      "rowCount": 1
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9659877",
+          "stId": "R-ALL-9659877",
+          "id": "R-ALL-9659877",
+          "name": "<span class=\"highlighting\" >colchicine</span>",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "<span class=\"highlighting\" >colchicine</span>",
+          "referenceIdentifier": "2367",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=2367",
+          "disease": true
+        },
+        {
+          "dbId": "9659891",
+          "stId": "R-ALL-9659891",
+          "id": "R-ALL-9659891",
+          "name": "<span class=\"highlighting\" >colchicine</span>",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "<span class=\"highlighting\" >colchicine</span>",
+          "referenceIdentifier": "2367",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=2367",
+          "disease": true
+        }
+      ],
+      "typeName": "Drug",
+      "entriesCount": 2,
+      "rowCount": 2
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9685830",
+          "stId": "R-HSA-9685830",
+          "id": "R-HSA-9685830",
+          "name": "TUBB binds <span class=\"highlighting\" >colchicine</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "<span class=\"highlighting\" >Colchicine</span> is an antimitotic agent used to treat gout and Beh\u00e7et's disease (Cerquaglia et al. 2005, Saleh & Arayssi 2014, Angelidis et al. 2018). It works by decreasing inflammation. <span class=\"highlighting\" >Colchicine</span> primarily inhibits tubulin (TUBB) (Lu et al. 2012), preventing microtubule polymerization and thereby disrupts inflammasome activation, microtubule-based inflammatory cell chemotaxis, generation of leukotrienes and cytokines, and phagocytosis.<br><br>The COLCORONA trial conducted by the Montreal Heart Institute (MHI) (https://clinicaltrials.gov/ct2/show/NCT04322682) showed that the use of <span class=\"highlighting\" >colchicine</span> was associated with statistically significant reductions in the risk of death or hospitalization in patients with Covid-19 compared to placebo. Colchinine showed efficacy in preventing the 'cytokine storm' and other complications associated with Covid-19.",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9659680",
+          "stId": "R-HSA-9659680",
+          "id": "R-HSA-9659680",
+          "name": "ABCB1 transports xenobiotics out of the cell",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "The ATP-dependent translocase ABCB1 (also known as Multidrug resistance protein 1, or MDR1, P-glycoprotein, or PGP) is the best characterized xenobiotic transporter of the ABC transporter family (Shen et al. 1986, Gottesman and Pastan 1988). The ABCB1 gene maps to the chromosomal band 7q21, which is frequently gained or amplified in cancer (Genovese et al. 2017). ABCB1 is expressed in enterocytes and is highly abundant at the apical<br>(luminal) membrane, thereby limiting the intestinal uptake of many drugs (reviewed in Estudante et al., 2013). Transcription of ABCB1 is negatively regulated by TP53 (p53) and positively regulated by CEBPB (C/EBPbeta), JUN (AP-1), NFYB (NF-Y) and YBX1 (YB-1) (Chen and Sikic 2012). ABCB1 is a 12-pass transmembrane protein with two ATP-binding domains (Chen et al. 1986, Gottesman et al. 2002). The question of how many molecules of ATP are hydrolyzed for the full conformational change cycle and export of xenobiotic substrates out of the cell is not settled. The best biochemical evidence is for one molecule of ATP (Shapiro and Ling, 1998; with a review of methods). Structural studies point to the binding of two molecules but do not allow statements about ATP hydrolysis stoichiometry (reviewed in Jones and George, 2020).<br><br><br>Many anti-cancer drugs and anti-inflammatory drugs, as well as some antibiotics, are exported from the cell by ABCB1 (reviewed by Ambudkar et al. 1999, Gottesman et al. 2002; International Transporter Consortium et al, 2010).<br><br>Anti-cancer drugs that are substrates of ABCB1 include:<br>actinomycin D (Horio et al. 1989, Ambudkar et al. 1992, Hill et al. 2013);<br>bisantrene (Zhang et al. 1994, Aksentijevich et al. 1996);<br>daunorubicin (Horio et al. 1989, Ambudkar et al. 1992);<br>docetaxel (Shirakawa et al. 1999);<br>doxorubicin (Ueda et al. 1987, Ambudkar et al. 1992);<br>etoposide (Pastan et al. 1988, Lincke et al. 1990, Klamt et al. 2008);<br>imatinib (Dai et al. 2003);<br>irinotecan (Paule et al. 2010, Tagen et al. 2010);<br>melphalan (K\u00fchne et al. 2009);<br>paclitaxel (Jang et al. 2001);<br>temozolomide (Munoz et al. 2015);<br>teniposide (Boiocchi et al. 1992);<br>vinblastine (Ueda et al. 1987, Ambudkar et al. 1992);<br>vincristine (Horio et al. 1989).<br><br>Anti-inflammatory drugs that are substrates of ABCB1 include:<br>budenoside (Dilger et al. 2004);<br><span class=\"highlighting\" >colchicine</span> (Ueda et al. 1987);<br>dexamethasone (Gruol et al. 1999, Yates et al. 2003);<br>methylprednisolone (Yates et al. 2003, Cuppen et al. 2017);<br>prednisolone (PREDL) (Karssen et al. 2002, Yates et al. 2003);<br>prednisone (PREDN) (Dilger et al. 2004).<br>The presence of 11-, 17-, and 21-hydroxyl groups appears to be a critical determinant for transport efficiency of steroids by the efflux pump ABCB1 (MDR1). Prednisone contains the 17-, and prednisolone both the 17- and 21-hydroxy groups, and both molecules are effectively exported out of cells expressing ABCB1, with reduced intracellular accumulation and toxicity (Yates et al, 2003).<br><br><br>Antibiotics that are substrates of ABCB1 include:<br>gramicidin D (Lincke et al. 1990, Mechetner and Roninson 1992);<br>azithromycin (Muni\u0107 et al. 2010);<br>erythromycin (Dey et al. 2004, Muni\u0107 et al. 2010).<br><br><br><br>",
+          "compartmentNames": [
+            "plasma membrane",
+            "cytosol",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005829",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "1467457",
+          "stId": "R-HSA-1467457",
+          "id": "R-HSA-1467457",
+          "name": "ABCA8,B1,B5 transport xenobiotics from cytosol to extracellular region",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Some members of the ABC transporter superfamily are able to mediate the efflux of a broad range of cytotoxic drugs from cells, leading to the name multidrug resistance (MDR) proteins (Seeger and van Veen 2009). The ABCB1 (P-glycoprotein 1[PGP], multidrug resistance protein 1 [MRP1]) is the most characterised MDR (Shen et al. 1986, Gottesman & Pastan 1988). ABCB5 (Frank et al. 2005) and ABCA8 (Tsuruoka et al. 2002) are newer members of MDRs.<br><br>The ABCB1 (also known as MDR1, P-glycoprotein, or PGP) is the best characterized xenobiotic transporter of the ABC transporter family (Shen et al. 1986, Gottesman and Pastan 1988). The ABCB1 gene maps to the chromosomal band 7q21, which is frequently gained or amplified in cancer (Genovese et al. 2017). Transcription of ABCB1 is negatively regulated by TP53 (p53) and positively regulated by CEBPB (C/EBPbeta), JUN (AP-1), NFYB (NF-Y) and YBX1 (YB-1) (Chen and Sikic 2012). ABCB1 is a 12-pass transmembrane protein with two ATP-binding domains (Chen et al. 1986, Gottesman et al. 2002).The question of how many molecules of ATP are hydrolyzed for the full conformational change cycle and export of xenobiotic substrates out of the cell is not settled. The best biochemical evidence is for one molecule of ATP (Shapiro and Ling, 1998; with a review of methods). Structural studies point to the binding of two molecules but do not allow statements about ATP hydrolysis stoichiometry (reviewed in Jones and George, 2020).<br><br>Many anti-cancer drugs and anti-inflammatory drugs, as well as some antibiotics, are exported from the cell by ABCB1 (reviewed by Ambudkar et al. 1999, Gottesman et al. 2002).<br><br>Anti-cancer drugs that are substrates of ABCB1 include:<br>actinomycin D (Horio et al. 1989, Ambudkar et al. 1992, Hill et al. 2013);<br>bisantrene (Zhang et al. 1994, Aksentijevich et al. 1996);<br>daunorubicin (Horio et al. 1989, Ambudkar et al. 1992);<br>docetaxel (Shirakawa et al. 1999);<br>doxorubicin (Ueda et al. 1987, Ambudkar et al. 1992);<br>etoposide (Pastan et al. 1988, Lincke et al. 1990, Klamt et al. 2008);<br>imatinib (Dai et al. 2003);<br>irinotecan (Paule et al. 2010, Tagen et al. 2010);<br>melphalan (K\u00fchne et al. 2009);<br>paclitaxel (Jang et al. 2001);<br>temozolomide (Munoz et al. 2015);<br>teniposide (Boiocchi et al. 1992);<br>vinblastine (Ueda et al. 1987, Ambudkar et al. 1992);<br>vincristine (Horio et al. 1989).<br><br>Anti-inflammatory drugs that are substrates of ABCB1 include:<br>budenoside (Dilger et al. 2004);<br><span class=\"highlighting\" >colchicine</span> (Ueda et al. 1987);<br>dexamethasone (Gruol et al. 1999, Yates et al. 2003);<br>methylprednisolone (Yates et al. 2003, Cuppen et al. 2017);<br>prednisolone (PREDL) (Karssen et al. 2002, Yates et al. 2003);<br>prednisone (PREDN) (Dilger et al. 2004).<br>The presence of 11-, 17-, and 21-hydroxyl groups appears to be a critical determinant for transport efficiency of steroids by the efflux pump ABCB1 (MDR1). Prednisone contains the 17-, and prednisolone both the 17- and 21-hydroxy groups, and both molecules are effectively exported out of cells expressing ABCB1, with reduced intracellular accumulation and toxicity (Yates et al, 2003).<br><br><br>Antibiotics that are substrates of ABCB1 include:<br>gramicidin D (Lincke et al. 1990, Mechetner and Roninson 1992);<br>azithromycin (Muni\u0107 et al. 2010);<br>erythromycin (Dey et al. 2004, Muni\u0107 et al. 2010).",
+          "compartmentNames": [
+            "plasma membrane",
+            "cytosol",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005829",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Reaction",
+      "entriesCount": 3,
+      "rowCount": 3
+    }
+  ],
+  "rowCount": 6,
+  "numberOfGroups": 3,
+  "numberOfMatches": 6
+}

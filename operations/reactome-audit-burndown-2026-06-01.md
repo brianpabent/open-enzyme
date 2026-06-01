@@ -1,7 +1,7 @@
 ---
 title: Reactome Audit Burndown
 date: 2026-06-01
-status: active
+status: completed
 tags: [reactome, pathway-audit, operations, today]
 ---
 
@@ -10,6 +10,8 @@ tags: [reactome, pathway-audit, operations, today]
 Purpose: use the new repo-local Reactome tool to audit Open Enzyme's pathway-heavy wiki areas, find where Reactome can correct our maps, and identify narrow contribution opportunities back to Reactome.
 
 This is an operational task list, not a research page. Mechanism claims belong in `wiki/` only after the pre-commit verification gate.
+
+Closeout: completed 2026-06-01. Results live in [`reactome-audit-results-2026-06-01.md`](./reactome-audit-results-2026-06-01.md); durable generated outputs live in [`reference/generated/reactome/2026-06-01-open-enzyme-audit/`](../reference/generated/reactome/2026-06-01-open-enzyme-audit/).
 
 ## Working Protocol
 
@@ -251,22 +253,22 @@ Done means:
 
 | Audit | Status | Reactome anchors | Wiki action | Contribution candidate | Notes |
 |---|---|---|---|---|---|
-| Complement CP0 / C5a | not started | TBD | TBD | TBD | P0 |
-| Gut urate transport / lumen sink | not started | TBD | TBD | TBD | P0 |
-| Purine catabolism / XO / uricase | not started | TBD | TBD | TBD | P0 |
-| IL-1 / pyroptosis / GSDMD | not started | TBD | TBD | TBD | P0 |
-| Autophagy / mitophagy / Nrf2 | not started | TBD | TBD | TBD | P1 |
-| Barrier / tight junction / gut inflammation | not started | TBD | TBD | TBD | P1 |
-| Digestive enzyme / EPI biology | not started | TBD | TBD | TBD | P1 |
-| Bile acid / chaperone / ABCG2-Q141K | not started | TBD | TBD | TBD | P1 |
-| Cross-cutting molecule gap sweep | not started | TBD | TBD | TBD | after pathway audits |
+| Complement CP0 / C5a | completed | `R-HSA-166658`, `R-HSA-173623`, `R-HSA-173736`, `R-HSA-166665`, `R-HSA-375395`, `R-HSA-9957423`, `R-HSA-977371`, `R-HSA-982830`, `R-HSA-981657` | Anchor note in `wiki/complement-c5a-gout.md` | MSU/gout-specific complement context only after primary-source packaging | Reactome covers canonical complement machinery; SERPING1/C1-INH surfaced mainly as context-only for this audit. |
+| Gut urate transport / lumen sink | completed | `R-HSA-561253`, `R-HSA-561048`, `R-HSA-917929`, `R-HSA-9794401`, `R-HSA-9796076` | Anchor/gap note in `wiki/gut-lumen-sink.md` and `wiki/gout-pathophysiology.md` | Possible ABCG2 intestinal urate efflux dossier | URAT1 modeled; ABCG2 urate efflux not cleanly modeled. |
+| Purine catabolism / XO / uricase | completed | `R-HSA-74259`, `R-HSA-74247`, `R-HSA-9727347`, `R-HSA-74258`, `R-HSA-9727349` | Anchor note in `wiki/gout-pathophysiology.md` | No human uricase contribution | Reactome correctly ends at urate for humans. |
+| IL-1 / pyroptosis / GSDMD | completed | `R-HSA-446652`, `R-HSA-9020702`, `R-HSA-5620971`, `R-HSA-9647680`, `R-HSA-9693324`, `R-HSA-9716258` | Anchor correction in `wiki/disulfiram.md` | Disulfiram is not a gap | Pyroptosis and GSDMD covalent drug reactions already modeled. |
+| Autophagy / mitophagy / Nrf2 | completed | `R-HSA-9612973`, `R-HSA-5205647`, `R-HSA-9755511`, `R-HSA-9818749` | Anchor note in `wiki/lactoferrin.md` | None now | Useful for stress-response framing only. |
+| Barrier / tight junction / gut inflammation | completed | `R-HSA-420029`, `R-HSA-166016`, `R-HSA-166166` | Anchor note in `wiki/lactoferrin.md` | None now | Reactome helps vocabulary; microbiome physiology still primary-lit. |
+| Digestive enzyme / EPI biology | completed | `R-HSA-8935690`, `R-HSA-189085`, `R-HSA-192456`, `R-HSA-188979`, `R-HSA-191114`, `R-HSA-192422`, `R-HSA-192417` | Anchor note in `wiki/digestive-enzymes.md` | None now | Useful substrate/product vocabulary. |
+| Bile acid / chaperone / ABCG2-Q141K | completed | `R-HSA-194068`, `R-HSA-192105`, `R-HSA-159418`, `R-HSA-381119`, `R-HSA-391251` | No wiki change now | None now | Adjacency only; no clean TUDCA/UDCA Reactome support. |
+| Cross-cutting molecule gap sweep | completed | See results file | Updated NLRP3 contribution dossier and disulfiram page | Oridonin, tranilast, BHB remain plausible; ABCG2 separate possible | Avacopan, anakinra, colchicine, disulfiram already modeled. |
 
 ## End-of-Day Closeout
 
-- Update this tracking table with completed audits.
-- Move durable Reactome outputs worth keeping into `reference/generated/reactome/`.
-- Update affected wiki pages with only verified claims.
-- Update or create contribution dossiers in `operations/`.
-- Run `git diff --check`.
-- Commit the batch locally.
-- Do not push until the batch is coherent and Brian says to ship it.
+- [x] Update this tracking table with completed audits.
+- [x] Move durable Reactome outputs worth keeping into `reference/generated/reactome/`.
+- [x] Update affected wiki pages with only verified claims.
+- [x] Update or create contribution dossiers in `operations/`.
+- [x] Run `git diff --check`.
+- [x] Commit the batch locally.
+- [x] Do not push until the batch is coherent and Brian says to ship it.

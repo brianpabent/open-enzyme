@@ -1,0 +1,1925 @@
+{
+  "results": [
+    {
+      "entries": [
+        {
+          "dbId": "2132209",
+          "stId": "R-GGA-2132209",
+          "id": "R-GGA-2132209",
+          "name": "<span class=\"highlighting\" >factor</span> B",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Gallus gallus"
+          ],
+          "referenceName": "Complement <span class=\"highlighting\" >factor</span> B-like protease",
+          "referenceIdentifier": "P81475",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P81475",
+          "disease": false
+        },
+        {
+          "dbId": "141766",
+          "stId": "R-HSA-141766",
+          "id": "R-HSA-141766",
+          "name": "<span class=\"highlighting\" >factor</span> V",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "F5",
+          "referenceIdentifier": "P12259",
+          "compartmentNames": [
+            "platelet alpha granule lumen"
+          ],
+          "compartmentAccession": [
+            "0031093"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P12259",
+          "disease": false
+        },
+        {
+          "dbId": "140697",
+          "stId": "R-HSA-140697",
+          "id": "R-HSA-140697",
+          "name": "<span class=\"highlighting\" >factor</span> V",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "F5",
+          "referenceIdentifier": "P12259",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P12259",
+          "disease": false
+        },
+        {
+          "dbId": "9993588",
+          "stId": "R-MMU-140697",
+          "id": "R-MMU-140697",
+          "name": "<span class=\"highlighting\" >factor</span> V",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Mus musculus"
+          ],
+          "referenceIdentifier": "O88783",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/O88783",
+          "disease": false
+        },
+        {
+          "dbId": "10019342",
+          "stId": "R-MMU-141766",
+          "id": "R-MMU-141766",
+          "name": "<span class=\"highlighting\" >factor</span> V",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Mus musculus"
+          ],
+          "referenceIdentifier": "O88783",
+          "compartmentNames": [
+            "platelet alpha granule lumen"
+          ],
+          "compartmentAccession": [
+            "0031093"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/O88783",
+          "disease": false
+        },
+        {
+          "dbId": "2132131",
+          "stId": "R-GGA-2132131",
+          "id": "R-GGA-2132131",
+          "name": "<span class=\"highlighting\" >factor</span> Bb",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Gallus gallus"
+          ],
+          "referenceName": "Complement <span class=\"highlighting\" >factor</span> B-like protease",
+          "referenceIdentifier": "P81475",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P81475",
+          "disease": false
+        },
+        {
+          "dbId": "2132068",
+          "stId": "R-GGA-2132068",
+          "id": "R-GGA-2132068",
+          "name": "<span class=\"highlighting\" >factor</span> Ba",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Gallus gallus"
+          ],
+          "referenceName": "Complement <span class=\"highlighting\" >factor</span> B-like protease",
+          "referenceIdentifier": "P81475",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P81475",
+          "disease": false
+        },
+        {
+          "dbId": "9855700",
+          "stId": "R-HSA-9855700",
+          "id": "R-HSA-9855700",
+          "name": "<span class=\"highlighting\" >factor</span> XII",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "F12",
+          "referenceIdentifier": "P00748",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P00748",
+          "disease": false
+        },
+        {
+          "dbId": "158214",
+          "stId": "R-HSA-158214",
+          "id": "R-HSA-158214",
+          "name": "<span class=\"highlighting\" >factor</span> XII",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "F12",
+          "referenceIdentifier": "P00748",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P00748",
+          "disease": false
+        },
+        {
+          "dbId": "5689447",
+          "stId": "R-HSA-5689447",
+          "id": "R-HSA-5689447",
+          "name": "<span class=\"highlighting\" >Factor</span> V precursor",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "F5",
+          "referenceIdentifier": "P12259",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P12259",
+          "disease": false
+        }
+      ],
+      "typeName": "Protein",
+      "entriesCount": 2147,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "140739",
+          "stId": "R-HSA-140739",
+          "id": "R-HSA-140739",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "159785",
+          "stId": "R-HSA-159785",
+          "id": "R-HSA-159785",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "Golgi lumen"
+          ],
+          "compartmentAccession": [
+            "0005796"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10236332",
+          "stId": "R-CFA-140739",
+          "id": "R-CFA-140739",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10659588",
+          "stId": "R-XTR-140739",
+          "id": "R-XTR-140739",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Xenopus tropicalis"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9994624",
+          "stId": "R-MMU-140739",
+          "id": "R-MMU-140739",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10740635",
+          "stId": "R-GGA-140739",
+          "id": "R-GGA-140739",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Gallus gallus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10343076",
+          "stId": "R-BTA-140739",
+          "id": "R-BTA-140739",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10114711",
+          "stId": "R-RNO-140739",
+          "id": "R-RNO-140739",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10457121",
+          "stId": "R-SSC-140739",
+          "id": "R-SSC-140739",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10568863",
+          "stId": "R-DRE-140739",
+          "id": "R-DRE-140739",
+          "name": "<span class=\"highlighting\" >factor</span> X",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Danio rerio"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Complex",
+      "entriesCount": 918,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "977371",
+          "stId": "R-HSA-977371",
+          "id": "R-HSA-977371",
+          "name": "<span class=\"highlighting\" >Factor</span> I inactivates <span class=\"highlighting\" >Factor</span> H-boundC3b",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Following the displacement of Bb from C3bBb, <span class=\"highlighting\" >Factor</span> I (CFI) cleaves <span class=\"highlighting\" >Factor</span> H-bound C3b producing iC3b, which remains bound to the membrane. The majority of the C3b alpha chain is retained as two fragments which are tethered to the beta chain by disulphide bonds. iC3b is proteolytically inactive and cannot contribute to the complement cascade process, though it still contributes to opsonization.",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10025708",
+          "stId": "R-MMU-977371",
+          "id": "R-MMU-977371",
+          "name": "<span class=\"highlighting\" >Factor</span> I inactivates <span class=\"highlighting\" >Factor</span> H-boundC3b",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10148113",
+          "stId": "R-RNO-977371",
+          "id": "R-RNO-977371",
+          "name": "<span class=\"highlighting\" >Factor</span> I inactivates <span class=\"highlighting\" >Factor</span> H-boundC3b",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10263249",
+          "stId": "R-CFA-977371",
+          "id": "R-CFA-977371",
+          "name": "<span class=\"highlighting\" >Factor</span> I inactivates <span class=\"highlighting\" >Factor</span> H-boundC3b",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10372555",
+          "stId": "R-BTA-977371",
+          "id": "R-BTA-977371",
+          "name": "<span class=\"highlighting\" >Factor</span> I inactivates <span class=\"highlighting\" >Factor</span> H-boundC3b",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10486467",
+          "stId": "R-SSC-977371",
+          "id": "R-SSC-977371",
+          "name": "<span class=\"highlighting\" >Factor</span> I inactivates <span class=\"highlighting\" >Factor</span> H-boundC3b",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10679410",
+          "stId": "R-XTR-977371",
+          "id": "R-XTR-977371",
+          "name": "<span class=\"highlighting\" >Factor</span> I inactivates <span class=\"highlighting\" >Factor</span> H-boundC3b",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Xenopus tropicalis"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10766243",
+          "stId": "R-GGA-977371",
+          "id": "R-GGA-977371",
+          "name": "<span class=\"highlighting\" >Factor</span> I inactivates <span class=\"highlighting\" >Factor</span> H-boundC3b",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Gallus gallus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "183122",
+          "stId": "R-HSA-183122",
+          "id": "R-HSA-183122",
+          "name": "<span class=\"highlighting\" >Factor</span> D cleaves C3b-bound <span class=\"highlighting\" >Factor</span> B",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "<span class=\"highlighting\" >Factor</span> D, a constitutively active serine protease found in trace amounts in the blood, cleaves a specific Arg-Lys bond in the <span class=\"highlighting\" >Factor</span> B component of the cell surface-associated C3b:Factor B complex, yielding the alternate C3 convertase C3bBb on the surface and releasing an inactive polypeptide, <span class=\"highlighting\" >Factor</span> Ba (Lesavre and Muller-Eberhard 1978; Lesavre et al. 1979; Schreiber et al. 1978).",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10000069",
+          "stId": "R-MMU-183122",
+          "id": "R-MMU-183122",
+          "name": "<span class=\"highlighting\" >Factor</span> D cleaves C3b-bound <span class=\"highlighting\" >Factor</span> B",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Reaction",
+      "entriesCount": 5366,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "2975824",
+          "stId": "R-HSA-2975824",
+          "id": "R-HSA-2975824",
+          "name": "Complement <span class=\"highlighting\" >factor</span> D",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "This CandidateSet contains sequences identified by William Pearson's analysis of Reactome catalyst entities. Catalyst entity sequences were used to identify analagous sequences that shared overall homology and active site homology. Sequences in this Candidate set were identified in an April 24, 2012 analysis. Further candidates were identified by Ralf Stephan in a July 15, 2023 analysis.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10346397",
+          "stId": "R-BTA-2975824",
+          "id": "R-BTA-2975824",
+          "name": "Complement <span class=\"highlighting\" >factor</span> D",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Bos taurus"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10461004",
+          "stId": "R-SSC-2975824",
+          "id": "R-SSC-2975824",
+          "name": "Complement <span class=\"highlighting\" >factor</span> D",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Sus scrofa"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10661806",
+          "stId": "R-XTR-2975824",
+          "id": "R-XTR-2975824",
+          "name": "Complement <span class=\"highlighting\" >factor</span> D",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Xenopus tropicalis"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9998519",
+          "stId": "R-MMU-2975824",
+          "id": "R-MMU-2975824",
+          "name": "Complement <span class=\"highlighting\" >factor</span> D",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Mus musculus"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "981697",
+          "stId": "R-HSA-981697",
+          "id": "R-HSA-981697",
+          "name": "Complement <span class=\"highlighting\" >Factor</span> 4",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "203105",
+          "stId": "R-HSA-203105",
+          "id": "R-HSA-203105",
+          "name": "Platelet <span class=\"highlighting\" >Factor</span> 4",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9993993",
+          "stId": "R-MMU-203105",
+          "id": "R-MMU-203105",
+          "name": "Platelet <span class=\"highlighting\" >Factor</span> 4",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Mus musculus"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10114006",
+          "stId": "R-RNO-203105",
+          "id": "R-RNO-203105",
+          "name": "Platelet <span class=\"highlighting\" >Factor</span> 4",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9603332",
+          "stId": "R-HSA-9603332",
+          "id": "R-HSA-9603332",
+          "name": "<span class=\"highlighting\" >Factor</span> IIa inhibitors:IIa",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Set",
+      "entriesCount": 228,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "2859032",
+          "stId": "R-GGA-2859032",
+          "id": "R-GGA-2859032",
+          "name": "complement <span class=\"highlighting\" >factor</span> D",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Gallus gallus"
+          ],
+          "summation": "chicken complement <span class=\"highlighting\" >factor</span> D is annotated as a hypothetical protein",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "204704",
+          "stId": "R-HSA-204704",
+          "id": "R-HSA-204704",
+          "name": "Guanine nucleotide exchange <span class=\"highlighting\" >factor</span>",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10325554",
+          "stId": "R-CFA-9855700",
+          "id": "R-CFA-9855700",
+          "name": "Ghost homologue of <span class=\"highlighting\" >factor</span> XII",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Canis familiaris"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10644717",
+          "stId": "R-DRE-9855700",
+          "id": "R-DRE-9855700",
+          "name": "Ghost homologue of <span class=\"highlighting\" >factor</span> XII",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Danio rerio"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "2132070",
+          "stId": "R-GGA-2132070",
+          "id": "R-GGA-2132070",
+          "name": "C9",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Gallus gallus"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "2132099",
+          "stId": "R-GGA-2132099",
+          "id": "R-GGA-2132099",
+          "name": "C9",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Gallus gallus"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "8868777",
+          "stId": "R-HSA-8868777",
+          "id": "R-HSA-8868777",
+          "name": "18SE pre-rRNA containing 1-methyl-3-aminocarboxypropylpseudoU-1248",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "141054",
+          "stId": "REACT_5569",
+          "id": "REACT_5569",
+          "name": "<span class=\"highlighting\" >factor</span> Vi heavy chain [extracellular region]",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "deleted": true,
+          "date": 1404480283000
+        }
+      ],
+      "typeName": "Genes and Transcripts",
+      "entriesCount": 8,
+      "rowCount": 8
+    },
+    {
+      "entries": [
+        {
+          "dbId": "8951251",
+          "stId": "R-HSA-8951251",
+          "id": "R-HSA-8951251",
+          "name": "IRF1 gene",
+          "type": "DNA Sequence",
+          "exactType": "ReferenceDNASequence",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "Interferon regulatory <span class=\"highlighting\" >factor</span> 1",
+          "referenceIdentifier": "ENSEMBL:ENSG00000125347",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ENSEMBL",
+          "referenceURL": "https://www.ensembl.org/id/ENSG00000125347",
+          "disease": false
+        },
+        {
+          "dbId": "8950279",
+          "stId": "R-HSA-8950279",
+          "id": "R-HSA-8950279",
+          "name": "ARF1 gene",
+          "type": "DNA Sequence",
+          "exactType": "ReferenceDNASequence",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "ARF1",
+          "referenceIdentifier": "ENSEMBL:ENSG00000143761",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ENSEMBL",
+          "referenceURL": "https://www.ensembl.org/id/ENSG00000143761",
+          "disease": false
+        },
+        {
+          "dbId": "6787314",
+          "stId": "R-HSA-6787314",
+          "id": "R-HSA-6787314",
+          "name": "NPPA gene",
+          "type": "DNA Sequence",
+          "exactType": "ReferenceDNASequence",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "ENSEMBL:ENSG00000175206",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ENSEMBL",
+          "referenceURL": "https://www.ensembl.org/id/ENSG00000175206",
+          "disease": false
+        },
+        {
+          "dbId": "6784626",
+          "stId": "R-HSA-6784626",
+          "id": "R-HSA-6784626",
+          "name": "FGF21 gene",
+          "type": "DNA Sequence",
+          "exactType": "ReferenceDNASequence",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "ENSEMBL:ENSG00000105550",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ENSEMBL",
+          "referenceURL": "https://www.ensembl.org/id/ENSG00000105550",
+          "disease": false
+        },
+        {
+          "dbId": "4793840",
+          "stId": "R-HSA-4793840",
+          "id": "R-HSA-4793840",
+          "name": "TNFRSF21 gene",
+          "type": "DNA Sequence",
+          "exactType": "ReferenceDNASequence",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "ENSEMBL:ENSG00000146072",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ENSEMBL",
+          "referenceURL": "https://www.ensembl.org/id/ENSG00000146072",
+          "disease": false
+        },
+        {
+          "dbId": "8853905",
+          "stId": "R-HSA-8853905",
+          "id": "R-HSA-8853905",
+          "name": "CSF1R Gene",
+          "type": "DNA Sequence",
+          "exactType": "ReferenceDNASequence",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "ENSEMBL:ENSG00000182578",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ENSEMBL",
+          "referenceURL": "https://www.ensembl.org/id/ENSG00000182578",
+          "disease": false
+        },
+        {
+          "dbId": "9618395",
+          "stId": "R-HSA-9618395",
+          "id": "R-HSA-9618395",
+          "name": "ARL4C gene",
+          "type": "DNA Sequence",
+          "exactType": "ReferenceDNASequence",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "ENSEMBL:ENSG00000188042",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ENSEMBL",
+          "referenceURL": "https://www.ensembl.org/id/ENSG00000188042",
+          "disease": false
+        },
+        {
+          "dbId": "6784633",
+          "stId": "R-MMU-6784633",
+          "id": "R-MMU-6784633",
+          "name": "Fgf21 gene",
+          "type": "DNA Sequence",
+          "exactType": "ReferenceDNASequence",
+          "species": [
+            "Mus musculus"
+          ],
+          "referenceIdentifier": "ENSEMBL:ENSMUSG00000030827",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ENSEMBL",
+          "referenceURL": "https://www.ensembl.org/id/ENSMUSG00000030827",
+          "disease": false
+        }
+      ],
+      "typeName": "DNA Sequence",
+      "entriesCount": 8,
+      "rowCount": 8
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9662001",
+          "stId": "R-HSA-9662001",
+          "id": "R-HSA-9662001",
+          "name": "Defective <span class=\"highlighting\" >factor</span> VIII causes hemophilia A",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Hemophilia A is an X\u2010chromosome\u2010linked recessive bleeding disorder defined by a qualitative and/or quantitative <span class=\"highlighting\" >factor</span> VIII (FVIII, F8) deficiency (Salen P & Babiker HM 2019). Patients affected by the mild form of the disease (FVIII activity 0.05\u20130.4 IU/mL) suffer from bleedings occurring after trauma or surgery. In severe hemophilia A patients (FVIII activity<0.01 IU/mL) bleedings occur spontaneously, whereas moderate hemophilia A patients (FVIII activity 0.01\u20130.05 IU/mL present with an intermediate bleeding phenotype (White GC 2nd et al. 2001). In healthy individuals, FVIII is synthesized as an \u223c 300-kDa glycoprotein by hepatocytes, liver sinusoidal endothelial cells, and certain types of endothelial cells (Wion KL et al. 1995; Jacquemin M et al. 2006; Shahani T et al. 2009; Turner NA & Moake JL 2015). The FVIII protein contains a domain sequence A1-A2-B-ap-A3-C1-C2 and circulates as an A1-A2-B:ap-A3-C1-C2 heterodimer bound noncovalently to the von Willebrand <span class=\"highlighting\" >factor</span> (vWF) protein. vWF protects FVIII from rapid clearance (Lenting PJ et al. 2007). During the activation of FVIII by thrombin to FVIIIa, the B domain and an activation peptide (ap) are released, and cleavage between the A1 and A2 domains produces an A1:A2:A3-C1-C2 heterotrimer (Lollar P & Parker ET 1991; Nogami K et al. 2005; Newell JL & Fay PJ 2007; 2009). Once activated, FVIIIa dissociates from vWF and binds to the membrane of activated platelets to assemble with activated <span class=\"highlighting\" >factor</span> IX (FIXa) (Gilbert GE & Arena AA 1996; Ahmad SS et al. 2003; Panteleev MA et al. 2004; Ngo JC et al. 2008). At physiologic concentrations, the A2 subunit spontaneously dissociates, leading to loss of FVIIIa cofactor activity (Lollar P & Parker CG 1990).<p>Hemophilia A results from a broad spectrum of mutations that occur along the entire length of the F8 gene causing diverse molecular phenotypes that result in similar disease states (Peyvandi F et al. 2016). Together with missense mutations being the most common type of mutations in hemophilia A, a relatively frequent cause is ascribable to nonsense and splice site mutations, deletions/insertions and promoter mutations (Hakeos WH et al. 2002; Wei W et al. 2017; Jacquemin M et al. 2000; Amano K et al. 1998; Gilbert GE et al. 2012; Pahl S et al. 2014; Peyvandi F et al. 2016). In addition, the inversion of intron 1 or 22 in the F8 gene is responsible for approximately half of severely affected hemophilia A patients (Antonarakis SE et al. 1995). Although specific FVIII missense mutations correlate with defects including decreased secretion or stability and specific functional impairment of FVIII, the mechanisms of the majority of missense mutations are poorly understood (Hakeos WH et al. 2002; Wei W et al. 2017, 2018; Jacquemin M et al. 2000; Amano K et al. 1998; Gilbert GE et al. 2012; Pahl S et al. 2014). The Reactome module describes several molecular mechanisms underlying hemophilia A which include:(1) low-level secretion of defective FVIII molecule as a result of impaired FVIII folding and intracellular processing, (2) reduced ability of FVIII variants to bind to von Willebrand <span class=\"highlighting\" >factor</span> (VWF) that leads to instability of FVIII variants in the plasma, (3) abnormal interaction of defective FVIII with FIXa. Defects in FVIII activity may also result in potentially slowing down FVIII activation by thrombin or altering stability of activated FVIIIa.<br><br>",
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": true,
+          "disease": true
+        },
+        {
+          "dbId": "9668250",
+          "stId": "R-HSA-9668250",
+          "id": "R-HSA-9668250",
+          "name": "Defective <span class=\"highlighting\" >factor</span> IX causes hemophilia B",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "The F9 gene encodes coagulation <span class=\"highlighting\" >factor</span> IX (FIX), a vitamin K-dependent plasma protease that participates in the intrinsic blood coagulation pathway. FIX circulates as a zymogen, and is proteolytically activated to FIXa by activated FXIa or tissue <span class=\"highlighting\" >factor</span>-bound FVIIa. After being activated, FIXa forms a complex with Ca2+ ions, membrane phospholipids and coagulation <span class=\"highlighting\" >factor</span> VIIIa to activate coagulation <span class=\"highlighting\" >factor</span> X. Mutations within F9 gene that lead to quantitative and/or qualitative deficiencies in the circulating FIX protein are associated with hemophilia B (HB), a rare X-linked, recessively transmitted bleeding disorder (White GC et al. 2001; Rallapalli PM et al. 2013; Goodeve AC 2015). The disease severity in hemophilia is classified according to the plasma procoagulant levels of FIX activity. The severe form is defined as a <span class=\"highlighting\" >factor</span> level <1% of normal, the moderate form as a <span class=\"highlighting\" >factor</span> level of 1-5%, and the mild form with a <span class=\"highlighting\" >factor</span> level >5 and <40%. Patients with severe hemophilia frequently develop hemorrhages into joints, muscles or soft tissues without any apparent cause. They can also suffer from life-threatening bleeding episodes such as intracranial hemorrhages. Persons with mild and moderate <span class=\"highlighting\" >factor</span> deficiency rarely experience spontaneous hemorrhages, and excessive bleeding mostly occurs only following trauma or in association with invasive procedures.<p>A wide range of different genetic alterations are spread throughout the F9 gene, including single nucleotide substitutions, small and large deletions (Rallapalli PM et al. 2013). However functional consequences of most F9 mutations are poorly studied. The Reactome event describes altered functions of HB-associated FIX variants such as reduced FIX protein secretion due to defective expression and/or processing, failed proteolysis of <span class=\"highlighting\" >factor</span> X to Xa by defective FIX and failed formation of a membrane complex in the presence of Ca2+ ions, phospholipid, and cofactor VIIIa. The annotated HB-associated FIX variants are supported with data from functional studies (Usharani P et al. 1985; Spitzer SG et al. 1990; Ludwig M et a. 1992; Kurachi S et al. 1997; Branchini A et al. 2013).",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": true,
+          "disease": true
+        },
+        {
+          "dbId": "9672383",
+          "stId": "R-HSA-9672383",
+          "id": "R-HSA-9672383",
+          "name": "Defective <span class=\"highlighting\" >factor</span> IX causes thrombophilia",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "In healthy individuals <span class=\"highlighting\" >factor</span> IXa (FIXa), in a complex with <span class=\"highlighting\" >factor</span> VIIIa on the surfaces of activated platelets, catalyzes the formation of activated <span class=\"highlighting\" >factor</span> X with high efficiency. A substitution of leucine for arginine at residue 384 in FIX (FIX R384L, also know as FIX Padua) is a gain-of-function mutation that resulted in elevated FIX clotting activity in a patient with venous thrombosis (Simioni P et al. 2009).",
+          "compartmentNames": [
+            "extracellular region",
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005576",
+            "0005886"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": true
+        },
+        {
+          "dbId": "209425",
+          "stId": "R-DME-209425",
+          "id": "R-DME-209425",
+          "name": "Transcriptional activtion by AP-1 transcription <span class=\"highlighting\" >factor</span>",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "summation": "Spatzle (SPZ) dimer binding leads to Toll (TL) receptor homodimerisation and activation.",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "1234158",
+          "stId": "R-HSA-1234158",
+          "id": "R-HSA-1234158",
+          "name": "Regulation of gene expression by Hypoxia-inducible <span class=\"highlighting\" >Factor</span>",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "HIF-alpha (HIF1A, HIF2A (EPAS1), HIF3A) is translocated to the nucleus, possibly by two pathways: importin 4/7 (Chachami et al. 2009) and importin alpha/beta (Depping et al. 2008). Once in the nucleus HIF-alpha heterodimerizes with HIF-beta (ARNT) (Wang et al. 1995, Jiang et al. 1996, Tian et al. 1997, Gu et al. 1998, Erbel et al. 2003) and recruits CBP and p300 to promoters of target genes (Ebert and Bunn 1998, Kallio et al. 1998, Ema et al. 1999, Gu et al. 2001, Dames et al. 2002, Freedman et al. 2002).",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10100607",
+          "stId": "R-MMU-1234158",
+          "id": "R-MMU-1234158",
+          "name": "Regulation of gene expression by Hypoxia-inducible <span class=\"highlighting\" >Factor</span>",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10224131",
+          "stId": "R-RNO-1234158",
+          "id": "R-RNO-1234158",
+          "name": "Regulation of gene expression by Hypoxia-inducible <span class=\"highlighting\" >Factor</span>",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10330651",
+          "stId": "R-CFA-1234158",
+          "id": "R-CFA-1234158",
+          "name": "Regulation of gene expression by Hypoxia-inducible <span class=\"highlighting\" >Factor</span>",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10444940",
+          "stId": "R-BTA-1234158",
+          "id": "R-BTA-1234158",
+          "name": "Regulation of gene expression by Hypoxia-inducible <span class=\"highlighting\" >Factor</span>",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10557673",
+          "stId": "R-SSC-1234158",
+          "id": "R-SSC-1234158",
+          "name": "Regulation of gene expression by Hypoxia-inducible <span class=\"highlighting\" >Factor</span>",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Pathway",
+      "entriesCount": 1289,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "976987",
+          "stId": "R-HSA-976987",
+          "id": "R-HSA-976987",
+          "name": "Atrial natriuretic <span class=\"highlighting\" >factor</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "216029",
+          "stId": "R-HSA-216029",
+          "id": "R-HSA-216029",
+          "name": "VWF multimer",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Polymer",
+      "entriesCount": 2,
+      "rowCount": 2
+    },
+    {
+      "entries": [
+        {
+          "dbId": "P22670",
+          "stId": "P22670",
+          "id": "P22670",
+          "name": "RFX1",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "P22670",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/P22670/entry"
+        },
+        {
+          "dbId": "D4A631",
+          "stId": "D4A631",
+          "id": "D4A631",
+          "name": "BIG1",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "referenceIdentifier": "D4A631",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/D4A631/entry"
+        },
+        {
+          "dbId": "P15923-3",
+          "stId": "P15923-3",
+          "id": "P15923-3",
+          "name": "TCF3",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "P15923-3",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/P15923-3/entry"
+        },
+        {
+          "dbId": "Q9NQB0-10",
+          "stId": "Q9NQB0-10",
+          "id": "Q9NQB0-10",
+          "name": "TCF7L2",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "Q9NQB0-10",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/Q9NQB0-10/entry"
+        },
+        {
+          "dbId": "P15923-1",
+          "stId": "P15923-1",
+          "id": "P15923-1",
+          "name": "TCF3",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "P15923-1",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/P15923-1/entry"
+        },
+        {
+          "dbId": "Q01978",
+          "stId": "Q01978",
+          "id": "Q01978",
+          "name": "TFE2",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Xenopus laevis"
+          ],
+          "referenceIdentifier": "Q01978",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/Q01978/entry"
+        },
+        {
+          "dbId": "O60869-1",
+          "stId": "O60869-1",
+          "id": "O60869-1",
+          "name": "EDF1",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "O60869-1",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/O60869-1/entry"
+        },
+        {
+          "dbId": "P39905-PRO_0000034005",
+          "stId": "P39905-PRO_0000034005",
+          "id": "P39905-PRO_0000034005",
+          "name": "GDNF",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "P39905-PRO_0000034005",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/P39905/entry#PRO_0000034005"
+        },
+        {
+          "dbId": "P52162-2",
+          "stId": "P52162-2",
+          "id": "P52162-2",
+          "name": "MAX",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Gallus gallus"
+          ],
+          "referenceIdentifier": "P52162-2",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/P52162-2/entry"
+        },
+        {
+          "dbId": "Q14938-3",
+          "stId": "Q14938-3",
+          "id": "Q14938-3",
+          "name": "NFIX",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceIdentifier": "Q14938-3",
+          "databaseName": "UniProt",
+          "referenceURL": "https://www.uniprot.org/uniprotkb/Q14938-3/entry"
+        }
+      ],
+      "typeName": "Interactor",
+      "entriesCount": 519,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9823325",
+          "stId": "R-ALL-9823325",
+          "id": "R-ALL-9823325",
+          "name": "andexanet alfa",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "andexanet alfa",
+          "referenceIdentifier": "7576",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=7576",
+          "disease": true
+        },
+        {
+          "dbId": "9678384",
+          "stId": "R-ALL-9678384",
+          "id": "R-ALL-9678384",
+          "name": "emicizumab",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "emicizumab",
+          "referenceIdentifier": "9744",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=9744",
+          "disease": true
+        },
+        {
+          "dbId": "9667393",
+          "stId": "R-ALL-9667393",
+          "id": "R-ALL-9667393",
+          "name": "desmopressin",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "desmopressin",
+          "referenceIdentifier": "2182",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=2182",
+          "disease": true
+        },
+        {
+          "dbId": "2023387",
+          "stId": "R-ALL-2023387",
+          "id": "R-ALL-2023387",
+          "name": "Brivanib alaninate",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "summation": "Brivanib alaninate is the pro-drug of brivanib, a VEGFR- and FGFR-tyrosine kinase inhibitor that is in Phase I clinical trials for metastatic solid tumors and in patients with endometrial cancer (NCT0088173).  No specific data pertaining to the activity of Brivanib against activated or amplified FGFRs is available, however.",
+          "referenceName": "brivanib alaninate",
+          "referenceIdentifier": "8097",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=8097",
+          "disease": true
+        },
+        {
+          "dbId": "2023377",
+          "stId": "R-ALL-2023377",
+          "id": "R-ALL-2023377",
+          "name": "AZ 2171",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "summation": "A broad specificity ATP-competitive inhibitor of FGF-, VEGF-, PDGF- and KIT receptors that is in Phase I and II clinical trials for treatment of gastric, breast and endometrial cancers.",
+          "referenceName": "cediranib",
+          "referenceIdentifier": "5664",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=5664",
+          "disease": true
+        },
+        {
+          "dbId": "2023385",
+          "stId": "R-ALL-2023385",
+          "id": "R-ALL-2023385",
+          "name": "Brivanib",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "summation": "Brivanib, from Bristol Myers Squibb, is an FGFR and VEGFR inhibitor that has anti-angiogenic effects and that is in clinical trials for endometrial cancer (NCT00888173) (Huynh, 2008).  No specific data pertaining to the activity of Brivanib against activated or amplified FGFRs is available, however.  ",
+          "referenceName": "brivanib",
+          "referenceIdentifier": "5671",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=5671",
+          "disease": true
+        },
+        {
+          "dbId": "1173285",
+          "stId": "R-ALL-1173285",
+          "id": "R-ALL-1173285",
+          "name": "Erlotinib",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "summation": "Erlotinib (OSI-774, Tarceva) is an EGFR-specific tyrosine kinase inhibitor (TKI) from the anilinoquinazoline class of TKIs, developed by OSI/Genentech. Erlotinib competitively inhibits binding of ATP to kinase domain of EGFR, thereby preventing EGFR autophosphorylation and downstream signaling, which halts proliferation of EGFR-dependent tumor cells (Moyer et al. 1997 , Stamos et al. 2002).",
+          "referenceName": "erlotinib",
+          "referenceIdentifier": "4920",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=4920",
+          "disease": true
+        },
+        {
+          "dbId": "9038732",
+          "stId": "R-ALL-9038732",
+          "id": "R-ALL-9038732",
+          "name": "apixaban",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "apixaban",
+          "referenceIdentifier": "6390",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=6390",
+          "disease": true
+        },
+        {
+          "dbId": "9603671",
+          "stId": "R-ALL-9603671",
+          "id": "R-ALL-9603671",
+          "name": "eribaxaban",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "eribaxaban",
+          "referenceIdentifier": "7408",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=7408",
+          "disease": true
+        },
+        {
+          "dbId": "9038742",
+          "stId": "R-ALL-9038742",
+          "id": "R-ALL-9038742",
+          "name": "edoxaban",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "edoxaban",
+          "referenceIdentifier": "7575",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=7575",
+          "disease": true
+        }
+      ],
+      "typeName": "Drug",
+      "entriesCount": 20,
+      "rowCount": 10
+    }
+  ],
+  "rowCount": 88,
+  "numberOfGroups": 16,
+  "numberOfMatches": 10720
+}

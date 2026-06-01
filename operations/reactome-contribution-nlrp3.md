@@ -10,7 +10,7 @@ tags: [reactome, nlrp3, contribution, curation, pathway-audit]
 
 Do not send the Antigravity scratch dossier as written. It overstates what Reactome lacks and contains incorrect PMIDs/DOIs. This corrected working note narrows the contribution to plausible gaps that should be verified against the live Reactome graph before contacting curators.
 
-Live search check (2026-06-01, `tools/reactome`): `oridonin` and `tranilast` return structured `notFound: true`; `hydroxybutyrate` returns metabolic reactions, led by `R-HSA-73920`, not an immune/NLRP3 regulatory link.
+Live search check (2026-06-01, `tools/reactome`): `oridonin` and `tranilast` return structured `notFound: true`; `hydroxybutyrate` returns metabolic reactions, led by `R-HSA-73920`, not an immune/NLRP3 regulatory link. A cross-cutting molecule sweep also found that disulfiram is already modeled as `R-HSA-9693324` ("Disulfiram covalently modifies Cys191 in GSDMD"), so disulfiram is not a Reactome contribution gap.
 
 ## Reactome Baseline
 
@@ -24,6 +24,7 @@ Reactome already models or documents these mechanisms, so they are not clean "mi
 | SGT1:HSP90 binding inactive NLRP3 | Already modeled | `R-HSA-874087`, `R-HSA-873951`; primary paper PMID: 17435760. |
 | HMOX1 negative regulation of NLRP3/TXNIP axis | Already present as regulation | `R-HSA-1250272` includes negative regulation by cytosolic HMOX1. Correct HMOX1 PubMed record appears to be PMID: 30333233. |
 | Pyrin binding ASC | Already modeled | `R-HSA-877361`; Reactome summation already states interference with NLRP3-ASC association. |
+| Disulfiram/GSDMD Cys191 covalent inhibition | Already modeled downstream of NLRP3 | `R-HSA-9693324`; useful for Open Enzyme pathway anchoring, but not a missing Reactome reaction. |
 
 ## Candidate Contributions
 

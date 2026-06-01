@@ -1,0 +1,550 @@
+[
+  {
+    "dbId": 9647660,
+    "displayName": "GSDME (1-270) binds PIPs",
+    "stId": "R-HSA-9647660",
+    "stIdVersion": "R-HSA-9647660.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "GSDME (1-270) binds PIPs"
+    ],
+    "releaseDate": "2021-03-23",
+    "speciesName": "Homo sapiens",
+    "eventOf": [
+      {
+        "dbId": 5620971,
+        "displayName": "Pyroptosis",
+        "stId": "R-HSA-5620971",
+        "stIdVersion": "R-HSA-5620971.6",
+        "isInDisease": false,
+        "isInferred": false,
+        "maxDepth": 2,
+        "name": [
+          "Pyroptosis"
+        ],
+        "releaseDate": "2021-03-23",
+        "speciesName": "Homo sapiens",
+        "doi": "10.3180/R-HSA-5620971.2",
+        "hasDiagram": true,
+        "hasEHLD": false,
+        "lastUpdatedDate": "2021-06-14",
+        "hasEvent": [
+          {
+            "dbId": 9710295,
+            "displayName": "IRF2 or IRF1 binds the GSDMD gene promoter",
+            "stId": "R-HSA-9710295",
+            "stIdVersion": "R-HSA-9710295.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "IRF2 or IRF1 binds the GSDMD gene promoter"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9710294,
+            "displayName": "GSDMD expression mediated by IRF2, IRF1",
+            "stId": "R-HSA-9710294",
+            "stIdVersion": "R-HSA-9710294.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GSDMD expression mediated by IRF2, IRF1"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          {
+            "dbId": 9710323,
+            "displayName": "TP53 or TP63 binds the GSDME gene",
+            "stId": "R-HSA-9710323",
+            "stIdVersion": "R-HSA-9710323.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "TP53 or TP63 binds the GSDME gene"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9710306,
+            "displayName": "GSDME expression mediated by TP53, TP63",
+            "stId": "R-HSA-9710306",
+            "stIdVersion": "R-HSA-9710306.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GSDME expression mediated by TP53, TP63"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          {
+            "dbId": 9647680,
+            "displayName": "CASP1 cleaves GSDMD",
+            "stId": "R-HSA-9647680",
+            "stIdVersion": "R-HSA-9647680.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "CASP1 cleaves GSDMD"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          {
+            "dbId": 9948146,
+            "displayName": "CASP4 cleaves GSDMD",
+            "stId": "R-HSA-9948146",
+            "stIdVersion": "R-HSA-9948146.1",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "CASP4 cleaves GSDMD"
+            ],
+            "releaseDate": "2025-09-18",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          {
+            "dbId": 9947997,
+            "displayName": "CASP5 cleaves GSDMD",
+            "stId": "R-HSA-9947997",
+            "stIdVersion": "R-HSA-9947997.1",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "CASP5 cleaves GSDMD"
+            ],
+            "releaseDate": "2025-09-18",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          {
+            "dbId": 9710106,
+            "displayName": "ELANE cleaves GSDMD",
+            "stId": "R-HSA-9710106",
+            "stIdVersion": "R-HSA-9710106.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "ELANE cleaves GSDMD"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          {
+            "dbId": 9716258,
+            "displayName": "Dimethyl fumarate modifies Cys191 in GSDMD",
+            "stId": "R-HSA-9716258",
+            "stIdVersion": "R-HSA-9716258.4",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "Dimethyl fumarate modifies Cys191 in GSDMD"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9647631,
+            "displayName": "GSDMD (1-275) binds PIPs",
+            "stId": "R-HSA-9647631",
+            "stIdVersion": "R-HSA-9647631.4",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GSDMD (1-275) binds PIPs"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9693324,
+            "displayName": "Disulfiram covalently modifies Cys191 in GSDMD",
+            "stId": "R-HSA-9693324",
+            "stIdVersion": "R-HSA-9693324.4",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "Disulfiram covalently modifies Cys191 in GSDMD"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9647645,
+            "displayName": "GSDMD oligomerizes into arc-, slit-shaped structures",
+            "stId": "R-HSA-9647645",
+            "stIdVersion": "R-HSA-9647645.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GSDMD oligomerizes into arc-, slit-shaped structures"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9647619,
+            "displayName": "GSDMD forms ring\u2010shaped oligomers ",
+            "stId": "R-HSA-9647619",
+            "stIdVersion": "R-HSA-9647619.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GSDMD forms ring\u2010shaped oligomers "
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9647643,
+            "displayName": "GSDMD (1-275) binds bacterial cardiolipin",
+            "stId": "R-HSA-9647643",
+            "stIdVersion": "R-HSA-9647643.4",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GSDMD (1-275) binds bacterial cardiolipin"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9686088,
+            "displayName": "CASP3 cleaves GSDMD",
+            "stId": "R-HSA-9686088",
+            "stIdVersion": "R-HSA-9686088.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "CASP3 cleaves GSDMD"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          {
+            "dbId": 9647632,
+            "displayName": "CASP3 cleaves GSDME",
+            "stId": "R-HSA-9647632",
+            "stIdVersion": "R-HSA-9647632.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "CASP3 cleaves GSDME"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          {
+            "dbId": 9710263,
+            "displayName": "GZMB cleaves GSDME",
+            "stId": "R-HSA-9710263",
+            "stIdVersion": "R-HSA-9710263.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GZMB cleaves GSDME"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          9647660,
+          {
+            "dbId": 9710254,
+            "displayName": "GSDME oligomerizes",
+            "stId": "R-HSA-9710254",
+            "stIdVersion": "R-HSA-9710254.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GSDME oligomerizes"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9710353,
+            "displayName": "GSDMD (1-275) binds cardiolipin",
+            "stId": "R-HSA-9710353",
+            "stIdVersion": "R-HSA-9710353.4",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GSDMD (1-275) binds cardiolipin"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 9710354,
+            "displayName": "GSDME (1-270) binds cardiolipin",
+            "stId": "R-HSA-9710354",
+            "stIdVersion": "R-HSA-9710354.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GSDME (1-270) binds cardiolipin"
+            ],
+            "releaseDate": "2021-03-23",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 114284,
+            "displayName": "Release of Cytochrome c from mitochondria",
+            "stId": "R-HSA-114284",
+            "stIdVersion": "R-HSA-114284.7",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "Release of Cytochrome c from mitochondria"
+            ],
+            "releaseDate": "2004-07-06",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 449058,
+            "displayName": "Interleukin-1 family are secreted",
+            "stId": "R-HSA-449058",
+            "stIdVersion": "R-HSA-449058.5",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "Interleukin-1 family are secreted"
+            ],
+            "releaseDate": "2010-09-21",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          },
+          {
+            "dbId": 6805981,
+            "displayName": "HMGB1 release from cells",
+            "stId": "R-HSA-6805981",
+            "stIdVersion": "R-HSA-6805981.5",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "HMGB1 release from cells"
+            ],
+            "releaseDate": "2016-06-15",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              5620971
+            ],
+            "isChimeric": false,
+            "category": "omitted",
+            "className": "Reaction",
+            "schemaClass": "BlackBoxEvent"
+          }
+        ],
+        "schemaClass": "Pathway",
+        "className": "Pathway"
+      }
+    ],
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  9693324,
+  9647631,
+  9686088,
+  6805981,
+  9710254,
+  9716258,
+  9710306,
+  9647680,
+  9647619,
+  9647645,
+  9710106,
+  114284,
+  9947997,
+  9647643,
+  9710323,
+  9710354,
+  9710353,
+  9948146,
+  449058,
+  9710263,
+  9647632,
+  9710295,
+  9710294
+]

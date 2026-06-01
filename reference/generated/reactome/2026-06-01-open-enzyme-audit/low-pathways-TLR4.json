@@ -1,0 +1,177 @@
+[
+  {
+    "dbId": 937072,
+    "displayName": "TRAF6-mediated induction of TAK1 complex within TLR4 complex",
+    "stId": "R-HSA-937072",
+    "stIdVersion": "R-HSA-937072.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "TRAF6-mediated induction of TAK1 complex within TLR4 complex"
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2021-03-24",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 975163,
+    "displayName": "IRAK2 mediated activation of TAK1 complex upon TLR7/8 or 9 stimulation",
+    "stId": "R-HSA-975163",
+    "stIdVersion": "R-HSA-975163.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "IRAK2 mediated activation of TAK1 complex upon TLR7/8 or 9 stimulation"
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2021-03-24",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 937041,
+    "displayName": "IKK complex recruitment mediated by RIP1",
+    "stId": "R-HSA-937041",
+    "stIdVersion": "R-HSA-937041.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "IKK complex recruitment mediated by RIP1"
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2017-09-27",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 166166,
+    "displayName": "MyD88-independent TLR4 cascade ",
+    "stId": "R-HSA-166166",
+    "stIdVersion": "R-HSA-166166.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 7,
+    "name": [
+      "MyD88-independent TLR4 cascade "
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/REACT_6809.8",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2023-09-13",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 936964,
+    "displayName": "Activation of IRF3, IRF7 mediated by TBK1, IKK\u03b5 (IKBKE)",
+    "stId": "R-HSA-936964",
+    "stIdVersion": "R-HSA-936964.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Activation of IRF3, IRF7 mediated by TBK1, IKK\u03b5 (IKBKE)"
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-936964.6",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2023-09-13",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 140534,
+    "displayName": "Caspase activation via Death Receptors in the presence of ligand",
+    "stId": "R-HSA-140534",
+    "stIdVersion": "R-HSA-140534.8",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Caspase activation via Death Receptors in the presence of ligand",
+      "Ligand-dependent caspase activation"
+    ],
+    "releaseDate": "2004-10-27",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/REACT_1503.5",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2022-12-07",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 2562578,
+    "displayName": "TRIF-mediated programmed cell death",
+    "stId": "R-HSA-2562578",
+    "stIdVersion": "R-HSA-2562578.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "TRIF-mediated programmed cell death"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2017-09-27",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9824878,
+    "displayName": "Regulation of TBK1, IKK\u03b5 (IKBKE)-mediated activation of IRF3, IRF7 ",
+    "stId": "R-HSA-9824878",
+    "stIdVersion": "R-HSA-9824878.1",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Regulation of TBK1, IKK\u03b5 (IKBKE)-mediated activation of IRF3, IRF7 "
+    ],
+    "releaseDate": "2024-03-27",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 166016,
+    "displayName": "Toll Like Receptor 4 (TLR4) Cascade",
+    "stId": "R-HSA-166016",
+    "stIdVersion": "R-HSA-166016.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 8,
+    "name": [
+      "Toll Like Receptor 4 (TLR4) Cascade"
+    ],
+    "releaseDate": "2006-04-24",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/REACT_6894.8",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2023-09-13",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  }
+]

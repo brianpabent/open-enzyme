@@ -69,6 +69,8 @@ status: published
 
 Complement is the soluble effector arm of innate immunity — a self-assembling proteolytic cascade of ~30 proteins that opsonizes pathogens, recruits phagocytes, and lyses membranes. It is old (evolved before adaptive immunity), fast (seconds-to-minutes kinetics), and dangerously promiscuous when mis-regulated. Gout exploits it.
 
+> **Reactome graph anchor (2026-06-01):** Reactome already models the canonical complement machinery: `R-HSA-166658` Complement cascade, `R-HSA-173623` classical antibody-mediated complement activation, `R-HSA-173736` alternative complement activation, `R-HSA-166665` terminal pathway of complement, `R-HSA-375395` C5a receptor binding C5a, `R-HSA-9957423` C5AR1 antagonist binding, and `R-HSA-977371` Factor I inactivation of Factor H-bound C3b. The gout-specific claim on this page is narrower: MSU/CRP/IgM surfaces drive this machinery in the joint. That disease-context edge remains anchored to the primary gout/complement literature rather than Reactome itself. (Pathway anchor; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
+
 ### Three activation pathways, one convergence point
 
 ```text

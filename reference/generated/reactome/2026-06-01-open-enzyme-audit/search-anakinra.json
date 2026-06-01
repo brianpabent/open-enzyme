@@ -1,0 +1,68 @@
+{
+  "results": [
+    {
+      "entries": [
+        {
+          "dbId": "9681784",
+          "stId": "R-ALL-9681784",
+          "id": "R-ALL-9681784",
+          "name": "<span class=\"highlighting\" >anakinra</span>",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "<span class=\"highlighting\" >anakinra</span>",
+          "referenceIdentifier": "6972",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=6972",
+          "disease": true
+        }
+      ],
+      "typeName": "Drug",
+      "entriesCount": 1,
+      "rowCount": 1
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9681763",
+          "stId": "R-HSA-9681763",
+          "id": "R-HSA-9681763",
+          "name": "IL1R1 binds IL1R1 inhibitors",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "The IL1 family includes two agonists, IL1\u03b1 and IL1\u03b2, and a naturally occurring receptor antagonist, IL1Ra. IL1Ra is produced locally in various tissues in response to infection or inflammation (Arend & Gabay 2000). <span class=\"highlighting\" >Anakinra</span> (Kineret) is a recombinant form of IL1Ra that competitively inhibit the local inflammatory effects of IL1 (Seckinger et al. 1990) and is approved for the treatment of rheumatoid arthritis (RA) in combination with methotrexate (Drevlow et al. 1996, Cohen et al. 2002, Fleischmann et al. 2003). Isunakinra (EBI 005) is a fusion protein containing domains from IL1\u03b2 and the IL1 receptor antagonist (IL1Ra or <span class=\"highlighting\" >anakinra</span>) developed as a topical therapy for dry eye disease (Goldstein et al. 2017). It blocks IL1R1 signalling with higher affinity than <span class=\"highlighting\" >anakinra</span> (Kovalchin et al. 2018). These IL1R1 inhibitors may be investigated for their role in blocking inflammatory cytokines produced in the \"cytokine storm syndrome\" caused by COVID-19 (Cron & Chatham 2020).",
+          "compartmentNames": [
+            "extracellular region",
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005576",
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Reaction",
+      "entriesCount": 1,
+      "rowCount": 1
+    }
+  ],
+  "rowCount": 2,
+  "numberOfGroups": 2,
+  "numberOfMatches": 2
+}

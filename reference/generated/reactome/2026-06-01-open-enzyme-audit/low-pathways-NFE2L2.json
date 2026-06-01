@@ -1,0 +1,81 @@
+[
+  {
+    "dbId": 9755511,
+    "displayName": "KEAP1-NFE2L2 pathway",
+    "stId": "R-HSA-9755511",
+    "stIdVersion": "R-HSA-9755511.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 4,
+    "name": [
+      "KEAP1-NFE2L2 pathway"
+    ],
+    "releaseDate": "2022-03-23",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-9755511.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2023-09-13",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9818749,
+    "displayName": "Regulation of NFE2L2 gene expression",
+    "stId": "R-HSA-9818749",
+    "stIdVersion": "R-HSA-9818749.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Regulation of NFE2L2 gene expression"
+    ],
+    "releaseDate": "2022-12-07",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2023-09-13",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 8951664,
+    "displayName": "Neddylation",
+    "stId": "R-HSA-8951664",
+    "stIdVersion": "R-HSA-8951664.7",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Neddylation"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-8951664.4",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2022-12-07",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9679191,
+    "displayName": "Potential therapeutics for SARS",
+    "stId": "R-HSA-9679191",
+    "stIdVersion": "R-HSA-9679191.5",
+    "isInDisease": true,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Potential therapeutics for SARS"
+    ],
+    "releaseDate": "2020-06-10",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-9679191.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2023-03-29",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  }
+]

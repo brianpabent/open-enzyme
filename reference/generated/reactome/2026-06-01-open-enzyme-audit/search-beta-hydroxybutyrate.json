@@ -1,0 +1,2038 @@
+{
+  "results": [
+    {
+      "entries": [
+        {
+          "dbId": "73920",
+          "stId": "R-HSA-73920",
+          "id": "R-HSA-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "D-<span class=\"highlighting\" >beta</span>-<span class=\"highlighting\" >hydroxybutyrate</span> dehydrogenase tetramer (BDH1) in the mitochondrial matrix catalyzes the reversible reaction of D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span> and NAD+ to form acetoacetate and NADH + H+ (Marks et al. 1992).",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9988579",
+          "stId": "R-MMU-73920",
+          "id": "R-MMU-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10107873",
+          "stId": "R-RNO-73920",
+          "id": "R-RNO-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10230574",
+          "stId": "R-CFA-73920",
+          "id": "R-CFA-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10337079",
+          "stId": "R-BTA-73920",
+          "id": "R-BTA-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10451164",
+          "stId": "R-SSC-73920",
+          "id": "R-SSC-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10563622",
+          "stId": "R-DRE-73920",
+          "id": "R-DRE-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Danio rerio"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10735735",
+          "stId": "R-GGA-73920",
+          "id": "R-GGA-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Gallus gallus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10833309",
+          "stId": "R-DME-73920",
+          "id": "R-DME-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10654843",
+          "stId": "R-XTR-73920",
+          "id": "R-XTR-73920",
+          "name": "D-<span class=\"highlighting\" >beta</span> <span class=\"highlighting\" >hydroxybutyrate</span>+NAD+ <=> acetoacetate+NADH+H+",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Xenopus tropicalis"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Reaction",
+      "entriesCount": 5196,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "398037",
+          "stId": "R-HSA-398037",
+          "id": "R-HSA-398037",
+          "name": "G-protein <span class=\"highlighting\" >beta</span>-gamma:PLC <span class=\"highlighting\" >beta</span> 1/2/3",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10013609",
+          "stId": "R-MMU-398037",
+          "id": "R-MMU-398037",
+          "name": "G-protein <span class=\"highlighting\" >beta</span>-gamma:PLC <span class=\"highlighting\" >beta</span> 1/2/3",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10361231",
+          "stId": "R-BTA-398037",
+          "id": "R-BTA-398037",
+          "name": "G-protein <span class=\"highlighting\" >beta</span>-gamma:PLC <span class=\"highlighting\" >beta</span> 1/2/3",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10253678",
+          "stId": "R-CFA-398037",
+          "id": "R-CFA-398037",
+          "name": "G-protein <span class=\"highlighting\" >beta</span>-gamma:PLC <span class=\"highlighting\" >beta</span> 1/2/3",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10756399",
+          "stId": "R-GGA-398037",
+          "id": "R-GGA-398037",
+          "name": "G-protein <span class=\"highlighting\" >beta</span>-gamma:PLC <span class=\"highlighting\" >beta</span> 1/2/3",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Gallus gallus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "437110",
+          "stId": "R-HSA-437110",
+          "id": "R-HSA-437110",
+          "name": "PI3K <span class=\"highlighting\" >beta</span>",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "190512",
+          "stId": "R-HSA-190512",
+          "id": "R-HSA-190512",
+          "name": "<span class=\"highlighting\" >beta</span>-tubulin:GDP",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "446408",
+          "stId": "R-HSA-446408",
+          "id": "R-HSA-446408",
+          "name": "ILK:Integrin <span class=\"highlighting\" >beta</span>-1",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "5610519",
+          "stId": "R-HSA-5610519",
+          "id": "R-HSA-5610519",
+          "name": "<span class=\"highlighting\" >beta</span> tubulin:GDP",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "axonemal microtubule"
+          ],
+          "compartmentAccession": [
+            "0005879"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "2467308",
+          "stId": "R-HSA-2467308",
+          "id": "R-HSA-2467308",
+          "name": "SLRPs:TGF <span class=\"highlighting\" >beta</span>",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Complex",
+      "entriesCount": 2209,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "1461957",
+          "stId": "R-HSA-1461957",
+          "id": "R-HSA-1461957",
+          "name": "<span class=\"highlighting\" >Beta</span> defensins",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Humans have 38 <span class=\"highlighting\" >beta</span>-defensin genes plus 9-10 pseudogenes (details available on the HGNC website at http://www.genenames.org/genefamilies/DEFB). Many <span class=\"highlighting\" >beta</span>-defensins are encoded by recently duplicated genes giving rise to identical transcripts. Nomenclature is confusing and currently in transition. Uniprot recommended names are used throughout this pathway.<br>Many <span class=\"highlighting\" >beta</span>-defensins show expression that correlates with infection (Sahl et al. 2005, Pazgier et al. 2006). All so far characterized <span class=\"highlighting\" >beta</span>-defensins, i.e. <span class=\"highlighting\" >beta</span>-defensin 1 (hBD1), 4A (hBD2), 103 (hBD3), 104 (hBD4), 106 (hBD6), 118 (hBD18) and 128 (hBD28) have antimicrobial properties (Pazgier et al. 2006). For <span class=\"highlighting\" >beta</span>-defensins 4A, 103 and 118 (hBD2, 3, and 18) this has been shown to correlate with membrane permeabilization effects (Antcheva et al. 2004, Sahl et al. 2005, Yenugu et al. 2004). Electrostatic interaction and disruption of microbial membranes is widely believed to the primary mechanism of action for <span class=\"highlighting\" >beta</span>-defensins. Two models explain how membrane disruption takes place, the 'pore model' which postulates that <span class=\"highlighting\" >beta</span>-defensins form transmembrane pores in a similar manner to alpha-defensins, and the 'carpet model', which suggests that <span class=\"highlighting\" >beta</span>-defensins act as detergents. <span class=\"highlighting\" >Beta</span>-defensins contain 6 conserved cysteine residues that in <span class=\"highlighting\" >beta</span>-defensins 1, 4A and 103 (hBD1-3) are experimentally confirmed to be cross-linked 1-5, 2-4, 3-6. The canonical sequence for <span class=\"highlighting\" >beta</span>-defensins is x2-10Cx5-6(G/A)xCX3-4Cx9-13Cx4-7CCxn. Structurally they are similar to alpha-defensins but with much shorter pre-regions. Though dimerization of some <span class=\"highlighting\" >beta</span>-defensins has been reported this is not the case for all and it is unclear whether it is required for function. The majority of functional studies have focused on <span class=\"highlighting\" >beta</span>-defensin 103 (hBD3), which has the most significant antimicrobial activity at physiological salt concentrations (Harder et al. 2001). <span class=\"highlighting\" >Beta</span>-defensin 103  is highly cationic with a net charge of +11 e0.  It exhibits broad-spectrum antimicrobial activity against gram-positive bacteria and some gram-negative bacteria (Harder et al. 2001), though some species are highly resistant (Sahly et al. 2003). Sensitivity correlates with lipid composition of the membrane, with more negatively-charged lipids correlating with larger <span class=\"highlighting\" >beta</span>-defensin 103-induced changes in membrane capacitance (Bohling et al. 2006). Though membrane disruption is widely believed to be the primary mechanism of action of <span class=\"highlighting\" >beta</span>-defensins they have other antimicrobial properties, such as inhibition of cell wall biosynthesis (Sass et al. 2010), and chemoattractant effects (Yang et al. 1999, Niyonsaba et al. 2002, 2004). The chemotactic activity of <span class=\"highlighting\" >beta</span>-defensins 1, 4A and 103 (hBD1-3) for memory T cells and immature DCs is mediated through binding to the chemokine receptor CCR6 and probably another unidentified Gi-coupled receptor (Yang et al. 1999, 2000). <br> <br>Like defensins, the human cathelicidin LL37 peptide is rich in positively-charged  residues (Lehrer & Ganz 2002).<br>Expression of certain <span class=\"highlighting\" >beta</span>-defensins can be induced in response to various signals, such as bacteria, pathogen-associated molecular patterns (PAMPs), or proinflammatory cytokines (Ganz 2003, Yang et al. 2004). Like the alpha-defensins, copy number variation has been reported for DEFB4, DEFB103 and DEFB104 with individuals having 2-12 copies per diploid genome. In contrast DEFB1 does not show such variation but exhibits a number of SNPs (Hollox et al. 2003, Linzmier & Ganz 2005).",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10100701",
+          "stId": "R-MMU-1461957",
+          "id": "R-MMU-1461957",
+          "name": "<span class=\"highlighting\" >Beta</span> defensins",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10224223",
+          "stId": "R-RNO-1461957",
+          "id": "R-RNO-1461957",
+          "name": "<span class=\"highlighting\" >Beta</span> defensins",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10330743",
+          "stId": "R-CFA-1461957",
+          "id": "R-CFA-1461957",
+          "name": "<span class=\"highlighting\" >Beta</span> defensins",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10445034",
+          "stId": "R-BTA-1461957",
+          "id": "R-BTA-1461957",
+          "name": "<span class=\"highlighting\" >Beta</span> defensins",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10557767",
+          "stId": "R-SSC-1461957",
+          "id": "R-SSC-1461957",
+          "name": "<span class=\"highlighting\" >Beta</span> defensins",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "10827255",
+          "stId": "R-GGA-1461957",
+          "id": "R-GGA-1461957",
+          "name": "<span class=\"highlighting\" >Beta</span> defensins",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Gallus gallus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "9915355",
+          "stId": "R-HSA-9915355",
+          "id": "R-HSA-9915355",
+          "name": "<span class=\"highlighting\" >Beta</span>-ketothiolase deficiency",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "ACAT1 is a mitochondrial enzyme that plays a role in metabolism of ketone bodies and isoleucine catabolism (Fukao et al, 1991; Haapalainen et al, 2007; reviewed in Fukao et al, 2019). As part of isoleucine catabolism in the mitochondria, ACAT1 catalyzes the thiolytic degradation of alpha-methylacetoacetyl-CoA to propionyl-CoA and acetyl-CoA (Fukao et al, 1991; Happalainen et al, 2007). Mutations in ACAT1 that affect protein stability and enzymatic activity are associated with <span class=\"highlighting\" >beta</span>-ketothiolase deficiency, also known as alpha-methylacetoacetic aciduria, an inborn error of metabolism that is identified by the presence of isoleucine intermediate metabolites in bodily fluids (Daum et al, 1973; Schutgens et al, 1982; Fukao et al, 1991; Fukao et al, 1992; Wakazono et al, 1995; Fukao et al, 1998; Sakurai et al, 2007; reviewed in Korman, 2006; Fukao et al, 2019). Neonatal onset is rare and most affected individuals present between 6 and 18 months with metabolic acidosis, lethargy, vomiting and sometimes coma (reviewed in Korman, 2006). As with other disorders of branched-chain metabolism, there is not a direct correlation between genotype and severity of phenotypic presentation (reviewed in Korman, 2006).",
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": true
+        },
+        {
+          "dbId": "168888",
+          "stId": "R-HSA-168888",
+          "id": "R-HSA-168888",
+          "name": "Inhibition of IFN-<span class=\"highlighting\" >beta</span>",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Since the presence of intracellular dsRNA serves as the signal for virus infection and triggers host interferon (IFN) synthesis the simplest model for viral NS1 protein function is that it sequesters dsRNA and thus prevents the downstream signaling required to activate IRF-3, NF-kB and AP-1. These findings are strongly supported by mutational analyses of NS1 that indicate that the IFN antagonist properties of NS1 depend on its ability to bind dsRNA. However, a compensatory mutation (S42G), which was acquired during the passaging of the mutant RNA-binding virus, results in partial restoration of wild-type phenotype but does not restore RNA binding. This indicates that the ability of NS1 to inhibit IFN synthesis is not solely dependent on dsRNA binding and that additional mechanisms may be involved.",
+          "isDisease": true,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": true
+        },
+        {
+          "dbId": "389887",
+          "stId": "R-HSA-389887",
+          "id": "R-HSA-389887",
+          "name": "<span class=\"highlighting\" >Beta</span>-oxidation of pristanoyl-CoA",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Pristanoyl-CoA, generated in the peroxisome by alpha-oxidation of dietary phytanic acid, is further catabolized by three cycles of peroxisomal <span class=\"highlighting\" >beta</span>-oxidation to yield 4,8-dimethylnonanoyl-CoA, acetyl-CoA and two molecules of propionyl-CoA. These molecules in turn are converted to carnitine conjugates, which can be transported to mitochondria (Wanders and Waterham 2006, Verhoeven et al. 1998, Ferdinandusse et al. 1999).",
+          "compartmentNames": [
+            "peroxisomal matrix"
+          ],
+          "compartmentAccession": [
+            "0005782"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Pathway",
+      "entriesCount": 831,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "381854",
+          "stId": "R-HSA-381854",
+          "id": "R-HSA-381854",
+          "name": "AMPK <span class=\"highlighting\" >beta</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "2151208",
+          "stId": "R-HSA-2151208",
+          "id": "R-HSA-2151208",
+          "name": "AMPK <span class=\"highlighting\" >beta</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "190502",
+          "stId": "R-HSA-190502",
+          "id": "R-HSA-190502",
+          "name": "<span class=\"highlighting\" >beta</span>-tubulin",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "111854",
+          "stId": "R-HSA-111854",
+          "id": "R-HSA-111854",
+          "name": "PLC-<span class=\"highlighting\" >beta</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "425749",
+          "stId": "R-HSA-425749",
+          "id": "R-HSA-425749",
+          "name": "PLC-<span class=\"highlighting\" >beta</span> 1/2/3",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "201920",
+          "stId": "R-HSA-201920",
+          "id": "R-HSA-201920",
+          "name": "<span class=\"highlighting\" >Beta</span>-catenin",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "5607666",
+          "stId": "R-HSA-5607666",
+          "id": "R-HSA-5607666",
+          "name": "<span class=\"highlighting\" >beta</span>-TrCP",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "191727",
+          "stId": "R-HSA-191727",
+          "id": "R-HSA-191727",
+          "name": "<span class=\"highlighting\" >beta</span>-catenin",
+          "type": "Set",
+          "exactType": "CandidateSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "9931273",
+          "stId": "R-HSA-9931273",
+          "id": "R-HSA-9931273",
+          "name": "AMPK <span class=\"highlighting\" >beta</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "6799298",
+          "stId": "R-HSA-6799298",
+          "id": "R-HSA-6799298",
+          "name": "<span class=\"highlighting\" >Beta</span>-liprins",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Set",
+      "entriesCount": 856,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9674868",
+          "stId": "R-HSA-9674868",
+          "id": "R-HSA-9674868",
+          "name": "TBXA2R-<span class=\"highlighting\" >beta</span>",
+          "type": "Protein",
+          "exactType": "ReferenceIsoform",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "TBXA2R",
+          "referenceIdentifier": "P21731",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P21731-2",
+          "disease": false
+        },
+        {
+          "dbId": "1264804",
+          "stId": "R-MMU-1264804",
+          "id": "R-MMU-1264804",
+          "name": "Hgf <span class=\"highlighting\" >beta</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Mus musculus"
+          ],
+          "referenceName": "Hgf",
+          "referenceIdentifier": "Q08048",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/Q08048",
+          "disease": false
+        },
+        {
+          "dbId": "374868",
+          "stId": "R-BTA-374868",
+          "id": "R-BTA-374868",
+          "name": "PLC <span class=\"highlighting\" >beta</span> 1",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Bos taurus"
+          ],
+          "referenceName": "PLCB1",
+          "referenceIdentifier": "P10894",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P10894",
+          "disease": false
+        },
+        {
+          "dbId": "451713",
+          "stId": "R-RNO-451713",
+          "id": "R-RNO-451713",
+          "name": "p110 <span class=\"highlighting\" >beta</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "referenceName": "Pik3cb",
+          "referenceIdentifier": "Q9Z1L0",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/Q9Z1L0",
+          "disease": false
+        },
+        {
+          "dbId": "10846441",
+          "stId": "R-DME-210401",
+          "id": "R-DME-210401",
+          "name": "Ca-<span class=\"highlighting\" >beta</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "referenceIdentifier": "M9PD84",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/M9PD84",
+          "disease": false
+        },
+        {
+          "dbId": "10846439",
+          "stId": "R-DME-210496",
+          "id": "R-DME-210496",
+          "name": "Ca-<span class=\"highlighting\" >beta</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "referenceIdentifier": "M9PD84",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/M9PD84",
+          "disease": false
+        },
+        {
+          "dbId": "10878225",
+          "stId": "R-DME-532200",
+          "id": "R-DME-532200",
+          "name": "Ca-<span class=\"highlighting\" >beta</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "referenceIdentifier": "M9PD84",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/M9PD84",
+          "disease": false
+        },
+        {
+          "dbId": "10878223",
+          "stId": "R-DME-532197",
+          "id": "R-DME-532197",
+          "name": "Ca-<span class=\"highlighting\" >beta</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "referenceIdentifier": "M9PD84",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/M9PD84",
+          "disease": false
+        },
+        {
+          "dbId": "10847566",
+          "stId": "R-DME-190987-2",
+          "id": "R-DME-190987-2",
+          "name": "DIP-<span class=\"highlighting\" >beta</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "referenceIdentifier": "B7Z153",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/B7Z153",
+          "disease": false
+        },
+        {
+          "dbId": "10849863",
+          "stId": "R-DME-420048",
+          "id": "R-DME-420048",
+          "name": "<span class=\"highlighting\" >beta</span>-Spec",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "referenceIdentifier": "Q00963",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/Q00963",
+          "disease": false
+        }
+      ],
+      "typeName": "Protein",
+      "entriesCount": 1979,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "2247521",
+          "stId": "R-HSA-2247521",
+          "id": "R-HSA-2247521",
+          "name": "<span class=\"highlighting\" >beta</span>-xylosidase",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "lysosomal lumen"
+          ],
+          "compartmentAccession": [
+            "0043202"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "392810",
+          "stId": "R-BTA-392810",
+          "id": "R-BTA-392810",
+          "name": "<span class=\"highlighting\" >beta</span>-tubulin",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Bos taurus"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "391411",
+          "stId": "R-BTA-391411",
+          "id": "R-BTA-391411",
+          "name": "unfolded <span class=\"highlighting\" >beta</span>-tubulin",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Bos taurus"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10400561",
+          "stId": "R-BTA-5607666",
+          "id": "R-BTA-5607666",
+          "name": "Ghost homologue of <span class=\"highlighting\" >beta</span>-TrCP",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Bos taurus"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "392811",
+          "stId": "R-BTA-392811",
+          "id": "R-BTA-392811",
+          "name": "<span class=\"highlighting\" >beta</span>-tubulin folding intermediate",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Bos taurus"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "1793214",
+          "stId": "R-HSA-1793214",
+          "id": "R-HSA-1793214",
+          "name": "keratan sulfate 1,4-<span class=\"highlighting\" >beta</span>-D-galactosidase",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "lysosomal lumen"
+          ],
+          "compartmentAccession": [
+            "0043202"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10661737",
+          "stId": "R-XTR-173675",
+          "id": "R-XTR-173675",
+          "name": "Ghost homologue of C5 <span class=\"highlighting\" >beta</span> chain",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Xenopus tropicalis"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "11100738",
+          "stId": "R-SCE-420050",
+          "id": "R-SCE-420050",
+          "name": "Ghost homologue of Spectrin <span class=\"highlighting\" >beta</span> chain",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Saccharomyces cerevisiae"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "11123334",
+          "stId": "R-PFA-420050",
+          "id": "R-PFA-420050",
+          "name": "Ghost homologue of Spectrin <span class=\"highlighting\" >beta</span> chain",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Plasmodium falciparum"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "446944",
+          "stId": "R-RNO-446944",
+          "id": "R-RNO-446944",
+          "name": "G-protein <span class=\"highlighting\" >beta</span> subunit (generic, rat)",
+          "type": "Genes and Transcripts",
+          "exactType": "GenomeEncodedEntity",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Genes and Transcripts",
+      "entriesCount": 36,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "6804501",
+          "stId": "R-ALL-6804501",
+          "id": "R-ALL-6804501",
+          "name": "<span class=\"highlighting\" >beta</span>-D-galactofuranosyl",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "beta-D-galactofuranosyl group",
+          "referenceIdentifier": "59496",
+          "compartmentNames": [
+            "peptidoglycan-based cell wall"
+          ],
+          "compartmentAccession": [
+            "0009274"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:59496",
+          "disease": true
+        },
+        {
+          "dbId": "9832977",
+          "stId": "R-ALL-9832977",
+          "id": "R-ALL-9832977",
+          "name": "<span class=\"highlighting\" >beta</span>-D-Fru",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "beta-D-fructofuranose",
+          "referenceIdentifier": "28645",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:28645",
+          "disease": false
+        },
+        {
+          "dbId": "9931855",
+          "stId": "R-ALL-9931855",
+          "id": "R-ALL-9931855",
+          "name": "<span class=\"highlighting\" >beta</span>-D-Gal",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "beta-D-galactose",
+          "referenceIdentifier": "27667",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:27667",
+          "disease": false
+        },
+        {
+          "dbId": "6787678",
+          "stId": "R-ALL-6787678",
+          "id": "R-ALL-6787678",
+          "name": "<span class=\"highlighting\" >beta</span>-Fuc",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "beta-L-fucose",
+          "referenceIdentifier": "42589",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:42589",
+          "disease": false
+        },
+        {
+          "dbId": "9832976",
+          "stId": "R-ALL-9832976",
+          "id": "R-ALL-9832976",
+          "name": "<span class=\"highlighting\" >beta</span>-D-Fru 1-P",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "beta-D-fructofuranose 1-phosphate(2-)",
+          "referenceIdentifier": "138881",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:138881",
+          "disease": false
+        },
+        {
+          "dbId": "6783907",
+          "stId": "R-ALL-6783907",
+          "id": "R-ALL-6783907",
+          "name": "<span class=\"highlighting\" >beta</span>-particle",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "electron",
+          "referenceIdentifier": "10545",
+          "compartmentNames": [
+            "nucleoplasm"
+          ],
+          "compartmentAccession": [
+            "0005654"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:10545",
+          "disease": false
+        },
+        {
+          "dbId": "9683087",
+          "stId": "R-ALL-9683087",
+          "id": "R-ALL-9683087",
+          "name": "<span class=\"highlighting\" >beta</span>-D-glucose",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "beta-D-glucose",
+          "referenceIdentifier": "15903",
+          "compartmentNames": [
+            "endoplasmic reticulum lumen"
+          ],
+          "compartmentAccession": [
+            "0005788"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:15903",
+          "disease": false
+        },
+        {
+          "dbId": "2855084",
+          "stId": "R-ALL-2855084",
+          "id": "R-ALL-2855084",
+          "name": "1,3-<span class=\"highlighting\" >beta</span>-D-glucan",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "(1->3)-beta-D-glucan",
+          "referenceIdentifier": "37671",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:37671",
+          "disease": false
+        },
+        {
+          "dbId": "2186970",
+          "stId": "R-ALL-2186970",
+          "id": "R-ALL-2186970",
+          "name": "1,3-<span class=\"highlighting\" >beta</span>-D-glucan",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "(1->3)-beta-D-glucan",
+          "referenceIdentifier": "37671",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:37671",
+          "disease": true
+        },
+        {
+          "dbId": "2239438",
+          "stId": "R-ALL-2239438",
+          "id": "R-ALL-2239438",
+          "name": "1,3-<span class=\"highlighting\" >beta</span>-D-glucan",
+          "type": "Chemical Compound",
+          "exactType": "ReferenceMolecule",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "(1->3)-beta-D-glucan",
+          "referenceIdentifier": "37671",
+          "compartmentNames": [
+            "endocytic vesicle lumen"
+          ],
+          "compartmentAccession": [
+            "0071682"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:37671",
+          "disease": false
+        }
+      ],
+      "typeName": "Chemical Compound",
+      "entriesCount": 311,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "443624",
+          "stId": "R-RNO-443624",
+          "id": "R-RNO-443624",
+          "name": "F-<span class=\"highlighting\" >beta</span> actin",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "976748",
+          "stId": "R-HSA-976748",
+          "id": "R-HSA-976748",
+          "name": "<span class=\"highlighting\" >Beta</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10045178",
+          "stId": "R-MMU-976748",
+          "id": "R-MMU-976748",
+          "name": "<span class=\"highlighting\" >Beta</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10166872",
+          "stId": "R-RNO-976748",
+          "id": "R-RNO-976748",
+          "name": "<span class=\"highlighting\" >Beta</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10279624",
+          "stId": "R-CFA-976748",
+          "id": "R-CFA-976748",
+          "name": "<span class=\"highlighting\" >Beta</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10389434",
+          "stId": "R-BTA-976748",
+          "id": "R-BTA-976748",
+          "name": "<span class=\"highlighting\" >Beta</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10957986",
+          "stId": "R-CEL-976748",
+          "id": "R-CEL-976748",
+          "name": "<span class=\"highlighting\" >Beta</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Caenorhabditis elegans"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10504215",
+          "stId": "R-SSC-976748",
+          "id": "R-SSC-976748",
+          "name": "<span class=\"highlighting\" >Beta</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10690900",
+          "stId": "R-XTR-976748",
+          "id": "R-XTR-976748",
+          "name": "<span class=\"highlighting\" >Beta</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Xenopus tropicalis"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10871369",
+          "stId": "R-DME-976748",
+          "id": "R-DME-976748",
+          "name": "<span class=\"highlighting\" >Beta</span> amyloid fibril",
+          "type": "Polymer",
+          "exactType": "Polymer",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Polymer",
+      "entriesCount": 13,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9709461",
+          "stId": "R-ALL-9709461",
+          "id": "R-ALL-9709461",
+          "name": "epoetin <span class=\"highlighting\" >beta</span>",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "Epoetin beta",
+          "referenceIdentifier": "46508122",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "PubChem Substance",
+          "referenceURL": "https://pubchem.ncbi.nlm.nih.gov/substance/46508122",
+          "disease": true
+        },
+        {
+          "dbId": "9734435",
+          "stId": "R-ALL-9734435",
+          "id": "R-ALL-9734435",
+          "name": "peginterferon <span class=\"highlighting\" >beta</span>-1a",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "peginterferon beta-1a",
+          "referenceIdentifier": "7637",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=7637",
+          "disease": true
+        },
+        {
+          "dbId": "9709465",
+          "stId": "R-ALL-9709465",
+          "id": "R-ALL-9709465",
+          "name": "methoxy polyethylene glycol-epoetin <span class=\"highlighting\" >beta</span>",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "Methoxy polyethylene glycol-epoetin beta",
+          "referenceIdentifier": "347910408",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "PubChem Substance",
+          "referenceURL": "https://pubchem.ncbi.nlm.nih.gov/substance/347910408",
+          "disease": true
+        },
+        {
+          "dbId": "9610994",
+          "stId": "R-ALL-9610994",
+          "id": "R-ALL-9610994",
+          "name": "betaxolol",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "betaxolol",
+          "referenceIdentifier": "549",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=549",
+          "disease": true
+        },
+        {
+          "dbId": "9714305",
+          "stId": "R-ALL-9714305",
+          "id": "R-ALL-9714305",
+          "name": "betamethasone",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "betamethasone",
+          "referenceIdentifier": "7061",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=7061",
+          "disease": true
+        },
+        {
+          "dbId": "9611741",
+          "stId": "R-ALL-9611741",
+          "id": "R-ALL-9611741",
+          "name": "prenalterol",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "prenalterol",
+          "referenceIdentifier": "537",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=537",
+          "disease": true
+        },
+        {
+          "dbId": "9608430",
+          "stId": "R-ALL-9608430",
+          "id": "R-ALL-9608430",
+          "name": "carvedilol",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "carvedilol",
+          "referenceIdentifier": "551",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=551",
+          "disease": true
+        },
+        {
+          "dbId": "9610987",
+          "stId": "R-ALL-9610987",
+          "id": "R-ALL-9610987",
+          "name": "nebivolol",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "nebivolol",
+          "referenceIdentifier": "7246",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=7246",
+          "disease": true
+        },
+        {
+          "dbId": "9696149",
+          "stId": "R-ALL-9696149",
+          "id": "R-ALL-9696149",
+          "name": "recombinant IFNB1a",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "IFN-&beta;1a (recombinant human)",
+          "referenceIdentifier": "8339",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=8339",
+          "disease": true
+        },
+        {
+          "dbId": "9696186",
+          "stId": "R-ALL-9696186",
+          "id": "R-ALL-9696186",
+          "name": "recombinant IFNB1b",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "IFN-&beta;1b (recombinant human)",
+          "referenceIdentifier": "8340",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=8340",
+          "disease": true
+        }
+      ],
+      "typeName": "Drug",
+      "entriesCount": 20,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "EBI-15701099",
+          "stId": "EBI-15701099",
+          "id": "EBI-15701099",
+          "name": "IKKALPHA/<span class=\"highlighting\" >BETA</span>",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceIdentifier": "EBI-15701099",
+          "databaseName": "IntAct",
+          "referenceURL": "https://www.ebi.ac.uk/intact/query/EBI-15701099"
+        },
+        {
+          "dbId": "78408",
+          "stId": "78408",
+          "id": "78408",
+          "name": "GUANOSINE 5'-[<span class=\"highlighting\" >BETA</span>,GAMMA-IMIDO]TRIPHOSPHATE",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "GUANOSINE 5'-[BETA,GAMMA-IMIDO]TRIPHOSPHATE",
+          "referenceIdentifier": "78408",
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:78408"
+        },
+        {
+          "dbId": "47922",
+          "stId": "47922",
+          "id": "47922",
+          "name": "METHYL 1-{(2S)-2-CYCLOHEXYL-2-[(N-METHYL-L-ALANYL)AMINO]ACETYL}-L-PROLYL-<span class=\"highlighting\" >BETA</span>-PHENYL-L-PHENYLALANINATE",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "METHYL 1-{(2S)-2-CYCLOHEXYL-2-[(N-METHYL-L-ALANYL)AMINO]ACETYL}-L-PROLYL-BETA-PHENYL-L-PHENYLALANINATE",
+          "referenceIdentifier": "47922",
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:47922"
+        },
+        {
+          "dbId": "47924",
+          "stId": "47924",
+          "id": "47924",
+          "name": "N,N'-(HEXANE-1,6-DIYL)BIS(1-{(2S)-2-CYCLOHEXYL-2-[(N-METHYL-L-ALANYL)AMINO]ACETYL}-L-PROLYL-<span class=\"highlighting\" >BETA</span>-PHENYL-L-PHENYLALANINAMIDE)",
+          "type": "Interactor",
+          "exactType": "Interactor",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "N,N'-(HEXANE-1,6-DIYL)BIS(1-{(2S)-2-CYCLOHEXYL-2-[(N-METHYL-L-ALANYL)AMINO]ACETYL}-L-PROLYL-BETA-PHENYL-L-PHENYLALANINAMIDE)",
+          "referenceIdentifier": "47924",
+          "databaseName": "ChEBI",
+          "referenceURL": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:47924"
+        }
+      ],
+      "typeName": "Interactor",
+      "entriesCount": 4,
+      "rowCount": 4
+    }
+  ],
+  "rowCount": 94,
+  "numberOfGroups": 17,
+  "numberOfMatches": 11706
+}

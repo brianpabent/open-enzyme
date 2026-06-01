@@ -1,0 +1,68 @@
+{
+  "results": [
+    {
+      "entries": [
+        {
+          "dbId": "9957300",
+          "stId": "R-ALL-9957300",
+          "id": "R-ALL-9957300",
+          "name": "<span class=\"highlighting\" >avacopan</span>",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "<span class=\"highlighting\" >avacopan</span>",
+          "referenceIdentifier": "9450",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=9450",
+          "disease": true
+        }
+      ],
+      "typeName": "Drug",
+      "entriesCount": 1,
+      "rowCount": 1
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9957423",
+          "stId": "R-HSA-9957423",
+          "id": "R-HSA-9957423",
+          "name": "C5AR1 binds C5AR1 antagonist",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "The complement component 5a receptor 1 (C5AR1; also known as CD88) is a G protein-coupled receptor expressed on myeloid cells such as neutrophils and monocytes, as well as on non-immune epithelial cells (van Werkhoven MB et al., 2013; N\u00fcrg B et al., 2021). C5AR1 is activated by C5a, an anaphylatoxin generated through proteolytic cleavage of complement component C5. The C5a:C5AR1 interaction triggers degranulation of mast cell, leading to histamine release, and promotes a robust chemoattractant signal for leukocytes (Gerard NP and Gerard C, 1991; Guo RF & Ward PA 2005; Feng Y et al., 2023). Overactivation of C5a:C5AR1 signaling has been implicated in pathological inflammation and tissue injury in conditions such as septic shock and viral infections, including severe COVID\u201119 (Carvelli J et al., 2020; Bauer M et al., 2021; reviewed by Cedzy\u0144ski M et al., 2019; Wang SSY et al., 2024). C5AR1 antagonists act by competitively blocking the receptor, thereby preventing C5a-driven pro-inflammatory responses, including chemotaxis, oxidative burst, and integrin upregulation (Bekker P et al., 2016; Li XX et al., 2020; Cyranka L et al., 2023; Schartz ND et al., 2024). Among these, <span class=\"highlighting\" >avacopan</span> is an orally active small-molecule C5AR1 inhibitor (also known as CCX168) approved as a glucocorticoid-sparing therapy in anti-neutrophil cytoplasmic autoantibody (ANCA)-associated vasculitis, specifically severe active granulomatosis with polyangiitis (GPA) or microscopic polyangiitis (MPA) (Jayne DRW et al., 2021, Harigai M & Takada H, 2022; Li A, 2022; Gabilan C et al., 2022; Cortazar FB et al., 2023; Nguyen ID et al., 2023). Similarly, avdoralimab (IPH5401), a fully human IgG kappa monoclonal antibody targeting C5AR1, has shown promising immunomodulatory effects in clinical trials by inhibiting C5a-induced activation of neutrophils and subsets of myeloid-derived suppressor cells (MDSCs). Avdoralimab continues to be evaluated in complement-associated inflammation and oncology settings (Carvelli J et al., 2020, 2022; Passeron T et al., 2024).",
+          "compartmentNames": [
+            "extracellular region",
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005576",
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Reaction",
+      "entriesCount": 1,
+      "rowCount": 1
+    }
+  ],
+  "rowCount": 2,
+  "numberOfGroups": 2,
+  "numberOfMatches": 2
+}

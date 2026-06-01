@@ -38,6 +38,8 @@ The human digestive system produces enzymes from multiple sources, each with dis
 
 **(Source: enzyme-deficit-deep-dive.md)** — "The human digestive system produces an astonishing array of enzymes — from salivary amylase in your mouth to the full battery of pancreatic enzymes dumped into your small intestine, to the brush-border enzymes embedded in the intestinal lining itself."
 
+> **Reactome graph anchor (2026-06-01):** Reactome's human digestion pathway `R-HSA-8935690` contains dietary carbohydrate digestion (`R-HSA-189085`) and dietary lipid digestion (`R-HSA-192456`). Useful enzyme-level anchors include amylose digestion by extracellular amylase (`R-HSA-188979`), amylopectin digestion by extracellular amylase (`R-HSA-191114`), triacylglycerol digestion by pancreatic triglyceride lipase:colipase (`R-HSA-192422`), and cholesterol ester digestion by carboxyl ester lipase (`R-HSA-192417`). These IDs are useful for substrate/product vocabulary; they do not by themselves standardize fungal supplement activity or prove EPI clinical efficacy. (Pathway anchor; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
+
 ## Why the System Fails: Causes of EPI
 
 ### Aging (Most Common)

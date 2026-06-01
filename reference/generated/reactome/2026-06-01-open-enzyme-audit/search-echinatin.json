@@ -1,0 +1,16 @@
+{
+  "notFound": true,
+  "query": "echinatin",
+  "id": null,
+  "results": [],
+  "total": 0,
+  "reactomeError": {
+    "code": 404,
+    "reason": "NOT_FOUND",
+    "url": "http://reactome.org/ContentService/search/query",
+    "messages": [
+      "No entries found for query: echinatin"
+    ],
+    "targets": null
+  }
+}

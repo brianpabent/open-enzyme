@@ -1,0 +1,213 @@
+{
+  "results": [
+    {
+      "entries": [
+        {
+          "dbId": "9693326",
+          "stId": "R-ALL-9693326",
+          "id": "R-ALL-9693326",
+          "name": "<span class=\"highlighting\" >Disulfiram</span>",
+          "type": "Drug",
+          "exactType": "ReferenceTherapeutic",
+          "species": [
+            "Entries without species"
+          ],
+          "referenceName": "<span class=\"highlighting\" >disulfiram</span>",
+          "referenceIdentifier": "7168",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": true,
+          "hasReferenceEntity": true,
+          "databaseName": "Guide to Pharmacology - Ligands",
+          "referenceURL": "http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=7168",
+          "disease": true
+        }
+      ],
+      "typeName": "Drug",
+      "entriesCount": 1,
+      "rowCount": 1
+    },
+    {
+      "entries": [
+        {
+          "dbId": "9693324",
+          "stId": "R-HSA-9693324",
+          "id": "R-HSA-9693324",
+          "name": "<span class=\"highlighting\" >Disulfiram</span> covalently modifies Cys191 in GSDMD",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "During inflammation, the inflammatory caspase\u20111 (CASP1) can be activated downstream of canonical inflammasome activation in response to sensing of pathogen\u2011derived particles or host\u2011derived danger signals (reviewed in Kelley N et al. 2019; Zheng D et al. 2020). The non\u2011canonical inflammasome assembly is mediated by CASP4, CASP5 in humans and CASP11 in mice upon sensing intracellular bacterial lipopolysaccharide (LPS) (Vigano E et al. 2015; Kayagaki N et al. 2015). Activated inflammatory caspases induce a proinflammatory cell death known as pyroptosis via the proteolytic processing of gasdermin D (GSDMD) (Shi J et al. 2015; Kayagaki N et al. 2015; He W et al. 2015; Ding J et al. 2016; Liu X et al. 2016; Sborgi L et al. EMBO J 2016). Intact GSDMD cannot form pores due to the inhibitory function of its C-terminal domain. Caspase\u2011mediated cleavage of GSDMD releases the C\u2011terminal fragment of GSDMD (276\u2011484) (Shi J et al. 2015), enabling the N\u2011terminal fragment of GSDMD (1\u2011275) to form pores in cellular membranes leading to cytokine release and pyroptosis (Ding J et al. 2016; Liu X et al. 2016; Sborgi L et al. 2016; Mulvihill E et al. 2018). <span class=\"highlighting\" >Disulfiram</span>, the thiol\u2011reactive drug also known as antabuse, was found to inhibit nigericin\u2011induced NLRP3\u2011mediated pyroptosis and inflammatory cytokine release in LPS\u2011primed human monocytic THP\u20111 cells (Hu JJ et al. 2020). Similar results were obtained for the non\u2011canonical (caspase\u201111\u2011dependent) mouse inflammasome pathway induced by LPS electroporation in mouse immortalized bone marrow\u2011derived macrophages (iBMDMs) (Hu JJ et al. 2020). Nano\u2011liquid chromatography\u2011tandem mass spectrometry (nano\u2011LC\u2011MS/MS) identified a dithiodiethylcarbamoyl adduct of Cys191 in human GSDMD suggesting that <span class=\"highlighting\" >disulfiram</span> covalently modified Cys191 of GSDMD. The importance of Cys191 of GSDMD for <span class=\"highlighting\" >disulfiram</span> activity was further confirmed by a site\u2011directed mutational analysis (Hu JJ et al. 2020). In line with these findings, necrosulfonamide (NSA) was identified as a potent inhibitor of pyroptosis by targeting GSDMD at Cys191 (Rathkey JK et al. 2018), and dimethyl fumarate modifies Cys191 to form S-(2-succinyl)-cysteine and block pyroptosis (Humphries F et al. 2020). Cys191 in human GSDMD (corresponding to Cys192 in mouse) is thought to be critical for the GSDMD oligomerization and pore formation (reviewed in Pandeya A et al. 2019). Further, <span class=\"highlighting\" >disulfiram</span> allowed cleavage of pro\u2011interleukin 1\u03b2 (IL\u20111\u03b2) and GSDMD, but abrogated GSDMD pore formation and blocked IL\u20111\u03b2 release in human and mouse cells (Hu JJ et al. 2020). Moreover, GSDMD\u2011mediated pyroptosis when overactivated can lead to sepsis. Elevated levels of GSDMD were noted in microparticles isolated from plasma of septic patients (Homsy E et al. 2019). In the murine sepsis model, GSDMD\u2011deficient mice showed significantly improved survival compared to the wild type mice (Kambara H et al. 2018). <span class=\"highlighting\" >Disulfiram</span> activity protected mice from LPS\u2011induced septic shock (Hu JJ et al. 2020). The data suggest that <span class=\"highlighting\" >disulfiram</span> blocks GSDMD pore formation and pyroptosis by modifying Cys191 of GSDMD and point to the possibility of using <span class=\"highlighting\" >disulfiram</span> to counteract human diseases due to excessive inflammation (Hu JJ et al. 2020).",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10434244",
+          "stId": "R-BTA-9693324",
+          "id": "R-BTA-9693324",
+          "name": "<span class=\"highlighting\" >Disulfiram</span> covalently modifies Cys191 in GSDMD",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10090101",
+          "stId": "R-MMU-9693324",
+          "id": "R-MMU-9693324",
+          "name": "<span class=\"highlighting\" >Disulfiram</span> covalently modifies Cys191 in GSDMD",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10213147",
+          "stId": "R-RNO-9693324",
+          "id": "R-RNO-9693324",
+          "name": "<span class=\"highlighting\" >Disulfiram</span> covalently modifies Cys191 in GSDMD",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10320436",
+          "stId": "R-CFA-9693324",
+          "id": "R-CFA-9693324",
+          "name": "<span class=\"highlighting\" >Disulfiram</span> covalently modifies Cys191 in GSDMD",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10547338",
+          "stId": "R-SSC-9693324",
+          "id": "R-SSC-9693324",
+          "name": "<span class=\"highlighting\" >Disulfiram</span> covalently modifies Cys191 in GSDMD",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10817815",
+          "stId": "R-GGA-9693324",
+          "id": "R-GGA-9693324",
+          "name": "<span class=\"highlighting\" >Disulfiram</span> covalently modifies Cys191 in GSDMD",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Gallus gallus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "cytosol"
+          ],
+          "compartmentAccession": [
+            "0005829"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "380608",
+          "stId": "R-HSA-380608",
+          "id": "R-HSA-380608",
+          "name": "5-hydroxyindole acetaldehyde to 5-hydroxyindole acetic acid",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "5-hydroxyindole acetaldehyde is then catalyzed by aldehyde dehydrogenase to form 5-hydroxyindole acetic acid",
+          "compartmentNames": [
+            "mitochondrial matrix"
+          ],
+          "compartmentAccession": [
+            "0005759"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Reaction",
+      "entriesCount": 8,
+      "rowCount": 8
+    }
+  ],
+  "rowCount": 9,
+  "numberOfGroups": 2,
+  "numberOfMatches": 9
+}

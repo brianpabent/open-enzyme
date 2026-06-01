@@ -1,0 +1,974 @@
+{
+  "results": [
+    {
+      "entries": [
+        {
+          "dbId": "982830",
+          "stId": "R-HSA-982830",
+          "id": "R-HSA-982830",
+          "name": "<span class=\"highlighting\" >CD55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >CD55</span>",
+          "referenceIdentifier": "P08174",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P08174",
+          "disease": false
+        },
+        {
+          "dbId": "6803302",
+          "stId": "R-HSA-6803302",
+          "id": "R-HSA-6803302",
+          "name": "<span class=\"highlighting\" >CD55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >CD55</span>",
+          "referenceIdentifier": "P08174",
+          "compartmentNames": [
+            "secretory granule membrane"
+          ],
+          "compartmentAccession": [
+            "0030667"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P08174",
+          "disease": false
+        },
+        {
+          "dbId": "6803304",
+          "stId": "R-HSA-6803304",
+          "id": "R-HSA-6803304",
+          "name": "<span class=\"highlighting\" >CD55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >CD55</span>",
+          "referenceIdentifier": "P08174",
+          "compartmentNames": [
+            "ficolin-1-rich granule membrane"
+          ],
+          "compartmentAccession": [
+            "0101003"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P08174",
+          "disease": false
+        },
+        {
+          "dbId": "879667",
+          "stId": "R-HSA-879667",
+          "id": "R-HSA-879667",
+          "name": "<span class=\"highlighting\" >CD55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >CD55</span>",
+          "referenceIdentifier": "P08174",
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P08174",
+          "disease": false
+        },
+        {
+          "dbId": "6807756",
+          "stId": "R-HSA-6807756",
+          "id": "R-HSA-6807756",
+          "name": "GPI-<span class=\"highlighting\" >CD55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >CD55</span>",
+          "referenceIdentifier": "P08174",
+          "compartmentNames": [
+            "endoplasmic reticulum-Golgi intermediate compartment membrane"
+          ],
+          "compartmentAccession": [
+            "0033116"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P08174",
+          "disease": false
+        },
+        {
+          "dbId": "6808771",
+          "stId": "R-HSA-6808771",
+          "id": "R-HSA-6808771",
+          "name": "GPI-<span class=\"highlighting\" >CD55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >CD55</span>",
+          "referenceIdentifier": "P08174",
+          "compartmentNames": [
+            "transport vesicle"
+          ],
+          "compartmentAccession": [
+            "0030133"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P08174",
+          "disease": false
+        },
+        {
+          "dbId": "6808768",
+          "stId": "R-HSA-6808768",
+          "id": "R-HSA-6808768",
+          "name": "GPI-<span class=\"highlighting\" >CD55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Homo sapiens"
+          ],
+          "referenceName": "<span class=\"highlighting\" >CD55</span>",
+          "referenceIdentifier": "P08174",
+          "compartmentNames": [
+            "Golgi membrane"
+          ],
+          "compartmentAccession": [
+            "0000139"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/P08174",
+          "disease": false
+        },
+        {
+          "dbId": "10486520",
+          "stId": "R-SSC-982830",
+          "id": "R-SSC-982830",
+          "name": "<span class=\"highlighting\" >CD55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Sus scrofa"
+          ],
+          "referenceIdentifier": "A0A287B6Q2",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/A0A287B6Q2",
+          "disease": false
+        },
+        {
+          "dbId": "10025761",
+          "stId": "R-MMU-982830",
+          "id": "R-MMU-982830",
+          "name": "<span class=\"highlighting\" >Cd55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Mus musculus"
+          ],
+          "referenceIdentifier": "Q61475",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/Q61475",
+          "disease": false
+        },
+        {
+          "dbId": "10148179",
+          "stId": "R-RNO-982830",
+          "id": "R-RNO-982830",
+          "name": "<span class=\"highlighting\" >Cd55</span>",
+          "type": "Protein",
+          "exactType": "ReferenceGeneProduct",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "referenceIdentifier": "A0A8I5XWT0",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": true,
+          "databaseName": "UniProt",
+          "referenceURL": "http://purl.uniprot.org/uniprot/A0A8I5XWT0",
+          "disease": false
+        }
+      ],
+      "typeName": "Protein",
+      "entriesCount": 76,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "10888139",
+          "stId": "R-DME-982830-4",
+          "id": "R-DME-982830-4",
+          "name": "Homologues of <span class=\"highlighting\" >CD55</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10887968",
+          "stId": "R-DME-6803302-4",
+          "id": "R-DME-6803302-4",
+          "name": "Homologues of <span class=\"highlighting\" >CD55</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "secretory granule membrane"
+          ],
+          "compartmentAccession": [
+            "0030667"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10890855",
+          "stId": "R-DME-6803304-4",
+          "id": "R-DME-6803304-4",
+          "name": "Homologues of <span class=\"highlighting\" >CD55</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "ficolin-1-rich granule membrane"
+          ],
+          "compartmentAccession": [
+            "0101003"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10857470",
+          "stId": "R-DME-879667-4",
+          "id": "R-DME-879667-4",
+          "name": "Homologues of <span class=\"highlighting\" >CD55</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10892061",
+          "stId": "R-DME-6807756-4",
+          "id": "R-DME-6807756-4",
+          "name": "Homologues of GPI-<span class=\"highlighting\" >CD55</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "endoplasmic reticulum-Golgi intermediate compartment membrane"
+          ],
+          "compartmentAccession": [
+            "0033116"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10892079",
+          "stId": "R-DME-6808771-4",
+          "id": "R-DME-6808771-4",
+          "name": "Homologues of GPI-<span class=\"highlighting\" >CD55</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "transport vesicle"
+          ],
+          "compartmentAccession": [
+            "0030133"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10892326",
+          "stId": "R-DME-6808768-4",
+          "id": "R-DME-6808768-4",
+          "name": "Homologues of GPI-<span class=\"highlighting\" >CD55</span>",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "compartmentNames": [
+            "Golgi membrane"
+          ],
+          "compartmentAccession": [
+            "0000139"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "981657",
+          "stId": "R-HSA-981657",
+          "id": "R-HSA-981657",
+          "name": "<span class=\"highlighting\" >CD55</span>:C3 convertase complexes",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10263308",
+          "stId": "R-CFA-981657",
+          "id": "R-CFA-981657",
+          "name": "<span class=\"highlighting\" >CD55</span>:C3 convertase complexes",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Canis familiaris"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10372612",
+          "stId": "R-BTA-981657",
+          "id": "R-BTA-981657",
+          "name": "<span class=\"highlighting\" >CD55</span>:C3 convertase complexes",
+          "type": "Set",
+          "exactType": "DefinedSet",
+          "species": [
+            "Bos taurus"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Set",
+      "entriesCount": 12,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "879674",
+          "stId": "R-HSA-879674",
+          "id": "R-HSA-879674",
+          "name": "CD97 binds <span class=\"highlighting\" >CD55</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "<span class=\"highlighting\" >CD55</span> (or Decay Accelerating Factor; DAF) is a member of the regulators of complement activation (RCA) family. It protects host cells from complement system attack by binding to C3b and C4b preventing formation of the membrane attack complex. CD97 is a member of the Adhesion class or LNB subfamily of family B GPCRs, characterized by long N-terminal regions containing domains contain multiple tandem epidermal growth factor (EGF)-like repeats in their N-termini (Foord et al. 2002). CD97 is constitutively expressed on granulocytes and monocytes and is rapidly up-regulated on activated T and B cells. It is known to have many splice forms containing different numbers of EGF domains, consequently binding <span class=\"highlighting\" >CD55</span> with differing affinities. The highest affinity variant has three EGF domains. The leukocyte-restricted expression pattern of CD97, and the presence of both CD97 and <span class=\"highlighting\" >CD55</span> in arthritic joints suggest a possible role in adhesion and signaling within the inflammatory and immune responses (Lin et al. 2001).",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10021106",
+          "stId": "R-MMU-879674",
+          "id": "R-MMU-879674",
+          "name": "CD97 binds <span class=\"highlighting\" >CD55</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10144357",
+          "stId": "R-RNO-879674",
+          "id": "R-RNO-879674",
+          "name": "CD97 binds <span class=\"highlighting\" >CD55</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Rattus norvegicus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10260912",
+          "stId": "R-CFA-879674",
+          "id": "R-CFA-879674",
+          "name": "CD97 binds <span class=\"highlighting\" >CD55</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10368960",
+          "stId": "R-BTA-879674",
+          "id": "R-BTA-879674",
+          "name": "CD97 binds <span class=\"highlighting\" >CD55</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10482953",
+          "stId": "R-SSC-879674",
+          "id": "R-SSC-879674",
+          "name": "CD97 binds <span class=\"highlighting\" >CD55</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10857474",
+          "stId": "R-DME-879674",
+          "id": "R-DME-879674",
+          "name": "CD97 binds <span class=\"highlighting\" >CD55</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Drosophila melanogaster"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10942660",
+          "stId": "R-CEL-879674",
+          "id": "R-CEL-879674",
+          "name": "CD97 binds <span class=\"highlighting\" >CD55</span>",
+          "type": "Reaction",
+          "exactType": "binding",
+          "species": [
+            "Caenorhabditis elegans"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "981535",
+          "stId": "R-HSA-981535",
+          "id": "R-HSA-981535",
+          "name": "<span class=\"highlighting\" >CD55</span> (DAF) binds C3bBb, C4bC2a",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Decay-accelerating-factor (DAF, <span class=\"highlighting\" >CD55</span>) is a membrane- bound complement regulatory protein that inhibits autologous complement cascade activation. It is expressed on all cells that are in close contact with serum complement proteins, but also on cells outside the vascular space and on tumour cells.  DAF binds to C3bBb and C4bC2a on cell surfaces, accelerating their dissociation and thereby inhibiting the amplification of complement. DAF can bind C3b and Bb, and must bind both for efficient decay acceleration. Although it can bind the inactive proenzymes C3b and C4b, the regulatory function of DAF is believed to be inhibition of activated C3 convertase enzymes (Harris et al. 2007).\n",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10025833",
+          "stId": "R-MMU-981535",
+          "id": "R-MMU-981535",
+          "name": "<span class=\"highlighting\" >CD55</span> (DAF) binds C3bBb, C4bC2a",
+          "type": "Reaction",
+          "exactType": "transition",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This event has been computationally inferred from an event that has been demonstrated in another species.<p>The inference is based on the homology mapping from PANTHER. Briefly, reactions for which all involved PhysicalEntities (in input, output and catalyst) have a mapped orthologue/paralogue (for complexes at least 75% of components must have a mapping) are inferred to the other species. High level events are also inferred for these events to allow for easier navigation.<p><a href='/electronic_inference_compara.html' target = 'NEW'>More details and caveats of the event inference in Reactome.</a> For details on PANTHER see also: <a href='http://www.pantherdb.org/about.jsp' target='NEW'>http://www.pantherdb.org/about.jsp</a>",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Reaction",
+      "entriesCount": 22,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "981652",
+          "stId": "R-HSA-981652",
+          "id": "R-HSA-981652",
+          "name": "<span class=\"highlighting\" >CD55</span>:C3bBb",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "981620",
+          "stId": "R-HSA-981620",
+          "id": "R-HSA-981620",
+          "name": "<span class=\"highlighting\" >CD55</span>:C4bC2a",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "981639",
+          "stId": "R-HSA-981639",
+          "id": "R-HSA-981639",
+          "name": "<span class=\"highlighting\" >CD55</span>:C4b",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "981684",
+          "stId": "R-HSA-981684",
+          "id": "R-HSA-981684",
+          "name": "<span class=\"highlighting\" >CD55</span>:C3b",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "879676",
+          "stId": "R-HSA-879676",
+          "id": "R-HSA-879676",
+          "name": "<span class=\"highlighting\" >CD55</span>:CD97",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Homo sapiens"
+          ],
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10263304",
+          "stId": "R-CFA-981652",
+          "id": "R-CFA-981652",
+          "name": "<span class=\"highlighting\" >CD55</span>:C3bBb",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10486522",
+          "stId": "R-SSC-981652",
+          "id": "R-SSC-981652",
+          "name": "<span class=\"highlighting\" >CD55</span>:C3bBb",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Sus scrofa"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10025763",
+          "stId": "R-MMU-981652",
+          "id": "R-MMU-981652",
+          "name": "<span class=\"highlighting\" >CD55</span>:C3bBb",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Mus musculus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10372608",
+          "stId": "R-BTA-981652",
+          "id": "R-BTA-981652",
+          "name": "<span class=\"highlighting\" >CD55</span>:C3bBb",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Bos taurus"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        },
+        {
+          "dbId": "10263306",
+          "stId": "R-CFA-981620",
+          "id": "R-CFA-981620",
+          "name": "<span class=\"highlighting\" >CD55</span>:C4bC2a",
+          "type": "Complex",
+          "exactType": "Complex",
+          "species": [
+            "Canis familiaris"
+          ],
+          "summation": "This complex/polymer has been computationally inferred (based on PANTHER) from a complex/polymer involved in an event that has been demonstrated in another species.",
+          "compartmentNames": [
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Complex",
+      "entriesCount": 34,
+      "rowCount": 10
+    },
+    {
+      "entries": [
+        {
+          "dbId": "977606",
+          "stId": "R-HSA-977606",
+          "id": "R-HSA-977606",
+          "name": "Regulation of Complement cascade",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "Two inherent features of complement activation make its regulation very important: <br>1. There is an inherent positive feedback loop because the product of C3 activation forms part of an enzyme that causes more C3 activation.<br>2. There is continuous low-level activation of the alternative pathway (see Spontaneous hydrolysis of C3 thioester).<br><br>Complement cascade activation is regulated by a family of related proteins termed the regulators of complement activation (RCA). These are expressed on healthy host cells. Most pathogens do not express RCA proteins on their surface, but many have found ways to evade the complement system by stably binding the RCA that circulates in human plasma (Lambris et al. 2008); trapping RCA is by far the most widely employed strategy for avoiding the complement response. RCA recruitment is common in bacteria such as E. coli and streptococci (Kraiczy & Wurzner 2006) and has also been described for viruses, fungi and  parasites. RCA deposition and the complement system also have an important role in tissue homeostasis, clearing dead cells and debris, and preventing damage from oxidative stress (Weismann et al. 2011).<br><br>RCA proteins control complement activation in two different ways; by promoting the irreversible dissociation (decay acceleration) of complement convertases and by acting as cofactors for Complement factor I (CFI)-mediated cleavage of C3b and C4b.<br>Decay accelerating factor (DAF, <span class=\"highlighting\" >CD55</span>), Complement factor H (FH), Membrane Cofactor Protein (MCP) and Complement receptor 1 (CR1) are composed of arrays of tandem globular domains termed CCPs (complement control protein repeats) or SCRs (short consensus repeats). CR1, MCP and FH are cofactors for the CFI-mediated cleavage of C3b, generating iC3b. CR1 and MCP are also cofactors for C4b cleavage.<br> C4BP is an additional cofactor for the CFI-mediated cleavage of C4b.",
+          "compartmentNames": [
+            "plasma membrane",
+            "extracellular region"
+          ],
+          "compartmentAccession": [
+            "0005886",
+            "0005576"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "166658",
+          "stId": "R-HSA-166658",
+          "id": "R-HSA-166658",
+          "name": "Complement cascade",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Homo sapiens"
+          ],
+          "summation": "In the complement cascade, a panel of soluble molecules rapidly and effectively senses a danger or damage and triggers reactions to provide a response that discriminates among foreign intruders, cellular debris, healthy and altered host cells (Ricklin D et al. 2010). Complement proteins circulate in the blood stream in functionally inactive states. When triggered the complement cascade generates enzymatically active molecules (such as C3/C5 convertases) and biological effectors: opsonins (C3b, C3d and C4b), anaphylatoxins (C3a and C5a), and C5b, which initiates assembly of the lytic membrane attack complex (MAC). Three branches lead to complement activation: the classical, lectin and alternative pathways (Kang YH et al. 2009; Ricklin D et al. 2010). The classical pathway is initiated by C1 complex binding to immune complexes, pentraxins or other targets such as apoptotic cells leading to cleavage of C4 and C2 components and formation of the classical C3 convertase, C4bC2a. The lectin pathway is activated by binding of mannan-binding lectin (MBL) to repetitive carbohydrate residues, or by binding of ficolins to carbohydrate or acetylated groups on target surfaces. MBL and ficolins interact with MBL-associated serine proteases (MASP) leading to cleavage of C4 and C2 and formation of the classical C3 convertase, C4bC2a. The alternative pathway is spontaneously activated by the hydrolysis of the internal thioester group of C3 to give C3(H2O). Alternative pathway activation involves interaction of C3(H2O) and/or previously generated C3b with factor B, which is cleaved by factor D to generate the alternative C3 convertases C3(H2O)Bb and/or C3bBb. All three pathways merge at the proteolytic cleavage of component C3 by C3 convertases to form opsonin C3b and anaphylatoxin C3a. C3b covalently binds to glycoproteins scattered across the target cell surface. This is followed by an amplification reaction that generates additional C3 convertases and deposits more C3b at the local site. C3b can also bind to C3 convertases switching them to C5 convertases, which mediate C5 cleavage leading to MAC formation. Thus, the activation of the complement system leads to several important outcomes:  opsonization of target cells to enhance phagocytosis, lysis of target cells via membrane attack complex (MAC) assembly on the cell surface, production of anaphylatoxins C3a/C5a involved in the host inflammatory response, C5a-mediated leukocyte chemotaxis, and clearance of antibody-antigen complexes. The complement system is able to distinguish between pathological and physiological challenges, i.e. the outcomes of complement activation are predetermined by the trigger and are tightly tuned by a combination of initiation events with several regulatory mechanisms. These regulatory mechanisms use soluble (e.g., C4BP, CFI and CFH) and membrane-bound regulators (e.g., CR1, CD46(MCP), <span class=\"highlighting\" >CD55</span>(DAF) and CD59) and are coordinated by complement receptors such as CR1, CR2, etc. In response to microbial infection complement activation results in flagging microorganisms with opsonins for facilitated phagocytosis, formation of MAC on cells such as Gram-negative bacteria leading to cell lysis, and release of C3a and C5a to stimulate downstream immune responses and to attract leukocytes. Most pathogens can be eliminated by these complement-mediated host responses, though some pathogenic microorganisms have developed ways of avoiding complement recognition or blocking host complement attack resulting in greater virulence (Lambris JD et al. 2008; Serruto D et al. 2010). All three complement pathways (classical, lectin and alternative) have been implicated in clearance of dying cells (Mevorach D et al. 1998; Ogden CA et al. 2001; Gullstrand B et al.2009; Kemper C et al. 2008). Altered surfaces of apoptotic cells are recognized by complement proteins leading to opsonization and subsequent phagocytosis. In contrast to pathogens, apoptotic cells are believed to induce only a limited complement activation by allowing opsonization of altered surfaces but restricting the terminal pathway of MAC formation (Gershov D et al. 2000; Braunschweig A and Jozsi M 2011). Thus, opsonization facilitates clearance of dying cells and cell debris without triggering danger signals and further inflammatory responses (Fraser DA et al. 2007, 2009; Benoit ME et al. 2012). C1q-mediated complement activation by apoptotic cells has been shown in a variety of human cells: keratinocytes, human umbilical vein endothelial cells (HUVEC), Jurkat T lymphoblastoid cells, lung adenocarcinoma cells (Korb LC and Ahearn JM 1997; Mold C and Morris CA 2001; Navratil JS et al. 2001; Nauta AJ et al. 2004). In addition to C1q the opsonization of apoptotic Jurkat T cells with MBL also facilitated clearance of these cells by both dendritic cells (DC) and macrophages (Nauta AJ et al. 2004). Also C3b, iC3b and C4b deposition on apoptotic cells as a consequence of activation of the complement cascade may promote complement-mediated phagocytosis. C1q, MBL and cleavage fragments of C3/C4 can bind to several receptors expressed on macrophages (e.g. cC1qR (calreticulin), CR1, CR3, CR4) suggesting a potential clearance mechanism through this interaction (Mevorach D et al. 1998; Ogden CA et al. 2001). Apoptosis is also associated with an altered expression of complement regulators on the surface of apoptotic cells. CD46 (MCP) bound to the plasma membrane of a healthy cell protects it from complement-mediated attack by preventing deposition of C3b and C4b, and reduced expression of CD46 on dying cells may lead to enhanced opsonization (Elward K et al. 2005). Upregulation of <span class=\"highlighting\" >CD55</span> (DAF) and CD59 on apoptotic cell surfaces may protect damaged cells against complement mediated lysis (Pedersen ED et al. 2007; Iborra A et al. 2003; Hensel F et al. 2001). In addition, fluid-phase complement regulators such as C4BP, CFH may also inhibit lysis of apoptotic cells by limiting complement activation (Trouw LA et al 2007; Braunschweig A and Jozsi M. 2011). Complement facilitates the clearance of immune complexes (IC) from the circulation (Chevalier J and Kazatchkine MD 1989; Nielsen CH et al. 1997). Erythrocytes bear clusters of complement receptor 1 (CR1 or CD35), which serves as an immune adherence receptor for C3 and/or C4 fragments deposited on IC that are shuttled to liver and spleen, where IC are transferred and processed by tissue macrophages through an Fc receptor-mediated process. Complement proteins are always present in the blood and a small percentage spontaneously activate. Inappropriate activation leads to host cell damage, so on healthy human cells any complement activation or amplification is strictly regulated by surface-bound regulators that accelerate decay of the convertases (CR1, <span class=\"highlighting\" >CD55</span>), act as a cofactor for the factor I (CFI)-mediated degradation of C3b and C4b (CR1, CD46), or prevent the formation of MAC (CD59). Soluble regulators such as C4BP, CFH and FHL1 recognize self surface pattern-like glycosaminoglycans and further impair activation. Complement components interact with other biological systems. Upon microbial infection complement acts in cooperation with Toll-like receptors (TLRs) to amplify innate host defense. Anaphylatoxin C5a binds C5a receptor (C5aR) resulting in a synergistic enhancement of the TLR and C5aR-mediated proinflammatory cytokine response to infection. This interplay is negatively modulated by co-ligation of TLR and the second C5a receptor, C5L2, suggesting the existence of complex immunomodulatory interactions (Kohl J 2006; Hajishengallis G and Lambris JD 2010). In addition to C5aR and C5L2, complement receptor 3 (CR3) facilitates TLR2 or TLR4 signaling pathways by promoting a recruitment of their sorting adaptor TIRAP (MAL) to the receptor complex (van Bruggen R et al. 2007; Kagan JC and Medzhitov R 2006). Complement may activate platelets or facilitate biochemical and morphological changes in the endothelium potentiating coagulation and contributing to homeostasis in response to injury (Oikonomopoulou K et al. 2012). The interplay of complement and coagulation also involves cleavage of C3 and C5 convertases by coagulation proteases, generating biologically active anaphylatoxins (Amara U et al. 2010). Complement is believed to link the innate response to both humoral and cell-mediated immunity (Toapanta FR and Ross TM 2006; Mongini PK et al. 1997). The majority of published data is based on experiments using mouse as a model organism. Further characterization of the influence of complement on B or T cell activation is required for the human system, since differences between murine models and the human system are not yet fully determined. Complement is also involved in regulation of mobilization and homing of hematopoietic stem/progenitor cells (HSPCs) from bone marrow to the circulation and peripheral tissue in order to accommodate blood cell replenishment (Reca R et al. 2006). Thus, the complement system orchestrates the host defense by sensing a danger signal and transmitting it into specific cellular responses while extensively communicating with associated biological pathways ranging from immunity and inflammation to homeostasis and development. Originally the larger fragment of Complement Factor 2 (C2) was designated C2a. However, complement scientists decided that the smaller of all C fragments should be designated with an 'a', the larger with a 'b', changing the nomenclature for C2. Recent literature may use the updated nomenclature and refer to the larger C2 fragment as C2b, and refer to the classical C3 convertase as C4bC2b. Throughout this pathway Reactome adheres to the original convention to agree with the current (Sep 2013) Uniprot names for C2 fragments. The complement cascade pathway is organised into the following sections: initial triggering, activation of C3 and C5, terminal pathway and regulation.",
+          "compartmentNames": [
+            "extracellular region",
+            "plasma membrane"
+          ],
+          "compartmentAccession": [
+            "0005576",
+            "0005886"
+          ],
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        },
+        {
+          "dbId": "2132281",
+          "stId": "R-GGA-2132281",
+          "id": "R-GGA-2132281",
+          "name": "Regulation of complement cascades",
+          "type": "Pathway",
+          "exactType": "Pathway",
+          "species": [
+            "Gallus gallus"
+          ],
+          "summation": "Complement activity is non-specific and requires the assembly of regulatory molecules to tune the cascade of enzymatic cleavage events to protect bystander cells. In human, several membrane-associated proteins, complement receptor 1 (CR1), CR2, decay-accelerating factor(DAF or <span class=\"highlighting\" >CD55</span>), membrane cofactor protein (MCP or CD46) and plasma proteins, factor H and C4b-binding protein(C4bp) have been identified as complement regulators. Genes of these regulators, except for factor H, are clustered in a region which is named the regulator of complement activation (RCA) gene locus [Carroll MC et al 1988].  Analysis of the chicken genome revealed that chicken possesses an RCA gene locus similar to the human RCA [Oshiumi H et al 2005]. Three genes encoding proteins with short consensus repeats (SCRs) were identified in this region - complement regulatory secretory protein of chicken (CRES), complement regulatory protein (CREM or Cremp) and complement regulatory GPI-anchored protein (CREG). Based on the structural and functional analysis of these SRC-containing chicken proteins the authors suggested that human and chicken RCA genes evolved from a common ancestral RCA locus.<p>Spatial and temporal expression profiles of chicken genes involved in membrane attack complex (MAC) formation showed that a wide range of adult chicken tissues express MAC regulatory genes - CD59, vitronectin (VTN) and clusterin (CLU), with the liver being the major source of their produced transcripts. MAC regulatory chicken genes are also expressed in all the developmental stages investigated [Mikrou A and Zarkadis IK 2010]. The chicken complement regulatory proteins remain to be structurally and functionally characterized so the chicken events annotated here are mostly inferred from the human complement cascade and should be considered as a suggestive model.",
+          "isDisease": false,
+          "hasReferenceEntity": false,
+          "hasEHLD": false,
+          "disease": false
+        }
+      ],
+      "typeName": "Pathway",
+      "entriesCount": 3,
+      "rowCount": 3
+    }
+  ],
+  "rowCount": 43,
+  "numberOfGroups": 5,
+  "numberOfMatches": 147
+}

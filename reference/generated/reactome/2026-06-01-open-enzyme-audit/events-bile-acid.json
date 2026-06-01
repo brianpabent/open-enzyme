@@ -1,0 +1,1903 @@
+[
+  {
+    "dbId": 159418,
+    "displayName": "Recycling of bile acids and salts",
+    "stId": "R-HSA-159418",
+    "stIdVersion": "R-HSA-159418.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Recycling of bile acids and salts"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "eventOf": [
+      {
+        "dbId": 194068,
+        "displayName": "Bile acid and bile salt metabolism",
+        "stId": "R-HSA-194068",
+        "stIdVersion": "R-HSA-194068.3",
+        "isInDisease": false,
+        "isInferred": false,
+        "maxDepth": 4,
+        "name": [
+          "Bile acid and bile salt metabolism"
+        ],
+        "releaseDate": "2007-05-15",
+        "speciesName": "Homo sapiens",
+        "hasDiagram": true,
+        "hasEHLD": false,
+        "lastUpdatedDate": "2021-12-08",
+        "hasEvent": [
+          {
+            "dbId": 192105,
+            "displayName": "Synthesis of bile acids and bile salts",
+            "stId": "R-HSA-192105",
+            "stIdVersion": "R-HSA-192105.4",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 3,
+            "name": [
+              "Synthesis of bile acids and bile salts"
+            ],
+            "releaseDate": "2007-05-15",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              194068
+            ],
+            "hasDiagram": false,
+            "hasEHLD": false,
+            "lastUpdatedDate": "2020-09-24",
+            "schemaClass": "Pathway",
+            "className": "Pathway"
+          },
+          159418
+        ],
+        "schemaClass": "Pathway",
+        "className": "Pathway"
+      }
+    ],
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2021-12-08",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 8873850,
+    "displayName": "STARD5 binds DCA, LCA",
+    "stId": "R-HSA-8873850",
+    "stIdVersion": "R-HSA-8873850.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "STARD5 binds DCA, LCA"
+    ],
+    "releaseDate": "2016-09-19",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 194079,
+    "displayName": "SLCO1B3 transports ALB:(GCCA, TCCA) from extracellular region to cytosol",
+    "stId": "R-HSA-194079",
+    "stIdVersion": "R-HSA-194079.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "SLCO1B3 transports ALB:(GCCA, TCCA) from extracellular region to cytosol"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9733545,
+    "displayName": "Bile salts and acids bind ALB",
+    "stId": "R-HSA-9733545",
+    "stIdVersion": "R-HSA-9733545.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Bile salts and acids bind ALB"
+    ],
+    "releaseDate": "2021-09-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 9733960,
+    "displayName": "Bile salts and acids dissociate from ALB",
+    "stId": "R-HSA-9733960",
+    "stIdVersion": "R-HSA-9733960.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Bile salts and acids dissociate from ALB"
+    ],
+    "releaseDate": "2021-09-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 9733964,
+    "displayName": "SLC51A:SLC51B transports bile salts from cytosol to extracellular region",
+    "stId": "R-HSA-9733964",
+    "stIdVersion": "R-HSA-9733964.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "SLC51A:SLC51B transports bile salts from cytosol to extracellular region",
+      "OSTA:OSTB exports bile salts from enterocytes to the portal system"
+    ],
+    "releaseDate": "2021-09-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 5340195,
+    "displayName": "NR1H4 binds DCA, CDCA, LCHA",
+    "stId": "R-HSA-5340195",
+    "stIdVersion": "R-HSA-5340195.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NR1H4 binds DCA, CDCA, LCHA",
+      "FXR binds bile acids"
+    ],
+    "releaseDate": "2015-03-19",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193362,
+    "displayName": "ABCB11 transports bile salts from cytosol to extracellular region",
+    "stId": "R-HSA-193362",
+    "stIdVersion": "R-HSA-193362.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "ABCB11 transports bile salts from cytosol to extracellular region",
+      "Transport (efflux) of bile salts by ABCB11 (bile salt export pump)"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 194130,
+    "displayName": "Transport (influx) of bile salts and acids by OATP-A",
+    "stId": "R-HSA-194130",
+    "stIdVersion": "R-HSA-194130.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Transport (influx) of bile salts and acids by OATP-A",
+      "SLCO1A2 transports"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 194121,
+    "displayName": "SLC10A1 co-transport bile salts and Na+ from extracellular region to cytosol",
+    "stId": "R-HSA-194121",
+    "stIdVersion": "R-HSA-194121.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "SLC10A1 co-transport bile salts and Na+ from extracellular region to cytosol",
+      "NTCP takes up bile salts and Na+ into the liver"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 194153,
+    "displayName": "ABCC3 transports bile salts from cytosol to extracellular region",
+    "stId": "R-HSA-194153",
+    "stIdVersion": "R-HSA-194153.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "ABCC3 transports bile salts from cytosol to extracellular region",
+      "Efflux of bile salts from enterocytes to portal system by MRP3"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 5340251,
+    "displayName": "NR1H4:DCA,CDCA,LCHA binds RXRA and NCOA1,2",
+    "stId": "R-HSA-5340251",
+    "stIdVersion": "R-HSA-5340251.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "NR1H4:DCA,CDCA,LCHA binds RXRA and NCOA1,2",
+      "FXR:bile acids binds RXRA and NCOA1,2"
+    ],
+    "releaseDate": "2015-03-19",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 194187,
+    "displayName": "SLC10A2 transports bile salts and acids and Na+ from extracellular region to cytosol",
+    "stId": "R-HSA-194187",
+    "stIdVersion": "R-HSA-194187.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "SLC10A2 transports bile salts and acids and Na+ from extracellular region to cytosol",
+      "Co-transport (influx) of bile salts and acids and sodium ions by ASBT"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 159431,
+    "displayName": "Cytosolic chenodeoxycholoyl-CoA or choloyl-CoA are conjugated with glycine or taurine",
+    "stId": "R-HSA-159431",
+    "stIdVersion": "R-HSA-159431.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Cytosolic chenodeoxycholoyl-CoA or choloyl-CoA are conjugated with glycine or taurine"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9733969,
+    "displayName": "Bile salts dissociate from FABP6",
+    "stId": "R-HSA-9733969",
+    "stIdVersion": "R-HSA-9733969.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Bile salts dissociate from FABP6"
+    ],
+    "releaseDate": "2021-09-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 159425,
+    "displayName": "Cytosolic cholate and chenodeoxycholate are conjugated with Coenzyme A (SLC27A5 BACS)",
+    "stId": "R-HSA-159425",
+    "stIdVersion": "R-HSA-159425.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Cytosolic cholate and chenodeoxycholate are conjugated with Coenzyme A (SLC27A5 BACS)"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 194083,
+    "displayName": "SLCO1B1 transports ALB:(GCCA,TCCA) from extracellular region to cytosol",
+    "stId": "R-HSA-194083",
+    "stIdVersion": "R-HSA-194083.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "SLCO1B1 transports ALB:(GCCA,TCCA) from extracellular region to cytosol",
+      "Transport (influx) of glycocholate and taurocholate by OATP-C"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9733973,
+    "displayName": "Bile salts bind FABP6",
+    "stId": "R-HSA-9733973",
+    "stIdVersion": "R-HSA-9733973.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Bile salts bind FABP6"
+    ],
+    "releaseDate": "2021-09-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  192105,
+  {
+    "dbId": 192065,
+    "displayName": "CYP7B1 7-hydroxylates 25OH-CHOL",
+    "stId": "R-HSA-192065",
+    "stIdVersion": "R-HSA-192065.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP7B1 7-hydroxylates 25OH-CHOL",
+      "25-hydroxycholesterol + O2 + reduced (NADPH--hemoprotein reductase) => 7alpha,25-dihydroxycholesterol + H(+) + H2O + oxidized (NADPH--hemoprotein reductase)"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8867667,
+    "displayName": "OSBPs transport 25OH-CHOL from ER membrane to plasma membrane",
+    "stId": "R-HSA-8867667",
+    "stIdVersion": "R-HSA-8867667.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "OSBPs transport 25OH-CHOL from ER membrane to plasma membrane"
+    ],
+    "releaseDate": "2016-09-19",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8868402,
+    "displayName": "OSBP exchanges 25OH-CHOL with PI4P from ER membrane to Golgi membrane",
+    "stId": "R-HSA-8868402",
+    "stIdVersion": "R-HSA-8868402.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "OSBP exchanges 25OH-CHOL with PI4P from ER membrane to Golgi membrane"
+    ],
+    "releaseDate": "2016-09-19",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193368,
+    "displayName": "Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol",
+    "stId": "R-HSA-193368",
+    "stIdVersion": "R-HSA-193368.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2020-09-24",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 193533,
+    "displayName": "Thiolysis of 3alpha,7alpha-dihydroxy-5beta-cholan-24-one-CoA yields chenodeoxycholoyl-CoA (3alpha,7alpha-dihydroxy-5beta-cholan-24-one-CoA) and propionyl CoA",
+    "stId": "R-HSA-193533",
+    "stIdVersion": "R-HSA-193533.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Thiolysis of 3alpha,7alpha-dihydroxy-5beta-cholan-24-one-CoA yields chenodeoxycholoyl-CoA (3alpha,7alpha-dihydroxy-5beta-cholan-24-one-CoA) and propionyl CoA",
+      "3alpha,7alpha-dihydroxy-5beta-cholan-24-one-CoA + CoASH => chenodeoxycholoyl-CoA (3alpha,7alpha-dihydroxy-5beta-cholan-24-one-CoA) + propionyl CoA"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193535,
+    "displayName": "25(S) 3alpha,7alpha-dihydroxy-5beta-cholest-24-enoyl-CoA is hydrated to (24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA",
+    "stId": "R-HSA-193535",
+    "stIdVersion": "R-HSA-193535.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "25(S) 3alpha,7alpha-dihydroxy-5beta-cholest-24-enoyl-CoA is hydrated to (24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA",
+      "25(S) 3alpha,7alpha-dihydroxy-5beta-cholest-24-enoyl-CoA + H2O => (24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193407,
+    "displayName": "DHCA is conjugated with Coenzyme A (SLC27A5 BACS)",
+    "stId": "R-HSA-193407",
+    "stIdVersion": "R-HSA-193407.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "DHCA is conjugated with Coenzyme A (SLC27A5 BACS)",
+      "DHCA + ATP + CoASH => 25(R) DHCA-CoA + AMP + pyrophosphate (SCLS25A5 \"BACS\")"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 191999,
+    "displayName": "CYP27A1 27-hydroxylates 5bCHOL3a,7a,12a-triol",
+    "stId": "R-HSA-191999",
+    "stIdVersion": "R-HSA-191999.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP27A1 27-hydroxylates 5bCHOL3a,7a,12a-triol",
+      "5beta-cholestan-3alpha, 7alpha, 12alpha-triol is hydroxylated to 5beta-cholestan-3alpha, 7alpha, 12alpha, 27-tetrol",
+      "5beta-cholestan-3alpha, 7alpha, 12alpha-triol + NADPH + H+ + O2 => 5beta-cholestan-3alpha, 7alpha, 12alpha, 27-tetrol + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193401,
+    "displayName": "THCA is conjugated with Coenzyme A (SLC27A2 VLCS)",
+    "stId": "R-HSA-193401",
+    "stIdVersion": "R-HSA-193401.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "THCA is conjugated with Coenzyme A (SLC27A2 VLCS)",
+      "THCA + ATP + CoASH => 25(R) THCA-CoA + AMP + pyrophosphate (SLC27A2 \"VLCS\")"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192312,
+    "displayName": "Choloyl CoA reacts with glycine or taurine to form glycocholate or taurocholate",
+    "stId": "R-HSA-192312",
+    "stIdVersion": "R-HSA-192312.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Choloyl CoA reacts with glycine or taurine to form glycocholate or taurocholate"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192056,
+    "displayName": "Isomerization of 25(R) THCA-CoA to 25(S) THCA-CoA",
+    "stId": "R-HSA-192056",
+    "stIdVersion": "R-HSA-192056.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Isomerization of 25(R) THCA-CoA to 25(S) THCA-CoA",
+      "25(R) THCA-CoA => 25(S) THCA-CoA"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192315,
+    "displayName": "Bile salts are translocated from the peroxisomal matrix to the cytosol",
+    "stId": "R-HSA-192315",
+    "stIdVersion": "R-HSA-192315.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Bile salts are translocated from the peroxisomal matrix to the cytosol",
+      "bile salts (peroxisomal matrix) => bile salts (cytosol)"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193460,
+    "displayName": "3alpha, 7alpha-dihydroxy-5beta-cholestan-26-al is oxidized to 3alpha, 7alpha-dihydroxy-5beta-cholestanoate (DHCA)",
+    "stId": "R-HSA-193460",
+    "stIdVersion": "R-HSA-193460.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "3alpha, 7alpha-dihydroxy-5beta-cholestan-26-al is oxidized to 3alpha, 7alpha-dihydroxy-5beta-cholestanoate (DHCA)",
+      "3alpha, 7alpha-dihydroxy-5beta-cholestan-26-al + NADPH + H+ + O2 => 3alpha, 7alpha-dihydroxy-5beta-cholestanoate (DHCA) + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193399,
+    "displayName": "Cholate is translocated from the peroxisomal matrix to the cytosol",
+    "stId": "R-HSA-193399",
+    "stIdVersion": "R-HSA-193399.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Cholate is translocated from the peroxisomal matrix to the cytosol",
+      "cholate [peroxisomal matrix] => cholate [cytosol]"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 192054,
+    "displayName": "3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al is oxidized to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanoate (THCA)",
+    "stId": "R-HSA-192054",
+    "stIdVersion": "R-HSA-192054.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al is oxidized to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanoate (THCA)",
+      "3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al + NADPH + H+ + O2 => 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanoate (THCA) + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193393,
+    "displayName": "5beta-cholestan-3alpha, 7alpha-diol is hydroxylated to 5beta-cholestan-3alpha, 7alpha, 26-triol",
+    "stId": "R-HSA-193393",
+    "stIdVersion": "R-HSA-193393.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha, 7alpha-diol is hydroxylated to 5beta-cholestan-3alpha, 7alpha, 26-triol",
+      "5beta-cholestan-3alpha, 7alpha-diol + NADPH + H+ + O2 => 5beta-cholestan-3alpha, 7alpha, 26-triol + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192051,
+    "displayName": "CYP7A1 7-hydroxylates CHOL",
+    "stId": "R-HSA-192051",
+    "stIdVersion": "R-HSA-192051.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP7A1 7-hydroxylates CHOL",
+      "cholesterol + O2 + reduced (NADPH--hemoprotein reductase) => 7alpha-hydroxycholesterol + H(+) + H2O + oxidized (NADPH--hemoprotein reductase)",
+      "Cholesterol is hydroxylated to 7alpha-hydroxycholesterol by CYP7A1",
+      "Cholesterol + NADPH + H+ + O2 => 7-alpha-hydroxycholesterol + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193452,
+    "displayName": "Isomerization of 25(R) DHCA-CoA to 25(S) DHCA-CoA",
+    "stId": "R-HSA-193452",
+    "stIdVersion": "R-HSA-193452.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Isomerization of 25(R) DHCA-CoA to 25(S) DHCA-CoA",
+      "25(R) DHCA-CoA => 25(S) DHCA-CoA"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193455,
+    "displayName": "(24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA is oxidized to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-one-CoA",
+    "stId": "R-HSA-193455",
+    "stIdVersion": "R-HSA-193455.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "(24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA is oxidized to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-one-CoA",
+      "(24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA + NAD+ => 3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-one-CoA + NADH + H+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193519,
+    "displayName": "DHCA is translocated from the mitochondrial matrix to the cytosol",
+    "stId": "R-HSA-193519",
+    "stIdVersion": "R-HSA-193519.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "DHCA is translocated from the mitochondrial matrix to the cytosol",
+      "DHCA [mitochondrial matrix] => DHCA [cytosol]"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193385,
+    "displayName": "Hydrolysis of choloyl-CoA to cholate and CoASH",
+    "stId": "R-HSA-193385",
+    "stIdVersion": "R-HSA-193385.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Hydrolysis of choloyl-CoA to cholate and CoASH"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192042,
+    "displayName": "5beta-cholestan-3alpha,7alpha,12alpha,27-tetrol is oxidized to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al",
+    "stId": "R-HSA-192042",
+    "stIdVersion": "R-HSA-192042.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha,7alpha,12alpha,27-tetrol is oxidized to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al",
+      "5beta-cholestan-3alpha,7alpha,12alpha,27-tetrol + NADP+ => 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al +  NADPH + H+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193508,
+    "displayName": "(24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA is oxidized to 3alpha,7alpha-dihydroxy-5beta-cholest-24-one-CoA",
+    "stId": "R-HSA-193508",
+    "stIdVersion": "R-HSA-193508.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "(24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA is oxidized to 3alpha,7alpha-dihydroxy-5beta-cholest-24-one-CoA",
+      "(24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA + NAD+ => 3alpha,7alpha-dihydroxy-5beta-cholest-24-one-CoA + NADH + H+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192036,
+    "displayName": "5Beta-cholesten-7alpha, 12alpha-diol-3-one is reduced to 5beta-cholestan-3alpha, 7alpha, 12alpha-triol",
+    "stId": "R-HSA-192036",
+    "stIdVersion": "R-HSA-192036.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5Beta-cholesten-7alpha, 12alpha-diol-3-one is reduced to 5beta-cholestan-3alpha, 7alpha, 12alpha-triol",
+      "5Beta-cholesten-7alpha, 12alpha-diol-3-one + NADPH + H+ => 5beta-cholestan-3alpha, 7alpha, 12alpha-triol + NAPDP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192033,
+    "displayName": "4-cholesten-7alpha-ol-3-one is reduced to 5beta-cholestan-7alpha-ol-3-one",
+    "stId": "R-HSA-192033",
+    "stIdVersion": "R-HSA-192033.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "4-cholesten-7alpha-ol-3-one is reduced to 5beta-cholestan-7alpha-ol-3-one",
+      "4-cholesten-7alpha-ol-3-one + NADPH + H+ => 5beta-cholestan-7alpha-ol-3-one + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192097,
+    "displayName": "7alpha-hydroxycholesterol is oxidized and isomerized to 4-cholesten-7alpha-ol-3-one",
+    "stId": "R-HSA-192097",
+    "stIdVersion": "R-HSA-192097.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "7alpha-hydroxycholesterol is oxidized and isomerized to 4-cholesten-7alpha-ol-3-one"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192160,
+    "displayName": "5beta-cholestan-7alpha-ol-3-one is reduced to 5beta-cholestan-3alpha, 7alpha-diol",
+    "stId": "R-HSA-192160",
+    "stIdVersion": "R-HSA-192160.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-7alpha-ol-3-one is reduced to 5beta-cholestan-3alpha, 7alpha-diol",
+      "5beta-cholestan-7alpha-ol-3-one+ NADPH + H+ => 5beta-cholestan-3alpha, 7alpha-diol + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 191971,
+    "displayName": "THCA is translocated from the mitochondrial matrix to the cytosol",
+    "stId": "R-HSA-191971",
+    "stIdVersion": "R-HSA-191971.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "THCA is translocated from the mitochondrial matrix to the cytosol",
+      "THCA [mitochondrial matrix] => THCA [cytosol]"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 192157,
+    "displayName": "CYP8B1 12-hydroxylates 4CHOL7aOLONE",
+    "stId": "R-HSA-192157",
+    "stIdVersion": "R-HSA-192157.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP8B1 12-hydroxylates 4CHOL7aOLONE",
+      "7alpha-hydroxycholest-4-en-3-one + O2 + reduced (NADPH--hemoprotein reductase) => 7alpha,12alpha-dihydroxycholest-4-en-3-one + H(+) + H2O + oxidized (NADPH--hemoprotein reductase)",
+      "4-Cholesten-7alpha-ol-3-one is 12alpha-hydroxylated to 7-alpha,12-alpha-dihydroxycholest-4-en-3-one",
+      "7-alpha-hydroxycholest-4-en-3-one + NADPH + H+ + O2 => 7-alpha,12-alpha-dihydroxycholest-4-en-3-one + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193369,
+    "displayName": "25(S) DHCA-CoA is dehydrogenated to 25(S) 3alpha,7alpha-dihydroxy-5beta-cholest-24-enoyl-CoA",
+    "stId": "R-HSA-193369",
+    "stIdVersion": "R-HSA-193369.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "25(S) DHCA-CoA is dehydrogenated to 25(S) 3alpha,7alpha-dihydroxy-5beta-cholest-24-enoyl-CoA",
+      "25(S) DHCA-CoA + O2 => 25(S) 3alpha,7alpha-dihydroxy-5beta-cholest-24-enoyl-CoA + H2O2"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193497,
+    "displayName": "5beta-cholestan-3alpha, 7alpha, 26-triol is oxidized to 3alpha, 7alpha-dihydroxy-5beta-cholestan-26-al",
+    "stId": "R-HSA-193497",
+    "stIdVersion": "R-HSA-193497.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha, 7alpha, 26-triol is oxidized to 3alpha, 7alpha-dihydroxy-5beta-cholestan-26-al",
+      "5beta-cholestan-3alpha, 7alpha, 26-triol + NADP+ => 3alpha,7alpha-dihydroxy-5beta-cholestan-26-al + NADPH + H+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192341,
+    "displayName": "Thiolysis of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-one-CoA yields choloyl-CoA (3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-one-CoA) and propionyl CoA",
+    "stId": "R-HSA-192341",
+    "stIdVersion": "R-HSA-192341.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Thiolysis of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-one-CoA yields choloyl-CoA (3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-one-CoA) and propionyl CoA",
+      "3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-one-CoA + CoASH => choloyl-CoA (3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-one-CoA) + propionyl CoA"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193424,
+    "displayName": "DHCA is conjugated with Coenzyme A (SLC27A2 VLCS)",
+    "stId": "R-HSA-193424",
+    "stIdVersion": "R-HSA-193424.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "DHCA is conjugated with Coenzyme A (SLC27A2 VLCS)",
+      "DHCA + ATP + CoASH => 25(R) DHCA-CoA + AMP + pyrophosphate (SLC27A2 \"VLCS\")"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193491,
+    "displayName": "Chenodeoxycholoyl CoA reacts with glycine or taurine to form glycochenodeoxycholate or taurochenodeoxycholate",
+    "stId": "R-HSA-193491",
+    "stIdVersion": "R-HSA-193491.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Chenodeoxycholoyl CoA reacts with glycine or taurine to form glycochenodeoxycholate or taurochenodeoxycholate"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192335,
+    "displayName": "25(S) THCA-CoA is dehydrogenated to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-enoyl-CoA (THCA-CoA)",
+    "stId": "R-HSA-192335",
+    "stIdVersion": "R-HSA-192335.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "25(S) THCA-CoA is dehydrogenated to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-enoyl-CoA (THCA-CoA)",
+      "25(S) THCA-CoA + O2 => THCA-CoA + H2O2"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192137,
+    "displayName": "THCA is conjugated with Coenzyme A (SLC27A5 BACS)",
+    "stId": "R-HSA-192137",
+    "stIdVersion": "R-HSA-192137.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "THCA is conjugated with Coenzyme A (SLC27A5 BACS)",
+      "THCA + ATP + CoASH => 25(R) THCA-CoA + AMP + pyrophosphate (SCLS25A5 \"BACS\")"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192331,
+    "displayName": "3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-enoyl-CoA (THCA-CoA) is hydrated to (24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA",
+    "stId": "R-HSA-192331",
+    "stIdVersion": "R-HSA-192331.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-enoyl-CoA (THCA-CoA) is hydrated to (24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA",
+      "3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-enoyl-CoA + H2O => (24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193482,
+    "displayName": "25(R) DHCA-CoA is translocated from the cytosol to the peroxisome",
+    "stId": "R-HSA-193482",
+    "stIdVersion": "R-HSA-193482.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "25(R) DHCA-CoA is translocated from the cytosol to the peroxisome",
+      "25(R) DHCA-CoA [ cytosol] => 25(R) DHCA-CoA [peroxisome]"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 192010,
+    "displayName": "5beta-cholestan-3alpha, 7alpha, 12alpha-triol is translocated from the cytosol to the mitochondrial matrix",
+    "stId": "R-HSA-192010",
+    "stIdVersion": "R-HSA-192010.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha, 7alpha, 12alpha-triol is translocated from the cytosol to the mitochondrial matrix"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192325,
+    "displayName": "25(R) THCA-CoA is translocated from the cytosol to the peroxisome",
+    "stId": "R-HSA-192325",
+    "stIdVersion": "R-HSA-192325.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "25(R) THCA-CoA is translocated from the cytosol to the peroxisome",
+      "25(R) THCA-CoA [ cytosol] => 25(R) THCA-CoA [peroxisome]"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193537,
+    "displayName": "5beta-cholestan-3alpha, 7alpha-diol is translocated from the cytosol to the mitochondrial matrix",
+    "stId": "R-HSA-193537",
+    "stIdVersion": "R-HSA-193537.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha, 7alpha-diol is translocated from the cytosol to the mitochondrial matrix"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192067,
+    "displayName": "4-cholesten-7alpha, 12alpha-diol-3-one is reduced to 5beta-cholesten-7alpha, 12alpha-diol-3-one",
+    "stId": "R-HSA-192067",
+    "stIdVersion": "R-HSA-192067.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "4-cholesten-7alpha, 12alpha-diol-3-one is reduced to 5beta-cholesten-7alpha, 12alpha-diol-3-one",
+      "4-cholesten-7alpha, 12alpha-diol-3-one + NADPH + H+ => 5beta-cholesten-7alpha,12alpha-diol-3-one + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193775,
+    "displayName": "Synthesis of bile acids and bile salts via 24-hydroxycholesterol",
+    "stId": "R-HSA-193775",
+    "stIdVersion": "R-HSA-193775.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Synthesis of bile acids and bile salts via 24-hydroxycholesterol"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2018-03-26",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 193789,
+    "displayName": "Cholest-5-ene-3beta,7alpha,24(S)-triol is oxidized and isomerized to 4-cholesten-7alpha,24(S)-diol-3-one",
+    "stId": "R-HSA-193789",
+    "stIdVersion": "R-HSA-193789.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Cholest-5-ene-3beta,7alpha,24(S)-triol is oxidized and isomerized to 4-cholesten-7alpha,24(S)-diol-3-one",
+      "Cholest-5-ene-3beta,7alpha,24(S)-triol + NAD+ => 4-cholesten-7alpha,24(S)-diol-3-one + NADH + H+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192061,
+    "displayName": "CYP46A1 24-hydroxylates CHOL",
+    "stId": "R-HSA-192061",
+    "stIdVersion": "R-HSA-192061.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP46A1 24-hydroxylates CHOL",
+      "cholesterol + O2 + reduced (NADPH--hemoprotein reductase) => (24S)-hydroxycholesterol + H(+) + H2O + oxidized (NADPH--hemoprotein reductase)",
+      "cholesterol + NADPH + H+ + O2 => 24-hydroxycholesterol + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193727,
+    "displayName": "TetraHCA is conjugated with Coenzyme A (SLC27A2 VLCS)",
+    "stId": "R-HSA-193727",
+    "stIdVersion": "R-HSA-193727.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "TetraHCA is conjugated with Coenzyme A (SLC27A2 VLCS)",
+      "TetraHCA + ATP + CoASH => 25(R) THCA-CoA + AMP + pyrophosphate + H2O (SLC27A2 \"VLCS\")"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193787,
+    "displayName": "5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol is hydroxylated to 5beta-cholestan-3alpha,7alpha,12alpha,24(S), 27-pentol",
+    "stId": "R-HSA-193787",
+    "stIdVersion": "R-HSA-193787.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol is hydroxylated to 5beta-cholestan-3alpha,7alpha,12alpha,24(S), 27-pentol",
+      "5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol + NADPH + H+ + O2 => 5beta-cholestan-3alpha,7alpha,12alpha,24(S),27-pentol + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193786,
+    "displayName": "3,7,24THCA is translocated from the mitochondrial matrix to the cytosol",
+    "stId": "R-HSA-193786",
+    "stIdVersion": "R-HSA-193786.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "3,7,24THCA is translocated from the mitochondrial matrix to the cytosol",
+      "3,7,24THCA [mitochondrial matrix] => 3,7,24THCA [cytosol]"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193722,
+    "displayName": "TetraHCA is translocated from the mitochondrial matrix to the cytosol",
+    "stId": "R-HSA-193722",
+    "stIdVersion": "R-HSA-193722.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "TetraHCA is translocated from the mitochondrial matrix to the cytosol",
+      "TetraHCA [mitochondrial matrix] => TetraHCA [cytosol]"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193781,
+    "displayName": "5Beta-cholestan-7alpha,12alpha,24(S)-triol-3-one is reduced to 5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol",
+    "stId": "R-HSA-193781",
+    "stIdVersion": "R-HSA-193781.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5Beta-cholestan-7alpha,12alpha,24(S)-triol-3-one is reduced to 5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol",
+      "5Beta-cholestan-7alpha,12alpha,24(S)-triol-3-one + NADPH + H+ => 5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol + NAPDP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193780,
+    "displayName": "5beta-cholestan-3alpha,7alpha,12alpha,24(S),27-pentol is oxidized to 3alpha,7alpha,12alpha,24(S)-tetrahydroxy-5beta-cholestan-27-al",
+    "stId": "R-HSA-193780",
+    "stIdVersion": "R-HSA-193780.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha,7alpha,12alpha,24(S),27-pentol is oxidized to 3alpha,7alpha,12alpha,24(S)-tetrahydroxy-5beta-cholestan-27-al",
+      "5beta-cholestan-3alpha,7alpha,12alpha,24(S),27-pentol + NADPH + H+ + O2 => 3alpha,7alpha,12alpha,24(S)-tetrahydroxy-5beta-cholestan-27-al + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193719,
+    "displayName": "5beta-cholestan-3alpha,7alpha,24(S),27-tetrol is oxidized to 3alpha,7alpha,24(S)-trihydroxy-5beta-cholestan-27-al",
+    "stId": "R-HSA-193719",
+    "stIdVersion": "R-HSA-193719.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha,7alpha,24(S),27-tetrol is oxidized to 3alpha,7alpha,24(S)-trihydroxy-5beta-cholestan-27-al",
+      "5beta-cholestan-3alpha,7alpha,24(S),27-tetrol + NADPH + H+ + O2 => 3alpha,7alpha,24(S)-trihydroxy-5beta-cholestan-27-al + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193713,
+    "displayName": "3alpha,7alpha,12alpha,24(S)-tetrahydroxy-5beta-cholestan-27-al is oxidized to 3alpha,7alpha,12alpha,24(S)-tetrahydroxy-5beta-cholestanoate (TetraHCA)",
+    "stId": "R-HSA-193713",
+    "stIdVersion": "R-HSA-193713.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "3alpha,7alpha,12alpha,24(S)-tetrahydroxy-5beta-cholestan-27-al is oxidized to 3alpha,7alpha,12alpha,24(S)-tetrahydroxy-5beta-cholestanoate (TetraHCA)",
+      "3alpha,7alpha,12alpha,24(S)-tetrahydroxy-5beta-cholestan-27-al + NADPH + H+ + O2 => 3alpha,7alpha,12alpha,24(S)-tetrahydroxy-5beta-cholestanoate (TetraHCA) + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193776,
+    "displayName": "Efflux of 24-hydroxycholesterol",
+    "stId": "R-HSA-193776",
+    "stIdVersion": "R-HSA-193776.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Efflux of 24-hydroxycholesterol"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193715,
+    "displayName": "5beta-cholestan-3alpha,7alpha,24(S)-triol is translocated from the cytosol to the mitochondrial matrix",
+    "stId": "R-HSA-193715",
+    "stIdVersion": "R-HSA-193715.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha,7alpha,24(S)-triol is translocated from the cytosol to the mitochondrial matrix"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192178,
+    "displayName": "CYP39A1 7-hydroxylates 24OH-CHOL",
+    "stId": "R-HSA-192178",
+    "stIdVersion": "R-HSA-192178.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP39A1 7-hydroxylates 24OH-CHOL",
+      "(24S)-hydroxycholesterol + O2 + reduced (NADPH--hemoprotein reductase) => (24S)-7alpha-dihydroxycholesterol + H(+) + H2O + oxidized (NADPH--hemoprotein reductase)",
+      "24-hydroxycholesterol is 7alpha-hydroxylated to yield cholest-5-ene-3beta,7alpha,24-triol",
+      "24-hydroxycholesterol + NADPH + H+ + O2 => cholest-5-ene-3beta,7alpha,24-triol + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193709,
+    "displayName": "CYP8B1 12-hydroxylates 4CHOL7a,24(S)DIOL",
+    "stId": "R-HSA-193709",
+    "stIdVersion": "R-HSA-193709.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP8B1 12-hydroxylates 4CHOL7a,24(S)DIOL",
+      "4-Cholesten-7alpha,24(S)-diol-3-one is 12alpha-hydroxylated to 4-cholesten-7-alpha,12-alpha,24(S)-triol-3-one",
+      "4-Cholesten-7alpha,24(S)-diol-3-one + NADPH + H+ + O2 => 4-cholesten-7-alpha,12-alpha,24(S)-triol-3-one + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193711,
+    "displayName": "3,7,24THCA is conjugated with Coenzyme A (SLC27A5 BACS)",
+    "stId": "R-HSA-193711",
+    "stIdVersion": "R-HSA-193711.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "3,7,24THCA is conjugated with Coenzyme A (SLC27A5 BACS)",
+      "3,7,24THCA + ATP + CoASH => 3,7,24THCA-CoA + AMP + pyrophosphate + H2O (SCLS25A5 \"BACS\")"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193774,
+    "displayName": "5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol is translocated from the cytosol to the mitochondrial matrix",
+    "stId": "R-HSA-193774",
+    "stIdVersion": "R-HSA-193774.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol is translocated from the cytosol to the mitochondrial matrix"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193767,
+    "displayName": "Influx of 24-hydroxycholesterol",
+    "stId": "R-HSA-193767",
+    "stIdVersion": "R-HSA-193767.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Influx of 24-hydroxycholesterol"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193766,
+    "displayName": "TetraHCA is conjugated with Coenzyme A (SLC27A5 BACS)",
+    "stId": "R-HSA-193766",
+    "stIdVersion": "R-HSA-193766.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "TetraHCA is conjugated with Coenzyme A (SLC27A5 BACS)",
+      "TetraHCA + ATP + CoASH => 25(R) TetraHCA-CoA + AMP + pyrophosphate + H2O (SCLS25A5 \"BACS\")"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193761,
+    "displayName": "25(R) TetraHCA-CoA is translocated from the cytosol to the peroxisome",
+    "stId": "R-HSA-193761",
+    "stIdVersion": "R-HSA-193761.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "25(R) TetraHCA-CoA is translocated from the cytosol to the peroxisome",
+      "25(R) TetraHCA-CoA [ cytosol] => 25(R) TetraHCA-CoA [peroxisome]"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193763,
+    "displayName": "Isomerization of 25(R) TetraHCA-CoA to (24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA",
+    "stId": "R-HSA-193763",
+    "stIdVersion": "R-HSA-193763.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Isomerization of 25(R) TetraHCA-CoA to (24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA",
+      "25(R) TetraHCA-CoA => (24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193758,
+    "displayName": "5beta-cholestan-7alpha,24(S)-diol-3-one is reduced to 5beta-cholestan-3alpha,7alpha,24(S)-triol",
+    "stId": "R-HSA-193758",
+    "stIdVersion": "R-HSA-193758.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-7alpha,24(S)-diol-3-one is reduced to 5beta-cholestan-3alpha,7alpha,24(S)-triol",
+      "5beta-cholestan-7alpha,24(S)-diol-3-one+ NADPH + H+ => 5beta-cholestan-3alpha,7alpha,24(S)-triol + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193753,
+    "displayName": "3,7,24THCA-CoA is translocated from the cytosol to the peroxisome",
+    "stId": "R-HSA-193753",
+    "stIdVersion": "R-HSA-193753.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "3,7,24THCA-CoA is translocated from the cytosol to the peroxisome",
+      "3,7,24THCA-CoA [ cytosol] => 3,7,24THCA-CoA [peroxisome]"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193755,
+    "displayName": "4-cholesten-7alpha,12alpha,24(S)-triol-3-one is reduced to 5beta-cholestan-7alpha,12alpha,24(S)-triol-3-one",
+    "stId": "R-HSA-193755",
+    "stIdVersion": "R-HSA-193755.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "4-cholesten-7alpha,12alpha,24(S)-triol-3-one is reduced to 5beta-cholestan-7alpha,12alpha,24(S)-triol-3-one",
+      "4-cholesten-7alpha,12alpha,24(S)-triol-3-one + NADPH + H+ => 5beta-cholestan-7alpha,12alpha,24(S)-triol-3-one + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193746,
+    "displayName": "4-cholesten-7alpha,24(S)-diol-3-one is reduced to 5beta-cholestan-7alpha,24(S)-diol-3-one",
+    "stId": "R-HSA-193746",
+    "stIdVersion": "R-HSA-193746.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "4-cholesten-7alpha,24(S)-diol-3-one is reduced to 5beta-cholestan-7alpha,24(S)-diol-3-one",
+      "4-cholesten-7alpha,24(S)-diol-3-one + NADPH + H+ => 5beta-cholestan-7alpha,24(S)-diol-3-one + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193743,
+    "displayName": "3,7,24THCA is conjugated with Coenzyme A (SLC27A2 VLCS)",
+    "stId": "R-HSA-193743",
+    "stIdVersion": "R-HSA-193743.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "3,7,24THCA is conjugated with Coenzyme A (SLC27A2 VLCS)",
+      "3,7,24THCA + ATP + CoASH => 3,7,24THCA-CoA + AMP + pyrophosphate + H2O (SLC27A2 \"VLCS\")"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193737,
+    "displayName": "3alpha,7alpha,24(S)-trihydroxy-5beta-cholestan-27-al is oxidized to 3alpha,7alpha,24(S)-trihydroxy-5beta-cholestanoate (3,7,24THCA)",
+    "stId": "R-HSA-193737",
+    "stIdVersion": "R-HSA-193737.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "3alpha,7alpha,24(S)-trihydroxy-5beta-cholestan-27-al is oxidized to 3alpha,7alpha,24(S)-trihydroxy-5beta-cholestanoate (3,7,24THCA)",
+      "3alpha,7alpha,24(S)-trihydroxy-5beta-cholestan-27-al + NADPH + H+ + O2 => 3alpha,7alpha,24(S)-trihydroxy-5beta-cholestanoate (3,7,24THCA) + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193736,
+    "displayName": "Isomerization of 3,7,24THCA-CoA to (24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA",
+    "stId": "R-HSA-193736",
+    "stIdVersion": "R-HSA-193736.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Isomerization of 3,7,24THCA-CoA to (24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA",
+      "3,7,24THCA-CoA => (24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193792,
+    "displayName": "CYP27A1 27-hydroxylates 5\u03b2-CHOL3\u03b1,7\u03b1,24(s)-triol",
+    "stId": "R-HSA-193792",
+    "stIdVersion": "R-HSA-193792.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP27A1 27-hydroxylates 5\u03b2-CHOL3\u03b1,7\u03b1,24(s)-triol",
+      "5beta-cholestan-3alpha,7alpha,24(S)-triol is hydroxylated to 5beta-cholestan-3alpha,7alpha,24(S), 27-tetrol",
+      "5beta-cholestan-3alpha,7alpha,24(S)-triol + NADPH + H+ + O2 => 5beta-cholestan-3alpha,7alpha,24(S),27-tetrol + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193807,
+    "displayName": "Synthesis of bile acids and bile salts via 27-hydroxycholesterol",
+    "stId": "R-HSA-193807",
+    "stIdVersion": "R-HSA-193807.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Synthesis of bile acids and bile salts via 27-hydroxycholesterol"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2018-09-30",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 193824,
+    "displayName": "4-cholesten-7alpha,27-diol-3-one is reduced to 5beta-cholestan-7alpha,27-diol-3-one",
+    "stId": "R-HSA-193824",
+    "stIdVersion": "R-HSA-193824.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "4-cholesten-7alpha,27-diol-3-one is reduced to 5beta-cholestan-7alpha,27-diol-3-one",
+      "4-cholesten-7alpha,27-diol-3-one + NADPH + H+ => 5beta-cholestan-7alpha,27-diol-3-one + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193808,
+    "displayName": "5beta-cholestan-3alpha,7alpha,27-triol is translocated from the cytosol to the mitochondrial matrix",
+    "stId": "R-HSA-193808",
+    "stIdVersion": "R-HSA-193808.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha,7alpha,27-triol is translocated from the cytosol to the mitochondrial matrix"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193841,
+    "displayName": "5beta-cholestan-7alpha,27-diol-3-one is reduced to 5beta-cholestan-3alpha,7alpha,27-triol",
+    "stId": "R-HSA-193841",
+    "stIdVersion": "R-HSA-193841.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-7alpha,27-diol-3-one is reduced to 5beta-cholestan-3alpha,7alpha,27-triol",
+      "5beta-cholestan-7alpha,27-diol-3-one+ NADPH + H+ => 5beta-cholestan-3alpha,7alpha,27-triol + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193812,
+    "displayName": "Efflux of 27-hydroxycholesterol",
+    "stId": "R-HSA-193812",
+    "stIdVersion": "R-HSA-193812.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Efflux of 27-hydroxycholesterol"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 191972,
+    "displayName": "27-hydroxycholesterol is 7alpha-hydroxylated",
+    "stId": "R-HSA-191972",
+    "stIdVersion": "R-HSA-191972.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "27-hydroxycholesterol is 7alpha-hydroxylated",
+      "27-hydroxycholesterol + NADPH + H+ + O2 => cholest-5-ene-3beta,7alpha,27-triol + H2O + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193845,
+    "displayName": "CYP8B1 12-hydroxylates 4CHOL7a,27DONE",
+    "stId": "R-HSA-193845",
+    "stIdVersion": "R-HSA-193845.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP8B1 12-hydroxylates 4CHOL7a,27DONE",
+      "4-Cholesten-7alpha,27-diol-3-one is 12alpha-hydroxylated to 4-Cholesten-7alpha,12alpha,27-triol-3-one",
+      "4-Cholesten-7alpha,27-diol-3-one + NADPH + H+ + O2 => 4-Cholesten-7alpha,12alpha,27-triol-3-one + NADP+ + H2O"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192123,
+    "displayName": "CYP27A1 27-hydroxylates CHOL",
+    "stId": "R-HSA-192123",
+    "stIdVersion": "R-HSA-192123.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CYP27A1 27-hydroxylates CHOL",
+      "cholesterol + NADPH + H+ + O2 => 27-hydroxycholesterol + H2O + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193816,
+    "displayName": "Cholest-5-ene-3beta,7alpha,27-triol is oxidized and isomerized to 4-cholesten-7alpha,27-diol-3-one",
+    "stId": "R-HSA-193816",
+    "stIdVersion": "R-HSA-193816.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Cholest-5-ene-3beta,7alpha,27-triol is oxidized and isomerized to 4-cholesten-7alpha,27-diol-3-one",
+      "Cholest-5-ene-3beta,7alpha,27-triol + NAD+ => 4-cholesten-7alpha,27-diol-3-one +NADH + H+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193800,
+    "displayName": "5Beta-cholestan-7alpha,12alpha,27-triol-3-one is reduced to 5beta-cholestan-3alpha,7alpha,12alpha,27-tetrol",
+    "stId": "R-HSA-193800",
+    "stIdVersion": "R-HSA-193800.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5Beta-cholestan-7alpha,12alpha,27-triol-3-one is reduced to 5beta-cholestan-3alpha,7alpha,12alpha,27-tetrol",
+      "5Beta-cholestan-7alpha,12alpha,27-triol-3-one + NADPH + H+ => 5beta-cholestan-3alpha,7alpha,12alpha,27-tetrol + NAPDP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193832,
+    "displayName": "5beta-cholestan-3alpha,7alpha,12alpha,27-tetrol is translocated from the cytosol to the mitochondrial matrix",
+    "stId": "R-HSA-193832",
+    "stIdVersion": "R-HSA-193832.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "5beta-cholestan-3alpha,7alpha,12alpha,27-tetrol is translocated from the cytosol to the mitochondrial matrix"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 193801,
+    "displayName": "Influx of 27-hydroxycholesterol",
+    "stId": "R-HSA-193801",
+    "stIdVersion": "R-HSA-193801.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Influx of 27-hydroxycholesterol"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 193821,
+    "displayName": "4-cholesten-7alpha,12alpha,27-triol-3-one is reduced to 5beta-cholestan-7alpha,12alpha,27-triol-3-one",
+    "stId": "R-HSA-193821",
+    "stIdVersion": "R-HSA-193821.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "4-cholesten-7alpha,12alpha,27-triol-3-one is reduced to 5beta-cholestan-7alpha,12alpha,27-triol-3-one",
+      "4-cholesten-7alpha,12alpha,27-triol-3-one + NADPH + H+ => 5beta-cholestan-7alpha,12alpha,27-triol-3-one + NADP+"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 191983,
+    "displayName": "Cholesterol is hydroxylated to 25-hydroxycholesterol",
+    "stId": "R-HSA-191983",
+    "stIdVersion": "R-HSA-191983.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Cholesterol is hydroxylated to 25-hydroxycholesterol"
+    ],
+    "releaseDate": "2007-05-15",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  }
+]

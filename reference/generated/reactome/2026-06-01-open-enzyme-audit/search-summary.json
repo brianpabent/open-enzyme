@@ -1,0 +1,3856 @@
+{
+  "complement-cp0": [
+    {
+      "query": "complement cascade",
+      "notFound": false,
+      "entryCount": 72,
+      "top": [
+        {
+          "stId": "R-HSA-166658",
+          "type": "Pathway",
+          "name": "Complement cascade",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2975824",
+          "type": "Set",
+          "name": "Complement factor D",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-981697",
+          "type": "Set",
+          "name": "Complement Factor 4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5368238",
+          "type": "Set",
+          "name": "MRPS18A,B,C",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-977360",
+          "type": "Set",
+          "name": "CD46, CR1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-166822",
+          "type": "Complex",
+          "name": "Complement factor 3",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-981727",
+          "type": "Complex",
+          "name": "Complement factor 4B",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-976801",
+          "type": "Reaction",
+          "name": "Complement factor I complex formation",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "complement C5",
+      "notFound": false,
+      "entryCount": 76,
+      "top": [
+        {
+          "stId": "R-HSA-173676",
+          "type": "Complex",
+          "name": "C5",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9691621",
+          "type": "Reaction",
+          "name": "C5 binds C5 inhibitors",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-173759",
+          "type": "Set",
+          "name": "C5 convertases",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-9691614",
+          "type": "Set",
+          "name": "C5 inhibitors",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-2975824",
+          "type": "Set",
+          "name": "Complement factor D",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-166658",
+          "type": "Pathway",
+          "name": "Complement cascade",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-110289",
+          "type": "OtherEntity",
+          "name": "damaged DNA substrate inserted with correct base complement",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-83893",
+          "type": "OtherEntity",
+          "name": "Heteroduplex DNA with D-loop structure with extended pairing between invading strand and complementary heteroduplex strand",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "C5a receptor",
+      "notFound": false,
+      "entryCount": 84,
+      "top": [
+        {
+          "stId": "R-HSA-375395",
+          "type": "Reaction",
+          "name": "C5a receptor binds C5a anaphylatoxin",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9957405",
+          "type": "Reaction",
+          "name": "C5a binds C5a inhibitor",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-173677",
+          "type": "Protein",
+          "name": "C5a",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8852798",
+          "type": "Protein",
+          "name": "C5a-desArg",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8852810",
+          "type": "Set",
+          "name": "C3a, C5a",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1181129",
+          "type": "Set",
+          "name": "p-Nodal Receptor",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9712173",
+          "type": "Set",
+          "name": "odorant:Olfactory receptor",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9922619",
+          "type": "Genes and Transcripts",
+          "name": "Unknown  receptor",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "classical complement pathway",
+      "notFound": false,
+      "entryCount": 82,
+      "top": [
+        {
+          "stId": "R-HSA-166665",
+          "type": "Pathway",
+          "name": "Terminal pathway of complement",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-173623",
+          "type": "Pathway",
+          "name": "Classical antibody-mediated complement activation",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2975824",
+          "type": "Set",
+          "name": "Complement factor D",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-981697",
+          "type": "Set",
+          "name": "Complement Factor 4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-3858483",
+          "type": "Set",
+          "name": "PCP pathway WNTs",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-3858485",
+          "type": "Set",
+          "name": "PCP pathway FZDs",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-166822",
+          "type": "Complex",
+          "name": "Complement factor 3",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-981727",
+          "type": "Complex",
+          "name": "Complement factor 4B",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "alternative complement pathway",
+      "notFound": false,
+      "entryCount": 81,
+      "top": [
+        {
+          "stId": "R-HSA-173736",
+          "type": "Pathway",
+          "name": "Alternative complement activation",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-166665",
+          "type": "Pathway",
+          "name": "Terminal pathway of complement",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-174551",
+          "type": "Reaction",
+          "name": "Formation of alternative pathway C5 convertase",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-964759",
+          "type": "Reaction",
+          "name": "Alternative endo-mannosidase I route",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2975824",
+          "type": "Set",
+          "name": "Complement factor D",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9769564",
+          "type": "Set",
+          "name": "Alternative Splicing Factors",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-166822",
+          "type": "Complex",
+          "name": "Complement factor 3",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-981727",
+          "type": "Complex",
+          "name": "Complement factor 4B",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "factor H",
+      "notFound": false,
+      "entryCount": 88,
+      "top": [
+        {
+          "stId": "R-HSA-141766",
+          "type": "Protein",
+          "name": "factor V",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-140697",
+          "type": "Protein",
+          "name": "factor V",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9855700",
+          "type": "Protein",
+          "name": "factor XII",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-158214",
+          "type": "Protein",
+          "name": "factor XII",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5689447",
+          "type": "Protein",
+          "name": "Factor V precursor",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-140739",
+          "type": "Complex",
+          "name": "factor X",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-159785",
+          "type": "Complex",
+          "name": "factor X",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-977371",
+          "type": "Reaction",
+          "name": "Factor I inactivates Factor H-boundC3b",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "factor I",
+      "notFound": false,
+      "entryCount": 88,
+      "top": [
+        {
+          "stId": "R-HSA-141766",
+          "type": "Protein",
+          "name": "factor V",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-140697",
+          "type": "Protein",
+          "name": "factor V",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9855700",
+          "type": "Protein",
+          "name": "factor XII",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-158214",
+          "type": "Protein",
+          "name": "factor XII",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5689447",
+          "type": "Protein",
+          "name": "Factor V precursor",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-140739",
+          "type": "Complex",
+          "name": "factor X",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-159785",
+          "type": "Complex",
+          "name": "factor X",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-977371",
+          "type": "Reaction",
+          "name": "Factor I inactivates Factor H-boundC3b",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "CD55",
+      "notFound": false,
+      "entryCount": 43,
+      "top": [
+        {
+          "stId": "R-HSA-982830",
+          "type": "Protein",
+          "name": "CD55",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6803302",
+          "type": "Protein",
+          "name": "CD55",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6803304",
+          "type": "Protein",
+          "name": "CD55",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-879667",
+          "type": "Protein",
+          "name": "CD55",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6807756",
+          "type": "Protein",
+          "name": "GPI-CD55",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6808771",
+          "type": "Protein",
+          "name": "GPI-CD55",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6808768",
+          "type": "Protein",
+          "name": "GPI-CD55",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-981657",
+          "type": "Set",
+          "name": "CD55:C3 convertase complexes",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "C1 inhibitor",
+      "notFound": false,
+      "entryCount": 83,
+      "top": [
+        {
+          "stId": "R-ALL-9687653",
+          "type": "Drug",
+          "name": "GSK-3beta inhibitor I",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9687679",
+          "type": "Drug",
+          "name": "GSK-3beta inhibitor II",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9687667",
+          "type": "Drug",
+          "name": "GSK-3beta inhibitor VIII",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9687668",
+          "type": "Drug",
+          "name": "GSK-3 inhibitor XIII",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9755133",
+          "type": "Drug",
+          "name": "K00024",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9687684",
+          "type": "Drug",
+          "name": "TWS119",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9724743",
+          "type": "Drug",
+          "name": "aprotinin",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9735956",
+          "type": "Drug",
+          "name": "SU11274",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    }
+  ],
+  "urate-transport": [
+    {
+      "query": "URAT1",
+      "notFound": false,
+      "entryCount": 18,
+      "top": [
+        {
+          "stId": "R-HSA-561253",
+          "type": "Reaction",
+          "name": "SLC22A12 exchanges extracellular urate for cytosolic LACT",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-561098",
+          "type": "Protein",
+          "name": "SLC22A12",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625207",
+          "type": "Protein",
+          "name": "SLC22A12 L418R",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625202",
+          "type": "Protein",
+          "name": "SLC22A12 G361V",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625225",
+          "type": "Protein",
+          "name": "SLC22A12 R90H",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625256",
+          "type": "Protein",
+          "name": "SLC22A12 E298D",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625258",
+          "type": "Protein",
+          "name": "SLC22A12 W258*",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-561048",
+          "type": "Pathway",
+          "name": "Organic anion transport by SLC22 transporters",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "SLC22A12",
+      "notFound": false,
+      "entryCount": 26,
+      "top": [
+        {
+          "stId": "R-HSA-561098",
+          "type": "Protein",
+          "name": "SLC22A12",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625207",
+          "type": "Protein",
+          "name": "SLC22A12 L418R",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625202",
+          "type": "Protein",
+          "name": "SLC22A12 G361V",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625225",
+          "type": "Protein",
+          "name": "SLC22A12 R90H",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625256",
+          "type": "Protein",
+          "name": "SLC22A12 E298D",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625258",
+          "type": "Protein",
+          "name": "SLC22A12 W258*",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5625250",
+          "type": "Set",
+          "name": "SLC22A12 mutants",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-561253",
+          "type": "Reaction",
+          "name": "SLC22A12 exchanges extracellular urate for cytosolic LACT",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "SLC2A9",
+      "notFound": false,
+      "entryCount": 28,
+      "top": [
+        {
+          "stId": "R-HSA-429065",
+          "type": "Protein",
+          "name": "SLC2A9",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5638230",
+          "type": "Protein",
+          "name": "SLC2A9 R380W",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5638240",
+          "type": "Protein",
+          "name": "SLC2A9 L75R",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5638188",
+          "type": "Protein",
+          "name": "SLC2A9 T125M",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5638203",
+          "type": "Protein",
+          "name": "SLC2A9 W23*",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5638184",
+          "type": "Protein",
+          "name": "SLC2A9 G216R",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5638232",
+          "type": "Protein",
+          "name": "SLC2A9 R198C",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5638265",
+          "type": "Protein",
+          "name": "SLC2A9 R171C",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "ABCG2",
+      "notFound": false,
+      "entryCount": 45,
+      "top": [
+        {
+          "stId": "R-HSA-917929",
+          "type": "Protein",
+          "name": "HC-ABCG2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9794401",
+          "type": "Protein",
+          "name": "HC-ABCG2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-917863",
+          "type": "Complex",
+          "name": "ABCG2 tetramer",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9794404",
+          "type": "Complex",
+          "name": "ABCG2 tetramer",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9661431",
+          "type": "Complex",
+          "name": "ABCG2 tetramer",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9795742",
+          "type": "DNA Sequence",
+          "name": "ABCG2 gene",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9753567",
+          "type": "Set",
+          "name": "ABCC2, ABCG2 tetramer",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9796076",
+          "type": "Reaction",
+          "name": "NFE2L2 dependent ABCG2 expression",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "urate transporter",
+      "notFound": false,
+      "entryCount": 83,
+      "top": [
+        {
+          "stId": "R-HSA-9911707",
+          "type": "Genes and Transcripts",
+          "name": "transporter",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9938881",
+          "type": "Genes and Transcripts",
+          "name": "unknown transporter",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-390344",
+          "type": "Genes and Transcripts",
+          "name": "isocitrate-oxoglutarate transporter",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9954156",
+          "type": "Genes and Transcripts",
+          "name": "unknown PI transporter",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-30034",
+          "type": "Chemical Compound",
+          "name": "urate",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-429056",
+          "type": "Chemical Compound",
+          "name": "urate",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-5619102",
+          "type": "Pathway",
+          "name": "SLC transporter disorders",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5619084",
+          "type": "Pathway",
+          "name": "ABC transporter disorders",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "ABCG2 urate",
+      "notFound": false,
+      "entryCount": 54,
+      "top": [
+        {
+          "stId": "R-HSA-917929",
+          "type": "Protein",
+          "name": "HC-ABCG2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9794401",
+          "type": "Protein",
+          "name": "HC-ABCG2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-30034",
+          "type": "Chemical Compound",
+          "name": "urate",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-429056",
+          "type": "Chemical Compound",
+          "name": "urate",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-5619071",
+          "type": "Pathway",
+          "name": "Defective SLC22A12 causes renal hypouricemia 1 (RHUC1)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2161517",
+          "type": "Pathway",
+          "name": "Abacavir transmembrane transport",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5619047",
+          "type": "Pathway",
+          "name": "Defective SLC2A9 causes hypouricemia renal 2 (RHUC2)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9734281",
+          "type": "Pathway",
+          "name": "Defective HPRT1 disrupts guanine and hypoxanthine salvage",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    }
+  ],
+  "purine-catabolism": [
+    {
+      "query": "purine catabolism",
+      "notFound": false,
+      "entryCount": 64,
+      "top": [
+        {
+          "stId": "R-HSA-74259",
+          "type": "Pathway",
+          "name": "Purine catabolism",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-170037",
+          "type": "Set",
+          "name": "Purine nucleotide",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-9735776",
+          "type": "Set",
+          "name": "PNP trimer mutants",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-500124",
+          "type": "Set",
+          "name": "(d)A, (d)G, (d)I",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-6789054",
+          "type": "Set",
+          "name": "dA, dG within DNA",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-500125",
+          "type": "Set",
+          "name": "(d)AMP, (d)GMP, (d)IMP",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-9700080",
+          "type": "Set",
+          "name": "ALK fusion proteins",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-374909",
+          "type": "Reaction",
+          "name": "Catabolism of Noradrenaline",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "XDH",
+      "notFound": false,
+      "entryCount": 32,
+      "top": [
+        {
+          "stId": "R-HSA-67421",
+          "type": "Protein",
+          "name": "XDH",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-74244",
+          "type": "Complex",
+          "name": "XDH dimer",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9748991",
+          "type": "Reaction",
+          "name": "XDH oxidises 6MP to 6TU",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9734281",
+          "type": "Pathway",
+          "name": "Defective HPRT1 disrupts guanine and hypoxanthine salvage",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9748787",
+          "type": "Pathway",
+          "name": "Azathioprine ADME",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "hypoxanthine",
+      "notFound": false,
+      "entryCount": 33,
+      "top": [
+        {
+          "stId": "R-ALL-83957",
+          "type": "Chemical Compound",
+          "name": "Hyp",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-113599",
+          "type": "Chemical Compound",
+          "name": "Hyp",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-29850",
+          "type": "Chemical Compound",
+          "name": "Hyp",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-110251",
+          "type": "Reaction",
+          "name": "Cleavage of hypoxanthine by MPG glycosylase",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9734281",
+          "type": "Pathway",
+          "name": "Defective HPRT1 disrupts guanine and hypoxanthine salvage",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-110331",
+          "type": "Pathway",
+          "name": "Cleavage of the damaged purine",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9735763",
+          "type": "Pathway",
+          "name": "Defective PNP disrupts phosphorolysis of (deoxy)guanosine and (deoxy)inosine",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-74259",
+          "type": "Pathway",
+          "name": "Purine catabolism",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "xanthine",
+      "notFound": false,
+      "entryCount": 20,
+      "top": [
+        {
+          "stId": "R-HSA-9727349",
+          "type": "Reaction",
+          "name": "XDH dehydrogenates xanthine to form urate",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-74258",
+          "type": "Reaction",
+          "name": "XDH oxidizes xanthine to form urate",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9727347",
+          "type": "Reaction",
+          "name": "XDH dehydrogenates hypoxanthine to form xanthine",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-74247",
+          "type": "Reaction",
+          "name": "XDH oxidizes hypoxanthine to form xanthine",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8851044",
+          "type": "Reaction",
+          "name": "BTN1A1 binds xanthine oxidoreductase (XDH)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-30064",
+          "type": "Chemical Compound",
+          "name": "XAN",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-67421",
+          "type": "Protein",
+          "name": "XDH",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-74244",
+          "type": "Complex",
+          "name": "XDH dimer",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "urate synthesis",
+      "notFound": false,
+      "entryCount": 68,
+      "top": [
+        {
+          "stId": "R-HSA-1483191",
+          "type": "Pathway",
+          "name": "Synthesis of PC",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1483213",
+          "type": "Pathway",
+          "name": "Synthesis of PE",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1483166",
+          "type": "Pathway",
+          "name": "Synthesis of PA",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1483101",
+          "type": "Pathway",
+          "name": "Synthesis of PS",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1483226",
+          "type": "Pathway",
+          "name": "Synthesis of PI",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1483076",
+          "type": "Pathway",
+          "name": "Synthesis of CL",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1483148",
+          "type": "Pathway",
+          "name": "Synthesis of PG",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-69239",
+          "type": "Pathway",
+          "name": "Synthesis of DNA",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "uric acid",
+      "notFound": false,
+      "entryCount": 98,
+      "top": [
+        {
+          "stId": "R-ALL-9693333",
+          "type": "Chemical Compound",
+          "name": "diethyldithiocarbamic acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-3296310",
+          "type": "Chemical Compound",
+          "name": "3-hydroxybutyric acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9750005",
+          "type": "Chemical Compound",
+          "name": "gentisuric acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9750685",
+          "type": "Chemical Compound",
+          "name": "gentisuric acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9750664",
+          "type": "Chemical Compound",
+          "name": "gentisuric acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9753748",
+          "type": "Chemical Compound",
+          "name": "heptanoic acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-3296226",
+          "type": "Chemical Compound",
+          "name": "3-hydroxyoctanoic acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9728958",
+          "type": "Chemical Compound",
+          "name": "flufenamic acid",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    }
+  ],
+  "il1-pyroptosis": [
+    {
+      "query": "IL-1 family signaling",
+      "notFound": false,
+      "entryCount": 81,
+      "top": [
+        {
+          "stId": "R-HSA-446652",
+          "type": "Pathway",
+          "name": "Interleukin-1 family signaling",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6783589",
+          "type": "Pathway",
+          "name": "Interleukin-6 family signaling",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-451927",
+          "type": "Pathway",
+          "name": "Interleukin-2 family signaling",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5682694",
+          "type": "Set",
+          "name": "LC3 family",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5683629",
+          "type": "Set",
+          "name": "LC3 family",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2029115",
+          "type": "Set",
+          "name": "p-VAV family",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1464792",
+          "type": "Set",
+          "name": "Fringe family",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-975431",
+          "type": "Set",
+          "name": "ASB family",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "interleukin-1 signaling",
+      "notFound": false,
+      "entryCount": 79,
+      "top": [
+        {
+          "stId": "R-HSA-9020702",
+          "type": "Pathway",
+          "name": "Interleukin-1 signaling",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-449063",
+          "type": "Set",
+          "name": "Interleukin-1 family",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-449027",
+          "type": "Set",
+          "name": "Interleukin-1 family",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-449058",
+          "type": "Reaction",
+          "name": "Interleukin-1 family are secreted",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-448703",
+          "type": "Reaction",
+          "name": "Interleukin-1 family precursors are cleaved by caspase-1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-176281",
+          "type": "Complex",
+          "name": "ATR:ATRIP:RPA:ssDNA signaling complex",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-913393",
+          "type": "Complex",
+          "name": "Interleukin receptor complexes with activated SHC1:SHIP1,2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-913378",
+          "type": "Complex",
+          "name": "Interleukin receptor complexes with activated SHC1:SHIP1",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "pyroptosis",
+      "notFound": false,
+      "entryCount": 26,
+      "top": [
+        {
+          "stId": "R-HSA-5620971",
+          "type": "Pathway",
+          "name": "Pyroptosis",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9716258",
+          "type": "Reaction",
+          "name": "Dimethyl fumarate modifies Cys191 in GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9956602",
+          "type": "Reaction",
+          "name": "CALM binds bacterial OspC3",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9710294",
+          "type": "Reaction",
+          "name": "GSDMD expression mediated by IRF2, IRF1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9956624",
+          "type": "Reaction",
+          "name": "OspC3 ADP-riboxanates CASP4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9710295",
+          "type": "Reaction",
+          "name": "IRF2 or IRF1 binds the GSDMD gene promoter",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9947861",
+          "type": "Reaction",
+          "name": "CASP4 autocatalysis on LPS micelles",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9686088",
+          "type": "Reaction",
+          "name": "CASP3 cleaves GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "gasdermin D",
+      "notFound": false,
+      "entryCount": 30,
+      "top": [
+        {
+          "stId": "R-HSA-9647620",
+          "type": "Protein",
+          "name": "GSDME",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9647689",
+          "type": "Protein",
+          "name": "GSDME(1-270)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9647641",
+          "type": "Protein",
+          "name": "GSDMD(1-275)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9710104",
+          "type": "Protein",
+          "name": "GSDMD(1-268)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9647615",
+          "type": "Protein",
+          "name": "GSDME (271-496)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9686099",
+          "type": "Protein",
+          "name": "GSDMD(1-87)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6801577",
+          "type": "Protein",
+          "name": "GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6801498",
+          "type": "Protein",
+          "name": "GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "caspase-1",
+      "notFound": false,
+      "entryCount": 71,
+      "top": [
+        {
+          "stId": "R-HSA-448691",
+          "type": "Complex",
+          "name": "Caspase-1 tetramer",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9731024",
+          "type": "Complex",
+          "name": "caspase-1 tetramer:O-glycosyl 3a",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-350870",
+          "type": "Complex",
+          "name": "Caspase-3",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-448702",
+          "type": "Reaction",
+          "name": "Caspase-1 active tetramer formation",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9731057",
+          "type": "Reaction",
+          "name": "SARS-CoV-1 3a binds to caspase-1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-448673",
+          "type": "Reaction",
+          "name": "Formation of caspase-1 p10/p20 dimer",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-202877",
+          "type": "Set",
+          "name": "Caspase-3, Caspase-7",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-351835",
+          "type": "Genes and Transcripts",
+          "name": "unidentified caspase",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "GSDMD",
+      "notFound": false,
+      "entryCount": 43,
+      "top": [
+        {
+          "stId": "R-HSA-6801577",
+          "type": "Protein",
+          "name": "GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6801498",
+          "type": "Protein",
+          "name": "GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6801468",
+          "type": "Protein",
+          "name": "GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6801576",
+          "type": "Protein",
+          "name": "GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6801501",
+          "type": "Protein",
+          "name": "GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9686099",
+          "type": "Protein",
+          "name": "GSDMD(1-87)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9647641",
+          "type": "Protein",
+          "name": "GSDMD(1-275)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9710104",
+          "type": "Protein",
+          "name": "GSDMD(1-268)",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    }
+  ],
+  "stress-response": [
+    {
+      "query": "autophagy",
+      "notFound": false,
+      "entryCount": 48,
+      "top": [
+        {
+          "stId": "R-HSA-9612973",
+          "type": "Pathway",
+          "name": "Autophagy",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9625158",
+          "type": "Set",
+          "name": "Substrates for chaperone mediated autophagy",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9615715",
+          "type": "Set",
+          "name": "Substrates for chaperone mediated autophagy",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9631109",
+          "type": "Set",
+          "name": "Substrates for chaperone mediated autophagy",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9631070",
+          "type": "Complex",
+          "name": "PL:HSPA8:Autophagy substrate",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9631107",
+          "type": "Complex",
+          "name": "PL:HSPA8:Autophagy substrate",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9754785",
+          "type": "Complex",
+          "name": "TUFM:M",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6809252",
+          "type": "Complex",
+          "name": "MTMR8:MTMR9",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "mitophagy",
+      "notFound": false,
+      "entryCount": 30,
+      "top": [
+        {
+          "stId": "R-HSA-5205647",
+          "type": "Pathway",
+          "name": "Mitophagy",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5205659",
+          "type": "Complex",
+          "name": "K48polyUB Mitophagy Substrates:SQSTM1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9824888",
+          "type": "Reaction",
+          "name": "OPTN, TBK1 bind ubiquitinated MOM proteins",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8948136",
+          "type": "Reaction",
+          "name": "ULK1 Translocates to the mitochondria",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8948146",
+          "type": "Reaction",
+          "name": "FUNDC1 is phosphorylated by ULK1 at Ser17",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5696872",
+          "type": "Reaction",
+          "name": "USP30 deubiquitinates Ub-MOM proteins",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9840807",
+          "type": "Reaction",
+          "name": "OPTN binds ATG9A",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8948039",
+          "type": "Reaction",
+          "name": "FUNDC1 is phosphorylated by CK2",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "NFE2L2",
+      "notFound": false,
+      "entryCount": 61,
+      "top": [
+        {
+          "stId": "R-HSA-201566",
+          "type": "Protein",
+          "name": "NFE2L2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9762050",
+          "type": "Protein",
+          "name": "p-S40, S344, S347- NFE2L2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9762058",
+          "type": "Protein",
+          "name": "ub-p-S40, S335, S338- NFE2L2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9715110",
+          "type": "Protein",
+          "name": "p-S,T-NFE2L2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8932311",
+          "type": "Protein",
+          "name": "p-S,T-NFE2L2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9758077",
+          "type": "Protein",
+          "name": "ub-NFE2L2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9715109",
+          "type": "Protein",
+          "name": "p-S40-NFE2L2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8932290",
+          "type": "Protein",
+          "name": "p-S40-NFE2L2",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "KEAP1",
+      "notFound": false,
+      "entryCount": 59,
+      "top": [
+        {
+          "stId": "R-HSA-976038",
+          "type": "Protein",
+          "name": "KEAP1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9766647",
+          "type": "Protein",
+          "name": "ub-KEAP1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6782766",
+          "type": "Protein",
+          "name": "Ub-KEAP1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8962726",
+          "type": "DNA Sequence",
+          "name": "KEAP1 gene",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6781778",
+          "type": "Set",
+          "name": "SMAD1,SMAD2,SMAD3,KEAP1,SMAD7:SMURF2:TGFBR1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9766645",
+          "type": "Reaction",
+          "name": "CUL3:RBX1 ubiquitinates KEAP1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9755511",
+          "type": "Pathway",
+          "name": "KEAP1-NFE2L2 pathway",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-8932333",
+          "type": "Complex",
+          "name": "KEAP1:NEDD8-CUL3:RBX1",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "glutathione",
+      "notFound": false,
+      "entryCount": 60,
+      "top": [
+        {
+          "stId": "R-HSA-156590",
+          "type": "Pathway",
+          "name": "Glutathione conjugation",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-1500783",
+          "type": "Chemical Compound",
+          "name": "GSH",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-1655887",
+          "type": "Chemical Compound",
+          "name": "GSH",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-1247892",
+          "type": "Chemical Compound",
+          "name": "GSH",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-2239524",
+          "type": "Chemical Compound",
+          "name": "GSH",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-158543",
+          "type": "Chemical Compound",
+          "name": "GSH",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-159214",
+          "type": "Chemical Compound",
+          "name": "Aflatoxin exo-8,9-oxide glutathione conjugate",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-111745",
+          "type": "Chemical Compound",
+          "name": "GSSG",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "NRF2 oxidative stress",
+      "notFound": false,
+      "entryCount": 73,
+      "top": [
+        {
+          "stId": "R-HSA-2559580",
+          "type": "Pathway",
+          "name": "Oxidative Stress Induced Senescence",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1592226",
+          "type": "Complex",
+          "name": "NRF2",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9620515",
+          "type": "Reaction",
+          "name": "KAT2B,EP300 acetylate FOXO3 under oxidative stress",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1592200",
+          "type": "Protein",
+          "name": "NRF2 beta-2 subunit",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1592216",
+          "type": "Protein",
+          "name": "NRF2 gamma-1 subunit",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1592201",
+          "type": "Protein",
+          "name": "NRF2 beta-1 subunit",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1592211",
+          "type": "Protein",
+          "name": "NRF2 gamma-2 subunit",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2466378",
+          "type": "Set",
+          "name": "TFB2M gene:NRF1:NRF2:p-PPARGC1A,PPRC1",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    }
+  ],
+  "barrier-tight-junction": [
+    {
+      "query": "tight junction",
+      "notFound": false,
+      "entryCount": 75,
+      "top": [
+        {
+          "stId": "R-HSA-2134514",
+          "type": "Complex",
+          "name": "Tight Junction Complex:PARD6A:RHOA",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2134529",
+          "type": "Complex",
+          "name": "Tight Junction Complex:p-PARD6A:RHOA",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2134509",
+          "type": "Complex",
+          "name": "Tight Junction Complex:TGFBR1:PARD6A:RHOA",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-420029",
+          "type": "Pathway",
+          "name": "Tight junction interactions",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-190861",
+          "type": "Pathway",
+          "name": "Gap junction assembly",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-190828",
+          "type": "Pathway",
+          "name": "Gap junction trafficking",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2160931",
+          "type": "Reaction",
+          "name": "Disassembly of tight junctions",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-927796",
+          "type": "OtherEntity",
+          "name": "mRNA with premature termination codon preceding exon junction",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "epithelial barrier",
+      "notFound": false,
+      "entryCount": 78,
+      "top": [
+        {
+          "stId": "R-HSA-6809602",
+          "type": "Set",
+          "name": "Keratin type I, epithelial",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6809639",
+          "type": "Set",
+          "name": "Keratin type II, epithelial",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-199079",
+          "type": "Reaction",
+          "name": "Epithelial cadherin binds to KLRG1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-209910",
+          "type": "Reaction",
+          "name": "Iodide is taken up by thyroid epithelial cells",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9638630",
+          "type": "Pathway",
+          "name": "Attachment of bacteria to epithelial cells",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9927418",
+          "type": "Pathway",
+          "name": "Developmental Lineage of Mammary Gland Luminal Epithelial Cells",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9758919",
+          "type": "Pathway",
+          "name": "Epithelial-Mesenchymal Transition (EMT) during gastrulation",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2173791",
+          "type": "Pathway",
+          "name": "TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition)",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "TGF beta tight junction",
+      "notFound": false,
+      "entryCount": 99,
+      "top": [
+        {
+          "stId": "R-HSA-114507",
+          "type": "Set",
+          "name": "TGF beta ",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-114657",
+          "type": "Set",
+          "name": "TGF beta ",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2134514",
+          "type": "Complex",
+          "name": "Tight Junction Complex:PARD6A:RHOA",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2134529",
+          "type": "Complex",
+          "name": "Tight Junction Complex:p-PARD6A:RHOA",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2134509",
+          "type": "Complex",
+          "name": "Tight Junction Complex:TGFBR1:PARD6A:RHOA",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-420029",
+          "type": "Pathway",
+          "name": "Tight junction interactions",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1461957",
+          "type": "Pathway",
+          "name": "Beta defensins",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-190861",
+          "type": "Pathway",
+          "name": "Gap junction assembly",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "intestinal inflammation",
+      "notFound": false,
+      "entryCount": 75,
+      "top": [
+        {
+          "stId": "R-HSA-8963676",
+          "type": "Pathway",
+          "name": "Intestinal absorption",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-381799",
+          "type": "Reaction",
+          "name": "Synthesis of Preproglucagon in intestinal L cells",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9794352",
+          "type": "Reaction",
+          "name": "Basolateral transport of Cipro into intestinal cell",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-383313",
+          "type": "Reaction",
+          "name": "Glucagon-like Peptide 1 is secreted from intestinal L cells",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-9714289",
+          "type": "Drug",
+          "name": "desoximetasone",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9957455",
+          "type": "Drug",
+          "name": "avdoralimab",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9693326",
+          "type": "Drug",
+          "name": "Disulfiram",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9681764",
+          "type": "Drug",
+          "name": "isunakinra",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "TLR4",
+      "notFound": false,
+      "entryCount": 52,
+      "top": [
+        {
+          "stId": "R-HSA-2201285",
+          "type": "Protein",
+          "name": "TLR4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-166045",
+          "type": "Protein",
+          "name": "2xN4GlycoAsn-TLR4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2569052",
+          "type": "Set",
+          "name": "TRIF:activated TLR4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2569055",
+          "type": "Set",
+          "name": "RIP3:TICAM1:activated TLR4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-166166",
+          "type": "Pathway",
+          "name": "MyD88-independent TLR4 cascade ",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2569054",
+          "type": "Complex",
+          "name": "RIP3:TICAM1:activated TLR4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2569053",
+          "type": "Complex",
+          "name": "RIP3:RIP1:TICAM1:activated TLR4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9707659",
+          "type": "Reaction",
+          "name": "Hemes:LY96 activates TLR4",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "lipopolysaccharide TLR4",
+      "notFound": false,
+      "entryCount": 60,
+      "top": [
+        {
+          "stId": "R-HSA-2201285",
+          "type": "Protein",
+          "name": "TLR4",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-2201311",
+          "type": "Chemical Compound",
+          "name": "LPS",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-166005",
+          "type": "Chemical Compound",
+          "name": "LPS",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-433850",
+          "type": "Chemical Compound",
+          "name": "LPS",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9686105",
+          "type": "Chemical Compound",
+          "name": "LPS micelles",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-6803081",
+          "type": "Chemical Compound",
+          "name": "LPS",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-2239413",
+          "type": "Chemical Compound",
+          "name": "LPS",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-2569052",
+          "type": "Set",
+          "name": "TRIF:activated TLR4",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    }
+  ],
+  "digestive-epi": [
+    {
+      "query": "amylase",
+      "notFound": false,
+      "entryCount": 32,
+      "top": [
+        {
+          "stId": "R-HSA-188979",
+          "type": "Reaction",
+          "name": "Digestion of linear starch (amylose) by extracellular amylase",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-191114",
+          "type": "Reaction",
+          "name": "Digestion of branched starch (amylopectin) by extracellular amylase",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-189046",
+          "type": "Set",
+          "name": "alpha-amylase",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9922553",
+          "type": "Protein",
+          "name": "AMY2A",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-189057",
+          "type": "Protein",
+          "name": "AMY2B",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-189041",
+          "type": "Protein",
+          "name": "AMY2A",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9716180",
+          "type": "Protein",
+          "name": "AMY1A",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9716182",
+          "type": "Protein",
+          "name": "AMY1C",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "lipase",
+      "notFound": false,
+      "entryCount": 47,
+      "top": [
+        {
+          "stId": "R-HSA-426024",
+          "type": "Set",
+          "name": "Diacylglycerol lipase",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6785172",
+          "type": "Protein",
+          "name": "LIPC",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5694065",
+          "type": "Protein",
+          "name": "LIPC",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-174603",
+          "type": "Protein",
+          "name": "LIPC",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9922845",
+          "type": "Protein",
+          "name": "PNLIP",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-192419",
+          "type": "Protein",
+          "name": "PNLIP",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-426055",
+          "type": "Protein",
+          "name": "MGLL",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-174605",
+          "type": "Protein",
+          "name": "LPL",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "protease digestion",
+      "notFound": false,
+      "entryCount": 71,
+      "top": [
+        {
+          "stId": "R-HSA-9697043",
+          "type": "Reaction",
+          "name": "Protease binds protease inhibitors",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-3065958",
+          "type": "Reaction",
+          "name": "An unknown protease degrades ACACA",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-4167501",
+          "type": "Reaction",
+          "name": "An unknown protease degrades ACACB",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-3065959",
+          "type": "Reaction",
+          "name": "An unknown protease degrades hCBXs",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9954667",
+          "type": "Reaction",
+          "name": "NS2B3 binds Dengue protease inhibitors",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-3244626",
+          "type": "Reaction",
+          "name": "DENV protease NS2B3 cleaves STING",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-3244618",
+          "type": "Reaction",
+          "name": "DENV protease NS2B3 binds STING",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-192434",
+          "type": "Reaction",
+          "name": "Digestion of diacylglycerols by extracellular PTL:colipase",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "pancreatic secretion",
+      "notFound": false,
+      "entryCount": 73,
+      "top": [
+        {
+          "stId": "R-HSA-9760173",
+          "type": "Pathway",
+          "name": "Secretion of toxins",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-422356",
+          "type": "Pathway",
+          "name": "Regulation of insulin secretion",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9673218",
+          "type": "Pathway",
+          "name": "Defective F9 secretion",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9672397",
+          "type": "Pathway",
+          "name": "Defective F8 secretion",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2089971",
+          "type": "Reaction",
+          "name": "Secretion of collagens",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-4837364",
+          "type": "Reaction",
+          "name": "Secretion of SOD3",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9853405",
+          "type": "Cell",
+          "name": "pancreatic ductal cell",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9820466",
+          "type": "Cell",
+          "name": "pancreatic acinar cell",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "digestive enzyme secretion",
+      "notFound": false,
+      "entryCount": 84,
+      "top": [
+        {
+          "stId": "R-HSA-8979998",
+          "type": "Set",
+          "name": "digestive LIPs",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9946782",
+          "type": "Genes and Transcripts",
+          "name": "Unknown enzyme",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9760173",
+          "type": "Pathway",
+          "name": "Secretion of toxins",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-422356",
+          "type": "Pathway",
+          "name": "Regulation of insulin secretion",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9673218",
+          "type": "Pathway",
+          "name": "Defective F9 secretion",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9672397",
+          "type": "Pathway",
+          "name": "Defective F8 secretion",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2089971",
+          "type": "Reaction",
+          "name": "Secretion of collagens",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-4837364",
+          "type": "Reaction",
+          "name": "Secretion of SOD3",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "trypsin digestion",
+      "notFound": false,
+      "entryCount": 50,
+      "top": [
+        {
+          "stId": "R-HSA-8935690",
+          "type": "Pathway",
+          "name": "Digestion",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1460242",
+          "type": "Set",
+          "name": "Trypsin 2, 3",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1604696",
+          "type": "Set",
+          "name": "Trypsin, plasmin",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1461993",
+          "type": "Reaction",
+          "name": "pro-HD5 is cleaved by trypsin",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1604712",
+          "type": "Reaction",
+          "name": "Initial activation of proMMP7 by trypsin",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-173789",
+          "type": "Complex",
+          "name": "RTC with extensive RNase-H digestion",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5244509",
+          "type": "Complex",
+          "name": "botE:SV2:GT1b",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-158774",
+          "type": "OtherEntity",
+          "name": "fibrin digestion products (plasmin)",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    }
+  ],
+  "bile-chaperone": [
+    {
+      "query": "bile acid metabolism",
+      "notFound": false,
+      "entryCount": 99,
+      "top": [
+        {
+          "stId": "R-HSA-194068",
+          "type": "Pathway",
+          "name": "Bile acid and bile salt metabolism",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-444654",
+          "type": "Reaction",
+          "name": "G-protein coupled bile acid receptor binds lithocholic acid",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9733973",
+          "type": "Reaction",
+          "name": "Bile salts bind FABP6",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-444840",
+          "type": "Set",
+          "name": "Bile acids",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-193416",
+          "type": "Set",
+          "name": "bile salts",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-193479",
+          "type": "Set",
+          "name": "bile salts",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-193448",
+          "type": "Set",
+          "name": "bile salts",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-192483",
+          "type": "Set",
+          "name": "bile salts and acids",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "TUDCA",
+      "notFound": true,
+      "entryCount": 0,
+      "top": []
+    },
+    {
+      "query": "ursodeoxycholic acid",
+      "notFound": false,
+      "entryCount": 98,
+      "top": [
+        {
+          "stId": "R-ALL-9693333",
+          "type": "Chemical Compound",
+          "name": "diethyldithiocarbamic acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-3296310",
+          "type": "Chemical Compound",
+          "name": "3-hydroxybutyric acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9750005",
+          "type": "Chemical Compound",
+          "name": "gentisuric acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9750685",
+          "type": "Chemical Compound",
+          "name": "gentisuric acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9750664",
+          "type": "Chemical Compound",
+          "name": "gentisuric acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9753748",
+          "type": "Chemical Compound",
+          "name": "heptanoic acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-3296226",
+          "type": "Chemical Compound",
+          "name": "3-hydroxyoctanoic acid",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9728958",
+          "type": "Chemical Compound",
+          "name": "flufenamic acid",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "protein folding",
+      "notFound": false,
+      "entryCount": 99,
+      "top": [
+        {
+          "stId": "R-HSA-391251",
+          "type": "Pathway",
+          "name": "Protein folding",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9958377",
+          "type": "Set",
+          "name": "OTC variants that disrupt folding and protein protein interactions",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9617127",
+          "type": "Set",
+          "name": "TUBA3C/3D folding intermediate",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-391244",
+          "type": "Set",
+          "name": "beta-tubulin folding intermediate",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-391247",
+          "type": "Set",
+          "name": "alpha-tubulin folding intermediate",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-391243",
+          "type": "Set",
+          "name": "alpha/beta tubulin folding intermediate",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-976085",
+          "type": "Set",
+          "name": "F-box protein",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-6797561",
+          "type": "Set",
+          "name": "Protein 4.1",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "ER stress",
+      "notFound": false,
+      "entryCount": 77,
+      "top": [
+        {
+          "stId": "R-HSA-2262752",
+          "type": "Pathway",
+          "name": "Cellular responses to stress",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9020984",
+          "type": "Protein",
+          "name": "ER alpha46",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9020981",
+          "type": "Protein",
+          "name": "ER alpha36",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9021053",
+          "type": "Protein",
+          "name": "PalmS-ER alpha36",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9021055",
+          "type": "Protein",
+          "name": "PalmS-ER alpha46",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9020988",
+          "type": "Protein",
+          "name": "PalmS-ER alpha36",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9020991",
+          "type": "Protein",
+          "name": "PalmS-ER alpha46",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9682983",
+          "type": "Set",
+          "name": "ER alpha-glucosidases",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "unfolded protein response",
+      "notFound": false,
+      "entryCount": 100,
+      "top": [
+        {
+          "stId": "R-HSA-381119",
+          "type": "Pathway",
+          "name": "Unfolded Protein Response (UPR)",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-381130",
+          "type": "Genes and Transcripts",
+          "name": "unfolded protein",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-912296",
+          "type": "Genes and Transcripts",
+          "name": "unfolded protein",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-915147",
+          "type": "Genes and Transcripts",
+          "name": "unfolded protein",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-ALL-1022114",
+          "type": "OtherEntity",
+          "name": "unfolded protein",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9857977",
+          "type": "OtherEntity",
+          "name": "unfolded protein",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-8853371",
+          "type": "OtherEntity",
+          "name": "unfolded protein:GlcNAc",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-2213225",
+          "type": "OtherEntity",
+          "name": "unfolded antigen",
+          "species": [
+            "Entries without species"
+          ]
+        }
+      ]
+    }
+  ],
+  "molecules": [
+    {
+      "query": "oridonin",
+      "notFound": true,
+      "entryCount": 0,
+      "top": []
+    },
+    {
+      "query": "tranilast",
+      "notFound": true,
+      "entryCount": 0,
+      "top": []
+    },
+    {
+      "query": "beta-hydroxybutyrate",
+      "notFound": false,
+      "entryCount": 94,
+      "top": [
+        {
+          "stId": "R-HSA-73920",
+          "type": "Reaction",
+          "name": "D-beta hydroxybutyrate+NAD+  acetoacetate+NADH+H+",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-398037",
+          "type": "Complex",
+          "name": "G-protein beta-gamma:PLC beta 1/2/3",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-437110",
+          "type": "Complex",
+          "name": "PI3K beta",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-190512",
+          "type": "Complex",
+          "name": "beta-tubulin:GDP",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-446408",
+          "type": "Complex",
+          "name": "ILK:Integrin beta-1",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-5610519",
+          "type": "Complex",
+          "name": "beta tubulin:GDP",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-2467308",
+          "type": "Complex",
+          "name": "SLRPs:TGF beta",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1461957",
+          "type": "Pathway",
+          "name": "Beta defensins",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "3-hydroxybutyrate",
+      "notFound": false,
+      "entryCount": 25,
+      "top": [
+        {
+          "stId": "R-ALL-433678",
+          "type": "Chemical Compound",
+          "name": "bHBA",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-433685",
+          "type": "Chemical Compound",
+          "name": "bHBA",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-880041",
+          "type": "Chemical Compound",
+          "name": "HBUT",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-5696461",
+          "type": "Chemical Compound",
+          "name": "3HBA",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-73911",
+          "type": "Chemical Compound",
+          "name": "bHBA",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-73920",
+          "type": "Reaction",
+          "name": "D-beta hydroxybutyrate+NAD+  acetoacetate+NADH+H+",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-880033",
+          "type": "Reaction",
+          "name": "2-oxoglutarate + 4-hydroxybutyrate  (R)-2-hydroxyglutarate + succinate semialdehyde",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-880002",
+          "type": "Reaction",
+          "name": "(R)-2-hydroxyglutarate + succinate semialdehyde  2-oxoglutarate + 4-hydroxybutyrate",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "disulfiram",
+      "notFound": false,
+      "entryCount": 9,
+      "top": [
+        {
+          "stId": "R-ALL-9693326",
+          "type": "Drug",
+          "name": "Disulfiram",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-9693324",
+          "type": "Reaction",
+          "name": "Disulfiram covalently modifies Cys191 in GSDMD",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-380608",
+          "type": "Reaction",
+          "name": "5-hydroxyindole acetaldehyde to 5-hydroxyindole acetic acid",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "echinatin",
+      "notFound": true,
+      "entryCount": 0,
+      "top": []
+    },
+    {
+      "query": "dapansutrile",
+      "notFound": true,
+      "entryCount": 0,
+      "top": []
+    },
+    {
+      "query": "MCC950",
+      "notFound": true,
+      "entryCount": 0,
+      "top": []
+    },
+    {
+      "query": "avacopan",
+      "notFound": false,
+      "entryCount": 2,
+      "top": [
+        {
+          "stId": "R-ALL-9957300",
+          "type": "Drug",
+          "name": "avacopan",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-9957423",
+          "type": "Reaction",
+          "name": "C5AR1 binds C5AR1 antagonist",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "anakinra",
+      "notFound": false,
+      "entryCount": 2,
+      "top": [
+        {
+          "stId": "R-ALL-9681784",
+          "type": "Drug",
+          "name": "anakinra",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-9681763",
+          "type": "Reaction",
+          "name": "IL1R1 binds IL1R1 inhibitors",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "colchicine",
+      "notFound": false,
+      "entryCount": 6,
+      "top": [
+        {
+          "stId": "R-ALL-3296413",
+          "type": "Chemical Compound",
+          "name": "Colchicine",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9659877",
+          "type": "Drug",
+          "name": "colchicine",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-ALL-9659891",
+          "type": "Drug",
+          "name": "colchicine",
+          "species": [
+            "Entries without species"
+          ]
+        },
+        {
+          "stId": "R-HSA-9685830",
+          "type": "Reaction",
+          "name": "TUBB binds colchicine",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-9659680",
+          "type": "Reaction",
+          "name": "ABCB1 transports xenobiotics out of the cell",
+          "species": [
+            "Homo sapiens"
+          ]
+        },
+        {
+          "stId": "R-HSA-1467457",
+          "type": "Reaction",
+          "name": "ABCA8,B1,B5 transport xenobiotics from cytosol to extracellular region",
+          "species": [
+            "Homo sapiens"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -35,6 +35,8 @@ The gut-lumen sink strategy represents a paradigm shift in oral [[uricase|uricas
 
 Approximately **one-third of daily uric acid elimination** occurs through the intestines, not the kidneys. This intestinal elimination is mediated by the **ABCG2 transporter** (ATP Binding Cassette subfamily G member 2), expressed on the apical membrane of intestinal epithelial cells facing the gut lumen. (Source: engineered-yeast-uricase-proposal.md)
 
+> **Reactome graph anchor (2026-06-01):** Reactome models URAT1/SLC22A12 urate-lactate exchange as `R-HSA-561253` and the broader SLC22 organic-anion transport context as `R-HSA-561048`. ABCG2 is present as Reactome protein/complex entities (`R-HSA-917929`, `R-HSA-9794401`, ABCG2 tetramer entries), and NFE2L2-dependent ABCG2 expression appears as `R-HSA-9796076`, but this audit did not find a clean Reactome reaction for intestinal ABCG2-mediated urate efflux. Treat the gut-lumen ABCG2 urate-sink mechanism as primary-literature/Open Enzyme synthesis rather than a Reactome-modeled transport reaction. (Pathway anchor/gap note; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
+
 ### How It Works
 
 1. **Urate moves from blood → intestinal epithelial cell:** Uric acid is actively transported into intestinal epithelial cells from the basolateral (blood-facing) side through URAT1 and other uptake transporters

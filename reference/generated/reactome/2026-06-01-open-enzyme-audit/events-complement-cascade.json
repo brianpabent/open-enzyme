@@ -1,0 +1,1538 @@
+[
+  {
+    "dbId": 174577,
+    "displayName": "Activation of C3 and C5",
+    "stId": "R-HSA-174577",
+    "stIdVersion": "R-HSA-174577.7",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Activation of C3 and C5"
+    ],
+    "releaseDate": "2005-09-26",
+    "speciesName": "Homo sapiens",
+    "eventOf": [
+      {
+        "dbId": 166658,
+        "displayName": "Complement cascade",
+        "stId": "R-HSA-166658",
+        "stIdVersion": "R-HSA-166658.6",
+        "isInDisease": false,
+        "isInferred": false,
+        "maxDepth": 6,
+        "name": [
+          "Complement cascade"
+        ],
+        "releaseDate": "2005-06-13",
+        "releaseStatus": "UPDATED",
+        "speciesName": "Homo sapiens",
+        "hasDiagram": true,
+        "hasEHLD": false,
+        "lastUpdatedDate": "2022-06-09",
+        "hasEvent": [
+          {
+            "dbId": 166663,
+            "displayName": "Initial triggering of complement",
+            "stId": "R-HSA-166663",
+            "stIdVersion": "R-HSA-166663.4",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 5,
+            "name": [
+              "Initial triggering of complement"
+            ],
+            "releaseDate": "2006-08-02",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              166658
+            ],
+            "hasDiagram": false,
+            "hasEHLD": false,
+            "lastUpdatedDate": "2017-04-20",
+            "schemaClass": "Pathway",
+            "className": "Pathway"
+          },
+          174577,
+          {
+            "dbId": 166665,
+            "displayName": "Terminal pathway of complement",
+            "stId": "R-HSA-166665",
+            "stIdVersion": "R-HSA-166665.5",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 2,
+            "name": [
+              "Terminal pathway of complement"
+            ],
+            "releaseDate": "2005-04-11",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              166658
+            ],
+            "hasDiagram": false,
+            "hasEHLD": false,
+            "lastUpdatedDate": "2017-04-20",
+            "schemaClass": "Pathway",
+            "className": "Pathway"
+          },
+          {
+            "dbId": 977606,
+            "displayName": "Regulation of Complement cascade",
+            "stId": "R-HSA-977606",
+            "stIdVersion": "R-HSA-977606.9",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 2,
+            "name": [
+              "Regulation of Complement cascade"
+            ],
+            "releaseDate": "2012-03-13",
+            "releaseStatus": "UPDATED",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              166658
+            ],
+            "doi": "10.3180/R-HSA-977606.3",
+            "hasDiagram": false,
+            "hasEHLD": false,
+            "lastUpdatedDate": "2017-12-18",
+            "schemaClass": "Pathway",
+            "className": "Pathway"
+          }
+        ],
+        "schemaClass": "Pathway",
+        "className": "Pathway"
+      }
+    ],
+    "doi": "10.3180/R-HSA-174577.6",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2022-06-09",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 173680,
+    "displayName": "Activation of C5",
+    "stId": "R-HSA-173680",
+    "stIdVersion": "R-HSA-173680.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Activation of C5"
+    ],
+    "releaseDate": "2005-06-13",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 166817,
+    "displayName": "Cleavage of C3 by C3 convertases",
+    "stId": "R-HSA-166817",
+    "stIdVersion": "R-HSA-166817.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Cleavage of C3 by C3 convertases"
+    ],
+    "releaseDate": "2005-04-11",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173636,
+    "displayName": "Formation of classic pathway C5 convertase",
+    "stId": "R-HSA-173636",
+    "stIdVersion": "R-HSA-173636.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Formation of classic pathway C5 convertase"
+    ],
+    "releaseDate": "2005-06-13",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9691621,
+    "displayName": "C5 binds C5 inhibitors",
+    "stId": "R-HSA-9691621",
+    "stIdVersion": "R-HSA-9691621.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C5 binds C5 inhibitors"
+    ],
+    "releaseDate": "2022-06-09",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9957021,
+    "displayName": "C3 binds C3 inhibitors",
+    "stId": "R-HSA-9957021",
+    "stIdVersion": "R-HSA-9957021.1",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C3 binds C3 inhibitors"
+    ],
+    "releaseDate": "2025-09-18",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  166663,
+  {
+    "dbId": 166786,
+    "displayName": "Creation of C4 and C2 activators",
+    "stId": "R-HSA-166786",
+    "stIdVersion": "R-HSA-166786.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 4,
+    "name": [
+      "Creation of C4 and C2 activators"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2017-04-20",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 166662,
+    "displayName": "Lectin pathway of complement activation",
+    "stId": "R-HSA-166662",
+    "stIdVersion": "R-HSA-166662.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Lectin pathway of complement activation"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2017-04-20",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 166721,
+    "displayName": "MBL binds to repetitive carbohydrate structures on the surfaces of viruses, bacteria, fungi, and protozoa",
+    "stId": "R-HSA-166721",
+    "stIdVersion": "R-HSA-166721.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "MBL binds to repetitive carbohydrate structures on the surfaces of viruses, bacteria, fungi, and protozoa"
+    ],
+    "releaseDate": "2005-06-13",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 166726,
+    "displayName": "Activation of MASPs",
+    "stId": "R-HSA-166726",
+    "stIdVersion": "R-HSA-166726.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Activation of MASPs"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2855086,
+    "displayName": "Ficolins bind to repetitive carbohydrate structures on the target cell surface",
+    "stId": "R-HSA-2855086",
+    "stIdVersion": "R-HSA-2855086.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Ficolins bind to repetitive carbohydrate structures on the target cell surface"
+    ],
+    "releaseDate": "2013-06-11",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2016-03-24",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 2855054,
+    "displayName": "Ficolin-2 binds to molecular patterns on the target cell surface ",
+    "stId": "R-HSA-2855054",
+    "stIdVersion": "R-HSA-2855054.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Ficolin-2 binds to molecular patterns on the target cell surface "
+    ],
+    "releaseDate": "2013-06-11",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2855125,
+    "displayName": "Ficolin-1 binds to molecular patterns on the target cell surface",
+    "stId": "R-HSA-2855125",
+    "stIdVersion": "R-HSA-2855125.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Ficolin-1 binds to molecular patterns on the target cell surface"
+    ],
+    "releaseDate": "2013-06-11",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2855077,
+    "displayName": "Ficolin-3 binds to molecular patterns on the target cell surface ",
+    "stId": "R-HSA-2855077",
+    "stIdVersion": "R-HSA-2855077.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Ficolin-3 binds to molecular patterns on the target cell surface "
+    ],
+    "releaseDate": "2013-06-11",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8852509,
+    "displayName": "CL-LK binds carbohydrates on target cell surface",
+    "stId": "R-HSA-8852509",
+    "stIdVersion": "R-HSA-8852509.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CL-LK binds carbohydrates on target cell surface"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173623,
+    "displayName": "Classical antibody-mediated complement activation",
+    "stId": "R-HSA-173623",
+    "stIdVersion": "R-HSA-173623.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Classical antibody-mediated complement activation"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2013-06-30",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 173626,
+    "displayName": "Activation of C1r",
+    "stId": "R-HSA-173626",
+    "stIdVersion": "R-HSA-173626.7",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Activation of C1r"
+    ],
+    "releaseDate": "2005-04-11",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173631,
+    "displayName": "Activation of C1s",
+    "stId": "R-HSA-173631",
+    "stIdVersion": "R-HSA-173631.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Activation of C1s"
+    ],
+    "releaseDate": "2005-04-11",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 166753,
+    "displayName": "Conversion of C4 into C4a and C4b",
+    "stId": "R-HSA-166753",
+    "stIdVersion": "R-HSA-166753.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Conversion of C4 into C4a and C4b"
+    ],
+    "releaseDate": "2005-06-13",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 166795,
+    "displayName": "Formation of Classical C3 convertase (C4b:C2a complex)",
+    "stId": "R-HSA-166795",
+    "stIdVersion": "R-HSA-166795.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Formation of Classical C3 convertase (C4b:C2a complex)"
+    ],
+    "releaseDate": "2005-06-13",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 166792,
+    "displayName": "Conversion of C2 into C2a and C2b",
+    "stId": "R-HSA-166792",
+    "stIdVersion": "R-HSA-166792.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Conversion of C2 into C2a and C2b"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173736,
+    "displayName": "Alternative complement activation",
+    "stId": "R-HSA-173736",
+    "stIdVersion": "R-HSA-173736.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Alternative complement activation"
+    ],
+    "releaseDate": "2005-04-11",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2013-09-23",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 183122,
+    "displayName": "Factor D cleaves C3b-bound Factor B",
+    "stId": "R-HSA-183122",
+    "stIdVersion": "R-HSA-183122.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor D cleaves C3b-bound Factor B"
+    ],
+    "releaseDate": "2006-01-23",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173745,
+    "displayName": "Factor D cleaves C3(H2O)-bound Factor B",
+    "stId": "R-HSA-173745",
+    "stIdVersion": "R-HSA-173745.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor D cleaves C3(H2O)-bound Factor B"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 183126,
+    "displayName": "Factor B binds to surface-associated C3b",
+    "stId": "R-HSA-183126",
+    "stIdVersion": "R-HSA-183126.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor B binds to surface-associated C3b"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 174551,
+    "displayName": "Formation of alternative pathway C5 convertase",
+    "stId": "R-HSA-174551",
+    "stIdVersion": "R-HSA-174551.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Formation of alternative pathway C5 convertase"
+    ],
+    "releaseDate": "2005-04-11",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 183130,
+    "displayName": "C3(H2O):Factor Bb cleaves C3 to C3b and C3a",
+    "stId": "R-HSA-183130",
+    "stIdVersion": "R-HSA-183130.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C3(H2O):Factor Bb cleaves C3 to C3b and C3a"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173754,
+    "displayName": "Properdin stabilizes C3b:Bb bound to cell surfaces",
+    "stId": "R-HSA-173754",
+    "stIdVersion": "R-HSA-173754.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Properdin stabilizes C3b:Bb bound to cell surfaces"
+    ],
+    "releaseDate": "2005-06-13",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173739,
+    "displayName": "Spontaneous hydrolysis of C3 thioester",
+    "stId": "R-HSA-173739",
+    "stIdVersion": "R-HSA-173739.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Spontaneous hydrolysis of C3 thioester"
+    ],
+    "releaseDate": "2005-06-13",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 981539,
+    "displayName": "C3b binds to cell surface",
+    "stId": "R-HSA-981539",
+    "stIdVersion": "R-HSA-981539.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C3b binds to cell surface"
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173740,
+    "displayName": "Factor B binds to C3(H2O)",
+    "stId": "R-HSA-173740",
+    "stIdVersion": "R-HSA-173740.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor B binds to C3(H2O)"
+    ],
+    "releaseDate": "2005-09-26",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 981713,
+    "displayName": "C4b binds to cell surface",
+    "stId": "R-HSA-981713",
+    "stIdVersion": "R-HSA-981713.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C4b binds to cell surface"
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  977606,
+  {
+    "dbId": 981680,
+    "displayName": "C4b binding protein displaces C2a",
+    "stId": "R-HSA-981680",
+    "stIdVersion": "R-HSA-981680.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C4b binding protein displaces C2a"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "uncertain",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 981621,
+    "displayName": "C3 convertases spontaneously dissociate",
+    "stId": "R-HSA-981621",
+    "stIdVersion": "R-HSA-981621.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C3 convertases spontaneously dissociate"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9957423,
+    "displayName": "C5AR1 binds C5AR1 antagonist",
+    "stId": "R-HSA-9957423",
+    "stIdVersion": "R-HSA-9957423.1",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C5AR1 binds C5AR1 antagonist"
+    ],
+    "releaseDate": "2026-03-25",
+    "releaseStatus": "NEW",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8951486,
+    "displayName": "CD46 binds C4b",
+    "stId": "R-HSA-8951486",
+    "stIdVersion": "R-HSA-8951486.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CD46 binds C4b"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9021306,
+    "displayName": "C1-Inh binds and inactivates C1r, C1s",
+    "stId": "R-HSA-9021306",
+    "stIdVersion": "R-HSA-9021306.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C1-Inh binds and inactivates C1r, C1s"
+    ],
+    "releaseDate": "2017-12-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2530453,
+    "displayName": "Vitronectin (VTN) binds to C5b:C6:C7",
+    "stId": "R-HSA-2530453",
+    "stIdVersion": "R-HSA-2530453.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Vitronectin (VTN) binds to C5b:C6:C7"
+    ],
+    "releaseDate": "2013-06-11",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 1006143,
+    "displayName": "CD46 binds C3b",
+    "stId": "R-HSA-1006143",
+    "stIdVersion": "R-HSA-1006143.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CD46 binds C3b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 981665,
+    "displayName": "C4b binding protein binds Protein S",
+    "stId": "R-HSA-981665",
+    "stIdVersion": "R-HSA-981665.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C4b binding protein binds Protein S"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 976801,
+    "displayName": "Complement factor I complex formation",
+    "stId": "R-HSA-976801",
+    "stIdVersion": "R-HSA-976801.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Complement factor I complex formation"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 981728,
+    "displayName": "Factor H binds to membrane-associated C3b",
+    "stId": "R-HSA-981728",
+    "stIdVersion": "R-HSA-981728.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor H binds to membrane-associated C3b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8852266,
+    "displayName": "C1-Inh binds Antigen: antibody: C1 complex activated C1r, C1s",
+    "stId": "R-HSA-8852266",
+    "stIdVersion": "R-HSA-8852266.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C1-Inh binds Antigen: antibody: C1 complex activated C1r, C1s"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2855047,
+    "displayName": "Hydrolysis of internal thioester in C4b",
+    "stId": "R-HSA-2855047",
+    "stIdVersion": "R-HSA-2855047.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Hydrolysis of internal thioester in C4b"
+    ],
+    "releaseDate": "2013-06-11",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8852716,
+    "displayName": "Thrombin, ELANE cleave C5",
+    "stId": "R-HSA-8852716",
+    "stIdVersion": "R-HSA-8852716.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Thrombin, ELANE cleave C5"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2530445,
+    "displayName": "CD59 inhibits MAC formation",
+    "stId": "R-HSA-2530445",
+    "stIdVersion": "R-HSA-2530445.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CD59 inhibits MAC formation"
+    ],
+    "releaseDate": "2013-06-11",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8851436,
+    "displayName": "CFHR dimers bind C3b",
+    "stId": "R-HSA-8851436",
+    "stIdVersion": "R-HSA-8851436.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CFHR dimers bind C3b"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 976743,
+    "displayName": "Factor I inactivates plasma Factor H-bound C3b",
+    "stId": "R-HSA-976743",
+    "stIdVersion": "R-HSA-976743.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor I inactivates plasma Factor H-bound C3b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 375395,
+    "displayName": "C5a receptor binds C5a anaphylatoxin",
+    "stId": "R-HSA-375395",
+    "stIdVersion": "R-HSA-375395.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C5a receptor binds C5a anaphylatoxin"
+    ],
+    "releaseDate": "2008-09-30",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 976810,
+    "displayName": "Complement factor I binds to extracellular Factor H:C3b",
+    "stId": "R-HSA-976810",
+    "stIdVersion": "R-HSA-976810.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Complement factor I binds to extracellular Factor H:C3b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8852580,
+    "displayName": "Clusterin binds C5b-C7, C8, C9",
+    "stId": "R-HSA-8852580",
+    "stIdVersion": "R-HSA-8852580.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Clusterin binds C5b-C7, C8, C9"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 444647,
+    "displayName": "C3a receptor binds anaphylatoxin C3a",
+    "stId": "R-HSA-444647",
+    "stIdVersion": "R-HSA-444647.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C3a receptor binds anaphylatoxin C3a"
+    ],
+    "releaseDate": "2010-03-16",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 981648,
+    "displayName": "C4b binding protein binds C4bC2a",
+    "stId": "R-HSA-981648",
+    "stIdVersion": "R-HSA-981648.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C4b binding protein binds C4bC2a"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "uncertain",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 977619,
+    "displayName": "CD55 (DAF) promotes C3bBb/C4bC2a dissociation",
+    "stId": "R-HSA-977619",
+    "stIdVersion": "R-HSA-977619.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CD55 (DAF) promotes C3bBb/C4bC2a dissociation"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 977363,
+    "displayName": "Factor H binds to C3bBb",
+    "stId": "R-HSA-977363",
+    "stIdVersion": "R-HSA-977363.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor H binds to C3bBb"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 2530429,
+    "displayName": "Formation of soluble VTN:C5b-C9 ",
+    "stId": "R-HSA-2530429",
+    "stIdVersion": "R-HSA-2530429.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Formation of soluble VTN:C5b-C9 "
+    ],
+    "releaseDate": "2013-06-11",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 1006169,
+    "displayName": "Factor H binds host cell surface markers",
+    "stId": "R-HSA-1006169",
+    "stIdVersion": "R-HSA-1006169.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor H binds host cell surface markers"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 977371,
+    "displayName": "Factor I inactivates Factor H-boundC3b",
+    "stId": "R-HSA-977371",
+    "stIdVersion": "R-HSA-977371.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor I inactivates Factor H-boundC3b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 981658,
+    "displayName": "Complement factor I binds C4BP",
+    "stId": "R-HSA-981658",
+    "stIdVersion": "R-HSA-981658.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Complement factor I binds C4BP"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 977626,
+    "displayName": "C4b-binding protein binds C4b",
+    "stId": "R-HSA-977626",
+    "stIdVersion": "R-HSA-977626.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C4b-binding protein binds C4b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 977629,
+    "displayName": "Displacement of C2a/Bb by CR1",
+    "stId": "R-HSA-977629",
+    "stIdVersion": "R-HSA-977629.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Displacement of C2a/Bb by CR1"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 981535,
+    "displayName": "CD55 (DAF) binds C3bBb, C4bC2a",
+    "stId": "R-HSA-981535",
+    "stIdVersion": "R-HSA-981535.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CD55 (DAF) binds C3bBb, C4bC2a"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 977375,
+    "displayName": "CR1 binds C3bBb/C4bC2a",
+    "stId": "R-HSA-977375",
+    "stIdVersion": "R-HSA-977375.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CR1 binds C3bBb/C4bC2a"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8852809,
+    "displayName": "CPN, CPB2 cleave C3a, C5a",
+    "stId": "R-HSA-8852809",
+    "stIdVersion": "R-HSA-8852809.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CPN, CPB2 cleave C3a, C5a"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 976768,
+    "displayName": "Factor H binds to C3b",
+    "stId": "R-HSA-976768",
+    "stIdVersion": "R-HSA-976768.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor H binds to C3b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8852874,
+    "displayName": "CR2 binds C3d, C3dg, iC3b",
+    "stId": "R-HSA-8852874",
+    "stIdVersion": "R-HSA-8852874.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CR2 binds C3d, C3dg, iC3b"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 977602,
+    "displayName": "Complement factor I binds to MCP, CR1:C4b, C3b",
+    "stId": "R-HSA-977602",
+    "stIdVersion": "R-HSA-977602.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Complement factor I binds to MCP, CR1:C4b, C3b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 3266557,
+    "displayName": "Factor I cleaves iC3b",
+    "stId": "R-HSA-3266557",
+    "stIdVersion": "R-HSA-3266557.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor I cleaves iC3b"
+    ],
+    "releaseDate": "2013-06-11",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 981637,
+    "displayName": "Complement factor I inactivates C4BP-bound C4b",
+    "stId": "R-HSA-981637",
+    "stIdVersion": "R-HSA-981637.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Complement factor I inactivates C4BP-bound C4b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "dissociation",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 977605,
+    "displayName": "Factor H displaces Bb",
+    "stId": "R-HSA-977605",
+    "stIdVersion": "R-HSA-977605.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor H displaces Bb"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "dissociation",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 9957405,
+    "displayName": "C5a binds C5a inhibitor",
+    "stId": "R-HSA-9957405",
+    "stIdVersion": "R-HSA-9957405.1",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C5a binds C5a inhibitor"
+    ],
+    "releaseDate": "2026-03-25",
+    "releaseStatus": "NEW",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8852481,
+    "displayName": "Antigen:IgG:C1Q:2xActivated C1R:SERPING1:2xActivated C1S:SERPING1 dissociates",
+    "stId": "R-HSA-8852481",
+    "stIdVersion": "R-HSA-8852481.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Antigen:IgG:C1Q:2xActivated C1R:SERPING1:2xActivated C1S:SERPING1 dissociates"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "dissociation",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 964811,
+    "displayName": "C5AR2 binds anaphylatoxins and thier desArginated derivatives",
+    "stId": "R-HSA-964811",
+    "stIdVersion": "R-HSA-964811.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C5AR2 binds anaphylatoxins and thier desArginated derivatives"
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8853252,
+    "displayName": "CR2:C3d,C3dg,iC3b binds CD19:CD81",
+    "stId": "R-HSA-8853252",
+    "stIdVersion": "R-HSA-8853252.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CR2:C3d,C3dg,iC3b binds CD19:CD81"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 977615,
+    "displayName": "Factor I inactivates MCP/CR1-bound C4b/C3b",
+    "stId": "R-HSA-977615",
+    "stIdVersion": "R-HSA-977615.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Factor I inactivates MCP/CR1-bound C4b/C3b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 977359,
+    "displayName": "Complement factor I binds to membrane-associated Factor H:C3b",
+    "stId": "R-HSA-977359",
+    "stIdVersion": "R-HSA-977359.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Complement factor I binds to membrane-associated Factor H:C3b"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  166665,
+  {
+    "dbId": 173723,
+    "displayName": "C8 binds C5b:C6:C7",
+    "stId": "R-HSA-173723",
+    "stIdVersion": "R-HSA-173723.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C8 binds C5b:C6:C7"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173720,
+    "displayName": "C5b:C6:C7 translocates to the plasma membrane",
+    "stId": "R-HSA-173720",
+    "stIdVersion": "R-HSA-173720.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C5b:C6:C7 translocates to the plasma membrane"
+    ],
+    "releaseDate": "2005-04-11",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173705,
+    "displayName": "C5b binds C6",
+    "stId": "R-HSA-173705",
+    "stIdVersion": "R-HSA-173705.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C5b binds C6"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173709,
+    "displayName": "C7 binds C5b:C6",
+    "stId": "R-HSA-173709",
+    "stIdVersion": "R-HSA-173709.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C7 binds C5b:C6"
+    ],
+    "releaseDate": "2006-08-02",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 173725,
+    "displayName": "C9 binds C5b:C6:C7:C8",
+    "stId": "R-HSA-173725",
+    "stIdVersion": "R-HSA-173725.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "C9 binds C5b:C6:C7:C8",
+      "Creation of the Membrane Attack Complex (MAC)"
+    ],
+    "releaseDate": "2005-04-11",
+    "speciesName": "Homo sapiens",
+    "category": "binding",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  }
+]

@@ -1,0 +1,506 @@
+[
+  {
+    "dbId": 8878787,
+    "displayName": "ALPI dimer hydrolyses phosphate monoesters",
+    "stId": "R-HSA-8878787",
+    "stIdVersion": "R-HSA-8878787.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "ALPI dimer hydrolyses phosphate monoesters"
+    ],
+    "releaseDate": "2016-09-19",
+    "speciesName": "Homo sapiens",
+    "eventOf": [
+      {
+        "dbId": 8935690,
+        "displayName": "Digestion",
+        "stId": "R-HSA-8935690",
+        "stIdVersion": "R-HSA-8935690.7",
+        "isInDisease": false,
+        "isInferred": false,
+        "maxDepth": 3,
+        "name": [
+          "Digestion"
+        ],
+        "releaseDate": "2016-09-19",
+        "speciesName": "Homo sapiens",
+        "hasDiagram": true,
+        "hasEHLD": false,
+        "lastUpdatedDate": "2018-03-26",
+        "hasEvent": [
+          {
+            "dbId": 192456,
+            "displayName": "Digestion of dietary lipid",
+            "stId": "R-HSA-192456",
+            "stIdVersion": "R-HSA-192456.7",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 2,
+            "name": [
+              "Digestion of dietary lipid"
+            ],
+            "releaseDate": "2007-02-20",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              8935690
+            ],
+            "doi": "10.3180/REACT_9518.2",
+            "hasDiagram": false,
+            "hasEHLD": false,
+            "lastUpdatedDate": "2017-04-20",
+            "schemaClass": "Pathway",
+            "className": "Pathway"
+          },
+          {
+            "dbId": 189085,
+            "displayName": "Digestion of dietary carbohydrate",
+            "stId": "R-HSA-189085",
+            "stIdVersion": "R-HSA-189085.4",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 2,
+            "name": [
+              "Digestion of dietary carbohydrate"
+            ],
+            "releaseDate": "2007-02-20",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              8935690
+            ],
+            "doi": "10.3180/REACT_9472.2",
+            "hasDiagram": false,
+            "hasEHLD": false,
+            "lastUpdatedDate": "2017-06-22",
+            "schemaClass": "Pathway",
+            "className": "Pathway"
+          },
+          8878787,
+          {
+            "dbId": 8936214,
+            "displayName": "GUCY2C trimer binds GUCA2A,B",
+            "stId": "R-HSA-8936214",
+            "stIdVersion": "R-HSA-8936214.2",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "GUCY2C trimer binds GUCA2A,B"
+            ],
+            "releaseDate": "2016-12-12",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              8935690
+            ],
+            "isChimeric": false,
+            "category": "binding",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          },
+          {
+            "dbId": 8953398,
+            "displayName": "PIR oxygenates quercetin",
+            "stId": "R-HSA-8953398",
+            "stIdVersion": "R-HSA-8953398.3",
+            "isInDisease": false,
+            "isInferred": false,
+            "maxDepth": 1,
+            "name": [
+              "PIR oxygenates quercetin"
+            ],
+            "releaseDate": "2017-03-27",
+            "speciesName": "Homo sapiens",
+            "eventOf": [
+              8935690
+            ],
+            "isChimeric": false,
+            "category": "transition",
+            "className": "Reaction",
+            "schemaClass": "Reaction"
+          }
+        ],
+        "schemaClass": "Pathway",
+        "className": "Pathway"
+      }
+    ],
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  192456,
+  {
+    "dbId": 192434,
+    "displayName": "Digestion of diacylglycerols by extracellular PTL:colipase",
+    "stId": "R-HSA-192434",
+    "stIdVersion": "R-HSA-192434.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Digestion of diacylglycerols by extracellular PTL:colipase"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192417,
+    "displayName": "Digestion of cholesterol esters by extracellular CEL (bile salt-dependent lipase)",
+    "stId": "R-HSA-192417",
+    "stIdVersion": "R-HSA-192417.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Digestion of cholesterol esters by extracellular CEL (bile salt-dependent lipase)"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192422,
+    "displayName": "Digestion of triacylglycerols by extracellular PTL:colipase",
+    "stId": "R-HSA-192422",
+    "stIdVersion": "R-HSA-192422.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Digestion of triacylglycerols by extracellular PTL:colipase"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 8979996,
+    "displayName": "LIPs hydrolyze TG to DAG and LCFA",
+    "stId": "R-HSA-8979996",
+    "stIdVersion": "R-HSA-8979996.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "LIPs hydrolyze TG to DAG and LCFA"
+    ],
+    "releaseDate": "2017-03-27",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 975593,
+    "displayName": "PNLIP:CLPS hydrolyses RPALM to atROL and PALM",
+    "stId": "R-HSA-975593",
+    "stIdVersion": "R-HSA-975593.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "PNLIP:CLPS hydrolyses RPALM to atROL and PALM",
+      "Digestion of retinyl palmitate by extracellular PTL:colipase"
+    ],
+    "releaseDate": "2010-12-14",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192475,
+    "displayName": "Digestion of triacylglycerols by extracellular pancreatic lipase-related protein 2",
+    "stId": "R-HSA-192475",
+    "stIdVersion": "R-HSA-192475.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Digestion of triacylglycerols by extracellular pancreatic lipase-related protein 2"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192425,
+    "displayName": "Digestion of monoacylglycerols by extracellular CEL (bile salt-dependent lipase)",
+    "stId": "R-HSA-192425",
+    "stIdVersion": "R-HSA-192425.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Digestion of monoacylglycerols by extracellular CEL (bile salt-dependent lipase)"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 192430,
+    "displayName": "Digestion of triacylglycerols by extracellular CEL (bile salt-dependent lipase)",
+    "stId": "R-HSA-192430",
+    "stIdVersion": "R-HSA-192430.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Digestion of triacylglycerols by extracellular CEL (bile salt-dependent lipase)"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  8936214,
+  8953398,
+  189085,
+  {
+    "dbId": 5659861,
+    "displayName": "isomaltose + H2O => 2 D-glucose (sucrase-isomaltase)",
+    "stId": "R-HSA-5659861",
+    "stIdVersion": "R-HSA-5659861.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "isomaltose + H2O => 2 D-glucose (sucrase-isomaltase)",
+      "SI (sucrase-isomaltase) hydrolyzes isomaltose to yield glucose"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 189062,
+    "displayName": "lactose + H2O => D-glucose + D-galactose",
+    "stId": "R-HSA-189062",
+    "stIdVersion": "R-HSA-189062.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "lactose + H2O => D-glucose + D-galactose",
+      "Digestion of lactose to yield glucose and galactose"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 191108,
+    "displayName": "maltose + H2O => 2 D-glucose (sucrase-isomaltase)",
+    "stId": "R-HSA-191108",
+    "stIdVersion": "R-HSA-191108.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "maltose + H2O => 2 D-glucose (sucrase-isomaltase)",
+      "Digestion of maltose by sucrase-isomaltase to yield glucose"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 191114,
+    "displayName": "Digestion of branched starch (amylopectin) by extracellular amylase",
+    "stId": "R-HSA-191114",
+    "stIdVersion": "R-HSA-191114.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Digestion of branched starch (amylopectin) by extracellular amylase"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 189102,
+    "displayName": "maltose + H2O => 2 D-glucose (maltase-glucoamylase)",
+    "stId": "R-HSA-189102",
+    "stIdVersion": "R-HSA-189102.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "maltose + H2O => 2 D-glucose (maltase-glucoamylase)",
+      "Digestion of maltose by maltase-glucoamylase to yield glucose"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 191116,
+    "displayName": "maltotriose + H2O => maltose + D-glucose (maltase-glucoamylase)",
+    "stId": "R-HSA-191116",
+    "stIdVersion": "R-HSA-191116.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "maltotriose + H2O => maltose + D-glucose (maltase-glucoamylase)",
+      "Digestion of maltotriose by maltase-glucomylase to yield maltose and glucose"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 189069,
+    "displayName": "sucrose + H2O => glucose + fructose",
+    "stId": "R-HSA-189069",
+    "stIdVersion": "R-HSA-189069.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "sucrose + H2O => glucose + fructose",
+      "Digestion of sucrose to yield glucose and fructose"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 188979,
+    "displayName": "Digestion of linear starch (amylose) by extracellular amylase",
+    "stId": "R-HSA-188979",
+    "stIdVersion": "R-HSA-188979.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Digestion of linear starch (amylose) by extracellular amylase"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 6786421,
+    "displayName": "CHIA hydrolyses chitin",
+    "stId": "R-HSA-6786421",
+    "stIdVersion": "R-HSA-6786421.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CHIA hydrolyses chitin"
+    ],
+    "releaseDate": "2015-12-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "omitted",
+    "className": "Reaction",
+    "schemaClass": "BlackBoxEvent"
+  },
+  {
+    "dbId": 188985,
+    "displayName": "trehalose + H2O => 2 D-glucose",
+    "stId": "R-HSA-188985",
+    "stIdVersion": "R-HSA-188985.3",
+    "isInDisease": false,
+    "isInferred": true,
+    "maxDepth": 1,
+    "name": [
+      "trehalose + H2O => 2 D-glucose",
+      "Digestion of trehalose to yield glucose"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 6786652,
+    "displayName": "CHIT1 hydrolyses CHIT to 3xADGP",
+    "stId": "R-HSA-6786652",
+    "stIdVersion": "R-HSA-6786652.2",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "CHIT1 hydrolyses CHIT to 3xADGP"
+    ],
+    "releaseDate": "2015-12-15",
+    "speciesName": "Homo sapiens",
+    "isChimeric": false,
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 189053,
+    "displayName": "Digestion of 1-6 linkages of limit dextrins to yield maltose, maltotriose, longer maltosides, and glucose",
+    "stId": "R-HSA-189053",
+    "stIdVersion": "R-HSA-189053.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "Digestion of 1-6 linkages of limit dextrins to yield maltose, maltotriose, longer maltosides, and glucose"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  },
+  {
+    "dbId": 191101,
+    "displayName": "maltotriose + H2O => maltose + D-glucose (sucrase-isomaltase)",
+    "stId": "R-HSA-191101",
+    "stIdVersion": "R-HSA-191101.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 1,
+    "name": [
+      "maltotriose + H2O => maltose + D-glucose (sucrase-isomaltase)",
+      "Digestion of maltotriose by sucrase-isomaltase to yield maltose and glucose"
+    ],
+    "releaseDate": "2007-02-20",
+    "speciesName": "Homo sapiens",
+    "category": "transition",
+    "className": "Reaction",
+    "schemaClass": "Reaction"
+  }
+]

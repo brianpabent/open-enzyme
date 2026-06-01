@@ -31,6 +31,8 @@ Every cell in your body contains DNA and RNA built from purine bases (adenine an
 
 This is where drugs like **allopurinol** and **febuxostat** intervene — they inhibit XO to reduce uric acid production at the source.
 
+> **Reactome graph anchor (2026-06-01):** Human purine catabolism is represented by `R-HSA-74259`. The xanthine oxidoreductase branch includes hypoxanthine-to-xanthine reactions (`R-HSA-74247`, `R-HSA-9727347`) and xanthine-to-urate reactions (`R-HSA-74258`, `R-HSA-9727349`). Reactome correctly terminates the human pathway at urate; engineered microbial uricase is an Open Enzyme design layer rather than a missing human Reactome step. (Pathway anchor; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
+
 ### The De Novo Purine Biosynthesis Arm — PRPS as a Distinct Chokepoint
 
 **Phosphoribosyl pyrophosphate synthetase (PRPS)** catalyzes the rate-limiting first committed step of de novo purine biosynthesis: ribose-5-phosphate + ATP → PRPP + AMP. PRPP is the central substrate for purine (and pyrimidine) biosynthesis. PRPS sits **one biosynthetic step upstream** of the degradation pathway above — inhibiting PRPS reduces total purine flux at the source, which is mechanistically orthogonal to XO inhibition (which acts after purines are built and being broken down). (Mechanistic Extrapolation; source: prps-purine-biosynthesis-chokepoint.md)
@@ -82,6 +84,8 @@ Approximately **70% of daily uric acid elimination happens through the kidneys**
 | **ABCG2** | ABCG2 | Secretes uric acid into both gut lumen AND renal tubule. Loss-of-function variants are #1 genetic risk for gout. | Enhancing ABCG2 activity is unexplored (most drugs inhibit, not enhance). Pharmacological levers now mapped — see [abcg2-modulators.md](./abcg2-modulators.md): butyrate (PPARγ induction, Animal Model + Clinical Trial), sulforaphane (Nrf2 induction), TNFα suppression (functional ABCG2 restoration in IBD organoids, In Vitro + clinical biopsy), Q141K trafficking rescue via HDAC inhibitors (In Vitro). Androgens (T, DHT) suppress ABCG2 transcriptionally — see [androgen-urate-axis.md](./androgen-urate-axis.md). |
 | **OAT1/OAT3** | SLC22A6/8 | Basolateral uptake of urate from blood into tubular cells for secretion. | Modulated by some existing uricosurics |
 | **NPT1/NPT4** | SLC17A1/3 | Apical secretion of urate into tubular lumen. | Emerging targets |
+
+> **Reactome transporter anchor (2026-06-01):** Reactome models URAT1/SLC22A12 urate-lactate exchange as `R-HSA-561253` under `R-HSA-561048` Organic anion transport by SLC22 transporters. SLC2A9 and ABCG2 are present as Reactome entities, but the audit did not find a clean ABCG2-intestinal urate-efflux reaction. Downstream ABCG2 gut-sink claims on this page should therefore stay anchored to primary physiology and genetics rather than Reactome. (Pathway anchor/gap note; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
 
 ### The Gut Excretion Pathway
 
