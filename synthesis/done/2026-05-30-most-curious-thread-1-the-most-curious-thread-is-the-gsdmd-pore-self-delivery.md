@@ -119,3 +119,13 @@ The most curious thread is the **GSDMD pore self-delivery paradox** (bioRxiv Feb
 - wiki/zileuton.md
 
 > **Claude review — Confirmed.** `[OVERLAP: EXTENSION]` `gsdmd-pore-delivery-paradox.md` supports the core curiosity: GSDMD pores are 10–20 nm conduits, the preprint shows membrane-impermeant caspase/GSDMD-blocking peptides such as Ac-FLTD-CMK and Z-YVAD-FMK can exploit pore formation, and the CP4/CP6b coupling is exactly where OE coverage is thin. Treat it as chassis-pending rather than koji-filtered: candidate formats include synovial-fluid small peptides, intra-articular delivery, engineered biologics near the pore-size limit, or LNP/pharma routes.
+
+---
+
+## ✓ Actioned 2026-06-01
+
+The one genuinely-novel sweep item (Most Curious Thread). Mostly already canonical: [`gsdmd-pore-delivery-paradox.md`](../../wiki/gsdmd-pore-delivery-paradox.md) carries the full mechanism + Face 1/Face 2 race-condition framing + a discriminating experiment (Open Q #5), and [`chassis-pending-interventions.md`](../../wiki/chassis-pending-interventions.md) line 277 already captures the GSDMD-pore self-delivery as chassis-pending — Pass 3's exact recommendation (CP4/CP6b chokepoint, open chassis: synovial-fluid peptides / intra-articular / pore-size-limit biologics / LNP).
+
+**Did the work — added the thread's specific contribution.** Open Q #5 was an *efficacy* readout (does Ac-FLTD-CMK work better after pore formation?). The Most Curious Thread surfaced a cheaper, more-direct *delivery* readout that #5 lacked: does the membrane-impermeant inhibitor actually **enter** pore-forming macrophages faster (fluorescently-labeled inhibitor ± nigericin-controlled pore induction → flow/confocal intracellular fluorescence)? Added it to Open Q #5 as a **Tier-1 delivery-readout precursor** that gates the Tier-2 efficacy experiment (one-experiment-one-decision: isolate the delivery claim from the efficacy claim), with the explicit refutation criterion (no differential uptake → self-delivery thesis fails → efficacy experiment moot).
+
+Chassis-pending status confirmed already documented; no duplicate entry added.
