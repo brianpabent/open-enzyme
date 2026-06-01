@@ -55,6 +55,42 @@ The v1.2 restructure (April 2026) added CP0 (complement priming, C5a-dominant, u
 
 For the full per-chokepoint exploit catalog (mechanism detail, all compound entries, dosing, ChEMBL cross-check verdicts, coverage audit), see [NLRP3 Exploit Map](./nlrp3-exploit-map.md). Compound-specific dossiers: [colchicine](./colchicine.md), [oridonin](./oridonin.md), [BHB/ketones](./bhb-ketones.md), [theaflavins](./theaflavins.md), [zileuton](./zileuton.md), [disulfiram](./disulfiram.md), [complement C5a](./complement-c5a-gout.md), [SPM resolution pathway](./spm-resolution-pathway.md), [cannabinoids & terpenes](./cannabinoids-terpenes.md).
 
+## Endogenous and Protein-Protein Interface (PPI) Regulatory Checkpoints
+
+Recent programmatic mapping of the Reactome database (`R-HSA-844456`) coupled with a comprehensive literature review has identified four high-resolution, biophysical regulatory interfaces within the NLRP3 pathway. These represent novel strategic entry points for engineered therapeutics and natural-product stack designs:
+
+### 1. Pyrin as a Competitive ASC Decoy (CP3 Sequestration)
+*   **Mechanism:** Trimeric Pyrin (encoded by *MEFV*) acts as a molecular sink or competitive decoy, binding to the adaptor protein **ASC (PYCARD)** via homotypic PYD-PYD interactions to physically prevent ASC from forming high-molecular-weight specks with NLRP3 (source: Molecular Cell 2003, PMID: 12718875).
+*   **Structural Details:** 
+    *   **ASC PYD Interface:** Electrostatic bipolar interaction. The positively charged surface involves **Lys21** and **Arg41** (helices α2/α3); the negatively charged surface involves **Glu13**, **Asp48**, and **Asp51** (helices α1/α4).
+    *   **Pyrin PYD Interface:** Mediated by three distinct sites: Leu10/Glu14 (Site 1), Lys25/Arg42 (Site 2), and Leu71/Arg75/Arg80 (Site 3). The FMF-associated **R42W** mutation severely disrupts this binding loop.
+*   **Biophysical Affinities ($K_d$):**
+    *   *NLRP3-ASC PYD:* Moderate affinity ($K_d \approx 22 \ \mu\text{M}$); relies on highly cooperative, nucleation-controlled filament polymerization.
+    *   *POP1-ASC Decoy (Benchmark):* High affinity ($K_d \approx 4.08 \pm 0.52 \ \mu\text{M}$); POP1-ASC successfully outcompetes basal NLRP3-ASC interaction (**In Vitro**).
+*   **Evidence Level:** **Animal Model** (heightened endotoxin sensitivity and caspase-1 activation in $Mefv^{-/-}$ mice) and **In Vitro** (NMR/SPR interface mapping).
+
+### 2. HMOX1 NACHT-Domain Shielding (CP2 Oligomerization Arrest)
+*   **Mechanism:** Soluble cytosolic Heme Oxygenase 1 (HMOX1/HO-1) interacts directly with the **NACHT domain** of NLRP3, physically masking the Walker motifs to block the self-association required for oligomerization (source: J. Biol. Chem. 2018, PMID: 30121650).
+*   **Enzymatic Independence:** This structural shielding occurs in an **enzymatic activity-independent manner**. Inhibition of HO-1 catalytic activity (via SnPP) does not impair its binding to NLRP3 or its cytoprotective properties.
+*   **Therapeutic Translation:** This interface provides an ideal template for de novo peptide mimics. Hydrocarbon-stapled peptides derived from the 12–15 amino acid HO-1 binding loop can be designed to selectively shield the NLRP3 NACHT domain.
+*   **Evidence Level:** **Animal Model** (epithelial-specific HO-1 overexpression mitigates NLRP3-driven injury in murine models) and **In Vitro** (Co-IP and GST pull-down assays).
+
+### 3. SGT1 (SUGT1) Chaperone Chokepoint (CP2 Stabilisation)
+*   **Mechanism:** In resting cells, the specialized co-chaperone SGT1 (encoded by *SUGT1*) complexes with HSP90 to bind and stabilize the **Leucine-Rich Repeat (LRR) domain** of NLRP3, keeping it in an inactive but signaling-competent primed state (source: Nat. Immunol. 2007, PMID: 17401368).
+*   **Disruption Outcome:** Pharmacological disruption of the SGT1-HSP90 interface causes the rapid routing of NLRP3 to the ubiquitin-proteasome system and autophagic degradation. 
+*   **Natural Product Synergy (Echinatin):** Echinatin, a retrochalcone isolated from Licorice (*Glycyrrhiza inflata*, Gancao), acts as a selective HSP90 ATPase inhibitor, driving **dissociation of SGT1** from the HSP90-NLRP3 complex and triggering selective NLRP3 degradation (**Animal Model**, JCI Insight 2021).
+*   **Evidence Level:** **Animal Model** (Echinatin protects against colitis and NASH pathology in vivo) and **In Vitro** (BMDMs and PBMC chaperone dissociation kinetics).
+
+### 4. P2X7/Pannexin-1 Macropore & Ionic Collapse (CP2 Activation Trigger)
+*   **Mechanism:** Low-level extracellular ATP triggers the trimeric P2X7 receptor to act as a standard small-cation channel ($K^+$ efflux, $Na^+$/$Ca^{2+}$ influx). Under sustained high extracellular ATP levels, P2X7 recruits the hemichannel **Pannexin-1 (Panx1)** to form a giant non-selective **macropore** permeable to large molecules up to 800–900 Da (source: EMBO J. 2006, PMID: 17036048). This drives a catastrophic cytosolic potassium ($K^+$) depletion ("ionic collapse"), the universal biophysical switch for NLRP3 oligomerization.
+*   **Structural Regulation:** 
+    *   **P2X7 C-Terminal Tail:** Contains a proline-rich domain (residues 450–456) with SH3-binding motifs that recruits Src tyrosine kinase to phosphorylate and activate adjacent Pannexin-1 channels.
+    *   **CRR Palmitoylation:** The juxtamembrane cysteine-rich region is palmitoylated at residues **C362, C363, C374, and C377** (rat numbering), which prevents channel desensitization. Truncation or cysteine mutations completely abolish macropore formation.
+*   **Inhibitory Modulators:**
+    *   **10Panx1 Peptide:** A synthetic 10-amino acid mimetic (**WRQAAFVDSY**) derived from the ECL1 loop of Pannexin-1 that sterically blocks the macropore and suppresses mature IL-1β release without affecting baseline P2X7 small-cation currents (**In Vitro**).
+    *   **Emodin (TCM/Kampo Antagonist):** Emodin, an anthraquinone from Rhubarb (*Rheum officinale*, Dahuang), acts as a selective P2X7 antagonist with an $IC_{50} \approx 3 \ \mu\text{M}$ for human P2X7 and $0.2 - 0.5 \ \mu\text{M}$ for macrophage death/pore blockade (**Animal Model**).
+*   **Evidence Level:** **Animal Model** (Panx1 and P2X7 knockouts display profound protection against gouty arthritis flares in vivo) and **In Vitro** (electrophysiology and BzATP-evoked dye uptake).
+
 ### Chokepoint 5 — endogenous IL-1Ra biology (anakinra is not a foreign molecule)
 
 This is the canonical explainer for why recombinant IL-1Ra has such a clean safety profile — referenced from [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md). The acute-flare anakinra protocol (100 mg SC daily × 3 days, ~$900/flare, cumulative-steroid-burden framing) and the inhaled mRNA-IL-1RA pulse comparator live canonically in [gout-action-guide.md §"Active flare"](./gout-action-guide.md) and [chassis-pending-interventions.md §4](./chassis-pending-interventions.md) respectively; the [exploit map's CP5a section](./nlrp3-exploit-map.md) carries the full mechanism entries.
