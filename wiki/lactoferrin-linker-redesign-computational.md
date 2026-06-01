@@ -76,9 +76,9 @@ aggressive).
 
 ---
 
-## Open follow-up — does the proline-rigidification strategy generalize? (added 2026-05-19, Cluster E walkthrough)
+## Open follow-up — does the linker protease-resistance design logic generalize? (added 2026-05-19, Cluster E walkthrough; re-scoped 2026-05-30 — see the ⚠ note below)
 
-**The valid generalization question:** does the proline-rigidification design logic applied to lactoferrin's inter-lobe linker generalize to **other secreted OE payloads with structured-mandatory-connector-type linker vulnerabilities**?
+**The valid generalization question (re-scoped 2026-05-30):** does the design logic that actually *won* on lactoferrin's inter-lobe linker — **strip protease-preferred residues while preserving the protective secondary structure** (e.g. `NEEEQQQEEEQ`, helix-preserving, −66% cleavage) — generalize to **other secreted OE payloads with structured-mandatory-connector-type linker vulnerabilities**? **Note the inversion:** the original framing of this question was "does *proline-rigidification* generalize?" — but the 2026-05-30 physics analysis found proline-rigidification self-defeating on this structured (helical) connector (it breaks the protective helix; see the ⚠ note below). Proline-rigidification may still suit a genuinely *flexible/loop* connector with no helix to break, but that is a different candidate class than the one comp-034 actually had.
 
 **Definition of the right candidate class** (the generalization domain):
 - (a) The linker is **short and structured** (high pLDDT, ordered secondary structure).
