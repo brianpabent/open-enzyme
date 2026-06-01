@@ -1326,6 +1326,49 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 
 ---
 
+### 1.31 Tier 2 Butyrate Assay Validation — HPLC-UV vs. GC-MS spike/recovery (added 2026-06-01)
+
+**Status**: Proposed (wet-lab gated) | **Cost**: ~$500 | **Weeks**: 2 | **Phase**: 1
+
+**Affected wiki**: [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038 — the audit + full-text verification this operationalizes); [`quantification-ladder.md`](./quantification-ladder.md) (the Tier-2 framework this anchors for SCFAs); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) (Q141K butyrate-emphasis workflow that currently uses exposure proxies, not input-potency verification); [`abcg2-modulators.md`](./abcg2-modulators.md) (butyrate → PPARγ → ABCG2 induction); §1.14 (the Caco-2 butyrate dose-response arm that depends on a Tier-3 butyrate anchor); [`open-questions.md`](./open-questions.md) §"Class-level Tier 2 assay gap for microbiome-derived metabolites" (the class-level gap this is the butyrate instance of).
+
+**What it tests:** Whether a low-cost, decentralizable **Tier 2** butyrate quantification method validates against the **Tier 3 GC-MS** gold standard well enough to replace it for OE's near-term need — measuring butyrate in **engineered-strain culture supernatant**. Without a validated Tier 2 ruler, butyrate-emphasis interventions cannot be cheaply verified, and unverified metabolite dose is indistinguishable from mechanism failure.
+
+**Proposed in:** 2026-05-30 sweep Experiment 1 (`synthesis/done/2026-05-30-experiment-1-tier-2-butyrate-assay-validation-comp-038-next-step.md`), operationalizing comp-038's "Next Step."
+
+**Candidate selection — resolved at the full-text gate (2026-06-01 verification pass; see comp-038):** comp-038's abstract-level audit surfaced three Tier-2 candidates; a full-text verification pass narrowed to **one**:
+
+- **✅ HPLC-UV (De Baere et al. 2013, *J Pharm Biomed Anal* 80:107–115, PMID 23542733)** — **the candidate to validate.** Direct UV at 210 nm (no derivatization), validated on **bacterial culture supernatant** (OE's matrix), linear 0.5–50 mM (overlaps fermentation butyrate), butyrate chromatographically resolved from acetate/propionate/lactate. Gate-keeper is the HPLC instrument itself — community-biolab tier, **not** kitchen/home tier.
+- **❌ Electrochemical + ANN (Gu et al. 2026, *Biosensors* 16(4):223, PMID 42041444)** — failed the gate: vendor-locked hardware, dual derivatization, and butyrate specificity depends on an **unreleased** ANN that adopters must retrain against their own GC-MS (making GC-MS a prerequisite, not a replacement). Fecal-only matrix. Recorded as failed — do not re-surface.
+- **❌ SCFA/butyrate ELISA kits** — failed the gate: vendor-claimed dynamic range is pg/mL (≈nM), 5–6 orders of magnitude below mM culture/colonic butyrate; specificity on an 88-Da analyte unvalidated. Recorded as failed — do not re-surface.
+
+**Protocol (HPLC-UV, culture-supernatant use case):**
+
+- **Reference standard:** sodium butyrate, ≥99%. Calibration series spanning **0.5–50 mM** in sterile culture medium (matrix-matched, not water).
+- **Sample prep:** acidify to pH < 2, liquid-liquid back-extraction into diethyl ether, centrifuge (per De Baere). Volatile-solvent fume handling required.
+- **Spike/recovery:** spike butyrate into sterile medium across the range; quantify by HPLC-UV (210 nm, polar-endcapped C18 e.g. Hypersil Gold aQ).
+- **Tier 3 anchor:** split 10–20 real fermentation-supernatant samples + the spiked standards; measure in parallel by GC-MS (contract lab).
+- **Medium blank:** run spent-medium and sterile-medium blanks — confirm the butyrate peak is clean (210 nm is non-selective; yeast extract / aromatic metabolites can co-elute).
+
+**Success criterion (test → adopt):**
+
+- **GREEN (adopt HPLC-UV as Tier 2 for culture supernatant):** recovery 80–120%, intra/inter-day RSD < 10%, calibration R² > 0.99, butyrate–propionate baseline resolution Rs > 1.5 in real supernatant, Bland-Altman agreement vs. GC-MS within ±0.3 mM at physiologic butyrate.
+- **YELLOW:** recovery/linearity pass but co-elution or resolution fails in the real strain's spent medium → optimize extraction or gradient; iterate.
+- **RED:** recovery < 70% or GC-MS disagreement > 30% → HPLC-UV does not transfer to OE's medium matrix; stay on GC-MS and record the Tier-2 gap as unclosed for culture supernatant.
+
+**Estimated cost:** ~$500 (sodium butyrate standard + HPLC consumables/column time + GC-MS anchor on 10–20 samples). **Wet-lab gated:** OE is Phase 0 with no analytical instruments — requires a partner CRO or community biolab with HPLC-UV + GC-MS access. The full-text *verification* step (which candidate to validate) is complete; the empirical spike/recovery is what remains.
+
+**Limitations:**
+
+1. The method was validated by De Baere on fecal/cecal-derived cultures, **not** engineered-yeast/koji medium — matrix transfer is the primary risk and the main thing this validation tests.
+2. 210 nm is non-selective; co-elution in a specific strain's spent medium is the most likely failure mode (hence the medium-blank requirement).
+3. Diethyl-ether extraction is volatile/flammable and extraction-efficiency-limited; validate recovery per medium type.
+4. **Stool/serum butyrate monitoring** (the patient-facing future) is a *separate* matrix and a separate validation — this entry covers culture supernatant only.
+
+**Cross-references:** [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038 + 2026-06-01 full-text verification); [`quantification-ladder.md`](./quantification-ladder.md) (Tier-2 framework); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) (Q141K butyrate workflow); [`abcg2-modulators.md`](./abcg2-modulators.md) (butyrate → ABCG2 induction); §1.14 (Caco-2 butyrate dose-response that needs this anchor); §1.28 (sister Tier-2 assay-validation experiment — cordycepin); [`open-questions.md`](./open-questions.md) §"Class-level Tier 2 assay gap for microbiome-derived metabolites".
+
+---
+
 ## Phase 2: Animal Model Validation
 
 ### 2.1 Gnotobiotic Mouse Colonization with Engineered S. boulardii

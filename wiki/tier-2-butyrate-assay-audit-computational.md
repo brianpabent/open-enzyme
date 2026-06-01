@@ -84,6 +84,20 @@ For [`validation-experiments.md` §1.14](./validation-experiments.md#114-additiv
 
 Run a focused full-text/protocol verification pass on PMID 23542733 and PMID 42041444, plus a vendor protocol audit for any butyric-acid/SCFA ELISA claims. If one candidate survives, design a small paired validation with sodium-butyrate spike/recovery and 10-20 real samples measured by the candidate Tier 2 method plus GC-MS.
 
+### Full-text verification — completed 2026-06-01
+
+The full-text pass above was run (multilingual; English + Chinese analytical-chemistry sources). Outcome — **one candidate survives, two fail the full-text Tier-2 gate:**
+
+| Candidate | Resolves to | Verdict | Reason |
+|---|---|---|---|
+| **HPLC-UV** (PMID 23542733) | De Baere et al. 2013, *J Pharm Biomed Anal* 80:107–115 | **✅ SURVIVES** (community-biolab tier) | Validated on **bacterial culture supernatant** (OE's near-term matrix), linear **0.5–50 mM**, **no derivatization** (direct UV 210 nm), butyrate resolved from acetate/propionate/lactate. Gate-keeper is the HPLC instrument — not home/kitchen tier, but decentralizable to a community biolab. |
+| **Electrochemical + ANN** (PMID 42041444) | Gu et al. 2026, *Biosensors* 16(4):223 | **❌ FAILS** | Vendor-locked hardware (VidaBio chip + potentiostat), dual derivatization (esterification + dissociation), and butyrate specificity depends on an **unreleased ANN** adopters must retrain against their own GC-MS — making GC-MS a *prerequisite*, not a replacement. Fecal-only matrix. (Real paper, GC-MS-validated R²=0.998 — kept as a citation, not a Tier-2 option.) |
+| **SCFA/butyrate ELISA kits** | US Biological / Aviva / LSBio etc. | **❌ FAILS** (confirms RED) | Vendor dynamic range ~pg/mL (≈nM), **5–6 orders of magnitude** below mM culture/colonic butyrate; specificity on an 88-Da analyte unvalidated against GC-MS in a real SCFA matrix. |
+
+[TRANSLATION NOTE] Chinese analytical literature (短链脂肪酸 HPLC / 电化学检测) corroborated the load-bearing claim with no disagreement: most fecal-matrix SCFA-HPLC methods require pre-column derivatization (e.g. 3-nitrophenylhydrazine) because SCFAs lack a chromophore; De Baere's direct-UV-at-210 nm approach is the distinguishing feature that avoids derivatization, at the cost of non-selective absorbance (hence the medium-blank requirement).
+
+**Operationalized as a tracked wet-lab gate:** [`validation-experiments.md` §1.31](./validation-experiments.md) — HPLC-UV vs. GC-MS spike/recovery on culture supernatant, with GREEN/YELLOW/RED success criteria. The empirical spike/recovery remains wet-lab gated (OE is Phase 0; needs partner-CRO / community-biolab HPLC-UV + GC-MS access); the candidate-selection question is now closed.
+
 ## Cross-References
 
 - [comp-038 experiment folder](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/)
