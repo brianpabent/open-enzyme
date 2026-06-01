@@ -11,6 +11,7 @@ related:
   - gasdermin-d
   - chokepoint-6b
   - zileuton
+  - gsdmd-pore-delivery-paradox
 sources:
   - nlrp3-exploit-map.md
 ---
@@ -148,6 +149,8 @@ Disulfiram requires a prescription. Access strategies:
 (source: supplements-stack.md)
 
 ## Comparison: Disulfiram vs. Other Inflammasome Inhibitors
+
+> **Mechanistic complement to the GSDMD pore self-delivery paradox (see [gsdmd-pore-delivery-paradox.md](./gsdmd-pore-delivery-paradox.md)).** Disulfiram prevents GSDMD pores from forming (CP6b blockade — upstream); the pore self-delivery paradox exploits already-formed pores as drug-delivery conduits (CP6b exploitation — downstream). The two strategies are complementary rather than competing: disulfiram as prophylaxis, pore-directed delivery as acute circuit-breaker. (Mechanistic Extrapolation; source: gsdmd-pore-delivery-paradox.md)
 
 | Drug | Chokepoint | Class | Status | Cost | Safety Data |
 |------|-----------|-------|--------|------|-------------|

@@ -97,8 +97,10 @@ This race condition means that prophylactic or early-flare dosing matters more t
 ## Implications for OE platform
 
 The OE stack currently addresses CP6b via:
-- Disulfiram / DMF (oral, Cys191 covalent modification — prevents GSDMD oligomerization)
+- Disulfiram / DMF (oral, Cys191 covalent modification — prevents GSDMD oligomerization; see [disulfiram.md](./disulfiram.md))
 - Lactoferrin (oral kojied, mitophagy-mediated upstream prevention — PINK1/Parkin pathway)
+
+**Disulfiram vs. pore self-delivery — complementary strategies (Mechanistic Extrapolation; source: disulfiram.md).** Disulfiram prevents GSDMD pores from forming at the CP6b step (upstream blockade at Cys191); the pore self-delivery paradox exploits already-formed pores as drug-delivery conduits (downstream exploitation). The two are complementary rather than competing: disulfiram for prophylaxis, pore-directed delivery for acute circuit-breaking. The pore-delivery mechanism works once disulfiram fails — different timing, different mechanism class.
 
 These are prevention-oriented: they work by stopping GSDMD from forming pores in the first place. The pore self-delivery mechanism is a *response*-oriented complement: useful once pores are already forming, as a circuit-breaker.
 
