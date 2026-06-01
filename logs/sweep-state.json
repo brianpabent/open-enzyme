@@ -1,66 +1,33 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "cee76901decca4ae29b24c4d0a7bc2ac8300635c",
-    "timestamp": "2026-05-30T14:21:17Z",
-    "synthesis_log": "logs/v4-synthesis-2026-05-30-0317c56.md",
-    "review_commit": "cee76901decca4ae29b24c4d0a7bc2ac8300635c",
+    "commit": "ffb10b4f627def1fb04264878a770d7e8dfedfed",
+    "timestamp": "2026-06-01T23:20:37Z",
+    "synthesis_log": "logs/v4-synthesis-2026-06-01-8a97f95.md",
+    "review_commit": "ffb10b4f627def1fb04264878a770d7e8dfedfed",
     "trigger_files": [
-      "wiki/aspergillus-oryzae.md",
-      "wiki/bhb-ketones.md",
-      "wiki/blood-barrier.md",
-      "wiki/cannabinoids-terpenes.md",
-      "wiki/carnosine.md",
-      "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
-      "wiki/chassis-pending-interventions.md",
+      "wiki/abcg2-modulators.md",
       "wiki/complement-c5a-gout.md",
       "wiki/digestive-enzymes.md",
       "wiki/disulfiram.md",
-      "wiki/duckweed-aquatic-chassis.md",
-      "wiki/engineered-yeast-uricase-proposal.md",
-      "wiki/etc/GRAPH.md",
-      "wiki/etc/autonomous-screening-methodology.md",
-      "wiki/etc/bio-ai-tools.md",
-      "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/README.md",
-      "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/provenance.md",
-      "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/README.md",
-      "wiki/etc/validation-experiments-archive.md",
-      "wiki/genotype-informed-supplement-workflow.md",
       "wiki/gout-action-guide.md",
-      "wiki/gout-deep-dive.md",
-      "wiki/gout-genetic-variants.md",
       "wiki/gout-pathophysiology.md",
+      "wiki/gsdmd-pore-delivery-paradox.md",
       "wiki/gut-lumen-sink.md",
-      "wiki/koji-endgame-strain.md",
-      "wiki/kpv-peptide.md",
       "wiki/lactoferrin-linker-redesign-computational.md",
       "wiki/lactoferrin.md",
-      "wiki/mechanical-flare-triggers.md",
-      "wiki/medicinal-mushroom-extract-sops.md",
+      "wiki/medicinal-mushroom-complement-track.md",
+      "wiki/modality-chokepoint-matrix.md",
       "wiki/nlrp3-inflammasome.md",
       "wiki/open-questions.md",
-      "wiki/oridonin.md",
-      "wiki/peptide-gout-addendum.md",
-      "wiki/protein-engineering-strategy.md",
-      "wiki/quantification-ladder.md",
-      "wiki/saccharomyces-cerevisiae.md",
-      "wiki/self-experiment-protocol.md",
       "wiki/supplements-stack.md",
-      "wiki/uricase.md",
+      "wiki/theaflavins.md",
+      "wiki/tier-2-butyrate-assay-audit-computational.md",
       "wiki/validation-experiments.md"
     ],
-    "run_id": "26685959530"
+    "run_id": "26787312709"
   },
   "recent_runs": [
-    {
-      "run_id": "25408323687",
-      "trigger": "push",
-      "completed_at": "2026-05-05T23:54:07Z",
-      "outcome": "success",
-      "failed_phase": null,
-      "trigger_paths_count": 13,
-      "synthesis_log": "logs/v4-synthesis-2026-05-05-3e928d3.md"
-    },
     {
       "run_id": "local-1778099717",
       "trigger": "workflow_dispatch",
@@ -231,6 +198,15 @@
       "failed_phase": null,
       "trigger_paths_count": 42,
       "synthesis_log": "logs/v4-synthesis-2026-05-30-0317c56.md"
+    },
+    {
+      "run_id": "26787312709",
+      "trigger": "push",
+      "completed_at": "2026-06-01T23:20:37Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 18,
+      "synthesis_log": "logs/v4-synthesis-2026-06-01-8a97f95.md"
     }
   ]
 }
