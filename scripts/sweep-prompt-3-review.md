@@ -44,7 +44,7 @@ Each blockquote opens with `> **Pass 3 review — <verdict>.**` (literal, with t
 Each blockquote opens with one of these verdicts in bold:
 
 - **Confirmed.** Survives scrutiny. May add stronger evidence or sharpen the framing.
-- **Confirmed, prioritize.** Agree, AND should be elevated (e.g., Open Question → Priority Action).
+- **Confirmed, prioritize.** Agree, AND should be elevated (directly actionable, stack-design implication, or an evidence chain that should change reader behavior — flag it for the walkthrough's attention).
 - **Partial.** Agree on X, push back on Y. Specify both.
 - **Push back.** Disagree on a substantive point. Cite contradicting evidence.
 - **Rejected.** Claim doesn't survive scrutiny. Cite why.

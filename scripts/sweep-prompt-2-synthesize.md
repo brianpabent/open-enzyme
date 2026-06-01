@@ -101,7 +101,7 @@ Decision tree before producing the section:
 
 Bias toward fresh content: especially favor beliefs introduced by recent wiki additions or recent comp-NNN runs (`git log --since="<last-sweep-date>" wiki/` is the cheapest fresh-content check). New ungated beliefs > old gated ones. The Riskiest Assumption section's value is surfacing what the user *doesn't already know*, not reminding them what they've already documented.
 
-This discipline applies specifically to the Riskiest Assumption forced-rank section. Connections / Contradictions / Open Questions / Priority Actions retain the "bias toward inclusion" framing from Phase A — composing two known items is still novel synthesis even if both individual items are documented.
+This discipline applies specifically to the Riskiest Assumption forced-rank section. Connections / Contradictions / Open Questions retain the "bias toward inclusion" framing from Phase A — composing two known items is still novel synthesis even if both individual items are documented.
 
 **Most Curious Thread.** One paragraph. Of everything in this corpus, pick *one* thread you'd spend the next experiment slot on. Must include: (a) the specific corpus evidence supporting the hunch, line-anchored as `file.md §section` or page-name+topic, (b) the specific evidence that would refute it, (c) the cheapest experiment that would discriminate. Multi-vendor signal: if you suspect another sweep model would converge on this pick, say so; if you suspect this is your idiosyncratic taste, say that too — divergence may be as informative as convergence here.
 
@@ -111,7 +111,7 @@ These are corpus-anchored take commitments, the take-equivalent of the project's
 
 ## Output format
 
-**Critical**: end every numbered item (each Connection, Contradiction, Experiment, Open Question, Priority Action) with a `{{PEER-REVIEW}}` marker on its own line. Pass 3 (Claude review) substitutes each marker with a review blockquote via deterministic merge — your content is preserved verbatim.
+**Critical**: end every numbered item (each Connection, Contradiction, Experiment, Open Question) with a `{{PEER-REVIEW}}` marker on its own line. Pass 3 (Claude review) substitutes each marker with a review blockquote via deterministic merge — your content is preserved verbatim.
 
 **Each numbered item must include a chain-depth tag.** This makes shallow vs. deep synthesis visible to the human reviewer at a glance. Tags:
 
@@ -159,12 +159,6 @@ Also include a `[PHASE-A-MATCH: <yes/no/partial>]` tag — your honest self-asse
 ## Open Questions
 
 1. **<question>?** (context)
-
-   {{PEER-REVIEW}}
-
-## Priority Actions
-
-1. **<action>** (1-2 lines on what + why)
 
    {{PEER-REVIEW}}
 
@@ -240,3 +234,4 @@ If you produced a no-synthesis output (drift guard triggered), still commit the 
 - **Evidence-level tags** on every claim.
 - **Inline provenance** — PMID or `(source: <wiki-filename>)`.
 - **No verdict on V4-vs-Claude.** That's Pass 3's role. Just produce your synthesis cleanly.
+- **Do NOT emit a "Priority Actions" section** (retired 2026-06-01). In practice it restated already-found content as "to do" — the canonical failure was recommending "add X" when X already existed (see `SWEEP-ARCHITECTURE.md` Item 18 stale-recommendation case). Actionable findings already live inside Connections (with a *Suggested Action*) and Proposed Experiments; a separate priority-action list duplicated those without adding signal. Sections are now: New Connections → Contradictions → Proposed Experiments → Open Questions → Riskiest Assumption → Most Curious Thread.

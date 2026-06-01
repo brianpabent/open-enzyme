@@ -14,7 +14,7 @@ When reviewing each Pass 2 finding, evaluate it on **chokepoint-fit first, chass
 
 ## Goal
 
-Output exactly **N** review blockquotes (N = `item_count` in the TRIGGER block), in document order — top to bottom through the sections (New Connections → Contradictions → Proposed Experiments → Open Questions → Priority Actions → Riskiest Assumption → Most Curious Thread), one per numbered item and one per single-paragraph section — separated by `<<<NEXT>>>` lines. Each blockquote evaluates one Pass 2 item against the inlined evidence and any additional verification you perform.
+Output exactly **N** review blockquotes (N = `item_count` in the TRIGGER block), in document order — top to bottom through the sections (New Connections → Contradictions → Proposed Experiments → Open Questions → Riskiest Assumption → Most Curious Thread; the Priority Actions section was retired 2026-06-01 and will not appear), one per numbered item and one per single-paragraph section — separated by `<<<NEXT>>>` lines. Each blockquote evaluates one Pass 2 item against the inlined evidence and any additional verification you perform.
 
 ## Success criteria
 

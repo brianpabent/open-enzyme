@@ -105,6 +105,10 @@ SECTION_TYPE_MAP = {
     "Contradictions Found": "contradiction",
     "Proposed Experiments": "experiment",  # tolerates "(ranked by ...)" suffix
     "Open Questions": "open-question",
+    # priority-action retired from Pass 2 generation 2026-06-01 (restated
+    # already-found content). Parsing retained defensively: if a non-compliant
+    # model still emits a "## Priority Actions" header, it parses into clean
+    # files rather than corrupting the adjacent Open Questions section.
     "Priority Actions": "priority-action",
     "Riskiest Assumption": "riskiest-assumption",
     "Most Curious Thread": "most-curious-thread",
