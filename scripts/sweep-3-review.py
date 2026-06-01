@@ -68,6 +68,7 @@ PRICING_USD_PER_MTOK = {
     "anthropic/claude-opus-4-7":    (15.00, 75.00),
     "google/gemini-2.5-pro":        (1.25, 5.00),
     "openai/gpt-5.5":               (5.00, 30.00),
+    "deepseek/deepseek-v4-pro":     (0.435, 0.87),  # Pass 3 reviewer default 2026-06-01 (matches Pass 1 / synthesize pricing)
 }
 
 # Anthropic prompt-cache read pricing per Mtok. Cache reads bill at 10% of
@@ -83,6 +84,9 @@ CACHE_READ_USD_PER_MTOK = {
     # OpenAI auto-caches on prefix match with no cache_control markers required;
     # cached reads bill at 10% of input rate (matches Anthropic's ratio).
     "openai/gpt-5.5":               0.50,
+    # DeepSeek context caching, ~10% of input rate per the same convention
+    # (magnitude optimistic per the note above; direction correct).
+    "deepseek/deepseek-v4-pro":     0.044,
 }
 
 # Read-only research tools for Pass 3. NO edit, NO write — Pass 3 is

@@ -429,14 +429,18 @@ jobs:
       - name: Run Pass 3 review
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          # Default reviewer is GPT-5.5 with the GPT-5.5-tuned prompt
-          # (sweep-prompt-3-review-gpt55.md). Switched from Opus 4.7
-          # 2026-05-08 after a 3-way eval (evals/pass-3-reviewer/) showed
-          # tuned GPT-5.5 produces comparable-or-better reviews at 1/5 the
-          # cost. Both prompts and the canonical Opus path are preserved
-          # for future side-by-side evals; see the eval comparison doc.
-          REVIEWER_MODEL:    openai/gpt-5.5
-          REVIEWER_PROMPT:   scripts/sweep-prompt-3-review-gpt55.md
+          # Default reviewer is DeepSeek V4-Pro with the DeepSeek-tuned prompt
+          # (sweep-prompt-3-review-deepseek.md). Switched from GPT-5.5 2026-06-01
+          # after the eval at evals/pass-3-reviewer/2026-05-30-0317c56-comparison.md:
+          # DeepSeek is ~10-25x cheaper AND was the only model to use the
+          # route-to-verification pattern the corpus-absence rule exists to produce
+          # (passed catch-test 1 / theaflavins where GPT-5.5 rejected on corpus-absence).
+          # GPT-5.5 + Opus prompts preserved for periodic cross-checks — recommended
+          # to preserve cross-vendor heterogeneity since DeepSeek also runs Pass 1
+          # (see the comparison doc's heterogeneity note). History: GPT-5.5 replaced
+          # Opus 4.7 on 2026-05-08 (the 3-way eval), now DeepSeek replaces GPT-5.5.
+          REVIEWER_MODEL:    deepseek/deepseek-v4-pro
+          REVIEWER_PROMPT:   scripts/sweep-prompt-3-review-deepseek.md
           SYNTHESIS_LOG:     ${{ needs.synthesize.outputs.synthesis_log }}
           TRIGGER_FILES:     ${{ needs.propagate.outputs.trigger_files }}
           CITED_FILES:       ${{ needs.synthesize.outputs.cited_files }}

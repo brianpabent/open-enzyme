@@ -648,7 +648,20 @@ def main():
     # invariant is: Pass 3 emits exactly one <<<NEXT>>>-separated review per
     # item, in document order. A synthesizer dropping/duplicating a marker no
     # longer aborts the sweep; only a genuine Pass-3 review-count mismatch does.
-    reviews = [r.strip() for r in reviews_raw.split(SEPARATOR) if r.strip()]
+    # Strip any leading preamble before each review's first blockquote. Some
+    # Pass 3 models (notably DeepSeek when it self-terminates before the
+    # iteration cap) leak a preamble line ("Now I have enough...") before the
+    # first "> **... review —" blockquote despite the prompt's output-only
+    # instruction; that corrupts the positional merge. Defensive + model-agnostic:
+    # for each <<<NEXT>>>-separated segment, drop leading non-blockquote lines.
+    def _strip_review_preamble(seg: str) -> str:
+        lines = seg.split("\n")
+        for i, ln in enumerate(lines):
+            if ln.lstrip().startswith(">"):
+                return "\n".join(lines[i:]).strip()
+        return seg.strip()  # no blockquote found — leave intact; count check catches it
+
+    reviews = [_strip_review_preamble(r) for r in reviews_raw.split(SEPARATOR) if r.strip()]
     if len(reviews) != len(all_items):
         sys.exit(
             f"Review/item count mismatch — Pass 2 has {len(all_items)} items, "
