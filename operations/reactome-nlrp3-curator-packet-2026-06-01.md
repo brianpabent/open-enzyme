@@ -9,6 +9,14 @@ tags: [reactome, nlrp3, contribution, curation, open-source]
 
 Purpose: provide a curator-facing, conservative submission packet for possible updates to Reactome's NLRP3 inflammasome pathway (`R-HSA-844456`). This is the version to review before emailing Reactome. It is deliberately narrow: only propose mechanisms that survived the 2026-06-01 Reactome audit and have primary-source support.
 
+## What To Send
+
+Send the email in [`reactome-nlrp3-email-to-send-2026-06-01.md`](./reactome-nlrp3-email-to-send-2026-06-01.md) to `help@reactome.org`.
+
+Do **not** attach the raw files in `reference/generated/reactome/2026-06-01-nlrp3-curator-packet/` on first contact. Those files are internal provenance: Reactome query outputs and PubChem registry pulls that let us reproduce the audit.
+
+If you want to include an attachment, attach or paste [`reactome-nlrp3-supporting-detail-2026-06-01.md`](./reactome-nlrp3-supporting-detail-2026-06-01.md). That file is external-facing and contains no local file references.
+
 Recommended route: Reactome's public contribution page asks prospective contributors to contact Reactome for pathways not already listed as active calls for review; the EBI Reactome training page gives `help@reactome.org` for informal contribution discussions.
 
 External verification links:
