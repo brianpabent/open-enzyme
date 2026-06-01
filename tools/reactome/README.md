@@ -4,27 +4,29 @@
 
 ---
 
-## 🛠️ How to Use This Tool (For Agents & Developers)
+## How to Use This Tool
 
-This tool is designed to run anywhere with a standard **Python 3.10+** environment. It utilizes a rate-limited HTTP client with automatic retries and exponential backoff to respect Reactome's rate-limiting rules.
-
-### Running via `uv` (Recommended)
-`uv` automatically resolves dependencies and runs the script instantly:
-```bash
-uv run tools/reactome/reactome_analysis.py <command> [options] --output <file>
-```
+This tool is designed to run anywhere with a standard **Python 3.10+** environment. It uses only the Python standard library plus the local `http_client.py` in this directory.
 
 ### Running via Plain Python
-Since the helper script `http_client.py` is in the same directory, you can run the tool directly with `python3`:
+
 ```bash
 python3 tools/reactome/reactome_analysis.py <command> [options] --output <file>
+```
+
+### Running via `uv`
+
+No external dependency resolution is required. If another agent prefers `uv`, it can still execute the script:
+
+```bash
+uv run tools/reactome/reactome_analysis.py <command> [options] --output <file>
 ```
 
 ---
 
 ## 📋 Common Commands Reference
 
-All commands require the `--output <path>` argument to write the structured JSON or image results to a file (avoiding terminal buffer pollution).
+All commands require the `--output <path>` argument to write structured JSON or image results to a file. Parent directories are created automatically.
 
 ### 1. Database Info
 Check database status and connectivity:
@@ -38,6 +40,7 @@ Search for a pathway, molecule, or drug in Reactome:
 ```bash
 python3 tools/reactome/reactome_analysis.py search --query "NLRP3 inflammasome" --output /tmp/search.json
 ```
+No-hit searches are written as structured JSON with `notFound: true` instead of failing, which is useful for curation-gap audits.
 
 ### 3. Mechanistic Queries (Stable IDs)
 Query the detailed reaction equations, authors, orthologs, and summation for a specific Reactome ID (e.g. `R-HSA-844456`):
@@ -63,6 +66,14 @@ Post a list of genes or proteins (separated by commas or newlines) to get a p-va
 ```bash
 python3 tools/reactome/reactome_analysis.py analyze --data "NLRP3,PYCARD,CASP1,IL1B" --output /tmp/enrichment.json
 ```
+
+---
+
+## Open Enzyme Research Discipline
+
+Reactome is a curated pathway graph, not a substitute for primary literature. Use Reactome IDs, participants, summations, and `regulatedBy` edges to orient mechanistic work, then grep-verify any load-bearing numbers, residue positions, PMIDs, DOIs, or evidence-tier conclusions against primary sources before editing `wiki/`.
+
+For durable generated exports, prefer `reference/generated/reactome/`. For scratch inspection, use `/tmp`.
 
 ---
 

@@ -21,19 +21,11 @@ identifier mapping, token-based result retrieval, report/download features,
 Content Service queries, diagram export, and cross-reference mapping.
 """
 
-# /// script
-# requires-python = ">=3.10"
-# dependencies = [
-#   "science-skills-common",
-# ]
-# [tool.uv.sources]
-# science-skills-common = { path = "../../science_skills_common" }
-# ///
-
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from typing import Any
 import urllib.parse
@@ -52,6 +44,9 @@ def _write_output(
     binary: bool = False,
 ) -> None:
   """Writes content to an output file."""
+  output_dir = os.path.dirname(os.path.abspath(output_path))
+  if output_dir:
+    os.makedirs(output_dir, exist_ok=True)
   if binary:
     with open(output_path, "wb") as f:
       f.write(content)
@@ -116,6 +111,25 @@ def _summarize_result(result_text: str, limit: int = 100) -> str:
     return json.dumps(data)
   except (json.JSONDecodeError, TypeError):
     return result_text
+
+
+def _not_found_payload(args: argparse.Namespace, error: http_client.HttpError) -> dict[str, Any]:
+  """Builds structured output for Reactome 404 responses that are expected."""
+  payload: dict[str, Any] = {
+      "notFound": True,
+      "query": getattr(args, "query", None),
+      "id": getattr(args, "id", None),
+      "results": [],
+      "total": 0,
+  }
+  try:
+    payload["reactomeError"] = error.json()
+  except (json.JSONDecodeError, UnicodeDecodeError):
+    payload["reactomeError"] = {
+        "statusCode": error.status_code,
+        "message": str(error),
+    }
+  return payload
 
 
 def _build_params(
@@ -817,6 +831,7 @@ COMMANDS: list[dict[str, Any]] = [
         "path": "/search/query",
         "base": "content",
         "custom_params": _search_params,
+        "not_found_ok": True,
         "args": [
             {
                 "name": "--query",
@@ -935,10 +950,16 @@ def _dispatch(args: argparse.Namespace) -> None:
       "Accept": accept,
   }
 
-  if handler == "binary":
-    result = _CLIENT.fetch_bytes(url, method=method, headers=headers, data=data)
-  else:
-    result = _CLIENT.fetch_text(url, method=method, headers=headers, data=data)
+  try:
+    if handler == "binary":
+      result = _CLIENT.fetch_bytes(url, method=method, headers=headers, data=data)
+    else:
+      result = _CLIENT.fetch_text(url, method=method, headers=headers, data=data)
+  except http_client.HttpError as exc:
+    if cfg.get("not_found_ok") and exc.status_code == 404:
+      _write_output(args.output, json.dumps(_not_found_payload(args, exc), indent=2))
+      return
+    raise
 
   if handler == "json":
     if cfg.get("filterable"):

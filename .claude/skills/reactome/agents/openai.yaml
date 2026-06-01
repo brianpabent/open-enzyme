@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reactome"
+  short_description: "Query and audit Reactome pathway data from Open Enzyme."
+  default_prompt: "Use Reactome to inspect a pathway, reaction, participants, diagrams, or curation gaps."

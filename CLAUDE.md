@@ -201,6 +201,15 @@ Most of this runs automatically via the sweep daemon — when you save a file un
 2. Link from related wiki pages using standard markdown links
 3. Include YAML frontmatter with `title`, `date`, `tags` (and `related`, `sources` when applicable)
 
+### Task: Query Reactome pathway data
+
+Use the repo-local Reactome integration before manually downloading reports:
+
+1. Load `.claude/skills/reactome/SKILL.md` for workflow guidance.
+2. Run `python3 tools/reactome/reactome_analysis.py --help` to inspect available commands.
+3. Use `query`, `contained-events`, `event-ancestors`, `participants`, `search`, and `diagram` to inspect stable IDs programmatically.
+4. Treat Reactome as curated pathway infrastructure, not primary evidence. Before updating `wiki/`, grep-verify load-bearing PMIDs, DOIs, residue positions, kinetic constants, ChEBI IDs, UniProt accessions, and evidence tiers against primary sources.
+
 ---
 
 ## Safety & Compliance Notes
