@@ -1,0 +1,386 @@
+{
+  "dbId": 877187,
+  "displayName": "P2X7 mediates loss of intracellular K+",
+  "stId": "R-HSA-877187",
+  "stIdVersion": "R-HSA-877187.2",
+  "isInDisease": false,
+  "isInferred": false,
+  "maxDepth": 1,
+  "name": [
+    "P2X7 mediates loss of intracellular K+"
+  ],
+  "releaseDate": "2011-06-14",
+  "speciesName": "Homo sapiens",
+  "crossReference": [
+    {
+      "dbId": 12667477,
+      "displayName": "RHEA:29463",
+      "databaseName": "RHEA",
+      "identifier": "29463",
+      "url": "https://www.rhea-db.org/rhea/29463",
+      "className": "DatabaseIdentifier",
+      "schemaClass": "DatabaseIdentifier"
+    }
+  ],
+  "compartment": [
+    {
+      "dbId": 876,
+      "displayName": "plasma membrane",
+      "accession": "0005886",
+      "databaseName": "GO",
+      "definition": "The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.",
+      "name": "plasma membrane",
+      "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005886",
+      "className": "Compartment",
+      "schemaClass": "Compartment"
+    },
+    {
+      "dbId": 70101,
+      "displayName": "cytosol",
+      "accession": "0005829",
+      "databaseName": "GO",
+      "definition": "The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.",
+      "name": "cytosol",
+      "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005829",
+      "className": "Compartment",
+      "schemaClass": "Compartment"
+    },
+    {
+      "dbId": 984,
+      "displayName": "extracellular region",
+      "accession": "0005576",
+      "databaseName": "GO",
+      "definition": "The space external to the outermost structure of a cell. For cells without external protective or external encapsulating structures this refers to space outside of the plasma membrane. This term covers the host cell environment outside an intracellular parasite.",
+      "name": "extracellular region",
+      "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005576",
+      "className": "Compartment",
+      "schemaClass": "Compartment"
+    }
+  ],
+  "precedingEvent": [
+    {
+      "dbId": 877158,
+      "displayName": "P2X7 forms oligomeric non-selective cation channels",
+      "stId": "R-HSA-877158",
+      "stIdVersion": "R-HSA-877158.2",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 forms oligomeric non-selective cation channels"
+      ],
+      "releaseDate": "2011-06-14",
+      "speciesName": "Homo sapiens",
+      "followingEvent": [
+        877187
+      ],
+      "isChimeric": false,
+      "category": "binding",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    }
+  ],
+  "literatureReference": [
+    {
+      "dbId": 877233,
+      "displayName": "Nucleotide receptors: an emerging family of regulatory molecules in blood cells",
+      "title": "Nucleotide receptors: an emerging family of regulatory molecules in blood cells",
+      "journal": "Blood",
+      "pages": "587-600",
+      "pubMedIdentifier": 11157473,
+      "volume": 97,
+      "year": 2001,
+      "url": "http://www.ncbi.nlm.nih.gov/pubmed/11157473",
+      "className": "LiteratureReference",
+      "schemaClass": "LiteratureReference"
+    },
+    {
+      "dbId": 877164,
+      "displayName": "Purinoceptor-operated cationic channels in human B lymphocytes",
+      "title": "Purinoceptor-operated cationic channels in human B lymphocytes",
+      "journal": "J Physiol",
+      "pages": "143-51",
+      "pubMedIdentifier": 9023774,
+      "volume": 498,
+      "year": 1997,
+      "url": "http://www.ncbi.nlm.nih.gov/pubmed/9023774",
+      "className": "LiteratureReference",
+      "schemaClass": "LiteratureReference"
+    }
+  ],
+  "orthologousEvent": [
+    {
+      "dbId": 11013262,
+      "displayName": "P2X7 mediates loss of intracellular K+",
+      "stId": "R-DDI-877187",
+      "stIdVersion": "R-DDI-877187.1",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 mediates loss of intracellular K+"
+      ],
+      "releaseDate": "2026-03-25",
+      "speciesName": "Dictyostelium discoideum",
+      "inferredFrom": [
+        877187
+      ],
+      "category": "transition",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    },
+    {
+      "dbId": 10762864,
+      "displayName": "P2X7 mediates loss of intracellular K+",
+      "stId": "R-GGA-877187",
+      "stIdVersion": "R-GGA-877187.1",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 mediates loss of intracellular K+"
+      ],
+      "releaseDate": "2026-03-25",
+      "speciesName": "Gallus gallus",
+      "inferredFrom": [
+        877187
+      ],
+      "category": "transition",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    },
+    {
+      "dbId": 10677727,
+      "displayName": "P2X7 mediates loss of intracellular K+",
+      "stId": "R-XTR-877187",
+      "stIdVersion": "R-XTR-877187.1",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 mediates loss of intracellular K+"
+      ],
+      "releaseDate": "2026-03-25",
+      "speciesName": "Xenopus tropicalis",
+      "inferredFrom": [
+        877187
+      ],
+      "category": "transition",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    },
+    {
+      "dbId": 10589101,
+      "displayName": "P2X7 mediates loss of intracellular K+",
+      "stId": "R-DRE-877187",
+      "stIdVersion": "R-DRE-877187.1",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 mediates loss of intracellular K+"
+      ],
+      "releaseDate": "2026-03-25",
+      "speciesName": "Danio rerio",
+      "inferredFrom": [
+        877187
+      ],
+      "category": "transition",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    },
+    {
+      "dbId": 10482831,
+      "displayName": "P2X7 mediates loss of intracellular K+",
+      "stId": "R-SSC-877187",
+      "stIdVersion": "R-SSC-877187.1",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 mediates loss of intracellular K+"
+      ],
+      "releaseDate": "2026-03-25",
+      "speciesName": "Sus scrofa",
+      "inferredFrom": [
+        877187
+      ],
+      "category": "transition",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    },
+    {
+      "dbId": 10368802,
+      "displayName": "P2X7 mediates loss of intracellular K+",
+      "stId": "R-BTA-877187",
+      "stIdVersion": "R-BTA-877187.1",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 mediates loss of intracellular K+"
+      ],
+      "releaseDate": "2026-03-25",
+      "speciesName": "Bos taurus",
+      "inferredFrom": [
+        877187
+      ],
+      "category": "transition",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    },
+    {
+      "dbId": 10260764,
+      "displayName": "P2X7 mediates loss of intracellular K+",
+      "stId": "R-CFA-877187",
+      "stIdVersion": "R-CFA-877187.1",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 mediates loss of intracellular K+"
+      ],
+      "releaseDate": "2026-03-25",
+      "speciesName": "Canis familiaris",
+      "inferredFrom": [
+        877187
+      ],
+      "category": "transition",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    },
+    {
+      "dbId": 10144196,
+      "displayName": "P2X7 mediates loss of intracellular K+",
+      "stId": "R-RNO-877187",
+      "stIdVersion": "R-RNO-877187.1",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 mediates loss of intracellular K+"
+      ],
+      "releaseDate": "2026-03-25",
+      "speciesName": "Rattus norvegicus",
+      "inferredFrom": [
+        877187
+      ],
+      "category": "transition",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    },
+    {
+      "dbId": 10020970,
+      "displayName": "P2X7 mediates loss of intracellular K+",
+      "stId": "R-MMU-877187",
+      "stIdVersion": "R-MMU-877187.1",
+      "isInDisease": false,
+      "isInferred": true,
+      "maxDepth": 1,
+      "name": [
+        "P2X7 mediates loss of intracellular K+"
+      ],
+      "releaseDate": "2026-03-25",
+      "speciesName": "Mus musculus",
+      "inferredFrom": [
+        877187
+      ],
+      "category": "transition",
+      "className": "Reaction",
+      "schemaClass": "Reaction"
+    }
+  ],
+  "species": [
+    {
+      "dbId": 48887,
+      "displayName": "Homo sapiens",
+      "name": [
+        "Homo sapiens",
+        "H. sapiens",
+        "Hs",
+        "human",
+        "man"
+      ],
+      "taxId": "9606",
+      "abbreviation": "HSA",
+      "className": "Species",
+      "schemaClass": "Species"
+    }
+  ],
+  "summation": [
+    {
+      "dbId": 877238,
+      "displayName": "Low level or transient activation of P2X7 leads to reversibl...",
+      "text": "Low level or transient activation of P2X7 leads to reversible opening of a membrane channel permeable to small cations such as Na+, Ca2+ and K+ (Adinolfi et al. 2005). ",
+      "className": "Summation",
+      "schemaClass": "Summation"
+    }
+  ],
+  "reviewStatus": {
+    "dbId": 9821382,
+    "displayName": "five stars",
+    "definition": "externally reviewed",
+    "name": [
+      "five stars"
+    ],
+    "className": "ReviewStatus",
+    "schemaClass": "ReviewStatus"
+  },
+  "isChimeric": false,
+  "category": "transition",
+  "catalystActivity": [
+    {
+      "dbId": 877259,
+      "displayName": "extracellularly ATP-gated monoatomic cation channel activity of ATP:P2X7 oligomer [plasma membrane]",
+      "catalyzedEvent": [
+        877187
+      ],
+      "className": "CatalystActivity",
+      "schemaClass": "CatalystActivity"
+    }
+  ],
+  "input": [
+    {
+      "dbId": 29804,
+      "displayName": "K+ [cytosol]",
+      "stId": "R-ALL-29804",
+      "stIdVersion": "R-ALL-29804.3",
+      "maxDepth": 1,
+      "name": [
+        "K+",
+        "Potassium",
+        "potassium(1+)"
+      ],
+      "consumedByEvent": [
+        877187
+      ],
+      "referenceType": "ReferenceMolecule",
+      "className": "Chemical Compound",
+      "inDisease": false,
+      "schemaClass": "SimpleEntity"
+    }
+  ],
+  "output": [
+    {
+      "dbId": 74126,
+      "displayName": "K+ [extracellular region]",
+      "stId": "R-ALL-74126",
+      "stIdVersion": "R-ALL-74126.3",
+      "maxDepth": 1,
+      "name": [
+        "K+",
+        "Potassium",
+        "potassium(1+)"
+      ],
+      "producedByEvent": [
+        877187
+      ],
+      "referenceType": "ReferenceMolecule",
+      "className": "Chemical Compound",
+      "inDisease": false,
+      "schemaClass": "SimpleEntity"
+    }
+  ],
+  "className": "Reaction",
+  "schemaClass": "Reaction"
+}

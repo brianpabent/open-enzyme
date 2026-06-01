@@ -1,0 +1,194 @@
+{
+  "dbId": 844610,
+  "displayName": "NLRP3 recruits PYCARD (ASC) via a PYD-PYD interaction",
+  "stId": "R-HSA-844610",
+  "stIdVersion": "R-HSA-844610.4",
+  "isInDisease": false,
+  "isInferred": false,
+  "maxDepth": 1,
+  "name": [
+    "NLRP3 recruits PYCARD (ASC) via a PYD-PYD interaction",
+    "ASC is recruited via a PYD-PYD interaction"
+  ],
+  "releaseDate": "2011-06-14",
+  "speciesName": "Homo sapiens",
+  "compartment": [
+    {
+      "dbId": 70101,
+      "displayName": "cytosol",
+      "accession": "0005829",
+      "databaseName": "GO",
+      "definition": "The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.",
+      "name": "cytosol",
+      "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005829",
+      "className": "Compartment",
+      "schemaClass": "Compartment"
+    }
+  ],
+  "precedingEvent": [
+    {
+      "dbId": 1296421,
+      "displayName": "NLRP3 oligomerizes via NACHT domains",
+      "stId": "R-HSA-1296421",
+      "stIdVersion": "R-HSA-1296421.2",
+      "isInDisease": false,
+      "isInferred": false,
+      "maxDepth": 1,
+      "name": [
+        "NLRP3 oligomerizes via NACHT domains"
+      ],
+      "releaseDate": "2011-06-14",
+      "speciesName": "Homo sapiens",
+      "followingEvent": [
+        844610
+      ],
+      "isChimeric": false,
+      "category": "binding",
+      "className": "Reaction",
+      "schemaClass": "Polymerisation"
+    }
+  ],
+  "literatureReference": [
+    {
+      "dbId": 877362,
+      "displayName": "PYPAF1, a PYRIN-containing Apaf1-like protein that assembles with ASC and regulates activation of NF-kappa B",
+      "title": "PYPAF1, a PYRIN-containing Apaf1-like protein that assembles with ASC and regulates activation of NF-kappa B",
+      "journal": "J Biol Chem",
+      "pages": "11570-5",
+      "pubMedIdentifier": 11786556,
+      "volume": 277,
+      "year": 2002,
+      "url": "http://www.ncbi.nlm.nih.gov/pubmed/11786556",
+      "className": "LiteratureReference",
+      "schemaClass": "LiteratureReference"
+    },
+    {
+      "dbId": 877357,
+      "displayName": "Regulation of cryopyrin/Pypaf1 signaling by pyrin, the familial Mediterranean fever gene product",
+      "title": "Regulation of cryopyrin/Pypaf1 signaling by pyrin, the familial Mediterranean fever gene product",
+      "journal": "Biochem Biophys Res Commun",
+      "pages": "575-80",
+      "pubMedIdentifier": 12615073,
+      "volume": 302,
+      "year": 2003,
+      "url": "http://www.ncbi.nlm.nih.gov/pubmed/12615073",
+      "className": "LiteratureReference",
+      "schemaClass": "LiteratureReference"
+    }
+  ],
+  "relatedSpecies": [
+    {
+      "dbId": 877180,
+      "displayName": "Staphylococcus aureus",
+      "name": [
+        "Staphylococcus aureus"
+      ],
+      "taxId": "1280",
+      "abbreviation": "SAU",
+      "className": "Species",
+      "schemaClass": "Species"
+    }
+  ],
+  "species": [
+    {
+      "dbId": 48887,
+      "displayName": "Homo sapiens",
+      "name": [
+        "Homo sapiens",
+        "H. sapiens",
+        "Hs",
+        "human",
+        "man"
+      ],
+      "taxId": "9606",
+      "abbreviation": "HSA",
+      "className": "Species",
+      "schemaClass": "Species"
+    }
+  ],
+  "summation": [
+    {
+      "dbId": 877383,
+      "displayName": "NLRP3 interacts with ASC (Manji et al. 2003) via their PYD d...",
+      "text": "NLRP3 interacts with ASC (Manji et al. 2003) via their PYD domains (Dowds et al. 2004). NLRP3 oligomerization leads to PYD domain clustering which is believed to facilitate the interaction of NLRP3 with the PYD domain of ASC (Schroder & Tschopp, 2010).",
+      "className": "Summation",
+      "schemaClass": "Summation"
+    }
+  ],
+  "reviewStatus": {
+    "dbId": 9821382,
+    "displayName": "five stars",
+    "definition": "externally reviewed",
+    "name": [
+      "five stars"
+    ],
+    "className": "ReviewStatus",
+    "schemaClass": "ReviewStatus"
+  },
+  "isChimeric": false,
+  "category": "binding",
+  "input": [
+    {
+      "dbId": 1296409,
+      "displayName": "NLRP3 elicitors:NLRP3 oligomer [cytosol]",
+      "stId": "R-NUL-1296409",
+      "stIdVersion": "R-NUL-1296409.3",
+      "maxDepth": 5,
+      "name": [
+        "NLRP3 elicitors:NLRP3 oligomer"
+      ],
+      "speciesName": "Homo sapiens",
+      "consumedByEvent": [
+        844610
+      ],
+      "inDisease": false,
+      "schemaClass": "Polymer",
+      "className": "Polymer"
+    },
+    {
+      "dbId": 561191,
+      "displayName": "PYCARD [cytosol]",
+      "stId": "R-HSA-561191",
+      "stIdVersion": "R-HSA-561191.1",
+      "maxDepth": 1,
+      "name": [
+        "PYCARD",
+        "ASC",
+        "Apoptosis-associated speck-like protein containing a CARD",
+        "ASC_HUMAN"
+      ],
+      "speciesName": "Homo sapiens",
+      "consumedByEvent": [
+        844610
+      ],
+      "endCoordinate": 195,
+      "referenceType": "ReferenceGeneProduct",
+      "startCoordinate": 1,
+      "className": "Protein",
+      "inDisease": false,
+      "schemaClass": "EntityWithAccessionedSequence"
+    }
+  ],
+  "output": [
+    {
+      "dbId": 877381,
+      "displayName": "NLRP3 elicitors:NLRP3 oligomer:ASC [cytosol]",
+      "stId": "R-HSA-877381",
+      "stIdVersion": "R-HSA-877381.2",
+      "maxDepth": 6,
+      "name": [
+        "NLRP3 elicitors:NLRP3 oligomer:ASC"
+      ],
+      "speciesName": "Homo sapiens",
+      "producedByEvent": [
+        844610
+      ],
+      "isChimeric": false,
+      "inDisease": false,
+      "schemaClass": "Complex",
+      "className": "Complex"
+    }
+  ],
+  "className": "Reaction",
+  "schemaClass": "Reaction"
+}

@@ -10,6 +10,8 @@ tags: [reactome, nlrp3, contribution, curation, pathway-audit]
 
 Do not send the Antigravity scratch dossier as written. It overstates what Reactome lacks and contains incorrect PMIDs/DOIs. This corrected working note narrows the contribution to plausible gaps that should be verified against the live Reactome graph before contacting curators.
 
+Curator-facing packet drafted 2026-06-01: [`reactome-nlrp3-curator-packet-2026-06-01.md`](./reactome-nlrp3-curator-packet-2026-06-01.md). Use that packet for the actual Reactome outreach; keep this file as the shorter working note/history.
+
 Live search check (2026-06-01, `tools/reactome`): `oridonin` and `tranilast` return structured `notFound: true`; `hydroxybutyrate` returns metabolic reactions, led by `R-HSA-73920`, not an immune/NLRP3 regulatory link. A cross-cutting molecule sweep also found that disulfiram is already modeled as `R-HSA-9693324` ("Disulfiram covalently modifies Cys191 in GSDMD"), so disulfiram is not a Reactome contribution gap.
 
 ## Reactome Baseline

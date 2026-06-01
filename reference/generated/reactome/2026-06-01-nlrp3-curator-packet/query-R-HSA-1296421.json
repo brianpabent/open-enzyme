@@ -1,0 +1,190 @@
+{
+  "dbId": 1296421,
+  "displayName": "NLRP3 oligomerizes via NACHT domains",
+  "stId": "R-HSA-1296421",
+  "stIdVersion": "R-HSA-1296421.2",
+  "isInDisease": false,
+  "isInferred": false,
+  "maxDepth": 1,
+  "name": [
+    "NLRP3 oligomerizes via NACHT domains"
+  ],
+  "releaseDate": "2011-06-14",
+  "speciesName": "Homo sapiens",
+  "compartment": [
+    {
+      "dbId": 70101,
+      "displayName": "cytosol",
+      "accession": "0005829",
+      "databaseName": "GO",
+      "definition": "The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.",
+      "name": "cytosol",
+      "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005829",
+      "className": "Compartment",
+      "schemaClass": "Compartment"
+    }
+  ],
+  "precedingEvent": [
+    {
+      "dbId": 1306876,
+      "displayName": "NLRP3 activation by small molecules",
+      "stId": "R-HSA-1306876",
+      "stIdVersion": "R-HSA-1306876.3",
+      "isInDisease": false,
+      "isInferred": false,
+      "maxDepth": 1,
+      "name": [
+        "NLRP3 activation by small molecules"
+      ],
+      "releaseDate": "2011-06-14",
+      "speciesName": "Homo sapiens",
+      "followingEvent": [
+        1296421
+      ],
+      "isChimeric": false,
+      "category": "uncertain",
+      "className": "Reaction",
+      "schemaClass": "BlackBoxEvent"
+    },
+    {
+      "dbId": 844440,
+      "displayName": "NLRP3 activation by elicitor proteins",
+      "stId": "R-HSA-844440",
+      "stIdVersion": "R-HSA-844440.3",
+      "isInDisease": false,
+      "isInferred": false,
+      "maxDepth": 1,
+      "name": [
+        "NLRP3 activation by elicitor proteins"
+      ],
+      "releaseDate": "2011-06-14",
+      "speciesName": "Homo sapiens",
+      "followingEvent": [
+        1296421
+      ],
+      "isChimeric": false,
+      "category": "uncertain",
+      "className": "Reaction",
+      "schemaClass": "BlackBoxEvent"
+    }
+  ],
+  "literatureReference": [
+    {
+      "dbId": 844454,
+      "displayName": "Reconstituted NALP1 inflammasome reveals two-step mechanism of caspase-1 activation",
+      "title": "Reconstituted NALP1 inflammasome reveals two-step mechanism of caspase-1 activation",
+      "journal": "Mol Cell",
+      "pages": "713-24",
+      "pubMedIdentifier": 17349957,
+      "volume": 25,
+      "year": 2007,
+      "url": "http://www.ncbi.nlm.nih.gov/pubmed/17349957",
+      "className": "LiteratureReference",
+      "schemaClass": "LiteratureReference"
+    },
+    {
+      "dbId": 877319,
+      "displayName": "NALP inflammasomes: a central role in innate immunity",
+      "title": "NALP inflammasomes: a central role in innate immunity",
+      "journal": "Semin Immunopathol",
+      "pages": "213-29",
+      "pubMedIdentifier": 17703304,
+      "volume": 29,
+      "year": 2007,
+      "url": "http://www.ncbi.nlm.nih.gov/pubmed/17703304",
+      "className": "LiteratureReference",
+      "schemaClass": "LiteratureReference"
+    }
+  ],
+  "relatedSpecies": [
+    {
+      "dbId": 877180,
+      "displayName": "Staphylococcus aureus",
+      "name": [
+        "Staphylococcus aureus"
+      ],
+      "taxId": "1280",
+      "abbreviation": "SAU",
+      "className": "Species",
+      "schemaClass": "Species"
+    }
+  ],
+  "species": [
+    {
+      "dbId": 48887,
+      "displayName": "Homo sapiens",
+      "name": [
+        "Homo sapiens",
+        "H. sapiens",
+        "Hs",
+        "human",
+        "man"
+      ],
+      "taxId": "9606",
+      "abbreviation": "HSA",
+      "className": "Species",
+      "schemaClass": "Species"
+    }
+  ],
+  "summation": [
+    {
+      "dbId": 877316,
+      "displayName": "NLRP3 contains a NACHT/NOD domain that in related proteins i...",
+      "text": "NLRP3 contains a NACHT/NOD domain that in related proteins is responsible for oligomerization (Inohara & Nunez 2001, 2003). NLRP1 forms oligomers upon stimulation with MDP (Faustin et al. 2007) and the enforced oligomerization of NLRP3 PYD domains enhances ASC-dependent effects on apoptosis (Dowds et al. 2002). NOD-mediated oligomerization is widely considered to be part of the activation process for the NLRP3 inflammasome (Schroder et al. 2010, Schroder & Tschopp, 2010). The extent of oligomerization is not known, but models based on the the apoptotic initiator protein Apaf-1 suggest a posible heptameric platform (Proell et al. 2008).",
+      "className": "Summation",
+      "schemaClass": "Summation"
+    }
+  ],
+  "reviewStatus": {
+    "dbId": 9821382,
+    "displayName": "five stars",
+    "definition": "externally reviewed",
+    "name": [
+      "five stars"
+    ],
+    "className": "ReviewStatus",
+    "schemaClass": "ReviewStatus"
+  },
+  "isChimeric": false,
+  "category": "binding",
+  "input": [
+    {
+      "dbId": 1306878,
+      "displayName": "NLRP3 elicitors:NLRP3 [cytosol]",
+      "stId": "R-HSA-1306878",
+      "stIdVersion": "R-HSA-1306878.3",
+      "maxDepth": 4,
+      "name": [
+        "NLRP3 elicitors:NLRP3"
+      ],
+      "speciesName": "Homo sapiens",
+      "consumedByEvent": [
+        1296421
+      ],
+      "className": "Set",
+      "inDisease": false,
+      "schemaClass": "DefinedSet"
+    }
+  ],
+  "output": [
+    {
+      "dbId": 1296409,
+      "displayName": "NLRP3 elicitors:NLRP3 oligomer [cytosol]",
+      "stId": "R-NUL-1296409",
+      "stIdVersion": "R-NUL-1296409.3",
+      "maxDepth": 5,
+      "name": [
+        "NLRP3 elicitors:NLRP3 oligomer"
+      ],
+      "speciesName": "Homo sapiens",
+      "producedByEvent": [
+        1296421
+      ],
+      "inDisease": false,
+      "schemaClass": "Polymer",
+      "className": "Polymer"
+    }
+  ],
+  "className": "Reaction",
+  "schemaClass": "Polymerisation"
+}
