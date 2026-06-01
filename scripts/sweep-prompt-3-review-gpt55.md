@@ -64,6 +64,10 @@ Do not launder "not in our corpus" into "the synthesizer is wrong." Everything i
 
 Canonical failure: 2026-05-30 sweep, theaflavins×ABCG2 — the synthesizer claimed theaflavins inhibit ABCG2; the reviewer pushed back citing only `theaflavins.md`'s absence-of-ABCG2-note. A later multilingual lit scan showed the claim was *inverted* (theaflavins up-regulate ABCG2 in vivo — Tai 2020, *J Funct Foods*). A `Defer. [VERIFY: lit-scan] theaflavin × ABCG2/BCRP functional inhibition; check 茶黄素 CNKI` verdict would have correctly routed it to the work instead of laundering absence into a false refutation.
 
+## Decision rule — documented access-blocked gates (added 2026-06-01)
+
+Pass 2 is instructed NOT to restate a documented, wet-lab-access-blocked gate as an Open Question (Ward/§1.9, H08, H09, the chaperone α-coefficient gap, §1.25 DAF, §1.30 Houttuynia — the platform is *access*-blocked on these at Phase 0, not awareness-blocked). The Pass 2 synthesizer does not always honor this. **If an Open Question slips through that is a pure restatement of one of these documented access-blocked gates with no genuinely new sub-question, verdict it `Defer.`** with a one-line note: "documented access-blocked gate, tracked at [card / §]; no walkthrough action — restatement." This makes it instantly skippable rather than something the walkthrough re-briefs. Do NOT `Confirmed, prioritize.` a bare restatement of a known gate — that elevates exactly the noise the reader is tired of.
+
 ## Decision rule — OVERLAP tag
 
 Default to **EXTENSION** when uncertain. The bias is toward surfacing potentially-valuable findings, not toward filtering them out.

@@ -82,6 +82,19 @@ Cross-document connections that emerge only when you read multiple files togethe
 
 When surfacing platform-level patterns or candidate compounds in natural-product space, **propose query-frames that include traditional-formula-name (e.g., Si Miao San, Bai Hu Jia Gui Zhi Tang, Huo Xiang Zheng Qi), species-name with Chinese / Japanese / Korean characters (e.g., 桑黄, 茯苓, 黄柏), and traditional-pathology terms (痛风, 痹证, 湿热痹) in addition to the Western mechanism-name search**. If a Pass 1 sub-agent ran a mechanism-only scan and returned "empty" for a fungal / botanical chokepoint, that is a candidate for a **query-framing re-scan finding** rather than a confirmed empty chokepoint. Flag in the Open Questions or Proposed Experiments sections as "candidate for traditional-name re-scan." See [`logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md`](../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) for the canonical exemplar and recovery rate.
 
+### Documented access-blocked gates — do NOT restate as Open Questions (added 2026-06-01)
+
+A specific set of questions is **documented, first-class, and wet-lab-access-blocked** — the platform is *access*-blocked on them (no wet lab / no fermentation capability at Phase 0), **not awareness-blocked.** Re-emitting them as "Open Questions" every sweep is pure token waste (Pass 2 to write, Pass 3 to review, walkthrough to walk past) and actively frustrates the reader, who knows these are the top priorities and cannot move them forward without lab access. **Do NOT surface any of the following as an Open Question** unless you have a *genuinely new sub-question* (a new sub-mechanism, a newly-unblocked resolution path, a new dependency) — and if so, lead with the new sub-question explicitly, do not restate the parent gate:
+
+- **Ward 1995 glucoamylase-KEX2 dual-cassette feasibility in *A. oryzae* solid-state koji** (H01 / `validation-experiments.md` §1.9) — the koji-endgame #1 gate.
+- **Gut-lumen uricase sink → clinically meaningful SUA reduction in typical gout** (H08) — #1 mechanism risk.
+- **Reliable home/community fermentation at therapeutic doses** (H09) — #2 production risk.
+- **Chaperone-orthogonal α-coefficient calibration** beyond its two fold classes (`chaperone-orthogonal-stacking.md` §8 item 6; gated on §1.9 + §1.25).
+- **DAF SCR1-4 expression/folding/activity in koji** (`validation-experiments.md` §1.25).
+- **Houttuynia HCP/HCPM MSU-macrophage suppression + sourcing** (`validation-experiments.md` §1.30).
+
+These are tracked in their hypothesis cards / validation-experiments entries; that IS their home. This is the Open-Questions analogue of the retired Riskiest Assumption section — same "documented + gated → don't regurgitate" discipline. **The honest output for a documented access-blocked gate is nothing, not a restatement.**
+
 ---
 
 ## Forced-rank close (Most Curious Thread)
