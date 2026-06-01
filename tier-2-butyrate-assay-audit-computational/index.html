@@ -4942,6 +4942,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Next Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-text-verification-completed-2026-06-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full-text verification — completed 2026-06-01
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5386,6 +5403,40 @@
 </ul>
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
 <p>Run a focused full-text/protocol verification pass on PMID 23542733 and PMID 42041444, plus a vendor protocol audit for any butyric-acid/SCFA ELISA claims. If one candidate survives, design a small paired validation with sodium-butyrate spike/recovery and 10-20 real samples measured by the candidate Tier 2 method plus GC-MS.</p>
+<h3 id="full-text-verification-completed-2026-06-01">Full-text verification — completed 2026-06-01<a class="headerlink" href="#full-text-verification-completed-2026-06-01" title="Permanent link">&para;</a></h3>
+<p>The full-text pass above was run (multilingual; English + Chinese analytical-chemistry sources). Outcome — <strong>one candidate survives, two fail the full-text Tier-2 gate:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Candidate</th>
+<th>Resolves to</th>
+<th>Verdict</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HPLC-UV</strong> (PMID 23542733)</td>
+<td>De Baere et al. 2013, <em>J Pharm Biomed Anal</em> 80:107–115</td>
+<td><strong>✅ SURVIVES</strong> (community-biolab tier)</td>
+<td>Validated on <strong>bacterial culture supernatant</strong> (OE's near-term matrix), linear <strong>0.5–50 mM</strong>, <strong>no derivatization</strong> (direct UV 210 nm), butyrate resolved from acetate/propionate/lactate. Gate-keeper is the HPLC instrument — not home/kitchen tier, but decentralizable to a community biolab.</td>
+</tr>
+<tr>
+<td><strong>Electrochemical + ANN</strong> (PMID 42041444)</td>
+<td>Gu et al. 2026, <em>Biosensors</em> 16(4):223</td>
+<td><strong>❌ FAILS</strong></td>
+<td>Vendor-locked hardware (VidaBio chip + potentiostat), dual derivatization (esterification + dissociation), and butyrate specificity depends on an <strong>unreleased ANN</strong> adopters must retrain against their own GC-MS — making GC-MS a <em>prerequisite</em>, not a replacement. Fecal-only matrix. (Real paper, GC-MS-validated R²=0.998 — kept as a citation, not a Tier-2 option.)</td>
+</tr>
+<tr>
+<td><strong>SCFA/butyrate ELISA kits</strong></td>
+<td>US Biological / Aviva / LSBio etc.</td>
+<td><strong>❌ FAILS</strong> (confirms RED)</td>
+<td>Vendor dynamic range ~pg/mL (≈nM), <strong>5–6 orders of magnitude</strong> below mM culture/colonic butyrate; specificity on an 88-Da analyte unvalidated against GC-MS in a real SCFA matrix.</td>
+</tr>
+</tbody>
+</table>
+<p>[TRANSLATION NOTE] Chinese analytical literature (短链脂肪酸 HPLC / 电化学检测) corroborated the load-bearing claim with no disagreement: most fecal-matrix SCFA-HPLC methods require pre-column derivatization (e.g. 3-nitrophenylhydrazine) because SCFAs lack a chromophore; De Baere's direct-UV-at-210 nm approach is the distinguishing feature that avoids derivatization, at the cost of non-selective absorbance (hence the medium-blank requirement).</p>
+<p><strong>Operationalized as a tracked wet-lab gate:</strong> <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.31</a> — HPLC-UV vs. GC-MS spike/recovery on culture supernatant, with GREEN/YELLOW/RED success criteria. The empirical spike/recovery remains wet-lab gated (OE is Phase 0; needs partner-CRO / community-biolab HPLC-UV + GC-MS access); the candidate-selection question is now closed.</p>
 <h2 id="cross-references">Cross-References<a class="headerlink" href="#cross-references" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="./etc/experiments/comp-038-tier-2-butyrate-assay-audit/">comp-038 experiment folder</a></li>

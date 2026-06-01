@@ -1305,7 +1305,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The NLRP3 Activation Cascade: Seven Chokepoints (with Sub-Branches)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reactome-pathway-audit-release-96" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reactome Pathway Audit (Release 96)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reactome Pathway Audit (Release 96)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5398,6 +5409,15 @@
 </tbody>
 </table>
 <p>For the full per-chokepoint exploit catalog (mechanism detail, all compound entries, dosing, ChEMBL cross-check verdicts, coverage audit), see <a href="../nlrp3-exploit-map/">NLRP3 Exploit Map</a>. Compound-specific dossiers: <a href="../colchicine/">colchicine</a>, <a href="../oridonin/">oridonin</a>, <a href="../bhb-ketones/">BHB/ketones</a>, <a href="../theaflavins/">theaflavins</a>, <a href="../zileuton/">zileuton</a>, <a href="../disulfiram/">disulfiram</a>, <a href="../complement-c5a-gout/">complement C5a</a>, <a href="../spm-resolution-pathway/">SPM resolution pathway</a>, <a href="../cannabinoids-terpenes/">cannabinoids &amp; terpenes</a>.</p>
+<h2 id="reactome-pathway-audit-release-96">Reactome Pathway Audit (Release 96)<a class="headerlink" href="#reactome-pathway-audit-release-96" title="Permanent link">&para;</a></h2>
+<p>The official Reactome report for <code>R-HSA-844456</code> is now preserved as raw provenance at <a href="../reference/papers/R-HSA-844456_.pdf"><code>reference/papers/R-HSA-844456_.pdf</code></a>. Reactome is useful here as a curated pathway map, not as primary experimental evidence. It confirms several NLRP3 activation nodes already relevant to Open Enzyme:</p>
+<ul>
+<li><strong>P2X7 / pannexin-1 activation trigger:</strong> extracellular ATP activates P2X7, potassium efflux, and pannexin-1-associated pore formation upstream of NLRP3 activation (Reactome events <code>R-HSA-877178</code>, <code>R-HSA-877187</code>, <code>R-HSA-877198</code>; In Vitro pathway curation, including Pelegrin and Surprenant 2006 PMID: 17036048).</li>
+<li><strong>SGT1:HSP90 chaperone dependency:</strong> SGT1 and HSP90 bind inactive NLRP3 and support signaling competence (Reactome events <code>R-HSA-874087</code>, <code>R-HSA-873951</code>; In Vitro / cell biology, Mayor et al. 2007 PMID: 17435760).</li>
+<li><strong>TXNIP/HMOX1 regulatory axis:</strong> Reactome models TXNIP binding to NLRP3 and includes negative regulation by cytosolic HMOX1 (Reactome event <code>R-HSA-1250272</code>; HMOX1 paper requires primary-source verification before adding detailed structural claims; the corrected PubMed record is PMID: 30333233, not 30121650).</li>
+<li><strong>Pyrin/ASC interaction:</strong> Reactome includes <code>Pyrin binds ASC</code> (<code>R-HSA-877361</code>) and its summation states that pyrin-ASC binding can interfere with NLRP3 association with ASC. Treat this as an already-modeled pathway note, not a novel Open Enzyme contribution. Detailed residue/interface claims should stay out of the wiki until primary-source grep verification is complete.</li>
+</ul>
+<p>Contribution opportunity is therefore narrower than the first Antigravity draft implied. The plausible Reactome gaps from Open Enzyme's corpus are small-molecule/regulatory edges around already modeled events: <a href="../oridonin/">oridonin</a> as a covalent NLRP3/NEK7-blocking inhibitor (PMID: 29959312), <a href="../reference/papers/tranilast-nlrp3-embo-2018.md">tranilast</a> as a direct NACHT-domain inhibitor (PMID: 29531021), and <a href="../bhb-ketones/">BHB/ketones</a> as a ketone-body inhibitor of potassium efflux and ASC oligomerization (PMID: 25686106). These should be proposed as targeted curation additions only after checking the current Reactome graph for each compound name, synonym, ChEBI entity, and target event.</p>
 <h3 id="chokepoint-5-endogenous-il-1ra-biology-anakinra-is-not-a-foreign-molecule">Chokepoint 5 — endogenous IL-1Ra biology (anakinra is not a foreign molecule)<a class="headerlink" href="#chokepoint-5-endogenous-il-1ra-biology-anakinra-is-not-a-foreign-molecule" title="Permanent link">&para;</a></h3>
 <p>This is the canonical explainer for why recombinant IL-1Ra has such a clean safety profile — referenced from <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §4</a>. The acute-flare anakinra protocol (100 mg SC daily × 3 days, ~$900/flare, cumulative-steroid-burden framing) and the inhaled mRNA-IL-1RA pulse comparator live canonically in <a href="../gout-action-guide/">gout-action-guide.md §"Active flare"</a> and <a href="../chassis-pending-interventions/">chassis-pending-interventions.md §4</a> respectively; the <a href="../nlrp3-exploit-map/">exploit map's CP5a section</a> carries the full mechanism entries.</p>
 <p>Humans naturally produce IL-1Ra (~17 kDa, encoded by IL1RN, secreted primarily by macrophages and neutrophils as a feedback brake on IL-1 signaling). Endogenous IL-1Ra competes with IL-1α and IL-1β for the same IL-1R1 receptor — when bound, it occupies the receptor without triggering downstream signaling. The IL-1β / IL-1Ra ratio determines net signaling: at homeostatic baseline, endogenous IL-1Ra is in ~100× molar excess over IL-1β, keeping signaling damped. Inflammatory states (gout flare, autoimmune, sepsis) tip the ratio by driving IL-1β production faster than IL-1Ra, exceeding the endogenous brake. <strong>Therapeutic anakinra is the same protein the body makes, just at supplemental dose</strong> — which is why the safety profile is so clean (essentially zero immunogenicity, no ADCC/CDC off-target effects, simple competitive-antagonism mechanism). The same "endogenous brake" framing is why mRNA-encoded IL-1Ra is a cleaner payload than an mRNA-encoded anti-IL-1β monoclonal: IL-1Ra is small (no glycosylation, no disulfides, no heavy/light chain assembly), broader-mechanism (blocks IL-1α AND IL-1β at the same receptor), and immunogenicity-free as a recombinant version of an endogenous protein. (source: chassis-pending-interventions.md, gout-action-guide.md, nlrp3-exploit-map.md)</p>
