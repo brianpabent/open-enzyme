@@ -17,3 +17,15 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add Houttuynia entry to modality-chokepoint-matrix.md (new row under "Native-compound medicinal mushroom complement") with explicit structure-dependent caveat. Update supplements-stack.md with a new entry mirroring the β-glucan warning. Queue validation-experiments.md §1.30 as a THP-1 MSU IL-1β dose-response comparing HCPM, crude HCP, and three commercial "Houttuynia cordata" capsules (tests consumer-product equivalence). Flag in open-questions.md as "Houttuynia structure-dependent directionality — Tier 3 SEC-MALS characterization non-negotiable."
 
 > **Claude review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The synthesis correctly identifies Houttuynia as a CP0+CP1 dietary candidate: `cfh-mechanism-dissociation-cp0-candidates-computational.md` cites Lu 2018 for CHCP targeting C3/C4/C5 and `supplements-stack.md` / `nlrp3-exploit-map.md` document the TLR4-MD2/NF-κB/NLRP3 arm plus the Cheng 2014 HCP-2 pro-inflammatory-on-naïve-PBMC caveat. The “structure-dependent directionality” warning is not cosmetic; it is the gating reason to compare HCPM, crude HCP, and commercial products before any supplement recommendation.
+
+---
+
+## ✓ Actioned 2026-06-01
+
+**Connection substance already canonical** (anchored to primary Chen-group citations — Lu 2018 PMC5925397, Li 2025, Yu 2026, Cheng 2014 PMC7112369 — not corpus-absence, so no lit scan needed): the dual-CP0+CP1 framing + structure-dependent directionality caveat already live across [`supplements-stack.md` §269](../../wiki/supplements-stack.md) (full entry + caveat + dietary access + PK caveat + CFH stratification), [`validation-experiments.md` §1.30](../../wiki/validation-experiments.md) (THP-1/MSU prioritization screen), [`open-questions.md` §"Riskiest assumption #3"](../../wiki/open-questions.md) (dietary-PK gap), and complement-c5a-gout.md §9.7 / nlrp3-exploit-map.md §CP1.
+
+**Did the work now (the one real gap): matrix entry.** Houttuynia was absent from [`modality-chokepoint-matrix.md`](../../wiki/modality-chokepoint-matrix.md). Rather than file it under the mushroom row (Houttuynia isn't a mushroom), added a **new Row-1 modality row "Native-compound dietary complement modulators (CP0+CP1)"** — Houttuynia HCP/HCPM as documented lead with the full structure-dependent caveat, sibling dietary-CP0 candidates (rosmarinic acid / luteolin / *Helicteres*, comp-018/020/039) named, §1.30 wet-lab gate linked. This fills a genuine matrix gap (the dietary-CP0 candidate class had no row at all).
+
+**Pre-resolves Item 19** (priority-action-2, "add Houttuynia to modality-chokepoint-matrix.md with structure-dependent caveat") — done here; Item 19 closes trivially when reached.
+
+**Process note:** per Brian's instruction this walk, did the matrix work now (fresh in mind) rather than deferring to Item 19. Priority-action items are being removed from the sweep going forward (they restate already-found content) — handled as a separate prompt edit.
