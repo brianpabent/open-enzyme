@@ -17,3 +17,13 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add CFH Y402H stratification note to gout-action-guide.md "Prevention path" and "This year (advanced)" sections. Update open-questions.md with "CFH Y402H × dietary CP0 cross-tab — UKB/AoU collaboration ready." Queue comp-040 (CFH-depleted serum MSU assay) only after §1.30 (Houttuynia THP-1 prioritization) confirms at least one arm is active.
 
 > **Claude review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The CFH Y402H framing matches comp-039: all four dietary CP0 candidates are classified CFH-independent because they act at C3/C4/C5 or convertase-entry nodes upstream of Factor H’s surface-C3b regulation, while the AMD AREDS counterexample is plausibly Factor-H/CRP-bridging-dependent. The action should preserve comp-039’s corrected design: UK Biobank and All of Us are co-primary cohorts, not UKB primary with AoU as an optional side-check.
+
+---
+
+## ✓ Actioned 2026-06-01
+
+**Connection substance already canonical** (anchored to comp-039 + genetic-variants literature, not corpus-absence): the CFH Y402H → dietary-CP0-stratification framing already lives in [`genotype-informed-supplement-workflow.md`](../../wiki/genotype-informed-supplement-workflow.md) (Pattern library + worked example), [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](../../wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md) (comp-039), complement-c5a-gout.md §6.3, gout-genetic-variants.md Category 5, supplements-stack.md §289, and gout-action-guide.md "This year (advanced)" line 63. The UKB↔AoU co-primary cross-tab is already the falsification gate in [`open-questions.md` §"Riskiest assumption #3"](../../wiki/open-questions.md) — no new open-questions work needed.
+
+**Did the work now (the one gap): Prevention-path note.** The "Prevention path → This year" subsection of [`gout-action-guide.md`](../../wiki/gout-action-guide.md) (the no-flare-yet reader) had only a generic "genotype to know your risk" line. Added a hedged CFH Y402H stratification note there, honoring both Pass 3 guards: phrased "**may benefit you more or equally**" (not a settled clinical claim — comp-039 had a Model A/B negative-vs-null disagreement), explicitly labeled a mechanistic prediction with the **UK Biobank × All of Us co-primary** cross-tab as the falsification gate (not UKB-primary/AoU-side-check), and framed as stratification signal **not** contraindication.
+
+**Pre-resolves Item 20** (priority-action-3, "add CFH Y402H stratification note to gout-action-guide.md") — done here; Item 20 closes trivially when reached.

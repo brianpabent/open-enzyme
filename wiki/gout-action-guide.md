@@ -238,7 +238,7 @@ No flare yet. Family history, borderline UA, or just want to avoid the trajector
 
 ### This year
 
-- Genotype to know your variant-driven risk.
+- Genotype to know your variant-driven risk. **If you carry CFH Y402H (rs1061170)** — a common variant that weakens Factor H, your main brake on the complement cascade — the upstream-CP0 dietary candidates (rosmarinic acid, luteolin, *Houttuynia*, *Helicteres*) **may benefit you more or equally** vs. non-carriers, because they suppress complement *upstream* of Factor H and so don't depend on the brake the variant weakens. This is a stratification signal, **not** a contraindication, and is a mechanistic prediction (not yet a clinical result) — the falsification gate is the UK Biobank × All of Us co-primary cross-tab. See [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) (comp-039) and the [Pattern library](./genotype-informed-supplement-workflow.md#pattern-library--variant--pathway-vulnerability--bypass-intervention-added-2026-05-22).
 - Watch this guide for updates as Open Enzyme's research pipeline matures.
 
 ---
