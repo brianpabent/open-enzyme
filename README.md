@@ -15,14 +15,14 @@ All research lives in `wiki/` — long-form primary documents and shorter synthe
 
 | Document | What it covers |
 |----------|---------------|
-| [open-enzyme-vision.md](wiki/open-enzyme-vision.md) | North Star: the problem, insight, and platform vision |
+| [open-enzyme-vision.md](wiki/etc/open-enzyme-vision.md) | North Star: the problem, insight, and platform vision |
 | [enzyme-deficit-deep-dive.md](wiki/enzyme-deficit-deep-dive.md) | Epidemiology, pathophysiology, and clinical burden of enzyme deficits |
 | [gout-deep-dive.md](wiki/gout-deep-dive.md) | Uric acid metabolism, NLRP3 inflammasome, acute flare mechanisms, current therapies |
 | [engineered-yeast-uricase-proposal.md](wiki/engineered-yeast-uricase-proposal.md) | Engineering uricase into *S. cerevisiae*: construct design, expression, fermentation |
 | [engineered-koji-protocol.md](wiki/engineered-koji-protocol.md) | Multi-enzyme koji (*A. oryzae*): uricase + digestive enzyme co-expression, rice-based substrate |
 | [nlrp3-exploit-map.md](wiki/nlrp3-exploit-map.md) | NLRP3 inflammasome targeting: all 6 chokepoints, agents, and combinations |
 | [blood-barrier-exploits.md](wiki/blood-barrier-exploits.md) | Intestinal barrier biology, tight-junction dynamics, enzyme bioavailability |
-| [ai-bio-tools-playbook.md](wiki/ai-bio-tools-playbook.md) | Computational biology: structure prediction, codon optimization, strain design pipelines |
+| [ai-bio-tools-playbook.md](wiki/etc/ai-bio-tools-playbook.md) | Computational biology: structure prediction, codon optimization, strain design pipelines |
 | [peptide-gout-addendum.md](wiki/peptide-gout-addendum.md) | Immunomodulatory peptides (KPV, BPC-157) in gout: barrier repair and synergy |
 
 ### Engineering Deep Dives
@@ -70,7 +70,7 @@ All research lives in `wiki/` — long-form primary documents and shorter synthe
 
 ### Collaborator Roles (actively recruiting)
 
-The project is recruiting PhD-level collaborators in three complementary domains. See [`wiki/team.md`](wiki/team.md) for the full role descriptions and the questions each role would answer.
+The project is recruiting PhD-level collaborators in three complementary domains. See [`wiki/etc/team.md`](wiki/etc/team.md) for the full role descriptions and the questions each role would answer.
 
 - **Role 1 — Gut Microbiome & In Vivo Validation** (gnotobiotic models, microbiome dynamics)
 - **Role 2 — Pharma Translation & Regulatory Strategy** (NF-κB / intestinal signaling, FDA / IND pathway)
@@ -81,7 +81,7 @@ The project is recruiting PhD-level collaborators in three complementary domains
 ## Quick Start
 
 ### For Researchers
-1. Read [open-enzyme-vision.md](wiki/open-enzyme-vision.md) (10 min)
+1. Read [open-enzyme-vision.md](wiki/etc/open-enzyme-vision.md) (10 min)
 2. Browse [index.md](index.md) for the current platform thesis and concept map
 3. Check [`synthesis/queue/`](synthesis/queue/) for the latest cross-doc connections (one file per finding); architecture overview at [`synthesis/README.md`](synthesis/README.md)
 4. Dive into primary research docs for full citations and methodology
@@ -89,7 +89,7 @@ The project is recruiting PhD-level collaborators in three complementary domains
 ### For Engineers & Makers
 1. Start with [engineered-yeast-uricase-proposal.md](wiki/engineered-yeast-uricase-proposal.md) or [engineered-koji-protocol.md](wiki/engineered-koji-protocol.md)
 2. See [protein-engineering-strategy.md](wiki/protein-engineering-strategy.md) for the mutation tier roadmap
-3. Review [ai-bio-tools-playbook.md](wiki/ai-bio-tools-playbook.md) for strain design pipelines
+3. Review [ai-bio-tools-playbook.md](wiki/etc/ai-bio-tools-playbook.md) for strain design pipelines
 
 ### For Clinical/Pharma Reviewers
 1. Read [gout-deep-dive.md](wiki/gout-deep-dive.md) and [cross-validation.md](wiki/cross-validation.md)
