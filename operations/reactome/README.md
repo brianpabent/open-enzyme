@@ -4,6 +4,10 @@ Operational workspace for Reactome integration, pathway audits, and contribution
 
 This folder is for transactional/project-state material: audit burndowns, curator packets, sendable email drafts, and supporting details. Scientific claims still belong in `wiki/`; durable generated provenance still belongs in `reference/generated/reactome/`.
 
+## Current Status
+
+2026-06-02: Brian sent the NLRP3 contribution note to Reactome. Reactome acknowledged the submission, routed it to a curator with relevant expertise for detailed review, indicated that contribution credit can be provided if the update proceeds, and asked for the Open Enzyme project link for possible inclusion in Reactome's Resource Guide. Brian sent the public repo link: <https://github.com/brianpabent/open-enzyme>.
+
 ## Sendable Reactome Outreach
 
 - [`reactome-nlrp3-email-to-send-2026-06-01.md`](./reactome-nlrp3-email-to-send-2026-06-01.md) — copy-paste email body for first Reactome outreach.
