@@ -13,6 +13,10 @@
 #                  authored wiki commits and refuses sweep-N-... prefix
 #                  on commits authored by anyone other than
 #                  github-actions[bot].
+#   pre-push     — blocks a push that would ship broken relative links in
+#                  the live corpus (README.md, index.md, CLAUDE.md, wiki/).
+#                  Runs scripts/check-links.py --check; on failure points
+#                  at scripts/fix-links.py. Bypass with --no-verify.
 #
 
 set -euo pipefail
@@ -26,7 +30,7 @@ if [[ ! -d .githooks ]]; then
 fi
 
 git config core.hooksPath .githooks
-chmod +x .githooks/commit-msg
+chmod +x .githooks/commit-msg .githooks/pre-push
 
 echo "✓ Hooks installed."
 echo "  core.hooksPath = $(git config core.hooksPath)"
