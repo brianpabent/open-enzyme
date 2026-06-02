@@ -903,7 +903,7 @@ The protein-design-mcp package is **directly deployable** — OE could mount it 
 
 **Ghcr.io Docker image pull failed during setup** with `unauthorized` error (the public image at `ghcr.io/jasonkim8652/protein-design-mcp:latest` is apparently access-gated). Local Python path used instead. If Modal cloud deployment becomes the right move (A2), the Modal proxy entry point is `protein-design-mcp-modal`.
 
-(Source: Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381; verified against full PDF at `/private/tmp/claude-501/biodesignbench.txt`, 2026-05-15. Original "Cloudflare blocked direct fetch 2026-05-12" PRIMARY-SOURCE-PENDING flag was lifted via Brian-provided local PDF copy + pdftotext extraction; the structural failure mode was treating a single failed fetch attempt as a durable gate without trying alternative tools — see `memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md`.)
+(Source: Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381; verified against the full PDF, 2026-05-15.)
 
 ---
 

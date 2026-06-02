@@ -577,7 +577,7 @@ Pre-commit verification gate ([manual-literature-mining.md](./etc/manual-literat
 
 ### 10.2 Architecture Coefficient Verification Provenance (added 2026-05-06)
 
-Pre-commit verification gate ([manual-literature-mining.md](./etc/manual-literature-mining.md) §"Pre-commit verification gate") applied to all per-architecture folding kinetics claims in §3.5. Sources retrieved and verified via `mcp__plugin_pubmed_PubMed__get_article_metadata` and `mcp__paperclip__paperclip` (search + head commands; never `map` or `reduce` per memory/feedback_paperclip_map_unreliable.md) on 2026-05-06.
+Pre-commit verification gate ([manual-literature-mining.md](./etc/manual-literature-mining.md) §"Pre-commit verification gate") applied to all per-architecture folding kinetics claims in §3.5. Sources retrieved and verified via `mcp__plugin_pubmed_PubMed__get_article_metadata` and `mcp__paperclip__paperclip` (search + head commands; never `map` or `reduce`, which are unreliable) on 2026-05-06.
 
 | Source | Claim verified | Verdict | Source location | Placeholder flags |
 |---|---|---|---|---|

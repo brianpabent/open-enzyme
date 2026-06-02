@@ -13,10 +13,12 @@
 #                  authored wiki commits and refuses sweep-N-... prefix
 #                  on commits authored by anyone other than
 #                  github-actions[bot].
-#   pre-push     — blocks a push that would ship broken relative links in
-#                  the live corpus (README.md, index.md, CLAUDE.md, wiki/).
-#                  Runs scripts/check-links.py --check; on failure points
-#                  at scripts/fix-links.py. Bypass with --no-verify.
+#   pre-push     — blocks a push over the live corpus (README.md, index.md,
+#                  CLAUDE.md, wiki/) on two guards:
+#                    • check-links.py  — broken relative links (→ fix-links.py)
+#                    • check-privacy.py — references to private sibling repos
+#                      or local-machine paths (one-way privacy gradient)
+#                  Bypass with --no-verify (discouraged).
 #
 
 set -euo pipefail

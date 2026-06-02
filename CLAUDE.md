@@ -296,7 +296,7 @@ When ingesting non-English source material, **translate with two independent mod
 
 ### Push-batching discipline (Open Enzyme overrides the umbrella's "push immediately" rule)
 
-The umbrella `~/Documents/Claude/Projects/abent/CLAUDE.md` git steward pattern says "Push immediately after each commit, every time." **That rule is overridden in this repo.** Reason: every push to `wiki/*.md` fires the three-pass wiki sweep daemon (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Review). Each daemon run costs a few dollars and takes ~9–12 minutes; multiple parallel runs cause merge conflicts that consume far more time than the eager push saved.
+The umbrella repo's `CLAUDE.md` git steward pattern says "Push immediately after each commit, every time." **That rule is overridden in this repo.** Reason: every push to `wiki/*.md` fires the three-pass wiki sweep daemon (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Review). Each daemon run costs a few dollars and takes ~9–12 minutes; multiple parallel runs cause merge conflicts that consume far more time than the eager push saved.
 
 **Commit eagerly. Push at logical batch boundaries.**
 
