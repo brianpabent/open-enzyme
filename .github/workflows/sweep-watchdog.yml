@@ -93,7 +93,10 @@ jobs:
 
           # Pending paths
           PENDING=$(python3 scripts/sweep-state.py pending-paths)
-          PENDING_COUNT=$(echo "$PENDING" | grep -c . || echo 0)
+          # grep -c already prints 0 on no match (and exits 1); use `|| true`
+          # so we don't append a SECOND "0" line — a bare line breaks
+          # $GITHUB_OUTPUT with "Invalid format '0'".
+          PENDING_COUNT=$(echo "$PENDING" | grep -c . || true)
           echo "Pending paths: $PENDING_COUNT"
           echo "pending_count=$PENDING_COUNT" >> "$GITHUB_OUTPUT"
 
