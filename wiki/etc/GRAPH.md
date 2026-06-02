@@ -829,5 +829,5 @@ BHB (metabolic support + probiotic advantage)
 
 ## Related Documentation
 
-See [wiki/INDEX.md](../INDEX.md) for detailed concept pages.  
+See [wiki/index.md](../index.md) for detailed concept pages.  
 See `docs/` folder for full research citations and methodology.

@@ -94,7 +94,7 @@ def resolve(src_dir: str, target: str) -> bool:
     abspath = os.path.normpath(os.path.join(src_dir, target))
     if not (abspath == ROOT or abspath.startswith(ROOT + os.sep)):
         return False
-    return os.path.exists(abspath)
+    return check_links.exists_cased(abspath)
 
 
 def relpath_to(src_dir: str, repo_dest: str) -> str:

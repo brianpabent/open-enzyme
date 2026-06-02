@@ -73,6 +73,30 @@ def is_external(target: str) -> bool:
     return False
 
 
+def exists_cased(path: str) -> bool:
+    """Case-SENSITIVE existence check, even on a case-insensitive filesystem
+    (macOS). os.path.exists() resolves `INDEX.md` → `index.md` on macOS, so a
+    wrong-case link passes locally but breaks on Linux CI and the published
+    site. Walk each path component below ROOT and require an exact-case match
+    against the real directory listing. Targets outside ROOT fall back to a
+    plain existence test (case check N/A)."""
+    abspath = os.path.normpath(os.path.abspath(path))
+    if not os.path.exists(abspath):
+        return False
+    rel = os.path.relpath(abspath, ROOT)
+    if rel == "." or rel.startswith(".."):
+        return True  # outside the repo tree; existence already confirmed
+    cur = ROOT
+    for part in rel.split(os.sep):
+        try:
+            if part not in os.listdir(cur):
+                return False
+        except OSError:
+            return False
+        cur = os.path.join(cur, part)
+    return True
+
+
 def clean_target(target: str) -> str:
     t = target.strip()
     # Markdown allows an optional title: [x](path "Title")
@@ -117,7 +141,7 @@ def check_file(path: str) -> list[tuple[int, str]]:
                 if not target:
                     continue
                 resolved = os.path.normpath(os.path.join(src_dir, target))
-                if not os.path.exists(resolved):
+                if not exists_cased(resolved):
                     broken.append((lineno, raw))
     return broken
 
