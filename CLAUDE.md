@@ -13,7 +13,7 @@ Guidelines for any Claude or AI system working on this project. This document en
 - **Digestive enzymes** (lipase, protease, amylase) — Exocrine pancreatic insufficiency (EPI)
 - **Koji** (A. oryzae) — Natural multi-enzyme producer; genetic engineering for enzyme enhancement
 
-**Team:** Currently just Brian (CTO background). Three PhD-level collaborator roles are actively being recruited (Gut Microbiome / In Vivo Validation, Pharma Translation / Regulatory, Innate Immune Safety) — see [`wiki/team.md`](wiki/team.md). Audience = PhD-level scientists. No overselling.
+**Team:** Currently just Brian (CTO background). Three PhD-level collaborator roles are actively being recruited (Gut Microbiome / In Vivo Validation, Pharma Translation / Regulatory, Innate Immune Safety) — see [`wiki/team.md`](wiki/etc/team.md). Audience = PhD-level scientists. No overselling.
 
 **Phase:** Research & Design (Phase 0)
 
@@ -92,7 +92,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 
 **Every load-bearing quantitative claim in newly-authored wiki content must be grep-verified against its primary source BEFORE the commit lands.** This applies to disulfide counts, residue positions, sequence lengths, kinetic constants (IC50, Km, Ki), dose-response numbers, cohort sizes, percent changes, evidence-tier verdicts — anything downstream reasoning will depend on. Not "verify after the sweep flags an inconsistency"; verify before the content ships into the corpus.
 
-**Operational protocol:** see [`wiki/manual-literature-mining.md` §"Pre-commit verification gate"](./wiki/manual-literature-mining.md#pre-commit-verification-gate-the-rule-that-catches-errors-before-the-sweep-not-after) — the canonical statement of the discipline, including the per-claim micro-protocol (identify load-bearing numbers → name primary source → grep-verify → cite line-anchored → drop or placeholder if unverifiable).
+**Operational protocol:** see [`wiki/manual-literature-mining.md` §"Pre-commit verification gate"](./wiki/etc/manual-literature-mining.md#pre-commit-verification-gate-the-rule-that-catches-errors-before-the-sweep-not-after) — the canonical statement of the discipline, including the per-claim micro-protocol (identify load-bearing numbers → name primary source → grep-verify → cite line-anchored → drop or placeholder if unverifiable).
 
 **Why this rule exists:** The wiki sweep daemon catches cross-page inconsistencies in Pass 2 / Pass 3, but by then the wrong number has already propagated to multiple pages and been ingested into downstream synthesis. The DAF SCR1-4 disulfide-count incident (2026-05-06) is the canonical case: a Sonnet subagent authoring `wiki/daf-cd55-scr14-truncated-computational.md` (comp-012) hallucinated "3 disulfides per SCR domain → 12 total" in 4 places of prose narrative — a number the comp-012 pipeline doesn't actually compute (its Limitations section says "Disulfide bonds not modelled"). The error propagated into `wiki/hypotheses/H05-daf-scr14-cp0-thesis.md` overnight, drove a downstream chaperone-orthogonal triple-cassette synergy panic ("17+12=29 disulfides, 1.8× Huynh"), and was only caught by the next day's sweep + walkthrough verification against UniProt P08174 (which has exactly 8 DISULFID feature annotations in SCR1-4 — canonical sushi/CCP fold, 2 per domain). The sweep is a backstop; the pre-commit gate is where this class of error should die.
 

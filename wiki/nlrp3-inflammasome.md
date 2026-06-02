@@ -116,7 +116,7 @@ A 2024 *Annals of the Rheumatic Diseases* study (Ea et al., DOI: 10.1136/ard-202
 
 ## Engineered Koji & Production Candidates
 
-*A. oryzae* could be engineered to overproduce food-derived NLRP3-suppressing compounds (procyanidin/EGCG-like polyphenols), and several stack compounds have established microbial titers — ursolic acid (8.59 g/L in *S. cerevisiae*), quercetin (930 mg/L), carnosine (the only candidate with dual hyperuricemia + NLRP3 rat data), and native kojic acid (3–5 g/L, NLRP3 mechanism unscreened). The full production-candidate analysis (titers, potency rankings, bioavailability, stacking strategy) lives in the [NLRP3 Exploit Map "AI Analysis — Microbial Production Candidates" section](./nlrp3-exploit-map.md) and [07 — NLRP3 Inhibitor Screen](../ai-analysis/07-nlrp3-inhibitor-screen.md). (source: nlrp3-exploit-map.md)
+*A. oryzae* could be engineered to overproduce food-derived NLRP3-suppressing compounds (procyanidin/EGCG-like polyphenols), and several stack compounds have established microbial titers — ursolic acid (8.59 g/L in *S. cerevisiae*), quercetin (930 mg/L), carnosine (the only candidate with dual hyperuricemia + NLRP3 rat data), and native kojic acid (3–5 g/L, NLRP3 mechanism unscreened). The full production-candidate analysis (titers, potency rankings, bioavailability, stacking strategy) lives in the [NLRP3 Exploit Map "AI Analysis — Microbial Production Candidates" section](./nlrp3-exploit-map.md) and [07 — NLRP3 Inhibitor Screen](nlrp3-inhibitor-screen.md). (source: nlrp3-exploit-map.md)
 
 ## The SIBO–Gout–Lynn Connection
 

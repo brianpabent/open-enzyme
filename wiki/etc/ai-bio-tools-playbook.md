@@ -1108,13 +1108,13 @@ Approval typically requires institutional affiliation, published research or cre
 
 This document is part of the Open Enzyme research documentation. Explore related topics:
 
-- [Gout Deep Dive](gout-deep-dive.md) — Comprehensive analysis of gout pathophysiology and therapeutic approaches
-- [Peptide Gout Addendum](peptide-gout-addendum.md) — Peptide-based NLRP3 inhibition strategies
-- [Enzyme Deficit Deep Dive](enzyme-deficit-deep-dive.md) — Understanding uricase deficiency and expression challenges
-- [Blood Barrier Exploits](blood-barrier-exploits.md) — Targeting intestinal barriers for therapeutic delivery
-- [Engineered Koji Protocol](engineered-koji-protocol.md) — Step-by-step guide for koji mold fermentation and engineering
-- [NLRP3 Exploit Map](nlrp3-exploit-map.md) — Inflammasome inhibition pathways and mechanisms
-- [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md) — Complete yeast engineering strategy for uricase expression
+- [Gout Deep Dive](../gout-deep-dive.md) — Comprehensive analysis of gout pathophysiology and therapeutic approaches
+- [Peptide Gout Addendum](../peptide-gout-addendum.md) — Peptide-based NLRP3 inhibition strategies
+- [Enzyme Deficit Deep Dive](../enzyme-deficit-deep-dive.md) — Understanding uricase deficiency and expression challenges
+- [Blood Barrier Exploits](../blood-barrier-exploits.md) — Targeting intestinal barriers for therapeutic delivery
+- [Engineered Koji Protocol](../engineered-koji-protocol.md) — Step-by-step guide for koji mold fermentation and engineering
+- [NLRP3 Exploit Map](../nlrp3-exploit-map.md) — Inflammasome inhibition pathways and mechanisms
+- [Engineered Yeast Uricase Proposal](../engineered-yeast-uricase-proposal.md) — Complete yeast engineering strategy for uricase expression
 - [Open Enzyme Vision](open-enzyme-vision.md) — Project overview and therapeutic applications
 
 **Project Information:**

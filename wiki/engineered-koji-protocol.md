@@ -1188,4 +1188,4 @@ This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project â€
 - [NLRP3 Exploit Map](nlrp3-exploit-map.md)
 - [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md)
 - [Open Enzyme Vision](etc/open-enzyme-vision.md)
-- [AI/Bio Tools Playbook](ai-bio-tools-playbook.md)
+- [AI/Bio Tools Playbook](etc/ai-bio-tools-playbook.md)

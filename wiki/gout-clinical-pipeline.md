@@ -261,7 +261,7 @@ According to PubMed:
 
 ## 8. How to Refresh This Page
 
-The data above was pulled from ClinicalTrials.gov and PubMed via the Anthropic life-sciences MCP plugins (see [bio-ai-tools.md](bio-ai-tools.md) for install instructions). To regenerate a current snapshot:
+The data above was pulled from ClinicalTrials.gov and PubMed via the Anthropic life-sciences MCP plugins (see [bio-ai-tools.md](etc/bio-ai-tools.md) for install instructions). To regenerate a current snapshot:
 
 **ClinicalTrials.gov queries used:**
 
@@ -303,7 +303,7 @@ Recommended cadence: quarterly refresh. Trial statuses change (especially TERMIN
 - [NLRP3 Inflammasome](nlrp3-inflammasome.md) — six-chokepoint model
 - [NLRP3 Exploit Map](nlrp3-exploit-map.md) — multi-target stack strategy
 - [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md)
-- [Bio-AI Tools](bio-ai-tools.md) — MCP plugin install and workflow
+- [Bio-AI Tools](etc/bio-ai-tools.md) — MCP plugin install and workflow
 
 ---
 
